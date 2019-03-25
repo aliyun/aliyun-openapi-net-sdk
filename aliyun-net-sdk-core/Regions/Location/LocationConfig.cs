@@ -17,67 +17,28 @@
  * under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 namespace Aliyun.Acs.Core.Regions.Location
 {
     class LocationConfig
     {
-        private String regionId = "cn-hangzhou";
-        private String product = "Location";
-        private String endpoint = "location.aliyuncs.com";
-
         public LocationConfig() { }
 
-        public LocationConfig(String regionId, String product, String endpoint)
+        public LocationConfig(string regionId, string product, string endpoint)
         {
-            this.regionId = regionId;
-            this.product = product;
-            this.endpoint = endpoint;
+            RegionId = regionId;
+            Product = product;
+            Endpoint = endpoint;
         }
 
-        public static LocationConfig createLocationConfig(String regionId, String product, String endpoint)
+        public static LocationConfig createLocationConfig(string regionId, string product, string endpoint)
         {
             return new LocationConfig(regionId, product, endpoint);
         }
 
-        public String RegionId
-        {
-            get
-            {
-                return regionId;
-            }
-            set
-            {
-                regionId = value;
-            }
-        }
+        public string RegionId { get; set; } = "cn-hangzhou";
 
-        public String Product
-        {
-            get
-            {
-                return product;
-            }
-            set
-            {
-                product = value;
-            }
-        }
+        public string Product { get; set; } = "Location";
 
-        public String Endpoint
-        {
-            get
-            {
-                return endpoint;
-            }
-            set
-            {
-                endpoint = value;
-            }
-        }
+        public string Endpoint { get; set; } = "location.aliyuncs.com";
     }
 }

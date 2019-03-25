@@ -24,9 +24,9 @@ namespace Aliyun.Acs.Core.Reader
 {
     public class XmlReader : IReader
     {
-        Dictionary<String, String> dictionary = new Dictionary<String, String>();
+        Dictionary<string, string> dictionary = new Dictionary<string, string>();
 
-        public Dictionary<String, String> Read(String xml, String endpoint)
+        public Dictionary<string, string> Read(string xml, string endpoint)
         {
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(xml);
@@ -34,12 +34,12 @@ namespace Aliyun.Acs.Core.Reader
             return dictionary;
         }
 
-        public Dictionary<String, String> ReadForHideArrayItem(String xml, String endpoint)
+        public Dictionary<string, string> ReadForHideArrayItem(string xml, string endpoint)
         {
             return Read(xml, endpoint);
         }
 
-        private void Read(XmlNode element, String path, bool appendPath)
+        private void Read(XmlNode element, string path, bool appendPath)
         {
             path = appendPath ? path + "." + element.Name : path;
             if (element.InnerText.Equals(element.InnerXml))
@@ -79,7 +79,7 @@ namespace Aliyun.Acs.Core.Reader
             }
         }
 
-        private void ElementsAsList(XmlNodeList listElements, String path)
+        private void ElementsAsList(XmlNodeList listElements, string path)
         {
             dictionary.Add(path + ".Length", listElements.Count.ToString());
             for (int i = 0; i < listElements.Count; i++)

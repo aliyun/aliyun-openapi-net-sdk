@@ -31,8 +31,8 @@ namespace Aliyun.Acs.Core.Auth
         protected const string QUERY_SEPARATOR = "&";
         protected const string HEADER_SEPARATOR = "\n";
 
-        public Dictionary<string, string> RefreshSignParameters(Dictionary<String, String> parameters,
-            Signer signer, String accessKeyId, FormatType? format)
+        public Dictionary<string, string> RefreshSignParameters(Dictionary<string, string> parameters,
+            Signer signer, string accessKeyId, FormatType? format)
         {
             Dictionary<string, string> immutableMap = new Dictionary<string, string>(parameters);
             DictionaryUtil.Add(immutableMap, "Date", ParameterHelper.GetRFC2616Date(DateTime.Now));
@@ -132,7 +132,7 @@ namespace Aliyun.Acs.Core.Auth
             return result;
         }
 
-        public String ComposeStringToSign(MethodType? method, String uriPattern, Signer signer,
+        public string ComposeStringToSign(MethodType? method, string uriPattern, Signer signer,
             Dictionary<string, string> queries, Dictionary<string, string> headers,
             Dictionary<string, string> paths)
         {

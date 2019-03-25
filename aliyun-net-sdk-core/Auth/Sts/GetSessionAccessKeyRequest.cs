@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Core.Auth.Sts
         public GetSessionAccessKeyRequest() : base("Sts", "2015-04-01", "GenerateSessionAccessKey") { }
 
         private int durationSeconds = 3600;
-        private String publicKeyId;
+        private string publicKeyId;
 
         public int DurationSeconds
         {

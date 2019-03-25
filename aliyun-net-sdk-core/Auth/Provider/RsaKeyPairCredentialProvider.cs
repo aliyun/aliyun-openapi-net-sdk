@@ -34,7 +34,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
         public RsaKeyPairCredentialProvider(RsaKeyPairCredential rsaKeyPairCredential, IClientProfile profile)
         {
             this.rsaKeyPairCredential = rsaKeyPairCredential;
-            this.stsClient = new DefaultAcsClient(profile, rsaKeyPairCredential);
+            stsClient = new DefaultAcsClient(profile, rsaKeyPairCredential);
         }
 
         public RsaKeyPairCredentialProvider(RsaKeyPairCredential rsaKeyPairCredential, IAcsClient stsClient)
@@ -45,13 +45,13 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
         public RsaKeyPairCredentialProvider WithDurationSeconds(long seconds)
         {
-            this.sessionDurationSeconds = seconds;
+            sessionDurationSeconds = seconds;
             return this;
         }
 
         public RsaKeyPairCredentialProvider WithSTSClient(IAcsClient client)
         {
-            this.stsClient = client;
+            stsClient = client;
             return this;
         }
 
@@ -66,12 +66,14 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
         private BasicSessionCredentials GetNewSessionCredentials()
         {
-            GetSessionAccessKeyRequest request = new GetSessionAccessKeyRequest();
-            request.PublicKeyId = rsaKeyPairCredential.GetAccessKeyId();
-            request.DurationSeconds = (int) sessionDurationSeconds;
-            request.Protocol = ProtocolType.HTTPS;
+            GetSessionAccessKeyRequest request = new GetSessionAccessKeyRequest
+            {
+                PublicKeyId = rsaKeyPairCredential.GetAccessKeyId(),
+                DurationSeconds = (int) sessionDurationSeconds,
+                Protocol = ProtocolType.HTTPS
+            };
 
-            GetSessionAccessKeyResponse response = this.stsClient.GetAcsResponse(request);
+            GetSessionAccessKeyResponse response = stsClient.GetAcsResponse(request);
 
             return new BasicSessionCredentials(
                 response.SessionAccesskey.SessionAccessKeyId,

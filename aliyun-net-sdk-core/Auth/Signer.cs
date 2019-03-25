@@ -17,8 +17,6 @@
  * under the License.
  */
 
-using System;
-
 namespace Aliyun.Acs.Core.Auth
 {
     public abstract class Signer
@@ -26,7 +24,6 @@ namespace Aliyun.Acs.Core.Auth
         private readonly static Signer hmacSHA1Signer = new HmacSHA1Signer();
         private readonly static Signer sha256withRSASigner = new SHA256withRSASigner();
         private readonly static Signer bearerTokenSigner = new BearerTokenSigner();
-
         public abstract string SignString(string stringToSign, AlibabaCloudCredentials credentials);
         public abstract string SignString(string stringToSign, string accessKeySecret);
         public abstract string GetSignerName();
@@ -35,17 +32,14 @@ namespace Aliyun.Acs.Core.Auth
 
         public static Signer GetSigner(AlibabaCloudCredentials credentials)
         {
-            if (credentials is BearerTokenCredential)
+            switch (credentials)
             {
-                return bearerTokenSigner;
-            }
-            else if (credentials is KeyPairCredentials)
-            {
-                return sha256withRSASigner;
-            }
-            else
-            {
-                return hmacSHA1Signer;
+                case BearerTokenCredential _:
+                    return bearerTokenSigner;
+                case KeyPairCredentials _:
+                    return sha256withRSASigner;
+                default:
+                    return hmacSHA1Signer;
             }
         }
     }

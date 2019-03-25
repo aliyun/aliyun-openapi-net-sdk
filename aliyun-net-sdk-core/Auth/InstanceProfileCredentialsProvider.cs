@@ -17,8 +17,6 @@
  * under the License.
  */
 
-using System;
-
 using Aliyun.Acs.Core.Exceptions;
 
 namespace Aliyun.Acs.Core.Auth
@@ -26,31 +24,31 @@ namespace Aliyun.Acs.Core.Auth
     public class InstanceProfileCredentialsProvider : AlibabaCloudCredentialsProvider
     {
         private EcsRamRoleCredential credentials = null;
-        public int ecsMetadataServiceFetchCount = 0;
+        public int EcsMetadataServiceFetchCount = 0;
         private ECSMetadataServiceCredentialsFetcher fetcher;
         private const int MAX_ECS_METADATA_FETCH_RETRY_TIMES = 3;
         private int maxRetryTimes = MAX_ECS_METADATA_FETCH_RETRY_TIMES;
         private readonly string roleName;
-
+        
         public InstanceProfileCredentialsProvider(string roleName)
         {
             this.roleName = roleName;
-            this.fetcher = new ECSMetadataServiceCredentialsFetcher();
-            this.fetcher.SetRoleName(roleName);
+            fetcher = new ECSMetadataServiceCredentialsFetcher();
+            fetcher.SetRoleName(roleName);
         }
 
-        public InstanceProfileCredentialsProvider withFetcher(ECSMetadataServiceCredentialsFetcher fetcher)
+        public void withFetcher(ECSMetadataServiceCredentialsFetcher fetcher)
         {
             this.fetcher = fetcher;
             this.fetcher.SetRoleName(roleName);
-            return this;
+            return;
         }
 
         AlibabaCloudCredentials AlibabaCloudCredentialsProvider.GetCredentials()
         {
             if (credentials == null)
             {
-                ecsMetadataServiceFetchCount += 1;
+                EcsMetadataServiceFetchCount += 1;
                 credentials = fetcher.Fetch(maxRetryTimes);
             }
 
@@ -58,18 +56,17 @@ namespace Aliyun.Acs.Core.Auth
             {
                 throw new ClientException("SDK.SessionTokenExpired", "Current session token has expired.");
             }
-            else if (credentials.WillSoonExpire() && credentials.ShouldRefresh())
+
+            if (!credentials.WillSoonExpire() || !credentials.ShouldRefresh()) return credentials;
+            try
             {
-                try
-                {
-                    ecsMetadataServiceFetchCount += 1;
-                    credentials = fetcher.Fetch();
-                }
-                catch (ClientException)
-                {
-                    // Use the current expiring session token and wait for next round
-                    credentials.SetLastFailedRefreshTime();
-                }
+                EcsMetadataServiceFetchCount += 1;
+                credentials = fetcher.Fetch();
+            }
+            catch (ClientException)
+            {
+                // Use the current expiring session token and wait for next round
+                credentials.SetLastFailedRefreshTime();
             }
             return credentials;
         }

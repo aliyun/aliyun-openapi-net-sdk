@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
+
 using System.Collections.Generic;
 using System.Text;
 
@@ -30,30 +30,22 @@ namespace Aliyun.Acs.Core
 {
     public abstract class AcsRequest<T> : HttpRequest
     {
-        private ProtocolType protocol = ProtocolType.HTTP;
         private FormatType acceptFormat;
         private UserAgent userAgentConfig;
-        private Dictionary<String, String> queryParameters = new Dictionary<String, String>();
-        private Dictionary<String, String> domainParameters = new Dictionary<String, String>();
-        private Dictionary<String, String> bodyParameters = new Dictionary<String, String>();
-
-        public virtual String Product { get; set; }
-        public virtual String Version { get; set; }
-        public virtual String ActionName { get; set; }
-        public virtual String RegionId { get; set; }
-        public virtual String SecurityToken { get; set; }
+        public virtual string Product { get; set; }
+        public virtual string Version { get; set; }
+        public virtual string ActionName { get; set; }
+        public virtual string RegionId { get; set; }
+        public virtual string SecurityToken { get; set; }
         public ISignatureComposer Composer { get; set; }
-        public String LocationProduct { get; set; }
-        public String LocationEndpointType { get; set; }
+        public string LocationProduct { get; set; }
+        public string LocationEndpointType { get; set; }
         public ProductDomain ProductDomain { get; set; }
         public string StringToSign;
 
         public virtual FormatType AcceptFormat
         {
-            get
-            {
-                return acceptFormat;
-            }
+            get => acceptFormat;
             set
             {
                 acceptFormat = value;
@@ -61,73 +53,33 @@ namespace Aliyun.Acs.Core
             }
         }
 
-        public ProtocolType Protocol
-        {
-            get
-            {
-                return protocol;
-            }
-            set
-            {
-                protocol = value;
-            }
-        }
+        public ProtocolType Protocol { get; set; } = ProtocolType.HTTP;
 
-        public Dictionary<String, String> QueryParameters
-        {
-            get
-            {
-                return queryParameters;
-            }
-            set
-            {
-                queryParameters = value;
-            }
-        }
+        public Dictionary<string, string> QueryParameters { get; set; } = new Dictionary<string, string>();
 
-        public Dictionary<String, String> DomainParameters
-        {
-            get
-            {
-                return domainParameters;
-            }
-            set
-            {
-                domainParameters = value;
-            }
-        }
+        public Dictionary<string, string> DomainParameters { get; set; } = new Dictionary<string, string>();
 
-        public Dictionary<String, String> BodyParameters
-        {
-            get
-            {
-                return bodyParameters;
-            }
-            set
-            {
-                bodyParameters = value;
-            }
-        }
+        public Dictionary<string, string> BodyParameters { get; set; } = new Dictionary<string, string>();
 
-        public AcsRequest(String product) : base(null)
+        public AcsRequest(string product) : base(null)
         {
             DictionaryUtil.Add(Headers, "x-sdk-client", "Net/2.0.0");
             DictionaryUtil.Add(Headers, "x-sdk-invoke-type", "normal");
             Product = product;
         }
 
-        public static String ConcatQueryString(Dictionary<String, String> parameters)
+        public static string ConcatQueryString(Dictionary<string, string> parameters)
         {
             if (null == parameters)
             {
                 return null;
             }
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
 
             foreach (var entry in parameters)
             {
-                String key = entry.Key;
-                String val = entry.Value;
+                string key = entry.Key;
+                string val = entry.Value;
 
                 sb.Append(AcsURLEncoder.Encode(key));
                 if (val != null)
@@ -153,7 +105,7 @@ namespace Aliyun.Acs.Core
         public abstract HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
             FormatType? format, ProductDomain domain);
 
-        public abstract String ComposeUrl(String endpoint, Dictionary<String, String> queries);
+        public abstract string ComposeUrl(string endpoint, Dictionary<string, string> queries);
 
         public abstract T GetResponse(UnmarshallerContext unmarshallerContext);
 
@@ -164,16 +116,16 @@ namespace Aliyun.Acs.Core
 
         public UserAgent GetSysUserAgentConfig()
         {
-            return this.userAgentConfig;
+            return userAgentConfig;
         }
 
         public void AppendUserAgent(string key, string value)
         {
-            if (this.userAgentConfig == null)
+            if (userAgentConfig == null)
             {
-                this.userAgentConfig = new UserAgent();
+                userAgentConfig = new UserAgent();
             }
-            this.userAgentConfig.AppendUserAgent(key, value);
+            userAgentConfig.AppendUserAgent(key, value);
         }
     }
 }

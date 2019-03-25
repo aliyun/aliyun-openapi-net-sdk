@@ -17,14 +17,11 @@
  * under the License.
  */
 
-using System;
-
 namespace Aliyun.Acs.Core.Auth
 {
     public interface AlibabaCloudCredentials
     {
-        String GetAccessKeyId();
-
-        String GetAccessKeySecret();
+        string GetAccessKeyId();
+        string GetAccessKeySecret();
     }
 }

@@ -27,10 +27,10 @@ namespace Aliyun.Acs.Core
 {
     public class SHA256withRSASigner : Signer
     {
-        private const String ALGORITHM_NAME = "SHA256withRSA";
-        public const String ENCODING = "UTF-8";
+        private const string ALGORITHM_NAME = "SHA256withRSA";
+        public const string ENCODING = "UTF-8";
 
-        public override String SignString(String stringToSign, String accessKeySecret)
+        public override string SignString(string stringToSign, string accessKeySecret)
         {
             using(RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
             {
@@ -45,22 +45,22 @@ namespace Aliyun.Acs.Core
             }
         }
 
-        public override String SignString(String stringToSign, AlibabaCloudCredentials credentials)
+        public override string SignString(string stringToSign, AlibabaCloudCredentials credentials)
         {
             return SignString(stringToSign, credentials.GetAccessKeySecret());
         }
 
-        public override String GetSignerName()
+        public override string GetSignerName()
         {
             return ALGORITHM_NAME;
         }
 
-        public override String GetSignerVersion()
+        public override string GetSignerVersion()
         {
             return "1.0";
         }
 
-        public override String GetSignerType()
+        public override string GetSignerType()
         {
             return "PRIVATEKEY";
         }

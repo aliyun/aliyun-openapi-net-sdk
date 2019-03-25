@@ -17,8 +17,6 @@
  * under the License.
  */
 
-using System;
-
 namespace Aliyun.Acs.Core.Auth
 {
     public class CredentialsBackupCompatibilityAdaptor : Credential
@@ -31,7 +29,7 @@ namespace Aliyun.Acs.Core.Auth
 
         private AlibabaCloudCredentials GetCredentials()
         {
-            AlibabaCloudCredentials credentials = this.provider.GetCredentials();
+            AlibabaCloudCredentials credentials = provider.GetCredentials();
             return credentials;
         }
 
@@ -52,15 +50,8 @@ namespace Aliyun.Acs.Core.Auth
 
         public string GetSecurityToken()
         {
-            AlibabaCloudCredentials credentials = GetCredentials();
-            if (credentials is BasicSessionCredentials)
-            {
-                return ((BasicSessionCredentials) credentials).GetSessionToken();
-            }
-            else
-            {
-                return null;
-            }
+            var credentials = GetCredentials();
+            return credentials is BasicSessionCredentials sessionCredentials ? sessionCredentials.GetSessionToken() : null;
         }
     }
 }

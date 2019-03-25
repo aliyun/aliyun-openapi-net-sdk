@@ -16,10 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 
-using Aliyun.Acs.Core.Regions.Location.Transform;
-using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Regions.Location.Model
@@ -27,16 +26,13 @@ namespace Aliyun.Acs.Core.Regions.Location.Model
     public class DescribeEndpointRequest : RpcAcsRequest<DescribeEndpointResponse>
     {
 
-        public DescribeEndpointRequest() : base("Location", "2015-06-12", "DescribeEndpoints")
-        {
+        public DescribeEndpointRequest() : base("Location", "2015-06-12", "DescribeEndpoints") { }
 
-        }
+        private string id;
 
-        private String id;
+        private string locationProduct;
 
-        private String locationProduct;
-
-        private String endpointType;
+        private string endpointType;
 
         public string Id
         {

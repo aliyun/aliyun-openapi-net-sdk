@@ -17,16 +17,12 @@
  * under the License.
  */
 
-using System;
-
-using Aliyun.Acs.Core.Utils;
-
 namespace Aliyun.Acs.Core.Auth
 {
     public class RamRoleArnCredential : BasicSessionCredentials
     {
         private readonly string roleArn;
-        private string roleSessionName;
+        private readonly string roleSessionName;
 
         public RamRoleArnCredential(
             string accessKeyId,
@@ -42,12 +38,12 @@ namespace Aliyun.Acs.Core.Auth
 
         public string GetRoleArn()
         {
-            return this.roleArn;
+            return roleArn;
         }
 
         public string GetRoleSessionName()
         {
-            return this.roleSessionName;
+            return roleSessionName;
         }
     }
 }

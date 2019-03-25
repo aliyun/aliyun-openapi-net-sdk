@@ -29,26 +29,19 @@ namespace Aliyun.Acs.Core.Auth
         private readonly string accessKeySecret;
         private readonly string sessionToken;
         protected readonly long roleSessionDurationSeconds;
-        private long sessionStartedTimeInMilliSeconds = 0;
+        private readonly long sessionStartedTimeInMilliSeconds;
         private readonly double expireFact = 0.8;
 
         public BasicSessionCredentials(string accessKeyId, string accessKeySecret,
             string sessionToken, long roleSessionDurationSeconds = 0)
         {
-            if (accessKeyId == null)
-            {
+            this.accessKeyId = accessKeyId ??
                 throw new ArgumentOutOfRangeException("Access key ID cannot be null.");
-            }
-            if (accessKeySecret == null)
-            {
+            this.accessKeySecret = accessKeySecret ??
                 throw new ArgumentOutOfRangeException("Access key secret cannot be null.");
-            }
-
-            this.accessKeyId = accessKeyId;
-            this.accessKeySecret = accessKeySecret;
             this.sessionToken = sessionToken;
             this.roleSessionDurationSeconds = roleSessionDurationSeconds;
-            this.sessionStartedTimeInMilliSeconds = DateTimeExtensions.currentTimeMillis(DateTime.Now);
+            sessionStartedTimeInMilliSeconds = DateTime.Now.currentTimeMillis();
         }
 
         public string GetAccessKeyId()
@@ -72,7 +65,7 @@ namespace Aliyun.Acs.Core.Auth
             {
                 return false;
             }
-            long now = DateTimeExtensions.currentTimeMillis(DateTime.Now);
+            long now = DateTime.Now.currentTimeMillis();
             return roleSessionDurationSeconds * expireFact < (now - sessionStartedTimeInMilliSeconds) / 1000.0;
         }
     }

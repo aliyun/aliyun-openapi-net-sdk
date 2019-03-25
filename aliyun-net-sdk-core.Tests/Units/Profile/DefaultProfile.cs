@@ -11,6 +11,7 @@ using Moq;
 
 using Xunit;
 
+[assembly : CollectionBehavior(DisableTestParallelization = true)]
 namespace Aliyun.Acs.Core.Tests.Units.Profile
 {
     public class DefaultProfileTest
@@ -244,37 +245,39 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
             // Mock endpoint	
             Endpoint endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
 
-            var mock = new Mock<DefaultProfile>(true);
-            mock.Setup(foo => foo.GetEndpointByIEndpoints(
+            var mock1 = new Mock<DefaultProfile>(true);
+            mock1.Setup(foo => foo.GetEndpointByIEndpoints(
                 It.IsAny<string>(),
                 It.IsAny<string>()
             )).Returns(endpoint);
-            mock.Setup(foo => foo.GetEndpointByRemoteProvider(
+            mock1.Setup(foo => foo.GetEndpointByRemoteProvider(
                 It.IsAny<string>(),
                 It.IsAny<string>(),
                 It.IsAny<string>(),
                 It.IsAny<string>()
             )).Returns(endpoint);
 
-            DefaultProfile profile = mock.Object;
+            DefaultProfile profile = mock1.Object;
             // When Get endpoint is not null
             List<Endpoint> endpoints1 = profile.GetEndpoints("cn-hangzhou", "Ess");
+            Assert.NotNull(endpoints1);
 
             // When Get endpoint is null
             endpoint = null;
-            mock.Setup(foo => foo.GetEndpointByIEndpoints(
+            mock1.Setup(foo => foo.GetEndpointByIEndpoints(
                 It.IsAny<string>(),
                 It.IsAny<string>()
             )).Returns(endpoint);
-            mock.Setup(foo => foo.GetEndpointByRemoteProvider(
+            mock1.Setup(foo => foo.GetEndpointByRemoteProvider(
                 It.IsAny<string>(),
                 It.IsAny<string>(),
                 It.IsAny<string>(),
                 It.IsAny<string>()
             )).Returns(endpoint);
 
-            DefaultProfile profile1 = mock.Object;
-            List<Endpoint> endpoints2 = profile1.GetEndpoints("productNotExist", "regionId", "serviceCode", "endpointType");
+            profile = mock1.Object;
+
+            List<Endpoint> endpoints2 = profile.GetEndpoints("productNotExist", "regionId", "serviceCode", "endpointType");
 
             Assert.Equal(endpoints1, endpoints2);
         }

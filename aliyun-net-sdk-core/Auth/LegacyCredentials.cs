@@ -17,17 +17,15 @@
  * under the License.
  */
 
-using System;
-
 namespace Aliyun.Acs.Core.Auth
 {
     public class LegacyCredentials : AlibabaCloudCredentials
     {
         private readonly StsCredential legacyCredential;
 
-        public LegacyCredentials(StsCredential legacyCrendential)
+        public LegacyCredentials(StsCredential legacyCredential)
         {
-            this.legacyCredential = legacyCrendential;
+            this.legacyCredential = legacyCredential;
         }
 
         public string GetAccessKeyId()
@@ -39,6 +37,5 @@ namespace Aliyun.Acs.Core.Auth
         {
             return legacyCredential.AccessSecret;
         }
-
     }
 }

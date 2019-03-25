@@ -17,8 +17,6 @@
  * under the License.
  */
 
-using System;
-
 using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth.Sts
@@ -30,9 +28,9 @@ namespace Aliyun.Acs.Core.Auth.Sts
             Protocol = Http.ProtocolType.HTTPS;
         }
         private long durationSeconds;
-        private String policy;
-        private String roleArn;
-        private String roleSessionName;
+        private string policy;
+        private string roleArn;
+        private string roleSessionName;
 
         public long DurationSeconds
         {

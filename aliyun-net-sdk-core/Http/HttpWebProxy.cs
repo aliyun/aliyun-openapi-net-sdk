@@ -17,9 +17,6 @@
  * under the License.
  */
 
-using System;
-using System.Net;
-
 namespace Aliyun.Acs.Core.Http
 {
     public class HttpWebProxy

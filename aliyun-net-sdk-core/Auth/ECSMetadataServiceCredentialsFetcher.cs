@@ -42,7 +42,7 @@ namespace Aliyun.Acs.Core.Auth
 
         public ECSMetadataServiceCredentialsFetcher()
         {
-            this.connectionTimeoutInMilliseconds = DEFAULT_TIMEOUT_IN_MILLISECONDS;
+            connectionTimeoutInMilliseconds = DEFAULT_TIMEOUT_IN_MILLISECONDS;
         }
 
         public void SetRoleName(string roleName)
@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Core.Auth
 
         public string GetRoleName()
         {
-            return this.roleName;
+            return roleName;
         }
 
         private void SetCredentialUrl()
@@ -75,7 +75,7 @@ namespace Aliyun.Acs.Core.Auth
 
         public ECSMetadataServiceCredentialsFetcher WithConnectionTimeout(int milliseconds)
         {
-            this.connectionTimeoutInMilliseconds = milliseconds;
+            connectionTimeoutInMilliseconds = milliseconds;
             return this;
         }
 
@@ -88,7 +88,7 @@ namespace Aliyun.Acs.Core.Auth
             HttpResponse response;
             try
             {
-                response = this.GetResponse(request);
+                response = GetResponse(request);
             }
             catch (WebException e)
             {
@@ -108,9 +108,9 @@ namespace Aliyun.Acs.Core.Auth
             Dictionary<string, string> dic;
             try
             {
-                String jsonContent = GetMetadata();
+                string jsonContent = GetMetadata();
 
-                IReader reader = new Reader.JsonReader();
+                IReader reader = new JsonReader();
                 dic = reader.Read(jsonContent, "");
             }
             catch (Exception e)

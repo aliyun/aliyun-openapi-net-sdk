@@ -40,9 +40,9 @@ namespace Aliyun.Acs.Core.Http
 
         public new void SetContent(byte[] content, string encoding, FormatType? format)
         {
-            this.Content = content;
-            this.Encoding = encoding;
-            this.ContentType = format;
+            Content = content;
+            Encoding = encoding;
+            ContentType = format;
         }
 
         private static void PasrseHttpResponse(HttpResponse httpResponse, HttpWebResponse httpWebResponse)
@@ -198,10 +198,7 @@ namespace Aliyun.Acs.Core.Http
 
         public bool isSuccess()
         {
-            if (200 <= this.Status &&
-                300 > this.Status)
-                return true;
-            return false;
+            return 200 <= Status && 300 > Status;
         }
     }
 }

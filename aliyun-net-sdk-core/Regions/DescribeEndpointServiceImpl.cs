@@ -18,8 +18,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -35,7 +33,7 @@ namespace Aliyun.Acs.Core.Regions
 {
     class DescribeEndpointServiceImpl : DescribeEndpointService
     {
-        private const String DEFAULT_ENDPOINT_TYPE = "openAPI";
+        private const string DEFAULT_ENDPOINT_TYPE = "openAPI";
 
         public DescribeEndpointResponse DescribeEndpoint(string regionId, string serviceCode, string endpointType, Credential credential, LocationConfig locationConfig)
         {
@@ -47,7 +45,7 @@ namespace Aliyun.Acs.Core.Regions
 
             DescribeEndpointRequest request = new DescribeEndpointRequest
             {
-                AcceptFormat = Http.FormatType.JSON,
+                AcceptFormat = FormatType.JSON,
                 Id = regionId,
                 RegionId = locationConfig.RegionId,
                 LocationProduct = serviceCode,
@@ -59,10 +57,10 @@ namespace Aliyun.Acs.Core.Regions
             ProductDomain domain = new ProductDomain(locationConfig.Product, locationConfig.Endpoint);
 
             HttpRequest httpRequest = request.SignRequest(signer, credential, FormatType.JSON, domain);
-            HttpResponse httpResponse = this.GetResponse(httpRequest);
+            HttpResponse httpResponse = GetResponse(httpRequest);
             if (httpResponse.isSuccess())
             {
-                String data = Encoding.UTF8.GetString(httpResponse.Content);
+                string data = Encoding.UTF8.GetString(httpResponse.Content);
                 DescribeEndpointResponse response = GetEndpointResponse(data, endpointType);
                 if (response == null || string.IsNullOrEmpty(response.Endpoint))
                     return null;
@@ -101,10 +99,10 @@ namespace Aliyun.Acs.Core.Regions
 
         private AcsError ReadError(HttpResponse httpResponse, FormatType format)
         {
-            String responseEndpoint = "Error";
+            string responseEndpoint = "Error";
             IReader reader = ReaderFactory.CreateInstance(format);
             UnmarshallerContext context = new UnmarshallerContext();
-            String stringContent = GetResponseContent(httpResponse);
+            string stringContent = GetResponseContent(httpResponse);
             context.ResponseDictionary = reader.Read(stringContent, responseEndpoint);
             AcsError error = new AcsError();
             error.HttpResponse = httpResponse;
@@ -112,9 +110,9 @@ namespace Aliyun.Acs.Core.Regions
             return error;
         }
 
-        private String GetResponseContent(HttpResponse httpResponse)
+        private string GetResponseContent(HttpResponse httpResponse)
         {
-            String stringContent = null;
+            string stringContent = null;
             if (null == httpResponse.Encoding)
             {
                 stringContent = httpResponse.Content.ToString();

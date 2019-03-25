@@ -16,8 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -28,14 +28,13 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class RpcSignatureComposer : ISignatureComposer
     {
-
         private static ISignatureComposer composer = null;
-        private const String SEPARATOR = "&";
+        private const string SEPARATOR = "&";
 
-        public Dictionary<String, String> RefreshSignParameters(Dictionary<String, String> parameters,
-            Signer signer, String accessKeyId, FormatType? format)
+        public Dictionary<string, string> RefreshSignParameters(Dictionary<string, string> parameters,
+            Signer signer, string accessKeyId, FormatType? format)
         {
-            Dictionary<String, String> immutableMap = new Dictionary<String, String>(parameters);
+            Dictionary<string, string> immutableMap = new Dictionary<string, string>(parameters);
             DictionaryUtil.Add(immutableMap, "Timestamp", ParameterHelper.FormatIso8601Date(DateTime.Now));
             DictionaryUtil.Add(immutableMap, "SignatureMethod", signer.GetSignerName());
             DictionaryUtil.Add(immutableMap, "SignatureVersion", signer.GetSignerVersion());

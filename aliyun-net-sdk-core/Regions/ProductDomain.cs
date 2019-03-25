@@ -16,16 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 
 namespace Aliyun.Acs.Core.Regions
 {
     public class ProductDomain
     {
-        public ProductDomain()
-        {
-
-        }
+        public ProductDomain() { }
 
         public ProductDomain(String product, String domain)
         {
@@ -35,6 +33,5 @@ namespace Aliyun.Acs.Core.Regions
 
         public String ProductName { get; set; }
         public String DomianName { get; set; }
-
     }
 }
