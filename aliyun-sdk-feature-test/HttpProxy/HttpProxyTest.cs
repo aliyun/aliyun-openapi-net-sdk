@@ -21,6 +21,8 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
             string actualValue;
             response.HttpResponse.Headers.TryGetValue("Via", out actualValue);
             Assert.Equal(expectValue, actualValue);
+
+            client.SetHttpProxy(null);
         }
 
         [Fact]
@@ -36,6 +38,8 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
 
             Assert.Equal(expectValue, actualValue);
             Assert.NotNull(response.HttpResponse.Content);
+
+            client.SetHttpProxy(null);
         }
     }
 }
