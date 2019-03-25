@@ -51,12 +51,12 @@ namespace Aliyun.Acs.Core.Profile
             this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
         }
 
-        private DefaultProfile()
-        {
-            this.locationConfig = new LocationConfig();
-            this.iendpoints = new InternalEndpointsParser();
-            this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
-        }
+        //private DefaultProfile()
+        //{
+        //    this.locationConfig = new LocationConfig();
+        //    this.iendpoints = new InternalEndpointsParser();
+        //    this.remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
+        //}
 
         private DefaultProfile(String regionId)
         {
