@@ -725,6 +725,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             Environment.SetEnvironmentVariable("HTTP_PROXY", "http_proxy_1");
             Environment.SetEnvironmentVariable("http_proxy", "http_proxy_2");
             Assert.Equal("http://localhost.com", client.GetHttpProxy());
+
             Environment.SetEnvironmentVariable("http_proxy", null);
             Environment.SetEnvironmentVariable("HTTP_PROXY", null);
             client.SetHttpProxy(null);
@@ -753,6 +754,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             Environment.SetEnvironmentVariable("HTTPS_PROXY", "https_proxy_1");
             Environment.SetEnvironmentVariable("https_proxy", "https_proxy_2");
             Assert.Equal("https://localhost.com", client.GetHttpsProxy());
+
             Environment.SetEnvironmentVariable("https_proxy", null);
             Environment.SetEnvironmentVariable("HTTPS_PROXY", null);
             client.SetHttpsProxy(null);
@@ -781,6 +783,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             Environment.SetEnvironmentVariable("NO_PROXY", "no_proxy_1");
             Environment.SetEnvironmentVariable("no_proxy", "no_proxy_2");
             Assert.Equal("localhost.com,localtest.com", client.GetNoProxy());
+            
             Environment.SetEnvironmentVariable("no_proxy", null);
             Environment.SetEnvironmentVariable("NO_PROXY", null);
             client.SetNoProxy(null);
@@ -812,7 +815,6 @@ namespace Aliyun.Acs.Core.Tests.Units
             genericMethod.Invoke(resolveProxy, parameters);
             Assert.True(httpRequest.Headers.ContainsKey("Authorization"));
             Environment.SetEnvironmentVariable("HTTP_PROXY", null);
-            httpRequest.Headers.Remove("Authorization");
 
             acsRequest.Protocol = ProtocolType.HTTPS;
             Environment.SetEnvironmentVariable("HTTPS_PROXY", "https://username:password@192.168.16.1:10");

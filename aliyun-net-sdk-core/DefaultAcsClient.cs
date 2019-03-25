@@ -488,6 +488,11 @@ namespace Aliyun.Acs.Core
                     credential = new NetworkCredential(userInfoArray[0], userInfoArray[1]);
 
                     httpRequest.WebProxy = new WebProxy(finalProxyUri, false, noProxy, credential);
+
+                    if (httpRequest.Headers.ContainsKey("Authorization"))
+                    {
+                        httpRequest.Headers.Remove("Authorization");
+                    }
                     httpRequest.Headers.Add("Authorization", "Basic " + authorization);
                 }
                 else
