@@ -3,5 +3,7 @@
     <Rules AnalyzerId="SonarAnalyzer.CSharp" RuleNamespace="SonarAnalyzer.CSharp">
         <!-- S3427: Method overloads with default parameter values should not overlap -->
         <Rule Id="S3427" Action="Error" />
+        <!-- S2292: Make this an auto-implemented property and remove its backing field. -->
+        <Rule Id="S2292" Action="None" />
     </Rules>
 </RuleSet>
