@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -74,28 +74,28 @@ namespace Aliyun.Acs.Core.Http
         public static byte[] ReadContent(HttpResponse response, HttpWebResponse rsp)
         {
 
-            MemoryStream ms = new MemoryStream();
-            byte[] buffer = new byte[bufferLength];
-            Stream stream = rsp.GetResponseStream();
-
-            while (true)
+            using(MemoryStream ms = new MemoryStream())
             {
-                int length = stream.Read(buffer, 0, bufferLength);
-                if (length == 0)
-                {
-                    break;
-                }
-                ms.Write(buffer, 0, length);
-            }
-            ms.Seek(0, SeekOrigin.Begin);
-            byte[] bytes = new byte[ms.Length];
-            ms.Read(bytes, 0, bytes.Length);
+                byte[] buffer = new byte[bufferLength];
+                Stream stream = rsp.GetResponseStream();
 
-            ms.Close();
-            ms.Dispose();
-            stream.Close();
-            stream.Dispose();
-            return bytes;
+                while (true)
+                {
+                    int length = stream.Read(buffer, 0, bufferLength);
+                    if (length == 0)
+                    {
+                        break;
+                    }
+                    ms.Write(buffer, 0, length);
+                }
+                ms.Seek(0, SeekOrigin.Begin);
+                byte[] bytes = new byte[ms.Length];
+                ms.Read(bytes, 0, bytes.Length);
+
+                stream.Close();
+                stream.Dispose();
+                return bytes;
+            }
         }
 
         public static HttpResponse GetResponse(HttpRequest request, int? timeout = null)
@@ -127,8 +127,12 @@ namespace Aliyun.Acs.Core.Http
             {
                 throw new ClientException(ex.ToString());
             }
-            PasrseHttpResponse(httpResponse, httpWebResponse);
-            return httpResponse;
+
+            using(httpWebResponse)
+            {
+                PasrseHttpResponse(httpResponse, httpWebResponse);
+                return httpResponse;
+            }
         }
 
         public static HttpWebRequest GetWebRequest(HttpRequest request)

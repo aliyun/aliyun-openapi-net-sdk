@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -32,9 +32,11 @@ namespace Aliyun.Acs.Core
 
         public override String SignString(String stringToSign, String accessKeySecret)
         {
-            HMACSHA1 hmac = new HMACSHA1(Encoding.UTF8.GetBytes(accessKeySecret));
-            byte[] hashValue = hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
-            return Convert.ToBase64String(hashValue);
+            using(HMACSHA1 hmac = new HMACSHA1(Encoding.UTF8.GetBytes(accessKeySecret)))
+            {
+                byte[] hashValue = hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
+                return Convert.ToBase64String(hashValue);
+            }
         }
 
         public override String SignString(String stringToSign, AlibabaCloudCredentials credentials)
