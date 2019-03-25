@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Sonar" Description=" " ToolsVersion="15.0">
+    <Rules AnalyzerId="SonarAnalyzer.CSharp" RuleNamespace="SonarAnalyzer.CSharp">
+        <!-- S3427: Method overloads with default parameter values should not overlap -->
+        <Rule Id="S3427" Action="Error" />
+    </Rules>
+</RuleSet>
