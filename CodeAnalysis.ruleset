@@ -21,6 +21,8 @@
     <Rules AnalyzerId="SonarAnalyzer.CSharp" RuleNamespace="SonarAnalyzer.CSharp">
         <!-- S3427: Method overloads with default parameter values should not overlap -->
         <Rule Id="S3427" Action="Error" />
+        <!-- S100: Methods and properties should be named in PascalCase -->
+        <Rule Id="S100" Action="None" />
         <!-- S101: Types should be named in PascalCase -->
         <Rule Id="S101" Action="None" />
         <!-- S1118: Utility classes should not have public constructors -->
