@@ -41,25 +41,29 @@ namespace Aliyun.Acs.Core.Utils
             {
                 datetime = DateTime.Now;
             }
-            return datetime.ToUniversalTime().GetDateTimeFormats('r') [0].ToString();
+            return datetime.ToUniversalTime().GetDateTimeFormats('r')[0].ToString();
         }
 
         public static string Md5Sum(byte[] buff)
         {
-            MD5 md5 = new MD5CryptoServiceProvider();
-            byte[] output = md5.ComputeHash(buff);
-            return BitConverter.ToString(output).Replace("-", "");
+            using (MD5 md5 = new MD5CryptoServiceProvider())
+            {
+                byte[] output = md5.ComputeHash(buff);
+                return BitConverter.ToString(output).Replace("-", "");
+            }
         }
 
         public static string Md5SumAndBase64(byte[] buff)
         {
-            MD5 md5 = new MD5CryptoServiceProvider();
-            byte[] output = md5.ComputeHash(buff);
-            //string md5Str = BitConverter.ToString(output).Replace("-", "");
+            using (MD5 md5 = new MD5CryptoServiceProvider())
+            {
+                byte[] output = md5.ComputeHash(buff);
+                //string md5Str = BitConverter.ToString(output).Replace("-", "");
 
-            //System.Text.Encoding encode = System.Text.Encoding.ASCII;
-            //byte[] bytedata = System.Text.Encoding.ASCII.GetBytes(md5Str);
-            return Convert.ToBase64String(output, 0, output.Length);
+                //System.Text.Encoding encode = System.Text.Encoding.ASCII;
+                //byte[] bytedata = System.Text.Encoding.ASCII.GetBytes(md5Str);
+                return Convert.ToBase64String(output, 0, output.Length);
+            }
         }
 
         public static string FormatTypeToString(FormatType? formatType)

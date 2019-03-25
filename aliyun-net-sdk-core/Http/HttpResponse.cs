@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -48,7 +48,7 @@ namespace Aliyun.Acs.Core.Http
         private static void PasrseHttpResponse(HttpResponse httpResponse, HttpWebResponse httpWebResponse)
         {
             httpResponse.Content = ReadContent(httpResponse, httpWebResponse);
-            httpResponse.Status = (int) httpWebResponse.StatusCode;
+            httpResponse.Status = (int)httpWebResponse.StatusCode;
             httpResponse.Headers = new Dictionary<string, string>();
             httpResponse.Method = ParameterHelper.StringToMethodType(httpWebResponse.Method);
 
@@ -74,28 +74,28 @@ namespace Aliyun.Acs.Core.Http
         public static byte[] ReadContent(HttpResponse response, HttpWebResponse rsp)
         {
 
-            MemoryStream ms = new MemoryStream();
-            byte[] buffer = new byte[bufferLength];
-            Stream stream = rsp.GetResponseStream();
-
-            while (true)
+            using (MemoryStream ms = new MemoryStream())
             {
-                int length = stream.Read(buffer, 0, bufferLength);
-                if (length == 0)
-                {
-                    break;
-                }
-                ms.Write(buffer, 0, length);
-            }
-            ms.Seek(0, SeekOrigin.Begin);
-            byte[] bytes = new byte[ms.Length];
-            ms.Read(bytes, 0, bytes.Length);
+                byte[] buffer = new byte[bufferLength];
+                Stream stream = rsp.GetResponseStream();
 
-            ms.Close();
-            ms.Dispose();
-            stream.Close();
-            stream.Dispose();
-            return bytes;
+                while (true)
+                {
+                    int length = stream.Read(buffer, 0, bufferLength);
+                    if (length == 0)
+                    {
+                        break;
+                    }
+                    ms.Write(buffer, 0, length);
+                }
+                ms.Seek(0, SeekOrigin.Begin);
+                byte[] bytes = new byte[ms.Length];
+                ms.Read(bytes, 0, bytes.Length);
+
+                stream.Close();
+                stream.Dispose();
+                return bytes;
+            }
         }
 
         public static HttpResponse GetResponse(HttpRequest request, int? timeout = null)
@@ -103,20 +103,20 @@ namespace Aliyun.Acs.Core.Http
             HttpWebRequest httpWebRequest = GetWebRequest(request);
             if (timeout != null)
             {
-                httpWebRequest.Timeout = (int) timeout;
+                httpWebRequest.Timeout = (int)timeout;
             }
 
             HttpResponse httpResponse = new HttpResponse(httpWebRequest.RequestUri.AbsoluteUri);
             HttpWebResponse httpWebResponse = null;
             try
             {
-                httpWebResponse = (HttpWebResponse) httpWebRequest.GetResponse();
+                httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
             }
             catch (WebException ex)
             {
                 if (ex.Response != null)
                 {
-                    httpWebResponse = (HttpWebResponse) ex.Response;
+                    httpWebResponse = (HttpWebResponse)ex.Response;
                 }
                 else
                 {
@@ -127,14 +127,18 @@ namespace Aliyun.Acs.Core.Http
             {
                 throw new ClientException(ex.ToString());
             }
-            PasrseHttpResponse(httpResponse, httpWebResponse);
-            return httpResponse;
+
+            using (httpWebResponse)
+            {
+                PasrseHttpResponse(httpResponse, httpWebResponse);
+                return httpResponse;
+            }
         }
 
         public static HttpWebRequest GetWebRequest(HttpRequest request)
         {
             HttpWebRequest httpWebRequest = null;
-            httpWebRequest = (HttpWebRequest) WebRequest.Create(request.Url);
+            httpWebRequest = (HttpWebRequest)WebRequest.Create(request.Url);
             httpWebRequest.Method = request.Method.ToString();
             httpWebRequest.KeepAlive = true;
 
@@ -183,7 +187,7 @@ namespace Aliyun.Acs.Core.Http
 
             if ((request.Method == MethodType.POST || request.Method == MethodType.PUT) && request.Content != null)
             {
-                using(Stream stream = httpWebRequest.GetRequestStream())
+                using (Stream stream = httpWebRequest.GetRequestStream())
                 {
                     stream.Write(request.Content, 0, request.Content.Length);
                 }
