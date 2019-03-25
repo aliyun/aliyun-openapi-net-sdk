@@ -6,6 +6,8 @@
     <Deterministic>true</Deterministic>
     <Features>pdb-path-determinism</Features>
     <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)\CodeAnalysis.ruleset</CodeAnalysisRuleSet>
+    <!-- NU1701: Package 'sharpconfig 3.2.8' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project. -->
+    <NoWarn>NU1701;$(NoWarn)</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

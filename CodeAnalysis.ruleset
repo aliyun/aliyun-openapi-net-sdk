@@ -1,9 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RuleSet Name="Sonar" Description=" " ToolsVersion="15.0">
+    <Rules AnalyzerId="Microsoft.VisualStudio.Threading.Analyzers" RuleNamespace="Microsoft.VisualStudio.Threading.Analyzers">
+        <Rule Id="VSTHRD001" Action="Error" />
+        <Rule Id="VSTHRD002" Action="Error" />
+        <Rule Id="VSTHRD003" Action="Error" />
+        <Rule Id="VSTHRD004" Action="Error" />
+        <Rule Id="VSTHRD010" Action="Error" />
+        <Rule Id="VSTHRD011" Action="Error" />
+        <Rule Id="VSTHRD012" Action="Error" />
+        <Rule Id="VSTHRD101" Action="Error" />
+        <Rule Id="VSTHRD102" Action="Error" />
+        <Rule Id="VSTHRD103" Action="Error" />
+        <Rule Id="VSTHRD110" Action="Error" />
+        <Rule Id="VSTHRD111" Action="Error" />
+        <Rule Id="VSTHRD200" Action="Error" />
+    </Rules>
+    <Rules AnalyzerId="IDisposableAnalyzers" RuleNamespace="IDisposableAnalyzers">
+        <Rule Id="IDISP005" Action="Error" />
+    </Rules>
     <Rules AnalyzerId="SonarAnalyzer.CSharp" RuleNamespace="SonarAnalyzer.CSharp">
         <!-- S3427: Method overloads with default parameter values should not overlap -->
         <Rule Id="S3427" Action="Error" />
+        <!-- S101: Types should be named in PascalCase -->
+        <Rule Id="S101" Action="None" />
+        <!-- S1118: Utility classes should not have public constructors -->
+        <Rule Id="S1118" Action="None" />
         <!-- S2292: Make this an auto-implemented property and remove its backing field. -->
         <Rule Id="S2292" Action="None" />
+    </Rules>
+    <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+        <!-- CA2227: Collection properties should be read only -->
+        <Rule Id="CA2227" Action="None" />
+        <!-- CA1707: Identifiers should not contain underscores -->
+        <Rule Id="CA1707" Action="None" />
+        <!-- CA1034: Nested types should not be visible -->
+        <Rule Id="CA1034" Action="None" />
     </Rules>
 </RuleSet>
