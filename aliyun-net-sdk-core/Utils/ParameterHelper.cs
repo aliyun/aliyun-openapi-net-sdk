@@ -41,12 +41,12 @@ namespace Aliyun.Acs.Core.Utils
             {
                 datetime = DateTime.Now;
             }
-            return datetime.ToUniversalTime().GetDateTimeFormats('r')[0].ToString();
+            return datetime.ToUniversalTime().GetDateTimeFormats('r') [0].ToString();
         }
 
         public static string Md5Sum(byte[] buff)
         {
-            using (MD5 md5 = new MD5CryptoServiceProvider())
+            using(MD5 md5 = new MD5CryptoServiceProvider())
             {
                 byte[] output = md5.ComputeHash(buff);
                 return BitConverter.ToString(output).Replace("-", "");
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Core.Utils
 
         public static string Md5SumAndBase64(byte[] buff)
         {
-            using (MD5 md5 = new MD5CryptoServiceProvider())
+            using(MD5 md5 = new MD5CryptoServiceProvider())
             {
                 byte[] output = md5.ComputeHash(buff);
                 //string md5Str = BitConverter.ToString(output).Replace("-", "");

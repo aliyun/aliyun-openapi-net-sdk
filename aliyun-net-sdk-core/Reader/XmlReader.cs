@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Core.Reader
                 return;
             }
 
-            using (XmlNodeList listElements = element.SelectNodes(element.FirstChild.Name))
+            using(XmlNodeList listElements = element.SelectNodes(element.FirstChild.Name))
             {
                 if (listElements.Count > 1 && element.ChildNodes.Count == listElements.Count)
                 { //be list

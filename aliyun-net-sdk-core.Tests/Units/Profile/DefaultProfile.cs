@@ -272,8 +272,9 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
                 It.IsAny<string>(),
                 It.IsAny<string>()
             )).Returns(endpoint);
-            profile = mock.Object;
-            List<Endpoint> endpoints2 = profile.GetEndpoints("productNotExist", "regionId", "serviceCode", "endpointType");
+
+            DefaultProfile profile1 = mock.Object;
+            List<Endpoint> endpoints2 = profile1.GetEndpoints("productNotExist", "regionId", "serviceCode", "endpointType");
 
             Assert.Equal(endpoints1, endpoints2);
         }

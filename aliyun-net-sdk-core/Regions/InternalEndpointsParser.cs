@@ -26,7 +26,7 @@ using System.Xml;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Regions.Location;
 
-[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
+[assembly : InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace Aliyun.Acs.Core.Regions
 {
     class InternalEndpointsParser : IEndpointsProvider
@@ -47,7 +47,7 @@ namespace Aliyun.Acs.Core.Regions
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(stream);
-            using (XmlNodeList productNodes = doc.GetElementsByTagName("product"))
+            using(XmlNodeList productNodes = doc.GetElementsByTagName("product"))
             {
                 List<Product> products = new List<Product>();
                 foreach (XmlNode node in productNodes)
@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Core.Regions
                     product.DocumentId = node.SelectSingleNode("document_id").InnerText;
 
                     product.RegionalEndpoints = new Dictionary<string, string>();
-                    using (XmlNodeList regional_endpoints = node.SelectSingleNode("regional_endpoints").SelectNodes("regional_endpoint"))
+                    using(XmlNodeList regional_endpoints = node.SelectSingleNode("regional_endpoints").SelectNodes("regional_endpoint"))
                     {
                         foreach (XmlNode regionalNode in regional_endpoints)
                         {
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Core.Regions
             string _namespace = type.Namespace;
             Assembly _assembly = Assembly.GetExecutingAssembly();
             string resourceName = _namespace + "." + BUNDLED_ENDPOINTS_RESOURCE_PATH;
-            using (Stream stream = _assembly.GetManifestResourceStream(resourceName))
+            using(Stream stream = _assembly.GetManifestResourceStream(resourceName))
             {
                 return ParseProducts(stream);
             }

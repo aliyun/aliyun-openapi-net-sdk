@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Core
 
         public override String SignString(String stringToSign, String accessKeySecret)
         {
-            using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
+            using(RSACryptoServiceProvider rsa = new RSACryptoServiceProvider())
             {
-                using (SHA256 sha256 = SHA256.Create())
+                using(SHA256 sha256 = SHA256.Create())
                 {
                     byte[] hashValue = sha256.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
                     RSAPKCS1SignatureFormatter RSAFormatter = new RSAPKCS1SignatureFormatter(rsa);

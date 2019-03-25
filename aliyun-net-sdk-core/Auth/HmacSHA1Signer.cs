@@ -20,6 +20,7 @@
 using System;
 using System.Security.Cryptography;
 using System.Text;
+
 using Aliyun.Acs.Core.Auth;
 
 namespace Aliyun.Acs.Core
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.Core
 
         public override String SignString(String stringToSign, String accessKeySecret)
         {
-            using (HMACSHA1 hmac = new HMACSHA1(Encoding.UTF8.GetBytes(accessKeySecret)))
+            using(HMACSHA1 hmac = new HMACSHA1(Encoding.UTF8.GetBytes(accessKeySecret)))
             {
                 byte[] hashValue = hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
                 return Convert.ToBase64String(hashValue);
