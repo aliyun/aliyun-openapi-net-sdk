@@ -1,4 +1,4 @@
-[← 代理](3-Proxy-CN.md) | 超时[(English)](4-Timeout-EN.md) | [环境要求 →](0-Requirements-CN.md)
+[← 代理](3-Proxy-CN.md) | 超时[(English)](4-Timeout-EN.md) | [产品Nuget包 →](5-Packages-CN.md)
 ***
 
 # 超时设置
@@ -28,4 +28,4 @@ request.SetReadTimeoutInMilliSeconds(2048);
 ```
 
 ***
-[← 代理](3-Proxy-CN.md) | 超时[(English)](4-Timeout-EN.md) | [环境要求 →](0-Requirements-CN.md)
+[← 代理](3-Proxy-CN.md) | 超时[(English)](4-Timeout-EN.md) | [产品Nuget包 →](5-Packages-CN.md)
