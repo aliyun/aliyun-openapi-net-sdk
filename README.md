@@ -1,36 +1,36 @@
-# Alibaba Cloud C# Software Development Kit
-[中文文档](./README_zh.md)
-
-[![Travis CI Build Status](https://travis-ci.org/aliyun/aliyun-openapi-net-sdk.svg?branch=master)](https://travis-ci.org/aliyun/aliyun-openapi-net-sdk)
-[![Appveyor CI Build Status](https://ci.appveyor.com/api/projects/status/l6a4r74matmhwqf3?svg=true)](https://ci.appveyor.com/project/AxiosCros/aliyun-openapi-net-sdk-6xumj)
-[![codecov](https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk)
-[![NuGet version](https://badge.fury.io/nu/aliyun-net-sdk-core.svg)](https://badge.fury.io/nu/aliyun-net-sdk-core)
-[![Nuget Download](https://img.shields.io/nuget/dt/aliyun-net-sdk-core.svg?label=Nuget%20Download&style=flat)](https://www.nuget.org/packages/aliyun-net-sdk-core/)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/LICENSE)
+English | [简体中文](./README-CN.md)
 
 
-The Alibaba Cloud C# Software Development Kit (SDK) allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
+<p align="center">
+<a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg"></a>
+</p>
 
-This document introduces how to install and use Alibaba Cloud C# SDK.
+<h1 align="center">Alibaba Cloud SDK for C#</h1>
 
-If you have any problem while using C# SDK, please [submit an issue](https://github.com/aliyun/aliyun-openapi-net-sdk/issues/new).
+<p align="center">
+<a href="https://travis-ci.org/aliyun/aliyun-openapi-net-sdk"><img src="https://travis-ci.org/aliyun/aliyun-openapi-net-sdk.svg?branch=master" alt="Travis Build Status"></a>
+<a href="https://ci.appveyor.com/project/aliyun/aliyun-openapi-net-sdk"><img src="https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true" alt="Appveyor Build Status"></a>
+<a href="https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk/branch/master/graph/badge.svg" alt="Codecov"></a>
+<a href="https://badge.fury.io/nu/aliyun-net-sdk-core"><img src="https://badge.fury.io/nu/aliyun-net-sdk-core.svg" alt="Nuget Version"></a>
+<a href="https://www.nuget.org/packages/aliyun-net-sdk-core/"><img src="https://img.shields.io/nuget/dt/aliyun-net-sdk-core.svg?label=Nuget%20Download&style=flat" alt="Nuget Version"></a>
+<a href="https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="Nuget Version"></a>
+</p>
 
-## Prerequisites
 
-- To use Alibaba Cloud C# SDK, you must have an Alibaba Cloud account and an AccessKey.
+The Alibaba Cloud Client for C# (SDK) allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
 
-	The AccessKey is required when initializing the client. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey]([https://usercenter.console.aliyun.com/#/manage/ak](https://usercenter.console.aliyun.com/#/manage/ak)).
 
-	>**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
+## Online Demo
+[OpenAPI Explorer](https://api.aliyun.com/#/?product=Ecs&api=DescribeAccessPoints&params={}&tab=DEMO&lang=CSHARP) provides the ability to call the cloud product OpenAPI online, and dynamically generate SDK Example code and quick retrieval interface, which can significantly reduce the difficulty of using the cloud API.
 
-- To use Alibaba Cloud C# SDK to access the APIs of a product, you must first activate the product on the [Alibaba Cloud console](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w) if required.
 
+## Requirements
 - The Alibaba Cloud C# SDK is requires：
     - **`.NET Framework 4.6.1`** or later
     - **`.NET Standard 2.0`** or later
 
-## Using C# SDK with NuGet Packages
 
+## Installation
 You must install the SDK core Nuget Package for any SDK you use. For example, to call the ECS product, you must install both the [ECS Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-ecs/) and the [SDK core Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-core/).
 
 Use Package Manager
@@ -43,6 +43,119 @@ Use .NET CLI
     dotnet add package aliyun-net-sdk-core
     dotnet add package aliyun-net-sdk-ecs
 
+
+## Quick Examples
+Before you begin, you need to sign up for an Alibaba Cloud account and retrieve your [Credentials](https://usercenter.console.aliyun.com/#/manage/ak).
+>**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
+
+### Initiate a call
+
+The following code example shows the three main steps to use the Alibaba Cloud C# SDK:
+
+- Create and initialize a DefaultAcsClient instance.
+
+- Create a request and set parameters.
+
+- Initiate the request and handle the response.
+
+```csharp
+using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Profile;
+using Aliyun.Acs.Core.Exceptions;
+using Aliyun.Acs.Ecs.Model.V20140526;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create a client used for initiating a request
+        IClientProfile profile = DefaultProfile.GetProfile(
+            "<your-region-id>",
+            "<your-access-key-id>",
+            "<your-access-key-secret>");
+        DefaultAcsClient client = new DefaultAcsClient(profile);
+
+        try
+        {
+            // Create the request
+            DescribeInstancesRequest request = new DescribeInstancesRequest();
+            request.PageSize = 10;
+
+            // Initiate the request and get the response
+            DescribeInstancesResponse response = client.GetAcsResponse(request);
+            System.Console.WriteLine(response.TotalCount);
+        }
+        catch (ServerException ex)
+        {
+            System.Console.WriteLine(ex.ToString());
+        }
+        catch (ClientException ex)
+        {
+            System.Console.WriteLine(ex.ToString());
+        }
+    }
+}
+```
+
+### Use BearerToken to invoke [CCC](https://www.nuget.org/packages/aliyun-net-sdk-ccc/) Product
+You should install the relative Nuget Package, as it said before, when you are running the test demo in your local machine.
+
+```csharp
+using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Profile;
+using Aliyun.Acs.Core.Exceptions;
+using Aliyun.Acs.CCC.Model.V20170705;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create a client used for initiating a request
+        IClientProfile profile = DefaultProfile.GetProfile("<your-region-id>");
+        BearerTokenCredential bearerTokenCredential = new BearerTokenCredential("<your-bearertoken>");
+
+        DefaultAcsClient client = new DefaultAcsClient(profile, bearerTokenCredential);
+
+        try
+        {
+            // Create the request
+            ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
+
+            // Initiate the request and get the response
+            var response = client.GetAcsResponse(request);
+            
+            //Do something as you want below
+        }
+        catch (ServerException ex)
+        {
+            System.Console.WriteLine(ex.ToString());
+        }
+        catch (ClientException ex)
+        {
+            System.Console.WriteLine(ex.ToString());
+        }
+    }
+}
+```
+
+
+## Documentation
+* [Requirements](docs/0-Requirements-EN.md)
+* [SSL Verify](docs/1-Verify-EN.md)
+* [Debug](docs/2-Debug-EN.md)
+* [Proxy](docs/3-Proxy-EN.md)
+* [Timeout](docs/4-Timeout-EN.md)
+
+
+## Issues
+[Opening an Issue](https://github.com/aliyun/aliyun-openapi-net-sdk/issues/new), Issues not conforming to the guidelines may be closed immediately.
+
+
+## Changelog
+Detailed changes for each release are documented in the [release notes](aliyun-net-sdk-core/ChangeLog.txt).
+
+
+## Product Nuget Packages And Details
 Alibaba Cloud C# SDK Product Nuget Packages:
 
 - [aliyun-net-sdk-alidns](https://www.nuget.org/packages/aliyun-net-sdk-alidns/)
@@ -100,6 +213,7 @@ Alibaba Cloud C# SDK Product Nuget Packages:
   - Content security is a multimedia content intelligent identification service that supports diversified scene detection for images, videos, texts, voices, etc., effectively helping you reduce the risk of content violations. 
 
 In the Meanwhile, there are various product nuget package below.For more infomation, please visit the [Alibaba Cloud Products & Services](https://www.alibabacloud.com/product) to get more detail.
+
 - [aliyun-net-sdk-hpc](https://www.nuget.org/packages/aliyun-net-sdk-hpc/)
 - [aliyun-net-sdk-hsm](https://www.nuget.org/packages/aliyun-net-sdk-hsm/)
 - [aliyun-net-sdk-httpdns](https://www.nuget.org/packages/aliyun-net-sdk-httpdns/)
@@ -137,164 +251,10 @@ In the Meanwhile, there are various product nuget package below.For more infomat
 - [aliyun-net-sdk-vod](https://www.nuget.org/packages/aliyun-net-sdk-vod/)
 - [aliyun-net-sdk-vpc](https://www.nuget.org/packages/aliyun-net-sdk-vpc/)
 
-## Initiate a call
 
-The following code example shows the three main steps to use the Alibaba Cloud C# SDK:
+## API Reference
+You can visit the API and its parameters in [Product List](https://www.alibabacloud.com/en?spm=5176.10609282.1280361.9.62e538011pDOUG)
 
-- Create and initialize a DefaultAcsClient instance.
 
-- Create a request and set parameters.
-
-- Initiate the request and handle the response.
-
-```csharp
-using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Profile;
-using Aliyun.Acs.Core.Exceptions;
-using Aliyun.Acs.Ecs.Model.V20140526;
-
-class TestProgram
-{
-    static void Main(string[] args)
-    {
-        // Create a client used for initiating a request
-        IClientProfile profile = DefaultProfile.GetProfile(
-            "<your-region-id>",
-            "<your-access-key-id>",
-            "<your-access-key-secret>");
-        DefaultAcsClient client = new DefaultAcsClient(profile);
-
-        try
-        {
-            // Create the request
-            DescribeInstancesRequest request = new DescribeInstancesRequest();
-            request.PageSize = 10;
-
-            // Initiate the request and get the response
-            DescribeInstancesResponse response = client.GetAcsResponse(request);
-            System.Console.WriteLine(response.TotalCount);
-        }
-        catch (ServerException ex)
-        {
-            System.Console.WriteLine(ex.ToString());
-        }
-        catch (ClientException ex)
-        {
-            System.Console.WriteLine(ex.ToString());
-        }
-    }
-}
-```
-
-### Use BearerToken to invoke [CCC](https://www.nuget.org/packages/aliyun-net-sdk-ccc/) Product
-
-You should install the relative Nuget Package, as it said before, when you are running the test demo in your local machine.
-
-```csharp
-using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Profile;
-using Aliyun.Acs.Core.Exceptions;
-using Aliyun.Acs.CCC.Model.V20170705;
-
-class TestProgram
-{
-    static void Main(string[] args)
-    {
-        // Create a client used for initiating a request
-        IClientProfile profile = DefaultProfile.GetProfile("<your-region-id>");
-        BearerTokenCredential bearerTokenCredential = new BearerTokenCredential("<your-bearertoken>");
-
-        DefaultAcsClient client = new DefaultAcsClient(profile, bearerTokenCredential);
-
-        try
-        {
-            // Create the request
-            ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
-
-            // Initiate the request and get the response
-            var response = client.GetAcsResponse(request);
-            
-            //Do something as you want below
-        }
-        catch (ServerException ex)
-        {
-            System.Console.WriteLine(ex.ToString());
-        }
-        catch (ClientException ex)
-        {
-            System.Console.WriteLine(ex.ToString());
-        }
-    }
-}
-```
-
-## Debugging
-
-If there exist an environment variable `DEBUG=sdk` , all http request/response will work in debug mode.
-
-## Timeout
-
-* Connect Time refers to the TCP connection establishment time from the SDK side to the server side;
-
-* Read Time refers to the time after the connection is established, the SDK sends a request (request) to the completion of the response end (response end);
-  
-**Priority:** Request Settings -> Client Settings -> Default Settings, the priority is decremented.
-
-The default Connect Timeout is 5 seconds and the default Read Timeout is 10 seconds.
-
-```csharp
-IClientProfile profile = DefaultProfile.GetProfile(
-            "<your-region-id>",
-            "<your-access-key-id>",
-            "<your-access-key-secret>");
-
-// Client level timeout setting, valid for all current requests
-DefaultAcsClient client = new DefaultAcsClient(profile);
-client.SetConnectTimeoutInMilliSeconds(1024);
-client.SetReadTimeoutInMilliSeconds(2048);
-
-// Request level timeout setting Take ECS DescribeInstancesRequest as an example, only valid for current request request
-DescribeInstancesRequest request = new DescribeInstancesRequest();
-request.SetConnectTimeoutInMilliSeconds(1024);
-request.SetReadTimeoutInMilliSeconds(2048);
-```
-
-## Ignore HTTPS certificate verification
-
-When you want to turn off the verification of the HTTPS certificate on the client, you can set it at the Client or Request level.
-
-```c#
-//  Client level certificate ignores verification
-client.SetHttpsInsecure(true);
-
-// Request level certificate ignores verification
-request.SetHttpsInsecure(true);
-```
-
-## Http Proxy
-
-If you want to use the http, https proxy or proxy whitelist, you can set the environment variables HTTP_PROXY , HTTPS_PROXY and NO_PROXY , or you can configure them via the client.
-
-```c#
-//Client priority is higher than environment variable
-
-//Set up the http proxy
-client.SetHttpProxy("http://localhost.com");
-//Get http proxy
-client.GetHttpProxy();
-
-//Set up the https proxy
-client.SetHttpsProxy("https://localhost.com");
-client.SetHttpsProxy("http://username:password@localhost.com:10");
-//Get https proxy
-client.GetHttpsProxy();
-
-//Set proxy whitelist
-client.SetNoProxy("localhost.com,localtest.com");
-//Get the agent white list
-client.GetNoProxy();
-```
-
-## .NET OpenAPI Explorer
-
-You can see the product code examples you are using in the [OpenAPI Explorer](https://api.aliyun.com/#/?product=Ecs&api=DescribeAccessPoints&params={}&tab=DEMO&lang=CSHARP).
+## License
+[Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
