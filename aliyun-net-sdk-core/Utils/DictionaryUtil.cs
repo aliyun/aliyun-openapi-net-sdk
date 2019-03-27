@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Aliyun.Acs.Core.Utils
 {
@@ -66,6 +67,11 @@ namespace Aliyun.Acs.Core.Utils
                 System.Console.WriteLine("{0} {1}: {2}", str, item.Key, item.Value);
             }
             System.Console.WriteLine();
+        }
+
+        public static string TransformDicToString(Dictionary<string, string> dic)
+        {
+            return string.Join(";", dic.Select(x => x.Key + "=" + x.Value));
         }
     }
 }

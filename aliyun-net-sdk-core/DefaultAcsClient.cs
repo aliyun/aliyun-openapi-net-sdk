@@ -119,6 +119,11 @@ namespace Aliyun.Acs.Core
 
         private T ParseAcsResponse<T>(AcsRequest<T> request, HttpResponse httpResponse) where T : AcsResponse
         {
+            if (SerilogHelper.EnableLogger)
+            {
+                SerilogHelper.OutputLogInfo(request, httpResponse, SerilogHelper.ExecuteTime, SerilogHelper.StartTime);
+            }
+
             FormatType? format = httpResponse.ContentType;
 
             if (httpResponse.isSuccess())
@@ -235,6 +240,10 @@ namespace Aliyun.Acs.Core
         public virtual HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
             AlibabaCloudCredentials credentials, Signer signer, FormatType? format, List<Endpoint> endpoints) where T : AcsResponse
         {
+            SerilogHelper.StartTime = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
+
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
             FormatType? requestFormatType = request.AcceptFormat;
             if (null != requestFormatType)
             {
@@ -284,7 +293,8 @@ namespace Aliyun.Acs.Core
                 {
                     continue;
                 }
-
+                watch.Stop();
+                SerilogHelper.ExecuteTime = watch.ElapsedMilliseconds;
                 return response;
             }
 
@@ -494,6 +504,16 @@ namespace Aliyun.Acs.Core
                     httpRequest.WebProxy = new WebProxy(finalProxyUri, false, noProxy);
                 }
             }
+        }
+
+        public void SetLogger(string logPath)
+        {
+            SerilogHelper.SetLogger(logPath);
+        }
+
+        public void SetLoggerTemplate(string template)
+        {
+            SerilogHelper.SetLoggerFormat(template);
         }
     }
 }
