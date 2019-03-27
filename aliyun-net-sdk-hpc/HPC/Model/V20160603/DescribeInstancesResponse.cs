@@ -16,17 +16,32 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.HPC.Model.V20160603
 {
 	public class DescribeInstancesResponse : AcsResponse
 	{
 
-		private List<Instance> instances;
+		private string requestId;
 
-		public List<Instance> Instances
+		private List<DescribeInstances_Instance> instances;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeInstances_Instance> Instances
 		{
 			get
 			{
@@ -38,19 +53,20 @@ namespace Aliyun.Acs.HPC.Model.V20160603
 			}
 		}
 
-		public class Instance{
+		public class DescribeInstances_Instance
+		{
 
 			private string instanceId;
 
-			private InstanceTypeEnum? instanceType;
+			private string instanceType;
 
-			private PackageIdEnum? packageId;
+			private string packageId;
 
-			private StatusEnum? status;
+			private string status;
 
 			private string innerIpAddress;
 
-			private JumpserverStatusEnum? jumpserverStatus;
+			private string jumpserverStatus;
 
 			private string jumpserverInnerIpAddress;
 
@@ -68,7 +84,7 @@ namespace Aliyun.Acs.HPC.Model.V20160603
 				}
 			}
 
-			public InstanceTypeEnum? InstanceType
+			public string InstanceType
 			{
 				get
 				{
@@ -80,7 +96,7 @@ namespace Aliyun.Acs.HPC.Model.V20160603
 				}
 			}
 
-			public PackageIdEnum? PackageId
+			public string PackageId
 			{
 				get
 				{
@@ -92,7 +108,7 @@ namespace Aliyun.Acs.HPC.Model.V20160603
 				}
 			}
 
-			public StatusEnum? Status
+			public string Status
 			{
 				get
 				{
@@ -116,7 +132,7 @@ namespace Aliyun.Acs.HPC.Model.V20160603
 				}
 			}
 
-			public JumpserverStatusEnum? JumpserverStatus
+			public string JumpserverStatus
 			{
 				get
 				{
@@ -150,35 +166,6 @@ namespace Aliyun.Acs.HPC.Model.V20160603
 				{
 					jumpServerPublicIpAddress = value;
 				}
-			}
-
-			public enum InstanceTypeEnum {
-			
-					PREPAY,
-					POSTPAY,
-			}
-
-			public enum PackageIdEnum {
-			
-					G4,
-					G2,
-			}
-
-			public enum StatusEnum {
-			
-					STOPPED,
-					STOPPING,
-					RUNNING,
-					OFFLINE,
-					STARTING,
-			}
-
-			public enum JumpserverStatusEnum {
-			
-					STOPPED,
-					STOPPING,
-					RUNNING,
-					STARTING,
 			}
 		}
 	}

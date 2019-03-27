@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.HPC.Model.V20160603;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.HPC.Model.V20160603;
 
 namespace Aliyun.Acs.HPC.Transform.V20160603
 {
@@ -32,21 +33,21 @@ namespace Aliyun.Acs.HPC.Transform.V20160603
 			describeInstancesResponse.HttpResponse = context.HttpResponse;
 			describeInstancesResponse.RequestId = context.StringValue("DescribeInstances.RequestId");
 
-			List<DescribeInstancesResponse.Instance> instances = new List<DescribeInstancesResponse.Instance>();
+			List<DescribeInstancesResponse.DescribeInstances_Instance> describeInstancesResponse_instances = new List<DescribeInstancesResponse.DescribeInstances_Instance>();
 			for (int i = 0; i < context.Length("DescribeInstances.Instances.Length"); i++) {
-				DescribeInstancesResponse.Instance instance = new DescribeInstancesResponse.Instance();
+				DescribeInstancesResponse.DescribeInstances_Instance instance = new DescribeInstancesResponse.DescribeInstances_Instance();
 				instance.InstanceId = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceId");
-				instance.InstanceType = context.EnumValue<DescribeInstancesResponse.Instance.InstanceTypeEnum>("DescribeInstances.Instances["+ i +"].InstanceType");
-				instance.PackageId = context.EnumValue<DescribeInstancesResponse.Instance.PackageIdEnum>("DescribeInstances.Instances["+ i +"].PackageId");
-				instance.Status = context.EnumValue<DescribeInstancesResponse.Instance.StatusEnum>("DescribeInstances.Instances["+ i +"].Status");
+				instance.InstanceType = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceType");
+				instance.PackageId = context.StringValue("DescribeInstances.Instances["+ i +"].PackageId");
+				instance.Status = context.StringValue("DescribeInstances.Instances["+ i +"].Status");
 				instance.InnerIpAddress = context.StringValue("DescribeInstances.Instances["+ i +"].InnerIpAddress");
-				instance.JumpserverStatus = context.EnumValue<DescribeInstancesResponse.Instance.JumpserverStatusEnum>("DescribeInstances.Instances["+ i +"].JumpserverStatus");
+				instance.JumpserverStatus = context.StringValue("DescribeInstances.Instances["+ i +"].JumpserverStatus");
 				instance.JumpserverInnerIpAddress = context.StringValue("DescribeInstances.Instances["+ i +"].JumpserverInnerIpAddress");
 				instance.JumpServerPublicIpAddress = context.StringValue("DescribeInstances.Instances["+ i +"].JumpServerPublicIpAddress");
 
-				instances.Add(instance);
+				describeInstancesResponse_instances.Add(instance);
 			}
-			describeInstancesResponse.Instances = instances;
+			describeInstancesResponse.Instances = describeInstancesResponse_instances;
         
 			return describeInstancesResponse;
         }

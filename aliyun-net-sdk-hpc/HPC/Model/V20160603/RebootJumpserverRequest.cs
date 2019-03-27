@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.HPC.Transform;
 using Aliyun.Acs.HPC.Transform.V20160603;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.HPC.Model.V20160603
 {
@@ -34,24 +35,15 @@ namespace Aliyun.Acs.HPC.Model.V20160603
 			Method = MethodType.POST;
         }
 
-		private string tOKEN;
-
 		private string instanceId;
+
+		private string regionId;
+
+		private string action;
 
 		private int? force;
 
-		public string TOKEN
-		{
-			get
-			{
-				return tOKEN;
-			}
-			set	
-			{
-				tOKEN = value;
-				DictionaryUtil.Add(QueryParameters, "TOKEN", value);
-			}
-		}
+		private string tOKEN;
 
 		public string InstanceId
 		{
@@ -63,6 +55,32 @@ namespace Aliyun.Acs.HPC.Model.V20160603
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -79,7 +97,20 @@ namespace Aliyun.Acs.HPC.Model.V20160603
 			}
 		}
 
-        public override RebootJumpserverResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string TOKEN
+		{
+			get
+			{
+				return tOKEN;
+			}
+			set	
+			{
+				tOKEN = value;
+				DictionaryUtil.Add(QueryParameters, "TOKEN", value);
+			}
+		}
+
+        public override RebootJumpserverResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return RebootJumpserverResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
