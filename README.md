@@ -17,7 +17,7 @@ English | [简体中文](./README-CN.md)
 </p>
 
 
-The Alibaba Cloud Client for C# (SDK) allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
+The Alibaba Cloud SDK for C# allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
 
 
 ## Online Demo
@@ -25,13 +25,13 @@ The Alibaba Cloud Client for C# (SDK) allows you to access Alibaba Cloud service
 
 
 ## Requirements
-- The Alibaba Cloud C# SDK is requires：
+- The Alibaba Cloud SDK for C# requires：
     - **`.NET Framework 4.6.1`** or later
     - **`.NET Standard 2.0`** or later
 
 
 ## Installation
-You must install the SDK core Nuget Package for any SDK you use. For example, to call the ECS product, you must install both the [ECS Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-ecs/) and the [SDK core Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-core/).
+You must install the SDK core Nuget Package for any SDK you use. For example, to call the ECS product, you must install both the [ECS Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-ecs/) and the [SDK Core Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-core/).
 
 Use Package Manager
 
@@ -45,12 +45,12 @@ Use .NET CLI
 
 
 ## Quick Examples
-Before you begin, you need to sign up for an Alibaba Cloud account and retrieve your [Credentials](https://usercenter.console.aliyun.com/#/manage/ak).
->**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
+At the beginning, you need to sign up for an Alibaba Cloud account and retrieve your [Credentials](https://usercenter.console.aliyun.com/#/manage/ak).
+>**Note:** To increase the security of your account, we recommend that you can use the AccessKey of the RAM user to access Alibaba Cloud services.
 
 ### Initiate a call
 
-The following code example shows the three main steps to use the Alibaba Cloud C# SDK:
+The following code examples show three main steps to use the Alibaba Cloud SDK for C#:
 
 - Create and initialize a DefaultAcsClient instance.
 
@@ -98,7 +98,7 @@ class Program
 ```
 
 ### Use BearerToken to invoke [CCC](https://www.nuget.org/packages/aliyun-net-sdk-ccc/) Product
-You should install the relative Nuget Package, as it said before, when you are running the test demo in your local machine.
+You should install the relative Nuget Package when you are running the test demo in your local machine.
 
 ```csharp
 using Aliyun.Acs.Core;
