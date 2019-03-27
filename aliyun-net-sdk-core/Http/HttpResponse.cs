@@ -34,6 +34,8 @@ namespace Aliyun.Acs.Core.Http
 
         public int Status { get; set; }
 
+        public string HttpVersion { get; set; }
+
         public HttpResponse(string strUrl) : base(strUrl) { }
 
         public HttpResponse() { }
@@ -51,6 +53,7 @@ namespace Aliyun.Acs.Core.Http
             httpResponse.Status = (int) httpWebResponse.StatusCode;
             httpResponse.Headers = new Dictionary<string, string>();
             httpResponse.Method = ParameterHelper.StringToMethodType(httpWebResponse.Method);
+            httpResponse.HttpVersion = httpWebResponse.ProtocolVersion.ToString();
 
             foreach (var key in httpWebResponse.Headers.AllKeys)
             {
