@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Green.Transform;
 using Aliyun.Acs.Green.Transform.V20180509;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Green.Model.V20180509
 {
@@ -65,7 +66,7 @@ namespace Aliyun.Acs.Green.Model.V20180509
 			}
 		}
 
-        public override GetFacesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetFacesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetFacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
