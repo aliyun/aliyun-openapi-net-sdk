@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ons.Model.V20190214;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ons.Model.V20190214;
 
 namespace Aliyun.Acs.Ons.Transform.V20190214
 {
@@ -40,7 +41,7 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 				publishInfoDo.Owner = context.StringValue("OnsTopicList.Data["+ i +"].Owner");
 				publishInfoDo.Relation = context.IntegerValue("OnsTopicList.Data["+ i +"].Relation");
 				publishInfoDo.RelationName = context.StringValue("OnsTopicList.Data["+ i +"].RelationName");
-				publishInfoDo.UpdateTime = context.LongValue("OnsTopicList.Data["+ i +"].UpdateTime");
+				publishInfoDo.CreateTime = context.LongValue("OnsTopicList.Data["+ i +"].CreateTime");
 				publishInfoDo.Remark = context.StringValue("OnsTopicList.Data["+ i +"].Remark");
 				publishInfoDo.MessageType = context.IntegerValue("OnsTopicList.Data["+ i +"].MessageType");
 				publishInfoDo.InstanceId = context.StringValue("OnsTopicList.Data["+ i +"].InstanceId");

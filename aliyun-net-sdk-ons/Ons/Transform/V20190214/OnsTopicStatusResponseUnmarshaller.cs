@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ons.Model.V20190214;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ons.Model.V20190214;
 
 namespace Aliyun.Acs.Ons.Transform.V20190214
 {
@@ -36,6 +37,7 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			OnsTopicStatusResponse.OnsTopicStatus_Data data = new OnsTopicStatusResponse.OnsTopicStatus_Data();
 			data.TotalCount = context.LongValue("OnsTopicStatus.Data.TotalCount");
 			data.LastTimeStamp = context.LongValue("OnsTopicStatus.Data.LastTimeStamp");
+			data.Perm = context.IntegerValue("OnsTopicStatus.Data.Perm");
 			onsTopicStatusResponse.Data = data;
         
 			return onsTopicStatusResponse;

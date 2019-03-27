@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ons.Transform;
 using Aliyun.Acs.Ons.Transform.V20190214;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ons.Model.V20190214
 {
@@ -153,7 +154,7 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			}
 		}
 
-        public override OnsTrendGroupOutputTpsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override OnsTrendGroupOutputTpsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return OnsTrendGroupOutputTpsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

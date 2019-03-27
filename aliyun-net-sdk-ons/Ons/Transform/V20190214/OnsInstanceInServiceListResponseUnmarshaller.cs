@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ons.Model.V20190214;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ons.Model.V20190214;
 
 namespace Aliyun.Acs.Ons.Transform.V20190214
 {
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 				instanceVO.ReleaseTime = context.LongValue("OnsInstanceInServiceList.Data["+ i +"].ReleaseTime");
 				instanceVO.InstanceType = context.IntegerValue("OnsInstanceInServiceList.Data["+ i +"].InstanceType");
 				instanceVO.InstanceName = context.StringValue("OnsInstanceInServiceList.Data["+ i +"].InstanceName");
+				instanceVO.IndependentNaming = context.BooleanValue("OnsInstanceInServiceList.Data["+ i +"].IndependentNaming");
 
 				onsInstanceInServiceListResponse_data.Add(instanceVO);
 			}

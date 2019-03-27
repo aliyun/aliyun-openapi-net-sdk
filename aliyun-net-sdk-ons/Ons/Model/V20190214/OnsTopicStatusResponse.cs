@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ons.Model.V20190214
 {
@@ -73,6 +74,8 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private long? lastTimeStamp;
 
+			private int? perm;
+
 			public long? TotalCount
 			{
 				get
@@ -94,6 +97,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					lastTimeStamp = value;
+				}
+			}
+
+			public int? Perm
+			{
+				get
+				{
+					return perm;
+				}
+				set	
+				{
+					perm = value;
 				}
 			}
 		}

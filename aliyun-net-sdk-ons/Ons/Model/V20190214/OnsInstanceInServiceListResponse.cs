@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ons.Model.V20190214
 {
@@ -79,6 +80,8 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private string instanceName;
 
+			private bool? independentNaming;
+
 			public string InstanceId
 			{
 				get
@@ -136,6 +139,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					instanceName = value;
+				}
+			}
+
+			public bool? IndependentNaming
+			{
+				get
+				{
+					return independentNaming;
+				}
+				set	
+				{
+					independentNaming = value;
 				}
 			}
 		}

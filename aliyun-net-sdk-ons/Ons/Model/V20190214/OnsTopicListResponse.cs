@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ons.Model.V20190214
 {
@@ -77,7 +78,7 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private string relationName;
 
-			private long? updateTime;
+			private long? createTime;
 
 			private string remark;
 
@@ -135,15 +136,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				}
 			}
 
-			public long? UpdateTime
+			public long? CreateTime
 			{
 				get
 				{
-					return updateTime;
+					return createTime;
 				}
 				set	
 				{
-					updateTime = value;
+					createTime = value;
 				}
 			}
 

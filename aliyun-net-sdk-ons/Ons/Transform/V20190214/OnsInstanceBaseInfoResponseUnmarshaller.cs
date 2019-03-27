@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ons.Model.V20190214;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ons.Model.V20190214;
 
 namespace Aliyun.Acs.Ons.Transform.V20190214
 {
@@ -39,6 +40,7 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			instanceBaseInfo.ReleaseTime = context.LongValue("OnsInstanceBaseInfo.InstanceBaseInfo.ReleaseTime");
 			instanceBaseInfo.InstanceType = context.IntegerValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceType");
 			instanceBaseInfo.InstanceName = context.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceName");
+			instanceBaseInfo.IndependentNaming = context.BooleanValue("OnsInstanceBaseInfo.InstanceBaseInfo.IndependentNaming");
 
 			OnsInstanceBaseInfoResponse.OnsInstanceBaseInfo_InstanceBaseInfo.OnsInstanceBaseInfo_Endpoints endpoints = new OnsInstanceBaseInfoResponse.OnsInstanceBaseInfo_InstanceBaseInfo.OnsInstanceBaseInfo_Endpoints();
 			endpoints.TcpEndpoint = context.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.TcpEndpoint");
