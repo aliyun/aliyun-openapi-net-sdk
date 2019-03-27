@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20171016
 {
@@ -73,6 +74,8 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 
 			private string instanceName;
 
+			private string groupName;
+
 			public string SubDbName
 			{
 				get
@@ -94,6 +97,18 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 				set	
 				{
 					instanceName = value;
+				}
+			}
+
+			public string GroupName
+			{
+				get
+				{
+					return groupName;
+				}
+				set	
+				{
+					groupName = value;
 				}
 			}
 		}

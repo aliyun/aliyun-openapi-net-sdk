@@ -27,46 +27,37 @@ using Aliyun.Acs.Drds.Transform.V20171016;
 
 namespace Aliyun.Acs.Drds.Model.V20171016
 {
-    public class QueryInstanceInfoByConnRequest : RpcAcsRequest<QueryInstanceInfoByConnResponse>
+    public class DescribeDrdsInstanceDbMonitorRequest : RpcAcsRequest<DescribeDrdsInstanceDbMonitorResponse>
     {
-        public QueryInstanceInfoByConnRequest()
-            : base("Drds", "2017-10-16", "QueryInstanceInfoByConn")
+        public DescribeDrdsInstanceDbMonitorRequest()
+            : base("Drds", "2017-10-16", "DescribeDrdsInstanceDbMonitor")
         {
         }
 
-		private int? port;
-
-		private string host;
+		private string dbName;
 
 		private string action;
 
-		private string userName;
+		private long? endTime;
+
+		private long? startTime;
+
+		private string drdsInstanceId;
+
+		private string key;
 
 		private string accessKeyId;
 
-		public int? Port
+		public string DbName
 		{
 			get
 			{
-				return port;
+				return dbName;
 			}
 			set	
 			{
-				port = value;
-				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
-			}
-		}
-
-		public string Host
-		{
-			get
-			{
-				return host;
-			}
-			set	
-			{
-				host = value;
-				DictionaryUtil.Add(QueryParameters, "Host", value);
+				dbName = value;
+				DictionaryUtil.Add(QueryParameters, "DbName", value);
 			}
 		}
 
@@ -83,16 +74,55 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 			}
 		}
 
-		public string UserName
+		public long? EndTime
 		{
 			get
 			{
-				return userName;
+				return endTime;
 			}
 			set	
 			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string DrdsInstanceId
+		{
+			get
+			{
+				return drdsInstanceId;
+			}
+			set	
+			{
+				drdsInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DrdsInstanceId", value);
+			}
+		}
+
+		public string Key
+		{
+			get
+			{
+				return key;
+			}
+			set	
+			{
+				key = value;
+				DictionaryUtil.Add(QueryParameters, "Key", value);
 			}
 		}
 
@@ -109,9 +139,9 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 			}
 		}
 
-        public override QueryInstanceInfoByConnResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDrdsInstanceDbMonitorResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryInstanceInfoByConnResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDrdsInstanceDbMonitorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

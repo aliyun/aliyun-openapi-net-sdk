@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Drds.Model.V20171016
 {
-	public class CreateDrdsInstanceResponse : AcsResponse
+	public class DescribeDrdsInstanceDbMonitorResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private CreateDrdsInstance_Data data;
+		private List<DescribeDrdsInstanceDbMonitor_PartialPerformanceData> data;
 
 		public string RequestId
 		{
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 			}
 		}
 
-		public CreateDrdsInstance_Data Data
+		public List<DescribeDrdsInstanceDbMonitor_PartialPerformanceData> Data
 		{
 			get
 			{
@@ -67,34 +67,80 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 			}
 		}
 
-		public class CreateDrdsInstance_Data
+		public class DescribeDrdsInstanceDbMonitor_PartialPerformanceData
 		{
 
-			private long? orderId;
+			private string key;
 
-			private List<string> drdsInstanceIdList;
+			private string unit;
 
-			public long? OrderId
+			private List<DescribeDrdsInstanceDbMonitor_PerformanceValue> values;
+
+			public string Key
 			{
 				get
 				{
-					return orderId;
+					return key;
 				}
 				set	
 				{
-					orderId = value;
+					key = value;
 				}
 			}
 
-			public List<string> DrdsInstanceIdList
+			public string Unit
 			{
 				get
 				{
-					return drdsInstanceIdList;
+					return unit;
 				}
 				set	
 				{
-					drdsInstanceIdList = value;
+					unit = value;
+				}
+			}
+
+			public List<DescribeDrdsInstanceDbMonitor_PerformanceValue> Values
+			{
+				get
+				{
+					return values;
+				}
+				set	
+				{
+					values = value;
+				}
+			}
+
+			public class DescribeDrdsInstanceDbMonitor_PerformanceValue
+			{
+
+				private long? date;
+
+				private string _value;
+
+				public long? Date
+				{
+					get
+					{
+						return date;
+					}
+					set	
+					{
+						date = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

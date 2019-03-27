@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Drds.Model.V20171016;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Drds.Model.V20171016;
 
 namespace Aliyun.Acs.Drds.Transform.V20171016
 {
@@ -38,6 +39,7 @@ namespace Aliyun.Acs.Drds.Transform.V20171016
 				DescribeShardDBsResponse.DescribeShardDBs_DbIntancePair dbIntancePair = new DescribeShardDBsResponse.DescribeShardDBs_DbIntancePair();
 				dbIntancePair.SubDbName = context.StringValue("DescribeShardDBs.Data["+ i +"].SubDbName");
 				dbIntancePair.InstanceName = context.StringValue("DescribeShardDBs.Data["+ i +"].InstanceName");
+				dbIntancePair.GroupName = context.StringValue("DescribeShardDBs.Data["+ i +"].GroupName");
 
 				describeShardDBsResponse_data.Add(dbIntancePair);
 			}

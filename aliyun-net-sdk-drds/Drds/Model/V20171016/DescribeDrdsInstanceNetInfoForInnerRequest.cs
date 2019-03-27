@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Drds.Transform;
 using Aliyun.Acs.Drds.Transform.V20171016;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Drds.Model.V20171016
 {
@@ -78,7 +79,7 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 			}
 		}
 
-        public override DescribeDrdsInstanceNetInfoForInnerResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDrdsInstanceNetInfoForInnerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDrdsInstanceNetInfoForInnerResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

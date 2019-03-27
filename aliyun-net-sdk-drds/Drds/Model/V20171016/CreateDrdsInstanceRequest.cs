@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Drds.Transform;
 using Aliyun.Acs.Drds.Transform.V20171016;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Drds.Model.V20171016
 {
@@ -33,7 +34,11 @@ namespace Aliyun.Acs.Drds.Model.V20171016
         {
         }
 
+		private bool? isAutoRenew;
+
 		private int? quantity;
+
+		private string clientToken;
 
 		private string description;
 
@@ -44,6 +49,8 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 		private string accessKeyId;
 
 		private string vswitchId;
+
+		private int? duration;
 
 		private bool? isHa;
 
@@ -59,6 +66,21 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 
 		private string payType;
 
+		private string pricingCycle;
+
+		public bool? IsAutoRenew
+		{
+			get
+			{
+				return isAutoRenew;
+			}
+			set	
+			{
+				isAutoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "IsAutoRenew", value.ToString());
+			}
+		}
+
 		public int? Quantity
 		{
 			get
@@ -69,6 +91,19 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 			{
 				quantity = value;
 				DictionaryUtil.Add(QueryParameters, "Quantity", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -137,6 +172,19 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 			}
 		}
 
+		public int? Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
+				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
+			}
+		}
+
 		public bool? IsHa
 		{
 			get
@@ -146,7 +194,7 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 			set	
 			{
 				isHa = value;
-				DictionaryUtil.Add(QueryParameters, "isHa", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "IsHa", value.ToString());
 			}
 		}
 
@@ -172,7 +220,7 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 			set	
 			{
 				instanceSeries = value;
-				DictionaryUtil.Add(QueryParameters, "instanceSeries", value);
+				DictionaryUtil.Add(QueryParameters, "InstanceSeries", value);
 			}
 		}
 
@@ -228,7 +276,20 @@ namespace Aliyun.Acs.Drds.Model.V20171016
 			}
 		}
 
-        public override CreateDrdsInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string PricingCycle
+		{
+			get
+			{
+				return pricingCycle;
+			}
+			set	
+			{
+				pricingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
+			}
+		}
+
+        public override CreateDrdsInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateDrdsInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
