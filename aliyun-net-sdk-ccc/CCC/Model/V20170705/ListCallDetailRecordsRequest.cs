@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
@@ -33,55 +34,31 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         {
         }
 
-		private string instanceId;
-
-		private string contactDisposition;
-
 		private string contactType;
+
+		private string contactId;
 
 		private string criteria;
 
 		private string phoneNumber;
 
-		private int? pageSize;
-
 		private string orderBy;
 
-		private long? stopTime;
-
 		private long? startTime;
+
+		private long? stopTime;
 
 		private int? pageNumber;
 
 		private string accessKeyId;
 
+		private string instanceId;
+
+		private string contactDisposition;
+
+		private int? pageSize;
+
 		private bool? withRecording;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string ContactDisposition
-		{
-			get
-			{
-				return contactDisposition;
-			}
-			set	
-			{
-				contactDisposition = value;
-				DictionaryUtil.Add(QueryParameters, "ContactDisposition", value);
-			}
-		}
 
 		public string ContactType
 		{
@@ -93,6 +70,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				contactType = value;
 				DictionaryUtil.Add(QueryParameters, "ContactType", value);
+			}
+		}
+
+		public string ContactId
+		{
+			get
+			{
+				return contactId;
+			}
+			set	
+			{
+				contactId = value;
+				DictionaryUtil.Add(QueryParameters, "ContactId", value);
 			}
 		}
 
@@ -122,19 +112,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public string OrderBy
 		{
 			get
@@ -148,19 +125,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public long? StopTime
-		{
-			get
-			{
-				return stopTime;
-			}
-			set	
-			{
-				stopTime = value;
-				DictionaryUtil.Add(QueryParameters, "StopTime", value.ToString());
-			}
-		}
-
 		public long? StartTime
 		{
 			get
@@ -171,6 +135,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public long? StopTime
+		{
+			get
+			{
+				return stopTime;
+			}
+			set	
+			{
+				stopTime = value;
+				DictionaryUtil.Add(QueryParameters, "StopTime", value.ToString());
 			}
 		}
 
@@ -200,6 +177,45 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string ContactDisposition
+		{
+			get
+			{
+				return contactDisposition;
+			}
+			set	
+			{
+				contactDisposition = value;
+				DictionaryUtil.Add(QueryParameters, "ContactDisposition", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public bool? WithRecording
 		{
 			get
@@ -213,7 +229,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-        public override ListCallDetailRecordsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListCallDetailRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ListCallDetailRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
@@ -32,6 +33,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             : base("CCC", "2017-07-05", "CreateUser", "ccc", "openAPI")
         {
         }
+
+		private string privateOutboundNumberId;
 
 		private List<int?> skillLevels;
 
@@ -50,6 +53,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string email;
 
 		private string accessKeyId;
+
+		public string PrivateOutboundNumberId
+		{
+			get
+			{
+				return privateOutboundNumberId;
+			}
+			set	
+			{
+				privateOutboundNumberId = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateOutboundNumberId", value);
+			}
+		}
 
 		public List<int?> SkillLevels
 		{
@@ -180,7 +196,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-        public override CreateUserResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateUserResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

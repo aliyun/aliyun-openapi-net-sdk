@@ -1,0 +1,204 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC.Transform;
+using Aliyun.Acs.CCC.Transform.V20170705;
+
+namespace Aliyun.Acs.CCC.Model.V20170705
+{
+    public class CreateInstanceRequest : RpcAcsRequest<CreateInstanceResponse>
+    {
+        public CreateInstanceRequest()
+            : base("CCC", "2017-07-05", "CreateInstance", "ccc", "openAPI")
+        {
+        }
+
+		private List<string> userObjects;
+
+		private string name;
+
+		private string domainName;
+
+		private List<string> phoneNumbers;
+
+		private string description;
+
+		private int? storageMaxDays;
+
+		private int? storageMaxSize;
+
+		private string directoryId;
+
+		private List<string> adminRamIds;
+
+		private string accessKeyId;
+
+		public List<string> UserObjects
+		{
+			get
+			{
+				return userObjects;
+			}
+
+			set
+			{
+				userObjects = value;
+				for (int i = 0; i < userObjects.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"UserObject." + (i + 1) , userObjects[i]);
+				}
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public List<string> PhoneNumbers
+		{
+			get
+			{
+				return phoneNumbers;
+			}
+
+			set
+			{
+				phoneNumbers = value;
+				for (int i = 0; i < phoneNumbers.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"PhoneNumber." + (i + 1) , phoneNumbers[i]);
+				}
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public int? StorageMaxDays
+		{
+			get
+			{
+				return storageMaxDays;
+			}
+			set	
+			{
+				storageMaxDays = value;
+				DictionaryUtil.Add(QueryParameters, "StorageMaxDays", value.ToString());
+			}
+		}
+
+		public int? StorageMaxSize
+		{
+			get
+			{
+				return storageMaxSize;
+			}
+			set	
+			{
+				storageMaxSize = value;
+				DictionaryUtil.Add(QueryParameters, "StorageMaxSize", value.ToString());
+			}
+		}
+
+		public string DirectoryId
+		{
+			get
+			{
+				return directoryId;
+			}
+			set	
+			{
+				directoryId = value;
+				DictionaryUtil.Add(QueryParameters, "DirectoryId", value);
+			}
+		}
+
+		public List<string> AdminRamIds
+		{
+			get
+			{
+				return adminRamIds;
+			}
+
+			set
+			{
+				adminRamIds = value;
+				for (int i = 0; i < adminRamIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"AdminRamId." + (i + 1) , adminRamIds[i]);
+				}
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+        public override CreateInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        {
+            return CreateInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
+}

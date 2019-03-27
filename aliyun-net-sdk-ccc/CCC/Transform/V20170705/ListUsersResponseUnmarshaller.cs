@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CCC.Model.V20170705;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CCC.Model.V20170705;
 
 namespace Aliyun.Acs.CCC.Transform.V20170705
 {
@@ -48,6 +49,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				user.RamId = context.StringValue("ListUsers.Users.List["+ i +"].RamId");
 				user.InstanceId = context.StringValue("ListUsers.Users.List["+ i +"].InstanceId");
 				user.Primary = context.BooleanValue("ListUsers.Users.List["+ i +"].Primary");
+				user.PrivateOutboundNumberId = context.StringValue("ListUsers.Users.List["+ i +"].PrivateOutboundNumberId");
 
 				ListUsersResponse.ListUsers_Users.ListUsers_User.ListUsers_Detail detail = new ListUsersResponse.ListUsers_Users.ListUsers_User.ListUsers_Detail();
 				detail.LoginName = context.StringValue("ListUsers.Users.List["+ i +"].Detail.LoginName");

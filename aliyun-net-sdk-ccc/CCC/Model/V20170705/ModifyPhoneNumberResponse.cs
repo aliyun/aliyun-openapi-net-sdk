@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
@@ -129,6 +130,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 			private int? trunks;
 
+			private List<ModifyPhoneNumber_SkillGroup> skillGroups;
+
 			private ModifyPhoneNumber_ContactFlow contactFlow;
 
 			public string PhoneNumberId
@@ -239,6 +242,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
+			public List<ModifyPhoneNumber_SkillGroup> SkillGroups
+			{
+				get
+				{
+					return skillGroups;
+				}
+				set	
+				{
+					skillGroups = value;
+				}
+			}
+
 			public ModifyPhoneNumber_ContactFlow ContactFlow
 			{
 				get
@@ -248,6 +263,38 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				set	
 				{
 					contactFlow = value;
+				}
+			}
+
+			public class ModifyPhoneNumber_SkillGroup
+			{
+
+				private string skillGroupId;
+
+				private string skillGroupName;
+
+				public string SkillGroupId
+				{
+					get
+					{
+						return skillGroupId;
+					}
+					set	
+					{
+						skillGroupId = value;
+					}
+				}
+
+				public string SkillGroupName
+				{
+					get
+					{
+						return skillGroupName;
+					}
+					set	
+					{
+						skillGroupName = value;
+					}
 				}
 			}
 

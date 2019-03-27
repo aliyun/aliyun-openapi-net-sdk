@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
@@ -133,7 +134,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 			private string city;
 
+			private string assignee;
+
+			private List<ListPhoneNumbers_SkillGroup> skillGroups;
+
 			private ListPhoneNumbers_ContactFlow contactFlow;
+
+			private ListPhoneNumbers_PrivacyNumber privacyNumber;
 
 			public string PhoneNumberId
 			{
@@ -267,6 +274,30 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
+			public string Assignee
+			{
+				get
+				{
+					return assignee;
+				}
+				set	
+				{
+					assignee = value;
+				}
+			}
+
+			public List<ListPhoneNumbers_SkillGroup> SkillGroups
+			{
+				get
+				{
+					return skillGroups;
+				}
+				set	
+				{
+					skillGroups = value;
+				}
+			}
+
 			public ListPhoneNumbers_ContactFlow ContactFlow
 			{
 				get
@@ -276,6 +307,50 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				set	
 				{
 					contactFlow = value;
+				}
+			}
+
+			public ListPhoneNumbers_PrivacyNumber PrivacyNumber
+			{
+				get
+				{
+					return privacyNumber;
+				}
+				set	
+				{
+					privacyNumber = value;
+				}
+			}
+
+			public class ListPhoneNumbers_SkillGroup
+			{
+
+				private string skillGroupId;
+
+				private string skillGroupName;
+
+				public string SkillGroupId
+				{
+					get
+					{
+						return skillGroupId;
+					}
+					set	
+					{
+						skillGroupId = value;
+					}
+				}
+
+				public string SkillGroupName
+				{
+					get
+					{
+						return skillGroupName;
+					}
+					set	
+					{
+						skillGroupName = value;
+					}
 				}
 			}
 
@@ -349,6 +424,136 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						type = value;
+					}
+				}
+			}
+
+			public class ListPhoneNumbers_PrivacyNumber
+			{
+
+				private string poolId;
+
+				private string type;
+
+				private string telX;
+
+				private string poolName;
+
+				private string phoneNumber;
+
+				private string extra;
+
+				private string bizId;
+
+				private string subId;
+
+				private string regionNameCity;
+
+				public string PoolId
+				{
+					get
+					{
+						return poolId;
+					}
+					set	
+					{
+						poolId = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string TelX
+				{
+					get
+					{
+						return telX;
+					}
+					set	
+					{
+						telX = value;
+					}
+				}
+
+				public string PoolName
+				{
+					get
+					{
+						return poolName;
+					}
+					set	
+					{
+						poolName = value;
+					}
+				}
+
+				public string PhoneNumber
+				{
+					get
+					{
+						return phoneNumber;
+					}
+					set	
+					{
+						phoneNumber = value;
+					}
+				}
+
+				public string Extra
+				{
+					get
+					{
+						return extra;
+					}
+					set	
+					{
+						extra = value;
+					}
+				}
+
+				public string BizId
+				{
+					get
+					{
+						return bizId;
+					}
+					set	
+					{
+						bizId = value;
+					}
+				}
+
+				public string SubId
+				{
+					get
+					{
+						return subId;
+					}
+					set	
+					{
+						subId = value;
+					}
+				}
+
+				public string RegionNameCity
+				{
+					get
+					{
+						return regionNameCity;
+					}
+					set	
+					{
+						regionNameCity = value;
 					}
 				}
 			}

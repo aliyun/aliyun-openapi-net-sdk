@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
@@ -178,6 +179,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private bool? primary;
 
+				private string privateOutboundNumberId;
+
 				private List<ListUsers_Role> roles;
 
 				private List<ListUsers_SkillLevel> skillLevels;
@@ -229,6 +232,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						primary = value;
+					}
+				}
+
+				public string PrivateOutboundNumberId
+				{
+					get
+					{
+						return privateOutboundNumberId;
+					}
+					set	
+					{
+						privateOutboundNumberId = value;
 					}
 				}
 

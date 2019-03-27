@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
@@ -172,13 +173,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private string jobId;
 
-				private string groupId;
+				private string jobGroupId;
 
 				private string scenarioId;
 
 				private string strategyId;
 
 				private int? priority;
+
+				private int? systemPriority;
 
 				private string status;
 
@@ -187,12 +190,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				private string failureReason;
 
 				private List<ListPredictiveJobStatus_Contact> contacts;
-
-				private List<ListPredictiveJobStatus_KeyValuePair> extras;
-
-				private List<ListPredictiveJobStatus_Task> tasks;
-
-				private List<ListPredictiveJobStatus_SummaryItem> summary;
 
 				private List<string> callingNumbers;
 
@@ -208,15 +205,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public string GroupId
+				public string JobGroupId
 				{
 					get
 					{
-						return groupId;
+						return jobGroupId;
 					}
 					set	
 					{
-						groupId = value;
+						jobGroupId = value;
 					}
 				}
 
@@ -253,6 +250,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						priority = value;
+					}
+				}
+
+				public int? SystemPriority
+				{
+					get
+					{
+						return systemPriority;
+					}
+					set	
+					{
+						systemPriority = value;
 					}
 				}
 
@@ -301,42 +310,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						contacts = value;
-					}
-				}
-
-				public List<ListPredictiveJobStatus_KeyValuePair> Extras
-				{
-					get
-					{
-						return extras;
-					}
-					set	
-					{
-						extras = value;
-					}
-				}
-
-				public List<ListPredictiveJobStatus_Task> Tasks
-				{
-					get
-					{
-						return tasks;
-					}
-					set	
-					{
-						tasks = value;
-					}
-				}
-
-				public List<ListPredictiveJobStatus_SummaryItem> Summary
-				{
-					get
-					{
-						return summary;
-					}
-					set	
-					{
-						summary = value;
 					}
 				}
 
@@ -464,456 +437,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 						set	
 						{
 							jobId = value;
-						}
-					}
-				}
-
-				public class ListPredictiveJobStatus_KeyValuePair
-				{
-
-					private string key;
-
-					private string _value;
-
-					public string Key
-					{
-						get
-						{
-							return key;
-						}
-						set	
-						{
-							key = value;
-						}
-					}
-
-					public string _Value
-					{
-						get
-						{
-							return _value;
-						}
-						set	
-						{
-							_value = value;
-						}
-					}
-				}
-
-				public class ListPredictiveJobStatus_Task
-				{
-
-					private string taskId;
-
-					private string jobId;
-
-					private string scenarioId;
-
-					private string chatbotId;
-
-					private long? planedTime;
-
-					private long? actualTime;
-
-					private string callingNumber;
-
-					private string calledNumber;
-
-					private string callId;
-
-					private string status;
-
-					private string brief;
-
-					private int? duration;
-
-					private ListPredictiveJobStatus_Contact1 contact1;
-
-					public string TaskId
-					{
-						get
-						{
-							return taskId;
-						}
-						set	
-						{
-							taskId = value;
-						}
-					}
-
-					public string JobId
-					{
-						get
-						{
-							return jobId;
-						}
-						set	
-						{
-							jobId = value;
-						}
-					}
-
-					public string ScenarioId
-					{
-						get
-						{
-							return scenarioId;
-						}
-						set	
-						{
-							scenarioId = value;
-						}
-					}
-
-					public string ChatbotId
-					{
-						get
-						{
-							return chatbotId;
-						}
-						set	
-						{
-							chatbotId = value;
-						}
-					}
-
-					public long? PlanedTime
-					{
-						get
-						{
-							return planedTime;
-						}
-						set	
-						{
-							planedTime = value;
-						}
-					}
-
-					public long? ActualTime
-					{
-						get
-						{
-							return actualTime;
-						}
-						set	
-						{
-							actualTime = value;
-						}
-					}
-
-					public string CallingNumber
-					{
-						get
-						{
-							return callingNumber;
-						}
-						set	
-						{
-							callingNumber = value;
-						}
-					}
-
-					public string CalledNumber
-					{
-						get
-						{
-							return calledNumber;
-						}
-						set	
-						{
-							calledNumber = value;
-						}
-					}
-
-					public string CallId
-					{
-						get
-						{
-							return callId;
-						}
-						set	
-						{
-							callId = value;
-						}
-					}
-
-					public string Status
-					{
-						get
-						{
-							return status;
-						}
-						set	
-						{
-							status = value;
-						}
-					}
-
-					public string Brief
-					{
-						get
-						{
-							return brief;
-						}
-						set	
-						{
-							brief = value;
-						}
-					}
-
-					public int? Duration
-					{
-						get
-						{
-							return duration;
-						}
-						set	
-						{
-							duration = value;
-						}
-					}
-
-					public ListPredictiveJobStatus_Contact1 Contact1
-					{
-						get
-						{
-							return contact1;
-						}
-						set	
-						{
-							contact1 = value;
-						}
-					}
-
-					public class ListPredictiveJobStatus_Contact1
-					{
-
-						private string contactId;
-
-						private string contactName;
-
-						private string honorific;
-
-						private string role;
-
-						private string phoneNumber;
-
-						private string state;
-
-						private string referenceId;
-
-						private string jobId;
-
-						public string ContactId
-						{
-							get
-							{
-								return contactId;
-							}
-							set	
-							{
-								contactId = value;
-							}
-						}
-
-						public string ContactName
-						{
-							get
-							{
-								return contactName;
-							}
-							set	
-							{
-								contactName = value;
-							}
-						}
-
-						public string Honorific
-						{
-							get
-							{
-								return honorific;
-							}
-							set	
-							{
-								honorific = value;
-							}
-						}
-
-						public string Role
-						{
-							get
-							{
-								return role;
-							}
-							set	
-							{
-								role = value;
-							}
-						}
-
-						public string PhoneNumber
-						{
-							get
-							{
-								return phoneNumber;
-							}
-							set	
-							{
-								phoneNumber = value;
-							}
-						}
-
-						public string State
-						{
-							get
-							{
-								return state;
-							}
-							set	
-							{
-								state = value;
-							}
-						}
-
-						public string ReferenceId
-						{
-							get
-							{
-								return referenceId;
-							}
-							set	
-							{
-								referenceId = value;
-							}
-						}
-
-						public string JobId
-						{
-							get
-							{
-								return jobId;
-							}
-							set	
-							{
-								jobId = value;
-							}
-						}
-					}
-				}
-
-				public class ListPredictiveJobStatus_SummaryItem
-				{
-
-					private string summaryId;
-
-					private string groupId;
-
-					private string jobId;
-
-					private string taskId;
-
-					private string conversationDetailId;
-
-					private string category;
-
-					private string summaryName;
-
-					private string content;
-
-					public string SummaryId
-					{
-						get
-						{
-							return summaryId;
-						}
-						set	
-						{
-							summaryId = value;
-						}
-					}
-
-					public string GroupId
-					{
-						get
-						{
-							return groupId;
-						}
-						set	
-						{
-							groupId = value;
-						}
-					}
-
-					public string JobId
-					{
-						get
-						{
-							return jobId;
-						}
-						set	
-						{
-							jobId = value;
-						}
-					}
-
-					public string TaskId
-					{
-						get
-						{
-							return taskId;
-						}
-						set	
-						{
-							taskId = value;
-						}
-					}
-
-					public string ConversationDetailId
-					{
-						get
-						{
-							return conversationDetailId;
-						}
-						set	
-						{
-							conversationDetailId = value;
-						}
-					}
-
-					public string Category
-					{
-						get
-						{
-							return category;
-						}
-						set	
-						{
-							category = value;
-						}
-					}
-
-					public string SummaryName
-					{
-						get
-						{
-							return summaryName;
-						}
-						set	
-						{
-							summaryName = value;
-						}
-					}
-
-					public string Content
-					{
-						get
-						{
-							return content;
-						}
-						set	
-						{
-							content = value;
 						}
 					}
 				}

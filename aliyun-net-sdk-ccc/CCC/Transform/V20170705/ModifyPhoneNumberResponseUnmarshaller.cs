@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CCC.Model.V20170705;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CCC.Model.V20170705;
 
 namespace Aliyun.Acs.CCC.Transform.V20170705
 {
@@ -54,6 +55,16 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			contactFlow.ContactFlowDescription = context.StringValue("ModifyPhoneNumber.PhoneNumber.ContactFlow.ContactFlowDescription");
 			contactFlow.Type = context.StringValue("ModifyPhoneNumber.PhoneNumber.ContactFlow.Type");
 			phoneNumber.ContactFlow = contactFlow;
+
+			List<ModifyPhoneNumberResponse.ModifyPhoneNumber_PhoneNumber.ModifyPhoneNumber_SkillGroup> phoneNumber_skillGroups = new List<ModifyPhoneNumberResponse.ModifyPhoneNumber_PhoneNumber.ModifyPhoneNumber_SkillGroup>();
+			for (int i = 0; i < context.Length("ModifyPhoneNumber.PhoneNumber.SkillGroups.Length"); i++) {
+				ModifyPhoneNumberResponse.ModifyPhoneNumber_PhoneNumber.ModifyPhoneNumber_SkillGroup skillGroup = new ModifyPhoneNumberResponse.ModifyPhoneNumber_PhoneNumber.ModifyPhoneNumber_SkillGroup();
+				skillGroup.SkillGroupId = context.StringValue("ModifyPhoneNumber.PhoneNumber.SkillGroups["+ i +"].SkillGroupId");
+				skillGroup.SkillGroupName = context.StringValue("ModifyPhoneNumber.PhoneNumber.SkillGroups["+ i +"].SkillGroupName");
+
+				phoneNumber_skillGroups.Add(skillGroup);
+			}
+			phoneNumber.SkillGroups = phoneNumber_skillGroups;
 			modifyPhoneNumberResponse.PhoneNumber = phoneNumber;
         
 			return modifyPhoneNumberResponse;

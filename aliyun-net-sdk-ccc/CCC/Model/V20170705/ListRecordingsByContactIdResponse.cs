@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
@@ -136,6 +137,10 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			private string channel;
 
 			private string instanceId;
+
+			private string qualityCheckTid;
+
+			private string qualityCheckTaskId;
 
 			public string ContactId
 			{
@@ -290,6 +295,30 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				set	
 				{
 					instanceId = value;
+				}
+			}
+
+			public string QualityCheckTid
+			{
+				get
+				{
+					return qualityCheckTid;
+				}
+				set	
+				{
+					qualityCheckTid = value;
+				}
+			}
+
+			public string QualityCheckTaskId
+			{
+				get
+				{
+					return qualityCheckTaskId;
+				}
+				set	
+				{
+					qualityCheckTaskId = value;
 				}
 			}
 		}

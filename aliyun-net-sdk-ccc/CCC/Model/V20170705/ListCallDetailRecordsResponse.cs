@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
@@ -178,6 +179,10 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private int? satisfaction;
 
+				private string satisfactionDesc;
+
+				private string feedback;
+
 				private string contactType;
 
 				private string contactDisposition;
@@ -191,8 +196,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				private string skillGroupNames;
 
 				private string instanceId;
-
-				private string extraAttr;
 
 				private List<ListCallDetailRecords_CallDetailAgent> agents;
 
@@ -243,6 +246,30 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						satisfaction = value;
+					}
+				}
+
+				public string SatisfactionDesc
+				{
+					get
+					{
+						return satisfactionDesc;
+					}
+					set	
+					{
+						satisfactionDesc = value;
+					}
+				}
+
+				public string Feedback
+				{
+					get
+					{
+						return feedback;
+					}
+					set	
+					{
+						feedback = value;
 					}
 				}
 
@@ -330,18 +357,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public string ExtraAttr
-				{
-					get
-					{
-						return extraAttr;
-					}
-					set	
-					{
-						extraAttr = value;
-					}
-				}
-
 				public List<ListCallDetailRecords_CallDetailAgent> Agents
 				{
 					get
@@ -369,37 +384,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				public class ListCallDetailRecords_CallDetailAgent
 				{
 
-					private string contactId;
-
 					private string agentId;
 
-					private string agentName;
+					private string satisfaction;
 
-					private string skillGroupName;
-
-					private int? queueTime;
-
-					private int? ringTime;
-
-					private long? startTime;
-
-					private int? talkTime;
-
-					private int? holdTime;
-
-					private int? workTime;
-
-					public string ContactId
-					{
-						get
-						{
-							return contactId;
-						}
-						set	
-						{
-							contactId = value;
-						}
-					}
+					private string feedback;
 
 					public string AgentId
 					{
@@ -413,99 +402,27 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 						}
 					}
 
-					public string AgentName
+					public string Satisfaction
 					{
 						get
 						{
-							return agentName;
+							return satisfaction;
 						}
 						set	
 						{
-							agentName = value;
+							satisfaction = value;
 						}
 					}
 
-					public string SkillGroupName
+					public string Feedback
 					{
 						get
 						{
-							return skillGroupName;
+							return feedback;
 						}
 						set	
 						{
-							skillGroupName = value;
-						}
-					}
-
-					public int? QueueTime
-					{
-						get
-						{
-							return queueTime;
-						}
-						set	
-						{
-							queueTime = value;
-						}
-					}
-
-					public int? RingTime
-					{
-						get
-						{
-							return ringTime;
-						}
-						set	
-						{
-							ringTime = value;
-						}
-					}
-
-					public long? StartTime
-					{
-						get
-						{
-							return startTime;
-						}
-						set	
-						{
-							startTime = value;
-						}
-					}
-
-					public int? TalkTime
-					{
-						get
-						{
-							return talkTime;
-						}
-						set	
-						{
-							talkTime = value;
-						}
-					}
-
-					public int? HoldTime
-					{
-						get
-						{
-							return holdTime;
-						}
-						set	
-						{
-							holdTime = value;
-						}
-					}
-
-					public int? WorkTime
-					{
-						get
-						{
-							return workTime;
-						}
-						set	
-						{
-							workTime = value;
+							feedback = value;
 						}
 					}
 				}
@@ -515,15 +432,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 					private string contactId;
 
-					private string contactType;
-
 					private string agentId;
 
 					private string agentName;
-
-					private string callingNumber;
-
-					private string calledNumber;
 
 					private long? startTime;
 
@@ -531,13 +442,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 					private string fileName;
 
-					private string filePath;
-
 					private string fileDescription;
 
-					private string channel;
+					private string qualityCheckTid;
 
-					private string instanceId;
+					private string qualityCheckTaskId;
 
 					public string ContactId
 					{
@@ -548,18 +457,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 						set	
 						{
 							contactId = value;
-						}
-					}
-
-					public string ContactType
-					{
-						get
-						{
-							return contactType;
-						}
-						set	
-						{
-							contactType = value;
 						}
 					}
 
@@ -584,30 +481,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 						set	
 						{
 							agentName = value;
-						}
-					}
-
-					public string CallingNumber
-					{
-						get
-						{
-							return callingNumber;
-						}
-						set	
-						{
-							callingNumber = value;
-						}
-					}
-
-					public string CalledNumber
-					{
-						get
-						{
-							return calledNumber;
-						}
-						set	
-						{
-							calledNumber = value;
 						}
 					}
 
@@ -647,18 +520,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 						}
 					}
 
-					public string FilePath
-					{
-						get
-						{
-							return filePath;
-						}
-						set	
-						{
-							filePath = value;
-						}
-					}
-
 					public string FileDescription
 					{
 						get
@@ -671,27 +532,27 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 						}
 					}
 
-					public string Channel
+					public string QualityCheckTid
 					{
 						get
 						{
-							return channel;
+							return qualityCheckTid;
 						}
 						set	
 						{
-							channel = value;
+							qualityCheckTid = value;
 						}
 					}
 
-					public string InstanceId
+					public string QualityCheckTaskId
 					{
 						get
 						{
-							return instanceId;
+							return qualityCheckTaskId;
 						}
 						set	
 						{
-							instanceId = value;
+							qualityCheckTaskId = value;
 						}
 					}
 				}

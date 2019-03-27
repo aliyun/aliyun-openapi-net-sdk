@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
@@ -36,6 +37,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private List<int?> skillLevels;
 
 		private string instanceId;
+
+		private bool? allowPrivateOutboundNumber;
 
 		private List<string> outboundPhoneNumberIds;
 
@@ -76,6 +79,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? AllowPrivateOutboundNumber
+		{
+			get
+			{
+				return allowPrivateOutboundNumber;
+			}
+			set	
+			{
+				allowPrivateOutboundNumber = value;
+				DictionaryUtil.Add(QueryParameters, "AllowPrivateOutboundNumber", value.ToString());
 			}
 		}
 
@@ -165,7 +181,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-        public override ModifySkillGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifySkillGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifySkillGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

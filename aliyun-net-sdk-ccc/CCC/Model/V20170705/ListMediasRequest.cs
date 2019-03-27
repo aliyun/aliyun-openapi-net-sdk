@@ -16,56 +16,83 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-    public class EncryptRequest : RpcAcsRequest<EncryptResponse>
+    public class ListMediasRequest : RpcAcsRequest<ListMediasResponse>
     {
-        public EncryptRequest()
-            : base("CCC", "2017-07-05", "Encrypt", "ccc", "openAPI")
+        public ListMediasRequest()
+            : base("CCC", "2017-07-05", "ListMedias", "ccc", "openAPI")
         {
         }
 
-		private string publicKey;
+		private string instanceId;
 
-		private List<string> plainTexts;
+		private int? pageSize;
+
+		private string namePrefix;
+
+		private int? pageNumber;
 
 		private string accessKeyId;
 
-		public string PublicKey
+		public string InstanceId
 		{
 			get
 			{
-				return publicKey;
+				return instanceId;
 			}
 			set	
 			{
-				publicKey = value;
-				DictionaryUtil.Add(QueryParameters, "PublicKey", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public List<string> PlainTexts
+		public int? PageSize
 		{
 			get
 			{
-				return plainTexts;
+				return pageSize;
 			}
-
-			set
+			set	
 			{
-				plainTexts = value;
-				for (int i = 0; i < plainTexts.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PlainText." + (i + 1) , plainTexts[i]);
-				}
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string NamePrefix
+		{
+			get
+			{
+				return namePrefix;
+			}
+			set	
+			{
+				namePrefix = value;
+				DictionaryUtil.Add(QueryParameters, "NamePrefix", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -82,9 +109,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-        public override EncryptResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListMediasResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return EncryptResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListMediasResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

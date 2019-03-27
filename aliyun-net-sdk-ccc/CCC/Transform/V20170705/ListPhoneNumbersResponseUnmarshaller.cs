@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CCC.Model.V20170705;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CCC.Model.V20170705;
 
 namespace Aliyun.Acs.CCC.Transform.V20170705
 {
@@ -50,6 +51,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				phoneNumber.Trunks = context.IntegerValue("ListPhoneNumbers.PhoneNumbers["+ i +"].Trunks");
 				phoneNumber.Province = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].Province");
 				phoneNumber.City = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].City");
+				phoneNumber.Assignee = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].Assignee");
 
 				ListPhoneNumbersResponse.ListPhoneNumbers_PhoneNumber.ListPhoneNumbers_ContactFlow contactFlow = new ListPhoneNumbersResponse.ListPhoneNumbers_PhoneNumber.ListPhoneNumbers_ContactFlow();
 				contactFlow.ContactFlowId = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].ContactFlow.ContactFlowId");
@@ -58,6 +60,28 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				contactFlow.ContactFlowDescription = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].ContactFlow.ContactFlowDescription");
 				contactFlow.Type = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].ContactFlow.Type");
 				phoneNumber.ContactFlow = contactFlow;
+
+				ListPhoneNumbersResponse.ListPhoneNumbers_PhoneNumber.ListPhoneNumbers_PrivacyNumber privacyNumber = new ListPhoneNumbersResponse.ListPhoneNumbers_PhoneNumber.ListPhoneNumbers_PrivacyNumber();
+				privacyNumber.PoolId = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].PrivacyNumber.PoolId");
+				privacyNumber.Type = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].PrivacyNumber.Type");
+				privacyNumber.TelX = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].PrivacyNumber.TelX");
+				privacyNumber.PoolName = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].PrivacyNumber.PoolName");
+				privacyNumber.PhoneNumber = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].PrivacyNumber.PhoneNumber");
+				privacyNumber.Extra = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].PrivacyNumber.Extra");
+				privacyNumber.BizId = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].PrivacyNumber.BizId");
+				privacyNumber.SubId = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].PrivacyNumber.SubId");
+				privacyNumber.RegionNameCity = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].PrivacyNumber.RegionNameCity");
+				phoneNumber.PrivacyNumber = privacyNumber;
+
+				List<ListPhoneNumbersResponse.ListPhoneNumbers_PhoneNumber.ListPhoneNumbers_SkillGroup> phoneNumber_skillGroups = new List<ListPhoneNumbersResponse.ListPhoneNumbers_PhoneNumber.ListPhoneNumbers_SkillGroup>();
+				for (int j = 0; j < context.Length("ListPhoneNumbers.PhoneNumbers["+ i +"].SkillGroups.Length"); j++) {
+					ListPhoneNumbersResponse.ListPhoneNumbers_PhoneNumber.ListPhoneNumbers_SkillGroup skillGroup = new ListPhoneNumbersResponse.ListPhoneNumbers_PhoneNumber.ListPhoneNumbers_SkillGroup();
+					skillGroup.SkillGroupId = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].SkillGroups["+ j +"].SkillGroupId");
+					skillGroup.SkillGroupName = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].SkillGroups["+ j +"].SkillGroupName");
+
+					phoneNumber_skillGroups.Add(skillGroup);
+				}
+				phoneNumber.SkillGroups = phoneNumber_skillGroups;
 
 				listPhoneNumbersResponse_phoneNumbers.Add(phoneNumber);
 			}

@@ -16,12 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class EncryptResponse : AcsResponse
+	public class ModifyMediaResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -34,9 +35,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? httpStatusCode;
 
-		private string publicKey;
-
-		private List<Encrypt_CypherContent> cypherContents;
+		private ModifyMedia_MediaUploadParam mediaUploadParam;
 
 		public string RequestId
 		{
@@ -98,58 +97,88 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string PublicKey
+		public ModifyMedia_MediaUploadParam MediaUploadParam
 		{
 			get
 			{
-				return publicKey;
+				return mediaUploadParam;
 			}
 			set	
 			{
-				publicKey = value;
+				mediaUploadParam = value;
 			}
 		}
 
-		public List<Encrypt_CypherContent> CypherContents
-		{
-			get
-			{
-				return cypherContents;
-			}
-			set	
-			{
-				cypherContents = value;
-			}
-		}
-
-		public class Encrypt_CypherContent
+		public class ModifyMedia_MediaUploadParam
 		{
 
-			private string plainText;
+			private string instance;
 
-			private string cypherText;
+			private string name;
 
-			public string PlainText
+			private string fileName;
+
+			private string ossFileName;
+
+			private string ossFilePath;
+
+			public string Instance
 			{
 				get
 				{
-					return plainText;
+					return instance;
 				}
 				set	
 				{
-					plainText = value;
+					instance = value;
 				}
 			}
 
-			public string CypherText
+			public string Name
 			{
 				get
 				{
-					return cypherText;
+					return name;
 				}
 				set	
 				{
-					cypherText = value;
+					name = value;
+				}
+			}
+
+			public string FileName
+			{
+				get
+				{
+					return fileName;
+				}
+				set	
+				{
+					fileName = value;
+				}
+			}
+
+			public string OssFileName
+			{
+				get
+				{
+					return ossFileName;
+				}
+				set	
+				{
+					ossFileName = value;
+				}
+			}
+
+			public string OssFilePath
+			{
+				get
+				{
+					return ossFilePath;
+				}
+				set	
+				{
+					ossFilePath = value;
 				}
 			}
 		}

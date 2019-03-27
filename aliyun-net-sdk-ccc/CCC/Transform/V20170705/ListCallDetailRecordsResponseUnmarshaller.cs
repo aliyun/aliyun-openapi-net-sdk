@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CCC.Model.V20170705;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CCC.Model.V20170705;
 
 namespace Aliyun.Acs.CCC.Transform.V20170705
 {
@@ -48,6 +49,8 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				callDetailRecord.StartTime = context.LongValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].StartTime");
 				callDetailRecord.Duration = context.IntegerValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Duration");
 				callDetailRecord.Satisfaction = context.IntegerValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Satisfaction");
+				callDetailRecord.SatisfactionDesc = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].SatisfactionDesc");
+				callDetailRecord.Feedback = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Feedback");
 				callDetailRecord.ContactType = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].ContactType");
 				callDetailRecord.ContactDisposition = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].ContactDisposition");
 				callDetailRecord.CallingNumber = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].CallingNumber");
@@ -55,21 +58,13 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				callDetailRecord.AgentNames = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].AgentNames");
 				callDetailRecord.SkillGroupNames = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].SkillGroupNames");
 				callDetailRecord.InstanceId = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].InstanceId");
-				callDetailRecord.ExtraAttr = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].ExtraAttr");
 
 				List<ListCallDetailRecordsResponse.ListCallDetailRecords_CallDetailRecords.ListCallDetailRecords_CallDetailRecord.ListCallDetailRecords_CallDetailAgent> callDetailRecord_agents = new List<ListCallDetailRecordsResponse.ListCallDetailRecords_CallDetailRecords.ListCallDetailRecords_CallDetailRecord.ListCallDetailRecords_CallDetailAgent>();
 				for (int j = 0; j < context.Length("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents.Length"); j++) {
 					ListCallDetailRecordsResponse.ListCallDetailRecords_CallDetailRecords.ListCallDetailRecords_CallDetailRecord.ListCallDetailRecords_CallDetailAgent callDetailAgent = new ListCallDetailRecordsResponse.ListCallDetailRecords_CallDetailRecords.ListCallDetailRecords_CallDetailRecord.ListCallDetailRecords_CallDetailAgent();
-					callDetailAgent.ContactId = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents["+ j +"].ContactId");
 					callDetailAgent.AgentId = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents["+ j +"].AgentId");
-					callDetailAgent.AgentName = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents["+ j +"].AgentName");
-					callDetailAgent.SkillGroupName = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents["+ j +"].SkillGroupName");
-					callDetailAgent.QueueTime = context.IntegerValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents["+ j +"].QueueTime");
-					callDetailAgent.RingTime = context.IntegerValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents["+ j +"].RingTime");
-					callDetailAgent.StartTime = context.LongValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents["+ j +"].StartTime");
-					callDetailAgent.TalkTime = context.IntegerValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents["+ j +"].TalkTime");
-					callDetailAgent.HoldTime = context.IntegerValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents["+ j +"].HoldTime");
-					callDetailAgent.WorkTime = context.IntegerValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents["+ j +"].WorkTime");
+					callDetailAgent.Satisfaction = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents["+ j +"].Satisfaction");
+					callDetailAgent.Feedback = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Agents["+ j +"].Feedback");
 
 					callDetailRecord_agents.Add(callDetailAgent);
 				}
@@ -79,18 +74,14 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				for (int j = 0; j < context.Length("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings.Length"); j++) {
 					ListCallDetailRecordsResponse.ListCallDetailRecords_CallDetailRecords.ListCallDetailRecords_CallDetailRecord.ListCallDetailRecords_Recording recording = new ListCallDetailRecordsResponse.ListCallDetailRecords_CallDetailRecords.ListCallDetailRecords_CallDetailRecord.ListCallDetailRecords_Recording();
 					recording.ContactId = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].ContactId");
-					recording.ContactType = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].ContactType");
 					recording.AgentId = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].AgentId");
 					recording.AgentName = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].AgentName");
-					recording.CallingNumber = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].CallingNumber");
-					recording.CalledNumber = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].CalledNumber");
 					recording.StartTime = context.LongValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].StartTime");
 					recording.Duration = context.IntegerValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].Duration");
 					recording.FileName = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].FileName");
-					recording.FilePath = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].FilePath");
 					recording.FileDescription = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].FileDescription");
-					recording.Channel = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].Channel");
-					recording.InstanceId = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].InstanceId");
+					recording.QualityCheckTid = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].QualityCheckTid");
+					recording.QualityCheckTaskId = context.StringValue("ListCallDetailRecords.CallDetailRecords.List["+ i +"].Recordings["+ j +"].QualityCheckTaskId");
 
 					callDetailRecord_recordings.Add(recording);
 				}

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
@@ -123,7 +124,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-        public override StartBack2BackCallResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override StartBack2BackCallResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return StartBack2BackCallResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

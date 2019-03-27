@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CCC.Model.V20170705;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CCC.Model.V20170705;
 
 namespace Aliyun.Acs.CCC.Transform.V20170705
 {
@@ -47,6 +48,18 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			loginInfo.TenantId = context.StringValue("RequestLoginInfo.LoginInfo.TenantId");
 			loginInfo.Signature = context.StringValue("RequestLoginInfo.LoginInfo.Signature");
 			loginInfo.SignData = context.StringValue("RequestLoginInfo.LoginInfo.SignData");
+
+			List<RequestLoginInfoResponse.RequestLoginInfo_LoginInfo.RequestLoginInfo_Role> loginInfo_roles = new List<RequestLoginInfoResponse.RequestLoginInfo_LoginInfo.RequestLoginInfo_Role>();
+			for (int i = 0; i < context.Length("RequestLoginInfo.LoginInfo.Roles.Length"); i++) {
+				RequestLoginInfoResponse.RequestLoginInfo_LoginInfo.RequestLoginInfo_Role role = new RequestLoginInfoResponse.RequestLoginInfo_LoginInfo.RequestLoginInfo_Role();
+				role.RoleId = context.StringValue("RequestLoginInfo.LoginInfo.Roles["+ i +"].RoleId");
+				role.InstanceId = context.StringValue("RequestLoginInfo.LoginInfo.Roles["+ i +"].InstanceId");
+				role.RoleName = context.StringValue("RequestLoginInfo.LoginInfo.Roles["+ i +"].RoleName");
+				role.RoleDescription = context.StringValue("RequestLoginInfo.LoginInfo.Roles["+ i +"].RoleDescription");
+
+				loginInfo_roles.Add(role);
+			}
+			loginInfo.Roles = loginInfo_roles;
 			requestLoginInfoResponse.LoginInfo = loginInfo;
         
 			return requestLoginInfoResponse;

@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
@@ -130,6 +131,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			private string signature;
 
 			private string signData;
+
+			private List<RequestLoginInfo_Role> roles;
 
 			public string UserName
 			{
@@ -248,6 +251,78 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				set	
 				{
 					signData = value;
+				}
+			}
+
+			public List<RequestLoginInfo_Role> Roles
+			{
+				get
+				{
+					return roles;
+				}
+				set	
+				{
+					roles = value;
+				}
+			}
+
+			public class RequestLoginInfo_Role
+			{
+
+				private string roleId;
+
+				private string instanceId;
+
+				private string roleName;
+
+				private string roleDescription;
+
+				public string RoleId
+				{
+					get
+					{
+						return roleId;
+					}
+					set	
+					{
+						roleId = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public string RoleName
+				{
+					get
+					{
+						return roleName;
+					}
+					set	
+					{
+						roleName = value;
+					}
+				}
+
+				public string RoleDescription
+				{
+					get
+					{
+						return roleDescription;
+					}
+					set	
+					{
+						roleDescription = value;
+					}
 				}
 			}
 		}

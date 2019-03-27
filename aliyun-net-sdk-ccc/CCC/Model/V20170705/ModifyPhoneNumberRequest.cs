@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
@@ -40,6 +41,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string phoneNumberId;
 
 		private string usage;
+
+		private List<string> skillGroupIds;
 
 		private string accessKeyId;
 
@@ -95,6 +98,23 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
+		public List<string> SkillGroupIds
+		{
+			get
+			{
+				return skillGroupIds;
+			}
+
+			set
+			{
+				skillGroupIds = value;
+				for (int i = 0; i < skillGroupIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SkillGroupId." + (i + 1) , skillGroupIds[i]);
+				}
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -108,7 +128,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-        public override ModifyPhoneNumberResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyPhoneNumberResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyPhoneNumberResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
