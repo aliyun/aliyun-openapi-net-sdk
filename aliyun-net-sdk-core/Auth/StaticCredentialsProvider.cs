@@ -37,20 +37,20 @@ namespace Aliyun.Acs.Core.Auth
             StsCredential legacyCredential = this.clientProfile.GetCredential();
             if (null != legacyCredential.SecurityToken)
             {
-                this.credentials = new BasicSessionCredentials(
+                credentials = new BasicSessionCredentials(
                     legacyCredential.AccessKeyId,
                     legacyCredential.AccessSecret,
                     legacyCredential.SecurityToken);
             }
             else
             {
-                this.credentials = new LegacyCredentials(legacyCredential);
+                credentials = new LegacyCredentials(legacyCredential);
             }
         }
 
         public AlibabaCloudCredentials GetCredentials()
         {
-            return this.credentials;
+            return credentials;
         }
     }
 }

@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
+
 using System.Collections.Generic;
 using System.Text;
 
@@ -29,9 +29,6 @@ namespace Aliyun.Acs.Core
 {
     public abstract class RoaAcsRequest<T> : AcsRequest<T>
     {
-        private string uriPattern = null;
-        private Dictionary<string, string> pathParameters = new Dictionary<string, string>();
-
         public RoaAcsRequest(string product) : base(product)
         {
             Initialize();
@@ -39,39 +36,39 @@ namespace Aliyun.Acs.Core
 
         public RoaAcsRequest(string product, string version) : base(product)
         {
-            this.SetVersion(version);
+            SetVersion(version);
             Initialize();
         }
 
         public RoaAcsRequest(string product, string version, string action) : base(product)
         {
-            this.SetVersion(version);
-            this.ActionName = action;
+            SetVersion(version);
+            ActionName = action;
             Initialize();
         }
 
         public RoaAcsRequest(string product, string version, string action, string locationProduct) : base(product)
         {
-            this.SetVersion(version);
-            this.ActionName = action;
-            this.LocationProduct = locationProduct;
+            SetVersion(version);
+            ActionName = action;
+            LocationProduct = locationProduct;
             Initialize();
         }
 
         public RoaAcsRequest(string product, string version, string action, string locationProduct, string locationEndpointType) : base(product)
         {
-            this.SetVersion(version);
+            SetVersion(version);
             ActionName = action;
-            this.LocationProduct = locationProduct;
-            this.LocationEndpointType = locationEndpointType;
+            LocationProduct = locationProduct;
+            LocationEndpointType = locationEndpointType;
             Initialize();
         }
 
         private void Initialize()
         {
             Method = MethodType.GET;
-            this.AcceptFormat = FormatType.RAW;
-            this.Composer = RoaSignatureComposer.GetComposer();
+            AcceptFormat = FormatType.RAW;
+            Composer = RoaSignatureComposer.GetComposer();
         }
 
         public void SetVersion(string version)
@@ -87,9 +84,9 @@ namespace Aliyun.Acs.Core
             StringBuilder urlBuilder = new StringBuilder("");
             urlBuilder.Append(Protocol);
             urlBuilder.Append("://").Append(endpoint);
-            if (null != this.uriPattern)
+            if (null != UriPattern)
             {
-                urlBuilder.Append(RoaSignatureComposer.ReplaceOccupiedParameters(uriPattern, pathParameters));
+                urlBuilder.Append(RoaSignatureComposer.ReplaceOccupiedParameters(UriPattern, PathParameters));
             }
             if (-1 == urlBuilder.ToString().IndexOf('?'))
             {
@@ -111,12 +108,12 @@ namespace Aliyun.Acs.Core
         public override HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
             FormatType? format, ProductDomain domain)
         {
-            if (this.BodyParameters != null && this.BodyParameters.Count > 0)
+            if (BodyParameters != null && BodyParameters.Count > 0)
             {
                 var formParams = new Dictionary<string, string>(this.BodyParameters);
                 string formStr = ConcatQueryString(formParams);
                 byte[] formData = System.Text.Encoding.UTF8.GetBytes(formStr);
-                this.SetContent(formData, "UTF-8", FormatType.FORM);
+                SetContent(formData, "UTF-8", FormatType.FORM);
             }
 
             var imutableMap = new Dictionary<string, string>(this.Headers);
@@ -124,49 +121,47 @@ namespace Aliyun.Acs.Core
             {
                 var accessKeyId = credentials.GetAccessKeyId();
                 imutableMap = Composer.RefreshSignParameters(Headers, signer, accessKeyId, format);
-                if (credentials is BasicSessionCredentials)
+                switch (credentials)
                 {
-                    var sessionToken = ((BasicSessionCredentials) credentials).GetSessionToken();
-                    if (null != sessionToken)
-                    {
-                        imutableMap.Add("x-acs-security-token", sessionToken);
-                    }
+                    case BasicSessionCredentials sessionCredentials:
+                        {
+                            var sessionToken = sessionCredentials.GetSessionToken();
+                            if (null != sessionToken)
+                            {
+                                imutableMap.Add("x-acs-security-token", sessionToken);
+                            }
+
+                            break;
+                        }
+                    case BearerTokenCredential credential:
+                        {
+                            var bearerToken = credential.GetBearerToken();
+                            if (null != bearerToken)
+                            {
+                                QueryParameters.Add("x-acs-bearer-token", bearerToken);
+                            }
+
+                            break;
+                        }
                 }
 
-                if (credentials is BearerTokenCredential)
-                {
-                    var bearerToken = ((BearerTokenCredential) credentials).GetBearerToken();
-                    if (null != bearerToken)
-                    {
-                        QueryParameters.Add("x-acs-bearer-token", bearerToken);
-                    }
-                }
-
-                var strToSign = Composer.ComposeStringToSign(Method, uriPattern, signer,
-                    QueryParameters, imutableMap, pathParameters);
+                var strToSign = Composer.ComposeStringToSign(Method, UriPattern, signer,
+                    QueryParameters, imutableMap, PathParameters);
                 var signature = signer.SignString(strToSign, credentials);
                 DictionaryUtil.Add(imutableMap, "Authorization", "acs " + accessKeyId + ":" + signature);
             }
-            Url = this.ComposeUrl(domain.DomianName, QueryParameters);
-            this.Headers = imutableMap;
+            Url = ComposeUrl(domain.DomianName, QueryParameters);
+            Headers = imutableMap;
             return this;
         }
 
-        public string UriPattern
-        {
-            get { return uriPattern; }
-            set { uriPattern = value; }
-        }
+        public string UriPattern { get; set; } = null;
 
-        public Dictionary<string, string> PathParameters
-        {
-            get { return pathParameters; }
-            set { pathParameters = value; }
-        }
+        public Dictionary<string, string> PathParameters { get; set; } = new Dictionary<string, string>();
 
         public void AddPathParameters(string name, string value)
         {
-            DictionaryUtil.Add(pathParameters, name, value);
+            DictionaryUtil.Add(PathParameters, name, value);
         }
     }
 }

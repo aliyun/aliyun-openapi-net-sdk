@@ -18,14 +18,6 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
-
-using Aliyun.Acs.Core.Exceptions;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Reader;
-using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth
 {
@@ -51,25 +43,18 @@ namespace Aliyun.Acs.Core.Auth
 
         public override bool WillSoonExpire()
         {
-            return this.roleSessionDurationSeconds * (1 - expireFact) > this.RemainTicks() / 1000;
+            return roleSessionDurationSeconds * (1 - expireFact) > RemainTicks() / 1000;
         }
 
         public bool IsExpired()
         {
-            return refreshIntervalInMillSeconds >= this.RemainTicks();
+            return refreshIntervalInMillSeconds >= RemainTicks();
         }
 
         public bool ShouldRefresh()
         {
             long now = DateTime.Now.Ticks;
-            if (now - lastFailedRefreshTime > refreshIntervalInMillSeconds)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return now - lastFailedRefreshTime > refreshIntervalInMillSeconds;
         }
 
         public void SetLastFailedRefreshTime()

@@ -16,27 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ 
 using System;
 using System.Collections.Generic;
-
-using Aliyun.Acs.Core.Regions.Location.Model;
 
 namespace Aliyun.Acs.Core.Regions
 {
     public class Endpoint
     {
-        public string Name { get; set; }
-        public ISet<string> RegionIds { get; set; }
-        public List<ProductDomain> ProductDomains { get; set; }
+        public string Name { get; private set; }
+        public ISet<string> RegionIds { get; private set; }
+        public List<ProductDomain> ProductDomains { get; private set; }
 
-        public Endpoint(String name, ISet<string> regionIds, List<ProductDomain> productDomains)
+        public Endpoint(string name, ISet<string> regionIds, List<ProductDomain> productDomains)
         {
-            this.Name = name;
-            this.RegionIds = regionIds;
-            this.ProductDomains = productDomains;
+            Name = name;
+            RegionIds = regionIds;
+            ProductDomains = productDomains;
         }
 
-        public static ProductDomain FindProductDomain(String regionId, String product,
+        public static ProductDomain FindProductDomain(string regionId, string product,
             List<Endpoint> endpoints)
         {
             if (null == regionId || null == product || null == endpoints)
@@ -54,7 +53,7 @@ namespace Aliyun.Acs.Core.Regions
             return null;
         }
 
-        private static ProductDomain FindProductDomainByProduct(List<ProductDomain> productDomains, String product)
+        private static ProductDomain FindProductDomainByProduct(List<ProductDomain> productDomains, string product)
         {
             if (null == productDomains)
             {

@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
+
 using System.Collections.Generic;
 using System.Text;
 
@@ -61,10 +61,10 @@ namespace Aliyun.Acs.Core
 
         public RpcAcsRequest(string product, string version, string action, string locationProduct, string locationEndpointType) : base(product)
         {
-            this.Version = version;
-            this.ActionName = action;
-            this.LocationProduct = locationProduct;
-            this.LocationEndpointType = locationEndpointType;
+            Version = version;
+            ActionName = action;
+            LocationProduct = locationProduct;
+            LocationEndpointType = locationEndpointType;
             Initialize();
         }
 
@@ -72,7 +72,7 @@ namespace Aliyun.Acs.Core
         {
             Method = MethodType.GET;
             AcceptFormat = FormatType.JSON;
-            this.Composer = RpcSignatureComposer.GetComposer();
+            Composer = RpcSignatureComposer.GetComposer();
         }
 
         public override string ActionName
@@ -123,34 +123,40 @@ namespace Aliyun.Acs.Core
             {
                 var accessKeyId = credentials.GetAccessKeyId();
                 var accessSecret = credentials.GetAccessKeySecret();
-                if (credentials is BasicSessionCredentials)
+                switch (credentials)
                 {
-                    var sessionToken = ((BasicSessionCredentials) credentials).GetSessionToken();
-                    if (null != sessionToken)
-                    {
-                        QueryParameters.Add("SecurityToken", sessionToken);
-                    }
-                }
+                    case BasicSessionCredentials sessionCredentials:
+                        {
+                            var sessionToken = sessionCredentials.GetSessionToken();
+                            if (null != sessionToken)
+                            {
+                                QueryParameters.Add("SecurityToken", sessionToken);
+                            }
 
-                if (credentials is BearerTokenCredential)
-                {
-                    var bearerToken = ((BearerTokenCredential) credentials).GetBearerToken();
-                    if (null != bearerToken)
-                    {
-                        QueryParameters.Add("BearerToken", bearerToken);
-                    }
+                            break;
+                        }
+                    case BearerTokenCredential credential:
+                        {
+                            var bearerToken = credential.GetBearerToken();
+                            if (null != bearerToken)
+                            {
+                                QueryParameters.Add("BearerToken", bearerToken);
+                            }
+
+                            break;
+                        }
                 }
 
                 imutableMap = Composer.RefreshSignParameters(QueryParameters, signer, accessKeyId, format);
                 imutableMap.Add("RegionId", RegionId);
 
                 var paramsToSign = new Dictionary<string, string>(imutableMap);
-                if (this.BodyParameters != null && this.BodyParameters.Count > 0)
+                if (BodyParameters != null && BodyParameters.Count > 0)
                 {
                     var formParams = new Dictionary<string, string>(this.BodyParameters);
                     string formStr = ConcatQueryString(formParams);
                     byte[] formData = System.Text.Encoding.UTF8.GetBytes(formStr);
-                    this.SetContent(formData, "UTF-8", FormatType.FORM);
+                    SetContent(formData, "UTF-8", FormatType.FORM);
                     foreach (var formParam in formParams)
                     {
                         DictionaryUtil.Add(paramsToSign, formParam.Key, formParam.Value);
@@ -161,18 +167,18 @@ namespace Aliyun.Acs.Core
                 var signature = signer.SignString(strToSign, accessSecret + "&");
                 imutableMap.Add("Signature", signature);
 
-                this.StringToSign = strToSign;
+                StringToSign = strToSign;
             }
 
-            Url = this.ComposeUrl(domain.DomianName, imutableMap);
+            Url = ComposeUrl(domain.DomianName, imutableMap);
             return this;
         }
 
         public override string ComposeUrl(string endpoint, Dictionary<string, string> queries)
         {
-            var mapQueries = (queries == null) ? this.QueryParameters : queries;
+            var mapQueries = (queries == null) ? QueryParameters : queries;
             StringBuilder urlBuilder = new StringBuilder("");
-            urlBuilder.Append(this.Protocol.ToString().ToLower());
+            urlBuilder.Append(Protocol.ToString().ToLower());
             urlBuilder.Append("://").Append(endpoint);
             if (-1 == urlBuilder.ToString().IndexOf("?"))
             {

@@ -24,6 +24,6 @@ namespace Aliyun.Acs.Core.Auth
     {
         public abstract string SignerName { get; }
         public abstract string SignerVersion { get; }
-        public abstract String SignString(String source, String accessSecret);
+        public abstract string SignString(string source, string accessSecret);
     }
 }

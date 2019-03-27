@@ -27,10 +27,10 @@ namespace Aliyun.Acs.Core
 {
     public class HmacSHA1Signer : Signer
     {
-        private const String ALGORITHM_NAME = "HmacSHA1";
-        public const String ENCODING = "UTF-8";
+        private const string ALGORITHM_NAME = "HmacSHA1";
+        public const string ENCODING = "UTF-8";
 
-        public override String SignString(String stringToSign, String accessKeySecret)
+        public override string SignString(string stringToSign, string accessKeySecret)
         {
             using(HMACSHA1 hmac = new HMACSHA1(Encoding.UTF8.GetBytes(accessKeySecret)))
             {
@@ -39,22 +39,22 @@ namespace Aliyun.Acs.Core
             }
         }
 
-        public override String SignString(String stringToSign, AlibabaCloudCredentials credentials)
+        public override string SignString(string stringToSign, AlibabaCloudCredentials credentials)
         {
             return SignString(stringToSign, credentials.GetAccessKeySecret());
         }
 
-        public override String GetSignerName()
+        public override string GetSignerName()
         {
             return "HMAC-SHA1";
         }
 
-        public override String GetSignerVersion()
+        public override string GetSignerVersion()
         {
             return "1.0";
         }
 
-        public override String GetSignerType()
+        public override string GetSignerType()
         {
             return null;
         }

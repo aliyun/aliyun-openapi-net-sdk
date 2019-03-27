@@ -21,7 +21,7 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class BearerTokenCredential : AlibabaCloudCredentials
     {
-        private string bearerToken;
+        private readonly string bearerToken;
 
         public BearerTokenCredential(string bearerToken)
         {
@@ -40,7 +40,7 @@ namespace Aliyun.Acs.Core.Auth
 
         public string GetBearerToken()
         {
-            return this.bearerToken;
+            return bearerToken;
         }
     }
 }

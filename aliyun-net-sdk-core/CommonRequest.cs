@@ -17,10 +17,7 @@
  * under the License.
  */
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
@@ -30,35 +27,32 @@ namespace Aliyun.Acs.Core
 {
     public class CommonRequest
     {
-        public String Product { get; set; }
-        public String Version { get; set; }
-        public String Action { get; set; }
-        public String RegionId { get; set; }
-        public String LocationProduct { get; set; }
-        public String LocationEndpointType { get; set; }
+        public string Product { get; set; }
+        public string Version { get; set; }
+        public string Action { get; set; }
+        public string RegionId { get; set; }
+        public string LocationProduct { get; set; }
+        public string LocationEndpointType { get; set; }
         public ProtocolType Protocol { get; set; }
-        private Dictionary<String, String> queryParameters = new Dictionary<String, String>();
-        private Dictionary<String, String> bodyParameters = new Dictionary<String, String>();
-        private Dictionary<String, String> headParameters = new Dictionary<String, String>();
-
+        private Dictionary<string, string> queryParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> bodyParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> headParameters = new Dictionary<string, string>();
         public MethodType? Method { get; set; }
         private FormatType? ContentType { get; set; }
         private byte[] Content { get; set; }
-        private String Encoding { get; set; }
+        private string Encoding { get; set; }
         public int TimeoutInMilliSeconds { get; set; }
-
-        public String UriPattern { get; set; }
+        public string UriPattern { get; set; }
         private Dictionary<string, string> pathParameters = new Dictionary<string, string>();
+        public string Domain { get; set; }
 
-        public String Domain { get; set; }
+        public Dictionary<string, string> QueryParameters { get { return this.queryParameters; } }
 
-        public Dictionary<String, String> QueryParameters { get { return this.queryParameters; } }
+        public Dictionary<string, string> BodyParameters { get { return this.bodyParameters; } }
 
-        public Dictionary<String, String> BodyParameters { get { return this.bodyParameters; } }
+        public Dictionary<string, string> HeadParameters { get { return this.headParameters; } }
 
-        public Dictionary<String, String> HeadParameters { get { return this.headParameters; } }
-
-        public Dictionary<String, String> PathParameters { get { return this.pathParameters; } }
+        public Dictionary<string, string> PathParameters { get { return this.pathParameters; } }
 
         public CommonRequest()
         {
@@ -163,7 +157,7 @@ namespace Aliyun.Acs.Core
             DictionaryUtil.Add(pathParameters, name, value);
         }
 
-        public void SetContent(byte[] content, String encoding, FormatType? format)
+        public void SetContent(byte[] content, string encoding, FormatType? format)
         {
             Content = content;
             Encoding = encoding;

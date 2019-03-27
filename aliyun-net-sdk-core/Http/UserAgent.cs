@@ -42,18 +42,18 @@ namespace Aliyun.Acs.Core.Http
         {
             SetTheValue();
 
-            DEFAULT_MESSAGE = "Alibaba Cloud (" + this.OSVersion + ") ";
-            DEFAULT_MESSAGE += this.ClientVersion;
-            DEFAULT_MESSAGE += " Core/" + this.CoreVersion;
+            DEFAULT_MESSAGE = "Alibaba Cloud (" + OSVersion + ") ";
+            DEFAULT_MESSAGE += ClientVersion;
+            DEFAULT_MESSAGE += " Core/" + CoreVersion;
         }
 
         public void SetTheValue()
         {
-            this.OSVersion = GetOsVersion();
-            this.ClientVersion = GetRuntimeRegexValue(System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory());
-            this.CoreVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            this.excludedList.Add("core");
-            this.excludedList.Add("microsoft.netcore.app");
+            OSVersion = GetOsVersion();
+            ClientVersion = GetRuntimeRegexValue(System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory());
+            CoreVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            excludedList.Add("core");
+            excludedList.Add("microsoft.netcore.app");
         }
 
         private string GetOsVersion()
@@ -62,9 +62,9 @@ namespace Aliyun.Acs.Core.Http
             {
                 return System.Runtime.InteropServices.RuntimeInformation.OSDescription;
             }
-            catch (System.Exception)
+            catch (Exception)
             {
-                return System.Environment.OSVersion.ToString();
+                return Environment.OSVersion.ToString();
             }
         }
 
@@ -104,14 +104,14 @@ namespace Aliyun.Acs.Core.Http
         {
             if (String.IsNullOrEmpty(key) || String.IsNullOrEmpty(value))
                 return;
-            if (this.excludedList.Contains(key.ToLowerInvariant()))
+            if (excludedList.Contains(key.ToLowerInvariant()))
                 return;
-            DictionaryUtil.Add(this.userAgent, key, value);
+            DictionaryUtil.Add(userAgent, key, value);
         }
 
         public ReadOnlyDictionary<string, string> GetSysUserAgentDict()
         {
-            return new ReadOnlyDictionary<string, string>(this.userAgent);
+            return new ReadOnlyDictionary<string, string>(userAgent);
         }
 
         public static string Resolve(UserAgent requestConfig, UserAgent clientConfig)

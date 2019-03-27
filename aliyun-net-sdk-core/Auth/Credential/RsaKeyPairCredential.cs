@@ -30,9 +30,7 @@ namespace Aliyun.Acs.Core.Auth
         {
             if (publicKeyId == null || privateKeySecret == null)
             {
-                throw new ArgumentNullException(
-                    "You must provide a valid pair of Public Key ID and Private Key Secret."
-                );
+                throw new ArgumentNullException("You must provide a valid pair of Public Key ID and Private Key Secret.");
             }
             this.publicKeyId = publicKeyId;
             this.privateKeySecret = privateKeySecret;

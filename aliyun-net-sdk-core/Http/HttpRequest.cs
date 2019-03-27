@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
+
 using System.Collections.Generic;
 using System.Net;
 
@@ -78,15 +78,15 @@ namespace Aliyun.Acs.Core.Http
                 type = format;
             }
 
-            this.Headers.Remove("Content-MD5");
-            this.Headers.Remove("Content-Length");
-            this.Headers.Remove("Content-Type");
-            this.Headers.Add("Content-MD5", strMd5);
-            this.Headers.Add("Content-Length", contentLen);
-            this.Headers.Add("Content-Type", ParameterHelper.FormatTypeToString(type));
+            Headers.Remove("Content-MD5");
+            Headers.Remove("Content-Length");
+            Headers.Remove("Content-Type");
+            Headers.Add("Content-MD5", strMd5);
+            Headers.Add("Content-Length", contentLen);
+            Headers.Add("Content-Type", ParameterHelper.FormatTypeToString(type));
 
-            this.Content = content;
-            this.Encoding = encoding;
+            Content = content;
+            Encoding = encoding;
         }
 
         public void SetConnectTimeoutInMilliSeconds(int connectTimeout)

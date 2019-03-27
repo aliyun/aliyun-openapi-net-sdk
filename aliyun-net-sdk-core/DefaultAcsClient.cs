@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -35,7 +36,6 @@ namespace Aliyun.Acs.Core
 {
     public class DefaultAcsClient : IAcsClient
     {
-
         private int maxRetryNumber = 3;
         private bool autoRetry = true;
         private IClientProfile clientProfile = null;
@@ -50,67 +50,69 @@ namespace Aliyun.Acs.Core
 
         public DefaultAcsClient()
         {
-            this.clientProfile = DefaultProfile.GetProfile();
+            clientProfile = DefaultProfile.GetProfile();
         }
 
         public DefaultAcsClient(IClientProfile profile)
         {
-            this.clientProfile = profile;
-            this.credentialsProvider = new StaticCredentialsProvider(profile);
-            this.clientProfile.SetCredentialsProvider(this.credentialsProvider);
+            clientProfile = profile;
+            credentialsProvider = new StaticCredentialsProvider(profile);
+            clientProfile.SetCredentialsProvider(credentialsProvider);
         }
 
         public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentials credentials)
         {
-            this.clientProfile = profile;
-            this.credentialsProvider = new StaticCredentialsProvider(credentials);
-            this.clientProfile.SetCredentialsProvider(this.credentialsProvider);
+            clientProfile = profile;
+            credentialsProvider = new StaticCredentialsProvider(credentials);
+            clientProfile.SetCredentialsProvider(credentialsProvider);
         }
 
         public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider)
         {
-            this.clientProfile = profile;
+            clientProfile = profile;
             this.credentialsProvider = credentialsProvider;
-            this.clientProfile.SetCredentialsProvider(this.credentialsProvider);
+            clientProfile.SetCredentialsProvider(this.credentialsProvider);
         }
 
         public T GetAcsResponse<T>(AcsRequest<T> request) where T : AcsResponse
         {
-            HttpResponse httpResponse = this.DoAction(request);
+            HttpResponse httpResponse = DoAction(request);
             return ParseAcsResponse(request, httpResponse);
         }
 
         public T GetAcsResponse<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber) where T : AcsResponse
         {
-            HttpResponse httpResponse = this.DoAction(request, autoRetry, maxRetryNumber);
+            HttpResponse httpResponse = DoAction(request, autoRetry, maxRetryNumber);
             return ParseAcsResponse(request, httpResponse);
         }
 
         public T GetAcsResponse<T>(AcsRequest<T> request, IClientProfile profile) where T : AcsResponse
         {
-            HttpResponse httpResponse = this.DoAction(request, profile);
+            HttpResponse httpResponse = DoAction(request, profile);
             return ParseAcsResponse(request, httpResponse);
         }
 
         public T GetAcsResponse<T>(AcsRequest<T> request, string regionId, Credential credential) where T : AcsResponse
         {
-            HttpResponse httpResponse = this.DoAction(request, regionId, credential);
+            HttpResponse httpResponse = DoAction(request, regionId, credential);
             return ParseAcsResponse(request, httpResponse);
         }
 
         public CommonResponse GetCommonResponse(CommonRequest request)
         {
-            HttpResponse httpResponse = this.DoAction(request.BuildRequest());
-            String data = null;
+            HttpResponse httpResponse = DoAction(request.BuildRequest());
+            string data = null;
             if (httpResponse.Content != null)
             {
                 data = System.Text.Encoding.UTF8.GetString(httpResponse.Content);
             }
 
-            CommonResponse response = new CommonResponse();
-            response.Data = data;
-            response.HttpResponse = httpResponse;
-            response.HttpStatus = httpResponse.Status;
+            CommonResponse response = new CommonResponse
+            {
+                Data = data,
+                HttpResponse = httpResponse,
+                HttpStatus = httpResponse.Status
+            };
 
             return response;
         }
@@ -132,50 +134,46 @@ namespace Aliyun.Acs.Core
                     {
                         throw new ServerException(error.ErrorCode, error.ErrorMessage, error.RequestId);
                     }
-                    else
+
+                    if (400 == httpResponse.Status && (error.ErrorCode.Equals("SignatureDoesNotMatch") || error.ErrorCode.Equals("IncompleteSignature")))
                     {
-                        if (400 == httpResponse.Status && (error.ErrorCode.Equals("SignatureDoesNotMatch") || error.ErrorCode.Equals("IncompleteSignature")))
+                        var errorMessage = error.ErrorMessage;
+                        Regex re = new Regex(@"string to sign is:", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                        Match matches = re.Match(errorMessage);
+
+                        if (matches.Success)
                         {
-                            var errorMessage = error.ErrorMessage;
-                            Regex re = new Regex(@"string to sign is:", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-                            Match matches = re.Match(errorMessage);
+                            var errorStringToSign = errorMessage.Substring(matches.Index + matches.Length);
 
-                            if (matches.Success)
+                            if (request.StringToSign.Equals(errorStringToSign))
                             {
-                                var errorStringToSign = errorMessage.Substring(matches.Index + matches.Length);
-
-                                if (request.StringToSign.Equals(errorStringToSign))
-                                {
-                                    throw new ClientException("SDK.InvalidAccessKeySecret", "Specified Access Key Secret is not valid.", error.RequestId);
-                                }
+                                throw new ClientException("SDK.InvalidAccessKeySecret", "Specified Access Key Secret is not valid.", error.RequestId);
                             }
                         }
-                        throw new ClientException(error.ErrorCode, error.ErrorMessage, error.RequestId);
                     }
+                    throw new ClientException(error.ErrorCode, error.ErrorMessage, error.RequestId);
                 }
-                else
-                {
-                    T t = System.Activator.CreateInstance<T>();
-                    t.HttpResponse = httpResponse;
-                    return t;
-                }
+
+                T t = Activator.CreateInstance<T>();
+                t.HttpResponse = httpResponse;
+                return t;
 
             }
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request) where T : AcsResponse
         {
-            return DoAction(request, autoRetry, maxRetryNumber, this.clientProfile);
+            return DoAction(request, autoRetry, maxRetryNumber, clientProfile);
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber) where T : AcsResponse
         {
-            return DoAction(request, autoRetry, maxRetryNumber, this.clientProfile);
+            return DoAction(request, autoRetry, maxRetryNumber, clientProfile);
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, IClientProfile profile) where T : AcsResponse
         {
-            return DoAction(request, this.autoRetry, this.maxRetryNumber, profile);
+            return DoAction(request, autoRetry, maxRetryNumber, profile);
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, string regionId, Credential credential) where T : AcsResponse
@@ -206,7 +204,7 @@ namespace Aliyun.Acs.Core
             }
             bool retry = autoRetry;
             int retryNumber = maxRetryNumber;
-            String region = profile.GetRegionId();
+            string region = profile.GetRegionId();
             if (null == request.RegionId)
             {
                 request.RegionId = region;
@@ -268,7 +266,7 @@ namespace Aliyun.Acs.Core
                 SetHttpsInsecure(IgnoreCertificate);
                 ResolveProxy(httpRequest, request);
 
-                HttpResponse response = this.GetResponse(httpRequest);
+                HttpResponse response = GetResponse(httpRequest);
 
                 PrintHttpDebugMsg(request, response);
 
@@ -278,10 +276,8 @@ namespace Aliyun.Acs.Core
                     {
                         continue;
                     }
-                    else
-                    {
-                        throw new ClientException("SDK.ConnectionReset", "Connection reset.");
-                    }
+
+                    throw new ClientException("SDK.ConnectionReset", "Connection reset.");
                 }
 
                 if (500 <= response.Status && shouldRetry)
@@ -372,12 +368,12 @@ namespace Aliyun.Acs.Core
 
         public void AppendUserAgent(string key, string value)
         {
-            this.userAgentConfig.AppendUserAgent(key, value);
+            userAgentConfig.AppendUserAgent(key, value);
         }
 
         public UserAgent GetUserAgentConfig()
         {
-            return this.userAgentConfig;
+            return userAgentConfig;
         }
 
         public void SetConnectTimeoutInMilliSeconds(int connectTimeout)
@@ -392,10 +388,10 @@ namespace Aliyun.Acs.Core
 
         private void ResolveTimeout(HttpRequest request)
         {
-            var finalReadTimeout = request.readTimeout > 0 ? request.readTimeout : this.readTimeout > 0 ? this.readTimeout : 0;
+            var finalReadTimeout = request.readTimeout > 0 ? request.readTimeout : readTimeout > 0 ? readTimeout : 0;
             request.SetReadTimeoutInMilliSeconds(finalReadTimeout);
 
-            var finalConnectTimeout = request.connectTimeout > 0 ? request.connectTimeout : this.connectTimeout > 0 ? this.connectTimeout : 0;
+            var finalConnectTimeout = request.connectTimeout > 0 ? request.connectTimeout : connectTimeout > 0 ? connectTimeout : 0;
             request.SetConnectTimeoutInMilliSeconds(finalConnectTimeout);
         }
 
@@ -464,10 +460,6 @@ namespace Aliyun.Acs.Core
             string proxy = "";
             string[] noProxy = GetNoProxy()?.Split(',');
 
-            Uri originProxyUri;
-            Uri finalProxyUri;
-            ICredentials credential;
-
             if (request.Protocol == ProtocolType.HTTP)
             {
                 proxy = GetHttpProxy();
@@ -479,13 +471,14 @@ namespace Aliyun.Acs.Core
 
             if (!String.IsNullOrEmpty(proxy))
             {
-                originProxyUri = new Uri(proxy);
+                var originProxyUri = new Uri(proxy);
+                Uri finalProxyUri;
                 if (!String.IsNullOrEmpty(originProxyUri.UserInfo))
                 {
                     authorization = Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(originProxyUri.UserInfo));
                     finalProxyUri = new Uri(originProxyUri.Scheme + "://" + originProxyUri.Authority);
                     var userInfoArray = originProxyUri.UserInfo.Split(':');
-                    credential = new NetworkCredential(userInfoArray[0], userInfoArray[1]);
+                    ICredentials credential = new NetworkCredential(userInfoArray[0], userInfoArray[1]);
 
                     httpRequest.WebProxy = new WebProxy(finalProxyUri, false, noProxy, credential);
 

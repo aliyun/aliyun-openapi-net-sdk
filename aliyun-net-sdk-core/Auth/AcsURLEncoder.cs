@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
+
 using System.Globalization;
 using System.Text;
 using System.Web;
@@ -27,12 +27,12 @@ namespace Aliyun.Acs.Core.Auth
     {
         private const string ENCODING_UTF8 = "UTF-8";
 
-        public static string Encode(String value)
+        public static string Encode(string value)
         {
             return HttpUtility.UrlEncode(value, Encoding.UTF8);
         }
 
-        public static string PercentEncode(String value)
+        public static string PercentEncode(string value)
         {
             StringBuilder stringBuilder = new StringBuilder();
             string text = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~";
@@ -45,8 +45,7 @@ namespace Aliyun.Acs.Core.Auth
                 }
                 else
                 {
-                    stringBuilder.Append("%").Append(
-                        string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int) c));
+                    stringBuilder.Append("%").Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int) c));
                 }
             }
             return stringBuilder.ToString();

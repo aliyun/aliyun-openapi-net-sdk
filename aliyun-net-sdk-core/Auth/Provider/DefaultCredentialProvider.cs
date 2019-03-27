@@ -21,9 +21,7 @@ using System;
 using System.Collections;
 using System.IO;
 
-using Aliyun.Acs.Core.Auth.Sts;
 using Aliyun.Acs.Core.Exceptions;
-using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Profile;
 
 using SharpConfig;
@@ -49,20 +47,19 @@ namespace Aliyun.Acs.Core.Auth.Provider
         private string roleSessionName;
         private string publicKeyId;
         private string privateKeyFile;
-        private string bearer_token;
 
-        private AlibabaCloudCredentialsProvider alibabaCloudCredentialProvider;
+        private readonly AlibabaCloudCredentialsProvider alibabaCloudCredentialProvider;
 
         public DefaultCredentialProvider() { }
 
         public DefaultCredentialProvider(IClientProfile profile,
             AlibabaCloudCredentialsProvider alibabaCloudCredentialProvider)
         {
-            this.accessKeyId = GetEnvironmentAccessKeyId();
-            this.accessKeySecret = GetEnvironmentAccessKeySecret();
-            this.regionId = GetEnvironmentRegionId();
-            this.credentialFileLocation = GetEnvironmentCredentialFile();
-            this.roleName = GetEnvironmentRoleName();
+            accessKeyId = GetEnvironmentAccessKeyId();
+            accessKeySecret = GetEnvironmentAccessKeySecret();
+            regionId = GetEnvironmentRegionId();
+            credentialFileLocation = GetEnvironmentCredentialFile();
+            roleName = GetEnvironmentRoleName();
             defaultProfile = profile;
             this.alibabaCloudCredentialProvider = alibabaCloudCredentialProvider;
         }
@@ -75,8 +72,8 @@ namespace Aliyun.Acs.Core.Auth.Provider
             defaultProfile = profile;
             this.privateKeyFile = privateKeyFile;
             this.publicKeyId = publicKeyId;
-            this.alibabaCloudCredentialProvider = alibabaCloudCredentialsProvider;
-            this.regionId = GetEnvironmentRegionId();
+            alibabaCloudCredentialProvider = alibabaCloudCredentialsProvider;
+            regionId = GetEnvironmentRegionId();
         }
 
         public AlibabaCloudCredentials GetAlibabaCloudClientCredential()
@@ -136,7 +133,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
                 Configuration config;
                 try
                 {
-                    config = LoadFileFromIni(this.credentialFileLocation);
+                    config = LoadFileFromIni(credentialFileLocation);
                 }
                 catch (Exception)
                 {
@@ -156,31 +153,31 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
                     if (config[userDefineSectionNode]["type"].RawValue.Equals("access_key"))
                     {
-                        this.accessKeyId = config[userDefineSectionNode]["access_key_id"].RawValue;
-                        this.accessKeySecret = config[userDefineSectionNode]["access_key_secret"].RawValue;
-                        this.regionId = config[userDefineSectionNode]["region_id"].RawValue;
+                        accessKeyId = config[userDefineSectionNode]["access_key_id"].RawValue;
+                        accessKeySecret = config[userDefineSectionNode]["access_key_secret"].RawValue;
+                        regionId = config[userDefineSectionNode]["region_id"].RawValue;
 
                         return GetAccessKeyCredential();
                     }
                     else if (config[userDefineSectionNode]["type"].RawValue.Equals("ecs_ram_role"))
                     {
-                        this.roleName = config[userDefineSectionNode]["role_name"].RawValue;
+                        roleName = config[userDefineSectionNode]["role_name"].RawValue;
 
                         return GetInstanceRamRoleAlibabaCloudCredential();
                     }
                     else if (config[userDefineSectionNode]["type"].RawValue.Equals("ram_role_arn"))
                     {
-                        this.accessKeyId = config[userDefineSectionNode]["access_key_id"].RawValue;
-                        this.accessKeySecret = config[userDefineSectionNode]["access_key_secret"].RawValue;
-                        this.roleArn = config[userDefineSectionNode]["role_arn"].RawValue;
-                        this.roleSessionName = config[userDefineSectionNode]["role_session_name"].RawValue;
+                        accessKeyId = config[userDefineSectionNode]["access_key_id"].RawValue;
+                        accessKeySecret = config[userDefineSectionNode]["access_key_secret"].RawValue;
+                        roleArn = config[userDefineSectionNode]["role_arn"].RawValue;
+                        roleSessionName = config[userDefineSectionNode]["role_session_name"].RawValue;
 
                         return GetRamRoleArnAlibabaCloudCredential();
                     }
                     else if (config[userDefineSectionNode]["type"].RawValue.Equals("rsa_key_pair"))
                     {
-                        this.publicKeyId = config[userDefineSectionNode]["public_key_id"].RawValue;
-                        this.privateKeyFile = config[userDefineSectionNode]["private_key_file"].RawValue;
+                        publicKeyId = config[userDefineSectionNode]["public_key_id"].RawValue;
+                        privateKeyFile = config[userDefineSectionNode]["private_key_file"].RawValue;
 
                         return GetRsaKeyPairAlibabaCloudCredential();
                     }
@@ -192,9 +189,9 @@ namespace Aliyun.Acs.Core.Auth.Provider
                         if (sectionItem.Equals("default"))
                         {
                             userDefineSectionNode = "default";
-                            this.accessKeyId = config[userDefineSectionNode]["access_key_id"].RawValue;
-                            this.accessKeySecret = config[userDefineSectionNode]["access_key_secret"].RawValue;
-                            this.regionId = config[userDefineSectionNode]["region_id"].RawValue;
+                            accessKeyId = config[userDefineSectionNode]["access_key_id"].RawValue;
+                            accessKeySecret = config[userDefineSectionNode]["access_key_secret"].RawValue;
+                            regionId = config[userDefineSectionNode]["region_id"].RawValue;
 
                             return GetAccessKeyCredential();
                         }
@@ -206,7 +203,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
         public virtual AlibabaCloudCredentials GetInstanceRamRoleAlibabaCloudCredential()
         {
-            if (null == this.regionId || this.regionId.Equals(""))
+            if (null == regionId || regionId.Equals(""))
             {
                 throw new ClientException("RegionID cannot be null or empty.");
             }
@@ -226,29 +223,29 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
         private AlibabaCloudCredentials GetAccessKeyCredential()
         {
-            if (String.IsNullOrEmpty(this.accessKeyId) && String.IsNullOrEmpty(this.accessKeySecret) && String.IsNullOrEmpty(this.regionId))
+            if (String.IsNullOrEmpty(accessKeyId) && String.IsNullOrEmpty(accessKeySecret) && String.IsNullOrEmpty(regionId))
             {
                 throw new ClientException("Missing required variable option for 'default Client'");
             }
-            AccessKeyCredential accessKeyCredential = new AccessKeyCredential(this.accessKeyId, this.accessKeySecret);
+            AccessKeyCredential accessKeyCredential = new AccessKeyCredential(accessKeyId, accessKeySecret);
 
             return accessKeyCredential;
         }
 
         public virtual AlibabaCloudCredentials GetRamRoleArnAlibabaCloudCredential()
         {
-            if (String.IsNullOrEmpty(this.accessKeyId) && String.IsNullOrEmpty(this.accessKeySecret) && String.IsNullOrEmpty(this.regionId))
+            if (String.IsNullOrEmpty(accessKeyId) && String.IsNullOrEmpty(accessKeySecret) && String.IsNullOrEmpty(regionId))
             {
                 throw new ClientException("Missing required variable option for 'default Client'");
             }
             RamRoleArnCredential credential = new RamRoleArnCredential(
-                this.accessKeyId,
-                this.accessKeySecret,
-                this.roleArn,
-                this.roleSessionName,
+                accessKeyId,
+                accessKeySecret,
+                roleArn,
+                roleSessionName,
                 STSAssumeRoleSessionCredentialsProvider.GetNewRoleSessionName(),
                 STSAssumeRoleSessionCredentialsProvider.DEFAULT_DURATION_SECONDS);
-            this.defaultProfile = DefaultProfile.GetProfile(this.regionId, this.accessKeyId, this.accessKeySecret);
+            defaultProfile = DefaultProfile.GetProfile(regionId, accessKeyId, accessKeySecret);
 
             var sTSAssumeRoleSessionCredentialsProvider = (STSAssumeRoleSessionCredentialsProvider) alibabaCloudCredentialProvider;
             RamRoleArnCredential ramRoleArnCredential = (RamRoleArnCredential) sTSAssumeRoleSessionCredentialsProvider.GetCredentials();
@@ -258,12 +255,12 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
         public virtual AlibabaCloudCredentials GetRsaKeyPairAlibabaCloudCredential()
         {
-            if (String.IsNullOrEmpty(this.publicKeyId) || String.IsNullOrEmpty(this.privateKeyFile) || String.IsNullOrEmpty(this.regionId))
+            if (String.IsNullOrEmpty(publicKeyId) || String.IsNullOrEmpty(privateKeyFile) || String.IsNullOrEmpty(regionId))
             {
                 throw new ClientException("Missing required variable option for 'default Client'");
             }
-            RsaKeyPairCredential rsaKeyPairCredential = new RsaKeyPairCredential(this.publicKeyId, this.privateKeyFile);
-            DefaultProfile profile = DefaultProfile.GetProfile(this.regionId, this.publicKeyId, this.privateKeyFile);
+            RsaKeyPairCredential rsaKeyPairCredential = new RsaKeyPairCredential(publicKeyId, privateKeyFile);
+            DefaultProfile profile = DefaultProfile.GetProfile(regionId, publicKeyId, privateKeyFile);
 
             var provider = (RsaKeyPairCredentialProvider) alibabaCloudCredentialProvider;
             BasicSessionCredentials basicCrededential = (BasicSessionCredentials) provider.GetCredentials();
@@ -288,27 +285,27 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
         private string GetEnvironmentAccessKeyId()
         {
-            return Environment.GetEnvironmentVariable(this.ENV_ACCESS_KEY_ID) ?? null;
+            return Environment.GetEnvironmentVariable(ENV_ACCESS_KEY_ID) ?? null;
         }
 
         private string GetEnvironmentAccessKeySecret()
         {
-            return Environment.GetEnvironmentVariable(this.ENV_ACCESS_KEY_SECRET) ?? null;
+            return Environment.GetEnvironmentVariable(ENV_ACCESS_KEY_SECRET) ?? null;
         }
 
         private string GetEnvironmentRegionId()
         {
-            return Environment.GetEnvironmentVariable(this.ENV_REGION_ID) ?? null;
+            return Environment.GetEnvironmentVariable(ENV_REGION_ID) ?? null;
         }
 
         private string GetEnvironmentCredentialFile()
         {
-            return Environment.GetEnvironmentVariable(this.ENV_CREDENTIAL_FILE) ?? null;
+            return Environment.GetEnvironmentVariable(ENV_CREDENTIAL_FILE) ?? null;
         }
 
         private string GetEnvironmentRoleName()
         {
-            return Environment.GetEnvironmentVariable(this.ENV_ROLE_NAME) ?? null;
+            return Environment.GetEnvironmentVariable(ENV_ROLE_NAME) ?? null;
         }
 
         public virtual Configuration LoadFileFromIni(string location)

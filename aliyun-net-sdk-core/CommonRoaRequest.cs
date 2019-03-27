@@ -17,11 +17,6 @@
  * under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Aliyun.Acs.Core.Http;
 
 namespace Aliyun.Acs.Core
@@ -30,10 +25,10 @@ namespace Aliyun.Acs.Core
     {
         public CommonRoaRequest(string product) : base(product)
         {
-            this.AcceptFormat = FormatType.JSON;
+            AcceptFormat = FormatType.JSON;
         }
 
-        public override CommonResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CommonResponse GetResponse(Transform.UnmarshallerContext unmarshallerContext)
         {
             return null;
         }

@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -24,24 +25,11 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class ShaHmac256 : ISigner
     {
+        public override string SignerName => "HMAC-SHA256";
 
-        public override string SignerName
-        {
-            get
-            {
-                return "HMAC-SHA256";
-            }
-        }
+        public override string SignerVersion => "1.0";
 
-        public override string SignerVersion
-        {
-            get
-            {
-                return "1.0";
-            }
-        }
-
-        public override String SignString(String source, String accessSecret)
+        public override string SignString(string source, string accessSecret)
         {
             using(var algorithm = KeyedHashAlgorithm.Create("HMACSHA256"))
             {
@@ -49,6 +37,5 @@ namespace Aliyun.Acs.Core.Auth
                 return Convert.ToBase64String(algorithm.ComputeHash(Encoding.UTF8.GetBytes(source.ToCharArray())));
             }
         }
-
     }
 }

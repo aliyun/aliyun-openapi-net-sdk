@@ -25,13 +25,13 @@ namespace Aliyun.Acs.Core.Auth
 {
     public interface ISignatureComposer
     {
-        Dictionary<String, String> RefreshSignParameters(Dictionary<String, String> parameters,
-            Signer signer, String accessKeyId, FormatType? format);
+        Dictionary<string, string> RefreshSignParameters(Dictionary<string, string> parameters,
+            Signer signer, string accessKeyId, FormatType? format);
 
-        String ComposeStringToSign(MethodType? method,
-            String uriPattern, Signer signer,
-            Dictionary<String, String> queries,
-            Dictionary<String, String> headers,
-            Dictionary<String, String> paths);
+        string ComposeStringToSign(MethodType? method,
+            string uriPattern, Signer signer,
+            Dictionary<string, string> queries,
+            Dictionary<string, string> headers,
+            Dictionary<string, string> paths);
     }
 }

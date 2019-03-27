@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Core.Profile
 
         Credential GetCredential();
 
-        List<Endpoint> GetEndpoints(String product, String regionId, String serviceCode, String endpointType);
+        List<Endpoint> GetEndpoints(string product, string regionId, string serviceCode, string endpointType);
 
-        void SetLocationConfig(String regionId, String product, String endpoint);
+        void SetLocationConfig(string regionId, string product, string endpoint);
 
         void SetCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider);
     }
