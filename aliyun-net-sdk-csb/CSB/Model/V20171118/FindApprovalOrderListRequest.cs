@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CSB.Transform;
 using Aliyun.Acs.CSB.Transform.V20171118;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CSB.Model.V20171118
 {
@@ -36,13 +37,15 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 		private string projectName;
 
+		private long? csbId;
+
 		private string alias;
 
 		private string serviceName;
 
-		private int? pageNum;
-
 		private long? serviceId;
+
+		private int? pageNum;
 
 		private bool? onlyPending;
 
@@ -56,6 +59,19 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			{
 				projectName = value;
 				DictionaryUtil.Add(QueryParameters, "ProjectName", value);
+			}
+		}
+
+		public long? CsbId
+		{
+			get
+			{
+				return csbId;
+			}
+			set	
+			{
+				csbId = value;
+				DictionaryUtil.Add(QueryParameters, "CsbId", value.ToString());
 			}
 		}
 
@@ -85,19 +101,6 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
 		public long? ServiceId
 		{
 			get
@@ -108,6 +111,19 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			{
 				serviceId = value;
 				DictionaryUtil.Add(QueryParameters, "ServiceId", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
@@ -129,7 +145,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			return false;
 		}
 
-        public override FindApprovalOrderListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override FindApprovalOrderListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return FindApprovalOrderListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

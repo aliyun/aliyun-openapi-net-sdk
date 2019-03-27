@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CSB.Transform;
 using Aliyun.Acs.CSB.Transform.V20171118;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CSB.Model.V20171118
 {
@@ -70,7 +71,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			return false;
 		}
 
-        public override DeleteServiceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
