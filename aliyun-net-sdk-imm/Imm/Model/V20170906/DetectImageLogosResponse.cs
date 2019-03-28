@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class DetectImageCelebrityResponse : AcsResponse
+	public class DetectImageLogosResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private string imageUri;
 
-		private List<DetectImageCelebrity_CelebrityItem> celebrity;
+		private List<DetectImageLogos_LogosItem> logos;
 
 		public string RequestId
 		{
@@ -55,125 +55,73 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public List<DetectImageCelebrity_CelebrityItem> Celebrity
+		public List<DetectImageLogos_LogosItem> Logos
 		{
 			get
 			{
-				return celebrity;
+				return logos;
 			}
 			set	
 			{
-				celebrity = value;
+				logos = value;
 			}
 		}
 
-		public class DetectImageCelebrity_CelebrityItem
+		public class DetectImageLogos_LogosItem
 		{
 
-			private string celebrityName;
+			private string logoName;
 
-			private string celebrityGender;
+			private float? logoConfidence;
 
-			private float? celebrityConfidence;
+			private DetectImageLogos_LogoBoundary logoBoundary;
 
-			private string celebrityLibraryName;
-
-			private DetectImageCelebrity_CelebrityBoundary celebrityBoundary;
-
-			public string CelebrityName
+			public string LogoName
 			{
 				get
 				{
-					return celebrityName;
+					return logoName;
 				}
 				set	
 				{
-					celebrityName = value;
+					logoName = value;
 				}
 			}
 
-			public string CelebrityGender
+			public float? LogoConfidence
 			{
 				get
 				{
-					return celebrityGender;
+					return logoConfidence;
 				}
 				set	
 				{
-					celebrityGender = value;
+					logoConfidence = value;
 				}
 			}
 
-			public float? CelebrityConfidence
+			public DetectImageLogos_LogoBoundary LogoBoundary
 			{
 				get
 				{
-					return celebrityConfidence;
+					return logoBoundary;
 				}
 				set	
 				{
-					celebrityConfidence = value;
+					logoBoundary = value;
 				}
 			}
 
-			public string CelebrityLibraryName
+			public class DetectImageLogos_LogoBoundary
 			{
-				get
-				{
-					return celebrityLibraryName;
-				}
-				set	
-				{
-					celebrityLibraryName = value;
-				}
-			}
-
-			public DetectImageCelebrity_CelebrityBoundary CelebrityBoundary
-			{
-				get
-				{
-					return celebrityBoundary;
-				}
-				set	
-				{
-					celebrityBoundary = value;
-				}
-			}
-
-			public class DetectImageCelebrity_CelebrityBoundary
-			{
-
-				private int? left;
-
-				private int? top;
 
 				private int? width;
 
 				private int? height;
 
-				public int? Left
-				{
-					get
-					{
-						return left;
-					}
-					set	
-					{
-						left = value;
-					}
-				}
+				private int? top;
 
-				public int? Top
-				{
-					get
-					{
-						return top;
-					}
-					set	
-					{
-						top = value;
-					}
-				}
+				private int? left;
 
 				public int? Width
 				{
@@ -196,6 +144,30 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						height = value;
+					}
+				}
+
+				public int? Top
+				{
+					get
+					{
+						return top;
+					}
+					set	
+					{
+						top = value;
+					}
+				}
+
+				public int? Left
+				{
+					get
+					{
+						return left;
+					}
+					set	
+					{
+						left = value;
 					}
 				}
 			}

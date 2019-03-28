@@ -27,20 +27,33 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class DeletePhotoProcessTaskRequest : RpcAcsRequest<DeletePhotoProcessTaskResponse>
+    public class DetectImageLogosRequest : RpcAcsRequest<DetectImageLogosResponse>
     {
-        public DeletePhotoProcessTaskRequest()
-            : base("imm", "2017-09-06", "DeletePhotoProcessTask", "imm", "openAPI")
+        public DetectImageLogosRequest()
+            : base("imm", "2017-09-06", "DetectImageLogos", "imm", "openAPI")
         {
         }
+
+		private string imageUri;
 
 		private string action;
 
 		private string project;
 
-		private string taskId;
-
 		private string accessKeyId;
+
+		public string ImageUri
+		{
+			get
+			{
+				return imageUri;
+			}
+			set	
+			{
+				imageUri = value;
+				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+			}
+		}
 
 		public string Action
 		{
@@ -68,19 +81,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
-			}
-		}
-
 		public string AccessKeyId
 		{
 			get
@@ -94,9 +94,14 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-        public override DeletePhotoProcessTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DetectImageLogosResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeletePhotoProcessTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DetectImageLogosResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
