@@ -26,84 +26,99 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 
+using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
 
 using Serilog;
+using Serilog.Exceptions;
 
 namespace Aliyun.Acs.Core.Utils
 {
     public class SerilogHelper
     {
-        private static string logTemplate = "[{start_time}] {channel} {level}: '{method} {uri} HTTP/{version}' {code} {cost}ms {hostname} {pid} {NewLine}";
-        private static ILogger logger;
+        private static ILogger defaultLogger;
+        private static ILogger exceptionLogger;
         private const string RegexPattern = @"{(.*?)}";
-        private static readonly IDictionary<string, string> LogMessageValueMap = new Dictionary<string, string>();
-
+        private static IDictionary<string, string> LoggerMessageMap;
         public static long ExecuteTime { get; set; }
         public static string StartTime { get; set; }
         public static bool EnableLogger { get; private set; }
 
+        private static Logger Logger;
+
         private static void BuildKeyValueMap<T>(AcsRequest<T> request, HttpResponse response, long executeTime, string startTime) where T : AcsResponse
         {
-            var requestHeader = request.Headers == null ? "" : DictionaryUtil.TransformDicToString(request.Headers);
-            var requestContent = request.Content == null? "": Encoding.Default.GetString(request.Content);
+            try
+            {
+                LoggerMessageMap = new Dictionary<string, string>();
+                var requestHeader = request.Headers == null ? "" : DictionaryUtil.TransformDicToString(request.Headers);
+                var requestContent = request.Content == null? "": Encoding.Default.GetString(request.Content);
 
-            var responseHeader = response.Headers == null ? "" : DictionaryUtil.TransformDicToString(response.Headers);
-            var responseContent = response.Content == null? "": Encoding.Default.GetString(response.Content);
+                var responseHeader = response.Headers == null ? "" : DictionaryUtil.TransformDicToString(response.Headers);
+                var responseContent = response.Content == null? "": Encoding.Default.GetString(response.Content);
 
-            var requestUri = new Uri(request.Url);
-            var host = requestUri.Host;
-            var target = requestUri.PathAndQuery + requestUri.Fragment;
-            var hostName = Dns.GetHostName();
+                var hostName = Dns.GetHostName();
 
-            LogMessageValueMap.Add("channel", "AlibabaCloud");
-            LogMessageValueMap.Add("level", "Info");
-            LogMessageValueMap.Add("request", requestHeader + requestContent);
-            LogMessageValueMap.Add("req_headers", requestHeader);
-            LogMessageValueMap.Add("host", host);
-            LogMessageValueMap.Add("method", request.Method.ToString());
-            LogMessageValueMap.Add("uri", request.Url);
-            LogMessageValueMap.Add("version", response.HttpVersion);
-            LogMessageValueMap.Add("target", target);
-            LogMessageValueMap.Add("hostname", hostName);
+                if (null != request.Url)
+                {
+                    var requestUri = new Uri(request.Url);
+                    var host = requestUri.Host;
+                    var target = requestUri.PathAndQuery + requestUri.Fragment;
 
-            LogMessageValueMap.Add("code", response.Status.ToString());
-            LogMessageValueMap.Add("error", responseContent);
+                    LoggerMessageMap.Add("host", host);
+                    LoggerMessageMap.Add("target", target);
+                }
 
-            LogMessageValueMap.Add("response", responseHeader + responseContent + response.Status.ToString());
-            LogMessageValueMap.Add("res_headers", responseHeader);
+                LoggerMessageMap.Add("level", Logger.Level);
+                LoggerMessageMap.Add("channel", Logger.Channel);
+                LoggerMessageMap.Add("request", requestHeader + requestContent);
+                LoggerMessageMap.Add("req_headers", requestHeader);
 
-            LogMessageValueMap.Add("pid", Process.GetCurrentProcess().Id.ToString());
-            LogMessageValueMap.Add("cost", executeTime.ToString());
-            LogMessageValueMap.Add("start_time", startTime);
+                LoggerMessageMap.Add("method", request.Method.ToString());
+                LoggerMessageMap.Add("uri", request.Url);
+                LoggerMessageMap.Add("version", "HTTP/" + response.HttpVersion);
+                LoggerMessageMap.Add("hostname", hostName);
+
+                LoggerMessageMap.Add("code", response.Status.ToString());
+                LoggerMessageMap.Add("error", responseContent);
+                LoggerMessageMap.Add("response", responseHeader + responseContent + response.Status.ToString());
+                LoggerMessageMap.Add("res_headers", responseHeader);
+
+                LoggerMessageMap.Add("pid", Process.GetCurrentProcess().Id.ToString());
+                LoggerMessageMap.Add("cost", executeTime.ToString() + "ms");
+                LoggerMessageMap.Add("start_time", "[" + startTime + "]");
+            }
+            catch (Exception ex)
+            {
+                LogException(ex, "ErrorCode", ex.ToString());
+                throw new ClientException(ex.ToString());
+            }
         }
 
-        public static void SetLogger(string logPath)
+        public static void SetLogger(Logger logger)
         {
+            Logger = logger;
             EnableLogger = true;
 
-            CreateLogFile(logPath, out var filePath);
-
             var loggerConfiguration = new LoggerConfiguration()
-                .WriteTo.File(filePath, outputTemplate : logTemplate, rollingInterval : RollingInterval.Day);
-            logger = loggerConfiguration.CreateLogger();
+                .WriteTo.File(Logger.LoggerPath, outputTemplate : Logger.LoggerTemplate, shared : true);
+            defaultLogger = loggerConfiguration.CreateLogger();
         }
 
-        public static void SetLoggerFormat(string format)
+        public static void LogInfo<T>(AcsRequest<T> request, HttpResponse httpResponse, long executeTime, string startTime) where T : AcsResponse
         {
-            format = format + "{NewLine}";
-            logTemplate = format;
-        }
+            if (!EnableLogger)
+            {
+                return;
+            }
 
-        public static void OutputLogInfo<T>(AcsRequest<T> request, HttpResponse httpResponse, long executeTime, string startTime) where T : AcsResponse
-        {
             BuildKeyValueMap(request, httpResponse, executeTime, startTime);
 
             var logKey = new List<string>();
             var logValue = new List<string>();
 
             Regex re = new Regex(RegexPattern, RegexOptions.IgnoreCase | RegexOptions.Compiled);
-            var matchCollection = re.Matches(logTemplate);
+            var matchCollection = re.Matches(Logger.LoggerTemplate);
 
             if (0 < matchCollection.Count)
             {
@@ -115,29 +130,34 @@ namespace Aliyun.Acs.Core.Utils
 
             foreach (var item in logKey)
             {
-                LogMessageValueMap.TryGetValue(item, out string value);
+                LoggerMessageMap.TryGetValue(item, out string value);
                 logValue.Add(value);
             }
 
             var logParameters = logValue.Cast<object>().ToArray();
-            logger.Information(logTemplate, logParameters);
+            defaultLogger.Information(Logger.LoggerTemplate, logParameters);
         }
 
-        private static void CreateLogFile(string path, out string filePath)
+        public static void LogException(Exception ex, string errorCode, string errorMessage)
         {
-            var slash = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ? "/" : "\\";
-            string directoryPath = path.TrimEnd('/', '\\');
-
-            if (!Directory.Exists(path))
+            if (!EnableLogger)
             {
-                directoryPath = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ?
-                    Environment.GetEnvironmentVariable("HOME") :
-                    Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
+                return;
             }
 
-            Directory.CreateDirectory(directoryPath + slash + ".alibabacloud" + slash);
+            var loggerConfiguration = new LoggerConfiguration()
+                .Enrich.WithExceptionDetails()
+                .WriteTo.File(Logger.LoggerPath, shared : true);
 
-            filePath = directoryPath + slash + ".alibabacloud" + slash + "log.txt";
+            exceptionLogger = loggerConfiguration.CreateLogger();
+            exceptionLogger.Error(ex, "ExceptionMessage: ");
+        }
+
+        public static void CloseLogger()
+        {
+            EnableLogger = false;
+            LoggerMessageMap = null;
+            Logger = null;
         }
     }
 }

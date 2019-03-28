@@ -115,7 +115,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
 
             // When Fetcher throw ClientException
             mockFetcher = new Mock<ECSMetadataServiceCredentialsFetcher>() { CallBase = true };
-            var ex = new ClientException("MockClientException");
+            var ex = new ClientException("MockClientExceptionCode", "MockClinetExceptionMessage");
             mockFetcher.Setup(foo => foo.Fetch()).Throws(ex);
             fetcher = mockFetcher.Object;
             instance.withFetcher(fetcher);

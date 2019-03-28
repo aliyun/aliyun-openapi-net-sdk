@@ -16,29 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 
-namespace Aliyun.Acs.Core.Exceptions
+namespace Aliyun.Acs.Core.Utils
 {
-    public class ClientException : Exception
+    public class EnvironmentUtil
     {
-        public string ErrorCode { get; set; }
-        public string ErrorMessage { get; set; }
-        public string RequestId { get; set; }
-        public ErrorType ErrorType { get; set; }
-
-        public ClientException(string errCode, string errMsg, string requestId) : this(errCode, errMsg)
+        public static string GetHomePath()
         {
-
+            return (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ?
+                Environment.GetEnvironmentVariable("HOME") :
+                Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
         }
 
-        public ClientException(string errCode, string errMsg) : base(errCode + " : " + errMsg)
+        public static string GetSlash()
         {
-            ErrorCode = errCode;
-            ErrorMessage = errMsg;
-            ErrorType = ErrorType.Client;
+            return (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ? "/" : "\\";
         }
-
-        public ClientException(string message) : base(message) { }
     }
 }

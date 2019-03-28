@@ -16,29 +16,28 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 
-namespace Aliyun.Acs.Core.Exceptions
+namespace Aliyun.Acs.Core.Utils
 {
-    public class ClientException : Exception
+    public class Logger
     {
-        public string ErrorCode { get; set; }
-        public string ErrorMessage { get; set; }
-        public string RequestId { get; set; }
-        public ErrorType ErrorType { get; set; }
-
-        public ClientException(string errCode, string errMsg, string requestId) : this(errCode, errMsg)
+        private const string defaultTemplate = "{start_time} {channel} [{level}] {method} {uri} {version} {code} {cost} {hostname} {pid} {NewLine}";
+        public Logger(
+            string loggerPath,
+            string level = "Info",
+            string channel = "AlibabaCloud",
+            string template = defaultTemplate)
         {
-
+            LoggerPath = loggerPath;
+            Level = level;
+            Channel = channel;
+            LoggerTemplate = template + "{NewLine}";
         }
 
-        public ClientException(string errCode, string errMsg) : base(errCode + " : " + errMsg)
-        {
-            ErrorCode = errCode;
-            ErrorMessage = errMsg;
-            ErrorType = ErrorType.Client;
-        }
+        public string LoggerPath { get; }
+        public string Level { get; } = "Info";
+        public string Channel { get; } = "AlibabaCloud";
+        public string LoggerTemplate { get; }
 
-        public ClientException(string message) : base(message) { }
     }
 }

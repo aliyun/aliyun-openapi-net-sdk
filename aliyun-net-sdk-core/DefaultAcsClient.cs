@@ -119,11 +119,7 @@ namespace Aliyun.Acs.Core
 
         private T ParseAcsResponse<T>(AcsRequest<T> request, HttpResponse httpResponse) where T : AcsResponse
         {
-            if (SerilogHelper.EnableLogger)
-            {
-                SerilogHelper.OutputLogInfo(request, httpResponse, SerilogHelper.ExecuteTime, SerilogHelper.StartTime);
-            }
-
+            SerilogHelper.LogInfo(request, httpResponse, SerilogHelper.ExecuteTime, SerilogHelper.StartTime);
             FormatType? format = httpResponse.ContentType;
 
             if (httpResponse.isSuccess())
@@ -132,37 +128,48 @@ namespace Aliyun.Acs.Core
             }
             else
             {
-                AcsError error = ReadError(request, httpResponse, format);
-                if (null != error.ErrorCode)
+                try
                 {
-                    if (500 <= httpResponse.Status)
+                    AcsError error = ReadError(request, httpResponse, format);
+                    if (null != error.ErrorCode)
                     {
-                        throw new ServerException(error.ErrorCode, error.ErrorMessage, error.RequestId);
-                    }
-
-                    if (400 == httpResponse.Status && (error.ErrorCode.Equals("SignatureDoesNotMatch") || error.ErrorCode.Equals("IncompleteSignature")))
-                    {
-                        var errorMessage = error.ErrorMessage;
-                        Regex re = new Regex(@"string to sign is:", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-                        Match matches = re.Match(errorMessage);
-
-                        if (matches.Success)
+                        if (500 <= httpResponse.Status)
                         {
-                            var errorStringToSign = errorMessage.Substring(matches.Index + matches.Length);
+                            throw new ServerException(error.ErrorCode, error.ErrorMessage, error.RequestId);
+                        }
 
-                            if (request.StringToSign.Equals(errorStringToSign))
+                        if (400 == httpResponse.Status && (error.ErrorCode.Equals("SignatureDoesNotMatch") || error.ErrorCode.Equals("IncompleteSignature")))
+                        {
+                            var errorMessage = error.ErrorMessage;
+                            Regex re = new Regex(@"string to sign is:", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                            Match matches = re.Match(errorMessage);
+
+                            if (matches.Success)
                             {
-                                throw new ClientException("SDK.InvalidAccessKeySecret", "Specified Access Key Secret is not valid.", error.RequestId);
+                                var errorStringToSign = errorMessage.Substring(matches.Index + matches.Length);
+
+                                if (request.StringToSign.Equals(errorStringToSign))
+                                {
+                                    throw new ClientException("SDK.InvalidAccessKeySecret", "Specified Access Key Secret is not valid.", error.RequestId);
+                                }
                             }
                         }
+                        throw new ClientException(error.ErrorCode, error.ErrorMessage, error.RequestId);
                     }
-                    throw new ClientException(error.ErrorCode, error.ErrorMessage, error.RequestId);
                 }
-
+                catch (ServerException ex)
+                {
+                    SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                    throw new ServerException(ex.ErrorCode, ex.ErrorMessage);
+                }
+                catch (ClientException ex)
+                {
+                    SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                    throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
+                }
                 T t = Activator.CreateInstance<T>();
                 t.HttpResponse = httpResponse;
                 return t;
-
             }
         }
 
@@ -240,62 +247,69 @@ namespace Aliyun.Acs.Core
         public virtual HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
             AlibabaCloudCredentials credentials, Signer signer, FormatType? format, List<Endpoint> endpoints) where T : AcsResponse
         {
-            SerilogHelper.StartTime = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
-
-            var watch = System.Diagnostics.Stopwatch.StartNew();
-
-            FormatType? requestFormatType = request.AcceptFormat;
-            if (null != requestFormatType)
+            try
             {
-                format = requestFormatType;
-            }
-            ProductDomain domain = null;
-            if (request.ProductDomain != null)
-            {
-                domain = request.ProductDomain;
-            }
-            else
-            {
-                domain = Endpoint.FindProductDomain(regionId, request.Product, endpoints);
-            }
-            if (null == domain)
-            {
-                throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
-            }
+                SerilogHelper.StartTime = DateTime.UtcNow.ToString("o");
+                var watch = System.Diagnostics.Stopwatch.StartNew();
 
-            request.Headers["User-Agent"] = UserAgent.Resolve(request.GetSysUserAgentConfig(), this.userAgentConfig);
-
-            bool shouldRetry = true;
-            for (int retryTimes = 0; shouldRetry; retryTimes++)
-            {
-                shouldRetry = autoRetry && retryTimes < maxRetryNumber;
-                HttpRequest httpRequest = request.SignRequest(signer, credentials, format, domain);
-
-                ResolveTimeout(httpRequest);
-                SetHttpsInsecure(IgnoreCertificate);
-                ResolveProxy(httpRequest, request);
-
-                HttpResponse response = GetResponse(httpRequest);
-
-                PrintHttpDebugMsg(request, response);
-
-                if (response.Content == null)
+                FormatType? requestFormatType = request.AcceptFormat;
+                if (null != requestFormatType)
                 {
-                    if (shouldRetry)
+                    format = requestFormatType;
+                }
+                ProductDomain domain = null;
+                if (request.ProductDomain != null)
+                {
+                    domain = request.ProductDomain;
+                }
+                else
+                {
+                    domain = Endpoint.FindProductDomain(regionId, request.Product, endpoints);
+                }
+                if (null == domain)
+                {
+                    throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
+                }
+
+                request.Headers["User-Agent"] = UserAgent.Resolve(request.GetSysUserAgentConfig(), this.userAgentConfig);
+
+                bool shouldRetry = true;
+                for (int retryTimes = 0; shouldRetry; retryTimes++)
+                {
+                    shouldRetry = autoRetry && retryTimes < maxRetryNumber;
+                    HttpRequest httpRequest = request.SignRequest(signer, credentials, format, domain);
+
+                    ResolveTimeout(httpRequest);
+                    SetHttpsInsecure(IgnoreCertificate);
+                    ResolveProxy(httpRequest, request);
+
+                    HttpResponse response = GetResponse(httpRequest);
+
+                    PrintHttpDebugMsg(request, response);
+
+                    if (response.Content == null)
+                    {
+                        if (shouldRetry)
+                        {
+                            continue;
+                        }
+
+                        throw new ClientException("SDK.ConnectionReset", "Connection reset.");
+                    }
+
+                    if (500 <= response.Status && shouldRetry)
                     {
                         continue;
                     }
-
-                    throw new ClientException("SDK.ConnectionReset", "Connection reset.");
+                    watch.Stop();
+                    SerilogHelper.ExecuteTime = watch.ElapsedMilliseconds;
+                    return response;
                 }
-
-                if (500 <= response.Status && shouldRetry)
-                {
-                    continue;
-                }
-                watch.Stop();
-                SerilogHelper.ExecuteTime = watch.ElapsedMilliseconds;
-                return response;
+            }
+            catch (ClientException ex)
+            {
+                SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
             }
 
             return null;
@@ -506,14 +520,14 @@ namespace Aliyun.Acs.Core
             }
         }
 
-        public void SetLogger(string logPath)
+        public void SetLogger(Logger logger)
         {
-            SerilogHelper.SetLogger(logPath);
+            SerilogHelper.SetLogger(logger);
         }
 
-        public void SetLoggerTemplate(string template)
+        public void CloseLogger()
         {
-            SerilogHelper.SetLoggerFormat(template);
+            SerilogHelper.CloseLogger();
         }
     }
 }

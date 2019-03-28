@@ -18,6 +18,7 @@
  */
 
 using Aliyun.Acs.Core.Exceptions;
+using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth
 {
@@ -29,7 +30,7 @@ namespace Aliyun.Acs.Core.Auth
         private const int MAX_ECS_METADATA_FETCH_RETRY_TIMES = 3;
         private int maxRetryTimes = MAX_ECS_METADATA_FETCH_RETRY_TIMES;
         private readonly string roleName;
-        
+
         public InstanceProfileCredentialsProvider(string roleName)
         {
             this.roleName = roleName;
@@ -46,25 +47,35 @@ namespace Aliyun.Acs.Core.Auth
 
         AlibabaCloudCredentials AlibabaCloudCredentialsProvider.GetCredentials()
         {
-            if (credentials == null)
-            {
-                EcsMetadataServiceFetchCount += 1;
-                credentials = fetcher.Fetch(maxRetryTimes);
-            }
-
-            if (credentials.IsExpired())
-            {
-                throw new ClientException("SDK.SessionTokenExpired", "Current session token has expired.");
-            }
-
-            if (!credentials.WillSoonExpire() || !credentials.ShouldRefresh()) return credentials;
             try
             {
+                if (credentials == null)
+                {
+                    EcsMetadataServiceFetchCount += 1;
+                    credentials = fetcher.Fetch(maxRetryTimes);
+                }
+
+                if (credentials.IsExpired())
+                {
+                    throw new ClientException("SDK.SessionTokenExpired", "Current session token has expired.");
+                }
+
+                if (!credentials.WillSoonExpire() || !credentials.ShouldRefresh())
+                {
+                    return credentials;
+                }
+
                 EcsMetadataServiceFetchCount += 1;
                 credentials = fetcher.Fetch();
             }
-            catch (ClientException)
+            catch (ClientException ex)
             {
+                if (ex.ErrorCode.Equals("SDK.SessionTokenExpired") && ex.ErrorMessage.Equals("Current session token has expired."))
+                {
+                    SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                    throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
+                }
+
                 // Use the current expiring session token and wait for next round
                 credentials.SetLastFailedRefreshTime();
             }
