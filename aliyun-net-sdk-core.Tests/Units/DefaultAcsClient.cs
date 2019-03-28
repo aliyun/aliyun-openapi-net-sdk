@@ -12,6 +12,7 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
 
 using Moq;
 
@@ -180,6 +181,27 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             var result = instance.GetAcsResponse<AcsResponse>(request, "cn-hangzhou", credentials);
             Assert.NotNull(result);
+        }
+
+        [Fact]
+        public void GetAcsResponseWithLogInfoSuccess()
+        {
+            DefaultAcsClient instance = this.MockDefaultAcsClient();
+
+            var logger = new Logger(loggerPath: EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetSlash() + "log.txt");
+            instance.SetLogger(logger);
+
+            // Mock AcsResquest
+            MockAcsRequestForDefaultAcsClient request = new MockAcsRequestForDefaultAcsClient();
+            request.RegionId = "cn-hangzhou";
+            request.Product = "Ess";
+            request.LocationProduct = "ess";
+            request.LocationEndpointType = "openAPI";
+
+            var result = instance.GetAcsResponse<AcsResponse>(request);
+            Assert.IsType<CommonResponse>(result);
+
+            instance.CloseLogger();
         }
 
         [Fact]
@@ -783,7 +805,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             Environment.SetEnvironmentVariable("NO_PROXY", "no_proxy_1");
             Environment.SetEnvironmentVariable("no_proxy", "no_proxy_2");
             Assert.Equal("localhost.com,localtest.com", client.GetNoProxy());
-            
+
             Environment.SetEnvironmentVariable("no_proxy", null);
             Environment.SetEnvironmentVariable("NO_PROXY", null);
             client.SetNoProxy(null);
@@ -831,6 +853,19 @@ namespace Aliyun.Acs.Core.Tests.Units
             Environment.SetEnvironmentVariable("HTTP_PROXY", null);
             Environment.SetEnvironmentVariable("no_proxy", null);
             httpRequest.Headers.Remove("Authorization");
+        }
+
+        [Fact]
+        public void SetLoggerTest()
+        {
+            IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
+            var client = new DefaultAcsClient(profile);
+
+            var logger = new Logger(EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetSlash() + "log.txt");
+            //Use Invalid Path will set the default user home path
+            client.SetLogger(logger);
+
+            client.CloseLogger();
         }
     }
 }

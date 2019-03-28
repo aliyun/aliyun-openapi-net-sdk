@@ -126,59 +126,67 @@ namespace Aliyun.Acs.Core.Profile
             }
             return endpoints;
         }
-        
+
         public List<Endpoint> GetEndpoints(string product, string regionId, string serviceCode, string endpointType)
 
         {
-            if (product == null)
-                return endpoints;
+            try
+            {
+                if (product == null)
+                    return endpoints;
 
-            if (null == endpoints)
-            {
-                Endpoint endpoint = null;
-                if (serviceCode != null)
+                if (null == endpoints)
                 {
-                    endpoint = GetEndpointByRemoteProvider(regionId, product, serviceCode, endpointType);
-                }
-                if (endpoint == null)
-                {
-                    endpoint = GetEndpointByIEndpoints(regionId, product);
-                }
-                if (endpoint != null)
-                {
-                    endpoints = new List<Endpoint>
+                    Endpoint endpoint = null;
+                    if (serviceCode != null)
                     {
-                    endpoint
-                    };
-                    CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, DateTime.Now);
-                }
-                else
-                {
-                    throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
-                }
-            }
-            else if (Endpoint.FindProductDomain(regionId, product, endpoints) == null || CacheTimeHelper.CheckCacheIsExpire(product, regionId))
-            {
-                Endpoint endpoint = null;
-                if (serviceCode != null)
-                {
-                    endpoint = GetEndpointByRemoteProvider(regionId, product, serviceCode, endpointType);
-                }
-                if (endpoint == null)
-                {
-                    endpoint = GetEndpointByIEndpoints(regionId, product);
-                }
-                if (endpoint != null)
-                {
-                    foreach (string region in endpoint.RegionIds)
+                        endpoint = GetEndpointByRemoteProvider(regionId, product, serviceCode, endpointType);
+                    }
+                    if (endpoint == null)
                     {
-                        foreach (ProductDomain productDomain in endpoint.ProductDomains.ToList())
+                        endpoint = GetEndpointByIEndpoints(regionId, product);
+                    }
+                    if (endpoint != null)
+                    {
+                        endpoints = new List<Endpoint>
                         {
-                            AddEndpoint(endpoint.Name, region, product, productDomain.DomianName, false);
-                            CacheTimeHelper.AddLastClearTimePerProduct(product, region, DateTime.Now);
+                        endpoint
+                        };
+                        CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, DateTime.Now);
+                    }
+                    else
+                    {
+                        throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
+                    }
+                }
+                else if (Endpoint.FindProductDomain(regionId, product, endpoints) == null || CacheTimeHelper.CheckCacheIsExpire(product, regionId))
+                {
+                    Endpoint endpoint = null;
+                    if (serviceCode != null)
+                    {
+                        endpoint = GetEndpointByRemoteProvider(regionId, product, serviceCode, endpointType);
+                    }
+                    if (endpoint == null)
+                    {
+                        endpoint = GetEndpointByIEndpoints(regionId, product);
+                    }
+                    if (endpoint != null)
+                    {
+                        foreach (string region in endpoint.RegionIds)
+                        {
+                            foreach (ProductDomain productDomain in endpoint.ProductDomains.ToList())
+                            {
+                                AddEndpoint(endpoint.Name, region, product, productDomain.DomianName, false);
+                                CacheTimeHelper.AddLastClearTimePerProduct(product, region, DateTime.Now);
+                            }
                         }
                     }
                 }
+            }
+            catch (ClientException ex)
+            {
+                SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
             }
             return endpoints;
         }

@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <PackageReference Include="Serilog" Version="2.8.0" />
+    <PackageReference Include="Serilog.Exceptions" Version="5.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
     <PackageReference Include="sharpconfig" Version="3.2.8" />
   </ItemGroup>

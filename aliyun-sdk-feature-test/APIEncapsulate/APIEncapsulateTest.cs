@@ -93,6 +93,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             {
                 client.GetAcsResponse(request);
             });
+            
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
             Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
         }
