@@ -17,7 +17,7 @@
 </p>
 
 
-欢迎使用阿里云开发者工具套件（SDK），适用于阿里云的 C# SDK 让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
+欢迎使用 Alibaba Cloud SDK for C# ，适用于阿里云的 C# SDK 让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
 
 
 ## 使用Demo及其示例
@@ -25,7 +25,7 @@
 
 
 ## 环境要求
-阿里云 C# SDK 适用于:
+Alibaba Cloud SDK for C# 适用于:
 - **`.NET Framework 4.6.1`** 及其以上版本
 - **`.NET Standard 2.0`** 及其以上版本。
 
@@ -101,7 +101,7 @@ class Program
 
 ### 使用BearerToken 调用 [CCC](https://www.nuget.org/packages/aliyun-net-sdk-ccc/) 产品
 
-首先需要保证您已经安装了相应的Nuget包依赖。
+首先需要保证您已经安装了相应的 Nuget 包依赖。
 
 ```csharp
 using Aliyun.Acs.Core;
@@ -160,7 +160,7 @@ class Program
 
 
 ## API参考
-要知道您想访问的产品提供的 API 以及它们的参数，请参考开放了 API 的[产品列表](https://develop.aliyun.com/tools/openapilist)。
+要知道您想访问的产品提供的 API 以及它们的参数，请参考开放 API 的[产品列表](https://develop.aliyun.com/tools/openapilist)。
 
 
 ## 许可证
