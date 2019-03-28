@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ecs.Transform;
 using Aliyun.Acs.Ecs.Transform.V20140526;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
@@ -363,7 +364,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override RevokeSecurityGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RevokeSecurityGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return RevokeSecurityGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

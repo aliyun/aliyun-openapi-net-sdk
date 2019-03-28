@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ecs.Transform;
 using Aliyun.Acs.Ecs.Transform.V20140526;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
@@ -39,13 +40,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
-		private string imageName;
-
 		private string roleName;
-
-		private string action;
 
 		private string description;
 
@@ -54,6 +49,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private long? ownerId;
 
 		private string platform;
+
+		private string regionId;
+
+		private string imageName;
+
+		private string action;
 
 		private string architecture;
 
@@ -105,32 +106,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string ImageName
-		{
-			get
-			{
-				return imageName;
-			}
-			set	
-			{
-				imageName = value;
-				DictionaryUtil.Add(QueryParameters, "ImageName", value);
-			}
-		}
-
 		public string RoleName
 		{
 			get
@@ -141,19 +116,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				roleName = value;
 				DictionaryUtil.Add(QueryParameters, "RoleName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -206,6 +168,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				platform = value;
 				DictionaryUtil.Add(QueryParameters, "Platform", value);
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
+				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+			}
+		}
+
+		public string ImageName
+		{
+			get
+			{
+				return imageName;
+			}
+			set	
+			{
+				imageName = value;
+				DictionaryUtil.Add(QueryParameters, "ImageName", value);
+			}
+		}
+
+		public string Action
+		{
+			get
+			{
+				return action;
+			}
+			set	
+			{
+				action = value;
+				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -310,7 +311,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override ImportImageResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ImportImageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ImportImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
