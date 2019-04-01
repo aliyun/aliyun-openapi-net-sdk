@@ -52,7 +52,7 @@ namespace Aliyun.Acs.Feature.Test.Timeout
             DescribeAccessPointsResponse response = client.GetAcsResponse(request);
 
             client.SetConnectTimeoutInMilliSeconds(5000);
-            Assert.NotNull(0 <= response.AccessPointSet.Count);
+            Assert.True(0 <= response.AccessPointSet.Count);
         }
     }
 }
