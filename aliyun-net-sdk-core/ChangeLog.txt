@@ -1,3 +1,7 @@
+2019-04-01 Version 1.2.7
+1, Add support for log
+2, Core code refactor
+
 2019-03-22 Version 1.2.6
 1, Refactor http proxy
 2, Method accessibility improve
