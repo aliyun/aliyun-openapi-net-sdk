@@ -188,7 +188,7 @@ namespace Aliyun.Acs.Core.Tests.Units
         {
             DefaultAcsClient instance = this.MockDefaultAcsClient();
 
-            var logger = new Logger(loggerPath: EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetSlash() + "log.txt");
+            var logger = new Logger(loggerPath: EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetOSSlash() + "log.txt");
             instance.SetLogger(logger);
 
             // Mock AcsResquest
@@ -861,7 +861,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             IClientProfile profile = DefaultProfile.GetProfile("cn-hangzhou", AKID, AKSE);
             var client = new DefaultAcsClient(profile);
 
-            var logger = new Logger(EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetSlash() + "log.txt");
+            var logger = new Logger(EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetOSSlash() + "log.txt");
             //Use Invalid Path will set the default user home path
             client.SetLogger(logger);
 

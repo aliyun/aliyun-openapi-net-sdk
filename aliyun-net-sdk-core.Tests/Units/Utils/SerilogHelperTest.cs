@@ -19,7 +19,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
 
             string format = "{start_time}|{code}|{pid}|{cost}";
 
-            var logger = new Logger(loggerPath: EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetSlash() + "log.txt", template: format);
+            var logger = new Logger(loggerPath: EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetOSSlash() + "log.txt", template: format);
 
             SerilogHelper.SetLogger(logger);
 
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
         public void OutputLogInfoTestInValid()
         {
             string format = "{code}|{pid}|{start_time}";
-            var logger = new Logger(loggerPath: EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetSlash() + "log.txt", template: format);
+            var logger = new Logger(loggerPath: EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetOSSlash() + "log.txt", template: format);
 
             SerilogHelper.SetLogger(logger);
 
@@ -68,7 +68,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
         public void OutputLogException()
         {
             string format = "{Exception}";
-            var logger = new Logger(loggerPath: EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetSlash() + "log.txt", template: format);
+            var logger = new Logger(loggerPath: EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetOSSlash() + "log.txt", template: format);
 
             SerilogHelper.SetLogger(logger);
 
