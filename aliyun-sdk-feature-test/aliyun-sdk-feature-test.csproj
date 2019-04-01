@@ -23,14 +23,17 @@
 
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2017.csproj" />
-    <ProjectReference Include="..\aliyun-net-sdk-ecs\aliyun-net-sdk-ecs.vs2017.csproj" />
-    <ProjectReference Include="..\aliyun-net-sdk-rds\aliyun-net-sdk-rds.vs2017.csproj" />
-    <ProjectReference Include="..\aliyun-net-sdk-cdn\aliyun-net-sdk-cdn.vs2017.csproj" />
-    <ProjectReference Include="..\aliyun-net-sdk-slb\aliyun-net-sdk-slb.vs2017.csproj" />
-    <ProjectReference Include="..\aliyun-net-sdk-ram\aliyun-net-sdk-ram.vs2017.csproj" />
-    <ProjectReference Include="..\aliyun-net-sdk-vpc\aliyun-net-sdk-vpc.vs2017.csproj" />
-    <ProjectReference Include="..\aliyun-net-sdk-ros\aliyun-net-sdk-ros.vs2017.csproj" />
-    <ProjectReference Include="..\aliyun-net-sdk-ccc\aliyun-net-sdk-ccc.vs2017.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="aliyun-net-sdk-ccc" Version="1.0.9" />
+    <PackageReference Include="aliyun-net-sdk-cdn" Version="3.0.8" />
+    <PackageReference Include="aliyun-net-sdk-ecs" Version="4.16.4" />
+    <PackageReference Include="aliyun-net-sdk-ram" Version="3.0.1" />
+    <PackageReference Include="aliyun-net-sdk-rds" Version="2.3.2" />
+    <PackageReference Include="aliyun-net-sdk-ros" Version="2.2.8" />
+    <PackageReference Include="aliyun-net-sdk-slb" Version="3.2.41" />
+    <PackageReference Include="aliyun-net-sdk-vpc" Version="3.0.4" />
   </ItemGroup>
 
 </Project>
