@@ -1,4 +1,4 @@
-[← Timeout](4-Timeout-EN.md) | Packages[(中文)](5-Packages-CN.md) | [Requirements →](0-Requirements-EN.md)
+[← Timeout](4-Timeout-EN.md) | Packages[(中文)](5-Packages-CN.md) | [Log →](6-Log-EN.md)
 ***
 
 # Product Nuget Packages And Details
@@ -99,4 +99,4 @@ In the Meanwhile, there are various product nuget package below.For more infomat
 
 
 ***
-[← Timeout](4-Timeout-EN.md) | Packages[(中文)](5-Packages-CN.md) | [Requirements →](0-Requirements-EN.md)
+[← Timeout](4-Timeout-EN.md) | Packages[(中文)](5-Packages-CN.md) | [Log →](6-Log-EN.md)
