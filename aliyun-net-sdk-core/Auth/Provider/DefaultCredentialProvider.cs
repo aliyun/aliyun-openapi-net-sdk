@@ -23,6 +23,7 @@ using System.IO;
 
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Profile;
+using Aliyun.Acs.Core.Utils;
 
 using SharpConfig;
 
@@ -30,12 +31,6 @@ namespace Aliyun.Acs.Core.Auth.Provider
 {
     public class DefaultCredentialProvider
     {
-        private readonly string ENV_ACCESS_KEY_ID = "ALIBABA_CLOUD_ACCESS_KEY_ID";
-        private readonly string ENV_ACCESS_KEY_SECRET = "ALIBABA_CLOUD_ACCESS_KEY_SECRET";
-        private readonly string ENV_REGION_ID = "ALIBABA_CLOUD_REGION_ID";
-        private readonly string ENV_CREDENTIAL_FILE = "ALIBABA_CLOUD_CREDENTIALS_FILE";
-        private readonly string ENV_ROLE_NAME = "ALIBABA_CLOUD_ECS_METADATA";
-
         private IClientProfile defaultProfile;
 
         private string accessKeyId;
@@ -55,11 +50,11 @@ namespace Aliyun.Acs.Core.Auth.Provider
         public DefaultCredentialProvider(IClientProfile profile,
             AlibabaCloudCredentialsProvider alibabaCloudCredentialProvider)
         {
-            accessKeyId = GetEnvironmentAccessKeyId();
-            accessKeySecret = GetEnvironmentAccessKeySecret();
-            regionId = GetEnvironmentRegionId();
-            credentialFileLocation = GetEnvironmentCredentialFile();
-            roleName = GetEnvironmentRoleName();
+            accessKeyId = EnvironmentUtil.GetEnvironmentAccessKeyId();
+            accessKeySecret = EnvironmentUtil.GetEnvironmentAccessKeySecret();
+            regionId = EnvironmentUtil.GetEnvironmentRegionId();
+            credentialFileLocation = EnvironmentUtil.GetEnvironmentCredentialFile();
+            roleName = EnvironmentUtil.GetEnvironmentRoleName();
             defaultProfile = profile;
             this.alibabaCloudCredentialProvider = alibabaCloudCredentialProvider;
         }
@@ -73,7 +68,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
             this.privateKeyFile = privateKeyFile;
             this.publicKeyId = publicKeyId;
             alibabaCloudCredentialProvider = alibabaCloudCredentialsProvider;
-            regionId = GetEnvironmentRegionId();
+            regionId = EnvironmentUtil.GetEnvironmentRegionId();
         }
 
         public AlibabaCloudCredentials GetAlibabaCloudClientCredential()
@@ -111,8 +106,9 @@ namespace Aliyun.Acs.Core.Auth.Provider
         {
             if (null == credentialFileLocation)
             {
-                credentialFileLocation = GetHomePath();
-                var fileLocation = ComposeFileUrl(credentialFileLocation);
+                credentialFileLocation = EnvironmentUtil.GetHomePath();
+                var slash = EnvironmentUtil.GetOSSlash();
+                var fileLocation = EnvironmentUtil.GetComposedPath(credentialFileLocation, slash);
                 var fileExist = File.Exists(fileLocation);
 
                 if (fileExist)
@@ -270,42 +266,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
         public virtual string GetHomePath()
         {
-            string homePath = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ?
-                Environment.GetEnvironmentVariable("HOME") :
-                Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
-
-            return homePath;
-        }
-
-        private string ComposeFileUrl(string path)
-        {
-            string slash = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ? "/" : "\\";
-            return path + slash + ".alibabacloud" + slash + "credentials.ini";
-        }
-
-        private string GetEnvironmentAccessKeyId()
-        {
-            return Environment.GetEnvironmentVariable(ENV_ACCESS_KEY_ID) ?? null;
-        }
-
-        private string GetEnvironmentAccessKeySecret()
-        {
-            return Environment.GetEnvironmentVariable(ENV_ACCESS_KEY_SECRET) ?? null;
-        }
-
-        private string GetEnvironmentRegionId()
-        {
-            return Environment.GetEnvironmentVariable(ENV_REGION_ID) ?? null;
-        }
-
-        private string GetEnvironmentCredentialFile()
-        {
-            return Environment.GetEnvironmentVariable(ENV_CREDENTIAL_FILE) ?? null;
-        }
-
-        private string GetEnvironmentRoleName()
-        {
-            return Environment.GetEnvironmentVariable(ENV_ROLE_NAME) ?? null;
+            return EnvironmentUtil.GetHomePath();
         }
 
         public virtual Configuration LoadFileFromIni(string location)

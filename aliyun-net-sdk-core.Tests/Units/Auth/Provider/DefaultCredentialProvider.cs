@@ -6,6 +6,7 @@ using Aliyun.Acs.Core.Auth.Provider;
 using Aliyun.Acs.Core.Auth.Sts;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Profile;
+using Aliyun.Acs.Core.Utils;
 
 using Moq;
 
@@ -97,13 +98,11 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         public void GetCredentialFileAlibabaCloudCredentialWithFileAndAkExist()
         {
 
-            var homePath = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ?
-                Environment.GetEnvironmentVariable("HOME") :
-                Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
+            var homePath = EnvironmentUtil.GetHomePath();
             TestHelper.CreateIniFileWithAk(homePath);
 
-            var slash = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ? "/" : "\\";
-            var finalLocation = homePath + slash + ".alibabacloud" + slash + "credentials.ini";
+            var slash = EnvironmentUtil.GetOSSlash();
+            var finalLocation = GetFileLocation(homePath, slash);
             var configuration = Configuration.LoadFromFile(finalLocation);
 
             DefaultProfile profile = DefaultProfile.GetProfile();
@@ -151,13 +150,11 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         public void GetCredentialFileAlibabaCloudCredentialWithEcsRamRole()
         {
             var ecsRamRoleCredential = new EcsRamRoleCredential("fakeak", "fakeaks", "fakesession", DateTime.Now.ToString(), 4000);
-            var homePath = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ?
-                Environment.GetEnvironmentVariable("HOME") :
-                Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
+            var homePath = EnvironmentUtil.GetHomePath();
             TestHelper.CreateIniFileWithEcs(homePath);
 
-            var slash = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ? "/" : "\\";
-            var finalLocation = homePath + slash + ".alibabacloud" + slash + "credentials.ini";
+            var slash = EnvironmentUtil.GetOSSlash();
+            var finalLocation = GetFileLocation(homePath, slash);
             var configuration = Configuration.LoadFromFile(finalLocation);
 
             DefaultProfile profile = DefaultProfile.GetProfile();
@@ -183,13 +180,11 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         public void GetCredentialFileAlibabaCloudCredentialWithRamRole()
         {
             var ramRoleCredential = new RamRoleArnCredential("fakeak", "fakeaks", "fakeroleArn", "fakesessionname", "fakesessiontokne", 4000);
-            var homePath = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ?
-                Environment.GetEnvironmentVariable("HOME") :
-                Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
+            var homePath = EnvironmentUtil.GetHomePath();
             TestHelper.CreateIniFileWithRam(homePath);
 
-            var slash = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ? "/" : "\\";
-            var finalLocation = homePath + slash + ".alibabacloud" + slash + "credentials.ini";
+            var slash = EnvironmentUtil.GetOSSlash();
+            var finalLocation = GetFileLocation(homePath, slash);
             var configurtion = Configuration.LoadFromFile(finalLocation);
 
             DefaultProfile profile = DefaultProfile.GetProfile();
@@ -216,14 +211,12 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         public void GetCredentialFileAlibabaCloudCredentialWithRsaKey()
         {
             var basicSessionCredential = new BasicSessionCredentials("fakeak", "fakeaks", "fakesessiontoken", 4000);
-            var homePath = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ?
-                Environment.GetEnvironmentVariable("HOME") :
-                Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
+            var homePath = EnvironmentUtil.GetHomePath();
 
             TestHelper.CreateIniFileWithRsaKey(homePath);
 
-            var slash = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ? "/" : "\\";
-            var finalLocation = homePath + slash + ".alibabacloud" + slash + "credentials.ini";
+            var slash = EnvironmentUtil.GetOSSlash();
+            var finalLocation = GetFileLocation(homePath, slash);
             var configurtion = Configuration.LoadFromFile(finalLocation);
 
             DefaultProfile profile = DefaultProfile.GetProfile();
@@ -276,9 +269,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
                 "region_id = cn-hangzhou # Optional£ Region ";
             var configuration = Configuration.LoadFromString(iniData);
 
-            var homePath = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ?
-                Environment.GetEnvironmentVariable("HOME") :
-                Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
+            var homePath = EnvironmentUtil.GetHomePath();
 
             DefaultProfile profile = DefaultProfile.GetProfile();
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_CREDENTIALS_FILE", homePath);
@@ -420,6 +411,11 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", null);
             Assert.NotNull(actualCredentil);
             Assert.Equal("aks", actualCredentil.GetAccessKeySecret());
+        }
+
+        private static string GetFileLocation(string homePath, string slash)
+        {
+            return homePath + slash + ".alibabacloud" + slash + "credentials.ini";
         }
     }
 }

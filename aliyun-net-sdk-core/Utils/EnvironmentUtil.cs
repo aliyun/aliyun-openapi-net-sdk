@@ -23,6 +23,12 @@ namespace Aliyun.Acs.Core.Utils
 {
     public class EnvironmentUtil
     {
+        private readonly static string ENV_ACCESS_KEY_ID = "ALIBABA_CLOUD_ACCESS_KEY_ID";
+        private readonly static string ENV_ACCESS_KEY_SECRET = "ALIBABA_CLOUD_ACCESS_KEY_SECRET";
+        private readonly static string ENV_REGION_ID = "ALIBABA_CLOUD_REGION_ID";
+        private readonly static string ENV_CREDENTIAL_FILE = "ALIBABA_CLOUD_CREDENTIALS_FILE";
+        private readonly static string ENV_ROLE_NAME = "ALIBABA_CLOUD_ECS_METADATA";
+
         public static string GetHomePath()
         {
             return (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ?
@@ -30,9 +36,39 @@ namespace Aliyun.Acs.Core.Utils
                 Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
         }
 
-        public static string GetSlash()
+        public static string GetOSSlash()
         {
             return (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ? "/" : "\\";
+        }
+
+        public static string GetEnvironmentAccessKeyId()
+        {
+            return Environment.GetEnvironmentVariable(ENV_ACCESS_KEY_ID) ?? null;
+        }
+
+        public static string GetEnvironmentAccessKeySecret()
+        {
+            return Environment.GetEnvironmentVariable(ENV_ACCESS_KEY_SECRET) ?? null;
+        }
+
+        public static string GetEnvironmentRegionId()
+        {
+            return Environment.GetEnvironmentVariable(ENV_REGION_ID) ?? null;
+        }
+
+        public static string GetEnvironmentCredentialFile()
+        {
+            return Environment.GetEnvironmentVariable(ENV_CREDENTIAL_FILE) ?? null;
+        }
+
+        public static string GetEnvironmentRoleName()
+        {
+            return Environment.GetEnvironmentVariable(ENV_ROLE_NAME) ?? null;
+        }
+
+        public static string GetComposedPath(string homePath, string slash)
+        {
+            return homePath + slash + ".alibabacloud" + slash + "credentials.ini";
         }
     }
 }

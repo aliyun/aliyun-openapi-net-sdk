@@ -20,7 +20,7 @@ namespace Aliyun.Acs.Feature.Test.ErrorHandler
             var response = client.GetCommonResponse(request);
             var content = System.Text.Encoding.UTF8.GetString(response.HttpResponse.Content);
 
-            Assert.True(content.Contains("Keyword=InvalidParameter"));
+            Assert.Contains("Keyword=InvalidParameter", content);
         }
 
         [Fact]
