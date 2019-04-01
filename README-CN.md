@@ -17,7 +17,7 @@
 </p>
 
 
-欢迎使用 Alibaba Cloud SDK for C# ，适用于阿里云的 C# SDK 让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
+欢迎使用 Alibaba Cloud SDK for C# ，让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
 
 
 ## 使用Demo及其示例
@@ -39,7 +39,7 @@ Alibaba Cloud SDK for C# 适用于:
 
 您可以通过 NuGet 程序包管理器来安装：
 
-* 在`解决方案资源管理器面板`中右击您的项目选择`管理 NuGet 程序包`菜单，在打开的 NuGet 管理面板中点击`浏览`选项卡输入 `aliyun-net-sdk`，在下方列表中将显示由 `Alibaba Cloud` 发布的各产品模块，选择您期望的模块点击**安装**即可。
+* 在 `解决方案资源管理器面板` 中右击您的项目选择 `管理 NuGet 程序包` 菜单，在打开的 NuGet 管理面板中点击`浏览`选项卡输入 `aliyun-net-sdk`，在下方列表中将显示由 `Alibaba Cloud` 发布的各产品模块，选择您期望的模块点击 **安装** 即可。
 
 或者通过 .NET CLI 工具来安装（以安装 ECS为例）
 
@@ -149,6 +149,7 @@ class Program
 * [代理](docs/3-Proxy-CN.md)
 * [超时](docs/4-Timeout-CN.md)
 * [产品Nuget包](docs/5-Packages-CN.md)
+* [日志](docs/6-Log-CN.md)
 
 
 ## 问题

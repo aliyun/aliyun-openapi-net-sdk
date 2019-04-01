@@ -146,6 +146,7 @@ class Program
 * [Proxy](docs/3-Proxy-EN.md)
 * [Timeout](docs/4-Timeout-EN.md)
 * [Product Nuget Package](docs/5-Packages-EN.md)
+* [Log](docs/6-Log-EN.md)
 
 
 ## Issues
@@ -157,7 +158,7 @@ Detailed changes for each release are documented in the [release notes](aliyun-n
 
 
 ## API Reference
-You can visit the API and its parameters in [Product List](https://www.alibabacloud.com/en?spm=5176.10609282.1280361.9.62e538011pDOUG)
+You can visit the API and its parameters in [Product List](https://www.alibabacloud.com).
 
 
 ## License
