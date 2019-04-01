@@ -734,18 +734,18 @@ namespace Aliyun.Acs.Core.Tests.Units
             Assert.Equal("http://localhost.com", client.GetHttpProxy());
 
             client.SetHttpProxy(null);
-            Environment.SetEnvironmentVariable("HTTP_PROXY", "http_proxy_1");
-            Assert.Equal("http_proxy_1", client.GetHttpProxy());
+            Environment.SetEnvironmentVariable("HTTP_PROXY", "http_proxy_upper");
+            Assert.Equal("http_proxy_upper", client.GetHttpProxy());
             Environment.SetEnvironmentVariable("HTTP_PROXY", null);
 
             client.SetHttpProxy(null);
-            Environment.SetEnvironmentVariable("http_proxy", "http_proxy_2");
-            Assert.Equal("http_proxy_2", client.GetHttpProxy());
+            Environment.SetEnvironmentVariable("http_proxy", "http_proxy_lower");
+            Assert.Equal("http_proxy_lower", client.GetHttpProxy());
             Environment.SetEnvironmentVariable("http_proxy", null);
 
             client.SetHttpProxy("http://localhost.com");
-            Environment.SetEnvironmentVariable("HTTP_PROXY", "http_proxy_1");
-            Environment.SetEnvironmentVariable("http_proxy", "http_proxy_2");
+            Environment.SetEnvironmentVariable("HTTP_PROXY", "http_proxy_upper");
+            Environment.SetEnvironmentVariable("http_proxy", "http_proxy_lower");
             Assert.Equal("http://localhost.com", client.GetHttpProxy());
 
             Environment.SetEnvironmentVariable("http_proxy", null);
@@ -763,18 +763,18 @@ namespace Aliyun.Acs.Core.Tests.Units
             Assert.Equal("https://localhost.com", client.GetHttpsProxy());
 
             client.SetHttpsProxy(null);
-            Environment.SetEnvironmentVariable("HTTPS_PROXY", "https_proxy_1");
-            Assert.Equal("https_proxy_1", client.GetHttpsProxy());
+            Environment.SetEnvironmentVariable("HTTPS_PROXY", "https_proxy_upper");
+            Assert.Equal("https_proxy_upper", client.GetHttpsProxy());
             Environment.SetEnvironmentVariable("HTTPS_PROXY", null);
 
             client.SetHttpsProxy(null);
-            Environment.SetEnvironmentVariable("https_proxy", "https_proxy_2");
-            Assert.Equal("https_proxy_2", client.GetHttpsProxy());
+            Environment.SetEnvironmentVariable("https_proxy", "https_proxy_lower");
+            Assert.Equal("https_proxy_lower", client.GetHttpsProxy());
             Environment.SetEnvironmentVariable("https_proxy", null);
 
             client.SetHttpsProxy("https://localhost.com");
-            Environment.SetEnvironmentVariable("HTTPS_PROXY", "https_proxy_1");
-            Environment.SetEnvironmentVariable("https_proxy", "https_proxy_2");
+            Environment.SetEnvironmentVariable("HTTPS_PROXY", "https_proxy_upper");
+            Environment.SetEnvironmentVariable("https_proxy", "https_proxy_lower");
             Assert.Equal("https://localhost.com", client.GetHttpsProxy());
 
             Environment.SetEnvironmentVariable("https_proxy", null);
@@ -792,18 +792,18 @@ namespace Aliyun.Acs.Core.Tests.Units
             Assert.Equal("localhost.com,localtest.com", client.GetNoProxy());
 
             client.SetNoProxy(null);
-            Environment.SetEnvironmentVariable("NO_PROXY", "no_proxy_1");
-            Assert.Equal("no_proxy_1", client.GetNoProxy());
+            Environment.SetEnvironmentVariable("NO_PROXY", "no_proxy_upper");
+            Assert.Equal("no_proxy_upper", client.GetNoProxy());
             Environment.SetEnvironmentVariable("NO_PROXY", null);
 
             client.SetNoProxy(null);
-            Environment.SetEnvironmentVariable("no_proxy", "no_proxy_2");
-            Assert.Equal("no_proxy_2", client.GetNoProxy());
+            Environment.SetEnvironmentVariable("no_proxy", "no_proxy_lower");
+            Assert.Equal("no_proxy_lower", client.GetNoProxy());
             Environment.SetEnvironmentVariable("no_proxy", null);
 
             client.SetNoProxy("localhost.com,localtest.com");
-            Environment.SetEnvironmentVariable("NO_PROXY", "no_proxy_1");
-            Environment.SetEnvironmentVariable("no_proxy", "no_proxy_2");
+            Environment.SetEnvironmentVariable("NO_PROXY", "no_proxy_upper");
+            Environment.SetEnvironmentVariable("no_proxy", "no_proxy_lower");
             Assert.Equal("localhost.com,localtest.com", client.GetNoProxy());
 
             Environment.SetEnvironmentVariable("no_proxy", null);
