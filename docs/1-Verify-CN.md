@@ -3,7 +3,7 @@
 
 # 忽略HTTPS证书校验
 
-当您想要在客户端关掉HTTPS证书的校验时，你可以在 Client 或 Request 级别进行设置
+当您想要在客户端关掉 HTTPS 证书的校验时，你可以在 Client 或 Request 级别进行设置
 
 ```c#
 // client级别的证书忽略校验
