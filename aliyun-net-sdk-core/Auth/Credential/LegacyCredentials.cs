@@ -17,13 +17,25 @@
  * under the License.
  */
 
-using System;
-
 namespace Aliyun.Acs.Core.Auth
 {
-    [Obsolete]
-    public class InstanceProfileCredentials : EcsRamRoleCredential
+    public class LegacyCredentials : AlibabaCloudCredentials
     {
-        public InstanceProfileCredentials(string accessKeyId, string accessKeySecret, string sessionToken, string expiration, long roleSessionDurationSeconds) : base(accessKeyId, accessKeySecret, sessionToken, expiration, roleSessionDurationSeconds) { }
+        private readonly Credential legacyCredential;
+
+        public LegacyCredentials(Credential legacyCredential)
+        {
+            this.legacyCredential = legacyCredential;
+        }
+
+        public string GetAccessKeyId()
+        {
+            return legacyCredential.AccessKeyId;
+        }
+
+        public string GetAccessKeySecret()
+        {
+            return legacyCredential.AccessSecret;
+        }
     }
 }

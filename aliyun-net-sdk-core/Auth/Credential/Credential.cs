@@ -16,32 +16,34 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
 using System;
 
 namespace Aliyun.Acs.Core.Auth
 {
-    public class StsCredential : AlibabaCloudCredentials
+    /// <summary>
+    /// StsCredential AccessKeyId + AccessKeySecret + SecurityToken
+    /// </summary>
+    public class Credential : AlibabaCloudCredentials
     {
         public DateTime RefreshDate { get; set; }
         public DateTime? ExpiredDate { get; set; }
         public string AccessKeyId { get; set; }
         public string AccessSecret { get; set; }
         public string SecurityToken { get; set; }
-        
-        public StsCredential()
+
+        public Credential()
         {
             RefreshDate = DateTime.Now;
         }
 
-        public StsCredential(string keyId, string secret)
+        public Credential(string keyId, string secret)
         {
             AccessKeyId = keyId;
             AccessSecret = secret;
             RefreshDate = DateTime.Now;
         }
 
-        public StsCredential(string keyId, string secret, string securityToken)
+        public Credential(string keyId, string secret, string securityToken)
         {
             AccessKeyId = keyId;
             AccessSecret = secret;
@@ -49,7 +51,7 @@ namespace Aliyun.Acs.Core.Auth
             RefreshDate = new DateTime();
         }
 
-        public StsCredential(string keyId, string secret, int expiredHours)
+        public Credential(string keyId, string secret, int expiredHours)
         {
             AccessKeyId = keyId;
             AccessSecret = secret;
@@ -58,7 +60,7 @@ namespace Aliyun.Acs.Core.Auth
             SetExpiredDate(expiredHours);
         }
 
-        public StsCredential(string keyId, string secret, string securityToken, int expiredHours)
+        public Credential(string keyId, string secret, string securityToken, int expiredHours)
         {
             AccessKeyId = keyId;
             AccessSecret = secret;
@@ -82,11 +84,7 @@ namespace Aliyun.Acs.Core.Auth
             {
                 return false;
             }
-            if (ExpiredDate < DateTime.Now)
-            {
-                return false;
-            }
-            return true;
+            return !(ExpiredDate < DateTime.Now);
         }
 
         public string GetAccessKeyId()
@@ -98,5 +96,7 @@ namespace Aliyun.Acs.Core.Auth
         {
             return AccessSecret;
         }
+
     }
+
 }

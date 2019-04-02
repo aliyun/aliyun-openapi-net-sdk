@@ -223,7 +223,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
             {
                 throw new ClientException("Missing required variable option for 'default Client'");
             }
-            AccessKeyCredential accessKeyCredential = new AccessKeyCredential(accessKeyId, accessKeySecret);
+            var accessKeyCredential = new BasicCredentials(accessKeyId, accessKeySecret);
 
             return accessKeyCredential;
         }
@@ -234,17 +234,15 @@ namespace Aliyun.Acs.Core.Auth.Provider
             {
                 throw new ClientException("Missing required variable option for 'default Client'");
             }
-            RamRoleArnCredential credential = new RamRoleArnCredential(
+            BasicSessionCredentials credential = new BasicSessionCredentials(
                 accessKeyId,
                 accessKeySecret,
-                roleArn,
-                roleSessionName,
                 STSAssumeRoleSessionCredentialsProvider.GetNewRoleSessionName(),
                 STSAssumeRoleSessionCredentialsProvider.DEFAULT_DURATION_SECONDS);
             defaultProfile = DefaultProfile.GetProfile(regionId, accessKeyId, accessKeySecret);
 
             var sTSAssumeRoleSessionCredentialsProvider = (STSAssumeRoleSessionCredentialsProvider) alibabaCloudCredentialProvider;
-            RamRoleArnCredential ramRoleArnCredential = (RamRoleArnCredential) sTSAssumeRoleSessionCredentialsProvider.GetCredentials();
+            BasicSessionCredentials ramRoleArnCredential = (BasicSessionCredentials) sTSAssumeRoleSessionCredentialsProvider.GetCredentials();
 
             return ramRoleArnCredential;
         }
@@ -255,7 +253,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
             {
                 throw new ClientException("Missing required variable option for 'default Client'");
             }
-            RsaKeyPairCredential rsaKeyPairCredential = new RsaKeyPairCredential(publicKeyId, privateKeyFile);
+            KeyPairCredentials rsaKeyPairCredential = new KeyPairCredentials(publicKeyId, privateKeyFile);
             DefaultProfile profile = DefaultProfile.GetProfile(regionId, publicKeyId, privateKeyFile);
 
             var provider = (RsaKeyPairCredentialProvider) alibabaCloudCredentialProvider;

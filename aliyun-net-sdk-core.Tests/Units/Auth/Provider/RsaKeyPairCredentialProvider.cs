@@ -15,7 +15,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         {
             DefaultProfile.ClearDefaultProfile();
 
-            var mockRsaPairCredential = new Mock<RsaKeyPairCredential>("ak", "aks");
+            var mockRsaPairCredential = new Mock<KeyPairCredentials>("ak", "aks");
             var rsaPairCredential = mockRsaPairCredential.Object;
 
             var profile = DefaultProfile.GetProfile();
@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             DefaultProfile.ClearDefaultProfile();
 
             long seconds = 100;
-            var mockRsaPairCredential = new Mock<RsaKeyPairCredential>("ak", "aks");
+            var mockRsaPairCredential = new Mock<KeyPairCredentials>("ak", "aks");
             var rsaPairCredential = mockRsaPairCredential.Object;
             var profile = DefaultProfile.GetProfile();
 
@@ -48,7 +48,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             var mockClient = new Mock<IAcsClient>();
             var client = mockClient.Object;
 
-            var mockRsaPairCredential = new Mock<RsaKeyPairCredential>("ak", "aks");
+            var mockRsaPairCredential = new Mock<KeyPairCredentials>("ak", "aks");
             var rsaPairCredential = mockRsaPairCredential.Object;
 
             var instance = new Core.Auth.Provider.RsaKeyPairCredentialProvider(rsaPairCredential, profile);
@@ -60,7 +60,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         {
             DefaultProfile.ClearDefaultProfile();
 
-            var mockRsaPairCredential = new Mock<RsaKeyPairCredential>("publicKeyId", "privateKeyFile");
+            var mockRsaPairCredential = new Mock<KeyPairCredentials>("publicKeyId", "privateKeyFile");
             var rsaPairCredential = mockRsaPairCredential.Object;
 
             var response = new GetSessionAccessKeyResponse();

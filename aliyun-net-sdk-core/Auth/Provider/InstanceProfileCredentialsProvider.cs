@@ -22,9 +22,12 @@ using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth
 {
+    /// <summary>
+    /// InstanceProfileCredentialsProvider provides EcsRamRoleCredential
+    /// </summary>
     public class InstanceProfileCredentialsProvider : AlibabaCloudCredentialsProvider
     {
-        private EcsRamRoleCredential credentials = null;
+        private InstanceProfileCredentials credentials = null;
         public int EcsMetadataServiceFetchCount = 0;
         private ECSMetadataServiceCredentialsFetcher fetcher;
         private const int MAX_ECS_METADATA_FETCH_RETRY_TIMES = 3;

@@ -19,31 +19,18 @@
 
 namespace Aliyun.Acs.Core.Auth
 {
-    public class RamRoleArnCredential : BasicSessionCredentials
+    public class StsCredentialProvider : AlibabaCloudCredentialsProvider
     {
-        private readonly string roleArn;
-        private readonly string roleSessionName;
+        private readonly Credential stsCredential;
 
-        public RamRoleArnCredential(
-            string accessKeyId,
-            string accessKeySecret,
-            string roleArn,
-            string roleSessionName,
-            string sessionToken,
-            long roleSessionDurationSeconds) : base(accessKeyId, accessKeySecret, sessionToken, roleSessionDurationSeconds)
+        public StsCredentialProvider(string accessKeyId, string accessKeySecret, string securityToken)
         {
-            this.roleArn = roleArn;
-            this.roleSessionName = roleSessionName;
+            stsCredential = new Credential(accessKeyId, accessKeySecret, securityToken);
         }
 
-        public string GetRoleArn()
+        public AlibabaCloudCredentials GetCredentials()
         {
-            return roleArn;
-        }
-
-        public string GetRoleSessionName()
-        {
-            return roleSessionName;
+            return stsCredential;
         }
     }
 }

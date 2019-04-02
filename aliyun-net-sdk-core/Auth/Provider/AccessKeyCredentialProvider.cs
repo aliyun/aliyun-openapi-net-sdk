@@ -17,13 +17,23 @@
  * under the License.
  */
 
-using System;
-
 namespace Aliyun.Acs.Core.Auth
 {
-    [Obsolete]
-    public class BasicCredentials : AccessKeyCredential
+    /// <summary>
+    /// AccessKeyCredentialProvider provides AccessKeyCredential
+    /// </summary>
+    public class AccessKeyCredentialProvider : AlibabaCloudCredentialsProvider
     {
-        public BasicCredentials(string accessKeyId, string accessKeySecret) : base(accessKeyId, accessKeySecret) { }
+        private BasicCredentials accessKeyCredential;
+
+        public AccessKeyCredentialProvider(string accessKeyId, string accessKeySecret)
+        {
+            accessKeyCredential = new BasicCredentials(accessKeyId, accessKeySecret);
+        }
+
+        public AlibabaCloudCredentials GetCredentials()
+        {
+            return accessKeyCredential;
+        }
     }
 }

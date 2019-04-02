@@ -21,14 +21,17 @@ using System;
 
 namespace Aliyun.Acs.Core.Auth
 {
-    public class EcsRamRoleCredential : BasicSessionCredentials
+    /// <summary>
+    /// EcsRamRoleCredential
+    /// </summary>
+    public class InstanceProfileCredentials : BasicSessionCredentials
     {
         private readonly long expiration;
         private readonly double expireFact = 0.9;
         private readonly long refreshIntervalInMillSeconds = 10000; // 10 sec
         private long lastFailedRefreshTime = 0;
 
-        public EcsRamRoleCredential(
+        public InstanceProfileCredentials(
             string accessKeyId,
             string accessKeySecret,
             string sessionToken,

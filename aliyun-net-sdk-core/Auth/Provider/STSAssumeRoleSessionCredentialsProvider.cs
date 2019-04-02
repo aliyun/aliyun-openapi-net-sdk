@@ -37,7 +37,7 @@ namespace Aliyun.Acs.Core.Auth
 
         private long roleSessionDurationSeconds;
 
-        private RamRoleArnCredential credentials = null;
+        private BasicSessionCredentials credentials = null;
 
         private long assumeRoleRound = 0;
 
@@ -70,8 +70,7 @@ namespace Aliyun.Acs.Core.Auth
         {
             if (roleSessionDurationSeconds < 900 || roleSessionDurationSeconds > 3600)
             {
-                throw new ArgumentOutOfRangeException(
-                    "Assume Role session duration should be in the range of 15min - 1Hr");
+                throw new ArgumentOutOfRangeException("Assume Role session duration should be in the range of 15min - 1Hr");
             }
             this.roleSessionDurationSeconds = roleSessionDurationSeconds;
             return this;
@@ -106,7 +105,7 @@ namespace Aliyun.Acs.Core.Auth
             return credentials;
         }
 
-        private RamRoleArnCredential GetNewSessionCredentials()
+        private BasicSessionCredentials GetNewSessionCredentials()
         {
             assumeRoleRound += 1;
 
@@ -117,11 +116,9 @@ namespace Aliyun.Acs.Core.Auth
                 DurationSeconds = roleSessionDurationSeconds
             };
             AssumeRoleResponse response = stsClient.GetAcsResponse(assumeRoleRequest);
-            return new RamRoleArnCredential(
+            return new BasicSessionCredentials(
                 response.Credentials.AccessKeyId,
                 response.Credentials.AccessKeySecret,
-                roleArn,
-                roleSessionName,
                 response.Credentials.SecurityToken,
                 roleSessionDurationSeconds
             );

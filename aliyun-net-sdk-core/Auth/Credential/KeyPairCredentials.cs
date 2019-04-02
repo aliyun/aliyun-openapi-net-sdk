@@ -17,25 +17,33 @@
  * under the License.
  */
 
+using System;
+
 namespace Aliyun.Acs.Core.Auth
 {
-    public class LegacyCredentials : AlibabaCloudCredentials
+    public class KeyPairCredentials : AlibabaCloudCredentials
     {
-        private readonly StsCredential legacyCredential;
+        private string privateKeySecret;
+        private string publicKeyId;
 
-        public LegacyCredentials(StsCredential legacyCredential)
+        public KeyPairCredentials(string publicKeyId, string privateKeySecret)
         {
-            this.legacyCredential = legacyCredential;
+            if (String.IsNullOrEmpty(publicKeyId) || String.IsNullOrEmpty(privateKeySecret))
+            {
+                throw new ArgumentNullException("You must provide a valid pair of Public Key ID and Private Key Secret.");
+            }
+            this.publicKeyId = publicKeyId;
+            this.privateKeySecret = privateKeySecret;
         }
 
         public string GetAccessKeyId()
         {
-            return legacyCredential.AccessKeyId;
+            return publicKeyId;
         }
 
         public string GetAccessKeySecret()
         {
-            return legacyCredential.AccessSecret;
+            return privateKeySecret;
         }
     }
 }

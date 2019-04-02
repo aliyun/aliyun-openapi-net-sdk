@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Core.Auth.Provider
     public class RsaKeyPairCredentialProvider : AlibabaCloudCredentialsProvider
     {
         public static readonly int DEFAULT_DURATION_SECONDS = 3600;
-        private readonly RsaKeyPairCredential rsaKeyPairCredential;
+        private readonly KeyPairCredentials rsaKeyPairCredential;
         private IAcsClient stsClient;
         private long sessionDurationSeconds = DEFAULT_DURATION_SECONDS;
         private BasicSessionCredentials basicSessionCredentials = null;
 
-        public RsaKeyPairCredentialProvider(RsaKeyPairCredential rsaKeyPairCredential, IClientProfile profile)
+        public RsaKeyPairCredentialProvider(KeyPairCredentials rsaKeyPairCredential, IClientProfile profile)
         {
             this.rsaKeyPairCredential = rsaKeyPairCredential;
             stsClient = new DefaultAcsClient(profile, rsaKeyPairCredential);
         }
 
-        public RsaKeyPairCredentialProvider(RsaKeyPairCredential rsaKeyPairCredential, IAcsClient stsClient)
+        public RsaKeyPairCredentialProvider(KeyPairCredentials rsaKeyPairCredential, IAcsClient stsClient)
         {
             this.rsaKeyPairCredential = rsaKeyPairCredential;
             this.stsClient = stsClient;
@@ -66,14 +66,14 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
         private BasicSessionCredentials GetNewSessionCredentials()
         {
-            GetSessionAccessKeyRequest request = new GetSessionAccessKeyRequest
+            var request = new GetSessionAccessKeyRequest
             {
                 PublicKeyId = rsaKeyPairCredential.GetAccessKeyId(),
                 DurationSeconds = (int) sessionDurationSeconds,
                 Protocol = ProtocolType.HTTPS
             };
 
-            GetSessionAccessKeyResponse response = stsClient.GetAcsResponse(request);
+            var response = stsClient.GetAcsResponse(request);
 
             return new BasicSessionCredentials(
                 response.SessionAccesskey.SessionAccessKeyId,
