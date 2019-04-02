@@ -2,7 +2,7 @@
 ***
 
 # Product Nuget Packages And Details
-Alibaba Cloud C# SDK Product Nuget Packages:
+Alibaba Cloud SDK for .NET Product Nuget Packages:
 
 - [aliyun-net-sdk-alidns](https://www.nuget.org/packages/aliyun-net-sdk-alidns/)
   - Alibaba Cloud DNS (Domain Name System) helps enterprises and developers translate human-readable domain names into machine readable IP addresses for intercommunication. It then routes user requests to the corresponding websites or application servers.

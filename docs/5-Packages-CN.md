@@ -2,7 +2,7 @@
 ***
 
 # 产品 Nuget 包
-Aliyun C# SDK已发布的Nuget包：
+Alibaba Cloud SDK for .NET 已发布的 Nuget 包：
 
 - [aliyun-net-sdk-alidns](https://www.nuget.org/packages/aliyun-net-sdk-alidns/)
   - 云解析DNS（Domain Name System，简称DNS） 云解析DNS是一种安全、快速、稳定、可靠的权威DNS解析管理服务，为企业和开发者将易于 管理识别的域名转换为计算机用于互连通信的数字IP地址，从而将用户的访问路由到相应的网 站或应用服务器。

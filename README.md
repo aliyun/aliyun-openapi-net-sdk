@@ -5,7 +5,7 @@ English | [简体中文](./README-CN.md)
 <a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg"></a>
 </p>
 
-<h1 align="center">Alibaba Cloud SDK for C#</h1>
+<h1 align="center">Alibaba Cloud SDK for .NET</h1>
 
 <p align="center">
 <a href="https://travis-ci.org/aliyun/aliyun-openapi-net-sdk"><img src="https://travis-ci.org/aliyun/aliyun-openapi-net-sdk.svg?branch=master" alt="Travis Build Status"></a>
@@ -17,31 +17,31 @@ English | [简体中文](./README-CN.md)
 </p>
 
 
-The Alibaba Cloud SDK for C# allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
+The Alibaba Cloud SDK for .NET allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), CloudMonitor, etc. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
 
 
 ## Online Demo
-[OpenAPI Explorer](https://api.aliyun.com/#/?product=Ecs&api=DescribeAccessPoints&params={}&tab=DEMO&lang=CSHARP) provides the ability to call the cloud product OpenAPI online, and dynamically generate SDK Example code and quick retrieval interface, which can significantly reduce the difficulty of using the cloud API.
+[OpenAPI Explorer](https://api.aliyun.com/#/?product=Ecs&api=DescribeAccessPoints&params={}&tab=DEMO&lang=CSHARP) provides the ability to call the cloud product OpenAPI online, generates SDK Example code dynamically and retrieves interface quickly, which can lessen the difficultly of using the Alibaba Cloud API significantly.
 
 
 ## Requirements
-- The Alibaba Cloud SDK for C# requires：
+- The Alibaba Cloud SDK for .NET requires：
     - **`.NET Framework 4.6.1`** or later
     - **`.NET Standard 2.0`** or later
 
 
 ## Installation
-You must install the SDK core Nuget Package for any SDK you use. For example, to call the ECS product, you must install both the [ECS Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-ecs/) and the [SDK Core Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-core/).
+You must install the SDK core Nuget Package for any SDK you use. For example, you should install both [ECS Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-ecs/) and [SDK Core Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-core/) when you are using ECS Product.
+
+Use .NET CLI ( Recommand )
+
+    dotnet add package aliyun-net-sdk-core
+    dotnet add package aliyun-net-sdk-ecs
 
 Use Package Manager
 
     Install-Package aliyun-net-sdk-core
     Install-Package aliyun-net-sdk-ecs
-
-Use .NET CLI
-
-    dotnet add package aliyun-net-sdk-core
-    dotnet add package aliyun-net-sdk-ecs
 
 
 ## Quick Examples
@@ -50,13 +50,13 @@ At the beginning, you need to sign up for an Alibaba Cloud account and retrieve 
 
 ### Initiate a call
 
-The following code examples show three main steps to use the Alibaba Cloud SDK for C#:
+The following code example show three main steps to use the Alibaba Cloud SDK for .NET:
 
-- Create and initialize a DefaultAcsClient instance.
+- Create and initialize a `DefaultAcsClient` instance.
 
-- Create a request and set parameters.
+- Create a `request` and set parameters.
 
-- Initiate the request and handle the response.
+- Initiate the `request` and handle the `response`.
 
 ```csharp
 using Aliyun.Acs.Core;
@@ -98,7 +98,7 @@ class Program
 ```
 
 ### Use BearerToken to invoke [CCC](https://www.nuget.org/packages/aliyun-net-sdk-ccc/) Product
-You should install the relative Nuget Package when you are running the test demo in your local machine.
+You should install the [CCC Product Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-ccc/) if you want to run the below demo in your local machine.
 
 ```csharp
 using Aliyun.Acs.Core;
