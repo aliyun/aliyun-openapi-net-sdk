@@ -38,7 +38,7 @@ namespace Aliyun.Acs.Core.Auth
         private string metadataServiceHost = "100.100.100.200";
         private int connectionTimeoutInMilliseconds;
         private const string ECS_METADAT_FETCH_ERROR_MSG = "Failed to get RAM session credentials from ECS metadata service.";
-        private const int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600 * 6;
+        private const int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600; // stands for 3600 s
 
         public ECSMetadataServiceCredentialsFetcher()
         {
@@ -66,17 +66,15 @@ namespace Aliyun.Acs.Core.Auth
             credentialUrl = "http://" + metadataServiceHost + URL_IN_ECS_METADATA + roleName;
         }
 
-        public ECSMetadataServiceCredentialsFetcher WithECSMetadataServiceHost(String host)
+        public void WithECSMetadataServiceHost(string host)
         {
             metadataServiceHost = host;
             SetCredentialUrl();
-            return this;
         }
 
-        public ECSMetadataServiceCredentialsFetcher WithConnectionTimeout(int milliseconds)
+        public void WithConnectionTimeout(int milliseconds)
         {
             connectionTimeoutInMilliseconds = milliseconds;
-            return this;
         }
 
         public string GetMetadata()
@@ -118,11 +116,13 @@ namespace Aliyun.Acs.Core.Auth
                 throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG + " Reason: " + e.ToString());
             }
 
-            if (DictionaryUtil.Get(dic, ".Code") == null ||
+            if (
+                DictionaryUtil.Get(dic, ".Code") == null ||
                 DictionaryUtil.Get(dic, ".AccessKeyId") == null ||
                 DictionaryUtil.Get(dic, ".AccessKeySecret") == null ||
                 DictionaryUtil.Get(dic, ".SecurityToken") == null ||
-                DictionaryUtil.Get(dic, ".Expiration") == null)
+                DictionaryUtil.Get(dic, ".Expiration") == null
+            )
             {
                 throw new ClientException("Invalid json got from ECS Metadata service.");
             }
@@ -153,7 +153,7 @@ namespace Aliyun.Acs.Core.Auth
                 {
                     if (i == retryTimes)
                     {
-                        throw e;
+                        throw new ClientException(e.ErrorCode, e.ErrorMessage);
                     }
                 }
             }

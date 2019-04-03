@@ -25,10 +25,9 @@ namespace Aliyun.Acs.Core.Auth.Provider
 {
     public class RsaKeyPairCredentialProvider : AlibabaCloudCredentialsProvider
     {
-        public static readonly int DEFAULT_DURATION_SECONDS = 3600;
         private readonly KeyPairCredentials rsaKeyPairCredential;
         private IAcsClient stsClient;
-        private long sessionDurationSeconds = DEFAULT_DURATION_SECONDS;
+        private long sessionDurationSeconds = 3600;
         private BasicSessionCredentials basicSessionCredentials = null;
 
         public RsaKeyPairCredentialProvider(KeyPairCredentials rsaKeyPairCredential, IClientProfile profile)
@@ -43,16 +42,14 @@ namespace Aliyun.Acs.Core.Auth.Provider
             this.stsClient = stsClient;
         }
 
-        public RsaKeyPairCredentialProvider WithDurationSeconds(long seconds)
+        public void WithDurationSeconds(long seconds)
         {
             sessionDurationSeconds = seconds;
-            return this;
         }
 
-        public RsaKeyPairCredentialProvider WithSTSClient(IAcsClient client)
+        public void WithSTSClient(IAcsClient client)
         {
             stsClient = client;
-            return this;
         }
 
         public AlibabaCloudCredentials GetCredentials()

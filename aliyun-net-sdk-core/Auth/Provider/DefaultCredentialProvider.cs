@@ -238,7 +238,8 @@ namespace Aliyun.Acs.Core.Auth.Provider
                 accessKeyId,
                 accessKeySecret,
                 STSAssumeRoleSessionCredentialsProvider.GetNewRoleSessionName(),
-                STSAssumeRoleSessionCredentialsProvider.DEFAULT_DURATION_SECONDS);
+                3600
+            );
             defaultProfile = DefaultProfile.GetProfile(regionId, accessKeyId, accessKeySecret);
 
             var sTSAssumeRoleSessionCredentialsProvider = (STSAssumeRoleSessionCredentialsProvider) alibabaCloudCredentialProvider;

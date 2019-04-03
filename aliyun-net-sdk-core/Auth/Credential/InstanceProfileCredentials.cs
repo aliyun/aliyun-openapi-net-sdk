@@ -27,7 +27,7 @@ namespace Aliyun.Acs.Core.Auth
     public class InstanceProfileCredentials : BasicSessionCredentials
     {
         private readonly long expiration;
-        private readonly double expireFact = 0.9;
+        private readonly double expireFact = 0.95;
         private readonly long refreshIntervalInMillSeconds = 10000; // 10 sec
         private long lastFailedRefreshTime = 0;
 
@@ -46,12 +46,12 @@ namespace Aliyun.Acs.Core.Auth
 
         public override bool WillSoonExpire()
         {
-            return roleSessionDurationSeconds * (1 - expireFact) > RemainTicks() / 1000;
+            return roleSessionDurationSeconds * (1 - expireFact) * 1000 * 1000 * 10 > RemainTicks();
         }
 
         public bool IsExpired()
         {
-            return refreshIntervalInMillSeconds >= RemainTicks();
+            return refreshIntervalInMillSeconds * 1000 * 10 >= RemainTicks();
         }
 
         public bool ShouldRefresh()
