@@ -136,7 +136,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
 
             ECSMetadataServiceCredentialsFetcher instance = mock.Object;
 
-            EcsRamRoleCredential credentials = instance.Fetch();;
+            InstanceProfileCredentials credentials = instance.Fetch();;
             Assert.Equal("MockAccessKeyId", credentials.GetAccessKeyId());
         }
 
@@ -162,7 +162,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             Assert.Throws<ClientException>(
                 () =>
                 {
-                    EcsRamRoleCredential credentials = instance.Fetch();;
+                    InstanceProfileCredentials credentials = instance.Fetch();;
                 }
             );
         }
@@ -189,7 +189,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             Assert.Throws<ClientException>(
                 () =>
                 {
-                    EcsRamRoleCredential credentials = instance.Fetch();;
+                    InstanceProfileCredentials credentials = instance.Fetch();;
                 }
             );
         }
@@ -216,7 +216,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             Assert.Throws<ClientException>(
                 () =>
                 {
-                    EcsRamRoleCredential credentials = instance.Fetch();;
+                    InstanceProfileCredentials credentials = instance.Fetch();;
                 }
             );
         }
@@ -236,13 +236,13 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             Assert.Throws<ClientException>(
                 () =>
                 {
-                    EcsRamRoleCredential credentials = instance.Fetch(3);
+                    InstanceProfileCredentials credentials = instance.Fetch(3);
                 }
             );
 
             Action retryAction = () =>
             {
-                EcsRamRoleCredential credentials = instance.Fetch(-1);;
+                InstanceProfileCredentials credentials = instance.Fetch(-1);;
             };
             var exception = Record.Exception(retryAction);
             Assert.Equal("Failed to connect ECS Metadata Service: Max retry times exceeded.", exception.Message);

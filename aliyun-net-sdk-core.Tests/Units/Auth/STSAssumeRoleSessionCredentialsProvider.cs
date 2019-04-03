@@ -100,7 +100,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         {
             DefaultProfile.ClearDefaultProfile();
 
-            var mockRamRoleArnCredential = new Mock<RamRoleArnCredential>("accesskeyId", "accessKeySecret", "roleArn", "roleSessionName", "sessionToken", 100);
+            var mockRamRoleArnCredential = new Mock<InstanceProfileCredentials>("accesskeyId", "accessKeySecret", "sessionToken", DateTime.Now.ToString(), 100);
             var ramRoleCredential = mockRamRoleArnCredential.Object;
 
             var response = new AssumeRoleResponse();

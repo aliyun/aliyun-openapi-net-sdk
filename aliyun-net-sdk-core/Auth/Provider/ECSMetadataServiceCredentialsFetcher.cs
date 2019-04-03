@@ -103,7 +103,7 @@ namespace Aliyun.Acs.Core.Auth
             return Encoding.UTF8.GetString(response.Content);
         }
 
-        public virtual EcsRamRoleCredential Fetch()
+        public virtual InstanceProfileCredentials Fetch()
         {
             Dictionary<string, string> dic;
             try
@@ -132,7 +132,7 @@ namespace Aliyun.Acs.Core.Auth
                 throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG);
             }
 
-            return new EcsRamRoleCredential(
+            return new InstanceProfileCredentials(
                 DictionaryUtil.Get(dic, ".AccessKeyId"),
                 DictionaryUtil.Get(dic, ".AccessKeySecret"),
                 DictionaryUtil.Get(dic, ".SecurityToken"),
@@ -141,7 +141,7 @@ namespace Aliyun.Acs.Core.Auth
             );
         }
 
-        public EcsRamRoleCredential Fetch(int retryTimes)
+        public InstanceProfileCredentials Fetch(int retryTimes)
         {
             for (int i = 0; i <= retryTimes; i++)
             {

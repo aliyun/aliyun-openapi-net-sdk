@@ -19,19 +19,29 @@
 
 using System;
 
+using Aliyun.Acs.Core.Utils;
+
 namespace Aliyun.Acs.Core.Auth
 {
-    public class AccessKeyCredential : AlibabaCloudCredentials
+    public class BasicSessionCredentials : AlibabaCloudCredentials
     {
         private readonly string accessKeyId;
         private readonly string accessKeySecret;
+        private readonly string sessionToken;
+        protected readonly long roleSessionDurationSeconds;
+        private readonly long sessionStartedTimeInMilliSeconds;
+        private const double expireFact = 0.8;
 
-        public AccessKeyCredential(string accessKeyId, string accessKeySecret)
+        public BasicSessionCredentials(string accessKeyId, string accessKeySecret,
+            string sessionToken, long roleSessionDurationSeconds = 0)
         {
             this.accessKeyId = accessKeyId ??
                 throw new ArgumentOutOfRangeException("Access key ID cannot be null.");
             this.accessKeySecret = accessKeySecret ??
                 throw new ArgumentOutOfRangeException("Access key secret cannot be null.");
+            this.sessionToken = sessionToken;
+            this.roleSessionDurationSeconds = roleSessionDurationSeconds;
+            sessionStartedTimeInMilliSeconds = DateTime.Now.currentTimeMillis();
         }
 
         public string GetAccessKeyId()
@@ -42,6 +52,21 @@ namespace Aliyun.Acs.Core.Auth
         public string GetAccessKeySecret()
         {
             return accessKeySecret;
+        }
+
+        public string GetSessionToken()
+        {
+            return sessionToken;
+        }
+
+        public virtual bool WillSoonExpire()
+        {
+            if (roleSessionDurationSeconds == 0)
+            {
+                return false;
+            }
+            long now = DateTime.Now.currentTimeMillis();
+            return roleSessionDurationSeconds * expireFact < (now - sessionStartedTimeInMilliSeconds) / 1000.0;
         }
     }
 }
