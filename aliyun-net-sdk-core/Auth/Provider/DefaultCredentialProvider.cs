@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
 {
     public class DefaultCredentialProvider
     {
-        private IClientProfile defaultProfile;
+        private static IClientProfile defaultProfile;
 
         private string accessKeyId;
         private string accessKeySecret;
@@ -81,7 +81,9 @@ namespace Aliyun.Acs.Core.Auth.Provider
                 GetInstanceRamRoleAlibabaCloudCredential();
 
             if (credential == null)
-                throw new ClientException("There is no credential chain can use");
+            {
+                throw new ClientException("There is no credential chain can use.");
+            }
             return credential;
         }
 
