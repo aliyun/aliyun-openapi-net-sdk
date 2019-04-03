@@ -52,7 +52,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
             stsClient = client;
         }
 
-        public AlibabaCloudCredentials GetCredentials()
+        public virtual AlibabaCloudCredentials GetCredentials()
         {
             if (basicSessionCredentials == null || basicSessionCredentials.WillSoonExpire())
             {

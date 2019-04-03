@@ -15,12 +15,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             KeyPairCredentials instance = new KeyPairCredentials("publicKeyId", "privateKeySecret");
             Assert.Equal("publicKeyId", instance.GetAccessKeyId());
 
-            Assert.Throws<ArgumentNullException>(
-                () =>
-                {
-                    instance = new KeyPairCredentials("publicKeyId", null);
-                }
-            );
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                instance = new KeyPairCredentials("publicKeyId", null);
+            });
         }
 
         [Fact]
@@ -28,6 +26,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         {
             KeyPairCredentials instance = new KeyPairCredentials("publicKeyId", "privateKeySecret");
             Assert.Equal("privateKeySecret", instance.GetAccessKeySecret());
+            Assert.Equal("publicKeyId", instance.GetAccessKeyId());
         }
     }
 }

@@ -22,6 +22,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ACCESS_KEY_ID", "ACCESS_KEY_ID");
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ACCESS_KEY_SECRET", "ACCESS_KEY_SECRET");
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "cn-hangzhou");
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "cn-hangzhou");
         }
 
         private static void CreateAndSetCurrentDirecotry(string homePath)
@@ -74,6 +75,7 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             iniConfiguration["default"]["role_name"].RawValue = "fake_role_name";
             iniConfiguration["default"]["type"].RawValue = "ecs_ram_role";
+            iniConfiguration["default"]["region_id"].RawValue = "cn-hangzhou";
 
             iniConfiguration.SaveToFile("credentials.ini");
         }

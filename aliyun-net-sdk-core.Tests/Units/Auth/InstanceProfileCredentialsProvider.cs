@@ -73,12 +73,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             AlibabaCloudCredentialsProvider provider = instance;
             instance.withFetcher(fetcher);
 
-            Assert.Throws<ClientException>(
-                () =>
-                {
-                    AlibabaCloudCredentials credentials = provider.GetCredentials(); // 进行有效期判断，已失效则抛出异常
-                }
-            );
+            Assert.Throws<ClientException>(() =>
+            {
+                AlibabaCloudCredentials credentials = provider.GetCredentials(); // 进行有效期判断，已失效则抛出异常
+            });
         }
 
         [Fact]
@@ -168,12 +166,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             fetcher = mockFetcher.Object;
             instance.withFetcher(fetcher);
 
-            Assert.Throws<ClientException>(
-                () =>
-                {
-                    credentials = provider.GetCredentials();
-                }
-            );
+            Assert.Throws<ClientException>(() =>
+            {
+                credentials = provider.GetCredentials();
+            });
         }
 
         [Fact]

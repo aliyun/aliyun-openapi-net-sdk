@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Core.Auth
             this.fetcher.SetRoleName(roleName);
         }
 
-        public AlibabaCloudCredentials GetCredentials()
+        public virtual AlibabaCloudCredentials GetCredentials()
         {
             try
             {
@@ -63,15 +63,8 @@ namespace Aliyun.Acs.Core.Auth
                 {
                     return credentials;
                 }
-                try
-                {
-                    credentials = fetcher.Fetch();
-                }
-                catch (ClientException)
-                {
-                    // Use the current expiring session token and wait for next round
-                    credentials.SetLastFailedRefreshTime();
-                }
+                
+                credentials = fetcher.Fetch();
                 return credentials;
             }
             catch (ClientException ex)
