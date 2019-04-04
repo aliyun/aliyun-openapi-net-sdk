@@ -147,6 +147,7 @@ class Program
 * [Timeout](docs/4-Timeout-EN.md)
 * [Product Nuget Package](docs/5-Packages-EN.md)
 * [Log](docs/6-Log-EN.md)
+* [Client](docs/7-Client-EN.md)
 
 
 ## Issues
