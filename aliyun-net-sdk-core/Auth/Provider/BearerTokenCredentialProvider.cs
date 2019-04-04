@@ -17,37 +17,20 @@
  * under the License.
  */
 
-using System;
-
 namespace Aliyun.Acs.Core.Auth
 {
-    public class BearerTokenCredential : AlibabaCloudCredentials
+    public class BearerTokenCredentialProvider : AlibabaCloudCredentialsProvider
     {
-        private readonly string bearerToken;
+        private BearerTokenCredential bearerTokenCredential;
 
-        public BearerTokenCredential(string bearerToken)
+        public BearerTokenCredentialProvider(string bearerToken)
         {
-            if (String.IsNullOrEmpty(bearerToken))
-            {
-                throw new ArgumentNullException("BearerToken can not be null.");
-            }
-
-            this.bearerToken = bearerToken;
+            bearerTokenCredential = new BearerTokenCredential(bearerToken);
         }
 
-        public string GetAccessKeyId()
+        public AlibabaCloudCredentials GetCredentials()
         {
-            return null;
-        }
-
-        public string GetAccessKeySecret()
-        {
-            return null;
-        }
-
-        public string GetBearerToken()
-        {
-            return bearerToken;
+            return bearerTokenCredential;
         }
     }
 }
