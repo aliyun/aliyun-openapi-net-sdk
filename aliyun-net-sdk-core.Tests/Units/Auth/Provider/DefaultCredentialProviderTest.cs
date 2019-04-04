@@ -364,6 +364,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             var actualCredential = defaultCredentialProvider.GetInstanceRamRoleAlibabaCloudCredential();
 
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", null);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ECS_METADATA", null);
             Assert.NotNull(actualCredential);
             Assert.Equal("fakeak", actualCredential.GetAccessKeyId());
         }
