@@ -16,7 +16,7 @@ using Xunit;
 
 namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 {
-    public class DefaultCredentialProvider
+    public class DefaultCredentialProviderTest
     {
         /*
         Case: Test Environment without ENV AK
@@ -25,7 +25,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         [Fact]
         public void GetEnvironmentClientCredentialWithoutAKTest()
         {
-            Core.Auth.Provider.DefaultCredentialProvider defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider();
+            DefaultCredentialProvider defaultCredentialProvider = new DefaultCredentialProvider();
             var credential = (BasicCredentials) defaultCredentialProvider.GetEnvironmentAlibabaCloudCredential();
             Assert.Null(credential);
         }
@@ -42,7 +42,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             TestHelper.InitializeEnvironmentValue();
 
-            var defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider(profile, null);
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
             var credential = (BasicCredentials) defaultCredentialProvider.GetEnvironmentAlibabaCloudCredential();
 
             Assert.NotNull(credential);
@@ -63,7 +63,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             TestHelper.InitializeEnvironmentValue();
 
-            var defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider(profile, null);
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
             var credential = (BasicCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
             Assert.NotNull(credential);
@@ -80,7 +80,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         public void GetCredentialFileAlibabaCloudCredentialWithInvalidFile()
         {
             DefaultProfile profile = DefaultProfile.GetProfile();
-            var mockDefaultCredentialProvider = new Mock<Core.Auth.Provider.DefaultCredentialProvider>(profile, null);
+            var mockDefaultCredentialProvider = new Mock<DefaultCredentialProvider>(profile, null);
             mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns("\\fsafas\\fsdafads");
             var defaultCredentialProvider = mockDefaultCredentialProvider.Object;
 
@@ -101,21 +101,38 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             var homePath = EnvironmentUtil.GetHomePath();
             TestHelper.CreateIniFileWithAk(homePath);
 
-            var slash = EnvironmentUtil.GetOSSlash();
-            var finalLocation = GetFileLocation(homePath, slash);
-            var configuration = Configuration.LoadFromFile(finalLocation);
-
             DefaultProfile profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = null;
-            var mockDefaultCredentialProvider = new Mock<Core.Auth.Provider.DefaultCredentialProvider>(profile, null);
-            mockDefaultCredentialProvider.Setup(x => x.LoadFileFromIni(It.IsAny<string>())).Returns(configuration);
-            mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(homePath);
-            var defaultCredentialProvider = mockDefaultCredentialProvider.Object;
+
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
 
             var credential = (BasicCredentials) defaultCredentialProvider.GetCredentialFileAlibabaCloudCredential();
 
+            TestHelper.DeleteIniFile(homePath);
             Assert.NotNull(credential);
             Assert.Equal("foo", credential.GetAccessKeyId());
+        }
+
+        /*
+        Case: Test Credential File Without default Client Name and file exist with ak value
+        Result: crendential should be null
+         */
+        [Fact]
+        public void GetCredentialFileAlibabaCloudCredentialWithFileAndAkExistNotDefault()
+        {
+
+            var homePath = EnvironmentUtil.GetHomePath();
+            TestHelper.CreateIniFileWithAkNotDefault(homePath);
+
+            DefaultProfile profile = DefaultProfile.GetProfile();
+            profile.DefaultClientName = null;
+
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
+
+            var credential = (BasicCredentials) defaultCredentialProvider.GetCredentialFileAlibabaCloudCredential();
+
+            TestHelper.DeleteIniFile(homePath);
+            Assert.Null(credential);
         }
 
         /*
@@ -128,7 +145,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         {
             DefaultProfile profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = "default";
-            var defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider(profile, null);
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
             var homePath = defaultCredentialProvider.GetHomePath();
             TestHelper.CreateIniFileWithAkType(homePath);
 
@@ -139,6 +156,30 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             Assert.NotNull(credential);
             Assert.NotNull(credential.GetAccessKeyId());
             Assert.NotNull(credential.GetAccessKeySecret());
+        }
+
+        /*
+        Case: Test Credential File With default Client Name and file exist with ak value and type but ak is empty
+        Result: should return exception
+        Use credential chains
+        */
+        [Fact]
+        public void GetCredentialFileAlibabaCloudCredentialWithAKTypeButAKIsEmpty()
+        {
+            DefaultProfile profile = DefaultProfile.GetProfile();
+            profile.DefaultClientName = "default";
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
+            var homePath = defaultCredentialProvider.GetHomePath();
+            TestHelper.CreateIniFileWithAkTypeWithEmptyAK(homePath);
+
+            var exception = Assert.Throws<ClientException>(() =>
+            {
+                var credential = (BasicCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            });
+
+            TestHelper.DeleteIniFile(homePath);
+
+            Assert.Equal("Missing required variable option for 'default Client'", exception.Message);
         }
 
         /*
@@ -154,13 +195,13 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             TestHelper.CreateIniFileWithEcs(homePath);
 
             var slash = EnvironmentUtil.GetOSSlash();
-            var finalLocation = GetFileLocation(homePath, slash);
+            var finalLocation = EnvironmentUtil.GetComposedPath(homePath, slash);
             var configuration = Configuration.LoadFromFile(finalLocation);
 
             DefaultProfile profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = "default";
 
-            var mockDefaultCredentialProvider = new Mock<Core.Auth.Provider.DefaultCredentialProvider>(profile, null);
+            var mockDefaultCredentialProvider = new Mock<DefaultCredentialProvider>(profile, null);
             mockDefaultCredentialProvider.Setup(x => x.GetInstanceRamRoleAlibabaCloudCredential()).Returns(ecsRamRoleCredential);
             mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(homePath);
             mockDefaultCredentialProvider.Setup(x => x.LoadFileFromIni(It.IsAny<string>())).Returns(configuration);
@@ -184,13 +225,13 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             TestHelper.CreateIniFileWithRam(homePath);
 
             var slash = EnvironmentUtil.GetOSSlash();
-            var finalLocation = GetFileLocation(homePath, slash);
+            var finalLocation = EnvironmentUtil.GetComposedPath(homePath, slash);
             var configurtion = Configuration.LoadFromFile(finalLocation);
 
             DefaultProfile profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = "default";
 
-            var mockDefaultCredentialProvider = new Mock<Core.Auth.Provider.DefaultCredentialProvider>(profile, null);
+            var mockDefaultCredentialProvider = new Mock<DefaultCredentialProvider>(profile, null);
             mockDefaultCredentialProvider.Setup(x => x.GetRamRoleArnAlibabaCloudCredential()).Returns(ramRoleCredential);
             mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(homePath);
             mockDefaultCredentialProvider.Setup(x => x.LoadFileFromIni(It.IsAny<string>())).Returns(configurtion);
@@ -216,13 +257,13 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             TestHelper.CreateIniFileWithRsaKey(homePath);
 
             var slash = EnvironmentUtil.GetOSSlash();
-            var finalLocation = GetFileLocation(homePath, slash);
+            var finalLocation = EnvironmentUtil.GetComposedPath(homePath, slash);
             var configurtion = Configuration.LoadFromFile(finalLocation);
 
             DefaultProfile profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = "default";
 
-            var mockDefaultCredentialProvider = new Mock<Core.Auth.Provider.DefaultCredentialProvider>(profile, null);
+            var mockDefaultCredentialProvider = new Mock<DefaultCredentialProvider>(profile, null);
             mockDefaultCredentialProvider.Setup(x => x.GetRsaKeyPairAlibabaCloudCredential()).Returns(basicSessionCredential);
             mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(homePath);
             mockDefaultCredentialProvider.Setup(x => x.LoadFileFromIni(It.IsAny<string>())).Returns(configurtion);
@@ -246,7 +287,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_CREDENTIALS_FILE", "D://credentials1.ini");
 
-            var defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider(profile, null);
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
 
             var exception = Assert.Throws<ClientException>(() =>
             {
@@ -274,22 +315,21 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             DefaultProfile profile = DefaultProfile.GetProfile();
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_CREDENTIALS_FILE", homePath);
 
-            var mockProvider = new Mock<Core.Auth.Provider.DefaultCredentialProvider>(profile, null);
+            var mockProvider = new Mock<DefaultCredentialProvider>(profile, null);
             mockProvider.Setup(x => x.LoadFileFromIni(It.IsAny<string>())).Returns(configuration);
             var providerObject = mockProvider.Object;
 
             var credential = providerObject.GetAlibabaCloudClientCredential();
 
-            Assert.NotNull(credential);
-
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_CREDENTIALS_FILE", null);
+            Assert.NotNull(credential);
         }
 
         [Fact]
         public void GetInstanceRamRoleAlibabaCloudCredential()
         {
             var profile = DefaultProfile.GetProfile();
-            var defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider(profile, null);
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
 
             var exception = Assert.Throws<ClientException>(() =>
             {
@@ -300,7 +340,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "region_id");
             profile.DefaultClientName = "test";
-            defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider(profile, null);
+            defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
             var credentialProvider = defaultCredentialProvider.GetInstanceRamRoleAlibabaCloudCredential();
 
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", null);
@@ -315,12 +355,12 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "region_id");
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ECS_METADATA", "role_name");
 
-            var ecsRamRoleCredential = new InstanceProfileCredentials("fakeak", "fakeaks", "fakesession", DateTime.Now.ToString(), 4000);
-            var mockEcsMetaService = new Mock<ECSMetadataServiceCredentialsFetcher>();
-            mockEcsMetaService.Setup(x => x.Fetch()).Returns(ecsRamRoleCredential);
-            var eCSMetadataServiceCredentialsFetcher = mockEcsMetaService.Object;
+            var instanceProfileCredential = new InstanceProfileCredentials("fakeak", "fakeaks", "fakesession", DateTime.Now.ToString(), 4000);
+            var mockInstanceProfileProvider = new Mock<InstanceProfileCredentialsProvider>("role_name");
+            mockInstanceProfileProvider.Setup(x => x.GetCredentials()).Returns(instanceProfileCredential);
+            var instanceProfileProvider = mockInstanceProfileProvider.Object;
 
-            var defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider(profile, eCSMetadataServiceCredentialsFetcher);
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, instanceProfileProvider);
             var actualCredential = defaultCredentialProvider.GetInstanceRamRoleAlibabaCloudCredential();
 
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", null);
@@ -329,10 +369,26 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         }
 
         [Fact]
+        public void GetInstanceRamRoleAlibabaCloudCredential3()
+        {
+            var profile = DefaultProfile.GetProfile();
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "region_id");
+            profile.DefaultClientName = "default";
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
+            var exception = Assert.Throws<ArgumentNullException>(() =>
+            {
+                var credentialProvider = defaultCredentialProvider.GetInstanceRamRoleAlibabaCloudCredential();
+            });
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", null);
+            Assert.Equal("You must specifiy a valid role name.", exception.ParamName);
+        }
+
+        [Fact]
         public void GetRamRoleArnAlibabaCloudCredentialWithException()
         {
             var profile = DefaultProfile.GetProfile();
-            var defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider(profile, null);
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
 
             var exception = Assert.Throws<ClientException>(() =>
             {
@@ -361,7 +417,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             var client = mockClient.Object;
 
             var stsProvider = new STSAssumeRoleSessionCredentialsProvider(ramRoleCredential, "roleArn", client);
-            var defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider(profile, stsProvider);
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, stsProvider);
 
             var actualCredentil = defaultCredentialProvider.GetRamRoleArnAlibabaCloudCredential();
 
@@ -371,10 +427,29 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         }
 
         [Fact]
+        public void GetRamRoleArnAlibabaCloudCredential2()
+        {
+            TestHelper.InitializeEnvironmentValue();
+
+            var ramRoleCredential = new InstanceProfileCredentials("accessKey", "aks", "roletoken", DateTime.Now.ToString(), 3000);
+            var profile = DefaultProfile.GetProfile();
+
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
+
+            var exception = Assert.Throws<ClientException>(() =>
+            {
+                var actualCredentil = defaultCredentialProvider.GetRamRoleArnAlibabaCloudCredential();
+            });
+
+            TestHelper.RemoveEnvironmentValue();
+            Assert.Equal("Specified access key is not found.", exception.ErrorMessage);
+        }
+
+        [Fact]
         public void GetRsaKeyPairAlibabaCloudCredentialWithException()
         {
             var profile = DefaultProfile.GetProfile();
-            var defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider(profile, null);
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
 
             var exception = Assert.Throws<ClientException>(() =>
             {
@@ -404,7 +479,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             var rsaProvider = new Core.Auth.Provider.RsaKeyPairCredentialProvider(rsaKeyCredential, client);
 
-            var defaultCredentialProvider = new Core.Auth.Provider.DefaultCredentialProvider(profile, rsaProvider, "publicKeyId", "privateKeyFile");
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, "publicKeyId", "privateKeyFile", rsaProvider);
 
             var actualCredentil = defaultCredentialProvider.GetRsaKeyPairAlibabaCloudCredential();
 
@@ -413,9 +488,41 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             Assert.Equal("aks", actualCredentil.GetAccessKeySecret());
         }
 
-        private static string GetFileLocation(string homePath, string slash)
+        [Fact]
+        public void GetRsaKeyPairAlibabaCloudCredential2()
         {
-            return homePath + slash + ".alibabacloud" + slash + "credentials.ini";
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "region_id");
+
+            var basicSessionCredential = new BasicSessionCredentials("accessKey", "aks", "sessionToken");
+            var rsaKeyCredential = new KeyPairCredentials("publicKey", "privateKey");
+            var profile = DefaultProfile.GetProfile();
+
+            var defaultCredentialProvider = new DefaultCredentialProvider(profile, "publicKeyId", "privateKeyFile", null);
+
+            var exception = Assert.Throws<ClientException>(() =>
+            {
+                var actualCredentil = defaultCredentialProvider.GetRsaKeyPairAlibabaCloudCredential();
+            });
+
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", null);
+            Assert.Equal("Specified access key is not found.", exception.ErrorMessage);
+        }
+
+        /*
+        Case: Should throw ClientException("There is no credential chain can use")
+         */
+        [Fact]
+        public void GetAlibabaCloudClientCredentialWithException()
+        {
+            var provider = new Mock<DefaultCredentialProvider>();
+            var defaultProvider = provider.Object;
+
+            var exception = Assert.Throws<ClientException>(() =>
+            {
+                var credential = defaultProvider.GetAlibabaCloudClientCredential();
+            });
+
+            Assert.Equal("There is no credential chain can use.", exception.Message);
         }
     }
 }

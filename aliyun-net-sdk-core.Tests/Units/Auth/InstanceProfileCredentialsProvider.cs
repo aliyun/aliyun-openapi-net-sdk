@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
 
             // Mock Credentials
             var mockCredentials = new Mock<InstanceProfileCredentials>("MockAccessKeyId", "MockAccessKeySecret", "MockSecurityToken", DateTimeMock.getNotExpiredDateTimeString(), 100000) { CallBase = true };
-            mockCredentials.Setup(foo => foo.RemainTicks()).Returns(1500000);
+            mockCredentials.Setup(foo => foo.RemainTicks()).Returns(15 * 1000 * 1000 * 10);
             InstanceProfileCredentials instanceProfileCredentials = mockCredentials.Object;
 
             // Mock Fetcher
@@ -73,12 +73,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             AlibabaCloudCredentialsProvider provider = instance;
             instance.withFetcher(fetcher);
 
-            Assert.Throws<ClientException>(
-                () =>
-                {
-                    AlibabaCloudCredentials credentials = provider.GetCredentials(); // 进行有效期判断，已失效则抛出异常
-                }
-            );
+            Assert.Throws<ClientException>(() =>
+            {
+                AlibabaCloudCredentials credentials = provider.GetCredentials(); // 进行有效期判断，已失效则抛出异常
+            });
         }
 
         [Fact]
@@ -96,7 +94,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
 
             // Mock Credentials
             var mockCredentials = new Mock<InstanceProfileCredentials>("MockAccessKeyId", "", "", ExpiredDatetime, 100000) { CallBase = true };
-            mockCredentials.Setup(foo => foo.RemainTicks()).Returns(15000);
+            mockCredentials.Setup(foo => foo.RemainTicks()).Returns(15 * 1000 * 1000 * 10);
             InstanceProfileCredentials instanceProfileCredentials = mockCredentials.Object;
 
             // Mock Fetcher
@@ -139,7 +137,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
 
             // Mock Credentials
             var mockCredentials = new Mock<InstanceProfileCredentials>("MockAccessKeyId", "", "", ExpiredDatetime, 100000) { CallBase = true };
-            mockCredentials.Setup(foo => foo.RemainTicks()).Returns(15000);
+            mockCredentials.Setup(foo => foo.RemainTicks()).Returns(15 * 1000 * 1000 * 10);
             InstanceProfileCredentials instanceProfileCredentials = mockCredentials.Object;
             instanceProfileCredentials.SetLastFailedRefreshTime();
 
@@ -168,12 +166,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             fetcher = mockFetcher.Object;
             instance.withFetcher(fetcher);
 
-            Assert.Throws<ClientException>(
-                () =>
-                {
-                    credentials = provider.GetCredentials();
-                }
-            );
+            Assert.Throws<ClientException>(() =>
+            {
+                credentials = provider.GetCredentials();
+            });
         }
 
         [Fact]

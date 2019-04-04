@@ -22,6 +22,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ACCESS_KEY_ID", "ACCESS_KEY_ID");
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ACCESS_KEY_SECRET", "ACCESS_KEY_SECRET");
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "cn-hangzhou");
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "cn-hangzhou");
         }
 
         private static void CreateAndSetCurrentDirecotry(string homePath)
@@ -56,11 +57,39 @@ namespace Aliyun.Acs.Core.Tests.Units
             iniConfiguration.SaveToFile("credentials.ini");
         }
 
+        public static void CreateIniFileWithAkNotDefault(string homePath)
+        {
+            CreateAndSetCurrentDirecotry(homePath);
+            var cfgStr =
+                "[notDefault]" + Environment.NewLine +
+                "Setting = Value";
+
+            iniConfiguration = Configuration.LoadFromString(cfgStr);
+
+            iniConfiguration["notDefault"]["access_key_id"].RawValue = "foo";
+            iniConfiguration["notDefault"]["access_key_secret"].RawValue = "bar";
+            iniConfiguration["notDefault"]["region_id"].RawValue = "cn-hangzhou";
+
+            iniConfiguration.SaveToFile("credentials.ini");
+        }
+
         public static void CreateIniFileWithAkType(string homePath)
         {
             CreateDefaultIniFile(homePath, out iniConfiguration);
 
             iniConfiguration["default"]["access_key_id"].RawValue = "foo";
+            iniConfiguration["default"]["access_key_secret"].RawValue = "bar";
+            iniConfiguration["default"]["region_id"].RawValue = "cn-hangzhou";
+            iniConfiguration["default"]["type"].RawValue = "access_key";
+
+            iniConfiguration.SaveToFile("credentials.ini");
+        }
+
+        public static void CreateIniFileWithAkTypeWithEmptyAK(string homePath)
+        {
+            CreateDefaultIniFile(homePath, out iniConfiguration);
+
+            iniConfiguration["default"]["access_key_id"].RawValue = "";
             iniConfiguration["default"]["access_key_secret"].RawValue = "bar";
             iniConfiguration["default"]["region_id"].RawValue = "cn-hangzhou";
             iniConfiguration["default"]["type"].RawValue = "access_key";
@@ -74,6 +103,7 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             iniConfiguration["default"]["role_name"].RawValue = "fake_role_name";
             iniConfiguration["default"]["type"].RawValue = "ecs_ram_role";
+            iniConfiguration["default"]["region_id"].RawValue = "cn-hangzhou";
 
             iniConfiguration.SaveToFile("credentials.ini");
         }

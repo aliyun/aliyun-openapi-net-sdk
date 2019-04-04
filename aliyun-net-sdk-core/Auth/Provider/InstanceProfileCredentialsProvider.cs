@@ -28,10 +28,8 @@ namespace Aliyun.Acs.Core.Auth
     public class InstanceProfileCredentialsProvider : AlibabaCloudCredentialsProvider
     {
         private InstanceProfileCredentials credentials = null;
-        public int EcsMetadataServiceFetchCount = 0;
         private ECSMetadataServiceCredentialsFetcher fetcher;
-        private const int MAX_ECS_METADATA_FETCH_RETRY_TIMES = 3;
-        private int maxRetryTimes = MAX_ECS_METADATA_FETCH_RETRY_TIMES;
+        private int maxRetryTimes = 3;
         private readonly string roleName;
 
         public InstanceProfileCredentialsProvider(string roleName)
@@ -45,16 +43,14 @@ namespace Aliyun.Acs.Core.Auth
         {
             this.fetcher = fetcher;
             this.fetcher.SetRoleName(roleName);
-            return;
         }
 
-        AlibabaCloudCredentials AlibabaCloudCredentialsProvider.GetCredentials()
+        public virtual AlibabaCloudCredentials GetCredentials()
         {
             try
             {
                 if (credentials == null)
                 {
-                    EcsMetadataServiceFetchCount += 1;
                     credentials = fetcher.Fetch(maxRetryTimes);
                 }
 
@@ -67,9 +63,9 @@ namespace Aliyun.Acs.Core.Auth
                 {
                     return credentials;
                 }
-
-                EcsMetadataServiceFetchCount += 1;
+                
                 credentials = fetcher.Fetch();
+                return credentials;
             }
             catch (ClientException ex)
             {

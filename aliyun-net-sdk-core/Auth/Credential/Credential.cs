@@ -72,7 +72,7 @@ namespace Aliyun.Acs.Core.Auth
 
         private void SetExpiredDate(int expiredHours)
         {
-            if (expiredHours > 0)
+            if (0 < expiredHours)
             {
                 ExpiredDate = DateTime.Now.AddHours(expiredHours);
             }
@@ -80,7 +80,7 @@ namespace Aliyun.Acs.Core.Auth
 
         public bool IsExpired()
         {
-            if (ExpiredDate == null)
+            if (null == ExpiredDate)
             {
                 return false;
             }

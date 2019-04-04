@@ -72,9 +72,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             mockClient.Setup(x => x.GetAcsResponse(It.IsAny<AcsRequest<GetSessionAccessKeyResponse>>())).Returns(response);
             var client = mockClient.Object;
 
-            var mockInstance = new Mock<Core.Auth.Provider.RsaKeyPairCredentialProvider>(rsaPairCredential, client);
-
-            var instance = mockInstance.Object;
+            var instance = new Core.Auth.Provider.RsaKeyPairCredentialProvider(rsaPairCredential, client);
 
             Assert.NotNull(instance.GetCredentials());
         }

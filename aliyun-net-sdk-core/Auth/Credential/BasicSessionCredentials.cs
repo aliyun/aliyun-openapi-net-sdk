@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Core.Auth
         private readonly string sessionToken;
         protected readonly long roleSessionDurationSeconds;
         private readonly long sessionStartedTimeInMilliSeconds;
-        private const double expireFact = 0.8;
+        private const double expireFact = 0.95;
 
         public BasicSessionCredentials(string accessKeyId, string accessKeySecret,
             string sessionToken, long roleSessionDurationSeconds = 0)
@@ -66,6 +66,8 @@ namespace Aliyun.Acs.Core.Auth
                 return false;
             }
             long now = DateTime.Now.currentTimeMillis();
+
+            // (now - sessionStartedTimeInMilliSeconds) stands for session current exist duration time (ms)
             return roleSessionDurationSeconds * expireFact < (now - sessionStartedTimeInMilliSeconds) / 1000.0;
         }
     }

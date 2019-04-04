@@ -17,7 +17,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             instance = new Core.Auth.Credential("keyId", "secret", "securityToken");
             instance = new Core.Auth.Credential("keyId", "secret", 24);
             instance = new Core.Auth.Credential("keyId", "secret", "securityToken", 24);
+            
             Assert.NotNull(instance);
+            Assert.Equal("keyId", instance.GetAccessKeyId());
+            Assert.Equal("secret", instance.GetAccessKeySecret());
         }
 
         [Fact]
