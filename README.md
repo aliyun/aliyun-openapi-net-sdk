@@ -111,15 +111,15 @@ class Program
     static void Main(string[] args)
     {
         // Create a client used for initiating a request
-        IClientProfile profile = DefaultProfile.GetProfile("<your-region-id>");
-        BearerTokenCredential bearerTokenCredential = new BearerTokenCredential("<your-bearertoken>");
+        var profile = DefaultProfile.GetProfile("<your-region-id>");
+        var bearerTokenCredentialProvider = new BearerTokenCredentialProvider("<your-bearertoken>");
 
-        DefaultAcsClient client = new DefaultAcsClient(profile, bearerTokenCredential);
+        var client = new DefaultAcsClient(profile, bearerTokenCredentialProvider);
 
         try
         {
             // Create the request
-            ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
+            var request = new ListPhoneNumbersRequest();
 
             // Initiate the request and get the response
             var response = client.GetAcsResponse(request);
