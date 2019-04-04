@@ -114,15 +114,15 @@ class Program
     static void Main(string[] args)
     {
         // 构建一个 Client，用于发起请求
-        IClientProfile profile = DefaultProfile.GetProfile("<your-region-id>");
-        BearerTokenCredential bearerTokenCredential = new BearerTokenCredential("<your-bearertoken>");
+        var profile = DefaultProfile.GetProfile("<your-region-id>");
+        var bearerTokenCredentialProvider = new BearerTokenCredentialProvider("<your-bearertoken>");
 
-        DefaultAcsClient client = new DefaultAcsClient(profile, bearerTokenCredential);
+        var client = new DefaultAcsClient(profile, bearerTokenCredentialProvider);
 
         try
         {
             // 构造请求
-            ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
+            var request = new ListPhoneNumbersRequest();
 
             // 发起请求，并得到 Response
             var response = client.GetAcsResponse(request);
@@ -150,6 +150,7 @@ class Program
 * [超时](docs/4-Timeout-CN.md)
 * [产品Nuget包](docs/5-Packages-CN.md)
 * [日志](docs/6-Log-CN.md)
+* [客户端](docs/7-Client-CN.md)
 
 
 ## 问题

@@ -1,4 +1,4 @@
-[← Packages](5-Packages-EN.md) | Log[(中文)](6-Log-CN.md) | [Requirements →](0-Requirements-EN.md)
+[← Packages](5-Packages-EN.md) | Log[(中文)](6-Log-CN.md) | [Client →](7-Client-EN.md)
 ***
 
 # Log
@@ -46,4 +46,4 @@ client.SetLogger(logger);
 | {start_time}     | Start Time |
 
 ***
-[← Packages](5-Packages-EN.md) | Log[(中文)](6-Log-CN.md) | [Requirements →](0-Requirements-EN.md)
+[← Packages](5-Packages-EN.md) | Log[(中文)](6-Log-CN.md) | [Client →](7-Client-EN.md)
