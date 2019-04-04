@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ess.Transform;
 using Aliyun.Acs.Ess.Transform.V20140828;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
@@ -102,6 +103,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string scalingRuleAri8;
 
 		private string scalingRuleId4;
+
+		private bool? showAlarmRules;
 
 		private string scalingRuleId5;
 
@@ -570,6 +573,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public bool? ShowAlarmRules
+		{
+			get
+			{
+				return showAlarmRules;
+			}
+			set	
+			{
+				showAlarmRules = value;
+				DictionaryUtil.Add(QueryParameters, "ShowAlarmRules", value.ToString());
+			}
+		}
+
 		public string ScalingRuleId5
 		{
 			get
@@ -648,7 +664,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override DescribeScalingRulesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeScalingRulesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeScalingRulesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ess.Transform;
 using Aliyun.Acs.Ess.Transform.V20140828;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
@@ -75,6 +76,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? cpu;
 
+		private string systemDiskDiskName;
+
 		private string ramRoleName;
 
 		private long? ownerId;
@@ -96,6 +99,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private int? systemDiskSize;
 
 		private string internetChargeType;
+
+		private string systemDiskDescription;
 
 		public string ImageId
 		{
@@ -379,6 +384,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string SystemDiskDiskName
+		{
+			get
+			{
+				return systemDiskDiskName;
+			}
+			set	
+			{
+				systemDiskDiskName = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.DiskName", value);
+			}
+		}
+
 		public string RamRoleName
 		{
 			get
@@ -417,9 +435,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				dataDisks = value;
 				for (int i = 0; i < dataDisks.Count; i++)
 				{
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DiskName", dataDisks[i].DiskName);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".SnapshotId", dataDisks[i].SnapshotId);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Encrypted", dataDisks[i].Encrypted);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".KMSKeyId", dataDisks[i].KMSKeyId);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
 				}
@@ -530,6 +552,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string SystemDiskDescription
+		{
+			get
+			{
+				return systemDiskDescription;
+			}
+			set	
+			{
+				systemDiskDescription = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.Description", value);
+			}
+		}
+
 		public class SpotPriceLimit
 		{
 
@@ -565,15 +600,35 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		public class DataDisk
 		{
 
+			private string diskName;
+
 			private string snapshotId;
 
 			private int? size;
 
+			private string encrypted;
+
+			private string description;
+
 			private string category;
+
+			private string kMSKeyId;
 
 			private string device;
 
 			private bool? deleteWithInstance;
+
+			public string DiskName
+			{
+				get
+				{
+					return diskName;
+				}
+				set	
+				{
+					diskName = value;
+				}
+			}
 
 			public string SnapshotId
 			{
@@ -599,6 +654,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public string Encrypted
+			{
+				get
+				{
+					return encrypted;
+				}
+				set	
+				{
+					encrypted = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
 			public string Category
 			{
 				get
@@ -608,6 +687,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					category = value;
+				}
+			}
+
+			public string KMSKeyId
+			{
+				get
+				{
+					return kMSKeyId;
+				}
+				set	
+				{
+					kMSKeyId = value;
 				}
 			}
 
@@ -636,7 +727,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override ModifyScalingConfigurationResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyScalingConfigurationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyScalingConfigurationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

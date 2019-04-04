@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
@@ -105,6 +106,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private int? cooldown;
 
+			private int? minAdjustmentMagnitude;
+
 			private string adjustmentType;
 
 			private int? adjustmentValue;
@@ -126,6 +129,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			private bool? disableScaleIn;
 
 			private List<DescribeScalingRules_Alarm> alarms;
+
+			private List<DescribeScalingRules_StepAdjustment> stepAdjustments;
 
 			public string ScalingRuleId
 			{
@@ -172,6 +177,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					cooldown = value;
+				}
+			}
+
+			public int? MinAdjustmentMagnitude
+			{
+				get
+				{
+					return minAdjustmentMagnitude;
+				}
+				set	
+				{
+					minAdjustmentMagnitude = value;
 				}
 			}
 
@@ -307,6 +324,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public List<DescribeScalingRules_StepAdjustment> StepAdjustments
+			{
+				get
+				{
+					return stepAdjustments;
+				}
+				set	
+				{
+					stepAdjustments = value;
+				}
+			}
+
 			public class DescribeScalingRules_Alarm
 			{
 
@@ -335,6 +364,52 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 					set	
 					{
 						alarmTaskId = value;
+					}
+				}
+			}
+
+			public class DescribeScalingRules_StepAdjustment
+			{
+
+				private float? metricIntervalLowerBound;
+
+				private float? metricIntervalUpperBound;
+
+				private int? scalingAdjustment;
+
+				public float? MetricIntervalLowerBound
+				{
+					get
+					{
+						return metricIntervalLowerBound;
+					}
+					set	
+					{
+						metricIntervalLowerBound = value;
+					}
+				}
+
+				public float? MetricIntervalUpperBound
+				{
+					get
+					{
+						return metricIntervalUpperBound;
+					}
+					set	
+					{
+						metricIntervalUpperBound = value;
+					}
+				}
+
+				public int? ScalingAdjustment
+				{
+					get
+					{
+						return scalingAdjustment;
+					}
+					set	
+					{
+						scalingAdjustment = value;
 					}
 				}
 			}

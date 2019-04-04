@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ess.Model.V20140828;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ess.Model.V20140828;
 
 namespace Aliyun.Acs.Ess.Transform.V20140828
 {
@@ -42,6 +43,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingRule.ScalingGroupId = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].ScalingGroupId");
 				scalingRule.ScalingRuleName = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].ScalingRuleName");
 				scalingRule.Cooldown = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].Cooldown");
+				scalingRule.MinAdjustmentMagnitude = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].MinAdjustmentMagnitude");
 				scalingRule.AdjustmentType = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].AdjustmentType");
 				scalingRule.AdjustmentValue = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].AdjustmentValue");
 				scalingRule.MinSize = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].MinSize");
@@ -62,6 +64,17 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 					scalingRule_alarms.Add(alarm);
 				}
 				scalingRule.Alarms = scalingRule_alarms;
+
+				List<DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_StepAdjustment> scalingRule_stepAdjustments = new List<DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_StepAdjustment>();
+				for (int j = 0; j < context.Length("DescribeScalingRules.ScalingRules["+ i +"].StepAdjustments.Length"); j++) {
+					DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_StepAdjustment stepAdjustment = new DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_StepAdjustment();
+					stepAdjustment.MetricIntervalLowerBound = context.FloatValue("DescribeScalingRules.ScalingRules["+ i +"].StepAdjustments["+ j +"].MetricIntervalLowerBound");
+					stepAdjustment.MetricIntervalUpperBound = context.FloatValue("DescribeScalingRules.ScalingRules["+ i +"].StepAdjustments["+ j +"].MetricIntervalUpperBound");
+					stepAdjustment.ScalingAdjustment = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].StepAdjustments["+ j +"].ScalingAdjustment");
+
+					scalingRule_stepAdjustments.Add(stepAdjustment);
+				}
+				scalingRule.StepAdjustments = scalingRule_stepAdjustments;
 
 				describeScalingRulesResponse_scalingRules.Add(scalingRule);
 			}

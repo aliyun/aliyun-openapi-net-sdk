@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ess.Model.V20140828;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ess.Model.V20140828;
 
 namespace Aliyun.Acs.Ess.Transform.V20140828
 {
@@ -56,6 +57,8 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingConfiguration.InternetMaxBandwidthOut = context.IntegerValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InternetMaxBandwidthOut");
 				scalingConfiguration.SystemDiskCategory = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SystemDiskCategory");
 				scalingConfiguration.SystemDiskSize = context.IntegerValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SystemDiskSize");
+				scalingConfiguration.SystemDiskName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SystemDiskName");
+				scalingConfiguration.SystemDiskDescription = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SystemDiskDescription");
 				scalingConfiguration.LifecycleState = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].LifecycleState");
 				scalingConfiguration.CreationTime = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].CreationTime");
 				scalingConfiguration.LoadBalancerWeight = context.IntegerValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].LoadBalancerWeight");
@@ -82,6 +85,10 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 					dataDisk.SnapshotId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].SnapshotId");
 					dataDisk.Device = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Device");
 					dataDisk.DeleteWithInstance = context.BooleanValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].DeleteWithInstance");
+					dataDisk.Encrypted = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Encrypted");
+					dataDisk.KMSKeyId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].KMSKeyId");
+					dataDisk.DiskName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].DiskName");
+					dataDisk.Description = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Description");
 
 					scalingConfiguration_dataDisks.Add(dataDisk);
 				}

@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
@@ -132,6 +133,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			private string systemDiskCategory;
 
 			private int? systemDiskSize;
+
+			private string systemDiskName;
+
+			private string systemDiskDescription;
 
 			private string lifecycleState;
 
@@ -379,6 +384,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public string SystemDiskName
+			{
+				get
+				{
+					return systemDiskName;
+				}
+				set	
+				{
+					systemDiskName = value;
+				}
+			}
+
+			public string SystemDiskDescription
+			{
+				get
+				{
+					return systemDiskDescription;
+				}
+				set	
+				{
+					systemDiskDescription = value;
+				}
+			}
+
 			public string LifecycleState
 			{
 				get
@@ -572,6 +601,14 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 				private bool? deleteWithInstance;
 
+				private string encrypted;
+
+				private string kMSKeyId;
+
+				private string diskName;
+
+				private string description;
+
 				public int? Size
 				{
 					get
@@ -629,6 +666,54 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 					set	
 					{
 						deleteWithInstance = value;
+					}
+				}
+
+				public string Encrypted
+				{
+					get
+					{
+						return encrypted;
+					}
+					set	
+					{
+						encrypted = value;
+					}
+				}
+
+				public string KMSKeyId
+				{
+					get
+					{
+						return kMSKeyId;
+					}
+					set	
+					{
+						kMSKeyId = value;
+					}
+				}
+
+				public string DiskName
+				{
+					get
+					{
+						return diskName;
+					}
+					set	
+					{
+						diskName = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
 					}
 				}
 			}

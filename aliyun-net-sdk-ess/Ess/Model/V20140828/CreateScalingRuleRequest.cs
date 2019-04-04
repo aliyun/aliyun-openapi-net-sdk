@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ess.Transform;
 using Aliyun.Acs.Ess.Transform.V20140828;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
@@ -36,6 +37,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string resourceOwnerAccount;
 
 		private int? adjustmentValue;
+
+		private List<StepAdjustment> stepAdjustments;
 
 		private string scalingGroupId;
 
@@ -54,6 +57,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string scalingRuleName;
 
 		private int? cooldown;
+
+		private int? minAdjustmentMagnitude;
 
 		private string action;
 
@@ -86,6 +91,25 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				adjustmentValue = value;
 				DictionaryUtil.Add(QueryParameters, "AdjustmentValue", value.ToString());
+			}
+		}
+
+		public List<StepAdjustment> StepAdjustments
+		{
+			get
+			{
+				return stepAdjustments;
+			}
+
+			set
+			{
+				stepAdjustments = value;
+				for (int i = 0; i < stepAdjustments.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"StepAdjustment." + (i + 1) + ".MetricIntervalLowerBound", stepAdjustments[i].MetricIntervalLowerBound);
+					DictionaryUtil.Add(QueryParameters,"StepAdjustment." + (i + 1) + ".MetricIntervalUpperBound", stepAdjustments[i].MetricIntervalUpperBound);
+					DictionaryUtil.Add(QueryParameters,"StepAdjustment." + (i + 1) + ".ScalingAdjustment", stepAdjustments[i].ScalingAdjustment);
+				}
 			}
 		}
 
@@ -206,6 +230,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public int? MinAdjustmentMagnitude
+		{
+			get
+			{
+				return minAdjustmentMagnitude;
+			}
+			set	
+			{
+				minAdjustmentMagnitude = value;
+				DictionaryUtil.Add(QueryParameters, "MinAdjustmentMagnitude", value.ToString());
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -258,7 +295,53 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override CreateScalingRuleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public class StepAdjustment
+		{
+
+			private float? metricIntervalLowerBound;
+
+			private float? metricIntervalUpperBound;
+
+			private int? scalingAdjustment;
+
+			public float? MetricIntervalLowerBound
+			{
+				get
+				{
+					return metricIntervalLowerBound;
+				}
+				set	
+				{
+					metricIntervalLowerBound = value;
+				}
+			}
+
+			public float? MetricIntervalUpperBound
+			{
+				get
+				{
+					return metricIntervalUpperBound;
+				}
+				set	
+				{
+					metricIntervalUpperBound = value;
+				}
+			}
+
+			public int? ScalingAdjustment
+			{
+				get
+				{
+					return scalingAdjustment;
+				}
+				set	
+				{
+					scalingAdjustment = value;
+				}
+			}
+		}
+
+        public override CreateScalingRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateScalingRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

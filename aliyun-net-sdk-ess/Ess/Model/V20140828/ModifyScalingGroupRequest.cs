@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ess.Transform;
 using Aliyun.Acs.Ess.Transform.V20140828;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
@@ -75,7 +76,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				return resourceOwnerId;
 			}
-			set
+			set	
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
@@ -88,7 +89,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				return healthCheckType;
 			}
-			set
+			set	
 			{
 				healthCheckType = value;
 				DictionaryUtil.Add(QueryParameters, "HealthCheckType", value);
@@ -101,7 +102,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				return launchTemplateId;
 			}
-			set
+			set	
 			{
 				launchTemplateId = value;
 				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
@@ -114,7 +115,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				return resourceOwnerAccount;
 			}
-			set
+			set	
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
@@ -127,7 +128,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				return scalingGroupName;
 			}
-			set
+			set	
 			{
 				scalingGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingGroupName", value);
@@ -140,7 +141,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				return scalingGroupId;
 			}
-			set
+			set	
 			{
 				scalingGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
@@ -307,7 +308,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override ModifyScalingGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyScalingGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyScalingGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

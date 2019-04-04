@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ess.Transform;
 using Aliyun.Acs.Ess.Transform.V20140828;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
@@ -46,6 +47,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string resourceOwnerAccount;
 
 		private string scalingGroupName;
+
+		private string clientToken;
 
 		private List<string> vSwitchIds;
 
@@ -167,6 +170,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scalingGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingGroupName", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -565,7 +581,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override CreateScalingGroupResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateScalingGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateScalingGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

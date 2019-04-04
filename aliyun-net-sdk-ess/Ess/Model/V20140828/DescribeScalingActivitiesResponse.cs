@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
@@ -120,6 +121,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			private string attachedCapacity;
 
 			private string autoCreatedCapacity;
+
+			private int? scalingInstanceNumber;
 
 			public string ScalingActivityId
 			{
@@ -262,6 +265,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					autoCreatedCapacity = value;
+				}
+			}
+
+			public int? ScalingInstanceNumber
+			{
+				get
+				{
+					return scalingInstanceNumber;
+				}
+				set	
+				{
+					scalingInstanceNumber = value;
 				}
 			}
 		}

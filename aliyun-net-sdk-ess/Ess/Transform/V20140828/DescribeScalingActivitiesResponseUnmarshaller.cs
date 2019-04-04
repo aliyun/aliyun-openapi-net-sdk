@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ess.Model.V20140828;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ess.Model.V20140828;
 
 namespace Aliyun.Acs.Ess.Transform.V20140828
 {
@@ -50,6 +51,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingActivity.TotalCapacity = context.StringValue("DescribeScalingActivities.ScalingActivities["+ i +"].TotalCapacity");
 				scalingActivity.AttachedCapacity = context.StringValue("DescribeScalingActivities.ScalingActivities["+ i +"].AttachedCapacity");
 				scalingActivity.AutoCreatedCapacity = context.StringValue("DescribeScalingActivities.ScalingActivities["+ i +"].AutoCreatedCapacity");
+				scalingActivity.ScalingInstanceNumber = context.IntegerValue("DescribeScalingActivities.ScalingActivities["+ i +"].ScalingInstanceNumber");
 
 				describeScalingActivitiesResponse_scalingActivities.Add(scalingActivity);
 			}

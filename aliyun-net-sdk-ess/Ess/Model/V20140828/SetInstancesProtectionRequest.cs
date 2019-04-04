@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ess.Transform;
 using Aliyun.Acs.Ess.Transform.V20140828;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
@@ -142,7 +143,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override SetInstancesProtectionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SetInstancesProtectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SetInstancesProtectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

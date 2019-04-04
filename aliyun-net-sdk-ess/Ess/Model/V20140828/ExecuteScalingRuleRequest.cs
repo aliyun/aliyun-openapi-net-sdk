@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ess.Transform;
 using Aliyun.Acs.Ess.Transform.V20140828;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
@@ -41,11 +42,15 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string clientToken;
 
+		private float? breachThreshold;
+
 		private string ownerAccount;
 
 		private string action;
 
 		private long? ownerId;
+
+		private float? metricValue;
 
 		private string accessKeyId;
 
@@ -101,6 +106,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public float? BreachThreshold
+		{
+			get
+			{
+				return breachThreshold;
+			}
+			set	
+			{
+				breachThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "BreachThreshold", value.ToString());
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -140,6 +158,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public float? MetricValue
+		{
+			get
+			{
+				return metricValue;
+			}
+			set	
+			{
+				metricValue = value;
+				DictionaryUtil.Add(QueryParameters, "MetricValue", value.ToString());
+			}
+		}
+
 		public string AccessKeyId
 		{
 			get
@@ -153,7 +184,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override ExecuteScalingRuleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ExecuteScalingRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ExecuteScalingRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
