@@ -13,10 +13,10 @@ namespace Aliyun.Acs.Feature.Test.Credential
         [Fact]
         public void BearerTokenAccessTest()
         {
-            BearerTokenCredential bearerTokenCredential = new BearerTokenCredential(GetBearerToken());
+            BearerTokenCredentialProvider provider = new BearerTokenCredentialProvider(GetBearerToken());
 
             base.profile = DefaultProfile.GetProfile("cn-hangzhou");
-            client = new Acs.Core.DefaultAcsClient(base.profile, bearerTokenCredential);
+            client = new Acs.Core.DefaultAcsClient(base.profile, provider);
 
             ListPhoneNumbersRequest request = new ListPhoneNumbersRequest();
 

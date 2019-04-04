@@ -28,10 +28,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             InstanceProfileCredentials instance = new InstanceProfileCredentials("a", "b", "c", DateTime.Now.ToString(), 100000);
 
             Assert.True(instance.ShouldRefresh());
-
-            instance.SetLastFailedRefreshTime();
-
-            Assert.False(instance.ShouldRefresh());
         }
 
         [Fact]
