@@ -27,6 +27,20 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         }
 
         [Fact]
+        public void InstanceWithPolicy()
+        {
+            var roleArn = "roleArn";
+            var policy = "policy";
+
+            var mockClient = new Mock<IAcsClient>();
+            var client = mockClient.Object;
+
+            var instance = new STSAssumeRoleSessionCredentialsProvider(roleArn, policy, client);
+
+            Assert.NotNull(instance);
+        }
+
+        [Fact]
         public void InstanceProvider()
         {
             DefaultProfile.ClearDefaultProfile();
@@ -100,7 +114,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         {
             DefaultProfile.ClearDefaultProfile();
 
-            var mockRamRoleArnCredential = new Mock<InstanceProfileCredentials>("accesskeyId", "accessKeySecret", "sessionToken", DateTime.Now.ToString(), 100);
+            var mockRamRoleArnCredential = new Mock<BasicSessionCredentials>("accesskeyId", "accessKeySecret", "sessionToken", 100);
             var ramRoleCredential = mockRamRoleArnCredential.Object;
 
             var response = new AssumeRoleResponse();
@@ -118,6 +132,29 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             var instance = mockInstance.Object;
 
             Assert.NotNull(instance.GetCredentials());
+        }
+
+        [Fact]
+        public void GetCredentialsWithPolicy()
+        {
+            DefaultProfile.ClearDefaultProfile();
+
+            var response = new AssumeRoleResponse();
+            response.Credentials = new AssumeRoleResponse.AssumeRole_Credentials();
+            response.Credentials.AccessKeyId = "ak";
+            response.Credentials.AccessKeySecret = "aks";
+            response.Credentials.SecurityToken = "token";
+
+            var mockClient = new Mock<IAcsClient>();
+            mockClient.Setup(x => x.GetAcsResponse(It.IsAny<AcsRequest<AssumeRoleResponse>>())).Returns(response);
+            var client = mockClient.Object;
+
+            var mockInstance = new Mock<STSAssumeRoleSessionCredentialsProvider>("roleArn", "policy", client);
+
+            var instance = mockInstance.Object;
+
+            var credential = instance.GetCredentials();
+            Assert.NotNull(credential);
         }
     }
 }

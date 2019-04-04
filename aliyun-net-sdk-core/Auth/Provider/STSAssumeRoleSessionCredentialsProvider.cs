@@ -31,15 +31,19 @@ namespace Aliyun.Acs.Core.Auth
     public class STSAssumeRoleSessionCredentialsProvider : AlibabaCloudCredentialsProvider
     {
         private long roleSessionDurationSeconds = 3600;
-        private long assumeRoleRound = 0;
 
         private IAcsClient stsClient;
+
         private readonly string roleArn;
         private string roleSessionName;
-        private BasicSessionCredentials credentials = null;
+        private readonly string policy;
 
-        public STSAssumeRoleSessionCredentialsProvider(AlibabaCloudCredentials longLivedCredentials,
-            string roleArn, IClientProfile clientProfile)
+        private BasicSessionCredentials credentials;
+
+        public STSAssumeRoleSessionCredentialsProvider(
+            AlibabaCloudCredentials longLivedCredentials,
+            string roleArn,
+            IClientProfile clientProfile)
         {
             AlibabaCloudCredentialsProvider longLivedCredentialsProvider = new StaticCredentialsProvider(longLivedCredentials);
             this.roleArn = roleArn;
@@ -47,7 +51,10 @@ namespace Aliyun.Acs.Core.Auth
             stsClient = new DefaultAcsClient(clientProfile, longLivedCredentialsProvider);
         }
 
-        public STSAssumeRoleSessionCredentialsProvider(AlibabaCloudCredentials longLivedCredentials, string roleArn, IAcsClient client)
+        public STSAssumeRoleSessionCredentialsProvider(
+            AlibabaCloudCredentials longLivedCredentials,
+            string roleArn,
+            IAcsClient client)
         {
             AlibabaCloudCredentialsProvider longLivedCredentialsProvider = new StaticCredentialsProvider(longLivedCredentials);
             this.roleArn = roleArn;
@@ -55,12 +62,40 @@ namespace Aliyun.Acs.Core.Auth
             stsClient = client;
         }
 
-        public STSAssumeRoleSessionCredentialsProvider(AlibabaCloudCredentialsProvider longLivedCredentialsProvider,
-            string roleArn, IClientProfile clientProfile)
+        public STSAssumeRoleSessionCredentialsProvider(
+            AlibabaCloudCredentialsProvider longLivedCredentialsProvider,
+            string roleArn,
+            IClientProfile clientProfile)
         {
             this.roleArn = roleArn;
             roleSessionName = GetNewRoleSessionName();
             stsClient = new DefaultAcsClient(clientProfile, longLivedCredentialsProvider);
+        }
+
+        public STSAssumeRoleSessionCredentialsProvider(
+            AlibabaCloudCredentials longLivedCredentials,
+            string roleArn,
+            string policy,
+            IClientProfile profile
+        )
+        {
+            AlibabaCloudCredentialsProvider longLivedCredentialsProvider = new StaticCredentialsProvider(longLivedCredentials);
+            this.roleArn = roleArn;
+            this.policy = policy;
+            roleSessionName = GetNewRoleSessionName();
+            stsClient = new DefaultAcsClient(profile, longLivedCredentialsProvider);
+        }
+
+        public STSAssumeRoleSessionCredentialsProvider(
+            string roleArn,
+            string policy,
+            IAcsClient client
+        )
+        {
+            this.roleArn = roleArn;
+            this.policy = policy;
+            roleSessionName = GetNewRoleSessionName();
+            stsClient = client;
         }
 
         public void WithRoleSessionName(string roleSessionName)
@@ -98,15 +133,19 @@ namespace Aliyun.Acs.Core.Auth
 
         private BasicSessionCredentials GetNewSessionCredentials()
         {
-            assumeRoleRound += 1;
-
-            AssumeRoleRequest assumeRoleRequest = new AssumeRoleRequest
+            var assumeRoleRequest = new AssumeRoleRequest
             {
                 RoleArn = roleArn,
                 RoleSessionName = roleSessionName,
                 DurationSeconds = roleSessionDurationSeconds
             };
-            AssumeRoleResponse response = stsClient.GetAcsResponse(assumeRoleRequest);
+
+            if (!String.IsNullOrEmpty(policy))
+            {
+                assumeRoleRequest.Policy = policy;
+            }
+
+            var response = stsClient.GetAcsResponse(assumeRoleRequest);
             return new BasicSessionCredentials(
                 response.Credentials.AccessKeyId,
                 response.Credentials.AccessKeySecret,
