@@ -41,9 +41,19 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			describeFullBackupListResponse.PageNum = context.IntegerValue("DescribeFullBackupList.PageNum");
 			describeFullBackupListResponse.TotalElements = context.IntegerValue("DescribeFullBackupList.TotalElements");
 
-			List<string> describeFullBackupListResponse_items = new List<string>();
+			List<DescribeFullBackupListResponse.DescribeFullBackupList_FullBackupFile> describeFullBackupListResponse_items = new List<DescribeFullBackupListResponse.DescribeFullBackupList_FullBackupFile>();
 			for (int i = 0; i < context.Length("DescribeFullBackupList.Items.Length"); i++) {
-				describeFullBackupListResponse_items.Add(context.StringValue("DescribeFullBackupList.Items["+ i +"]"));
+				DescribeFullBackupListResponse.DescribeFullBackupList_FullBackupFile fullBackupFile = new DescribeFullBackupListResponse.DescribeFullBackupList_FullBackupFile();
+				fullBackupFile.BackupSetId = context.StringValue("DescribeFullBackupList.Items["+ i +"].BackupSetId");
+				fullBackupFile.SourceEndpointIpPort = context.StringValue("DescribeFullBackupList.Items["+ i +"].SourceEndpointIpPort");
+				fullBackupFile.StartTime = context.LongValue("DescribeFullBackupList.Items["+ i +"].StartTime");
+				fullBackupFile.EndTime = context.LongValue("DescribeFullBackupList.Items["+ i +"].EndTime");
+				fullBackupFile.BackupStatus = context.StringValue("DescribeFullBackupList.Items["+ i +"].BackupStatus");
+				fullBackupFile.BackupSetExpiredTime = context.LongValue("DescribeFullBackupList.Items["+ i +"].BackupSetExpiredTime");
+				fullBackupFile.BackupSize = context.LongValue("DescribeFullBackupList.Items["+ i +"].BackupSize");
+				fullBackupFile.StorageMethod = context.StringValue("DescribeFullBackupList.Items["+ i +"].StorageMethod");
+
+				describeFullBackupListResponse_items.Add(fullBackupFile);
 			}
 			describeFullBackupListResponse.Items = describeFullBackupListResponse_items;
         

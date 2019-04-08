@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private int? totalElements;
 
-		private List<string> items;
+		private List<DescribeFullBackupList_FullBackupFile> items;
 
 		public bool? Success
 		{
@@ -153,7 +153,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public List<string> Items
+		public List<DescribeFullBackupList_FullBackupFile> Items
 		{
 			get
 			{
@@ -162,6 +162,122 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				items = value;
+			}
+		}
+
+		public class DescribeFullBackupList_FullBackupFile
+		{
+
+			private string backupSetId;
+
+			private string sourceEndpointIpPort;
+
+			private long? startTime;
+
+			private long? endTime;
+
+			private string backupStatus;
+
+			private long? backupSetExpiredTime;
+
+			private long? backupSize;
+
+			private string storageMethod;
+
+			public string BackupSetId
+			{
+				get
+				{
+					return backupSetId;
+				}
+				set	
+				{
+					backupSetId = value;
+				}
+			}
+
+			public string SourceEndpointIpPort
+			{
+				get
+				{
+					return sourceEndpointIpPort;
+				}
+				set	
+				{
+					sourceEndpointIpPort = value;
+				}
+			}
+
+			public long? StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public long? EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string BackupStatus
+			{
+				get
+				{
+					return backupStatus;
+				}
+				set	
+				{
+					backupStatus = value;
+				}
+			}
+
+			public long? BackupSetExpiredTime
+			{
+				get
+				{
+					return backupSetExpiredTime;
+				}
+				set	
+				{
+					backupSetExpiredTime = value;
+				}
+			}
+
+			public long? BackupSize
+			{
+				get
+				{
+					return backupSize;
+				}
+				set	
+				{
+					backupSize = value;
+				}
+			}
+
+			public string StorageMethod
+			{
+				get
+				{
+					return storageMethod;
+				}
+				set	
+				{
+					storageMethod = value;
+				}
 			}
 		}
 	}

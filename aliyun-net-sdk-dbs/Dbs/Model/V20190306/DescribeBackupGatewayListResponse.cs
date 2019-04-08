@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private int? totalElements;
 
-		private List<string> items;
+		private List<DescribeBackupGatewayList_BackupGateway> items;
 
 		public bool? Success
 		{
@@ -153,7 +153,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public List<string> Items
+		public List<DescribeBackupGatewayList_BackupGateway> Items
 		{
 			get
 			{
@@ -162,6 +162,150 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				items = value;
+			}
+		}
+
+		public class DescribeBackupGatewayList_BackupGateway
+		{
+
+			private string backupGatewayId;
+
+			private string sourceEndpointInternetIP;
+
+			private string sourceEndpointIntranetIP;
+
+			private string sourceEndpointHostname;
+
+			private string backupGatewayStatus;
+
+			private long? lastHeartbeatTime;
+
+			private long? backupGatewayCreateTime;
+
+			private string region;
+
+			private string displayName;
+
+			private string identifier;
+
+			public string BackupGatewayId
+			{
+				get
+				{
+					return backupGatewayId;
+				}
+				set	
+				{
+					backupGatewayId = value;
+				}
+			}
+
+			public string SourceEndpointInternetIP
+			{
+				get
+				{
+					return sourceEndpointInternetIP;
+				}
+				set	
+				{
+					sourceEndpointInternetIP = value;
+				}
+			}
+
+			public string SourceEndpointIntranetIP
+			{
+				get
+				{
+					return sourceEndpointIntranetIP;
+				}
+				set	
+				{
+					sourceEndpointIntranetIP = value;
+				}
+			}
+
+			public string SourceEndpointHostname
+			{
+				get
+				{
+					return sourceEndpointHostname;
+				}
+				set	
+				{
+					sourceEndpointHostname = value;
+				}
+			}
+
+			public string BackupGatewayStatus
+			{
+				get
+				{
+					return backupGatewayStatus;
+				}
+				set	
+				{
+					backupGatewayStatus = value;
+				}
+			}
+
+			public long? LastHeartbeatTime
+			{
+				get
+				{
+					return lastHeartbeatTime;
+				}
+				set	
+				{
+					lastHeartbeatTime = value;
+				}
+			}
+
+			public long? BackupGatewayCreateTime
+			{
+				get
+				{
+					return backupGatewayCreateTime;
+				}
+				set	
+				{
+					backupGatewayCreateTime = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			public string DisplayName
+			{
+				get
+				{
+					return displayName;
+				}
+				set	
+				{
+					displayName = value;
+				}
+			}
+
+			public string Identifier
+			{
+				get
+				{
+					return identifier;
+				}
+				set	
+				{
+					identifier = value;
+				}
 			}
 		}
 	}

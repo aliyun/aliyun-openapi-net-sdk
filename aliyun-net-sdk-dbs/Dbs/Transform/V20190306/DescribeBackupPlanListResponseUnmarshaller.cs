@@ -41,9 +41,34 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			describeBackupPlanListResponse.PageNum = context.IntegerValue("DescribeBackupPlanList.PageNum");
 			describeBackupPlanListResponse.TotalElements = context.IntegerValue("DescribeBackupPlanList.TotalElements");
 
-			List<string> describeBackupPlanListResponse_items = new List<string>();
+			List<DescribeBackupPlanListResponse.DescribeBackupPlanList_BackupPlanDetail> describeBackupPlanListResponse_items = new List<DescribeBackupPlanListResponse.DescribeBackupPlanList_BackupPlanDetail>();
 			for (int i = 0; i < context.Length("DescribeBackupPlanList.Items.Length"); i++) {
-				describeBackupPlanListResponse_items.Add(context.StringValue("DescribeBackupPlanList.Items["+ i +"]"));
+				DescribeBackupPlanListResponse.DescribeBackupPlanList_BackupPlanDetail backupPlanDetail = new DescribeBackupPlanListResponse.DescribeBackupPlanList_BackupPlanDetail();
+				backupPlanDetail.BackupPlanId = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupPlanId");
+				backupPlanDetail.SourceEndpointInstanceType = context.StringValue("DescribeBackupPlanList.Items["+ i +"].SourceEndpointInstanceType");
+				backupPlanDetail.SourceEndpointRegion = context.StringValue("DescribeBackupPlanList.Items["+ i +"].SourceEndpointRegion");
+				backupPlanDetail.SourceEndpointInstanceID = context.StringValue("DescribeBackupPlanList.Items["+ i +"].SourceEndpointInstanceID");
+				backupPlanDetail.SourceEndpointIpPort = context.StringValue("DescribeBackupPlanList.Items["+ i +"].SourceEndpointIpPort");
+				backupPlanDetail.SourceEndpointDatabaseName = context.StringValue("DescribeBackupPlanList.Items["+ i +"].SourceEndpointDatabaseName");
+				backupPlanDetail.SourceEndpointUserName = context.StringValue("DescribeBackupPlanList.Items["+ i +"].SourceEndpointUserName");
+				backupPlanDetail.BackupObjects = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupObjects");
+				backupPlanDetail.BackupGatewayId = context.LongValue("DescribeBackupPlanList.Items["+ i +"].BackupGatewayId");
+				backupPlanDetail.OSSBucketRegion = context.StringValue("DescribeBackupPlanList.Items["+ i +"].OSSBucketRegion");
+				backupPlanDetail.OSSBucketName = context.StringValue("DescribeBackupPlanList.Items["+ i +"].OSSBucketName");
+				backupPlanDetail.BackupPeriod = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupPeriod");
+				backupPlanDetail.BackupStartTime = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupStartTime");
+				backupPlanDetail.EnableBackupLog = context.BooleanValue("DescribeBackupPlanList.Items["+ i +"].EnableBackupLog");
+				backupPlanDetail.BackupRetentionPeriod = context.IntegerValue("DescribeBackupPlanList.Items["+ i +"].BackupRetentionPeriod");
+				backupPlanDetail.DuplicationInfrequentAccessPeriod = context.IntegerValue("DescribeBackupPlanList.Items["+ i +"].DuplicationInfrequentAccessPeriod");
+				backupPlanDetail.DuplicationArchivePeriod = context.IntegerValue("DescribeBackupPlanList.Items["+ i +"].DuplicationArchivePeriod");
+				backupPlanDetail.BackupPlanName = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupPlanName");
+				backupPlanDetail.SourceEndpointOracleSID = context.StringValue("DescribeBackupPlanList.Items["+ i +"].SourceEndpointOracleSID");
+				backupPlanDetail.InstanceClass = context.StringValue("DescribeBackupPlanList.Items["+ i +"].InstanceClass");
+				backupPlanDetail.BackupMethod = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupMethod");
+				backupPlanDetail.BackupPlanCreateTime = context.LongValue("DescribeBackupPlanList.Items["+ i +"].BackupPlanCreateTime");
+				backupPlanDetail.BackupPlanStatus = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupPlanStatus");
+
+				describeBackupPlanListResponse_items.Add(backupPlanDetail);
 			}
 			describeBackupPlanListResponse.Items = describeBackupPlanListResponse_items;
         

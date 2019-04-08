@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private int? totalElements;
 
-		private List<string> items;
+		private List<DescribeBackupPlanList_BackupPlanDetail> items;
 
 		public bool? Success
 		{
@@ -153,7 +153,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public List<string> Items
+		public List<DescribeBackupPlanList_BackupPlanDetail> Items
 		{
 			get
 			{
@@ -162,6 +162,332 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				items = value;
+			}
+		}
+
+		public class DescribeBackupPlanList_BackupPlanDetail
+		{
+
+			private string backupPlanId;
+
+			private string sourceEndpointInstanceType;
+
+			private string sourceEndpointRegion;
+
+			private string sourceEndpointInstanceID;
+
+			private string sourceEndpointIpPort;
+
+			private string sourceEndpointDatabaseName;
+
+			private string sourceEndpointUserName;
+
+			private string backupObjects;
+
+			private long? backupGatewayId;
+
+			private string oSSBucketRegion;
+
+			private string oSSBucketName;
+
+			private string backupPeriod;
+
+			private string backupStartTime;
+
+			private bool? enableBackupLog;
+
+			private int? backupRetentionPeriod;
+
+			private int? duplicationInfrequentAccessPeriod;
+
+			private int? duplicationArchivePeriod;
+
+			private string backupPlanName;
+
+			private string sourceEndpointOracleSID;
+
+			private string instanceClass;
+
+			private string backupMethod;
+
+			private long? backupPlanCreateTime;
+
+			private string backupPlanStatus;
+
+			public string BackupPlanId
+			{
+				get
+				{
+					return backupPlanId;
+				}
+				set	
+				{
+					backupPlanId = value;
+				}
+			}
+
+			public string SourceEndpointInstanceType
+			{
+				get
+				{
+					return sourceEndpointInstanceType;
+				}
+				set	
+				{
+					sourceEndpointInstanceType = value;
+				}
+			}
+
+			public string SourceEndpointRegion
+			{
+				get
+				{
+					return sourceEndpointRegion;
+				}
+				set	
+				{
+					sourceEndpointRegion = value;
+				}
+			}
+
+			public string SourceEndpointInstanceID
+			{
+				get
+				{
+					return sourceEndpointInstanceID;
+				}
+				set	
+				{
+					sourceEndpointInstanceID = value;
+				}
+			}
+
+			public string SourceEndpointIpPort
+			{
+				get
+				{
+					return sourceEndpointIpPort;
+				}
+				set	
+				{
+					sourceEndpointIpPort = value;
+				}
+			}
+
+			public string SourceEndpointDatabaseName
+			{
+				get
+				{
+					return sourceEndpointDatabaseName;
+				}
+				set	
+				{
+					sourceEndpointDatabaseName = value;
+				}
+			}
+
+			public string SourceEndpointUserName
+			{
+				get
+				{
+					return sourceEndpointUserName;
+				}
+				set	
+				{
+					sourceEndpointUserName = value;
+				}
+			}
+
+			public string BackupObjects
+			{
+				get
+				{
+					return backupObjects;
+				}
+				set	
+				{
+					backupObjects = value;
+				}
+			}
+
+			public long? BackupGatewayId
+			{
+				get
+				{
+					return backupGatewayId;
+				}
+				set	
+				{
+					backupGatewayId = value;
+				}
+			}
+
+			public string OSSBucketRegion
+			{
+				get
+				{
+					return oSSBucketRegion;
+				}
+				set	
+				{
+					oSSBucketRegion = value;
+				}
+			}
+
+			public string OSSBucketName
+			{
+				get
+				{
+					return oSSBucketName;
+				}
+				set	
+				{
+					oSSBucketName = value;
+				}
+			}
+
+			public string BackupPeriod
+			{
+				get
+				{
+					return backupPeriod;
+				}
+				set	
+				{
+					backupPeriod = value;
+				}
+			}
+
+			public string BackupStartTime
+			{
+				get
+				{
+					return backupStartTime;
+				}
+				set	
+				{
+					backupStartTime = value;
+				}
+			}
+
+			public bool? EnableBackupLog
+			{
+				get
+				{
+					return enableBackupLog;
+				}
+				set	
+				{
+					enableBackupLog = value;
+				}
+			}
+
+			public int? BackupRetentionPeriod
+			{
+				get
+				{
+					return backupRetentionPeriod;
+				}
+				set	
+				{
+					backupRetentionPeriod = value;
+				}
+			}
+
+			public int? DuplicationInfrequentAccessPeriod
+			{
+				get
+				{
+					return duplicationInfrequentAccessPeriod;
+				}
+				set	
+				{
+					duplicationInfrequentAccessPeriod = value;
+				}
+			}
+
+			public int? DuplicationArchivePeriod
+			{
+				get
+				{
+					return duplicationArchivePeriod;
+				}
+				set	
+				{
+					duplicationArchivePeriod = value;
+				}
+			}
+
+			public string BackupPlanName
+			{
+				get
+				{
+					return backupPlanName;
+				}
+				set	
+				{
+					backupPlanName = value;
+				}
+			}
+
+			public string SourceEndpointOracleSID
+			{
+				get
+				{
+					return sourceEndpointOracleSID;
+				}
+				set	
+				{
+					sourceEndpointOracleSID = value;
+				}
+			}
+
+			public string InstanceClass
+			{
+				get
+				{
+					return instanceClass;
+				}
+				set	
+				{
+					instanceClass = value;
+				}
+			}
+
+			public string BackupMethod
+			{
+				get
+				{
+					return backupMethod;
+				}
+				set	
+				{
+					backupMethod = value;
+				}
+			}
+
+			public long? BackupPlanCreateTime
+			{
+				get
+				{
+					return backupPlanCreateTime;
+				}
+				set	
+				{
+					backupPlanCreateTime = value;
+				}
+			}
+
+			public string BackupPlanStatus
+			{
+				get
+				{
+					return backupPlanStatus;
+				}
+				set	
+				{
+					backupPlanStatus = value;
+				}
 			}
 		}
 	}

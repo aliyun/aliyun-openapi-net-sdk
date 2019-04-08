@@ -41,9 +41,19 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			describeIncrementBackupListResponse.PageNum = context.IntegerValue("DescribeIncrementBackupList.PageNum");
 			describeIncrementBackupListResponse.TotalElements = context.IntegerValue("DescribeIncrementBackupList.TotalElements");
 
-			List<string> describeIncrementBackupListResponse_items = new List<string>();
+			List<DescribeIncrementBackupListResponse.DescribeIncrementBackupList_IncrementBackupFile> describeIncrementBackupListResponse_items = new List<DescribeIncrementBackupListResponse.DescribeIncrementBackupList_IncrementBackupFile>();
 			for (int i = 0; i < context.Length("DescribeIncrementBackupList.Items.Length"); i++) {
-				describeIncrementBackupListResponse_items.Add(context.StringValue("DescribeIncrementBackupList.Items["+ i +"]"));
+				DescribeIncrementBackupListResponse.DescribeIncrementBackupList_IncrementBackupFile incrementBackupFile = new DescribeIncrementBackupListResponse.DescribeIncrementBackupList_IncrementBackupFile();
+				incrementBackupFile.BackupSetId = context.StringValue("DescribeIncrementBackupList.Items["+ i +"].BackupSetId");
+				incrementBackupFile.SourceEndpointIpPort = context.StringValue("DescribeIncrementBackupList.Items["+ i +"].SourceEndpointIpPort");
+				incrementBackupFile.StartTime = context.LongValue("DescribeIncrementBackupList.Items["+ i +"].StartTime");
+				incrementBackupFile.EndTime = context.LongValue("DescribeIncrementBackupList.Items["+ i +"].EndTime");
+				incrementBackupFile.BackupStatus = context.StringValue("DescribeIncrementBackupList.Items["+ i +"].BackupStatus");
+				incrementBackupFile.BackupSetExpiredTime = context.LongValue("DescribeIncrementBackupList.Items["+ i +"].BackupSetExpiredTime");
+				incrementBackupFile.BackupSize = context.LongValue("DescribeIncrementBackupList.Items["+ i +"].BackupSize");
+				incrementBackupFile.StorageMethod = context.StringValue("DescribeIncrementBackupList.Items["+ i +"].StorageMethod");
+
+				describeIncrementBackupListResponse_items.Add(incrementBackupFile);
 			}
 			describeIncrementBackupListResponse.Items = describeIncrementBackupListResponse_items;
         

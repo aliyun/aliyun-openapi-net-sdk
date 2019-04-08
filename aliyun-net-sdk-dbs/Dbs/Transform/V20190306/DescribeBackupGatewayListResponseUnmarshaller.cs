@@ -41,9 +41,21 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			describeBackupGatewayListResponse.PageNum = context.IntegerValue("DescribeBackupGatewayList.PageNum");
 			describeBackupGatewayListResponse.TotalElements = context.IntegerValue("DescribeBackupGatewayList.TotalElements");
 
-			List<string> describeBackupGatewayListResponse_items = new List<string>();
+			List<DescribeBackupGatewayListResponse.DescribeBackupGatewayList_BackupGateway> describeBackupGatewayListResponse_items = new List<DescribeBackupGatewayListResponse.DescribeBackupGatewayList_BackupGateway>();
 			for (int i = 0; i < context.Length("DescribeBackupGatewayList.Items.Length"); i++) {
-				describeBackupGatewayListResponse_items.Add(context.StringValue("DescribeBackupGatewayList.Items["+ i +"]"));
+				DescribeBackupGatewayListResponse.DescribeBackupGatewayList_BackupGateway backupGateway = new DescribeBackupGatewayListResponse.DescribeBackupGatewayList_BackupGateway();
+				backupGateway.BackupGatewayId = context.StringValue("DescribeBackupGatewayList.Items["+ i +"].BackupGatewayId");
+				backupGateway.SourceEndpointInternetIP = context.StringValue("DescribeBackupGatewayList.Items["+ i +"].SourceEndpointInternetIP");
+				backupGateway.SourceEndpointIntranetIP = context.StringValue("DescribeBackupGatewayList.Items["+ i +"].SourceEndpointIntranetIP");
+				backupGateway.SourceEndpointHostname = context.StringValue("DescribeBackupGatewayList.Items["+ i +"].SourceEndpointHostname");
+				backupGateway.BackupGatewayStatus = context.StringValue("DescribeBackupGatewayList.Items["+ i +"].BackupGatewayStatus");
+				backupGateway.LastHeartbeatTime = context.LongValue("DescribeBackupGatewayList.Items["+ i +"].LastHeartbeatTime");
+				backupGateway.BackupGatewayCreateTime = context.LongValue("DescribeBackupGatewayList.Items["+ i +"].BackupGatewayCreateTime");
+				backupGateway.Region = context.StringValue("DescribeBackupGatewayList.Items["+ i +"].Region");
+				backupGateway.DisplayName = context.StringValue("DescribeBackupGatewayList.Items["+ i +"].DisplayName");
+				backupGateway.Identifier = context.StringValue("DescribeBackupGatewayList.Items["+ i +"].Identifier");
+
+				describeBackupGatewayListResponse_items.Add(backupGateway);
 			}
 			describeBackupGatewayListResponse.Items = describeBackupGatewayListResponse_items;
         
