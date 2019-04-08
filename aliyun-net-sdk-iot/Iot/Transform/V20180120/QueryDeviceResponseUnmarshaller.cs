@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Iot.Model.V20180120;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
@@ -53,6 +54,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				deviceInfo.UtcCreate = context.StringValue("QueryDevice.Data["+ i +"].UtcCreate");
 				deviceInfo.UtcModified = context.StringValue("QueryDevice.Data["+ i +"].UtcModified");
 				deviceInfo.IotId = context.StringValue("QueryDevice.Data["+ i +"].IotId");
+				deviceInfo.Nickname = context.StringValue("QueryDevice.Data["+ i +"].Nickname");
 
 				queryDeviceResponse_data.Add(deviceInfo);
 			}

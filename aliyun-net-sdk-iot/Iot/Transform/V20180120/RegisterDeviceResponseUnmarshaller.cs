@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Iot.Model.V20180120;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
@@ -42,6 +43,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.DeviceSecret = context.StringValue("RegisterDevice.Data.DeviceSecret");
 			data.DevEui = context.StringValue("RegisterDevice.Data.DevEui");
 			data.JoinEui = context.StringValue("RegisterDevice.Data.JoinEui");
+			data.Nickname = context.StringValue("RegisterDevice.Data.Nickname");
 			registerDeviceResponse.Data = data;
         
 			return registerDeviceResponse;

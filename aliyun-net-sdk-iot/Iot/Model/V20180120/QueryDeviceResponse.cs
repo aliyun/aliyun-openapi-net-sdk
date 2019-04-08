@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
@@ -175,6 +176,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string iotId;
 
+			private string nickname;
+
 			public string DeviceId
 			{
 				get
@@ -304,6 +307,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					iotId = value;
+				}
+			}
+
+			public string Nickname
+			{
+				get
+				{
+					return nickname;
+				}
+				set	
+				{
+					nickname = value;
 				}
 			}
 		}

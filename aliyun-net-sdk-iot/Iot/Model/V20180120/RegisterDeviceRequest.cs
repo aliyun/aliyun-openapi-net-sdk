@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
@@ -36,6 +37,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string pinCode;
 
 		private string iotInstanceId;
+
+		private string nickname;
 
 		private string deviceName;
 
@@ -68,6 +71,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string Nickname
+		{
+			get
+			{
+				return nickname;
+			}
+			set	
+			{
+				nickname = value;
+				DictionaryUtil.Add(QueryParameters, "Nickname", value);
 			}
 		}
 
@@ -123,7 +139,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override RegisterDeviceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RegisterDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return RegisterDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

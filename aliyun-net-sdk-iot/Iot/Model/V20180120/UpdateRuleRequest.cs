@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
@@ -183,7 +184,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override UpdateRuleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UpdateRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

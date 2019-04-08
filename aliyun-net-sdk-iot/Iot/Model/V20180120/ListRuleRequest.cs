@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Iot.Transform;
 using Aliyun.Acs.Iot.Transform.V20180120;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
@@ -33,6 +34,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
         {
         }
 
+		private string searchName;
+
 		private string iotInstanceId;
 
 		private int? pageSize;
@@ -40,6 +43,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private int? currentPage;
 
 		private string accessKeyId;
+
+		public string SearchName
+		{
+			get
+			{
+				return searchName;
+			}
+			set	
+			{
+				searchName = value;
+				DictionaryUtil.Add(QueryParameters, "SearchName", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -93,7 +109,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override ListRuleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ListRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ListRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Iot.Model.V20180120;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
@@ -53,6 +54,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.NodeType = context.IntegerValue("QueryDeviceDetail.Data.NodeType");
 			data.Region = context.StringValue("QueryDeviceDetail.Data.Region");
 			data.Owner = context.BooleanValue("QueryDeviceDetail.Data.Owner");
+			data.Nickname = context.StringValue("QueryDeviceDetail.Data.Nickname");
 			queryDeviceDetailResponse.Data = data;
         
 			return queryDeviceDetailResponse;
