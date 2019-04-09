@@ -5,7 +5,7 @@
 The logger is mainly used to provide support for auditing, to record each call, similar to the server's access log.
 
 ## Set Logger
-To start the logger, pass in the [Logger](..\aliyun-net-sdk-core\Utils\Logger.cs) object to client and you must configure the path address where the log will be stored. 
+To start the logger, pass in the [Logger](https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/aliyun-net-sdk-core/Utils/Logger.cs) object to client and you must configure the path address where the log will be stored. 
 The log output level, log output template, and channel have default values ​​that you can specify explicitly.
 
 ```csharp
