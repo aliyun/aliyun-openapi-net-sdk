@@ -37,8 +37,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private int? pageSize;
 
-		private string sTSToken;
-
 		private int? pageNumber;
 
 		public int? PageSize
@@ -51,19 +49,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string STSToken
-		{
-			get
-			{
-				return sTSToken;
-			}
-			set	
-			{
-				sTSToken = value;
-				DictionaryUtil.Add(QueryParameters, "STSToken", value);
 			}
 		}
 

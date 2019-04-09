@@ -41,8 +41,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string keySpec;
 
-		private string sTSToken;
-
 		private int? numberOfBytes;
 
 		public string EncryptionContext
@@ -81,19 +79,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				keySpec = value;
 				DictionaryUtil.Add(QueryParameters, "KeySpec", value);
-			}
-		}
-
-		public string STSToken
-		{
-			get
-			{
-				return sTSToken;
-			}
-			set	
-			{
-				sTSToken = value;
-				DictionaryUtil.Add(QueryParameters, "STSToken", value);
 			}
 		}
 

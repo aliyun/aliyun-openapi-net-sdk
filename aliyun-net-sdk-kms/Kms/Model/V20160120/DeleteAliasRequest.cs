@@ -37,8 +37,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string aliasName;
 
-		private string sTSToken;
-
 		public string AliasName
 		{
 			get
@@ -49,19 +47,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				aliasName = value;
 				DictionaryUtil.Add(QueryParameters, "AliasName", value);
-			}
-		}
-
-		public string STSToken
-		{
-			get
-			{
-				return sTSToken;
-			}
-			set	
-			{
-				sTSToken = value;
-				DictionaryUtil.Add(QueryParameters, "STSToken", value);
 			}
 		}
 

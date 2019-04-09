@@ -35,21 +35,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string sTSToken;
-
-		public string STSToken
-		{
-			get
-			{
-				return sTSToken;
-			}
-			set	
-			{
-				sTSToken = value;
-				DictionaryUtil.Add(QueryParameters, "STSToken", value);
-			}
-		}
-
         public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);

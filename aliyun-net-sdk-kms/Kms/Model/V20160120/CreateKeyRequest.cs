@@ -41,8 +41,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string description;
 
-		private string sTSToken;
-
 		public string KeyUsage
 		{
 			get
@@ -79,19 +77,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string STSToken
-		{
-			get
-			{
-				return sTSToken;
-			}
-			set	
-			{
-				sTSToken = value;
-				DictionaryUtil.Add(QueryParameters, "STSToken", value);
 			}
 		}
 
