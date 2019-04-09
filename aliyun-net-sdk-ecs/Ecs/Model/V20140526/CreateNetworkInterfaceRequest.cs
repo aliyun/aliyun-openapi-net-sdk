@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string description;
 
+		private string businessType;
+
 		private string resourceGroupId;
 
 		private string regionId;
@@ -51,6 +53,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private List<Tag> tags;
 
 		private string networkInterfaceName;
+
+		private bool? visible;
 
 		private string resourceOwnerAccount;
 
@@ -111,6 +115,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string BusinessType
+		{
+			get
+			{
+				return businessType;
+			}
+			set	
+			{
+				businessType = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessType", value);
 			}
 		}
 
@@ -181,6 +198,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				networkInterfaceName = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkInterfaceName", value);
+			}
+		}
+
+		public bool? Visible
+		{
+			get
+			{
+				return visible;
+			}
+			set	
+			{
+				visible = value;
+				DictionaryUtil.Add(QueryParameters, "Visible", value.ToString());
 			}
 		}
 

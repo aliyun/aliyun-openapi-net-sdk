@@ -36,6 +36,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private bool? serviceManaged;
+
 		private string securityGroupId;
 
 		private string type;
@@ -80,6 +82,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? ServiceManaged
+		{
+			get
+			{
+				return serviceManaged;
+			}
+			set	
+			{
+				serviceManaged = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceManaged", value.ToString());
 			}
 		}
 
