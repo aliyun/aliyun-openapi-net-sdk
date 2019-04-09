@@ -5,7 +5,7 @@
 logger 主要用于提供支持审计的能力，用于记录每次的调用情况，类似服务端的 access log。
 
 ## 设置 Logger
-若要启动日志功能，请传入 [Logger](..\aliyun-net-sdk-core\Utils\Logger.cs) 对象，您必须配置存放日志的路径地址。而日志输出级别，日志输出模板以及 channel 都有默认值，您可以显式指定。
+若要启动日志功能，请传入 [Logger](https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/aliyun-net-sdk-core/Utils/Logger.cs) 对象，您必须配置存放日志的路径地址。而日志输出级别，日志输出模板以及 channel 都有默认值，您可以显式指定。
 
 ```csharp
 // 配置 Logger 路径
