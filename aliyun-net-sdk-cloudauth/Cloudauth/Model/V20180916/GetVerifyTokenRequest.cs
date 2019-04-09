@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
 using Aliyun.Acs.Cloudauth.Transform.V20180916;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
     public class GetVerifyTokenRequest : RpcAcsRequest<GetVerifyTokenResponse>
     {
         public GetVerifyTokenRequest()
-            : base("Cloudauth", "2018-09-16", "GetVerifyToken", "CloudAuth", "openAPI")
+            : base("Cloudauth", "2018-09-16", "GetVerifyToken", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -139,7 +140,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-        public override GetVerifyTokenResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetVerifyTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetVerifyTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

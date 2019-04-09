@@ -24,24 +24,17 @@ using Aliyun.Acs.Cloudauth.Model.V20180916;
 
 namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 {
-    public class CompareFacesResponseUnmarshaller
+    public class DescribeVerifySDKResponseUnmarshaller
     {
-        public static CompareFacesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVerifySDKResponse Unmarshall(UnmarshallerContext context)
         {
-			CompareFacesResponse compareFacesResponse = new CompareFacesResponse();
+			DescribeVerifySDKResponse describeVerifySDKResponse = new DescribeVerifySDKResponse();
 
-			compareFacesResponse.HttpResponse = context.HttpResponse;
-			compareFacesResponse.RequestId = context.StringValue("CompareFaces.RequestId");
-			compareFacesResponse.Success = context.BooleanValue("CompareFaces.Success");
-			compareFacesResponse.Code = context.StringValue("CompareFaces.Code");
-			compareFacesResponse.Message = context.StringValue("CompareFaces.Message");
-
-			CompareFacesResponse.CompareFaces_Data data = new CompareFacesResponse.CompareFaces_Data();
-			data.SimilarityScore = context.FloatValue("CompareFaces.Data.SimilarityScore");
-			data.ConfidenceThresholds = context.StringValue("CompareFaces.Data.ConfidenceThresholds");
-			compareFacesResponse.Data = data;
+			describeVerifySDKResponse.HttpResponse = context.HttpResponse;
+			describeVerifySDKResponse.RequestId = context.StringValue("DescribeVerifySDK.RequestId");
+			describeVerifySDKResponse.SdkUrl = context.StringValue("DescribeVerifySDK.SdkUrl");
         
-			return compareFacesResponse;
+			return describeVerifySDKResponse;
         }
     }
 }

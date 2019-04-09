@@ -24,24 +24,17 @@ using Aliyun.Acs.Cloudauth.Model.V20180916;
 
 namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 {
-    public class CompareFacesResponseUnmarshaller
+    public class CreateAuthKeyResponseUnmarshaller
     {
-        public static CompareFacesResponse Unmarshall(UnmarshallerContext context)
+        public static CreateAuthKeyResponse Unmarshall(UnmarshallerContext context)
         {
-			CompareFacesResponse compareFacesResponse = new CompareFacesResponse();
+			CreateAuthKeyResponse createAuthKeyResponse = new CreateAuthKeyResponse();
 
-			compareFacesResponse.HttpResponse = context.HttpResponse;
-			compareFacesResponse.RequestId = context.StringValue("CompareFaces.RequestId");
-			compareFacesResponse.Success = context.BooleanValue("CompareFaces.Success");
-			compareFacesResponse.Code = context.StringValue("CompareFaces.Code");
-			compareFacesResponse.Message = context.StringValue("CompareFaces.Message");
-
-			CompareFacesResponse.CompareFaces_Data data = new CompareFacesResponse.CompareFaces_Data();
-			data.SimilarityScore = context.FloatValue("CompareFaces.Data.SimilarityScore");
-			data.ConfidenceThresholds = context.StringValue("CompareFaces.Data.ConfidenceThresholds");
-			compareFacesResponse.Data = data;
+			createAuthKeyResponse.HttpResponse = context.HttpResponse;
+			createAuthKeyResponse.RequestId = context.StringValue("CreateAuthKey.RequestId");
+			createAuthKeyResponse.AuthKey = context.StringValue("CreateAuthKey.AuthKey");
         
-			return compareFacesResponse;
+			return createAuthKeyResponse;
         }
     }
 }

@@ -22,18 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
-	public class CompareFacesResponse : AcsResponse
+	public class DescribeDeviceInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private bool? success;
+		private int? pageSize;
 
-		private string code;
+		private int? currentPage;
 
-		private string message;
+		private int? totalCount;
 
-		private CompareFaces_Data data;
+		private List<DescribeDeviceInfo_DeviceInfo> deviceInfoList;
 
 		public string RequestId
 		{
@@ -47,82 +47,124 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-		public bool? Success
+		public int? PageSize
 		{
 			get
 			{
-				return success;
+				return pageSize;
 			}
 			set	
 			{
-				success = value;
+				pageSize = value;
 			}
 		}
 
-		public string Code
+		public int? CurrentPage
 		{
 			get
 			{
-				return code;
+				return currentPage;
 			}
 			set	
 			{
-				code = value;
+				currentPage = value;
 			}
 		}
 
-		public string Message
+		public int? TotalCount
 		{
 			get
 			{
-				return message;
+				return totalCount;
 			}
 			set	
 			{
-				message = value;
+				totalCount = value;
 			}
 		}
 
-		public CompareFaces_Data Data
+		public List<DescribeDeviceInfo_DeviceInfo> DeviceInfoList
 		{
 			get
 			{
-				return data;
+				return deviceInfoList;
 			}
 			set	
 			{
-				data = value;
+				deviceInfoList = value;
 			}
 		}
 
-		public class CompareFaces_Data
+		public class DescribeDeviceInfo_DeviceInfo
 		{
 
-			private float? similarityScore;
+			private string deviceId;
 
-			private string confidenceThresholds;
+			private string userDeviceId;
 
-			public float? SimilarityScore
+			private string bizType;
+
+			private string beginDay;
+
+			private string expiredDay;
+
+			public string DeviceId
 			{
 				get
 				{
-					return similarityScore;
+					return deviceId;
 				}
 				set	
 				{
-					similarityScore = value;
+					deviceId = value;
 				}
 			}
 
-			public string ConfidenceThresholds
+			public string UserDeviceId
 			{
 				get
 				{
-					return confidenceThresholds;
+					return userDeviceId;
 				}
 				set	
 				{
-					confidenceThresholds = value;
+					userDeviceId = value;
+				}
+			}
+
+			public string BizType
+			{
+				get
+				{
+					return bizType;
+				}
+				set	
+				{
+					bizType = value;
+				}
+			}
+
+			public string BeginDay
+			{
+				get
+				{
+					return beginDay;
+				}
+				set	
+				{
+					beginDay = value;
+				}
+			}
+
+			public string ExpiredDay
+			{
+				get
+				{
+					return expiredDay;
+				}
+				set	
+				{
+					expiredDay = value;
 				}
 			}
 		}

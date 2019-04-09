@@ -27,47 +27,20 @@ using Aliyun.Acs.Cloudauth.Transform.V20180916;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
-    public class GetMaterialsRequest : RpcAcsRequest<GetMaterialsResponse>
+    public class CreateVerifySDKRequest : RpcAcsRequest<CreateVerifySDKResponse>
     {
-        public GetMaterialsRequest()
-            : base("Cloudauth", "2018-09-16", "GetMaterials", "cloudauth", "openAPI")
+        public CreateVerifySDKRequest()
+            : base("Cloudauth", "2018-09-16", "CreateVerifySDK", "cloudauth", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
         }
-
-		private long? resourceOwnerId;
-
-		private string biz;
 
 		private string sourceIp;
 
-		private string ticketId;
+		private string appUrl;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+		private string lang;
 
-		public string Biz
-		{
-			get
-			{
-				return biz;
-			}
-			set	
-			{
-				biz = value;
-				DictionaryUtil.Add(QueryParameters, "Biz", value);
-			}
-		}
+		private string platform;
 
 		public string SourceIp
 		{
@@ -82,22 +55,48 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-		public string TicketId
+		public string AppUrl
 		{
 			get
 			{
-				return ticketId;
+				return appUrl;
 			}
 			set	
 			{
-				ticketId = value;
-				DictionaryUtil.Add(QueryParameters, "TicketId", value);
+				appUrl = value;
+				DictionaryUtil.Add(QueryParameters, "AppUrl", value);
 			}
 		}
 
-        public override GetMaterialsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string Platform
+		{
+			get
+			{
+				return platform;
+			}
+			set	
+			{
+				platform = value;
+				DictionaryUtil.Add(QueryParameters, "Platform", value);
+			}
+		}
+
+        public override CreateVerifySDKResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetMaterialsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateVerifySDKResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

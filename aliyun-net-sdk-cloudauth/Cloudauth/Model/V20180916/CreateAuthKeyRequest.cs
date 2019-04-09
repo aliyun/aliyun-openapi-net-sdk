@@ -27,45 +27,48 @@ using Aliyun.Acs.Cloudauth.Transform.V20180916;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
-    public class GetMaterialsRequest : RpcAcsRequest<GetMaterialsResponse>
+    public class CreateAuthKeyRequest : RpcAcsRequest<CreateAuthKeyResponse>
     {
-        public GetMaterialsRequest()
-            : base("Cloudauth", "2018-09-16", "GetMaterials", "cloudauth", "openAPI")
+        public CreateAuthKeyRequest()
+            : base("Cloudauth", "2018-09-16", "CreateAuthKey", "cloudauth", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
         }
 
-		private long? resourceOwnerId;
+		private string bizType;
 
-		private string biz;
+		private string userDeviceId;
 
 		private string sourceIp;
 
-		private string ticketId;
+		private bool? test;
 
-		public long? ResourceOwnerId
+		private int? authYears;
+
+		private string lang;
+
+		public string BizType
 		{
 			get
 			{
-				return resourceOwnerId;
+				return bizType;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				bizType = value;
+				DictionaryUtil.Add(QueryParameters, "BizType", value);
 			}
 		}
 
-		public string Biz
+		public string UserDeviceId
 		{
 			get
 			{
-				return biz;
+				return userDeviceId;
 			}
 			set	
 			{
-				biz = value;
-				DictionaryUtil.Add(QueryParameters, "Biz", value);
+				userDeviceId = value;
+				DictionaryUtil.Add(QueryParameters, "UserDeviceId", value);
 			}
 		}
 
@@ -82,22 +85,48 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-		public string TicketId
+		public bool? Test
 		{
 			get
 			{
-				return ticketId;
+				return test;
 			}
 			set	
 			{
-				ticketId = value;
-				DictionaryUtil.Add(QueryParameters, "TicketId", value);
+				test = value;
+				DictionaryUtil.Add(QueryParameters, "Test", value.ToString());
 			}
 		}
 
-        public override GetMaterialsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? AuthYears
+		{
+			get
+			{
+				return authYears;
+			}
+			set	
+			{
+				authYears = value;
+				DictionaryUtil.Add(QueryParameters, "AuthYears", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+        public override CreateAuthKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetMaterialsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateAuthKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

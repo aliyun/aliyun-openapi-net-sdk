@@ -27,47 +27,18 @@ using Aliyun.Acs.Cloudauth.Transform.V20180916;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
-    public class GetMaterialsRequest : RpcAcsRequest<GetMaterialsResponse>
+    public class DescribeVerifySDKRequest : RpcAcsRequest<DescribeVerifySDKResponse>
     {
-        public GetMaterialsRequest()
-            : base("Cloudauth", "2018-09-16", "GetMaterials", "cloudauth", "openAPI")
+        public DescribeVerifySDKRequest()
+            : base("Cloudauth", "2018-09-16", "DescribeVerifySDK", "cloudauth", "openAPI")
         {
-			Protocol = ProtocolType.HTTPS;
         }
-
-		private long? resourceOwnerId;
-
-		private string biz;
 
 		private string sourceIp;
 
-		private string ticketId;
+		private string lang;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Biz
-		{
-			get
-			{
-				return biz;
-			}
-			set	
-			{
-				biz = value;
-				DictionaryUtil.Add(QueryParameters, "Biz", value);
-			}
-		}
+		private string taskId;
 
 		public string SourceIp
 		{
@@ -82,22 +53,35 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-		public string TicketId
+		public string Lang
 		{
 			get
 			{
-				return ticketId;
+				return lang;
 			}
 			set	
 			{
-				ticketId = value;
-				DictionaryUtil.Add(QueryParameters, "TicketId", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
-        public override GetMaterialsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+			}
+		}
+
+        public override DescribeVerifySDKResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetMaterialsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeVerifySDKResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

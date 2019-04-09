@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
 using Aliyun.Acs.Cloudauth.Transform.V20180916;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
     public class SubmitMaterialsRequest : RpcAcsRequest<SubmitMaterialsResponse>
     {
         public SubmitMaterialsRequest()
-            : base("Cloudauth", "2018-09-16", "SubmitMaterials", "CloudAuth", "openAPI")
+            : base("Cloudauth", "2018-09-16", "SubmitMaterials", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
@@ -132,7 +133,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-        public override SubmitMaterialsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SubmitMaterialsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SubmitMaterialsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

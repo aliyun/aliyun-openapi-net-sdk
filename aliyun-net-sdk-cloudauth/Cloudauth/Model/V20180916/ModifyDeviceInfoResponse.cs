@@ -22,18 +22,20 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
-	public class CompareFacesResponse : AcsResponse
+	public class ModifyDeviceInfoResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private bool? success;
+		private string deviceId;
 
-		private string code;
+		private string userDeviceId;
 
-		private string message;
+		private string bizType;
 
-		private CompareFaces_Data data;
+		private string beginDay;
+
+		private string expiredDay;
 
 		public string RequestId
 		{
@@ -47,83 +49,63 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-		public bool? Success
+		public string DeviceId
 		{
 			get
 			{
-				return success;
+				return deviceId;
 			}
 			set	
 			{
-				success = value;
+				deviceId = value;
 			}
 		}
 
-		public string Code
+		public string UserDeviceId
 		{
 			get
 			{
-				return code;
+				return userDeviceId;
 			}
 			set	
 			{
-				code = value;
+				userDeviceId = value;
 			}
 		}
 
-		public string Message
+		public string BizType
 		{
 			get
 			{
-				return message;
+				return bizType;
 			}
 			set	
 			{
-				message = value;
+				bizType = value;
 			}
 		}
 
-		public CompareFaces_Data Data
+		public string BeginDay
 		{
 			get
 			{
-				return data;
+				return beginDay;
 			}
 			set	
 			{
-				data = value;
+				beginDay = value;
 			}
 		}
 
-		public class CompareFaces_Data
+		public string ExpiredDay
 		{
-
-			private float? similarityScore;
-
-			private string confidenceThresholds;
-
-			public float? SimilarityScore
+			get
 			{
-				get
-				{
-					return similarityScore;
-				}
-				set	
-				{
-					similarityScore = value;
-				}
+				return expiredDay;
 			}
-
-			public string ConfidenceThresholds
+			set	
 			{
-				get
-				{
-					return confidenceThresholds;
-				}
-				set	
-				{
-					confidenceThresholds = value;
-				}
+				expiredDay = value;
 			}
 		}
 	}

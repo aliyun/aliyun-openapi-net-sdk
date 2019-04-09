@@ -24,24 +24,21 @@ using Aliyun.Acs.Cloudauth.Model.V20180916;
 
 namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 {
-    public class CompareFacesResponseUnmarshaller
+    public class ModifyDeviceInfoResponseUnmarshaller
     {
-        public static CompareFacesResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDeviceInfoResponse Unmarshall(UnmarshallerContext context)
         {
-			CompareFacesResponse compareFacesResponse = new CompareFacesResponse();
+			ModifyDeviceInfoResponse modifyDeviceInfoResponse = new ModifyDeviceInfoResponse();
 
-			compareFacesResponse.HttpResponse = context.HttpResponse;
-			compareFacesResponse.RequestId = context.StringValue("CompareFaces.RequestId");
-			compareFacesResponse.Success = context.BooleanValue("CompareFaces.Success");
-			compareFacesResponse.Code = context.StringValue("CompareFaces.Code");
-			compareFacesResponse.Message = context.StringValue("CompareFaces.Message");
-
-			CompareFacesResponse.CompareFaces_Data data = new CompareFacesResponse.CompareFaces_Data();
-			data.SimilarityScore = context.FloatValue("CompareFaces.Data.SimilarityScore");
-			data.ConfidenceThresholds = context.StringValue("CompareFaces.Data.ConfidenceThresholds");
-			compareFacesResponse.Data = data;
+			modifyDeviceInfoResponse.HttpResponse = context.HttpResponse;
+			modifyDeviceInfoResponse.RequestId = context.StringValue("ModifyDeviceInfo.RequestId");
+			modifyDeviceInfoResponse.DeviceId = context.StringValue("ModifyDeviceInfo.DeviceId");
+			modifyDeviceInfoResponse.UserDeviceId = context.StringValue("ModifyDeviceInfo.UserDeviceId");
+			modifyDeviceInfoResponse.BizType = context.StringValue("ModifyDeviceInfo.BizType");
+			modifyDeviceInfoResponse.BeginDay = context.StringValue("ModifyDeviceInfo.BeginDay");
+			modifyDeviceInfoResponse.ExpiredDay = context.StringValue("ModifyDeviceInfo.ExpiredDay");
         
-			return compareFacesResponse;
+			return modifyDeviceInfoResponse;
         }
     }
 }

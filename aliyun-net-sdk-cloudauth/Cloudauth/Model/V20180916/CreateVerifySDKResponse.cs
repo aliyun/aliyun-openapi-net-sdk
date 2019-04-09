@@ -22,18 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
-	public class CompareFacesResponse : AcsResponse
+	public class CreateVerifySDKResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private bool? success;
-
-		private string code;
-
-		private string message;
-
-		private CompareFaces_Data data;
+		private string taskId;
 
 		public string RequestId
 		{
@@ -47,83 +41,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-		public bool? Success
+		public string TaskId
 		{
 			get
 			{
-				return success;
+				return taskId;
 			}
 			set	
 			{
-				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public CompareFaces_Data Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
-
-		public class CompareFaces_Data
-		{
-
-			private float? similarityScore;
-
-			private string confidenceThresholds;
-
-			public float? SimilarityScore
-			{
-				get
-				{
-					return similarityScore;
-				}
-				set	
-				{
-					similarityScore = value;
-				}
-			}
-
-			public string ConfidenceThresholds
-			{
-				get
-				{
-					return confidenceThresholds;
-				}
-				set	
-				{
-					confidenceThresholds = value;
-				}
+				taskId = value;
 			}
 		}
 	}

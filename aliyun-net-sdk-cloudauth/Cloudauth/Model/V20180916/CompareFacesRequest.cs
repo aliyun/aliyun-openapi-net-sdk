@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cloudauth.Transform;
 using Aliyun.Acs.Cloudauth.Transform.V20180916;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20180916
 {
     public class CompareFacesRequest : RpcAcsRequest<CompareFacesResponse>
     {
         public CompareFacesRequest()
-            : base("Cloudauth", "2018-09-16", "CompareFaces", "CloudAuth", "openAPI")
+            : base("Cloudauth", "2018-09-16", "CompareFaces", "cloudauth", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
@@ -125,7 +126,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			}
 		}
 
-        public override CompareFacesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CompareFacesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CompareFacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
