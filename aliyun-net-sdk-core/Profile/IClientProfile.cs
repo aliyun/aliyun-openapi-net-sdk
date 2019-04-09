@@ -23,6 +23,8 @@ using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
 
+using NewEndpoint = Aliyun.Acs.Core.Endpoints;
+
 namespace Aliyun.Acs.Core.Profile
 {
     public interface IClientProfile
@@ -37,6 +39,8 @@ namespace Aliyun.Acs.Core.Profile
         Credential GetCredential();
 
         List<Endpoint> GetEndpoints(string product, string regionId, string serviceCode, string endpointType);
+
+        NewEndpoint.Endpoint GetEndpoint(string product, string regionId, string serviceCode, string endpointType);
 
         void SetLocationConfig(string regionId, string product, string endpoint);
 

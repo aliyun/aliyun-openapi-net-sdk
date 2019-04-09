@@ -27,6 +27,8 @@ using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Regions.Location;
 using Aliyun.Acs.Core.Utils;
 
+using NewEndpoint = Aliyun.Acs.Core.Endpoints;
+
 namespace Aliyun.Acs.Core.Profile
 {
     public class DefaultProfile : IClientProfile
@@ -41,8 +43,9 @@ namespace Aliyun.Acs.Core.Profile
         private RemoteEndpointsParser remoteProvider = null;
         private LocationConfig locationConfig = null;
         public FormatType acceptFormat;
-
         public string DefaultClientName { get; set; }
+
+        private static NewEndpoint.EndpointsDataProvider EndpointsProvider = new NewEndpoint.EndpointsDataProvider();
 
         public DefaultProfile(bool mock)
         {
@@ -189,6 +192,37 @@ namespace Aliyun.Acs.Core.Profile
                 throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
             }
             return endpoints;
+        }
+
+        public NewEndpoint.Endpoint GetEndpoint(string product, string regionId, string serviceCode, string endpointType)
+        {
+            try
+            {
+                var endpoint = EndpointsProvider.GetEndpoint(product, regionId, serviceCode);
+
+                if (null == endpoint)
+                {
+
+                    if (serviceCode != null)
+                    {
+                        endpoint = remoteProvider.GetNewEndpoint(regionId, product, serviceCode, endpointType, credential, locationConfig);
+                    }
+                    if (endpoint != null)
+                    {
+                        CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, DateTime.Now);
+                    }
+                    else
+                    {
+                        throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
+                    }
+                }
+                return endpoint;
+            }
+            catch (ClientException ex)
+            {
+                SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
+            }
         }
 
         public static DefaultProfile GetProfile()

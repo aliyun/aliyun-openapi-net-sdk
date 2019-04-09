@@ -26,6 +26,8 @@ using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Regions.Location;
 using Aliyun.Acs.Core.Regions.Location.Model;
 
+using NewEndpoint = Aliyun.Acs.Core.Endpoints;
+
 namespace Aliyun.Acs.Core.Regions
 {
     class RemoteEndpointsParser : IEndpointsProvider
@@ -72,6 +74,26 @@ namespace Aliyun.Acs.Core.Regions
 
             endpoint = new Endpoint(response.RegionId, regionIds, productDomainList);
             return endpoint;
+        }
+
+        public NewEndpoint.Endpoint GetNewEndpoint(string regionId, string product, string serviceCode,
+            string endpointType, Credential credential, LocationConfig locationConfig)
+        {
+            if (serviceCode == null)
+            {
+                return null;
+            }
+
+            NewEndpoint.Endpoint endpoint = null;
+
+            DescribeEndpointResponse response = describeEndpointService.DescribeEndpoint(regionId, serviceCode,
+                endpointType, credential, locationConfig);
+            if (response == null)
+            {
+                return endpoint;
+            }
+
+            return new NewEndpoint.Endpoint(response.Product, response.RegionId, response.Endpoint);
         }
     }
 }

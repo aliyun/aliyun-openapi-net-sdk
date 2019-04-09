@@ -235,6 +235,10 @@ namespace Aliyun.Acs.Core
                 request.LocationProduct,
                 request.LocationEndpointType);
 
+            // var endpoint = clientProfile.GetEndpoint(request.Product, request.RegionId,
+            //     request.LocationProduct,
+            //     request.LocationEndpointType);
+
             return DoAction(request, retry, retryNumber, request.RegionId, credentials, signer, format, endpoints);
         }
 
