@@ -9,33 +9,24 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
     public class IniFileHelperTest
     {
         [Fact]
-        public void TestDeleteSection()
+        public void TestGetValueWithNoParams()
         {
             TestHelper.CreateIniFileWithEcs();
 
-            var result = IniFileHelper.DeleteSection("default", TestHelper.GetIniFilePath());
+            IniReader iniReader = new IniReader(TestHelper.GetIniFilePath());
+            var value = iniReader.GetValue("region_id", "default");
 
             TestHelper.DeleteIniFile();
-            Assert.True(result);
+            Assert.Equal("cn-hangzhou", value);
         }
 
         [Fact]
-        public void TestDeleteKey()
+        public void TestGetKeys()
         {
             TestHelper.CreateIniFileWithAk();
 
-            var result = IniFileHelper.DeleteKey("default", "region_id", TestHelper.GetIniFilePath());
-
-            TestHelper.DeleteIniFile();
-            Assert.True(result);
-        }
-
-        [Fact]
-        public void TestReadKeys()
-        {
-            TestHelper.CreateIniFileWithAk();
-
-            var result = IniFileHelper.ReadKeys("default", TestHelper.GetIniFilePath());
+            IniReader iniReader = new IniReader(TestHelper.GetIniFilePath());
+            var result = iniReader.GetKeys("default");
 
             TestHelper.DeleteIniFile();
             Assert.True(0 < result.Length);

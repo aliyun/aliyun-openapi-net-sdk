@@ -18,126 +18,103 @@
  */
 
 using System;
-using System.Runtime.InteropServices;
-using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace Aliyun.Acs.Core.Utils
 {
-    public static class IniFileHelper
+    public class IniReader
     {
-        public static int capacity = 512;
+        private Dictionary<string, Dictionary<string, string>> ini = new Dictionary<string, Dictionary<string, string>>(StringComparer.InvariantCultureIgnoreCase);
 
-        [DllImport("kernel32", CharSet = CharSet.Unicode)]
-        private static extern int GetPrivateProfileString(string section, string key, string defaultValue, StringBuilder value, int size, string filePath);
-
-        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
-        static extern int GetPrivateProfileString(string section, string key, string defaultValue, [In, Out] char[] value, int size, string filePath);
-
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
-        private static extern int GetPrivateProfileSection(string section, IntPtr keyValue, int size, string filePath);
-
-        [DllImport("kernel32", CharSet = CharSet.Unicode, SetLastError = true)]
-        [
-            return :MarshalAs(UnmanagedType.Bool)
-        ]
-        private static extern bool WritePrivateProfileString(string section, string key, string value, string filePath);
-
-        public static bool WriteValue(string section, string key, string value, string filePath)
+        public IniReader(string file)
         {
-            bool result = WritePrivateProfileString(section, key, value, filePath);
-            return result;
-        }
+            var txt = File.ReadAllText(file);
 
-        public static bool DeleteSection(string section, string filepath)
-        {
-            bool result = WritePrivateProfileString(section, null, null, filepath);
-            return result;
-        }
+            Dictionary<string, string> currentSection = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
 
-        public static bool DeleteKey(string section, string key, string filepath)
-        {
-            bool result = WritePrivateProfileString(section, key, null, filepath);
-            return result;
-        }
+            ini[""] = currentSection;
 
-        public static string ReadValue(string section, string key, string filePath, string defaultValue = "")
-        {
-            var value = new StringBuilder(capacity);
-            GetPrivateProfileString(section, key, defaultValue, value, value.Capacity, filePath);
-            return value.ToString();
-        }
-
-        public static string[] ReadSections(string filePath)
-        {
-            // first line will not recognize if ini file is saved in UTF-8 with BOM 
-            while (true)
+            foreach (var line in txt.Split(new [] { "\n" }, StringSplitOptions.RemoveEmptyEntries)
+                    .Where(t => !string.IsNullOrWhiteSpace(t))
+                    .Select(t => t.Trim()))
             {
-                char[] chars = new char[capacity];
-                int size = GetPrivateProfileString(null, null, "", chars, capacity, filePath);
+                if (line.StartsWith(";"))
+                    continue;
 
-                if (size == 0)
+                if (line.StartsWith("[") && line.EndsWith("]"))
                 {
-                    return null;
+                    currentSection = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
+                    ini[line.Substring(1, line.LastIndexOf("]") - 1)] = currentSection;
+                    continue;
                 }
 
-                if (size < capacity - 2)
-                {
-                    string result = new String(chars, 0, size);
-                    string[] sections = result.Split(new char[] { '\0' }, StringSplitOptions.RemoveEmptyEntries);
-                    return sections;
-                }
-
-                capacity = capacity * 2;
+                var idx = line.IndexOf("=");
+                if (idx == -1)
+                    currentSection[line] = "";
+                else
+                    currentSection[line.Substring(0, idx)] = line.Substring(idx + 1);
             }
         }
 
-        public static string[] ReadKeys(string section, string filePath)
+        public string GetValue(string key)
         {
-            // first line will not recognize if ini file is saved in UTF-8 with BOM 
-            while (true)
-            {
-                char[] chars = new char[capacity];
-                int size = GetPrivateProfileString(section, null, "", chars, capacity, filePath);
-
-                if (size == 0)
-                {
-                    return null;
-                }
-
-                if (size < capacity - 2)
-                {
-                    string result = new String(chars, 0, size);
-                    string[] keys = result.Split(new char[] { '\0' }, StringSplitOptions.RemoveEmptyEntries);
-                    return keys;
-                }
-
-                capacity = capacity * 2;
-            }
+            return GetValue(key, "", "");
         }
 
-        public static string[] ReadKeyValuePairs(string section, string filePath)
+        public string GetValue(string key, string section)
         {
-            while (true)
+            return GetValue(key, section, "");
+        }
+
+        public string GetValue(string key, string section, string @default)
+        {
+            if (!ini.ContainsKey(section))
+                return @default;
+
+            if (!ini[section].ContainsKey(key))
+                return @default;
+
+            return ini[section][key];
+        }
+
+        public string[] GetKeys(string section)
+        {
+            if (!ini.ContainsKey(section))
+                return new string[0];
+
+            return ini[section].Keys.ToArray();
+        }
+
+        public string[] GetSections()
+        {
+            return ini.Keys.Where(t => t != "").ToArray();
+        }
+
+        public void SaveSettings(string newFilePath, string section, IDictionary<string, string> keyValuePairDic)
+        {
+            string strToSave = "";
+
+            strToSave += ("[" + section + "]\r\n");
+
+            foreach (var keyValuePair in keyValuePairDic)
             {
-                IntPtr returnedString = Marshal.AllocCoTaskMem(capacity * sizeof(char));
-                int size = GetPrivateProfileSection(section, returnedString, capacity, filePath);
+                strToSave += (keyValuePair.Key + "=" + keyValuePair.Value + "\r\n");
+            }
 
-                if (size == 0)
-                {
-                    Marshal.FreeCoTaskMem(returnedString);
-                    return null;
-                }
+            strToSave += "\r\n";
 
-                if (size < capacity - 2)
-                {
-                    string result = Marshal.PtrToStringAuto(returnedString, size - 1);
-                    Marshal.FreeCoTaskMem(returnedString);
-                    string[] keyValuePairs = result.Split('\0');
-                    return keyValuePairs;
-                }
-
-                Marshal.FreeCoTaskMem(returnedString);
-                capacity = capacity * 2;
+            try
+            {
+                TextWriter tw = new StreamWriter(newFilePath);
+                tw.Write(strToSave);
+                tw.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }

@@ -56,11 +56,8 @@ namespace Aliyun.Acs.Core.Tests.Units
         private static void CreateDefaultIniFile(string sectionName, IDictionary<string, string> keyValue)
         {
             CreateAndSetCurrentDirecotry();
-
-            foreach (var item in keyValue)
-            {
-                IniFileHelper.WriteValue(sectionName, item.Key, item.Value, GetIniFilePath());
-            }
+            IniReader iniReader = new IniReader(GetIniFilePath());
+            iniReader.SaveSettings(GetIniFilePath(), sectionName, keyValue);
         }
 
         public static void CreateIniFileWithAk()

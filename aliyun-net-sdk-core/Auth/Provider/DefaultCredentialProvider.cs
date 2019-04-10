@@ -123,44 +123,45 @@ namespace Aliyun.Acs.Core.Auth.Provider
                 throw new ClientException("Credentials file environment variable 'ALIBABA_CLOUD_CREDENTIALS_FILE' cannot be empty");
             }
 
-            var sectionNameList = IniFileHelper.ReadSections(credentialFileLocation);
+            IniReader iniReader = new IniReader(credentialFileLocation);
+            var sectionNameList = iniReader.GetSections();
 
             if (null != defaultProfile.DefaultClientName)
             {
                 string userDefineSectionNode = defaultProfile.DefaultClientName;
 
-                var iniKeyTypeValue = IniFileHelper.ReadValue(userDefineSectionNode, "type", credentialFileLocation);
-                SaveIniKeyValueToDic(userDefineSectionNode, credentialFileLocation, out Dictionary<string, string> keyValuePairDic);
+                var iniKeyTypeValue = iniReader.GetValue("type", userDefineSectionNode);
+
                 if (iniKeyTypeValue.Equals("access_key"))
                 {
-                    keyValuePairDic.TryGetValue("access_key_id", out accessKeyId);
-                    keyValuePairDic.TryGetValue("access_key_secret", out accessKeySecret);
-                    keyValuePairDic.TryGetValue("region_id", out regionId);
+                    accessKeyId = iniReader.GetValue("access_key_id", userDefineSectionNode);
+                    accessKeySecret = iniReader.GetValue("access_key_secret", userDefineSectionNode);
+                    regionId = iniReader.GetValue("region_id", userDefineSectionNode);
 
                     return GetAccessKeyCredential();
                 }
 
                 if (iniKeyTypeValue.Equals("ecs_ram_role"))
                 {
-                    keyValuePairDic.TryGetValue("role_name", out roleName);
-                    keyValuePairDic.TryGetValue("region_id", out regionId);
+                    roleName = iniReader.GetValue("role_name", userDefineSectionNode);
+                    regionId = iniReader.GetValue("region_id", userDefineSectionNode);
 
                     return GetInstanceRamRoleAlibabaCloudCredential();
                 }
 
                 if (iniKeyTypeValue.Equals("ram_role_arn"))
                 {
-                    keyValuePairDic.TryGetValue("access_key_id", out accessKeyId);
-                    keyValuePairDic.TryGetValue("access_key_secret", out accessKeySecret);
-                    keyValuePairDic.TryGetValue("role_arn", out roleArn);
+                    accessKeyId = iniReader.GetValue("access_key_id", userDefineSectionNode);
+                    accessKeySecret = iniReader.GetValue("access_key_secret", userDefineSectionNode);
+                    roleArn = iniReader.GetValue("role_arn", userDefineSectionNode);
 
                     return GetRamRoleArnAlibabaCloudCredential();
                 }
 
                 if (iniKeyTypeValue.Equals("rsa_key_pair"))
                 {
-                    keyValuePairDic.TryGetValue("public_key_id", out publicKeyId);
-                    keyValuePairDic.TryGetValue("private_key_file", out privateKeyFile);
+                    publicKeyId = iniReader.GetValue("public_key_id", userDefineSectionNode);
+                    privateKeyFile = iniReader.GetValue("private_key_file", userDefineSectionNode);
 
                     return GetRsaKeyPairAlibabaCloudCredential();
                 }
@@ -173,11 +174,9 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     {
                         continue;
                     }
-                    SaveIniKeyValueToDic("default", credentialFileLocation, out Dictionary<string, string> keyValuePairDic);
-
-                    keyValuePairDic.TryGetValue("access_key_id", out accessKeyId);
-                    keyValuePairDic.TryGetValue("access_key_secret", out accessKeySecret);
-                    keyValuePairDic.TryGetValue("region_id", out regionId);
+                    accessKeyId = iniReader.GetValue("access_key_id", "default");
+                    accessKeySecret = iniReader.GetValue("access_key_secret", "default");
+                    regionId = iniReader.GetValue("region_id", "default");
 
                     return GetAccessKeyCredential();
                 }
@@ -274,18 +273,6 @@ namespace Aliyun.Acs.Core.Auth.Provider
         public virtual string GetHomePath()
         {
             return EnvironmentUtil.GetHomePath();
-        }
-
-        private void SaveIniKeyValueToDic(string sectionName, string fileLocation, out Dictionary<string, string> keyValueDic)
-        {
-            var keyValuePair = IniFileHelper.ReadKeyValuePairs(sectionName, fileLocation);
-            keyValueDic = new Dictionary<string, string>();
-
-            foreach (var keyValueItem in keyValuePair)
-            {
-                var keyValueArray = keyValueItem.Split('=');
-                keyValueDic.Add(keyValueArray[0], keyValueArray[1]);
-            }
         }
     }
 }
