@@ -41,24 +41,6 @@ namespace Aliyun.Acs.Core.Endpoints
             return DictionaryUtil.TransformDicToString(regionIdList);
         }
 
-        // private Endpoint GetEndpointFromLocation(string product, string regionId, string serviceCode)
-        // {
-        //     Credential credential = DefaultProfile.GetProfile().GetCredential();
-        //     remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
-        //     Aliyun.Acs.Core.Regions.Endpoint locationEndpoint = remoteProvider.GetEndpoint(
-        //         regionId, product, serviceCode, "openAPI", credential, null);
-
-        //     string domain = "";
-
-        //     foreach (ProductDomain productDomain in locationEndpoint.ProductDomains)
-        //     {
-        //         domain = productDomain.DomianName;
-        //         break;
-        //     }
-        //     InitialEndpointList(product, regionId, domain);
-        //     return DictionaryUtil.Get(endpoints, $"{product}_{regionId}");
-        // }
-
         private void InitEndpointsData()
         {
             Type type = MethodBase.GetCurrentMethod().DeclaringType;
