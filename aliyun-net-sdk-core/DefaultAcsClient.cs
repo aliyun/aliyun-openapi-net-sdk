@@ -235,6 +235,8 @@ namespace Aliyun.Acs.Core
 
             NewEndpoint.Endpoint endpoint = GetEndpoint(request);
 
+            // var endpoint = GetEndpoints(request);
+
             return DoAction(request, retry, retryNumber, request.RegionId, credentials, signer, format, endpoint);
         }
 

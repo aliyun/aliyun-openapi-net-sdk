@@ -19,16 +19,12 @@ namespace Aliyun.Acs.Core.Endpoints
     {
         private const string BUNDLED_ENDPOINTS_RESOURCE_PATH = "endpoints.json";
 
-        private static Dictionary<string, Endpoint> endpoints;
-        private static Dictionary<string, Dictionary<string, string>> regionListDictionary;
+        private static Dictionary<string, Endpoint> endpoints = new Dictionary<string, Endpoint>();
+        private static Dictionary<string, Dictionary<string, string>> regionListDictionary = new Dictionary<string, Dictionary<string, string>>();
 
         public static Endpoint GetEndpoint(string product, string regionId, string serviceCode)
         {
-            if (null == endpoints)
-            {
-                endpoints = new Dictionary<string, Endpoint>();
-            }
-            if (0 <= endpoints.Count)
+            if (0 >= endpoints.Count)
             {
                 InitEndpointsData();
             }

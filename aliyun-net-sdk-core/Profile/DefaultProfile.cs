@@ -196,6 +196,11 @@ namespace Aliyun.Acs.Core.Profile
         {
             try
             {
+                if (product == null)
+                {
+                    return null;
+                }
+
                 var endpoint = NewEndpoint.EndpointsDataProvider.GetEndpoint(product, regionId, serviceCode);
 
                 if (null == endpoint)
