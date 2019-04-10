@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{f2c37236-cfe6-4618-a05b-28aa5cfa252c}</ProjectGuid>
+    <ProjectGuid>{aacb75f6-c68a-41d3-9f36-c755102e5b99}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,54 +40,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Industry_brain\Model\V20180712\InvokeServiceResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\AsyncResponsePostResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\AsyncResponsePostRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoLineageListRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoListResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetServiceInputMappingResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetOSSImageAccessRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetOnlineServiceResultRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoChildrenListRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\OperateEquipmentResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoChildrenListResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\InvokeServiceAsyncResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\OperateEquipmentRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\InvokeServiceRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetDataPropertiesResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetServiceInputMappingRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetAsyncServiceResultResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\PostRealTimeDeviceDataResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetServiceResultAsyncRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetServiceResultAsyncResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetAlgorithmListResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetAsyncServiceResultRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoLineageListResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\InvokeServiceAsyncRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetDataPropertiesRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetOnlineServiceResultResponse.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoListRequest.cs" />
-	<Compile Include="Industry_brain\Model\V20180712\GetOSSImageAccessResponse.cs" />
 	<Compile Include="Industry_brain\Model\V20180712\GetAlgorithmListRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoLineageListResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetServiceResultAsyncRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoListResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\PostRealTimeDeviceDataResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetOnlineServiceResultRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\AsyncResponsePostResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetOnlineServiceResultResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetOSSImageAccessResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\InvokeServiceRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetDataPropertiesRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\InvokeServiceAsyncResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\OperateEquipmentResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetServiceInputMappingResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoChildrenListRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\InvokeServiceAsyncRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetAsyncServiceResultResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetOSSImageAccessRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoLineageListRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoChildrenListResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetAlgorithmListResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoListRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetDataPropertiesResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetServiceResultAsyncResponse.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\AsyncResponsePostRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\OperateEquipmentRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetIndustryInfoRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetServiceInputMappingRequest.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\InvokeServiceResponse.cs" />
 	<Compile Include="Industry_brain\Model\V20180712\PostRealTimeDeviceDataRequest.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\GetIndustryInfoLineageListResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Model\V20180712\GetAsyncServiceResultRequest.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\GetAsyncServiceResultResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\GetOnlineServiceResultResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\InvokeServiceResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\GetServiceResultAsyncResponseUnmarshaller.cs" />
 	<Compile Include="Industry_brain\Transform\V20180712\OperateEquipmentResponseUnmarshaller.cs" />
 	<Compile Include="Industry_brain\Transform\V20180712\GetIndustryInfoListResponseUnmarshaller.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\InvokeServiceResponseUnmarshaller.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\GetIndustryInfoChildrenListResponseUnmarshaller.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\GetOSSImageAccessResponseUnmarshaller.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\AsyncResponsePostResponseUnmarshaller.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\GetServiceResultAsyncResponseUnmarshaller.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\GetIndustryInfoResponseUnmarshaller.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\GetAsyncServiceResultResponseUnmarshaller.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\GetDataPropertiesResponseUnmarshaller.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\InvokeServiceAsyncResponseUnmarshaller.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\GetServiceInputMappingResponseUnmarshaller.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\GetOnlineServiceResultResponseUnmarshaller.cs" />
-	<Compile Include="Industry_brain\Transform\V20180712\PostRealTimeDeviceDataResponseUnmarshaller.cs" />
 	<Compile Include="Industry_brain\Transform\V20180712\GetAlgorithmListResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\GetServiceInputMappingResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\PostRealTimeDeviceDataResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\InvokeServiceAsyncResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\AsyncResponsePostResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\GetOSSImageAccessResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\GetIndustryInfoChildrenListResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\GetIndustryInfoLineageListResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\GetDataPropertiesResponseUnmarshaller.cs" />
+	<Compile Include="Industry_brain\Transform\V20180712\GetIndustryInfoResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.industry_brain.Model.V20180712;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.industry_brain.Model.V20180712;
 
 namespace Aliyun.Acs.industry_brain.Transform.V20180712
 {
