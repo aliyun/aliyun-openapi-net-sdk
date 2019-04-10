@@ -34,6 +34,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
         {
         }
 
+		private string identifier;
+
 		private string clientToken;
 
 		private int? pageSize;
@@ -43,6 +45,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private int? pageNum;
 
 		private string ownerId;
+
+		public string Identifier
+		{
+			get
+			{
+				return identifier;
+			}
+			set	
+			{
+				identifier = value;
+				DictionaryUtil.Add(QueryParameters, "Identifier", value);
+			}
+		}
 
 		public string ClientToken
 		{
