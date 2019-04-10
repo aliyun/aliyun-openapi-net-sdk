@@ -32,6 +32,8 @@ using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 
+using NewEndpoint = Aliyun.Acs.Core.Endpoints;
+
 namespace Aliyun.Acs.Core
 {
     public class DefaultAcsClient : IAcsClient
@@ -200,9 +202,7 @@ namespace Aliyun.Acs.Core
             if (null != clientProfile)
             {
                 format = clientProfile.GetFormat();
-                endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
-                    request.LocationProduct,
-                    request.LocationEndpointType);
+                endpoints = GetEndpoints(request);
             }
             return DoAction(request, autoRetry, maxRetryNumber, request.RegionId, credential, signer, format, endpoints);
         }
@@ -229,15 +229,7 @@ namespace Aliyun.Acs.Core
             }
             Signer signer = Signer.GetSigner(credentials);
             FormatType format = profile.GetFormat();
-            List<Endpoint> endpoints;
-
-            endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
-                request.LocationProduct,
-                request.LocationEndpointType);
-
-            // var endpoint = clientProfile.GetEndpoint(request.Product, request.RegionId,
-            //     request.LocationProduct,
-            //     request.LocationEndpointType);
+            List<Endpoint> endpoints = GetEndpoints(request);
 
             return DoAction(request, retry, retryNumber, request.RegionId, credentials, signer, format, endpoints);
         }
@@ -317,6 +309,20 @@ namespace Aliyun.Acs.Core
             }
 
             return null;
+        }
+
+        private List<Endpoint> GetEndpoints<T>(AcsRequest<T> request) where T : AcsResponse
+        {
+            return clientProfile.GetEndpoints(request.Product, request.RegionId,
+                request.LocationProduct,
+                request.LocationEndpointType);
+        }
+
+        private NewEndpoint.Endpoint GetEndPoint<T>(AcsRequest<T> request) where T : AcsResponse
+        {
+            return clientProfile.GetEndpoint(request.Product, request.RegionId,
+                request.LocationProduct,
+                request.LocationEndpointType);
         }
 
         private void PrintHttpDebugMsg(HttpRequest request, HttpResponse response)
