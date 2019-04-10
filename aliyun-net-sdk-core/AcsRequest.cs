@@ -96,14 +96,27 @@ namespace Aliyun.Acs.Core
             return sb.ToString();
         }
 
-        public HttpRequest SignRequest(Signer signer, Credential credential,
-            FormatType? format, ProductDomain domain)
+        public HttpRequest SignRequest(
+            Signer signer,
+            Credential credential,
+            FormatType? format,
+            ProductDomain domain)
         {
             return SignRequest(signer, new LegacyCredentials(credential), format, domain);
         }
 
-        public abstract HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
-            FormatType? format, ProductDomain domain);
+        public abstract HttpRequest SignRequest(
+            Signer signer,
+            AlibabaCloudCredentials credentials,
+            FormatType? format,
+            ProductDomain domain);
+
+        public abstract HttpRequest SignRequest(
+            Signer signer,
+            AlibabaCloudCredentials credential,
+            FormatType? format,
+            string domain
+        );
 
         public abstract string ComposeUrl(string endpoint, Dictionary<string, string> queries);
 

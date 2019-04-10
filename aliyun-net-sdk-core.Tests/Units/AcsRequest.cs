@@ -109,6 +109,11 @@ namespace Aliyun.Acs.Core.Tests.Units
         public override HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
             FormatType? format, ProductDomain domain)
         {
+            return SignRequest(signer, credentials, format, domain.DomianName);
+        }
+
+        public override HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credential, FormatType? format, string domain)
+        {
             HttpRequest httpRequest = new HttpRequest();
             httpRequest.Url = "Instance by MockAcsRequest";
             return httpRequest;

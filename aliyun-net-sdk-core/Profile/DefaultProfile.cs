@@ -45,8 +45,6 @@ namespace Aliyun.Acs.Core.Profile
         public FormatType acceptFormat;
         public string DefaultClientName { get; set; }
 
-        private static NewEndpoint.EndpointsDataProvider EndpointsProvider = new NewEndpoint.EndpointsDataProvider();
-
         public DefaultProfile(bool mock)
         {
             locationConfig = new LocationConfig();
@@ -198,7 +196,7 @@ namespace Aliyun.Acs.Core.Profile
         {
             try
             {
-                var endpoint = EndpointsProvider.GetEndpoint(product, regionId, serviceCode);
+                var endpoint = NewEndpoint.EndpointsDataProvider.GetEndpoint(product, regionId, serviceCode);
 
                 if (null == endpoint)
                 {

@@ -38,8 +38,6 @@ namespace Aliyun.Acs.Core
 {
     public class DefaultAcsClient : IAcsClient
     {
-        private int maxRetryNumber = 3;
-        private bool autoRetry = true;
         private IClientProfile clientProfile = null;
         private AlibabaCloudCredentialsProvider credentialsProvider;
         private readonly UserAgent userAgentConfig = new UserAgent();
@@ -47,6 +45,8 @@ namespace Aliyun.Acs.Core
         public int readTimeout { get; private set; }
         public int connectTimeout { get; private set; }
         public bool IgnoreCertificate { get; private set; }
+        public int MaxRetryNumber { get; set; } = 3;
+        public bool AutoRetry { get; set; } = true;
 
         private static HttpWebProxy WebProxy = new HttpWebProxy();
 
@@ -177,7 +177,7 @@ namespace Aliyun.Acs.Core
 
         public HttpResponse DoAction<T>(AcsRequest<T> request) where T : AcsResponse
         {
-            return DoAction(request, autoRetry, maxRetryNumber, clientProfile);
+            return DoAction(request, AutoRetry, MaxRetryNumber, clientProfile);
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber) where T : AcsResponse
@@ -187,7 +187,7 @@ namespace Aliyun.Acs.Core
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, IClientProfile profile) where T : AcsResponse
         {
-            return DoAction(request, autoRetry, maxRetryNumber, profile);
+            return DoAction(request, AutoRetry, MaxRetryNumber, profile);
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, string regionId, Credential credential) where T : AcsResponse
@@ -198,17 +198,20 @@ namespace Aliyun.Acs.Core
             {
                 request.RegionId = regionId;
             }
-            List<Endpoint> endpoints = null;
+            NewEndpoint.Endpoint endpoint = null;
             if (null != clientProfile)
             {
                 format = clientProfile.GetFormat();
-                endpoints = GetEndpoints(request);
+                endpoint = GetEndpoint(request);
             }
-            return DoAction(request, autoRetry, maxRetryNumber, request.RegionId, credential, signer, format, endpoints);
+            return DoAction(request, AutoRetry, MaxRetryNumber, request.RegionId, credential, signer, format, endpoint);
         }
 
-        public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry,
-            int maxRetryNumber, IClientProfile profile) where T : AcsResponse
+        public HttpResponse DoAction<T>(
+            AcsRequest<T> request,
+            bool autoRetry,
+            int maxRetryNumber,
+            IClientProfile profile) where T : AcsResponse
         {
             if (null == profile)
             {
@@ -229,19 +232,47 @@ namespace Aliyun.Acs.Core
             }
             Signer signer = Signer.GetSigner(credentials);
             FormatType format = profile.GetFormat();
-            List<Endpoint> endpoints = GetEndpoints(request);
 
-            return DoAction(request, retry, retryNumber, request.RegionId, credentials, signer, format, endpoints);
+            NewEndpoint.Endpoint endpoint = GetEndpoint(request);
+
+            return DoAction(request, retry, retryNumber, request.RegionId, credentials, signer, format, endpoint);
         }
 
-        public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
-            Credential credential, Signer signer, FormatType? format, List<Endpoint> endpoints) where T : AcsResponse
+        public HttpResponse DoAction<T>(
+            AcsRequest<T> request,
+            bool autoRetry,
+            int maxRetryNumber,
+            string regionId,
+            Credential credential,
+            Signer signer,
+            FormatType? format,
+            List<Endpoint> endpoints) where T : AcsResponse
         {
             return DoAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer, format, endpoints);
         }
 
-        public virtual HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
-            AlibabaCloudCredentials credentials, Signer signer, FormatType? format, List<Endpoint> endpoints) where T : AcsResponse
+        public HttpResponse DoAction<T>(
+            AcsRequest<T> request,
+            bool autoRetry,
+            int maxRetryNumber,
+            string regionId,
+            Credential credential,
+            Signer signer,
+            FormatType? format,
+            NewEndpoint.Endpoint endpoint) where T : AcsResponse
+        {
+            return DoAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer, format, endpoint);
+        }
+
+        public virtual HttpResponse DoAction<T>(
+            AcsRequest<T> request,
+            bool autoRetry,
+            int maxRetryNumber,
+            string regionId,
+            AlibabaCloudCredentials credentials,
+            Signer signer,
+            FormatType? format,
+            List<Endpoint> endpoints) where T : AcsResponse
         {
             try
             {
@@ -311,6 +342,84 @@ namespace Aliyun.Acs.Core
             return null;
         }
 
+        public virtual HttpResponse DoAction<T>(
+            AcsRequest<T> request,
+            bool autoRetry,
+            int maxRetryNumber,
+            string regionId,
+            AlibabaCloudCredentials credential,
+            Signer signer,
+            FormatType? format,
+            NewEndpoint.Endpoint endpoint) where T : AcsResponse
+        {
+            try
+            {
+                SerilogHelper.StartTime = DateTime.UtcNow.ToString("o");
+                var watch = System.Diagnostics.Stopwatch.StartNew();
+
+                FormatType? requestFormatType = request.AcceptFormat;
+                if (null != requestFormatType)
+                {
+                    format = requestFormatType;
+                }
+                string domain = null;
+                if (request.ProductDomain != null)
+                {
+                    domain = request.ProductDomain.DomianName;
+                }
+                else
+                {
+                    domain = endpoint?.GetDomain();
+                }
+                if (null == domain)
+                {
+                    throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
+                }
+
+                request.Headers["User-Agent"] = UserAgent.Resolve(request.GetSysUserAgentConfig(), this.userAgentConfig);
+
+                bool shouldRetry = true;
+                for (int retryTimes = 0; shouldRetry; retryTimes++)
+                {
+                    shouldRetry = autoRetry && retryTimes < maxRetryNumber;
+                    HttpRequest httpRequest = request.SignRequest(signer, credential, format, domain);
+
+                    ResolveTimeout(httpRequest);
+                    SetHttpsInsecure(IgnoreCertificate);
+                    ResolveProxy(httpRequest, request);
+
+                    HttpResponse response = GetResponse(httpRequest);
+
+                    PrintHttpDebugMsg(request, response);
+
+                    if (response.Content == null)
+                    {
+                        if (shouldRetry)
+                        {
+                            continue;
+                        }
+
+                        throw new ClientException("SDK.ConnectionReset", "Connection reset.");
+                    }
+
+                    if (500 <= response.Status && shouldRetry)
+                    {
+                        continue;
+                    }
+                    watch.Stop();
+                    SerilogHelper.ExecuteTime = watch.ElapsedMilliseconds;
+                    return response;
+                }
+            }
+            catch (ClientException ex)
+            {
+                SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
+            }
+
+            return null;
+        }
+
         private List<Endpoint> GetEndpoints<T>(AcsRequest<T> request) where T : AcsResponse
         {
             return clientProfile.GetEndpoints(request.Product, request.RegionId,
@@ -318,9 +427,11 @@ namespace Aliyun.Acs.Core
                 request.LocationEndpointType);
         }
 
-        private NewEndpoint.Endpoint GetEndPoint<T>(AcsRequest<T> request) where T : AcsResponse
+        private NewEndpoint.Endpoint GetEndpoint<T>(AcsRequest<T> request) where T : AcsResponse
         {
-            return clientProfile.GetEndpoint(request.Product, request.RegionId,
+            return clientProfile.GetEndpoint(
+                request.Product,
+                request.RegionId,
                 request.LocationProduct,
                 request.LocationEndpointType);
         }
@@ -381,18 +492,6 @@ namespace Aliyun.Acs.Core
                 context.ResponseDictionary = reader.Read(body, responseEndpoint);
             }
             return AcsErrorUnmarshaller.Unmarshall(context);
-        }
-
-        public int MaxRetryNumber
-        {
-            get { return maxRetryNumber; }
-            set { maxRetryNumber = value; }
-        }
-
-        public bool AutoRetry
-        {
-            get { return autoRetry; }
-            set { autoRetry = value; }
         }
 
         public virtual HttpResponse GetResponse(HttpRequest httpRequest)

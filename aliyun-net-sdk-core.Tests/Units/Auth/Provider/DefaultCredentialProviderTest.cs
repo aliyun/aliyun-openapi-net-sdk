@@ -440,7 +440,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         [Fact]
         public void GetRsaKeyPairAlibabaCloudCredential2()
         {
-            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "region_id");
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "cn-hangzhou");
 
             var basicSessionCredential = new BasicSessionCredentials("accessKey", "aks", "sessionToken");
             var rsaKeyCredential = new KeyPairCredentials("publicKey", "privateKey");

@@ -117,6 +117,12 @@ namespace Aliyun.Acs.Core
         public override HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
             FormatType? format, ProductDomain domain)
         {
+            return SignRequest(signer, credentials, format, domain.DomianName);
+        }
+
+        public override HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
+            FormatType? format, string domain)
+        {
             var imutableMap = new Dictionary<string, string>(QueryParameters);
 
             if (null != signer && null != credentials)
@@ -170,7 +176,7 @@ namespace Aliyun.Acs.Core
                 StringToSign = strToSign;
             }
 
-            Url = ComposeUrl(domain.DomianName, imutableMap);
+            Url = ComposeUrl(domain, imutableMap);
             return this;
         }
 

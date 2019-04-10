@@ -24,6 +24,8 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Regions;
 
+using NewEndPoint = Aliyun.Acs.Core.Endpoints;
+
 namespace Aliyun.Acs.Core
 {
     public interface IAcsClient
@@ -47,12 +49,30 @@ namespace Aliyun.Acs.Core
 
         HttpResponse DoAction<T>(AcsRequest<T> request, String regionId, Credential credential) where T : AcsResponse;
 
-        HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryCounts, IClientProfile profile) where T : AcsResponse;
+        HttpResponse DoAction<T>(
+            AcsRequest<T> request,
+            bool autoRetry,
+            int maxRetryCounts,
+            IClientProfile profile) where T : AcsResponse;
 
-        HttpResponse DoAction<T>(AcsRequest<T> request,
-            bool autoRetry, int maxRetryNumber,
-            String regionId, Credential credential,
-            Signer signer, FormatType? format,
+        HttpResponse DoAction<T>(
+            AcsRequest<T> request,
+            bool autoRetry,
+            int maxRetryNumber,
+            String regionId,
+            Credential credential,
+            Signer signer,
+            FormatType? format,
             List<Endpoint> endpoints) where T : AcsResponse;
+
+        HttpResponse DoAction<T>(
+            AcsRequest<T> request,
+            bool autoRetry,
+            int maxRetryNumber,
+            string regionId,
+            Credential credential,
+            Signer signer,
+            FormatType? format,
+            NewEndPoint.Endpoint endpoint) where T : AcsResponse;
     }
 }

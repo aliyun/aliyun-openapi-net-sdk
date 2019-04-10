@@ -18,6 +18,8 @@ using Moq;
 
 using Xunit;
 
+using NewEndpoint = Aliyun.Acs.Core.Endpoints;
+
 namespace Aliyun.Acs.Core.Tests.Units
 {
     public class DefaultAcsClientTest
@@ -105,6 +107,18 @@ namespace Aliyun.Acs.Core.Tests.Units
                 It.IsAny<FormatType>(),
                 It.IsAny<List<Endpoint>>()
             )).Returns(response);
+
+            mockDefaultAcsClient.Setup(x => x.DoAction(
+                It.IsAny<AcsRequest<AcsResponse>>(),
+                It.IsAny<bool>(),
+                It.IsAny<int>(),
+                It.IsAny<string>(),
+                It.IsAny<AlibabaCloudCredentials>(),
+                It.IsAny<Signer>(),
+                It.IsAny<FormatType>(),
+                It.IsAny<NewEndpoint.Endpoint>()
+            )).Returns(response);
+
             DefaultAcsClient instance = mockDefaultAcsClient.Object;
 
             return instance;
@@ -378,13 +392,12 @@ namespace Aliyun.Acs.Core.Tests.Units
             AlibabaCloudCredentials credentials = mockCredentials.Object;
             Signer signer = new HmacSHA1Signer();
 
+            var endpoints = new List<Endpoint>();
             // When prodoctDomain is not exist
-            Assert.Throws<ClientException>(
-                () =>
-                {
-                    var response = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
-                }
-            );
+            Assert.Throws<ClientException>(() =>
+            {
+                var response = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, endpoints);
+            });
         }
 
         [Fact]
@@ -422,12 +435,12 @@ namespace Aliyun.Acs.Core.Tests.Units
             // Mock Signer
             Signer signer = new HmacSHA1Signer();
 
-            Assert.Throws<ClientException>(
-                () =>
-                {
-                    var result = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
-                }
-            );
+            var endpoints = new List<Endpoint>();
+
+            Assert.Throws<ClientException>(() =>
+            {
+                var result = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, endpoints);
+            });
         }
 
         [Fact]
@@ -471,7 +484,9 @@ namespace Aliyun.Acs.Core.Tests.Units
             // Mock Signer
             Signer signer = new HmacSHA1Signer();
 
-            var result = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
+            var endpoints = new List<Endpoint>();
+
+            var result = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, endpoints);
             Assert.NotNull(result);
             Assert.Equal(result.Status, response.Status);
         }
@@ -517,7 +532,9 @@ namespace Aliyun.Acs.Core.Tests.Units
             // Mock Signer
             Signer signer = new HmacSHA1Signer();
 
-            var result = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
+            var endpoints = new List<Endpoint>();
+
+            var result = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, endpoints);
             Assert.Equal(200, result.Status);
         }
 
@@ -563,12 +580,14 @@ namespace Aliyun.Acs.Core.Tests.Units
             // Mock Signer
             Signer signer = new HmacSHA1Signer();
 
-            var result = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
+            var endpoints = new List<Endpoint>();
+
+            var result = instance.DoAction<AcsResponse>(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, endpoints);
 
             Assert.Null(Environment.GetEnvironmentVariable("DEBUG"));
 
             status = 500;
-            result = instance.DoAction<AcsResponse>(request, true, 0, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
+            result = instance.DoAction<AcsResponse>(request, true, 0, "cn-hangzhou", credentials, signer, FormatType.JSON, endpoints);
             Assert.Null(Environment.GetEnvironmentVariable("DEBUG"));
         }
 
@@ -578,8 +597,20 @@ namespace Aliyun.Acs.Core.Tests.Units
             {
 
             }
-            public override HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
-                FormatType? format, ProductDomain domain)
+            public override HttpRequest SignRequest(
+                Signer signer,
+                AlibabaCloudCredentials credentials,
+                FormatType? format,
+                ProductDomain domain)
+            {
+                return SignRequest(signer, credentials, format, domain.DomianName);
+            }
+
+            public override HttpRequest SignRequest(
+                Signer signer,
+                AlibabaCloudCredentials credential,
+                FormatType? format,
+                string domain)
             {
                 HttpRequest httpRequest = new HttpRequest();
                 httpRequest.Url = "Instance by MockAcsRequest";

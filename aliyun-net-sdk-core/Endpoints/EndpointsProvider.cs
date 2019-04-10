@@ -19,11 +19,15 @@ namespace Aliyun.Acs.Core.Endpoints
     {
         private const string BUNDLED_ENDPOINTS_RESOURCE_PATH = "endpoints.json";
 
-        private static Dictionary<string, Endpoint> endpoints = new Dictionary<string, Endpoint>();
-        private static Dictionary<string, Dictionary<string, string>> regionListDictionary = new Dictionary<string, Dictionary<string, string>>();
+        private static Dictionary<string, Endpoint> endpoints;
+        private static Dictionary<string, Dictionary<string, string>> regionListDictionary;
 
-        public Endpoint GetEndpoint(string product, string regionId, string serviceCode)
+        public static Endpoint GetEndpoint(string product, string regionId, string serviceCode)
         {
+            if (null == endpoints)
+            {
+                endpoints = new Dictionary<string, Endpoint>();
+            }
             if (0 <= endpoints.Count)
             {
                 InitEndpointsData();
@@ -35,13 +39,13 @@ namespace Aliyun.Acs.Core.Endpoints
             return endpoint;
         }
 
-        private string GetRegionIdList(string product)
+        private static string GetRegionIdList(string product)
         {
             var regionIdList = DictionaryUtil.Get(regionListDictionary, product);
             return DictionaryUtil.TransformDicToString(regionIdList);
         }
 
-        private void InitEndpointsData()
+        private static void InitEndpointsData()
         {
             Type type = MethodBase.GetCurrentMethod().DeclaringType;
             string _namespace = type.Namespace;
@@ -72,13 +76,13 @@ namespace Aliyun.Acs.Core.Endpoints
             }
         }
 
-        private void InitialEndpointList(string product, string regionId, string domain)
+        private static void InitialEndpointList(string product, string regionId, string domain)
         {
             var endpoint = new Endpoint(product, regionId, domain);
             DictionaryUtil.Add(endpoints, product + "_" + regionId, endpoint);
         }
 
-        private void InitialRegionList(string product, Dictionary<string, string> regionList)
+        private static void InitialRegionList(string product, Dictionary<string, string> regionList)
         {
             DictionaryUtil.Add(regionListDictionary, product, regionList);
         }
