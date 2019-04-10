@@ -19,13 +19,12 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Utils;
-
-using SharpConfig;
 
 namespace Aliyun.Acs.Core.Auth.Provider
 {
@@ -124,56 +123,45 @@ namespace Aliyun.Acs.Core.Auth.Provider
                 throw new ClientException("Credentials file environment variable 'ALIBABA_CLOUD_CREDENTIALS_FILE' cannot be empty");
             }
 
-            Configuration config;
-            try
-            {
-                config = LoadFileFromIni(credentialFileLocation);
-            }
-            catch (Exception)
-            {
-                throw new ClientException("Invalid credentials file: " + credentialFileLocation);
-            }
-
-            ArrayList sectionNameList = new ArrayList();
-            foreach (var sectionName in config)
-            {
-                sectionNameList.Add(sectionName.Name);
-            }
+            IniReader iniReader = new IniReader(credentialFileLocation);
+            var sectionNameList = iniReader.GetSections();
 
             if (null != defaultProfile.DefaultClientName)
             {
                 string userDefineSectionNode = defaultProfile.DefaultClientName;
 
-                if (config[userDefineSectionNode]["type"].RawValue.Equals("access_key"))
+                var iniKeyTypeValue = iniReader.GetValue("type", userDefineSectionNode);
+
+                if (iniKeyTypeValue.Equals("access_key"))
                 {
-                    accessKeyId = config[userDefineSectionNode]["access_key_id"].RawValue;
-                    accessKeySecret = config[userDefineSectionNode]["access_key_secret"].RawValue;
-                    regionId = config[userDefineSectionNode]["region_id"].RawValue;
+                    accessKeyId = iniReader.GetValue("access_key_id", userDefineSectionNode);
+                    accessKeySecret = iniReader.GetValue("access_key_secret", userDefineSectionNode);
+                    regionId = iniReader.GetValue("region_id", userDefineSectionNode);
 
                     return GetAccessKeyCredential();
                 }
 
-                if (config[userDefineSectionNode]["type"].RawValue.Equals("ecs_ram_role"))
+                if (iniKeyTypeValue.Equals("ecs_ram_role"))
                 {
-                    roleName = config[userDefineSectionNode]["role_name"].RawValue;
-                    regionId = config[userDefineSectionNode]["region_id"].RawValue;
+                    roleName = iniReader.GetValue("role_name", userDefineSectionNode);
+                    regionId = iniReader.GetValue("region_id", userDefineSectionNode);
 
                     return GetInstanceRamRoleAlibabaCloudCredential();
                 }
 
-                if (config[userDefineSectionNode]["type"].RawValue.Equals("ram_role_arn"))
+                if (iniKeyTypeValue.Equals("ram_role_arn"))
                 {
-                    accessKeyId = config[userDefineSectionNode]["access_key_id"].RawValue;
-                    accessKeySecret = config[userDefineSectionNode]["access_key_secret"].RawValue;
-                    roleArn = config[userDefineSectionNode]["role_arn"].RawValue;
+                    accessKeyId = iniReader.GetValue("access_key_id", userDefineSectionNode);
+                    accessKeySecret = iniReader.GetValue("access_key_secret", userDefineSectionNode);
+                    roleArn = iniReader.GetValue("role_arn", userDefineSectionNode);
 
                     return GetRamRoleArnAlibabaCloudCredential();
                 }
 
-                if (config[userDefineSectionNode]["type"].RawValue.Equals("rsa_key_pair"))
+                if (iniKeyTypeValue.Equals("rsa_key_pair"))
                 {
-                    publicKeyId = config[userDefineSectionNode]["public_key_id"].RawValue;
-                    privateKeyFile = config[userDefineSectionNode]["private_key_file"].RawValue;
+                    publicKeyId = iniReader.GetValue("public_key_id", userDefineSectionNode);
+                    privateKeyFile = iniReader.GetValue("private_key_file", userDefineSectionNode);
 
                     return GetRsaKeyPairAlibabaCloudCredential();
                 }
@@ -186,10 +174,9 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     {
                         continue;
                     }
-                    string userDefineSectionNode = "default";
-                    accessKeyId = config[userDefineSectionNode]["access_key_id"].RawValue;
-                    accessKeySecret = config[userDefineSectionNode]["access_key_secret"].RawValue;
-                    regionId = config[userDefineSectionNode]["region_id"].RawValue;
+                    accessKeyId = iniReader.GetValue("access_key_id", "default");
+                    accessKeySecret = iniReader.GetValue("access_key_secret", "default");
+                    regionId = iniReader.GetValue("region_id", "default");
 
                     return GetAccessKeyCredential();
                 }
@@ -286,11 +273,6 @@ namespace Aliyun.Acs.Core.Auth.Provider
         public virtual string GetHomePath()
         {
             return EnvironmentUtil.GetHomePath();
-        }
-
-        public virtual Configuration LoadFileFromIni(string location)
-        {
-            return Configuration.LoadFromFile(location);
         }
     }
 }

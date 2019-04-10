@@ -10,8 +10,6 @@ using Aliyun.Acs.Core.Utils;
 
 using Moq;
 
-using SharpConfig;
-
 using Xunit;
 
 namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
@@ -97,9 +95,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         [Fact]
         public void GetCredentialFileAlibabaCloudCredentialWithFileAndAkExist()
         {
-
-            var homePath = EnvironmentUtil.GetHomePath();
-            TestHelper.CreateIniFileWithAk(homePath);
+            TestHelper.CreateIniFileWithAk();
 
             DefaultProfile profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = null;
@@ -108,7 +104,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             var credential = (BasicCredentials) defaultCredentialProvider.GetCredentialFileAlibabaCloudCredential();
 
-            TestHelper.DeleteIniFile(homePath);
+            TestHelper.DeleteIniFile();
             Assert.NotNull(credential);
             Assert.Equal("foo", credential.GetAccessKeyId());
         }
@@ -120,18 +116,16 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         [Fact]
         public void GetCredentialFileAlibabaCloudCredentialWithFileAndAkExistNotDefault()
         {
-
-            var homePath = EnvironmentUtil.GetHomePath();
-            TestHelper.CreateIniFileWithAkNotDefault(homePath);
+            TestHelper.CreateIniFileWithAkNotDefault();
 
             DefaultProfile profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = null;
 
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
 
-            var credential = (BasicCredentials) defaultCredentialProvider.GetCredentialFileAlibabaCloudCredential();
+            var credential = defaultCredentialProvider.GetCredentialFileAlibabaCloudCredential();
 
-            TestHelper.DeleteIniFile(homePath);
+            TestHelper.DeleteIniFile();
             Assert.Null(credential);
         }
 
@@ -146,12 +140,11 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             DefaultProfile profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = "default";
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
-            var homePath = defaultCredentialProvider.GetHomePath();
-            TestHelper.CreateIniFileWithAkType(homePath);
+            TestHelper.CreateIniFileWithAkType();
 
             var credential = (BasicCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
-            TestHelper.DeleteIniFile(homePath);
+            TestHelper.DeleteIniFile();
 
             Assert.NotNull(credential);
             Assert.NotNull(credential.GetAccessKeyId());
@@ -169,15 +162,14 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             DefaultProfile profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = "default";
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
-            var homePath = defaultCredentialProvider.GetHomePath();
-            TestHelper.CreateIniFileWithAkTypeWithEmptyAK(homePath);
+            TestHelper.CreateIniFileWithAkTypeWithEmptyAK();
 
             var exception = Assert.Throws<ClientException>(() =>
             {
                 var credential = (BasicCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
             });
 
-            TestHelper.DeleteIniFile(homePath);
+            TestHelper.DeleteIniFile();
 
             Assert.Equal("Missing required variable option for 'default Client'", exception.Message);
         }
@@ -191,24 +183,21 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         public void GetCredentialFileAlibabaCloudCredentialWithEcsRamRole()
         {
             var ecsRamRoleCredential = new InstanceProfileCredentials("fakeak", "fakeaks", "fakesession", DateTime.Now.ToString(), 4000);
-            var homePath = EnvironmentUtil.GetHomePath();
-            TestHelper.CreateIniFileWithEcs(homePath);
+            var mockHomePath = EnvironmentUtil.GetHomePath();
 
-            var slash = EnvironmentUtil.GetOSSlash();
-            var finalLocation = EnvironmentUtil.GetComposedPath(homePath, slash);
-            var configuration = Configuration.LoadFromFile(finalLocation);
+            TestHelper.CreateIniFileWithEcs();
 
             DefaultProfile profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = "default";
 
             var mockDefaultCredentialProvider = new Mock<DefaultCredentialProvider>(profile, null);
             mockDefaultCredentialProvider.Setup(x => x.GetInstanceRamRoleAlibabaCloudCredential()).Returns(ecsRamRoleCredential);
-            mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(homePath);
-            mockDefaultCredentialProvider.Setup(x => x.LoadFileFromIni(It.IsAny<string>())).Returns(configuration);
+            mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(mockHomePath);
+
             var defaultCredentialProvider = mockDefaultCredentialProvider.Object;
             var credential = (InstanceProfileCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
-            TestHelper.DeleteIniFile(homePath);
+            TestHelper.DeleteIniFile();
             Assert.NotNull(credential);
         }
 
@@ -221,25 +210,22 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         public void GetCredentialFileAlibabaCloudCredentialWithRamRole()
         {
             var ramRoleCredential = new InstanceProfileCredentials("fakeak", "fakeaks", "fakesessiontokne", DateTime.Now.ToString(), 4000);
-            var homePath = EnvironmentUtil.GetHomePath();
-            TestHelper.CreateIniFileWithRam(homePath);
+            TestHelper.CreateIniFileWithRam();
 
-            var slash = EnvironmentUtil.GetOSSlash();
-            var finalLocation = EnvironmentUtil.GetComposedPath(homePath, slash);
-            var configurtion = Configuration.LoadFromFile(finalLocation);
+            var mockHomePath = EnvironmentUtil.GetHomePath();
 
             DefaultProfile profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = "default";
 
             var mockDefaultCredentialProvider = new Mock<DefaultCredentialProvider>(profile, null);
             mockDefaultCredentialProvider.Setup(x => x.GetRamRoleArnAlibabaCloudCredential()).Returns(ramRoleCredential);
-            mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(homePath);
-            mockDefaultCredentialProvider.Setup(x => x.LoadFileFromIni(It.IsAny<string>())).Returns(configurtion);
+            mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(mockHomePath);
+
             var defaultCredentialProvider = mockDefaultCredentialProvider.Object;
 
             var credential = (InstanceProfileCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
-            TestHelper.DeleteIniFile(homePath);
+            TestHelper.DeleteIniFile();
             Assert.NotNull(credential);
         }
 
@@ -252,75 +238,37 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         public void GetCredentialFileAlibabaCloudCredentialWithRsaKey()
         {
             var basicSessionCredential = new BasicSessionCredentials("fakeak", "fakeaks", "fakesessiontoken", 4000);
-            var homePath = EnvironmentUtil.GetHomePath();
-
-            TestHelper.CreateIniFileWithRsaKey(homePath);
-
-            var slash = EnvironmentUtil.GetOSSlash();
-            var finalLocation = EnvironmentUtil.GetComposedPath(homePath, slash);
-            var configurtion = Configuration.LoadFromFile(finalLocation);
+            var mockHomePath = EnvironmentUtil.GetHomePath();
+            TestHelper.CreateIniFileWithRsaKey();
 
             DefaultProfile profile = DefaultProfile.GetProfile();
             profile.DefaultClientName = "default";
 
             var mockDefaultCredentialProvider = new Mock<DefaultCredentialProvider>(profile, null);
             mockDefaultCredentialProvider.Setup(x => x.GetRsaKeyPairAlibabaCloudCredential()).Returns(basicSessionCredential);
-            mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(homePath);
-            mockDefaultCredentialProvider.Setup(x => x.LoadFileFromIni(It.IsAny<string>())).Returns(configurtion);
+            mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(mockHomePath);
+
             var defaultCredentialProvider = mockDefaultCredentialProvider.Object;
 
             var credential = (BasicSessionCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
-            TestHelper.DeleteIniFile(homePath);
+            TestHelper.DeleteIniFile();
             Assert.NotNull(credential);
-        }
-
-        /*
-        Case: Test Credential File With default Client Name and file not exist
-        Result: should return clientexception  Invalid credentials file
-        Use credential chains
-         */
-        [Fact]
-        public void GetCredentialFileAlibabaCloudCredentialWithEnvDefinedButNotFoundTest()
-        {
-            DefaultProfile profile = DefaultProfile.GetProfile();
-
-            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_CREDENTIALS_FILE", "D://credentials1.ini");
-
-            var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
-
-            var exception = Assert.Throws<ClientException>(() =>
-            {
-                var credential = defaultCredentialProvider.GetAlibabaCloudClientCredential();
-            });
-
-            Assert.Equal("Invalid credentials file: D://credentials1.ini", exception.Message);
-            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_CREDENTIALS_FILE", null);
         }
 
         [Fact]
         public void GetCredentialFileAlibabaCloudCredentialWithDefaultSection()
         {
-            var iniData =
-                "[default]  " + Environment.NewLine +
-                "enable = true    " + Environment.NewLine +
-                "type = access_key # Certification type : access_key " + Environment.NewLine +
-                "access_key_id = foo # Key " + Environment.NewLine +
-                "access_key_secret = bar # Secret " + Environment.NewLine +
-                "region_id = cn-hangzhou # Optional£ Region ";
-            var configuration = Configuration.LoadFromString(iniData);
-
-            var homePath = EnvironmentUtil.GetHomePath();
+            TestHelper.CreateIniFileWithDefaultSection();
 
             DefaultProfile profile = DefaultProfile.GetProfile();
-            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_CREDENTIALS_FILE", homePath);
+            Environment.SetEnvironmentVariable("ALIBABA_CLOUD_CREDENTIALS_FILE", TestHelper.GetIniFilePath());
 
-            var mockProvider = new Mock<DefaultCredentialProvider>(profile, null);
-            mockProvider.Setup(x => x.LoadFileFromIni(It.IsAny<string>())).Returns(configuration);
-            var providerObject = mockProvider.Object;
+            var provider = new DefaultCredentialProvider(profile, null);
 
-            var credential = providerObject.GetAlibabaCloudClientCredential();
+            var credential = provider.GetAlibabaCloudClientCredential();
 
+            TestHelper.DeleteIniFile();
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_CREDENTIALS_FILE", null);
             Assert.NotNull(credential);
         }

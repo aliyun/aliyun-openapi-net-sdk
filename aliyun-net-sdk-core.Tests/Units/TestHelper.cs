@@ -1,15 +1,17 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
-using SharpConfig;
+using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Tests.Units
 {
     public class TestHelper
     {
-        private static Configuration iniConfiguration;
+        private static readonly string slash = EnvironmentUtil.GetOSSlash();
+        private static readonly string homePath = EnvironmentUtil.GetHomePath();
 
-        private static readonly string slash = (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ? "/" : "\\";
         public static void RemoveEnvironmentValue()
         {
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ACCESS_KEY_ID", null);
@@ -25,121 +27,256 @@ namespace Aliyun.Acs.Core.Tests.Units
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_REGION_ID", "cn-hangzhou");
         }
 
-        private static void CreateAndSetCurrentDirecotry(string homePath)
+        private static void CreateAndSetCurrentDirecotry()
         {
             Directory.CreateDirectory(homePath + slash + ".alibabacloud" + slash);
             Directory.SetCurrentDirectory(homePath + slash + ".alibabacloud" + slash);
+
+            var filePath = GetIniFilePath();
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
+            using(FileStream fs = File.Create(filePath))
+            {
+
+            }
         }
 
-        public static void DeleteIniFile(string homePath)
+        public static string GetIniFilePath()
+        {
+            return Directory.GetCurrentDirectory() + slash + "credentials.ini";
+        }
+
+        public static void DeleteIniFile()
         {
             System.IO.File.Delete(homePath + slash + ".alibabacloud" + slash + "credentials.ini");
         }
 
-        private static void CreateDefaultIniFile(string homePath, out Configuration config)
+        private static void CreateDefaultIniFile(string sectionName, IDictionary<string, string> keyValue)
         {
-            CreateAndSetCurrentDirecotry(homePath);
-            var cfgStr =
-                "[default]" + Environment.NewLine +
-                "Setting = Value";
-
-            config = Configuration.LoadFromString(cfgStr);
+            CreateAndSetCurrentDirecotry();
+            IniReader iniReader = new IniReader(GetIniFilePath());
+            iniReader.SaveSettings(GetIniFilePath(), sectionName, keyValue);
         }
 
-        public static void CreateIniFileWithAk(string homePath)
+        public static void CreateIniFileWithAk()
         {
-            CreateDefaultIniFile(homePath, out iniConfiguration);
+            var sectionName = "default";
+            var keyValueDic = new Dictionary<string, string>
+                {
+                    {
+                    "access_key_id",
+                    "foo"
+                    },
+                    {
+                    "access_key_secret",
+                    "bar"
+                    },
+                    {
+                    "region_id",
+                    "cn-hangzhou"
+                    }
+                };
 
-            iniConfiguration["default"]["access_key_id"].RawValue = "foo";
-            iniConfiguration["default"]["access_key_secret"].RawValue = "bar";
-            iniConfiguration["default"]["region_id"].RawValue = "cn-hangzhou";
-
-            iniConfiguration.SaveToFile("credentials.ini");
+            CreateDefaultIniFile(sectionName, keyValueDic);
         }
 
-        public static void CreateIniFileWithAkNotDefault(string homePath)
+        public static void CreateIniFileWithAkNotDefault()
         {
-            CreateAndSetCurrentDirecotry(homePath);
-            var cfgStr =
-                "[notDefault]" + Environment.NewLine +
-                "Setting = Value";
+            var sectionName = "notDefault";
+            var keyValueDic = new Dictionary<string, string>
+                {
+                    {
+                    "access_key_id",
+                    "foo"
+                    },
+                    {
+                    "access_key_secret",
+                    "bar"
+                    },
+                    {
+                    "region_id",
+                    "cn-hangzhou"
+                    }
+                };
 
-            iniConfiguration = Configuration.LoadFromString(cfgStr);
-
-            iniConfiguration["notDefault"]["access_key_id"].RawValue = "foo";
-            iniConfiguration["notDefault"]["access_key_secret"].RawValue = "bar";
-            iniConfiguration["notDefault"]["region_id"].RawValue = "cn-hangzhou";
-
-            iniConfiguration.SaveToFile("credentials.ini");
+            CreateDefaultIniFile(sectionName, keyValueDic);
         }
 
-        public static void CreateIniFileWithAkType(string homePath)
+        public static void CreateIniFileWithAkType()
         {
-            CreateDefaultIniFile(homePath, out iniConfiguration);
+            var sectionName = "default";
+            var keyValueDic = new Dictionary<string, string>
+                {
+                    {
+                    "access_key_id",
+                    "foo"
+                    },
+                    {
+                    "access_key_secret",
+                    "bar"
+                    },
+                    {
+                    "region_id",
+                    "cn-hangzhou"
+                    },
+                    {
+                    "type",
+                    "access_key"
+                    }
+                };
 
-            iniConfiguration["default"]["access_key_id"].RawValue = "foo";
-            iniConfiguration["default"]["access_key_secret"].RawValue = "bar";
-            iniConfiguration["default"]["region_id"].RawValue = "cn-hangzhou";
-            iniConfiguration["default"]["type"].RawValue = "access_key";
-
-            iniConfiguration.SaveToFile("credentials.ini");
+            CreateDefaultIniFile(sectionName, keyValueDic);
         }
 
-        public static void CreateIniFileWithAkTypeWithEmptyAK(string homePath)
+        public static void CreateIniFileWithAkTypeWithEmptyAK()
         {
-            CreateDefaultIniFile(homePath, out iniConfiguration);
+            var sectionName = "default";
+            var keyValueDic = new Dictionary<string, string>
+                {
+                    {
+                    "access_key_id",
+                    ""
+                    },
+                    {
+                    "access_key_secret",
+                    "bar"
+                    },
+                    {
+                    "region_id",
+                    "cn-hangzhou"
+                    },
+                    {
+                    "type",
+                    "access_key"
+                    }
+                };
 
-            iniConfiguration["default"]["access_key_id"].RawValue = "";
-            iniConfiguration["default"]["access_key_secret"].RawValue = "bar";
-            iniConfiguration["default"]["region_id"].RawValue = "cn-hangzhou";
-            iniConfiguration["default"]["type"].RawValue = "access_key";
-
-            iniConfiguration.SaveToFile("credentials.ini");
+            CreateDefaultIniFile(sectionName, keyValueDic);
         }
 
-        public static void CreateIniFileWithEcs(string homePath)
+        public static void CreateIniFileWithEcs()
         {
-            CreateDefaultIniFile(homePath, out iniConfiguration);
+            var sectionName = "default";
+            var keyValueDic = new Dictionary<string, string>
+                {
+                    {
+                    "role_name",
+                    "fake_role_name"
+                    },
+                    {
+                    "type",
+                    "ecs_ram_role"
+                    },
+                    {
+                    "region_id",
+                    "cn-hangzhou"
+                    }
+                };
 
-            iniConfiguration["default"]["role_name"].RawValue = "fake_role_name";
-            iniConfiguration["default"]["type"].RawValue = "ecs_ram_role";
-            iniConfiguration["default"]["region_id"].RawValue = "cn-hangzhou";
-
-            iniConfiguration.SaveToFile("credentials.ini");
+            CreateDefaultIniFile(sectionName, keyValueDic);
         }
 
-        public static void CreateIniFileWithRam(string homePath)
+        public static void CreateIniFileWithRam()
         {
-            CreateDefaultIniFile(homePath, out iniConfiguration);
+            var sectionName = "default";
+            var keyValueDic = new Dictionary<string, string>
+                {
+                    {
+                    "access_key_id",
+                    "foo"
+                    },
+                    {
+                    "access_key_secret",
+                    "bar"
+                    },
+                    {
+                    "role_arn",
+                    "fake_role_arn"
+                    },
+                    {
+                    "type",
+                    "ram_role_arn"
+                    },
+                    {
+                    "role_session_name",
+                    "sessionname"
+                    }
+                };
 
-            iniConfiguration["default"]["access_key_id"].RawValue = "foo";
-            iniConfiguration["default"]["access_key_secret"].RawValue = "bar";
-            iniConfiguration["default"]["role_arn"].RawValue = "fake_role_arn";
-            iniConfiguration["default"]["type"].RawValue = "ram_role_arn";
-            iniConfiguration["default"]["role_session_name"].RawValue = "sessionname";
-
-            iniConfiguration.SaveToFile("credentials.ini");
+            CreateDefaultIniFile(sectionName, keyValueDic);
         }
 
-        public static void CreateIniFileWithBearerToken(string homePath)
+        public static void CreateIniFileWithBearerToken()
         {
-            CreateDefaultIniFile(homePath, out iniConfiguration);
+            var sectionName = "default";
+            var keyValueDic = new Dictionary<string, string>
+                {
+                    {
+                    "bearer_token",
+                    "fake_bearer_token"
+                    },
+                    {
+                    "type",
+                    "bearer_token"
+                    }
+                };
 
-            iniConfiguration["default"]["bearer_token"].RawValue = "fake_bearer_token";
-            iniConfiguration["default"]["type"].RawValue = "bearer_token";
-
-            iniConfiguration.SaveToFile("credentials.ini");
+            CreateDefaultIniFile(sectionName, keyValueDic);
         }
 
-        public static void CreateIniFileWithRsaKey(string homePath)
+        public static void CreateIniFileWithRsaKey()
         {
-            CreateDefaultIniFile(homePath, out iniConfiguration);
+            var sectionName = "default";
+            var keyValueDic = new Dictionary<string, string>
+                {
+                    {
+                    "public_key_id",
+                    "public_key_id"
+                    },
+                    {
+                    "private_key_file",
+                    "private_key_file"
+                    },
+                    {
+                    "type",
+                    "rsa_key_pair"
+                    }
+                };
 
-            iniConfiguration["default"]["public_key_id"].RawValue = "public_key_id";
-            iniConfiguration["default"]["private_key_file"].RawValue = "private_key_file";
-            iniConfiguration["default"]["type"].RawValue = "rsa_key_pair";
+            CreateDefaultIniFile(sectionName, keyValueDic);
+        }
 
-            iniConfiguration.SaveToFile("credentials.ini");
+        public static void CreateIniFileWithDefaultSection()
+        {
+            var sectionName = "default";
+
+            var keyValueDic = new Dictionary<string, string>
+                {
+                    {
+                    "enable",
+                    "true"
+                    },
+                    {
+                    "type",
+                    "access_key"
+                    },
+                    {
+                    "access_key_id",
+                    "foo"
+                    },
+                    {
+                    "access_key_secret",
+                    "bar"
+                    },
+                    {
+                    "region_id",
+                    "cn-hangzhou"
+                    }
+                };
+
+            CreateDefaultIniFile(sectionName, keyValueDic);
         }
     }
 }
