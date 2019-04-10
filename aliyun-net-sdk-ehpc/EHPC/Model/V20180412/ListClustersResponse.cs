@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
@@ -103,6 +104,10 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string zoneId;
 
+			private string vSwitchId;
+
+			private string vpcId;
+
 			private string name;
 
 			private string description;
@@ -174,6 +179,30 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					zoneId = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
 				}
 			}
 

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.EHPC.Transform;
 using Aliyun.Acs.EHPC.Transform.V20180412;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
@@ -36,6 +37,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string sccClusterId;
 
 		private string imageId;
+
+		private List<AdditionalVolumes> additionalVolumess;
 
 		private string ecsOrderManagerInstanceType;
 
@@ -65,9 +68,13 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private int? ecsOrderManagerCount;
 
+		private string resourceGroupId;
+
 		private string password;
 
 		private int? ecsOrderLoginCount;
+
+		private string remoteVisEnable;
 
 		private int? systemDiskSize;
 
@@ -144,6 +151,34 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public List<AdditionalVolumes> AdditionalVolumess
+		{
+			get
+			{
+				return additionalVolumess;
+			}
+
+			set
+			{
+				additionalVolumess = value;
+				for (int i = 0; i < additionalVolumess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"AdditionalVolumes." + (i + 1) + ".VolumeType", additionalVolumess[i].VolumeType);
+					DictionaryUtil.Add(QueryParameters,"AdditionalVolumes." + (i + 1) + ".VolumeProtocol", additionalVolumess[i].VolumeProtocol);
+					DictionaryUtil.Add(QueryParameters,"AdditionalVolumes." + (i + 1) + ".LocalDirectory", additionalVolumess[i].LocalDirectory);
+					DictionaryUtil.Add(QueryParameters,"AdditionalVolumes." + (i + 1) + ".RemoteDirectory", additionalVolumess[i].RemoteDirectory);
+					for (int j = 0; j < additionalVolumess[i].Roless.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"AdditionalVolumes." + (i + 1) + ".Roles." +(j + 1), additionalVolumess[i].Roless[j]);
+					}
+					DictionaryUtil.Add(QueryParameters,"AdditionalVolumes." + (i + 1) + ".VolumeId", additionalVolumess[i].VolumeId);
+					DictionaryUtil.Add(QueryParameters,"AdditionalVolumes." + (i + 1) + ".VolumeMountpoint", additionalVolumess[i].VolumeMountpoint);
+					DictionaryUtil.Add(QueryParameters,"AdditionalVolumes." + (i + 1) + ".Location", additionalVolumess[i].Location);
+					DictionaryUtil.Add(QueryParameters,"AdditionalVolumes." + (i + 1) + ".JobQueue", additionalVolumess[i].JobQueue);
+				}
 			}
 		}
 
@@ -329,6 +364,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public string Password
 		{
 			get
@@ -352,6 +400,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				ecsOrderLoginCount = value;
 				DictionaryUtil.Add(QueryParameters, "EcsOrder.Login.Count", value.ToString());
+			}
+		}
+
+		public string RemoteVisEnable
+		{
+			get
+			{
+				return remoteVisEnable;
+			}
+			set	
+			{
+				remoteVisEnable = value;
+				DictionaryUtil.Add(QueryParameters, "RemoteVisEnable", value);
 			}
 		}
 
@@ -702,6 +763,154 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public class AdditionalVolumes
+		{
+
+			private string volumeType;
+
+			private string volumeProtocol;
+
+			private string localDirectory;
+
+			private string remoteDirectory;
+
+			private List<Roles> roless;
+
+			private string volumeId;
+
+			private string volumeMountpoint;
+
+			private string location;
+
+			private string jobQueue;
+
+			public string VolumeType
+			{
+				get
+				{
+					return volumeType;
+				}
+				set	
+				{
+					volumeType = value;
+				}
+			}
+
+			public string VolumeProtocol
+			{
+				get
+				{
+					return volumeProtocol;
+				}
+				set	
+				{
+					volumeProtocol = value;
+				}
+			}
+
+			public string LocalDirectory
+			{
+				get
+				{
+					return localDirectory;
+				}
+				set	
+				{
+					localDirectory = value;
+				}
+			}
+
+			public string RemoteDirectory
+			{
+				get
+				{
+					return remoteDirectory;
+				}
+				set	
+				{
+					remoteDirectory = value;
+				}
+			}
+
+			public List<Roles> Roless
+			{
+				get
+				{
+					return roless;
+				}
+				set	
+				{
+					roless = value;
+				}
+			}
+
+			public string VolumeId
+			{
+				get
+				{
+					return volumeId;
+				}
+				set	
+				{
+					volumeId = value;
+				}
+			}
+
+			public string VolumeMountpoint
+			{
+				get
+				{
+					return volumeMountpoint;
+				}
+				set	
+				{
+					volumeMountpoint = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
+				}
+			}
+
+			public string JobQueue
+			{
+				get
+				{
+					return jobQueue;
+				}
+				set	
+				{
+					jobQueue = value;
+				}
+			}
+
+			public class Roles
+			{
+
+				private string name;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+			}
+		}
+
 		public class PostInstallScript
 		{
 
@@ -752,7 +961,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override CreateClusterResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

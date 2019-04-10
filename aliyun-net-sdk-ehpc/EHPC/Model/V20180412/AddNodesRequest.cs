@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.EHPC.Transform;
 using Aliyun.Acs.EHPC.Transform.V20180412;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
@@ -51,6 +52,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string imageOwnerAlias;
 
+		private string vSwitchId;
+
 		private string periodUnit;
 
 		private string autoRenew;
@@ -64,6 +67,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string action;
 
 		private string instanceType;
+
+		private string zoneId;
 
 		private string computeSpotPriceLimit;
 
@@ -184,6 +189,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
 		public string PeriodUnit
 		{
 			get
@@ -275,6 +293,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
 		public string ComputeSpotPriceLimit
 		{
 			get
@@ -288,7 +319,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override AddNodesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddNodesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AddNodesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

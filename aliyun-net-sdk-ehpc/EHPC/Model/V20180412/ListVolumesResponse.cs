@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
@@ -113,6 +114,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string remoteDirectory;
 
+			private List<ListVolumes_VolumeInfo1> additionalVolumes;
+
 			public string RegionId
 			{
 				get
@@ -206,6 +209,148 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					remoteDirectory = value;
+				}
+			}
+
+			public List<ListVolumes_VolumeInfo1> AdditionalVolumes
+			{
+				get
+				{
+					return additionalVolumes;
+				}
+				set	
+				{
+					additionalVolumes = value;
+				}
+			}
+
+			public class ListVolumes_VolumeInfo1
+			{
+
+				private string volumeType;
+
+				private string volumeId;
+
+				private string volumeProtocol;
+
+				private string volumeMountpoint;
+
+				private string remoteDirectory;
+
+				private string localDirectory;
+
+				private string role;
+
+				private string location;
+
+				private string jobQueue;
+
+				public string VolumeType
+				{
+					get
+					{
+						return volumeType;
+					}
+					set	
+					{
+						volumeType = value;
+					}
+				}
+
+				public string VolumeId
+				{
+					get
+					{
+						return volumeId;
+					}
+					set	
+					{
+						volumeId = value;
+					}
+				}
+
+				public string VolumeProtocol
+				{
+					get
+					{
+						return volumeProtocol;
+					}
+					set	
+					{
+						volumeProtocol = value;
+					}
+				}
+
+				public string VolumeMountpoint
+				{
+					get
+					{
+						return volumeMountpoint;
+					}
+					set	
+					{
+						volumeMountpoint = value;
+					}
+				}
+
+				public string RemoteDirectory
+				{
+					get
+					{
+						return remoteDirectory;
+					}
+					set	
+					{
+						remoteDirectory = value;
+					}
+				}
+
+				public string LocalDirectory
+				{
+					get
+					{
+						return localDirectory;
+					}
+					set	
+					{
+						localDirectory = value;
+					}
+				}
+
+				public string Role
+				{
+					get
+					{
+						return role;
+					}
+					set	
+					{
+						role = value;
+					}
+				}
+
+				public string Location
+				{
+					get
+					{
+						return location;
+					}
+					set	
+					{
+						location = value;
+					}
+				}
+
+				public string JobQueue
+				{
+					get
+					{
+						return jobQueue;
+					}
+					set	
+					{
+						jobQueue = value;
+					}
 				}
 			}
 		}

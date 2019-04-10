@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.EHPC.Model.V20180412;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.EHPC.Model.V20180412;
 
 namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
@@ -56,6 +57,17 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				queueInfo.SpotPriceLimit = context.FloatValue("GetAutoScaleConfig.Queues["+ i +"].SpotPriceLimit");
 				queueInfo.EnableAutoGrow = context.BooleanValue("GetAutoScaleConfig.Queues["+ i +"].EnableAutoGrow");
 				queueInfo.EnableAutoShrink = context.BooleanValue("GetAutoScaleConfig.Queues["+ i +"].EnableAutoShrink");
+
+				List<GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo.GetAutoScaleConfig_InstanceTypeInfo> queueInfo_instanceTypes = new List<GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo.GetAutoScaleConfig_InstanceTypeInfo>();
+				for (int j = 0; j < context.Length("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes.Length"); j++) {
+					GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo.GetAutoScaleConfig_InstanceTypeInfo instanceTypeInfo = new GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo.GetAutoScaleConfig_InstanceTypeInfo();
+					instanceTypeInfo.InstanceType = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes["+ j +"].InstanceType");
+					instanceTypeInfo.SpotStrategy = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes["+ j +"].SpotStrategy");
+					instanceTypeInfo.SpotPriceLimit = context.FloatValue("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes["+ j +"].SpotPriceLimit");
+
+					queueInfo_instanceTypes.Add(instanceTypeInfo);
+				}
+				queueInfo.InstanceTypes = queueInfo_instanceTypes;
 
 				getAutoScaleConfigResponse_queues.Add(queueInfo);
 			}

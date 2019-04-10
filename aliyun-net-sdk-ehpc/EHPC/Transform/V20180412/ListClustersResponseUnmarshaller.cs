@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.EHPC.Model.V20180412;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.EHPC.Model.V20180412;
 
 namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
@@ -41,6 +42,8 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				clusterInfoSimple.Id = context.StringValue("ListClusters.Clusters["+ i +"].Id");
 				clusterInfoSimple.RegionId = context.StringValue("ListClusters.Clusters["+ i +"].RegionId");
 				clusterInfoSimple.ZoneId = context.StringValue("ListClusters.Clusters["+ i +"].ZoneId");
+				clusterInfoSimple.VSwitchId = context.StringValue("ListClusters.Clusters["+ i +"].VSwitchId");
+				clusterInfoSimple.VpcId = context.StringValue("ListClusters.Clusters["+ i +"].VpcId");
 				clusterInfoSimple.Name = context.StringValue("ListClusters.Clusters["+ i +"].Name");
 				clusterInfoSimple.Description = context.StringValue("ListClusters.Clusters["+ i +"].Description");
 				clusterInfoSimple.Status = context.StringValue("ListClusters.Clusters["+ i +"].Status");

@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
@@ -277,6 +278,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private bool? enableAutoShrink;
 
+			private List<GetAutoScaleConfig_InstanceTypeInfo> instanceTypes;
+
 			public string QueueName
 			{
 				get
@@ -346,6 +349,64 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					enableAutoShrink = value;
+				}
+			}
+
+			public List<GetAutoScaleConfig_InstanceTypeInfo> InstanceTypes
+			{
+				get
+				{
+					return instanceTypes;
+				}
+				set	
+				{
+					instanceTypes = value;
+				}
+			}
+
+			public class GetAutoScaleConfig_InstanceTypeInfo
+			{
+
+				private string instanceType;
+
+				private string spotStrategy;
+
+				private float? spotPriceLimit;
+
+				public string InstanceType
+				{
+					get
+					{
+						return instanceType;
+					}
+					set	
+					{
+						instanceType = value;
+					}
+				}
+
+				public string SpotStrategy
+				{
+					get
+					{
+						return spotStrategy;
+					}
+					set	
+					{
+						spotStrategy = value;
+					}
+				}
+
+				public float? SpotPriceLimit
+				{
+					get
+					{
+						return spotPriceLimit;
+					}
+					set	
+					{
+						spotPriceLimit = value;
+					}
 				}
 			}
 		}

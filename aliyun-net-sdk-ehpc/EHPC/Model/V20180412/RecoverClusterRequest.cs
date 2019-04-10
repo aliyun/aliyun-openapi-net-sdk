@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.EHPC.Transform;
 using Aliyun.Acs.EHPC.Transform.V20180412;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
@@ -36,6 +37,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string imageId;
 
 		private string osTag;
+
+		private string clientVersion;
 
 		private string accountType;
 
@@ -72,6 +75,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				osTag = value;
 				DictionaryUtil.Add(QueryParameters, "OsTag", value);
+			}
+		}
+
+		public string ClientVersion
+		{
+			get
+			{
+				return clientVersion;
+			}
+			set	
+			{
+				clientVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ClientVersion", value);
 			}
 		}
 
@@ -153,7 +169,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override RecoverClusterResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RecoverClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return RecoverClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

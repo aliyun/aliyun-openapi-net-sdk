@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.EHPC.Model.V20180412;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.EHPC.Model.V20180412;
 
 namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				imageInfo.SkuCode = context.StringValue("ListCustomImages.Images["+ i +"].SkuCode");
 				imageInfo.PricingCycle = context.StringValue("ListCustomImages.Images["+ i +"].PricingCycle");
 				imageInfo.PostInstallScript = context.StringValue("ListCustomImages.Images["+ i +"].PostInstallScript");
+				imageInfo.Size = context.IntegerValue("ListCustomImages.Images["+ i +"].Size");
 
 				ListCustomImagesResponse.ListCustomImages_ImageInfo.ListCustomImages_BaseOsTag baseOsTag = new ListCustomImagesResponse.ListCustomImages_ImageInfo.ListCustomImages_BaseOsTag();
 				baseOsTag.OsTag = context.StringValue("ListCustomImages.Images["+ i +"].BaseOsTag.OsTag");

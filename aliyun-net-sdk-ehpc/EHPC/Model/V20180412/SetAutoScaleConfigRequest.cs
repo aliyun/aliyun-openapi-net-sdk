@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.EHPC.Transform;
 using Aliyun.Acs.EHPC.Transform.V20180412;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
@@ -222,6 +223,10 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				{
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SpotStrategy", queuess[i].SpotStrategy);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".QueueName", queuess[i].QueueName);
+					for (int j = 0; j < queuess[i].InstanceTypess.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".InstanceTypes." +(j + 1), queuess[i].InstanceTypess[j]);
+					}
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".InstanceType", queuess[i].InstanceType);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".EnableAutoGrow", queuess[i].EnableAutoGrow);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SpotPriceLimit", queuess[i].SpotPriceLimit);
@@ -289,6 +294,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string queueName;
 
+			private List<InstanceTypes> instanceTypess;
+
 			private string instanceType;
 
 			private bool? enableAutoGrow;
@@ -318,6 +325,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					queueName = value;
+				}
+			}
+
+			public List<InstanceTypes> InstanceTypess
+			{
+				get
+				{
+					return instanceTypess;
+				}
+				set	
+				{
+					instanceTypess = value;
 				}
 			}
 
@@ -368,9 +387,55 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					enableAutoShrink = value;
 				}
 			}
+
+			public class InstanceTypes
+			{
+
+				private string spotStrategy;
+
+				private string instanceType;
+
+				private float? spotPriceLimit;
+
+				public string SpotStrategy
+				{
+					get
+					{
+						return spotStrategy;
+					}
+					set	
+					{
+						spotStrategy = value;
+					}
+				}
+
+				public string InstanceType
+				{
+					get
+					{
+						return instanceType;
+					}
+					set	
+					{
+						instanceType = value;
+					}
+				}
+
+				public float? SpotPriceLimit
+				{
+					get
+					{
+						return spotPriceLimit;
+					}
+					set	
+					{
+						spotPriceLimit = value;
+					}
+				}
+			}
 		}
 
-        public override SetAutoScaleConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SetAutoScaleConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SetAutoScaleConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

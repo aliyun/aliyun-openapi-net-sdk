@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.EHPC.Transform;
 using Aliyun.Acs.EHPC.Transform.V20180412;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
@@ -130,7 +131,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override StopNodesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override StopNodesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return StopNodesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

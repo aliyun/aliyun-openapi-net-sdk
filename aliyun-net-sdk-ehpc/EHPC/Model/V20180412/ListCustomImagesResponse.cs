@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
@@ -74,6 +75,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			private string pricingCycle;
 
 			private string postInstallScript;
+
+			private int? size;
 
 			private ListCustomImages_BaseOsTag baseOsTag;
 
@@ -194,6 +197,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					postInstallScript = value;
+				}
+			}
+
+			public int? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
 				}
 			}
 

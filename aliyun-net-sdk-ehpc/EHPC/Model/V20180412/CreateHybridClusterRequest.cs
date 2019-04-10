@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.EHPC.Transform;
 using Aliyun.Acs.EHPC.Transform.V20180412;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
@@ -52,6 +53,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string accessKeyId;
 
 		private string volumeType;
+
+		private string resourceGroupId;
 
 		private string password;
 
@@ -220,6 +223,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				volumeType = value;
 				DictionaryUtil.Add(QueryParameters, "VolumeType", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -542,7 +558,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override CreateHybridClusterResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateHybridClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateHybridClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
