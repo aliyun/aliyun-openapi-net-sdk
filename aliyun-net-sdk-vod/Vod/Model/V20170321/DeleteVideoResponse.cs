@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
@@ -25,6 +26,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 	{
 
 		private string requestId;
+
+		private List<string> nonExistVideoIds;
+
+		private List<string> forbiddenVideoIds;
 
 		public string RequestId
 		{
@@ -35,6 +40,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public List<string> NonExistVideoIds
+		{
+			get
+			{
+				return nonExistVideoIds;
+			}
+			set	
+			{
+				nonExistVideoIds = value;
+			}
+		}
+
+		public List<string> ForbiddenVideoIds
+		{
+			get
+			{
+				return forbiddenVideoIds;
+			}
+			set	
+			{
+				forbiddenVideoIds = value;
 			}
 		}
 	}

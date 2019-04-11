@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
@@ -95,6 +96,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private SearchMedia_Image image;
 
+			private SearchMedia_AttachedMedia attachedMedia;
+
 			public string MediaType
 			{
 				get
@@ -167,6 +170,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public SearchMedia_AttachedMedia AttachedMedia
+			{
+				get
+				{
+					return attachedMedia;
+				}
+				set	
+				{
+					attachedMedia = value;
+				}
+			}
+
 			public class SearchMedia_Video
 			{
 
@@ -219,6 +234,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				private string auditTemplateId;
 
 				private string customMediaInfo;
+
+				private string appId;
 
 				private List<SearchMedia_PlayInfo> playInfoList;
 
@@ -526,6 +543,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string AppId
+				{
+					get
+					{
+						return appId;
+					}
+					set	
+					{
+						appId = value;
+					}
+				}
+
 				public List<SearchMedia_PlayInfo> PlayInfoList
 				{
 					get
@@ -828,6 +857,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string customMediaInfo;
 
+				private string appId;
+
 				private List<SearchMedia_PlayInfo4> playInfoList3;
 
 				private List<string> snapshots1;
@@ -1122,6 +1153,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string AppId
+				{
+					get
+					{
+						return appId;
+					}
+					set	
+					{
+						appId = value;
+					}
+				}
+
 				public List<SearchMedia_PlayInfo4> PlayInfoList3
 				{
 					get
@@ -1404,6 +1447,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string regionId;
 
+				private string appId;
+
 				public string Title
 				{
 					get
@@ -1569,6 +1614,278 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						regionId = value;
+					}
+				}
+
+				public string AppId
+				{
+					get
+					{
+						return appId;
+					}
+					set	
+					{
+						appId = value;
+					}
+				}
+			}
+
+			public class SearchMedia_AttachedMedia
+			{
+
+				private string title;
+
+				private string mediaId;
+
+				private string ext;
+
+				private string creationTime;
+
+				private string modificationTime;
+
+				private string tags;
+
+				private string businessType;
+
+				private string uRL;
+
+				private string status;
+
+				private string description;
+
+				private string storageLocation;
+
+				private string regionId;
+
+				private string appId;
+
+				private List<SearchMedia_Category> categories;
+
+				public string Title
+				{
+					get
+					{
+						return title;
+					}
+					set	
+					{
+						title = value;
+					}
+				}
+
+				public string MediaId
+				{
+					get
+					{
+						return mediaId;
+					}
+					set	
+					{
+						mediaId = value;
+					}
+				}
+
+				public string Ext
+				{
+					get
+					{
+						return ext;
+					}
+					set	
+					{
+						ext = value;
+					}
+				}
+
+				public string CreationTime
+				{
+					get
+					{
+						return creationTime;
+					}
+					set	
+					{
+						creationTime = value;
+					}
+				}
+
+				public string ModificationTime
+				{
+					get
+					{
+						return modificationTime;
+					}
+					set	
+					{
+						modificationTime = value;
+					}
+				}
+
+				public string Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
+
+				public string BusinessType
+				{
+					get
+					{
+						return businessType;
+					}
+					set	
+					{
+						businessType = value;
+					}
+				}
+
+				public string URL
+				{
+					get
+					{
+						return uRL;
+					}
+					set	
+					{
+						uRL = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string StorageLocation
+				{
+					get
+					{
+						return storageLocation;
+					}
+					set	
+					{
+						storageLocation = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				public string AppId
+				{
+					get
+					{
+						return appId;
+					}
+					set	
+					{
+						appId = value;
+					}
+				}
+
+				public List<SearchMedia_Category> Categories
+				{
+					get
+					{
+						return categories;
+					}
+					set	
+					{
+						categories = value;
+					}
+				}
+
+				public class SearchMedia_Category
+				{
+
+					private long? cateId;
+
+					private string cateName;
+
+					private long? level;
+
+					private long? parentId;
+
+					public long? CateId
+					{
+						get
+						{
+							return cateId;
+						}
+						set	
+						{
+							cateId = value;
+						}
+					}
+
+					public string CateName
+					{
+						get
+						{
+							return cateName;
+						}
+						set	
+						{
+							cateName = value;
+						}
+					}
+
+					public long? Level
+					{
+						get
+						{
+							return level;
+						}
+						set	
+						{
+							level = value;
+						}
+					}
+
+					public long? ParentId
+					{
+						get
+						{
+							return parentId;
+						}
+						set	
+						{
+							parentId = value;
+						}
 					}
 				}
 			}

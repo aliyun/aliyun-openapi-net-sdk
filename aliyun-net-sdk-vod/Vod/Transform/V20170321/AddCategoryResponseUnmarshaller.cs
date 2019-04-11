@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.vod.Model.V20170321;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
@@ -37,6 +38,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			category.CateName = context.StringValue("AddCategory.Category.CateName");
 			category.ParentId = context.LongValue("AddCategory.Category.ParentId");
 			category.Level = context.LongValue("AddCategory.Category.Level");
+			category.Type = context.StringValue("AddCategory.Category.Type");
 			addCategoryResponse.Category = category;
         
 			return addCategoryResponse;

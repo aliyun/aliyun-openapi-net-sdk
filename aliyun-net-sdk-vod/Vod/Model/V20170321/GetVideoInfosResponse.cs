@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
@@ -102,6 +103,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			private string storageLocation;
 
 			private string regionId;
+
+			private string customMediaInfo;
+
+			private string appId;
 
 			private List<GetVideoInfos_Thumbnail> thumbnailList;
 
@@ -308,6 +313,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string CustomMediaInfo
+			{
+				get
+				{
+					return customMediaInfo;
+				}
+				set	
+				{
+					customMediaInfo = value;
+				}
+			}
+
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
 				}
 			}
 

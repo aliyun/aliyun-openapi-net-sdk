@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.vod.Model.V20170321;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
@@ -38,6 +39,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			category1.CateName = context.StringValue("GetCategories.Category.CateName");
 			category1.Level = context.LongValue("GetCategories.Category.Level");
 			category1.ParentId = context.LongValue("GetCategories.Category.ParentId");
+			category1.Type = context.StringValue("GetCategories.Category.Type");
 			getCategoriesResponse.Category1 = category1;
 
 			List<GetCategoriesResponse.GetCategories_Category> getCategoriesResponse_subCategories = new List<GetCategoriesResponse.GetCategories_Category>();
@@ -47,6 +49,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				category.CateName = context.StringValue("GetCategories.SubCategories["+ i +"].CateName");
 				category.Level = context.LongValue("GetCategories.SubCategories["+ i +"].Level");
 				category.ParentId = context.LongValue("GetCategories.SubCategories["+ i +"].ParentId");
+				category.SubTotal = context.LongValue("GetCategories.SubCategories["+ i +"].SubTotal");
+				category.Type = context.StringValue("GetCategories.SubCategories["+ i +"].Type");
 
 				getCategoriesResponse_subCategories.Add(category);
 			}

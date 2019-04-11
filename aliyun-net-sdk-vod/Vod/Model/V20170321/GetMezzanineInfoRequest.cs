@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.vod.Transform;
 using Aliyun.Acs.vod.Transform.V20170321;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
@@ -173,7 +174,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override GetMezzanineInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetMezzanineInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetMezzanineInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

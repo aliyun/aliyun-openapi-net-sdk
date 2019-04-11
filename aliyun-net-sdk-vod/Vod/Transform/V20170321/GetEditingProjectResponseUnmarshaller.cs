@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.vod.Model.V20170321;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
@@ -41,6 +42,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			project.Title = context.StringValue("GetEditingProject.Project.Title");
 			project.Timeline = context.StringValue("GetEditingProject.Project.Timeline");
 			project.CoverURL = context.StringValue("GetEditingProject.Project.CoverURL");
+			project.StorageLocation = context.StringValue("GetEditingProject.Project.StorageLocation");
+			project.RegionId = context.StringValue("GetEditingProject.Project.RegionId");
 			getEditingProjectResponse.Project = project;
         
 			return getEditingProjectResponse;

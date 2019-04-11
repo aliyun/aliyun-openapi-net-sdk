@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.vod.Transform;
 using Aliyun.Acs.vod.Transform.V20170321;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
@@ -40,6 +41,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string resourceOwnerAccount;
 
 		private string action;
+
+		private string outputType;
 
 		private long? ownerId;
 
@@ -99,6 +102,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string OutputType
+		{
+			get
+			{
+				return outputType;
+			}
+			set	
+			{
+				outputType = value;
+				DictionaryUtil.Add(QueryParameters, "OutputType", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -143,7 +159,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			return false;
 		}
 
-        public override GetImageInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetImageInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetImageInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

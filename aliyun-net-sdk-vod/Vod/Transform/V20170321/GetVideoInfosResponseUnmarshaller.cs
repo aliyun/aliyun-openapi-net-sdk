@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.vod.Model.V20170321;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
@@ -58,6 +59,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.PreprocessStatus = context.StringValue("GetVideoInfos.VideoList["+ i +"].PreprocessStatus");
 				video.StorageLocation = context.StringValue("GetVideoInfos.VideoList["+ i +"].StorageLocation");
 				video.RegionId = context.StringValue("GetVideoInfos.VideoList["+ i +"].RegionId");
+				video.CustomMediaInfo = context.StringValue("GetVideoInfos.VideoList["+ i +"].CustomMediaInfo");
+				video.AppId = context.StringValue("GetVideoInfos.VideoList["+ i +"].AppId");
 
 				List<string> video_snapshots = new List<string>();
 				for (int j = 0; j < context.Length("GetVideoInfos.VideoList["+ i +"].Snapshots.Length"); j++) {

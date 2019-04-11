@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.vod.Model.V20170321;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
@@ -37,6 +38,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				updateVideoInfosResponse_nonExistVideoIds.Add(context.StringValue("UpdateVideoInfos.NonExistVideoIds["+ i +"]"));
 			}
 			updateVideoInfosResponse.NonExistVideoIds = updateVideoInfosResponse_nonExistVideoIds;
+
+			List<string> updateVideoInfosResponse_forbiddenVideoIds = new List<string>();
+			for (int i = 0; i < context.Length("UpdateVideoInfos.ForbiddenVideoIds.Length"); i++) {
+				updateVideoInfosResponse_forbiddenVideoIds.Add(context.StringValue("UpdateVideoInfos.ForbiddenVideoIds["+ i +"]"));
+			}
+			updateVideoInfosResponse.ForbiddenVideoIds = updateVideoInfosResponse_forbiddenVideoIds;
         
 			return updateVideoInfosResponse;
         }

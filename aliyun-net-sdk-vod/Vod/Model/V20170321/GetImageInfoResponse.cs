@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
@@ -76,6 +77,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			private string storageLocation;
 
 			private string status;
+
+			private string appId;
 
 			private GetImageInfo_Mezzanine mezzanine;
 
@@ -208,6 +211,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
 				}
 			}
 

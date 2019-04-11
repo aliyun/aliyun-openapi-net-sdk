@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
@@ -91,6 +92,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private long? parentId;
 
+			private long? subTotal;
+
+			private string type;
+
 			public long? CateId
 			{
 				get
@@ -136,6 +141,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					parentId = value;
+				}
+			}
+
+			public long? SubTotal
+			{
+				get
+				{
+					return subTotal;
+				}
+				set	
+				{
+					subTotal = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}
@@ -151,6 +180,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private long? parentId;
 
+			private string type;
+
 			public long? CateId
 			{
 				get
@@ -196,6 +227,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					parentId = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}

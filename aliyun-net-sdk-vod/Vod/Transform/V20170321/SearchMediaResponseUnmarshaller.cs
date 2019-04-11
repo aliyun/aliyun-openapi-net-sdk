@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.vod.Model.V20170321;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
@@ -67,6 +68,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.AuditAIResult = context.StringValue("SearchMedia.MediaList["+ i +"].Video.AuditAIResult");
 				video.AuditTemplateId = context.StringValue("SearchMedia.MediaList["+ i +"].Video.AuditTemplateId");
 				video.CustomMediaInfo = context.StringValue("SearchMedia.MediaList["+ i +"].Video.CustomMediaInfo");
+				video.AppId = context.StringValue("SearchMedia.MediaList["+ i +"].Video.AppId");
 
 				List<string> video_snapshots = new List<string>();
 				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].Video.Snapshots.Length"); j++) {
@@ -129,6 +131,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				audio.AuditAIResult = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.AuditAIResult");
 				audio.AuditTemplateId = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.AuditTemplateId");
 				audio.CustomMediaInfo = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.CustomMediaInfo");
+				audio.AppId = context.StringValue("SearchMedia.MediaList["+ i +"].Audio.AppId");
 
 				List<string> audio_snapshots1 = new List<string>();
 				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].Audio.Snapshots.Length"); j++) {
@@ -181,7 +184,36 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				image.Description = context.StringValue("SearchMedia.MediaList["+ i +"].Image.Description");
 				image.StorageLocation = context.StringValue("SearchMedia.MediaList["+ i +"].Image.StorageLocation");
 				image.RegionId = context.StringValue("SearchMedia.MediaList["+ i +"].Image.RegionId");
+				image.AppId = context.StringValue("SearchMedia.MediaList["+ i +"].Image.AppId");
 				media.Image = image;
+
+				SearchMediaResponse.SearchMedia_Media.SearchMedia_AttachedMedia attachedMedia = new SearchMediaResponse.SearchMedia_Media.SearchMedia_AttachedMedia();
+				attachedMedia.Title = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.Title");
+				attachedMedia.MediaId = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.MediaId");
+				attachedMedia.Ext = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.Ext");
+				attachedMedia.CreationTime = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.CreationTime");
+				attachedMedia.ModificationTime = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.ModificationTime");
+				attachedMedia.Tags = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.Tags");
+				attachedMedia.BusinessType = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.BusinessType");
+				attachedMedia.URL = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.URL");
+				attachedMedia.Status = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.Status");
+				attachedMedia.Description = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.Description");
+				attachedMedia.StorageLocation = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.StorageLocation");
+				attachedMedia.RegionId = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.RegionId");
+				attachedMedia.AppId = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.AppId");
+
+				List<SearchMediaResponse.SearchMedia_Media.SearchMedia_AttachedMedia.SearchMedia_Category> attachedMedia_categories = new List<SearchMediaResponse.SearchMedia_Media.SearchMedia_AttachedMedia.SearchMedia_Category>();
+				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].AttachedMedia.Categories.Length"); j++) {
+					SearchMediaResponse.SearchMedia_Media.SearchMedia_AttachedMedia.SearchMedia_Category category = new SearchMediaResponse.SearchMedia_Media.SearchMedia_AttachedMedia.SearchMedia_Category();
+					category.CateId = context.LongValue("SearchMedia.MediaList["+ i +"].AttachedMedia.Categories["+ j +"].CateId");
+					category.CateName = context.StringValue("SearchMedia.MediaList["+ i +"].AttachedMedia.Categories["+ j +"].CateName");
+					category.Level = context.LongValue("SearchMedia.MediaList["+ i +"].AttachedMedia.Categories["+ j +"].Level");
+					category.ParentId = context.LongValue("SearchMedia.MediaList["+ i +"].AttachedMedia.Categories["+ j +"].ParentId");
+
+					attachedMedia_categories.Add(category);
+				}
+				attachedMedia.Categories = attachedMedia_categories;
+				media.AttachedMedia = attachedMedia;
 
 				searchMediaResponse_mediaList.Add(media);
 			}

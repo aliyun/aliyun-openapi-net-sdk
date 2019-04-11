@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.vod.Model.V20170321;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
@@ -44,6 +45,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			imageInfo.Description = context.StringValue("GetImageInfo.ImageInfo.Description");
 			imageInfo.StorageLocation = context.StringValue("GetImageInfo.ImageInfo.StorageLocation");
 			imageInfo.Status = context.StringValue("GetImageInfo.ImageInfo.Status");
+			imageInfo.AppId = context.StringValue("GetImageInfo.ImageInfo.AppId");
 
 			GetImageInfoResponse.GetImageInfo_ImageInfo.GetImageInfo_Mezzanine mezzanine = new GetImageInfoResponse.GetImageInfo_ImageInfo.GetImageInfo_Mezzanine();
 			mezzanine.OriginalFileName = context.StringValue("GetImageInfo.ImageInfo.Mezzanine.OriginalFileName");

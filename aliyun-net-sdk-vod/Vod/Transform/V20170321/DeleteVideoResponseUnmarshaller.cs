@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.vod.Model.V20170321;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.vod.Model.V20170321;
 
 namespace Aliyun.Acs.vod.Transform.V20170321
 {
@@ -31,6 +32,18 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 
 			deleteVideoResponse.HttpResponse = context.HttpResponse;
 			deleteVideoResponse.RequestId = context.StringValue("DeleteVideo.RequestId");
+
+			List<string> deleteVideoResponse_nonExistVideoIds = new List<string>();
+			for (int i = 0; i < context.Length("DeleteVideo.NonExistVideoIds.Length"); i++) {
+				deleteVideoResponse_nonExistVideoIds.Add(context.StringValue("DeleteVideo.NonExistVideoIds["+ i +"]"));
+			}
+			deleteVideoResponse.NonExistVideoIds = deleteVideoResponse_nonExistVideoIds;
+
+			List<string> deleteVideoResponse_forbiddenVideoIds = new List<string>();
+			for (int i = 0; i < context.Length("DeleteVideo.ForbiddenVideoIds.Length"); i++) {
+				deleteVideoResponse_forbiddenVideoIds.Add(context.StringValue("DeleteVideo.ForbiddenVideoIds["+ i +"]"));
+			}
+			deleteVideoResponse.ForbiddenVideoIds = deleteVideoResponse_forbiddenVideoIds;
         
 			return deleteVideoResponse;
         }

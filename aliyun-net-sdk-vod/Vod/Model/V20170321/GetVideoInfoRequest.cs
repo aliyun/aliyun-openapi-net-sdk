@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.vod.Transform;
 using Aliyun.Acs.vod.Transform.V20170321;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
@@ -40,6 +41,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string action;
 
 		private string videoId;
+
+		private string additionType;
 
 		private string resultTypes;
 
@@ -97,6 +100,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string AdditionType
+		{
+			get
+			{
+				return additionType;
+			}
+			set	
+			{
+				additionType = value;
+				DictionaryUtil.Add(QueryParameters, "AdditionType", value);
+			}
+		}
+
 		public string ResultTypes
 		{
 			get
@@ -123,7 +139,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-        public override GetVideoInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetVideoInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetVideoInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

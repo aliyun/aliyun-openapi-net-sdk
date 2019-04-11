@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
@@ -82,6 +83,12 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			private string title;
 
 			private string coverURL;
+
+			private string storageLocation;
+
+			private string regionId;
+
+			private float? duration;
 
 			public string ProjectId
 			{
@@ -164,6 +171,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					coverURL = value;
+				}
+			}
+
+			public string StorageLocation
+			{
+				get
+				{
+					return storageLocation;
+				}
+				set	
+				{
+					storageLocation = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public float? Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
 				}
 			}
 		}
