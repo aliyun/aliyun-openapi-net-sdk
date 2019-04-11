@@ -20,24 +20,24 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.ImageSearch.Model.V20180120
+namespace Aliyun.Acs.ImageSearch.Model.V20190325
 {
-	public class SearchItemResponse : AcsResponse
+	public class SearchImageResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private string message;
-
 		private int? code;
 
-		private List<SearchItem_Auction> auctions;
+		private string msg;
 
-		private SearchItem_Head head;
+		private List<SearchImage_Auction> auctions;
 
-		private SearchItem_PicInfo picInfo;
+		private SearchImage_Head head;
+
+		private SearchImage_PicInfo picInfo;
 
 		public string RequestId
 		{
@@ -63,18 +63,6 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 			}
 		}
 
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
 		public int? Code
 		{
 			get
@@ -87,7 +75,19 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 			}
 		}
 
-		public List<SearchItem_Auction> Auctions
+		public string Msg
+		{
+			get
+			{
+				return msg;
+			}
+			set	
+			{
+				msg = value;
+			}
+		}
+
+		public List<SearchImage_Auction> Auctions
 		{
 			get
 			{
@@ -99,7 +99,7 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 			}
 		}
 
-		public SearchItem_Head Head
+		public SearchImage_Head Head
 		{
 			get
 			{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 			}
 		}
 
-		public SearchItem_PicInfo PicInfo
+		public SearchImage_PicInfo PicInfo
 		{
 			get
 			{
@@ -123,40 +123,68 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 			}
 		}
 
-		public class SearchItem_Auction
+		public class SearchImage_Auction
 		{
 
-			private string custContent;
+			private int? categoryId;
 
-			private string itemId;
-
-			private string sortExprValues;
-
-			private string catId;
+			private string productId;
 
 			private string picName;
 
-			public string CustContent
+			private string customContent;
+
+			private string sortExprValues;
+
+			private int? intAttr;
+
+			private string strAttr;
+
+			public int? CategoryId
 			{
 				get
 				{
-					return custContent;
+					return categoryId;
 				}
 				set	
 				{
-					custContent = value;
+					categoryId = value;
 				}
 			}
 
-			public string ItemId
+			public string ProductId
 			{
 				get
 				{
-					return itemId;
+					return productId;
 				}
 				set	
 				{
-					itemId = value;
+					productId = value;
+				}
+			}
+
+			public string PicName
+			{
+				get
+				{
+					return picName;
+				}
+				set	
+				{
+					picName = value;
+				}
+			}
+
+			public string CustomContent
+			{
+				get
+				{
+					return customContent;
+				}
+				set	
+				{
+					customContent = value;
 				}
 			}
 
@@ -172,49 +200,49 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 				}
 			}
 
-			public string CatId
+			public int? IntAttr
 			{
 				get
 				{
-					return catId;
+					return intAttr;
 				}
 				set	
 				{
-					catId = value;
+					intAttr = value;
 				}
 			}
 
-			public string PicName
+			public string StrAttr
 			{
 				get
 				{
-					return picName;
+					return strAttr;
 				}
 				set	
 				{
-					picName = value;
+					strAttr = value;
 				}
 			}
 		}
 
-		public class SearchItem_Head
+		public class SearchImage_Head
 		{
-
-			private int? searchTime;
-
-			private int? docsFound;
 
 			private int? docsReturn;
 
-			public int? SearchTime
+			private int? docsFound;
+
+			private int? searchTime;
+
+			public int? DocsReturn
 			{
 				get
 				{
-					return searchTime;
+					return docsReturn;
 				}
 				set	
 				{
-					searchTime = value;
+					docsReturn = value;
 				}
 			}
 
@@ -230,37 +258,37 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 				}
 			}
 
-			public int? DocsReturn
+			public int? SearchTime
 			{
 				get
 				{
-					return docsReturn;
+					return searchTime;
 				}
 				set	
 				{
-					docsReturn = value;
+					searchTime = value;
 				}
 			}
 		}
 
-		public class SearchItem_PicInfo
+		public class SearchImage_PicInfo
 		{
 
-			private string category;
+			private int? categoryId;
 
 			private string region;
 
-			private List<SearchItem_Category> allCategory;
+			private List<SearchImage_Category> allCategories;
 
-			public string Category
+			public int? CategoryId
 			{
 				get
 				{
-					return category;
+					return categoryId;
 				}
 				set	
 				{
-					category = value;
+					categoryId = value;
 				}
 			}
 
@@ -276,24 +304,36 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 				}
 			}
 
-			public List<SearchItem_Category> AllCategory
+			public List<SearchImage_Category> AllCategories
 			{
 				get
 				{
-					return allCategory;
+					return allCategories;
 				}
 				set	
 				{
-					allCategory = value;
+					allCategories = value;
 				}
 			}
 
-			public class SearchItem_Category
+			public class SearchImage_Category
 			{
+
+				private int? id;
 
 				private string name;
 
-				private string id;
+				public int? Id
+				{
+					get
+					{
+						return id;
+					}
+					set	
+					{
+						id = value;
+					}
+				}
 
 				public string Name
 				{
@@ -304,18 +344,6 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 					set	
 					{
 						name = value;
-					}
-				}
-
-				public string Id
-				{
-					get
-					{
-						return id;
-					}
-					set	
-					{
-						id = value;
 					}
 				}
 			}

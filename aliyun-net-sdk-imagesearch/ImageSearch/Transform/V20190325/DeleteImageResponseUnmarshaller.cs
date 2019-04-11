@@ -16,69 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.ImageSearch.Model.V20190325;
 
-namespace Aliyun.Acs.ImageSearch.Model.V20180120
+namespace Aliyun.Acs.ImageSearch.Transform.V20190325
 {
-	public class DeleteItemResponse : AcsResponse
-	{
+    public class DeleteImageResponseUnmarshaller
+    {
+        public static DeleteImageResponse Unmarshall(UnmarshallerContext context)
+        {
+			DeleteImageResponse deleteImageResponse = new DeleteImageResponse();
 
-		private string requestId;
-
-		private bool? success;
-
-		private string message;
-
-		private int? code;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-	}
+			deleteImageResponse.HttpResponse = context.HttpResponse;
+			deleteImageResponse.RequestId = context.StringValue("DeleteImage.RequestId");
+			deleteImageResponse.Success = context.BooleanValue("DeleteImage.Success");
+			deleteImageResponse.Message = context.StringValue("DeleteImage.Message");
+			deleteImageResponse.Code = context.IntegerValue("DeleteImage.Code");
+        
+			return deleteImageResponse;
+        }
+    }
 }

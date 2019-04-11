@@ -20,23 +20,28 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.ImageSearch.Model.V20180120;
+using Aliyun.Acs.ImageSearch.Model.V20190325;
 
-namespace Aliyun.Acs.ImageSearch.Transform.V20180120
+namespace Aliyun.Acs.ImageSearch.Transform.V20190325
 {
-    public class DeleteItemResponseUnmarshaller
+    public class AddImageResponseUnmarshaller
     {
-        public static DeleteItemResponse Unmarshall(UnmarshallerContext context)
+        public static AddImageResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteItemResponse deleteItemResponse = new DeleteItemResponse();
+			AddImageResponse addImageResponse = new AddImageResponse();
 
-			deleteItemResponse.HttpResponse = context.HttpResponse;
-			deleteItemResponse.RequestId = context.StringValue("DeleteItem.RequestId");
-			deleteItemResponse.Success = context.BooleanValue("DeleteItem.Success");
-			deleteItemResponse.Message = context.StringValue("DeleteItem.Message");
-			deleteItemResponse.Code = context.IntegerValue("DeleteItem.Code");
+			addImageResponse.HttpResponse = context.HttpResponse;
+			addImageResponse.RequestId = context.StringValue("AddImage.RequestId");
+			addImageResponse.Success = context.BooleanValue("AddImage.Success");
+			addImageResponse.Message = context.StringValue("AddImage.Message");
+			addImageResponse.Code = context.IntegerValue("AddImage.Code");
+
+			AddImageResponse.AddImage_PicInfo picInfo = new AddImageResponse.AddImage_PicInfo();
+			picInfo.CategoryId = context.IntegerValue("AddImage.PicInfo.CategoryId");
+			picInfo.Region = context.StringValue("AddImage.PicInfo.Region");
+			addImageResponse.PicInfo = picInfo;
         
-			return deleteItemResponse;
+			return addImageResponse;
         }
     }
 }

@@ -20,9 +20,9 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.ImageSearch.Model.V20180120
+namespace Aliyun.Acs.ImageSearch.Model.V20190325
 {
-	public class AddItemResponse : AcsResponse
+	public class AddImageResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,6 +32,8 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 		private string message;
 
 		private int? code;
+
+		private AddImage_PicInfo picInfo;
 
 		public string RequestId
 		{
@@ -78,6 +80,50 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public AddImage_PicInfo PicInfo
+		{
+			get
+			{
+				return picInfo;
+			}
+			set	
+			{
+				picInfo = value;
+			}
+		}
+
+		public class AddImage_PicInfo
+		{
+
+			private int? categoryId;
+
+			private string region;
+
+			public int? CategoryId
+			{
+				get
+				{
+					return categoryId;
+				}
+				set	
+				{
+					categoryId = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
 			}
 		}
 	}

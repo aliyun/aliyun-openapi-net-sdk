@@ -19,41 +19,66 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.ImageSearch.Transform;
-using Aliyun.Acs.ImageSearch.Transform.V20180120;
 
-namespace Aliyun.Acs.ImageSearch.Model.V20180120
+namespace Aliyun.Acs.ImageSearch.Model.V20190325
 {
-    public class DeleteItemRequest : RoaAcsRequest<DeleteItemResponse>
-    {
-        public DeleteItemRequest()
-            : base("ImageSearch", "2018-01-20", "DeleteItem", "imagesearch", "openAPI")
-        {
-			UriPattern = "/item/delete";
-			Method = MethodType.POST;
-        }
+	public class DeleteImageResponse : AcsResponse
+	{
 
-		private string instanceName;
+		private string requestId;
 
-		public string InstanceName
+		private bool? success;
+
+		private string message;
+
+		private int? code;
+
+		public string RequestId
 		{
 			get
 			{
-				return instanceName;
+				return requestId;
 			}
 			set	
 			{
-				instanceName = value;
-				DictionaryUtil.Add(QueryParameters, "instanceName", value);
+				requestId = value;
 			}
 		}
 
-        public override DeleteItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return DeleteItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+	}
 }

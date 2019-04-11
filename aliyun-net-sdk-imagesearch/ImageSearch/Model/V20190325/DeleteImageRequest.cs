@@ -23,20 +23,24 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.ImageSearch.Transform;
-using Aliyun.Acs.ImageSearch.Transform.V20180120;
+using Aliyun.Acs.ImageSearch.Transform.V20190325;
 
-namespace Aliyun.Acs.ImageSearch.Model.V20180120
+namespace Aliyun.Acs.ImageSearch.Model.V20190325
 {
-    public class AddItemRequest : RoaAcsRequest<AddItemResponse>
+    public class DeleteImageRequest : RoaAcsRequest<DeleteImageResponse>
     {
-        public AddItemRequest()
-            : base("ImageSearch", "2018-01-20", "AddItem", "imagesearch", "openAPI")
+        public DeleteImageRequest()
+            : base("ImageSearch", "2019-03-25", "DeleteImage", "imagesearch", "openAPI")
         {
-			UriPattern = "/item/add";
+			UriPattern = "/v2/image/delete";
 			Method = MethodType.POST;
         }
 
 		private string instanceName;
+
+		private string productId;
+
+		private string picName;
 
 		public string InstanceName
 		{
@@ -47,13 +51,44 @@ namespace Aliyun.Acs.ImageSearch.Model.V20180120
 			set	
 			{
 				instanceName = value;
-				DictionaryUtil.Add(QueryParameters, "instanceName", value);
+				DictionaryUtil.Add(BodyParameters, "InstanceName", value);
 			}
 		}
 
-        public override AddItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ProductId
+		{
+			get
+			{
+				return productId;
+			}
+			set	
+			{
+				productId = value;
+				DictionaryUtil.Add(BodyParameters, "ProductId", value);
+			}
+		}
+
+		public string PicName
+		{
+			get
+			{
+				return picName;
+			}
+			set	
+			{
+				picName = value;
+				DictionaryUtil.Add(BodyParameters, "PicName", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DeleteImageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
