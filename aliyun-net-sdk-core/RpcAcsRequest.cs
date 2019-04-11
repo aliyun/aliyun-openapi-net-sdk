@@ -123,28 +123,19 @@ namespace Aliyun.Acs.Core
             {
                 var accessKeyId = credentials.GetAccessKeyId();
                 var accessSecret = credentials.GetAccessKeySecret();
-                switch (credentials)
+
+                var sessionCredentials = credentials as BasicSessionCredentials;
+                var sessionToken = sessionCredentials?.GetSessionToken();
+                if (sessionToken != null)
                 {
-                    case BasicSessionCredentials sessionCredentials:
-                        {
-                            var sessionToken = sessionCredentials.GetSessionToken();
-                            if (null != sessionToken)
-                            {
-                                QueryParameters.Add("SecurityToken", sessionToken);
-                            }
+                    QueryParameters.Add("SecurityToken", sessionToken);
+                }
 
-                            break;
-                        }
-                    case BearerTokenCredential credential:
-                        {
-                            var bearerToken = credential.GetBearerToken();
-                            if (null != bearerToken)
-                            {
-                                QueryParameters.Add("BearerToken", bearerToken);
-                            }
-
-                            break;
-                        }
+                var credential = credentials as BearerTokenCredential;
+                var bearerToken = credential?.GetBearerToken();
+                if (bearerToken != null)
+                {
+                    QueryParameters.Add("BearerToken", bearerToken);
                 }
 
                 imutableMap = Composer.RefreshSignParameters(QueryParameters, signer, accessKeyId, format);

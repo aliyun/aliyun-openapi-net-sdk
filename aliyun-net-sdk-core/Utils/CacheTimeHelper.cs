@@ -62,7 +62,8 @@ namespace Aliyun.Acs.Core.Utils
 
             if (lastClearTimePerProduct.ContainsKey(key))
             {
-                lastClearTimePerProduct.TryRemove(key, out DateTime dt);
+                DateTime dt;
+                lastClearTimePerProduct.TryRemove(key, out dt);
             }
             lastClearTimePerProduct.TryAdd(key, lastClearTime);
         }

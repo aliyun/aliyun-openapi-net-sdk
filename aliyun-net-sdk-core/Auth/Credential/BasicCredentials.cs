@@ -28,10 +28,17 @@ namespace Aliyun.Acs.Core.Auth
 
         public BasicCredentials(string accessKeyId, string accessKeySecret)
         {
-            this.accessKeyId = accessKeyId ??
+            if (accessKeyId == null)
+            {
                 throw new ArgumentOutOfRangeException("Access key ID cannot be null.");
-            this.accessKeySecret = accessKeySecret ??
+            }
+            if (accessKeySecret == null)
+            {
                 throw new ArgumentOutOfRangeException("Access key secret cannot be null.");
+            }
+
+            this.accessKeyId = accessKeyId;
+            this.accessKeySecret = accessKeySecret;
         }
 
         public string GetAccessKeyId()

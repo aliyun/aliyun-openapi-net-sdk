@@ -58,14 +58,11 @@ namespace Aliyun.Acs.Core.Http
 
         private string GetOsVersion()
         {
-            try
-            {
-                return System.Runtime.InteropServices.RuntimeInformation.OSDescription;
-            }
-            catch (Exception)
-            {
-                return Environment.OSVersion.ToString();
-            }
+#if NETSTANDARD2_0
+            return System.Runtime.InteropServices.RuntimeInformation.OSDescription;
+#else
+            return Environment.OSVersion.ToString();
+#endif
         }
 
         public string GetRuntimeRegexValue(string value)

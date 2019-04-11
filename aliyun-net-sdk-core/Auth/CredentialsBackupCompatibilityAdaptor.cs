@@ -51,7 +51,8 @@ namespace Aliyun.Acs.Core.Auth
         public string GetSecurityToken()
         {
             var credentials = GetCredentials();
-            return credentials is BasicSessionCredentials sessionCredentials ? sessionCredentials.GetSessionToken() : null;
+            var sessionCredentials = credentials as BasicSessionCredentials;
+            return sessionCredentials?.GetSessionToken();
         }
     }
 }
