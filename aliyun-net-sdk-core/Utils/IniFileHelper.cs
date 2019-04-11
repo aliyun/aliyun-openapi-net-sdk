@@ -19,43 +19,54 @@
 
 using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace Aliyun.Acs.Core.Utils
 {
     public class IniReader
     {
-        private Dictionary<string, Dictionary<string, string>> ini = new Dictionary<string, Dictionary<string, string>>(StringComparer.InvariantCultureIgnoreCase);
+        private ConcurrentDictionary<string, ConcurrentDictionary<string, string>> ini = new ConcurrentDictionary<string, ConcurrentDictionary<string, string>>(StringComparer.InvariantCultureIgnoreCase);
+        private static ReaderWriterLockSlim cacheLock = new ReaderWriterLockSlim();
 
         public IniReader(string file)
         {
-            var txt = File.ReadAllText(file);
-
-            Dictionary<string, string> currentSection = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
-
-            ini[""] = currentSection;
-
-            foreach (var line in txt.Split(new [] { "\n" }, StringSplitOptions.RemoveEmptyEntries)
-                    .Where(t => !string.IsNullOrWhiteSpace(t))
-                    .Select(t => t.Trim()))
+            cacheLock.EnterReadLock();
+            try
             {
-                if (line.StartsWith(";"))
-                    continue;
+                var txt = File.ReadAllText(file);
 
-                if (line.StartsWith("[") && line.EndsWith("]"))
+                var currentSection = new ConcurrentDictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
+
+                ini[""] = currentSection;
+
+                foreach (var line in txt.Split(new [] { "\n" }, StringSplitOptions.RemoveEmptyEntries)
+                        .Where(t => !string.IsNullOrWhiteSpace(t))
+                        .Select(t => t.Trim()))
                 {
-                    currentSection = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
-                    ini[line.Substring(1, line.LastIndexOf("]") - 1)] = currentSection;
-                    continue;
-                }
+                    if (line.StartsWith(";"))
+                        continue;
 
-                var idx = line.IndexOf("=");
-                if (idx == -1)
-                    currentSection[line] = "";
-                else
-                    currentSection[line.Substring(0, idx)] = line.Substring(idx + 1);
+                    if (line.StartsWith("[") && line.EndsWith("]"))
+                    {
+                        currentSection = new ConcurrentDictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
+                        ini[line.Substring(1, line.LastIndexOf("]") - 1)] = currentSection;
+                        continue;
+                    }
+
+                    var idx = line.IndexOf("=");
+                    if (idx == -1)
+                        currentSection[line] = "";
+                    else
+                        currentSection[line.Substring(0, idx)] = line.Substring(idx + 1);
+                }
+            }
+            finally
+            {
+                cacheLock.ExitReadLock();
             }
         }
 
@@ -93,7 +104,7 @@ namespace Aliyun.Acs.Core.Utils
             return ini.Keys.Where(t => t != "").ToArray();
         }
 
-        public void SaveSettings(string newFilePath, string section, IDictionary<string, string> keyValuePairDic)
+        public void SaveSettings(string newFilePath, string section, ConcurrentDictionary<string, string> keyValuePairDic)
         {
             string strToSave = "";
 
@@ -106,15 +117,22 @@ namespace Aliyun.Acs.Core.Utils
 
             strToSave += "\r\n";
 
+            cacheLock.EnterWriteLock();
             try
             {
-                TextWriter tw = new StreamWriter(newFilePath);
-                tw.Write(strToSave);
-                tw.Close();
+                using(var tw = new StreamWriter(newFilePath))
+                {
+                    tw.Write(strToSave);
+                    tw.Close();
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                cacheLock.ExitWriteLock();
             }
         }
     }

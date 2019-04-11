@@ -3,7 +3,6 @@ using Aliyun.Acs.Ecs.Model.V20140526;
 
 using Xunit;
 
-[assembly : CollectionBehavior(DisableTestParallelization = true)]
 namespace Aliyun.Acs.Feature.Test.HttpProxy
 {
     [Trait("Category", "FeatureTest")]

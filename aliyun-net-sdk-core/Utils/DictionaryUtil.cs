@@ -16,6 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -50,11 +52,29 @@ namespace Aliyun.Acs.Core.Utils
             {
                 dic = new Dictionary<TKey, TValue>();
             }
+
             else if (dic.ContainsKey(key))
             {
                 dic.Remove(key);
             }
             dic.Add(key, value);
+        }
+
+        public static void Add<TKey, TValue>(ConcurrentDictionary<TKey, TValue> concurrentDic, TKey key, TValue value)
+        {
+            if (null == value)
+            {
+                return;
+            }
+            if (concurrentDic == null)
+            {
+                concurrentDic = new ConcurrentDictionary<TKey, TValue>();
+            }
+            else if (concurrentDic.ContainsKey(key))
+            {
+                concurrentDic.TryRemove(key, out TValue tempValue);
+            }
+            concurrentDic.TryAdd(key, value);
         }
 
         public static TValue Get<TKey, TValue>(Dictionary<TKey, TValue> dic, TKey key)
@@ -73,6 +93,16 @@ namespace Aliyun.Acs.Core.Utils
                 return dic[key];
             }
             return null;
+        }
+
+        public static TValue Get<TKey, TValue>(ConcurrentDictionary<TKey, TValue> concurrentDic, TKey key)
+        {
+            if (concurrentDic.ContainsKey(key))
+            {
+                return concurrentDic[key];
+            }
+
+            return default(TValue);
         }
 
         public static TValue Pop<TKey, TValue>(Dictionary<TKey, TValue> dic, TKey key)
@@ -123,6 +153,11 @@ namespace Aliyun.Acs.Core.Utils
         public static string TransformDicToString(Dictionary<string, string> dic)
         {
             return string.Join(";", dic.Select(x => x.Key + "=" + x.Value));
+        }
+
+        public static string TransformDicToString<Tkey, TValue>(ConcurrentDictionary<Tkey, TValue> concurrentDic)
+        {
+            return string.Join(";", concurrentDic.Select(x => x.Key + "=" + x.Value));
         }
     }
 }

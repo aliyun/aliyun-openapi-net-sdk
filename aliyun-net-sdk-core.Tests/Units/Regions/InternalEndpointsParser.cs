@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Auth;
@@ -60,7 +61,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
             product.Code = "ProductCode";
             product.LocationServiceCode = "LocationServiceCode";
             product.DocumentId = "DocumentId";
-            product.RegionalEndpoints = new Dictionary<string, string>() { };
+            product.RegionalEndpoints = new ConcurrentDictionary<string, string>() { };
             product.GlobalEndpoint = "GlobalEndpoint";
             product.RegionalEndpointPattern = "RegionalEndpointPattern";
 
@@ -92,7 +93,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
             product.Code = "ProductCode";
             product.LocationServiceCode = "LocationServiceCode";
             product.DocumentId = "DocumentId";
-            product.RegionalEndpoints = new Dictionary<string, string>() { };
+            product.RegionalEndpoints = new ConcurrentDictionary<string, string>() { };
             product.GlobalEndpoint = "";
             product.RegionalEndpointPattern = "RegionalEndpointPattern";
 
@@ -124,8 +125,8 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
             product.Code = "ProductCode";
             product.LocationServiceCode = "LocationServiceCode";
             product.DocumentId = "DocumentId";
-            product.RegionalEndpoints = new Dictionary<string, string>() { };
-            product.RegionalEndpoints.Add("regionKeyNotExist", "regionValue");
+            product.RegionalEndpoints = new ConcurrentDictionary<string, string>() { };
+            product.RegionalEndpoints.TryAdd("regionKeyNotExist", "regionValue");
             product.GlobalEndpoint = "GlobalEndpoint";
             product.RegionalEndpointPattern = "RegionalEndpointPattern";
 
@@ -158,8 +159,8 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
             product.Code = "ProductCode";
             product.LocationServiceCode = "LocationServiceCode";
             product.DocumentId = "DocumentId";
-            product.RegionalEndpoints = new Dictionary<string, string>() { };
-            product.RegionalEndpoints.Add("regionKey", "regionValue");
+            product.RegionalEndpoints = new ConcurrentDictionary<string, string>() { };
+            product.RegionalEndpoints.TryAdd("regionKey", "regionValue");
             product.GlobalEndpoint = "GlobalEndpoint";
             product.RegionalEndpointPattern = "RegionalEndpointPattern";
 

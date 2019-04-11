@@ -21,6 +21,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Profile;
@@ -42,6 +43,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
         private string privateKeyFile;
 
         private readonly AlibabaCloudCredentialsProvider alibabaCloudCredentialProvider;
+        private static ReaderWriterLockSlim cacheLock = new ReaderWriterLockSlim();
 
         public DefaultCredentialProvider() { }
 
@@ -123,7 +125,16 @@ namespace Aliyun.Acs.Core.Auth.Provider
                 throw new ClientException("Credentials file environment variable 'ALIBABA_CLOUD_CREDENTIALS_FILE' cannot be empty");
             }
 
-            IniReader iniReader = new IniReader(credentialFileLocation);
+            IniReader iniReader;
+            cacheLock.EnterReadLock();
+            try
+            {
+                iniReader = new IniReader(credentialFileLocation);
+            }
+            finally
+            {
+                cacheLock.ExitReadLock();
+            }
             var sectionNameList = iniReader.GetSections();
 
             if (null != defaultProfile.DefaultClientName)

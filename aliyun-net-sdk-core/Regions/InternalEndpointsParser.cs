@@ -17,6 +17,7 @@
  * under the License.
  */
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -36,7 +37,7 @@ namespace Aliyun.Acs.Core.Regions
             public string Code { get; set; }
             public string LocationServiceCode { get; set; }
             public string DocumentId { get; set; }
-            public Dictionary<string, string> RegionalEndpoints { get; set; }
+            public ConcurrentDictionary<string, string> RegionalEndpoints { get; set; }
             public string GlobalEndpoint { get; set; }
             public string RegionalEndpointPattern { get; set; }
         }
@@ -57,12 +58,12 @@ namespace Aliyun.Acs.Core.Regions
                     product.LocationServiceCode = node.SelectSingleNode("location_service_code").InnerText;
                     product.DocumentId = node.SelectSingleNode("document_id").InnerText;
 
-                    product.RegionalEndpoints = new Dictionary<string, string>();
+                    product.RegionalEndpoints = new ConcurrentDictionary<string, string>();
                     using(XmlNodeList regional_endpoints = node.SelectSingleNode("regional_endpoints").SelectNodes("regional_endpoint"))
                     {
                         foreach (XmlNode regionalNode in regional_endpoints)
                         {
-                            product.RegionalEndpoints.Add(regionalNode.SelectSingleNode("region_id").InnerText,
+                            product.RegionalEndpoints.TryAdd(regionalNode.SelectSingleNode("region_id").InnerText,
                                 regionalNode.SelectSingleNode("endpoint").InnerText);
                         }
 

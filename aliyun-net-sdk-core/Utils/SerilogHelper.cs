@@ -18,6 +18,7 @@
  */
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -25,6 +26,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
@@ -39,18 +41,20 @@ namespace Aliyun.Acs.Core.Utils
         private static ILogger defaultLogger;
         private static ILogger exceptionLogger;
         private const string RegexPattern = @"{(.*?)}";
-        private static IDictionary<string, string> LoggerMessageMap;
+        private static ConcurrentDictionary<string, string> LoggerMessageMap;
         public static long ExecuteTime { get; set; }
         public static string StartTime { get; set; }
         public static bool EnableLogger { get; private set; }
 
         private static Logger Logger;
 
+        private static ReaderWriterLockSlim cacheLock = new ReaderWriterLockSlim();
+
         private static void BuildKeyValueMap<T>(AcsRequest<T> request, HttpResponse response, long executeTime, string startTime) where T : AcsResponse
         {
             try
             {
-                LoggerMessageMap = new Dictionary<string, string>();
+                LoggerMessageMap = new ConcurrentDictionary<string, string>();
                 var requestHeader = request.Headers == null ? "" : DictionaryUtil.TransformDicToString(request.Headers);
                 var requestContent = request.Content == null? "": Encoding.Default.GetString(request.Content);
 
@@ -65,28 +69,28 @@ namespace Aliyun.Acs.Core.Utils
                     var host = requestUri.Host;
                     var target = requestUri.PathAndQuery + requestUri.Fragment;
 
-                    LoggerMessageMap.Add("host", host);
-                    LoggerMessageMap.Add("target", target);
+                    LoggerMessageMap.TryAdd("host", host);
+                    LoggerMessageMap.TryAdd("target", target);
                 }
 
-                LoggerMessageMap.Add("level", Logger.Level);
-                LoggerMessageMap.Add("channel", Logger.Channel);
-                LoggerMessageMap.Add("request", requestHeader + requestContent);
-                LoggerMessageMap.Add("req_headers", requestHeader);
+                LoggerMessageMap.TryAdd("level", Logger.Level);
+                LoggerMessageMap.TryAdd("channel", Logger.Channel);
+                LoggerMessageMap.TryAdd("request", requestHeader + requestContent);
+                LoggerMessageMap.TryAdd("req_headers", requestHeader);
 
-                LoggerMessageMap.Add("method", request.Method.ToString());
-                LoggerMessageMap.Add("uri", request.Url);
-                LoggerMessageMap.Add("version", "HTTP/" + response.HttpVersion);
-                LoggerMessageMap.Add("hostname", hostName);
+                LoggerMessageMap.TryAdd("method", request.Method.ToString());
+                LoggerMessageMap.TryAdd("uri", request.Url);
+                LoggerMessageMap.TryAdd("version", "HTTP/" + response.HttpVersion);
+                LoggerMessageMap.TryAdd("hostname", hostName);
 
-                LoggerMessageMap.Add("code", response.Status.ToString());
-                LoggerMessageMap.Add("error", responseContent);
-                LoggerMessageMap.Add("response", responseHeader + responseContent + response.Status.ToString());
-                LoggerMessageMap.Add("res_headers", responseHeader);
+                LoggerMessageMap.TryAdd("code", response.Status.ToString());
+                LoggerMessageMap.TryAdd("error", responseContent);
+                LoggerMessageMap.TryAdd("response", responseHeader + responseContent + response.Status.ToString());
+                LoggerMessageMap.TryAdd("res_headers", responseHeader);
 
-                LoggerMessageMap.Add("pid", Process.GetCurrentProcess().Id.ToString());
-                LoggerMessageMap.Add("cost", executeTime.ToString() + "ms");
-                LoggerMessageMap.Add("start_time", "[" + startTime + "]");
+                LoggerMessageMap.TryAdd("pid", Process.GetCurrentProcess().Id.ToString());
+                LoggerMessageMap.TryAdd("cost", executeTime.ToString() + "ms");
+                LoggerMessageMap.TryAdd("start_time", "[" + startTime + "]");
             }
             catch (Exception ex)
             {
@@ -100,8 +104,7 @@ namespace Aliyun.Acs.Core.Utils
             Logger = logger;
             EnableLogger = true;
 
-            var loggerConfiguration = new LoggerConfiguration()
-                .WriteTo.File(Logger.LoggerPath, outputTemplate : Logger.LoggerTemplate, shared : true);
+            AddReadWriteLock("normal", out LoggerConfiguration loggerConfiguration);
             defaultLogger = loggerConfiguration.CreateLogger();
         }
 
@@ -145,9 +148,7 @@ namespace Aliyun.Acs.Core.Utils
                 return;
             }
 
-            var loggerConfiguration = new LoggerConfiguration()
-                .Enrich.WithExceptionDetails()
-                .WriteTo.File(Logger.LoggerPath, shared : true);
+            AddReadWriteLock("exception", out LoggerConfiguration loggerConfiguration);
 
             exceptionLogger = loggerConfiguration.CreateLogger();
             exceptionLogger.Error(ex, "ExceptionMessage: ");
@@ -158,6 +159,31 @@ namespace Aliyun.Acs.Core.Utils
             EnableLogger = false;
             LoggerMessageMap = null;
             Logger = null;
+        }
+
+        private static void AddReadWriteLock(string type, out LoggerConfiguration loggerConfiguration)
+        {
+            cacheLock.EnterReadLock();
+
+            try
+            {
+                switch (type)
+                {
+                    case "exception":
+                        loggerConfiguration = new LoggerConfiguration()
+                            .Enrich.WithExceptionDetails()
+                            .WriteTo.File(Logger.LoggerPath, shared : true);
+                        break;
+                    default:
+                        loggerConfiguration = new LoggerConfiguration()
+                            .WriteTo.File(Logger.LoggerPath, outputTemplate : Logger.LoggerTemplate, shared : true);
+                        break;
+                }
+            }
+            finally
+            {
+                cacheLock.ExitReadLock();
+            }
         }
     }
 }

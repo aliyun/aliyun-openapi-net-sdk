@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -19,8 +20,8 @@ namespace Aliyun.Acs.Core.Endpoints
     {
         private const string BUNDLED_ENDPOINTS_RESOURCE_PATH = "endpoints.json";
 
-        private static Dictionary<string, Endpoint> endpoints = new Dictionary<string, Endpoint>();
-        private static Dictionary<string, Dictionary<string, string>> regionListDictionary = new Dictionary<string, Dictionary<string, string>>();
+        private static ConcurrentDictionary<string, Endpoint> endpoints = new ConcurrentDictionary<string, Endpoint>();
+        private static ConcurrentDictionary<string, ConcurrentDictionary<string, string>> regionListDictionary = new ConcurrentDictionary<string, ConcurrentDictionary<string, string>>();
 
         public static Endpoint GetEndpoint(string product, string regionId, string serviceCode)
         {
@@ -57,7 +58,7 @@ namespace Aliyun.Acs.Core.Endpoints
                 foreach (var item in job.Properties())
                 {
                     var product = item.Name;
-                    var regionList = new Dictionary<string, string>();
+                    var regionList = new ConcurrentDictionary<string, string>();
 
                     foreach (var productItem in item.Value)
                     {
@@ -78,7 +79,7 @@ namespace Aliyun.Acs.Core.Endpoints
             DictionaryUtil.Add(endpoints, product + "_" + regionId, endpoint);
         }
 
-        private static void InitialRegionList(string product, Dictionary<string, string> regionList)
+        private static void InitialRegionList(string product, ConcurrentDictionary<string, string> regionList)
         {
             DictionaryUtil.Add(regionListDictionary, product, regionList);
         }

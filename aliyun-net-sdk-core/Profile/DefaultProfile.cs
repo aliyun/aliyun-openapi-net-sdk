@@ -33,15 +33,15 @@ namespace Aliyun.Acs.Core.Profile
 {
     public class DefaultProfile : IClientProfile
     {
-        private static DefaultProfile profile = null;
-        private static List<Endpoint> endpoints = null;
+        private static DefaultProfile profile;
+        private static List<Endpoint> endpoints;
 
         private Credential credential;
         private string regionId;
-        private IEndpointsProvider iendpoints = null;
-        private ICredentialProvider icredential = null;
-        private RemoteEndpointsParser remoteProvider = null;
-        private LocationConfig locationConfig = null;
+        private IEndpointsProvider iendpoints;
+        private ICredentialProvider icredential;
+        private RemoteEndpointsParser remoteProvider;
+        private LocationConfig locationConfig;
         public FormatType acceptFormat;
         public string DefaultClientName { get; set; }
 

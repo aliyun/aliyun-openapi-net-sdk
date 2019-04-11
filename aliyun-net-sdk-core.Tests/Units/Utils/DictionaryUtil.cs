@@ -21,7 +21,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
             DictionaryUtil.Add(dic, "c", "e");
             Assert.Equal("e", DictionaryUtil.Get(dic, "c"));
 
-            DictionaryUtil.Add(null, "nullKey", "nullValue");
+            DictionaryUtil.Add(new Dictionary<string, string>(), "nullKey", "nullValue");
 
             Assert.Throws<NullReferenceException>(() =>
             {
