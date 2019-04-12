@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Core
 
         public virtual FormatType AcceptFormat
         {
-            get => acceptFormat;
+            get { return acceptFormat; }
             set
             {
                 acceptFormat = value;

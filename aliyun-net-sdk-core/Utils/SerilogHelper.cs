@@ -130,7 +130,8 @@ namespace Aliyun.Acs.Core.Utils
 
             foreach (var item in logKey)
             {
-                LoggerMessageMap.TryGetValue(item, out string value);
+                string value;
+                LoggerMessageMap.TryGetValue(item, out value);
                 logValue.Add(value);
             }
 

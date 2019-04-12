@@ -32,15 +32,13 @@ namespace Aliyun.Acs.Core.Auth
 
         public static Signer GetSigner(AlibabaCloudCredentials credentials)
         {
-            switch (credentials)
+
+            if (credentials is BearerTokenCredential)
             {
-                case BearerTokenCredential _:
-                    return bearerTokenSigner;
-                case KeyPairCredentials _:
-                    return sha256withRSASigner;
-                default:
-                    return hmacSHA1Signer;
+                return bearerTokenSigner;
             }
+
+            return credentials is KeyPairCredentials ? sha256withRSASigner : hmacSHA1Signer;
         }
     }
 }
