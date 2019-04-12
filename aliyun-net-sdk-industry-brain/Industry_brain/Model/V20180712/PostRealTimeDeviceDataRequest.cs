@@ -30,7 +30,7 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
     public class PostRealTimeDeviceDataRequest : RpcAcsRequest<PostRealTimeDeviceDataResponse>
     {
         public PostRealTimeDeviceDataRequest()
-            : base("industry_brain", "2018-07-12", "PostRealTimeDeviceData")
+            : base("industry-brain", "2018-07-12", "PostRealTimeDeviceData")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

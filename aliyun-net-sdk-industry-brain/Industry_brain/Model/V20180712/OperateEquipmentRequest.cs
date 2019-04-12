@@ -30,7 +30,7 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
     public class OperateEquipmentRequest : RpcAcsRequest<OperateEquipmentResponse>
     {
         public OperateEquipmentRequest()
-            : base("industry_brain", "2018-07-12", "OperateEquipment")
+            : base("industry-brain", "2018-07-12", "OperateEquipment")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

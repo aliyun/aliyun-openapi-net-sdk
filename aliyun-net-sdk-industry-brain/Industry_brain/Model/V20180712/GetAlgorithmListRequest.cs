@@ -30,7 +30,7 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
     public class GetAlgorithmListRequest : RpcAcsRequest<GetAlgorithmListResponse>
     {
         public GetAlgorithmListRequest()
-            : base("industry_brain", "2018-07-12", "GetAlgorithmList")
+            : base("industry-brain", "2018-07-12", "GetAlgorithmList")
         {
 			Protocol = ProtocolType.HTTPS;
         }

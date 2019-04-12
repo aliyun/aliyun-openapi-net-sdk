@@ -30,7 +30,7 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
     public class GetOSSImageAccessRequest : RpcAcsRequest<GetOSSImageAccessResponse>
     {
         public GetOSSImageAccessRequest()
-            : base("industry_brain", "2018-07-12", "GetOSSImageAccess")
+            : base("industry-brain", "2018-07-12", "GetOSSImageAccess")
         {
 			Protocol = ProtocolType.HTTPS;
         }

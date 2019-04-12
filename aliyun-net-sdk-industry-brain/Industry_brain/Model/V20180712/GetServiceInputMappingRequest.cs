@@ -30,7 +30,7 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
     public class GetServiceInputMappingRequest : RpcAcsRequest<GetServiceInputMappingResponse>
     {
         public GetServiceInputMappingRequest()
-            : base("industry_brain", "2018-07-12", "GetServiceInputMapping")
+            : base("industry-brain", "2018-07-12", "GetServiceInputMapping")
         {
         }
 

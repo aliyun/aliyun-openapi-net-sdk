@@ -30,7 +30,7 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
     public class GetDataPropertiesRequest : RpcAcsRequest<GetDataPropertiesResponse>
     {
         public GetDataPropertiesRequest()
-            : base("industry_brain", "2018-07-12", "GetDataProperties")
+            : base("industry-brain", "2018-07-12", "GetDataProperties")
         {
         }
 

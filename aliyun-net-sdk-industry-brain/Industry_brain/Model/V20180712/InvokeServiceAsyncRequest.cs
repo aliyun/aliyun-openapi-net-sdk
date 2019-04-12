@@ -30,7 +30,7 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
     public class InvokeServiceAsyncRequest : RpcAcsRequest<InvokeServiceAsyncResponse>
     {
         public InvokeServiceAsyncRequest()
-            : base("industry_brain", "2018-07-12", "InvokeServiceAsync")
+            : base("industry-brain", "2018-07-12", "InvokeServiceAsync")
         {
 			Method = MethodType.POST;
         }

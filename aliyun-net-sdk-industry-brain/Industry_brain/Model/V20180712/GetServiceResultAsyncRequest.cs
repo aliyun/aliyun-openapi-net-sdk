@@ -30,7 +30,7 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
     public class GetServiceResultAsyncRequest : RpcAcsRequest<GetServiceResultAsyncResponse>
     {
         public GetServiceResultAsyncRequest()
-            : base("industry_brain", "2018-07-12", "GetServiceResultAsync")
+            : base("industry-brain", "2018-07-12", "GetServiceResultAsync")
         {
         }
 

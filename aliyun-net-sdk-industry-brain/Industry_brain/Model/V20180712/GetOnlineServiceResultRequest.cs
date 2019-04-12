@@ -30,7 +30,7 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
     public class GetOnlineServiceResultRequest : RpcAcsRequest<GetOnlineServiceResultResponse>
     {
         public GetOnlineServiceResultRequest()
-            : base("industry_brain", "2018-07-12", "GetOnlineServiceResult")
+            : base("industry-brain", "2018-07-12", "GetOnlineServiceResult")
         {
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;

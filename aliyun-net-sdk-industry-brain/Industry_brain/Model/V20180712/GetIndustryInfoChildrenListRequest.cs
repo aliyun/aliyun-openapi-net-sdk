@@ -30,7 +30,7 @@ namespace Aliyun.Acs.industry_brain.Model.V20180712
     public class GetIndustryInfoChildrenListRequest : RpcAcsRequest<GetIndustryInfoChildrenListResponse>
     {
         public GetIndustryInfoChildrenListRequest()
-            : base("industry_brain", "2018-07-12", "GetIndustryInfoChildrenList")
+            : base("industry-brain", "2018-07-12", "GetIndustryInfoChildrenList")
         {
 			Protocol = ProtocolType.HTTPS;
         }
