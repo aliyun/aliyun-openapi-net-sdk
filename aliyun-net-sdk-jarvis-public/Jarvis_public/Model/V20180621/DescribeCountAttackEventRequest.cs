@@ -30,7 +30,7 @@ namespace Aliyun.Acs.jarvis_public.Model.V20180621
     public class DescribeCountAttackEventRequest : RpcAcsRequest<DescribeCountAttackEventResponse>
     {
         public DescribeCountAttackEventRequest()
-            : base("jarvis_public", "2018-06-21", "DescribeCountAttackEvent", "jarvis-public", "openAPI")
+            : base("jarvis-public", "2018-06-21", "DescribeCountAttackEvent", "jarvis-public", "openAPI")
         {
         }
 

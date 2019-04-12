@@ -30,7 +30,7 @@ namespace Aliyun.Acs.jarvis_public.Model.V20180621
     public class DescribeAttackedIpRequest : RpcAcsRequest<DescribeAttackedIpResponse>
     {
         public DescribeAttackedIpRequest()
-            : base("jarvis_public", "2018-06-21", "DescribeAttackedIp", "jarvis-public", "openAPI")
+            : base("jarvis-public", "2018-06-21", "DescribeAttackedIp", "jarvis-public", "openAPI")
         {
         }
 
