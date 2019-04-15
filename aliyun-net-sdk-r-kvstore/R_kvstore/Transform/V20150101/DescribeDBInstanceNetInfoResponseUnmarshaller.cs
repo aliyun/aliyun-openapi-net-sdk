@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.R_kvstore.Model.V20150101;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.R_kvstore.Model.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
@@ -42,6 +43,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				instanceNetInfo.VPCId = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VPCId");
 				instanceNetInfo.VSwitchId = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VSwitchId");
 				instanceNetInfo.DBInstanceNetType = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].DBInstanceNetType");
+				instanceNetInfo.VPCInstanceId = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].VPCInstanceId");
 				instanceNetInfo.IPType = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].IPType");
 				instanceNetInfo.ExpiredTime = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].ExpiredTime");
 				instanceNetInfo.Upgradeable = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].Upgradeable");

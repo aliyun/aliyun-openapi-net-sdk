@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
     public class DescribeRunningLogRecordsRequest : RpcAcsRequest<DescribeRunningLogRecordsResponse>
     {
         public DescribeRunningLogRecordsRequest()
-            : base("R_kvstore", "2015-01-01", "DescribeRunningLogRecords", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "redisa", "openAPI")
         {
         }
 
@@ -273,7 +274,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override DescribeRunningLogRecordsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeRunningLogRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeRunningLogRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

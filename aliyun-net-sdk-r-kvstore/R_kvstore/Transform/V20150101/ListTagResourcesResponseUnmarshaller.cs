@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.R_kvstore.Model.V20150101;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.R_kvstore.Model.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
@@ -31,6 +32,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 
 			listTagResourcesResponse.HttpResponse = context.HttpResponse;
 			listTagResourcesResponse.RequestId = context.StringValue("ListTagResources.RequestId");
+			listTagResourcesResponse.NextToken = context.StringValue("ListTagResources.NextToken");
 
 			List<ListTagResourcesResponse.ListTagResources_TagResource> listTagResourcesResponse_tagResources = new List<ListTagResourcesResponse.ListTagResources_TagResource>();
 			for (int i = 0; i < context.Length("ListTagResources.TagResources.Length"); i++) {

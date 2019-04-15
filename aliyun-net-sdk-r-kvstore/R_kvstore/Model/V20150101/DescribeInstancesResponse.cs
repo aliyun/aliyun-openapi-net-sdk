@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
@@ -160,6 +161,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private string destroyTime;
 
 			private string connectionMode;
+
+			private List<DescribeInstances_Tag> tags;
 
 			public string ReplacateId
 			{
@@ -542,6 +545,50 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					connectionMode = value;
+				}
+			}
+
+			public List<DescribeInstances_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeInstances_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

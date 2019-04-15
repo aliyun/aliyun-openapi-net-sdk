@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.R_kvstore.Model.V20150101;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.R_kvstore.Model.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
@@ -72,6 +73,16 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.VpcAuthMode = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].VpcAuthMode");
 				dBInstanceAttribute.AuditLogRetention = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].AuditLogRetention");
 				dBInstanceAttribute.ReplicationMode = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ReplicationMode");
+
+				List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag> dBInstanceAttribute_tags = new List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag>();
+				for (int j = 0; j < context.Length("DescribeInstanceAttribute.Instances["+ i +"].Tags.Length"); j++) {
+					DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag tag = new DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag();
+					tag.Key = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].Tags["+ j +"].Value");
+
+					dBInstanceAttribute_tags.Add(tag);
+				}
+				dBInstanceAttribute.Tags = dBInstanceAttribute_tags;
 
 				describeInstanceAttributeResponse_instances.Add(dBInstanceAttribute);
 			}

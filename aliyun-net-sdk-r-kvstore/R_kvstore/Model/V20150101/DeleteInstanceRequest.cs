@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
     public class DeleteInstanceRequest : RpcAcsRequest<DeleteInstanceResponse>
     {
         public DeleteInstanceRequest()
-            : base("R_kvstore", "2015-01-01", "DeleteInstance", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DeleteInstance", "redisa", "openAPI")
         {
         }
 
@@ -153,7 +154,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override DeleteInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

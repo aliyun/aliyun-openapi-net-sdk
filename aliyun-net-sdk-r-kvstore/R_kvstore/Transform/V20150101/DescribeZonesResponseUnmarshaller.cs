@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.R_kvstore.Model.V20150101;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.R_kvstore.Model.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
@@ -40,6 +41,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreZone.ZoneName = context.StringValue("DescribeZones.Zones["+ i +"].ZoneName");
 				kVStoreZone.SwitchNetwork = context.BooleanValue("DescribeZones.Zones["+ i +"].SwitchNetwork");
 				kVStoreZone.IsRds = context.BooleanValue("DescribeZones.Zones["+ i +"].IsRds");
+				kVStoreZone.Disabled = context.BooleanValue("DescribeZones.Zones["+ i +"].Disabled");
 
 				describeZonesResponse_zones.Add(kVStoreZone);
 			}

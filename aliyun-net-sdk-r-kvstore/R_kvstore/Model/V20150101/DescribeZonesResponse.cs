@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
@@ -64,6 +65,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private bool? switchNetwork;
 
 			private bool? isRds;
+
+			private bool? disabled;
 
 			public string RegionId
 			{
@@ -122,6 +125,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					isRds = value;
+				}
+			}
+
+			public bool? Disabled
+			{
+				get
+				{
+					return disabled;
+				}
+				set	
+				{
+					disabled = value;
 				}
 			}
 		}

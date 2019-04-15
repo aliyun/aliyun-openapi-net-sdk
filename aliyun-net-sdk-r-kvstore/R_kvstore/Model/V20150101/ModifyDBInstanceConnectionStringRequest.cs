@@ -16,42 +16,47 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
     public class ModifyDBInstanceConnectionStringRequest : RpcAcsRequest<ModifyDBInstanceConnectionStringResponse>
     {
         public ModifyDBInstanceConnectionStringRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "redisa", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string securityToken;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string action;
-
-		private string dBInstanceId;
 
 		private string newConnectionString;
 
 		private long? ownerId;
 
+		private string iPType;
+
 		private string currentConnectionString;
 
 		private string accessKeyId;
+
+		private string securityToken;
+
+		private string port;
+
+		private string action;
+
+		private string dBInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -63,19 +68,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -105,6 +97,97 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string NewConnectionString
+		{
+			get
+			{
+				return newConnectionString;
+			}
+			set	
+			{
+				newConnectionString = value;
+				DictionaryUtil.Add(QueryParameters, "NewConnectionString", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string IPType
+		{
+			get
+			{
+				return iPType;
+			}
+			set	
+			{
+				iPType = value;
+				DictionaryUtil.Add(QueryParameters, "IPType", value);
+			}
+		}
+
+		public string CurrentConnectionString
+		{
+			get
+			{
+				return currentConnectionString;
+			}
+			set	
+			{
+				currentConnectionString = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentConnectionString", value);
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value);
+			}
+		}
+
 		public string Action
 		{
 			get
@@ -131,59 +214,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string NewConnectionString
-		{
-			get
-			{
-				return newConnectionString;
-			}
-			set	
-			{
-				newConnectionString = value;
-				DictionaryUtil.Add(QueryParameters, "newConnectionString", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string CurrentConnectionString
-		{
-			get
-			{
-				return currentConnectionString;
-			}
-			set	
-			{
-				currentConnectionString = value;
-				DictionaryUtil.Add(QueryParameters, "currentConnectionString", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override ModifyDBInstanceConnectionStringResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyDBInstanceConnectionStringResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyDBInstanceConnectionStringResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

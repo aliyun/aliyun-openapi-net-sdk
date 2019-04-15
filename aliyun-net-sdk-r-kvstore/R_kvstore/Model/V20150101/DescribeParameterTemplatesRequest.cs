@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
     public class DescribeParameterTemplatesRequest : RpcAcsRequest<DescribeParameterTemplatesResponse>
     {
         public DescribeParameterTemplatesRequest()
-            : base("R_kvstore", "2015-01-01", "DescribeParameterTemplates", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeParameterTemplates", "redisa", "openAPI")
         {
         }
 
@@ -183,7 +184,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override DescribeParameterTemplatesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeParameterTemplatesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeParameterTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

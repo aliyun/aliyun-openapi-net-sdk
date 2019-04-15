@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
@@ -128,6 +129,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private string auditLogRetention;
 
 			private string replicationMode;
+
+			private List<DescribeInstanceAttribute_Tag> tags;
 
 			public string InstanceId
 			{
@@ -570,6 +573,50 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					replicationMode = value;
+				}
+			}
+
+			public List<DescribeInstanceAttribute_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeInstanceAttribute_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

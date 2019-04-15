@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
     public class ModifyCertificationRequest : RpcAcsRequest<ModifyCertificationResponse>
     {
         public ModifyCertificationRequest()
-            : base("R_kvstore", "2015-01-01", "ModifyCertification", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyCertification", "redisa", "openAPI")
         {
         }
 
@@ -168,7 +169,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyCertificationResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyCertificationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyCertificationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

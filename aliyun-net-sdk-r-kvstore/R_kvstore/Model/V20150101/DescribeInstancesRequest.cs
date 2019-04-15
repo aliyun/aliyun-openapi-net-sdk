@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
     public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
     {
         public DescribeInstancesRequest()
-            : base("R_kvstore", "2015-01-01", "DescribeInstances", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeInstances", "redisa", "openAPI")
         {
         }
 
@@ -76,6 +77,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string zoneId;
 
 		private string chargeType;
+
+		private List<Tag> tags;
 
 		public long? ResourceOwnerId
 		{
@@ -363,7 +366,57 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override DescribeInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+		}
+
+        public override DescribeInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

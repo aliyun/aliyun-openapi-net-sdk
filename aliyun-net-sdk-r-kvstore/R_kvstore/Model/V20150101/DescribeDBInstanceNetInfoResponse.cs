@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
@@ -80,6 +81,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private string vSwitchId;
 
 			private string dBInstanceNetType;
+
+			private string vPCInstanceId;
 
 			private string iPType;
 
@@ -156,6 +159,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					dBInstanceNetType = value;
+				}
+			}
+
+			public string VPCInstanceId
+			{
+				get
+				{
+					return vPCInstanceId;
+				}
+				set	
+				{
+					vPCInstanceId = value;
 				}
 			}
 

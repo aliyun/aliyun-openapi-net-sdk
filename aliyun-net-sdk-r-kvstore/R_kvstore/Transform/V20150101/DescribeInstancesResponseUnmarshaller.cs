@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.R_kvstore.Model.V20150101;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.R_kvstore.Model.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
@@ -70,6 +71,16 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.EngineVersion = context.StringValue("DescribeInstances.Instances["+ i +"].EngineVersion");
 				kVStoreInstance.DestroyTime = context.StringValue("DescribeInstances.Instances["+ i +"].DestroyTime");
 				kVStoreInstance.ConnectionMode = context.StringValue("DescribeInstances.Instances["+ i +"].ConnectionMode");
+
+				List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag> kVStoreInstance_tags = new List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag>();
+				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].Tags.Length"); j++) {
+					DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag tag = new DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag();
+					tag.Key = context.StringValue("DescribeInstances.Instances["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeInstances.Instances["+ i +"].Tags["+ j +"].Value");
+
+					kVStoreInstance_tags.Add(tag);
+				}
+				kVStoreInstance.Tags = kVStoreInstance_tags;
 
 				describeInstancesResponse_instances.Add(kVStoreInstance);
 			}

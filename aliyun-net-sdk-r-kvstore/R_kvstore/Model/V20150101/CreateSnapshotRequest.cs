@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
     public class CreateSnapshotRequest : RpcAcsRequest<CreateSnapshotResponse>
     {
         public CreateSnapshotRequest()
-            : base("R_kvstore", "2015-01-01", "CreateSnapshot", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "CreateSnapshot", "redisa", "openAPI")
         {
         }
 
@@ -123,7 +124,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override CreateSnapshotResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateSnapshotResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateSnapshotResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
