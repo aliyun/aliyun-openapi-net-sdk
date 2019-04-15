@@ -1,3 +1,6 @@
+### 2019-04-15 Version 1.3.0
+* Add support target net45 reference 
+
 ### 2019-04-12 Version 1.2.9
 * Ini file resolve refactor
 * Support .net framework 461 in Visual Studio 2015
