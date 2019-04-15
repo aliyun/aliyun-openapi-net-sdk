@@ -40,6 +40,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string project;
 
+		private string realUid;
+
 		private string accessKeyId;
 
 		public string ImageUri
@@ -78,6 +80,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string RealUid
+		{
+			get
+			{
+				return realUid;
+			}
+			set	
+			{
+				realUid = value;
+				DictionaryUtil.Add(QueryParameters, "RealUid", value);
 			}
 		}
 

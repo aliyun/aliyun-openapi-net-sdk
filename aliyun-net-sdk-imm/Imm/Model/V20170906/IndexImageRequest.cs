@@ -60,6 +60,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string sourceType;
 
+		private string realUid;
+
 		public string RemarksB
 		{
 			get
@@ -226,6 +228,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				sourceType = value;
 				DictionaryUtil.Add(QueryParameters, "SourceType", value);
+			}
+		}
+
+		public string RealUid
+		{
+			get
+			{
+				return realUid;
+			}
+			set	
+			{
+				realUid = value;
+				DictionaryUtil.Add(QueryParameters, "RealUid", value);
 			}
 		}
 
