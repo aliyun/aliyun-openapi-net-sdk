@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceType;
 
+		private List<Arn> arns;
+
 		private string instanceChargeType;
 
 		private string deploymentSetId;
@@ -680,6 +682,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<Arn> Arns
+		{
+			get
+			{
+				return arns;
+			}
+
+			set
+			{
+				arns = value;
+				for (int i = 0; i < arns.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".Rolearn", arns[i].Rolearn);
+					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".RoleType", arns[i].RoleType);
+					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".AssumeRoleFor", arns[i].AssumeRoleFor);
+				}
+			}
+		}
+
 		public string InstanceChargeType
 		{
 			get
@@ -889,6 +910,52 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					key = value;
+				}
+			}
+		}
+
+		public class Arn
+		{
+
+			private string rolearn;
+
+			private string roleType;
+
+			private long? assumeRoleFor;
+
+			public string Rolearn
+			{
+				get
+				{
+					return rolearn;
+				}
+				set	
+				{
+					rolearn = value;
+				}
+			}
+
+			public string RoleType
+			{
+				get
+				{
+					return roleType;
+				}
+				set	
+				{
+					roleType = value;
+				}
+			}
+
+			public long? AssumeRoleFor
+			{
+				get
+				{
+					return assumeRoleFor;
+				}
+				set	
+				{
+					assumeRoleFor = value;
 				}
 			}
 		}

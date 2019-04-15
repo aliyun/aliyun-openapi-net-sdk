@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				image.IsSupportIoOptimized = context.BooleanValue("DescribeImages.Images["+ i +"].IsSupportIoOptimized");
 				image.IsSupportCloudinit = context.BooleanValue("DescribeImages.Images["+ i +"].IsSupportCloudinit");
 				image.OSName = context.StringValue("DescribeImages.Images["+ i +"].OSName");
+				image.OSNameEn = context.StringValue("DescribeImages.Images["+ i +"].OSNameEn");
 				image.Architecture = context.StringValue("DescribeImages.Images["+ i +"].Architecture");
 				image.Status = context.StringValue("DescribeImages.Images["+ i +"].Status");
 				image.ProductCode = context.StringValue("DescribeImages.Images["+ i +"].ProductCode");

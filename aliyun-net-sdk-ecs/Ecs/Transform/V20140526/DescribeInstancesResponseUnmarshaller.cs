@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instance.Description = context.StringValue("DescribeInstances.Instances["+ i +"].Description");
 				instance.ImageId = context.StringValue("DescribeInstances.Instances["+ i +"].ImageId");
 				instance.OSName = context.StringValue("DescribeInstances.Instances["+ i +"].OSName");
+				instance.OSNameEn = context.StringValue("DescribeInstances.Instances["+ i +"].OSNameEn");
 				instance.OSType = context.StringValue("DescribeInstances.Instances["+ i +"].OSType");
 				instance.RegionId = context.StringValue("DescribeInstances.Instances["+ i +"].RegionId");
 				instance.ZoneId = context.StringValue("DescribeInstances.Instances["+ i +"].ZoneId");

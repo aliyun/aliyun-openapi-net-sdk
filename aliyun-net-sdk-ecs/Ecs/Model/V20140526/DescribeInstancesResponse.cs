@@ -108,6 +108,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string oSName;
 
+			private string oSNameEn;
+
 			private string oSType;
 
 			private string regionId;
@@ -263,6 +265,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					oSName = value;
+				}
+			}
+
+			public string OSNameEn
+			{
+				get
+				{
+					return oSNameEn;
+				}
+				set	
+				{
+					oSNameEn = value;
 				}
 			}
 

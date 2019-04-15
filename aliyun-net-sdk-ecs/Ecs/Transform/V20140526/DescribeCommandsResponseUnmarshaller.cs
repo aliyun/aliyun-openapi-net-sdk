@@ -46,6 +46,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				command.CommandContent = context.StringValue("DescribeCommands.Commands["+ i +"].CommandContent");
 				command.WorkingDir = context.StringValue("DescribeCommands.Commands["+ i +"].WorkingDir");
 				command.Timeout = context.LongValue("DescribeCommands.Commands["+ i +"].Timeout");
+				command.CreationTime = context.StringValue("DescribeCommands.Commands["+ i +"].CreationTime");
 
 				describeCommandsResponse_commands.Add(command);
 			}

@@ -112,6 +112,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private long? timeout;
 
+			private string creationTime;
+
 			public string CommandId
 			{
 				get
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					timeout = value;
+				}
+			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
 				}
 			}
 		}
