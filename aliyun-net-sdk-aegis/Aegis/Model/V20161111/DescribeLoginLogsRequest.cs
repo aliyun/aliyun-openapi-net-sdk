@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.aegis.Transform;
 using Aliyun.Acs.aegis.Transform.V20161111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -33,24 +34,30 @@ namespace Aliyun.Acs.aegis.Model.V20161111
         {
         }
 
-		private long? resourceOwnerId;
+		private string types;
 
 		private string sourceIp;
 
 		private int? pageSize;
 
+		private string statuses;
+
 		private int? currentPage;
 
-		public long? ResourceOwnerId
+		private string remark;
+
+		private string tag;
+
+		public string Types
 		{
 			get
 			{
-				return resourceOwnerId;
+				return types;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				types = value;
+				DictionaryUtil.Add(QueryParameters, "Types", value);
 			}
 		}
 
@@ -80,6 +87,19 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
+		public string Statuses
+		{
+			get
+			{
+				return statuses;
+			}
+			set	
+			{
+				statuses = value;
+				DictionaryUtil.Add(QueryParameters, "Statuses", value);
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -93,12 +113,38 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
+		public string Remark
+		{
+			get
+			{
+				return remark;
+			}
+			set	
+			{
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
+			}
+		}
+
+		public string Tag
+		{
+			get
+			{
+				return tag;
+			}
+			set	
+			{
+				tag = value;
+				DictionaryUtil.Add(QueryParameters, "Tag", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeLoginLogsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeLoginLogsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeLoginLogsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

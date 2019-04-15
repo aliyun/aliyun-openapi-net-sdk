@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -26,37 +27,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 
 		private string requestId;
 
-		private string name;
-
-		private string aliasName;
-
-		private string level;
-
-		private long? vulPublishTs;
-
-		private string type;
-
-		private string product;
-
-		private bool? hasPatch;
-
-		private long? patchPublishTs;
-
-		private string patchSource;
-
-		private string cvss;
-
-		private string cveIds;
-
-		private string advice;
-
-		private string description;
-
-		private int? pendingCount;
-
-		private int? handledCount;
-
-		private List<string> cveLists;
+		private List<DescribeVulDetails_Cve> cves;
 
 		public string RequestId
 		{
@@ -70,195 +41,345 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public string Name
+		public List<DescribeVulDetails_Cve> Cves
 		{
 			get
 			{
-				return name;
+				return cves;
 			}
 			set	
 			{
-				name = value;
+				cves = value;
 			}
 		}
 
-		public string AliasName
+		public class DescribeVulDetails_Cve
 		{
-			get
-			{
-				return aliasName;
-			}
-			set	
-			{
-				aliasName = value;
-			}
-		}
 
-		public string Level
-		{
-			get
-			{
-				return level;
-			}
-			set	
-			{
-				level = value;
-			}
-		}
+			private string cveId;
 
-		public long? VulPublishTs
-		{
-			get
-			{
-				return vulPublishTs;
-			}
-			set	
-			{
-				vulPublishTs = value;
-			}
-		}
+			private string cnvdId;
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-			}
-		}
+			private string otherId;
 
-		public string Product
-		{
-			get
-			{
-				return product;
-			}
-			set	
-			{
-				product = value;
-			}
-		}
+			private string title;
 
-		public bool? HasPatch
-		{
-			get
-			{
-				return hasPatch;
-			}
-			set	
-			{
-				hasPatch = value;
-			}
-		}
+			private string cvssScore;
 
-		public long? PatchPublishTs
-		{
-			get
-			{
-				return patchPublishTs;
-			}
-			set	
-			{
-				patchPublishTs = value;
-			}
-		}
+			private string cvssVector;
 
-		public string PatchSource
-		{
-			get
-			{
-				return patchSource;
-			}
-			set	
-			{
-				patchSource = value;
-			}
-		}
+			private long? releaseTime;
 
-		public string Cvss
-		{
-			get
-			{
-				return cvss;
-			}
-			set	
-			{
-				cvss = value;
-			}
-		}
+			private string complexity;
 
-		public string CveIds
-		{
-			get
-			{
-				return cveIds;
-			}
-			set	
-			{
-				cveIds = value;
-			}
-		}
+			private string poc;
 
-		public string Advice
-		{
-			get
-			{
-				return advice;
-			}
-			set	
-			{
-				advice = value;
-			}
-		}
+			private long? pocCreateTime;
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-			}
-		}
+			private long? pocDisclosureTime;
 
-		public int? PendingCount
-		{
-			get
-			{
-				return pendingCount;
-			}
-			set	
-			{
-				pendingCount = value;
-			}
-		}
+			private string summary;
 
-		public int? HandledCount
-		{
-			get
-			{
-				return handledCount;
-			}
-			set	
-			{
-				handledCount = value;
-			}
-		}
+			private string solution;
 
-		public List<string> CveLists
-		{
-			get
+			private string content;
+
+			private string vendor;
+
+			private string product;
+
+			private string vulLevel;
+
+			private string reference;
+
+			private string classify;
+
+			private List<DescribeVulDetails_Classify> classifys;
+
+			public string CveId
 			{
-				return cveLists;
+				get
+				{
+					return cveId;
+				}
+				set	
+				{
+					cveId = value;
+				}
 			}
-			set	
+
+			public string CnvdId
 			{
-				cveLists = value;
+				get
+				{
+					return cnvdId;
+				}
+				set	
+				{
+					cnvdId = value;
+				}
+			}
+
+			public string OtherId
+			{
+				get
+				{
+					return otherId;
+				}
+				set	
+				{
+					otherId = value;
+				}
+			}
+
+			public string Title
+			{
+				get
+				{
+					return title;
+				}
+				set	
+				{
+					title = value;
+				}
+			}
+
+			public string CvssScore
+			{
+				get
+				{
+					return cvssScore;
+				}
+				set	
+				{
+					cvssScore = value;
+				}
+			}
+
+			public string CvssVector
+			{
+				get
+				{
+					return cvssVector;
+				}
+				set	
+				{
+					cvssVector = value;
+				}
+			}
+
+			public long? ReleaseTime
+			{
+				get
+				{
+					return releaseTime;
+				}
+				set	
+				{
+					releaseTime = value;
+				}
+			}
+
+			public string Complexity
+			{
+				get
+				{
+					return complexity;
+				}
+				set	
+				{
+					complexity = value;
+				}
+			}
+
+			public string Poc
+			{
+				get
+				{
+					return poc;
+				}
+				set	
+				{
+					poc = value;
+				}
+			}
+
+			public long? PocCreateTime
+			{
+				get
+				{
+					return pocCreateTime;
+				}
+				set	
+				{
+					pocCreateTime = value;
+				}
+			}
+
+			public long? PocDisclosureTime
+			{
+				get
+				{
+					return pocDisclosureTime;
+				}
+				set	
+				{
+					pocDisclosureTime = value;
+				}
+			}
+
+			public string Summary
+			{
+				get
+				{
+					return summary;
+				}
+				set	
+				{
+					summary = value;
+				}
+			}
+
+			public string Solution
+			{
+				get
+				{
+					return solution;
+				}
+				set	
+				{
+					solution = value;
+				}
+			}
+
+			public string Content
+			{
+				get
+				{
+					return content;
+				}
+				set	
+				{
+					content = value;
+				}
+			}
+
+			public string Vendor
+			{
+				get
+				{
+					return vendor;
+				}
+				set	
+				{
+					vendor = value;
+				}
+			}
+
+			public string Product
+			{
+				get
+				{
+					return product;
+				}
+				set	
+				{
+					product = value;
+				}
+			}
+
+			public string VulLevel
+			{
+				get
+				{
+					return vulLevel;
+				}
+				set	
+				{
+					vulLevel = value;
+				}
+			}
+
+			public string Reference
+			{
+				get
+				{
+					return reference;
+				}
+				set	
+				{
+					reference = value;
+				}
+			}
+
+			public string Classify
+			{
+				get
+				{
+					return classify;
+				}
+				set	
+				{
+					classify = value;
+				}
+			}
+
+			public List<DescribeVulDetails_Classify> Classifys
+			{
+				get
+				{
+					return classifys;
+				}
+				set	
+				{
+					classifys = value;
+				}
+			}
+
+			public class DescribeVulDetails_Classify
+			{
+
+				private string classify;
+
+				private string description;
+
+				private string demoVideoUrl;
+
+				public string Classify
+				{
+					get
+					{
+						return classify;
+					}
+					set	
+					{
+						classify = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string DemoVideoUrl
+				{
+					get
+					{
+						return demoVideoUrl;
+					}
+					set	
+					{
+						demoVideoUrl = value;
+					}
+				}
 			}
 		}
 	}

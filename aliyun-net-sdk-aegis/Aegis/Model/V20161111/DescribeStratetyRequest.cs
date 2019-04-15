@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.aegis.Transform;
 using Aliyun.Acs.aegis.Transform.V20161111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -33,22 +34,11 @@ namespace Aliyun.Acs.aegis.Model.V20161111
         {
         }
 
-		private long? resourceOwnerId;
-
 		private string sourceIp;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+		private string strategyIds;
+
+		private string lang;
 
 		public string SourceIp
 		{
@@ -63,12 +53,38 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
+		public string StrategyIds
+		{
+			get
+			{
+				return strategyIds;
+			}
+			set	
+			{
+				strategyIds = value;
+				DictionaryUtil.Add(QueryParameters, "StrategyIds", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeStratetyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeStratetyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeStratetyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

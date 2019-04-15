@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.aegis.Transform;
 using Aliyun.Acs.aegis.Transform.V20161111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -34,8 +35,6 @@ namespace Aliyun.Acs.aegis.Model.V20161111
         }
 
 		private string reason;
-
-		private long? resourceOwnerId;
 
 		private string sourceIp;
 
@@ -51,19 +50,6 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			{
 				reason = value;
 				DictionaryUtil.Add(QueryParameters, "Reason", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -98,7 +84,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			return false;
 		}
 
-        public override ModifyBatchIgnoreVulResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyBatchIgnoreVulResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyBatchIgnoreVulResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

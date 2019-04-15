@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.aegis.Transform;
 using Aliyun.Acs.aegis.Transform.V20161111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -108,7 +109,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-        public override QueryCrackEventResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryCrackEventResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return QueryCrackEventResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

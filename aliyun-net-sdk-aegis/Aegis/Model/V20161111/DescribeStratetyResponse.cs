@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -26,9 +27,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 
 		private string requestId;
 
-		private int? count;
-
-		private List<DescribeStratety_Data> strategies;
+		private List<DescribeStratety_Strategy> strategies;
 
 		public string RequestId
 		{
@@ -42,19 +41,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public int? Count
-		{
-			get
-			{
-				return count;
-			}
-			set	
-			{
-				count = value;
-			}
-		}
-
-		public List<DescribeStratety_Data> Strategies
+		public List<DescribeStratety_Strategy> Strategies
 		{
 			get
 			{
@@ -66,7 +53,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public class DescribeStratety_Data
+		public class DescribeStratety_Strategy
 		{
 
 			private int? cycleDays;
@@ -82,6 +69,12 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			private int? riskCount;
 
 			private int? ecsCount;
+
+			private int? execStatus;
+
+			private int? processRate;
+
+			private int? passRate;
 
 			private List<DescribeStratety_ConfigTarget> configTargets;
 
@@ -166,6 +159,42 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 				set	
 				{
 					ecsCount = value;
+				}
+			}
+
+			public int? ExecStatus
+			{
+				get
+				{
+					return execStatus;
+				}
+				set	
+				{
+					execStatus = value;
+				}
+			}
+
+			public int? ProcessRate
+			{
+				get
+				{
+					return processRate;
+				}
+				set	
+				{
+					processRate = value;
+				}
+			}
+
+			public int? PassRate
+			{
+				get
+				{
+					return passRate;
+				}
+				set	
+				{
+					passRate = value;
 				}
 			}
 

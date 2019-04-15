@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.aegis.Model.V20161111;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.aegis.Model.V20161111;
 
 namespace Aliyun.Acs.aegis.Transform.V20161111
 {
@@ -31,9 +32,28 @@ namespace Aliyun.Acs.aegis.Transform.V20161111
 
 			describeWebshellResponse.HttpResponse = context.HttpResponse;
 			describeWebshellResponse.RequestId = context.StringValue("DescribeWebshell.RequestId");
-			describeWebshellResponse.TotalCount = context.IntegerValue("DescribeWebshell.TotalCount");
-			describeWebshellResponse.PageSize = context.IntegerValue("DescribeWebshell.PageSize");
-			describeWebshellResponse.CurrentPage = context.IntegerValue("DescribeWebshell.CurrentPage");
+
+			List<DescribeWebshellResponse.DescribeWebshell_WebshellListItem> describeWebshellResponse_webshellList = new List<DescribeWebshellResponse.DescribeWebshell_WebshellListItem>();
+			for (int i = 0; i < context.Length("DescribeWebshell.WebshellList.Length"); i++) {
+				DescribeWebshellResponse.DescribeWebshell_WebshellListItem webshellListItem = new DescribeWebshellResponse.DescribeWebshell_WebshellListItem();
+				webshellListItem.Os = context.StringValue("DescribeWebshell.WebshellList["+ i +"].Os");
+				webshellListItem.InstanceName = context.StringValue("DescribeWebshell.WebshellList["+ i +"].InstanceName");
+				webshellListItem.GroupId = context.LongValue("DescribeWebshell.WebshellList["+ i +"].GroupId");
+				webshellListItem.Ip = context.StringValue("DescribeWebshell.WebshellList["+ i +"].Ip");
+				webshellListItem.Uuid = context.StringValue("DescribeWebshell.WebshellList["+ i +"].Uuid");
+				webshellListItem.FoundTime = context.StringValue("DescribeWebshell.WebshellList["+ i +"].FoundTime");
+				webshellListItem.InstanceId = context.StringValue("DescribeWebshell.WebshellList["+ i +"].InstanceId");
+				webshellListItem.TrojanType = context.StringValue("DescribeWebshell.WebshellList["+ i +"].TrojanType");
+				webshellListItem.FirstFoundTime = context.StringValue("DescribeWebshell.WebshellList["+ i +"].FirstFoundTime");
+				webshellListItem.TrojanSize = context.LongValue("DescribeWebshell.WebshellList["+ i +"].TrojanSize");
+				webshellListItem.Domain = context.StringValue("DescribeWebshell.WebshellList["+ i +"].Domain");
+				webshellListItem.TrojanPath = context.StringValue("DescribeWebshell.WebshellList["+ i +"].TrojanPath");
+				webshellListItem.Region = context.StringValue("DescribeWebshell.WebshellList["+ i +"].Region");
+				webshellListItem.Status = context.IntegerValue("DescribeWebshell.WebshellList["+ i +"].Status");
+
+				describeWebshellResponse_webshellList.Add(webshellListItem);
+			}
+			describeWebshellResponse.WebshellList = describeWebshellResponse_webshellList;
         
 			return describeWebshellResponse;
         }

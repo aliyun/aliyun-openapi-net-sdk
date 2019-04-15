@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.aegis.Transform;
 using Aliyun.Acs.aegis.Transform.V20161111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -35,8 +36,6 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 
 		private string typeNames;
 
-		private long? resourceOwnerId;
-
 		private string riskName;
 
 		private string statusList;
@@ -46,6 +45,8 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 		private string riskLevels;
 
 		private int? pageSize;
+
+		private long? strategyId;
 
 		private int? currentPage;
 
@@ -65,19 +66,6 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			{
 				typeNames = value;
 				DictionaryUtil.Add(QueryParameters, "TypeNames", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -146,6 +134,19 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
+		public long? StrategyId
+		{
+			get
+			{
+				return strategyId;
+			}
+			set	
+			{
+				strategyId = value;
+				DictionaryUtil.Add(QueryParameters, "StrategyId", value.ToString());
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -203,7 +204,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			return false;
 		}
 
-        public override DescribeWarningResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeWarningResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeWarningResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

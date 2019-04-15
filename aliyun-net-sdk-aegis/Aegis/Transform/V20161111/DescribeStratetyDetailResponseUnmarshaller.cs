@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.aegis.Model.V20161111;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.aegis.Model.V20161111;
 
 namespace Aliyun.Acs.aegis.Transform.V20161111
 {
@@ -46,14 +47,14 @@ namespace Aliyun.Acs.aegis.Transform.V20161111
 				riskTypeWhiteListQueryResult.Alias = context.StringValue("DescribeStratetyDetail.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].Alias");
 				riskTypeWhiteListQueryResult.On = context.BooleanValue("DescribeStratetyDetail.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].On");
 
-				List<DescribeStratetyDetailResponse.DescribeStratetyDetail_Strategy.DescribeStratetyDetail_RiskTypeWhiteListQueryResult.DescribeStratetyDetail_SubTyp> riskTypeWhiteListQueryResult_subTypes = new List<DescribeStratetyDetailResponse.DescribeStratetyDetail_Strategy.DescribeStratetyDetail_RiskTypeWhiteListQueryResult.DescribeStratetyDetail_SubTyp>();
+				List<DescribeStratetyDetailResponse.DescribeStratetyDetail_Strategy.DescribeStratetyDetail_RiskTypeWhiteListQueryResult.DescribeStratetyDetail_SubType> riskTypeWhiteListQueryResult_subTypes = new List<DescribeStratetyDetailResponse.DescribeStratetyDetail_Strategy.DescribeStratetyDetail_RiskTypeWhiteListQueryResult.DescribeStratetyDetail_SubType>();
 				for (int j = 0; j < context.Length("DescribeStratetyDetail.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes.Length"); j++) {
-					DescribeStratetyDetailResponse.DescribeStratetyDetail_Strategy.DescribeStratetyDetail_RiskTypeWhiteListQueryResult.DescribeStratetyDetail_SubTyp subTyp = new DescribeStratetyDetailResponse.DescribeStratetyDetail_Strategy.DescribeStratetyDetail_RiskTypeWhiteListQueryResult.DescribeStratetyDetail_SubTyp();
-					subTyp.TypeName = context.StringValue("DescribeStratetyDetail.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes["+ j +"].TypeName");
-					subTyp.Alias = context.StringValue("DescribeStratetyDetail.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes["+ j +"].Alias");
-					subTyp.On = context.BooleanValue("DescribeStratetyDetail.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes["+ j +"].On");
+					DescribeStratetyDetailResponse.DescribeStratetyDetail_Strategy.DescribeStratetyDetail_RiskTypeWhiteListQueryResult.DescribeStratetyDetail_SubType subType = new DescribeStratetyDetailResponse.DescribeStratetyDetail_Strategy.DescribeStratetyDetail_RiskTypeWhiteListQueryResult.DescribeStratetyDetail_SubType();
+					subType.TypeName = context.StringValue("DescribeStratetyDetail.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes["+ j +"].TypeName");
+					subType.Alias = context.StringValue("DescribeStratetyDetail.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes["+ j +"].Alias");
+					subType.On = context.BooleanValue("DescribeStratetyDetail.Strategy.RiskTypeWhiteListQueryResultList["+ i +"].SubTypes["+ j +"].On");
 
-					riskTypeWhiteListQueryResult_subTypes.Add(subTyp);
+					riskTypeWhiteListQueryResult_subTypes.Add(subType);
 				}
 				riskTypeWhiteListQueryResult.SubTypes = riskTypeWhiteListQueryResult_subTypes;
 

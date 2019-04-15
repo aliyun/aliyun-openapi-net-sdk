@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.aegis.Transform;
 using Aliyun.Acs.aegis.Transform.V20161111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -33,28 +34,11 @@ namespace Aliyun.Acs.aegis.Model.V20161111
         {
         }
 
-		private long? resourceOwnerId;
-
 		private string sourceIp;
 
 		private string type;
 
 		private string config;
-
-		private string target;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
 
 		public string SourceIp
 		{
@@ -95,25 +79,12 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public string Target
-		{
-			get
-			{
-				return target;
-			}
-			set	
-			{
-				target = value;
-				DictionaryUtil.Add(QueryParameters, "Target", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeStrategyTargetResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeStrategyTargetResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeStrategyTargetResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

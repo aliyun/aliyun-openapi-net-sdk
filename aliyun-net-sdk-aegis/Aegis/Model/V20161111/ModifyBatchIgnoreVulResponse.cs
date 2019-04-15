@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -25,10 +26,6 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 	{
 
 		private string requestId;
-
-		private bool? success;
-
-		private int? httpStatusCode;
 
 		public string RequestId
 		{
@@ -39,30 +36,6 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
 			}
 		}
 	}

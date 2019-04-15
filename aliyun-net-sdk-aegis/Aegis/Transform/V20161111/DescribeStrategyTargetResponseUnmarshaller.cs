@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.aegis.Model.V20161111;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.aegis.Model.V20161111;
 
 namespace Aliyun.Acs.aegis.Transform.V20161111
 {
@@ -31,16 +32,15 @@ namespace Aliyun.Acs.aegis.Transform.V20161111
 
 			describeStrategyTargetResponse.HttpResponse = context.HttpResponse;
 			describeStrategyTargetResponse.RequestId = context.StringValue("DescribeStrategyTarget.RequestId");
-			describeStrategyTargetResponse.Count = context.IntegerValue("DescribeStrategyTarget.Count");
 
-			List<DescribeStrategyTargetResponse.DescribeStrategyTarget_StringItem> describeStrategyTargetResponse_strategyTargets = new List<DescribeStrategyTargetResponse.DescribeStrategyTarget_StringItem>();
+			List<DescribeStrategyTargetResponse.DescribeStrategyTarget_StrategyTarget> describeStrategyTargetResponse_strategyTargets = new List<DescribeStrategyTargetResponse.DescribeStrategyTarget_StrategyTarget>();
 			for (int i = 0; i < context.Length("DescribeStrategyTarget.StrategyTargets.Length"); i++) {
-				DescribeStrategyTargetResponse.DescribeStrategyTarget_StringItem stringItem = new DescribeStrategyTargetResponse.DescribeStrategyTarget_StringItem();
-				stringItem.Flag = context.StringValue("DescribeStrategyTarget.StrategyTargets["+ i +"].Flag");
-				stringItem.Target = context.StringValue("DescribeStrategyTarget.StrategyTargets["+ i +"].Target");
-				stringItem.TargetType = context.StringValue("DescribeStrategyTarget.StrategyTargets["+ i +"].TargetType");
+				DescribeStrategyTargetResponse.DescribeStrategyTarget_StrategyTarget strategyTarget = new DescribeStrategyTargetResponse.DescribeStrategyTarget_StrategyTarget();
+				strategyTarget.Flag = context.StringValue("DescribeStrategyTarget.StrategyTargets["+ i +"].Flag");
+				strategyTarget.Target = context.StringValue("DescribeStrategyTarget.StrategyTargets["+ i +"].Target");
+				strategyTarget.TargetType = context.StringValue("DescribeStrategyTarget.StrategyTargets["+ i +"].TargetType");
 
-				describeStrategyTargetResponse_strategyTargets.Add(stringItem);
+				describeStrategyTargetResponse_strategyTargets.Add(strategyTarget);
 			}
 			describeStrategyTargetResponse.StrategyTargets = describeStrategyTargetResponse_strategyTargets;
         

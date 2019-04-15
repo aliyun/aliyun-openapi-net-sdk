@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.aegis.Model.V20161111;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.aegis.Model.V20161111;
 
 namespace Aliyun.Acs.aegis.Transform.V20161111
 {
@@ -31,27 +32,44 @@ namespace Aliyun.Acs.aegis.Transform.V20161111
 
 			describeVulDetailsResponse.HttpResponse = context.HttpResponse;
 			describeVulDetailsResponse.RequestId = context.StringValue("DescribeVulDetails.RequestId");
-			describeVulDetailsResponse.Name = context.StringValue("DescribeVulDetails.Name");
-			describeVulDetailsResponse.AliasName = context.StringValue("DescribeVulDetails.AliasName");
-			describeVulDetailsResponse.Level = context.StringValue("DescribeVulDetails.Level");
-			describeVulDetailsResponse.VulPublishTs = context.LongValue("DescribeVulDetails.VulPublishTs");
-			describeVulDetailsResponse.Type = context.StringValue("DescribeVulDetails.Type");
-			describeVulDetailsResponse.Product = context.StringValue("DescribeVulDetails.Product");
-			describeVulDetailsResponse.HasPatch = context.BooleanValue("DescribeVulDetails.HasPatch");
-			describeVulDetailsResponse.PatchPublishTs = context.LongValue("DescribeVulDetails.PatchPublishTs");
-			describeVulDetailsResponse.PatchSource = context.StringValue("DescribeVulDetails.PatchSource");
-			describeVulDetailsResponse.Cvss = context.StringValue("DescribeVulDetails.Cvss");
-			describeVulDetailsResponse.CveIds = context.StringValue("DescribeVulDetails.CveIds");
-			describeVulDetailsResponse.Advice = context.StringValue("DescribeVulDetails.Advice");
-			describeVulDetailsResponse.Description = context.StringValue("DescribeVulDetails.Description");
-			describeVulDetailsResponse.PendingCount = context.IntegerValue("DescribeVulDetails.PendingCount");
-			describeVulDetailsResponse.HandledCount = context.IntegerValue("DescribeVulDetails.HandledCount");
 
-			List<string> describeVulDetailsResponse_cveLists = new List<string>();
-			for (int i = 0; i < context.Length("DescribeVulDetails.CveLists.Length"); i++) {
-				describeVulDetailsResponse_cveLists.Add(context.StringValue("DescribeVulDetails.CveLists["+ i +"]"));
+			List<DescribeVulDetailsResponse.DescribeVulDetails_Cve> describeVulDetailsResponse_cves = new List<DescribeVulDetailsResponse.DescribeVulDetails_Cve>();
+			for (int i = 0; i < context.Length("DescribeVulDetails.Cves.Length"); i++) {
+				DescribeVulDetailsResponse.DescribeVulDetails_Cve cve = new DescribeVulDetailsResponse.DescribeVulDetails_Cve();
+				cve.CveId = context.StringValue("DescribeVulDetails.Cves["+ i +"].CveId");
+				cve.CnvdId = context.StringValue("DescribeVulDetails.Cves["+ i +"].CnvdId");
+				cve.OtherId = context.StringValue("DescribeVulDetails.Cves["+ i +"].OtherId");
+				cve.Title = context.StringValue("DescribeVulDetails.Cves["+ i +"].Title");
+				cve.CvssScore = context.StringValue("DescribeVulDetails.Cves["+ i +"].CvssScore");
+				cve.CvssVector = context.StringValue("DescribeVulDetails.Cves["+ i +"].CvssVector");
+				cve.ReleaseTime = context.LongValue("DescribeVulDetails.Cves["+ i +"].ReleaseTime");
+				cve.Complexity = context.StringValue("DescribeVulDetails.Cves["+ i +"].Complexity");
+				cve.Poc = context.StringValue("DescribeVulDetails.Cves["+ i +"].Poc");
+				cve.PocCreateTime = context.LongValue("DescribeVulDetails.Cves["+ i +"].PocCreateTime");
+				cve.PocDisclosureTime = context.LongValue("DescribeVulDetails.Cves["+ i +"].PocDisclosureTime");
+				cve.Summary = context.StringValue("DescribeVulDetails.Cves["+ i +"].Summary");
+				cve.Solution = context.StringValue("DescribeVulDetails.Cves["+ i +"].Solution");
+				cve.Content = context.StringValue("DescribeVulDetails.Cves["+ i +"].Content");
+				cve.Vendor = context.StringValue("DescribeVulDetails.Cves["+ i +"].Vendor");
+				cve.Product = context.StringValue("DescribeVulDetails.Cves["+ i +"].Product");
+				cve.VulLevel = context.StringValue("DescribeVulDetails.Cves["+ i +"].VulLevel");
+				cve.Reference = context.StringValue("DescribeVulDetails.Cves["+ i +"].Reference");
+				cve.Classify = context.StringValue("DescribeVulDetails.Cves["+ i +"].Classify");
+
+				List<DescribeVulDetailsResponse.DescribeVulDetails_Cve.DescribeVulDetails_Classify> cve_classifys = new List<DescribeVulDetailsResponse.DescribeVulDetails_Cve.DescribeVulDetails_Classify>();
+				for (int j = 0; j < context.Length("DescribeVulDetails.Cves["+ i +"].Classifys.Length"); j++) {
+					DescribeVulDetailsResponse.DescribeVulDetails_Cve.DescribeVulDetails_Classify classify = new DescribeVulDetailsResponse.DescribeVulDetails_Cve.DescribeVulDetails_Classify();
+					classify.Classify = context.StringValue("DescribeVulDetails.Cves["+ i +"].Classifys["+ j +"].Classify");
+					classify.Description = context.StringValue("DescribeVulDetails.Cves["+ i +"].Classifys["+ j +"].Description");
+					classify.DemoVideoUrl = context.StringValue("DescribeVulDetails.Cves["+ i +"].Classifys["+ j +"].DemoVideoUrl");
+
+					cve_classifys.Add(classify);
+				}
+				cve.Classifys = cve_classifys;
+
+				describeVulDetailsResponse_cves.Add(cve);
 			}
-			describeVulDetailsResponse.CveLists = describeVulDetailsResponse_cveLists;
+			describeVulDetailsResponse.Cves = describeVulDetailsResponse_cves;
         
 			return describeVulDetailsResponse;
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.aegis.Model.V20161111;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.aegis.Model.V20161111;
 
 namespace Aliyun.Acs.aegis.Transform.V20161111
 {
@@ -31,8 +32,6 @@ namespace Aliyun.Acs.aegis.Transform.V20161111
 
 			modifyBatchIgnoreVulResponse.HttpResponse = context.HttpResponse;
 			modifyBatchIgnoreVulResponse.RequestId = context.StringValue("ModifyBatchIgnoreVul.RequestId");
-			modifyBatchIgnoreVulResponse.Success = context.BooleanValue("ModifyBatchIgnoreVul.Success");
-			modifyBatchIgnoreVulResponse.HttpStatusCode = context.IntegerValue("ModifyBatchIgnoreVul.HttpStatusCode");
         
 			return modifyBatchIgnoreVulResponse;
         }

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.aegis.Transform;
 using Aliyun.Acs.aegis.Transform.V20161111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -33,22 +34,21 @@ namespace Aliyun.Acs.aegis.Model.V20161111
         {
         }
 
-		private long? resourceOwnerId;
-
 		private string sourceIp;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+		private string level;
+
+		private int? pageSize;
+
+		private int? currentPage;
+
+		private string dealed;
+
+		private string remark;
+
+		private string eventType;
+
+		private string uuid;
 
 		public string SourceIp
 		{
@@ -63,12 +63,103 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
+		public string Level
+		{
+			get
+			{
+				return level;
+			}
+			set	
+			{
+				level = value;
+				DictionaryUtil.Add(QueryParameters, "Level", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string Dealed
+		{
+			get
+			{
+				return dealed;
+			}
+			set	
+			{
+				dealed = value;
+				DictionaryUtil.Add(QueryParameters, "Dealed", value);
+			}
+		}
+
+		public string Remark
+		{
+			get
+			{
+				return remark;
+			}
+			set	
+			{
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
+			}
+		}
+
+		public string EventType
+		{
+			get
+			{
+				return eventType;
+			}
+			set	
+			{
+				eventType = value;
+				DictionaryUtil.Add(QueryParameters, "EventType", value);
+			}
+		}
+
+		public string Uuid
+		{
+			get
+			{
+				return uuid;
+			}
+			set	
+			{
+				uuid = value;
+				DictionaryUtil.Add(QueryParameters, "Uuid", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeSuspiciousEventsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeSuspiciousEventsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeSuspiciousEventsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

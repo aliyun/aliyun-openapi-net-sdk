@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -26,9 +27,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 
 		private string requestId;
 
-		private int? count;
-
-		private List<DescribeStrategyTarget_StringItem> strategyTargets;
+		private List<DescribeStrategyTarget_StrategyTarget> strategyTargets;
 
 		public string RequestId
 		{
@@ -42,19 +41,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public int? Count
-		{
-			get
-			{
-				return count;
-			}
-			set	
-			{
-				count = value;
-			}
-		}
-
-		public List<DescribeStrategyTarget_StringItem> StrategyTargets
+		public List<DescribeStrategyTarget_StrategyTarget> StrategyTargets
 		{
 			get
 			{
@@ -66,7 +53,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public class DescribeStrategyTarget_StringItem
+		public class DescribeStrategyTarget_StrategyTarget
 		{
 
 			private string flag;

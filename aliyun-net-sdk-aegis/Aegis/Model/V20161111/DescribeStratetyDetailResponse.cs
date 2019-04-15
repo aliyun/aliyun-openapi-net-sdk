@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -148,7 +149,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 
 				private bool? on;
 
-				private List<DescribeStratetyDetail_SubTyp> subTypes;
+				private List<DescribeStratetyDetail_SubType> subTypes;
 
 				public string TypeName
 				{
@@ -186,7 +187,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 					}
 				}
 
-				public List<DescribeStratetyDetail_SubTyp> SubTypes
+				public List<DescribeStratetyDetail_SubType> SubTypes
 				{
 					get
 					{
@@ -198,7 +199,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 					}
 				}
 
-				public class DescribeStratetyDetail_SubTyp
+				public class DescribeStratetyDetail_SubType
 				{
 
 					private string typeName;

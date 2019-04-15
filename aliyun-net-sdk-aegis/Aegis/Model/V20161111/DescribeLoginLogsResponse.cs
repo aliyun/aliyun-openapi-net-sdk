@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -32,9 +33,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 
 		private int? totalCount;
 
-		private int? httpStatusCode;
-
-		private List<string> loginLogs;
+		private List<DescribeLoginLogs_LogListItem> logList;
 
 		public string RequestId
 		{
@@ -84,27 +83,257 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public int? HttpStatusCode
+		public List<DescribeLoginLogs_LogListItem> LogList
 		{
 			get
 			{
-				return httpStatusCode;
+				return logList;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				logList = value;
 			}
 		}
 
-		public List<string> LoginLogs
+		public class DescribeLoginLogs_LogListItem
 		{
-			get
+
+			private string loginSourceIp;
+
+			private string instanceName;
+
+			private long? groupId;
+
+			private string ip;
+
+			private string type;
+
+			private string userName;
+
+			private string uuid;
+
+			private int? protocol;
+
+			private long? loginTime;
+
+			private string instanceId;
+
+			private string osVersion;
+
+			private string protocolName;
+
+			private string online;
+
+			private string location;
+
+			private long? id;
+
+			private string region;
+
+			private int? status;
+
+			public string LoginSourceIp
 			{
-				return loginLogs;
+				get
+				{
+					return loginSourceIp;
+				}
+				set	
+				{
+					loginSourceIp = value;
+				}
 			}
-			set	
+
+			public string InstanceName
 			{
-				loginLogs = value;
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public long? GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			public string Ip
+			{
+				get
+				{
+					return ip;
+				}
+				set	
+				{
+					ip = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public string UserName
+			{
+				get
+				{
+					return userName;
+				}
+				set	
+				{
+					userName = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public int? Protocol
+			{
+				get
+				{
+					return protocol;
+				}
+				set	
+				{
+					protocol = value;
+				}
+			}
+
+			public long? LoginTime
+			{
+				get
+				{
+					return loginTime;
+				}
+				set	
+				{
+					loginTime = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string OsVersion
+			{
+				get
+				{
+					return osVersion;
+				}
+				set	
+				{
+					osVersion = value;
+				}
+			}
+
+			public string ProtocolName
+			{
+				get
+				{
+					return protocolName;
+				}
+				set	
+				{
+					protocolName = value;
+				}
+			}
+
+			public string Online
+			{
+				get
+				{
+					return online;
+				}
+				set	
+				{
+					online = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
+				}
+			}
+
+			public long? Id
+			{
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
+			}
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
 			}
 		}
 	}

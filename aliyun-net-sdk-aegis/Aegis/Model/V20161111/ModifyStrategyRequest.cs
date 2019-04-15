@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.aegis.Transform;
 using Aliyun.Acs.aegis.Transform.V20161111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -33,8 +34,6 @@ namespace Aliyun.Acs.aegis.Model.V20161111
         {
 			Method = MethodType.POST;
         }
-
-		private long? resourceOwnerId;
 
 		private string riskSubTypeName;
 
@@ -47,19 +46,6 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 		private string cycleDays;
 
 		private string id;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
 
 		public string RiskSubTypeName
 		{
@@ -144,7 +130,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			return false;
 		}
 
-        public override ModifyStrategyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyStrategyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyStrategyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

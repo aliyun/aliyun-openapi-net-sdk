@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -34,7 +35,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 
 		private int? currentPage;
 
-		private List<string> warnings;
+		private List<DescribeWarning_Warning> warnings;
 
 		public string RequestId
 		{
@@ -96,7 +97,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public List<string> Warnings
+		public List<DescribeWarning_Warning> Warnings
 		{
 			get
 			{
@@ -105,6 +106,242 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			set	
 			{
 				warnings = value;
+			}
+		}
+
+		public class DescribeWarning_Warning
+		{
+
+			private long? riskWarningId;
+
+			private string riskName;
+
+			private string uuid;
+
+			private string rirstFoundTime;
+
+			private string lastFoundTime;
+
+			private string level;
+
+			private string typeName;
+
+			private string subTypeName;
+
+			private string typeAlias;
+
+			private string subTypeAlias;
+
+			private int? status;
+
+			private List<DescribeWarning_Detail> details;
+
+			public long? RiskWarningId
+			{
+				get
+				{
+					return riskWarningId;
+				}
+				set	
+				{
+					riskWarningId = value;
+				}
+			}
+
+			public string RiskName
+			{
+				get
+				{
+					return riskName;
+				}
+				set	
+				{
+					riskName = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public string RirstFoundTime
+			{
+				get
+				{
+					return rirstFoundTime;
+				}
+				set	
+				{
+					rirstFoundTime = value;
+				}
+			}
+
+			public string LastFoundTime
+			{
+				get
+				{
+					return lastFoundTime;
+				}
+				set	
+				{
+					lastFoundTime = value;
+				}
+			}
+
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
+				}
+			}
+
+			public string TypeName
+			{
+				get
+				{
+					return typeName;
+				}
+				set	
+				{
+					typeName = value;
+				}
+			}
+
+			public string SubTypeName
+			{
+				get
+				{
+					return subTypeName;
+				}
+				set	
+				{
+					subTypeName = value;
+				}
+			}
+
+			public string TypeAlias
+			{
+				get
+				{
+					return typeAlias;
+				}
+				set	
+				{
+					typeAlias = value;
+				}
+			}
+
+			public string SubTypeAlias
+			{
+				get
+				{
+					return subTypeAlias;
+				}
+				set	
+				{
+					subTypeAlias = value;
+				}
+			}
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public List<DescribeWarning_Detail> Details
+			{
+				get
+				{
+					return details;
+				}
+				set	
+				{
+					details = value;
+				}
+			}
+
+			public class DescribeWarning_Detail
+			{
+
+				private List<DescribeWarning_DetailItem> detailItems;
+
+				public List<DescribeWarning_DetailItem> DetailItems
+				{
+					get
+					{
+						return detailItems;
+					}
+					set	
+					{
+						detailItems = value;
+					}
+				}
+
+				public class DescribeWarning_DetailItem
+				{
+
+					private string name;
+
+					private string _value;
+
+					private string type;
+
+					public string Name
+					{
+						get
+						{
+							return name;
+						}
+						set	
+						{
+							name = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+
+					public string Type
+					{
+						get
+						{
+							return type;
+						}
+						set	
+						{
+							type = value;
+						}
+					}
+				}
 			}
 		}
 	}

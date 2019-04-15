@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.aegis.Transform;
 using Aliyun.Acs.aegis.Transform.V20161111;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -33,17 +34,13 @@ namespace Aliyun.Acs.aegis.Model.V20161111
         {
         }
 
-		private long? resourceOwnerId;
-
-		private string product;
-
 		private string statusList;
 
 		private string level;
 
 		private string resource;
 
-		private string orderBy;
+		private string remark;
 
 		private string dealed;
 
@@ -51,11 +48,9 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 
 		private string type;
 
-		private long? lastTsEnd;
+		private long? createTsStart;
 
 		private string batchName;
-
-		private long? patchId;
 
 		private string aliasName;
 
@@ -67,39 +62,11 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 
 		private string lang;
 
-		private long? lastTsStart;
+		private long? createTsEnd;
 
 		private string necessity;
 
 		private string uuids;
-
-		private string direction;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Product
-		{
-			get
-			{
-				return product;
-			}
-			set	
-			{
-				product = value;
-				DictionaryUtil.Add(QueryParameters, "Product", value);
-			}
-		}
 
 		public string StatusList
 		{
@@ -140,16 +107,16 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public string OrderBy
+		public string Remark
 		{
 			get
 			{
-				return orderBy;
+				return remark;
 			}
 			set	
 			{
-				orderBy = value;
-				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
 			}
 		}
 
@@ -192,16 +159,16 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public long? LastTsEnd
+		public long? CreateTsStart
 		{
 			get
 			{
-				return lastTsEnd;
+				return createTsStart;
 			}
 			set	
 			{
-				lastTsEnd = value;
-				DictionaryUtil.Add(QueryParameters, "LastTsEnd", value.ToString());
+				createTsStart = value;
+				DictionaryUtil.Add(QueryParameters, "CreateTsStart", value.ToString());
 			}
 		}
 
@@ -215,19 +182,6 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			{
 				batchName = value;
 				DictionaryUtil.Add(QueryParameters, "BatchName", value);
-			}
-		}
-
-		public long? PatchId
-		{
-			get
-			{
-				return patchId;
-			}
-			set	
-			{
-				patchId = value;
-				DictionaryUtil.Add(QueryParameters, "PatchId", value.ToString());
 			}
 		}
 
@@ -296,16 +250,16 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public long? LastTsStart
+		public long? CreateTsEnd
 		{
 			get
 			{
-				return lastTsStart;
+				return createTsEnd;
 			}
 			set	
 			{
-				lastTsStart = value;
-				DictionaryUtil.Add(QueryParameters, "LastTsStart", value.ToString());
+				createTsEnd = value;
+				DictionaryUtil.Add(QueryParameters, "CreateTsEnd", value.ToString());
 			}
 		}
 
@@ -335,25 +289,12 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public string Direction
-		{
-			get
-			{
-				return direction;
-			}
-			set	
-			{
-				direction = value;
-				DictionaryUtil.Add(QueryParameters, "Direction", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeVulListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeVulListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeVulListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.aegis.Model.V20161111;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.aegis.Model.V20161111;
 
 namespace Aliyun.Acs.aegis.Transform.V20161111
 {
@@ -31,31 +32,33 @@ namespace Aliyun.Acs.aegis.Transform.V20161111
 
 			describeStratetyResponse.HttpResponse = context.HttpResponse;
 			describeStratetyResponse.RequestId = context.StringValue("DescribeStratety.RequestId");
-			describeStratetyResponse.Count = context.IntegerValue("DescribeStratety.Count");
 
-			List<DescribeStratetyResponse.DescribeStratety_Data> describeStratetyResponse_strategies = new List<DescribeStratetyResponse.DescribeStratety_Data>();
+			List<DescribeStratetyResponse.DescribeStratety_Strategy> describeStratetyResponse_strategies = new List<DescribeStratetyResponse.DescribeStratety_Strategy>();
 			for (int i = 0; i < context.Length("DescribeStratety.Strategies.Length"); i++) {
-				DescribeStratetyResponse.DescribeStratety_Data data = new DescribeStratetyResponse.DescribeStratety_Data();
-				data.CycleDays = context.IntegerValue("DescribeStratety.Strategies["+ i +"].CycleDays");
-				data.Id = context.IntegerValue("DescribeStratety.Strategies["+ i +"].Id");
-				data.CycleStartTime = context.IntegerValue("DescribeStratety.Strategies["+ i +"].CycleStartTime");
-				data.Type = context.IntegerValue("DescribeStratety.Strategies["+ i +"].Type");
-				data.Name = context.StringValue("DescribeStratety.Strategies["+ i +"].Name");
-				data.RiskCount = context.IntegerValue("DescribeStratety.Strategies["+ i +"].RiskCount");
-				data.EcsCount = context.IntegerValue("DescribeStratety.Strategies["+ i +"].EcsCount");
+				DescribeStratetyResponse.DescribeStratety_Strategy strategy = new DescribeStratetyResponse.DescribeStratety_Strategy();
+				strategy.CycleDays = context.IntegerValue("DescribeStratety.Strategies["+ i +"].CycleDays");
+				strategy.Id = context.IntegerValue("DescribeStratety.Strategies["+ i +"].Id");
+				strategy.CycleStartTime = context.IntegerValue("DescribeStratety.Strategies["+ i +"].CycleStartTime");
+				strategy.Type = context.IntegerValue("DescribeStratety.Strategies["+ i +"].Type");
+				strategy.Name = context.StringValue("DescribeStratety.Strategies["+ i +"].Name");
+				strategy.RiskCount = context.IntegerValue("DescribeStratety.Strategies["+ i +"].RiskCount");
+				strategy.EcsCount = context.IntegerValue("DescribeStratety.Strategies["+ i +"].EcsCount");
+				strategy.ExecStatus = context.IntegerValue("DescribeStratety.Strategies["+ i +"].ExecStatus");
+				strategy.ProcessRate = context.IntegerValue("DescribeStratety.Strategies["+ i +"].ProcessRate");
+				strategy.PassRate = context.IntegerValue("DescribeStratety.Strategies["+ i +"].PassRate");
 
-				List<DescribeStratetyResponse.DescribeStratety_Data.DescribeStratety_ConfigTarget> data_configTargets = new List<DescribeStratetyResponse.DescribeStratety_Data.DescribeStratety_ConfigTarget>();
+				List<DescribeStratetyResponse.DescribeStratety_Strategy.DescribeStratety_ConfigTarget> strategy_configTargets = new List<DescribeStratetyResponse.DescribeStratety_Strategy.DescribeStratety_ConfigTarget>();
 				for (int j = 0; j < context.Length("DescribeStratety.Strategies["+ i +"].ConfigTargets.Length"); j++) {
-					DescribeStratetyResponse.DescribeStratety_Data.DescribeStratety_ConfigTarget configTarget = new DescribeStratetyResponse.DescribeStratety_Data.DescribeStratety_ConfigTarget();
+					DescribeStratetyResponse.DescribeStratety_Strategy.DescribeStratety_ConfigTarget configTarget = new DescribeStratetyResponse.DescribeStratety_Strategy.DescribeStratety_ConfigTarget();
 					configTarget.Flag = context.StringValue("DescribeStratety.Strategies["+ i +"].ConfigTargets["+ j +"].Flag");
 					configTarget.TargetType = context.StringValue("DescribeStratety.Strategies["+ i +"].ConfigTargets["+ j +"].TargetType");
 					configTarget.Target = context.StringValue("DescribeStratety.Strategies["+ i +"].ConfigTargets["+ j +"].Target");
 
-					data_configTargets.Add(configTarget);
+					strategy_configTargets.Add(configTarget);
 				}
-				data.ConfigTargets = data_configTargets;
+				strategy.ConfigTargets = strategy_configTargets;
 
-				describeStratetyResponse_strategies.Add(data);
+				describeStratetyResponse_strategies.Add(strategy);
 			}
 			describeStratetyResponse.Strategies = describeStratetyResponse_strategies;
         

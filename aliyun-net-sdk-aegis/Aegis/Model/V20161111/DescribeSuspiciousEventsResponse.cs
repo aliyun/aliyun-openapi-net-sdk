@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aegis.Model.V20161111
 {
@@ -32,9 +33,7 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 
 		private int? currentPage;
 
-		private int? httpStatusCode;
-
-		private List<string> suspiciousEvents;
+		private List<DescribeSuspiciousEvents_LogListItem> logList;
 
 		public string RequestId
 		{
@@ -84,27 +83,303 @@ namespace Aliyun.Acs.aegis.Model.V20161111
 			}
 		}
 
-		public int? HttpStatusCode
+		public List<DescribeSuspiciousEvents_LogListItem> LogList
 		{
 			get
 			{
-				return httpStatusCode;
+				return logList;
 			}
 			set	
 			{
-				httpStatusCode = value;
+				logList = value;
 			}
 		}
 
-		public List<string> SuspiciousEvents
+		public class DescribeSuspiciousEvents_LogListItem
 		{
-			get
+
+			private string aliasEventType;
+
+			private long? lastTime;
+
+			private string level;
+
+			private string instanceName;
+
+			private long? groupId;
+
+			private string ip;
+
+			private string eventType;
+
+			private string uuid;
+
+			private long? firstTime;
+
+			private string instanceId;
+
+			private string tag;
+
+			private string aliasEventName;
+
+			private string osVersion;
+
+			private string clientIp;
+
+			private string eventName;
+
+			private List<DescribeSuspiciousEvents_DetailListItem> detailList;
+
+			public string AliasEventType
 			{
-				return suspiciousEvents;
+				get
+				{
+					return aliasEventType;
+				}
+				set	
+				{
+					aliasEventType = value;
+				}
 			}
-			set	
+
+			public long? LastTime
 			{
-				suspiciousEvents = value;
+				get
+				{
+					return lastTime;
+				}
+				set	
+				{
+					lastTime = value;
+				}
+			}
+
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
+				}
+			}
+
+			public string InstanceName
+			{
+				get
+				{
+					return instanceName;
+				}
+				set	
+				{
+					instanceName = value;
+				}
+			}
+
+			public long? GroupId
+			{
+				get
+				{
+					return groupId;
+				}
+				set	
+				{
+					groupId = value;
+				}
+			}
+
+			public string Ip
+			{
+				get
+				{
+					return ip;
+				}
+				set	
+				{
+					ip = value;
+				}
+			}
+
+			public string EventType
+			{
+				get
+				{
+					return eventType;
+				}
+				set	
+				{
+					eventType = value;
+				}
+			}
+
+			public string Uuid
+			{
+				get
+				{
+					return uuid;
+				}
+				set	
+				{
+					uuid = value;
+				}
+			}
+
+			public long? FirstTime
+			{
+				get
+				{
+					return firstTime;
+				}
+				set	
+				{
+					firstTime = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string Tag
+			{
+				get
+				{
+					return tag;
+				}
+				set	
+				{
+					tag = value;
+				}
+			}
+
+			public string AliasEventName
+			{
+				get
+				{
+					return aliasEventName;
+				}
+				set	
+				{
+					aliasEventName = value;
+				}
+			}
+
+			public string OsVersion
+			{
+				get
+				{
+					return osVersion;
+				}
+				set	
+				{
+					osVersion = value;
+				}
+			}
+
+			public string ClientIp
+			{
+				get
+				{
+					return clientIp;
+				}
+				set	
+				{
+					clientIp = value;
+				}
+			}
+
+			public string EventName
+			{
+				get
+				{
+					return eventName;
+				}
+				set	
+				{
+					eventName = value;
+				}
+			}
+
+			public List<DescribeSuspiciousEvents_DetailListItem> DetailList
+			{
+				get
+				{
+					return detailList;
+				}
+				set	
+				{
+					detailList = value;
+				}
+			}
+
+			public class DescribeSuspiciousEvents_DetailListItem
+			{
+
+				private string name;
+
+				private string type;
+
+				private string _value;
+
+				private string infoType;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
+				}
+
+				public string InfoType
+				{
+					get
+					{
+						return infoType;
+					}
+					set	
+					{
+						infoType = value;
+					}
+				}
 			}
 		}
 	}
