@@ -18,6 +18,7 @@
  */
 
 using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Net;
 using System.Text.RegularExpressions;
@@ -104,7 +105,7 @@ namespace Aliyun.Acs.Core
             string data = null;
             if (httpResponse.Content != null)
             {
-                data = System.Text.Encoding.UTF8.GetString(httpResponse.Content);
+                data = Encoding.UTF8.GetString(httpResponse.Content);
             }
 
             CommonResponse response = new CommonResponse
@@ -342,7 +343,8 @@ namespace Aliyun.Acs.Core
         {
             IReader reader = ReaderFactory.CreateInstance(format);
             UnmarshallerContext context = new UnmarshallerContext();
-            string body = System.Text.Encoding.UTF8.GetString(httpResponse.Content);
+            string body = Regex.Unescape(Encoding.UTF8.GetString(httpResponse.Content));
+
             if (request.CheckShowJsonItemName())
             {
                 context.ResponseDictionary = reader.Read(body, request.ActionName);
@@ -361,7 +363,7 @@ namespace Aliyun.Acs.Core
             string responseEndpoint = "Error";
             IReader reader = ReaderFactory.CreateInstance(format);
             UnmarshallerContext context = new UnmarshallerContext();
-            string body = System.Text.Encoding.Default.GetString(httpResponse.Content);
+            string body = Encoding.Default.GetString(httpResponse.Content);
             if (null == reader)
             {
                 context.ResponseDictionary = new Dictionary<string, string>();
