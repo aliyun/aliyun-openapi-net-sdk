@@ -22,8 +22,8 @@ script:
   # Start Proxy
   - sudo o_o &
   # Dotnet test
-  - dotnet build aliyun-net-sdk.sln
-  - if [ $ACCESS_KEY_ID == "" ]; then dotnet test aliyun-net-sdk-core.Tests /p:AltCover=true; else dotnet test aliyun-net-sdk.sln /p:AltCover=true; fi
+  - dotnet build aliyun-net-sdk-core.netstandard20.sln
+  - if [ $ACCESS_KEY_ID == "" ]; then dotnet test aliyun-net-sdk-core.Tests /p:AltCover=true; else dotnet test aliyun-net-sdk-core.netstandard20.sln /p:AltCover=true; fi
 after_success:
   - cd aliyun-net-sdk-core.Tests/
   - bash <(curl -s https://codecov.io/bash) -c -F unittest
