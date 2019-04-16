@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{a9b06291-7454-448e-8758-a57da2cf4dc8}</ProjectGuid>
+    <ProjectGuid>{bfcdc9b0-5be2-491a-9e25-7d7d7649881f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,61 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Sas\Model\V20181203\DescribeConcernNecessityResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeAlarmEventListRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeRiskCheckResultRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyOperateVulRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeEmgVulGroupResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyDeleteVulWhitelistRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeUserBaselineAuthorizationRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeVulListRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeVulListResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeAutoDelConfigResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyAutoDelConfigRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeUserBaselineAuthorizationResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeRiskCheckSummaryRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeGroupedVulRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeEmgVulGroupRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeVulWhitelistResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeAlarmEventListResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeSecurityCheckScheduleConfigRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeRiskCheckResultResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeGroupedVulResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyRiskSingleResultStatusResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeVulDetailsResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyRiskCheckStatusRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeRiskItemTypeRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyOperateVulResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeVulDetailsRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeSecurityCheckScheduleConfigResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeRiskCheckSummaryResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeConcernNecessityRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyAutoDelConfigResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyConcernNecessityResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyEmgVulSubmitRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeRiskItemTypeResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeSuspEventsResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\StartBaselineSecurityCheckResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeVulWhitelistRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeSuspEventsRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\StartBaselineSecurityCheckRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeAlarmEventDetailRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifySecurityCheckScheduleConfigRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyRiskSingleResultStatusRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyConcernNecessityRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyDeleteVulWhitelistResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeSuspEventDetailRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyCreateVulWhitelistResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyRiskCheckStatusResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeAutoDelConfigRequest.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifySecurityCheckScheduleConfigResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeSuspEventDetailResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\DescribeAlarmEventDetailResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyEmgVulSubmitResponse.cs" />
-	<Compile Include="Sas\Model\V20181203\ModifyCreateVulWhitelistRequest.cs" />
 	<Compile Include="Sas\Transform\V20181203\ModifyEmgVulSubmitResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeRiskCheckResultResponseUnmarshaller.cs" />
+	<Compile Include="Sas\Transform\V20181203\DescribeStrategyExecDetailResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\ModifyRiskCheckStatusResponseUnmarshaller.cs" />
+	<Compile Include="Sas\Transform\V20181203\DescribeCheckWarningsResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeAlarmEventDetailResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeSuspEventsResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\StartBaselineSecurityCheckResponseUnmarshaller.cs" />
@@ -105,19 +55,24 @@
 	<Compile Include="Sas\Transform\V20181203\ModifyDeleteVulWhitelistResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\ModifySecurityCheckScheduleConfigResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeRiskItemTypeResponseUnmarshaller.cs" />
+	<Compile Include="Sas\Transform\V20181203\DescribeStratetyResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeVulWhitelistResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeAutoDelConfigResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeEmgVulGroupResponseUnmarshaller.cs" />
+	<Compile Include="Sas\Transform\V20181203\DescribeWarningMachinesResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\ModifyRiskSingleResultStatusResponseUnmarshaller.cs" />
+	<Compile Include="Sas\Transform\V20181203\DescribeCheckWarningDetailResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeAlarmEventListResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\ModifyOperateVulResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\ModifyCreateVulWhitelistResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeVulListResponseUnmarshaller.cs" />
+	<Compile Include="Sas\Transform\V20181203\DescribeCheckWarningSummaryResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeGroupedVulResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeSuspEventDetailResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeRiskCheckSummaryResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeVulDetailsResponseUnmarshaller.cs" />
 	<Compile Include="Sas\Transform\V20181203\DescribeUserBaselineAuthorizationResponseUnmarshaller.cs" />
+	<Compile Include="Sas\Transform\V20181203\ModifyPushAllTaskResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

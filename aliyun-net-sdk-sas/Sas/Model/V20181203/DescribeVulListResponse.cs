@@ -453,7 +453,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 				private string absolutePath;
 
-				private List<DescribeVulList_RpmEntityListItem> rpmEntityList;
+				private List<DescribeVulList_RpmEntity> rpmEntityList;
 
 				private List<string> cveList;
 
@@ -555,7 +555,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public List<DescribeVulList_RpmEntityListItem> RpmEntityList
+				public List<DescribeVulList_RpmEntity> RpmEntityList
 				{
 					get
 					{
@@ -591,7 +591,7 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					}
 				}
 
-				public class DescribeVulList_RpmEntityListItem
+				public class DescribeVulList_RpmEntity
 				{
 
 					private string fullVersion;

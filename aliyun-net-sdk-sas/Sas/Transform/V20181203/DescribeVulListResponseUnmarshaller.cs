@@ -90,17 +90,17 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				necessity.Time_factor = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Necessity.Time_factor");
 				extendContentJson.Necessity = necessity;
 
-				List<DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ExtendContentJson.DescribeVulList_RpmEntityListItem> extendContentJson_rpmEntityList = new List<DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ExtendContentJson.DescribeVulList_RpmEntityListItem>();
+				List<DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ExtendContentJson.DescribeVulList_RpmEntity> extendContentJson_rpmEntityList = new List<DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ExtendContentJson.DescribeVulList_RpmEntity>();
 				for (int j = 0; j < context.Length("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList.Length"); j++) {
-					DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ExtendContentJson.DescribeVulList_RpmEntityListItem rpmEntityListItem = new DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ExtendContentJson.DescribeVulList_RpmEntityListItem();
-					rpmEntityListItem.FullVersion = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].FullVersion");
-					rpmEntityListItem.MatchDetail = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].MatchDetail");
-					rpmEntityListItem.Name = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Name");
-					rpmEntityListItem.Path = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Path");
-					rpmEntityListItem.UpdateCmd = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].UpdateCmd");
-					rpmEntityListItem.Version = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Version");
+					DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ExtendContentJson.DescribeVulList_RpmEntity rpmEntity = new DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ExtendContentJson.DescribeVulList_RpmEntity();
+					rpmEntity.FullVersion = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].FullVersion");
+					rpmEntity.MatchDetail = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].MatchDetail");
+					rpmEntity.Name = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Name");
+					rpmEntity.Path = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Path");
+					rpmEntity.UpdateCmd = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].UpdateCmd");
+					rpmEntity.Version = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.RpmEntityList["+ j +"].Version");
 
-					extendContentJson_rpmEntityList.Add(rpmEntityListItem);
+					extendContentJson_rpmEntityList.Add(rpmEntity);
 				}
 				extendContentJson.RpmEntityList = extendContentJson_rpmEntityList;
 				vulRecord.ExtendContentJson = extendContentJson;
