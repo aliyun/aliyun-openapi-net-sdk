@@ -158,7 +158,7 @@ class Program
 
 
 ## 发行说明
-每个版本的详细更改记录在 [发行说明](aliyun-net-sdk-core/ChangeLog.txt) 中。
+每个版本的详细更改记录在 [发行说明](aliyun-net-sdk-core/ChangeLog.md) 中。
 
 
 ## API参考

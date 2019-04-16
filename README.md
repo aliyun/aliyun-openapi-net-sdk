@@ -155,7 +155,7 @@ class Program
 
 
 ## Changelog
-Detailed changes for each release are documented in the [release notes](aliyun-net-sdk-core/ChangeLog.txt).
+Detailed changes for each release are documented in the [release notes](aliyun-net-sdk-core/ChangeLog.md).
 
 
 ## API Reference
