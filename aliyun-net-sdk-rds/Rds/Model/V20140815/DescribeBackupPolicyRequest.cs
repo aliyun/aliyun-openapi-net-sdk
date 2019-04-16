@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
     public class DescribeBackupPolicyRequest : RpcAcsRequest<DescribeBackupPolicyResponse>
     {
         public DescribeBackupPolicyRequest()
-            : base("Rds", "2014-08-15", "DescribeBackupPolicy", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeBackupPolicy", "Rds", "openAPI")
         {
         }
 
@@ -40,6 +41,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string ownerAccount;
 
 		private string action;
+
+		private string compressType;
 
 		private string dBInstanceId;
 
@@ -101,6 +104,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string CompressType
+		{
+			get
+			{
+				return compressType;
+			}
+			set	
+			{
+				compressType = value;
+				DictionaryUtil.Add(QueryParameters, "CompressType", value);
+			}
+		}
+
 		public string DBInstanceId
 		{
 			get
@@ -153,7 +169,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeBackupPolicyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeBackupPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeBackupPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

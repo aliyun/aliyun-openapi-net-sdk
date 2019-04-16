@@ -16,32 +16,43 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
     public class MigrateToOtherZoneRequest : RpcAcsRequest<MigrateToOtherZoneResponse>
     {
         public MigrateToOtherZoneRequest()
-            : base("Rds", "2014-08-15", "MigrateToOtherZone", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "MigrateToOtherZone", "Rds", "openAPI")
         {
         }
-
-		private string vSwitchId;
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
+		private string ownerAccount;
+
+		private string zoneIdSlave1;
+
+		private string zoneIdSlave2;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		private string vSwitchId;
+
 		private string effectiveTime;
 
-		private string ownerAccount;
+		private string vPCId;
 
 		private string action;
 
@@ -49,22 +60,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceId;
 
-		private long? ownerId;
-
-		private string accessKeyId;
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
+		private string category;
 
 		public long? ResourceOwnerId
 		{
@@ -92,6 +88,84 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string ZoneIdSlave1
+		{
+			get
+			{
+				return zoneIdSlave1;
+			}
+			set	
+			{
+				zoneIdSlave1 = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneIdSlave1", value);
+			}
+		}
+
+		public string ZoneIdSlave2
+		{
+			get
+			{
+				return zoneIdSlave2;
+			}
+			set	
+			{
+				zoneIdSlave2 = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneIdSlave2", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
 		public string EffectiveTime
 		{
 			get
@@ -105,16 +179,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
+		public string VPCId
 		{
 			get
 			{
-				return ownerAccount;
+				return vPCId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				vPCId = value;
+				DictionaryUtil.Add(QueryParameters, "VPCId", value);
 			}
 		}
 
@@ -157,33 +231,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? OwnerId
+		public string Category
 		{
 			get
 			{
-				return ownerId;
+				return category;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override MigrateToOtherZoneResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override MigrateToOtherZoneResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return MigrateToOtherZoneResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
     public class ModifyDBInstanceHAConfigRequest : RpcAcsRequest<ModifyDBInstanceHAConfigResponse>
     {
         public ModifyDBInstanceHAConfigRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "Rds", "openAPI")
         {
         }
 
@@ -168,7 +169,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override ModifyDBInstanceHAConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyDBInstanceHAConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyDBInstanceHAConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

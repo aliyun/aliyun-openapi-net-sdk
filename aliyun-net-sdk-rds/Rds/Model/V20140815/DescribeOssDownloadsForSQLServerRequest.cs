@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
     public class DescribeOssDownloadsForSQLServerRequest : RpcAcsRequest<DescribeOssDownloadsForSQLServerResponse>
     {
         public DescribeOssDownloadsForSQLServerRequest()
-            : base("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "Rds", "openAPI")
         {
         }
 
@@ -138,7 +139,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeOssDownloadsForSQLServerResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeOssDownloadsForSQLServerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeOssDownloadsForSQLServerResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

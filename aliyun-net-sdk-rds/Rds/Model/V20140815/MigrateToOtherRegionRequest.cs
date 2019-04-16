@@ -16,32 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
     public class MigrateToOtherRegionRequest : RpcAcsRequest<MigrateToOtherRegionResponse>
     {
         public MigrateToOtherRegionRequest()
-            : base("Rds", "2014-08-15", "MigrateToOtherRegion", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "MigrateToOtherRegion", "Rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string targetZoneId;
-
 		private string resourceOwnerAccount;
 
-		private string effectiveTime;
-
 		private string ownerAccount;
+
+		private string targetVSwitchId;
+
+		private long? ownerId;
+
+		private string accessKeyId;
+
+		private string targetVpcId;
+
+		private string targetZoneId;
+
+		private string effectiveTime;
 
 		private string action;
 
@@ -50,10 +59,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string targetRegionId;
 
 		private string switchTime;
-
-		private long? ownerId;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -65,19 +70,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string TargetZoneId
-		{
-			get
-			{
-				return targetZoneId;
-			}
-			set	
-			{
-				targetZoneId = value;
-				DictionaryUtil.Add(QueryParameters, "TargetZoneId", value);
 			}
 		}
 
@@ -94,19 +86,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EffectiveTime
-		{
-			get
-			{
-				return effectiveTime;
-			}
-			set	
-			{
-				effectiveTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -117,6 +96,84 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string TargetVSwitchId
+		{
+			get
+			{
+				return targetVSwitchId;
+			}
+			set	
+			{
+				targetVSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetVSwitchId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccessKeyId
+		{
+			get
+			{
+				return accessKeyId;
+			}
+			set	
+			{
+				accessKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+			}
+		}
+
+		public string TargetVpcId
+		{
+			get
+			{
+				return targetVpcId;
+			}
+			set	
+			{
+				targetVpcId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetVpcId", value);
+			}
+		}
+
+		public string TargetZoneId
+		{
+			get
+			{
+				return targetZoneId;
+			}
+			set	
+			{
+				targetZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetZoneId", value);
+			}
+		}
+
+		public string EffectiveTime
+		{
+			get
+			{
+				return effectiveTime;
+			}
+			set	
+			{
+				effectiveTime = value;
+				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
 			}
 		}
 
@@ -172,33 +229,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override MigrateToOtherRegionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override MigrateToOtherRegionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return MigrateToOtherRegionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

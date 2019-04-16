@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
     public class DescribeCloudDbExpertServiceRequest : RpcAcsRequest<DescribeCloudDbExpertServiceResponse>
     {
         public DescribeCloudDbExpertServiceRequest()
-            : base("Rds", "2014-08-15", "DescribeCloudDbExpertService", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeCloudDbExpertService", "Rds", "openAPI")
         {
         }
 
@@ -188,7 +189,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			return false;
 		}
 
-        public override DescribeCloudDbExpertServiceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeCloudDbExpertServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeCloudDbExpertServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

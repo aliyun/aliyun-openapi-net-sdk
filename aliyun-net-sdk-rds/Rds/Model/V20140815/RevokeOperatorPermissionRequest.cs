@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
     public class RevokeOperatorPermissionRequest : RpcAcsRequest<RevokeOperatorPermissionResponse>
     {
         public RevokeOperatorPermissionRequest()
-            : base("Rds", "2014-08-15", "RevokeOperatorPermission", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "RevokeOperatorPermission", "Rds", "openAPI")
         {
         }
 
@@ -138,7 +139,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override RevokeOperatorPermissionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RevokeOperatorPermissionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return RevokeOperatorPermissionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

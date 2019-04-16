@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Rds.Model.V20140815;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
@@ -68,8 +69,6 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstance.VSwitchId = context.StringValue("DescribeDBInstances.Items["+ i +"].VSwitchId");
 				dBInstance.ReplicateId = context.StringValue("DescribeDBInstances.Items["+ i +"].ReplicateId");
 				dBInstance.ResourceGroupId = context.StringValue("DescribeDBInstances.Items["+ i +"].ResourceGroupId");
-				dBInstance.DispenseMode = context.StringValue("DescribeDBInstances.Items["+ i +"].DispenseMode");
-				dBInstance.MasterRegion = context.StringValue("DescribeDBInstances.Items["+ i +"].MasterRegion");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId> dBInstance_readOnlyDBInstanceIds = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId>();
 				for (int j = 0; j < context.Length("DescribeDBInstances.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {
@@ -79,15 +78,6 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 					dBInstance_readOnlyDBInstanceIds.Add(readOnlyDBInstanceId);
 				}
 				dBInstance.ReadOnlyDBInstanceIds = dBInstance_readOnlyDBInstanceIds;
-
-				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_SlaveRegion> dBInstance_slaveRegions = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_SlaveRegion>();
-				for (int j = 0; j < context.Length("DescribeDBInstances.Items["+ i +"].SlaveRegions.Length"); j++) {
-					DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_SlaveRegion slaveRegion = new DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_SlaveRegion();
-					slaveRegion.RegionId = context.StringValue("DescribeDBInstances.Items["+ i +"].SlaveRegions["+ j +"].RegionId");
-
-					dBInstance_slaveRegions.Add(slaveRegion);
-				}
-				dBInstance.SlaveRegions = dBInstance_slaveRegions;
 
 				describeDBInstancesResponse_items.Add(dBInstance);
 			}

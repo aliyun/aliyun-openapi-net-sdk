@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
@@ -35,6 +36,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string localLogRetentionSpace;
 
 		private string highSpaceUsageProtection;
+
+		private string compressType;
 
 		public string RequestId
 		{
@@ -105,6 +108,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				highSpaceUsageProtection = value;
+			}
+		}
+
+		public string CompressType
+		{
+			get
+			{
+				return compressType;
+			}
+			set	
+			{
+				compressType = value;
 			}
 		}
 	}

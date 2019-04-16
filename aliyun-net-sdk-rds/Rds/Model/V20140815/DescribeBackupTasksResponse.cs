@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
@@ -66,6 +67,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private string taskAction;
 
 			private string backupJobId;
+
+			private string backupId;
 
 			public string BackupProgressStatus
 			{
@@ -136,6 +139,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					backupJobId = value;
+				}
+			}
+
+			public string BackupId
+			{
+				get
+				{
+					return backupId;
+				}
+				set	
+				{
+					backupId = value;
 				}
 			}
 		}

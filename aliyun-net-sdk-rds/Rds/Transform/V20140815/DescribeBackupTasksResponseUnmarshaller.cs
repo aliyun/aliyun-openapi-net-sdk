@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Rds.Model.V20140815;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				backupJob.Process = context.StringValue("DescribeBackupTasks.Items["+ i +"].Process");
 				backupJob.TaskAction = context.StringValue("DescribeBackupTasks.Items["+ i +"].TaskAction");
 				backupJob.BackupJobId = context.StringValue("DescribeBackupTasks.Items["+ i +"].BackupJobId");
+				backupJob.BackupId = context.StringValue("DescribeBackupTasks.Items["+ i +"].BackupId");
 
 				describeBackupTasksResponse_items.Add(backupJob);
 			}

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Rds.Model.V20140815;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
@@ -101,7 +102,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.TimeZone = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].TimeZone");
 				dBInstanceAttribute.Collation = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Collation");
 				dBInstanceAttribute.DispenseMode = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DispenseMode");
-				dBInstanceAttribute.MasterRegion = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].MasterRegion");
+				dBInstanceAttribute.MasterZone = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].MasterZone");
 
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra extra = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra();
 				extra.ReplicaGroupID = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupID");
@@ -115,14 +116,14 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				extra.DBInstanceId = extra_dBInstanceId;
 				dBInstanceAttribute.Extra = extra;
 
-				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveRegion> dBInstanceAttribute_slaveRegions = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveRegion>();
-				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.Items["+ i +"].SlaveRegions.Length"); j++) {
-					DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveRegion slaveRegion = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveRegion();
-					slaveRegion.RegionId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].SlaveRegions["+ j +"].RegionId");
+				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveZone> dBInstanceAttribute_slaveZones = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveZone>();
+				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.Items["+ i +"].SlaveZones.Length"); j++) {
+					DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveZone slaveZone = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveZone();
+					slaveZone.ZoneId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].SlaveZones["+ j +"].ZoneId");
 
-					dBInstanceAttribute_slaveRegions.Add(slaveRegion);
+					dBInstanceAttribute_slaveZones.Add(slaveZone);
 				}
-				dBInstanceAttribute.SlaveRegions = dBInstanceAttribute_slaveRegions;
+				dBInstanceAttribute.SlaveZones = dBInstanceAttribute_slaveZones;
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> dBInstanceAttribute_readOnlyDBInstanceIds = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_ReadOnlyDBInstanceId>();
 				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

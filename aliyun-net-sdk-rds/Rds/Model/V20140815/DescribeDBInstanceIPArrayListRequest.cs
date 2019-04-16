@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
     public class DescribeDBInstanceIPArrayListRequest : RpcAcsRequest<DescribeDBInstanceIPArrayListResponse>
     {
         public DescribeDBInstanceIPArrayListRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstanceIPArrayList", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstanceIPArrayList", "Rds", "openAPI")
         {
         }
 
@@ -153,7 +154,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeDBInstanceIPArrayListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDBInstanceIPArrayListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDBInstanceIPArrayListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

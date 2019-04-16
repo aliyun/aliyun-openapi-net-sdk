@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Rds.Model.V20140815;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
@@ -44,6 +45,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeBackupPolicyResponse.DuplicationContent = context.StringValue("DescribeBackupPolicy.DuplicationContent");
 			describeBackupPolicyResponse.HighSpaceUsageProtection = context.StringValue("DescribeBackupPolicy.HighSpaceUsageProtection");
 			describeBackupPolicyResponse.LogBackupFrequency = context.StringValue("DescribeBackupPolicy.LogBackupFrequency");
+			describeBackupPolicyResponse.CompressType = context.StringValue("DescribeBackupPolicy.CompressType");
 
 			DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation duplicationLocation = new DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation();
 			duplicationLocation.Sotrage = context.StringValue("DescribeBackupPolicy.DuplicationLocation.Sotrage");

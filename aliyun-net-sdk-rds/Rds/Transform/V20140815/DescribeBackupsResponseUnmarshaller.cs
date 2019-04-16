@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Rds.Model.V20140815;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
@@ -58,6 +59,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				backup.HostInstanceID = context.StringValue("DescribeBackups.Items["+ i +"].HostInstanceID");
 				backup.StoreStatus = context.StringValue("DescribeBackups.Items["+ i +"].StoreStatus");
 				backup.MetaStatus = context.StringValue("DescribeBackups.Items["+ i +"].MetaStatus");
+				backup.SlaveStatus = context.StringValue("DescribeBackups.Items["+ i +"].SlaveStatus");
 
 				describeBackupsResponse_items.Add(backup);
 			}

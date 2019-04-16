@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
     public class ModifyDBInstanceTDERequest : RpcAcsRequest<ModifyDBInstanceTDEResponse>
     {
         public ModifyDBInstanceTDERequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceTDE", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceTDE", "Rds", "openAPI")
         {
         }
 
@@ -39,11 +40,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
+		private string roleArn;
+
 		private string ownerAccount;
 
 		private string action;
 
 		private string dBInstanceId;
+
+		private string encryptionKey;
 
 		private long? ownerId;
 
@@ -90,6 +95,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string RoleArn
+		{
+			get
+			{
+				return roleArn;
+			}
+			set	
+			{
+				roleArn = value;
+				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -126,6 +144,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKey", value);
 			}
 		}
 
@@ -168,7 +199,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override ModifyDBInstanceTDEResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyDBInstanceTDEResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyDBInstanceTDEResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

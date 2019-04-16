@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
     public class DescribeDiagnosticReportListRequest : RpcAcsRequest<DescribeDiagnosticReportListResponse>
     {
         public DescribeDiagnosticReportListRequest()
-            : base("Rds", "2014-08-15", "DescribeDiagnosticReportList", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDiagnosticReportList", "Rds", "openAPI")
         {
         }
 
@@ -68,7 +69,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			return false;
 		}
 
-        public override DescribeDiagnosticReportListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDiagnosticReportListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDiagnosticReportListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
@@ -187,9 +188,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string dispenseMode;
 
-			private string masterRegion;
+			private string masterZone;
 
-			private List<DescribeDBInstanceAttribute_SlaveRegion> slaveRegions;
+			private List<DescribeDBInstanceAttribute_SlaveZone> slaveZones;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
@@ -987,27 +988,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public string MasterRegion
+			public string MasterZone
 			{
 				get
 				{
-					return masterRegion;
+					return masterZone;
 				}
 				set	
 				{
-					masterRegion = value;
+					masterZone = value;
 				}
 			}
 
-			public List<DescribeDBInstanceAttribute_SlaveRegion> SlaveRegions
+			public List<DescribeDBInstanceAttribute_SlaveZone> SlaveZones
 			{
 				get
 				{
-					return slaveRegions;
+					return slaveZones;
 				}
 				set	
 				{
-					slaveRegions = value;
+					slaveZones = value;
 				}
 			}
 
@@ -1035,20 +1036,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public class DescribeDBInstanceAttribute_SlaveRegion
+			public class DescribeDBInstanceAttribute_SlaveZone
 			{
 
-				private string regionId;
+				private string zoneId;
 
-				public string RegionId
+				public string ZoneId
 				{
 					get
 					{
-						return regionId;
+						return zoneId;
 					}
 					set	
 					{
-						regionId = value;
+						zoneId = value;
 					}
 				}
 			}

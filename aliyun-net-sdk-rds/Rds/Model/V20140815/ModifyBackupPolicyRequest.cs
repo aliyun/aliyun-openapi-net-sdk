@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
     public class ModifyBackupPolicyRequest : RpcAcsRequest<ModifyBackupPolicyResponse>
     {
         public ModifyBackupPolicyRequest()
-            : base("Rds", "2014-08-15", "ModifyBackupPolicy", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyBackupPolicy", "Rds", "openAPI")
         {
         }
 
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string ownerAccount;
 
 		private string logBackupFrequency;
+
+		private string compressType;
 
 		private string backupLog;
 
@@ -150,6 +153,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				logBackupFrequency = value;
 				DictionaryUtil.Add(QueryParameters, "LogBackupFrequency", value);
+			}
+		}
+
+		public string CompressType
+		{
+			get
+			{
+				return compressType;
+			}
+			set	
+			{
+				compressType = value;
+				DictionaryUtil.Add(QueryParameters, "CompressType", value);
 			}
 		}
 
@@ -348,7 +364,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override ModifyBackupPolicyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyBackupPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyBackupPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

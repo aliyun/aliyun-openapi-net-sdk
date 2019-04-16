@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Rds.Transform;
 using Aliyun.Acs.Rds.Transform.V20140815;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
     public class DescribeDBInstanceSSLRequest : RpcAcsRequest<DescribeDBInstanceSSLResponse>
     {
         public DescribeDBInstanceSSLRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstanceSSL", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstanceSSL", "Rds", "openAPI")
         {
         }
 
@@ -138,7 +139,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeDBInstanceSSLResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDBInstanceSSLResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDBInstanceSSLResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
