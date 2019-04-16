@@ -148,6 +148,7 @@ class Program
 * [Product Nuget Package](docs/5-Packages-EN.md)
 * [Log](docs/6-Log-EN.md)
 * [Client](docs/7-Client-EN.md)
+* [Endpoint](docs/8-Endpoint-EN.md)
 
 
 ## Issues
