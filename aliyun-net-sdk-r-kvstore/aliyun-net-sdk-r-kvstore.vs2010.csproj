@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{caed26ae-65f6-4daa-8601-777920dac9f8}</ProjectGuid>
+    <ProjectGuid>{366758bb-fcab-4457-a525-1b005f54c841}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,36 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="R_kvstore\Model\V20150101\ReleaseInstancePublicConnectionResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\CreateCacheAnalysisTaskRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\DescribeCacheAnalysisReportResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\DescribeAuditRecordsResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\ListTagResourcesRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\DescribeAuditRecordsRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\ModifyDBInstanceMonitorRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\DescribeIntranetAttributeResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\DescribeCacheAnalysisReportListResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\TagResourcesResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\MigrateToOtherZoneResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\ListTagResourcesResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\DescribeCacheAnalysisReportListRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\ReleaseInstancePublicConnectionRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\CreateCacheAnalysisTaskResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\ModifyAuditLogConfigRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\AllocateInstancePublicConnectionResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\AllocateInstancePublicConnectionRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\DescribeDBInstanceMonitorRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\ModifyAuditLogConfigResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\UntagResourcesResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\DescribeCacheAnalysisReportRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\ModifyIntranetAttributeRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\TagResourcesRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\ModifyIntranetAttributeResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\MigrateToOtherZoneRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\DescribeIntranetAttributeRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\ModifyDBInstanceMonitorResponse.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\UntagResourcesRequest.cs" />
-	<Compile Include="R_kvstore\Model\V20150101\DescribeDBInstanceMonitorResponse.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\GrantAccountPrivilegeResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeMonthlyServiceStatusResponseUnmarshaller.cs" />
 	<Compile Include="R_kvstore\Transform\V20150101\DescribeSlowLogRecordsResponseUnmarshaller.cs" />
