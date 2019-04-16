@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
@@ -159,6 +160,16 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 			private bool? premium;
 
+			private string domainAuditStatus;
+
+			private string expirationDateStatus;
+
+			private string registrantType;
+
+			private string remark;
+
+			private int? expirationCurrDateDiff;
+
 			public string DomainName
 			{
 				get
@@ -276,6 +287,66 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				set	
 				{
 					premium = value;
+				}
+			}
+
+			public string DomainAuditStatus
+			{
+				get
+				{
+					return domainAuditStatus;
+				}
+				set	
+				{
+					domainAuditStatus = value;
+				}
+			}
+
+			public string ExpirationDateStatus
+			{
+				get
+				{
+					return expirationDateStatus;
+				}
+				set	
+				{
+					expirationDateStatus = value;
+				}
+			}
+
+			public string RegistrantType
+			{
+				get
+				{
+					return registrantType;
+				}
+				set	
+				{
+					registrantType = value;
+				}
+			}
+
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
+				}
+			}
+
+			public int? ExpirationCurrDateDiff
+			{
+				get
+				{
+					return expirationCurrDateDiff;
+				}
+				set	
+				{
+					expirationCurrDateDiff = value;
 				}
 			}
 		}

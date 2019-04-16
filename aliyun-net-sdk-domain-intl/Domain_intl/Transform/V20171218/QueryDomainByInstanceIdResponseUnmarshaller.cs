@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Domain_intl.Model.V20171218;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Domain_intl.Model.V20171218;
 
 namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 {
@@ -44,6 +45,14 @@ namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 			queryDomainByInstanceIdResponse.Premium = context.BooleanValue("QueryDomainByInstanceId.Premium");
 			queryDomainByInstanceIdResponse.EmailVerificationStatus = context.IntegerValue("QueryDomainByInstanceId.EmailVerificationStatus");
 			queryDomainByInstanceIdResponse.EmailVerificationClientHold = context.BooleanValue("QueryDomainByInstanceId.EmailVerificationClientHold");
+			queryDomainByInstanceIdResponse.RealNameStatus = context.StringValue("QueryDomainByInstanceId.RealNameStatus");
+			queryDomainByInstanceIdResponse.RegistrantUpdatingStatus = context.StringValue("QueryDomainByInstanceId.RegistrantUpdatingStatus");
+			queryDomainByInstanceIdResponse.TransferOutStatus = context.StringValue("QueryDomainByInstanceId.TransferOutStatus");
+			queryDomainByInstanceIdResponse.RegistrantType = context.StringValue("QueryDomainByInstanceId.RegistrantType");
+			queryDomainByInstanceIdResponse.DomainNameVerificationStatus = context.StringValue("QueryDomainByInstanceId.DomainNameVerificationStatus");
+			queryDomainByInstanceIdResponse.RequestId = context.StringValue("QueryDomainByInstanceId.RequestId");
+			queryDomainByInstanceIdResponse.RegistrationDateLong = context.LongValue("QueryDomainByInstanceId.RegistrationDateLong");
+			queryDomainByInstanceIdResponse.ExpirationDateLong = context.LongValue("QueryDomainByInstanceId.ExpirationDateLong");
 
 			List<string> queryDomainByInstanceIdResponse_dnsList = new List<string>();
 			for (int i = 0; i < context.Length("QueryDomainByInstanceId.DnsList.Length"); i++) {

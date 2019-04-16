@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Domain_intl.Transform;
 using Aliyun.Acs.Domain_intl.Transform.V20171218;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
     public class VerifyEmailRequest : RpcAcsRequest<VerifyEmailResponse>
     {
         public VerifyEmailRequest()
-            : base("Domain_intl", "2017-12-18", "VerifyEmail", "domain", "openAPI")
+            : base("Domain-intl", "2017-12-18", "VerifyEmail", "domain", "openAPI")
         {
         }
 
@@ -83,7 +84,7 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			return false;
 		}
 
-        public override VerifyEmailResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override VerifyEmailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return VerifyEmailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Domain_intl.Model.V20171218;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Domain_intl.Model.V20171218;
 
 namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 {
@@ -57,6 +58,9 @@ namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 				registrantProfile.Telephone = context.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].Telephone");
 				registrantProfile.TelExt = context.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].TelExt");
 				registrantProfile.EmailVerificationStatus = context.IntegerValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].EmailVerificationStatus");
+				registrantProfile.RegistrantType = context.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].RegistrantType");
+				registrantProfile.RealNameStatus = context.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].RealNameStatus");
+				registrantProfile.RegistrantProfileType = context.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].RegistrantProfileType");
 
 				queryRegistrantProfilesResponse_registrantProfiles.Add(registrantProfile);
 			}

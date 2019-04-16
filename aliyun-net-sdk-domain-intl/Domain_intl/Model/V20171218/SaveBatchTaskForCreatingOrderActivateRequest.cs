@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Domain_intl.Transform;
 using Aliyun.Acs.Domain_intl.Transform.V20171218;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
     public class SaveBatchTaskForCreatingOrderActivateRequest : RpcAcsRequest<SaveBatchTaskForCreatingOrderActivateResponse>
     {
         public SaveBatchTaskForCreatingOrderActivateRequest()
-            : base("Domain_intl", "2017-12-18", "SaveBatchTaskForCreatingOrderActivate", "domain", "openAPI")
+            : base("Domain-intl", "2017-12-18", "SaveBatchTaskForCreatingOrderActivate", "domain", "openAPI")
         {
         }
 
@@ -69,6 +70,7 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Dns1", orderActivateParams[i].Dns1);
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".DomainName", orderActivateParams[i].DomainName);
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".RegistrantProfileId", orderActivateParams[i].RegistrantProfileId);
+					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".RegistrantType", orderActivateParams[i].RegistrantType);
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".Telephone", orderActivateParams[i].Telephone);
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".TrademarkDomainActivation", orderActivateParams[i].TrademarkDomainActivation);
 					DictionaryUtil.Add(QueryParameters,"OrderActivateParam." + (i + 1) + ".AliyunDns", orderActivateParams[i].AliyunDns);
@@ -183,6 +185,8 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			private string domainName;
 
 			private long? registrantProfileId;
+
+			private string registrantType;
 
 			private string telephone;
 
@@ -324,6 +328,18 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				}
 			}
 
+			public string RegistrantType
+			{
+				get
+				{
+					return registrantType;
+				}
+				set	
+				{
+					registrantType = value;
+				}
+			}
+
 			public string Telephone
 			{
 				get
@@ -450,7 +466,7 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			return false;
 		}
 
-        public override SaveBatchTaskForCreatingOrderActivateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SaveBatchTaskForCreatingOrderActivateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SaveBatchTaskForCreatingOrderActivateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

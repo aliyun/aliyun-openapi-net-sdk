@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Domain_intl.Model.V20171218;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Domain_intl.Model.V20171218;
 
 namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 {
@@ -51,6 +52,11 @@ namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 				domain.ExpirationDateLong = context.LongValue("QueryDomainList.Data["+ i +"].ExpirationDateLong");
 				domain.RegistrationDateLong = context.LongValue("QueryDomainList.Data["+ i +"].RegistrationDateLong");
 				domain.Premium = context.BooleanValue("QueryDomainList.Data["+ i +"].Premium");
+				domain.DomainAuditStatus = context.StringValue("QueryDomainList.Data["+ i +"].DomainAuditStatus");
+				domain.ExpirationDateStatus = context.StringValue("QueryDomainList.Data["+ i +"].ExpirationDateStatus");
+				domain.RegistrantType = context.StringValue("QueryDomainList.Data["+ i +"].RegistrantType");
+				domain.Remark = context.StringValue("QueryDomainList.Data["+ i +"].Remark");
+				domain.ExpirationCurrDateDiff = context.IntegerValue("QueryDomainList.Data["+ i +"].ExpirationCurrDateDiff");
 
 				queryDomainListResponse_data.Add(domain);
 			}

@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Domain_intl.Transform;
 using Aliyun.Acs.Domain_intl.Transform.V20171218;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
     public class SaveSingleTaskForCreatingOrderTransferRequest : RpcAcsRequest<SaveSingleTaskForCreatingOrderTransferResponse>
     {
         public SaveSingleTaskForCreatingOrderTransferRequest()
-            : base("Domain_intl", "2017-12-18", "SaveSingleTaskForCreatingOrderTransfer", "domain", "openAPI")
+            : base("Domain-intl", "2017-12-18", "SaveSingleTaskForCreatingOrderTransfer", "domain", "openAPI")
         {
         }
 
@@ -188,7 +189,7 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			return false;
 		}
 
-        public override SaveSingleTaskForCreatingOrderTransferResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SaveSingleTaskForCreatingOrderTransferResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SaveSingleTaskForCreatingOrderTransferResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

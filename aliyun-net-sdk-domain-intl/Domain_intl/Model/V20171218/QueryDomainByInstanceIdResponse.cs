@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
@@ -51,6 +52,22 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 		private int? emailVerificationStatus;
 
 		private bool? emailVerificationClientHold;
+
+		private string realNameStatus;
+
+		private string registrantUpdatingStatus;
+
+		private string transferOutStatus;
+
+		private string registrantType;
+
+		private string domainNameVerificationStatus;
+
+		private string requestId;
+
+		private long? registrationDateLong;
+
+		private long? expirationDateLong;
 
 		private List<string> dnsList;
 
@@ -219,6 +236,102 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			set	
 			{
 				emailVerificationClientHold = value;
+			}
+		}
+
+		public string RealNameStatus
+		{
+			get
+			{
+				return realNameStatus;
+			}
+			set	
+			{
+				realNameStatus = value;
+			}
+		}
+
+		public string RegistrantUpdatingStatus
+		{
+			get
+			{
+				return registrantUpdatingStatus;
+			}
+			set	
+			{
+				registrantUpdatingStatus = value;
+			}
+		}
+
+		public string TransferOutStatus
+		{
+			get
+			{
+				return transferOutStatus;
+			}
+			set	
+			{
+				transferOutStatus = value;
+			}
+		}
+
+		public string RegistrantType
+		{
+			get
+			{
+				return registrantType;
+			}
+			set	
+			{
+				registrantType = value;
+			}
+		}
+
+		public string DomainNameVerificationStatus
+		{
+			get
+			{
+				return domainNameVerificationStatus;
+			}
+			set	
+			{
+				domainNameVerificationStatus = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public long? RegistrationDateLong
+		{
+			get
+			{
+				return registrationDateLong;
+			}
+			set	
+			{
+				registrationDateLong = value;
+			}
+		}
+
+		public long? ExpirationDateLong
+		{
+			get
+			{
+				return expirationDateLong;
+			}
+			set	
+			{
+				expirationDateLong = value;
 			}
 		}
 
