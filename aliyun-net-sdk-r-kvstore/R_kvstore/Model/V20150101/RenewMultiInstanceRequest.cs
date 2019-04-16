@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class RenewMultiInstanceRequest : RpcAcsRequest<RenewMultiInstanceResponse>
     {
         public RenewMultiInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "RenewMultiInstance", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "RenewMultiInstance", "R-kvstore", "openAPI")
         {
         }
 

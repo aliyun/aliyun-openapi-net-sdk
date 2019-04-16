@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class SwitchNetworkRequest : RpcAcsRequest<SwitchNetworkResponse>
     {
         public SwitchNetworkRequest()
-            : base("R-kvstore", "2015-01-01", "SwitchNetwork", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "SwitchNetwork", "R-kvstore", "openAPI")
         {
         }
 

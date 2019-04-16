@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class CreateCacheAnalysisTaskRequest : RpcAcsRequest<CreateCacheAnalysisTaskResponse>
     {
         public CreateCacheAnalysisTaskRequest()
-            : base("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "R-kvstore", "openAPI")
         {
         }
 

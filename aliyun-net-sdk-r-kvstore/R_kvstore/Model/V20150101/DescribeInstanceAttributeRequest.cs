@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeInstanceAttributeRequest : RpcAcsRequest<DescribeInstanceAttributeResponse>
     {
         public DescribeInstanceAttributeRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeInstanceAttribute", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeInstanceAttribute", "R-kvstore", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeParameterModificationHistoryRequest : RpcAcsRequest<DescribeParameterModificationHistoryResponse>
     {
         public DescribeParameterModificationHistoryRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeParameterModificationHistory", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeParameterModificationHistory", "R-kvstore", "openAPI")
         {
         }
 

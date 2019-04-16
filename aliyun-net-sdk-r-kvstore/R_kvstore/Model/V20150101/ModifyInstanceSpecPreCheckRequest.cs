@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyInstanceSpecPreCheckRequest : RpcAcsRequest<ModifyInstanceSpecPreCheckResponse>
     {
         public ModifyInstanceSpecPreCheckRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyInstanceSpecPreCheck", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyInstanceSpecPreCheck", "R-kvstore", "openAPI")
         {
         }
 

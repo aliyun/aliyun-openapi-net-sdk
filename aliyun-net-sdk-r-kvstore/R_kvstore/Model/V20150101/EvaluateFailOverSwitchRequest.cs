@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class EvaluateFailOverSwitchRequest : RpcAcsRequest<EvaluateFailOverSwitchResponse>
     {
         public EvaluateFailOverSwitchRequest()
-            : base("R-kvstore", "2015-01-01", "EvaluateFailOverSwitch", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "EvaluateFailOverSwitch", "R-kvstore", "openAPI")
         {
         }
 

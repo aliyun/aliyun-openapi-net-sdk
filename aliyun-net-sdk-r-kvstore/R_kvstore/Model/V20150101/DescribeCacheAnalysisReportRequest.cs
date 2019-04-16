@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeCacheAnalysisReportRequest : RpcAcsRequest<DescribeCacheAnalysisReportResponse>
     {
         public DescribeCacheAnalysisReportRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReport", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReport", "R-kvstore", "openAPI")
         {
         }
 

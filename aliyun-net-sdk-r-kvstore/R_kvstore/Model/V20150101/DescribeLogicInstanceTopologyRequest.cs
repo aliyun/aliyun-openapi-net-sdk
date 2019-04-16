@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeLogicInstanceTopologyRequest : RpcAcsRequest<DescribeLogicInstanceTopologyResponse>
     {
         public DescribeLogicInstanceTopologyRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeLogicInstanceTopology", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeLogicInstanceTopology", "R-kvstore", "openAPI")
         {
         }
 

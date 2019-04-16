@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class RevokeAccountPrivilegeRequest : RpcAcsRequest<RevokeAccountPrivilegeResponse>
     {
         public RevokeAccountPrivilegeRequest()
-            : base("R-kvstore", "2015-01-01", "RevokeAccountPrivilege", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "RevokeAccountPrivilege", "R-kvstore", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class CreateBackupRequest : RpcAcsRequest<CreateBackupResponse>
     {
         public CreateBackupRequest()
-            : base("R-kvstore", "2015-01-01", "CreateBackup", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "CreateBackup", "R-kvstore", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class CreateStaticVerificationRequest : RpcAcsRequest<CreateStaticVerificationResponse>
     {
         public CreateStaticVerificationRequest()
-            : base("R-kvstore", "2015-01-01", "CreateStaticVerification", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "CreateStaticVerification", "R-kvstore", "openAPI")
         {
         }
 

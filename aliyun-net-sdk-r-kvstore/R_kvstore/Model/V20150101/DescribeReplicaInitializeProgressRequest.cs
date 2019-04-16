@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeReplicaInitializeProgressRequest : RpcAcsRequest<DescribeReplicaInitializeProgressResponse>
     {
         public DescribeReplicaInitializeProgressRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeReplicaInitializeProgress", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeReplicaInitializeProgress", "R-kvstore", "openAPI")
         {
         }
 

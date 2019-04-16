@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeBackupPolicyRequest : RpcAcsRequest<DescribeBackupPolicyResponse>
     {
         public DescribeBackupPolicyRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeBackupPolicy", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeBackupPolicy", "R-kvstore", "openAPI")
         {
         }
 

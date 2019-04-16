@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeZonesRequest : RpcAcsRequest<DescribeZonesResponse>
     {
         public DescribeZonesRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeZones", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeZones", "R-kvstore", "openAPI")
         {
         }
 

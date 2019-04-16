@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class VerifyPasswordRequest : RpcAcsRequest<VerifyPasswordResponse>
     {
         public VerifyPasswordRequest()
-            : base("R-kvstore", "2015-01-01", "VerifyPassword", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "VerifyPassword", "R-kvstore", "openAPI")
         {
         }
 

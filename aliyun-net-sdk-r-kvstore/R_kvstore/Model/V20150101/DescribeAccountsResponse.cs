@@ -56,7 +56,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribeAccounts_Account
 		{
 
-			private int? instanceId;
+			private string instanceId;
 
 			private string accountName;
 
@@ -70,7 +70,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private List<DescribeAccounts_DatabasePrivilege> databasePrivileges;
 
-			public int? InstanceId
+			public string InstanceId
 			{
 				get
 				{

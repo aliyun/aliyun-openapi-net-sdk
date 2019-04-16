@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyDBInstanceConnectionStringRequest : RpcAcsRequest<ModifyDBInstanceConnectionStringResponse>
     {
         public ModifyDBInstanceConnectionStringRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "R-kvstore", "openAPI")
         {
         }
 

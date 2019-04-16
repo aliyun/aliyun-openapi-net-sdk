@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeCertificationRequest : RpcAcsRequest<DescribeCertificationResponse>
     {
         public DescribeCertificationRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeCertification", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeCertification", "R-kvstore", "openAPI")
         {
         }
 

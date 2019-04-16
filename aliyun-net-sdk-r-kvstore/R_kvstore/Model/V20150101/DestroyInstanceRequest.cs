@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DestroyInstanceRequest : RpcAcsRequest<DestroyInstanceResponse>
     {
         public DestroyInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "DestroyInstance", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DestroyInstance", "R-kvstore", "openAPI")
         {
         }
 

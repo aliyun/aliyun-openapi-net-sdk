@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyInstanceNetExpireTimeRequest : RpcAcsRequest<ModifyInstanceNetExpireTimeResponse>
     {
         public ModifyInstanceNetExpireTimeRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime", "R-kvstore", "openAPI")
         {
         }
 

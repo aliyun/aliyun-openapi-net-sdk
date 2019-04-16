@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifySecurityIpsRequest : RpcAcsRequest<ModifySecurityIpsResponse>
     {
         public ModifySecurityIpsRequest()
-            : base("R-kvstore", "2015-01-01", "ModifySecurityIps", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifySecurityIps", "R-kvstore", "openAPI")
         {
         }
 

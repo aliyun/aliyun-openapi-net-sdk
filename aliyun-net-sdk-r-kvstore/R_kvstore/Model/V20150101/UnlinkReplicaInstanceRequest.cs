@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class UnlinkReplicaInstanceRequest : RpcAcsRequest<UnlinkReplicaInstanceResponse>
     {
         public UnlinkReplicaInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "UnlinkReplicaInstance", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "UnlinkReplicaInstance", "R-kvstore", "openAPI")
         {
         }
 

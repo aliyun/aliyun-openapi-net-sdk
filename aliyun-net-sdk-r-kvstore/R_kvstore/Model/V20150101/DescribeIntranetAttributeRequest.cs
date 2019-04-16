@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeIntranetAttributeRequest : RpcAcsRequest<DescribeIntranetAttributeResponse>
     {
         public DescribeIntranetAttributeRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeIntranetAttribute", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeIntranetAttribute", "R-kvstore", "openAPI")
         {
         }
 

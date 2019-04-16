@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
         public UntagResourcesRequest()
-            : base("R-kvstore", "2015-01-01", "UntagResources", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "UntagResources", "R-kvstore", "openAPI")
         {
         }
 

@@ -36,7 +36,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeAccountsResponse.DescribeAccounts_Account> describeAccountsResponse_accounts = new List<DescribeAccountsResponse.DescribeAccounts_Account>();
 			for (int i = 0; i < context.Length("DescribeAccounts.Accounts.Length"); i++) {
 				DescribeAccountsResponse.DescribeAccounts_Account account = new DescribeAccountsResponse.DescribeAccounts_Account();
-				account.InstanceId = context.IntegerValue("DescribeAccounts.Accounts["+ i +"].InstanceId");
+				account.InstanceId = context.StringValue("DescribeAccounts.Accounts["+ i +"].InstanceId");
 				account.AccountName = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountName");
 				account.AccountStatus = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountStatus");
 				account.AccountType = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountType");

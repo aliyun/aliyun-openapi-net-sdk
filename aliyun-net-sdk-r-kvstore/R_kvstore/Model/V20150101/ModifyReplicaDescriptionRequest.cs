@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyReplicaDescriptionRequest : RpcAcsRequest<ModifyReplicaDescriptionResponse>
     {
         public ModifyReplicaDescriptionRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyReplicaDescription", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyReplicaDescription", "R-kvstore", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeStrategyRequest : RpcAcsRequest<DescribeStrategyResponse>
     {
         public DescribeStrategyRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeStrategy", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeStrategy", "R-kvstore", "openAPI")
         {
         }
 
