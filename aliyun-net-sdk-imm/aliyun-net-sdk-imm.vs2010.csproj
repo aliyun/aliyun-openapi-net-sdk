@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{00f14c67-4f9b-4024-9ff0-94407a2b3e3a}</ProjectGuid>
+    <ProjectGuid>{e9e66b6f-f601-4c30-83f2-4d85763cafd8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,47 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Imm\Model\V20170906\ListImagesRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\DetectImageFacesRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\DetectImageTagsResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\GetImageResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\GetSetRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\ListVideoFramesResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\DetectImageFacesResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\ListVideoAudiosResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\CreateCADConversionTaskRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\FindSimilarFacesRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\UpdateFaceGroupResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\FindImagesResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\DetectImageLogosResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\UpdateSetResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\DetectImageLogosRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\UpdateSetRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\DeleteSetRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\CompareImageFacesResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\DeleteVideoRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\DeleteImageResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\FindImagesByTagNamesRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\DeleteVideoResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\ListSetsResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\ListSetsRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\UpdateFaceGroupRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\CreateSetRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\FindImagesByTagNamesResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\IndexImageRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\IndexImageResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\DeleteSetResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\CreateCADConversionTaskResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\ListVideoFramesRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\DetectImageTagsRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\FindImagesRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\GetSetResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\FindSimilarFacesResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\DeleteImageRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\CreateSetResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\CompareImageFacesRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\ListVideoAudiosRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\GetImageRequest.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetDocIndexResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetProjectResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateTagSetResponseUnmarshaller.cs" />
