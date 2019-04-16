@@ -1,3 +1,6 @@
+### 2019-04-16 Version 1.3.1
+* Fix '\u' unescape character resolve error when parse http response content
+
 ### 2019-04-15 Version 1.3.0
 * Add support target net45 reference 
 
