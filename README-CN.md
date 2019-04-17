@@ -151,6 +151,7 @@ class Program
 * [产品Nuget包](docs/5-Packages-CN.md)
 * [日志](docs/6-Log-CN.md)
 * [客户端](docs/7-Client-CN.md)
+* [Endpoint](docs/8-Endpoint-CN.md)
 
 
 ## 问题
@@ -158,7 +159,7 @@ class Program
 
 
 ## 发行说明
-每个版本的详细更改记录在 [发行说明](aliyun-net-sdk-core/ChangeLog.txt) 中。
+每个版本的详细更改记录在 [发行说明](aliyun-net-sdk-core/ChangeLog.md) 中。
 
 
 ## API参考

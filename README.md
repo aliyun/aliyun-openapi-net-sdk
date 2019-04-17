@@ -148,6 +148,7 @@ class Program
 * [Product Nuget Package](docs/5-Packages-EN.md)
 * [Log](docs/6-Log-EN.md)
 * [Client](docs/7-Client-EN.md)
+* [Endpoint](docs/8-Endpoint-EN.md)
 
 
 ## Issues
@@ -155,7 +156,7 @@ class Program
 
 
 ## Changelog
-Detailed changes for each release are documented in the [release notes](aliyun-net-sdk-core/ChangeLog.txt).
+Detailed changes for each release are documented in the [release notes](aliyun-net-sdk-core/ChangeLog.md).
 
 
 ## API Reference
