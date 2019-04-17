@@ -9,7 +9,7 @@
 DefaultProfile.AddEndpoint("<endpointName>", "<regionId>", "<product>", "<domain>")
 ```
 
-## 以 dyvmsapi 为例
+下面以 `dyvmsapi` 为例 手动添加 `Endpoint`
 ```c#
 //...
 DefaultProfile.AddEndpoint("cn-hangzhou", "cn-hangzhou", "Dyvmsapi", "dyvmsapi.aliyuncs.com");

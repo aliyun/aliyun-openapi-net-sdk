@@ -8,7 +8,7 @@ Many times you will encounter an inability to find an Endpoint and you need to m
 DefaultProfile.AddEndpoint("<endpointName>", "<regionId>", "<product>", "<domain>")
 ```
 
-## Taking dyvmsapi as an example
+Let's add `Endpoint` manually by taking `dyvmsapi` as an example.
 ```c#
 //...
 DefaultProfile.AddEndpoint("cn-hangzhou", "cn-hangzhou", "Dyvmsapi", "dyvmsapi.aliyuncs.com");
