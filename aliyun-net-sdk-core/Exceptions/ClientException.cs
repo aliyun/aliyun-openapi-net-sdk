@@ -39,6 +39,9 @@ namespace Aliyun.Acs.Core.Exceptions
             ErrorType = ErrorType.Client;
         }
 
-        public ClientException(string message) : base(message) { }
+        public ClientException(string message) : base(message)
+        {
+            ErrorMessage = message;
+        }
     }
 }
