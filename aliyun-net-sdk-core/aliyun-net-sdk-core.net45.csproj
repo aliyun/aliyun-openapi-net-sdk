@@ -9,16 +9,16 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs.Core</RootNamespace>
-    <AssemblyName>aliyun-net-sdk-core</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AssemblyName>aliyun-net-sdk-core.net45</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\net45\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -36,6 +36,18 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.5.0\lib\net45\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Exceptions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=fc5550082a9c642c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Exceptions.4.0.0\lib\net45\Serilog.Exceptions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.4.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -47,27 +59,41 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcsError.cs" />
-    <Compile Include="Auth\AlibabaCloudCredentials.cs" />
-    <Compile Include="Auth\AlibabaCloudCredentialsProvider.cs" />
-    <Compile Include="Auth\BasicCredentials.cs" />
-    <Compile Include="Auth\BasicSessionCredentials.cs" />
     <Compile Include="Auth\CredentialsBackupCompatibilityAdaptor.cs" />
-    <Compile Include="Auth\ECSMetadataServiceCredentialsFetcher.cs" />
-    <Compile Include="Auth\HmacSHA1Signer.cs" />
-    <Compile Include="Auth\InstanceProfileCredentials.cs" />
-    <Compile Include="Auth\InstanceProfileCredentialsProvider.cs" />
-    <Compile Include="Auth\KeyPairCredentials.cs" />
-    <Compile Include="Auth\LegacyCredentials.cs" />
-    <Compile Include="Auth\SHA256withRSASigner.cs" />
-    <Compile Include="Auth\Signer.cs" />
-    <Compile Include="Auth\StaticCredentialsProvider.cs" />
-    <Compile Include="Auth\STSAssumeRoleSessionCredentialsProvider.cs" />
+    <Compile Include="Auth\Credential\AlibabaCloudCredentials.cs" />
+    <Compile Include="Auth\Credential\BasicCredentials.cs" />
+    <Compile Include="Auth\Credential\BasicSessionCredentials.cs" />
+    <Compile Include="Auth\Credential\BearerTokenCredential.cs" />
+    <Compile Include="Auth\Credential\Credential.cs" />
+    <Compile Include="Auth\Credential\InstanceProfileCredentials.cs" />
+    <Compile Include="Auth\Credential\KeyPairCredentials.cs" />
+    <Compile Include="Auth\Credential\LegacyCredentials.cs" />
+    <Compile Include="Auth\Provider\AccessKeyCredentialProvider.cs" />
+    <Compile Include="Auth\Provider\AlibabaCloudCredentialsProvider.cs" />
+    <Compile Include="Auth\Provider\BearerTokenCredentialProvider.cs" />
+    <Compile Include="Auth\Provider\DefaultCredentialProvider.cs" />
+    <Compile Include="Auth\Provider\ECSMetadataServiceCredentialsFetcher.cs" />
+    <Compile Include="Auth\Provider\ICredentialProvider.cs" />
+    <Compile Include="Auth\Provider\InstanceProfileCredentialsProvider.cs" />
+    <Compile Include="Auth\Provider\RsaKeyPairCredentialProvider.cs" />
+    <Compile Include="Auth\Provider\StaticCredentialsProvider.cs" />
+    <Compile Include="Auth\Provider\STSAssumeRoleSessionCredentialsProvider.cs" />
+    <Compile Include="Auth\Provider\StsCredentialProvider.cs" />
+    <Compile Include="Auth\Signer\BearerTokenSigner.cs" />
+    <Compile Include="Auth\Signer\HmacSHA1Signer.cs" />
+    <Compile Include="Auth\Signer\ISigner.cs" />
+    <Compile Include="Auth\Signer\SHA256withRSASigner.cs" />
+    <Compile Include="Auth\Signer\Signer.cs" />
     <Compile Include="Auth\Sts\AssumeRoleRequest.cs" />
     <Compile Include="Auth\Sts\AssumeRoleResponse.cs" />
     <Compile Include="Auth\Sts\AssumeRoleResponseUnmarshaller.cs" />
     <Compile Include="Auth\Sts\GetSessionAccessKeyRequest.cs" />
     <Compile Include="Auth\Sts\GetSessionAccessKeyResponse.cs" />
     <Compile Include="Auth\Sts\GetSessionAccessKeyResponseUnmarshaller.cs" />
+    <Compile Include="Http\HttpWebProxy.cs" />
+    <Compile Include="Http\ProxyType.cs" />
+    <Compile Include="Http\UserAgent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regions\DescribeEndpointServiceImpl.cs" />
     <Compile Include="Utils\DateTimeExtensions.cs" />
     <Compile Include="CommonRequest.cs" />
@@ -81,10 +107,7 @@
     <Compile Include="AcsRequest.cs" />
     <Compile Include="AcsResponse.cs" />
     <Compile Include="Auth\AcsURLEncoder.cs" />
-    <Compile Include="Auth\Credential.cs" />
-    <Compile Include="Auth\ICredentialProvider.cs" />
     <Compile Include="Auth\ISignatureComposer.cs" />
-    <Compile Include="Auth\ISigner.cs" />
     <Compile Include="Auth\RoaSignatureComposer.cs" />
     <Compile Include="Auth\RpcSignatureComposer.cs" />
     <Compile Include="Auth\ShaHmac1.cs" />
@@ -118,7 +141,12 @@
     <Compile Include="Transform\UnmarshallerContext.cs" />
     <Compile Include="Utils\CacheTimeHelper.cs" />
     <Compile Include="Utils\DictionaryUtil.cs" />
+    <Compile Include="Utils\EnvironmentUtil.cs" />
+    <Compile Include="Utils\IniFileHelper.cs" />
+    <Compile Include="Utils\Logger.cs" />
     <Compile Include="Utils\ParameterHelper.cs" />
+    <Compile Include="Utils\SerilogHelper.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Regions\endpoints.xml">
@@ -126,8 +154,12 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <None Include="ChangeLog.md" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

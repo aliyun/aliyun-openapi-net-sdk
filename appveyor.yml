@@ -14,14 +14,14 @@ install:
   - cmd: dotnet tool install --global altcover.visualizer
   - cmd: cd aliyun-net-sdk-core.Tests/ && dotnet add package AltCover && cd ../
 build_script:
-  - cmd: dotnet restore aliyun-net-sdk.sln
-  - cmd: dotnet build aliyun-net-sdk.sln
+  - cmd: dotnet restore aliyun-net-sdk-core.netstandard20.sln
+  - cmd: dotnet build aliyun-net-sdk-core.netstandard20.sln
 test_script:
   # Start Proxy
   - ps: Start-Process -FilePath o_o -NoNewWindow
   # Dotnet Test
-  - dotnet build aliyun-net-sdk.sln
-  - IF NOT DEFINED ACCESS_KEY_ID (dotnet test aliyun-net-sdk-core.Tests /p:AltCover=true) ELSE (dotnet test aliyun-net-sdk.sln /p:AltCover=true)
+  - dotnet build aliyun-net-sdk-core.netstandard20.sln
+  - IF NOT DEFINED ACCESS_KEY_ID (dotnet test aliyun-net-sdk-core.Tests /p:AltCover=true) ELSE (dotnet test aliyun-net-sdk-core.netstandard20.sln /p:AltCover=true)
 on_finish:
   - cmd: cd aliyun-net-sdk-core.Tests
   - ps: |
