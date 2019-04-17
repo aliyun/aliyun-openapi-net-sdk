@@ -28,7 +28,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Exceptions
         public void Instance3()
         {
             ClientException exception = new ClientException("");
-            Assert.Null(exception.ErrorMessage);
+            Assert.Empty(exception.ErrorMessage);
             Assert.Null(exception.ErrorCode);
             Assert.Null(exception.RequestId);
         }

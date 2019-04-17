@@ -123,7 +123,7 @@ namespace Aliyun.Acs.Core.Http
                 }
                 else
                 {
-                    throw new ClientException(ex.ToString());
+                    throw new ClientException("HttWebRequest GetResponse WebException", ex.ToString());
                 }
             }
             catch (Exception ex)
