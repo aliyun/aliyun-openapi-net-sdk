@@ -5,6 +5,7 @@ using Aliyun.Acs.Ram.Model.V20150501;
 
 using Xunit;
 
+[assembly : CollectionBehavior(DisableTestParallelization = true)]
 namespace Aliyun.Acs.Feature.Test.EndPoint
 {
     [Trait("Category", "FeatureTest")]
