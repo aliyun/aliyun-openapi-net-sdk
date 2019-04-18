@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyInstanceAutoRenewalAttributeRequest : RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse>
     {
         public ModifyInstanceAutoRenewalAttributeRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyInstanceAutoRenewalAttribute", "redisa", "openAPI")
         {
         }
 

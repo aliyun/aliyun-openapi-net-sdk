@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeRdsVpcsRequest : RpcAcsRequest<DescribeRdsVpcsResponse>
     {
         public DescribeRdsVpcsRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeRdsVpcs", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeRdsVpcs", "redisa", "openAPI")
         {
         }
 

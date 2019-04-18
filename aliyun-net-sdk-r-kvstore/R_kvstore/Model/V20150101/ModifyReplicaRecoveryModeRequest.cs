@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyReplicaRecoveryModeRequest : RpcAcsRequest<ModifyReplicaRecoveryModeResponse>
     {
         public ModifyReplicaRecoveryModeRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyReplicaRecoveryMode", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyReplicaRecoveryMode", "redisa", "openAPI")
         {
         }
 

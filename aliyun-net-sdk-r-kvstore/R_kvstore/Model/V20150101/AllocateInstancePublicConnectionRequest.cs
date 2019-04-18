@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class AllocateInstancePublicConnectionRequest : RpcAcsRequest<AllocateInstancePublicConnectionResponse>
     {
         public AllocateInstancePublicConnectionRequest()
-            : base("R-kvstore", "2015-01-01", "AllocateInstancePublicConnection", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "AllocateInstancePublicConnection", "redisa", "openAPI")
         {
         }
 

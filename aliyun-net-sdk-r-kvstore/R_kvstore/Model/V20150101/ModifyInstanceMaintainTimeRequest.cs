@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyInstanceMaintainTimeRequest : RpcAcsRequest<ModifyInstanceMaintainTimeResponse>
     {
         public ModifyInstanceMaintainTimeRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyInstanceMaintainTime", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyInstanceMaintainTime", "redisa", "openAPI")
         {
         }
 

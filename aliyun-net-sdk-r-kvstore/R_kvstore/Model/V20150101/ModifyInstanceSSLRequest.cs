@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyInstanceSSLRequest : RpcAcsRequest<ModifyInstanceSSLResponse>
     {
         public ModifyInstanceSSLRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyInstanceSSL", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyInstanceSSL", "redisa", "openAPI")
         {
         }
 

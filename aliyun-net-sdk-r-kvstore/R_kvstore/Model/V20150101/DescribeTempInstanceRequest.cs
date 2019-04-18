@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeTempInstanceRequest : RpcAcsRequest<DescribeTempInstanceResponse>
     {
         public DescribeTempInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeTempInstance", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeTempInstance", "redisa", "openAPI")
         {
         }
 

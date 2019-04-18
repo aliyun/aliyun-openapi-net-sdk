@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeStaticVerificationListRequest : RpcAcsRequest<DescribeStaticVerificationListResponse>
     {
         public DescribeStaticVerificationListRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeStaticVerificationList", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeStaticVerificationList", "redisa", "openAPI")
         {
         }
 

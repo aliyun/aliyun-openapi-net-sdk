@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DeleteTempInstanceRequest : RpcAcsRequest<DeleteTempInstanceResponse>
     {
         public DeleteTempInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "DeleteTempInstance", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DeleteTempInstance", "redisa", "openAPI")
         {
         }
 

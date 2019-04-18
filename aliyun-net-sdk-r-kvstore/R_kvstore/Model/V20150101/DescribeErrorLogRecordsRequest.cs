@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeErrorLogRecordsRequest : RpcAcsRequest<DescribeErrorLogRecordsResponse>
     {
         public DescribeErrorLogRecordsRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeErrorLogRecords", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeErrorLogRecords", "redisa", "openAPI")
         {
         }
 

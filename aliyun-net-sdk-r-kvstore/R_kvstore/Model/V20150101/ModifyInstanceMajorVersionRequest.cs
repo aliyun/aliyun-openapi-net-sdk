@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyInstanceMajorVersionRequest : RpcAcsRequest<ModifyInstanceMajorVersionResponse>
     {
         public ModifyInstanceMajorVersionRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyInstanceMajorVersion", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyInstanceMajorVersion", "redisa", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class CreateTempInstanceRequest : RpcAcsRequest<CreateTempInstanceResponse>
     {
         public CreateTempInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "CreateTempInstance", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "CreateTempInstance", "redisa", "openAPI")
         {
         }
 

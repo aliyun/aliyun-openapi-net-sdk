@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyInstanceVpcAuthModeRequest : RpcAcsRequest<ModifyInstanceVpcAuthModeResponse>
     {
         public ModifyInstanceVpcAuthModeRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyInstanceVpcAuthMode", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyInstanceVpcAuthMode", "redisa", "openAPI")
         {
         }
 

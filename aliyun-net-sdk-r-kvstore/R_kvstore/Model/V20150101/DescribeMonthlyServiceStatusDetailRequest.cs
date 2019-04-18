@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeMonthlyServiceStatusDetailRequest : RpcAcsRequest<DescribeMonthlyServiceStatusDetailResponse>
     {
         public DescribeMonthlyServiceStatusDetailRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeMonthlyServiceStatusDetail", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeMonthlyServiceStatusDetail", "redisa", "openAPI")
         {
         }
 

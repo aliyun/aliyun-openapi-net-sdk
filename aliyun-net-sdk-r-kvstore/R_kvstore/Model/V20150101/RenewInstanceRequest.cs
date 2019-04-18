@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class RenewInstanceRequest : RpcAcsRequest<RenewInstanceResponse>
     {
         public RenewInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "RenewInstance", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "RenewInstance", "redisa", "openAPI")
         {
         }
 

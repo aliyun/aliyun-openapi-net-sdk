@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DeleteAccountRequest : RpcAcsRequest<DeleteAccountResponse>
     {
         public DeleteAccountRequest()
-            : base("R-kvstore", "2015-01-01", "DeleteAccount", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI")
         {
         }
 

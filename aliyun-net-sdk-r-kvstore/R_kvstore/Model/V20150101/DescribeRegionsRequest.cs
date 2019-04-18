@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
     {
         public DescribeRegionsRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeRegions", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeRegions", "redisa", "openAPI")
         {
         }
 

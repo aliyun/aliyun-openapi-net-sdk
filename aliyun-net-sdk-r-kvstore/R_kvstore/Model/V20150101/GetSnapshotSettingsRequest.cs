@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class GetSnapshotSettingsRequest : RpcAcsRequest<GetSnapshotSettingsResponse>
     {
         public GetSnapshotSettingsRequest()
-            : base("R-kvstore", "2015-01-01", "GetSnapshotSettings", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "GetSnapshotSettings", "redisa", "openAPI")
         {
         }
 

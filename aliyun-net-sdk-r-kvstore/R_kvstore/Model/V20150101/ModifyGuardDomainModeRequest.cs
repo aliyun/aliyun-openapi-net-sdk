@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyGuardDomainModeRequest : RpcAcsRequest<ModifyGuardDomainModeResponse>
     {
         public ModifyGuardDomainModeRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyGuardDomainMode", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyGuardDomainMode", "redisa", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class SwitchTempInstanceRequest : RpcAcsRequest<SwitchTempInstanceResponse>
     {
         public SwitchTempInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "SwitchTempInstance", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "SwitchTempInstance", "redisa", "openAPI")
         {
         }
 

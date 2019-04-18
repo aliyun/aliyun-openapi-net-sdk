@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class MigrateToOtherZoneRequest : RpcAcsRequest<MigrateToOtherZoneResponse>
     {
         public MigrateToOtherZoneRequest()
-            : base("R-kvstore", "2015-01-01", "MigrateToOtherZone", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "MigrateToOtherZone", "redisa", "openAPI")
         {
         }
 

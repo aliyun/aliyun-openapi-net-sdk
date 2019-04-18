@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class TransformToPrePaidRequest : RpcAcsRequest<TransformToPrePaidResponse>
     {
         public TransformToPrePaidRequest()
-            : base("R-kvstore", "2015-01-01", "TransformToPrePaid", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "TransformToPrePaid", "redisa", "openAPI")
         {
         }
 

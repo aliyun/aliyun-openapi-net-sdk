@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeReplicaUsageRequest : RpcAcsRequest<DescribeReplicaUsageResponse>
     {
         public DescribeReplicaUsageRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeReplicaUsage", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeReplicaUsage", "redisa", "openAPI")
         {
         }
 

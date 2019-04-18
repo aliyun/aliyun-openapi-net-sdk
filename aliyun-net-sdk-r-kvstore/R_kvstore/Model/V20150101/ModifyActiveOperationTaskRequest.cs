@@ -30,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyActiveOperationTaskRequest : RpcAcsRequest<ModifyActiveOperationTaskResponse>
     {
         public ModifyActiveOperationTaskRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyActiveOperationTask", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyActiveOperationTask", "redisa", "openAPI")
         {
         }
 

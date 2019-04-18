@@ -30,11 +30,13 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class CreateCacheAnalysisTaskRequest : RpcAcsRequest<CreateCacheAnalysisTaskResponse>
     {
         public CreateCacheAnalysisTaskRequest()
-            : base("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "redisa", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
+
+		private string instanceId;
 
 		private string securityToken;
 
@@ -58,6 +60,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
