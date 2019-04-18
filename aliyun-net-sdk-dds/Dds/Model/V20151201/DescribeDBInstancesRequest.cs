@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
     public class DescribeDBInstancesRequest : RpcAcsRequest<DescribeDBInstancesResponse>
     {
         public DescribeDBInstancesRequest()
-            : base("Dds", "2015-12-01", "DescribeDBInstances", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeDBInstances", "Dds", "openAPI")
         {
         }
 
@@ -60,6 +61,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string dBInstanceDescription;
 
 		private string dBInstanceStatus;
+
+		private List<Tag> tags;
 
 		private string expireTime;
 
@@ -263,6 +266,24 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
 		public string ExpireTime
 		{
 			get
@@ -393,7 +414,39 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DescribeDBInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+		}
+
+        public override DescribeDBInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDBInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

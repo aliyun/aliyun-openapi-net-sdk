@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
     public class ModifyNodeSpecRequest : RpcAcsRequest<ModifyNodeSpecResponse>
     {
         public ModifyNodeSpecRequest()
-            : base("Dds", "2015-12-01", "ModifyNodeSpec", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "ModifyNodeSpec", "Dds", "openAPI")
         {
         }
 
@@ -258,7 +259,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override ModifyNodeSpecResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyNodeSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyNodeSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
@@ -118,6 +119,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			private List<DescribeDBInstanceAttribute_ShardAttribute> shardList;
 
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
+
+			private List<DescribeDBInstanceAttribute_Tag> tags;
 
 			public string ResourceGroupId
 			{
@@ -503,6 +506,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public List<DescribeDBInstanceAttribute_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public class DescribeDBInstanceAttribute_MongosAttribute
 			{
 
@@ -833,6 +848,38 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						networkType = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstanceAttribute_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

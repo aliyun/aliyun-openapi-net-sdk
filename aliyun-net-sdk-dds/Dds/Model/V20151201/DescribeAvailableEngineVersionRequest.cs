@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
     public class DescribeAvailableEngineVersionRequest : RpcAcsRequest<DescribeAvailableEngineVersionResponse>
     {
         public DescribeAvailableEngineVersionRequest()
-            : base("Dds", "2015-12-01", "DescribeAvailableEngineVersion", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeAvailableEngineVersion", "Dds", "openAPI")
         {
         }
 
@@ -153,7 +154,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DescribeAvailableEngineVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeAvailableEngineVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeAvailableEngineVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

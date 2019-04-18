@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
@@ -138,6 +139,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			private List<DescribeDBInstances_MongosAttribute> mongosList;
 
 			private List<DescribeDBInstances_ShardAttribute> shardList;
+
+			private List<DescribeDBInstances_Tag> tags;
 
 			public string ResourceGroupId
 			{
@@ -391,6 +394,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public List<DescribeDBInstances_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public class DescribeDBInstances_MongosAttribute
 			{
 
@@ -521,6 +536,38 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						nodeStorage = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstances_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
 					}
 				}
 			}

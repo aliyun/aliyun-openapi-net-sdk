@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Dds.Model.V20151201;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Dds.Model.V20151201;
 
 namespace Aliyun.Acs.Dds.Transform.V20151201
 {
@@ -111,6 +112,16 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					dBInstance_replicaSets.Add(replicaSet);
 				}
 				dBInstance.ReplicaSets = dBInstance_replicaSets;
+
+				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_Tag> dBInstance_tags = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_Tag>();
+				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].Tags.Length"); j++) {
+					DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_Tag tag = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_Tag();
+					tag.Key = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].Tags["+ j +"].Value");
+
+					dBInstance_tags.Add(tag);
+				}
+				dBInstance.Tags = dBInstance_tags;
 
 				describeDBInstanceAttributeResponse_dBInstances.Add(dBInstance);
 			}

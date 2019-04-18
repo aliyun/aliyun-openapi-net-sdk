@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
     public class ReleaseReplicaRequest : RpcAcsRequest<ReleaseReplicaResponse>
     {
         public ReleaseReplicaRequest()
-            : base("Dds", "2015-12-01", "ReleaseReplica", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "ReleaseReplica", "Dds", "openAPI")
         {
         }
 
@@ -158,7 +159,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			return false;
 		}
 
-        public override ReleaseReplicaResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ReleaseReplicaResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ReleaseReplicaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

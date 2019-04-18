@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
     public class CreateDBInstanceRequest : RpcAcsRequest<CreateDBInstanceResponse>
     {
         public CreateDBInstanceRequest()
-            : base("Dds", "2015-12-01", "CreateDBInstance", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "CreateDBInstance", "Dds", "openAPI")
         {
         }
 
@@ -52,6 +53,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string storageEngine;
 
 		private string resourceGroupId;
+
+		private string databaseNames;
 
 		private string securityToken;
 
@@ -220,6 +223,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string DatabaseNames
+		{
+			get
+			{
+				return databaseNames;
+			}
+			set	
+			{
+				databaseNames = value;
+				DictionaryUtil.Add(QueryParameters, "DatabaseNames", value);
 			}
 		}
 
@@ -483,7 +499,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override CreateDBInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateDBInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
     public class DescribeAuditPolicyRequest : RpcAcsRequest<DescribeAuditPolicyResponse>
     {
         public DescribeAuditPolicyRequest()
-            : base("Dds", "2015-12-01", "DescribeAuditPolicy", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeAuditPolicy", "Dds", "openAPI")
         {
         }
 
@@ -153,7 +154,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DescribeAuditPolicyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeAuditPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeAuditPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

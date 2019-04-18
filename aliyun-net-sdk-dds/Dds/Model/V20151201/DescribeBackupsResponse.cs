@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
@@ -114,6 +115,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			private string backupMethod;
 
 			private string backupDownloadURL;
+
+			private string backupIntranetDownloadURL;
 
 			private long? backupSize;
 
@@ -222,6 +225,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					backupDownloadURL = value;
+				}
+			}
+
+			public string BackupIntranetDownloadURL
+			{
+				get
+				{
+					return backupIntranetDownloadURL;
+				}
+				set	
+				{
+					backupIntranetDownloadURL = value;
 				}
 			}
 

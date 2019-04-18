@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
     public class DescribeSlowLogRecordsRequest : RpcAcsRequest<DescribeSlowLogRecordsResponse>
     {
         public DescribeSlowLogRecordsRequest()
-            : base("Dds", "2015-12-01", "DescribeSlowLogRecords", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeSlowLogRecords", "Dds", "openAPI")
         {
         }
 
@@ -258,7 +259,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DescribeSlowLogRecordsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeSlowLogRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeSlowLogRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

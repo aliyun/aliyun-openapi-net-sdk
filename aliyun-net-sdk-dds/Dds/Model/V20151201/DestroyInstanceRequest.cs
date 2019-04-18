@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
     public class DestroyInstanceRequest : RpcAcsRequest<DestroyInstanceResponse>
     {
         public DestroyInstanceRequest()
-            : base("Dds", "2015-12-01", "DestroyInstance", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "DestroyInstance", "Dds", "openAPI")
         {
         }
 
@@ -46,6 +47,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private string action;
+
+		private string dBInstanceId;
 
 		private long? ownerId;
 
@@ -142,6 +145,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -168,7 +184,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override DestroyInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DestroyInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DestroyInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Dds.Model.V20151201;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Dds.Model.V20151201;
 
 namespace Aliyun.Acs.Dds.Transform.V20151201
 {
@@ -82,6 +83,16 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					dBInstance_shardList.Add(shardAttribute);
 				}
 				dBInstance.ShardList = dBInstance_shardList;
+
+				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_Tag> dBInstance_tags = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_Tag>();
+				for (int j = 0; j < context.Length("DescribeDBInstances.DBInstances["+ i +"].Tags.Length"); j++) {
+					DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_Tag tag = new DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_Tag();
+					tag.Key = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].Tags["+ j +"].Value");
+
+					dBInstance_tags.Add(tag);
+				}
+				dBInstance.Tags = dBInstance_tags;
 
 				describeDBInstancesResponse_dBInstances.Add(dBInstance);
 			}

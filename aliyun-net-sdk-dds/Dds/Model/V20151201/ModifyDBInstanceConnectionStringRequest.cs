@@ -16,20 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dds.Transform;
 using Aliyun.Acs.Dds.Transform.V20151201;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
     public class ModifyDBInstanceConnectionStringRequest : RpcAcsRequest<ModifyDBInstanceConnectionStringResponse>
     {
         public ModifyDBInstanceConnectionStringRequest()
-            : base("Dds", "2015-12-01", "ModifyDBInstanceConnectionString", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "ModifyDBInstanceConnectionString", "Dds", "openAPI")
         {
         }
 
@@ -198,7 +199,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-        public override ModifyDBInstanceConnectionStringResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyDBInstanceConnectionStringResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyDBInstanceConnectionStringResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Dds.Model.V20151201;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Dds.Model.V20151201;
 
 namespace Aliyun.Acs.Dds.Transform.V20151201
 {
@@ -47,6 +48,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				backup.BackupMode = context.StringValue("DescribeBackups.Backups["+ i +"].BackupMode");
 				backup.BackupMethod = context.StringValue("DescribeBackups.Backups["+ i +"].BackupMethod");
 				backup.BackupDownloadURL = context.StringValue("DescribeBackups.Backups["+ i +"].BackupDownloadURL");
+				backup.BackupIntranetDownloadURL = context.StringValue("DescribeBackups.Backups["+ i +"].BackupIntranetDownloadURL");
 				backup.BackupSize = context.LongValue("DescribeBackups.Backups["+ i +"].BackupSize");
 
 				describeBackupsResponse_backups.Add(backup);
