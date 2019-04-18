@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1bc8d004-07f8-4530-945b-2a27fbf88a20}</ProjectGuid>
+    <ProjectGuid>{5e9a81e5-a5bc-44ff-bf71-09fee7b8c967}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -145,6 +145,7 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceDeploymentRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyLaunchTemplateDefaultVersionResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteSnapshotRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeReservedInstancesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\JoinSecurityGroupRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\AllocateDedicatedHostsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\TerminatePhysicalConnectionRequest.cs" />
@@ -170,6 +171,7 @@
 	<Compile Include="Ecs\Model\V20140526\CreateForwardEntryResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeDisksFullStatusRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\EnablePhysicalConnectionRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\PurchaseReservedInstancesOfferingResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyDedicatedHostAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeTaskAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteForwardEntryRequest.cs" />
@@ -256,6 +258,7 @@
 	<Compile Include="Ecs\Model\V20140526\StopInvocationRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeVirtualBorderRoutersForPhysicalConnectionResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ImportKeyPairRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\ModifyReservedInstancesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeCommandsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceStatusResponse.cs" />
@@ -444,6 +447,7 @@
 	<Compile Include="Ecs\Model\V20140526\CreateHaVipResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeImagesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeDisksResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\PurchaseReservedInstancesOfferingRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\RecoverVirtualBorderRouterResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteImageRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateSecurityGroupResponse.cs" />
@@ -457,6 +461,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeRouterInterfacesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeSnapshotsUsageRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeactivateRouterInterfaceRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\ModifyReservedInstancesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CancelCopyImageResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteVSwitchRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ReInitDiskResponse.cs" />
@@ -537,6 +542,7 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeRegionsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeletePhysicalConnectionResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeUserDataResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeReservedInstancesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateLaunchTemplateResponse.cs" />
 	<Compile Include="Ecs\Transform\V20140526\RedeployInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceTypesResponseUnmarshaller.cs" />
@@ -551,6 +557,7 @@
 	<Compile Include="Ecs\Transform\V20140526\AttachClassicLinkVpcResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribePriceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeRenewalPriceResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\PurchaseReservedInstancesOfferingResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeKeyPairsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyForwardEntryResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateRouterInterfaceResponseUnmarshaller.cs" />
@@ -561,6 +568,7 @@
 	<Compile Include="Ecs\Transform\V20140526\ModifySecurityGroupAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeDiskMonitorDataResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\InstallCloudAssistantResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\ModifyReservedInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CancelCopyImageResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\StartInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\AllocateDedicatedHostsResponseUnmarshaller.cs" />
@@ -758,6 +766,7 @@
 	<Compile Include="Ecs\Transform\V20140526\ModifyPrepayInstanceSpecResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceTopologyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyAutoSnapshotPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeReservedInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceVncPasswdResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\EnablePhysicalConnectionResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateSecurityGroupResponseUnmarshaller.cs" />
