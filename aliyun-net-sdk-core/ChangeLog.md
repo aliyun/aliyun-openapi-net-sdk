@@ -1,3 +1,6 @@
+### 2019-04-18 Version 1.3.2
+* Add support framework from net45 to netstandard2.0 in one nuget package
+
 ### 2019-04-16 Version 1.3.1
 * Fix '\u' unescape character resolve error when parse http response content
 
