@@ -30,8 +30,12 @@ namespace Aliyun.Acs.Core.Auth
 
         public override string SignString(string source, string accessSecret)
         {
-            using(var algorithm = KeyedHashAlgorithm.Create("HMACSHA1"))
+            using(KeyedHashAlgorithm algorithm = CryptoConfig.CreateFromName("HMACSHA1") as KeyedHashAlgorithm)
             {
+                if (algorithm == null)
+                {
+                    throw new Exception("The current framework does not have this algorithm");
+                }
                 algorithm.Key = Encoding.UTF8.GetBytes(accessSecret.ToCharArray());
                 return Convert.ToBase64String(algorithm.ComputeHash(Encoding.UTF8.GetBytes(source.ToCharArray())));
             }
