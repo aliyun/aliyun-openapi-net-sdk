@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Domain.Model.V20180129;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Domain.Model.V20180129;
 
 namespace Aliyun.Acs.Domain.Transform.V20180129
 {
@@ -64,6 +65,7 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 				registrantProfile.ZhAddress = context.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].ZhAddress");
 				registrantProfile.RegistrantType = context.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].RegistrantType");
 				registrantProfile.RealNameStatus = context.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].RealNameStatus");
+				registrantProfile.RegistrantProfileType = context.StringValue("QueryRegistrantProfiles.RegistrantProfiles["+ i +"].RegistrantProfileType");
 
 				queryRegistrantProfilesResponse_registrantProfiles.Add(registrantProfile);
 			}

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
@@ -42,6 +43,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 		private int? pageSize;
 
 		private string registrantType;
+
+		private string registrantProfileType;
 
 		private string realNameStatus;
 
@@ -117,6 +120,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				registrantType = value;
 				DictionaryUtil.Add(QueryParameters, "RegistrantType", value);
+			}
+		}
+
+		public string RegistrantProfileType
+		{
+			get
+			{
+				return registrantProfileType;
+			}
+			set	
+			{
+				registrantProfileType = value;
+				DictionaryUtil.Add(QueryParameters, "RegistrantProfileType", value);
 			}
 		}
 
@@ -198,7 +214,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-        public override QueryRegistrantProfilesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryRegistrantProfilesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return QueryRegistrantProfilesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

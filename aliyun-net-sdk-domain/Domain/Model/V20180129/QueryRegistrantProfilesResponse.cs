@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
@@ -184,6 +185,8 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			private string registrantType;
 
 			private string realNameStatus;
+
+			private string registrantProfileType;
 
 			public long? RegistrantProfileId
 			{
@@ -458,6 +461,18 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					realNameStatus = value;
+				}
+			}
+
+			public string RegistrantProfileType
+			{
+				get
+				{
+					return registrantProfileType;
+				}
+				set	
+				{
+					registrantProfileType = value;
 				}
 			}
 		}
