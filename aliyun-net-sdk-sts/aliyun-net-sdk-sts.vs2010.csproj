@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{cdc65ae6-08c1-4b77-bcf8-4d56230067e9}</ProjectGuid>
+    <ProjectGuid>{c780c4cf-1df5-49d9-8398-35ec63b066dc}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -42,12 +42,15 @@
   <ItemGroup>
 	<Compile Include="Sts\Model\V20150401\GenerateSessionAccessKeyResponse.cs" />
 	<Compile Include="Sts\Model\V20150401\GetCallerIdentityResponse.cs" />
+	<Compile Include="Sts\Model\V20150401\AssumeRoleWithSAMLRequest.cs" />
 	<Compile Include="Sts\Model\V20150401\GenerateSessionAccessKeyRequest.cs" />
 	<Compile Include="Sts\Model\V20150401\GetCallerIdentityRequest.cs" />
 	<Compile Include="Sts\Model\V20150401\AssumeRoleResponse.cs" />
+	<Compile Include="Sts\Model\V20150401\AssumeRoleWithSAMLResponse.cs" />
 	<Compile Include="Sts\Model\V20150401\AssumeRoleRequest.cs" />
 	<Compile Include="Sts\Transform\V20150401\AssumeRoleResponseUnmarshaller.cs" />
 	<Compile Include="Sts\Transform\V20150401\GenerateSessionAccessKeyResponseUnmarshaller.cs" />
+	<Compile Include="Sts\Transform\V20150401\AssumeRoleWithSAMLResponseUnmarshaller.cs" />
 	<Compile Include="Sts\Transform\V20150401\GetCallerIdentityResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
