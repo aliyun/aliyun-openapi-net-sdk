@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{b60cdb6c-4653-4408-a992-f7d543eac599}</ProjectGuid>
+    <ProjectGuid>{21c95ef1-580e-4495-b1ce-54bbf118addd}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -119,6 +119,7 @@
 	<Compile Include="Domain_intl\Model\V20171218\PollTaskResultRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\ResendEmailVerificationRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\BatchFuzzyMatchDomainSensitiveWordRequest.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\QueryDomainByDomainNameResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForModifyingDSRecordRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveSingleTaskForModifyingDSRecordResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\DeleteRegistrantProfileRequest.cs" />
@@ -167,6 +168,7 @@
 	<Compile Include="Domain_intl\Model\V20171218\SaveBatchTaskForCreatingOrderActivateResponse.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest.cs" />
+	<Compile Include="Domain_intl\Model\V20171218\QueryDomainByDomainNameRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\CheckDomainSunriseClaimRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\EmailVerifiedRequest.cs" />
 	<Compile Include="Domain_intl\Model\V20171218\AcknowledgeTaskResultResponse.cs" />
@@ -241,6 +243,7 @@
 	<Compile Include="Domain_intl\Transform\V20171218\SaveBatchTaskForUpdatingContactInfoByNewContactResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\SaveSingleTaskForCreatingOrderTransferResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryDomainRealNameVerificationInfoResponseUnmarshaller.cs" />
+	<Compile Include="Domain_intl\Transform\V20171218\QueryDomainByDomainNameResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryTaskDetailListResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\QueryTaskListResponseUnmarshaller.cs" />
 	<Compile Include="Domain_intl\Transform\V20171218\DeleteEmailVerificationResponseUnmarshaller.cs" />
