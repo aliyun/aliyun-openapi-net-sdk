@@ -128,6 +128,12 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string createMode;
 
+			private string vpcId;
+
+			private string zoneId;
+
+			private string vSwitchId;
+
 			private List<string> roles;
 
 			private ListNodes_TotalResources totalResources;
@@ -311,6 +317,42 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					createMode = value;
+				}
+			}
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
 				}
 			}
 

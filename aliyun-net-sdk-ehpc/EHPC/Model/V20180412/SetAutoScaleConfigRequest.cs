@@ -393,7 +393,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 				private string spotStrategy;
 
+				private string vSwitchId;
+
 				private string instanceType;
+
+				private string zoneId;
 
 				private float? spotPriceLimit;
 
@@ -409,6 +413,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					}
 				}
 
+				public string VSwitchId
+				{
+					get
+					{
+						return vSwitchId;
+					}
+					set	
+					{
+						vSwitchId = value;
+					}
+				}
+
 				public string InstanceType
 				{
 					get
@@ -418,6 +434,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					set	
 					{
 						instanceType = value;
+					}
+				}
+
+				public string ZoneId
+				{
+					get
+					{
+						return zoneId;
+					}
+					set	
+					{
+						zoneId = value;
 					}
 				}
 

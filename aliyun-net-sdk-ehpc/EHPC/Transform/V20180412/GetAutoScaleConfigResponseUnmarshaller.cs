@@ -64,6 +64,8 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 					instanceTypeInfo.InstanceType = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes["+ j +"].InstanceType");
 					instanceTypeInfo.SpotStrategy = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes["+ j +"].SpotStrategy");
 					instanceTypeInfo.SpotPriceLimit = context.FloatValue("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes["+ j +"].SpotPriceLimit");
+					instanceTypeInfo.ZoneId = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes["+ j +"].ZoneId");
+					instanceTypeInfo.VSwitchId = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes["+ j +"].VSwitchId");
 
 					queueInfo_instanceTypes.Add(instanceTypeInfo);
 				}
