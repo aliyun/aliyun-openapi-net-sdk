@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeRenewalPriceRequest : RpcAcsRequest<DescribeRenewalPriceResponse>
     {
         public DescribeRenewalPriceRequest()
-            : base("Rds", "2014-08-15", "DescribeRenewalPrice", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeRenewalPrice", "rds", "openAPI")
         {
         }
 

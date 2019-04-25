@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeSQLLogRecordsRequest : RpcAcsRequest<DescribeSQLLogRecordsResponse>
     {
         public DescribeSQLLogRecordsRequest()
-            : base("Rds", "2014-08-15", "DescribeSQLLogRecords", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeSQLLogRecords", "rds", "openAPI")
         {
         }
 

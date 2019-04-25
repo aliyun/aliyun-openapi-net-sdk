@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeInstanceVpcMigrateInfoRequest : RpcAcsRequest<DescribeInstanceVpcMigrateInfoResponse>
     {
         public DescribeInstanceVpcMigrateInfoRequest()
-            : base("Rds", "2014-08-15", "DescribeInstanceVpcMigrateInfo", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeInstanceVpcMigrateInfo", "rds", "openAPI")
         {
         }
 

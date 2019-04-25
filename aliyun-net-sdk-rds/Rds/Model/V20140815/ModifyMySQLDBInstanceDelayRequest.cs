@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyMySQLDBInstanceDelayRequest : RpcAcsRequest<ModifyMySQLDBInstanceDelayResponse>
     {
         public ModifyMySQLDBInstanceDelayRequest()
-            : base("Rds", "2014-08-15", "ModifyMySQLDBInstanceDelay", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyMySQLDBInstanceDelay", "rds", "openAPI")
         {
         }
 

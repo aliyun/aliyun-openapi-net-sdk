@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstanceMonitorRequest : RpcAcsRequest<DescribeDBInstanceMonitorResponse>
     {
         public DescribeDBInstanceMonitorRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstanceMonitor", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstanceMonitor", "rds", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class MigrateSecurityIPModeRequest : RpcAcsRequest<MigrateSecurityIPModeResponse>
     {
         public MigrateSecurityIPModeRequest()
-            : base("Rds", "2014-08-15", "MigrateSecurityIPMode", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "MigrateSecurityIPMode", "rds", "openAPI")
         {
         }
 

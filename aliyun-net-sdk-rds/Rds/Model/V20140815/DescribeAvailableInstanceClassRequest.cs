@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeAvailableInstanceClassRequest : RpcAcsRequest<DescribeAvailableInstanceClassResponse>
     {
         public DescribeAvailableInstanceClassRequest()
-            : base("Rds", "2014-08-15", "DescribeAvailableInstanceClass", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeAvailableInstanceClass", "rds", "openAPI")
         {
         }
 

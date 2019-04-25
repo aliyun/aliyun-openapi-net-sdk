@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ImportDataForSQLServerRequest : RpcAcsRequest<ImportDataForSQLServerResponse>
     {
         public ImportDataForSQLServerRequest()
-            : base("Rds", "2014-08-15", "ImportDataForSQLServer", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ImportDataForSQLServer", "rds", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeTemplatesListRequest : RpcAcsRequest<DescribeTemplatesListResponse>
     {
         public DescribeTemplatesListRequest()
-            : base("Rds", "2014-08-15", "DescribeTemplatesList", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeTemplatesList", "rds", "openAPI")
         {
         }
 

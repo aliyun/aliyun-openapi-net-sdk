@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class RecoveryDBInstanceRequest : RpcAcsRequest<RecoveryDBInstanceResponse>
     {
         public RecoveryDBInstanceRequest()
-            : base("Rds", "2014-08-15", "RecoveryDBInstance", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "RecoveryDBInstance", "rds", "openAPI")
         {
         }
 

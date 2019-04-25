@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class SwitchDBInstanceHARequest : RpcAcsRequest<SwitchDBInstanceHAResponse>
     {
         public SwitchDBInstanceHARequest()
-            : base("Rds", "2014-08-15", "SwitchDBInstanceHA", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "SwitchDBInstanceHA", "rds", "openAPI")
         {
         }
 

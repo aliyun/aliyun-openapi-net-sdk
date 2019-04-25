@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateReadOnlyDBInstanceRequest : RpcAcsRequest<CreateReadOnlyDBInstanceResponse>
     {
         public CreateReadOnlyDBInstanceRequest()
-            : base("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstancesByPerformanceRequest : RpcAcsRequest<DescribeDBInstancesByPerformanceResponse>
     {
         public DescribeDBInstancesByPerformanceRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "rds", "openAPI")
         {
         }
 

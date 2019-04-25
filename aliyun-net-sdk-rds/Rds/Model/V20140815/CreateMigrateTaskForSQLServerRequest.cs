@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateMigrateTaskForSQLServerRequest : RpcAcsRequest<CreateMigrateTaskForSQLServerResponse>
     {
         public CreateMigrateTaskForSQLServerRequest()
-            : base("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer", "rds", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class AllocateInstanceVpcNetworkTypeRequest : RpcAcsRequest<AllocateInstanceVpcNetworkTypeResponse>
     {
         public AllocateInstanceVpcNetworkTypeRequest()
-            : base("Rds", "2014-08-15", "AllocateInstanceVpcNetworkType", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "AllocateInstanceVpcNetworkType", "rds", "openAPI")
         {
         }
 

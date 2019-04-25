@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class SwitchDBInstanceNetTypeRequest : RpcAcsRequest<SwitchDBInstanceNetTypeResponse>
     {
         public SwitchDBInstanceNetTypeRequest()
-            : base("Rds", "2014-08-15", "SwitchDBInstanceNetType", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "SwitchDBInstanceNetType", "rds", "openAPI")
         {
         }
 
