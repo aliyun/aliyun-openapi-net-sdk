@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
@@ -48,7 +49,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-        public override QueryMonthlyBillResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryMonthlyBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return QueryMonthlyBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

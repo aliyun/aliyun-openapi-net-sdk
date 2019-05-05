@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
@@ -200,15 +201,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string instanceID;
 
-				private string nickName;
-
 				private float? servicePeriod;
 
 				private string billingType;
-
-				private string instanceConfig;
-
-				private string instanceSpec;
 
 				private string costUnit;
 
@@ -222,13 +217,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string productDetail;
 
-				private string tag;
-
-				private string resourceGroup;
-
 				private long? ownerID;
-
-				private string region;
 
 				private string billingItem;
 
@@ -272,18 +261,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string NickName
-				{
-					get
-					{
-						return nickName;
-					}
-					set	
-					{
-						nickName = value;
-					}
-				}
-
 				public float? ServicePeriod
 				{
 					get
@@ -305,30 +282,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						billingType = value;
-					}
-				}
-
-				public string InstanceConfig
-				{
-					get
-					{
-						return instanceConfig;
-					}
-					set	
-					{
-						instanceConfig = value;
-					}
-				}
-
-				public string InstanceSpec
-				{
-					get
-					{
-						return instanceSpec;
-					}
-					set	
-					{
-						instanceSpec = value;
 					}
 				}
 
@@ -404,30 +357,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string Tag
-				{
-					get
-					{
-						return tag;
-					}
-					set	
-					{
-						tag = value;
-					}
-				}
-
-				public string ResourceGroup
-				{
-					get
-					{
-						return resourceGroup;
-					}
-					set	
-					{
-						resourceGroup = value;
-					}
-				}
-
 				public long? OwnerID
 				{
 					get
@@ -437,18 +366,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						ownerID = value;
-					}
-				}
-
-				public string Region
-				{
-					get
-					{
-						return region;
-					}
-					set	
-					{
-						region = value;
 					}
 				}
 

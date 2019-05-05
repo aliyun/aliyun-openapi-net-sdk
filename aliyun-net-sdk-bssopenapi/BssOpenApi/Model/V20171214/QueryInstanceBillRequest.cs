@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
@@ -36,6 +37,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		private bool? isBillingItem;
 
 		private string productCode;
+
+		private bool? isHideZeroCharge;
 
 		private string subscriptionType;
 
@@ -72,6 +75,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				productCode = value;
 				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+			}
+		}
+
+		public bool? IsHideZeroCharge
+		{
+			get
+			{
+				return isHideZeroCharge;
+			}
+			set	
+			{
+				isHideZeroCharge = value;
+				DictionaryUtil.Add(QueryParameters, "IsHideZeroCharge", value.ToString());
 			}
 		}
 
@@ -153,7 +169,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-        public override QueryInstanceBillResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryInstanceBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return QueryInstanceBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

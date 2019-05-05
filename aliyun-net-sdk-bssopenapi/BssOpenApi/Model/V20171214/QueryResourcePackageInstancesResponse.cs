@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
@@ -230,6 +231,14 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string remark;
 
+				private string packageType;
+
+				private string status;
+
+				private string deductType;
+
+				private List<string> applicableProducts;
+
 				public string InstanceId
 				{
 					get
@@ -335,6 +344,54 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						remark = value;
+					}
+				}
+
+				public string PackageType
+				{
+					get
+					{
+						return packageType;
+					}
+					set	
+					{
+						packageType = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public string DeductType
+				{
+					get
+					{
+						return deductType;
+					}
+					set	
+					{
+						deductType = value;
+					}
+				}
+
+				public List<string> ApplicableProducts
+				{
+					get
+					{
+						return applicableProducts;
+					}
+					set	
+					{
+						applicableProducts = value;
 					}
 				}
 			}

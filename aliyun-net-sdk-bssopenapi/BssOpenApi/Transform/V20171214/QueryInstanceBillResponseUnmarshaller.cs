@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.BssOpenApi.Model.V20171214;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.BssOpenApi.Model.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
@@ -47,21 +48,15 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			for (int i = 0; i < context.Length("QueryInstanceBill.Data.Items.Length"); i++) {
 				QueryInstanceBillResponse.QueryInstanceBill_Data.QueryInstanceBill_Item item = new QueryInstanceBillResponse.QueryInstanceBill_Data.QueryInstanceBill_Item();
 				item.InstanceID = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].InstanceID");
-				item.NickName = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].NickName");
 				item.ServicePeriod = context.FloatValue("QueryInstanceBill.Data.Items["+ i +"].ServicePeriod");
 				item.BillingType = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].BillingType");
-				item.InstanceConfig = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].InstanceConfig");
-				item.InstanceSpec = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].InstanceSpec");
 				item.CostUnit = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].CostUnit");
 				item.ProductCode = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ProductCode");
 				item.ProductType = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ProductType");
 				item.SubscriptionType = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].SubscriptionType");
 				item.ProductName = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ProductName");
 				item.ProductDetail = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ProductDetail");
-				item.Tag = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Tag");
-				item.ResourceGroup = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ResourceGroup");
 				item.OwnerID = context.LongValue("QueryInstanceBill.Data.Items["+ i +"].OwnerID");
-				item.Region = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Region");
 				item.BillingItem = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].BillingItem");
 				item.ListPrice = context.FloatValue("QueryInstanceBill.Data.Items["+ i +"].ListPrice");
 				item.ListPriceUnit = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ListPriceUnit");

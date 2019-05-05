@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.BssOpenApi.Model.V20171214;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.BssOpenApi.Model.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.BssOpenApi.Model.V20171214;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.BssOpenApi.Model.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 {
@@ -56,6 +57,15 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				instance.EffectiveTime = context.StringValue("QueryResourcePackageInstances.Data.Instances["+ i +"].EffectiveTime");
 				instance.ExpiryTime = context.StringValue("QueryResourcePackageInstances.Data.Instances["+ i +"].ExpiryTime");
 				instance.Remark = context.StringValue("QueryResourcePackageInstances.Data.Instances["+ i +"].Remark");
+				instance.PackageType = context.StringValue("QueryResourcePackageInstances.Data.Instances["+ i +"].PackageType");
+				instance.Status = context.StringValue("QueryResourcePackageInstances.Data.Instances["+ i +"].Status");
+				instance.DeductType = context.StringValue("QueryResourcePackageInstances.Data.Instances["+ i +"].DeductType");
+
+				List<string> instance_applicableProducts = new List<string>();
+				for (int j = 0; j < context.Length("QueryResourcePackageInstances.Data.Instances["+ i +"].ApplicableProducts.Length"); j++) {
+					instance_applicableProducts.Add(context.StringValue("QueryResourcePackageInstances.Data.Instances["+ i +"].ApplicableProducts["+ j +"]"));
+				}
+				instance.ApplicableProducts = instance_applicableProducts;
 
 				data_instances.Add(instance);
 			}
