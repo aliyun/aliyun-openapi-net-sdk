@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -51,6 +52,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheckInterval = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheckInterval");
 			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheckConnectPort = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheckConnectPort");
 			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheckHttpCode = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheckHttpCode");
+			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheckMethod = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheckMethod");
 			describeLoadBalancerHTTPListenerAttributeResponse.MaxConnection = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.MaxConnection");
 			describeLoadBalancerHTTPListenerAttributeResponse.VServerGroupId = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.VServerGroupId");
 			describeLoadBalancerHTTPListenerAttributeResponse.Gzip = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.Gzip");
@@ -65,6 +67,20 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPListenerAttributeResponse.ForwardPort = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.ForwardPort");
 			describeLoadBalancerHTTPListenerAttributeResponse.RequestTimeout = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.RequestTimeout");
 			describeLoadBalancerHTTPListenerAttributeResponse.IdleTimeout = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.IdleTimeout");
+			describeLoadBalancerHTTPListenerAttributeResponse.Description = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.Description");
+
+			List<DescribeLoadBalancerHTTPListenerAttributeResponse.DescribeLoadBalancerHTTPListenerAttribute_Rule> describeLoadBalancerHTTPListenerAttributeResponse_rules = new List<DescribeLoadBalancerHTTPListenerAttributeResponse.DescribeLoadBalancerHTTPListenerAttribute_Rule>();
+			for (int i = 0; i < context.Length("DescribeLoadBalancerHTTPListenerAttribute.Rules.Length"); i++) {
+				DescribeLoadBalancerHTTPListenerAttributeResponse.DescribeLoadBalancerHTTPListenerAttribute_Rule rule = new DescribeLoadBalancerHTTPListenerAttributeResponse.DescribeLoadBalancerHTTPListenerAttribute_Rule();
+				rule.RuleId = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.Rules["+ i +"].RuleId");
+				rule.RuleName = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.Rules["+ i +"].RuleName");
+				rule.Domain = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.Rules["+ i +"].Domain");
+				rule.Url = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.Rules["+ i +"].Url");
+				rule.VServerGroupId = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.Rules["+ i +"].VServerGroupId");
+
+				describeLoadBalancerHTTPListenerAttributeResponse_rules.Add(rule);
+			}
+			describeLoadBalancerHTTPListenerAttributeResponse.Rules = describeLoadBalancerHTTPListenerAttributeResponse_rules;
         
 			return describeLoadBalancerHTTPListenerAttributeResponse;
         }

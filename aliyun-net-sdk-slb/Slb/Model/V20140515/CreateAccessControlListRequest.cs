@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Slb.Transform;
 using Aliyun.Acs.Slb.Transform.V20140515;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -33,7 +34,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         {
         }
 
-		private string access_key_id;
+		private string resourceGroupId;
 
 		private long? resourceOwnerId;
 
@@ -41,28 +42,22 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
-
-		private string action;
 
 		private long? ownerId;
 
-		private string accessKeyId;
+		private string addressIPVersion;
 
-		private string tags;
-
-		public string Access_key_id
+		public string ResourceGroupId
 		{
 			get
 			{
-				return access_key_id;
+				return resourceGroupId;
 			}
 			set	
 			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -105,19 +100,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -128,19 +110,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -157,33 +126,20 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string AccessKeyId
+		public string AddressIPVersion
 		{
 			get
 			{
-				return accessKeyId;
+				return addressIPVersion;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				addressIPVersion = value;
+				DictionaryUtil.Add(QueryParameters, "AddressIPVersion", value);
 			}
 		}
 
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-        public override CreateAccessControlListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateAccessControlListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateAccessControlListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

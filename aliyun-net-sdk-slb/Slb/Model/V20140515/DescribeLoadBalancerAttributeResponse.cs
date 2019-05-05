@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -69,6 +70,26 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string masterZoneId;
 
 		private string slaveZoneId;
+
+		private string addressIPVersion;
+
+		private string cloudType;
+
+		private int? renewalDuration;
+
+		private string renewalStatus;
+
+		private string renewalCycUnit;
+
+		private string hasReservedInfo;
+
+		private string reservedInfoOrderType;
+
+		private string reservedInfoInternetChargeType;
+
+		private string reservedInfoBandwidth;
+
+		private string reservedInfoActiveTime;
 
 		private List<DescribeLoadBalancerAttribute_ListenerPortAndProtocal> listenerPortsAndProtocal;
 
@@ -354,6 +375,126 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string AddressIPVersion
+		{
+			get
+			{
+				return addressIPVersion;
+			}
+			set	
+			{
+				addressIPVersion = value;
+			}
+		}
+
+		public string CloudType
+		{
+			get
+			{
+				return cloudType;
+			}
+			set	
+			{
+				cloudType = value;
+			}
+		}
+
+		public int? RenewalDuration
+		{
+			get
+			{
+				return renewalDuration;
+			}
+			set	
+			{
+				renewalDuration = value;
+			}
+		}
+
+		public string RenewalStatus
+		{
+			get
+			{
+				return renewalStatus;
+			}
+			set	
+			{
+				renewalStatus = value;
+			}
+		}
+
+		public string RenewalCycUnit
+		{
+			get
+			{
+				return renewalCycUnit;
+			}
+			set	
+			{
+				renewalCycUnit = value;
+			}
+		}
+
+		public string HasReservedInfo
+		{
+			get
+			{
+				return hasReservedInfo;
+			}
+			set	
+			{
+				hasReservedInfo = value;
+			}
+		}
+
+		public string ReservedInfoOrderType
+		{
+			get
+			{
+				return reservedInfoOrderType;
+			}
+			set	
+			{
+				reservedInfoOrderType = value;
+			}
+		}
+
+		public string ReservedInfoInternetChargeType
+		{
+			get
+			{
+				return reservedInfoInternetChargeType;
+			}
+			set	
+			{
+				reservedInfoInternetChargeType = value;
+			}
+		}
+
+		public string ReservedInfoBandwidth
+		{
+			get
+			{
+				return reservedInfoBandwidth;
+			}
+			set	
+			{
+				reservedInfoBandwidth = value;
+			}
+		}
+
+		public string ReservedInfoActiveTime
+		{
+			get
+			{
+				return reservedInfoActiveTime;
+			}
+			set	
+			{
+				reservedInfoActiveTime = value;
+			}
+		}
+
 		public List<DescribeLoadBalancerAttribute_ListenerPortAndProtocal> ListenerPortsAndProtocal
 		{
 			get
@@ -445,6 +586,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private int? forwardPort;
 
+			private string description;
+
 			public int? ListenerPort
 			{
 				get
@@ -492,6 +635,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 					forwardPort = value;
 				}
 			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
 		}
 
 		public class DescribeLoadBalancerAttribute_BackendServer
@@ -506,6 +661,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			private string serverIp;
 
 			private string vpcId;
+
+			private string description;
 
 			public string ServerId
 			{
@@ -564,6 +721,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					vpcId = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 		}

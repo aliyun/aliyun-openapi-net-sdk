@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Slb.Transform;
 using Aliyun.Acs.Slb.Transform.V20140515;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -33,8 +34,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         {
         }
 
-		private string access_key_id;
-
 		private long? resourceOwnerId;
 
 		private int? healthCheckTimeout;
@@ -44,6 +43,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string xForwardedFor;
 
 		private string healthCheckURI;
+
+		private string description;
 
 		private int? unhealthyThreshold;
 
@@ -59,17 +60,9 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? forwardPort;
 
-		private int? maxConnection;
-
-		private string regionId;
-
 		private int? cookieTimeout;
 
-		private string action;
-
 		private string stickySessionType;
-
-		private string vpcIds;
 
 		private string vServerGroupId;
 
@@ -95,8 +88,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private long? ownerId;
 
-		private string tags;
-
 		private int? idleTimeout;
 
 		private string loadBalancerId;
@@ -114,19 +105,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private int? healthCheckConnectPort;
 
 		private string healthCheckHttpCode;
-
-		public string Access_key_id
-		{
-			get
-			{
-				return access_key_id;
-			}
-			set	
-			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -190,6 +168,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				healthCheckURI = value;
 				DictionaryUtil.Add(QueryParameters, "HealthCheckURI", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -284,32 +275,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public int? MaxConnection
-		{
-			get
-			{
-				return maxConnection;
-			}
-			set	
-			{
-				maxConnection = value;
-				DictionaryUtil.Add(QueryParameters, "MaxConnection", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public int? CookieTimeout
 		{
 			get
@@ -323,19 +288,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string StickySessionType
 		{
 			get
@@ -346,19 +298,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				stickySessionType = value;
 				DictionaryUtil.Add(QueryParameters, "StickySessionType", value);
-			}
-		}
-
-		public string VpcIds
-		{
-			get
-			{
-				return vpcIds;
-			}
-			set	
-			{
-				vpcIds = value;
-				DictionaryUtil.Add(QueryParameters, "VpcIds", value);
 			}
 		}
 
@@ -518,19 +457,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
 		public int? IdleTimeout
 		{
 			get
@@ -648,7 +574,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-        public override CreateLoadBalancerHTTPListenerResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateLoadBalancerHTTPListenerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateLoadBalancerHTTPListenerResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

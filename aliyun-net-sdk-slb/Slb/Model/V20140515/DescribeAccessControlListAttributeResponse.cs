@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -29,6 +30,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string aclId;
 
 		private string aclName;
+
+		private string addressIPVersion;
+
+		private string resourceGroupId;
 
 		private List<DescribeAccessControlListAttribute_AclEntry> aclEntrys;
 
@@ -67,6 +72,30 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				aclName = value;
+			}
+		}
+
+		public string AddressIPVersion
+		{
+			get
+			{
+				return addressIPVersion;
+			}
+			set	
+			{
+				addressIPVersion = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 

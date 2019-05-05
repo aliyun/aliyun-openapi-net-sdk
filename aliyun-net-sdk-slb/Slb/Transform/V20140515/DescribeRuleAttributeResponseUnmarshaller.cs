@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -37,6 +38,21 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeRuleAttributeResponse.Domain = context.StringValue("DescribeRuleAttribute.Domain");
 			describeRuleAttributeResponse.Url = context.StringValue("DescribeRuleAttribute.Url");
 			describeRuleAttributeResponse.VServerGroupId = context.StringValue("DescribeRuleAttribute.VServerGroupId");
+			describeRuleAttributeResponse.ListenerSync = context.StringValue("DescribeRuleAttribute.ListenerSync");
+			describeRuleAttributeResponse.Scheduler = context.StringValue("DescribeRuleAttribute.Scheduler");
+			describeRuleAttributeResponse.StickySession = context.StringValue("DescribeRuleAttribute.StickySession");
+			describeRuleAttributeResponse.StickySessionType = context.StringValue("DescribeRuleAttribute.StickySessionType");
+			describeRuleAttributeResponse.CookieTimeout = context.IntegerValue("DescribeRuleAttribute.CookieTimeout");
+			describeRuleAttributeResponse.Cookie = context.StringValue("DescribeRuleAttribute.Cookie");
+			describeRuleAttributeResponse.HealthCheck = context.StringValue("DescribeRuleAttribute.HealthCheck");
+			describeRuleAttributeResponse.HealthCheckDomain = context.StringValue("DescribeRuleAttribute.HealthCheckDomain");
+			describeRuleAttributeResponse.HealthCheckURI = context.StringValue("DescribeRuleAttribute.HealthCheckURI");
+			describeRuleAttributeResponse.HealthyThreshold = context.IntegerValue("DescribeRuleAttribute.HealthyThreshold");
+			describeRuleAttributeResponse.UnhealthyThreshold = context.IntegerValue("DescribeRuleAttribute.UnhealthyThreshold");
+			describeRuleAttributeResponse.HealthCheckTimeout = context.IntegerValue("DescribeRuleAttribute.HealthCheckTimeout");
+			describeRuleAttributeResponse.HealthCheckInterval = context.IntegerValue("DescribeRuleAttribute.HealthCheckInterval");
+			describeRuleAttributeResponse.HealthCheckConnectPort = context.IntegerValue("DescribeRuleAttribute.HealthCheckConnectPort");
+			describeRuleAttributeResponse.HealthCheckHttpCode = context.StringValue("DescribeRuleAttribute.HealthCheckHttpCode");
         
 			return describeRuleAttributeResponse;
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -42,6 +43,15 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			uploadServerCertificateResponse.ResourceGroupId = context.StringValue("UploadServerCertificate.ResourceGroupId");
 			uploadServerCertificateResponse.CreateTime = context.StringValue("UploadServerCertificate.CreateTime");
 			uploadServerCertificateResponse.CreateTimeStamp = context.LongValue("UploadServerCertificate.CreateTimeStamp");
+			uploadServerCertificateResponse.ExpireTime = context.StringValue("UploadServerCertificate.ExpireTime");
+			uploadServerCertificateResponse.ExpireTimeStamp = context.LongValue("UploadServerCertificate.ExpireTimeStamp");
+			uploadServerCertificateResponse.CommonName = context.StringValue("UploadServerCertificate.CommonName");
+
+			List<string> uploadServerCertificateResponse_subjectAlternativeNames = new List<string>();
+			for (int i = 0; i < context.Length("UploadServerCertificate.SubjectAlternativeNames.Length"); i++) {
+				uploadServerCertificateResponse_subjectAlternativeNames.Add(context.StringValue("UploadServerCertificate.SubjectAlternativeNames["+ i +"]"));
+			}
+			uploadServerCertificateResponse.SubjectAlternativeNames = uploadServerCertificateResponse_subjectAlternativeNames;
         
 			return uploadServerCertificateResponse;
         }

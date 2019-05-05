@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Slb.Transform;
 using Aliyun.Acs.Slb.Transform.V20140515;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -41,17 +42,9 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
-
-		private string accessKeyId;
-
-		private string tags;
 
 		public string Access_key_id
 		{
@@ -105,19 +98,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -128,19 +108,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -157,33 +124,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-        public override DescribeMasterSlaveVServerGroupAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeMasterSlaveVServerGroupAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeMasterSlaveVServerGroupAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

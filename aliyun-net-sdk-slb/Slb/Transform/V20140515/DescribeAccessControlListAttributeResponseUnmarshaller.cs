@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -33,6 +34,8 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeAccessControlListAttributeResponse.RequestId = context.StringValue("DescribeAccessControlListAttribute.RequestId");
 			describeAccessControlListAttributeResponse.AclId = context.StringValue("DescribeAccessControlListAttribute.AclId");
 			describeAccessControlListAttributeResponse.AclName = context.StringValue("DescribeAccessControlListAttribute.AclName");
+			describeAccessControlListAttributeResponse.AddressIPVersion = context.StringValue("DescribeAccessControlListAttribute.AddressIPVersion");
+			describeAccessControlListAttributeResponse.ResourceGroupId = context.StringValue("DescribeAccessControlListAttribute.ResourceGroupId");
 
 			List<DescribeAccessControlListAttributeResponse.DescribeAccessControlListAttribute_AclEntry> describeAccessControlListAttributeResponse_aclEntrys = new List<DescribeAccessControlListAttributeResponse.DescribeAccessControlListAttribute_AclEntry>();
 			for (int i = 0; i < context.Length("DescribeAccessControlListAttribute.AclEntrys.Length"); i++) {

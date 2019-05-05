@@ -16,55 +16,33 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Slb.Transform;
 using Aliyun.Acs.Slb.Transform.V20140515;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-    public class SetLoadBalancerAutoReleaseTimeRequest : RpcAcsRequest<SetLoadBalancerAutoReleaseTimeResponse>
+    public class DeleteDomainExtensionRequest : RpcAcsRequest<DeleteDomainExtensionResponse>
     {
-        public SetLoadBalancerAutoReleaseTimeRequest()
-            : base("Slb", "2014-05-15", "SetLoadBalancerAutoReleaseTime", "slb", "openAPI")
+        public DeleteDomainExtensionRequest()
+            : base("Slb", "2014-05-15", "DeleteDomainExtension", "slb", "openAPI")
         {
         }
 
-		private string access_key_id;
-
 		private long? resourceOwnerId;
-
-		private string loadBalancerId;
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
-
-		private string action;
-
-		private long? autoReleaseTime;
 
 		private long? ownerId;
 
-		private string tags;
-
-		public string Access_key_id
-		{
-			get
-			{
-				return access_key_id;
-			}
-			set	
-			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
+		private string domainExtensionId;
 
 		public long? ResourceOwnerId
 		{
@@ -76,19 +54,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
 			}
 		}
 
@@ -105,19 +70,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -128,32 +80,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public long? AutoReleaseTime
-		{
-			get
-			{
-				return autoReleaseTime;
-			}
-			set	
-			{
-				autoReleaseTime = value;
-				DictionaryUtil.Add(QueryParameters, "AutoReleaseTime", value.ToString());
 			}
 		}
 
@@ -170,22 +96,22 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Tags
+		public string DomainExtensionId
 		{
 			get
 			{
-				return tags;
+				return domainExtensionId;
 			}
 			set	
 			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
+				domainExtensionId = value;
+				DictionaryUtil.Add(QueryParameters, "DomainExtensionId", value);
 			}
 		}
 
-        public override SetLoadBalancerAutoReleaseTimeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteDomainExtensionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetLoadBalancerAutoReleaseTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDomainExtensionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

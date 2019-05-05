@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Slb.Transform;
 using Aliyun.Acs.Slb.Transform.V20140515;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -33,7 +34,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         {
         }
 
-		private string access_key_id;
+		private bool? includeRule;
 
 		private long? resourceOwnerId;
 
@@ -41,26 +42,22 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
+		private bool? includeListener;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
 
-		private string tags;
-
-		public string Access_key_id
+		public bool? IncludeRule
 		{
 			get
 			{
-				return access_key_id;
+				return includeRule;
 			}
 			set	
 			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
+				includeRule = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeRule", value.ToString());
 			}
 		}
 
@@ -103,16 +100,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string RegionId
+		public bool? IncludeListener
 		{
 			get
 			{
-				return regionId;
+				return includeListener;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				includeListener = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeListener", value.ToString());
 			}
 		}
 
@@ -129,19 +126,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -155,20 +139,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-        public override DescribeVServerGroupsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeVServerGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeVServerGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

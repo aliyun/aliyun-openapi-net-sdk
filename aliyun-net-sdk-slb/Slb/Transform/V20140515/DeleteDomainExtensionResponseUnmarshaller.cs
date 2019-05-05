@@ -16,26 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Slb.Model.V20140515
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
+
+namespace Aliyun.Acs.Slb.Transform.V20140515
 {
-	public class MoveResourceGroupResponse : AcsResponse
-	{
+    public class DeleteDomainExtensionResponseUnmarshaller
+    {
+        public static DeleteDomainExtensionResponse Unmarshall(UnmarshallerContext context)
+        {
+			DeleteDomainExtensionResponse deleteDomainExtensionResponse = new DeleteDomainExtensionResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			deleteDomainExtensionResponse.HttpResponse = context.HttpResponse;
+			deleteDomainExtensionResponse.RequestId = context.StringValue("DeleteDomainExtension.RequestId");
+        
+			return deleteDomainExtensionResponse;
+        }
+    }
 }

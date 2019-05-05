@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -41,6 +42,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string networkType;
 
 		private long? orderId;
+
+		private string addressIPVersion;
 
 		public string RequestId
 		{
@@ -147,6 +150,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string AddressIPVersion
+		{
+			get
+			{
+				return addressIPVersion;
+			}
+			set	
+			{
+				addressIPVersion = value;
 			}
 		}
 	}

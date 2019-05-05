@@ -16,23 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
 
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
+
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
-    public class MoveResourceGroupResponseUnmarshaller
+    public class CreateDomainExtensionResponseUnmarshaller
     {
-        public static MoveResourceGroupResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDomainExtensionResponse Unmarshall(UnmarshallerContext context)
         {
-			MoveResourceGroupResponse moveResourceGroupResponse = new MoveResourceGroupResponse();
+			CreateDomainExtensionResponse createDomainExtensionResponse = new CreateDomainExtensionResponse();
 
-			moveResourceGroupResponse.HttpResponse = context.HttpResponse;
-			moveResourceGroupResponse.RequestId = context.StringValue("MoveResourceGroup.RequestId");
+			createDomainExtensionResponse.HttpResponse = context.HttpResponse;
+			createDomainExtensionResponse.RequestId = context.StringValue("CreateDomainExtension.RequestId");
+			createDomainExtensionResponse.ListenerPort = context.IntegerValue("CreateDomainExtension.ListenerPort");
+			createDomainExtensionResponse.DomainExtensionId = context.StringValue("CreateDomainExtension.DomainExtensionId");
         
-			return moveResourceGroupResponse;
+			return createDomainExtensionResponse;
         }
     }
 }

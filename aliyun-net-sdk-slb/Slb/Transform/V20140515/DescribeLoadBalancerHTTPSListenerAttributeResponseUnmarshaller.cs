@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -53,6 +54,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckHttpCode = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckHttpCode");
 			describeLoadBalancerHTTPSListenerAttributeResponse.ServerCertificateId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.ServerCertificateId");
 			describeLoadBalancerHTTPSListenerAttributeResponse.CACertificateId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.CACertificateId");
+			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckMethod = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckMethod");
 			describeLoadBalancerHTTPSListenerAttributeResponse.MaxConnection = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.MaxConnection");
 			describeLoadBalancerHTTPSListenerAttributeResponse.VServerGroupId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.VServerGroupId");
 			describeLoadBalancerHTTPSListenerAttributeResponse.Gzip = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Gzip");
@@ -65,6 +67,33 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPSListenerAttributeResponse.VpcIds = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.VpcIds");
 			describeLoadBalancerHTTPSListenerAttributeResponse.RequestTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.RequestTimeout");
 			describeLoadBalancerHTTPSListenerAttributeResponse.IdleTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.IdleTimeout");
+			describeLoadBalancerHTTPSListenerAttributeResponse.EnableHttp2 = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.EnableHttp2");
+			describeLoadBalancerHTTPSListenerAttributeResponse.TLSCipherPolicy = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.TLSCipherPolicy");
+			describeLoadBalancerHTTPSListenerAttributeResponse.Description = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Description");
+
+			List<DescribeLoadBalancerHTTPSListenerAttributeResponse.DescribeLoadBalancerHTTPSListenerAttribute_Rule> describeLoadBalancerHTTPSListenerAttributeResponse_rules = new List<DescribeLoadBalancerHTTPSListenerAttributeResponse.DescribeLoadBalancerHTTPSListenerAttribute_Rule>();
+			for (int i = 0; i < context.Length("DescribeLoadBalancerHTTPSListenerAttribute.Rules.Length"); i++) {
+				DescribeLoadBalancerHTTPSListenerAttributeResponse.DescribeLoadBalancerHTTPSListenerAttribute_Rule rule = new DescribeLoadBalancerHTTPSListenerAttributeResponse.DescribeLoadBalancerHTTPSListenerAttribute_Rule();
+				rule.RuleId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Rules["+ i +"].RuleId");
+				rule.RuleName = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Rules["+ i +"].RuleName");
+				rule.Domain = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Rules["+ i +"].Domain");
+				rule.Url = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Rules["+ i +"].Url");
+				rule.VServerGroupId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Rules["+ i +"].VServerGroupId");
+
+				describeLoadBalancerHTTPSListenerAttributeResponse_rules.Add(rule);
+			}
+			describeLoadBalancerHTTPSListenerAttributeResponse.Rules = describeLoadBalancerHTTPSListenerAttributeResponse_rules;
+
+			List<DescribeLoadBalancerHTTPSListenerAttributeResponse.DescribeLoadBalancerHTTPSListenerAttribute_DomainExtension> describeLoadBalancerHTTPSListenerAttributeResponse_domainExtensions = new List<DescribeLoadBalancerHTTPSListenerAttributeResponse.DescribeLoadBalancerHTTPSListenerAttribute_DomainExtension>();
+			for (int i = 0; i < context.Length("DescribeLoadBalancerHTTPSListenerAttribute.DomainExtensions.Length"); i++) {
+				DescribeLoadBalancerHTTPSListenerAttributeResponse.DescribeLoadBalancerHTTPSListenerAttribute_DomainExtension domainExtension = new DescribeLoadBalancerHTTPSListenerAttributeResponse.DescribeLoadBalancerHTTPSListenerAttribute_DomainExtension();
+				domainExtension.DomainExtensionId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.DomainExtensions["+ i +"].DomainExtensionId");
+				domainExtension.Domain = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.DomainExtensions["+ i +"].Domain");
+				domainExtension.ServerCertificateId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.DomainExtensions["+ i +"].ServerCertificateId");
+
+				describeLoadBalancerHTTPSListenerAttributeResponse_domainExtensions.Add(domainExtension);
+			}
+			describeLoadBalancerHTTPSListenerAttributeResponse.DomainExtensions = describeLoadBalancerHTTPSListenerAttributeResponse_domainExtensions;
         
 			return describeLoadBalancerHTTPSListenerAttributeResponse;
         }

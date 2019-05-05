@@ -16,17 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeLoadBalancerAutoReleaseTimeResponse : AcsResponse
+	public class DeleteDomainExtensionResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private long? autoReleaseTime;
 
 		public string RequestId
 		{
@@ -37,18 +36,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public long? AutoReleaseTime
-		{
-			get
-			{
-				return autoReleaseTime;
-			}
-			set	
-			{
-				autoReleaseTime = value;
 			}
 		}
 	}

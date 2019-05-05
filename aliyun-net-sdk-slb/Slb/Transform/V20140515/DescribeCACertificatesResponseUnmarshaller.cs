@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -42,6 +43,19 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				cACertificate.ResourceGroupId = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].ResourceGroupId");
 				cACertificate.CreateTime = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].CreateTime");
 				cACertificate.CreateTimeStamp = context.LongValue("DescribeCACertificates.CACertificates["+ i +"].CreateTimeStamp");
+				cACertificate.ExpireTime = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].ExpireTime");
+				cACertificate.ExpireTimeStamp = context.LongValue("DescribeCACertificates.CACertificates["+ i +"].ExpireTimeStamp");
+				cACertificate.CommonName = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].CommonName");
+
+				List<DescribeCACertificatesResponse.DescribeCACertificates_CACertificate.DescribeCACertificates_Tag> cACertificate_tags = new List<DescribeCACertificatesResponse.DescribeCACertificates_CACertificate.DescribeCACertificates_Tag>();
+				for (int j = 0; j < context.Length("DescribeCACertificates.CACertificates["+ i +"].Tags.Length"); j++) {
+					DescribeCACertificatesResponse.DescribeCACertificates_CACertificate.DescribeCACertificates_Tag tag = new DescribeCACertificatesResponse.DescribeCACertificates_CACertificate.DescribeCACertificates_Tag();
+					tag.TagKey = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = context.StringValue("DescribeCACertificates.CACertificates["+ i +"].Tags["+ j +"].TagValue");
+
+					cACertificate_tags.Add(tag);
+				}
+				cACertificate.Tags = cACertificate_tags;
 
 				describeCACertificatesResponse_cACertificates.Add(cACertificate);
 			}

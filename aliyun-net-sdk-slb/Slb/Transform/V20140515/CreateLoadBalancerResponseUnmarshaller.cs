@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -39,6 +40,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			createLoadBalancerResponse.VSwitchId = context.StringValue("CreateLoadBalancer.VSwitchId");
 			createLoadBalancerResponse.NetworkType = context.StringValue("CreateLoadBalancer.NetworkType");
 			createLoadBalancerResponse.OrderId = context.LongValue("CreateLoadBalancer.OrderId");
+			createLoadBalancerResponse.AddressIPVersion = context.StringValue("CreateLoadBalancer.AddressIPVersion");
         
 			return createLoadBalancerResponse;
         }

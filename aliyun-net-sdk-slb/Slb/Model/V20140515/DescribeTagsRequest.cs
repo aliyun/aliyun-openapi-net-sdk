@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Slb.Transform;
 using Aliyun.Acs.Slb.Transform.V20140515;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -33,21 +34,15 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         {
         }
 
-		private string access_key_id;
-
 		private long? resourceOwnerId;
 
 		private string loadBalancerId;
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
 
 		private int? pageSize;
-
-		private string action;
 
 		private bool? distinctKey;
 
@@ -56,19 +51,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private int? pageNumber;
 
 		private string tags;
-
-		public string Access_key_id
-		{
-			get
-			{
-				return access_key_id;
-			}
-			set	
-			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -109,19 +91,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -145,19 +114,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -213,7 +169,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-        public override DescribeTagsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeTagsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

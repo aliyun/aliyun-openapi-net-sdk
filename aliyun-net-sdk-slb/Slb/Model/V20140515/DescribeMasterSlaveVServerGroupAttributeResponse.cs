@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -95,7 +96,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string serverIp;
 
+			private string eniHost;
+
 			private string vpcId;
+
+			private string description;
 
 			public string ServerId
 			{
@@ -169,6 +174,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				}
 			}
 
+			public string EniHost
+			{
+				get
+				{
+					return eniHost;
+				}
+				set	
+				{
+					eniHost = value;
+				}
+			}
+
 			public string VpcId
 			{
 				get
@@ -178,6 +195,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					vpcId = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 		}

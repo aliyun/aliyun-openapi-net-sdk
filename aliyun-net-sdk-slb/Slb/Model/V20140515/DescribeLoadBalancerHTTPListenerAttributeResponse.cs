@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -66,6 +67,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string healthCheckHttpCode;
 
+		private string healthCheckMethod;
+
 		private int? maxConnection;
 
 		private string vServerGroupId;
@@ -93,6 +96,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private int? requestTimeout;
 
 		private int? idleTimeout;
+
+		private string description;
+
+		private List<DescribeLoadBalancerHTTPListenerAttribute_Rule> rules;
 
 		public string RequestId
 		{
@@ -346,6 +353,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string HealthCheckMethod
+		{
+			get
+			{
+				return healthCheckMethod;
+			}
+			set	
+			{
+				healthCheckMethod = value;
+			}
+		}
+
 		public int? MaxConnection
 		{
 			get
@@ -511,6 +530,104 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				idleTimeout = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
+		public List<DescribeLoadBalancerHTTPListenerAttribute_Rule> Rules
+		{
+			get
+			{
+				return rules;
+			}
+			set	
+			{
+				rules = value;
+			}
+		}
+
+		public class DescribeLoadBalancerHTTPListenerAttribute_Rule
+		{
+
+			private string ruleId;
+
+			private string ruleName;
+
+			private string domain;
+
+			private string url;
+
+			private string vServerGroupId;
+
+			public string RuleId
+			{
+				get
+				{
+					return ruleId;
+				}
+				set	
+				{
+					ruleId = value;
+				}
+			}
+
+			public string RuleName
+			{
+				get
+				{
+					return ruleName;
+				}
+				set	
+				{
+					ruleName = value;
+				}
+			}
+
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
+				}
+			}
+
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
+				}
+			}
+
+			public string VServerGroupId
+			{
+				get
+				{
+					return vServerGroupId;
+				}
+				set	
+				{
+					vServerGroupId = value;
+				}
 			}
 		}
 	}

@@ -16,26 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
+using System;
 using System.Collections.Generic;
 
-namespace Aliyun.Acs.Slb.Model.V20140515
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
+
+namespace Aliyun.Acs.Slb.Transform.V20140515
 {
-	public class SetLoadBalancerAutoReleaseTimeResponse : AcsResponse
-	{
+    public class SetDomainExtensionAttributeResponseUnmarshaller
+    {
+        public static SetDomainExtensionAttributeResponse Unmarshall(UnmarshallerContext context)
+        {
+			SetDomainExtensionAttributeResponse setDomainExtensionAttributeResponse = new SetDomainExtensionAttributeResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			setDomainExtensionAttributeResponse.HttpResponse = context.HttpResponse;
+			setDomainExtensionAttributeResponse.RequestId = context.StringValue("SetDomainExtensionAttribute.RequestId");
+        
+			return setDomainExtensionAttributeResponse;
+        }
+    }
 }

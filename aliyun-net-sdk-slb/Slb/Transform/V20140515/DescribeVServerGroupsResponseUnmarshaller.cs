@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -37,6 +38,31 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup vServerGroup = new DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup();
 				vServerGroup.VServerGroupId = context.StringValue("DescribeVServerGroups.VServerGroups["+ i +"].VServerGroupId");
 				vServerGroup.VServerGroupName = context.StringValue("DescribeVServerGroups.VServerGroups["+ i +"].VServerGroupName");
+
+				DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup.DescribeVServerGroups_AssociatedObjects associatedObjects = new DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup.DescribeVServerGroups_AssociatedObjects();
+
+				List<DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup.DescribeVServerGroups_AssociatedObjects.DescribeVServerGroups_Listener> associatedObjects_listeners = new List<DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup.DescribeVServerGroups_AssociatedObjects.DescribeVServerGroups_Listener>();
+				for (int j = 0; j < context.Length("DescribeVServerGroups.VServerGroups["+ i +"].AssociatedObjects.Listeners.Length"); j++) {
+					DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup.DescribeVServerGroups_AssociatedObjects.DescribeVServerGroups_Listener listener = new DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup.DescribeVServerGroups_AssociatedObjects.DescribeVServerGroups_Listener();
+					listener.Protocol = context.StringValue("DescribeVServerGroups.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol");
+					listener.Port = context.IntegerValue("DescribeVServerGroups.VServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Port");
+
+					associatedObjects_listeners.Add(listener);
+				}
+				associatedObjects.Listeners = associatedObjects_listeners;
+
+				List<DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup.DescribeVServerGroups_AssociatedObjects.DescribeVServerGroups_Rule> associatedObjects_rules = new List<DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup.DescribeVServerGroups_AssociatedObjects.DescribeVServerGroups_Rule>();
+				for (int j = 0; j < context.Length("DescribeVServerGroups.VServerGroups["+ i +"].AssociatedObjects.Rules.Length"); j++) {
+					DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup.DescribeVServerGroups_AssociatedObjects.DescribeVServerGroups_Rule rule = new DescribeVServerGroupsResponse.DescribeVServerGroups_VServerGroup.DescribeVServerGroups_AssociatedObjects.DescribeVServerGroups_Rule();
+					rule.RuleId = context.StringValue("DescribeVServerGroups.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].RuleId");
+					rule.Domain = context.StringValue("DescribeVServerGroups.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].Domain");
+					rule.Url = context.StringValue("DescribeVServerGroups.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].Url");
+					rule.RuleName = context.StringValue("DescribeVServerGroups.VServerGroups["+ i +"].AssociatedObjects.Rules["+ j +"].RuleName");
+
+					associatedObjects_rules.Add(rule);
+				}
+				associatedObjects.Rules = associatedObjects_rules;
+				vServerGroup.AssociatedObjects = associatedObjects;
 
 				describeVServerGroupsResponse_vServerGroups.Add(vServerGroup);
 			}

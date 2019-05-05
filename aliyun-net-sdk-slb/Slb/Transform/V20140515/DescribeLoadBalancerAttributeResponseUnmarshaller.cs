@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -53,6 +54,16 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerAttributeResponse.PayType = context.StringValue("DescribeLoadBalancerAttribute.PayType");
 			describeLoadBalancerAttributeResponse.MasterZoneId = context.StringValue("DescribeLoadBalancerAttribute.MasterZoneId");
 			describeLoadBalancerAttributeResponse.SlaveZoneId = context.StringValue("DescribeLoadBalancerAttribute.SlaveZoneId");
+			describeLoadBalancerAttributeResponse.AddressIPVersion = context.StringValue("DescribeLoadBalancerAttribute.AddressIPVersion");
+			describeLoadBalancerAttributeResponse.CloudType = context.StringValue("DescribeLoadBalancerAttribute.CloudType");
+			describeLoadBalancerAttributeResponse.RenewalDuration = context.IntegerValue("DescribeLoadBalancerAttribute.RenewalDuration");
+			describeLoadBalancerAttributeResponse.RenewalStatus = context.StringValue("DescribeLoadBalancerAttribute.RenewalStatus");
+			describeLoadBalancerAttributeResponse.RenewalCycUnit = context.StringValue("DescribeLoadBalancerAttribute.RenewalCycUnit");
+			describeLoadBalancerAttributeResponse.HasReservedInfo = context.StringValue("DescribeLoadBalancerAttribute.HasReservedInfo");
+			describeLoadBalancerAttributeResponse.ReservedInfoOrderType = context.StringValue("DescribeLoadBalancerAttribute.ReservedInfoOrderType");
+			describeLoadBalancerAttributeResponse.ReservedInfoInternetChargeType = context.StringValue("DescribeLoadBalancerAttribute.ReservedInfoInternetChargeType");
+			describeLoadBalancerAttributeResponse.ReservedInfoBandwidth = context.StringValue("DescribeLoadBalancerAttribute.ReservedInfoBandwidth");
+			describeLoadBalancerAttributeResponse.ReservedInfoActiveTime = context.StringValue("DescribeLoadBalancerAttribute.ReservedInfoActiveTime");
 
 			List<string> describeLoadBalancerAttributeResponse_listenerPorts = new List<string>();
 			for (int i = 0; i < context.Length("DescribeLoadBalancerAttribute.ListenerPorts.Length"); i++) {
@@ -77,6 +88,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				listenerPortAndProtocol.ListenerProtocol = context.StringValue("DescribeLoadBalancerAttribute.ListenerPortsAndProtocol["+ i +"].ListenerProtocol");
 				listenerPortAndProtocol.ListenerForward = context.StringValue("DescribeLoadBalancerAttribute.ListenerPortsAndProtocol["+ i +"].ListenerForward");
 				listenerPortAndProtocol.ForwardPort = context.IntegerValue("DescribeLoadBalancerAttribute.ListenerPortsAndProtocol["+ i +"].ForwardPort");
+				listenerPortAndProtocol.Description = context.StringValue("DescribeLoadBalancerAttribute.ListenerPortsAndProtocol["+ i +"].Description");
 
 				describeLoadBalancerAttributeResponse_listenerPortsAndProtocol.Add(listenerPortAndProtocol);
 			}
@@ -90,6 +102,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				backendServer.Type = context.StringValue("DescribeLoadBalancerAttribute.BackendServers["+ i +"].Type");
 				backendServer.ServerIp = context.StringValue("DescribeLoadBalancerAttribute.BackendServers["+ i +"].ServerIp");
 				backendServer.VpcId = context.StringValue("DescribeLoadBalancerAttribute.BackendServers["+ i +"].VpcId");
+				backendServer.Description = context.StringValue("DescribeLoadBalancerAttribute.BackendServers["+ i +"].Description");
 
 				describeLoadBalancerAttributeResponse_backendServers.Add(backendServer);
 			}

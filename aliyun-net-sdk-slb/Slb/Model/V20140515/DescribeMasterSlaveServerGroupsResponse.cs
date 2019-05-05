@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -59,6 +60,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string masterSlaveServerGroupName;
 
+			private DescribeMasterSlaveServerGroups_AssociatedObjects associatedObjects;
+
 			public string MasterSlaveServerGroupId
 			{
 				get
@@ -80,6 +83,68 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					masterSlaveServerGroupName = value;
+				}
+			}
+
+			public DescribeMasterSlaveServerGroups_AssociatedObjects AssociatedObjects
+			{
+				get
+				{
+					return associatedObjects;
+				}
+				set	
+				{
+					associatedObjects = value;
+				}
+			}
+
+			public class DescribeMasterSlaveServerGroups_AssociatedObjects
+			{
+
+				private List<DescribeMasterSlaveServerGroups_Listener> listeners;
+
+				public List<DescribeMasterSlaveServerGroups_Listener> Listeners
+				{
+					get
+					{
+						return listeners;
+					}
+					set	
+					{
+						listeners = value;
+					}
+				}
+
+				public class DescribeMasterSlaveServerGroups_Listener
+				{
+
+					private string protocol;
+
+					private int? port;
+
+					public string Protocol
+					{
+						get
+						{
+							return protocol;
+						}
+						set	
+						{
+							protocol = value;
+						}
+					}
+
+					public int? Port
+					{
+						get
+						{
+							return port;
+						}
+						set	
+						{
+							port = value;
+						}
+					}
 				}
 			}
 		}

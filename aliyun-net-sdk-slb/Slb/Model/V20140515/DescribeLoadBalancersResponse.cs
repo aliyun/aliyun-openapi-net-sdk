@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -130,6 +131,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			private string payType;
 
 			private string resourceGroupId;
+
+			private string addressIPVersion;
+
+			private List<DescribeLoadBalancers_Tag> tags;
 
 			public string LoadBalancerId
 			{
@@ -332,6 +337,62 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string AddressIPVersion
+			{
+				get
+				{
+					return addressIPVersion;
+				}
+				set	
+				{
+					addressIPVersion = value;
+				}
+			}
+
+			public List<DescribeLoadBalancers_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeLoadBalancers_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
 				}
 			}
 		}

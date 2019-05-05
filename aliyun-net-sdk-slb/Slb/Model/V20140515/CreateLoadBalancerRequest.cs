@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Slb.Transform;
 using Aliyun.Acs.Slb.Transform.V20140515;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -33,29 +34,13 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         {
         }
 
-		private string access_key_id;
-
-		private string loadBalancerSpec;
-
 		private long? resourceOwnerId;
-
-		private bool? autoPay;
-
-		private string resourceOwnerAccount;
-
-		private int? bandwidth;
 
 		private string clientToken;
 
-		private string ownerAccount;
-
-		private long? ownerId;
+		private string addressIPVersion;
 
 		private string masterZoneId;
-
-		private string tags;
-
-		private string vSwitchId;
 
 		private int? duration;
 
@@ -63,49 +48,33 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string loadBalancerName;
 
-		private string enableVpcVipFlow;
+		private string addressType;
 
-		private string regionId;
+		private string slaveZoneId;
+
+		private string loadBalancerSpec;
+
+		private bool? autoPay;
+
+		private string address;
+
+		private string resourceOwnerAccount;
+
+		private int? bandwidth;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
+		private string vSwitchId;
 
 		private string internetChargeType;
 
 		private string vpcId;
 
-		private string action;
-
-		private string addressType;
-
-		private string slaveZoneId;
-
 		private string payType;
 
 		private string pricingCycle;
-
-		public string Access_key_id
-		{
-			get
-			{
-				return access_key_id;
-			}
-			set	
-			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
-
-		public string LoadBalancerSpec
-		{
-			get
-			{
-				return loadBalancerSpec;
-			}
-			set	
-			{
-				loadBalancerSpec = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerSpec", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -117,45 +86,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public bool? AutoPay
-		{
-			get
-			{
-				return autoPay;
-			}
-			set	
-			{
-				autoPay = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public int? Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "Bandwidth", value.ToString());
 			}
 		}
 
@@ -172,29 +102,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string OwnerAccount
+		public string AddressIPVersion
 		{
 			get
 			{
-				return ownerAccount;
+				return addressIPVersion;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				addressIPVersion = value;
+				DictionaryUtil.Add(QueryParameters, "AddressIPVersion", value);
 			}
 		}
 
@@ -208,32 +125,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				masterZoneId = value;
 				DictionaryUtil.Add(QueryParameters, "MasterZoneId", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
@@ -276,29 +167,133 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string EnableVpcVipFlow
+		public string AddressType
 		{
 			get
 			{
-				return enableVpcVipFlow;
+				return addressType;
 			}
 			set	
 			{
-				enableVpcVipFlow = value;
-				DictionaryUtil.Add(QueryParameters, "EnableVpcVipFlow", value);
+				addressType = value;
+				DictionaryUtil.Add(QueryParameters, "AddressType", value);
 			}
 		}
 
-		public string RegionId
+		public string SlaveZoneId
 		{
 			get
 			{
-				return regionId;
+				return slaveZoneId;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				slaveZoneId = value;
+				DictionaryUtil.Add(QueryParameters, "SlaveZoneId", value);
+			}
+		}
+
+		public string LoadBalancerSpec
+		{
+			get
+			{
+				return loadBalancerSpec;
+			}
+			set	
+			{
+				loadBalancerSpec = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerSpec", value);
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
+		public string Address
+		{
+			get
+			{
+				return address;
+			}
+			set	
+			{
+				address = value;
+				DictionaryUtil.Add(QueryParameters, "Address", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public int? Bandwidth
+		{
+			get
+			{
+				return bandwidth;
+			}
+			set	
+			{
+				bandwidth = value;
+				DictionaryUtil.Add(QueryParameters, "Bandwidth", value.ToString());
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
@@ -328,45 +323,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string AddressType
-		{
-			get
-			{
-				return addressType;
-			}
-			set	
-			{
-				addressType = value;
-				DictionaryUtil.Add(QueryParameters, "AddressType", value);
-			}
-		}
-
-		public string SlaveZoneId
-		{
-			get
-			{
-				return slaveZoneId;
-			}
-			set	
-			{
-				slaveZoneId = value;
-				DictionaryUtil.Add(QueryParameters, "SlaveZoneId", value);
-			}
-		}
-
 		public string PayType
 		{
 			get
@@ -393,7 +349,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-        public override CreateLoadBalancerResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateLoadBalancerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateLoadBalancerResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

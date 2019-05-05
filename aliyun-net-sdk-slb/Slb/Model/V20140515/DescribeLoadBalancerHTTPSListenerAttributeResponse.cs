@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -70,6 +71,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string cACertificateId;
 
+		private string healthCheckMethod;
+
 		private int? maxConnection;
 
 		private string vServerGroupId;
@@ -93,6 +96,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private int? requestTimeout;
 
 		private int? idleTimeout;
+
+		private string enableHttp2;
+
+		private string tLSCipherPolicy;
+
+		private string description;
+
+		private List<DescribeLoadBalancerHTTPSListenerAttribute_Rule> rules;
+
+		private List<DescribeLoadBalancerHTTPSListenerAttribute_DomainExtension> domainExtensions;
 
 		public string RequestId
 		{
@@ -370,6 +383,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string HealthCheckMethod
+		{
+			get
+			{
+				return healthCheckMethod;
+			}
+			set	
+			{
+				healthCheckMethod = value;
+			}
+		}
+
 		public int? MaxConnection
 		{
 			get
@@ -511,6 +536,186 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				idleTimeout = value;
+			}
+		}
+
+		public string EnableHttp2
+		{
+			get
+			{
+				return enableHttp2;
+			}
+			set	
+			{
+				enableHttp2 = value;
+			}
+		}
+
+		public string TLSCipherPolicy
+		{
+			get
+			{
+				return tLSCipherPolicy;
+			}
+			set	
+			{
+				tLSCipherPolicy = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+			}
+		}
+
+		public List<DescribeLoadBalancerHTTPSListenerAttribute_Rule> Rules
+		{
+			get
+			{
+				return rules;
+			}
+			set	
+			{
+				rules = value;
+			}
+		}
+
+		public List<DescribeLoadBalancerHTTPSListenerAttribute_DomainExtension> DomainExtensions
+		{
+			get
+			{
+				return domainExtensions;
+			}
+			set	
+			{
+				domainExtensions = value;
+			}
+		}
+
+		public class DescribeLoadBalancerHTTPSListenerAttribute_Rule
+		{
+
+			private string ruleId;
+
+			private string ruleName;
+
+			private string domain;
+
+			private string url;
+
+			private string vServerGroupId;
+
+			public string RuleId
+			{
+				get
+				{
+					return ruleId;
+				}
+				set	
+				{
+					ruleId = value;
+				}
+			}
+
+			public string RuleName
+			{
+				get
+				{
+					return ruleName;
+				}
+				set	
+				{
+					ruleName = value;
+				}
+			}
+
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
+				}
+			}
+
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
+				}
+			}
+
+			public string VServerGroupId
+			{
+				get
+				{
+					return vServerGroupId;
+				}
+				set	
+				{
+					vServerGroupId = value;
+				}
+			}
+		}
+
+		public class DescribeLoadBalancerHTTPSListenerAttribute_DomainExtension
+		{
+
+			private string domainExtensionId;
+
+			private string domain;
+
+			private string serverCertificateId;
+
+			public string DomainExtensionId
+			{
+				get
+				{
+					return domainExtensionId;
+				}
+				set	
+				{
+					domainExtensionId = value;
+				}
+			}
+
+			public string Domain
+			{
+				get
+				{
+					return domain;
+				}
+				set	
+				{
+					domain = value;
+				}
+			}
+
+			public string ServerCertificateId
+			{
+				get
+				{
+					return serverCertificateId;
+				}
+				set	
+				{
+					serverCertificateId = value;
+				}
 			}
 		}
 	}

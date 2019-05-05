@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Slb.Transform;
 using Aliyun.Acs.Slb.Transform.V20140515;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -33,13 +34,13 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         {
         }
 
-		private string access_key_id;
-
 		private int? healthCheckConnectTimeout;
 
 		private long? resourceOwnerId;
 
 		private string healthCheckURI;
+
+		private string description;
 
 		private int? unhealthyThreshold;
 
@@ -53,15 +54,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? establishedTimeout;
 
-		private int? maxConnection;
-
-		private string regionId;
-
 		private int? persistenceTimeout;
-
-		private string action;
-
-		private string vpcIds;
 
 		private string vServerGroupId;
 
@@ -81,8 +74,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private long? ownerId;
 
-		private string tags;
-
 		private string loadBalancerId;
 
 		private string masterSlaveServerGroupId;
@@ -94,19 +85,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private int? healthCheckConnectPort;
 
 		private string healthCheckHttpCode;
-
-		public string Access_key_id
-		{
-			get
-			{
-				return access_key_id;
-			}
-			set	
-			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
 
 		public int? HealthCheckConnectTimeout
 		{
@@ -144,6 +122,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				healthCheckURI = value;
 				DictionaryUtil.Add(QueryParameters, "HealthCheckURI", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -225,32 +216,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public int? MaxConnection
-		{
-			get
-			{
-				return maxConnection;
-			}
-			set	
-			{
-				maxConnection = value;
-				DictionaryUtil.Add(QueryParameters, "MaxConnection", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public int? PersistenceTimeout
 		{
 			get
@@ -261,32 +226,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				persistenceTimeout = value;
 				DictionaryUtil.Add(QueryParameters, "PersistenceTimeout", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string VpcIds
-		{
-			get
-			{
-				return vpcIds;
-			}
-			set	
-			{
-				vpcIds = value;
-				DictionaryUtil.Add(QueryParameters, "VpcIds", value);
 			}
 		}
 
@@ -407,19 +346,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
 		public string LoadBalancerId
 		{
 			get
@@ -498,7 +424,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-        public override CreateLoadBalancerTCPListenerResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateLoadBalancerTCPListenerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateLoadBalancerTCPListenerResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

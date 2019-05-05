@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -55,6 +56,17 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				loadBalancer.CreateTimeStamp = context.LongValue("DescribeLoadBalancers.LoadBalancers["+ i +"].CreateTimeStamp");
 				loadBalancer.PayType = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].PayType");
 				loadBalancer.ResourceGroupId = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].ResourceGroupId");
+				loadBalancer.AddressIPVersion = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].AddressIPVersion");
+
+				List<DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer.DescribeLoadBalancers_Tag> loadBalancer_tags = new List<DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer.DescribeLoadBalancers_Tag>();
+				for (int j = 0; j < context.Length("DescribeLoadBalancers.LoadBalancers["+ i +"].Tags.Length"); j++) {
+					DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer.DescribeLoadBalancers_Tag tag = new DescribeLoadBalancersResponse.DescribeLoadBalancers_LoadBalancer.DescribeLoadBalancers_Tag();
+					tag.TagKey = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = context.StringValue("DescribeLoadBalancers.LoadBalancers["+ i +"].Tags["+ j +"].TagValue");
+
+					loadBalancer_tags.Add(tag);
+				}
+				loadBalancer.Tags = loadBalancer_tags;
 
 				describeLoadBalancersResponse_loadBalancers.Add(loadBalancer);
 			}

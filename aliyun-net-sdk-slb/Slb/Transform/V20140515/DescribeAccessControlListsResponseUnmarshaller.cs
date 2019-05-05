@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -37,6 +38,18 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				DescribeAccessControlListsResponse.DescribeAccessControlLists_Acl acl = new DescribeAccessControlListsResponse.DescribeAccessControlLists_Acl();
 				acl.AclId = context.StringValue("DescribeAccessControlLists.Acls["+ i +"].AclId");
 				acl.AclName = context.StringValue("DescribeAccessControlLists.Acls["+ i +"].AclName");
+				acl.AddressIPVersion = context.StringValue("DescribeAccessControlLists.Acls["+ i +"].AddressIPVersion");
+				acl.ResourceGroupId = context.StringValue("DescribeAccessControlLists.Acls["+ i +"].ResourceGroupId");
+
+				List<DescribeAccessControlListsResponse.DescribeAccessControlLists_Acl.DescribeAccessControlLists_Tag> acl_tags = new List<DescribeAccessControlListsResponse.DescribeAccessControlLists_Acl.DescribeAccessControlLists_Tag>();
+				for (int j = 0; j < context.Length("DescribeAccessControlLists.Acls["+ i +"].Tags.Length"); j++) {
+					DescribeAccessControlListsResponse.DescribeAccessControlLists_Acl.DescribeAccessControlLists_Tag tag = new DescribeAccessControlListsResponse.DescribeAccessControlLists_Acl.DescribeAccessControlLists_Tag();
+					tag.TagKey = context.StringValue("DescribeAccessControlLists.Acls["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = context.StringValue("DescribeAccessControlLists.Acls["+ i +"].Tags["+ j +"].TagValue");
+
+					acl_tags.Add(tag);
+				}
+				acl.Tags = acl_tags;
 
 				describeAccessControlListsResponse_acls.Add(acl);
 			}

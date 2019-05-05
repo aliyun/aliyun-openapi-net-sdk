@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -59,6 +60,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string localName;
 
+			private string regionEndpoint;
+
 			public string RegionId
 			{
 				get
@@ -80,6 +83,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					localName = value;
+				}
+			}
+
+			public string RegionEndpoint
+			{
+				get
+				{
+					return regionEndpoint;
+				}
+				set	
+				{
+					regionEndpoint = value;
 				}
 			}
 		}

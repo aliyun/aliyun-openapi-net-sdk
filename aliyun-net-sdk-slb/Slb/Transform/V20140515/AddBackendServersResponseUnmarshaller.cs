@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -41,6 +42,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				backendServer.ServerIp = context.StringValue("AddBackendServers.BackendServers["+ i +"].ServerIp");
 				backendServer.VpcId = context.StringValue("AddBackendServers.BackendServers["+ i +"].VpcId");
 				backendServer.Type = context.StringValue("AddBackendServers.BackendServers["+ i +"].Type");
+				backendServer.Description = context.StringValue("AddBackendServers.BackendServers["+ i +"].Description");
 
 				addBackendServersResponse_backendServers.Add(backendServer);
 			}

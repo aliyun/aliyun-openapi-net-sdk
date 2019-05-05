@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -40,6 +41,8 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				backendServer.Port = context.IntegerValue("DescribeHealthStatus.BackendServers["+ i +"].Port");
 				backendServer.ServerHealthStatus = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerHealthStatus");
 				backendServer.ServerIp = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].ServerIp");
+				backendServer.EniHost = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].EniHost");
+				backendServer.Protocol = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].Protocol");
 				backendServer.Type = context.StringValue("DescribeHealthStatus.BackendServers["+ i +"].Type");
 
 				describeHealthStatusResponse_backendServers.Add(backendServer);

@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -47,6 +48,14 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string createTime;
 
 		private long? createTimeStamp;
+
+		private string expireTime;
+
+		private long? expireTimeStamp;
+
+		private string commonName;
+
+		private List<string> subjectAlternativeNames;
 
 		public string RequestId
 		{
@@ -189,6 +198,54 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				createTimeStamp = value;
+			}
+		}
+
+		public string ExpireTime
+		{
+			get
+			{
+				return expireTime;
+			}
+			set	
+			{
+				expireTime = value;
+			}
+		}
+
+		public long? ExpireTimeStamp
+		{
+			get
+			{
+				return expireTimeStamp;
+			}
+			set	
+			{
+				expireTimeStamp = value;
+			}
+		}
+
+		public string CommonName
+		{
+			get
+			{
+				return commonName;
+			}
+			set	
+			{
+				commonName = value;
+			}
+		}
+
+		public List<string> SubjectAlternativeNames
+		{
+			get
+			{
+				return subjectAlternativeNames;
+			}
+			set	
+			{
+				subjectAlternativeNames = value;
 			}
 		}
 	}

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -40,6 +41,21 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				rule.Domain = context.StringValue("DescribeRules.Rules["+ i +"].Domain");
 				rule.Url = context.StringValue("DescribeRules.Rules["+ i +"].Url");
 				rule.VServerGroupId = context.StringValue("DescribeRules.Rules["+ i +"].VServerGroupId");
+				rule.ListenerSync = context.StringValue("DescribeRules.Rules["+ i +"].ListenerSync");
+				rule.Scheduler = context.StringValue("DescribeRules.Rules["+ i +"].Scheduler");
+				rule.StickySession = context.StringValue("DescribeRules.Rules["+ i +"].StickySession");
+				rule.StickySessionType = context.StringValue("DescribeRules.Rules["+ i +"].StickySessionType");
+				rule.CookieTimeout = context.IntegerValue("DescribeRules.Rules["+ i +"].CookieTimeout");
+				rule.Cookie = context.StringValue("DescribeRules.Rules["+ i +"].Cookie");
+				rule.HealthCheck = context.StringValue("DescribeRules.Rules["+ i +"].HealthCheck");
+				rule.HealthCheckDomain = context.StringValue("DescribeRules.Rules["+ i +"].HealthCheckDomain");
+				rule.HealthCheckURI = context.StringValue("DescribeRules.Rules["+ i +"].HealthCheckURI");
+				rule.HealthyThreshold = context.IntegerValue("DescribeRules.Rules["+ i +"].HealthyThreshold");
+				rule.UnhealthyThreshold = context.IntegerValue("DescribeRules.Rules["+ i +"].UnhealthyThreshold");
+				rule.HealthCheckTimeout = context.IntegerValue("DescribeRules.Rules["+ i +"].HealthCheckTimeout");
+				rule.HealthCheckInterval = context.IntegerValue("DescribeRules.Rules["+ i +"].HealthCheckInterval");
+				rule.HealthCheckConnectPort = context.IntegerValue("DescribeRules.Rules["+ i +"].HealthCheckConnectPort");
+				rule.HealthCheckHttpCode = context.StringValue("DescribeRules.Rules["+ i +"].HealthCheckHttpCode");
 
 				describeRulesResponse_rules.Add(rule);
 			}

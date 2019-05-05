@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -37,6 +38,19 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup masterSlaveServerGroup = new DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup();
 				masterSlaveServerGroup.MasterSlaveServerGroupId = context.StringValue("DescribeMasterSlaveServerGroups.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupId");
 				masterSlaveServerGroup.MasterSlaveServerGroupName = context.StringValue("DescribeMasterSlaveServerGroups.MasterSlaveServerGroups["+ i +"].MasterSlaveServerGroupName");
+
+				DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup.DescribeMasterSlaveServerGroups_AssociatedObjects associatedObjects = new DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup.DescribeMasterSlaveServerGroups_AssociatedObjects();
+
+				List<DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup.DescribeMasterSlaveServerGroups_AssociatedObjects.DescribeMasterSlaveServerGroups_Listener> associatedObjects_listeners = new List<DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup.DescribeMasterSlaveServerGroups_AssociatedObjects.DescribeMasterSlaveServerGroups_Listener>();
+				for (int j = 0; j < context.Length("DescribeMasterSlaveServerGroups.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners.Length"); j++) {
+					DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup.DescribeMasterSlaveServerGroups_AssociatedObjects.DescribeMasterSlaveServerGroups_Listener listener = new DescribeMasterSlaveServerGroupsResponse.DescribeMasterSlaveServerGroups_MasterSlaveServerGroup.DescribeMasterSlaveServerGroups_AssociatedObjects.DescribeMasterSlaveServerGroups_Listener();
+					listener.Protocol = context.StringValue("DescribeMasterSlaveServerGroups.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Protocol");
+					listener.Port = context.IntegerValue("DescribeMasterSlaveServerGroups.MasterSlaveServerGroups["+ i +"].AssociatedObjects.Listeners["+ j +"].Port");
+
+					associatedObjects_listeners.Add(listener);
+				}
+				associatedObjects.Listeners = associatedObjects_listeners;
+				masterSlaveServerGroup.AssociatedObjects = associatedObjects;
 
 				describeMasterSlaveServerGroupsResponse_masterSlaveServerGroups.Add(masterSlaveServerGroup);
 			}

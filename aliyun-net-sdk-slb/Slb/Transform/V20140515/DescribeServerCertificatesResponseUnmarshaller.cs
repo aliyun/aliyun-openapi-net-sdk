@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Slb.Model.V20140515;
 
 namespace Aliyun.Acs.Slb.Transform.V20140515
 {
@@ -46,6 +47,25 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				serverCertificate.ResourceGroupId = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].ResourceGroupId");
 				serverCertificate.CreateTime = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].CreateTime");
 				serverCertificate.CreateTimeStamp = context.LongValue("DescribeServerCertificates.ServerCertificates["+ i +"].CreateTimeStamp");
+				serverCertificate.ExpireTime = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].ExpireTime");
+				serverCertificate.ExpireTimeStamp = context.LongValue("DescribeServerCertificates.ServerCertificates["+ i +"].ExpireTimeStamp");
+				serverCertificate.CommonName = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].CommonName");
+
+				List<string> serverCertificate_subjectAlternativeNames = new List<string>();
+				for (int j = 0; j < context.Length("DescribeServerCertificates.ServerCertificates["+ i +"].SubjectAlternativeNames.Length"); j++) {
+					serverCertificate_subjectAlternativeNames.Add(context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].SubjectAlternativeNames["+ j +"]"));
+				}
+				serverCertificate.SubjectAlternativeNames = serverCertificate_subjectAlternativeNames;
+
+				List<DescribeServerCertificatesResponse.DescribeServerCertificates_ServerCertificate.DescribeServerCertificates_Tag> serverCertificate_tags = new List<DescribeServerCertificatesResponse.DescribeServerCertificates_ServerCertificate.DescribeServerCertificates_Tag>();
+				for (int j = 0; j < context.Length("DescribeServerCertificates.ServerCertificates["+ i +"].Tags.Length"); j++) {
+					DescribeServerCertificatesResponse.DescribeServerCertificates_ServerCertificate.DescribeServerCertificates_Tag tag = new DescribeServerCertificatesResponse.DescribeServerCertificates_ServerCertificate.DescribeServerCertificates_Tag();
+					tag.TagKey = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = context.StringValue("DescribeServerCertificates.ServerCertificates["+ i +"].Tags["+ j +"].TagValue");
+
+					serverCertificate_tags.Add(tag);
+				}
+				serverCertificate.Tags = serverCertificate_tags;
 
 				describeServerCertificatesResponse_serverCertificates.Add(serverCertificate);
 			}

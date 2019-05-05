@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -29,6 +30,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string vServerGroupId;
 
 		private string vServerGroupName;
+
+		private string loadBalancerId;
 
 		private List<DescribeVServerGroupAttribute_BackendServer> backendServers;
 
@@ -68,6 +71,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string LoadBalancerId
+		{
+			get
+			{
+				return loadBalancerId;
+			}
+			set	
+			{
+				loadBalancerId = value;
+			}
+		}
+
 		public List<DescribeVServerGroupAttribute_BackendServer> BackendServers
 		{
 			get
@@ -94,6 +109,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			private string serverIp;
 
 			private string vpcId;
+
+			private string description;
 
 			public string ServerId
 			{
@@ -164,6 +181,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					vpcId = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 		}

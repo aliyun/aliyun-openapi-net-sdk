@@ -16,55 +16,35 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Slb.Transform;
 using Aliyun.Acs.Slb.Transform.V20140515;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-    public class DescribeLoadBalancersRelatedEcsRequest : RpcAcsRequest<DescribeLoadBalancersRelatedEcsResponse>
+    public class SetDomainExtensionAttributeRequest : RpcAcsRequest<SetDomainExtensionAttributeResponse>
     {
-        public DescribeLoadBalancersRelatedEcsRequest()
-            : base("Slb", "2014-05-15", "DescribeLoadBalancersRelatedEcs", "slb", "openAPI")
+        public SetDomainExtensionAttributeRequest()
+            : base("Slb", "2014-05-15", "SetDomainExtensionAttribute", "slb", "openAPI")
         {
         }
 
-		private string access_key_id;
-
 		private long? resourceOwnerId;
-
-		private string loadBalancerId;
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
-
-		private string action;
 
 		private long? ownerId;
 
-		private string accessKeyId;
+		private string serverCertificateId;
 
-		private string tags;
-
-		public string Access_key_id
-		{
-			get
-			{
-				return access_key_id;
-			}
-			set	
-			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
+		private string domainExtensionId;
 
 		public long? ResourceOwnerId
 		{
@@ -76,19 +56,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
 			}
 		}
 
@@ -105,19 +72,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -128,19 +82,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -157,35 +98,35 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string AccessKeyId
+		public string ServerCertificateId
 		{
 			get
 			{
-				return accessKeyId;
+				return serverCertificateId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				serverCertificateId = value;
+				DictionaryUtil.Add(QueryParameters, "ServerCertificateId", value);
 			}
 		}
 
-		public string Tags
+		public string DomainExtensionId
 		{
 			get
 			{
-				return tags;
+				return domainExtensionId;
 			}
 			set	
 			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
+				domainExtensionId = value;
+				DictionaryUtil.Add(QueryParameters, "DomainExtensionId", value);
 			}
 		}
 
-        public override DescribeLoadBalancersRelatedEcsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SetDomainExtensionAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLoadBalancersRelatedEcsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetDomainExtensionAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

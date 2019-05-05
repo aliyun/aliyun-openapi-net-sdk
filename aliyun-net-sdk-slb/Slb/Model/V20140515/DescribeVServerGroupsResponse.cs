@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
@@ -59,6 +60,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string vServerGroupName;
 
+			private DescribeVServerGroups_AssociatedObjects associatedObjects;
+
 			public string VServerGroupId
 			{
 				get
@@ -80,6 +83,142 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					vServerGroupName = value;
+				}
+			}
+
+			public DescribeVServerGroups_AssociatedObjects AssociatedObjects
+			{
+				get
+				{
+					return associatedObjects;
+				}
+				set	
+				{
+					associatedObjects = value;
+				}
+			}
+
+			public class DescribeVServerGroups_AssociatedObjects
+			{
+
+				private List<DescribeVServerGroups_Listener> listeners;
+
+				private List<DescribeVServerGroups_Rule> rules;
+
+				public List<DescribeVServerGroups_Listener> Listeners
+				{
+					get
+					{
+						return listeners;
+					}
+					set	
+					{
+						listeners = value;
+					}
+				}
+
+				public List<DescribeVServerGroups_Rule> Rules
+				{
+					get
+					{
+						return rules;
+					}
+					set	
+					{
+						rules = value;
+					}
+				}
+
+				public class DescribeVServerGroups_Listener
+				{
+
+					private string protocol;
+
+					private int? port;
+
+					public string Protocol
+					{
+						get
+						{
+							return protocol;
+						}
+						set	
+						{
+							protocol = value;
+						}
+					}
+
+					public int? Port
+					{
+						get
+						{
+							return port;
+						}
+						set	
+						{
+							port = value;
+						}
+					}
+				}
+
+				public class DescribeVServerGroups_Rule
+				{
+
+					private string ruleId;
+
+					private string domain;
+
+					private string url;
+
+					private string ruleName;
+
+					public string RuleId
+					{
+						get
+						{
+							return ruleId;
+						}
+						set	
+						{
+							ruleId = value;
+						}
+					}
+
+					public string Domain
+					{
+						get
+						{
+							return domain;
+						}
+						set	
+						{
+							domain = value;
+						}
+					}
+
+					public string Url
+					{
+						get
+						{
+							return url;
+						}
+						set	
+						{
+							url = value;
+						}
+					}
+
+					public string RuleName
+					{
+						get
+						{
+							return ruleName;
+						}
+						set	
+						{
+							ruleName = value;
+						}
+					}
 				}
 			}
 		}
