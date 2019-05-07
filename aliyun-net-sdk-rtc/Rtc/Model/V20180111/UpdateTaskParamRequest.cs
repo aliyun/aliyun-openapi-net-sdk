@@ -36,8 +36,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private List<MixPanes> mixPaness;
 
-		private string action;
-
 		private long? taskId;
 
 		private long? ownerId;
@@ -64,19 +62,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 					DictionaryUtil.Add(QueryParameters,"MixPanes." + (i + 1) + ".UserId", mixPaness[i].UserId);
 					DictionaryUtil.Add(QueryParameters,"MixPanes." + (i + 1) + ".SourceType", mixPaness[i].SourceType);
 				}
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -42,8 +42,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private string serviceArea;
 
-		private string action;
-
 		private string endTime;
 
 		private long? ownerId;
@@ -101,19 +99,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				serviceArea = value;
 				DictionaryUtil.Add(QueryParameters, "ServiceArea", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

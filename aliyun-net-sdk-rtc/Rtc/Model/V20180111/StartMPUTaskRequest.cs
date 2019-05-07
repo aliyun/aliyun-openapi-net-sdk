@@ -38,7 +38,7 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private int? backgroundColor;
 
-		private string action;
+		private string taskProfile;
 
 		private List<long?> layoutIdss;
 
@@ -86,16 +86,16 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public string Action
+		public string TaskProfile
 		{
 			get
 			{
-				return action;
+				return taskProfile;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				taskProfile = value;
+				DictionaryUtil.Add(QueryParameters, "TaskProfile", value);
 			}
 		}
 

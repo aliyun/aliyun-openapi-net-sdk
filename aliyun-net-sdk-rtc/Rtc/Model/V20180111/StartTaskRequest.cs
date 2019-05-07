@@ -38,8 +38,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private string idempotentId;
 
-		private string action;
-
 		private long? ownerId;
 
 		private long? templateId;
@@ -77,19 +75,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				idempotentId = value;
 				DictionaryUtil.Add(QueryParameters, "IdempotentId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

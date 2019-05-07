@@ -34,8 +34,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
         {
         }
 
-		private string action;
-
 		private long? ownerId;
 
 		private string nonce;
@@ -43,19 +41,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 		private string appId;
 
 		private string channelId;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
 
 		public long? OwnerId
 		{

@@ -27,18 +27,63 @@ using Aliyun.Acs.rtc.Transform.V20180111;
 
 namespace Aliyun.Acs.rtc.Model.V20180111
 {
-    public class GetTemplateInfoRequest : RpcAcsRequest<GetTemplateInfoResponse>
+    public class DescribeRtcUserCntDataRequest : RpcAcsRequest<DescribeRtcUserCntDataResponse>
     {
-        public GetTemplateInfoRequest()
-            : base("rtc", "2018-01-11", "GetTemplateInfo", "rtc", "openAPI")
+        public DescribeRtcUserCntDataRequest()
+            : base("rtc", "2018-01-11", "DescribeRtcUserCntData", "rtc", "openAPI")
         {
         }
 
+		private string startTime;
+
+		private string serviceArea;
+
+		private string endTime;
+
 		private long? ownerId;
 
-		private long? templateId;
-
 		private string appId;
+
+		private string interval;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string ServiceArea
+		{
+			get
+			{
+				return serviceArea;
+			}
+			set	
+			{
+				serviceArea = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceArea", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
 
 		public long? OwnerId
 		{
@@ -50,19 +95,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public long? TemplateId
-		{
-			get
-			{
-				return templateId;
-			}
-			set	
-			{
-				templateId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
 			}
 		}
 
@@ -79,9 +111,22 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-        public override GetTemplateInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
+			}
+		}
+
+        public override DescribeRtcUserCntDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetTemplateInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRtcUserCntDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

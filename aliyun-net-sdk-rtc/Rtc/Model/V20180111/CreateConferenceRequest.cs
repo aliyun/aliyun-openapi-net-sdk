@@ -42,8 +42,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private string conferenceName;
 
-		private string action;
-
 		private long? ownerId;
 
 		private string appId;
@@ -99,19 +97,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				conferenceName = value;
 				DictionaryUtil.Add(QueryParameters, "ConferenceName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

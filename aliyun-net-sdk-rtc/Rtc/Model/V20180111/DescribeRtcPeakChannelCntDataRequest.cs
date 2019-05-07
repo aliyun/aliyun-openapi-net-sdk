@@ -27,18 +27,63 @@ using Aliyun.Acs.rtc.Transform.V20180111;
 
 namespace Aliyun.Acs.rtc.Model.V20180111
 {
-    public class GetMPUTaskStatusRequest : RpcAcsRequest<GetMPUTaskStatusResponse>
+    public class DescribeRtcPeakChannelCntDataRequest : RpcAcsRequest<DescribeRtcPeakChannelCntDataResponse>
     {
-        public GetMPUTaskStatusRequest()
-            : base("rtc", "2018-01-11", "GetMPUTaskStatus", "rtc", "openAPI")
+        public DescribeRtcPeakChannelCntDataRequest()
+            : base("rtc", "2018-01-11", "DescribeRtcPeakChannelCntData", "rtc", "openAPI")
         {
         }
+
+		private string startTime;
+
+		private string serviceArea;
+
+		private string endTime;
 
 		private long? ownerId;
 
 		private string appId;
 
-		private string taskId;
+		private string interval;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string ServiceArea
+		{
+			get
+			{
+				return serviceArea;
+			}
+			set	
+			{
+				serviceArea = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceArea", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
 
 		public long? OwnerId
 		{
@@ -66,22 +111,22 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public string TaskId
+		public string Interval
 		{
 			get
 			{
-				return taskId;
+				return interval;
 			}
 			set	
 			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 
-        public override GetMPUTaskStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeRtcPeakChannelCntDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetMPUTaskStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRtcPeakChannelCntDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

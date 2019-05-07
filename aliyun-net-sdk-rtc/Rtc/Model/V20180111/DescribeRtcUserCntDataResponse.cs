@@ -19,54 +19,70 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.rtc.Transform;
-using Aliyun.Acs.rtc.Transform.V20180111;
 
 namespace Aliyun.Acs.rtc.Model.V20180111
 {
-    public class GetAllTemplateRequest : RpcAcsRequest<GetAllTemplateResponse>
-    {
-        public GetAllTemplateRequest()
-            : base("rtc", "2018-01-11", "GetAllTemplate", "rtc", "openAPI")
-        {
-        }
+	public class DescribeRtcUserCntDataResponse : AcsResponse
+	{
 
-		private long? ownerId;
+		private string requestId;
 
-		private string appId;
+		private List<DescribeRtcUserCntData_UserCntModule> userCntDataPerInterval;
 
-		public long? OwnerId
+		public string RequestId
 		{
 			get
 			{
-				return ownerId;
+				return requestId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				requestId = value;
 			}
 		}
 
-		public string AppId
+		public List<DescribeRtcUserCntData_UserCntModule> UserCntDataPerInterval
 		{
 			get
 			{
-				return appId;
+				return userCntDataPerInterval;
 			}
 			set	
 			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
+				userCntDataPerInterval = value;
 			}
 		}
 
-        public override GetAllTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return GetAllTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+		public class DescribeRtcUserCntData_UserCntModule
+		{
+
+			private string timeStamp;
+
+			private long? activeUserCnt;
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
+
+			public long? ActiveUserCnt
+			{
+				get
+				{
+					return activeUserCnt;
+				}
+				set	
+				{
+					activeUserCnt = value;
+				}
+			}
+		}
+	}
 }

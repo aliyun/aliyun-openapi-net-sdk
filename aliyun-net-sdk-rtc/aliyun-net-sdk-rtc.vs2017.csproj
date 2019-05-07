@@ -3,14 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Aliyun.Acs.rtc</RootNamespace>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <Authors>Alibaba Cloud</Authors>
-    <Copyright>©2009-2018 Alibaba Cloud</Copyright>
+    <Copyright>©2009-2019 Alibaba Cloud</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageLicenseUrl>https://raw.githubusercontent.com/aliyun/aliyun-openapi-net-sdk/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/aliyun/aliyun-openapi-net-sdk</PackageProjectUrl>
     <PackageIconUrl>https://www.alibabacloud.com/favicon.ico</PackageIconUrl>
-    <Description>Alibaba Cloud SDK for C#</Description>
+    <Description>Alibaba Cloud SDK for .NET</Description>
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageTags>alibaba aliyun SDK rtc</PackageTags>
     <AssemblyName>aliyun-net-sdk-rtc</AssemblyName>
@@ -18,6 +18,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2017.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 
 </Project>

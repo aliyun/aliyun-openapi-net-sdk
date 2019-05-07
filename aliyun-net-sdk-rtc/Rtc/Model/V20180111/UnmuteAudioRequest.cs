@@ -42,8 +42,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private string appId;
 
-		private string action;
-
 		public List<string> ParticipantIdss
 		{
 			get
@@ -97,19 +95,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

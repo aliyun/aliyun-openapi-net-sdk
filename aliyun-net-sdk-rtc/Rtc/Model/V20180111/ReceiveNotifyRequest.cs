@@ -38,8 +38,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private string content;
 
-		private string action;
-
 		private string _event;
 
 		private long? ownerId;
@@ -71,19 +69,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				content = value;
 				DictionaryUtil.Add(QueryParameters, "Content", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

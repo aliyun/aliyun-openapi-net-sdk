@@ -38,8 +38,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private string uId;
 
-		private string action;
-
 		private long? ownerId;
 
 		private string nonce;
@@ -71,19 +69,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				uId = value;
 				DictionaryUtil.Add(QueryParameters, "UId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

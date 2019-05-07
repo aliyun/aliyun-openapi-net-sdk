@@ -38,8 +38,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private int? pageSize;
 
-		private string action;
-
 		private string order;
 
 		private long? ownerId;
@@ -71,19 +69,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

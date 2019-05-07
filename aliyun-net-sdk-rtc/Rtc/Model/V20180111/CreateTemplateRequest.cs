@@ -44,8 +44,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private List<RecordConfig> recordConfigs;
 
-		private string action;
-
 		private long? ownerId;
 
 		private List<LayOut> layOuts;
@@ -131,19 +129,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 					DictionaryUtil.Add(QueryParameters,"RecordConfig." + (i + 1) + ".OssBucket", recordConfigs[i].OssBucket);
 					DictionaryUtil.Add(QueryParameters,"RecordConfig." + (i + 1) + ".VodTransCodeGroupId", recordConfigs[i].VodTransCodeGroupId);
 				}
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -36,8 +36,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private string startTime;
 
-		private string action;
-
 		private string endTime;
 
 		private long? ownerId;
@@ -58,19 +56,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

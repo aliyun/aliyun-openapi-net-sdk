@@ -40,8 +40,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private long? ownerId;
 
-		private string action;
-
 		public string EndTime
 		{
 			get
@@ -78,19 +76,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
