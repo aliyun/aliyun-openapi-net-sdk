@@ -42,8 +42,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? currentPage;
 
-		private string accessKeyId;
-
 		public string SearchName
 		{
 			get
@@ -93,19 +91,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

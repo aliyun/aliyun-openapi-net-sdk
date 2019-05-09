@@ -42,8 +42,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string topicShortName;
 
-		private string accessKeyId;
-
 		private string desc;
 
 		public string TopicId
@@ -95,19 +93,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				topicShortName = value;
 				DictionaryUtil.Add(QueryParameters, "TopicShortName", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

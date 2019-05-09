@@ -44,8 +44,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string productKey;
 
-		private string accessKeyId;
-
 		public List<string> Identifiers
 		{
 			get
@@ -112,19 +110,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

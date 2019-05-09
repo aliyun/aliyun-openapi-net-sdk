@@ -36,11 +36,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private List<string> dstTopics;
 
-		private string regionId;
-
 		private string iotInstanceId;
-
-		private string accessKeyId;
 
 		private string srcTopic;
 
@@ -61,19 +57,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string IotInstanceId
 		{
 			get
@@ -84,19 +67,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

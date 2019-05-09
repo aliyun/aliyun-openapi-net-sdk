@@ -44,8 +44,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string deviceListStr;
 
-		private string accessKeyId;
-
 		public string GwProductKey
 		{
 			get
@@ -108,19 +106,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				deviceListStr = value;
 				DictionaryUtil.Add(QueryParameters, "DeviceListStr", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

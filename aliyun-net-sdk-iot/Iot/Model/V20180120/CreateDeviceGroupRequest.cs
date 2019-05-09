@@ -42,8 +42,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string groupName;
 
-		private string accessKeyId;
-
 		public string GroupDesc
 		{
 			get
@@ -93,19 +91,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

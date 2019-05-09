@@ -56,8 +56,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private long? categoryId;
 
-		private string accessKeyId;
-
 		public int? DataFormat
 		{
 			get
@@ -198,19 +196,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				categoryId = value;
 				DictionaryUtil.Add(QueryParameters, "CategoryId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
