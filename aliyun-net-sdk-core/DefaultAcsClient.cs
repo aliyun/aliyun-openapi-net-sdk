@@ -18,9 +18,9 @@
  */
 
 using System;
-using System.Text;
 using System.Collections.Generic;
 using System.Net;
+using System.Text;
 using System.Text.RegularExpressions;
 
 using Aliyun.Acs.Core.Auth;
@@ -343,7 +343,7 @@ namespace Aliyun.Acs.Core
         {
             IReader reader = ReaderFactory.CreateInstance(format);
             UnmarshallerContext context = new UnmarshallerContext();
-            string body = Regex.Unescape(Encoding.UTF8.GetString(httpResponse.Content));
+            string body = Encoding.UTF8.GetString(httpResponse.Content);
 
             if (request.CheckShowJsonItemName())
             {

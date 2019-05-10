@@ -1,0 +1,3 @@
+2019-05-10 Version: 1.3.2
+1, Fix regex escape error
+
