@@ -1,3 +1,6 @@
+2019-05-10 Version: 1.0.2
+1, Generated 2018-09-19 for saf
+
 2018-10-09 Version: 1.0.1
 1, v1.0.0-->v1.0.1
 2, provider new region:beijing/shenzhen/zhangjiakou
