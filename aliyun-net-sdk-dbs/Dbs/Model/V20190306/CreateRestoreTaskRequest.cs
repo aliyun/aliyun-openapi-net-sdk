@@ -68,6 +68,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string restoreTaskName;
 
+		private string duplicateConflict;
+
 		private string destinationEndpointPassword;
 
 		public long? BackupGatewayId
@@ -288,6 +290,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				restoreTaskName = value;
 				DictionaryUtil.Add(QueryParameters, "RestoreTaskName", value);
+			}
+		}
+
+		public string DuplicateConflict
+		{
+			get
+			{
+				return duplicateConflict;
+			}
+			set	
+			{
+				duplicateConflict = value;
+				DictionaryUtil.Add(QueryParameters, "DuplicateConflict", value);
 			}
 		}
 

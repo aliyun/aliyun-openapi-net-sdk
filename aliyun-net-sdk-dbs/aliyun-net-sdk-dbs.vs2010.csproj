@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{d6ed5c23-85bd-4fdf-88fa-d22d3be5a894}</ProjectGuid>
+    <ProjectGuid>{7999887c-3501-4377-8dbe-256f18a0e17c}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,18 +40,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Dbs\Transform\V20190306\DescribeRestoreTaskListResponseUnmarshaller.cs" />
-	<Compile Include="Dbs\Transform\V20190306\StopBackupPlanResponseUnmarshaller.cs" />
-	<Compile Include="Dbs\Transform\V20190306\DescribeBackupPlanListResponseUnmarshaller.cs" />
-	<Compile Include="Dbs\Transform\V20190306\DescribeNodeCidrListResponseUnmarshaller.cs" />
-	<Compile Include="Dbs\Transform\V20190306\ConfigureBackupPlanResponseUnmarshaller.cs" />
-	<Compile Include="Dbs\Transform\V20190306\CreateRestoreTaskResponseUnmarshaller.cs" />
-	<Compile Include="Dbs\Transform\V20190306\DescribeIncrementBackupListResponseUnmarshaller.cs" />
-	<Compile Include="Dbs\Transform\V20190306\CreateBackupPlanResponseUnmarshaller.cs" />
-	<Compile Include="Dbs\Transform\V20190306\DescribeFullBackupListResponseUnmarshaller.cs" />
-	<Compile Include="Dbs\Transform\V20190306\StartBackupPlanResponseUnmarshaller.cs" />
-	<Compile Include="Dbs\Transform\V20190306\StartRestoreTaskResponseUnmarshaller.cs" />
-	<Compile Include="Dbs\Transform\V20190306\DescribeBackupGatewayListResponseUnmarshaller.cs" />
+	<Compile Include="Dbs\Model\V20190306\DescribeIncrementBackupListRequest.cs" />
+	<Compile Include="Dbs\Model\V20190306\DescribeBackupGatewayListResponse.cs" />
+	<Compile Include="Dbs\Model\V20190306\ConfigureBackupPlanResponse.cs" />
+	<Compile Include="Dbs\Model\V20190306\DescribeBackupGatewayListRequest.cs" />
+	<Compile Include="Dbs\Model\V20190306\DescribeNodeCidrListResponse.cs" />
+	<Compile Include="Dbs\Model\V20190306\StopBackupPlanRequest.cs" />
+	<Compile Include="Dbs\Model\V20190306\StartBackupPlanRequest.cs" />
+	<Compile Include="Dbs\Model\V20190306\StartBackupPlanResponse.cs" />
+	<Compile Include="Dbs\Model\V20190306\CreateRestoreTaskResponse.cs" />
+	<Compile Include="Dbs\Model\V20190306\DescribeRestoreTaskListRequest.cs" />
+	<Compile Include="Dbs\Model\V20190306\DescribeFullBackupListRequest.cs" />
+	<Compile Include="Dbs\Model\V20190306\ConfigureBackupPlanRequest.cs" />
+	<Compile Include="Dbs\Model\V20190306\DescribeBackupPlanListResponse.cs" />
+	<Compile Include="Dbs\Model\V20190306\StopBackupPlanResponse.cs" />
+	<Compile Include="Dbs\Model\V20190306\StartRestoreTaskResponse.cs" />
+	<Compile Include="Dbs\Model\V20190306\DescribeIncrementBackupListResponse.cs" />
+	<Compile Include="Dbs\Model\V20190306\DescribeFullBackupListResponse.cs" />
+	<Compile Include="Dbs\Model\V20190306\DescribeRestoreTaskListResponse.cs" />
+	<Compile Include="Dbs\Model\V20190306\DescribeNodeCidrListRequest.cs" />
+	<Compile Include="Dbs\Model\V20190306\DescribeBackupPlanListRequest.cs" />
+	<Compile Include="Dbs\Model\V20190306\CreateRestoreTaskRequest.cs" />
+	<Compile Include="Dbs\Model\V20190306\CreateBackupPlanResponse.cs" />
+	<Compile Include="Dbs\Model\V20190306\StartRestoreTaskRequest.cs" />
+	<Compile Include="Dbs\Model\V20190306\CreateBackupPlanRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
