@@ -27,46 +27,18 @@ using Aliyun.Acs.Domain_intl.Transform.V20171218;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-    public class CancelDomainVerificationRequest : RpcAcsRequest<CancelDomainVerificationResponse>
+    public class CancelTaskRequest : RpcAcsRequest<CancelTaskResponse>
     {
-        public CancelDomainVerificationRequest()
-            : base("Domain-intl", "2017-12-18", "CancelDomainVerification", "domain", "openAPI")
+        public CancelTaskRequest()
+            : base("Domain-intl", "2017-12-18", "CancelTask", "domain", "openAPI")
         {
         }
 
-		private string actionType;
-
-		private string instanceId;
-
 		private string userClientIp;
 
+		private string taskNo;
+
 		private string lang;
-
-		public string ActionType
-		{
-			get
-			{
-				return actionType;
-			}
-			set	
-			{
-				actionType = value;
-				DictionaryUtil.Add(QueryParameters, "ActionType", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
 
 		public string UserClientIp
 		{
@@ -78,6 +50,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public string TaskNo
+		{
+			get
+			{
+				return taskNo;
+			}
+			set	
+			{
+				taskNo = value;
+				DictionaryUtil.Add(QueryParameters, "TaskNo", value);
 			}
 		}
 
@@ -94,9 +79,9 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-        public override CancelDomainVerificationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CancelTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CancelDomainVerificationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CancelTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

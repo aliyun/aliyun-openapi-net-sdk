@@ -50,8 +50,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string lang;
 
-		private string accessKeyId;
-
 		private bool? usePromotion;
 
 		public int? SubscriptionDuration
@@ -155,19 +153,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

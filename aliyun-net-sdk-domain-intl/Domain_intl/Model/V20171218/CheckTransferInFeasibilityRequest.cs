@@ -42,8 +42,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string lang;
 
-		private string accessKeyId;
-
 		public string TransferAuthorizationCode
 		{
 			get
@@ -93,19 +91,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

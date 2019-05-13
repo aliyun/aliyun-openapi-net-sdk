@@ -27,44 +27,29 @@ using Aliyun.Acs.Domain_intl.Transform.V20171218;
 
 namespace Aliyun.Acs.Domain_intl.Model.V20171218
 {
-    public class CancelDomainVerificationRequest : RpcAcsRequest<CancelDomainVerificationResponse>
+    public class QueryArtExtensionRequest : RpcAcsRequest<QueryArtExtensionResponse>
     {
-        public CancelDomainVerificationRequest()
-            : base("Domain-intl", "2017-12-18", "CancelDomainVerification", "domain", "openAPI")
+        public QueryArtExtensionRequest()
+            : base("Domain-intl", "2017-12-18", "QueryArtExtension", "domain", "openAPI")
         {
         }
 
-		private string actionType;
-
-		private string instanceId;
+		private string domainName;
 
 		private string userClientIp;
 
 		private string lang;
 
-		public string ActionType
+		public string DomainName
 		{
 			get
 			{
-				return actionType;
+				return domainName;
 			}
 			set	
 			{
-				actionType = value;
-				DictionaryUtil.Add(QueryParameters, "ActionType", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -94,9 +79,14 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-        public override CancelDomainVerificationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override QueryArtExtensionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CancelDomainVerificationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryArtExtensionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
