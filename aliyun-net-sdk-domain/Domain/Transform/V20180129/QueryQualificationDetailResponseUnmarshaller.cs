@@ -41,7 +41,6 @@ namespace Aliyun.Acs.Domain.Transform.V20180129
 				qualificationCredential.CredentialNo = context.StringValue("QueryQualificationDetail.Credentials["+ i +"].CredentialNo");
 				qualificationCredential.CredentialType = context.StringValue("QueryQualificationDetail.Credentials["+ i +"].CredentialType");
 				qualificationCredential.CredentialUrl = context.StringValue("QueryQualificationDetail.Credentials["+ i +"].CredentialUrl");
-				qualificationCredential._Params = context.StringValue("QueryQualificationDetail.Credentials["+ i +"].Params");
 
 				queryQualificationDetailResponse_credentials.Add(qualificationCredential);
 			}

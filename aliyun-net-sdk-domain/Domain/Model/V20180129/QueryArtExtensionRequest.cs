@@ -27,29 +27,29 @@ using Aliyun.Acs.Domain.Transform.V20180129;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class ResetQualificationVerificationRequest : RpcAcsRequest<ResetQualificationVerificationResponse>
+    public class QueryArtExtensionRequest : RpcAcsRequest<QueryArtExtensionResponse>
     {
-        public ResetQualificationVerificationRequest()
-            : base("Domain", "2018-01-29", "ResetQualificationVerification")
+        public QueryArtExtensionRequest()
+            : base("Domain", "2018-01-29", "QueryArtExtension")
         {
         }
 
-		private string instanceId;
+		private string domainName;
 
 		private string userClientIp;
 
 		private string lang;
 
-		public string InstanceId
+		public string DomainName
 		{
 			get
 			{
-				return instanceId;
+				return domainName;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -84,9 +84,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			return false;
 		}
 
-        public override ResetQualificationVerificationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryArtExtensionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ResetQualificationVerificationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryArtExtensionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

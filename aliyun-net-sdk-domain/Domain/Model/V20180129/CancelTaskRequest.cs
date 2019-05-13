@@ -27,31 +27,18 @@ using Aliyun.Acs.Domain.Transform.V20180129;
 
 namespace Aliyun.Acs.Domain.Model.V20180129
 {
-    public class ResetQualificationVerificationRequest : RpcAcsRequest<ResetQualificationVerificationResponse>
+    public class CancelTaskRequest : RpcAcsRequest<CancelTaskResponse>
     {
-        public ResetQualificationVerificationRequest()
-            : base("Domain", "2018-01-29", "ResetQualificationVerification")
+        public CancelTaskRequest()
+            : base("Domain", "2018-01-29", "CancelTask")
         {
         }
 
-		private string instanceId;
-
 		private string userClientIp;
 
-		private string lang;
+		private string taskNo;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string lang;
 
 		public string UserClientIp
 		{
@@ -63,6 +50,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public string TaskNo
+		{
+			get
+			{
+				return taskNo;
+			}
+			set	
+			{
+				taskNo = value;
+				DictionaryUtil.Add(QueryParameters, "TaskNo", value);
 			}
 		}
 
@@ -79,14 +79,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override ResetQualificationVerificationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CancelTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ResetQualificationVerificationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CancelTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

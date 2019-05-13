@@ -40,8 +40,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string lang;
 
-		private string accessKeyId;
-
 		private string qualificationType;
 
 		public string InstanceId
@@ -80,19 +78,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -90,8 +90,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 			private string credentialUrl;
 
-			private string _params;
-
 			public string CredentialNo
 			{
 				get
@@ -125,18 +123,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 				set	
 				{
 					credentialUrl = value;
-				}
-			}
-
-			public string _Params
-			{
-				get
-				{
-					return _params;
-				}
-				set	
-				{
-					_params = value;
 				}
 			}
 		}

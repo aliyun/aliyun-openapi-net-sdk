@@ -42,8 +42,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string lang;
 
-		private string accessKeyId;
-
 		public string ActionType
 		{
 			get
@@ -93,19 +91,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
