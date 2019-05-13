@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -38,8 +39,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string clientToken;
 
 		private string vpcId;
@@ -49,8 +48,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string ownerAccount;
 
 		private string cidrBlock;
-
-		private string action;
 
 		private string zoneId;
 
@@ -81,19 +78,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -159,19 +143,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				cidrBlock = value;
 				DictionaryUtil.Add(QueryParameters, "CidrBlock", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

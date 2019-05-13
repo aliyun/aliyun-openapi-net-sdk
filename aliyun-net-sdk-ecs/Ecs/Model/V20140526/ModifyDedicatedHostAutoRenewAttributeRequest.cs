@@ -46,13 +46,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
 
 		private string renewalStatus;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -134,19 +130,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -170,19 +153,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				renewalStatus = value;
 				DictionaryUtil.Add(QueryParameters, "RenewalStatus", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

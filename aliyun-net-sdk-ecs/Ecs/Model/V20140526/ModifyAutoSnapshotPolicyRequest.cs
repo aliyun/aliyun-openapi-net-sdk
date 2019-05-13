@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -55,8 +56,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private int? systemDiskPolicyRetentionDays;
 
 		private int? dataDiskPolicyTimePeriod;
-
-		private string action;
 
 		private bool? systemDiskPolicyEnabled;
 
@@ -200,19 +199,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dataDiskPolicyTimePeriod = value;
 				DictionaryUtil.Add(QueryParameters, "DataDiskPolicyTimePeriod", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

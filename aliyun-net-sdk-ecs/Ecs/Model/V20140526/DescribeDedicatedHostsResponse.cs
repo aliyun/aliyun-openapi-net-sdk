@@ -100,6 +100,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string dedicatedHostId;
 
+			private string autoPlacement;
+
 			private string regionId;
 
 			private string zoneId;
@@ -159,6 +161,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					dedicatedHostId = value;
+				}
+			}
+
+			public string AutoPlacement
+			{
+				get
+				{
+					return autoPlacement;
+				}
+				set	
+				{
+					autoPlacement = value;
 				}
 			}
 

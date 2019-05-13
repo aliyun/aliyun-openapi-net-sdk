@@ -114,6 +114,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creationTime;
 
+			private bool? enableParameter;
+
+			private List<string> parameterNames;
+
 			public string CommandId
 			{
 				get
@@ -207,6 +211,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public bool? EnableParameter
+			{
+				get
+				{
+					return enableParameter;
+				}
+				set	
+				{
+					enableParameter = value;
+				}
+			}
+
+			public List<string> ParameterNames
+			{
+				get
+				{
+					return parameterNames;
+				}
+				set	
+				{
+					parameterNames = value;
 				}
 			}
 		}

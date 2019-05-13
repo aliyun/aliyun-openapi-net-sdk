@@ -40,10 +40,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<long?> deleteVersions;
 
-		private string regionId;
-
-		private string action;
-
 		private string launchTemplateId;
 
 		private string resourceOwnerAccount;
@@ -92,32 +88,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				{
 					DictionaryUtil.Add(QueryParameters,"DeleteVersion." + (i + 1) , deleteVersions[i]);
 				}
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -47,6 +47,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				command.WorkingDir = context.StringValue("DescribeCommands.Commands["+ i +"].WorkingDir");
 				command.Timeout = context.LongValue("DescribeCommands.Commands["+ i +"].Timeout");
 				command.CreationTime = context.StringValue("DescribeCommands.Commands["+ i +"].CreationTime");
+				command.EnableParameter = context.BooleanValue("DescribeCommands.Commands["+ i +"].EnableParameter");
+
+				List<string> command_parameterNames = new List<string>();
+				for (int j = 0; j < context.Length("DescribeCommands.Commands["+ i +"].ParameterNames.Length"); j++) {
+					command_parameterNames.Add(context.StringValue("DescribeCommands.Commands["+ i +"].ParameterNames["+ j +"]"));
+				}
+				command.ParameterNames = command_parameterNames;
 
 				describeCommandsResponse_commands.Add(command);
 			}

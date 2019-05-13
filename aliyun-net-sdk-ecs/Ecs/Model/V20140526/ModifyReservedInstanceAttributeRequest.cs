@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,26 +27,26 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class RecoverVirtualBorderRouterRequest : RpcAcsRequest<RecoverVirtualBorderRouterResponse>
+    public class ModifyReservedInstanceAttributeRequest : RpcAcsRequest<ModifyReservedInstanceAttributeResponse>
     {
-        public RecoverVirtualBorderRouterRequest()
-            : base("Ecs", "2014-05-26", "RecoverVirtualBorderRouter", "ecs", "openAPI")
+        public ModifyReservedInstanceAttributeRequest()
+            : base("Ecs", "2014-05-26", "ModifyReservedInstanceAttribute", "ecs", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string description;
 
-		private string clientToken;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string userCidr;
-
-		private string vbrId;
-
 		private long? ownerId;
+
+		private string reservedInstanceId;
+
+		private string reservedInstanceName;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +58,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -75,19 +87,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -98,32 +97,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string UserCidr
-		{
-			get
-			{
-				return userCidr;
-			}
-			set	
-			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
-			}
-		}
-
-		public string VbrId
-		{
-			get
-			{
-				return vbrId;
-			}
-			set	
-			{
-				vbrId = value;
-				DictionaryUtil.Add(QueryParameters, "VbrId", value);
 			}
 		}
 
@@ -140,9 +113,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override RecoverVirtualBorderRouterResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ReservedInstanceId
+		{
+			get
+			{
+				return reservedInstanceId;
+			}
+			set	
+			{
+				reservedInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "ReservedInstanceId", value);
+			}
+		}
+
+		public string ReservedInstanceName
+		{
+			get
+			{
+				return reservedInstanceName;
+			}
+			set	
+			{
+				reservedInstanceName = value;
+				DictionaryUtil.Add(QueryParameters, "ReservedInstanceName", value);
+			}
+		}
+
+        public override ModifyReservedInstanceAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RecoverVirtualBorderRouterResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyReservedInstanceAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

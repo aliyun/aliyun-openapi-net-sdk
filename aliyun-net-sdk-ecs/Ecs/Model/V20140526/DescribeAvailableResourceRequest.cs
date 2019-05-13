@@ -44,13 +44,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? cores;
 
-		private string regionId;
-
 		private string systemDiskCategory;
 
 		private string scope;
-
-		private string action;
 
 		private string instanceType;
 
@@ -139,19 +135,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string SystemDiskCategory
 		{
 			get
@@ -175,19 +158,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				scope = value;
 				DictionaryUtil.Add(QueryParameters, "Scope", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

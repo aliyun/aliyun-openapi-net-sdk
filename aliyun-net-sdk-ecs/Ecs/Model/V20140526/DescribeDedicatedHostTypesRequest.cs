@@ -38,10 +38,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string supportedInstanceTypeFamily;
 
-		private string regionId;
-
-		private string action;
-
 		private string dedicatedHostType;
 
 		private string resourceOwnerAccount;
@@ -73,32 +69,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				supportedInstanceTypeFamily = value;
 				DictionaryUtil.Add(QueryParameters, "SupportedInstanceTypeFamily", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

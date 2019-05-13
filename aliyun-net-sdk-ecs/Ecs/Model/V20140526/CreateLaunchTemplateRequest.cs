@@ -54,8 +54,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? systemDiskIops;
 
-		private string action;
-
 		private List<TemplateTag> templateTags;
 
 		private List<Tag> tags;
@@ -95,8 +93,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string userData;
 
 		private bool? passwordInherit;
-
-		private string regionId;
 
 		private string instanceType;
 
@@ -253,19 +249,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				systemDiskIops = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDisk.Iops", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -536,19 +519,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				passwordInherit = value;
 				DictionaryUtil.Add(QueryParameters, "PasswordInherit", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 

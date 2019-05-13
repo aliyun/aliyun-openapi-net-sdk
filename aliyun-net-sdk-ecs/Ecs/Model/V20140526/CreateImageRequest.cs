@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -56,13 +57,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceId;
 
-		private string regionId;
-
 		private string imageName;
 
 		private string imageVersion;
-
-		private string action;
 
 		private List<Tag> tags;
 
@@ -218,19 +215,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string ImageName
 		{
 			get
@@ -254,19 +238,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				imageVersion = value;
 				DictionaryUtil.Add(QueryParameters, "ImageVersion", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

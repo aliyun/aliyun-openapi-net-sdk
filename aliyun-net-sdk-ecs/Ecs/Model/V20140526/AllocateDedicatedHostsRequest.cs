@@ -42,11 +42,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceGroupId;
 
-		private string regionId;
-
 		private string actionOnMaintenance;
-
-		private string action;
 
 		private List<Tag> tags;
 
@@ -75,6 +71,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private int? networkAttributesSlbUdpTimeout;
 
 		private string zoneId;
+
+		private string autoPlacement;
 
 		private string chargeType;
 
@@ -132,19 +130,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string ActionOnMaintenance
 		{
 			get
@@ -155,19 +140,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				actionOnMaintenance = value;
 				DictionaryUtil.Add(QueryParameters, "ActionOnMaintenance", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -355,6 +327,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string AutoPlacement
+		{
+			get
+			{
+				return autoPlacement;
+			}
+			set	
+			{
+				autoPlacement = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPlacement", value);
 			}
 		}
 

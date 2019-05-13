@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creationTime;
 
+			private string securityGroupType;
+
 			private int? availableInstanceAmount;
 
 			private int? ecsCount;
@@ -187,6 +189,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string SecurityGroupType
+			{
+				get
+				{
+					return securityGroupType;
+				}
+				set	
+				{
+					securityGroupType = value;
 				}
 			}
 

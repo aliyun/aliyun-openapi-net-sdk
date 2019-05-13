@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -43,8 +44,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string ownerAccount;
 
 		private int? newSize;
-
-		private string action;
 
 		private string diskId;
 
@@ -114,19 +113,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				newSize = value;
 				DictionaryUtil.Add(QueryParameters, "NewSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

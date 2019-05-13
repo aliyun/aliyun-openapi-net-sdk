@@ -38,10 +38,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? accountId;
 
-		private string regionId;
-
-		private string action;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -75,32 +71,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				accountId = value;
 				DictionaryUtil.Add(QueryParameters, "AccountId", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -50,11 +51,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? encrypted;
 
-		private string regionId;
-
-		private string action;
-
 		private List<Tag> tags;
+
+		private string kMSKeyId;
 
 		private string destinationDescription;
 
@@ -162,32 +161,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public List<Tag> Tags
 		{
 			get
@@ -203,6 +176,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public string KMSKeyId
+		{
+			get
+			{
+				return kMSKeyId;
+			}
+			set	
+			{
+				kMSKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "KMSKeyId", value);
 			}
 		}
 

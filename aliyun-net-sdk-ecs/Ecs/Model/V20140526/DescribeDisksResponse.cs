@@ -162,6 +162,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string kMSKeyId;
 
+			private string bdfId;
+
 			private List<DescribeDisks_OperationLock> operationLocks;
 
 			private List<DescribeDisks_MountInstance> mountInstances;
@@ -549,6 +551,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					kMSKeyId = value;
+				}
+			}
+
+			public string BdfId
+			{
+				get
+				{
+					return bdfId;
+				}
+				set	
+				{
+					bdfId = value;
 				}
 			}
 

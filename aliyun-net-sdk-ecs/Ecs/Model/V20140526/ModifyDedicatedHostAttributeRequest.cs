@@ -38,11 +38,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string description;
 
-		private string regionId;
-
 		private string actionOnMaintenance;
-
-		private string action;
 
 		private string dedicatedHostName;
 
@@ -55,6 +51,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private long? ownerId;
 
 		private int? networkAttributesSlbUdpTimeout;
+
+		private string autoPlacement;
 
 		private int? networkAttributesUdpTimeout;
 
@@ -84,19 +82,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string ActionOnMaintenance
 		{
 			get
@@ -107,19 +92,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				actionOnMaintenance = value;
 				DictionaryUtil.Add(QueryParameters, "ActionOnMaintenance", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -198,6 +170,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				networkAttributesSlbUdpTimeout = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkAttributes.SlbUdpTimeout", value.ToString());
+			}
+		}
+
+		public string AutoPlacement
+		{
+			get
+			{
+				return autoPlacement;
+			}
+			set	
+			{
+				autoPlacement = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPlacement", value);
 			}
 		}
 

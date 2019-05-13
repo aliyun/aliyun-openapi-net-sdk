@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -59,8 +60,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string instanceId;
 
 		private string instanceName;
-
-		private string action;
 
 		public long? ResourceOwnerId
 		{
@@ -228,19 +227,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceName = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

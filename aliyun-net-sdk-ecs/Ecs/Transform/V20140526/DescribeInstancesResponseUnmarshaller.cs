@@ -138,6 +138,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				ecsCapacityReservationAttr.CapacityReservationPreference = context.StringValue("DescribeInstances.Instances["+ i +"].EcsCapacityReservationAttr.CapacityReservationPreference");
 				instance.EcsCapacityReservationAttr = ecsCapacityReservationAttr;
 
+				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_DedicatedInstanceAttribute dedicatedInstanceAttribute = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_DedicatedInstanceAttribute();
+				dedicatedInstanceAttribute.Tenancy = context.StringValue("DescribeInstances.Instances["+ i +"].DedicatedInstanceAttribute.Tenancy");
+				dedicatedInstanceAttribute.Affinity = context.StringValue("DescribeInstances.Instances["+ i +"].DedicatedInstanceAttribute.Affinity");
+				instance.DedicatedInstanceAttribute = dedicatedInstanceAttribute;
+
 				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface> instance_networkInterfaces = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].NetworkInterfaces.Length"); j++) {
 					DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface networkInterface = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface();

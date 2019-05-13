@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				invocation.Frequency = context.StringValue("DescribeInvocations.Invocations["+ i +"].Frequency");
 				invocation.Timed = context.BooleanValue("DescribeInvocations.Invocations["+ i +"].Timed");
 				invocation.InvokeStatus = context.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeStatus");
+				invocation.Parameters = context.StringValue("DescribeInvocations.Invocations["+ i +"].Parameters");
+				invocation.CommandContent = context.StringValue("DescribeInvocations.Invocations["+ i +"].CommandContent");
 
 				List<DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance> invocation_invokeInstances = new List<DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance>();
 				for (int j = 0; j < context.Length("DescribeInvocations.Invocations["+ i +"].InvokeInstances.Length"); j++) {

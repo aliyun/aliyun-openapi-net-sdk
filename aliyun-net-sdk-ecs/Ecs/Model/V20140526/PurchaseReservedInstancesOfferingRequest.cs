@@ -42,11 +42,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceGroupId;
 
-		private string regionId;
-
 		private string scope;
-
-		private string action;
 
 		private string instanceType;
 
@@ -120,19 +116,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string Scope
 		{
 			get
@@ -143,19 +126,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				scope = value;
 				DictionaryUtil.Add(QueryParameters, "Scope", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

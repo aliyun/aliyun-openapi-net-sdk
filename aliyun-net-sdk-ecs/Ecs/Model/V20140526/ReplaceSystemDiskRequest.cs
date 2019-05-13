@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -59,8 +60,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private bool? passwordInherit;
 
 		private int? systemDiskSize;
-
-		private string action;
 
 		private string diskId;
 
@@ -234,19 +233,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				systemDiskSize = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDisk.Size", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

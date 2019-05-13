@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -42,13 +43,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string oSSPrefix;
 
 		private string roleName;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -106,19 +103,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OSSPrefix
 		{
 			get
@@ -142,19 +126,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				roleName = value;
 				DictionaryUtil.Add(QueryParameters, "RoleName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

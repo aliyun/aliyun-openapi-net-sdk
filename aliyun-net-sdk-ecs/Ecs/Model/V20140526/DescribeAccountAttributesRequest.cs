@@ -38,10 +38,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> attributeNames;
 
-		private string regionId;
-
-		private string action;
-
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
@@ -75,32 +71,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				{
 					DictionaryUtil.Add(QueryParameters,"AttributeName." + (i + 1) , attributeNames[i]);
 				}
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

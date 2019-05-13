@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,15 +49,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private string regionId;
-
 		private string onUnableToRedeployFailedInstance;
 
 		private string granularity;
 
 		private string domain;
-
-		private string action;
 
 		private string strategy;
 
@@ -151,19 +148,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OnUnableToRedeployFailedInstance
 		{
 			get
@@ -200,19 +184,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				domain = value;
 				DictionaryUtil.Add(QueryParameters, "Domain", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

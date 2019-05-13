@@ -40,11 +40,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageNumber;
 
-		private string regionId;
-
 		private int? pageSize;
-
-		private string action;
 
 		private string resourceOwnerAccount;
 
@@ -93,19 +89,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -116,19 +99,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

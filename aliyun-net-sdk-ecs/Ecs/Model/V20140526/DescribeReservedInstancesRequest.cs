@@ -40,13 +40,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string lockReason;
 
-		private string regionId;
-
 		private string scope;
 
 		private int? pageSize;
-
-		private string action;
 
 		private string instanceType;
 
@@ -107,19 +103,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string Scope
 		{
 			get
@@ -143,19 +126,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

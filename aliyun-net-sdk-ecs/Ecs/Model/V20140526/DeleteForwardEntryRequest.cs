@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -38,15 +39,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string forwardEntryId;
 
 		private string ownerAccount;
 
 		private string forwardTableId;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -73,19 +70,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -125,19 +109,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				forwardTableId = value;
 				DictionaryUtil.Add(QueryParameters, "ForwardTableId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -38,8 +38,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? forceStop;
 
-		private string action;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -71,19 +69,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				forceStop = value;
 				DictionaryUtil.Add(QueryParameters, "ForceStop", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

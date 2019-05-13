@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -40,10 +41,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string frequency;
 
-		private string regionId;
-
-		private string action;
-
 		private bool? timed;
 
 		private string resourceOwnerAccount;
@@ -53,6 +50,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private long? ownerId;
 
 		private List<string> instanceIds;
+
+		private Dictionary<object,object> parameters;
 
 		public long? ResourceOwnerId
 		{
@@ -90,32 +89,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				frequency = value;
 				DictionaryUtil.Add(QueryParameters, "Frequency", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -185,6 +158,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				{
 					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
 				}
+			}
+		}
+
+		public Dictionary<object,object> Parameters
+		{
+			get
+			{
+				return parameters;
+			}
+			set	
+			{
+				parameters = value;
+				DictionaryUtil.Add(QueryParameters, "Parameters", JsonConvert.SerializeObject(value));
 			}
 		}
 

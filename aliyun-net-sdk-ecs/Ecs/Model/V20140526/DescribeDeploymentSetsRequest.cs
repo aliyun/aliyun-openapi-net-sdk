@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -50,15 +51,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string deploymentSetIds;
 
-		private string regionId;
-
 		private string granularity;
 
 		private string domain;
 
 		private int? pageSize;
-
-		private string action;
 
 		private string strategy;
 
@@ -166,19 +163,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string Granularity
 		{
 			get
@@ -215,19 +199,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -46,13 +47,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string stoppedMode;
 
 		private long? ownerId;
-
-		private bool? hibernate;
 
 		private bool? forceStop;
 
@@ -134,19 +131,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string StoppedMode
 		{
 			get
@@ -170,19 +154,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public bool? Hibernate
-		{
-			get
-			{
-				return hibernate;
-			}
-			set	
-			{
-				hibernate = value;
-				DictionaryUtil.Add(QueryParameters, "Hibernate", value.ToString());
 			}
 		}
 

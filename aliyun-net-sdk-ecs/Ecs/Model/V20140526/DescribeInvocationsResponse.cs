@@ -112,6 +112,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string invokeStatus;
 
+			private string parameters;
+
+			private string commandContent;
+
 			private List<DescribeInvocations_InvokeInstance> invokeInstances;
 
 			public string InvokeId
@@ -195,6 +199,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					invokeStatus = value;
+				}
+			}
+
+			public string Parameters
+			{
+				get
+				{
+					return parameters;
+				}
+				set	
+				{
+					parameters = value;
+				}
+			}
+
+			public string CommandContent
+			{
+				get
+				{
+					return commandContent;
+				}
+				set	
+				{
+					commandContent = value;
 				}
 			}
 

@@ -38,10 +38,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<Configuration> configurations;
 
-		private string regionId;
-
-		private string action;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -81,32 +77,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"Configuration." + (i + 1) + ".Scope", configurations[i].Scope);
 					DictionaryUtil.Add(QueryParameters,"Configuration." + (i + 1) + ".InstanceAmount", configurations[i].InstanceAmount);
 				}
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

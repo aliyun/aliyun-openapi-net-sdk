@@ -58,8 +58,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string password;
 
-		private string action;
-
 		private List<Tag> tags;
 
 		private int? autoRenewPeriod;
@@ -73,8 +71,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private int? ipv6AddressCount;
 
 		private long? ownerId;
-
-		private string capacityReservationPreference;
 
 		private string vSwitchId;
 
@@ -112,17 +108,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string systemDiskCategory;
 
-		private string capacityReservationId;
-
 		private string userData;
 
 		private bool? passwordInherit;
 
-		private string regionId;
-
 		private string instanceType;
-
-		private bool? hibernationConfigured;
 
 		private string instanceChargeType;
 
@@ -145,6 +135,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string dedicatedHostId;
 
 		private string creditSpecification;
+
+		private List<string> securityGroupIdss;
 
 		private List<DataDisk> dataDisks;
 
@@ -310,19 +302,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public List<Tag> Tags
 		{
 			get
@@ -416,19 +395,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string CapacityReservationPreference
-		{
-			get
-			{
-				return capacityReservationPreference;
-			}
-			set	
-			{
-				capacityReservationPreference = value;
-				DictionaryUtil.Add(QueryParameters, "CapacityReservationPreference", value);
 			}
 		}
 
@@ -670,19 +636,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string CapacityReservationId
-		{
-			get
-			{
-				return capacityReservationId;
-			}
-			set	
-			{
-				capacityReservationId = value;
-				DictionaryUtil.Add(QueryParameters, "CapacityReservationId", value);
-			}
-		}
-
 		public string UserData
 		{
 			get
@@ -709,19 +662,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string InstanceType
 		{
 			get
@@ -732,19 +672,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
-		public bool? HibernationConfigured
-		{
-			get
-			{
-				return hibernationConfigured;
-			}
-			set	
-			{
-				hibernationConfigured = value;
-				DictionaryUtil.Add(QueryParameters, "HibernationConfigured", value.ToString());
 			}
 		}
 
@@ -896,6 +823,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				creditSpecification = value;
 				DictionaryUtil.Add(QueryParameters, "CreditSpecification", value);
+			}
+		}
+
+		public List<string> SecurityGroupIdss
+		{
+			get
+			{
+				return securityGroupIdss;
+			}
+
+			set
+			{
+				securityGroupIdss = value;
+				for (int i = 0; i < securityGroupIdss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SecurityGroupIds." + (i + 1) , securityGroupIdss[i]);
+				}
 			}
 		}
 

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -46,10 +47,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? timeout;
 
-		private string regionId;
-
-		private string action;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -57,6 +54,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private long? ownerId;
 
 		private string name;
+
+		private bool? enableParameter;
 
 		public long? ResourceOwnerId
 		{
@@ -136,32 +135,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -211,6 +184,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public bool? EnableParameter
+		{
+			get
+			{
+				return enableParameter;
+			}
+			set	
+			{
+				enableParameter = value;
+				DictionaryUtil.Add(QueryParameters, "EnableParameter", value.ToString());
 			}
 		}
 

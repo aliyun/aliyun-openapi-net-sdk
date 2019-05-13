@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -48,13 +49,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string securityGroupName;
 
+		private string securityGroupType;
+
 		private string resourceGroupId;
 
-		private string regionId;
-
 		private string vpcId;
-
-		private string action;
 
 		private List<Tag> tags;
 
@@ -149,6 +148,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string SecurityGroupType
+		{
+			get
+			{
+				return securityGroupType;
+			}
+			set	
+			{
+				securityGroupType = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupType", value);
+			}
+		}
+
 		public string ResourceGroupId
 		{
 			get
@@ -162,19 +174,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string VpcId
 		{
 			get
@@ -185,19 +184,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -36,11 +36,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string regionId;
-
 		private string nextToken;
-
-		private string action;
 
 		private List<Tag> tags;
 
@@ -67,19 +63,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string NextToken
 		{
 			get
@@ -90,19 +73,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
