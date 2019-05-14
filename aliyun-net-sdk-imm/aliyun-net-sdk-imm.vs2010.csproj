@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{16da854f-3f0c-43bd-be53-27abb20b07f8}</ProjectGuid>
+    <ProjectGuid>{423ecae4-21b7-4340-81b3-eb8460bda82b}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,26 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Imm\Model\V20170906\GetSetRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\CreateMergeFaceGroupsJobResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\CreateCADConversionTaskRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\FindSimilarFacesRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\UpdateFaceGroupResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\FindImagesResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\DetectImageLogosResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\DetectImageLogosRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\DetectImageBodiesResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\DetectImageBodiesRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\FindImagesByTagNamesRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\CreateMergeFaceGroupsJobRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\UpdateFaceGroupRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\CreateSetRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\FindImagesByTagNamesResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\CreateCADConversionTaskResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\FindImagesRequest.cs" />
-	<Compile Include="Imm\Model\V20170906\GetSetResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\FindSimilarFacesResponse.cs" />
-	<Compile Include="Imm\Model\V20170906\CreateSetResponse.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetDocIndexResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetProjectResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateTagSetResponseUnmarshaller.cs" />
