@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{423ecae4-21b7-4340-81b3-eb8460bda82b}</ProjectGuid>
+    <ProjectGuid>{65cca481-3ad7-4568-9ddf-4394e3196443}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,6 +40,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="Imm\Model\V20170906\DetectImageTextsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListImagesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListVideosRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetImageJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectImageFacesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectImageTagsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListImageJobsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetImageResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetSetRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListVideoFramesResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateMergeFaceGroupsJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectImageFacesResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListVideoAudiosResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateCADConversionTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectImageTextsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListVideoTasksResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetDocIndexTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListSetTagsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\FindSimilarFacesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateFaceGroupResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\FindImagesResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectImageLogosResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectImageCelebrityResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateSetResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectImageCelebrityRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectImageLogosRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateSetRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateVideoAnalyseTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetVideoTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteSetRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListVideosResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CompareImageFacesResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteVideoRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateDocIndexMetaRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateVideoAnalyseTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListImageJobsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateImageRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectImageBodiesResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectImageBodiesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteImageResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\FindImagesByTagNamesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateGroupFacesJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateMergeFaceGroupsJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteVideoResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateDocIndexTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListSetsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListSetsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateFaceGroupRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetDocIndexTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateSetRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateDocIndexTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateGroupFacesJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\FindImagesByTagNamesResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\IndexImageRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\IndexImageResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteSetResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateCADConversionTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteImageJobRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListImagesResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListSetTagsResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListVideoFramesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteVideoTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DetectImageTagsRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\FindImagesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\IndexVideoRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetSetResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteImageJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetVideoRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\IndexVideoResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\GetImageJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateImageResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\FindSimilarFacesResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteImageRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetVideoTaskResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateSetResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CompareImageFacesRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\DeleteVideoTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetVideoResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\UpdateDocIndexMetaResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\ListVideoTasksRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\ListVideoAudiosRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\GetImageRequest.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetDocIndexResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetProjectResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateTagSetResponseUnmarshaller.cs" />
