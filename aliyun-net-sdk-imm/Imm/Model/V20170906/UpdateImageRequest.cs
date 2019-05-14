@@ -42,8 +42,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string externalId;
 
-		private string accessKeyId;
-
 		private string imageUri;
 
 		private string sourceUri;
@@ -53,8 +51,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string remarksD;
 
 		private string remarksC;
-
-		private string action;
 
 		private string setId;
 
@@ -109,19 +105,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				externalId = value;
 				DictionaryUtil.Add(QueryParameters, "ExternalId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -187,19 +170,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				remarksC = value;
 				DictionaryUtil.Add(QueryParameters, "RemarksC", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

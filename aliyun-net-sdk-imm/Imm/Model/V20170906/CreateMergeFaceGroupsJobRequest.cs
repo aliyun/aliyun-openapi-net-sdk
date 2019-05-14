@@ -27,16 +27,76 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class GetSetRequest : RpcAcsRequest<GetSetResponse>
+    public class CreateMergeFaceGroupsJobRequest : RpcAcsRequest<CreateMergeFaceGroupsJobResponse>
     {
-        public GetSetRequest()
-            : base("imm", "2017-09-06", "GetSet", "imm", "openAPI")
+        public CreateMergeFaceGroupsJobRequest()
+            : base("imm", "2017-09-06", "CreateMergeFaceGroupsJob", "imm", "openAPI")
         {
         }
+
+		private string groupIdFrom;
+
+		private string groupIdTo;
+
+		private string notifyTopicName;
+
+		private string notifyEndpoint;
 
 		private string project;
 
 		private string setId;
+
+		public string GroupIdFrom
+		{
+			get
+			{
+				return groupIdFrom;
+			}
+			set	
+			{
+				groupIdFrom = value;
+				DictionaryUtil.Add(QueryParameters, "GroupIdFrom", value);
+			}
+		}
+
+		public string GroupIdTo
+		{
+			get
+			{
+				return groupIdTo;
+			}
+			set	
+			{
+				groupIdTo = value;
+				DictionaryUtil.Add(QueryParameters, "GroupIdTo", value);
+			}
+		}
+
+		public string NotifyTopicName
+		{
+			get
+			{
+				return notifyTopicName;
+			}
+			set	
+			{
+				notifyTopicName = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
+			}
+		}
+
+		public string NotifyEndpoint
+		{
+			get
+			{
+				return notifyEndpoint;
+			}
+			set	
+			{
+				notifyEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
+			}
+		}
 
 		public string Project
 		{
@@ -64,9 +124,14 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-        public override GetSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateMergeFaceGroupsJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateMergeFaceGroupsJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

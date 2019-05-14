@@ -36,17 +36,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string srcUris;
 
-		private string modelId;
-
-		private string action;
-
 		private string project;
 
 		private string setId;
 
 		private string force;
-
-		private string accessKeyId;
 
 		public string SrcUris
 		{
@@ -58,32 +52,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				srcUris = value;
 				DictionaryUtil.Add(QueryParameters, "SrcUris", value);
-			}
-		}
-
-		public string ModelId
-		{
-			get
-			{
-				return modelId;
-			}
-			set	
-			{
-				modelId = value;
-				DictionaryUtil.Add(QueryParameters, "ModelId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -123,19 +91,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				force = value;
 				DictionaryUtil.Add(QueryParameters, "Force", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

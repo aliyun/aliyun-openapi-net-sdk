@@ -54,8 +54,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string name;
 
-		private string action;
-
 		private string srcUri;
 
 		private string uniqueId;
@@ -187,19 +185,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

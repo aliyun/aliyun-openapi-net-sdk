@@ -38,8 +38,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string imageUriA;
 
-		private string action;
-
 		private string project;
 
 		private string setId;
@@ -47,8 +45,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string faceIdA;
 
 		private string faceIdB;
-
-		private string accessKeyId;
 
 		public string ImageUriB
 		{
@@ -73,19 +69,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				imageUriA = value;
 				DictionaryUtil.Add(QueryParameters, "ImageUriA", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -138,19 +121,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				faceIdB = value;
 				DictionaryUtil.Add(QueryParameters, "FaceIdB", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

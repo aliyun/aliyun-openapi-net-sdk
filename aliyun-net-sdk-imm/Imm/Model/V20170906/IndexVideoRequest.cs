@@ -34,50 +34,23 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string grabType;
-
 		private string remarksB;
 
 		private string project;
 
 		private string remarksA;
 
-		private string endTime;
-
 		private string externalId;
 
-		private string startTime;
-
-		private string accessKeyId;
-
 		private string videoUri;
-
-		private bool? saveType;
 
 		private string remarksD;
 
 		private string remarksC;
 
-		private string action;
-
 		private string setId;
 
-		private string interval;
-
 		private string tgtUri;
-
-		public string GrabType
-		{
-			get
-			{
-				return grabType;
-			}
-			set	
-			{
-				grabType = value;
-				DictionaryUtil.Add(QueryParameters, "GrabType", value);
-			}
-		}
 
 		public string RemarksB
 		{
@@ -118,19 +91,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
 		public string ExternalId
 		{
 			get
@@ -144,32 +104,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string VideoUri
 		{
 			get
@@ -180,19 +114,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				videoUri = value;
 				DictionaryUtil.Add(QueryParameters, "VideoUri", value);
-			}
-		}
-
-		public bool? SaveType
-		{
-			get
-			{
-				return saveType;
-			}
-			set	
-			{
-				saveType = value;
-				DictionaryUtil.Add(QueryParameters, "SaveType", value.ToString());
 			}
 		}
 
@@ -222,19 +143,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string SetId
 		{
 			get
@@ -245,19 +153,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				setId = value;
 				DictionaryUtil.Add(QueryParameters, "SetId", value);
-			}
-		}
-
-		public string Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

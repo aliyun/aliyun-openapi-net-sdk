@@ -44,8 +44,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string remarksBPrefix;
 
-		private string accessKeyId;
-
 		private string locationBoundary;
 
 		private string imageTimeRange;
@@ -53,8 +51,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string oCRContentsMatch;
 
 		private int? limit;
-
-		private string action;
 
 		private string remarksDPrefix;
 
@@ -151,19 +147,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string LocationBoundary
 		{
 			get
@@ -213,19 +196,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				limit = value;
 				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

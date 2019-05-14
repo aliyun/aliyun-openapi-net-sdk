@@ -52,15 +52,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private int? zoomFactor;
 
-		private string accessKeyId;
-
 		private string tgtType;
 
 		private long? unitHeight;
 
 		private string notifyEndpoint;
-
-		private string action;
 
 		private string srcUri;
 
@@ -185,19 +181,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string TgtType
 		{
 			get
@@ -234,19 +217,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				notifyEndpoint = value;
 				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

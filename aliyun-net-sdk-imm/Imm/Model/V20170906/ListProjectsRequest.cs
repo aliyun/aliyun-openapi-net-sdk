@@ -38,10 +38,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string marker;
 
-		private string action;
-
-		private string accessKeyId;
-
 		public int? MaxKeys
 		{
 			get
@@ -65,32 +61,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				marker = value;
 				DictionaryUtil.Add(QueryParameters, "Marker", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -38,13 +38,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string marker;
 
-		private string action;
-
 		private string project;
 
 		private string jobType;
-
-		private string accessKeyId;
 
 		public int? MaxKeys
 		{
@@ -72,19 +68,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string Project
 		{
 			get
@@ -108,19 +91,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				jobType = value;
 				DictionaryUtil.Add(QueryParameters, "JobType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

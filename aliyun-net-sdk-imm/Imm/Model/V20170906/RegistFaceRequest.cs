@@ -38,8 +38,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private bool? isQualityLimit;
 
-		private string action;
-
 		private string project;
 
 		private string srcUri;
@@ -49,8 +47,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string groupName;
 
 		private string user;
-
-		private string accessKeyId;
 
 		public bool? ChooseBiggestFace
 		{
@@ -75,19 +71,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				isQualityLimit = value;
 				DictionaryUtil.Add(QueryParameters, "IsQualityLimit", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -153,19 +136,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				user = value;
 				DictionaryUtil.Add(QueryParameters, "User", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -36,15 +36,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string lazyMode;
 
-		private string action;
-
 		private string project;
 
 		private string setId;
 
 		private string checkEmpty;
-
-		private string accessKeyId;
 
 		public string LazyMode
 		{
@@ -56,19 +52,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				lazyMode = value;
 				DictionaryUtil.Add(QueryParameters, "LazyMode", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -108,19 +91,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				checkEmpty = value;
 				DictionaryUtil.Add(QueryParameters, "CheckEmpty", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

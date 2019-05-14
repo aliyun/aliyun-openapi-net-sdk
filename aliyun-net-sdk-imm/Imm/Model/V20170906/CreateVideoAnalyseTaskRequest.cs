@@ -36,25 +36,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string notifyTopicName;
 
-		private string grabType;
-
 		private string project;
-
-		private string endTime;
-
-		private string startTime;
-
-		private string accessKeyId;
 
 		private string videoUri;
 
-		private bool? saveType;
-
 		private string notifyEndpoint;
-
-		private string action;
-
-		private string interval;
 
 		private string tgtUri;
 
@@ -71,19 +57,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string GrabType
-		{
-			get
-			{
-				return grabType;
-			}
-			set	
-			{
-				grabType = value;
-				DictionaryUtil.Add(QueryParameters, "GrabType", value);
-			}
-		}
-
 		public string Project
 		{
 			get
@@ -94,45 +67,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -149,19 +83,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public bool? SaveType
-		{
-			get
-			{
-				return saveType;
-			}
-			set	
-			{
-				saveType = value;
-				DictionaryUtil.Add(QueryParameters, "SaveType", value.ToString());
-			}
-		}
-
 		public string NotifyEndpoint
 		{
 			get
@@ -172,32 +93,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				notifyEndpoint = value;
 				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 

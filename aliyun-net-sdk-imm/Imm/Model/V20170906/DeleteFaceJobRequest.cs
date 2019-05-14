@@ -36,13 +36,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string jobId;
 
-		private string action;
-
 		private string project;
 
 		private string clearIndexData;
-
-		private string accessKeyId;
 
 		public string JobId
 		{
@@ -54,19 +50,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				jobId = value;
 				DictionaryUtil.Add(QueryParameters, "JobId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -93,19 +76,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				clearIndexData = value;
 				DictionaryUtil.Add(QueryParameters, "ClearIndexData", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

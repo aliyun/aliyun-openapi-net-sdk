@@ -19,35 +19,45 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.imm.Transform;
-using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class GetSetRequest : RpcAcsRequest<GetSetResponse>
-    {
-        public GetSetRequest()
-            : base("imm", "2017-09-06", "GetSet", "imm", "openAPI")
-        {
-        }
+	public class CreateMergeFaceGroupsJobResponse : AcsResponse
+	{
 
-		private string project;
+		private string requestId;
+
+		private string jobId;
 
 		private string setId;
 
-		public string Project
+		private string jobType;
+
+		private string groupIdTo;
+
+		private string groupIdFrom;
+
+		public string RequestId
 		{
 			get
 			{
-				return project;
+				return requestId;
 			}
 			set	
 			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
+				requestId = value;
+			}
+		}
+
+		public string JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
 			}
 		}
 
@@ -60,13 +70,43 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				setId = value;
-				DictionaryUtil.Add(QueryParameters, "SetId", value);
 			}
 		}
 
-        public override GetSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return GetSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+		public string JobType
+		{
+			get
+			{
+				return jobType;
+			}
+			set	
+			{
+				jobType = value;
+			}
+		}
+
+		public string GroupIdTo
+		{
+			get
+			{
+				return groupIdTo;
+			}
+			set	
+			{
+				groupIdTo = value;
+			}
+		}
+
+		public string GroupIdFrom
+		{
+			get
+			{
+				return groupIdFrom;
+			}
+			set	
+			{
+				groupIdFrom = value;
+			}
+		}
+	}
 }

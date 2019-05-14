@@ -50,11 +50,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string customKey6;
 
-		private string accessKeyId;
-
 		private string name;
-
-		private string action;
 
 		private string uniqueId;
 
@@ -162,19 +158,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Name
 		{
 			get
@@ -185,19 +168,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

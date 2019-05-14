@@ -36,8 +36,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private int? resultNum;
 
-		private string action;
-
 		private string project;
 
 		private string searchThresholdLevel;
@@ -47,8 +45,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private bool? isThreshold;
 
 		private string groupName;
-
-		private string accessKeyId;
 
 		public int? ResultNum
 		{
@@ -60,19 +56,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				resultNum = value;
 				DictionaryUtil.Add(QueryParameters, "ResultNum", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -138,19 +121,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -36,15 +36,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string videoUri;
 
-		private string action;
-
 		private string project;
 
 		private string setId;
 
 		private bool? resources;
-
-		private string accessKeyId;
 
 		public string VideoUri
 		{
@@ -56,19 +52,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				videoUri = value;
 				DictionaryUtil.Add(QueryParameters, "VideoUri", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -108,19 +91,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				resources = value;
 				DictionaryUtil.Add(QueryParameters, "Resources", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

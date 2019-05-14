@@ -27,16 +27,29 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class GetSetRequest : RpcAcsRequest<GetSetResponse>
+    public class DetectImageBodiesRequest : RpcAcsRequest<DetectImageBodiesResponse>
     {
-        public GetSetRequest()
-            : base("imm", "2017-09-06", "GetSet", "imm", "openAPI")
+        public DetectImageBodiesRequest()
+            : base("imm", "2017-09-06", "DetectImageBodies", "imm", "openAPI")
         {
         }
 
+		private string imageUri;
+
 		private string project;
 
-		private string setId;
+		public string ImageUri
+		{
+			get
+			{
+				return imageUri;
+			}
+			set	
+			{
+				imageUri = value;
+				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+			}
+		}
 
 		public string Project
 		{
@@ -51,22 +64,14 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string SetId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return setId;
-			}
-			set	
-			{
-				setId = value;
-				DictionaryUtil.Add(QueryParameters, "SetId", value);
-			}
+			return false;
 		}
 
-        public override GetSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DetectImageBodiesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DetectImageBodiesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

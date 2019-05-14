@@ -38,15 +38,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string serviceRole;
 
-		private string action;
-
 		private string project;
 
 		private string billingType;
 
 		private string type;
-
-		private string accessKeyId;
 
 		public int? CU
 		{
@@ -71,19 +67,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				serviceRole = value;
 				DictionaryUtil.Add(QueryParameters, "ServiceRole", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -123,19 +106,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

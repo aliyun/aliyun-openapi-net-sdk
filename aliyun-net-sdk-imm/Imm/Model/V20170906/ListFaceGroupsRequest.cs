@@ -38,15 +38,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private int? limit;
 
-		private string action;
-
 		private string project;
 
 		private string setId;
 
 		private string orderBy;
-
-		private string accessKeyId;
 
 		private string order;
 
@@ -73,19 +69,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				limit = value;
 				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -125,19 +108,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				orderBy = value;
 				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

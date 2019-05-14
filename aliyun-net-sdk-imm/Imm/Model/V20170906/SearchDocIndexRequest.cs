@@ -64,8 +64,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private int? pageNumLimitEnd;
 
-		private string accessKeyId;
-
 		private string contentType;
 
 		private int? sizeLimitStart;
@@ -73,8 +71,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string name;
 
 		private int? limit;
-
-		private string action;
 
 		public int? ModifiedTimeEnd
 		{
@@ -271,19 +267,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string ContentType
 		{
 			get
@@ -333,19 +316,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				limit = value;
 				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

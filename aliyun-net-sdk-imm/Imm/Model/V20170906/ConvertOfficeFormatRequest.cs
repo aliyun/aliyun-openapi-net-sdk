@@ -50,8 +50,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private bool? pdfVector;
 
-		private string accessKeyId;
-
 		private bool? sheetOnePage;
 
 		private string password;
@@ -67,8 +65,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private bool? hidecomments;
 
 		private string tgtFilePrefix;
-
-		private string action;
 
 		private bool? fitToPagesTall;
 
@@ -182,19 +178,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public bool? SheetOnePage
 		{
 			get
@@ -296,19 +279,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				tgtFilePrefix = value;
 				DictionaryUtil.Add(QueryParameters, "TgtFilePrefix", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

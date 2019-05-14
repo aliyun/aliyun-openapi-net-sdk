@@ -40,15 +40,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private int? limit;
 
-		private string action;
-
 		private string project;
 
 		private string setId;
 
 		private string faceId;
-
-		private string accessKeyId;
 
 		public string ImageUri
 		{
@@ -89,19 +85,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string Project
 		{
 			get
@@ -138,19 +121,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				faceId = value;
 				DictionaryUtil.Add(QueryParameters, "FaceId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

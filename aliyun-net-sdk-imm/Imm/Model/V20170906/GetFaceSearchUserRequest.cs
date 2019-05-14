@@ -34,28 +34,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string action;
-
 		private string project;
 
 		private string groupName;
 
 		private string user;
-
-		private string accessKeyId;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
 
 		public string Project
 		{
@@ -93,19 +76,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				user = value;
 				DictionaryUtil.Add(QueryParameters, "User", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
