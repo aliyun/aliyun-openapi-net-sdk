@@ -92,6 +92,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? internetMaxBandwidthIn;
 
+		private string affinity;
+
 		private string imageId;
 
 		private string spotInterruptionBehavior;
@@ -125,6 +127,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
+
+		private string tenancy;
 
 		private string systemDiskDiskName;
 
@@ -532,6 +536,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Affinity
+		{
+			get
+			{
+				return affinity;
+			}
+			set	
+			{
+				affinity = value;
+				DictionaryUtil.Add(QueryParameters, "Affinity", value);
+			}
+		}
+
 		public string ImageId
 		{
 			get
@@ -758,6 +775,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Tenancy
+		{
+			get
+			{
+				return tenancy;
+			}
+			set	
+			{
+				tenancy = value;
+				DictionaryUtil.Add(QueryParameters, "Tenancy", value);
 			}
 		}
 

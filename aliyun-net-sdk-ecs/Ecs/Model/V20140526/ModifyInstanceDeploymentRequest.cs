@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
+		private string tenancy;
+
 		private string dedicatedHostId;
 
 		private long? ownerId;
@@ -49,6 +51,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string instanceId;
 
 		private bool? force;
+
+		private string affinity;
 
 		public long? ResourceOwnerId
 		{
@@ -102,6 +106,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Tenancy
+		{
+			get
+			{
+				return tenancy;
+			}
+			set	
+			{
+				tenancy = value;
+				DictionaryUtil.Add(QueryParameters, "Tenancy", value);
+			}
+		}
+
 		public string DedicatedHostId
 		{
 			get
@@ -151,6 +168,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				force = value;
 				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
+			}
+		}
+
+		public string Affinity
+		{
+			get
+			{
+				return affinity;
+			}
+			set	
+			{
+				affinity = value;
+				DictionaryUtil.Add(QueryParameters, "Affinity", value);
 			}
 		}
 
