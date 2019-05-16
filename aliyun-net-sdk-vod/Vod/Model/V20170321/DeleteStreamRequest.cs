@@ -40,8 +40,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string jobIds;
 
-		private string action;
-
 		private string videoId;
 
 		private long? ownerId;
@@ -82,19 +80,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				jobIds = value;
 				DictionaryUtil.Add(QueryParameters, "JobIds", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

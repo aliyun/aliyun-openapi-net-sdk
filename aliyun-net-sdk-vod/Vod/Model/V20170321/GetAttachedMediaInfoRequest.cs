@@ -38,8 +38,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
-		private string action;
-
 		private string outputType;
 
 		private string mediaIds;
@@ -49,8 +47,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private long? ownerId;
 
 		private long? authTimeout;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -75,19 +71,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -153,19 +136,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				authTimeout = value;
 				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

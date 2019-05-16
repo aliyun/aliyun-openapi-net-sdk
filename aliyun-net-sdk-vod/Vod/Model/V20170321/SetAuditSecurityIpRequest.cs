@@ -36,8 +36,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string operateMode;
 
-		private string action;
-
 		private string securityGroupName;
 
 		private string ips;
@@ -52,19 +50,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				operateMode = value;
 				DictionaryUtil.Add(QueryParameters, "OperateMode", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

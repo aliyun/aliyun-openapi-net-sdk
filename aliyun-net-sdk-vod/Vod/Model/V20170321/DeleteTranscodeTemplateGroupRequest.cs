@@ -38,13 +38,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
-		private string action;
-
 		private string transcodeTemplateIds;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		private string transcodeTemplateGroupId;
 
@@ -76,19 +72,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string TranscodeTemplateIds
 		{
 			get
@@ -112,19 +95,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

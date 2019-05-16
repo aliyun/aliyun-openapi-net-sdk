@@ -40,8 +40,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? pageSize;
 
-		private string action;
-
 		private string domainName;
 
 		private string endTime;
@@ -84,19 +82,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

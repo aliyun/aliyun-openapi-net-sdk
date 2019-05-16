@@ -55,6 +55,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				attachedMedia.AppId = context.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].AppId");
 				attachedMedia.Status = context.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Status");
 				attachedMedia.OnlineStatus = context.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].OnlineStatus");
+				attachedMedia.Icon = context.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Icon");
+				attachedMedia.RegionId = context.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].RegionId");
 
 				List<GetAttachedMediaInfoResponse.GetAttachedMediaInfo_AttachedMedia.GetAttachedMediaInfo_Category> attachedMedia_categories = new List<GetAttachedMediaInfoResponse.GetAttachedMediaInfo_AttachedMedia.GetAttachedMediaInfo_Category>();
 				for (int j = 0; j < context.Length("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Categories.Length"); j++) {

@@ -44,13 +44,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? ownerId;
 
-		private string accessKeyId;
+		private string userData;
 
 		private long? specifiedOffsetTime;
 
 		private string width;
-
-		private string action;
 
 		private long? interval;
 
@@ -125,16 +123,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AccessKeyId
+		public string UserData
 		{
 			get
 			{
-				return accessKeyId;
+				return userData;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 
@@ -161,19 +159,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				width = value;
 				DictionaryUtil.Add(QueryParameters, "Width", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

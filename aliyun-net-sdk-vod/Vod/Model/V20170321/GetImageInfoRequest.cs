@@ -40,15 +40,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
-		private string action;
-
 		private string outputType;
 
 		private long? ownerId;
 
 		private long? authTimeout;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -89,19 +85,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string OutputType
 		{
 			get
@@ -138,19 +121,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				authTimeout = value;
 				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

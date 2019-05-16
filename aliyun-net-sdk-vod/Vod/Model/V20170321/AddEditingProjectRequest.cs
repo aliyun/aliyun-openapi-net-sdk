@@ -44,8 +44,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string description;
 
 		private string timeline;
@@ -53,8 +51,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string ownerId;
 
 		private string title;
-
-		private string accessKeyId;
 
 		public string CoverURL
 		{
@@ -121,19 +117,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -183,19 +166,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				title = value;
 				DictionaryUtil.Add(QueryParameters, "Title", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

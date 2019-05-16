@@ -42,13 +42,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string name;
 
-		private string action;
-
 		private long? ownerId;
 
 		private string watermarkConfig;
-
-		private string accessKeyId;
 
 		public string WatermarkId
 		{
@@ -102,19 +98,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -138,19 +121,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				watermarkConfig = value;
 				DictionaryUtil.Add(QueryParameters, "WatermarkConfig", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

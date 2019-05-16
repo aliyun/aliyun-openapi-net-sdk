@@ -38,8 +38,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string objectPath;
 
-		private string action;
-
 		private long? ownerId;
 
 		public string SecurityToken
@@ -65,19 +63,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				objectPath = value;
 				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

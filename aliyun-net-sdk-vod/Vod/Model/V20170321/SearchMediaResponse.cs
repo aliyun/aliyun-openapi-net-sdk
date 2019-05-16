@@ -1659,6 +1659,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string appId;
 
+				private string icon;
+
+				private string onlineStatus;
+
 				private List<SearchMedia_Category> categories;
 
 				public string Title
@@ -1814,6 +1818,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						appId = value;
+					}
+				}
+
+				public string Icon
+				{
+					get
+					{
+						return icon;
+					}
+					set	
+					{
+						icon = value;
+					}
+				}
+
+				public string OnlineStatus
+				{
+					get
+					{
+						return onlineStatus;
+					}
+					set	
+					{
+						onlineStatus = value;
 					}
 				}
 

@@ -38,13 +38,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
-		private string action;
-
 		private string videoId;
 
 		private string additionType;
-
-		private string resultTypes;
 
 		private long? ownerId;
 
@@ -74,19 +70,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string VideoId
 		{
 			get
@@ -110,19 +93,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				additionType = value;
 				DictionaryUtil.Add(QueryParameters, "AdditionType", value);
-			}
-		}
-
-		public string ResultTypes
-		{
-			get
-			{
-				return resultTypes;
-			}
-			set	
-			{
-				resultTypes = value;
-				DictionaryUtil.Add(QueryParameters, "ResultTypes", value);
 			}
 		}
 

@@ -114,6 +114,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string narrowBandType;
 
+			private string specification;
+
 			public long? Width
 			{
 				get
@@ -375,6 +377,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					narrowBandType = value;
+				}
+			}
+
+			public string Specification
+			{
+				get
+				{
+					return specification;
+				}
+				set	
+				{
+					specification = value;
 				}
 			}
 		}

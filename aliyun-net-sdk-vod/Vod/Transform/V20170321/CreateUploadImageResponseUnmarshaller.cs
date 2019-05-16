@@ -36,6 +36,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			createUploadImageResponse.ImageURL = context.StringValue("CreateUploadImage.ImageURL");
 			createUploadImageResponse.UploadAddress = context.StringValue("CreateUploadImage.UploadAddress");
 			createUploadImageResponse.UploadAuth = context.StringValue("CreateUploadImage.UploadAuth");
+			createUploadImageResponse.FileURL = context.StringValue("CreateUploadImage.FileURL");
         
 			return createUploadImageResponse;
         }

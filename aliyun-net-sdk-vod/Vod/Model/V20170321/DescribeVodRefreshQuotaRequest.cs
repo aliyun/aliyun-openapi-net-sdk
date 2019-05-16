@@ -36,8 +36,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string securityToken;
 
-		private string action;
-
 		private long? ownerId;
 
 		public string SecurityToken
@@ -50,19 +48,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

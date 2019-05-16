@@ -50,15 +50,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string coverURL;
 
-		private string downloadSwitch;
-
 		private long? cateId;
 
-		private string action;
-
 		private string customMediaInfo;
-
-		private string status;
 
 		public long? ResourceOwnerId
 		{
@@ -164,19 +158,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string DownloadSwitch
-		{
-			get
-			{
-				return downloadSwitch;
-			}
-			set	
-			{
-				downloadSwitch = value;
-				DictionaryUtil.Add(QueryParameters, "DownloadSwitch", value);
-			}
-		}
-
 		public long? CateId
 		{
 			get
@@ -190,19 +171,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string CustomMediaInfo
 		{
 			get
@@ -213,19 +181,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				customMediaInfo = value;
 				DictionaryUtil.Add(QueryParameters, "CustomMediaInfo", value);
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 

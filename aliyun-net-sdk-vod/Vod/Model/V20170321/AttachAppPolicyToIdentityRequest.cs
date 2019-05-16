@@ -44,8 +44,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string appId;
 
-		private string action;
-
 		private string policyNames;
 
 		private long? ownerId;
@@ -112,19 +110,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

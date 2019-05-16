@@ -42,15 +42,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
-		private string action;
-
 		private long? ownerId;
 
 		private string registerMetadatas;
 
 		private string workFlowId;
-
-		private string accessKeyId;
 
 		public string UserData
 		{
@@ -104,19 +100,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -153,19 +136,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				workFlowId = value;
 				DictionaryUtil.Add(QueryParameters, "WorkFlowId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

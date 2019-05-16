@@ -34,22 +34,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
-		private string action;
-
 		private string securityGroupName;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
 
 		public string SecurityGroupName
 		{

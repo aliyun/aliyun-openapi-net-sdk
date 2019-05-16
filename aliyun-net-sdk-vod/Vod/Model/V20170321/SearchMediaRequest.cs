@@ -52,11 +52,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private int? pageSize;
 
-		private string action;
-
 		private string sortBy;
-
-		private string resultTypes;
 
 		private string fields;
 
@@ -177,19 +173,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string SortBy
 		{
 			get
@@ -200,19 +183,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				sortBy = value;
 				DictionaryUtil.Add(QueryParameters, "SortBy", value);
-			}
-		}
-
-		public string ResultTypes
-		{
-			get
-			{
-				return resultTypes;
-			}
-			set	
-			{
-				resultTypes = value;
-				DictionaryUtil.Add(QueryParameters, "ResultTypes", value);
 			}
 		}
 

@@ -44,15 +44,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string pageSize;
 
-		private string action;
-
 		private string videoId;
 
 		private long? ownerId;
 
 		private string authTimeout;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -119,19 +115,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string VideoId
 		{
 			get
@@ -168,19 +151,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				authTimeout = value;
 				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

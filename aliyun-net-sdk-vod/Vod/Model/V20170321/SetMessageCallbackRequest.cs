@@ -50,17 +50,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string ownerId;
 
-		private string accessKeyId;
-
 		private string callbackType;
-
-		private string callbackSwitch;
 
 		private string mnsEndpoint;
 
 		private string appId;
-
-		private string action;
 
 		private string authSwitch;
 
@@ -170,19 +164,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string CallbackType
 		{
 			get
@@ -193,19 +174,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				callbackType = value;
 				DictionaryUtil.Add(QueryParameters, "CallbackType", value);
-			}
-		}
-
-		public string CallbackSwitch
-		{
-			get
-			{
-				return callbackSwitch;
-			}
-			set	
-			{
-				callbackSwitch = value;
-				DictionaryUtil.Add(QueryParameters, "CallbackSwitch", value);
 			}
 		}
 
@@ -232,19 +200,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

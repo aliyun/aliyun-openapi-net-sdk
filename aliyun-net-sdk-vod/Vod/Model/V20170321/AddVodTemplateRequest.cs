@@ -44,8 +44,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string name;
 
-		private string action;
-
 		private long? ownerId;
 
 		private string subTemplateType;
@@ -112,19 +110,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

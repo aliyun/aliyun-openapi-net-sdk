@@ -40,8 +40,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string templateConfig;
 
-		private string action;
-
 		private string templateName;
 
 		private long? ownerId;
@@ -84,19 +82,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				templateConfig = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateConfig", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

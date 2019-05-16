@@ -44,8 +44,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? pageSize;
 
-		private string action;
-
 		private string sortBy;
 
 		private string ownerId;
@@ -114,19 +112,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

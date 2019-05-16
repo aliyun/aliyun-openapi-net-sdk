@@ -50,8 +50,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string title;
 
-		private string accessKeyId;
-
 		private string businessType;
 
 		private string tags;
@@ -67,8 +65,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private long? cateId;
 
 		private string appId;
-
-		private string action;
 
 		public long? ResourceOwnerId
 		{
@@ -174,19 +170,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string BusinessType
 		{
 			get
@@ -288,19 +271,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -96,6 +96,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string onlineStatus;
 
+			private string icon;
+
+			private string regionId;
+
 			private List<GetAttachedMediaInfo_Category> categories;
 
 			public string MediaId
@@ -251,6 +255,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					onlineStatus = value;
+				}
+			}
+
+			public string Icon
+			{
+				get
+				{
+					return icon;
+				}
+				set	
+				{
+					icon = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 

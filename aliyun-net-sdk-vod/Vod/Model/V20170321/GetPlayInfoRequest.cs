@@ -58,8 +58,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string playConfig;
 
-		private string action;
-
 		private string outputType;
 
 		private string definition;
@@ -221,19 +219,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				playConfig = value;
 				DictionaryUtil.Add(QueryParameters, "PlayConfig", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

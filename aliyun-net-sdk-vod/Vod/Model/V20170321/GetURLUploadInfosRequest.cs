@@ -42,8 +42,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string uploadURLs;
 
-		private string action;
-
 		private long? ownerId;
 
 		public long? ResourceOwnerId
@@ -95,19 +93,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				uploadURLs = value;
 				DictionaryUtil.Add(QueryParameters, "UploadURLs", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

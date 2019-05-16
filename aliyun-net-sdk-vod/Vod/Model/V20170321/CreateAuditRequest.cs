@@ -36,8 +36,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string auditContent;
 
-		private string action;
-
 		public string AuditContent
 		{
 			get
@@ -48,19 +46,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				auditContent = value;
 				DictionaryUtil.Add(QueryParameters, "AuditContent", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -40,8 +40,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? cateId;
 
-		private string action;
-
 		private string ownerId;
 
 		public string ResourceOwnerId
@@ -80,19 +78,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				cateId = value;
 				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
