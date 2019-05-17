@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 
 			querySnapshotJobListResponse.HttpResponse = context.HttpResponse;
 			querySnapshotJobListResponse.RequestId = context.StringValue("QuerySnapshotJobList.RequestId");
+			querySnapshotJobListResponse.NextPageToken = context.StringValue("QuerySnapshotJobList.NextPageToken");
 
 			List<string> querySnapshotJobListResponse_nonExistSnapshotJobIds = new List<string>();
 			for (int i = 0; i < context.Length("QuerySnapshotJobList.NonExistSnapshotJobIds.Length"); i++) {

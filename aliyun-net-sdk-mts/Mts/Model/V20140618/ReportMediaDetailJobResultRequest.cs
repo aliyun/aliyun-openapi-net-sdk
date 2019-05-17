@@ -42,15 +42,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string tag;
 
 		private long? ownerId;
 
 		private string results;
-
-		private string accessKeyId;
 
 		public string JobId
 		{
@@ -104,19 +100,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string Tag
 		{
 			get
@@ -153,19 +136,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				results = value;
 				DictionaryUtil.Add(QueryParameters, "Results", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

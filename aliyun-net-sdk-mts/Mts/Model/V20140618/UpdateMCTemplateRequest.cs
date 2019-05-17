@@ -54,15 +54,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string templateId;
 
-		private string accessKeyId;
-
 		private string porn;
 
 		private string terrorism;
 
 		private string name;
-
-		private string action;
 
 		private string logo;
 
@@ -200,19 +196,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Porn
 		{
 			get
@@ -249,19 +232,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

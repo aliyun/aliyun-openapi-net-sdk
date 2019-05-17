@@ -42,15 +42,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private long? pageSize;
 
-		private string action;
-
 		private string stateList;
 
 		private long? ownerId;
 
 		private long? pageNumber;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -104,19 +100,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string StateList
 		{
 			get
@@ -153,19 +136,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

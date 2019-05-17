@@ -44,8 +44,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string description;
 
 		private long? ownerId;
@@ -53,8 +51,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		private string mediaId;
 
 		private string title;
-
-		private string accessKeyId;
 
 		private string tags;
 
@@ -123,19 +119,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -185,19 +168,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				title = value;
 				DictionaryUtil.Add(QueryParameters, "Title", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

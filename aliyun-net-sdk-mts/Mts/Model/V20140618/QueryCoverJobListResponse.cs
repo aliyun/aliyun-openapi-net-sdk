@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string requestId;
 
+		private string nextPageToken;
+
 		private List<QueryCoverJobList_CoverJob> coverJobList;
 
 		private List<string> nonExistIds;
@@ -40,6 +42,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string NextPageToken
+		{
+			get
+			{
+				return nextPageToken;
+			}
+			set	
+			{
+				nextPageToken = value;
 			}
 		}
 

@@ -52,11 +52,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string mediaId;
 
-		private string accessKeyId;
-
 		private string rand;
-
-		private string action;
 
 		private long? authTimeout;
 
@@ -179,19 +175,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Rand
 		{
 			get
@@ -202,19 +185,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				rand = value;
 				DictionaryUtil.Add(QueryParameters, "Rand", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

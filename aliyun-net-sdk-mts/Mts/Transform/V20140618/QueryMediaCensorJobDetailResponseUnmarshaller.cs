@@ -34,7 +34,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			queryMediaCensorJobDetailResponse.RequestId = context.StringValue("QueryMediaCensorJobDetail.RequestId");
 
 			QueryMediaCensorJobDetailResponse.QueryMediaCensorJobDetail_MediaCensorJobDetail mediaCensorJobDetail = new QueryMediaCensorJobDetailResponse.QueryMediaCensorJobDetail_MediaCensorJobDetail();
-			mediaCensorJobDetail.Id = context.StringValue("QueryMediaCensorJobDetail.MediaCensorJobDetail.Id");
+			mediaCensorJobDetail.JobId = context.StringValue("QueryMediaCensorJobDetail.MediaCensorJobDetail.JobId");
 			mediaCensorJobDetail.UserData = context.StringValue("QueryMediaCensorJobDetail.MediaCensorJobDetail.UserData");
 			mediaCensorJobDetail.PipelineId = context.StringValue("QueryMediaCensorJobDetail.MediaCensorJobDetail.PipelineId");
 			mediaCensorJobDetail.State = context.StringValue("QueryMediaCensorJobDetail.MediaCensorJobDetail.State");
@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			mediaCensorJobDetail.Suggestion = context.StringValue("QueryMediaCensorJobDetail.MediaCensorJobDetail.Suggestion");
 			mediaCensorJobDetail.Message = context.StringValue("QueryMediaCensorJobDetail.MediaCensorJobDetail.Message");
 			mediaCensorJobDetail.CreationTime = context.StringValue("QueryMediaCensorJobDetail.MediaCensorJobDetail.CreationTime");
+			mediaCensorJobDetail.FinishTime = context.StringValue("QueryMediaCensorJobDetail.MediaCensorJobDetail.FinishTime");
 
 			QueryMediaCensorJobDetailResponse.QueryMediaCensorJobDetail_MediaCensorJobDetail.QueryMediaCensorJobDetail_TitleCensorResult titleCensorResult = new QueryMediaCensorJobDetailResponse.QueryMediaCensorJobDetail_MediaCensorJobDetail.QueryMediaCensorJobDetail_TitleCensorResult();
 			titleCensorResult.Rate = context.StringValue("QueryMediaCensorJobDetail.MediaCensorJobDetail.TitleCensorResult.Rate");

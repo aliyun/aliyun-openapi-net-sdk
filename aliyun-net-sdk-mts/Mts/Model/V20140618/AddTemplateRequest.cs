@@ -44,8 +44,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string name;
 
-		private string action;
-
 		private string transConfig;
 
 		private string muxConfig;
@@ -55,8 +53,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		private string audio;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public string Container
 		{
@@ -123,19 +119,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string TransConfig
 		{
 			get
@@ -198,19 +181,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -50,15 +50,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private bool? inputUnbind;
 
-		private string accessKeyId;
-
 		private string tags;
 
 		private string coverURL;
 
 		private long? cateId;
-
-		private string action;
 
 		private string fileURL;
 
@@ -170,19 +166,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Tags
 		{
 			get
@@ -219,19 +202,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				cateId = value;
 				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

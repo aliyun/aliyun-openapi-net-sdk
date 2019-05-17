@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 
 			queryCoverJobListResponse.HttpResponse = context.HttpResponse;
 			queryCoverJobListResponse.RequestId = context.StringValue("QueryCoverJobList.RequestId");
+			queryCoverJobListResponse.NextPageToken = context.StringValue("QueryCoverJobList.NextPageToken");
 
 			List<string> queryCoverJobListResponse_nonExistIds = new List<string>();
 			for (int i = 0; i < context.Length("QueryCoverJobList.NonExistIds.Length"); i++) {

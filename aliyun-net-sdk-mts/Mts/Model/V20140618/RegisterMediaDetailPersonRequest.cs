@@ -42,15 +42,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string personLib;
 
 		private long? ownerId;
 
 		private string category;
-
-		private string accessKeyId;
 
 		private string personName;
 
@@ -106,19 +102,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string PersonLib
 		{
 			get
@@ -155,19 +138,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				category = value;
 				DictionaryUtil.Add(QueryParameters, "Category", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

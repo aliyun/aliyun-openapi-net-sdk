@@ -48,15 +48,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string pipelineId;
 
 		private string outputBucket;
 
 		private string userData;
-
-		private string action;
 
 		private string complexConfigs;
 
@@ -151,19 +147,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string PipelineId
 		{
 			get
@@ -200,19 +183,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				userData = value;
 				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

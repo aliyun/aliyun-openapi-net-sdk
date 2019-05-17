@@ -38,15 +38,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string resourceOwnerAccount;
 
+		private string nextPageToken;
+
 		private string snapshotJobIds;
+
+		private string startOfJobCreatedTimeRange;
 
 		private string ownerAccount;
 
-		private string action;
+		private long? maximumPageSize;
 
 		private long? ownerId;
 
-		private string accessKeyId;
+		private string pipelineId;
+
+		private string state;
+
+		private string endOfJobCreatedTimeRange;
 
 		public long? ResourceOwnerId
 		{
@@ -74,6 +82,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string NextPageToken
+		{
+			get
+			{
+				return nextPageToken;
+			}
+			set	
+			{
+				nextPageToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextPageToken", value);
+			}
+		}
+
 		public string SnapshotJobIds
 		{
 			get
@@ -84,6 +105,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				snapshotJobIds = value;
 				DictionaryUtil.Add(QueryParameters, "SnapshotJobIds", value);
+			}
+		}
+
+		public string StartOfJobCreatedTimeRange
+		{
+			get
+			{
+				return startOfJobCreatedTimeRange;
+			}
+			set	
+			{
+				startOfJobCreatedTimeRange = value;
+				DictionaryUtil.Add(QueryParameters, "StartOfJobCreatedTimeRange", value);
 			}
 		}
 
@@ -100,16 +134,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Action
+		public long? MaximumPageSize
 		{
 			get
 			{
-				return action;
+				return maximumPageSize;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				maximumPageSize = value;
+				DictionaryUtil.Add(QueryParameters, "MaximumPageSize", value.ToString());
 			}
 		}
 
@@ -126,16 +160,42 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string AccessKeyId
+		public string PipelineId
 		{
 			get
 			{
-				return accessKeyId;
+				return pipelineId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				pipelineId = value;
+				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string State
+		{
+			get
+			{
+				return state;
+			}
+			set	
+			{
+				state = value;
+				DictionaryUtil.Add(QueryParameters, "State", value);
+			}
+		}
+
+		public string EndOfJobCreatedTimeRange
+		{
+			get
+			{
+				return endOfJobCreatedTimeRange;
+			}
+			set	
+			{
+				endOfJobCreatedTimeRange = value;
+				DictionaryUtil.Add(QueryParameters, "EndOfJobCreatedTimeRange", value);
 			}
 		}
 

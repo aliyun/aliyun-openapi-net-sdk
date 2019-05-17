@@ -56,7 +56,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		public class QueryMediaCensorJobDetail_MediaCensorJobDetail
 		{
 
-			private string id;
+			private string jobId;
 
 			private string userData;
 
@@ -72,6 +72,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string creationTime;
 
+			private string finishTime;
+
 			private List<QueryMediaCensorJobDetail_CoverImageCensorResult> coverImageCensorResults;
 
 			private QueryMediaCensorJobDetail_TitleCensorResult titleCensorResult;
@@ -86,15 +88,15 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private QueryMediaCensorJobDetail_VensorCensorResult vensorCensorResult;
 
-			public string Id
+			public string JobId
 			{
 				get
 				{
-					return id;
+					return jobId;
 				}
 				set	
 				{
-					id = value;
+					jobId = value;
 				}
 			}
 
@@ -179,6 +181,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string FinishTime
+			{
+				get
+				{
+					return finishTime;
+				}
+				set	
+				{
+					finishTime = value;
 				}
 			}
 

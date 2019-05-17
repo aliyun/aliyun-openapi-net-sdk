@@ -48,13 +48,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private long? pageNumber;
 
-		private string accessKeyId;
-
 		private string cateId;
 
 		private long? pageSize;
-
-		private string action;
 
 		private string from;
 
@@ -157,19 +153,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string CateId
 		{
 			get
@@ -193,19 +176,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
