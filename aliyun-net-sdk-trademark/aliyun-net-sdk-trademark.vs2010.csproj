@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{51a69083-b239-44c3-8cd0-24db85b562f0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-trademark</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Trademark\Transform\V20180724\UpdateTmMonitorRuleResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryMaterialListResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryTradeIntentionUserListResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\SaveTaskResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryTrademarkMonitorRulesResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryMaterialResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\FilterUnavailableCodesResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryQrCodeUploadStatusResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QuerySupplementDetailResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\CombineLoaResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\StartNotaryResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\CreateTrademarkOrderResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\InsertMaterialResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\DeleteTmMonitorRuleResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\FillLogisticsResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryTrademarkPriceResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\ListNotaryOrdersResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryMonitorKeywordsResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\GenerateQrCodeResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\SubmitSupplementResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryTaskListResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryTradeMarkApplicationLogsResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryOssResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryTradeMarkApplicationDetailResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\DeleteMaterialResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\InsertRenewInfoResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\UpdateSendMaterialNumResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryCredentialsInfoResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\GetNotaryOrderResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\CheckLoaFillResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\StoreMaterialTemporarilyResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryTradeProduceListResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\CancelTradeOrderResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\GenerateUploadFilePolicyResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\UploadNotaryDataResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\InsertTmMonitorRuleResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\ConvertImageToGrayResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\InsertTradeIntentionUserResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryTrademarkMonitorResultsResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\UpdateMaterialResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryTradeMarkApplicationsResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\ListNotaryInfosResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\BindMaterialResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryTradeProduceDetailResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\DenySupplementResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\RefundProduceResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\QueryCommunicationLogsResponseUnmarshaller.cs" />
+	<Compile Include="Trademark\Transform\V20180724\ApplyNotaryPostResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
