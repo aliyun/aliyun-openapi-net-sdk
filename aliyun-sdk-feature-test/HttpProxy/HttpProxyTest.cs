@@ -1,4 +1,7 @@
+using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Profile;
+using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Ecs.Model.V20140526;
 
 using Xunit;
@@ -8,9 +11,22 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
     [Trait("Category", "FeatureTest")]
     public class HttpProxyTest : FeatureTestBase
     {
+        private DefaultAcsClient InitializeClient()
+        {
+            var profile = DefaultProfile.GetProfile(
+                "cn-shanghai",
+                GetBasicAccessKeyId(),
+                GetBasicAccessKeySecret());
+
+            return new DefaultAcsClient(profile);
+
+        }
+
         [Fact]
         public void HttpProxy()
         {
+            var client = InitializeClient();
+
             DescribeAccessPointsRequest request = new DescribeAccessPointsRequest();
             client.SetHttpProxy("http://localhost:8989");
 
@@ -28,6 +44,8 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
         [Fact]
         public void HttpProxyWithCredential()
         {
+            var client = InitializeClient();
+
             DescribeAccessPointsRequest request = new DescribeAccessPointsRequest();
             client.SetHttpProxy("http://username:password@localhost:8989");
             var response = client.GetAcsResponse(request);
