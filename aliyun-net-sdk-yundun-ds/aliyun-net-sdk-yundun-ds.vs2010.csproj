@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2cb62184-3970-4dbb-9cbc-473da2b8927f}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-yundun-ds</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Yundun_ds\Model\V20190103\ModifyRuleResponse.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\ModifyEventTypeStatusRequest.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\DescribeUserStatusRequest.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\ModifyRuleStatusResponse.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\DescribeUserStatusResponse.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\ModifyEventTypeStatusResponse.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\ModifyDefaultLevelRequest.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\ModifyRuleRequest.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\ValidateConnectorRequest.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\ModifyRuleStatusRequest.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\ModifyEventStatusResponse.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\ModifyDefaultLevelResponse.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\ModifyEventStatusRequest.cs" />
+	<Compile Include="Yundun_ds\Model\V20190103\ValidateConnectorResponse.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeDataHubTopicsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeTotalCountResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeEventTotalCountResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\ModifyRuleStatusResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeOssObjectDetailResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeDataLimitSetResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeAuthAccountsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeTablesResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\CreateRuleResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeDepartsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeAccountsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeEventDetailResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeEventsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeDepartCountsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\CreateDataLimitResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeDepartTotalCountResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DeleteRuleResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\ModifyRuleResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribePackagesResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\CreateUserAuthResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\ModifyEventTypeStatusResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeDataTotalCountResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeDataHubConnectorsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\CreateConfigResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeAccountDetailResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeDataHubSubscriptionsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeUserStatusResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeDataCountsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeRuleTotalCountResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeConditionsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeDataAssetsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\ModifyEventStatusResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribePrivilegesResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeDataHubProjectsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\ValidateConnectorResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeEventTypesResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeEventCountsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DeleteDataLimitResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeOssObjectsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeFlowTotalCountResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeRulesResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeTransferEventCountsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\ModifyDefaultLevelResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeColumnsResponseUnmarshaller.cs" />
+	<Compile Include="Yundun_ds\Transform\V20190103\DescribeConfigsResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
