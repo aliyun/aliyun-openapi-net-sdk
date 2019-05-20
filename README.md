@@ -26,21 +26,19 @@ The Alibaba Cloud SDK for .NET allows you to access Alibaba Cloud services such 
 
 ## Requirements
 - The Alibaba Cloud SDK for .NET requires：
-    - **`.NET Framework 4.6.1`** or later
+    - **`.NET Framework 4.5`** or later
     - **`.NET Standard 2.0`** or later
 
 
 ## Installation
-You must install the SDK core Nuget Package for any SDK you use. For example, you should install both [ECS Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-ecs/) and [SDK Core Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-core/) when you are using ECS Product.
+You should install [ECS Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-ecs/) when you are using ECS Product. If you want to install a specific version, please add `--version` or it will install the latest version of this package.  
 
 Use .NET CLI ( Recommand )
 
-    dotnet add package aliyun-net-sdk-core
     dotnet add package aliyun-net-sdk-ecs
 
 Use Package Manager
 
-    Install-Package aliyun-net-sdk-core
     Install-Package aliyun-net-sdk-ecs
 
 

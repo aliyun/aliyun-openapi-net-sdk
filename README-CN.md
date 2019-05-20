@@ -26,7 +26,7 @@
 
 ## 环境要求
 Alibaba Cloud SDK for .NET 适用于:
-- **`.NET Framework 4.6.1`** 及其以上版本
+- **`.NET Framework 4.5`** 及其以上版本
 - **`.NET Standard 2.0`** 及其以上版本。
 
 
@@ -35,7 +35,8 @@ Alibaba Cloud SDK for .NET 适用于:
 
 > **注意：** 部分阿里云产品的 SDK 未收录到这个列表中，例如对象存储（OSS），表格存储（Table Store），请前往这些产品的详情页获取相应的 SDK。
 
-要成功地调用一个产品的 SDK，您至少需要首先安装 `SDK 核心库`。例如，对云服务器 SDK 的调用，您需要获取和安装 2 个 SDK，分别是 `SDK 核心库` 和 `云服务器` 的 Nuget 包。
+使用ECS产品时，应安装 [ECS Nuget Package](https://www.nuget.org/packages/aliyun-net-sdk-ecs/)。
+如果要安装特定版本，请添加`--version`，否则它将安装此软件包的最新版本。
 
 您可以通过 NuGet 程序包管理器来安装：
 
@@ -43,7 +44,6 @@ Alibaba Cloud SDK for .NET 适用于:
 
 或者通过 .NET CLI 工具来安装（以安装 ECS为例）
 
-    dotnet add package aliyun-net-sdk-core
     dotnet add package aliyun-net-sdk-ecs
 
 

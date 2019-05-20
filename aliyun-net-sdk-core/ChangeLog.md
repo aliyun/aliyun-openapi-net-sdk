@@ -1,3 +1,7 @@
+### 2019-05-20 Version 1.3.4
+* Fix regex unescape error
+* Fix assembly version miss error
+
 ### 2019-04-18 Version 1.3.2
 * Add support framework from net45 to netstandard2.0 in one nuget package
 
