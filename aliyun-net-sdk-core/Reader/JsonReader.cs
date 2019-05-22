@@ -380,7 +380,8 @@ namespace Aliyun.Acs.Core.Reader
                 if (c == '\\')
                 {
                     NextChar();
-                    if (escapes.TryGetValue(c, out char value))
+                    char value;
+                    if (escapes.TryGetValue(c, out value))
                     {
                         AddChar(value);
                     }

@@ -1,3 +1,6 @@
+### 2019-05-22 Version 1.3.5
+* Fix net45 not support error
+
 ### 2019-05-20 Version 1.3.4
 * Fix regex unescape error
 * Fix assembly version miss error
