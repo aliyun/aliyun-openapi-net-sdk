@@ -45,11 +45,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
+		private string endTime;
+
 		private long? ownerId;
 
 		private string operatorType;
 
 		private string systemDiskCategory;
+
+		private string rebootTime;
 
 		private string instanceId;
 
@@ -122,6 +126,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -158,6 +175,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				systemDiskCategory = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDisk.Category", value);
+			}
+		}
+
+		public string RebootTime
+		{
+			get
+			{
+				return rebootTime;
+			}
+			set	
+			{
+				rebootTime = value;
+				DictionaryUtil.Add(QueryParameters, "RebootTime", value);
 			}
 		}
 

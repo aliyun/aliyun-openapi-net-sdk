@@ -22,14 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateInstanceResponse : AcsResponse
+	public class ReportInstancesStatusResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string instanceId;
-
-		private float? tradePrice;
 
 		public string RequestId
 		{
@@ -40,30 +36,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
-
-		public float? TradePrice
-		{
-			get
-			{
-				return tradePrice;
-			}
-			set	
-			{
-				tradePrice = value;
 			}
 		}
 	}

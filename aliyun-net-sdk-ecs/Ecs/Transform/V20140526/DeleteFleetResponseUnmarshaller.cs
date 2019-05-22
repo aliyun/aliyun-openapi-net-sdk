@@ -16,55 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Ecs.Model.V20140526;
 
-namespace Aliyun.Acs.Ecs.Model.V20140526
+namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
-	public class CreateInstanceResponse : AcsResponse
-	{
+    public class DeleteFleetResponseUnmarshaller
+    {
+        public static DeleteFleetResponse Unmarshall(UnmarshallerContext context)
+        {
+			DeleteFleetResponse deleteFleetResponse = new DeleteFleetResponse();
 
-		private string requestId;
-
-		private string instanceId;
-
-		private float? tradePrice;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
-
-		public float? TradePrice
-		{
-			get
-			{
-				return tradePrice;
-			}
-			set	
-			{
-				tradePrice = value;
-			}
-		}
-	}
+			deleteFleetResponse.HttpResponse = context.HttpResponse;
+			deleteFleetResponse.RequestId = context.StringValue("DeleteFleet.RequestId");
+        
+			return deleteFleetResponse;
+        }
+    }
 }

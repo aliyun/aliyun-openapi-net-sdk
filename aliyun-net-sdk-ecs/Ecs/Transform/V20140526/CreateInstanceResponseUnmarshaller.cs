@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			createInstanceResponse.HttpResponse = context.HttpResponse;
 			createInstanceResponse.RequestId = context.StringValue("CreateInstance.RequestId");
 			createInstanceResponse.InstanceId = context.StringValue("CreateInstance.InstanceId");
+			createInstanceResponse.TradePrice = context.FloatValue("CreateInstance.TradePrice");
         
 			return createInstanceResponse;
         }

@@ -22,14 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateInstanceResponse : AcsResponse
+	public class CreateFleetResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string instanceId;
-
-		private float? tradePrice;
+		private string fleetId;
 
 		public string RequestId
 		{
@@ -43,27 +41,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
+		public string FleetId
 		{
 			get
 			{
-				return instanceId;
+				return fleetId;
 			}
 			set	
 			{
-				instanceId = value;
-			}
-		}
-
-		public float? TradePrice
-		{
-			get
-			{
-				return tradePrice;
-			}
-			set	
-			{
-				tradePrice = value;
+				fleetId = value;
 			}
 		}
 	}
