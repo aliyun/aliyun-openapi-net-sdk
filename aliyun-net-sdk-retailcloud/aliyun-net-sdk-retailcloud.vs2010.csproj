@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59c50967-0100-4057-bc49-a2425afb2248}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-retailcloud</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Retailcloud\Model\V20180313\GetRdsBackUpResponse.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\CreateDbResponse.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\DescribeDatabasesResponse.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\DescribeRdsAccountsRequest.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\DeleteResAccountsRequest.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\GetRdsBackUpRequest.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\GrantDbToAccountResponse.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\DescribeRdsAccountsResponse.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\CreateDbRequest.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\ResourceStatusNotifyResponse.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\DescribeDatabasesRequest.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\GrantDbToAccountRequest.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\GetInstTransInfoRequest.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\DeleteResAccountsResponse.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\ResourceStatusNotifyRequest.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\GetInstTransInfoResponse.cs" />
+	<Compile Include="Retailcloud\Transform\V20180313\DescribeRdsAccountsResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Transform\V20180313\GrantDbToAccountResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Transform\V20180313\CreateDbResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Transform\V20180313\GetRdsBackUpResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Transform\V20180313\ResourceStatusNotifyResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Transform\V20180313\DescribeDatabasesResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Transform\V20180313\DeleteResAccountsResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Transform\V20180313\GetInstTransInfoResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
