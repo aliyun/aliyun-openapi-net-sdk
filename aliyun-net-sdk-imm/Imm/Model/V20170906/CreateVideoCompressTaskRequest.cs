@@ -27,27 +27,72 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class DetectImageTagsRequest : RpcAcsRequest<DetectImageTagsResponse>
+    public class CreateVideoCompressTaskRequest : RpcAcsRequest<CreateVideoCompressTaskResponse>
     {
-        public DetectImageTagsRequest()
-            : base("imm", "2017-09-06", "DetectImageTags", "imm", "openAPI")
+        public CreateVideoCompressTaskRequest()
+            : base("imm", "2017-09-06", "CreateVideoCompressTask", "imm", "openAPI")
         {
         }
 
-		private string imageUri;
+		private string videoUri;
+
+		private string notifyTopicName;
+
+		private string targetList;
+
+		private string notifyEndpoint;
 
 		private string project;
 
-		public string ImageUri
+		public string VideoUri
 		{
 			get
 			{
-				return imageUri;
+				return videoUri;
 			}
 			set	
 			{
-				imageUri = value;
-				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+				videoUri = value;
+				DictionaryUtil.Add(QueryParameters, "VideoUri", value);
+			}
+		}
+
+		public string NotifyTopicName
+		{
+			get
+			{
+				return notifyTopicName;
+			}
+			set	
+			{
+				notifyTopicName = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
+			}
+		}
+
+		public string TargetList
+		{
+			get
+			{
+				return targetList;
+			}
+			set	
+			{
+				targetList = value;
+				DictionaryUtil.Add(QueryParameters, "TargetList", value);
+			}
+		}
+
+		public string NotifyEndpoint
+		{
+			get
+			{
+				return notifyEndpoint;
+			}
+			set	
+			{
+				notifyEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
 			}
 		}
 
@@ -69,9 +114,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override DetectImageTagsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateVideoCompressTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DetectImageTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateVideoCompressTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

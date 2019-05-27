@@ -24,21 +24,18 @@ using Aliyun.Acs.imm.Model.V20170906;
 
 namespace Aliyun.Acs.imm.Transform.V20170906
 {
-    public class CreateMergeFaceGroupsJobResponseUnmarshaller
+    public class CreateVideoCompressTaskResponseUnmarshaller
     {
-        public static CreateMergeFaceGroupsJobResponse Unmarshall(UnmarshallerContext context)
+        public static CreateVideoCompressTaskResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateMergeFaceGroupsJobResponse createMergeFaceGroupsJobResponse = new CreateMergeFaceGroupsJobResponse();
+			CreateVideoCompressTaskResponse createVideoCompressTaskResponse = new CreateVideoCompressTaskResponse();
 
-			createMergeFaceGroupsJobResponse.HttpResponse = context.HttpResponse;
-			createMergeFaceGroupsJobResponse.RequestId = context.StringValue("CreateMergeFaceGroupsJob.RequestId");
-			createMergeFaceGroupsJobResponse.JobId = context.StringValue("CreateMergeFaceGroupsJob.JobId");
-			createMergeFaceGroupsJobResponse.SetId = context.StringValue("CreateMergeFaceGroupsJob.SetId");
-			createMergeFaceGroupsJobResponse.JobType = context.StringValue("CreateMergeFaceGroupsJob.JobType");
-			createMergeFaceGroupsJobResponse.GroupIdTo = context.StringValue("CreateMergeFaceGroupsJob.GroupIdTo");
-			createMergeFaceGroupsJobResponse.GroupIdFrom = context.StringValue("CreateMergeFaceGroupsJob.GroupIdFrom");
+			createVideoCompressTaskResponse.HttpResponse = context.HttpResponse;
+			createVideoCompressTaskResponse.RequestId = context.StringValue("CreateVideoCompressTask.RequestId");
+			createVideoCompressTaskResponse.TaskId = context.StringValue("CreateVideoCompressTask.TaskId");
+			createVideoCompressTaskResponse.TaskType = context.StringValue("CreateVideoCompressTask.TaskType");
         
-			return createMergeFaceGroupsJobResponse;
+			return createVideoCompressTaskResponse;
         }
     }
 }

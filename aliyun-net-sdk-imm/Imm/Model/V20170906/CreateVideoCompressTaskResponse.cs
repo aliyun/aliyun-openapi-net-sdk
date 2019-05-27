@@ -19,59 +19,52 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.imm.Transform;
-using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class DetectImageTagsRequest : RpcAcsRequest<DetectImageTagsResponse>
-    {
-        public DetectImageTagsRequest()
-            : base("imm", "2017-09-06", "DetectImageTags", "imm", "openAPI")
-        {
-        }
+	public class CreateVideoCompressTaskResponse : AcsResponse
+	{
 
-		private string imageUri;
+		private string requestId;
 
-		private string project;
+		private string taskId;
 
-		public string ImageUri
+		private string taskType;
+
+		public string RequestId
 		{
 			get
 			{
-				return imageUri;
+				return requestId;
 			}
 			set	
 			{
-				imageUri = value;
-				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+				requestId = value;
 			}
 		}
 
-		public string Project
+		public string TaskId
 		{
 			get
 			{
-				return project;
+				return taskId;
 			}
 			set	
 			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
+				taskId = value;
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string TaskType
 		{
-			return false;
+			get
+			{
+				return taskType;
+			}
+			set	
+			{
+				taskType = value;
+			}
 		}
-
-        public override DetectImageTagsResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return DetectImageTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+	}
 }
