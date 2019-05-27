@@ -75,8 +75,8 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
         {
             HttpRequest instance = new HttpRequest();
             int timeout = 100;
-            instance.timeoutInMilliSeconds = 100;
-            Assert.Equal(timeout, instance.timeoutInMilliSeconds);
+            instance.TimeoutInMilliseconds = 100;
+            Assert.Equal(timeout, instance.TimeoutInMilliseconds);
         }
 
         [Fact]
@@ -85,10 +85,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
             HttpRequest instance = new HttpRequest();
             instance.SetConnectTimeoutInMilliSeconds(1024);
 
-            Assert.Equal(1024, instance.connectTimeout);
+            Assert.Equal(1024, instance.ConnectTimeout);
 
             instance.SetReadTimeoutInMilliSeconds(2048);
-            Assert.Equal(2048, instance.readTimeout);
+            Assert.Equal(2048, instance.ReadTimeout);
         }
 
         [Fact]

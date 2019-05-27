@@ -28,16 +28,40 @@ namespace Aliyun.Acs.Core.Utils
             string channel = "AlibabaCloud",
             string template = defaultTemplate)
         {
-            LoggerPath = loggerPath;
-            Level = level;
-            Channel = channel;
-            LoggerTemplate = template + "{NewLine}";
+            this.loggerPath = loggerPath;
+            this.level = level;
+            this.channel = channel;
+            this.loggerTemplate = template + "{NewLine}";
         }
 
-        public string LoggerPath { get; }
-        public string Level { get; } = "Info";
-        public string Channel { get; } = "AlibabaCloud";
-        public string LoggerTemplate { get; }
+        private string loggerPath;
+
+        public string LoggerPath
+        {
+            get { return loggerPath; }
+            set { loggerPath = value; }
+        }
+
+        private string level = "Info";
+
+        public string Level
+        {
+            get { return level; }
+        }
+
+        private string channel = "AlibabaCloud";
+
+        public string Channel
+        {
+            get { return channel; }
+        }
+
+        private string loggerTemplate;
+
+        public string LoggerTemplate
+        {
+            get { return loggerTemplate; }
+        }
 
     }
 }

@@ -17,6 +17,7 @@
  * under the License.
  */
 
+using System;
 using System.Collections.Generic;
 using System.Net;
 
@@ -33,9 +34,38 @@ namespace Aliyun.Acs.Core.Http
         public FormatType? ContentType { get; set; }
         public byte[] Content { get; set; }
         public string Encoding { get; set; }
-        public int timeoutInMilliSeconds { get; set; } = 100000;
-        public int readTimeout { get; private set; }
-        public int connectTimeout { get; private set; }
+
+        private int timeout = 100000;
+
+        [Obsolete("timeoutInMilliSeconds is deprecated as does not match Properties rule, please use TimeoutInMilliseconds instead.")]
+        public int timeoutInMilliSeconds
+        {
+            get { return TimeoutInMilliseconds; }
+            set { TimeoutInMilliseconds = value; }
+        }
+
+        public int TimeoutInMilliseconds
+        {
+            get { return timeout; }
+            set { timeout = value; }
+        }
+
+        [Obsolete("readTimeout is deprecated as does not match Properties rule, please use ReadTimeout instead.")]
+        public int readTimeout
+        {
+            get { return ReadTimeout; }
+        }
+
+        public int ReadTimeout { get; private set; }
+
+        [Obsolete("connectTimeout is deprecated as does not match Properties rule, please use ConnectTimeout instead.")]
+        public int connectTimeout
+        {
+            get { return ConnectTimeout; }
+        }
+
+        public int ConnectTimeout { get; private set; }
+
         public bool IgnoreCertificate { get; private set; }
 
         public IWebProxy WebProxy { get; set; }
@@ -91,12 +121,12 @@ namespace Aliyun.Acs.Core.Http
 
         public void SetConnectTimeoutInMilliSeconds(int connectTimeout)
         {
-            this.connectTimeout = connectTimeout;
+            this.ConnectTimeout = connectTimeout;
         }
 
         public void SetReadTimeoutInMilliSeconds(int readTimeout)
         {
-            this.readTimeout = readTimeout;
+            this.ReadTimeout = readTimeout;
         }
 
         public void SetHttpsInsecure(bool ignoreCertificate = false)
