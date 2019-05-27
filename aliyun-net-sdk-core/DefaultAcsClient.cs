@@ -39,12 +39,24 @@ namespace Aliyun.Acs.Core
     {
         private int maxRetryNumber = 3;
         private bool autoRetry = true;
-        private IClientProfile clientProfile = null;
+        private IClientProfile clientProfile;
         private AlibabaCloudCredentialsProvider credentialsProvider;
         private readonly UserAgent userAgentConfig = new UserAgent();
 
-        public int readTimeout { get; private set; }
-        public int connectTimeout { get; private set; }
+        [Obsolete("readTimeout is deprecated as does not match Properties rule, please use readTimeout instead.")]
+        public int readTimeout
+        {
+            get { return ReadTimeout; }
+        }
+        public int ReadTimeout { get; private set; }
+
+        [Obsolete("connectTimeout is deprecated as does not match Properties rule, please use connectTimeout instead.")]
+        public int connectTimeout
+        {
+            get { return ConnectTimeout; }
+        }
+        public int ConnectTimeout { get; private set; }
+
         public bool IgnoreCertificate { get; private set; }
 
         private static HttpWebProxy WebProxy = new HttpWebProxy();
@@ -404,20 +416,20 @@ namespace Aliyun.Acs.Core
 
         public void SetConnectTimeoutInMilliSeconds(int connectTimeout)
         {
-            this.connectTimeout = connectTimeout;
+            this.ConnectTimeout = connectTimeout;
         }
 
         public void SetReadTimeoutInMilliSeconds(int readTimeout)
         {
-            this.readTimeout = readTimeout;
+            this.ReadTimeout = readTimeout;
         }
 
         private void ResolveTimeout(HttpRequest request)
         {
-            var finalReadTimeout = request.readTimeout > 0 ? request.readTimeout : readTimeout > 0 ? readTimeout : 0;
+            var finalReadTimeout = request.ReadTimeout > 0 ? request.ReadTimeout : ReadTimeout > 0 ? ReadTimeout : 0;
             request.SetReadTimeoutInMilliSeconds(finalReadTimeout);
 
-            var finalConnectTimeout = request.connectTimeout > 0 ? request.connectTimeout : connectTimeout > 0 ? connectTimeout : 0;
+            var finalConnectTimeout = request.ConnectTimeout > 0 ? request.ConnectTimeout : ConnectTimeout > 0 ? ConnectTimeout : 0;
             request.SetConnectTimeoutInMilliSeconds(finalConnectTimeout);
         }
 
@@ -459,7 +471,7 @@ namespace Aliyun.Acs.Core
         /// <returns></returns>
         public string GetHttpProxy()
         {
-            return WebProxy.HttpProxy??Environment.GetEnvironmentVariable("HTTP_PROXY") ?? Environment.GetEnvironmentVariable("http_proxy") ?? null;
+            return WebProxy.HttpProxy ?? Environment.GetEnvironmentVariable("HTTP_PROXY") ?? Environment.GetEnvironmentVariable("http_proxy");
         }
 
         /// <summary>
@@ -468,7 +480,7 @@ namespace Aliyun.Acs.Core
         /// <returns></returns>
         public string GetHttpsProxy()
         {
-            return WebProxy.HttpsProxy??Environment.GetEnvironmentVariable("HTTPS_PROXY") ?? Environment.GetEnvironmentVariable("https_proxy") ?? null;
+            return WebProxy.HttpsProxy ?? Environment.GetEnvironmentVariable("HTTPS_PROXY") ?? Environment.GetEnvironmentVariable("https_proxy");
         }
 
         /// <summary>
@@ -477,14 +489,14 @@ namespace Aliyun.Acs.Core
         /// <returns></returns>
         public string GetNoProxy()
         {
-            return WebProxy.NoProxy??Environment.GetEnvironmentVariable("NO_PROXY") ?? Environment.GetEnvironmentVariable("no_proxy") ?? null;
+            return WebProxy.NoProxy ?? Environment.GetEnvironmentVariable("NO_PROXY") ?? Environment.GetEnvironmentVariable("no_proxy");
         }
 
         private void ResolveProxy<T>(HttpRequest httpRequest, AcsRequest<T> request) where T : AcsResponse
         {
-            string authorization = "";
-            string proxy = "";
-            string[] noProxy = GetNoProxy()?.Split(',');
+            string authorization;
+            string proxy;
+            string[] noProxy = GetNoProxy() == null ? null : GetNoProxy().Split(',');
 
             if (request.Protocol == ProtocolType.HTTP)
             {

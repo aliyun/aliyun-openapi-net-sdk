@@ -145,8 +145,8 @@ namespace Aliyun.Acs.Core.Http
             httpWebRequest.Method = request.Method.ToString();
             httpWebRequest.KeepAlive = true;
 
-            httpWebRequest.Timeout = request.connectTimeout > 0 ? request.connectTimeout : DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds;
-            httpWebRequest.ReadWriteTimeout = request.readTimeout > 0 ? request.readTimeout : DEFAULT_READ_TIMEOUT_IN_MilliSeconds;
+            httpWebRequest.Timeout = request.ConnectTimeout > 0 ? request.ConnectTimeout : DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds;
+            httpWebRequest.ReadWriteTimeout = request.ReadTimeout > 0 ? request.ReadTimeout : DEFAULT_READ_TIMEOUT_IN_MilliSeconds;
 
             if (request.IgnoreCertificate)
             {
