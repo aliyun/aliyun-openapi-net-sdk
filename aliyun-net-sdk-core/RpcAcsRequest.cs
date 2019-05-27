@@ -40,29 +40,30 @@ namespace Aliyun.Acs.Core
 
         public RpcAcsRequest(string product, string version) : base(product)
         {
-            Version = version;
+
+            this.version = version;
             Initialize();
         }
 
         public RpcAcsRequest(string product, string version, string action) : base(product)
         {
-            Version = version;
-            ActionName = action;
+            this.version = version;
+            this.actionName = action;
             Initialize();
         }
 
         public RpcAcsRequest(string product, string version, string action, string locationProduct) : base(product)
         {
-            Version = version;
-            ActionName = action;
+            this.version = version;
+            this.actionName = action;
             LocationProduct = locationProduct;
             Initialize();
         }
 
         public RpcAcsRequest(string product, string version, string action, string locationProduct, string locationEndpointType) : base(product)
         {
-            Version = version;
-            ActionName = action;
+            this.version = version;
+            this.actionName = action;
             LocationProduct = locationProduct;
             LocationEndpointType = locationEndpointType;
             Initialize();
@@ -125,14 +126,14 @@ namespace Aliyun.Acs.Core
                 var accessSecret = credentials.GetAccessKeySecret();
 
                 var sessionCredentials = credentials as BasicSessionCredentials;
-                var sessionToken = sessionCredentials?.GetSessionToken();
+                var sessionToken = sessionCredentials == null ? null : sessionCredentials.GetSessionToken();
                 if (sessionToken != null)
                 {
                     QueryParameters.Add("SecurityToken", sessionToken);
                 }
 
                 var credential = credentials as BearerTokenCredential;
-                var bearerToken = credential?.GetBearerToken();
+                var bearerToken = credential == null ? null : credential.GetBearerToken();
                 if (bearerToken != null)
                 {
                     QueryParameters.Add("BearerToken", bearerToken);

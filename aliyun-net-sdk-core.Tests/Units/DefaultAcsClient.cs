@@ -621,7 +621,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             DefaultAcsClient client = new DefaultAcsClient(profile);
             client.SetConnectTimeoutInMilliSeconds(3000);
 
-            Assert.Equal(3000, client.connectTimeout);
+            Assert.Equal(3000, client.ConnectTimeout);
         }
 
         [Fact]
@@ -631,7 +631,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             DefaultAcsClient client = new DefaultAcsClient(profile);
             client.SetReadTimeoutInMilliSeconds(3000);
 
-            Assert.Equal(3000, client.readTimeout);
+            Assert.Equal(3000, client.ReadTimeout);
         }
 
         [Fact]
@@ -650,26 +650,26 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             var resolveTimeout = Activator.CreateInstance(type, profile);
 
-            ///Case1: Client connect timeout is 1024 ms, Request connect timeout is 2048 ms
-            ///Expect: the final connect timeout should be 2048 ms
+            //Case1: Client connect timeout is 1024 ms, Request connect timeout is 2048 ms
+            //Expect: the final connect timeout should be 2048 ms
             setConnectTimeoutMethodInfo.Invoke(resolveTimeout, connectTimeoutArgs);
             httpRequest.SetConnectTimeoutInMilliSeconds(2048);
             resolveTimeoutMethodInfo.Invoke(resolveTimeout, resolveTimeoutArgs);
-            Assert.Equal(2048, httpRequest.connectTimeout);
+            Assert.Equal(2048, httpRequest.ConnectTimeout);
 
-            ///Case2: Client connect timeout is 1024 ms, Request connect timeout is 0 ms
-            ///Expect: the final connect timeout should be 1024 ms
+            //Case2: Client connect timeout is 1024 ms, Request connect timeout is 0 ms
+            //Expect: the final connect timeout should be 1024 ms
             httpRequest.SetConnectTimeoutInMilliSeconds(0);
             resolveTimeoutMethodInfo.Invoke(resolveTimeout, resolveTimeoutArgs);
-            Assert.Equal(1024, httpRequest.connectTimeout);
+            Assert.Equal(1024, httpRequest.ConnectTimeout);
 
-            ///Case3: Client connect timeout is 0 ms, Request connect timeout is 2048 ms
-            ///Expect: the final connect timeout should be 2048 ms
+            //Case3: Client connect timeout is 0 ms, Request connect timeout is 2048 ms
+            //Expect: the final connect timeout should be 2048 ms
             connectTimeout = 0;
             setConnectTimeoutMethodInfo.Invoke(resolveTimeout, connectTimeoutArgs);
             httpRequest.SetConnectTimeoutInMilliSeconds(2048);
             resolveTimeoutMethodInfo.Invoke(resolveTimeout, resolveTimeoutArgs);
-            Assert.Equal(2048, httpRequest.connectTimeout);
+            Assert.Equal(2048, httpRequest.ConnectTimeout);
         }
 
         [Fact]
@@ -689,26 +689,26 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             var resolveTimeout = Activator.CreateInstance(type, profile);
 
-            ///Case1: Client read timeout is 1024 ms, Request read timeout is 2048 ms
-            ///Expect: the final read timeout should be 2048 ms
+            //Case1: Client read timeout is 1024 ms, Request read timeout is 2048 ms
+            //Expect: the final read timeout should be 2048 ms
             setReadTimeoutMethodInfo.Invoke(resolveTimeout, readTimeoutArgs);
             httpRequest.SetReadTimeoutInMilliSeconds(2048);
             resolveTimeoutMethodInfo.Invoke(resolveTimeout, resolveTimeoutArgs);
-            Assert.Equal(2048, httpRequest.readTimeout);
+            Assert.Equal(2048, httpRequest.ReadTimeout);
 
-            ///Case2: Client read timeout is 1024 ms, Request read timeout is 0 ms
-            ///Expect: the final read timeout should be 1024 ms
+            //Case2: Client read timeout is 1024 ms, Request read timeout is 0 ms
+            //Expect: the final read timeout should be 1024 ms
             httpRequest.SetReadTimeoutInMilliSeconds(0);
             resolveTimeoutMethodInfo.Invoke(resolveTimeout, resolveTimeoutArgs);
-            Assert.Equal(1024, httpRequest.readTimeout);
+            Assert.Equal(1024, httpRequest.ReadTimeout);
 
-            ///Case3: Client read timeout is 0 ms, Request read timeout is 2048 ms
-            ///Expect: the final read timeout should be 2048 ms
+            //Case3: Client read timeout is 0 ms, Request read timeout is 2048 ms
+            //Expect: the final read timeout should be 2048 ms
             readTimeout = 0;
             setReadTimeoutMethodInfo.Invoke(resolveTimeout, readTimeoutArgs);
             httpRequest.SetReadTimeoutInMilliSeconds(2048);
             resolveTimeoutMethodInfo.Invoke(resolveTimeout, resolveTimeoutArgs);
-            Assert.Equal(2048, httpRequest.readTimeout);
+            Assert.Equal(2048, httpRequest.ReadTimeout);
         }
 
         [Fact]

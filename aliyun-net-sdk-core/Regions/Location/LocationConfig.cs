@@ -35,10 +35,26 @@ namespace Aliyun.Acs.Core.Regions.Location
             return new LocationConfig(regionId, product, endpoint);
         }
 
-        public string RegionId { get; set; } = "cn-hangzhou";
+        private string regionId = "cn-hangzhou";
+        public string RegionId
+        {
+            get { return regionId; }
+            set { regionId = value; }
+        }
 
-        public string Product { get; set; } = "Location";
+        private string product = "Location";
+        public string Product
+        {
+            get { return product; }
+            set { product = value; }
+        }
 
-        public string Endpoint { get; set; } = "location.aliyuncs.com";
+        private string endpoint = "location.aliyuncs.com";
+
+        public string Endpoint
+        {
+            get { return endpoint; }
+            set { endpoint = value; }
+        }
     }
 }
