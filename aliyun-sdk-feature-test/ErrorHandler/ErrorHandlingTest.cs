@@ -21,7 +21,7 @@ using System.Text;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Exceptions;
-using Aliyun.Acs.Ecs.Model.V20140526;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 using Xunit;
 
@@ -33,15 +33,15 @@ namespace Aliyun.Acs.Feature.Test.ErrorHandler
         [Fact]
         public void BadFormatTypeTest()
         {
-            var request = new StartInstanceRequest();
-            request.InstanceId = "ttt";
+            var request = new ActiveFlowLogRequest();
+            request.FlowLogId = "testFlow";
 
             var exceptionMsg = Assert.Throws<ClientException>(() =>
             {
                 var response = client.GetAcsResponse(request);
             });
 
-            Assert.Equal("The specified InstanceId does not exist.", exceptionMsg.ErrorMessage);
+            Assert.Equal("The specfied instance is not existed.", exceptionMsg.ErrorMessage);
             Assert.Equal("InvalidInstanceId.NotFound", exceptionMsg.ErrorCode);
         }
 

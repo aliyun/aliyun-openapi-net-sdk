@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Feature.Test
         public static DefaultAcsClient client;
 
         public IClientProfile profile;
-        public string regionId = "cn-hangzhou";
+        public string regionId = "cn-shanghai";
 
         public FeatureTestBase()
         {

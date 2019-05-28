@@ -19,7 +19,7 @@
 
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Ecs.Model.V20140526;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 using Xunit;
 
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Feature.Test.Timeout
         }
 
         [Fact]
-        public void TestEcsConnectTimeoutWithException()
+        public void TestVPCConnectTimeoutWithException()
         {
             var request = new DescribeAccessPointsRequest();
             request.SetConnectTimeoutInMilliSeconds(1);

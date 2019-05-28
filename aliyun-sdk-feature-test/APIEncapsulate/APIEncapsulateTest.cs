@@ -50,11 +50,10 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
         [Fact]
         public void EcsRequestTest()
         {
-            var request = new DescribeAccessPointsRequest();
+            var request = new DescribeImagesRequest();
             var response = client.GetAcsResponse(request);
 
             Assert.NotNull(response);
-            Assert.True(0 <= response.TotalCount);
         }
 
         [Fact]
