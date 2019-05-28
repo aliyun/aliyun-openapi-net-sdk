@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeTasksRequest : RpcAcsRequest<DescribeTasksResponse>
     {
         public DescribeTasksRequest()
-            : base("Rds", "2014-08-15", "DescribeTasks", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeTasks", "Rds", "openAPI")
         {
         }
 
@@ -48,11 +48,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageNumber;
 
-		private string accessKeyId;
-
 		private int? pageSize;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -151,19 +147,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -174,19 +157,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyInstanceAutoRenewalAttributeRequest : RpcAcsRequest<ModifyInstanceAutoRenewalAttributeResponse>
     {
         public ModifyInstanceAutoRenewalAttributeRequest()
-            : base("Rds", "2014-08-15", "ModifyInstanceAutoRenewalAttribute", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyInstanceAutoRenewalAttribute", "Rds", "openAPI")
         {
         }
 
@@ -42,19 +42,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string clientToken;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string dBInstanceId;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public string Duration
 		{
@@ -108,19 +102,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -147,19 +128,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -183,19 +151,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

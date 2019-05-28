@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class AllocateReadWriteSplittingConnectionRequest : RpcAcsRequest<AllocateReadWriteSplittingConnectionResponse>
     {
         public AllocateReadWriteSplittingConnectionRequest()
-            : base("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection", "Rds", "openAPI")
         {
         }
 
@@ -46,15 +46,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string port;
 
 		private string distributionType;
 
 		private string netType;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -138,19 +134,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Port
 		{
 			get
@@ -187,19 +170,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				netType = value;
 				DictionaryUtil.Add(QueryParameters, "NetType", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

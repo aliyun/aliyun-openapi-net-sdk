@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateDBInstanceReplicaRequest : RpcAcsRequest<CreateDBInstanceReplicaResponse>
     {
         public CreateDBInstanceReplicaRequest()
-            : base("Rds", "2014-08-15", "CreateDBInstanceReplica", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateDBInstanceReplica", "Rds", "openAPI")
         {
         }
 
@@ -50,13 +50,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engineVersion;
 
-		private string accessKeyId;
-
-		private string regionId;
-
 		private string engine;
-
-		private string action;
 
 		private string dBInstanceDescription;
 
@@ -196,32 +190,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string Engine
 		{
 			get
@@ -232,19 +200,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

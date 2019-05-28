@@ -30,35 +30,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeBackupsRequest : RpcAcsRequest<DescribeBackupsResponse>
     {
         public DescribeBackupsRequest()
-            : base("Rds", "2014-08-15", "DescribeBackups", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeBackups", "Rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string backupId;
-
-		private string ownerAccount;
 
 		private string endTime;
 
 		private string startTime;
 
-		private long? ownerId;
-
 		private int? pageNumber;
-
-		private string accessKeyId;
 
 		private string backupStatus;
 
-		private string backupLocation;
-
 		private int? pageSize;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -77,19 +65,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string BackupId
 		{
 			get
@@ -100,19 +75,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupId = value;
 				DictionaryUtil.Add(QueryParameters, "BackupId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -142,19 +104,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public int? PageNumber
 		{
 			get
@@ -165,19 +114,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -194,19 +130,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupLocation
-		{
-			get
-			{
-				return backupLocation;
-			}
-			set	
-			{
-				backupLocation = value;
-				DictionaryUtil.Add(QueryParameters, "BackupLocation", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -217,19 +140,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

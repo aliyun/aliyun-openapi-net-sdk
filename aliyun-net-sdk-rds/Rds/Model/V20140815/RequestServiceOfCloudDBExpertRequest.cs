@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class RequestServiceOfCloudDBExpertRequest : RpcAcsRequest<RequestServiceOfCloudDBExpertResponse>
     {
         public RequestServiceOfCloudDBExpertRequest()
-            : base("Rds", "2014-08-15", "RequestServiceOfCloudDBExpert", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "RequestServiceOfCloudDBExpert", "Rds", "openAPI")
         {
         }
 
@@ -39,8 +39,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string dBInstanceId;
 
 		private string serviceRequestType;
-
-		private string accessKeyId;
 
 		public string ServiceRequestParam
 		{
@@ -78,19 +76,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				serviceRequestType = value;
 				DictionaryUtil.Add(QueryParameters, "ServiceRequestType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

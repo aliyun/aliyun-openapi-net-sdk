@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateDiagnosticReportRequest : RpcAcsRequest<CreateDiagnosticReportResponse>
     {
         public CreateDiagnosticReportRequest()
-            : base("Rds", "2014-08-15", "CreateDiagnosticReport", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateDiagnosticReport", "Rds", "openAPI")
         {
         }
 
@@ -39,8 +39,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string dBInstanceId;
 
 		private string startTime;
-
-		private string accessKeyId;
 
 		public string EndTime
 		{
@@ -78,19 +76,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

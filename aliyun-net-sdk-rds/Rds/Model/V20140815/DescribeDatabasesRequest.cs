@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDatabasesRequest : RpcAcsRequest<DescribeDatabasesResponse>
     {
         public DescribeDatabasesRequest()
-            : base("Rds", "2014-08-15", "DescribeDatabases", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDatabases", "Rds", "openAPI")
         {
         }
 
@@ -46,15 +46,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageSize;
 
-		private string action;
-
 		private string dBInstanceId;
 
 		private long? ownerId;
 
 		private int? pageNumber;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -134,19 +130,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -183,19 +166,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

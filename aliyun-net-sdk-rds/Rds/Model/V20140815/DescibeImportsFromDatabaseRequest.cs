@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescibeImportsFromDatabaseRequest : RpcAcsRequest<DescibeImportsFromDatabaseResponse>
     {
         public DescibeImportsFromDatabaseRequest()
-            : base("Rds", "2014-08-15", "DescibeImportsFromDatabase", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescibeImportsFromDatabase", "Rds", "openAPI")
         {
         }
 
@@ -50,15 +50,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageNumber;
 
-		private string accessKeyId;
-
 		private int? importId;
 
 		private string engine;
 
 		private int? pageSize;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -166,19 +162,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public int? ImportId
 		{
 			get
@@ -215,19 +198,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

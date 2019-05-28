@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeBackupTasksRequest : RpcAcsRequest<DescribeBackupTasksResponse>
     {
         public DescribeBackupTasksRequest()
-            : base("Rds", "2014-08-15", "DescribeBackupTasks", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeBackupTasks", "Rds", "openAPI")
         {
         }
 
@@ -46,8 +46,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string dBInstanceId;
 
 		private string backupMode;
@@ -55,8 +53,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? ownerId;
 
 		private string backupJobStatus;
-
-		private string accessKeyId;
 
 		public string BackupJobId
 		{
@@ -136,19 +132,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -198,19 +181,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupJobStatus = value;
 				DictionaryUtil.Add(QueryParameters, "BackupJobStatus", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

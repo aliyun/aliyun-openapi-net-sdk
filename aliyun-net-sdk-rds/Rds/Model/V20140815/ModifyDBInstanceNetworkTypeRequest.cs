@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBInstanceNetworkTypeRequest : RpcAcsRequest<ModifyDBInstanceNetworkTypeResponse>
     {
         public ModifyDBInstanceNetworkTypeRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceNetworkType", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceNetworkType", "Rds", "openAPI")
         {
         }
 
@@ -42,8 +42,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string vSwitchId;
 
 		private string privateIpAddress;
@@ -53,8 +51,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string classicExpiredDays;
 
 		private string vPCId;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -113,19 +109,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -191,19 +174,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				vPCId = value;
 				DictionaryUtil.Add(QueryParameters, "VPCId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeAccountsRequest : RpcAcsRequest<DescribeAccountsResponse>
     {
         public DescribeAccountsRequest()
-            : base("Rds", "2014-08-15", "DescribeAccounts", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeAccounts", "Rds", "openAPI")
         {
         }
 
@@ -40,19 +40,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
-
 		private int? pageSize;
-
-		private string action;
 
 		private string dBInstanceId;
 
-		private long? ownerId;
-
 		private int? pageNumber;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -93,19 +85,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -116,19 +95,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -145,19 +111,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public int? PageNumber
 		{
 			get
@@ -168,19 +121,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

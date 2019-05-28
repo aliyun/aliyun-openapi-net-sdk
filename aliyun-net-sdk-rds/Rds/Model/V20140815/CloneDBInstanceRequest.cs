@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CloneDBInstanceRequest : RpcAcsRequest<CloneDBInstanceResponse>
     {
         public CloneDBInstanceRequest()
-            : base("Rds", "2014-08-15", "CloneDBInstance", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CloneDBInstance", "Rds", "openAPI")
         {
         }
 
@@ -42,19 +42,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? dBInstanceStorage;
 
-		private string resourceOwnerAccount;
-
-		private string clientToken;
-
 		private string backupId;
 
-		private string ownerAccount;
-
-		private long? ownerId;
-
 		private string usedTime;
-
-		private string accessKeyId;
 
 		private string dBInstanceClass;
 
@@ -64,17 +54,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string privateIpAddress;
 
-		private string resourceGroupId;
-
-		private string regionId;
-
 		private string vPCId;
 
-		private string action;
-
 		private string zoneId;
-
-		private string dBInstanceDescription;
 
 		private string dBInstanceId;
 
@@ -134,32 +116,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string BackupId
 		{
 			get
@@ -173,32 +129,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string UsedTime
 		{
 			get
@@ -209,19 +139,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				usedTime = value;
 				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -277,32 +194,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string VPCId
 		{
 			get
@@ -316,19 +207,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ZoneId
 		{
 			get
@@ -339,19 +217,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string DBInstanceDescription
-		{
-			get
-			{
-				return dBInstanceDescription;
-			}
-			set	
-			{
-				dBInstanceDescription = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
 			}
 		}
 

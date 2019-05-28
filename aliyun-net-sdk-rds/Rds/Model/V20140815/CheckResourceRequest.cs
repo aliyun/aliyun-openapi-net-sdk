@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CheckResourceRequest : RpcAcsRequest<CheckResourceResponse>
     {
         public CheckResourceRequest()
-            : base("Rds", "2014-08-15", "CheckResource", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CheckResource", "Rds", "openAPI")
         {
         }
 
@@ -46,15 +46,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string dBInstanceClass;
 
 		private string engine;
-
-		private string regionId;
-
-		private string action;
 
 		private string zoneId;
 
@@ -140,19 +134,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string DBInstanceClass
 		{
 			get
@@ -176,32 +157,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class MigrateToOtherRegionRequest : RpcAcsRequest<MigrateToOtherRegionResponse>
     {
         public MigrateToOtherRegionRequest()
-            : base("Rds", "2014-08-15", "MigrateToOtherRegion", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "MigrateToOtherRegion", "Rds", "openAPI")
         {
         }
 
@@ -44,15 +44,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string targetVpcId;
 
 		private string targetZoneId;
 
 		private string effectiveTime;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -125,19 +121,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string TargetVpcId
 		{
 			get
@@ -174,19 +157,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				effectiveTime = value;
 				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

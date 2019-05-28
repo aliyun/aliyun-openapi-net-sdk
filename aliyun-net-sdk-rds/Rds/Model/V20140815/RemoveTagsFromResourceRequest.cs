@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class RemoveTagsFromResourceRequest : RpcAcsRequest<RemoveTagsFromResourceResponse>
     {
         public RemoveTagsFromResourceRequest()
-            : base("Rds", "2014-08-15", "RemoveTagsFromResource", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "RemoveTagsFromResource", "Rds", "openAPI")
         {
         }
 
@@ -54,19 +54,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string tag5value;
 
-		private string accessKeyId;
-
 		private string tags;
 
 		private string tag1key;
 
 		private string tag1value;
 
-		private string regionId;
-
 		private string tag2value;
-
-		private string action;
 
 		private string tag4key;
 
@@ -206,19 +200,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Tags
 		{
 			get
@@ -258,19 +239,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string Tag2value
 		{
 			get
@@ -281,19 +249,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				tag2value = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.2.value", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

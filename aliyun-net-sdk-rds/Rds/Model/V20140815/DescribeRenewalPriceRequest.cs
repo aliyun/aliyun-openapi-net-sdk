@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeRenewalPriceRequest : RpcAcsRequest<DescribeRenewalPriceResponse>
     {
         public DescribeRenewalPriceRequest()
-            : base("Rds", "2014-08-15", "DescribeRenewalPrice", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeRenewalPrice", "Rds", "openAPI")
         {
         }
 
@@ -50,15 +50,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string usedTime;
 
-		private string accessKeyId;
-
 		private string dBInstanceClass;
 
-		private string regionId;
-
 		private string promotionCode;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -174,19 +168,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string DBInstanceClass
 		{
 			get
@@ -200,19 +181,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string PromotionCode
 		{
 			get
@@ -223,19 +191,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				promotionCode = value;
 				DictionaryUtil.Add(QueryParameters, "PromotionCode", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyBackupPolicyRequest : RpcAcsRequest<ModifyBackupPolicyResponse>
     {
         public ModifyBackupPolicyRequest()
-            : base("Rds", "2014-08-15", "ModifyBackupPolicy", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyBackupPolicy", "Rds", "openAPI")
         {
         }
 
@@ -54,8 +54,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string duplication;
 
 		private string preferredBackupTime;
@@ -65,8 +63,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string duplicationContent;
 
 		private string highSpaceUsageProtection;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -208,19 +204,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Duplication
 		{
 			get
@@ -283,19 +266,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				highSpaceUsageProtection = value;
 				DictionaryUtil.Add(QueryParameters, "HighSpaceUsageProtection", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

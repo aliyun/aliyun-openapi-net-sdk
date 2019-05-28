@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyReadWriteSplittingConnectionRequest : RpcAcsRequest<ModifyReadWriteSplittingConnectionResponse>
     {
         public ModifyReadWriteSplittingConnectionRequest()
-            : base("Rds", "2014-08-15", "ModifyReadWriteSplittingConnection", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyReadWriteSplittingConnection", "Rds", "openAPI")
         {
         }
 
@@ -46,8 +46,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string weight;
 
 		private string dBInstanceId;
@@ -55,8 +53,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? ownerId;
 
 		private string maxDelayTime;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -136,19 +132,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string Weight
 		{
 			get
@@ -198,19 +181,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				maxDelayTime = value;
 				DictionaryUtil.Add(QueryParameters, "MaxDelayTime", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeTaskInfoRequest : RpcAcsRequest<DescribeTaskInfoResponse>
     {
         public DescribeTaskInfoRequest()
-            : base("Rds", "2014-08-15", "DescribeTaskInfo", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeTaskInfo", "Rds", "openAPI")
         {
         }
 
@@ -42,15 +42,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string dBInstanceId;
 
 		private long? ownerId;
 
 		private long? taskId;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -104,19 +100,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -153,19 +136,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				taskId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

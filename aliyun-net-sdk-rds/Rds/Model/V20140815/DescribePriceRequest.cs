@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribePriceRequest : RpcAcsRequest<DescribePriceResponse>
     {
         public DescribePriceRequest()
-            : base("Rds", "2014-08-15", "DescribePrice", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribePrice", "Rds", "openAPI")
         {
         }
 
@@ -54,17 +54,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string usedTime;
 
-		private string accessKeyId;
-
 		private string dBInstanceClass;
 
 		private int? instanceUsedType;
 
-		private string regionId;
-
 		private string engine;
-
-		private string action;
 
 		private string zoneId;
 
@@ -204,19 +198,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string DBInstanceClass
 		{
 			get
@@ -243,19 +224,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string Engine
 		{
 			get
@@ -266,19 +234,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

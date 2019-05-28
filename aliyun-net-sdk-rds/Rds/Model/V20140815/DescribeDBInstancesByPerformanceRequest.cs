@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstancesByPerformanceRequest : RpcAcsRequest<DescribeDBInstancesByPerformanceResponse>
     {
         public DescribeDBInstancesByPerformanceRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "Rds", "openAPI")
         {
         }
 
@@ -40,47 +40,43 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string tag2key;
 
-		private string tag5key;
-
-		private string resourceOwnerAccount;
-
 		private string clientToken;
-
-		private string ownerAccount;
 
 		private string tag3key;
 
-		private long? ownerId;
-
-		private string tag5value;
-
 		private int? pageNumber;
-
-		private string accessKeyId;
-
-		private string tags;
-
-		private string tag1key;
 
 		private string tag1value;
 
 		private string sortKey;
 
-		private string sortMethod;
-
-		private string tag2value;
-
 		private int? pageSize;
-
-		private string action;
-
-		private string tag4key;
 
 		private string dBInstanceId;
 
 		private string tag3value;
 
 		private string proxyId;
+
+		private string tag5key;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
+		private string tag5value;
+
+		private string tags;
+
+		private string tag1key;
+
+		private string sortMethod;
+
+		private string tag2value;
+
+		private string tag4key;
 
 		public string Tag4value
 		{
@@ -121,32 +117,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Tag5key
-		{
-			get
-			{
-				return tag5key;
-			}
-			set	
-			{
-				tag5key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.key", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -157,19 +127,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -186,32 +143,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Tag5value
-		{
-			get
-			{
-				return tag5value;
-			}
-			set	
-			{
-				tag5value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.value", value);
-			}
-		}
-
 		public int? PageNumber
 		{
 			get
@@ -222,45 +153,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-		public string Tag1key
-		{
-			get
-			{
-				return tag1key;
-			}
-			set	
-			{
-				tag1key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.key", value);
 			}
 		}
 
@@ -290,32 +182,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SortMethod
-		{
-			get
-			{
-				return sortMethod;
-			}
-			set	
-			{
-				sortMethod = value;
-				DictionaryUtil.Add(QueryParameters, "SortMethod", value);
-			}
-		}
-
-		public string Tag2value
-		{
-			get
-			{
-				return tag2value;
-			}
-			set	
-			{
-				tag2value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.value", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -326,32 +192,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string Tag4key
-		{
-			get
-			{
-				return tag4key;
-			}
-			set	
-			{
-				tag4key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.key", value);
 			}
 		}
 
@@ -391,6 +231,136 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				proxyId = value;
 				DictionaryUtil.Add(QueryParameters, "proxyId", value);
+			}
+		}
+
+		public string Tag5key
+		{
+			get
+			{
+				return tag5key;
+			}
+			set	
+			{
+				tag5key = value;
+				DictionaryUtil.Add(QueryParameters, "Tag.5.key", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Tag5value
+		{
+			get
+			{
+				return tag5value;
+			}
+			set	
+			{
+				tag5value = value;
+				DictionaryUtil.Add(QueryParameters, "Tag.5.value", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string Tag1key
+		{
+			get
+			{
+				return tag1key;
+			}
+			set	
+			{
+				tag1key = value;
+				DictionaryUtil.Add(QueryParameters, "Tag.1.key", value);
+			}
+		}
+
+		public string SortMethod
+		{
+			get
+			{
+				return sortMethod;
+			}
+			set	
+			{
+				sortMethod = value;
+				DictionaryUtil.Add(QueryParameters, "SortMethod", value);
+			}
+		}
+
+		public string Tag2value
+		{
+			get
+			{
+				return tag2value;
+			}
+			set	
+			{
+				tag2value = value;
+				DictionaryUtil.Add(QueryParameters, "Tag.2.value", value);
+			}
+		}
+
+		public string Tag4key
+		{
+			get
+			{
+				return tag4key;
+			}
+			set	
+			{
+				tag4key = value;
+				DictionaryUtil.Add(QueryParameters, "Tag.4.key", value);
 			}
 		}
 

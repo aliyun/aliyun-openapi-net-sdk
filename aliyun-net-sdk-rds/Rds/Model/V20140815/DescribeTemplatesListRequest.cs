@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeTemplatesListRequest : RpcAcsRequest<DescribeTemplatesListResponse>
     {
         public DescribeTemplatesListRequest()
-            : base("Rds", "2014-08-15", "DescribeTemplatesList", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeTemplatesList", "Rds", "openAPI")
         {
         }
 
@@ -50,8 +50,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private int? maxAvgConsume;
 
 		private string sortKey;
@@ -65,8 +63,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string sortMethod;
 
 		private int? pageNumbers;
-
-		private string action;
 
 		private string pagingId;
 
@@ -178,19 +174,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public int? MaxAvgConsume
 		{
 			get
@@ -279,19 +262,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageNumbers = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumbers", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

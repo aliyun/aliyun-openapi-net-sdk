@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBInstanceSpecRequest : RpcAcsRequest<ModifyDBInstanceSpecResponse>
     {
         public ModifyDBInstanceSpecRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceSpec", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceSpec", "Rds", "openAPI")
         {
         }
 
@@ -40,21 +40,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
-		private string clientToken;
-
 		private string ownerAccount;
 
 		private string engineVersion;
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string dBInstanceClass;
 
 		private string effectiveTime;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -99,19 +93,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -151,19 +132,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string DBInstanceClass
 		{
 			get
@@ -187,19 +155,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				effectiveTime = value;
 				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

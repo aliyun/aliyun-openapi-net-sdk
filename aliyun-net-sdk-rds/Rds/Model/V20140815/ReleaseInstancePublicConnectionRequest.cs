@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ReleaseInstancePublicConnectionRequest : RpcAcsRequest<ReleaseInstancePublicConnectionResponse>
     {
         public ReleaseInstancePublicConnectionRequest()
-            : base("Rds", "2014-08-15", "ReleaseInstancePublicConnection", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ReleaseInstancePublicConnection", "Rds", "openAPI")
         {
         }
 
@@ -40,15 +40,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string dBInstanceId;
 
 		private long? ownerId;
 
 		private string currentConnectionString;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -89,19 +85,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -138,19 +121,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				currentConnectionString = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentConnectionString", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

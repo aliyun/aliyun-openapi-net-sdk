@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateMigrateTaskRequest : RpcAcsRequest<CreateMigrateTaskResponse>
     {
         public CreateMigrateTaskRequest()
-            : base("Rds", "2014-08-15", "CreateMigrateTask", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateMigrateTask", "Rds", "openAPI")
         {
         }
 
@@ -46,13 +46,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string ossObjectPositions;
 
-		private string accessKeyId;
-
 		private string oSSUrls;
 
 		private string dBName;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -138,19 +134,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string OSSUrls
 		{
 			get
@@ -174,19 +157,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBName = value;
 				DictionaryUtil.Add(QueryParameters, "DBName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

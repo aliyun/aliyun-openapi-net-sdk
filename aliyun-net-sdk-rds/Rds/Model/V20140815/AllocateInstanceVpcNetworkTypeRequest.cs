@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class AllocateInstanceVpcNetworkTypeRequest : RpcAcsRequest<AllocateInstanceVpcNetworkTypeResponse>
     {
         public AllocateInstanceVpcNetworkTypeRequest()
-            : base("Rds", "2014-08-15", "AllocateInstanceVpcNetworkType", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "AllocateInstanceVpcNetworkType", "Rds", "openAPI")
         {
         }
 
@@ -44,8 +44,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string dBInstanceId;
 
 		private string targetRegionId;
@@ -53,8 +51,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string targetVSwitchId;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public string TargetVpcId
 		{
@@ -121,19 +117,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -183,19 +166,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

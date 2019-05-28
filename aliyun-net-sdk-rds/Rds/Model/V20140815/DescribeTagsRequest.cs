@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeTagsRequest : RpcAcsRequest<DescribeTagsResponse>
     {
         public DescribeTagsRequest()
-            : base("Rds", "2014-08-15", "DescribeTags", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeTags", "Rds", "openAPI")
         {
         }
 
@@ -40,17 +40,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string clientToken;
 
-		private string regionId;
-
 		private string ownerAccount;
-
-		private string action;
 
 		private string dBInstanceId;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		private string proxyId;
 
@@ -95,19 +89,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -118,19 +99,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -157,19 +125,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

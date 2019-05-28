@@ -30,29 +30,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifySQLCollectorPolicyRequest : RpcAcsRequest<ModifySQLCollectorPolicyResponse>
     {
         public ModifySQLCollectorPolicyRequest()
-            : base("Rds", "2014-08-15", "ModifySQLCollectorPolicy", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifySQLCollectorPolicy", "Rds", "openAPI")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private int? storagePeriod;
-
 		private string resourceOwnerAccount;
-
-		private string clientToken;
 
 		private string sQLCollectorStatus;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string dBInstanceId;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -67,19 +59,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? StoragePeriod
-		{
-			get
-			{
-				return storagePeriod;
-			}
-			set	
-			{
-				storagePeriod = value;
-				DictionaryUtil.Add(QueryParameters, "StoragePeriod", value.ToString());
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -90,19 +69,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -132,19 +98,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -168,19 +121,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

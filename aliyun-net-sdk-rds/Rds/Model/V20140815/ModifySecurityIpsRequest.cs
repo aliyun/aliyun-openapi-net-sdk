@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifySecurityIpsRequest : RpcAcsRequest<ModifySecurityIpsResponse>
     {
         public ModifySecurityIpsRequest()
-            : base("Rds", "2014-08-15", "ModifySecurityIps", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifySecurityIps", "Rds", "openAPI")
         {
         }
 
@@ -40,27 +40,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string modifyMode;
 
-		private string resourceOwnerAccount;
-
-		private string clientToken;
-
-		private string ownerAccount;
-
 		private string securityIps;
 
 		private string securityGroupId;
-
-		private long? ownerId;
-
-		private string accessKeyId;
 
 		private string whitelistNetworkType;
 
 		private string dBInstanceIPArrayAttribute;
 
 		private string securityIPType;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -103,45 +91,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string SecurityIps
 		{
 			get
@@ -165,32 +114,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				securityGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -230,19 +153,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				securityIPType = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityIPType", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

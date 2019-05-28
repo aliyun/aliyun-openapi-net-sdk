@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeMetaListRequest : RpcAcsRequest<DescribeMetaListResponse>
     {
         public DescribeMetaListRequest()
-            : base("Rds", "2014-08-15", "DescribeMetaList", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeMetaList", "Rds", "openAPI")
         {
         }
 
@@ -48,15 +48,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string getDbName;
 
 		private string restoreType;
 
 		private string pageSize;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -153,19 +149,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string GetDbName
 		{
 			get
@@ -202,19 +185,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class SwitchDBInstanceHARequest : RpcAcsRequest<SwitchDBInstanceHAResponse>
     {
         public SwitchDBInstanceHARequest()
-            : base("Rds", "2014-08-15", "SwitchDBInstanceHA", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "SwitchDBInstanceHA", "Rds", "openAPI")
         {
         }
 
@@ -42,8 +42,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string dBInstanceId;
 
 		private string force;
@@ -53,8 +51,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string nodeId;
 
 		private string operation;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -105,19 +101,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -183,19 +166,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				operation = value;
 				DictionaryUtil.Add(QueryParameters, "Operation", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

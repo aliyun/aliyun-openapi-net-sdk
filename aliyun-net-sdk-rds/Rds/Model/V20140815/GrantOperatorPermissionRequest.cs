@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class GrantOperatorPermissionRequest : RpcAcsRequest<GrantOperatorPermissionResponse>
     {
         public GrantOperatorPermissionRequest()
-            : base("Rds", "2014-08-15", "GrantOperatorPermission", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "GrantOperatorPermission", "Rds", "openAPI")
         {
         }
 
@@ -44,13 +44,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string expiredTime;
 
-		private string action;
-
 		private string dBInstanceId;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public string Privileges
 		{
@@ -117,19 +113,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -153,19 +136,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyReplicaDescriptionRequest : RpcAcsRequest<ModifyReplicaDescriptionResponse>
     {
         public ModifyReplicaDescriptionRequest()
-            : base("Rds", "2014-08-15", "ModifyReplicaDescription", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyReplicaDescription", "Rds", "openAPI")
         {
         }
 
@@ -46,11 +46,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string replicaId;
 
-		private string action;
-
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public string ReplicaDescription
 		{
@@ -130,19 +126,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -153,19 +136,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

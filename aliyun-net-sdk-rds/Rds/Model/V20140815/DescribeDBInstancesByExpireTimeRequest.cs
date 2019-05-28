@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstancesByExpireTimeRequest : RpcAcsRequest<DescribeDBInstancesByExpireTimeResponse>
     {
         public DescribeDBInstancesByExpireTimeRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstancesByExpireTime", "Rds", "openAPI")
         {
         }
 
@@ -44,17 +44,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageNumber;
 
-		private string accessKeyId;
-
 		private string tags;
 
 		private bool? expired;
 
-		private string regionId;
-
 		private int? pageSize;
-
-		private string action;
 
 		private int? expirePeriod;
 
@@ -125,19 +119,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Tags
 		{
 			get
@@ -164,19 +145,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -187,19 +155,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

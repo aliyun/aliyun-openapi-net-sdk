@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstancesRequest : RpcAcsRequest<DescribeDBInstancesResponse>
     {
         public DescribeDBInstancesRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstances", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstances", "Rds", "openAPI")
         {
         }
 
@@ -52,8 +52,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageNumber;
 
-		private string accessKeyId;
-
 		private string tag1value;
 
 		private string resourceGroupId;
@@ -62,11 +60,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engine;
 
-		private string regionId;
-
 		private int? pageSize;
-
-		private string action;
 
 		private string dBInstanceStatus;
 
@@ -225,19 +219,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Tag1value
 		{
 			get
@@ -290,19 +271,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -313,19 +281,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

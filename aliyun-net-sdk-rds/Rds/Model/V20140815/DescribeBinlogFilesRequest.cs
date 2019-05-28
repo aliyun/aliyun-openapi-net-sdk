@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeBinlogFilesRequest : RpcAcsRequest<DescribeBinlogFilesResponse>
     {
         public DescribeBinlogFilesRequest()
-            : base("Rds", "2014-08-15", "DescribeBinlogFiles", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeBinlogFiles", "Rds", "openAPI")
         {
         }
 
@@ -42,8 +42,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? pageSize;
 
-		private string action;
-
 		private string endTime;
 
 		private string dBInstanceId;
@@ -53,8 +51,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private long? ownerId;
 
 		private int? pageNumber;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -105,19 +101,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -183,19 +166,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
