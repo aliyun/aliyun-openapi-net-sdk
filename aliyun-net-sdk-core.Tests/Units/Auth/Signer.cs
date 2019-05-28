@@ -1,4 +1,21 @@
-using System;
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 
 using Aliyun.Acs.Core.Auth;
 
@@ -13,41 +30,42 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void Instance()
         {
-            MockSigner instance = new MockSigner();
+            var instance = new MockSigner();
             var mock = new Mock<AlibabaCloudCredentials>();
-            AlibabaCloudCredentials credentials = mock.Object;
-            Assert.IsType<HmacSHA1Signer>(MockSigner.GetSigner(credentials));
+            var credentials = mock.Object;
+            Assert.IsType<HmacSHA1Signer>(Signer.GetSigner(credentials));
 
-            KeyPairCredentials KeyPairCredentials = new KeyPairCredentials("publicKeyId", "privateKeySecret");
-            Assert.IsType<SHA256withRSASigner>(MockSigner.GetSigner(KeyPairCredentials));
+            var KeyPairCredentials = new KeyPairCredentials("publicKeyId", "privateKeySecret");
+            Assert.IsType<SHA256withRSASigner>(Signer.GetSigner(KeyPairCredentials));
 
-            BearerTokenCredential bearerTokenCredential = new BearerTokenCredential("FakeBearerToken");
-            Assert.IsType<BearerTokenSigner>(MockSigner.GetSigner(bearerTokenCredential));
+            var bearerTokenCredential = new BearerTokenCredential("FakeBearerToken");
+            Assert.IsType<BearerTokenSigner>(Signer.GetSigner(bearerTokenCredential));
         }
     }
+
     public class MockSigner : Signer
     {
-        public override String SignString(String stringToSign, String accessKeySecret)
+        public override string SignString(string stringToSign, string accessKeySecret)
         {
             return "";
         }
 
-        public override String SignString(String stringToSign, AlibabaCloudCredentials credentials)
+        public override string SignString(string stringToSign, AlibabaCloudCredentials credentials)
         {
             return "";
         }
 
-        public override String GetSignerName()
+        public override string GetSignerName()
         {
             return "";
         }
 
-        public override String GetSignerVersion()
+        public override string GetSignerVersion()
         {
             return "";
         }
 
-        public override String GetSignerType()
+        public override string GetSignerType()
         {
             return "";
         }

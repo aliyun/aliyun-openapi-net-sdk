@@ -18,7 +18,6 @@
  */
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,22 +26,26 @@ namespace Aliyun.Acs.Core.Utils
 {
     public class IniReader
     {
-        private Dictionary<string, Dictionary<string, string>> ini = new Dictionary<string, Dictionary<string, string>>(StringComparer.InvariantCultureIgnoreCase);
+        private readonly Dictionary<string, Dictionary<string, string>> ini =
+            new Dictionary<string, Dictionary<string, string>>(StringComparer.InvariantCultureIgnoreCase);
 
         public IniReader(string file)
         {
             var txt = File.ReadAllText(file);
 
-            Dictionary<string, string> currentSection = new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
+            var currentSection =
+                new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
 
             ini[""] = currentSection;
 
-            foreach (var line in txt.Split(new [] { "\n" }, StringSplitOptions.RemoveEmptyEntries)
-                    .Where(t => !string.IsNullOrWhiteSpace(t))
-                    .Select(t => t.Trim()))
+            foreach (var line in txt.Split(new[] {"\n"}, StringSplitOptions.RemoveEmptyEntries)
+                .Where(t => !string.IsNullOrWhiteSpace(t))
+                .Select(t => t.Trim()))
             {
                 if (line.StartsWith(";"))
+                {
                     continue;
+                }
 
                 if (line.StartsWith("[") && line.EndsWith("]"))
                 {
@@ -53,9 +56,13 @@ namespace Aliyun.Acs.Core.Utils
 
                 var idx = line.IndexOf("=");
                 if (idx == -1)
+                {
                     currentSection[line] = "";
+                }
                 else
+                {
                     currentSection[line.Substring(0, idx)] = line.Substring(idx + 1);
+                }
             }
         }
 
@@ -72,10 +79,14 @@ namespace Aliyun.Acs.Core.Utils
         public string GetValue(string key, string section, string @default)
         {
             if (!ini.ContainsKey(section))
+            {
                 return @default;
+            }
 
             if (!ini[section].ContainsKey(key))
+            {
                 return @default;
+            }
 
             return ini[section][key];
         }
@@ -83,7 +94,9 @@ namespace Aliyun.Acs.Core.Utils
         public string[] GetKeys(string section)
         {
             if (!ini.ContainsKey(section))
+            {
                 return new string[0];
+            }
 
             return ini[section].Keys.ToArray();
         }
@@ -95,13 +108,13 @@ namespace Aliyun.Acs.Core.Utils
 
         public void SaveSettings(string newFilePath, string section, IDictionary<string, string> keyValuePairDic)
         {
-            string strToSave = "";
+            var strToSave = "";
 
-            strToSave += ("[" + section + "]\r\n");
+            strToSave += "[" + section + "]\r\n";
 
             foreach (var keyValuePair in keyValuePairDic)
             {
-                strToSave += (keyValuePair.Key + "=" + keyValuePair.Value + "\r\n");
+                strToSave += keyValuePair.Key + "=" + keyValuePair.Value + "\r\n";
             }
 
             strToSave += "\r\n";

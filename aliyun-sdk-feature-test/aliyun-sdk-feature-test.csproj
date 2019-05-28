@@ -28,7 +28,7 @@
   <ItemGroup>
     <PackageReference Include="aliyun-net-sdk-ccc" Version="1.0.9" />
     <PackageReference Include="aliyun-net-sdk-cdn" Version="3.0.8" />
-    <PackageReference Include="aliyun-net-sdk-ecs" Version="4.16.4" />
+    <PackageReference Include="aliyun-net-sdk-ecs" Version="4.16.10" />
     <PackageReference Include="aliyun-net-sdk-ram" Version="3.0.1" />
     <PackageReference Include="aliyun-net-sdk-rds" Version="2.3.2" />
     <PackageReference Include="aliyun-net-sdk-ros" Version="2.2.8" />

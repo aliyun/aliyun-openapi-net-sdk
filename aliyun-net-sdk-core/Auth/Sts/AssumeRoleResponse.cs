@@ -17,27 +17,25 @@
  * under the License.
  */
 
-using System;
-
 namespace Aliyun.Acs.Core.Auth.Sts
 {
     public class AssumeRoleResponse : AcsResponse
     {
+        public AssumeRole_Credentials Credentials { get; set; }
+        public AssumeRole_AssumedRoleUser AssumedRoleUser { get; set; }
+
         public class AssumeRole_Credentials
         {
-            public String AccessKeyId { get; set; }
-            public String AccessKeySecret { get; set; }
-            public String SecurityToken { get; set; }
-            public String Expiration { get; set; }
+            public string AccessKeyId { get; set; }
+            public string AccessKeySecret { get; set; }
+            public string SecurityToken { get; set; }
+            public string Expiration { get; set; }
         }
 
         public class AssumeRole_AssumedRoleUser
         {
-            public String Arn { get; set; }
-            public String AssumedRoleId { get; set; }
+            public string Arn { get; set; }
+            public string AssumedRoleId { get; set; }
         }
-
-        public AssumeRole_Credentials Credentials { get; set; }
-        public AssumeRole_AssumedRoleUser AssumedRoleUser { get; set; }
     }
 }

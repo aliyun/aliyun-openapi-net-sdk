@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
+
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Auth;
@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Core.Profile
         string DefaultClientName { get; set; }
         ISigner GetSigner();
 
-        String GetRegionId();
+        string GetRegionId();
 
         FormatType GetFormat();
 

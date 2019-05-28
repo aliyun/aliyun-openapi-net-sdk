@@ -23,26 +23,20 @@ using Aliyun.Acs.Core.Utils;
 namespace Aliyun.Acs.Core.Auth
 {
     /// <summary>
-    /// InstanceProfileCredentialsProvider provides EcsRamRoleCredential
+    ///     InstanceProfileCredentialsProvider provides EcsRamRoleCredential
     /// </summary>
     public class InstanceProfileCredentialsProvider : AlibabaCloudCredentialsProvider
     {
-        private InstanceProfileCredentials credentials = null;
-        private ECSMetadataServiceCredentialsFetcher fetcher;
-        private int maxRetryTimes = 3;
+        private readonly int maxRetryTimes = 3;
         private readonly string roleName;
+        private InstanceProfileCredentials credentials;
+        private ECSMetadataServiceCredentialsFetcher fetcher;
 
         public InstanceProfileCredentialsProvider(string roleName)
         {
             this.roleName = roleName;
             fetcher = new ECSMetadataServiceCredentialsFetcher();
             fetcher.SetRoleName(roleName);
-        }
-
-        public void withFetcher(ECSMetadataServiceCredentialsFetcher fetcher)
-        {
-            this.fetcher = fetcher;
-            this.fetcher.SetRoleName(roleName);
         }
 
         public virtual AlibabaCloudCredentials GetCredentials()
@@ -63,13 +57,14 @@ namespace Aliyun.Acs.Core.Auth
                 {
                     return credentials;
                 }
-                
+
                 credentials = fetcher.Fetch();
                 return credentials;
             }
             catch (ClientException ex)
             {
-                if (ex.ErrorCode.Equals("SDK.SessionTokenExpired") && ex.ErrorMessage.Equals("Current session token has expired."))
+                if (ex.ErrorCode.Equals("SDK.SessionTokenExpired") &&
+                    ex.ErrorMessage.Equals("Current session token has expired."))
                 {
                     SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
                     throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
@@ -78,7 +73,14 @@ namespace Aliyun.Acs.Core.Auth
                 // Use the current expiring session token and wait for next round
                 credentials.SetLastFailedRefreshTime();
             }
+
             return credentials;
+        }
+
+        public void withFetcher(ECSMetadataServiceCredentialsFetcher fetcher)
+        {
+            this.fetcher = fetcher;
+            this.fetcher.SetRoleName(roleName);
         }
     }
 }

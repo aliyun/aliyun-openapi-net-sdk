@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -25,9 +25,27 @@ using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Http
 {
-
     public class HttpRequest
     {
+        public HttpRequest()
+        {
+        }
+
+        public HttpRequest(string strUrl)
+        {
+            Url = strUrl;
+            Headers = new Dictionary<string, string>();
+        }
+
+        public HttpRequest(string strUrl, Dictionary<string, string> tmpHeaders)
+        {
+            Url = strUrl;
+            if (null != tmpHeaders)
+            {
+                Headers = tmpHeaders;
+            }
+        }
+
         public Dictionary<string, string> Headers { get; set; }
         public string Url { get; set; }
         public MethodType? Method { get; set; }
@@ -35,14 +53,14 @@ namespace Aliyun.Acs.Core.Http
         public byte[] Content { get; set; }
         public string Encoding { get; set; }
 
-        private int timeout = 100000;
-
         [Obsolete("timeoutInMilliSeconds is deprecated as does not match Properties rule, please use TimeoutInMilliseconds instead.")]
         public int timeoutInMilliSeconds
         {
             get { return TimeoutInMilliseconds; }
             set { TimeoutInMilliseconds = value; }
         }
+
+        private int timeout = 100000;
 
         public int TimeoutInMilliseconds
         {
@@ -70,23 +88,6 @@ namespace Aliyun.Acs.Core.Http
 
         public IWebProxy WebProxy { get; set; }
 
-        public HttpRequest() { }
-
-        public HttpRequest(string strUrl)
-        {
-            Url = strUrl;
-            Headers = new Dictionary<string, string>();
-        }
-
-        public HttpRequest(string strUrl, Dictionary<string, string> tmpHeaders)
-        {
-            Url = strUrl;
-            if (null != tmpHeaders)
-            {
-                Headers = tmpHeaders;
-            }
-        }
-
         public void SetContent(byte[] content, string encoding, FormatType? format)
         {
             if (null == content)
@@ -99,8 +100,9 @@ namespace Aliyun.Acs.Core.Http
                 Encoding = null;
                 return;
             }
-            string contentLen = content.Length.ToString();
-            string strMd5 = ParameterHelper.Md5SumAndBase64(content);
+
+            var contentLen = content.Length.ToString();
+            var strMd5 = ParameterHelper.Md5SumAndBase64(content);
             FormatType? type = FormatType.RAW;
             if (null != format)
             {
@@ -121,12 +123,12 @@ namespace Aliyun.Acs.Core.Http
 
         public void SetConnectTimeoutInMilliSeconds(int connectTimeout)
         {
-            this.ConnectTimeout = connectTimeout;
+            ConnectTimeout = connectTimeout;
         }
 
         public void SetReadTimeoutInMilliSeconds(int readTimeout)
         {
-            this.ReadTimeout = readTimeout;
+            ReadTimeout = readTimeout;
         }
 
         public void SetHttpsInsecure(bool ignoreCertificate = false)

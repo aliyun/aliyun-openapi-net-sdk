@@ -28,13 +28,13 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class RpcSignatureComposer : ISignatureComposer
     {
-        private static ISignatureComposer composer = null;
         private const string SEPARATOR = "&";
+        private static ISignatureComposer composer;
 
         public Dictionary<string, string> RefreshSignParameters(Dictionary<string, string> parameters,
             Signer signer, string accessKeyId, FormatType? format)
         {
-            Dictionary<string, string> immutableMap = new Dictionary<string, string>(parameters);
+            var immutableMap = new Dictionary<string, string>(parameters);
             DictionaryUtil.Add(immutableMap, "Timestamp", ParameterHelper.FormatIso8601Date(DateTime.Now));
             DictionaryUtil.Add(immutableMap, "SignatureMethod", signer.GetSignerName());
             DictionaryUtil.Add(immutableMap, "SignatureVersion", signer.GetSignerVersion());
@@ -45,10 +45,12 @@ namespace Aliyun.Acs.Core.Auth
             {
                 DictionaryUtil.Add(immutableMap, "Format", format.ToString());
             }
+
             if (signer.GetSignerType() != null)
             {
                 DictionaryUtil.Add(immutableMap, "SignatureType", signer.GetSignerType());
             }
+
             return immutableMap;
         }
 
@@ -57,7 +59,7 @@ namespace Aliyun.Acs.Core.Auth
         {
             var sortedDictionary = SortDictionary(queries);
 
-            StringBuilder canonicalizedQueryString = new StringBuilder();
+            var canonicalizedQueryString = new StringBuilder();
             foreach (var p in sortedDictionary)
             {
                 canonicalizedQueryString.Append("&")
@@ -65,7 +67,7 @@ namespace Aliyun.Acs.Core.Auth
                     .Append(AcsURLEncoder.PercentEncode(p.Value));
             }
 
-            StringBuilder stringToSign = new StringBuilder();
+            var stringToSign = new StringBuilder();
             stringToSign.Append(method.ToString());
             stringToSign.Append(SEPARATOR);
             stringToSign.Append(AcsURLEncoder.PercentEncode("/"));
@@ -79,13 +81,17 @@ namespace Aliyun.Acs.Core.Auth
         public static ISignatureComposer GetComposer()
         {
             if (null == composer)
+            {
                 composer = new RpcSignatureComposer();
+            }
+
             return composer;
         }
 
         private static IDictionary<string, string> SortDictionary(Dictionary<string, string> dic)
         {
-            IDictionary<string, string> sortedDictionary = new SortedDictionary<string, string>(dic, StringComparer.Ordinal);
+            IDictionary<string, string> sortedDictionary =
+                new SortedDictionary<string, string>(dic, StringComparer.Ordinal);
             return sortedDictionary;
         }
 

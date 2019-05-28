@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -55,13 +55,24 @@ namespace Aliyun.Acs.Core
             Initialize();
         }
 
-        public RoaAcsRequest(string product, string version, string action, string locationProduct, string locationEndpointType) : base(product)
+        public RoaAcsRequest(string product, string version, string action, string locationProduct,
+            string locationEndpointType) : base(product)
         {
             SetVersion(version);
             ActionName = action;
             LocationProduct = locationProduct;
             LocationEndpointType = locationEndpointType;
             Initialize();
+        }
+
+        public string UriPattern { get; set; }
+
+        private Dictionary<string, string> pathParameters = new Dictionary<string, string>();
+
+        public Dictionary<string, string> PathParameters
+        {
+            get { return pathParameters; }
+            set { pathParameters = value; }
         }
 
         private void Initialize()
@@ -79,15 +90,15 @@ namespace Aliyun.Acs.Core
 
         public override string ComposeUrl(string endpoint, Dictionary<string, string> queries)
         {
-
-            var mapQueries = (queries == null) ? QueryParameters : queries;
-            StringBuilder urlBuilder = new StringBuilder("");
+            var mapQueries = queries == null ? QueryParameters : queries;
+            var urlBuilder = new StringBuilder("");
             urlBuilder.Append(Protocol);
             urlBuilder.Append("://").Append(endpoint);
             if (null != UriPattern)
             {
                 urlBuilder.Append(RoaSignatureComposer.ReplaceOccupiedParameters(UriPattern, PathParameters));
             }
+
             if (-1 == urlBuilder.ToString().IndexOf('?'))
             {
                 urlBuilder.Append("?");
@@ -96,12 +107,14 @@ namespace Aliyun.Acs.Core
             {
                 urlBuilder.Append("&");
             }
-            string query = ConcatQueryString(mapQueries);
-            string url = urlBuilder.Append(query).ToString();
+
+            var query = ConcatQueryString(mapQueries);
+            var url = urlBuilder.Append(query).ToString();
             if (url.EndsWith("?") || url.EndsWith("&"))
             {
                 url = url.Substring(0, url.Length - 1);
             }
+
             return url;
         }
 
@@ -110,13 +123,13 @@ namespace Aliyun.Acs.Core
         {
             if (BodyParameters != null && BodyParameters.Count > 0)
             {
-                var formParams = new Dictionary<string, string>(this.BodyParameters);
-                string formStr = ConcatQueryString(formParams);
-                byte[] formData = System.Text.Encoding.UTF8.GetBytes(formStr);
+                var formParams = new Dictionary<string, string>(BodyParameters);
+                var formStr = ConcatQueryString(formParams);
+                var formData = System.Text.Encoding.UTF8.GetBytes(formStr);
                 SetContent(formData, "UTF-8", FormatType.FORM);
             }
 
-            var imutableMap = new Dictionary<string, string>(this.Headers);
+            var imutableMap = new Dictionary<string, string>(Headers);
             if (null != signer && null != credentials)
             {
                 var accessKeyId = credentials.GetAccessKeyId();
@@ -141,25 +154,10 @@ namespace Aliyun.Acs.Core
                 var signature = signer.SignString(strToSign, credentials);
                 DictionaryUtil.Add(imutableMap, "Authorization", "acs " + accessKeyId + ":" + signature);
             }
+
             Url = ComposeUrl(domain.DomianName, QueryParameters);
             Headers = imutableMap;
             return this;
-        }
-
-        private string uriPattern;
-
-        public string UriPattern
-        {
-            get { return uriPattern; }
-            set { uriPattern = value; }
-        }
-
-        private Dictionary<string, string> pathParameters = new Dictionary<string, string>();
-
-        public Dictionary<string, string> PathParameters
-        {
-            get { return pathParameters; }
-            set { pathParameters = value; }
         }
 
         public void AddPathParameters(string name, string value)

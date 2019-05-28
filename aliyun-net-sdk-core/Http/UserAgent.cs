@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,10 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -31,12 +33,12 @@ namespace Aliyun.Acs.Core.Http
     {
         private static string DEFAULT_MESSAGE;
 
-        private List<string> excludedList = new List<string>();
+        private readonly List<string> excludedList = new List<string>();
         private readonly Dictionary<string, string> userAgent = new Dictionary<string, string>();
-
-        private string OSVersion;
         private string ClientVersion;
         private string CoreVersion;
+
+        private string OSVersion;
 
         public UserAgent()
         {
@@ -50,7 +52,7 @@ namespace Aliyun.Acs.Core.Http
         public void SetTheValue()
         {
             OSVersion = GetOsVersion();
-            ClientVersion = GetRuntimeRegexValue(System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory());
+            ClientVersion = GetRuntimeRegexValue(RuntimeEnvironment.GetRuntimeDirectory());
             CoreVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             excludedList.Add("core");
             excludedList.Add("microsoft.netcore.app");
@@ -59,7 +61,7 @@ namespace Aliyun.Acs.Core.Http
         private string GetOsVersion()
         {
 #if NETSTANDARD2_0
-            return System.Runtime.InteropServices.RuntimeInformation.OSDescription;
+            return RuntimeInformation.OSDescription;
 #else
             return Environment.OSVersion.ToString();
 #endif
@@ -67,22 +69,23 @@ namespace Aliyun.Acs.Core.Http
 
         public string GetRuntimeRegexValue(string value)
         {
-            Regex rx = new Regex(@"(\.NET).*(\\|\/).*(\d)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-            Match matches = rx.Match(value);
-            char[] separator = { '\\', '/' };
+            var rx = new Regex(@"(\.NET).*(\\|\/).*(\d)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            var matches = rx.Match(value);
+            char[] separator = {'\\', '/'};
 
             if (matches.Success)
             {
                 var clientValueArray = matches.Value.Split(separator);
                 return BuildClientVersion(clientValueArray);
             }
+
             return "RuntimeNotFound";
         }
 
         private string BuildClientVersion(string[] value)
         {
-            string finalValue = "";
-            for (int i = 0; i < value.Length - 1; ++i)
+            var finalValue = "";
+            for (var i = 0; i < value.Length - 1; ++i)
             {
                 finalValue += value[i].Replace(".", "").ToLower();
             }
@@ -99,10 +102,16 @@ namespace Aliyun.Acs.Core.Http
 
         public void AppendUserAgent(string key, string value)
         {
-            if (String.IsNullOrEmpty(key) || String.IsNullOrEmpty(value))
+            if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(value))
+            {
                 return;
+            }
+
             if (excludedList.Contains(key.ToLowerInvariant()))
+            {
                 return;
+            }
+
             DictionaryUtil.Add(userAgent, key, value);
         }
 
@@ -113,17 +122,18 @@ namespace Aliyun.Acs.Core.Http
 
         public static string Resolve(UserAgent requestConfig, UserAgent clientConfig)
         {
-            Dictionary<string, string> finalDict = new Dictionary<string, string>();
+            var finalDict = new Dictionary<string, string>();
             if (clientConfig != null && clientConfig.GetSysUserAgentDict().Count > 0)
             {
                 finalDict = new Dictionary<string, string>(clientConfig.GetSysUserAgentDict());
             }
+
             if (requestConfig != null && requestConfig.GetSysUserAgentDict().Count > 0)
             {
                 finalDict = new Dictionary<string, string>(requestConfig.GetSysUserAgentDict());
             }
 
-            StringBuilder agent = new StringBuilder(DEFAULT_MESSAGE);
+            var agent = new StringBuilder(DEFAULT_MESSAGE);
 
             foreach (var item in finalDict)
             {

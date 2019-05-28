@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -17,29 +17,26 @@
  * under the License.
  */
 
-using System;
-
+using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Regions.Location.Model
 {
     public class DescribeEndpointRequest : RpcAcsRequest<DescribeEndpointResponse>
     {
-
-        public DescribeEndpointRequest() : base("Location", "2015-06-12", "DescribeEndpoints") { }
+        private string endpointType;
 
         private string id;
 
         private string locationProduct;
 
-        private string endpointType;
+        public DescribeEndpointRequest() : base("Location", "2015-06-12", "DescribeEndpoints")
+        {
+        }
 
         public string Id
         {
-            get
-            {
-                return id;
-            }
+            get { return id; }
             set
             {
                 id = value;
@@ -49,10 +46,7 @@ namespace Aliyun.Acs.Core.Regions.Location.Model
 
         public string EndpointType
         {
-            get
-            {
-                return endpointType;
-            }
+            get { return endpointType; }
             set
             {
                 endpointType = value;
@@ -62,10 +56,7 @@ namespace Aliyun.Acs.Core.Regions.Location.Model
 
         public new string LocationProduct
         {
-            get
-            {
-                return locationProduct;
-            }
+            get { return locationProduct; }
             set
             {
                 locationProduct = value;
@@ -73,7 +64,7 @@ namespace Aliyun.Acs.Core.Regions.Location.Model
             }
         }
 
-        public override DescribeEndpointResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeEndpointResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return null;
         }

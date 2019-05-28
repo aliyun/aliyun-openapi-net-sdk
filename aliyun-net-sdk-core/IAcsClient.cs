@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
+
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Auth;
@@ -28,14 +28,13 @@ namespace Aliyun.Acs.Core
 {
     public interface IAcsClient
     {
-
         T GetAcsResponse<T>(AcsRequest<T> request) where T : AcsResponse;
 
         T GetAcsResponse<T>(AcsRequest<T> request, bool autoRetry, int maxRetryCounts) where T : AcsResponse;
 
         T GetAcsResponse<T>(AcsRequest<T> request, IClientProfile profile) where T : AcsResponse;
 
-        T GetAcsResponse<T>(AcsRequest<T> request, String regionId, Credential credential) where T : AcsResponse;
+        T GetAcsResponse<T>(AcsRequest<T> request, string regionId, Credential credential) where T : AcsResponse;
 
         CommonResponse GetCommonResponse(CommonRequest request);
 
@@ -45,13 +44,14 @@ namespace Aliyun.Acs.Core
 
         HttpResponse DoAction<T>(AcsRequest<T> request, IClientProfile profile) where T : AcsResponse;
 
-        HttpResponse DoAction<T>(AcsRequest<T> request, String regionId, Credential credential) where T : AcsResponse;
+        HttpResponse DoAction<T>(AcsRequest<T> request, string regionId, Credential credential) where T : AcsResponse;
 
-        HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryCounts, IClientProfile profile) where T : AcsResponse;
+        HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryCounts, IClientProfile profile)
+            where T : AcsResponse;
 
         HttpResponse DoAction<T>(AcsRequest<T> request,
             bool autoRetry, int maxRetryNumber,
-            String regionId, Credential credential,
+            string regionId, Credential credential,
             Signer signer, FormatType? format,
             List<Endpoint> endpoints) where T : AcsResponse;
     }

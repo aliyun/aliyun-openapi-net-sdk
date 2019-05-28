@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,6 +16,8 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -29,6 +31,7 @@ namespace Aliyun.Acs.Core.Utils
             {
                 return;
             }
+
             if (dic == null)
             {
                 dic = new Dictionary<string, string>();
@@ -37,6 +40,7 @@ namespace Aliyun.Acs.Core.Utils
             {
                 dic.Remove(key);
             }
+
             dic.Add(key, value.ToString());
         }
 
@@ -46,6 +50,7 @@ namespace Aliyun.Acs.Core.Utils
             {
                 return;
             }
+
             if (dic == null)
             {
                 dic = new Dictionary<TKey, TValue>();
@@ -54,6 +59,7 @@ namespace Aliyun.Acs.Core.Utils
             {
                 dic.Remove(key);
             }
+
             dic.Add(key, value);
         }
 
@@ -63,6 +69,7 @@ namespace Aliyun.Acs.Core.Utils
             {
                 return dic[key];
             }
+
             return default(TValue);
         }
 
@@ -72,6 +79,7 @@ namespace Aliyun.Acs.Core.Utils
             {
                 return dic[key];
             }
+
             return null;
         }
 
@@ -83,6 +91,7 @@ namespace Aliyun.Acs.Core.Utils
                 value = dic[key];
                 dic.Remove(key);
             }
+
             return value;
         }
 
@@ -94,25 +103,28 @@ namespace Aliyun.Acs.Core.Utils
                 value = dic[key];
                 dic.Remove(key);
             }
+
             return value;
         }
 
         public static void Print<TKey, TValue>(Dictionary<TKey, TValue> dic, char str)
         {
-            foreach (KeyValuePair<TKey, TValue> item in dic)
+            foreach (var item in dic)
             {
-                System.Console.WriteLine("{0} {1}: {2}", str, item.Key, item.Value);
+                Console.WriteLine("{0} {1}: {2}", str, item.Key, item.Value);
             }
-            System.Console.WriteLine();
+
+            Console.WriteLine();
         }
 
         public static void Print(Dictionary<string, string> dic, char str)
         {
-            foreach (KeyValuePair<string, string> item in dic)
+            foreach (var item in dic)
             {
-                System.Console.WriteLine("{0} {1}: {2}", str, item.Key, item.Value);
+                Console.WriteLine("{0} {1}: {2}", str, item.Key, item.Value);
             }
-            System.Console.WriteLine();
+
+            Console.WriteLine();
         }
 
         public static string TransformDicToString<TKey, TValue>(Dictionary<TKey, TValue> dic)

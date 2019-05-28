@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,45 +27,47 @@ namespace Aliyun.Acs.Core.Reader
 {
     public class JsonReader : IReader
     {
-
-        private static Object ARRAY_END_TOKEN = new Object();
-        private static Object OBJECT_END_TOKEN = new Object();
-        private static Object COMMA_TOKEN = new Object();
-        private static Object COLON_TOKEN = new Object();
-
         private const int FIRST_POSITION = 0;
         private const int CURRENT_POSITION = 1;
         private const int NEXT_POSITION = 2;
 
-        private CharEnumerator ct;
-        private char c;
+        private static readonly object ARRAY_END_TOKEN = new object();
+        private static readonly object OBJECT_END_TOKEN = new object();
+        private static readonly object COMMA_TOKEN = new object();
+        private static readonly object COLON_TOKEN = new object();
 
-        private Object token;
-        private StringBuilder sb = new StringBuilder();
-        private Dictionary<String, String> map = new Dictionary<String, String>();
-
-        private static Dictionary<char, char> escapes = new Dictionary<char, char>
-        { { '\\', '\\' },
-            { '/', '/' },
-            { '"', '"' },
-            { 't', '\t' },
-            { 'n', '\n' },
-            { 'r', '\r' },
-            { 'b', '\b' },
-            { 'f', '\f' }
+        private static readonly Dictionary<char, char> escapes = new Dictionary<char, char>
+        {
+            {'\\', '\\'},
+            {'/', '/'},
+            {'"', '"'},
+            {'t', '\t'},
+            {'n', '\n'},
+            {'r', '\r'},
+            {'b', '\b'},
+            {'f', '\f'}
         };
 
-        public Dictionary<String, String> Read(String response, String endpoint)
+        private readonly Dictionary<string, string> map = new Dictionary<string, string>();
+        private readonly StringBuilder sb = new StringBuilder();
+
+        private char c;
+
+        private CharEnumerator ct;
+
+        private object token;
+
+        public Dictionary<string, string> Read(string response, string endpoint)
         {
             return Read(response.GetEnumerator(), endpoint);
         }
 
-        public Dictionary<String, String> ReadForHideArrayItem(String response, String endpoint)
+        public Dictionary<string, string> ReadForHideArrayItem(string response, string endpoint)
         {
             return ReadForHideArrayItem(response.GetEnumerator(), endpoint);
         }
 
-        public Dictionary<String, String> Read(CharEnumerator ci, String endpoint)
+        public Dictionary<string, string> Read(CharEnumerator ci, string endpoint)
         {
             ct = ci;
             NextChar();
@@ -72,7 +75,7 @@ namespace Aliyun.Acs.Core.Reader
             return map;
         }
 
-        public Dictionary<String, String> ReadForHideArrayItem(CharEnumerator ci, String endpoint)
+        public Dictionary<string, string> ReadForHideArrayItem(CharEnumerator ci, string endpoint)
         {
             ct = ci;
             NextChar();
@@ -80,10 +83,10 @@ namespace Aliyun.Acs.Core.Reader
             return map;
         }
 
-        private Object ReadJson(String baseKey)
+        private object ReadJson(string baseKey)
         {
             SkipWhiteSpace();
-            char ch = c;
+            var ch = c;
             NextChar();
             switch (ch)
             {
@@ -136,20 +139,22 @@ namespace Aliyun.Acs.Core.Reader
                     token = false;
                     break;
                 default:
-                    //c = ct.previous();
-                    if (Char.IsDigit(ch) || ch == '-')
+                    // c = ct.previous();
+                    if (char.IsDigit(ch) || ch == '-')
                     {
                         token = ProcessNumber(ch);
                     }
+
                     break;
             }
+
             return token;
         }
 
-        private Object ReadJsonForHideArrayItem(String baseKey)
+        private object ReadJsonForHideArrayItem(string baseKey)
         {
             SkipWhiteSpace();
-            char ch = c;
+            var ch = c;
             NextChar();
             switch (ch)
             {
@@ -202,27 +207,29 @@ namespace Aliyun.Acs.Core.Reader
                     token = false;
                     break;
                 default:
-                    //c = ct.previous();
-                    if (Char.IsDigit(ch) || ch == '-')
+                    // c = ct.previous();
+                    if (char.IsDigit(ch) || ch == '-')
                     {
                         token = ProcessNumber(ch);
                     }
+
                     break;
             }
+
             return token;
         }
 
-        private void ProcessObject(String baseKey)
+        private void ProcessObject(string baseKey)
         {
-            String key = baseKey + "." + ReadJson(baseKey);
+            var key = baseKey + "." + ReadJson(baseKey);
             while (token != OBJECT_END_TOKEN)
             {
                 ReadJson(key);
                 if (token != OBJECT_END_TOKEN)
                 {
-                    object obj = ReadJson(key);
+                    var obj = ReadJson(key);
 
-                    if (obj is String || obj is Boolean || obj is Double)
+                    if (obj is string || obj is bool || obj is double)
                     {
                         DictionaryUtil.Add(map, key, obj.ToString());
                     }
@@ -236,17 +243,17 @@ namespace Aliyun.Acs.Core.Reader
             }
         }
 
-        private void ProcessObjectForHideArrayItem(String baseKey)
+        private void ProcessObjectForHideArrayItem(string baseKey)
         {
-            String key = baseKey + "." + ReadJsonForHideArrayItem(baseKey);
+            var key = baseKey + "." + ReadJsonForHideArrayItem(baseKey);
             while (token != OBJECT_END_TOKEN)
             {
                 ReadJsonForHideArrayItem(key);
                 if (token != OBJECT_END_TOKEN)
                 {
-                    object obj = ReadJsonForHideArrayItem(key);
+                    var obj = ReadJsonForHideArrayItem(key);
 
-                    if (obj is String || obj is Boolean || obj is Double)
+                    if (obj is string || obj is bool || obj is double)
                     {
                         DictionaryUtil.Add(map, key, obj.ToString());
                     }
@@ -260,67 +267,70 @@ namespace Aliyun.Acs.Core.Reader
             }
         }
 
-        private void ProcessList(String baseKey)
+        private void ProcessList(string baseKey)
         {
-            Object value = ReadJson(baseKey);
-            int index = 0;
+            var value = ReadJson(baseKey);
+            var index = 0;
             while (token != ARRAY_END_TOKEN)
             {
-                String key = TrimFromLast(baseKey, ".") + "[" + (index++) + "]";
+                var key = TrimFromLast(baseKey, ".") + "[" + index++ + "]";
                 DictionaryUtil.Add(map, key, value.ToString());
                 if (ReadJson(baseKey) == COMMA_TOKEN)
                 {
                     value = ReadJson(baseKey);
                 }
             }
+
             DictionaryUtil.Add(map, TrimFromLast(baseKey, ".") + ".Length", index.ToString());
         }
 
-        private void ProcessArray(String baseKey)
+        private void ProcessArray(string baseKey)
         {
-            int index = 0;
-            String preKey = baseKey.Substring(0, baseKey.LastIndexOf("."));
-            String key = preKey + "[" + index + "]";
-            Object value = ReadJson(key);
+            var index = 0;
+            var preKey = baseKey.Substring(0, baseKey.LastIndexOf("."));
+            var key = preKey + "[" + index + "]";
+            var value = ReadJson(key);
 
             while (token != ARRAY_END_TOKEN)
             {
                 DictionaryUtil.Add(map, preKey + ".Length", (index + 1).ToString());
-                if (value is String)
+                if (value is string)
                 {
                     DictionaryUtil.Add(map, key, value.ToString());
                 }
+
                 if (ReadJson(baseKey) == COMMA_TOKEN)
                 {
-                    key = preKey + "[" + (++index) + "]";
+                    key = preKey + "[" + ++index + "]";
                     value = ReadJson(key);
                 }
             }
         }
 
-        private void ProcessArrayForHideArrayItem(String baseKey)
+        private void ProcessArrayForHideArrayItem(string baseKey)
         {
-            int index = 0;
-            String preKey = baseKey;
-            String key = preKey + "[" + index + "]";
-            Object value = ReadJsonForHideArrayItem(key);
+            var index = 0;
+            var preKey = baseKey;
+            var key = preKey + "[" + index + "]";
+            var value = ReadJsonForHideArrayItem(key);
 
             while (token != ARRAY_END_TOKEN)
             {
                 DictionaryUtil.Add(map, preKey + ".Length", (index + 1).ToString());
-                if (value is String)
+                if (value is string)
                 {
                     DictionaryUtil.Add(map, key, value.ToString());
                 }
+
                 if (ReadJsonForHideArrayItem(baseKey) == COMMA_TOKEN)
                 {
-                    key = preKey + "[" + (++index) + "]";
+                    key = preKey + "[" + ++index + "]";
                     value = ReadJsonForHideArrayItem(key);
                 }
             }
         }
 
-        private Object ProcessNumber(char preChar)
+        private object ProcessNumber(char preChar)
         {
             sb.Clear();
             sb.Append(preChar);
@@ -328,12 +338,14 @@ namespace Aliyun.Acs.Core.Reader
             {
                 AddChar();
             }
+
             AddDigits();
             if ('.' == c)
             {
                 AddChar();
                 AddDigits();
             }
+
             if ('e' == c || 'E' == c)
             {
                 AddChar();
@@ -341,14 +353,16 @@ namespace Aliyun.Acs.Core.Reader
                 {
                     AddChar();
                 }
+
                 AddDigits();
             }
+
             return sb.ToString();
         }
 
         private void AddDigits()
         {
-            while (Char.IsDigit(c))
+            while (char.IsDigit(c))
             {
                 AddChar();
             }
@@ -356,7 +370,7 @@ namespace Aliyun.Acs.Core.Reader
 
         private void SkipWhiteSpace()
         {
-            while (Char.IsWhiteSpace(c))
+            while (char.IsWhiteSpace(c))
             {
                 NextChar();
             }
@@ -369,10 +383,11 @@ namespace Aliyun.Acs.Core.Reader
                 c = ct.Current;
                 return c;
             }
+
             return null;
         }
 
-        private Object ProcessString()
+        private object ProcessString()
         {
             sb.Clear();
             while (c != '"')
@@ -391,6 +406,7 @@ namespace Aliyun.Acs.Core.Reader
                     AddChar();
                 }
             }
+
             NextChar();
             return sb.ToString();
         }
@@ -406,18 +422,15 @@ namespace Aliyun.Acs.Core.Reader
             AddChar(c);
         }
 
-        public static String TrimFromLast(String str, String stripString)
+        public static string TrimFromLast(string str, string stripString)
         {
-            int pos = str.LastIndexOf(stripString);
+            var pos = str.LastIndexOf(stripString);
             if (pos > -1)
             {
                 return str.Substring(0, pos);
             }
-            else
-            {
-                return str;
-            }
-        }
 
+            return str;
+        }
     }
 }

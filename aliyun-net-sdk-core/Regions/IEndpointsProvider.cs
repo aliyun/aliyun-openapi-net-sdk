@@ -17,17 +17,17 @@
  * under the License.
  */
 
-using System;
-
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Regions.Location;
 
 namespace Aliyun.Acs.Core.Regions
 {
-    interface IEndpointsProvider
+    internal interface IEndpointsProvider
     {
-        Endpoint GetEndpoint(String region, String product);
-        Endpoint GetEndpoint(String region, String product, String serviceCode, String endpointType, Credential credential,
+        Endpoint GetEndpoint(string region, string product);
+
+        Endpoint GetEndpoint(string region, string product, string serviceCode, string endpointType,
+            Credential credential,
             LocationConfig locationConfig);
     }
 }

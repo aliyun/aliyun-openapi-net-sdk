@@ -17,24 +17,15 @@
  * under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Aliyun.Acs.Core.Auth;
-using Aliyun.Acs.Core.Exceptions;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Reader;
 using Aliyun.Acs.Core.Regions.Location;
 using Aliyun.Acs.Core.Regions.Location.Model;
-using Aliyun.Acs.Core.Transform;
 
 namespace Aliyun.Acs.Core.Regions
 {
-    interface DescribeEndpointService
+    internal interface DescribeEndpointService
     {
-        DescribeEndpointResponse DescribeEndpoint(String regionId, String serviceCode, String endpointType,
+        DescribeEndpointResponse DescribeEndpoint(string regionId, string serviceCode, string endpointType,
             Credential credential,
             LocationConfig locationConfig);
     }

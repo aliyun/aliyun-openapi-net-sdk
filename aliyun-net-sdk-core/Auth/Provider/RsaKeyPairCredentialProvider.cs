@@ -26,9 +26,9 @@ namespace Aliyun.Acs.Core.Auth.Provider
     public class RsaKeyPairCredentialProvider : AlibabaCloudCredentialsProvider
     {
         private readonly KeyPairCredentials rsaKeyPairCredential;
-        private IAcsClient stsClient;
+        private BasicSessionCredentials basicSessionCredentials;
         private long sessionDurationSeconds = 3600;
-        private BasicSessionCredentials basicSessionCredentials = null;
+        private IAcsClient stsClient;
 
         public RsaKeyPairCredentialProvider(KeyPairCredentials rsaKeyPairCredential, IClientProfile profile)
         {
@@ -42,6 +42,16 @@ namespace Aliyun.Acs.Core.Auth.Provider
             this.stsClient = stsClient;
         }
 
+        public virtual AlibabaCloudCredentials GetCredentials()
+        {
+            if (basicSessionCredentials == null || basicSessionCredentials.WillSoonExpire())
+            {
+                basicSessionCredentials = GetNewSessionCredentials();
+            }
+
+            return basicSessionCredentials;
+        }
+
         public void WithDurationSeconds(long seconds)
         {
             sessionDurationSeconds = seconds;
@@ -52,21 +62,12 @@ namespace Aliyun.Acs.Core.Auth.Provider
             stsClient = client;
         }
 
-        public virtual AlibabaCloudCredentials GetCredentials()
-        {
-            if (basicSessionCredentials == null || basicSessionCredentials.WillSoonExpire())
-            {
-                basicSessionCredentials = GetNewSessionCredentials();
-            }
-            return basicSessionCredentials;
-        }
-
         private BasicSessionCredentials GetNewSessionCredentials()
         {
             var request = new GetSessionAccessKeyRequest
             {
                 PublicKeyId = rsaKeyPairCredential.GetAccessKeyId(),
-                DurationSeconds = (int) sessionDurationSeconds,
+                DurationSeconds = (int)sessionDurationSeconds,
                 Protocol = ProtocolType.HTTPS
             };
 
@@ -75,8 +76,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
             return new BasicSessionCredentials(
                 response.SessionAccesskey.SessionAccessKeyId,
                 response.SessionAccesskey.SessionAccessKeySecert,
-                null,
-                sessionDurationSeconds
+                null, sessionDurationSeconds
             );
         }
     }

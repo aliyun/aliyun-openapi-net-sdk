@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -17,26 +17,27 @@
  * under the License.
  */
 
-using System;
 using System.Runtime.CompilerServices;
 
+using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-[assembly : InternalsVisibleTo("aliyun-net-sdk-core.Tests")]
+
+[assembly: InternalsVisibleTo("aliyun-net-sdk-core.Tests")]
+
 namespace Aliyun.Acs.Core.Auth.Sts
 {
-    class GetSessionAccessKeyRequest : RpcAcsRequest<GetSessionAccessKeyResponse>
+    internal class GetSessionAccessKeyRequest : RpcAcsRequest<GetSessionAccessKeyResponse>
     {
-        public GetSessionAccessKeyRequest() : base("Sts", "2015-04-01", "GenerateSessionAccessKey") { }
-
         private int durationSeconds = 3600;
         private string publicKeyId;
 
+        public GetSessionAccessKeyRequest() : base("Sts", "2015-04-01", "GenerateSessionAccessKey")
+        {
+        }
+
         public int DurationSeconds
         {
-            get
-            {
-                return durationSeconds;
-            }
+            get { return durationSeconds; }
             set
             {
                 durationSeconds = value;
@@ -46,10 +47,7 @@ namespace Aliyun.Acs.Core.Auth.Sts
 
         public string PublicKeyId
         {
-            get
-            {
-                return publicKeyId;
-            }
+            get { return publicKeyId; }
             set
             {
                 publicKeyId = value;
@@ -57,7 +55,7 @@ namespace Aliyun.Acs.Core.Auth.Sts
             }
         }
 
-        public override GetSessionAccessKeyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetSessionAccessKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetSessionAccessKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

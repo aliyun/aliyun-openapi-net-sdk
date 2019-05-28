@@ -32,9 +32,9 @@ namespace Aliyun.Acs.Core
 
         public override string SignString(string stringToSign, string accessKeySecret)
         {
-            using(HMACSHA1 hmac = new HMACSHA1(Encoding.UTF8.GetBytes(accessKeySecret)))
+            using (var hmac = new HMACSHA1(Encoding.UTF8.GetBytes(accessKeySecret)))
             {
-                byte[] hashValue = hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
+                var hashValue = hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign));
                 return Convert.ToBase64String(hashValue);
             }
         }

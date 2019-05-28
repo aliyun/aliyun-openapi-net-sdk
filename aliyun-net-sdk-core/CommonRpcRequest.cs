@@ -18,17 +18,18 @@
  */
 
 using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
 
 namespace Aliyun.Acs.Core
 {
-    class CommonRpcRequest : RpcAcsRequest<CommonResponse>
+    internal class CommonRpcRequest : RpcAcsRequest<CommonResponse>
     {
         public CommonRpcRequest(string product) : base(product)
         {
             AcceptFormat = FormatType.JSON;
         }
 
-        public override CommonResponse GetResponse(Transform.UnmarshallerContext unmarshallerContext)
+        public override CommonResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return null;
         }

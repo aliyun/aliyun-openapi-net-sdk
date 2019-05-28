@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 using System.Collections.Generic;
 
@@ -26,7 +27,6 @@ namespace Aliyun.Acs.Core.Transform
 {
     public class UnmarshallerContext
     {
-
         public Dictionary<string, string> ResponseDictionary { get; set; }
         public HttpResponse HttpResponse { get; set; }
 
@@ -36,6 +36,7 @@ namespace Aliyun.Acs.Core.Transform
             {
                 return int.Parse(DictionaryUtil.Get(ResponseDictionary, key));
             }
+
             return null;
         }
 
@@ -45,6 +46,7 @@ namespace Aliyun.Acs.Core.Transform
             {
                 return DictionaryUtil.Get(ResponseDictionary, key);
             }
+
             return null;
         }
 
@@ -54,6 +56,7 @@ namespace Aliyun.Acs.Core.Transform
             {
                 return long.Parse(DictionaryUtil.Get(ResponseDictionary, key));
             }
+
             return null;
         }
 
@@ -63,6 +66,7 @@ namespace Aliyun.Acs.Core.Transform
             {
                 return bool.Parse(DictionaryUtil.Get(ResponseDictionary, key));
             }
+
             return null;
         }
 
@@ -72,6 +76,7 @@ namespace Aliyun.Acs.Core.Transform
             {
                 return float.Parse(DictionaryUtil.Get(ResponseDictionary, key));
             }
+
             return null;
         }
 
@@ -81,17 +86,19 @@ namespace Aliyun.Acs.Core.Transform
             {
                 return double.Parse(DictionaryUtil.Get(ResponseDictionary, key));
             }
+
             return null;
         }
 
         public T? EnumValue<T>(string key) where T : struct
         {
-            string value = StringValue(key);
+            var value = StringValue(key);
             if (null == value)
             {
                 return null;
             }
-            return (T) Enum.Parse(typeof(T), value);
+
+            return (T)Enum.Parse(typeof(T), value);
         }
 
         public int Length(string key)
@@ -100,6 +107,7 @@ namespace Aliyun.Acs.Core.Transform
             {
                 return int.Parse(DictionaryUtil.Get(ResponseDictionary, key));
             }
+
             return 0;
         }
     }

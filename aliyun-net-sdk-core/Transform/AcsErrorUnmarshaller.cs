@@ -16,8 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Transform
 {
@@ -25,9 +23,9 @@ namespace Aliyun.Acs.Core.Transform
     {
         public static AcsError Unmarshall(UnmarshallerContext context)
         {
-            AcsError error = new AcsError();
+            var error = new AcsError();
             error.HttpResponse = context.HttpResponse;
-            Dictionary<String, String> map = context.ResponseDictionary;
+            var map = context.ResponseDictionary;
             error.RequestId = context.StringValue("Error.RequestId");
             error.ErrorCode = context.StringValue("Error.Code");
             error.ErrorMessage = context.StringValue("Error.Message");

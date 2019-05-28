@@ -24,6 +24,6 @@ namespace Aliyun.Acs.Core.Exceptions
         Client,
         Server,
         Throttling,
-        Unknown,
+        Unknown
     }
 }

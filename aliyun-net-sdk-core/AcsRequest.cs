@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -31,7 +31,18 @@ namespace Aliyun.Acs.Core
     public abstract class AcsRequest<T> : HttpRequest
     {
         private FormatType acceptFormat;
+
+
+        public string StringToSign;
         private UserAgent userAgentConfig;
+
+        public AcsRequest(string product) : base(null)
+        {
+            DictionaryUtil.Add(Headers, "x-sdk-client", "Net/2.0.0");
+            DictionaryUtil.Add(Headers, "x-sdk-invoke-type", "normal");
+            Product = product;
+        }
+
         public virtual string Product { get; set; }
         public virtual string Version { get; set; }
         public virtual string ActionName { get; set; }
@@ -41,7 +52,6 @@ namespace Aliyun.Acs.Core
         public string LocationProduct { get; set; }
         public string LocationEndpointType { get; set; }
         public ProductDomain ProductDomain { get; set; }
-        public string StringToSign;
 
         public virtual FormatType AcceptFormat
         {
@@ -52,7 +62,6 @@ namespace Aliyun.Acs.Core
                 DictionaryUtil.Add(Headers, "Accept", value.ToString());
             }
         }
-
 
         private ProtocolType protocol = ProtocolType.HTTP;
 
@@ -86,37 +95,34 @@ namespace Aliyun.Acs.Core
             set { bodyParameters = value; }
         }
 
-        public AcsRequest(string product) : base(null)
-        {
-            DictionaryUtil.Add(Headers, "x-sdk-client", "Net/2.0.0");
-            DictionaryUtil.Add(Headers, "x-sdk-invoke-type", "normal");
-            Product = product;
-        }
-
         public static string ConcatQueryString(Dictionary<string, string> parameters)
         {
             if (null == parameters)
             {
                 return null;
             }
+
             var sb = new StringBuilder();
 
             foreach (var entry in parameters)
             {
-                string key = entry.Key;
-                string val = entry.Value;
+                var key = entry.Key;
+                var val = entry.Value;
 
                 sb.Append(AcsURLEncoder.Encode(key));
                 if (val != null)
                 {
                     sb.Append("=").Append(AcsURLEncoder.Encode(val));
                 }
+
                 sb.Append("&");
             }
 
-            int strIndex = sb.Length;
+            var strIndex = sb.Length;
             if (parameters.Count > 0)
+            {
                 sb.Remove(strIndex - 1, 1);
+            }
 
             return sb.ToString();
         }
@@ -150,6 +156,7 @@ namespace Aliyun.Acs.Core
             {
                 userAgentConfig = new UserAgent();
             }
+
             userAgentConfig.AppendUserAgent(key, value);
         }
     }

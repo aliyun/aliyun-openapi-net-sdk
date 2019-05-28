@@ -19,22 +19,20 @@
 
 using System;
 using System.Collections.Concurrent;
-using System.Linq;
-using System.Text;
-
-using Aliyun.Acs.Core.Profile;
 
 namespace Aliyun.Acs.Core.Utils
 {
     public class CacheTimeHelper
     {
-        private static ConcurrentDictionary<String, DateTime> lastClearTimePerProduct = new ConcurrentDictionary<string, DateTime>();
         private const int ENDPOINT_CACHE_TIME = 3600; //Seconds
 
-        public static bool CheckCacheIsExpire(String product, String regionId)
+        private static readonly ConcurrentDictionary<string, DateTime> lastClearTimePerProduct =
+            new ConcurrentDictionary<string, DateTime>();
+
+        public static bool CheckCacheIsExpire(string product, string regionId)
         {
             DateTime lastClearTime;
-            String key = product + "_" + regionId;
+            var key = product + "_" + regionId;
 
             if (lastClearTimePerProduct.ContainsKey(key))
             {
@@ -46,7 +44,7 @@ namespace Aliyun.Acs.Core.Utils
                 lastClearTimePerProduct.TryAdd(key, lastClearTime);
             }
 
-            TimeSpan ts = DateTime.Now - lastClearTime;
+            var ts = DateTime.Now - lastClearTime;
 
             if (ENDPOINT_CACHE_TIME < ts.TotalSeconds)
             {
@@ -56,15 +54,16 @@ namespace Aliyun.Acs.Core.Utils
             return false;
         }
 
-        public static void AddLastClearTimePerProduct(String product, String regionId, DateTime lastClearTime)
+        public static void AddLastClearTimePerProduct(string product, string regionId, DateTime lastClearTime)
         {
-            String key = product + "_" + regionId;
+            var key = product + "_" + regionId;
 
             if (lastClearTimePerProduct.ContainsKey(key))
             {
                 DateTime dt;
                 lastClearTimePerProduct.TryRemove(key, out dt);
             }
+
             lastClearTimePerProduct.TryAdd(key, lastClearTime);
         }
     }

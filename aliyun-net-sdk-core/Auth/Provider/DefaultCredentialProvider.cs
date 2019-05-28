@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -17,9 +17,6 @@
  * under the License.
  */
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 
 using Aliyun.Acs.Core.Exceptions;
@@ -32,18 +29,20 @@ namespace Aliyun.Acs.Core.Auth.Provider
     {
         private static IClientProfile defaultProfile;
 
-        private string accessKeyId;
-        private string accessKeySecret;
-        private string regionId;
-        private string credentialFileLocation;
-        private string roleName;
-        private string roleArn;
-        private string publicKeyId;
-        private string privateKeyFile;
-
         private readonly AlibabaCloudCredentialsProvider alibabaCloudCredentialProvider;
 
-        public DefaultCredentialProvider() { }
+        private string accessKeyId;
+        private string accessKeySecret;
+        private string credentialFileLocation;
+        private string privateKeyFile;
+        private string publicKeyId;
+        private string regionId;
+        private string roleArn;
+        private string roleName;
+
+        public DefaultCredentialProvider()
+        {
+        }
 
         public DefaultCredentialProvider(
             IClientProfile profile,
@@ -76,13 +75,14 @@ namespace Aliyun.Acs.Core.Auth.Provider
         public AlibabaCloudCredentials GetAlibabaCloudClientCredential()
         {
             var credential = GetEnvironmentAlibabaCloudCredential() ??
-                GetCredentialFileAlibabaCloudCredential() ??
-                GetInstanceRamRoleAlibabaCloudCredential();
+                             GetCredentialFileAlibabaCloudCredential() ??
+                             GetInstanceRamRoleAlibabaCloudCredential();
 
             if (credential == null)
             {
                 throw new ClientException("There is no credential chain can use.");
             }
+
             return credential;
         }
 
@@ -95,7 +95,8 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
             if (accessKeyId.Equals("") || accessKeySecret.Equals(""))
             {
-                throw new ClientException("Environment credential variable 'ALIBABA_CLOUD_ACCESS_KEY_*' cannot be empty");
+                throw new ClientException(
+                    "Environment credential variable 'ALIBABA_CLOUD_ACCESS_KEY_*' cannot be empty");
             }
 
             return defaultProfile.DefaultClientName.Equals("default") ? GetAccessKeyCredential() : null;
@@ -118,17 +119,19 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     return null;
                 }
             }
+
             if (credentialFileLocation.Equals(""))
             {
-                throw new ClientException("Credentials file environment variable 'ALIBABA_CLOUD_CREDENTIALS_FILE' cannot be empty");
+                throw new ClientException(
+                    "Credentials file environment variable 'ALIBABA_CLOUD_CREDENTIALS_FILE' cannot be empty");
             }
 
-            IniReader iniReader = new IniReader(credentialFileLocation);
+            var iniReader = new IniReader(credentialFileLocation);
             var sectionNameList = iniReader.GetSections();
 
             if (null != defaultProfile.DefaultClientName)
             {
-                string userDefineSectionNode = defaultProfile.DefaultClientName;
+                var userDefineSectionNode = defaultProfile.DefaultClientName;
 
                 var iniKeyTypeValue = iniReader.GetValue("type", userDefineSectionNode);
 
@@ -168,12 +171,13 @@ namespace Aliyun.Acs.Core.Auth.Provider
             }
             else
             {
-                foreach (string sectionItem in sectionNameList)
+                foreach (var sectionItem in sectionNameList)
                 {
                     if (!sectionItem.Equals("default"))
                     {
                         continue;
                     }
+
                     accessKeyId = iniReader.GetValue("access_key_id", "default");
                     accessKeySecret = iniReader.GetValue("access_key_secret", "default");
                     regionId = iniReader.GetValue("region_id", "default");
@@ -181,6 +185,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     return GetAccessKeyCredential();
                 }
             }
+
             return null;
         }
 
@@ -199,7 +204,8 @@ namespace Aliyun.Acs.Core.Auth.Provider
             InstanceProfileCredentialsProvider instanceProfileCredentialProvider;
             if (null != alibabaCloudCredentialProvider)
             {
-                instanceProfileCredentialProvider = (InstanceProfileCredentialsProvider) alibabaCloudCredentialProvider;
+                instanceProfileCredentialProvider =
+                    (InstanceProfileCredentialsProvider)alibabaCloudCredentialProvider;
             }
             else
             {
@@ -211,24 +217,27 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
         public AlibabaCloudCredentials GetAccessKeyCredential()
         {
-            if (String.IsNullOrEmpty(accessKeyId) || String.IsNullOrEmpty(accessKeySecret) || String.IsNullOrEmpty(regionId))
+            if (string.IsNullOrEmpty(accessKeyId) || string.IsNullOrEmpty(accessKeySecret) ||
+                string.IsNullOrEmpty(regionId))
             {
                 throw new ClientException("Missing required variable option for 'default Client'");
             }
-            var accessKeyCredentialProvider = new AccessKeyCredentialProvider(accessKeyId, accessKeySecret);
+
+            var accessKeyCredentialProvider =
+                new AccessKeyCredentialProvider(accessKeyId, accessKeySecret);
 
             return accessKeyCredentialProvider.GetCredentials();
         }
 
         public virtual AlibabaCloudCredentials GetRamRoleArnAlibabaCloudCredential()
         {
-            if (String.IsNullOrEmpty(accessKeyId) || String.IsNullOrEmpty(accessKeySecret) || String.IsNullOrEmpty(regionId))
+            if (string.IsNullOrEmpty(accessKeyId) || string.IsNullOrEmpty(accessKeySecret) ||
+                string.IsNullOrEmpty(regionId))
             {
                 throw new ClientException("Missing required variable option for 'default Client'");
             }
-            BasicSessionCredentials credential = new BasicSessionCredentials(
-                accessKeyId,
-                accessKeySecret,
+
+            var credential = new BasicSessionCredentials(accessKeyId, accessKeySecret,
                 STSAssumeRoleSessionCredentialsProvider.GetNewRoleSessionName(),
                 3600
             );
@@ -238,21 +247,26 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
             if (null != alibabaCloudCredentialProvider)
             {
-                stsAsssumeRoleSessionCredentialProvider = (STSAssumeRoleSessionCredentialsProvider) alibabaCloudCredentialProvider;
+                stsAsssumeRoleSessionCredentialProvider =
+                    (STSAssumeRoleSessionCredentialsProvider)alibabaCloudCredentialProvider;
             }
             else
             {
-                stsAsssumeRoleSessionCredentialProvider = new STSAssumeRoleSessionCredentialsProvider(credential, roleArn, profile);
+                stsAsssumeRoleSessionCredentialProvider =
+                    new STSAssumeRoleSessionCredentialsProvider(credential, roleArn, profile);
             }
+
             return stsAsssumeRoleSessionCredentialProvider.GetCredentials();
         }
 
         public virtual AlibabaCloudCredentials GetRsaKeyPairAlibabaCloudCredential()
         {
-            if (String.IsNullOrEmpty(publicKeyId) || String.IsNullOrEmpty(privateKeyFile) || String.IsNullOrEmpty(regionId))
+            if (string.IsNullOrEmpty(publicKeyId) || string.IsNullOrEmpty(privateKeyFile) ||
+                string.IsNullOrEmpty(regionId))
             {
                 throw new ClientException("Missing required variable option for 'default Client'");
             }
+
             var rsaKeyPairCredential = new KeyPairCredentials(publicKeyId, privateKeyFile);
             var profile = DefaultProfile.GetProfile(regionId, publicKeyId, privateKeyFile);
 
@@ -260,7 +274,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
 
             if (null != alibabaCloudCredentialProvider)
             {
-                rsaKeyPairCredentialProvider = (RsaKeyPairCredentialProvider) alibabaCloudCredentialProvider;
+                rsaKeyPairCredentialProvider = (RsaKeyPairCredentialProvider)alibabaCloudCredentialProvider;
             }
             else
             {

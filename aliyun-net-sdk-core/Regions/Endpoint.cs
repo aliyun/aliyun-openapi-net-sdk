@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,24 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- 
-using System;
+
 using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Regions
 {
     public class Endpoint
     {
-        public string Name { get; private set; }
-        public ISet<string> RegionIds { get; private set; }
-        public List<ProductDomain> ProductDomains { get; private set; }
-
         public Endpoint(string name, ISet<string> regionIds, List<ProductDomain> productDomains)
         {
             Name = name;
             RegionIds = regionIds;
             ProductDomains = productDomains;
         }
+
+        public string Name { get; private set; }
+        public ISet<string> RegionIds { get; private set; }
+        public List<ProductDomain> ProductDomains { get; private set; }
 
         public static ProductDomain FindProductDomain(string regionId, string product,
             List<Endpoint> endpoints)
@@ -42,14 +41,16 @@ namespace Aliyun.Acs.Core.Regions
             {
                 return null;
             }
-            foreach (Endpoint endpoint in endpoints)
+
+            foreach (var endpoint in endpoints)
             {
                 if (endpoint.RegionIds.Contains(regionId))
                 {
-                    ProductDomain domain = FindProductDomainByProduct(endpoint.ProductDomains, product);
+                    var domain = FindProductDomainByProduct(endpoint.ProductDomains, product);
                     return domain;
                 }
             }
+
             return null;
         }
 
@@ -59,13 +60,15 @@ namespace Aliyun.Acs.Core.Regions
             {
                 return null;
             }
-            foreach (ProductDomain productDomain in productDomains)
+
+            foreach (var productDomain in productDomains)
             {
                 if (product.Equals(productDomain.ProductName))
                 {
                     return productDomain;
                 }
             }
+
             return null;
         }
     }

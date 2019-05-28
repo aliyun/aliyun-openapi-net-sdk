@@ -32,7 +32,6 @@ namespace Aliyun.Acs.Core.Auth
 
         public static Signer GetSigner(AlibabaCloudCredentials credentials)
         {
-
             if (credentials is BearerTokenCredential)
             {
                 return bearerTokenSigner;

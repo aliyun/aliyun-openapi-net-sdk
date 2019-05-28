@@ -27,7 +27,7 @@ namespace Aliyun.Acs.Core.Auth
 
         public BearerTokenCredential(string bearerToken)
         {
-            if (String.IsNullOrEmpty(bearerToken))
+            if (string.IsNullOrEmpty(bearerToken))
             {
                 throw new ArgumentNullException("BearerToken can not be null.");
             }

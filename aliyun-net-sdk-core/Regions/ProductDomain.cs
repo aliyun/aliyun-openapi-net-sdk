@@ -17,21 +17,21 @@
  * under the License.
  */
 
-using System;
-
 namespace Aliyun.Acs.Core.Regions
 {
     public class ProductDomain
     {
-        public ProductDomain() { }
-
-        public ProductDomain(String product, String domain)
+        public ProductDomain()
         {
-            this.ProductName = product;
-            this.DomianName = domain;
         }
 
-        public String ProductName { get; set; }
-        public String DomianName { get; set; }
+        public ProductDomain(string product, string domain)
+        {
+            ProductName = product;
+            DomianName = domain;
+        }
+
+        public string ProductName { get; set; }
+        public string DomianName { get; set; }
     }
 }

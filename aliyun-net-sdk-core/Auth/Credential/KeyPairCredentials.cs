@@ -23,15 +23,17 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class KeyPairCredentials : AlibabaCloudCredentials
     {
-        private string privateKeySecret;
-        private string publicKeyId;
+        private readonly string privateKeySecret;
+        private readonly string publicKeyId;
 
         public KeyPairCredentials(string publicKeyId, string privateKeySecret)
         {
-            if (String.IsNullOrEmpty(publicKeyId) || String.IsNullOrEmpty(privateKeySecret))
+            if (string.IsNullOrEmpty(publicKeyId) || string.IsNullOrEmpty(privateKeySecret))
             {
-                throw new ArgumentNullException("You must provide a valid pair of Public Key ID and Private Key Secret.");
+                throw new ArgumentNullException(
+                    "You must provide a valid pair of Public Key ID and Private Key Secret.");
             }
+
             this.publicKeyId = publicKeyId;
             this.privateKeySecret = privateKeySecret;
         }

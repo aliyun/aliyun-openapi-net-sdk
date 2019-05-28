@@ -25,13 +25,16 @@ namespace Aliyun.Acs.Core.Auth.Sts
     {
         public static GetSessionAccessKeyResponse Unmarshall(UnmarshallerContext context)
         {
-            GetSessionAccessKeyResponse getSessionAccessKeyResponse = new GetSessionAccessKeyResponse();
+            var getSessionAccessKeyResponse = new GetSessionAccessKeyResponse();
 
             getSessionAccessKeyResponse.RequestId = context.StringValue("GetSessionAccessKey.RequestId");
 
-            GetSessionAccessKeyResponse.GetSessionAccessKey_SessionAccesskey credentials = new GetSessionAccessKeyResponse.GetSessionAccessKey_SessionAccesskey();
-            credentials.SessionAccessKeyId = context.StringValue("GetSessionAccessKey.SessionAccessKey.SessionAccessKeyId");
-            credentials.SessionAccessKeySecert = context.StringValue("GetSessionAccessKey.SessionAccessKey.SessionAccessKeySecret");
+            var credentials =
+                new GetSessionAccessKeyResponse.GetSessionAccessKey_SessionAccesskey();
+            credentials.SessionAccessKeyId =
+                context.StringValue("GetSessionAccessKey.SessionAccessKey.SessionAccessKeyId");
+            credentials.SessionAccessKeySecert =
+                context.StringValue("GetSessionAccessKey.SessionAccessKey.SessionAccessKeySecret");
             credentials.Expiration = context.StringValue("GetSessionAccessKey.SessionAccessKey.Expiration");
 
             getSessionAccessKeyResponse.SessionAccesskey = credentials;

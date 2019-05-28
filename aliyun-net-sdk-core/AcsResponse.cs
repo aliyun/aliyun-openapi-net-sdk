@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using Aliyun.Acs.Core.Http;
 
 namespace Aliyun.Acs.Core

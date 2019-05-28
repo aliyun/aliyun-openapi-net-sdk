@@ -23,8 +23,8 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class StaticCredentialsProvider : AlibabaCloudCredentialsProvider
     {
-        private AlibabaCloudCredentials credentials = null;
-        private IClientProfile clientProfile = null;
+        private readonly IClientProfile clientProfile;
+        private readonly AlibabaCloudCredentials credentials;
 
         public StaticCredentialsProvider(AlibabaCloudCredentials credentials)
         {
