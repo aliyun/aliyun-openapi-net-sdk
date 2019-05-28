@@ -184,6 +184,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private string storageMethod;
 
+			private string errMessage;
+
 			public string BackupSetId
 			{
 				get
@@ -277,6 +279,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					storageMethod = value;
+				}
+			}
+
+			public string ErrMessage
+			{
+				get
+				{
+					return errMessage;
+				}
+				set	
+				{
+					errMessage = value;
 				}
 			}
 		}

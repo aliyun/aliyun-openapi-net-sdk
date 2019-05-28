@@ -210,6 +210,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private int? fullStruAfterRestoreProgress;
 
+			private string errMessage;
+
 			public string BackupPlanId
 			{
 				get
@@ -459,6 +461,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					fullStruAfterRestoreProgress = value;
+				}
+			}
+
+			public string ErrMessage
+			{
+				get
+				{
+					return errMessage;
+				}
+				set	
+				{
+					errMessage = value;
 				}
 			}
 		}

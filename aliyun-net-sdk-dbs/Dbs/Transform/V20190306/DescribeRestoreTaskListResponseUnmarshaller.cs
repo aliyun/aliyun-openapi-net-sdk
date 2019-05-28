@@ -65,6 +65,7 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 				restoreTaskDetail.FullDataRestoreProgress = context.IntegerValue("DescribeRestoreTaskList.Items["+ i +"].FullDataRestoreProgress");
 				restoreTaskDetail.ContinuousRestoreProgress = context.IntegerValue("DescribeRestoreTaskList.Items["+ i +"].ContinuousRestoreProgress");
 				restoreTaskDetail.FullStruAfterRestoreProgress = context.IntegerValue("DescribeRestoreTaskList.Items["+ i +"].FullStruAfterRestoreProgress");
+				restoreTaskDetail.ErrMessage = context.StringValue("DescribeRestoreTaskList.Items["+ i +"].ErrMessage");
 
 				describeRestoreTaskListResponse_items.Add(restoreTaskDetail);
 			}
