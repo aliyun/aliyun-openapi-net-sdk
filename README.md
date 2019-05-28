@@ -26,8 +26,9 @@ The Alibaba Cloud SDK for .NET allows you to access Alibaba Cloud services such 
 
 ## Requirements
 - The Alibaba Cloud SDK for .NET requires：
-    - **`.NET Framework 4.5`** or later
-    - **`.NET Standard 2.0`** or later
+    - **.NET Framework 4.5** and above
+    - **.NET Standard 2.0** and above
+    - **C# 4.0** and above
 
 
 ## Installation

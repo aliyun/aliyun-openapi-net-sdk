@@ -3,8 +3,9 @@
 
 # Requirements
 Make sure you have the relevant [.NET SDK][.net sdk] and [.NET RunTime][.net runtime] installed.
-- **`.NET Framework 4.5`** and above
-- **`.NET Standard 2.0`** and above
+- **.NET Framework 4.5** and above
+- **.NET Standard 2.0** and above
+- **C# 4.0** and above
 
 # Recommendations
 - Recommended use of **.NET Standard 2.0** and above target framework
