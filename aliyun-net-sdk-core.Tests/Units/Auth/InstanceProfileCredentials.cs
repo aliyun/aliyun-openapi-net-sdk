@@ -39,8 +39,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         {
             var instance = new InstanceProfileCredentials("a", "b", "c", DateTime.Now.ToString(), 100000);
             instance.SetLastFailedRefreshTime();
-
-            // DONE WITH NO EXCEPTION
         }
 
         [Fact]

@@ -62,7 +62,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
                 {"b", "B"}
             };
 
-            // 覆盖formayType不为null, GetSignertype回调为null的情况
+            // Override FormatType is not null, GetSignerType callback is null
             var hmacSHA1Signer = new HmacSHA1Signer();
             signatureComposer = RoaSignatureComposer.GetComposer();
             context = new UnmarshallerContext();
@@ -70,7 +70,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
                 signatureComposer.RefreshSignParameters(parameters, hmacSHA1Signer, "accessKeyId", formatType);
             Assert.Equal("HMAC-SHA1", context.StringValue("x-acs-signature-method"));
 
-            // 覆盖formayType为null, GetSignerType回调不为null的情况
+            // Override FormatType is not null, GetSignerType callback is not null
             var SHA256withRSASigner = new SHA256withRSASigner();
             Assert.NotNull(SHA256withRSASigner.GetSignerType());
             signatureComposer = new RpcSignatureComposer();

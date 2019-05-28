@@ -138,7 +138,6 @@ namespace Aliyun.Acs.Core.Tests.Units
             );
             request = mockRoaAcsRequest.SignRequest(signer, basicSessionCredentials, FormatType.JSON, domain);
 
-            // 覆盖不同条件的执行
             mockRoaAcsRequest.BodyParameters = null;
             signer = null;
             var mockCredential = new Mock<AlibabaCloudCredentials>();

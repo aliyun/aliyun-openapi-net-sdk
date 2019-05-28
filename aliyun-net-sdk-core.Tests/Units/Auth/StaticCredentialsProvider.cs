@@ -34,9 +34,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             var mock = new Mock<AlibabaCloudCredentials>();
 
             var credentials = mock.Object;
-            var instance = new StaticCredentialsProvider(credentials); // 无回调
-
-            // DONE WITH NO EXCEPTION
+            var instance = new StaticCredentialsProvider(credentials);
         }
 
         [Fact]

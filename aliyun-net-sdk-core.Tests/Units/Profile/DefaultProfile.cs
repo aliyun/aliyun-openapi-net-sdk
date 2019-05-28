@@ -50,7 +50,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
             var profile = DefaultProfile.GetProfile();
             profile = DefaultProfile.GetProfile();
 
-            // 添加endpoint节点
+            // Add endpoint
             DefaultProfile.AddEndpoint(endpointName, regionId, productName, productDomain, false);
             endpoints = profile.GetEndpoints(regionId, productName);
             Assert.NotNull(endpoints);
@@ -66,7 +66,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
             }
 
             DefaultProfile.ClearDefaultProfile();
-            DefaultProfile.AddEndpoint(endpointName, regionId, productName, productDomain); // 多条件覆盖
+            DefaultProfile.AddEndpoint(endpointName, regionId, productName, productDomain);
             endpoints = profile.GetEndpoints(regionId, productName);
             Assert.NotNull(endpoints);
             foreach (var endpoint in endpoints)
@@ -113,12 +113,8 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
 
             profile = DefaultProfile.GetProfile();
 
-            // 未添加endpoint前，无endpoints节点
-            // 使用已存在的阿里云的 productName (如ecs) , 不会初始化endpoints , endpoints为null
             endpoints = profile.GetEndpoints(regionId, productName);
 
-            // 使用不存在的名称 , endpoints 会初始化, 会添加进endpoints节点
-            // 但是会把regionId作为endpoint.Name
             productName = "product_name";
             endpoints = profile.GetEndpoints(regionId, productName);
             foreach (var endpoint in endpoints)
@@ -321,7 +317,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
             var iCredentialProvider = mockICredentialProvider.Object;
             profile = DefaultProfile.GetProfile(regionId, iCredentialProvider);
 
-            // 有异常抛出,说明执行了Fresh方法
             Assert.Throws<Exception>(
                 () => { profile.GetCredential(); }
             );
@@ -336,13 +331,13 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
             var mock = new Mock<AlibabaCloudCredentialsProvider>();
             var provider = mock.Object;
 
-            profile.SetCredentialsProvider(provider); // 不为null时，直接回调，即此操作无效
-            credential = profile.GetCredential(); // 会执行credential初始化
+            profile.SetCredentialsProvider(provider);
+            credential = profile.GetCredential();
             Assert.NotNull(credential);
             Assert.IsType<CredentialsBackupCompatibilityAdaptor>(credential);
 
-            profile.SetCredentialsProvider(null); // 会执行credential初始化
-            credential = profile.GetCredential(); // 不会执行credential初始化
+            profile.SetCredentialsProvider(null);
+            credential = profile.GetCredential();
             Assert.NotNull(credential);
             Assert.IsType<CredentialsBackupCompatibilityAdaptor>(credential);
         }
@@ -358,9 +353,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
 
             var profile = DefaultProfile.GetProfile();
             profile.SetLocationConfig(regionId, product, endpoint);
-            // locationConfig 为私有成员 无法获取
-
-            // Done With No Exception
         }
     }
 }

@@ -56,7 +56,9 @@ namespace Aliyun.Acs.Core.Tests.Units
         {
             var instance = new CommonRequest();
             var request = instance.BuildRequest();
-            request = instance.BuildRequest(); // all parameters is null
+
+            // all parameters is null
+            request = instance.BuildRequest();
 
             // all parameters  is not null
             instance.UriPattern = "https://www.alibabacloud.com";

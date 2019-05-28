@@ -152,7 +152,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             IClientProfile profile = DefaultProfile.GetProfile("cn-shanghai", "accessKeyId", "accessKeySecret");
             var instance = new STSAssumeRoleSessionCredentialsProvider(longLivedCredentials, roleArn, profile);
 
-            instance.WithRoleSessionName("roleSessionName"); // 方法回调 STSAssumeRoleSessionCredentialsProvider 实例
+            instance.WithRoleSessionName("roleSessionName");
 
             Assert.IsType<STSAssumeRoleSessionCredentialsProvider>(instance);
         }
@@ -169,7 +169,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
 
             var mockClient = new Mock<IAcsClient>();
             var client = mockClient.Object;
-            instance.WithSTSClient(client); // 方法回调 STSAssumeRoleSessionCredentialsProvider 实例
+            instance.WithSTSClient(client);
 
             Assert.IsType<STSAssumeRoleSessionCredentialsProvider>(instance);
         }

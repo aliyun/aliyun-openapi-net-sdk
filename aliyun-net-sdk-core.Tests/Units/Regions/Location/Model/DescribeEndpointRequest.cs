@@ -52,7 +52,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions.Location.Model
                 };
             }
 
-            // 此方法仅有一行代码，只回调了null，没有其它逻辑
             var result = instance.GetResponse(unmarshallerContext);
             Assert.Null(result);
         }

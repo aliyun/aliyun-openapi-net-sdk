@@ -98,9 +98,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             AlibabaCloudCredentialsProvider provider = instance;
             instance.withFetcher(fetcher);
 
+            // Throw exception if the date is invalid
             Assert.Throws<ClientException>(() =>
             {
-                var credentials = provider.GetCredentials(); // 进行有效期判断，已失效则抛出异常
+                var credentials = provider.GetCredentials();
             });
         }
 
@@ -139,7 +140,9 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             var instance = new InstanceProfileCredentialsProvider(roleName);
             AlibabaCloudCredentialsProvider provider = instance;
             instance.withFetcher(fetcher);
-            var credentials = provider.GetCredentials(); // 进行有效期判断，即将失效则刷新有效时间
+
+            // Throw exception if the date is invalid
+            var credentials = provider.GetCredentials();
 
             // When Fetcher throw ClientException
             mockFetcher = new Mock<ECSMetadataServiceCredentialsFetcher>
@@ -190,11 +193,11 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             AlibabaCloudCredentialsProvider provider = instance;
             instance.withFetcher(fetcher);
 
-            //  Credentials will Expired at first. No Throw Exception (15000 >= 10000)
+            // Credentials will Expired at first. No Throw Exception (15000 >= 10000)
             var credentials = provider.GetCredentials();
             Assert.Equal("MockAccessKeyId", credentials.GetAccessKeyId());
 
-            //  Credentials will Expired at Second. Throws Exception  (5000 < 10000)
+            // Credentials will Expired at Second. Throws Exception  (5000 < 10000)
             mockCredentials.Setup(foo => foo.RemainTicks()).Returns(5000);
             instanceProfileCredentials = mockCredentials.Object;
             instanceProfileCredentials.SetLastFailedRefreshTime();

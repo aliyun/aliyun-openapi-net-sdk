@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             var signerVersion = instance.GetSignerVersion();
             Assert.Equal("1.0", signerVersion);
 
-            // 此方法只回调了一个 null 值
+            // Get the null
             var signerType = instance.GetSignerType();
             Assert.Null(signerType);
         }

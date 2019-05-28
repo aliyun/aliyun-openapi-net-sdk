@@ -57,11 +57,9 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
             Assert.IsType<HttpWebRequest>(httpWebRequest);
             Assert.Equal("application/octet-stream", httpWebRequest.ContentType);
 
-            // 删除 Accept 和 Date 请求头
             request.Headers.Add("Accept", "accept");
             request.Headers.Add("Date", "Thu, 24 Jan 2019 05:16:46 GMT");
 
-            // 覆盖POST方式
             request.Method = MethodType.POST;
             httpWebRequest = HttpResponse.GetWebRequest(request);
             Assert.IsType<HttpWebRequest>(httpWebRequest);

@@ -34,7 +34,7 @@ namespace Aliyun.Acs.Core.Tests.Units
         public void CheckShowJsonItemName()
         {
             var mockAcsRequest = new MockAcsRequest();
-            // CheckShowJsonItemName 方法会回调true，且无其它逻辑
+            // CheckShowJsonItemName return true
             Assert.True(mockAcsRequest.CheckShowJsonItemName());
         }
 
@@ -52,7 +52,9 @@ namespace Aliyun.Acs.Core.Tests.Units
             // when parameters is empty
             tmpDic = new Dictionary<string, string>();
             result = MockAcsRequest.ConcatQueryString(tmpDic);
-            Assert.NotNull(result); // 非null 但是为空
+            
+            // Get the empty not null
+            Assert.NotNull(result);
             Assert.Empty(result);
 
             // When parammters is not null

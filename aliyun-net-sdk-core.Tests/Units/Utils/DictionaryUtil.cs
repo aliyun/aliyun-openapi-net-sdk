@@ -34,7 +34,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
             var dic = new Dictionary<string, string> {{"a", "b"}};
 
             DictionaryUtil.Add(dic, "c", "d");
-            DictionaryUtil.Add(dic, "c", "d"); // 覆盖“添加相同元素”的情况
+            DictionaryUtil.Add(dic, "c", "d");
             Assert.Equal("d", DictionaryUtil.Get(dic, "c"));
 
             DictionaryUtil.Add(dic, "c", "e");
@@ -53,7 +53,8 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
         {
             var dic = new Dictionary<string, string>();
 
-            DictionaryUtil.Add(dic, "key", null); //Should be return cause of null value;
+            // Should be return cause of null value
+            DictionaryUtil.Add(dic, "key", null); 
 
             Dictionary<string, int> dic2 = null;
             DictionaryUtil.Add(dic2, "key", 1);

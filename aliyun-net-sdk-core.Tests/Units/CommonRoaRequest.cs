@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             var request = new CommonRoaRequest("productName");
             var context = new UnmarshallerContext();
             var result = request.GetResponse(context);
-            Assert.Null(result); // 仅回调null，无其它逻辑
+            Assert.Null(result);
         }
     }
 }

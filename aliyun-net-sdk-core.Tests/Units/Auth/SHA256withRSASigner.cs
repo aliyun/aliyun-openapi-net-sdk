@@ -56,7 +56,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         {
             var instance = new SHA256withRSASigner();
 
-            // 结果每次都是不同的
+            // Get different result each time.
             var str = instance.SignString("foo", "secret");
             Assert.NotEmpty(str);
 

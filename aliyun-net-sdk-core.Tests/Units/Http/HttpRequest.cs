@@ -62,11 +62,11 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
 
             instance = new HttpRequest("https://www.alibabacloud.com");
             Assert.Equal("https://www.alibabacloud.com", instance.Url);
-            Assert.Empty(instance.Headers); // 会初始化为空字典，不为null
+            Assert.Empty(instance.Headers);
 
             instance = new HttpRequest("https://www.alibabacloud.com", null);
             Assert.Equal("https://www.alibabacloud.com", instance.Url);
-            Assert.Null(instance.Headers); // 不会初始化为空字典，为null
+            Assert.Null(instance.Headers);
 
             var tmpHeaders = new Dictionary<string, string>
             {
