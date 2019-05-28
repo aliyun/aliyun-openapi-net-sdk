@@ -52,7 +52,8 @@ namespace Aliyun.Acs.Core.Auth
         {
             var credentials = GetCredentials();
             var sessionCredentials = credentials as BasicSessionCredentials;
-            return sessionCredentials?.GetSessionToken();
+
+            return sessionCredentials != null ? sessionCredentials.GetSessionToken() : null;
         }
     }
 }

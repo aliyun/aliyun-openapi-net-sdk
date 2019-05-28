@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Core
 
         public RpcAcsRequest(string product, string version) : base(product)
         {
+
             Version = version;
             Initialize();
         }
@@ -125,14 +126,14 @@ namespace Aliyun.Acs.Core
                 var accessSecret = credentials.GetAccessKeySecret();
 
                 var sessionCredentials = credentials as BasicSessionCredentials;
-                var sessionToken = sessionCredentials?.GetSessionToken();
+                var sessionToken = sessionCredentials == null ? null : sessionCredentials.GetSessionToken();
                 if (sessionToken != null)
                 {
                     QueryParameters.Add("SecurityToken", sessionToken);
                 }
 
                 var credential = credentials as BearerTokenCredential;
-                var bearerToken = credential?.GetBearerToken();
+                var bearerToken = credential == null ? null : credential.GetBearerToken();
                 if (bearerToken != null)
                 {
                     QueryParameters.Add("BearerToken", bearerToken);

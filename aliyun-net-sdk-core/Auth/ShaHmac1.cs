@@ -24,13 +24,22 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class ShaHmac1 : ISigner
     {
-        public override string SignerName => "HMAC-SHA1";
+        private string signerName = "HMAC-SHA1";
+        public override string SignerName
+        {
+            get { return signerName; }
+        }
 
-        public override string SignerVersion => "1.0";
+        private string signerVersion = "1.0";
+
+        public override string SignerVersion
+        {
+            get { return signerVersion; }
+        }
 
         public override string SignString(string source, string accessSecret)
         {
-            using(KeyedHashAlgorithm algorithm = CryptoConfig.CreateFromName("HMACSHA1") as KeyedHashAlgorithm)
+            using (KeyedHashAlgorithm algorithm = CryptoConfig.CreateFromName("HMACSHA1") as KeyedHashAlgorithm)
             {
                 if (algorithm == null)
                 {
