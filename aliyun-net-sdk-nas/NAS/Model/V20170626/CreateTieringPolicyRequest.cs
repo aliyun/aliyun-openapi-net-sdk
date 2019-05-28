@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.NAS.Transform;
 using Aliyun.Acs.NAS.Transform.V20170626;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
 {
@@ -48,8 +49,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 		private long? ctime;
 
 		private long? mtime;
-
-		private bool? checkLimit;
 
 		public long? Atime
 		{
@@ -155,20 +154,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public bool? CheckLimit
-		{
-			get
-			{
-				return checkLimit;
-			}
-			set	
-			{
-				checkLimit = value;
-				DictionaryUtil.Add(QueryParameters, "CheckLimit", value.ToString());
-			}
-		}
-
-        public override CreateTieringPolicyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateTieringPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateTieringPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

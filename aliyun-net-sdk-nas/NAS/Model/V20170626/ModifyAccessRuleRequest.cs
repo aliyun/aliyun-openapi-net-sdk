@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.NAS.Transform;
 using Aliyun.Acs.NAS.Transform.V20170626;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.NAS.Model.V20170626
 {
@@ -123,7 +124,7 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-        public override ModifyAccessRuleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyAccessRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyAccessRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
