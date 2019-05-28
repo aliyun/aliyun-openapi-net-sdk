@@ -123,14 +123,14 @@ namespace Aliyun.Acs.Core
                 imutableMap = Composer.RefreshSignParameters(Headers, signer, accessKeyId, format);
 
                 var sessionCredentials = credentials as BasicSessionCredentials;
-                var sessionToken = sessionCredentials?.GetSessionToken();
+                var sessionToken = sessionCredentials == null ? null : sessionCredentials.GetSessionToken();
                 if (sessionToken != null)
                 {
                     imutableMap.Add("x-acs-security-token", sessionToken);
                 }
 
                 var credential = credentials as BearerTokenCredential;
-                var bearerToken = credential?.GetBearerToken();
+                var bearerToken = credential == null ? null : credential.GetBearerToken();
                 if (bearerToken != null)
                 {
                     QueryParameters.Add("x-acs-bearer-token", bearerToken);
@@ -146,9 +146,21 @@ namespace Aliyun.Acs.Core
             return this;
         }
 
-        public string UriPattern { get; set; } = null;
+        private string uriPattern;
 
-        public Dictionary<string, string> PathParameters { get; set; } = new Dictionary<string, string>();
+        public string UriPattern
+        {
+            get { return uriPattern; }
+            set { uriPattern = value; }
+        }
+
+        private Dictionary<string, string> pathParameters = new Dictionary<string, string>();
+
+        public Dictionary<string, string> PathParameters
+        {
+            get { return pathParameters; }
+            set { pathParameters = value; }
+        }
 
         public void AddPathParameters(string name, string value)
         {

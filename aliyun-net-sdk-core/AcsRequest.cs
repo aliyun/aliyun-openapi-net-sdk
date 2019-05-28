@@ -53,13 +53,38 @@ namespace Aliyun.Acs.Core
             }
         }
 
-        public ProtocolType Protocol { get; set; } = ProtocolType.HTTP;
 
-        public Dictionary<string, string> QueryParameters { get; set; } = new Dictionary<string, string>();
+        private ProtocolType protocol = ProtocolType.HTTP;
 
-        public Dictionary<string, string> DomainParameters { get; set; } = new Dictionary<string, string>();
+        public ProtocolType Protocol
+        {
+            get { return protocol; }
+            set { protocol = value; }
+        }
 
-        public Dictionary<string, string> BodyParameters { get; set; } = new Dictionary<string, string>();
+        private Dictionary<string, string> queryParameters = new Dictionary<string, string>();
+
+        public Dictionary<string, string> QueryParameters
+        {
+            get { return queryParameters; }
+            set { queryParameters = value; }
+        }
+
+        private Dictionary<string, string> domainParameters = new Dictionary<string, string>();
+
+        public Dictionary<string, string> DomainParameters
+        {
+            get { return domainParameters; }
+            set { domainParameters = value; }
+        }
+
+        private Dictionary<string, string> bodyParameters = new Dictionary<string, string>();
+
+        public Dictionary<string, string> BodyParameters
+        {
+            get { return bodyParameters; }
+            set { bodyParameters = value; }
+        }
 
         public AcsRequest(string product) : base(null)
         {
