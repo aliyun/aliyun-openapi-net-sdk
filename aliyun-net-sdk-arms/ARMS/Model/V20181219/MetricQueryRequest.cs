@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.ARMS.Transform;
 using Aliyun.Acs.ARMS.Transform.V20181219;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.ARMS.Model.V20181219
 {
@@ -40,8 +41,6 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 		private List<Filters> filterss;
 
 		private long? startTime;
-
-		private string accessKeyId;
 
 		private int? iintervalInSec;
 
@@ -111,19 +110,6 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -258,7 +244,7 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 			}
 		}
 
-        public override MetricQueryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override MetricQueryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return MetricQueryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

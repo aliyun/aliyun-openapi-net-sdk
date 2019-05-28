@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.ARMS.Transform;
 using Aliyun.Acs.ARMS.Transform.V20181219;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.ARMS.Model.V20181219
 {
@@ -33,56 +34,15 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
         {
         }
 
-		private string appName;
-
-		private string regionId;
-
-		private string appId;
-
 		private string source;
 
 		private string type;
 
+		private string appName;
+
+		private string appId;
+
 		private string config;
-
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string AppId
-		{
-			get
-			{
-				return appId;
-			}
-			set	
-			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
-			}
-		}
 
 		public string Source
 		{
@@ -110,6 +70,32 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 			}
 		}
 
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
+			}
+		}
+
 		public string Config
 		{
 			get
@@ -123,7 +109,7 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 			}
 		}
 
-        public override CreateAppResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateAppResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateAppResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

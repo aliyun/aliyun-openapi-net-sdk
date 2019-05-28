@@ -1,3 +1,5 @@
+### 2019-05-28 Version 2.3.2
+更新发布 v2.3.2
 ### 2019-05-22 Version 1.3.5
 * Fix net45 not support error
 

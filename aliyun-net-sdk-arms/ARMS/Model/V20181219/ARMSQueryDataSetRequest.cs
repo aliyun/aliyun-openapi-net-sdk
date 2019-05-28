@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.ARMS.Transform;
 using Aliyun.Acs.ARMS.Transform.V20181219;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.ARMS.Model.V20181219
 {
@@ -40,8 +41,6 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 		private bool? reduceTail;
 
 		private long? maxTime;
-
-		private string accessKeyId;
 
 		private List<OptionalDims> optionalDimss;
 
@@ -114,19 +113,6 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 			{
 				maxTime = value;
 				DictionaryUtil.Add(QueryParameters, "MaxTime", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -433,7 +419,7 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 			}
 		}
 
-        public override ARMSQueryDataSetResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ARMSQueryDataSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ARMSQueryDataSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

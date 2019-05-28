@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ARMS.Model.V20181219
 {
-	public class CreateAppResponse : AcsResponse
+	public class GetServicesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string data;
+		private GetServices_Data data;
 
 		public string RequestId
 		{
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 			}
 		}
 
-		public string Data
+		public GetServices_Data Data
 		{
 			get
 			{
@@ -50,6 +50,84 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public class GetServices_Data
+		{
+
+			private List<GetServices_DetailsItem> details;
+
+			private List<string> services;
+
+			public List<GetServices_DetailsItem> Details
+			{
+				get
+				{
+					return details;
+				}
+				set	
+				{
+					details = value;
+				}
+			}
+
+			public List<string> Services
+			{
+				get
+				{
+					return services;
+				}
+				set	
+				{
+					services = value;
+				}
+			}
+
+			public class GetServices_DetailsItem
+			{
+
+				private string serviceName;
+
+				private string pid;
+
+				private string regionId;
+
+				public string ServiceName
+				{
+					get
+					{
+						return serviceName;
+					}
+					set	
+					{
+						serviceName = value;
+					}
+				}
+
+				public string Pid
+				{
+					get
+					{
+						return pid;
+					}
+					set	
+					{
+						pid = value;
+					}
+				}
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
 			}
 		}
 	}

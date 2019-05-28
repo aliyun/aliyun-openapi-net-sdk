@@ -19,38 +19,39 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ARMS.Transform;
+using Aliyun.Acs.ARMS.Transform.V20181219;
 
 namespace Aliyun.Acs.ARMS.Model.V20181219
 {
-	public class MetricQueryResponse : AcsResponse
-	{
+    public class GetServicesRequest : RpcAcsRequest<GetServicesResponse>
+    {
+        public GetServicesRequest()
+            : base("ARMS", "2018-12-19", "GetServices", "arms", "openAPI")
+        {
+        }
 
-		private string data;
+		private string appType;
 
-		private string requestId;
-
-		public string Data
+		public string AppType
 		{
 			get
 			{
-				return data;
+				return appType;
 			}
 			set	
 			{
-				data = value;
+				appType = value;
+				DictionaryUtil.Add(QueryParameters, "AppType", value);
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+        public override GetServicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        {
+            return GetServicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

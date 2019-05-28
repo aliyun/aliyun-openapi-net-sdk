@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.ARMS.Transform;
 using Aliyun.Acs.ARMS.Transform.V20181219;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.ARMS.Model.V20181219
 {
@@ -33,24 +34,9 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
         {
         }
 
-		private string regionId;
-
 		private string appId;
 
 		private string type;
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
 
 		public string AppId
 		{
@@ -78,7 +64,7 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 			}
 		}
 
-        public override DeleteAppResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteAppResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteAppResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

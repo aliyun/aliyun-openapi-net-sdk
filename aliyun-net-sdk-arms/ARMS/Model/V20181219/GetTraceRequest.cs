@@ -19,38 +19,54 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ARMS.Transform;
+using Aliyun.Acs.ARMS.Transform.V20181219;
 
 namespace Aliyun.Acs.ARMS.Model.V20181219
 {
-	public class MetricQueryResponse : AcsResponse
-	{
+    public class GetTraceRequest : RpcAcsRequest<GetTraceResponse>
+    {
+        public GetTraceRequest()
+            : base("ARMS", "2018-12-19", "GetTrace", "arms", "openAPI")
+        {
+        }
 
-		private string data;
+		private string traceID;
 
-		private string requestId;
+		private string appType;
 
-		public string Data
+		public string TraceID
 		{
 			get
 			{
-				return data;
+				return traceID;
 			}
 			set	
 			{
-				data = value;
+				traceID = value;
+				DictionaryUtil.Add(QueryParameters, "TraceID", value);
 			}
 		}
 
-		public string RequestId
+		public string AppType
 		{
 			get
 			{
-				return requestId;
+				return appType;
 			}
 			set	
 			{
-				requestId = value;
+				appType = value;
+				DictionaryUtil.Add(QueryParameters, "AppType", value);
 			}
 		}
-	}
+
+        public override GetTraceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        {
+            return GetTraceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }
