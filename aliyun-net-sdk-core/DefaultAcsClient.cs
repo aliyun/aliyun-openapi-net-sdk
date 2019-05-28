@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -37,29 +38,10 @@ namespace Aliyun.Acs.Core
 {
     public class DefaultAcsClient : IAcsClient
     {
-        private int maxRetryNumber = 3;
-        private bool autoRetry = true;
-        private IClientProfile clientProfile;
-        private AlibabaCloudCredentialsProvider credentialsProvider;
+        private static readonly HttpWebProxy WebProxy = new HttpWebProxy();
+        private readonly IClientProfile clientProfile;
+        private readonly AlibabaCloudCredentialsProvider credentialsProvider;
         private readonly UserAgent userAgentConfig = new UserAgent();
-
-        [Obsolete("readTimeout is deprecated as does not match Properties rule, please use readTimeout instead.")]
-        public int readTimeout
-        {
-            get { return ReadTimeout; }
-        }
-        public int ReadTimeout { get; private set; }
-
-        [Obsolete("connectTimeout is deprecated as does not match Properties rule, please use connectTimeout instead.")]
-        public int connectTimeout
-        {
-            get { return ConnectTimeout; }
-        }
-        public int ConnectTimeout { get; private set; }
-
-        public bool IgnoreCertificate { get; private set; }
-
-        private static HttpWebProxy WebProxy = new HttpWebProxy();
 
         public DefaultAcsClient()
         {
@@ -87,40 +69,75 @@ namespace Aliyun.Acs.Core
             clientProfile.SetCredentialsProvider(this.credentialsProvider);
         }
 
+        [Obsolete("readTimeout is deprecated as does not match Properties rule, please use readTimeout instead.")]
+        public int readTimeout
+        {
+            get { return ReadTimeout; }
+        }
+
+        public int ReadTimeout { get; private set; }
+
+        [Obsolete("connectTimeout is deprecated as does not match Properties rule, please use connectTimeout instead.")]
+        public int connectTimeout
+        {
+            get { return ConnectTimeout; }
+        }
+
+        public int ConnectTimeout { get; private set; }
+
+        public bool IgnoreCertificate { get; private set; }
+
+        private int maxRetryNumber = 3;
+
+        public int MaxRetryNumber
+        {
+            get { return maxRetryNumber; }
+            set { maxRetryNumber = value; }
+        }
+
+        private bool autoRetry = true;
+
+        public bool AutoRetry
+        {
+            get { return autoRetry; }
+            set { autoRetry = value; }
+        }
+
         public T GetAcsResponse<T>(AcsRequest<T> request) where T : AcsResponse
         {
-            HttpResponse httpResponse = DoAction(request);
+            var httpResponse = DoAction(request);
             return ParseAcsResponse(request, httpResponse);
         }
 
         public T GetAcsResponse<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber) where T : AcsResponse
         {
-            HttpResponse httpResponse = DoAction(request, autoRetry, maxRetryNumber);
+            var httpResponse = DoAction(request, autoRetry, maxRetryNumber);
             return ParseAcsResponse(request, httpResponse);
         }
 
         public T GetAcsResponse<T>(AcsRequest<T> request, IClientProfile profile) where T : AcsResponse
         {
-            HttpResponse httpResponse = DoAction(request, profile);
+            var httpResponse = DoAction(request, profile);
             return ParseAcsResponse(request, httpResponse);
         }
 
-        public T GetAcsResponse<T>(AcsRequest<T> request, string regionId, Credential credential) where T : AcsResponse
+        public T GetAcsResponse<T>(AcsRequest<T> request, string regionId, Credential credential)
+            where T : AcsResponse
         {
-            HttpResponse httpResponse = DoAction(request, regionId, credential);
+            var httpResponse = DoAction(request, regionId, credential);
             return ParseAcsResponse(request, httpResponse);
         }
 
         public CommonResponse GetCommonResponse(CommonRequest request)
         {
-            HttpResponse httpResponse = DoAction(request.BuildRequest());
+            var httpResponse = DoAction(request.BuildRequest());
             string data = null;
             if (httpResponse.Content != null)
             {
                 data = Encoding.UTF8.GetString(httpResponse.Content);
             }
 
-            CommonResponse response = new CommonResponse
+            var response = new CommonResponse
             {
                 Data = data,
                 HttpResponse = httpResponse,
@@ -130,85 +147,32 @@ namespace Aliyun.Acs.Core
             return response;
         }
 
-        private T ParseAcsResponse<T>(AcsRequest<T> request, HttpResponse httpResponse) where T : AcsResponse
-        {
-            SerilogHelper.LogInfo(request, httpResponse, SerilogHelper.ExecuteTime, SerilogHelper.StartTime);
-            FormatType? format = httpResponse.ContentType;
-
-            if (httpResponse.isSuccess())
-            {
-                return ReadResponse<T>(request, httpResponse, format);
-            }
-            else
-            {
-                try
-                {
-                    AcsError error = ReadError(request, httpResponse, format);
-                    if (null != error.ErrorCode)
-                    {
-                        if (500 <= httpResponse.Status)
-                        {
-                            throw new ServerException(error.ErrorCode, error.ErrorMessage, error.RequestId);
-                        }
-
-                        if (400 == httpResponse.Status && (error.ErrorCode.Equals("SignatureDoesNotMatch") || error.ErrorCode.Equals("IncompleteSignature")))
-                        {
-                            var errorMessage = error.ErrorMessage;
-                            Regex re = new Regex(@"string to sign is:", RegexOptions.Compiled | RegexOptions.IgnoreCase);
-                            Match matches = re.Match(errorMessage);
-
-                            if (matches.Success)
-                            {
-                                var errorStringToSign = errorMessage.Substring(matches.Index + matches.Length);
-
-                                if (request.StringToSign.Equals(errorStringToSign))
-                                {
-                                    throw new ClientException("SDK.InvalidAccessKeySecret", "Specified Access Key Secret is not valid.", error.RequestId);
-                                }
-                            }
-                        }
-                        throw new ClientException(error.ErrorCode, error.ErrorMessage, error.RequestId);
-                    }
-                }
-                catch (ServerException ex)
-                {
-                    SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
-                    throw new ServerException(ex.ErrorCode, ex.ErrorMessage);
-                }
-                catch (ClientException ex)
-                {
-                    SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
-                    throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
-                }
-                T t = Activator.CreateInstance<T>();
-                t.HttpResponse = httpResponse;
-                return t;
-            }
-        }
-
         public HttpResponse DoAction<T>(AcsRequest<T> request) where T : AcsResponse
         {
-            return DoAction(request, autoRetry, maxRetryNumber, clientProfile);
+            return DoAction(request, AutoRetry, MaxRetryNumber, clientProfile);
         }
 
-        public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber) where T : AcsResponse
+        public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber)
+            where T : AcsResponse
         {
             return DoAction(request, autoRetry, maxRetryNumber, clientProfile);
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, IClientProfile profile) where T : AcsResponse
         {
-            return DoAction(request, autoRetry, maxRetryNumber, profile);
+            return DoAction(request, AutoRetry, MaxRetryNumber, profile);
         }
 
-        public HttpResponse DoAction<T>(AcsRequest<T> request, string regionId, Credential credential) where T : AcsResponse
+        public HttpResponse DoAction<T>(AcsRequest<T> request, string regionId, Credential credential)
+            where T : AcsResponse
         {
-            Signer signer = Signer.GetSigner(new LegacyCredentials(credential));
+            var signer = Signer.GetSigner(new LegacyCredentials(credential));
             FormatType? format = null;
             if (null == request.RegionId)
             {
                 request.RegionId = regionId;
             }
+
             List<Endpoint> endpoints = null;
             if (null != clientProfile)
             {
@@ -217,7 +181,10 @@ namespace Aliyun.Acs.Core
                     request.LocationProduct,
                     request.LocationEndpointType);
             }
-            return DoAction(request, autoRetry, maxRetryNumber, request.RegionId, credential, signer, format, endpoints);
+
+            return DoAction(request, AutoRetry, MaxRetryNumber, request.RegionId, credential, signer,
+                format,
+                endpoints);
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry,
@@ -227,21 +194,23 @@ namespace Aliyun.Acs.Core
             {
                 throw new ClientException("SDK.InvalidProfile", "No active profile found.");
             }
-            bool retry = autoRetry;
-            int retryNumber = maxRetryNumber;
-            string region = profile.GetRegionId();
+
+            var retry = autoRetry;
+            var retryNumber = maxRetryNumber;
+            var region = profile.GetRegionId();
             if (null == request.RegionId)
             {
                 request.RegionId = region;
             }
 
-            AlibabaCloudCredentials credentials = credentialsProvider.GetCredentials();
+            var credentials = credentialsProvider.GetCredentials();
             if (credentials == null)
             {
                 credentials = new DefaultCredentialProvider().GetAlibabaCloudClientCredential();
             }
-            Signer signer = Signer.GetSigner(credentials);
-            FormatType format = profile.GetFormat();
+
+            var signer = Signer.GetSigner(credentials);
+            var format = profile.GetFormat();
             List<Endpoint> endpoints;
 
             endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
@@ -254,22 +223,84 @@ namespace Aliyun.Acs.Core
         public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
             Credential credential, Signer signer, FormatType? format, List<Endpoint> endpoints) where T : AcsResponse
         {
-            return DoAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer, format, endpoints);
+            return DoAction(request, autoRetry, maxRetryNumber, regionId, new LegacyCredentials(credential), signer,
+                format, endpoints);
         }
 
-        public virtual HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, string regionId,
-            AlibabaCloudCredentials credentials, Signer signer, FormatType? format, List<Endpoint> endpoints) where T : AcsResponse
+        private T ParseAcsResponse<T>(AcsRequest<T> request, HttpResponse httpResponse) where T : AcsResponse
+        {
+            SerilogHelper.LogInfo(request, httpResponse, SerilogHelper.ExecuteTime, SerilogHelper.StartTime);
+            var format = httpResponse.ContentType;
+
+            if (httpResponse.isSuccess())
+            {
+                return ReadResponse(request, httpResponse, format);
+            }
+
+            try
+            {
+                var error = ReadError(request, httpResponse, format);
+                if (null != error.ErrorCode)
+                {
+                    if (500 <= httpResponse.Status)
+                    {
+                        throw new ServerException(error.ErrorCode, error.ErrorMessage, error.RequestId);
+                    }
+
+                    if (400 == httpResponse.Status && (error.ErrorCode.Equals("SignatureDoesNotMatch") ||
+                                                       error.ErrorCode.Equals("IncompleteSignature")))
+                    {
+                        var errorMessage = error.ErrorMessage;
+                        var re = new Regex(@"string to sign is:", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+                        var matches = re.Match(errorMessage);
+
+                        if (matches.Success)
+                        {
+                            var errorStringToSign = errorMessage.Substring(matches.Index + matches.Length);
+
+                            if (request.StringToSign.Equals(errorStringToSign))
+                            {
+                                throw new ClientException("SDK.InvalidAccessKeySecret",
+                                    "Specified Access Key Secret is not valid.", error.RequestId);
+                            }
+                        }
+                    }
+
+                    throw new ClientException(error.ErrorCode, error.ErrorMessage, error.RequestId);
+                }
+            }
+            catch (ServerException ex)
+            {
+                SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                throw new ServerException(ex.ErrorCode, ex.ErrorMessage);
+            }
+            catch (ClientException ex)
+            {
+                SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
+            }
+
+            var t = Activator.CreateInstance<T>();
+            t.HttpResponse = httpResponse;
+            return t;
+        }
+
+        public virtual HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber,
+            string regionId,
+            AlibabaCloudCredentials credentials, Signer signer, FormatType? format, List<Endpoint> endpoints)
+            where T : AcsResponse
         {
             try
             {
                 SerilogHelper.StartTime = DateTime.UtcNow.ToString("o");
-                var watch = System.Diagnostics.Stopwatch.StartNew();
+                var watch = Stopwatch.StartNew();
 
                 FormatType? requestFormatType = request.AcceptFormat;
                 if (null != requestFormatType)
                 {
                     format = requestFormatType;
                 }
+
                 ProductDomain domain = null;
                 if (request.ProductDomain != null)
                 {
@@ -279,24 +310,26 @@ namespace Aliyun.Acs.Core
                 {
                     domain = Endpoint.FindProductDomain(regionId, request.Product, endpoints);
                 }
+
                 if (null == domain)
                 {
                     throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
                 }
 
-                request.Headers["User-Agent"] = UserAgent.Resolve(request.GetSysUserAgentConfig(), this.userAgentConfig);
+                request.Headers["User-Agent"] =
+                    UserAgent.Resolve(request.GetSysUserAgentConfig(), userAgentConfig);
 
-                bool shouldRetry = true;
-                for (int retryTimes = 0; shouldRetry; retryTimes++)
+                var shouldRetry = true;
+                for (var retryTimes = 0; shouldRetry; retryTimes++)
                 {
                     shouldRetry = autoRetry && retryTimes < maxRetryNumber;
-                    HttpRequest httpRequest = request.SignRequest(signer, credentials, format, domain);
+                    var httpRequest = request.SignRequest(signer, credentials, format, domain);
 
                     ResolveTimeout(httpRequest);
                     SetHttpsInsecure(IgnoreCertificate);
                     ResolveProxy(httpRequest, request);
 
-                    HttpResponse response = GetResponse(httpRequest);
+                    var response = GetResponse(httpRequest);
 
                     PrintHttpDebugMsg(request, response);
 
@@ -314,6 +347,7 @@ namespace Aliyun.Acs.Core
                     {
                         continue;
                     }
+
                     watch.Stop();
                     SerilogHelper.ExecuteTime = watch.ElapsedMilliseconds;
                     return response;
@@ -347,15 +381,17 @@ namespace Aliyun.Acs.Core
                     );
                     DictionaryUtil.Print(response.Headers, '<');
                 }
+
                 Environment.SetEnvironmentVariable("DEBUG", null);
             }
         }
 
-        private T ReadResponse<T>(AcsRequest<T> request, HttpResponse httpResponse, FormatType? format) where T : AcsResponse
+        private T ReadResponse<T>(AcsRequest<T> request, HttpResponse httpResponse, FormatType? format)
+            where T : AcsResponse
         {
-            IReader reader = ReaderFactory.CreateInstance(format);
-            UnmarshallerContext context = new UnmarshallerContext();
-            string body = Encoding.UTF8.GetString(httpResponse.Content);
+            var reader = ReaderFactory.CreateInstance(format);
+            var context = new UnmarshallerContext();
+            var body = Encoding.UTF8.GetString(httpResponse.Content);
 
             if (request.CheckShowJsonItemName())
             {
@@ -370,12 +406,13 @@ namespace Aliyun.Acs.Core
             return request.GetResponse(context);
         }
 
-        private AcsError ReadError<T>(AcsRequest<T> request, HttpResponse httpResponse, FormatType? format) where T : AcsResponse
+        private AcsError ReadError<T>(AcsRequest<T> request, HttpResponse httpResponse, FormatType? format)
+            where T : AcsResponse
         {
-            string responseEndpoint = "Error";
-            IReader reader = ReaderFactory.CreateInstance(format);
-            UnmarshallerContext context = new UnmarshallerContext();
-            string body = Encoding.Default.GetString(httpResponse.Content);
+            var responseEndpoint = "Error";
+            var reader = ReaderFactory.CreateInstance(format);
+            var context = new UnmarshallerContext();
+            var body = Encoding.Default.GetString(httpResponse.Content);
             if (null == reader)
             {
                 context.ResponseDictionary = new Dictionary<string, string>();
@@ -384,19 +421,8 @@ namespace Aliyun.Acs.Core
             {
                 context.ResponseDictionary = reader.Read(body, responseEndpoint);
             }
+
             return AcsErrorUnmarshaller.Unmarshall(context);
-        }
-
-        public int MaxRetryNumber
-        {
-            get { return maxRetryNumber; }
-            set { maxRetryNumber = value; }
-        }
-
-        public bool AutoRetry
-        {
-            get { return autoRetry; }
-            set { autoRetry = value; }
         }
 
         public virtual HttpResponse GetResponse(HttpRequest httpRequest)
@@ -416,20 +442,22 @@ namespace Aliyun.Acs.Core
 
         public void SetConnectTimeoutInMilliSeconds(int connectTimeout)
         {
-            this.ConnectTimeout = connectTimeout;
+            ConnectTimeout = connectTimeout;
         }
 
         public void SetReadTimeoutInMilliSeconds(int readTimeout)
         {
-            this.ReadTimeout = readTimeout;
+            ReadTimeout = readTimeout;
         }
 
         private void ResolveTimeout(HttpRequest request)
         {
-            var finalReadTimeout = request.ReadTimeout > 0 ? request.ReadTimeout : ReadTimeout > 0 ? ReadTimeout : 0;
+            var finalReadTimeout = request.ReadTimeout > 0 ? request.ReadTimeout :
+                ReadTimeout > 0 ? ReadTimeout : 0;
             request.SetReadTimeoutInMilliSeconds(finalReadTimeout);
 
-            var finalConnectTimeout = request.ConnectTimeout > 0 ? request.ConnectTimeout : ConnectTimeout > 0 ? ConnectTimeout : 0;
+            var finalConnectTimeout = request.ConnectTimeout > 0 ? request.ConnectTimeout :
+                ConnectTimeout > 0 ? ConnectTimeout : 0;
             request.SetConnectTimeoutInMilliSeconds(finalConnectTimeout);
         }
 
@@ -439,7 +467,7 @@ namespace Aliyun.Acs.Core
         }
 
         /// <summary>
-        /// Set Http Proxy
+        ///     Set Http Proxy
         /// </summary>
         /// <param name="httpProxy"></param>
         public void SetHttpProxy(string httpProxy)
@@ -448,7 +476,7 @@ namespace Aliyun.Acs.Core
         }
 
         /// <summary>
-        /// Set Https Proxy
+        ///     Set Https Proxy
         /// </summary>
         /// <param name="httpsProxy"></param>
         public void SetHttpsProxy(string httpsProxy)
@@ -457,7 +485,7 @@ namespace Aliyun.Acs.Core
         }
 
         /// <summary>
-        /// Set Proxy White List
+        ///     Set Proxy White List
         /// </summary>
         /// <param name="urls"></param>
         public void SetNoProxy(string urls)
@@ -466,37 +494,40 @@ namespace Aliyun.Acs.Core
         }
 
         /// <summary>
-        /// Get Http Proxy
+        ///     Get Http Proxy
         /// </summary>
         /// <returns></returns>
         public string GetHttpProxy()
         {
-            return WebProxy.HttpProxy ?? Environment.GetEnvironmentVariable("HTTP_PROXY") ?? Environment.GetEnvironmentVariable("http_proxy");
+            return WebProxy.HttpProxy ?? Environment.GetEnvironmentVariable("HTTP_PROXY") ??
+                   Environment.GetEnvironmentVariable("http_proxy");
         }
 
         /// <summary>
-        /// Get Https Proxy
+        ///     Get Https Proxy
         /// </summary>
         /// <returns></returns>
         public string GetHttpsProxy()
         {
-            return WebProxy.HttpsProxy ?? Environment.GetEnvironmentVariable("HTTPS_PROXY") ?? Environment.GetEnvironmentVariable("https_proxy");
+            return WebProxy.HttpsProxy ?? Environment.GetEnvironmentVariable("HTTPS_PROXY") ??
+                   Environment.GetEnvironmentVariable("https_proxy");
         }
 
         /// <summary>
-        /// Get Proxy White List
+        ///     Get Proxy White List
         /// </summary>
         /// <returns></returns>
         public string GetNoProxy()
         {
-            return WebProxy.NoProxy ?? Environment.GetEnvironmentVariable("NO_PROXY") ?? Environment.GetEnvironmentVariable("no_proxy");
+            return WebProxy.NoProxy ?? Environment.GetEnvironmentVariable("NO_PROXY") ??
+                   Environment.GetEnvironmentVariable("no_proxy");
         }
 
         private void ResolveProxy<T>(HttpRequest httpRequest, AcsRequest<T> request) where T : AcsResponse
         {
             string authorization;
             string proxy;
-            string[] noProxy = GetNoProxy() == null ? null : GetNoProxy().Split(',');
+            var noProxy = GetNoProxy() == null ? null : GetNoProxy().Split(',');
 
             if (request.Protocol == ProtocolType.HTTP)
             {
@@ -507,13 +538,14 @@ namespace Aliyun.Acs.Core
                 proxy = GetHttpsProxy();
             }
 
-            if (!String.IsNullOrEmpty(proxy))
+            if (!string.IsNullOrEmpty(proxy))
             {
                 var originProxyUri = new Uri(proxy);
                 Uri finalProxyUri;
-                if (!String.IsNullOrEmpty(originProxyUri.UserInfo))
+                if (!string.IsNullOrEmpty(originProxyUri.UserInfo))
                 {
-                    authorization = Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(originProxyUri.UserInfo));
+                    authorization =
+                        Convert.ToBase64String(Encoding.GetEncoding("ISO-8859-1").GetBytes(originProxyUri.UserInfo));
                     finalProxyUri = new Uri(originProxyUri.Scheme + "://" + originProxyUri.Authority);
                     var userInfoArray = originProxyUri.UserInfo.Split(':');
                     ICredentials credential = new NetworkCredential(userInfoArray[0], userInfoArray[1]);
@@ -524,6 +556,7 @@ namespace Aliyun.Acs.Core
                     {
                         httpRequest.Headers.Remove("Authorization");
                     }
+
                     httpRequest.Headers.Add("Authorization", "Basic " + authorization);
                 }
                 else

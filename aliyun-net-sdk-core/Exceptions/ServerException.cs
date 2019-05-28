@@ -16,22 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 
 namespace Aliyun.Acs.Core.Exceptions
 {
     public class ServerException : ClientException
     {
-
-        public ServerException(String errorCode, String errorMessage, string requestId) : this(errorCode, errorMessage)
+        public ServerException(string errorCode, string errorMessage, string requestId) :
+            this(errorCode, errorMessage)
         {
             RequestId = requestId;
         }
 
-        public ServerException(String errorCode, string errorMessage) : base(errorCode, errorMessage)
+        public ServerException(string errorCode, string errorMessage) : base(errorCode, errorMessage)
         {
             ErrorType = ErrorType.Server;
         }
-
     }
 }

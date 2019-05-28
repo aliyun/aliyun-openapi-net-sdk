@@ -17,21 +17,19 @@
  * under the License.
  */
 
-using System;
-
 namespace Aliyun.Acs.Core.Auth.Sts
 {
     public class GetSessionAccessKeyResponse : AcsResponse
     {
+        public GetSessionAccessKey_SessionAccesskey SessionAccesskey { get; set; }
+
         public class GetSessionAccessKey_SessionAccesskey
         {
-            public String SessionAccessKeyId { get; set; }
+            public string SessionAccessKeyId { get; set; }
 
-            public String SessionAccessKeySecert { get; set; }
+            public string SessionAccessKeySecert { get; set; }
 
-            public String Expiration { get; set; }
+            public string Expiration { get; set; }
         }
-
-        public GetSessionAccessKey_SessionAccesskey SessionAccesskey { get; set; }
     }
 }

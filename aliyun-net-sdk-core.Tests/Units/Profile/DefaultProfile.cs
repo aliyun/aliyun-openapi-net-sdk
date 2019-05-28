@@ -1,3 +1,22 @@
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 using System;
 using System.Collections.Generic;
 
@@ -11,41 +30,57 @@ using Moq;
 
 using Xunit;
 
-[assembly : CollectionBehavior(DisableTestParallelization = true)]
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
+
 namespace Aliyun.Acs.Core.Tests.Units.Profile
 {
     public class DefaultProfileTest
     {
         [Fact]
-        public void GetProfile()
+        public void AddEndpoint()
         {
             DefaultProfile.ClearDefaultProfile();
 
-            DefaultProfile profile = DefaultProfile.GetProfile();
-            Assert.IsType<DefaultProfile>(profile);
+            var endpointName = "AddEndpoint.someString";
+            var regionId = "AddEndpoint.someString";
+            var productName = "product_name";
+            var productDomain = "product_domain";
+            List<Endpoint> endpoints;
+            List<ProductDomain> products;
+            var profile = DefaultProfile.GetProfile();
+            profile = DefaultProfile.GetProfile();
 
-            string regionId = "cn-hangzhou";
-            profile = DefaultProfile.GetProfile(regionId);
-            Assert.Equal(regionId, profile.GetRegionId());
-
-            string accessKeyId = "accessKeyId";
-            string accessKeysecret = "accessKeysecret";
-            profile = DefaultProfile.GetProfile(regionId, accessKeyId, accessKeysecret);
-            Assert.Equal(accessKeyId, profile.GetCredential().AccessKeyId);
-
-            var mockICredentialProvider = new Mock<ICredentialProvider>();
-            Exception exception = new Exception();
-            mockICredentialProvider.Setup(foo => foo.Fresh()).Throws(exception);
-            ICredentialProvider iCredentialProvider = mockICredentialProvider.Object;
-            profile = DefaultProfile.GetProfile(regionId, iCredentialProvider);
-
-            // 有异常抛出,说明执行了Fresh方法
-            Assert.Throws<Exception>(
-                () =>
+            // Add endpoint
+            DefaultProfile.AddEndpoint(endpointName, regionId, productName, productDomain, false);
+            endpoints = profile.GetEndpoints(regionId, productName);
+            Assert.NotNull(endpoints);
+            foreach (var endpoint in endpoints)
+            {
+                Assert.Equal(endpointName, endpoint.Name);
+                products = endpoint.ProductDomains;
+                foreach (var product in products)
                 {
-                    profile.GetCredential();
+                    Assert.Equal(productName, product.ProductName);
+                    Assert.Equal(productDomain, product.DomianName);
                 }
-            );
+            }
+
+            DefaultProfile.ClearDefaultProfile();
+            DefaultProfile.AddEndpoint(endpointName, regionId, productName, productDomain);
+            endpoints = profile.GetEndpoints(regionId, productName);
+            Assert.NotNull(endpoints);
+            foreach (var endpoint in endpoints)
+            {
+                Assert.Equal(endpointName, endpoint.Name);
+                products = endpoint.ProductDomains;
+                foreach (var product in products)
+                {
+                    Assert.Equal(productName, product.ProductName);
+                    Assert.Equal(productDomain, product.DomianName);
+                }
+            }
+
+            DefaultProfile.AddEndpoint(endpointName, regionId, productName, productDomain, true);
         }
 
         [Fact]
@@ -53,10 +88,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
         {
             DefaultProfile.ClearDefaultProfile();
 
-            string regionId = "cn-hangzhou";
-            string accessKeyId = "accessKeyId";
-            string accessKeysecret = "accessKeysecret";
-            DefaultProfile profile = DefaultProfile.GetProfile(regionId, accessKeyId, accessKeysecret);
+            var regionId = "cn-hangzhou";
+            var accessKeyId = "accessKeyId";
+            var accessKeysecret = "accessKeysecret";
+            var profile = DefaultProfile.GetProfile(regionId, accessKeyId, accessKeysecret);
 
             Assert.Equal(regionId, profile.GetRegionId());
             Assert.Equal(FormatType.XML, profile.GetFormat());
@@ -65,48 +100,28 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
         }
 
         [Fact]
-        public void SetLocationConfig()
-        {
-            DefaultProfile.ClearDefaultProfile();
-
-            string regionId = "cn-hangzhou-1";
-            string product = "ecs";
-            string endpoint = "cn-hangzhou";
-
-            DefaultProfile profile = DefaultProfile.GetProfile();
-            profile.SetLocationConfig(regionId, product, endpoint);
-            // locationConfig 为私有成员 无法获取
-
-            // Done With No Exception
-        }
-
-        [Fact]
         public void GetEndpoints1()
         {
             DefaultProfile.ClearDefaultProfile();
 
-            string regionId = "GetEndpoints.someString";
-            string productName = "ecs";
-            string productDomain = "product_domain";
+            var regionId = "GetEndpoints.someString";
+            var productName = "ecs";
+            var productDomain = "product_domain";
             List<Endpoint> endpoints;
             List<ProductDomain> products;
-            DefaultProfile profile = DefaultProfile.GetProfile();
+            var profile = DefaultProfile.GetProfile();
 
             profile = DefaultProfile.GetProfile();
 
-            // 未添加endpoint前，无endpoints节点
-            // 使用已存在的阿里云的 productName (如ecs) , 不会初始化endpoints , endpoints为null
             endpoints = profile.GetEndpoints(regionId, productName);
 
-            // 使用不存在的名称 , endpoints 会初始化, 会添加进endpoints节点
-            // 但是会把regionId作为endpoint.Name
             productName = "product_name";
             endpoints = profile.GetEndpoints(regionId, productName);
-            foreach (Endpoint endpoint in endpoints)
+            foreach (var endpoint in endpoints)
             {
                 Assert.Equal(regionId, endpoint.Name);
                 products = endpoint.ProductDomains;
-                foreach (ProductDomain product in products)
+                foreach (var product in products)
                 {
                     Assert.Equal(productName, product.ProductName);
                     Assert.Equal(productDomain, product.DomianName);
@@ -121,11 +136,11 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
 
             // When product = null
 
-            DefaultProfile profile = DefaultProfile.GetProfile();
+            var profile = DefaultProfile.GetProfile();
 
-            List<Endpoint> endpoints1 = profile.GetEndpoints(null, null);
+            var endpoints1 = profile.GetEndpoints(null, null);
 
-            List<Endpoint> endpoints2 = profile.GetEndpoints(null, null, null, null);
+            var endpoints2 = profile.GetEndpoints(null, null, null, null);
 
             Assert.Equal(endpoints1, endpoints2);
         }
@@ -136,16 +151,16 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
             DefaultProfile.ClearDefaultProfile();
 
             // Mock RegionIds
-            ISet<String> regionIds = new HashSet<String>();
+            ISet<string> regionIds = new HashSet<string>();
             regionIds.Add("cn-hangzhou");
 
             // Mock productDomains
-            List<ProductDomain> productDomains = new List<ProductDomain>() { };
-            ProductDomain productDomain = new ProductDomain("Ess", "ess.aliyuncs.com");
+            var productDomains = new List<ProductDomain>();
+            var productDomain = new ProductDomain("Ess", "ess.aliyuncs.com");
             productDomains.Add(productDomain);
 
             // Mock endpoint
-            Endpoint endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
+            var endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
 
             var mock = new Mock<DefaultProfile>(true);
             mock.Setup(foo => foo.GetEndpointByIEndpoints(
@@ -159,7 +174,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
                 It.IsAny<string>()
             )).Returns(endpoint);
 
-            DefaultProfile profile = mock.Object;
+            var profile = mock.Object;
             profile.GetEndpoints("product", "regionId", "serviceCode", "endpointType");
         }
 
@@ -169,16 +184,16 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
             DefaultProfile.ClearDefaultProfile();
 
             // Mock RegionIds	
-            ISet<String> regionIds = new HashSet<String>();
+            ISet<string> regionIds = new HashSet<string>();
             regionIds.Add("cn-hangzhou");
 
             // Mock productDomains	
-            List<ProductDomain> productDomains = new List<ProductDomain>() { };
-            ProductDomain productDomain = new ProductDomain("Ess", "ess.aliyuncs.com");
+            var productDomains = new List<ProductDomain>();
+            var productDomain = new ProductDomain("Ess", "ess.aliyuncs.com");
             productDomains.Add(productDomain);
 
             // Mock endpoint	
-            Endpoint endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
+            var endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
 
             var mock = new Mock<DefaultProfile>(true);
             mock.Setup(foo => foo.GetEndpointByIEndpoints(
@@ -192,8 +207,8 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
                 It.IsAny<string>()
             )).Returns(endpoint);
 
-            DefaultProfile profile = mock.Object;
-            List<Endpoint> endpoints = profile.GetEndpoints("cn-hangzhou", "Ess");
+            var profile = mock.Object;
+            var endpoints = profile.GetEndpoints("cn-hangzhou", "Ess");
 
             profile.GetEndpoints("productNotExist", "regionId", "serviceCode", "endpointType");
         }
@@ -217,14 +232,11 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
                 It.IsAny<string>()
             )).Returns(endpoint);
 
-            DefaultProfile profile = mock.Object;
-            List<Endpoint> endpoints = profile.GetEndpoints("cn-hangzhou", "Ess");
+            var profile = mock.Object;
+            var endpoints = profile.GetEndpoints("cn-hangzhou", "Ess");
 
             Assert.Throws<ClientException>(
-                () =>
-                {
-                    profile.GetEndpoints("productNotExist", "regionId", "serviceCode", "endpointType");
-                }
+                () => { profile.GetEndpoints("productNotExist", "regionId", "serviceCode", "endpointType"); }
             );
         }
 
@@ -234,16 +246,16 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
             DefaultProfile.ClearDefaultProfile();
 
             // Mock RegionIds	
-            ISet<String> regionIds = new HashSet<String>();
+            ISet<string> regionIds = new HashSet<string>();
             regionIds.Add("cn-hangzhou");
 
             // Mock productDomains	
-            List<ProductDomain> productDomains = new List<ProductDomain>() { };
-            ProductDomain productDomain = new ProductDomain("Ess", "ess.aliyuncs.com");
+            var productDomains = new List<ProductDomain>();
+            var productDomain = new ProductDomain("Ess", "ess.aliyuncs.com");
             productDomains.Add(productDomain);
 
             // Mock endpoint	
-            Endpoint endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
+            var endpoint = new Endpoint("cn-hangzhou", regionIds, productDomains);
 
             var mock1 = new Mock<DefaultProfile>(true);
             mock1.Setup(foo => foo.GetEndpointByIEndpoints(
@@ -257,9 +269,9 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
                 It.IsAny<string>()
             )).Returns(endpoint);
 
-            DefaultProfile profile = mock1.Object;
+            var profile = mock1.Object;
             // When Get endpoint is not null
-            List<Endpoint> endpoints1 = profile.GetEndpoints("cn-hangzhou", "Ess");
+            var endpoints1 = profile.GetEndpoints("cn-hangzhou", "Ess");
             Assert.NotNull(endpoints1);
 
             // When Get endpoint is null
@@ -277,55 +289,37 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
 
             profile = mock1.Object;
 
-            List<Endpoint> endpoints2 = profile.GetEndpoints("productNotExist", "regionId", "serviceCode", "endpointType");
+            var endpoints2 = profile.GetEndpoints("productNotExist", "regionId", "serviceCode", "endpointType");
 
             Assert.Equal(endpoints1, endpoints2);
         }
 
         [Fact]
-        public void AddEndpoint()
+        public void GetProfile()
         {
             DefaultProfile.ClearDefaultProfile();
 
-            string endpointName = "AddEndpoint.someString";
-            string regionId = "AddEndpoint.someString";
-            string productName = "product_name";
-            string productDomain = "product_domain";
-            List<Endpoint> endpoints;
-            List<ProductDomain> products;
-            DefaultProfile profile = DefaultProfile.GetProfile();
-            profile = DefaultProfile.GetProfile();
+            var profile = DefaultProfile.GetProfile();
+            Assert.IsType<DefaultProfile>(profile);
 
-            // 添加endpoint节点
-            DefaultProfile.AddEndpoint(endpointName, regionId, productName, productDomain, false);
-            endpoints = profile.GetEndpoints(regionId, productName);
-            Assert.NotNull(endpoints);
-            foreach (Endpoint endpoint in endpoints)
-            {
-                Assert.Equal(endpointName, endpoint.Name);
-                products = endpoint.ProductDomains;
-                foreach (ProductDomain product in products)
-                {
-                    Assert.Equal(productName, product.ProductName);
-                    Assert.Equal(productDomain, product.DomianName);
-                }
-            }
+            var regionId = "cn-hangzhou";
+            profile = DefaultProfile.GetProfile(regionId);
+            Assert.Equal(regionId, profile.GetRegionId());
 
-            DefaultProfile.ClearDefaultProfile();
-            DefaultProfile.AddEndpoint(endpointName, regionId, productName, productDomain); // 多条件覆盖
-            endpoints = profile.GetEndpoints(regionId, productName);
-            Assert.NotNull(endpoints);
-            foreach (Endpoint endpoint in endpoints)
-            {
-                Assert.Equal(endpointName, endpoint.Name);
-                products = endpoint.ProductDomains;
-                foreach (ProductDomain product in products)
-                {
-                    Assert.Equal(productName, product.ProductName);
-                    Assert.Equal(productDomain, product.DomianName);
-                }
-            }
-            DefaultProfile.AddEndpoint(endpointName, regionId, productName, productDomain, true);
+            var accessKeyId = "accessKeyId";
+            var accessKeysecret = "accessKeysecret";
+            profile = DefaultProfile.GetProfile(regionId, accessKeyId, accessKeysecret);
+            Assert.Equal(accessKeyId, profile.GetCredential().AccessKeyId);
+
+            var mockICredentialProvider = new Mock<ICredentialProvider>();
+            var exception = new Exception();
+            mockICredentialProvider.Setup(foo => foo.Fresh()).Throws(exception);
+            var iCredentialProvider = mockICredentialProvider.Object;
+            profile = DefaultProfile.GetProfile(regionId, iCredentialProvider);
+
+            Assert.Throws<Exception>(
+                () => { profile.GetCredential(); }
+            );
         }
 
         [Fact]
@@ -333,19 +327,32 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
         {
             DefaultProfile.ClearDefaultProfile();
             Credential credential;
-            DefaultProfile profile = DefaultProfile.GetProfile();
+            var profile = DefaultProfile.GetProfile();
             var mock = new Mock<AlibabaCloudCredentialsProvider>();
-            AlibabaCloudCredentialsProvider provider = mock.Object;
+            var provider = mock.Object;
 
-            profile.SetCredentialsProvider(provider); // 不为null时，直接回调，即此操作无效
-            credential = profile.GetCredential(); // 会执行credential初始化
+            profile.SetCredentialsProvider(provider);
+            credential = profile.GetCredential();
             Assert.NotNull(credential);
             Assert.IsType<CredentialsBackupCompatibilityAdaptor>(credential);
 
-            profile.SetCredentialsProvider(null); // 会执行credential初始化
-            credential = profile.GetCredential(); // 不会执行credential初始化
+            profile.SetCredentialsProvider(null);
+            credential = profile.GetCredential();
             Assert.NotNull(credential);
             Assert.IsType<CredentialsBackupCompatibilityAdaptor>(credential);
+        }
+
+        [Fact]
+        public void SetLocationConfig()
+        {
+            DefaultProfile.ClearDefaultProfile();
+
+            var regionId = "cn-hangzhou-1";
+            var product = "ecs";
+            var endpoint = "cn-hangzhou";
+
+            var profile = DefaultProfile.GetProfile();
+            profile.SetLocationConfig(regionId, product, endpoint);
         }
     }
 }

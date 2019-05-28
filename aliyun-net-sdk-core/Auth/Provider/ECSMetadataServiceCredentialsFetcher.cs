@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -33,21 +33,30 @@ namespace Aliyun.Acs.Core.Auth
     {
         private const string URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
         private const int DEFAULT_TIMEOUT_IN_MILLISECONDS = 5000;
-        private string credentialUrl;
-        private string roleName;
-        private string metadataServiceHost = "100.100.100.200";
+
+        private const string ECS_METADAT_FETCH_ERROR_MSG =
+            "Failed to get RAM session credentials from ECS metadata service.";
+
+        // stands for 3600 s
+        private const int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600; 
         private int connectionTimeoutInMilliseconds;
-        private const string ECS_METADAT_FETCH_ERROR_MSG = "Failed to get RAM session credentials from ECS metadata service.";
-        private const int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600; // stands for 3600 s
+        private string credentialUrl;
+        private string metadataServiceHost = "100.100.100.200";
+        private string roleName;
 
         public ECSMetadataServiceCredentialsFetcher()
         {
             connectionTimeoutInMilliseconds = DEFAULT_TIMEOUT_IN_MILLISECONDS;
         }
 
+        public AlibabaCloudCredentials GetCredentials()
+        {
+            return Fetch();
+        }
+
         public void SetRoleName(string roleName)
         {
-            if (String.IsNullOrEmpty(roleName))
+            if (string.IsNullOrEmpty(roleName))
             {
                 throw new ArgumentNullException("You must specifiy a valid role name.");
             }
@@ -79,7 +88,7 @@ namespace Aliyun.Acs.Core.Auth
 
         public string GetMetadata()
         {
-            HttpRequest request = new HttpRequest(credentialUrl);
+            var request = new HttpRequest(credentialUrl);
             request.Method = MethodType.GET;
             request.SetConnectTimeoutInMilliSeconds(connectionTimeoutInMilliseconds);
 
@@ -90,7 +99,7 @@ namespace Aliyun.Acs.Core.Auth
             }
             catch (WebException e)
             {
-                throw new ClientException("Failed to connect ECS Metadata Service: " + e.ToString());
+                throw new ClientException("Failed to connect ECS Metadata Service: " + e);
             }
 
             if (response.Status != 200)
@@ -106,14 +115,14 @@ namespace Aliyun.Acs.Core.Auth
             Dictionary<string, string> dic;
             try
             {
-                string jsonContent = GetMetadata();
+                var jsonContent = GetMetadata();
 
                 IReader reader = new JsonReader();
                 dic = reader.Read(jsonContent, "");
             }
             catch (Exception e)
             {
-                throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG + " Reason: " + e.ToString());
+                throw new ClientException(ECS_METADAT_FETCH_ERROR_MSG + " Reason: " + e);
             }
 
             if (
@@ -143,7 +152,7 @@ namespace Aliyun.Acs.Core.Auth
 
         public InstanceProfileCredentials Fetch(int retryTimes)
         {
-            for (int i = 0; i <= retryTimes; i++)
+            for (var i = 0; i <= retryTimes; i++)
             {
                 try
                 {
@@ -157,17 +166,13 @@ namespace Aliyun.Acs.Core.Auth
                     }
                 }
             }
+
             throw new ClientException("Failed to connect ECS Metadata Service: Max retry times exceeded.");
         }
 
         public virtual HttpResponse GetResponse(HttpRequest request)
         {
             return HttpResponse.GetResponse(request);
-        }
-
-        public AlibabaCloudCredentials GetCredentials()
-        {
-            return Fetch();
         }
     }
 }

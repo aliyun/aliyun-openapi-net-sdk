@@ -19,18 +19,47 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Regions.Location;
-using Aliyun.Acs.Core.Regions.Location.Model;
 
 namespace Aliyun.Acs.Core.Regions
 {
-    class RemoteEndpointsParser : IEndpointsProvider
+    internal class RemoteEndpointsParser : IEndpointsProvider
     {
         private DescribeEndpointService describeEndpointService;
+
+        public Endpoint GetEndpoint(string regionId, string product)
+        {
+            throw new NotSupportedException();
+        }
+
+        public Endpoint GetEndpoint(string regionId, string product, string serviceCode, string endpointType,
+            Credential credential, LocationConfig locationConfig)
+        {
+            if (serviceCode == null)
+            {
+                return null;
+            }
+
+            Endpoint endpoint = null;
+
+            var response = describeEndpointService.DescribeEndpoint(regionId, serviceCode,
+                endpointType, credential, locationConfig);
+            if (response == null)
+            {
+                return endpoint;
+            }
+
+            ISet<string> regionIds = new HashSet<string>();
+            regionIds.Add(regionId);
+
+            var productDomainList = new List<ProductDomain>();
+            productDomainList.Add(new ProductDomain(product, response.Endpoint));
+
+            endpoint = new Endpoint(response.RegionId, regionIds, productDomainList);
+            return endpoint;
+        }
 
         public void SetDescribeEndpointService(DescribeEndpointService describeEndpointService)
         {
@@ -39,39 +68,9 @@ namespace Aliyun.Acs.Core.Regions
 
         public static RemoteEndpointsParser InitRemoteEndpointsParser()
         {
-            RemoteEndpointsParser parser = new RemoteEndpointsParser();
+            var parser = new RemoteEndpointsParser();
             parser.SetDescribeEndpointService(new DescribeEndpointServiceImpl());
             return parser;
-        }
-
-        public Endpoint GetEndpoint(String regionId, String product)
-        {
-            throw new NotSupportedException();
-        }
-
-        public Endpoint GetEndpoint(String regionId, String product, String serviceCode, String endpointType,
-            Credential credential, LocationConfig locationConfig)
-        {
-            if (serviceCode == null)
-            {
-                return null;
-            }
-            Endpoint endpoint = null;
-
-            DescribeEndpointResponse response = describeEndpointService.DescribeEndpoint(regionId, serviceCode,
-                endpointType, credential, locationConfig);
-            if (response == null)
-            {
-                return endpoint;
-            }
-            ISet<String> regionIds = new HashSet<String>();
-            regionIds.Add(regionId);
-
-            List<ProductDomain> productDomainList = new List<ProductDomain>();
-            productDomainList.Add(new ProductDomain(product, response.Endpoint));
-
-            endpoint = new Endpoint(response.RegionId, regionIds, productDomainList);
-            return endpoint;
         }
     }
 }

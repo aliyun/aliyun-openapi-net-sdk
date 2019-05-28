@@ -1,31 +1,49 @@
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 using Xunit;
 
 namespace Aliyun.Acs.Core.Tests.Units.Auth
 {
     public class HmacSHA1SignerTest
     {
+        [Fact]
+        public void GetSignerName()
+        {
+            var instance = new HmacSHA1Signer();
+            var signer = instance.GetSignerName();
+            Assert.Equal("HMAC-SHA1", signer);
+
+            var signerVersion = instance.GetSignerVersion();
+            Assert.Equal("1.0", signerVersion);
+
+            // Get the null
+            var signerType = instance.GetSignerType();
+            Assert.Null(signerType);
+        }
 
         [Fact]
         public void SignString()
         {
-            HmacSHA1Signer instance = new HmacSHA1Signer();
-            string sign = instance.SignString("foo", "secret");
+            var instance = new HmacSHA1Signer();
+            var sign = instance.SignString("foo", "secret");
             Assert.Equal("m67ZG+f1i1fIJLYNp8smKy7K+9I=", sign);
-        }
-
-        [Fact]
-        public void GetSignerName()
-        {
-            HmacSHA1Signer instance = new HmacSHA1Signer();
-            string signer = instance.GetSignerName();
-            Assert.Equal("HMAC-SHA1", signer);
-
-            string signerVersion = instance.GetSignerVersion();
-            Assert.Equal("1.0", signerVersion);
-
-            // 此方法只回调了一个 null 值
-            string signerType = instance.GetSignerType();
-            Assert.Null(signerType);
         }
     }
 }

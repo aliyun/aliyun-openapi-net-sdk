@@ -1,3 +1,22 @@
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 using System;
 
 using Aliyun.Acs.Core.Auth;
@@ -16,55 +35,17 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
         [Fact]
         public void GetEndpoint()
         {
-            RemoteEndpointsParser instance = new RemoteEndpointsParser();
+            var instance = new RemoteEndpointsParser();
 
             Assert.Throws<NotSupportedException>(
-                () =>
-                {
-                    instance.GetEndpoint("", "");
-                }
+                () => { instance.GetEndpoint("", ""); }
             );
-        }
-
-        [Fact]
-        public void GetEndpointWhenServiceCodeIsNull()
-        {
-            RemoteEndpointsParser instance = new RemoteEndpointsParser();
-            Credential credential = new Credential();
-            LocationConfig locationConfig = new LocationConfig();
-            var result = instance.GetEndpoint("regionId", "product", null, "endpointType", credential, locationConfig);
-            Assert.Null(result);
-        }
-
-        [Fact]
-        public void GetEndpointWhenResponseIsNull()
-        {
-            DescribeEndpointResponse response = null;
-
-            var mock = new Mock<DescribeEndpointService>();
-            //String regionId, String serviceCode, String endpointType,Credential credential,LocationConfig locationConfig
-            mock.Setup(foo => foo.DescribeEndpoint(
-                It.IsAny<string>(),
-                It.IsAny<string>(),
-                It.IsAny<string>(),
-                It.IsAny<Credential>(),
-                It.IsAny<LocationConfig>()
-            )).Returns(response);
-
-            DescribeEndpointService describeEndpointService = mock.Object;
-            RemoteEndpointsParser instance = new RemoteEndpointsParser();
-            instance.SetDescribeEndpointService(describeEndpointService);
-
-            Credential credential = new Credential();
-            LocationConfig locationConfig = new LocationConfig();
-            var result = instance.GetEndpoint("regionId", "product", "serviceCode", "endpointType", credential, locationConfig);
-            Assert.Null(result);
         }
 
         [Fact]
         public void GetEndpointWhenResponseIsNotNull()
         {
-            DescribeEndpointResponse response = new DescribeEndpointResponse();
+            var response = new DescribeEndpointResponse();
             response.RegionId = "RegionId";
             response.Endpoint = "Endpoint";
 
@@ -78,18 +59,55 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
                 It.IsAny<LocationConfig>()
             )).Returns(response);
 
-            DescribeEndpointService describeEndpointService = mock.Object;
-            RemoteEndpointsParser instance = new RemoteEndpointsParser();
+            var describeEndpointService = mock.Object;
+            var instance = new RemoteEndpointsParser();
             instance.SetDescribeEndpointService(describeEndpointService);
 
-            Credential credential = new Credential();
-            LocationConfig locationConfig = new LocationConfig();
-            var result = instance.GetEndpoint("regionId", "product", "serviceCode", "endpointType", credential, locationConfig);
+            var credential = new Credential();
+            var locationConfig = new LocationConfig();
+            var result = instance.GetEndpoint("regionId", "product", "serviceCode", "endpointType", credential,
+                locationConfig);
             Assert.IsType<Endpoint>(result);
             Assert.NotNull(result);
             Assert.Equal("RegionId", result.Name);
             Assert.NotEmpty(result.ProductDomains);
             Assert.NotEmpty(result.RegionIds);
+        }
+
+        [Fact]
+        public void GetEndpointWhenResponseIsNull()
+        {
+            DescribeEndpointResponse response = null;
+
+            var mock = new Mock<DescribeEndpointService>();
+            // String regionId, String serviceCode, String endpointType,Credential credential,LocationConfig locationConfig
+            mock.Setup(foo => foo.DescribeEndpoint(
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<string>(),
+                It.IsAny<Credential>(),
+                It.IsAny<LocationConfig>()
+            )).Returns(response);
+
+            var describeEndpointService = mock.Object;
+            var instance = new RemoteEndpointsParser();
+            instance.SetDescribeEndpointService(describeEndpointService);
+
+            var credential = new Credential();
+            var locationConfig = new LocationConfig();
+            var result = instance.GetEndpoint("regionId", "product", "serviceCode", "endpointType", credential,
+                locationConfig);
+            Assert.Null(result);
+        }
+
+        [Fact]
+        public void GetEndpointWhenServiceCodeIsNull()
+        {
+            var instance = new RemoteEndpointsParser();
+            var credential = new Credential();
+            var locationConfig = new LocationConfig();
+            var result = instance.GetEndpoint("regionId", "product", null, "endpointType", credential, locationConfig);
+            Assert.Null(result);
         }
     }
 }

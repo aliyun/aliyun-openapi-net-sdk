@@ -1,17 +1,31 @@
-using System;
-using System.Collections.Generic;
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
 
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Reader;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Regions.Location;
-using Aliyun.Acs.Core.Regions.Location.Model;
 using Aliyun.Acs.Core.Tests.Mock;
-using Aliyun.Acs.Core.Transform;
 
 using Moq;
 
@@ -21,12 +35,22 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
 {
     public class DescribeEndpointServiceImplTest
     {
+        private string JsonSerializer<T>(T t)
+        {
+            var ser = new DataContractJsonSerializer(typeof(T));
+            var ms = new MemoryStream();
+            ser.WriteObject(ms, t);
+            var jsonString = Encoding.UTF8.GetString(ms.ToArray());
+            ms.Close();
+            return jsonString;
+        }
+
         [Fact]
         public void DescribeEndpoint1()
         {
-            DescribeEndpointServiceImpl instance = new DescribeEndpointServiceImpl();
-            Credential credential = new Credential();
-            LocationConfig locationConfig = new LocationConfig();
+            var instance = new DescribeEndpointServiceImpl();
+            var credential = new Credential();
+            var locationConfig = new LocationConfig();
 
             // When serviceCode is null or empty
             var result = instance.DescribeEndpoint(
@@ -40,8 +64,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
         {
             var mock = new Mock<DescribeEndpointServiceImpl>();
 
-            HttpResponse response = new HttpResponse();
-            byte[] content = Encoding.GetEncoding("UTF-8").GetBytes("{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" + DateTimeMock.getNowDateTimeString() + "\"}");
+            var response = new HttpResponse();
+            var content = Encoding.GetEncoding("UTF-8").GetBytes(
+                "{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" +
+                DateTimeMock.getNowDateTimeString() + "\"}");
             response.ContentType = FormatType.JSON;
             response.Content = content;
             response.Status = 200;
@@ -51,10 +77,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
                 It.IsAny<HttpRequest>()
             )).Returns(response);
 
-            DescribeEndpointServiceImpl instance = mock.Object;
+            var instance = mock.Object;
 
-            Credential credential = new Credential();
-            LocationConfig locationConfig = new LocationConfig();
+            var credential = new Credential();
+            var locationConfig = new LocationConfig();
 
             // When endpointType is null or empty
             var result = instance.DescribeEndpoint(
@@ -68,10 +94,12 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
         {
             var mock = new Mock<DescribeEndpointServiceImpl>();
 
-            int status = 200;
+            var status = 200;
 
-            HttpResponse response = new HttpResponse();
-            byte[] content = Encoding.GetEncoding("UTF-8").GetBytes("{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" + DateTimeMock.getNowDateTimeString() + "\"}");
+            var response = new HttpResponse();
+            var content = Encoding.GetEncoding("UTF-8").GetBytes(
+                "{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" +
+                DateTimeMock.getNowDateTimeString() + "\"}");
             response.ContentType = FormatType.JSON;
             response.Content = content;
             response.Status = status;
@@ -81,10 +109,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
                 It.IsAny<HttpRequest>()
             )).Returns(response);
 
-            DescribeEndpointServiceImpl instance = mock.Object;
+            var instance = mock.Object;
 
-            Credential credential = new Credential();
-            LocationConfig locationConfig = new LocationConfig();
+            var credential = new Credential();
+            var locationConfig = new LocationConfig();
 
             var result = instance.DescribeEndpoint(
                 "regionId", "serviceCode", "endpointType", credential, locationConfig
@@ -97,10 +125,12 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
         {
             var mock = new Mock<DescribeEndpointServiceImpl>();
 
-            int status = 500;
+            var status = 500;
 
-            HttpResponse response = new HttpResponse();
-            byte[] content = Encoding.GetEncoding("UTF-8").GetBytes("{\"Code\":\"ServiceError\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" + DateTimeMock.getNowDateTimeString() + "\"}");
+            var response = new HttpResponse();
+            var content = Encoding.GetEncoding("UTF-8").GetBytes(
+                "{\"Code\":\"ServiceError\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" +
+                DateTimeMock.getNowDateTimeString() + "\"}");
             response.ContentType = FormatType.JSON;
             response.Content = content;
             response.Status = status;
@@ -110,10 +140,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
                 It.IsAny<HttpRequest>()
             )).Returns(response);
 
-            DescribeEndpointServiceImpl instance = mock.Object;
+            var instance = mock.Object;
 
-            Credential credential = new Credential();
-            LocationConfig locationConfig = new LocationConfig();
+            var credential = new Credential();
+            var locationConfig = new LocationConfig();
 
             var result = instance.DescribeEndpoint(
                 "regionId", "serviceCode", "endpointType", credential, locationConfig
@@ -126,12 +156,13 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
         {
             var mock = new Mock<DescribeEndpointServiceImpl>();
 
-            int status = 200;
+            var status = 200;
 
-            string jsonContent = "{\"RequestId\":\"RequestId\",\"Endpoints\":{\"Endpoint\":[{\"Id\":\"Id\",\"Endpoint\":\"Endpoint\",\"ServiceCode\":\"ServiceCode\"},{\"Id\":\"Id\",\"Endpoint\":\"Endpoint\",\"ServiceCode\":\"ServiceCode\",\"Type\":\"endpointType\"}]}}";
+            var jsonContent =
+                "{\"RequestId\":\"RequestId\",\"Endpoints\":{\"Endpoint\":[{\"Id\":\"Id\",\"Endpoint\":\"Endpoint\",\"ServiceCode\":\"ServiceCode\"},{\"Id\":\"Id\",\"Endpoint\":\"Endpoint\",\"ServiceCode\":\"ServiceCode\",\"Type\":\"endpointType\"}]}}";
 
-            HttpResponse response = new HttpResponse();
-            byte[] content = Encoding.GetEncoding("UTF-8").GetBytes(jsonContent);
+            var response = new HttpResponse();
+            var content = Encoding.GetEncoding("UTF-8").GetBytes(jsonContent);
             response.ContentType = FormatType.JSON;
             response.Content = content;
             response.Status = status;
@@ -141,10 +172,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
                 It.IsAny<HttpRequest>()
             )).Returns(response);
 
-            DescribeEndpointServiceImpl instance = mock.Object;
+            var instance = mock.Object;
 
-            Credential credential = new Credential();
-            LocationConfig locationConfig = new LocationConfig();
+            var credential = new Credential();
+            var locationConfig = new LocationConfig();
 
             var result = instance.DescribeEndpoint(
                 "regionId", "serviceCode", "endpointType", credential, locationConfig
@@ -152,16 +183,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
             Assert.NotNull(result);
             Assert.Equal("Endpoint", result.Endpoint);
             Assert.Equal("RequestId", result.RequestId);
-        }
-
-        private string JsonSerializer<T>(T t)
-        {
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(T));
-            MemoryStream ms = new MemoryStream();
-            ser.WriteObject(ms, t);
-            string jsonString = Encoding.UTF8.GetString(ms.ToArray());
-            ms.Close();
-            return jsonString;
         }
     }
 }

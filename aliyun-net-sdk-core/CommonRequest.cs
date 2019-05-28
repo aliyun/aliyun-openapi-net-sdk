@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -27,6 +27,11 @@ namespace Aliyun.Acs.Core
 {
     public class CommonRequest
     {
+        public CommonRequest()
+        {
+            AddHeadParameters("x-sdk-invoke-type", "common");
+        }
+
         public string Product { get; set; }
         public string Version { get; set; }
         public string Action { get; set; }
@@ -34,17 +39,18 @@ namespace Aliyun.Acs.Core
         public string LocationProduct { get; set; }
         public string LocationEndpointType { get; set; }
         public ProtocolType Protocol { get; set; }
-        private Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-        private Dictionary<string, string> bodyParameters = new Dictionary<string, string>();
-        private Dictionary<string, string> headParameters = new Dictionary<string, string>();
         public MethodType? Method { get; set; }
         private FormatType? ContentType { get; set; }
         private byte[] Content { get; set; }
         private string Encoding { get; set; }
         public int TimeoutInMilliSeconds { get; set; }
         public string UriPattern { get; set; }
-        private Dictionary<string, string> pathParameters = new Dictionary<string, string>();
         public string Domain { get; set; }
+
+        private Dictionary<string, string> queryParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> bodyParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> headParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> pathParameters = new Dictionary<string, string>();
 
         public Dictionary<string, string> QueryParameters { get { return this.queryParameters; } }
 
@@ -54,19 +60,14 @@ namespace Aliyun.Acs.Core
 
         public Dictionary<string, string> PathParameters { get { return this.pathParameters; } }
 
-        public CommonRequest()
-        {
-            AddHeadParameters("x-sdk-invoke-type", "common");
-        }
-
         public AcsRequest<CommonResponse> BuildRequest()
         {
             if (UriPattern != null)
             {
-                CommonRoaRequest request = new CommonRoaRequest(Product);
+                var request = new CommonRoaRequest(Product);
                 request.UriPattern = UriPattern;
                 request.SetVersion(Version);
-                foreach (var entry in pathParameters)
+                foreach (var entry in PathParameters)
                 {
                     request.AddPathParameters(entry.Key, entry.Value);
                 }
@@ -76,7 +77,7 @@ namespace Aliyun.Acs.Core
             }
             else
             {
-                CommonRpcRequest request = new CommonRpcRequest(Product);
+                var request = new CommonRpcRequest(Product);
                 request.Version = Version;
                 FillParams(request);
                 return request;
@@ -89,22 +90,27 @@ namespace Aliyun.Acs.Core
             {
                 request.ActionName = Action;
             }
+
             if (RegionId != null)
             {
                 request.RegionId = RegionId;
             }
+
             if (LocationProduct != null)
             {
                 request.LocationProduct = LocationProduct;
             }
+
             if (LocationEndpointType != null)
             {
                 request.LocationEndpointType = LocationEndpointType;
             }
+
             if (TimeoutInMilliSeconds > 0)
             {
                 request.SetReadTimeoutInMilliSeconds(TimeoutInMilliSeconds);
             }
+
             if (Method != null)
             {
                 request.Method = Method;
@@ -115,22 +121,26 @@ namespace Aliyun.Acs.Core
 
             if (Domain != null)
             {
-                ProductDomain productDomain = new ProductDomain(request.Product, Domain);
+                var productDomain = new ProductDomain(request.Product, Domain);
                 request.ProductDomain = productDomain;
             }
+
             if (Content != null)
             {
                 request.SetContent(Content, Encoding, ContentType);
             }
-            foreach (var entry in queryParameters)
+
+            foreach (var entry in QueryParameters)
             {
                 DictionaryUtil.Add(request.QueryParameters, entry.Key, entry.Value);
             }
-            foreach (var entry in bodyParameters)
+
+            foreach (var entry in BodyParameters)
             {
                 DictionaryUtil.Add(request.BodyParameters, entry.Key, entry.Value);
             }
-            foreach (var entry in headParameters)
+
+            foreach (var entry in HeadParameters)
             {
                 request.Headers.Remove(entry.Key);
                 DictionaryUtil.Add(request.Headers, entry.Key, entry.Value);
@@ -139,22 +149,22 @@ namespace Aliyun.Acs.Core
 
         public void AddQueryParameters(string name, string value)
         {
-            DictionaryUtil.Add(queryParameters, name, value);
+            DictionaryUtil.Add(QueryParameters, name, value);
         }
 
         public void AddBodyParameters(string name, string value)
         {
-            DictionaryUtil.Add(bodyParameters, name, value);
+            DictionaryUtil.Add(BodyParameters, name, value);
         }
 
         public void AddHeadParameters(string name, string value)
         {
-            DictionaryUtil.Add(headParameters, name, value);
+            DictionaryUtil.Add(HeadParameters, name, value);
         }
 
         public void AddPathParameters(string name, string value)
         {
-            DictionaryUtil.Add(pathParameters, name, value);
+            DictionaryUtil.Add(PathParameters, name, value);
         }
 
         public void SetContent(byte[] content, string encoding, FormatType? format)

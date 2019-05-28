@@ -1,3 +1,23 @@
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
@@ -10,71 +30,16 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
 {
     public class HttpResponseTest
     {
-        private string requestUrl = "https://www.alibabacloud.com/";
-
-        [Fact]
-        public HttpResponse Instance()
-        {
-            HttpResponse instance = new HttpResponse();
-            Assert.Null(instance.Url);
-
-            instance = new HttpResponse(this.requestUrl);
-            Assert.NotNull(instance.Url);
-            Assert.Equal(this.requestUrl, instance.Url);
-
-            return instance;
-        }
-
-        [Fact]
-        public HttpResponse SetContent()
-        {
-            Dictionary<string, string> tmpHeaders = new Dictionary<string, string>
-            { { "Content-MD5", "" },
-                { "Content-Length", "" },
-                { "Content-Type", "application/json; charset=UTF-8" },
-                { "Accept", "accept" },
-                { "Date", "Thu, 24 Jan 2019 05:16:46 GMT" }
-            };
-            byte[] content = Encoding.ASCII.GetBytes("someString");
-            HttpResponse instance = new HttpResponse(this.requestUrl);
-            instance.SetContent(content, "UTF-8", FormatType.JSON);
-            Assert.Equal(content, instance.Content);
-            Assert.Equal("UTF-8", instance.Encoding);
-            Assert.Equal(FormatType.JSON, instance.ContentType);
-            return instance;
-        }
-
-        [Fact]
-        public void SetContentWithEmptyHeaders()
-        {
-            Dictionary<string, string> tmpHeaders = new Dictionary<string, string> { };
-            byte[] content = Encoding.ASCII.GetBytes("");
-            HttpResponse instance = new HttpResponse(this.requestUrl);
-            instance.SetContent(content, "UTF-8", FormatType.JSON);
-            Assert.Equal(content, instance.Content);
-            Assert.Equal("UTF-8", instance.Encoding);
-            Assert.Equal(FormatType.JSON, instance.ContentType);
-        }
-
-        [Fact]
-        public void ReadContent()
-        {
-            HttpResponse response = this.SetContent();
-            HttpWebResponse resw = new HttpWebResponse();
-
-            Assert.Throws<System.ObjectDisposedException>(
-                () => { HttpResponse.ReadContent(response, resw); }
-            );
-        }
+        private readonly string requestUrl = "https://www.alibabacloud.com/";
 
         [Fact]
         public void GetResponse()
         {
-            HttpResponse request = new HttpResponse(this.requestUrl);
-            byte[] content = Encoding.ASCII.GetBytes("someString");
+            var request = new HttpResponse(requestUrl);
+            var content = Encoding.ASCII.GetBytes("someString");
             request.SetContent(content, "UTF-8", FormatType.FORM);
             request.Method = MethodType.GET;
-            HttpResponse response = HttpResponse.GetResponse(request);
+            var response = HttpResponse.GetResponse(request);
             Assert.Equal("UTF-8", response.Encoding);
             Assert.Equal(MethodType.GET, response.Method);
 
@@ -87,16 +52,14 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
         [Fact]
         public void GetWebRequest()
         {
-            HttpRequest request = HttpRequestTest.SetContent();
-            HttpWebRequest httpWebRequest = HttpResponse.GetWebRequest(request);
+            var request = HttpRequestTest.SetContent();
+            var httpWebRequest = HttpResponse.GetWebRequest(request);
             Assert.IsType<HttpWebRequest>(httpWebRequest);
             Assert.Equal("application/octet-stream", httpWebRequest.ContentType);
 
-            // 删除 Accept 和 Date 请求头
             request.Headers.Add("Accept", "accept");
             request.Headers.Add("Date", "Thu, 24 Jan 2019 05:16:46 GMT");
 
-            // 覆盖POST方式
             request.Method = MethodType.POST;
             httpWebRequest = HttpResponse.GetWebRequest(request);
             Assert.IsType<HttpWebRequest>(httpWebRequest);
@@ -104,10 +67,28 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
         }
 
         [Fact]
+        public void GetWebRequestWithIgnoreCertificate()
+        {
+            var request = HttpRequestTest.SetContent();
+            request.SetHttpsInsecure(true);
+
+            var httpWebRequest = HttpResponse.GetWebRequest(request);
+        }
+
+        [Fact]
+        public void GetWebRequestWithProxy()
+        {
+            var request = HttpRequestTest.SetContent();
+            request.WebProxy = new WebProxy();
+
+            var httpWebRequest = HttpResponse.GetWebRequest(request);
+        }
+
+        [Fact]
         public void GetWebRequestWithTimeout()
         {
-            HttpRequest request = HttpRequestTest.SetContent();
-            HttpWebRequest httpWebRequest = HttpResponse.GetWebRequest(request);
+            var request = HttpRequestTest.SetContent();
+            var httpWebRequest = HttpResponse.GetWebRequest(request);
 
             Assert.Equal(5000, httpWebRequest.Timeout);
             Assert.Equal(10000, httpWebRequest.ReadWriteTimeout);
@@ -121,32 +102,70 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
         }
 
         [Fact]
-        public void GetWebRequestWithIgnoreCertificate()
+        public HttpResponse Instance()
         {
-            HttpRequest request = HttpRequestTest.SetContent();
-            request.SetHttpsInsecure(true);
+            var instance = new HttpResponse();
+            Assert.Null(instance.Url);
 
-            HttpWebRequest httpWebRequest = HttpResponse.GetWebRequest(request);
-        }
+            instance = new HttpResponse(requestUrl);
+            Assert.NotNull(instance.Url);
+            Assert.Equal(requestUrl, instance.Url);
 
-        [Fact]
-        public void GetWebRequestWithProxy()
-        {
-            HttpRequest request = HttpRequestTest.SetContent();
-            request.WebProxy = new System.Net.WebProxy();
-
-            HttpWebRequest httpWebRequest = HttpResponse.GetWebRequest(request);
+            return instance;
         }
 
         [Fact]
         public void isSuccess()
         {
-            HttpResponse instance = this.SetContent();
-            bool status = instance.isSuccess();
+            var instance = SetContent();
+            var status = instance.isSuccess();
             Assert.False(status);
 
             instance.Status = 200;
             Assert.True(instance.isSuccess());
+        }
+
+        [Fact]
+        public void ReadContent()
+        {
+            var response = SetContent();
+            var resw = new HttpWebResponse();
+
+            Assert.Throws<ObjectDisposedException>(
+                () => { HttpResponse.ReadContent(response, resw); }
+            );
+        }
+
+        [Fact]
+        public HttpResponse SetContent()
+        {
+            var tmpHeaders = new Dictionary<string, string>
+            {
+                {"Content-MD5", ""},
+                {"Content-Length", ""},
+                {"Content-Type", "application/json; charset=UTF-8"},
+                {"Accept", "accept"},
+                {"Date", "Thu, 24 Jan 2019 05:16:46 GMT"}
+            };
+            var content = Encoding.ASCII.GetBytes("someString");
+            var instance = new HttpResponse(requestUrl);
+            instance.SetContent(content, "UTF-8", FormatType.JSON);
+            Assert.Equal(content, instance.Content);
+            Assert.Equal("UTF-8", instance.Encoding);
+            Assert.Equal(FormatType.JSON, instance.ContentType);
+            return instance;
+        }
+
+        [Fact]
+        public void SetContentWithEmptyHeaders()
+        {
+            var tmpHeaders = new Dictionary<string, string>();
+            var content = Encoding.ASCII.GetBytes("");
+            var instance = new HttpResponse(requestUrl);
+            instance.SetContent(content, "UTF-8", FormatType.JSON);
+            Assert.Equal(content, instance.Content);
+            Assert.Equal("UTF-8", instance.Encoding);
+            Assert.Equal(FormatType.JSON, instance.ContentType);
         }
     }
 }

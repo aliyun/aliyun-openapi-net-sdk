@@ -21,7 +21,7 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class BearerTokenCredentialProvider : AlibabaCloudCredentialsProvider
     {
-        private BearerTokenCredential bearerTokenCredential;
+        private readonly BearerTokenCredential bearerTokenCredential;
 
         public BearerTokenCredentialProvider(string bearerToken)
         {

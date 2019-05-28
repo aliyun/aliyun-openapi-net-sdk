@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,17 +29,24 @@ namespace Aliyun.Acs.Core.Http
 {
     public class HttpResponse : HttpRequest
     {
-        private static int bufferLength = 1024;
-        private const int DEFAULT_READ_TIMEOUT_IN_MilliSeconds = 10000; //Default read timeout 10s
-        private const int DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds = 5000; //Default connect timeout 5s
+        // Default read timeout 10s
+        private const int DEFAULT_READ_TIMEOUT_IN_MilliSeconds = 10000; 
+        
+        // Default connect timeout 5s
+        private const int DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds = 5000; 
+        private static readonly int bufferLength = 1024;
+
+        public HttpResponse(string strUrl) : base(strUrl)
+        {
+        }
+
+        public HttpResponse()
+        {
+        }
 
         public int Status { get; set; }
 
         public string HttpVersion { get; set; }
-
-        public HttpResponse(string strUrl) : base(strUrl) { }
-
-        public HttpResponse() { }
 
         public new void SetContent(byte[] content, string encoding, FormatType? format)
         {
@@ -50,7 +58,7 @@ namespace Aliyun.Acs.Core.Http
         private static void PasrseHttpResponse(HttpResponse httpResponse, HttpWebResponse httpWebResponse)
         {
             httpResponse.Content = ReadContent(httpResponse, httpWebResponse);
-            httpResponse.Status = (int) httpWebResponse.StatusCode;
+            httpResponse.Status = (int)httpWebResponse.StatusCode;
             httpResponse.Headers = new Dictionary<string, string>();
             httpResponse.Method = ParameterHelper.StringToMethodType(httpWebResponse.Method);
             httpResponse.HttpVersion = httpWebResponse.ProtocolVersion.ToString();
@@ -60,15 +68,15 @@ namespace Aliyun.Acs.Core.Http
                 httpResponse.Headers.Add(key, httpWebResponse.Headers[key]);
             }
 
-            string type = httpResponse.Headers["Content-Type"];
+            var type = httpResponse.Headers["Content-Type"];
             if (null != type)
             {
                 httpResponse.Encoding = "UTF-8";
-                string[] split = type.Split(';');
+                var split = type.Split(';');
                 httpResponse.ContentType = ParameterHelper.StingToFormatType(split[0].Trim());
                 if (split.Length > 1 && split[1].Contains("="))
                 {
-                    string[] codings = split[1].Split('=');
+                    var codings = split[1].Split('=');
                     httpResponse.Encoding = codings[1].Trim().ToUpper();
                 }
             }
@@ -76,23 +84,24 @@ namespace Aliyun.Acs.Core.Http
 
         public static byte[] ReadContent(HttpResponse response, HttpWebResponse rsp)
         {
-
-            using(MemoryStream ms = new MemoryStream())
+            using (var ms = new MemoryStream())
             {
-                byte[] buffer = new byte[bufferLength];
-                Stream stream = rsp.GetResponseStream();
+                var buffer = new byte[bufferLength];
+                var stream = rsp.GetResponseStream();
 
                 while (true)
                 {
-                    int length = stream.Read(buffer, 0, bufferLength);
+                    var length = stream.Read(buffer, 0, bufferLength);
                     if (length == 0)
                     {
                         break;
                     }
+
                     ms.Write(buffer, 0, length);
                 }
+
                 ms.Seek(0, SeekOrigin.Begin);
-                byte[] bytes = new byte[ms.Length];
+                var bytes = new byte[ms.Length];
                 ms.Read(bytes, 0, bytes.Length);
 
                 stream.Close();
@@ -103,23 +112,23 @@ namespace Aliyun.Acs.Core.Http
 
         public static HttpResponse GetResponse(HttpRequest request, int? timeout = null)
         {
-            HttpWebRequest httpWebRequest = GetWebRequest(request);
+            var httpWebRequest = GetWebRequest(request);
             if (timeout != null)
             {
-                httpWebRequest.Timeout = (int) timeout;
+                httpWebRequest.Timeout = (int)timeout;
             }
 
-            HttpResponse httpResponse = new HttpResponse(httpWebRequest.RequestUri.AbsoluteUri);
+            var httpResponse = new HttpResponse(httpWebRequest.RequestUri.AbsoluteUri);
             HttpWebResponse httpWebResponse = null;
             try
             {
-                httpWebResponse = (HttpWebResponse) httpWebRequest.GetResponse();
+                httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
             }
             catch (WebException ex)
             {
                 if (ex.Response != null)
                 {
-                    httpWebResponse = (HttpWebResponse) ex.Response;
+                    httpWebResponse = (HttpWebResponse)ex.Response;
                 }
                 else
                 {
@@ -131,7 +140,7 @@ namespace Aliyun.Acs.Core.Http
                 throw new ClientException(ex.ToString());
             }
 
-            using(httpWebResponse)
+            using (httpWebResponse)
             {
                 PasrseHttpResponse(httpResponse, httpWebResponse);
                 return httpResponse;
@@ -141,12 +150,15 @@ namespace Aliyun.Acs.Core.Http
         public static HttpWebRequest GetWebRequest(HttpRequest request)
         {
             HttpWebRequest httpWebRequest = null;
-            httpWebRequest = (HttpWebRequest) WebRequest.Create(request.Url);
+            httpWebRequest = (HttpWebRequest)WebRequest.Create(request.Url);
             httpWebRequest.Method = request.Method.ToString();
             httpWebRequest.KeepAlive = true;
 
-            httpWebRequest.Timeout = request.ConnectTimeout > 0 ? request.ConnectTimeout : DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds;
-            httpWebRequest.ReadWriteTimeout = request.ReadTimeout > 0 ? request.ReadTimeout : DEFAULT_READ_TIMEOUT_IN_MilliSeconds;
+            httpWebRequest.Timeout = request.ConnectTimeout > 0
+                ? request.ConnectTimeout
+                : DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds;
+            httpWebRequest.ReadWriteTimeout =
+                request.ReadTimeout > 0 ? request.ReadTimeout : DEFAULT_READ_TIMEOUT_IN_MilliSeconds;
 
             if (request.IgnoreCertificate)
             {
@@ -162,6 +174,7 @@ namespace Aliyun.Acs.Core.Http
             {
                 httpWebRequest.Accept = DictionaryUtil.Pop(request.Headers, "Accept");
             }
+
             if (request.Headers.ContainsKey("Date"))
             {
                 httpWebRequest.Date = Convert.ToDateTime(DictionaryUtil.Pop(request.Headers, "Date"));
@@ -174,11 +187,13 @@ namespace Aliyun.Acs.Core.Http
                     httpWebRequest.ContentLength = long.Parse(header.Value);
                     continue;
                 }
+
                 if (header.Key.Equals("Content-Type"))
                 {
                     httpWebRequest.ContentType = header.Value;
                     continue;
                 }
+
                 if (header.Key.Equals("User-Agent"))
                 {
                     httpWebRequest.UserAgent = header.Value;
@@ -190,7 +205,7 @@ namespace Aliyun.Acs.Core.Http
 
             if ((request.Method == MethodType.POST || request.Method == MethodType.PUT) && request.Content != null)
             {
-                using(Stream stream = httpWebRequest.GetRequestStream())
+                using (var stream = httpWebRequest.GetRequestStream())
                 {
                     stream.Write(request.Content, 0, request.Content.Length);
                 }

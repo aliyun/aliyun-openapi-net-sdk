@@ -16,16 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Regions.Location.Model
 {
     public class DescribeEndpointResponse : AcsResponse
     {
-
         public string Endpoint { get; set; }
         public string RegionId { get; set; }
         public string Product { get; set; }
-
     }
 }

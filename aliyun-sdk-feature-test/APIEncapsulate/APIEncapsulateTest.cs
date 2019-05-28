@@ -1,17 +1,34 @@
-using System;
-using System.Collections.Generic;
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 
 using Aliyun.Acs.Cdn.Model.V20180510;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Ecs.Model.V20140526;
 using Aliyun.Acs.Ram.Model.V20150501;
-using Aliyun.Acs.Rds.Model.V20140815;
 using Aliyun.Acs.ROS.Model.V20150901;
 using Aliyun.Acs.Slb.Model.V20140515;
-using Aliyun.Acs.Vpc.Model.V20160428;
 
 using Xunit;
+
+using DescribeRegionsRequest = Aliyun.Acs.Rds.Model.V20140815.DescribeRegionsRequest;
+using DescribeVpcsRequest = Aliyun.Acs.Vpc.Model.V20160428.DescribeVpcsRequest;
 
 namespace Aliyun.Acs.Feature.Test.APIEncapsulate
 {
@@ -19,32 +36,101 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
     public class APIEncapsulateTest : FeatureTestBase
     {
         [Fact]
-        public void EcsRequestTest()
+        public void CdnRequestTest()
         {
-            DescribeInstancesRequest request = new DescribeInstancesRequest();
-            DescribeInstancesResponse response = client.GetAcsResponse(request);
+            var request = new DescribeCdnCertificateDetailRequest();
+            request.CertName = "cdnRequestTest";
 
-            Assert.NotNull(response);
-            Assert.True(0 <= response.TotalCount);
-        }
-
-        [Fact]
-        public void RdsRequestTest()
-        {
-            Rds.Model.V20140815.DescribeRegionsRequest request = new Rds.Model.V20140815.DescribeRegionsRequest();
-            Rds.Model.V20140815.DescribeRegionsResponse response = client.GetAcsResponse(request);
+            var response = client.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.NotNull(response.RequestId);
         }
 
         [Fact]
-        public void CdnRequestTest()
+        public void EcsRequestTest()
         {
-            DescribeCdnCertificateDetailRequest request = new DescribeCdnCertificateDetailRequest();
-            request.CertName = "cdnRequestTest";
+            var request = new DescribeImagesRequest();
+            var response = client.GetAcsResponse(request);
 
-            DescribeCdnCertificateDetailResponse response = client.GetAcsResponse(request);
+            Assert.NotNull(response);
+        }
+
+        [Fact]
+        public void FormPostTypeTest()
+        {
+            var request = new DoActionsRequest();
+            request.StackName = "test";
+            request.StackId = "test";
+            request.ContentType = FormatType.FORM;
+            request.BodyParameters.Add("test", "test");
+
+            var exception = Assert.Throws<ClientException>(() => { client.GetAcsResponse(request); });
+            Assert.Equal("HTTPBadRequest", exception.ErrorCode);
+            Assert.Equal("No action specified", exception.ErrorMessage);
+        }
+
+        [Fact]
+        public void FormPutTypeTest()
+        {
+            var request = new UpdateStackRequest();
+            request.StackName = "test";
+            request.StackId = "test";
+            request.ContentType = FormatType.FORM;
+            request.BodyParameters.Add("ContentMD5NotMatched", "test");
+
+            var exception = Assert.Throws<ClientException>(() => { client.GetAcsResponse(request); });
+            Assert.Equal("HTTPBadRequest", exception.ErrorCode);
+            Assert.Equal(
+                "The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.",
+                exception.ErrorMessage);
+        }
+
+        [Fact]
+        public void JsonPostTypeTest()
+        {
+            var request = new DoActionsRequest();
+            request.StackName = "test";
+            request.StackId = "test";
+            request.ContentType = FormatType.JSON;
+            request.BodyParameters.Add("test", "test");
+
+            var exception = Assert.Throws<ClientException>(() => { client.GetAcsResponse(request); });
+            Assert.NotNull(exception);
+        }
+
+        [Fact]
+        public void JsonPutTypeTest()
+        {
+            var request = new UpdateStackRequest();
+            request.StackName = "test";
+            request.StackId = "test";
+            request.ContentType = FormatType.JSON;
+            request.BodyParameters.Add("ContentMD5NotMatched", "test");
+
+            var exception = Assert.Throws<ClientException>(() => { client.GetAcsResponse(request); });
+
+            Assert.Equal("HTTPBadRequest", exception.ErrorCode);
+            Assert.Equal(
+                "The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.",
+                exception.ErrorMessage);
+        }
+
+        [Fact]
+        public void RamRequestTest()
+        {
+            var request = new ListAccessKeysRequest();
+            var response = client.GetAcsResponse(request);
+
+            Assert.NotNull(response.AccessKeys);
+            Assert.NotNull(response.RequestId);
+        }
+
+        [Fact]
+        public void RdsRequestTest()
+        {
+            var request = new DescribeRegionsRequest();
+            var response = client.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.NotNull(response.RequestId);
@@ -53,134 +139,52 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
         [Fact]
         public void SlbRequestTest()
         {
-            DescribeAccessControlListsRequest request = new DescribeAccessControlListsRequest();
-            DescribeAccessControlListsResponse response = client.GetAcsResponse(request);
+            var request = new DescribeAccessControlListsRequest();
+            var response = client.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.True(0 <= response.Acls.Count);
         }
 
         [Fact]
-        public void RamRequestTest()
-        {
-            ListAccessKeysRequest request = new ListAccessKeysRequest();
-            ListAccessKeysResponse response = client.GetAcsResponse(request);
-
-            Assert.NotNull(response.AccessKeys);
-            Assert.NotNull(response.RequestId);
-        }
-
-        [Fact]
         public void VpcRequestTest()
         {
-            Vpc.Model.V20160428.DescribeVpcsRequest request = new Vpc.Model.V20160428.DescribeVpcsRequest();
-            Vpc.Model.V20160428.DescribeVpcsResponse response = client.GetAcsResponse(request);
+            var request = new DescribeVpcsRequest();
+            var response = client.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.True(0 <= response.Vpcs.Count);
         }
 
         [Fact]
-        public void JsonPutTypeTest()
-        {
-            UpdateStackRequest request = new UpdateStackRequest();
-            request.StackName = "test";
-            request.StackId = "test";
-            request.ContentType = FormatType.JSON;
-            request.BodyParameters.Add("ContentMD5NotMatched", "test");
-
-            var exception = Assert.Throws<ClientException>(() =>
-            {
-                client.GetAcsResponse(request);
-            });
-            
-            Assert.Equal("HTTPBadRequest", exception.ErrorCode);
-            Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
-        }
-
-        [Fact]
-        public void XmlPutTypeTest()
-        {
-            UpdateStackRequest request = new UpdateStackRequest();
-            request.StackName = "test";
-            request.StackId = "test";
-            request.ContentType = FormatType.XML;
-            request.BodyParameters.Add("ContentMD5NotMatched", "test");
-
-            var exception = Assert.Throws<ClientException>(() =>
-            {
-                client.GetAcsResponse(request);
-            });
-            Assert.Equal("HTTPBadRequest", exception.ErrorCode);
-            Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
-        }
-
-        [Fact]
-        public void FormPutTypeTest()
-        {
-            UpdateStackRequest request = new UpdateStackRequest();
-            request.StackName = "test";
-            request.StackId = "test";
-            request.ContentType = FormatType.FORM;
-            request.BodyParameters.Add("ContentMD5NotMatched", "test");
-
-            var exception = Assert.Throws<ClientException>(() =>
-            {
-                client.GetAcsResponse(request);
-            });
-            Assert.Equal("HTTPBadRequest", exception.ErrorCode);
-            Assert.Equal("The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.", exception.ErrorMessage);
-        }
-
-        [Fact]
-        public void JsonPostTypeTest()
-        {
-            DoActionsRequest request = new DoActionsRequest();
-            request.StackName = "test";
-            request.StackId = "test";
-            request.ContentType = FormatType.JSON;
-            request.BodyParameters.Add("test", "test");
-
-            var exception = Assert.Throws<ClientException>(() =>
-            {
-                client.GetAcsResponse(request);
-            });
-            Assert.NotNull(exception);
-        }
-
-        [Fact]
         public void XmlPostTypeTest()
         {
-            DoActionsRequest request = new DoActionsRequest();
+            var request = new DoActionsRequest();
             request.StackName = "test";
             request.StackId = "test";
             request.ContentType = FormatType.XML;
             request.BodyParameters.Add("test", "test");
             request.BodyParameters.Add("test2", "test2");
 
-            var exception = Assert.Throws<ClientException>(() =>
-            {
-                client.GetAcsResponse(request);
-            });
+            var exception = Assert.Throws<ClientException>(() => { client.GetAcsResponse(request); });
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
             Assert.Equal("No action specified", exception.ErrorMessage);
         }
 
         [Fact]
-        public void FormPostTypeTest()
+        public void XmlPutTypeTest()
         {
-            DoActionsRequest request = new DoActionsRequest();
+            var request = new UpdateStackRequest();
             request.StackName = "test";
             request.StackId = "test";
-            request.ContentType = FormatType.FORM;
-            request.BodyParameters.Add("test", "test");
+            request.ContentType = FormatType.XML;
+            request.BodyParameters.Add("ContentMD5NotMatched", "test");
 
-            var exception = Assert.Throws<ClientException>(() =>
-            {
-                client.GetAcsResponse(request);
-            });
+            var exception = Assert.Throws<ClientException>(() => { client.GetAcsResponse(request); });
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
-            Assert.Equal("No action specified", exception.ErrorMessage);
+            Assert.Equal(
+                "The server could not comply with the request since it is either malformed or otherwise incorrect. The content type is None. Try use \"application/json\" instead.",
+                exception.ErrorMessage);
         }
     }
 }

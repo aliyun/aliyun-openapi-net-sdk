@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Core.Auth
             {
                 throw new ArgumentOutOfRangeException("Access key ID cannot be null.");
             }
+
             if (accessKeySecret == null)
             {
                 throw new ArgumentOutOfRangeException("Access key secret cannot be null.");

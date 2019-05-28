@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
+
 using System.Collections.Generic;
 using System.Xml;
 
@@ -24,11 +24,11 @@ namespace Aliyun.Acs.Core.Reader
 {
     public class XmlReader : IReader
     {
-        Dictionary<string, string> dictionary = new Dictionary<string, string>();
+        private readonly Dictionary<string, string> dictionary = new Dictionary<string, string>();
 
         public Dictionary<string, string> Read(string xml, string endpoint)
         {
-            XmlDocument doc = new XmlDocument();
+            var doc = new XmlDocument();
             doc.LoadXml(xml);
             Read(doc.ChildNodes[1], endpoint, false);
             return dictionary;
@@ -47,30 +47,35 @@ namespace Aliyun.Acs.Core.Reader
                 dictionary.Add(path, element.InnerText);
                 return;
             }
+
             if (element.FirstChild.NodeType == XmlNodeType.CDATA)
             {
                 dictionary.Add(path, element.InnerText);
                 return;
             }
+
             if (element.FirstChild.NodeType == XmlNodeType.Text)
             {
                 dictionary.Add(path, element.InnerText);
                 return;
             }
 
-            using(XmlNodeList listElements = element.SelectNodes(element.FirstChild.Name))
+            using (var listElements = element.SelectNodes(element.FirstChild.Name))
             {
                 if (listElements.Count > 1 && element.ChildNodes.Count == listElements.Count)
-                { //be list
+                {
+                    // be list
                     ElementsAsList(element.ChildNodes, path);
                 }
                 else if (listElements.Count == 1 && element.ChildNodes.Count == 1)
-                { //may be list
+                {
+                    // may be list
                     ElementsAsList(listElements, path); //as list
                     Read(element.FirstChild, path, true); //as not list
                 }
                 else
-                { //not list
+                {
+                    // not list
                     foreach (XmlNode childElement in element.ChildNodes)
                     {
                         Read(childElement, path, true);
@@ -82,11 +87,10 @@ namespace Aliyun.Acs.Core.Reader
         private void ElementsAsList(XmlNodeList listElements, string path)
         {
             dictionary.Add(path + ".Length", listElements.Count.ToString());
-            for (int i = 0; i < listElements.Count; i++)
+            for (var i = 0; i < listElements.Count; i++)
             {
                 Read(listElements[i], path + "[" + i + "]", false);
             }
         }
-
     }
 }

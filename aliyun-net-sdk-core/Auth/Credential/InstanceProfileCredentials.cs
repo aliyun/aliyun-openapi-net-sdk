@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -22,24 +22,25 @@ using System;
 namespace Aliyun.Acs.Core.Auth
 {
     /// <summary>
-    /// EcsRamRoleCredential
+    ///     EcsRamRoleCredential
     /// </summary>
     public class InstanceProfileCredentials : BasicSessionCredentials
     {
         private readonly long expiration;
         private readonly double expireFact = 0.95;
         private readonly long refreshIntervalInMillSeconds = 10000; // 10 sec
-        private long lastFailedRefreshTime = 0;
+        private long lastFailedRefreshTime;
 
         public InstanceProfileCredentials(
             string accessKeyId,
             string accessKeySecret,
             string sessionToken,
             string expiration,
-            long roleSessionDurationSeconds) : base(accessKeyId, accessKeySecret, sessionToken, roleSessionDurationSeconds)
+            long roleSessionDurationSeconds) : base(accessKeyId, accessKeySecret, sessionToken,
+            roleSessionDurationSeconds)
         {
             expiration = expiration.Replace('T', ' ').Replace('Z', ' ');
-            DateTime dt = Convert.ToDateTime(expiration);
+            var dt = Convert.ToDateTime(expiration);
 
             this.expiration = dt.Ticks;
         }
@@ -56,7 +57,7 @@ namespace Aliyun.Acs.Core.Auth
 
         public bool ShouldRefresh()
         {
-            long now = DateTime.Now.Ticks;
+            var now = DateTime.Now.Ticks;
             return now - lastFailedRefreshTime > refreshIntervalInMillSeconds;
         }
 

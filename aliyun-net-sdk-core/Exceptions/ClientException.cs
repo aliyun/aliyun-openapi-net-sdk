@@ -16,20 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 
 namespace Aliyun.Acs.Core.Exceptions
 {
     public class ClientException : Exception
     {
-        public string ErrorCode { get; set; }
-        public string ErrorMessage { get; set; }
-        public string RequestId { get; set; }
-        public ErrorType ErrorType { get; set; }
-
         public ClientException(string errCode, string errMsg, string requestId) : this(errCode, errMsg)
         {
-
         }
 
         public ClientException(string errCode, string errMsg) : base(errCode + " : " + errMsg)
@@ -43,5 +38,10 @@ namespace Aliyun.Acs.Core.Exceptions
         {
             ErrorMessage = message;
         }
+
+        public string ErrorCode { get; set; }
+        public string ErrorMessage { get; set; }
+        public string RequestId { get; set; }
+        public ErrorType ErrorType { get; set; }
     }
 }

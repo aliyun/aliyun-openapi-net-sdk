@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -22,6 +22,7 @@ namespace Aliyun.Acs.Core.Auth
     public class CredentialsBackupCompatibilityAdaptor : Credential
     {
         private readonly AlibabaCloudCredentialsProvider provider;
+
         public CredentialsBackupCompatibilityAdaptor(AlibabaCloudCredentialsProvider provider)
         {
             this.provider = provider;
@@ -29,7 +30,7 @@ namespace Aliyun.Acs.Core.Auth
 
         private AlibabaCloudCredentials GetCredentials()
         {
-            AlibabaCloudCredentials credentials = provider.GetCredentials();
+            var credentials = provider.GetCredentials();
             return credentials;
         }
 

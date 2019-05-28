@@ -1,4 +1,22 @@
-using System;
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Auth;
@@ -14,6 +32,45 @@ namespace Aliyun.Acs.Core.Tests.Units
 {
     public class RoaAcsRequestTest
     {
+        [Fact]
+        public void AddPathParameters()
+        {
+            var mockRoaAcsRequest = new MockRoaAcsRequest("product");
+            mockRoaAcsRequest.AddPathParameters("name", "value");
+
+            var context = new UnmarshallerContext();
+            context.ResponseDictionary = mockRoaAcsRequest.PathParameters;
+
+            Assert.Equal("value", context.StringValue("name"));
+        }
+
+        [Fact]
+        public void ComposeUrl()
+        {
+            string endpoint, result;
+            var mockRoaAcsRequest = new MockRoaAcsRequest("product");
+            var queries = new Dictionary<string, string>
+            {
+                {"a", "A"},
+                {"b", "B"}
+            };
+
+            endpoint = "endpoint.domain.com";
+            result = mockRoaAcsRequest.ComposeUrl(endpoint, queries);
+            // Console.WriteLine(result);
+            Assert.Equal("HTTP://endpoint.domain.com?a=A&b=B", result);
+
+            endpoint = "endpoint.domain.com?";
+            result = mockRoaAcsRequest.ComposeUrl(endpoint, queries);
+            // Console.WriteLine(result);
+            Assert.Equal("HTTP://endpoint.domain.com?a=A&b=B", result);
+
+            endpoint = "endpoint.domain.com?c=C";
+            result = mockRoaAcsRequest.ComposeUrl(endpoint, queries);
+            // Console.WriteLine(result);
+            Assert.Equal("HTTP://endpoint.domain.com?c=C&a=A&b=B", result);
+        }
+
         [Fact]
         public void Instance()
         {
@@ -37,7 +94,8 @@ namespace Aliyun.Acs.Core.Tests.Units
             Assert.Equal("action", mockRoaAcsRequest.ActionName);
             Assert.Equal("locationProduct", mockRoaAcsRequest.LocationProduct);
 
-            mockRoaAcsRequest = new MockRoaAcsRequest("product", "version", "action", "locationProduct", "locationEndpointType");
+            mockRoaAcsRequest =
+                new MockRoaAcsRequest("product", "version", "action", "locationProduct", "locationEndpointType");
             Assert.Equal("product", mockRoaAcsRequest.Product);
             Assert.Equal("version", mockRoaAcsRequest.Version);
             Assert.Equal("action", mockRoaAcsRequest.ActionName);
@@ -48,51 +106,25 @@ namespace Aliyun.Acs.Core.Tests.Units
         [Fact]
         public void SetVersion()
         {
-            MockRoaAcsRequest mockRoaAcsRequest = new MockRoaAcsRequest("product");
+            var mockRoaAcsRequest = new MockRoaAcsRequest("product");
             mockRoaAcsRequest.SetVersion("set_version");
             Assert.Equal("set_version", mockRoaAcsRequest.Version);
         }
 
         [Fact]
-        public void ComposeUrl()
-        {
-            string endpoint, result;
-            MockRoaAcsRequest mockRoaAcsRequest = new MockRoaAcsRequest("product");
-            Dictionary<string, string> queries = new Dictionary<string, string>
-            { { "a", "A" },
-                { "b", "B" }
-            };
-
-            endpoint = "endpoint.domain.com";
-            result = mockRoaAcsRequest.ComposeUrl(endpoint, queries);
-            // Console.WriteLine(result);
-            Assert.Equal("HTTP://endpoint.domain.com?a=A&b=B", result);
-
-            endpoint = "endpoint.domain.com?";
-            result = mockRoaAcsRequest.ComposeUrl(endpoint, queries);
-            // Console.WriteLine(result);
-            Assert.Equal("HTTP://endpoint.domain.com?a=A&b=B", result);
-
-            endpoint = "endpoint.domain.com?c=C";
-            result = mockRoaAcsRequest.ComposeUrl(endpoint, queries);
-            // Console.WriteLine(result);
-            Assert.Equal("HTTP://endpoint.domain.com?c=C&a=A&b=B", result);
-
-        }
-
-        [Fact]
         public void SignRequest()
         {
-            MockRoaAcsRequest mockRoaAcsRequest = new MockRoaAcsRequest("product");
-            HmacSHA1Signer signer = new HmacSHA1Signer();
-            BasicSessionCredentials basicSessionCredentials = new BasicSessionCredentials(
+            var mockRoaAcsRequest = new MockRoaAcsRequest("product");
+            var signer = new HmacSHA1Signer();
+            var basicSessionCredentials = new BasicSessionCredentials(
                 "accessKeyId", "accessKeySecret", "sessionToken", 0
             );
-            ProductDomain domain = new ProductDomain();
+            var domain = new ProductDomain();
             mockRoaAcsRequest.UriPattern = "UriPattern";
-            Dictionary<string, string> tmpDic = new Dictionary<string, string>
-            { { "a", "A" },
-                { "b", "B" }
+            var tmpDic = new Dictionary<string, string>
+            {
+                {"a", "A"},
+                {"b", "B"}
             };
             mockRoaAcsRequest.BodyParameters = tmpDic;
             mockRoaAcsRequest.PathParameters = tmpDic;
@@ -106,53 +138,52 @@ namespace Aliyun.Acs.Core.Tests.Units
             );
             request = mockRoaAcsRequest.SignRequest(signer, basicSessionCredentials, FormatType.JSON, domain);
 
-            // 覆盖不同条件的执行
             mockRoaAcsRequest.BodyParameters = null;
             signer = null;
             var mockCredential = new Mock<AlibabaCloudCredentials>();
             mockCredential.Setup(foo => foo.GetAccessKeyId()).Returns("accessKeyId");
             mockCredential.Setup(foo => foo.GetAccessKeySecret()).Returns("accessKeySecret");
-            AlibabaCloudCredentials credential = mockCredential.Object;
+            var credential = mockCredential.Object;
             mockRoaAcsRequest.SignRequest(signer, credential, FormatType.JSON, domain);
 
             signer = new HmacSHA1Signer();
             mockRoaAcsRequest.SignRequest(signer, credential, FormatType.JSON, domain);
 
-            //Test Bearertoken SignRequest with Rpc
+            // Test Bearertoken SignRequest with Rpc
             mockRoaAcsRequest.BodyParameters = null;
-            BearerTokenSigner bearerTokenSigner = new BearerTokenSigner();
-            BearerTokenCredential bearerTokenCredential = new BearerTokenCredential("FakeBearerToken");
+            var bearerTokenSigner = new BearerTokenSigner();
+            var bearerTokenCredential = new BearerTokenCredential("FakeBearerToken");
             mockRoaAcsRequest.SignRequest(bearerTokenSigner, bearerTokenCredential, FormatType.JSON, domain);
         }
-
-        [Fact]
-        public void AddPathParameters()
-        {
-            MockRoaAcsRequest mockRoaAcsRequest = new MockRoaAcsRequest("product");
-            mockRoaAcsRequest.AddPathParameters("name", "value");
-
-            UnmarshallerContext context = new UnmarshallerContext();
-            context.ResponseDictionary = mockRoaAcsRequest.PathParameters;
-
-            Assert.Equal("value", context.StringValue("name"));
-        }
     }
+
     public sealed class MockRoaAcsRequest : RoaAcsRequest<CommonResponse>
     {
+        public MockRoaAcsRequest(string product) : base(product)
+        {
+        }
 
-        public MockRoaAcsRequest(string product) : base(product) { }
+        public MockRoaAcsRequest(string product, string version) : base(product, version)
+        {
+        }
 
-        public MockRoaAcsRequest(string product, string version) : base(product, version) { }
+        public MockRoaAcsRequest(string product, string version, string action) : base(product, version, action)
+        {
+        }
 
-        public MockRoaAcsRequest(string product, string version, string action) : base(product, version, action) { }
+        public MockRoaAcsRequest(string product, string version, string action, string locationProduct) : base(product,
+            version, action, locationProduct)
+        {
+        }
 
-        public MockRoaAcsRequest(string product, string version, string action, string locationProduct) : base(product, version, action, locationProduct) { }
-
-        public MockRoaAcsRequest(string product, string version, string action, string locationProduct, string locationEndpointType) : base(product, version, action, locationProduct, locationEndpointType) { }
+        public MockRoaAcsRequest(string product, string version, string action, string locationProduct,
+            string locationEndpointType) : base(product, version, action, locationProduct, locationEndpointType)
+        {
+        }
 
         public override CommonResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            CommonResponse request = new CommonResponse();
+            var request = new CommonResponse();
             return request;
         }
     }

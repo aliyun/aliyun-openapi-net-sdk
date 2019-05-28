@@ -18,17 +18,18 @@
  */
 
 using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
 
 namespace Aliyun.Acs.Core
 {
-    class CommonRoaRequest : RoaAcsRequest<CommonResponse>
+    internal class CommonRoaRequest : RoaAcsRequest<CommonResponse>
     {
         public CommonRoaRequest(string product) : base(product)
         {
             AcceptFormat = FormatType.JSON;
         }
 
-        public override CommonResponse GetResponse(Transform.UnmarshallerContext unmarshallerContext)
+        public override CommonResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return null;
         }

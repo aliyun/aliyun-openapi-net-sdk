@@ -20,7 +20,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -36,26 +35,30 @@ namespace Aliyun.Acs.Core.Utils
 {
     public class SerilogHelper
     {
+        private const string RegexPattern = @"{(.*?)}";
         private static ILogger defaultLogger;
         private static ILogger exceptionLogger;
-        private const string RegexPattern = @"{(.*?)}";
         private static IDictionary<string, string> LoggerMessageMap;
+
+        private static Logger Logger;
         public static long ExecuteTime { get; set; }
         public static string StartTime { get; set; }
         public static bool EnableLogger { get; private set; }
 
-        private static Logger Logger;
-
-        private static void BuildKeyValueMap<T>(AcsRequest<T> request, HttpResponse response, long executeTime, string startTime) where T : AcsResponse
+        private static void BuildKeyValueMap<T>(AcsRequest<T> request, HttpResponse response, long executeTime,
+            string startTime) where T : AcsResponse
         {
             try
             {
                 LoggerMessageMap = new Dictionary<string, string>();
-                var requestHeader = request.Headers == null ? "" : DictionaryUtil.TransformDicToString(request.Headers);
-                var requestContent = request.Content == null? "": Encoding.Default.GetString(request.Content);
+                var requestHeader =
+                    request.Headers == null ? "" : DictionaryUtil.TransformDicToString(request.Headers);
+                var requestContent = request.Content == null ? "" : Encoding.Default.GetString(request.Content);
 
-                var responseHeader = response.Headers == null ? "" : DictionaryUtil.TransformDicToString(response.Headers);
-                var responseContent = response.Content == null? "": Encoding.Default.GetString(response.Content);
+                var responseHeader = response.Headers == null
+                    ? ""
+                    : DictionaryUtil.TransformDicToString(response.Headers);
+                var responseContent = response.Content == null ? "" : Encoding.Default.GetString(response.Content);
 
                 var hostName = Dns.GetHostName();
 
@@ -81,11 +84,11 @@ namespace Aliyun.Acs.Core.Utils
 
                 LoggerMessageMap.Add("code", response.Status.ToString());
                 LoggerMessageMap.Add("error", responseContent);
-                LoggerMessageMap.Add("response", responseHeader + responseContent + response.Status.ToString());
+                LoggerMessageMap.Add("response", responseHeader + responseContent + response.Status);
                 LoggerMessageMap.Add("res_headers", responseHeader);
 
                 LoggerMessageMap.Add("pid", Process.GetCurrentProcess().Id.ToString());
-                LoggerMessageMap.Add("cost", executeTime.ToString() + "ms");
+                LoggerMessageMap.Add("cost", executeTime + "ms");
                 LoggerMessageMap.Add("start_time", "[" + startTime + "]");
             }
             catch (Exception ex)
@@ -101,11 +104,12 @@ namespace Aliyun.Acs.Core.Utils
             EnableLogger = true;
 
             var loggerConfiguration = new LoggerConfiguration()
-                .WriteTo.File(Logger.LoggerPath, outputTemplate : Logger.LoggerTemplate, shared : true);
+                .WriteTo.File(Logger.LoggerPath, outputTemplate: Logger.LoggerTemplate, shared: true);
             defaultLogger = loggerConfiguration.CreateLogger();
         }
 
-        public static void LogInfo<T>(AcsRequest<T> request, HttpResponse httpResponse, long executeTime, string startTime) where T : AcsResponse
+        public static void LogInfo<T>(AcsRequest<T> request, HttpResponse httpResponse, long executeTime,
+            string startTime) where T : AcsResponse
         {
             if (!EnableLogger)
             {
@@ -117,7 +121,7 @@ namespace Aliyun.Acs.Core.Utils
             var logKey = new List<string>();
             var logValue = new List<string>();
 
-            Regex re = new Regex(RegexPattern, RegexOptions.IgnoreCase | RegexOptions.Compiled);
+            var re = new Regex(RegexPattern, RegexOptions.IgnoreCase | RegexOptions.Compiled);
             var matchCollection = re.Matches(Logger.LoggerTemplate);
 
             if (0 < matchCollection.Count)
@@ -148,7 +152,7 @@ namespace Aliyun.Acs.Core.Utils
 
             var loggerConfiguration = new LoggerConfiguration()
                 .Enrich.WithExceptionDetails()
-                .WriteTo.File(Logger.LoggerPath, shared : true);
+                .WriteTo.File(Logger.LoggerPath, shared: true);
 
             exceptionLogger = loggerConfiguration.CreateLogger();
             exceptionLogger.Error(ex, "ExceptionMessage: ");

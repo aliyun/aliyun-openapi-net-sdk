@@ -26,26 +26,27 @@ using Aliyun.Acs.Core.Utils;
 namespace Aliyun.Acs.Core.Auth
 {
     /// <summary>
-    /// STSAssumeRoleSessionCredentialsProvider provides RamRoleArnCredential
+    ///     STSAssumeRoleSessionCredentialsProvider provides RamRoleArnCredential
     /// </summary>
     public class STSAssumeRoleSessionCredentialsProvider : AlibabaCloudCredentialsProvider
     {
-        private long roleSessionDurationSeconds = 3600;
-
-        private IAcsClient stsClient;
-
-        private readonly string roleArn;
-        private string roleSessionName;
         private readonly string policy;
 
+        private readonly string roleArn;
+
         private BasicSessionCredentials credentials;
+        private long roleSessionDurationSeconds = 3600;
+        private string roleSessionName;
+
+        private IAcsClient stsClient;
 
         public STSAssumeRoleSessionCredentialsProvider(
             AlibabaCloudCredentials longLivedCredentials,
             string roleArn,
             IClientProfile clientProfile)
         {
-            AlibabaCloudCredentialsProvider longLivedCredentialsProvider = new StaticCredentialsProvider(longLivedCredentials);
+            AlibabaCloudCredentialsProvider longLivedCredentialsProvider =
+                new StaticCredentialsProvider(longLivedCredentials);
             this.roleArn = roleArn;
             roleSessionName = GetNewRoleSessionName();
             stsClient = new DefaultAcsClient(clientProfile, longLivedCredentialsProvider);
@@ -56,7 +57,8 @@ namespace Aliyun.Acs.Core.Auth
             string roleArn,
             IAcsClient client)
         {
-            AlibabaCloudCredentialsProvider longLivedCredentialsProvider = new StaticCredentialsProvider(longLivedCredentials);
+            AlibabaCloudCredentialsProvider longLivedCredentialsProvider =
+                new StaticCredentialsProvider(longLivedCredentials);
             this.roleArn = roleArn;
             roleSessionName = GetNewRoleSessionName();
             stsClient = client;
@@ -79,7 +81,8 @@ namespace Aliyun.Acs.Core.Auth
             IClientProfile profile
         )
         {
-            AlibabaCloudCredentialsProvider longLivedCredentialsProvider = new StaticCredentialsProvider(longLivedCredentials);
+            AlibabaCloudCredentialsProvider longLivedCredentialsProvider =
+                new StaticCredentialsProvider(longLivedCredentials);
             this.roleArn = roleArn;
             this.policy = policy;
             roleSessionName = GetNewRoleSessionName();
@@ -98,6 +101,16 @@ namespace Aliyun.Acs.Core.Auth
             stsClient = client;
         }
 
+        public AlibabaCloudCredentials GetCredentials()
+        {
+            if (credentials == null || credentials.WillSoonExpire())
+            {
+                credentials = GetNewSessionCredentials();
+            }
+
+            return credentials;
+        }
+
         public void WithRoleSessionName(string roleSessionName)
         {
             this.roleSessionName = roleSessionName;
@@ -107,8 +120,10 @@ namespace Aliyun.Acs.Core.Auth
         {
             if (roleSessionDurationSeconds < 180 || roleSessionDurationSeconds > 3600)
             {
-                throw new ArgumentOutOfRangeException("Assume Role session duration should be in the range of 3min - 1Hr");
+                throw new ArgumentOutOfRangeException(
+                    "Assume Role session duration should be in the range of 3min - 1Hr");
             }
+
             this.roleSessionDurationSeconds = roleSessionDurationSeconds;
         }
 
@@ -119,16 +134,7 @@ namespace Aliyun.Acs.Core.Auth
 
         public static string GetNewRoleSessionName()
         {
-            return "aliyun-net-sdk-" + DateTimeExtensions.currentTimeMillis(DateTime.Now);
-        }
-
-        public AlibabaCloudCredentials GetCredentials()
-        {
-            if (credentials == null || credentials.WillSoonExpire())
-            {
-                credentials = GetNewSessionCredentials();
-            }
-            return credentials;
+            return "aliyun-net-sdk-" + DateTime.Now.currentTimeMillis();
         }
 
         private BasicSessionCredentials GetNewSessionCredentials()
@@ -140,7 +146,7 @@ namespace Aliyun.Acs.Core.Auth
                 DurationSeconds = roleSessionDurationSeconds
             };
 
-            if (!String.IsNullOrEmpty(policy))
+            if (!string.IsNullOrEmpty(policy))
             {
                 assumeRoleRequest.Policy = policy;
             }
@@ -149,8 +155,7 @@ namespace Aliyun.Acs.Core.Auth
             return new BasicSessionCredentials(
                 response.Credentials.AccessKeyId,
                 response.Credentials.AccessKeySecret,
-                response.Credentials.SecurityToken,
-                roleSessionDurationSeconds
+                response.Credentials.SecurityToken, roleSessionDurationSeconds
             );
         }
     }

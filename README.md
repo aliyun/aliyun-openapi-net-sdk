@@ -122,7 +122,7 @@ class Program
             // Initiate the request and get the response
             var response = client.GetAcsResponse(request);
             
-            //Do something as you want below
+            // Do something as you want below
         }
         catch (ServerException ex)
         {

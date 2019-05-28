@@ -1,5 +1,23 @@
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 using System;
-using System.Reflection;
 using System.Text;
 
 using Aliyun.Acs.Core.Auth;
@@ -21,31 +39,35 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             // When Success Get Credentials
 
             // Mock Response
-            HttpResponse response = new HttpResponse();
-            byte[] content = Encoding.GetEncoding("UTF-8").GetBytes("{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" + DateTimeMock.getNotExpiredDateTimeString() + "\"}");
+            var response = new HttpResponse();
+            var content = Encoding.GetEncoding("UTF-8").GetBytes(
+                "{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" +
+                DateTimeMock.getNotExpiredDateTimeString() + "\"}");
             response.ContentType = FormatType.JSON;
             response.Content = content;
             response.Status = 200;
 
             // Mock Credentials
-            var mockCredentials = new Mock<InstanceProfileCredentials>("MockAccessKeyId", "MockAccessKeySecret", "MockSecurityToken", DateTimeMock.getNotExpiredDateTimeString(), 100000) { CallBase = true };
+            var mockCredentials = new Mock<InstanceProfileCredentials>("MockAccessKeyId", "MockAccessKeySecret",
+                "MockSecurityToken", DateTimeMock.getNotExpiredDateTimeString(), 100000) {CallBase = true};
             mockCredentials.Setup(foo => foo.RemainTicks()).Returns(15 * 1000 * 1000 * 10);
-            InstanceProfileCredentials instanceProfileCredentials = mockCredentials.Object;
+            var instanceProfileCredentials = mockCredentials.Object;
 
             // Mock Fetcher
-            var mockFetcher = new Mock<ECSMetadataServiceCredentialsFetcher>() { CallBase = true };
+            var mockFetcher = new Mock<ECSMetadataServiceCredentialsFetcher>
+                {CallBase = true};
             mockFetcher.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
             mockFetcher.Setup(foo => foo.Fetch()).Returns(instanceProfileCredentials);
-            ECSMetadataServiceCredentialsFetcher fetcher = mockFetcher.Object;
+            var fetcher = mockFetcher.Object;
 
-            string roleName = ACKMock.GetRoleName(true);
-            InstanceProfileCredentialsProvider instance = new InstanceProfileCredentialsProvider(roleName);
+            var roleName = ACKMock.GetRoleName(true);
+            var instance = new InstanceProfileCredentialsProvider(roleName);
             instance.withFetcher(fetcher);
             AlibabaCloudCredentialsProvider provider = instance;
 
-            AlibabaCloudCredentials credentials = provider.GetCredentials();
+            var credentials = provider.GetCredentials();
             Assert.Equal("MockAccessKeyId", credentials.GetAccessKeyId());
         }
 
@@ -55,27 +77,31 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             // When Credentials is Expired
 
             // Mock Response
-            HttpResponse response = new HttpResponse();
-            byte[] content = Encoding.GetEncoding("UTF-8").GetBytes("{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" + DateTimeMock.getExpiredDateTimeString() + "\"}");
+            var response = new HttpResponse();
+            var content = Encoding.GetEncoding("UTF-8").GetBytes(
+                "{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" +
+                DateTimeMock.getExpiredDateTimeString() + "\"}");
             response.ContentType = FormatType.JSON;
             response.Content = content;
             response.Status = 200;
 
             // Mock Fetcher
-            var mockFetcher = new Mock<ECSMetadataServiceCredentialsFetcher>() { CallBase = true };
+            var mockFetcher = new Mock<ECSMetadataServiceCredentialsFetcher>
+                {CallBase = true};
             mockFetcher.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
-            ECSMetadataServiceCredentialsFetcher fetcher = mockFetcher.Object;
+            var fetcher = mockFetcher.Object;
 
-            string roleName = ACKMock.GetRoleName(true);
-            InstanceProfileCredentialsProvider instance = new InstanceProfileCredentialsProvider(roleName);
+            var roleName = ACKMock.GetRoleName(true);
+            var instance = new InstanceProfileCredentialsProvider(roleName);
             AlibabaCloudCredentialsProvider provider = instance;
             instance.withFetcher(fetcher);
 
+            // Throw exception if the date is invalid
             Assert.Throws<ClientException>(() =>
             {
-                AlibabaCloudCredentials credentials = provider.GetCredentials(); // 进行有效期判断，已失效则抛出异常
+                var credentials = provider.GetCredentials();
             });
         }
 
@@ -85,34 +111,42 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             // When Credentials will Expired
 
             // Mock Response
-            HttpResponse response = new HttpResponse();
-            string ExpiredDatetime = DateTime.Now.AddMilliseconds(800).ToString();
-            byte[] content = Encoding.GetEncoding("UTF-8").GetBytes("{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" + ExpiredDatetime + "\"}");
+            var response = new HttpResponse();
+            var ExpiredDatetime = DateTime.Now.AddMilliseconds(800).ToString();
+            var content = Encoding.GetEncoding("UTF-8").GetBytes(
+                "{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" +
+                ExpiredDatetime + "\"}");
             response.ContentType = FormatType.JSON;
             response.Content = content;
             response.Status = 200;
 
             // Mock Credentials
-            var mockCredentials = new Mock<InstanceProfileCredentials>("MockAccessKeyId", "", "", ExpiredDatetime, 100000) { CallBase = true };
+            var mockCredentials =
+                new Mock<InstanceProfileCredentials>("MockAccessKeyId", "", "", ExpiredDatetime, 100000)
+                    {CallBase = true};
             mockCredentials.Setup(foo => foo.RemainTicks()).Returns(15 * 1000 * 1000 * 10);
-            InstanceProfileCredentials instanceProfileCredentials = mockCredentials.Object;
+            var instanceProfileCredentials = mockCredentials.Object;
 
             // Mock Fetcher
-            var mockFetcher = new Mock<ECSMetadataServiceCredentialsFetcher>() { CallBase = true };
+            var mockFetcher = new Mock<ECSMetadataServiceCredentialsFetcher>
+                {CallBase = true};
             mockFetcher.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
             mockFetcher.Setup(foo => foo.Fetch()).Returns(instanceProfileCredentials);
-            ECSMetadataServiceCredentialsFetcher fetcher = mockFetcher.Object;
+            var fetcher = mockFetcher.Object;
 
-            string roleName = ACKMock.GetRoleName(true);
-            InstanceProfileCredentialsProvider instance = new InstanceProfileCredentialsProvider(roleName);
+            var roleName = ACKMock.GetRoleName(true);
+            var instance = new InstanceProfileCredentialsProvider(roleName);
             AlibabaCloudCredentialsProvider provider = instance;
             instance.withFetcher(fetcher);
-            AlibabaCloudCredentials credentials = provider.GetCredentials(); // 进行有效期判断，即将失效则刷新有效时间
+
+            // Throw exception if the date is invalid
+            var credentials = provider.GetCredentials();
 
             // When Fetcher throw ClientException
-            mockFetcher = new Mock<ECSMetadataServiceCredentialsFetcher>() { CallBase = true };
+            mockFetcher = new Mock<ECSMetadataServiceCredentialsFetcher>
+                {CallBase = true};
             var ex = new ClientException("MockClientExceptionCode", "MockClinetExceptionMessage");
             mockFetcher.Setup(foo => foo.Fetch()).Throws(ex);
             fetcher = mockFetcher.Object;
@@ -128,37 +162,42 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             // When Credentials will Expired
 
             // Mock Response
-            HttpResponse response = new HttpResponse();
-            string ExpiredDatetime = DateTime.Now.AddMilliseconds(800).ToString();
-            byte[] content = Encoding.GetEncoding("UTF-8").GetBytes("{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" + ExpiredDatetime + "\"}");
+            var response = new HttpResponse();
+            var ExpiredDatetime = DateTime.Now.AddMilliseconds(800).ToString();
+            var content = Encoding.GetEncoding("UTF-8").GetBytes(
+                "{\"Code\":\"Success\",\"Message\":\"ThisIsMessage\",\"RequestId\":\"ThisIsRequestId\",\"AccessKeyId\":\"MockAccessKeyId\",\"AccessKeySecret\":\"\",\"SecurityToken\":\"\",\"Expiration\":\"" +
+                ExpiredDatetime + "\"}");
             response.ContentType = FormatType.JSON;
             response.Content = content;
             response.Status = 200;
 
             // Mock Credentials
-            var mockCredentials = new Mock<InstanceProfileCredentials>("MockAccessKeyId", "", "", ExpiredDatetime, 100000) { CallBase = true };
+            var mockCredentials =
+                new Mock<InstanceProfileCredentials>("MockAccessKeyId", "", "", ExpiredDatetime, 100000)
+                    {CallBase = true};
             mockCredentials.Setup(foo => foo.RemainTicks()).Returns(15 * 1000 * 1000 * 10);
-            InstanceProfileCredentials instanceProfileCredentials = mockCredentials.Object;
+            var instanceProfileCredentials = mockCredentials.Object;
             instanceProfileCredentials.SetLastFailedRefreshTime();
 
             // Mock Fetcher
-            var mockFetcher = new Mock<ECSMetadataServiceCredentialsFetcher>() { CallBase = true };
+            var mockFetcher = new Mock<ECSMetadataServiceCredentialsFetcher>
+                {CallBase = true};
             mockFetcher.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
             mockFetcher.Setup(foo => foo.Fetch()).Returns(instanceProfileCredentials);
-            ECSMetadataServiceCredentialsFetcher fetcher = mockFetcher.Object;
+            var fetcher = mockFetcher.Object;
 
-            string roleName = ACKMock.GetRoleName(true);
-            InstanceProfileCredentialsProvider instance = new InstanceProfileCredentialsProvider(roleName);
+            var roleName = ACKMock.GetRoleName(true);
+            var instance = new InstanceProfileCredentialsProvider(roleName);
             AlibabaCloudCredentialsProvider provider = instance;
             instance.withFetcher(fetcher);
 
-            //  Credentials will Expired at first. No Throw Exception (15000 >= 10000)
-            AlibabaCloudCredentials credentials = provider.GetCredentials();
+            // Credentials will Expired at first. No Throw Exception (15000 >= 10000)
+            var credentials = provider.GetCredentials();
             Assert.Equal("MockAccessKeyId", credentials.GetAccessKeyId());
 
-            //  Credentials will Expired at Second. Throws Exception  (5000 < 10000)
+            // Credentials will Expired at Second. Throws Exception  (5000 < 10000)
             mockCredentials.Setup(foo => foo.RemainTicks()).Returns(5000);
             instanceProfileCredentials = mockCredentials.Object;
             instanceProfileCredentials.SetLastFailedRefreshTime();
@@ -166,18 +205,15 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
             fetcher = mockFetcher.Object;
             instance.withFetcher(fetcher);
 
-            Assert.Throws<ClientException>(() =>
-            {
-                credentials = provider.GetCredentials();
-            });
+            Assert.Throws<ClientException>(() => { credentials = provider.GetCredentials(); });
         }
 
         [Fact]
         public void withFetcher()
         {
-            string roleName = ACKMock.GetRoleName(true);
-            InstanceProfileCredentialsProvider instance = new InstanceProfileCredentialsProvider(roleName);
-            ECSMetadataServiceCredentialsFetcher fetcher = new ECSMetadataServiceCredentialsFetcher();
+            var roleName = ACKMock.GetRoleName(true);
+            var instance = new InstanceProfileCredentialsProvider(roleName);
+            var fetcher = new ECSMetadataServiceCredentialsFetcher();
 
             instance.withFetcher(fetcher);
         }

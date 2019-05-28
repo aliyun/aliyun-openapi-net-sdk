@@ -1,4 +1,22 @@
-using System;
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Auth;
@@ -12,6 +30,39 @@ namespace Aliyun.Acs.Core.Tests.Units
 {
     public class AcsRequestTest
     {
+        [Fact]
+        public void CheckShowJsonItemName()
+        {
+            var mockAcsRequest = new MockAcsRequest();
+            // CheckShowJsonItemName return true
+            Assert.True(mockAcsRequest.CheckShowJsonItemName());
+        }
+
+        [Fact]
+        public void ConcatQueryString()
+        {
+            var mockAcsRequest = new MockAcsRequest();
+
+            Dictionary<string, string> tmpDic = null;
+
+            // When parameters is null
+            var result = MockAcsRequest.ConcatQueryString(tmpDic);
+            Assert.Null(result);
+
+            // when parameters is empty
+            tmpDic = new Dictionary<string, string>();
+            result = MockAcsRequest.ConcatQueryString(tmpDic);
+            
+            // Get the empty not null
+            Assert.NotNull(result);
+            Assert.Empty(result);
+
+            // When parammters is not null
+            tmpDic = new Dictionary<string, string> {{"foo", "bar"}, {"a", "A"}, {"n", null}};
+            result = MockAcsRequest.ConcatQueryString(tmpDic);
+            Assert.Equal("foo=bar&a=A&n", result);
+        }
+
         [Fact]
         public void Instance()
         {
@@ -28,7 +79,7 @@ namespace Aliyun.Acs.Core.Tests.Units
         {
             var mockAcsRequest = new MockAcsRequest();
 
-            Dictionary<String, String> tmpDic = new Dictionary<String, String> { { "foo", "bar" } };
+            var tmpDic = new Dictionary<string, string> {{"foo", "bar"}};
             mockAcsRequest.QueryParameters = tmpDic;
 
             mockAcsRequest.DomainParameters = tmpDic;
@@ -39,50 +90,19 @@ namespace Aliyun.Acs.Core.Tests.Units
         }
 
         [Fact]
-        public void ConcatQueryString()
-        {
-            var mockAcsRequest = new MockAcsRequest();
-
-            Dictionary<String, String> tmpDic = null;
-
-            // When parameters is null
-            var result = MockAcsRequest.ConcatQueryString(tmpDic);
-            Assert.Null(result);
-
-            // when parameters is empty
-            tmpDic = new Dictionary<String, String> { };
-            result = MockAcsRequest.ConcatQueryString(tmpDic);
-            Assert.NotNull(result); // 非null 但是为空
-            Assert.Empty(result);
-
-            // When parammters is not null
-            tmpDic = new Dictionary<String, String> { { "foo", "bar" }, { "a", "A" }, { "n", null } };
-            result = MockAcsRequest.ConcatQueryString(tmpDic);
-            Assert.Equal("foo=bar&a=A&n", result);
-        }
-
-        [Fact]
         public void SignRequest()
         {
-            Dictionary<String, String> tmpDic = new Dictionary<String, String> { { "foo", "bar" }, { "a", "A" }, { "n", null } };
+            var tmpDic = new Dictionary<string, string> {{"foo", "bar"}, {"a", "A"}, {"n", null}};
 
             var mockAcsRequest = new MockAcsRequest("https://www.alibabacloud.com/");
-            HmacSHA1Signer signer = new HmacSHA1Signer();
-            Credential credential = new Credential("accessKeyId", "accessKeySecret", "securityToken");
-            ProductDomain domain = new ProductDomain();
+            var signer = new HmacSHA1Signer();
+            var credential = new Credential("accessKeyId", "accessKeySecret", "securityToken");
+            var domain = new ProductDomain();
             MockAcsRequest.ConcatQueryString(tmpDic);
 
-            HttpRequest request = mockAcsRequest.SignRequest(signer, credential, FormatType.JSON, domain);
+            var request = mockAcsRequest.SignRequest(signer, credential, FormatType.JSON, domain);
 
             Assert.Equal("Instance by MockAcsRequest", request.Url);
-        }
-
-        [Fact]
-        public void CheckShowJsonItemName()
-        {
-            var mockAcsRequest = new MockAcsRequest();
-            // CheckShowJsonItemName 方法会回调true，且无其它逻辑
-            Assert.True(mockAcsRequest.CheckShowJsonItemName());
         }
 
         [Fact]
@@ -104,24 +124,24 @@ namespace Aliyun.Acs.Core.Tests.Units
     {
         public MockAcsRequest(string urlStr = null) : base(urlStr)
         {
-
         }
+
         public override HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
             FormatType? format, ProductDomain domain)
         {
-            HttpRequest httpRequest = new HttpRequest();
+            var httpRequest = new HttpRequest();
             httpRequest.Url = "Instance by MockAcsRequest";
             return httpRequest;
         }
 
-        public override String ComposeUrl(String endpoint, Dictionary<String, String> queries)
+        public override string ComposeUrl(string endpoint, Dictionary<string, string> queries)
         {
             return "";
         }
 
         public override CommonRequest GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            CommonRequest t = new CommonRequest();
+            var t = new CommonRequest();
             return t;
         }
     }

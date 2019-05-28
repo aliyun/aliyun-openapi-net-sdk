@@ -107,7 +107,7 @@ class Program
             // 发起请求，并得到 Response
             var response = client.GetAcsResponse(request);
 
-            //Do something as you want below
+            // Do something as you want below
         }
         catch (ServerException ex)
         {

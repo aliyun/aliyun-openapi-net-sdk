@@ -16,11 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Security.Cryptography;
-using System.Text;
 
 using Aliyun.Acs.Core.Http;
 
@@ -32,7 +31,8 @@ namespace Aliyun.Acs.Core.Utils
 
         public static string FormatIso8601Date(DateTime date)
         {
-            return date.ToUniversalTime().ToString(ISO8601_DATE_FORMAT, CultureInfo.CreateSpecificCulture("en-US"));
+            return date.ToUniversalTime()
+                .ToString(ISO8601_DATE_FORMAT, CultureInfo.CreateSpecificCulture("en-US"));
         }
 
         public static string GetRFC2616Date(DateTime datetime)
@@ -41,27 +41,28 @@ namespace Aliyun.Acs.Core.Utils
             {
                 datetime = DateTime.Now;
             }
-            return datetime.ToUniversalTime().GetDateTimeFormats('r') [0].ToString();
+
+            return datetime.ToUniversalTime().GetDateTimeFormats('r')[0];
         }
 
         public static string Md5Sum(byte[] buff)
         {
-            using(MD5 md5 = new MD5CryptoServiceProvider())
+            using (MD5 md5 = new MD5CryptoServiceProvider())
             {
-                byte[] output = md5.ComputeHash(buff);
+                var output = md5.ComputeHash(buff);
                 return BitConverter.ToString(output).Replace("-", "");
             }
         }
 
         public static string Md5SumAndBase64(byte[] buff)
         {
-            using(MD5 md5 = new MD5CryptoServiceProvider())
+            using (MD5 md5 = new MD5CryptoServiceProvider())
             {
-                byte[] output = md5.ComputeHash(buff);
-                //string md5Str = BitConverter.ToString(output).Replace("-", "");
+                var output = md5.ComputeHash(buff);
+                // string md5Str = BitConverter.ToString(output).Replace("-", "");
 
-                //System.Text.Encoding encode = System.Text.Encoding.ASCII;
-                //byte[] bytedata = System.Text.Encoding.ASCII.GetBytes(md5Str);
+                // System.Text.Encoding encode = System.Text.Encoding.ASCII;
+                // byte[] bytedata = System.Text.Encoding.ASCII.GetBytes(md5Str);
                 return Convert.ToBase64String(output, 0, output.Length);
             }
         }
@@ -72,14 +73,17 @@ namespace Aliyun.Acs.Core.Utils
             {
                 return "application/xml";
             }
+
             if (FormatType.JSON == formatType)
             {
                 return "application/json";
             }
+
             if (FormatType.FORM == formatType)
             {
                 return "application/x-www-form-urlencoded";
             }
+
             return "application/octet-stream";
         }
 
@@ -89,52 +93,54 @@ namespace Aliyun.Acs.Core.Utils
             {
                 return FormatType.XML;
             }
+
             if (format.ToLower().Equals("application/json"))
             {
                 return FormatType.JSON;
             }
+
             if (format.ToLower().Equals("application/x-www-form-urlencoded"))
             {
                 return FormatType.FORM;
             }
+
             return FormatType.RAW;
         }
 
         public static MethodType? StringToMethodType(string method)
         {
-            method = (method.ToUpper());
+            method = method.ToUpper();
             switch (method)
             {
                 case "GET":
-                    {
-                        return MethodType.GET;
-                    }
+                {
+                    return MethodType.GET;
+                }
                 case "PUT":
-                    {
-                        return MethodType.PUT;
-                    }
+                {
+                    return MethodType.PUT;
+                }
                 case "POST":
-                    {
-                        return MethodType.POST;
-                    }
+                {
+                    return MethodType.POST;
+                }
                 case "DELETE":
-                    {
-                        return MethodType.DELETE;
-                    }
+                {
+                    return MethodType.DELETE;
+                }
                 case "HEAD":
-                    {
-                        return MethodType.HEAD;
-                    }
+                {
+                    return MethodType.HEAD;
+                }
                 case "OPTIONS":
-                    {
-                        return MethodType.OPTIONS;
-                    }
+                {
+                    return MethodType.OPTIONS;
+                }
                 default:
-                    {
-                        return null;
-                    }
+                {
+                    return null;
+                }
             }
         }
-
     }
 }

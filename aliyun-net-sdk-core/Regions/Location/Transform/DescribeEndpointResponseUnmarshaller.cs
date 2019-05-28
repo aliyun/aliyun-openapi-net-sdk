@@ -16,18 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
-using System.Collections.Generic;
-
-using Aliyun.Acs.Core.Regions.Location.Model;
-using Aliyun.Acs.Core.Transform;
 
 namespace Aliyun.Acs.Core.Regions.Location.Transform
 {
     public class DescribeEndpointResponseUnmarshaller
     {
-
-        //public static DescribeEndpointResponse Unmarshall(UnmarshallerContext context) {
+        // public static DescribeEndpointResponse Unmarshall(UnmarshallerContext context) {
 
         //    DescribeEndpointResponse describeEndpointResponse = new DescribeEndpointResponse();
 
@@ -41,6 +35,6 @@ namespace Aliyun.Acs.Core.Regions.Location.Transform
         //    describeEndpointResponse.Protocols = protocols;
 
         //    return describeEndpointResponse;
-        //}
+        // }
     }
 }

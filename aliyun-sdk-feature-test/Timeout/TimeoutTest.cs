@@ -1,10 +1,25 @@
-using System;
-using System.Net;
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 
-using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Ecs.Model.V20140526;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 using Xunit;
 
@@ -16,27 +31,27 @@ namespace Aliyun.Acs.Feature.Test.Timeout
         [Fact]
         public void TestConnectTimeoutWithException()
         {
-            HttpRequest request = new HttpRequest("https://alibaba.great");
+            var request = new HttpRequest("https://alibaba.great");
             request.Method = MethodType.GET;
             request.SetConnectTimeoutInMilliSeconds(1);
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                HttpResponse response = HttpResponse.GetResponse(request);
+                var response = HttpResponse.GetResponse(request);
             });
 
             Assert.NotNull(exception.Message);
         }
 
         [Fact]
-        public void TestEcsConnectTimeoutWithException()
+        public void TestVPCConnectTimeoutWithException()
         {
-            DescribeAccessPointsRequest request = new DescribeAccessPointsRequest();
+            var request = new DescribeAccessPointsRequest();
             request.SetConnectTimeoutInMilliSeconds(1);
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                DescribeAccessPointsResponse response = client.GetAcsResponse(request);
+                var response = client.GetAcsResponse(request);
             });
 
             Assert.NotNull(exception.Message);
@@ -45,11 +60,11 @@ namespace Aliyun.Acs.Feature.Test.Timeout
         [Fact]
         public void TestTimeoutPriority()
         {
-            DescribeAccessPointsRequest request = new DescribeAccessPointsRequest();
+            var request = new DescribeAccessPointsRequest();
             request.SetConnectTimeoutInMilliSeconds(8000);
             client.SetConnectTimeoutInMilliSeconds(1);
 
-            DescribeAccessPointsResponse response = client.GetAcsResponse(request);
+            var response = client.GetAcsResponse(request);
 
             client.SetConnectTimeoutInMilliSeconds(5000);
             Assert.True(0 <= response.AccessPointSet.Count);

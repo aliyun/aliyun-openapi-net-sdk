@@ -25,18 +25,19 @@ namespace Aliyun.Acs.Core.Auth.Sts
     {
         public static AssumeRoleResponse Unmarshall(UnmarshallerContext context)
         {
-            AssumeRoleResponse assumeRoleResponse = new AssumeRoleResponse();
+            var assumeRoleResponse = new AssumeRoleResponse();
 
             assumeRoleResponse.RequestId = context.StringValue("AssumeRole.RequestId");
 
-            AssumeRoleResponse.AssumeRole_Credentials credentials = new AssumeRoleResponse.AssumeRole_Credentials();
+            var credentials = new AssumeRoleResponse.AssumeRole_Credentials();
             credentials.SecurityToken = context.StringValue("AssumeRole.Credentials.SecurityToken");
             credentials.AccessKeySecret = context.StringValue("AssumeRole.Credentials.AccessKeySecret");
             credentials.AccessKeyId = context.StringValue("AssumeRole.Credentials.AccessKeyId");
             credentials.Expiration = context.StringValue("AssumeRole.Credentials.Expiration");
             assumeRoleResponse.Credentials = credentials;
 
-            AssumeRoleResponse.AssumeRole_AssumedRoleUser assumedRoleUser = new AssumeRoleResponse.AssumeRole_AssumedRoleUser();
+            var assumedRoleUser =
+                new AssumeRoleResponse.AssumeRole_AssumedRoleUser();
             assumedRoleUser.Arn = context.StringValue("AssumeRole.AssumedRoleUser.Arn");
             assumedRoleUser.AssumedRoleId = context.StringValue("AssumeRole.AssumedRoleUser.AssumedRoleId");
             assumeRoleResponse.AssumedRoleUser = assumedRoleUser;

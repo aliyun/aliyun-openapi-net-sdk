@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -27,16 +28,20 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class RoaSignatureComposer : ISignatureComposer
     {
-        private static ISignatureComposer composer = null;
         protected const string QUERY_SEPARATOR = "&";
         protected const string HEADER_SEPARATOR = "\n";
+        private static ISignatureComposer composer;
 
         public Dictionary<string, string> RefreshSignParameters(Dictionary<string, string> parameters,
             Signer signer, string accessKeyId, FormatType? format)
         {
-            Dictionary<string, string> immutableMap = new Dictionary<string, string>(parameters);
+            var immutableMap = new Dictionary<string, string>(parameters);
             DictionaryUtil.Add(immutableMap, "Date", ParameterHelper.GetRFC2616Date(DateTime.Now));
-            if (null == format) { format = FormatType.RAW; }
+            if (null == format)
+            {
+                format = FormatType.RAW;
+            }
+
             DictionaryUtil.Add(immutableMap, "Accept", ParameterHelper.FormatTypeToString(format));
             DictionaryUtil.Add(immutableMap, "x-acs-signature-method", signer.GetSignerName());
             DictionaryUtil.Add(immutableMap, "x-acs-signature-version", signer.GetSignerVersion());
@@ -44,37 +49,79 @@ namespace Aliyun.Acs.Core.Auth
             {
                 DictionaryUtil.Add(immutableMap, "x-acs-signature-type", signer.GetSignerType());
             }
+
             return immutableMap;
+        }
+
+        public string ComposeStringToSign(MethodType? method, string uriPattern, Signer signer,
+            Dictionary<string, string> queries, Dictionary<string, string> headers,
+            Dictionary<string, string> paths)
+        {
+            var sb = new StringBuilder();
+            sb.Append(method).Append(HEADER_SEPARATOR);
+            if (headers.ContainsKey("Accept"))
+            {
+                sb.Append(headers["Accept"]);
+            }
+
+            sb.Append(HEADER_SEPARATOR);
+            if (headers.ContainsKey("Content-MD5"))
+            {
+                sb.Append(headers["Content-MD5"]);
+            }
+
+            sb.Append(HEADER_SEPARATOR);
+            if (headers.ContainsKey("Content-Type"))
+            {
+                sb.Append(headers["Content-Type"]);
+            }
+
+            sb.Append(HEADER_SEPARATOR);
+            if (headers.ContainsKey("Date"))
+            {
+                sb.Append(headers["Date"]);
+            }
+
+            sb.Append(HEADER_SEPARATOR);
+            var uri = ReplaceOccupiedParameters(uriPattern, paths);
+            sb.Append(BuildCanonicalHeaders(headers, "x-acs-"));
+            sb.Append(BuildQuerystring(uri, queries));
+            return sb.ToString();
         }
 
         private string[] SplitSubResource(string uri)
         {
-            int queIndex = uri.IndexOf("?");
-            string[] uriParts = new string[2];
+            var queIndex = uri.IndexOf("?");
+            var uriParts = new string[2];
             if (-1 != queIndex)
             {
                 uriParts[0] = uri.Substring(0, queIndex);
                 uriParts[1] = uri.Substring(queIndex + 1);
             }
             else
+            {
                 uriParts[0] = uri;
+            }
+
             return uriParts;
         }
 
         private string BuildQuerystring(string uri, Dictionary<string, string> queries)
         {
-            string[] uriParts = SplitSubResource(uri);
-            Dictionary<string, string> sortMap = new Dictionary<string, string>(queries);
+            var uriParts = SplitSubResource(uri);
+            var sortMap = new Dictionary<string, string>(queries);
             if (null != uriParts[1])
             {
                 sortMap.Add(uriParts[1], null);
             }
-            StringBuilder queryBuilder = new StringBuilder(uriParts[0]);
+
+            var queryBuilder = new StringBuilder(uriParts[0]);
             var sortedDictionary = SortDictionary(sortMap);
             if (0 < sortedDictionary.Count)
             {
                 queryBuilder.Append("?");
             }
+
             foreach (var e in sortedDictionary)
             {
                 queryBuilder.Append(e.Key);
@@ -82,24 +129,26 @@ namespace Aliyun.Acs.Core.Auth
                 {
                     queryBuilder.Append("=").Append(e.Value);
                 }
+
                 queryBuilder.Append(QUERY_SEPARATOR);
             }
-            string querystring = queryBuilder.ToString();
+
+            var querystring = queryBuilder.ToString();
             if (querystring.EndsWith(QUERY_SEPARATOR))
             {
                 querystring = querystring.Substring(0, querystring.Length - 1);
             }
-            return querystring;
 
+            return querystring;
         }
 
         protected string BuildCanonicalHeaders(Dictionary<string, string> headers, string headerBegin)
         {
-            Dictionary<string, string> sortMap = new Dictionary<string, string>();
+            var sortMap = new Dictionary<string, string>();
             foreach (var e in headers)
             {
-                string key = e.Key.ToLower();
-                string val = e.Value;
+                var key = e.Key.ToLower();
+                var val = e.Value;
                 if (key.StartsWith(headerBegin))
                 {
                     sortMap.Add(key, val);
@@ -108,72 +157,45 @@ namespace Aliyun.Acs.Core.Auth
 
             var sortedDictionary = SortDictionary(sortMap);
 
-            StringBuilder headerBuilder = new StringBuilder();
+            var headerBuilder = new StringBuilder();
             foreach (var e in sortedDictionary)
             {
                 headerBuilder.Append(e.Key);
                 headerBuilder.Append(':').Append(e.Value);
                 headerBuilder.Append(HEADER_SEPARATOR);
             }
+
             return headerBuilder.ToString();
         }
 
         public static string ReplaceOccupiedParameters(string url, Dictionary<string, string> paths)
         {
-            string result = url;
+            var result = url;
             foreach (var entry in paths)
             {
-                string key = entry.Key;
-                string value = entry.Value;
-                string target = "[" + key + "]";
+                var key = entry.Key;
+                var value = entry.Value;
+                var target = "[" + key + "]";
                 result = result.Replace(target, value);
             }
 
             return result;
         }
 
-        public string ComposeStringToSign(MethodType? method, string uriPattern, Signer signer,
-            Dictionary<string, string> queries, Dictionary<string, string> headers,
-            Dictionary<string, string> paths)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(method).Append(HEADER_SEPARATOR);
-            if (headers.ContainsKey("Accept"))
-            {
-                sb.Append(headers["Accept"]);
-            }
-            sb.Append(HEADER_SEPARATOR);
-            if (headers.ContainsKey("Content-MD5"))
-            {
-                sb.Append(headers["Content-MD5"]);
-            }
-            sb.Append(HEADER_SEPARATOR);
-            if (headers.ContainsKey("Content-Type"))
-            {
-                sb.Append(headers["Content-Type"]);
-            }
-            sb.Append(HEADER_SEPARATOR);
-            if (headers.ContainsKey("Date"))
-            {
-                sb.Append(headers["Date"]);
-            }
-            sb.Append(HEADER_SEPARATOR);
-            string uri = ReplaceOccupiedParameters(uriPattern, paths);
-            sb.Append(BuildCanonicalHeaders(headers, "x-acs-"));
-            sb.Append(BuildQuerystring(uri, queries));
-            return sb.ToString();
-        }
-
         public static ISignatureComposer GetComposer()
         {
             if (null == composer)
+            {
                 composer = new RoaSignatureComposer();
+            }
+
             return composer;
         }
 
         private static IDictionary<string, string> SortDictionary(Dictionary<string, string> dic)
         {
-            IDictionary<string, string> sortedDictionary = new SortedDictionary<string, string>(dic, StringComparer.Ordinal);
+            IDictionary<string, string> sortedDictionary =
+                new SortedDictionary<string, string>(dic, StringComparer.Ordinal);
             return sortedDictionary;
         }
 

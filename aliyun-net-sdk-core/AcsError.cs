@@ -16,13 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 
 namespace Aliyun.Acs.Core
 {
     public class AcsError : AcsResponse
     {
-        public String ErrorCode { get; set; }
-        public String ErrorMessage { get; set; }
+        public string ErrorCode { get; set; }
+        public string ErrorMessage { get; set; }
     }
 }

@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using Aliyun.Acs.Core.Http;
 
 namespace Aliyun.Acs.Core.Reader
@@ -25,9 +26,14 @@ namespace Aliyun.Acs.Core.Reader
         public static IReader CreateInstance(FormatType? format)
         {
             if (FormatType.JSON == format)
+            {
                 return new JsonReader();
+            }
+
             if (FormatType.XML == format)
+            {
                 return new XmlReader();
+            }
 
             return null;
         }

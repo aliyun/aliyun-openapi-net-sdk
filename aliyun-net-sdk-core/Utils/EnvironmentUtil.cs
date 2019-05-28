@@ -23,22 +23,26 @@ namespace Aliyun.Acs.Core.Utils
 {
     public class EnvironmentUtil
     {
-        private readonly static string ENV_ACCESS_KEY_ID = "ALIBABA_CLOUD_ACCESS_KEY_ID";
-        private readonly static string ENV_ACCESS_KEY_SECRET = "ALIBABA_CLOUD_ACCESS_KEY_SECRET";
-        private readonly static string ENV_REGION_ID = "ALIBABA_CLOUD_REGION_ID";
-        private readonly static string ENV_CREDENTIAL_FILE = "ALIBABA_CLOUD_CREDENTIALS_FILE";
-        private readonly static string ENV_ROLE_NAME = "ALIBABA_CLOUD_ECS_METADATA";
+        private static readonly string ENV_ACCESS_KEY_ID = "ALIBABA_CLOUD_ACCESS_KEY_ID";
+        private static readonly string ENV_ACCESS_KEY_SECRET = "ALIBABA_CLOUD_ACCESS_KEY_SECRET";
+        private static readonly string ENV_REGION_ID = "ALIBABA_CLOUD_REGION_ID";
+        private static readonly string ENV_CREDENTIAL_FILE = "ALIBABA_CLOUD_CREDENTIALS_FILE";
+        private static readonly string ENV_ROLE_NAME = "ALIBABA_CLOUD_ECS_METADATA";
 
         public static string GetHomePath()
         {
-            return (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ?
-                Environment.GetEnvironmentVariable("HOME") :
-                Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
+            return Environment.OSVersion.Platform == PlatformID.Unix ||
+                   Environment.OSVersion.Platform == PlatformID.Unix
+                ? Environment.GetEnvironmentVariable("HOME")
+                : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
         }
 
         public static string GetOSSlash()
         {
-            return (Environment.OSVersion.Platform == PlatformID.Unix || Environment.OSVersion.Platform == PlatformID.Unix) ? "/" : "\\";
+            return Environment.OSVersion.Platform == PlatformID.Unix ||
+                   Environment.OSVersion.Platform == PlatformID.Unix
+                ? "/"
+                : "\\";
         }
 
         public static string GetEnvironmentAccessKeyId()

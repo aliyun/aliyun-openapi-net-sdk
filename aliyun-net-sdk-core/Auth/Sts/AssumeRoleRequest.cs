@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -17,27 +17,27 @@
  * under the License.
  */
 
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth.Sts
 {
     public class AssumeRoleRequest : RpcAcsRequest<AssumeRoleResponse>
     {
-        public AssumeRoleRequest() : base("Sts", "2015-04-01", "AssumeRole")
-        {
-            Protocol = Http.ProtocolType.HTTPS;
-        }
         private long durationSeconds;
         private string policy;
         private string roleArn;
         private string roleSessionName;
 
+        public AssumeRoleRequest() : base("Sts", "2015-04-01", "AssumeRole")
+        {
+            Protocol = ProtocolType.HTTPS;
+        }
+
         public long DurationSeconds
         {
-            get
-            {
-                return durationSeconds;
-            }
+            get { return durationSeconds; }
             set
             {
                 durationSeconds = value;
@@ -47,10 +47,7 @@ namespace Aliyun.Acs.Core.Auth.Sts
 
         public string Policy
         {
-            get
-            {
-                return policy;
-            }
+            get { return policy; }
             set
             {
                 policy = value;
@@ -60,10 +57,7 @@ namespace Aliyun.Acs.Core.Auth.Sts
 
         public string RoleArn
         {
-            get
-            {
-                return roleArn;
-            }
+            get { return roleArn; }
             set
             {
                 roleArn = value;
@@ -73,10 +67,7 @@ namespace Aliyun.Acs.Core.Auth.Sts
 
         public string RoleSessionName
         {
-            get
-            {
-                return roleSessionName;
-            }
+            get { return roleSessionName; }
             set
             {
                 roleSessionName = value;
@@ -84,7 +75,7 @@ namespace Aliyun.Acs.Core.Auth.Sts
             }
         }
 
-        public override AssumeRoleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AssumeRoleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AssumeRoleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

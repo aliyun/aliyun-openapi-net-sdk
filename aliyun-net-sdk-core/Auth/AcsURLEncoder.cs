@@ -34,9 +34,9 @@ namespace Aliyun.Acs.Core.Auth
 
         public static string PercentEncode(string value)
         {
-            StringBuilder stringBuilder = new StringBuilder();
-            string text = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~";
-            byte[] bytes = Encoding.GetEncoding(ENCODING_UTF8).GetBytes(value);
+            var stringBuilder = new StringBuilder();
+            var text = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_.~";
+            var bytes = Encoding.GetEncoding(ENCODING_UTF8).GetBytes(value);
             foreach (char c in bytes)
             {
                 if (text.IndexOf(c) >= 0)
@@ -45,9 +45,10 @@ namespace Aliyun.Acs.Core.Auth
                 }
                 else
                 {
-                    stringBuilder.Append("%").Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int) c));
+                    stringBuilder.Append("%").Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)c));
                 }
             }
+
             return stringBuilder.ToString();
         }
     }

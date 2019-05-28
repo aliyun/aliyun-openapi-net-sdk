@@ -20,11 +20,11 @@
 namespace Aliyun.Acs.Core.Auth
 {
     /// <summary>
-    /// AccessKeyCredentialProvider provides AccessKeyCredential
+    ///     AccessKeyCredentialProvider provides AccessKeyCredential
     /// </summary>
     public class AccessKeyCredentialProvider : AlibabaCloudCredentialsProvider
     {
-        private BasicCredentials accessKeyCredential;
+        private readonly BasicCredentials accessKeyCredential;
 
         public AccessKeyCredentialProvider(string accessKeyId, string accessKeySecret)
         {

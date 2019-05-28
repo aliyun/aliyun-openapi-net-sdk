@@ -1,3 +1,22 @@
+﻿/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Exceptions;
@@ -14,12 +33,16 @@ namespace Aliyun.Acs.Feature.Test.Credential
         [Fact]
         public void SdkManageTokenTest()
         {
-            if (GetRoleArn().Equals("FakeRoleArn")) return;
-            DefaultProfile profile = DefaultProfile.GetProfile("cn-hangzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
-            BasicCredentials basicCredential = new BasicCredentials(GetBasicAccessKeyId(), GetBasicAccessKeySecret());
-            STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(basicCredential, GetRoleArn(), profile);
+            if (GetRoleArn().Equals("FakeRoleArn"))
+            {
+                return;
+            }
 
-            DefaultAcsClient client = new DefaultAcsClient(profile, provider);
+            var profile = DefaultProfile.GetProfile("cn-hangzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
+            var basicCredential = new BasicCredentials(GetBasicAccessKeyId(), GetBasicAccessKeySecret());
+            var provider = new STSAssumeRoleSessionCredentialsProvider(basicCredential, GetRoleArn(), profile);
+
+            var client = new DefaultAcsClient(profile, provider);
 
             var request = new DescribeAccessPointsRequest();
             var response = client.GetAcsResponse(request);
@@ -31,23 +54,27 @@ namespace Aliyun.Acs.Feature.Test.Credential
         [Fact]
         public void STSAssumeRoleCredentialWithPolicyTest()
         {
-            if (GetRoleArn().Equals("FakeRoleArn")) return;
+            if (GetRoleArn().Equals("FakeRoleArn"))
+            {
+                return;
+            }
+
             var profile = DefaultProfile.GetProfile("cn-hangzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
             var basicCredential = new BasicCredentials(GetBasicAccessKeyId(), GetBasicAccessKeySecret());
-            var policy = "{ \"Version\": \"1\",\"Statement\": [{\"Effect\": \"Deny\",\"Action\": \"vpc:Create*\",\"Resource\": \"acs:vpc:cn-hangzhou:*:*\"}]}";
-            STSAssumeRoleSessionCredentialsProvider provider = new STSAssumeRoleSessionCredentialsProvider(basicCredential, GetRoleArn(), policy, profile);
+            var policy =
+                "{ \"Version\": \"1\",\"Statement\": [{\"Effect\": \"Deny\",\"Action\": \"vpc:Create*\",\"Resource\": \"acs:vpc:cn-hangzhou:*:*\"}]}";
+            var provider = new STSAssumeRoleSessionCredentialsProvider(basicCredential, GetRoleArn(), policy, profile);
 
-            DefaultAcsClient client = new DefaultAcsClient(profile, provider);
+            var client = new DefaultAcsClient(profile, provider);
             var request = new CreateVpcRequest();
 
             CreateVpcResponse response;
 
-            var exception = Assert.Throws<ClientException>(() =>
-            {
-                response = client.GetAcsResponse(request);
-            });
+            var exception = Assert.Throws<ClientException>(() => { response = client.GetAcsResponse(request); });
 
-            Assert.Equal("Forbidden.RAM : User not authorized to operate on the specified resource, or this API doesn't support RAM.", exception.Message);
+            Assert.Equal(
+                "Forbidden.RAM : User not authorized to operate on the specified resource, or this API doesn't support RAM.",
+                exception.Message);
         }
     }
 }

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -25,12 +25,12 @@ namespace Aliyun.Acs.Core.Auth
 {
     public class BasicSessionCredentials : AlibabaCloudCredentials
     {
+        private const double expireFact = 0.95;
         private readonly string accessKeyId;
         private readonly string accessKeySecret;
-        private readonly string sessionToken;
         protected readonly long roleSessionDurationSeconds;
         private readonly long sessionStartedTimeInMilliSeconds;
-        private const double expireFact = 0.95;
+        private readonly string sessionToken;
 
         public BasicSessionCredentials(string accessKeyId, string accessKeySecret,
             string sessionToken, long roleSessionDurationSeconds = 0)
@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Core.Auth
             {
                 throw new ArgumentOutOfRangeException("Access key ID cannot be null.");
             }
+
             if (accessKeySecret == null)
             {
                 throw new ArgumentOutOfRangeException("Access key secret cannot be null.");
@@ -72,10 +73,12 @@ namespace Aliyun.Acs.Core.Auth
             {
                 return false;
             }
-            long now = DateTime.Now.currentTimeMillis();
+
+            var now = DateTime.Now.currentTimeMillis();
 
             // (now - sessionStartedTimeInMilliSeconds) stands for session current exist duration time (ms)
-            return roleSessionDurationSeconds * expireFact < (now - sessionStartedTimeInMilliSeconds) / 1000.0;
+            return roleSessionDurationSeconds * expireFact <
+                   (now - sessionStartedTimeInMilliSeconds) / 1000.0;
         }
     }
 }

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,21 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 
 namespace Aliyun.Acs.Core.Auth
 {
     /// <summary>
-    /// StsCredential AccessKeyId + AccessKeySecret + SecurityToken
+    ///     StsCredential AccessKeyId + AccessKeySecret + SecurityToken
     /// </summary>
     public class Credential : AlibabaCloudCredentials
     {
-        public DateTime RefreshDate { get; set; }
-        public DateTime? ExpiredDate { get; set; }
-        public string AccessKeyId { get; set; }
-        public string AccessSecret { get; set; }
-        public string SecurityToken { get; set; }
-
         public Credential()
         {
             RefreshDate = DateTime.Now;
@@ -70,6 +65,22 @@ namespace Aliyun.Acs.Core.Auth
             SetExpiredDate(expiredHours);
         }
 
+        public DateTime RefreshDate { get; set; }
+        public DateTime? ExpiredDate { get; set; }
+        public string AccessKeyId { get; set; }
+        public string AccessSecret { get; set; }
+        public string SecurityToken { get; set; }
+
+        public string GetAccessKeyId()
+        {
+            return AccessKeyId;
+        }
+
+        public string GetAccessKeySecret()
+        {
+            return AccessSecret;
+        }
+
         private void SetExpiredDate(int expiredHours)
         {
             if (0 < expiredHours)
@@ -84,19 +95,8 @@ namespace Aliyun.Acs.Core.Auth
             {
                 return false;
             }
+
             return !(ExpiredDate < DateTime.Now);
         }
-
-        public string GetAccessKeyId()
-        {
-            return AccessKeyId;
-        }
-
-        public string GetAccessKeySecret()
-        {
-            return AccessSecret;
-        }
-
     }
-
 }

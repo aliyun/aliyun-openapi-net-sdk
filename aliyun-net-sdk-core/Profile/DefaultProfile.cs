@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,18 +32,16 @@ namespace Aliyun.Acs.Core.Profile
 {
     public class DefaultProfile : IClientProfile
     {
-        private static DefaultProfile profile = null;
-        private static List<Endpoint> endpoints = null;
-
-        private Credential credential;
-        private string regionId;
-        private IEndpointsProvider iendpoints = null;
-        private ICredentialProvider icredential = null;
-        private RemoteEndpointsParser remoteProvider = null;
-        private LocationConfig locationConfig = null;
+        private static DefaultProfile profile;
+        private static List<Endpoint> endpoints;
+        private readonly ICredentialProvider icredential;
+        private readonly IEndpointsProvider iendpoints;
+        private readonly string regionId;
+        private readonly RemoteEndpointsParser remoteProvider;
         public FormatType acceptFormat;
 
-        public string DefaultClientName { get; set; }
+        private Credential credential;
+        private LocationConfig locationConfig;
 
         public DefaultProfile(bool mock)
         {
@@ -84,6 +83,8 @@ namespace Aliyun.Acs.Core.Profile
             remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
         }
 
+        public string DefaultClientName { get; set; }
+
         public string GetRegionId()
         {
             return regionId;
@@ -100,6 +101,7 @@ namespace Aliyun.Acs.Core.Profile
             {
                 credential = icredential.Fresh();
             }
+
             return credential;
         }
 
@@ -111,29 +113,18 @@ namespace Aliyun.Acs.Core.Profile
 
         public void SetLocationConfig(string regionId, string product, string endpoint)
         {
-            locationConfig = LocationConfig.createLocationConfig(regionId, product, endpoint);
-        }
-
-        public List<Endpoint> GetEndpoints(string regionId, string product)
-        {
-            if (null == endpoints)
-            {
-                Endpoint endpoint = GetEndpointByIEndpoints(regionId, product);
-                if (endpoint != null)
-                {
-                    endpoints = new List<Endpoint> { endpoint };
-                }
-            }
-            return endpoints;
+            locationConfig =
+                LocationConfig.createLocationConfig(regionId, product, endpoint);
         }
 
         public List<Endpoint> GetEndpoints(string product, string regionId, string serviceCode, string endpointType)
-
         {
             try
             {
                 if (product == null)
+                {
                     return endpoints;
+                }
 
                 if (null == endpoints)
                 {
@@ -142,15 +133,17 @@ namespace Aliyun.Acs.Core.Profile
                     {
                         endpoint = GetEndpointByRemoteProvider(regionId, product, serviceCode, endpointType);
                     }
+
                     if (endpoint == null)
                     {
                         endpoint = GetEndpointByIEndpoints(regionId, product);
                     }
+
                     if (endpoint != null)
                     {
                         endpoints = new List<Endpoint>
                         {
-                        endpoint
+                            endpoint
                         };
                         CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, DateTime.Now);
                     }
@@ -159,26 +152,27 @@ namespace Aliyun.Acs.Core.Profile
                         throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
                     }
                 }
-                else if (Endpoint.FindProductDomain(regionId, product, endpoints) == null || CacheTimeHelper.CheckCacheIsExpire(product, regionId))
+                else if (Endpoint.FindProductDomain(regionId, product, endpoints) == null ||
+                         CacheTimeHelper.CheckCacheIsExpire(product, regionId))
                 {
                     Endpoint endpoint = null;
                     if (serviceCode != null)
                     {
                         endpoint = GetEndpointByRemoteProvider(regionId, product, serviceCode, endpointType);
                     }
+
                     if (endpoint == null)
                     {
                         endpoint = GetEndpointByIEndpoints(regionId, product);
                     }
+
                     if (endpoint != null)
                     {
-                        foreach (string region in endpoint.RegionIds)
+                        foreach (var region in endpoint.RegionIds)
+                        foreach (var productDomain in endpoint.ProductDomains.ToList())
                         {
-                            foreach (ProductDomain productDomain in endpoint.ProductDomains.ToList())
-                            {
-                                AddEndpoint(endpoint.Name, region, product, productDomain.DomianName, false);
-                                CacheTimeHelper.AddLastClearTimePerProduct(product, region, DateTime.Now);
-                            }
+                            AddEndpoint(endpoint.Name, region, product, productDomain.DomianName, false);
+                            CacheTimeHelper.AddLastClearTimePerProduct(product, region, DateTime.Now);
                         }
                     }
                 }
@@ -188,13 +182,40 @@ namespace Aliyun.Acs.Core.Profile
                 SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
                 throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
             }
+
+            return endpoints;
+        }
+
+        public void SetCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider)
+        {
+            if (credential != null)
+            {
+                return;
+            }
+
+            credential = new CredentialsBackupCompatibilityAdaptor(credentialsProvider);
+        }
+
+        public List<Endpoint> GetEndpoints(string regionId, string product)
+        {
+            if (null == endpoints)
+            {
+                var endpoint = GetEndpointByIEndpoints(regionId, product);
+                if (endpoint != null)
+                {
+                    endpoints = new List<Endpoint> {endpoint};
+                }
+            }
+
             return endpoints;
         }
 
         public static DefaultProfile GetProfile()
         {
             if (null == profile)
+            {
                 profile = new DefaultProfile();
+            }
 
             return profile;
         }
@@ -207,7 +228,7 @@ namespace Aliyun.Acs.Core.Profile
 
         public static DefaultProfile GetProfile(string regionId, string accessKeyId, string secret)
         {
-            Credential creden = new Credential(accessKeyId, secret);
+            var creden = new Credential(accessKeyId, secret);
             profile = new DefaultProfile(regionId, creden);
             return profile;
         }
@@ -222,14 +243,15 @@ namespace Aliyun.Acs.Core.Profile
             AddEndpoint(endpointName, regionId, product, domain, true);
         }
 
-        public static void AddEndpoint(string endpointName, string regionId, string product, string domain, bool isNeverExpire)
+        public static void AddEndpoint(string endpointName, string regionId, string product, string domain,
+            bool isNeverExpire)
         {
             if (null == endpoints)
             {
                 endpoints = GetProfile().GetEndpoints(regionId, product);
             }
 
-            Endpoint endpoint = FindEndpointByRegionId(regionId);
+            var endpoint = FindEndpointByRegionId(regionId);
             if (null == endpoint)
             {
                 AddEndpoint_(endpointName, regionId, product, domain);
@@ -241,7 +263,7 @@ namespace Aliyun.Acs.Core.Profile
 
             if (isNeverExpire)
             {
-                DateTime date = DateTime.Now.AddYears(100);
+                var date = DateTime.Now.AddYears(100);
                 CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, date);
             }
         }
@@ -253,25 +275,26 @@ namespace Aliyun.Acs.Core.Profile
                 regionId
             };
 
-            List<ProductDomain> productDomains = new List<ProductDomain>
+            var productDomains = new List<ProductDomain>
             {
                 new ProductDomain(product, domain)
             };
-            Endpoint endpoint = new Endpoint(endpointName, regions, productDomains);
+            var endpoint = new Endpoint(endpointName, regions, productDomains);
             if (endpoints == null)
             {
                 endpoints = new List<Endpoint>();
             }
+
             endpoints.Add(endpoint);
         }
 
         private static void UpdateEndpoint(string regionId, string product, string domain, Endpoint endpoint)
         {
-            ISet<string> regionIds = endpoint.RegionIds;
+            var regionIds = endpoint.RegionIds;
             regionIds.Add(regionId);
 
-            List<ProductDomain> productDomains = endpoint.ProductDomains;
-            ProductDomain productDomain = FindProductDomain(productDomains, product);
+            var productDomains = endpoint.ProductDomains;
+            var productDomain = FindProductDomain(productDomains, product);
             if (null == productDomain)
             {
                 productDomains.Add(new ProductDomain(product, domain));
@@ -285,37 +308,32 @@ namespace Aliyun.Acs.Core.Profile
         private static Endpoint FindEndpointByRegionId(string regionId)
         {
             if (null == endpoints)
+            {
                 return null;
+            }
 
-            foreach (Endpoint endpoint in endpoints)
+            foreach (var endpoint in endpoints)
             {
                 if (endpoint.RegionIds.Contains(regionId))
                 {
                     return endpoint;
                 }
             }
+
             return null;
         }
 
         private static ProductDomain FindProductDomain(List<ProductDomain> productDomains, string product)
         {
-            foreach (ProductDomain productDomain in productDomains)
+            foreach (var productDomain in productDomains)
             {
                 if (productDomain.ProductName.Equals(product))
                 {
                     return productDomain;
                 }
             }
-            return null;
-        }
 
-        public void SetCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider)
-        {
-            if (credential != null)
-            {
-                return;
-            }
-            credential = new CredentialsBackupCompatibilityAdaptor(credentialsProvider);
+            return null;
         }
 
         public static void ClearDefaultProfile()
@@ -324,9 +342,11 @@ namespace Aliyun.Acs.Core.Profile
             endpoints = null;
         }
 
-        public virtual Endpoint GetEndpointByRemoteProvider(string regionId, string product, string serviceCode, string endpointType)
+        public virtual Endpoint GetEndpointByRemoteProvider(string regionId, string product, string serviceCode,
+            string endpointType)
         {
-            return remoteProvider.GetEndpoint(regionId, product, serviceCode, endpointType, credential, locationConfig);
+            return remoteProvider.GetEndpoint(regionId, product, serviceCode, endpointType, credential,
+                locationConfig);
         }
 
         public virtual Endpoint GetEndpointByIEndpoints(string regionId, string product)
