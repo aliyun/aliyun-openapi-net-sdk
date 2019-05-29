@@ -1,3 +1,5 @@
+### 2019-05-29 Version 1.4.2
+update  Smartag
 ### 2019-05-29 Version 1.1.0
 update product
 ### 2019-05-28 Version 2.3.2
