@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
@@ -33,6 +34,10 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 		private string status;
 
 		private string description;
+
+		private string snatCidrBlock;
+
+		private string cidrBlock;
 
 		public string RequestId
 		{
@@ -91,6 +96,30 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			set	
 			{
 				description = value;
+			}
+		}
+
+		public string SnatCidrBlock
+		{
+			get
+			{
+				return snatCidrBlock;
+			}
+			set	
+			{
+				snatCidrBlock = value;
+			}
+		}
+
+		public string CidrBlock
+		{
+			get
+			{
+				return cidrBlock;
+			}
+			set	
+			{
+				cidrBlock = value;
 			}
 		}
 	}

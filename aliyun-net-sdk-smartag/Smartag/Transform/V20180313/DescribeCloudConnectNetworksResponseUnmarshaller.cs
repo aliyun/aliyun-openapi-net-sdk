@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Smartag.Model.V20180313;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Smartag.Model.V20180313;
 
 namespace Aliyun.Acs.Smartag.Transform.V20180313
 {
@@ -47,6 +48,18 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 				cloudConnectNetwork.Description = context.StringValue("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].Description");
 				cloudConnectNetwork.CreateTime = context.LongValue("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].CreateTime");
 				cloudConnectNetwork.IsDefault = context.BooleanValue("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].IsDefault");
+				cloudConnectNetwork.CidrBlock = context.StringValue("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].CidrBlock");
+				cloudConnectNetwork.SnatCidrBlock = context.StringValue("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].SnatCidrBlock");
+
+				List<DescribeCloudConnectNetworksResponse.DescribeCloudConnectNetworks_CloudConnectNetwork.DescribeCloudConnectNetworks_Tag> cloudConnectNetwork_tags = new List<DescribeCloudConnectNetworksResponse.DescribeCloudConnectNetworks_CloudConnectNetwork.DescribeCloudConnectNetworks_Tag>();
+				for (int j = 0; j < context.Length("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].Tags.Length"); j++) {
+					DescribeCloudConnectNetworksResponse.DescribeCloudConnectNetworks_CloudConnectNetwork.DescribeCloudConnectNetworks_Tag tag = new DescribeCloudConnectNetworksResponse.DescribeCloudConnectNetworks_CloudConnectNetwork.DescribeCloudConnectNetworks_Tag();
+					tag.Key = context.StringValue("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].Tags["+ j +"].Value");
+
+					cloudConnectNetwork_tags.Add(tag);
+				}
+				cloudConnectNetwork.Tags = cloudConnectNetwork_tags;
 
 				describeCloudConnectNetworksResponse_cloudConnectNetworks.Add(cloudConnectNetwork);
 			}

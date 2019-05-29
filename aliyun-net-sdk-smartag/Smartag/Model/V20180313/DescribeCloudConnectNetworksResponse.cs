@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
@@ -114,6 +115,12 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			private long? createTime;
 
 			private bool? isDefault;
+
+			private string cidrBlock;
+
+			private string snatCidrBlock;
+
+			private List<DescribeCloudConnectNetworks_Tag> tags;
 
 			public string CcnId
 			{
@@ -220,6 +227,74 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 				set	
 				{
 					isDefault = value;
+				}
+			}
+
+			public string CidrBlock
+			{
+				get
+				{
+					return cidrBlock;
+				}
+				set	
+				{
+					cidrBlock = value;
+				}
+			}
+
+			public string SnatCidrBlock
+			{
+				get
+				{
+					return snatCidrBlock;
+				}
+				set	
+				{
+					snatCidrBlock = value;
+				}
+			}
+
+			public List<DescribeCloudConnectNetworks_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeCloudConnectNetworks_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

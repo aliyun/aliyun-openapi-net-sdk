@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
@@ -126,6 +127,14 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			private string serialNumber;
 
 			private int? securityLockThreshold;
+
+			private string aclIds;
+
+			private long? dataPlan;
+
+			private int? userCount;
+
+			private List<DescribeSmartAccessGateways_SnatEntry> snatEntries;
 
 			public string SmartAGId
 			{
@@ -304,6 +313,86 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 				set	
 				{
 					securityLockThreshold = value;
+				}
+			}
+
+			public string AclIds
+			{
+				get
+				{
+					return aclIds;
+				}
+				set	
+				{
+					aclIds = value;
+				}
+			}
+
+			public long? DataPlan
+			{
+				get
+				{
+					return dataPlan;
+				}
+				set	
+				{
+					dataPlan = value;
+				}
+			}
+
+			public int? UserCount
+			{
+				get
+				{
+					return userCount;
+				}
+				set	
+				{
+					userCount = value;
+				}
+			}
+
+			public List<DescribeSmartAccessGateways_SnatEntry> SnatEntries
+			{
+				get
+				{
+					return snatEntries;
+				}
+				set	
+				{
+					snatEntries = value;
+				}
+			}
+
+			public class DescribeSmartAccessGateways_SnatEntry
+			{
+
+				private string cidrBlock;
+
+				private string snatIp;
+
+				public string CidrBlock
+				{
+					get
+					{
+						return cidrBlock;
+					}
+					set	
+					{
+						cidrBlock = value;
+					}
+				}
+
+				public string SnatIp
+				{
+					get
+					{
+						return snatIp;
+					}
+					set	
+					{
+						snatIp = value;
+					}
 				}
 			}
 		}

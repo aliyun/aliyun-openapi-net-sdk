@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Smartag.Model.V20180313;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Smartag.Model.V20180313;
 
 namespace Aliyun.Acs.Smartag.Transform.V20180313
 {
@@ -35,6 +36,8 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 			createCloudConnectNetworkResponse.Name = context.StringValue("CreateCloudConnectNetwork.Name");
 			createCloudConnectNetworkResponse.Status = context.StringValue("CreateCloudConnectNetwork.Status");
 			createCloudConnectNetworkResponse.Description = context.StringValue("CreateCloudConnectNetwork.Description");
+			createCloudConnectNetworkResponse.SnatCidrBlock = context.StringValue("CreateCloudConnectNetwork.SnatCidrBlock");
+			createCloudConnectNetworkResponse.CidrBlock = context.StringValue("CreateCloudConnectNetwork.CidrBlock");
         
 			return createCloudConnectNetworkResponse;
         }

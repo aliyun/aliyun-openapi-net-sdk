@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Smartag.Transform;
 using Aliyun.Acs.Smartag.Transform.V20180313;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
@@ -35,15 +36,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private string regionId;
-
-		private string ownerAccount;
-
 		private string ccnId;
 
-		private string action;
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private long? ownerId;
 
@@ -60,6 +57,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string CcnId
+		{
+			get
+			{
+				return ccnId;
+			}
+			set	
+			{
+				ccnId = value;
+				DictionaryUtil.Add(QueryParameters, "CcnId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -70,19 +80,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -99,32 +96,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string CcnId
-		{
-			get
-			{
-				return ccnId;
-			}
-			set	
-			{
-				ccnId = value;
-				DictionaryUtil.Add(QueryParameters, "CcnId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -138,7 +109,7 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override DeleteCloudConnectNetworkResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteCloudConnectNetworkResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteCloudConnectNetworkResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

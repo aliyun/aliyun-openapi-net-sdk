@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Smartag.Transform;
 using Aliyun.Acs.Smartag.Transform.V20180313;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
@@ -35,19 +36,15 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string ccnId;
 
-		private string regionId;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string ccnId;
-
-		private string action;
+		private long? ownerId;
 
 		private string smartAGId;
-
-		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -59,45 +56,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -114,29 +72,29 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string Action
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return action;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string SmartAGId
+		public string OwnerAccount
 		{
 			get
 			{
-				return smartAGId;
+				return ownerAccount;
 			}
 			set	
 			{
-				smartAGId = value;
-				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -153,7 +111,20 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override UnbindSmartAccessGatewayResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string SmartAGId
+		{
+			get
+			{
+				return smartAGId;
+			}
+			set	
+			{
+				smartAGId = value;
+				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
+			}
+		}
+
+        public override UnbindSmartAccessGatewayResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UnbindSmartAccessGatewayResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

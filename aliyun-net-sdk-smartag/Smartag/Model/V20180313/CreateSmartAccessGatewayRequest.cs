@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Smartag.Transform;
 using Aliyun.Acs.Smartag.Transform.V20180313;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
@@ -43,11 +44,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string receiverDistrict;
 
-		private string regionId;
-
-		private string action;
+		private int? userCount;
 
 		private string receiverAddress;
+
+		private string instanceType;
 
 		private string buyerMessage;
 
@@ -82,6 +83,8 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 		private string receiverCountry;
 
 		private string chargeType;
+
+		private long? dataPlan;
 
 		private string receiverZip;
 
@@ -150,29 +153,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string RegionId
+		public int? UserCount
 		{
 			get
 			{
-				return regionId;
+				return userCount;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				userCount = value;
+				DictionaryUtil.Add(QueryParameters, "UserCount", value.ToString());
 			}
 		}
 
@@ -186,6 +176,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				receiverAddress = value;
 				DictionaryUtil.Add(QueryParameters, "ReceiverAddress", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 
@@ -410,6 +413,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public long? DataPlan
+		{
+			get
+			{
+				return dataPlan;
+			}
+			set	
+			{
+				dataPlan = value;
+				DictionaryUtil.Add(QueryParameters, "DataPlan", value.ToString());
+			}
+		}
+
 		public string ReceiverZip
 		{
 			get
@@ -423,7 +439,7 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override CreateSmartAccessGatewayResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateSmartAccessGatewayResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateSmartAccessGatewayResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

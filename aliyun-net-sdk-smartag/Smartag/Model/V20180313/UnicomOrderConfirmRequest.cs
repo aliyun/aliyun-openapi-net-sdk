@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Smartag.Transform;
 using Aliyun.Acs.Smartag.Transform.V20180313;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
@@ -33,42 +34,25 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         {
         }
 
-		private string tmsCode;
-
 		private long? resourceOwnerId;
 
+		private string tmsCode;
+
 		private List<OrderItem> orderItems;
+
+		private long? orderPostFee;
+
+		private string tradeId;
 
 		private string ownerUserId;
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
-
-		private string action;
-
-		private long? orderPostFee;
 
 		private long? ownerId;
 
 		private string tmsOrderCode;
-
-		private string tradeId;
-
-		public string TmsCode
-		{
-			get
-			{
-				return tmsCode;
-			}
-			set	
-			{
-				tmsCode = value;
-				DictionaryUtil.Add(QueryParameters, "TmsCode", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -80,6 +64,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string TmsCode
+		{
+			get
+			{
+				return tmsCode;
+			}
+			set	
+			{
+				tmsCode = value;
+				DictionaryUtil.Add(QueryParameters, "TmsCode", value);
 			}
 		}
 
@@ -110,6 +107,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public long? OrderPostFee
+		{
+			get
+			{
+				return orderPostFee;
+			}
+			set	
+			{
+				orderPostFee = value;
+				DictionaryUtil.Add(QueryParameters, "OrderPostFee", value.ToString());
+			}
+		}
+
+		public string TradeId
+		{
+			get
+			{
+				return tradeId;
+			}
+			set	
+			{
+				tradeId = value;
+				DictionaryUtil.Add(QueryParameters, "TradeId", value);
+			}
+		}
+
 		public string OwnerUserId
 		{
 			get
@@ -136,19 +159,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -159,32 +169,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public long? OrderPostFee
-		{
-			get
-			{
-				return orderPostFee;
-			}
-			set	
-			{
-				orderPostFee = value;
-				DictionaryUtil.Add(QueryParameters, "OrderPostFee", value.ToString());
 			}
 		}
 
@@ -211,19 +195,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				tmsOrderCode = value;
 				DictionaryUtil.Add(QueryParameters, "TmsOrderCode", value);
-			}
-		}
-
-		public string TradeId
-		{
-			get
-			{
-				return tradeId;
-			}
-			set	
-			{
-				tradeId = value;
-				DictionaryUtil.Add(QueryParameters, "TradeId", value);
 			}
 		}
 
@@ -343,7 +314,7 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override UnicomOrderConfirmResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UnicomOrderConfirmResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UnicomOrderConfirmResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

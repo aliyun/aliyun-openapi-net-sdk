@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
@@ -34,19 +35,9 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string backupDeviceId;
 
-		private string linkLevelBackupState;
-
-		private string linkLevelBackupType;
-
-		private string mainLinkId;
-
-		private string backupLinkId;
-
 		private string smartAGId;
 
-		private string mainLinkState;
-
-		private string backupLinkState;
+		private List<DescribeSmartAccessGatewayHa_LinkBackupInfoListItem> linkBackupInfoList;
 
 		public string RequestId
 		{
@@ -108,54 +99,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string LinkLevelBackupState
-		{
-			get
-			{
-				return linkLevelBackupState;
-			}
-			set	
-			{
-				linkLevelBackupState = value;
-			}
-		}
-
-		public string LinkLevelBackupType
-		{
-			get
-			{
-				return linkLevelBackupType;
-			}
-			set	
-			{
-				linkLevelBackupType = value;
-			}
-		}
-
-		public string MainLinkId
-		{
-			get
-			{
-				return mainLinkId;
-			}
-			set	
-			{
-				mainLinkId = value;
-			}
-		}
-
-		public string BackupLinkId
-		{
-			get
-			{
-				return backupLinkId;
-			}
-			set	
-			{
-				backupLinkId = value;
-			}
-		}
-
 		public string SmartAGId
 		{
 			get
@@ -168,27 +111,103 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string MainLinkState
+		public List<DescribeSmartAccessGatewayHa_LinkBackupInfoListItem> LinkBackupInfoList
 		{
 			get
 			{
-				return mainLinkState;
+				return linkBackupInfoList;
 			}
 			set	
 			{
-				mainLinkState = value;
+				linkBackupInfoList = value;
 			}
 		}
 
-		public string BackupLinkState
+		public class DescribeSmartAccessGatewayHa_LinkBackupInfoListItem
 		{
-			get
+
+			private string linkLevelBackupState;
+
+			private string linkLevelBackupType;
+
+			private string mainLinkId;
+
+			private string mainLinkState;
+
+			private string backupLinkId;
+
+			private string backupLinkState;
+
+			public string LinkLevelBackupState
 			{
-				return backupLinkState;
+				get
+				{
+					return linkLevelBackupState;
+				}
+				set	
+				{
+					linkLevelBackupState = value;
+				}
 			}
-			set	
+
+			public string LinkLevelBackupType
 			{
-				backupLinkState = value;
+				get
+				{
+					return linkLevelBackupType;
+				}
+				set	
+				{
+					linkLevelBackupType = value;
+				}
+			}
+
+			public string MainLinkId
+			{
+				get
+				{
+					return mainLinkId;
+				}
+				set	
+				{
+					mainLinkId = value;
+				}
+			}
+
+			public string MainLinkState
+			{
+				get
+				{
+					return mainLinkState;
+				}
+				set	
+				{
+					mainLinkState = value;
+				}
+			}
+
+			public string BackupLinkId
+			{
+				get
+				{
+					return backupLinkId;
+				}
+				set	
+				{
+					backupLinkId = value;
+				}
+			}
+
+			public string BackupLinkState
+			{
+				get
+				{
+					return backupLinkState;
+				}
+				set	
+				{
+					backupLinkState = value;
+				}
 			}
 		}
 	}

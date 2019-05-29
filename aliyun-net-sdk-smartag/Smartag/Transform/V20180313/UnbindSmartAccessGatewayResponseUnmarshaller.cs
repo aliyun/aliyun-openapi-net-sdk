@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Smartag.Model.V20180313;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Smartag.Model.V20180313;
 
 namespace Aliyun.Acs.Smartag.Transform.V20180313
 {

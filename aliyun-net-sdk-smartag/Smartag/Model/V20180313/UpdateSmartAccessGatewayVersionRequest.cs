@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Smartag.Transform;
 using Aliyun.Acs.Smartag.Transform.V20180313;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
@@ -35,21 +36,17 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
+		private string versionCode;
+
 		private string serialNumber;
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
-
-		private string action;
-
-		private string smartAGId;
 
 		private long? ownerId;
 
-		private string versionCode;
+		private string smartAGId;
 
 		public long? ResourceOwnerId
 		{
@@ -61,6 +58,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string VersionCode
+		{
+			get
+			{
+				return versionCode;
+			}
+			set	
+			{
+				versionCode = value;
+				DictionaryUtil.Add(QueryParameters, "VersionCode", value);
 			}
 		}
 
@@ -90,19 +100,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -113,32 +110,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string SmartAGId
-		{
-			get
-			{
-				return smartAGId;
-			}
-			set	
-			{
-				smartAGId = value;
-				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
 			}
 		}
 
@@ -155,20 +126,20 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string VersionCode
+		public string SmartAGId
 		{
 			get
 			{
-				return versionCode;
+				return smartAGId;
 			}
 			set	
 			{
-				versionCode = value;
-				DictionaryUtil.Add(QueryParameters, "VersionCode", value);
+				smartAGId = value;
+				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
 			}
 		}
 
-        public override UpdateSmartAccessGatewayVersionResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateSmartAccessGatewayVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UpdateSmartAccessGatewayVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

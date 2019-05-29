@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Smartag.Model.V20180313;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Smartag.Model.V20180313;
 
 namespace Aliyun.Acs.Smartag.Transform.V20180313
 {
@@ -53,6 +54,19 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 				smartAccessGateway.HardwareVersion = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].HardwareVersion");
 				smartAccessGateway.SerialNumber = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].SerialNumber");
 				smartAccessGateway.SecurityLockThreshold = context.IntegerValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].SecurityLockThreshold");
+				smartAccessGateway.AclIds = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].AclIds");
+				smartAccessGateway.DataPlan = context.LongValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].DataPlan");
+				smartAccessGateway.UserCount = context.IntegerValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].UserCount");
+
+				List<DescribeSmartAccessGatewaysResponse.DescribeSmartAccessGateways_SmartAccessGateway.DescribeSmartAccessGateways_SnatEntry> smartAccessGateway_snatEntries = new List<DescribeSmartAccessGatewaysResponse.DescribeSmartAccessGateways_SmartAccessGateway.DescribeSmartAccessGateways_SnatEntry>();
+				for (int j = 0; j < context.Length("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].SnatEntries.Length"); j++) {
+					DescribeSmartAccessGatewaysResponse.DescribeSmartAccessGateways_SmartAccessGateway.DescribeSmartAccessGateways_SnatEntry snatEntry = new DescribeSmartAccessGatewaysResponse.DescribeSmartAccessGateways_SmartAccessGateway.DescribeSmartAccessGateways_SnatEntry();
+					snatEntry.CidrBlock = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].SnatEntries["+ j +"].CidrBlock");
+					snatEntry.SnatIp = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].SnatEntries["+ j +"].SnatIp");
+
+					smartAccessGateway_snatEntries.Add(snatEntry);
+				}
+				smartAccessGateway.SnatEntries = smartAccessGateway_snatEntries;
 
 				describeSmartAccessGatewaysResponse_smartAccessGateways.Add(smartAccessGateway);
 			}

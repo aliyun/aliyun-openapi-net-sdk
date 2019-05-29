@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Smartag.Transform;
 using Aliyun.Acs.Smartag.Transform.V20180313;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
@@ -35,6 +36,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
+		private string aclIds;
+
+		private string unboundAclIds;
+
+		private string pageNumber;
+
+		private string pageSize;
+
+		private string instanceType;
+
 		private string serialNumber;
 
 		private string resourceOwnerAccount;
@@ -45,17 +56,9 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? ownerId;
 
-		private string pageNumber;
-
-		private string regionId;
-
 		private string name;
 
-		private string pageSize;
-
 		private string smartAGId;
-
-		private string action;
 
 		private string status;
 
@@ -69,6 +72,71 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string AclIds
+		{
+			get
+			{
+				return aclIds;
+			}
+			set	
+			{
+				aclIds = value;
+				DictionaryUtil.Add(QueryParameters, "AclIds", value);
+			}
+		}
+
+		public string UnboundAclIds
+		{
+			get
+			{
+				return unboundAclIds;
+			}
+			set	
+			{
+				unboundAclIds = value;
+				DictionaryUtil.Add(QueryParameters, "UnboundAclIds", value);
+			}
+		}
+
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
+			}
+		}
+
+		public string PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 
@@ -137,32 +205,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string Name
 		{
 			get
@@ -173,19 +215,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value);
 			}
 		}
 
@@ -202,19 +231,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string Status
 		{
 			get
@@ -228,7 +244,7 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override DescribeSmartAccessGatewaysResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeSmartAccessGatewaysResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeSmartAccessGatewaysResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

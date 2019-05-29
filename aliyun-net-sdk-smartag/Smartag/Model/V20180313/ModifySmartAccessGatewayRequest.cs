@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Smartag.Transform;
 using Aliyun.Acs.Smartag.Transform.V20180313;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
@@ -35,27 +36,23 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
+		private string description;
+
+		private int? securityLockThreshold;
+
+		private List<SnatEntries> snatEntriess;
+
 		private string resourceOwnerAccount;
 
-		private string city;
-
-		private string regionId;
-
 		private string ownerAccount;
+
+		private long? ownerId;
 
 		private string name;
 
 		private string cidrBlock;
 
 		private string smartAGId;
-
-		private string description;
-
-		private string action;
-
-		private long? ownerId;
-
-		private int? securityLockThreshold;
 
 		public long? ResourceOwnerId
 		{
@@ -67,6 +64,50 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public int? SecurityLockThreshold
+		{
+			get
+			{
+				return securityLockThreshold;
+			}
+			set	
+			{
+				securityLockThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityLockThreshold", value.ToString());
+			}
+		}
+
+		public List<SnatEntries> SnatEntriess
+		{
+			get
+			{
+				return snatEntriess;
+			}
+
+			set
+			{
+				snatEntriess = value;
+				for (int i = 0; i < snatEntriess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SnatEntries." + (i + 1) + ".CidrBlock", snatEntriess[i].CidrBlock);
+					DictionaryUtil.Add(QueryParameters,"SnatEntries." + (i + 1) + ".SnatIp", snatEntriess[i].SnatIp);
+				}
 			}
 		}
 
@@ -83,32 +124,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string City
-		{
-			get
-			{
-				return city;
-			}
-			set	
-			{
-				city = value;
-				DictionaryUtil.Add(QueryParameters, "City", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -119,6 +134,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -161,59 +189,39 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string Description
+		public class SnatEntries
 		{
-			get
+
+			private string cidrBlock;
+
+			private string snatIp;
+
+			public string CidrBlock
 			{
-				return description;
+				get
+				{
+					return cidrBlock;
+				}
+				set	
+				{
+					cidrBlock = value;
+				}
 			}
-			set	
+
+			public string SnatIp
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				get
+				{
+					return snatIp;
+				}
+				set	
+				{
+					snatIp = value;
+				}
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? SecurityLockThreshold
-		{
-			get
-			{
-				return securityLockThreshold;
-			}
-			set	
-			{
-				securityLockThreshold = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityLockThreshold", value.ToString());
-			}
-		}
-
-        public override ModifySmartAccessGatewayResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifySmartAccessGatewayResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifySmartAccessGatewayResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

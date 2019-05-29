@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Smartag.Model.V20180313;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Smartag.Model.V20180313;
 
 namespace Aliyun.Acs.Smartag.Transform.V20180313
 {
@@ -35,13 +36,21 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 			describeSmartAccessGatewayHaResponse.DeviceLevelBackupType = context.StringValue("DescribeSmartAccessGatewayHa.DeviceLevelBackupType");
 			describeSmartAccessGatewayHaResponse.MainDeviceId = context.StringValue("DescribeSmartAccessGatewayHa.MainDeviceId");
 			describeSmartAccessGatewayHaResponse.BackupDeviceId = context.StringValue("DescribeSmartAccessGatewayHa.BackupDeviceId");
-			describeSmartAccessGatewayHaResponse.LinkLevelBackupState = context.StringValue("DescribeSmartAccessGatewayHa.LinkLevelBackupState");
-			describeSmartAccessGatewayHaResponse.LinkLevelBackupType = context.StringValue("DescribeSmartAccessGatewayHa.LinkLevelBackupType");
-			describeSmartAccessGatewayHaResponse.MainLinkId = context.StringValue("DescribeSmartAccessGatewayHa.MainLinkId");
-			describeSmartAccessGatewayHaResponse.BackupLinkId = context.StringValue("DescribeSmartAccessGatewayHa.BackupLinkId");
 			describeSmartAccessGatewayHaResponse.SmartAGId = context.StringValue("DescribeSmartAccessGatewayHa.SmartAGId");
-			describeSmartAccessGatewayHaResponse.MainLinkState = context.StringValue("DescribeSmartAccessGatewayHa.MainLinkState");
-			describeSmartAccessGatewayHaResponse.BackupLinkState = context.StringValue("DescribeSmartAccessGatewayHa.BackupLinkState");
+
+			List<DescribeSmartAccessGatewayHaResponse.DescribeSmartAccessGatewayHa_LinkBackupInfoListItem> describeSmartAccessGatewayHaResponse_linkBackupInfoList = new List<DescribeSmartAccessGatewayHaResponse.DescribeSmartAccessGatewayHa_LinkBackupInfoListItem>();
+			for (int i = 0; i < context.Length("DescribeSmartAccessGatewayHa.LinkBackupInfoList.Length"); i++) {
+				DescribeSmartAccessGatewayHaResponse.DescribeSmartAccessGatewayHa_LinkBackupInfoListItem linkBackupInfoListItem = new DescribeSmartAccessGatewayHaResponse.DescribeSmartAccessGatewayHa_LinkBackupInfoListItem();
+				linkBackupInfoListItem.LinkLevelBackupState = context.StringValue("DescribeSmartAccessGatewayHa.LinkBackupInfoList["+ i +"].LinkLevelBackupState");
+				linkBackupInfoListItem.LinkLevelBackupType = context.StringValue("DescribeSmartAccessGatewayHa.LinkBackupInfoList["+ i +"].LinkLevelBackupType");
+				linkBackupInfoListItem.MainLinkId = context.StringValue("DescribeSmartAccessGatewayHa.LinkBackupInfoList["+ i +"].MainLinkId");
+				linkBackupInfoListItem.MainLinkState = context.StringValue("DescribeSmartAccessGatewayHa.LinkBackupInfoList["+ i +"].MainLinkState");
+				linkBackupInfoListItem.BackupLinkId = context.StringValue("DescribeSmartAccessGatewayHa.LinkBackupInfoList["+ i +"].BackupLinkId");
+				linkBackupInfoListItem.BackupLinkState = context.StringValue("DescribeSmartAccessGatewayHa.LinkBackupInfoList["+ i +"].BackupLinkState");
+
+				describeSmartAccessGatewayHaResponse_linkBackupInfoList.Add(linkBackupInfoListItem);
+			}
+			describeSmartAccessGatewayHaResponse.LinkBackupInfoList = describeSmartAccessGatewayHaResponse_linkBackupInfoList;
         
 			return describeSmartAccessGatewayHaResponse;
         }

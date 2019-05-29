@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Smartag.Transform;
 using Aliyun.Acs.Smartag.Transform.V20180313;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Smartag.Model.V20180313
 {
@@ -35,19 +36,15 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
+		private string ccnInstanceId;
+
 		private string resourceOwnerAccount;
-
-		private string regionId;
-
-		private string cenInstanceId;
 
 		private string ownerAccount;
 
-		private string action;
-
-		private string ccnInstanceId;
-
 		private long? ownerId;
+
+		private string cenInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -59,71 +56,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string CenInstanceId
-		{
-			get
-			{
-				return cenInstanceId;
-			}
-			set	
-			{
-				cenInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "CenInstanceId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -140,6 +72,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -153,7 +111,20 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-        public override RevokeInstanceFromCbnResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string CenInstanceId
+		{
+			get
+			{
+				return cenInstanceId;
+			}
+			set	
+			{
+				cenInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "CenInstanceId", value);
+			}
+		}
+
+        public override RevokeInstanceFromCbnResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return RevokeInstanceFromCbnResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
