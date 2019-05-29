@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CheckRecoveryConditionsRequest : RpcAcsRequest<CheckRecoveryConditionsResponse>
     {
         public CheckRecoveryConditionsRequest()
-            : base("Rds", "2014-08-15", "CheckRecoveryConditions", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "CheckRecoveryConditions", "rds", "openAPI")
         {
         }
 

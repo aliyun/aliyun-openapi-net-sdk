@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeInstanceAutoRenewalAttributeRequest : RpcAcsRequest<DescribeInstanceAutoRenewalAttributeResponse>
     {
         public DescribeInstanceAutoRenewalAttributeRequest()
-            : base("Rds", "2014-08-15", "DescribeInstanceAutoRenewalAttribute", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeInstanceAutoRenewalAttribute", "rds", "openAPI")
         {
         }
 

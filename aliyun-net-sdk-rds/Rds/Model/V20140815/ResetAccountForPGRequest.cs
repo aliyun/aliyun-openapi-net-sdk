@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ResetAccountForPGRequest : RpcAcsRequest<ResetAccountForPGResponse>
     {
         public ResetAccountForPGRequest()
-            : base("Rds", "2014-08-15", "ResetAccountForPG", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ResetAccountForPG", "rds", "openAPI")
         {
         }
 

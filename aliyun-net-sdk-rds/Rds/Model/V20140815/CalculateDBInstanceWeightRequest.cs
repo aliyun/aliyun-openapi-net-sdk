@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CalculateDBInstanceWeightRequest : RpcAcsRequest<CalculateDBInstanceWeightResponse>
     {
         public CalculateDBInstanceWeightRequest()
-            : base("Rds", "2014-08-15", "CalculateDBInstanceWeight", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "CalculateDBInstanceWeight", "rds", "openAPI")
         {
         }
 

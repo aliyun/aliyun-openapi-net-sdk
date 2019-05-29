@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class EvaluateSupportByokShowRequest : RpcAcsRequest<EvaluateSupportByokShowResponse>
     {
         public EvaluateSupportByokShowRequest()
-            : base("Rds", "2014-08-15", "EvaluateSupportByokShow", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "EvaluateSupportByokShow", "rds", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBInstanceDescriptionRequest : RpcAcsRequest<ModifyDBInstanceDescriptionResponse>
     {
         public ModifyDBInstanceDescriptionRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceDescription", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceDescription", "rds", "openAPI")
         {
         }
 

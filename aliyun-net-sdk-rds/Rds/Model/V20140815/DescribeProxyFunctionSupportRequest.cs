@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeProxyFunctionSupportRequest : RpcAcsRequest<DescribeProxyFunctionSupportResponse>
     {
         public DescribeProxyFunctionSupportRequest()
-            : base("Rds", "2014-08-15", "DescribeProxyFunctionSupport", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeProxyFunctionSupport", "rds", "openAPI")
         {
         }
 

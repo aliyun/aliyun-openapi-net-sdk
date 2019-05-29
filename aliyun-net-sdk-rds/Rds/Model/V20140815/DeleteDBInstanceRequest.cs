@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DeleteDBInstanceRequest : RpcAcsRequest<DeleteDBInstanceResponse>
     {
         public DeleteDBInstanceRequest()
-            : base("Rds", "2014-08-15", "DeleteDBInstance", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DeleteDBInstance", "rds", "openAPI")
         {
         }
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeTaskInfoRequest : RpcAcsRequest<DescribeTaskInfoResponse>
     {
         public DescribeTaskInfoRequest()
-            : base("Rds", "2014-08-15", "DescribeTaskInfo", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeTaskInfo", "rds", "openAPI")
         {
         }
 

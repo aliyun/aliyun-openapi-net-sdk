@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeCollationTimeZonesRequest : RpcAcsRequest<DescribeCollationTimeZonesResponse>
     {
         public DescribeCollationTimeZonesRequest()
-            : base("Rds", "2014-08-15", "DescribeCollationTimeZones", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeCollationTimeZones", "rds", "openAPI")
         {
         }
 

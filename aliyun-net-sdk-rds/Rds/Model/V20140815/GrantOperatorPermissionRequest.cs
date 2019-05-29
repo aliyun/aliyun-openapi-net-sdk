@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class GrantOperatorPermissionRequest : RpcAcsRequest<GrantOperatorPermissionResponse>
     {
         public GrantOperatorPermissionRequest()
-            : base("Rds", "2014-08-15", "GrantOperatorPermission", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "GrantOperatorPermission", "rds", "openAPI")
         {
         }
 

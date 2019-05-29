@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CopyDatabaseBetweenInstancesRequest : RpcAcsRequest<CopyDatabaseBetweenInstancesResponse>
     {
         public CopyDatabaseBetweenInstancesRequest()
-            : base("Rds", "2014-08-15", "CopyDatabaseBetweenInstances", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "CopyDatabaseBetweenInstances", "rds", "openAPI")
         {
         }
 
