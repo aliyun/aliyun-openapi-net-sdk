@@ -26,8 +26,9 @@
 
 ## 环境要求
 Alibaba Cloud SDK for .NET 适用于:
-- **`.NET Framework 4.5`** 及其以上版本
-- **`.NET Standard 2.0`** 及其以上版本。
+- **.NET Framework 4.5** 及其以上版本
+- **.NET Standard 2.0** 及其以上版本。
+- **C# 4.0** 及其以上版本
 
 
 ## 安装

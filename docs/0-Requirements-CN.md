@@ -3,8 +3,9 @@
 
 # 要求
 首先要保证您安装了相关 [.NET SDK][.net sdk] 和 [.NET RunTime][.net runtime]
-- **`.NET Framework 4.5`** 及其以上版本
-- **`.NET Standard 2.0`** 及其以上版本
+- **.NET Framework 4.5** 及其以上版本
+- **.NET Standard 2.0** 及其以上版本
+- **C# 4.0** 及其以上版本
 
 # 建议
 - 建议使用 **.NET Standard 2.0** 及以上目标框架

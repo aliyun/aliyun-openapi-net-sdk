@@ -12,19 +12,9 @@ your [issues][issues] or [pull requests][pull-requests] through GitHub.
    Agreement (CLA)][cla].
 
 - Please submit code that follows these standards.
-   You can choose both [Visual Studio 2017](https://visualstudio.microsoft.com) and [Visual Studio Code](https://visualstudio.microsoft.com) to develop and help you write your code. The `Visual Studio Code` format is:
-   ```json
-   {
-    "csharpfixformat.style.spaces.beforeParenthesis": false,
-    "csharpfixformat.style.newline.atEnd": true,
-    "csharpfixformat.sort.usings.splitGroups": true,
-    "csharpfixformat.style.braces.onSameLine": false,
-    "editor.formatOnType": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
-    "csharp.format.enable": false
-    }
-   ```
+   You can choose both [Visual Studio 2017](https://visualstudio.microsoft.com) and [VS Code](https://visualstudio.microsoft.com) to develop and help you write your code. 
+
+   The editor config standard is in the aliyun sdk core root folder called `.editorconfig`. If you are develop with `VS Code`, please add `EditorConfig for VS Code` extension.
 
 - We maintain a high percentage of code coverage in our unit tests. If you make
    changes to the code, please add, update, and/or remove tests as appropriate.
