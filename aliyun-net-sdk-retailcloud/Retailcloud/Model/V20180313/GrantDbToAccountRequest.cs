@@ -32,6 +32,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
         public GrantDbToAccountRequest()
             : base("retailcloud", "2018-03-13", "GrantDbToAccount")
         {
+			Method = MethodType.POST;
         }
 
 		private string accountName;
@@ -53,7 +54,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
+				DictionaryUtil.Add(BodyParameters, "AccountName", value);
 			}
 		}
 
@@ -66,7 +67,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				dbName = value;
-				DictionaryUtil.Add(QueryParameters, "DbName", value);
+				DictionaryUtil.Add(BodyParameters, "DbName", value);
 			}
 		}
 
@@ -79,7 +80,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				mainUserId = value;
-				DictionaryUtil.Add(QueryParameters, "MainUserId", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "MainUserId", value.ToString());
 			}
 		}
 
@@ -92,7 +93,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				dbInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DbInstanceId", value);
+				DictionaryUtil.Add(BodyParameters, "DbInstanceId", value);
 			}
 		}
 
@@ -105,7 +106,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				accountPrivilege = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
+				DictionaryUtil.Add(BodyParameters, "AccountPrivilege", value);
 			}
 		}
 

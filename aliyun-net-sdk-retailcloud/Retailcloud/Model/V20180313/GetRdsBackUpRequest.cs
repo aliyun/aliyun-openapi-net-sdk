@@ -32,6 +32,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
         public GetRdsBackUpRequest()
             : base("retailcloud", "2018-03-13", "GetRdsBackUp")
         {
+			Method = MethodType.POST;
         }
 
 		private string backupId;

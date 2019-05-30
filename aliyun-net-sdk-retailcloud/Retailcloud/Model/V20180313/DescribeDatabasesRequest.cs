@@ -45,7 +45,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				instanceId = value;
-				DictionaryUtil.Add(BodyParameters, "InstanceId", value);
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

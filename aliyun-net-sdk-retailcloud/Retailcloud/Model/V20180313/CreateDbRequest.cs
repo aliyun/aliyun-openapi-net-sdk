@@ -32,6 +32,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
         public CreateDbRequest()
             : base("retailcloud", "2018-03-13", "CreateDb")
         {
+			Method = MethodType.POST;
         }
 
 		private string dbName;
@@ -53,7 +54,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				dbName = value;
-				DictionaryUtil.Add(QueryParameters, "DbName", value);
+				DictionaryUtil.Add(BodyParameters, "DbName", value);
 			}
 		}
 
@@ -66,7 +67,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				mainUserId = value;
-				DictionaryUtil.Add(QueryParameters, "MainUserId", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "MainUserId", value.ToString());
 			}
 		}
 
@@ -79,7 +80,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				dbInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DbInstanceId", value);
+				DictionaryUtil.Add(BodyParameters, "DbInstanceId", value);
 			}
 		}
 
@@ -92,7 +93,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				dbDescription = value;
-				DictionaryUtil.Add(QueryParameters, "DbDescription", value);
+				DictionaryUtil.Add(BodyParameters, "DbDescription", value);
 			}
 		}
 
@@ -105,7 +106,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				characterSetName = value;
-				DictionaryUtil.Add(QueryParameters, "CharacterSetName", value);
+				DictionaryUtil.Add(BodyParameters, "CharacterSetName", value);
 			}
 		}
 
