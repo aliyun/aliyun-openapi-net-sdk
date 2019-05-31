@@ -23,14 +23,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.ARMS.Transform;
-using Aliyun.Acs.ARMS.Transform.V20181219;
+using Aliyun.Acs.ARMS.Transform.V20190219;
 
-namespace Aliyun.Acs.ARMS.Model.V20181219
+namespace Aliyun.Acs.ARMS.Model.V20190219
 {
     public class MetricQueryRequest : RpcAcsRequest<MetricQueryResponse>
     {
         public MetricQueryRequest()
-            : base("ARMS", "2018-12-19", "MetricQuery", "arms", "openAPI")
+            : base("ARMS", "2019-02-19", "MetricQuery")
         {
         }
 

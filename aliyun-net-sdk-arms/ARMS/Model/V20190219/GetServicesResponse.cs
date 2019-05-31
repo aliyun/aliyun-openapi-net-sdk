@@ -20,7 +20,7 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.ARMS.Model.V20181219
+namespace Aliyun.Acs.ARMS.Model.V20190219
 {
 	public class GetServicesResponse : AcsResponse
 	{

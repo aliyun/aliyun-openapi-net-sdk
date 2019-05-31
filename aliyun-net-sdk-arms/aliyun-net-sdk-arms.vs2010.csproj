@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{d9356d54-ea45-445d-8f8f-51950b82c1a6}</ProjectGuid>
+    <ProjectGuid>{1a640b6f-ac03-4f30-be8a-e8c70ece6f72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,25 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="ARMS\Transform\V20181219\ARMSQueryDataSetResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20181219\CreateAppResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20181219\MetricQueryResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20181219\DeleteAppResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20181219\SearchTracesResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20181219\GetServicesResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Model\V20181219\SearchTracesResponse.cs" />
-	<Compile Include="ARMS\Model\V20181219\SearchTracesRequest.cs" />
-	<Compile Include="ARMS\Model\V20181219\MetricQueryRequest.cs" />
-	<Compile Include="ARMS\Model\V20181219\CreateAppResponse.cs" />
-	<Compile Include="ARMS\Model\V20181219\CreateAppRequest.cs" />
-	<Compile Include="ARMS\Model\V20181219\ARMSQueryDataSetRequest.cs" />
-	<Compile Include="ARMS\Model\V20181219\DeleteAppResponse.cs" />
-	<Compile Include="ARMS\Model\V20181219\ARMSQueryDataSetResponse.cs" />
-	<Compile Include="ARMS\Model\V20181219\GetServicesResponse.cs" />
-	<Compile Include="ARMS\Model\V20181219\GetTraceRequest.cs" />
-	<Compile Include="ARMS\Model\V20181219\DeleteAppRequest.cs" />
-	<Compile Include="ARMS\Model\V20181219\MetricQueryResponse.cs" />
-	<Compile Include="ARMS\Model\V20181219\GetServicesRequest.cs" />
+	<Compile Include="ARMS\Transform\V20190219\MetricQueryResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190219\ARMSQueryDataSetResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190219\GetTraceResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190219\GetSpanNamesResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190219\GetServicesResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190219\SearchTraceCountResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190219\SearchTracesResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190219\GetTagKeyResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190219\GetTagValResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

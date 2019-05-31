@@ -20,7 +20,7 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.ARMS.Model.V20181219
+namespace Aliyun.Acs.ARMS.Model.V20190219
 {
 	public class GetTraceResponse : AcsResponse
 	{
@@ -60,7 +60,7 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 
 			private string operationName;
 
-			private int? duration;
+			private long? duration;
 
 			private string serviceName;
 
@@ -102,7 +102,7 @@ namespace Aliyun.Acs.ARMS.Model.V20181219
 				}
 			}
 
-			public int? Duration
+			public long? Duration
 			{
 				get
 				{

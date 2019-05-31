@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.ARMS.Model.V20181219;
+using Aliyun.Acs.ARMS.Model.V20190219;
 
-namespace Aliyun.Acs.ARMS.Transform.V20181219
+namespace Aliyun.Acs.ARMS.Transform.V20190219
 {
     public class GetTraceResponseUnmarshaller
     {
@@ -38,7 +38,7 @@ namespace Aliyun.Acs.ARMS.Transform.V20181219
 				GetTraceResponse.GetTrace_CallChainInfo callChainInfo = new GetTraceResponse.GetTrace_CallChainInfo();
 				callChainInfo.TraceID = context.StringValue("GetTrace.Data["+ i +"].TraceID");
 				callChainInfo.OperationName = context.StringValue("GetTrace.Data["+ i +"].OperationName");
-				callChainInfo.Duration = context.IntegerValue("GetTrace.Data["+ i +"].Duration");
+				callChainInfo.Duration = context.LongValue("GetTrace.Data["+ i +"].Duration");
 				callChainInfo.ServiceName = context.StringValue("GetTrace.Data["+ i +"].ServiceName");
 				callChainInfo.ServiceIp = context.StringValue("GetTrace.Data["+ i +"].ServiceIp");
 				callChainInfo.Timestamp = context.LongValue("GetTrace.Data["+ i +"].Timestamp");

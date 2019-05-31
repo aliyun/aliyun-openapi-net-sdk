@@ -20,9 +20,9 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.ARMS.Model.V20181219;
+using Aliyun.Acs.ARMS.Model.V20190219;
 
-namespace Aliyun.Acs.ARMS.Transform.V20181219
+namespace Aliyun.Acs.ARMS.Transform.V20190219
 {
     public class GetServicesResponseUnmarshaller
     {
