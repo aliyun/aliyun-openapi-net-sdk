@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 			data.IdCardBackPic = context.StringValue("GetMaterials.Data.IdCardBackPic");
 			data.FacePic = context.StringValue("GetMaterials.Data.FacePic");
 			data.EthnicGroup = context.StringValue("GetMaterials.Data.EthnicGroup");
+			data.Authority = context.StringValue("GetMaterials.Data.Authority");
 			getMaterialsResponse.Data = data;
         
 			return getMaterialsResponse;

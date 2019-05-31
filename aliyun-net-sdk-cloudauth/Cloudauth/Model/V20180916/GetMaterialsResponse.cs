@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 
 			private string ethnicGroup;
 
+			private string authority;
+
 			public string Name
 			{
 				get
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 				set	
 				{
 					ethnicGroup = value;
+				}
+			}
+
+			public string Authority
+			{
+				get
+				{
+					return authority;
+				}
+				set	
+				{
+					authority = value;
 				}
 			}
 		}
