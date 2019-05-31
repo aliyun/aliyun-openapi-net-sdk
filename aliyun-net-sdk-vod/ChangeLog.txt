@@ -1,3 +1,6 @@
+2019-05-31 Version: 2.15.4
+1, Support net45 in nuget package
+
 2019-05-16 Version: 2.15.3
 1, Add some new apis to fetch the usage data from VoD, such as DescribeVodDomainUsageData, DescribeVodStorageData, DescribeVodTranscodeData, DescribeVodAIData.
 2, Add a new api named GetUploadDetails to describe the upload detail, such as uploading time and uploading source.

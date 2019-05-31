@@ -45,6 +45,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				vodTemplateInfo.TemplateConfig = context.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].TemplateConfig");
 				vodTemplateInfo.CreationTime = context.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].CreationTime");
 				vodTemplateInfo.ModifyTime = context.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].ModifyTime");
+				vodTemplateInfo.AppId = context.StringValue("ListVodTemplate.VodTemplateInfoList["+ i +"].AppId");
 
 				listVodTemplateResponse_vodTemplateInfoList.Add(vodTemplateInfo);
 			}

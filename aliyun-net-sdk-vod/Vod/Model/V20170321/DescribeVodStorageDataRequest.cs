@@ -36,6 +36,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string startTime;
 
+		private string storage;
+
 		private string storageType;
 
 		private string endTime;
@@ -54,6 +56,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string Storage
+		{
+			get
+			{
+				return storage;
+			}
+			set	
+			{
+				storage = value;
+				DictionaryUtil.Add(QueryParameters, "Storage", value);
 			}
 		}
 

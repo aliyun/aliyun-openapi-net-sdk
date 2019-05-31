@@ -74,6 +74,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string modifyTime;
 
+			private string appId;
+
 			public string Name
 			{
 				get
@@ -179,6 +181,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					modifyTime = value;
+				}
+			}
+
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
 				}
 			}
 		}

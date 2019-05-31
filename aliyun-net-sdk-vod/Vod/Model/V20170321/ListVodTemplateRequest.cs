@@ -40,6 +40,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string templateType;
 
+		private string appId;
+
 		private long? ownerId;
 
 		public long? ResourceOwnerId
@@ -78,6 +80,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				templateType = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateType", value);
+			}
+		}
+
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 

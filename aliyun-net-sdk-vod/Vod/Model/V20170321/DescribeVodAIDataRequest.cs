@@ -36,6 +36,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string startTime;
 
+		private string aIType;
+
 		private string endTime;
 
 		private long? ownerId;
@@ -52,6 +54,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string AIType
+		{
+			get
+			{
+				return aIType;
+			}
+			set	
+			{
+				aIType = value;
+				DictionaryUtil.Add(QueryParameters, "AIType", value);
 			}
 		}
 

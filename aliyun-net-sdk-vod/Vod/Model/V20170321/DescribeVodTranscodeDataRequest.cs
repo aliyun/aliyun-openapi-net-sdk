@@ -36,7 +36,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string startTime;
 
+		private string storage;
+
 		private string endTime;
+
+		private string specification;
 
 		private long? ownerId;
 
@@ -55,6 +59,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string Storage
+		{
+			get
+			{
+				return storage;
+			}
+			set	
+			{
+				storage = value;
+				DictionaryUtil.Add(QueryParameters, "Storage", value);
+			}
+		}
+
 		public string EndTime
 		{
 			get
@@ -65,6 +82,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string Specification
+		{
+			get
+			{
+				return specification;
+			}
+			set	
+			{
+				specification = value;
+				DictionaryUtil.Add(QueryParameters, "Specification", value);
 			}
 		}
 
