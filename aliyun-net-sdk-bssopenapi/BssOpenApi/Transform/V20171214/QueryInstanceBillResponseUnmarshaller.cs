@@ -48,7 +48,6 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			for (int i = 0; i < context.Length("QueryInstanceBill.Data.Items.Length"); i++) {
 				QueryInstanceBillResponse.QueryInstanceBill_Data.QueryInstanceBill_Item item = new QueryInstanceBillResponse.QueryInstanceBill_Data.QueryInstanceBill_Item();
 				item.InstanceID = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].InstanceID");
-				item.ServicePeriod = context.FloatValue("QueryInstanceBill.Data.Items["+ i +"].ServicePeriod");
 				item.BillingType = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].BillingType");
 				item.CostUnit = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].CostUnit");
 				item.ProductCode = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ProductCode");
@@ -72,6 +71,15 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.PaymentAmount = context.FloatValue("QueryInstanceBill.Data.Items["+ i +"].PaymentAmount");
 				item.OutstandingAmount = context.FloatValue("QueryInstanceBill.Data.Items["+ i +"].OutstandingAmount");
 				item.Currency = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Currency");
+				item.NickName = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].NickName");
+				item.ResourceGroup = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ResourceGroup");
+				item.Tag = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Tag");
+				item.InstanceConfig = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].InstanceConfig");
+				item.InstanceSpec = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].InstanceSpec");
+				item.InternetIP = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].InternetIP");
+				item.IntranetIP = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].IntranetIP");
+				item.Region = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Region");
+				item.Zone = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Zone");
 
 				data_items.Add(item);
 			}

@@ -201,8 +201,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string instanceID;
 
-				private float? servicePeriod;
-
 				private string billingType;
 
 				private string costUnit;
@@ -249,6 +247,24 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string currency;
 
+				private string nickName;
+
+				private string resourceGroup;
+
+				private string tag;
+
+				private string instanceConfig;
+
+				private string instanceSpec;
+
+				private string internetIP;
+
+				private string intranetIP;
+
+				private string region;
+
+				private string zone;
+
 				public string InstanceID
 				{
 					get
@@ -258,18 +274,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						instanceID = value;
-					}
-				}
-
-				public float? ServicePeriod
-				{
-					get
-					{
-						return servicePeriod;
-					}
-					set	
-					{
-						servicePeriod = value;
 					}
 				}
 
@@ -546,6 +550,114 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						currency = value;
+					}
+				}
+
+				public string NickName
+				{
+					get
+					{
+						return nickName;
+					}
+					set	
+					{
+						nickName = value;
+					}
+				}
+
+				public string ResourceGroup
+				{
+					get
+					{
+						return resourceGroup;
+					}
+					set	
+					{
+						resourceGroup = value;
+					}
+				}
+
+				public string Tag
+				{
+					get
+					{
+						return tag;
+					}
+					set	
+					{
+						tag = value;
+					}
+				}
+
+				public string InstanceConfig
+				{
+					get
+					{
+						return instanceConfig;
+					}
+					set	
+					{
+						instanceConfig = value;
+					}
+				}
+
+				public string InstanceSpec
+				{
+					get
+					{
+						return instanceSpec;
+					}
+					set	
+					{
+						instanceSpec = value;
+					}
+				}
+
+				public string InternetIP
+				{
+					get
+					{
+						return internetIP;
+					}
+					set	
+					{
+						internetIP = value;
+					}
+				}
+
+				public string IntranetIP
+				{
+					get
+					{
+						return intranetIP;
+					}
+					set	
+					{
+						intranetIP = value;
+					}
+				}
+
+				public string Region
+				{
+					get
+					{
+						return region;
+					}
+					set	
+					{
+						region = value;
+					}
+				}
+
+				public string Zone
+				{
+					get
+					{
+						return zone;
+					}
+					set	
+					{
+						zone = value;
 					}
 				}
 			}

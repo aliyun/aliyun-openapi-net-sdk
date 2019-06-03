@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{baffd084-45ee-481b-85d3-048c96b39fbd}</ProjectGuid>
+    <ProjectGuid>{234dcddc-a2c2-46ac-956e-4539623429ff}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,20 +40,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountTransactionsResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryUserAlarmThresholdRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SetEnduserStatusResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\ModifyInstanceResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\ChangeResellerConsumeAmountResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryInstanceGaapCostResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryResellerAvailableQuotaRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SetUserQuotaRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SubscribeDetailResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryAvaliableQuotaResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryCashCouponsRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\GetCustomerListResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryInstanceBillRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CreateUserQuotaResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryInstanceBillResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QuerySettlementBillResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\SetResellerUserQuotaRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryCustomerAddressListRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\SetResellerUserStatusRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\ApplyInvoiceRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\SetResellerUserAlarmThresholdResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryUserOmsDataResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryResourcePackageInstancesRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountBookListResponse.cs" />
@@ -65,8 +72,10 @@
 	<Compile Include="BssOpenApi\Model\V20171214\QueryRedeemResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountBalanceResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\GetOrderDetailResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountTransactionsRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SetUserAlarmThresholdRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SubscribeDetailRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\GetCustomerAccountInfoRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SubscribeBillToOSSResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryOrdersRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\UnsubscribeBillToOSSRequest.cs" />
@@ -75,10 +84,12 @@
 	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountBookListRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QuerySettlementBillRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryPriceResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryResellerAvailableQuotaResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryProductListResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryInvoicingCustomerListResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryCustomerAddressListResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\UnsubscribeExportToOSSRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\CreateAgAccountResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SetUserQuotaResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\GetSubscriptionPriceResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\GetSubscriptionPriceRequest.cs" />
@@ -89,6 +100,7 @@
 	<Compile Include="BssOpenApi\Model\V20171214\QueryPrepaidCardsResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CreateUserQuotaRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryAvaliableQuotaRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\SetResellerUserQuotaResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\RenewInstanceRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SetUserAlarmThresholdResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SubscribeExportToOSSResponse.cs" />
@@ -102,7 +114,9 @@
 	<Compile Include="BssOpenApi\Model\V20171214\QueryMonthlyBillRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CreateInstanceResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CancelOrderRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\CreateResellerUserQuotaResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryMonthlyInstanceConsumptionRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\SetResellerUserAlarmThresholdRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryResourcePackageInstancesResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SubscribeExportToOSSRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryPrepaidCardsRequest.cs" />
@@ -118,7 +132,9 @@
 	<Compile Include="BssOpenApi\Model\V20171214\QueryBillOverviewResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\EnableBillGenerationRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryPriceListRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\CreateResellerUserQuotaRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\GetPayAsYouGoPriceRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\GetCustomerAccountInfoResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryBillRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryUserAlarmThresholdResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryMonthlyInstanceConsumptionResponse.cs" />
@@ -134,15 +150,22 @@
 	<Compile Include="BssOpenApi\Model\V20171214\ConvertChargeTypeRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryOrdersResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryProductListRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\GetCustomerListRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\ChangeResellerConsumeAmountRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryPriceRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\CreateAgAccountRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SetRenewalRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SubscribeBillToOSSRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\DescribeResourcePackageProductRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\SetResellerUserStatusResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\SetEnduserStatusRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryUserOmsDataRequest.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\CreateAgAccountResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\SetResellerUserAlarmThresholdResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryCashCouponsResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryPrepaidCardsResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\UnsubscribeBillToOSSResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\CreateResellerUserQuotaResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\CreateInstanceResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\SetRenewalResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\GetSubscriptionPriceResponseUnmarshaller.cs" />
@@ -158,11 +181,13 @@
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryBillOverviewResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\EnableBillGenerationResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryMonthlyBillResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\GetCustomerListResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryResourcePackageInstancesResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\SubscribeDetailResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\GetResourcePackagePriceResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryBillResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryPriceListResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\SetResellerUserQuotaResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryInvoicingCustomerListResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryProductListResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\SetEnduserStatusResponseUnmarshaller.cs" />
@@ -170,8 +195,11 @@
 	<Compile Include="BssOpenApi\Transform\V20171214\CreateResourcePackageResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\ApplyInvoiceResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\DescribePricingModuleResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\ChangeResellerConsumeAmountResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryUserAlarmThresholdResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\RenewInstanceResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryAccountTransactionsResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\SetResellerUserStatusResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\DescribeResourcePackageProductResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\GetOrderDetailResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryAvaliableQuotaResponseUnmarshaller.cs" />
@@ -180,8 +208,10 @@
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryEvaluateListResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\ConvertChargeTypeResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryAccountBookListResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryResellerAvailableQuotaResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QuerySettlementBillResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryAccountBalanceResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\GetCustomerAccountInfoResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\SubscribeExportToOSSResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryMonthlyInstanceConsumptionResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\SubscribeBillToOSSResponseUnmarshaller.cs" />

@@ -60,6 +60,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				order.Tax = context.StringValue("QueryOrders.Data.OrderList["+ i +"].Tax");
 				order.AfterTaxAmount = context.StringValue("QueryOrders.Data.OrderList["+ i +"].AfterTaxAmount");
 				order.PaymentCurrency = context.StringValue("QueryOrders.Data.OrderList["+ i +"].PaymentCurrency");
+				order.RelatedOrderId = context.StringValue("QueryOrders.Data.OrderList["+ i +"].RelatedOrderId");
 
 				data_orderList.Add(order);
 			}

@@ -217,6 +217,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string _operator;
 
+				private string relatedOrderId;
+
 				public string OrderId
 				{
 					get
@@ -490,6 +492,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						_operator = value;
+					}
+				}
+
+				public string RelatedOrderId
+				{
+					get
+					{
+						return relatedOrderId;
+					}
+					set	
+					{
+						relatedOrderId = value;
 					}
 				}
 			}
