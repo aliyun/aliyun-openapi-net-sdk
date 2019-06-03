@@ -172,6 +172,7 @@ namespace Aliyun.Acs.Core
             {
                 request.RegionId = regionId;
             }
+            request.SetProductDomain();
 
             List<Endpoint> endpoints = null;
             if (null != clientProfile)
@@ -205,6 +206,7 @@ namespace Aliyun.Acs.Core
             {
                 request.RegionId = region;
             }
+            request.SetProductDomain();
 
             var credentials = credentialsProvider.GetCredentials();
             if (credentials == null)

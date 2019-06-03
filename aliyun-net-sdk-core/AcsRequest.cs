@@ -40,13 +40,6 @@ namespace Aliyun.Acs.Core
             DictionaryUtil.Add(Headers, "x-sdk-client", "Net/2.0.0");
             DictionaryUtil.Add(Headers, "x-sdk-invoke-type", "normal");
             Product = product;
-            string endpoint = GetProductEndpoint();
-            if (endpoint != "")
-            {
-                ProductDomain = new ProductDomain();
-                ProductDomain.ProductName = product;
-                ProductDomain.DomianName = endpoint;
-            }
         }
 
         public virtual string Product { get; set; }
@@ -64,6 +57,17 @@ namespace Aliyun.Acs.Core
         public string ProductEndpointType { get; set; }
 
         public string ProductNetwork = "public";
+
+        public void SetProductDomain()
+        {
+            string endpoint = GetProductEndpoint();
+            if (endpoint != "")
+            {
+                ProductDomain = new ProductDomain();
+                ProductDomain.ProductName = Product;
+                ProductDomain.DomianName = endpoint;
+            }
+        }
 
         public virtual string GetProductEndpoint()
         {
