@@ -86,40 +86,40 @@ namespace Aliyun.Acs.Core
                 return "";
             }
 
-            foreach (var endpoint in ProductEndpointMap)
+            foreach (var endpointItem in ProductEndpointMap)
             {
-                if (endpoint.Key == RegionId)
+                if (endpointItem.Key == RegionId)
                 {
-                    return endpoint.Value;
+                    return endpointItem.Value;
                 }
             }
 
-            string Rule = "";
+            string endpoint = "";
             if (ProductEndpointType == "center")
             {
-                Rule = "<product_id><network>.aliyuncs.com";
+                endpoint = "<product_id><network>.aliyuncs.com";
             }
             else if (ProductEndpointType == "region")
             {
-                Rule = "<product_id><network>.<region_id>.aliyuncs.com";
-                Rule = Rule.Replace("<region_id>", RegionId);
+                endpoint = "<product_id><network>.<region_id>.aliyuncs.com";
+                endpoint = endpoint.Replace("<region_id>", RegionId);
             }
 
-            if (Rule == "")
+            if (endpoint == "")
             {
                 return "";
             }
 
-            Rule = Rule.Replace("<product_id>", Product.ToLower());
+            endpoint = endpoint.Replace("<product_id>", Product.ToLower());
             if (ProductNetwork == "public")
             {
-                Rule = Rule.Replace("<network>", "");
+                endpoint = endpoint.Replace("<network>", "");
             }
             else
             {
-                Rule = Rule.Replace("<network>", "-" + ProductNetwork);
+                endpoint = endpoint.Replace("<network>", "-" + ProductNetwork);
             }
-            return Rule;
+            return endpoint;
         }
 
         public virtual FormatType AcceptFormat
