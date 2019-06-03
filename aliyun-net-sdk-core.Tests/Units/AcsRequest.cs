@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             mockAcsRequest.RegionId = "cn-hangzhou";
             Assert.Equal("test.cn-hangzhou.aliyuncs.com", mockAcsRequest.GetProductEndpoint());
 
-            mockAcsRequest.Product = "test";
+            mockAcsRequest.Product = "Test";
             mockAcsRequest.RegionId = "cn-beijing";
             Assert.Equal("test.cn-beijing.aliyuncs.com", mockAcsRequest.GetProductEndpoint());
 

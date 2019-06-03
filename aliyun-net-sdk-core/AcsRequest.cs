@@ -100,7 +100,7 @@ namespace Aliyun.Acs.Core
                 return "";
             }
 
-            Rule = Rule.Replace("<product_id>", Product);
+            Rule = Rule.Replace("<product_id>", Product.ToLower());
             if (ProductNetwork == "public")
             {
                 Rule = Rule.Replace("<network>", "");
