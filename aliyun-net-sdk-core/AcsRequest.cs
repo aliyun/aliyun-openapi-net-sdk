@@ -69,6 +69,13 @@ namespace Aliyun.Acs.Core
             }
         }
 
+        public void SetEndpoint(string endpoint)
+        {
+            ProductDomain = new ProductDomain();
+            ProductDomain.ProductName = Product;
+            ProductDomain.DomianName = endpoint;
+        }
+
         public virtual string GetProductEndpoint()
         {
             if (ProductEndpointMap == null && ProductEndpointType == null)
