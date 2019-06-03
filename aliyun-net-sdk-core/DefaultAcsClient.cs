@@ -122,7 +122,7 @@ namespace Aliyun.Acs.Core
         }
 
         public T GetAcsResponse<T>(AcsRequest<T> request, string regionId, Credential credential)
-            where T : AcsResponse
+        where T : AcsResponse
         {
             var httpResponse = DoAction(request, regionId, credential);
             return ParseAcsResponse(request, httpResponse);
@@ -153,7 +153,7 @@ namespace Aliyun.Acs.Core
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber)
-            where T : AcsResponse
+        where T : AcsResponse
         {
             return DoAction(request, autoRetry, maxRetryNumber, clientProfile);
         }
@@ -164,7 +164,7 @@ namespace Aliyun.Acs.Core
         }
 
         public HttpResponse DoAction<T>(AcsRequest<T> request, string regionId, Credential credential)
-            where T : AcsResponse
+        where T : AcsResponse
         {
             var signer = Signer.GetSigner(new LegacyCredentials(credential));
             FormatType? format = null;
@@ -177,9 +177,12 @@ namespace Aliyun.Acs.Core
             if (null != clientProfile)
             {
                 format = clientProfile.GetFormat();
-                endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
-                    request.LocationProduct,
-                    request.LocationEndpointType);
+                if (request.ProductDomain == null)
+                {
+                    endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
+                        request.LocationProduct,
+                        request.LocationEndpointType);
+                }
             }
 
             return DoAction(request, AutoRetry, MaxRetryNumber, request.RegionId, credential, signer,
@@ -211,11 +214,14 @@ namespace Aliyun.Acs.Core
 
             var signer = Signer.GetSigner(credentials);
             var format = profile.GetFormat();
-            List<Endpoint> endpoints;
+            List<Endpoint> endpoints = null;
 
-            endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
-                request.LocationProduct,
-                request.LocationEndpointType);
+            if (request.ProductDomain == null)
+            {
+                endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
+                    request.LocationProduct,
+                    request.LocationEndpointType);
+            }
 
             return DoAction(request, retry, retryNumber, request.RegionId, credentials, signer, format, endpoints);
         }
@@ -248,7 +254,7 @@ namespace Aliyun.Acs.Core
                     }
 
                     if (400 == httpResponse.Status && (error.ErrorCode.Equals("SignatureDoesNotMatch") ||
-                                                       error.ErrorCode.Equals("IncompleteSignature")))
+                            error.ErrorCode.Equals("IncompleteSignature")))
                     {
                         var errorMessage = error.ErrorMessage;
                         var re = new Regex(@"string to sign is:", RegexOptions.Compiled | RegexOptions.IgnoreCase);
@@ -288,7 +294,7 @@ namespace Aliyun.Acs.Core
         public virtual HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber,
             string regionId,
             AlibabaCloudCredentials credentials, Signer signer, FormatType? format, List<Endpoint> endpoints)
-            where T : AcsResponse
+        where T : AcsResponse
         {
             try
             {
@@ -387,7 +393,7 @@ namespace Aliyun.Acs.Core
         }
 
         private T ReadResponse<T>(AcsRequest<T> request, HttpResponse httpResponse, FormatType? format)
-            where T : AcsResponse
+        where T : AcsResponse
         {
             var reader = ReaderFactory.CreateInstance(format);
             var context = new UnmarshallerContext();
@@ -407,7 +413,7 @@ namespace Aliyun.Acs.Core
         }
 
         private AcsError ReadError<T>(AcsRequest<T> request, HttpResponse httpResponse, FormatType? format)
-            where T : AcsResponse
+        where T : AcsResponse
         {
             var responseEndpoint = "Error";
             var reader = ReaderFactory.CreateInstance(format);
@@ -500,7 +506,7 @@ namespace Aliyun.Acs.Core
         public string GetHttpProxy()
         {
             return WebProxy.HttpProxy ?? Environment.GetEnvironmentVariable("HTTP_PROXY") ??
-                   Environment.GetEnvironmentVariable("http_proxy");
+                Environment.GetEnvironmentVariable("http_proxy");
         }
 
         /// <summary>
@@ -510,7 +516,7 @@ namespace Aliyun.Acs.Core
         public string GetHttpsProxy()
         {
             return WebProxy.HttpsProxy ?? Environment.GetEnvironmentVariable("HTTPS_PROXY") ??
-                   Environment.GetEnvironmentVariable("https_proxy");
+                Environment.GetEnvironmentVariable("https_proxy");
         }
 
         /// <summary>
@@ -520,7 +526,7 @@ namespace Aliyun.Acs.Core
         public string GetNoProxy()
         {
             return WebProxy.NoProxy ?? Environment.GetEnvironmentVariable("NO_PROXY") ??
-                   Environment.GetEnvironmentVariable("no_proxy");
+                Environment.GetEnvironmentVariable("no_proxy");
         }
 
         private void ResolveProxy<T>(HttpRequest httpRequest, AcsRequest<T> request) where T : AcsResponse

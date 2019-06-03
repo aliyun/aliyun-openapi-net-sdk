@@ -31,6 +31,32 @@ namespace Aliyun.Acs.Core.Tests.Units
     public class AcsRequestTest
     {
         [Fact]
+        public void GetEndpoint()
+        {
+            var mockAcsRequest = new MockAcsRequest();
+            Assert.Equal("", mockAcsRequest.GetProductEndpoint());
+
+            Dictionary<string, string> endpointMap = new Dictionary<string, string> { };
+            endpointMap.Add("cn-hangzhou", "test.cn-hangzhou.aliyuncs.com");
+
+            mockAcsRequest.ProductEndpointMap = endpointMap;
+            mockAcsRequest.ProductEndpointType = "region";
+
+            mockAcsRequest.RegionId = "cn-hangzhou";
+            Assert.Equal("test.cn-hangzhou.aliyuncs.com", mockAcsRequest.GetProductEndpoint());
+
+            mockAcsRequest.Product = "test";
+            mockAcsRequest.RegionId = "cn-beijing";
+            Assert.Equal("test.cn-beijing.aliyuncs.com", mockAcsRequest.GetProductEndpoint());
+
+            mockAcsRequest.ProductEndpointType = "center";
+            Assert.Equal("test.aliyuncs.com", mockAcsRequest.GetProductEndpoint());
+
+            mockAcsRequest.ProductNetwork = "vpc";
+            Assert.Equal("test-vpc.aliyuncs.com", mockAcsRequest.GetProductEndpoint());
+        }
+
+        [Fact]
         public void CheckShowJsonItemName()
         {
             var mockAcsRequest = new MockAcsRequest();
@@ -52,13 +78,13 @@ namespace Aliyun.Acs.Core.Tests.Units
             // when parameters is empty
             tmpDic = new Dictionary<string, string>();
             result = MockAcsRequest.ConcatQueryString(tmpDic);
-            
+
             // Get the empty not null
             Assert.NotNull(result);
             Assert.Empty(result);
 
             // When parammters is not null
-            tmpDic = new Dictionary<string, string> {{"foo", "bar"}, {"a", "A"}, {"n", null}};
+            tmpDic = new Dictionary<string, string> { { "foo", "bar" }, { "a", "A" }, { "n", null } };
             result = MockAcsRequest.ConcatQueryString(tmpDic);
             Assert.Equal("foo=bar&a=A&n", result);
         }
@@ -79,7 +105,7 @@ namespace Aliyun.Acs.Core.Tests.Units
         {
             var mockAcsRequest = new MockAcsRequest();
 
-            var tmpDic = new Dictionary<string, string> {{"foo", "bar"}};
+            var tmpDic = new Dictionary<string, string> { { "foo", "bar" } };
             mockAcsRequest.QueryParameters = tmpDic;
 
             mockAcsRequest.DomainParameters = tmpDic;
@@ -92,7 +118,7 @@ namespace Aliyun.Acs.Core.Tests.Units
         [Fact]
         public void SignRequest()
         {
-            var tmpDic = new Dictionary<string, string> {{"foo", "bar"}, {"a", "A"}, {"n", null}};
+            var tmpDic = new Dictionary<string, string> { { "foo", "bar" }, { "a", "A" }, { "n", null } };
 
             var mockAcsRequest = new MockAcsRequest("https://www.alibabacloud.com/");
             var signer = new HmacSHA1Signer();
@@ -122,9 +148,7 @@ namespace Aliyun.Acs.Core.Tests.Units
 
     public sealed class MockAcsRequest : AcsRequest<CommonRequest>
     {
-        public MockAcsRequest(string urlStr = null) : base(urlStr)
-        {
-        }
+        public MockAcsRequest(string urlStr = null) : base(urlStr) { }
 
         public override HttpRequest SignRequest(Signer signer, AlibabaCloudCredentials credentials,
             FormatType? format, ProductDomain domain)
