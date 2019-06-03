@@ -32,7 +32,6 @@ namespace Aliyun.Acs.Core
     {
         private FormatType acceptFormat;
 
-
         public string StringToSign;
         private UserAgent userAgentConfig;
 
@@ -52,6 +51,76 @@ namespace Aliyun.Acs.Core
         public string LocationProduct { get; set; }
         public string LocationEndpointType { get; set; }
         public ProductDomain ProductDomain { get; set; }
+
+        public Dictionary<string, string> ProductEndpointMap { get; set; }
+
+        public string ProductEndpointType { get; set; }
+
+        public string ProductNetwork = "public";
+
+        public void SetProductDomain(string endpoint = "")
+        {
+            if (endpoint == "")
+            {
+                endpoint = GetProductEndpoint();
+            }
+            if (endpoint != "" && ProductDomain == null)
+            {
+                ProductDomain = new ProductDomain();
+                ProductDomain.ProductName = Product;
+                ProductDomain.DomianName = endpoint;
+            }
+        }
+
+        public void SetEndpoint(string endpoint)
+        {
+            ProductDomain = new ProductDomain();
+            ProductDomain.ProductName = Product;
+            ProductDomain.DomianName = endpoint;
+        }
+
+        public virtual string GetProductEndpoint()
+        {
+            if (ProductEndpointMap == null && ProductEndpointType == null)
+            {
+                return "";
+            }
+
+            foreach (var endpoint in ProductEndpointMap)
+            {
+                if (endpoint.Key == RegionId)
+                {
+                    return endpoint.Value;
+                }
+            }
+
+            string Rule = "";
+            if (ProductEndpointType == "center")
+            {
+                Rule = "<product_id><network>.aliyuncs.com";
+            }
+            else if (ProductEndpointType == "region")
+            {
+                Rule = "<product_id><network>.<region_id>.aliyuncs.com";
+                Rule = Rule.Replace("<region_id>", RegionId);
+            }
+
+            if (Rule == "")
+            {
+                return "";
+            }
+
+            Rule = Rule.Replace("<product_id>", Product.ToLower());
+            if (ProductNetwork == "public")
+            {
+                Rule = Rule.Replace("<network>", "");
+            }
+            else
+            {
+                Rule = Rule.Replace("<network>", "-" + ProductNetwork);
+            }
+            return Rule;
+        }
 
         public virtual FormatType AcceptFormat
         {
