@@ -36,13 +36,13 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private string networkOptId;
-
-		private List<string> smartAGIdss;
-
 		private string resourceOwnerAccount;
 
+		private string networkOptId;
+
 		private string ownerAccount;
+
+		private List<string> smartAGIdss;
 
 		private long? ownerId;
 
@@ -59,6 +59,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string NetworkOptId
 		{
 			get
@@ -69,6 +82,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				networkOptId = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkOptId", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -86,32 +112,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 				{
 					DictionaryUtil.Add(QueryParameters,"SmartAGIds." + (i + 1) , smartAGIdss[i]);
 				}
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 

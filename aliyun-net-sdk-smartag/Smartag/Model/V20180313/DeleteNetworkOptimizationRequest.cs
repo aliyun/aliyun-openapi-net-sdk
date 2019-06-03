@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private string networkOptId;
-
 		private string resourceOwnerAccount;
+
+		private string networkOptId;
 
 		private string ownerAccount;
 
@@ -57,19 +57,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string NetworkOptId
-		{
-			get
-			{
-				return networkOptId;
-			}
-			set	
-			{
-				networkOptId = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkOptId", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -80,6 +67,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string NetworkOptId
+		{
+			get
+			{
+				return networkOptId;
+			}
+			set	
+			{
+				networkOptId = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkOptId", value);
 			}
 		}
 

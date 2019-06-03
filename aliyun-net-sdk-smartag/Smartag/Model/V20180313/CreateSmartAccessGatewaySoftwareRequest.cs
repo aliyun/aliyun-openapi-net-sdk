@@ -36,8 +36,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private int? userCount;
-
 		private int? period;
 
 		private bool? autoPay;
@@ -46,9 +44,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string ownerAccount;
 
-		private long? ownerId;
+		private int? userCount;
 
 		private string chargeType;
+
+		private long? ownerId;
 
 		private long? dataPlan;
 
@@ -62,19 +62,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? UserCount
-		{
-			get
-			{
-				return userCount;
-			}
-			set	
-			{
-				userCount = value;
-				DictionaryUtil.Add(QueryParameters, "UserCount", value.ToString());
 			}
 		}
 
@@ -130,16 +117,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public long? OwnerId
+		public int? UserCount
 		{
 			get
 			{
-				return ownerId;
+				return userCount;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				userCount = value;
+				DictionaryUtil.Add(QueryParameters, "UserCount", value.ToString());
 			}
 		}
 
@@ -153,6 +140,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

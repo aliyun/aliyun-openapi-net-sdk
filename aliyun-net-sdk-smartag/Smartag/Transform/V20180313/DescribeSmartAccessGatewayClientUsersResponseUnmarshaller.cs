@@ -39,12 +39,9 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 			List<DescribeSmartAccessGatewayClientUsersResponse.DescribeSmartAccessGatewayClientUsers_User> describeSmartAccessGatewayClientUsersResponse_users = new List<DescribeSmartAccessGatewayClientUsersResponse.DescribeSmartAccessGatewayClientUsers_User>();
 			for (int i = 0; i < context.Length("DescribeSmartAccessGatewayClientUsers.Users.Length"); i++) {
 				DescribeSmartAccessGatewayClientUsersResponse.DescribeSmartAccessGatewayClientUsers_User user = new DescribeSmartAccessGatewayClientUsersResponse.DescribeSmartAccessGatewayClientUsers_User();
-				user.SmartAccessGatewayId = context.StringValue("DescribeSmartAccessGatewayClientUsers.Users["+ i +"].SmartAccessGatewayId");
 				user.ClientIp = context.StringValue("DescribeSmartAccessGatewayClientUsers.Users["+ i +"].ClientIp");
 				user.UserMail = context.StringValue("DescribeSmartAccessGatewayClientUsers.Users["+ i +"].UserMail");
 				user.UserName = context.StringValue("DescribeSmartAccessGatewayClientUsers.Users["+ i +"].UserName");
-				user.IsStaticIp = context.BooleanValue("DescribeSmartAccessGatewayClientUsers.Users["+ i +"].IsStaticIp");
-				user.IsSharedUser = context.BooleanValue("DescribeSmartAccessGatewayClientUsers.Users["+ i +"].IsSharedUser");
 				user.Bandwidth = context.IntegerValue("DescribeSmartAccessGatewayClientUsers.Users["+ i +"].Bandwidth");
 
 				describeSmartAccessGatewayClientUsersResponse_users.Add(user);

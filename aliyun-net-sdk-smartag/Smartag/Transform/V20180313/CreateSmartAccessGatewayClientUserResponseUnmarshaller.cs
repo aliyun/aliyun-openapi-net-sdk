@@ -32,11 +32,9 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 
 			createSmartAccessGatewayClientUserResponse.HttpResponse = context.HttpResponse;
 			createSmartAccessGatewayClientUserResponse.RequestId = context.StringValue("CreateSmartAccessGatewayClientUser.RequestId");
-			createSmartAccessGatewayClientUserResponse.SmartAGId = context.StringValue("CreateSmartAccessGatewayClientUser.SmartAGId");
 			createSmartAccessGatewayClientUserResponse.ClientIp = context.StringValue("CreateSmartAccessGatewayClientUser.ClientIp");
 			createSmartAccessGatewayClientUserResponse.UserMail = context.StringValue("CreateSmartAccessGatewayClientUser.UserMail");
 			createSmartAccessGatewayClientUserResponse.UserName = context.StringValue("CreateSmartAccessGatewayClientUser.UserName");
-			createSmartAccessGatewayClientUserResponse.IsStaticIp = context.BooleanValue("CreateSmartAccessGatewayClientUser.IsStaticIp");
 			createSmartAccessGatewayClientUserResponse.Bandwidth = context.IntegerValue("CreateSmartAccessGatewayClientUser.Bandwidth");
         
 			return createSmartAccessGatewayClientUserResponse;

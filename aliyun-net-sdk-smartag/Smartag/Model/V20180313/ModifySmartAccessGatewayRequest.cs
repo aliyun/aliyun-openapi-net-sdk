@@ -34,64 +34,25 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         {
         }
 
-		private long? resourceOwnerId;
-
-		private string description;
-
-		private int? securityLockThreshold;
-
 		private List<SnatEntries> snatEntriess;
+
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private string description;
+
 		private long? ownerId;
+
+		private int? securityLockThreshold;
 
 		private string name;
 
 		private string cidrBlock;
 
 		private string smartAGId;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public int? SecurityLockThreshold
-		{
-			get
-			{
-				return securityLockThreshold;
-			}
-			set	
-			{
-				securityLockThreshold = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityLockThreshold", value.ToString());
-			}
-		}
 
 		public List<SnatEntries> SnatEntriess
 		{
@@ -108,6 +69,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 					DictionaryUtil.Add(QueryParameters,"SnatEntries." + (i + 1) + ".CidrBlock", snatEntriess[i].CidrBlock);
 					DictionaryUtil.Add(QueryParameters,"SnatEntries." + (i + 1) + ".SnatIp", snatEntriess[i].SnatIp);
 				}
+			}
+		}
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -137,6 +111,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -147,6 +134,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? SecurityLockThreshold
+		{
+			get
+			{
+				return securityLockThreshold;
+			}
+			set	
+			{
+				securityLockThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityLockThreshold", value.ToString());
 			}
 		}
 

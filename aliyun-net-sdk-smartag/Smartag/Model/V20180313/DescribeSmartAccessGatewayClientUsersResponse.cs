@@ -98,31 +98,13 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 		public class DescribeSmartAccessGatewayClientUsers_User
 		{
 
-			private string smartAccessGatewayId;
-
 			private string clientIp;
 
 			private string userMail;
 
 			private string userName;
 
-			private bool? isStaticIp;
-
-			private bool? isSharedUser;
-
 			private int? bandwidth;
-
-			public string SmartAccessGatewayId
-			{
-				get
-				{
-					return smartAccessGatewayId;
-				}
-				set	
-				{
-					smartAccessGatewayId = value;
-				}
-			}
 
 			public string ClientIp
 			{
@@ -157,30 +139,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 				set	
 				{
 					userName = value;
-				}
-			}
-
-			public bool? IsStaticIp
-			{
-				get
-				{
-					return isStaticIp;
-				}
-				set	
-				{
-					isStaticIp = value;
-				}
-			}
-
-			public bool? IsSharedUser
-			{
-				get
-				{
-					return isSharedUser;
-				}
-				set	
-				{
-					isSharedUser = value;
 				}
 			}
 

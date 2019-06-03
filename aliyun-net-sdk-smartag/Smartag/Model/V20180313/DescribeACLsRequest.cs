@@ -36,19 +36,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private string aclIds;
-
-		private int? pageNumber;
-
-		private int? pageSize;
-
 		private string resourceOwnerAccount;
+
+		private string aclIds;
 
 		private string ownerAccount;
 
+		private string name;
+
+		private int? pageSize;
+
 		private long? ownerId;
 
-		private string name;
+		private int? pageNumber;
 
 		public long? ResourceOwnerId
 		{
@@ -60,45 +60,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string AclIds
-		{
-			get
-			{
-				return aclIds;
-			}
-			set	
-			{
-				aclIds = value;
-				DictionaryUtil.Add(QueryParameters, "AclIds", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -115,6 +76,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string AclIds
+		{
+			get
+			{
+				return aclIds;
+			}
+			set	
+			{
+				aclIds = value;
+				DictionaryUtil.Add(QueryParameters, "AclIds", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -125,6 +99,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -141,16 +141,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string Name
+		public int? PageNumber
 		{
 			get
 			{
-				return name;
+				return pageNumber;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

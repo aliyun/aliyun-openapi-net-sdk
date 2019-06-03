@@ -36,21 +36,21 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
 		private string ccnId;
+
+		private string name;
+
+		private string cidrBlock;
 
 		private string description;
 
 		private string snatCidrBlock;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
 		private long? ownerId;
-
-		private string name;
-
-		private string cidrBlock;
 
 		public long? ResourceOwnerId
 		{
@@ -62,45 +62,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string CcnId
-		{
-			get
-			{
-				return ccnId;
-			}
-			set	
-			{
-				ccnId = value;
-				DictionaryUtil.Add(QueryParameters, "CcnId", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string SnatCidrBlock
-		{
-			get
-			{
-				return snatCidrBlock;
-			}
-			set	
-			{
-				snatCidrBlock = value;
-				DictionaryUtil.Add(QueryParameters, "SnatCidrBlock", value);
 			}
 		}
 
@@ -130,16 +91,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public long? OwnerId
+		public string CcnId
 		{
 			get
 			{
-				return ownerId;
+				return ccnId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				ccnId = value;
+				DictionaryUtil.Add(QueryParameters, "CcnId", value);
 			}
 		}
 
@@ -166,6 +127,45 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				cidrBlock = value;
 				DictionaryUtil.Add(QueryParameters, "CidrBlock", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string SnatCidrBlock
+		{
+			get
+			{
+				return snatCidrBlock;
+			}
+			set	
+			{
+				snatCidrBlock = value;
+				DictionaryUtil.Add(QueryParameters, "SnatCidrBlock", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

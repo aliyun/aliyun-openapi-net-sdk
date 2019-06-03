@@ -36,19 +36,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private string aclIds;
-
-		private string unboundAclIds;
-
-		private string pageNumber;
-
-		private string pageSize;
-
-		private string instanceType;
-
 		private string serialNumber;
 
 		private string resourceOwnerAccount;
+
+		private string aclIds;
 
 		private string ownerAccount;
 
@@ -56,9 +48,17 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? ownerId;
 
+		private string unboundAclIds;
+
+		private string pageNumber;
+
 		private string name;
 
+		private string pageSize;
+
 		private string smartAGId;
+
+		private string instanceType;
 
 		private string status;
 
@@ -72,71 +72,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string AclIds
-		{
-			get
-			{
-				return aclIds;
-			}
-			set	
-			{
-				aclIds = value;
-				DictionaryUtil.Add(QueryParameters, "AclIds", value);
-			}
-		}
-
-		public string UnboundAclIds
-		{
-			get
-			{
-				return unboundAclIds;
-			}
-			set	
-			{
-				unboundAclIds = value;
-				DictionaryUtil.Add(QueryParameters, "UnboundAclIds", value);
-			}
-		}
-
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
-			}
-		}
-
-		public string PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value);
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 
@@ -163,6 +98,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string AclIds
+		{
+			get
+			{
+				return aclIds;
+			}
+			set	
+			{
+				aclIds = value;
+				DictionaryUtil.Add(QueryParameters, "AclIds", value);
 			}
 		}
 
@@ -205,6 +153,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string UnboundAclIds
+		{
+			get
+			{
+				return unboundAclIds;
+			}
+			set	
+			{
+				unboundAclIds = value;
+				DictionaryUtil.Add(QueryParameters, "UnboundAclIds", value);
+			}
+		}
+
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -218,6 +192,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
+			}
+		}
+
 		public string SmartAGId
 		{
 			get
@@ -228,6 +215,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				smartAGId = value;
 				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 

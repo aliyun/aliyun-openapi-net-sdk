@@ -36,21 +36,21 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private string ccnId;
+		private string resourceOwnerAccount;
 
 		private string networkOptId;
 
-		private int? pageSize;
-
-		private string resourceOwnerAccount;
+		private int? pageNo;
 
 		private string ownerAccount;
 
-		private long? ownerId;
-
-		private int? pageNo;
+		private string ccnId;
 
 		private string name;
+
+		private int? pageSize;
+
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -62,45 +62,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string CcnId
-		{
-			get
-			{
-				return ccnId;
-			}
-			set	
-			{
-				ccnId = value;
-				DictionaryUtil.Add(QueryParameters, "CcnId", value);
-			}
-		}
-
-		public string NetworkOptId
-		{
-			get
-			{
-				return networkOptId;
-			}
-			set	
-			{
-				networkOptId = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkOptId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -117,29 +78,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string OwnerAccount
+		public string NetworkOptId
 		{
 			get
 			{
-				return ownerAccount;
+				return networkOptId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				networkOptId = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkOptId", value);
 			}
 		}
 
@@ -156,6 +104,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string CcnId
+		{
+			get
+			{
+				return ccnId;
+			}
+			set	
+			{
+				ccnId = value;
+				DictionaryUtil.Add(QueryParameters, "CcnId", value);
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -166,6 +140,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

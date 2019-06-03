@@ -36,11 +36,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private string ccnId;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
+
+		private string ccnId;
 
 		private long? ownerId;
 
@@ -54,19 +54,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string CcnId
-		{
-			get
-			{
-				return ccnId;
-			}
-			set	
-			{
-				ccnId = value;
-				DictionaryUtil.Add(QueryParameters, "CcnId", value);
 			}
 		}
 
@@ -93,6 +80,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string CcnId
+		{
+			get
+			{
+				return ccnId;
+			}
+			set	
+			{
+				ccnId = value;
+				DictionaryUtil.Add(QueryParameters, "CcnId", value);
 			}
 		}
 

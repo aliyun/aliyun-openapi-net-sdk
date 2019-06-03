@@ -36,19 +36,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private long? bandWidthSpec;
-
-		private int? userCount;
-
 		private bool? autoPay;
+
+		private long? bandWidthSpec;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private long? ownerId;
+		private int? userCount;
 
 		private string smartAGId;
+
+		private long? ownerId;
 
 		private long? dataPlan;
 
@@ -65,32 +65,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public long? BandWidthSpec
-		{
-			get
-			{
-				return bandWidthSpec;
-			}
-			set	
-			{
-				bandWidthSpec = value;
-				DictionaryUtil.Add(QueryParameters, "BandWidthSpec", value.ToString());
-			}
-		}
-
-		public int? UserCount
-		{
-			get
-			{
-				return userCount;
-			}
-			set	
-			{
-				userCount = value;
-				DictionaryUtil.Add(QueryParameters, "UserCount", value.ToString());
-			}
-		}
-
 		public bool? AutoPay
 		{
 			get
@@ -101,6 +75,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				autoPay = value;
 				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
+		public long? BandWidthSpec
+		{
+			get
+			{
+				return bandWidthSpec;
+			}
+			set	
+			{
+				bandWidthSpec = value;
+				DictionaryUtil.Add(QueryParameters, "BandWidthSpec", value.ToString());
 			}
 		}
 
@@ -130,16 +117,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public long? OwnerId
+		public int? UserCount
 		{
 			get
 			{
-				return ownerId;
+				return userCount;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				userCount = value;
+				DictionaryUtil.Add(QueryParameters, "UserCount", value.ToString());
 			}
 		}
 
@@ -153,6 +140,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				smartAGId = value;
 				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

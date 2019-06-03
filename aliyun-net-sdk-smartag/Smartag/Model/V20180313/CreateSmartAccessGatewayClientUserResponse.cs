@@ -27,15 +27,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string requestId;
 
-		private string smartAGId;
-
 		private string clientIp;
 
 		private string userMail;
 
 		private string userName;
-
-		private bool? isStaticIp;
 
 		private int? bandwidth;
 
@@ -48,18 +44,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string SmartAGId
-		{
-			get
-			{
-				return smartAGId;
-			}
-			set	
-			{
-				smartAGId = value;
 			}
 		}
 
@@ -96,18 +80,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			set	
 			{
 				userName = value;
-			}
-		}
-
-		public bool? IsStaticIp
-		{
-			get
-			{
-				return isStaticIp;
-			}
-			set	
-			{
-				isStaticIp = value;
 			}
 		}
 

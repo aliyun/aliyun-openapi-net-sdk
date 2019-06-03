@@ -36,17 +36,17 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private string type;
+		private string resourceOwnerAccount;
 
 		private string networkOptId;
 
-		private string resourceOwnerAccount;
-
 		private string ownerAccount;
+
+		private string domain;
 
 		private long? ownerId;
 
-		private string domain;
+		private string type;
 
 		public long? ResourceOwnerId
 		{
@@ -58,32 +58,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string NetworkOptId
-		{
-			get
-			{
-				return networkOptId;
-			}
-			set	
-			{
-				networkOptId = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkOptId", value);
 			}
 		}
 
@@ -100,6 +74,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string NetworkOptId
+		{
+			get
+			{
+				return networkOptId;
+			}
+			set	
+			{
+				networkOptId = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkOptId", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -110,6 +97,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
 			}
 		}
 
@@ -126,16 +126,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string Domain
+		public string Type
 		{
 			get
 			{
-				return domain;
+				return type;
 			}
 			set	
 			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 

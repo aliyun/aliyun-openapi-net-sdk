@@ -34,30 +34,17 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         {
         }
 
-		private long? resourceOwnerId;
-
 		private string aclId;
+
+		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private long? ownerId;
-
 		private string name;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+		private long? ownerId;
 
 		public string AclId
 		{
@@ -69,6 +56,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				aclId = value;
 				DictionaryUtil.Add(QueryParameters, "AclId", value);
+			}
+		}
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -98,19 +98,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string Name
 		{
 			get
@@ -121,6 +108,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

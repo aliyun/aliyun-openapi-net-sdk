@@ -36,17 +36,17 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private string vbrId;
-
-		private string vbrRegionId;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private string smartAGId;
+
 		private long? ownerId;
 
-		private string smartAGId;
+		private string vbrId;
+
+		private string vbrRegionId;
 
 		public long? ResourceOwnerId
 		{
@@ -58,32 +58,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string VbrId
-		{
-			get
-			{
-				return vbrId;
-			}
-			set	
-			{
-				vbrId = value;
-				DictionaryUtil.Add(QueryParameters, "VbrId", value);
-			}
-		}
-
-		public string VbrRegionId
-		{
-			get
-			{
-				return vbrRegionId;
-			}
-			set	
-			{
-				vbrRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "VbrRegionId", value);
 			}
 		}
 
@@ -113,6 +87,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string SmartAGId
+		{
+			get
+			{
+				return smartAGId;
+			}
+			set	
+			{
+				smartAGId = value;
+				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -126,16 +113,29 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string SmartAGId
+		public string VbrId
 		{
 			get
 			{
-				return smartAGId;
+				return vbrId;
 			}
 			set	
 			{
-				smartAGId = value;
-				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
+				vbrId = value;
+				DictionaryUtil.Add(QueryParameters, "VbrId", value);
+			}
+		}
+
+		public string VbrRegionId
+		{
+			get
+			{
+				return vbrRegionId;
+			}
+			set	
+			{
+				vbrRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "VbrRegionId", value);
 			}
 		}
 

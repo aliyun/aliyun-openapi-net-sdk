@@ -34,21 +34,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         {
         }
 
+		private string aclId;
+
 		private long? resourceOwnerId;
 
 		private string sourcePortRange;
-
-		private string sourceCidr;
-
-		private string description;
-
-		private string destCidr;
-
-		private string direction;
-
-		private string policy;
-
-		private string aclId;
 
 		private string resourceOwnerAccount;
 
@@ -56,11 +46,34 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string ownerAccount;
 
+		private string sourceCidr;
+
+		private string description;
+
 		private long? ownerId;
 
 		private int? priority;
 
+		private string destCidr;
+
 		private string destPortRange;
+
+		private string direction;
+
+		private string policy;
+
+		public string AclId
+		{
+			get
+			{
+				return aclId;
+			}
+			set	
+			{
+				aclId = value;
+				DictionaryUtil.Add(QueryParameters, "AclId", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -85,84 +98,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				sourcePortRange = value;
 				DictionaryUtil.Add(QueryParameters, "SourcePortRange", value);
-			}
-		}
-
-		public string SourceCidr
-		{
-			get
-			{
-				return sourceCidr;
-			}
-			set	
-			{
-				sourceCidr = value;
-				DictionaryUtil.Add(QueryParameters, "SourceCidr", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string DestCidr
-		{
-			get
-			{
-				return destCidr;
-			}
-			set	
-			{
-				destCidr = value;
-				DictionaryUtil.Add(QueryParameters, "DestCidr", value);
-			}
-		}
-
-		public string Direction
-		{
-			get
-			{
-				return direction;
-			}
-			set	
-			{
-				direction = value;
-				DictionaryUtil.Add(QueryParameters, "Direction", value);
-			}
-		}
-
-		public string Policy
-		{
-			get
-			{
-				return policy;
-			}
-			set	
-			{
-				policy = value;
-				DictionaryUtil.Add(QueryParameters, "Policy", value);
-			}
-		}
-
-		public string AclId
-		{
-			get
-			{
-				return aclId;
-			}
-			set	
-			{
-				aclId = value;
-				DictionaryUtil.Add(QueryParameters, "AclId", value);
 			}
 		}
 
@@ -205,6 +140,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string SourceCidr
+		{
+			get
+			{
+				return sourceCidr;
+			}
+			set	
+			{
+				sourceCidr = value;
+				DictionaryUtil.Add(QueryParameters, "SourceCidr", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -231,6 +192,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string DestCidr
+		{
+			get
+			{
+				return destCidr;
+			}
+			set	
+			{
+				destCidr = value;
+				DictionaryUtil.Add(QueryParameters, "DestCidr", value);
+			}
+		}
+
 		public string DestPortRange
 		{
 			get
@@ -241,6 +215,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				destPortRange = value;
 				DictionaryUtil.Add(QueryParameters, "DestPortRange", value);
+			}
+		}
+
+		public string Direction
+		{
+			get
+			{
+				return direction;
+			}
+			set	
+			{
+				direction = value;
+				DictionaryUtil.Add(QueryParameters, "Direction", value);
+			}
+		}
+
+		public string Policy
+		{
+			get
+			{
+				return policy;
+			}
+			set	
+			{
+				policy = value;
+				DictionaryUtil.Add(QueryParameters, "Policy", value);
 			}
 		}
 

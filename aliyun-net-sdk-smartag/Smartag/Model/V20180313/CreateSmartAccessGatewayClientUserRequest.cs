@@ -36,19 +36,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
-		private string clientIp;
-
 		private string resourceOwnerAccount;
 
 		private long? bandwidth;
 
 		private string ownerAccount;
 
+		private string clientIp;
+
+		private string smartAGId;
+
 		private string userMail;
 
 		private long? ownerId;
-
-		private string smartAGId;
 
 		private string userName;
 
@@ -62,19 +62,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ClientIp
-		{
-			get
-			{
-				return clientIp;
-			}
-			set	
-			{
-				clientIp = value;
-				DictionaryUtil.Add(QueryParameters, "ClientIp", value);
 			}
 		}
 
@@ -117,6 +104,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string ClientIp
+		{
+			get
+			{
+				return clientIp;
+			}
+			set	
+			{
+				clientIp = value;
+				DictionaryUtil.Add(QueryParameters, "ClientIp", value);
+			}
+		}
+
+		public string SmartAGId
+		{
+			get
+			{
+				return smartAGId;
+			}
+			set	
+			{
+				smartAGId = value;
+				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
+			}
+		}
+
 		public string UserMail
 		{
 			get
@@ -140,19 +153,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string SmartAGId
-		{
-			get
-			{
-				return smartAGId;
-			}
-			set	
-			{
-				smartAGId = value;
-				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
 			}
 		}
 

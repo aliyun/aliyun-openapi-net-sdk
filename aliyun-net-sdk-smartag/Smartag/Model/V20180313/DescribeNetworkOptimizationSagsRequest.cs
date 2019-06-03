@@ -36,17 +36,17 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? resourceOwnerId;
 
+		private string resourceOwnerAccount;
+
 		private string networkOptId;
 
-		private int? pageSize;
-
-		private string resourceOwnerAccount;
+		private int? pageNo;
 
 		private string ownerAccount;
 
-		private long? ownerId;
+		private int? pageSize;
 
-		private int? pageNo;
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -58,32 +58,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string NetworkOptId
-		{
-			get
-			{
-				return networkOptId;
-			}
-			set	
-			{
-				networkOptId = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkOptId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -100,29 +74,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string OwnerAccount
+		public string NetworkOptId
 		{
 			get
 			{
-				return ownerAccount;
+				return networkOptId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				networkOptId = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkOptId", value);
 			}
 		}
 
@@ -136,6 +97,45 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				pageNo = value;
 				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

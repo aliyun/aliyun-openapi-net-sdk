@@ -38,11 +38,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string resourceOwnerAccount;
 
+		private string sagId;
+
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string sagId;
 
 		public long? ResourceOwnerId
 		{
@@ -70,6 +70,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string SagId
+		{
+			get
+			{
+				return sagId;
+			}
+			set	
+			{
+				sagId = value;
+				DictionaryUtil.Add(QueryParameters, "SagId", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -93,19 +106,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string SagId
-		{
-			get
-			{
-				return sagId;
-			}
-			set	
-			{
-				sagId = value;
-				DictionaryUtil.Add(QueryParameters, "SagId", value);
 			}
 		}
 

@@ -38,21 +38,21 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string backupLinkId;
 
+		private string resourceOwnerAccount;
+
+		private string haType;
+
+		private string ownerAccount;
+
 		private string mainLinkRegionId;
+
+		private string smartAGId;
+
+		private long? ownerId;
 
 		private string mainLinkId;
 
 		private string backupLinkRegionId;
-
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private long? ownerId;
-
-		private string haType;
-
-		private string smartAGId;
 
 		public long? ResourceOwnerId
 		{
@@ -80,6 +80,45 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string HaType
+		{
+			get
+			{
+				return haType;
+			}
+			set	
+			{
+				haType = value;
+				DictionaryUtil.Add(QueryParameters, "HaType", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public string MainLinkRegionId
 		{
 			get
@@ -90,6 +129,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				mainLinkRegionId = value;
 				DictionaryUtil.Add(QueryParameters, "MainLinkRegionId", value);
+			}
+		}
+
+		public string SmartAGId
+		{
+			get
+			{
+				return smartAGId;
+			}
+			set	
+			{
+				smartAGId = value;
+				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -116,71 +181,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				backupLinkRegionId = value;
 				DictionaryUtil.Add(QueryParameters, "BackupLinkRegionId", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string HaType
-		{
-			get
-			{
-				return haType;
-			}
-			set	
-			{
-				haType = value;
-				DictionaryUtil.Add(QueryParameters, "HaType", value);
-			}
-		}
-
-		public string SmartAGId
-		{
-			get
-			{
-				return smartAGId;
-			}
-			set	
-			{
-				smartAGId = value;
-				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
 			}
 		}
 

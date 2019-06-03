@@ -34,15 +34,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         {
         }
 
-		private long? resourceOwnerId;
-
 		private string tmsCode;
 
+		private long? resourceOwnerId;
+
 		private List<OrderItem> orderItems;
-
-		private long? orderPostFee;
-
-		private string tradeId;
 
 		private string ownerUserId;
 
@@ -50,22 +46,13 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string ownerAccount;
 
+		private long? orderPostFee;
+
 		private long? ownerId;
 
 		private string tmsOrderCode;
 
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
+		private string tradeId;
 
 		public string TmsCode
 		{
@@ -77,6 +64,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				tmsCode = value;
 				DictionaryUtil.Add(QueryParameters, "TmsCode", value);
+			}
+		}
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -104,32 +104,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 					DictionaryUtil.Add(QueryParameters,"OrderItem." + (i + 1) + ".TradeId", orderItems[i].TradeId);
 					DictionaryUtil.Add(QueryParameters,"OrderItem." + (i + 1) + ".TradeItemId", orderItems[i].TradeItemId);
 				}
-			}
-		}
-
-		public long? OrderPostFee
-		{
-			get
-			{
-				return orderPostFee;
-			}
-			set	
-			{
-				orderPostFee = value;
-				DictionaryUtil.Add(QueryParameters, "OrderPostFee", value.ToString());
-			}
-		}
-
-		public string TradeId
-		{
-			get
-			{
-				return tradeId;
-			}
-			set	
-			{
-				tradeId = value;
-				DictionaryUtil.Add(QueryParameters, "TradeId", value);
 			}
 		}
 
@@ -172,6 +146,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public long? OrderPostFee
+		{
+			get
+			{
+				return orderPostFee;
+			}
+			set	
+			{
+				orderPostFee = value;
+				DictionaryUtil.Add(QueryParameters, "OrderPostFee", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -195,6 +182,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				tmsOrderCode = value;
 				DictionaryUtil.Add(QueryParameters, "TmsOrderCode", value);
+			}
+		}
+
+		public string TradeId
+		{
+			get
+			{
+				return tradeId;
+			}
+			set	
+			{
+				tradeId = value;
+				DictionaryUtil.Add(QueryParameters, "TradeId", value);
 			}
 		}
 
