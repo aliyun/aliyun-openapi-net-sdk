@@ -32,6 +32,16 @@ namespace Aliyun.Acs.Core
     {
         private FormatType acceptFormat;
 
+        private Dictionary<string, string> bodyParameters = new Dictionary<string, string>();
+
+        private Dictionary<string, string> domainParameters = new Dictionary<string, string>();
+
+        public string ProductNetwork = "public";
+
+        private ProtocolType protocol = ProtocolType.HTTP;
+
+        private Dictionary<string, string> queryParameters = new Dictionary<string, string>();
+
         public string StringToSign;
         private UserAgent userAgentConfig;
 
@@ -56,7 +66,39 @@ namespace Aliyun.Acs.Core
 
         public string ProductEndpointType { get; set; }
 
-        public string ProductNetwork = "public";
+        public virtual FormatType AcceptFormat
+        {
+            get { return acceptFormat; }
+            set
+            {
+                acceptFormat = value;
+                DictionaryUtil.Add(Headers, "Accept", value.ToString());
+            }
+        }
+
+        public ProtocolType Protocol
+        {
+            get { return protocol; }
+            set { protocol = value; }
+        }
+
+        public Dictionary<string, string> QueryParameters
+        {
+            get { return queryParameters; }
+            set { queryParameters = value; }
+        }
+
+        public Dictionary<string, string> DomainParameters
+        {
+            get { return domainParameters; }
+            set { domainParameters = value; }
+        }
+
+        public Dictionary<string, string> BodyParameters
+        {
+            get { return bodyParameters; }
+            set { bodyParameters = value; }
+        }
 
         public void SetProductDomain(string endpoint = "")
         {
@@ -64,6 +106,7 @@ namespace Aliyun.Acs.Core
             {
                 endpoint = GetProductEndpoint();
             }
+
             if (endpoint != "" && ProductDomain == null)
             {
                 ProductDomain = new ProductDomain();
@@ -74,12 +117,14 @@ namespace Aliyun.Acs.Core
 
         public void SetEndpoint(string endpoint)
         {
-            ProductDomain = new ProductDomain();
-            ProductDomain.ProductName = Product;
-            ProductDomain.DomianName = endpoint;
+            ProductDomain = new ProductDomain
+            {
+                ProductName = Product,
+                DomianName = endpoint
+            };
         }
 
-        public virtual string GetProductEndpoint()
+        public string GetProductEndpoint()
         {
             if (ProductEndpointMap == null && ProductEndpointType == null)
             {
@@ -94,7 +139,7 @@ namespace Aliyun.Acs.Core
                 }
             }
 
-            string endpoint = "";
+            var endpoint = "";
             if (ProductEndpointType == "center")
             {
                 endpoint = "<product_id><network>.aliyuncs.com";
@@ -111,57 +156,12 @@ namespace Aliyun.Acs.Core
             }
 
             endpoint = endpoint.Replace("<product_id>", Product.ToLower());
-            if (ProductNetwork == "public")
-            {
-                endpoint = endpoint.Replace("<network>", "");
-            }
-            else
-            {
-                endpoint = endpoint.Replace("<network>", "-" + ProductNetwork);
-            }
+
+            endpoint = ProductNetwork == "public"
+                ? endpoint.Replace("<network>", "")
+                : endpoint.Replace("<network>", "-" + ProductNetwork);
+
             return endpoint;
-        }
-
-        public virtual FormatType AcceptFormat
-        {
-            get { return acceptFormat; }
-            set
-            {
-                acceptFormat = value;
-                DictionaryUtil.Add(Headers, "Accept", value.ToString());
-            }
-        }
-
-        private ProtocolType protocol = ProtocolType.HTTP;
-
-        public ProtocolType Protocol
-        {
-            get { return protocol; }
-            set { protocol = value; }
-        }
-
-        private Dictionary<string, string> queryParameters = new Dictionary<string, string>();
-
-        public Dictionary<string, string> QueryParameters
-        {
-            get { return queryParameters; }
-            set { queryParameters = value; }
-        }
-
-        private Dictionary<string, string> domainParameters = new Dictionary<string, string>();
-
-        public Dictionary<string, string> DomainParameters
-        {
-            get { return domainParameters; }
-            set { domainParameters = value; }
-        }
-
-        private Dictionary<string, string> bodyParameters = new Dictionary<string, string>();
-
-        public Dictionary<string, string> BodyParameters
-        {
-            get { return bodyParameters; }
-            set { bodyParameters = value; }
         }
 
         public static string ConcatQueryString(Dictionary<string, string> parameters)
