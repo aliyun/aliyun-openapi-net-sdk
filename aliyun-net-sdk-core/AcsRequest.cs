@@ -109,9 +109,11 @@ namespace Aliyun.Acs.Core
 
             if (endpoint != "" && ProductDomain == null)
             {
-                ProductDomain = new ProductDomain();
-                ProductDomain.ProductName = Product;
-                ProductDomain.DomianName = endpoint;
+                ProductDomain = new ProductDomain
+                {
+                    ProductName = Product,
+                    DomianName = endpoint
+                };
             }
         }
 
@@ -140,11 +142,11 @@ namespace Aliyun.Acs.Core
             }
 
             var endpoint = "";
-            if (ProductEndpointType == "center")
+            if (ProductEndpointType == "central")
             {
                 endpoint = "<product_id><network>.aliyuncs.com";
             }
-            else if (ProductEndpointType == "region")
+            else if (ProductEndpointType == "regional")
             {
                 endpoint = "<product_id><network>.<region_id>.aliyuncs.com";
                 endpoint = endpoint.Replace("<region_id>", RegionId);

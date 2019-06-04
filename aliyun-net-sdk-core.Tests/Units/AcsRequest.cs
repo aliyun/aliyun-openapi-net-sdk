@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
+using Aliyun.Acs.Core.Tests.Units.Auth.Sts;
 using Aliyun.Acs.Core.Transform;
 
 using Xunit;
@@ -58,7 +59,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             Assert.Empty(result);
 
             // When parammters is not null
-            tmpDic = new Dictionary<string, string> {{"foo", "bar"}, {"a", "A"}, {"n", null}};
+            tmpDic = new Dictionary<string, string> { { "foo", "bar" }, { "a", "A" }, { "n", null } };
             result = MockAcsRequest.ConcatQueryString(tmpDic);
             Assert.Equal("foo=bar&a=A&n", result);
         }
@@ -73,7 +74,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             endpointMap.Add("cn-hangzhou", "test.cn-hangzhou.aliyuncs.com");
 
             mockAcsRequest.ProductEndpointMap = endpointMap;
-            mockAcsRequest.ProductEndpointType = "region";
+            mockAcsRequest.ProductEndpointType = "regional";
 
             mockAcsRequest.RegionId = "cn-hangzhou";
             Assert.Equal("test.cn-hangzhou.aliyuncs.com", mockAcsRequest.GetProductEndpoint());
@@ -82,11 +83,17 @@ namespace Aliyun.Acs.Core.Tests.Units
             mockAcsRequest.RegionId = "cn-beijing";
             Assert.Equal("test.cn-beijing.aliyuncs.com", mockAcsRequest.GetProductEndpoint());
 
-            mockAcsRequest.ProductEndpointType = "center";
+            mockAcsRequest.ProductEndpointType = "central";
             Assert.Equal("test.aliyuncs.com", mockAcsRequest.GetProductEndpoint());
 
             mockAcsRequest.ProductNetwork = "vpc";
             Assert.Equal("test-vpc.aliyuncs.com", mockAcsRequest.GetProductEndpoint());
+
+            var productEndpointMap = new Dictionary<string, string>();
+            mockAcsRequest.ProductEndpointType = "test-type";
+            mockAcsRequest.ProductEndpointMap = productEndpointMap;
+
+            Assert.Empty(mockAcsRequest.GetProductEndpoint());
         }
 
         [Fact]
@@ -105,7 +112,7 @@ namespace Aliyun.Acs.Core.Tests.Units
         {
             var mockAcsRequest = new MockAcsRequest();
 
-            var tmpDic = new Dictionary<string, string> {{"foo", "bar"}};
+            var tmpDic = new Dictionary<string, string> { { "foo", "bar" } };
             mockAcsRequest.QueryParameters = tmpDic;
 
             mockAcsRequest.DomainParameters = tmpDic;
@@ -116,9 +123,36 @@ namespace Aliyun.Acs.Core.Tests.Units
         }
 
         [Fact]
+        public void SetProductDomain()
+        {
+            var endpoint = "test.ecs.cn-hangzhou.aliyuncs.com";
+            var mockAcsRequest = new MockAcsRequest();
+
+            mockAcsRequest.SetProductDomain();
+            mockAcsRequest.SetProductDomain(endpoint);
+
+            Assert.Equal(endpoint, mockAcsRequest.ProductDomain.DomianName);
+
+            mockAcsRequest.ProductDomain = null;
+        }
+
+        [Fact]
+        public void SetEndpoint()
+        {
+            var endpoint = "ecs.cn-hangzhou.aliyuncs.com";
+
+            var mockAcsRequest = new MockAcsRequest();
+            mockAcsRequest.SetEndpoint(endpoint);
+
+            Assert.Equal(endpoint, mockAcsRequest.ProductDomain.DomianName);
+
+            mockAcsRequest.ProductDomain = null;
+        }
+
+        [Fact]
         public void SignRequest()
         {
-            var tmpDic = new Dictionary<string, string> {{"foo", "bar"}, {"a", "A"}, {"n", null}};
+            var tmpDic = new Dictionary<string, string> { { "foo", "bar" }, { "a", "A" }, { "n", null } };
 
             var mockAcsRequest = new MockAcsRequest("https://www.alibabacloud.com/");
             var signer = new HmacSHA1Signer();
