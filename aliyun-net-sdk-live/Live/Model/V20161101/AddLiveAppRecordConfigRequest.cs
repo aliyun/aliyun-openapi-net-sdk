@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -35,6 +36,12 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string ossBucket;
 
+		private string appName;
+
+		private string securityToken;
+
+		private List<RecordFormat> recordFormats;
+
 		private string domainName;
 
 		private string ossEndpoint;
@@ -44,16 +51,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string startTime;
 
 		private long? ownerId;
-
-		private string accessKeyId;
-
-		private string appName;
-
-		private string securityToken;
-
-		private List<RecordFormat> recordFormats;
-
-		private string action;
 
 		private int? onDemand;
 
@@ -69,6 +66,52 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ossBucket = value;
 				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public List<RecordFormat> RecordFormats
+		{
+			get
+			{
+				return recordFormats;
+			}
+
+			set
+			{
+				recordFormats = value;
+				for (int i = 0; i < recordFormats.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".SliceOssObjectPrefix", recordFormats[i].SliceOssObjectPrefix);
+					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".Format", recordFormats[i].Format);
+					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".OssObjectPrefix", recordFormats[i].OssObjectPrefix);
+					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".CycleDuration", recordFormats[i].CycleDuration);
+				}
 			}
 		}
 
@@ -134,78 +177,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public List<RecordFormat> RecordFormats
-		{
-			get
-			{
-				return recordFormats;
-			}
-
-			set
-			{
-				recordFormats = value;
-				for (int i = 0; i < recordFormats.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".SliceOssObjectPrefix", recordFormats[i].SliceOssObjectPrefix);
-					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".Format", recordFormats[i].Format);
-					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".OssObjectPrefix", recordFormats[i].OssObjectPrefix);
-					DictionaryUtil.Add(QueryParameters,"RecordFormat." + (i + 1) + ".CycleDuration", recordFormats[i].CycleDuration);
-				}
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -295,7 +266,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override AddLiveAppRecordConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddLiveAppRecordConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AddLiveAppRecordConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

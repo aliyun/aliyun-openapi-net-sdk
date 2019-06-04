@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -36,8 +37,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string startTime;
 
 		private long? limit;
-
-		private string action;
 
 		private string endTime;
 
@@ -69,19 +68,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string EndTime
 		{
 			get
@@ -108,7 +94,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override DescribeLiveTopDomainsByFlowResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveTopDomainsByFlowResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeLiveTopDomainsByFlowResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

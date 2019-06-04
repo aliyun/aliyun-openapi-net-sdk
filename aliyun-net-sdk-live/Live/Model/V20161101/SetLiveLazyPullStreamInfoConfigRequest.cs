@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -33,9 +34,9 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
-		private string appName;
+		private string pullArgs;
 
-		private string action;
+		private string appName;
 
 		private string pullAuthKey;
 
@@ -51,6 +52,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string pullProtocol;
 
+		public string PullArgs
+		{
+			get
+			{
+				return pullArgs;
+			}
+			set	
+			{
+				pullArgs = value;
+				DictionaryUtil.Add(QueryParameters, "PullArgs", value);
+			}
+		}
+
 		public string AppName
 		{
 			get
@@ -61,19 +75,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -168,7 +169,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override SetLiveLazyPullStreamInfoConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SetLiveLazyPullStreamInfoConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SetLiveLazyPullStreamInfoConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

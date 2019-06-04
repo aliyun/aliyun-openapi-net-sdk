@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -36,8 +37,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private int? pageNum;
 
 		private int? pageSize;
-
-		private string action;
 
 		private string order;
 
@@ -68,19 +67,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -128,7 +114,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			return false;
 		}
 
-        public override DescribeForbidPushStreamRoomListResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeForbidPushStreamRoomListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeForbidPushStreamRoomListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

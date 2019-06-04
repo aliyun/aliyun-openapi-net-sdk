@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -38,8 +39,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string startTime;
 
 		private string ispNameEn;
-
-		private string action;
 
 		private string domainName;
 
@@ -86,19 +85,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string DomainName
 		{
 			get
@@ -138,7 +124,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override DescribeLiveDomainRealTimeTrafficDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveDomainRealTimeTrafficDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeLiveDomainRealTimeTrafficDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

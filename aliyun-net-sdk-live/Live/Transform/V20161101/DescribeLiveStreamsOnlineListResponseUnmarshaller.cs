@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.live.Model.V20161101;
 
 namespace Aliyun.Acs.live.Transform.V20161101
 {
@@ -48,6 +49,15 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveStreamOnlineInfo.PublishType = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishType");
 				liveStreamOnlineInfo.Transcoded = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].Transcoded");
 				liveStreamOnlineInfo.TranscodeId = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].TranscodeId");
+				liveStreamOnlineInfo.ServerIp = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].ServerIp");
+				liveStreamOnlineInfo.ClientIp = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].ClientIp");
+				liveStreamOnlineInfo.VideoCodecId = context.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].VideoCodecId");
+				liveStreamOnlineInfo.VideoDataRate = context.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].VideoDataRate");
+				liveStreamOnlineInfo.FrameRate = context.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].FrameRate");
+				liveStreamOnlineInfo.Width = context.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].Width");
+				liveStreamOnlineInfo.Height = context.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].Height");
+				liveStreamOnlineInfo.AudioCodecId = context.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].AudioCodecId");
+				liveStreamOnlineInfo.AudioDataRate = context.IntegerValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].AudioDataRate");
 
 				describeLiveStreamsOnlineListResponse_onlineInfo.Add(liveStreamOnlineInfo);
 			}

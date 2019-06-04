@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -43,15 +44,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string ossEndpoint;
 
-		private string action;
-
 		private int? interval;
 
 		private long? ownerId;
 
 		private string ossObject;
-
-		private string accessKeyId;
 
 		private List<string> scenes;
 
@@ -120,19 +117,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public int? Interval
 		{
 			get
@@ -172,19 +156,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public List<string> Scenes
 		{
 			get
@@ -202,7 +173,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override UpdateLiveSnapshotDetectPornConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateLiveSnapshotDetectPornConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UpdateLiveSnapshotDetectPornConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

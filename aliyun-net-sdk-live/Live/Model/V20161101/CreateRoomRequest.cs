@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -33,15 +34,30 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
+		private string templateIds;
+
 		private string anchorId;
 
-		private string action;
+		private bool? useAppTranscode;
 
 		private long? ownerId;
 
 		private string roomId;
 
 		private string appId;
+
+		public string TemplateIds
+		{
+			get
+			{
+				return templateIds;
+			}
+			set	
+			{
+				templateIds = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateIds", value);
+			}
+		}
 
 		public string AnchorId
 		{
@@ -56,16 +72,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Action
+		public bool? UseAppTranscode
 		{
 			get
 			{
-				return action;
+				return useAppTranscode;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				useAppTranscode = value;
+				DictionaryUtil.Add(QueryParameters, "UseAppTranscode", value.ToString());
 			}
 		}
 
@@ -108,7 +124,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override CreateRoomResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateRoomResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateRoomResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

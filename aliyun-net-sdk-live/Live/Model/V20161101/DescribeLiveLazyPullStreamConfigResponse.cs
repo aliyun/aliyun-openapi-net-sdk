@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -68,6 +69,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 			private string pullAuthType;
 
 			private string pullAuthKey;
+
+			private string pullArgs;
 
 			public string DomainName
 			{
@@ -150,6 +153,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					pullAuthKey = value;
+				}
+			}
+
+			public string PullArgs
+			{
+				get
+				{
+					return pullArgs;
+				}
+				set	
+				{
+					pullArgs = value;
 				}
 			}
 		}

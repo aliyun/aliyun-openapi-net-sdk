@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -36,8 +37,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private long? ownerId;
 
 		private string appId;
-
-		private string action;
 
 		private string boardId;
 
@@ -67,19 +66,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string BoardId
 		{
 			get
@@ -98,7 +84,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			return false;
 		}
 
-        public override DescribeBoardSnapshotResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeBoardSnapshotResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeBoardSnapshotResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

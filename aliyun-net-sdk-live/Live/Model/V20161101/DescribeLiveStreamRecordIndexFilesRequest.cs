@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -41,8 +42,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? pageSize;
 
-		private string action;
-
 		private string endTime;
 
 		private string startTime;
@@ -52,8 +51,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private int? pageNum;
 
 		private string streamName;
-
-		private string accessKeyId;
 
 		private string order;
 
@@ -106,19 +103,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -187,19 +171,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Order
 		{
 			get
@@ -213,7 +184,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-        public override DescribeLiveStreamRecordIndexFilesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveStreamRecordIndexFilesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeLiveStreamRecordIndexFilesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

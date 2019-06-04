@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -43,8 +44,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string ossEndpoint;
 
-		private string action;
-
 		private string endTime;
 
 		private string startTime;
@@ -54,8 +53,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string streamName;
 
 		private string ossObject;
-
-		private string accessKeyId;
 
 		public string OssBucket
 		{
@@ -119,19 +116,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ossEndpoint = value;
 				DictionaryUtil.Add(QueryParameters, "OssEndpoint", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -200,20 +184,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override CreateLiveStreamRecordIndexFilesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateLiveStreamRecordIndexFilesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateLiveStreamRecordIndexFilesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

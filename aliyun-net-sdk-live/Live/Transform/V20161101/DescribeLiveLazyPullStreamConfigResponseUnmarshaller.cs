@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.live.Model.V20161101;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.live.Model.V20161101;
 
 namespace Aliyun.Acs.live.Transform.V20161101
 {
@@ -42,6 +43,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				liveLazyPullConfig.PullProtocol = context.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullProtocol");
 				liveLazyPullConfig.PullAuthType = context.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullAuthType");
 				liveLazyPullConfig.PullAuthKey = context.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullAuthKey");
+				liveLazyPullConfig.PullArgs = context.StringValue("DescribeLiveLazyPullStreamConfig.LiveLazyPullConfigList["+ i +"].PullArgs");
 
 				describeLiveLazyPullStreamConfigResponse_liveLazyPullConfigList.Add(liveLazyPullConfig);
 			}

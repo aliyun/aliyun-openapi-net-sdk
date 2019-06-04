@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -39,13 +40,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string domainName;
 
-		private string action;
-
 		private long? ownerId;
 
 		private string streamName;
-
-		private string accessKeyId;
 
 		public string AppName
 		{
@@ -86,19 +83,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -125,20 +109,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override DeleteLiveRecordVodConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteLiveRecordVodConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteLiveRecordVodConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

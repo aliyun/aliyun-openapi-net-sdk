@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -129,6 +130,24 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string transcodeId;
 
+			private string serverIp;
+
+			private string clientIp;
+
+			private int? videoCodecId;
+
+			private int? videoDataRate;
+
+			private int? frameRate;
+
+			private int? width;
+
+			private int? height;
+
+			private int? audioCodecId;
+
+			private int? audioDataRate;
+
 			public string DomainName
 			{
 				get
@@ -234,6 +253,114 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					transcodeId = value;
+				}
+			}
+
+			public string ServerIp
+			{
+				get
+				{
+					return serverIp;
+				}
+				set	
+				{
+					serverIp = value;
+				}
+			}
+
+			public string ClientIp
+			{
+				get
+				{
+					return clientIp;
+				}
+				set	
+				{
+					clientIp = value;
+				}
+			}
+
+			public int? VideoCodecId
+			{
+				get
+				{
+					return videoCodecId;
+				}
+				set	
+				{
+					videoCodecId = value;
+				}
+			}
+
+			public int? VideoDataRate
+			{
+				get
+				{
+					return videoDataRate;
+				}
+				set	
+				{
+					videoDataRate = value;
+				}
+			}
+
+			public int? FrameRate
+			{
+				get
+				{
+					return frameRate;
+				}
+				set	
+				{
+					frameRate = value;
+				}
+			}
+
+			public int? Width
+			{
+				get
+				{
+					return width;
+				}
+				set	
+				{
+					width = value;
+				}
+			}
+
+			public int? Height
+			{
+				get
+				{
+					return height;
+				}
+				set	
+				{
+					height = value;
+				}
+			}
+
+			public int? AudioCodecId
+			{
+				get
+				{
+					return audioCodecId;
+				}
+				set	
+				{
+					audioCodecId = value;
+				}
+			}
+
+			public int? AudioDataRate
+			{
+				get
+				{
+					return audioDataRate;
+				}
+				set	
+				{
+					audioDataRate = value;
 				}
 			}
 		}

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
@@ -39,15 +40,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string domainName;
 
-		private string action;
-
 		private string notifyUrl;
 
 		private long? ownerId;
 
 		private bool? needStatusNotify;
-
-		private string accessKeyId;
 
 		public string OnDemandUrl
 		{
@@ -85,19 +82,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -140,20 +124,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override AddLiveRecordNotifyConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddLiveRecordNotifyConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AddLiveRecordNotifyConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
