@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7428f667-7c50-4a7e-83a2-22457720cf46}</ProjectGuid>
+    <ProjectGuid>{e247bd51-89a2-4136-98f7-51039284cb8a}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,50 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Sddp\Model\V20190103\ModifyRuleResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\ModifyEventTypeStatusRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeOssObjectDetailRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeDataHubTopicsRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeOssObjectDetailResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DeleteRuleRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeDataHubTopicsResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\ModifyRuleStatusResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeAuthAccountsRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeDataHubProjectsRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\ModifyEventTypeStatusResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\ModifyDefaultLevelRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeCloudInstancesRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeCloudDatabasesResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\ModifyRuleRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\ValidateConnectorRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeDataHubConnectorsRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeAuthAccountsResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\ModifyRuleStatusRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\ModifyEventStatusResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\ModifyDefaultLevelResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeOssObjectsResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeDataHubSubscriptionsResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeRulesResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeDataLimitsResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\ModifyEventStatusRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeDataLimitsRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\ModifyDataLimitResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeDataHubConnectorsResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DeleteRuleResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeCloudDatabasesRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeEventDetailResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeDataLimitDetailResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeDataHubProjectsResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeEventDetailRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeConfigsRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeOssObjectsRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeRulesRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeDataLimitDetailRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeDataHubSubscriptionsRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeConfigsResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\ModifyDataLimitRequest.cs" />
-	<Compile Include="Sddp\Model\V20190103\ValidateConnectorResponse.cs" />
-	<Compile Include="Sddp\Model\V20190103\DescribeCloudInstancesResponse.cs" />
 	<Compile Include="Sddp\Transform\V20190103\DescribeDataHubTopicsResponseUnmarshaller.cs" />
 	<Compile Include="Sddp\Transform\V20190103\ModifyRuleStatusResponseUnmarshaller.cs" />
 	<Compile Include="Sddp\Transform\V20190103\DescribeOssObjectDetailResponseUnmarshaller.cs" />

@@ -66,6 +66,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string userName;
 
+			private string password;
+
 			private long? gmtCreate;
 
 			private string connector;
@@ -131,6 +133,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					userName = value;
+				}
+			}
+
+			public string Password
+			{
+				get
+				{
+					return password;
+				}
+				set	
+				{
+					password = value;
 				}
 			}
 
