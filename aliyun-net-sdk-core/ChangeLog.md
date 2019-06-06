@@ -1,3 +1,7 @@
+### 2019-06-06 Version 1.3.6
+* Code clean up to fit in with .net coding convention
+* Add support for build .net framework4.5 on linux
+
 ### 2019-05-22 Version 1.3.5
 * Fix net45 not support error
 
