@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -31,16 +31,14 @@ namespace Aliyun.Acs.Core.Utils
 
         public static string GetHomePath()
         {
-            return Environment.OSVersion.Platform == PlatformID.Unix ||
-                   Environment.OSVersion.Platform == PlatformID.Unix
+            return Environment.OSVersion.Platform == PlatformID.Unix
                 ? Environment.GetEnvironmentVariable("HOME")
                 : Environment.ExpandEnvironmentVariables("%HOMEDRIVE%%HOMEPATH%");
         }
 
         public static string GetOSSlash()
         {
-            return Environment.OSVersion.Platform == PlatformID.Unix ||
-                   Environment.OSVersion.Platform == PlatformID.Unix
+            return Environment.OSVersion.Platform == PlatformID.Unix
                 ? "/"
                 : "\\";
         }
