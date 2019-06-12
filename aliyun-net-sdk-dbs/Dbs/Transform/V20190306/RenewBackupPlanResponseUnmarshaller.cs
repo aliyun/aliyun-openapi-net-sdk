@@ -24,21 +24,22 @@ using Aliyun.Acs.Dbs.Model.V20190306;
 
 namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
-    public class CreateRestoreTaskResponseUnmarshaller
+    public class RenewBackupPlanResponseUnmarshaller
     {
-        public static CreateRestoreTaskResponse Unmarshall(UnmarshallerContext context)
+        public static RenewBackupPlanResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateRestoreTaskResponse createRestoreTaskResponse = new CreateRestoreTaskResponse();
+			RenewBackupPlanResponse renewBackupPlanResponse = new RenewBackupPlanResponse();
 
-			createRestoreTaskResponse.HttpResponse = context.HttpResponse;
-			createRestoreTaskResponse.Success = context.BooleanValue("CreateRestoreTask.Success");
-			createRestoreTaskResponse.ErrCode = context.StringValue("CreateRestoreTask.ErrCode");
-			createRestoreTaskResponse.ErrMessage = context.StringValue("CreateRestoreTask.ErrMessage");
-			createRestoreTaskResponse.HttpStatusCode = context.IntegerValue("CreateRestoreTask.HttpStatusCode");
-			createRestoreTaskResponse.RequestId = context.StringValue("CreateRestoreTask.RequestId");
-			createRestoreTaskResponse.RestoreTaskId = context.StringValue("CreateRestoreTask.RestoreTaskId");
+			renewBackupPlanResponse.HttpResponse = context.HttpResponse;
+			renewBackupPlanResponse.Success = context.BooleanValue("RenewBackupPlan.Success");
+			renewBackupPlanResponse.ErrCode = context.StringValue("RenewBackupPlan.ErrCode");
+			renewBackupPlanResponse.ErrMessage = context.StringValue("RenewBackupPlan.ErrMessage");
+			renewBackupPlanResponse.HttpStatusCode = context.IntegerValue("RenewBackupPlan.HttpStatusCode");
+			renewBackupPlanResponse.RequestId = context.StringValue("RenewBackupPlan.RequestId");
+			renewBackupPlanResponse.BackupPlanId = context.StringValue("RenewBackupPlan.BackupPlanId");
+			renewBackupPlanResponse.OrderId = context.StringValue("RenewBackupPlan.OrderId");
         
-			return createRestoreTaskResponse;
+			return renewBackupPlanResponse;
         }
     }
 }

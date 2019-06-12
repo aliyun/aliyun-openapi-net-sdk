@@ -19,37 +19,83 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs.Transform;
-using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class StartBackupPlanRequest : RpcAcsRequest<StartBackupPlanResponse>
-    {
-        public StartBackupPlanRequest()
-            : base("Dbs", "2019-03-06", "StartBackupPlan", "cbs", "openAPI")
-        {
-        }
+	public class RenewBackupPlanResponse : AcsResponse
+	{
 
-		private string clientToken;
+		private bool? success;
+
+		private string errCode;
+
+		private string errMessage;
+
+		private int? httpStatusCode;
+
+		private string requestId;
 
 		private string backupPlanId;
 
-		private string ownerId;
+		private string orderId;
 
-		public string ClientToken
+		public bool? Success
 		{
 			get
 			{
-				return clientToken;
+				return success;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				success = value;
+			}
+		}
+
+		public string ErrCode
+		{
+			get
+			{
+				return errCode;
+			}
+			set	
+			{
+				errCode = value;
+			}
+		}
+
+		public string ErrMessage
+		{
+			get
+			{
+				return errMessage;
+			}
+			set	
+			{
+				errMessage = value;
+			}
+		}
+
+		public int? HttpStatusCode
+		{
+			get
+			{
+				return httpStatusCode;
+			}
+			set	
+			{
+				httpStatusCode = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -62,26 +108,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			set	
 			{
 				backupPlanId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPlanId", value);
 			}
 		}
 
-		public string OwnerId
+		public string OrderId
 		{
 			get
 			{
-				return ownerId;
+				return orderId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+				orderId = value;
 			}
 		}
-
-        public override StartBackupPlanResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return StartBackupPlanResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+	}
 }
