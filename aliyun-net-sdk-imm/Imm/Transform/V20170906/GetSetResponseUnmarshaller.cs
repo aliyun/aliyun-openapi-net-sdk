@@ -34,8 +34,8 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getSetResponse.RequestId = context.StringValue("GetSet.RequestId");
 			getSetResponse.SetId = context.StringValue("GetSet.SetId");
 			getSetResponse.SetName = context.StringValue("GetSet.SetName");
-			getSetResponse.CreateTime = context.LongValue("GetSet.CreateTime");
-			getSetResponse.ModifyTime = context.LongValue("GetSet.ModifyTime");
+			getSetResponse.CreateTime = context.StringValue("GetSet.CreateTime");
+			getSetResponse.ModifyTime = context.StringValue("GetSet.ModifyTime");
 			getSetResponse.FaceCount = context.IntegerValue("GetSet.FaceCount");
 			getSetResponse.ImageCount = context.IntegerValue("GetSet.ImageCount");
 			getSetResponse.VideoCount = context.IntegerValue("GetSet.VideoCount");

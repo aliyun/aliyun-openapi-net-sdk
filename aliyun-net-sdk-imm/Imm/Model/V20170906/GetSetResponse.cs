@@ -31,9 +31,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string setName;
 
-		private long? createTime;
+		private string createTime;
 
-		private long? modifyTime;
+		private string modifyTime;
 
 		private int? faceCount;
 
@@ -79,7 +79,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public long? CreateTime
+		public string CreateTime
 		{
 			get
 			{
@@ -91,7 +91,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public long? ModifyTime
+		public string ModifyTime
 		{
 			get
 			{
