@@ -46,8 +46,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string accountDescription;
 
-		private string accessKeyId;
-
 		private string accountPrivilege;
 
 		private string accountPassword;
@@ -57,8 +55,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string accountName;
 
 		private string securityToken;
-
-		private string action;
 
 		public long? ResourceOwnerId
 		{
@@ -138,19 +134,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string AccountPrivilege
 		{
 			get
@@ -213,19 +196,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

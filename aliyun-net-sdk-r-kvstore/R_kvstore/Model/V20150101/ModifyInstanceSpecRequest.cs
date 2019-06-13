@@ -50,15 +50,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceClass;
 
-		private string accessKeyId;
-
 		private string instanceId;
 
 		private string securityToken;
 
 		private string effectiveTime;
-
-		private string action;
 
 		private bool? forceUpgrade;
 
@@ -168,19 +164,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string InstanceId
 		{
 			get
@@ -217,19 +200,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				effectiveTime = value;
 				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -48,13 +48,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string currentConnectionString;
 
-		private string accessKeyId;
-
 		private string securityToken;
 
 		private string port;
-
-		private string action;
 
 		private string dBInstanceId;
 
@@ -149,19 +145,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -185,19 +168,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				port = value;
 				DictionaryUtil.Add(QueryParameters, "Port", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

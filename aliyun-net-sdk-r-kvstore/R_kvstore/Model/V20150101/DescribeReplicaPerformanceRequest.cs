@@ -48,15 +48,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string sourceDBInstanceId;
 
 		private string securityToken;
 
 		private string replicaId;
-
-		private string action;
 
 		private string key;
 
@@ -151,19 +147,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string SourceDBInstanceId
 		{
 			get
@@ -200,19 +183,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				replicaId = value;
 				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

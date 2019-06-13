@@ -42,8 +42,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string endTime;
 
 		private string dBInstanceId;
@@ -53,8 +51,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? ownerId;
 
 		private string nodeId;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -105,19 +101,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -183,19 +166,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				nodeId = value;
 				DictionaryUtil.Add(QueryParameters, "NodeId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

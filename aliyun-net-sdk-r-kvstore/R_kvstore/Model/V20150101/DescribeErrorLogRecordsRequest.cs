@@ -50,8 +50,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private int? pageNumber;
 
-		private string accessKeyId;
-
 		private string instanceId;
 
 		private string dBName;
@@ -59,8 +57,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string securityToken;
 
 		private int? pageSize;
-
-		private string action;
 
 		private string roleType;
 
@@ -170,19 +166,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string InstanceId
 		{
 			get
@@ -232,19 +215,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

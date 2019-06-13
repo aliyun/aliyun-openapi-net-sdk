@@ -40,21 +40,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string clientToken;
 
-		private string regionId;
-
 		private string ownerAccount;
 
 		private int? pageSize;
-
-		private string action;
 
 		private string dBInstanceId;
 
 		private long? ownerId;
 
 		private int? pageNumber;
-
-		private string accessKeyId;
 
 		private string proxyId;
 
@@ -97,19 +91,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -133,19 +114,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -185,19 +153,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

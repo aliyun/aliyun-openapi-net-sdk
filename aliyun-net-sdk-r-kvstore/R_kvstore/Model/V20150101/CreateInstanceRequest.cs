@@ -44,9 +44,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string engineVersion;
 
-		private string instanceClass;
+		private string autoUseCoupon;
 
-		private string accessKeyId;
+		private string instanceClass;
 
 		private long? capacity;
 
@@ -54,11 +54,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string securityToken;
 
-		private string action;
-
 		private string instanceType;
 
 		private string businessInfo;
+
+		private string autoRenewPeriod;
 
 		private string period;
 
@@ -79,6 +79,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string privateIpAddress;
 
 		private string instanceName;
+
+		private string autoRenew;
 
 		private string vpcId;
 
@@ -153,6 +155,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string AutoUseCoupon
+		{
+			get
+			{
+				return autoUseCoupon;
+			}
+			set	
+			{
+				autoUseCoupon = value;
+				DictionaryUtil.Add(QueryParameters, "AutoUseCoupon", value);
+			}
+		}
+
 		public string InstanceClass
 		{
 			get
@@ -163,19 +178,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceClass = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -218,19 +220,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string InstanceType
 		{
 			get
@@ -254,6 +243,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				businessInfo = value;
 				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+			}
+		}
+
+		public string AutoRenewPeriod
+		{
+			get
+			{
+				return autoRenewPeriod;
+			}
+			set	
+			{
+				autoRenewPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenewPeriod", value);
 			}
 		}
 
@@ -384,6 +386,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceName = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceName", value);
+			}
+		}
+
+		public string AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
 			}
 		}
 

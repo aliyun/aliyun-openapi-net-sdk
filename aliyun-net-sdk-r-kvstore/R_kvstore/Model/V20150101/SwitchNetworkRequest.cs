@@ -42,8 +42,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string vSwitchId;
 
 		private string instanceId;
@@ -57,8 +55,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string classicExpiredDays;
 
 		private string vpcId;
-
-		private string action;
 
 		public long? ResourceOwnerId
 		{
@@ -109,19 +105,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -213,19 +196,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -46,13 +46,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
 
 		private string retention;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -132,19 +128,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -168,19 +151,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				retention = value;
 				DictionaryUtil.Add(QueryParameters, "Retention", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

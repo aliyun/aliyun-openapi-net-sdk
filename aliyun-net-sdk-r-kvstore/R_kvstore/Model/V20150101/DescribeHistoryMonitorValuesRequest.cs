@@ -46,15 +46,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string instanceId;
 
 		private string securityToken;
 
 		private string intervalForHistory;
-
-		private string action;
 
 		private string nodeId;
 
@@ -138,19 +134,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string InstanceId
 		{
 			get
@@ -187,19 +170,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				intervalForHistory = value;
 				DictionaryUtil.Add(QueryParameters, "IntervalForHistory", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

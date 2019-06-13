@@ -42,17 +42,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string ownerAccount;
 
-		private string action;
-
 		private string zoneId;
 
 		private long? ownerId;
 
 		private string instanceChargeType;
-
-		private string accessKeyId;
-
-		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -106,19 +100,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ZoneId
 		{
 			get
@@ -155,32 +136,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
 			}
 		}
 

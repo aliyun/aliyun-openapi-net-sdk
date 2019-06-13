@@ -44,8 +44,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
 		private string analysisType;
 
 		private string instanceId;
@@ -55,8 +53,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private int? pageSize;
 
 		private int? pageNumbers;
-
-		private string action;
 
 		private string nodeId;
 
@@ -125,19 +121,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string AnalysisType
 		{
 			get
@@ -200,19 +183,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				pageNumbers = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumbers", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

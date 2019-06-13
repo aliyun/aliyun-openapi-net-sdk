@@ -40,21 +40,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string nextToken;
 
 		private string ownerAccount;
-
-		private string action;
 
 		private List<Tag> tags;
 
 		private long? ownerId;
 
 		private string resourceType;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -99,19 +93,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string NextToken
 		{
 			get
@@ -135,19 +116,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -192,19 +160,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceType = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
