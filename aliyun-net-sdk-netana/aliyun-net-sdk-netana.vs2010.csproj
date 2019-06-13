@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7179ccdd-2d9f-456b-b3bc-e607a7434f3c}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-netana</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Netana\Transform\V20181018\DescribeIpLocationAndIspResponseUnmarshaller.cs" />
+	<Compile Include="Netana\Transform\V20181018\DescribeNetworkQuotaRequestResultResponseUnmarshaller.cs" />
+	<Compile Include="Netana\Transform\V20181018\DescribeNetworkAnalyticsLatencyResponseUnmarshaller.cs" />
+	<Compile Include="Netana\Transform\V20181018\DescribeNetworkAnalyticsNetQualityResponseUnmarshaller.cs" />
+	<Compile Include="Netana\Transform\V20181018\DescribeNetworkAnalyticsPacketLossResponseUnmarshaller.cs" />
+	<Compile Include="Netana\Transform\V20181018\DescribeNetworkAnalyticsDataTransferResponseUnmarshaller.cs" />
+	<Compile Include="Netana\Transform\V20181018\DescribeIpv6LocationAndIspResponseUnmarshaller.cs" />
+	<Compile Include="Netana\Transform\V20181018\DescribeNetworkQuotasResponseUnmarshaller.cs" />
+	<Compile Include="Netana\Transform\V20181018\DescribeDiagnosticConfigResponseUnmarshaller.cs" />
+	<Compile Include="Netana\Transform\V20181018\CreateNetworkDiagnosticResponseUnmarshaller.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeNetworkAnalyticsDataTransferResponse.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeNetworkAnalyticsPacketLossRequest.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeNetworkAnalyticsNetQualityResponse.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeIpv6LocationAndIspResponse.cs" />
+	<Compile Include="Netana\Model\V20181018\CreateNetworkDiagnosticRequest.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeNetworkAnalyticsLatencyResponse.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeDiagnosticConfigResponse.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeIpLocationAndIspResponse.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeIpLocationAndIspRequest.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeNetworkAnalyticsLatencyRequest.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeDiagnosticConfigRequest.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeNetworkAnalyticsDataTransferRequest.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeNetworkAnalyticsNetQualityRequest.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeNetworkAnalyticsPacketLossResponse.cs" />
+	<Compile Include="Netana\Model\V20181018\DescribeIpv6LocationAndIspRequest.cs" />
+	<Compile Include="Netana\Model\V20181018\CreateNetworkDiagnosticResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
