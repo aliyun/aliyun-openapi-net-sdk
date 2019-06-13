@@ -64,7 +64,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string networkTypes;
 
-			private List<DescribeAvailableResource_SupportedEngines> supportedEngine;
+			private List<DescribeAvailableResource_SupportedEngine> supportedEngines;
 
 			public string RegionId
 			{
@@ -114,24 +114,24 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public List<DescribeAvailableResource_SupportedEngines> SupportedEngine
+			public List<DescribeAvailableResource_SupportedEngine> SupportedEngines
 			{
 				get
 				{
-					return supportedEngine;
+					return supportedEngines;
 				}
 				set	
 				{
-					supportedEngine = value;
+					supportedEngines = value;
 				}
 			}
 
-			public class DescribeAvailableResource_SupportedEngines
+			public class DescribeAvailableResource_SupportedEngine
 			{
 
 				private string engine;
 
-				private List<DescribeAvailableResource_SupportedEngineVersions> supportedEngineVersion;
+				private List<DescribeAvailableResource_SupportedEngineVersion> supportedEngineVersions;
 
 				public string Engine
 				{
@@ -145,24 +145,24 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
-				public List<DescribeAvailableResource_SupportedEngineVersions> SupportedEngineVersion
+				public List<DescribeAvailableResource_SupportedEngineVersion> SupportedEngineVersions
 				{
 					get
 					{
-						return supportedEngineVersion;
+						return supportedEngineVersions;
 					}
 					set	
 					{
-						supportedEngineVersion = value;
+						supportedEngineVersions = value;
 					}
 				}
 
-				public class DescribeAvailableResource_SupportedEngineVersions
+				public class DescribeAvailableResource_SupportedEngineVersion
 				{
 
 					private string version;
 
-					private List<DescribeAvailableResource_SupportedCategorys> supportedCategory;
+					private List<DescribeAvailableResource_SupportedCategory> supportedCategorys;
 
 					public string Version
 					{
@@ -176,24 +176,24 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 						}
 					}
 
-					public List<DescribeAvailableResource_SupportedCategorys> SupportedCategory
+					public List<DescribeAvailableResource_SupportedCategory> SupportedCategorys
 					{
 						get
 						{
-							return supportedCategory;
+							return supportedCategorys;
 						}
 						set	
 						{
-							supportedCategory = value;
+							supportedCategorys = value;
 						}
 					}
 
-					public class DescribeAvailableResource_SupportedCategorys
+					public class DescribeAvailableResource_SupportedCategory
 					{
 
 						private string category;
 
-						private List<DescribeAvailableResource_SupportedStorageTypes> supportedStorageType;
+						private List<DescribeAvailableResource_SupportedStorageType> supportedStorageTypes;
 
 						public string Category
 						{
@@ -207,24 +207,24 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 							}
 						}
 
-						public List<DescribeAvailableResource_SupportedStorageTypes> SupportedStorageType
+						public List<DescribeAvailableResource_SupportedStorageType> SupportedStorageTypes
 						{
 							get
 							{
-								return supportedStorageType;
+								return supportedStorageTypes;
 							}
 							set	
 							{
-								supportedStorageType = value;
+								supportedStorageTypes = value;
 							}
 						}
 
-						public class DescribeAvailableResource_SupportedStorageTypes
+						public class DescribeAvailableResource_SupportedStorageType
 						{
 
 							private string storageType;
 
-							private List<DescribeAvailableResource_AvailableResources> availableResource;
+							private List<DescribeAvailableResource_AvailableResource> availableResources;
 
 							public string StorageType
 							{
@@ -238,19 +238,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 								}
 							}
 
-							public List<DescribeAvailableResource_AvailableResources> AvailableResource
+							public List<DescribeAvailableResource_AvailableResource> AvailableResources
 							{
 								get
 								{
-									return availableResource;
+									return availableResources;
 								}
 								set	
 								{
-									availableResource = value;
+									availableResources = value;
 								}
 							}
 
-							public class DescribeAvailableResource_AvailableResources
+							public class DescribeAvailableResource_AvailableResource
 							{
 
 								private string dBInstanceClass;
