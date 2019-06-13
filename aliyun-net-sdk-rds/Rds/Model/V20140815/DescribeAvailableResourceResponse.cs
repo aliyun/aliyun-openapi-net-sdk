@@ -257,6 +257,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 								private string storageRange;
 
+								private DescribeAvailableResource_DBInstanceStorageRange dBInstanceStorageRange;
+
 								public string DBInstanceClass
 								{
 									get
@@ -278,6 +280,64 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 									set	
 									{
 										storageRange = value;
+									}
+								}
+
+								public DescribeAvailableResource_DBInstanceStorageRange DBInstanceStorageRange
+								{
+									get
+									{
+										return dBInstanceStorageRange;
+									}
+									set	
+									{
+										dBInstanceStorageRange = value;
+									}
+								}
+
+								public class DescribeAvailableResource_DBInstanceStorageRange
+								{
+
+									private int? max;
+
+									private int? min;
+
+									private int? step;
+
+									public int? Max
+									{
+										get
+										{
+											return max;
+										}
+										set	
+										{
+											max = value;
+										}
+									}
+
+									public int? Min
+									{
+										get
+										{
+											return min;
+										}
+										set	
+										{
+											min = value;
+										}
+									}
+
+									public int? Step
+									{
+										get
+										{
+											return step;
+										}
+										set	
+										{
+											step = value;
+										}
 									}
 								}
 							}

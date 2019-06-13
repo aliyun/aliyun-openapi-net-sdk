@@ -38,6 +38,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engineVersion;
 
+		private string dBInstanceClass;
+
 		private string engine;
 
 		private string zoneId;
@@ -71,6 +73,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public string DBInstanceClass
+		{
+			get
+			{
+				return dBInstanceClass;
+			}
+			set	
+			{
+				dBInstanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
 			}
 		}
 
