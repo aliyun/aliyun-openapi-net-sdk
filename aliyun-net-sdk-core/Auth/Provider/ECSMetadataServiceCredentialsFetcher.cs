@@ -38,7 +38,7 @@ namespace Aliyun.Acs.Core.Auth
             "Failed to get RAM session credentials from ECS metadata service.";
 
         // stands for 3600 s
-        private const int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600; 
+        private const int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600;
         private int connectionTimeoutInMilliseconds;
         private string credentialUrl;
         private string metadataServiceHost = "100.100.100.200";
