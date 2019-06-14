@@ -187,7 +187,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             response.Status = 200;
 
             var mockInstance = new Mock<DefaultAcsClient>
-                {CallBase = true};
+            { CallBase = true };
             mockInstance.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
@@ -207,13 +207,9 @@ namespace Aliyun.Acs.Core.Tests.Units
             // Mock Signer
             Signer signer = new HmacSHA1Signer();
 
-            Assert.Throws<ClientException>(
-                () =>
-                {
-                    var result = instance.DoAction(request, true, 1, "cn-hangzhou", credentials, signer,
-                        FormatType.JSON, null);
-                }
-            );
+            var result = instance.DoAction(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
+
+           Assert.Equal(result,response);
         }
 
         [Fact]
@@ -240,7 +236,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             response.Status = status;
 
             var mockInstance = new Mock<DefaultAcsClient>
-                {CallBase = true};
+            { CallBase = true };
             mockInstance.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
@@ -289,7 +285,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             response.Status = status;
 
             var mockInstance = new Mock<DefaultAcsClient>
-                {CallBase = true};
+            { CallBase = true };
             mockInstance.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
@@ -339,7 +335,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             response.Headers = tmpHeaders;
 
             var mockInstance = new Mock<DefaultAcsClient>
-                {CallBase = true};
+            { CallBase = true };
             mockInstance.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
@@ -603,8 +599,8 @@ namespace Aliyun.Acs.Core.Tests.Units
             var httpRequest = new HttpRequest();
             var connectTimeout = 1024;
 
-            object[] resolveTimeoutArgs = {httpRequest};
-            object[] connectTimeoutArgs = {connectTimeout};
+            object[] resolveTimeoutArgs = { httpRequest };
+            object[] connectTimeoutArgs = { connectTimeout };
 
             var type = typeof(DefaultAcsClient);
             var resolveTimeoutMethodInfo =
@@ -653,7 +649,7 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             var genericMethod = methodInfo.MakeGenericMethod(typeof(AssumeRoleResponse));
 
-            object[] parameters = {httpRequest, acsRequest};
+            object[] parameters = { httpRequest, acsRequest };
             genericMethod.Invoke(resolveProxy, parameters);
 
             acsRequest.Protocol = ProtocolType.HTTP;
@@ -689,8 +685,8 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             var readTimeout = 1024;
 
-            object[] resolveTimeoutArgs = {httpRequest};
-            object[] readTimeoutArgs = {readTimeout};
+            object[] resolveTimeoutArgs = { httpRequest };
+            object[] readTimeoutArgs = { readTimeout };
 
             var type = typeof(DefaultAcsClient);
             var resolveTimeoutMethodInfo =
