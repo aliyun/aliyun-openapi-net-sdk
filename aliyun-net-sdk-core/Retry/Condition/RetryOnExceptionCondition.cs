@@ -37,22 +37,22 @@ namespace Aliyun.Acs.Core.Retry.Condition
 
         public RetryCondition ShouldRetry(RetryPolicyContext retryPolicyContext)
         {
-            if (retryPolicyContext.Exception == null)
+            var exception = retryPolicyContext.Exception;
+
+            if (exception == null)
             {
                 return RetryCondition.NoRetry;
             }
 
-            if (retryPolicyContext.Exception != null)
+            if (exception.ErrorCode != null &&
+                exception.ErrorCode.Equals(SdkHttpError))
             {
-                if (retryPolicyContext.Exception.ErrorCode.Equals(SdkHttpError))
-                {
-                    return RetryCondition.ShouldRetry;
-                }
+                return RetryCondition.ShouldRetry;
             }
 
-            if (retryPolicyContext.Exception is ServerException)
+            if (exception is ServerException)
             {
-                var serverException = (ServerException)retryPolicyContext.Exception;
+                var serverException = (ServerException)exception;
                 var errorCode = serverException.ErrorCode;
 
                 var product = retryPolicyContext.Product;
