@@ -13,12 +13,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="xunit" Version="2.3.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
     <PackageReference Include="Microsoft.NETCore.TestHost" Version="2.0.8" />
-    <PackageReference Include="Moq" Version="4.10.1" />
-    <PackageReference Include="Codecov" Version="1.1.1" />
+    <PackageReference Include="Moq" Version="4.11.0" />
+    <PackageReference Include="Codecov" Version="1.5.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,9 +33,9 @@
     <PackageReference Include="aliyun-net-sdk-cdn" Version="3.0.8" />
     <PackageReference Include="aliyun-net-sdk-ecs" Version="4.16.10" />
     <PackageReference Include="aliyun-net-sdk-ram" Version="3.0.1" />
-    <PackageReference Include="aliyun-net-sdk-rds" Version="2.3.2" />
+    <PackageReference Include="aliyun-net-sdk-rds" Version="2.3.9" />
     <PackageReference Include="aliyun-net-sdk-ros" Version="2.2.8" />
-    <PackageReference Include="aliyun-net-sdk-slb" Version="3.2.41" />
+    <PackageReference Include="aliyun-net-sdk-slb" Version="3.3.0" />
     <PackageReference Include="aliyun-net-sdk-vpc" Version="3.0.4" />
   </ItemGroup>
 
