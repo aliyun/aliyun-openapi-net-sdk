@@ -1,0 +1,2 @@
+2019-06-16 Version 1.0.0
+1，Release C# sdk version 1.0.0
