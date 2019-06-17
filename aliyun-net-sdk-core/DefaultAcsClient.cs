@@ -173,13 +173,18 @@ namespace Aliyun.Acs.Core
                 request.RegionId = regionId;
             }
 
+            request.SetProductDomain();
+
             List<Endpoint> endpoints = null;
             if (null != clientProfile)
             {
                 format = clientProfile.GetFormat();
-                endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
-                    request.LocationProduct,
-                    request.LocationEndpointType);
+                if (request.ProductDomain == null)
+                {
+                    endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
+                        request.LocationProduct,
+                        request.LocationEndpointType);
+                }
             }
 
             return DoAction(request, AutoRetry, MaxRetryNumber, request.RegionId, credential, signer,
@@ -203,6 +208,8 @@ namespace Aliyun.Acs.Core
                 request.RegionId = region;
             }
 
+            request.SetProductDomain();
+
             var credentials = credentialsProvider.GetCredentials();
             if (credentials == null)
             {
@@ -211,11 +218,14 @@ namespace Aliyun.Acs.Core
 
             var signer = Signer.GetSigner(credentials);
             var format = profile.GetFormat();
-            List<Endpoint> endpoints;
+            List<Endpoint> endpoints = null;
 
-            endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
-                request.LocationProduct,
-                request.LocationEndpointType);
+            if (request.ProductDomain == null)
+            {
+                endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
+                    request.LocationProduct,
+                    request.LocationEndpointType);
+            }
 
             return DoAction(request, retry, retryNumber, request.RegionId, credentials, signer, format, endpoints);
         }
