@@ -95,6 +95,78 @@ namespace Aliyun.Acs.Core
             set { bodyParameters = value; }
         }
 
+        public Dictionary<string, string> ProductEndpointMap { get; set; }
+
+        public string ProductEndpointType { get; set; }
+
+        public string ProductNetwork = "public";
+
+        public void SetProductDomain(string endpoint = "")
+        {
+            if (endpoint == "")
+            {
+                endpoint = GetProductEndpoint();
+            }
+
+            if (endpoint != "" && ProductDomain == null)
+            {
+                ProductDomain = new ProductDomain
+                {
+                ProductName = Product,
+                DomianName = endpoint
+                };
+            }
+        }
+
+        public void SetEndpoint(string endpoint)
+        {
+            ProductDomain = new ProductDomain
+            {
+                ProductName = Product,
+                DomianName = endpoint
+            };
+        }
+
+        public string GetProductEndpoint()
+        {
+            if (ProductEndpointMap == null && ProductEndpointType == null)
+            {
+                return "";
+            }
+
+            foreach (var endpointItem in ProductEndpointMap)
+            {
+                if (endpointItem.Key == RegionId)
+                {
+                    return endpointItem.Value;
+                }
+            }
+
+            var endpoint = "";
+            if (ProductEndpointType == "central")
+            {
+                endpoint = "<product_id><network>.aliyuncs.com";
+            }
+            else if (ProductEndpointType == "regional")
+            {
+                endpoint = "<product_id><network>.<region_id>.aliyuncs.com";
+                endpoint = endpoint.Replace("<region_id>", RegionId);
+            }
+
+            if (endpoint == "")
+            {
+                return "";
+            }
+
+            endpoint = endpoint.Replace("<product_id>", Product.ToLower());
+
+            endpoint = ProductNetwork == "public" ?
+                endpoint.Replace("<network>", "") :
+                endpoint.Replace("<network>", "-" + ProductNetwork);
+
+            return endpoint;
+        }
+
         public static string ConcatQueryString(Dictionary<string, string> parameters)
         {
             if (null == parameters)
