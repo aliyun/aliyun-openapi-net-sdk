@@ -9,8 +9,8 @@ English | [简体中文](./README-CN.md)
 
 <p align="center">
 <a href="https://travis-ci.org/aliyun/aliyun-openapi-net-sdk"><img src="https://travis-ci.org/aliyun/aliyun-openapi-net-sdk.svg?branch=master" alt="Travis Build Status"></a>
-<a href="https://ci.appveyor.com/project/aliyun/aliyun-openapi-net-sdk"><img src="https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true" alt="Appveyor Build Status"></a><a href="https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk.svg?type=shield"/></a>
-
+<a href="https://ci.appveyor.com/project/aliyun/aliyun-openapi-net-sdk"><img src="https://ci.appveyor.com/api/projects/status/32r7s2skrgm9ubva?svg=true" alt="Appveyor Build Status"></a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Faliyun-openapi-net-sdk.svg?type=shield"/></a>
 <a href="https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk"><img src="https://codecov.io/gh/aliyun/aliyun-openapi-net-sdk/branch/master/graph/badge.svg" alt="Codecov"></a>
 <a href="https://badge.fury.io/nu/aliyun-net-sdk-core"><img src="https://badge.fury.io/nu/aliyun-net-sdk-core.svg" alt="Nuget Version"></a>
 <a href="https://www.nuget.org/packages/aliyun-net-sdk-core/"><img src="https://img.shields.io/nuget/dt/aliyun-net-sdk-core.svg?label=Nuget%20Download&style=flat" alt="Nuget Version"></a>
