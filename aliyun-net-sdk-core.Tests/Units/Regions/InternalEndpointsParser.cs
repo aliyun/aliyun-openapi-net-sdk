@@ -197,5 +197,19 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
             Assert.NotEmpty(result.ProductDomains);
             Assert.NotEmpty(result.RegionIds);
         }
+
+        [Fact]
+        public void TestCreateProduct()
+        {
+            var product = new InternalEndpointsParser.Product()
+            {
+                Code = "ecs",
+                LocationServiceCode = "ecs",
+                DocumentId = "12546",
+                RegionalEndpoints =  new Dictionary<string, string>(),
+                GlobalEndpoint = "test.aliyuncs.com",
+                RegionalEndpointPattern = "[a-zA-Z0-9].aliyuncs.com"
+            };
+        }
     }
 }
