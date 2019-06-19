@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class DeleteGroupRequest : RpcAcsRequest<DeleteGroupResponse>
     {
         public DeleteGroupRequest()
-            : base("Ram", "2015-05-01", "DeleteGroup", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "DeleteGroup")
         {
 			Protocol = ProtocolType.HTTPS;
         }

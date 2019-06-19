@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class UpdatePublicKeyRequest : RpcAcsRequest<UpdatePublicKeyResponse>
     {
         public UpdatePublicKeyRequest()
-            : base("Ram", "2015-05-01", "UpdatePublicKey", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "UpdatePublicKey")
         {
 			Protocol = ProtocolType.HTTPS;
         }

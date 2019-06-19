@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class ListPublicKeysRequest : RpcAcsRequest<ListPublicKeysResponse>
     {
         public ListPublicKeysRequest()
-            : base("Ram", "2015-05-01", "ListPublicKeys", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "ListPublicKeys")
         {
 			Protocol = ProtocolType.HTTPS;
         }

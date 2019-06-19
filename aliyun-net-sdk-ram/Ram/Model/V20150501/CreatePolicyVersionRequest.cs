@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class CreatePolicyVersionRequest : RpcAcsRequest<CreatePolicyVersionResponse>
     {
         public CreatePolicyVersionRequest()
-            : base("Ram", "2015-05-01", "CreatePolicyVersion", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "CreatePolicyVersion")
         {
 			Protocol = ProtocolType.HTTPS;
         }
@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 		private string policyName;
 
 		private string policyDocument;
+
+		private string rotateStrategy;
 
 		public bool? SetAsDefault
 		{
@@ -77,6 +79,19 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			{
 				policyDocument = value;
 				DictionaryUtil.Add(QueryParameters, "PolicyDocument", value);
+			}
+		}
+
+		public string RotateStrategy
+		{
+			get
+			{
+				return rotateStrategy;
+			}
+			set	
+			{
+				rotateStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "RotateStrategy", value);
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class DetachPolicyFromUserRequest : RpcAcsRequest<DetachPolicyFromUserResponse>
     {
         public DetachPolicyFromUserRequest()
-            : base("Ram", "2015-05-01", "DetachPolicyFromUser", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "DetachPolicyFromUser")
         {
 			Protocol = ProtocolType.HTTPS;
         }

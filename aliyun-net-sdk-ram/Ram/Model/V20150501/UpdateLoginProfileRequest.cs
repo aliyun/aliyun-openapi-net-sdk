@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class UpdateLoginProfileRequest : RpcAcsRequest<UpdateLoginProfileResponse>
     {
         public UpdateLoginProfileRequest()
-            : base("Ram", "2015-05-01", "UpdateLoginProfile", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "UpdateLoginProfile")
         {
 			Protocol = ProtocolType.HTTPS;
         }

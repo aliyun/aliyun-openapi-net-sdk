@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class CreateVirtualMFADeviceRequest : RpcAcsRequest<CreateVirtualMFADeviceResponse>
     {
         public CreateVirtualMFADeviceRequest()
-            : base("Ram", "2015-05-01", "CreateVirtualMFADevice", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "CreateVirtualMFADevice")
         {
 			Protocol = ProtocolType.HTTPS;
         }

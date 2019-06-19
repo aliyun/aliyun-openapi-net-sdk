@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class DeleteVirtualMFADeviceRequest : RpcAcsRequest<DeleteVirtualMFADeviceResponse>
     {
         public DeleteVirtualMFADeviceRequest()
-            : base("Ram", "2015-05-01", "DeleteVirtualMFADevice", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "DeleteVirtualMFADevice")
         {
 			Protocol = ProtocolType.HTTPS;
         }

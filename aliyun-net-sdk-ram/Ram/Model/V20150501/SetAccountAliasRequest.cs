@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class SetAccountAliasRequest : RpcAcsRequest<SetAccountAliasResponse>
     {
         public SetAccountAliasRequest()
-            : base("Ram", "2015-05-01", "SetAccountAlias", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "SetAccountAlias")
         {
 			Protocol = ProtocolType.HTTPS;
         }

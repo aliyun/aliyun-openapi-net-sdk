@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class UpdateRoleRequest : RpcAcsRequest<UpdateRoleResponse>
     {
         public UpdateRoleRequest()
-            : base("Ram", "2015-05-01", "UpdateRole", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "UpdateRole")
         {
 			Protocol = ProtocolType.HTTPS;
         }

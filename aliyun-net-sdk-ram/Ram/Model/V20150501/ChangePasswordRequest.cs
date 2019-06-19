@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class ChangePasswordRequest : RpcAcsRequest<ChangePasswordResponse>
     {
         public ChangePasswordRequest()
-            : base("Ram", "2015-05-01", "ChangePassword", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "ChangePassword")
         {
 			Protocol = ProtocolType.HTTPS;
         }
