@@ -187,7 +187,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             response.Status = 200;
 
             var mockInstance = new Mock<DefaultAcsClient>
-                {CallBase = true};
+            { CallBase = true };
             mockInstance.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
@@ -240,7 +240,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             response.Status = status;
 
             var mockInstance = new Mock<DefaultAcsClient>
-                {CallBase = true};
+            { CallBase = true };
             mockInstance.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
@@ -289,7 +289,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             response.Status = status;
 
             var mockInstance = new Mock<DefaultAcsClient>
-                {CallBase = true};
+            { CallBase = true };
             mockInstance.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
@@ -339,7 +339,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             response.Headers = tmpHeaders;
 
             var mockInstance = new Mock<DefaultAcsClient>
-                {CallBase = true};
+            { CallBase = true };
             mockInstance.Setup(foo => foo.GetResponse(
                 It.IsAny<HttpRequest>()
             )).Returns(response);
@@ -460,7 +460,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             ex = Record.Exception(testCode400);
             Assert.NotNull(ex);
             Assert.IsType<ServerException>(ex);
-            Assert.Equal("ThisIsCode : ThisIsMessage", ex.Message);
+            Assert.Equal("ThisIsCode : ThisIsMessage, the request url is empty, the RequestId is ThisIsRequestId.", ex.Message);
         }
 
         [Fact]
@@ -603,8 +603,8 @@ namespace Aliyun.Acs.Core.Tests.Units
             var httpRequest = new HttpRequest();
             var connectTimeout = 1024;
 
-            object[] resolveTimeoutArgs = {httpRequest};
-            object[] connectTimeoutArgs = {connectTimeout};
+            object[] resolveTimeoutArgs = { httpRequest };
+            object[] connectTimeoutArgs = { connectTimeout };
 
             var type = typeof(DefaultAcsClient);
             var resolveTimeoutMethodInfo =
@@ -653,7 +653,7 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             var genericMethod = methodInfo.MakeGenericMethod(typeof(AssumeRoleResponse));
 
-            object[] parameters = {httpRequest, acsRequest};
+            object[] parameters = { httpRequest, acsRequest };
             genericMethod.Invoke(resolveProxy, parameters);
 
             acsRequest.Protocol = ProtocolType.HTTP;
@@ -689,8 +689,8 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             var readTimeout = 1024;
 
-            object[] resolveTimeoutArgs = {httpRequest};
-            object[] readTimeoutArgs = {readTimeout};
+            object[] resolveTimeoutArgs = { httpRequest };
+            object[] readTimeoutArgs = { readTimeout };
 
             var type = typeof(DefaultAcsClient);
             var resolveTimeoutMethodInfo =
