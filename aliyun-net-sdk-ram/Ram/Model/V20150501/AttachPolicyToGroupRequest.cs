@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class AttachPolicyToGroupRequest : RpcAcsRequest<AttachPolicyToGroupResponse>
     {
         public AttachPolicyToGroupRequest()
-            : base("Ram", "2015-05-01", "AttachPolicyToGroup", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "AttachPolicyToGroup")
         {
 			Protocol = ProtocolType.HTTPS;
         }

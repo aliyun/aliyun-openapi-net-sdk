@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class ListPoliciesForGroupRequest : RpcAcsRequest<ListPoliciesForGroupResponse>
     {
         public ListPoliciesForGroupRequest()
-            : base("Ram", "2015-05-01", "ListPoliciesForGroup", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "ListPoliciesForGroup")
         {
 			Protocol = ProtocolType.HTTPS;
         }

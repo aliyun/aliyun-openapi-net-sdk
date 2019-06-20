@@ -456,7 +456,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             ex = Record.Exception(testCode400);
             Assert.NotNull(ex);
             Assert.IsType<ServerException>(ex);
-            Assert.Equal("ThisIsCode : ThisIsMessage", ex.Message);
+            Assert.Equal("ThisIsCode : ThisIsMessage, the request url is empty, the RequestId is ThisIsRequestId.", ex.Message);
         }
 
         [Fact]

@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 
 		private GetPolicy_Policy policy;
 
+		private GetPolicy_DefaultPolicyVersion defaultPolicyVersion;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			set	
 			{
 				policy = value;
+			}
+		}
+
+		public GetPolicy_DefaultPolicyVersion DefaultPolicyVersion
+		{
+			get
+			{
+				return defaultPolicyVersion;
+			}
+			set	
+			{
+				defaultPolicyVersion = value;
 			}
 		}
 
@@ -165,6 +179,66 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					attachmentCount = value;
+				}
+			}
+		}
+
+		public class GetPolicy_DefaultPolicyVersion
+		{
+
+			private string versionId;
+
+			private bool? isDefaultVersion;
+
+			private string policyDocument;
+
+			private string createDate;
+
+			public string VersionId
+			{
+				get
+				{
+					return versionId;
+				}
+				set	
+				{
+					versionId = value;
+				}
+			}
+
+			public bool? IsDefaultVersion
+			{
+				get
+				{
+					return isDefaultVersion;
+				}
+				set	
+				{
+					isDefaultVersion = value;
+				}
+			}
+
+			public string PolicyDocument
+			{
+				get
+				{
+					return policyDocument;
+				}
+				set	
+				{
+					policyDocument = value;
+				}
+			}
+
+			public string CreateDate
+			{
+				get
+				{
+					return createDate;
+				}
+				set	
+				{
+					createDate = value;
 				}
 			}
 		}

@@ -48,5 +48,17 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
             TestHelper.DeleteIniFile();
             Assert.Equal("cn-hangzhou", value);
         }
+
+        [Fact]
+        public void TestGetValue()
+        {
+            TestHelper.CreateIniFileWithEcs();
+
+            var iniReader = new IniReader(TestHelper.GetIniFilePath());
+            var value = iniReader.GetValue("region_id");
+
+            TestHelper.DeleteIniFile();
+            Assert.Empty(value);
+        }
     }
 }

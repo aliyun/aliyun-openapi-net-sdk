@@ -43,6 +43,13 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 			policy.UpdateDate = context.StringValue("GetPolicy.Policy.UpdateDate");
 			policy.AttachmentCount = context.IntegerValue("GetPolicy.Policy.AttachmentCount");
 			getPolicyResponse.Policy = policy;
+
+			GetPolicyResponse.GetPolicy_DefaultPolicyVersion defaultPolicyVersion = new GetPolicyResponse.GetPolicy_DefaultPolicyVersion();
+			defaultPolicyVersion.VersionId = context.StringValue("GetPolicy.DefaultPolicyVersion.VersionId");
+			defaultPolicyVersion.IsDefaultVersion = context.BooleanValue("GetPolicy.DefaultPolicyVersion.IsDefaultVersion");
+			defaultPolicyVersion.PolicyDocument = context.StringValue("GetPolicy.DefaultPolicyVersion.PolicyDocument");
+			defaultPolicyVersion.CreateDate = context.StringValue("GetPolicy.DefaultPolicyVersion.CreateDate");
+			getPolicyResponse.DefaultPolicyVersion = defaultPolicyVersion;
         
 			return getPolicyResponse;
         }

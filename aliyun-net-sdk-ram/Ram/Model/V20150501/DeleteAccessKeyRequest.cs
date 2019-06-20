@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class DeleteAccessKeyRequest : RpcAcsRequest<DeleteAccessKeyResponse>
     {
         public DeleteAccessKeyRequest()
-            : base("Ram", "2015-05-01", "DeleteAccessKey", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "DeleteAccessKey")
         {
 			Protocol = ProtocolType.HTTPS;
         }

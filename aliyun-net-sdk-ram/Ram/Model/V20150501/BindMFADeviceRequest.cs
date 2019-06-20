@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class BindMFADeviceRequest : RpcAcsRequest<BindMFADeviceResponse>
     {
         public BindMFADeviceRequest()
-            : base("Ram", "2015-05-01", "BindMFADevice", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "BindMFADevice")
         {
 			Protocol = ProtocolType.HTTPS;
         }

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class GetRoleRequest : RpcAcsRequest<GetRoleResponse>
     {
         public GetRoleRequest()
-            : base("Ram", "2015-05-01", "GetRole", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "GetRole")
         {
 			Protocol = ProtocolType.HTTPS;
         }

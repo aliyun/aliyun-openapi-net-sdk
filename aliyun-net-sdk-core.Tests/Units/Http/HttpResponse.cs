@@ -88,6 +88,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
         public void GetWebRequestWithTimeout()
         {
             var request = HttpRequestTest.SetContent();
+
             var httpWebRequest = HttpResponse.GetWebRequest(request);
 
             Assert.Equal(5000, httpWebRequest.Timeout);

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class DeleteUserRequest : RpcAcsRequest<DeleteUserResponse>
     {
         public DeleteUserRequest()
-            : base("Ram", "2015-05-01", "DeleteUser", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "DeleteUser")
         {
 			Protocol = ProtocolType.HTTPS;
         }

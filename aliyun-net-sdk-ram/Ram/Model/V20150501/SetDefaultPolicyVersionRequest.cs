@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class SetDefaultPolicyVersionRequest : RpcAcsRequest<SetDefaultPolicyVersionResponse>
     {
         public SetDefaultPolicyVersionRequest()
-            : base("Ram", "2015-05-01", "SetDefaultPolicyVersion", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "SetDefaultPolicyVersion")
         {
 			Protocol = ProtocolType.HTTPS;
         }

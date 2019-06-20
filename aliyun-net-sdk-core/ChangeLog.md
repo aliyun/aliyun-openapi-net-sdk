@@ -1,3 +1,10 @@
+### 2019-06-20 Version 1.3.8
+* Add endpoint info in exception message when server is unreachable
+* Carry the RequestId when throw ClientException
+
+### 2019-06-17 Version 1.3.7
+* Add dbs endpoint data
+
 ### 2019-06-06 Version 1.3.6
 * Code clean up to fit in with .net coding convention
 * Add support for build .net framework4.5 on linux

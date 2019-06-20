@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class GetUserMFAInfoRequest : RpcAcsRequest<GetUserMFAInfoResponse>
     {
         public GetUserMFAInfoRequest()
-            : base("Ram", "2015-05-01", "GetUserMFAInfo", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "GetUserMFAInfo")
         {
 			Protocol = ProtocolType.HTTPS;
         }

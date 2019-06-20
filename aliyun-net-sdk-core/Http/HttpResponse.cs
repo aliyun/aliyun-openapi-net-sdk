@@ -30,10 +30,10 @@ namespace Aliyun.Acs.Core.Http
     public class HttpResponse : HttpRequest
     {
         // Default read timeout 10s
-        private const int DEFAULT_READ_TIMEOUT_IN_MilliSeconds = 10000; 
-        
+        private const int DEFAULT_READ_TIMEOUT_IN_MilliSeconds = 10000;
+
         // Default connect timeout 5s
-        private const int DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds = 5000; 
+        private const int DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds = 5000;
         private static readonly int bufferLength = 1024;
 
         public HttpResponse(string strUrl) : base(strUrl)
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Core.Http
             ContentType = format;
         }
 
-        private static void PasrseHttpResponse(HttpResponse httpResponse, HttpWebResponse httpWebResponse)
+        private static void ParseHttpResponse(HttpResponse httpResponse, HttpWebResponse httpWebResponse)
         {
             httpResponse.Content = ReadContent(httpResponse, httpWebResponse);
             httpResponse.Status = (int)httpWebResponse.StatusCode;
@@ -118,8 +118,8 @@ namespace Aliyun.Acs.Core.Http
                 httpWebRequest.Timeout = (int)timeout;
             }
 
-            var httpResponse = new HttpResponse(httpWebRequest.RequestUri.AbsoluteUri);
-            HttpWebResponse httpWebResponse = null;
+            HttpWebResponse httpWebResponse;
+
             try
             {
                 httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
@@ -132,17 +132,29 @@ namespace Aliyun.Acs.Core.Http
                 }
                 else
                 {
-                    throw new ClientException("HttWebRequest GetResponse WebException", ex.ToString());
+                    throw new ClientException("SDK.WebException",
+                        string.Format("HttpWebRequest WebException occured, the request url is {0} {1}",
+                            httpWebRequest.RequestUri == null ? "empty" : httpWebRequest.RequestUri.Host, ex));
                 }
+            }
+            catch (IOException ex)
+            {
+                throw new ClientException("SDK.ServerUnreachable:",
+                    string.Format("Server unreachable: connection to url: {0} failed. {1}",
+                        httpWebRequest.RequestUri == null ? "empty" : httpWebRequest.RequestUri.Host,
+                        ex));
             }
             catch (Exception ex)
             {
-                throw new ClientException(ex.ToString());
+                throw new ClientException("SDK.Exception",
+                    string.Format("The request url is {0} {1}",
+                        httpWebRequest.RequestUri == null ? "empty" : httpWebRequest.RequestUri.Host, ex));
             }
 
             using (httpWebResponse)
             {
-                PasrseHttpResponse(httpResponse, httpWebResponse);
+                var httpResponse = new HttpResponse(httpWebRequest.RequestUri.AbsoluteUri);
+                ParseHttpResponse(httpResponse, httpWebResponse);
                 return httpResponse;
             }
         }
@@ -157,6 +169,7 @@ namespace Aliyun.Acs.Core.Http
             httpWebRequest.Timeout = request.ConnectTimeout > 0
                 ? request.ConnectTimeout
                 : DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds;
+
             httpWebRequest.ReadWriteTimeout =
                 request.ReadTimeout > 0 ? request.ReadTimeout : DEFAULT_READ_TIMEOUT_IN_MilliSeconds;
 

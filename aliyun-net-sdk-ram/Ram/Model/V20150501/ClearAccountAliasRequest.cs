@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class ClearAccountAliasRequest : RpcAcsRequest<ClearAccountAliasResponse>
     {
         public ClearAccountAliasRequest()
-            : base("Ram", "2015-05-01", "ClearAccountAlias", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "ClearAccountAlias")
         {
 			Protocol = ProtocolType.HTTPS;
         }

@@ -10,6 +10,47 @@
     <regional_endpoint_pattern/>
   </product>
   <product>
+    <code>dbs</code>
+    <location_service_code>cbs</location_service_code>
+    <document_id/>
+    <regional_endpoints>
+        <regional_endpoint>
+            <region_id>cn-hangzhou</region_id>
+            <endpoint>dbs-api.cn-hangzhou.aliyuncs.com</endpoint>
+        </regional_endpoint>
+        <regional_endpoint>
+            <region_id>cn-shanghai</region_id>
+            <endpoint>dbs-api.cn-hangzhou.aliyuncs.com</endpoint>
+        </regional_endpoint>
+        <regional_endpoint>
+            <region_id>cn-qingdao</region_id>
+            <endpoint>dbs-api.cn-hangzhou.aliyuncs.com</endpoint>
+        </regional_endpoint>
+        <regional_endpoint>
+            <region_id>cn-beijing</region_id>
+            <endpoint>dbs-api.cn-hangzhou.aliyuncs.com</endpoint>
+        </regional_endpoint>
+        <regional_endpoint>
+            <region_id>cn-shenzhen</region_id>
+            <endpoint>dbs-api.cn-hangzhou.aliyuncs.com</endpoint>
+        </regional_endpoint>
+        <regional_endpoint>
+            <region_id>cn-hongkong</region_id>
+            <endpoint>dbs-api.cn-hangzhou.aliyuncs.com</endpoint>
+        </regional_endpoint>
+        <regional_endpoint>
+            <region_id>ap-southeast-1</region_id>
+            <endpoint>dbs-api.ap-southeast-1.aliyuncs.com</endpoint>
+        </regional_endpoint>
+        <regional_endpoint>
+            <region_id>ap-northeast-1</region_id>
+            <endpoint>dbs-api.ap-northeast-1.aliyuncs.com</endpoint>
+        </regional_endpoint>
+    </regional_endpoints>
+    <global_endpoint/>
+    <regional_endpoint_pattern/>
+  </product>
+  <product>
     <code>alidns</code>
     <location_service_code>alidns</location_service_code>
     <document_id>29739</document_id>

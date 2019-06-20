@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
     public class DeletePolicyRequest : RpcAcsRequest<DeletePolicyResponse>
     {
         public DeletePolicyRequest()
-            : base("Ram", "2015-05-01", "DeletePolicy", "ram", "openAPI")
+            : base("Ram", "2015-05-01", "DeletePolicy")
         {
 			Protocol = ProtocolType.HTTPS;
         }

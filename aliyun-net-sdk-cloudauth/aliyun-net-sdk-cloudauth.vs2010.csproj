@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3c22ee35-ac42-4223-8912-0079d8815ca8}</ProjectGuid>
+    <ProjectGuid>{b53538b5-3697-4068-9728-a76acb6bd915}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,18 +40,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Cloudauth\Transform\V20180916\DescribeVerifySDKResponseUnmarshaller.cs" />
-	<Compile Include="Cloudauth\Transform\V20180916\GetMaterialsResponseUnmarshaller.cs" />
 	<Compile Include="Cloudauth\Transform\V20180916\ModifyDeviceInfoResponseUnmarshaller.cs" />
 	<Compile Include="Cloudauth\Transform\V20180916\DescribeDeviceInfoResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\CreateVerifySDKResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\GetStatusResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\SubmitMaterialsResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\GetMaterialsResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\GetVerifyTokenResponseUnmarshaller.cs" />
 	<Compile Include="Cloudauth\Transform\V20180916\DetectFaceAttributesResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Transform\V20180916\DescribeVerifySDKResponseUnmarshaller.cs" />
 	<Compile Include="Cloudauth\Transform\V20180916\CreateAuthKeyResponseUnmarshaller.cs" />
 	<Compile Include="Cloudauth\Transform\V20180916\SubmitVerificationResponseUnmarshaller.cs" />
-	<Compile Include="Cloudauth\Transform\V20180916\CompareFacesResponseUnmarshaller.cs" />
-	<Compile Include="Cloudauth\Transform\V20180916\CreateVerifySDKResponseUnmarshaller.cs" />
-	<Compile Include="Cloudauth\Transform\V20180916\SubmitMaterialsResponseUnmarshaller.cs" />
-	<Compile Include="Cloudauth\Transform\V20180916\GetStatusResponseUnmarshaller.cs" />
-	<Compile Include="Cloudauth\Transform\V20180916\GetVerifyTokenResponseUnmarshaller.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\GetMaterialsResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\DescribeDeviceInfoRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\GetStatusResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\ModifyDeviceInfoResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\GetStatusRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\DescribeDeviceInfoResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\CompareFacesRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\DetectFaceAttributesRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\CreateAuthKeyResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\GetVerifyTokenResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\SubmitVerificationRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\CreateVerifySDKResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\CreateAuthKeyRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\CreateVerifySDKRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\SubmitMaterialsRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\GetMaterialsRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\ModifyDeviceInfoRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\SubmitVerificationResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\CompareFacesResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\DescribeVerifySDKRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\SubmitMaterialsResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\GetVerifyTokenRequest.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\DetectFaceAttributesResponse.cs" />
+	<Compile Include="Cloudauth\Model\V20180916\DescribeVerifySDKResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
