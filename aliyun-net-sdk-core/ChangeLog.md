@@ -1,3 +1,7 @@
+### 2019-06-20 Version 1.3.8
+* Add endpoint info in exception message when server is unreachable
+* Carry the RequestId when throw ClientException
+
 ### 2019-06-17 Version 1.3.7
 * Add dbs endpoint data
 
