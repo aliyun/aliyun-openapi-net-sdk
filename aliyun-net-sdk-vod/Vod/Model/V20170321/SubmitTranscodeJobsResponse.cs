@@ -27,6 +27,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string requestId;
 
+		private string transcodeTaskId;
+
 		private List<SubmitTranscodeJobs_TranscodeJob> transcodeJobs;
 
 		public string RequestId
@@ -38,6 +40,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string TranscodeTaskId
+		{
+			get
+			{
+				return transcodeTaskId;
+			}
+			set	
+			{
+				transcodeTaskId = value;
 			}
 		}
 

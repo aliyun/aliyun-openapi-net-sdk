@@ -34,6 +34,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
+		private string userData;
+
 		private long? resourceOwnerId;
 
 		private string templateGroupId;
@@ -51,6 +53,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string encryptConfig;
 
 		private string pipelineId;
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{

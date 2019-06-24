@@ -66,6 +66,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string locked;
 
+			private string transcodeMode;
+
+			private string appId;
+
 			private string transcodeTemplateGroupId;
 
 			private List<GetTranscodeTemplateGroup_TranscodeTemplate> transcodeTemplateList;
@@ -127,6 +131,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					locked = value;
+				}
+			}
+
+			public string TranscodeMode
+			{
+				get
+				{
+					return transcodeMode;
+				}
+				set	
+				{
+					transcodeMode = value;
+				}
+			}
+
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
 				}
 			}
 

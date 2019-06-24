@@ -32,6 +32,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 
 			submitTranscodeJobsResponse.HttpResponse = context.HttpResponse;
 			submitTranscodeJobsResponse.RequestId = context.StringValue("SubmitTranscodeJobs.RequestId");
+			submitTranscodeJobsResponse.TranscodeTaskId = context.StringValue("SubmitTranscodeJobs.TranscodeTaskId");
 
 			List<SubmitTranscodeJobsResponse.SubmitTranscodeJobs_TranscodeJob> submitTranscodeJobsResponse_transcodeJobs = new List<SubmitTranscodeJobsResponse.SubmitTranscodeJobs_TranscodeJob>();
 			for (int i = 0; i < context.Length("SubmitTranscodeJobs.TranscodeJobs.Length"); i++) {

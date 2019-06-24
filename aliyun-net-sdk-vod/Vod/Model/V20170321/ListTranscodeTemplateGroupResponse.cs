@@ -68,6 +68,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string transcodeTemplateGroupId;
 
+			private string transcodeMode;
+
+			private string appId;
+
 			public string CreationTime
 			{
 				get
@@ -137,6 +141,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					transcodeTemplateGroupId = value;
+				}
+			}
+
+			public string TranscodeMode
+			{
+				get
+				{
+					return transcodeMode;
+				}
+				set	
+				{
+					transcodeMode = value;
+				}
+			}
+
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
 				}
 			}
 		}

@@ -39,6 +39,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			transcodeTemplateGroup.Name = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.Name");
 			transcodeTemplateGroup.IsDefault = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.IsDefault");
 			transcodeTemplateGroup.Locked = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.Locked");
+			transcodeTemplateGroup.TranscodeMode = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeMode");
+			transcodeTemplateGroup.AppId = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.AppId");
 			transcodeTemplateGroup.TranscodeTemplateGroupId = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateGroupId");
 
 			List<GetTranscodeTemplateGroupResponse.GetTranscodeTemplateGroup_TranscodeTemplateGroup.GetTranscodeTemplateGroup_TranscodeTemplate> transcodeTemplateGroup_transcodeTemplateList = new List<GetTranscodeTemplateGroupResponse.GetTranscodeTemplateGroup_TranscodeTemplateGroup.GetTranscodeTemplateGroup_TranscodeTemplate>();

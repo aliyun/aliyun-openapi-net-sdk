@@ -70,6 +70,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string watermarkConfig;
 
+			private string appId;
+
 			public string CreationTime
 			{
 				get
@@ -151,6 +153,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					watermarkConfig = value;
+				}
+			}
+
+			public string AppId
+			{
+				get
+				{
+					return appId;
+				}
+				set	
+				{
+					appId = value;
 				}
 			}
 		}

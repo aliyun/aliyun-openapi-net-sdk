@@ -41,6 +41,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			watermarkInfo.Name = context.StringValue("GetWatermark.WatermarkInfo.Name");
 			watermarkInfo.FileUrl = context.StringValue("GetWatermark.WatermarkInfo.FileUrl");
 			watermarkInfo.WatermarkConfig = context.StringValue("GetWatermark.WatermarkInfo.WatermarkConfig");
+			watermarkInfo.AppId = context.StringValue("GetWatermark.WatermarkInfo.AppId");
 			getWatermarkResponse.WatermarkInfo = watermarkInfo;
         
 			return getWatermarkResponse;

@@ -43,6 +43,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				watermarkInfo.Name = context.StringValue("ListWatermark.WatermarkInfos["+ i +"].Name");
 				watermarkInfo.FileUrl = context.StringValue("ListWatermark.WatermarkInfos["+ i +"].FileUrl");
 				watermarkInfo.WatermarkConfig = context.StringValue("ListWatermark.WatermarkInfos["+ i +"].WatermarkConfig");
+				watermarkInfo.AppId = context.StringValue("ListWatermark.WatermarkInfos["+ i +"].AppId");
 
 				listWatermarkResponse_watermarkInfos.Add(watermarkInfo);
 			}
