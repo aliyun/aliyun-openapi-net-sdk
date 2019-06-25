@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scheduledAction;
 
+		private int? maxValue;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -54,9 +56,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string recurrenceEndTime;
 
-		private string accessKeyId;
-
-		private string action;
+		private int? minValue;
 
 		private string scheduledTaskName;
 
@@ -102,6 +102,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scheduledAction = value;
 				DictionaryUtil.Add(QueryParameters, "ScheduledAction", value);
+			}
+		}
+
+		public int? MaxValue
+		{
+			get
+			{
+				return maxValue;
+			}
+			set	
+			{
+				maxValue = value;
+				DictionaryUtil.Add(QueryParameters, "MaxValue", value.ToString());
 			}
 		}
 
@@ -196,29 +209,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string AccessKeyId
+		public int? MinValue
 		{
 			get
 			{
-				return accessKeyId;
+				return minValue;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				minValue = value;
+				DictionaryUtil.Add(QueryParameters, "MinValue", value.ToString());
 			}
 		}
 

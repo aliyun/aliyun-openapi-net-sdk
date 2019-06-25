@@ -25,7 +25,21 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 	public class DescribeRegionsResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private List<DescribeRegions_Region> regions;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public List<DescribeRegions_Region> Regions
 		{
@@ -47,6 +61,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			private bool? classicUnavailable;
 
 			private bool? vpcUnavailable;
+
+			private string regionEndpoint;
+
+			private string localName;
 
 			public string RegionId
 			{
@@ -81,6 +99,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					vpcUnavailable = value;
+				}
+			}
+
+			public string RegionEndpoint
+			{
+				get
+				{
+					return regionEndpoint;
+				}
+				set	
+				{
+					regionEndpoint = value;
+				}
+			}
+
+			public string LocalName
+			{
+				get
+				{
+					return localName;
+				}
+				set	
+				{
+					localName = value;
 				}
 			}
 		}

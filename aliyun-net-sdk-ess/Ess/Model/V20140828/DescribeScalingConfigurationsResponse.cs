@@ -160,6 +160,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string resourceGroupId;
 
+			private string hpcClusterId;
+
+			private string instanceDescription;
+
 			private List<DescribeScalingConfigurations_DataDisk> dataDisks;
 
 			private List<DescribeScalingConfigurations_Tag> tags;
@@ -167,6 +171,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			private List<DescribeScalingConfigurations_SpotPriceModel> spotPriceLimit;
 
 			private List<string> instanceTypes;
+
+			private List<string> securityGroupIds;
 
 			public string ScalingConfigurationId
 			{
@@ -540,6 +546,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public string HpcClusterId
+			{
+				get
+				{
+					return hpcClusterId;
+				}
+				set	
+				{
+					hpcClusterId = value;
+				}
+			}
+
+			public string InstanceDescription
+			{
+				get
+				{
+					return instanceDescription;
+				}
+				set	
+				{
+					instanceDescription = value;
+				}
+			}
+
 			public List<DescribeScalingConfigurations_DataDisk> DataDisks
 			{
 				get
@@ -585,6 +615,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					instanceTypes = value;
+				}
+			}
+
+			public List<string> SecurityGroupIds
+			{
+				get
+				{
+					return securityGroupIds;
+				}
+				set	
+				{
+					securityGroupIds = value;
 				}
 			}
 

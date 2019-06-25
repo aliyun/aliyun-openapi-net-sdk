@@ -46,13 +46,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
 
 		private float? metricValue;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -132,19 +128,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -168,19 +151,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				metricValue = value;
 				DictionaryUtil.Add(QueryParameters, "MetricValue", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

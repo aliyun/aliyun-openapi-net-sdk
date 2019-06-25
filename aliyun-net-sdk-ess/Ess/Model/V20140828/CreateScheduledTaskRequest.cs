@@ -52,12 +52,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string recurrenceEndTime;
 
-		private string accessKeyId;
-
-		private string regionId;
-
-		private string action;
-
 		private string scheduledTaskName;
 
 		private bool? taskEnabled;
@@ -178,45 +172,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				recurrenceEndTime = value;
 				DictionaryUtil.Add(QueryParameters, "RecurrenceEndTime", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

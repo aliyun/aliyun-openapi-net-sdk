@@ -42,13 +42,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scalingGroupId;
 
-		private string action;
-
 		private long? ownerId;
 
 		private int? failConfig;
-
-		private string accessKeyId;
 
 		public int? SuccessConfig
 		{
@@ -102,19 +98,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -138,19 +121,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				failConfig = value;
 				DictionaryUtil.Add(QueryParameters, "FailConfig", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

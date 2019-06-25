@@ -128,6 +128,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private bool? disableScaleIn;
 
+			private string predictiveScalingMode;
+
+			private string predictiveValueBehavior;
+
+			private int? predictiveValueBuffer;
+
+			private int? predictiveTaskBufferTime;
+
+			private int? initialMaxSize;
+
 			private List<DescribeScalingRules_Alarm> alarms;
 
 			private List<DescribeScalingRules_StepAdjustment> stepAdjustments;
@@ -312,6 +322,66 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public string PredictiveScalingMode
+			{
+				get
+				{
+					return predictiveScalingMode;
+				}
+				set	
+				{
+					predictiveScalingMode = value;
+				}
+			}
+
+			public string PredictiveValueBehavior
+			{
+				get
+				{
+					return predictiveValueBehavior;
+				}
+				set	
+				{
+					predictiveValueBehavior = value;
+				}
+			}
+
+			public int? PredictiveValueBuffer
+			{
+				get
+				{
+					return predictiveValueBuffer;
+				}
+				set	
+				{
+					predictiveValueBuffer = value;
+				}
+			}
+
+			public int? PredictiveTaskBufferTime
+			{
+				get
+				{
+					return predictiveTaskBufferTime;
+				}
+				set	
+				{
+					predictiveTaskBufferTime = value;
+				}
+			}
+
+			public int? InitialMaxSize
+			{
+				get
+				{
+					return initialMaxSize;
+				}
+				set	
+				{
+					initialMaxSize = value;
+				}
+			}
+
 			public List<DescribeScalingRules_Alarm> Alarms
 			{
 				get
@@ -343,6 +413,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 				private string alarmTaskId;
 
+				private string comparisonOperator;
+
+				private string statistics;
+
+				private string metricName;
+
+				private float? threshold;
+
+				private int? evaluationCount;
+
+				private List<DescribeScalingRules_Dimension> dimensions;
+
 				public string AlarmTaskName
 				{
 					get
@@ -364,6 +446,110 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 					set	
 					{
 						alarmTaskId = value;
+					}
+				}
+
+				public string ComparisonOperator
+				{
+					get
+					{
+						return comparisonOperator;
+					}
+					set	
+					{
+						comparisonOperator = value;
+					}
+				}
+
+				public string Statistics
+				{
+					get
+					{
+						return statistics;
+					}
+					set	
+					{
+						statistics = value;
+					}
+				}
+
+				public string MetricName
+				{
+					get
+					{
+						return metricName;
+					}
+					set	
+					{
+						metricName = value;
+					}
+				}
+
+				public float? Threshold
+				{
+					get
+					{
+						return threshold;
+					}
+					set	
+					{
+						threshold = value;
+					}
+				}
+
+				public int? EvaluationCount
+				{
+					get
+					{
+						return evaluationCount;
+					}
+					set	
+					{
+						evaluationCount = value;
+					}
+				}
+
+				public List<DescribeScalingRules_Dimension> Dimensions
+				{
+					get
+					{
+						return dimensions;
+					}
+					set	
+					{
+						dimensions = value;
+					}
+				}
+
+				public class DescribeScalingRules_Dimension
+				{
+
+					private string dimensionKey;
+
+					private string dimensionValue;
+
+					public string DimensionKey
+					{
+						get
+						{
+							return dimensionKey;
+						}
+						set	
+						{
+							dimensionKey = value;
+						}
+					}
+
+					public string DimensionValue
+					{
+						get
+						{
+							return dimensionValue;
+						}
+						set	
+						{
+							dimensionValue = value;
+						}
 					}
 				}
 			}

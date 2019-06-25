@@ -76,10 +76,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? loadBalancerWeight1;
 
-		private string accessKeyId;
-
-		private string action;
-
 		private string instanceId20;
 
 		private string instanceId1;
@@ -398,32 +394,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				loadBalancerWeight1 = value;
 				DictionaryUtil.Add(QueryParameters, "LoadBalancerWeight.1", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

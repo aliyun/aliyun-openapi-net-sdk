@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string ownerAccount;
 
+		private int? predictiveTaskBufferTime;
+
 		private string adjustmentType;
 
 		private bool? disableScaleIn;
@@ -54,7 +56,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scalingRuleId;
 
-		private string accessKeyId;
+		private int? initialMaxSize;
+
+		private int? predictiveValueBuffer;
 
 		private string scalingRuleName;
 
@@ -62,11 +66,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? minAdjustmentMagnitude;
 
-		private string action;
+		private string predictiveValueBehavior;
 
 		private float? targetValue;
 
 		private string metricName;
+
+		private string predictiveScalingMode;
 
 		public long? ResourceOwnerId
 		{
@@ -152,6 +158,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public int? PredictiveTaskBufferTime
+		{
+			get
+			{
+				return predictiveTaskBufferTime;
+			}
+			set	
+			{
+				predictiveTaskBufferTime = value;
+				DictionaryUtil.Add(QueryParameters, "PredictiveTaskBufferTime", value.ToString());
+			}
+		}
+
 		public string AdjustmentType
 		{
 			get
@@ -204,16 +223,29 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string AccessKeyId
+		public int? InitialMaxSize
 		{
 			get
 			{
-				return accessKeyId;
+				return initialMaxSize;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				initialMaxSize = value;
+				DictionaryUtil.Add(QueryParameters, "InitialMaxSize", value.ToString());
+			}
+		}
+
+		public int? PredictiveValueBuffer
+		{
+			get
+			{
+				return predictiveValueBuffer;
+			}
+			set	
+			{
+				predictiveValueBuffer = value;
+				DictionaryUtil.Add(QueryParameters, "PredictiveValueBuffer", value.ToString());
 			}
 		}
 
@@ -256,16 +288,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string Action
+		public string PredictiveValueBehavior
 		{
 			get
 			{
-				return action;
+				return predictiveValueBehavior;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				predictiveValueBehavior = value;
+				DictionaryUtil.Add(QueryParameters, "PredictiveValueBehavior", value);
 			}
 		}
 
@@ -292,6 +324,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				metricName = value;
 				DictionaryUtil.Add(QueryParameters, "MetricName", value);
+			}
+		}
+
+		public string PredictiveScalingMode
+		{
+			get
+			{
+				return predictiveScalingMode;
+			}
+			set	
+			{
+				predictiveScalingMode = value;
+				DictionaryUtil.Add(QueryParameters, "PredictiveScalingMode", value);
 			}
 		}
 

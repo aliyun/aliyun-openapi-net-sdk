@@ -40,8 +40,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? pageSize;
 
-		private string action;
-
 		private string endTime;
 
 		private string startTime;
@@ -49,8 +47,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private long? ownerId;
 
 		private int? pageNumber;
-
-		private string accessKeyId;
 
 		public string ResourceOwnerAccount
 		{
@@ -88,19 +84,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -153,19 +136,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

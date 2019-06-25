@@ -54,12 +54,32 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingRule.MetricName = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].MetricName");
 				scalingRule.TargetValue = context.FloatValue("DescribeScalingRules.ScalingRules["+ i +"].TargetValue");
 				scalingRule.DisableScaleIn = context.BooleanValue("DescribeScalingRules.ScalingRules["+ i +"].DisableScaleIn");
+				scalingRule.PredictiveScalingMode = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].PredictiveScalingMode");
+				scalingRule.PredictiveValueBehavior = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].PredictiveValueBehavior");
+				scalingRule.PredictiveValueBuffer = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].PredictiveValueBuffer");
+				scalingRule.PredictiveTaskBufferTime = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].PredictiveTaskBufferTime");
+				scalingRule.InitialMaxSize = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].InitialMaxSize");
 
 				List<DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_Alarm> scalingRule_alarms = new List<DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_Alarm>();
 				for (int j = 0; j < context.Length("DescribeScalingRules.ScalingRules["+ i +"].Alarms.Length"); j++) {
 					DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_Alarm alarm = new DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_Alarm();
 					alarm.AlarmTaskName = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].Alarms["+ j +"].AlarmTaskName");
 					alarm.AlarmTaskId = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].Alarms["+ j +"].AlarmTaskId");
+					alarm.ComparisonOperator = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].Alarms["+ j +"].ComparisonOperator");
+					alarm.Statistics = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].Alarms["+ j +"].Statistics");
+					alarm.MetricName = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].Alarms["+ j +"].MetricName");
+					alarm.Threshold = context.FloatValue("DescribeScalingRules.ScalingRules["+ i +"].Alarms["+ j +"].Threshold");
+					alarm.EvaluationCount = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].Alarms["+ j +"].EvaluationCount");
+
+					List<DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_Alarm.DescribeScalingRules_Dimension> alarm_dimensions = new List<DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_Alarm.DescribeScalingRules_Dimension>();
+					for (int k = 0; k < context.Length("DescribeScalingRules.ScalingRules["+ i +"].Alarms["+ j +"].Dimensions.Length"); k++) {
+						DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_Alarm.DescribeScalingRules_Dimension dimension = new DescribeScalingRulesResponse.DescribeScalingRules_ScalingRule.DescribeScalingRules_Alarm.DescribeScalingRules_Dimension();
+						dimension.DimensionKey = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].Alarms["+ j +"].Dimensions["+ k +"].DimensionKey");
+						dimension.DimensionValue = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].Alarms["+ j +"].Dimensions["+ k +"].DimensionValue");
+
+						alarm_dimensions.Add(dimension);
+					}
+					alarm.Dimensions = alarm_dimensions;
 
 					scalingRule_alarms.Add(alarm);
 				}

@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scheduledTask.RecurrenceValue = context.StringValue("DescribeScheduledTasks.ScheduledTasks["+ i +"].RecurrenceValue");
 				scheduledTask.LaunchExpirationTime = context.IntegerValue("DescribeScheduledTasks.ScheduledTasks["+ i +"].LaunchExpirationTime");
 				scheduledTask.TaskEnabled = context.BooleanValue("DescribeScheduledTasks.ScheduledTasks["+ i +"].TaskEnabled");
+				scheduledTask.MaxValue = context.IntegerValue("DescribeScheduledTasks.ScheduledTasks["+ i +"].MaxValue");
+				scheduledTask.MinValue = context.IntegerValue("DescribeScheduledTasks.ScheduledTasks["+ i +"].MinValue");
 
 				describeScheduledTasksResponse_scheduledTasks.Add(scheduledTask);
 			}

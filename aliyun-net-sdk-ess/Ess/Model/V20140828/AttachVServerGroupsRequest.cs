@@ -36,19 +36,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string scalingGroupId;
-
-		private string action;
 
 		private bool? forceAttach;
 
 		private long? ownerId;
 
 		private List<VServerGroup> vServerGroups;
-
-		private string accessKeyId;
 
 		public string ResourceOwnerAccount
 		{
@@ -63,19 +57,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string ScalingGroupId
 		{
 			get
@@ -86,19 +67,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scalingGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -146,19 +114,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 						DictionaryUtil.Add(QueryParameters,"VServerGroup." + (i + 1) + ".VServerGroupAttribute." +(j + 1), vServerGroups[i].VServerGroupAttributes[j]);
 					}
 				}
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

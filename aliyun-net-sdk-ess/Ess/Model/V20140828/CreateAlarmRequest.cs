@@ -52,13 +52,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private long? ownerId;
 
-		private string accessKeyId;
-
-		private string regionId;
-
 		private string name;
-
-		private string action;
 
 		private int? evaluationCount;
 
@@ -191,32 +185,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string Name
 		{
 			get
@@ -227,19 +195,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

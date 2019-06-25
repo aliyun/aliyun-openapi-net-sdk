@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
 			describeRegionsResponse.HttpResponse = context.HttpResponse;
+			describeRegionsResponse.RequestId = context.StringValue("DescribeRegions.RequestId");
 
 			List<DescribeRegionsResponse.DescribeRegions_Region> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_Region>();
 			for (int i = 0; i < context.Length("DescribeRegions.Regions.Length"); i++) {
@@ -38,6 +39,8 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				region.RegionId = context.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
 				region.ClassicUnavailable = context.BooleanValue("DescribeRegions.Regions["+ i +"].ClassicUnavailable");
 				region.VpcUnavailable = context.BooleanValue("DescribeRegions.Regions["+ i +"].VpcUnavailable");
+				region.RegionEndpoint = context.StringValue("DescribeRegions.Regions["+ i +"].RegionEndpoint");
+				region.LocalName = context.StringValue("DescribeRegions.Regions["+ i +"].LocalName");
 
 				describeRegionsResponse_regions.Add(region);
 			}

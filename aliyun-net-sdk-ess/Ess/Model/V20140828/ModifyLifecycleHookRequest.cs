@@ -52,13 +52,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string lifecycleTransition;
 
-		private string accessKeyId;
-
 		private string lifecycleHookName;
 
 		private string notificationArn;
-
-		private string action;
 
 		public string DefaultResult
 		{
@@ -177,19 +173,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string LifecycleHookName
 		{
 			get
@@ -213,19 +196,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				notificationArn = value;
 				DictionaryUtil.Add(QueryParameters, "NotificationArn", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
