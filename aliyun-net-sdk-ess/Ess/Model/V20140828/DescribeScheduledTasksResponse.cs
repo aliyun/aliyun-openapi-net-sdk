@@ -118,6 +118,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private bool? taskEnabled;
 
+			private int? maxValue;
+
+			private int? minValue;
+
 			public string ScheduledTaskId
 			{
 				get
@@ -235,6 +239,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					taskEnabled = value;
+				}
+			}
+
+			public int? MaxValue
+			{
+				get
+				{
+					return maxValue;
+				}
+				set	
+				{
+					maxValue = value;
+				}
+			}
+
+			public int? MinValue
+			{
+				get
+				{
+					return minValue;
+				}
+				set	
+				{
+					minValue = value;
 				}
 			}
 		}

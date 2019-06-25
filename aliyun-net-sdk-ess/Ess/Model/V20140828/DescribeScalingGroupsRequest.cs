@@ -46,15 +46,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scalingGroupId15;
 
-		private string action;
-
 		private long? ownerId;
 
 		private int? pageNumber;
-
-		private string accessKeyId;
-
-		private string regionId;
 
 		private int? pageSize;
 
@@ -210,19 +204,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -246,32 +227,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 

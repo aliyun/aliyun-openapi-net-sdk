@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string ownerAccount;
 
+		private int? spotInstancePools;
+
 		private string activeScalingConfigurationId;
 
 		private int? minSize;
@@ -58,9 +60,11 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string launchTemplateVersion;
 
-		private string accessKeyId;
+		private int? onDemandBaseCapacity;
 
-		private string action;
+		private int? onDemandPercentageAboveBaseCapacity;
+
+		private bool? spotInstanceRemedy;
 
 		private int? maxSize;
 
@@ -178,6 +182,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public int? SpotInstancePools
+		{
+			get
+			{
+				return spotInstancePools;
+			}
+			set	
+			{
+				spotInstancePools = value;
+				DictionaryUtil.Add(QueryParameters, "SpotInstancePools", value.ToString());
+			}
+		}
+
 		public string ActiveScalingConfigurationId
 		{
 			get
@@ -230,29 +247,42 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string AccessKeyId
+		public int? OnDemandBaseCapacity
 		{
 			get
 			{
-				return accessKeyId;
+				return onDemandBaseCapacity;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				onDemandBaseCapacity = value;
+				DictionaryUtil.Add(QueryParameters, "OnDemandBaseCapacity", value.ToString());
 			}
 		}
 
-		public string Action
+		public int? OnDemandPercentageAboveBaseCapacity
 		{
 			get
 			{
-				return action;
+				return onDemandPercentageAboveBaseCapacity;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				onDemandPercentageAboveBaseCapacity = value;
+				DictionaryUtil.Add(QueryParameters, "OnDemandPercentageAboveBaseCapacity", value.ToString());
+			}
+		}
+
+		public bool? SpotInstanceRemedy
+		{
+			get
+			{
+				return spotInstanceRemedy;
+			}
+			set	
+			{
+				spotInstanceRemedy = value;
+				DictionaryUtil.Add(QueryParameters, "SpotInstanceRemedy", value.ToString());
 			}
 		}
 

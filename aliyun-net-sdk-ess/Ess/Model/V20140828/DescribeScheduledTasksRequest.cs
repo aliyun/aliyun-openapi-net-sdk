@@ -42,8 +42,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scheduledAction6;
 
-		private string action;
-
 		private string scheduledAction5;
 
 		private string scheduledAction4;
@@ -82,8 +80,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scheduledTaskName15;
 
-		private string accessKeyId;
-
 		private string scheduledTaskName14;
 
 		private string scheduledTaskId2;
@@ -99,8 +95,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string scheduledTaskId19;
 
 		private string scheduledTaskId6;
-
-		private string regionId;
 
 		private string scheduledTaskId5;
 
@@ -221,19 +215,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scheduledAction6 = value;
 				DictionaryUtil.Add(QueryParameters, "ScheduledAction.6", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -484,19 +465,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string ScheduledTaskName14
 		{
 			get
@@ -598,19 +566,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scheduledTaskId6 = value;
 				DictionaryUtil.Add(QueryParameters, "ScheduledTaskId.6", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 

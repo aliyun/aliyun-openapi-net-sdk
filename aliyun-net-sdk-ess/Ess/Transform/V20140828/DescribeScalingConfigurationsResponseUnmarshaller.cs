@@ -70,12 +70,20 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingConfiguration.SpotStrategy = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SpotStrategy");
 				scalingConfiguration.PasswordInherit = context.BooleanValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].PasswordInherit");
 				scalingConfiguration.ResourceGroupId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ResourceGroupId");
+				scalingConfiguration.HpcClusterId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].HpcClusterId");
+				scalingConfiguration.InstanceDescription = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceDescription");
 
 				List<string> scalingConfiguration_instanceTypes = new List<string>();
 				for (int j = 0; j < context.Length("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceTypes.Length"); j++) {
 					scalingConfiguration_instanceTypes.Add(context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceTypes["+ j +"]"));
 				}
 				scalingConfiguration.InstanceTypes = scalingConfiguration_instanceTypes;
+
+				List<string> scalingConfiguration_securityGroupIds = new List<string>();
+				for (int j = 0; j < context.Length("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SecurityGroupIds.Length"); j++) {
+					scalingConfiguration_securityGroupIds.Add(context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SecurityGroupIds["+ j +"]"));
+				}
+				scalingConfiguration.SecurityGroupIds = scalingConfiguration_securityGroupIds;
 
 				List<DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_DataDisk> scalingConfiguration_dataDisks = new List<DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_DataDisk>();
 				for (int j = 0; j < context.Length("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks.Length"); j++) {

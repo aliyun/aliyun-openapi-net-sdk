@@ -40,13 +40,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string scalingGroupId;
 
 		private int? pageSize;
-
-		private string action;
 
 		private string state;
 
@@ -55,8 +51,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string alarmTaskId;
 
 		private int? pageNumber;
-
-		private string accessKeyId;
 
 		public bool? IsEnable
 		{
@@ -97,19 +91,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string ScalingGroupId
 		{
 			get
@@ -133,19 +114,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -198,19 +166,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

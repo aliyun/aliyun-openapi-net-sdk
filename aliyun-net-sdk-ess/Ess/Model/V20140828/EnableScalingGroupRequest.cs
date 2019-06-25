@@ -70,8 +70,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? loadBalancerWeight1;
 
-		private string action;
-
 		private string instanceId1;
 
 		private int? loadBalancerWeight20;
@@ -109,8 +107,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string instanceId11;
 
 		private string scalingGroupId;
-
-		private string accessKeyId;
 
 		private string instanceId20;
 
@@ -368,19 +364,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string InstanceId1
 		{
 			get
@@ -625,19 +608,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scalingGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

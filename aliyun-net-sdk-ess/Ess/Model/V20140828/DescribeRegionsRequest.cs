@@ -38,11 +38,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string resourceOwnerAccount;
 
-		private string action;
+		private string acceptLanguage;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -70,16 +68,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string Action
+		public string AcceptLanguage
 		{
 			get
 			{
-				return action;
+				return acceptLanguage;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				acceptLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
 			}
 		}
 
@@ -93,19 +91,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

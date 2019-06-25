@@ -38,6 +38,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? memory;
 
+		private string hpcClusterId;
+
 		private string ioOptimized;
 
 		private List<string> instanceTypes;
@@ -52,8 +54,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string systemDiskCategory;
 
-		private string accessKeyId;
-
 		private string userData;
 
 		private string resourceGroupId;
@@ -64,7 +64,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string imageName;
 
-		private string action;
+		private string instanceDescription;
 
 		private bool? _override;
 
@@ -81,6 +81,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string ramRoleName;
 
 		private long? ownerId;
+
+		private List<string> securityGroupIds;
 
 		private List<DataDisk> dataDisks;
 
@@ -125,6 +127,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				memory = value;
 				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
+			}
+		}
+
+		public string HpcClusterId
+		{
+			get
+			{
+				return hpcClusterId;
+			}
+			set	
+			{
+				hpcClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "HpcClusterId", value);
 			}
 		}
 
@@ -228,19 +243,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string UserData
 		{
 			get
@@ -306,16 +308,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string Action
+		public string InstanceDescription
 		{
 			get
 			{
-				return action;
+				return instanceDescription;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				instanceDescription = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceDescription", value);
 			}
 		}
 
@@ -420,6 +422,23 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public List<string> SecurityGroupIds
+		{
+			get
+			{
+				return securityGroupIds;
+			}
+
+			set
+			{
+				securityGroupIds = value;
+				for (int i = 0; i < securityGroupIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SecurityGroupIds." + (i + 1) , securityGroupIds[i]);
+				}
 			}
 		}
 

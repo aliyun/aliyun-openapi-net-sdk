@@ -54,19 +54,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? pageNumber;
 
-		private string accessKeyId;
-
 		private string scalingConfigurationName2;
-
-		private string regionId;
 
 		private string scalingConfigurationName3;
 
 		private string scalingConfigurationName1;
 
 		private int? pageSize;
-
-		private string action;
 
 		private string scalingConfigurationId2;
 
@@ -224,19 +218,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string ScalingConfigurationName2
 		{
 			get
@@ -247,19 +228,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scalingConfigurationName2 = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingConfigurationName.2", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -299,19 +267,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

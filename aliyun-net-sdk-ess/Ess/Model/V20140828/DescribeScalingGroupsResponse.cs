@@ -150,6 +150,14 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private int? stoppedCapacity;
 
+			private int? onDemandBaseCapacity;
+
+			private int? onDemandPercentageAboveBaseCapacity;
+
+			private bool? spotInstanceRemedy;
+
+			private int? spotInstancePools;
+
 			private List<DescribeScalingGroups_VServerGroup> vServerGroups;
 
 			private List<string> vSwitchIds;
@@ -469,6 +477,54 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					stoppedCapacity = value;
+				}
+			}
+
+			public int? OnDemandBaseCapacity
+			{
+				get
+				{
+					return onDemandBaseCapacity;
+				}
+				set	
+				{
+					onDemandBaseCapacity = value;
+				}
+			}
+
+			public int? OnDemandPercentageAboveBaseCapacity
+			{
+				get
+				{
+					return onDemandPercentageAboveBaseCapacity;
+				}
+				set	
+				{
+					onDemandPercentageAboveBaseCapacity = value;
+				}
+			}
+
+			public bool? SpotInstanceRemedy
+			{
+				get
+				{
+					return spotInstanceRemedy;
+				}
+				set	
+				{
+					spotInstanceRemedy = value;
+				}
+			}
+
+			public int? SpotInstancePools
+			{
+				get
+				{
+					return spotInstancePools;
+				}
+				set	
+				{
+					spotInstancePools = value;
 				}
 			}
 
