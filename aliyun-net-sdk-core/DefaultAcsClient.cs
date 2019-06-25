@@ -239,7 +239,7 @@ namespace Aliyun.Acs.Core
 
         private T ParseAcsResponse<T>(AcsRequest<T> request, HttpResponse httpResponse) where T : AcsResponse
         {
-            SerilogHelper.LogInfo(request, httpResponse, SerilogHelper.ExecuteTime, SerilogHelper.StartTime);
+            CommonLog.LogInfo(request, httpResponse, CommonLog.ExecuteTime);
             var format = httpResponse.ContentType;
 
             if (httpResponse.isSuccess())
@@ -283,12 +283,12 @@ namespace Aliyun.Acs.Core
             }
             catch (ServerException ex)
             {
-                SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                CommonLog.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
                 throw new ServerException(ex.ErrorCode, ex.ErrorMessage, ex.RequestId);
             }
             catch (ClientException ex)
             {
-                SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                CommonLog.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
                 throw new ClientException(ex.ErrorCode, ex.ErrorMessage, ex.RequestId);
             }
 
@@ -304,7 +304,6 @@ namespace Aliyun.Acs.Core
         {
             try
             {
-                SerilogHelper.StartTime = DateTime.UtcNow.ToString("o");
                 var watch = Stopwatch.StartNew();
 
                 FormatType? requestFormatType = request.AcceptFormat;
@@ -361,13 +360,13 @@ namespace Aliyun.Acs.Core
                     }
 
                     watch.Stop();
-                    SerilogHelper.ExecuteTime = watch.ElapsedMilliseconds;
+                    CommonLog.ExecuteTime = watch.ElapsedMilliseconds;
                     return response;
                 }
             }
             catch (ClientException ex)
             {
-                SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                CommonLog.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
                 throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
             }
 
@@ -579,14 +578,14 @@ namespace Aliyun.Acs.Core
             }
         }
 
-        public void SetLogger(Logger logger)
+        public void EnableLogger()
         {
-            SerilogHelper.SetLogger(logger);
+            CommonLog.EnableLogger();
         }
 
-        public void CloseLogger()
+        public void DisableLogger()
         {
-            SerilogHelper.CloseLogger();
+            CommonLog.DisableLogger();
         }
     }
 }

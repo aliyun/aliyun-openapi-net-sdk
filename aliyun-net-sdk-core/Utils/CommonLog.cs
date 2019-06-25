@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -27,30 +27,30 @@ using System.Text.RegularExpressions;
 
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
-
-using Serilog;
-using Serilog.Exceptions;
+using Aliyun.Acs.Core.Logging;
 
 namespace Aliyun.Acs.Core.Utils
 {
-    public class SerilogHelper
+    public class CommonLog
     {
         private const string RegexPattern = @"{(.*?)}";
-        private static ILogger defaultLogger;
-        private static ILogger exceptionLogger;
-        private static IDictionary<string, string> LoggerMessageMap;
 
-        private static Logger Logger;
-        public static long ExecuteTime { get; set; }
-        public static string StartTime { get; set; }
-        public static bool EnableLogger { get; private set; }
+        private const string DefaultTemplate =
+            "{channel} {method} {uri} {version} {code} {cost} {hostname} {pid} {NewLine}";
 
-        private static void BuildKeyValueMap<T>(AcsRequest<T> request, HttpResponse response, long executeTime,
-            string startTime) where T : AcsResponse
+        private static readonly ILog Logger = LogProvider.For<CommonLog>();
+
+        private static bool s_enableLogger;
+
+        private static IDictionary<string, string> LoggerMessageMap = new Dictionary<string, string>();
+
+        internal static long ExecuteTime { get; set; }
+
+        private static void BuildKeyValueMap<T>(AcsRequest<T> request, HttpResponse response, long executeTime)
+            where T : AcsResponse
         {
             try
             {
-                LoggerMessageMap = new Dictionary<string, string>();
                 var requestHeader =
                     request.Headers == null ? "" : DictionaryUtil.TransformDicToString(request.Headers);
                 var requestContent = request.Content == null ? "" : Encoding.Default.GetString(request.Content);
@@ -65,15 +65,11 @@ namespace Aliyun.Acs.Core.Utils
                 if (null != request.Url)
                 {
                     var requestUri = new Uri(request.Url);
-                    var host = requestUri.Host;
-                    var target = requestUri.PathAndQuery + requestUri.Fragment;
-
-                    LoggerMessageMap.Add("host", host);
-                    LoggerMessageMap.Add("target", target);
+                    LoggerMessageMap.Add("host", requestUri.Host);
+                    LoggerMessageMap.Add("target", requestUri.PathAndQuery + requestUri.Fragment);
                 }
 
-                LoggerMessageMap.Add("level", Logger.Level);
-                LoggerMessageMap.Add("channel", Logger.Channel);
+                LoggerMessageMap.Add("channel", "AlibabaCloud.");
                 LoggerMessageMap.Add("request", requestHeader + requestContent);
                 LoggerMessageMap.Add("req_headers", requestHeader);
 
@@ -89,7 +85,6 @@ namespace Aliyun.Acs.Core.Utils
 
                 LoggerMessageMap.Add("pid", Process.GetCurrentProcess().Id.ToString());
                 LoggerMessageMap.Add("cost", executeTime + "ms");
-                LoggerMessageMap.Add("start_time", "[" + startTime + "]");
             }
             catch (Exception ex)
             {
@@ -98,31 +93,36 @@ namespace Aliyun.Acs.Core.Utils
             }
         }
 
-        public static void SetLogger(Logger logger)
+        internal static void EnableLogger()
         {
-            Logger = logger;
-            EnableLogger = true;
-
-            var loggerConfiguration = new LoggerConfiguration()
-                .WriteTo.File(Logger.LoggerPath, outputTemplate: Logger.LoggerTemplate, shared: true);
-            defaultLogger = loggerConfiguration.CreateLogger();
+            s_enableLogger = true;
         }
 
-        public static void LogInfo<T>(AcsRequest<T> request, HttpResponse httpResponse, long executeTime,
-            string startTime) where T : AcsResponse
+        internal static void DisableLogger()
         {
-            if (!EnableLogger)
+            s_enableLogger = false;
+        }
+
+        internal static bool GetEnableLoggerStatus()
+        {
+            return s_enableLogger;
+        }
+
+        internal static void LogInfo<T>(AcsRequest<T> request, HttpResponse httpResponse, long executeTime)
+            where T : AcsResponse
+        {
+            if (!s_enableLogger)
             {
                 return;
             }
 
-            BuildKeyValueMap(request, httpResponse, executeTime, startTime);
+            BuildKeyValueMap(request, httpResponse, executeTime);
 
             var logKey = new List<string>();
             var logValue = new List<string>();
 
             var re = new Regex(RegexPattern, RegexOptions.IgnoreCase | RegexOptions.Compiled);
-            var matchCollection = re.Matches(Logger.LoggerTemplate);
+            var matchCollection = re.Matches(DefaultTemplate);
 
             if (0 < matchCollection.Count)
             {
@@ -140,29 +140,21 @@ namespace Aliyun.Acs.Core.Utils
             }
 
             var logParameters = logValue.Cast<object>().ToArray();
-            defaultLogger.Information(Logger.LoggerTemplate, logParameters);
+            Logger.Info(DefaultTemplate, logParameters);
+
+            LoggerMessageMap = new Dictionary<string, string>();
         }
 
-        public static void LogException(Exception ex, string errorCode, string errorMessage)
+        internal static void LogException(Exception ex, string errorCode, string errorMessage)
         {
-            if (!EnableLogger)
+            if (!s_enableLogger)
             {
                 return;
             }
 
-            var loggerConfiguration = new LoggerConfiguration()
-                .Enrich.WithExceptionDetails()
-                .WriteTo.File(Logger.LoggerPath, shared: true);
-
-            exceptionLogger = loggerConfiguration.CreateLogger();
-            exceptionLogger.Error(ex, "ExceptionMessage: ");
-        }
-
-        public static void CloseLogger()
-        {
-            EnableLogger = false;
-            LoggerMessageMap = null;
-            Logger = null;
+            Logger.Error(ex,
+                string.Format("AlibabaCloud. ExceptionMessage: ErrorCode:{0}, ErrorMessage:{1},", errorCode,
+                    errorMessage));
         }
     }
 }

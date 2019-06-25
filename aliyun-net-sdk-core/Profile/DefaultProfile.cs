@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -169,17 +169,17 @@ namespace Aliyun.Acs.Core.Profile
                     if (endpoint != null)
                     {
                         foreach (var region in endpoint.RegionIds)
-                        foreach (var productDomain in endpoint.ProductDomains.ToList())
-                        {
-                            AddEndpoint(endpoint.Name, region, product, productDomain.DomianName, false);
-                            CacheTimeHelper.AddLastClearTimePerProduct(product, region, DateTime.Now);
-                        }
+                            foreach (var productDomain in endpoint.ProductDomains.ToList())
+                            {
+                                AddEndpoint(endpoint.Name, region, product, productDomain.DomianName, false);
+                                CacheTimeHelper.AddLastClearTimePerProduct(product, region, DateTime.Now);
+                            }
                     }
                 }
             }
             catch (ClientException ex)
             {
-                SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                CommonLog.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
                 throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
             }
 
@@ -203,7 +203,7 @@ namespace Aliyun.Acs.Core.Profile
                 var endpoint = GetEndpointByIEndpoints(regionId, product);
                 if (endpoint != null)
                 {
-                    endpoints = new List<Endpoint> {endpoint};
+                    endpoints = new List<Endpoint> { endpoint };
                 }
             }
 

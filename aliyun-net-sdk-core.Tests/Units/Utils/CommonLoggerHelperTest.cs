@@ -28,36 +28,30 @@ using Xunit;
 
 namespace Aliyun.Acs.Core.Tests.Units.Utils
 {
-    public class SerilogHelperTest
+    public class CommonLoggerHelperTest
     {
         [Fact]
         public void OutputLogException()
         {
             var format = "{Exception}";
-            var logger = new Logger(EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetOSSlash() + "log.txt",
-                template: format);
-
-            SerilogHelper.SetLogger(logger);
+            CommonLog.EnableLogger();
 
             var exception = new Exception();
 
-            SerilogHelper.LogException(exception, "errorcode", "errormessage");
+            CommonLog.LogException(exception, "errorcode", "errormessage");
 
-            SerilogHelper.CloseLogger();
-            Assert.False(SerilogHelper.EnableLogger);
+            CommonLog.EnableLogger();
+            Assert.True(CommonLog.GetEnableLoggerStatus());
 
             // Should return directly
-            SerilogHelper.LogException(exception, "error", "error");
+            CommonLog.LogException(exception, "error", "error");
         }
 
         [Fact]
         public void OutputLogInfoTestInValid()
         {
             var format = "{code}|{pid}|{start_time}";
-            var logger = new Logger(EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetOSSlash() + "log.txt",
-                template: format);
-
-            SerilogHelper.SetLogger(logger);
+            CommonLog.EnableLogger();
 
             var request = new AssumeRoleRequest
             {
@@ -65,25 +59,22 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
             };
             var response = new HttpResponse();
             long executeTime = 100;
-            var startTime = DateTime.Now.ToString();
 
-            Assert.Throws<ClientException>(() => { SerilogHelper.LogInfo(request, null, executeTime, startTime); });
+            CommonLog.EnableLogger();
+            Assert.True(CommonLog.GetEnableLoggerStatus());
 
-            SerilogHelper.CloseLogger();
-            Assert.False(SerilogHelper.EnableLogger);
-
-            SerilogHelper.LogInfo(request, null, 100, "100");
+            Assert.Throws<ClientException>(() =>
+            {
+                CommonLog.LogInfo(request, null, 100);
+            });
         }
 
         [Fact]
         public void OutputLogInfoTestValid()
         {
-            var format = "{start_time}|{code}|{pid}|{cost}";
+            var format = "{code}|{pid}|{cost}";
 
-            var logger = new Logger(EnvironmentUtil.GetHomePath() + EnvironmentUtil.GetOSSlash() + "log.txt",
-                template: format);
-
-            SerilogHelper.SetLogger(logger);
+            CommonLog.EnableLogger();
 
             var request = new AssumeRoleRequest
             {
@@ -91,12 +82,11 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
             };
             var response = new HttpResponse();
             long executeTime = 100;
-            var startTime = DateTime.Now.ToString();
 
-            SerilogHelper.LogInfo(request, response, executeTime, startTime);
-            Assert.True(SerilogHelper.EnableLogger);
+            CommonLog.LogInfo(request, response, executeTime);
+            Assert.True(CommonLog.GetEnableLoggerStatus());
 
-            SerilogHelper.CloseLogger();
+            CommonLog.EnableLogger();
         }
     }
 }
