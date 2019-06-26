@@ -16,26 +16,55 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.retailcloud.Model.V20180313;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.retailcloud.Transform.V20180313
+namespace Aliyun.Acs.retailcloud.Model.V20180313
 {
-    public class GrantDbToAccountResponseUnmarshaller
-    {
-        public static GrantDbToAccountResponse Unmarshall(UnmarshallerContext context)
-        {
-			GrantDbToAccountResponse grantDbToAccountResponse = new GrantDbToAccountResponse();
+	public class DeleteDatabaseResponse : AcsResponse
+	{
 
-			grantDbToAccountResponse.HttpResponse = context.HttpResponse;
-			grantDbToAccountResponse.Code = context.IntegerValue("GrantDbToAccount.Code");
-			grantDbToAccountResponse.RequestId = context.StringValue("GrantDbToAccount.RequestId");
-			grantDbToAccountResponse.ErrMsg = context.StringValue("GrantDbToAccount.ErrMsg");
-        
-			return grantDbToAccountResponse;
-        }
-    }
+		private int? code;
+
+		private string requestId;
+
+		private string errMsg;
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string ErrMsg
+		{
+			get
+			{
+				return errMsg;
+			}
+			set	
+			{
+				errMsg = value;
+			}
+		}
+	}
 }

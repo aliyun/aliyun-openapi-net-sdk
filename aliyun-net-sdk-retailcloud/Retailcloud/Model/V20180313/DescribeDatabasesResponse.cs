@@ -27,15 +27,9 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 		private int? code;
 
-		private bool? success;
-
 		private string requestId;
 
 		private string errMsg;
-
-		private string _class;
-
-		private bool? transmitAliyun;
 
 		private DescribeDatabases_Result result;
 
@@ -48,18 +42,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 
@@ -87,30 +69,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public string _Class
-		{
-			get
-			{
-				return _class;
-			}
-			set	
-			{
-				_class = value;
-			}
-		}
-
-		public bool? TransmitAliyun
-		{
-			get
-			{
-				return transmitAliyun;
-			}
-			set	
-			{
-				transmitAliyun = value;
-			}
-		}
-
 		public DescribeDatabases_Result Result
 		{
 			get
@@ -126,21 +84,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 		public class DescribeDatabases_Result
 		{
 
-			private string _class;
-
 			private List<DescribeDatabases_DatabasesItem> databases;
-
-			public string _Class
-			{
-				get
-				{
-					return _class;
-				}
-				set	
-				{
-					_class = value;
-				}
-			}
 
 			public List<DescribeDatabases_DatabasesItem> Databases
 			{
@@ -166,8 +110,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				private string engine;
 
 				private string characterSetName;
-
-				private string _class;
 
 				private string dBInstanceId;
 
@@ -233,18 +175,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 					}
 				}
 
-				public string _Class
-				{
-					get
-					{
-						return _class;
-					}
-					set	
-					{
-						_class = value;
-					}
-				}
-
 				public string DBInstanceId
 				{
 					get
@@ -276,8 +206,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 					private string accountPrivilege;
 
-					private string _class;
-
 					private string account;
 
 					public string AccountPrivilegeDetail
@@ -301,18 +229,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 						set	
 						{
 							accountPrivilege = value;
-						}
-					}
-
-					public string _Class
-					{
-						get
-						{
-							return _class;
-						}
-						set	
-						{
-							_class = value;
 						}
 					}
 

@@ -27,31 +27,52 @@ using Aliyun.Acs.retailcloud.Transform.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Model.V20180313
 {
-    public class ResourceStatusNotifyRequest : RpcAcsRequest<ResourceStatusNotifyResponse>
+    public class DeleteRdsAccountRequest : RpcAcsRequest<DeleteRdsAccountResponse>
     {
-        public ResourceStatusNotifyRequest()
-            : base("retailcloud", "2018-03-13", "ResourceStatusNotify", "retailcloud", "openAPI")
+        public DeleteRdsAccountRequest()
+            : base("retailcloud", "2018-03-13", "DeleteRdsAccount", "retailcloud", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
-		private string data;
+		private string accountName;
 
-		public string Data
+		private string dbInstanceId;
+
+		public string AccountName
 		{
 			get
 			{
-				return data;
+				return accountName;
 			}
 			set	
 			{
-				data = value;
-				DictionaryUtil.Add(BodyParameters, "data", value);
+				accountName = value;
+				DictionaryUtil.Add(BodyParameters, "AccountName", value);
 			}
 		}
 
-        public override ResourceStatusNotifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string DbInstanceId
+		{
+			get
+			{
+				return dbInstanceId;
+			}
+			set	
+			{
+				dbInstanceId = value;
+				DictionaryUtil.Add(BodyParameters, "DbInstanceId", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DeleteRdsAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ResourceStatusNotifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteRdsAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -32,26 +32,31 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 
 			describeRdsAccountsResponse.HttpResponse = context.HttpResponse;
 			describeRdsAccountsResponse.Code = context.IntegerValue("DescribeRdsAccounts.Code");
-			describeRdsAccountsResponse.Success = context.BooleanValue("DescribeRdsAccounts.Success");
 			describeRdsAccountsResponse.RequestId = context.StringValue("DescribeRdsAccounts.RequestId");
 			describeRdsAccountsResponse.ErrMsg = context.StringValue("DescribeRdsAccounts.ErrMsg");
-			describeRdsAccountsResponse._Class = context.StringValue("DescribeRdsAccounts.Class");
-			describeRdsAccountsResponse.TransmitAliyun = context.BooleanValue("DescribeRdsAccounts.TransmitAliyun");
 
 			DescribeRdsAccountsResponse.DescribeRdsAccounts_Result result = new DescribeRdsAccountsResponse.DescribeRdsAccounts_Result();
-			result._Class = context.StringValue("DescribeRdsAccounts.Result.Class");
 
 			List<DescribeRdsAccountsResponse.DescribeRdsAccounts_Result.DescribeRdsAccounts_AccountsItem> result_accounts = new List<DescribeRdsAccountsResponse.DescribeRdsAccounts_Result.DescribeRdsAccounts_AccountsItem>();
 			for (int i = 0; i < context.Length("DescribeRdsAccounts.Result.Accounts.Length"); i++) {
 				DescribeRdsAccountsResponse.DescribeRdsAccounts_Result.DescribeRdsAccounts_AccountsItem accountsItem = new DescribeRdsAccountsResponse.DescribeRdsAccounts_Result.DescribeRdsAccounts_AccountsItem();
 				accountsItem.AccountStatus = context.StringValue("DescribeRdsAccounts.Result.Accounts["+ i +"].AccountStatus");
-				accountsItem.DatabasePrivileges = context.StringValue("DescribeRdsAccounts.Result.Accounts["+ i +"].DatabasePrivileges");
 				accountsItem.AccountDescription = context.StringValue("DescribeRdsAccounts.Result.Accounts["+ i +"].AccountDescription");
 				accountsItem.AccountName = context.StringValue("DescribeRdsAccounts.Result.Accounts["+ i +"].AccountName");
 				accountsItem.AccountType = context.StringValue("DescribeRdsAccounts.Result.Accounts["+ i +"].AccountType");
 				accountsItem.PrivExceeded = context.StringValue("DescribeRdsAccounts.Result.Accounts["+ i +"].PrivExceeded");
-				accountsItem._Class = context.StringValue("DescribeRdsAccounts.Result.Accounts["+ i +"].Class");
 				accountsItem.DBInstanceId = context.StringValue("DescribeRdsAccounts.Result.Accounts["+ i +"].DBInstanceId");
+
+				List<DescribeRdsAccountsResponse.DescribeRdsAccounts_Result.DescribeRdsAccounts_AccountsItem.DescribeRdsAccounts_DatabasePrivilegesItem> accountsItem_databasePrivileges = new List<DescribeRdsAccountsResponse.DescribeRdsAccounts_Result.DescribeRdsAccounts_AccountsItem.DescribeRdsAccounts_DatabasePrivilegesItem>();
+				for (int j = 0; j < context.Length("DescribeRdsAccounts.Result.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {
+					DescribeRdsAccountsResponse.DescribeRdsAccounts_Result.DescribeRdsAccounts_AccountsItem.DescribeRdsAccounts_DatabasePrivilegesItem databasePrivilegesItem = new DescribeRdsAccountsResponse.DescribeRdsAccounts_Result.DescribeRdsAccounts_AccountsItem.DescribeRdsAccounts_DatabasePrivilegesItem();
+					databasePrivilegesItem.DBName = context.StringValue("DescribeRdsAccounts.Result.Accounts["+ i +"].DatabasePrivileges["+ j +"].DBName");
+					databasePrivilegesItem.AccountPrivilege = context.StringValue("DescribeRdsAccounts.Result.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilege");
+					databasePrivilegesItem.AccountPrivilegeDetail = context.StringValue("DescribeRdsAccounts.Result.Accounts["+ i +"].DatabasePrivileges["+ j +"].AccountPrivilegeDetail");
+
+					accountsItem_databasePrivileges.Add(databasePrivilegesItem);
+				}
+				accountsItem.DatabasePrivileges = accountsItem_databasePrivileges;
 
 				result_accounts.Add(accountsItem);
 			}

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{c211d2c7-98d9-4daa-86fd-2512f95dc910}</ProjectGuid>
+    <ProjectGuid>{a3b56079-1230-4d3f-90b2-dcb3c381d364}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,30 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="Retailcloud\Transform\V20180313\GetRdsBackUpResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Transform\V20180313\CreateDbResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Transform\V20180313\DeleteRdsAccountResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Transform\V20180313\DeleteDatabaseResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Transform\V20180313\DescribeDatabasesResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\DescribeDatabasesResponse.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\GetRdsBackUpRequest.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\DescribeDatabasesRequest.cs" />
 	<Compile Include="Retailcloud\Model\V20180313\GetRdsBackUpResponse.cs" />
 	<Compile Include="Retailcloud\Model\V20180313\CreateDbResponse.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\DescribeDatabasesResponse.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\DescribeRdsAccountsRequest.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\DeleteResAccountsRequest.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\GetRdsBackUpRequest.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\GrantDbToAccountResponse.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\DescribeRdsAccountsResponse.cs" />
 	<Compile Include="Retailcloud\Model\V20180313\CreateDbRequest.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\ResourceStatusNotifyResponse.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\DescribeDatabasesRequest.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\GrantDbToAccountRequest.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\GetInstTransInfoRequest.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\DeleteResAccountsResponse.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\ResourceStatusNotifyRequest.cs" />
-	<Compile Include="Retailcloud\Model\V20180313\GetInstTransInfoResponse.cs" />
-	<Compile Include="Retailcloud\Transform\V20180313\DescribeRdsAccountsResponseUnmarshaller.cs" />
-	<Compile Include="Retailcloud\Transform\V20180313\GrantDbToAccountResponseUnmarshaller.cs" />
-	<Compile Include="Retailcloud\Transform\V20180313\CreateDbResponseUnmarshaller.cs" />
-	<Compile Include="Retailcloud\Transform\V20180313\GetRdsBackUpResponseUnmarshaller.cs" />
-	<Compile Include="Retailcloud\Transform\V20180313\ResourceStatusNotifyResponseUnmarshaller.cs" />
-	<Compile Include="Retailcloud\Transform\V20180313\DescribeDatabasesResponseUnmarshaller.cs" />
-	<Compile Include="Retailcloud\Transform\V20180313\DeleteResAccountsResponseUnmarshaller.cs" />
-	<Compile Include="Retailcloud\Transform\V20180313\GetInstTransInfoResponseUnmarshaller.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\DeleteDatabaseRequest.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\DeleteRdsAccountRequest.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\DeleteRdsAccountResponse.cs" />
+	<Compile Include="Retailcloud\Model\V20180313\DeleteDatabaseResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

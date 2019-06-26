@@ -30,7 +30,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class DescribeDatabasesRequest : RpcAcsRequest<DescribeDatabasesResponse>
     {
         public DescribeDatabasesRequest()
-            : base("retailcloud", "2018-03-13", "DescribeDatabases")
+            : base("retailcloud", "2018-03-13", "DescribeDatabases", "retailcloud", "openAPI")
         {
         }
 

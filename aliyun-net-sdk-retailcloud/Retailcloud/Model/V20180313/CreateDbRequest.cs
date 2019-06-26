@@ -30,14 +30,12 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class CreateDbRequest : RpcAcsRequest<CreateDbResponse>
     {
         public CreateDbRequest()
-            : base("retailcloud", "2018-03-13", "CreateDb")
+            : base("retailcloud", "2018-03-13", "CreateDb", "retailcloud", "openAPI")
         {
 			Method = MethodType.POST;
         }
 
 		private string dbName;
-
-		private int? mainUserId;
 
 		private string dbInstanceId;
 
@@ -55,19 +53,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				dbName = value;
 				DictionaryUtil.Add(BodyParameters, "DbName", value);
-			}
-		}
-
-		public int? MainUserId
-		{
-			get
-			{
-				return mainUserId;
-			}
-			set	
-			{
-				mainUserId = value;
-				DictionaryUtil.Add(BodyParameters, "MainUserId", value.ToString());
 			}
 		}
 

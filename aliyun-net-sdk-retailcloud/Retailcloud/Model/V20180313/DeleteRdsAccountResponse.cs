@@ -22,26 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.retailcloud.Model.V20180313
 {
-	public class GrantDbToAccountResponse : AcsResponse
+	public class DeleteRdsAccountResponse : AcsResponse
 	{
-
-		private int? code;
 
 		private string requestId;
 
 		private string errMsg;
 
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
+		private int? code;
+
+		private DeleteRdsAccount_Result result;
 
 		public string RequestId
 		{
@@ -64,6 +54,48 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				errMsg = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public DeleteRdsAccount_Result Result
+		{
+			get
+			{
+				return result;
+			}
+			set	
+			{
+				result = value;
+			}
+		}
+
+		public class DeleteRdsAccount_Result
+		{
+
+			private string requestId;
+
+			public string RequestId
+			{
+				get
+				{
+					return requestId;
+				}
+				set	
+				{
+					requestId = value;
+				}
 			}
 		}
 	}

@@ -27,15 +27,9 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 		private int? code;
 
-		private bool? success;
-
 		private string requestId;
 
 		private string errMsg;
-
-		private string _class;
-
-		private bool? transmitAliyun;
 
 		private DescribeRdsAccounts_Result result;
 
@@ -48,18 +42,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 
@@ -87,30 +69,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public string _Class
-		{
-			get
-			{
-				return _class;
-			}
-			set	
-			{
-				_class = value;
-			}
-		}
-
-		public bool? TransmitAliyun
-		{
-			get
-			{
-				return transmitAliyun;
-			}
-			set	
-			{
-				transmitAliyun = value;
-			}
-		}
-
 		public DescribeRdsAccounts_Result Result
 		{
 			get
@@ -126,21 +84,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 		public class DescribeRdsAccounts_Result
 		{
 
-			private string _class;
-
 			private List<DescribeRdsAccounts_AccountsItem> accounts;
-
-			public string _Class
-			{
-				get
-				{
-					return _class;
-				}
-				set	
-				{
-					_class = value;
-				}
-			}
 
 			public List<DescribeRdsAccounts_AccountsItem> Accounts
 			{
@@ -159,8 +103,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 				private string accountStatus;
 
-				private string databasePrivileges;
-
 				private string accountDescription;
 
 				private string accountName;
@@ -169,9 +111,9 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 				private string privExceeded;
 
-				private string _class;
-
 				private string dBInstanceId;
+
+				private List<DescribeRdsAccounts_DatabasePrivilegesItem> databasePrivileges;
 
 				public string AccountStatus
 				{
@@ -182,18 +124,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 					set	
 					{
 						accountStatus = value;
-					}
-				}
-
-				public string DatabasePrivileges
-				{
-					get
-					{
-						return databasePrivileges;
-					}
-					set	
-					{
-						databasePrivileges = value;
 					}
 				}
 
@@ -245,18 +175,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 					}
 				}
 
-				public string _Class
-				{
-					get
-					{
-						return _class;
-					}
-					set	
-					{
-						_class = value;
-					}
-				}
-
 				public string DBInstanceId
 				{
 					get
@@ -266,6 +184,64 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 					set	
 					{
 						dBInstanceId = value;
+					}
+				}
+
+				public List<DescribeRdsAccounts_DatabasePrivilegesItem> DatabasePrivileges
+				{
+					get
+					{
+						return databasePrivileges;
+					}
+					set	
+					{
+						databasePrivileges = value;
+					}
+				}
+
+				public class DescribeRdsAccounts_DatabasePrivilegesItem
+				{
+
+					private string dBName;
+
+					private string accountPrivilege;
+
+					private string accountPrivilegeDetail;
+
+					public string DBName
+					{
+						get
+						{
+							return dBName;
+						}
+						set	
+						{
+							dBName = value;
+						}
+					}
+
+					public string AccountPrivilege
+					{
+						get
+						{
+							return accountPrivilege;
+						}
+						set	
+						{
+							accountPrivilege = value;
+						}
+					}
+
+					public string AccountPrivilegeDetail
+					{
+						get
+						{
+							return accountPrivilegeDetail;
+						}
+						set	
+						{
+							accountPrivilegeDetail = value;
+						}
 					}
 				}
 			}

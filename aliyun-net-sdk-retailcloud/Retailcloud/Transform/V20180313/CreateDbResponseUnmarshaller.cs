@@ -32,15 +32,8 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 
 			createDbResponse.HttpResponse = context.HttpResponse;
 			createDbResponse.Code = context.IntegerValue("CreateDb.Code");
-			createDbResponse.Success = context.BooleanValue("CreateDb.Success");
 			createDbResponse.RequestId = context.StringValue("CreateDb.RequestId");
 			createDbResponse.ErrMsg = context.StringValue("CreateDb.ErrMsg");
-			createDbResponse._Class = context.StringValue("CreateDb.Class");
-			createDbResponse.TransmitAliyun = context.BooleanValue("CreateDb.TransmitAliyun");
-
-			CreateDbResponse.CreateDb_Result result = new CreateDbResponse.CreateDb_Result();
-			result._Class = context.StringValue("CreateDb.Result.Class");
-			createDbResponse.Result = result;
         
 			return createDbResponse;
         }

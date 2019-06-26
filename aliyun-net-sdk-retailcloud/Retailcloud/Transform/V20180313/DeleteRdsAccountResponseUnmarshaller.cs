@@ -24,18 +24,22 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GrantDbToAccountResponseUnmarshaller
+    public class DeleteRdsAccountResponseUnmarshaller
     {
-        public static GrantDbToAccountResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteRdsAccountResponse Unmarshall(UnmarshallerContext context)
         {
-			GrantDbToAccountResponse grantDbToAccountResponse = new GrantDbToAccountResponse();
+			DeleteRdsAccountResponse deleteRdsAccountResponse = new DeleteRdsAccountResponse();
 
-			grantDbToAccountResponse.HttpResponse = context.HttpResponse;
-			grantDbToAccountResponse.Code = context.IntegerValue("GrantDbToAccount.Code");
-			grantDbToAccountResponse.RequestId = context.StringValue("GrantDbToAccount.RequestId");
-			grantDbToAccountResponse.ErrMsg = context.StringValue("GrantDbToAccount.ErrMsg");
+			deleteRdsAccountResponse.HttpResponse = context.HttpResponse;
+			deleteRdsAccountResponse.RequestId = context.StringValue("DeleteRdsAccount.RequestId");
+			deleteRdsAccountResponse.ErrMsg = context.StringValue("DeleteRdsAccount.ErrMsg");
+			deleteRdsAccountResponse.Code = context.IntegerValue("DeleteRdsAccount.Code");
+
+			DeleteRdsAccountResponse.DeleteRdsAccount_Result result = new DeleteRdsAccountResponse.DeleteRdsAccount_Result();
+			result.RequestId = context.StringValue("DeleteRdsAccount.Result.RequestId");
+			deleteRdsAccountResponse.Result = result;
         
-			return grantDbToAccountResponse;
+			return deleteRdsAccountResponse;
         }
     }
 }

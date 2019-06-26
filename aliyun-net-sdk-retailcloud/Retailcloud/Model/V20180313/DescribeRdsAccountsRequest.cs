@@ -30,13 +30,11 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class DescribeRdsAccountsRequest : RpcAcsRequest<DescribeRdsAccountsResponse>
     {
         public DescribeRdsAccountsRequest()
-            : base("retailcloud", "2018-03-13", "DescribeRdsAccounts")
+            : base("retailcloud", "2018-03-13", "DescribeRdsAccounts", "retailcloud", "openAPI")
         {
         }
 
 		private string accountName;
-
-		private int? mainUserId;
 
 		private string dbInstanceId;
 
@@ -50,19 +48,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				accountName = value;
 				DictionaryUtil.Add(QueryParameters, "AccountName", value);
-			}
-		}
-
-		public int? MainUserId
-		{
-			get
-			{
-				return mainUserId;
-			}
-			set	
-			{
-				mainUserId = value;
-				DictionaryUtil.Add(QueryParameters, "MainUserId", value.ToString());
 			}
 		}
 

@@ -24,18 +24,18 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GrantDbToAccountResponseUnmarshaller
+    public class DeleteDatabaseResponseUnmarshaller
     {
-        public static GrantDbToAccountResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDatabaseResponse Unmarshall(UnmarshallerContext context)
         {
-			GrantDbToAccountResponse grantDbToAccountResponse = new GrantDbToAccountResponse();
+			DeleteDatabaseResponse deleteDatabaseResponse = new DeleteDatabaseResponse();
 
-			grantDbToAccountResponse.HttpResponse = context.HttpResponse;
-			grantDbToAccountResponse.Code = context.IntegerValue("GrantDbToAccount.Code");
-			grantDbToAccountResponse.RequestId = context.StringValue("GrantDbToAccount.RequestId");
-			grantDbToAccountResponse.ErrMsg = context.StringValue("GrantDbToAccount.ErrMsg");
+			deleteDatabaseResponse.HttpResponse = context.HttpResponse;
+			deleteDatabaseResponse.Code = context.IntegerValue("DeleteDatabase.Code");
+			deleteDatabaseResponse.RequestId = context.StringValue("DeleteDatabase.RequestId");
+			deleteDatabaseResponse.ErrMsg = context.StringValue("DeleteDatabase.ErrMsg");
         
-			return grantDbToAccountResponse;
+			return deleteDatabaseResponse;
         }
     }
 }
