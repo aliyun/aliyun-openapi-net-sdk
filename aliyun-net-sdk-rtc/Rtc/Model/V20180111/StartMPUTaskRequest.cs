@@ -38,6 +38,8 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private int? backgroundColor;
 
+		private int? cropMode;
+
 		private string taskProfile;
 
 		private List<long?> layoutIdss;
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				backgroundColor = value;
 				DictionaryUtil.Add(QueryParameters, "BackgroundColor", value.ToString());
+			}
+		}
+
+		public int? CropMode
+		{
+			get
+			{
+				return cropMode;
+			}
+			set	
+			{
+				cropMode = value;
+				DictionaryUtil.Add(QueryParameters, "CropMode", value.ToString());
 			}
 		}
 
