@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
     <RootNamespace>Aliyun.Acs.Core</RootNamespace>
-    <Version>1.3.8</Version>
+    <Version>1.4.0</Version>
     <Authors>Alibaba Cloud</Authors>
     <PackageTags>alibaba aliyun SDK core</PackageTags>
     <Copyright>©2009-2019 Alibaba Cloud</Copyright>
