@@ -15,7 +15,7 @@
     <PackageReleaseNotes></PackageReleaseNotes>
     <AssemblyName>aliyun-net-sdk-core</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <LangVersion>default</LangVersion>
+    <LangVersion>4</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
