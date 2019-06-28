@@ -33,7 +33,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
         [Fact]
         public void OutputLogException()
         {
-            var format = "{Exception}";
             CommonLog.EnableLogger();
 
             var exception = new Exception();
@@ -50,7 +49,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
         [Fact]
         public void OutputLogInfoTestInValid()
         {
-            var format = "{code}|{pid}|{start_time}";
             CommonLog.EnableLogger();
 
             var request = new AssumeRoleRequest
@@ -58,7 +56,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
                 Url = "https://www.alibabacloud.com"
             };
             var response = new HttpResponse();
-            long executeTime = 100;
 
             CommonLog.EnableLogger();
             Assert.True(CommonLog.GetEnableLoggerStatus());
@@ -72,8 +69,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
         [Fact]
         public void OutputLogInfoTestValid()
         {
-            var format = "{code}|{pid}|{cost}";
-
             CommonLog.EnableLogger();
 
             var request = new AssumeRoleRequest
