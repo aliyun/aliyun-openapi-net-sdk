@@ -40,9 +40,9 @@ namespace Aliyun.Acs.Core.Utils
 
         private static readonly ILog Logger = LogProvider.For<CommonLog>();
 
-        private static bool s_enableLogger;
+        private static volatile bool s_enableLogger;
 
-        private static IDictionary<string, string> LoggerMessageMap = new Dictionary<string, string>();
+        private static volatile IDictionary<string, string> LoggerMessageMap = new Dictionary<string, string>();
 
         internal static long ExecuteTime { get; set; }
 

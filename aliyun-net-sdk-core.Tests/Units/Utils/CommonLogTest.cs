@@ -28,7 +28,7 @@ using Xunit;
 
 namespace Aliyun.Acs.Core.Tests.Units.Utils
 {
-    public class CommonLoggerHelperTest
+    public class CommonLogTest
     {
         [Fact]
         public void OutputLogException()
@@ -39,11 +39,12 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
 
             CommonLog.LogException(exception, "errorcode", "errormessage");
 
-            CommonLog.EnableLogger();
             Assert.True(CommonLog.GetEnableLoggerStatus());
 
             // Should return directly
+            CommonLog.DisableLogger();
             CommonLog.LogException(exception, "error", "error");
+            Assert.False(CommonLog.GetEnableLoggerStatus());
         }
 
         [Fact]
@@ -57,7 +58,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
             };
             var response = new HttpResponse();
 
-            CommonLog.EnableLogger();
             Assert.True(CommonLog.GetEnableLoggerStatus());
 
             Assert.Throws<ClientException>(() =>
@@ -80,8 +80,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
 
             CommonLog.LogInfo(request, response, executeTime);
             Assert.True(CommonLog.GetEnableLoggerStatus());
-
-            CommonLog.EnableLogger();
         }
     }
 }
