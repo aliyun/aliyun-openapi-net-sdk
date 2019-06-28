@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Dybaseapi.Transform;
 using Aliyun.Acs.Dybaseapi.Transform.V20170525;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Dybaseapi.Model.V20170525
 {
@@ -41,11 +42,7 @@ namespace Aliyun.Acs.Dybaseapi.Model.V20170525
 
 		private string messageType;
 
-		private string action;
-
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public string QueueName
 		{
@@ -99,19 +96,6 @@ namespace Aliyun.Acs.Dybaseapi.Model.V20170525
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -125,20 +109,7 @@ namespace Aliyun.Acs.Dybaseapi.Model.V20170525
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override QueryTokenForMnsQueueResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryTokenForMnsQueueResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return QueryTokenForMnsQueueResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
