@@ -110,6 +110,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string systemDiskCategory;
 
+		private string systemDiskPerformanceLevel;
+
 		private string userData;
 
 		private bool? passwordInherit;
@@ -653,6 +655,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string SystemDiskPerformanceLevel
+		{
+			get
+			{
+				return systemDiskPerformanceLevel;
+			}
+			set	
+			{
+				systemDiskPerformanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.PerformanceLevel", value);
+			}
+		}
+
 		public string UserData
 		{
 			get
@@ -894,6 +909,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".PerformanceLevel", dataDisks[i].PerformanceLevel);
 				}
 			}
 		}
@@ -1064,6 +1080,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? deleteWithInstance;
 
+			private string performanceLevel;
+
 			public int? Size
 			{
 				get
@@ -1169,6 +1187,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					deleteWithInstance = value;
+				}
+			}
+
+			public string PerformanceLevel
+			{
+				get
+				{
+					return performanceLevel;
+				}
+				set	
+				{
+					performanceLevel = value;
 				}
 			}
 		}

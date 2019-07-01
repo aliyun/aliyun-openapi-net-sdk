@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				invocationResult.CommandId = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].CommandId");
 				invocationResult.InvokeId = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvokeId");
 				invocationResult.InstanceId = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InstanceId");
+				invocationResult.StartTime = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].StartTime");
 				invocationResult.FinishedTime = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].FinishedTime");
 				invocationResult.Output = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].Output");
 				invocationResult.InvokeRecordStatus = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvokeRecordStatus");

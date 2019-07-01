@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string snapshotName;
 
+		private int? retentionDays;
+
 		private List<Tag> tags;
 
 		private long? ownerId;
@@ -141,6 +143,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				snapshotName = value;
 				DictionaryUtil.Add(QueryParameters, "SnapshotName", value);
+			}
+		}
+
+		public int? RetentionDays
+		{
+			get
+			{
+				return retentionDays;
+			}
+			set	
+			{
+				retentionDays = value;
+				DictionaryUtil.Add(QueryParameters, "RetentionDays", value.ToString());
 			}
 		}
 

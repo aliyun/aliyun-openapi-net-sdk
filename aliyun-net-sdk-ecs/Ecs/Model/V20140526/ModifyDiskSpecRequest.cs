@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,43 +27,24 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class AllocateEipAddressRequest : RpcAcsRequest<AllocateEipAddressResponse>
+    public class ModifyDiskSpecRequest : RpcAcsRequest<ModifyDiskSpecResponse>
     {
-        public AllocateEipAddressRequest()
-            : base("Ecs", "2014-05-26", "AllocateEipAddress", "ecs", "openAPI")
+        public ModifyDiskSpecRequest()
+            : base("Ecs", "2014-05-26", "ModifyDiskSpec", "ecs", "openAPI")
         {
         }
 
-		private long? activityId;
-
 		private long? resourceOwnerId;
+
+		private string diskId;
 
 		private string resourceOwnerAccount;
 
-		private string bandwidth;
-
-		private string clientToken;
-
-		private string internetChargeType;
-
-		private string iSP;
+		private string performanceLevel;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		public long? ActivityId
-		{
-			get
-			{
-				return activityId;
-			}
-			set	
-			{
-				activityId = value;
-				DictionaryUtil.Add(QueryParameters, "ActivityId", value.ToString());
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -76,6 +56,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string DiskId
+		{
+			get
+			{
+				return diskId;
+			}
+			set	
+			{
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
 			}
 		}
 
@@ -92,55 +85,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Bandwidth
+		public string PerformanceLevel
 		{
 			get
 			{
-				return bandwidth;
+				return performanceLevel;
 			}
 			set	
 			{
-				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "Bandwidth", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
-			}
-		}
-
-		public string ISP
-		{
-			get
-			{
-				return iSP;
-			}
-			set	
-			{
-				iSP = value;
-				DictionaryUtil.Add(QueryParameters, "ISP", value);
+				performanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "PerformanceLevel", value);
 			}
 		}
 
@@ -170,9 +124,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override AllocateEipAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyDiskSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AllocateEipAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDiskSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

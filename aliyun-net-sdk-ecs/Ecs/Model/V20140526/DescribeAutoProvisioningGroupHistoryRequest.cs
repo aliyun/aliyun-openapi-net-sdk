@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,43 +27,30 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class AllocateEipAddressRequest : RpcAcsRequest<AllocateEipAddressResponse>
+    public class DescribeAutoProvisioningGroupHistoryRequest : RpcAcsRequest<DescribeAutoProvisioningGroupHistoryResponse>
     {
-        public AllocateEipAddressRequest()
-            : base("Ecs", "2014-05-26", "AllocateEipAddress", "ecs", "openAPI")
+        public DescribeAutoProvisioningGroupHistoryRequest()
+            : base("Ecs", "2014-05-26", "DescribeAutoProvisioningGroupHistory", "ecs", "openAPI")
         {
         }
 
-		private long? activityId;
-
 		private long? resourceOwnerId;
+
+		private string startTime;
+
+		private int? pageNumber;
+
+		private int? pageSize;
 
 		private string resourceOwnerAccount;
 
-		private string bandwidth;
-
-		private string clientToken;
-
-		private string internetChargeType;
-
-		private string iSP;
-
 		private string ownerAccount;
+
+		private string endTime;
 
 		private long? ownerId;
 
-		public long? ActivityId
-		{
-			get
-			{
-				return activityId;
-			}
-			set	
-			{
-				activityId = value;
-				DictionaryUtil.Add(QueryParameters, "ActivityId", value.ToString());
-			}
-		}
+		private string autoProvisioningGroupId;
 
 		public long? ResourceOwnerId
 		{
@@ -76,6 +62,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -92,58 +117,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "Bandwidth", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
-			}
-		}
-
-		public string ISP
-		{
-			get
-			{
-				return iSP;
-			}
-			set	
-			{
-				iSP = value;
-				DictionaryUtil.Add(QueryParameters, "ISP", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -154,6 +127,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -170,9 +156,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override AllocateEipAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string AutoProvisioningGroupId
+		{
+			get
+			{
+				return autoProvisioningGroupId;
+			}
+			set	
+			{
+				autoProvisioningGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "AutoProvisioningGroupId", value);
+			}
+		}
+
+        public override DescribeAutoProvisioningGroupHistoryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AllocateEipAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAutoProvisioningGroupHistoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

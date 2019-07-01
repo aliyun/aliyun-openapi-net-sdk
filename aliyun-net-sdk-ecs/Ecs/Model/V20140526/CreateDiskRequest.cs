@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string clientToken;
 
+		private string performanceLevel;
+
 		private string ownerAccount;
 
 		private string description;
@@ -120,6 +122,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string PerformanceLevel
+		{
+			get
+			{
+				return performanceLevel;
+			}
+			set	
+			{
+				performanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "PerformanceLevel", value);
 			}
 		}
 

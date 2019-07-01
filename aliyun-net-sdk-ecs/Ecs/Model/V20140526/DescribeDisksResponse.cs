@@ -162,6 +162,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string kMSKeyId;
 
+			private string performanceLevel;
+
 			private string bdfId;
 
 			private List<DescribeDisks_OperationLock> operationLocks;
@@ -551,6 +553,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					kMSKeyId = value;
+				}
+			}
+
+			public string PerformanceLevel
+			{
+				get
+				{
+					return performanceLevel;
+				}
+				set	
+				{
+					performanceLevel = value;
 				}
 			}
 

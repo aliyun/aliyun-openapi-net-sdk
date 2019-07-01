@@ -121,6 +121,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string instanceId;
 
+				private string startTime;
+
 				private string finishedTime;
 
 				private string output;
@@ -162,6 +164,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						instanceId = value;
+					}
+				}
+
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
 					}
 				}
 

@@ -54,6 +54,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance invokeInstance = new DescribeInvocationsResponse.DescribeInvocations_Invocation.DescribeInvocations_InvokeInstance();
 					invokeInstance.InstanceId = context.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceId");
 					invokeInstance.InstanceInvokeStatus = context.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].InstanceInvokeStatus");
+					invokeInstance.CreationTime = context.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].CreationTime");
+					invokeInstance.StartTime = context.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].StartTime");
+					invokeInstance.FinishTime = context.StringValue("DescribeInvocations.Invocations["+ i +"].InvokeInstances["+ j +"].FinishTime");
 
 					invocation_invokeInstances.Add(invokeInstance);
 				}

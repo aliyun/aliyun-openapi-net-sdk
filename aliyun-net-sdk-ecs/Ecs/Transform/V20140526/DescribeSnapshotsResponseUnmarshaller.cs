@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				snapshot.SourceDiskSize = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceDiskSize");
 				snapshot.Description = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Description");
 				snapshot.CreationTime = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].CreationTime");
+				snapshot.LastModifiedTime = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].LastModifiedTime");
 				snapshot.Status = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Status");
 				snapshot.Usage = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Usage");
 				snapshot.SourceStorageType = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SourceStorageType");

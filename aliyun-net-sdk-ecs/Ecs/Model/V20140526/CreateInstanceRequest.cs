@@ -105,6 +105,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string systemDiskCategory;
 
+		private string systemDiskPerformanceLevel;
+
 		private string userData;
 
 		private bool? passwordInherit;
@@ -601,6 +603,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string SystemDiskPerformanceLevel
+		{
+			get
+			{
+				return systemDiskPerformanceLevel;
+			}
+			set	
+			{
+				systemDiskPerformanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.PerformanceLevel", value);
+			}
+		}
+
 		public string UserData
 		{
 			get
@@ -818,6 +833,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".SnapshotId", dataDisks[i].SnapshotId);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Encrypted", dataDisks[i].Encrypted);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".PerformanceLevel", dataDisks[i].PerformanceLevel);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".KMSKeyId", dataDisks[i].KMSKeyId);
@@ -942,6 +958,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? encrypted;
 
+			private string performanceLevel;
+
 			private string description;
 
 			private string category;
@@ -997,6 +1015,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					encrypted = value;
+				}
+			}
+
+			public string PerformanceLevel
+			{
+				get
+				{
+					return performanceLevel;
+				}
+				set	
+				{
+					performanceLevel = value;
 				}
 			}
 

@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string creationTime;
 
+			private string lastModifiedTime;
+
 			private string status;
 
 			private string usage;
@@ -263,6 +265,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string LastModifiedTime
+			{
+				get
+				{
+					return lastModifiedTime;
+				}
+				set	
+				{
+					lastModifiedTime = value;
 				}
 			}
 

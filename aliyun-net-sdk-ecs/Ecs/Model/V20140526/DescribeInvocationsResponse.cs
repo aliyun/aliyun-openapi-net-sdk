@@ -245,6 +245,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string instanceInvokeStatus;
 
+				private string creationTime;
+
+				private string startTime;
+
+				private string finishTime;
+
 				public string InstanceId
 				{
 					get
@@ -266,6 +272,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						instanceInvokeStatus = value;
+					}
+				}
+
+				public string CreationTime
+				{
+					get
+					{
+						return creationTime;
+					}
+					set	
+					{
+						creationTime = value;
+					}
+				}
+
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
+				public string FinishTime
+				{
+					get
+					{
+						return finishTime;
+					}
+					set	
+					{
+						finishTime = value;
 					}
 				}
 			}
