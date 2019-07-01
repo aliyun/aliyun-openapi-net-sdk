@@ -30,7 +30,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class GetRdsBackUpRequest : RpcAcsRequest<GetRdsBackUpResponse>
     {
         public GetRdsBackUpRequest()
-            : base("retailcloud", "2018-03-13", "GetRdsBackUp")
+            : base("retailcloud", "2018-03-13", "GetRdsBackUp", "retailcloud", "openAPI")
         {
 			Method = MethodType.POST;
         }
@@ -38,8 +38,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 		private string backupId;
 
 		private int? pageSize;
-
-		private long? mainUserId;
 
 		private string dbInstanceId;
 
@@ -70,19 +68,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public long? MainUserId
-		{
-			get
-			{
-				return mainUserId;
-			}
-			set	
-			{
-				mainUserId = value;
-				DictionaryUtil.Add(BodyParameters, "MainUserId", value.ToString());
 			}
 		}
 

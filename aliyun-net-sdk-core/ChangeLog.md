@@ -1,3 +1,6 @@
+### 2019-06-27 Version 1.4.0
+* Endpoint rule update
+
 ### 2019-06-20 Version 1.3.8
 * Add endpoint info in exception message when server is unreachable
 * Carry the RequestId when throw ClientException

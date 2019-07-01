@@ -27,17 +27,9 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 		private int? code;
 
-		private bool? success;
-
 		private string requestId;
 
 		private string errMsg;
-
-		private string _class;
-
-		private bool? transmitAliyun;
-
-		private GrantDbToAccount_Result result;
 
 		public int? Code
 		{
@@ -48,18 +40,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 
@@ -84,60 +64,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				errMsg = value;
-			}
-		}
-
-		public string _Class
-		{
-			get
-			{
-				return _class;
-			}
-			set	
-			{
-				_class = value;
-			}
-		}
-
-		public bool? TransmitAliyun
-		{
-			get
-			{
-				return transmitAliyun;
-			}
-			set	
-			{
-				transmitAliyun = value;
-			}
-		}
-
-		public GrantDbToAccount_Result Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
-			}
-		}
-
-		public class GrantDbToAccount_Result
-		{
-
-			private string _class;
-
-			public string _Class
-			{
-				get
-				{
-					return _class;
-				}
-				set	
-				{
-					_class = value;
-				}
 			}
 		}
 	}

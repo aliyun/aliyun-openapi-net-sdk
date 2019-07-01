@@ -30,7 +30,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class GetInstTransInfoRequest : RpcAcsRequest<GetInstTransInfoResponse>
     {
         public GetInstTransInfoRequest()
-            : base("retailcloud", "2018-03-13", "GetInstTransInfo")
+            : base("retailcloud", "2018-03-13", "GetInstTransInfo", "retailcloud", "openAPI")
         {
         }
 

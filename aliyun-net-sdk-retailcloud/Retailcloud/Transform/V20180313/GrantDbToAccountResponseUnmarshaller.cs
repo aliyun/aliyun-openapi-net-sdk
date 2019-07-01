@@ -32,15 +32,8 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 
 			grantDbToAccountResponse.HttpResponse = context.HttpResponse;
 			grantDbToAccountResponse.Code = context.IntegerValue("GrantDbToAccount.Code");
-			grantDbToAccountResponse.Success = context.BooleanValue("GrantDbToAccount.Success");
 			grantDbToAccountResponse.RequestId = context.StringValue("GrantDbToAccount.RequestId");
 			grantDbToAccountResponse.ErrMsg = context.StringValue("GrantDbToAccount.ErrMsg");
-			grantDbToAccountResponse._Class = context.StringValue("GrantDbToAccount.Class");
-			grantDbToAccountResponse.TransmitAliyun = context.BooleanValue("GrantDbToAccount.TransmitAliyun");
-
-			GrantDbToAccountResponse.GrantDbToAccount_Result result = new GrantDbToAccountResponse.GrantDbToAccount_Result();
-			result._Class = context.StringValue("GrantDbToAccount.Result.Class");
-			grantDbToAccountResponse.Result = result;
         
 			return grantDbToAccountResponse;
         }

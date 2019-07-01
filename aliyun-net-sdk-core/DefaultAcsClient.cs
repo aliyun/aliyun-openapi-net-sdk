@@ -23,6 +23,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Auth.Provider;
@@ -31,6 +32,9 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Reader;
 using Aliyun.Acs.Core.Regions;
+using Aliyun.Acs.Core.Retry;
+using Aliyun.Acs.Core.Retry.BackoffStrategy;
+using Aliyun.Acs.Core.Retry.Condition;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 
@@ -46,27 +50,28 @@ namespace Aliyun.Acs.Core
         private bool autoRetry = true;
 
         private int maxRetryNumber = 3;
+        private readonly RetryPolicy retryPolicy;
 
         public DefaultAcsClient()
         {
-            clientProfile = DefaultProfile.GetProfile();
+            retryPolicy = AutoRetry ? new RetryPolicy(maxRetryNumber, true) : new RetryPolicy();
         }
 
-        public DefaultAcsClient(IClientProfile profile)
+        public DefaultAcsClient(IClientProfile profile) : this()
         {
             clientProfile = profile;
             credentialsProvider = new StaticCredentialsProvider(profile);
             clientProfile.SetCredentialsProvider(credentialsProvider);
         }
 
-        public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentials credentials)
+        public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentials credentials) : this()
         {
             clientProfile = profile;
             credentialsProvider = new StaticCredentialsProvider(credentials);
             clientProfile.SetCredentialsProvider(credentialsProvider);
         }
 
-        public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider)
+        public DefaultAcsClient(IClientProfile profile, AlibabaCloudCredentialsProvider credentialsProvider) : this()
         {
             clientProfile = profile;
             this.credentialsProvider = credentialsProvider;
@@ -302,72 +307,59 @@ namespace Aliyun.Acs.Core
             AlibabaCloudCredentials credentials, Signer signer, FormatType? format, List<Endpoint> endpoints)
             where T : AcsResponse
         {
-            try
+            var httpStatusCode = "";
+            var retryAttemptTimes = 0;
+            ClientException exception;
+            RetryPolicyContext retryPolicyContext;
+            
+            do
             {
-                var watch = Stopwatch.StartNew();
-
-                FormatType? requestFormatType = request.AcceptFormat;
-                if (null != requestFormatType)
+                try
                 {
+                    SerilogHelper.StartTime = DateTime.UtcNow.ToString("o");
+                    var watch = Stopwatch.StartNew();
+
+                    FormatType? requestFormatType = request.AcceptFormat;
                     format = requestFormatType;
-                }
 
-                ProductDomain domain = null;
-                if (request.ProductDomain != null)
-                {
-                    domain = request.ProductDomain;
-                }
-                else
-                {
-                    domain = Endpoint.FindProductDomain(regionId, request.Product, endpoints);
-                }
+                    var domain = request.ProductDomain ??
+                                 Endpoint.FindProductDomain(regionId, request.Product, endpoints);
 
-                if (null == domain)
-                {
-                    throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
-                }
+                    if (null == domain)
+                    {
+                        throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
+                    }
 
-                request.Headers["User-Agent"] =
-                    UserAgent.Resolve(request.GetSysUserAgentConfig(), userAgentConfig);
-
-                var shouldRetry = true;
-                for (var retryTimes = 0; shouldRetry; retryTimes++)
-                {
-                    shouldRetry = autoRetry && retryTimes < maxRetryNumber;
+                    request.Headers["User-Agent"] =
+                        UserAgent.Resolve(request.GetSysUserAgentConfig(), userAgentConfig);
                     var httpRequest = request.SignRequest(signer, credentials, format, domain);
-
                     ResolveTimeout(httpRequest);
                     SetHttpsInsecure(IgnoreCertificate);
                     ResolveProxy(httpRequest, request);
-
                     var response = GetResponse(httpRequest);
 
+                    httpStatusCode = response.Status.ToString();
                     PrintHttpDebugMsg(request, response);
-
-                    if (response.Content == null)
-                    {
-                        if (shouldRetry)
-                        {
-                            continue;
-                        }
-
-                        throw new ClientException("SDK.ConnectionReset", "Connection reset.");
-                    }
-
-                    if (500 <= response.Status && shouldRetry)
-                    {
-                        continue;
-                    }
-
                     watch.Stop();
                     CommonLog.ExecuteTime = watch.ElapsedMilliseconds;
                     return response;
                 }
-            }
-            catch (ClientException ex)
+                catch (ClientException ex)
+                {
+                    retryPolicyContext = new RetryPolicyContext(ex, httpStatusCode, retryAttemptTimes, request.Product,
+                        request.Version,
+                        request.ActionName, RetryCondition.BlankStatus);
+                    SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                    exception = ex;
+                }
+
+                Thread.Sleep(retryPolicy.GetDelayTimeBeforeNextRetry(retryPolicyContext));
+            } while ((retryPolicy.ShouldRetry(retryPolicyContext) & RetryCondition.NoRetry) != RetryCondition.NoRetry);
+
+            if (exception != null)
             {
-                CommonLog.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
-                throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
+                CommonLog.LogException(exception, exception.ErrorCode, exception.ErrorMessage);
+                throw new ClientException(exception.ErrorCode, exception.ErrorMessage);
             }
 
             return null;
@@ -375,9 +367,9 @@ namespace Aliyun.Acs.Core
 
         private void PrintHttpDebugMsg(HttpRequest request, HttpResponse response)
         {
-            var environment_debug_value = Environment.GetEnvironmentVariable("DEBUG");
+            var environmentDebugValue = Environment.GetEnvironmentVariable("DEBUG");
 
-            if (null != environment_debug_value && environment_debug_value.ToLower().Equals("sdk"))
+            if (null != environmentDebugValue && environmentDebugValue.ToLower().Equals("sdk"))
             {
                 if (null != request.Headers)
                 {
@@ -404,14 +396,9 @@ namespace Aliyun.Acs.Core
             var context = new UnmarshallerContext();
             var body = Encoding.UTF8.GetString(httpResponse.Content);
 
-            if (request.CheckShowJsonItemName())
-            {
-                context.ResponseDictionary = reader.Read(body, request.ActionName);
-            }
-            else
-            {
-                context.ResponseDictionary = reader.ReadForHideArrayItem(body, request.ActionName);
-            }
+            context.ResponseDictionary = request.CheckShowJsonItemName()
+                ? reader.Read(body, request.ActionName)
+                : reader.ReadForHideArrayItem(body, request.ActionName);
 
             context.HttpResponse = httpResponse;
             return request.GetResponse(context);
@@ -424,14 +411,8 @@ namespace Aliyun.Acs.Core
             var reader = ReaderFactory.CreateInstance(format);
             var context = new UnmarshallerContext();
             var body = Encoding.Default.GetString(httpResponse.Content);
-            if (null == reader)
-            {
-                context.ResponseDictionary = new Dictionary<string, string>();
-            }
-            else
-            {
-                context.ResponseDictionary = reader.Read(body, responseEndpoint);
-            }
+            context.ResponseDictionary =
+                null == reader ? new Dictionary<string, string>() : reader.Read(body, responseEndpoint);
 
             return AcsErrorUnmarshaller.Unmarshall(context);
         }

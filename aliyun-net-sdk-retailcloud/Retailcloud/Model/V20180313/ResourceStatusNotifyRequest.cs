@@ -30,7 +30,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
     public class ResourceStatusNotifyRequest : RpcAcsRequest<ResourceStatusNotifyResponse>
     {
         public ResourceStatusNotifyRequest()
-            : base("retailcloud", "2018-03-13", "ResourceStatusNotify")
+            : base("retailcloud", "2018-03-13", "ResourceStatusNotify", "retailcloud", "openAPI")
         {
         }
 

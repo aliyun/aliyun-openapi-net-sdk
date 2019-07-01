@@ -32,14 +32,10 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 
 			describeDatabasesResponse.HttpResponse = context.HttpResponse;
 			describeDatabasesResponse.Code = context.IntegerValue("DescribeDatabases.Code");
-			describeDatabasesResponse.Success = context.BooleanValue("DescribeDatabases.Success");
 			describeDatabasesResponse.RequestId = context.StringValue("DescribeDatabases.RequestId");
 			describeDatabasesResponse.ErrMsg = context.StringValue("DescribeDatabases.ErrMsg");
-			describeDatabasesResponse._Class = context.StringValue("DescribeDatabases.Class");
-			describeDatabasesResponse.TransmitAliyun = context.BooleanValue("DescribeDatabases.TransmitAliyun");
 
 			DescribeDatabasesResponse.DescribeDatabases_Result result = new DescribeDatabasesResponse.DescribeDatabases_Result();
-			result._Class = context.StringValue("DescribeDatabases.Result.Class");
 
 			List<DescribeDatabasesResponse.DescribeDatabases_Result.DescribeDatabases_DatabasesItem> result_databases = new List<DescribeDatabasesResponse.DescribeDatabases_Result.DescribeDatabases_DatabasesItem>();
 			for (int i = 0; i < context.Length("DescribeDatabases.Result.Databases.Length"); i++) {
@@ -49,7 +45,6 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 				databasesItem.DBDescription = context.StringValue("DescribeDatabases.Result.Databases["+ i +"].DBDescription");
 				databasesItem.Engine = context.StringValue("DescribeDatabases.Result.Databases["+ i +"].Engine");
 				databasesItem.CharacterSetName = context.StringValue("DescribeDatabases.Result.Databases["+ i +"].CharacterSetName");
-				databasesItem._Class = context.StringValue("DescribeDatabases.Result.Databases["+ i +"].Class");
 				databasesItem.DBInstanceId = context.StringValue("DescribeDatabases.Result.Databases["+ i +"].DBInstanceId");
 
 				List<DescribeDatabasesResponse.DescribeDatabases_Result.DescribeDatabases_DatabasesItem.DescribeDatabases_AccountsItem> databasesItem_accounts = new List<DescribeDatabasesResponse.DescribeDatabases_Result.DescribeDatabases_DatabasesItem.DescribeDatabases_AccountsItem>();
@@ -57,7 +52,6 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 					DescribeDatabasesResponse.DescribeDatabases_Result.DescribeDatabases_DatabasesItem.DescribeDatabases_AccountsItem accountsItem = new DescribeDatabasesResponse.DescribeDatabases_Result.DescribeDatabases_DatabasesItem.DescribeDatabases_AccountsItem();
 					accountsItem.AccountPrivilegeDetail = context.StringValue("DescribeDatabases.Result.Databases["+ i +"].Accounts["+ j +"].AccountPrivilegeDetail");
 					accountsItem.AccountPrivilege = context.StringValue("DescribeDatabases.Result.Databases["+ i +"].Accounts["+ j +"].AccountPrivilege");
-					accountsItem._Class = context.StringValue("DescribeDatabases.Result.Databases["+ i +"].Accounts["+ j +"].Class");
 					accountsItem.Account = context.StringValue("DescribeDatabases.Result.Databases["+ i +"].Accounts["+ j +"].Account");
 
 					databasesItem_accounts.Add(accountsItem);
