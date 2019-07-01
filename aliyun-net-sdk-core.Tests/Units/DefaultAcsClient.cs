@@ -207,13 +207,9 @@ namespace Aliyun.Acs.Core.Tests.Units
             // Mock Signer
             Signer signer = new HmacSHA1Signer();
 
-            Assert.Throws<ClientException>(
-                () =>
-                {
-                    var result = instance.DoAction(request, true, 1, "cn-hangzhou", credentials, signer,
-                        FormatType.JSON, null);
-                }
-            );
+            var result = instance.DoAction(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
+
+           Assert.Equal(result,response);
         }
 
         [Fact]
