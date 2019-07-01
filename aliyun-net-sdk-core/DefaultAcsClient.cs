@@ -311,12 +311,11 @@ namespace Aliyun.Acs.Core
             var retryAttemptTimes = 0;
             ClientException exception;
             RetryPolicyContext retryPolicyContext;
-            
+
             do
             {
                 try
                 {
-                    SerilogHelper.StartTime = DateTime.UtcNow.ToString("o");
                     var watch = Stopwatch.StartNew();
 
                     FormatType? requestFormatType = request.AcceptFormat;
@@ -349,7 +348,8 @@ namespace Aliyun.Acs.Core
                     retryPolicyContext = new RetryPolicyContext(ex, httpStatusCode, retryAttemptTimes, request.Product,
                         request.Version,
                         request.ActionName, RetryCondition.BlankStatus);
-                    SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+
+                    CommonLog.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
                     exception = ex;
                 }
 
