@@ -578,12 +578,12 @@ namespace Aliyun.Acs.Core
             }
         }
 
-        public void EnableLogger()
+        public static void EnableLogger(string template = CommonLog.DefaultTemplate)
         {
-            CommonLog.EnableLogger();
+            CommonLog.EnableLogger(template);
         }
 
-        public void DisableLogger()
+        public static void DisableLogger()
         {
             CommonLog.DisableLogger();
         }

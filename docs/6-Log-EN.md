@@ -2,24 +2,22 @@
 ***
 
 # Log
-The logger is mainly used to provide support for auditing, to record each call, similar to the server's access log.
+The logger is mainly used to provide support for auditing. It is used to record each call, similar to the server's access log, compatible with NLog, Log4Net, Serilog mainstream log class library, if your logging class library is any of the above. The corresponding SDK log can be printed without daditional configuration.
 
 ## Set Logger
-To start the logger, pass in the [Logger](https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/aliyun-net-sdk-core/Utils/Logger.cs) object to client and you must configure the path address where the log will be stored. 
-The log output level, log output template, and channel have default values ​​that you can specify explicitly.
+To enable logging, you can enable logging of the default log format with `DefaultAcsClient.EnableLogger("<output format>"(optional))`.
 
 ```csharp
-// Configure the Logger path
-var logger = new Logger("< your log path >");
-// Explicitly specify Level
-var logger = new Logger(loggerPath : "< your log path >", level : "Error")
+DefaultAcsClient.EnableLogger("<output format>(optional)");
 
-client.SetLogger(logger);
+// If no format is specified, it is the default output format in the Log Format Section.
+DefaultAcsClient.EnableLogger();
+
+DefaultAcsClient.DisableLogger();
 ```
 
 ## Log Format
-- `LoggerPath` must be specified.
-- The default `LoggerTemplate` value is: `{start_time} {channel} [{level}] {method} {uri} {version} {code} {cost} {hostname} {pid} {NewLine}`.
+- The default `LoggerTemplate` value is: `{channel} {method} {uri} {version} {code} {cost} {hostname} {pid}`.
 - The default `Level` value is `Info`.
 - The default `Channel` value is `AlibabaCloud`.
 

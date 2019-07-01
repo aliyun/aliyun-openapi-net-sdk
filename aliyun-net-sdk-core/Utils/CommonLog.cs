@@ -35,30 +35,35 @@ namespace Aliyun.Acs.Core.Utils
     {
         private const string RegexPattern = @"{(.*?)}";
 
-        private const string DefaultTemplate =
-            "{channel} {method} {uri} {version} {code} {cost} {hostname} {pid} {NewLine}";
-
         private static readonly ILog Logger = LogProvider.For<CommonLog>();
 
         private static volatile bool s_enableLogger;
 
         private static volatile IDictionary<string, string> LoggerMessageMap = new Dictionary<string, string>();
 
+        internal const string DefaultTemplate = "{channel} {method} {uri} {version} {code} {cost} {hostname} {pid} {NewLine}";
+
         internal static long ExecuteTime { get; set; }
+        private static volatile string template;
 
         private static void BuildKeyValueMap<T>(AcsRequest<T> request, HttpResponse response, long executeTime)
             where T : AcsResponse
         {
             try
             {
-                var requestHeader =
-                    request.Headers == null ? "" : DictionaryUtil.TransformDicToString(request.Headers);
-                var requestContent = request.Content == null ? "" : Encoding.Default.GetString(request.Content);
+                var requestHeader = request.Headers == null
+                    ? ""
+                    : DictionaryUtil.TransformDicToString(request.Headers);
+                var requestContent = request.Content == null
+                    ? ""
+                    : Encoding.Default.GetString(request.Content);
 
                 var responseHeader = response.Headers == null
                     ? ""
                     : DictionaryUtil.TransformDicToString(response.Headers);
-                var responseContent = response.Content == null ? "" : Encoding.Default.GetString(response.Content);
+                var responseContent = response.Content == null
+                    ? ""
+                    : Encoding.Default.GetString(response.Content);
 
                 var hostName = Dns.GetHostName();
 
@@ -93,8 +98,9 @@ namespace Aliyun.Acs.Core.Utils
             }
         }
 
-        internal static void EnableLogger()
+        internal static void EnableLogger(string loggerTemplate = DefaultTemplate)
         {
+            template = loggerTemplate;
             s_enableLogger = true;
         }
 
@@ -122,7 +128,7 @@ namespace Aliyun.Acs.Core.Utils
             var logValue = new List<string>();
 
             var re = new Regex(RegexPattern, RegexOptions.IgnoreCase | RegexOptions.Compiled);
-            var matchCollection = re.Matches(DefaultTemplate);
+            var matchCollection = re.Matches(template);
 
             if (0 < matchCollection.Count)
             {
@@ -140,7 +146,7 @@ namespace Aliyun.Acs.Core.Utils
             }
 
             var logParameters = logValue.Cast<object>().ToArray();
-            Logger.Info(DefaultTemplate, logParameters);
+            Logger.Info(template, logParameters);
 
             LoggerMessageMap = new Dictionary<string, string>();
         }

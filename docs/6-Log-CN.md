@@ -2,23 +2,22 @@
 ***
 
 # 日志
-logger 主要用于提供支持审计的能力，用于记录每次的调用情况，类似服务端的 access log。
+logger 主要用于提供支持审计的能力，用于记录每次的调用情况，类似服务端的 access log，兼容了 NLog，Log4Net，Serilog 主流的日志类库，如果您的日志记录类库是以上的任意一种，无需额外配置即可打印出相应的 SDK 日志。
 
 ## 设置 Logger
-若要启动日志功能，请传入 [Logger](https://github.com/aliyun/aliyun-openapi-net-sdk/blob/master/aliyun-net-sdk-core/Utils/Logger.cs) 对象，您必须配置存放日志的路径地址。而日志输出级别，日志输出模板以及 channel 都有默认值，您可以显式指定。
+若要启动日志功能，您可以通过 `DefaultAcsClient.EnableLogger()` 来开启默认日志格式的记录。
 
 ```csharp
-// 配置 Logger 路径
-var logger = new Logger("< your log path >");
-// 显式指定 Level 等
-var logger = new Logger(loggerPath : "< your log path>", level : "Error")
+DefaultAcsClient.EnableLogger("<输出格式>（可选）";
 
-client.SetLogger(logger);
+// 若不指定格式，则为下面的默认输出格式
+DefaultAcsClient.EnableLogger();
+
+DefaultAcsClient.DisableLogger();
 ```
 
 ## 日志格式化
-- 必须指定 `LoggerPath`。
-- 默认 `LoggerTemplate` 为：`{start_time} {channel} [{level}] {method} {uri} {version} {code} {cost} {hostname} {pid} {NewLine}`。
+- 默认 `LoggerTemplate` 为：`{channel} {method} {uri} {version} {code} {cost} {hostname} {pid}`。
 - 默认 `Level` 为 `Info`。
 - 默认 `Channel` 为 `AlibabaCloud`。
 
