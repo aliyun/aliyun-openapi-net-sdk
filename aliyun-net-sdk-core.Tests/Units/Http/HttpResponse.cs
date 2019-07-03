@@ -129,12 +129,14 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
         [Fact]
         public void ReadContent()
         {
+#if !NET45
             var response = SetContent();
             var resw = new HttpWebResponse();
 
             Assert.Throws<ObjectDisposedException>(
                 () => { HttpResponse.ReadContent(response, resw); }
             );
+#endif
         }
 
         [Fact]

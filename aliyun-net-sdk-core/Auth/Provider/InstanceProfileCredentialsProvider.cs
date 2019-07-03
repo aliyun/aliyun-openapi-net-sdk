@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -66,7 +66,7 @@ namespace Aliyun.Acs.Core.Auth
                 if (ex.ErrorCode.Equals("SDK.SessionTokenExpired") &&
                     ex.ErrorMessage.Equals("Current session token has expired."))
                 {
-                    SerilogHelper.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
+                    CommonLog.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
                     throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
                 }
 
