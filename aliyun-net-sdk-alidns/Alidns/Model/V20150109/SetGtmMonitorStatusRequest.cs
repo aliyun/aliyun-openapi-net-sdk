@@ -30,30 +30,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class SetGtmMonitorStatusRequest : RpcAcsRequest<SetGtmMonitorStatusResponse>
     {
         public SetGtmMonitorStatusRequest()
-            : base("Alidns", "2015-01-09", "SetGtmMonitorStatus", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "SetGtmMonitorStatus", "Alidns", "openAPI")
         {
         }
-
-		private string userClientIp;
 
 		private string monitorConfigId;
 
 		private string lang;
 
 		private string status;
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public string MonitorConfigId
 		{

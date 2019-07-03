@@ -30,28 +30,13 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeGtmAccessStrategyRequest : RpcAcsRequest<DescribeGtmAccessStrategyResponse>
     {
         public DescribeGtmAccessStrategyRequest()
-            : base("Alidns", "2015-01-09", "DescribeGtmAccessStrategy", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeGtmAccessStrategy", "Alidns", "openAPI")
         {
         }
-
-		private string userClientIp;
 
 		private string strategyId;
 
 		private string lang;
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public string StrategyId
 		{

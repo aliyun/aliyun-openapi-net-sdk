@@ -30,32 +30,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeDomainInfoRequest : RpcAcsRequest<DescribeDomainInfoResponse>
     {
         public DescribeDomainInfoRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainInfo", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeDomainInfo", "Alidns", "openAPI")
         {
         }
-
-		private string userClientIp;
 
 		private string domainName;
 
 		private string lang;
 
-		private string accessKeyId;
-
 		private bool? needDetailAttributes;
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public string DomainName
 		{
@@ -80,19 +63,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeBatchResultDetailRequest : RpcAcsRequest<DescribeBatchResultDetailResponse>
     {
         public DescribeBatchResultDetailRequest()
-            : base("Alidns", "2015-01-09", "DescribeBatchResultDetail", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeBatchResultDetail", "Alidns", "openAPI")
         {
         }
 

@@ -30,28 +30,13 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DeleteGtmAccessStrategyRequest : RpcAcsRequest<DeleteGtmAccessStrategyResponse>
     {
         public DeleteGtmAccessStrategyRequest()
-            : base("Alidns", "2015-01-09", "DeleteGtmAccessStrategy", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DeleteGtmAccessStrategy", "Alidns", "openAPI")
         {
         }
-
-		private string userClientIp;
 
 		private string strategyId;
 
 		private string lang;
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public string StrategyId
 		{

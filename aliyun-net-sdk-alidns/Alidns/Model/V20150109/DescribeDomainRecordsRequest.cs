@@ -30,11 +30,13 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeDomainRecordsRequest : RpcAcsRequest<DescribeDomainRecordsResponse>
     {
         public DescribeDomainRecordsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainRecords", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeDomainRecords", "Alidns", "openAPI")
         {
         }
 
 		private string valueKeyWord;
+
+		private string line;
 
 		private long? groupId;
 
@@ -42,9 +44,9 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string orderBy;
 
-		private long? pageNumber;
+		private string type;
 
-		private string userClientIp;
+		private long? pageNumber;
 
 		private long? pageSize;
 
@@ -60,6 +62,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string direction;
 
+		private string status;
+
 		public string ValueKeyWord
 		{
 			get
@@ -70,6 +74,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				valueKeyWord = value;
 				DictionaryUtil.Add(QueryParameters, "ValueKeyWord", value);
+			}
+		}
+
+		public string Line
+		{
+			get
+			{
+				return line;
+			}
+			set	
+			{
+				line = value;
+				DictionaryUtil.Add(QueryParameters, "Line", value);
 			}
 		}
 
@@ -112,6 +129,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
 		public long? PageNumber
 		{
 			get
@@ -122,19 +152,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -226,6 +243,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				direction = value;
 				DictionaryUtil.Add(QueryParameters, "Direction", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 

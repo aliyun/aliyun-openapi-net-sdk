@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class GetMainDomainNameRequest : RpcAcsRequest<GetMainDomainNameResponse>
     {
         public GetMainDomainNameRequest()
-            : base("Alidns", "2015-01-09", "GetMainDomainName", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "GetMainDomainName", "Alidns", "openAPI")
         {
         }
 
@@ -39,8 +39,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string userClientIp;
 
 		private string lang;
-
-		private string accessKeyId;
 
 		public string InputString
 		{
@@ -78,19 +76,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

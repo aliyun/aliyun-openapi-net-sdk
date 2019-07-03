@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				domainLog.Action = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].Action");
 				domainLog.Message = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].Message");
 				domainLog.ClientIp = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].ClientIp");
+				domainLog.ZoneId = context.StringValue("DescribeDomainLogs.DomainLogs["+ i +"].ZoneId");
 
 				describeDomainLogsResponse_domainLogs.Add(domainLog);
 			}

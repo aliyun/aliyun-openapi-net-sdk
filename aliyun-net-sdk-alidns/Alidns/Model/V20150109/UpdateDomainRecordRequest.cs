@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class UpdateDomainRecordRequest : RpcAcsRequest<UpdateDomainRecordResponse>
     {
         public UpdateDomainRecordRequest()
-            : base("Alidns", "2015-01-09", "UpdateDomainRecord", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "UpdateDomainRecord", "Alidns", "openAPI")
         {
         }
 
@@ -51,8 +51,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string _value;
 
 		private long? tTL;
-
-		private string accessKeyId;
 
 		public string RecordId
 		{
@@ -168,19 +166,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				tTL = value;
 				DictionaryUtil.Add(QueryParameters, "TTL", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

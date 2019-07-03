@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeDnsProductInstancesRequest : RpcAcsRequest<DescribeDnsProductInstancesResponse>
     {
         public DescribeDnsProductInstancesRequest()
-            : base("Alidns", "2015-01-09", "DescribeDnsProductInstances", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeDnsProductInstances", "Alidns", "openAPI")
         {
         }
 
@@ -43,8 +43,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string versionCode;
 
 		private long? pageNumber;
-
-		private string accessKeyId;
 
 		public string UserClientIp
 		{
@@ -108,19 +106,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

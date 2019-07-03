@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeGtmInstanceResponse.CreateTime = context.StringValue("DescribeGtmInstance.CreateTime");
 			describeGtmInstanceResponse.CreateTimestamp = context.LongValue("DescribeGtmInstance.CreateTimestamp");
 			describeGtmInstanceResponse.AlertGroup = context.StringValue("DescribeGtmInstance.AlertGroup");
+			describeGtmInstanceResponse.CnameMode = context.StringValue("DescribeGtmInstance.CnameMode");
         
 			return describeGtmInstanceResponse;
         }

@@ -30,26 +30,11 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeGtmMonitorAvailableConfigRequest : RpcAcsRequest<DescribeGtmMonitorAvailableConfigResponse>
     {
         public DescribeGtmMonitorAvailableConfigRequest()
-            : base("Alidns", "2015-01-09", "DescribeGtmMonitorAvailableConfig", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeGtmMonitorAvailableConfig", "Alidns", "openAPI")
         {
         }
 
-		private string userClientIp;
-
 		private string lang;
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public string Lang
 		{

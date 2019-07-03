@@ -30,19 +30,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class UpdateDomainGroupRequest : RpcAcsRequest<UpdateDomainGroupResponse>
     {
         public UpdateDomainGroupRequest()
-            : base("Alidns", "2015-01-09", "UpdateDomainGroup", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "UpdateDomainGroup", "Alidns", "openAPI")
         {
         }
 
 		private string groupId;
 
-		private string userClientIp;
-
 		private string lang;
 
 		private string groupName;
-
-		private string accessKeyId;
 
 		public string GroupId
 		{
@@ -54,19 +50,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -93,19 +76,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

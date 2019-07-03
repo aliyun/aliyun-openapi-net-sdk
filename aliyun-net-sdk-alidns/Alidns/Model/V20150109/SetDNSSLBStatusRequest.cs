@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class SetDNSSLBStatusRequest : RpcAcsRequest<SetDNSSLBStatusResponse>
     {
         public SetDNSSLBStatusRequest()
-            : base("Alidns", "2015-01-09", "SetDNSSLBStatus", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "SetDNSSLBStatus", "Alidns", "openAPI")
         {
         }
 
@@ -41,8 +41,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string lang;
 
 		private bool? open;
-
-		private string accessKeyId;
 
 		public string UserClientIp
 		{
@@ -93,19 +91,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				open = value;
 				DictionaryUtil.Add(QueryParameters, "Open", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -30,11 +30,11 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeGtmInstancesRequest : RpcAcsRequest<DescribeGtmInstancesResponse>
     {
         public DescribeGtmInstancesRequest()
-            : base("Alidns", "2015-01-09", "DescribeGtmInstances", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeGtmInstances", "Alidns", "openAPI")
         {
         }
 
-		private string userClientIp;
+		private string resourceGroupId;
 
 		private int? pageSize;
 
@@ -44,16 +44,16 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private int? pageNumber;
 
-		public string UserClientIp
+		public string ResourceGroupId
 		{
 			get
 			{
-				return userClientIp;
+				return resourceGroupId;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

@@ -120,9 +120,9 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private string line;
 
-			private int? priority;
+			private string priority;
 
-			private int? ttl;
+			private string ttl;
 
 			private string recordId;
 
@@ -262,7 +262,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
-			public int? Priority
+			public string Priority
 			{
 				get
 				{
@@ -274,7 +274,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
-			public int? Ttl
+			public string Ttl
 			{
 				get
 				{

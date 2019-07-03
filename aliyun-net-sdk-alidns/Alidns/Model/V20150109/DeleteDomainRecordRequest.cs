@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DeleteDomainRecordRequest : RpcAcsRequest<DeleteDomainRecordResponse>
     {
         public DeleteDomainRecordRequest()
-            : base("Alidns", "2015-01-09", "DeleteDomainRecord", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DeleteDomainRecord", "Alidns", "openAPI")
         {
         }
 
@@ -39,8 +39,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string userClientIp;
 
 		private string lang;
-
-		private string accessKeyId;
 
 		public string RecordId
 		{
@@ -78,19 +76,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

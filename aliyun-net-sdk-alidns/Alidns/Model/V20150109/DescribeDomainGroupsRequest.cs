@@ -30,11 +30,9 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeDomainGroupsRequest : RpcAcsRequest<DescribeDomainGroupsResponse>
     {
         public DescribeDomainGroupsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainGroups", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeDomainGroups", "Alidns", "openAPI")
         {
         }
-
-		private string userClientIp;
 
 		private long? pageSize;
 
@@ -43,21 +41,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string keyWord;
 
 		private long? pageNumber;
-
-		private string accessKeyId;
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public long? PageSize
 		{
@@ -108,19 +91,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

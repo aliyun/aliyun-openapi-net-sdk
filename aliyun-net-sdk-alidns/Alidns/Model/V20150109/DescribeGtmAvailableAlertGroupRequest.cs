@@ -30,26 +30,11 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeGtmAvailableAlertGroupRequest : RpcAcsRequest<DescribeGtmAvailableAlertGroupResponse>
     {
         public DescribeGtmAvailableAlertGroupRequest()
-            : base("Alidns", "2015-01-09", "DescribeGtmAvailableAlertGroup", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeGtmAvailableAlertGroup", "Alidns", "openAPI")
         {
         }
 
-		private string userClientIp;
-
 		private string lang;
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public string Lang
 		{

@@ -30,30 +30,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class SetGtmAccessModeRequest : RpcAcsRequest<SetGtmAccessModeResponse>
     {
         public SetGtmAccessModeRequest()
-            : base("Alidns", "2015-01-09", "SetGtmAccessMode", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "SetGtmAccessMode", "Alidns", "openAPI")
         {
         }
-
-		private string userClientIp;
 
 		private string strategyId;
 
 		private string lang;
 
 		private string accessMode;
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public string StrategyId
 		{

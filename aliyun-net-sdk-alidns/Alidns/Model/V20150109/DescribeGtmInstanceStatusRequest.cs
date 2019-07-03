@@ -30,13 +30,11 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeGtmInstanceStatusRequest : RpcAcsRequest<DescribeGtmInstanceStatusResponse>
     {
         public DescribeGtmInstanceStatusRequest()
-            : base("Alidns", "2015-01-09", "DescribeGtmInstanceStatus", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeGtmInstanceStatus", "Alidns", "openAPI")
         {
         }
 
 		private string instanceId;
-
-		private string userClientIp;
 
 		private string lang;
 
@@ -50,19 +48,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

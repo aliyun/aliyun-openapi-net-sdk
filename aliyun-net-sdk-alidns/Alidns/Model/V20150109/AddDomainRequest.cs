@@ -30,9 +30,11 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class AddDomainRequest : RpcAcsRequest<AddDomainResponse>
     {
         public AddDomainRequest()
-            : base("Alidns", "2015-01-09", "AddDomain", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "AddDomain", "Alidns", "openAPI")
         {
         }
+
+		private string resourceGroupId;
 
 		private string groupId;
 
@@ -40,7 +42,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string lang;
 
-		private string accessKeyId;
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -78,19 +91,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

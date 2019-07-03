@@ -50,8 +50,8 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				batchResultDetail.BatchType = context.StringValue("DescribeBatchResultDetail.BatchResultDetails["+ i +"].BatchType");
 				batchResultDetail.OperateDateStr = context.StringValue("DescribeBatchResultDetail.BatchResultDetails["+ i +"].OperateDateStr");
 				batchResultDetail.Line = context.StringValue("DescribeBatchResultDetail.BatchResultDetails["+ i +"].Line");
-				batchResultDetail.Priority = context.IntegerValue("DescribeBatchResultDetail.BatchResultDetails["+ i +"].Priority");
-				batchResultDetail.Ttl = context.IntegerValue("DescribeBatchResultDetail.BatchResultDetails["+ i +"].Ttl");
+				batchResultDetail.Priority = context.StringValue("DescribeBatchResultDetail.BatchResultDetails["+ i +"].Priority");
+				batchResultDetail.Ttl = context.StringValue("DescribeBatchResultDetail.BatchResultDetails["+ i +"].Ttl");
 				batchResultDetail.RecordId = context.StringValue("DescribeBatchResultDetail.BatchResultDetails["+ i +"].RecordId");
 				batchResultDetail.Remark = context.StringValue("DescribeBatchResultDetail.BatchResultDetails["+ i +"].Remark");
 				batchResultDetail.RrStatus = context.StringValue("DescribeBatchResultDetail.BatchResultDetails["+ i +"].RrStatus");

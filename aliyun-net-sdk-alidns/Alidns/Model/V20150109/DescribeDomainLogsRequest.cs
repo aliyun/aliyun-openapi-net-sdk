@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeDomainLogsRequest : RpcAcsRequest<DescribeDomainLogsResponse>
     {
         public DescribeDomainLogsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainLogs", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeDomainLogs", "Alidns", "openAPI")
         {
         }
 

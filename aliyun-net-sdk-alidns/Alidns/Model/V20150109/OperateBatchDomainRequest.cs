@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class OperateBatchDomainRequest : RpcAcsRequest<OperateBatchDomainResponse>
     {
         public OperateBatchDomainRequest()
-            : base("Alidns", "2015-01-09", "OperateBatchDomain", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "OperateBatchDomain", "Alidns", "openAPI")
         {
         }
 
@@ -68,12 +68,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				for (int i = 0; i < domainRecordInfos.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"DomainRecordInfo." + (i + 1) + ".Rr", domainRecordInfos[i].Rr);
+					DictionaryUtil.Add(QueryParameters,"DomainRecordInfo." + (i + 1) + ".NewType", domainRecordInfos[i].NewType);
+					DictionaryUtil.Add(QueryParameters,"DomainRecordInfo." + (i + 1) + ".NewValue", domainRecordInfos[i].NewValue);
 					DictionaryUtil.Add(QueryParameters,"DomainRecordInfo." + (i + 1) + ".Line", domainRecordInfos[i].Line);
 					DictionaryUtil.Add(QueryParameters,"DomainRecordInfo." + (i + 1) + ".Domain", domainRecordInfos[i].Domain);
 					DictionaryUtil.Add(QueryParameters,"DomainRecordInfo." + (i + 1) + ".Type", domainRecordInfos[i].Type);
 					DictionaryUtil.Add(QueryParameters,"DomainRecordInfo." + (i + 1) + ".Priority", domainRecordInfos[i].Priority);
 					DictionaryUtil.Add(QueryParameters,"DomainRecordInfo." + (i + 1) + ".Value", domainRecordInfos[i].Value);
 					DictionaryUtil.Add(QueryParameters,"DomainRecordInfo." + (i + 1) + ".Ttl", domainRecordInfos[i].Ttl);
+					DictionaryUtil.Add(QueryParameters,"DomainRecordInfo." + (i + 1) + ".NewRr", domainRecordInfos[i].NewRr);
 				}
 			}
 		}
@@ -109,6 +112,10 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private string rr;
 
+			private string newType;
+
+			private string newValue;
+
 			private string line;
 
 			private string domain;
@@ -121,6 +128,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private int? ttl;
 
+			private string newRr;
+
 			public string Rr
 			{
 				get
@@ -130,6 +139,30 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					rr = value;
+				}
+			}
+
+			public string NewType
+			{
+				get
+				{
+					return newType;
+				}
+				set	
+				{
+					newType = value;
+				}
+			}
+
+			public string NewValue
+			{
+				get
+				{
+					return newValue;
+				}
+				set	
+				{
+					newValue = value;
 				}
 			}
 
@@ -202,6 +235,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					ttl = value;
+				}
+			}
+
+			public string NewRr
+			{
+				get
+				{
+					return newRr;
+				}
+				set	
+				{
+					newRr = value;
 				}
 			}
 		}

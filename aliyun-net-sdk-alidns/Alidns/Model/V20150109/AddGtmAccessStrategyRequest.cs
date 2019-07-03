@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class AddGtmAccessStrategyRequest : RpcAcsRequest<AddGtmAccessStrategyResponse>
     {
         public AddGtmAccessStrategyRequest()
-            : base("Alidns", "2015-01-09", "AddGtmAccessStrategy", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "AddGtmAccessStrategy", "Alidns", "openAPI")
         {
         }
 
@@ -43,8 +43,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string instanceId;
 
 		private string failoverAddrPoolId;
-
-		private string userClientIp;
 
 		private string lang;
 
@@ -110,19 +108,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				failoverAddrPoolId = value;
 				DictionaryUtil.Add(QueryParameters, "FailoverAddrPoolId", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

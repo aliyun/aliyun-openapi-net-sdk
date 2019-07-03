@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class UpdateDNSSLBWeightRequest : RpcAcsRequest<UpdateDNSSLBWeightResponse>
     {
         public UpdateDNSSLBWeightRequest()
-            : base("Alidns", "2015-01-09", "UpdateDNSSLBWeight", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "UpdateDNSSLBWeight", "Alidns", "openAPI")
         {
         }
 
@@ -41,8 +41,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private int? weight;
 
 		private string lang;
-
-		private string accessKeyId;
 
 		public string RecordId
 		{
@@ -93,19 +91,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

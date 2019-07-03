@@ -30,13 +30,11 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class AddGtmAddressPoolRequest : RpcAcsRequest<AddGtmAddressPoolResponse>
     {
         public AddGtmAddressPoolRequest()
-            : base("Alidns", "2015-01-09", "AddGtmAddressPool", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "AddGtmAddressPool", "Alidns", "openAPI")
         {
         }
 
 		private string instanceId;
-
-		private string userClientIp;
 
 		private string name;
 
@@ -58,19 +56,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

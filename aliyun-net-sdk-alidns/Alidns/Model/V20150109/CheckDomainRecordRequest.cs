@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class CheckDomainRecordRequest : RpcAcsRequest<CheckDomainRecordResponse>
     {
         public CheckDomainRecordRequest()
-            : base("Alidns", "2015-01-09", "CheckDomainRecord", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "CheckDomainRecord", "Alidns", "openAPI")
         {
         }
 
@@ -45,8 +45,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string type;
 
 		private string _value;
-
-		private string accessKeyId;
 
 		public string RR
 		{
@@ -123,19 +121,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				_value = value;
 				DictionaryUtil.Add(QueryParameters, "Value", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

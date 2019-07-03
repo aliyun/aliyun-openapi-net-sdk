@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeRecordLogsRequest : RpcAcsRequest<DescribeRecordLogsResponse>
     {
         public DescribeRecordLogsRequest()
-            : base("Alidns", "2015-01-09", "DescribeRecordLogs", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeRecordLogs", "Alidns", "openAPI")
         {
         }
 
@@ -49,8 +49,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string startDate;
 
 		private long? pageNumber;
-
-		private string accessKeyId;
 
 		public string EndDate
 		{
@@ -153,19 +151,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

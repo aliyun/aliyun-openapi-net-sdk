@@ -110,6 +110,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private string clientIp;
 
+			private string zoneId;
+
 			public string ActionTime
 			{
 				get
@@ -179,6 +181,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					clientIp = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
 				}
 			}
 		}

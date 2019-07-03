@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				gtmInstance.ExpireTime = context.StringValue("DescribeGtmInstances.GtmInstances["+ i +"].ExpireTime");
 				gtmInstance.ExpireTimestamp = context.LongValue("DescribeGtmInstances.GtmInstances["+ i +"].ExpireTimestamp");
 				gtmInstance.AlertGroup = context.StringValue("DescribeGtmInstances.GtmInstances["+ i +"].AlertGroup");
+				gtmInstance.CnameMode = context.StringValue("DescribeGtmInstances.GtmInstances["+ i +"].CnameMode");
 
 				describeGtmInstancesResponse_gtmInstances.Add(gtmInstance);
 			}

@@ -136,6 +136,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private string alertGroup;
 
+			private string cnameMode;
+
 			public string InstanceId
 			{
 				get
@@ -277,6 +279,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					alertGroup = value;
+				}
+			}
+
+			public string CnameMode
+			{
+				get
+				{
+					return cnameMode;
+				}
+				set	
+				{
+					cnameMode = value;
 				}
 			}
 		}

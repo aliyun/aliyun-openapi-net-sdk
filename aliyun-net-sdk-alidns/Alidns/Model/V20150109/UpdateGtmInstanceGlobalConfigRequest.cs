@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class UpdateGtmInstanceGlobalConfigRequest : RpcAcsRequest<UpdateGtmInstanceGlobalConfigResponse>
     {
         public UpdateGtmInstanceGlobalConfigRequest()
-            : base("Alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig", "Alidns", "openAPI")
         {
         }
 
@@ -42,13 +42,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string userDomainName;
 
-		private string userClientIp;
+		private string cnameMode;
 
 		private string lbaStrategy;
 
 		private string lang;
 
 		private int? ttl;
+
+		private string cnameCustomDomainName;
 
 		public string AlertGroup
 		{
@@ -102,16 +104,16 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string UserClientIp
+		public string CnameMode
 		{
 			get
 			{
-				return userClientIp;
+				return cnameMode;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				cnameMode = value;
+				DictionaryUtil.Add(QueryParameters, "CnameMode", value);
 			}
 		}
 
@@ -151,6 +153,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				ttl = value;
 				DictionaryUtil.Add(QueryParameters, "Ttl", value.ToString());
+			}
+		}
+
+		public string CnameCustomDomainName
+		{
+			get
+			{
+				return cnameCustomDomainName;
+			}
+			set	
+			{
+				cnameCustomDomainName = value;
+				DictionaryUtil.Add(QueryParameters, "CnameCustomDomainName", value);
 			}
 		}
 

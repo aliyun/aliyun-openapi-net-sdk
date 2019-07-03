@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeDomainRecordInfoRequest : RpcAcsRequest<DescribeDomainRecordInfoResponse>
     {
         public DescribeDomainRecordInfoRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainRecordInfo", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeDomainRecordInfo", "Alidns", "openAPI")
         {
         }
 
@@ -39,8 +39,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string userClientIp;
 
 		private string lang;
-
-		private string accessKeyId;
 
 		public string RecordId
 		{
@@ -78,19 +76,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

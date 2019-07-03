@@ -30,17 +30,13 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DeleteDomainGroupRequest : RpcAcsRequest<DeleteDomainGroupResponse>
     {
         public DeleteDomainGroupRequest()
-            : base("Alidns", "2015-01-09", "DeleteDomainGroup", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DeleteDomainGroup", "Alidns", "openAPI")
         {
         }
 
 		private string groupId;
 
-		private string userClientIp;
-
 		private string lang;
-
-		private string accessKeyId;
 
 		public string GroupId
 		{
@@ -55,19 +51,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -78,19 +61,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

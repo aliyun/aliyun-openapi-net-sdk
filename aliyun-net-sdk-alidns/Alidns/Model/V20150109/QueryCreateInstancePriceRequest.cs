@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class QueryCreateInstancePriceRequest : RpcAcsRequest<QueryCreateInstancePriceResponse>
     {
         public QueryCreateInstancePriceRequest()
-            : base("Alidns", "2015-01-09", "QueryCreateInstancePrice", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "QueryCreateInstancePrice", "Alidns", "openAPI")
         {
         }
 
@@ -43,8 +43,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string instanceVersion;
 
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		public int? Month
 		{
@@ -108,19 +106,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

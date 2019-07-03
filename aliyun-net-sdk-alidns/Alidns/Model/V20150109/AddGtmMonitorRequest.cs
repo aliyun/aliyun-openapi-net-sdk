@@ -30,15 +30,13 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class AddGtmMonitorRequest : RpcAcsRequest<AddGtmMonitorResponse>
     {
         public AddGtmMonitorRequest()
-            : base("Alidns", "2015-01-09", "AddGtmMonitor", "alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "AddGtmMonitor", "Alidns", "openAPI")
         {
         }
 
 		private string monitorExtendInfo;
 
 		private string addrPoolId;
-
-		private string userClientIp;
 
 		private string name;
 
@@ -77,19 +75,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				addrPoolId = value;
 				DictionaryUtil.Add(QueryParameters, "AddrPoolId", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
