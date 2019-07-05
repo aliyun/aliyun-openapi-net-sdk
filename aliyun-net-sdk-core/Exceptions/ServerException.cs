@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -22,7 +22,7 @@ namespace Aliyun.Acs.Core.Exceptions
     public class ServerException : ClientException
     {
         public ServerException(string errorCode, string errorMessage, string requestId) :
-            this(errorCode, errorMessage)
+            base(errorCode, errorMessage, requestId)
         {
             RequestId = requestId;
         }
