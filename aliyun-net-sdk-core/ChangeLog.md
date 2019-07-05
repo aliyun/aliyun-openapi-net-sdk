@@ -1,3 +1,7 @@
+### 2019-07-03 Version 1.5.0
+* Retry logic refactor
+* Add a common log support Serilog, NLog and log4net
+
 ### 2019-06-27 Version 1.4.0
 * Endpoint rule update
 
