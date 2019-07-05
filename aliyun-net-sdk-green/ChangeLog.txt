@@ -1,3 +1,6 @@
+2019-07-05 Version 3.4.4
+- Supported library managment for simillarity scene.
+- Remove the local file uploader code which can be downloaded from yundun content security document.
 2019-03-27 Version: 3.3.3
 1, This is an example of release-log.
 2, Please strictly follow this format to edit in English.

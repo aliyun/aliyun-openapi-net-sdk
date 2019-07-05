@@ -36,22 +36,7 @@ namespace Aliyun.Acs.Green.Model.V20180509
 			Method = MethodType.POST;
         }
 
-		private string regionId;
-
 		private string clientInfo;
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
 
 		public string ClientInfo
 		{
