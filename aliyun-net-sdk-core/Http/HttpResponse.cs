@@ -68,7 +68,8 @@ namespace Aliyun.Acs.Core.Http
                 httpResponse.Headers.Add(key, httpWebResponse.Headers[key]);
             }
 
-            var type = httpResponse.Headers["Content-Type"];
+            string type;
+            httpResponse.Headers.TryGetValue("Content-Type", out type);
             if (null != type)
             {
                 httpResponse.Encoding = "UTF-8";
