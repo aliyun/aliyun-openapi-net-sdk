@@ -72,7 +72,7 @@ namespace Aliyun.Acs.Feature.Test.Credential
 
             var exception = Assert.Throws<ClientException>(() => { response = client.GetAcsResponse(request); });
 
-            Assert.Equal(
+            Assert.Contains(
                 "Forbidden.RAM : User not authorized to operate on the specified resource, or this API doesn't support RAM.",
                 exception.Message);
         }

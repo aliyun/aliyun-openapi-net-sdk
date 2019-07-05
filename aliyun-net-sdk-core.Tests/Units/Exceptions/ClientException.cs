@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Exceptions
             var exception = new ClientException("200", "message", "requestId");
             Assert.Equal("200", exception.ErrorCode);
             Assert.Equal("message", exception.ErrorMessage);
-            Assert.Null(exception.RequestId);
+            Assert.Equal("requestId", exception.RequestId);
         }
 
         [Fact]
