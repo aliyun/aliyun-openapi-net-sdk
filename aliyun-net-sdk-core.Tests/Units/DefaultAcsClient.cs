@@ -598,7 +598,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             var httpRequest = new HttpRequest();
             var connectTimeout = 1024;
 
-            object[] resolveTimeoutArgs = { httpRequest };
+            object[] resolveTimeoutArgs = { httpRequest, "ecs", "2014-05-10", "DescribeInstaces" };
             object[] connectTimeoutArgs = { connectTimeout };
 
             var type = typeof(DefaultAcsClient);
@@ -684,7 +684,7 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             var readTimeout = 1024;
 
-            object[] resolveTimeoutArgs = { httpRequest };
+            object[] resolveTimeoutArgs = { httpRequest, "ecs", "2014-05-10", "DescribeInstaces" };
             object[] readTimeoutArgs = { readTimeout };
 
             var type = typeof(DefaultAcsClient);

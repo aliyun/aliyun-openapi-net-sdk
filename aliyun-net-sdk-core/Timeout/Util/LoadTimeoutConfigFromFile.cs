@@ -18,15 +18,12 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using System.Text;
 
 using Aliyun.Acs.Core.Exceptions;
 
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
 
 namespace Aliyun.Acs.Core.Timeout.Util
 {
@@ -37,6 +34,11 @@ namespace Aliyun.Acs.Core.Timeout.Util
 
         public int GetSpecificApiReadTimeoutValue(string product, string version, string actionName)
         {
+            if (string.IsNullOrEmpty(product) || string.IsNullOrEmpty(version) || string.IsNullOrEmpty(actionName))
+            {
+                return 0;
+            }
+
             try
             {
                 JObject jsonData;

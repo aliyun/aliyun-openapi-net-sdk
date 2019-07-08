@@ -144,7 +144,9 @@ namespace Aliyun.Acs.Core
 
             var response = new CommonResponse
             {
-                Data = data, HttpResponse = httpResponse, HttpStatus = httpResponse.Status
+                Data = data,
+                HttpResponse = httpResponse,
+                HttpStatus = httpResponse.Status
             };
 
             return response;
