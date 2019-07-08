@@ -209,7 +209,7 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             var result = instance.DoAction(request, true, 1, "cn-hangzhou", credentials, signer, FormatType.JSON, null);
 
-           Assert.Equal(result,response);
+            Assert.Equal(result, response);
         }
 
         [Fact]
@@ -445,7 +445,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             var ex = Record.Exception(testCode400);
             Assert.NotNull(ex);
             Assert.IsType<ClientException>(ex);
-            Assert.Equal("ThisIsCode : ThisIsMessage", ex.Message);
+            Assert.Contains("ThisIsCode : ThisIsMessage", ex.Message);
 
             // 502 Error
             instance = MockDefaultAcsClient(502);
@@ -456,7 +456,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             ex = Record.Exception(testCode400);
             Assert.NotNull(ex);
             Assert.IsType<ServerException>(ex);
-            Assert.Equal("ThisIsCode : ThisIsMessage, the request url is empty, the RequestId is ThisIsRequestId.", ex.Message);
+            Assert.Contains("ThisIsCode : ThisIsMessage, the request url is empty, the RequestId is ThisIsRequestId.", ex.Message);
         }
 
         [Fact]
@@ -852,7 +852,7 @@ namespace Aliyun.Acs.Core.Tests.Units
                 var result = instance.GetAcsResponse(request, "cn-hangzhou", credentials);
             });
 
-            Assert.Equal(
+            Assert.Contains(
                 "IncompleteSignature : The request signature does not conform to Aliyun standards. server string to sign is:Error Signature",
                 signatureException.Message);
 
@@ -864,7 +864,7 @@ namespace Aliyun.Acs.Core.Tests.Units
                 var result = instance.GetAcsResponse(request, "cn-hangzhou", credentials);
             });
 
-            Assert.Equal("SDK.InvalidAccessKeySecret : Specified Access Key Secret is not valid.",
+            Assert.Contains("SDK.InvalidAccessKeySecret : Specified Access Key Secret is not valid.",
                 invalidException.Message);
         }
 
@@ -882,7 +882,7 @@ namespace Aliyun.Acs.Core.Tests.Units
                 var result = instance.GetAcsResponse(request, "cn-hangzhou", credentials);
             });
 
-            Assert.Equal(
+            Assert.Contains(
                 "SignatureDoesNotMatch : signature does not conform to standards. server string to sign is:Error Signature",
                 signatureException.Message);
 
@@ -894,7 +894,7 @@ namespace Aliyun.Acs.Core.Tests.Units
                 var result = instance.GetAcsResponse(request, "cn-hangzhou", credentials);
             });
 
-            Assert.Equal("SDK.InvalidAccessKeySecret : Specified Access Key Secret is not valid.",
+            Assert.Contains("SDK.InvalidAccessKeySecret : Specified Access Key Secret is not valid.",
                 invalidException.Message);
         }
 
