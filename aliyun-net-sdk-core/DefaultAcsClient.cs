@@ -33,8 +33,8 @@ using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Reader;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Retry;
-using Aliyun.Acs.Core.Retry.BackoffStrategy;
 using Aliyun.Acs.Core.Retry.Condition;
+using Aliyun.Acs.Core.Timeout.Util;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 
@@ -45,12 +45,12 @@ namespace Aliyun.Acs.Core
         private static readonly HttpWebProxy WebProxy = new HttpWebProxy();
         private readonly IClientProfile clientProfile;
         private readonly AlibabaCloudCredentialsProvider credentialsProvider;
+        private readonly RetryPolicy retryPolicy;
         private readonly UserAgent userAgentConfig = new UserAgent();
 
         private bool autoRetry = true;
 
         private int maxRetryNumber = 3;
-        private readonly RetryPolicy retryPolicy;
 
         public DefaultAcsClient()
         {
@@ -110,6 +110,8 @@ namespace Aliyun.Acs.Core
 
         public T GetAcsResponse<T>(AcsRequest<T> request) where T : AcsResponse
         {
+            Console.WriteLine(typeof(T));
+
             var httpResponse = DoAction(request);
             return ParseAcsResponse(request, httpResponse);
         }
@@ -144,9 +146,7 @@ namespace Aliyun.Acs.Core
 
             var response = new CommonResponse
             {
-                Data = data,
-                HttpResponse = httpResponse,
-                HttpStatus = httpResponse.Status
+                Data = data, HttpResponse = httpResponse, HttpStatus = httpResponse.Status
             };
 
             return response;
@@ -332,7 +332,7 @@ namespace Aliyun.Acs.Core
                     request.Headers["User-Agent"] =
                         UserAgent.Resolve(request.GetSysUserAgentConfig(), userAgentConfig);
                     var httpRequest = request.SignRequest(signer, credentials, format, domain);
-                    ResolveTimeout(httpRequest);
+                    ResolveTimeout(httpRequest, request.Product, request.Version, request.ActionName);
                     SetHttpsInsecure(IgnoreCertificate);
                     ResolveProxy(httpRequest, request);
                     var response = GetResponse(httpRequest);
@@ -442,10 +442,15 @@ namespace Aliyun.Acs.Core
             ReadTimeout = readTimeout;
         }
 
-        private void ResolveTimeout(HttpRequest request)
+        private void ResolveTimeout(HttpRequest request, string product, string version, string actionName)
         {
+            var apiReadTimeout = new LoadTimeoutConfigFromFile()
+                .GetSpecificApiReadTimeoutValue(product, version, actionName);
+
             var finalReadTimeout = request.ReadTimeout > 0 ? request.ReadTimeout :
-                ReadTimeout > 0 ? ReadTimeout : 0;
+                ReadTimeout > 0 ? ReadTimeout :
+                apiReadTimeout > 0 ? apiReadTimeout : 0;
+
             request.SetReadTimeoutInMilliSeconds(finalReadTimeout);
 
             var finalConnectTimeout = request.ConnectTimeout > 0 ? request.ConnectTimeout :
