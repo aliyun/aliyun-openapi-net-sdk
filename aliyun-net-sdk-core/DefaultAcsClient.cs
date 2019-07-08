@@ -110,8 +110,6 @@ namespace Aliyun.Acs.Core
 
         public T GetAcsResponse<T>(AcsRequest<T> request) where T : AcsResponse
         {
-            Console.WriteLine(typeof(T));
-
             var httpResponse = DoAction(request);
             return ParseAcsResponse(request, httpResponse);
         }
