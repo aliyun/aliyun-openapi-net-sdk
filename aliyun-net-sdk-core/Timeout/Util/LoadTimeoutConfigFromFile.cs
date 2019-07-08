@@ -29,8 +29,13 @@ namespace Aliyun.Acs.Core.Timeout.Util
 {
     internal class LoadTimeoutConfigFromFile
     {
-        private const string ConfigFileLocation = "timeout_config.json";
+        private readonly string configFileLocation;
         private JObject currentJsonData;
+
+        public LoadTimeoutConfigFromFile(string configFile = "timeout_config.json")
+        {
+            configFileLocation = configFile;
+        }
 
         public int GetSpecificApiReadTimeoutValue(string product, string version, string actionName)
         {
@@ -48,7 +53,7 @@ namespace Aliyun.Acs.Core.Timeout.Util
                     var currentNamespace = MethodBase.GetCurrentMethod().DeclaringType.Namespace;
                     var assembly = Assembly.GetExecutingAssembly();
 
-                    var resourceName = string.Format("{0}.{1}", currentNamespace, ConfigFileLocation);
+                    var resourceName = string.Format("{0}.{1}", currentNamespace, configFileLocation);
 
                     using (var stream = assembly.GetManifestResourceStream(resourceName))
                     using (var streamReader = new StreamReader(stream))
