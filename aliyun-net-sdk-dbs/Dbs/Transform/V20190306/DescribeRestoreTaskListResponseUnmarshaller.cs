@@ -59,6 +59,7 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 				restoreTaskDetail.BackupSetId = context.StringValue("DescribeRestoreTaskList.Items["+ i +"].BackupSetId");
 				restoreTaskDetail.RestoreTime = context.LongValue("DescribeRestoreTaskList.Items["+ i +"].RestoreTime");
 				restoreTaskDetail.RestoreTaskCreateTime = context.LongValue("DescribeRestoreTaskList.Items["+ i +"].RestoreTaskCreateTime");
+				restoreTaskDetail.RestoreTaskFinishTime = context.LongValue("DescribeRestoreTaskList.Items["+ i +"].RestoreTaskFinishTime");
 				restoreTaskDetail.RestoreStatus = context.StringValue("DescribeRestoreTaskList.Items["+ i +"].RestoreStatus");
 				restoreTaskDetail.RestoreTaskId = context.StringValue("DescribeRestoreTaskList.Items["+ i +"].RestoreTaskId");
 				restoreTaskDetail.FullStruforeRestoreProgress = context.IntegerValue("DescribeRestoreTaskList.Items["+ i +"].FullStruforeRestoreProgress");

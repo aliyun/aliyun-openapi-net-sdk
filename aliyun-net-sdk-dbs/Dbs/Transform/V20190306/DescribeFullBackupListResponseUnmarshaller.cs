@@ -53,6 +53,7 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 				fullBackupFile.BackupSize = context.LongValue("DescribeFullBackupList.Items["+ i +"].BackupSize");
 				fullBackupFile.StorageMethod = context.StringValue("DescribeFullBackupList.Items["+ i +"].StorageMethod");
 				fullBackupFile.ErrMessage = context.StringValue("DescribeFullBackupList.Items["+ i +"].ErrMessage");
+				fullBackupFile.BackupObjects = context.StringValue("DescribeFullBackupList.Items["+ i +"].BackupObjects");
 
 				describeFullBackupListResponse_items.Add(fullBackupFile);
 			}

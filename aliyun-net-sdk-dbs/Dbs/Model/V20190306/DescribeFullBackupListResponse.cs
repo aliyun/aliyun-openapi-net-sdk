@@ -186,6 +186,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private string errMessage;
 
+			private string backupObjects;
+
 			public string BackupSetId
 			{
 				get
@@ -291,6 +293,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					errMessage = value;
+				}
+			}
+
+			public string BackupObjects
+			{
+				get
+				{
+					return backupObjects;
+				}
+				set	
+				{
+					backupObjects = value;
 				}
 			}
 		}

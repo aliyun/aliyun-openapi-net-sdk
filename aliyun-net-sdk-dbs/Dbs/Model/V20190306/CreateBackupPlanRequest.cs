@@ -34,15 +34,11 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
         {
         }
 
-		private string backupMethod;
-
 		private string databaseType;
 
 		private string period;
 
 		private string clientToken;
-
-		private string region;
 
 		private string ownerId;
 
@@ -50,18 +46,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string instanceClass;
 
-		public string BackupMethod
-		{
-			get
-			{
-				return backupMethod;
-			}
-			set	
-			{
-				backupMethod = value;
-				DictionaryUtil.Add(QueryParameters, "BackupMethod", value);
-			}
-		}
+		private string storageType;
+
+		private string backupMethod;
+
+		private string databaseRegion;
+
+		private string storageRegion;
+
+		private string instanceType;
+
+		private string region;
+
+		private string payType;
 
 		public string DatabaseType
 		{
@@ -102,19 +99,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
 		public string OwnerId
 		{
 			get
@@ -151,6 +135,97 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				instanceClass = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
+			}
+		}
+
+		public string StorageType
+		{
+			get
+			{
+				return storageType;
+			}
+			set	
+			{
+				storageType = value;
+				DictionaryUtil.Add(QueryParameters, "StorageType", value);
+			}
+		}
+
+		public string BackupMethod
+		{
+			get
+			{
+				return backupMethod;
+			}
+			set	
+			{
+				backupMethod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupMethod", value);
+			}
+		}
+
+		public string DatabaseRegion
+		{
+			get
+			{
+				return databaseRegion;
+			}
+			set	
+			{
+				databaseRegion = value;
+				DictionaryUtil.Add(QueryParameters, "DatabaseRegion", value);
+			}
+		}
+
+		public string StorageRegion
+		{
+			get
+			{
+				return storageRegion;
+			}
+			set	
+			{
+				storageRegion = value;
+				DictionaryUtil.Add(QueryParameters, "StorageRegion", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
+			}
+		}
+
+		public string PayType
+		{
+			get
+			{
+				return payType;
+			}
+			set	
+			{
+				payType = value;
+				DictionaryUtil.Add(QueryParameters, "PayType", value);
 			}
 		}
 

@@ -198,6 +198,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private long? restoreTaskCreateTime;
 
+			private long? restoreTaskFinishTime;
+
 			private string restoreStatus;
 
 			private string restoreTaskId;
@@ -389,6 +391,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					restoreTaskCreateTime = value;
+				}
+			}
+
+			public long? RestoreTaskFinishTime
+			{
+				get
+				{
+					return restoreTaskFinishTime;
+				}
+				set	
+				{
+					restoreTaskFinishTime = value;
 				}
 			}
 
