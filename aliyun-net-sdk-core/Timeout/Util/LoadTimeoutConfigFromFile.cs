@@ -76,7 +76,7 @@ namespace Aliyun.Acs.Core.Timeout.Util
                     return 0;
                 }
 
-                return jsonData[product][version][actionName].ToObject<int>();
+                return jsonData[product][version][actionName].ToObject<int>() * 1000;
             }
             catch (Exception e)
             {

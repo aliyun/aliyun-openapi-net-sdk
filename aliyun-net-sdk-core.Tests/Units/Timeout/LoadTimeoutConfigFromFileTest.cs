@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Core.Tests.Timeout
             var timeoutValue =
                 loadTimeoutConfigFromFile.GetSpecificApiReadTimeoutValue(_product, _version, _actionName);
 
-            Assert.Equal(86, timeoutValue);
+            Assert.Equal(86000, timeoutValue);
         }
 
         [Fact]
@@ -65,14 +65,14 @@ namespace Aliyun.Acs.Core.Tests.Timeout
             var apiTimeoutValue =
                 loadTimeoutConfigFromFile.GetSpecificApiReadTimeoutValue(_product, _version, _actionName);
             var executeTime1 = sw.ElapsedMilliseconds;
-            Assert.Equal(86, apiTimeoutValue);
+            Assert.Equal(86000, apiTimeoutValue);
 
             sw.Restart();
             apiTimeoutValue =
                 loadTimeoutConfigFromFile.GetSpecificApiReadTimeoutValue(_product, _version, "AllocateEipAddress");
             var executeTime2 = sw.ElapsedMilliseconds;
 
-            Assert.Equal(17, apiTimeoutValue);
+            Assert.Equal(17000, apiTimeoutValue);
         }
 
         [Fact]
