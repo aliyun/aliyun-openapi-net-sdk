@@ -125,6 +125,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string templateType;
 
+				private string videoProfile;
+
+				private string gop;
+
+				private int? audioBitrate;
+
+				private string audioProfile;
+
+				private string audioCodec;
+
+				private int? audioRate;
+
+				private int? audioChannelNum;
+
 				public int? VideoBitrate
 				{
 					get
@@ -182,6 +196,90 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						templateType = value;
+					}
+				}
+
+				public string VideoProfile
+				{
+					get
+					{
+						return videoProfile;
+					}
+					set	
+					{
+						videoProfile = value;
+					}
+				}
+
+				public string Gop
+				{
+					get
+					{
+						return gop;
+					}
+					set	
+					{
+						gop = value;
+					}
+				}
+
+				public int? AudioBitrate
+				{
+					get
+					{
+						return audioBitrate;
+					}
+					set	
+					{
+						audioBitrate = value;
+					}
+				}
+
+				public string AudioProfile
+				{
+					get
+					{
+						return audioProfile;
+					}
+					set	
+					{
+						audioProfile = value;
+					}
+				}
+
+				public string AudioCodec
+				{
+					get
+					{
+						return audioCodec;
+					}
+					set	
+					{
+						audioCodec = value;
+					}
+				}
+
+				public int? AudioRate
+				{
+					get
+					{
+						return audioRate;
+					}
+					set	
+					{
+						audioRate = value;
+					}
+				}
+
+				public int? AudioChannelNum
+				{
+					get
+					{
+						return audioChannelNum;
+					}
+					set	
+					{
+						audioChannelNum = value;
 					}
 				}
 			}

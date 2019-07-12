@@ -41,7 +41,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			for (int i = 0; i < context.Length("DescribeLiveDomainRealTimeBpsData.RealTimeBpsDataPerInterval.Length"); i++) {
 				DescribeLiveDomainRealTimeBpsDataResponse.DescribeLiveDomainRealTimeBpsData_DataModule dataModule = new DescribeLiveDomainRealTimeBpsDataResponse.DescribeLiveDomainRealTimeBpsData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeLiveDomainRealTimeBpsData.RealTimeBpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeLiveDomainRealTimeBpsData.RealTimeBpsDataPerInterval["+ i +"].Value");
+				dataModule._Value = context.StringValue("DescribeLiveDomainRealTimeBpsData.RealTimeBpsDataPerInterval["+ i +"]._Value");
 
 				describeLiveDomainRealTimeBpsDataResponse_realTimeBpsDataPerInterval.Add(dataModule);
 			}

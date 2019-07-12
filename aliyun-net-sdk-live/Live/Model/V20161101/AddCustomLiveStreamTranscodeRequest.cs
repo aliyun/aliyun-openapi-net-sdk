@@ -38,6 +38,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string template;
 
+		private int? audioChannelNum;
+
 		private int? profile;
 
 		private int? fPS;
@@ -45,6 +47,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string gop;
 
 		private long? ownerId;
+
+		private string audioCodec;
+
+		private int? audioRate;
 
 		private string templateType;
 
@@ -55,6 +61,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private int? width;
 
 		private int? videoBitrate;
+
+		private string audioProfile;
 
 		private int? height;
 
@@ -81,6 +89,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				template = value;
 				DictionaryUtil.Add(QueryParameters, "Template", value);
+			}
+		}
+
+		public int? AudioChannelNum
+		{
+			get
+			{
+				return audioChannelNum;
+			}
+			set	
+			{
+				audioChannelNum = value;
+				DictionaryUtil.Add(QueryParameters, "AudioChannelNum", value.ToString());
 			}
 		}
 
@@ -133,6 +154,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AudioCodec
+		{
+			get
+			{
+				return audioCodec;
+			}
+			set	
+			{
+				audioCodec = value;
+				DictionaryUtil.Add(QueryParameters, "AudioCodec", value);
+			}
+		}
+
+		public int? AudioRate
+		{
+			get
+			{
+				return audioRate;
+			}
+			set	
+			{
+				audioRate = value;
+				DictionaryUtil.Add(QueryParameters, "AudioRate", value.ToString());
 			}
 		}
 
@@ -198,6 +245,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				videoBitrate = value;
 				DictionaryUtil.Add(QueryParameters, "VideoBitrate", value.ToString());
+			}
+		}
+
+		public string AudioProfile
+		{
+			get
+			{
+				return audioProfile;
+			}
+			set	
+			{
+				audioProfile = value;
+				DictionaryUtil.Add(QueryParameters, "AudioProfile", value);
 			}
 		}
 

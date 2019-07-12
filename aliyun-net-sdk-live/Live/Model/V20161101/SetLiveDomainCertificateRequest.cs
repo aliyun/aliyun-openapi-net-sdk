@@ -34,7 +34,11 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
+		private string forceSet;
+
 		private string securityToken;
+
+		private string certType;
 
 		private string sSLPub;
 
@@ -48,6 +52,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string sSLPri;
 
+		public string ForceSet
+		{
+			get
+			{
+				return forceSet;
+			}
+			set	
+			{
+				forceSet = value;
+				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
+			}
+		}
+
 		public string SecurityToken
 		{
 			get
@@ -58,6 +75,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string CertType
+		{
+			get
+			{
+				return certType;
+			}
+			set	
+			{
+				certType = value;
+				DictionaryUtil.Add(QueryParameters, "CertType", value);
 			}
 		}
 

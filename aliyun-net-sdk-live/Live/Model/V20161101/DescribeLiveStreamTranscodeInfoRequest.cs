@@ -34,24 +34,9 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
-		private string securityToken;
-
 		private long? ownerId;
 
 		private string domainTranscodeName;
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
 
 		public long? OwnerId
 		{

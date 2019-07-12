@@ -34,17 +34,7 @@ namespace Aliyun.Acs.live.Model.V20161101
         {
         }
 
-		private string streamType;
-
-		private string domainName;
-
-		private string endTime;
-
-		private string orderBy;
-
 		private string startTime;
-
-		private long? ownerId;
 
 		private int? pageNumber;
 
@@ -56,57 +46,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string queryType;
 
-		public string StreamType
-		{
-			get
-			{
-				return streamType;
-			}
-			set	
-			{
-				streamType = value;
-				DictionaryUtil.Add(QueryParameters, "StreamType", value);
-			}
-		}
+		private string streamType;
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+		private string domainName;
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
+		private string endTime;
 
-		public string OrderBy
-		{
-			get
-			{
-				return orderBy;
-			}
-			set	
-			{
-				orderBy = value;
-				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
-			}
-		}
+		private string orderBy;
+
+		private long? ownerId;
 
 		public string StartTime
 		{
@@ -118,19 +66,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -196,6 +131,71 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				queryType = value;
 				DictionaryUtil.Add(QueryParameters, "QueryType", value);
+			}
+		}
+
+		public string StreamType
+		{
+			get
+			{
+				return streamType;
+			}
+			set	
+			{
+				streamType = value;
+				DictionaryUtil.Add(QueryParameters, "StreamType", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string OrderBy
+		{
+			get
+			{
+				return orderBy;
+			}
+			set	
+			{
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

@@ -46,6 +46,13 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				customTranscodeParameters.Height = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Height");
 				customTranscodeParameters.Width = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Width");
 				customTranscodeParameters.TemplateType = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.TemplateType");
+				customTranscodeParameters.VideoProfile = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.VideoProfile");
+				customTranscodeParameters.Gop = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.Gop");
+				customTranscodeParameters.AudioBitrate = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioBitrate");
+				customTranscodeParameters.AudioProfile = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioProfile");
+				customTranscodeParameters.AudioCodec = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioCodec");
+				customTranscodeParameters.AudioRate = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioRate");
+				customTranscodeParameters.AudioChannelNum = context.IntegerValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].CustomTranscodeParameters.AudioChannelNum");
 				domainTranscodeInfo.CustomTranscodeParameters = customTranscodeParameters;
 
 				describeLiveStreamTranscodeInfoResponse_domainTranscodeList.Add(domainTranscodeInfo);
