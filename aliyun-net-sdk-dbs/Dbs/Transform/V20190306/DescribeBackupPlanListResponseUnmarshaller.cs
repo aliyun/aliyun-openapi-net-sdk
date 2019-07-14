@@ -67,6 +67,8 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 				backupPlanDetail.BackupMethod = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupMethod");
 				backupPlanDetail.BackupPlanCreateTime = context.LongValue("DescribeBackupPlanList.Items["+ i +"].BackupPlanCreateTime");
 				backupPlanDetail.BackupPlanStatus = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupPlanStatus");
+				backupPlanDetail.BeginTimestampForRestore = context.LongValue("DescribeBackupPlanList.Items["+ i +"].BeginTimestampForRestore");
+				backupPlanDetail.EndTimestampForRestore = context.LongValue("DescribeBackupPlanList.Items["+ i +"].EndTimestampForRestore");
 
 				describeBackupPlanListResponse_items.Add(backupPlanDetail);
 			}

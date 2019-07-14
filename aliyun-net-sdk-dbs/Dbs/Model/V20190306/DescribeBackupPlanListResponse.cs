@@ -214,6 +214,10 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private string backupPlanStatus;
 
+			private long? beginTimestampForRestore;
+
+			private long? endTimestampForRestore;
+
 			public string BackupPlanId
 			{
 				get
@@ -487,6 +491,30 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					backupPlanStatus = value;
+				}
+			}
+
+			public long? BeginTimestampForRestore
+			{
+				get
+				{
+					return beginTimestampForRestore;
+				}
+				set	
+				{
+					beginTimestampForRestore = value;
+				}
+			}
+
+			public long? EndTimestampForRestore
+			{
+				get
+				{
+					return endTimestampForRestore;
+				}
+				set	
+				{
+					endTimestampForRestore = value;
 				}
 			}
 		}
