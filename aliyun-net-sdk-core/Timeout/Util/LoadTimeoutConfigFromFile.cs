@@ -29,12 +29,30 @@ namespace Aliyun.Acs.Core.Timeout.Util
 {
     internal class LoadTimeoutConfigFromFile
     {
-        private readonly string configFileLocation;
-        private JObject currentJsonData;
+        private readonly JObject currentJsonData;
 
         public LoadTimeoutConfigFromFile(string configFile = "timeout_config.json")
         {
-            configFileLocation = configFile;
+            try
+            {
+                if (currentJsonData == null)
+                {
+                    var currentNamespace = MethodBase.GetCurrentMethod().DeclaringType.Namespace;
+                    var assembly = Assembly.GetExecutingAssembly();
+                    var resourceName = string.Format("{0}.{1}", currentNamespace, configFile);
+
+                    using (var stream = assembly.GetManifestResourceStream(resourceName))
+                    using (var streamReader = new StreamReader(stream))
+                    {
+                        var data = streamReader.ReadToEnd();
+                        currentJsonData = JObject.Parse(data);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw new ClientException("LoadTimeoutJsonFileError", e.ToString());
+            }
         }
 
         public int GetSpecificApiReadTimeoutValue(string product, string version, string actionName)
@@ -44,44 +62,16 @@ namespace Aliyun.Acs.Core.Timeout.Util
                 return 0;
             }
 
-            try
+            var jsonData = currentJsonData;
+
+            if (jsonData[product] == null
+                || jsonData[product][version] == null
+                || jsonData[product][version][actionName] == null)
             {
-                JObject jsonData;
-
-                if (currentJsonData == null)
-                {
-                    var currentNamespace = MethodBase.GetCurrentMethod().DeclaringType.Namespace;
-                    var assembly = Assembly.GetExecutingAssembly();
-
-                    var resourceName = string.Format("{0}.{1}", currentNamespace, configFileLocation);
-
-                    using (var stream = assembly.GetManifestResourceStream(resourceName))
-                    using (var streamReader = new StreamReader(stream))
-                    {
-                        var data = streamReader.ReadToEnd();
-                        jsonData = JObject.Parse(data);
-
-                        currentJsonData = jsonData;
-                    }
-                }
-                else
-                {
-                    jsonData = currentJsonData;
-                }
-
-                if (jsonData[product] == null
-                    || jsonData[product][version] == null
-                    || jsonData[product][version][actionName] == null)
-                {
-                    return 0;
-                }
-
-                return jsonData[product][version][actionName].ToObject<int>() * 1000;
+                return 0;
             }
-            catch (Exception e)
-            {
-                throw new ClientException("LoadJsonFileError", e.ToString());
-            }
+
+            return jsonData[product][version][actionName].ToObject<int>() * 1000;
         }
     }
 }

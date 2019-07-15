@@ -447,14 +447,42 @@ namespace Aliyun.Acs.Core
             var apiReadTimeout = new LoadTimeoutConfigFromFile()
                 .GetSpecificApiReadTimeoutValue(product, version, actionName);
 
-            var finalReadTimeout = request.ReadTimeout > 0 ? request.ReadTimeout :
-                ReadTimeout > 0 ? ReadTimeout :
-                apiReadTimeout > 0 ? apiReadTimeout : 0;
+            int finalReadTimeout;
+
+            if (request.ReadTimeout > 0)
+            {
+                finalReadTimeout = request.ReadTimeout;
+            }
+            else if (ReadTimeout > 0)
+            {
+                finalReadTimeout = ReadTimeout;
+            }
+            else if (apiReadTimeout > 0)
+            {
+                finalReadTimeout = apiReadTimeout;
+            }
+            else
+            {
+                finalReadTimeout = 0;
+            }
 
             request.SetReadTimeoutInMilliSeconds(finalReadTimeout);
 
-            var finalConnectTimeout = request.ConnectTimeout > 0 ? request.ConnectTimeout :
-                ConnectTimeout > 0 ? ConnectTimeout : 0;
+            int finalConnectTimeout;
+
+            if (request.ConnectTimeout > 0)
+            {
+                finalConnectTimeout = request.ConnectTimeout;
+            }
+            else if (ConnectTimeout > 0)
+            {
+                finalConnectTimeout = ConnectTimeout;
+            }
+            else
+            {
+                finalConnectTimeout = 0;
+            }
+
             request.SetConnectTimeoutInMilliSeconds(finalConnectTimeout);
         }
 

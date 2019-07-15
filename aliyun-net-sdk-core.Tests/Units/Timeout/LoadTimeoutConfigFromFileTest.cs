@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
 
@@ -89,13 +90,15 @@ namespace Aliyun.Acs.Core.Tests.Timeout
         [Fact]
         public void TestLoadTimeoutFromFileException()
         {
-            var loadTimeoutConfigFromFile = new LoadTimeoutConfigFromFile("fileNotFound.json");
 
-            Assert.Throws<ClientException>(() =>
+            var exception = Assert.Throws<ClientException>(() =>
             {
+                var loadTimeoutConfigFromFile = new LoadTimeoutConfigFromFile("fileNotFound.json");
                 var apiValue =
                     loadTimeoutConfigFromFile.GetSpecificApiReadTimeoutValue(_product, _version, _actionName);
             });
+
+            Assert.Equal("LoadTimeoutJsonFileError", exception.ErrorCode);
         }
     }
 }
