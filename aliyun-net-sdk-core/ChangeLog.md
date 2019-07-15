@@ -1,3 +1,7 @@
+### 2019-07-08 Version 1.5.1
+* Fix RequestId is empty in exception message
+* Fix content type will null error 
+
 ### 2019-07-03 Version 1.5.0
 * Retry logic refactor
 * Add a common log support Serilog, NLog and log4net
