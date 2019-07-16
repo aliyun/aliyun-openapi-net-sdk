@@ -598,7 +598,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             var httpRequest = new HttpRequest();
             var connectTimeout = 1024;
 
-            object[] resolveTimeoutArgs = { httpRequest };
+            object[] resolveTimeoutArgs = { httpRequest, "ecs", "2014-05-10", "DescribeInstaces" };
             object[] connectTimeoutArgs = { connectTimeout };
 
             var type = typeof(DefaultAcsClient);
@@ -684,7 +684,7 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             var readTimeout = 1024;
 
-            object[] resolveTimeoutArgs = { httpRequest };
+            object[] resolveTimeoutArgs = { httpRequest, "ecs", "2014-05-26", "DescribeInstances" };
             object[] readTimeoutArgs = { readTimeout };
 
             var type = typeof(DefaultAcsClient);
@@ -711,10 +711,20 @@ namespace Aliyun.Acs.Core.Tests.Units
             // Case3: Client read timeout is 0 ms, Request read timeout is 2048 ms
             // Expect: the final read timeout should be 2048 ms
             readTimeout = 0;
-            setReadTimeoutMethodInfo.Invoke(resolveTimeout, readTimeoutArgs);
+            object[] readTimeoutArgs2 = {readTimeout};
+            setReadTimeoutMethodInfo.Invoke(resolveTimeout, readTimeoutArgs2);
             httpRequest.SetReadTimeoutInMilliSeconds(2048);
             resolveTimeoutMethodInfo.Invoke(resolveTimeout, resolveTimeoutArgs);
             Assert.Equal(2048, httpRequest.ReadTimeout);
+
+            // Case4: Client read timeout is 0ms, request read timeout is 0ms,
+            // Expect: the final read timeout should be specific api read timeout value.
+            readTimeout = 0;
+            object[] readTimeoutArgs3 = { readTimeout };
+            setReadTimeoutMethodInfo.Invoke(resolveTimeout, readTimeoutArgs3);
+            httpRequest.SetReadTimeoutInMilliSeconds(0);
+            resolveTimeoutMethodInfo.Invoke(resolveTimeout, resolveTimeoutArgs);
+            Assert.Equal(10000, httpRequest.ReadTimeout);
         }
 
         [Fact]

@@ -33,8 +33,8 @@ using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Reader;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Retry;
-using Aliyun.Acs.Core.Retry.BackoffStrategy;
 using Aliyun.Acs.Core.Retry.Condition;
+using Aliyun.Acs.Core.Timeout.Util;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 
@@ -45,12 +45,12 @@ namespace Aliyun.Acs.Core
         private static readonly HttpWebProxy WebProxy = new HttpWebProxy();
         private readonly IClientProfile clientProfile;
         private readonly AlibabaCloudCredentialsProvider credentialsProvider;
+        private readonly RetryPolicy retryPolicy;
         private readonly UserAgent userAgentConfig = new UserAgent();
 
         private bool autoRetry = true;
 
         private int maxRetryNumber = 3;
-        private readonly RetryPolicy retryPolicy;
 
         public DefaultAcsClient()
         {
@@ -332,7 +332,7 @@ namespace Aliyun.Acs.Core
                     request.Headers["User-Agent"] =
                         UserAgent.Resolve(request.GetSysUserAgentConfig(), userAgentConfig);
                     var httpRequest = request.SignRequest(signer, credentials, format, domain);
-                    ResolveTimeout(httpRequest);
+                    ResolveTimeout(httpRequest, request.Product, request.Version, request.ActionName);
                     SetHttpsInsecure(IgnoreCertificate);
                     ResolveProxy(httpRequest, request);
                     var response = GetResponse(httpRequest);
@@ -442,14 +442,47 @@ namespace Aliyun.Acs.Core
             ReadTimeout = readTimeout;
         }
 
-        private void ResolveTimeout(HttpRequest request)
+        private void ResolveTimeout(HttpRequest request, string product, string version, string actionName)
         {
-            var finalReadTimeout = request.ReadTimeout > 0 ? request.ReadTimeout :
-                ReadTimeout > 0 ? ReadTimeout : 0;
+            var apiReadTimeout = new LoadTimeoutConfigFromFile()
+                .GetSpecificApiReadTimeoutValue(product, version, actionName);
+
+            int finalReadTimeout;
+
+            if (request.ReadTimeout > 0)
+            {
+                finalReadTimeout = request.ReadTimeout;
+            }
+            else if (ReadTimeout > 0)
+            {
+                finalReadTimeout = ReadTimeout;
+            }
+            else if (apiReadTimeout > 0)
+            {
+                finalReadTimeout = apiReadTimeout;
+            }
+            else
+            {
+                finalReadTimeout = 0;
+            }
+
             request.SetReadTimeoutInMilliSeconds(finalReadTimeout);
 
-            var finalConnectTimeout = request.ConnectTimeout > 0 ? request.ConnectTimeout :
-                ConnectTimeout > 0 ? ConnectTimeout : 0;
+            int finalConnectTimeout;
+
+            if (request.ConnectTimeout > 0)
+            {
+                finalConnectTimeout = request.ConnectTimeout;
+            }
+            else if (ConnectTimeout > 0)
+            {
+                finalConnectTimeout = ConnectTimeout;
+            }
+            else
+            {
+                finalConnectTimeout = 0;
+            }
+
             request.SetConnectTimeoutInMilliSeconds(finalConnectTimeout);
         }
 

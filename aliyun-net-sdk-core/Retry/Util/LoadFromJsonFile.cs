@@ -47,6 +47,11 @@ namespace Aliyun.Acs.Core.Retry.Util
         /// <returns>Specific API List</returns>
         public List<string> GetRetryableApiList(string product, string version, string sectionName)
         {
+            if (string.IsNullOrEmpty(product) || string.IsNullOrEmpty(version) || string.IsNullOrEmpty(sectionName))
+            {
+                return null;
+            }
+
             try
             {
                 JObject jsonData;
