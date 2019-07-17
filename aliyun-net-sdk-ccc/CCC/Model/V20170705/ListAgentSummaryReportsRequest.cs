@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class ListAgentSummaryReportsRequest : RpcAcsRequest<ListAgentSummaryReportsResponse>
     {
         public ListAgentSummaryReportsRequest()
-            : base("CCC", "2017-07-05", "ListAgentSummaryReports", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "ListAgentSummaryReports")
         {
         }
 
@@ -47,8 +48,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string startTime;
 
 		private int? pageNumber;
-
-		private string accessKeyId;
 
 		public string AgentIds
 		{
@@ -138,19 +137,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

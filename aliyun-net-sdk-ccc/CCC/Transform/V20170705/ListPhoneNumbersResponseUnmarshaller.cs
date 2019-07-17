@@ -52,6 +52,8 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				phoneNumber.Province = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].Province");
 				phoneNumber.City = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].City");
 				phoneNumber.Assignee = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].Assignee");
+				phoneNumber.NumberCommodityStatus = context.IntegerValue("ListPhoneNumbers.PhoneNumbers["+ i +"].NumberCommodityStatus");
+				phoneNumber.SipTelX = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].SipTelX");
 
 				ListPhoneNumbersResponse.ListPhoneNumbers_PhoneNumber.ListPhoneNumbers_ContactFlow contactFlow = new ListPhoneNumbersResponse.ListPhoneNumbers_PhoneNumber.ListPhoneNumbers_ContactFlow();
 				contactFlow.ContactFlowId = context.StringValue("ListPhoneNumbers.PhoneNumbers["+ i +"].ContactFlow.ContactFlowId");

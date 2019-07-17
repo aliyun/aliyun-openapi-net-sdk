@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class ListSkillGroupSummaryReportsSinceMidnightRequest : RpcAcsRequest<ListSkillGroupSummaryReportsSinceMidnightResponse>
     {
         public ListSkillGroupSummaryReportsSinceMidnightRequest()
-            : base("CCC", "2017-07-05", "ListSkillGroupSummaryReportsSinceMidnight", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "ListSkillGroupSummaryReportsSinceMidnight")
         {
         }
 
@@ -41,8 +42,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private int? pageSize;
 
 		private int? pageNumber;
-
-		private string accessKeyId;
 
 		public string InstanceId
 		{
@@ -93,19 +92,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

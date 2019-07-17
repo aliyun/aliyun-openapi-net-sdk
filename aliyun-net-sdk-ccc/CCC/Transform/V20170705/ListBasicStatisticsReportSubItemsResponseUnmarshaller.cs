@@ -46,7 +46,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			for (int i = 0; i < context.Length("ListBasicStatisticsReportSubItems.SubItems.List.Length"); i++) {
 				ListBasicStatisticsReportSubItemsResponse.ListBasicStatisticsReportSubItems_SubItems.ListBasicStatisticsReportSubItems_BasicStatisticsReportSubItem basicStatisticsReportSubItem = new ListBasicStatisticsReportSubItemsResponse.ListBasicStatisticsReportSubItems_SubItems.ListBasicStatisticsReportSubItems_BasicStatisticsReportSubItem();
 				basicStatisticsReportSubItem.BasicStatisticsReportSubItemName = context.StringValue("ListBasicStatisticsReportSubItems.SubItems.List["+ i +"].BasicStatisticsReportSubItemName");
-				basicStatisticsReportSubItem._Value = context.StringValue("ListBasicStatisticsReportSubItems.SubItems.List["+ i +"].Value");
+				basicStatisticsReportSubItem._Value = context.StringValue("ListBasicStatisticsReportSubItems.SubItems.List["+ i +"]._Value");
 				basicStatisticsReportSubItem.Count = context.IntegerValue("ListBasicStatisticsReportSubItems.SubItems.List["+ i +"].Count");
 				basicStatisticsReportSubItem.Percentage = context.IntegerValue("ListBasicStatisticsReportSubItems.SubItems.List["+ i +"].Percentage");
 
@@ -54,7 +54,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				for (int j = 0; j < context.Length("ListBasicStatisticsReportSubItems.SubItems.List["+ i +"].Row.Length"); j++) {
 					ListBasicStatisticsReportSubItemsResponse.ListBasicStatisticsReportSubItems_SubItems.ListBasicStatisticsReportSubItems_BasicStatisticsReportSubItem.ListBasicStatisticsReportSubItems_KeyValuePair keyValuePair = new ListBasicStatisticsReportSubItemsResponse.ListBasicStatisticsReportSubItems_SubItems.ListBasicStatisticsReportSubItems_BasicStatisticsReportSubItem.ListBasicStatisticsReportSubItems_KeyValuePair();
 					keyValuePair.Key = context.StringValue("ListBasicStatisticsReportSubItems.SubItems.List["+ i +"].Row["+ j +"].Key");
-					keyValuePair._Value = context.StringValue("ListBasicStatisticsReportSubItems.SubItems.List["+ i +"].Row["+ j +"].Value");
+					keyValuePair._Value = context.StringValue("ListBasicStatisticsReportSubItems.SubItems.List["+ i +"].Row["+ j +"]._Value");
 
 					basicStatisticsReportSubItem_row.Add(keyValuePair);
 				}

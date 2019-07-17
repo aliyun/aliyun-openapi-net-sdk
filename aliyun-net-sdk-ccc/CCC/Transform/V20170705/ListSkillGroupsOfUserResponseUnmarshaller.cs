@@ -48,6 +48,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				skill.InstanceId = context.StringValue("ListSkillGroupsOfUser.SkillLevels["+ i +"].Skill.InstanceId");
 				skill.SkillGroupName = context.StringValue("ListSkillGroupsOfUser.SkillLevels["+ i +"].Skill.SkillGroupName");
 				skill.SkillGroupDescription = context.StringValue("ListSkillGroupsOfUser.SkillLevels["+ i +"].Skill.SkillGroupDescription");
+				skill.RoutingStrategy = context.StringValue("ListSkillGroupsOfUser.SkillLevels["+ i +"].Skill.RoutingStrategy");
 
 				List<ListSkillGroupsOfUserResponse.ListSkillGroupsOfUser_SkillLevel.ListSkillGroupsOfUser_Skill.ListSkillGroupsOfUser_PhoneNumber> skill_outboundPhoneNumbers = new List<ListSkillGroupsOfUserResponse.ListSkillGroupsOfUser_SkillLevel.ListSkillGroupsOfUser_Skill.ListSkillGroupsOfUser_PhoneNumber>();
 				for (int j = 0; j < context.Length("ListSkillGroupsOfUser.SkillLevels["+ i +"].Skill.OutboundPhoneNumbers.Length"); j++) {

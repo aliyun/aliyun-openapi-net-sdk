@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class ModifyUserRequest : RpcAcsRequest<ModifyUserResponse>
     {
         public ModifyUserRequest()
-            : base("CCC", "2017-07-05", "ModifyUser", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "ModifyUser")
         {
         }
 
@@ -51,8 +52,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string userId;
 
 		private string email;
-
-		private string accessKeyId;
 
 		public string PrivateOutboundNumberId
 		{
@@ -180,19 +179,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				email = value;
 				DictionaryUtil.Add(QueryParameters, "Email", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

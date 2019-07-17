@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,15 +31,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class GetSmsConfigRequest : RpcAcsRequest<GetSmsConfigResponse>
     {
         public GetSmsConfigRequest()
-            : base("CCC", "2017-07-05", "GetSmsConfig", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "GetSmsConfig")
         {
         }
 
 		private string instanceId;
 
 		private List<int?> scenarios;
-
-		private string accessKeyId;
 
 		public string InstanceId
 		{
@@ -67,19 +66,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"Scenario." + (i + 1) , scenarios[i]);
 				}
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

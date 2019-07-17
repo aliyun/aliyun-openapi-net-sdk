@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,25 +31,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class ListAgentEventsRequest : RpcAcsRequest<ListAgentEventsResponse>
     {
         public ListAgentEventsRequest()
-            : base("CCC", "2017-07-05", "ListAgentEvents", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "ListAgentEvents")
         {
         }
 
 		private string instanceId;
 
-		private int? pageSize;
-
 		private long? startTime;
 
 		private long? stopTime;
 
-		private string _event;
+		private List<string> _events;
 
-		private long? ramId;
-
-		private int? pageNumber;
-
-		private string accessKeyId;
+		private List<string> ramIds;
 
 		public string InstanceId
 		{
@@ -60,19 +55,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -102,55 +84,37 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string _Event
+		public List<string> _Events
 		{
 			get
 			{
-				return _event;
+				return _events;
 			}
-			set	
+
+			set
 			{
-				_event = value;
-				DictionaryUtil.Add(QueryParameters, "Event", value);
+				_events = value;
+				for (int i = 0; i < _events.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Event." + (i + 1) , _events[i]);
+				}
 			}
 		}
 
-		public long? RamId
+		public List<string> RamIds
 		{
 			get
 			{
-				return ramId;
+				return ramIds;
 			}
-			set	
-			{
-				ramId = value;
-				DictionaryUtil.Add(QueryParameters, "RamId", value.ToString());
-			}
-		}
 
-		public int? PageNumber
-		{
-			get
+			set
 			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				ramIds = value;
+				for (int i = 0; i < ramIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"RamId." + (i + 1) , ramIds[i]);
+				}
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,9 +31,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class CreateInstanceRequest : RpcAcsRequest<CreateInstanceResponse>
     {
         public CreateInstanceRequest()
-            : base("CCC", "2017-07-05", "CreateInstance", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "CreateInstance")
         {
         }
+
+		private List<string> phoneNumberss;
 
 		private List<string> userObjects;
 
@@ -40,7 +43,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string domainName;
 
-		private List<string> phoneNumbers;
+		private string phoneNumber;
 
 		private string description;
 
@@ -52,7 +55,22 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private List<string> adminRamIds;
 
-		private string accessKeyId;
+		public List<string> PhoneNumberss
+		{
+			get
+			{
+				return phoneNumberss;
+			}
+
+			set
+			{
+				phoneNumberss = value;
+				for (int i = 0; i < phoneNumberss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"PhoneNumbers." + (i + 1) , phoneNumberss[i]);
+				}
+			}
+		}
 
 		public List<string> UserObjects
 		{
@@ -97,20 +115,16 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<string> PhoneNumbers
+		public string PhoneNumber
 		{
 			get
 			{
-				return phoneNumbers;
+				return phoneNumber;
 			}
-
-			set
+			set	
 			{
-				phoneNumbers = value;
-				for (int i = 0; i < phoneNumbers.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"PhoneNumber." + (i + 1) , phoneNumbers[i]);
-				}
+				phoneNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
 			}
 		}
 
@@ -180,19 +194,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"AdminRamId." + (i + 1) , adminRamIds[i]);
 				}
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

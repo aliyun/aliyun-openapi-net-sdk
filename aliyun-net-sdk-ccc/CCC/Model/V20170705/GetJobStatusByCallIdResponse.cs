@@ -457,6 +457,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private long? actualTime;
 
+				private long? endTime;
+
 				private string callingNumber;
 
 				private string calledNumber;
@@ -542,6 +544,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						actualTime = value;
+					}
+				}
+
+				public long? EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
 					}
 				}
 

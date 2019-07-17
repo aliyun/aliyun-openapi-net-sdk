@@ -81,7 +81,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				for (int j = 0; j < context.Length("ListJobsByGroup.Jobs.List["+ i +"].Extras.Length"); j++) {
 					ListJobsByGroupResponse.ListJobsByGroup_Jobs.ListJobsByGroup_Job.ListJobsByGroup_KeyValuePair keyValuePair = new ListJobsByGroupResponse.ListJobsByGroup_Jobs.ListJobsByGroup_Job.ListJobsByGroup_KeyValuePair();
 					keyValuePair.Key = context.StringValue("ListJobsByGroup.Jobs.List["+ i +"].Extras["+ j +"].Key");
-					keyValuePair._Value = context.StringValue("ListJobsByGroup.Jobs.List["+ i +"].Extras["+ j +"].Value");
+					keyValuePair._Value = context.StringValue("ListJobsByGroup.Jobs.List["+ i +"].Extras["+ j +"]._Value");
 
 					job_extras.Add(keyValuePair);
 				}

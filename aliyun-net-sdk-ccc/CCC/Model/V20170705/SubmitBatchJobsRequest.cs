@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class SubmitBatchJobsRequest : RpcAcsRequest<SubmitBatchJobsResponse>
     {
         public SubmitBatchJobsRequest()
-            : base("CCC", "2017-07-05", "SubmitBatchJobs", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "SubmitBatchJobs")
         {
         }
 

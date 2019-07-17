@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class SimpleDialRequest : RpcAcsRequest<SimpleDialResponse>
     {
         public SimpleDialRequest()
-            : base("CCC", "2017-07-05", "SimpleDial", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "SimpleDial")
         {
         }
 
@@ -41,8 +42,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string contractFlowId;
 
 		private string callee;
-
-		private string accessKeyId;
 
 		public string Caller
 		{
@@ -93,19 +92,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				callee = value;
 				DictionaryUtil.Add(QueryParameters, "Callee", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class RemoveUsersFromSkillGroupRequest : RpcAcsRequest<RemoveUsersFromSkillGroupResponse>
     {
         public RemoveUsersFromSkillGroupRequest()
-            : base("CCC", "2017-07-05", "RemoveUsersFromSkillGroup", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "RemoveUsersFromSkillGroup")
         {
         }
 
@@ -39,8 +40,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string skillGroupId;
 
 		private List<string> userIds;
-
-		private string accessKeyId;
 
 		public string InstanceId
 		{
@@ -82,19 +81,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"UserId." + (i + 1) , userIds[i]);
 				}
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

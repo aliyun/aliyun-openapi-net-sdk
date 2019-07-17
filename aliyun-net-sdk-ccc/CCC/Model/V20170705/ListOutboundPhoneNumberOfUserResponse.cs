@@ -136,6 +136,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 			private bool? privateFlag;
 
+			private string sipTelX;
+
 			private ListOutboundPhoneNumberOfUser_PrivacyNumber privacyNumber;
 
 			public string PhoneNumberId
@@ -282,6 +284,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				}
 			}
 
+			public string SipTelX
+			{
+				get
+				{
+					return sipTelX;
+				}
+				set	
+				{
+					sipTelX = value;
+				}
+			}
+
 			public ListOutboundPhoneNumberOfUser_PrivacyNumber PrivacyNumber
 			{
 				get
@@ -312,6 +326,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				private string bizId;
 
 				private string subId;
+
+				private string regionNameCity;
 
 				public string PoolId
 				{
@@ -406,6 +422,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						subId = value;
+					}
+				}
+
+				public string RegionNameCity
+				{
+					get
+					{
+						return regionNameCity;
+					}
+					set	
+					{
+						regionNameCity = value;
 					}
 				}
 			}

@@ -57,7 +57,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				callDetailRecord.SkillGroupNames = context.StringValue("ListRecentCallRecords.CallDetailRecords.List["+ i +"].SkillGroupNames");
 				callDetailRecord.InstanceId = context.StringValue("ListRecentCallRecords.CallDetailRecords.List["+ i +"].InstanceId");
 				callDetailRecord.ExtraAttr = context.StringValue("ListRecentCallRecords.CallDetailRecords.List["+ i +"].ExtraAttr");
-				callDetailRecord.ExtraAttr1 = context.StringValue("ListRecentCallRecords.CallDetailRecords.List["+ i +"].ExtraAttr");
+				callDetailRecord.ExtraAttr1 = context.StringValue("ListRecentCallRecords.CallDetailRecords.List["+ i +"].ExtraAttr1");
 				callDetailRecord.SatisfactionDesc = context.StringValue("ListRecentCallRecords.CallDetailRecords.List["+ i +"].SatisfactionDesc");
 				callDetailRecord.Feedback = context.StringValue("ListRecentCallRecords.CallDetailRecords.List["+ i +"].Feedback");
 

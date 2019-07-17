@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,15 +31,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class DeleteSkillGroupRequest : RpcAcsRequest<DeleteSkillGroupResponse>
     {
         public DeleteSkillGroupRequest()
-            : base("CCC", "2017-07-05", "DeleteSkillGroup", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "DeleteSkillGroup")
         {
         }
 
 		private string instanceId;
 
 		private string skillGroupId;
-
-		private string accessKeyId;
 
 		public string InstanceId
 		{
@@ -63,19 +62,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				skillGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

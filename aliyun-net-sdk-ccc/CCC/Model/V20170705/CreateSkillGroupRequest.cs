@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class CreateSkillGroupRequest : RpcAcsRequest<CreateSkillGroupResponse>
     {
         public CreateSkillGroupRequest()
-            : base("CCC", "2017-07-05", "CreateSkillGroup", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "CreateSkillGroup")
         {
         }
 
@@ -38,15 +39,17 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string instanceId;
 
+		private bool? allowPrivateOutboundNumber;
+
 		private List<string> outboundPhoneNumberIds;
 
 		private string name;
 
 		private string description;
 
-		private List<string> userIds;
+		private string routingStrategy;
 
-		private string accessKeyId;
+		private List<string> userIds;
 
 		public List<int?> SkillLevels
 		{
@@ -75,6 +78,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? AllowPrivateOutboundNumber
+		{
+			get
+			{
+				return allowPrivateOutboundNumber;
+			}
+			set	
+			{
+				allowPrivateOutboundNumber = value;
+				DictionaryUtil.Add(QueryParameters, "AllowPrivateOutboundNumber", value.ToString());
 			}
 		}
 
@@ -121,6 +137,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
+		public string RoutingStrategy
+		{
+			get
+			{
+				return routingStrategy;
+			}
+			set	
+			{
+				routingStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "RoutingStrategy", value);
+			}
+		}
+
 		public List<string> UserIds
 		{
 			get
@@ -135,19 +164,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"UserId." + (i + 1) , userIds[i]);
 				}
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

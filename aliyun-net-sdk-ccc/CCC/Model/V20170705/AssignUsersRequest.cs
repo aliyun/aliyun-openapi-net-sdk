@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class AssignUsersRequest : RpcAcsRequest<AssignUsersResponse>
     {
         public AssignUsersRequest()
-            : base("CCC", "2017-07-05", "AssignUsers", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "AssignUsers")
         {
         }
 
@@ -43,8 +44,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private List<string> roleIds;
 
 		private List<string> skillGroupIds;
-
-		private string accessKeyId;
 
 		public List<string> UserRamIds
 		{
@@ -124,19 +123,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"SkillGroupId." + (i + 1) , skillGroupIds[i]);
 				}
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

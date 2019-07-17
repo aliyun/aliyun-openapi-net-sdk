@@ -73,7 +73,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			for (int i = 0; i < context.Length("GetJobStatusByCallId.Job.Extras.Length"); i++) {
 				GetJobStatusByCallIdResponse.GetJobStatusByCallId_Job.GetJobStatusByCallId_KeyValuePair keyValuePair = new GetJobStatusByCallIdResponse.GetJobStatusByCallId_Job.GetJobStatusByCallId_KeyValuePair();
 				keyValuePair.Key = context.StringValue("GetJobStatusByCallId.Job.Extras["+ i +"].Key");
-				keyValuePair._Value = context.StringValue("GetJobStatusByCallId.Job.Extras["+ i +"].Value");
+				keyValuePair._Value = context.StringValue("GetJobStatusByCallId.Job.Extras["+ i +"]._Value");
 
 				job_extras.Add(keyValuePair);
 			}
@@ -88,6 +88,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				task.ChatbotId = context.StringValue("GetJobStatusByCallId.Job.Tasks["+ i +"].ChatbotId");
 				task.PlanedTime = context.LongValue("GetJobStatusByCallId.Job.Tasks["+ i +"].PlanedTime");
 				task.ActualTime = context.LongValue("GetJobStatusByCallId.Job.Tasks["+ i +"].ActualTime");
+				task.EndTime = context.LongValue("GetJobStatusByCallId.Job.Tasks["+ i +"].EndTime");
 				task.CallingNumber = context.StringValue("GetJobStatusByCallId.Job.Tasks["+ i +"].CallingNumber");
 				task.CalledNumber = context.StringValue("GetJobStatusByCallId.Job.Tasks["+ i +"].CalledNumber");
 				task.CallId = context.StringValue("GetJobStatusByCallId.Job.Tasks["+ i +"].CallId");

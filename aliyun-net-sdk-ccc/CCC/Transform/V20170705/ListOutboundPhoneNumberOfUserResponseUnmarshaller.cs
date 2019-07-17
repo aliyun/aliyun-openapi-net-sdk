@@ -52,6 +52,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				phoneNumber.City = context.StringValue("ListOutboundPhoneNumberOfUser.OutboundPhoneNumbers["+ i +"].City");
 				phoneNumber.Province = context.StringValue("ListOutboundPhoneNumberOfUser.OutboundPhoneNumbers["+ i +"].Province");
 				phoneNumber.PrivateFlag = context.BooleanValue("ListOutboundPhoneNumberOfUser.OutboundPhoneNumbers["+ i +"].PrivateFlag");
+				phoneNumber.SipTelX = context.StringValue("ListOutboundPhoneNumberOfUser.OutboundPhoneNumbers["+ i +"].SipTelX");
 
 				ListOutboundPhoneNumberOfUserResponse.ListOutboundPhoneNumberOfUser_PhoneNumber.ListOutboundPhoneNumberOfUser_PrivacyNumber privacyNumber = new ListOutboundPhoneNumberOfUserResponse.ListOutboundPhoneNumberOfUser_PhoneNumber.ListOutboundPhoneNumberOfUser_PrivacyNumber();
 				privacyNumber.PoolId = context.StringValue("ListOutboundPhoneNumberOfUser.OutboundPhoneNumbers["+ i +"].PrivacyNumber.PoolId");
@@ -62,6 +63,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				privacyNumber.Extra = context.StringValue("ListOutboundPhoneNumberOfUser.OutboundPhoneNumbers["+ i +"].PrivacyNumber.Extra");
 				privacyNumber.BizId = context.StringValue("ListOutboundPhoneNumberOfUser.OutboundPhoneNumbers["+ i +"].PrivacyNumber.BizId");
 				privacyNumber.SubId = context.StringValue("ListOutboundPhoneNumberOfUser.OutboundPhoneNumbers["+ i +"].PrivacyNumber.SubId");
+				privacyNumber.RegionNameCity = context.StringValue("ListOutboundPhoneNumberOfUser.OutboundPhoneNumbers["+ i +"].PrivacyNumber.RegionNameCity");
 				phoneNumber.PrivacyNumber = privacyNumber;
 
 				listOutboundPhoneNumberOfUserResponse_outboundPhoneNumbers.Add(phoneNumber);

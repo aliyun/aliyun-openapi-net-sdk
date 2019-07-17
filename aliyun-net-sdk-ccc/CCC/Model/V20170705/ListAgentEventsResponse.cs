@@ -35,7 +35,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? httpStatusCode;
 
-		private ListAgentEvents_Data data;
+		private List<ListAgentEvents_AgentEvent> agentEventList;
 
 		public string RequestId
 		{
@@ -97,193 +97,133 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public ListAgentEvents_Data Data
+		public List<ListAgentEvents_AgentEvent> AgentEventList
 		{
 			get
 			{
-				return data;
+				return agentEventList;
 			}
 			set	
 			{
-				data = value;
+				agentEventList = value;
 			}
 		}
 
-		public class ListAgentEvents_Data
+		public class ListAgentEvents_AgentEvent
 		{
 
-			private int? totalCount;
+			private string instanceId;
 
-			private int? pageNumber;
+			private long? ramId;
 
-			private int? pageSize;
+			private string loginName;
 
-			private List<ListAgentEvents_AgentEvent> list;
+			private string _event;
 
-			public int? TotalCount
+			private long? eventTime;
+
+			private List<ListAgentEvents_SkillGroup> skillGroupIds;
+
+			public string InstanceId
 			{
 				get
 				{
-					return totalCount;
+					return instanceId;
 				}
 				set	
 				{
-					totalCount = value;
+					instanceId = value;
 				}
 			}
 
-			public int? PageNumber
+			public long? RamId
 			{
 				get
 				{
-					return pageNumber;
+					return ramId;
 				}
 				set	
 				{
-					pageNumber = value;
+					ramId = value;
 				}
 			}
 
-			public int? PageSize
+			public string LoginName
 			{
 				get
 				{
-					return pageSize;
+					return loginName;
 				}
 				set	
 				{
-					pageSize = value;
+					loginName = value;
 				}
 			}
 
-			public List<ListAgentEvents_AgentEvent> List
+			public string _Event
 			{
 				get
 				{
-					return list;
+					return _event;
 				}
 				set	
 				{
-					list = value;
+					_event = value;
 				}
 			}
 
-			public class ListAgentEvents_AgentEvent
+			public long? EventTime
+			{
+				get
+				{
+					return eventTime;
+				}
+				set	
+				{
+					eventTime = value;
+				}
+			}
+
+			public List<ListAgentEvents_SkillGroup> SkillGroupIds
+			{
+				get
+				{
+					return skillGroupIds;
+				}
+				set	
+				{
+					skillGroupIds = value;
+				}
+			}
+
+			public class ListAgentEvents_SkillGroup
 			{
 
-				private string instanceId;
+				private string skillGroupId;
 
-				private long? ramId;
+				private string skillGroupName;
 
-				private string loginName;
-
-				private string _event;
-
-				private long? eventTime;
-
-				private List<ListAgentEvents_SkillGroup> skillGroupIds;
-
-				public string InstanceId
+				public string SkillGroupId
 				{
 					get
 					{
-						return instanceId;
+						return skillGroupId;
 					}
 					set	
 					{
-						instanceId = value;
+						skillGroupId = value;
 					}
 				}
 
-				public long? RamId
+				public string SkillGroupName
 				{
 					get
 					{
-						return ramId;
+						return skillGroupName;
 					}
 					set	
 					{
-						ramId = value;
-					}
-				}
-
-				public string LoginName
-				{
-					get
-					{
-						return loginName;
-					}
-					set	
-					{
-						loginName = value;
-					}
-				}
-
-				public string _Event
-				{
-					get
-					{
-						return _event;
-					}
-					set	
-					{
-						_event = value;
-					}
-				}
-
-				public long? EventTime
-				{
-					get
-					{
-						return eventTime;
-					}
-					set	
-					{
-						eventTime = value;
-					}
-				}
-
-				public List<ListAgentEvents_SkillGroup> SkillGroupIds
-				{
-					get
-					{
-						return skillGroupIds;
-					}
-					set	
-					{
-						skillGroupIds = value;
-					}
-				}
-
-				public class ListAgentEvents_SkillGroup
-				{
-
-					private string skillGroupId;
-
-					private string skillGroupName;
-
-					public string SkillGroupId
-					{
-						get
-						{
-							return skillGroupId;
-						}
-						set	
-						{
-							skillGroupId = value;
-						}
-					}
-
-					public string SkillGroupName
-					{
-						get
-						{
-							return skillGroupName;
-						}
-						set	
-						{
-							skillGroupName = value;
-						}
+						skillGroupName = value;
 					}
 				}
 			}

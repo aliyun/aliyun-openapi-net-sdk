@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class ModifySkillGroupRequest : RpcAcsRequest<ModifySkillGroupResponse>
     {
         public ModifySkillGroupRequest()
-            : base("CCC", "2017-07-05", "ModifySkillGroup", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "ModifySkillGroup")
         {
         }
 
@@ -48,9 +49,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string description;
 
-		private List<string> userIds;
+		private string routingStrategy;
 
-		private string accessKeyId;
+		private List<string> userIds;
 
 		public List<int?> SkillLevels
 		{
@@ -151,6 +152,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
+		public string RoutingStrategy
+		{
+			get
+			{
+				return routingStrategy;
+			}
+			set	
+			{
+				routingStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "RoutingStrategy", value);
+			}
+		}
+
 		public List<string> UserIds
 		{
 			get
@@ -165,19 +179,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"UserId." + (i + 1) , userIds[i]);
 				}
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -532,6 +532,24 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 					private long? satisfactionSurveysResponded;
 
+					private long? inComingQueueOfQueueCount;
+
+					private long? answeredByAgentOfQueueCount;
+
+					private long? giveUpByAgentOfQueueCount;
+
+					private long? abandonedInQueueOfQueueCount;
+
+					private long? overFlowInQueueOfQueueCount;
+
+					private long? queueWaitTimeDuration;
+
+					private long? answeredByAgentOfQueueWaitTimeDuration;
+
+					private long? queueMaxWaitTimeDuration;
+
+					private long? answeredByAgentOfQueueMaxWaitTimeDuration;
+
 					public long? CallsOffered
 					{
 						get
@@ -721,6 +739,114 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 						set	
 						{
 							satisfactionSurveysResponded = value;
+						}
+					}
+
+					public long? InComingQueueOfQueueCount
+					{
+						get
+						{
+							return inComingQueueOfQueueCount;
+						}
+						set	
+						{
+							inComingQueueOfQueueCount = value;
+						}
+					}
+
+					public long? AnsweredByAgentOfQueueCount
+					{
+						get
+						{
+							return answeredByAgentOfQueueCount;
+						}
+						set	
+						{
+							answeredByAgentOfQueueCount = value;
+						}
+					}
+
+					public long? GiveUpByAgentOfQueueCount
+					{
+						get
+						{
+							return giveUpByAgentOfQueueCount;
+						}
+						set	
+						{
+							giveUpByAgentOfQueueCount = value;
+						}
+					}
+
+					public long? AbandonedInQueueOfQueueCount
+					{
+						get
+						{
+							return abandonedInQueueOfQueueCount;
+						}
+						set	
+						{
+							abandonedInQueueOfQueueCount = value;
+						}
+					}
+
+					public long? OverFlowInQueueOfQueueCount
+					{
+						get
+						{
+							return overFlowInQueueOfQueueCount;
+						}
+						set	
+						{
+							overFlowInQueueOfQueueCount = value;
+						}
+					}
+
+					public long? QueueWaitTimeDuration
+					{
+						get
+						{
+							return queueWaitTimeDuration;
+						}
+						set	
+						{
+							queueWaitTimeDuration = value;
+						}
+					}
+
+					public long? AnsweredByAgentOfQueueWaitTimeDuration
+					{
+						get
+						{
+							return answeredByAgentOfQueueWaitTimeDuration;
+						}
+						set	
+						{
+							answeredByAgentOfQueueWaitTimeDuration = value;
+						}
+					}
+
+					public long? QueueMaxWaitTimeDuration
+					{
+						get
+						{
+							return queueMaxWaitTimeDuration;
+						}
+						set	
+						{
+							queueMaxWaitTimeDuration = value;
+						}
+					}
+
+					public long? AnsweredByAgentOfQueueMaxWaitTimeDuration
+					{
+						get
+						{
+							return answeredByAgentOfQueueMaxWaitTimeDuration;
+						}
+						set	
+						{
+							answeredByAgentOfQueueMaxWaitTimeDuration = value;
 						}
 					}
 				}

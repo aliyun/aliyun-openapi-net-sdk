@@ -46,6 +46,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				skillGroup.AccSkillGroupName = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].AccSkillGroupName");
 				skillGroup.AccQueueName = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].AccQueueName");
 				skillGroup.SkillGroupDescription = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].SkillGroupDescription");
+				skillGroup.RoutingStrategy = context.StringValue("ListSkillGroups.SkillGroups["+ i +"].RoutingStrategy");
 				skillGroup.UserCount = context.IntegerValue("ListSkillGroups.SkillGroups["+ i +"].UserCount");
 
 				List<ListSkillGroupsResponse.ListSkillGroups_SkillGroup.ListSkillGroups_PhoneNumber> skillGroup_outboundPhoneNumbers = new List<ListSkillGroupsResponse.ListSkillGroups_SkillGroup.ListSkillGroups_PhoneNumber>();

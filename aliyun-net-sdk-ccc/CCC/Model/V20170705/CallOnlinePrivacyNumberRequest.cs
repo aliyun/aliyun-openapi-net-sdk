@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class CallOnlinePrivacyNumberRequest : RpcAcsRequest<CallOnlinePrivacyNumberResponse>
     {
         public CallOnlinePrivacyNumberRequest()
-            : base("CCC", "2017-07-05", "CallOnlinePrivacyNumber", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "CallOnlinePrivacyNumber")
         {
         }
 
@@ -39,8 +40,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string telB;
 
 		private string instanceId;
-
-		private string accessKeyId;
 
 		public string TelA
 		{
@@ -78,19 +77,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

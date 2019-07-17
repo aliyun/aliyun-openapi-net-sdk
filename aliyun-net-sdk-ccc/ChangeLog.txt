@@ -1,3 +1,5 @@
+2019-07-17 Version 1.0.18
+- Add a lot of new API.
 2019-03-27 Version: 1.0.9
 1, This is an example of release-log.
 2, Please strictly follow this format to edit in English.

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class TwoPartiesCallRequest : RpcAcsRequest<TwoPartiesCallResponse>
     {
         public TwoPartiesCallRequest()
-            : base("CCC", "2017-07-05", "TwoPartiesCall", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "TwoPartiesCall")
         {
         }
 
@@ -39,8 +40,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string instanceId;
 
 		private string calleeCustomer;
-
-		private string accessKeyId;
 
 		private string calleeAgent;
 
@@ -80,19 +79,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				calleeCustomer = value;
 				DictionaryUtil.Add(QueryParameters, "CalleeCustomer", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -136,6 +136,10 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 			private string assignee;
 
+			private int? numberCommodityStatus;
+
+			private string sipTelX;
+
 			private List<ListPhoneNumbers_SkillGroup> skillGroups;
 
 			private ListPhoneNumbers_ContactFlow contactFlow;
@@ -283,6 +287,30 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				set	
 				{
 					assignee = value;
+				}
+			}
+
+			public int? NumberCommodityStatus
+			{
+				get
+				{
+					return numberCommodityStatus;
+				}
+				set	
+				{
+					numberCommodityStatus = value;
+				}
+			}
+
+			public string SipTelX
+			{
+				get
+				{
+					return sipTelX;
+				}
+				set	
+				{
+					sipTelX = value;
 				}
 			}
 

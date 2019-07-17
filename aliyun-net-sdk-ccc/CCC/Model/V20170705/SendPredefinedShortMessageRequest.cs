@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class SendPredefinedShortMessageRequest : RpcAcsRequest<SendPredefinedShortMessageResponse>
     {
         public SendPredefinedShortMessageRequest()
-            : base("CCC", "2017-07-05", "SendPredefinedShortMessage", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "SendPredefinedShortMessage")
         {
         }
 
@@ -39,8 +40,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string phoneNumbers;
 
 		private long? configId;
-
-		private string accessKeyId;
 
 		private string templateParam;
 
@@ -80,19 +79,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				configId = value;
 				DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

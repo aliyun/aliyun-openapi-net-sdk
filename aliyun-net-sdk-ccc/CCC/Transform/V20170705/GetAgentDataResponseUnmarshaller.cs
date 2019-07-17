@@ -97,7 +97,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				outbound.CallsAnswered = context.LongValue("GetAgentData.DataList.List["+ i +"].Outbound.CallsAnswered");
 				outbound.AnswerRate = context.FloatValue("GetAgentData.DataList.List["+ i +"].Outbound.AnswerRate");
 				outbound.TotalDialingTime = context.LongValue("GetAgentData.DataList.List["+ i +"].Outbound.TotalDialingTime");
-				outbound.TotalDialingTime1 = context.LongValue("GetAgentData.DataList.List["+ i +"].Outbound.TotalDialingTime");
+				outbound.TotalDialingTime1 = context.LongValue("GetAgentData.DataList.List["+ i +"].Outbound.TotalDialingTime1");
 				outbound.MaxDialingTime = context.LongValue("GetAgentData.DataList.List["+ i +"].Outbound.MaxDialingTime");
 				outbound.AverageDialingTime = context.LongValue("GetAgentData.DataList.List["+ i +"].Outbound.AverageDialingTime");
 				generateAgentStatistic.Outbound = outbound;

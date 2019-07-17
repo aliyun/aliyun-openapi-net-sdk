@@ -39,7 +39,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 
 			GetConfigResponse.GetConfig_ConfigItem configItem = new GetConfigResponse.GetConfig_ConfigItem();
 			configItem.Name = context.StringValue("GetConfig.ConfigItem.Name");
-			configItem._Value = context.StringValue("GetConfig.ConfigItem.Value");
+			configItem._Value = context.StringValue("GetConfig.ConfigItem._Value");
 			getConfigResponse.ConfigItem = configItem;
         
 			return getConfigResponse;

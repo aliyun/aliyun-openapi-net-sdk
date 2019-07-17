@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CCC;
 using Aliyun.Acs.CCC.Transform;
 using Aliyun.Acs.CCC.Transform.V20170705;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
     public class AddBulkPhoneNumbersRequest : RpcAcsRequest<AddBulkPhoneNumbersResponse>
     {
         public AddBulkPhoneNumbersRequest()
-            : base("CCC", "2017-07-05", "AddBulkPhoneNumbers", "ccc", "openAPI")
+            : base("CCC", "2017-07-05", "AddBulkPhoneNumbers")
         {
         }
 
@@ -43,8 +44,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private List<string> skillGroupIds;
 
 		private List<string> phoneNumbers;
-
-		private string accessKeyId;
 
 		public string ContactFlowId
 		{
@@ -116,19 +115,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"PhoneNumber." + (i + 1) , phoneNumbers[i]);
 				}
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

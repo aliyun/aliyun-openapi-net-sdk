@@ -165,6 +165,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private string skillGroupDescription;
 
+				private string routingStrategy;
+
 				private List<ListSkillGroupsOfUser_PhoneNumber> outboundPhoneNumbers;
 
 				public string SkillGroupId
@@ -212,6 +214,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						skillGroupDescription = value;
+					}
+				}
+
+				public string RoutingStrategy
+				{
+					get
+					{
+						return routingStrategy;
+					}
+					set	
+					{
+						routingStrategy = value;
 					}
 				}
 

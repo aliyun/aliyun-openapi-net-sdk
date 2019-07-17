@@ -85,6 +85,15 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				inbound.SatisfactionIndex = context.FloatValue("ListSkillGroupSummaryReports.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.SatisfactionIndex");
 				inbound.SatisfactionSurveysOffered = context.LongValue("ListSkillGroupSummaryReports.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.SatisfactionSurveysOffered");
 				inbound.SatisfactionSurveysResponded = context.LongValue("ListSkillGroupSummaryReports.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.SatisfactionSurveysResponded");
+				inbound.InComingQueueOfQueueCount = context.LongValue("ListSkillGroupSummaryReports.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.InComingQueueOfQueueCount");
+				inbound.AnsweredByAgentOfQueueCount = context.LongValue("ListSkillGroupSummaryReports.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.AnsweredByAgentOfQueueCount");
+				inbound.GiveUpByAgentOfQueueCount = context.LongValue("ListSkillGroupSummaryReports.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.GiveUpByAgentOfQueueCount");
+				inbound.AbandonedInQueueOfQueueCount = context.LongValue("ListSkillGroupSummaryReports.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.AbandonedInQueueOfQueueCount");
+				inbound.OverFlowInQueueOfQueueCount = context.LongValue("ListSkillGroupSummaryReports.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.OverFlowInQueueOfQueueCount");
+				inbound.QueueWaitTimeDuration = context.LongValue("ListSkillGroupSummaryReports.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.QueueWaitTimeDuration");
+				inbound.AnsweredByAgentOfQueueWaitTimeDuration = context.LongValue("ListSkillGroupSummaryReports.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.AnsweredByAgentOfQueueWaitTimeDuration");
+				inbound.QueueMaxWaitTimeDuration = context.LongValue("ListSkillGroupSummaryReports.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.QueueMaxWaitTimeDuration");
+				inbound.AnsweredByAgentOfQueueMaxWaitTimeDuration = context.LongValue("ListSkillGroupSummaryReports.PagedSkillGroupSummaryReport.List["+ i +"].Inbound.AnsweredByAgentOfQueueMaxWaitTimeDuration");
 				skillGroupSummaryReport.Inbound = inbound;
 
 				ListSkillGroupSummaryReportsResponse.ListSkillGroupSummaryReports_PagedSkillGroupSummaryReport.ListSkillGroupSummaryReports_SkillGroupSummaryReport.ListSkillGroupSummaryReports_Outbound outbound = new ListSkillGroupSummaryReportsResponse.ListSkillGroupSummaryReports_PagedSkillGroupSummaryReport.ListSkillGroupSummaryReports_SkillGroupSummaryReport.ListSkillGroupSummaryReports_Outbound();
