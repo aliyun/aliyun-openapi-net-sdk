@@ -36,6 +36,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string userData;
 
+		private string input;
+
 		private string resourceOwnerId;
 
 		private string types;
@@ -60,6 +62,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				userData = value;
 				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
 			}
 		}
 

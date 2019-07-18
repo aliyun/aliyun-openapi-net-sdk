@@ -34,19 +34,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
-		private string userData;
-
 		private long? resourceOwnerId;
 
-		private string templateGroupId;
-
-		private string uploadMetadatas;
-
 		private string resourceOwnerAccount;
-
-		private string uploadURLs;
-
-		private string appId;
 
 		private string messageCallback;
 
@@ -56,18 +46,17 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string storageLocation;
 
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
+		private string userData;
+
+		private string templateGroupId;
+
+		private string uploadMetadatas;
+
+		private string uploadURLs;
+
+		private string appId;
+
+		private string workflowId;
 
 		public long? ResourceOwnerId
 		{
@@ -82,32 +71,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string TemplateGroupId
-		{
-			get
-			{
-				return templateGroupId;
-			}
-			set	
-			{
-				templateGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
-			}
-		}
-
-		public string UploadMetadatas
-		{
-			get
-			{
-				return uploadMetadatas;
-			}
-			set	
-			{
-				uploadMetadatas = value;
-				DictionaryUtil.Add(QueryParameters, "UploadMetadatas", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -118,32 +81,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string UploadURLs
-		{
-			get
-			{
-				return uploadURLs;
-			}
-			set	
-			{
-				uploadURLs = value;
-				DictionaryUtil.Add(QueryParameters, "UploadURLs", value);
-			}
-		}
-
-		public string AppId
-		{
-			get
-			{
-				return appId;
-			}
-			set	
-			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 
@@ -196,6 +133,84 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				storageLocation = value;
 				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public string TemplateGroupId
+		{
+			get
+			{
+				return templateGroupId;
+			}
+			set	
+			{
+				templateGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
+			}
+		}
+
+		public string UploadMetadatas
+		{
+			get
+			{
+				return uploadMetadatas;
+			}
+			set	
+			{
+				uploadMetadatas = value;
+				DictionaryUtil.Add(QueryParameters, "UploadMetadatas", value);
+			}
+		}
+
+		public string UploadURLs
+		{
+			get
+			{
+				return uploadURLs;
+			}
+			set	
+			{
+				uploadURLs = value;
+				DictionaryUtil.Add(QueryParameters, "UploadURLs", value);
+			}
+		}
+
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
+			}
+		}
+
+		public string WorkflowId
+		{
+			get
+			{
+				return workflowId;
+			}
+			set	
+			{
+				workflowId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
 			}
 		}
 

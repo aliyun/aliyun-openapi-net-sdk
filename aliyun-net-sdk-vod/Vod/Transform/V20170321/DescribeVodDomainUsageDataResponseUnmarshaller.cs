@@ -43,7 +43,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			for (int i = 0; i < context.Length("DescribeVodDomainUsageData.UsageDataPerInterval.Length"); i++) {
 				DescribeVodDomainUsageDataResponse.DescribeVodDomainUsageData_DataModule dataModule = new DescribeVodDomainUsageDataResponse.DescribeVodDomainUsageData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeVodDomainUsageData.UsageDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeVodDomainUsageData.UsageDataPerInterval["+ i +"].Value");
+				dataModule._Value = context.StringValue("DescribeVodDomainUsageData.UsageDataPerInterval["+ i +"]._Value");
 
 				describeVodDomainUsageDataResponse_usageDataPerInterval.Add(dataModule);
 			}

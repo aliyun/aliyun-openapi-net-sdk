@@ -43,7 +43,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			for (int i = 0; i < context.Length("DescribeVodDomainBpsData.BpsDataPerInterval.Length"); i++) {
 				DescribeVodDomainBpsDataResponse.DescribeVodDomainBpsData_DataModule dataModule = new DescribeVodDomainBpsDataResponse.DescribeVodDomainBpsData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].Value");
+				dataModule._Value = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"]._Value");
 				dataModule.DomesticValue = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].DomesticValue");
 				dataModule.OverseasValue = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].OverseasValue");
 				dataModule.HttpsValue = context.StringValue("DescribeVodDomainBpsData.BpsDataPerInterval["+ i +"].HttpsValue");

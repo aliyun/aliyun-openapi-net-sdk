@@ -46,7 +46,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string registerMetadatas;
 
-		private string workFlowId;
+		private string workflowId;
 
 		public string UserData
 		{
@@ -126,16 +126,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string WorkFlowId
+		public string WorkflowId
 		{
 			get
 			{
-				return workFlowId;
+				return workflowId;
 			}
 			set	
 			{
-				workFlowId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkFlowId", value);
+				workflowId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
 			}
 		}
 

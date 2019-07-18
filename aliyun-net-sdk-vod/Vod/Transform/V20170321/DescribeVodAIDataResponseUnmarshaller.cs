@@ -43,7 +43,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				for (int j = 0; j < context.Length("DescribeVodAIData.AIData["+ i +"].Data.Length"); j++) {
 					DescribeVodAIDataResponse.DescribeVodAIData_AIDataItem.DescribeVodAIData_DataItem dataItem = new DescribeVodAIDataResponse.DescribeVodAIData_AIDataItem.DescribeVodAIData_DataItem();
 					dataItem.Name = context.StringValue("DescribeVodAIData.AIData["+ i +"].Data["+ j +"].Name");
-					dataItem._Value = context.StringValue("DescribeVodAIData.AIData["+ i +"].Data["+ j +"].Value");
+					dataItem._Value = context.StringValue("DescribeVodAIData.AIData["+ i +"].Data["+ j +"]._Value");
 
 					aIDataItem_data.Add(dataItem);
 				}
