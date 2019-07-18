@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{e6b110a8-4c9f-4dfc-9c46-13557446c687}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-oos</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Oos\Model\V20190601\GenerateExecutionPolicyRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\ListActionsResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\ListExecutionsRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\GetTemplateRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\ListActionsRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\CreateTemplateResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\ListTaskExecutionsRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\CancelExecutionResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\GenerateExecutionPolicyResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\NotifyExecutionResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\ValidateTemplateContentRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\StartExecutionRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\UpdateTemplateRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\DeleteExecutionsRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\CancelExecutionRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\DeleteTemplateResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\GetExecutionTemplateRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\UpdateTemplateResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\ListTaskExecutionsResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\CreateTemplateRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\ListExecutionLogsRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\DeleteTemplateRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\ValidateTemplateContentResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\DeleteExecutionsResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\GetExecutionTemplateResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\ListTemplatesResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\GetTemplateResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\ListTemplatesRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\ListExecutionsResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\NotifyExecutionRequest.cs" />
+	<Compile Include="Oos\Model\V20190601\ListExecutionLogsResponse.cs" />
+	<Compile Include="Oos\Model\V20190601\StartExecutionResponse.cs" />
+	<Compile Include="Oos\Transform\V20190601\ValidateTemplateContentResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\ListExecutionsResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\UpdateTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\GetExecutionTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\GenerateExecutionPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\ListActionsResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\GetTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\StartExecutionResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\NotifyExecutionResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\DeleteTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\DeleteExecutionsResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\ListTemplatesResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\CreateTemplateResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\ListTaskExecutionsResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\ListExecutionLogsResponseUnmarshaller.cs" />
+	<Compile Include="Oos\Transform\V20190601\CancelExecutionResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
