@@ -73,6 +73,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.Status = context.StringValue("QueryBill.Data.Items["+ i +"].Status");
 				item.PaymentCurrency = context.StringValue("QueryBill.Data.Items["+ i +"].PaymentCurrency");
 				item.PaymentTransactionID = context.StringValue("QueryBill.Data.Items["+ i +"].PaymentTransactionID");
+				item.RoundDownDiscount = context.StringValue("QueryBill.Data.Items["+ i +"].RoundDownDiscount");
 
 				data_items.Add(item);
 			}

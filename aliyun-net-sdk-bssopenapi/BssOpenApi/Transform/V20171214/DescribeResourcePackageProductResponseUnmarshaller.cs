@@ -56,7 +56,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 					for (int k = 0; k < context.Length("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Properties.Length"); k++) {
 						DescribeResourcePackageProductResponse.DescribeResourcePackageProduct_Data.DescribeResourcePackageProduct_ResourcePackage.DescribeResourcePackageProduct_PackageType.DescribeResourcePackageProduct_Property property = new DescribeResourcePackageProductResponse.DescribeResourcePackageProduct_Data.DescribeResourcePackageProduct_ResourcePackage.DescribeResourcePackageProduct_PackageType.DescribeResourcePackageProduct_Property();
 						property.Name = context.StringValue("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Properties["+ k +"].Name");
-						property._Value = context.StringValue("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Properties["+ k +"].Value");
+						property._Value = context.StringValue("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Properties["+ k +"]._Value");
 
 						packageType_properties.Add(property);
 					}
@@ -66,13 +66,13 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 					for (int k = 0; k < context.Length("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications.Length"); k++) {
 						DescribeResourcePackageProductResponse.DescribeResourcePackageProduct_Data.DescribeResourcePackageProduct_ResourcePackage.DescribeResourcePackageProduct_PackageType.DescribeResourcePackageProduct_Specification specification = new DescribeResourcePackageProductResponse.DescribeResourcePackageProduct_Data.DescribeResourcePackageProduct_ResourcePackage.DescribeResourcePackageProduct_PackageType.DescribeResourcePackageProduct_Specification();
 						specification.Name = context.StringValue("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"].Name");
-						specification._Value = context.StringValue("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"].Value");
+						specification._Value = context.StringValue("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"]._Value");
 
 						List<DescribeResourcePackageProductResponse.DescribeResourcePackageProduct_Data.DescribeResourcePackageProduct_ResourcePackage.DescribeResourcePackageProduct_PackageType.DescribeResourcePackageProduct_Specification.DescribeResourcePackageProduct_AvailableDuration> specification_availableDurations = new List<DescribeResourcePackageProductResponse.DescribeResourcePackageProduct_Data.DescribeResourcePackageProduct_ResourcePackage.DescribeResourcePackageProduct_PackageType.DescribeResourcePackageProduct_Specification.DescribeResourcePackageProduct_AvailableDuration>();
 						for (int l = 0; l < context.Length("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"].AvailableDurations.Length"); l++) {
 							DescribeResourcePackageProductResponse.DescribeResourcePackageProduct_Data.DescribeResourcePackageProduct_ResourcePackage.DescribeResourcePackageProduct_PackageType.DescribeResourcePackageProduct_Specification.DescribeResourcePackageProduct_AvailableDuration availableDuration = new DescribeResourcePackageProductResponse.DescribeResourcePackageProduct_Data.DescribeResourcePackageProduct_ResourcePackage.DescribeResourcePackageProduct_PackageType.DescribeResourcePackageProduct_Specification.DescribeResourcePackageProduct_AvailableDuration();
 							availableDuration.Name = context.StringValue("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"].AvailableDurations["+ l +"].Name");
-							availableDuration._Value = context.IntegerValue("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"].AvailableDurations["+ l +"].Value");
+							availableDuration._Value = context.IntegerValue("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"].AvailableDurations["+ l +"]._Value");
 							availableDuration.Unit = context.StringValue("DescribeResourcePackageProduct.Data.ResourcePackages["+ i +"].PackageTypes["+ j +"].Specifications["+ k +"].AvailableDurations["+ l +"].Unit");
 
 							specification_availableDurations.Add(availableDuration);

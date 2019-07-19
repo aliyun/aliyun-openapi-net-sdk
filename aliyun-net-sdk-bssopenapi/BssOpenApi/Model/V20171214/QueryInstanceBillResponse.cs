@@ -265,6 +265,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string zone;
 
+				private string item;
+
 				public string InstanceID
 				{
 					get
@@ -658,6 +660,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						zone = value;
+					}
+				}
+
+				public string Item
+				{
+					get
+					{
+						return item;
+					}
+					set	
+					{
+						item = value;
 					}
 				}
 			}

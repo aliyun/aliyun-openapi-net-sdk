@@ -80,6 +80,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.IntranetIP = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].IntranetIP");
 				item.Region = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Region");
 				item.Zone = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Zone");
+				item.Item = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Item");
 
 				data_items.Add(item);
 			}

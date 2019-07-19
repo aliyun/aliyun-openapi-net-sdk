@@ -251,6 +251,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string paymentTransactionID;
 
+				private string roundDownDiscount;
+
 				public string RecordID
 				{
 					get
@@ -560,6 +562,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						paymentTransactionID = value;
+					}
+				}
+
+				public string RoundDownDiscount
+				{
+					get
+					{
+						return roundDownDiscount;
+					}
+					set	
+					{
+						roundDownDiscount = value;
 					}
 				}
 			}

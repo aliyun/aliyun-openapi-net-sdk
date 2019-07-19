@@ -67,7 +67,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				order.Tax = context.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Tax");
 				order.AfterTaxAmount = context.StringValue("GetOrderDetail.Data.OrderList["+ i +"].AfterTaxAmount");
 				order.PaymentCurrency = context.StringValue("GetOrderDetail.Data.OrderList["+ i +"].PaymentCurrency");
-				order._Operator = context.StringValue("GetOrderDetail.Data.OrderList["+ i +"].Operator");
+				order._Operator = context.StringValue("GetOrderDetail.Data.OrderList["+ i +"]._Operator");
 				order.RelatedOrderId = context.StringValue("GetOrderDetail.Data.OrderList["+ i +"].RelatedOrderId");
 
 				data_orderList.Add(order);

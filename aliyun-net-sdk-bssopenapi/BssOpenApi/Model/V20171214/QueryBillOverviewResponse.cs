@@ -195,6 +195,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string paymentCurrency;
 
+				private string roundDownDiscount;
+
 				public string Item
 				{
 					get
@@ -420,6 +422,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						paymentCurrency = value;
+					}
+				}
+
+				public string RoundDownDiscount
+				{
+					get
+					{
+						return roundDownDiscount;
+					}
+					set	
+					{
+						roundDownDiscount = value;
 					}
 				}
 			}

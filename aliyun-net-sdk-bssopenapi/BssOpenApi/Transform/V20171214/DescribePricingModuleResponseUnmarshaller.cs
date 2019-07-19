@@ -68,7 +68,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 					DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute.DescribePricingModule_AttributeValue attributeValue = new DescribePricingModuleResponse.DescribePricingModule_Data.DescribePricingModule_Attribute.DescribePricingModule_AttributeValue();
 					attributeValue.Type = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Type");
 					attributeValue.Name = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Name");
-					attributeValue._Value = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Value");
+					attributeValue._Value = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"]._Value");
 					attributeValue.Remark = context.StringValue("DescribePricingModule.Data.AttributeList["+ i +"].Values["+ j +"].Remark");
 
 					attribute_values.Add(attributeValue);
