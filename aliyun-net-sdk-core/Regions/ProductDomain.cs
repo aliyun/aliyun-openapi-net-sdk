@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -28,10 +28,10 @@ namespace Aliyun.Acs.Core.Regions
         public ProductDomain(string product, string domain)
         {
             ProductName = product;
-            DomianName = domain;
+            DomainName = domain;
         }
 
         public string ProductName { get; set; }
-        public string DomianName { get; set; }
+        public string DomainName { get; set; }
     }
 }

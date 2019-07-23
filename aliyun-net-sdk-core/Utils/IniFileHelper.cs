@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -32,13 +32,12 @@ namespace Aliyun.Acs.Core.Utils
         public IniReader(string file)
         {
             var txt = File.ReadAllText(file);
-
             var currentSection =
                 new Dictionary<string, string>(StringComparer.InvariantCultureIgnoreCase);
 
             ini[""] = currentSection;
 
-            foreach (var line in txt.Split(new[] {"\n"}, StringSplitOptions.RemoveEmptyEntries)
+            foreach (var line in txt.Split(new[] { "\n" }, StringSplitOptions.RemoveEmptyEntries)
                 .Where(t => !string.IsNullOrWhiteSpace(t))
                 .Select(t => t.Trim()))
             {

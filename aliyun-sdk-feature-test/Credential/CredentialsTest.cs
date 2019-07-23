@@ -59,7 +59,7 @@ namespace Aliyun.Acs.Feature.Test.Credential
                 return;
             }
 
-            var profile = DefaultProfile.GetProfile("cn-hangzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
+            var profile = DefaultProfile.GetProfile("cn-shanghai", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
             var basicCredential = new BasicCredentials(GetBasicAccessKeyId(), GetBasicAccessKeySecret());
             var policy =
                 "{ \"Version\": \"1\",\"Statement\": [{\"Effect\": \"Deny\",\"Action\": \"vpc:Create*\",\"Resource\": \"acs:vpc:cn-hangzhou:*:*\"}]}";
@@ -68,9 +68,7 @@ namespace Aliyun.Acs.Feature.Test.Credential
             var client = new DefaultAcsClient(profile, provider);
             var request = new CreateVpcRequest();
 
-            CreateVpcResponse response;
-
-            var exception = Assert.Throws<ClientException>(() => { response = client.GetAcsResponse(request); });
+            var exception = Assert.Throws<ClientException>(() => { var response = client.GetAcsResponse(request); });
 
             Assert.Contains(
                 "Forbidden.RAM : User not authorized to operate on the specified resource, or this API doesn't support RAM.",

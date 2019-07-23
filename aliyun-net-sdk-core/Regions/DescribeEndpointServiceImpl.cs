@@ -29,17 +29,11 @@ using Aliyun.Acs.Core.Regions.Location.Model;
 using Aliyun.Acs.Core.Transform;
 
 [assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
-
 namespace Aliyun.Acs.Core.Regions
 {
     internal class DescribeEndpointServiceImpl : DescribeEndpointService
     {
         private const string DEFAULT_ENDPOINT_TYPE = "openAPI";
-
-        public DescribeEndpointServiceImpl()
-        {
-
-        }
 
         public DescribeEndpointResponse DescribeEndpoint(string regionId, string serviceCode, string endpointType,
             Credential credential, LocationConfig locationConfig)
@@ -69,6 +63,7 @@ namespace Aliyun.Acs.Core.Regions
 
             var httpRequest = request.SignRequest(signer, credential, FormatType.JSON, domain);
             var httpResponse = GetResponse(httpRequest);
+
             if (httpResponse.isSuccess())
             {
                 var data = Encoding.UTF8.GetString(httpResponse.Content);
@@ -145,7 +140,7 @@ namespace Aliyun.Acs.Core.Regions
 
         public virtual HttpResponse GetResponse(HttpRequest httpRequest)
         {
-            return HttpResponse.GetResponse(httpRequest);
+            return new HttpResponse().GetResponse(httpRequest);
         }
     }
 }

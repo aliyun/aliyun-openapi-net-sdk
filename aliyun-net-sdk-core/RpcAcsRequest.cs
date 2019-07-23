@@ -75,7 +75,7 @@ namespace Aliyun.Acs.Core
             set
             {
                 actionName = value;
-                QueryParameters.Add("Action", value);
+                DictionaryUtil.Add(QueryParameters, "Action", value);
             }
         }
 
@@ -85,7 +85,7 @@ namespace Aliyun.Acs.Core
             set
             {
                 version = value;
-                QueryParameters.Add("Version", value);
+                DictionaryUtil.Add(QueryParameters, "Version", value);
             }
         }
 
@@ -120,18 +120,18 @@ namespace Aliyun.Acs.Core
                 var sessionToken = sessionCredentials == null ? null : sessionCredentials.GetSessionToken();
                 if (sessionToken != null)
                 {
-                    QueryParameters.Add("SecurityToken", sessionToken);
+                    DictionaryUtil.Add(QueryParameters, "SecurityToken", sessionToken);
                 }
 
                 var credential = credentials as BearerTokenCredential;
                 var bearerToken = credential == null ? null : credential.GetBearerToken();
                 if (bearerToken != null)
                 {
-                    QueryParameters.Add("BearerToken", bearerToken);
+                    DictionaryUtil.Add(QueryParameters, "BearerToken", bearerToken);
                 }
 
                 imutableMap = Composer.RefreshSignParameters(QueryParameters, signer, accessKeyId, format);
-                imutableMap.Add("RegionId", RegionId);
+                DictionaryUtil.Add(imutableMap, "RegionId", RegionId);
 
                 var paramsToSign = new Dictionary<string, string>(imutableMap);
                 if (BodyParameters != null && BodyParameters.Count > 0)
@@ -148,12 +148,12 @@ namespace Aliyun.Acs.Core
 
                 var strToSign = Composer.ComposeStringToSign(Method, null, signer, paramsToSign, null, null);
                 var signature = signer.SignString(strToSign, accessSecret + "&");
-                imutableMap.Add("Signature", signature);
+                DictionaryUtil.Add(imutableMap, "Signature", signature);
 
                 StringToSign = strToSign;
             }
 
-            Url = ComposeUrl(domain.DomianName, imutableMap);
+            Url = ComposeUrl(domain.DomainName, imutableMap);
             return this;
         }
 

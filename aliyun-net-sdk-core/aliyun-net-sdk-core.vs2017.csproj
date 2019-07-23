@@ -42,9 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Regions\endpoints.xml" />
     <EmbeddedResource Include="Retry\Util\retry_config.json" />
     <EmbeddedResource Include="Timeout\Util\timeout_config.json" />
+    <EmbeddedResource Include="Regions\endpoints.json" />
   </ItemGroup>
 
   <ItemGroup>

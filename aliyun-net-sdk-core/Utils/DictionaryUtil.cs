@@ -27,21 +27,8 @@ namespace Aliyun.Acs.Core.Utils
     {
         public static void Add<T>(Dictionary<string, string> dic, string key, T value)
         {
-            if (null == value)
-            {
-                return;
-            }
-
-            if (dic == null)
-            {
-                dic = new Dictionary<string, string>();
-            }
-            else if (dic.ContainsKey(key))
-            {
-                dic.Remove(key);
-            }
-
-            dic.Add(key, value.ToString());
+            var stringValue = value as string;
+            Add<string, string>(dic, key, stringValue);
         }
 
         public static void Add<TKey, TValue>(Dictionary<TKey, TValue> dic, TKey key, TValue value)
@@ -75,17 +62,13 @@ namespace Aliyun.Acs.Core.Utils
 
         public static string Get(Dictionary<string, string> dic, string key)
         {
-            if (dic.ContainsKey(key))
-            {
-                return dic[key];
-            }
-
-            return null;
+            return Get<string, string>(dic, key);
         }
 
         public static TValue Pop<TKey, TValue>(Dictionary<TKey, TValue> dic, TKey key)
         {
-            TValue value = default(TValue);
+            var value = default(TValue);
+
             if (dic.ContainsKey(key))
             {
                 value = dic[key];
@@ -97,14 +80,7 @@ namespace Aliyun.Acs.Core.Utils
 
         public static string Pop(Dictionary<string, string> dic, string key)
         {
-            string value = null;
-            if (dic.ContainsKey(key))
-            {
-                value = dic[key];
-                dic.Remove(key);
-            }
-
-            return value;
+            return Pop<string, string>(dic, key);
         }
 
         public static void Print<TKey, TValue>(Dictionary<TKey, TValue> dic, char str)
@@ -119,12 +95,7 @@ namespace Aliyun.Acs.Core.Utils
 
         public static void Print(Dictionary<string, string> dic, char str)
         {
-            foreach (var item in dic)
-            {
-                Console.WriteLine("{0} {1}: {2}", str, item.Key, item.Value);
-            }
-
-            Console.WriteLine();
+            Print<string, string>(dic, str);
         }
 
         public static string TransformDicToString<TKey, TValue>(Dictionary<TKey, TValue> dic)
@@ -134,7 +105,7 @@ namespace Aliyun.Acs.Core.Utils
 
         public static string TransformDicToString(Dictionary<string, string> dic)
         {
-            return string.Join(";", dic.Select(x => x.Key + "=" + x.Value));
+            return TransformDicToString<string, string>(dic);
         }
     }
 }

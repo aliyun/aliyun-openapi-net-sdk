@@ -186,19 +186,15 @@ namespace Aliyun.Acs.Core
                 format = clientProfile.GetFormat();
                 if (request.ProductDomain == null)
                 {
-                    endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId,
-                        request.LocationProduct,
+                    endpoints = clientProfile.GetEndpoints(request.Product, request.RegionId, request.LocationProduct,
                         request.LocationEndpointType);
                 }
             }
 
-            return DoAction(request, AutoRetry, MaxRetryNumber, request.RegionId, credential, signer,
-                format,
-                endpoints);
+            return DoAction(request, AutoRetry, MaxRetryNumber, request.RegionId, credential, signer, format, endpoints);
         }
 
-        public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry,
-            int maxRetryNumber, IClientProfile profile) where T : AcsResponse
+        public HttpResponse DoAction<T>(AcsRequest<T> request, bool autoRetry, int maxRetryNumber, IClientProfile profile) where T : AcsResponse
         {
             if (null == profile)
             {
@@ -329,8 +325,9 @@ namespace Aliyun.Acs.Core
                         throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
                     }
 
-                    request.Headers["User-Agent"] =
-                        UserAgent.Resolve(request.GetSysUserAgentConfig(), userAgentConfig);
+                    var userAgent = UserAgent.Resolve(request.GetSysUserAgentConfig(), userAgentConfig);
+                    DictionaryUtil.Add(request.Headers, "User-Agent", userAgent);
+
                     var httpRequest = request.SignRequest(signer, credentials, format, domain);
                     ResolveTimeout(httpRequest, request.Product, request.Version, request.ActionName);
                     SetHttpsInsecure(IgnoreCertificate);
@@ -419,7 +416,7 @@ namespace Aliyun.Acs.Core
 
         public virtual HttpResponse GetResponse(HttpRequest httpRequest)
         {
-            return HttpResponse.GetResponse(httpRequest);
+            return new HttpResponse().GetResponse(httpRequest);
         }
 
         public void AppendUserAgent(string key, string value)

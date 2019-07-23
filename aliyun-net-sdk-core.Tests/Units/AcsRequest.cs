@@ -104,7 +104,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             mockAcsRequest.SetProductDomain();
             mockAcsRequest.SetProductDomain(endpoint);
 
-            Assert.Equal(endpoint, mockAcsRequest.ProductDomain.DomianName);
+            Assert.Equal(endpoint, mockAcsRequest.ProductDomain.DomainName);
 
             mockAcsRequest.ProductDomain = null;
         }
@@ -117,7 +117,7 @@ namespace Aliyun.Acs.Core.Tests.Units
             var mockAcsRequest = new MockAcsRequest();
             mockAcsRequest.SetEndpoint(endpoint);
 
-            Assert.Equal(endpoint, mockAcsRequest.ProductDomain.DomianName);
+            Assert.Equal(endpoint, mockAcsRequest.ProductDomain.DomainName);
 
             mockAcsRequest.ProductDomain = null;
         }
