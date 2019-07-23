@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{e9c9156a-158c-4e08-9b86-5616dd39342e}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-polardb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Polardb\Model\V20170801\RevokeAccountPrivilegeResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeRegionsRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeDBClusterMigrationResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeDatabasesRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBClusterMigrationRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyAccountPasswordResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\RestartDBNodeResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\CreateDBNodesResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeDBClusterMigrationRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBEndpointAddressResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBDescriptionResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeDBClusterAccessWhitelistResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteDBNodesResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBNodeClassResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteDBClusterEndpointResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteDBClusterResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\LockDBClusterDeletionResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\CreateDBNodesRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBClusterEndpointResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteDatabaseResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBClusterDescriptionResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeDBClusterAccessWhitelistRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeAccountsRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBNodeClassRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\CreateDBClusterEndpointResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ResetAccountRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteAccountRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteDBNodesRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\UnlockDBClusterDeletionRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\CloseDBClusterMigrationResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteDBClusterEndpointRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteDBEndpointAddressRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteAccountResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\RevokeAccountPrivilegeRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeAccountsResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyAccountPasswordRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyAccountDescriptionRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeDBClusterEndpointsResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ListTagResourcesResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\UnlockDBClusterDeletionResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteDBClusterRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteDBEndpointAddressResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBEndpointAddressRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\LockDBClusterDeletionRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\TagResourcesRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\CreateDBClusterEndpointRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBClusterAccessWhitelistResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBClusterEndpointRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\RestartDBNodeRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\CloseDBClusterMigrationRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ResetAccountResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeAutoRenewAttributeRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeAutoRenewAttributeResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBClusterParametersRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\CreateDBEndpointAddressRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyAccountDescriptionResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\UntagResourcesRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBClusterMaintainTimeResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\TagResourcesResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyAutoRenewAttributeRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ListTagResourcesRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\CreateDBEndpointAddressResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeRegionsResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeDBClusterParametersResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\UntagResourcesResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\GrantAccountPrivilegeRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\CreateDatabaseResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeDatabasesResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBClusterAccessWhitelistRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyAutoRenewAttributeResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeDBClusterEndpointsRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\GrantAccountPrivilegeResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteBackupRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBClusterMigrationResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeDBClusterParametersRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBClusterParametersResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBDescriptionRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteDatabaseRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBClusterDescriptionRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ModifyDBClusterMaintainTimeRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\CreateDatabaseRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DeleteBackupResponse.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyDBEndpointAddressResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyAccountDescriptionResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DeleteDBClusterEndpointResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeDBClusterMigrationResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\CloseDBClusterMigrationResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\TagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeAutoRenewAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DeleteDBEndpointAddressResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeBackupPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\CreateDBClusterEndpointResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyDBNodeClassResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\LockDBClusterDeletionResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyDBClusterParametersResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\RevokeAccountPrivilegeResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ResetAccountResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeBackupsResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyBackupPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\CreateBackupResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\CreateDBClusterResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyDBDescriptionResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ListTagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyDBClusterAccessWhitelistResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DeleteDBNodesResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DeleteAccountResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeDBClusterAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyDBClusterDescriptionResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeAccountsResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeDBClustersResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeDBClusterParametersResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyAccountPasswordResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DeleteDBClusterResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DeleteBackupResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyDBClusterEndpointResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\CreateAccountResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\UnlockDBClusterDeletionResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyAutoRenewAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\CreateDBEndpointAddressResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeDBClusterAccessWhitelistResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyDBClusterMaintainTimeResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\UntagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\GrantAccountPrivilegeResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\CreateDBNodesResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\RestartDBNodeResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DeleteDatabaseResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\CreateDatabaseResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeDBClusterEndpointsResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ModifyDBClusterMigrationResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeDatabasesResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
