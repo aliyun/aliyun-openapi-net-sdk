@@ -34,8 +34,7 @@ namespace Aliyun.Acs.Core.Regions
         public ISet<string> RegionIds { get; private set; }
         public List<ProductDomain> ProductDomains { get; private set; }
 
-        public static ProductDomain FindProductDomain(string regionId, string product,
-            List<Endpoint> endpoints)
+        public static ProductDomain FindProductDomain(string regionId, string product, List<Endpoint> endpoints)
         {
             if (null == regionId || null == product || null == endpoints)
             {

@@ -21,6 +21,7 @@ using System.Text;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Exceptions;
+using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Vpc.Model.V20160428;
 
 using Xunit;
@@ -35,6 +36,9 @@ namespace Aliyun.Acs.Feature.Test.ErrorHandler
         {
             var request = new ActiveFlowLogRequest();
             request.FlowLogId = "testFlow";
+
+            var profile = DefaultProfile.GetProfile("cn-hangzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
+            var client = new DefaultAcsClient(profile);
 
             var exceptionMsg = Assert.Throws<ClientException>(() =>
             {

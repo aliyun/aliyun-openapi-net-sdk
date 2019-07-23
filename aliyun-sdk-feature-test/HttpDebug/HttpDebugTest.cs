@@ -25,7 +25,6 @@ using Xunit;
 
 namespace Aliyun.Acs.Feature.Test.HttpDebug
 {
-    [Trait("Category", "FeatureTest")]
     public class HttpDebugTest : FeatureTestBase
     {
         [Fact]

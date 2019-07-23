@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Threading;
 
 using Aliyun.Acs.Core.Utils;
 
@@ -27,6 +28,8 @@ namespace Aliyun.Acs.Core.Http
 {
     public class HttpRequest
     {
+        private int timeout = 100000;
+
         public HttpRequest()
         {
         }
@@ -60,8 +63,6 @@ namespace Aliyun.Acs.Core.Http
             set { TimeoutInMilliseconds = value; }
         }
 
-        private int timeout = 100000;
-
         public int TimeoutInMilliseconds
         {
             get { return timeout; }
@@ -92,9 +93,10 @@ namespace Aliyun.Acs.Core.Http
         {
             if (null == content)
             {
-                Headers.Remove("Content-MD5");
-                Headers.Remove("Content-Length");
-                Headers.Remove("Content-Type");
+                DictionaryUtil.Pop(Headers, "Content-MD5");
+                DictionaryUtil.Pop(Headers, "Content-Length");
+                DictionaryUtil.Pop(Headers, "Content-Type");
+
                 ContentType = null;
                 Content = null;
                 Encoding = null;
@@ -110,30 +112,31 @@ namespace Aliyun.Acs.Core.Http
                 type = format;
             }
 
-            Headers.Remove("Content-MD5");
-            Headers.Remove("Content-Length");
-            Headers.Remove("Content-Type");
-            Headers.Add("Content-MD5", strMd5);
-            Headers.Add("Content-Length", contentLen);
-            Headers.Add("Content-Type", ParameterHelper.FormatTypeToString(type));
+            DictionaryUtil.Pop(Headers, "Content-MD5");
+            DictionaryUtil.Pop(Headers, "Content-Length");
+            DictionaryUtil.Pop(Headers, "Content-Type");
+
+            DictionaryUtil.Add(Headers, "Content-MD5", strMd5);
+            DictionaryUtil.Add(Headers, "Content-Length", contentLen);
+            DictionaryUtil.Add(Headers, "Content-Type", ParameterHelper.FormatTypeToString(type));
 
             Content = content;
             Encoding = encoding;
         }
 
-        public void SetConnectTimeoutInMilliSeconds(int connectTimeout)
+        public void SetConnectTimeoutInMilliSeconds(int conTimeout)
         {
-            ConnectTimeout = connectTimeout;
+            ConnectTimeout = conTimeout;
         }
 
-        public void SetReadTimeoutInMilliSeconds(int readTimeout)
+        public void SetReadTimeoutInMilliSeconds(int reTimeout)
         {
-            ReadTimeout = readTimeout;
+            ReadTimeout = reTimeout;
         }
 
-        public void SetHttpsInsecure(bool ignoreCertificate = false)
+        public void SetHttpsInsecure(bool ignoreCert = false)
         {
-            IgnoreCertificate = ignoreCertificate;
+            IgnoreCertificate = ignoreCert;
         }
     }
 }

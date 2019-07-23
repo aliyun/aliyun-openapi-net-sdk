@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -29,6 +29,11 @@ namespace Aliyun.Acs.Core.Regions
     {
         private DescribeEndpointService describeEndpointService;
 
+        public RemoteEndpointsParser()
+        {
+            describeEndpointService = new DescribeEndpointServiceImpl();
+        }
+
         public Endpoint GetEndpoint(string regionId, string product)
         {
             throw new NotSupportedException();
@@ -44,8 +49,7 @@ namespace Aliyun.Acs.Core.Regions
 
             Endpoint endpoint = null;
 
-            var response = describeEndpointService.DescribeEndpoint(regionId, serviceCode,
-                endpointType, credential, locationConfig);
+            var response = describeEndpointService.DescribeEndpoint(regionId, serviceCode, endpointType, credential, locationConfig);
             if (response == null)
             {
                 return endpoint;
@@ -59,18 +63,6 @@ namespace Aliyun.Acs.Core.Regions
 
             endpoint = new Endpoint(response.RegionId, regionIds, productDomainList);
             return endpoint;
-        }
-
-        public void SetDescribeEndpointService(DescribeEndpointService describeEndpointService)
-        {
-            this.describeEndpointService = describeEndpointService;
-        }
-
-        public static RemoteEndpointsParser InitRemoteEndpointsParser()
-        {
-            var parser = new RemoteEndpointsParser();
-            parser.SetDescribeEndpointService(new DescribeEndpointServiceImpl());
-            return parser;
         }
     }
 }

@@ -21,6 +21,7 @@ using Aliyun.Acs.Core.Utils;
 
 using Xunit;
 
+[assembly: CollectionBehavior(DisableTestParallelization = true)]
 namespace Aliyun.Acs.Core.Tests.Units.Utils
 {
     public class IniFileHelperTest

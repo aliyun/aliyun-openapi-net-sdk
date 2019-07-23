@@ -34,8 +34,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void GetCredentials()
         {
-            DefaultProfile.ClearDefaultProfile();
-
             var mockRamRoleArnCredential =
                 new Mock<BasicSessionCredentials>("accesskeyId", "accessKeySecret", "sessionToken", 100);
             var ramRoleCredential = mockRamRoleArnCredential.Object;
@@ -60,8 +58,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void GetCredentialsWithPolicy()
         {
-            DefaultProfile.ClearDefaultProfile();
-
             var response = new AssumeRoleResponse();
             response.Credentials = new AssumeRoleResponse.AssumeRole_Credentials();
             response.Credentials.AccessKeyId = "ak";
@@ -83,7 +79,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void Instance()
         {
-            DefaultProfile.ClearDefaultProfile();
             var mock = new Mock<AlibabaCloudCredentials>();
             var longLivedCredentials = mock.Object;
             var roleArn = "roleArn";
@@ -97,7 +92,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void InstanceProvider()
         {
-            DefaultProfile.ClearDefaultProfile();
             var mock = new Mock<AlibabaCloudCredentialsProvider>();
             var longLivedCredentialsProvider = mock.Object;
             var roleArn = "roleArn";
@@ -125,7 +119,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void WithRoleSessionDurationSecondss()
         {
-            DefaultProfile.ClearDefaultProfile();
             var mock = new Mock<AlibabaCloudCredentials>();
             var longLivedCredentials = mock.Object;
             var roleArn = "roleArn";
@@ -145,7 +138,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void WithRoleSessionName()
         {
-            DefaultProfile.ClearDefaultProfile();
             var mock = new Mock<AlibabaCloudCredentials>();
             var longLivedCredentials = mock.Object;
             var roleArn = "roleArn";
@@ -160,7 +152,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void WithSTSClient()
         {
-            DefaultProfile.ClearDefaultProfile();
             var mock = new Mock<AlibabaCloudCredentials>();
             var longLivedCredentials = mock.Object;
             var roleArn = "roleArn";

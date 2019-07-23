@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Net;
 
@@ -68,12 +69,12 @@ namespace Aliyun.Acs.Core.Http
                 httpResponse.Headers.Add(key, httpWebResponse.Headers[key]);
             }
 
-            string type;
-            httpResponse.Headers.TryGetValue("Content-Type", out type);
-            if (null != type)
+            var contentType = DictionaryUtil.Get(httpResponse.Headers, "Content-Type");
+
+            if (null != contentType)
             {
                 httpResponse.Encoding = "UTF-8";
-                var split = type.Split(';');
+                var split = contentType.Split(';');
                 httpResponse.ContentType = ParameterHelper.StingToFormatType(split[0].Trim());
                 if (split.Length > 1 && split[1].Contains("="))
                 {
@@ -86,57 +87,61 @@ namespace Aliyun.Acs.Core.Http
         public static byte[] ReadContent(HttpResponse response, HttpWebResponse rsp)
         {
             using (var ms = new MemoryStream())
+            using (var stream = rsp.GetResponseStream())
             {
-                var buffer = new byte[bufferLength];
-                var stream = rsp.GetResponseStream();
-
-                while (true)
                 {
-                    var length = stream.Read(buffer, 0, bufferLength);
-                    if (length == 0)
+                    var buffer = new byte[bufferLength];
+                    while (true)
                     {
-                        break;
+                        var length = stream.Read(buffer, 0, bufferLength);
+                        if (length == 0)
+                        {
+                            break;
+                        }
+
+                        ms.Write(buffer, 0, length);
                     }
 
-                    ms.Write(buffer, 0, length);
+                    ms.Seek(0, SeekOrigin.Begin);
+                    var bytes = new byte[ms.Length];
+                    ms.Read(bytes, 0, bytes.Length);
+                    return bytes;
                 }
-
-                ms.Seek(0, SeekOrigin.Begin);
-                var bytes = new byte[ms.Length];
-                ms.Read(bytes, 0, bytes.Length);
-
-                stream.Close();
-                stream.Dispose();
-                return bytes;
             }
         }
 
-        public static HttpResponse GetResponse(HttpRequest request, int? timeout = null)
+        public HttpResponse GetResponse(HttpRequest request, int? timeout = null)
         {
             var httpWebRequest = GetWebRequest(request);
+
             if (timeout != null)
             {
                 httpWebRequest.Timeout = (int)timeout;
             }
 
             HttpWebResponse httpWebResponse;
+            var httpResponse = new HttpResponse(httpWebRequest.RequestUri.AbsoluteUri);
 
             try
             {
                 httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                ParseHttpResponse(httpResponse, httpWebResponse);
+
+                return httpResponse;
             }
             catch (WebException ex)
             {
                 if (ex.Response != null)
                 {
-                    httpWebResponse = (HttpWebResponse)ex.Response;
+                    httpWebResponse = ex.Response as HttpWebResponse;
+                    ParseHttpResponse(httpResponse, httpWebResponse);
+
+                    return httpResponse;
                 }
-                else
-                {
-                    throw new ClientException("SDK.WebException",
-                        string.Format("HttpWebRequest WebException occured, the request url is {0} {1}",
-                            httpWebRequest.RequestUri == null ? "empty" : httpWebRequest.RequestUri.Host, ex));
-                }
+
+                throw new ClientException("SDK.WebException",
+                    string.Format("HttpWebRequest WebException occured, the request url is {0} {1}",
+                        httpWebRequest.RequestUri == null ? "empty" : httpWebRequest.RequestUri.Host, ex));
             }
             catch (IOException ex)
             {
@@ -151,21 +156,15 @@ namespace Aliyun.Acs.Core.Http
                     string.Format("The request url is {0} {1}",
                         httpWebRequest.RequestUri == null ? "empty" : httpWebRequest.RequestUri.Host, ex));
             }
-
-            using (httpWebResponse)
-            {
-                var httpResponse = new HttpResponse(httpWebRequest.RequestUri.AbsoluteUri);
-                ParseHttpResponse(httpResponse, httpWebResponse);
-                return httpResponse;
-            }
         }
 
         public static HttpWebRequest GetWebRequest(HttpRequest request)
         {
-            HttpWebRequest httpWebRequest = null;
-            httpWebRequest = (HttpWebRequest)WebRequest.Create(request.Url);
+            var uri = new Uri(request.Url);
+
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(uri);
+
             httpWebRequest.Method = request.Method.ToString();
-            httpWebRequest.KeepAlive = true;
 
             httpWebRequest.Timeout = request.ConnectTimeout > 0
                 ? request.ConnectTimeout
@@ -179,19 +178,18 @@ namespace Aliyun.Acs.Core.Http
                 httpWebRequest.ServerCertificateValidationCallback = (s, cert, chains, sslPolicyError) => true;
             }
 
-            if (null != request.WebProxy)
-            {
-                httpWebRequest.Proxy = request.WebProxy;
-            }
+            httpWebRequest.Proxy = request.WebProxy;
+            httpWebRequest.KeepAlive = true;
 
-            if (request.Headers.ContainsKey("Accept"))
+            if (DictionaryUtil.Get(request.Headers, "Accept") != null)
             {
                 httpWebRequest.Accept = DictionaryUtil.Pop(request.Headers, "Accept");
             }
 
-            if (request.Headers.ContainsKey("Date"))
+            if (DictionaryUtil.Get(request.Headers, "Date") != null)
             {
-                httpWebRequest.Date = Convert.ToDateTime(DictionaryUtil.Pop(request.Headers, "Date"));
+                var headerDate = DictionaryUtil.Pop(request.Headers, "Date");
+                httpWebRequest.Date = Convert.ToDateTime(headerDate);
             }
 
             foreach (var header in request.Headers)

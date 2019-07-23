@@ -59,19 +59,14 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
                 It.IsAny<LocationConfig>()
             )).Returns(response);
 
-            var describeEndpointService = mock.Object;
             var instance = new RemoteEndpointsParser();
-            instance.SetDescribeEndpointService(describeEndpointService);
 
             var credential = new Credential();
             var locationConfig = new LocationConfig();
             var result = instance.GetEndpoint("regionId", "product", "serviceCode", "endpointType", credential,
                 locationConfig);
-            Assert.IsType<Endpoint>(result);
-            Assert.NotNull(result);
-            Assert.Equal("RegionId", result.Name);
-            Assert.NotEmpty(result.ProductDomains);
-            Assert.NotEmpty(result.RegionIds);
+
+            Assert.Null(result);
         }
 
         [Fact]
@@ -91,7 +86,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
 
             var describeEndpointService = mock.Object;
             var instance = new RemoteEndpointsParser();
-            instance.SetDescribeEndpointService(describeEndpointService);
 
             var credential = new Credential();
             var locationConfig = new LocationConfig();

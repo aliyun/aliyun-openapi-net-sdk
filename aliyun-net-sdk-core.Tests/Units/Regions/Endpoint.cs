@@ -121,7 +121,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Regions
             // productName id exist
             result = Endpoint.FindProductDomain("regionId", "productName", endpoints);
             Assert.NotNull(result);
-            Assert.Equal("productDomain", result.DomianName);
+            Assert.Equal("productDomain", result.DomainName);
         }
 
         [Fact]

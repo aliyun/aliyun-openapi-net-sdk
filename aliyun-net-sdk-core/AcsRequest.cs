@@ -32,6 +32,16 @@ namespace Aliyun.Acs.Core
     {
         private FormatType acceptFormat;
 
+        private Dictionary<string, string> bodyParameters = new Dictionary<string, string>();
+
+        private Dictionary<string, string> domainParameters = new Dictionary<string, string>();
+
+        public string ProductNetwork = "public";
+
+        private ProtocolType protocol = ProtocolType.HTTP;
+
+        private Dictionary<string, string> queryParameters = new Dictionary<string, string>();
+
 
         public string StringToSign;
         private UserAgent userAgentConfig;
@@ -63,15 +73,11 @@ namespace Aliyun.Acs.Core
             }
         }
 
-        private ProtocolType protocol = ProtocolType.HTTP;
-
         public ProtocolType Protocol
         {
             get { return protocol; }
             set { protocol = value; }
         }
-
-        private Dictionary<string, string> queryParameters = new Dictionary<string, string>();
 
         public Dictionary<string, string> QueryParameters
         {
@@ -79,15 +85,11 @@ namespace Aliyun.Acs.Core
             set { queryParameters = value; }
         }
 
-        private Dictionary<string, string> domainParameters = new Dictionary<string, string>();
-
         public Dictionary<string, string> DomainParameters
         {
             get { return domainParameters; }
             set { domainParameters = value; }
         }
-
-        private Dictionary<string, string> bodyParameters = new Dictionary<string, string>();
 
         public Dictionary<string, string> BodyParameters
         {
@@ -99,8 +101,6 @@ namespace Aliyun.Acs.Core
 
         public string ProductEndpointType { get; set; }
 
-        public string ProductNetwork = "public";
-
         public void SetProductDomain(string endpoint = "")
         {
             if (endpoint == "")
@@ -110,21 +110,13 @@ namespace Aliyun.Acs.Core
 
             if (endpoint != "" && ProductDomain == null)
             {
-                ProductDomain = new ProductDomain
-                {
-                ProductName = Product,
-                DomianName = endpoint
-                };
+                ProductDomain = new ProductDomain {ProductName = Product, DomainName = endpoint};
             }
         }
 
         public void SetEndpoint(string endpoint)
         {
-            ProductDomain = new ProductDomain
-            {
-                ProductName = Product,
-                DomianName = endpoint
-            };
+            ProductDomain = new ProductDomain {ProductName = Product, DomainName = endpoint};
         }
 
         public string GetProductEndpoint()
@@ -160,9 +152,9 @@ namespace Aliyun.Acs.Core
 
             endpoint = endpoint.Replace("<product_id>", Product.ToLower());
 
-            endpoint = ProductNetwork == "public" ?
-                endpoint.Replace("<network>", "") :
-                endpoint.Replace("<network>", "-" + ProductNetwork);
+            endpoint = ProductNetwork == "public"
+                ? endpoint.Replace("<network>", "")
+                : endpoint.Replace("<network>", "-" + ProductNetwork);
 
             return endpoint;
         }

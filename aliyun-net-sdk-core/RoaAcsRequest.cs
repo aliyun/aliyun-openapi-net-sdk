@@ -155,7 +155,7 @@ namespace Aliyun.Acs.Core
                 DictionaryUtil.Add(imutableMap, "Authorization", "acs " + accessKeyId + ":" + signature);
             }
 
-            Url = ComposeUrl(domain.DomianName, QueryParameters);
+            Url = ComposeUrl(domain.DomainName, QueryParameters);
             Headers = imutableMap;
             return this;
         }

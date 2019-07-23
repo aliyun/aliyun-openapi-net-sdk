@@ -32,8 +32,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         [Fact]
         public void GetCredentials()
         {
-            DefaultProfile.ClearDefaultProfile();
-
             var mockRsaPairCredential = new Mock<KeyPairCredentials>("publicKeyId", "privateKeyFile");
             var rsaPairCredential = mockRsaPairCredential.Object;
 
@@ -55,8 +53,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         [Fact]
         public void RsaKeyPairCredentialProviderTest()
         {
-            DefaultProfile.ClearDefaultProfile();
-
             var mockRsaPairCredential = new Mock<KeyPairCredentials>("ak", "aks");
             var rsaPairCredential = mockRsaPairCredential.Object;
 
@@ -69,8 +65,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         [Fact]
         public void WithDurationSecondsTest()
         {
-            DefaultProfile.ClearDefaultProfile();
-
             long seconds = 100;
             var mockRsaPairCredential = new Mock<KeyPairCredentials>("ak", "aks");
             var rsaPairCredential = mockRsaPairCredential.Object;
@@ -84,8 +78,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         [Fact]
         public void WithStsClient()
         {
-            DefaultProfile.ClearDefaultProfile();
-
             var profile = DefaultProfile.GetProfile("cn-hangzhou");
             var mockClient = new Mock<IAcsClient>();
             var client = mockClient.Object;

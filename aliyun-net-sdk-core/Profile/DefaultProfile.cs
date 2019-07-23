@@ -19,68 +19,49 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 using Aliyun.Acs.Core.Auth;
-using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
+using Aliyun.Acs.Core.Regions.Endpoints;
 using Aliyun.Acs.Core.Regions.Location;
-using Aliyun.Acs.Core.Utils;
+
+using Newtonsoft.Json;
 
 namespace Aliyun.Acs.Core.Profile
 {
     public class DefaultProfile : IClientProfile
     {
-        private static DefaultProfile profile;
-        private static List<Endpoint> endpoints;
-        private readonly ICredentialProvider icredential;
-        private readonly IEndpointsProvider iendpoints;
+        private static DefaultProfile _profile;
+
+        private static Credential _credential;
+        private readonly EndpointResolve endpointResolve;
+        private readonly ICredentialProvider iCredentialProvider;
         private readonly string regionId;
-        private readonly RemoteEndpointsParser remoteProvider;
         public FormatType acceptFormat;
-
-        private Credential credential;
         private LocationConfig locationConfig;
-
-        public DefaultProfile(bool mock)
-        {
-            locationConfig = new LocationConfig();
-            iendpoints = new InternalEndpointsParser();
-            remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
-        }
 
         private DefaultProfile()
         {
+            endpointResolve = new EndpointResolve();
             locationConfig = new LocationConfig();
-            iendpoints = new InternalEndpointsParser();
-            remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
         }
 
-        private DefaultProfile(string regionId)
+        private DefaultProfile(string regionId) : this()
         {
-            locationConfig = new LocationConfig();
-            iendpoints = new InternalEndpointsParser();
-            remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
             this.regionId = regionId;
         }
 
-        private DefaultProfile(string region, Credential creden)
+        private DefaultProfile(string region, Credential creden) : this()
         {
-            iendpoints = new InternalEndpointsParser();
-            remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
-            credential = creden;
+            _credential = creden;
             regionId = region;
-            locationConfig = new LocationConfig();
         }
 
-        private DefaultProfile(string region, ICredentialProvider icredential)
+        private DefaultProfile(string region, ICredentialProvider icredential) : this()
         {
-            iendpoints = new InternalEndpointsParser();
-            this.icredential = icredential;
+            iCredentialProvider = icredential;
             regionId = region;
-            locationConfig = new LocationConfig();
-            remoteProvider = RemoteEndpointsParser.InitRemoteEndpointsParser();
         }
 
         public string DefaultClientName { get; set; }
@@ -97,12 +78,12 @@ namespace Aliyun.Acs.Core.Profile
 
         public Credential GetCredential()
         {
-            if (null == credential && null != icredential)
+            if (null == _credential && null != iCredentialProvider)
             {
-                credential = icredential.Fresh();
+                _credential = iCredentialProvider.Fresh();
             }
 
-            return credential;
+            return _credential;
         }
 
         [Obsolete]
@@ -113,124 +94,43 @@ namespace Aliyun.Acs.Core.Profile
 
         public void SetLocationConfig(string regionId, string product, string endpoint)
         {
-            locationConfig =
-                LocationConfig.createLocationConfig(regionId, product, endpoint);
+            locationConfig = LocationConfig.createLocationConfig(regionId, product, endpoint);
         }
 
         public List<Endpoint> GetEndpoints(string product, string regionId, string serviceCode, string endpointType)
         {
-            try
-            {
-                if (product == null)
-                {
-                    return endpoints;
-                }
-
-                if (null == endpoints)
-                {
-                    Endpoint endpoint = null;
-                    if (serviceCode != null)
-                    {
-                        endpoint = GetEndpointByRemoteProvider(regionId, product, serviceCode, endpointType);
-                    }
-
-                    if (endpoint == null)
-                    {
-                        endpoint = GetEndpointByIEndpoints(regionId, product);
-                    }
-
-                    if (endpoint != null)
-                    {
-                        endpoints = new List<Endpoint>
-                        {
-                            endpoint
-                        };
-                        CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, DateTime.Now);
-                    }
-                    else
-                    {
-                        throw new ClientException("SDK.InvalidRegionId", "Can not find endpoint to access.");
-                    }
-                }
-                else if (Endpoint.FindProductDomain(regionId, product, endpoints) == null ||
-                         CacheTimeHelper.CheckCacheIsExpire(product, regionId))
-                {
-                    Endpoint endpoint = null;
-                    if (serviceCode != null)
-                    {
-                        endpoint = GetEndpointByRemoteProvider(regionId, product, serviceCode, endpointType);
-                    }
-
-                    if (endpoint == null)
-                    {
-                        endpoint = GetEndpointByIEndpoints(regionId, product);
-                    }
-
-                    if (endpoint != null)
-                    {
-                        foreach (var region in endpoint.RegionIds)
-                            foreach (var productDomain in endpoint.ProductDomains.ToList())
-                            {
-                                AddEndpoint(endpoint.Name, region, product, productDomain.DomianName, false);
-                                CacheTimeHelper.AddLastClearTimePerProduct(product, region, DateTime.Now);
-                            }
-                    }
-                }
-            }
-            catch (ClientException ex)
-            {
-                CommonLog.LogException(ex, ex.ErrorCode, ex.ErrorMessage);
-                throw new ClientException(ex.ErrorCode, ex.ErrorMessage);
-            }
-
-            return endpoints;
-        }
-
-        public void SetCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider)
-        {
-            if (credential != null)
-            {
-                return;
-            }
-
-            credential = new CredentialsBackupCompatibilityAdaptor(credentialsProvider);
+            return endpointResolve.Resolve(product, regionId, serviceCode, endpointType, _credential, locationConfig);
         }
 
         public List<Endpoint> GetEndpoints(string regionId, string product)
         {
-            if (null == endpoints)
+            return endpointResolve.GetEndpoints(regionId, product);
+        }
+
+        public void AddEndpoint(string endpointName, string regionId, string product, string domain,
+            bool isNeverExpire = false)
+        {
+            endpointResolve.AddEndpoint(endpointName, regionId, product, domain, isNeverExpire);
+        }
+
+        public void SetCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider)
+        {
+            if (_credential != null)
             {
-                var endpoint = GetEndpointByIEndpoints(regionId, product);
-                if (endpoint != null)
-                {
-                    endpoints = new List<Endpoint> { endpoint };
-                }
+                return;
             }
 
-            return endpoints;
+            _credential = new CredentialsBackupCompatibilityAdaptor(credentialsProvider);
         }
 
         public static DefaultProfile GetProfile()
         {
-            if (null == profile)
+            if (null == _profile)
             {
-                profile = new DefaultProfile();
+                _profile = new DefaultProfile();
             }
 
-            return profile;
-        }
-
-        public static DefaultProfile GetProfile(string regionId, ICredentialProvider icredential)
-        {
-            profile = new DefaultProfile(regionId, icredential);
-            return profile;
-        }
-
-        public static DefaultProfile GetProfile(string regionId, string accessKeyId, string secret)
-        {
-            var creden = new Credential(accessKeyId, secret);
-            profile = new DefaultProfile(regionId, creden);
-            return profile;
+            return _profile;
         }
 
         public static DefaultProfile GetProfile(string regionId)
@@ -238,120 +138,17 @@ namespace Aliyun.Acs.Core.Profile
             return new DefaultProfile(regionId);
         }
 
-        public static void AddEndpoint(string endpointName, string regionId, string product, string domain)
+        public static DefaultProfile GetProfile(string regionId, ICredentialProvider icredential)
         {
-            AddEndpoint(endpointName, regionId, product, domain, true);
+            _profile = new DefaultProfile(regionId, icredential);
+            return _profile;
         }
 
-        public static void AddEndpoint(string endpointName, string regionId, string product, string domain,
-            bool isNeverExpire)
+        public static DefaultProfile GetProfile(string regionId, string accessKeyId, string secret)
         {
-            if (null == endpoints)
-            {
-                endpoints = GetProfile().GetEndpoints(regionId, product);
-            }
-
-            var endpoint = FindEndpointByRegionId(regionId);
-            if (null == endpoint)
-            {
-                AddEndpoint_(endpointName, regionId, product, domain);
-            }
-            else
-            {
-                UpdateEndpoint(regionId, product, domain, endpoint);
-            }
-
-            if (isNeverExpire)
-            {
-                var date = DateTime.Now.AddYears(100);
-                CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, date);
-            }
-        }
-
-        private static void AddEndpoint_(string endpointName, string regionId, string product, string domain)
-        {
-            ISet<string> regions = new HashSet<string>
-            {
-                regionId
-            };
-
-            var productDomains = new List<ProductDomain>
-            {
-                new ProductDomain(product, domain)
-            };
-            var endpoint = new Endpoint(endpointName, regions, productDomains);
-            if (endpoints == null)
-            {
-                endpoints = new List<Endpoint>();
-            }
-
-            endpoints.Add(endpoint);
-        }
-
-        private static void UpdateEndpoint(string regionId, string product, string domain, Endpoint endpoint)
-        {
-            var regionIds = endpoint.RegionIds;
-            regionIds.Add(regionId);
-
-            var productDomains = endpoint.ProductDomains;
-            var productDomain = FindProductDomain(productDomains, product);
-            if (null == productDomain)
-            {
-                productDomains.Add(new ProductDomain(product, domain));
-            }
-            else
-            {
-                productDomain.DomianName = domain;
-            }
-        }
-
-        private static Endpoint FindEndpointByRegionId(string regionId)
-        {
-            if (null == endpoints)
-            {
-                return null;
-            }
-
-            foreach (var endpoint in endpoints)
-            {
-                if (endpoint.RegionIds.Contains(regionId))
-                {
-                    return endpoint;
-                }
-            }
-
-            return null;
-        }
-
-        private static ProductDomain FindProductDomain(List<ProductDomain> productDomains, string product)
-        {
-            foreach (var productDomain in productDomains)
-            {
-                if (productDomain.ProductName.Equals(product))
-                {
-                    return productDomain;
-                }
-            }
-
-            return null;
-        }
-
-        public static void ClearDefaultProfile()
-        {
-            profile = null;
-            endpoints = null;
-        }
-
-        public virtual Endpoint GetEndpointByRemoteProvider(string regionId, string product, string serviceCode,
-            string endpointType)
-        {
-            return remoteProvider.GetEndpoint(regionId, product, serviceCode, endpointType, credential,
-                locationConfig);
-        }
-
-        public virtual Endpoint GetEndpointByIEndpoints(string regionId, string product)
-        {
-            return iendpoints.GetEndpoint(regionId, product);
+            var credential = new Credential(accessKeyId, secret);
+            _profile = new DefaultProfile(regionId, credential);
+            return _profile;
         }
     }
 }

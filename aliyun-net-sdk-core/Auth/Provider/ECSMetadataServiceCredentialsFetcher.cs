@@ -172,7 +172,7 @@ namespace Aliyun.Acs.Core.Auth
 
         public virtual HttpResponse GetResponse(HttpRequest request)
         {
-            return HttpResponse.GetResponse(request);
+            return new HttpResponse().GetResponse(request);
         }
     }
 }

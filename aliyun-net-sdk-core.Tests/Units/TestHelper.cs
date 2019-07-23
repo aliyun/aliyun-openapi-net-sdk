@@ -47,18 +47,18 @@ namespace Aliyun.Acs.Core.Tests.Units
 
         private static void CreateAndSetCurrentDirecotry()
         {
+
             Directory.CreateDirectory(homePath + slash + ".alibabacloud" + slash);
             Directory.SetCurrentDirectory(homePath + slash + ".alibabacloud" + slash);
 
             var filePath = GetIniFilePath();
+
             if (File.Exists(filePath))
             {
                 File.Delete(filePath);
             }
 
-            using (var fs = File.Create(filePath))
-            {
-            }
+            using (File.Create(filePath)) { }
         }
 
         public static string GetIniFilePath()

@@ -35,8 +35,8 @@ namespace Aliyun.Acs.Feature.Test.Credential
         {
             var provider = new BearerTokenCredentialProvider(GetBearerToken());
 
-            profile = DefaultProfile.GetProfile("cn-hangzhou");
-            client = new DefaultAcsClient(profile, provider);
+            var profile = DefaultProfile.GetProfile("cn-hangzhou");
+            var client = new DefaultAcsClient(profile, provider);
 
             var request = new ListPhoneNumbersRequest();
 

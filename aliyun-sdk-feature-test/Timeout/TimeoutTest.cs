@@ -37,7 +37,7 @@ namespace Aliyun.Acs.Feature.Test.Timeout
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                var response = HttpResponse.GetResponse(request);
+                var response = new HttpResponse().GetResponse(request);
             });
 
             Assert.NotNull(exception.Message);
