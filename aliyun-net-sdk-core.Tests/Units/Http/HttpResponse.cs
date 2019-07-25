@@ -73,15 +73,19 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
             request.SetHttpsInsecure(true);
 
             var httpWebRequest = HttpResponse.GetWebRequest(request);
+
+            Assert.NotNull(httpWebRequest);
         }
 
         [Fact]
         public void GetWebRequestWithProxy()
         {
             var request = HttpRequestTest.SetContent();
-            request.WebProxy = new WebProxy();
+            request.WebProxy = null;
 
             var httpWebRequest = HttpResponse.GetWebRequest(request);
+
+            Assert.NotNull(httpWebRequest);
         }
 
         [Fact]

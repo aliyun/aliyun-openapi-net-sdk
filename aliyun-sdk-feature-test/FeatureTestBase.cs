@@ -67,9 +67,6 @@ namespace Aliyun.Acs.Feature.Test
 
         public string GetToken()
         {
-            var profile = DefaultProfile.GetProfile(regionId, GetBasicAccessKeyId(), GetBasicAccessKeySecret());
-            IAcsClient client = new DefaultAcsClient(profile);
-
             var assumeRoleRequest = new AssumeRoleRequest();
             assumeRoleRequest.RoleArn = GetRoleArn();
             assumeRoleRequest.RoleSessionName = "robert_test";
