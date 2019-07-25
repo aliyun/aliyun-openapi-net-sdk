@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CloudAPI.Transform;
 using Aliyun.Acs.CloudAPI.Transform.V20160714;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
@@ -31,6 +32,11 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
         public CreateApiStageVariableRequest()
             : base("CloudAPI", "2016-07-14", "CreateApiStageVariable", "apigateway", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private bool? supportRoute;
@@ -43,11 +49,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string groupId;
 
-		private string action;
-
 		private string stageRouteModel;
-
-		private string accessKeyId;
 
 		private string stageId;
 
@@ -116,19 +118,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string StageRouteModel
 		{
 			get
@@ -139,19 +128,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				stageRouteModel = value;
 				DictionaryUtil.Add(QueryParameters, "StageRouteModel", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -168,7 +144,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-        public override CreateApiStageVariableResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateApiStageVariableResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateApiStageVariableResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CloudAPI.Model.V20160714;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CloudAPI.Model.V20160714;
 
 namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 {
@@ -43,6 +44,9 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiGroupResponse.IllegalStatus = context.StringValue("DescribeApiGroup.IllegalStatus");
 			describeApiGroupResponse.TrafficLimit = context.IntegerValue("DescribeApiGroup.TrafficLimit");
 			describeApiGroupResponse.VpcDomain = context.StringValue("DescribeApiGroup.VpcDomain");
+			describeApiGroupResponse.InstanceType = context.StringValue("DescribeApiGroup.InstanceType");
+			describeApiGroupResponse.InstanceId = context.StringValue("DescribeApiGroup.InstanceId");
+			describeApiGroupResponse.HttpsPolicy = context.StringValue("DescribeApiGroup.HttpsPolicy");
 
 			List<DescribeApiGroupResponse.DescribeApiGroup_DomainItem> describeApiGroupResponse_customDomains = new List<DescribeApiGroupResponse.DescribeApiGroup_DomainItem>();
 			for (int i = 0; i < context.Length("DescribeApiGroup.CustomDomains.Length"); i++) {

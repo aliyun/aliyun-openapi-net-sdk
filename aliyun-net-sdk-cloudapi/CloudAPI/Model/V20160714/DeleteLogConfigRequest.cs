@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CloudAPI.Transform;
 using Aliyun.Acs.CloudAPI.Transform.V20160714;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
@@ -31,13 +32,16 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
         public DeleteLogConfigRequest()
             : base("CloudAPI", "2016-07-14", "DeleteLogConfig", "apigateway", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string logType;
 
 		private string securityToken;
-
-		private string accessKeyId;
 
 		public string LogType
 		{
@@ -65,20 +69,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override DeleteLogConfigResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteLogConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteLogConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

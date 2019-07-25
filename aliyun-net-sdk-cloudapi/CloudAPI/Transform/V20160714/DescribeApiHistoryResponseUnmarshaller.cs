@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CloudAPI.Model.V20160714;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CloudAPI.Model.V20160714;
 
 namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 {
@@ -78,6 +79,13 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			vpcConfig.InstanceId = context.StringValue("DescribeApiHistory.ServiceConfig.VpcConfig.InstanceId");
 			vpcConfig.Port = context.IntegerValue("DescribeApiHistory.ServiceConfig.VpcConfig.Port");
 			serviceConfig.VpcConfig = vpcConfig;
+
+			DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_FunctionComputeConfig functionComputeConfig = new DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_FunctionComputeConfig();
+			functionComputeConfig.RegionId = context.StringValue("DescribeApiHistory.ServiceConfig.FunctionComputeConfig.RegionId");
+			functionComputeConfig.ServiceName = context.StringValue("DescribeApiHistory.ServiceConfig.FunctionComputeConfig.ServiceName");
+			functionComputeConfig.FunctionName = context.StringValue("DescribeApiHistory.ServiceConfig.FunctionComputeConfig.FunctionName");
+			functionComputeConfig.RoleArn = context.StringValue("DescribeApiHistory.ServiceConfig.FunctionComputeConfig.RoleArn");
+			serviceConfig.FunctionComputeConfig = functionComputeConfig;
 
 			List<DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_MockHeader> serviceConfig_mockHeaders = new List<DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_MockHeader>();
 			for (int i = 0; i < context.Length("DescribeApiHistory.ServiceConfig.MockHeaders.Length"); i++) {

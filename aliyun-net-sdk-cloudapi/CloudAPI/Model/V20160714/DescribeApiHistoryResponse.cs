@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
@@ -1261,6 +1262,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private DescribeApiHistory_VpcConfig vpcConfig;
 
+			private DescribeApiHistory_FunctionComputeConfig functionComputeConfig;
+
 			public string ServiceProtocol
 			{
 				get
@@ -1393,6 +1396,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				}
 			}
 
+			public DescribeApiHistory_FunctionComputeConfig FunctionComputeConfig
+			{
+				get
+				{
+					return functionComputeConfig;
+				}
+				set	
+				{
+					functionComputeConfig = value;
+				}
+			}
+
 			public class DescribeApiHistory_MockHeader
 			{
 
@@ -1481,6 +1496,66 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 					set	
 					{
 						port = value;
+					}
+				}
+			}
+
+			public class DescribeApiHistory_FunctionComputeConfig
+			{
+
+				private string regionId;
+
+				private string serviceName;
+
+				private string functionName;
+
+				private string roleArn;
+
+				public string RegionId
+				{
+					get
+					{
+						return regionId;
+					}
+					set	
+					{
+						regionId = value;
+					}
+				}
+
+				public string ServiceName
+				{
+					get
+					{
+						return serviceName;
+					}
+					set	
+					{
+						serviceName = value;
+					}
+				}
+
+				public string FunctionName
+				{
+					get
+					{
+						return functionName;
+					}
+					set	
+					{
+						functionName = value;
+					}
+				}
+
+				public string RoleArn
+				{
+					get
+					{
+						return roleArn;
+					}
+					set	
+					{
+						roleArn = value;
 					}
 				}
 			}

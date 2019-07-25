@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CloudAPI.Transform;
 using Aliyun.Acs.CloudAPI.Transform.V20160714;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
@@ -31,19 +32,24 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
         public ModifyApiRequest()
             : base("CloudAPI", "2016-07-14", "ModifyApi", "apigateway", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string webSocketApiType;
 
 		private string errorCodeSamples;
 
+		private string appCodeAuthType;
+
 		private string description;
 
 		private bool? disableInternet;
 
 		private string constantParameters;
-
-		private string accessKeyId;
 
 		private string authType;
 
@@ -60,8 +66,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 		private string securityToken;
 
 		private string openIdConnectConfig;
-
-		private string action;
 
 		private string requestParameters;
 
@@ -113,6 +117,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string AppCodeAuthType
+		{
+			get
+			{
+				return appCodeAuthType;
+			}
+			set	
+			{
+				appCodeAuthType = value;
+				DictionaryUtil.Add(QueryParameters, "AppCodeAuthType", value);
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -149,19 +166,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				constantParameters = value;
 				DictionaryUtil.Add(QueryParameters, "ConstantParameters", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -266,19 +270,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				openIdConnectConfig = value;
 				DictionaryUtil.Add(QueryParameters, "OpenIdConnectConfig", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -438,7 +429,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-        public override ModifyApiResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyApiResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyApiResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

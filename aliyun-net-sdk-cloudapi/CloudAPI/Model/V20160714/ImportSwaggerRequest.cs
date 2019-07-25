@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CloudAPI.Transform;
 using Aliyun.Acs.CloudAPI.Transform.V20160714;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
@@ -31,6 +32,11 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
         public ImportSwaggerRequest()
             : base("CloudAPI", "2016-07-14", "ImportSwagger", "apigateway", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string dataFormat;
@@ -93,7 +99,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-        public override ImportSwaggerResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ImportSwaggerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ImportSwaggerResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

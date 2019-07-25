@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
@@ -116,6 +117,12 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			private string billingStatus;
 
 			private string illegalStatus;
+
+			private string instanceId;
+
+			private string instanceType;
+
+			private string httpsPolicy;
 
 			public string GroupId
 			{
@@ -234,6 +241,42 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					illegalStatus = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+
+			public string HttpsPolicy
+			{
+				get
+				{
+					return httpsPolicy;
+				}
+				set	
+				{
+					httpsPolicy = value;
 				}
 			}
 		}

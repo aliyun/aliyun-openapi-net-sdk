@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CloudAPI.Transform;
 using Aliyun.Acs.CloudAPI.Transform.V20160714;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
@@ -31,23 +32,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
         public SetDomainRequest()
             : base("CloudAPI", "2016-07-14", "SetDomain", "apigateway", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string securityToken;
 
-		private string certificatePrivateKey;
-
 		private string groupId;
 
 		private string domainName;
-
-		private string certificateName;
-
-		private string action;
-
-		private string certificateBody;
-
-		private string accessKeyId;
 
 		public string SecurityToken
 		{
@@ -59,19 +55,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string CertificatePrivateKey
-		{
-			get
-			{
-				return certificatePrivateKey;
-			}
-			set	
-			{
-				certificatePrivateKey = value;
-				DictionaryUtil.Add(QueryParameters, "CertificatePrivateKey", value);
 			}
 		}
 
@@ -101,59 +84,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string CertificateName
-		{
-			get
-			{
-				return certificateName;
-			}
-			set	
-			{
-				certificateName = value;
-				DictionaryUtil.Add(QueryParameters, "CertificateName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string CertificateBody
-		{
-			get
-			{
-				return certificateBody;
-			}
-			set	
-			{
-				certificateBody = value;
-				DictionaryUtil.Add(QueryParameters, "CertificateBody", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override SetDomainResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SetDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SetDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

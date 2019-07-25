@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CloudAPI.Transform;
 using Aliyun.Acs.CloudAPI.Transform.V20160714;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
@@ -31,6 +32,11 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
         public DescribeApisRequest()
             : base("CloudAPI", "2016-07-14", "DescribeApis", "apigateway", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string apiName;
@@ -45,13 +51,9 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private int? pageSize;
 
-		private string action;
-
 		private string apiId;
 
 		private int? pageNumber;
-
-		private string accessKeyId;
 
 		public string ApiName
 		{
@@ -131,19 +133,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ApiId
 		{
 			get
@@ -170,20 +159,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override DescribeApisResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeApisResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeApisResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

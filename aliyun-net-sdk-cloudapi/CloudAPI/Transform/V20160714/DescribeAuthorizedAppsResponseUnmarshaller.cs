@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CloudAPI.Model.V20160714;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CloudAPI.Model.V20160714;
 
 namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 {
@@ -41,7 +42,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				authorizedApp.StageName = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].StageName");
 				authorizedApp.AppId = context.LongValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AppId");
 				authorizedApp.AppName = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AppName");
-				authorizedApp._Operator = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].Operator");
+				authorizedApp._Operator = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"]._Operator");
 				authorizedApp.AuthorizationSource = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AuthorizationSource");
 				authorizedApp.Description = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].Description");
 				authorizedApp.AuthorizedTime = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AuthorizedTime");

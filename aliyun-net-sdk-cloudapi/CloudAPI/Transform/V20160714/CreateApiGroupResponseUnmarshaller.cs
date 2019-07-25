@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CloudAPI.Model.V20160714;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CloudAPI.Model.V20160714;
 
 namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 {
@@ -35,6 +36,8 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			createApiGroupResponse.GroupName = context.StringValue("CreateApiGroup.GroupName");
 			createApiGroupResponse.SubDomain = context.StringValue("CreateApiGroup.SubDomain");
 			createApiGroupResponse.Description = context.StringValue("CreateApiGroup.Description");
+			createApiGroupResponse.InstanceId = context.StringValue("CreateApiGroup.InstanceId");
+			createApiGroupResponse.InstanceType = context.StringValue("CreateApiGroup.InstanceType");
         
 			return createApiGroupResponse;
         }

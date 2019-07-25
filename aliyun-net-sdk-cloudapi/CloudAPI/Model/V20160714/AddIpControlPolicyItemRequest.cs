@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.CloudAPI.Transform;
 using Aliyun.Acs.CloudAPI.Transform.V20160714;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
@@ -31,6 +32,11 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
         public AddIpControlPolicyItemRequest()
             : base("CloudAPI", "2016-07-14", "AddIpControlPolicyItem", "apigateway", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string ipControlId;
@@ -39,11 +45,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string appId;
 
-		private string action;
-
 		private string cidrIp;
-
-		private string accessKeyId;
 
 		public string IpControlId
 		{
@@ -84,19 +86,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string CidrIp
 		{
 			get
@@ -110,20 +99,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override AddIpControlPolicyItemResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddIpControlPolicyItemResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AddIpControlPolicyItemResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.CloudAPI.Model.V20160714;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.CloudAPI.Model.V20160714;
 
 namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 {
@@ -82,6 +83,13 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			vpcConfig.InstanceId = context.StringValue("DescribeApi.ServiceConfig.VpcConfig.InstanceId");
 			vpcConfig.Port = context.IntegerValue("DescribeApi.ServiceConfig.VpcConfig.Port");
 			serviceConfig.VpcConfig = vpcConfig;
+
+			DescribeApiResponse.DescribeApi_ServiceConfig.DescribeApi_FunctionComputeConfig functionComputeConfig = new DescribeApiResponse.DescribeApi_ServiceConfig.DescribeApi_FunctionComputeConfig();
+			functionComputeConfig.RegionId = context.StringValue("DescribeApi.ServiceConfig.FunctionComputeConfig.RegionId");
+			functionComputeConfig.ServiceName = context.StringValue("DescribeApi.ServiceConfig.FunctionComputeConfig.ServiceName");
+			functionComputeConfig.FunctionName = context.StringValue("DescribeApi.ServiceConfig.FunctionComputeConfig.FunctionName");
+			functionComputeConfig.RoleArn = context.StringValue("DescribeApi.ServiceConfig.FunctionComputeConfig.RoleArn");
+			serviceConfig.FunctionComputeConfig = functionComputeConfig;
 
 			List<DescribeApiResponse.DescribeApi_ServiceConfig.DescribeApi_MockHeader> serviceConfig_mockHeaders = new List<DescribeApiResponse.DescribeApi_ServiceConfig.DescribeApi_MockHeader>();
 			for (int i = 0; i < context.Length("DescribeApi.ServiceConfig.MockHeaders.Length"); i++) {
