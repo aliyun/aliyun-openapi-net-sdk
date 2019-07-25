@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class TagResourceRequest : RpcAcsRequest<TagResourceResponse>
+    public class DescribeServiceRequest : RpcAcsRequest<DescribeServiceResponse>
     {
-        public TagResourceRequest()
-            : base("Kms", "2016-01-20", "TagResource", "kms", "openAPI")
+        public DescribeServiceRequest()
+            : base("Kms", "2016-01-20", "DescribeService", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,39 +40,9 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string keyId;
-
-		private string tags;
-
-		public string KeyId
-		{
-			get
-			{
-				return keyId;
-			}
-			set	
-			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-        public override TagResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TagResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

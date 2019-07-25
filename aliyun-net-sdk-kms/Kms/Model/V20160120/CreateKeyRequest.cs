@@ -32,14 +32,34 @@ namespace Aliyun.Acs.Kms.Model.V20160120
         public CreateKeyRequest()
             : base("Kms", "2016-01-20", "CreateKey", "kms", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Protocol = ProtocolType.HTTPS;
         }
+
+		private string protectionLevel;
 
 		private string keyUsage;
 
 		private string origin;
 
 		private string description;
+
+		public string ProtectionLevel
+		{
+			get
+			{
+				return protectionLevel;
+			}
+			set	
+			{
+				protectionLevel = value;
+				DictionaryUtil.Add(QueryParameters, "ProtectionLevel", value);
+			}
+		}
 
 		public string KeyUsage
 		{

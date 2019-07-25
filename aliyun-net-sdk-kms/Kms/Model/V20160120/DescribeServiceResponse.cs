@@ -16,27 +16,59 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Kms.Model.V20160120;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Kms.Transform.V20160120
+namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class GenerateDataKeyResponseUnmarshaller
-    {
-        public static GenerateDataKeyResponse Unmarshall(UnmarshallerContext context)
-        {
-			GenerateDataKeyResponse generateDataKeyResponse = new GenerateDataKeyResponse();
+	public class DescribeServiceResponse : AcsResponse
+	{
 
-			generateDataKeyResponse.HttpResponse = context.HttpResponse;
-			generateDataKeyResponse.CiphertextBlob = context.StringValue("GenerateDataKey.CiphertextBlob");
-			generateDataKeyResponse.KeyId = context.StringValue("GenerateDataKey.KeyId");
-			generateDataKeyResponse.Plaintext = context.StringValue("GenerateDataKey.Plaintext");
-			generateDataKeyResponse.RequestId = context.StringValue("GenerateDataKey.RequestId");
-        
-			return generateDataKeyResponse;
-        }
-    }
+		private string requestId;
+
+		private List<DescribeService_ProtectionLevel> protectionLevels;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<DescribeService_ProtectionLevel> ProtectionLevels
+		{
+			get
+			{
+				return protectionLevels;
+			}
+			set	
+			{
+				protectionLevels = value;
+			}
+		}
+
+		public class DescribeService_ProtectionLevel
+		{
+
+			private string type;
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+		}
+	}
 }

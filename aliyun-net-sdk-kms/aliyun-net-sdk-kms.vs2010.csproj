@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{030bfd9e-3e19-4c64-aac8-4b4f0aad2d3f}</ProjectGuid>
+    <ProjectGuid>{b923231d-8c62-4d2a-a407-e28a865c0424}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,72 +40,75 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Kms\Model\V20160120\ListAliasesByKeyIdRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\DeleteKeyMaterialResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\DeleteAliasRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\ImportKeyMaterialResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\DisableKeyResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\DescribeKeyResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\CancelKeyDeletionResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\ImportKeyMaterialRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\TagResourceRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\GetParametersForImportRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\EnableKeyRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\ListResourceTagsRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\ListKeysResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\TagResourceResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\DeleteAliasResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\GetParametersForImportResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\CreateAliasRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\ListResourceTagsResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\EncryptRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\DecryptResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\UpdateAliasRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\CreateKeyResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\UntagResourceResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\DescribeRegionsResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ScheduleKeyDeletionRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\GenerateDataKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\TagResourceRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeServiceResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DecryptRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\CreateAliasRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DeleteKeyMaterialResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ImportKeyMaterialResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\GetParametersForImportResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\EnableKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DecryptResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DeleteAliasResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\UpdateAliasRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeServiceRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\CreateAliasResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ImportKeyMaterialRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\CancelKeyDeletionResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\EnableKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\CancelKeyDeletionRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\TagResourceResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\DeleteKeyMaterialRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\ListAliasesByKeyIdResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\CancelKeyDeletionRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\DescribeKeyRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\DecryptRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\ListAliasesResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\ListAliasesRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\ScheduleKeyDeletionRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\CreateKeyRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\UpdateAliasResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\EnableKeyResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\UntagResourceRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\ListKeysRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\DisableKeyRequest.cs" />
-	<Compile Include="Kms\Model\V20160120\EncryptResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ListAliasesResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\UntagResourceResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\UntagResourceRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\EncryptRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DescribeRegionsResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DeleteAliasRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\DisableKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\GetParametersForImportRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\ListKeysResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\UpdateAliasResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ListResourceTagsRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\ListResourceTagsResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\CreateKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\CreateKeyResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\ScheduleKeyDeletionResponse.cs" />
-	<Compile Include="Kms\Model\V20160120\GenerateDataKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\DisableKeyRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\DescribeRegionsRequest.cs" />
-	<Compile Include="Kms\Transform\V20160120\DescribeKeyResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\EncryptResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\DecryptResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\CreateAliasResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\UntagResourceResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\DisableKeyResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\DeleteKeyMaterialResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\UpdateAliasResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\CancelKeyDeletionResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\TagResourceResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\CreateKeyResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\GenerateDataKeyResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\ListAliasesByKeyIdResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\ListAliasesResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Model\V20160120\EncryptResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\GenerateDataKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\ListAliasesRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\ListAliasesByKeyIdRequest.cs" />
 	<Compile Include="Kms\Transform\V20160120\EnableKeyResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\ScheduleKeyDeletionResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\ListResourceTagsResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DisableKeyResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\GenerateDataKeyResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\UntagResourceResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DescribeKeyResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DecryptResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\ListAliasesByKeyIdResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\CancelKeyDeletionResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\UpdateAliasResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\ImportKeyMaterialResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\DeleteAliasResponseUnmarshaller.cs" />
-	<Compile Include="Kms\Transform\V20160120\GetParametersForImportResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\ListAliasesResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\CreateKeyResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\ListKeysResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\GetParametersForImportResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\TagResourceResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\CreateAliasResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\ListResourceTagsResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\ScheduleKeyDeletionResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DescribeServiceResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DeleteAliasResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\DeleteKeyMaterialResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\EncryptResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

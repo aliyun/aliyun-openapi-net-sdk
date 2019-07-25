@@ -16,27 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
-
-namespace Aliyun.Acs.Kms.Model.V20160120
+namespace Aliyun.Acs.Kms
 {
-	public class EnableKeyResponse : AcsResponse
-	{
+    public class Endpoint
+    {
+        public static Dictionary<string, string> endpointMap = new Dictionary<string, string>() 
+        {};
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+        public static string endpointRegionalType = "regional";
+    }
 }

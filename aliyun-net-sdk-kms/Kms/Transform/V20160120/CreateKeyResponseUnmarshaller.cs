@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			keyMetadata.Arn = context.StringValue("CreateKey.KeyMetadata.Arn");
 			keyMetadata.Origin = context.StringValue("CreateKey.KeyMetadata.Origin");
 			keyMetadata.MaterialExpireTime = context.StringValue("CreateKey.KeyMetadata.MaterialExpireTime");
+			keyMetadata.ProtectionLevel = context.StringValue("CreateKey.KeyMetadata.ProtectionLevel");
 			createKeyResponse.KeyMetadata = keyMetadata;
         
 			return createKeyResponse;
