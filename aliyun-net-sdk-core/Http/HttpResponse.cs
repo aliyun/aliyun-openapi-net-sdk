@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Net;
 
@@ -180,6 +179,8 @@ namespace Aliyun.Acs.Core.Http
 
             httpWebRequest.Proxy = request.WebProxy;
             httpWebRequest.KeepAlive = true;
+
+            httpWebRequest.ServicePoint.ConnectionLimit = 512;
 
             if (DictionaryUtil.Get(request.Headers, "Accept") != null)
             {

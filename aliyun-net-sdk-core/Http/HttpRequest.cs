@@ -20,7 +20,6 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
-using System.Threading;
 
 using Aliyun.Acs.Core.Utils;
 
@@ -56,7 +55,8 @@ namespace Aliyun.Acs.Core.Http
         public byte[] Content { get; set; }
         public string Encoding { get; set; }
 
-        [Obsolete("timeoutInMilliSeconds is deprecated as does not match Properties rule, please use TimeoutInMilliseconds instead.")]
+        [Obsolete(
+            "timeoutInMilliSeconds is deprecated as does not match Properties rule, please use TimeoutInMilliseconds instead.")]
         public int timeoutInMilliSeconds
         {
             get { return TimeoutInMilliseconds; }
@@ -124,19 +124,19 @@ namespace Aliyun.Acs.Core.Http
             Encoding = encoding;
         }
 
-        public void SetConnectTimeoutInMilliSeconds(int conTimeout)
+        public void SetConnectTimeoutInMilliSeconds(int connectTimeout)
         {
-            ConnectTimeout = conTimeout;
+            ConnectTimeout = connectTimeout;
         }
 
-        public void SetReadTimeoutInMilliSeconds(int reTimeout)
+        public void SetReadTimeoutInMilliSeconds(int readTimeout)
         {
-            ReadTimeout = reTimeout;
+            ReadTimeout = readTimeout;
         }
 
-        public void SetHttpsInsecure(bool ignoreCert = false)
+        public void SetHttpsInsecure(bool ignoreCertificate = false)
         {
-            IgnoreCertificate = ignoreCert;
+            IgnoreCertificate = ignoreCertificate;
         }
     }
 }
