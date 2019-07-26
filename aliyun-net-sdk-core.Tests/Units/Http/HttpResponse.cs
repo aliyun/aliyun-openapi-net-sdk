@@ -39,12 +39,12 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
             var content = Encoding.ASCII.GetBytes("someString");
             request.SetContent(content, "UTF-8", FormatType.FORM);
             request.Method = MethodType.GET;
-            var response = new HttpResponse().GetResponse(request);
+            var response = HttpResponse.GetResponse(request);
             Assert.Equal("UTF-8", response.Encoding);
             Assert.Equal(MethodType.GET, response.Method);
 
             // When timeout!=0
-            response = new HttpResponse().GetResponse(request, 100000);
+            response = HttpResponse.GetResponse(request, 100000);
 
             // Done With No Exception
         }

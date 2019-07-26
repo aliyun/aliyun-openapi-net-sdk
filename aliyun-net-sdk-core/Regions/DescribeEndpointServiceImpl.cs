@@ -140,7 +140,7 @@ namespace Aliyun.Acs.Core.Regions
 
         public virtual HttpResponse GetResponse(HttpRequest httpRequest)
         {
-            return new HttpResponse().GetResponse(httpRequest);
+            return HttpResponse.GetResponse(httpRequest);
         }
     }
 }
