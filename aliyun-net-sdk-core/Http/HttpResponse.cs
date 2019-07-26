@@ -109,7 +109,7 @@ namespace Aliyun.Acs.Core.Http
             }
         }
 
-        public HttpResponse GetResponse(HttpRequest request, int? timeout = null)
+        public static HttpResponse GetResponse(HttpRequest request, int? timeout = null)
         {
             var httpWebRequest = GetWebRequest(request);
 
@@ -123,19 +123,22 @@ namespace Aliyun.Acs.Core.Http
 
             try
             {
-                httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                ParseHttpResponse(httpResponse, httpWebResponse);
+                using (httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse())
+                {
+                    ParseHttpResponse(httpResponse, httpWebResponse);
+                    return httpResponse;
+                }
 
-                return httpResponse;
             }
             catch (WebException ex)
             {
                 if (ex.Response != null)
                 {
-                    httpWebResponse = ex.Response as HttpWebResponse;
-                    ParseHttpResponse(httpResponse, httpWebResponse);
-
-                    return httpResponse;
+                    using (httpWebResponse = ex.Response as HttpWebResponse)
+                    {
+                        ParseHttpResponse(httpResponse, httpWebResponse);
+                        return httpResponse;
+                    }
                 }
 
                 throw new ClientException("SDK.WebException",
@@ -160,10 +163,11 @@ namespace Aliyun.Acs.Core.Http
         public static HttpWebRequest GetWebRequest(HttpRequest request)
         {
             var uri = new Uri(request.Url);
-
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(uri);
 
+            httpWebRequest.Proxy = request.WebProxy;
             httpWebRequest.Method = request.Method.ToString();
+            httpWebRequest.KeepAlive = true;
 
             httpWebRequest.Timeout = request.ConnectTimeout > 0
                 ? request.ConnectTimeout
@@ -176,11 +180,6 @@ namespace Aliyun.Acs.Core.Http
             {
                 httpWebRequest.ServerCertificateValidationCallback = (s, cert, chains, sslPolicyError) => true;
             }
-
-            httpWebRequest.Proxy = request.WebProxy;
-            httpWebRequest.KeepAlive = true;
-
-            httpWebRequest.ServicePoint.ConnectionLimit = 512;
 
             if (DictionaryUtil.Get(request.Headers, "Accept") != null)
             {

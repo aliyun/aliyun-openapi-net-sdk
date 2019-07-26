@@ -416,7 +416,7 @@ namespace Aliyun.Acs.Core
 
         public virtual HttpResponse GetResponse(HttpRequest httpRequest)
         {
-            return new HttpResponse().GetResponse(httpRequest);
+            return HttpResponse.GetResponse(httpRequest);
         }
 
         public void AppendUserAgent(string key, string value)
