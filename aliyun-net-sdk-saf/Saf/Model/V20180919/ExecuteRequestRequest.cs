@@ -30,7 +30,7 @@ namespace Aliyun.Acs.saf.Model.V20180919
     public class ExecuteRequestRequest : RpcAcsRequest<ExecuteRequestResponse>
     {
         public ExecuteRequestRequest()
-            : base("saf", "2018-09-19", "ExecuteRequest", "saf", "openAPI")
+            : base("saf", "2018-09-19", "ExecuteRequest", "ExecuteRequest", "openAPI")
         {
 			Protocol = ProtocolType.HTTPS;
         }
