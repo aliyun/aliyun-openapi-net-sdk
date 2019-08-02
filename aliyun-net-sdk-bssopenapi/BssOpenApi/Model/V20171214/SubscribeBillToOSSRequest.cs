@@ -40,9 +40,26 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
             }
         }
 
+		private long? bucketOwnerId;
+
 		private string subscribeType;
 
 		private string subscribeBucket;
+
+		private string multAccountRelSubscribe;
+
+		public long? BucketOwnerId
+		{
+			get
+			{
+				return bucketOwnerId;
+			}
+			set	
+			{
+				bucketOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "BucketOwnerId", value.ToString());
+			}
+		}
 
 		public string SubscribeType
 		{
@@ -67,6 +84,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				subscribeBucket = value;
 				DictionaryUtil.Add(QueryParameters, "SubscribeBucket", value);
+			}
+		}
+
+		public string MultAccountRelSubscribe
+		{
+			get
+			{
+				return multAccountRelSubscribe;
+			}
+			set	
+			{
+				multAccountRelSubscribe = value;
+				DictionaryUtil.Add(QueryParameters, "MultAccountRelSubscribe", value);
 			}
 		}
 

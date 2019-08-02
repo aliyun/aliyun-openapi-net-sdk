@@ -42,6 +42,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string subscribeType;
 
+		private string multAccountRelSubscribe;
+
 		public string SubscribeType
 		{
 			get
@@ -52,6 +54,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				subscribeType = value;
 				DictionaryUtil.Add(QueryParameters, "SubscribeType", value);
+			}
+		}
+
+		public string MultAccountRelSubscribe
+		{
+			get
+			{
+				return multAccountRelSubscribe;
+			}
+			set	
+			{
+				multAccountRelSubscribe = value;
+				DictionaryUtil.Add(QueryParameters, "MultAccountRelSubscribe", value);
 			}
 		}
 
