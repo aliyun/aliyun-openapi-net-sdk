@@ -188,6 +188,10 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private string backupObjects;
 
+			private long? createTime;
+
+			private long? finishTime;
+
 			public string BackupSetId
 			{
 				get
@@ -305,6 +309,30 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					backupObjects = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public long? FinishTime
+			{
+				get
+				{
+					return finishTime;
+				}
+				set	
+				{
+					finishTime = value;
 				}
 			}
 		}
