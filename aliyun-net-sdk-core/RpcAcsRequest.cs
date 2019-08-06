@@ -163,7 +163,7 @@ namespace Aliyun.Acs.Core
             var urlBuilder = new StringBuilder("");
             urlBuilder.Append(Protocol.ToString().ToLower());
             urlBuilder.Append("://").Append(endpoint);
-            if (-1 == urlBuilder.ToString().IndexOf("?"))
+            if (!urlBuilder.ToString().Contains("?"))
             {
                 urlBuilder.Append("/?");
             }
