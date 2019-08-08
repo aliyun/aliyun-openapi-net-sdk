@@ -38,6 +38,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			createApiGroupResponse.Description = context.StringValue("CreateApiGroup.Description");
 			createApiGroupResponse.InstanceId = context.StringValue("CreateApiGroup.InstanceId");
 			createApiGroupResponse.InstanceType = context.StringValue("CreateApiGroup.InstanceType");
+			createApiGroupResponse.TagStatus = context.BooleanValue("CreateApiGroup.TagStatus");
         
 			return createApiGroupResponse;
         }

@@ -33,6 +33,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			createAppResponse.HttpResponse = context.HttpResponse;
 			createAppResponse.RequestId = context.StringValue("CreateApp.RequestId");
 			createAppResponse.AppId = context.LongValue("CreateApp.AppId");
+			createAppResponse.TagStatus = context.BooleanValue("CreateApp.TagStatus");
         
 			return createAppResponse;
         }

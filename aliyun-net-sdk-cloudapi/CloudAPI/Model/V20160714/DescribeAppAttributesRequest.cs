@@ -49,6 +49,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private List<Tag> tags;
 
+		private bool? enableTagAuth;
+
 		private int? pageNumber;
 
 		public string AppName
@@ -118,6 +120,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public bool? EnableTagAuth
+		{
+			get
+			{
+				return enableTagAuth;
+			}
+			set	
+			{
+				enableTagAuth = value;
+				DictionaryUtil.Add(QueryParameters, "EnableTagAuth", value.ToString());
 			}
 		}
 

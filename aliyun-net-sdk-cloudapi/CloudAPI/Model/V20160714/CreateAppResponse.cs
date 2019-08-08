@@ -29,6 +29,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private long? appId;
 
+		private bool? tagStatus;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			set	
 			{
 				appId = value;
+			}
+		}
+
+		public bool? TagStatus
+		{
+			get
+			{
+				return tagStatus;
+			}
+			set	
+			{
+				tagStatus = value;
 			}
 		}
 	}

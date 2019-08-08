@@ -39,6 +39,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string instanceType;
 
+		private bool? tagStatus;
+
 		public string RequestId
 		{
 			get
@@ -120,6 +122,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			set	
 			{
 				instanceType = value;
+			}
+		}
+
+		public bool? TagStatus
+		{
+			get
+			{
+				return tagStatus;
+			}
+			set	
+			{
+				tagStatus = value;
 			}
 		}
 	}
