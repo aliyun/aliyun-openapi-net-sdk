@@ -33,6 +33,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public CreateInstanceRequest()
             : base("Ecs", "2014-05-26", "CreateInstance", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -52,6 +57,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string hostName;
 
 		private string password;
+
+		private int? storageSetPartitionNumber;
 
 		private List<Tag> tags;
 
@@ -138,6 +145,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string creditSpecification;
 
 		private List<DataDisk> dataDisks;
+
+		private string storageSetId;
 
 		private int? systemDiskSize;
 
@@ -257,6 +266,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				password = value;
 				DictionaryUtil.Add(QueryParameters, "Password", value);
+			}
+		}
+
+		public int? StorageSetPartitionNumber
+		{
+			get
+			{
+				return storageSetPartitionNumber;
+			}
+			set	
+			{
+				storageSetPartitionNumber = value;
+				DictionaryUtil.Add(QueryParameters, "StorageSetPartitionNumber", value.ToString());
 			}
 		}
 
@@ -840,6 +862,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
 				}
+			}
+		}
+
+		public string StorageSetId
+		{
+			get
+			{
+				return storageSetId;
+			}
+			set	
+			{
+				storageSetId = value;
+				DictionaryUtil.Add(QueryParameters, "StorageSetId", value);
 			}
 		}
 

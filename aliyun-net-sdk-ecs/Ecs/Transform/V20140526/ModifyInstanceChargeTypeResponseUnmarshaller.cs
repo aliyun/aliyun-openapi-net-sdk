@@ -33,6 +33,17 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			modifyInstanceChargeTypeResponse.HttpResponse = context.HttpResponse;
 			modifyInstanceChargeTypeResponse.RequestId = context.StringValue("ModifyInstanceChargeType.RequestId");
 			modifyInstanceChargeTypeResponse.OrderId = context.StringValue("ModifyInstanceChargeType.OrderId");
+
+			List<ModifyInstanceChargeTypeResponse.ModifyInstanceChargeType_FeeOfInstance> modifyInstanceChargeTypeResponse_feeOfInstances = new List<ModifyInstanceChargeTypeResponse.ModifyInstanceChargeType_FeeOfInstance>();
+			for (int i = 0; i < context.Length("ModifyInstanceChargeType.FeeOfInstances.Length"); i++) {
+				ModifyInstanceChargeTypeResponse.ModifyInstanceChargeType_FeeOfInstance feeOfInstance = new ModifyInstanceChargeTypeResponse.ModifyInstanceChargeType_FeeOfInstance();
+				feeOfInstance.InstanceId = context.StringValue("ModifyInstanceChargeType.FeeOfInstances["+ i +"].InstanceId");
+				feeOfInstance.Fee = context.StringValue("ModifyInstanceChargeType.FeeOfInstances["+ i +"].Fee");
+				feeOfInstance.Currency = context.StringValue("ModifyInstanceChargeType.FeeOfInstances["+ i +"].Currency");
+
+				modifyInstanceChargeTypeResponse_feeOfInstances.Add(feeOfInstance);
+			}
+			modifyInstanceChargeTypeResponse.FeeOfInstances = modifyInstanceChargeTypeResponse_feeOfInstances;
         
 			return modifyInstanceChargeTypeResponse;
         }

@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				List<DescribeAccountAttributesResponse.DescribeAccountAttributes_AccountAttributeItem.DescribeAccountAttributes_ValueItem> accountAttributeItem_attributeValues = new List<DescribeAccountAttributesResponse.DescribeAccountAttributes_AccountAttributeItem.DescribeAccountAttributes_ValueItem>();
 				for (int j = 0; j < context.Length("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues.Length"); j++) {
 					DescribeAccountAttributesResponse.DescribeAccountAttributes_AccountAttributeItem.DescribeAccountAttributes_ValueItem valueItem = new DescribeAccountAttributesResponse.DescribeAccountAttributes_AccountAttributeItem.DescribeAccountAttributes_ValueItem();
-					valueItem._Value = context.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].Value");
+					valueItem._Value = context.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"]._Value");
 					valueItem.ExpiredTime = context.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].ExpiredTime");
 					valueItem.ZoneId = context.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].ZoneId");
 					valueItem.InstanceChargeType = context.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceChargeType");

@@ -33,6 +33,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public CancelCopyImageRequest()
             : base("Ecs", "2014-05-26", "CancelCopyImage", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;

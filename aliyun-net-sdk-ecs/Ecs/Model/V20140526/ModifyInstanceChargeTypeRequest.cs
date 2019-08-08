@@ -33,6 +33,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public ModifyInstanceChargeTypeRequest()
             : base("Ecs", "2014-05-26", "ModifyInstanceChargeType", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -56,6 +61,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string periodUnit;
 
 		private string instanceIds;
+
+		private bool? isDetailFee;
 
 		private string instanceChargeType;
 
@@ -199,6 +206,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceIds = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
+			}
+		}
+
+		public bool? IsDetailFee
+		{
+			get
+			{
+				return isDetailFee;
+			}
+			set	
+			{
+				isDetailFee = value;
+				DictionaryUtil.Add(QueryParameters, "IsDetailFee", value.ToString());
 			}
 		}
 

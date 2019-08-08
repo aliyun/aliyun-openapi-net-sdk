@@ -114,6 +114,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string offeringType;
 
+			private string platform;
+
 			private int? instanceAmount;
 
 			private string status;
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					offeringType = value;
+				}
+			}
+
+			public string Platform
+			{
+				get
+				{
+					return platform;
+				}
+				set	
+				{
+					platform = value;
 				}
 			}
 

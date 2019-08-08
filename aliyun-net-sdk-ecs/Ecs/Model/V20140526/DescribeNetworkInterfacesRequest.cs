@@ -33,6 +33,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public DescribeNetworkInterfacesRequest()
             : base("Ecs", "2014-05-26", "DescribeNetworkInterfaces", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -60,6 +65,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private long? ownerId;
 
 		private string vSwitchId;
+
+		private List<string> privateIpAddresss;
 
 		private string instanceId;
 
@@ -240,6 +247,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public List<string> PrivateIpAddresss
+		{
+			get
+			{
+				return privateIpAddresss;
+			}
+
+			set
+			{
+				privateIpAddresss = value;
+				for (int i = 0; i < privateIpAddresss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"PrivateIpAddress." + (i + 1) , privateIpAddresss[i]);
+				}
 			}
 		}
 

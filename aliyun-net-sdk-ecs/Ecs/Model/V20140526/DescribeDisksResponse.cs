@@ -152,6 +152,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? encrypted;
 
+			private string storageSetId;
+
+			private int? storageSetPartitionNumber;
+
 			private int? mountInstanceNum;
 
 			private int? iOPS;
@@ -493,6 +497,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					encrypted = value;
+				}
+			}
+
+			public string StorageSetId
+			{
+				get
+				{
+					return storageSetId;
+				}
+				set	
+				{
+					storageSetId = value;
+				}
+			}
+
+			public int? StorageSetPartitionNumber
+			{
+				get
+				{
+					return storageSetPartitionNumber;
+				}
+				set	
+				{
+					storageSetPartitionNumber = value;
 				}
 			}
 

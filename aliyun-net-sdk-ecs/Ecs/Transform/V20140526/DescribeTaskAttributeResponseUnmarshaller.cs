@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				for (int j = 0; j < context.Length("DescribeTaskAttribute.OperationProgressSet["+ i +"].RelatedItemSet.Length"); j++) {
 					DescribeTaskAttributeResponse.DescribeTaskAttribute_OperationProgress.DescribeTaskAttribute_RelatedItem relatedItem = new DescribeTaskAttributeResponse.DescribeTaskAttribute_OperationProgress.DescribeTaskAttribute_RelatedItem();
 					relatedItem.Name = context.StringValue("DescribeTaskAttribute.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Name");
-					relatedItem._Value = context.StringValue("DescribeTaskAttribute.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"].Value");
+					relatedItem._Value = context.StringValue("DescribeTaskAttribute.OperationProgressSet["+ i +"].RelatedItemSet["+ j +"]._Value");
 
 					operationProgress_relatedItemSet.Add(relatedItem);
 				}

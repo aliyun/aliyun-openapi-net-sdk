@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string orderId;
 
+		private List<ModifyInstanceChargeType_FeeOfInstance> feeOfInstances;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,64 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public List<ModifyInstanceChargeType_FeeOfInstance> FeeOfInstances
+		{
+			get
+			{
+				return feeOfInstances;
+			}
+			set	
+			{
+				feeOfInstances = value;
+			}
+		}
+
+		public class ModifyInstanceChargeType_FeeOfInstance
+		{
+
+			private string instanceId;
+
+			private string fee;
+
+			private string currency;
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string Fee
+			{
+				get
+				{
+					return fee;
+				}
+				set	
+				{
+					fee = value;
+				}
+			}
+
+			public string Currency
+			{
+				get
+				{
+					return currency;
+				}
+				set	
+				{
+					currency = value;
+				}
 			}
 		}
 	}

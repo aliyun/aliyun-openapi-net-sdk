@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public RunInstancesRequest()
             : base("Ecs", "2014-05-26", "RunInstances", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string launchTemplateName;
@@ -46,8 +51,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string keyPairName;
 
-		private int? minAmount;
-
 		private float? spotPriceLimit;
 
 		private bool? deletionProtection;
@@ -58,9 +61,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string password;
 
+		private int? storageSetPartitionNumber;
+
 		private List<Tag> tags;
 
 		private int? autoRenewPeriod;
+
+		private int? cpuOptionsCore;
 
 		private int? period;
 
@@ -69,6 +76,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string launchTemplateId;
 
 		private int? ipv6AddressCount;
+
+		private string cpuOptionsNuma;
 
 		private long? ownerId;
 
@@ -108,6 +117,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string description;
 
+		private int? cpuOptionsThreadsPerCore;
+
 		private string systemDiskCategory;
 
 		private string systemDiskPerformanceLevel;
@@ -144,9 +155,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> securityGroupIdss;
 
+		private int? spotDuration;
+
 		private List<DataDisk> dataDisks;
 
 		private long? launchTemplateVersion;
+
+		private string storageSetId;
 
 		private string systemDiskSize;
 
@@ -230,19 +245,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? MinAmount
-		{
-			get
-			{
-				return minAmount;
-			}
-			set	
-			{
-				minAmount = value;
-				DictionaryUtil.Add(QueryParameters, "MinAmount", value.ToString());
-			}
-		}
-
 		public float? SpotPriceLimit
 		{
 			get
@@ -308,6 +310,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? StorageSetPartitionNumber
+		{
+			get
+			{
+				return storageSetPartitionNumber;
+			}
+			set	
+			{
+				storageSetPartitionNumber = value;
+				DictionaryUtil.Add(QueryParameters, "StorageSetPartitionNumber", value.ToString());
+			}
+		}
+
 		public List<Tag> Tags
 		{
 			get
@@ -336,6 +351,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				autoRenewPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "AutoRenewPeriod", value.ToString());
+			}
+		}
+
+		public int? CpuOptionsCore
+		{
+			get
+			{
+				return cpuOptionsCore;
+			}
+			set	
+			{
+				cpuOptionsCore = value;
+				DictionaryUtil.Add(QueryParameters, "CpuOptions.Core", value.ToString());
 			}
 		}
 
@@ -388,6 +416,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ipv6AddressCount = value;
 				DictionaryUtil.Add(QueryParameters, "Ipv6AddressCount", value.ToString());
+			}
+		}
+
+		public string CpuOptionsNuma
+		{
+			get
+			{
+				return cpuOptionsNuma;
+			}
+			set	
+			{
+				cpuOptionsNuma = value;
+				DictionaryUtil.Add(QueryParameters, "CpuOptions.Numa", value);
 			}
 		}
 
@@ -642,6 +683,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? CpuOptionsThreadsPerCore
+		{
+			get
+			{
+				return cpuOptionsThreadsPerCore;
+			}
+			set	
+			{
+				cpuOptionsThreadsPerCore = value;
+				DictionaryUtil.Add(QueryParameters, "CpuOptions.ThreadsPerCore", value.ToString());
+			}
+		}
+
 		public string SystemDiskCategory
 		{
 			get
@@ -888,6 +942,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? SpotDuration
+		{
+			get
+			{
+				return spotDuration;
+			}
+			set	
+			{
+				spotDuration = value;
+				DictionaryUtil.Add(QueryParameters, "SpotDuration", value.ToString());
+			}
+		}
+
 		public List<DataDisk> DataDisks
 		{
 			get
@@ -924,6 +991,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				launchTemplateVersion = value;
 				DictionaryUtil.Add(QueryParameters, "LaunchTemplateVersion", value.ToString());
+			}
+		}
+
+		public string StorageSetId
+		{
+			get
+			{
+				return storageSetId;
+			}
+			set	
+			{
+				storageSetId = value;
+				DictionaryUtil.Add(QueryParameters, "StorageSetId", value);
 			}
 		}
 

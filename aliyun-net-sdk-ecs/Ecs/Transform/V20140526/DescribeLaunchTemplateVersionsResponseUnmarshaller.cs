@@ -62,11 +62,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				launchTemplateData.InternetMaxBandwidthOut = context.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InternetMaxBandwidthOut");
 				launchTemplateData.HostName = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.HostName");
 				launchTemplateData.ZoneId = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.ZoneId");
-				launchTemplateData.SystemDiskSize = context.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Size");
-				launchTemplateData.SystemDiskCategory = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Category");
-				launchTemplateData.SystemDiskDiskName = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.DiskName");
-				launchTemplateData.SystemDiskDescription = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Description");
-				launchTemplateData.SystemDiskIops = context.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDisk.Iops");
+				launchTemplateData.SystemDiskSize = context.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDiskSize");
+				launchTemplateData.SystemDiskCategory = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDiskCategory");
+				launchTemplateData.SystemDiskDiskName = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDiskDiskName");
+				launchTemplateData.SystemDiskDescription = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDiskDescription");
+				launchTemplateData.SystemDiskIops = context.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.SystemDiskIops");
 				launchTemplateData.IoOptimized = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.IoOptimized");
 				launchTemplateData.InstanceChargeType = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.InstanceChargeType");
 				launchTemplateData.Period = context.IntegerValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Period");
@@ -116,7 +116,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				for (int j = 0; j < context.Length("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Tags.Length"); j++) {
 					DescribeLaunchTemplateVersionsResponse.DescribeLaunchTemplateVersions_LaunchTemplateVersionSet.DescribeLaunchTemplateVersions_LaunchTemplateData.DescribeLaunchTemplateVersions_InstanceTag instanceTag = new DescribeLaunchTemplateVersionsResponse.DescribeLaunchTemplateVersions_LaunchTemplateVersionSet.DescribeLaunchTemplateVersions_LaunchTemplateData.DescribeLaunchTemplateVersions_InstanceTag();
 					instanceTag.Key = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Tags["+ j +"].Key");
-					instanceTag._Value = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Tags["+ j +"].Value");
+					instanceTag._Value = context.StringValue("DescribeLaunchTemplateVersions.LaunchTemplateVersionSets["+ i +"].LaunchTemplateData.Tags["+ j +"]._Value");
 
 					launchTemplateData_tags.Add(instanceTag);
 				}

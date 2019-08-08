@@ -33,6 +33,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public CreateSnapshotRequest()
             : base("Ecs", "2014-05-26", "CreateSnapshot", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -45,15 +50,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string description;
 
-		private string diskId;
-
 		private string snapshotName;
+
+		private long? ownerId;
+
+		private string sourceSnapshotId;
+
+		private bool? removeSourceSnapshot;
+
+		private string diskId;
 
 		private int? retentionDays;
 
 		private List<Tag> tags;
 
-		private long? ownerId;
+		private string category;
 
 		public long? ResourceOwnerId
 		{
@@ -120,19 +131,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DiskId
-		{
-			get
-			{
-				return diskId;
-			}
-			set	
-			{
-				diskId = value;
-				DictionaryUtil.Add(QueryParameters, "DiskId", value);
-			}
-		}
-
 		public string SnapshotName
 		{
 			get
@@ -143,6 +141,58 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				snapshotName = value;
 				DictionaryUtil.Add(QueryParameters, "SnapshotName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SourceSnapshotId
+		{
+			get
+			{
+				return sourceSnapshotId;
+			}
+			set	
+			{
+				sourceSnapshotId = value;
+				DictionaryUtil.Add(QueryParameters, "SourceSnapshotId", value);
+			}
+		}
+
+		public bool? RemoveSourceSnapshot
+		{
+			get
+			{
+				return removeSourceSnapshot;
+			}
+			set	
+			{
+				removeSourceSnapshot = value;
+				DictionaryUtil.Add(QueryParameters, "RemoveSourceSnapshot", value.ToString());
+			}
+		}
+
+		public string DiskId
+		{
+			get
+			{
+				return diskId;
+			}
+			set	
+			{
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
 			}
 		}
 
@@ -177,16 +227,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? OwnerId
+		public string Category
 		{
 			get
 			{
-				return ownerId;
+				return category;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

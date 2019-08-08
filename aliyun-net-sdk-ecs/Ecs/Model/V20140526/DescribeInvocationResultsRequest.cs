@@ -33,6 +33,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public DescribeInvocationResultsRequest()
             : base("Ecs", "2014-05-26", "DescribeInvocationResults", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -54,6 +59,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string instanceId;
 
 		private string invokeRecordStatus;
+
+		private bool? includeHistory;
 
 		public long? ResourceOwnerId
 		{
@@ -182,6 +189,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				invokeRecordStatus = value;
 				DictionaryUtil.Add(QueryParameters, "InvokeRecordStatus", value);
+			}
+		}
+
+		public bool? IncludeHistory
+		{
+			get
+			{
+				return includeHistory;
+			}
+			set	
+			{
+				includeHistory = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeHistory", value.ToString());
 			}
 		}
 

@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public DescribeDedicatedHostsRequest()
             : base("Ecs", "2014-05-26", "DescribeDedicatedHosts", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string dedicatedHostIds;

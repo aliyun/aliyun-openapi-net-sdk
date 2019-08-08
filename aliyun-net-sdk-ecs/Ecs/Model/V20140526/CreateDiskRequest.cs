@@ -33,6 +33,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
         public CreateDiskRequest()
             : base("Ecs", "2014-05-26", "CreateDisk", "ecs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -57,6 +62,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceId;
 
+		private string storageSetId;
+
 		private int? size;
 
 		private bool? encrypted;
@@ -64,6 +71,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string diskCategory;
 
 		private string zoneId;
+
+		private int? storageSetPartitionNumber;
 
 		private List<Tag> tags;
 
@@ -216,6 +225,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string StorageSetId
+		{
+			get
+			{
+				return storageSetId;
+			}
+			set	
+			{
+				storageSetId = value;
+				DictionaryUtil.Add(QueryParameters, "StorageSetId", value);
+			}
+		}
+
 		public int? Size
 		{
 			get
@@ -265,6 +287,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public int? StorageSetPartitionNumber
+		{
+			get
+			{
+				return storageSetPartitionNumber;
+			}
+			set	
+			{
+				storageSetPartitionNumber = value;
+				DictionaryUtil.Add(QueryParameters, "StorageSetPartitionNumber", value.ToString());
 			}
 		}
 

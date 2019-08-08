@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				reservedInstance.InstanceType = context.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].InstanceType");
 				reservedInstance.Scope = context.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Scope");
 				reservedInstance.OfferingType = context.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].OfferingType");
+				reservedInstance.Platform = context.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Platform");
 				reservedInstance.InstanceAmount = context.IntegerValue("DescribeReservedInstances.ReservedInstances["+ i +"].InstanceAmount");
 				reservedInstance.Status = context.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Status");
 				reservedInstance.CreationTime = context.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].CreationTime");
