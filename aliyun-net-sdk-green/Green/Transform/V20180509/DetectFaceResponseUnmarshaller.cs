@@ -24,15 +24,15 @@ using Aliyun.Acs.Green.Model.V20180509;
 
 namespace Aliyun.Acs.Green.Transform.V20180509
 {
-    public class AddVideoDnaGroupResponseUnmarshaller
+    public class DetectFaceResponseUnmarshaller
     {
-        public static AddVideoDnaGroupResponse Unmarshall(UnmarshallerContext context)
+        public static DetectFaceResponse Unmarshall(UnmarshallerContext context)
         {
-			AddVideoDnaGroupResponse addVideoDnaGroupResponse = new AddVideoDnaGroupResponse();
+			DetectFaceResponse detectFaceResponse = new DetectFaceResponse();
 
-			addVideoDnaGroupResponse.HttpResponse = context.HttpResponse;
+			detectFaceResponse.HttpResponse = context.HttpResponse;
         
-			return addVideoDnaGroupResponse;
+			return detectFaceResponse;
         }
     }
 }

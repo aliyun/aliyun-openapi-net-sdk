@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Green.Model.V20180509
         public VoiceIdentityCheckRequest()
             : base("Green", "2018-05-09", "VoiceIdentityCheck", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/green/voice/auth/check";
 			Method = MethodType.POST;
         }

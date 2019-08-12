@@ -16,23 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Green.Model.V20180509;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Green.Transform.V20180509
+namespace Aliyun.Acs.Green.Model.V20180509
 {
-    public class AddVideoDnaGroupResponseUnmarshaller
-    {
-        public static AddVideoDnaGroupResponse Unmarshall(UnmarshallerContext context)
-        {
-			AddVideoDnaGroupResponse addVideoDnaGroupResponse = new AddVideoDnaGroupResponse();
-
-			addVideoDnaGroupResponse.HttpResponse = context.HttpResponse;
-        
-			return addVideoDnaGroupResponse;
-        }
-    }
+	public class DetectFaceResponse : AcsResponse
+	{
+	}
 }

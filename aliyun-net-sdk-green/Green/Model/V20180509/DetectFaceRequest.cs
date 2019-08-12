@@ -27,17 +27,17 @@ using Aliyun.Acs.Green.Transform.V20180509;
 
 namespace Aliyun.Acs.Green.Model.V20180509
 {
-    public class AddSimilarityLibraryRequest : RoaAcsRequest<AddSimilarityLibraryResponse>
+    public class DetectFaceRequest : RoaAcsRequest<DetectFaceResponse>
     {
-        public AddSimilarityLibraryRequest()
-            : base("Green", "2018-05-09", "AddSimilarityLibrary", "green", "openAPI")
+        public DetectFaceRequest()
+            : base("Green", "2018-05-09", "DetectFace", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/green/similarity/library/add";
+			UriPattern = "/green/face/detect";
 			Method = MethodType.POST;
         }
 
@@ -56,9 +56,9 @@ namespace Aliyun.Acs.Green.Model.V20180509
 			}
 		}
 
-        public override AddSimilarityLibraryResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DetectFaceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddSimilarityLibraryResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DetectFaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

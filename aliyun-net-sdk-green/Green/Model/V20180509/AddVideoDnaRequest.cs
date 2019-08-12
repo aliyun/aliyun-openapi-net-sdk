@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Green.Model.V20180509
         public AddVideoDnaRequest()
             : base("Green", "2018-05-09", "AddVideoDna", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/green/video/dna/add";
 			Method = MethodType.POST;
         }
