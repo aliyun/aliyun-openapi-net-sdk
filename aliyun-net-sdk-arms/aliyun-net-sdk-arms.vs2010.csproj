@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1a640b6f-ac03-4f30-be8a-e8c70ece6f72}</ProjectGuid>
+    <ProjectGuid>{254ed9ad-550b-4da0-87b7-3351ab45c782}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,15 +40,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="ARMS\Transform\V20190219\MetricQueryResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20190219\ARMSQueryDataSetResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20190219\GetTraceResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20190219\GetSpanNamesResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20190219\GetServicesResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20190219\SearchTraceCountResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20190219\SearchTracesResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20190219\GetTagKeyResponseUnmarshaller.cs" />
-	<Compile Include="ARMS\Transform\V20190219\GetTagValResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Model\V20190808\SearchTraceAppByNameResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\QueryDatasetResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\QueryDatasetRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\ImportAppAlertRulesResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\CreateRetcodeAppRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\DeleteRetcodeAppResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\SearchTraceAppByPageRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\ImportAppAlertRulesRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\QueryMetricRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\CreateAlertContactGroupRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\SearchRetcodeAppByPageResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\ListTraceAppsResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\ListTraceAppsRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\QueryMetricResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\SearchAlertContactGroupResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\SearchAlertContactRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\SearchRetcodeAppByPageRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\DeleteRetcodeAppRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\SearchTraceAppByPageResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\SearchAlertContactGroupRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\ListRetcodeAppsResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\SearchAlertContactResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\CreateRetcodeAppResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\SearchTraceAppByNameRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\ListRetcodeAppsRequest.cs" />
+	<Compile Include="ARMS\Model\V20190808\CreateAlertContactResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\CreateAlertContactGroupResponse.cs" />
+	<Compile Include="ARMS\Model\V20190808\CreateAlertContactRequest.cs" />
+	<Compile Include="ARMS\Transform\V20190808\SearchTraceAppByPageResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190808\QueryDatasetResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190808\QueryMetricResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190808\ImportAppAlertRulesResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190808\DeleteRetcodeAppResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190808\ListRetcodeAppsResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190808\CreateAlertContactGroupResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190808\CreateRetcodeAppResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190808\SearchRetcodeAppByPageResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190808\SearchAlertContactGroupResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190808\SearchTraceAppByNameResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190808\SearchAlertContactResponseUnmarshaller.cs" />
+	<Compile Include="ARMS\Transform\V20190808\CreateAlertContactResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
