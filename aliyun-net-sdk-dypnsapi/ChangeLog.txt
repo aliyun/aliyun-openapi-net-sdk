@@ -1,0 +1,2 @@
+2019-08-13 Version 1.0.0
+- Supported for openapi new version.
