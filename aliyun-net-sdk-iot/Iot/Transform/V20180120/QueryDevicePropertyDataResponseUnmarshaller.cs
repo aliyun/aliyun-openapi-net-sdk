@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			for (int i = 0; i < context.Length("QueryDevicePropertyData.Data.List.Length"); i++) {
 				QueryDevicePropertyDataResponse.QueryDevicePropertyData_Data.QueryDevicePropertyData_PropertyInfo propertyInfo = new QueryDevicePropertyDataResponse.QueryDevicePropertyData_Data.QueryDevicePropertyData_PropertyInfo();
 				propertyInfo.Time = context.StringValue("QueryDevicePropertyData.Data.List["+ i +"].Time");
-				propertyInfo._Value = context.StringValue("QueryDevicePropertyData.Data.List["+ i +"].Value");
+				propertyInfo._Value = context.StringValue("QueryDevicePropertyData.Data.List["+ i +"]._Value");
 
 				data_list.Add(propertyInfo);
 			}

@@ -46,7 +46,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				ruleInfo.Select = context.StringValue("ListRule.Data["+ i +"].Select");
 				ruleInfo.Topic = context.StringValue("ListRule.Data["+ i +"].Topic");
 				ruleInfo.ShortTopic = context.StringValue("ListRule.Data["+ i +"].ShortTopic");
-				ruleInfo._Where = context.StringValue("ListRule.Data["+ i +"].Where");
+				ruleInfo._Where = context.StringValue("ListRule.Data["+ i +"]._Where");
 				ruleInfo.Status = context.StringValue("ListRule.Data["+ i +"].Status");
 				ruleInfo.CreateUserId = context.LongValue("ListRule.Data["+ i +"].CreateUserId");
 				ruleInfo.ProductKey = context.StringValue("ListRule.Data["+ i +"].ProductKey");

@@ -106,7 +106,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private List<string> fieldNameList;
 
-			private List<string> resultList;
+			private List<Dictionary<string, string>> resultList;
 
 			public int? PageNo
 			{
@@ -156,7 +156,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public List<string> ResultList
+			public List<Dictionary<string, string>> ResultList
 			{
 				get
 				{

@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				propertyStatusInfo.Identifier = context.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Identifier");
 				propertyStatusInfo.DataType = context.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].DataType");
 				propertyStatusInfo.Time = context.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Time");
-				propertyStatusInfo._Value = context.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Value");
+				propertyStatusInfo._Value = context.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"]._Value");
 				propertyStatusInfo.Name = context.StringValue("QueryDevicePropertyStatus.Data.List["+ i +"].Name");
 
 				data_list.Add(propertyStatusInfo);
