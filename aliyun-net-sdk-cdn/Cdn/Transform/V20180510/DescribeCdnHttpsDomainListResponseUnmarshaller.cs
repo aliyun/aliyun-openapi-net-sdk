@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 
 			describeCdnHttpsDomainListResponse.HttpResponse = context.HttpResponse;
 			describeCdnHttpsDomainListResponse.RequestId = context.StringValue("DescribeCdnHttpsDomainList.RequestId");
+			describeCdnHttpsDomainListResponse.TotalCount = context.IntegerValue("DescribeCdnHttpsDomainList.TotalCount");
 
 			List<DescribeCdnHttpsDomainListResponse.DescribeCdnHttpsDomainList_CertInfo> describeCdnHttpsDomainListResponse_certInfos = new List<DescribeCdnHttpsDomainListResponse.DescribeCdnHttpsDomainList_CertInfo>();
 			for (int i = 0; i < context.Length("DescribeCdnHttpsDomainList.CertInfos.Length"); i++) {

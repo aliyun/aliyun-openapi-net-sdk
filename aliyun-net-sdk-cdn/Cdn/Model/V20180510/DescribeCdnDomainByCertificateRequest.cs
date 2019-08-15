@@ -30,15 +30,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeCdnDomainByCertificateRequest : RpcAcsRequest<DescribeCdnDomainByCertificateResponse>
     {
         public DescribeCdnDomainByCertificateRequest()
-            : base("Cdn", "2018-05-10", "DescribeCdnDomainByCertificate")
+            : base("Cdn", "2018-05-10", "DescribeCdnDomainByCertificate", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? ownerId;
 
 		private string sSLPub;
-
-		private string action;
 
 		public long? OwnerId
 		{
@@ -63,19 +66,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				sSLPub = value;
 				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

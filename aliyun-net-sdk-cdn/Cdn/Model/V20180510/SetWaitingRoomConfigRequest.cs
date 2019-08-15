@@ -30,13 +30,16 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class SetWaitingRoomConfigRequest : RpcAcsRequest<SetWaitingRoomConfigResponse>
     {
         public SetWaitingRoomConfigRequest()
-            : base("Cdn", "2018-05-10", "SetWaitingRoomConfig")
+            : base("Cdn", "2018-05-10", "SetWaitingRoomConfig", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string waitUrl;
-
-		private string action;
 
 		private string waitUri;
 
@@ -60,19 +63,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				waitUrl = value;
 				DictionaryUtil.Add(QueryParameters, "WaitUrl", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeCdnDomainConfigsRequest : RpcAcsRequest<DescribeCdnDomainConfigsResponse>
     {
         public DescribeCdnDomainConfigsRequest()
-            : base("Cdn", "2018-05-10", "DescribeCdnDomainConfigs")
+            : base("Cdn", "2018-05-10", "DescribeCdnDomainConfigs", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string functionNames;
@@ -39,8 +44,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string securityToken;
 
 		private string domainName;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -80,19 +83,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

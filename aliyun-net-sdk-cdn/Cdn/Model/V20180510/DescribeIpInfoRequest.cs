@@ -30,15 +30,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeIpInfoRequest : RpcAcsRequest<DescribeIpInfoResponse>
     {
         public DescribeIpInfoRequest()
-            : base("Cdn", "2018-05-10", "DescribeIpInfo")
+            : base("Cdn", "2018-05-10", "DescribeIpInfo", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string securityToken;
 
 		private string iP;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -65,19 +68,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				iP = value;
 				DictionaryUtil.Add(QueryParameters, "IP", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -30,15 +30,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeTopDomainsByFlowRequest : RpcAcsRequest<DescribeTopDomainsByFlowResponse>
     {
         public DescribeTopDomainsByFlowRequest()
-            : base("Cdn", "2018-05-10", "DescribeTopDomainsByFlow")
+            : base("Cdn", "2018-05-10", "DescribeTopDomainsByFlow", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string startTime;
 
 		private long? limit;
-
-		private string action;
 
 		private string product;
 
@@ -69,19 +72,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				limit = value;
 				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

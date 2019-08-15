@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			for (int i = 0; i < context.Length("DescribeDomainAverageResponseTime.AvgRTPerInterval.Length"); i++) {
 				DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule dataModule = new DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"].Value");
+				dataModule._Value = context.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"]._Value");
 
 				describeDomainAverageResponseTimeResponse_avgRTPerInterval.Add(dataModule);
 			}

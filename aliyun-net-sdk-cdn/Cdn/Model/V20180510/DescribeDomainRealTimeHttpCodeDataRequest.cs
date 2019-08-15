@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeDomainRealTimeHttpCodeDataRequest : RpcAcsRequest<DescribeDomainRealTimeHttpCodeDataResponse>
     {
         public DescribeDomainRealTimeHttpCodeDataRequest()
-            : base("Cdn", "2018-05-10", "DescribeDomainRealTimeHttpCodeData")
+            : base("Cdn", "2018-05-10", "DescribeDomainRealTimeHttpCodeData", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string locationNameEn;
@@ -39,8 +44,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string startTime;
 
 		private string ispNameEn;
-
-		private string action;
 
 		private string domainName;
 
@@ -84,19 +87,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				ispNameEn = value;
 				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

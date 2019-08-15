@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class BatchSetCdnDomainConfigRequest : RpcAcsRequest<BatchSetCdnDomainConfigResponse>
     {
         public BatchSetCdnDomainConfigRequest()
-            : base("Cdn", "2018-05-10", "BatchSetCdnDomainConfig")
+            : base("Cdn", "2018-05-10", "BatchSetCdnDomainConfig", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string functions;
@@ -41,8 +46,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string domainNames;
 
 		private string ownerAccount;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -95,19 +98,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeCdnDomainLogsRequest : RpcAcsRequest<DescribeCdnDomainLogsResponse>
     {
         public DescribeCdnDomainLogsRequest()
-            : base("Cdn", "2018-05-10", "DescribeCdnDomainLogs")
+            : base("Cdn", "2018-05-10", "DescribeCdnDomainLogs", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string startTime;
@@ -39,8 +44,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private long? pageNumber;
 
 		private long? pageSize;
-
-		private string action;
 
 		private string domainName;
 
@@ -84,19 +87,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

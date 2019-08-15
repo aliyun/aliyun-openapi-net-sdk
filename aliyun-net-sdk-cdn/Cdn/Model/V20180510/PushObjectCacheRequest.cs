@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class PushObjectCacheRequest : RpcAcsRequest<PushObjectCacheResponse>
     {
         public PushObjectCacheRequest()
-            : base("Cdn", "2018-05-10", "PushObjectCache")
+            : base("Cdn", "2018-05-10", "PushObjectCache", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string area;
@@ -39,8 +44,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string securityToken;
 
 		private string objectPath;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -80,19 +83,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				objectPath = value;
 				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

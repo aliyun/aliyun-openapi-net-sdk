@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			for (int i = 0; i < context.Length("DescribeDomainTrafficData.TrafficDataPerInterval.Length"); i++) {
 				DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule dataModule = new DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].Value");
+				dataModule._Value = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"]._Value");
 				dataModule.DomesticValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].DomesticValue");
 				dataModule.OverseasValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].OverseasValue");
 				dataModule.HttpsValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsValue");

@@ -30,13 +30,16 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeDomainRegionDataRequest : RpcAcsRequest<DescribeDomainRegionDataResponse>
     {
         public DescribeDomainRegionDataRequest()
-            : base("Cdn", "2018-05-10", "DescribeDomainRegionData")
+            : base("Cdn", "2018-05-10", "DescribeDomainRegionData", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string startTime;
-
-		private string action;
 
 		private string domainName;
 
@@ -54,19 +57,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

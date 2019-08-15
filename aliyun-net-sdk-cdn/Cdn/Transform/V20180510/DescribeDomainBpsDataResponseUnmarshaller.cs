@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			for (int i = 0; i < context.Length("DescribeDomainBpsData.BpsDataPerInterval.Length"); i++) {
 				DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule dataModule = new DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].Value");
+				dataModule._Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"]._Value");
 				dataModule.DomesticValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DomesticValue");
 				dataModule.OverseasValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].OverseasValue");
 				dataModule.HttpsValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].HttpsValue");

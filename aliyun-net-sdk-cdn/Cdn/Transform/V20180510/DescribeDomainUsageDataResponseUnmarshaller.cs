@@ -44,7 +44,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule dataModule = new DescribeDomainUsageDataResponse.DescribeDomainUsageData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeDomainUsageData.UsageDataPerInterval["+ i +"].TimeStamp");
 				dataModule.PeakTime = context.StringValue("DescribeDomainUsageData.UsageDataPerInterval["+ i +"].PeakTime");
-				dataModule._Value = context.StringValue("DescribeDomainUsageData.UsageDataPerInterval["+ i +"].Value");
+				dataModule._Value = context.StringValue("DescribeDomainUsageData.UsageDataPerInterval["+ i +"]._Value");
+				dataModule.SpecialValue = context.StringValue("DescribeDomainUsageData.UsageDataPerInterval["+ i +"].SpecialValue");
 
 				describeDomainUsageDataResponse_usageDataPerInterval.Add(dataModule);
 			}

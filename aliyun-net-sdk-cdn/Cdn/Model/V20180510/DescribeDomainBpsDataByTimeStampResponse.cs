@@ -84,11 +84,25 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		public class DescribeDomainBpsDataByTimeStamp_BpsDataModel
 		{
 
+			private string timeStamp;
+
 			private string locationName;
 
 			private string ispName;
 
 			private long? bps;
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
+			}
 
 			public string LocationName
 			{

@@ -30,17 +30,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeDomainTopUrlVisitRequest : RpcAcsRequest<DescribeDomainTopUrlVisitResponse>
     {
         public DescribeDomainTopUrlVisitRequest()
-            : base("Cdn", "2018-05-10", "DescribeDomainTopUrlVisit")
+            : base("Cdn", "2018-05-10", "DescribeDomainTopUrlVisit", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string startTime;
 
 		private string percent;
 
-		private string action;
-
 		private string domainName;
+
+		private string endTime;
 
 		private long? ownerId;
 
@@ -72,19 +77,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string DomainName
 		{
 			get
@@ -95,6 +87,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 

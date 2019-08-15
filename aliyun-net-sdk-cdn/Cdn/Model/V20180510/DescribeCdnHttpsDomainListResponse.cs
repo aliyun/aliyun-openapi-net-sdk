@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string requestId;
 
+		private int? totalCount;
+
 		private List<DescribeCdnHttpsDomainList_CertInfo> certInfos;
 
 		public string RequestId
@@ -38,6 +40,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
 			}
 		}
 

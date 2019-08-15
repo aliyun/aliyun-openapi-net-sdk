@@ -30,15 +30,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class SetForwardSchemeConfigRequest : RpcAcsRequest<SetForwardSchemeConfigResponse>
     {
         public SetForwardSchemeConfigRequest()
-            : base("Cdn", "2018-05-10", "SetForwardSchemeConfig")
+            : base("Cdn", "2018-05-10", "SetForwardSchemeConfig", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string schemeOriginPort;
 
 		private string enable;
-
-		private string action;
 
 		private string schemeOrigin;
 
@@ -71,19 +74,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				enable = value;
 				DictionaryUtil.Add(QueryParameters, "Enable", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

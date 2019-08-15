@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class SetErrorPageConfigRequest : RpcAcsRequest<SetErrorPageConfigResponse>
     {
         public SetErrorPageConfigRequest()
-            : base("Cdn", "2018-05-10", "SetErrorPageConfig")
+            : base("Cdn", "2018-05-10", "SetErrorPageConfig", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string pageType;
@@ -41,8 +46,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string domainName;
 
 		private string customPageUrl;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -95,19 +98,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				customPageUrl = value;
 				DictionaryUtil.Add(QueryParameters, "CustomPageUrl", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

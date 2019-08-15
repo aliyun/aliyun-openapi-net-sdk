@@ -30,13 +30,16 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class SetDomainGreenManagerConfigRequest : RpcAcsRequest<SetDomainGreenManagerConfigResponse>
     {
         public SetDomainGreenManagerConfigRequest()
-            : base("Cdn", "2018-05-10", "SetDomainGreenManagerConfig")
+            : base("Cdn", "2018-05-10", "SetDomainGreenManagerConfig", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string enable;
-
-		private string action;
 
 		private string domainName;
 
@@ -52,19 +55,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				enable = value;
 				DictionaryUtil.Add(QueryParameters, "Enable", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

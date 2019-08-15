@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class CreateUserUsageDataExportTaskRequest : RpcAcsRequest<CreateUserUsageDataExportTaskResponse>
     {
         public CreateUserUsageDataExportTaskRequest()
-            : base("Cdn", "2018-05-10", "CreateUserUsageDataExportTask")
+            : base("Cdn", "2018-05-10", "CreateUserUsageDataExportTask", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string taskName;
@@ -39,8 +44,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string language;
 
 		private string startTime;
-
-		private string action;
 
 		private string endTime;
 
@@ -82,19 +85,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

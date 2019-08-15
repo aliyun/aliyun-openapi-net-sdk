@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			for (int i = 0; i < context.Length("DescribeDomainQpsData.QpsDataInterval.Length"); i++) {
 				DescribeDomainQpsDataResponse.DescribeDomainQpsData_DataModule dataModule = new DescribeDomainQpsDataResponse.DescribeDomainQpsData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].Value");
+				dataModule._Value = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"]._Value");
 				dataModule.DomesticValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].DomesticValue");
 				dataModule.OverseasValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].OverseasValue");
 				dataModule.AccValue = context.StringValue("DescribeDomainQpsData.QpsDataInterval["+ i +"].AccValue");

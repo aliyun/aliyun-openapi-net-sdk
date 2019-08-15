@@ -146,6 +146,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 			private string _value;
 
+			private string specialValue;
+
 			public string TimeStamp
 			{
 				get
@@ -179,6 +181,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					_value = value;
+				}
+			}
+
+			public string SpecialValue
+			{
+				get
+				{
+					return specialValue;
+				}
+				set	
+				{
+					specialValue = value;
 				}
 			}
 		}

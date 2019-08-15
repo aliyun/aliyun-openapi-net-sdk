@@ -30,13 +30,16 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class UpdateFCTriggerRequest : RpcAcsRequest<UpdateFCTriggerResponse>
     {
         public UpdateFCTriggerRequest()
-            : base("Cdn", "2018-05-10", "UpdateFCTrigger")
+            : base("Cdn", "2018-05-10", "UpdateFCTrigger", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string notes;
-
-		private string action;
 
 		private string triggerARN;
 
@@ -45,6 +48,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private long? ownerId;
 
 		private string roleARN;
+
+		private string functionARN;
 
 		public string Notes
 		{
@@ -56,19 +61,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				notes = value;
 				DictionaryUtil.Add(BodyParameters, "Notes", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -121,6 +113,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				roleARN = value;
 				DictionaryUtil.Add(BodyParameters, "RoleARN", value);
+			}
+		}
+
+		public string FunctionARN
+		{
+			get
+			{
+				return functionARN;
+			}
+			set	
+			{
+				functionARN = value;
+				DictionaryUtil.Add(BodyParameters, "FunctionARN", value);
 			}
 		}
 

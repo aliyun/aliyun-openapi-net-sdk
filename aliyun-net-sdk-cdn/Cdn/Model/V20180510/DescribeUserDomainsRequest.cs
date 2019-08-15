@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeUserDomainsRequest : RpcAcsRequest<DescribeUserDomainsResponse>
     {
         public DescribeUserDomainsRequest()
-            : base("Cdn", "2018-05-10", "DescribeUserDomains")
+            : base("Cdn", "2018-05-10", "DescribeUserDomains", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string funcFilter;
@@ -57,8 +62,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string cdnType;
 
 		private int? pageSize;
-
-		private string action;
 
 		private List<Tag> tags;
 
@@ -215,19 +218,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

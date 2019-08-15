@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			List<DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel> describeDomainBpsDataByTimeStampResponse_bpsDataList = new List<DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel>();
 			for (int i = 0; i < context.Length("DescribeDomainBpsDataByTimeStamp.BpsDataList.Length"); i++) {
 				DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel bpsDataModel = new DescribeDomainBpsDataByTimeStampResponse.DescribeDomainBpsDataByTimeStamp_BpsDataModel();
+				bpsDataModel.TimeStamp = context.StringValue("DescribeDomainBpsDataByTimeStamp.BpsDataList["+ i +"].TimeStamp");
 				bpsDataModel.LocationName = context.StringValue("DescribeDomainBpsDataByTimeStamp.BpsDataList["+ i +"].LocationName");
 				bpsDataModel.IspName = context.StringValue("DescribeDomainBpsDataByTimeStamp.BpsDataList["+ i +"].IspName");
 				bpsDataModel.Bps = context.LongValue("DescribeDomainBpsDataByTimeStamp.BpsDataList["+ i +"].Bps");

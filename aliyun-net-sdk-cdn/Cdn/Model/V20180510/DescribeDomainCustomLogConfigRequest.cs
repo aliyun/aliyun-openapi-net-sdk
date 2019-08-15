@@ -30,15 +30,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeDomainCustomLogConfigRequest : RpcAcsRequest<DescribeDomainCustomLogConfigResponse>
     {
         public DescribeDomainCustomLogConfigRequest()
-            : base("Cdn", "2018-05-10", "DescribeDomainCustomLogConfig")
+            : base("Cdn", "2018-05-10", "DescribeDomainCustomLogConfig", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string domainName;
 
 		private long? ownerId;
-
-		private string action;
 
 		public string DomainName
 		{
@@ -63,19 +66,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

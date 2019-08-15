@@ -30,15 +30,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeDomainsBySourceRequest : RpcAcsRequest<DescribeDomainsBySourceResponse>
     {
         public DescribeDomainsBySourceRequest()
-            : base("Cdn", "2018-05-10", "DescribeDomainsBySource")
+            : base("Cdn", "2018-05-10", "DescribeDomainsBySource", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string sources;
 
 		private string securityToken;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -65,19 +68,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

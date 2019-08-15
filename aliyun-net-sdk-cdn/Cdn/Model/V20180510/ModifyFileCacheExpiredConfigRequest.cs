@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class ModifyFileCacheExpiredConfigRequest : RpcAcsRequest<ModifyFileCacheExpiredConfigResponse>
     {
         public ModifyFileCacheExpiredConfigRequest()
-            : base("Cdn", "2018-05-10", "ModifyFileCacheExpiredConfig")
+            : base("Cdn", "2018-05-10", "ModifyFileCacheExpiredConfig", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string securityToken;
@@ -39,8 +44,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string configID;
 
 		private string domainName;
-
-		private string action;
 
 		private string weight;
 
@@ -86,19 +89,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

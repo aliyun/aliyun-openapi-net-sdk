@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			for (int i = 0; i < context.Length("DescribeDomainPvData.PvDataInterval.Length"); i++) {
 				DescribeDomainPvDataResponse.DescribeDomainPvData_UsageData usageData = new DescribeDomainPvDataResponse.DescribeDomainPvData_UsageData();
 				usageData.TimeStamp = context.StringValue("DescribeDomainPvData.PvDataInterval["+ i +"].TimeStamp");
-				usageData._Value = context.StringValue("DescribeDomainPvData.PvDataInterval["+ i +"].Value");
+				usageData._Value = context.StringValue("DescribeDomainPvData.PvDataInterval["+ i +"]._Value");
 
 				describeDomainPvDataResponse_pvDataInterval.Add(usageData);
 			}

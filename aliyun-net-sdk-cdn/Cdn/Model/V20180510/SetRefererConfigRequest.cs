@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class SetRefererConfigRequest : RpcAcsRequest<SetRefererConfigResponse>
     {
         public SetRefererConfigRequest()
-            : base("Cdn", "2018-05-10", "SetRefererConfig")
+            : base("Cdn", "2018-05-10", "SetRefererConfig", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string referList;
@@ -41,8 +46,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string domainName;
 
 		private string referType;
-
-		private string action;
 
 		private string disableAst;
 
@@ -99,19 +102,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				referType = value;
 				DictionaryUtil.Add(QueryParameters, "ReferType", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -30,13 +30,20 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class SetFileCacheExpiredConfigRequest : RpcAcsRequest<SetFileCacheExpiredConfigResponse>
     {
         public SetFileCacheExpiredConfigRequest()
-            : base("Cdn", "2018-05-10", "SetFileCacheExpiredConfig")
+            : base("Cdn", "2018-05-10", "SetFileCacheExpiredConfig", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string action;
+		private string securityToken;
 
 		private string domainName;
+
+		private string weight;
 
 		private string cacheContent;
 
@@ -44,18 +51,16 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string tTL;
 
-		private long? configId;
-
-		public string Action
+		public string SecurityToken
 		{
 			get
 			{
-				return action;
+				return securityToken;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -69,6 +74,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Weight
+		{
+			get
+			{
+				return weight;
+			}
+			set	
+			{
+				weight = value;
+				DictionaryUtil.Add(QueryParameters, "Weight", value);
 			}
 		}
 
@@ -108,19 +126,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				tTL = value;
 				DictionaryUtil.Add(QueryParameters, "TTL", value);
-			}
-		}
-
-		public long? ConfigId
-		{
-			get
-			{
-				return configId;
-			}
-			set	
-			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
 			}
 		}
 

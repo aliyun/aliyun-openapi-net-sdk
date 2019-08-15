@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeDomainPathDataRequest : RpcAcsRequest<DescribeDomainPathDataResponse>
     {
         public DescribeDomainPathDataRequest()
-            : base("Cdn", "2018-05-10", "DescribeDomainPathData")
+            : base("Cdn", "2018-05-10", "DescribeDomainPathData", "cdn", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string startTime;
@@ -41,8 +46,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string path;
 
 		private int? pageSize;
-
-		private string action;
 
 		private string domainName;
 
@@ -99,19 +102,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
