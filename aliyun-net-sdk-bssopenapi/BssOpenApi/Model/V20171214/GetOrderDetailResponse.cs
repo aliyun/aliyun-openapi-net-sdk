@@ -219,6 +219,10 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string relatedOrderId;
 
+				private string orderSubType;
+
+				private string originalConfig;
+
 				public string OrderId
 				{
 					get
@@ -504,6 +508,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						relatedOrderId = value;
+					}
+				}
+
+				public string OrderSubType
+				{
+					get
+					{
+						return orderSubType;
+					}
+					set	
+					{
+						orderSubType = value;
+					}
+				}
+
+				public string OriginalConfig
+				{
+					get
+					{
+						return originalConfig;
+					}
+					set	
+					{
+						originalConfig = value;
 					}
 				}
 			}

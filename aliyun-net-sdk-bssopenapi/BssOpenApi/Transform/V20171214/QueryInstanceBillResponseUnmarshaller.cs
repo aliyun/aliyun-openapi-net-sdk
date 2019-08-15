@@ -81,6 +81,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.Region = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Region");
 				item.Zone = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Zone");
 				item.Item = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Item");
+				item.ServicePeriod = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ServicePeriod");
 
 				data_items.Add(item);
 			}

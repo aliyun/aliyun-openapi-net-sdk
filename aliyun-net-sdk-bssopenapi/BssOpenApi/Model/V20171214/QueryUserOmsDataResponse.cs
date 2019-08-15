@@ -102,7 +102,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private string hostId;
 
-			private List<string> omsData;
+			private List<Dictionary<string, string>> omsData;
 
 			public string Marker
 			{
@@ -128,7 +128,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public List<string> OmsData
+			public List<Dictionary<string, string>> OmsData
 			{
 				get
 				{

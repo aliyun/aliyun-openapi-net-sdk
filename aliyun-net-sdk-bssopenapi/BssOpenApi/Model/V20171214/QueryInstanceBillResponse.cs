@@ -267,6 +267,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string item;
 
+				private string servicePeriod;
+
 				public string InstanceID
 				{
 					get
@@ -672,6 +674,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						item = value;
+					}
+				}
+
+				public string ServicePeriod
+				{
+					get
+					{
+						return servicePeriod;
+					}
+					set	
+					{
+						servicePeriod = value;
 					}
 				}
 			}

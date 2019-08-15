@@ -40,9 +40,18 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			data.Marker = context.StringValue("QueryUserOmsData.Data.Marker");
 			data.HostId = context.StringValue("QueryUserOmsData.Data.HostId");
 
-			List<string> data_omsData = new List<string>();
+			List<Dictionary<string, string>> data_omsData = new List<Dictionary<string, string>>();
 			for (int i = 0; i < context.Length("QueryUserOmsData.Data.OmsData.Length"); i++) {
-				data_omsData.Add(context.StringValue("QueryUserOmsData.Data.OmsData["+ i +"]"));
+				Dictionary<string, string> tmp = new Dictionary<string, string>() { };
+				foreach (var item in context.ResponseDictionary){
+					string prefix = "QueryUserOmsData.Data.OmsData["+ i +"].";
+					if (item.Key.IndexOf(prefix) == 0){
+						tmp.Add(item.Key.Substring(prefix.Length), item.Value);
+					}
+				}
+				if (tmp.Count > 0){
+					data_omsData.Add(tmp);
+				}
 			}
 			data.OmsData = data_omsData;
 			queryUserOmsDataResponse.Data = data;
