@@ -7,6 +7,7 @@ namespace Aliyun.Acs.Core.Timeout.Util
     {
         private static void initData()
         {
+            products  = new Dictionary<string, Product>() { };
             Product productEcs = new Product();
             productEcs.ProductName = "ecs";
             Version version20140526 = new Version();
@@ -237,11 +238,11 @@ namespace Aliyun.Acs.Core.Timeout.Util
             products.Add("ecs", productEcs);
         }
 
-        private static Dictionary<string, Product> products { get; set; }
+        private static Dictionary<string, Product> products;
 
         public static int Get(string productName, string versionDate, string actionName)
         {
-            if (null == products)
+            if (products == null)
             {
                 initData();
             }
@@ -267,13 +268,13 @@ namespace Aliyun.Acs.Core.Timeout.Util
     public class Product
     {
         public string ProductName { get; set; }
-        public Dictionary<string, Version> versions { get; set; }
+        public Dictionary<string, Version> versions = new Dictionary<string, Version>(){};
     }
 
     public class Version
     {
         public String VersionDate { get; set; }
 
-        public Dictionary<string, int> Apis { get; set; }
+        public Dictionary<string, int> Apis = new Dictionary<string, int>(){};
     }
 }

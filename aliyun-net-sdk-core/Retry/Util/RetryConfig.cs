@@ -26,6 +26,7 @@ namespace Aliyun.Acs.Core.Retry.Util
     {
         private static void initData()
         {
+            products = new Dictionary<string, Product>() { };
             Product productEcs = new Product();
             productEcs.ProductName = "ecs";
             Version version20140526 = new Version();
@@ -132,11 +133,11 @@ namespace Aliyun.Acs.Core.Retry.Util
             products.Add("ecs", productEcs);
         }
 
-        private static Dictionary<string, Product> products { get; set; }
+        private static Dictionary<string, Product> products;
 
         public static List<string> Get(string productName, string versionDate, string sectionName)
         {
-            if (null == products)
+            if (products == null)
             {
                 initData();
             }
@@ -172,18 +173,20 @@ namespace Aliyun.Acs.Core.Retry.Util
     public class Product
     {
         public string ProductName { get; set; }
-        public Dictionary<string, Version> versions { get; set; }
+
+        public Dictionary<string, Version> versions = new Dictionary<string, Version>(){};
     }
 
     public class Version
     {
         public String VersionDate { get; set; }
-        public List<string> RetryableAPIs { get; set; }
 
-        public List<string> RetryableAPIsWithClientToken { get; set; }
+        public List<string> RetryableAPIs = new List<string>(){};
 
-        public List<string> RetryableThrottlingErrors { get; set; }
+        public List<string> RetryableAPIsWithClientToken = new List<string>(){};
 
-        public List<string> RetryableNormalErrors { get; set; }
+        public List<string> RetryableThrottlingErrors = new List<string>(){};
+
+        public List<string> RetryableNormalErrors = new List<string>(){};
     }
 }

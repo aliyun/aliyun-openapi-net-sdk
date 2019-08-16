@@ -20,8 +20,6 @@
 using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Exceptions;
-
 namespace Aliyun.Acs.Core.Retry.Util
 {
     internal class LoadFromJsonFile
