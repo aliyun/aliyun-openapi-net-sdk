@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
         public SetDeviceGroupTagsRequest()
             : base("Iot", "2018-01-20", "SetDeviceGroupTags", "iot", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string tagString;
