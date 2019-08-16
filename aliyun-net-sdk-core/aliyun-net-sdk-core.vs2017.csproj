@@ -42,7 +42,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Retry\Util\retry_config.json" />
     <EmbeddedResource Include="Timeout\Util\timeout_config.json" />
     <EmbeddedResource Include="Regions\endpoints.json" />
   </ItemGroup>
@@ -52,7 +51,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
 
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0-preview.2">
       <PrivateAssets>all</PrivateAssets>

@@ -19,19 +19,14 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
 
 using Aliyun.Acs.Core.Exceptions;
-
-using Newtonsoft.Json.Linq;
 
 namespace Aliyun.Acs.Core.Retry.Util
 {
     internal class LoadFromJsonFile
     {
         private readonly string configFileLocation;
-        private JObject currentJsonData;
 
         public LoadFromJsonFile(string configFile)
         {
@@ -52,46 +47,7 @@ namespace Aliyun.Acs.Core.Retry.Util
                 return null;
             }
 
-            try
-            {
-                JObject jsonData;
-
-                if (currentJsonData == null)
-                {
-                    var currentNamespace = MethodBase.GetCurrentMethod().DeclaringType.Namespace;
-                    var assembly = Assembly.GetExecutingAssembly();
-
-                    var resourceName = currentNamespace + "." + configFileLocation;
-
-                    using (var stream = assembly.GetManifestResourceStream(resourceName))
-                    using (var streamReader = new StreamReader(stream))
-                    {
-                        var data = streamReader.ReadToEnd();
-                        jsonData = JObject.Parse(data);
-                        currentJsonData = jsonData;
-                    }
-                }
-                else
-                {
-                    jsonData = currentJsonData;
-                }
-
-                if (jsonData[product] == null
-                    || jsonData[product][version] == null
-                    || jsonData[product][version][sectionName] == null)
-                {
-                    return null;
-                }
-
-                var sectionList = jsonData[product][version][sectionName];
-                var retryableApiList = sectionList.ToObject<List<string>>();
-
-                return retryableApiList;
-            }
-            catch (Exception e)
-            {
-                throw new ClientException("Load Json File Error", e.ToString());
-            }
+            return RetryConfig.Get(product, version, sectionName);
         }
     }
 }
