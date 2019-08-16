@@ -127,7 +127,6 @@ namespace Aliyun.Acs.Core.Retry.Util
             version20140526.RetryableNormalErrors.Add("InternalError");
             version20140526.RetryableNormalErrors.Add("UnknownError");
             version20140526.RetryableNormalErrors.Add("ServiceUnavailable");
-            productEcs.versions.Add("2014-05-26", version20140526);
         }
 
         private static Dictionary<string, Product> products { get; set; }
