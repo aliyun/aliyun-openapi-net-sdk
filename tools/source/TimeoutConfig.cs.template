@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+
+namespace Aliyun.Acs.Core.Timeout.Util
+{
+    public static class TimeoutConfig
+    {
+        private static void initData()
+        {
+            products  = new Dictionary<string, Product>() { };{timeout_config_data}
+        }
+
+        private static Dictionary<string, Product> products;
+
+        public static int Get(string productName, string versionDate, string actionName)
+        {
+            if (products == null)
+            {
+                initData();
+            }
+            Dictionary<string, int> apis = new Dictionary<string, int>() { };
+            if (products.ContainsKey(productName))
+            {
+                Product product = products[productName];
+                if (product.versions.ContainsKey(versionDate))
+                {
+                    Version version = product.versions[versionDate];
+                    if (version.Apis.ContainsKey(actionName))
+                    {
+                        return version.Apis[actionName];
+                    }else{
+                        return 0;
+                    }
+                }
+            }
+            return 0;
+        }
+    }
+
+    public class Product
+    {
+        public string ProductName { get; set; }
+        public Dictionary<string, Version> versions = new Dictionary<string, Version>(){};
+    }
+
+    public class Version
+    {
+        public String VersionDate { get; set; }
+
+        public Dictionary<string, int> Apis = new Dictionary<string, int>(){};
+    }
+}

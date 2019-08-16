@@ -63,8 +63,8 @@ namespace Aliyun.Acs.Core.Retry.Util
 
                     var resourceName = currentNamespace + "." + configFileLocation;
 
-                    using (var stream = assembly.GetManifestResourceStream(resourceName))
-                    using (var streamReader = new StreamReader(stream))
+                    using(var stream = assembly.GetManifestResourceStream(resourceName))
+                    using(var streamReader = new StreamReader(stream))
                     {
                         var data = streamReader.ReadToEnd();
                         jsonData = JObject.Parse(data);
@@ -76,16 +76,15 @@ namespace Aliyun.Acs.Core.Retry.Util
                     jsonData = currentJsonData;
                 }
 
-                if (jsonData[product] == null
-                    || jsonData[product][version] == null
-                    || jsonData[product][version][sectionName] == null)
+                if (jsonData[product] == null ||
+                    jsonData[product][version] == null ||
+                    jsonData[product][version][sectionName] == null)
                 {
                     return null;
                 }
 
                 var sectionList = jsonData[product][version][sectionName];
-                var retryableApiList = sectionList.ToObject<List<string>>();
-
+                var retryableApiList = RetryConfig.Get(product, version, sectionName);
                 return retryableApiList;
             }
             catch (Exception e)

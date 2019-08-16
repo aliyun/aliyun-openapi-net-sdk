@@ -41,8 +41,8 @@ namespace Aliyun.Acs.Core.Timeout.Util
                     var assembly = Assembly.GetExecutingAssembly();
                     var resourceName = string.Format("{0}.{1}", currentNamespace, configFile);
 
-                    using (var stream = assembly.GetManifestResourceStream(resourceName))
-                    using (var streamReader = new StreamReader(stream))
+                    using(var stream = assembly.GetManifestResourceStream(resourceName))
+                    using(var streamReader = new StreamReader(stream))
                     {
                         var data = streamReader.ReadToEnd();
                         currentJsonData = JObject.Parse(data);
@@ -64,14 +64,15 @@ namespace Aliyun.Acs.Core.Timeout.Util
 
             var jsonData = currentJsonData;
 
-            if (jsonData[product] == null
-                || jsonData[product][version] == null
-                || jsonData[product][version][actionName] == null)
+            if (jsonData[product] == null ||
+                jsonData[product][version] == null ||
+                jsonData[product][version][actionName] == null)
             {
                 return 0;
             }
 
-            return jsonData[product][version][actionName].ToObject<int>() * 1000;
+            // return jsonData[product][version][actionName].ToObject<int>() * 1000;
+            return TimeoutConfig.Get(product, version, actionName) * 1000;
         }
     }
 }
