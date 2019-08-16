@@ -17,6 +17,8 @@
  * under the License.
  */
 
+using System;
+
 using Aliyun.Acs.Core.Utils;
 
 using Xunit;
@@ -30,7 +32,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
         {
             var testStr = "TestString";
 
-            Assert.False(StringUtils.isEmpty(testStr));
+            Assert.False(String.IsNullOrEmpty(testStr));
         }
     }
 }
