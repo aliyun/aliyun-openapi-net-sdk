@@ -1,0 +1,62 @@
+using System.Collections.Generic;
+
+namespace Aliyun.Acs.Core.Regions
+{
+    internal static class EndpointResource
+    {
+        private static IDictionary<string, string> GlobalEndpoints;
+
+        private static IDictionary<string, string> RegionalEndpoints;
+
+        private static IDictionary<string, string> RegionalEndpointPattern;
+
+        private static IDictionary<string, string> LocationCodeMapping;
+
+        private static IList<string> Regions;
+
+        public static IDictionary<string, string> GetGlobalEndpoints()
+        {
+            if (null == GlobalEndpoints)
+            {
+                GlobalEndpoints = new Dictionary<string, string>() { };{global_endpoints}
+            }
+            return GlobalEndpoints;
+        }
+
+        public static IDictionary<string, string> GetRegionalEndpoints()
+        {
+            if (null == RegionalEndpoints)
+            {
+                RegionalEndpoints = new Dictionary<string, string>() { };{regional_endpoints}
+            }
+            return RegionalEndpoints;
+        }
+
+        public static IList<string> GetRegions()
+        {
+            if (null == Regions)
+            {
+                Regions = new List<string>() { };{regions}
+            }
+            return Regions;
+        }
+
+        public static IDictionary<string, string> GetRegionalEndpointPattern()
+        {
+            if (null == RegionalEndpointPattern)
+            {
+                RegionalEndpointPattern = new Dictionary<string, string>() { };{regional_endpoint_pattern}
+            }
+            return RegionalEndpointPattern;
+        }
+
+        public static IDictionary<string, string> GetLocationCodeMapping()
+        {
+            if (null == LocationCodeMapping)
+            {
+                LocationCodeMapping = new Dictionary<string, string>() { };{location_code_mapping}
+            }
+            return LocationCodeMapping;
+        }
+    }
+}

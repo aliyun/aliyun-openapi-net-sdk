@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Timeout.Util
 {
-    public static class TimeoutConfig
+    internal static class TimeoutConfig
     {
         private static void initData()
         {
