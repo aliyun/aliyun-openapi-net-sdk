@@ -40,10 +40,8 @@ namespace Aliyun.Acs.Core.Regions
 
         public InternalEndpointsParser()
         {
-            regionIdEndpointCollection = new Dictionary<string, string>();
-            globalEndpointCollection = new Dictionary<string, string>();
-            regionIdEndpointCollection = EndpointResource.GetGlobalEndpoints();
-            globalEndpointCollection = EndpointResource.GetRegionalEndpoints();
+            regionIdEndpointCollection = EndpointResource.GetRegionalEndpoints();
+            globalEndpointCollection = EndpointResource.GetGlobalEndpoints();
 
             if (jObject == null)
             {
