@@ -89,7 +89,7 @@ function convert_endpoints() {
     }
     for (const product in endpoints["regional_endpoints"]) {
         for (const region_id in endpoints["regional_endpoints"][product]) {
-            params.regional_endpoints += emit(`RegionalEndpointPattern.Add("${product}_${region_id}", "${endpoints["regional_endpoints"][product][region_id]}");`);
+            params.regional_endpoints += emit(`RegionalEndpoints.Add("${product}_${region_id}", "${endpoints["regional_endpoints"][product][region_id]}");`);
         }
     }
     for (const index in endpoints["regions"]) {
