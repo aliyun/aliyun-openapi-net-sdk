@@ -74,7 +74,7 @@ namespace Aliyun.Acs.Core.Regions
                             continue;
                         }
 
-                        globalEndpointCollection.Add(productName, domain);
+                        // globalEndpointCollection.Add(productName, domain);
                     }
 
                     foreach (var pair in regionalEndpoint.Properties())
@@ -92,7 +92,7 @@ namespace Aliyun.Acs.Core.Regions
                                 continue;
                             }
 
-                            regionIdEndpointCollection.Add(productName + "_" + regionId, domain);
+                            // regionIdEndpointCollection.Add(productName + "_" + regionId, domain);
                         }
                     }
                 }
