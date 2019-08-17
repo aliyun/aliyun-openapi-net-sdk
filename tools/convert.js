@@ -83,7 +83,6 @@ function convert_endpoints() {
         regional_endpoint_pattern: "",
         location_code_mapping: ""
     };
-    level = 4;
     for (const product in endpoints["global_endpoints"]) {
         params.global_endpoints += emit(`GlobalEndpoints.Add("${product}", "${endpoints["global_endpoints"][product]}");`);
     }
