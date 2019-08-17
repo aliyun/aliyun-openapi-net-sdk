@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Core.Regions
         {
             regionIdEndpointCollection = new Dictionary<string, string>();
             globalEndpointCollection = new Dictionary<string, string>();
+            regionIdEndpointCollection = EndpointResource.GetGlobalEndpoints();
+            globalEndpointCollection = EndpointResource.GetRegionalEndpoints();
 
             if (jObject == null)
             {
@@ -52,15 +54,15 @@ namespace Aliyun.Acs.Core.Regions
 
                     var resourceName = currentNamespace + "." + LocalEndpointResourcePath;
 
-                    using (var stream = localAssembly.GetManifestResourceStream(resourceName))
-                    using (var streamReader = new StreamReader(stream))
+                    using(var stream = localAssembly.GetManifestResourceStream(resourceName))
+                    using(var streamReader = new StreamReader(stream))
                     {
                         var data = streamReader.ReadToEnd();
                         jObject = JObject.Parse(data);
                     }
 
-                    var globalEndpoint = (JObject)jObject["global_endpoints"];
-                    var regionalEndpoint = (JObject)jObject["regional_endpoints"];
+                    var globalEndpoint = (JObject) jObject["global_endpoints"];
+                    var regionalEndpoint = (JObject) jObject["regional_endpoints"];
 
                     foreach (var pair in globalEndpoint.Properties())
                     {
@@ -72,7 +74,7 @@ namespace Aliyun.Acs.Core.Regions
                             continue;
                         }
 
-                        globalEndpointCollection.Add(productName, domain);
+                        // globalEndpointCollection.Add(productName, domain);
                     }
 
                     foreach (var pair in regionalEndpoint.Properties())
@@ -90,7 +92,7 @@ namespace Aliyun.Acs.Core.Regions
                                 continue;
                             }
 
-                            regionIdEndpointCollection.Add(productName + "_" + regionId, domain);
+                            // regionIdEndpointCollection.Add(productName + "_" + regionId, domain);
                         }
                     }
                 }
@@ -117,8 +119,8 @@ namespace Aliyun.Acs.Core.Regions
                 return null;
             }
 
-            var regionHashset = new HashSet<string> {regionId};
-            var productDomain = new List<ProductDomain> {new ProductDomain(productName, domain)};
+            var regionHashset = new HashSet<string> { regionId };
+            var productDomain = new List<ProductDomain> { new ProductDomain(productName, domain) };
 
             return new Endpoint(productName, regionHashset, productDomain);
         }
