@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Regions
 {
-    public static class EndpointResource
+    internal static class EndpointResource
     {
         private static IDictionary<string, string> GlobalEndpoints;
 

@@ -42,8 +42,8 @@ namespace Aliyun.Acs.Core.Regions
         {
             regionIdEndpointCollection = new Dictionary<string, string>();
             globalEndpointCollection = new Dictionary<string, string>();
-            // regionIdEndpointCollection = EndpointResource.GetGlobalEndpoints();
-            // globalEndpointCollection = EndpointResource.GetRegionalEndpoints();
+            regionIdEndpointCollection = EndpointResource.GetGlobalEndpoints();
+            globalEndpointCollection = EndpointResource.GetRegionalEndpoints();
 
             if (jObject == null)
             {
