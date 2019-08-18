@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Profile
             var productDomain = "product_domain";
             List<Endpoint> endpoints;
             List<ProductDomain> products;
+            DefaultProfile.ClearProfile();
             var profile = DefaultProfile.GetProfile();
 
             // Add endpoint

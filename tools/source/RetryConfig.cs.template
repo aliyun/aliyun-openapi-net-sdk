@@ -22,7 +22,7 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Retry.Util
 {
-    public static class RetryConfig
+    internal static class RetryConfig
     {
         private static void initData()
         {
