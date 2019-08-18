@@ -150,5 +150,10 @@ namespace Aliyun.Acs.Core.Profile
             _profile = new DefaultProfile(regionId, credential);
             return _profile;
         }
+
+        public static void ClearProfile()
+        {
+            _profile = null;
+        }
     }
 }
