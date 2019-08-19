@@ -172,7 +172,7 @@ namespace Aliyun.Acs.Feature.Test.Core
             request.QueryParameters.Add("testParams", "SDFSDFSAetTEWTEWQO(∩_∩)O哈哈~");
 
             var response = client.GetCommonResponse(request);
-            Assert.Equal(200, response.HttpStatus);
+            Assert.Equal(400, response.HttpStatus);
             Assert.NotNull(response.Data);
         }
     }
