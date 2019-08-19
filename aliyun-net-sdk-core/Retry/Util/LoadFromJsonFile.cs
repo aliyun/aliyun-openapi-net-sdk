@@ -41,9 +41,8 @@ namespace Aliyun.Acs.Core.Retry.Util
             {
                 return null;
             }
-            RetryConfig retryConfig = new RetryConfig();
 
-            List<string> retryableApiList = retryConfig.Get(product, version, sectionName);
+            List<string> retryableApiList = RetryConfig.Get(product, version, sectionName);
             return retryableApiList.Count == 0 ? null : retryableApiList;
         }
     }
