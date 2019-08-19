@@ -24,7 +24,6 @@ namespace Aliyun.Acs.Core.Retry.Condition
     public class RetryOnApiWithClientTokenCondition : IAlibabaRetryCondition
     {
         private const string ApiWithTokenSectionName = "RetryableAPIsWithClientToken";
-        private readonly string configFile;
 
         public RetryCondition ShouldRetry(RetryPolicyContext retryPolicyContext)
         {
