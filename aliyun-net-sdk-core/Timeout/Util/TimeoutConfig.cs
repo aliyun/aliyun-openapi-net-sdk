@@ -240,7 +240,7 @@ namespace Aliyun.Acs.Core.Timeout.Util
 
         private static Dictionary<string, Product> products;
 
-        public static int Get(string productName, string versionDate, string actionName)
+        internal static int Get(string productName, string versionDate, string actionName)
         {
             if (products == null)
             {
