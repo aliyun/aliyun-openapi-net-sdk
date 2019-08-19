@@ -23,7 +23,7 @@ using Xunit;
 
 namespace Aliyun.Acs.Core.Tests.Units.Retry.Util
 {
-    public class LoadFromJsonFileTest
+    public class LoadRetryConfigTest
     {
         private string product = "ecs";
         private string version = "2014-05-26";
@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Retry.Util
         [Fact]
         public void TestGetRetryableList()
         {
-            var loadFromJson = new LoadFromJsonFile();
+            var loadFromJson = new LoadRetryConfig();
 
             var list = loadFromJson.GetRetryableApiList(product, version, sectionName);
 
@@ -49,7 +49,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Retry.Util
         {
             product = "fakeProduct";
 
-            var loadFromJson = new LoadFromJsonFile();
+            var loadFromJson = new LoadRetryConfig();
             var list = loadFromJson.GetRetryableApiList(product, version, sectionName);
 
             Assert.Null(list);

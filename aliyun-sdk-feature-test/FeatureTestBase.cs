@@ -78,7 +78,7 @@ namespace Aliyun.Acs.Feature.Test
             assumeRoleRequest.RoleArn = GetRoleArn();
             assumeRoleRequest.RoleSessionName = "robert_test";
 
-            var assumeRoleResponse = client.GetAcsResponse(assumeRoleRequest);
+            var assumeRoleResponse = GetDefaultClient().GetAcsResponse(assumeRoleRequest);
 
             return assumeRoleResponse.Credentials.SecurityToken;
         }

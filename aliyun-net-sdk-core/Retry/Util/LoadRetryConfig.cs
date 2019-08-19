@@ -26,7 +26,7 @@ using Aliyun.Acs.Core.Exceptions;
 
 namespace Aliyun.Acs.Core.Retry.Util
 {
-    internal class LoadFromJsonFile
+    internal class LoadRetryConfig
     {
         /// <summary>
         ///     Given the specific product and version and sectionName

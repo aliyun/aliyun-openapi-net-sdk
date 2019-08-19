@@ -30,7 +30,6 @@ namespace Aliyun.Acs.Core.Regions
 {
     internal class InternalEndpointsParser : IEndpointsProvider
     {
-        private const string LocalEndpointResourcePath = "endpoints.json";
         private readonly IDictionary<string, string> globalEndpointCollection;
 
         private readonly IDictionary<string, string> regionIdEndpointCollection;
