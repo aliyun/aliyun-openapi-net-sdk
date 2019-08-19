@@ -26,8 +26,6 @@ using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Regions.Location;
 
-using Newtonsoft.Json.Linq;
-
 namespace Aliyun.Acs.Core.Regions
 {
     internal class InternalEndpointsParser : IEndpointsProvider
@@ -35,70 +33,12 @@ namespace Aliyun.Acs.Core.Regions
         private const string LocalEndpointResourcePath = "endpoints.json";
         private readonly IDictionary<string, string> globalEndpointCollection;
 
-        private readonly JObject jObject;
         private readonly IDictionary<string, string> regionIdEndpointCollection;
 
         public InternalEndpointsParser()
         {
             regionIdEndpointCollection = EndpointResource.GetRegionalEndpoints();
             globalEndpointCollection = EndpointResource.GetGlobalEndpoints();
-
-            if (jObject == null)
-            {
-                try
-                {
-                    var currentNamespace = MethodBase.GetCurrentMethod().DeclaringType.Namespace;
-                    var localAssembly = Assembly.GetExecutingAssembly();
-
-                    var resourceName = currentNamespace + "." + LocalEndpointResourcePath;
-
-                    using (var stream = localAssembly.GetManifestResourceStream(resourceName))
-                    using (var streamReader = new StreamReader(stream))
-                    {
-                        var data = streamReader.ReadToEnd();
-                        jObject = JObject.Parse(data);
-                    }
-
-                    var globalEndpoint = (JObject)jObject["global_endpoints"];
-                    var regionalEndpoint = (JObject)jObject["regional_endpoints"];
-
-                    foreach (var pair in globalEndpoint.Properties())
-                    {
-                        var productName = pair.Name;
-                        var domain = pair.Value.ToString();
-
-                        if (string.IsNullOrEmpty(productName) || string.IsNullOrEmpty(domain))
-                        {
-                            continue;
-                        }
-
-                        // globalEndpointCollection.Add(productName, domain);
-                    }
-
-                    foreach (var pair in regionalEndpoint.Properties())
-                    {
-                        var productName = pair.Name;
-                        foreach (JProperty regionAndValue in pair.Value)
-                        {
-                            var regionId = regionAndValue.Name;
-                            var domain = regionAndValue.Value.ToString();
-
-                            if (string.IsNullOrEmpty(productName) ||
-                                string.IsNullOrEmpty(regionId) ||
-                                string.IsNullOrEmpty(domain))
-                            {
-                                continue;
-                            }
-
-                            // regionIdEndpointCollection.Add(productName + "_" + regionId, domain);
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    throw new ClientException("LoadEndpointFileToCollection Fail:", e.ToString());
-                }
-            }
         }
 
         public Endpoint GetEndpoint(string regionId, string productName)
