@@ -27,12 +27,11 @@ namespace Aliyun.Acs.Core.Retry.Condition
 
         public RetryCondition ShouldRetry(RetryPolicyContext retryPolicyContext)
         {
-            var loadRetryConfig = new LoadRetryConfig();
             var product = retryPolicyContext.Product;
             var version = retryPolicyContext.Version;
             var currentApiName = retryPolicyContext.ApiName;
 
-            var apiList = loadRetryConfig.GetRetryableApiList(product, version, ApiSectionName);
+            var apiList = RetryConfig.GetRetryableApiList(product, version, ApiSectionName);
 
             if (apiList == null)
             {

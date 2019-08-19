@@ -50,16 +50,15 @@ namespace Aliyun.Acs.Core.Retry.Condition
 
                 var product = retryPolicyContext.Product;
                 var version = retryPolicyContext.Version;
-                var loadRetryConfig = new LoadRetryConfig();
 
-                var normalErrorList = loadRetryConfig.GetRetryableApiList(product, version, NormalErrorSectionName);
+                var normalErrorList = RetryConfig.GetRetryableApiList(product, version, NormalErrorSectionName);
                 if (normalErrorList != null && normalErrorList.Contains(errorCode))
                 {
                     return RetryCondition.ShouldRetry;
                 }
 
                 var throttlingErrorList =
-                    loadRetryConfig.GetRetryableApiList(product, version, ThrottlingErrorSectionName);
+                    RetryConfig.GetRetryableApiList(product, version, ThrottlingErrorSectionName);
 
                 if (throttlingErrorList == null)
                 {

@@ -32,14 +32,12 @@ namespace Aliyun.Acs.Core.Tests.Units.Retry.Util
         [Fact]
         public void TestGetRetryableList()
         {
-            var loadFromJson = new LoadRetryConfig();
-
-            var list = loadFromJson.GetRetryableApiList(product, version, sectionName);
+            var list = RetryConfig.GetRetryableApiList(product, version, sectionName);
 
             Assert.True(79 == list.Count);
 
             sectionName = "RetryableNormalErrors";
-            list = loadFromJson.GetRetryableApiList(product, version, sectionName);
+            list = RetryConfig.GetRetryableApiList(product, version, sectionName);
 
             Assert.True(3 == list.Count);
         }
@@ -49,19 +47,18 @@ namespace Aliyun.Acs.Core.Tests.Units.Retry.Util
         {
             product = "fakeProduct";
 
-            var loadFromJson = new LoadRetryConfig();
-            var list = loadFromJson.GetRetryableApiList(product, version, sectionName);
+            var list = RetryConfig.GetRetryableApiList(product, version, sectionName);
 
             Assert.Null(list);
 
             product = "ecs";
             version = "2014-05-27";
 
-            list = loadFromJson.GetRetryableApiList(product, version, sectionName);
+            list = RetryConfig.GetRetryableApiList(product, version, sectionName);
             Assert.Null(list);
 
             sectionName = "RetryableAPIsTest";
-            list = loadFromJson.GetRetryableApiList(product, version, sectionName);
+            list = RetryConfig.GetRetryableApiList(product, version, sectionName);
             Assert.Null(list);
         }
     }
