@@ -3,7 +3,7 @@
 'use strict';
 
 const fs = require('fs');
-const template = fs.readFileSync('./source/RetryConfig.cs.template').toString();
+
 const retry_config = require('../aliyun-net-sdk-core/Retry/Util/retry_config.json');
 const timeout_config = require('../aliyun-net-sdk-core/Timeout/Util/timeout_config.json');
 const endpoints = require('../aliyun-net-sdk-core/Regions/endpoints.json');
