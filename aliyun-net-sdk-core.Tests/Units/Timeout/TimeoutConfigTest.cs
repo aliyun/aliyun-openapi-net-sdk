@@ -17,20 +17,15 @@
  * under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Text;
 
-using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Timeout.Util;
 
 using Xunit;
 
 namespace Aliyun.Acs.Core.Tests.Timeout
 {
-    public class LoadTimeoutConfigFromFileTest
+    public class TimeoutConfigTest
     {
         private readonly string _product = "ecs";
         private readonly string _version = "2014-05-26";
@@ -39,10 +34,7 @@ namespace Aliyun.Acs.Core.Tests.Timeout
         [Fact]
         public void TestApiTimeoutValue()
         {
-            var loadTimeoutConfigFromFile = new LoadTimeoutConfigFromFile();
-
-            var timeoutValue =
-                loadTimeoutConfigFromFile.GetSpecificApiReadTimeoutValue(_product, _version, _actionName);
+            var timeoutValue = TimeoutConfig.GetSpecificApiReadTimeoutValue(_product, _version, _actionName);
 
             Assert.Equal(86000, timeoutValue);
         }
@@ -50,9 +42,7 @@ namespace Aliyun.Acs.Core.Tests.Timeout
         [Fact]
         public void TestParameterNull()
         {
-            var loadTimeoutConfigFromFile = new LoadTimeoutConfigFromFile();
-
-            var apiTimeoutValue = loadTimeoutConfigFromFile.GetSpecificApiReadTimeoutValue(_product, _version, null);
+            var apiTimeoutValue = TimeoutConfig.GetSpecificApiReadTimeoutValue(_product, _version, null);
 
             Assert.Equal(0, apiTimeoutValue);
         }
@@ -60,17 +50,13 @@ namespace Aliyun.Acs.Core.Tests.Timeout
         [Fact]
         public void TestCachedJsonData()
         {
-            var loadTimeoutConfigFromFile = new LoadTimeoutConfigFromFile();
-
             Stopwatch sw = Stopwatch.StartNew();
-            var apiTimeoutValue =
-                loadTimeoutConfigFromFile.GetSpecificApiReadTimeoutValue(_product, _version, _actionName);
+            var apiTimeoutValue = TimeoutConfig.GetSpecificApiReadTimeoutValue(_product, _version, _actionName);
             var executeTime1 = sw.ElapsedMilliseconds;
             Assert.Equal(86000, apiTimeoutValue);
 
             sw.Restart();
-            apiTimeoutValue =
-                loadTimeoutConfigFromFile.GetSpecificApiReadTimeoutValue(_product, _version, "AllocateEipAddress");
+            apiTimeoutValue = TimeoutConfig.GetSpecificApiReadTimeoutValue(_product, _version, "AllocateEipAddress");
             var executeTime2 = sw.ElapsedMilliseconds;
 
             Assert.Equal(17000, apiTimeoutValue);
@@ -79,10 +65,7 @@ namespace Aliyun.Acs.Core.Tests.Timeout
         [Fact]
         public void TestJsonDataNull()
         {
-            var loadTimeoutConfigFromFile = new LoadTimeoutConfigFromFile();
-
-            var apiTimeoutValue =
-                loadTimeoutConfigFromFile.GetSpecificApiReadTimeoutValue(_product, _version, "error-actionName");
+            var apiTimeoutValue = TimeoutConfig.GetSpecificApiReadTimeoutValue(_product, _version, "error-actionName");
 
             Assert.Equal(0, apiTimeoutValue);
         }
