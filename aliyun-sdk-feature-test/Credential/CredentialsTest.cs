@@ -37,7 +37,7 @@ namespace Aliyun.Acs.Feature.Test.Credential
             {
                 return;
             }
-
+            DefaultProfile.ClearProfile();
             var profile = DefaultProfile.GetProfile("cn-hangzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
             var basicCredential = new BasicCredentials(GetBasicAccessKeyId(), GetBasicAccessKeySecret());
             var provider = new STSAssumeRoleSessionCredentialsProvider(basicCredential, GetRoleArn(), profile);
