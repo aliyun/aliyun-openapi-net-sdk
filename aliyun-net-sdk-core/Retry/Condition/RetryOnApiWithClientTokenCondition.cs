@@ -31,8 +31,7 @@ namespace Aliyun.Acs.Core.Retry.Condition
             var version = retryPolicyContext.Version;
             var currentApiName = retryPolicyContext.ApiName;
 
-            var loadFromJsonFile = new LoadFromJsonFile();
-            var apiList = loadFromJsonFile.GetRetryableApiList(product, version, ApiWithTokenSectionName);
+            var apiList = RetryConfig.GetRetryableApiList(product, version, ApiWithTokenSectionName);
 
             if (apiList == null)
             {

@@ -27,21 +27,20 @@ namespace Aliyun.Acs.Core.Retry.Condition
 
         public RetryCondition ShouldRetry(RetryPolicyContext retryPolicyContext)
         {
-            var loadFromJsonFile = new LoadFromJsonFile();
             var product = retryPolicyContext.Product;
             var version = retryPolicyContext.Version;
             var currentApiName = retryPolicyContext.ApiName;
 
-            var apiList = loadFromJsonFile.GetRetryableApiList(product, version, ApiSectionName);
+            var apiList = RetryConfig.GetRetryableApiList(product, version, ApiSectionName);
 
             if (apiList == null)
             {
                 return RetryCondition.NoRetry;
             }
 
-            return apiList.Contains(currentApiName)
-                ? RetryCondition.ShouldRetry
-                : RetryCondition.NoRetry;
+            return apiList.Contains(currentApiName) ?
+                RetryCondition.ShouldRetry :
+                RetryCondition.NoRetry;
         }
     }
 }

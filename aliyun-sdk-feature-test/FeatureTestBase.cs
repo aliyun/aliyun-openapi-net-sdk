@@ -27,11 +27,11 @@ namespace Aliyun.Acs.Feature.Test
 {
     public class FeatureTestBase
     {
-        private static readonly string AccessKeyId = "ACCESS_KEY_ID";
-        private static readonly string AccessKeySecret = "ACCESS_KEY_SECRET";
-        private static readonly string roleArn = "RAM";
+        private static string AccessKeyId = "ACCESS_KEY_ID";
+        private static string AccessKeySecret = "ACCESS_KEY_SECRET";
+        private static string roleArn = "RAM";
 
-        private static readonly string bearerToken = "BEARERTOKEN";
+        private static string bearerToken = "BEARERTOKEN";
         public static DefaultAcsClient client;
 
         public IClientProfile profile;
@@ -54,22 +54,38 @@ namespace Aliyun.Acs.Feature.Test
 
         public static string GetBasicAccessKeyId()
         {
-            return Environment.GetEnvironmentVariable(AccessKeyId) ?? "FakeAccessKeyId";
+            if (AccessKeyId == "ACCESS_KEY_ID")
+            {
+                AccessKeyId = Environment.GetEnvironmentVariable(AccessKeyId) ?? "FakeAccessKeyId";
+            }
+            return AccessKeyId;
         }
 
         public static string GetBasicAccessKeySecret()
         {
-            return Environment.GetEnvironmentVariable(AccessKeySecret) ?? "FakeAccessKeySecret";
+            if (AccessKeySecret == "ACCESS_KEY_SECRET")
+            {
+                AccessKeySecret = Environment.GetEnvironmentVariable(AccessKeySecret) ?? "FakeAccessKeySecret";
+            }
+            return AccessKeySecret;
         }
 
         public static string GetRoleArn()
         {
-            return Environment.GetEnvironmentVariable(roleArn) ?? "FakeRoleArn";
+            if (roleArn == "RAM")
+            {
+                roleArn = Environment.GetEnvironmentVariable(roleArn) ?? "FakeRoleArn";
+            }
+            return roleArn;
         }
 
         public static string GetBearerToken()
         {
-            return Environment.GetEnvironmentVariable(bearerToken) ?? "FakeBearerToken";
+            if (bearerToken == "BEARERTOKEN")
+            {
+                bearerToken = Environment.GetEnvironmentVariable(bearerToken) ?? "FakeBearerToken";
+            }
+            return bearerToken;
         }
 
         public string GetToken()
@@ -78,7 +94,7 @@ namespace Aliyun.Acs.Feature.Test
             assumeRoleRequest.RoleArn = GetRoleArn();
             assumeRoleRequest.RoleSessionName = "robert_test";
 
-            var assumeRoleResponse = client.GetAcsResponse(assumeRoleRequest);
+            var assumeRoleResponse = GetDefaultClient().GetAcsResponse(assumeRoleRequest);
 
             return assumeRoleResponse.Credentials.SecurityToken;
         }

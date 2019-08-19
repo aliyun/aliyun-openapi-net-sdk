@@ -45,21 +45,20 @@ namespace Aliyun.Acs.Core.Retry.Condition
 
             if (exception is ServerException)
             {
-                var serverException = (ServerException)exception;
+                var serverException = (ServerException) exception;
                 var errorCode = serverException.ErrorCode;
 
                 var product = retryPolicyContext.Product;
                 var version = retryPolicyContext.Version;
-                var loadFromJsonFile = new LoadFromJsonFile();
 
-                var normalErrorList = loadFromJsonFile.GetRetryableApiList(product, version, NormalErrorSectionName);
+                var normalErrorList = RetryConfig.GetRetryableApiList(product, version, NormalErrorSectionName);
                 if (normalErrorList != null && normalErrorList.Contains(errorCode))
                 {
                     return RetryCondition.ShouldRetry;
                 }
 
                 var throttlingErrorList =
-                    loadFromJsonFile.GetRetryableApiList(product, version, ThrottlingErrorSectionName);
+                    RetryConfig.GetRetryableApiList(product, version, ThrottlingErrorSectionName);
 
                 if (throttlingErrorList == null)
                 {
