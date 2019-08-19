@@ -39,10 +39,17 @@ namespace Aliyun.Acs.Feature.Test
 
         public FeatureTestBase()
         {
+            this.GetDefaultClient();
+        }
+
+        public DefaultAcsClient GetDefaultClient()
+        {
+            DefaultProfile.ClearProfile();
             profile = DefaultProfile.GetProfile(regionId, GetBasicAccessKeyId(), GetBasicAccessKeySecret());
             client = new DefaultAcsClient(profile);
             client.SetConnectTimeoutInMilliSeconds(2 * 60 * 1000);
             client.SetReadTimeoutInMilliSeconds(2 * 60 * 1000);
+            return client;
         }
 
         public static string GetBasicAccessKeyId()

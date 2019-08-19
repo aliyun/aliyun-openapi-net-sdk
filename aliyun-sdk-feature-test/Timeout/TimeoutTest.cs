@@ -51,7 +51,7 @@ namespace Aliyun.Acs.Feature.Test.Timeout
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                var response = client.GetAcsResponse(request);
+                var response = GetDefaultClient().GetAcsResponse(request);
             });
 
             Assert.NotNull(exception.Message);
@@ -64,7 +64,7 @@ namespace Aliyun.Acs.Feature.Test.Timeout
             request.SetConnectTimeoutInMilliSeconds(8000);
             client.SetConnectTimeoutInMilliSeconds(1);
 
-            var response = client.GetAcsResponse(request);
+            var response = GetDefaultClient().GetAcsResponse(request);
 
             client.SetConnectTimeoutInMilliSeconds(5000);
             Assert.True(0 <= response.AccessPointSet.Count);

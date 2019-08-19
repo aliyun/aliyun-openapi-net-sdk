@@ -28,20 +28,10 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
     [Trait("Category", "FeatureTest")]
     public class HttpProxyTest : FeatureTestBase
     {
-        private DefaultAcsClient InitializeClient()
-        {
-            var profile = DefaultProfile.GetProfile(
-                "cn-shanghai",
-                GetBasicAccessKeyId(),
-                GetBasicAccessKeySecret());
-
-            return new DefaultAcsClient(profile);
-        }
-
         [Fact]
         public void HttpProxy()
         {
-            var client = InitializeClient();
+            var client = GetDefaultClient();
 
             var request = new DescribeAccessPointsRequest();
             client.SetHttpProxy("http://localhost:8989");
@@ -60,7 +50,7 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
         [Fact]
         public void HttpProxyWithCredential()
         {
-            var client = InitializeClient();
+            var client = GetDefaultClient();
 
             var request = new DescribeAccessPointsRequest();
             client.SetHttpProxy("http://username:password@localhost:8989");
