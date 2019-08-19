@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
         [Fact]
         public void currentTimeMillis()
         {
-            var d = DateTime.Now;
+            var d = DateTime.UtcNow;
             var r = d.currentTimeMillis();
             Assert.IsType<long>(r);
         }

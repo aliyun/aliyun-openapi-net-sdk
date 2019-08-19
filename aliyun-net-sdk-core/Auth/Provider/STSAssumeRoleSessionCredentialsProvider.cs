@@ -134,7 +134,7 @@ namespace Aliyun.Acs.Core.Auth
 
         public static string GetNewRoleSessionName()
         {
-            return "aliyun-net-sdk-" + DateTime.Now.currentTimeMillis();
+            return "aliyun-net-sdk-" + DateTime.UtcNow.currentTimeMillis();
         }
 
         private BasicSessionCredentials GetNewSessionCredentials()

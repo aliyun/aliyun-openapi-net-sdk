@@ -49,7 +49,7 @@ namespace Aliyun.Acs.Core.Auth
             this.accessKeySecret = accessKeySecret;
             this.sessionToken = sessionToken;
             this.roleSessionDurationSeconds = roleSessionDurationSeconds;
-            sessionStartedTimeInMilliSeconds = DateTime.Now.currentTimeMillis();
+            sessionStartedTimeInMilliSeconds = DateTime.UtcNow.currentTimeMillis();
         }
 
         public string GetAccessKeyId()
@@ -74,11 +74,11 @@ namespace Aliyun.Acs.Core.Auth
                 return false;
             }
 
-            var now = DateTime.Now.currentTimeMillis();
+            var now = DateTime.UtcNow.currentTimeMillis();
 
             // (now - sessionStartedTimeInMilliSeconds) stands for session current exist duration time (ms)
             return roleSessionDurationSeconds * expireFact <
-                   (now - sessionStartedTimeInMilliSeconds) / 1000.0;
+                (now - sessionStartedTimeInMilliSeconds) / 1000.0;
         }
     }
 }

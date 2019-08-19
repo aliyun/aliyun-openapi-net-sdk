@@ -40,11 +40,11 @@ namespace Aliyun.Acs.Core.Utils
             }
             else
             {
-                lastClearTime = DateTime.Now;
+                lastClearTime = DateTime.UtcNow;
                 lastClearTimePerProduct.TryAdd(key, lastClearTime);
             }
 
-            var ts = DateTime.Now - lastClearTime;
+            var ts = DateTime.UtcNow - lastClearTime;
 
             if (ENDPOINT_CACHE_TIME < ts.TotalSeconds)
             {

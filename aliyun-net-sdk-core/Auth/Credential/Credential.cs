@@ -28,14 +28,14 @@ namespace Aliyun.Acs.Core.Auth
     {
         public Credential()
         {
-            RefreshDate = DateTime.Now;
+            RefreshDate = DateTime.UtcNow;
         }
 
         public Credential(string keyId, string secret)
         {
             AccessKeyId = keyId;
             AccessSecret = secret;
-            RefreshDate = DateTime.Now;
+            RefreshDate = DateTime.UtcNow;
         }
 
         public Credential(string keyId, string secret, string securityToken)
@@ -85,7 +85,7 @@ namespace Aliyun.Acs.Core.Auth
         {
             if (0 < expiredHours)
             {
-                ExpiredDate = DateTime.Now.AddHours(expiredHours);
+                ExpiredDate = DateTime.UtcNow.AddHours(expiredHours);
             }
         }
 
@@ -96,7 +96,7 @@ namespace Aliyun.Acs.Core.Auth
                 return false;
             }
 
-            return !(ExpiredDate < DateTime.Now);
+            return !(ExpiredDate < DateTime.UtcNow);
         }
     }
 }

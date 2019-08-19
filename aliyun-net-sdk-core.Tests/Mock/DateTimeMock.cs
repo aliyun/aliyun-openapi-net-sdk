@@ -25,7 +25,7 @@ namespace Aliyun.Acs.Core.Tests.Mock
     {
         public static DateTime getDateTimeNow()
         {
-            return DateTime.Now;
+            return DateTime.UtcNow;
         }
 
         public static string getNowDateTimeString()
@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Core.Tests.Mock
 
         public static DateTime getExpiredDateTime()
         {
-            return DateTime.Now.AddDays(-1);
+            return DateTime.UtcNow.AddDays(-1);
         }
 
         public static string getExpiredDateTimeString()
@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Core.Tests.Mock
 
         public static DateTime getNotExpiredDateTime()
         {
-            return DateTime.Now.AddDays(1);
+            return DateTime.UtcNow.AddDays(1);
         }
 
         public static string getNotExpiredDateTimeString()
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Core.Tests.Mock
 
         public static DateTime getWillExpiredDateTime()
         {
-            return DateTime.Now.AddMilliseconds(500);
+            return DateTime.UtcNow.AddMilliseconds(500);
         }
 
         public static string getWillExpiredDateTimeString()

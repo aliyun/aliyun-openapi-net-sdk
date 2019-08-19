@@ -46,7 +46,7 @@ namespace Aliyun.Acs.Core.Regions.Endpoints
                     if (endpoint != null)
                     {
                         _endpoints.Add(endpoint);
-                        CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, DateTime.Now);
+                        CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, DateTime.UtcNow);
                     }
                     else
                     {
@@ -54,7 +54,7 @@ namespace Aliyun.Acs.Core.Regions.Endpoints
                     }
                 }
                 else if (Endpoint.FindProductDomain(regionId, product, _endpoints) == null ||
-                         CacheTimeHelper.CheckCacheIsExpire(product, regionId))
+                    CacheTimeHelper.CheckCacheIsExpire(product, regionId))
                 {
                     var endpoint = internalEndpointProvider.GetEndpoint(regionId, product);
 
@@ -71,7 +71,7 @@ namespace Aliyun.Acs.Core.Regions.Endpoints
                             foreach (var productDomain in endpoint.ProductDomains.ToList())
                             {
                                 AddEndpoint(endpoint.Name, region, product, productDomain.DomainName);
-                                CacheTimeHelper.AddLastClearTimePerProduct(product, region, DateTime.Now);
+                                CacheTimeHelper.AddLastClearTimePerProduct(product, region, DateTime.UtcNow);
                             }
                         }
                     }
@@ -115,7 +115,7 @@ namespace Aliyun.Acs.Core.Regions.Endpoints
 
             if (isNeverExpire)
             {
-                var date = DateTime.Now.AddYears(100);
+                var date = DateTime.UtcNow.AddYears(100);
                 CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, date);
             }
         }

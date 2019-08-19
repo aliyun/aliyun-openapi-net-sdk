@@ -36,7 +36,7 @@ namespace Aliyun.Acs.Core.Auth
             Signer signer, string accessKeyId, FormatType? format)
         {
             var immutableMap = new Dictionary<string, string>(parameters);
-            DictionaryUtil.Add(immutableMap, "Date", ParameterHelper.GetRFC2616Date(DateTime.Now));
+            DictionaryUtil.Add(immutableMap, "Date", ParameterHelper.GetRFC2616Date(DateTime.UtcNow));
             if (null == format)
             {
                 format = FormatType.RAW;
