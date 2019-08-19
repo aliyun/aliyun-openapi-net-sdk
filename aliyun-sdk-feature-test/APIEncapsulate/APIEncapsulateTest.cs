@@ -92,7 +92,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.ContentType = FormatType.JSON;
             request.BodyParameters.Add("test", "test");
 
-            var exception = Assert.Throws<ClientException>(() => { client.GetAcsResponse(request); });
+            var exception = Assert.Throws<ClientException>(() => { GetDefaultClient().GetAcsResponse(request); });
             Assert.NotNull(exception);
         }
 
