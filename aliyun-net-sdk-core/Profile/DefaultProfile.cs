@@ -26,8 +26,6 @@ using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Regions.Endpoints;
 using Aliyun.Acs.Core.Regions.Location;
 
-using Newtonsoft.Json;
-
 namespace Aliyun.Acs.Core.Profile
 {
     public class DefaultProfile : IClientProfile

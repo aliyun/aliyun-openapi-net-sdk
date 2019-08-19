@@ -29,12 +29,12 @@ namespace Aliyun.Acs.Core.Retry.Condition
         private readonly RetryOnExceptionCondition retryOnExceptionCondition;
         private readonly RetryOnHttpStatusCondition retryOnHttpStatusCondition;
 
-        public ConditionRetryHandler(int maxRetries = 3, string configFile = "retry_config.json", List<string> retryHttpCodeList = null)
+        public ConditionRetryHandler(int maxRetries = 3, List<string> retryHttpCodeList = null)
         {
-            retryOnApiCondition = new RetryOnApiCondition(configFile);
-            retryOnApiWithClientTokenCondition = new RetryOnApiWithClientTokenCondition(configFile);
+            retryOnApiCondition = new RetryOnApiCondition();
+            retryOnApiWithClientTokenCondition = new RetryOnApiWithClientTokenCondition();
             maxRetryTimesCondition = new MaxRetryTimesCondition(maxRetries);
-            retryOnExceptionCondition = new RetryOnExceptionCondition(configFile);
+            retryOnExceptionCondition = new RetryOnExceptionCondition();
             retryOnHttpStatusCondition = new RetryOnHttpStatusCondition(retryHttpCodeList);
         }
 

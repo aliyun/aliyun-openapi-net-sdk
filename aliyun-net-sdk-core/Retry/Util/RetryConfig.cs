@@ -135,7 +135,7 @@ namespace Aliyun.Acs.Core.Retry.Util
 
         private static Dictionary<string, Product> products;
 
-        public static List<string> Get(string productName, string versionDate, string sectionName)
+        internal static List<string> Get(string productName, string versionDate, string sectionName)
         {
             if (products == null)
             {

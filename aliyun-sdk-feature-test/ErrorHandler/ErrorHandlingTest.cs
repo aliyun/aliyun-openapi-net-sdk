@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Feature.Test.ErrorHandler
             var request = new ActiveFlowLogRequest();
             request.FlowLogId = "testFlow";
 
+            DefaultProfile.ClearProfile();
             var profile = DefaultProfile.GetProfile("cn-hangzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
             var client = new DefaultAcsClient(profile);
 
@@ -57,7 +58,7 @@ namespace Aliyun.Acs.Feature.Test.ErrorHandler
             request.Version = "2014-05-26";
             request.Action = "actionError";
 
-            var response = client.GetCommonResponse(request);
+            var response = GetDefaultClient().GetCommonResponse(request);
             var content = Encoding.UTF8.GetString(response.HttpResponse.Content);
 
             Assert.Contains("Keyword=InvalidParameter", content);

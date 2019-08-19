@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Feature.Test.EndPoint
         public void TestAddExistingEndpointManually()
         {
             var request = new DescribeRegionsRequest();
+            DefaultProfile.ClearProfile();
             var profile = DefaultProfile.GetProfile("cn-wenzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
             var testClient = new DefaultAcsClient(profile);
 
@@ -48,7 +49,7 @@ namespace Aliyun.Acs.Feature.Test.EndPoint
         public void TestProductsWithLocationService()
         {
             var request = new DescribeRegionsRequest();
-            var response = client.GetAcsResponse(request);
+            var response = GetDefaultClient().GetAcsResponse(request);
 
             Assert.True(0 < response.Regions.Count);
         }
@@ -57,7 +58,7 @@ namespace Aliyun.Acs.Feature.Test.EndPoint
         public void TestProductsWithoutLocationService()
         {
             var request = new ListAccessKeysRequest();
-            var response = client.GetAcsResponse(request);
+            var response = GetDefaultClient().GetAcsResponse(request);
 
             Assert.True(0 < response.AccessKeys.Count);
         }

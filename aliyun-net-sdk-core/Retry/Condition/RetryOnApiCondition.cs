@@ -24,16 +24,10 @@ namespace Aliyun.Acs.Core.Retry.Condition
     public class RetryOnApiCondition : IAlibabaRetryCondition
     {
         private const string ApiSectionName = "RetryableAPIs";
-        private readonly string configFile;
-
-        public RetryOnApiCondition(string configFile = "retry_config.json")
-        {
-            this.configFile = configFile;
-        }
 
         public RetryCondition ShouldRetry(RetryPolicyContext retryPolicyContext)
         {
-            var loadFromJsonFile = new LoadFromJsonFile(configFile);
+            var loadFromJsonFile = new LoadFromJsonFile();
             var product = retryPolicyContext.Product;
             var version = retryPolicyContext.Version;
             var currentApiName = retryPolicyContext.ApiName;
