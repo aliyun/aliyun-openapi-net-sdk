@@ -14,7 +14,7 @@ namespace Aliyun.Acs.Core.Regions
 
         private static IList<string> Regions;
 
-        public static IDictionary<string, string> GetGlobalEndpoints()
+        internal static IDictionary<string, string> GetGlobalEndpoints()
         {
             if (null == GlobalEndpoints)
             {
@@ -59,7 +59,7 @@ namespace Aliyun.Acs.Core.Regions
             return GlobalEndpoints;
         }
 
-        public static IDictionary<string, string> GetRegionalEndpoints()
+        internal static IDictionary<string, string> GetRegionalEndpoints()
         {
             if (null == RegionalEndpoints)
             {
@@ -811,7 +811,7 @@ namespace Aliyun.Acs.Core.Regions
             return RegionalEndpoints;
         }
 
-        public static IList<string> GetRegions()
+        internal static IList<string> GetRegions()
         {
             if (null == Regions)
             {
@@ -840,7 +840,7 @@ namespace Aliyun.Acs.Core.Regions
             return Regions;
         }
 
-        public static IDictionary<string, string> GetRegionalEndpointPattern()
+        internal static IDictionary<string, string> GetRegionalEndpointPattern()
         {
             if (null == RegionalEndpointPattern)
             {
@@ -865,7 +865,7 @@ namespace Aliyun.Acs.Core.Regions
             return RegionalEndpointPattern;
         }
 
-        public static IDictionary<string, string> GetLocationCodeMapping()
+        internal static IDictionary<string, string> GetLocationCodeMapping()
         {
             if (null == LocationCodeMapping)
             {

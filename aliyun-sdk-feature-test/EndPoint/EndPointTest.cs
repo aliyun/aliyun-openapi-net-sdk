@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Feature.Test.EndPoint
         public void TestAddExistingEndpointManually()
         {
             var request = new DescribeRegionsRequest();
+            DefaultProfile.ClearProfile();
             var profile = DefaultProfile.GetProfile("cn-wenzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
             var testClient = new DefaultAcsClient(profile);
 

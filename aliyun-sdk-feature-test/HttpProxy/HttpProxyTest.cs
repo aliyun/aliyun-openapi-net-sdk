@@ -30,6 +30,7 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
     {
         private DefaultAcsClient InitializeClient()
         {
+            DefaultProfile.ClearProfile();
             var profile = DefaultProfile.GetProfile(
                 "cn-shanghai",
                 GetBasicAccessKeyId(),

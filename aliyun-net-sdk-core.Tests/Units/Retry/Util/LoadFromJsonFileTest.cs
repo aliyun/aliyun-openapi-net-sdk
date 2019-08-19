@@ -17,7 +17,6 @@
  * under the License.
  */
 
-using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Retry.Util;
 
 using Xunit;
@@ -33,7 +32,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Retry.Util
         [Fact]
         public void TestGetRetryableList()
         {
-            var loadFromJson = new LoadFromJsonFile("retry_config.json");
+            var loadFromJson = new LoadFromJsonFile();
 
             var list = loadFromJson.GetRetryableApiList(product, version, sectionName);
 
@@ -48,9 +47,9 @@ namespace Aliyun.Acs.Core.Tests.Units.Retry.Util
         [Fact]
         public void TestInvalidJsonSection()
         {
-            product = "ecs1";
+            product = "fakeProduct";
 
-            var loadFromJson = new LoadFromJsonFile("retry_config.json");
+            var loadFromJson = new LoadFromJsonFile();
             var list = loadFromJson.GetRetryableApiList(product, version, sectionName);
 
             Assert.Null(list);
@@ -64,14 +63,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Retry.Util
             sectionName = "RetryableAPIsTest";
             list = loadFromJson.GetRetryableApiList(product, version, sectionName);
             Assert.Null(list);
-        }
-
-        [Fact]
-        public void TestLoadFromJsonWithException()
-        {
-            var loadFromJson = new LoadFromJsonFile("TESTLocation.json");
-
-            Assert.Throws<ClientException>(() => { loadFromJson.GetRetryableApiList(product, version, sectionName); });
         }
     }
 }

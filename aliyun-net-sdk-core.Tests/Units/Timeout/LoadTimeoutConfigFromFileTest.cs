@@ -86,19 +86,5 @@ namespace Aliyun.Acs.Core.Tests.Timeout
 
             Assert.Equal(0, apiTimeoutValue);
         }
-
-        [Fact]
-        public void TestLoadTimeoutFromFileException()
-        {
-
-            var exception = Assert.Throws<ClientException>(() =>
-            {
-                var loadTimeoutConfigFromFile = new LoadTimeoutConfigFromFile("fileNotFound.json");
-                var apiValue =
-                    loadTimeoutConfigFromFile.GetSpecificApiReadTimeoutValue(_product, _version, _actionName);
-            });
-
-            Assert.Equal("LoadTimeoutJsonFileError", exception.ErrorCode);
-        }
     }
 }

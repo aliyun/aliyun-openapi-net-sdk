@@ -28,13 +28,6 @@ namespace Aliyun.Acs.Core.Retry.Condition
         private const string NormalErrorSectionName = "RetryableNormalErrors";
         private const string ThrottlingErrorSectionName = "RetryableThrottlingErrors";
 
-        private readonly string configFile;
-
-        public RetryOnExceptionCondition(string configFile = "retry_config.json")
-        {
-            this.configFile = configFile;
-        }
-
         public RetryCondition ShouldRetry(RetryPolicyContext retryPolicyContext)
         {
             var exception = retryPolicyContext.Exception;
@@ -57,7 +50,7 @@ namespace Aliyun.Acs.Core.Retry.Condition
 
                 var product = retryPolicyContext.Product;
                 var version = retryPolicyContext.Version;
-                var loadFromJsonFile = new LoadFromJsonFile(configFile);
+                var loadFromJsonFile = new LoadFromJsonFile();
 
                 var normalErrorList = loadFromJsonFile.GetRetryableApiList(product, version, NormalErrorSectionName);
                 if (normalErrorList != null && normalErrorList.Contains(errorCode))
