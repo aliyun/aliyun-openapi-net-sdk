@@ -24,20 +24,10 @@ using System.Reflection;
 
 using Aliyun.Acs.Core.Exceptions;
 
-using Newtonsoft.Json.Linq;
-
 namespace Aliyun.Acs.Core.Retry.Util
 {
     internal class LoadFromJsonFile
     {
-        private readonly string configFileLocation;
-        private JObject currentJsonData;
-
-        public LoadFromJsonFile(string configFile)
-        {
-            configFileLocation = configFile;
-        }
-
         /// <summary>
         ///     Given the specific product and version and sectionName
         /// </summary>
@@ -51,46 +41,10 @@ namespace Aliyun.Acs.Core.Retry.Util
             {
                 return null;
             }
+            RetryConfig retryConfig = new RetryConfig();
 
-            try
-            {
-                JObject jsonData;
-
-                if (currentJsonData == null)
-                {
-                    var currentNamespace = MethodBase.GetCurrentMethod().DeclaringType.Namespace;
-                    var assembly = Assembly.GetExecutingAssembly();
-
-                    var resourceName = currentNamespace + "." + configFileLocation;
-
-                    using(var stream = assembly.GetManifestResourceStream(resourceName))
-                    using(var streamReader = new StreamReader(stream))
-                    {
-                        var data = streamReader.ReadToEnd();
-                        jsonData = JObject.Parse(data);
-                        currentJsonData = jsonData;
-                    }
-                }
-                else
-                {
-                    jsonData = currentJsonData;
-                }
-
-                if (jsonData[product] == null ||
-                    jsonData[product][version] == null ||
-                    jsonData[product][version][sectionName] == null)
-                {
-                    return null;
-                }
-
-                var sectionList = jsonData[product][version][sectionName];
-                var retryableApiList = RetryConfig.Get(product, version, sectionName);
-                return retryableApiList;
-            }
-            catch (Exception e)
-            {
-                throw new ClientException("Load Json File Error", e.ToString());
-            }
+            List<string> retryableApiList = retryConfig.Get(product, version, sectionName);
+            return retryableApiList.Count == 0 ? null : retryableApiList;
         }
     }
 }

@@ -26,18 +26,13 @@ namespace Aliyun.Acs.Core.Retry.Condition
         private const string ApiWithTokenSectionName = "RetryableAPIsWithClientToken";
         private readonly string configFile;
 
-        public RetryOnApiWithClientTokenCondition(string configFile = "retry_config.json")
-        {
-            this.configFile = configFile;
-        }
-
         public RetryCondition ShouldRetry(RetryPolicyContext retryPolicyContext)
         {
             var product = retryPolicyContext.Product;
             var version = retryPolicyContext.Version;
             var currentApiName = retryPolicyContext.ApiName;
 
-            var loadFromJsonFile = new LoadFromJsonFile(configFile);
+            var loadFromJsonFile = new LoadFromJsonFile();
             var apiList = loadFromJsonFile.GetRetryableApiList(product, version, ApiWithTokenSectionName);
 
             if (apiList == null)

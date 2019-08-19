@@ -22,9 +22,9 @@ using System.Collections.Generic;
 
 namespace Aliyun.Acs.Core.Retry.Util
 {
-    internal static class RetryConfig
+    internal class RetryConfig
     {
-        private static void initData()
+        public RetryConfig()
         {
             products = new Dictionary<string, Product>() { };
             Product productEcs = new Product();
@@ -129,18 +129,14 @@ namespace Aliyun.Acs.Core.Retry.Util
             version20140526.RetryableNormalErrors.Add("UnknownError");
             version20140526.RetryableNormalErrors.Add("ServiceUnavailable");
             productEcs.versions.Add("2014-05-26", version20140526);
-            
+
             products.Add("ecs", productEcs);
         }
 
-        private static Dictionary<string, Product> products;
+        private Dictionary<string, Product> products;
 
-        public static List<string> Get(string productName, string versionDate, string sectionName)
+        public List<string> Get(string productName, string versionDate, string sectionName)
         {
-            if (products == null)
-            {
-                initData();
-            }
             List<string> apis = new List<string>() { };
             if (products.ContainsKey(productName))
             {
@@ -170,23 +166,23 @@ namespace Aliyun.Acs.Core.Retry.Util
         }
     }
 
-    public class Product
+    internal class Product
     {
         public string ProductName { get; set; }
 
-        public Dictionary<string, Version> versions = new Dictionary<string, Version>(){};
+        public Dictionary<string, Version> versions = new Dictionary<string, Version>() { };
     }
 
-    public class Version
+    internal class Version
     {
         public String VersionDate { get; set; }
 
-        public List<string> RetryableAPIs = new List<string>(){};
+        public List<string> RetryableAPIs = new List<string>() { };
 
-        public List<string> RetryableAPIsWithClientToken = new List<string>(){};
+        public List<string> RetryableAPIsWithClientToken = new List<string>() { };
 
-        public List<string> RetryableThrottlingErrors = new List<string>(){};
+        public List<string> RetryableThrottlingErrors = new List<string>() { };
 
-        public List<string> RetryableNormalErrors = new List<string>(){};
+        public List<string> RetryableNormalErrors = new List<string>() { };
     }
 }
