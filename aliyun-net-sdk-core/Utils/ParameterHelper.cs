@@ -39,15 +39,15 @@ namespace Aliyun.Acs.Core.Utils
         {
             if (null == datetime)
             {
-                datetime = DateTime.Now;
+                datetime = DateTime.UtcNow;
             }
 
-            return datetime.ToUniversalTime().GetDateTimeFormats('r')[0];
+            return datetime.ToUniversalTime().GetDateTimeFormats('r') [0];
         }
 
         public static string Md5Sum(byte[] buff)
         {
-            using (MD5 md5 = new MD5CryptoServiceProvider())
+            using(MD5 md5 = new MD5CryptoServiceProvider())
             {
                 var output = md5.ComputeHash(buff);
                 return BitConverter.ToString(output).Replace("-", "");
@@ -56,7 +56,7 @@ namespace Aliyun.Acs.Core.Utils
 
         public static string Md5SumAndBase64(byte[] buff)
         {
-            using (MD5 md5 = new MD5CryptoServiceProvider())
+            using(MD5 md5 = new MD5CryptoServiceProvider())
             {
                 var output = md5.ComputeHash(buff);
                 // string md5Str = BitConverter.ToString(output).Replace("-", "");
@@ -113,33 +113,33 @@ namespace Aliyun.Acs.Core.Utils
             switch (method)
             {
                 case "GET":
-                {
-                    return MethodType.GET;
-                }
+                    {
+                        return MethodType.GET;
+                    }
                 case "PUT":
-                {
-                    return MethodType.PUT;
-                }
+                    {
+                        return MethodType.PUT;
+                    }
                 case "POST":
-                {
-                    return MethodType.POST;
-                }
+                    {
+                        return MethodType.POST;
+                    }
                 case "DELETE":
-                {
-                    return MethodType.DELETE;
-                }
+                    {
+                        return MethodType.DELETE;
+                    }
                 case "HEAD":
-                {
-                    return MethodType.HEAD;
-                }
+                    {
+                        return MethodType.HEAD;
+                    }
                 case "OPTIONS":
-                {
-                    return MethodType.OPTIONS;
-                }
+                    {
+                        return MethodType.OPTIONS;
+                    }
                 default:
-                {
-                    return null;
-                }
+                    {
+                        return null;
+                    }
             }
         }
     }

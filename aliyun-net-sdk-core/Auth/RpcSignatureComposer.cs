@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Core.Auth
             Signer signer, string accessKeyId, FormatType? format)
         {
             var immutableMap = new Dictionary<string, string>(parameters);
-            DictionaryUtil.Add(immutableMap, "Timestamp", ParameterHelper.FormatIso8601Date(DateTime.Now));
+            DictionaryUtil.Add(immutableMap, "Timestamp", ParameterHelper.FormatIso8601Date(DateTime.UtcNow));
             DictionaryUtil.Add(immutableMap, "SignatureMethod", signer.GetSignerName());
             DictionaryUtil.Add(immutableMap, "SignatureVersion", signer.GetSignerVersion());
             DictionaryUtil.Add(immutableMap, "SignatureNonce", Guid.NewGuid().ToString());

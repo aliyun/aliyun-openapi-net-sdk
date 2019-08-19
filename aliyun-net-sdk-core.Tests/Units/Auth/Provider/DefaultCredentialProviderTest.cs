@@ -64,7 +64,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
             TestHelper.CreateIniFileWithAkType();
 
-            var credential = (BasicCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            var credential = (BasicCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
             TestHelper.DeleteIniFile();
 
@@ -88,7 +88,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             var exception = Assert.Throws<ClientException>(() =>
             {
-                var credential = (BasicCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
+                var credential = (BasicCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
             });
 
             TestHelper.DeleteIniFile();
@@ -122,7 +122,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         public void GetCredentialFileAlibabaCloudCredentialWithEcsRamRole()
         {
             var ecsRamRoleCredential =
-                new InstanceProfileCredentials("fakeak", "fakeaks", "fakesession", DateTime.Now.ToString(), 4000);
+                new InstanceProfileCredentials("fakeak", "fakeaks", "fakesession", DateTime.UtcNow.ToString(), 4000);
             var mockHomePath = EnvironmentUtil.GetHomePath();
 
             TestHelper.CreateIniFileWithEcs();
@@ -136,7 +136,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             mockDefaultCredentialProvider.Setup(x => x.GetHomePath()).Returns(mockHomePath);
 
             var defaultCredentialProvider = mockDefaultCredentialProvider.Object;
-            var credential = (InstanceProfileCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            var credential = (InstanceProfileCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
             TestHelper.DeleteIniFile();
             Assert.NotNull(credential);
@@ -157,7 +157,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
 
-            var credential = (BasicCredentials)defaultCredentialProvider.GetCredentialFileAlibabaCloudCredential();
+            var credential = (BasicCredentials) defaultCredentialProvider.GetCredentialFileAlibabaCloudCredential();
 
             TestHelper.DeleteIniFile();
             Assert.NotNull(credential);
@@ -210,7 +210,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         public void GetCredentialFileAlibabaCloudCredentialWithRamRole()
         {
             var ramRoleCredential = new InstanceProfileCredentials("fakeak", "fakeaks", "fakesessiontokne",
-                DateTime.Now.ToString(), 4000);
+                DateTime.UtcNow.ToString(), 4000);
             TestHelper.CreateIniFileWithRam();
 
             var mockHomePath = EnvironmentUtil.GetHomePath();
@@ -225,7 +225,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             var defaultCredentialProvider = mockDefaultCredentialProvider.Object;
 
-            var credential = (InstanceProfileCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            var credential = (InstanceProfileCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
             TestHelper.DeleteIniFile();
             Assert.NotNull(credential);
@@ -253,7 +253,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
 
             var defaultCredentialProvider = mockDefaultCredentialProvider.Object;
 
-            var credential = (BasicSessionCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            var credential = (BasicSessionCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
             TestHelper.DeleteIniFile();
             Assert.NotNull(credential);
@@ -272,7 +272,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             TestHelper.InitializeEnvironmentValue();
 
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
-            var credential = (BasicCredentials)defaultCredentialProvider.GetAlibabaCloudClientCredential();
+            var credential = (BasicCredentials) defaultCredentialProvider.GetAlibabaCloudClientCredential();
 
             Assert.NotNull(credential);
             Assert.Equal("ACCESS_KEY_ID", credential.GetAccessKeyId());
@@ -293,7 +293,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             TestHelper.InitializeEnvironmentValue();
 
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);
-            var credential = (BasicCredentials)defaultCredentialProvider.GetEnvironmentAlibabaCloudCredential();
+            var credential = (BasicCredentials) defaultCredentialProvider.GetEnvironmentAlibabaCloudCredential();
 
             Assert.NotNull(credential);
             Assert.Equal("ACCESS_KEY_ID", credential.GetAccessKeyId());
@@ -309,7 +309,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
         public void GetEnvironmentClientCredentialWithoutAKTest()
         {
             var defaultCredentialProvider = new DefaultCredentialProvider();
-            var credential = (BasicCredentials)defaultCredentialProvider.GetEnvironmentAlibabaCloudCredential();
+            var credential = (BasicCredentials) defaultCredentialProvider.GetEnvironmentAlibabaCloudCredential();
             Assert.Null(credential);
         }
 
@@ -344,7 +344,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             Environment.SetEnvironmentVariable("ALIBABA_CLOUD_ECS_METADATA", "role_name");
 
             var instanceProfileCredential =
-                new InstanceProfileCredentials("fakeak", "fakeaks", "fakesession", DateTime.Now.ToString(), 4000);
+                new InstanceProfileCredentials("fakeak", "fakeaks", "fakesession", DateTime.UtcNow.ToString(), 4000);
             var mockInstanceProfileProvider = new Mock<InstanceProfileCredentialsProvider>("role_name");
             mockInstanceProfileProvider.Setup(x => x.GetCredentials()).Returns(instanceProfileCredential);
             var instanceProfileProvider = mockInstanceProfileProvider.Object;
@@ -380,7 +380,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             TestHelper.InitializeEnvironmentValue();
 
             var ramRoleCredential =
-                new InstanceProfileCredentials("accessKey", "aks", "roletoken", DateTime.Now.ToString(), 3000);
+                new InstanceProfileCredentials("accessKey", "aks", "roletoken", DateTime.UtcNow.ToString(), 3000);
             var profile = DefaultProfile.GetProfile();
 
             var response = new AssumeRoleResponse();
@@ -409,7 +409,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth.Provider
             TestHelper.InitializeEnvironmentValue();
 
             var ramRoleCredential =
-                new InstanceProfileCredentials("accessKey", "aks", "roletoken", DateTime.Now.ToString(), 3000);
+                new InstanceProfileCredentials("accessKey", "aks", "roletoken", DateTime.UtcNow.ToString(), 3000);
             var profile = DefaultProfile.GetProfile();
 
             var defaultCredentialProvider = new DefaultCredentialProvider(profile, null);

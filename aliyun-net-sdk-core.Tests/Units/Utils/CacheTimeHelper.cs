@@ -30,11 +30,11 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
         [Fact]
         public void AddLastClearTimePerProduct()
         {
-            var lastClearTime = DateTime.Now.AddDays(-1);
+            var lastClearTime = DateTime.UtcNow.AddDays(-1);
             CacheTimeHelper.AddLastClearTimePerProduct("ecs", "ch-hangzhou", lastClearTime);
             Assert.True(CacheTimeHelper.CheckCacheIsExpire("ecs", "ch-hangzhou"));
 
-            lastClearTime = DateTime.Now.AddDays(1);
+            lastClearTime = DateTime.UtcNow.AddDays(1);
             CacheTimeHelper.AddLastClearTimePerProduct("ecs", "ch-hangzhou", lastClearTime);
             Assert.False(CacheTimeHelper.CheckCacheIsExpire("ecs", "ch-hangzhou"));
         }
@@ -46,7 +46,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Utils
             Assert.False(CacheTimeHelper.CheckCacheIsExpire("someNotExist", "ch-hangzhou"));
 
             // When Exist
-            var lastClearTime = DateTime.Now.AddDays(-1);
+            var lastClearTime = DateTime.UtcNow.AddDays(-1);
             CacheTimeHelper.AddLastClearTimePerProduct("ecs", "ch-hangzhou", lastClearTime);
             Assert.True(CacheTimeHelper.CheckCacheIsExpire("ecs", "ch-hangzhou"));
         }

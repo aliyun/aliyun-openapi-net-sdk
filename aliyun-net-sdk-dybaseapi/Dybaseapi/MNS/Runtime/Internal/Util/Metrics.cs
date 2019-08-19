@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+
 using Aliyun.Acs.Dybaseapi.MNS.Util;
 
 namespace Aliyun.Acs.Dybaseapi.MNS.Runtime.Internal.Util
@@ -114,7 +115,7 @@ namespace Aliyun.Acs.Dybaseapi.MNS.Runtime.Internal.Util
         {
             if (IsEnabled)
             {
-                lock (metricsLock)
+                lock(metricsLock)
                 {
                     if (inFlightTimings.ContainsKey(metric))
                         LogError_Locked(metric, "Starting multiple events for the same metric");
@@ -133,7 +134,7 @@ namespace Aliyun.Acs.Dybaseapi.MNS.Runtime.Internal.Util
             if (IsEnabled)
             {
                 Timing timing;
-                lock (metricsLock)
+                lock(metricsLock)
                 {
                     if (!inFlightTimings.TryGetValue(metric, out timing))
                     {
@@ -160,7 +161,7 @@ namespace Aliyun.Acs.Dybaseapi.MNS.Runtime.Internal.Util
             {
                 return;
             }
-            
+
         }
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Aliyun.Acs.Dybaseapi.MNS.Runtime.Internal.Util
             if (!IsEnabled) return;
 
             List<object> list;
-            lock (metricsLock)
+            lock(metricsLock)
             {
                 if (!Properties.TryGetValue(metric, out list))
                 {
@@ -194,7 +195,7 @@ namespace Aliyun.Acs.Dybaseapi.MNS.Runtime.Internal.Util
         {
             if (!IsEnabled) return;
 
-            lock (metricsLock)
+            lock(metricsLock)
             {
                 Counters[metric] = value;
             }
@@ -208,7 +209,7 @@ namespace Aliyun.Acs.Dybaseapi.MNS.Runtime.Internal.Util
         {
             if (!IsEnabled) return;
 
-            lock (metricsLock)
+            lock(metricsLock)
             {
                 long value;
                 if (!Counters.TryGetValue(metric, out value))
@@ -232,9 +233,9 @@ namespace Aliyun.Acs.Dybaseapi.MNS.Runtime.Internal.Util
         {
             if (!IsEnabled) return null;
 
-            using (StringWriter writer = new StringWriter(CultureInfo.InvariantCulture))
+            using(StringWriter writer = new StringWriter(CultureInfo.InvariantCulture))
             {
-                lock (metricsLock)
+                lock(metricsLock)
                 {
                     if (inFlightTimings.Count > 0)
                     {
@@ -286,9 +287,8 @@ namespace Aliyun.Acs.Dybaseapi.MNS.Runtime.Internal.Util
                 return "Metrics logging disabled";
             }
 
-
             StringBuilder builder = new StringBuilder();
-            lock (metricsLock)
+            lock(metricsLock)
             {
                 foreach (var kvp in Properties)
                 {
@@ -381,7 +381,6 @@ namespace Aliyun.Acs.Dybaseapi.MNS.Runtime.Internal.Util
             startTime = currentTime;
             IsFinished = false;
         }
-
 
         /// <summary>
         /// Stops timing
@@ -476,7 +475,7 @@ namespace Aliyun.Acs.Dybaseapi.MNS.Runtime.Internal.Util
         public MetricError(Metric metric, string messageFormat, params object[] args) : this(metric, null, messageFormat, args) { }
         public MetricError(Metric metric, Exception exception, string messageFormat, params object[] args)
         {
-            Time = DateTime.Now;
+            Time = DateTime.UtcNow;
             try
             {
                 Message = string.Format(CultureInfo.InvariantCulture, messageFormat, args);

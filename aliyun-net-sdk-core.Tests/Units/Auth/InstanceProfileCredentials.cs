@@ -30,21 +30,21 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void IsExpired()
         {
-            var instance = new InstanceProfileCredentials("a", "b", "c", DateTime.Now.ToString(), 100000);
+            var instance = new InstanceProfileCredentials("a", "b", "c", DateTime.UtcNow.ToString(), 100000);
             Assert.True(instance.IsExpired());
         }
 
         [Fact]
         public void SetLastFailedRefreshTime()
         {
-            var instance = new InstanceProfileCredentials("a", "b", "c", DateTime.Now.ToString(), 100000);
+            var instance = new InstanceProfileCredentials("a", "b", "c", DateTime.UtcNow.ToString(), 100000);
             instance.SetLastFailedRefreshTime();
         }
 
         [Fact]
         public void ShouldRefresh()
         {
-            var instance = new InstanceProfileCredentials("a", "b", "c", DateTime.Now.ToString(), 100000);
+            var instance = new InstanceProfileCredentials("a", "b", "c", DateTime.UtcNow.ToString(), 100000);
 
             Assert.True(instance.ShouldRefresh());
         }
@@ -52,7 +52,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Auth
         [Fact]
         public void WillSoonExpire()
         {
-            var instance = new InstanceProfileCredentials("a", "b", "c", DateTime.Now.ToString(), 100000);
+            var instance = new InstanceProfileCredentials("a", "b", "c", DateTime.UtcNow.ToString(), 100000);
             Assert.True(instance.WillSoonExpire());
         }
     }

@@ -57,18 +57,18 @@ namespace Aliyun.Acs.Core.Auth
 
         public bool ShouldRefresh()
         {
-            var now = DateTime.Now.Ticks;
+            var now = DateTime.UtcNow.Ticks;
             return now - lastFailedRefreshTime > refreshIntervalInMillSeconds;
         }
 
         public void SetLastFailedRefreshTime()
         {
-            lastFailedRefreshTime = DateTime.Now.Ticks;
+            lastFailedRefreshTime = DateTime.UtcNow.Ticks;
         }
 
         public virtual long RemainTicks()
         {
-            return expiration - DateTime.Now.Ticks;
+            return expiration - DateTime.UtcNow.Ticks;
         }
     }
 }
