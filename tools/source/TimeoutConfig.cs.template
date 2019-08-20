@@ -26,12 +26,13 @@ namespace Aliyun.Acs.Core.Timeout.Util
             return TimeoutConfig.Get(product, version, actionName) * 1000;
         }
 
-        private static Dictionary<string, Product> products = new Dictionary<string, Product>() { };
+        private static Dictionary<string, Product> products;
 
         internal static int Get(string productName, string versionDate, string actionName)
         {
-            if (products.Count == 0)
-            {{timeout_config_data}
+            if (null == products)
+            {
+                products = new Dictionary<string, Product>() { };{timeout_config_data}
             }
             Dictionary<string, int> apis = new Dictionary<string, int>() { };
             if (products.ContainsKey(productName))
@@ -43,7 +44,9 @@ namespace Aliyun.Acs.Core.Timeout.Util
                     if (version.Apis.ContainsKey(actionName))
                     {
                         return version.Apis[actionName];
-                    }else{
+                    }
+                    else
+                    {
                         return 0;
                     }
                 }
@@ -55,13 +58,13 @@ namespace Aliyun.Acs.Core.Timeout.Util
     public class Product
     {
         public string ProductName { get; set; }
-        public Dictionary<string, Version> versions = new Dictionary<string, Version>(){};
+        public Dictionary<string, Version> versions = new Dictionary<string, Version>() { };
     }
 
     public class Version
     {
         public String VersionDate { get; set; }
 
-        public Dictionary<string, int> Apis = new Dictionary<string, int>(){};
+        public Dictionary<string, int> Apis = new Dictionary<string, int>() { };
     }
 }

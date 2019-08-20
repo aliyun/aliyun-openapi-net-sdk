@@ -26,12 +26,13 @@ namespace Aliyun.Acs.Core.Timeout.Util
             return TimeoutConfig.Get(product, version, actionName) * 1000;
         }
 
-        private static Dictionary<string, Product> products = new Dictionary<string, Product>() { };
+        private static Dictionary<string, Product> products;
 
         internal static int Get(string productName, string versionDate, string actionName)
         {
-            if (products.Count == 0)
+            if (null == products)
             {
+                products = new Dictionary<string, Product>() { };
                 Product productEcs = new Product();
                 productEcs.ProductName = "ecs";
                 Version version20140526 = new Version();
@@ -259,7 +260,8 @@ namespace Aliyun.Acs.Core.Timeout.Util
                 version20140526.Apis.Add("UnassociateEipAddress", 16);
                 productEcs.versions.Add("2014-05-26", version20140526);
                 
-                products.Add("ecs", productEcs);
+                try { products.Add("ecs", productEcs); }
+                catch (ArgumentException) { }
             }
             Dictionary<string, int> apis = new Dictionary<string, int>() { };
             if (products.ContainsKey(productName))
@@ -271,7 +273,9 @@ namespace Aliyun.Acs.Core.Timeout.Util
                     if (version.Apis.ContainsKey(actionName))
                     {
                         return version.Apis[actionName];
-                    }else{
+                    }
+                    else
+                    {
                         return 0;
                     }
                 }
@@ -283,13 +287,13 @@ namespace Aliyun.Acs.Core.Timeout.Util
     public class Product
     {
         public string ProductName { get; set; }
-        public Dictionary<string, Version> versions = new Dictionary<string, Version>(){};
+        public Dictionary<string, Version> versions = new Dictionary<string, Version>() { };
     }
 
     public class Version
     {
         public String VersionDate { get; set; }
 
-        public Dictionary<string, int> Apis = new Dictionary<string, int>(){};
+        public Dictionary<string, int> Apis = new Dictionary<string, int>() { };
     }
 }

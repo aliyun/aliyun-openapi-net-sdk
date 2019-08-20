@@ -21,11 +21,15 @@ function render(template, param) {
     return str;
 }
 
-function emit(content) {
-    return "\n" + ' '.repeat(level * 4) + content;
+function emit(content, levelRow) {
+    if (levelRow === undefined) {
+        levelRow = level;
+    }
+    return "\n" + ' '.repeat(levelRow * 4) + content;
 }
 
 function convert_retry_config() {
+    level = 4;
     var str = "";
     for (const product in retry_config) {
         const productVarName = "product" + product.capitalize();
@@ -44,12 +48,14 @@ function convert_retry_config() {
             str += emit(`${productVarName}.versions.Add("${version}", ${versionVarName});`);
         }
         str += emit('');
-        str += emit(`products.Add("${product}", ${productVarName});`);
+        str += emit(`try { products.Add("${product}", ${productVarName}); }`);
+        str += emit(`catch (ArgumentException) { }`);
     }
     return str;
 }
 
 function convert_timeout_config() {
+    level = 4;
     var str = "";
     for (const product in timeout_config) {
         const productVarName = "product" + product.capitalize();
@@ -67,12 +73,14 @@ function convert_timeout_config() {
             str += emit(`${productVarName}.versions.Add("${version}", ${versionVarName});`);
         }
         str += emit('');
-        str += emit(`products.Add("${product}", ${productVarName});`);
+        str += emit(`try { products.Add("${product}", ${productVarName}); }`);
+        str += emit(`catch (ArgumentException) { }`);
     }
     return str;
 }
 
 function convert_endpoints() {
+    level = 4;
     var params = {
         global_endpoints: "",
         regional_endpoints: "",
