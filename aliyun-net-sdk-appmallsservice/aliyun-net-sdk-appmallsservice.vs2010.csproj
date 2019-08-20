@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0b0a2b6e-1a0d-4a6f-9855-c9bacba21911}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-appmallsservice</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetSeatsRequest.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetHotShowsRequest.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmUnLockSeatRequest.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetSoonShowsRequest.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetSchedulesRequest.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetSoonShowsResponse.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetCinemasResponse.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetHotShowsResponse.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmIssueOrderRequest.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmLockSeatResponse.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmLockSeatRequest.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetShowCommentsRequest.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetCinemasRequest.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetRegionListResponse.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetSeatsResponse.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetSchedulesResponse.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmIssueOrderResponse.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\GetMessagesResponse.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\GetMessagesRequest.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetShowCommentsResponse.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmUnLockSeatResponse.cs" />
+	<Compile Include="AppMallsService\Model\V20180224\TaobaoFilmGetRegionListRequest.cs" />
+	<Compile Include="AppMallsService\Transform\V20180224\TaobaoFilmGetHotShowsResponseUnmarshaller.cs" />
+	<Compile Include="AppMallsService\Transform\V20180224\TaobaoFilmGetRegionListResponseUnmarshaller.cs" />
+	<Compile Include="AppMallsService\Transform\V20180224\TaobaoFilmLockSeatResponseUnmarshaller.cs" />
+	<Compile Include="AppMallsService\Transform\V20180224\TaobaoFilmGetSchedulesResponseUnmarshaller.cs" />
+	<Compile Include="AppMallsService\Transform\V20180224\TaobaoFilmUnLockSeatResponseUnmarshaller.cs" />
+	<Compile Include="AppMallsService\Transform\V20180224\TaobaoFilmGetSoonShowsResponseUnmarshaller.cs" />
+	<Compile Include="AppMallsService\Transform\V20180224\TaobaoFilmGetShowCommentsResponseUnmarshaller.cs" />
+	<Compile Include="AppMallsService\Transform\V20180224\TaobaoFilmGetCinemasResponseUnmarshaller.cs" />
+	<Compile Include="AppMallsService\Transform\V20180224\TaobaoFilmIssueOrderResponseUnmarshaller.cs" />
+	<Compile Include="AppMallsService\Transform\V20180224\GetMessagesResponseUnmarshaller.cs" />
+	<Compile Include="AppMallsService\Transform\V20180224\TaobaoFilmGetSeatsResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
