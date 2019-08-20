@@ -46,18 +46,12 @@ namespace Aliyun.Acs.Core.Retry.Util
             return retryableApiList.Count == 0 ? null : retryableApiList;
         }
 
-        private static void initData()
-        {
-            products = new Dictionary<string, Product>() { };{retry_config_data}
-        }
-
-        private static Dictionary<string, Product> products;
+        private static Dictionary<string, Product> products = new Dictionary<string, Product>() { };
 
         internal static List<string> Get(string productName, string versionDate, string sectionName)
         {
-            if (products == null)
-            {
-                initData();
+            if (products.Count == 0)
+            {{retry_config_data}
             }
             List<string> apis = new List<string>() { };
             if (products.ContainsKey(productName))
