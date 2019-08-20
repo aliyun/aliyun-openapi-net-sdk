@@ -33,9 +33,14 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         public DialExRequest()
             : base("CCC", "2017-07-05", "DialEx")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string contactFlowId;
+		private string routPoint;
 
 		private string caller;
 
@@ -45,16 +50,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string callee;
 
-		public string ContactFlowId
+		private int? answerMode;
+
+		public string RoutPoint
 		{
 			get
 			{
-				return contactFlowId;
+				return routPoint;
 			}
 			set	
 			{
-				contactFlowId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactFlowId", value);
+				routPoint = value;
+				DictionaryUtil.Add(QueryParameters, "RoutPoint", value);
 			}
 		}
 
@@ -107,6 +114,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				callee = value;
 				DictionaryUtil.Add(QueryParameters, "Callee", value);
+			}
+		}
+
+		public int? AnswerMode
+		{
+			get
+			{
+				return answerMode;
+			}
+			set	
+			{
+				answerMode = value;
+				DictionaryUtil.Add(QueryParameters, "AnswerMode", value.ToString());
 			}
 		}
 

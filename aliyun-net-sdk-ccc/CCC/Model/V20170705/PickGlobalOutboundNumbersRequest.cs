@@ -33,7 +33,14 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         public PickGlobalOutboundNumbersRequest()
             : base("CCC", "2017-07-05", "PickGlobalOutboundNumbers")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private bool? isVirtual;
 
 		private string instanceId;
 
@@ -42,6 +49,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private int? count;
 
 		private string calleeNumber;
+
+		public bool? IsVirtual
+		{
+			get
+			{
+				return isVirtual;
+			}
+			set	
+			{
+				isVirtual = value;
+				DictionaryUtil.Add(QueryParameters, "IsVirtual", value.ToString());
+			}
+		}
 
 		public string InstanceId
 		{

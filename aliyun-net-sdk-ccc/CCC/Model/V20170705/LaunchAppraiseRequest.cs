@@ -33,6 +33,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         public LaunchAppraiseRequest()
             : base("CCC", "2017-07-05", "LaunchAppraise")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string acid;

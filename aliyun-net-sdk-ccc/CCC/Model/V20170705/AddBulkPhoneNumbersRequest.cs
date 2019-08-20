@@ -33,6 +33,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
         public AddBulkPhoneNumbersRequest()
             : base("CCC", "2017-07-05", "AddBulkPhoneNumbers")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string contactFlowId;
