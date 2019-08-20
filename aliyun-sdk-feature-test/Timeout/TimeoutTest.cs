@@ -62,9 +62,10 @@ namespace Aliyun.Acs.Feature.Test.Timeout
         {
             var request = new DescribeAccessPointsRequest();
             request.SetConnectTimeoutInMilliSeconds(8000);
+            var client = GetDefaultClient();
             client.SetConnectTimeoutInMilliSeconds(1);
 
-            var response = GetDefaultClient().GetAcsResponse(request);
+            var response = client.GetAcsResponse(request);
 
             client.SetConnectTimeoutInMilliSeconds(5000);
             Assert.True(0 <= response.AccessPointSet.Count);
