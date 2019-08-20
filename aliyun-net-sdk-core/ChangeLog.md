@@ -1,3 +1,11 @@
+### 2019-07-08 Version 1.5.2
+* Deprecated Newtonsoft.Json package
+* Convert json file to cs file
+* Fixed URL builder 
+* Thread safe
+* Remove net45 solution
+* use DateTime.UtcNow instead of DateTime.Now
+
 ### 2019-07-08 Version 1.5.1
 * Fix RequestId is empty in exception message
 * Fix content type will null error 
