@@ -26,18 +26,12 @@ namespace Aliyun.Acs.Core.Timeout.Util
             return TimeoutConfig.Get(product, version, actionName) * 1000;
         }
 
-        private static void initData()
-        {
-            products  = new Dictionary<string, Product>() { };{timeout_config_data}
-        }
-
-        private static Dictionary<string, Product> products;
+        private static Dictionary<string, Product> products = new Dictionary<string, Product>() { };
 
         internal static int Get(string productName, string versionDate, string actionName)
         {
-            if (products == null)
-            {
-                initData();
+            if (products.Count == 0)
+            {{timeout_config_data}
             }
             Dictionary<string, int> apis = new Dictionary<string, int>() { };
             if (products.ContainsKey(productName))

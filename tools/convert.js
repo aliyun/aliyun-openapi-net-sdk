@@ -51,7 +51,7 @@ function convert_retry_config() {
 }
 
 function convert_timeout_config() {
-    level = 3;
+    level = 4;
     var str = "";
     for (const product in timeout_config) {
         const productVarName = "product" + product.capitalize();
