@@ -8,7 +8,7 @@ const retry_config = require('../aliyun-net-sdk-core/Retry/Util/retry_config.jso
 const timeout_config = require('../aliyun-net-sdk-core/Timeout/Util/timeout_config.json');
 const endpoints = require('../aliyun-net-sdk-core/Regions/endpoints.json');
 
-var level = 3;
+var level = 4;
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
@@ -21,12 +21,15 @@ function render(template, param) {
     return str;
 }
 
-function emit(content) {
-    return "\n" + ' '.repeat(level * 4) + content;
+function emit(content, levelRow) {
+    if (levelRow === undefined) {
+        levelRow = level;
+    }
+    return "\n" + ' '.repeat(levelRow * 4) + content;
 }
 
 function convert_retry_config() {
-    level = 3;
+    level = 4;
     var str = "";
     for (const product in retry_config) {
         const productVarName = "product" + product.capitalize();
@@ -45,13 +48,14 @@ function convert_retry_config() {
             str += emit(`${productVarName}.versions.Add("${version}", ${versionVarName});`);
         }
         str += emit('');
-        str += emit(`products.Add("${product}", ${productVarName});`);
+        str += emit(`try { products.Add("${product}", ${productVarName}); }`);
+        str += emit(`catch (ArgumentException) { }`);
     }
     return str;
 }
 
 function convert_timeout_config() {
-    level = 3;
+    level = 4;
     var str = "";
     for (const product in timeout_config) {
         const productVarName = "product" + product.capitalize();
@@ -69,7 +73,8 @@ function convert_timeout_config() {
             str += emit(`${productVarName}.versions.Add("${version}", ${versionVarName});`);
         }
         str += emit('');
-        str += emit(`products.Add("${product}", ${productVarName});`);
+        str += emit(`try { products.Add("${product}", ${productVarName}); }`);
+        str += emit(`catch (ArgumentException) { }`);
     }
     return str;
 }

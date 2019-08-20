@@ -46,18 +46,13 @@ namespace Aliyun.Acs.Core.Retry.Util
             return retryableApiList.Count == 0 ? null : retryableApiList;
         }
 
-        private static void initData()
-        {
-            products = new Dictionary<string, Product>() { };{retry_config_data}
-        }
-
         private static Dictionary<string, Product> products;
 
         internal static List<string> Get(string productName, string versionDate, string sectionName)
         {
-            if (products == null)
+            if (null == products)
             {
-                initData();
+                products = new Dictionary<string, Product>() { };{retry_config_data}
             }
             List<string> apis = new List<string>() { };
             if (products.ContainsKey(productName))
@@ -92,19 +87,19 @@ namespace Aliyun.Acs.Core.Retry.Util
     {
         public string ProductName { get; set; }
 
-        public Dictionary<string, Version> versions = new Dictionary<string, Version>(){};
+        public Dictionary<string, Version> versions = new Dictionary<string, Version>() { };
     }
 
     public class Version
     {
         public String VersionDate { get; set; }
 
-        public List<string> RetryableAPIs = new List<string>(){};
+        public List<string> RetryableAPIs = new List<string>() { };
 
-        public List<string> RetryableAPIsWithClientToken = new List<string>(){};
+        public List<string> RetryableAPIsWithClientToken = new List<string>() { };
 
-        public List<string> RetryableThrottlingErrors = new List<string>(){};
+        public List<string> RetryableThrottlingErrors = new List<string>() { };
 
-        public List<string> RetryableNormalErrors = new List<string>(){};
+        public List<string> RetryableNormalErrors = new List<string>() { };
     }
 }
