@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ff3d1db9-29f0-41e1-9352-8435e879326f}</ProjectGuid>
+    <ProjectGuid>{216e58de-7b78-4534-b03c-1ead3ba6b455}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,38 +40,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Fnf\Model\V20190315\ReportTaskSucceededRequest.cs" />
-	<Compile Include="Fnf\Model\V20190315\UpdateFlowRequest.cs" />
-	<Compile Include="Fnf\Model\V20190315\StartExecutionRequest.cs" />
-	<Compile Include="Fnf\Model\V20190315\StopExecutionRequest.cs" />
-	<Compile Include="Fnf\Model\V20190315\DescribeExecutionResponse.cs" />
-	<Compile Include="Fnf\Model\V20190315\ReportTaskFailedResponse.cs" />
-	<Compile Include="Fnf\Model\V20190315\UpdateFlowResponse.cs" />
-	<Compile Include="Fnf\Model\V20190315\DescribeFlowResponse.cs" />
-	<Compile Include="Fnf\Model\V20190315\StartExecutionResponse.cs" />
-	<Compile Include="Fnf\Model\V20190315\ListExecutionsResponse.cs" />
-	<Compile Include="Fnf\Model\V20190315\GetExecutionHistoryRequest.cs" />
-	<Compile Include="Fnf\Model\V20190315\StopExecutionResponse.cs" />
-	<Compile Include="Fnf\Model\V20190315\GetExecutionHistoryResponse.cs" />
-	<Compile Include="Fnf\Model\V20190315\ReportTaskSucceededResponse.cs" />
-	<Compile Include="Fnf\Model\V20190315\ListFlowsResponse.cs" />
-	<Compile Include="Fnf\Model\V20190315\ReportTaskFailedRequest.cs" />
+	<Compile Include="Fnf\Model\V20190315\CreateFlowResponse.cs" />
 	<Compile Include="Fnf\Model\V20190315\ListExecutionsRequest.cs" />
+	<Compile Include="Fnf\Model\V20190315\GetExecutionHistoryResponse.cs" />
+	<Compile Include="Fnf\Model\V20190315\GetExecutionHistoryRequest.cs" />
+	<Compile Include="Fnf\Model\V20190315\StartExecutionRequest.cs" />
+	<Compile Include="Fnf\Model\V20190315\ReportTaskSucceededResponse.cs" />
+	<Compile Include="Fnf\Model\V20190315\CreateFlowRequest.cs" />
+	<Compile Include="Fnf\Model\V20190315\ReportTaskFailedResponse.cs" />
+	<Compile Include="Fnf\Model\V20190315\ListFlowsResponse.cs" />
+	<Compile Include="Fnf\Model\V20190315\UpdateFlowRequest.cs" />
+	<Compile Include="Fnf\Model\V20190315\UpdateFlowResponse.cs" />
 	<Compile Include="Fnf\Model\V20190315\ListFlowsRequest.cs" />
-	<Compile Include="Fnf\Model\V20190315\DescribeExecutionRequest.cs" />
 	<Compile Include="Fnf\Model\V20190315\DescribeFlowRequest.cs" />
+	<Compile Include="Fnf\Model\V20190315\ReportTaskSucceededRequest.cs" />
+	<Compile Include="Fnf\Model\V20190315\ReportTaskFailedRequest.cs" />
+	<Compile Include="Fnf\Model\V20190315\StopExecutionRequest.cs" />
+	<Compile Include="Fnf\Model\V20190315\DeleteFlowResponse.cs" />
+	<Compile Include="Fnf\Model\V20190315\DescribeFlowResponse.cs" />
+	<Compile Include="Fnf\Model\V20190315\DeleteFlowRequest.cs" />
+	<Compile Include="Fnf\Model\V20190315\StopExecutionResponse.cs" />
+	<Compile Include="Fnf\Model\V20190315\ListExecutionsResponse.cs" />
+	<Compile Include="Fnf\Model\V20190315\DescribeExecutionRequest.cs" />
+	<Compile Include="Fnf\Model\V20190315\StartExecutionResponse.cs" />
+	<Compile Include="Fnf\Model\V20190315\DescribeExecutionResponse.cs" />
 	<Compile Include="Fnf\Transform\V20190315\ListExecutionsResponseUnmarshaller.cs" />
-	<Compile Include="Fnf\Transform\V20190315\CreateFlowResponseUnmarshaller.cs" />
-	<Compile Include="Fnf\Transform\V20190315\ReportTaskFailedResponseUnmarshaller.cs" />
-	<Compile Include="Fnf\Transform\V20190315\StartExecutionResponseUnmarshaller.cs" />
-	<Compile Include="Fnf\Transform\V20190315\GetExecutionHistoryResponseUnmarshaller.cs" />
-	<Compile Include="Fnf\Transform\V20190315\DescribeExecutionResponseUnmarshaller.cs" />
 	<Compile Include="Fnf\Transform\V20190315\DescribeFlowResponseUnmarshaller.cs" />
-	<Compile Include="Fnf\Transform\V20190315\ReportTaskSucceededResponseUnmarshaller.cs" />
-	<Compile Include="Fnf\Transform\V20190315\UpdateFlowResponseUnmarshaller.cs" />
-	<Compile Include="Fnf\Transform\V20190315\ListFlowsResponseUnmarshaller.cs" />
+	<Compile Include="Fnf\Transform\V20190315\CreateFlowResponseUnmarshaller.cs" />
+	<Compile Include="Fnf\Transform\V20190315\StartExecutionResponseUnmarshaller.cs" />
 	<Compile Include="Fnf\Transform\V20190315\DeleteFlowResponseUnmarshaller.cs" />
 	<Compile Include="Fnf\Transform\V20190315\StopExecutionResponseUnmarshaller.cs" />
+	<Compile Include="Fnf\Transform\V20190315\ReportTaskSucceededResponseUnmarshaller.cs" />
+	<Compile Include="Fnf\Transform\V20190315\DescribeExecutionResponseUnmarshaller.cs" />
+	<Compile Include="Fnf\Transform\V20190315\UpdateFlowResponseUnmarshaller.cs" />
+	<Compile Include="Fnf\Transform\V20190315\GetExecutionHistoryResponseUnmarshaller.cs" />
+	<Compile Include="Fnf\Transform\V20190315\ReportTaskFailedResponseUnmarshaller.cs" />
+	<Compile Include="Fnf\Transform\V20190315\ListFlowsResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
