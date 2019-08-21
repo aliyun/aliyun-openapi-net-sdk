@@ -16,26 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.polardb.Model.V20170801;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.polardb.Transform.V20170801
+namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DeleteDBNodesResponseUnmarshaller
-    {
-        public static DeleteDBNodesResponse Unmarshall(UnmarshallerContext context)
-        {
-			DeleteDBNodesResponse deleteDBNodesResponse = new DeleteDBNodesResponse();
+	public class ContinueDBClusterMigrationResponse : AcsResponse
+	{
 
-			deleteDBNodesResponse.HttpResponse = context.HttpResponse;
-			deleteDBNodesResponse.RequestId = context.StringValue("DeleteDBNodes.RequestId");
-			deleteDBNodesResponse.DBClusterId = context.StringValue("DeleteDBNodes.DBClusterId");
-			deleteDBNodesResponse.OrderId = context.StringValue("DeleteDBNodes.OrderId");
-        
-			return deleteDBNodesResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

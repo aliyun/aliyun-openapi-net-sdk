@@ -40,6 +40,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterMigrationResponse.ExpiredTime = context.StringValue("DescribeDBClusterMigration.ExpiredTime");
 			describeDBClusterMigrationResponse.RdsReadWriteMode = context.StringValue("DescribeDBClusterMigration.RdsReadWriteMode");
 			describeDBClusterMigrationResponse.DBClusterReadWriteMode = context.StringValue("DescribeDBClusterMigration.DBClusterReadWriteMode");
+			describeDBClusterMigrationResponse.Comment = context.StringValue("DescribeDBClusterMigration.Comment");
         
 			return describeDBClusterMigrationResponse;
         }

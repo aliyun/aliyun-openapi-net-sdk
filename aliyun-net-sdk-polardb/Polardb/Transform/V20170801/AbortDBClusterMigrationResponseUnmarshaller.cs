@@ -24,18 +24,16 @@ using Aliyun.Acs.polardb.Model.V20170801;
 
 namespace Aliyun.Acs.polardb.Transform.V20170801
 {
-    public class DeleteDBNodesResponseUnmarshaller
+    public class AbortDBClusterMigrationResponseUnmarshaller
     {
-        public static DeleteDBNodesResponse Unmarshall(UnmarshallerContext context)
+        public static AbortDBClusterMigrationResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteDBNodesResponse deleteDBNodesResponse = new DeleteDBNodesResponse();
+			AbortDBClusterMigrationResponse abortDBClusterMigrationResponse = new AbortDBClusterMigrationResponse();
 
-			deleteDBNodesResponse.HttpResponse = context.HttpResponse;
-			deleteDBNodesResponse.RequestId = context.StringValue("DeleteDBNodes.RequestId");
-			deleteDBNodesResponse.DBClusterId = context.StringValue("DeleteDBNodes.DBClusterId");
-			deleteDBNodesResponse.OrderId = context.StringValue("DeleteDBNodes.OrderId");
+			abortDBClusterMigrationResponse.HttpResponse = context.HttpResponse;
+			abortDBClusterMigrationResponse.RequestId = context.StringValue("AbortDBClusterMigration.RequestId");
         
-			return deleteDBNodesResponse;
+			return abortDBClusterMigrationResponse;
         }
     }
 }

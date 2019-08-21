@@ -50,7 +50,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterAttributeResponse.Expired = context.StringValue("DescribeDBClusterAttribute.Expired");
 			describeDBClusterAttributeResponse.MaintainTime = context.StringValue("DescribeDBClusterAttribute.MaintainTime");
 			describeDBClusterAttributeResponse.StorageUsed = context.LongValue("DescribeDBClusterAttribute.StorageUsed");
-			describeDBClusterAttributeResponse.StorageMax = context.IntegerValue("DescribeDBClusterAttribute.StorageMax");
+			describeDBClusterAttributeResponse.StorageMax = context.LongValue("DescribeDBClusterAttribute.StorageMax");
 			describeDBClusterAttributeResponse.ZoneIds = context.StringValue("DescribeDBClusterAttribute.ZoneIds");
 			describeDBClusterAttributeResponse.SQLSize = context.LongValue("DescribeDBClusterAttribute.SQLSize");
 			describeDBClusterAttributeResponse.IsLatestVersion = context.BooleanValue("DescribeDBClusterAttribute.IsLatestVersion");

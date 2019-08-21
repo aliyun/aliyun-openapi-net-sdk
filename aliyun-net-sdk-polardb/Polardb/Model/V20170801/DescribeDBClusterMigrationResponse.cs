@@ -43,6 +43,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBClusterReadWriteMode;
 
+		private string comment;
+
 		public string RequestId
 		{
 			get
@@ -148,6 +150,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dBClusterReadWriteMode = value;
+			}
+		}
+
+		public string Comment
+		{
+			get
+			{
+				return comment;
+			}
+			set	
+			{
+				comment = value;
 			}
 		}
 	}

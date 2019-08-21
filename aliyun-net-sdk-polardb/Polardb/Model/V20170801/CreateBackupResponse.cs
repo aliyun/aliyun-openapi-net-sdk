@@ -27,6 +27,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string requestId;
 
+		private string backupJobId;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string BackupJobId
+		{
+			get
+			{
+				return backupJobId;
+			}
+			set	
+			{
+				backupJobId = value;
 			}
 		}
 	}

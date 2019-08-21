@@ -32,7 +32,6 @@ namespace Aliyun.Acs.polardb
             { "cn-hongkong", "polardb.aliyuncs.com" },
             { "ap-southeast-1", "polardb.aliyuncs.com" },
             { "us-east-1", "polardb.ap-northeast-1.aliyuncs.com" },
-            { "us-west-1", "polardb.us-west-1us-west-1.aliyuncs.com" },
             { "cn-hangzhou", "polardb.aliyuncs.com" },
         };
 

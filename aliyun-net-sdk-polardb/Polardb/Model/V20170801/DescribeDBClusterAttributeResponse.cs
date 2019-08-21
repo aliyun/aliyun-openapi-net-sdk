@@ -63,7 +63,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? storageUsed;
 
-		private int? storageMax;
+		private long? storageMax;
 
 		private string zoneIds;
 
@@ -303,7 +303,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? StorageMax
+		public long? StorageMax
 		{
 			get
 			{

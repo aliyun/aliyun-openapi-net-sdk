@@ -116,6 +116,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string storeStatus;
 
+			private string backupSetSize;
+
 			public string BackupId
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					storeStatus = value;
+				}
+			}
+
+			public string BackupSetSize
+			{
+				get
+				{
+					return backupSetSize;
+				}
+				set	
+				{
+					backupSetSize = value;
 				}
 			}
 		}
