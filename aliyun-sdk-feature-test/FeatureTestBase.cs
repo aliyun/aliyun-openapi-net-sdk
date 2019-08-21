@@ -51,15 +51,10 @@ namespace Aliyun.Acs.Feature.Test
             bearerToken = Environment.GetEnvironmentVariable("BEARERTOKEN") ?? "FakeBearerToken";
         }
 
-        public DefaultAcsClient client;
-
-        public IClientProfile profile;
-
         public DefaultAcsClient GetDefaultClient()
         {
-            DefaultProfile.ClearProfile();
-            profile = DefaultProfile.GetProfile(regionId, GetBasicAccessKeyId(), GetBasicAccessKeySecret());
-            client = new DefaultAcsClient(profile);
+            IClientProfile profile = DefaultProfile.GetProfile(regionId, GetBasicAccessKeyId(), GetBasicAccessKeySecret());
+            DefaultAcsClient client = new DefaultAcsClient(profile);
             client.SetConnectTimeoutInMilliSeconds(2 * 60 * 1000);
             client.SetReadTimeoutInMilliSeconds(2 * 60 * 1000);
             return client;
