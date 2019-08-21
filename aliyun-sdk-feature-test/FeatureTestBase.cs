@@ -27,20 +27,33 @@ namespace Aliyun.Acs.Feature.Test
 {
     public class FeatureTestBase
     {
-        private static string AccessKeyId = "ACCESS_KEY_ID";
-        private static string AccessKeySecret = "ACCESS_KEY_SECRET";
-        private static string roleArn = "RAM";
+        private static FeatureTestBase featureTestClient { get; set; }
+        private static FeatureTestBase FeatureTestClient()
+        {
+            if (null == featureTestClient)
+            {
+                featureTestClient = new FeatureTestBase();
+            }
+            return featureTestClient;
+        }
 
-        private static string bearerToken = "BEARERTOKEN";
-        public static DefaultAcsClient client;
-
-        public IClientProfile profile;
-        public string regionId = "cn-shanghai";
+        internal string AccessKeyId = "ACCESS_KEY_ID";
+        internal string AccessKeySecret = "ACCESS_KEY_SECRET";
+        internal string roleArn = "RAM";
+        internal string bearerToken = "BEARERTOKEN";
+        internal string regionId = "cn-shanghai";
 
         public FeatureTestBase()
         {
-            this.GetDefaultClient();
+            AccessKeyId = Environment.GetEnvironmentVariable("ACCESS_KEY_ID") ?? "FakeAccessKeyId";
+            AccessKeySecret = Environment.GetEnvironmentVariable("ACCESS_KEY_SECRET") ?? "FakeAccessKeySecret";
+            roleArn = Environment.GetEnvironmentVariable("RAM") ?? "FakeRoleArn";
+            bearerToken = Environment.GetEnvironmentVariable("BEARERTOKEN") ?? "FakeBearerToken";
         }
+
+        public DefaultAcsClient client;
+
+        public IClientProfile profile;
 
         public DefaultAcsClient GetDefaultClient()
         {
@@ -54,38 +67,22 @@ namespace Aliyun.Acs.Feature.Test
 
         public static string GetBasicAccessKeyId()
         {
-            if (AccessKeyId == "ACCESS_KEY_ID")
-            {
-                AccessKeyId = Environment.GetEnvironmentVariable(AccessKeyId) ?? "FakeAccessKeyId";
-            }
-            return AccessKeyId;
+            return FeatureTestClient().AccessKeyId;
         }
 
         public static string GetBasicAccessKeySecret()
         {
-            if (AccessKeySecret == "ACCESS_KEY_SECRET")
-            {
-                AccessKeySecret = Environment.GetEnvironmentVariable(AccessKeySecret) ?? "FakeAccessKeySecret";
-            }
-            return AccessKeySecret;
+            return FeatureTestClient().AccessKeySecret;
         }
 
         public static string GetRoleArn()
         {
-            if (roleArn == "RAM")
-            {
-                roleArn = Environment.GetEnvironmentVariable(roleArn) ?? "FakeRoleArn";
-            }
-            return roleArn;
+            return FeatureTestClient().roleArn;
         }
 
         public static string GetBearerToken()
         {
-            if (bearerToken == "BEARERTOKEN")
-            {
-                bearerToken = Environment.GetEnvironmentVariable(bearerToken) ?? "FakeBearerToken";
-            }
-            return bearerToken;
+            return FeatureTestClient().bearerToken;
         }
 
         public string GetToken()
