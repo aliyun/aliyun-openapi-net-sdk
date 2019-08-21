@@ -164,6 +164,7 @@ namespace Aliyun.Acs.Feature.Test.Core
             var client = new DefaultAcsClient(profile, basciCredential);
 
             var request = new CommonRequest();
+            request.TimeoutInMilliSeconds = 30000;
             request.Domain = "ros.aliyuncs.com";
             request.Version = "2015-09-01";
             request.Action = "DescribeResourceTypes";
