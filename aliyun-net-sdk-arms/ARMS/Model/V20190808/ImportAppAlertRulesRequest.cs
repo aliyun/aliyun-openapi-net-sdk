@@ -45,6 +45,8 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 
 		private string pids;
 
+		private string templageAlertConfig;
+
 		private string templateAlertId;
 
 		public bool? IsAutoStart
@@ -83,6 +85,19 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			{
 				pids = value;
 				DictionaryUtil.Add(QueryParameters, "Pids", value);
+			}
+		}
+
+		public string TemplageAlertConfig
+		{
+			get
+			{
+				return templageAlertConfig;
+			}
+			set	
+			{
+				templageAlertConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TemplageAlertConfig", value);
 			}
 		}
 
