@@ -29,7 +29,7 @@ using Xunit;
 namespace Aliyun.Acs.Feature.Test.ErrorHandler
 {
     [Trait("Category", "FeatureTest")]
-    public class ErrorHandlingTest : FeatureTestBase
+    public class ErrorHandlingTest
     {
         [Fact]
         public void BadFormatTypeTest()
@@ -38,7 +38,7 @@ namespace Aliyun.Acs.Feature.Test.ErrorHandler
             request.FlowLogId = "testFlow";
 
             DefaultProfile.ClearProfile();
-            var profile = DefaultProfile.GetProfile("cn-hangzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
+            var profile = DefaultProfile.GetProfile("cn-hangzhou", FeatureCommon.GetBasicAccessKeyId(), FeatureCommon.GetBasicAccessKeySecret());
             var client = new DefaultAcsClient(profile);
 
             var exceptionMsg = Assert.Throws<ClientException>(() =>
@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Feature.Test.ErrorHandler
             request.Version = "2014-05-26";
             request.Action = "actionError";
 
-            var response = GetDefaultClient().GetCommonResponse(request);
+            var response = FeatureCommon.GetDefaultClient().GetCommonResponse(request);
             var content = Encoding.UTF8.GetString(response.HttpResponse.Content);
 
             Assert.Contains("Keyword=InvalidParameter", content);

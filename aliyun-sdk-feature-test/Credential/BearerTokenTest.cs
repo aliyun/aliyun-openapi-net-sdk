@@ -28,12 +28,12 @@ using Xunit;
 namespace Aliyun.Acs.Feature.Test.Credential
 {
     [Trait("Category", "FeatureTest")]
-    public class BearerTokenTest : FeatureTestBase
+    public class BearerTokenTest
     {
         [Fact]
         public void BearerTokenAccessTest()
         {
-            var provider = new BearerTokenCredentialProvider(GetBearerToken());
+            var provider = new BearerTokenCredentialProvider(FeatureCommon.GetBearerToken());
 
             DefaultProfile.ClearProfile();
             var profile = DefaultProfile.GetProfile("cn-hangzhou");

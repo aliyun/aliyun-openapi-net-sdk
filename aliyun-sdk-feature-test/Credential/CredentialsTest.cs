@@ -28,19 +28,19 @@ using Xunit;
 namespace Aliyun.Acs.Feature.Test.Credential
 {
     [Trait("Category", "FeatureTest")]
-    public class CredentialsTest : FeatureTestBase
+    public class CredentialsTest
     {
         [Fact]
         public void SdkManageTokenTest()
         {
-            if (GetRoleArn().Equals("FakeRoleArn"))
+            if (FeatureCommon.GetRoleArn().Equals("FakeRoleArn"))
             {
                 return;
             }
             DefaultProfile.ClearProfile();
-            var profile = DefaultProfile.GetProfile("cn-hangzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
-            var basicCredential = new BasicCredentials(GetBasicAccessKeyId(), GetBasicAccessKeySecret());
-            var provider = new STSAssumeRoleSessionCredentialsProvider(basicCredential, GetRoleArn(), profile);
+            var profile = DefaultProfile.GetProfile("cn-hangzhou", FeatureCommon.GetBasicAccessKeyId(), FeatureCommon.GetBasicAccessKeySecret());
+            var basicCredential = new BasicCredentials(FeatureCommon.GetBasicAccessKeyId(), FeatureCommon.GetBasicAccessKeySecret());
+            var provider = new STSAssumeRoleSessionCredentialsProvider(basicCredential, FeatureCommon.GetRoleArn(), profile);
 
             var client = new DefaultAcsClient(profile, provider);
 
@@ -54,16 +54,16 @@ namespace Aliyun.Acs.Feature.Test.Credential
         [Fact]
         public void STSAssumeRoleCredentialWithPolicyTest()
         {
-            if (GetRoleArn().Equals("FakeRoleArn"))
+            if (FeatureCommon.GetRoleArn().Equals("FakeRoleArn"))
             {
                 return;
             }
 
-            var profile = DefaultProfile.GetProfile("cn-shanghai", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
-            var basicCredential = new BasicCredentials(GetBasicAccessKeyId(), GetBasicAccessKeySecret());
+            var profile = DefaultProfile.GetProfile("cn-shanghai", FeatureCommon.GetBasicAccessKeyId(), FeatureCommon.GetBasicAccessKeySecret());
+            var basicCredential = new BasicCredentials(FeatureCommon.GetBasicAccessKeyId(), FeatureCommon.GetBasicAccessKeySecret());
             var policy =
                 "{ \"Version\": \"1\",\"Statement\": [{\"Effect\": \"Deny\",\"Action\": \"vpc:Create*\",\"Resource\": \"acs:vpc:cn-hangzhou:*:*\"}]}";
-            var provider = new STSAssumeRoleSessionCredentialsProvider(basicCredential, GetRoleArn(), policy, profile);
+            var provider = new STSAssumeRoleSessionCredentialsProvider(basicCredential, FeatureCommon.GetRoleArn(), policy, profile);
 
             var client = new DefaultAcsClient(profile, provider);
             var request = new CreateVpcRequest();
