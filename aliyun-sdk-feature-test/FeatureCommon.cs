@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -25,25 +25,15 @@ using Aliyun.Acs.Core.Profile;
 
 namespace Aliyun.Acs.Feature.Test
 {
-    public class FeatureTestBase
+    internal class FeatureCommon
     {
-        private static FeatureTestBase featureTestClient { get; set; }
-        private static FeatureTestBase FeatureTestClient()
-        {
-            if (null == featureTestClient)
-            {
-                featureTestClient = new FeatureTestBase();
-            }
-            return featureTestClient;
-        }
-
         internal string AccessKeyId = "ACCESS_KEY_ID";
         internal string AccessKeySecret = "ACCESS_KEY_SECRET";
         internal string roleArn = "RAM";
         internal string bearerToken = "BEARERTOKEN";
         internal string regionId = "cn-shanghai";
 
-        public FeatureTestBase()
+        FeatureCommon()
         {
             AccessKeyId = Environment.GetEnvironmentVariable("ACCESS_KEY_ID") ?? "FakeAccessKeyId";
             AccessKeySecret = Environment.GetEnvironmentVariable("ACCESS_KEY_SECRET") ?? "FakeAccessKeySecret";
@@ -51,9 +41,22 @@ namespace Aliyun.Acs.Feature.Test
             bearerToken = Environment.GetEnvironmentVariable("BEARERTOKEN") ?? "FakeBearerToken";
         }
 
-        public DefaultAcsClient GetDefaultClient()
+        static FeatureCommon featureCommon
         {
-            IClientProfile profile = DefaultProfile.GetProfile(regionId, GetBasicAccessKeyId(), GetBasicAccessKeySecret());
+            get
+            {
+                return new FeatureCommon();
+            }
+        }
+
+        public static DefaultAcsClient GetDefaultClient()
+        {
+            FeatureCommon common = featureCommon;
+            IClientProfile profile = DefaultProfile.GetProfile(
+                common.regionId,
+                common.AccessKeyId,
+                common.AccessKeySecret
+            );
             DefaultAcsClient client = new DefaultAcsClient(profile);
             client.SetConnectTimeoutInMilliSeconds(2 * 60 * 1000);
             client.SetReadTimeoutInMilliSeconds(2 * 60 * 1000);
@@ -62,25 +65,30 @@ namespace Aliyun.Acs.Feature.Test
 
         public static string GetBasicAccessKeyId()
         {
-            return FeatureTestClient().AccessKeyId;
+            return featureCommon.AccessKeyId;
         }
 
         public static string GetBasicAccessKeySecret()
         {
-            return FeatureTestClient().AccessKeySecret;
+            return featureCommon.AccessKeySecret;
         }
 
         public static string GetRoleArn()
         {
-            return FeatureTestClient().roleArn;
+            return featureCommon.roleArn;
         }
 
         public static string GetBearerToken()
         {
-            return FeatureTestClient().bearerToken;
+            return featureCommon.bearerToken;
         }
 
-        public string GetToken()
+        public static string GetRegionId()
+        {
+            return featureCommon.regionId;
+        }
+
+        public static string GetToken()
         {
             var assumeRoleRequest = new AssumeRoleRequest();
             assumeRoleRequest.RoleArn = GetRoleArn();

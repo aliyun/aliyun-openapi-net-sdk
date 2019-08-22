@@ -26,12 +26,12 @@ using Xunit;
 namespace Aliyun.Acs.Feature.Test.HttpProxy
 {
     [Trait("Category", "FeatureTest")]
-    public class HttpProxyTest : FeatureTestBase
+    public class HttpProxyTest
     {
         [Fact]
         public void HttpProxy()
         {
-            var client = GetDefaultClient();
+            var client = FeatureCommon.GetDefaultClient();
 
             var request = new DescribeAccessPointsRequest();
             client.SetHttpProxy("http://localhost:8989");
@@ -50,7 +50,7 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
         [Fact]
         public void HttpProxyWithCredential()
         {
-            var client = GetDefaultClient();
+            var client = FeatureCommon.GetDefaultClient();
 
             var request = new DescribeAccessPointsRequest();
             client.SetHttpProxy("http://username:password@localhost:8989");

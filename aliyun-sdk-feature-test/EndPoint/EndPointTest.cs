@@ -28,14 +28,14 @@ using Xunit;
 namespace Aliyun.Acs.Feature.Test.EndPoint
 {
     [Trait("Category", "FeatureTest")]
-    public class EndPointTest : FeatureTestBase
+    public class EndPointTest
     {
         [Fact]
         public void TestAddExistingEndpointManually()
         {
             var request = new DescribeRegionsRequest();
             DefaultProfile.ClearProfile();
-            var profile = DefaultProfile.GetProfile("cn-wenzhou", GetBasicAccessKeyId(), GetBasicAccessKeySecret());
+            var profile = DefaultProfile.GetProfile("cn-wenzhou", FeatureCommon.GetBasicAccessKeyId(), FeatureCommon.GetBasicAccessKeySecret());
             var testClient = new DefaultAcsClient(profile);
 
             profile.AddEndpoint("cn-hangzhou", "cn-hangzhou", "Ecs", "abc.cn-hangzhou.endpoint-test.exception.com");
@@ -49,7 +49,7 @@ namespace Aliyun.Acs.Feature.Test.EndPoint
         public void TestProductsWithLocationService()
         {
             var request = new DescribeRegionsRequest();
-            var response = GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureCommon.GetDefaultClient().GetAcsResponse(request);
 
             Assert.True(0 < response.Regions.Count);
         }
@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Feature.Test.EndPoint
         public void TestProductsWithoutLocationService()
         {
             var request = new ListAccessKeysRequest();
-            var response = GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureCommon.GetDefaultClient().GetAcsResponse(request);
 
             Assert.True(0 < response.AccessKeys.Count);
         }
