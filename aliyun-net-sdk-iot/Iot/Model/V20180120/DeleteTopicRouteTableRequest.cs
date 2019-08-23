@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private List<string> dstTopics;
+		private List<string> dstTopics = new List<string>(){ };
 
 		private string iotInstanceId;
 

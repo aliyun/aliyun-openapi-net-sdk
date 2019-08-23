@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string apiSrn;
 
-		private List<Param> params_;
+		private List<Param> params_ = new List<Param>(){ };
 
 		public string ApiSrn
 		{
@@ -84,7 +84,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string listParamType;
 
-			private List<string> listParamValues;
+			private List<string> listParamValues = new List<string>(){ };
 
 			private string paramValue;
 

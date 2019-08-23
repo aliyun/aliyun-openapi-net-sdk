@@ -1,3 +1,5 @@
+2019-08-23 Version 7.0.1
+- Fixed NullReferenceException Error.
 2019-08-16 Version 7.0.0
 - Add LinkIoTEdge API.
 2019-08-14 Version 6.11.1

@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private List<Configs> configss;
+		private List<Configs> configss = new List<Configs>(){ };
 
 		private string instanceId;
 

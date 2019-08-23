@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? currentPage;
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		public string IotInstanceId
 		{

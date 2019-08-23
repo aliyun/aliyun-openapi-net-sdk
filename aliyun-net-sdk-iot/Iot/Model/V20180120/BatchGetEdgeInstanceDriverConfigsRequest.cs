@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private List<string> driverIdss;
+		private List<string> driverIdss = new List<string>(){ };
 
 		private string instanceId;
 

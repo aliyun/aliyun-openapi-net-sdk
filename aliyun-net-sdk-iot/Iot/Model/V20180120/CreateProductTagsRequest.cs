@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private List<ProductTag> productTags;
+		private List<ProductTag> productTags = new List<ProductTag>(){ };
 
 		private string iotInstanceId;
 

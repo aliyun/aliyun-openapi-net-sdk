@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string instanceId;
 
-		private List<DeviceConfigs> deviceConfigss;
+		private List<DeviceConfigs> deviceConfigss = new List<DeviceConfigs>(){ };
 
 		private string iotInstanceId;
 

@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private List<ResponseParam> responseParams;
+		private List<ResponseParam> responseParams = new List<ResponseParam>(){ };
 
 		private string originSql;
 
@@ -47,7 +47,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string apiPath;
 
-		private List<RequestParam> requestParams;
+		private List<RequestParam> requestParams = new List<RequestParam>(){ };
 
 		private string folderId;
 

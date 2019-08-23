@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string productKey;
 
-		private List<DeviceInfo> deviceInfos;
+		private List<DeviceInfo> deviceInfos = new List<DeviceInfo>(){ };
 
 		public string IotInstanceId
 		{

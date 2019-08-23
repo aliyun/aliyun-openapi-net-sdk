@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private List<DeviceNicknameInfo> deviceNicknameInfos;
+		private List<DeviceNicknameInfo> deviceNicknameInfos = new List<DeviceNicknameInfo>(){ };
 
 		private string iotInstanceId;
 

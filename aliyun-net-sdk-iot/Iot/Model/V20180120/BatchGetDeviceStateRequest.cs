@@ -39,11 +39,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private List<string> iotIds;
+		private List<string> iotIds = new List<string>(){ };
 
 		private string iotInstanceId;
 
-		private List<string> deviceNames;
+		private List<string> deviceNames = new List<string>(){ };
 
 		private string productKey;
 

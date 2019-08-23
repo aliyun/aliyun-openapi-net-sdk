@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string instanceId;
 
-		private List<string> iotIdss;
+		private List<string> iotIdss = new List<string>(){ };
 
 		private string iotInstanceId;
 

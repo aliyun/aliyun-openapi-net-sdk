@@ -39,9 +39,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private List<string> productKeyLists;
+		private List<string> productKeyLists = new List<string>(){ };
 
-		private List<string> categoryKeyLists;
+		private List<string> categoryKeyLists = new List<string>(){ };
 
 		private string iotInstanceId;
 
@@ -51,7 +51,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string appKey;
 
-		private List<TagList> tagLists;
+		private List<TagList> tagLists = new List<TagList>(){ };
 
 		public List<string> ProductKeyLists
 		{
