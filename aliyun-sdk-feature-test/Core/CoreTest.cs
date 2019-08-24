@@ -55,8 +55,6 @@ namespace Aliyun.Acs.Feature.Test.Core
                 return;
             }
 
-            DefaultProfile.ClearProfile();
-
             var basciCredential =
                 new BasicSessionCredentials(FeatureTest.BasicAccessKeyId, FeatureTest.BasicAccessKeySecret, FeatureTest.GetToken());
             var profile = DefaultProfile.GetProfile(FeatureTest.RegionId, FeatureTest.BasicAccessKeyId, FeatureTest.BasicAccessKeySecret);
@@ -95,7 +93,7 @@ namespace Aliyun.Acs.Feature.Test.Core
             {
                 return;
             }
-            DefaultProfile.ClearProfile();
+
             var basciCredential =
                 new BasicSessionCredentials(FeatureTest.BasicAccessKeyId, FeatureTest.BasicAccessKeySecret, FeatureTest.GetToken());
             var profile = DefaultProfile.GetProfile(FeatureTest.RegionId, FeatureTest.BasicAccessKeyId, FeatureTest.BasicAccessKeySecret);
@@ -155,8 +153,6 @@ namespace Aliyun.Acs.Feature.Test.Core
             {
                 return;
             }
-
-            DefaultProfile.ClearProfile();
 
             var basciCredential =
                 new BasicSessionCredentials(FeatureTest.BasicAccessKeyId, FeatureTest.BasicAccessKeySecret, FeatureTest.GetToken());

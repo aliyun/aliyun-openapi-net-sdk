@@ -37,7 +37,6 @@ namespace Aliyun.Acs.Feature.Test.ErrorHandler
             var request = new ActiveFlowLogRequest();
             request.FlowLogId = "testFlow";
 
-            DefaultProfile.ClearProfile();
             var profile = DefaultProfile.GetProfile("cn-hangzhou", FeatureTest.BasicAccessKeyId, FeatureTest.BasicAccessKeySecret);
             var client = new DefaultAcsClient(profile);
 
