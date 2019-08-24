@@ -43,17 +43,21 @@ namespace Aliyun.Acs.Feature.Test
 
         static FeatureTest featureTest = new FeatureTest();
 
-        public static DefaultAcsClient GetDefaultClient()
+        static IClientProfile profile = DefaultProfile.GetProfile(
+            RegionId,
+            BasicAccessKeyId,
+            BasicAccessKeySecret
+        );
+
+        public static DefaultAcsClient DefaultClient
         {
-            IClientProfile profile = DefaultProfile.GetProfile(
-                RegionId,
-                BasicAccessKeyId,
-                BasicAccessKeySecret
-            );
-            DefaultAcsClient client = new DefaultAcsClient(profile);
-            client.SetConnectTimeoutInMilliSeconds(2 * 60 * 1000);
-            client.SetReadTimeoutInMilliSeconds(2 * 60 * 1000);
-            return client;
+            get
+            {
+                DefaultAcsClient client = new DefaultAcsClient(profile);
+                client.SetConnectTimeoutInMilliSeconds(2 * 60 * 1000);
+                client.SetReadTimeoutInMilliSeconds(2 * 60 * 1000);
+                return client;
+            }
         }
 
         public static string BasicAccessKeyId
@@ -102,7 +106,7 @@ namespace Aliyun.Acs.Feature.Test
             assumeRoleRequest.RoleArn = RoleArn;
             assumeRoleRequest.RoleSessionName = "robert_test";
 
-            var assumeRoleResponse = GetDefaultClient().GetAcsResponse(assumeRoleRequest);
+            var assumeRoleResponse = DefaultClient.GetAcsResponse(assumeRoleRequest);
 
             return assumeRoleResponse.Credentials.SecurityToken;
         }

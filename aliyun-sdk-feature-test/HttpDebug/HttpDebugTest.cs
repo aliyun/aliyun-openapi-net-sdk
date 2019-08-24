@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Feature.Test.HttpDebug
         {
             Environment.SetEnvironmentVariable("DEBUG", "sdk");
             var request = new DescribeRegionsRequest();
-            var response = FeatureTest.GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureTest.DefaultClient.GetAcsResponse(request);
 
             Assert.True(null != response.RequestId);
             Assert.Null(Environment.GetEnvironmentVariable("DEBUG"));

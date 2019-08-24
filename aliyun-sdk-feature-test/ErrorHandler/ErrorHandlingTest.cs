@@ -57,7 +57,7 @@ namespace Aliyun.Acs.Feature.Test.ErrorHandler
             request.Version = "2014-05-26";
             request.Action = "actionError";
 
-            var response = FeatureTest.GetDefaultClient().GetCommonResponse(request);
+            var response = FeatureTest.DefaultClient.GetCommonResponse(request);
             var content = Encoding.UTF8.GetString(response.HttpResponse.Content);
 
             Assert.Contains("Keyword=InvalidParameter", content);

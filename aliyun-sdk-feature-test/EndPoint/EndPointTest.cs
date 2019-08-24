@@ -49,7 +49,7 @@ namespace Aliyun.Acs.Feature.Test.EndPoint
         public void TestProductsWithLocationService()
         {
             var request = new DescribeRegionsRequest();
-            var response = FeatureTest.GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureTest.DefaultClient.GetAcsResponse(request);
 
             Assert.True(0 < response.Regions.Count);
         }
@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Feature.Test.EndPoint
         public void TestProductsWithoutLocationService()
         {
             var request = new ListAccessKeysRequest();
-            var response = FeatureTest.GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureTest.DefaultClient.GetAcsResponse(request);
 
             Assert.True(0 < response.AccessKeys.Count);
         }

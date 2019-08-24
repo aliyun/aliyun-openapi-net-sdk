@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Feature.Test.Core
             request.UriPattern = "/resource_types";
             request.Method = MethodType.GET;
 
-            var response = FeatureTest.GetDefaultClient().GetCommonResponse(request);
+            var response = FeatureTest.DefaultClient.GetCommonResponse(request);
 
             Assert.Equal("200", response.HttpStatus.ToString());
             Assert.NotNull(response.Data);
@@ -80,7 +80,7 @@ namespace Aliyun.Acs.Feature.Test.Core
             request.Version = "2014-05-26";
             request.Action = "DescribeAccessPoints";
 
-            var response = FeatureTest.GetDefaultClient().GetCommonResponse(request);
+            var response = FeatureTest.DefaultClient.GetCommonResponse(request);
 
             Assert.Equal("200", response.HttpStatus.ToString());
             Assert.NotNull(response.Data);
@@ -116,7 +116,7 @@ namespace Aliyun.Acs.Feature.Test.Core
             request.Method = MethodType.GET;
             request.Protocol = ProtocolType.HTTPS;
 
-            var response = FeatureTest.GetDefaultClient().GetCommonResponse(request);
+            var response = FeatureTest.DefaultClient.GetCommonResponse(request);
             Assert.Equal(200, response.HttpStatus);
             Assert.NotNull(response.Data);
         }
@@ -130,7 +130,7 @@ namespace Aliyun.Acs.Feature.Test.Core
             request.Action = "DescribeAccessPoints";
             request.Protocol = ProtocolType.HTTPS;
 
-            var response = FeatureTest.GetDefaultClient().GetCommonResponse(request);
+            var response = FeatureTest.DefaultClient.GetCommonResponse(request);
             Assert.Equal(200, response.HttpStatus);
             Assert.NotNull(response.Data);
         }
@@ -143,7 +143,7 @@ namespace Aliyun.Acs.Feature.Test.Core
             request.Version = "2018-11-28";
             request.Action = "serverUnreachableTest";
 
-            Assert.Throws<ClientException>(() => { FeatureTest.GetDefaultClient().GetCommonResponse(request); });
+            Assert.Throws<ClientException>(() => { FeatureTest.DefaultClient.GetCommonResponse(request); });
         }
 
         [Fact]
