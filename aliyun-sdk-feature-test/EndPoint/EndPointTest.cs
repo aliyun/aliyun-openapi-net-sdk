@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Feature.Test.EndPoint
         {
             var request = new DescribeRegionsRequest();
             DefaultProfile.ClearProfile();
-            var profile = DefaultProfile.GetProfile("cn-wenzhou", FeatureCommon.GetBasicAccessKeyId(), FeatureCommon.GetBasicAccessKeySecret());
+            var profile = DefaultProfile.GetProfile("cn-wenzhou", FeatureTest.BasicAccessKeyId, FeatureTest.BasicAccessKeySecret);
             var testClient = new DefaultAcsClient(profile);
 
             profile.AddEndpoint("cn-hangzhou", "cn-hangzhou", "Ecs", "abc.cn-hangzhou.endpoint-test.exception.com");
@@ -49,7 +49,7 @@ namespace Aliyun.Acs.Feature.Test.EndPoint
         public void TestProductsWithLocationService()
         {
             var request = new DescribeRegionsRequest();
-            var response = FeatureCommon.GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureTest.GetDefaultClient().GetAcsResponse(request);
 
             Assert.True(0 < response.Regions.Count);
         }
@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Feature.Test.EndPoint
         public void TestProductsWithoutLocationService()
         {
             var request = new ListAccessKeysRequest();
-            var response = FeatureCommon.GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureTest.GetDefaultClient().GetAcsResponse(request);
 
             Assert.True(0 < response.AccessKeys.Count);
         }
