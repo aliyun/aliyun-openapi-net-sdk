@@ -18,6 +18,7 @@
  */
 
 using Aliyun.Acs.Cdn.Model.V20180510;
+using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Ecs.Model.V20140526;
@@ -41,7 +42,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             var request = new DescribeCdnCertificateDetailRequest();
             request.CertName = "cdnRequestTest";
 
-            var response = FeatureCommon.GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureTest.DefaultClient.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.NotNull(response.RequestId);
@@ -51,7 +52,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
         public void EcsRequestTest()
         {
             var request = new DescribeImagesRequest();
-            var response = FeatureCommon.GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureTest.DefaultClient.GetAcsResponse(request);
 
             Assert.NotNull(response);
         }
@@ -65,7 +66,11 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.ContentType = FormatType.FORM;
             request.BodyParameters.Add("test", "test");
 
-            var exception = Assert.Throws<ClientException>(() => { FeatureCommon.GetDefaultClient().GetAcsResponse(request); });
+            DefaultAcsClient client = FeatureTest.DefaultClient;
+            var exception = Assert.Throws<ClientException>(() =>
+            {
+                client.GetAcsResponse(request);
+            });
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
             Assert.Equal("No action specified", exception.ErrorMessage);
         }
@@ -79,7 +84,11 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.ContentType = FormatType.FORM;
             request.BodyParameters.Add("ContentMD5NotMatched", "test");
 
-            var exception = Assert.Throws<ClientException>(() => { FeatureCommon.GetDefaultClient().GetAcsResponse(request); });
+            DefaultAcsClient client = FeatureTest.DefaultClient;
+            var exception = Assert.Throws<ClientException>(() =>
+            {
+                client.GetAcsResponse(request);
+            });
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
         }
 
@@ -92,7 +101,11 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.ContentType = FormatType.JSON;
             request.BodyParameters.Add("test", "test");
 
-            var exception = Assert.Throws<ClientException>(() => { FeatureCommon.GetDefaultClient().GetAcsResponse(request); });
+            DefaultAcsClient client = FeatureTest.DefaultClient;
+            var exception = Assert.Throws<ClientException>(() =>
+            {
+                client.GetAcsResponse(request);
+            });
             Assert.NotNull(exception);
         }
 
@@ -105,7 +118,11 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.ContentType = FormatType.JSON;
             request.BodyParameters.Add("ContentMD5NotMatched", "test");
 
-            var exception = Assert.Throws<ClientException>(() => { FeatureCommon.GetDefaultClient().GetAcsResponse(request); });
+            DefaultAcsClient client = FeatureTest.DefaultClient;
+            var exception = Assert.Throws<ClientException>(() =>
+            {
+                client.GetAcsResponse(request);
+            });
 
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
         }
@@ -114,7 +131,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
         public void RamRequestTest()
         {
             var request = new ListAccessKeysRequest();
-            var response = FeatureCommon.GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureTest.DefaultClient.GetAcsResponse(request);
 
             Assert.NotNull(response.AccessKeys);
             Assert.NotNull(response.RequestId);
@@ -124,7 +141,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
         public void RdsRequestTest()
         {
             var request = new DescribeRegionsRequest();
-            var response = FeatureCommon.GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureTest.DefaultClient.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.NotNull(response.RequestId);
@@ -134,7 +151,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
         public void SlbRequestTest()
         {
             var request = new DescribeAccessControlListsRequest();
-            var response = FeatureCommon.GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureTest.DefaultClient.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.True(0 <= response.Acls.Count);
@@ -144,7 +161,7 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
         public void VpcRequestTest()
         {
             var request = new DescribeVpcsRequest();
-            var response = FeatureCommon.GetDefaultClient().GetAcsResponse(request);
+            var response = FeatureTest.DefaultClient.GetAcsResponse(request);
 
             Assert.NotNull(response);
             Assert.True(0 <= response.Vpcs.Count);
@@ -159,8 +176,11 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.ContentType = FormatType.XML;
             request.BodyParameters.Add("test", "test");
             request.BodyParameters.Add("test2", "test2");
-
-            var exception = Assert.Throws<ClientException>(() => { FeatureCommon.GetDefaultClient().GetAcsResponse(request); });
+            DefaultAcsClient client = FeatureTest.DefaultClient;
+            var exception = Assert.Throws<ClientException>(() =>
+            {
+                client.GetAcsResponse(request);
+            });
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
             Assert.Equal("No action specified", exception.ErrorMessage);
         }
@@ -173,8 +193,11 @@ namespace Aliyun.Acs.Feature.Test.APIEncapsulate
             request.StackId = "test";
             request.ContentType = FormatType.XML;
             request.BodyParameters.Add("ContentMD5NotMatched", "test");
-
-            var exception = Assert.Throws<ClientException>(() => { FeatureCommon.GetDefaultClient().GetAcsResponse(request); });
+            DefaultAcsClient client = FeatureTest.DefaultClient;
+            var exception = Assert.Throws<ClientException>(() =>
+            {
+                client.GetAcsResponse(request);
+            });
             Assert.Equal("HTTPBadRequest", exception.ErrorCode);
         }
     }

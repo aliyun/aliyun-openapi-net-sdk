@@ -33,9 +33,8 @@ namespace Aliyun.Acs.Feature.Test.Credential
         [Fact]
         public void BearerTokenAccessTest()
         {
-            var provider = new BearerTokenCredentialProvider(FeatureCommon.GetBearerToken());
+            var provider = new BearerTokenCredentialProvider(FeatureTest.BearerToken);
 
-            DefaultProfile.ClearProfile();
             var profile = DefaultProfile.GetProfile("cn-hangzhou");
             var client = new DefaultAcsClient(profile, provider);
 
