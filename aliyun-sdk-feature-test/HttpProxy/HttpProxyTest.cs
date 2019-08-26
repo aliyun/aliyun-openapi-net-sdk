@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
         [Fact]
         public void HttpProxy()
         {
-            var client = FeatureCommon.GetDefaultClient();
+            var client = FeatureTest.DefaultClient;
 
             var request = new DescribeAccessPointsRequest();
             client.SetHttpProxy("http://localhost:8989");
@@ -50,7 +50,7 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
         [Fact]
         public void HttpProxyWithCredential()
         {
-            var client = FeatureCommon.GetDefaultClient();
+            var client = FeatureTest.DefaultClient;
 
             var request = new DescribeAccessPointsRequest();
             client.SetHttpProxy("http://username:password@localhost:8989");
