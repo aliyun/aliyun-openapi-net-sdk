@@ -44,7 +44,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string subscriptionType;
 
-		private List<ModuleList> moduleLists;
+		private List<ModuleList> moduleLists = new List<ModuleList>(){ };
 
 		private long? ownerId;
 

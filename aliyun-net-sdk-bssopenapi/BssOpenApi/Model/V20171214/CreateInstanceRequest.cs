@@ -50,7 +50,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? renewPeriod;
 
-		private List<Parameter> parameters;
+		private List<Parameter> parameters = new List<Parameter>(){ };
 
 		private string renewalStatus;
 

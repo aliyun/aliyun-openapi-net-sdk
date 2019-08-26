@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class GetResourcePackagePriceRequest : RpcAcsRequest<GetResourcePackagePriceResponse>
+    public class RenewResourcePackageRequest : RpcAcsRequest<RenewResourcePackageResponse>
     {
-        public GetResourcePackagePriceRequest()
-            : base("BssOpenApi", "2017-12-14", "GetResourcePackagePrice")
+        public RenewResourcePackageRequest()
+            : base("BssOpenApi", "2017-12-14", "RenewResourcePackage")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,21 +42,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? duration;
 
-		private string productCode;
-
 		private string instanceId;
 
-		private string specification;
-
 		private long? ownerId;
-
-		private string packageType;
 
 		private string effectiveDate;
 
 		private string pricingCycle;
-
-		private string orderType;
 
 		public int? Duration
 		{
@@ -68,19 +60,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				duration = value;
 				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
-			}
-		}
-
-		public string ProductCode
-		{
-			get
-			{
-				return productCode;
-			}
-			set	
-			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
 			}
 		}
 
@@ -97,19 +76,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Specification
-		{
-			get
-			{
-				return specification;
-			}
-			set	
-			{
-				specification = value;
-				DictionaryUtil.Add(QueryParameters, "Specification", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -120,19 +86,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string PackageType
-		{
-			get
-			{
-				return packageType;
-			}
-			set	
-			{
-				packageType = value;
-				DictionaryUtil.Add(QueryParameters, "PackageType", value);
 			}
 		}
 
@@ -162,22 +115,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
-
-        public override GetResourcePackagePriceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RenewResourcePackageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetResourcePackagePriceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RenewResourcePackageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

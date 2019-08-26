@@ -46,7 +46,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? sortType;
 
-		private List<string> bizTypeLists;
+		private List<string> bizTypeLists = new List<string>(){ };
 
 		private int? type;
 

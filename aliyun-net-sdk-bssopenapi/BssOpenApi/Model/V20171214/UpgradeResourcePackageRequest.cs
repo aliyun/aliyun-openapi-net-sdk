@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class GetResourcePackagePriceRequest : RpcAcsRequest<GetResourcePackagePriceResponse>
+    public class UpgradeResourcePackageRequest : RpcAcsRequest<UpgradeResourcePackageResponse>
     {
-        public GetResourcePackagePriceRequest()
-            : base("BssOpenApi", "2017-12-14", "GetResourcePackagePrice")
+        public UpgradeResourcePackageRequest()
+            : base("BssOpenApi", "2017-12-14", "UpgradeResourcePackage")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,49 +40,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
             }
         }
 
-		private int? duration;
-
-		private string productCode;
-
 		private string instanceId;
 
 		private string specification;
 
 		private long? ownerId;
 
-		private string packageType;
-
 		private string effectiveDate;
-
-		private string pricingCycle;
-
-		private string orderType;
-
-		public int? Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
-			}
-		}
-
-		public string ProductCode
-		{
-			get
-			{
-				return productCode;
-			}
-			set	
-			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
-			}
-		}
 
 		public string InstanceId
 		{
@@ -123,19 +87,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string PackageType
-		{
-			get
-			{
-				return packageType;
-			}
-			set	
-			{
-				packageType = value;
-				DictionaryUtil.Add(QueryParameters, "PackageType", value);
-			}
-		}
-
 		public string EffectiveDate
 		{
 			get
@@ -149,35 +100,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string PricingCycle
-		{
-			get
-			{
-				return pricingCycle;
-			}
-			set	
-			{
-				pricingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
-			}
-		}
-
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
-
-        public override GetResourcePackagePriceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpgradeResourcePackageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetResourcePackagePriceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpgradeResourcePackageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

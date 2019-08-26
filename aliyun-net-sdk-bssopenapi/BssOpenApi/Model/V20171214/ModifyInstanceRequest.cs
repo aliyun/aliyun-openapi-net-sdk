@@ -50,7 +50,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string modifyType;
 
-		private List<Parameter> parameters;
+		private List<Parameter> parameters = new List<Parameter>(){ };
 
 		private long? ownerId;
 

@@ -55,13 +55,13 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.SubscriptionType = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].SubscriptionType");
 				item.ProductName = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ProductName");
 				item.ProductDetail = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ProductDetail");
-				item.OwnerID = context.LongValue("QueryInstanceBill.Data.Items["+ i +"].OwnerID");
+				item.OwnerID = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].OwnerID");
 				item.BillingItem = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].BillingItem");
-				item.ListPrice = context.FloatValue("QueryInstanceBill.Data.Items["+ i +"].ListPrice");
+				item.ListPrice = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ListPrice");
 				item.ListPriceUnit = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ListPriceUnit");
-				item.Usage = context.FloatValue("QueryInstanceBill.Data.Items["+ i +"].Usage");
+				item.Usage = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].Usage");
 				item.UsageUnit = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].UsageUnit");
-				item.DeductedByResourcePackage = context.FloatValue("QueryInstanceBill.Data.Items["+ i +"].DeductedByResourcePackage");
+				item.DeductedByResourcePackage = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].DeductedByResourcePackage");
 				item.PretaxGrossAmount = context.FloatValue("QueryInstanceBill.Data.Items["+ i +"].PretaxGrossAmount");
 				item.InvoiceDiscount = context.FloatValue("QueryInstanceBill.Data.Items["+ i +"].InvoiceDiscount");
 				item.DeductedByCoupons = context.FloatValue("QueryInstanceBill.Data.Items["+ i +"].DeductedByCoupons");

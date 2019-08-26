@@ -48,7 +48,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private long? customerId;
 
-		private List<long?> selectedIdss;
+		private List<long?> selectedIdss = new List<long?>(){ };
 
 		private int? processWay;
 

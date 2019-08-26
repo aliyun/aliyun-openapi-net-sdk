@@ -215,19 +215,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string productDetail;
 
-				private long? ownerID;
+				private string ownerID;
 
 				private string billingItem;
 
-				private float? listPrice;
+				private string listPrice;
 
 				private string listPriceUnit;
 
-				private float? usage;
+				private string usage;
 
 				private string usageUnit;
 
-				private float? deductedByResourcePackage;
+				private string deductedByResourcePackage;
 
 				private float? pretaxGrossAmount;
 
@@ -365,7 +365,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public long? OwnerID
+				public string OwnerID
 				{
 					get
 					{
@@ -389,7 +389,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public float? ListPrice
+				public string ListPrice
 				{
 					get
 					{
@@ -413,7 +413,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public float? Usage
+				public string Usage
 				{
 					get
 					{
@@ -437,7 +437,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public float? DeductedByResourcePackage
+				public string DeductedByResourcePackage
 				{
 					get
 					{
