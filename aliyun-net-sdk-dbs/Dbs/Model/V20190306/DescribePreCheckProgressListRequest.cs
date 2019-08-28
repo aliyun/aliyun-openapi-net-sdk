@@ -27,14 +27,16 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class StartBackupPlanRequest : RpcAcsRequest<StartBackupPlanResponse>
+    public class DescribePreCheckProgressListRequest : RpcAcsRequest<DescribePreCheckProgressListResponse>
     {
-        public StartBackupPlanRequest()
-            : base("Dbs", "2019-03-06", "StartBackupPlan", "cbs", "openAPI")
+        public DescribePreCheckProgressListRequest()
+            : base("Dbs", "2019-03-06", "DescribePreCheckProgressList", "cbs", "openAPI")
         {
         }
 
 		private string clientToken;
+
+		private string restoreTaskId;
 
 		private string backupPlanId;
 
@@ -50,6 +52,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string RestoreTaskId
+		{
+			get
+			{
+				return restoreTaskId;
+			}
+			set	
+			{
+				restoreTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTaskId", value);
 			}
 		}
 
@@ -79,9 +94,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-        public override StartBackupPlanResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribePreCheckProgressListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartBackupPlanResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribePreCheckProgressListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

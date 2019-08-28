@@ -24,21 +24,22 @@ using Aliyun.Acs.Dbs.Model.V20190306;
 
 namespace Aliyun.Acs.Dbs.Transform.V20190306
 {
-    public class CreateRestoreTaskResponseUnmarshaller
+    public class UpgradeBackupPlanResponseUnmarshaller
     {
-        public static CreateRestoreTaskResponse Unmarshall(UnmarshallerContext context)
+        public static UpgradeBackupPlanResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateRestoreTaskResponse createRestoreTaskResponse = new CreateRestoreTaskResponse();
+			UpgradeBackupPlanResponse upgradeBackupPlanResponse = new UpgradeBackupPlanResponse();
 
-			createRestoreTaskResponse.HttpResponse = context.HttpResponse;
-			createRestoreTaskResponse.Success = context.BooleanValue("CreateRestoreTask.Success");
-			createRestoreTaskResponse.ErrCode = context.StringValue("CreateRestoreTask.ErrCode");
-			createRestoreTaskResponse.ErrMessage = context.StringValue("CreateRestoreTask.ErrMessage");
-			createRestoreTaskResponse.HttpStatusCode = context.IntegerValue("CreateRestoreTask.HttpStatusCode");
-			createRestoreTaskResponse.RequestId = context.StringValue("CreateRestoreTask.RequestId");
-			createRestoreTaskResponse.RestoreTaskId = context.StringValue("CreateRestoreTask.RestoreTaskId");
+			upgradeBackupPlanResponse.HttpResponse = context.HttpResponse;
+			upgradeBackupPlanResponse.Success = context.BooleanValue("UpgradeBackupPlan.Success");
+			upgradeBackupPlanResponse.ErrCode = context.StringValue("UpgradeBackupPlan.ErrCode");
+			upgradeBackupPlanResponse.ErrMessage = context.StringValue("UpgradeBackupPlan.ErrMessage");
+			upgradeBackupPlanResponse.HttpStatusCode = context.IntegerValue("UpgradeBackupPlan.HttpStatusCode");
+			upgradeBackupPlanResponse.RequestId = context.StringValue("UpgradeBackupPlan.RequestId");
+			upgradeBackupPlanResponse.BackupPlanId = context.StringValue("UpgradeBackupPlan.BackupPlanId");
+			upgradeBackupPlanResponse.OrderId = context.StringValue("UpgradeBackupPlan.OrderId");
         
-			return createRestoreTaskResponse;
+			return upgradeBackupPlanResponse;
         }
     }
 }

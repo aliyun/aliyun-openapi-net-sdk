@@ -27,10 +27,10 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class StartBackupPlanRequest : RpcAcsRequest<StartBackupPlanResponse>
+    public class UpgradeBackupPlanRequest : RpcAcsRequest<UpgradeBackupPlanResponse>
     {
-        public StartBackupPlanRequest()
-            : base("Dbs", "2019-03-06", "StartBackupPlan", "cbs", "openAPI")
+        public UpgradeBackupPlanRequest()
+            : base("Dbs", "2019-03-06", "UpgradeBackupPlan", "cbs", "openAPI")
         {
         }
 
@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private string backupPlanId;
 
 		private string ownerId;
+
+		private string instanceClass;
 
 		public string ClientToken
 		{
@@ -79,9 +81,22 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-        public override StartBackupPlanResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string InstanceClass
+		{
+			get
+			{
+				return instanceClass;
+			}
+			set	
+			{
+				instanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
+			}
+		}
+
+        public override UpgradeBackupPlanResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartBackupPlanResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpgradeBackupPlanResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
