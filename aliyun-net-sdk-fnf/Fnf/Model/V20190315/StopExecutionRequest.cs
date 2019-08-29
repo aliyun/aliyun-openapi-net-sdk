@@ -54,7 +54,7 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				executionName = value;
-				DictionaryUtil.Add(QueryParameters, "ExecutionName", value);
+				DictionaryUtil.Add(BodyParameters, "ExecutionName", value);
 			}
 		}
 
@@ -80,7 +80,7 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				cause = value;
-				DictionaryUtil.Add(QueryParameters, "Cause", value);
+				DictionaryUtil.Add(BodyParameters, "Cause", value);
 			}
 		}
 
@@ -93,7 +93,7 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				flowName = value;
-				DictionaryUtil.Add(QueryParameters, "FlowName", value);
+				DictionaryUtil.Add(BodyParameters, "FlowName", value);
 			}
 		}
 
@@ -106,7 +106,7 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				error = value;
-				DictionaryUtil.Add(QueryParameters, "Error", value);
+				DictionaryUtil.Add(BodyParameters, "Error", value);
 			}
 		}
 
