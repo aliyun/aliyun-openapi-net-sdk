@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97d29f72-cf55-4d20-bd85-0dfc7cf3ab52}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-xtrace</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Xtrace\Model\V20190808\GetTraceRequest.cs" />
+	<Compile Include="Xtrace\Model\V20190808\GetTraceResponse.cs" />
+	<Compile Include="Xtrace\Model\V20190808\GetTagKeyResponse.cs" />
+	<Compile Include="Xtrace\Model\V20190808\GetTagKeyRequest.cs" />
+	<Compile Include="Xtrace\Model\V20190808\SearchTracesRequest.cs" />
+	<Compile Include="Xtrace\Model\V20190808\GetTagValRequest.cs" />
+	<Compile Include="Xtrace\Model\V20190808\ListIpOrHostsRequest.cs" />
+	<Compile Include="Xtrace\Model\V20190808\ListIpOrHostsResponse.cs" />
+	<Compile Include="Xtrace\Model\V20190808\GetTagValResponse.cs" />
+	<Compile Include="Xtrace\Model\V20190808\ListServicesResponse.cs" />
+	<Compile Include="Xtrace\Model\V20190808\ListServicesRequest.cs" />
+	<Compile Include="Xtrace\Model\V20190808\SearchTracesResponse.cs" />
+	<Compile Include="Xtrace\Transform\V20190808\GetTokenResponseUnmarshaller.cs" />
+	<Compile Include="Xtrace\Transform\V20190808\ListIpOrHostsResponseUnmarshaller.cs" />
+	<Compile Include="Xtrace\Transform\V20190808\GetTagKeyResponseUnmarshaller.cs" />
+	<Compile Include="Xtrace\Transform\V20190808\SearchTracesResponseUnmarshaller.cs" />
+	<Compile Include="Xtrace\Transform\V20190808\GetTagValResponseUnmarshaller.cs" />
+	<Compile Include="Xtrace\Transform\V20190808\GetTraceResponseUnmarshaller.cs" />
+	<Compile Include="Xtrace\Transform\V20190808\ListServicesResponseUnmarshaller.cs" />
+	<Compile Include="Xtrace\Transform\V20190808\ListSpanNamesResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
