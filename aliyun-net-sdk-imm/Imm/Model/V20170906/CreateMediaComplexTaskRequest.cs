@@ -27,16 +27,46 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class GetSetRequest : RpcAcsRequest<GetSetResponse>
+    public class CreateMediaComplexTaskRequest : RpcAcsRequest<CreateMediaComplexTaskResponse>
     {
-        public GetSetRequest()
-            : base("imm", "2017-09-06", "GetSet", "imm", "openAPI")
+        public CreateMediaComplexTaskRequest()
+            : base("imm", "2017-09-06", "CreateMediaComplexTask", "imm", "openAPI")
         {
         }
 
+		private string notifyTopicName;
+
+		private string notifyEndpoint;
+
 		private string project;
 
-		private string setId;
+		private string parameters;
+
+		public string NotifyTopicName
+		{
+			get
+			{
+				return notifyTopicName;
+			}
+			set	
+			{
+				notifyTopicName = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
+			}
+		}
+
+		public string NotifyEndpoint
+		{
+			get
+			{
+				return notifyEndpoint;
+			}
+			set	
+			{
+				notifyEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
+			}
+		}
 
 		public string Project
 		{
@@ -51,22 +81,27 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string SetId
+		public string Parameters
 		{
 			get
 			{
-				return setId;
+				return parameters;
 			}
 			set	
 			{
-				setId = value;
-				DictionaryUtil.Add(QueryParameters, "SetId", value);
+				parameters = value;
+				DictionaryUtil.Add(QueryParameters, "Parameters", value);
 			}
 		}
 
-        public override GetSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateMediaComplexTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateMediaComplexTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

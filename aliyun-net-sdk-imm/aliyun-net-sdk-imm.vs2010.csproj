@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{391e8a5a-2884-4daa-aa51-1ad27c1eeddc}</ProjectGuid>
+    <ProjectGuid>{7075d233-a0a8-488d-82a8-55ee28f5f100}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -85,6 +85,7 @@
 	<Compile Include="Imm\Model\V20170906\RegistFaceRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateDocIndexTaskRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\CompareImageFacesResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateMediaComplexTaskResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListTagNamesRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DetectClothesResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\DeletePornBatchDetectJobRequest.cs" />
@@ -155,6 +156,7 @@
 	<Compile Include="Imm\Model\V20170906\DeleteDocIndexResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\ListPhotoProcessTasksRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteTagJobResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateMediaComplexTaskRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\ListFaceSearchGroupUsersRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\DeleteImageJobResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\PutProjectRequest.cs" />
@@ -286,6 +288,7 @@
 	<Compile Include="Imm\Transform\V20170906\CreateMergeFaceGroupsJobResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateCADConversionTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DeleteSetResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\CreateMediaComplexTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\DeleteDocIndexResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\GetVideoTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\RegistFaceResponseUnmarshaller.cs" />

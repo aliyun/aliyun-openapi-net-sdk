@@ -16,55 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.imm.Model.V20170906;
 
-namespace Aliyun.Acs.imm.Model.V20170906
+namespace Aliyun.Acs.imm.Transform.V20170906
 {
-	public class CreateVideoAnalyseTaskResponse : AcsResponse
-	{
+    public class CreateMediaComplexTaskResponseUnmarshaller
+    {
+        public static CreateMediaComplexTaskResponse Unmarshall(UnmarshallerContext context)
+        {
+			CreateMediaComplexTaskResponse createMediaComplexTaskResponse = new CreateMediaComplexTaskResponse();
 
-		private string requestId;
-
-		private string taskId;
-
-		private string taskType;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
-
-		public string TaskType
-		{
-			get
-			{
-				return taskType;
-			}
-			set	
-			{
-				taskType = value;
-			}
-		}
-	}
+			createMediaComplexTaskResponse.HttpResponse = context.HttpResponse;
+			createMediaComplexTaskResponse.RequestId = context.StringValue("CreateMediaComplexTask.RequestId");
+			createMediaComplexTaskResponse.TaskId = context.StringValue("CreateMediaComplexTask.TaskId");
+			createMediaComplexTaskResponse.TaskType = context.StringValue("CreateMediaComplexTask.TaskType");
+        
+			return createMediaComplexTaskResponse;
+        }
+    }
 }

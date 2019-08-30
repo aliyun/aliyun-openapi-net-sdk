@@ -38,6 +38,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private float? minSimilarity;
 
+		private string responseFormat;
+
 		private int? limit;
 
 		private string project;
@@ -69,6 +71,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				minSimilarity = value;
 				DictionaryUtil.Add(QueryParameters, "MinSimilarity", value.ToString());
+			}
+		}
+
+		public string ResponseFormat
+		{
+			get
+			{
+				return responseFormat;
+			}
+			set	
+			{
+				responseFormat = value;
+				DictionaryUtil.Add(QueryParameters, "ResponseFormat", value);
 			}
 		}
 

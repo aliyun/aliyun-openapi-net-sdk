@@ -42,13 +42,34 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 
 				FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_FaceAttributes faceAttributes = new FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_FaceAttributes();
 
-				FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_FaceAttributes.FindSimilarFaces_FaceBoundary faceBoundary = new FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_FaceAttributes.FindSimilarFaces_FaceBoundary();
-				faceBoundary.Left = context.IntegerValue("FindSimilarFaces.Faces["+ i +"].FaceAttributes.FaceBoundary.Left");
-				faceBoundary.Top = context.IntegerValue("FindSimilarFaces.Faces["+ i +"].FaceAttributes.FaceBoundary.Top");
-				faceBoundary.Width = context.IntegerValue("FindSimilarFaces.Faces["+ i +"].FaceAttributes.FaceBoundary.Width");
-				faceBoundary.Height = context.IntegerValue("FindSimilarFaces.Faces["+ i +"].FaceAttributes.FaceBoundary.Height");
-				faceAttributes.FaceBoundary = faceBoundary;
+				FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_FaceAttributes.FindSimilarFaces_FaceBoundary2 faceBoundary2 = new FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_FaceAttributes.FindSimilarFaces_FaceBoundary2();
+				faceBoundary2.Left = context.IntegerValue("FindSimilarFaces.Faces["+ i +"].FaceAttributes.FaceBoundary.Left");
+				faceBoundary2.Top = context.IntegerValue("FindSimilarFaces.Faces["+ i +"].FaceAttributes.FaceBoundary.Top");
+				faceBoundary2.Width = context.IntegerValue("FindSimilarFaces.Faces["+ i +"].FaceAttributes.FaceBoundary.Width");
+				faceBoundary2.Height = context.IntegerValue("FindSimilarFaces.Faces["+ i +"].FaceAttributes.FaceBoundary.Height");
+				faceAttributes.FaceBoundary2 = faceBoundary2;
 				facesItem.FaceAttributes = faceAttributes;
+
+				List<FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_SimilarFacesItem> facesItem_similarFaces = new List<FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_SimilarFacesItem>();
+				for (int j = 0; j < context.Length("FindSimilarFaces.Faces["+ i +"].SimilarFaces.Length"); j++) {
+					FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_SimilarFacesItem similarFacesItem = new FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_SimilarFacesItem();
+					similarFacesItem.FaceId = context.StringValue("FindSimilarFaces.Faces["+ i +"].SimilarFaces["+ j +"].FaceId");
+					similarFacesItem.ImageUri = context.StringValue("FindSimilarFaces.Faces["+ i +"].SimilarFaces["+ j +"].ImageUri");
+					similarFacesItem.Similarity = context.FloatValue("FindSimilarFaces.Faces["+ i +"].SimilarFaces["+ j +"].Similarity");
+
+					FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_SimilarFacesItem.FindSimilarFaces_FaceAttributes1 faceAttributes1 = new FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_SimilarFacesItem.FindSimilarFaces_FaceAttributes1();
+
+					FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_SimilarFacesItem.FindSimilarFaces_FaceAttributes1.FindSimilarFaces_FaceBoundary faceBoundary = new FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_SimilarFacesItem.FindSimilarFaces_FaceAttributes1.FindSimilarFaces_FaceBoundary();
+					faceBoundary.Left = context.IntegerValue("FindSimilarFaces.Faces["+ i +"].SimilarFaces["+ j +"].FaceAttributes.FaceBoundary.Left");
+					faceBoundary.Top = context.IntegerValue("FindSimilarFaces.Faces["+ i +"].SimilarFaces["+ j +"].FaceAttributes.FaceBoundary.Top");
+					faceBoundary.Width = context.IntegerValue("FindSimilarFaces.Faces["+ i +"].SimilarFaces["+ j +"].FaceAttributes.FaceBoundary.Width");
+					faceBoundary.Height = context.IntegerValue("FindSimilarFaces.Faces["+ i +"].SimilarFaces["+ j +"].FaceAttributes.FaceBoundary.Height");
+					faceAttributes1.FaceBoundary = faceBoundary;
+					similarFacesItem.FaceAttributes1 = faceAttributes1;
+
+					facesItem_similarFaces.Add(similarFacesItem);
+				}
+				facesItem.SimilarFaces = facesItem_similarFaces;
 
 				findSimilarFacesResponse_faces.Add(facesItem);
 			}

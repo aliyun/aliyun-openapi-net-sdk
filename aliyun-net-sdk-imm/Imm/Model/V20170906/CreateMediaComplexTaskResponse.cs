@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class CreateVideoAnalyseTaskResponse : AcsResponse
+	public class CreateMediaComplexTaskResponse : AcsResponse
 	{
 
 		private string requestId;

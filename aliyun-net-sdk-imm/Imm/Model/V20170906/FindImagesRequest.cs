@@ -40,6 +40,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string externalId;
 
+		private string facesModifyTimeRange;
+
 		private string imageSizeRange;
 
 		private string remarksBPrefix;
@@ -53,6 +55,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private int? limit;
 
 		private string remarksDPrefix;
+
+		private string tagsModifyTimeRange;
 
 		private string sourceType;
 
@@ -118,6 +122,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				externalId = value;
 				DictionaryUtil.Add(QueryParameters, "ExternalId", value);
+			}
+		}
+
+		public string FacesModifyTimeRange
+		{
+			get
+			{
+				return facesModifyTimeRange;
+			}
+			set	
+			{
+				facesModifyTimeRange = value;
+				DictionaryUtil.Add(QueryParameters, "FacesModifyTimeRange", value);
 			}
 		}
 
@@ -209,6 +226,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				remarksDPrefix = value;
 				DictionaryUtil.Add(QueryParameters, "RemarksDPrefix", value);
+			}
+		}
+
+		public string TagsModifyTimeRange
+		{
+			get
+			{
+				return tagsModifyTimeRange;
+			}
+			set	
+			{
+				tagsModifyTimeRange = value;
+				DictionaryUtil.Add(QueryParameters, "TagsModifyTimeRange", value);
 			}
 		}
 

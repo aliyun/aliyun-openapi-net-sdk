@@ -62,6 +62,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private float? similarity;
 
+			private List<FindSimilarFaces_SimilarFacesItem> similarFaces;
+
 			private FindSimilarFaces_FaceAttributes faceAttributes;
 
 			public string FaceId
@@ -100,6 +102,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
+			public List<FindSimilarFaces_SimilarFacesItem> SimilarFaces
+			{
+				get
+				{
+					return similarFaces;
+				}
+				set	
+				{
+					similarFaces = value;
+				}
+			}
+
 			public FindSimilarFaces_FaceAttributes FaceAttributes
 			{
 				get
@@ -112,24 +126,162 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
-			public class FindSimilarFaces_FaceAttributes
+			public class FindSimilarFaces_SimilarFacesItem
 			{
 
-				private FindSimilarFaces_FaceBoundary faceBoundary;
+				private string faceId;
 
-				public FindSimilarFaces_FaceBoundary FaceBoundary
+				private string imageUri;
+
+				private float? similarity;
+
+				private FindSimilarFaces_FaceAttributes1 faceAttributes1;
+
+				public string FaceId
 				{
 					get
 					{
-						return faceBoundary;
+						return faceId;
 					}
 					set	
 					{
-						faceBoundary = value;
+						faceId = value;
 					}
 				}
 
-				public class FindSimilarFaces_FaceBoundary
+				public string ImageUri
+				{
+					get
+					{
+						return imageUri;
+					}
+					set	
+					{
+						imageUri = value;
+					}
+				}
+
+				public float? Similarity
+				{
+					get
+					{
+						return similarity;
+					}
+					set	
+					{
+						similarity = value;
+					}
+				}
+
+				public FindSimilarFaces_FaceAttributes1 FaceAttributes1
+				{
+					get
+					{
+						return faceAttributes1;
+					}
+					set	
+					{
+						faceAttributes1 = value;
+					}
+				}
+
+				public class FindSimilarFaces_FaceAttributes1
+				{
+
+					private FindSimilarFaces_FaceBoundary faceBoundary;
+
+					public FindSimilarFaces_FaceBoundary FaceBoundary
+					{
+						get
+						{
+							return faceBoundary;
+						}
+						set	
+						{
+							faceBoundary = value;
+						}
+					}
+
+					public class FindSimilarFaces_FaceBoundary
+					{
+
+						private int? left;
+
+						private int? top;
+
+						private int? width;
+
+						private int? height;
+
+						public int? Left
+						{
+							get
+							{
+								return left;
+							}
+							set	
+							{
+								left = value;
+							}
+						}
+
+						public int? Top
+						{
+							get
+							{
+								return top;
+							}
+							set	
+							{
+								top = value;
+							}
+						}
+
+						public int? Width
+						{
+							get
+							{
+								return width;
+							}
+							set	
+							{
+								width = value;
+							}
+						}
+
+						public int? Height
+						{
+							get
+							{
+								return height;
+							}
+							set	
+							{
+								height = value;
+							}
+						}
+					}
+				}
+			}
+
+			public class FindSimilarFaces_FaceAttributes
+			{
+
+				private FindSimilarFaces_FaceBoundary2 faceBoundary2;
+
+				public FindSimilarFaces_FaceBoundary2 FaceBoundary2
+				{
+					get
+					{
+						return faceBoundary2;
+					}
+					set	
+					{
+						faceBoundary2 = value;
+					}
+				}
+
+				public class FindSimilarFaces_FaceBoundary2
 				{
 
 					private int? left;
