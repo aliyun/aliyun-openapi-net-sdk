@@ -40,11 +40,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string ownerAccount;
 
-		private string dBInstanceId;
-
 		private long? ownerId;
 
 		private string currentConnectionString;
+
+		private string dBInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -85,19 +85,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -121,6 +108,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				currentConnectionString = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentConnectionString", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

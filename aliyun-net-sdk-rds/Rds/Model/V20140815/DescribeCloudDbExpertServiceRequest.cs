@@ -34,34 +34,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private string serviceRequestParam;
-
 		private long? resourceOwnerId;
 
+		private string serviceRequestType;
+
+		private string serviceRequestParam;
+
 		private string securityToken;
+
+		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string dBInstanceId;
-
 		private long? ownerId;
-
-		private string serviceRequestType;
-
-		public string ServiceRequestParam
-		{
-			get
-			{
-				return serviceRequestParam;
-			}
-			set	
-			{
-				serviceRequestParam = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceRequestParam", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -76,6 +63,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ServiceRequestType
+		{
+			get
+			{
+				return serviceRequestType;
+			}
+			set	
+			{
+				serviceRequestType = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceRequestType", value);
+			}
+		}
+
+		public string ServiceRequestParam
+		{
+			get
+			{
+				return serviceRequestParam;
+			}
+			set	
+			{
+				serviceRequestParam = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceRequestParam", value);
+			}
+		}
+
 		public string SecurityToken
 		{
 			get
@@ -86,6 +99,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -115,19 +141,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -138,19 +151,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ServiceRequestType
-		{
-			get
-			{
-				return serviceRequestType;
-			}
-			set	
-			{
-				serviceRequestType = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceRequestType", value);
 			}
 		}
 

@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeInstanceCrossBackupPolicyResponse.RetentType = context.IntegerValue("DescribeInstanceCrossBackupPolicy.RetentType");
 			describeInstanceCrossBackupPolicyResponse.Retention = context.IntegerValue("DescribeInstanceCrossBackupPolicy.Retention");
 			describeInstanceCrossBackupPolicyResponse.LockMode = context.StringValue("DescribeInstanceCrossBackupPolicy.LockMode");
+			describeInstanceCrossBackupPolicyResponse.RelService = context.StringValue("DescribeInstanceCrossBackupPolicy.RelService");
+			describeInstanceCrossBackupPolicyResponse.RelServiceId = context.StringValue("DescribeInstanceCrossBackupPolicy.RelServiceId");
         
 			return describeInstanceCrossBackupPolicyResponse;
         }

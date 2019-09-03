@@ -40,19 +40,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string flag;
 
-		private string resourceOwnerAccount;
-
 		private string clientToken;
-
-		private string ownerAccount;
 
 		private string dBInstanceId;
 
-		private string backupMode;
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private long? ownerId;
 
 		private string backupJobStatus;
+
+		private string backupMode;
 
 		public string BackupJobId
 		{
@@ -93,19 +93,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -116,19 +103,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -145,16 +119,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupMode
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return backupMode;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				backupMode = value;
-				DictionaryUtil.Add(QueryParameters, "BackupMode", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -181,6 +168,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupJobStatus = value;
 				DictionaryUtil.Add(QueryParameters, "BackupJobStatus", value);
+			}
+		}
+
+		public string BackupMode
+		{
+			get
+			{
+				return backupMode;
+			}
+			set	
+			{
+				backupMode = value;
+				DictionaryUtil.Add(QueryParameters, "BackupMode", value);
 			}
 		}
 

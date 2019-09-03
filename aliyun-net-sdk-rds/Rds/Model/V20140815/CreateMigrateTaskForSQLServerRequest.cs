@@ -36,19 +36,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string taskType;
-
-		private string dBName;
-
-		private string resourceOwnerAccount;
-
 		private string isOnlineDB;
 
 		private string dBInstanceId;
 
+		private string taskType;
+
+		private string resourceOwnerAccount;
+
 		private long? ownerId;
 
 		private string oSSUrls;
+
+		private string dBName;
 
 		public long? ResourceOwnerId
 		{
@@ -60,45 +60,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string TaskType
-		{
-			get
-			{
-				return taskType;
-			}
-			set	
-			{
-				taskType = value;
-				DictionaryUtil.Add(QueryParameters, "TaskType", value);
-			}
-		}
-
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -128,6 +89,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string TaskType
+		{
+			get
+			{
+				return taskType;
+			}
+			set	
+			{
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -151,6 +138,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				oSSUrls = value;
 				DictionaryUtil.Add(QueryParameters, "OSSUrls", value);
+			}
+		}
+
+		public string DBName
+		{
+			get
+			{
+				return dBName;
+			}
+			set	
+			{
+				dBName = value;
+				DictionaryUtil.Add(QueryParameters, "DBName", value);
 			}
 		}
 

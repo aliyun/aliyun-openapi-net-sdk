@@ -40,15 +40,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string tag2key;
 
+		private string clientToken;
+
+		private string tag3key;
+
+		private string tag1value;
+
+		private string dBInstanceId;
+
+		private string tag3value;
+
+		private string proxyId;
+
 		private string tag5key;
 
 		private string resourceOwnerAccount;
 
-		private string clientToken;
-
 		private string ownerAccount;
-
-		private string tag3key;
 
 		private long? ownerId;
 
@@ -58,17 +66,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string tag1key;
 
-		private string tag1value;
-
 		private string tag2value;
 
 		private string tag4key;
-
-		private string dBInstanceId;
-
-		private string tag3value;
-
-		private string proxyId;
 
 		public string Tag4value
 		{
@@ -109,6 +109,84 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string Tag3key
+		{
+			get
+			{
+				return tag3key;
+			}
+			set	
+			{
+				tag3key = value;
+				DictionaryUtil.Add(QueryParameters, "Tag.3.key", value);
+			}
+		}
+
+		public string Tag1value
+		{
+			get
+			{
+				return tag1value;
+			}
+			set	
+			{
+				tag1value = value;
+				DictionaryUtil.Add(QueryParameters, "Tag.1.value", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string Tag3value
+		{
+			get
+			{
+				return tag3value;
+			}
+			set	
+			{
+				tag3value = value;
+				DictionaryUtil.Add(QueryParameters, "Tag.3.value", value);
+			}
+		}
+
+		public string ProxyId
+		{
+			get
+			{
+				return proxyId;
+			}
+			set	
+			{
+				proxyId = value;
+				DictionaryUtil.Add(QueryParameters, "proxyId", value);
+			}
+		}
+
 		public string Tag5key
 		{
 			get
@@ -135,19 +213,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -158,19 +223,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Tag3key
-		{
-			get
-			{
-				return tag3key;
-			}
-			set	
-			{
-				tag3key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.key", value);
 			}
 		}
 
@@ -226,19 +278,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Tag1value
-		{
-			get
-			{
-				return tag1value;
-			}
-			set	
-			{
-				tag1value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.value", value);
-			}
-		}
-
 		public string Tag2value
 		{
 			get
@@ -262,45 +301,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				tag4key = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.4.key", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string Tag3value
-		{
-			get
-			{
-				return tag3value;
-			}
-			set	
-			{
-				tag3value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.value", value);
-			}
-		}
-
-		public string ProxyId
-		{
-			get
-			{
-				return proxyId;
-			}
-			set	
-			{
-				proxyId = value;
-				DictionaryUtil.Add(QueryParameters, "proxyId", value);
 			}
 		}
 

@@ -34,30 +34,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private string backupMethod;
-
 		private long? resourceOwnerId;
 
 		private string backupStrategy;
-
-		private string dBName;
 
 		private string dBInstanceId;
 
 		private string backupType;
 
-		public string BackupMethod
-		{
-			get
-			{
-				return backupMethod;
-			}
-			set	
-			{
-				backupMethod = value;
-				DictionaryUtil.Add(QueryParameters, "BackupMethod", value);
-			}
-		}
+		private string backupMethod;
+
+		private string dBName;
 
 		public long? ResourceOwnerId
 		{
@@ -85,19 +72,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -121,6 +95,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupType = value;
 				DictionaryUtil.Add(QueryParameters, "BackupType", value);
+			}
+		}
+
+		public string BackupMethod
+		{
+			get
+			{
+				return backupMethod;
+			}
+			set	
+			{
+				backupMethod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupMethod", value);
+			}
+		}
+
+		public string DBName
+		{
+			get
+			{
+				return dBName;
+			}
+			set	
+			{
+				dBName = value;
+				DictionaryUtil.Add(QueryParameters, "DBName", value);
 			}
 		}
 

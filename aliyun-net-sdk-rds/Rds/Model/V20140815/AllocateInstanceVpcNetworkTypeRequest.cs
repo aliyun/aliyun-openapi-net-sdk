@@ -34,36 +34,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private string targetVpcId;
-
 		private long? resourceOwnerId;
 
+		private string targetVpcId;
+
 		private string targetZoneId;
+
+		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string dBInstanceId;
-
-		private string targetRegionId;
-
 		private string targetVSwitchId;
 
 		private long? ownerId;
 
-		public string TargetVpcId
-		{
-			get
-			{
-				return targetVpcId;
-			}
-			set	
-			{
-				targetVpcId = value;
-				DictionaryUtil.Add(QueryParameters, "TargetVpcId", value);
-			}
-		}
+		private string targetRegionId;
 
 		public long? ResourceOwnerId
 		{
@@ -78,6 +65,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string TargetVpcId
+		{
+			get
+			{
+				return targetVpcId;
+			}
+			set	
+			{
+				targetVpcId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetVpcId", value);
+			}
+		}
+
 		public string TargetZoneId
 		{
 			get
@@ -88,6 +88,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				targetZoneId = value;
 				DictionaryUtil.Add(QueryParameters, "TargetZoneId", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -117,32 +130,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string TargetRegionId
-		{
-			get
-			{
-				return targetRegionId;
-			}
-			set	
-			{
-				targetRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "TargetRegionId", value);
-			}
-		}
-
 		public string TargetVSwitchId
 		{
 			get
@@ -166,6 +153,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string TargetRegionId
+		{
+			get
+			{
+				return targetRegionId;
+			}
+			set	
+			{
+				targetRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetRegionId", value);
 			}
 		}
 

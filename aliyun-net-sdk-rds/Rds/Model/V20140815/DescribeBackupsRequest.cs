@@ -36,19 +36,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string backupId;
-
-		private string endTime;
-
 		private string startTime;
 
 		private int? pageNumber;
 
-		private string backupStatus;
-
 		private int? pageSize;
 
 		private string dBInstanceId;
+
+		private string backupId;
+
+		private string endTime;
+
+		private string backupStatus;
 
 		private string backupMode;
 
@@ -62,32 +62,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string BackupId
-		{
-			get
-			{
-				return backupId;
-			}
-			set	
-			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -117,19 +91,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupStatus
-		{
-			get
-			{
-				return backupStatus;
-			}
-			set	
-			{
-				backupStatus = value;
-				DictionaryUtil.Add(QueryParameters, "BackupStatus", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -153,6 +114,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string BackupId
+		{
+			get
+			{
+				return backupId;
+			}
+			set	
+			{
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string BackupStatus
+		{
+			get
+			{
+				return backupStatus;
+			}
+			set	
+			{
+				backupStatus = value;
+				DictionaryUtil.Add(QueryParameters, "BackupStatus", value);
 			}
 		}
 

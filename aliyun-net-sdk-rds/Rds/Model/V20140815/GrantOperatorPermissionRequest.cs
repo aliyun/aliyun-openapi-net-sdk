@@ -38,15 +38,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string dBInstanceId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string expiredTime;
-
-		private string dBInstanceId;
-
 		private long? ownerId;
+
+		private string expiredTime;
 
 		public string Privileges
 		{
@@ -71,6 +71,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -100,32 +113,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ExpiredTime
-		{
-			get
-			{
-				return expiredTime;
-			}
-			set	
-			{
-				expiredTime = value;
-				DictionaryUtil.Add(QueryParameters, "ExpiredTime", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -136,6 +123,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ExpiredTime
+		{
+			get
+			{
+				return expiredTime;
+			}
+			set	
+			{
+				expiredTime = value;
+				DictionaryUtil.Add(QueryParameters, "ExpiredTime", value);
 			}
 		}
 

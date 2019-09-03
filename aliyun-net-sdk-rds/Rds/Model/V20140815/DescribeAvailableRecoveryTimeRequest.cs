@@ -38,9 +38,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
-		private int? crossBackupId;
-
 		private long? ownerId;
+
+		private int? crossBackupId;
 
 		public long? ResourceOwnerId
 		{
@@ -68,19 +68,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? CrossBackupId
-		{
-			get
-			{
-				return crossBackupId;
-			}
-			set	
-			{
-				crossBackupId = value;
-				DictionaryUtil.Add(QueryParameters, "CrossBackupId", value.ToString());
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -91,6 +78,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? CrossBackupId
+		{
+			get
+			{
+				return crossBackupId;
+			}
+			set	
+			{
+				crossBackupId = value;
+				DictionaryUtil.Add(QueryParameters, "CrossBackupId", value.ToString());
 			}
 		}
 

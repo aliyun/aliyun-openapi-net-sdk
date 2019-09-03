@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string endTime;
 
-		private string dBInstanceId;
-
 		private string startTime;
+
+		private string dBInstanceId;
 
 		public string EndTime
 		{
@@ -53,19 +53,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
 		public string StartTime
 		{
 			get
@@ -76,6 +63,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

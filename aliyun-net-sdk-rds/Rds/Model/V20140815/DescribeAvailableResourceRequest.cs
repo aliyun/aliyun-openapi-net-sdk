@@ -38,15 +38,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engineVersion;
 
-		private string dBInstanceClass;
-
 		private string engine;
-
-		private string zoneId;
 
 		private string dBInstanceId;
 
 		private string instanceChargeType;
+
+		private string dBInstanceClass;
+
+		private string zoneId;
 
 		private string orderType;
 
@@ -76,19 +76,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceClass
-		{
-			get
-			{
-				return dBInstanceClass;
-			}
-			set	
-			{
-				dBInstanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
-			}
-		}
-
 		public string Engine
 		{
 			get
@@ -99,19 +86,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
@@ -138,6 +112,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				instanceChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+			}
+		}
+
+		public string DBInstanceClass
+		{
+			get
+			{
+				return dBInstanceClass;
+			}
+			set	
+			{
+				dBInstanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 

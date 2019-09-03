@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				item.RetentType = context.IntegerValue("DescribeCrossRegionBackupDBInstance.Items["+ i +"].RetentType");
 				item.Retention = context.IntegerValue("DescribeCrossRegionBackupDBInstance.Items["+ i +"].Retention");
 				item.LockMode = context.StringValue("DescribeCrossRegionBackupDBInstance.Items["+ i +"].LockMode");
+				item.RelService = context.StringValue("DescribeCrossRegionBackupDBInstance.Items["+ i +"].RelService");
+				item.RelServiceId = context.StringValue("DescribeCrossRegionBackupDBInstance.Items["+ i +"].RelServiceId");
 
 				describeCrossRegionBackupDBInstanceResponse_items.Add(item);
 			}

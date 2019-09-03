@@ -36,21 +36,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string startTime;
+
+		private int? pageNumber;
 
 		private int? pageSize;
 
-		private string endTime;
-
 		private string dBInstanceId;
 
-		private string startTime;
+		private string resourceOwnerAccount;
+
+		private string endTime;
 
 		private long? ownerId;
 
 		private string crossBackupRegion;
-
-		private int? pageNumber;
 
 		public long? ResourceOwnerId
 		{
@@ -65,16 +65,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string StartTime
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return startTime;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -91,19 +104,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
 		public string DBInstanceId
 		{
 			get
@@ -117,16 +117,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string StartTime
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return startTime;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -153,19 +166,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				crossBackupRegion = value;
 				DictionaryUtil.Add(QueryParameters, "CrossBackupRegion", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

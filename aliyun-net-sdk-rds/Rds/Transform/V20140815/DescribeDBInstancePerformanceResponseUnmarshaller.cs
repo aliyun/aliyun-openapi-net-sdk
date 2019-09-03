@@ -47,7 +47,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				List<DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey.DescribeDBInstancePerformance_PerformanceValue> performanceKey_values = new List<DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey.DescribeDBInstancePerformance_PerformanceValue>();
 				for (int j = 0; j < context.Length("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Values.Length"); j++) {
 					DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey.DescribeDBInstancePerformance_PerformanceValue performanceValue = new DescribeDBInstancePerformanceResponse.DescribeDBInstancePerformance_PerformanceKey.DescribeDBInstancePerformance_PerformanceValue();
-					performanceValue._Value = context.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Values["+ j +"].Value");
+					performanceValue._Value = context.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Values["+ j +"]._Value");
 					performanceValue.Date = context.StringValue("DescribeDBInstancePerformance.PerformanceKeys["+ i +"].Values["+ j +"].Date");
 
 					performanceKey_values.Add(performanceValue);

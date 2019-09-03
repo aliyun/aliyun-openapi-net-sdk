@@ -103,6 +103,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.Collation = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Collation");
 				dBInstanceAttribute.DispenseMode = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DispenseMode");
 				dBInstanceAttribute.MasterZone = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].MasterZone");
+				dBInstanceAttribute.AutoUpgradeMinorVersion = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].AutoUpgradeMinorVersion");
 
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra extra = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra();
 				extra.ReplicaGroupID = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupID");

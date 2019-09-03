@@ -69,6 +69,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstance.VSwitchId = context.StringValue("DescribeDBInstances.Items["+ i +"].VSwitchId");
 				dBInstance.ReplicateId = context.StringValue("DescribeDBInstances.Items["+ i +"].ReplicateId");
 				dBInstance.ResourceGroupId = context.StringValue("DescribeDBInstances.Items["+ i +"].ResourceGroupId");
+				dBInstance.AutoUpgradeMinorVersion = context.StringValue("DescribeDBInstances.Items["+ i +"].AutoUpgradeMinorVersion");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId> dBInstance_readOnlyDBInstanceIds = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId>();
 				for (int j = 0; j < context.Length("DescribeDBInstances.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

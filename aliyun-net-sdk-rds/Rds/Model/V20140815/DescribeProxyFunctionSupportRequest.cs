@@ -38,11 +38,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string securityToken;
 
+		private string dBInstanceId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string dBInstanceId;
 
 		private long? ownerId;
 
@@ -72,6 +72,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -95,19 +108,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

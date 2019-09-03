@@ -38,17 +38,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? dBInstanceStorage;
 
+		private string clientToken;
+
+		private string engineVersion;
+
+		private string engine;
+
 		private int? quantity;
 
 		private string resourceOwnerAccount;
 
-		private string clientToken;
-
 		private string ownerAccount;
 
 		private string commodityCode;
-
-		private string engineVersion;
 
 		private long? ownerId;
 
@@ -57,8 +59,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string dBInstanceClass;
 
 		private int? instanceUsedType;
-
-		private string engine;
 
 		private string zoneId;
 
@@ -94,6 +94,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
 		public int? Quantity
 		{
 			get
@@ -120,19 +159,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -156,19 +182,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				commodityCode = value;
 				DictionaryUtil.Add(QueryParameters, "CommodityCode", value);
-			}
-		}
-
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
 			}
 		}
 
@@ -221,19 +234,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				instanceUsedType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceUsedType", value.ToString());
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 

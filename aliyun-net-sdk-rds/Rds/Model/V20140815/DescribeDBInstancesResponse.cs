@@ -158,6 +158,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string resourceGroupId;
 
+			private string autoUpgradeMinorVersion;
+
 			private List<DescribeDBInstances_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 			public int? InsId
@@ -517,6 +519,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string AutoUpgradeMinorVersion
+			{
+				get
+				{
+					return autoUpgradeMinorVersion;
+				}
+				set	
+				{
+					autoUpgradeMinorVersion = value;
 				}
 			}
 

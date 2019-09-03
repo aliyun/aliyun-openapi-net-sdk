@@ -36,17 +36,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string dbInstanceId;
+
+		private string hAMode;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private string syncMode;
 
-		private string dbInstanceId;
-
 		private long? ownerId;
-
-		private string hAMode;
 
 		public long? ResourceOwnerId
 		{
@@ -58,6 +58,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string DbInstanceId
+		{
+			get
+			{
+				return dbInstanceId;
+			}
+			set	
+			{
+				dbInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DbInstanceId", value);
+			}
+		}
+
+		public string HAMode
+		{
+			get
+			{
+				return hAMode;
+			}
+			set	
+			{
+				hAMode = value;
+				DictionaryUtil.Add(QueryParameters, "HAMode", value);
 			}
 		}
 
@@ -100,19 +126,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DbInstanceId
-		{
-			get
-			{
-				return dbInstanceId;
-			}
-			set	
-			{
-				dbInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DbInstanceId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -123,19 +136,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string HAMode
-		{
-			get
-			{
-				return hAMode;
-			}
-			set	
-			{
-				hAMode = value;
-				DictionaryUtil.Add(QueryParameters, "HAMode", value);
 			}
 		}
 

@@ -36,6 +36,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string dBInstanceId;
+
 		private string restoreTime;
 
 		private string backupId;
@@ -45,8 +47,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string dbNames;
 
 		private string targetDBInstanceId;
-
-		private string dBInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -58,6 +58,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -123,19 +136,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				targetDBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "TargetDBInstanceId", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

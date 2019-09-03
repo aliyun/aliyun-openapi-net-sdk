@@ -36,11 +36,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private int? dBInstanceStorage;
+
+		private string dBInstanceId;
+
 		private string restoreTime;
 
 		private string period;
-
-		private int? dBInstanceStorage;
 
 		private string backupId;
 
@@ -58,8 +60,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string vPCId;
 
-		private string dBInstanceId;
-
 		private string payType;
 
 		private string instanceNetworkType;
@@ -74,6 +74,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? DBInstanceStorage
+		{
+			get
+			{
+				return dBInstanceStorage;
+			}
+			set	
+			{
+				dBInstanceStorage = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -100,19 +126,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value);
-			}
-		}
-
-		public int? DBInstanceStorage
-		{
-			get
-			{
-				return dBInstanceStorage;
-			}
-			set	
-			{
-				dBInstanceStorage = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
 			}
 		}
 
@@ -217,19 +230,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				vPCId = value;
 				DictionaryUtil.Add(QueryParameters, "VPCId", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

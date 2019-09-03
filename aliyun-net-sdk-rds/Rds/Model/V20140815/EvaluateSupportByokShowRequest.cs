@@ -38,21 +38,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string nodeType;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
 		private string engineVersion;
-
-		private long? ownerId;
 
 		private string securityToken;
 
 		private string engine;
 
-		private string targetRegionId;
-
 		private string dbInstanceStorageType;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
+		private string targetRegionId;
 
 		public long? ResourceOwnerId
 		{
@@ -80,32 +80,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string EngineVersion
 		{
 			get
@@ -116,19 +90,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -158,19 +119,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string TargetRegionId
-		{
-			get
-			{
-				return targetRegionId;
-			}
-			set	
-			{
-				targetRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "TargetRegionId", value);
-			}
-		}
-
 		public string DbInstanceStorageType
 		{
 			get
@@ -181,6 +129,58 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dbInstanceStorageType = value;
 				DictionaryUtil.Add(QueryParameters, "DbInstanceStorageType", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string TargetRegionId
+		{
+			get
+			{
+				return targetRegionId;
+			}
+			set	
+			{
+				targetRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetRegionId", value);
 			}
 		}
 

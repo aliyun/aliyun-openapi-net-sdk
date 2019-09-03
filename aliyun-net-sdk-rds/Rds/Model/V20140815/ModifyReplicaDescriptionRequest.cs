@@ -40,11 +40,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string securityToken;
 
+		private string replicaId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string replicaId;
 
 		private long? ownerId;
 
@@ -87,6 +87,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ReplicaId
+		{
+			get
+			{
+				return replicaId;
+			}
+			set	
+			{
+				replicaId = value;
+				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -110,19 +123,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string ReplicaId
-		{
-			get
-			{
-				return replicaId;
-			}
-			set	
-			{
-				replicaId = value;
-				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
 			}
 		}
 

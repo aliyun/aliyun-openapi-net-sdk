@@ -40,7 +40,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				DescribeOssDownloadsForSQLServerResponse.DescribeOssDownloadsForSQLServer_OssDownload ossDownload = new DescribeOssDownloadsForSQLServerResponse.DescribeOssDownloadsForSQLServer_OssDownload();
 				ossDownload.FileName = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].FileName");
 				ossDownload.CreateTime = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].CreateTime");
-				ossDownload.CreateTime1 = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].CreateTime");
+				ossDownload.CreateTime1 = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].CreateTime1");
 				ossDownload.BakType = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].BakType");
 				ossDownload.FileSize = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].FileSize");
 				ossDownload.Status = context.StringValue("DescribeOssDownloadsForSQLServer.Items["+ i +"].Status");

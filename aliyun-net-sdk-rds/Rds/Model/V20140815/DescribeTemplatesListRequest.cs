@@ -36,6 +36,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string startTime;
+
+		private string sortKey;
+
+		private int? minAvgScanRows;
+
+		private string securityToken;
+
+		private int? pageNumbers;
+
+		private string pagingId;
+
+		private string dBInstanceId;
+
+		private int? maxAvgScanRows;
+
 		private string resourceOwnerAccount;
 
 		private int? minAvgConsume;
@@ -46,29 +62,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string endTime;
 
-		private string startTime;
-
 		private long? ownerId;
 
 		private int? maxAvgConsume;
 
-		private string sortKey;
-
-		private int? minAvgScanRows;
-
 		private string sqType;
 
-		private string securityToken;
-
 		private string sortMethod;
-
-		private int? pageNumbers;
-
-		private string pagingId;
-
-		private string dBInstanceId;
-
-		private int? maxAvgScanRows;
 
 		public long? ResourceOwnerId
 		{
@@ -80,6 +80,110 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string SortKey
+		{
+			get
+			{
+				return sortKey;
+			}
+			set	
+			{
+				sortKey = value;
+				DictionaryUtil.Add(QueryParameters, "SortKey", value);
+			}
+		}
+
+		public int? MinAvgScanRows
+		{
+			get
+			{
+				return minAvgScanRows;
+			}
+			set	
+			{
+				minAvgScanRows = value;
+				DictionaryUtil.Add(QueryParameters, "MinAvgScanRows", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public int? PageNumbers
+		{
+			get
+			{
+				return pageNumbers;
+			}
+			set	
+			{
+				pageNumbers = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumbers", value.ToString());
+			}
+		}
+
+		public string PagingId
+		{
+			get
+			{
+				return pagingId;
+			}
+			set	
+			{
+				pagingId = value;
+				DictionaryUtil.Add(QueryParameters, "PagingId", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public int? MaxAvgScanRows
+		{
+			get
+			{
+				return maxAvgScanRows;
+			}
+			set	
+			{
+				maxAvgScanRows = value;
+				DictionaryUtil.Add(QueryParameters, "MaxAvgScanRows", value.ToString());
 			}
 		}
 
@@ -148,19 +252,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -187,32 +278,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SortKey
-		{
-			get
-			{
-				return sortKey;
-			}
-			set	
-			{
-				sortKey = value;
-				DictionaryUtil.Add(QueryParameters, "SortKey", value);
-			}
-		}
-
-		public int? MinAvgScanRows
-		{
-			get
-			{
-				return minAvgScanRows;
-			}
-			set	
-			{
-				minAvgScanRows = value;
-				DictionaryUtil.Add(QueryParameters, "MinAvgScanRows", value.ToString());
-			}
-		}
-
 		public string SqType
 		{
 			get
@@ -226,19 +291,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
 		public string SortMethod
 		{
 			get
@@ -249,58 +301,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				sortMethod = value;
 				DictionaryUtil.Add(QueryParameters, "SortMethod", value);
-			}
-		}
-
-		public int? PageNumbers
-		{
-			get
-			{
-				return pageNumbers;
-			}
-			set	
-			{
-				pageNumbers = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumbers", value.ToString());
-			}
-		}
-
-		public string PagingId
-		{
-			get
-			{
-				return pagingId;
-			}
-			set	
-			{
-				pagingId = value;
-				DictionaryUtil.Add(QueryParameters, "PagingId", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public int? MaxAvgScanRows
-		{
-			get
-			{
-				return maxAvgScanRows;
-			}
-			set	
-			{
-				maxAvgScanRows = value;
-				DictionaryUtil.Add(QueryParameters, "MaxAvgScanRows", value.ToString());
 			}
 		}
 

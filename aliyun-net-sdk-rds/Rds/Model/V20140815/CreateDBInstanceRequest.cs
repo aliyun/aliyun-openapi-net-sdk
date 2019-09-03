@@ -34,31 +34,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private string connectionMode;
-
 		private long? resourceOwnerId;
 
 		private int? dBInstanceStorage;
 
 		private string systemDBCharset;
 
-		private string clientToken;
-
 		private string engineVersion;
-
-		private string engine;
 
 		private string dBInstanceDescription;
 
-		private string dBInstanceStorageType;
-
 		private string businessInfo;
 
-		private string dBInstanceNetType;
-
 		private string period;
-
-		private string usedTime;
 
 		private string dBInstanceClass;
 
@@ -70,26 +58,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string autoRenew;
 
-		private string vPCId;
-
 		private string zoneId;
-
-		private string payType;
 
 		private string instanceNetworkType;
 
-		public string ConnectionMode
-		{
-			get
-			{
-				return connectionMode;
-			}
-			set	
-			{
-				connectionMode = value;
-				DictionaryUtil.Add(QueryParameters, "ConnectionMode", value);
-			}
-		}
+		private string connectionMode;
+
+		private string clientToken;
+
+		private string engine;
+
+		private string dBInstanceStorageType;
+
+		private string dBInstanceNetType;
+
+		private string usedTime;
+
+		private string vPCId;
+
+		private string category;
+
+		private string payType;
 
 		public long? ResourceOwnerId
 		{
@@ -130,19 +119,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string EngineVersion
 		{
 			get
@@ -153,19 +129,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 
@@ -182,19 +145,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceStorageType
-		{
-			get
-			{
-				return dBInstanceStorageType;
-			}
-			set	
-			{
-				dBInstanceStorageType = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
-			}
-		}
-
 		public string BusinessInfo
 		{
 			get
@@ -208,19 +158,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceNetType
-		{
-			get
-			{
-				return dBInstanceNetType;
-			}
-			set	
-			{
-				dBInstanceNetType = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceNetType", value);
-			}
-		}
-
 		public string Period
 		{
 			get
@@ -231,19 +168,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value);
-			}
-		}
-
-		public string UsedTime
-		{
-			get
-			{
-				return usedTime;
-			}
-			set	
-			{
-				usedTime = value;
-				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
 			}
 		}
 
@@ -312,19 +236,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string VPCId
-		{
-			get
-			{
-				return vPCId;
-			}
-			set	
-			{
-				vPCId = value;
-				DictionaryUtil.Add(QueryParameters, "VPCId", value);
-			}
-		}
-
 		public string ZoneId
 		{
 			get
@@ -338,19 +249,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string PayType
-		{
-			get
-			{
-				return payType;
-			}
-			set	
-			{
-				payType = value;
-				DictionaryUtil.Add(QueryParameters, "PayType", value);
-			}
-		}
-
 		public string InstanceNetworkType
 		{
 			get
@@ -361,6 +259,123 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				instanceNetworkType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
+			}
+		}
+
+		public string ConnectionMode
+		{
+			get
+			{
+				return connectionMode;
+			}
+			set	
+			{
+				connectionMode = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionMode", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string DBInstanceStorageType
+		{
+			get
+			{
+				return dBInstanceStorageType;
+			}
+			set	
+			{
+				dBInstanceStorageType = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
+			}
+		}
+
+		public string DBInstanceNetType
+		{
+			get
+			{
+				return dBInstanceNetType;
+			}
+			set	
+			{
+				dBInstanceNetType = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceNetType", value);
+			}
+		}
+
+		public string UsedTime
+		{
+			get
+			{
+				return usedTime;
+			}
+			set	
+			{
+				usedTime = value;
+				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+			}
+		}
+
+		public string VPCId
+		{
+			get
+			{
+				return vPCId;
+			}
+			set	
+			{
+				vPCId = value;
+				DictionaryUtil.Add(QueryParameters, "VPCId", value);
+			}
+		}
+
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
+			}
+		}
+
+		public string PayType
+		{
+			get
+			{
+				return payType;
+			}
+			set	
+			{
+				payType = value;
+				DictionaryUtil.Add(QueryParameters, "PayType", value);
 			}
 		}
 

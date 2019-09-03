@@ -34,11 +34,24 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
+		private string serviceRequestType;
+
 		private string serviceRequestParam;
 
 		private string dBInstanceId;
 
-		private string serviceRequestType;
+		public string ServiceRequestType
+		{
+			get
+			{
+				return serviceRequestType;
+			}
+			set	
+			{
+				serviceRequestType = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceRequestType", value);
+			}
+		}
 
 		public string ServiceRequestParam
 		{
@@ -63,19 +76,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string ServiceRequestType
-		{
-			get
-			{
-				return serviceRequestType;
-			}
-			set	
-			{
-				serviceRequestType = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceRequestType", value);
 			}
 		}
 

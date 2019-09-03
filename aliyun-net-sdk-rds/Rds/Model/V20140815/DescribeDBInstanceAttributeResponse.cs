@@ -190,6 +190,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string masterZone;
 
+			private string autoUpgradeMinorVersion;
+
 			private List<DescribeDBInstanceAttribute_SlaveZone> slaveZones;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -997,6 +999,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					masterZone = value;
+				}
+			}
+
+			public string AutoUpgradeMinorVersion
+			{
+				get
+				{
+					return autoUpgradeMinorVersion;
+				}
+				set	
+				{
+					autoUpgradeMinorVersion = value;
 				}
 			}
 

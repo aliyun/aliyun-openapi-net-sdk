@@ -36,21 +36,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private string endTime;
-
 		private string startTime;
-
-		private long? ownerId;
-
-		private string crossBackupRegion;
 
 		private int? pageNumber;
 
 		private int? pageSize;
 
 		private string dBInstanceId;
+
+		private string resourceOwnerAccount;
+
+		private string endTime;
+
+		private long? ownerId;
+
+		private string crossBackupRegion;
 
 		private int? crossBackupId;
 
@@ -67,32 +67,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
 		public string StartTime
 		{
 			get
@@ -103,32 +77,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string CrossBackupRegion
-		{
-			get
-			{
-				return crossBackupRegion;
-			}
-			set	
-			{
-				crossBackupRegion = value;
-				DictionaryUtil.Add(QueryParameters, "CrossBackupRegion", value);
 			}
 		}
 
@@ -168,6 +116,58 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string CrossBackupRegion
+		{
+			get
+			{
+				return crossBackupRegion;
+			}
+			set	
+			{
+				crossBackupRegion = value;
+				DictionaryUtil.Add(QueryParameters, "CrossBackupRegion", value);
 			}
 		}
 

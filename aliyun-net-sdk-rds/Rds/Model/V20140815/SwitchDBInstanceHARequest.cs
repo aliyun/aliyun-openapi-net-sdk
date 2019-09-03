@@ -38,19 +38,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
-		private string effectiveTime;
-
 		private string ownerAccount;
+
+		private long? ownerId;
+
+		private string effectiveTime;
 
 		private string dBInstanceId;
 
 		private string force;
 
-		private long? ownerId;
-
 		private string nodeId;
-
-		private string operation;
 
 		public long? ResourceOwnerId
 		{
@@ -78,19 +76,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EffectiveTime
-		{
-			get
-			{
-				return effectiveTime;
-			}
-			set	
-			{
-				effectiveTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -101,6 +86,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string EffectiveTime
+		{
+			get
+			{
+				return effectiveTime;
+			}
+			set	
+			{
+				effectiveTime = value;
+				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
 			}
 		}
 
@@ -130,19 +141,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string NodeId
 		{
 			get
@@ -153,19 +151,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				nodeId = value;
 				DictionaryUtil.Add(QueryParameters, "NodeId", value);
-			}
-		}
-
-		public string Operation
-		{
-			get
-			{
-				return operation;
-			}
-			set	
-			{
-				operation = value;
-				DictionaryUtil.Add(QueryParameters, "Operation", value);
 			}
 		}
 

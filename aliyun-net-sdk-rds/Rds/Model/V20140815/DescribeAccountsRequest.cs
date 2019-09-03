@@ -36,15 +36,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string accountName;
+		private int? pageNumber;
 
-		private string resourceOwnerAccount;
+		private string accountName;
 
 		private int? pageSize;
 
 		private string dBInstanceId;
 
-		private int? pageNumber;
+		private string resourceOwnerAccount;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +59,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
 		public string AccountName
 		{
 			get
@@ -69,19 +82,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				accountName = value;
 				DictionaryUtil.Add(QueryParameters, "AccountName", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -111,16 +111,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageNumber
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return pageNumber;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 

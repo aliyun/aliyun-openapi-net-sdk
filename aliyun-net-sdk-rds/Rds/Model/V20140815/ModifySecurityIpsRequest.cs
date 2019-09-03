@@ -38,19 +38,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string modifyMode;
-
 		private string securityIps;
 
 		private string securityGroupId;
 
 		private string whitelistNetworkType;
 
-		private string dBInstanceIPArrayAttribute;
-
 		private string securityIPType;
 
 		private string dBInstanceId;
+
+		private string modifyMode;
+
+		private string dBInstanceIPArrayAttribute;
 
 		public string DBInstanceIPArrayName
 		{
@@ -75,19 +75,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ModifyMode
-		{
-			get
-			{
-				return modifyMode;
-			}
-			set	
-			{
-				modifyMode = value;
-				DictionaryUtil.Add(QueryParameters, "ModifyMode", value);
 			}
 		}
 
@@ -130,19 +117,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceIPArrayAttribute
-		{
-			get
-			{
-				return dBInstanceIPArrayAttribute;
-			}
-			set	
-			{
-				dBInstanceIPArrayAttribute = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayAttribute", value);
-			}
-		}
-
 		public string SecurityIPType
 		{
 			get
@@ -166,6 +140,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string ModifyMode
+		{
+			get
+			{
+				return modifyMode;
+			}
+			set	
+			{
+				modifyMode = value;
+				DictionaryUtil.Add(QueryParameters, "ModifyMode", value);
+			}
+		}
+
+		public string DBInstanceIPArrayAttribute
+		{
+			get
+			{
+				return dBInstanceIPArrayAttribute;
+			}
+			set	
+			{
+				dBInstanceIPArrayAttribute = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayAttribute", value);
 			}
 		}
 

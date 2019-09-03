@@ -34,27 +34,47 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         {
         }
 
-		private string connectionMode;
-
 		private string tag4value;
 
 		private long? resourceOwnerId;
 
 		private string tag2key;
 
-		private string clientToken;
-
-		private string searchKey;
-
 		private string tag3key;
 
 		private string engineVersion;
 
-		private int? pageNumber;
-
 		private string tag1value;
 
 		private string resourceGroupId;
+
+		private string proxyId;
+
+		private string tag5key;
+
+		private long? ownerId;
+
+		private string dBInstanceType;
+
+		private string dBInstanceClass;
+
+		private string tags;
+
+		private string vSwitchId;
+
+		private string zoneId;
+
+		private string tag4key;
+
+		private string instanceNetworkType;
+
+		private string connectionMode;
+
+		private string clientToken;
+
+		private string searchKey;
+
+		private int? pageNumber;
 
 		private string expired;
 
@@ -68,25 +88,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string tag3value;
 
-		private string proxyId;
-
-		private string tag5key;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private long? ownerId;
-
 		private string tag5value;
-
-		private string dBInstanceType;
-
-		private string dBInstanceClass;
-
-		private string tags;
-
-		private string vSwitchId;
 
 		private string tag1key;
 
@@ -94,26 +100,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string tag2value;
 
-		private string zoneId;
-
-		private string tag4key;
-
 		private string payType;
-
-		private string instanceNetworkType;
-
-		public string ConnectionMode
-		{
-			get
-			{
-				return connectionMode;
-			}
-			set	
-			{
-				connectionMode = value;
-				DictionaryUtil.Add(QueryParameters, "ConnectionMode", value);
-			}
-		}
 
 		public string Tag4value
 		{
@@ -154,32 +141,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string SearchKey
-		{
-			get
-			{
-				return searchKey;
-			}
-			set	
-			{
-				searchKey = value;
-				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
-			}
-		}
-
 		public string Tag3key
 		{
 			get
@@ -206,19 +167,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string Tag1value
 		{
 			get
@@ -242,6 +190,188 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string ProxyId
+		{
+			get
+			{
+				return proxyId;
+			}
+			set	
+			{
+				proxyId = value;
+				DictionaryUtil.Add(QueryParameters, "proxyId", value);
+			}
+		}
+
+		public string Tag5key
+		{
+			get
+			{
+				return tag5key;
+			}
+			set	
+			{
+				tag5key = value;
+				DictionaryUtil.Add(QueryParameters, "Tag.5.key", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string DBInstanceType
+		{
+			get
+			{
+				return dBInstanceType;
+			}
+			set	
+			{
+				dBInstanceType = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceType", value);
+			}
+		}
+
+		public string DBInstanceClass
+		{
+			get
+			{
+				return dBInstanceClass;
+			}
+			set	
+			{
+				dBInstanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string Tag4key
+		{
+			get
+			{
+				return tag4key;
+			}
+			set	
+			{
+				tag4key = value;
+				DictionaryUtil.Add(QueryParameters, "Tag.4.key", value);
+			}
+		}
+
+		public string InstanceNetworkType
+		{
+			get
+			{
+				return instanceNetworkType;
+			}
+			set	
+			{
+				instanceNetworkType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
+			}
+		}
+
+		public string ConnectionMode
+		{
+			get
+			{
+				return connectionMode;
+			}
+			set	
+			{
+				connectionMode = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionMode", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string SearchKey
+		{
+			get
+			{
+				return searchKey;
+			}
+			set	
+			{
+				searchKey = value;
+				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -323,32 +453,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ProxyId
-		{
-			get
-			{
-				return proxyId;
-			}
-			set	
-			{
-				proxyId = value;
-				DictionaryUtil.Add(QueryParameters, "proxyId", value);
-			}
-		}
-
-		public string Tag5key
-		{
-			get
-			{
-				return tag5key;
-			}
-			set	
-			{
-				tag5key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.key", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -375,19 +479,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string Tag5value
 		{
 			get
@@ -398,58 +489,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				tag5value = value;
 				DictionaryUtil.Add(QueryParameters, "Tag.5.value", value);
-			}
-		}
-
-		public string DBInstanceType
-		{
-			get
-			{
-				return dBInstanceType;
-			}
-			set	
-			{
-				dBInstanceType = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceType", value);
-			}
-		}
-
-		public string DBInstanceClass
-		{
-			get
-			{
-				return dBInstanceClass;
-			}
-			set	
-			{
-				dBInstanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
-			}
-		}
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
@@ -492,32 +531,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string Tag4key
-		{
-			get
-			{
-				return tag4key;
-			}
-			set	
-			{
-				tag4key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.key", value);
-			}
-		}
-
 		public string PayType
 		{
 			get
@@ -528,19 +541,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				payType = value;
 				DictionaryUtil.Add(QueryParameters, "PayType", value);
-			}
-		}
-
-		public string InstanceNetworkType
-		{
-			get
-			{
-				return instanceNetworkType;
-			}
-			set	
-			{
-				instanceNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
 			}
 		}
 

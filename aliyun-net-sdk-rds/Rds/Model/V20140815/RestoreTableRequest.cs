@@ -36,19 +36,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string restoreTime;
-
-		private string resourceOwnerAccount;
-
 		private string clientToken;
-
-		private string backupId;
-
-		private string ownerAccount;
 
 		private string tableMeta;
 
 		private string dBInstanceId;
+
+		private string restoreTime;
+
+		private string resourceOwnerAccount;
+
+		private string backupId;
+
+		private string ownerAccount;
 
 		private long? ownerId;
 
@@ -62,6 +62,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string TableMeta
+		{
+			get
+			{
+				return tableMeta;
+			}
+			set	
+			{
+				tableMeta = value;
+				DictionaryUtil.Add(QueryParameters, "TableMeta", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -91,19 +130,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string BackupId
 		{
 			get
@@ -127,32 +153,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string TableMeta
-		{
-			get
-			{
-				return tableMeta;
-			}
-			set	
-			{
-				tableMeta = value;
-				DictionaryUtil.Add(QueryParameters, "TableMeta", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

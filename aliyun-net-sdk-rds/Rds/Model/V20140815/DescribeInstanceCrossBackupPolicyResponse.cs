@@ -65,6 +65,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string lockMode;
 
+		private string relService;
+
+		private string relServiceId;
+
 		public string RequestId
 		{
 			get
@@ -302,6 +306,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				lockMode = value;
+			}
+		}
+
+		public string RelService
+		{
+			get
+			{
+				return relService;
+			}
+			set	
+			{
+				relService = value;
+			}
+		}
+
+		public string RelServiceId
+		{
+			get
+			{
+				return relServiceId;
+			}
+			set	
+			{
+				relServiceId = value;
 			}
 		}
 	}

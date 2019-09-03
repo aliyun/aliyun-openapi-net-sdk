@@ -38,6 +38,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string connectionStringPrefix;
 
+		private string distributionType;
+
+		private string dBInstanceId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -48,11 +52,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string port;
 
-		private string distributionType;
-
 		private string netType;
-
-		private string dBInstanceId;
 
 		private string maxDelayTime;
 
@@ -79,6 +79,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				connectionStringPrefix = value;
 				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
+			}
+		}
+
+		public string DistributionType
+		{
+			get
+			{
+				return distributionType;
+			}
+			set	
+			{
+				distributionType = value;
+				DictionaryUtil.Add(QueryParameters, "DistributionType", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -147,19 +173,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DistributionType
-		{
-			get
-			{
-				return distributionType;
-			}
-			set	
-			{
-				distributionType = value;
-				DictionaryUtil.Add(QueryParameters, "DistributionType", value);
-			}
-		}
-
 		public string NetType
 		{
 			get
@@ -170,19 +183,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				netType = value;
 				DictionaryUtil.Add(QueryParameters, "NetType", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

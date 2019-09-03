@@ -36,25 +36,25 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string restoreTime;
-
 		private int? dBInstanceStorage;
 
 		private string sourceDBInstanceName;
 
+		private string engineVersion;
+
+		private string engine;
+
+		private string restoreTime;
+
 		private string resourceOwnerAccount;
 
 		private string backupSetId;
-
-		private string engineVersion;
 
 		private long? ownerId;
 
 		private string dBInstanceClass;
 
 		private string restoreType;
-
-		private string engine;
 
 		private string sourceRegion;
 
@@ -68,19 +68,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string RestoreTime
-		{
-			get
-			{
-				return restoreTime;
-			}
-			set	
-			{
-				restoreTime = value;
-				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
 			}
 		}
 
@@ -110,6 +97,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string EngineVersion
+		{
+			get
+			{
+				return engineVersion;
+			}
+			set	
+			{
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string RestoreTime
+		{
+			get
+			{
+				return restoreTime;
+			}
+			set	
+			{
+				restoreTime = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -133,19 +159,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupSetId = value;
 				DictionaryUtil.Add(QueryParameters, "BackupSetId", value);
-			}
-		}
-
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
 			}
 		}
 
@@ -185,19 +198,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				restoreType = value;
 				DictionaryUtil.Add(QueryParameters, "RestoreType", value);
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 

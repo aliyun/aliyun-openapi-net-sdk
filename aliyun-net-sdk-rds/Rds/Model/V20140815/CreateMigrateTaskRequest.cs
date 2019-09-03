@@ -36,11 +36,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string isOnlineDB;
+
+		private string dBInstanceId;
+
 		private string migrateTaskId;
 
 		private string resourceOwnerAccount;
-
-		private string isOnlineDB;
 
 		private long? ownerId;
 
@@ -49,8 +51,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string oSSUrls;
 
 		private string dBName;
-
-		private string dBInstanceId;
 
 		private string backupMode;
 
@@ -66,6 +66,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string IsOnlineDB
+		{
+			get
+			{
+				return isOnlineDB;
+			}
+			set	
+			{
+				isOnlineDB = value;
+				DictionaryUtil.Add(QueryParameters, "IsOnlineDB", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -92,19 +118,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string IsOnlineDB
-		{
-			get
-			{
-				return isOnlineDB;
-			}
-			set	
-			{
-				isOnlineDB = value;
-				DictionaryUtil.Add(QueryParameters, "IsOnlineDB", value);
 			}
 		}
 
@@ -157,19 +170,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBName = value;
 				DictionaryUtil.Add(QueryParameters, "DBName", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

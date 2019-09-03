@@ -38,21 +38,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? retentType;
 
+		private string backupEnabled;
+
+		private string dBInstanceId;
+
+		private int? retention;
+
 		private string resourceOwnerAccount;
 
 		private string crossBackupType;
 
 		private string logBackupEnabled;
 
-		private string backupEnabled;
-
 		private long? ownerId;
 
 		private string crossBackupRegion;
-
-		private string dBInstanceId;
-
-		private int? retention;
 
 		public long? ResourceOwnerId
 		{
@@ -77,6 +77,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				retentType = value;
 				DictionaryUtil.Add(QueryParameters, "RetentType", value.ToString());
+			}
+		}
+
+		public string BackupEnabled
+		{
+			get
+			{
+				return backupEnabled;
+			}
+			set	
+			{
+				backupEnabled = value;
+				DictionaryUtil.Add(QueryParameters, "BackupEnabled", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public int? Retention
+		{
+			get
+			{
+				return retention;
+			}
+			set	
+			{
+				retention = value;
+				DictionaryUtil.Add(QueryParameters, "Retention", value.ToString());
 			}
 		}
 
@@ -119,19 +158,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupEnabled
-		{
-			get
-			{
-				return backupEnabled;
-			}
-			set	
-			{
-				backupEnabled = value;
-				DictionaryUtil.Add(QueryParameters, "BackupEnabled", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -155,32 +181,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				crossBackupRegion = value;
 				DictionaryUtil.Add(QueryParameters, "CrossBackupRegion", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public int? Retention
-		{
-			get
-			{
-				return retention;
-			}
-			set	
-			{
-				retention = value;
-				DictionaryUtil.Add(QueryParameters, "Retention", value.ToString());
 			}
 		}
 
