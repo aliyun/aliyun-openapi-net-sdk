@@ -27,10 +27,10 @@ using Aliyun.Acs.Slb.Transform.V20140515;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-    public class DeleteServerCertificateRequest : RpcAcsRequest<DeleteServerCertificateResponse>
+    public class SetLoadBalancerDeleteProtectionRequest : RpcAcsRequest<SetLoadBalancerDeleteProtectionResponse>
     {
-        public DeleteServerCertificateRequest()
-            : base("Slb", "2014-05-15", "DeleteServerCertificate", "slb", "openAPI")
+        public SetLoadBalancerDeleteProtectionRequest()
+            : base("Slb", "2014-05-15", "SetLoadBalancerDeleteProtection", "slb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,15 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private long? resourceOwnerId;
 
+		private string deleteProtection;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string serverCertificateId;
+		private string loadBalancerId;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string DeleteProtection
+		{
+			get
+			{
+				return deleteProtection;
+			}
+			set	
+			{
+				deleteProtection = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteProtection", value);
 			}
 		}
 
@@ -101,22 +116,22 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string ServerCertificateId
+		public string LoadBalancerId
 		{
 			get
 			{
-				return serverCertificateId;
+				return loadBalancerId;
 			}
 			set	
 			{
-				serverCertificateId = value;
-				DictionaryUtil.Add(QueryParameters, "ServerCertificateId", value);
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
 			}
 		}
 
-        public override DeleteServerCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetLoadBalancerDeleteProtectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteServerCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetLoadBalancerDeleteProtectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

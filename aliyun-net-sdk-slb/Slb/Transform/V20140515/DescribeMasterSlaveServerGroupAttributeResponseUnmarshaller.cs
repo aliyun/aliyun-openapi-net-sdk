@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 
 			describeMasterSlaveServerGroupAttributeResponse.HttpResponse = context.HttpResponse;
 			describeMasterSlaveServerGroupAttributeResponse.RequestId = context.StringValue("DescribeMasterSlaveServerGroupAttribute.RequestId");
+			describeMasterSlaveServerGroupAttributeResponse.LoadBalancerId = context.StringValue("DescribeMasterSlaveServerGroupAttribute.LoadBalancerId");
 			describeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupId = context.StringValue("DescribeMasterSlaveServerGroupAttribute.MasterSlaveServerGroupId");
 			describeMasterSlaveServerGroupAttributeResponse.MasterSlaveServerGroupName = context.StringValue("DescribeMasterSlaveServerGroupAttribute.MasterSlaveServerGroupName");
 

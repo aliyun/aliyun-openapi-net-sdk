@@ -32,17 +32,22 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public DeleteDomainExtensionRequest()
             : base("Slb", "2014-05-15", "DeleteDomainExtension", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string domainExtensionId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string domainExtensionId;
 
 		public long? ResourceOwnerId
 		{
@@ -54,6 +59,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string DomainExtensionId
+		{
+			get
+			{
+				return domainExtensionId;
+			}
+			set	
+			{
+				domainExtensionId = value;
+				DictionaryUtil.Add(QueryParameters, "DomainExtensionId", value);
 			}
 		}
 
@@ -93,19 +111,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string DomainExtensionId
-		{
-			get
-			{
-				return domainExtensionId;
-			}
-			set	
-			{
-				domainExtensionId = value;
-				DictionaryUtil.Add(QueryParameters, "DomainExtensionId", value);
 			}
 		}
 

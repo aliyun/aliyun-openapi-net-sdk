@@ -32,23 +32,28 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public CreateDomainExtensionRequest()
             : base("Slb", "2014-05-15", "CreateDomainExtension", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private int? listenerPort;
 
-		private string loadBalancerId;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string domain;
-
 		private long? ownerId;
 
 		private string serverCertificateId;
+
+		private string loadBalancerId;
+
+		private string domain;
 
 		public long? ResourceOwnerId
 		{
@@ -73,19 +78,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				listenerPort = value;
 				DictionaryUtil.Add(QueryParameters, "ListenerPort", value.ToString());
-			}
-		}
-
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
 			}
 		}
 
@@ -115,19 +107,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Domain
-		{
-			get
-			{
-				return domain;
-			}
-			set	
-			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -151,6 +130,32 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				serverCertificateId = value;
 				DictionaryUtil.Add(QueryParameters, "ServerCertificateId", value);
+			}
+		}
+
+		public string LoadBalancerId
+		{
+			get
+			{
+				return loadBalancerId;
+			}
+			set	
+			{
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+			}
+		}
+
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
 			}
 		}
 

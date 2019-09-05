@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string healthCheck;
 
+		private string healthCheckType;
+
 		private string healthCheckDomain;
 
 		private string healthCheckURI;
@@ -68,6 +70,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string healthCheckHttpCode;
 
 		private string healthCheckMethod;
+
+		private string healthCheckHttpVersion;
 
 		private int? maxConnection;
 
@@ -257,6 +261,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string HealthCheckType
+		{
+			get
+			{
+				return healthCheckType;
+			}
+			set	
+			{
+				healthCheckType = value;
+			}
+		}
+
 		public string HealthCheckDomain
 		{
 			get
@@ -362,6 +378,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				healthCheckMethod = value;
+			}
+		}
+
+		public string HealthCheckHttpVersion
+		{
+			get
+			{
+				return healthCheckHttpVersion;
+			}
+			set	
+			{
+				healthCheckHttpVersion = value;
 			}
 		}
 

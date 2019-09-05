@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerTCPListenerAttributeResponse.HealthCheckDomain = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.HealthCheckDomain");
 			describeLoadBalancerTCPListenerAttributeResponse.HealthCheckURI = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.HealthCheckURI");
 			describeLoadBalancerTCPListenerAttributeResponse.HealthCheckType = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.HealthCheckType");
+			describeLoadBalancerTCPListenerAttributeResponse.HealthCheckMethod = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.HealthCheckMethod");
 			describeLoadBalancerTCPListenerAttributeResponse.MaxConnection = context.IntegerValue("DescribeLoadBalancerTCPListenerAttribute.MaxConnection");
 			describeLoadBalancerTCPListenerAttributeResponse.VServerGroupId = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.VServerGroupId");
 			describeLoadBalancerTCPListenerAttributeResponse.MasterSlaveServerGroupId = context.StringValue("DescribeLoadBalancerTCPListenerAttribute.MasterSlaveServerGroupId");

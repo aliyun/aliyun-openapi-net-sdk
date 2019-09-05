@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPSListenerAttributeResponse.RequestId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.RequestId");
 			describeLoadBalancerHTTPSListenerAttributeResponse.ListenerPort = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.ListenerPort");
 			describeLoadBalancerHTTPSListenerAttributeResponse.BackendServerPort = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.BackendServerPort");
+			describeLoadBalancerHTTPSListenerAttributeResponse.BackendProtocol = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.BackendProtocol");
 			describeLoadBalancerHTTPSListenerAttributeResponse.Bandwidth = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.Bandwidth");
 			describeLoadBalancerHTTPSListenerAttributeResponse.Status = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Status");
 			describeLoadBalancerHTTPSListenerAttributeResponse.SecurityStatus = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.SecurityStatus");
@@ -44,6 +45,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPSListenerAttributeResponse.CookieTimeout = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.CookieTimeout");
 			describeLoadBalancerHTTPSListenerAttributeResponse.Cookie = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Cookie");
 			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheck = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheck");
+			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckType = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckType");
 			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckDomain = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckDomain");
 			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckURI = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckURI");
 			describeLoadBalancerHTTPSListenerAttributeResponse.HealthyThreshold = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthyThreshold");
@@ -55,6 +57,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPSListenerAttributeResponse.ServerCertificateId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.ServerCertificateId");
 			describeLoadBalancerHTTPSListenerAttributeResponse.CACertificateId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.CACertificateId");
 			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckMethod = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckMethod");
+			describeLoadBalancerHTTPSListenerAttributeResponse.HealthCheckHttpVersion = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.HealthCheckHttpVersion");
 			describeLoadBalancerHTTPSListenerAttributeResponse.MaxConnection = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.MaxConnection");
 			describeLoadBalancerHTTPSListenerAttributeResponse.VServerGroupId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.VServerGroupId");
 			describeLoadBalancerHTTPSListenerAttributeResponse.Gzip = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Gzip");

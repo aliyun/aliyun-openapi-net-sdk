@@ -32,11 +32,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public CreateVServerGroupRequest()
             : base("Slb", "2014-05-15", "CreateVServerGroup", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string loadBalancerId;
+		private string backendServers;
 
 		private string resourceOwnerAccount;
 
@@ -44,9 +49,9 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private long? ownerId;
 
-		private string backendServers;
-
 		private string vServerGroupName;
+
+		private string loadBalancerId;
 
 		public long? ResourceOwnerId
 		{
@@ -61,16 +66,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string LoadBalancerId
+		public string BackendServers
 		{
 			get
 			{
-				return loadBalancerId;
+				return backendServers;
 			}
 			set	
 			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+				backendServers = value;
+				DictionaryUtil.Add(QueryParameters, "BackendServers", value);
 			}
 		}
 
@@ -113,19 +118,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string BackendServers
-		{
-			get
-			{
-				return backendServers;
-			}
-			set	
-			{
-				backendServers = value;
-				DictionaryUtil.Add(QueryParameters, "BackendServers", value);
-			}
-		}
-
 		public string VServerGroupName
 		{
 			get
@@ -136,6 +128,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				vServerGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "VServerGroupName", value);
+			}
+		}
+
+		public string LoadBalancerId
+		{
+			get
+			{
+				return loadBalancerId;
+			}
+			set	
+			{
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
 			}
 		}
 

@@ -32,34 +32,26 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public DescribeVServerGroupsRequest()
             : base("Slb", "2014-05-15", "DescribeVServerGroups", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private bool? includeRule;
 
 		private long? resourceOwnerId;
 
-		private string loadBalancerId;
+		private bool? includeListener;
+
+		private bool? includeRule;
 
 		private string resourceOwnerAccount;
-
-		private bool? includeListener;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		public bool? IncludeRule
-		{
-			get
-			{
-				return includeRule;
-			}
-			set	
-			{
-				includeRule = value;
-				DictionaryUtil.Add(QueryParameters, "IncludeRule", value.ToString());
-			}
-		}
+		private string loadBalancerId;
 
 		public long? ResourceOwnerId
 		{
@@ -74,16 +66,29 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string LoadBalancerId
+		public bool? IncludeListener
 		{
 			get
 			{
-				return loadBalancerId;
+				return includeListener;
 			}
 			set	
 			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+				includeListener = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeListener", value.ToString());
+			}
+		}
+
+		public bool? IncludeRule
+		{
+			get
+			{
+				return includeRule;
+			}
+			set	
+			{
+				includeRule = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeRule", value.ToString());
 			}
 		}
 
@@ -97,19 +102,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public bool? IncludeListener
-		{
-			get
-			{
-				return includeListener;
-			}
-			set	
-			{
-				includeListener = value;
-				DictionaryUtil.Add(QueryParameters, "IncludeListener", value.ToString());
 			}
 		}
 
@@ -136,6 +128,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LoadBalancerId
+		{
+			get
+			{
+				return loadBalancerId;
+			}
+			set	
+			{
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
 			}
 		}
 

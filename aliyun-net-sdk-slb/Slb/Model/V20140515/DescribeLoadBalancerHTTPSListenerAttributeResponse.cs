@@ -31,6 +31,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? backendServerPort;
 
+		private int? backendProtocol;
+
 		private int? bandwidth;
 
 		private string status;
@@ -50,6 +52,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string cookie;
 
 		private string healthCheck;
+
+		private string healthCheckType;
 
 		private string healthCheckDomain;
 
@@ -72,6 +76,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string cACertificateId;
 
 		private string healthCheckMethod;
+
+		private string healthCheckHttpVersion;
 
 		private int? maxConnection;
 
@@ -140,6 +146,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				backendServerPort = value;
+			}
+		}
+
+		public int? BackendProtocol
+		{
+			get
+			{
+				return backendProtocol;
+			}
+			set	
+			{
+				backendProtocol = value;
 			}
 		}
 
@@ -260,6 +278,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				healthCheck = value;
+			}
+		}
+
+		public string HealthCheckType
+		{
+			get
+			{
+				return healthCheckType;
+			}
+			set	
+			{
+				healthCheckType = value;
 			}
 		}
 
@@ -392,6 +422,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				healthCheckMethod = value;
+			}
+		}
+
+		public string HealthCheckHttpVersion
+		{
+			get
+			{
+				return healthCheckHttpVersion;
+			}
+			set	
+			{
+				healthCheckHttpVersion = value;
 			}
 		}
 

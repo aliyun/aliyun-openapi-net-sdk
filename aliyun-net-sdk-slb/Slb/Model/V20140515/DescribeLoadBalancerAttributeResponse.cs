@@ -91,6 +91,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string reservedInfoActiveTime;
 
+		private string deleteProtection;
+
+		private string cloudInstanceType;
+
+		private string cloudInstanceId;
+
+		private string tunnelType;
+
+		private long? cloudInstanceUid;
+
 		private List<DescribeLoadBalancerAttribute_ListenerPortAndProtocal> listenerPortsAndProtocal;
 
 		private List<DescribeLoadBalancerAttribute_ListenerPortAndProtocol> listenerPortsAndProtocol;
@@ -492,6 +502,66 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				reservedInfoActiveTime = value;
+			}
+		}
+
+		public string DeleteProtection
+		{
+			get
+			{
+				return deleteProtection;
+			}
+			set	
+			{
+				deleteProtection = value;
+			}
+		}
+
+		public string CloudInstanceType
+		{
+			get
+			{
+				return cloudInstanceType;
+			}
+			set	
+			{
+				cloudInstanceType = value;
+			}
+		}
+
+		public string CloudInstanceId
+		{
+			get
+			{
+				return cloudInstanceId;
+			}
+			set	
+			{
+				cloudInstanceId = value;
+			}
+		}
+
+		public string TunnelType
+		{
+			get
+			{
+				return tunnelType;
+			}
+			set	
+			{
+				tunnelType = value;
+			}
+		}
+
+		public long? CloudInstanceUid
+		{
+			get
+			{
+				return cloudInstanceUid;
+			}
+			set	
+			{
+				cloudInstanceUid = value;
 			}
 		}
 

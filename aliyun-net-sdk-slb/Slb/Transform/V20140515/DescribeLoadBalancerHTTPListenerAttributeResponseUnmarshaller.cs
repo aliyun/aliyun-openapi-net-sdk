@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPListenerAttributeResponse.CookieTimeout = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.CookieTimeout");
 			describeLoadBalancerHTTPListenerAttributeResponse.Cookie = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.Cookie");
 			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheck = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheck");
+			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheckType = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheckType");
 			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheckDomain = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheckDomain");
 			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheckURI = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheckURI");
 			describeLoadBalancerHTTPListenerAttributeResponse.HealthyThreshold = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.HealthyThreshold");
@@ -53,6 +54,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheckConnectPort = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheckConnectPort");
 			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheckHttpCode = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheckHttpCode");
 			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheckMethod = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheckMethod");
+			describeLoadBalancerHTTPListenerAttributeResponse.HealthCheckHttpVersion = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.HealthCheckHttpVersion");
 			describeLoadBalancerHTTPListenerAttributeResponse.MaxConnection = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.MaxConnection");
 			describeLoadBalancerHTTPListenerAttributeResponse.VServerGroupId = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.VServerGroupId");
 			describeLoadBalancerHTTPListenerAttributeResponse.Gzip = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.Gzip");

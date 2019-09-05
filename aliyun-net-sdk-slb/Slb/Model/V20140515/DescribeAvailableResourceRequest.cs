@@ -32,19 +32,24 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public DescribeAvailableResourceRequest()
             : base("Slb", "2014-05-15", "DescribeAvailableResource", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string addressIPVersion;
+
+		private string addressType;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string addressType;
-
 		private long? ownerId;
-
-		private string addressIPVersion;
 
 		public long? ResourceOwnerId
 		{
@@ -56,6 +61,32 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string AddressIPVersion
+		{
+			get
+			{
+				return addressIPVersion;
+			}
+			set	
+			{
+				addressIPVersion = value;
+				DictionaryUtil.Add(QueryParameters, "AddressIPVersion", value);
+			}
+		}
+
+		public string AddressType
+		{
+			get
+			{
+				return addressType;
+			}
+			set	
+			{
+				addressType = value;
+				DictionaryUtil.Add(QueryParameters, "AddressType", value);
 			}
 		}
 
@@ -85,19 +116,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string AddressType
-		{
-			get
-			{
-				return addressType;
-			}
-			set	
-			{
-				addressType = value;
-				DictionaryUtil.Add(QueryParameters, "AddressType", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -108,19 +126,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AddressIPVersion
-		{
-			get
-			{
-				return addressIPVersion;
-			}
-			set	
-			{
-				addressIPVersion = value;
-				DictionaryUtil.Add(QueryParameters, "AddressIPVersion", value);
 			}
 		}
 

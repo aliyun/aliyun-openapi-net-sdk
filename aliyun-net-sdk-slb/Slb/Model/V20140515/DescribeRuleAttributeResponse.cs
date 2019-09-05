@@ -25,6 +25,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 	public class DescribeRuleAttributeResponse : AcsResponse
 	{
 
+		private string ruleId;
+
 		private string requestId;
 
 		private string ruleName;
@@ -68,6 +70,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private int? healthCheckConnectPort;
 
 		private string healthCheckHttpCode;
+
+		public string RuleId
+		{
+			get
+			{
+				return ruleId;
+			}
+			set	
+			{
+				ruleId = value;
+			}
+		}
 
 		public string RequestId
 		{

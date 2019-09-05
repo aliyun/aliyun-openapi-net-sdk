@@ -32,11 +32,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public DescribeAccessControlListAttributeRequest()
             : base("Slb", "2014-05-15", "DescribeAccessControlListAttribute", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string aclId;
-
 		private long? resourceOwnerId;
+
+		private string aclId;
 
 		private string resourceOwnerAccount;
 
@@ -45,19 +50,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string aclEntryComment;
 
 		private long? ownerId;
-
-		public string AclId
-		{
-			get
-			{
-				return aclId;
-			}
-			set	
-			{
-				aclId = value;
-				DictionaryUtil.Add(QueryParameters, "AclId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -69,6 +61,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string AclId
+		{
+			get
+			{
+				return aclId;
+			}
+			set	
+			{
+				aclId = value;
+				DictionaryUtil.Add(QueryParameters, "AclId", value);
 			}
 		}
 

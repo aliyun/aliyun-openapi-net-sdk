@@ -32,34 +32,26 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public UploadCACertificateRequest()
             : base("Slb", "2014-05-15", "UploadCACertificate", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string resourceGroupId;
 
 		private long? resourceOwnerId;
 
-		private string cACertificate;
+		private string resourceGroupId;
 
 		private string cACertificateName;
+
+		private string cACertificate;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -74,16 +66,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string CACertificate
+		public string ResourceGroupId
 		{
 			get
 			{
-				return cACertificate;
+				return resourceGroupId;
 			}
 			set	
 			{
-				cACertificate = value;
-				DictionaryUtil.Add(QueryParameters, "CACertificate", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -97,6 +89,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				cACertificateName = value;
 				DictionaryUtil.Add(QueryParameters, "CACertificateName", value);
+			}
+		}
+
+		public string CACertificate
+		{
+			get
+			{
+				return cACertificate;
+			}
+			set	
+			{
+				cACertificate = value;
+				DictionaryUtil.Add(QueryParameters, "CACertificate", value);
 			}
 		}
 

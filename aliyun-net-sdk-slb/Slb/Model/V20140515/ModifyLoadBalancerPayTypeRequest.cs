@@ -32,9 +32,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public ModifyLoadBalancerPayTypeRequest()
             : base("Slb", "2014-05-15", "ModifyLoadBalancerPayType", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private int? duration;
 
 		private bool? autoPay;
 
@@ -43,8 +50,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private int? duration;
 
 		private string loadBalancerId;
 
@@ -62,6 +67,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
+				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
 			}
 		}
 
@@ -114,19 +132,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
 			}
 		}
 

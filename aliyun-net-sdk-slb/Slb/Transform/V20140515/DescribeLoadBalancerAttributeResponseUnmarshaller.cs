@@ -64,6 +64,11 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerAttributeResponse.ReservedInfoInternetChargeType = context.StringValue("DescribeLoadBalancerAttribute.ReservedInfoInternetChargeType");
 			describeLoadBalancerAttributeResponse.ReservedInfoBandwidth = context.StringValue("DescribeLoadBalancerAttribute.ReservedInfoBandwidth");
 			describeLoadBalancerAttributeResponse.ReservedInfoActiveTime = context.StringValue("DescribeLoadBalancerAttribute.ReservedInfoActiveTime");
+			describeLoadBalancerAttributeResponse.DeleteProtection = context.StringValue("DescribeLoadBalancerAttribute.DeleteProtection");
+			describeLoadBalancerAttributeResponse.CloudInstanceType = context.StringValue("DescribeLoadBalancerAttribute.CloudInstanceType");
+			describeLoadBalancerAttributeResponse.CloudInstanceId = context.StringValue("DescribeLoadBalancerAttribute.CloudInstanceId");
+			describeLoadBalancerAttributeResponse.TunnelType = context.StringValue("DescribeLoadBalancerAttribute.TunnelType");
+			describeLoadBalancerAttributeResponse.CloudInstanceUid = context.LongValue("DescribeLoadBalancerAttribute.CloudInstanceUid");
 
 			List<string> describeLoadBalancerAttributeResponse_listenerPorts = new List<string>();
 			for (int i = 0; i < context.Length("DescribeLoadBalancerAttribute.ListenerPorts.Length"); i++) {

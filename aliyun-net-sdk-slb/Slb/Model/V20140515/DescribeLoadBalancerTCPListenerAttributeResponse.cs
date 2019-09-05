@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string healthCheckType;
 
+		private string healthCheckMethod;
+
 		private int? maxConnection;
 
 		private string vServerGroupId;
@@ -304,6 +306,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				healthCheckType = value;
+			}
+		}
+
+		public string HealthCheckMethod
+		{
+			get
+			{
+				return healthCheckMethod;
+			}
+			set	
+			{
+				healthCheckMethod = value;
 			}
 		}
 

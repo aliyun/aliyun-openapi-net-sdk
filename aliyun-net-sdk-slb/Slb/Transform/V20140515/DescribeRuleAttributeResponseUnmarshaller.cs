@@ -31,6 +31,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			DescribeRuleAttributeResponse describeRuleAttributeResponse = new DescribeRuleAttributeResponse();
 
 			describeRuleAttributeResponse.HttpResponse = context.HttpResponse;
+			describeRuleAttributeResponse.RuleId = context.StringValue("DescribeRuleAttribute.RuleId");
 			describeRuleAttributeResponse.RequestId = context.StringValue("DescribeRuleAttribute.RequestId");
 			describeRuleAttributeResponse.RuleName = context.StringValue("DescribeRuleAttribute.RuleName");
 			describeRuleAttributeResponse.LoadBalancerId = context.StringValue("DescribeRuleAttribute.LoadBalancerId");

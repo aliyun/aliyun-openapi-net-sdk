@@ -32,13 +32,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public ModifyLoadBalancerInstanceSpecRequest()
             : base("Slb", "2014-05-15", "ModifyLoadBalancerInstanceSpec", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string loadBalancerSpec;
 
 		private long? resourceOwnerId;
 
-		private string loadBalancerId;
+		private string loadBalancerSpec;
 
 		private bool? autoPay;
 
@@ -48,18 +51,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private long? ownerId;
 
-		public string LoadBalancerSpec
-		{
-			get
-			{
-				return loadBalancerSpec;
-			}
-			set	
-			{
-				loadBalancerSpec = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerSpec", value);
-			}
-		}
+		private string loadBalancerId;
 
 		public long? ResourceOwnerId
 		{
@@ -74,16 +66,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string LoadBalancerId
+		public string LoadBalancerSpec
 		{
 			get
 			{
-				return loadBalancerId;
+				return loadBalancerSpec;
 			}
 			set	
 			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+				loadBalancerSpec = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerSpec", value);
 			}
 		}
 
@@ -136,6 +128,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LoadBalancerId
+		{
+			get
+			{
+				return loadBalancerId;
+			}
+			set	
+			{
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
 			}
 		}
 

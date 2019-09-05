@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public CreateLoadBalancerHTTPListenerRequest()
             : base("Slb", "2014-05-15", "CreateLoadBalancerHTTPListener", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -44,51 +49,23 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string healthCheckURI;
 
-		private string description;
-
-		private int? unhealthyThreshold;
-
-		private int? healthyThreshold;
-
 		private string aclStatus;
-
-		private string scheduler;
 
 		private string aclType;
 
 		private string healthCheck;
 
-		private int? forwardPort;
-
-		private int? cookieTimeout;
-
-		private string stickySessionType;
-
 		private string vServerGroupId;
 
 		private string aclId;
 
-		private int? listenerPort;
-
 		private string cookie;
-
-		private string resourceOwnerAccount;
-
-		private int? bandwidth;
-
-		private string stickySession;
 
 		private string healthCheckDomain;
 
 		private int? requestTimeout;
 
-		private string ownerAccount;
-
-		private string gzip;
-
 		private long? ownerId;
-
-		private int? idleTimeout;
 
 		private string loadBalancerId;
 
@@ -98,9 +75,37 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? healthCheckInterval;
 
-		private string xForwardedFor_proto;
-
 		private string xForwardedFor_SLBID;
+
+		private string description;
+
+		private int? unhealthyThreshold;
+
+		private int? healthyThreshold;
+
+		private string scheduler;
+
+		private int? forwardPort;
+
+		private int? cookieTimeout;
+
+		private string stickySessionType;
+
+		private int? listenerPort;
+
+		private string resourceOwnerAccount;
+
+		private int? bandwidth;
+
+		private string stickySession;
+
+		private string ownerAccount;
+
+		private string gzip;
+
+		private int? idleTimeout;
+
+		private string xForwardedFor_proto;
 
 		private int? healthCheckConnectPort;
 
@@ -171,45 +176,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public int? UnhealthyThreshold
-		{
-			get
-			{
-				return unhealthyThreshold;
-			}
-			set	
-			{
-				unhealthyThreshold = value;
-				DictionaryUtil.Add(QueryParameters, "UnhealthyThreshold", value.ToString());
-			}
-		}
-
-		public int? HealthyThreshold
-		{
-			get
-			{
-				return healthyThreshold;
-			}
-			set	
-			{
-				healthyThreshold = value;
-				DictionaryUtil.Add(QueryParameters, "HealthyThreshold", value.ToString());
-			}
-		}
-
 		public string AclStatus
 		{
 			get
@@ -220,19 +186,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				aclStatus = value;
 				DictionaryUtil.Add(QueryParameters, "AclStatus", value);
-			}
-		}
-
-		public string Scheduler
-		{
-			get
-			{
-				return scheduler;
-			}
-			set	
-			{
-				scheduler = value;
-				DictionaryUtil.Add(QueryParameters, "Scheduler", value);
 			}
 		}
 
@@ -262,45 +215,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public int? ForwardPort
-		{
-			get
-			{
-				return forwardPort;
-			}
-			set	
-			{
-				forwardPort = value;
-				DictionaryUtil.Add(QueryParameters, "ForwardPort", value.ToString());
-			}
-		}
-
-		public int? CookieTimeout
-		{
-			get
-			{
-				return cookieTimeout;
-			}
-			set	
-			{
-				cookieTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "CookieTimeout", value.ToString());
-			}
-		}
-
-		public string StickySessionType
-		{
-			get
-			{
-				return stickySessionType;
-			}
-			set	
-			{
-				stickySessionType = value;
-				DictionaryUtil.Add(QueryParameters, "StickySessionType", value);
-			}
-		}
-
 		public string VServerGroupId
 		{
 			get
@@ -327,19 +241,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public int? ListenerPort
-		{
-			get
-			{
-				return listenerPort;
-			}
-			set	
-			{
-				listenerPort = value;
-				DictionaryUtil.Add(QueryParameters, "ListenerPort", value.ToString());
-			}
-		}
-
 		public string Cookie
 		{
 			get
@@ -350,45 +251,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				cookie = value;
 				DictionaryUtil.Add(QueryParameters, "Cookie", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public int? Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "Bandwidth", value.ToString());
-			}
-		}
-
-		public string StickySession
-		{
-			get
-			{
-				return stickySession;
-			}
-			set	
-			{
-				stickySession = value;
-				DictionaryUtil.Add(QueryParameters, "StickySession", value);
 			}
 		}
 
@@ -418,32 +280,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Gzip
-		{
-			get
-			{
-				return gzip;
-			}
-			set	
-			{
-				gzip = value;
-				DictionaryUtil.Add(QueryParameters, "Gzip", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -454,19 +290,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? IdleTimeout
-		{
-			get
-			{
-				return idleTimeout;
-			}
-			set	
-			{
-				idleTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "IdleTimeout", value.ToString());
 			}
 		}
 
@@ -522,19 +345,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string XForwardedFor_proto
-		{
-			get
-			{
-				return xForwardedFor_proto;
-			}
-			set	
-			{
-				xForwardedFor_proto = value;
-				DictionaryUtil.Add(QueryParameters, "XForwardedFor_proto", value);
-			}
-		}
-
 		public string XForwardedFor_SLBID
 		{
 			get
@@ -545,6 +355,201 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				xForwardedFor_SLBID = value;
 				DictionaryUtil.Add(QueryParameters, "XForwardedFor_SLBID", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public int? UnhealthyThreshold
+		{
+			get
+			{
+				return unhealthyThreshold;
+			}
+			set	
+			{
+				unhealthyThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "UnhealthyThreshold", value.ToString());
+			}
+		}
+
+		public int? HealthyThreshold
+		{
+			get
+			{
+				return healthyThreshold;
+			}
+			set	
+			{
+				healthyThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "HealthyThreshold", value.ToString());
+			}
+		}
+
+		public string Scheduler
+		{
+			get
+			{
+				return scheduler;
+			}
+			set	
+			{
+				scheduler = value;
+				DictionaryUtil.Add(QueryParameters, "Scheduler", value);
+			}
+		}
+
+		public int? ForwardPort
+		{
+			get
+			{
+				return forwardPort;
+			}
+			set	
+			{
+				forwardPort = value;
+				DictionaryUtil.Add(QueryParameters, "ForwardPort", value.ToString());
+			}
+		}
+
+		public int? CookieTimeout
+		{
+			get
+			{
+				return cookieTimeout;
+			}
+			set	
+			{
+				cookieTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "CookieTimeout", value.ToString());
+			}
+		}
+
+		public string StickySessionType
+		{
+			get
+			{
+				return stickySessionType;
+			}
+			set	
+			{
+				stickySessionType = value;
+				DictionaryUtil.Add(QueryParameters, "StickySessionType", value);
+			}
+		}
+
+		public int? ListenerPort
+		{
+			get
+			{
+				return listenerPort;
+			}
+			set	
+			{
+				listenerPort = value;
+				DictionaryUtil.Add(QueryParameters, "ListenerPort", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public int? Bandwidth
+		{
+			get
+			{
+				return bandwidth;
+			}
+			set	
+			{
+				bandwidth = value;
+				DictionaryUtil.Add(QueryParameters, "Bandwidth", value.ToString());
+			}
+		}
+
+		public string StickySession
+		{
+			get
+			{
+				return stickySession;
+			}
+			set	
+			{
+				stickySession = value;
+				DictionaryUtil.Add(QueryParameters, "StickySession", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Gzip
+		{
+			get
+			{
+				return gzip;
+			}
+			set	
+			{
+				gzip = value;
+				DictionaryUtil.Add(QueryParameters, "Gzip", value);
+			}
+		}
+
+		public int? IdleTimeout
+		{
+			get
+			{
+				return idleTimeout;
+			}
+			set	
+			{
+				idleTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "IdleTimeout", value.ToString());
+			}
+		}
+
+		public string XForwardedFor_proto
+		{
+			get
+			{
+				return xForwardedFor_proto;
+			}
+			set	
+			{
+				xForwardedFor_proto = value;
+				DictionaryUtil.Add(QueryParameters, "XForwardedFor_proto", value);
 			}
 		}
 

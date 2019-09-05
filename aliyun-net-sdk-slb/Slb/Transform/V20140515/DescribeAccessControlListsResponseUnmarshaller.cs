@@ -32,6 +32,10 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 
 			describeAccessControlListsResponse.HttpResponse = context.HttpResponse;
 			describeAccessControlListsResponse.RequestId = context.StringValue("DescribeAccessControlLists.RequestId");
+			describeAccessControlListsResponse.TotalCount = context.IntegerValue("DescribeAccessControlLists.TotalCount");
+			describeAccessControlListsResponse.PageSize = context.IntegerValue("DescribeAccessControlLists.PageSize");
+			describeAccessControlListsResponse.Count = context.IntegerValue("DescribeAccessControlLists.Count");
+			describeAccessControlListsResponse.PageNumber = context.IntegerValue("DescribeAccessControlLists.PageNumber");
 
 			List<DescribeAccessControlListsResponse.DescribeAccessControlLists_Acl> describeAccessControlListsResponse_acls = new List<DescribeAccessControlListsResponse.DescribeAccessControlLists_Acl>();
 			for (int i = 0; i < context.Length("DescribeAccessControlLists.Acls.Length"); i++) {

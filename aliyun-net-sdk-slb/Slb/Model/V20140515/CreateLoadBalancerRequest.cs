@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public CreateLoadBalancerRequest()
             : base("Slb", "2014-05-15", "CreateLoadBalancer", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -51,6 +56,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string addressType;
 
 		private string slaveZoneId;
+
+		private string deleteProtection;
 
 		private string loadBalancerSpec;
 
@@ -190,6 +197,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				slaveZoneId = value;
 				DictionaryUtil.Add(QueryParameters, "SlaveZoneId", value);
+			}
+		}
+
+		public string DeleteProtection
+		{
+			get
+			{
+				return deleteProtection;
+			}
+			set	
+			{
+				deleteProtection = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteProtection", value);
 			}
 		}
 

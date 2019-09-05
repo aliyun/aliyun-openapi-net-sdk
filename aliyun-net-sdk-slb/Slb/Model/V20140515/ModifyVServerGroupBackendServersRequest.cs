@@ -32,13 +32,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public ModifyVServerGroupBackendServersRequest()
             : base("Slb", "2014-05-15", "ModifyVServerGroupBackendServers", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string vServerGroupId;
 
 		private long? resourceOwnerId;
 
-		private string oldBackendServers;
+		private string vServerGroupId;
 
 		private string resourceOwnerAccount;
 
@@ -48,18 +51,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private long? ownerId;
 
-		public string VServerGroupId
-		{
-			get
-			{
-				return vServerGroupId;
-			}
-			set	
-			{
-				vServerGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "VServerGroupId", value);
-			}
-		}
+		private string oldBackendServers;
 
 		public long? ResourceOwnerId
 		{
@@ -74,16 +66,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string OldBackendServers
+		public string VServerGroupId
 		{
 			get
 			{
-				return oldBackendServers;
+				return vServerGroupId;
 			}
 			set	
 			{
-				oldBackendServers = value;
-				DictionaryUtil.Add(QueryParameters, "OldBackendServers", value);
+				vServerGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "VServerGroupId", value);
 			}
 		}
 
@@ -136,6 +128,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string OldBackendServers
+		{
+			get
+			{
+				return oldBackendServers;
+			}
+			set	
+			{
+				oldBackendServers = value;
+				DictionaryUtil.Add(QueryParameters, "OldBackendServers", value);
 			}
 		}
 

@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string requestId;
 
+		private string loadBalancerId;
+
 		private string masterSlaveServerGroupId;
 
 		private string masterSlaveServerGroupName;
@@ -42,6 +44,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string LoadBalancerId
+		{
+			get
+			{
+				return loadBalancerId;
+			}
+			set	
+			{
+				loadBalancerId = value;
 			}
 		}
 

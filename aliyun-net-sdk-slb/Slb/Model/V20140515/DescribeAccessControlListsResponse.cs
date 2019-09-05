@@ -27,6 +27,14 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string requestId;
 
+		private int? totalCount;
+
+		private int? pageSize;
+
+		private int? count;
+
+		private int? pageNumber;
+
 		private List<DescribeAccessControlLists_Acl> acls;
 
 		public string RequestId
@@ -38,6 +46,54 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? Count
+		{
+			get
+			{
+				return count;
+			}
+			set	
+			{
+				count = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
 			}
 		}
 

@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public CreateMasterSlaveVServerGroupRequest()
             : base("Slb", "2014-05-15", "CreateMasterSlaveVServerGroup", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string access_key_id;
@@ -40,8 +45,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string masterSlaveBackendServers;
 
-		private string loadBalancerId;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -49,6 +52,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string masterSlaveVServerGroupName;
 
 		private long? ownerId;
+
+		private string loadBalancerId;
 
 		public string Access_key_id
 		{
@@ -86,19 +91,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				masterSlaveBackendServers = value;
 				DictionaryUtil.Add(QueryParameters, "MasterSlaveBackendServers", value);
-			}
-		}
-
-		public string LoadBalancerId
-		{
-			get
-			{
-				return loadBalancerId;
-			}
-			set	
-			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
 			}
 		}
 
@@ -151,6 +143,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LoadBalancerId
+		{
+			get
+			{
+				return loadBalancerId;
+			}
+			set	
+			{
+				loadBalancerId = value;
+				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
 			}
 		}
 

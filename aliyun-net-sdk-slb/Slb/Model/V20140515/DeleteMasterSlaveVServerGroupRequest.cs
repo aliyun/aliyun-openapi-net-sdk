@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
         public DeleteMasterSlaveVServerGroupRequest()
             : base("Slb", "2014-05-15", "DeleteMasterSlaveVServerGroup", "slb", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string access_key_id;
