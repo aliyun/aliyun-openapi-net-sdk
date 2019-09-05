@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ff7eab76-dd24-4cb3-a70c-63317caed8ae}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-cusanalytic_sc_online</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\DescribeActionDataRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\DescribeActionDataResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\DescribeLocationsRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\DescribeLocationsResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetActionCursorRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetActionCursorResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetAnalyzeCommodityDataRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetAnalyzeCommodityDataResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetAnalyzePlaceDataRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetAnalyzePlaceDataResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetEMapRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetEMapResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetHeatMapDataRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetHeatMapDataResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetImageUrlRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetImageUrlResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetLocationsRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetLocationsResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetOverviewDataRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetOverviewDataResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetPortrayalRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetPortrayalResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetSupportStoreRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\GetSupportStoreResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\ListVisitorsRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\ListVisitorsResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\SearchPersonByImgRequest.cs" />
+	<Compile Include="Cusanalytic_sc_online\Model\V20190524\SearchPersonByImgResponse.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\DescribeActionDataResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\DescribeLocationsResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\GetActionCursorResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\GetAnalyzeCommodityDataResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\GetAnalyzePlaceDataResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\GetEMapResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\GetHeatMapDataResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\GetImageUrlResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\GetLocationsResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\GetOverviewDataResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\GetPortrayalResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\GetSupportStoreResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\ListVisitorsResponseUnmarshaller.cs" />
+	<Compile Include="Cusanalytic_sc_online\Transform\V20190524\SearchPersonByImgResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
