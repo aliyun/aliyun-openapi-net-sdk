@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{266ac0d2-ef5e-474e-a92d-b9259a1ab5ae}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-foas</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Foas\Model\V20181111\BatchGetInstanceRunSummaryRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\BatchGetInstanceRunSummaryResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\BindQueueRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\BindQueueResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\CalcPlanJsonResourceRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\CalcPlanJsonResourceResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\CheckRawPlanJsonRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\CheckRawPlanJsonResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\CommitJobRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\CommitJobResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\CreateCellClusterOrderRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\CreateCellClusterOrderResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\CreateClusterRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\CreateClusterResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\CreateFolderRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\CreateFolderResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\CreateJobRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\CreateJobResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\CreatePackageRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\CreatePackageResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\CreateProjectRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\CreateProjectResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\CreateQueueRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\CreateQueueResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\DeleteFolderRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\DeleteFolderResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\DeleteJobRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\DeleteJobResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\DeletePackageRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\DeletePackageResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\DeleteProjectRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\DeleteProjectResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\DeleteQueueRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\DeleteQueueResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\DestroyClusterRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\DestroyClusterResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ExpandClusterRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ExpandClusterResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetClusterDetailsRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetClusterDetailsResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetClusterEngineVersionsRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetClusterEngineVersionsResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetClusterMetricsRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetClusterMetricsResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetClusterQueueInfoRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetClusterQueueInfoResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetClusterResourceRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetClusterResourceResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetFolderRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetFolderResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceCheckpointRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceCheckpointResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceConfigRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceConfigResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceDetailRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceDetailResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceExceptionsRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceExceptionsResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceFinalStateRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceFinalStateResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceHistoryAutoScalePlanContentRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceHistoryAutoScalePlanContentResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceHistoryAutoScalePlanListRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceHistoryAutoScalePlanListResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceMetricRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceMetricResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceResourceRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceResourceResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceRunSummaryRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceRunSummaryResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceVertexTaskManagersRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetInstanceVertexTaskManagersResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetJobLatestAutoScalePlanRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetJobLatestAutoScalePlanResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetJobRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetJobResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetPackageRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetPackageResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetProjectRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetProjectResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetRawPlanJsonRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetRawPlanJsonResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\GetRefPackageJobRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\GetRefPackageJobResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ListChildFolderRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ListChildFolderResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ListClusterRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ListClusterResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ListInstanceRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ListInstanceResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ListJobRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ListJobResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ListPackageRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ListPackageResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ListProjectBindQueueRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ListProjectBindQueueResourceRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ListProjectBindQueueResourceResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ListProjectBindQueueResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ListProjectRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ListProjectResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\MVFolderRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\MVFolderResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ModifyInstanceStateRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ModifyInstanceStateResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ModifyMasterSpecRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ModifyMasterSpecResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\OfflineJobRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\OfflineJobResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ShrinkClusterRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ShrinkClusterResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\StartJobRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\StartJobResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\UnbindQueueRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\UnbindQueueResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\UpdateAutoScaleConfigRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\UpdateAutoScaleConfigResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\UpdateJobRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\UpdateJobResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\UpdatePackageRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\UpdatePackageResponse.cs" />
+	<Compile Include="Foas\Model\V20181111\ValidateJobRequest.cs" />
+	<Compile Include="Foas\Model\V20181111\ValidateJobResponse.cs" />
+	<Compile Include="Foas\Transform\V20181111\BatchGetInstanceRunSummaryResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\BindQueueResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\CalcPlanJsonResourceResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\CheckRawPlanJsonResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\CommitJobResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\CreateCellClusterOrderResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\CreateClusterResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\CreateFolderResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\CreateJobResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\CreatePackageResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\CreateProjectResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\CreateQueueResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\DeleteFolderResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\DeleteJobResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\DeletePackageResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\DeleteProjectResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\DeleteQueueResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\DestroyClusterResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ExpandClusterResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetClusterDetailsResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetClusterEngineVersionsResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetClusterMetricsResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetClusterQueueInfoResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetClusterResourceResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetFolderResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetInstanceCheckpointResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetInstanceConfigResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetInstanceDetailResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetInstanceExceptionsResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetInstanceFinalStateResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetInstanceHistoryAutoScalePlanContentResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetInstanceHistoryAutoScalePlanListResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetInstanceMetricResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetInstanceResourceResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetInstanceRunSummaryResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetInstanceVertexTaskManagersResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetJobLatestAutoScalePlanResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetJobResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetPackageResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetProjectResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetRawPlanJsonResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\GetRefPackageJobResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ListChildFolderResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ListClusterResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ListInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ListJobResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ListPackageResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ListProjectBindQueueResourceResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ListProjectBindQueueResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ListProjectResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\MVFolderResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ModifyInstanceStateResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ModifyMasterSpecResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\OfflineJobResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ShrinkClusterResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\StartJobResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\UnbindQueueResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\UpdateAutoScaleConfigResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\UpdateJobResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\UpdatePackageResponseUnmarshaller.cs" />
+	<Compile Include="Foas\Transform\V20181111\ValidateJobResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
