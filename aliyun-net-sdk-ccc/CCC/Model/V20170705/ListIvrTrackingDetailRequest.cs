@@ -40,15 +40,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string callingNumber;
-
-		private string instanceId;
-
 		private string contactId;
-
-		private string calledNumber;
-
-		private int? pageSize;
 
 		private long? startTime;
 
@@ -56,31 +48,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? pageNumber;
 
-		public string CallingNumber
-		{
-			get
-			{
-				return callingNumber;
-			}
-			set	
-			{
-				callingNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
-			}
-		}
+		private string callingNumber;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
+
+		private string calledNumber;
+
+		private int? pageSize;
 
 		public string ContactId
 		{
@@ -92,32 +66,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				contactId = value;
 				DictionaryUtil.Add(QueryParameters, "ContactId", value);
-			}
-		}
-
-		public string CalledNumber
-		{
-			get
-			{
-				return calledNumber;
-			}
-			set	
-			{
-				calledNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -157,6 +105,58 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string CallingNumber
+		{
+			get
+			{
+				return callingNumber;
+			}
+			set	
+			{
+				callingNumber = value;
+				DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string CalledNumber
+		{
+			get
+			{
+				return calledNumber;
+			}
+			set	
+			{
+				calledNumber = value;
+				DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

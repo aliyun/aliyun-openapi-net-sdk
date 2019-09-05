@@ -42,11 +42,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string contactFlowId;
 
-		private string instanceId;
-
 		private string usage;
 
 		private string phoneNumber;
+
+		private string instanceId;
 
 		public string ContactFlowId
 		{
@@ -58,19 +58,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				contactFlowId = value;
 				DictionaryUtil.Add(QueryParameters, "ContactFlowId", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -97,6 +84,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				phoneNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

@@ -42,11 +42,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private bool? isVirtual;
 
+		private int? count;
+
 		private string instanceId;
 
-		private List<string> skillGroupIds;
-
-		private int? count;
+		private List<string> skillGroupIds = new List<string>(){ };
 
 		private string calleeNumber;
 
@@ -60,6 +60,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				isVirtual = value;
 				DictionaryUtil.Add(QueryParameters, "IsVirtual", value.ToString());
+			}
+		}
+
+		public int? Count
+		{
+			get
+			{
+				return count;
+			}
+			set	
+			{
+				count = value;
+				DictionaryUtil.Add(QueryParameters, "Count", value.ToString());
 			}
 		}
 
@@ -90,19 +103,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"SkillGroupId." + (i + 1) , skillGroupIds[i]);
 				}
-			}
-		}
-
-		public int? Count
-		{
-			get
-			{
-				return count;
-			}
-			set	
-			{
-				count = value;
-				DictionaryUtil.Add(QueryParameters, "Count", value.ToString());
 			}
 		}
 

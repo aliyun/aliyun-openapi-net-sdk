@@ -42,7 +42,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string instanceId;
 
-		private List<string> userIds;
+		private List<string> userIds = new List<string>(){ };
 
 		public string InstanceId
 		{

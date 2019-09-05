@@ -40,7 +40,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private List<string> callingNumbers;
+		private string description;
+
+		private string jobFilePath;
+
+		private List<string> callingNumbers = new List<string>(){ };
 
 		private string instanceId;
 
@@ -50,11 +54,33 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string name;
 
-		private string description;
-
 		private string scenarioId;
 
-		private string jobFilePath;
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string JobFilePath
+		{
+			get
+			{
+				return jobFilePath;
+			}
+			set	
+			{
+				jobFilePath = value;
+				DictionaryUtil.Add(QueryParameters, "JobFilePath", value);
+			}
+		}
 
 		public List<string> CallingNumbers
 		{
@@ -125,19 +151,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public string ScenarioId
 		{
 			get
@@ -148,19 +161,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				scenarioId = value;
 				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
-			}
-		}
-
-		public string JobFilePath
-		{
-			get
-			{
-				return jobFilePath;
-			}
-			set	
-			{
-				jobFilePath = value;
-				DictionaryUtil.Add(QueryParameters, "JobFilePath", value);
 			}
 		}
 

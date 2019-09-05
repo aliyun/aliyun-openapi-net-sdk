@@ -40,11 +40,24 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
+		private int? isLogin;
+
 		private long? agentDeviceId;
 
 		private string instanceId;
 
-		private int? isLogin;
+		public int? IsLogin
+		{
+			get
+			{
+				return isLogin;
+			}
+			set	
+			{
+				isLogin = value;
+				DictionaryUtil.Add(QueryParameters, "IsLogin", value.ToString());
+			}
+		}
 
 		public long? AgentDeviceId
 		{
@@ -69,19 +82,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public int? IsLogin
-		{
-			get
-			{
-				return isLogin;
-			}
-			set	
-			{
-				isLogin = value;
-				DictionaryUtil.Add(QueryParameters, "IsLogin", value.ToString());
 			}
 		}
 

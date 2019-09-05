@@ -40,17 +40,30 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
+		private string groupId;
+
 		private string jobJson;
 
-		private List<string> callingNumbers;
+		private List<string> callingNumbers = new List<string>(){ };
 
 		private string instanceId;
-
-		private string groupId;
 
 		private bool? selfHostedCallCenter;
 
 		private string scenarioId;
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
 
 		public string JobJson
 		{
@@ -92,19 +105,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 

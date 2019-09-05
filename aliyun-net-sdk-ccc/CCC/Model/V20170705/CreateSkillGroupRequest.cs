@@ -40,51 +40,21 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private List<int?> skillLevels;
-
-		private string instanceId;
-
 		private bool? allowPrivateOutboundNumber;
-
-		private List<string> outboundPhoneNumberIds;
-
-		private string name;
 
 		private string description;
 
 		private string routingStrategy;
 
-		private List<string> userIds;
+		private List<string> userIds = new List<string>(){ };
 
-		public List<int?> SkillLevels
-		{
-			get
-			{
-				return skillLevels;
-			}
+		private List<int?> skillLevels = new List<int?>(){ };
 
-			set
-			{
-				skillLevels = value;
-				for (int i = 0; i < skillLevels.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SkillLevel." + (i + 1) , skillLevels[i]);
-				}
-			}
-		}
+		private string instanceId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private List<string> outboundPhoneNumberIds = new List<string>(){ };
+
+		private string name;
 
 		public bool? AllowPrivateOutboundNumber
 		{
@@ -96,36 +66,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				allowPrivateOutboundNumber = value;
 				DictionaryUtil.Add(QueryParameters, "AllowPrivateOutboundNumber", value.ToString());
-			}
-		}
-
-		public List<string> OutboundPhoneNumberIds
-		{
-			get
-			{
-				return outboundPhoneNumberIds;
-			}
-
-			set
-			{
-				outboundPhoneNumberIds = value;
-				for (int i = 0; i < outboundPhoneNumberIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"OutboundPhoneNumberId." + (i + 1) , outboundPhoneNumberIds[i]);
-				}
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -169,6 +109,66 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"UserId." + (i + 1) , userIds[i]);
 				}
+			}
+		}
+
+		public List<int?> SkillLevels
+		{
+			get
+			{
+				return skillLevels;
+			}
+
+			set
+			{
+				skillLevels = value;
+				for (int i = 0; i < skillLevels.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SkillLevel." + (i + 1) , skillLevels[i]);
+				}
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public List<string> OutboundPhoneNumberIds
+		{
+			get
+			{
+				return outboundPhoneNumberIds;
+			}
+
+			set
+			{
+				outboundPhoneNumberIds = value;
+				for (int i = 0; i < outboundPhoneNumberIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"OutboundPhoneNumberId." + (i + 1) , outboundPhoneNumberIds[i]);
+				}
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

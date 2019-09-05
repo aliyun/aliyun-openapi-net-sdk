@@ -40,13 +40,26 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
+		private string calleeCustomer;
+
 		private string caller;
 
 		private string instanceId;
 
-		private string calleeCustomer;
-
 		private string calleeAgent;
+
+		public string CalleeCustomer
+		{
+			get
+			{
+				return calleeCustomer;
+			}
+			set	
+			{
+				calleeCustomer = value;
+				DictionaryUtil.Add(QueryParameters, "CalleeCustomer", value);
+			}
+		}
 
 		public string Caller
 		{
@@ -71,19 +84,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string CalleeCustomer
-		{
-			get
-			{
-				return calleeCustomer;
-			}
-			set	
-			{
-				calleeCustomer = value;
-				DictionaryUtil.Add(QueryParameters, "CalleeCustomer", value);
 			}
 		}
 

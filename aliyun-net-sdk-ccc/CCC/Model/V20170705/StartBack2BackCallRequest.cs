@@ -40,41 +40,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string caller;
-
-		private string instanceId;
-
 		private string callCenterNumber;
 
 		private string callee;
 
+		private string caller;
+
+		private string instanceId;
+
 		private string workflowId;
-
-		public string Caller
-		{
-			get
-			{
-				return caller;
-			}
-			set	
-			{
-				caller = value;
-				DictionaryUtil.Add(QueryParameters, "Caller", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
 
 		public string CallCenterNumber
 		{
@@ -99,6 +73,32 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				callee = value;
 				DictionaryUtil.Add(QueryParameters, "Callee", value);
+			}
+		}
+
+		public string Caller
+		{
+			get
+			{
+				return caller;
+			}
+			set	
+			{
+				caller = value;
+				DictionaryUtil.Add(QueryParameters, "Caller", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

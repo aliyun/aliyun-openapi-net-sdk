@@ -42,17 +42,17 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string agentIds;
 
-		private string instanceId;
-
-		private string skillGroupId;
-
-		private int? pageSize;
-
 		private string endTime;
 
 		private string startTime;
 
 		private int? pageNumber;
+
+		private string instanceId;
+
+		private string skillGroupId;
+
+		private int? pageSize;
 
 		public string AgentIds
 		{
@@ -64,45 +64,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				agentIds = value;
 				DictionaryUtil.Add(QueryParameters, "AgentIds", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string SkillGroupId
-		{
-			get
-			{
-				return skillGroupId;
-			}
-			set	
-			{
-				skillGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -142,6 +103,45 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string SkillGroupId
+		{
+			get
+			{
+				return skillGroupId;
+			}
+			set	
+			{
+				skillGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

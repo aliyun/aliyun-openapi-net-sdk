@@ -40,15 +40,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string instanceId;
-
 		private string criteria;
-
-		private string skillGroupId;
-
-		private string name;
-
-		private int? pageSize;
 
 		private long? endTime;
 
@@ -56,18 +48,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? pageNumber;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
+
+		private string skillGroupId;
+
+		private string name;
+
+		private int? pageSize;
 
 		public string Criteria
 		{
@@ -79,45 +66,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				criteria = value;
 				DictionaryUtil.Add(QueryParameters, "Criteria", value);
-			}
-		}
-
-		public string SkillGroupId
-		{
-			get
-			{
-				return skillGroupId;
-			}
-			set	
-			{
-				skillGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -157,6 +105,58 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string SkillGroupId
+		{
+			get
+			{
+				return skillGroupId;
+			}
+			set	
+			{
+				skillGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

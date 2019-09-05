@@ -40,26 +40,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string instanceId;
-
 		private int? count;
 
-		private List<string> candidateNumbers;
+		private string instanceId;
+
+		private List<string> candidateNumbers = new List<string>(){ };
 
 		private string calleeNumber;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
 
 		public int? Count
 		{
@@ -71,6 +58,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				count = value;
 				DictionaryUtil.Add(QueryParameters, "Count", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

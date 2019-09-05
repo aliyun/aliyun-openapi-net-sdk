@@ -40,51 +40,25 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string contactName;
-
-		private string instanceId;
-
 		private string timeAlignment;
 
 		private string groupId;
 
 		private string phoneNumber;
 
-		private int? pageSize;
-
 		private long? endTime;
 
 		private long? startTime;
 
-		private string scenarioId;
-
 		private int? pageNumber;
 
-		public string ContactName
-		{
-			get
-			{
-				return contactName;
-			}
-			set	
-			{
-				contactName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactName", value);
-			}
-		}
+		private string contactName;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
+
+		private int? pageSize;
+
+		private string scenarioId;
 
 		public string TimeAlignment
 		{
@@ -125,19 +99,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public long? EndTime
 		{
 			get
@@ -164,19 +125,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string ScenarioId
-		{
-			get
-			{
-				return scenarioId;
-			}
-			set	
-			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
-			}
-		}
-
 		public int? PageNumber
 		{
 			get
@@ -187,6 +135,58 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ContactName
+		{
+			get
+			{
+				return contactName;
+			}
+			set	
+			{
+				contactName = value;
+				DictionaryUtil.Add(QueryParameters, "ContactName", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ScenarioId
+		{
+			get
+			{
+				return scenarioId;
+			}
+			set	
+			{
+				scenarioId = value;
+				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
 			}
 		}
 

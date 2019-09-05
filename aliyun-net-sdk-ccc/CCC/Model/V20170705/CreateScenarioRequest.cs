@@ -40,30 +40,17 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string instanceId;
-
-		private List<string> surveysJsons;
-
-		private string strategyJson;
-
-		private string name;
+		private List<string> surveysJsons = new List<string>(){ };
 
 		private string description;
 
 		private string type;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
+
+		private string strategyJson;
+
+		private string name;
 
 		public List<string> SurveysJsons
 		{
@@ -79,32 +66,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"SurveysJson." + (i + 1) , surveysJsons[i]);
 				}
-			}
-		}
-
-		public string StrategyJson
-		{
-			get
-			{
-				return strategyJson;
-			}
-			set	
-			{
-				strategyJson = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -131,6 +92,45 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string StrategyJson
+		{
+			get
+			{
+				return strategyJson;
+			}
+			set	
+			{
+				strategyJson = value;
+				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

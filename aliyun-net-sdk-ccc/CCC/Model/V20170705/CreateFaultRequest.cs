@@ -40,15 +40,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string speakerList;
-
-		private long? agentId;
-
 		private string agentOssFileName;
 
 		private string description;
-
-		private long? endTime;
 
 		private string operatingSystemVersion;
 
@@ -56,19 +50,25 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string microphoneList;
 
-		private string speakerEquipment;
-
-		private string servicePort;
-
 		private string clientPort;
-
-		private string serviceIp;
-
-		private string instanceId;
 
 		private string customFilePath;
 
 		private string clientIp;
+
+		private string speakerList;
+
+		private long? agentId;
+
+		private long? endTime;
+
+		private string speakerEquipment;
+
+		private string servicePort;
+
+		private string serviceIp;
+
+		private string instanceId;
 
 		private string agentFilePath;
 
@@ -79,32 +79,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string microphoneEquipment;
 
 		private string browserVersion;
-
-		public string SpeakerList
-		{
-			get
-			{
-				return speakerList;
-			}
-			set	
-			{
-				speakerList = value;
-				DictionaryUtil.Add(QueryParameters, "SpeakerList", value);
-			}
-		}
-
-		public long? AgentId
-		{
-			get
-			{
-				return agentId;
-			}
-			set	
-			{
-				agentId = value;
-				DictionaryUtil.Add(QueryParameters, "AgentId", value.ToString());
-			}
-		}
 
 		public string AgentOssFileName
 		{
@@ -129,19 +103,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
 			}
 		}
 
@@ -184,32 +145,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string SpeakerEquipment
-		{
-			get
-			{
-				return speakerEquipment;
-			}
-			set	
-			{
-				speakerEquipment = value;
-				DictionaryUtil.Add(QueryParameters, "SpeakerEquipment", value);
-			}
-		}
-
-		public string ServicePort
-		{
-			get
-			{
-				return servicePort;
-			}
-			set	
-			{
-				servicePort = value;
-				DictionaryUtil.Add(QueryParameters, "ServicePort", value);
-			}
-		}
-
 		public string ClientPort
 		{
 			get
@@ -220,32 +155,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				clientPort = value;
 				DictionaryUtil.Add(QueryParameters, "ClientPort", value);
-			}
-		}
-
-		public string ServiceIp
-		{
-			get
-			{
-				return serviceIp;
-			}
-			set	
-			{
-				serviceIp = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceIp", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -272,6 +181,97 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				clientIp = value;
 				DictionaryUtil.Add(QueryParameters, "ClientIp", value);
+			}
+		}
+
+		public string SpeakerList
+		{
+			get
+			{
+				return speakerList;
+			}
+			set	
+			{
+				speakerList = value;
+				DictionaryUtil.Add(QueryParameters, "SpeakerList", value);
+			}
+		}
+
+		public long? AgentId
+		{
+			get
+			{
+				return agentId;
+			}
+			set	
+			{
+				agentId = value;
+				DictionaryUtil.Add(QueryParameters, "AgentId", value.ToString());
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public string SpeakerEquipment
+		{
+			get
+			{
+				return speakerEquipment;
+			}
+			set	
+			{
+				speakerEquipment = value;
+				DictionaryUtil.Add(QueryParameters, "SpeakerEquipment", value);
+			}
+		}
+
+		public string ServicePort
+		{
+			get
+			{
+				return servicePort;
+			}
+			set	
+			{
+				servicePort = value;
+				DictionaryUtil.Add(QueryParameters, "ServicePort", value);
+			}
+		}
+
+		public string ServiceIp
+		{
+			get
+			{
+				return serviceIp;
+			}
+			set	
+			{
+				serviceIp = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceIp", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

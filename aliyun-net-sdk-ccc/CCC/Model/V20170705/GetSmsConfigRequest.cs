@@ -42,7 +42,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string instanceId;
 
-		private List<int?> scenarios;
+		private List<int?> scenarios = new List<int?>(){ };
 
 		public string InstanceId
 		{

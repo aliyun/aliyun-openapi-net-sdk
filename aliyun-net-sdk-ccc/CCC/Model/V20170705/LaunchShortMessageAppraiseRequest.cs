@@ -40,41 +40,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string acid;
-
-		private string instanceId;
-
 		private int? contactType;
 
 		private string phoneNumbers;
 
+		private string acid;
+
+		private string instanceId;
+
 		private string skillGroupId;
-
-		public string Acid
-		{
-			get
-			{
-				return acid;
-			}
-			set	
-			{
-				acid = value;
-				DictionaryUtil.Add(QueryParameters, "Acid", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
 
 		public int? ContactType
 		{
@@ -99,6 +73,32 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				phoneNumbers = value;
 				DictionaryUtil.Add(QueryParameters, "PhoneNumbers", value);
+			}
+		}
+
+		public string Acid
+		{
+			get
+			{
+				return acid;
+			}
+			set	
+			{
+				acid = value;
+				DictionaryUtil.Add(QueryParameters, "Acid", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

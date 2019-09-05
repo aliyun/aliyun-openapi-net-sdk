@@ -42,13 +42,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string contactFlowId;
 
-		private string instanceId;
-
 		private string usage;
 
-		private List<string> skillGroupIds;
+		private List<string> phoneNumbers = new List<string>(){ };
 
-		private List<string> phoneNumbers;
+		private string instanceId;
+
+		private List<string> skillGroupIds = new List<string>(){ };
 
 		public string ContactFlowId
 		{
@@ -60,19 +60,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				contactFlowId = value;
 				DictionaryUtil.Add(QueryParameters, "ContactFlowId", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -89,23 +76,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<string> SkillGroupIds
-		{
-			get
-			{
-				return skillGroupIds;
-			}
-
-			set
-			{
-				skillGroupIds = value;
-				for (int i = 0; i < skillGroupIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SkillGroupId." + (i + 1) , skillGroupIds[i]);
-				}
-			}
-		}
-
 		public List<string> PhoneNumbers
 		{
 			get
@@ -119,6 +89,36 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				for (int i = 0; i < phoneNumbers.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"PhoneNumber." + (i + 1) , phoneNumbers[i]);
+				}
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public List<string> SkillGroupIds
+		{
+			get
+			{
+				return skillGroupIds;
+			}
+
+			set
+			{
+				skillGroupIds = value;
+				for (int i = 0; i < skillGroupIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SkillGroupId." + (i + 1) , skillGroupIds[i]);
 				}
 			}
 		}

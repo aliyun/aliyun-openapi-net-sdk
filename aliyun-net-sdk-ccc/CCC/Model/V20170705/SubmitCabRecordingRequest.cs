@@ -40,15 +40,41 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
+		private string mergedRecording;
+
+		private string resourceRecording;
+
 		private string instanceId;
 
 		private long? instanceOwnerId;
 
-		private string mergedRecording;
-
 		private string taskId;
 
-		private string resourceRecording;
+		public string MergedRecording
+		{
+			get
+			{
+				return mergedRecording;
+			}
+			set	
+			{
+				mergedRecording = value;
+				DictionaryUtil.Add(QueryParameters, "MergedRecording", value);
+			}
+		}
+
+		public string ResourceRecording
+		{
+			get
+			{
+				return resourceRecording;
+			}
+			set	
+			{
+				resourceRecording = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceRecording", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -76,19 +102,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string MergedRecording
-		{
-			get
-			{
-				return mergedRecording;
-			}
-			set	
-			{
-				mergedRecording = value;
-				DictionaryUtil.Add(QueryParameters, "MergedRecording", value);
-			}
-		}
-
 		public string TaskId
 		{
 			get
@@ -99,19 +112,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				taskId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskId", value);
-			}
-		}
-
-		public string ResourceRecording
-		{
-			get
-			{
-				return resourceRecording;
-			}
-			set	
-			{
-				resourceRecording = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceRecording", value);
 			}
 		}
 

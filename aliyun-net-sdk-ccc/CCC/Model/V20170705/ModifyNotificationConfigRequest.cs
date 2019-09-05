@@ -40,11 +40,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private List<Subscriptions> subscriptionss;
-
-		private string instanceId;
+		private List<Subscriptions> subscriptionss = new List<Subscriptions>(){ };
 
 		private string accessPoint;
+
+		private string instanceId;
 
 		private string topic;
 
@@ -69,19 +69,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
 		public string AccessPoint
 		{
 			get
@@ -92,6 +79,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				accessPoint = value;
 				DictionaryUtil.Add(QueryParameters, "AccessPoint", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

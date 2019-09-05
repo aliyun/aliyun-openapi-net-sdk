@@ -28,10 +28,10 @@ using Aliyun.Acs.CCC.Transform.V20170705;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-    public class SendPredefinedShortMessageRequest : RpcAcsRequest<SendPredefinedShortMessageResponse>
+    public class GetRoutePointRequest : RpcAcsRequest<GetRoutePointResponse>
     {
-        public SendPredefinedShortMessageRequest()
-            : base("CCC", "2017-07-05", "SendPredefinedShortMessage")
+        public GetRoutePointRequest()
+            : base("CCC", "2017-07-05", "GetRoutePoint")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,20 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string phoneNumbers;
+		private string contactFlowId;
 
 		private string instanceId;
 
-		private long? configId;
-
-		private string templateParam;
-
-		public string PhoneNumbers
+		public string ContactFlowId
 		{
 			get
 			{
-				return phoneNumbers;
+				return contactFlowId;
 			}
 			set	
 			{
-				phoneNumbers = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNumbers", value);
+				contactFlowId = value;
+				DictionaryUtil.Add(QueryParameters, "ContactFlowId", value);
 			}
 		}
 
@@ -74,35 +70,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public long? ConfigId
-		{
-			get
-			{
-				return configId;
-			}
-			set	
-			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
-			}
-		}
-
-		public string TemplateParam
-		{
-			get
-			{
-				return templateParam;
-			}
-			set	
-			{
-				templateParam = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateParam", value);
-			}
-		}
-
-        public override SendPredefinedShortMessageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetRoutePointResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SendPredefinedShortMessageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetRoutePointResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

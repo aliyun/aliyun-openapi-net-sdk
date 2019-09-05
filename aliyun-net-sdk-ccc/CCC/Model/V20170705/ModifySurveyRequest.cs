@@ -40,55 +40,29 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string surveyId;
-
-		private string instanceId;
-
 		private string role;
-
-		private int? round;
-
-		private string flowJson;
-
-		private string name;
-
-		private string globalQuestions;
 
 		private string description;
 
-		private string corpora;
+		private string flowJson;
 
-		private string speechOptimizationParam;
+		private string globalQuestions;
+
+		private string corpora;
 
 		private string scenarioId;
 
+		private string surveyId;
+
+		private string speechOptimizationParam;
+
+		private string instanceId;
+
+		private int? round;
+
+		private string name;
+
 		private string flowId;
-
-		public string SurveyId
-		{
-			get
-			{
-				return surveyId;
-			}
-			set	
-			{
-				surveyId = value;
-				DictionaryUtil.Add(QueryParameters, "SurveyId", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
 
 		public string Role
 		{
@@ -100,58 +74,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				role = value;
 				DictionaryUtil.Add(QueryParameters, "Role", value);
-			}
-		}
-
-		public int? Round
-		{
-			get
-			{
-				return round;
-			}
-			set	
-			{
-				round = value;
-				DictionaryUtil.Add(QueryParameters, "Round", value.ToString());
-			}
-		}
-
-		public string FlowJson
-		{
-			get
-			{
-				return flowJson;
-			}
-			set	
-			{
-				flowJson = value;
-				DictionaryUtil.Add(QueryParameters, "FlowJson", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string GlobalQuestions
-		{
-			get
-			{
-				return globalQuestions;
-			}
-			set	
-			{
-				globalQuestions = value;
-				DictionaryUtil.Add(QueryParameters, "GlobalQuestions", value);
 			}
 		}
 
@@ -168,6 +90,32 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
+		public string FlowJson
+		{
+			get
+			{
+				return flowJson;
+			}
+			set	
+			{
+				flowJson = value;
+				DictionaryUtil.Add(QueryParameters, "FlowJson", value);
+			}
+		}
+
+		public string GlobalQuestions
+		{
+			get
+			{
+				return globalQuestions;
+			}
+			set	
+			{
+				globalQuestions = value;
+				DictionaryUtil.Add(QueryParameters, "GlobalQuestions", value);
+			}
+		}
+
 		public string Corpora
 		{
 			get
@@ -178,6 +126,32 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				corpora = value;
 				DictionaryUtil.Add(QueryParameters, "Corpora", value);
+			}
+		}
+
+		public string ScenarioId
+		{
+			get
+			{
+				return scenarioId;
+			}
+			set	
+			{
+				scenarioId = value;
+				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+			}
+		}
+
+		public string SurveyId
+		{
+			get
+			{
+				return surveyId;
+			}
+			set	
+			{
+				surveyId = value;
+				DictionaryUtil.Add(QueryParameters, "SurveyId", value);
 			}
 		}
 
@@ -194,16 +168,42 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string ScenarioId
+		public string InstanceId
 		{
 			get
 			{
-				return scenarioId;
+				return instanceId;
 			}
 			set	
 			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public int? Round
+		{
+			get
+			{
+				return round;
+			}
+			set	
+			{
+				round = value;
+				DictionaryUtil.Add(QueryParameters, "Round", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

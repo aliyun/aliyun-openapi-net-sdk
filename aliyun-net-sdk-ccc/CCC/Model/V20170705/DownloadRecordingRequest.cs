@@ -40,11 +40,24 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
+		private string channel;
+
 		private string instanceId;
 
 		private string fileName;
 
-		private string channel;
+		public string Channel
+		{
+			get
+			{
+				return channel;
+			}
+			set	
+			{
+				channel = value;
+				DictionaryUtil.Add(QueryParameters, "Channel", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -69,19 +82,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				fileName = value;
 				DictionaryUtil.Add(QueryParameters, "FileName", value);
-			}
-		}
-
-		public string Channel
-		{
-			get
-			{
-				return channel;
-			}
-			set	
-			{
-				channel = value;
-				DictionaryUtil.Add(QueryParameters, "Channel", value);
 			}
 		}
 

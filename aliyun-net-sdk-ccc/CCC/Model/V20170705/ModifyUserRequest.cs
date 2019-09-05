@@ -42,19 +42,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string privateOutboundNumberId;
 
-		private List<int?> skillLevels;
+		private List<string> roleIds = new List<string>(){ };
+
+		private string userId;
+
+		private List<int?> skillLevels = new List<int?>(){ };
 
 		private string instanceId;
 
 		private string phone;
 
-		private List<string> roleIds;
-
 		private string displayName;
 
-		private List<string> skillGroupIds;
-
-		private string userId;
+		private List<string> skillGroupIds = new List<string>(){ };
 
 		private string email;
 
@@ -68,6 +68,36 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				privateOutboundNumberId = value;
 				DictionaryUtil.Add(QueryParameters, "PrivateOutboundNumberId", value);
+			}
+		}
+
+		public List<string> RoleIds
+		{
+			get
+			{
+				return roleIds;
+			}
+
+			set
+			{
+				roleIds = value;
+				for (int i = 0; i < roleIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"RoleId." + (i + 1) , roleIds[i]);
+				}
+			}
+		}
+
+		public string UserId
+		{
+			get
+			{
+				return userId;
+			}
+			set	
+			{
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 
@@ -114,23 +144,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<string> RoleIds
-		{
-			get
-			{
-				return roleIds;
-			}
-
-			set
-			{
-				roleIds = value;
-				for (int i = 0; i < roleIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RoleId." + (i + 1) , roleIds[i]);
-				}
-			}
-		}
-
 		public string DisplayName
 		{
 			get
@@ -158,19 +171,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"SkillGroupId." + (i + 1) , skillGroupIds[i]);
 				}
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 

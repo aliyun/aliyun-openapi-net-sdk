@@ -40,26 +40,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string instanceId;
-
 		private string ramIds;
 
 		private long? startTime;
 
 		private long? stopTime;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
 
 		public string RamIds
 		{
@@ -97,6 +84,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				stopTime = value;
 				DictionaryUtil.Add(QueryParameters, "StopTime", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

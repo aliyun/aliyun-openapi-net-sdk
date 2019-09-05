@@ -40,9 +40,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string callingNumber;
-
 		private string agentId;
+
+		private long? startTime;
+
+		private long? stopTime;
+
+		private int? pageNumber;
+
+		private string callingNumber;
 
 		private string instanceId;
 
@@ -50,26 +56,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? pageSize;
 
-		private long? startTime;
-
-		private long? stopTime;
-
 		private string connectId;
-
-		private int? pageNumber;
-
-		public string CallingNumber
-		{
-			get
-			{
-				return callingNumber;
-			}
-			set	
-			{
-				callingNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
-			}
-		}
 
 		public string AgentId
 		{
@@ -81,6 +68,58 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				agentId = value;
 				DictionaryUtil.Add(QueryParameters, "AgentId", value);
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public long? StopTime
+		{
+			get
+			{
+				return stopTime;
+			}
+			set	
+			{
+				stopTime = value;
+				DictionaryUtil.Add(QueryParameters, "StopTime", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string CallingNumber
+		{
+			get
+			{
+				return callingNumber;
+			}
+			set	
+			{
+				callingNumber = value;
+				DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
 			}
 		}
 
@@ -123,32 +162,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
-
-		public long? StopTime
-		{
-			get
-			{
-				return stopTime;
-			}
-			set	
-			{
-				stopTime = value;
-				DictionaryUtil.Add(QueryParameters, "StopTime", value.ToString());
-			}
-		}
-
 		public string ConnectId
 		{
 			get
@@ -159,19 +172,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				connectId = value;
 				DictionaryUtil.Add(QueryParameters, "ConnectId", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

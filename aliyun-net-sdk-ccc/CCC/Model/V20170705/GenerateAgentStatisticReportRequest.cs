@@ -42,15 +42,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string agentId;
 
+		private string startDate;
+
+		private int? pageNumber;
+
 		private string instanceId;
 
 		private string endDate;
 
 		private int? pageSize;
-
-		private string startDate;
-
-		private int? pageNumber;
 
 		public string AgentId
 		{
@@ -62,6 +62,32 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				agentId = value;
 				DictionaryUtil.Add(QueryParameters, "AgentId", value);
+			}
+		}
+
+		public string StartDate
+		{
+			get
+			{
+				return startDate;
+			}
+			set	
+			{
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -101,32 +127,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string StartDate
-		{
-			get
-			{
-				return startDate;
-			}
-			set	
-			{
-				startDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartDate", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

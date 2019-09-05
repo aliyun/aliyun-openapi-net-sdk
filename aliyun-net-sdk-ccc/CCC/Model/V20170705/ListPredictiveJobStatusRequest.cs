@@ -40,17 +40,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string contactName;
-
-		private string instanceId;
-
 		private string timeAlignment;
 
-		private string jobGroupId;
-
 		private string phoneNumber;
-
-		private int? pageSize;
 
 		private long? endTime;
 
@@ -58,31 +50,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? pageNumber;
 
-		public string ContactName
-		{
-			get
-			{
-				return contactName;
-			}
-			set	
-			{
-				contactName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactName", value);
-			}
-		}
+		private string contactName;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
+
+		private string jobGroupId;
+
+		private int? pageSize;
 
 		public string TimeAlignment
 		{
@@ -97,19 +71,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string JobGroupId
-		{
-			get
-			{
-				return jobGroupId;
-			}
-			set	
-			{
-				jobGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
-			}
-		}
-
 		public string PhoneNumber
 		{
 			get
@@ -120,19 +81,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				phoneNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -172,6 +120,58 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ContactName
+		{
+			get
+			{
+				return contactName;
+			}
+			set	
+			{
+				contactName = value;
+				DictionaryUtil.Add(QueryParameters, "ContactName", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string JobGroupId
+		{
+			get
+			{
+				return jobGroupId;
+			}
+			set	
+			{
+				jobGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "JobGroupId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

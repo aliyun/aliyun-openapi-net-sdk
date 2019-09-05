@@ -40,11 +40,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private List<string> phoneNumberss;
+		private List<string> phoneNumberss = new List<string>(){ };
 
-		private List<string> userObjects;
-
-		private string name;
+		private List<string> userObjects = new List<string>(){ };
 
 		private string domainName;
 
@@ -54,11 +52,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? storageMaxDays;
 
+		private List<string> adminRamIds = new List<string>(){ };
+
+		private string name;
+
 		private int? storageMaxSize;
 
 		private string directoryId;
-
-		private List<string> adminRamIds;
 
 		public List<string> PhoneNumberss
 		{
@@ -91,19 +91,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"UserObject." + (i + 1) , userObjects[i]);
 				}
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -159,6 +146,36 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
+		public List<string> AdminRamIds
+		{
+			get
+			{
+				return adminRamIds;
+			}
+
+			set
+			{
+				adminRamIds = value;
+				for (int i = 0; i < adminRamIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"AdminRamId." + (i + 1) , adminRamIds[i]);
+				}
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
 		public int? StorageMaxSize
 		{
 			get
@@ -182,23 +199,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				directoryId = value;
 				DictionaryUtil.Add(QueryParameters, "DirectoryId", value);
-			}
-		}
-
-		public List<string> AdminRamIds
-		{
-			get
-			{
-				return adminRamIds;
-			}
-
-			set
-			{
-				adminRamIds = value;
-				for (int i = 0; i < adminRamIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"AdminRamId." + (i + 1) , adminRamIds[i]);
-				}
 			}
 		}
 

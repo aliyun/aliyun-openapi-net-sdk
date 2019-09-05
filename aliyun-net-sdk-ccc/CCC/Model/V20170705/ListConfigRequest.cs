@@ -42,7 +42,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string instanceId;
 
-		private List<string> configItems;
+		private List<string> configItems = new List<string>(){ };
 
 		public string InstanceId
 		{

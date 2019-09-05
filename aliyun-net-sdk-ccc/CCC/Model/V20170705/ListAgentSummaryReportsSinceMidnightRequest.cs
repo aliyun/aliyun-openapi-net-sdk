@@ -42,13 +42,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string agentIds;
 
+		private int? pageNumber;
+
 		private string instanceId;
 
 		private string skillGroupId;
 
 		private int? pageSize;
-
-		private int? pageNumber;
 
 		public string AgentIds
 		{
@@ -60,6 +60,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				agentIds = value;
 				DictionaryUtil.Add(QueryParameters, "AgentIds", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -99,19 +112,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

@@ -40,41 +40,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string instanceId;
-
-		private string clientIp;
-
 		private string remark;
 
 		private string clientPort;
 
+		private string instanceId;
+
+		private string clientIp;
+
 		private string browserVersion;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string ClientIp
-		{
-			get
-			{
-				return clientIp;
-			}
-			set	
-			{
-				clientIp = value;
-				DictionaryUtil.Add(QueryParameters, "ClientIp", value);
-			}
-		}
 
 		public string Remark
 		{
@@ -99,6 +73,32 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				clientPort = value;
 				DictionaryUtil.Add(QueryParameters, "ClientPort", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string ClientIp
+		{
+			get
+			{
+				return clientIp;
+			}
+			set	
+			{
+				clientIp = value;
+				DictionaryUtil.Add(QueryParameters, "ClientIp", value);
 			}
 		}
 

@@ -42,9 +42,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string agentId;
 
-		private string instanceId;
-
 		private string dn;
+
+		private string instanceId;
 
 		public string AgentId
 		{
@@ -59,19 +59,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
 		public string Dn
 		{
 			get
@@ -82,6 +69,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				dn = value;
 				DictionaryUtil.Add(QueryParameters, "Dn", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

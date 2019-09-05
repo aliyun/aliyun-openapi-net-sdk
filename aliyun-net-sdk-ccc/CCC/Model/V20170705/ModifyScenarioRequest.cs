@@ -42,11 +42,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string variables;
 
+		private string description;
+
 		private string instanceId;
 
 		private string name;
-
-		private string description;
 
 		private string scenarioId;
 
@@ -60,6 +60,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				variables = value;
 				DictionaryUtil.Add(QueryParameters, "Variables", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -86,19 +99,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 

@@ -42,13 +42,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string contactFlowId;
 
+		private string usage;
+
 		private string instanceId;
 
 		private string phoneNumberId;
 
-		private string usage;
-
-		private List<string> skillGroupIds;
+		private List<string> skillGroupIds = new List<string>(){ };
 
 		public string ContactFlowId
 		{
@@ -60,6 +60,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				contactFlowId = value;
 				DictionaryUtil.Add(QueryParameters, "ContactFlowId", value);
+			}
+		}
+
+		public string Usage
+		{
+			get
+			{
+				return usage;
+			}
+			set	
+			{
+				usage = value;
+				DictionaryUtil.Add(QueryParameters, "Usage", value);
 			}
 		}
 
@@ -86,19 +99,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				phoneNumberId = value;
 				DictionaryUtil.Add(QueryParameters, "PhoneNumberId", value);
-			}
-		}
-
-		public string Usage
-		{
-			get
-			{
-				return usage;
-			}
-			set	
-			{
-				usage = value;
-				DictionaryUtil.Add(QueryParameters, "Usage", value);
 			}
 		}
 

@@ -40,11 +40,28 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
+		private List<string> userIds = new List<string>(){ };
+
 		private string instanceId;
 
 		private string skillGroupId;
 
-		private List<string> userIds;
+		public List<string> UserIds
+		{
+			get
+			{
+				return userIds;
+			}
+
+			set
+			{
+				userIds = value;
+				for (int i = 0; i < userIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"UserId." + (i + 1) , userIds[i]);
+				}
+			}
+		}
 
 		public string InstanceId
 		{
@@ -69,23 +86,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				skillGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
-			}
-		}
-
-		public List<string> UserIds
-		{
-			get
-			{
-				return userIds;
-			}
-
-			set
-			{
-				userIds = value;
-				for (int i = 0; i < userIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"UserId." + (i + 1) , userIds[i]);
-				}
 			}
 		}
 

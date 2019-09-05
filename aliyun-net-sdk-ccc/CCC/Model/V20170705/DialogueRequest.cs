@@ -42,6 +42,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string callId;
 
+		private string actionParams;
+
 		private string callingNumber;
 
 		private string instanceId;
@@ -49,8 +51,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string calledNumber;
 
 		private string actionKey;
-
-		private string actionParams;
 
 		private string callType;
 
@@ -70,6 +70,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				callId = value;
 				DictionaryUtil.Add(QueryParameters, "CallId", value);
+			}
+		}
+
+		public string ActionParams
+		{
+			get
+			{
+				return actionParams;
+			}
+			set	
+			{
+				actionParams = value;
+				DictionaryUtil.Add(QueryParameters, "ActionParams", value);
 			}
 		}
 
@@ -122,19 +135,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				actionKey = value;
 				DictionaryUtil.Add(QueryParameters, "ActionKey", value);
-			}
-		}
-
-		public string ActionParams
-		{
-			get
-			{
-				return actionParams;
-			}
-			set	
-			{
-				actionParams = value;
-				DictionaryUtil.Add(QueryParameters, "ActionParams", value);
 			}
 		}
 

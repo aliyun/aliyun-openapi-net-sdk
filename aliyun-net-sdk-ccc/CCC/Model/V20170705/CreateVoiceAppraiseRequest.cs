@@ -41,39 +41,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			Method = MethodType.POST;
         }
 
-		private string instanceId;
-
-		private string contactFlowVersionId;
-
 		private bool? isAppraise;
 
 		private string content;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
 
-		public string ContactFlowVersionId
-		{
-			get
-			{
-				return contactFlowVersionId;
-			}
-			set	
-			{
-				contactFlowVersionId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactFlowVersionId", value);
-			}
-		}
+		private string contactFlowVersionId;
 
 		public bool? IsAppraise
 		{
@@ -98,6 +72,32 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				content = value;
 				DictionaryUtil.Add(BodyParameters, "Content", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string ContactFlowVersionId
+		{
+			get
+			{
+				return contactFlowVersionId;
+			}
+			set	
+			{
+				contactFlowVersionId = value;
+				DictionaryUtil.Add(QueryParameters, "ContactFlowVersionId", value);
 			}
 		}
 

@@ -40,7 +40,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private List<string> callingNumbers;
+		private string description;
+
+		private List<string> callingNumbers = new List<string>(){ };
 
 		private string instanceId;
 
@@ -48,9 +50,20 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string name;
 
-		private string description;
-
 		private string scenarioId;
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
 
 		public List<string> CallingNumbers
 		{
@@ -105,19 +118,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 

@@ -40,56 +40,17 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string instanceId;
-
-		private string fileName;
-
-		private string name;
-
 		private string description;
 
 		private string type;
 
 		private string content;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
 
-		public string FileName
-		{
-			get
-			{
-				return fileName;
-			}
-			set	
-			{
-				fileName = value;
-				DictionaryUtil.Add(QueryParameters, "FileName", value);
-			}
-		}
+		private string fileName;
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+		private string name;
 
 		public string Description
 		{
@@ -127,6 +88,45 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				content = value;
 				DictionaryUtil.Add(QueryParameters, "Content", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string FileName
+		{
+			get
+			{
+				return fileName;
+			}
+			set	
+			{
+				fileName = value;
+				DictionaryUtil.Add(QueryParameters, "FileName", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

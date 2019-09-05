@@ -42,7 +42,7 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private bool? all;
 
-		private List<string> jobIds;
+		private List<string> jobIds = new List<string>(){ };
 
 		private string instanceId;
 

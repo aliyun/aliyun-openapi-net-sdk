@@ -42,15 +42,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string intervalType;
 
-		private int? month;
-
 		private int? year;
+
+		private int? pageNumber;
+
+		private int? month;
 
 		private int? pageSize;
 
 		private int? day;
-
-		private int? pageNumber;
 
 		public string IntervalType
 		{
@@ -65,19 +65,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public int? Month
-		{
-			get
-			{
-				return month;
-			}
-			set	
-			{
-				month = value;
-				DictionaryUtil.Add(QueryParameters, "Month", value.ToString());
-			}
-		}
-
 		public int? Year
 		{
 			get
@@ -88,6 +75,32 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				year = value;
 				DictionaryUtil.Add(QueryParameters, "Year", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? Month
+		{
+			get
+			{
+				return month;
+			}
+			set	
+			{
+				month = value;
+				DictionaryUtil.Add(QueryParameters, "Month", value.ToString());
 			}
 		}
 
@@ -114,19 +127,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				day = value;
 				DictionaryUtil.Add(QueryParameters, "Day", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

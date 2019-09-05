@@ -41,6 +41,14 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			Method = MethodType.POST;
         }
 
+		private string description;
+
+		private bool? timingSchedule;
+
+		private List<string> jobsJsons = new List<string>(){ };
+
+		private string jobFilePath;
+
 		private string instanceId;
 
 		private bool? isDraft;
@@ -51,13 +59,61 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string name;
 
-		private string description;
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
 
-		private bool? timingSchedule;
+		public bool? TimingSchedule
+		{
+			get
+			{
+				return timingSchedule;
+			}
+			set	
+			{
+				timingSchedule = value;
+				DictionaryUtil.Add(QueryParameters, "TimingSchedule", value.ToString());
+			}
+		}
 
-		private List<string> jobsJsons;
+		public List<string> JobsJsons
+		{
+			get
+			{
+				return jobsJsons;
+			}
 
-		private string jobFilePath;
+			set
+			{
+				jobsJsons = value;
+				for (int i = 0; i < jobsJsons.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"JobsJson." + (i + 1) , jobsJsons[i]);
+				}
+			}
+		}
+
+		public string JobFilePath
+		{
+			get
+			{
+				return jobFilePath;
+			}
+			set	
+			{
+				jobFilePath = value;
+				DictionaryUtil.Add(QueryParameters, "JobFilePath", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -121,62 +177,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public bool? TimingSchedule
-		{
-			get
-			{
-				return timingSchedule;
-			}
-			set	
-			{
-				timingSchedule = value;
-				DictionaryUtil.Add(QueryParameters, "TimingSchedule", value.ToString());
-			}
-		}
-
-		public List<string> JobsJsons
-		{
-			get
-			{
-				return jobsJsons;
-			}
-
-			set
-			{
-				jobsJsons = value;
-				for (int i = 0; i < jobsJsons.Count; i++)
-				{
-					DictionaryUtil.Add(BodyParameters,"JobsJson." + (i + 1) , jobsJsons[i]);
-				}
-			}
-		}
-
-		public string JobFilePath
-		{
-			get
-			{
-				return jobFilePath;
-			}
-			set	
-			{
-				jobFilePath = value;
-				DictionaryUtil.Add(QueryParameters, "JobFilePath", value);
 			}
 		}
 

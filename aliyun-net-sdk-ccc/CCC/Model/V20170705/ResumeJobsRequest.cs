@@ -42,13 +42,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private bool? all;
 
-		private List<string> jobIds;
-
-		private string instanceId;
-
-		private List<string> jobReferenceIds;
+		private List<string> jobReferenceIds = new List<string>(){ };
 
 		private string groupId;
+
+		private List<string> jobIds = new List<string>(){ };
+
+		private string instanceId;
 
 		private string scenarioId;
 
@@ -62,36 +62,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				all = value;
 				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
-			}
-		}
-
-		public List<string> JobIds
-		{
-			get
-			{
-				return jobIds;
-			}
-
-			set
-			{
-				jobIds = value;
-				for (int i = 0; i < jobIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"JobId." + (i + 1) , jobIds[i]);
-				}
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -122,6 +92,36 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public List<string> JobIds
+		{
+			get
+			{
+				return jobIds;
+			}
+
+			set
+			{
+				jobIds = value;
+				for (int i = 0; i < jobIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"JobId." + (i + 1) , jobIds[i]);
+				}
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

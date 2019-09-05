@@ -42,15 +42,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string callId;
 
-		private string uid;
-
 		private long? recordTime;
+
+		private long? callStartTime;
+
+		private string uid;
 
 		private string instanceId;
 
 		private string stats;
-
-		private long? callStartTime;
 
 		private string tenantId;
 
@@ -71,19 +71,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string Uid
-		{
-			get
-			{
-				return uid;
-			}
-			set	
-			{
-				uid = value;
-				DictionaryUtil.Add(QueryParameters, "Uid", value);
-			}
-		}
-
 		public long? RecordTime
 		{
 			get
@@ -94,6 +81,32 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				recordTime = value;
 				DictionaryUtil.Add(QueryParameters, "RecordTime", value.ToString());
+			}
+		}
+
+		public long? CallStartTime
+		{
+			get
+			{
+				return callStartTime;
+			}
+			set	
+			{
+				callStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "CallStartTime", value.ToString());
+			}
+		}
+
+		public string Uid
+		{
+			get
+			{
+				return uid;
+			}
+			set	
+			{
+				uid = value;
+				DictionaryUtil.Add(QueryParameters, "Uid", value);
 			}
 		}
 
@@ -120,19 +133,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				stats = value;
 				DictionaryUtil.Add(QueryParameters, "Stats", value);
-			}
-		}
-
-		public long? CallStartTime
-		{
-			get
-			{
-				return callStartTime;
-			}
-			set	
-			{
-				callStartTime = value;
-				DictionaryUtil.Add(QueryParameters, "CallStartTime", value.ToString());
 			}
 		}
 

@@ -40,9 +40,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string instanceId;
-
 		private string role;
+
+		private string description;
+
+		private string speechOptimizationParam;
+
+		private string instanceId;
 
 		private int? round;
 
@@ -52,26 +56,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string globalQuestions;
 
-		private string description;
-
 		private string corpora;
 
-		private string speechOptimizationParam;
-
 		private string scenarioId;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
 
 		public string Role
 		{
@@ -83,6 +70,45 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				role = value;
 				DictionaryUtil.Add(QueryParameters, "Role", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string SpeechOptimizationParam
+		{
+			get
+			{
+				return speechOptimizationParam;
+			}
+			set	
+			{
+				speechOptimizationParam = value;
+				DictionaryUtil.Add(QueryParameters, "SpeechOptimizationParam", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -138,19 +164,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public string Corpora
 		{
 			get
@@ -161,19 +174,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				corpora = value;
 				DictionaryUtil.Add(QueryParameters, "Corpora", value);
-			}
-		}
-
-		public string SpeechOptimizationParam
-		{
-			get
-			{
-				return speechOptimizationParam;
-			}
-			set	
-			{
-				speechOptimizationParam = value;
-				DictionaryUtil.Add(QueryParameters, "SpeechOptimizationParam", value);
 			}
 		}
 

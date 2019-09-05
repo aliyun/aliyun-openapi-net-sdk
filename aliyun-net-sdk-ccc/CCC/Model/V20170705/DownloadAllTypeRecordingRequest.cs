@@ -40,24 +40,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string instanceId;
-
 		private string contactId;
 
 		private string channel;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
 
 		public string ContactId
 		{
@@ -82,6 +69,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				channel = value;
 				DictionaryUtil.Add(QueryParameters, "Channel", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

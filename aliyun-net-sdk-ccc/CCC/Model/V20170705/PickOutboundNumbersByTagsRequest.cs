@@ -40,15 +40,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private List<string> prioritizedCallerAreas;
+		private List<string> prioritizedCallerAreas = new List<string>(){ };
+
+		private int? count;
 
 		private string instanceId;
 
-		private List<string> serviceTags;
+		private List<string> serviceTags = new List<string>(){ };
 
-		private List<string> skillGroupIds;
-
-		private int? count;
+		private List<string> skillGroupIds = new List<string>(){ };
 
 		private string calleeNumber;
 
@@ -66,6 +66,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"PrioritizedCallerArea." + (i + 1) , prioritizedCallerAreas[i]);
 				}
+			}
+		}
+
+		public int? Count
+		{
+			get
+			{
+				return count;
+			}
+			set	
+			{
+				count = value;
+				DictionaryUtil.Add(QueryParameters, "Count", value.ToString());
 			}
 		}
 
@@ -113,19 +126,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"SkillGroupId." + (i + 1) , skillGroupIds[i]);
 				}
-			}
-		}
-
-		public int? Count
-		{
-			get
-			{
-				return count;
-			}
-			set	
-			{
-				count = value;
-				DictionaryUtil.Add(QueryParameters, "Count", value.ToString());
 			}
 		}
 

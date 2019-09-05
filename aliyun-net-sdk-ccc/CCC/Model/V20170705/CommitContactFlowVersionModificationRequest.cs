@@ -43,11 +43,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string canvas;
 
+		private string content;
+
 		private string instanceId;
 
 		private string contactFlowVersionId;
-
-		private string content;
 
 		public string Canvas
 		{
@@ -59,6 +59,19 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				canvas = value;
 				DictionaryUtil.Add(BodyParameters, "Canvas", value);
+			}
+		}
+
+		public string Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+				DictionaryUtil.Add(BodyParameters, "Content", value);
 			}
 		}
 
@@ -85,19 +98,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				contactFlowVersionId = value;
 				DictionaryUtil.Add(QueryParameters, "ContactFlowVersionId", value);
-			}
-		}
-
-		public string Content
-		{
-			get
-			{
-				return content;
-			}
-			set	
-			{
-				content = value;
-				DictionaryUtil.Add(BodyParameters, "Content", value);
 			}
 		}
 

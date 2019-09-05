@@ -40,6 +40,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
+		private string callee;
+
 		private string routPoint;
 
 		private string caller;
@@ -48,9 +50,20 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string provider;
 
-		private string callee;
-
 		private int? answerMode;
+
+		public string Callee
+		{
+			get
+			{
+				return callee;
+			}
+			set	
+			{
+				callee = value;
+				DictionaryUtil.Add(QueryParameters, "Callee", value);
+			}
+		}
 
 		public string RoutPoint
 		{
@@ -101,19 +114,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				provider = value;
 				DictionaryUtil.Add(QueryParameters, "Provider", value);
-			}
-		}
-
-		public string Callee
-		{
-			get
-			{
-				return callee;
-			}
-			set	
-			{
-				callee = value;
-				DictionaryUtil.Add(QueryParameters, "Callee", value);
 			}
 		}
 

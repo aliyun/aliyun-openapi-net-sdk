@@ -40,30 +40,17 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string instanceId;
-
 		private string startDay;
-
-		private string endDay;
-
-		private int? pageSize;
 
 		private string userId;
 
 		private int? pageNumber;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
+
+		private string endDay;
+
+		private int? pageSize;
 
 		public string StartDay
 		{
@@ -75,32 +62,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				startDay = value;
 				DictionaryUtil.Add(QueryParameters, "StartDay", value);
-			}
-		}
-
-		public string EndDay
-		{
-			get
-			{
-				return endDay;
-			}
-			set	
-			{
-				endDay = value;
-				DictionaryUtil.Add(QueryParameters, "EndDay", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -127,6 +88,45 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string EndDay
+		{
+			get
+			{
+				return endDay;
+			}
+			set	
+			{
+				endDay = value;
+				DictionaryUtil.Add(QueryParameters, "EndDay", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

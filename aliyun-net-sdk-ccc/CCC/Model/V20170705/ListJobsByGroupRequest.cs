@@ -40,17 +40,43 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
+		private string jobStatus;
+
+		private int? pageNumber;
+
 		private string instanceId;
 
 		private string jobFailureReason;
-
-		private string jobStatus;
 
 		private string jobGroupId;
 
 		private int? pageSize;
 
-		private int? pageNumber;
+		public string JobStatus
+		{
+			get
+			{
+				return jobStatus;
+			}
+			set	
+			{
+				jobStatus = value;
+				DictionaryUtil.Add(QueryParameters, "JobStatus", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public string InstanceId
 		{
@@ -78,19 +104,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string JobStatus
-		{
-			get
-			{
-				return jobStatus;
-			}
-			set	
-			{
-				jobStatus = value;
-				DictionaryUtil.Add(QueryParameters, "JobStatus", value);
-			}
-		}
-
 		public string JobGroupId
 		{
 			get
@@ -114,19 +127,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

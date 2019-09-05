@@ -40,15 +40,45 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private List<int?> skillLevels;
+		private List<string> roleIds = new List<string>(){ };
+
+		private string userId;
+
+		private List<int?> skillLevels = new List<int?>(){ };
 
 		private string instanceId;
 
-		private List<string> roleIds;
+		private List<string> skillGroupIds = new List<string>(){ };
 
-		private List<string> skillGroupIds;
+		public List<string> RoleIds
+		{
+			get
+			{
+				return roleIds;
+			}
 
-		private string userId;
+			set
+			{
+				roleIds = value;
+				for (int i = 0; i < roleIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"RoleId." + (i + 1) , roleIds[i]);
+				}
+			}
+		}
+
+		public string UserId
+		{
+			get
+			{
+				return userId;
+			}
+			set	
+			{
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
+			}
+		}
 
 		public List<int?> SkillLevels
 		{
@@ -80,23 +110,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<string> RoleIds
-		{
-			get
-			{
-				return roleIds;
-			}
-
-			set
-			{
-				roleIds = value;
-				for (int i = 0; i < roleIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"RoleId." + (i + 1) , roleIds[i]);
-				}
-			}
-		}
-
 		public List<string> SkillGroupIds
 		{
 			get
@@ -111,19 +124,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				{
 					DictionaryUtil.Add(QueryParameters,"SkillGroupId." + (i + 1) , skillGroupIds[i]);
 				}
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 

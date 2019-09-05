@@ -40,13 +40,30 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
+		private List<string> jobsJsons = new List<string>(){ };
+
 		private string instanceId;
 
 		private string skillGroupId;
 
 		private string strategyJson;
 
-		private List<string> jobsJsons;
+		public List<string> JobsJsons
+		{
+			get
+			{
+				return jobsJsons;
+			}
+
+			set
+			{
+				jobsJsons = value;
+				for (int i = 0; i < jobsJsons.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"JobsJson." + (i + 1) , jobsJsons[i]);
+				}
+			}
+		}
 
 		public string InstanceId
 		{
@@ -84,23 +101,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				strategyJson = value;
 				DictionaryUtil.Add(QueryParameters, "StrategyJson", value);
-			}
-		}
-
-		public List<string> JobsJsons
-		{
-			get
-			{
-				return jobsJsons;
-			}
-
-			set
-			{
-				jobsJsons = value;
-				for (int i = 0; i < jobsJsons.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"JobsJson." + (i + 1) , jobsJsons[i]);
-				}
 			}
 		}
 

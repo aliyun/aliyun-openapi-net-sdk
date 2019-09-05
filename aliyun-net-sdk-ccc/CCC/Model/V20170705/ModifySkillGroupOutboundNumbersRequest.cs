@@ -40,13 +40,26 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
+		private int? operationType;
+
 		private string instanceId;
 
-		private List<string> outboundPhoneNumberIds;
+		private List<string> outboundPhoneNumberIds = new List<string>(){ };
 
 		private string skillGroupId;
 
-		private int? operationType;
+		public int? OperationType
+		{
+			get
+			{
+				return operationType;
+			}
+			set	
+			{
+				operationType = value;
+				DictionaryUtil.Add(QueryParameters, "OperationType", value.ToString());
+			}
+		}
 
 		public string InstanceId
 		{
@@ -88,19 +101,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				skillGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "SkillGroupId", value);
-			}
-		}
-
-		public int? OperationType
-		{
-			get
-			{
-				return operationType;
-			}
-			set	
-			{
-				operationType = value;
-				DictionaryUtil.Add(QueryParameters, "OperationType", value.ToString());
 			}
 		}
 

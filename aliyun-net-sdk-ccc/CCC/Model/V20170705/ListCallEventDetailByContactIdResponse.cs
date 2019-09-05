@@ -122,6 +122,10 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 			private string privacyNumber;
 
+			private string releaseAgent;
+
+			private string releaseReason;
+
 			private List<ListCallEventDetailByContactId_CallEventDetail> events;
 
 			public string Caller
@@ -181,6 +185,30 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				set	
 				{
 					privacyNumber = value;
+				}
+			}
+
+			public string ReleaseAgent
+			{
+				get
+				{
+					return releaseAgent;
+				}
+				set	
+				{
+					releaseAgent = value;
+				}
+			}
+
+			public string ReleaseReason
+			{
+				get
+				{
+					return releaseReason;
+				}
+				set	
+				{
+					releaseReason = value;
 				}
 			}
 

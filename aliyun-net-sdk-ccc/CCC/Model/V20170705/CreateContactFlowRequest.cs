@@ -43,15 +43,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private string canvas;
 
-		private string instanceId;
-
-		private string name;
-
 		private string description;
 
 		private string type;
 
 		private string content;
+
+		private string instanceId;
+
+		private string name;
 
 		public string Canvas
 		{
@@ -63,32 +63,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				canvas = value;
 				DictionaryUtil.Add(BodyParameters, "Canvas", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -128,6 +102,32 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				content = value;
 				DictionaryUtil.Add(BodyParameters, "Content", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

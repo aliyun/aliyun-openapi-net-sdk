@@ -40,13 +40,26 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
+		private string callee;
+
 		private string caller;
 
 		private string instanceId;
 
 		private string contractFlowId;
 
-		private string callee;
+		public string Callee
+		{
+			get
+			{
+				return callee;
+			}
+			set	
+			{
+				callee = value;
+				DictionaryUtil.Add(QueryParameters, "Callee", value);
+			}
+		}
 
 		public string Caller
 		{
@@ -84,19 +97,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			{
 				contractFlowId = value;
 				DictionaryUtil.Add(QueryParameters, "ContractFlowId", value);
-			}
-		}
-
-		public string Callee
-		{
-			get
-			{
-				return callee;
-			}
-			set	
-			{
-				callee = value;
-				DictionaryUtil.Add(QueryParameters, "Callee", value);
 			}
 		}
 

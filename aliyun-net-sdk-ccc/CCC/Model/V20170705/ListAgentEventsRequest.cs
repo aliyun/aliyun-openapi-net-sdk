@@ -40,28 +40,15 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string instanceId;
-
 		private long? startTime;
 
 		private long? stopTime;
 
-		private List<string> _events;
+		private List<string> ramIds = new List<string>(){ };
 
-		private List<string> ramIds;
+		private string instanceId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private List<string> _events = new List<string>(){ };
 
 		public long? StartTime
 		{
@@ -89,23 +76,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public List<string> _Events
-		{
-			get
-			{
-				return _events;
-			}
-
-			set
-			{
-				_events = value;
-				for (int i = 0; i < _events.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Event." + (i + 1) , _events[i]);
-				}
-			}
-		}
-
 		public List<string> RamIds
 		{
 			get
@@ -119,6 +89,36 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 				for (int i = 0; i < ramIds.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"RamId." + (i + 1) , ramIds[i]);
+				}
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public List<string> _Events
+		{
+			get
+			{
+				return _events;
+			}
+
+			set
+			{
+				_events = value;
+				for (int i = 0; i < _events.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Event." + (i + 1) , _events[i]);
 				}
 			}
 		}

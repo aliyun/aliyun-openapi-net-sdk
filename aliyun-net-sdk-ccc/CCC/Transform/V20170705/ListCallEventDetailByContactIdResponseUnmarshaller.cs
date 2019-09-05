@@ -43,6 +43,8 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			data.CallType = context.StringValue("ListCallEventDetailByContactId.Data.CallType");
 			data.StartTime = context.StringValue("ListCallEventDetailByContactId.Data.StartTime");
 			data.PrivacyNumber = context.StringValue("ListCallEventDetailByContactId.Data.PrivacyNumber");
+			data.ReleaseAgent = context.StringValue("ListCallEventDetailByContactId.Data.ReleaseAgent");
+			data.ReleaseReason = context.StringValue("ListCallEventDetailByContactId.Data.ReleaseReason");
 
 			List<ListCallEventDetailByContactIdResponse.ListCallEventDetailByContactId_Data.ListCallEventDetailByContactId_CallEventDetail> data_events = new List<ListCallEventDetailByContactIdResponse.ListCallEventDetailByContactId_Data.ListCallEventDetailByContactId_CallEventDetail>();
 			for (int i = 0; i < context.Length("ListCallEventDetailByContactId.Data.Events.Length"); i++) {
