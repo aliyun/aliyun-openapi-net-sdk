@@ -24,17 +24,17 @@ using Aliyun.Acs.Market.Model.V20151101;
 
 namespace Aliyun.Acs.Market.Transform.V20151101
 {
-    public class BindImagePackageResponseUnmarshaller
+    public class DeleteCommodityResponseUnmarshaller
     {
-        public static BindImagePackageResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteCommodityResponse Unmarshall(UnmarshallerContext context)
         {
-			BindImagePackageResponse bindImagePackageResponse = new BindImagePackageResponse();
+			DeleteCommodityResponse deleteCommodityResponse = new DeleteCommodityResponse();
 
-			bindImagePackageResponse.HttpResponse = context.HttpResponse;
-			bindImagePackageResponse.RequestId = context.StringValue("BindImagePackage.RequestId");
-			bindImagePackageResponse.Success = context.BooleanValue("BindImagePackage.Success");
+			deleteCommodityResponse.HttpResponse = context.HttpResponse;
+			deleteCommodityResponse.RequestId = context.StringValue("DeleteCommodity.RequestId");
+			deleteCommodityResponse.Success = context.BooleanValue("DeleteCommodity.Success");
         
-			return bindImagePackageResponse;
+			return deleteCommodityResponse;
         }
     }
 }

@@ -76,6 +76,8 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 			private string commoditySpecs;
 
+			private string applicationId;
+
 			public string CommodityId
 			{
 				get
@@ -109,6 +111,18 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				set	
 				{
 					commoditySpecs = value;
+				}
+			}
+
+			public string ApplicationId
+			{
+				get
+				{
+					return applicationId;
+				}
+				set	
+				{
+					applicationId = value;
 				}
 			}
 		}

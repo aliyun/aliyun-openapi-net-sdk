@@ -27,66 +27,52 @@ using Aliyun.Acs.Market.Transform.V20151101;
 
 namespace Aliyun.Acs.Market.Model.V20151101
 {
-    public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
+    public class CreateCommodityRequest : RpcAcsRequest<CreateCommodityResponse>
     {
-        public DescribeInstancesRequest()
-            : base("Market", "2015-11-01", "DescribeInstances", "yunmarket", "openAPI")
+        public CreateCommodityRequest()
+            : base("Market", "2015-11-01", "CreateCommodity", "yunmarket", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private int? pageSize;
+		private string applicationId;
 
-		private int? pageNumber;
+		private string content;
 
-		private string productType;
-
-		public int? PageSize
+		public string ApplicationId
 		{
 			get
 			{
-				return pageSize;
+				return applicationId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				applicationId = value;
+				DictionaryUtil.Add(QueryParameters, "ApplicationId", value);
 			}
 		}
 
-		public int? PageNumber
+		public string Content
 		{
 			get
 			{
-				return pageNumber;
+				return content;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				content = value;
+				DictionaryUtil.Add(BodyParameters, "Content", value);
 			}
 		}
 
-		public string ProductType
-		{
-			get
-			{
-				return productType;
-			}
-			set	
-			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
-			}
-		}
-
-        public override DescribeInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateCommodityResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateCommodityResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

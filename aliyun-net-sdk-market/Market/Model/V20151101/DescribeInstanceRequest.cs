@@ -39,24 +39,11 @@ namespace Aliyun.Acs.Market.Model.V20151101
             }
         }
 
-		private string instanceId;
-
 		private long? ownerId;
 
-		private string orderType;
+		private string instanceId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string orderType;
 
 		public long? OwnerId
 		{
@@ -68,6 +55,19 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

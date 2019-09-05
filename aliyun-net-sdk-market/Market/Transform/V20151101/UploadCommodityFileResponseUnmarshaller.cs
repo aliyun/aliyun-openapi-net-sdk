@@ -24,17 +24,22 @@ using Aliyun.Acs.Market.Model.V20151101;
 
 namespace Aliyun.Acs.Market.Transform.V20151101
 {
-    public class BindImagePackageResponseUnmarshaller
+    public class UploadCommodityFileResponseUnmarshaller
     {
-        public static BindImagePackageResponse Unmarshall(UnmarshallerContext context)
+        public static UploadCommodityFileResponse Unmarshall(UnmarshallerContext context)
         {
-			BindImagePackageResponse bindImagePackageResponse = new BindImagePackageResponse();
+			UploadCommodityFileResponse uploadCommodityFileResponse = new UploadCommodityFileResponse();
 
-			bindImagePackageResponse.HttpResponse = context.HttpResponse;
-			bindImagePackageResponse.RequestId = context.StringValue("BindImagePackage.RequestId");
-			bindImagePackageResponse.Success = context.BooleanValue("BindImagePackage.Success");
+			uploadCommodityFileResponse.HttpResponse = context.HttpResponse;
+			uploadCommodityFileResponse.RequestId = context.StringValue("UploadCommodityFile.RequestId");
+			uploadCommodityFileResponse.Success = context.BooleanValue("UploadCommodityFile.Success");
+
+			UploadCommodityFileResponse.UploadCommodityFile_Data data = new UploadCommodityFileResponse.UploadCommodityFile_Data();
+			data.ResourceType = context.StringValue("UploadCommodityFile.Data.ResourceType");
+			data.Resource = context.StringValue("UploadCommodityFile.Data.Resource");
+			uploadCommodityFileResponse.Data = data;
         
-			return bindImagePackageResponse;
+			return uploadCommodityFileResponse;
         }
     }
 }

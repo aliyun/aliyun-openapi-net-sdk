@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1220cc11-9d2c-4614-83e4-b2fe60931600}</ProjectGuid>
+    <ProjectGuid>{5d95379b-b7c7-4323-8c6c-367abb101c97}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,49 +40,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Market\Model\V20151101\CreateRateResponse.cs" />
+	<Compile Include="Market\Model\V20151101\ActivateLicenseRequest.cs" />
+	<Compile Include="Market\Model\V20151101\ActivateLicenseResponse.cs" />
 	<Compile Include="Market\Model\V20151101\BindImagePackageRequest.cs" />
-	<Compile Include="Market\Model\V20151101\PushMeteringDataResponse.cs" />
+	<Compile Include="Market\Model\V20151101\BindImagePackageResponse.cs" />
+	<Compile Include="Market\Model\V20151101\CreateCommodityRequest.cs" />
+	<Compile Include="Market\Model\V20151101\CreateCommodityResponse.cs" />
+	<Compile Include="Market\Model\V20151101\CreateOrderRequest.cs" />
 	<Compile Include="Market\Model\V20151101\CreateOrderResponse.cs" />
-	<Compile Include="Market\Model\V20151101\DescribePriceRequest.cs" />
-	<Compile Include="Market\Model\V20151101\DescribeOrderRequest.cs" />
-	<Compile Include="Market\Model\V20151101\NotifyContractEventResponse.cs" />
-	<Compile Include="Market\Model\V20151101\DescribeInstancesRequest.cs" />
-	<Compile Include="Market\Model\V20151101\DescribeProductsResponse.cs" />
 	<Compile Include="Market\Model\V20151101\CreateRateRequest.cs" />
+	<Compile Include="Market\Model\V20151101\CreateRateResponse.cs" />
+	<Compile Include="Market\Model\V20151101\DeleteCommodityRequest.cs" />
+	<Compile Include="Market\Model\V20151101\DeleteCommodityResponse.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeCommoditiesRequest.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeCommoditiesResponse.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeCommodityRequest.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeCommodityResponse.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeInstanceRequest.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeInstanceResponse.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeInstancesRequest.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeInstancesResponse.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeLicenseRequest.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeLicenseResponse.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeOrderRequest.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeOrderResponse.cs" />
+	<Compile Include="Market\Model\V20151101\DescribePriceRequest.cs" />
+	<Compile Include="Market\Model\V20151101\DescribePriceResponse.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeProductRequest.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeProductResponse.cs" />
 	<Compile Include="Market\Model\V20151101\DescribeProductsRequest.cs" />
+	<Compile Include="Market\Model\V20151101\DescribeProductsResponse.cs" />
 	<Compile Include="Market\Model\V20151101\DescribeRateRequest.cs" />
 	<Compile Include="Market\Model\V20151101\DescribeRateResponse.cs" />
-	<Compile Include="Market\Model\V20151101\BindImagePackageResponse.cs" />
-	<Compile Include="Market\Model\V20151101\PushMeteringDataRequest.cs" />
-	<Compile Include="Market\Model\V20151101\DescribePriceResponse.cs" />
-	<Compile Include="Market\Model\V20151101\DescribeInstanceResponse.cs" />
-	<Compile Include="Market\Model\V20151101\DescribeProductRequest.cs" />
-	<Compile Include="Market\Model\V20151101\DescribeCommodityRequest.cs" />
 	<Compile Include="Market\Model\V20151101\NotifyContractEventRequest.cs" />
-	<Compile Include="Market\Model\V20151101\DescribeOrderResponse.cs" />
-	<Compile Include="Market\Model\V20151101\DescribeInstanceRequest.cs" />
-	<Compile Include="Market\Model\V20151101\DescribeInstancesResponse.cs" />
-	<Compile Include="Market\Model\V20151101\DescribeCommodityResponse.cs" />
-	<Compile Include="Market\Model\V20151101\CreateOrderRequest.cs" />
-	<Compile Include="Market\Model\V20151101\DescribeProductResponse.cs" />
+	<Compile Include="Market\Model\V20151101\NotifyContractEventResponse.cs" />
+	<Compile Include="Market\Model\V20151101\PushMeteringDataRequest.cs" />
+	<Compile Include="Market\Model\V20151101\PushMeteringDataResponse.cs" />
+	<Compile Include="Market\Model\V20151101\QueryMarketCategoriesRequest.cs" />
+	<Compile Include="Market\Model\V20151101\QueryMarketCategoriesResponse.cs" />
+	<Compile Include="Market\Model\V20151101\QueryMarketImagesRequest.cs" />
+	<Compile Include="Market\Model\V20151101\QueryMarketImagesResponse.cs" />
+	<Compile Include="Market\Model\V20151101\UpdateCommodityRequest.cs" />
+	<Compile Include="Market\Model\V20151101\UpdateCommodityResponse.cs" />
+	<Compile Include="Market\Model\V20151101\UploadCommodityFileRequest.cs" />
+	<Compile Include="Market\Model\V20151101\UploadCommodityFileResponse.cs" />
 	<Compile Include="Market\Transform\V20151101\ActivateLicenseResponseUnmarshaller.cs" />
-	<Compile Include="Market\Transform\V20151101\DescribeInstancesResponseUnmarshaller.cs" />
-	<Compile Include="Market\Transform\V20151101\CreateRateResponseUnmarshaller.cs" />
-	<Compile Include="Market\Transform\V20151101\DescribePriceResponseUnmarshaller.cs" />
-	<Compile Include="Market\Transform\V20151101\QueryMarketCategoriesResponseUnmarshaller.cs" />
-	<Compile Include="Market\Transform\V20151101\DescribeRateResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\BindImagePackageResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\CreateCommodityResponseUnmarshaller.cs" />
 	<Compile Include="Market\Transform\V20151101\CreateOrderResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\CreateRateResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\DeleteCommodityResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\DescribeCommoditiesResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\DescribeCommodityResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\DescribeInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\DescribeInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\DescribeLicenseResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\DescribeOrderResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\DescribePriceResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\DescribeProductResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\DescribeProductsResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\DescribeRateResponseUnmarshaller.cs" />
 	<Compile Include="Market\Transform\V20151101\NotifyContractEventResponseUnmarshaller.cs" />
 	<Compile Include="Market\Transform\V20151101\PushMeteringDataResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\QueryMarketCategoriesResponseUnmarshaller.cs" />
 	<Compile Include="Market\Transform\V20151101\QueryMarketImagesResponseUnmarshaller.cs" />
-	<Compile Include="Market\Transform\V20151101\DescribeProductsResponseUnmarshaller.cs" />
-	<Compile Include="Market\Transform\V20151101\BindImagePackageResponseUnmarshaller.cs" />
-	<Compile Include="Market\Transform\V20151101\DescribeOrderResponseUnmarshaller.cs" />
-	<Compile Include="Market\Transform\V20151101\DescribeInstanceResponseUnmarshaller.cs" />
-	<Compile Include="Market\Transform\V20151101\DescribeLicenseResponseUnmarshaller.cs" />
-	<Compile Include="Market\Transform\V20151101\DescribeProductResponseUnmarshaller.cs" />
-	<Compile Include="Market\Transform\V20151101\DescribeCommodityResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\UpdateCommodityResponseUnmarshaller.cs" />
+	<Compile Include="Market\Transform\V20151101\UploadCommodityFileResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

@@ -27,10 +27,10 @@ using Aliyun.Acs.Market.Transform.V20151101;
 
 namespace Aliyun.Acs.Market.Model.V20151101
 {
-    public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
+    public class UpdateCommodityRequest : RpcAcsRequest<UpdateCommodityResponse>
     {
-        public DescribeInstancesRequest()
-            : base("Market", "2015-11-01", "DescribeInstances", "yunmarket", "openAPI")
+        public UpdateCommodityRequest()
+            : base("Market", "2015-11-01", "UpdateCommodity", "yunmarket", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,54 +39,39 @@ namespace Aliyun.Acs.Market.Model.V20151101
             }
         }
 
-		private int? pageSize;
+		private string commodityId;
 
-		private int? pageNumber;
+		private string content;
 
-		private string productType;
-
-		public int? PageSize
+		public string CommodityId
 		{
 			get
 			{
-				return pageSize;
+				return commodityId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				commodityId = value;
+				DictionaryUtil.Add(QueryParameters, "CommodityId", value);
 			}
 		}
 
-		public int? PageNumber
+		public string Content
 		{
 			get
 			{
-				return pageNumber;
+				return content;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
 			}
 		}
 
-		public string ProductType
-		{
-			get
-			{
-				return productType;
-			}
-			set	
-			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
-			}
-		}
-
-        public override DescribeInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateCommodityResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateCommodityResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

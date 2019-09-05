@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Market.Model.V20151101
             }
         }
 
-		private List<Filter> filters;
+		private List<Filter> filters = new List<Filter>(){ };
 
 		private string searchTerm;
 

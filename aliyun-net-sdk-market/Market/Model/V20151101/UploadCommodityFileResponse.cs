@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Market.Model.V20151101
 {
-	public class NotifyContractEventResponse : AcsResponse
+	public class UploadCommodityFileResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
+
+		private UploadCommodityFile_Data data;
 
 		public string RequestId
 		{
@@ -50,6 +52,50 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public UploadCommodityFile_Data Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+
+		public class UploadCommodityFile_Data
+		{
+
+			private string resourceType;
+
+			private string resource;
+
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
+
+			public string Resource
+			{
+				get
+				{
+					return resource;
+				}
+				set	
+				{
+					resource = value;
+				}
 			}
 		}
 	}

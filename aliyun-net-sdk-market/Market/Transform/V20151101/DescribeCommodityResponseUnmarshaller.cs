@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 			commodity.CommodityId = context.StringValue("DescribeCommodity.Commodity.CommodityId");
 			commodity.Properties = context.StringValue("DescribeCommodity.Commodity.Properties");
 			commodity.CommoditySpecs = context.StringValue("DescribeCommodity.Commodity.CommoditySpecs");
+			commodity.ApplicationId = context.StringValue("DescribeCommodity.Commodity.ApplicationId");
 			describeCommodityResponse.Commodity = commodity;
         
 			return describeCommodityResponse;

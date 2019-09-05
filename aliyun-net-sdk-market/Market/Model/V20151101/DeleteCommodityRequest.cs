@@ -27,10 +27,10 @@ using Aliyun.Acs.Market.Transform.V20151101;
 
 namespace Aliyun.Acs.Market.Model.V20151101
 {
-    public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
+    public class DeleteCommodityRequest : RpcAcsRequest<DeleteCommodityResponse>
     {
-        public DescribeInstancesRequest()
-            : base("Market", "2015-11-01", "DescribeInstances", "yunmarket", "openAPI")
+        public DeleteCommodityRequest()
+            : base("Market", "2015-11-01", "DeleteCommodity", "yunmarket", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,54 +39,24 @@ namespace Aliyun.Acs.Market.Model.V20151101
             }
         }
 
-		private int? pageSize;
+		private string commodityId;
 
-		private int? pageNumber;
-
-		private string productType;
-
-		public int? PageSize
+		public string CommodityId
 		{
 			get
 			{
-				return pageSize;
+				return commodityId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				commodityId = value;
+				DictionaryUtil.Add(QueryParameters, "CommodityId", value);
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string ProductType
-		{
-			get
-			{
-				return productType;
-			}
-			set	
-			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
-			}
-		}
-
-        public override DescribeInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteCommodityResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteCommodityResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

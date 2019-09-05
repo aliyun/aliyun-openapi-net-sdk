@@ -16,25 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Market.Model.V20151101;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Market.Transform.V20151101
+namespace Aliyun.Acs.Market.Model.V20151101
 {
-    public class BindImagePackageResponseUnmarshaller
-    {
-        public static BindImagePackageResponse Unmarshall(UnmarshallerContext context)
-        {
-			BindImagePackageResponse bindImagePackageResponse = new BindImagePackageResponse();
+	public class DeleteCommodityResponse : AcsResponse
+	{
 
-			bindImagePackageResponse.HttpResponse = context.HttpResponse;
-			bindImagePackageResponse.RequestId = context.StringValue("BindImagePackage.RequestId");
-			bindImagePackageResponse.Success = context.BooleanValue("BindImagePackage.Success");
-        
-			return bindImagePackageResponse;
-        }
-    }
+		private string requestId;
+
+		private bool? success;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+	}
 }

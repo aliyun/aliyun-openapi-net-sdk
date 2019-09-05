@@ -27,66 +27,67 @@ using Aliyun.Acs.Market.Transform.V20151101;
 
 namespace Aliyun.Acs.Market.Model.V20151101
 {
-    public class DescribeInstancesRequest : RpcAcsRequest<DescribeInstancesResponse>
+    public class UploadCommodityFileRequest : RpcAcsRequest<UploadCommodityFileResponse>
     {
-        public DescribeInstancesRequest()
-            : base("Market", "2015-11-01", "DescribeInstances", "yunmarket", "openAPI")
+        public UploadCommodityFileRequest()
+            : base("Market", "2015-11-01", "UploadCommodityFile", "yunmarket", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private int? pageSize;
+		private string fileResourceType;
 
-		private int? pageNumber;
+		private string fileResource;
 
-		private string productType;
+		private string fileContentType;
 
-		public int? PageSize
+		public string FileResourceType
 		{
 			get
 			{
-				return pageSize;
+				return fileResourceType;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				fileResourceType = value;
+				DictionaryUtil.Add(QueryParameters, "FileResourceType", value);
 			}
 		}
 
-		public int? PageNumber
+		public string FileResource
 		{
 			get
 			{
-				return pageNumber;
+				return fileResource;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				fileResource = value;
+				DictionaryUtil.Add(QueryParameters, "FileResource", value);
 			}
 		}
 
-		public string ProductType
+		public string FileContentType
 		{
 			get
 			{
-				return productType;
+				return fileContentType;
 			}
 			set	
 			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+				fileContentType = value;
+				DictionaryUtil.Add(QueryParameters, "FileContentType", value);
 			}
 		}
 
-        public override DescribeInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UploadCommodityFileResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UploadCommodityFileResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
