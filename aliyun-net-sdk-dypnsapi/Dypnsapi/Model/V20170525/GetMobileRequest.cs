@@ -47,9 +47,9 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private string accessToken;
 
-		private string outId;
-
 		private long? ownerId;
+
+		private string outId;
 
 		public long? ResourceOwnerId
 		{
@@ -90,19 +90,6 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string OutId
-		{
-			get
-			{
-				return outId;
-			}
-			set	
-			{
-				outId = value;
-				DictionaryUtil.Add(QueryParameters, "OutId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -113,6 +100,19 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string OutId
+		{
+			get
+			{
+				return outId;
+			}
+			set	
+			{
+				outId = value;
+				DictionaryUtil.Add(QueryParameters, "OutId", value);
 			}
 		}
 

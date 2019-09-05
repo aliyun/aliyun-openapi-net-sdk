@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{019b8a92-9a8a-4405-9e56-a1201d439325}</ProjectGuid>
+    <ProjectGuid>{a8b62bf4-b12c-4b58-9c90-a9ca6930207f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -41,15 +41,17 @@
   </ItemGroup>
   <ItemGroup>
 	<Compile Include="Dypnsapi\Model\V20170525\CreateVerifySchemeRequest.cs" />
-	<Compile Include="Dypnsapi\Model\V20170525\VerifyMobileRequest.cs" />
 	<Compile Include="Dypnsapi\Model\V20170525\CreateVerifySchemeResponse.cs" />
-	<Compile Include="Dypnsapi\Model\V20170525\GetMobileResponse.cs" />
 	<Compile Include="Dypnsapi\Model\V20170525\GetMobileRequest.cs" />
+	<Compile Include="Dypnsapi\Model\V20170525\GetMobileResponse.cs" />
+	<Compile Include="Dypnsapi\Model\V20170525\TwiceTelVerifyRequest.cs" />
+	<Compile Include="Dypnsapi\Model\V20170525\TwiceTelVerifyResponse.cs" />
+	<Compile Include="Dypnsapi\Model\V20170525\VerifyMobileRequest.cs" />
 	<Compile Include="Dypnsapi\Model\V20170525\VerifyMobileResponse.cs" />
 	<Compile Include="Dypnsapi\Transform\V20170525\CreateVerifySchemeResponseUnmarshaller.cs" />
-	<Compile Include="Dypnsapi\Transform\V20170525\VerifyMobileResponseUnmarshaller.cs" />
-	<Compile Include="Dypnsapi\Transform\V20170525\TwiceTelVerifyResponseUnmarshaller.cs" />
 	<Compile Include="Dypnsapi\Transform\V20170525\GetMobileResponseUnmarshaller.cs" />
+	<Compile Include="Dypnsapi\Transform\V20170525\TwiceTelVerifyResponseUnmarshaller.cs" />
+	<Compile Include="Dypnsapi\Transform\V20170525\VerifyMobileResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

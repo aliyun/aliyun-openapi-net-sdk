@@ -42,21 +42,21 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private long? resourceOwnerId;
 
-		private string packName;
+		private string bundleId;
 
 		private string appName;
 
+		private string packSign;
+
+		private string packName;
+
 		private string resourceOwnerAccount;
-
-		private string schemeName;
-
-		private string bundleId;
 
 		private string osType;
 
 		private long? ownerId;
 
-		private string packSign;
+		private string schemeName;
 
 		public long? ResourceOwnerId
 		{
@@ -71,16 +71,16 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string PackName
+		public string BundleId
 		{
 			get
 			{
-				return packName;
+				return bundleId;
 			}
 			set	
 			{
-				packName = value;
-				DictionaryUtil.Add(QueryParameters, "PackName", value);
+				bundleId = value;
+				DictionaryUtil.Add(QueryParameters, "BundleId", value);
 			}
 		}
 
@@ -97,6 +97,32 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
+		public string PackSign
+		{
+			get
+			{
+				return packSign;
+			}
+			set	
+			{
+				packSign = value;
+				DictionaryUtil.Add(QueryParameters, "PackSign", value);
+			}
+		}
+
+		public string PackName
+		{
+			get
+			{
+				return packName;
+			}
+			set	
+			{
+				packName = value;
+				DictionaryUtil.Add(QueryParameters, "PackName", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -107,32 +133,6 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string SchemeName
-		{
-			get
-			{
-				return schemeName;
-			}
-			set	
-			{
-				schemeName = value;
-				DictionaryUtil.Add(QueryParameters, "SchemeName", value);
-			}
-		}
-
-		public string BundleId
-		{
-			get
-			{
-				return bundleId;
-			}
-			set	
-			{
-				bundleId = value;
-				DictionaryUtil.Add(QueryParameters, "BundleId", value);
 			}
 		}
 
@@ -162,16 +162,16 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string PackSign
+		public string SchemeName
 		{
 			get
 			{
-				return packSign;
+				return schemeName;
 			}
 			set	
 			{
-				packSign = value;
-				DictionaryUtil.Add(QueryParameters, "PackSign", value);
+				schemeName = value;
+				DictionaryUtil.Add(QueryParameters, "SchemeName", value);
 			}
 		}
 
