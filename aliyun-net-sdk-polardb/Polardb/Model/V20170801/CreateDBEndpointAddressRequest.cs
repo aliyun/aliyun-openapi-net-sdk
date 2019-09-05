@@ -43,17 +43,17 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string connectionStringPrefix;
 
+		private string dBEndpointId;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
 
 		private string ownerAccount;
 
-		private string netType;
-
-		private string dBEndpointId;
-
 		private long? ownerId;
+
+		private string netType;
 
 		public long? ResourceOwnerId
 		{
@@ -78,6 +78,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				connectionStringPrefix = value;
 				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
+			}
+		}
+
+		public string DBEndpointId
+		{
+			get
+			{
+				return dBEndpointId;
+			}
+			set	
+			{
+				dBEndpointId = value;
+				DictionaryUtil.Add(QueryParameters, "DBEndpointId", value);
 			}
 		}
 
@@ -120,32 +133,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string NetType
-		{
-			get
-			{
-				return netType;
-			}
-			set	
-			{
-				netType = value;
-				DictionaryUtil.Add(QueryParameters, "NetType", value);
-			}
-		}
-
-		public string DBEndpointId
-		{
-			get
-			{
-				return dBEndpointId;
-			}
-			set	
-			{
-				dBEndpointId = value;
-				DictionaryUtil.Add(QueryParameters, "DBEndpointId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -156,6 +143,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string NetType
+		{
+			get
+			{
+				return netType;
+			}
+			set	
+			{
+				netType = value;
+				DictionaryUtil.Add(QueryParameters, "NetType", value);
 			}
 		}
 

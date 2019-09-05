@@ -39,13 +39,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
             }
         }
 
-		private string preferredBackupTime;
+		private long? resourceOwnerId;
 
 		private string preferredBackupPeriod;
-
-		private string backupRetentionPeriod;
-
-		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
@@ -55,16 +51,20 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? ownerId;
 
-		public string PreferredBackupTime
+		private string preferredBackupTime;
+
+		private string backupRetentionPeriod;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return preferredBackupTime;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				preferredBackupTime = value;
-				DictionaryUtil.Add(QueryParameters, "PreferredBackupTime", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -78,32 +78,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				preferredBackupPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "PreferredBackupPeriod", value);
-			}
-		}
-
-		public string BackupRetentionPeriod
-		{
-			get
-			{
-				return backupRetentionPeriod;
-			}
-			set	
-			{
-				backupRetentionPeriod = value;
-				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -156,6 +130,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PreferredBackupTime
+		{
+			get
+			{
+				return preferredBackupTime;
+			}
+			set	
+			{
+				preferredBackupTime = value;
+				DictionaryUtil.Add(QueryParameters, "PreferredBackupTime", value);
+			}
+		}
+
+		public string BackupRetentionPeriod
+		{
+			get
+			{
+				return backupRetentionPeriod;
+			}
+			set	
+			{
+				backupRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value);
 			}
 		}
 

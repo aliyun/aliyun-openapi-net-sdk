@@ -41,6 +41,12 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
+		private string startTime;
+
+		private int? pageNumber;
+
+		private int? pageSize;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -51,15 +57,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string endTime;
 
-		private string startTime;
-
 		private long? ownerId;
 
-		private int? pageNumber;
-
 		private string backupStatus;
-
-		private int? pageSize;
 
 		private string backupMode;
 
@@ -73,6 +73,45 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -141,19 +180,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -167,19 +193,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string BackupStatus
 		{
 			get
@@ -190,19 +203,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				backupStatus = value;
 				DictionaryUtil.Add(QueryParameters, "BackupStatus", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

@@ -43,7 +43,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string nodes;
+		private string dBEndpointId;
 
 		private string readWriteMode;
 
@@ -53,11 +53,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string ownerAccount;
 
-		private string dBEndpointId;
-
 		private string endpointConfig;
 
 		private long? ownerId;
+
+		private string nodes;
 
 		public string AutoAddNewNodes
 		{
@@ -85,16 +85,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string Nodes
+		public string DBEndpointId
 		{
 			get
 			{
-				return nodes;
+				return dBEndpointId;
 			}
 			set	
 			{
-				nodes = value;
-				DictionaryUtil.Add(QueryParameters, "Nodes", value);
+				dBEndpointId = value;
+				DictionaryUtil.Add(QueryParameters, "DBEndpointId", value);
 			}
 		}
 
@@ -150,19 +150,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBEndpointId
-		{
-			get
-			{
-				return dBEndpointId;
-			}
-			set	
-			{
-				dBEndpointId = value;
-				DictionaryUtil.Add(QueryParameters, "DBEndpointId", value);
-			}
-		}
-
 		public string EndpointConfig
 		{
 			get
@@ -186,6 +173,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Nodes
+		{
+			get
+			{
+				return nodes;
+			}
+			set	
+			{
+				nodes = value;
+				DictionaryUtil.Add(QueryParameters, "Nodes", value);
 			}
 		}
 

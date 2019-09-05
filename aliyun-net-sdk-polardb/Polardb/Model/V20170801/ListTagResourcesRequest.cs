@@ -41,15 +41,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private List<string> resourceIds;
+		private string nextToken;
+
+		private List<Tag> tags = new List<Tag>(){ };
+
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
-		private string nextToken;
-
 		private string ownerAccount;
-
-		private List<Tag> tags;
 
 		private long? ownerId;
 
@@ -65,6 +65,37 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 
@@ -98,19 +129,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -121,24 +139,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
 			}
 		}
 

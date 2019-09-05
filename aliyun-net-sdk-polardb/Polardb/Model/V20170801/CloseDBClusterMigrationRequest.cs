@@ -41,8 +41,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private bool? continueEnableBinlog;
-
 		private string securityToken;
 
 		private string resourceOwnerAccount;
@@ -52,6 +50,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private bool? continueEnableBinlog;
 
 		public long? ResourceOwnerId
 		{
@@ -63,19 +63,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public bool? ContinueEnableBinlog
-		{
-			get
-			{
-				return continueEnableBinlog;
-			}
-			set	
-			{
-				continueEnableBinlog = value;
-				DictionaryUtil.Add(QueryParameters, "ContinueEnableBinlog", value.ToString());
 			}
 		}
 
@@ -141,6 +128,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? ContinueEnableBinlog
+		{
+			get
+			{
+				return continueEnableBinlog;
+			}
+			set	
+			{
+				continueEnableBinlog = value;
+				DictionaryUtil.Add(QueryParameters, "ContinueEnableBinlog", value.ToString());
 			}
 		}
 

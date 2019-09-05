@@ -41,19 +41,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string clientToken;
+
+		private string dBNodeTargetClass;
+
+		private string resourceOwnerAccount;
 
 		private string dBClusterId;
 
 		private string ownerAccount;
 
-		private string modifyType;
-
-		private string dBNodeTargetClass;
-
 		private long? ownerId;
+
+		private string modifyType;
 
 		public long? ResourceOwnerId
 		{
@@ -68,19 +68,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -91,6 +78,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string DBNodeTargetClass
+		{
+			get
+			{
+				return dBNodeTargetClass;
+			}
+			set	
+			{
+				dBNodeTargetClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeTargetClass", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -120,32 +133,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ModifyType
-		{
-			get
-			{
-				return modifyType;
-			}
-			set	
-			{
-				modifyType = value;
-				DictionaryUtil.Add(QueryParameters, "ModifyType", value);
-			}
-		}
-
-		public string DBNodeTargetClass
-		{
-			get
-			{
-				return dBNodeTargetClass;
-			}
-			set	
-			{
-				dBNodeTargetClass = value;
-				DictionaryUtil.Add(QueryParameters, "DBNodeTargetClass", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -156,6 +143,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ModifyType
+		{
+			get
+			{
+				return modifyType;
+			}
+			set	
+			{
+				modifyType = value;
+				DictionaryUtil.Add(QueryParameters, "ModifyType", value);
 			}
 		}
 

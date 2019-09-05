@@ -43,8 +43,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string accountName;
 
-		private string dBName;
-
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -52,6 +50,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string dBName;
 
 		public long? ResourceOwnerId
 		{
@@ -76,19 +76,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				accountName = value;
 				DictionaryUtil.Add(QueryParameters, "AccountName", value);
-			}
-		}
-
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
 			}
 		}
 
@@ -141,6 +128,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string DBName
+		{
+			get
+			{
+				return dBName;
+			}
+			set	
+			{
+				dBName = value;
+				DictionaryUtil.Add(QueryParameters, "DBName", value);
 			}
 		}
 

@@ -41,23 +41,23 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
+		private string accountType;
+
+		private string accountDescription;
+
+		private string accountPrivilege;
+
+		private string accountName;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
 
 		private string ownerAccount;
 
-		private string accountType;
-
 		private long? ownerId;
 
-		private string accountDescription;
-
-		private string accountPrivilege;
-
 		private string accountPassword;
-
-		private string accountName;
 
 		private string dBName;
 
@@ -71,6 +71,58 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string AccountType
+		{
+			get
+			{
+				return accountType;
+			}
+			set	
+			{
+				accountType = value;
+				DictionaryUtil.Add(QueryParameters, "AccountType", value);
+			}
+		}
+
+		public string AccountDescription
+		{
+			get
+			{
+				return accountDescription;
+			}
+			set	
+			{
+				accountDescription = value;
+				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
+			}
+		}
+
+		public string AccountPrivilege
+		{
+			get
+			{
+				return accountPrivilege;
+			}
+			set	
+			{
+				accountPrivilege = value;
+				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
+			}
+		}
+
+		public string AccountName
+		{
+			get
+			{
+				return accountName;
+			}
+			set	
+			{
+				accountName = value;
+				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
@@ -113,19 +165,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string AccountType
-		{
-			get
-			{
-				return accountType;
-			}
-			set	
-			{
-				accountType = value;
-				DictionaryUtil.Add(QueryParameters, "AccountType", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -139,32 +178,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string AccountDescription
-		{
-			get
-			{
-				return accountDescription;
-			}
-			set	
-			{
-				accountDescription = value;
-				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
-			}
-		}
-
-		public string AccountPrivilege
-		{
-			get
-			{
-				return accountPrivilege;
-			}
-			set	
-			{
-				accountPrivilege = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
-			}
-		}
-
 		public string AccountPassword
 		{
 			get
@@ -175,19 +188,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				accountPassword = value;
 				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
-			}
-		}
-
-		public string AccountName
-		{
-			get
-			{
-				return accountName;
-			}
-			set	
-			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 

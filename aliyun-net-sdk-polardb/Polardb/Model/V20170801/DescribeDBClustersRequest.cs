@@ -45,19 +45,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBClusterStatus;
 
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private List<Tag> tags = new List<Tag>(){ };
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private int? pageNumber;
-
 		private string dBType;
-
-		private int? pageSize;
-
-		private List<Tag> tags;
 
 		private string dBClusterIds;
 
@@ -100,6 +100,50 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -139,19 +183,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string DBType
 		{
 			get
@@ -162,37 +193,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBType = value;
 				DictionaryUtil.Add(QueryParameters, "DBType", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
 			}
 		}
 

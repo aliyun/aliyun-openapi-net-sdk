@@ -41,19 +41,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
+		private string securityIps;
+
+		private string dBClusterIPArrayAttribute;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
 
 		private string ownerAccount;
 
-		private string securityIps;
-
-		private string dBClusterIPArrayName;
-
 		private long? ownerId;
 
-		private string dBClusterIPArrayAttribute;
+		private string dBClusterIPArrayName;
 
 		public long? ResourceOwnerId
 		{
@@ -65,6 +65,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityIps
+		{
+			get
+			{
+				return securityIps;
+			}
+			set	
+			{
+				securityIps = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityIps", value);
+			}
+		}
+
+		public string DBClusterIPArrayAttribute
+		{
+			get
+			{
+				return dBClusterIPArrayAttribute;
+			}
+			set	
+			{
+				dBClusterIPArrayAttribute = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterIPArrayAttribute", value);
 			}
 		}
 
@@ -107,32 +133,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string SecurityIps
-		{
-			get
-			{
-				return securityIps;
-			}
-			set	
-			{
-				securityIps = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityIps", value);
-			}
-		}
-
-		public string DBClusterIPArrayName
-		{
-			get
-			{
-				return dBClusterIPArrayName;
-			}
-			set	
-			{
-				dBClusterIPArrayName = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterIPArrayName", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -146,16 +146,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBClusterIPArrayAttribute
+		public string DBClusterIPArrayName
 		{
 			get
 			{
-				return dBClusterIPArrayAttribute;
+				return dBClusterIPArrayName;
 			}
 			set	
 			{
-				dBClusterIPArrayAttribute = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterIPArrayAttribute", value);
+				dBClusterIPArrayName = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterIPArrayName", value);
 			}
 		}
 

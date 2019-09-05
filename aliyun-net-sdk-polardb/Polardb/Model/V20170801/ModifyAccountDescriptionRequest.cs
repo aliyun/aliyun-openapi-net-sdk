@@ -41,6 +41,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
+		private string accountDescription;
+
 		private string accountName;
 
 		private string resourceOwnerAccount;
@@ -50,8 +52,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string accountDescription;
 
 		public long? ResourceOwnerId
 		{
@@ -63,6 +63,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string AccountDescription
+		{
+			get
+			{
+				return accountDescription;
+			}
+			set	
+			{
+				accountDescription = value;
+				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
 			}
 		}
 
@@ -128,19 +141,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccountDescription
-		{
-			get
-			{
-				return accountDescription;
-			}
-			set	
-			{
-				accountDescription = value;
-				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
 			}
 		}
 

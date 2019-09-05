@@ -41,9 +41,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string effectiveTime;
+
+		private string resourceOwnerAccount;
 
 		private string dBClusterId;
 
@@ -66,19 +66,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string EffectiveTime
 		{
 			get
@@ -89,6 +76,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				effectiveTime = value;
 				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 

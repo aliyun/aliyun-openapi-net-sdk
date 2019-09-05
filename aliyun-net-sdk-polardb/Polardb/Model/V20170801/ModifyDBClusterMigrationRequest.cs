@@ -43,6 +43,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string securityToken;
 
+		private string newMasterInstanceId;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -50,8 +52,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private string sourceRDSDBInstanceId;
-
-		private string newMasterInstanceId;
 
 		private long? ownerId;
 
@@ -78,6 +78,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string NewMasterInstanceId
+		{
+			get
+			{
+				return newMasterInstanceId;
+			}
+			set	
+			{
+				newMasterInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "NewMasterInstanceId", value);
 			}
 		}
 
@@ -130,19 +143,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				sourceRDSDBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "SourceRDSDBInstanceId", value);
-			}
-		}
-
-		public string NewMasterInstanceId
-		{
-			get
-			{
-				return newMasterInstanceId;
-			}
-			set	
-			{
-				newMasterInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "NewMasterInstanceId", value);
 			}
 		}
 

@@ -43,11 +43,21 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBClusterDescription;
 
+		private string clientToken;
+
+		private string clusterNetworkType;
+
+		private string dBNodeClass;
+
+		private string engine;
+
+		private string creationOption;
+
+		private string sourceResourceId;
+
 		private string period;
 
 		private string resourceOwnerAccount;
-
-		private string clientToken;
 
 		private string ownerAccount;
 
@@ -55,15 +65,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string usedTime;
 
-		private string clusterNetworkType;
-
 		private string vSwitchId;
 
-		private string dBNodeClass;
-
 		private bool? autoRenew;
-
-		private string engine;
 
 		private string vPCId;
 
@@ -72,10 +76,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string zoneId;
 
 		private string dBVersion;
-
-		private string creationOption;
-
-		private string sourceResourceId;
 
 		private string cloneDataPoint;
 
@@ -107,6 +107,84 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string ClusterNetworkType
+		{
+			get
+			{
+				return clusterNetworkType;
+			}
+			set	
+			{
+				clusterNetworkType = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterNetworkType", value);
+			}
+		}
+
+		public string DBNodeClass
+		{
+			get
+			{
+				return dBNodeClass;
+			}
+			set	
+			{
+				dBNodeClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeClass", value);
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string CreationOption
+		{
+			get
+			{
+				return creationOption;
+			}
+			set	
+			{
+				creationOption = value;
+				DictionaryUtil.Add(QueryParameters, "CreationOption", value);
+			}
+		}
+
+		public string SourceResourceId
+		{
+			get
+			{
+				return sourceResourceId;
+			}
+			set	
+			{
+				sourceResourceId = value;
+				DictionaryUtil.Add(QueryParameters, "SourceResourceId", value);
+			}
+		}
+
 		public string Period
 		{
 			get
@@ -130,19 +208,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -185,19 +250,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ClusterNetworkType
-		{
-			get
-			{
-				return clusterNetworkType;
-			}
-			set	
-			{
-				clusterNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterNetworkType", value);
-			}
-		}
-
 		public string VSwitchId
 		{
 			get
@@ -211,19 +263,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBNodeClass
-		{
-			get
-			{
-				return dBNodeClass;
-			}
-			set	
-			{
-				dBNodeClass = value;
-				DictionaryUtil.Add(QueryParameters, "DBNodeClass", value);
-			}
-		}
-
 		public bool? AutoRenew
 		{
 			get
@@ -234,19 +273,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				autoRenew = value;
 				DictionaryUtil.Add(QueryParameters, "AutoRenew", value.ToString());
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 
@@ -299,32 +325,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBVersion = value;
 				DictionaryUtil.Add(QueryParameters, "DBVersion", value);
-			}
-		}
-
-		public string CreationOption
-		{
-			get
-			{
-				return creationOption;
-			}
-			set	
-			{
-				creationOption = value;
-				DictionaryUtil.Add(QueryParameters, "CreationOption", value);
-			}
-		}
-
-		public string SourceResourceId
-		{
-			get
-			{
-				return sourceResourceId;
-			}
-			set	
-			{
-				sourceResourceId = value;
-				DictionaryUtil.Add(QueryParameters, "SourceResourceId", value);
 			}
 		}
 

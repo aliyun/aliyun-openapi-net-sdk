@@ -43,9 +43,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string clientToken;
+
+		private string readWriteMode;
+
+		private string endpointType;
+
+		private string resourceOwnerAccount;
 
 		private string dBClusterId;
 
@@ -56,10 +60,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private long? ownerId;
 
 		private string nodes;
-
-		private string readWriteMode;
-
-		private string endpointType;
 
 		public string AutoAddNewNodes
 		{
@@ -87,19 +87,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -110,6 +97,45 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string ReadWriteMode
+		{
+			get
+			{
+				return readWriteMode;
+			}
+			set	
+			{
+				readWriteMode = value;
+				DictionaryUtil.Add(QueryParameters, "ReadWriteMode", value);
+			}
+		}
+
+		public string EndpointType
+		{
+			get
+			{
+				return endpointType;
+			}
+			set	
+			{
+				endpointType = value;
+				DictionaryUtil.Add(QueryParameters, "EndpointType", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -175,32 +201,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				nodes = value;
 				DictionaryUtil.Add(QueryParameters, "Nodes", value);
-			}
-		}
-
-		public string ReadWriteMode
-		{
-			get
-			{
-				return readWriteMode;
-			}
-			set	
-			{
-				readWriteMode = value;
-				DictionaryUtil.Add(QueryParameters, "ReadWriteMode", value);
-			}
-		}
-
-		public string EndpointType
-		{
-			get
-			{
-				return endpointType;
-			}
-			set	
-			{
-				endpointType = value;
-				DictionaryUtil.Add(QueryParameters, "EndpointType", value);
 			}
 		}
 

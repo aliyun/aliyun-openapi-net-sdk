@@ -39,34 +39,21 @@ namespace Aliyun.Acs.polardb.Model.V20170801
             }
         }
 
-		private string duration;
-
 		private long? resourceOwnerId;
 
-		private string periodUnit;
+		private string duration;
+
+		private string renewalStatus;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string renewalStatus;
-
 		private long? ownerId;
 
-		private string dBClusterIds;
+		private string periodUnit;
 
-		public string Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value);
-			}
-		}
+		private string dBClusterIds;
 
 		public long? ResourceOwnerId
 		{
@@ -81,16 +68,29 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string PeriodUnit
+		public string Duration
 		{
 			get
 			{
-				return periodUnit;
+				return duration;
 			}
 			set	
 			{
-				periodUnit = value;
-				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
+				duration = value;
+				DictionaryUtil.Add(QueryParameters, "Duration", value);
+			}
+		}
+
+		public string RenewalStatus
+		{
+			get
+			{
+				return renewalStatus;
+			}
+			set	
+			{
+				renewalStatus = value;
+				DictionaryUtil.Add(QueryParameters, "RenewalStatus", value);
 			}
 		}
 
@@ -120,19 +120,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string RenewalStatus
-		{
-			get
-			{
-				return renewalStatus;
-			}
-			set	
-			{
-				renewalStatus = value;
-				DictionaryUtil.Add(QueryParameters, "RenewalStatus", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -143,6 +130,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PeriodUnit
+		{
+			get
+			{
+				return periodUnit;
+			}
+			set	
+			{
+				periodUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
 			}
 		}
 

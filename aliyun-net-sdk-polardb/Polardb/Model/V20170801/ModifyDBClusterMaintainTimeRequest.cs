@@ -39,9 +39,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
             }
         }
 
-		private string maintainTime;
-
 		private long? resourceOwnerId;
+
+		private string maintainTime;
 
 		private string resourceOwnerAccount;
 
@@ -50,19 +50,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		public string MaintainTime
-		{
-			get
-			{
-				return maintainTime;
-			}
-			set	
-			{
-				maintainTime = value;
-				DictionaryUtil.Add(QueryParameters, "MaintainTime", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -74,6 +61,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string MaintainTime
+		{
+			get
+			{
+				return maintainTime;
+			}
+			set	
+			{
+				maintainTime = value;
+				DictionaryUtil.Add(QueryParameters, "MaintainTime", value);
 			}
 		}
 
