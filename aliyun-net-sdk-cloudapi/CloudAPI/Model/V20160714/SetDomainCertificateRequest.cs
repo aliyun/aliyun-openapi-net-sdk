@@ -39,30 +39,17 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
-		private string securityToken;
-
 		private string certificatePrivateKey;
 
 		private string groupId;
 
 		private string domainName;
 
-		private string certificateName;
-
 		private string certificateBody;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string securityToken;
+
+		private string certificateName;
 
 		public string CertificatePrivateKey
 		{
@@ -103,19 +90,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string CertificateName
-		{
-			get
-			{
-				return certificateName;
-			}
-			set	
-			{
-				certificateName = value;
-				DictionaryUtil.Add(QueryParameters, "CertificateName", value);
-			}
-		}
-
 		public string CertificateBody
 		{
 			get
@@ -126,6 +100,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				certificateBody = value;
 				DictionaryUtil.Add(QueryParameters, "CertificateBody", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string CertificateName
+		{
+			get
+			{
+				return certificateName;
+			}
+			set	
+			{
+				certificateName = value;
+				DictionaryUtil.Add(QueryParameters, "CertificateName", value);
 			}
 		}
 

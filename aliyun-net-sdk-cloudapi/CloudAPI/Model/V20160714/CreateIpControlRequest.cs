@@ -39,28 +39,15 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
-		private string securityToken;
-
 		private string ipControlName;
 
-		private string ipControlType;
-
-		private List<IpControlPolicys> ipControlPolicyss;
+		private List<IpControlPolicys> ipControlPolicyss = new List<IpControlPolicys>(){ };
 
 		private string description;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string securityToken;
+
+		private string ipControlType;
 
 		public string IpControlName
 		{
@@ -72,19 +59,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				ipControlName = value;
 				DictionaryUtil.Add(QueryParameters, "IpControlName", value);
-			}
-		}
-
-		public string IpControlType
-		{
-			get
-			{
-				return ipControlType;
-			}
-			set	
-			{
-				ipControlType = value;
-				DictionaryUtil.Add(QueryParameters, "IpControlType", value);
 			}
 		}
 
@@ -116,6 +90,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string IpControlType
+		{
+			get
+			{
+				return ipControlType;
+			}
+			set	
+			{
+				ipControlType = value;
+				DictionaryUtil.Add(QueryParameters, "IpControlType", value);
 			}
 		}
 

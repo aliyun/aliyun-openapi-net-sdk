@@ -41,17 +41,17 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string stageName;
 
+		private string groupId;
+
+		private string pageNumber;
+
 		private string apiName;
 
 		private string securityToken;
 
-		private string groupId;
-
 		private string pageSize;
 
 		private string apiId;
-
-		private string pageNumber;
 
 		public string StageName
 		{
@@ -63,6 +63,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				stageName = value;
 				DictionaryUtil.Add(QueryParameters, "StageName", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
 			}
 		}
 
@@ -92,19 +118,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
 		public string PageSize
 		{
 			get
@@ -128,19 +141,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				apiId = value;
 				DictionaryUtil.Add(QueryParameters, "ApiId", value);
-			}
-		}
-
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
 			}
 		}
 

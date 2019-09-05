@@ -39,25 +39,77 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
+		private string visibility;
+
+		private string groupId;
+
+		private bool? enableTagAuth;
+
+		private int? pageNumber;
+
 		private string apiName;
 
 		private string catalogId;
 
-		private string visibility;
-
 		private string securityToken;
-
-		private string groupId;
 
 		private int? pageSize;
 
-		private List<Tag> tags;
-
-		private bool? enableTagAuth;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string apiId;
 
-		private int? pageNumber;
+		public string Visibility
+		{
+			get
+			{
+				return visibility;
+			}
+			set	
+			{
+				visibility = value;
+				DictionaryUtil.Add(QueryParameters, "Visibility", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public bool? EnableTagAuth
+		{
+			get
+			{
+				return enableTagAuth;
+			}
+			set	
+			{
+				enableTagAuth = value;
+				DictionaryUtil.Add(QueryParameters, "EnableTagAuth", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public string ApiName
 		{
@@ -85,19 +137,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string Visibility
-		{
-			get
-			{
-				return visibility;
-			}
-			set	
-			{
-				visibility = value;
-				DictionaryUtil.Add(QueryParameters, "Visibility", value);
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -108,19 +147,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -155,19 +181,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public bool? EnableTagAuth
-		{
-			get
-			{
-				return enableTagAuth;
-			}
-			set	
-			{
-				enableTagAuth = value;
-				DictionaryUtil.Add(QueryParameters, "EnableTagAuth", value.ToString());
-			}
-		}
-
 		public string ApiId
 		{
 			get
@@ -178,19 +191,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				apiId = value;
 				DictionaryUtil.Add(QueryParameters, "ApiId", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

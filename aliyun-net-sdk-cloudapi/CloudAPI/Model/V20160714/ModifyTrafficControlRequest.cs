@@ -41,17 +41,17 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string trafficControlId;
 
-		private int? apiDefault;
-
-		private string securityToken;
-
 		private string trafficControlName;
-
-		private string trafficControlUnit;
 
 		private string description;
 
 		private int? userDefault;
+
+		private int? apiDefault;
+
+		private string securityToken;
+
+		private string trafficControlUnit;
 
 		private int? appDefault;
 
@@ -65,6 +65,45 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				trafficControlId = value;
 				DictionaryUtil.Add(QueryParameters, "TrafficControlId", value);
+			}
+		}
+
+		public string TrafficControlName
+		{
+			get
+			{
+				return trafficControlName;
+			}
+			set	
+			{
+				trafficControlName = value;
+				DictionaryUtil.Add(QueryParameters, "TrafficControlName", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public int? UserDefault
+		{
+			get
+			{
+				return userDefault;
+			}
+			set	
+			{
+				userDefault = value;
+				DictionaryUtil.Add(QueryParameters, "UserDefault", value.ToString());
 			}
 		}
 
@@ -94,19 +133,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string TrafficControlName
-		{
-			get
-			{
-				return trafficControlName;
-			}
-			set	
-			{
-				trafficControlName = value;
-				DictionaryUtil.Add(QueryParameters, "TrafficControlName", value);
-			}
-		}
-
 		public string TrafficControlUnit
 		{
 			get
@@ -117,32 +143,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				trafficControlUnit = value;
 				DictionaryUtil.Add(QueryParameters, "TrafficControlUnit", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public int? UserDefault
-		{
-			get
-			{
-				return userDefault;
-			}
-			set	
-			{
-				userDefault = value;
-				DictionaryUtil.Add(QueryParameters, "UserDefault", value.ToString());
 			}
 		}
 

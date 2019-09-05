@@ -39,15 +39,28 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
+		private string description;
+
 		private string appName;
 
 		private string securityToken;
 
 		private long? appId;
 
-		private string description;
+		private List<Tag> tags = new List<Tag>(){ };
 
-		private List<Tag> tags;
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
 
 		public string AppName
 		{
@@ -85,19 +98,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value.ToString());
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 

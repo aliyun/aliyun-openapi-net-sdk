@@ -41,11 +41,11 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string slsLogStore;
 
+		private string slsProject;
+
 		private string logType;
 
 		private string securityToken;
-
-		private string slsProject;
 
 		public string SlsLogStore
 		{
@@ -57,6 +57,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				slsLogStore = value;
 				DictionaryUtil.Add(QueryParameters, "SlsLogStore", value);
+			}
+		}
+
+		public string SlsProject
+		{
+			get
+			{
+				return slsProject;
+			}
+			set	
+			{
+				slsProject = value;
+				DictionaryUtil.Add(QueryParameters, "SlsProject", value);
 			}
 		}
 
@@ -83,19 +96,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string SlsProject
-		{
-			get
-			{
-				return slsProject;
-			}
-			set	
-			{
-				slsProject = value;
-				DictionaryUtil.Add(QueryParameters, "SlsProject", value);
 			}
 		}
 

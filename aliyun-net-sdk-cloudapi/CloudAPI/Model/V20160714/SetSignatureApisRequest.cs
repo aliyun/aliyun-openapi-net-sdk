@@ -41,11 +41,11 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string stageName;
 
-		private string securityToken;
-
 		private string groupId;
 
 		private string signatureId;
+
+		private string securityToken;
 
 		private string apiIds;
 
@@ -59,19 +59,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				stageName = value;
 				DictionaryUtil.Add(QueryParameters, "StageName", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -98,6 +85,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				signatureId = value;
 				DictionaryUtil.Add(QueryParameters, "SignatureId", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

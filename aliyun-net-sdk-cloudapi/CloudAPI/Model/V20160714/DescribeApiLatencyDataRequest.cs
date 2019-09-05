@@ -39,28 +39,15 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
-		private string securityToken;
-
 		private string groupId;
 
 		private string endTime;
 
 		private string startTime;
 
-		private string apiId;
+		private string securityToken;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string apiId;
 
 		public string GroupId
 		{
@@ -98,6 +85,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

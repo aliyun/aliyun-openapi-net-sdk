@@ -41,15 +41,15 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private bool? supportRoute;
 
-		private string securityToken;
-
-		private string variableName;
-
 		private string variableValue;
 
 		private string groupId;
 
 		private string stageRouteModel;
+
+		private string securityToken;
+
+		private string variableName;
 
 		private string stageId;
 
@@ -63,32 +63,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				supportRoute = value;
 				DictionaryUtil.Add(QueryParameters, "SupportRoute", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string VariableName
-		{
-			get
-			{
-				return variableName;
-			}
-			set	
-			{
-				variableName = value;
-				DictionaryUtil.Add(QueryParameters, "VariableName", value);
 			}
 		}
 
@@ -128,6 +102,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				stageRouteModel = value;
 				DictionaryUtil.Add(QueryParameters, "StageRouteModel", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string VariableName
+		{
+			get
+			{
+				return variableName;
+			}
+			set	
+			{
+				variableName = value;
+				DictionaryUtil.Add(QueryParameters, "VariableName", value);
 			}
 		}
 

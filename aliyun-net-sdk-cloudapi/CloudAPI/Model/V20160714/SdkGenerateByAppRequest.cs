@@ -39,11 +39,24 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
+		private string language;
+
 		private string securityToken;
 
 		private long? appId;
 
-		private string language;
+		public string Language
+		{
+			get
+			{
+				return language;
+			}
+			set	
+			{
+				language = value;
+				DictionaryUtil.Add(QueryParameters, "Language", value);
+			}
+		}
 
 		public string SecurityToken
 		{
@@ -68,19 +81,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value.ToString());
-			}
-		}
-
-		public string Language
-		{
-			get
-			{
-				return language;
-			}
-			set	
-			{
-				language = value;
-				DictionaryUtil.Add(QueryParameters, "Language", value);
 			}
 		}
 

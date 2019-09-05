@@ -41,19 +41,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string stageName;
 
-		private string apiName;
-
 		private string visibility;
 
-		private string securityToken;
-
 		private string groupId;
+
+		private int? pageNumber;
+
+		private string apiName;
+
+		private string securityToken;
 
 		private int? pageSize;
 
 		private string apiId;
-
-		private int? pageNumber;
 
 		public string StageName
 		{
@@ -65,19 +65,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				stageName = value;
 				DictionaryUtil.Add(QueryParameters, "StageName", value);
-			}
-		}
-
-		public string ApiName
-		{
-			get
-			{
-				return apiName;
-			}
-			set	
-			{
-				apiName = value;
-				DictionaryUtil.Add(QueryParameters, "ApiName", value);
 			}
 		}
 
@@ -94,19 +81,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
 		public string GroupId
 		{
 			get
@@ -117,6 +91,45 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ApiName
+		{
+			get
+			{
+				return apiName;
+			}
+			set	
+			{
+				apiName = value;
+				DictionaryUtil.Add(QueryParameters, "ApiName", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -143,19 +156,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				apiId = value;
 				DictionaryUtil.Add(QueryParameters, "ApiId", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

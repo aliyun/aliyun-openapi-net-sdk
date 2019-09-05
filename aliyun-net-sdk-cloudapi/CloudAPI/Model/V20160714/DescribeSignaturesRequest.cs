@@ -39,28 +39,15 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
-		private string securityToken;
-
 		private string signatureName;
-
-		private int? pageSize;
 
 		private string signatureId;
 
 		private int? pageNumber;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string securityToken;
+
+		private int? pageSize;
 
 		public string SignatureName
 		{
@@ -72,19 +59,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				signatureName = value;
 				DictionaryUtil.Add(QueryParameters, "SignatureName", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -111,6 +85,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

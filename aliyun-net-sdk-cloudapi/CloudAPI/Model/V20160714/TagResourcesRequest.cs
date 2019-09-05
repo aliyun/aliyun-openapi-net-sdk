@@ -39,13 +39,13 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
-		private List<string> resourceIds;
+		private List<string> resourceIds = new List<string>(){ };
+
+		private string resourceType;
 
 		private string securityToken;
 
-		private List<Tag> tags;
-
-		private string resourceType;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		public List<string> ResourceIds
 		{
@@ -61,6 +61,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				{
 					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
 				}
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -92,19 +105,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
-			}
-		}
-
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

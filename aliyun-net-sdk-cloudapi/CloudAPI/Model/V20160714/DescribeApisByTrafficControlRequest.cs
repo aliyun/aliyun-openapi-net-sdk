@@ -41,11 +41,11 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string trafficControlId;
 
+		private int? pageNumber;
+
 		private string securityToken;
 
 		private int? pageSize;
-
-		private int? pageNumber;
 
 		public string TrafficControlId
 		{
@@ -57,6 +57,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				trafficControlId = value;
 				DictionaryUtil.Add(QueryParameters, "TrafficControlId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -83,19 +96,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

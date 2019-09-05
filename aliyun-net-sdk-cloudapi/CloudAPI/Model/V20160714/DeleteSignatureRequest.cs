@@ -39,22 +39,9 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
-		private string securityToken;
-
 		private string signatureId;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string securityToken;
 
 		public string SignatureId
 		{
@@ -66,6 +53,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				signatureId = value;
 				DictionaryUtil.Add(QueryParameters, "SignatureId", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

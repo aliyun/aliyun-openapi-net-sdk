@@ -39,13 +39,26 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
+		private int? pageNumber;
+
 		private string ipControlId;
 
 		private string securityToken;
 
 		private int? pageSize;
 
-		private int? pageNumber;
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public string IpControlId
 		{
@@ -83,19 +96,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

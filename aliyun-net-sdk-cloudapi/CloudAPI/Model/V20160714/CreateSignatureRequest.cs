@@ -39,26 +39,13 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
-		private string securityToken;
-
 		private string signatureName;
-
-		private string signatureKey;
 
 		private string signatureSecret;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string securityToken;
+
+		private string signatureKey;
 
 		public string SignatureName
 		{
@@ -73,19 +60,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string SignatureKey
-		{
-			get
-			{
-				return signatureKey;
-			}
-			set	
-			{
-				signatureKey = value;
-				DictionaryUtil.Add(QueryParameters, "SignatureKey", value);
-			}
-		}
-
 		public string SignatureSecret
 		{
 			get
@@ -96,6 +70,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				signatureSecret = value;
 				DictionaryUtil.Add(QueryParameters, "SignatureSecret", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string SignatureKey
+		{
+			get
+			{
+				return signatureKey;
+			}
+			set	
+			{
+				signatureKey = value;
+				DictionaryUtil.Add(QueryParameters, "SignatureKey", value);
 			}
 		}
 

@@ -39,39 +39,13 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
-		private string ipControlId;
-
-		private string securityToken;
-
 		private string ipControlName;
 
 		private string description;
 
-		public string IpControlId
-		{
-			get
-			{
-				return ipControlId;
-			}
-			set	
-			{
-				ipControlId = value;
-				DictionaryUtil.Add(QueryParameters, "IpControlId", value);
-			}
-		}
+		private string ipControlId;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string securityToken;
 
 		public string IpControlName
 		{
@@ -96,6 +70,32 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string IpControlId
+		{
+			get
+			{
+				return ipControlId;
+			}
+			set	
+			{
+				ipControlId = value;
+				DictionaryUtil.Add(QueryParameters, "IpControlId", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

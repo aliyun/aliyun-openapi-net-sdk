@@ -39,11 +39,24 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
+		private string policyItemIds;
+
 		private string ipControlId;
 
 		private string securityToken;
 
-		private string policyItemIds;
+		public string PolicyItemIds
+		{
+			get
+			{
+				return policyItemIds;
+			}
+			set	
+			{
+				policyItemIds = value;
+				DictionaryUtil.Add(QueryParameters, "PolicyItemIds", value);
+			}
+		}
 
 		public string IpControlId
 		{
@@ -68,19 +81,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string PolicyItemIds
-		{
-			get
-			{
-				return policyItemIds;
-			}
-			set	
-			{
-				policyItemIds = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyItemIds", value);
 			}
 		}
 

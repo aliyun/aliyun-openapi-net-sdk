@@ -39,13 +39,26 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
+		private string groupId;
+
 		private string securityToken;
 
 		private string variableName;
 
-		private string groupId;
-
 		private string stageId;
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
 
 		public string SecurityToken
 		{
@@ -70,19 +83,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				variableName = value;
 				DictionaryUtil.Add(QueryParameters, "VariableName", value);
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 

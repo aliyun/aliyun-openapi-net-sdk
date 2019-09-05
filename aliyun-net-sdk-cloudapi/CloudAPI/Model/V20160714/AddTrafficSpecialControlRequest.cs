@@ -43,9 +43,9 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string specialKey;
 
-		private string securityToken;
-
 		private int? trafficValue;
+
+		private string securityToken;
 
 		private string specialType;
 
@@ -75,19 +75,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
 		public int? TrafficValue
 		{
 			get
@@ -98,6 +85,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				trafficValue = value;
 				DictionaryUtil.Add(QueryParameters, "TrafficValue", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

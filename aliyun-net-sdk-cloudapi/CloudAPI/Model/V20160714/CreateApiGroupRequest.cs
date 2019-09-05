@@ -39,15 +39,41 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
+		private string description;
+
+		private string groupName;
+
 		private string instanceId;
 
 		private string securityToken;
 
-		private string description;
+		private List<Tag> tags = new List<Tag>(){ };
 
-		private List<Tag> tags;
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
 
-		private string groupName;
+		public string GroupName
+		{
+			get
+			{
+				return groupName;
+			}
+			set	
+			{
+				groupName = value;
+				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -75,19 +101,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public List<Tag> Tags
 		{
 			get
@@ -103,19 +116,6 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
-			}
-		}
-
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
 			}
 		}
 

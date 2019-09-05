@@ -43,7 +43,7 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private long? appId;
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		public string SecurityToken
 		{
