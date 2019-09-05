@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class GetSubscriptionPriceRequest : RpcAcsRequest<GetSubscriptionPriceResponse>
     {
         public GetSubscriptionPriceRequest()
-            : base("BssOpenApi", "2017-12-14", "GetSubscriptionPrice")
+            : base("BssOpenApi", "2017-12-14", "GetSubscriptionPrice", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,15 +39,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
             }
         }
 
-		private int? servicePeriodQuantity;
-
 		private string productCode;
 
-		private string instanceId;
-
 		private int? quantity;
-
-		private string servicePeriodUnit;
 
 		private string subscriptionType;
 
@@ -56,24 +49,17 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private long? ownerId;
 
+		private string productType;
+
+		private int? servicePeriodQuantity;
+
+		private string instanceId;
+
+		private string servicePeriodUnit;
+
 		private string region;
 
 		private string orderType;
-
-		private string productType;
-
-		public int? ServicePeriodQuantity
-		{
-			get
-			{
-				return servicePeriodQuantity;
-			}
-			set	
-			{
-				servicePeriodQuantity = value;
-				DictionaryUtil.Add(QueryParameters, "ServicePeriodQuantity", value.ToString());
-			}
-		}
 
 		public string ProductCode
 		{
@@ -88,19 +74,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
 		public int? Quantity
 		{
 			get
@@ -111,19 +84,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				quantity = value;
 				DictionaryUtil.Add(QueryParameters, "Quantity", value.ToString());
-			}
-		}
-
-		public string ServicePeriodUnit
-		{
-			get
-			{
-				return servicePeriodUnit;
-			}
-			set	
-			{
-				servicePeriodUnit = value;
-				DictionaryUtil.Add(QueryParameters, "ServicePeriodUnit", value);
 			}
 		}
 
@@ -173,6 +133,58 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string ProductType
+		{
+			get
+			{
+				return productType;
+			}
+			set	
+			{
+				productType = value;
+				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+			}
+		}
+
+		public int? ServicePeriodQuantity
+		{
+			get
+			{
+				return servicePeriodQuantity;
+			}
+			set	
+			{
+				servicePeriodQuantity = value;
+				DictionaryUtil.Add(QueryParameters, "ServicePeriodQuantity", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string ServicePeriodUnit
+		{
+			get
+			{
+				return servicePeriodUnit;
+			}
+			set	
+			{
+				servicePeriodUnit = value;
+				DictionaryUtil.Add(QueryParameters, "ServicePeriodUnit", value);
+			}
+		}
+
 		public string Region
 		{
 			get
@@ -196,19 +208,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				orderType = value;
 				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
-
-		public string ProductType
-		{
-			get
-			{
-				return productType;
-			}
-			set	
-			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
 			}
 		}
 

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class QueryMonthlyBillRequest : RpcAcsRequest<QueryMonthlyBillResponse>
     {
         public QueryMonthlyBillRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryMonthlyBill")
+            : base("BssOpenApi", "2017-12-14", "QueryMonthlyBill", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

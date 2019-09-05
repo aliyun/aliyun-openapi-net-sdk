@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class RenewInstanceRequest : RpcAcsRequest<RenewInstanceResponse>
     {
         public RenewInstanceRequest()
-            : base("BssOpenApi", "2017-12-14", "RenewInstance")
+            : base("BssOpenApi", "2017-12-14", "RenewInstance", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,15 +41,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string productCode;
 
-		private string instanceId;
-
 		private string clientToken;
-
-		private int? renewPeriod;
 
 		private long? ownerId;
 
 		private string productType;
+
+		private string instanceId;
+
+		private int? renewPeriod;
 
 		public string ProductCode
 		{
@@ -65,19 +64,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -88,19 +74,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public int? RenewPeriod
-		{
-			get
-			{
-				return renewPeriod;
-			}
-			set	
-			{
-				renewPeriod = value;
-				DictionaryUtil.Add(QueryParameters, "RenewPeriod", value.ToString());
 			}
 		}
 
@@ -127,6 +100,32 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				productType = value;
 				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public int? RenewPeriod
+		{
+			get
+			{
+				return renewPeriod;
+			}
+			set	
+			{
+				renewPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "RenewPeriod", value.ToString());
 			}
 		}
 

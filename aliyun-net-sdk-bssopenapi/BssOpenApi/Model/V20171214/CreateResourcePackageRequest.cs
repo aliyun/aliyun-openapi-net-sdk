@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class CreateResourcePackageRequest : RpcAcsRequest<CreateResourcePackageResponse>
     {
         public CreateResourcePackageRequest()
-            : base("BssOpenApi", "2017-12-14", "CreateResourcePackage")
+            : base("BssOpenApi", "2017-12-14", "CreateResourcePackage", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,32 +39,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
             }
         }
 
-		private int? duration;
-
 		private string productCode;
 
 		private string specification;
 
 		private long? ownerId;
 
-		private string packageType;
-
 		private string effectiveDate;
 
-		private string pricingCycle;
+		private int? duration;
 
-		public int? Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
-			}
-		}
+		private string packageType;
+
+		private string pricingCycle;
 
 		public string ProductCode
 		{
@@ -106,19 +92,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string PackageType
-		{
-			get
-			{
-				return packageType;
-			}
-			set	
-			{
-				packageType = value;
-				DictionaryUtil.Add(QueryParameters, "PackageType", value);
-			}
-		}
-
 		public string EffectiveDate
 		{
 			get
@@ -129,6 +102,32 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				effectiveDate = value;
 				DictionaryUtil.Add(QueryParameters, "EffectiveDate", value);
+			}
+		}
+
+		public int? Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
+				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
+			}
+		}
+
+		public string PackageType
+		{
+			get
+			{
+				return packageType;
+			}
+			set	
+			{
+				packageType = value;
+				DictionaryUtil.Add(QueryParameters, "PackageType", value);
 			}
 		}
 

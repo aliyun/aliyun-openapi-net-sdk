@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class QueryResourcePackageInstancesRequest : RpcAcsRequest<QueryResourcePackageInstancesResponse>
     {
         public QueryResourcePackageInstancesRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryResourcePackageInstances")
+            : base("BssOpenApi", "2017-12-14", "QueryResourcePackageInstances", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,13 +43,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string productCode;
 
-		private int? pageSize;
-
 		private long? ownerId;
 
 		private string expiryTimeStart;
 
 		private int? pageNum;
+
+		private int? pageSize;
 
 		public string ExpiryTimeEnd
 		{
@@ -75,19 +74,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				productCode = value;
 				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -127,6 +113,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

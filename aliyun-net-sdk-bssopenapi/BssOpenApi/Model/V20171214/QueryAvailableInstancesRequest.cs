@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class QueryAvailableInstancesRequest : RpcAcsRequest<QueryAvailableInstancesResponse>
     {
         public QueryAvailableInstancesRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryAvailableInstances")
+            : base("BssOpenApi", "2017-12-14", "QueryAvailableInstances", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,13 +43,17 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string subscriptionType;
 
-		private long? ownerId;
-
 		private int? pageNum;
 
-		private string endTimeStart;
-
 		private string productType;
+
+		private int? pageSize;
+
+		private string renewStatus;
+
+		private long? ownerId;
+
+		private string endTimeStart;
 
 		private string createTimeEnd;
 
@@ -58,13 +61,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string endTimeEnd;
 
-		private int? pageSize;
-
 		private string createTimeStart;
 
 		private string region;
-
-		private string renewStatus;
 
 		public string ProductCode
 		{
@@ -92,19 +91,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public int? PageNum
 		{
 			get
@@ -118,19 +104,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string EndTimeStart
-		{
-			get
-			{
-				return endTimeStart;
-			}
-			set	
-			{
-				endTimeStart = value;
-				DictionaryUtil.Add(QueryParameters, "EndTimeStart", value);
-			}
-		}
-
 		public string ProductType
 		{
 			get
@@ -141,6 +114,58 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				productType = value;
 				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string RenewStatus
+		{
+			get
+			{
+				return renewStatus;
+			}
+			set	
+			{
+				renewStatus = value;
+				DictionaryUtil.Add(QueryParameters, "RenewStatus", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string EndTimeStart
+		{
+			get
+			{
+				return endTimeStart;
+			}
+			set	
+			{
+				endTimeStart = value;
+				DictionaryUtil.Add(QueryParameters, "EndTimeStart", value);
 			}
 		}
 
@@ -183,19 +208,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public string CreateTimeStart
 		{
 			get
@@ -219,19 +231,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				region = value;
 				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
-		public string RenewStatus
-		{
-			get
-			{
-				return renewStatus;
-			}
-			set	
-			{
-				renewStatus = value;
-				DictionaryUtil.Add(QueryParameters, "RenewStatus", value);
 			}
 		}
 

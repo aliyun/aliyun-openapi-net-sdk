@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class ApplyInvoiceRequest : RpcAcsRequest<ApplyInvoiceResponse>
     {
         public ApplyInvoiceRequest()
-            : base("BssOpenApi", "2017-12-14", "ApplyInvoice")
+            : base("BssOpenApi", "2017-12-14", "ApplyInvoice", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,14 +41,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? invoicingType;
 
-		private string applyUserNick;
-
-		private bool? invoiceByAmount;
-
-		private long? customerId;
-
-		private List<long?> selectedIdss = new List<long?>(){ };
-
 		private int? processWay;
 
 		private long? callerBid;
@@ -59,6 +50,14 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		private long? invoiceAmount;
 
 		private long? addressId;
+
+		private string applyUserNick;
+
+		private bool? invoiceByAmount;
+
+		private long? customerId;
+
+		private List<long?> selectedIdss = new List<long?>(){ };
 
 		private long? callerUid;
 
@@ -72,62 +71,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				invoicingType = value;
 				DictionaryUtil.Add(QueryParameters, "InvoicingType", value.ToString());
-			}
-		}
-
-		public string ApplyUserNick
-		{
-			get
-			{
-				return applyUserNick;
-			}
-			set	
-			{
-				applyUserNick = value;
-				DictionaryUtil.Add(QueryParameters, "ApplyUserNick", value);
-			}
-		}
-
-		public bool? InvoiceByAmount
-		{
-			get
-			{
-				return invoiceByAmount;
-			}
-			set	
-			{
-				invoiceByAmount = value;
-				DictionaryUtil.Add(QueryParameters, "InvoiceByAmount", value.ToString());
-			}
-		}
-
-		public long? CustomerId
-		{
-			get
-			{
-				return customerId;
-			}
-			set	
-			{
-				customerId = value;
-				DictionaryUtil.Add(QueryParameters, "CustomerId", value.ToString());
-			}
-		}
-
-		public List<long?> SelectedIdss
-		{
-			get
-			{
-				return selectedIdss;
-			}
-
-			set
-			{
-				selectedIdss = value;
-				for (int i = 0; i < selectedIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SelectedIds." + (i + 1) , selectedIdss[i]);
-				}
 			}
 		}
 
@@ -193,6 +136,62 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				addressId = value;
 				DictionaryUtil.Add(QueryParameters, "AddressId", value.ToString());
+			}
+		}
+
+		public string ApplyUserNick
+		{
+			get
+			{
+				return applyUserNick;
+			}
+			set	
+			{
+				applyUserNick = value;
+				DictionaryUtil.Add(QueryParameters, "ApplyUserNick", value);
+			}
+		}
+
+		public bool? InvoiceByAmount
+		{
+			get
+			{
+				return invoiceByAmount;
+			}
+			set	
+			{
+				invoiceByAmount = value;
+				DictionaryUtil.Add(QueryParameters, "InvoiceByAmount", value.ToString());
+			}
+		}
+
+		public long? CustomerId
+		{
+			get
+			{
+				return customerId;
+			}
+			set	
+			{
+				customerId = value;
+				DictionaryUtil.Add(QueryParameters, "CustomerId", value.ToString());
+			}
+		}
+
+		public List<long?> SelectedIdss
+		{
+			get
+			{
+				return selectedIdss;
+			}
+
+			set
+			{
+				selectedIdss = value;
+				for (int i = 0; i < selectedIdss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SelectedIds." + (i + 1) , selectedIdss[i]);
+				}
 			}
 		}
 

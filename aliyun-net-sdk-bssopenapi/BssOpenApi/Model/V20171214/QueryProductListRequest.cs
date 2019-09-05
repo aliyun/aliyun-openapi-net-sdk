@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class QueryProductListRequest : RpcAcsRequest<QueryProductListResponse>
     {
         public QueryProductListRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryProductList")
+            : base("BssOpenApi", "2017-12-14", "QueryProductList", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +39,24 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
             }
         }
 
+		private int? pageNum;
+
 		private bool? queryTotalCount;
 
 		private int? pageSize;
 
-		private int? pageNum;
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
 
 		public bool? QueryTotalCount
 		{
@@ -69,19 +81,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

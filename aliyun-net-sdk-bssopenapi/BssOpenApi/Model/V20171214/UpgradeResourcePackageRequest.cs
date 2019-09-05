@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class UpgradeResourcePackageRequest : RpcAcsRequest<UpgradeResourcePackageResponse>
     {
         public UpgradeResourcePackageRequest()
-            : base("BssOpenApi", "2017-12-14", "UpgradeResourcePackage")
+            : base("BssOpenApi", "2017-12-14", "UpgradeResourcePackage", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,26 +39,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
             }
         }
 
-		private string instanceId;
-
 		private string specification;
 
 		private long? ownerId;
 
 		private string effectiveDate;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
 
 		public string Specification
 		{
@@ -97,6 +83,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				effectiveDate = value;
 				DictionaryUtil.Add(QueryParameters, "EffectiveDate", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

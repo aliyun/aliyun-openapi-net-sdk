@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class RenewResourcePackageRequest : RpcAcsRequest<RenewResourcePackageResponse>
     {
         public RenewResourcePackageRequest()
-            : base("BssOpenApi", "2017-12-14", "RenewResourcePackage")
+            : base("BssOpenApi", "2017-12-14", "RenewResourcePackage", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,41 +39,15 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
             }
         }
 
-		private int? duration;
-
-		private string instanceId;
-
 		private long? ownerId;
 
 		private string effectiveDate;
 
+		private int? duration;
+
+		private string instanceId;
+
 		private string pricingCycle;
-
-		public int? Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
 
 		public long? OwnerId
 		{
@@ -99,6 +72,32 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				effectiveDate = value;
 				DictionaryUtil.Add(QueryParameters, "EffectiveDate", value);
+			}
+		}
+
+		public int? Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
+				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

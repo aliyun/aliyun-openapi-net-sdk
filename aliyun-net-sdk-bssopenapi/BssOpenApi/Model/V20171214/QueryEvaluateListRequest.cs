@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class QueryEvaluateListRequest : RpcAcsRequest<QueryEvaluateListResponse>
     {
         public QueryEvaluateListRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryEvaluateList")
+            : base("BssOpenApi", "2017-12-14", "QueryEvaluateList", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -46,23 +45,23 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? sortType;
 
-		private List<string> bizTypeLists = new List<string>(){ };
-
 		private int? type;
 
-		private long? ownerId;
-
 		private int? pageNum;
-
-		private string startSearchTime;
-
-		private string endBizTime;
 
 		private int? pageSize;
 
 		private long? endAmount;
 
 		private string billCycle;
+
+		private List<string> bizTypeLists = new List<string>(){ };
+
+		private long? ownerId;
+
+		private string startSearchTime;
+
+		private string endBizTime;
 
 		private long? startAmount;
 
@@ -107,23 +106,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public List<string> BizTypeLists
-		{
-			get
-			{
-				return bizTypeLists;
-			}
-
-			set
-			{
-				bizTypeLists = value;
-				for (int i = 0; i < bizTypeLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"BizTypeList." + (i + 1) , bizTypeLists[i]);
-				}
-			}
-		}
-
 		public int? Type
 		{
 			get
@@ -137,19 +119,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public int? PageNum
 		{
 			get
@@ -160,32 +129,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string StartSearchTime
-		{
-			get
-			{
-				return startSearchTime;
-			}
-			set	
-			{
-				startSearchTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartSearchTime", value);
-			}
-		}
-
-		public string EndBizTime
-		{
-			get
-			{
-				return endBizTime;
-			}
-			set	
-			{
-				endBizTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndBizTime", value);
 			}
 		}
 
@@ -225,6 +168,62 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				billCycle = value;
 				DictionaryUtil.Add(QueryParameters, "BillCycle", value);
+			}
+		}
+
+		public List<string> BizTypeLists
+		{
+			get
+			{
+				return bizTypeLists;
+			}
+
+			set
+			{
+				bizTypeLists = value;
+				for (int i = 0; i < bizTypeLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"BizTypeList." + (i + 1) , bizTypeLists[i]);
+				}
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string StartSearchTime
+		{
+			get
+			{
+				return startSearchTime;
+			}
+			set	
+			{
+				startSearchTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartSearchTime", value);
+			}
+		}
+
+		public string EndBizTime
+		{
+			get
+			{
+				return endBizTime;
+			}
+			set	
+			{
+				endBizTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndBizTime", value);
 			}
 		}
 

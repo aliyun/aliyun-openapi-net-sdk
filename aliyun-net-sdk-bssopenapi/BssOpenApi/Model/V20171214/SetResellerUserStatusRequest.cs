@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class SetResellerUserStatusRequest : RpcAcsRequest<SetResellerUserStatusResponse>
     {
         public SetResellerUserStatusRequest()
-            : base("BssOpenApi", "2017-12-14", "SetResellerUserStatus")
+            : base("BssOpenApi", "2017-12-14", "SetResellerUserStatus", "bssopenapi", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +41,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string ownerId;
 
-		private string status;
-
 		private string businessType;
+
+		private string status;
 
 		public string OwnerId
 		{
@@ -59,19 +58,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
 		public string BusinessType
 		{
 			get
@@ -82,6 +68,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				businessType = value;
 				DictionaryUtil.Add(QueryParameters, "BusinessType", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
