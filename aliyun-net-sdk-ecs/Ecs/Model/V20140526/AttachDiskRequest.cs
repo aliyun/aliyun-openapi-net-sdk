@@ -42,19 +42,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
+		private string diskId;
+
+		private bool? deleteWithInstance;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string diskId;
-
 		private long? ownerId;
 
-		private string device;
+		private string instanceId;
 
-		private bool? deleteWithInstance;
+		private string device;
 
 		public long? ResourceOwnerId
 		{
@@ -69,16 +69,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
+		public string DiskId
 		{
 			get
 			{
-				return instanceId;
+				return diskId;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+			}
+		}
+
+		public bool? DeleteWithInstance
+		{
+			get
+			{
+				return deleteWithInstance;
+			}
+			set	
+			{
+				deleteWithInstance = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteWithInstance", value.ToString());
 			}
 		}
 
@@ -108,19 +121,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DiskId
-		{
-			get
-			{
-				return diskId;
-			}
-			set	
-			{
-				diskId = value;
-				DictionaryUtil.Add(QueryParameters, "DiskId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -134,6 +134,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
 		public string Device
 		{
 			get
@@ -144,19 +157,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				device = value;
 				DictionaryUtil.Add(QueryParameters, "Device", value);
-			}
-		}
-
-		public bool? DeleteWithInstance
-		{
-			get
-			{
-				return deleteWithInstance;
-			}
-			set	
-			{
-				deleteWithInstance = value;
-				DictionaryUtil.Add(QueryParameters, "DeleteWithInstance", value.ToString());
 			}
 		}
 

@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private List<long?> deleteVersions;
+		private List<long?> deleteVersions = new List<long?>(){ };
 
 		private string launchTemplateId;
 

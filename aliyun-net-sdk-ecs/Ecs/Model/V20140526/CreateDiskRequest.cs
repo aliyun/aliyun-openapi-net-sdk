@@ -44,21 +44,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string snapshotId;
 
-		private string resourceOwnerAccount;
-
 		private string clientToken;
+
+		private string description;
+
+		private string diskName;
+
+		private string resourceGroupId;
+
+		private string diskCategory;
+
+		private int? storageSetPartitionNumber;
+
+		private List<Tag> tags = new List<Tag>(){ };
+
+		private List<Arn> arns = new List<Arn>(){ };
+
+		private string advancedFeatures;
+
+		private string resourceOwnerAccount;
 
 		private string performanceLevel;
 
 		private string ownerAccount;
 
-		private string description;
-
 		private long? ownerId;
-
-		private string diskName;
-
-		private string resourceGroupId;
 
 		private string instanceId;
 
@@ -68,19 +78,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? encrypted;
 
-		private string diskCategory;
-
 		private string zoneId;
 
-		private int? storageSetPartitionNumber;
-
-		private List<Tag> tags;
-
-		private List<Arn> arns;
-
 		private string kMSKeyId;
-
-		private string advancedFeatures;
 
 		public long? ResourceOwnerId
 		{
@@ -108,19 +108,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -131,6 +118,134 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string DiskName
+		{
+			get
+			{
+				return diskName;
+			}
+			set	
+			{
+				diskName = value;
+				DictionaryUtil.Add(QueryParameters, "DiskName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string DiskCategory
+		{
+			get
+			{
+				return diskCategory;
+			}
+			set	
+			{
+				diskCategory = value;
+				DictionaryUtil.Add(QueryParameters, "DiskCategory", value);
+			}
+		}
+
+		public int? StorageSetPartitionNumber
+		{
+			get
+			{
+				return storageSetPartitionNumber;
+			}
+			set	
+			{
+				storageSetPartitionNumber = value;
+				DictionaryUtil.Add(QueryParameters, "StorageSetPartitionNumber", value.ToString());
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
+		public List<Arn> Arns
+		{
+			get
+			{
+				return arns;
+			}
+
+			set
+			{
+				arns = value;
+				for (int i = 0; i < arns.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".Rolearn", arns[i].Rolearn);
+					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".RoleType", arns[i].RoleType);
+					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".AssumeRoleFor", arns[i].AssumeRoleFor);
+				}
+			}
+		}
+
+		public string AdvancedFeatures
+		{
+			get
+			{
+				return advancedFeatures;
+			}
+			set	
+			{
+				advancedFeatures = value;
+				DictionaryUtil.Add(QueryParameters, "AdvancedFeatures", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -160,19 +275,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -183,32 +285,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string DiskName
-		{
-			get
-			{
-				return diskName;
-			}
-			set	
-			{
-				diskName = value;
-				DictionaryUtil.Add(QueryParameters, "DiskName", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -264,19 +340,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DiskCategory
-		{
-			get
-			{
-				return diskCategory;
-			}
-			set	
-			{
-				diskCategory = value;
-				DictionaryUtil.Add(QueryParameters, "DiskCategory", value);
-			}
-		}
-
 		public string ZoneId
 		{
 			get
@@ -290,56 +353,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? StorageSetPartitionNumber
-		{
-			get
-			{
-				return storageSetPartitionNumber;
-			}
-			set	
-			{
-				storageSetPartitionNumber = value;
-				DictionaryUtil.Add(QueryParameters, "StorageSetPartitionNumber", value.ToString());
-			}
-		}
-
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
-			}
-		}
-
-		public List<Arn> Arns
-		{
-			get
-			{
-				return arns;
-			}
-
-			set
-			{
-				arns = value;
-				for (int i = 0; i < arns.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".Rolearn", arns[i].Rolearn);
-					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".RoleType", arns[i].RoleType);
-					DictionaryUtil.Add(QueryParameters,"Arn." + (i + 1) + ".AssumeRoleFor", arns[i].AssumeRoleFor);
-				}
-			}
-		}
-
 		public string KMSKeyId
 		{
 			get
@@ -350,19 +363,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				kMSKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "KMSKeyId", value);
-			}
-		}
-
-		public string AdvancedFeatures
-		{
-			get
-			{
-				return advancedFeatures;
-			}
-			set	
-			{
-				advancedFeatures = value;
-				DictionaryUtil.Add(QueryParameters, "AdvancedFeatures", value);
 			}
 		}
 

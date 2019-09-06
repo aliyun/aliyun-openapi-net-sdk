@@ -40,28 +40,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
-		private string generation;
-
 		private long? resourceOwnerId;
+
+		private string generation;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		public string Generation
-		{
-			get
-			{
-				return generation;
-			}
-			set	
-			{
-				generation = value;
-				DictionaryUtil.Add(QueryParameters, "Generation", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -73,6 +60,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Generation
+		{
+			get
+			{
+				return generation;
+			}
+			set	
+			{
+				generation = value;
+				DictionaryUtil.Add(QueryParameters, "Generation", value);
 			}
 		}
 

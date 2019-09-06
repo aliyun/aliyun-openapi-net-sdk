@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? force;
 
+		private string migrationType;
+
 		private string affinity;
 
 		public long? ResourceOwnerId
@@ -173,6 +175,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				force = value;
 				DictionaryUtil.Add(QueryParameters, "Force", value.ToString());
+			}
+		}
+
+		public string MigrationType
+		{
+			get
+			{
+				return migrationType;
+			}
+			set	
+			{
+				migrationType = value;
+				DictionaryUtil.Add(QueryParameters, "MigrationType", value);
 			}
 		}
 

@@ -59,7 +59,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<string> reservedInstanceIds;
+		private List<string> reservedInstanceIds = new List<string>(){ };
 
 		private string offeringType;
 
@@ -67,7 +67,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string reservedInstanceName;
 
-		private List<string> statuss;
+		private List<string> statuss = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{

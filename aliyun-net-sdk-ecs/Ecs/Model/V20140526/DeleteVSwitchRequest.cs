@@ -40,8 +40,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
-		private string vSwitchId;
-
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
@@ -50,18 +48,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
+		private string vSwitchId;
 
 		public long? ResourceOwnerId
 		{
@@ -112,6 +99,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 

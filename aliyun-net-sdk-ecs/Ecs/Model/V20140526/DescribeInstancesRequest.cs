@@ -44,25 +44,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string imageId;
-
 		private string privateIpAddresses;
 
 		private string hpcClusterId;
 
 		private string filter2Value;
 
-		private string filter4Value;
-
-		private bool? ioOptimized;
-
-		private string securityGroupId;
-
 		private string keyPairName;
-
-		private string filter4Key;
-
-		private int? pageNumber;
 
 		private string resourceGroupId;
 
@@ -70,41 +58,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string filter1Key;
 
-		private string rdmaIpAddresses;
-
 		private bool? deviceAvailable;
 
-		private int? pageSize;
-
-		private string publicIpAddresses;
-
-		private string instanceType;
-
-		private List<Tag> tags;
-
-		private string instanceChargeType;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string filter3Value;
 
 		private bool? dryRun;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private string instanceTypeFamily;
-
 		private string filter1Value;
 
 		private bool? needSaleCycle;
 
-		private string filter2Key;
-
 		private long? ownerId;
 
 		private string vSwitchId;
-
-		private string eipAddresses;
 
 		private string instanceName;
 
@@ -112,15 +80,47 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string internetChargeType;
 
-		private string vpcId;
-
 		private string zoneId;
-
-		private string filter3Key;
 
 		private string instanceNetworkType;
 
 		private string status;
+
+		private string imageId;
+
+		private string filter4Value;
+
+		private bool? ioOptimized;
+
+		private string securityGroupId;
+
+		private string filter4Key;
+
+		private int? pageNumber;
+
+		private string rdmaIpAddresses;
+
+		private int? pageSize;
+
+		private string publicIpAddresses;
+
+		private string instanceType;
+
+		private string instanceChargeType;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string instanceTypeFamily;
+
+		private string filter2Key;
+
+		private string eipAddresses;
+
+		private string vpcId;
+
+		private string filter3Key;
 
 		public string InnerIpAddresses
 		{
@@ -145,19 +145,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
 			}
 		}
 
@@ -200,45 +187,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Filter4Value
-		{
-			get
-			{
-				return filter4Value;
-			}
-			set	
-			{
-				filter4Value = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.4.Value", value);
-			}
-		}
-
-		public bool? IoOptimized
-		{
-			get
-			{
-				return ioOptimized;
-			}
-			set	
-			{
-				ioOptimized = value;
-				DictionaryUtil.Add(QueryParameters, "IoOptimized", value.ToString());
-			}
-		}
-
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
 		public string KeyPairName
 		{
 			get
@@ -249,32 +197,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				keyPairName = value;
 				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
-			}
-		}
-
-		public string Filter4Key
-		{
-			get
-			{
-				return filter4Key;
-			}
-			set	
-			{
-				filter4Key = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.4.Key", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -317,19 +239,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RdmaIpAddresses
-		{
-			get
-			{
-				return rdmaIpAddresses;
-			}
-			set	
-			{
-				rdmaIpAddresses = value;
-				DictionaryUtil.Add(QueryParameters, "RdmaIpAddresses", value);
-			}
-		}
-
 		public bool? DeviceAvailable
 		{
 			get
@@ -340,45 +249,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				deviceAvailable = value;
 				DictionaryUtil.Add(QueryParameters, "DeviceAvailable", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string PublicIpAddresses
-		{
-			get
-			{
-				return publicIpAddresses;
-			}
-			set	
-			{
-				publicIpAddresses = value;
-				DictionaryUtil.Add(QueryParameters, "PublicIpAddresses", value);
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 
@@ -397,19 +267,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
-			}
-		}
-
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
 			}
 		}
 
@@ -439,45 +296,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string InstanceTypeFamily
-		{
-			get
-			{
-				return instanceTypeFamily;
-			}
-			set	
-			{
-				instanceTypeFamily = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceTypeFamily", value);
-			}
-		}
-
 		public string Filter1Value
 		{
 			get
@@ -504,19 +322,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Filter2Key
-		{
-			get
-			{
-				return filter2Key;
-			}
-			set	
-			{
-				filter2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.2.Key", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -540,19 +345,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
-		public string EipAddresses
-		{
-			get
-			{
-				return eipAddresses;
-			}
-			set	
-			{
-				eipAddresses = value;
-				DictionaryUtil.Add(QueryParameters, "EipAddresses", value);
 			}
 		}
 
@@ -595,19 +387,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
 		public string ZoneId
 		{
 			get
@@ -618,19 +397,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string Filter3Key
-		{
-			get
-			{
-				return filter3Key;
-			}
-			set	
-			{
-				filter3Key = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.3.Key", value);
 			}
 		}
 
@@ -657,6 +423,240 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				status = value;
 				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public string Filter4Value
+		{
+			get
+			{
+				return filter4Value;
+			}
+			set	
+			{
+				filter4Value = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.4.Value", value);
+			}
+		}
+
+		public bool? IoOptimized
+		{
+			get
+			{
+				return ioOptimized;
+			}
+			set	
+			{
+				ioOptimized = value;
+				DictionaryUtil.Add(QueryParameters, "IoOptimized", value.ToString());
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
+		public string Filter4Key
+		{
+			get
+			{
+				return filter4Key;
+			}
+			set	
+			{
+				filter4Key = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.4.Key", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string RdmaIpAddresses
+		{
+			get
+			{
+				return rdmaIpAddresses;
+			}
+			set	
+			{
+				rdmaIpAddresses = value;
+				DictionaryUtil.Add(QueryParameters, "RdmaIpAddresses", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string PublicIpAddresses
+		{
+			get
+			{
+				return publicIpAddresses;
+			}
+			set	
+			{
+				publicIpAddresses = value;
+				DictionaryUtil.Add(QueryParameters, "PublicIpAddresses", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string InstanceTypeFamily
+		{
+			get
+			{
+				return instanceTypeFamily;
+			}
+			set	
+			{
+				instanceTypeFamily = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceTypeFamily", value);
+			}
+		}
+
+		public string Filter2Key
+		{
+			get
+			{
+				return filter2Key;
+			}
+			set	
+			{
+				filter2Key = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.2.Key", value);
+			}
+		}
+
+		public string EipAddresses
+		{
+			get
+			{
+				return eipAddresses;
+			}
+			set	
+			{
+				eipAddresses = value;
+				DictionaryUtil.Add(QueryParameters, "EipAddresses", value);
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
+		public string Filter3Key
+		{
+			get
+			{
+				return filter3Key;
+			}
+			set	
+			{
+				filter3Key = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.3.Key", value);
 			}
 		}
 

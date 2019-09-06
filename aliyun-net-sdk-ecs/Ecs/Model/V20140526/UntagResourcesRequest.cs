@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? all;
 
-		private List<string> resourceIds;
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -53,7 +53,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceType;
 
-		private List<string> tagKeys;
+		private List<string> tagKeys = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{

@@ -42,25 +42,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
 		private string networkType;
-
-		private string deploymentSetName;
-
-		private long? ownerId;
 
 		private int? pageNumber;
 
 		private string deploymentSetIds;
 
+		private int? pageSize;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string deploymentSetName;
+
+		private long? ownerId;
+
 		private string granularity;
 
 		private string domain;
-
-		private int? pageSize;
 
 		private string strategy;
 
@@ -77,32 +77,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string NetworkType
 		{
 			get
@@ -113,32 +87,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				networkType = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
-		public string DeploymentSetName
-		{
-			get
-			{
-				return deploymentSetName;
-			}
-			set	
-			{
-				deploymentSetName = value;
-				DictionaryUtil.Add(QueryParameters, "DeploymentSetName", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -168,6 +116,71 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string DeploymentSetName
+		{
+			get
+			{
+				return deploymentSetName;
+			}
+			set	
+			{
+				deploymentSetName = value;
+				DictionaryUtil.Add(QueryParameters, "DeploymentSetName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public string Granularity
 		{
 			get
@@ -191,19 +204,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				domain = value;
 				DictionaryUtil.Add(QueryParameters, "Domain", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

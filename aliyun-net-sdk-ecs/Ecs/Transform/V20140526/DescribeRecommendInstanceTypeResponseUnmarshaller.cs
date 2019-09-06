@@ -36,9 +36,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType> describeRecommendInstanceTypeResponse_data = new List<DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType>();
 			for (int i = 0; i < context.Length("DescribeRecommendInstanceType.Data.Length"); i++) {
 				DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType recommendInstanceType = new DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType();
-				recommendInstanceType.RegionNo = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].RegionNo");
+				recommendInstanceType.RegionId = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].RegionId");
 				recommendInstanceType.CommodityCode = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].CommodityCode");
 				recommendInstanceType.Scene = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].Scene");
+				recommendInstanceType.InstanceChargeType = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceChargeType");
+				recommendInstanceType.SpotStrategy = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].SpotStrategy");
+				recommendInstanceType.Priority = context.IntegerValue("DescribeRecommendInstanceType.Data["+ i +"].Priority");
 
 				DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_InstanceType instanceType = new DescribeRecommendInstanceTypeResponse.DescribeRecommendInstanceType_RecommendInstanceType.DescribeRecommendInstanceType_InstanceType();
 				instanceType.Generation = context.StringValue("DescribeRecommendInstanceType.Data["+ i +"].InstanceType.Generation");

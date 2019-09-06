@@ -42,21 +42,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private List<Tag> tags = new List<Tag>(){ };
+
 		private string resourceId;
 
 		private string resourceOwnerAccount;
 
-		private int? pageSize;
-
-		private List<Tag> tags;
-
 		private long? ownerId;
-
-		private string category;
 
 		private string resourceType;
 
-		private int? pageNumber;
+		private string category;
 
 		public long? ResourceOwnerId
 		{
@@ -71,29 +71,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceId
+		public int? PageNumber
 		{
 			get
 			{
-				return resourceId;
+				return pageNumber;
 			}
 			set	
 			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -128,6 +115,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceId
+		{
+			get
+			{
+				return resourceId;
+			}
+			set	
+			{
+				resourceId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -138,19 +151,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Category
-		{
-			get
-			{
-				return category;
-			}
-			set	
-			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 
@@ -167,16 +167,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageNumber
+		public string Category
 		{
 			get
 			{
-				return pageNumber;
+				return category;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

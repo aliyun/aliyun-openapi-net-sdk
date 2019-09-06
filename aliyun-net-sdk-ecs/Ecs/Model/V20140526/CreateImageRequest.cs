@@ -40,35 +40,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
-		private List<DiskDeviceMapping> diskDeviceMappings;
+		private List<DiskDeviceMapping> diskDeviceMappings = new List<DiskDeviceMapping>(){ };
 
 		private long? resourceOwnerId;
 
 		private string snapshotId;
 
-		private string resourceOwnerAccount;
-
 		private string clientToken;
 
-		private string ownerAccount;
-
 		private string description;
-
-		private long? ownerId;
 
 		private string platform;
 
 		private string resourceGroupId;
 
-		private string instanceId;
-
 		private string imageName;
 
-		private string imageVersion;
-
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string architecture;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
+		private string instanceId;
+
+		private string imageVersion;
 
 		public List<DiskDeviceMapping> DiskDeviceMappings
 		{
@@ -116,19 +116,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -142,19 +129,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -165,19 +139,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -207,19 +168,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
 		public string ImageName
 		{
 			get
@@ -230,19 +178,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				imageName = value;
 				DictionaryUtil.Add(QueryParameters, "ImageName", value);
-			}
-		}
-
-		public string ImageVersion
-		{
-			get
-			{
-				return imageVersion;
-			}
-			set	
-			{
-				imageVersion = value;
-				DictionaryUtil.Add(QueryParameters, "ImageVersion", value);
 			}
 		}
 
@@ -274,6 +209,71 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				architecture = value;
 				DictionaryUtil.Add(QueryParameters, "Architecture", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string ImageVersion
+		{
+			get
+			{
+				return imageVersion;
+			}
+			set	
+			{
+				imageVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ImageVersion", value);
 			}
 		}
 

@@ -40,28 +40,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
-		private string deploymentSetId;
-
 		private long? resourceOwnerId;
+
+		private string deploymentSetId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		public string DeploymentSetId
-		{
-			get
-			{
-				return deploymentSetId;
-			}
-			set	
-			{
-				deploymentSetId = value;
-				DictionaryUtil.Add(QueryParameters, "DeploymentSetId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -73,6 +60,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string DeploymentSetId
+		{
+			get
+			{
+				return deploymentSetId;
+			}
+			set	
+			{
+				deploymentSetId = value;
+				DictionaryUtil.Add(QueryParameters, "DeploymentSetId", value);
 			}
 		}
 

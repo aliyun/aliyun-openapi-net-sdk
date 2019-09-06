@@ -62,7 +62,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string diskId;
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private bool? dryRun;
 

@@ -42,9 +42,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string autoSnapshotPolicyId;
+
+		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
@@ -61,19 +61,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string AutoSnapshotPolicyId
 		{
 			get
@@ -84,6 +71,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				autoSnapshotPolicyId = value;
 				DictionaryUtil.Add(QueryParameters, "autoSnapshotPolicyId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 

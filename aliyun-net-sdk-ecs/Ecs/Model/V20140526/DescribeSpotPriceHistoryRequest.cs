@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private int? spotDuration;
+
 		private string zoneId;
 
 		public long? ResourceOwnerId
@@ -203,6 +205,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? SpotDuration
+		{
+			get
+			{
+				return spotDuration;
+			}
+			set	
+			{
+				spotDuration = value;
+				DictionaryUtil.Add(QueryParameters, "SpotDuration", value.ToString());
 			}
 		}
 

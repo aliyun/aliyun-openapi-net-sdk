@@ -40,34 +40,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
-		private string spotStrategy;
-
 		private long? resourceOwnerId;
+
+		private string instanceChargeType;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string acceptLanguage;
-
 		private long? ownerId;
-
-		private string instanceChargeType;
 
 		private bool? verbose;
 
-		public string SpotStrategy
-		{
-			get
-			{
-				return spotStrategy;
-			}
-			set	
-			{
-				spotStrategy = value;
-				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
-			}
-		}
+		private string spotStrategy;
+
+		private string acceptLanguage;
 
 		public long? ResourceOwnerId
 		{
@@ -79,6 +66,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
 			}
 		}
 
@@ -108,19 +108,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string AcceptLanguage
-		{
-			get
-			{
-				return acceptLanguage;
-			}
-			set	
-			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -134,19 +121,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
-			}
-		}
-
 		public bool? Verbose
 		{
 			get
@@ -157,6 +131,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				verbose = value;
 				DictionaryUtil.Add(QueryParameters, "Verbose", value.ToString());
+			}
+		}
+
+		public string SpotStrategy
+		{
+			get
+			{
+				return spotStrategy;
+			}
+			set	
+			{
+				spotStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
+			}
+		}
+
+		public string AcceptLanguage
+		{
+			get
+			{
+				return acceptLanguage;
+			}
+			set	
+			{
+				acceptLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
 			}
 		}
 

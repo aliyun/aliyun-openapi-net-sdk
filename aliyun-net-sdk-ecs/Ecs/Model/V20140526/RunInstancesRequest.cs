@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string keyPairName;
 
+		private int? minAmount;
+
 		private float? spotPriceLimit;
 
 		private bool? deletionProtection;
@@ -63,11 +65,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? storageSetPartitionNumber;
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private int? autoRenewPeriod;
-
-		private int? cpuOptionsCore;
 
 		private int? period;
 
@@ -76,8 +76,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string launchTemplateId;
 
 		private int? ipv6AddressCount;
-
-		private string cpuOptionsNuma;
 
 		private long? ownerId;
 
@@ -97,7 +95,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string zoneId;
 
-		private List<string> ipv6Addresss;
+		private List<string> ipv6Addresss = new List<string>(){ };
 
 		private int? internetMaxBandwidthIn;
 
@@ -117,8 +115,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string description;
 
-		private int? cpuOptionsThreadsPerCore;
-
 		private string systemDiskCategory;
 
 		private string systemDiskPerformanceLevel;
@@ -131,7 +127,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceChargeType;
 
-		private List<NetworkInterface> networkInterfaces;
+		private List<NetworkInterface> networkInterfaces = new List<NetworkInterface>(){ };
 
 		private string deploymentSetId;
 
@@ -153,11 +149,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string creditSpecification;
 
-		private List<string> securityGroupIdss;
+		private List<string> securityGroupIdss = new List<string>(){ };
 
 		private int? spotDuration;
 
-		private List<DataDisk> dataDisks;
+		private List<DataDisk> dataDisks = new List<DataDisk>(){ };
 
 		private long? launchTemplateVersion;
 
@@ -242,6 +238,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				keyPairName = value;
 				DictionaryUtil.Add(QueryParameters, "KeyPairName", value);
+			}
+		}
+
+		public int? MinAmount
+		{
+			get
+			{
+				return minAmount;
+			}
+			set	
+			{
+				minAmount = value;
+				DictionaryUtil.Add(QueryParameters, "MinAmount", value.ToString());
 			}
 		}
 
@@ -354,19 +363,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? CpuOptionsCore
-		{
-			get
-			{
-				return cpuOptionsCore;
-			}
-			set	
-			{
-				cpuOptionsCore = value;
-				DictionaryUtil.Add(QueryParameters, "CpuOptions.Core", value.ToString());
-			}
-		}
-
 		public int? Period
 		{
 			get
@@ -416,19 +412,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ipv6AddressCount = value;
 				DictionaryUtil.Add(QueryParameters, "Ipv6AddressCount", value.ToString());
-			}
-		}
-
-		public string CpuOptionsNuma
-		{
-			get
-			{
-				return cpuOptionsNuma;
-			}
-			set	
-			{
-				cpuOptionsNuma = value;
-				DictionaryUtil.Add(QueryParameters, "CpuOptions.Numa", value);
 			}
 		}
 
@@ -680,19 +663,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public int? CpuOptionsThreadsPerCore
-		{
-			get
-			{
-				return cpuOptionsThreadsPerCore;
-			}
-			set	
-			{
-				cpuOptionsThreadsPerCore = value;
-				DictionaryUtil.Add(QueryParameters, "CpuOptions.ThreadsPerCore", value.ToString());
 			}
 		}
 

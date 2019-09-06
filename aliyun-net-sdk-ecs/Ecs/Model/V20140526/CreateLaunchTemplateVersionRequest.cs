@@ -59,7 +59,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? systemDiskIops;
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private int? period;
 
@@ -103,7 +103,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? enableVmOsConfig;
 
-		private List<NetworkInterface> networkInterfaces;
+		private List<NetworkInterface> networkInterfaces = new List<NetworkInterface>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -117,7 +117,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? spotDuration;
 
-		private List<DataDisk> dataDisks;
+		private List<DataDisk> dataDisks = new List<DataDisk>(){ };
 
 		private int? systemDiskSize;
 

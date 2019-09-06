@@ -59,7 +59,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string excessCapacityTerminationPolicy;
 
-		private List<LaunchTemplateConfig> launchTemplateConfigs;
+		private List<LaunchTemplateConfig> launchTemplateConfigs = new List<LaunchTemplateConfig>(){ };
 
 		private string validUntil;
 

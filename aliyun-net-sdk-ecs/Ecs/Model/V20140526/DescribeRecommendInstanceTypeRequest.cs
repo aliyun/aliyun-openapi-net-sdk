@@ -42,25 +42,37 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private float? memory;
+
+		private string ioOptimized;
+
+		private string networkType;
+
+		private string scene;
+
+		private int? cores;
+
+		private string systemDiskCategory;
+
+		private string instanceType;
+
+		private string instanceChargeType;
+
+		private float? maxPrice;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string channel;
-
-		private string networkType;
+		private List<string> instanceTypeFamilys = new List<string>(){ };
 
 		private long? ownerId;
 
-		private string _operator;
+		private string spotStrategy;
 
-		private string token;
+		private string priorityStrategy;
 
-		private string scene;
-
-		private string instanceType;
-
-		private string proxyId;
+		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -72,6 +84,123 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public float? Memory
+		{
+			get
+			{
+				return memory;
+			}
+			set	
+			{
+				memory = value;
+				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
+			}
+		}
+
+		public string IoOptimized
+		{
+			get
+			{
+				return ioOptimized;
+			}
+			set	
+			{
+				ioOptimized = value;
+				DictionaryUtil.Add(QueryParameters, "IoOptimized", value);
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
+		public string Scene
+		{
+			get
+			{
+				return scene;
+			}
+			set	
+			{
+				scene = value;
+				DictionaryUtil.Add(QueryParameters, "Scene", value);
+			}
+		}
+
+		public int? Cores
+		{
+			get
+			{
+				return cores;
+			}
+			set	
+			{
+				cores = value;
+				DictionaryUtil.Add(QueryParameters, "Cores", value.ToString());
+			}
+		}
+
+		public string SystemDiskCategory
+		{
+			get
+			{
+				return systemDiskCategory;
+			}
+			set	
+			{
+				systemDiskCategory = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskCategory", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+			}
+		}
+
+		public float? MaxPrice
+		{
+			get
+			{
+				return maxPrice;
+			}
+			set	
+			{
+				maxPrice = value;
+				DictionaryUtil.Add(QueryParameters, "MaxPrice", value.ToString());
 			}
 		}
 
@@ -101,29 +230,20 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Channel
+		public List<string> InstanceTypeFamilys
 		{
 			get
 			{
-				return channel;
+				return instanceTypeFamilys;
 			}
-			set	
-			{
-				channel = value;
-				DictionaryUtil.Add(QueryParameters, "channel", value);
-			}
-		}
 
-		public string NetworkType
-		{
-			get
+			set
 			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+				instanceTypeFamilys = value;
+				for (int i = 0; i < instanceTypeFamilys.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceTypeFamily." + (i + 1) , instanceTypeFamilys[i]);
+				}
 			}
 		}
 
@@ -140,68 +260,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string _Operator
+		public string SpotStrategy
 		{
 			get
 			{
-				return _operator;
+				return spotStrategy;
 			}
 			set	
 			{
-				_operator = value;
-				DictionaryUtil.Add(QueryParameters, "operator", value);
+				spotStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
 			}
 		}
 
-		public string Token
+		public string PriorityStrategy
 		{
 			get
 			{
-				return token;
+				return priorityStrategy;
 			}
 			set	
 			{
-				token = value;
-				DictionaryUtil.Add(QueryParameters, "token", value);
+				priorityStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "PriorityStrategy", value);
 			}
 		}
 
-		public string Scene
+		public string ZoneId
 		{
 			get
 			{
-				return scene;
+				return zoneId;
 			}
 			set	
 			{
-				scene = value;
-				DictionaryUtil.Add(QueryParameters, "Scene", value);
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
-		public string ProxyId
-		{
-			get
-			{
-				return proxyId;
-			}
-			set	
-			{
-				proxyId = value;
-				DictionaryUtil.Add(QueryParameters, "proxyId", value);
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 

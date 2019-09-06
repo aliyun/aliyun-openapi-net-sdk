@@ -66,7 +66,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceType;
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string architecture;
 
@@ -82,7 +82,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<Filter> filters;
+		private List<Filter> filters = new List<Filter>(){ };
 
 		private string status;
 

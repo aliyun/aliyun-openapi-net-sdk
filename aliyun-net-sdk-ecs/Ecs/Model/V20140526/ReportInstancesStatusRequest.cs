@@ -47,7 +47,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string startTime;
 
-		private List<string> diskIds;
+		private List<string> diskIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -57,9 +57,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<string> instanceIds;
+		private List<string> instanceIds = new List<string>(){ };
 
-		private List<string> devices;
+		private List<string> devices = new List<string>(){ };
 
 		public string Reason
 		{

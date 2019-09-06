@@ -114,7 +114,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string sourceDiskType;
 
-			private int? totalSize;
+			private long? totalSize;
 
 			private int? totalCount;
 
@@ -214,7 +214,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public int? TotalSize
+			public long? TotalSize
 			{
 				get
 				{

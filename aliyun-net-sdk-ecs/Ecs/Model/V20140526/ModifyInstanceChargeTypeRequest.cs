@@ -42,6 +42,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string clientToken;
+
+		private bool? isDetailFee;
+
+		private string instanceChargeType;
+
 		private int? period;
 
 		private bool? dryRun;
@@ -52,8 +58,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceOwnerAccount;
 
-		private string clientToken;
-
 		private string ownerAccount;
 
 		private long? ownerId;
@@ -61,10 +65,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string periodUnit;
 
 		private string instanceIds;
-
-		private bool? isDetailFee;
-
-		private string instanceChargeType;
 
 		public long? ResourceOwnerId
 		{
@@ -76,6 +76,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public bool? IsDetailFee
+		{
+			get
+			{
+				return isDetailFee;
+			}
+			set	
+			{
+				isDetailFee = value;
+				DictionaryUtil.Add(QueryParameters, "IsDetailFee", value.ToString());
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
 			}
 		}
 
@@ -144,19 +183,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -206,32 +232,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceIds = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceIds", value);
-			}
-		}
-
-		public bool? IsDetailFee
-		{
-			get
-			{
-				return isDetailFee;
-			}
-			set	
-			{
-				isDetailFee = value;
-				DictionaryUtil.Add(QueryParameters, "IsDetailFee", value.ToString());
-			}
-		}
-
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
 			}
 		}
 

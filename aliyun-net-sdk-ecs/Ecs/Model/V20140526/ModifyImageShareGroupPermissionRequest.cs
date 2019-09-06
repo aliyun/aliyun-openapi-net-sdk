@@ -50,9 +50,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
-		private string removeGroup1;
-
 		private long? ownerId;
+
+		private string removeGroup1;
 
 		public long? ResourceOwnerId
 		{
@@ -119,19 +119,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RemoveGroup1
-		{
-			get
-			{
-				return removeGroup1;
-			}
-			set	
-			{
-				removeGroup1 = value;
-				DictionaryUtil.Add(QueryParameters, "RemoveGroup.1", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -142,6 +129,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string RemoveGroup1
+		{
+			get
+			{
+				return removeGroup1;
+			}
+			set	
+			{
+				removeGroup1 = value;
+				DictionaryUtil.Add(QueryParameters, "RemoveGroup.1", value);
 			}
 		}
 

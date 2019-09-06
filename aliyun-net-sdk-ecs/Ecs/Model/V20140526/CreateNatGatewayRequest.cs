@@ -42,21 +42,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string clientToken;
 
+		private string description;
+
+		private List<BandwidthPackage> bandwidthPackages = new List<BandwidthPackage>(){ };
+
+		private string resourceOwnerAccount;
+
 		private string ownerAccount;
+
+		private long? ownerId;
 
 		private string vpcId;
 
 		private string name;
-
-		private string description;
-
-		private long? ownerId;
-
-		private List<BandwidthPackage> bandwidthPackages;
 
 		public long? ResourceOwnerId
 		{
@@ -68,19 +68,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -97,6 +84,51 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public List<BandwidthPackage> BandwidthPackages
+		{
+			get
+			{
+				return bandwidthPackages;
+			}
+
+			set
+			{
+				bandwidthPackages = value;
+				for (int i = 0; i < bandwidthPackages.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Bandwidth", bandwidthPackages[i].Bandwidth);
+					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Zone", bandwidthPackages[i].Zone);
+					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".IpCount", bandwidthPackages[i].IpCount);
+				}
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -107,6 +139,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -133,51 +178,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public List<BandwidthPackage> BandwidthPackages
-		{
-			get
-			{
-				return bandwidthPackages;
-			}
-
-			set
-			{
-				bandwidthPackages = value;
-				for (int i = 0; i < bandwidthPackages.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Bandwidth", bandwidthPackages[i].Bandwidth);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".Zone", bandwidthPackages[i].Zone);
-					DictionaryUtil.Add(QueryParameters,"BandwidthPackage." + (i + 1) + ".IpCount", bandwidthPackages[i].IpCount);
-				}
 			}
 		}
 

@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
-		private List<string> eventIds;
+		private List<string> eventIds = new List<string>(){ };
 
 		private long? resourceOwnerId;
 

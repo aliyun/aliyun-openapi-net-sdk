@@ -47,7 +47,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceType;
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string instanceChargeType;
 
@@ -61,7 +61,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<string> demandStatuss;
+		private List<string> demandStatuss = new List<string>(){ };
 
 		private string zoneId;
 

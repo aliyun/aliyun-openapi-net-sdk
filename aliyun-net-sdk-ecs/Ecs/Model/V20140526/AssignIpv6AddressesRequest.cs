@@ -51,7 +51,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string networkInterfaceId;
 
-		private List<string> ipv6Addresss;
+		private List<string> ipv6Addresss = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{

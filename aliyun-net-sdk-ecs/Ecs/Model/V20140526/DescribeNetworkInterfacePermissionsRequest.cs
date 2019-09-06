@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageSize;
 
-		private List<string> networkInterfacePermissionIds;
+		private List<string> networkInterfacePermissionIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 

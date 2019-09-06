@@ -40,13 +40,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
+		private long? resourceOwnerId;
+
 		private string sourceRegionId;
 
 		private bool? initLocalDisk;
-
-		private long? resourceOwnerId;
-
-		private string instanceId;
 
 		private bool? dryRun;
 
@@ -55,6 +53,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string instanceId;
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
 
 		public string SourceRegionId
 		{
@@ -79,32 +92,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				initLocalDisk = value;
 				DictionaryUtil.Add(QueryParameters, "InitLocalDisk", value.ToString());
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -157,6 +144,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private List<string> attributeNames;
+		private List<string> attributeNames = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 

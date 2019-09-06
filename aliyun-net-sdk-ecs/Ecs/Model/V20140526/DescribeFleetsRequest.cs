@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string fleetName;
 
-		private List<string> fleetStatuss;
+		private List<string> fleetStatuss = new List<string>(){ };
 
 		private int? pageSize;
 
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<string> fleetIds;
+		private List<string> fleetIds = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{

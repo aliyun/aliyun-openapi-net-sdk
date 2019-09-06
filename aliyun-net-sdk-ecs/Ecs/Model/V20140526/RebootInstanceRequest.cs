@@ -42,7 +42,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
+		private bool? forceStop;
 
 		private bool? dryRun;
 
@@ -52,7 +52,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private bool? forceStop;
+		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -67,16 +67,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
+		public bool? ForceStop
 		{
 			get
 			{
-				return instanceId;
+				return forceStop;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				forceStop = value;
+				DictionaryUtil.Add(QueryParameters, "ForceStop", value.ToString());
 			}
 		}
 
@@ -132,16 +132,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? ForceStop
+		public string InstanceId
 		{
 			get
 			{
-				return forceStop;
+				return instanceId;
 			}
 			set	
 			{
-				forceStop = value;
-				DictionaryUtil.Add(QueryParameters, "ForceStop", value.ToString());
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

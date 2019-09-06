@@ -60,7 +60,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? storageSetPartitionNumber;
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private int? autoRenewPeriod;
 
@@ -120,7 +120,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceType;
 
-		private List<Arn> arns;
+		private List<Arn> arns = new List<Arn>(){ };
 
 		private string instanceChargeType;
 
@@ -144,7 +144,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string creditSpecification;
 
-		private List<DataDisk> dataDisks;
+		private int? spotDuration;
+
+		private List<DataDisk> dataDisks = new List<DataDisk>(){ };
 
 		private string storageSetId;
 
@@ -836,6 +838,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				creditSpecification = value;
 				DictionaryUtil.Add(QueryParameters, "CreditSpecification", value);
+			}
+		}
+
+		public int? SpotDuration
+		{
+			get
+			{
+				return spotDuration;
+			}
+			set	
+			{
+				spotDuration = value;
+				DictionaryUtil.Add(QueryParameters, "SpotDuration", value.ToString());
 			}
 		}
 

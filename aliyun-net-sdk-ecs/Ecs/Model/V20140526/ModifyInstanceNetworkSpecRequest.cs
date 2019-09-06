@@ -42,19 +42,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string clientToken;
+
+		private int? internetMaxBandwidthOut;
+
+		private string startTime;
+
 		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
-		private string clientToken;
-
 		private string ownerAccount;
 
-		private int? internetMaxBandwidthOut;
-
 		private string endTime;
-
-		private string startTime;
 
 		private long? ownerId;
 
@@ -76,6 +76,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public int? InternetMaxBandwidthOut
+		{
+			get
+			{
+				return internetMaxBandwidthOut;
+			}
+			set	
+			{
+				internetMaxBandwidthOut = value;
+				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthOut", value.ToString());
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -105,19 +144,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -131,19 +157,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? InternetMaxBandwidthOut
-		{
-			get
-			{
-				return internetMaxBandwidthOut;
-			}
-			set	
-			{
-				internetMaxBandwidthOut = value;
-				DictionaryUtil.Add(QueryParameters, "InternetMaxBandwidthOut", value.ToString());
-			}
-		}
-
 		public string EndTime
 		{
 			get
@@ -154,19 +167,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 

@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string priceUnit;
+
 		private string resourceId;
 
 		private int? period;
@@ -49,8 +51,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string priceUnit;
 
 		private long? ownerId;
 
@@ -66,6 +66,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string PriceUnit
+		{
+			get
+			{
+				return priceUnit;
+			}
+			set	
+			{
+				priceUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PriceUnit", value);
 			}
 		}
 
@@ -118,19 +131,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string PriceUnit
-		{
-			get
-			{
-				return priceUnit;
-			}
-			set	
-			{
-				priceUnit = value;
-				DictionaryUtil.Add(QueryParameters, "PriceUnit", value);
 			}
 		}
 

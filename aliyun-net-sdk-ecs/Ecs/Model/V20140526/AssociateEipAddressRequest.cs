@@ -42,17 +42,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
+		private string allocationId;
+
+		private string instanceType;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string instanceType;
-
-		private string allocationId;
-
 		private long? ownerId;
+
+		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -67,16 +67,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceId
+		public string AllocationId
 		{
 			get
 			{
-				return instanceId;
+				return allocationId;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				allocationId = value;
+				DictionaryUtil.Add(QueryParameters, "AllocationId", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 
@@ -106,32 +119,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
-		public string AllocationId
-		{
-			get
-			{
-				return allocationId;
-			}
-			set	
-			{
-				allocationId = value;
-				DictionaryUtil.Add(QueryParameters, "AllocationId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -142,6 +129,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

@@ -39,9 +39,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
-		private List<string> resourceIds;
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 

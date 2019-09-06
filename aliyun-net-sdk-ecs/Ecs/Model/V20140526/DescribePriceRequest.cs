@@ -40,15 +40,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
-		private string dataDisk3PerformanceLevel;
-
 		private int? dataDisk3Size;
 
 		private long? resourceOwnerId;
 
-		private string imageId;
-
 		private string dataDisk3Category;
+
+		private int? dataDisk4Size;
+
+		private string priceUnit;
+
+		private int? period;
+
+		private string dataDisk1PerformanceLevel;
+
+		private long? ownerId;
+
+		private string internetChargeType;
+
+		private string instanceNetworkType;
+
+		private string dataDisk3PerformanceLevel;
+
+		private string imageId;
 
 		private string ioOptimized;
 
@@ -62,17 +76,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string dataDisk4PerformanceLevel;
 
-		private int? dataDisk4Size;
-
-		private string priceUnit;
-
 		private string instanceType;
 
 		private string dataDisk2Category;
 
 		private int? dataDisk1Size;
-
-		private int? period;
 
 		private int? amount;
 
@@ -82,10 +90,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? dataDisk2Size;
 
-		private string dataDisk1PerformanceLevel;
-
-		private long? ownerId;
-
 		private string resourceType;
 
 		private string dataDisk1Category;
@@ -93,23 +97,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string dataDisk2PerformanceLevel;
 
 		private int? systemDiskSize;
-
-		private string internetChargeType;
-
-		private string instanceNetworkType;
-
-		public string DataDisk3PerformanceLevel
-		{
-			get
-			{
-				return dataDisk3PerformanceLevel;
-			}
-			set	
-			{
-				dataDisk3PerformanceLevel = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.3.PerformanceLevel", value);
-			}
-		}
 
 		public int? DataDisk3Size
 		{
@@ -137,19 +124,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
-
 		public string DataDisk3Category
 		{
 			get
@@ -160,6 +134,123 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dataDisk3Category = value;
 				DictionaryUtil.Add(QueryParameters, "DataDisk.3.Category", value);
+			}
+		}
+
+		public int? DataDisk4Size
+		{
+			get
+			{
+				return dataDisk4Size;
+			}
+			set	
+			{
+				dataDisk4Size = value;
+				DictionaryUtil.Add(QueryParameters, "DataDisk.4.Size", value.ToString());
+			}
+		}
+
+		public string PriceUnit
+		{
+			get
+			{
+				return priceUnit;
+			}
+			set	
+			{
+				priceUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PriceUnit", value);
+			}
+		}
+
+		public int? Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public string DataDisk1PerformanceLevel
+		{
+			get
+			{
+				return dataDisk1PerformanceLevel;
+			}
+			set	
+			{
+				dataDisk1PerformanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "DataDisk.1.PerformanceLevel", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InternetChargeType
+		{
+			get
+			{
+				return internetChargeType;
+			}
+			set	
+			{
+				internetChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
+			}
+		}
+
+		public string InstanceNetworkType
+		{
+			get
+			{
+				return instanceNetworkType;
+			}
+			set	
+			{
+				instanceNetworkType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
+			}
+		}
+
+		public string DataDisk3PerformanceLevel
+		{
+			get
+			{
+				return dataDisk3PerformanceLevel;
+			}
+			set	
+			{
+				dataDisk3PerformanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "DataDisk.3.PerformanceLevel", value);
+			}
+		}
+
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageId", value);
 			}
 		}
 
@@ -241,32 +332,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? DataDisk4Size
-		{
-			get
-			{
-				return dataDisk4Size;
-			}
-			set	
-			{
-				dataDisk4Size = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.4.Size", value.ToString());
-			}
-		}
-
-		public string PriceUnit
-		{
-			get
-			{
-				return priceUnit;
-			}
-			set	
-			{
-				priceUnit = value;
-				DictionaryUtil.Add(QueryParameters, "PriceUnit", value);
-			}
-		}
-
 		public string InstanceType
 		{
 			get
@@ -303,19 +368,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dataDisk1Size = value;
 				DictionaryUtil.Add(QueryParameters, "DataDisk.1.Size", value.ToString());
-			}
-		}
-
-		public int? Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
 			}
 		}
 
@@ -371,32 +423,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DataDisk1PerformanceLevel
-		{
-			get
-			{
-				return dataDisk1PerformanceLevel;
-			}
-			set	
-			{
-				dataDisk1PerformanceLevel = value;
-				DictionaryUtil.Add(QueryParameters, "DataDisk.1.PerformanceLevel", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string ResourceType
 		{
 			get
@@ -446,32 +472,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				systemDiskSize = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDisk.Size", value.ToString());
-			}
-		}
-
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
-			}
-		}
-
-		public string InstanceNetworkType
-		{
-			get
-			{
-				return instanceNetworkType;
-			}
-			set	
-			{
-				instanceNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceNetworkType", value);
 			}
 		}
 

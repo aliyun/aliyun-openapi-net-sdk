@@ -47,7 +47,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<string> privateIpAddresss;
+		private List<string> privateIpAddresss = new List<string>(){ };
 
 		private string networkInterfaceId;
 

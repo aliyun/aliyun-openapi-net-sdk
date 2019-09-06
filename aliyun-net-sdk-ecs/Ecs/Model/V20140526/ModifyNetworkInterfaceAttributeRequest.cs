@@ -42,7 +42,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private List<string> securityGroupIds;
+		private List<string> securityGroupIds = new List<string>(){ };
 
 		private string description;
 

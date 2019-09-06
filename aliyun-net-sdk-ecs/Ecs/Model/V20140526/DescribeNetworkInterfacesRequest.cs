@@ -54,7 +54,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageSize;
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string networkInterfaceName;
 
@@ -66,7 +66,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string vSwitchId;
 
-		private List<string> privateIpAddresss;
+		private List<string> privateIpAddresss = new List<string>(){ };
 
 		private string instanceId;
 
@@ -74,7 +74,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string primaryIpAddress;
 
-		private List<string> networkInterfaceIds;
+		private List<string> networkInterfaceIds = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{

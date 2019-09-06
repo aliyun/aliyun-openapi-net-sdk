@@ -40,9 +40,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
+		private long? resourceOwnerId;
+
 		private int? duration;
 
-		private long? resourceOwnerId;
+		private string renewalStatus;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
 
 		private string periodUnit;
 
@@ -50,13 +58,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? autoRenew;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private string renewalStatus;
-
-		private long? ownerId;
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
 
 		public int? Duration
 		{
@@ -71,16 +84,55 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string RenewalStatus
 		{
 			get
 			{
-				return resourceOwnerId;
+				return renewalStatus;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				renewalStatus = value;
+				DictionaryUtil.Add(QueryParameters, "RenewalStatus", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -120,58 +172,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				autoRenew = value;
 				DictionaryUtil.Add(QueryParameters, "AutoRenew", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string RenewalStatus
-		{
-			get
-			{
-				return renewalStatus;
-			}
-			set	
-			{
-				renewalStatus = value;
-				DictionaryUtil.Add(QueryParameters, "RenewalStatus", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

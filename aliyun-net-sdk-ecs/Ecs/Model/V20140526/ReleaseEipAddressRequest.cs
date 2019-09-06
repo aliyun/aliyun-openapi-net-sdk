@@ -42,11 +42,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string allocationId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string allocationId;
 
 		private long? ownerId;
 
@@ -60,6 +60,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string AllocationId
+		{
+			get
+			{
+				return allocationId;
+			}
+			set	
+			{
+				allocationId = value;
+				DictionaryUtil.Add(QueryParameters, "AllocationId", value);
 			}
 		}
 
@@ -86,19 +99,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string AllocationId
-		{
-			get
-			{
-				return allocationId;
-			}
-			set	
-			{
-				allocationId = value;
-				DictionaryUtil.Add(QueryParameters, "AllocationId", value);
 			}
 		}
 

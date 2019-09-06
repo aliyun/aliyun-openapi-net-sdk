@@ -44,17 +44,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string imageId;
 
+		private string imageFormat;
+
 		private string oSSBucket;
 
 		private string resourceOwnerAccount;
-
-		private string oSSPrefix;
 
 		private string roleName;
 
 		private long? ownerId;
 
-		private string imageFormat;
+		private string oSSPrefix;
 
 		public long? ResourceOwnerId
 		{
@@ -79,6 +79,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public string ImageFormat
+		{
+			get
+			{
+				return imageFormat;
+			}
+			set	
+			{
+				imageFormat = value;
+				DictionaryUtil.Add(QueryParameters, "ImageFormat", value);
 			}
 		}
 
@@ -108,19 +121,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OSSPrefix
-		{
-			get
-			{
-				return oSSPrefix;
-			}
-			set	
-			{
-				oSSPrefix = value;
-				DictionaryUtil.Add(QueryParameters, "OSSPrefix", value);
-			}
-		}
-
 		public string RoleName
 		{
 			get
@@ -147,16 +147,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ImageFormat
+		public string OSSPrefix
 		{
 			get
 			{
-				return imageFormat;
+				return oSSPrefix;
 			}
 			set	
 			{
-				imageFormat = value;
-				DictionaryUtil.Add(QueryParameters, "ImageFormat", value);
+				oSSPrefix = value;
+				DictionaryUtil.Add(QueryParameters, "OSSPrefix", value);
 			}
 		}
 

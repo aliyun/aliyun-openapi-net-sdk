@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageSize;
 
-		private List<string> autoProvisioningGroupStatuss;
+		private List<string> autoProvisioningGroupStatuss = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -53,7 +53,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<string> autoProvisioningGroupIds;
+		private List<string> autoProvisioningGroupIds = new List<string>(){ };
 
 		private string autoProvisioningGroupName;
 

@@ -42,29 +42,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string clientToken;
-
-		private string ownerAccount;
 
 		private string description;
 
 		private string snapshotName;
 
-		private long? ownerId;
-
-		private string sourceSnapshotId;
-
-		private bool? removeSourceSnapshot;
-
 		private string diskId;
 
+		private List<Tag> tags = new List<Tag>(){ };
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
 		private int? retentionDays;
-
-		private List<Tag> tags;
-
-		private string category;
 
 		public long? ResourceOwnerId
 		{
@@ -79,19 +73,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -102,19 +83,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -144,45 +112,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string SourceSnapshotId
-		{
-			get
-			{
-				return sourceSnapshotId;
-			}
-			set	
-			{
-				sourceSnapshotId = value;
-				DictionaryUtil.Add(QueryParameters, "SourceSnapshotId", value);
-			}
-		}
-
-		public bool? RemoveSourceSnapshot
-		{
-			get
-			{
-				return removeSourceSnapshot;
-			}
-			set	
-			{
-				removeSourceSnapshot = value;
-				DictionaryUtil.Add(QueryParameters, "RemoveSourceSnapshot", value.ToString());
-			}
-		}
-
 		public string DiskId
 		{
 			get
@@ -193,19 +122,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				diskId = value;
 				DictionaryUtil.Add(QueryParameters, "DiskId", value);
-			}
-		}
-
-		public int? RetentionDays
-		{
-			get
-			{
-				return retentionDays;
-			}
-			set	
-			{
-				retentionDays = value;
-				DictionaryUtil.Add(QueryParameters, "RetentionDays", value.ToString());
 			}
 		}
 
@@ -227,16 +143,55 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Category
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return category;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? RetentionDays
+		{
+			get
+			{
+				return retentionDays;
+			}
+			set	
+			{
+				retentionDays = value;
+				DictionaryUtil.Add(QueryParameters, "RetentionDays", value.ToString());
 			}
 		}
 

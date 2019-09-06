@@ -61,7 +61,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<long?> launchTemplateVersions;
+		private List<long?> launchTemplateVersions = new List<long?>(){ };
 
 		private bool? detailFlag;
 

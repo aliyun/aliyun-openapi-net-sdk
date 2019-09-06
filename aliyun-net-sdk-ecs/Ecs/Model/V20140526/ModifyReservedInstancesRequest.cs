@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private List<Configuration> configurations;
+		private List<Configuration> configurations = new List<Configuration>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -49,7 +49,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<string> reservedInstanceIds;
+		private List<string> reservedInstanceIds = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{

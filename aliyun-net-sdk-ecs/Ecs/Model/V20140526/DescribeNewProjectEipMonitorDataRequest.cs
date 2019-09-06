@@ -42,6 +42,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string allocationId;
+
+		private string startTime;
+
 		private int? period;
 
 		private string resourceOwnerAccount;
@@ -49,10 +53,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string ownerAccount;
 
 		private string endTime;
-
-		private string allocationId;
-
-		private string startTime;
 
 		private long? ownerId;
 
@@ -66,6 +66,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string AllocationId
+		{
+			get
+			{
+				return allocationId;
+			}
+			set	
+			{
+				allocationId = value;
+				DictionaryUtil.Add(QueryParameters, "AllocationId", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -118,32 +144,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string AllocationId
-		{
-			get
-			{
-				return allocationId;
-			}
-			set	
-			{
-				allocationId = value;
-				DictionaryUtil.Add(QueryParameters, "AllocationId", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 

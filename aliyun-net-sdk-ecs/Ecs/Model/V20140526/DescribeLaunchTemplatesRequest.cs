@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
-		private List<string> launchTemplateNames;
+		private List<string> launchTemplateNames = new List<string>(){ };
 
 		private long? resourceOwnerId;
 
@@ -47,9 +47,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageSize;
 
-		private List<TemplateTag> templateTags;
+		private List<TemplateTag> templateTags = new List<TemplateTag>(){ };
 
-		private List<string> launchTemplateIds;
+		private List<string> launchTemplateIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
