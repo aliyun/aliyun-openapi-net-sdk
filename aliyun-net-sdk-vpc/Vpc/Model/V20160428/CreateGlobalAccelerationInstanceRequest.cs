@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,11 +32,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public CreateGlobalAccelerationInstanceRequest()
             : base("Vpc", "2016-04-28", "CreateGlobalAccelerationInstance", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string bandwidthType;
+
+		private string clientToken;
+
+		private string description;
 
 		private string resourceOwnerAccount;
 
@@ -43,21 +53,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string bandwidth;
 
-		private string clientToken;
-
 		private string ownerAccount;
-
-		private string description;
 
 		private long? ownerId;
 
-		private string regionId;
-
-		private string internetChargeType;
-
 		private string name;
-
-		private string action;
 
 		public long? ResourceOwnerId
 		{
@@ -82,6 +82,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				bandwidthType = value;
 				DictionaryUtil.Add(QueryParameters, "BandwidthType", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -124,19 +150,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -147,19 +160,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -176,32 +176,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string InternetChargeType
-		{
-			get
-			{
-				return internetChargeType;
-			}
-			set	
-			{
-				internetChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
-			}
-		}
-
 		public string Name
 		{
 			get
@@ -215,20 +189,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-        public override CreateGlobalAccelerationInstanceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateGlobalAccelerationInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateGlobalAccelerationInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,15 +32,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public UnassociateRouteTableRequest()
             : base("Vpc", "2016-04-28", "UnassociateRouteTable", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string clientToken;
-
-		private string regionId;
-
-		private string action;
 
 		private string routeTableId;
 
@@ -74,32 +76,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -168,7 +144,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override UnassociateRouteTableResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UnassociateRouteTableResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UnassociateRouteTableResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

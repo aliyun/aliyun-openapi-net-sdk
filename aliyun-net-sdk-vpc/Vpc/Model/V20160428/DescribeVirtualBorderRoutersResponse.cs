@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -136,6 +137,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private string name;
 
 			private string description;
+
+			private string eccId;
+
+			private string type;
+
+			private long? minTxInterval;
+
+			private long? minRxInterval;
+
+			private long? detectMultiplier;
 
 			private List<DescribeVirtualBorderRouters_AssociatedPhysicalConnection> associatedPhysicalConnections;
 
@@ -378,6 +389,66 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string EccId
+			{
+				get
+				{
+					return eccId;
+				}
+				set	
+				{
+					eccId = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public long? MinTxInterval
+			{
+				get
+				{
+					return minTxInterval;
+				}
+				set	
+				{
+					minTxInterval = value;
+				}
+			}
+
+			public long? MinRxInterval
+			{
+				get
+				{
+					return minRxInterval;
+				}
+				set	
+				{
+					minRxInterval = value;
+				}
+			}
+
+			public long? DetectMultiplier
+			{
+				get
+				{
+					return detectMultiplier;
+				}
+				set	
+				{
+					detectMultiplier = value;
 				}
 			}
 

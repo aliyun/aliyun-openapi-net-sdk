@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,44 +32,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DescribeVpnGatewaysRequest()
             : base("Vpc", "2016-04-28", "DescribeVpnGateways", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string businessStatus;
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private string regionId;
-
-		private string ownerAccount;
-
-		private string vpcId;
+		private int? pageNumber;
 
 		private int? pageSize;
 
-		private string action;
+		private string businessStatus;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private string vpnGatewayId;
 
 		private long? ownerId;
 
-		private int? pageNumber;
+		private string vpcId;
 
 		private string status;
-
-		public string BusinessStatus
-		{
-			get
-			{
-				return businessStatus;
-			}
-			set	
-			{
-				businessStatus = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessStatus", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -83,55 +72,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public int? PageNumber
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return pageNumber;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -148,16 +98,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
+		public string BusinessStatus
 		{
 			get
 			{
-				return action;
+				return businessStatus;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				businessStatus = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessStatus", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -187,16 +163,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageNumber
+		public string VpcId
 		{
 			get
 			{
-				return pageNumber;
+				return vpcId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 
@@ -213,7 +189,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override DescribeVpnGatewaysResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeVpnGatewaysResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeVpnGatewaysResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

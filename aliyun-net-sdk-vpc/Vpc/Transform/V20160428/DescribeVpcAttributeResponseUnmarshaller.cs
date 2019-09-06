@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describeVpcAttributeResponse.IsDefault = context.BooleanValue("DescribeVpcAttribute.IsDefault");
 			describeVpcAttributeResponse.ClassicLinkEnabled = context.BooleanValue("DescribeVpcAttribute.ClassicLinkEnabled");
 			describeVpcAttributeResponse.ResourceGroupId = context.StringValue("DescribeVpcAttribute.ResourceGroupId");
+			describeVpcAttributeResponse.NetworkAclNum = context.StringValue("DescribeVpcAttribute.NetworkAclNum");
 
 			List<string> describeVpcAttributeResponse_vSwitchIds = new List<string>();
 			for (int i = 0; i < context.Length("DescribeVpcAttribute.VSwitchIds.Length"); i++) {

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,6 +32,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public ModifyCommonBandwidthPackageSpecRequest()
             : base("Vpc", "2016-04-28", "ModifyCommonBandwidthPackageSpec", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -39,13 +45,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string bandwidth;
 
 		private string ownerAccount;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -88,19 +90,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string Bandwidth
 		{
 			get
@@ -127,19 +116,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -153,7 +129,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override ModifyCommonBandwidthPackageSpecResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyCommonBandwidthPackageSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyCommonBandwidthPackageSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

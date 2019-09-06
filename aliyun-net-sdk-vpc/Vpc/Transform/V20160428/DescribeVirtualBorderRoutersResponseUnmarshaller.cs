@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -58,6 +59,11 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				virtualBorderRouterType.AccessPointId = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AccessPointId");
 				virtualBorderRouterType.Name = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Name");
 				virtualBorderRouterType.Description = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Description");
+				virtualBorderRouterType.EccId = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].EccId");
+				virtualBorderRouterType.Type = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Type");
+				virtualBorderRouterType.MinTxInterval = context.LongValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].MinTxInterval");
+				virtualBorderRouterType.MinRxInterval = context.LongValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].MinRxInterval");
+				virtualBorderRouterType.DetectMultiplier = context.LongValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].DetectMultiplier");
 
 				List<DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType.DescribeVirtualBorderRouters_AssociatedPhysicalConnection> virtualBorderRouterType_associatedPhysicalConnections = new List<DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType.DescribeVirtualBorderRouters_AssociatedPhysicalConnection>();
 				for (int j = 0; j < context.Length("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections.Length"); j++) {

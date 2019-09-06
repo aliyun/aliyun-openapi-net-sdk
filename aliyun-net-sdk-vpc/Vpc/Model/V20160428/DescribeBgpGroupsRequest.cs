@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,29 +32,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DescribeBgpGroupsRequest()
             : base("Vpc", "2016-04-28", "DescribeBgpGroups", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string bgpGroupId;
 
-		private string regionId;
-
-		private string routerId;
-
-		private string ownerAccount;
+		private int? pageNumber;
 
 		private int? pageSize;
 
-		private string action;
-
-		private string bgpGroupId;
-
 		private bool? isDefault;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private long? ownerId;
 
-		private int? pageNumber;
+		private string routerId;
 
 		public long? ResourceOwnerId
 		{
@@ -65,84 +67,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string RouterId
-		{
-			get
-			{
-				return routerId;
-			}
-			set	
-			{
-				routerId = value;
-				DictionaryUtil.Add(QueryParameters, "RouterId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -159,6 +83,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public bool? IsDefault
 		{
 			get
@@ -169,6 +119,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				isDefault = value;
 				DictionaryUtil.Add(QueryParameters, "IsDefault", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -185,20 +161,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageNumber
+		public string RouterId
 		{
 			get
 			{
-				return pageNumber;
+				return routerId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				routerId = value;
+				DictionaryUtil.Add(QueryParameters, "RouterId", value);
 			}
 		}
 
-        public override DescribeBgpGroupsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeBgpGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeBgpGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

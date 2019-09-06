@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -57,6 +58,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				commonBandwidthPackage.ReservationActiveTime = context.StringValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].ReservationActiveTime");
 				commonBandwidthPackage.ReservationOrderType = context.StringValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].ReservationOrderType");
 				commonBandwidthPackage.ISP = context.StringValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].ISP");
+				commonBandwidthPackage.DeletionProtection = context.BooleanValue("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].DeletionProtection");
 
 				List<DescribeCommonBandwidthPackagesResponse.DescribeCommonBandwidthPackages_CommonBandwidthPackage.DescribeCommonBandwidthPackages_PublicIpAddresse> commonBandwidthPackage_publicIpAddresses = new List<DescribeCommonBandwidthPackagesResponse.DescribeCommonBandwidthPackages_CommonBandwidthPackage.DescribeCommonBandwidthPackages_PublicIpAddresse>();
 				for (int j = 0; j < context.Length("DescribeCommonBandwidthPackages.CommonBandwidthPackages["+ i +"].PublicIpAddresses.Length"); j++) {

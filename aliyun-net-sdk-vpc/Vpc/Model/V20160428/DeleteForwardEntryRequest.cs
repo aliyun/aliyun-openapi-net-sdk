@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,21 +32,22 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DeleteForwardEntryRequest()
             : base("Vpc", "2016-04-28", "DeleteForwardEntry", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private string regionId;
+		private string forwardTableId;
 
 		private string forwardEntryId;
 
+		private string resourceOwnerAccount;
+
 		private string ownerAccount;
-
-		private string forwardTableId;
-
-		private string action;
 
 		private long? ownerId;
 
@@ -62,29 +64,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string ForwardTableId
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return forwardTableId;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				forwardTableId = value;
+				DictionaryUtil.Add(QueryParameters, "ForwardTableId", value);
 			}
 		}
 
@@ -101,6 +90,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -111,32 +113,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string ForwardTableId
-		{
-			get
-			{
-				return forwardTableId;
-			}
-			set	
-			{
-				forwardTableId = value;
-				DictionaryUtil.Add(QueryParameters, "ForwardTableId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -153,7 +129,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override DeleteForwardEntryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteForwardEntryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteForwardEntryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

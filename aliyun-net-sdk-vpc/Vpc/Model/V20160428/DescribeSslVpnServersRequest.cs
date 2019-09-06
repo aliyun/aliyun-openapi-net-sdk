@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,42 +32,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DescribeSslVpnServersRequest()
             : base("Vpc", "2016-04-28", "DescribeSslVpnServers", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string sslVpnServerId;
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private int? pageNumber;
 
-		private string regionId;
-
-		private string ownerAccount;
-
-		private string name;
+		private string sslVpnServerId;
 
 		private int? pageSize;
 
-		private string action;
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private string vpnGatewayId;
 
 		private long? ownerId;
 
-		private int? pageNumber;
-
-		public string SslVpnServerId
-		{
-			get
-			{
-				return sslVpnServerId;
-			}
-			set	
-			{
-				sslVpnServerId = value;
-				DictionaryUtil.Add(QueryParameters, "SslVpnServerId", value);
-			}
-		}
+		private string name;
 
 		public long? ResourceOwnerId
 		{
@@ -81,55 +70,29 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public int? PageNumber
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return pageNumber;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string RegionId
+		public string SslVpnServerId
 		{
 			get
 			{
-				return regionId;
+				return sslVpnServerId;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				sslVpnServerId = value;
+				DictionaryUtil.Add(QueryParameters, "SslVpnServerId", value);
 			}
 		}
 
@@ -146,16 +109,29 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return action;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -185,20 +161,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageNumber
+		public string Name
 		{
 			get
 			{
-				return pageNumber;
+				return name;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
-        public override DescribeSslVpnServersResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeSslVpnServersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeSslVpnServersResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

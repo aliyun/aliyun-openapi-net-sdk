@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				routeTable.RouteTableType = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteTableType");
 				routeTable.CreationTime = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].CreationTime");
 				routeTable.ResourceGroupId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].ResourceGroupId");
+				routeTable.Status = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].Status");
 
 				List<string> routeTable_vSwitchIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeRouteTables.RouteTables["+ i +"].VSwitchIds.Length"); j++) {
@@ -59,6 +61,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 					routeEntry.Status = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].Status");
 					routeEntry.InstanceId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].InstanceId");
 					routeEntry.NextHopType = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopType");
+					routeEntry.RouteEntryName = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].RouteEntryName");
+					routeEntry.RouteEntryId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].RouteEntryId");
 					routeEntry.NextHopRegionId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopRegionId");
 					routeEntry.NextHopOppsiteType = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopOppsiteType");
 					routeEntry.NextHopOppsiteInstanceId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopOppsiteInstanceId");

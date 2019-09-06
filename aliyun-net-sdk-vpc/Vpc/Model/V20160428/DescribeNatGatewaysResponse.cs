@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -120,6 +121,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private string creationTime;
 
 			private string status;
+
+			private bool? deletionProtection;
 
 			private List<DescribeNatGateways_IpList> ipLists;
 
@@ -270,6 +273,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public bool? DeletionProtection
+			{
+				get
+				{
+					return deletionProtection;
+				}
+				set	
+				{
+					deletionProtection = value;
 				}
 			}
 

@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -43,6 +44,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describeVSwitchAttributesResponse.CreationTime = context.StringValue("DescribeVSwitchAttributes.CreationTime");
 			describeVSwitchAttributesResponse.IsDefault = context.BooleanValue("DescribeVSwitchAttributes.IsDefault");
 			describeVSwitchAttributesResponse.ResourceGroupId = context.StringValue("DescribeVSwitchAttributes.ResourceGroupId");
+			describeVSwitchAttributesResponse.NetworkAclId = context.StringValue("DescribeVSwitchAttributes.NetworkAclId");
 
 			DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_RouteTable routeTable = new DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_RouteTable();
 			routeTable.RouteTableId = context.StringValue("DescribeVSwitchAttributes.RouteTable.RouteTableId");

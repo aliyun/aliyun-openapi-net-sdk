@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -157,6 +158,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string creationTime;
 
+			private string status;
+
 			private List<DescribeRouteTableList_Tag> tags;
 
 			private List<string> vSwitchIds;
@@ -266,6 +269,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 

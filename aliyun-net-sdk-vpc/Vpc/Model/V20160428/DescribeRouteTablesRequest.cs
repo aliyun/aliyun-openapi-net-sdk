@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,11 +32,28 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DescribeRouteTablesRequest()
             : base("Vpc", "2016-04-28", "DescribeRouteTables", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string vRouterId;
+
+		private string type;
+
+		private int? pageNumber;
+
+		private string resourceGroupId;
+
+		private string routeTableName;
+
+		private int? pageSize;
+
+		private string routeTableId;
 
 		private string resourceOwnerAccount;
 
@@ -43,25 +61,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
-		private string type;
-
-		private int? pageNumber;
-
 		private string routerType;
 
-		private string resourceGroupId;
-
-		private string routeTableName;
-
-		private string regionId;
-
 		private string routerId;
-
-		private int? pageSize;
-
-		private string action;
-
-		private string routeTableId;
 
 		public long? ResourceOwnerId
 		{
@@ -86,6 +88,84 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				vRouterId = value;
 				DictionaryUtil.Add(QueryParameters, "VRouterId", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string RouteTableName
+		{
+			get
+			{
+				return routeTableName;
+			}
+			set	
+			{
+				routeTableName = value;
+				DictionaryUtil.Add(QueryParameters, "RouteTableName", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string RouteTableId
+		{
+			get
+			{
+				return routeTableId;
+			}
+			set	
+			{
+				routeTableId = value;
+				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
 			}
 		}
 
@@ -128,32 +208,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string RouterType
 		{
 			get
@@ -164,45 +218,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				routerType = value;
 				DictionaryUtil.Add(QueryParameters, "RouterType", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string RouteTableName
-		{
-			get
-			{
-				return routeTableName;
-			}
-			set	
-			{
-				routeTableName = value;
-				DictionaryUtil.Add(QueryParameters, "RouteTableName", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -219,46 +234,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string RouteTableId
-		{
-			get
-			{
-				return routeTableId;
-			}
-			set	
-			{
-				routeTableId = value;
-				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
-			}
-		}
-
-        public override DescribeRouteTablesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeRouteTablesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeRouteTablesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

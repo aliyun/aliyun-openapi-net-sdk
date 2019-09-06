@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,9 +32,26 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DescribeVSwitchesRequest()
             : base("Vpc", "2016-04-28", "DescribeVSwitches", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private int? pageNumber;
+
+		private string resourceGroupId;
+
+		private int? pageSize;
+
+		private bool? isDefault;
+
+		private string routeTableId;
+
+		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
@@ -41,29 +59,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
-		private int? pageNumber;
-
 		private string vSwitchId;
-
-		private string resourceGroupId;
-
-		private string regionId;
 
 		private string vpcId;
 
 		private string vSwitchName;
 
-		private int? pageSize;
-
-		private string action;
-
 		private string zoneId;
-
-		private List<Tag> tags;
-
-		private bool? isDefault;
-
-		private string routeTableId;
 
 		public long? ResourceOwnerId
 		{
@@ -75,6 +77,84 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public bool? IsDefault
+		{
+			get
+			{
+				return isDefault;
+			}
+			set	
+			{
+				isDefault = value;
+				DictionaryUtil.Add(QueryParameters, "IsDefault", value.ToString());
+			}
+		}
+
+		public string RouteTableId
+		{
+			get
+			{
+				return routeTableId;
+			}
+			set	
+			{
+				routeTableId = value;
+				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -117,19 +197,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string VSwitchId
 		{
 			get
@@ -140,32 +207,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -195,32 +236,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ZoneId
 		{
 			get
@@ -234,83 +249,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
-			}
-		}
-
-		public bool? IsDefault
-		{
-			get
-			{
-				return isDefault;
-			}
-			set	
-			{
-				isDefault = value;
-				DictionaryUtil.Add(QueryParameters, "IsDefault", value.ToString());
-			}
-		}
-
-		public string RouteTableId
-		{
-			get
-			{
-				return routeTableId;
-			}
-			set	
-			{
-				routeTableId = value;
-				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
-			}
-		}
-
-		public class Tag
-		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-		}
-
-        public override DescribeVSwitchesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeVSwitchesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeVSwitchesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

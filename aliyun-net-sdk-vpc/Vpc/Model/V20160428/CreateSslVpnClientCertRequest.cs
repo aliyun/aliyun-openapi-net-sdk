@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,38 +32,26 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public CreateSslVpnClientCertRequest()
             : base("Vpc", "2016-04-28", "CreateSslVpnClientCert", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string sslVpnServerId;
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string clientToken;
 
-		private string regionId;
+		private string sslVpnServerId;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string name;
-
-		private string action;
-
 		private long? ownerId;
 
-		public string SslVpnServerId
-		{
-			get
-			{
-				return sslVpnServerId;
-			}
-			set	
-			{
-				sslVpnServerId = value;
-				DictionaryUtil.Add(QueryParameters, "SslVpnServerId", value);
-			}
-		}
+		private string name;
 
 		public long? ResourceOwnerId
 		{
@@ -74,19 +63,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -103,16 +79,29 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
+		public string SslVpnServerId
 		{
 			get
 			{
-				return regionId;
+				return sslVpnServerId;
 			}
 			set	
 			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
+				sslVpnServerId = value;
+				DictionaryUtil.Add(QueryParameters, "SslVpnServerId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -129,32 +118,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -168,7 +131,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override CreateSslVpnClientCertResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+        public override CreateSslVpnClientCertResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateSslVpnClientCertResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,9 +32,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public ModifyCommonBandwidthPackagePayTypeRequest()
             : base("Vpc", "2016-04-28", "ModifyCommonBandwidthPackagePayType", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private int? duration;
+
+		private long? resourceUid;
 
 		private string bandwidthPackageId;
 
@@ -47,15 +57,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
-		private int? duration;
-
 		private string kbpsBandwidth;
-
-		private string regionId;
-
-		private long? resourceUid;
-
-		private string action;
 
 		private string resourceBid;
 
@@ -73,6 +75,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
+				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
+			}
+		}
+
+		public long? ResourceUid
+		{
+			get
+			{
+				return resourceUid;
+			}
+			set	
+			{
+				resourceUid = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceUid", value.ToString());
 			}
 		}
 
@@ -154,19 +182,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
-			}
-		}
-
 		public string KbpsBandwidth
 		{
 			get
@@ -177,45 +192,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				kbpsBandwidth = value;
 				DictionaryUtil.Add(QueryParameters, "KbpsBandwidth", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public long? ResourceUid
-		{
-			get
-			{
-				return resourceUid;
-			}
-			set	
-			{
-				resourceUid = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceUid", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -258,7 +234,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override ModifyCommonBandwidthPackagePayTypeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyCommonBandwidthPackagePayTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyCommonBandwidthPackagePayTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

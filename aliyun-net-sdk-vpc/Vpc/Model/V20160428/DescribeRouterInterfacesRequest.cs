@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,46 +32,26 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DescribeRouterInterfacesRequest()
             : base("Vpc", "2016-04-28", "DescribeRouterInterfaces", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private List<Filter> filters;
-
 		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
-
-		private string regionId;
-
-		private int? pageSize;
-
-		private string action;
-
-		private long? ownerId;
 
 		private bool? includeReservationData;
 
 		private int? pageNumber;
 
-		public List<Filter> Filters
-		{
-			get
-			{
-				return filters;
-			}
+		private int? pageSize;
 
-			set
-			{
-				filters = value;
-				for (int i = 0; i < filters.Count; i++)
-				{
-					for (int j = 0; j < filters[i].Values.Count; j++)
-					{
-						DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value." +(j + 1), filters[i].Values[j]);
-					}
-					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
-				}
-			}
-		}
+		private string resourceOwnerAccount;
+
+		private long? ownerId;
+
+		private List<Filter> filters = new List<Filter>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -82,71 +63,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -176,10 +92,70 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public List<Filter> Filters
+		{
+			get
+			{
+				return filters;
+			}
+
+			set
+			{
+				filters = value;
+				for (int i = 0; i < filters.Count; i++)
+				{
+					for (int j = 0; j < filters[i].Values.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value." +(j + 1), filters[i].Values[j]);
+					}
+					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
+				}
+			}
+		}
+
 		public class Filter
 		{
 
-			private List<string> values;
+			private List<string> values = new List<string>(){ };
 
 			private string key;
 
@@ -208,7 +184,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override DescribeRouterInterfacesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeRouterInterfacesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeRouterInterfacesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

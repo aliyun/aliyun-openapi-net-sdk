@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -117,7 +118,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private bool? isDefault;
 
+			private string networkAclNum;
+
 			private string resourceGroupId;
+
+			private string cenStatus;
 
 			private List<DescribeVpcs_Tag> tags;
 
@@ -249,6 +254,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string NetworkAclNum
+			{
+				get
+				{
+					return networkAclNum;
+				}
+				set	
+				{
+					networkAclNum = value;
+				}
+			}
+
 			public string ResourceGroupId
 			{
 				get
@@ -258,6 +275,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string CenStatus
+			{
+				get
+				{
+					return cenStatus;
+				}
+				set	
+				{
+					cenStatus = value;
 				}
 			}
 

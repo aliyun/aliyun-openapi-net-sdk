@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,6 +32,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DescribeGlobalAccelerationInstancesRequest()
             : base("Vpc", "2016-04-28", "DescribeGlobalAccelerationInstances", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string ipAddress;
@@ -38,6 +44,14 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private long? resourceOwnerId;
 
 		private string bandwidthType;
+
+		private bool? includeReservationData;
+
+		private string globalAccelerationInstanceId;
+
+		private int? pageNumber;
+
+		private int? pageSize;
 
 		private string resourceOwnerAccount;
 
@@ -47,21 +61,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
-		private bool? includeReservationData;
-
-		private string globalAccelerationInstanceId;
-
 		private string serverId;
 
-		private int? pageNumber;
-
-		private string regionId;
-
 		private string name;
-
-		private int? pageSize;
-
-		private string action;
 
 		private string status;
 
@@ -101,6 +103,58 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				bandwidthType = value;
 				DictionaryUtil.Add(QueryParameters, "BandwidthType", value);
+			}
+		}
+
+		public bool? IncludeReservationData
+		{
+			get
+			{
+				return includeReservationData;
+			}
+			set	
+			{
+				includeReservationData = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeReservationData", value.ToString());
+			}
+		}
+
+		public string GlobalAccelerationInstanceId
+		{
+			get
+			{
+				return globalAccelerationInstanceId;
+			}
+			set	
+			{
+				globalAccelerationInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "GlobalAccelerationInstanceId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -156,32 +210,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public bool? IncludeReservationData
-		{
-			get
-			{
-				return includeReservationData;
-			}
-			set	
-			{
-				includeReservationData = value;
-				DictionaryUtil.Add(QueryParameters, "IncludeReservationData", value.ToString());
-			}
-		}
-
-		public string GlobalAccelerationInstanceId
-		{
-			get
-			{
-				return globalAccelerationInstanceId;
-			}
-			set	
-			{
-				globalAccelerationInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "GlobalAccelerationInstanceId", value);
-			}
-		}
-
 		public string ServerId
 		{
 			get
@@ -192,32 +220,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				serverId = value;
 				DictionaryUtil.Add(QueryParameters, "ServerId", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -234,32 +236,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string Status
 		{
 			get
@@ -273,7 +249,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override DescribeGlobalAccelerationInstancesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeGlobalAccelerationInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeGlobalAccelerationInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,23 +32,24 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public EnableVpcClassicLinkRequest()
             : base("Vpc", "2016-04-28", "EnableVpcClassicLink", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private string regionId;
-
 		private string clientToken;
 
-		private string vpcId;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
+
+		private string vpcId;
 
 		public long? ResourceOwnerId
 		{
@@ -59,32 +61,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -101,16 +77,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string VpcId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return vpcId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -127,19 +103,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -153,7 +116,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override EnableVpcClassicLinkResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
+        public override EnableVpcClassicLinkResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return EnableVpcClassicLinkResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

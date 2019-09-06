@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,6 +32,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DeleteIpv6EgressOnlyRuleRequest()
             : base("Vpc", "2016-04-28", "DeleteIpv6EgressOnlyRule", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -38,10 +44,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string clientToken;
 
 		private string ipv6EgressOnlyRuleId;
-
-		private string regionId;
-
-		private string action;
 
 		private string resourceOwnerAccount;
 
@@ -88,32 +90,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -153,7 +129,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override DeleteIpv6EgressOnlyRuleResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteIpv6EgressOnlyRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteIpv6EgressOnlyRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

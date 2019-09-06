@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,19 +32,28 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public ModifyRouterInterfaceAttributeRequest()
             : base("Vpc", "2016-04-28", "ModifyRouterInterfaceAttribute", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string oppositeRouterId;
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private bool? deleteHealthCheckIp;
-
 		private string description;
 
 		private string healthCheckTargetIp;
+
+		private string oppositeInterfaceId;
+
+		private int? hcThreshold;
+
+		private string resourceOwnerAccount;
+
+		private bool? deleteHealthCheckIp;
 
 		private long? ownerId;
 
@@ -51,17 +61,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? oppositeInterfaceOwnerId;
 
-		private string regionId;
-
 		private string healthCheckSourceIp;
 
 		private string name;
 
 		private string oppositeRouterType;
 
-		private string action;
-
-		private string oppositeInterfaceId;
+		private int? hcRate;
 
 		public string OppositeRouterId
 		{
@@ -89,32 +95,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public bool? DeleteHealthCheckIp
-		{
-			get
-			{
-				return deleteHealthCheckIp;
-			}
-			set	
-			{
-				deleteHealthCheckIp = value;
-				DictionaryUtil.Add(QueryParameters, "DeleteHealthCheckIp", value.ToString());
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -138,6 +118,58 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				healthCheckTargetIp = value;
 				DictionaryUtil.Add(QueryParameters, "HealthCheckTargetIp", value);
+			}
+		}
+
+		public string OppositeInterfaceId
+		{
+			get
+			{
+				return oppositeInterfaceId;
+			}
+			set	
+			{
+				oppositeInterfaceId = value;
+				DictionaryUtil.Add(QueryParameters, "OppositeInterfaceId", value);
+			}
+		}
+
+		public int? HcThreshold
+		{
+			get
+			{
+				return hcThreshold;
+			}
+			set	
+			{
+				hcThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "HcThreshold", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public bool? DeleteHealthCheckIp
+		{
+			get
+			{
+				return deleteHealthCheckIp;
+			}
+			set	
+			{
+				deleteHealthCheckIp = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteHealthCheckIp", value.ToString());
 			}
 		}
 
@@ -180,19 +212,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string HealthCheckSourceIp
 		{
 			get
@@ -232,33 +251,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
+		public int? HcRate
 		{
 			get
 			{
-				return action;
+				return hcRate;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				hcRate = value;
+				DictionaryUtil.Add(QueryParameters, "HcRate", value.ToString());
 			}
 		}
 
-		public string OppositeInterfaceId
-		{
-			get
-			{
-				return oppositeInterfaceId;
-			}
-			set	
-			{
-				oppositeInterfaceId = value;
-				DictionaryUtil.Add(QueryParameters, "OppositeInterfaceId", value);
-			}
-		}
-
-        public override ModifyRouterInterfaceAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyRouterInterfaceAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyRouterInterfaceAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

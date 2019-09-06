@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,27 +32,28 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DescribeBandwidthPackagesRequest()
             : base("Vpc", "2016-04-28", "DescribeBandwidthPackages", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private string natGatewayId;
 
 		private string bandwidthPackageId;
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
 		private string ownerAccount;
 
-		private int? pageSize;
-
-		private string action;
-
-		private string natGatewayId;
-
 		private long? ownerId;
-
-		private int? pageNumber;
 
 		public long? ResourceOwnerId
 		{
@@ -63,6 +65,45 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string NatGatewayId
+		{
+			get
+			{
+				return natGatewayId;
+			}
+			set	
+			{
+				natGatewayId = value;
+				DictionaryUtil.Add(QueryParameters, "NatGatewayId", value);
 			}
 		}
 
@@ -92,19 +133,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -115,45 +143,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string NatGatewayId
-		{
-			get
-			{
-				return natGatewayId;
-			}
-			set	
-			{
-				natGatewayId = value;
-				DictionaryUtil.Add(QueryParameters, "NatGatewayId", value);
 			}
 		}
 
@@ -170,20 +159,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-        public override DescribeBandwidthPackagesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeBandwidthPackagesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeBandwidthPackagesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

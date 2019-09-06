@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,27 +32,28 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public ModifyIPv6TranslatorBandwidthRequest()
             : base("Vpc", "2016-04-28", "ModifyIPv6TranslatorBandwidth", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string clientToken;
 
 		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
-		private string clientToken;
-
 		private int? bandwidth;
 
 		private string ownerAccount;
 
-		private string action;
+		private long? ownerId;
 
 		private string ipv6TranslatorId;
-
-		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -63,6 +65,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -92,32 +107,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public int? Bandwidth
 		{
 			get
@@ -144,16 +133,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
+		public long? OwnerId
 		{
 			get
 			{
-				return action;
+				return ownerId;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -170,20 +159,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-        public override ModifyIPv6TranslatorBandwidthResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyIPv6TranslatorBandwidthResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyIPv6TranslatorBandwidthResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

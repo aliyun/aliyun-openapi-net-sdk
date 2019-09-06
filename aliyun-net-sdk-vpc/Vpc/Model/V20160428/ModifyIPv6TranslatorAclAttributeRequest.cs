@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,38 +32,26 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public ModifyIPv6TranslatorAclAttributeRequest()
             : base("Vpc", "2016-04-28", "ModifyIPv6TranslatorAclAttribute", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string aclId;
 
 		private long? resourceOwnerId;
 
 		private string aclName;
 
-		private string resourceOwnerAccount;
-
-		private string regionId;
-
 		private string clientToken;
+
+		private string aclId;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
-
-		public string AclId
-		{
-			get
-			{
-				return aclId;
-			}
-			set	
-			{
-				aclId = value;
-				DictionaryUtil.Add(QueryParameters, "AclId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -90,32 +79,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -126,6 +89,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string AclId
+		{
+			get
+			{
+				return aclId;
+			}
+			set	
+			{
+				aclId = value;
+				DictionaryUtil.Add(QueryParameters, "AclId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -142,19 +131,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -168,7 +144,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override ModifyIPv6TranslatorAclAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyIPv6TranslatorAclAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyIPv6TranslatorAclAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

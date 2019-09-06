@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,25 +32,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DescribeEipAddressesRequest()
             : base("Vpc", "2016-04-28", "DescribeEipAddresses", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
 
 		private string filter2Value;
 
 		private string iSP;
 
-		private string ownerAccount;
-
 		private string allocationId;
-
-		private string filter1Value;
-
-		private string filter2Key;
-
-		private long? ownerId;
 
 		private bool? includeReservationData;
 
@@ -63,15 +59,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string filter1Key;
 
-		private string regionId;
-
 		private string associatedInstanceType;
 
 		private int? pageSize;
 
-		private string action;
+		private string resourceOwnerAccount;
 
-		private List<Tag> tags;
+		private string ownerAccount;
+
+		private string filter1Value;
+
+		private string filter2Key;
+
+		private long? ownerId;
 
 		private string chargeType;
 
@@ -89,19 +89,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -131,19 +118,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string AllocationId
 		{
 			get
@@ -154,45 +128,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				allocationId = value;
 				DictionaryUtil.Add(QueryParameters, "AllocationId", value);
-			}
-		}
-
-		public string Filter1Value
-		{
-			get
-			{
-				return filter1Value;
-			}
-			set	
-			{
-				filter1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.1.Value", value);
-			}
-		}
-
-		public string Filter2Key
-		{
-			get
-			{
-				return filter2Key;
-			}
-			set	
-			{
-				filter2Key = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.2.Key", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -274,19 +209,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string AssociatedInstanceType
 		{
 			get
@@ -313,34 +235,68 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return action;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public List<Tag> Tags
+		public string OwnerAccount
 		{
 			get
 			{
-				return tags;
+				return ownerAccount;
 			}
-
-			set
+			set	
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string Filter1Value
+		{
+			get
+			{
+				return filter1Value;
+			}
+			set	
+			{
+				filter1Value = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.1.Value", value);
+			}
+		}
+
+		public string Filter2Key
+		{
+			get
+			{
+				return filter2Key;
+			}
+			set	
+			{
+				filter2Key = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.2.Key", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -383,39 +339,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public class Tag
-		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-		}
-
-        public override DescribeEipAddressesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeEipAddressesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeEipAddressesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

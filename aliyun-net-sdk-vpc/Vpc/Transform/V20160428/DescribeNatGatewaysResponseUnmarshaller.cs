@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -50,6 +51,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				natGateway.BusinessStatus = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].BusinessStatus");
 				natGateway.CreationTime = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].CreationTime");
 				natGateway.Status = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].Status");
+				natGateway.DeletionProtection = context.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].DeletionProtection");
 
 				List<string> natGateway_forwardTableIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeNatGateways.NatGateways["+ i +"].ForwardTableIds.Length"); j++) {

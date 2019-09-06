@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -66,6 +67,15 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				ipsecConfig.IpsecPfs = context.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].IpsecConfig.IpsecPfs");
 				ipsecConfig.IpsecLifetime = context.LongValue("DescribeVpnConnections.VpnConnections["+ i +"].IpsecConfig.IpsecLifetime");
 				vpnConnection.IpsecConfig = ipsecConfig;
+
+				DescribeVpnConnectionsResponse.DescribeVpnConnections_VpnConnection.DescribeVpnConnections_VcoHealthCheck vcoHealthCheck = new DescribeVpnConnectionsResponse.DescribeVpnConnections_VpnConnection.DescribeVpnConnections_VcoHealthCheck();
+				vcoHealthCheck.Enable = context.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].VcoHealthCheck.Enable");
+				vcoHealthCheck.Sip = context.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].VcoHealthCheck.Sip");
+				vcoHealthCheck.Dip = context.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].VcoHealthCheck.Dip");
+				vcoHealthCheck.Interval = context.IntegerValue("DescribeVpnConnections.VpnConnections["+ i +"].VcoHealthCheck.Interval");
+				vcoHealthCheck.Retry = context.IntegerValue("DescribeVpnConnections.VpnConnections["+ i +"].VcoHealthCheck.Retry");
+				vcoHealthCheck.Status = context.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].VcoHealthCheck.Status");
+				vpnConnection.VcoHealthCheck = vcoHealthCheck;
 
 				describeVpnConnectionsResponse_vpnConnections.Add(vpnConnection);
 			}

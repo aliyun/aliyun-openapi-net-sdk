@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,9 +32,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public CreateForwardEntryRequest()
             : base("Vpc", "2016-04-28", "CreateForwardEntry", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string forwardTableId;
+
+		private string internalIp;
+
+		private string externalIp;
 
 		private string resourceOwnerAccount;
 
@@ -43,19 +55,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ownerAccount;
 
-		private string forwardTableId;
-
 		private long? ownerId;
 
-		private string internalIp;
-
-		private string regionId;
-
 		private string internalPort;
-
-		private string action;
-
-		private string externalIp;
 
 		private string externalPort;
 
@@ -69,6 +71,45 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ForwardTableId
+		{
+			get
+			{
+				return forwardTableId;
+			}
+			set	
+			{
+				forwardTableId = value;
+				DictionaryUtil.Add(QueryParameters, "ForwardTableId", value);
+			}
+		}
+
+		public string InternalIp
+		{
+			get
+			{
+				return internalIp;
+			}
+			set	
+			{
+				internalIp = value;
+				DictionaryUtil.Add(QueryParameters, "InternalIp", value);
+			}
+		}
+
+		public string ExternalIp
+		{
+			get
+			{
+				return externalIp;
+			}
+			set	
+			{
+				externalIp = value;
+				DictionaryUtil.Add(QueryParameters, "ExternalIp", value);
 			}
 		}
 
@@ -124,19 +165,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ForwardTableId
-		{
-			get
-			{
-				return forwardTableId;
-			}
-			set	
-			{
-				forwardTableId = value;
-				DictionaryUtil.Add(QueryParameters, "ForwardTableId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -147,32 +175,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string InternalIp
-		{
-			get
-			{
-				return internalIp;
-			}
-			set	
-			{
-				internalIp = value;
-				DictionaryUtil.Add(QueryParameters, "InternalIp", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -189,32 +191,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ExternalIp
-		{
-			get
-			{
-				return externalIp;
-			}
-			set	
-			{
-				externalIp = value;
-				DictionaryUtil.Add(QueryParameters, "ExternalIp", value);
-			}
-		}
-
 		public string ExternalPort
 		{
 			get
@@ -228,7 +204,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override CreateForwardEntryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateForwardEntryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateForwardEntryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

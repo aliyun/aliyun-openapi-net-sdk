@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -56,6 +57,14 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				physicalConnectionType.PortNumber = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].PortNumber");
 				physicalConnectionType.CircuitCode = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].CircuitCode");
 				physicalConnectionType.Bandwidth = context.LongValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Bandwidth");
+				physicalConnectionType.LoaStatus = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].LoaStatus");
+				physicalConnectionType.Spec1 = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Spec1");
+				physicalConnectionType.HasReservationData = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].HasReservationData");
+				physicalConnectionType.ReservationInternetChargeType = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].ReservationInternetChargeType");
+				physicalConnectionType.ReservationActiveTime = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].ReservationActiveTime");
+				physicalConnectionType.ReservationOrderType = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].ReservationOrderType");
+				physicalConnectionType.EndTime = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].EndTime");
+				physicalConnectionType.ChargeType = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].ChargeType");
 
 				describePhysicalConnectionsResponse_physicalConnectionSet.Add(physicalConnectionType);
 			}

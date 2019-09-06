@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,27 +32,28 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public ModifyEipAddressAttributeRequest()
             : base("Vpc", "2016-04-28", "ModifyEipAddressAttribute", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
-
-		private string resourceOwnerAccount;
-
-		private string bandwidth;
-
-		private string regionId;
-
-		private string ownerAccount;
-
-		private string name;
-
-		private string action;
 
 		private string description;
 
 		private string allocationId;
 
+		private string resourceOwnerAccount;
+
+		private string bandwidth;
+
+		private string ownerAccount;
+
 		private long? ownerId;
+
+		private string name;
 
 		public long? ResourceOwnerId
 		{
@@ -63,84 +65,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string Bandwidth
-		{
-			get
-			{
-				return bandwidth;
-			}
-			set	
-			{
-				bandwidth = value;
-				DictionaryUtil.Add(QueryParameters, "Bandwidth", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -170,6 +94,45 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string Bandwidth
+		{
+			get
+			{
+				return bandwidth;
+			}
+			set	
+			{
+				bandwidth = value;
+				DictionaryUtil.Add(QueryParameters, "Bandwidth", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -183,7 +146,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override ModifyEipAddressAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+        public override ModifyEipAddressAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyEipAddressAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

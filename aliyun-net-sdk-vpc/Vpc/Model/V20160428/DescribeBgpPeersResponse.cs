@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -128,6 +129,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private string routeLimit;
 
 			private string regionId;
+
+			private bool? enableBfd;
 
 			public string Name
 			{
@@ -318,6 +321,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public bool? EnableBfd
+			{
+				get
+				{
+					return enableBfd;
+				}
+				set	
+				{
+					enableBfd = value;
 				}
 			}
 		}

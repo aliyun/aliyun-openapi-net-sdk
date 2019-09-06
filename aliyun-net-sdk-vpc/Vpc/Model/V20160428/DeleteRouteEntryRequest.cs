@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,29 +32,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DeleteRouteEntryRequest()
             : base("Vpc", "2016-04-28", "DeleteRouteEntry", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
+		private string nextHopId;
+
+		private string routeTableId;
+
 		private string resourceOwnerAccount;
-
-		private string regionId;
-
-		private string routeEntryId;
 
 		private string destinationCidrBlock;
 
 		private string ownerAccount;
 
-		private string action;
-
-		private string nextHopId;
-
 		private long? ownerId;
 
-		private List<NextHopList> nextHopLists;
+		private string routeEntryId;
 
-		private string routeTableId;
+		private List<NextHopList> nextHopLists = new List<NextHopList>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -68,6 +70,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string NextHopId
+		{
+			get
+			{
+				return nextHopId;
+			}
+			set	
+			{
+				nextHopId = value;
+				DictionaryUtil.Add(QueryParameters, "NextHopId", value);
+			}
+		}
+
+		public string RouteTableId
+		{
+			get
+			{
+				return routeTableId;
+			}
+			set	
+			{
+				routeTableId = value;
+				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -78,32 +106,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string RouteEntryId
-		{
-			get
-			{
-				return routeEntryId;
-			}
-			set	
-			{
-				routeEntryId = value;
-				DictionaryUtil.Add(QueryParameters, "RouteEntryId", value);
 			}
 		}
 
@@ -133,32 +135,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string NextHopId
-		{
-			get
-			{
-				return nextHopId;
-			}
-			set	
-			{
-				nextHopId = value;
-				DictionaryUtil.Add(QueryParameters, "NextHopId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -169,6 +145,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string RouteEntryId
+		{
+			get
+			{
+				return routeEntryId;
+			}
+			set	
+			{
+				routeEntryId = value;
+				DictionaryUtil.Add(QueryParameters, "RouteEntryId", value);
 			}
 		}
 
@@ -187,19 +176,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopId", nextHopLists[i].NextHopId);
 					DictionaryUtil.Add(QueryParameters,"NextHopList." + (i + 1) + ".NextHopType", nextHopLists[i].NextHopType);
 				}
-			}
-		}
-
-		public string RouteTableId
-		{
-			get
-			{
-				return routeTableId;
-			}
-			set	
-			{
-				routeTableId = value;
-				DictionaryUtil.Add(QueryParameters, "RouteTableId", value);
 			}
 		}
 
@@ -235,7 +211,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override DeleteRouteEntryResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteRouteEntryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteRouteEntryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

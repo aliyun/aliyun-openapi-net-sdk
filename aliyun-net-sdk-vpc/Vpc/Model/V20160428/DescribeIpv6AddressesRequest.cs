@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,6 +32,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DescribeIpv6AddressesRequest()
             : base("Vpc", "2016-04-28", "DescribeIpv6Addresses", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -41,13 +47,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private int? pageNumber;
 
-		private string regionId;
-
 		private string associatedInstanceType;
 
 		private int? pageSize;
-
-		private string action;
 
 		private string resourceOwnerAccount;
 
@@ -119,19 +121,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public string AssociatedInstanceType
 		{
 			get
@@ -155,19 +144,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -288,7 +264,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override DescribeIpv6AddressesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeIpv6AddressesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeIpv6AddressesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

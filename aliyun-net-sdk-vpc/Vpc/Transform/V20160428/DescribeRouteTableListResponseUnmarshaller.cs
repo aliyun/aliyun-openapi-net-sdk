@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -50,6 +51,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				routerTableListType.Description = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Description");
 				routerTableListType.ResourceGroupId = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].ResourceGroupId");
 				routerTableListType.CreationTime = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].CreationTime");
+				routerTableListType.Status = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Status");
 
 				List<string> routerTableListType_vSwitchIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeRouteTableList.RouterTableList["+ i +"].VSwitchIds.Length"); j++) {
@@ -61,7 +63,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				for (int j = 0; j < context.Length("DescribeRouteTableList.RouterTableList["+ i +"].Tags.Length"); j++) {
 					DescribeRouteTableListResponse.DescribeRouteTableList_RouterTableListType.DescribeRouteTableList_Tag tag = new DescribeRouteTableListResponse.DescribeRouteTableList_RouterTableListType.DescribeRouteTableList_Tag();
 					tag.Key = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Tags["+ j +"].Key");
-					tag._Value = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Tags["+ j +"].Value");
+					tag._Value = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Tags["+ j +"]._Value");
 
 					routerTableListType_tags.Add(tag);
 				}

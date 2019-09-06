@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -50,6 +51,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vSwitch.CreationTime = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].CreationTime");
 				vSwitch.IsDefault = context.BooleanValue("DescribeVSwitches.VSwitches["+ i +"].IsDefault");
 				vSwitch.ResourceGroupId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].ResourceGroupId");
+				vSwitch.NetworkAclId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].NetworkAclId");
 
 				DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_RouteTable routeTable = new DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_RouteTable();
 				routeTable.RouteTableId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].RouteTable.RouteTableId");
@@ -60,7 +62,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				for (int j = 0; j < context.Length("DescribeVSwitches.VSwitches["+ i +"].Tags.Length"); j++) {
 					DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_Tag tag = new DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_Tag();
 					tag.Key = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Tags["+ j +"].Key");
-					tag._Value = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Tags["+ j +"].Value");
+					tag._Value = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Tags["+ j +"]._Value");
 
 					vSwitch_tags.Add(tag);
 				}

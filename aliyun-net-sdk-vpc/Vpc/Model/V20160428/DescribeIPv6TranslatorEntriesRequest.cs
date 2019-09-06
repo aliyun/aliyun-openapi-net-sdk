@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,27 +32,20 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DescribeIPv6TranslatorEntriesRequest()
             : base("Vpc", "2016-04-28", "DescribeIPv6TranslatorEntries", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private int? backendIpv4Port;
 
-		private string aclId;
-
 		private long? resourceOwnerId;
-
-		private string ipv6TranslatorEntryId;
-
-		private string resourceOwnerAccount;
 
 		private string entryName;
 
-		private string allocateIpv6Addr;
-
 		private string clientToken;
-
-		private string ownerAccount;
-
-		private long? ownerId;
 
 		private string aclStatus;
 
@@ -61,13 +55,21 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private int? allocateIpv6Port;
 
-		private string regionId;
-
 		private int? pageSize;
 
-		private string action;
-
 		private string backendIpv4Addr;
+
+		private string aclId;
+
+		private string ipv6TranslatorEntryId;
+
+		private string resourceOwnerAccount;
+
+		private string allocateIpv6Addr;
+
+		private string ownerAccount;
+
+		private long? ownerId;
 
 		private string transProtocol;
 
@@ -86,19 +88,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string AclId
-		{
-			get
-			{
-				return aclId;
-			}
-			set	
-			{
-				aclId = value;
-				DictionaryUtil.Add(QueryParameters, "AclId", value);
-			}
-		}
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -109,32 +98,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Ipv6TranslatorEntryId
-		{
-			get
-			{
-				return ipv6TranslatorEntryId;
-			}
-			set	
-			{
-				ipv6TranslatorEntryId = value;
-				DictionaryUtil.Add(QueryParameters, "Ipv6TranslatorEntryId", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -151,19 +114,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string AllocateIpv6Addr
-		{
-			get
-			{
-				return allocateIpv6Addr;
-			}
-			set	
-			{
-				allocateIpv6Addr = value;
-				DictionaryUtil.Add(QueryParameters, "AllocateIpv6Addr", value);
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -174,32 +124,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -255,19 +179,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -281,19 +192,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string BackendIpv4Addr
 		{
 			get
@@ -304,6 +202,84 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				backendIpv4Addr = value;
 				DictionaryUtil.Add(QueryParameters, "BackendIpv4Addr", value);
+			}
+		}
+
+		public string AclId
+		{
+			get
+			{
+				return aclId;
+			}
+			set	
+			{
+				aclId = value;
+				DictionaryUtil.Add(QueryParameters, "AclId", value);
+			}
+		}
+
+		public string Ipv6TranslatorEntryId
+		{
+			get
+			{
+				return ipv6TranslatorEntryId;
+			}
+			set	
+			{
+				ipv6TranslatorEntryId = value;
+				DictionaryUtil.Add(QueryParameters, "Ipv6TranslatorEntryId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string AllocateIpv6Addr
+		{
+			get
+			{
+				return allocateIpv6Addr;
+			}
+			set	
+			{
+				allocateIpv6Addr = value;
+				DictionaryUtil.Add(QueryParameters, "AllocateIpv6Addr", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -333,7 +309,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override DescribeIPv6TranslatorEntriesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeIPv6TranslatorEntriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeIPv6TranslatorEntriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

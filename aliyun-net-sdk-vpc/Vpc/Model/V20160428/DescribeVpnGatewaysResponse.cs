@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -126,6 +127,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private string sslVpn;
 
 			private long? sslMaxConnections;
+
+			private string tag;
 
 			public string VpnGatewayId
 			{
@@ -304,6 +307,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					sslMaxConnections = value;
+				}
+			}
+
+			public string Tag
+			{
+				get
+				{
+					return tag;
+				}
+				set	
+				{
+					tag = value;
 				}
 			}
 		}

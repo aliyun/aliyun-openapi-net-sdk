@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -47,6 +48,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private DescribeVpnConnection_IkeConfig ikeConfig;
 
 		private DescribeVpnConnection_IpsecConfig ipsecConfig;
+
+		private DescribeVpnConnection_VcoHealthCheck vcoHealthCheck;
 
 		public string RequestId
 		{
@@ -189,6 +192,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				ipsecConfig = value;
+			}
+		}
+
+		public DescribeVpnConnection_VcoHealthCheck VcoHealthCheck
+		{
+			get
+			{
+				return vcoHealthCheck;
+			}
+			set	
+			{
+				vcoHealthCheck = value;
 			}
 		}
 
@@ -378,6 +393,94 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					ipsecLifetime = value;
+				}
+			}
+		}
+
+		public class DescribeVpnConnection_VcoHealthCheck
+		{
+
+			private string enable;
+
+			private string sip;
+
+			private string dip;
+
+			private int? interval;
+
+			private int? retry;
+
+			private string status;
+
+			public string Enable
+			{
+				get
+				{
+					return enable;
+				}
+				set	
+				{
+					enable = value;
+				}
+			}
+
+			public string Sip
+			{
+				get
+				{
+					return sip;
+				}
+				set	
+				{
+					sip = value;
+				}
+			}
+
+			public string Dip
+			{
+				get
+				{
+					return dip;
+				}
+				set	
+				{
+					dip = value;
+				}
+			}
+
+			public int? Interval
+			{
+				get
+				{
+					return interval;
+				}
+				set	
+				{
+					interval = value;
+				}
+			}
+
+			public int? Retry
+			{
+				get
+				{
+					return retry;
+				}
+				set	
+				{
+					retry = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

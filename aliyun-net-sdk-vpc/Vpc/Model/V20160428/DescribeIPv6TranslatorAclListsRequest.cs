@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,40 +32,28 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public DescribeIPv6TranslatorAclListsRequest()
             : base("Vpc", "2016-04-28", "DescribeIPv6TranslatorAclLists", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string aclId;
 
 		private long? resourceOwnerId;
 
 		private string aclName;
 
-		private string resourceOwnerAccount;
-
-		private string regionId;
-
-		private string ownerAccount;
+		private int? pageNumber;
 
 		private int? pageSize;
 
-		private string action;
+		private string aclId;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
 
 		private long? ownerId;
-
-		private int? pageNumber;
-
-		public string AclId
-		{
-			get
-			{
-				return aclId;
-			}
-			set	
-			{
-				aclId = value;
-				DictionaryUtil.Add(QueryParameters, "AclId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -92,42 +81,16 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public int? PageNumber
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return pageNumber;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -144,16 +107,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
+		public string AclId
 		{
 			get
 			{
-				return action;
+				return aclId;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				aclId = value;
+				DictionaryUtil.Add(QueryParameters, "AclId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -170,20 +159,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-        public override DescribeIPv6TranslatorAclListsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeIPv6TranslatorAclListsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeIPv6TranslatorAclListsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

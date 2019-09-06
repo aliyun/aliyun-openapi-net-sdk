@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,17 +32,26 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public ModifySslVpnServerRequest()
             : base("Vpc", "2016-04-28", "ModifySslVpnServer", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string cipher;
-
 		private long? resourceOwnerId;
+
+		private string clientToken;
+
+		private string sslVpnServerId;
+
+		private string localSubnet;
+
+		private string cipher;
 
 		private string clientIpPool;
 
 		private string resourceOwnerAccount;
-
-		private string clientToken;
 
 		private bool? compress;
 
@@ -49,32 +59,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
-		private string sslVpnServerId;
-
-		private string localSubnet;
-
-		private string regionId;
-
 		private int? port;
 
 		private string proto;
 
 		private string name;
-
-		private string action;
-
-		public string Cipher
-		{
-			get
-			{
-				return cipher;
-			}
-			set	
-			{
-				cipher = value;
-				DictionaryUtil.Add(QueryParameters, "Cipher", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -86,6 +75,58 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string SslVpnServerId
+		{
+			get
+			{
+				return sslVpnServerId;
+			}
+			set	
+			{
+				sslVpnServerId = value;
+				DictionaryUtil.Add(QueryParameters, "SslVpnServerId", value);
+			}
+		}
+
+		public string LocalSubnet
+		{
+			get
+			{
+				return localSubnet;
+			}
+			set	
+			{
+				localSubnet = value;
+				DictionaryUtil.Add(QueryParameters, "LocalSubnet", value);
+			}
+		}
+
+		public string Cipher
+		{
+			get
+			{
+				return cipher;
+			}
+			set	
+			{
+				cipher = value;
+				DictionaryUtil.Add(QueryParameters, "Cipher", value);
 			}
 		}
 
@@ -112,19 +153,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -167,45 +195,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string SslVpnServerId
-		{
-			get
-			{
-				return sslVpnServerId;
-			}
-			set	
-			{
-				sslVpnServerId = value;
-				DictionaryUtil.Add(QueryParameters, "SslVpnServerId", value);
-			}
-		}
-
-		public string LocalSubnet
-		{
-			get
-			{
-				return localSubnet;
-			}
-			set	
-			{
-				localSubnet = value;
-				DictionaryUtil.Add(QueryParameters, "LocalSubnet", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
 		public int? Port
 		{
 			get
@@ -245,20 +234,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-        public override ModifySslVpnServerResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifySslVpnServerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifySslVpnServerResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

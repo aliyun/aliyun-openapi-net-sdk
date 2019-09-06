@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -59,6 +60,14 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			ipsecConfig.IpsecPfs = context.StringValue("ModifyVpnConnectionAttribute.IpsecConfig.IpsecPfs");
 			ipsecConfig.IpsecLifetime = context.LongValue("ModifyVpnConnectionAttribute.IpsecConfig.IpsecLifetime");
 			modifyVpnConnectionAttributeResponse.IpsecConfig = ipsecConfig;
+
+			ModifyVpnConnectionAttributeResponse.ModifyVpnConnectionAttribute_VcoHealthCheck vcoHealthCheck = new ModifyVpnConnectionAttributeResponse.ModifyVpnConnectionAttribute_VcoHealthCheck();
+			vcoHealthCheck.Enable = context.StringValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Enable");
+			vcoHealthCheck.Sip = context.StringValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Sip");
+			vcoHealthCheck.Dip = context.StringValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Dip");
+			vcoHealthCheck.Interval = context.IntegerValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Interval");
+			vcoHealthCheck.Retry = context.IntegerValue("ModifyVpnConnectionAttribute.VcoHealthCheck.Retry");
+			modifyVpnConnectionAttributeResponse.VcoHealthCheck = vcoHealthCheck;
         
 			return modifyVpnConnectionAttributeResponse;
         }

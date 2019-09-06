@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -112,6 +113,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private string masterInstanceId;
 
 			private string description;
+
+			private string name;
+
+			private string chargeType;
 
 			private string createTime;
 
@@ -212,6 +217,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
+
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
 				}
 			}
 

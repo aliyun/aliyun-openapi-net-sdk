@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Vpc.Model.V20160428;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vpc.Model.V20160428;
 
 namespace Aliyun.Acs.Vpc.Transform.V20160428
 {
@@ -53,6 +54,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vpnGateway.IpsecVpn = context.StringValue("DescribeVpnGateways.VpnGateways["+ i +"].IpsecVpn");
 				vpnGateway.SslVpn = context.StringValue("DescribeVpnGateways.VpnGateways["+ i +"].SslVpn");
 				vpnGateway.SslMaxConnections = context.LongValue("DescribeVpnGateways.VpnGateways["+ i +"].SslMaxConnections");
+				vpnGateway.Tag = context.StringValue("DescribeVpnGateways.VpnGateways["+ i +"].Tag");
 
 				describeVpnGatewaysResponse_vpnGateways.Add(vpnGateway);
 			}

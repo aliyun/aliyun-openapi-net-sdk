@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -132,6 +133,22 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private string circuitCode;
 
 			private long? bandwidth;
+
+			private string loaStatus;
+
+			private string spec1;
+
+			private string hasReservationData;
+
+			private string reservationInternetChargeType;
+
+			private string reservationActiveTime;
+
+			private string reservationOrderType;
+
+			private string endTime;
+
+			private string chargeType;
 
 			public string PhysicalConnectionId
 			{
@@ -346,6 +363,102 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					bandwidth = value;
+				}
+			}
+
+			public string LoaStatus
+			{
+				get
+				{
+					return loaStatus;
+				}
+				set	
+				{
+					loaStatus = value;
+				}
+			}
+
+			public string Spec1
+			{
+				get
+				{
+					return spec1;
+				}
+				set	
+				{
+					spec1 = value;
+				}
+			}
+
+			public string HasReservationData
+			{
+				get
+				{
+					return hasReservationData;
+				}
+				set	
+				{
+					hasReservationData = value;
+				}
+			}
+
+			public string ReservationInternetChargeType
+			{
+				get
+				{
+					return reservationInternetChargeType;
+				}
+				set	
+				{
+					reservationInternetChargeType = value;
+				}
+			}
+
+			public string ReservationActiveTime
+			{
+				get
+				{
+					return reservationActiveTime;
+				}
+				set	
+				{
+					reservationActiveTime = value;
+				}
+			}
+
+			public string ReservationOrderType
+			{
+				get
+				{
+					return reservationOrderType;
+				}
+				set	
+				{
+					reservationOrderType = value;
+				}
+			}
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
 				}
 			}
 		}

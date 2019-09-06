@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,25 +32,52 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public RemoveBandwidthPackageIpsRequest()
             : base("Vpc", "2016-04-28", "RemoveBandwidthPackageIps", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private List<string> removedIpAddressess;
-
 		private long? resourceOwnerId;
+
+		private string clientToken;
+
+		private List<string> removedIpAddressess = new List<string>(){ };
 
 		private string bandwidthPackageId;
 
 		private string resourceOwnerAccount;
 
-		private string regionId;
-
-		private string clientToken;
-
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
 
 		public List<string> RemovedIpAddressess
 		{
@@ -65,19 +93,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				{
 					DictionaryUtil.Add(QueryParameters,"RemovedIpAddresses." + (i + 1) , removedIpAddressess[i]);
 				}
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -107,32 +122,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -143,19 +132,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -172,7 +148,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-        public override RemoveBandwidthPackageIpsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RemoveBandwidthPackageIpsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return RemoveBandwidthPackageIpsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

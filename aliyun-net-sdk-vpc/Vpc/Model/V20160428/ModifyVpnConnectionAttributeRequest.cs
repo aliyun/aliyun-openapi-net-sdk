@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,11 +32,26 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public ModifyVpnConnectionAttributeRequest()
             : base("Vpc", "2016-04-28", "ModifyVpnConnectionAttribute", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string ikeConfig;
 
 		private long? resourceOwnerId;
+
+		private bool? autoConfigRoute;
+
+		private string clientToken;
+
+		private string ipsecConfig;
+
+		private string healthCheckConfig;
+
+		private string localSubnet;
 
 		private string remoteSubnet;
 
@@ -43,23 +59,13 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string resourceOwnerAccount;
 
-		private string clientToken;
-
 		private string ownerAccount;
 
-		private string ipsecConfig;
-
 		private long? ownerId;
-
-		private string localSubnet;
-
-		private string regionId;
 
 		private string vpnConnectionId;
 
 		private string name;
-
-		private string action;
 
 		public string IkeConfig
 		{
@@ -84,6 +90,71 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? AutoConfigRoute
+		{
+			get
+			{
+				return autoConfigRoute;
+			}
+			set	
+			{
+				autoConfigRoute = value;
+				DictionaryUtil.Add(QueryParameters, "AutoConfigRoute", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string IpsecConfig
+		{
+			get
+			{
+				return ipsecConfig;
+			}
+			set	
+			{
+				ipsecConfig = value;
+				DictionaryUtil.Add(QueryParameters, "IpsecConfig", value);
+			}
+		}
+
+		public string HealthCheckConfig
+		{
+			get
+			{
+				return healthCheckConfig;
+			}
+			set	
+			{
+				healthCheckConfig = value;
+				DictionaryUtil.Add(QueryParameters, "HealthCheckConfig", value);
+			}
+		}
+
+		public string LocalSubnet
+		{
+			get
+			{
+				return localSubnet;
+			}
+			set	
+			{
+				localSubnet = value;
+				DictionaryUtil.Add(QueryParameters, "LocalSubnet", value);
 			}
 		}
 
@@ -126,19 +197,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -152,19 +210,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string IpsecConfig
-		{
-			get
-			{
-				return ipsecConfig;
-			}
-			set	
-			{
-				ipsecConfig = value;
-				DictionaryUtil.Add(QueryParameters, "IpsecConfig", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -175,32 +220,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string LocalSubnet
-		{
-			get
-			{
-				return localSubnet;
-			}
-			set	
-			{
-				localSubnet = value;
-				DictionaryUtil.Add(QueryParameters, "LocalSubnet", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -230,20 +249,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-        public override ModifyVpnConnectionAttributeResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyVpnConnectionAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyVpnConnectionAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

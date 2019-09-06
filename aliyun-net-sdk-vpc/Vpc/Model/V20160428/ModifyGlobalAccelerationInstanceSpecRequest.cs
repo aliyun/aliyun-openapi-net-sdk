@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Vpc.Transform;
 using Aliyun.Acs.Vpc.Transform.V20160428;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Vpc.Model.V20160428
 {
@@ -31,23 +32,24 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
         public ModifyGlobalAccelerationInstanceSpecRequest()
             : base("Vpc", "2016-04-28", "ModifyGlobalAccelerationInstanceSpec", "vpc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string globalAccelerationInstanceId;
 
-		private string regionId;
+		private string resourceOwnerAccount;
 
 		private string bandwidth;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
-
-		private string globalAccelerationInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -62,6 +64,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string GlobalAccelerationInstanceId
+		{
+			get
+			{
+				return globalAccelerationInstanceId;
+			}
+			set	
+			{
+				globalAccelerationInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "GlobalAccelerationInstanceId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -72,19 +87,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
 			}
 		}
 
@@ -114,19 +116,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -140,20 +129,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
-		public string GlobalAccelerationInstanceId
-		{
-			get
-			{
-				return globalAccelerationInstanceId;
-			}
-			set	
-			{
-				globalAccelerationInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "GlobalAccelerationInstanceId", value);
-			}
-		}
-
-        public override ModifyGlobalAccelerationInstanceSpecResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override ModifyGlobalAccelerationInstanceSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ModifyGlobalAccelerationInstanceSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
