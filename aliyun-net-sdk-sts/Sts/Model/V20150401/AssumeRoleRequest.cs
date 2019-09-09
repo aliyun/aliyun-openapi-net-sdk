@@ -35,26 +35,13 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string roleArn;
-
 		private string roleSessionName;
-
-		private long? durationSeconds;
 
 		private string policy;
 
-		public string RoleArn
-		{
-			get
-			{
-				return roleArn;
-			}
-			set	
-			{
-				roleArn = value;
-				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
-			}
-		}
+		private string roleArn;
+
+		private long? durationSeconds;
 
 		public string RoleSessionName
 		{
@@ -69,19 +56,6 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			}
 		}
 
-		public long? DurationSeconds
-		{
-			get
-			{
-				return durationSeconds;
-			}
-			set	
-			{
-				durationSeconds = value;
-				DictionaryUtil.Add(QueryParameters, "DurationSeconds", value.ToString());
-			}
-		}
-
 		public string Policy
 		{
 			get
@@ -92,6 +66,32 @@ namespace Aliyun.Acs.Sts.Model.V20150401
 			{
 				policy = value;
 				DictionaryUtil.Add(QueryParameters, "Policy", value);
+			}
+		}
+
+		public string RoleArn
+		{
+			get
+			{
+				return roleArn;
+			}
+			set	
+			{
+				roleArn = value;
+				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
+			}
+		}
+
+		public long? DurationSeconds
+		{
+			get
+			{
+				return durationSeconds;
+			}
+			set	
+			{
+				durationSeconds = value;
+				DictionaryUtil.Add(QueryParameters, "DurationSeconds", value.ToString());
 			}
 		}
 
