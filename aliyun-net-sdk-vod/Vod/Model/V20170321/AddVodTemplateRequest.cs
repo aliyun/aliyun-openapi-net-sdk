@@ -36,19 +36,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string subTemplateType;
 
 		private string templateConfig;
 
 		private string templateType;
 
-		private string appId;
-
-		private string name;
+		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string subTemplateType;
+		private string appId;
+
+		private string name;
 
 		public long? ResourceOwnerId
 		{
@@ -63,16 +63,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string SubTemplateType
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return subTemplateType;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				subTemplateType = value;
+				DictionaryUtil.Add(QueryParameters, "SubTemplateType", value);
 			}
 		}
 
@@ -102,6 +102,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public string AppId
 		{
 			get
@@ -125,32 +151,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string SubTemplateType
-		{
-			get
-			{
-				return subTemplateType;
-			}
-			set	
-			{
-				subTemplateType = value;
-				DictionaryUtil.Add(QueryParameters, "SubTemplateType", value);
 			}
 		}
 

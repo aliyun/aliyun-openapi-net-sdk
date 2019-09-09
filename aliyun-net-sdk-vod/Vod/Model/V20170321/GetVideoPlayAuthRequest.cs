@@ -36,15 +36,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string playConfig;
 
-		private long? authInfoTimeout;
+		private string resourceOwnerAccount;
 
 		private string videoId;
 
 		private long? ownerId;
+
+		private long? authInfoTimeout;
 
 		public long? ResourceOwnerId
 		{
@@ -56,19 +56,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -85,16 +72,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? AuthInfoTimeout
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return authInfoTimeout;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				authInfoTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "AuthInfoTimeout", value.ToString());
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -121,6 +108,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public long? AuthInfoTimeout
+		{
+			get
+			{
+				return authInfoTimeout;
+			}
+			set	
+			{
+				authInfoTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "AuthInfoTimeout", value.ToString());
 			}
 		}
 

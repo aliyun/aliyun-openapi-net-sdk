@@ -34,26 +34,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
-		private string watermarkId;
-
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		public string WatermarkId
-		{
-			get
-			{
-				return watermarkId;
-			}
-			set	
-			{
-				watermarkId = value;
-				DictionaryUtil.Add(QueryParameters, "WatermarkId", value);
-			}
-		}
+		private string watermarkId;
 
 		public long? ResourceOwnerId
 		{
@@ -91,6 +78,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string WatermarkId
+		{
+			get
+			{
+				return watermarkId;
+			}
+			set	
+			{
+				watermarkId = value;
+				DictionaryUtil.Add(QueryParameters, "WatermarkId", value);
 			}
 		}
 

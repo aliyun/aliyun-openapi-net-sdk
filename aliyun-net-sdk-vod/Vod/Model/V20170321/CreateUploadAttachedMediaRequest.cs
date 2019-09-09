@@ -36,33 +36,33 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private string cateIds;
-
 		private string icon;
 
 		private string description;
 
 		private string fileSize;
 
-		private long? ownerId;
-
 		private string title;
 
 		private string businessType;
-
-		private string tags;
 
 		private string storageLocation;
 
 		private string userData;
 
+		private long? cateId;
+
+		private string resourceOwnerAccount;
+
+		private string cateIds;
+
+		private long? ownerId;
+
+		private string tags;
+
 		private string mediaExt;
 
 		private string fileName;
-
-		private long? cateId;
 
 		private string appId;
 
@@ -76,32 +76,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string CateIds
-		{
-			get
-			{
-				return cateIds;
-			}
-			set	
-			{
-				cateIds = value;
-				DictionaryUtil.Add(QueryParameters, "CateIds", value);
 			}
 		}
 
@@ -144,19 +118,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string Title
 		{
 			get
@@ -180,19 +141,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				businessType = value;
 				DictionaryUtil.Add(QueryParameters, "BusinessType", value);
-			}
-		}
-
-		public string Tags
-		{
-			get
-			{
-				return tags;
-			}
-			set	
-			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
 			}
 		}
 
@@ -222,6 +170,71 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public long? CateId
+		{
+			get
+			{
+				return cateId;
+			}
+			set	
+			{
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string CateIds
+		{
+			get
+			{
+				return cateIds;
+			}
+			set	
+			{
+				cateIds = value;
+				DictionaryUtil.Add(QueryParameters, "CateIds", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
 		public string MediaExt
 		{
 			get
@@ -245,19 +258,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				fileName = value;
 				DictionaryUtil.Add(QueryParameters, "FileName", value);
-			}
-		}
-
-		public long? CateId
-		{
-			get
-			{
-				return cateId;
-			}
-			set	
-			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
 			}
 		}
 

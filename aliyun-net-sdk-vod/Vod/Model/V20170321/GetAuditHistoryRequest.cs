@@ -34,26 +34,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
-		private long? pageNo;
-
 		private long? pageSize;
 
 		private string videoId;
 
-		private string sortBy;
+		private long? pageNo;
 
-		public long? PageNo
-		{
-			get
-			{
-				return pageNo;
-			}
-			set	
-			{
-				pageNo = value;
-				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
-			}
-		}
+		private string sortBy;
 
 		public long? PageSize
 		{
@@ -78,6 +65,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				videoId = value;
 				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+			}
+		}
+
+		public long? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 

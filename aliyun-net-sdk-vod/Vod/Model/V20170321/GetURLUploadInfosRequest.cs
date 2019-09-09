@@ -38,11 +38,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
+		private long? ownerId;
+
 		private string jobIds;
 
 		private string uploadURLs;
-
-		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -70,6 +70,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public string JobIds
 		{
 			get
@@ -93,19 +106,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				uploadURLs = value;
 				DictionaryUtil.Add(QueryParameters, "UploadURLs", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

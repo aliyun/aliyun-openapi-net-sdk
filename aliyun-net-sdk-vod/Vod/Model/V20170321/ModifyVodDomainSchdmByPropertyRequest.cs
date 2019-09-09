@@ -27,44 +27,42 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetAppInfosRequest : RpcAcsRequest<GetAppInfosResponse>
+    public class ModifyVodDomainSchdmByPropertyRequest : RpcAcsRequest<ModifyVodDomainSchdmByPropertyResponse>
     {
-        public GetAppInfosRequest()
-            : base("vod", "2017-03-21", "GetAppInfos", "vod", "openAPI")
+        public ModifyVodDomainSchdmByPropertyRequest()
+            : base("vod", "2017-03-21", "ModifyVodDomainSchdmByProperty", "vod", "openAPI")
         {
         }
 
-		private long? resourceOwnerId;
+		private string property;
 
-		private string resourceOwnerAccount;
+		private string domainName;
 
 		private long? ownerId;
 
-		private string appIds;
-
-		public long? ResourceOwnerId
+		public string Property
 		{
 			get
 			{
-				return resourceOwnerId;
+				return property;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				property = value;
+				DictionaryUtil.Add(QueryParameters, "Property", value);
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string DomainName
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return domainName;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -81,27 +79,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AppIds
-		{
-			get
-			{
-				return appIds;
-			}
-			set	
-			{
-				appIds = value;
-				DictionaryUtil.Add(QueryParameters, "AppIds", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override GetAppInfosResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyVodDomainSchdmByPropertyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetAppInfosResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyVodDomainSchdmByPropertyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

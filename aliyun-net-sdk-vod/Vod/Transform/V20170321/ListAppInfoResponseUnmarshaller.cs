@@ -32,6 +32,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 
 			listAppInfoResponse.HttpResponse = context.HttpResponse;
 			listAppInfoResponse.RequestId = context.StringValue("ListAppInfo.RequestId");
+			listAppInfoResponse.Total = context.IntegerValue("ListAppInfo.Total");
 
 			List<ListAppInfoResponse.ListAppInfo_AppInfo> listAppInfoResponse_appInfoList = new List<ListAppInfoResponse.ListAppInfo_AppInfo>();
 			for (int i = 0; i < context.Length("ListAppInfo.AppInfoList.Length"); i++) {

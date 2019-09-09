@@ -34,7 +34,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
-		private string funcFilter;
+		private int? pageNumber;
 
 		private bool? checkDomainShow;
 
@@ -44,28 +44,28 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private int? pageSize;
 
+		private string funcFilter;
+
 		private string domainName;
 
 		private long? ownerId;
 
 		private string funcId;
 
-		private int? pageNumber;
-
 		private string domainStatus;
 
 		private string domainSearchType;
 
-		public string FuncFilter
+		public int? PageNumber
 		{
 			get
 			{
-				return funcFilter;
+				return pageNumber;
 			}
 			set	
 			{
-				funcFilter = value;
-				DictionaryUtil.Add(QueryParameters, "FuncFilter", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -121,6 +121,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string FuncFilter
+		{
+			get
+			{
+				return funcFilter;
+			}
+			set	
+			{
+				funcFilter = value;
+				DictionaryUtil.Add(QueryParameters, "FuncFilter", value);
+			}
+		}
+
 		public string DomainName
 		{
 			get
@@ -157,19 +170,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				funcId = value;
 				DictionaryUtil.Add(QueryParameters, "FuncId", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

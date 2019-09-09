@@ -34,23 +34,62 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
+		private string resourceOwnerId;
+
+		private string description;
+
+		private string title;
+
 		private string coverURL;
 
-		private string resourceOwnerId;
+		private string projectId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string timeline;
-
-		private string description;
-
 		private string ownerId;
 
-		private string title;
+		private string timeline;
 
-		private string projectId;
+		public string ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string Title
+		{
+			get
+			{
+				return title;
+			}
+			set	
+			{
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
 
 		public string CoverURL
 		{
@@ -65,16 +104,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ResourceOwnerId
+		public string ProjectId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return projectId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+				projectId = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
 			}
 		}
 
@@ -104,32 +143,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Timeline
-		{
-			get
-			{
-				return timeline;
-			}
-			set	
-			{
-				timeline = value;
-				DictionaryUtil.Add(QueryParameters, "Timeline", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public string OwnerId
 		{
 			get
@@ -143,29 +156,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Title
+		public string Timeline
 		{
 			get
 			{
-				return title;
+				return timeline;
 			}
 			set	
 			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
-			}
-		}
-
-		public string ProjectId
-		{
-			get
-			{
-				return projectId;
-			}
-			set	
-			{
-				projectId = value;
-				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
+				timeline = value;
+				DictionaryUtil.Add(QueryParameters, "Timeline", value);
 			}
 		}
 

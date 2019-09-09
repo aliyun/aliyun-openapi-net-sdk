@@ -38,9 +38,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string securityToken;
 
-		private string ownerAccount;
-
 		private string scope;
+
+		private string ownerAccount;
 
 		private string domainName;
 
@@ -74,19 +74,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string Scope
 		{
 			get
@@ -97,6 +84,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				scope = value;
 				DictionaryUtil.Add(QueryParameters, "Scope", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 

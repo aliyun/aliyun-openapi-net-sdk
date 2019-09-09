@@ -36,11 +36,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
+		private string imageURLs;
+
 		private string imageType;
 
 		private string resourceOwnerAccount;
-
-		private string imageURLs;
 
 		private string videoId;
 
@@ -60,6 +60,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ImageURLs
+		{
+			get
+			{
+				return imageURLs;
+			}
+			set	
+			{
+				imageURLs = value;
+				DictionaryUtil.Add(QueryParameters, "ImageURLs", value);
 			}
 		}
 
@@ -86,19 +99,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ImageURLs
-		{
-			get
-			{
-				return imageURLs;
-			}
-			set	
-			{
-				imageURLs = value;
-				DictionaryUtil.Add(QueryParameters, "ImageURLs", value);
 			}
 		}
 

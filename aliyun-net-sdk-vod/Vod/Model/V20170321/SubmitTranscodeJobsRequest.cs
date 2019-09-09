@@ -34,11 +34,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
-		private string userData;
-
 		private long? resourceOwnerId;
 
-		private string templateGroupId;
+		private string userData;
 
 		private string resourceOwnerAccount;
 
@@ -50,22 +48,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string priority;
 
-		private string encryptConfig;
-
 		private string pipelineId;
 
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
+		private string templateGroupId;
+
+		private string encryptConfig;
 
 		public long? ResourceOwnerId
 		{
@@ -80,16 +67,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string TemplateGroupId
+		public string UserData
 		{
 			get
 			{
-				return templateGroupId;
+				return userData;
 			}
 			set	
 			{
-				templateGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 
@@ -158,19 +145,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string EncryptConfig
-		{
-			get
-			{
-				return encryptConfig;
-			}
-			set	
-			{
-				encryptConfig = value;
-				DictionaryUtil.Add(QueryParameters, "EncryptConfig", value);
-			}
-		}
-
 		public string PipelineId
 		{
 			get
@@ -181,6 +155,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string TemplateGroupId
+		{
+			get
+			{
+				return templateGroupId;
+			}
+			set	
+			{
+				templateGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
+			}
+		}
+
+		public string EncryptConfig
+		{
+			get
+			{
+				return encryptConfig;
+			}
+			set	
+			{
+				encryptConfig = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptConfig", value);
 			}
 		}
 

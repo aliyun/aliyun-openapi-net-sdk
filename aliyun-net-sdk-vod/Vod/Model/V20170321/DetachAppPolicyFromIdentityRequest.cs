@@ -34,32 +34,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
-		private string identityName;
-
 		private long? resourceOwnerId;
+
+		private string policyNames;
+
+		private string identityName;
 
 		private string identityType;
 
 		private string resourceOwnerAccount;
 
-		private string appId;
-
-		private string policyNames;
-
 		private long? ownerId;
 
-		public string IdentityName
-		{
-			get
-			{
-				return identityName;
-			}
-			set	
-			{
-				identityName = value;
-				DictionaryUtil.Add(QueryParameters, "IdentityName", value);
-			}
-		}
+		private string appId;
 
 		public long? ResourceOwnerId
 		{
@@ -71,6 +58,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string PolicyNames
+		{
+			get
+			{
+				return policyNames;
+			}
+			set	
+			{
+				policyNames = value;
+				DictionaryUtil.Add(QueryParameters, "PolicyNames", value);
+			}
+		}
+
+		public string IdentityName
+		{
+			get
+			{
+				return identityName;
+			}
+			set	
+			{
+				identityName = value;
+				DictionaryUtil.Add(QueryParameters, "IdentityName", value);
 			}
 		}
 
@@ -100,32 +113,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AppId
-		{
-			get
-			{
-				return appId;
-			}
-			set	
-			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
-			}
-		}
-
-		public string PolicyNames
-		{
-			get
-			{
-				return policyNames;
-			}
-			set	
-			{
-				policyNames = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyNames", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -136,6 +123,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
 			}
 		}
 

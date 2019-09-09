@@ -36,19 +36,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string type;
 
 		private long? cateId;
 
-		private long? pageNo;
-
 		private long? pageSize;
 
-		private string sortBy;
+		private string resourceOwnerAccount;
 
 		private string ownerId;
 
-		private string type;
+		private long? pageNo;
+
+		private string sortBy;
 
 		public string ResourceOwnerId
 		{
@@ -63,16 +63,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string Type
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return type;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -89,19 +89,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? PageNo
-		{
-			get
-			{
-				return pageNo;
-			}
-			set	
-			{
-				pageNo = value;
-				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
-			}
-		}
-
 		public long? PageSize
 		{
 			get
@@ -115,16 +102,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string SortBy
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return sortBy;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				sortBy = value;
-				DictionaryUtil.Add(QueryParameters, "SortBy", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -141,16 +128,29 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Type
+		public long? PageNo
 		{
 			get
 			{
-				return type;
+				return pageNo;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+			}
+		}
+
+		public string SortBy
+		{
+			get
+			{
+				return sortBy;
+			}
+			set	
+			{
+				sortBy = value;
+				DictionaryUtil.Add(QueryParameters, "SortBy", value);
 			}
 		}
 

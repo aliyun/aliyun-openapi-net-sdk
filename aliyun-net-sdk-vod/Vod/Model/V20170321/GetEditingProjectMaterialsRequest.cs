@@ -36,17 +36,17 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerId;
 
+		private string type;
+
 		private string materialType;
+
+		private string projectId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private string ownerId;
-
-		private string type;
-
-		private string projectId;
 
 		public string ResourceOwnerId
 		{
@@ -61,6 +61,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
 		public string MaterialType
 		{
 			get
@@ -71,6 +84,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				materialType = value;
 				DictionaryUtil.Add(QueryParameters, "MaterialType", value);
+			}
+		}
+
+		public string ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
 			}
 		}
 
@@ -110,32 +136,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string ProjectId
-		{
-			get
-			{
-				return projectId;
-			}
-			set	
-			{
-				projectId = value;
-				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
 			}
 		}
 

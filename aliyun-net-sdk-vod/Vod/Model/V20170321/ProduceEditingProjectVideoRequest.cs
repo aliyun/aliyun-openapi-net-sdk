@@ -36,13 +36,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
-		private string mediaMetadata;
-
-		private string resourceOwnerAccount;
-
 		private string description;
-
-		private long? ownerId;
 
 		private string title;
 
@@ -50,11 +44,17 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string userData;
 
-		private string timeline;
-
 		private string produceConfig;
 
 		private string projectId;
+
+		private string mediaMetadata;
+
+		private string resourceOwnerAccount;
+
+		private long? ownerId;
+
+		private string timeline;
 
 		public long? ResourceOwnerId
 		{
@@ -69,32 +69,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string MediaMetadata
-		{
-			get
-			{
-				return mediaMetadata;
-			}
-			set	
-			{
-				mediaMetadata = value;
-				DictionaryUtil.Add(QueryParameters, "MediaMetadata", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -105,19 +79,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -160,19 +121,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Timeline
-		{
-			get
-			{
-				return timeline;
-			}
-			set	
-			{
-				timeline = value;
-				DictionaryUtil.Add(QueryParameters, "Timeline", value);
-			}
-		}
-
 		public string ProduceConfig
 		{
 			get
@@ -196,6 +144,58 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				projectId = value;
 				DictionaryUtil.Add(QueryParameters, "ProjectId", value);
+			}
+		}
+
+		public string MediaMetadata
+		{
+			get
+			{
+				return mediaMetadata;
+			}
+			set	
+			{
+				mediaMetadata = value;
+				DictionaryUtil.Add(QueryParameters, "MediaMetadata", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Timeline
+		{
+			get
+			{
+				return timeline;
+			}
+			set	
+			{
+				timeline = value;
+				DictionaryUtil.Add(QueryParameters, "Timeline", value);
 			}
 		}
 

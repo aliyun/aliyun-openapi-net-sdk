@@ -40,13 +40,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
-		private string appId;
-
-		private string name;
-
 		private long? ownerId;
 
 		private string transcodeTemplateGroupId;
+
+		private string appId;
+
+		private string name;
 
 		public string TranscodeTemplateList
 		{
@@ -87,32 +87,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AppId
-		{
-			get
-			{
-				return appId;
-			}
-			set	
-			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -136,6 +110,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				transcodeTemplateGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "TranscodeTemplateGroupId", value);
+			}
+		}
+
+		public string AppId
+		{
+			get
+			{
+				return appId;
+			}
+			set	
+			{
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

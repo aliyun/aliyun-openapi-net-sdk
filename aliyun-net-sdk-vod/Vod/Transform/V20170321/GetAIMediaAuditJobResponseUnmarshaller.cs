@@ -109,6 +109,93 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			}
 			pornResult.TopList2 = pornResult_topList2;
 			videoResult.PornResult = pornResult;
+
+			GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_AdResult adResult = new GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_AdResult();
+			adResult.Suggestion = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.AdResult.Suggestion");
+			adResult.Label = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.AdResult.Label");
+			adResult.MaxScore = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.AdResult.MaxScore");
+			adResult.AverageScore = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.AdResult.AverageScore");
+
+			List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_AdResult.GetAIMediaAuditJob_CounterListItem7> adResult_counterList5 = new List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_AdResult.GetAIMediaAuditJob_CounterListItem7>();
+			for (int i = 0; i < context.Length("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.AdResult.CounterList.Length"); i++) {
+				GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_AdResult.GetAIMediaAuditJob_CounterListItem7 counterListItem7 = new GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_AdResult.GetAIMediaAuditJob_CounterListItem7();
+				counterListItem7.Label = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.AdResult.CounterList["+ i +"].Label");
+				counterListItem7.Count = context.IntegerValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.AdResult.CounterList["+ i +"].Count");
+
+				adResult_counterList5.Add(counterListItem7);
+			}
+			adResult.CounterList5 = adResult_counterList5;
+
+			List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_AdResult.GetAIMediaAuditJob_TopListItem8> adResult_topList6 = new List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_AdResult.GetAIMediaAuditJob_TopListItem8>();
+			for (int i = 0; i < context.Length("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.AdResult.TopList.Length"); i++) {
+				GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_AdResult.GetAIMediaAuditJob_TopListItem8 topListItem8 = new GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_AdResult.GetAIMediaAuditJob_TopListItem8();
+				topListItem8.Label = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.AdResult.TopList["+ i +"].Label");
+				topListItem8.Score = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.AdResult.TopList["+ i +"].Score");
+				topListItem8.Timestamp = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.AdResult.TopList["+ i +"].Timestamp");
+				topListItem8.Url = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.AdResult.TopList["+ i +"].Url");
+
+				adResult_topList6.Add(topListItem8);
+			}
+			adResult.TopList6 = adResult_topList6;
+			videoResult.AdResult = adResult;
+
+			GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LiveResult liveResult = new GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LiveResult();
+			liveResult.Suggestion = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LiveResult.Suggestion");
+			liveResult.Label = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LiveResult.Label");
+			liveResult.MaxScore = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LiveResult.MaxScore");
+			liveResult.AverageScore = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LiveResult.AverageScore");
+
+			List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LiveResult.GetAIMediaAuditJob_CounterListItem11> liveResult_counterList9 = new List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LiveResult.GetAIMediaAuditJob_CounterListItem11>();
+			for (int i = 0; i < context.Length("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LiveResult.CounterList.Length"); i++) {
+				GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LiveResult.GetAIMediaAuditJob_CounterListItem11 counterListItem11 = new GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LiveResult.GetAIMediaAuditJob_CounterListItem11();
+				counterListItem11.Label = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LiveResult.CounterList["+ i +"].Label");
+				counterListItem11.Count = context.IntegerValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LiveResult.CounterList["+ i +"].Count");
+
+				liveResult_counterList9.Add(counterListItem11);
+			}
+			liveResult.CounterList9 = liveResult_counterList9;
+
+			List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LiveResult.GetAIMediaAuditJob_TopListItem12> liveResult_topList10 = new List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LiveResult.GetAIMediaAuditJob_TopListItem12>();
+			for (int i = 0; i < context.Length("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LiveResult.TopList.Length"); i++) {
+				GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LiveResult.GetAIMediaAuditJob_TopListItem12 topListItem12 = new GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LiveResult.GetAIMediaAuditJob_TopListItem12();
+				topListItem12.Label = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LiveResult.TopList["+ i +"].Label");
+				topListItem12.Score = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LiveResult.TopList["+ i +"].Score");
+				topListItem12.Timestamp = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LiveResult.TopList["+ i +"].Timestamp");
+				topListItem12.Url = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LiveResult.TopList["+ i +"].Url");
+
+				liveResult_topList10.Add(topListItem12);
+			}
+			liveResult.TopList10 = liveResult_topList10;
+			videoResult.LiveResult = liveResult;
+
+			GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LogoResult logoResult = new GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LogoResult();
+			logoResult.Suggestion = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LogoResult.Suggestion");
+			logoResult.Label = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LogoResult.Label");
+			logoResult.MaxScore = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LogoResult.MaxScore");
+			logoResult.AverageScore = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LogoResult.AverageScore");
+
+			List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LogoResult.GetAIMediaAuditJob_CounterListItem15> logoResult_counterList13 = new List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LogoResult.GetAIMediaAuditJob_CounterListItem15>();
+			for (int i = 0; i < context.Length("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LogoResult.CounterList.Length"); i++) {
+				GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LogoResult.GetAIMediaAuditJob_CounterListItem15 counterListItem15 = new GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LogoResult.GetAIMediaAuditJob_CounterListItem15();
+				counterListItem15.Label = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LogoResult.CounterList["+ i +"].Label");
+				counterListItem15.Count = context.IntegerValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LogoResult.CounterList["+ i +"].Count");
+
+				logoResult_counterList13.Add(counterListItem15);
+			}
+			logoResult.CounterList13 = logoResult_counterList13;
+
+			List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LogoResult.GetAIMediaAuditJob_TopListItem16> logoResult_topList14 = new List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LogoResult.GetAIMediaAuditJob_TopListItem16>();
+			for (int i = 0; i < context.Length("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LogoResult.TopList.Length"); i++) {
+				GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LogoResult.GetAIMediaAuditJob_TopListItem16 topListItem16 = new GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_VideoResult.GetAIMediaAuditJob_LogoResult.GetAIMediaAuditJob_TopListItem16();
+				topListItem16.Label = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LogoResult.TopList["+ i +"].Label");
+				topListItem16.Score = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LogoResult.TopList["+ i +"].Score");
+				topListItem16.Timestamp = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LogoResult.TopList["+ i +"].Timestamp");
+				topListItem16.Url = context.StringValue("GetAIMediaAuditJob.MediaAuditJob.Data.VideoResult.LogoResult.TopList["+ i +"].Url");
+
+				logoResult_topList14.Add(topListItem16);
+			}
+			logoResult.TopList14 = logoResult_topList14;
+			videoResult.LogoResult = logoResult;
 			data.VideoResult = videoResult;
 
 			List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_ImageResultItem> data_imageResult = new List<GetAIMediaAuditJobResponse.GetAIMediaAuditJob_MediaAuditJob.GetAIMediaAuditJob_Data.GetAIMediaAuditJob_ImageResultItem>();

@@ -40,9 +40,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string ownerAccount;
 
-		private string jobIds;
-
 		private string ownerId;
+
+		private string jobIds;
 
 		public string ResourceOwnerId
 		{
@@ -83,19 +83,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string JobIds
-		{
-			get
-			{
-				return jobIds;
-			}
-			set	
-			{
-				jobIds = value;
-				DictionaryUtil.Add(QueryParameters, "JobIds", value);
-			}
-		}
-
 		public string OwnerId
 		{
 			get
@@ -106,6 +93,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string JobIds
+		{
+			get
+			{
+				return jobIds;
+			}
+			set	
+			{
+				jobIds = value;
+				DictionaryUtil.Add(QueryParameters, "JobIds", value);
 			}
 		}
 

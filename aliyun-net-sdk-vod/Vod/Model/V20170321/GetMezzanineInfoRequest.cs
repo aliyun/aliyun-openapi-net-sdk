@@ -36,19 +36,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
+		private string outputType;
+
+		private long? authTimeout;
+
 		private string resourceOwnerAccount;
 
 		private string videoId;
 
-		private bool? previewSegment;
-
-		private string outputType;
-
-		private string additionType;
-
 		private long? ownerId;
 
-		private long? authTimeout;
+		private bool? previewSegment;
+
+		private string additionType;
 
 		public long? ResourceOwnerId
 		{
@@ -60,6 +60,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string OutputType
+		{
+			get
+			{
+				return outputType;
+			}
+			set	
+			{
+				outputType = value;
+				DictionaryUtil.Add(QueryParameters, "OutputType", value);
+			}
+		}
+
+		public long? AuthTimeout
+		{
+			get
+			{
+				return authTimeout;
+			}
+			set	
+			{
+				authTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
 			}
 		}
 
@@ -89,45 +115,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public bool? PreviewSegment
-		{
-			get
-			{
-				return previewSegment;
-			}
-			set	
-			{
-				previewSegment = value;
-				DictionaryUtil.Add(QueryParameters, "PreviewSegment", value.ToString());
-			}
-		}
-
-		public string OutputType
-		{
-			get
-			{
-				return outputType;
-			}
-			set	
-			{
-				outputType = value;
-				DictionaryUtil.Add(QueryParameters, "OutputType", value);
-			}
-		}
-
-		public string AdditionType
-		{
-			get
-			{
-				return additionType;
-			}
-			set	
-			{
-				additionType = value;
-				DictionaryUtil.Add(QueryParameters, "AdditionType", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -141,16 +128,29 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public long? AuthTimeout
+		public bool? PreviewSegment
 		{
 			get
 			{
-				return authTimeout;
+				return previewSegment;
 			}
 			set	
 			{
-				authTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
+				previewSegment = value;
+				DictionaryUtil.Add(QueryParameters, "PreviewSegment", value.ToString());
+			}
+		}
+
+		public string AdditionType
+		{
+			get
+			{
+				return additionType;
+			}
+			set	
+			{
+				additionType = value;
+				DictionaryUtil.Add(QueryParameters, "AdditionType", value);
 			}
 		}
 

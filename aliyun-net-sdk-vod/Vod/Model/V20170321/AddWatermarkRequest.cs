@@ -36,19 +36,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
+		private string type;
+
 		private string resourceOwnerAccount;
+
+		private long? ownerId;
+
+		private string watermarkConfig;
 
 		private string appId;
 
 		private string name;
 
 		private string fileUrl;
-
-		private long? ownerId;
-
-		private string type;
-
-		private string watermarkConfig;
 
 		public long? ResourceOwnerId
 		{
@@ -63,6 +63,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -73,6 +86,32 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string WatermarkConfig
+		{
+			get
+			{
+				return watermarkConfig;
+			}
+			set	
+			{
+				watermarkConfig = value;
+				DictionaryUtil.Add(QueryParameters, "WatermarkConfig", value);
 			}
 		}
 
@@ -112,45 +151,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				fileUrl = value;
 				DictionaryUtil.Add(QueryParameters, "FileUrl", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string WatermarkConfig
-		{
-			get
-			{
-				return watermarkConfig;
-			}
-			set	
-			{
-				watermarkConfig = value;
-				DictionaryUtil.Add(QueryParameters, "WatermarkConfig", value);
 			}
 		}
 

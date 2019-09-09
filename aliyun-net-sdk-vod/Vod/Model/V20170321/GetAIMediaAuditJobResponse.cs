@@ -502,6 +502,12 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 					private GetAIMediaAuditJob_PornResult pornResult;
 
+					private GetAIMediaAuditJob_AdResult adResult;
+
+					private GetAIMediaAuditJob_LiveResult liveResult;
+
+					private GetAIMediaAuditJob_LogoResult logoResult;
+
 					public string Suggestion
 					{
 						get
@@ -547,6 +553,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						set	
 						{
 							pornResult = value;
+						}
+					}
+
+					public GetAIMediaAuditJob_AdResult AdResult
+					{
+						get
+						{
+							return adResult;
+						}
+						set	
+						{
+							adResult = value;
+						}
+					}
+
+					public GetAIMediaAuditJob_LiveResult LiveResult
+					{
+						get
+						{
+							return liveResult;
+						}
+						set	
+						{
+							liveResult = value;
+						}
+					}
+
+					public GetAIMediaAuditJob_LogoResult LogoResult
+					{
+						get
+						{
+							return logoResult;
+						}
+						set	
+						{
+							logoResult = value;
 						}
 					}
 
@@ -850,6 +892,546 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						}
 
 						public class GetAIMediaAuditJob_TopListItem4
+						{
+
+							private string label;
+
+							private string score;
+
+							private string timestamp;
+
+							private string url;
+
+							public string Label
+							{
+								get
+								{
+									return label;
+								}
+								set	
+								{
+									label = value;
+								}
+							}
+
+							public string Score
+							{
+								get
+								{
+									return score;
+								}
+								set	
+								{
+									score = value;
+								}
+							}
+
+							public string Timestamp
+							{
+								get
+								{
+									return timestamp;
+								}
+								set	
+								{
+									timestamp = value;
+								}
+							}
+
+							public string Url
+							{
+								get
+								{
+									return url;
+								}
+								set	
+								{
+									url = value;
+								}
+							}
+						}
+					}
+
+					public class GetAIMediaAuditJob_AdResult
+					{
+
+						private string suggestion;
+
+						private string label;
+
+						private string maxScore;
+
+						private string averageScore;
+
+						private List<GetAIMediaAuditJob_CounterListItem7> counterList5;
+
+						private List<GetAIMediaAuditJob_TopListItem8> topList6;
+
+						public string Suggestion
+						{
+							get
+							{
+								return suggestion;
+							}
+							set	
+							{
+								suggestion = value;
+							}
+						}
+
+						public string Label
+						{
+							get
+							{
+								return label;
+							}
+							set	
+							{
+								label = value;
+							}
+						}
+
+						public string MaxScore
+						{
+							get
+							{
+								return maxScore;
+							}
+							set	
+							{
+								maxScore = value;
+							}
+						}
+
+						public string AverageScore
+						{
+							get
+							{
+								return averageScore;
+							}
+							set	
+							{
+								averageScore = value;
+							}
+						}
+
+						public List<GetAIMediaAuditJob_CounterListItem7> CounterList5
+						{
+							get
+							{
+								return counterList5;
+							}
+							set	
+							{
+								counterList5 = value;
+							}
+						}
+
+						public List<GetAIMediaAuditJob_TopListItem8> TopList6
+						{
+							get
+							{
+								return topList6;
+							}
+							set	
+							{
+								topList6 = value;
+							}
+						}
+
+						public class GetAIMediaAuditJob_CounterListItem7
+						{
+
+							private string label;
+
+							private int? count;
+
+							public string Label
+							{
+								get
+								{
+									return label;
+								}
+								set	
+								{
+									label = value;
+								}
+							}
+
+							public int? Count
+							{
+								get
+								{
+									return count;
+								}
+								set	
+								{
+									count = value;
+								}
+							}
+						}
+
+						public class GetAIMediaAuditJob_TopListItem8
+						{
+
+							private string label;
+
+							private string score;
+
+							private string timestamp;
+
+							private string url;
+
+							public string Label
+							{
+								get
+								{
+									return label;
+								}
+								set	
+								{
+									label = value;
+								}
+							}
+
+							public string Score
+							{
+								get
+								{
+									return score;
+								}
+								set	
+								{
+									score = value;
+								}
+							}
+
+							public string Timestamp
+							{
+								get
+								{
+									return timestamp;
+								}
+								set	
+								{
+									timestamp = value;
+								}
+							}
+
+							public string Url
+							{
+								get
+								{
+									return url;
+								}
+								set	
+								{
+									url = value;
+								}
+							}
+						}
+					}
+
+					public class GetAIMediaAuditJob_LiveResult
+					{
+
+						private string suggestion;
+
+						private string label;
+
+						private string maxScore;
+
+						private string averageScore;
+
+						private List<GetAIMediaAuditJob_CounterListItem11> counterList9;
+
+						private List<GetAIMediaAuditJob_TopListItem12> topList10;
+
+						public string Suggestion
+						{
+							get
+							{
+								return suggestion;
+							}
+							set	
+							{
+								suggestion = value;
+							}
+						}
+
+						public string Label
+						{
+							get
+							{
+								return label;
+							}
+							set	
+							{
+								label = value;
+							}
+						}
+
+						public string MaxScore
+						{
+							get
+							{
+								return maxScore;
+							}
+							set	
+							{
+								maxScore = value;
+							}
+						}
+
+						public string AverageScore
+						{
+							get
+							{
+								return averageScore;
+							}
+							set	
+							{
+								averageScore = value;
+							}
+						}
+
+						public List<GetAIMediaAuditJob_CounterListItem11> CounterList9
+						{
+							get
+							{
+								return counterList9;
+							}
+							set	
+							{
+								counterList9 = value;
+							}
+						}
+
+						public List<GetAIMediaAuditJob_TopListItem12> TopList10
+						{
+							get
+							{
+								return topList10;
+							}
+							set	
+							{
+								topList10 = value;
+							}
+						}
+
+						public class GetAIMediaAuditJob_CounterListItem11
+						{
+
+							private string label;
+
+							private int? count;
+
+							public string Label
+							{
+								get
+								{
+									return label;
+								}
+								set	
+								{
+									label = value;
+								}
+							}
+
+							public int? Count
+							{
+								get
+								{
+									return count;
+								}
+								set	
+								{
+									count = value;
+								}
+							}
+						}
+
+						public class GetAIMediaAuditJob_TopListItem12
+						{
+
+							private string label;
+
+							private string score;
+
+							private string timestamp;
+
+							private string url;
+
+							public string Label
+							{
+								get
+								{
+									return label;
+								}
+								set	
+								{
+									label = value;
+								}
+							}
+
+							public string Score
+							{
+								get
+								{
+									return score;
+								}
+								set	
+								{
+									score = value;
+								}
+							}
+
+							public string Timestamp
+							{
+								get
+								{
+									return timestamp;
+								}
+								set	
+								{
+									timestamp = value;
+								}
+							}
+
+							public string Url
+							{
+								get
+								{
+									return url;
+								}
+								set	
+								{
+									url = value;
+								}
+							}
+						}
+					}
+
+					public class GetAIMediaAuditJob_LogoResult
+					{
+
+						private string suggestion;
+
+						private string label;
+
+						private string maxScore;
+
+						private string averageScore;
+
+						private List<GetAIMediaAuditJob_CounterListItem15> counterList13;
+
+						private List<GetAIMediaAuditJob_TopListItem16> topList14;
+
+						public string Suggestion
+						{
+							get
+							{
+								return suggestion;
+							}
+							set	
+							{
+								suggestion = value;
+							}
+						}
+
+						public string Label
+						{
+							get
+							{
+								return label;
+							}
+							set	
+							{
+								label = value;
+							}
+						}
+
+						public string MaxScore
+						{
+							get
+							{
+								return maxScore;
+							}
+							set	
+							{
+								maxScore = value;
+							}
+						}
+
+						public string AverageScore
+						{
+							get
+							{
+								return averageScore;
+							}
+							set	
+							{
+								averageScore = value;
+							}
+						}
+
+						public List<GetAIMediaAuditJob_CounterListItem15> CounterList13
+						{
+							get
+							{
+								return counterList13;
+							}
+							set	
+							{
+								counterList13 = value;
+							}
+						}
+
+						public List<GetAIMediaAuditJob_TopListItem16> TopList14
+						{
+							get
+							{
+								return topList14;
+							}
+							set	
+							{
+								topList14 = value;
+							}
+						}
+
+						public class GetAIMediaAuditJob_CounterListItem15
+						{
+
+							private string label;
+
+							private int? count;
+
+							public string Label
+							{
+								get
+								{
+									return label;
+								}
+								set	
+								{
+									label = value;
+								}
+							}
+
+							public int? Count
+							{
+								get
+								{
+									return count;
+								}
+								set	
+								{
+									count = value;
+								}
+							}
+						}
+
+						public class GetAIMediaAuditJob_TopListItem16
 						{
 
 							private string label;

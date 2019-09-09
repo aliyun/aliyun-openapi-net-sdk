@@ -36,17 +36,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string messageCallback;
-
-		private long? ownerId;
-
-		private string priority;
 
 		private string storageLocation;
 
 		private string userData;
+
+		private string workflowId;
+
+		private string resourceOwnerAccount;
+
+		private long? ownerId;
+
+		private string priority;
 
 		private string templateGroupId;
 
@@ -55,8 +57,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string uploadURLs;
 
 		private string appId;
-
-		private string workflowId;
 
 		public long? ResourceOwnerId
 		{
@@ -71,19 +71,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string MessageCallback
 		{
 			get
@@ -94,32 +81,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				messageCallback = value;
 				DictionaryUtil.Add(QueryParameters, "MessageCallback", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Priority
-		{
-			get
-			{
-				return priority;
-			}
-			set	
-			{
-				priority = value;
-				DictionaryUtil.Add(QueryParameters, "Priority", value);
 			}
 		}
 
@@ -146,6 +107,58 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				userData = value;
 				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public string WorkflowId
+		{
+			get
+			{
+				return workflowId;
+			}
+			set	
+			{
+				workflowId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Priority
+		{
+			get
+			{
+				return priority;
+			}
+			set	
+			{
+				priority = value;
+				DictionaryUtil.Add(QueryParameters, "Priority", value);
 			}
 		}
 
@@ -198,19 +211,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
-			}
-		}
-
-		public string WorkflowId
-		{
-			get
-			{
-				return workflowId;
-			}
-			set	
-			{
-				workflowId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
 			}
 		}
 

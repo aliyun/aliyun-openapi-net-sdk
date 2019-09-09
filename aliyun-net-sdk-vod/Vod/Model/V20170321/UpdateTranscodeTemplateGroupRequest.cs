@@ -38,15 +38,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string locked;
 
-		private string name;
+		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string locked;
-
 		private string transcodeTemplateGroupId;
+
+		private string name;
 
 		public string TranscodeTemplateList
 		{
@@ -74,6 +74,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string Locked
+		{
+			get
+			{
+				return locked;
+			}
+			set	
+			{
+				locked = value;
+				DictionaryUtil.Add(QueryParameters, "Locked", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -84,19 +97,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -113,19 +113,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string Locked
-		{
-			get
-			{
-				return locked;
-			}
-			set	
-			{
-				locked = value;
-				DictionaryUtil.Add(QueryParameters, "Locked", value);
-			}
-		}
-
 		public string TranscodeTemplateGroupId
 		{
 			get
@@ -136,6 +123,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				transcodeTemplateGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "TranscodeTemplateGroupId", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

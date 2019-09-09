@@ -34,32 +34,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
         {
         }
 
-		private string userData;
-
 		private long? resourceOwnerId;
 
-		private string templateGroupId;
-
-		private string resourceOwnerAccount;
-
-		private long? ownerId;
+		private string userData;
 
 		private string registerMetadatas;
 
 		private string workflowId;
 
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
+		private string resourceOwnerAccount;
+
+		private long? ownerId;
+
+		private string templateGroupId;
 
 		public long? ResourceOwnerId
 		{
@@ -74,16 +61,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string TemplateGroupId
+		public string UserData
 		{
 			get
 			{
-				return templateGroupId;
+				return userData;
 			}
 			set	
 			{
-				templateGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public string RegisterMetadatas
+		{
+			get
+			{
+				return registerMetadatas;
+			}
+			set	
+			{
+				registerMetadatas = value;
+				DictionaryUtil.Add(QueryParameters, "RegisterMetadatas", value);
+			}
+		}
+
+		public string WorkflowId
+		{
+			get
+			{
+				return workflowId;
+			}
+			set	
+			{
+				workflowId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
 			}
 		}
 
@@ -113,29 +126,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string RegisterMetadatas
+		public string TemplateGroupId
 		{
 			get
 			{
-				return registerMetadatas;
+				return templateGroupId;
 			}
 			set	
 			{
-				registerMetadatas = value;
-				DictionaryUtil.Add(QueryParameters, "RegisterMetadatas", value);
-			}
-		}
-
-		public string WorkflowId
-		{
-			get
-			{
-				return workflowId;
-			}
-			set	
-			{
-				workflowId = value;
-				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
+				templateGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
 			}
 		}
 

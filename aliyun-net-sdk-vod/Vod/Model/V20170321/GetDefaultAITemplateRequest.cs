@@ -38,9 +38,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private string resourceOwnerAccount;
 
-		private string templateType;
-
 		private long? ownerId;
+
+		private string templateType;
 
 		public long? ResourceOwnerId
 		{
@@ -68,19 +68,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string TemplateType
-		{
-			get
-			{
-				return templateType;
-			}
-			set	
-			{
-				templateType = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateType", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -91,6 +78,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string TemplateType
+		{
+			get
+			{
+				return templateType;
+			}
+			set	
+			{
+				templateType = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateType", value);
 			}
 		}
 

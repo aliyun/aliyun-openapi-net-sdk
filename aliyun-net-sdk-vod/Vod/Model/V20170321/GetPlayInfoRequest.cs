@@ -36,21 +36,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
-		private string streamType;
-
 		private string formats;
-
-		private string resourceOwnerAccount;
 
 		private string channel;
 
-		private string videoId;
-
 		private string playerVersion;
-
-		private long? ownerId;
-
-		private string resultType;
 
 		private string rand;
 
@@ -63,6 +53,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string definition;
 
 		private long? authTimeout;
+
+		private string streamType;
+
+		private string resourceOwnerAccount;
+
+		private string videoId;
+
+		private long? ownerId;
+
+		private string resultType;
 
 		private string authInfo;
 
@@ -79,19 +79,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string StreamType
-		{
-			get
-			{
-				return streamType;
-			}
-			set	
-			{
-				streamType = value;
-				DictionaryUtil.Add(QueryParameters, "StreamType", value);
-			}
-		}
-
 		public string Formats
 		{
 			get
@@ -102,19 +89,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				formats = value;
 				DictionaryUtil.Add(QueryParameters, "Formats", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -131,19 +105,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
-		{
-			get
-			{
-				return videoId;
-			}
-			set	
-			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
-			}
-		}
-
 		public string PlayerVersion
 		{
 			get
@@ -154,32 +115,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				playerVersion = value;
 				DictionaryUtil.Add(QueryParameters, "PlayerVersion", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ResultType
-		{
-			get
-			{
-				return resultType;
-			}
-			set	
-			{
-				resultType = value;
-				DictionaryUtil.Add(QueryParameters, "ResultType", value);
 			}
 		}
 
@@ -258,6 +193,71 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				authTimeout = value;
 				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
+			}
+		}
+
+		public string StreamType
+		{
+			get
+			{
+				return streamType;
+			}
+			set	
+			{
+				streamType = value;
+				DictionaryUtil.Add(QueryParameters, "StreamType", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string VideoId
+		{
+			get
+			{
+				return videoId;
+			}
+			set	
+			{
+				videoId = value;
+				DictionaryUtil.Add(QueryParameters, "VideoId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ResultType
+		{
+			get
+			{
+				return resultType;
+			}
+			set	
+			{
+				resultType = value;
+				DictionaryUtil.Add(QueryParameters, "ResultType", value);
 			}
 		}
 
