@@ -32,6 +32,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
         public CancelTaskRequest()
             : base("elasticsearch", "2017-06-13", "CancelTask", "elasticsearch", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/openapi/instances/[InstanceId]/actions/cancel-task";
 			Method = MethodType.POST;
         }

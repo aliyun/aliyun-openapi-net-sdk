@@ -32,6 +32,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
         public UpdatePublicNetworkRequest()
             : base("elasticsearch", "2017-06-13", "UpdatePublicNetwork", "elasticsearch", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/openapi/instances/[InstanceId]/public-network";
 			Method = MethodType.POST;
         }

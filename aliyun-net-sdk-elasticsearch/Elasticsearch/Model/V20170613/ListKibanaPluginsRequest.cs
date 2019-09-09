@@ -32,6 +32,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
         public ListKibanaPluginsRequest()
             : base("elasticsearch", "2017-06-13", "ListKibanaPlugins", "elasticsearch", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/openapi/instances/[InstanceId]/kibana-plugins";
 			Method = MethodType.GET;
         }

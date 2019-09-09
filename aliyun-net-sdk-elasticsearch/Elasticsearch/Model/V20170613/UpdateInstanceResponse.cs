@@ -74,9 +74,25 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string updatedAt;
 
+			private string kibanaDomain;
+
+			private int? kibanaPort;
+
+			private string publicDomain;
+
+			private int? publicPort;
+
+			private List<UpdateInstance_DictListItem> dictList;
+
+			private List<UpdateInstance_SynonymsDictsItem> synonymsDicts;
+
 			private UpdateInstance_NodeSpec nodeSpec;
 
 			private UpdateInstance_NetworkConfig networkConfig;
+
+			private UpdateInstance_KibanaConfiguration kibanaConfiguration;
+
+			private UpdateInstance_MasterConfiguration masterConfiguration;
 
 			public string InstanceId
 			{
@@ -186,6 +202,78 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public string KibanaDomain
+			{
+				get
+				{
+					return kibanaDomain;
+				}
+				set	
+				{
+					kibanaDomain = value;
+				}
+			}
+
+			public int? KibanaPort
+			{
+				get
+				{
+					return kibanaPort;
+				}
+				set	
+				{
+					kibanaPort = value;
+				}
+			}
+
+			public string PublicDomain
+			{
+				get
+				{
+					return publicDomain;
+				}
+				set	
+				{
+					publicDomain = value;
+				}
+			}
+
+			public int? PublicPort
+			{
+				get
+				{
+					return publicPort;
+				}
+				set	
+				{
+					publicPort = value;
+				}
+			}
+
+			public List<UpdateInstance_DictListItem> DictList
+			{
+				get
+				{
+					return dictList;
+				}
+				set	
+				{
+					dictList = value;
+				}
+			}
+
+			public List<UpdateInstance_SynonymsDictsItem> SynonymsDicts
+			{
+				get
+				{
+					return synonymsDicts;
+				}
+				set	
+				{
+					synonymsDicts = value;
+				}
+			}
+
 			public UpdateInstance_NodeSpec NodeSpec
 			{
 				get
@@ -210,12 +298,158 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public UpdateInstance_KibanaConfiguration KibanaConfiguration
+			{
+				get
+				{
+					return kibanaConfiguration;
+				}
+				set	
+				{
+					kibanaConfiguration = value;
+				}
+			}
+
+			public UpdateInstance_MasterConfiguration MasterConfiguration
+			{
+				get
+				{
+					return masterConfiguration;
+				}
+				set	
+				{
+					masterConfiguration = value;
+				}
+			}
+
+			public class UpdateInstance_DictListItem
+			{
+
+				private string name;
+
+				private long? fileSize;
+
+				private string type;
+
+				private string sourceType;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public long? FileSize
+				{
+					get
+					{
+						return fileSize;
+					}
+					set	
+					{
+						fileSize = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string SourceType
+				{
+					get
+					{
+						return sourceType;
+					}
+					set	
+					{
+						sourceType = value;
+					}
+				}
+			}
+
+			public class UpdateInstance_SynonymsDictsItem
+			{
+
+				private string name;
+
+				private long? fileSize;
+
+				private string type;
+
+				private string sourceType;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public long? FileSize
+				{
+					get
+					{
+						return fileSize;
+					}
+					set	
+					{
+						fileSize = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string SourceType
+				{
+					get
+					{
+						return sourceType;
+					}
+					set	
+					{
+						sourceType = value;
+					}
+				}
+			}
+
 			public class UpdateInstance_NodeSpec
 			{
 
 				private string spec;
 
 				private int? disk;
+
+				private string diskType;
 
 				public string Spec
 				{
@@ -238,6 +472,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						disk = value;
+					}
+				}
+
+				public string DiskType
+				{
+					get
+					{
+						return diskType;
+					}
+					set	
+					{
+						diskType = value;
 					}
 				}
 			}
@@ -298,6 +544,126 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						vsArea = value;
+					}
+				}
+			}
+
+			public class UpdateInstance_KibanaConfiguration
+			{
+
+				private string spec;
+
+				private int? amount;
+
+				private string diskType;
+
+				private int? disk;
+
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
+
+				public int? Amount
+				{
+					get
+					{
+						return amount;
+					}
+					set	
+					{
+						amount = value;
+					}
+				}
+
+				public string DiskType
+				{
+					get
+					{
+						return diskType;
+					}
+					set	
+					{
+						diskType = value;
+					}
+				}
+
+				public int? Disk
+				{
+					get
+					{
+						return disk;
+					}
+					set	
+					{
+						disk = value;
+					}
+				}
+			}
+
+			public class UpdateInstance_MasterConfiguration
+			{
+
+				private string spec;
+
+				private int? amount;
+
+				private string diskType;
+
+				private int? disk;
+
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
+
+				public int? Amount
+				{
+					get
+					{
+						return amount;
+					}
+					set	
+					{
+						amount = value;
+					}
+				}
+
+				public string DiskType
+				{
+					get
+					{
+						return diskType;
+					}
+					set	
+					{
+						diskType = value;
+					}
+				}
+
+				public int? Disk
+				{
+					get
+					{
+						return disk;
+					}
+					set	
+					{
+						disk = value;
 					}
 				}
 			}

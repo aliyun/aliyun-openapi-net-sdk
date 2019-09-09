@@ -32,11 +32,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
         public UpdateInstanceRequest()
             : base("elasticsearch", "2017-06-13", "UpdateInstance", "elasticsearch", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/openapi/instances/[InstanceId]";
 			Method = MethodType.PUT;
         }
 
 		private string instanceId;
+
+		private string clientToken;
 
 		public string InstanceId
 		{
@@ -48,6 +55,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				instanceId = value;
 				DictionaryUtil.Add(PathParameters, "InstanceId", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "clientToken", value);
 			}
 		}
 

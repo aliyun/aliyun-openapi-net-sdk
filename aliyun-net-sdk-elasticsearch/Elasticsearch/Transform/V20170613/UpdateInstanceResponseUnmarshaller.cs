@@ -43,10 +43,15 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			result.EsVersion = context.StringValue("UpdateInstance.Result.EsVersion");
 			result.CreatedAt = context.StringValue("UpdateInstance.Result.CreatedAt");
 			result.UpdatedAt = context.StringValue("UpdateInstance.Result.UpdatedAt");
+			result.KibanaDomain = context.StringValue("UpdateInstance.Result.KibanaDomain");
+			result.KibanaPort = context.IntegerValue("UpdateInstance.Result.KibanaPort");
+			result.PublicDomain = context.StringValue("UpdateInstance.Result.PublicDomain");
+			result.PublicPort = context.IntegerValue("UpdateInstance.Result.PublicPort");
 
 			UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_NodeSpec nodeSpec = new UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_NodeSpec();
 			nodeSpec.Spec = context.StringValue("UpdateInstance.Result.NodeSpec.Spec");
 			nodeSpec.Disk = context.IntegerValue("UpdateInstance.Result.NodeSpec.Disk");
+			nodeSpec.DiskType = context.StringValue("UpdateInstance.Result.NodeSpec.DiskType");
 			result.NodeSpec = nodeSpec;
 
 			UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_NetworkConfig networkConfig = new UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_NetworkConfig();
@@ -55,6 +60,44 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			networkConfig.VswitchId = context.StringValue("UpdateInstance.Result.NetworkConfig.VswitchId");
 			networkConfig.VsArea = context.StringValue("UpdateInstance.Result.NetworkConfig.VsArea");
 			result.NetworkConfig = networkConfig;
+
+			UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_KibanaConfiguration kibanaConfiguration = new UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_KibanaConfiguration();
+			kibanaConfiguration.Spec = context.StringValue("UpdateInstance.Result.KibanaConfiguration.Spec");
+			kibanaConfiguration.Amount = context.IntegerValue("UpdateInstance.Result.KibanaConfiguration.Amount");
+			kibanaConfiguration.DiskType = context.StringValue("UpdateInstance.Result.KibanaConfiguration.DiskType");
+			kibanaConfiguration.Disk = context.IntegerValue("UpdateInstance.Result.KibanaConfiguration.Disk");
+			result.KibanaConfiguration = kibanaConfiguration;
+
+			UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_MasterConfiguration masterConfiguration = new UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_MasterConfiguration();
+			masterConfiguration.Spec = context.StringValue("UpdateInstance.Result.MasterConfiguration.Spec");
+			masterConfiguration.Amount = context.IntegerValue("UpdateInstance.Result.MasterConfiguration.Amount");
+			masterConfiguration.DiskType = context.StringValue("UpdateInstance.Result.MasterConfiguration.DiskType");
+			masterConfiguration.Disk = context.IntegerValue("UpdateInstance.Result.MasterConfiguration.Disk");
+			result.MasterConfiguration = masterConfiguration;
+
+			List<UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_DictListItem> result_dictList = new List<UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_DictListItem>();
+			for (int i = 0; i < context.Length("UpdateInstance.Result.DictList.Length"); i++) {
+				UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_DictListItem dictListItem = new UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_DictListItem();
+				dictListItem.Name = context.StringValue("UpdateInstance.Result.DictList["+ i +"].Name");
+				dictListItem.FileSize = context.LongValue("UpdateInstance.Result.DictList["+ i +"].FileSize");
+				dictListItem.Type = context.StringValue("UpdateInstance.Result.DictList["+ i +"].Type");
+				dictListItem.SourceType = context.StringValue("UpdateInstance.Result.DictList["+ i +"].SourceType");
+
+				result_dictList.Add(dictListItem);
+			}
+			result.DictList = result_dictList;
+
+			List<UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_SynonymsDictsItem> result_synonymsDicts = new List<UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_SynonymsDictsItem>();
+			for (int i = 0; i < context.Length("UpdateInstance.Result.SynonymsDicts.Length"); i++) {
+				UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_SynonymsDictsItem synonymsDictsItem = new UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_SynonymsDictsItem();
+				synonymsDictsItem.Name = context.StringValue("UpdateInstance.Result.SynonymsDicts["+ i +"].Name");
+				synonymsDictsItem.FileSize = context.LongValue("UpdateInstance.Result.SynonymsDicts["+ i +"].FileSize");
+				synonymsDictsItem.Type = context.StringValue("UpdateInstance.Result.SynonymsDicts["+ i +"].Type");
+				synonymsDictsItem.SourceType = context.StringValue("UpdateInstance.Result.SynonymsDicts["+ i +"].SourceType");
+
+				result_synonymsDicts.Add(synonymsDictsItem);
+			}
+			result.SynonymsDicts = result_synonymsDicts;
 			updateInstanceResponse.Result = result;
         
 			return updateInstanceResponse;
