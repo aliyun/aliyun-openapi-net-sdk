@@ -108,6 +108,7 @@ namespace Aliyun.Acs.Core.Profile
         public void AddEndpoint(string endpointName, string regionId, string product, string domain,
             bool isNeverExpire = false)
         {
+            EndpointUserConfig.AddEndpoint(product, regionId, domain);
             endpointResolve.AddEndpoint(endpointName, regionId, product, domain, isNeverExpire);
         }
 

@@ -178,7 +178,14 @@ namespace Aliyun.Acs.Core
                 request.RegionId = regionId;
             }
 
-            request.SetProductDomain();
+            if (request.ProductDomain == null)
+            {
+                request.ProductDomain = EndpointUserConfig.GetProductDomain(request.Product, request.RegionId);
+                if (request.ProductDomain == null)
+                {
+                    request.SetProductDomain();
+                }
+            }
 
             List<Endpoint> endpoints = null;
             if (null != clientProfile)
@@ -209,7 +216,14 @@ namespace Aliyun.Acs.Core
                 request.RegionId = region;
             }
 
-            request.SetProductDomain();
+            if (request.ProductDomain == null)
+            {
+                request.ProductDomain = EndpointUserConfig.GetProductDomain(request.Product, request.RegionId);
+                if (request.ProductDomain == null)
+                {
+                    request.SetProductDomain();
+                }
+            }
 
             var credentials = credentialsProvider.GetCredentials();
             if (credentials == null)
