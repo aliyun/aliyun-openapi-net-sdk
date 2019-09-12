@@ -1,3 +1,6 @@
+### 2019-09-12 Version 1.5.3
+* Fixed endpoint resolve. 
+
 ### 2019-07-08 Version 1.5.2
 * Deprecated Newtonsoft.Json package
 * Convert json file to cs file
