@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			EipFillParamsResponse eipFillParamsResponse = new EipFillParamsResponse();
 
 			eipFillParamsResponse.HttpResponse = context.HttpResponse;
-			eipFillParamsResponse.RequestId = context.StringValue("EipFillParams.RequestId");
-			eipFillParamsResponse.Data = context.StringValue("EipFillParams.Data");
-			eipFillParamsResponse.Code = context.StringValue("EipFillParams.Code");
-			eipFillParamsResponse.Success = context.BooleanValue("EipFillParams.Success");
-			eipFillParamsResponse.Message = context.StringValue("EipFillParams.Message");
+			eipFillParamsResponse.RequestId = context.StringValue("EipFillParams.requestId");
+			eipFillParamsResponse.Data = context.StringValue("EipFillParams.data");
+			eipFillParamsResponse.Code = context.StringValue("EipFillParams.code");
+			eipFillParamsResponse.Success = context.BooleanValue("EipFillParams.success");
+			eipFillParamsResponse.Message = context.StringValue("EipFillParams.message");
         
 			return eipFillParamsResponse;
         }

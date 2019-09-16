@@ -31,11 +31,11 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			EipNotifyPaidResponse eipNotifyPaidResponse = new EipNotifyPaidResponse();
 
 			eipNotifyPaidResponse.HttpResponse = context.HttpResponse;
-			eipNotifyPaidResponse.RequestId = context.StringValue("EipNotifyPaid.RequestId");
-			eipNotifyPaidResponse.Data = context.StringValue("EipNotifyPaid.Data");
-			eipNotifyPaidResponse.Code = context.StringValue("EipNotifyPaid.Code");
-			eipNotifyPaidResponse.Message = context.StringValue("EipNotifyPaid.Message");
-			eipNotifyPaidResponse.Success = context.BooleanValue("EipNotifyPaid.Success");
+			eipNotifyPaidResponse.RequestId = context.StringValue("EipNotifyPaid.requestId");
+			eipNotifyPaidResponse.Data = context.StringValue("EipNotifyPaid.data");
+			eipNotifyPaidResponse.Code = context.StringValue("EipNotifyPaid.code");
+			eipNotifyPaidResponse.Message = context.StringValue("EipNotifyPaid.message");
+			eipNotifyPaidResponse.Success = context.BooleanValue("EipNotifyPaid.success");
         
 			return eipNotifyPaidResponse;
         }
