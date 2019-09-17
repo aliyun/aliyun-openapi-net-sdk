@@ -37,9 +37,9 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			queryDeviceStatisticsResponse.ErrorMessage = context.StringValue("QueryDeviceStatistics.ErrorMessage");
 
 			QueryDeviceStatisticsResponse.QueryDeviceStatistics_Data data = new QueryDeviceStatisticsResponse.QueryDeviceStatistics_Data();
-			data.DeviceCount = context.LongValue("QueryDeviceStatistics.Data.DeviceCount");
-			data.OnlineCount = context.LongValue("QueryDeviceStatistics.Data.OnlineCount");
-			data.ActiveCount = context.LongValue("QueryDeviceStatistics.Data.ActiveCount");
+			data.DeviceCount = context.LongValue("QueryDeviceStatistics.Data.deviceCount");
+			data.OnlineCount = context.LongValue("QueryDeviceStatistics.Data.onlineCount");
+			data.ActiveCount = context.LongValue("QueryDeviceStatistics.Data.activeCount");
 			queryDeviceStatisticsResponse.Data = data;
         
 			return queryDeviceStatisticsResponse;

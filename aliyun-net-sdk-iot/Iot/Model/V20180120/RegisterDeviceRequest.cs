@@ -41,15 +41,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string pinCode;
 
+		private string productKey;
+
+		private string devEui;
+
 		private string iotInstanceId;
 
 		private string nickname;
 
 		private string deviceName;
-
-		private string productKey;
-
-		private string devEui;
 
 		public string PinCode
 		{
@@ -61,6 +61,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				pinCode = value;
 				DictionaryUtil.Add(QueryParameters, "PinCode", value);
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string DevEui
+		{
+			get
+			{
+				return devEui;
+			}
+			set	
+			{
+				devEui = value;
+				DictionaryUtil.Add(QueryParameters, "DevEui", value);
 			}
 		}
 
@@ -100,32 +126,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				deviceName = value;
 				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public string DevEui
-		{
-			get
-			{
-				return devEui;
-			}
-			set	
-			{
-				devEui = value;
-				DictionaryUtil.Add(QueryParameters, "DevEui", value);
 			}
 		}
 

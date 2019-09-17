@@ -39,12 +39,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private List<ResponseParam> responseParams = new List<ResponseParam>(){ };
-
-		private string originSql;
-
-		private string displayName;
-
 		private string apiPath;
 
 		private List<RequestParam> requestParams = new List<RequestParam>(){ };
@@ -53,54 +47,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string templateSql;
 
+		private List<ResponseParam> responseParams = new List<ResponseParam>(){ };
+
+		private string originSql;
+
+		private string displayName;
+
 		private string desc;
-
-		public List<ResponseParam> ResponseParams
-		{
-			get
-			{
-				return responseParams;
-			}
-
-			set
-			{
-				responseParams = value;
-				for (int i = 0; i < responseParams.Count; i++)
-				{
-					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Name", responseParams[i].Name);
-					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Type", responseParams[i].Type);
-					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Required", responseParams[i].Required);
-					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Desc", responseParams[i].Desc);
-					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Example", responseParams[i].Example);
-				}
-			}
-		}
-
-		public string OriginSql
-		{
-			get
-			{
-				return originSql;
-			}
-			set	
-			{
-				originSql = value;
-				DictionaryUtil.Add(QueryParameters, "OriginSql", value);
-			}
-		}
-
-		public string DisplayName
-		{
-			get
-			{
-				return displayName;
-			}
-			set	
-			{
-				displayName = value;
-				DictionaryUtil.Add(QueryParameters, "DisplayName", value);
-			}
-		}
 
 		public string ApiPath
 		{
@@ -162,6 +115,53 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public List<ResponseParam> ResponseParams
+		{
+			get
+			{
+				return responseParams;
+			}
+
+			set
+			{
+				responseParams = value;
+				for (int i = 0; i < responseParams.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Name", responseParams[i].Name);
+					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Type", responseParams[i].Type);
+					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Required", responseParams[i].Required);
+					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Desc", responseParams[i].Desc);
+					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Example", responseParams[i].Example);
+				}
+			}
+		}
+
+		public string OriginSql
+		{
+			get
+			{
+				return originSql;
+			}
+			set	
+			{
+				originSql = value;
+				DictionaryUtil.Add(QueryParameters, "OriginSql", value);
+			}
+		}
+
+		public string DisplayName
+		{
+			get
+			{
+				return displayName;
+			}
+			set	
+			{
+				displayName = value;
+				DictionaryUtil.Add(QueryParameters, "DisplayName", value);
+			}
+		}
+
 		public string Desc
 		{
 			get
@@ -175,7 +175,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class ResponseParam
+		public class RequestParam
 		{
 
 			private string name;
@@ -249,7 +249,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class RequestParam
+		public class ResponseParam
 		{
 
 			private string name;

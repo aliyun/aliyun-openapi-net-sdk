@@ -41,13 +41,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string topicFullName;
 
-		private int? qos;
-
 		private string messageContent;
 
-		private string iotInstanceId;
-
 		private string productKey;
+
+		private int? qos;
+
+		private string iotInstanceId;
 
 		public string TopicFullName
 		{
@@ -59,19 +59,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				topicFullName = value;
 				DictionaryUtil.Add(QueryParameters, "TopicFullName", value);
-			}
-		}
-
-		public int? Qos
-		{
-			get
-			{
-				return qos;
-			}
-			set	
-			{
-				qos = value;
-				DictionaryUtil.Add(QueryParameters, "Qos", value.ToString());
 			}
 		}
 
@@ -88,19 +75,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
 		public string ProductKey
 		{
 			get
@@ -111,6 +85,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public int? Qos
+		{
+			get
+			{
+				return qos;
+			}
+			set	
+			{
+				qos = value;
+				DictionaryUtil.Add(QueryParameters, "Qos", value.ToString());
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

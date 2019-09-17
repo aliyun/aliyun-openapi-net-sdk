@@ -43,9 +43,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string messageContent;
 
-		private string iotInstanceId;
-
 		private string productKey;
+
+		private string iotInstanceId;
 
 		public string TopicFullName
 		{
@@ -73,19 +73,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
 		public string ProductKey
 		{
 			get
@@ -96,6 +83,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

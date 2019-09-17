@@ -43,19 +43,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string ruleDesc;
 
-		private string iotInstanceId;
+		private string shortTopic;
 
-		private string name;
+		private string iotInstanceId;
 
 		private string _where;
 
-		private long? ruleId;
+		private int? topicType;
 
 		private string productKey;
 
-		private int? topicType;
+		private string name;
 
-		private string shortTopic;
+		private long? ruleId;
 
 		public string Select
 		{
@@ -83,6 +83,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public string ShortTopic
+		{
+			get
+			{
+				return shortTopic;
+			}
+			set	
+			{
+				shortTopic = value;
+				DictionaryUtil.Add(QueryParameters, "ShortTopic", value);
+			}
+		}
+
 		public string IotInstanceId
 		{
 			get
@@ -93,19 +106,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -122,16 +122,16 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public long? RuleId
+		public int? TopicType
 		{
 			get
 			{
-				return ruleId;
+				return topicType;
 			}
 			set	
 			{
-				ruleId = value;
-				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
+				topicType = value;
+				DictionaryUtil.Add(QueryParameters, "TopicType", value.ToString());
 			}
 		}
 
@@ -148,29 +148,29 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? TopicType
+		public string Name
 		{
 			get
 			{
-				return topicType;
+				return name;
 			}
 			set	
 			{
-				topicType = value;
-				DictionaryUtil.Add(QueryParameters, "TopicType", value.ToString());
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
-		public string ShortTopic
+		public long? RuleId
 		{
 			get
 			{
-				return shortTopic;
+				return ruleId;
 			}
 			set	
 			{
-				shortTopic = value;
-				DictionaryUtil.Add(QueryParameters, "ShortTopic", value);
+				ruleId = value;
+				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
 			}
 		}
 

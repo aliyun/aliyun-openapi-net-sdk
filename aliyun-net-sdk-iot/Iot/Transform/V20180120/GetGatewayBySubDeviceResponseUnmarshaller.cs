@@ -51,8 +51,8 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.Status = context.StringValue("GetGatewayBySubDevice.Data.Status");
 			data.IpAddress = context.StringValue("GetGatewayBySubDevice.Data.IpAddress");
 			data.NodeType = context.StringValue("GetGatewayBySubDevice.Data.NodeType");
-			data.Region = context.StringValue("GetGatewayBySubDevice.Data.Region");
-			data.IotId = context.StringValue("GetGatewayBySubDevice.Data.IotId");
+			data.Region = context.StringValue("GetGatewayBySubDevice.Data.region");
+			data.IotId = context.StringValue("GetGatewayBySubDevice.Data.iotId");
 			getGatewayBySubDeviceResponse.Data = data;
         
 			return getGatewayBySubDeviceResponse;

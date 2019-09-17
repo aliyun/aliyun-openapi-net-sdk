@@ -39,9 +39,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private int? asc;
-
 		private string identifier;
+
+		private long? endTime;
+
+		private long? startTime;
+
+		private string productKey;
+
+		private int? asc;
 
 		private string iotId;
 
@@ -49,26 +55,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? pageSize;
 
-		private long? endTime;
-
 		private string deviceName;
-
-		private long? startTime;
-
-		private string productKey;
-
-		public int? Asc
-		{
-			get
-			{
-				return asc;
-			}
-			set	
-			{
-				asc = value;
-				DictionaryUtil.Add(QueryParameters, "Asc", value.ToString());
-			}
-		}
 
 		public string Identifier
 		{
@@ -80,6 +67,58 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				identifier = value;
 				DictionaryUtil.Add(QueryParameters, "Identifier", value);
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public int? Asc
+		{
+			get
+			{
+				return asc;
+			}
+			set	
+			{
+				asc = value;
+				DictionaryUtil.Add(QueryParameters, "Asc", value.ToString());
 			}
 		}
 
@@ -122,19 +161,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
-			}
-		}
-
 		public string DeviceName
 		{
 			get
@@ -145,32 +171,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				deviceName = value;
 				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

@@ -39,40 +39,27 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private int? dataFormat;
-
 		private int? nodeType;
-
-		private bool? id2;
-
-		private string iotInstanceId;
-
-		private string netType;
-
-		private string productName;
 
 		private string description;
 
-		private string protocolType;
+		private string joinPermissionId;
+
+		private string iotInstanceId;
+
+		private string productName;
 
 		private string aliyunCommodityCode;
 
-		private string joinPermissionId;
-
 		private long? categoryId;
 
-		public int? DataFormat
-		{
-			get
-			{
-				return dataFormat;
-			}
-			set	
-			{
-				dataFormat = value;
-				DictionaryUtil.Add(QueryParameters, "DataFormat", value.ToString());
-			}
-		}
+		private int? dataFormat;
+
+		private bool? id2;
+
+		private string netType;
+
+		private string protocolType;
 
 		public int? NodeType
 		{
@@ -84,58 +71,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				nodeType = value;
 				DictionaryUtil.Add(QueryParameters, "NodeType", value.ToString());
-			}
-		}
-
-		public bool? Id2
-		{
-			get
-			{
-				return id2;
-			}
-			set	
-			{
-				id2 = value;
-				DictionaryUtil.Add(QueryParameters, "Id2", value.ToString());
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string NetType
-		{
-			get
-			{
-				return netType;
-			}
-			set	
-			{
-				netType = value;
-				DictionaryUtil.Add(QueryParameters, "NetType", value);
-			}
-		}
-
-		public string ProductName
-		{
-			get
-			{
-				return productName;
-			}
-			set	
-			{
-				productName = value;
-				DictionaryUtil.Add(QueryParameters, "ProductName", value);
 			}
 		}
 
@@ -152,16 +87,42 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ProtocolType
+		public string JoinPermissionId
 		{
 			get
 			{
-				return protocolType;
+				return joinPermissionId;
 			}
 			set	
 			{
-				protocolType = value;
-				DictionaryUtil.Add(QueryParameters, "ProtocolType", value);
+				joinPermissionId = value;
+				DictionaryUtil.Add(QueryParameters, "JoinPermissionId", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string ProductName
+		{
+			get
+			{
+				return productName;
+			}
+			set	
+			{
+				productName = value;
+				DictionaryUtil.Add(QueryParameters, "ProductName", value);
 			}
 		}
 
@@ -178,19 +139,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string JoinPermissionId
-		{
-			get
-			{
-				return joinPermissionId;
-			}
-			set	
-			{
-				joinPermissionId = value;
-				DictionaryUtil.Add(QueryParameters, "JoinPermissionId", value);
-			}
-		}
-
 		public long? CategoryId
 		{
 			get
@@ -201,6 +149,58 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				categoryId = value;
 				DictionaryUtil.Add(QueryParameters, "CategoryId", value.ToString());
+			}
+		}
+
+		public int? DataFormat
+		{
+			get
+			{
+				return dataFormat;
+			}
+			set	
+			{
+				dataFormat = value;
+				DictionaryUtil.Add(QueryParameters, "DataFormat", value.ToString());
+			}
+		}
+
+		public bool? Id2
+		{
+			get
+			{
+				return id2;
+			}
+			set	
+			{
+				id2 = value;
+				DictionaryUtil.Add(QueryParameters, "Id2", value.ToString());
+			}
+		}
+
+		public string NetType
+		{
+			get
+			{
+				return netType;
+			}
+			set	
+			{
+				netType = value;
+				DictionaryUtil.Add(QueryParameters, "NetType", value);
+			}
+		}
+
+		public string ProtocolType
+		{
+			get
+			{
+				return protocolType;
+			}
+			set	
+			{
+				protocolType = value;
+				DictionaryUtil.Add(QueryParameters, "ProtocolType", value);
 			}
 		}
 

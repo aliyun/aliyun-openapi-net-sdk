@@ -39,9 +39,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private int? asc;
-
-		private List<string> identifiers = new List<string>(){ };
+		private long? startTime;
 
 		private string iotId;
 
@@ -49,41 +47,26 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? pageSize;
 
+		private List<string> identifiers = new List<string>(){ };
+
 		private long? endTime;
-
-		private string deviceName;
-
-		private long? startTime;
 
 		private string productKey;
 
-		public int? Asc
+		private int? asc;
+
+		private string deviceName;
+
+		public long? StartTime
 		{
 			get
 			{
-				return asc;
+				return startTime;
 			}
 			set	
 			{
-				asc = value;
-				DictionaryUtil.Add(QueryParameters, "Asc", value.ToString());
-			}
-		}
-
-		public List<string> Identifiers
-		{
-			get
-			{
-				return identifiers;
-			}
-
-			set
-			{
-				identifiers = value;
-				for (int i = 0; i < identifiers.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Identifier." + (i + 1) , identifiers[i]);
-				}
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 
@@ -126,6 +109,23 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public List<string> Identifiers
+		{
+			get
+			{
+				return identifiers;
+			}
+
+			set
+			{
+				identifiers = value;
+				for (int i = 0; i < identifiers.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Identifier." + (i + 1) , identifiers[i]);
+				}
+			}
+		}
+
 		public long? EndTime
 		{
 			get
@@ -139,32 +139,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
-
 		public string ProductKey
 		{
 			get
@@ -175,6 +149,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public int? Asc
+		{
+			get
+			{
+				return asc;
+			}
+			set	
+			{
+				asc = value;
+				DictionaryUtil.Add(QueryParameters, "Asc", value.ToString());
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 

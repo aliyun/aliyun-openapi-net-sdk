@@ -39,11 +39,24 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
+		private string groupId;
+
 		private string groupDesc;
 
 		private string iotInstanceId;
 
-		private string groupId;
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
 
 		public string GroupDesc
 		{
@@ -68,19 +81,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 

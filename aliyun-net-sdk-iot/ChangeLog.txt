@@ -1,3 +1,6 @@
+2019-09-17 Version 7.0.2
+- Fixed Response Unmarshaller.
+
 2019-08-23 Version 7.0.1
 - Fixed NullReferenceException Error.
 2019-08-16 Version 7.0.0

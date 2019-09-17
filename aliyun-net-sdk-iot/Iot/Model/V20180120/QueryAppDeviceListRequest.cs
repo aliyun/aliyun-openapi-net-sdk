@@ -39,6 +39,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
+		private int? currentPage;
+
+		private List<TagList> tagLists = new List<TagList>(){ };
+
 		private List<string> productKeyLists = new List<string>(){ };
 
 		private List<string> categoryKeyLists = new List<string>(){ };
@@ -47,11 +51,38 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private string appKey;
 
-		private List<TagList> tagLists = new List<TagList>(){ };
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public List<TagList> TagLists
+		{
+			get
+			{
+				return tagLists;
+			}
+
+			set
+			{
+				tagLists = value;
+				for (int i = 0; i < tagLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TagList." + (i + 1) + ".TagName", tagLists[i].TagName);
+					DictionaryUtil.Add(QueryParameters,"TagList." + (i + 1) + ".TagValue", tagLists[i].TagValue);
+				}
+			}
+		}
 
 		public List<string> ProductKeyLists
 		{
@@ -113,19 +144,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
 		public string AppKey
 		{
 			get
@@ -136,24 +154,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				appKey = value;
 				DictionaryUtil.Add(QueryParameters, "AppKey", value);
-			}
-		}
-
-		public List<TagList> TagLists
-		{
-			get
-			{
-				return tagLists;
-			}
-
-			set
-			{
-				tagLists = value;
-				for (int i = 0; i < tagLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TagList." + (i + 1) + ".TagName", tagLists[i].TagName);
-					DictionaryUtil.Add(QueryParameters,"TagList." + (i + 1) + ".TagValue", tagLists[i].TagValue);
-				}
 			}
 		}
 

@@ -39,39 +39,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string groupDesc;
-
-		private string iotInstanceId;
-
 		private string superGroupId;
 
 		private string groupName;
 
-		public string GroupDesc
-		{
-			get
-			{
-				return groupDesc;
-			}
-			set	
-			{
-				groupDesc = value;
-				DictionaryUtil.Add(QueryParameters, "GroupDesc", value);
-			}
-		}
+		private string groupDesc;
 
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
+		private string iotInstanceId;
 
 		public string SuperGroupId
 		{
@@ -96,6 +70,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
+
+		public string GroupDesc
+		{
+			get
+			{
+				return groupDesc;
+			}
+			set	
+			{
+				groupDesc = value;
+				DictionaryUtil.Add(QueryParameters, "GroupDesc", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

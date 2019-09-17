@@ -43,6 +43,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string ruleDesc;
 
+		private string productKey;
+
+		private string shortTopic;
+
 		private string dataType;
 
 		private string iotInstanceId;
@@ -51,11 +55,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string _where;
 
-		private string productKey;
-
 		private int? topicType;
-
-		private string shortTopic;
 
 		public string Select
 		{
@@ -80,6 +80,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				ruleDesc = value;
 				DictionaryUtil.Add(QueryParameters, "RuleDesc", value);
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string ShortTopic
+		{
+			get
+			{
+				return shortTopic;
+			}
+			set	
+			{
+				shortTopic = value;
+				DictionaryUtil.Add(QueryParameters, "ShortTopic", value);
 			}
 		}
 
@@ -135,19 +161,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
 		public int? TopicType
 		{
 			get
@@ -158,19 +171,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				topicType = value;
 				DictionaryUtil.Add(QueryParameters, "TopicType", value.ToString());
-			}
-		}
-
-		public string ShortTopic
-		{
-			get
-			{
-				return shortTopic;
-			}
-			set	
-			{
-				shortTopic = value;
-				DictionaryUtil.Add(QueryParameters, "ShortTopic", value);
 			}
 		}
 

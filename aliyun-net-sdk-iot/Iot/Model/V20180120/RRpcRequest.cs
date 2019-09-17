@@ -39,30 +39,17 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string iotInstanceId;
-
 		private string requestBase64Byte;
-
-		private string topic;
-
-		private string deviceName;
 
 		private string productKey;
 
 		private int? timeout;
 
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
+		private string iotInstanceId;
+
+		private string topic;
+
+		private string deviceName;
 
 		public string RequestBase64Byte
 		{
@@ -74,32 +61,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				requestBase64Byte = value;
 				DictionaryUtil.Add(QueryParameters, "RequestBase64Byte", value);
-			}
-		}
-
-		public string Topic
-		{
-			get
-			{
-				return topic;
-			}
-			set	
-			{
-				topic = value;
-				DictionaryUtil.Add(QueryParameters, "Topic", value);
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 
@@ -126,6 +87,45 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				timeout = value;
 				DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string Topic
+		{
+			get
+			{
+				return topic;
+			}
+			set	
+			{
+				topic = value;
+				DictionaryUtil.Add(QueryParameters, "Topic", value);
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 

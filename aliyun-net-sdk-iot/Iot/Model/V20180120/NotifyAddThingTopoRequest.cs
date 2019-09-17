@@ -41,13 +41,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string gwProductKey;
 
+		private string deviceListStr;
+
 		private string gwDeviceName;
 
 		private string iotInstanceId;
 
 		private string gwIotId;
-
-		private string deviceListStr;
 
 		public string GwProductKey
 		{
@@ -59,6 +59,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				gwProductKey = value;
 				DictionaryUtil.Add(QueryParameters, "GwProductKey", value);
+			}
+		}
+
+		public string DeviceListStr
+		{
+			get
+			{
+				return deviceListStr;
+			}
+			set	
+			{
+				deviceListStr = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceListStr", value);
 			}
 		}
 
@@ -98,19 +111,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				gwIotId = value;
 				DictionaryUtil.Add(QueryParameters, "GwIotId", value);
-			}
-		}
-
-		public string DeviceListStr
-		{
-			get
-			{
-				return deviceListStr;
-			}
-			set	
-			{
-				deviceListStr = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceListStr", value);
 			}
 		}
 
