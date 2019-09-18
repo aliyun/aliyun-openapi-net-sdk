@@ -32,21 +32,26 @@ namespace Aliyun.Acs.live.Model.V20161101
         public RealTimeSnapshotCommandRequest()
             : base("live", "2016-11-01", "RealTimeSnapshotCommand", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private int? mode;
 
 		private string appName;
 
-		private string domainName;
+		private string streamName;
 
-		private int? interval;
+		private string domainName;
 
 		private long? ownerId;
 
 		private string command;
 
-		private string streamName;
+		private int? interval;
 
 		public int? Mode
 		{
@@ -74,6 +79,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
 		public string DomainName
 		{
 			get
@@ -84,19 +102,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public int? Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
 			}
 		}
 
@@ -126,16 +131,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string StreamName
+		public int? Interval
 		{
 			get
 			{
-				return streamName;
+				return interval;
 			}
 			set	
 			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
 			}
 		}
 

@@ -32,17 +32,35 @@ namespace Aliyun.Acs.live.Model.V20161101
         public DescribeUpBpsPeakDataRequest()
             : base("live", "2016-11-01", "DescribeUpBpsPeakData", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string startTime;
 
 		private string domainName;
 
 		private string endTime;
 
-		private string startTime;
-
 		private long? ownerId;
 
 		private string domainSwitch;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
 
 		public string DomainName
 		{
@@ -67,19 +85,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 

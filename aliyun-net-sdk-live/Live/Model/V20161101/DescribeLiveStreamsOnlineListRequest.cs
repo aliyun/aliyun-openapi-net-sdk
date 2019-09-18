@@ -32,19 +32,12 @@ namespace Aliyun.Acs.live.Model.V20161101
         public DescribeLiveStreamsOnlineListRequest()
             : base("live", "2016-11-01", "DescribeLiveStreamsOnlineList", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string streamType;
-
-		private string domainName;
-
-		private string endTime;
-
-		private string orderBy;
-
-		private string startTime;
-
-		private long? ownerId;
 
 		private int? pageNum;
 
@@ -56,83 +49,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string queryType;
 
-		public string StreamType
-		{
-			get
-			{
-				return streamType;
-			}
-			set	
-			{
-				streamType = value;
-				DictionaryUtil.Add(QueryParameters, "StreamType", value);
-			}
-		}
+		private string streamType;
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+		private string domainName;
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string OrderBy
-		{
-			get
-			{
-				return orderBy;
-			}
-			set	
-			{
-				orderBy = value;
-				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private long? ownerId;
 
 		public int? PageNum
 		{
@@ -196,6 +117,45 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				queryType = value;
 				DictionaryUtil.Add(QueryParameters, "QueryType", value);
+			}
+		}
+
+		public string StreamType
+		{
+			get
+			{
+				return streamType;
+			}
+			set	
+			{
+				streamType = value;
+				DictionaryUtil.Add(QueryParameters, "StreamType", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

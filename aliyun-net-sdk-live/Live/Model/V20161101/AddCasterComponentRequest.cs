@@ -32,27 +32,97 @@ namespace Aliyun.Acs.live.Model.V20161101
         public AddCasterComponentRequest()
             : base("live", "2016-11-01", "AddCasterComponent", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string imageLayerContent;
+
+		private string componentName;
+
+		private string casterId;
+
+		private string componentLayer;
+
+		private long? ownerId;
 
 		private string componentType;
 
 		private string locationId;
 
-		private string imageLayerContent;
-
-		private string casterId;
-
 		private string effect;
-
-		private string componentLayer;
 
 		private string captionLayerContent;
 
-		private string componentName;
-
-		private long? ownerId;
-
 		private string textLayerContent;
+
+		public string ImageLayerContent
+		{
+			get
+			{
+				return imageLayerContent;
+			}
+			set	
+			{
+				imageLayerContent = value;
+				DictionaryUtil.Add(QueryParameters, "ImageLayerContent", value);
+			}
+		}
+
+		public string ComponentName
+		{
+			get
+			{
+				return componentName;
+			}
+			set	
+			{
+				componentName = value;
+				DictionaryUtil.Add(QueryParameters, "ComponentName", value);
+			}
+		}
+
+		public string CasterId
+		{
+			get
+			{
+				return casterId;
+			}
+			set	
+			{
+				casterId = value;
+				DictionaryUtil.Add(QueryParameters, "CasterId", value);
+			}
+		}
+
+		public string ComponentLayer
+		{
+			get
+			{
+				return componentLayer;
+			}
+			set	
+			{
+				componentLayer = value;
+				DictionaryUtil.Add(QueryParameters, "ComponentLayer", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
 
 		public string ComponentType
 		{
@@ -80,32 +150,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string ImageLayerContent
-		{
-			get
-			{
-				return imageLayerContent;
-			}
-			set	
-			{
-				imageLayerContent = value;
-				DictionaryUtil.Add(QueryParameters, "ImageLayerContent", value);
-			}
-		}
-
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-				DictionaryUtil.Add(QueryParameters, "CasterId", value);
-			}
-		}
-
 		public string Effect
 		{
 			get
@@ -119,19 +163,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string ComponentLayer
-		{
-			get
-			{
-				return componentLayer;
-			}
-			set	
-			{
-				componentLayer = value;
-				DictionaryUtil.Add(QueryParameters, "ComponentLayer", value);
-			}
-		}
-
 		public string CaptionLayerContent
 		{
 			get
@@ -142,32 +173,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				captionLayerContent = value;
 				DictionaryUtil.Add(QueryParameters, "CaptionLayerContent", value);
-			}
-		}
-
-		public string ComponentName
-		{
-			get
-			{
-				return componentName;
-			}
-			set	
-			{
-				componentName = value;
-				DictionaryUtil.Add(QueryParameters, "ComponentName", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

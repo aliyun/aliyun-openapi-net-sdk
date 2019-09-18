@@ -32,11 +32,26 @@ namespace Aliyun.Acs.live.Model.V20161101
         public AddCustomLiveStreamTranscodeRequest()
             : base("live", "2016-11-01", "AddCustomLiveStreamTranscode", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string app;
-
 		private string template;
+
+		private string gop;
+
+		private string audioCodec;
+
+		private string templateType;
+
+		private string audioProfile;
+
+		private int? height;
+
+		private string app;
 
 		private int? audioChannelNum;
 
@@ -44,15 +59,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private int? fPS;
 
-		private string gop;
-
 		private long? ownerId;
 
-		private string audioCodec;
-
 		private int? audioRate;
-
-		private string templateType;
 
 		private int? audioBitrate;
 
@@ -61,23 +70,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private int? width;
 
 		private int? videoBitrate;
-
-		private string audioProfile;
-
-		private int? height;
-
-		public string App
-		{
-			get
-			{
-				return app;
-			}
-			set	
-			{
-				app = value;
-				DictionaryUtil.Add(QueryParameters, "App", value);
-			}
-		}
 
 		public string Template
 		{
@@ -89,6 +81,84 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				template = value;
 				DictionaryUtil.Add(QueryParameters, "Template", value);
+			}
+		}
+
+		public string Gop
+		{
+			get
+			{
+				return gop;
+			}
+			set	
+			{
+				gop = value;
+				DictionaryUtil.Add(QueryParameters, "Gop", value);
+			}
+		}
+
+		public string AudioCodec
+		{
+			get
+			{
+				return audioCodec;
+			}
+			set	
+			{
+				audioCodec = value;
+				DictionaryUtil.Add(QueryParameters, "AudioCodec", value);
+			}
+		}
+
+		public string TemplateType
+		{
+			get
+			{
+				return templateType;
+			}
+			set	
+			{
+				templateType = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateType", value);
+			}
+		}
+
+		public string AudioProfile
+		{
+			get
+			{
+				return audioProfile;
+			}
+			set	
+			{
+				audioProfile = value;
+				DictionaryUtil.Add(QueryParameters, "AudioProfile", value);
+			}
+		}
+
+		public int? Height
+		{
+			get
+			{
+				return height;
+			}
+			set	
+			{
+				height = value;
+				DictionaryUtil.Add(QueryParameters, "Height", value.ToString());
+			}
+		}
+
+		public string App
+		{
+			get
+			{
+				return app;
+			}
+			set	
+			{
+				app = value;
+				DictionaryUtil.Add(QueryParameters, "App", value);
 			}
 		}
 
@@ -131,19 +201,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Gop
-		{
-			get
-			{
-				return gop;
-			}
-			set	
-			{
-				gop = value;
-				DictionaryUtil.Add(QueryParameters, "Gop", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -157,19 +214,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AudioCodec
-		{
-			get
-			{
-				return audioCodec;
-			}
-			set	
-			{
-				audioCodec = value;
-				DictionaryUtil.Add(QueryParameters, "AudioCodec", value);
-			}
-		}
-
 		public int? AudioRate
 		{
 			get
@@ -180,19 +224,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				audioRate = value;
 				DictionaryUtil.Add(QueryParameters, "AudioRate", value.ToString());
-			}
-		}
-
-		public string TemplateType
-		{
-			get
-			{
-				return templateType;
-			}
-			set	
-			{
-				templateType = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateType", value);
 			}
 		}
 
@@ -245,32 +276,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				videoBitrate = value;
 				DictionaryUtil.Add(QueryParameters, "VideoBitrate", value.ToString());
-			}
-		}
-
-		public string AudioProfile
-		{
-			get
-			{
-				return audioProfile;
-			}
-			set	
-			{
-				audioProfile = value;
-				DictionaryUtil.Add(QueryParameters, "AudioProfile", value);
-			}
-		}
-
-		public int? Height
-		{
-			get
-			{
-				return height;
-			}
-			set	
-			{
-				height = value;
-				DictionaryUtil.Add(QueryParameters, "Height", value.ToString());
 			}
 		}
 

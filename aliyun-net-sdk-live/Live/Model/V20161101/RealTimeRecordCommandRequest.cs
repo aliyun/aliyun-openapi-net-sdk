@@ -32,17 +32,22 @@ namespace Aliyun.Acs.live.Model.V20161101
         public RealTimeRecordCommandRequest()
             : base("live", "2016-11-01", "RealTimeRecordCommand", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string appName;
+
+		private string streamName;
 
 		private string domainName;
 
 		private long? ownerId;
 
 		private string command;
-
-		private string streamName;
 
 		public string AppName
 		{
@@ -54,6 +59,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 
@@ -93,19 +111,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				command = value;
 				DictionaryUtil.Add(QueryParameters, "Command", value);
-			}
-		}
-
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 

@@ -32,34 +32,39 @@ namespace Aliyun.Acs.live.Model.V20161101
         public AddTrancodeSEIRequest()
             : base("live", "2016-11-01", "AddTrancodeSEI", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private int? delay;
+		private string pattern;
 
 		private string appName;
 
 		private int? repeat;
 
-		private string domainName;
-
-		private string pattern;
-
 		private string text;
-
-		private long? ownerId;
 
 		private string streamName;
 
-		public int? Delay
+		private string domainName;
+
+		private long? ownerId;
+
+		private int? delay;
+
+		public string Pattern
 		{
 			get
 			{
-				return delay;
+				return pattern;
 			}
 			set	
 			{
-				delay = value;
-				DictionaryUtil.Add(QueryParameters, "Delay", value.ToString());
+				pattern = value;
+				DictionaryUtil.Add(QueryParameters, "Pattern", value);
 			}
 		}
 
@@ -89,32 +94,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Pattern
-		{
-			get
-			{
-				return pattern;
-			}
-			set	
-			{
-				pattern = value;
-				DictionaryUtil.Add(QueryParameters, "Pattern", value);
-			}
-		}
-
 		public string Text
 		{
 			get
@@ -125,6 +104,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				text = value;
 				DictionaryUtil.Add(QueryParameters, "Text", value);
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -141,16 +146,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string StreamName
+		public int? Delay
 		{
 			get
 			{
-				return streamName;
+				return delay;
 			}
 			set	
 			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+				delay = value;
+				DictionaryUtil.Add(QueryParameters, "Delay", value.ToString());
 			}
 		}
 

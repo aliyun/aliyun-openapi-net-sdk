@@ -32,6 +32,11 @@ namespace Aliyun.Acs.live.Model.V20161101
         public DescribeLiveStreamsNotifyUrlConfigRequest()
             : base("live", "2016-11-01", "DescribeLiveStreamsNotifyUrlConfig", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string domainName;

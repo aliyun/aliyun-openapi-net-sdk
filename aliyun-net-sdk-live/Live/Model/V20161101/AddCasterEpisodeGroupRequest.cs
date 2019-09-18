@@ -32,23 +32,54 @@ namespace Aliyun.Acs.live.Model.V20161101
         public AddCasterEpisodeGroupRequest()
             : base("live", "2016-11-01", "AddCasterEpisodeGroup", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string sideOutputUrl;
-
-		private List<Item> items;
 
 		private string clientToken;
 
+		private string startTime;
+
+		private string sideOutputUrl;
+
+		private List<Item> items = new List<Item>(){ };
+
 		private string domainName;
 
-		private string startTime;
+		private long? ownerId;
 
 		private int? repeatNum;
 
 		private string callbackUrl;
 
-		private long? ownerId;
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
 
 		public string SideOutputUrl
 		{
@@ -75,22 +106,9 @@ namespace Aliyun.Acs.live.Model.V20161101
 				items = value;
 				for (int i = 0; i < items.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Item." + (i + 1) + ".VodUrl", items[i].VodUrl);
 					DictionaryUtil.Add(QueryParameters,"Item." + (i + 1) + ".ItemName", items[i].ItemName);
+					DictionaryUtil.Add(QueryParameters,"Item." + (i + 1) + ".VodUrl", items[i].VodUrl);
 				}
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -107,16 +125,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string StartTime
+		public long? OwnerId
 		{
 			get
 			{
-				return startTime;
+				return ownerId;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -146,37 +164,12 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public class Item
 		{
 
-			private string vodUrl;
-
 			private string itemName;
 
-			public string VodUrl
-			{
-				get
-				{
-					return vodUrl;
-				}
-				set	
-				{
-					vodUrl = value;
-				}
-			}
+			private string vodUrl;
 
 			public string ItemName
 			{
@@ -187,6 +180,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					itemName = value;
+				}
+			}
+
+			public string VodUrl
+			{
+				get
+				{
+					return vodUrl;
+				}
+				set	
+				{
+					vodUrl = value;
 				}
 			}
 		}

@@ -32,6 +32,11 @@ namespace Aliyun.Acs.live.Model.V20161101
         public JoinBoardRequest()
             : base("live", "2016-11-01", "JoinBoard", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string boardId;

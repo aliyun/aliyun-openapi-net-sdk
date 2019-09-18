@@ -32,15 +32,20 @@ namespace Aliyun.Acs.live.Model.V20161101
         public AddLiveDomainRequest()
             : base("live", "2016-11-01", "AddLiveDomain", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string topLevelDomain;
 
 		private string securityToken;
 
-		private string ownerAccount;
-
 		private string scope;
+
+		private string topLevelDomain;
+
+		private string ownerAccount;
 
 		private string domainName;
 
@@ -51,19 +56,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string checkUrl;
 
 		private string liveDomainType;
-
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
-			}
-		}
 
 		public string SecurityToken
 		{
@@ -78,19 +70,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string Scope
 		{
 			get
@@ -101,6 +80,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				scope = value;
 				DictionaryUtil.Add(QueryParameters, "Scope", value);
+			}
+		}
+
+		public string TopLevelDomain
+		{
+			get
+			{
+				return topLevelDomain;
+			}
+			set	
+			{
+				topLevelDomain = value;
+				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 

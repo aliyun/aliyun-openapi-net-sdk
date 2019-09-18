@@ -32,6 +32,11 @@ namespace Aliyun.Acs.live.Model.V20161101
         public AllowPushStreamRequest()
             : base("live", "2016-11-01", "AllowPushStream", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? ownerId;

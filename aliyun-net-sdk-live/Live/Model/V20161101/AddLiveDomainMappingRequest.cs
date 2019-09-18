@@ -32,7 +32,14 @@ namespace Aliyun.Acs.live.Model.V20161101
         public AddLiveDomainMappingRequest()
             : base("live", "2016-11-01", "AddLiveDomainMapping", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private long? ownerId;
 
 		private string pullDomain;
 
@@ -40,7 +47,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string pushDomain;
 
-		private long? ownerId;
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
 
 		public string PullDomain
 		{
@@ -78,19 +96,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				pushDomain = value;
 				DictionaryUtil.Add(QueryParameters, "PushDomain", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

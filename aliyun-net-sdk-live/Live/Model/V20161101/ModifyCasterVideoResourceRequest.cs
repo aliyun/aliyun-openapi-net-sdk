@@ -32,7 +32,16 @@ namespace Aliyun.Acs.live.Model.V20161101
         public ModifyCasterVideoResourceRequest()
             : base("live", "2016-11-01", "ModifyCasterVideoResource", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private int? endOffset;
+
+		private string materialId;
 
 		private string resourceId;
 
@@ -40,11 +49,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string casterId;
 
-		private int? endOffset;
-
 		private long? ownerId;
-
-		private string materialId;
 
 		private int? beginOffset;
 
@@ -55,6 +60,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string resourceName;
 
 		private int? repeatNum;
+
+		public int? EndOffset
+		{
+			get
+			{
+				return endOffset;
+			}
+			set	
+			{
+				endOffset = value;
+				DictionaryUtil.Add(QueryParameters, "EndOffset", value.ToString());
+			}
+		}
+
+		public string MaterialId
+		{
+			get
+			{
+				return materialId;
+			}
+			set	
+			{
+				materialId = value;
+				DictionaryUtil.Add(QueryParameters, "MaterialId", value);
+			}
+		}
 
 		public string ResourceId
 		{
@@ -95,19 +126,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? EndOffset
-		{
-			get
-			{
-				return endOffset;
-			}
-			set	
-			{
-				endOffset = value;
-				DictionaryUtil.Add(QueryParameters, "EndOffset", value.ToString());
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -118,19 +136,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string MaterialId
-		{
-			get
-			{
-				return materialId;
-			}
-			set	
-			{
-				materialId = value;
-				DictionaryUtil.Add(QueryParameters, "MaterialId", value);
 			}
 		}
 

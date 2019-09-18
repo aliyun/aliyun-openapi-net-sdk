@@ -32,13 +32,18 @@ namespace Aliyun.Acs.live.Model.V20161101
         public AddCasterEpisodeGroupContentRequest()
             : base("live", "2016-11-01", "AddCasterEpisodeGroupContent", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string clientToken;
 
-		private long? ownerId;
-
 		private string content;
+
+		private long? ownerId;
 
 		public string ClientToken
 		{
@@ -53,19 +58,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string Content
 		{
 			get
@@ -76,6 +68,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				content = value;
 				DictionaryUtil.Add(QueryParameters, "Content", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

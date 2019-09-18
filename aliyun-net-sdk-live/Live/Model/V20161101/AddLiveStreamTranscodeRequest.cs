@@ -32,30 +32,22 @@ namespace Aliyun.Acs.live.Model.V20161101
         public AddLiveStreamTranscodeRequest()
             : base("live", "2016-11-01", "AddLiveStreamTranscode", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string app;
 
 		private string template;
 
 		private string securityToken;
 
-		private string domain;
+		private string app;
 
 		private long? ownerId;
 
-		public string App
-		{
-			get
-			{
-				return app;
-			}
-			set	
-			{
-				app = value;
-				DictionaryUtil.Add(QueryParameters, "App", value);
-			}
-		}
+		private string domain;
 
 		public string Template
 		{
@@ -83,16 +75,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Domain
+		public string App
 		{
 			get
 			{
-				return domain;
+				return app;
 			}
 			set	
 			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
+				app = value;
+				DictionaryUtil.Add(QueryParameters, "App", value);
 			}
 		}
 
@@ -106,6 +98,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
 			}
 		}
 

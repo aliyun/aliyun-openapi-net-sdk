@@ -32,26 +32,18 @@ namespace Aliyun.Acs.live.Model.V20161101
         public ModifyCasterProgramRequest()
             : base("live", "2016-11-01", "ModifyCasterProgram", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private List<Episode> episodes = new List<Episode>(){ };
 
 		private string casterId;
 
-		private List<Episode> episodes;
-
 		private long? ownerId;
-
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-				DictionaryUtil.Add(QueryParameters, "CasterId", value);
-			}
-		}
 
 		public List<Episode> Episodes
 		{
@@ -65,18 +57,31 @@ namespace Aliyun.Acs.live.Model.V20161101
 				episodes = value;
 				for (int i = 0; i < episodes.Count; i++)
 				{
+					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".EpisodeId", episodes[i].EpisodeId);
+					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".EpisodeType", episodes[i].EpisodeType);
+					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".EpisodeName", episodes[i].EpisodeName);
 					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".ResourceId", episodes[i].ResourceId);
 					for (int j = 0; j < episodes[i].ComponentIds.Count; j++)
 					{
 						DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".ComponentId." +(j + 1), episodes[i].ComponentIds[j]);
 					}
-					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".SwitchType", episodes[i].SwitchType);
-					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".EpisodeType", episodes[i].EpisodeType);
-					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".EpisodeName", episodes[i].EpisodeName);
-					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".EndTime", episodes[i].EndTime);
 					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".StartTime", episodes[i].StartTime);
-					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".EpisodeId", episodes[i].EpisodeId);
+					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".EndTime", episodes[i].EndTime);
+					DictionaryUtil.Add(QueryParameters,"Episode." + (i + 1) + ".SwitchType", episodes[i].SwitchType);
 				}
+			}
+		}
+
+		public string CasterId
+		{
+			get
+			{
+				return casterId;
+			}
+			set	
+			{
+				casterId = value;
+				DictionaryUtil.Add(QueryParameters, "CasterId", value);
 			}
 		}
 
@@ -96,55 +101,31 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class Episode
 		{
 
-			private string resourceId;
-
-			private List<string> componentIds;
-
-			private string switchType;
+			private string episodeId;
 
 			private string episodeType;
 
 			private string episodeName;
 
-			private string endTime;
+			private string resourceId;
+
+			private List<string> componentIds = new List<string>(){ };
 
 			private string startTime;
 
-			private string episodeId;
+			private string endTime;
 
-			public string ResourceId
+			private string switchType;
+
+			public string EpisodeId
 			{
 				get
 				{
-					return resourceId;
+					return episodeId;
 				}
 				set	
 				{
-					resourceId = value;
-				}
-			}
-
-			public List<string> ComponentIds
-			{
-				get
-				{
-					return componentIds;
-				}
-				set	
-				{
-					componentIds = value;
-				}
-			}
-
-			public string SwitchType
-			{
-				get
-				{
-					return switchType;
-				}
-				set	
-				{
-					switchType = value;
+					episodeId = value;
 				}
 			}
 
@@ -172,15 +153,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string EndTime
+			public string ResourceId
 			{
 				get
 				{
-					return endTime;
+					return resourceId;
 				}
 				set	
 				{
-					endTime = value;
+					resourceId = value;
+				}
+			}
+
+			public List<string> ComponentIds
+			{
+				get
+				{
+					return componentIds;
+				}
+				set	
+				{
+					componentIds = value;
 				}
 			}
 
@@ -196,15 +189,27 @@ namespace Aliyun.Acs.live.Model.V20161101
 				}
 			}
 
-			public string EpisodeId
+			public string EndTime
 			{
 				get
 				{
-					return episodeId;
+					return endTime;
 				}
 				set	
 				{
-					episodeId = value;
+					endTime = value;
+				}
+			}
+
+			public string SwitchType
+			{
+				get
+				{
+					return switchType;
+				}
+				set	
+				{
+					switchType = value;
 				}
 			}
 		}

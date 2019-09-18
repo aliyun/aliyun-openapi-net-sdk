@@ -47,6 +47,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				componentLayer.HeightNormalized = context.FloatValue("DescribeCasterComponents.Components["+ i +"].ComponentLayer.HeightNormalized");
 				componentLayer.WidthNormalized = context.FloatValue("DescribeCasterComponents.Components["+ i +"].ComponentLayer.WidthNormalized");
 				componentLayer.PositionRefer = context.StringValue("DescribeCasterComponents.Components["+ i +"].ComponentLayer.PositionRefer");
+				componentLayer.Transparency = context.IntegerValue("DescribeCasterComponents.Components["+ i +"].ComponentLayer.Transparency");
 
 				List<string> componentLayer_positionNormalizeds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeCasterComponents.Components["+ i +"].ComponentLayer.PositionNormalizeds.Length"); j++) {
@@ -77,6 +78,9 @@ namespace Aliyun.Acs.live.Transform.V20161101
 				captionLayerContent.SizeNormalized = context.FloatValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.SizeNormalized");
 				captionLayerContent.BorderWidthNormalized = context.FloatValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.BorderWidthNormalized");
 				captionLayerContent.BorderColor = context.StringValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.BorderColor");
+				captionLayerContent.WordCountPerLine = context.IntegerValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.WordCountPerLine");
+				captionLayerContent.WordSpaceNormalized = context.FloatValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.WordSpaceNormalized");
+				captionLayerContent.LineSpaceNormalized = context.FloatValue("DescribeCasterComponents.Components["+ i +"].CaptionLayerContent.LineSpaceNormalized");
 				component.CaptionLayerContent = captionLayerContent;
 
 				describeCasterComponentsResponse_components.Add(component);

@@ -32,21 +32,18 @@ namespace Aliyun.Acs.live.Model.V20161101
         public SetCasterConfigRequest()
             : base("live", "2016-11-01", "SetCasterConfig", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string sideOutputUrl;
-
-		private string casterId;
-
 		private int? channelEnable;
-
-		private string domainName;
 
 		private int? programEffect;
 
 		private string programName;
-
-		private long? ownerId;
 
 		private string recordConfig;
 
@@ -54,37 +51,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string transcodeConfig;
 
-		private float? delay;
-
 		private string casterName;
 
+		private string sideOutputUrl;
+
+		private string casterId;
+
+		private string domainName;
+
+		private long? ownerId;
+
+		private float? delay;
+
 		private string callbackUrl;
-
-		public string SideOutputUrl
-		{
-			get
-			{
-				return sideOutputUrl;
-			}
-			set	
-			{
-				sideOutputUrl = value;
-				DictionaryUtil.Add(QueryParameters, "SideOutputUrl", value);
-			}
-		}
-
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-				DictionaryUtil.Add(QueryParameters, "CasterId", value);
-			}
-		}
 
 		public int? ChannelEnable
 		{
@@ -96,19 +75,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				channelEnable = value;
 				DictionaryUtil.Add(QueryParameters, "ChannelEnable", value.ToString());
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -135,19 +101,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				programName = value;
 				DictionaryUtil.Add(QueryParameters, "ProgramName", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -190,19 +143,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public float? Delay
-		{
-			get
-			{
-				return delay;
-			}
-			set	
-			{
-				delay = value;
-				DictionaryUtil.Add(QueryParameters, "Delay", value.ToString());
-			}
-		}
-
 		public string CasterName
 		{
 			get
@@ -213,6 +153,71 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				casterName = value;
 				DictionaryUtil.Add(QueryParameters, "CasterName", value);
+			}
+		}
+
+		public string SideOutputUrl
+		{
+			get
+			{
+				return sideOutputUrl;
+			}
+			set	
+			{
+				sideOutputUrl = value;
+				DictionaryUtil.Add(QueryParameters, "SideOutputUrl", value);
+			}
+		}
+
+		public string CasterId
+		{
+			get
+			{
+				return casterId;
+			}
+			set	
+			{
+				casterId = value;
+				DictionaryUtil.Add(QueryParameters, "CasterId", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public float? Delay
+		{
+			get
+			{
+				return delay;
+			}
+			set	
+			{
+				delay = value;
+				DictionaryUtil.Add(QueryParameters, "Delay", value.ToString());
 			}
 		}
 

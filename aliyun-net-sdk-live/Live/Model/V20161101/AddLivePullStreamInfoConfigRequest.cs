@@ -32,32 +32,37 @@ namespace Aliyun.Acs.live.Model.V20161101
         public AddLivePullStreamInfoConfigRequest()
             : base("live", "2016-11-01", "AddLivePullStreamInfoConfig", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string sourceUrl;
+		private string startTime;
 
 		private string appName;
+
+		private string streamName;
 
 		private string domainName;
 
 		private string endTime;
 
-		private string startTime;
-
 		private long? ownerId;
 
-		private string streamName;
+		private string sourceUrl;
 
-		public string SourceUrl
+		public string StartTime
 		{
 			get
 			{
-				return sourceUrl;
+				return startTime;
 			}
 			set	
 			{
-				sourceUrl = value;
-				DictionaryUtil.Add(QueryParameters, "SourceUrl", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -71,6 +76,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 
@@ -100,19 +118,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -126,16 +131,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string StreamName
+		public string SourceUrl
 		{
 			get
 			{
-				return streamName;
+				return sourceUrl;
 			}
 			set	
 			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+				sourceUrl = value;
+				DictionaryUtil.Add(QueryParameters, "SourceUrl", value);
 			}
 		}
 

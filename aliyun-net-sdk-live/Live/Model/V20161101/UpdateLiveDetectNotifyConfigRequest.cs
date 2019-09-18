@@ -32,28 +32,20 @@ namespace Aliyun.Acs.live.Model.V20161101
         public UpdateLiveDetectNotifyConfigRequest()
             : base("live", "2016-11-01", "UpdateLiveDetectNotifyConfig", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string securityToken;
 
 		private string domainName;
 
-		private string notifyUrl;
-
 		private long? ownerId;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string securityToken;
+
+		private string notifyUrl;
 
 		public string DomainName
 		{
@@ -68,19 +60,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string NotifyUrl
-		{
-			get
-			{
-				return notifyUrl;
-			}
-			set	
-			{
-				notifyUrl = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyUrl", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -91,6 +70,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string NotifyUrl
+		{
+			get
+			{
+				return notifyUrl;
+			}
+			set	
+			{
+				notifyUrl = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyUrl", value);
 			}
 		}
 

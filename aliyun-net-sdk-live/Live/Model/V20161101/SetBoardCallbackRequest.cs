@@ -32,6 +32,11 @@ namespace Aliyun.Acs.live.Model.V20161101
         public SetBoardCallbackRequest()
             : base("live", "2016-11-01", "SetBoardCallback", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string authKey;

@@ -32,19 +32,50 @@ namespace Aliyun.Acs.live.Model.V20161101
         public UpdateCasterSceneAudioRequest()
             : base("live", "2016-11-01", "UpdateCasterSceneAudio", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private List<AudioLayer> audioLayers;
 
 		private string casterId;
 
-		private string sceneId;
-
-		private List<string> mixLists;
-
 		private long? ownerId;
 
+		private List<AudioLayer> audioLayers = new List<AudioLayer>(){ };
+
+		private string sceneId;
+
+		private List<string> mixLists = new List<string>(){ };
+
 		private int? followEnable;
+
+		public string CasterId
+		{
+			get
+			{
+				return casterId;
+			}
+			set	
+			{
+				casterId = value;
+				DictionaryUtil.Add(QueryParameters, "CasterId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
 
 		public List<AudioLayer> AudioLayers
 		{
@@ -58,23 +89,10 @@ namespace Aliyun.Acs.live.Model.V20161101
 				audioLayers = value;
 				for (int i = 0; i < audioLayers.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".FixedDelayDuration", audioLayers[i].FixedDelayDuration);
 					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".VolumeRate", audioLayers[i].VolumeRate);
 					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".ValidChannel", audioLayers[i].ValidChannel);
+					DictionaryUtil.Add(QueryParameters,"AudioLayer." + (i + 1) + ".FixedDelayDuration", audioLayers[i].FixedDelayDuration);
 				}
-			}
-		}
-
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-				DictionaryUtil.Add(QueryParameters, "CasterId", value);
 			}
 		}
 
@@ -108,19 +126,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public int? FollowEnable
 		{
 			get
@@ -137,23 +142,11 @@ namespace Aliyun.Acs.live.Model.V20161101
 		public class AudioLayer
 		{
 
-			private int? fixedDelayDuration;
-
 			private float? volumeRate;
 
 			private string validChannel;
 
-			public int? FixedDelayDuration
-			{
-				get
-				{
-					return fixedDelayDuration;
-				}
-				set	
-				{
-					fixedDelayDuration = value;
-				}
-			}
+			private int? fixedDelayDuration;
 
 			public float? VolumeRate
 			{
@@ -176,6 +169,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					validChannel = value;
+				}
+			}
+
+			public int? FixedDelayDuration
+			{
+				get
+				{
+					return fixedDelayDuration;
+				}
+				set	
+				{
+					fixedDelayDuration = value;
 				}
 			}
 		}

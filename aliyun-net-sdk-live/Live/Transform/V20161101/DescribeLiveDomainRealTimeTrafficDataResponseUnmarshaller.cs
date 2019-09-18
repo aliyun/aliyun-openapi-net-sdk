@@ -41,7 +41,7 @@ namespace Aliyun.Acs.live.Transform.V20161101
 			for (int i = 0; i < context.Length("DescribeLiveDomainRealTimeTrafficData.RealTimeTrafficDataPerInterval.Length"); i++) {
 				DescribeLiveDomainRealTimeTrafficDataResponse.DescribeLiveDomainRealTimeTrafficData_DataModule dataModule = new DescribeLiveDomainRealTimeTrafficDataResponse.DescribeLiveDomainRealTimeTrafficData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeLiveDomainRealTimeTrafficData.RealTimeTrafficDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeLiveDomainRealTimeTrafficData.RealTimeTrafficDataPerInterval["+ i +"]._Value");
+				dataModule._Value = context.StringValue("DescribeLiveDomainRealTimeTrafficData.RealTimeTrafficDataPerInterval["+ i +"].Value");
 
 				describeLiveDomainRealTimeTrafficDataResponse_realTimeTrafficDataPerInterval.Add(dataModule);
 			}

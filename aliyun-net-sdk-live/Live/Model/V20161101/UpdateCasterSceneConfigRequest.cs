@@ -32,17 +32,35 @@ namespace Aliyun.Acs.live.Model.V20161101
         public UpdateCasterSceneConfigRequest()
             : base("live", "2016-11-01", "UpdateCasterSceneConfig", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private List<string> componentIds;
+		private string layoutId;
+
+		private List<string> componentIds = new List<string>(){ };
 
 		private string casterId;
 
-		private string sceneId;
-
 		private long? ownerId;
 
-		private string layoutId;
+		private string sceneId;
+
+		public string LayoutId
+		{
+			get
+			{
+				return layoutId;
+			}
+			set	
+			{
+				layoutId = value;
+				DictionaryUtil.Add(QueryParameters, "LayoutId", value);
+			}
+		}
 
 		public List<string> ComponentIds
 		{
@@ -74,19 +92,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string SceneId
-		{
-			get
-			{
-				return sceneId;
-			}
-			set	
-			{
-				sceneId = value;
-				DictionaryUtil.Add(QueryParameters, "SceneId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -100,16 +105,16 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string LayoutId
+		public string SceneId
 		{
 			get
 			{
-				return layoutId;
+				return sceneId;
 			}
 			set	
 			{
-				layoutId = value;
-				DictionaryUtil.Add(QueryParameters, "LayoutId", value);
+				sceneId = value;
+				DictionaryUtil.Add(QueryParameters, "SceneId", value);
 			}
 		}
 

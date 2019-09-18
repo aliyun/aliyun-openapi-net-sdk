@@ -32,23 +32,18 @@ namespace Aliyun.Acs.live.Model.V20161101
         public StartLiveIndexRequest()
             : base("live", "2016-11-01", "StartLiveIndex", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string ossBucket;
 
 		private string tokenId;
 
-		private string domainName;
-
 		private string ossEndpoint;
 
-		private string inputUrl;
-
-		private long? ownerId;
-
 		private string appName;
-
-		private int? interval;
 
 		private string ossRamRole;
 
@@ -56,18 +51,15 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string ossUserId;
 
-		public string OssBucket
-		{
-			get
-			{
-				return ossBucket;
-			}
-			set	
-			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
-			}
-		}
+		private string ossBucket;
+
+		private string domainName;
+
+		private string inputUrl;
+
+		private long? ownerId;
+
+		private int? interval;
 
 		public string TokenId
 		{
@@ -79,19 +71,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				tokenId = value;
 				DictionaryUtil.Add(QueryParameters, "TokenId", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -108,32 +87,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string InputUrl
-		{
-			get
-			{
-				return inputUrl;
-			}
-			set	
-			{
-				inputUrl = value;
-				DictionaryUtil.Add(QueryParameters, "InputUrl", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public string AppName
 		{
 			get
@@ -144,19 +97,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				appName = value;
 				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public int? Interval
-		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
 			}
 		}
 
@@ -196,6 +136,71 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ossUserId = value;
 				DictionaryUtil.Add(QueryParameters, "OssUserId", value);
+			}
+		}
+
+		public string OssBucket
+		{
+			get
+			{
+				return ossBucket;
+			}
+			set	
+			{
+				ossBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string InputUrl
+		{
+			get
+			{
+				return inputUrl;
+			}
+			set	
+			{
+				inputUrl = value;
+				DictionaryUtil.Add(QueryParameters, "InputUrl", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
 			}
 		}
 

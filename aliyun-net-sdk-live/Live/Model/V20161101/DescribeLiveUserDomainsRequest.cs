@@ -32,25 +32,43 @@ namespace Aliyun.Acs.live.Model.V20161101
         public DescribeLiveUserDomainsRequest()
             : base("live", "2016-11-01", "DescribeLiveUserDomains", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private int? pageNumber;
 
 		private string securityToken;
 
 		private int? pageSize;
 
-		private string domainName;
-
 		private string regionName;
+
+		private string domainName;
 
 		private long? ownerId;
 
-		private int? pageNumber;
-
 		private string domainStatus;
+
+		private string domainSearchType;
 
 		private string liveDomainType;
 
-		private string domainSearchType;
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public string SecurityToken
 		{
@@ -78,19 +96,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
 		public string RegionName
 		{
 			get
@@ -101,6 +106,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				regionName = value;
 				DictionaryUtil.Add(QueryParameters, "RegionName", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -117,19 +135,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string DomainStatus
 		{
 			get
@@ -143,19 +148,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string LiveDomainType
-		{
-			get
-			{
-				return liveDomainType;
-			}
-			set	
-			{
-				liveDomainType = value;
-				DictionaryUtil.Add(QueryParameters, "LiveDomainType", value);
-			}
-		}
-
 		public string DomainSearchType
 		{
 			get
@@ -166,6 +158,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				domainSearchType = value;
 				DictionaryUtil.Add(QueryParameters, "DomainSearchType", value);
+			}
+		}
+
+		public string LiveDomainType
+		{
+			get
+			{
+				return liveDomainType;
+			}
+			set	
+			{
+				liveDomainType = value;
+				DictionaryUtil.Add(QueryParameters, "LiveDomainType", value);
 			}
 		}
 

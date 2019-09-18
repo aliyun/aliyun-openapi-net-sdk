@@ -32,7 +32,14 @@ namespace Aliyun.Acs.live.Model.V20161101
         public DescribeLiveDomainRecordDataRequest()
             : base("live", "2016-11-01", "DescribeLiveDomainRecordData", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string startTime;
 
 		private string recordType;
 
@@ -40,9 +47,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string endTime;
 
-		private string startTime;
-
 		private long? ownerId;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
 
 		public string RecordType
 		{
@@ -80,19 +98,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 

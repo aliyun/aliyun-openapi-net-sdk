@@ -32,13 +32,18 @@ namespace Aliyun.Acs.live.Model.V20161101
         public DescribeHlsLiveStreamRealTimeBpsDataRequest()
             : base("live", "2016-11-01", "DescribeHlsLiveStreamRealTimeBpsData", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string domainName;
 
-		private string time;
-
 		private long? ownerId;
+
+		private string time;
 
 		public string DomainName
 		{
@@ -53,19 +58,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string Time
-		{
-			get
-			{
-				return time;
-			}
-			set	
-			{
-				time = value;
-				DictionaryUtil.Add(QueryParameters, "Time", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -76,6 +68,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Time
+		{
+			get
+			{
+				return time;
+			}
+			set	
+			{
+				time = value;
+				DictionaryUtil.Add(QueryParameters, "Time", value);
 			}
 		}
 

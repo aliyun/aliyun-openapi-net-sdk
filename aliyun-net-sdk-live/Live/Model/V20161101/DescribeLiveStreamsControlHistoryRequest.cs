@@ -32,7 +32,14 @@ namespace Aliyun.Acs.live.Model.V20161101
         public DescribeLiveStreamsControlHistoryRequest()
             : base("live", "2016-11-01", "DescribeLiveStreamsControlHistory", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string startTime;
 
 		private string appName;
 
@@ -42,9 +49,20 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string endTime;
 
-		private string startTime;
-
 		private long? ownerId;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
 
 		public string AppName
 		{
@@ -95,19 +113,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 

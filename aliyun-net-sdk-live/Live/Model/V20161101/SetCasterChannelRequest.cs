@@ -32,30 +32,35 @@ namespace Aliyun.Acs.live.Model.V20161101
         public SetCasterChannelRequest()
             : base("live", "2016-11-01", "SetCasterChannel", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string resourceId;
+		private int? seekOffset;
 
 		private int? playStatus;
+
+		private string resourceId;
 
 		private string casterId;
 
 		private long? ownerId;
 
-		private int? seekOffset;
-
 		private string channelId;
 
-		public string ResourceId
+		public int? SeekOffset
 		{
 			get
 			{
-				return resourceId;
+				return seekOffset;
 			}
 			set	
 			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+				seekOffset = value;
+				DictionaryUtil.Add(QueryParameters, "SeekOffset", value.ToString());
 			}
 		}
 
@@ -69,6 +74,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				playStatus = value;
 				DictionaryUtil.Add(QueryParameters, "PlayStatus", value.ToString());
+			}
+		}
+
+		public string ResourceId
+		{
+			get
+			{
+				return resourceId;
+			}
+			set	
+			{
+				resourceId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
 			}
 		}
 
@@ -95,19 +113,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? SeekOffset
-		{
-			get
-			{
-				return seekOffset;
-			}
-			set	
-			{
-				seekOffset = value;
-				DictionaryUtil.Add(QueryParameters, "SeekOffset", value.ToString());
 			}
 		}
 

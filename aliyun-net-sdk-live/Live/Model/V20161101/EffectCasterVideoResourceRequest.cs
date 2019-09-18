@@ -32,15 +32,20 @@ namespace Aliyun.Acs.live.Model.V20161101
         public EffectCasterVideoResourceRequest()
             : base("live", "2016-11-01", "EffectCasterVideoResource", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string resourceId;
 
 		private string casterId;
 
-		private string sceneId;
-
 		private long? ownerId;
+
+		private string sceneId;
 
 		public string ResourceId
 		{
@@ -68,19 +73,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string SceneId
-		{
-			get
-			{
-				return sceneId;
-			}
-			set	
-			{
-				sceneId = value;
-				DictionaryUtil.Add(QueryParameters, "SceneId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -91,6 +83,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SceneId
+		{
+			get
+			{
+				return sceneId;
+			}
+			set	
+			{
+				sceneId = value;
+				DictionaryUtil.Add(QueryParameters, "SceneId", value);
 			}
 		}
 

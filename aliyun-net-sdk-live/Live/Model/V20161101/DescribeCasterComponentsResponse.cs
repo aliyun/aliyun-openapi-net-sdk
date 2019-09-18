@@ -205,6 +205,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string positionRefer;
 
+				private int? transparency;
+
 				private List<string> positionNormalizeds;
 
 				public float? HeightNormalized
@@ -240,6 +242,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						positionRefer = value;
+					}
+				}
+
+				public int? Transparency
+				{
+					get
+					{
+						return transparency;
+					}
+					set	
+					{
+						transparency = value;
 					}
 				}
 
@@ -381,6 +395,12 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 				private string borderColor;
 
+				private int? wordCountPerLine;
+
+				private float? wordSpaceNormalized;
+
+				private float? lineSpaceNormalized;
+
 				public string LocationId
 				{
 					get
@@ -474,6 +494,42 @@ namespace Aliyun.Acs.live.Model.V20161101
 					set	
 					{
 						borderColor = value;
+					}
+				}
+
+				public int? WordCountPerLine
+				{
+					get
+					{
+						return wordCountPerLine;
+					}
+					set	
+					{
+						wordCountPerLine = value;
+					}
+				}
+
+				public float? WordSpaceNormalized
+				{
+					get
+					{
+						return wordSpaceNormalized;
+					}
+					set	
+					{
+						wordSpaceNormalized = value;
+					}
+				}
+
+				public float? LineSpaceNormalized
+				{
+					get
+					{
+						return lineSpaceNormalized;
+					}
+					set	
+					{
+						lineSpaceNormalized = value;
 					}
 				}
 			}

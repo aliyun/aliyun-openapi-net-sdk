@@ -32,11 +32,24 @@ namespace Aliyun.Acs.live.Model.V20161101
         public AddLiveRecordVodConfigRequest()
             : base("live", "2016-11-01", "AddLiveRecordVodConfig", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string autoCompose;
+
+		private string composeVodTranscodeGroupId;
+
+		private string storageLocation;
 
 		private string appName;
 
-		private string autoCompose;
+		private string streamName;
+
+		private string vodTranscodeGroupId;
 
 		private string domainName;
 
@@ -44,11 +57,44 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private long? ownerId;
 
-		private string composeVodTranscodeGroupId;
+		public string AutoCompose
+		{
+			get
+			{
+				return autoCompose;
+			}
+			set	
+			{
+				autoCompose = value;
+				DictionaryUtil.Add(QueryParameters, "AutoCompose", value);
+			}
+		}
 
-		private string streamName;
+		public string ComposeVodTranscodeGroupId
+		{
+			get
+			{
+				return composeVodTranscodeGroupId;
+			}
+			set	
+			{
+				composeVodTranscodeGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ComposeVodTranscodeGroupId", value);
+			}
+		}
 
-		private string vodTranscodeGroupId;
+		public string StorageLocation
+		{
+			get
+			{
+				return storageLocation;
+			}
+			set	
+			{
+				storageLocation = value;
+				DictionaryUtil.Add(QueryParameters, "StorageLocation", value);
+			}
+		}
 
 		public string AppName
 		{
@@ -63,16 +109,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string AutoCompose
+		public string StreamName
 		{
 			get
 			{
-				return autoCompose;
+				return streamName;
 			}
 			set	
 			{
-				autoCompose = value;
-				DictionaryUtil.Add(QueryParameters, "AutoCompose", value);
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
+
+		public string VodTranscodeGroupId
+		{
+			get
+			{
+				return vodTranscodeGroupId;
+			}
+			set	
+			{
+				vodTranscodeGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "VodTranscodeGroupId", value);
 			}
 		}
 
@@ -112,45 +171,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ComposeVodTranscodeGroupId
-		{
-			get
-			{
-				return composeVodTranscodeGroupId;
-			}
-			set	
-			{
-				composeVodTranscodeGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ComposeVodTranscodeGroupId", value);
-			}
-		}
-
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
-			}
-		}
-
-		public string VodTranscodeGroupId
-		{
-			get
-			{
-				return vodTranscodeGroupId;
-			}
-			set	
-			{
-				vodTranscodeGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "VodTranscodeGroupId", value);
 			}
 		}
 

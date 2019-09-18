@@ -32,13 +32,31 @@ namespace Aliyun.Acs.live.Model.V20161101
         public DeleteCasterLayoutRequest()
             : base("live", "2016-11-01", "DeleteCasterLayout", "live", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string layoutId;
 
 		private string casterId;
 
 		private long? ownerId;
 
-		private string layoutId;
+		public string LayoutId
+		{
+			get
+			{
+				return layoutId;
+			}
+			set	
+			{
+				layoutId = value;
+				DictionaryUtil.Add(QueryParameters, "LayoutId", value);
+			}
+		}
 
 		public string CasterId
 		{
@@ -63,19 +81,6 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string LayoutId
-		{
-			get
-			{
-				return layoutId;
-			}
-			set	
-			{
-				layoutId = value;
-				DictionaryUtil.Add(QueryParameters, "LayoutId", value);
 			}
 		}
 
