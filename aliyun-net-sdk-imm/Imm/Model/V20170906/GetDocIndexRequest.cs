@@ -34,24 +34,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string _set;
-
 		private string project;
 
 		private string uniqueId;
 
-		public string _Set
-		{
-			get
-			{
-				return _set;
-			}
-			set	
-			{
-				_set = value;
-				DictionaryUtil.Add(QueryParameters, "Set", value);
-			}
-		}
+		private string _set;
 
 		public string Project
 		{
@@ -76,6 +63,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				uniqueId = value;
 				DictionaryUtil.Add(QueryParameters, "UniqueId", value);
+			}
+		}
+
+		public string _Set
+		{
+			get
+			{
+				return _set;
+			}
+			set	
+			{
+				_set = value;
+				DictionaryUtil.Add(QueryParameters, "Set", value);
 			}
 		}
 

@@ -19,69 +19,52 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.imm.Transform;
-using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class CreateSetRequest : RpcAcsRequest<CreateSetResponse>
-    {
-        public CreateSetRequest()
-            : base("imm", "2017-09-06", "CreateSet", "imm", "openAPI")
-        {
-        }
+	public class CreateVideoAbstractTaskResponse : AcsResponse
+	{
 
-		private string project;
+		private string requestId;
 
-		private string setName;
+		private string taskId;
 
-		private string setId;
+		private string taskType;
 
-		public string Project
+		public string RequestId
 		{
 			get
 			{
-				return project;
+				return requestId;
 			}
 			set	
 			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
+				requestId = value;
 			}
 		}
 
-		public string SetName
+		public string TaskId
 		{
 			get
 			{
-				return setName;
+				return taskId;
 			}
 			set	
 			{
-				setName = value;
-				DictionaryUtil.Add(QueryParameters, "SetName", value);
+				taskId = value;
 			}
 		}
 
-		public string SetId
+		public string TaskType
 		{
 			get
 			{
-				return setId;
+				return taskType;
 			}
 			set	
 			{
-				setId = value;
-				DictionaryUtil.Add(QueryParameters, "SetId", value);
+				taskType = value;
 			}
 		}
-
-        public override CreateSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return CreateSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+	}
 }

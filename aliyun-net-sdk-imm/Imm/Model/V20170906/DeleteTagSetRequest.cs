@@ -34,26 +34,13 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string lazyMode;
-
 		private string project;
 
-		private string setId;
+		private string lazyMode;
 
 		private string checkEmpty;
 
-		public string LazyMode
-		{
-			get
-			{
-				return lazyMode;
-			}
-			set	
-			{
-				lazyMode = value;
-				DictionaryUtil.Add(QueryParameters, "LazyMode", value);
-			}
-		}
+		private string setId;
 
 		public string Project
 		{
@@ -68,16 +55,16 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string SetId
+		public string LazyMode
 		{
 			get
 			{
-				return setId;
+				return lazyMode;
 			}
 			set	
 			{
-				setId = value;
-				DictionaryUtil.Add(QueryParameters, "SetId", value);
+				lazyMode = value;
+				DictionaryUtil.Add(QueryParameters, "LazyMode", value);
 			}
 		}
 
@@ -91,6 +78,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				checkEmpty = value;
 				DictionaryUtil.Add(QueryParameters, "CheckEmpty", value);
+			}
+		}
+
+		public string SetId
+		{
+			get
+			{
+				return setId;
+			}
+			set	
+			{
+				setId = value;
+				DictionaryUtil.Add(QueryParameters, "SetId", value);
 			}
 		}
 

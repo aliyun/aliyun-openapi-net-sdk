@@ -34,13 +34,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string remarksB;
-
 		private string project;
 
-		private string remarksA;
-
 		private string externalId;
+
+		private string notifyEndpoint;
+
+		private string sourceType;
+
+		private string notifyTopicName;
+
+		private string remarksB;
+
+		private string remarksA;
 
 		private string imageUri;
 
@@ -53,21 +59,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string remarksC;
 
 		private string setId;
-
-		private string sourceType;
-
-		public string RemarksB
-		{
-			get
-			{
-				return remarksB;
-			}
-			set	
-			{
-				remarksB = value;
-				DictionaryUtil.Add(QueryParameters, "RemarksB", value);
-			}
-		}
 
 		public string Project
 		{
@@ -82,19 +73,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string RemarksA
-		{
-			get
-			{
-				return remarksA;
-			}
-			set	
-			{
-				remarksA = value;
-				DictionaryUtil.Add(QueryParameters, "RemarksA", value);
-			}
-		}
-
 		public string ExternalId
 		{
 			get
@@ -105,6 +83,71 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				externalId = value;
 				DictionaryUtil.Add(QueryParameters, "ExternalId", value);
+			}
+		}
+
+		public string NotifyEndpoint
+		{
+			get
+			{
+				return notifyEndpoint;
+			}
+			set	
+			{
+				notifyEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
+			}
+		}
+
+		public string SourceType
+		{
+			get
+			{
+				return sourceType;
+			}
+			set	
+			{
+				sourceType = value;
+				DictionaryUtil.Add(QueryParameters, "SourceType", value);
+			}
+		}
+
+		public string NotifyTopicName
+		{
+			get
+			{
+				return notifyTopicName;
+			}
+			set	
+			{
+				notifyTopicName = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
+			}
+		}
+
+		public string RemarksB
+		{
+			get
+			{
+				return remarksB;
+			}
+			set	
+			{
+				remarksB = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksB", value);
+			}
+		}
+
+		public string RemarksA
+		{
+			get
+			{
+				return remarksA;
+			}
+			set	
+			{
+				remarksA = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksA", value);
 			}
 		}
 
@@ -183,19 +226,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				setId = value;
 				DictionaryUtil.Add(QueryParameters, "SetId", value);
-			}
-		}
-
-		public string SourceType
-		{
-			get
-			{
-				return sourceType;
-			}
-			set	
-			{
-				sourceType = value;
-				DictionaryUtil.Add(QueryParameters, "SourceType", value);
 			}
 		}
 

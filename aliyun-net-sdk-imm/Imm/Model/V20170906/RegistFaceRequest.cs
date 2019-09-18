@@ -40,11 +40,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string project;
 
+		private string groupName;
+
 		private string srcUri;
 
 		private string registerCheckLevel;
-
-		private string groupName;
 
 		private string user;
 
@@ -87,6 +87,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string GroupName
+		{
+			get
+			{
+				return groupName;
+			}
+			set	
+			{
+				groupName = value;
+				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
+
 		public string SrcUri
 		{
 			get
@@ -110,19 +123,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				registerCheckLevel = value;
 				DictionaryUtil.Add(QueryParameters, "RegisterCheckLevel", value);
-			}
-		}
-
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
 			}
 		}
 

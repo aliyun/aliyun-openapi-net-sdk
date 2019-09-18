@@ -36,6 +36,14 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string srcType;
 
+		private int? baseRow;
+
+		private string project;
+
+		private int? zoomFactor;
+
+		private string notifyEndpoint;
+
 		private int? baseCol;
 
 		private string notifyTopicName;
@@ -44,19 +52,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private int? zoomLevel;
 
-		private int? baseRow;
-
 		private string modelId;
-
-		private string project;
-
-		private int? zoomFactor;
 
 		private string tgtType;
 
 		private long? unitHeight;
-
-		private string notifyEndpoint;
 
 		private string srcUri;
 
@@ -74,6 +74,58 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				srcType = value;
 				DictionaryUtil.Add(QueryParameters, "SrcType", value);
+			}
+		}
+
+		public int? BaseRow
+		{
+			get
+			{
+				return baseRow;
+			}
+			set	
+			{
+				baseRow = value;
+				DictionaryUtil.Add(QueryParameters, "BaseRow", value.ToString());
+			}
+		}
+
+		public string Project
+		{
+			get
+			{
+				return project;
+			}
+			set	
+			{
+				project = value;
+				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public int? ZoomFactor
+		{
+			get
+			{
+				return zoomFactor;
+			}
+			set	
+			{
+				zoomFactor = value;
+				DictionaryUtil.Add(QueryParameters, "ZoomFactor", value.ToString());
+			}
+		}
+
+		public string NotifyEndpoint
+		{
+			get
+			{
+				return notifyEndpoint;
+			}
+			set	
+			{
+				notifyEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
 			}
 		}
 
@@ -129,19 +181,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public int? BaseRow
-		{
-			get
-			{
-				return baseRow;
-			}
-			set	
-			{
-				baseRow = value;
-				DictionaryUtil.Add(QueryParameters, "BaseRow", value.ToString());
-			}
-		}
-
 		public string ModelId
 		{
 			get
@@ -152,32 +191,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				modelId = value;
 				DictionaryUtil.Add(QueryParameters, "ModelId", value);
-			}
-		}
-
-		public string Project
-		{
-			get
-			{
-				return project;
-			}
-			set	
-			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
-			}
-		}
-
-		public int? ZoomFactor
-		{
-			get
-			{
-				return zoomFactor;
-			}
-			set	
-			{
-				zoomFactor = value;
-				DictionaryUtil.Add(QueryParameters, "ZoomFactor", value.ToString());
 			}
 		}
 
@@ -204,19 +217,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				unitHeight = value;
 				DictionaryUtil.Add(QueryParameters, "UnitHeight", value.ToString());
-			}
-		}
-
-		public string NotifyEndpoint
-		{
-			get
-			{
-				return notifyEndpoint;
-			}
-			set	
-			{
-				notifyEndpoint = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
 			}
 		}
 

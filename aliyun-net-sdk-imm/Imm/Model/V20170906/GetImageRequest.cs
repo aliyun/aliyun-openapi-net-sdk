@@ -34,24 +34,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string imageUri;
-
 		private string project;
 
-		private string setId;
+		private string imageUri;
 
-		public string ImageUri
-		{
-			get
-			{
-				return imageUri;
-			}
-			set	
-			{
-				imageUri = value;
-				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
-			}
-		}
+		private string setId;
 
 		public string Project
 		{
@@ -63,6 +50,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string ImageUri
+		{
+			get
+			{
+				return imageUri;
+			}
+			set	
+			{
+				imageUri = value;
+				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
 			}
 		}
 

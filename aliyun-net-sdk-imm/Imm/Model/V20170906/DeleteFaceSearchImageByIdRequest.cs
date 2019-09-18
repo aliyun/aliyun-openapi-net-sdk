@@ -38,9 +38,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string project;
 
-		private string srcUri;
-
 		private string groupName;
+
+		private string srcUri;
 
 		private string user;
 
@@ -70,19 +70,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string SrcUri
-		{
-			get
-			{
-				return srcUri;
-			}
-			set	
-			{
-				srcUri = value;
-				DictionaryUtil.Add(QueryParameters, "SrcUri", value);
-			}
-		}
-
 		public string GroupName
 		{
 			get
@@ -93,6 +80,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
+
+		public string SrcUri
+		{
+			get
+			{
+				return srcUri;
+			}
+			set	
+			{
+				srcUri = value;
+				DictionaryUtil.Add(QueryParameters, "SrcUri", value);
 			}
 		}
 

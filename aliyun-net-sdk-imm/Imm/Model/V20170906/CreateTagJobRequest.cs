@@ -34,41 +34,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string notifyTopicName;
-
-		private string notifyEndpoint;
-
 		private string project;
 
 		private string externalID;
 
+		private string notifyEndpoint;
+
+		private string notifyTopicName;
+
 		private string srcUri;
-
-		public string NotifyTopicName
-		{
-			get
-			{
-				return notifyTopicName;
-			}
-			set	
-			{
-				notifyTopicName = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
-			}
-		}
-
-		public string NotifyEndpoint
-		{
-			get
-			{
-				return notifyEndpoint;
-			}
-			set	
-			{
-				notifyEndpoint = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
-			}
-		}
 
 		public string Project
 		{
@@ -93,6 +67,32 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				externalID = value;
 				DictionaryUtil.Add(QueryParameters, "ExternalID", value);
+			}
+		}
+
+		public string NotifyEndpoint
+		{
+			get
+			{
+				return notifyEndpoint;
+			}
+			set	
+			{
+				notifyEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
+			}
+		}
+
+		public string NotifyTopicName
+		{
+			get
+			{
+				return notifyTopicName;
+			}
+			set	
+			{
+				notifyTopicName = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
 			}
 		}
 

@@ -19,69 +19,52 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.imm.Transform;
-using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class CreateSetRequest : RpcAcsRequest<CreateSetResponse>
-    {
-        public CreateSetRequest()
-            : base("imm", "2017-09-06", "CreateSet", "imm", "openAPI")
-        {
-        }
+	public class EncodeBlindWatermarkResponse : AcsResponse
+	{
 
-		private string project;
+		private string requestId;
 
-		private string setName;
+		private string targetUri;
 
-		private string setId;
+		private string content;
 
-		public string Project
+		public string RequestId
 		{
 			get
 			{
-				return project;
+				return requestId;
 			}
 			set	
 			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
+				requestId = value;
 			}
 		}
 
-		public string SetName
+		public string TargetUri
 		{
 			get
 			{
-				return setName;
+				return targetUri;
 			}
 			set	
 			{
-				setName = value;
-				DictionaryUtil.Add(QueryParameters, "SetName", value);
+				targetUri = value;
 			}
 		}
 
-		public string SetId
+		public string Content
 		{
 			get
 			{
-				return setId;
+				return content;
 			}
 			set	
 			{
-				setId = value;
-				DictionaryUtil.Add(QueryParameters, "SetId", value);
+				content = value;
 			}
 		}
-
-        public override CreateSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return CreateSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+	}
 }

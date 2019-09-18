@@ -27,18 +27,52 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class DetectImageCelebrityRequest : RpcAcsRequest<DetectImageCelebrityResponse>
+    public class EncodeBlindWatermarkRequest : RpcAcsRequest<EncodeBlindWatermarkResponse>
     {
-        public DetectImageCelebrityRequest()
-            : base("imm", "2017-09-06", "DetectImageCelebrity", "imm", "openAPI")
+        public EncodeBlindWatermarkRequest()
+            : base("imm", "2017-09-06", "EncodeBlindWatermark", "imm", "openAPI")
         {
         }
 
+		private string imageQuality;
+
+		private string watermarkUri;
+
 		private string project;
 
-		private string library;
+		private string content;
+
+		private string targetUri;
+
+		private string targetImageType;
 
 		private string imageUri;
+
+		public string ImageQuality
+		{
+			get
+			{
+				return imageQuality;
+			}
+			set	
+			{
+				imageQuality = value;
+				DictionaryUtil.Add(QueryParameters, "ImageQuality", value);
+			}
+		}
+
+		public string WatermarkUri
+		{
+			get
+			{
+				return watermarkUri;
+			}
+			set	
+			{
+				watermarkUri = value;
+				DictionaryUtil.Add(QueryParameters, "WatermarkUri", value);
+			}
+		}
 
 		public string Project
 		{
@@ -53,16 +87,42 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Library
+		public string Content
 		{
 			get
 			{
-				return library;
+				return content;
 			}
 			set	
 			{
-				library = value;
-				DictionaryUtil.Add(QueryParameters, "Library", value);
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
+			}
+		}
+
+		public string TargetUri
+		{
+			get
+			{
+				return targetUri;
+			}
+			set	
+			{
+				targetUri = value;
+				DictionaryUtil.Add(QueryParameters, "TargetUri", value);
+			}
+		}
+
+		public string TargetImageType
+		{
+			get
+			{
+				return targetImageType;
+			}
+			set	
+			{
+				targetImageType = value;
+				DictionaryUtil.Add(QueryParameters, "TargetImageType", value);
 			}
 		}
 
@@ -84,9 +144,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override DetectImageCelebrityResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override EncodeBlindWatermarkResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DetectImageCelebrityResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EncodeBlindWatermarkResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

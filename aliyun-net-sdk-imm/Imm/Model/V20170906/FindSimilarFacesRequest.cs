@@ -34,7 +34,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string imageUri;
+		private string project;
 
 		private float? minSimilarity;
 
@@ -42,22 +42,22 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private int? limit;
 
-		private string project;
+		private string faceId;
+
+		private string imageUri;
 
 		private string setId;
 
-		private string faceId;
-
-		public string ImageUri
+		public string Project
 		{
 			get
 			{
-				return imageUri;
+				return project;
 			}
 			set	
 			{
-				imageUri = value;
-				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+				project = value;
+				DictionaryUtil.Add(QueryParameters, "Project", value);
 			}
 		}
 
@@ -100,16 +100,29 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Project
+		public string FaceId
 		{
 			get
 			{
-				return project;
+				return faceId;
 			}
 			set	
 			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
+				faceId = value;
+				DictionaryUtil.Add(QueryParameters, "FaceId", value);
+			}
+		}
+
+		public string ImageUri
+		{
+			get
+			{
+				return imageUri;
+			}
+			set	
+			{
+				imageUri = value;
+				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
 			}
 		}
 
@@ -123,19 +136,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				setId = value;
 				DictionaryUtil.Add(QueryParameters, "SetId", value);
-			}
-		}
-
-		public string FaceId
-		{
-			get
-			{
-				return faceId;
-			}
-			set	
-			{
-				faceId = value;
-				DictionaryUtil.Add(QueryParameters, "FaceId", value);
 			}
 		}
 

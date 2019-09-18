@@ -36,9 +36,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string srcType;
 
-		private string modelId;
-
 		private string project;
+
+		private bool? pdfVector;
+
+		private string password;
+
+		private long? startPage;
+
+		private bool? fitToPagesWide;
+
+		private string tgtFilePrefix;
+
+		private string modelId;
 
 		private long? maxSheetRow;
 
@@ -48,23 +58,13 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string tgtFileSuffix;
 
-		private bool? pdfVector;
-
 		private bool? sheetOnePage;
-
-		private string password;
-
-		private long? startPage;
 
 		private long? maxSheetCol;
 
 		private string tgtType;
 
-		private bool? fitToPagesWide;
-
 		private bool? hidecomments;
-
-		private string tgtFilePrefix;
 
 		private bool? fitToPagesTall;
 
@@ -87,19 +87,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string ModelId
-		{
-			get
-			{
-				return modelId;
-			}
-			set	
-			{
-				modelId = value;
-				DictionaryUtil.Add(QueryParameters, "ModelId", value);
-			}
-		}
-
 		public string Project
 		{
 			get
@@ -110,6 +97,84 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public bool? PdfVector
+		{
+			get
+			{
+				return pdfVector;
+			}
+			set	
+			{
+				pdfVector = value;
+				DictionaryUtil.Add(QueryParameters, "PdfVector", value.ToString());
+			}
+		}
+
+		public string Password
+		{
+			get
+			{
+				return password;
+			}
+			set	
+			{
+				password = value;
+				DictionaryUtil.Add(QueryParameters, "Password", value);
+			}
+		}
+
+		public long? StartPage
+		{
+			get
+			{
+				return startPage;
+			}
+			set	
+			{
+				startPage = value;
+				DictionaryUtil.Add(QueryParameters, "StartPage", value.ToString());
+			}
+		}
+
+		public bool? FitToPagesWide
+		{
+			get
+			{
+				return fitToPagesWide;
+			}
+			set	
+			{
+				fitToPagesWide = value;
+				DictionaryUtil.Add(QueryParameters, "FitToPagesWide", value.ToString());
+			}
+		}
+
+		public string TgtFilePrefix
+		{
+			get
+			{
+				return tgtFilePrefix;
+			}
+			set	
+			{
+				tgtFilePrefix = value;
+				DictionaryUtil.Add(QueryParameters, "TgtFilePrefix", value);
+			}
+		}
+
+		public string ModelId
+		{
+			get
+			{
+				return modelId;
+			}
+			set	
+			{
+				modelId = value;
+				DictionaryUtil.Add(QueryParameters, "ModelId", value);
 			}
 		}
 
@@ -165,19 +230,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public bool? PdfVector
-		{
-			get
-			{
-				return pdfVector;
-			}
-			set	
-			{
-				pdfVector = value;
-				DictionaryUtil.Add(QueryParameters, "PdfVector", value.ToString());
-			}
-		}
-
 		public bool? SheetOnePage
 		{
 			get
@@ -188,32 +240,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				sheetOnePage = value;
 				DictionaryUtil.Add(QueryParameters, "SheetOnePage", value.ToString());
-			}
-		}
-
-		public string Password
-		{
-			get
-			{
-				return password;
-			}
-			set	
-			{
-				password = value;
-				DictionaryUtil.Add(QueryParameters, "Password", value);
-			}
-		}
-
-		public long? StartPage
-		{
-			get
-			{
-				return startPage;
-			}
-			set	
-			{
-				startPage = value;
-				DictionaryUtil.Add(QueryParameters, "StartPage", value.ToString());
 			}
 		}
 
@@ -243,19 +269,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public bool? FitToPagesWide
-		{
-			get
-			{
-				return fitToPagesWide;
-			}
-			set	
-			{
-				fitToPagesWide = value;
-				DictionaryUtil.Add(QueryParameters, "FitToPagesWide", value.ToString());
-			}
-		}
-
 		public bool? Hidecomments
 		{
 			get
@@ -266,19 +279,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				hidecomments = value;
 				DictionaryUtil.Add(QueryParameters, "Hidecomments", value.ToString());
-			}
-		}
-
-		public string TgtFilePrefix
-		{
-			get
-			{
-				return tgtFilePrefix;
-			}
-			set	
-			{
-				tgtFilePrefix = value;
-				DictionaryUtil.Add(QueryParameters, "TgtFilePrefix", value);
 			}
 		}
 

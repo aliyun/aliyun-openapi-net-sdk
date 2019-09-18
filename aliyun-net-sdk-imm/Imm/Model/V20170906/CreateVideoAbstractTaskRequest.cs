@@ -27,12 +27,14 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class CreateVideoAnalyseTaskRequest : RpcAcsRequest<CreateVideoAnalyseTaskResponse>
+    public class CreateVideoAbstractTaskRequest : RpcAcsRequest<CreateVideoAbstractTaskResponse>
     {
-        public CreateVideoAnalyseTaskRequest()
-            : base("imm", "2017-09-06", "CreateVideoAnalyseTask", "imm", "openAPI")
+        public CreateVideoAbstractTaskRequest()
+            : base("imm", "2017-09-06", "CreateVideoAbstractTask", "imm", "openAPI")
         {
         }
+
+		private string targetVideoUri;
 
 		private string project;
 
@@ -42,7 +44,22 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string videoUri;
 
-		private string tgtUri;
+		private int? abstractLength;
+
+		private string targetClipsUri;
+
+		public string TargetVideoUri
+		{
+			get
+			{
+				return targetVideoUri;
+			}
+			set	
+			{
+				targetVideoUri = value;
+				DictionaryUtil.Add(QueryParameters, "TargetVideoUri", value);
+			}
+		}
 
 		public string Project
 		{
@@ -96,16 +113,29 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string TgtUri
+		public int? AbstractLength
 		{
 			get
 			{
-				return tgtUri;
+				return abstractLength;
 			}
 			set	
 			{
-				tgtUri = value;
-				DictionaryUtil.Add(QueryParameters, "TgtUri", value);
+				abstractLength = value;
+				DictionaryUtil.Add(QueryParameters, "AbstractLength", value.ToString());
+			}
+		}
+
+		public string TargetClipsUri
+		{
+			get
+			{
+				return targetClipsUri;
+			}
+			set	
+			{
+				targetClipsUri = value;
+				DictionaryUtil.Add(QueryParameters, "TargetClipsUri", value);
 			}
 		}
 
@@ -114,9 +144,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override CreateVideoAnalyseTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateVideoAbstractTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateVideoAnalyseTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateVideoAbstractTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

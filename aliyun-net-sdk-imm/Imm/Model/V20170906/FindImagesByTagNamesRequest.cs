@@ -34,26 +34,26 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string marker;
+		private string project;
 
 		private int? limit;
 
-		private string project;
+		private string tagNames;
+
+		private string marker;
 
 		private string setId;
 
-		private string tagNames;
-
-		public string Marker
+		public string Project
 		{
 			get
 			{
-				return marker;
+				return project;
 			}
 			set	
 			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
+				project = value;
+				DictionaryUtil.Add(QueryParameters, "Project", value);
 			}
 		}
 
@@ -70,16 +70,29 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Project
+		public string TagNames
 		{
 			get
 			{
-				return project;
+				return tagNames;
 			}
 			set	
 			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
+				tagNames = value;
+				DictionaryUtil.Add(QueryParameters, "TagNames", value);
+			}
+		}
+
+		public string Marker
+		{
+			get
+			{
+				return marker;
+			}
+			set	
+			{
+				marker = value;
+				DictionaryUtil.Add(QueryParameters, "Marker", value);
 			}
 		}
 
@@ -93,19 +106,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				setId = value;
 				DictionaryUtil.Add(QueryParameters, "SetId", value);
-			}
-		}
-
-		public string TagNames
-		{
-			get
-			{
-				return tagNames;
-			}
-			set	
-			{
-				tagNames = value;
-				DictionaryUtil.Add(QueryParameters, "TagNames", value);
 			}
 		}
 

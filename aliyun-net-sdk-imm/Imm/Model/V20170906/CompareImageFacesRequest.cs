@@ -34,17 +34,56 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string imageUriB;
-
-		private string imageUriA;
-
 		private string project;
-
-		private string setId;
 
 		private string faceIdA;
 
 		private string faceIdB;
+
+		private string imageUriB;
+
+		private string imageUriA;
+
+		private string setId;
+
+		public string Project
+		{
+			get
+			{
+				return project;
+			}
+			set	
+			{
+				project = value;
+				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string FaceIdA
+		{
+			get
+			{
+				return faceIdA;
+			}
+			set	
+			{
+				faceIdA = value;
+				DictionaryUtil.Add(QueryParameters, "FaceIdA", value);
+			}
+		}
+
+		public string FaceIdB
+		{
+			get
+			{
+				return faceIdB;
+			}
+			set	
+			{
+				faceIdB = value;
+				DictionaryUtil.Add(QueryParameters, "FaceIdB", value);
+			}
+		}
 
 		public string ImageUriB
 		{
@@ -72,19 +111,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Project
-		{
-			get
-			{
-				return project;
-			}
-			set	
-			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
-			}
-		}
-
 		public string SetId
 		{
 			get
@@ -95,32 +121,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				setId = value;
 				DictionaryUtil.Add(QueryParameters, "SetId", value);
-			}
-		}
-
-		public string FaceIdA
-		{
-			get
-			{
-				return faceIdA;
-			}
-			set	
-			{
-				faceIdA = value;
-				DictionaryUtil.Add(QueryParameters, "FaceIdA", value);
-			}
-		}
-
-		public string FaceIdB
-		{
-			get
-			{
-				return faceIdB;
-			}
-			set	
-			{
-				faceIdB = value;
-				DictionaryUtil.Add(QueryParameters, "FaceIdB", value);
 			}
 		}
 

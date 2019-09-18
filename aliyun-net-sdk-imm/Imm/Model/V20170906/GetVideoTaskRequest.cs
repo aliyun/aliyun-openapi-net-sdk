@@ -34,24 +34,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string taskType;
-
 		private string project;
 
 		private string taskId;
 
-		public string TaskType
-		{
-			get
-			{
-				return taskType;
-			}
-			set	
-			{
-				taskType = value;
-				DictionaryUtil.Add(QueryParameters, "TaskType", value);
-			}
-		}
+		private string taskType;
 
 		public string Project
 		{
@@ -76,6 +63,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				taskId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+			}
+		}
+
+		public string TaskType
+		{
+			get
+			{
+				return taskType;
+			}
+			set	
+			{
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
 			}
 		}
 

@@ -142,7 +142,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 
 					FindImagesByTagNamesResponse.FindImagesByTagNames_Frames.FindImagesByTagNames_OCRItem.FindImagesByTagNames_OCRBoundary oCRBoundary = new FindImagesByTagNamesResponse.FindImagesByTagNames_Frames.FindImagesByTagNames_OCRItem.FindImagesByTagNames_OCRBoundary();
 					oCRBoundary.Left = context.IntegerValue("FindImagesByTagNames.Images["+ i +"].OCR["+ j +"].OCRBoundary.Left");
-					oCRBoundary.Left1 = context.IntegerValue("FindImagesByTagNames.Images["+ i +"].OCR["+ j +"].OCRBoundary.Left1");
+					oCRBoundary.Left1 = context.IntegerValue("FindImagesByTagNames.Images["+ i +"].OCR["+ j +"].OCRBoundary.Left");
 					oCRBoundary.Width = context.IntegerValue("FindImagesByTagNames.Images["+ i +"].OCR["+ j +"].OCRBoundary.Width");
 					oCRBoundary.Height = context.IntegerValue("FindImagesByTagNames.Images["+ i +"].OCR["+ j +"].OCRBoundary.Height");
 					oCRItem.OCRBoundary = oCRBoundary;

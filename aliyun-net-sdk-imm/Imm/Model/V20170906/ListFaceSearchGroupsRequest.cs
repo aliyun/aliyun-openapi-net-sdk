@@ -36,9 +36,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private int? maxKeys;
 
-		private string marker;
-
 		private string project;
+
+		private string marker;
 
 		public int? MaxKeys
 		{
@@ -53,19 +53,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Marker
-		{
-			get
-			{
-				return marker;
-			}
-			set	
-			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
-			}
-		}
-
 		public string Project
 		{
 			get
@@ -76,6 +63,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string Marker
+		{
+			get
+			{
+				return marker;
+			}
+			set	
+			{
+				marker = value;
+				DictionaryUtil.Add(QueryParameters, "Marker", value);
 			}
 		}
 

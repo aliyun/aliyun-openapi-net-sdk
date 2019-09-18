@@ -34,26 +34,13 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string tagName;
-
 		private string project;
+
+		private string tagName;
 
 		private string setId;
 
 		private string srcUri;
-
-		public string TagName
-		{
-			get
-			{
-				return tagName;
-			}
-			set	
-			{
-				tagName = value;
-				DictionaryUtil.Add(QueryParameters, "TagName", value);
-			}
-		}
 
 		public string Project
 		{
@@ -65,6 +52,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string TagName
+		{
+			get
+			{
+				return tagName;
+			}
+			set	
+			{
+				tagName = value;
+				DictionaryUtil.Add(QueryParameters, "TagName", value);
 			}
 		}
 

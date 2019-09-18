@@ -34,24 +34,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string newServiceRole;
-
 		private string project;
 
-		private int? newCU;
+		private string newServiceRole;
 
-		public string NewServiceRole
-		{
-			get
-			{
-				return newServiceRole;
-			}
-			set	
-			{
-				newServiceRole = value;
-				DictionaryUtil.Add(QueryParameters, "NewServiceRole", value);
-			}
-		}
+		private int? newCU;
 
 		public string Project
 		{
@@ -63,6 +50,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string NewServiceRole
+		{
+			get
+			{
+				return newServiceRole;
+			}
+			set	
+			{
+				newServiceRole = value;
+				DictionaryUtil.Add(QueryParameters, "NewServiceRole", value);
 			}
 		}
 

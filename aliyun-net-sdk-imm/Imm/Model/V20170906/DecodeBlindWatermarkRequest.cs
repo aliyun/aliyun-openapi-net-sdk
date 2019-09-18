@@ -27,31 +27,33 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class ListFaceSearchGroupUsersRequest : RpcAcsRequest<ListFaceSearchGroupUsersResponse>
+    public class DecodeBlindWatermarkRequest : RpcAcsRequest<DecodeBlindWatermarkResponse>
     {
-        public ListFaceSearchGroupUsersRequest()
-            : base("imm", "2017-09-06", "ListFaceSearchGroupUsers", "imm", "openAPI")
+        public DecodeBlindWatermarkRequest()
+            : base("imm", "2017-09-06", "DecodeBlindWatermark", "imm", "openAPI")
         {
         }
 
-		private int? maxKeys;
+		private int? imageQuality;
 
 		private string project;
 
-		private string groupName;
+		private string targetUri;
 
-		private string marker;
+		private string imageUri;
 
-		public int? MaxKeys
+		private string originalImageUri;
+
+		public int? ImageQuality
 		{
 			get
 			{
-				return maxKeys;
+				return imageQuality;
 			}
 			set	
 			{
-				maxKeys = value;
-				DictionaryUtil.Add(QueryParameters, "MaxKeys", value.ToString());
+				imageQuality = value;
+				DictionaryUtil.Add(QueryParameters, "ImageQuality", value.ToString());
 			}
 		}
 
@@ -68,29 +70,42 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string GroupName
+		public string TargetUri
 		{
 			get
 			{
-				return groupName;
+				return targetUri;
 			}
 			set	
 			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+				targetUri = value;
+				DictionaryUtil.Add(QueryParameters, "TargetUri", value);
 			}
 		}
 
-		public string Marker
+		public string ImageUri
 		{
 			get
 			{
-				return marker;
+				return imageUri;
 			}
 			set	
 			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
+				imageUri = value;
+				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+			}
+		}
+
+		public string OriginalImageUri
+		{
+			get
+			{
+				return originalImageUri;
+			}
+			set	
+			{
+				originalImageUri = value;
+				DictionaryUtil.Add(QueryParameters, "OriginalImageUri", value);
 			}
 		}
 
@@ -99,9 +114,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override ListFaceSearchGroupUsersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DecodeBlindWatermarkResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListFaceSearchGroupUsersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DecodeBlindWatermarkResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -36,11 +36,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private int? maxKeys;
 
+		private string project;
+
 		private string taskType;
 
 		private string marker;
-
-		private string project;
 
 		public int? MaxKeys
 		{
@@ -52,6 +52,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				maxKeys = value;
 				DictionaryUtil.Add(QueryParameters, "MaxKeys", value.ToString());
+			}
+		}
+
+		public string Project
+		{
+			get
+			{
+				return project;
+			}
+			set	
+			{
+				project = value;
+				DictionaryUtil.Add(QueryParameters, "Project", value);
 			}
 		}
 
@@ -78,19 +91,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				marker = value;
 				DictionaryUtil.Add(QueryParameters, "Marker", value);
-			}
-		}
-
-		public string Project
-		{
-			get
-			{
-				return project;
-			}
-			set	
-			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
 			}
 		}
 

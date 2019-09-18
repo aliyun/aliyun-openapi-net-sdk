@@ -34,15 +34,41 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
+		private string project;
+
+		private string type;
+
 		private int? cU;
 
 		private string serviceRole;
 
-		private string project;
-
 		private string billingType;
 
-		private string type;
+		public string Project
+		{
+			get
+			{
+				return project;
+			}
+			set	
+			{
+				project = value;
+				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
 
 		public int? CU
 		{
@@ -70,19 +96,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Project
-		{
-			get
-			{
-				return project;
-			}
-			set	
-			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
-			}
-		}
-
 		public string BillingType
 		{
 			get
@@ -93,19 +106,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				billingType = value;
 				DictionaryUtil.Add(QueryParameters, "BillingType", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 

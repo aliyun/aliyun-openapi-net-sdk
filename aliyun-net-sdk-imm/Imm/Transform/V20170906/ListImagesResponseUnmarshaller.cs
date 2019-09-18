@@ -142,7 +142,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 
 					ListImagesResponse.ListImages_ImagesItem.ListImages_OCRItem.ListImages_OCRBoundary oCRBoundary = new ListImagesResponse.ListImages_ImagesItem.ListImages_OCRItem.ListImages_OCRBoundary();
 					oCRBoundary.Left = context.IntegerValue("ListImages.Images["+ i +"].OCR["+ j +"].OCRBoundary.Left");
-					oCRBoundary.Left1 = context.IntegerValue("ListImages.Images["+ i +"].OCR["+ j +"].OCRBoundary.Left1");
+					oCRBoundary.Left1 = context.IntegerValue("ListImages.Images["+ i +"].OCR["+ j +"].OCRBoundary.Left");
 					oCRBoundary.Width = context.IntegerValue("ListImages.Images["+ i +"].OCR["+ j +"].OCRBoundary.Width");
 					oCRBoundary.Height = context.IntegerValue("ListImages.Images["+ i +"].OCR["+ j +"].OCRBoundary.Height");
 					oCRItem.OCRBoundary = oCRBoundary;

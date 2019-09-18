@@ -34,13 +34,26 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
+		private string project;
+
 		private string videoUri;
 
 		private string marker;
 
-		private string project;
-
 		private string setId;
+
+		public string Project
+		{
+			get
+			{
+				return project;
+			}
+			set	
+			{
+				project = value;
+				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
 
 		public string VideoUri
 		{
@@ -65,19 +78,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				marker = value;
 				DictionaryUtil.Add(QueryParameters, "Marker", value);
-			}
-		}
-
-		public string Project
-		{
-			get
-			{
-				return project;
-			}
-			set	
-			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
 			}
 		}
 

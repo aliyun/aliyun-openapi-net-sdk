@@ -34,26 +34,39 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string videoUri;
+		private string project;
+
+		private string notifyEndpoint;
 
 		private string notifyTopicName;
 
 		private string targetList;
 
-		private string notifyEndpoint;
+		private string videoUri;
 
-		private string project;
-
-		public string VideoUri
+		public string Project
 		{
 			get
 			{
-				return videoUri;
+				return project;
 			}
 			set	
 			{
-				videoUri = value;
-				DictionaryUtil.Add(QueryParameters, "VideoUri", value);
+				project = value;
+				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string NotifyEndpoint
+		{
+			get
+			{
+				return notifyEndpoint;
+			}
+			set	
+			{
+				notifyEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
 			}
 		}
 
@@ -83,29 +96,16 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string NotifyEndpoint
+		public string VideoUri
 		{
 			get
 			{
-				return notifyEndpoint;
+				return videoUri;
 			}
 			set	
 			{
-				notifyEndpoint = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
-			}
-		}
-
-		public string Project
-		{
-			get
-			{
-				return project;
-			}
-			set	
-			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
+				videoUri = value;
+				DictionaryUtil.Add(QueryParameters, "VideoUri", value);
 			}
 		}
 

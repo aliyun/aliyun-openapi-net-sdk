@@ -34,54 +34,28 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string groupIdFrom;
-
-		private string groupIdTo;
-
-		private string notifyTopicName;
+		private string project;
 
 		private string notifyEndpoint;
 
-		private string project;
+		private string groupIdFrom;
+
+		private string notifyTopicName;
+
+		private string groupIdTo;
 
 		private string setId;
 
-		public string GroupIdFrom
+		public string Project
 		{
 			get
 			{
-				return groupIdFrom;
+				return project;
 			}
 			set	
 			{
-				groupIdFrom = value;
-				DictionaryUtil.Add(QueryParameters, "GroupIdFrom", value);
-			}
-		}
-
-		public string GroupIdTo
-		{
-			get
-			{
-				return groupIdTo;
-			}
-			set	
-			{
-				groupIdTo = value;
-				DictionaryUtil.Add(QueryParameters, "GroupIdTo", value);
-			}
-		}
-
-		public string NotifyTopicName
-		{
-			get
-			{
-				return notifyTopicName;
-			}
-			set	
-			{
-				notifyTopicName = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
+				project = value;
+				DictionaryUtil.Add(QueryParameters, "Project", value);
 			}
 		}
 
@@ -98,16 +72,42 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Project
+		public string GroupIdFrom
 		{
 			get
 			{
-				return project;
+				return groupIdFrom;
 			}
 			set	
 			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
+				groupIdFrom = value;
+				DictionaryUtil.Add(QueryParameters, "GroupIdFrom", value);
+			}
+		}
+
+		public string NotifyTopicName
+		{
+			get
+			{
+				return notifyTopicName;
+			}
+			set	
+			{
+				notifyTopicName = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
+			}
+		}
+
+		public string GroupIdTo
+		{
+			get
+			{
+				return groupIdTo;
+			}
+			set	
+			{
+				groupIdTo = value;
+				DictionaryUtil.Add(QueryParameters, "GroupIdTo", value);
 			}
 		}
 

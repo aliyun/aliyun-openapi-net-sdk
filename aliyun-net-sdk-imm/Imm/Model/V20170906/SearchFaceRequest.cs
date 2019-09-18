@@ -40,11 +40,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string searchThresholdLevel;
 
-		private string srcUri;
-
 		private bool? isThreshold;
 
 		private string groupName;
+
+		private string srcUri;
 
 		public int? ResultNum
 		{
@@ -85,19 +85,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string SrcUri
-		{
-			get
-			{
-				return srcUri;
-			}
-			set	
-			{
-				srcUri = value;
-				DictionaryUtil.Add(QueryParameters, "SrcUri", value);
-			}
-		}
-
 		public bool? IsThreshold
 		{
 			get
@@ -121,6 +108,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
+
+		public string SrcUri
+		{
+			get
+			{
+				return srcUri;
+			}
+			set	
+			{
+				srcUri = value;
+				DictionaryUtil.Add(QueryParameters, "SrcUri", value);
 			}
 		}
 

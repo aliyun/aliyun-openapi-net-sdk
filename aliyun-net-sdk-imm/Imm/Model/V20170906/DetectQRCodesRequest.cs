@@ -34,22 +34,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string srcUris;
-
 		private string project;
 
-		public string SrcUris
-		{
-			get
-			{
-				return srcUris;
-			}
-			set	
-			{
-				srcUris = value;
-				DictionaryUtil.Add(QueryParameters, "SrcUris", value);
-			}
-		}
+		private string srcUris;
 
 		public string Project
 		{
@@ -61,6 +48,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string SrcUris
+		{
+			get
+			{
+				return srcUris;
+			}
+			set	
+			{
+				srcUris = value;
+				DictionaryUtil.Add(QueryParameters, "SrcUris", value);
 			}
 		}
 

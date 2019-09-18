@@ -34,24 +34,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string setName;
-
 		private string project;
 
-		private string setId;
+		private string setName;
 
-		public string SetName
-		{
-			get
-			{
-				return setName;
-			}
-			set	
-			{
-				setName = value;
-				DictionaryUtil.Add(QueryParameters, "SetName", value);
-			}
-		}
+		private string setId;
 
 		public string Project
 		{
@@ -63,6 +50,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string SetName
+		{
+			get
+			{
+				return setName;
+			}
+			set	
+			{
+				setName = value;
+				DictionaryUtil.Add(QueryParameters, "SetName", value);
 			}
 		}
 

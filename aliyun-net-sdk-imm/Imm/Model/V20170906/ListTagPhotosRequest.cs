@@ -34,28 +34,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string tagName;
-
 		private string maxKeys;
-
-		private string marker;
 
 		private string project;
 
-		private string setId;
+		private string tagName;
 
-		public string TagName
-		{
-			get
-			{
-				return tagName;
-			}
-			set	
-			{
-				tagName = value;
-				DictionaryUtil.Add(QueryParameters, "TagName", value);
-			}
-		}
+		private string marker;
+
+		private string setId;
 
 		public string MaxKeys
 		{
@@ -70,19 +57,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Marker
-		{
-			get
-			{
-				return marker;
-			}
-			set	
-			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
-			}
-		}
-
 		public string Project
 		{
 			get
@@ -93,6 +67,32 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string TagName
+		{
+			get
+			{
+				return tagName;
+			}
+			set	
+			{
+				tagName = value;
+				DictionaryUtil.Add(QueryParameters, "TagName", value);
+			}
+		}
+
+		public string Marker
+		{
+			get
+			{
+				return marker;
+			}
+			set	
+			{
+				marker = value;
+				DictionaryUtil.Add(QueryParameters, "Marker", value);
 			}
 		}
 

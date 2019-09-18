@@ -143,7 +143,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 
 					ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_OCRItem.ListVideoFrames_OCRBoundary oCRBoundary = new ListVideoFramesResponse.ListVideoFrames_FramesItem.ListVideoFrames_OCRItem.ListVideoFrames_OCRBoundary();
 					oCRBoundary.Left = context.IntegerValue("ListVideoFrames.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Left");
-					oCRBoundary.Left1 = context.IntegerValue("ListVideoFrames.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Left1");
+					oCRBoundary.Left1 = context.IntegerValue("ListVideoFrames.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Left");
 					oCRBoundary.Width = context.IntegerValue("ListVideoFrames.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Width");
 					oCRBoundary.Height = context.IntegerValue("ListVideoFrames.Frames["+ i +"].OCR["+ j +"].OCRBoundary.Height");
 					oCRItem.OCRBoundary = oCRBoundary;

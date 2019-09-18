@@ -34,28 +34,15 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string groupId;
-
 		private string project;
 
-		private string setId;
+		private string groupId;
 
 		private string groupName;
 
-		private string groupCoverFaceId;
+		private string setId;
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
+		private string groupCoverFaceId;
 
 		public string Project
 		{
@@ -70,16 +57,16 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string SetId
+		public string GroupId
 		{
 			get
 			{
-				return setId;
+				return groupId;
 			}
 			set	
 			{
-				setId = value;
-				DictionaryUtil.Add(QueryParameters, "SetId", value);
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -93,6 +80,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
+
+		public string SetId
+		{
+			get
+			{
+				return setId;
+			}
+			set	
+			{
+				setId = value;
+				DictionaryUtil.Add(QueryParameters, "SetId", value);
 			}
 		}
 

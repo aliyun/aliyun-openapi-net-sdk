@@ -34,28 +34,28 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
-		private string marker;
+		private string project;
 
 		private int? limit;
 
-		private string project;
-
-		private string setId;
+		private string order;
 
 		private string orderBy;
 
-		private string order;
+		private string marker;
 
-		public string Marker
+		private string setId;
+
+		public string Project
 		{
 			get
 			{
-				return marker;
+				return project;
 			}
 			set	
 			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
+				project = value;
+				DictionaryUtil.Add(QueryParameters, "Project", value);
 			}
 		}
 
@@ -72,29 +72,16 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Project
+		public string Order
 		{
 			get
 			{
-				return project;
+				return order;
 			}
 			set	
 			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
-			}
-		}
-
-		public string SetId
-		{
-			get
-			{
-				return setId;
-			}
-			set	
-			{
-				setId = value;
-				DictionaryUtil.Add(QueryParameters, "SetId", value);
+				order = value;
+				DictionaryUtil.Add(QueryParameters, "Order", value);
 			}
 		}
 
@@ -111,16 +98,29 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public string Order
+		public string Marker
 		{
 			get
 			{
-				return order;
+				return marker;
 			}
 			set	
 			{
-				order = value;
-				DictionaryUtil.Add(QueryParameters, "Order", value);
+				marker = value;
+				DictionaryUtil.Add(QueryParameters, "Marker", value);
+			}
+		}
+
+		public string SetId
+		{
+			get
+			{
+				return setId;
+			}
+			set	
+			{
+				setId = value;
+				DictionaryUtil.Add(QueryParameters, "SetId", value);
 			}
 		}
 
