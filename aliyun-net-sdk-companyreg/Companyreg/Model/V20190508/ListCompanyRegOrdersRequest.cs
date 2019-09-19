@@ -34,6 +34,8 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
         {
         }
 
+		private int? pageNum;
+
 		private string bizStatus;
 
 		private string companyName;
@@ -42,7 +44,20 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 
 		private string aliyunOrderId;
 
-		private int? pageNum;
+		private string bizSubCode;
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
 
 		public string BizStatus
 		{
@@ -96,16 +111,16 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			}
 		}
 
-		public int? PageNum
+		public string BizSubCode
 		{
 			get
 			{
-				return pageNum;
+				return bizSubCode;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+				bizSubCode = value;
+				DictionaryUtil.Add(QueryParameters, "BizSubCode", value);
 			}
 		}
 

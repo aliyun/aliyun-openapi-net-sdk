@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{79490053-ce99-4654-b2df-7f54a75c2d19}</ProjectGuid>
+    <ProjectGuid>{11afecbb-2f9f-443f-9bf5-033c7b9f036e}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,20 +40,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Companyreg\Transform\V20190508\ListCompanyRegConsultationsResponseUnmarshaller.cs" />
-	<Compile Include="Companyreg\Transform\V20190508\SubmitConsultationResponseUnmarshaller.cs" />
-	<Compile Include="Companyreg\Transform\V20190508\SendVcodeResponseUnmarshaller.cs" />
-	<Compile Include="Companyreg\Transform\V20190508\ListCompanyRegOrdersResponseUnmarshaller.cs" />
-	<Compile Include="Companyreg\Transform\V20190508\GetCompanyRegOrderResponseUnmarshaller.cs" />
-	<Compile Include="Companyreg\Transform\V20190508\ProcessCompanyRegOrderResponseUnmarshaller.cs" />
-	<Compile Include="Companyreg\Model\V20190508\SendVcodeResponse.cs" />
+	<Compile Include="Companyreg\Model\V20190508\GenerateCompanyRegUploadPolicyRequest.cs" />
+	<Compile Include="Companyreg\Model\V20190508\GenerateCompanyRegUploadPolicyResponse.cs" />
+	<Compile Include="Companyreg\Model\V20190508\GetCompanyRegOrderRequest.cs" />
+	<Compile Include="Companyreg\Model\V20190508\GetCompanyRegOrderResponse.cs" />
+	<Compile Include="Companyreg\Model\V20190508\ListCompanyRegConsultationsRequest.cs" />
+	<Compile Include="Companyreg\Model\V20190508\ListCompanyRegConsultationsResponse.cs" />
 	<Compile Include="Companyreg\Model\V20190508\ListCompanyRegOrdersRequest.cs" />
 	<Compile Include="Companyreg\Model\V20190508\ListCompanyRegOrdersResponse.cs" />
-	<Compile Include="Companyreg\Model\V20190508\ProcessCompanyRegOrderResponse.cs" />
 	<Compile Include="Companyreg\Model\V20190508\ProcessCompanyRegOrderRequest.cs" />
+	<Compile Include="Companyreg\Model\V20190508\ProcessCompanyRegOrderResponse.cs" />
 	<Compile Include="Companyreg\Model\V20190508\SendVcodeRequest.cs" />
+	<Compile Include="Companyreg\Model\V20190508\SendVcodeResponse.cs" />
+	<Compile Include="Companyreg\Model\V20190508\SubmitCommunicationNoteRequest.cs" />
+	<Compile Include="Companyreg\Model\V20190508\SubmitCommunicationNoteResponse.cs" />
 	<Compile Include="Companyreg\Model\V20190508\SubmitConsultationRequest.cs" />
 	<Compile Include="Companyreg\Model\V20190508\SubmitConsultationResponse.cs" />
+	<Compile Include="Companyreg\Transform\V20190508\GenerateCompanyRegUploadPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Companyreg\Transform\V20190508\GetCompanyRegOrderResponseUnmarshaller.cs" />
+	<Compile Include="Companyreg\Transform\V20190508\ListCompanyRegConsultationsResponseUnmarshaller.cs" />
+	<Compile Include="Companyreg\Transform\V20190508\ListCompanyRegOrdersResponseUnmarshaller.cs" />
+	<Compile Include="Companyreg\Transform\V20190508\ProcessCompanyRegOrderResponseUnmarshaller.cs" />
+	<Compile Include="Companyreg\Transform\V20190508\SendVcodeResponseUnmarshaller.cs" />
+	<Compile Include="Companyreg\Transform\V20190508\SubmitCommunicationNoteResponseUnmarshaller.cs" />
+	<Compile Include="Companyreg\Transform\V20190508\SubmitConsultationResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

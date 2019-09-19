@@ -51,6 +51,14 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 
 		private string bizStatusStage;
 
+		private string platformName;
+
+		private string inboundPhone;
+
+		private string outboundPhone;
+
+		private string bizSubCode;
+
 		private List<GetCompanyRegOrder_BizOperation> operations;
 
 		public string RequestId
@@ -206,6 +214,54 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			set	
 			{
 				bizStatusStage = value;
+			}
+		}
+
+		public string PlatformName
+		{
+			get
+			{
+				return platformName;
+			}
+			set	
+			{
+				platformName = value;
+			}
+		}
+
+		public string InboundPhone
+		{
+			get
+			{
+				return inboundPhone;
+			}
+			set	
+			{
+				inboundPhone = value;
+			}
+		}
+
+		public string OutboundPhone
+		{
+			get
+			{
+				return outboundPhone;
+			}
+			set	
+			{
+				outboundPhone = value;
+			}
+		}
+
+		public string BizSubCode
+		{
+			get
+			{
+				return bizSubCode;
+			}
+			set	
+			{
+				bizSubCode = value;
 			}
 		}
 

@@ -46,6 +46,9 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 				companyRegConsultation.ConsultInfo = context.StringValue("ListCompanyRegConsultations.Data["+ i +"].ConsultInfo");
 				companyRegConsultation.GmtModified = context.LongValue("ListCompanyRegConsultations.Data["+ i +"].GmtModified");
 				companyRegConsultation.City = context.StringValue("ListCompanyRegConsultations.Data["+ i +"].City");
+				companyRegConsultation.PlatformName = context.StringValue("ListCompanyRegConsultations.Data["+ i +"].PlatformName");
+				companyRegConsultation.InboundPhone = context.StringValue("ListCompanyRegConsultations.Data["+ i +"].InboundPhone");
+				companyRegConsultation.OutboundPhone = context.StringValue("ListCompanyRegConsultations.Data["+ i +"].OutboundPhone");
 
 				listCompanyRegConsultationsResponse_data.Add(companyRegConsultation);
 			}

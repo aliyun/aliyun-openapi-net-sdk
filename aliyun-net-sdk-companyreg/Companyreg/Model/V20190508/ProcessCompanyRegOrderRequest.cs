@@ -36,11 +36,13 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 
 		private string actionType;
 
-		private string bizId;
-
 		private string actionRequestId;
 
 		private string actionInfo;
+
+		private string bizId;
+
+		private string bizSubCode;
 
 		public string ActionType
 		{
@@ -52,19 +54,6 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			{
 				actionType = value;
 				DictionaryUtil.Add(QueryParameters, "ActionType", value);
-			}
-		}
-
-		public string BizId
-		{
-			get
-			{
-				return bizId;
-			}
-			set	
-			{
-				bizId = value;
-				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 
@@ -91,6 +80,32 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			{
 				actionInfo = value;
 				DictionaryUtil.Add(QueryParameters, "ActionInfo", value);
+			}
+		}
+
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
+			}
+		}
+
+		public string BizSubCode
+		{
+			get
+			{
+				return bizSubCode;
+			}
+			set	
+			{
+				bizSubCode = value;
+				DictionaryUtil.Add(QueryParameters, "BizSubCode", value);
 			}
 		}
 

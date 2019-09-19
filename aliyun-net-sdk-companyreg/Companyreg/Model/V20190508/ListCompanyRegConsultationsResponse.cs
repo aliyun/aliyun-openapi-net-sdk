@@ -148,6 +148,12 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 
 			private string city;
 
+			private string platformName;
+
+			private string inboundPhone;
+
+			private string outboundPhone;
+
 			public string BizId
 			{
 				get
@@ -193,6 +199,42 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 				set	
 				{
 					city = value;
+				}
+			}
+
+			public string PlatformName
+			{
+				get
+				{
+					return platformName;
+				}
+				set	
+				{
+					platformName = value;
+				}
+			}
+
+			public string InboundPhone
+			{
+				get
+				{
+					return inboundPhone;
+				}
+				set	
+				{
+					inboundPhone = value;
+				}
+			}
+
+			public string OutboundPhone
+			{
+				get
+				{
+					return outboundPhone;
+				}
+				set	
+				{
+					outboundPhone = value;
 				}
 			}
 		}

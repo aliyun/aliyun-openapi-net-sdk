@@ -27,18 +27,14 @@ using Aliyun.Acs.companyreg.Transform.V20190508;
 
 namespace Aliyun.Acs.companyreg.Model.V20190508
 {
-    public class SubmitConsultationRequest : RpcAcsRequest<SubmitConsultationResponse>
+    public class GenerateCompanyRegUploadPolicyRequest : RpcAcsRequest<GenerateCompanyRegUploadPolicyResponse>
     {
-        public SubmitConsultationRequest()
-            : base("companyreg", "2019-05-08", "SubmitConsultation", "companyreg", "openAPI")
+        public GenerateCompanyRegUploadPolicyRequest()
+            : base("companyreg", "2019-05-08", "GenerateCompanyRegUploadPolicy", "companyreg", "openAPI")
         {
         }
 
 		private string data;
-
-		private string vcode;
-
-		private string consultRequestId;
 
 		private string bizSubCode;
 
@@ -55,32 +51,6 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			}
 		}
 
-		public string Vcode
-		{
-			get
-			{
-				return vcode;
-			}
-			set	
-			{
-				vcode = value;
-				DictionaryUtil.Add(QueryParameters, "Vcode", value);
-			}
-		}
-
-		public string ConsultRequestId
-		{
-			get
-			{
-				return consultRequestId;
-			}
-			set	
-			{
-				consultRequestId = value;
-				DictionaryUtil.Add(QueryParameters, "ConsultRequestId", value);
-			}
-		}
-
 		public string BizSubCode
 		{
 			get
@@ -94,9 +64,9 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			}
 		}
 
-        public override SubmitConsultationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GenerateCompanyRegUploadPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SubmitConsultationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GenerateCompanyRegUploadPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

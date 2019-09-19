@@ -50,6 +50,7 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 				companyRegOrder.AliyunOrderId = context.StringValue("ListCompanyRegOrders.Data["+ i +"].AliyunOrderId");
 				companyRegOrder.GmtModified = context.LongValue("ListCompanyRegOrders.Data["+ i +"].GmtModified");
 				companyRegOrder.Extend = context.StringValue("ListCompanyRegOrders.Data["+ i +"].Extend");
+				companyRegOrder.BizSubCode = context.StringValue("ListCompanyRegOrders.Data["+ i +"].BizSubCode");
 
 				listCompanyRegOrdersResponse_data.Add(companyRegOrder);
 			}

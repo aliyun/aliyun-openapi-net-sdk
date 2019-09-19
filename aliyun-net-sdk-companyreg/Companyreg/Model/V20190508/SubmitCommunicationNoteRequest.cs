@@ -27,74 +27,57 @@ using Aliyun.Acs.companyreg.Transform.V20190508;
 
 namespace Aliyun.Acs.companyreg.Model.V20190508
 {
-    public class ListCompanyRegConsultationsRequest : RpcAcsRequest<ListCompanyRegConsultationsResponse>
+    public class SubmitCommunicationNoteRequest : RpcAcsRequest<SubmitCommunicationNoteResponse>
     {
-        public ListCompanyRegConsultationsRequest()
-            : base("companyreg", "2019-05-08", "ListCompanyRegConsultations", "companyreg", "openAPI")
+        public SubmitCommunicationNoteRequest()
+            : base("companyreg", "2019-05-08", "SubmitCommunicationNote", "companyreg", "openAPI")
         {
         }
 
-		private long? endGmtCreate;
+		private string note;
 
-		private string city;
+		private int? type;
 
-		private int? pageNum;
-
-		private int? pageSize;
+		private string actionRequestId;
 
 		private string bizId;
 
-		private long? startGmtCreate;
-
-		public long? EndGmtCreate
+		public string Note
 		{
 			get
 			{
-				return endGmtCreate;
+				return note;
 			}
 			set	
 			{
-				endGmtCreate = value;
-				DictionaryUtil.Add(QueryParameters, "EndGmtCreate", value.ToString());
+				note = value;
+				DictionaryUtil.Add(QueryParameters, "Note", value);
 			}
 		}
 
-		public string City
+		public int? Type
 		{
 			get
 			{
-				return city;
+				return type;
 			}
 			set	
 			{
-				city = value;
-				DictionaryUtil.Add(QueryParameters, "City", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value.ToString());
 			}
 		}
 
-		public int? PageNum
+		public string ActionRequestId
 		{
 			get
 			{
-				return pageNum;
+				return actionRequestId;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				actionRequestId = value;
+				DictionaryUtil.Add(QueryParameters, "ActionRequestId", value);
 			}
 		}
 
@@ -111,22 +94,9 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 			}
 		}
 
-		public long? StartGmtCreate
-		{
-			get
-			{
-				return startGmtCreate;
-			}
-			set	
-			{
-				startGmtCreate = value;
-				DictionaryUtil.Add(QueryParameters, "StartGmtCreate", value.ToString());
-			}
-		}
-
-        public override ListCompanyRegConsultationsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SubmitCommunicationNoteResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListCompanyRegConsultationsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitCommunicationNoteResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

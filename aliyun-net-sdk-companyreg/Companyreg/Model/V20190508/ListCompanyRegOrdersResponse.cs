@@ -156,6 +156,8 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 
 			private string extend;
 
+			private string bizSubCode;
+
 			public string BizId
 			{
 				get
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.companyreg.Model.V20190508
 				set	
 				{
 					extend = value;
+				}
+			}
+
+			public string BizSubCode
+			{
+				get
+				{
+					return bizSubCode;
+				}
+				set	
+				{
+					bizSubCode = value;
 				}
 			}
 		}

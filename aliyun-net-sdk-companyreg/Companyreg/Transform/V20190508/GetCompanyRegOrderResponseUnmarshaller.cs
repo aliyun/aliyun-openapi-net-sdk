@@ -44,6 +44,10 @@ namespace Aliyun.Acs.companyreg.Transform.V20190508
 			getCompanyRegOrderResponse.GmtPaid = context.LongValue("GetCompanyRegOrder.GmtPaid");
 			getCompanyRegOrderResponse.Extend = context.StringValue("GetCompanyRegOrder.Extend");
 			getCompanyRegOrderResponse.BizStatusStage = context.StringValue("GetCompanyRegOrder.BizStatusStage");
+			getCompanyRegOrderResponse.PlatformName = context.StringValue("GetCompanyRegOrder.PlatformName");
+			getCompanyRegOrderResponse.InboundPhone = context.StringValue("GetCompanyRegOrder.InboundPhone");
+			getCompanyRegOrderResponse.OutboundPhone = context.StringValue("GetCompanyRegOrder.OutboundPhone");
+			getCompanyRegOrderResponse.BizSubCode = context.StringValue("GetCompanyRegOrder.BizSubCode");
 
 			List<GetCompanyRegOrderResponse.GetCompanyRegOrder_BizOperation> getCompanyRegOrderResponse_operations = new List<GetCompanyRegOrderResponse.GetCompanyRegOrder_BizOperation>();
 			for (int i = 0; i < context.Length("GetCompanyRegOrder.Operations.Length"); i++) {
