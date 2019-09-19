@@ -64,6 +64,18 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getImageResponse.RemarksC = context.StringValue("GetImage.RemarksC");
 			getImageResponse.RemarksD = context.StringValue("GetImage.RemarksD");
 			getImageResponse.ExternalId = context.StringValue("GetImage.ExternalId");
+			getImageResponse.AddressModifyTime = context.StringValue("GetImage.AddressModifyTime");
+			getImageResponse.AddressStatus = context.StringValue("GetImage.AddressStatus");
+			getImageResponse.AddressFailReason = context.StringValue("GetImage.AddressFailReason");
+
+			GetImageResponse.GetImage_Address address = new GetImageResponse.GetImage_Address();
+			address.AddressLine = context.StringValue("GetImage.Address.AddressLine");
+			address.Country = context.StringValue("GetImage.Address.Country");
+			address.Province = context.StringValue("GetImage.Address.Province");
+			address.City = context.StringValue("GetImage.Address.City");
+			address.District = context.StringValue("GetImage.Address.District");
+			address.Township = context.StringValue("GetImage.Address.Township");
+			getImageResponse.Address = address;
 
 			List<GetImageResponse.GetImage_FacesItem> getImageResponse_faces = new List<GetImageResponse.GetImage_FacesItem>();
 			for (int i = 0; i < context.Length("GetImage.Faces.Length"); i++) {

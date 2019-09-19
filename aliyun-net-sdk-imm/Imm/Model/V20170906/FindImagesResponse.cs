@@ -146,6 +146,12 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private string externalId;
 
+			private string addressModifyTime;
+
+			private string addressStatus;
+
+			private string addressFailReason;
+
 			private List<FindImages_FacesItem> faces;
 
 			private List<FindImages_TagsItem> tags;
@@ -153,6 +159,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			private List<FindImages_OCRItem> oCR;
 
 			private List<FindImages_CelebrityItem> celebrity;
+
+			private FindImages_Address address;
 
 			public string FacesModifyTime
 			{
@@ -526,6 +534,42 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
+			public string AddressModifyTime
+			{
+				get
+				{
+					return addressModifyTime;
+				}
+				set	
+				{
+					addressModifyTime = value;
+				}
+			}
+
+			public string AddressStatus
+			{
+				get
+				{
+					return addressStatus;
+				}
+				set	
+				{
+					addressStatus = value;
+				}
+			}
+
+			public string AddressFailReason
+			{
+				get
+				{
+					return addressFailReason;
+				}
+				set	
+				{
+					addressFailReason = value;
+				}
+			}
+
 			public List<FindImages_FacesItem> Faces
 			{
 				get
@@ -571,6 +615,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					celebrity = value;
+				}
+			}
+
+			public FindImages_Address Address
+			{
+				get
+				{
+					return address;
+				}
+				set	
+				{
+					address = value;
 				}
 			}
 
@@ -1394,6 +1450,94 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						{
 							height = value;
 						}
+					}
+				}
+			}
+
+			public class FindImages_Address
+			{
+
+				private string addressLine;
+
+				private string country;
+
+				private string province;
+
+				private string city;
+
+				private string district;
+
+				private string township;
+
+				public string AddressLine
+				{
+					get
+					{
+						return addressLine;
+					}
+					set	
+					{
+						addressLine = value;
+					}
+				}
+
+				public string Country
+				{
+					get
+					{
+						return country;
+					}
+					set	
+					{
+						country = value;
+					}
+				}
+
+				public string Province
+				{
+					get
+					{
+						return province;
+					}
+					set	
+					{
+						province = value;
+					}
+				}
+
+				public string City
+				{
+					get
+					{
+						return city;
+					}
+					set	
+					{
+						city = value;
+					}
+				}
+
+				public string District
+				{
+					get
+					{
+						return district;
+					}
+					set	
+					{
+						district = value;
+					}
+				}
+
+				public string Township
+				{
+					get
+					{
+						return township;
+					}
+					set	
+					{
+						township = value;
 					}
 				}
 			}

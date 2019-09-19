@@ -69,6 +69,18 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				imagesItem.RemarksC = context.StringValue("ListImages.Images["+ i +"].RemarksC");
 				imagesItem.RemarksD = context.StringValue("ListImages.Images["+ i +"].RemarksD");
 				imagesItem.ExternalId = context.StringValue("ListImages.Images["+ i +"].ExternalId");
+				imagesItem.AddressModifyTime = context.StringValue("ListImages.Images["+ i +"].AddressModifyTime");
+				imagesItem.AddressStatus = context.StringValue("ListImages.Images["+ i +"].AddressStatus");
+				imagesItem.AddressFailReason = context.StringValue("ListImages.Images["+ i +"].AddressFailReason");
+
+				ListImagesResponse.ListImages_ImagesItem.ListImages_Address address = new ListImagesResponse.ListImages_ImagesItem.ListImages_Address();
+				address.AddressLine = context.StringValue("ListImages.Images["+ i +"].Address.AddressLine");
+				address.Country = context.StringValue("ListImages.Images["+ i +"].Address.Country");
+				address.Province = context.StringValue("ListImages.Images["+ i +"].Address.Province");
+				address.City = context.StringValue("ListImages.Images["+ i +"].Address.City");
+				address.District = context.StringValue("ListImages.Images["+ i +"].Address.District");
+				address.Township = context.StringValue("ListImages.Images["+ i +"].Address.Township");
+				imagesItem.Address = address;
 
 				List<ListImagesResponse.ListImages_ImagesItem.ListImages_FacesItem> imagesItem_faces = new List<ListImagesResponse.ListImages_ImagesItem.ListImages_FacesItem>();
 				for (int j = 0; j < context.Length("ListImages.Images["+ i +"].Faces.Length"); j++) {

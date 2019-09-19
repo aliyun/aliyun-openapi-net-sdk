@@ -69,6 +69,18 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				imagesItem.RemarksC = context.StringValue("FindImages.Images["+ i +"].RemarksC");
 				imagesItem.RemarksD = context.StringValue("FindImages.Images["+ i +"].RemarksD");
 				imagesItem.ExternalId = context.StringValue("FindImages.Images["+ i +"].ExternalId");
+				imagesItem.AddressModifyTime = context.StringValue("FindImages.Images["+ i +"].AddressModifyTime");
+				imagesItem.AddressStatus = context.StringValue("FindImages.Images["+ i +"].AddressStatus");
+				imagesItem.AddressFailReason = context.StringValue("FindImages.Images["+ i +"].AddressFailReason");
+
+				FindImagesResponse.FindImages_ImagesItem.FindImages_Address address = new FindImagesResponse.FindImages_ImagesItem.FindImages_Address();
+				address.AddressLine = context.StringValue("FindImages.Images["+ i +"].Address.AddressLine");
+				address.Country = context.StringValue("FindImages.Images["+ i +"].Address.Country");
+				address.Province = context.StringValue("FindImages.Images["+ i +"].Address.Province");
+				address.City = context.StringValue("FindImages.Images["+ i +"].Address.City");
+				address.District = context.StringValue("FindImages.Images["+ i +"].Address.District");
+				address.Township = context.StringValue("FindImages.Images["+ i +"].Address.Township");
+				imagesItem.Address = address;
 
 				List<FindImagesResponse.FindImages_ImagesItem.FindImages_FacesItem> imagesItem_faces = new List<FindImagesResponse.FindImages_ImagesItem.FindImages_FacesItem>();
 				for (int j = 0; j < context.Length("FindImages.Images["+ i +"].Faces.Length"); j++) {

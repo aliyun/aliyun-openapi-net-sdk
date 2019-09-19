@@ -69,6 +69,18 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				frames.ExternalId = context.StringValue("FindImagesByTagNames.Images["+ i +"].ExternalId");
 				frames.RemarksC = context.StringValue("FindImagesByTagNames.Images["+ i +"].RemarksC");
 				frames.RemarksD = context.StringValue("FindImagesByTagNames.Images["+ i +"].RemarksD");
+				frames.AddressModifyTime = context.StringValue("FindImagesByTagNames.Images["+ i +"].AddressModifyTime");
+				frames.AddressStatus = context.StringValue("FindImagesByTagNames.Images["+ i +"].AddressStatus");
+				frames.AddressFailReason = context.StringValue("FindImagesByTagNames.Images["+ i +"].AddressFailReason");
+
+				FindImagesByTagNamesResponse.FindImagesByTagNames_Frames.FindImagesByTagNames_Address address = new FindImagesByTagNamesResponse.FindImagesByTagNames_Frames.FindImagesByTagNames_Address();
+				address.AddressLine = context.StringValue("FindImagesByTagNames.Images["+ i +"].Address.AddressLine");
+				address.Country = context.StringValue("FindImagesByTagNames.Images["+ i +"].Address.Country");
+				address.Province = context.StringValue("FindImagesByTagNames.Images["+ i +"].Address.Province");
+				address.City = context.StringValue("FindImagesByTagNames.Images["+ i +"].Address.City");
+				address.District = context.StringValue("FindImagesByTagNames.Images["+ i +"].Address.District");
+				address.Township = context.StringValue("FindImagesByTagNames.Images["+ i +"].Address.Township");
+				frames.Address = address;
 
 				List<FindImagesByTagNamesResponse.FindImagesByTagNames_Frames.FindImagesByTagNames_FacesItem> frames_faces = new List<FindImagesByTagNamesResponse.FindImagesByTagNames_Frames.FindImagesByTagNames_FacesItem>();
 				for (int j = 0; j < context.Length("FindImagesByTagNames.Images["+ i +"].Faces.Length"); j++) {
