@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			price.OriginalPrice = context.FloatValue("DescribePrice.PriceInfo.Price.OriginalPrice");
 			price.DiscountPrice = context.FloatValue("DescribePrice.PriceInfo.Price.DiscountPrice");
 			price.TradePrice = context.FloatValue("DescribePrice.PriceInfo.Price.TradePrice");
+			price.ReservedInstanceHourPrice = context.FloatValue("DescribePrice.PriceInfo.Price.ReservedInstanceHourPrice");
 			price.Currency = context.StringValue("DescribePrice.PriceInfo.Price.Currency");
 
 			List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel> price_detailInfos = new List<DescribePriceResponse.DescribePrice_PriceInfo.DescribePrice_Price.DescribePrice_ResourcePriceModel>();

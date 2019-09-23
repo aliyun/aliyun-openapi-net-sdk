@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeInvocationsRequest : RpcAcsRequest<DescribeInvocationsResponse>
+    public class RunCommandRequest : RpcAcsRequest<RunCommandResponse>
     {
-        public DescribeInvocationsRequest()
-            : base("Ecs", "2014-05-26", "DescribeInvocations", "ecs", "openAPI")
+        public RunCommandRequest()
+            : base("Ecs", "2014-05-26", "RunCommand", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,21 +42,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string invokeStatus;
+		private string workingDir;
 
-		private string commandId;
+		private string description;
 
-		private long? pageNumber;
+		private string type;
+
+		private string commandContent;
+
+		private long? timeout;
+
+		private string frequency;
 
 		private string contentEncoding;
 
-		private long? pageSize;
-
-		private string invokeId;
+		private bool? keepCommand;
 
 		private bool? timed;
-
-		private string commandName;
 
 		private string resourceOwnerAccount;
 
@@ -63,9 +66,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private string commandType;
+		private List<string> instanceIds = new List<string>(){ };
 
-		private string instanceId;
+		private string name;
+
+		private Dictionary<object,object> parameters;
+
+		private bool? enableParameter;
 
 		public long? ResourceOwnerId
 		{
@@ -80,42 +87,81 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InvokeStatus
+		public string WorkingDir
 		{
 			get
 			{
-				return invokeStatus;
+				return workingDir;
 			}
 			set	
 			{
-				invokeStatus = value;
-				DictionaryUtil.Add(QueryParameters, "InvokeStatus", value);
+				workingDir = value;
+				DictionaryUtil.Add(QueryParameters, "WorkingDir", value);
 			}
 		}
 
-		public string CommandId
+		public string Description
 		{
 			get
 			{
-				return commandId;
+				return description;
 			}
 			set	
 			{
-				commandId = value;
-				DictionaryUtil.Add(QueryParameters, "CommandId", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public long? PageNumber
+		public string Type
 		{
 			get
 			{
-				return pageNumber;
+				return type;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string CommandContent
+		{
+			get
+			{
+				return commandContent;
+			}
+			set	
+			{
+				commandContent = value;
+				DictionaryUtil.Add(QueryParameters, "CommandContent", value);
+			}
+		}
+
+		public long? Timeout
+		{
+			get
+			{
+				return timeout;
+			}
+			set	
+			{
+				timeout = value;
+				DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
+			}
+		}
+
+		public string Frequency
+		{
+			get
+			{
+				return frequency;
+			}
+			set	
+			{
+				frequency = value;
+				DictionaryUtil.Add(QueryParameters, "Frequency", value);
 			}
 		}
 
@@ -132,29 +178,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public long? PageSize
+		public bool? KeepCommand
 		{
 			get
 			{
-				return pageSize;
+				return keepCommand;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string InvokeId
-		{
-			get
-			{
-				return invokeId;
-			}
-			set	
-			{
-				invokeId = value;
-				DictionaryUtil.Add(QueryParameters, "InvokeId", value);
+				keepCommand = value;
+				DictionaryUtil.Add(QueryParameters, "KeepCommand", value.ToString());
 			}
 		}
 
@@ -168,19 +201,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				timed = value;
 				DictionaryUtil.Add(QueryParameters, "Timed", value.ToString());
-			}
-		}
-
-		public string CommandName
-		{
-			get
-			{
-				return commandName;
-			}
-			set	
-			{
-				commandName = value;
-				DictionaryUtil.Add(QueryParameters, "CommandName", value);
 			}
 		}
 
@@ -223,35 +243,65 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string CommandType
+		public List<string> InstanceIds
 		{
 			get
 			{
-				return commandType;
+				return instanceIds;
 			}
-			set	
+
+			set
 			{
-				commandType = value;
-				DictionaryUtil.Add(QueryParameters, "CommandType", value);
+				instanceIds = value;
+				for (int i = 0; i < instanceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
+				}
 			}
 		}
 
-		public string InstanceId
+		public string Name
 		{
 			get
 			{
-				return instanceId;
+				return name;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
-        public override DescribeInvocationsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public Dictionary<object,object> Parameters
+		{
+			get
+			{
+				return parameters;
+			}
+			set	
+			{
+				parameters = value;
+				DictionaryUtil.Add(QueryParameters, "Parameters", JsonConvert.SerializeObject(value));
+			}
+		}
+
+		public bool? EnableParameter
+		{
+			get
+			{
+				return enableParameter;
+			}
+			set	
+			{
+				enableParameter = value;
+				DictionaryUtil.Add(QueryParameters, "EnableParameter", value.ToString());
+			}
+		}
+
+        public override RunCommandResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInvocationsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RunCommandResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -125,6 +125,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private float? tradePrice;
 
+				private float? reservedInstanceHourPrice;
+
 				private string currency;
 
 				private List<DescribePrice_ResourcePriceModel> detailInfos;
@@ -162,6 +164,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						tradePrice = value;
+					}
+				}
+
+				public float? ReservedInstanceHourPrice
+				{
+					get
+					{
+						return reservedInstanceHourPrice;
+					}
+					set	
+					{
+						reservedInstanceHourPrice = value;
 					}
 				}
 

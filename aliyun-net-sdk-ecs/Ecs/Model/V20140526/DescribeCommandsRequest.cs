@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? pageNumber;
 
+		private string contentEncoding;
+
 		private long? pageSize;
 
 		private string resourceOwnerAccount;
@@ -121,6 +123,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ContentEncoding
+		{
+			get
+			{
+				return contentEncoding;
+			}
+			set	
+			{
+				contentEncoding = value;
+				DictionaryUtil.Add(QueryParameters, "ContentEncoding", value);
 			}
 		}
 

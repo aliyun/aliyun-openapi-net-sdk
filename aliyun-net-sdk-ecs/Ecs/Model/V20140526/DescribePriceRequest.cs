@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceNetworkType;
 
+		private int? instanceAmount;
+
 		private string dataDisk3PerformanceLevel;
 
 		private string imageId;
@@ -69,11 +71,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string systemDiskCategory;
 
+		private string platform;
+
 		private string systemDiskPerformanceLevel;
 
 		private string dataDisk4Category;
 
 		private string dataDisk4PerformanceLevel;
+
+		private string scope;
 
 		private string instanceType;
 
@@ -96,6 +102,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string dataDisk2PerformanceLevel;
 
 		private int? systemDiskSize;
+
+		private string offeringType;
 
 		public int? DataDisk3Size
 		{
@@ -227,6 +235,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? InstanceAmount
+		{
+			get
+			{
+				return instanceAmount;
+			}
+			set	
+			{
+				instanceAmount = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceAmount", value.ToString());
+			}
+		}
+
 		public string DataDisk3PerformanceLevel
 		{
 			get
@@ -292,6 +313,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Platform
+		{
+			get
+			{
+				return platform;
+			}
+			set	
+			{
+				platform = value;
+				DictionaryUtil.Add(QueryParameters, "Platform", value);
+			}
+		}
+
 		public string SystemDiskPerformanceLevel
 		{
 			get
@@ -328,6 +362,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dataDisk4PerformanceLevel = value;
 				DictionaryUtil.Add(QueryParameters, "DataDisk.4.PerformanceLevel", value);
+			}
+		}
+
+		public string Scope
+		{
+			get
+			{
+				return scope;
+			}
+			set	
+			{
+				scope = value;
+				DictionaryUtil.Add(QueryParameters, "Scope", value);
 			}
 		}
 
@@ -471,6 +518,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				systemDiskSize = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDisk.Size", value.ToString());
+			}
+		}
+
+		public string OfferingType
+		{
+			get
+			{
+				return offeringType;
+			}
+			set	
+			{
+				offeringType = value;
+				DictionaryUtil.Add(QueryParameters, "OfferingType", value);
 			}
 		}
 

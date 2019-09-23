@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{62ad28cf-90b0-4c35-999f-d941b470e6d1}</ProjectGuid>
+    <ProjectGuid>{0f4a3465-df2f-4656-8e4a-a8d3e4555de8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -560,6 +560,8 @@
 	<Compile Include="Ecs\Model\V20140526\RevokeSecurityGroupEgressResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\RevokeSecurityGroupRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\RevokeSecurityGroupResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\RunCommandRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\RunCommandResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\RunInstancesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\RunInstancesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\StartInstanceRequest.cs" />
@@ -844,6 +846,7 @@
 	<Compile Include="Ecs\Transform\V20140526\ResizeDiskResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\RevokeSecurityGroupEgressResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\RevokeSecurityGroupResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\RunCommandResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\RunInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\StartInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\StopInstanceResponseUnmarshaller.cs" />
