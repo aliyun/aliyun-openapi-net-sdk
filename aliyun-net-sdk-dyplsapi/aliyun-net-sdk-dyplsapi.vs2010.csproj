@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3256c29a-739a-44ae-aaac-c732acf3012c}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-dyplsapi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Dyplsapi\Model\V20170525\BindAxbRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\BindAxbResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\BindAxgRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\BindAxgResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\BindAxnExtensionRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\BindAxnExtensionResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\BindAxnRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\BindAxnResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\BuySecretNoRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\BuySecretNoResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\CreateAxgGroupRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\CreateAxgGroupResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\OperateAxgGroupRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\OperateAxgGroupResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\QueryCallStatusRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\QueryCallStatusResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\QueryRecordFileDownloadUrlRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\QueryRecordFileDownloadUrlResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\QuerySecretNoRemainRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\QuerySecretNoRemainResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\QuerySubsIdRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\QuerySubsIdResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\QuerySubscriptionDetailRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\QuerySubscriptionDetailResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\ReleaseSecretNoRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\ReleaseSecretNoResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\UnbindSubscriptionRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\UnbindSubscriptionResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\UpdateSubscriptionRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\UpdateSubscriptionResponse.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\BindAxbResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\BindAxgResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\BindAxnExtensionResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\BindAxnResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\BuySecretNoResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\CreateAxgGroupResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\OperateAxgGroupResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\QueryCallStatusResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\QueryRecordFileDownloadUrlResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\QuerySecretNoRemainResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\QuerySubsIdResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\QuerySubscriptionDetailResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\ReleaseSecretNoResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\UnbindSubscriptionResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\UpdateSubscriptionResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
