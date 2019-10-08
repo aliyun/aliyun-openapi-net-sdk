@@ -48,6 +48,10 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string description;
 
+		private string rotationInterval;
+
+		private bool? enableAutomaticRotation;
+
 		public string ProtectionLevel
 		{
 			get
@@ -97,6 +101,32 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string RotationInterval
+		{
+			get
+			{
+				return rotationInterval;
+			}
+			set	
+			{
+				rotationInterval = value;
+				DictionaryUtil.Add(QueryParameters, "RotationInterval", value);
+			}
+		}
+
+		public bool? EnableAutomaticRotation
+		{
+			get
+			{
+				return enableAutomaticRotation;
+			}
+			set	
+			{
+				enableAutomaticRotation = value;
+				DictionaryUtil.Add(QueryParameters, "EnableAutomaticRotation", value.ToString());
 			}
 		}
 

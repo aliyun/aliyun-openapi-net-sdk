@@ -78,6 +78,16 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 			private string protectionLevel;
 
+			private string primaryKeyVersion;
+
+			private string lastRotationDate;
+
+			private string automaticRotation;
+
+			private string rotationInterval;
+
+			private string nextRotationDate;
+
 			public string CreationDate
 			{
 				get
@@ -207,6 +217,66 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					protectionLevel = value;
+				}
+			}
+
+			public string PrimaryKeyVersion
+			{
+				get
+				{
+					return primaryKeyVersion;
+				}
+				set	
+				{
+					primaryKeyVersion = value;
+				}
+			}
+
+			public string LastRotationDate
+			{
+				get
+				{
+					return lastRotationDate;
+				}
+				set	
+				{
+					lastRotationDate = value;
+				}
+			}
+
+			public string AutomaticRotation
+			{
+				get
+				{
+					return automaticRotation;
+				}
+				set	
+				{
+					automaticRotation = value;
+				}
+			}
+
+			public string RotationInterval
+			{
+				get
+				{
+					return rotationInterval;
+				}
+				set	
+				{
+					rotationInterval = value;
+				}
+			}
+
+			public string NextRotationDate
+			{
+				get
+				{
+					return nextRotationDate;
+				}
+				set	
+				{
+					nextRotationDate = value;
 				}
 			}
 		}

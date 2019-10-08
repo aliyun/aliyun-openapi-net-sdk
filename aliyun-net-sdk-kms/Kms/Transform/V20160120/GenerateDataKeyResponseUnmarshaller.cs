@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			generateDataKeyResponse.KeyId = context.StringValue("GenerateDataKey.KeyId");
 			generateDataKeyResponse.Plaintext = context.StringValue("GenerateDataKey.Plaintext");
 			generateDataKeyResponse.RequestId = context.StringValue("GenerateDataKey.RequestId");
+			generateDataKeyResponse.KeyVersionId = context.StringValue("GenerateDataKey.KeyVersionId");
         
 			return generateDataKeyResponse;
         }

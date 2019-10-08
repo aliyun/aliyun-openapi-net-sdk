@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string requestId;
 
+		private string keyVersionId;
+
 		public string CiphertextBlob
 		{
 			get
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string KeyVersionId
+		{
+			get
+			{
+				return keyVersionId;
+			}
+			set	
+			{
+				keyVersionId = value;
 			}
 		}
 	}

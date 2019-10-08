@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			decryptResponse.Plaintext = context.StringValue("Decrypt.Plaintext");
 			decryptResponse.KeyId = context.StringValue("Decrypt.KeyId");
 			decryptResponse.RequestId = context.StringValue("Decrypt.RequestId");
+			decryptResponse.KeyVersionId = context.StringValue("Decrypt.KeyVersionId");
         
 			return decryptResponse;
         }

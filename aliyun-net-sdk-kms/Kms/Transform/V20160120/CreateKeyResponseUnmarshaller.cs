@@ -45,6 +45,11 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			keyMetadata.Origin = context.StringValue("CreateKey.KeyMetadata.Origin");
 			keyMetadata.MaterialExpireTime = context.StringValue("CreateKey.KeyMetadata.MaterialExpireTime");
 			keyMetadata.ProtectionLevel = context.StringValue("CreateKey.KeyMetadata.ProtectionLevel");
+			keyMetadata.PrimaryKeyVersion = context.StringValue("CreateKey.KeyMetadata.PrimaryKeyVersion");
+			keyMetadata.LastRotationDate = context.StringValue("CreateKey.KeyMetadata.LastRotationDate");
+			keyMetadata.AutomaticRotation = context.StringValue("CreateKey.KeyMetadata.AutomaticRotation");
+			keyMetadata.RotationInterval = context.StringValue("CreateKey.KeyMetadata.RotationInterval");
+			keyMetadata.NextRotationDate = context.StringValue("CreateKey.KeyMetadata.NextRotationDate");
 			createKeyResponse.KeyMetadata = keyMetadata;
         
 			return createKeyResponse;

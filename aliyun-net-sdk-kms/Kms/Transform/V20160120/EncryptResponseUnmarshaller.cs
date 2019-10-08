@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			encryptResponse.CiphertextBlob = context.StringValue("Encrypt.CiphertextBlob");
 			encryptResponse.KeyId = context.StringValue("Encrypt.KeyId");
 			encryptResponse.RequestId = context.StringValue("Encrypt.RequestId");
+			encryptResponse.KeyVersionId = context.StringValue("Encrypt.KeyVersionId");
         
 			return encryptResponse;
         }
