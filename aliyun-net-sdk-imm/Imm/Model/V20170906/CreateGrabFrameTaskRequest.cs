@@ -27,10 +27,10 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class CreateVideoCompressTaskRequest : RpcAcsRequest<CreateVideoCompressTaskResponse>
+    public class CreateGrabFrameTaskRequest : RpcAcsRequest<CreateGrabFrameTaskResponse>
     {
-        public CreateVideoCompressTaskRequest()
-            : base("imm", "2017-09-06", "CreateVideoCompressTask", "imm", "openAPI")
+        public CreateGrabFrameTaskRequest()
+            : base("imm", "2017-09-06", "CreateGrabFrameTask", "imm", "openAPI")
         {
         }
 
@@ -129,9 +129,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override CreateVideoCompressTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateGrabFrameTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateVideoCompressTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateGrabFrameTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

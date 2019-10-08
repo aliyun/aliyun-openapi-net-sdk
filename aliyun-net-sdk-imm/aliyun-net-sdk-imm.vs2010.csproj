@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{c8254fec-9ea5-4a61-a1d4-435e43400b80}</ProjectGuid>
+    <ProjectGuid>{1cb5ce85-90cb-45c0-bbb7-abaa77eea0ad}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -52,6 +52,8 @@
 	<Compile Include="Imm\Model\V20170906\CreateDocIndexTaskResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateFaceSetRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateFaceSetResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateGrabFrameTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateGrabFrameTaskResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateGroupFacesJobRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateGroupFacesJobResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateMediaComplexTaskRequest.cs" />
@@ -250,6 +252,7 @@
 	<Compile Include="Imm\Transform\V20170906\CreateCADConversionTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateDocIndexTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateFaceSetResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\CreateGrabFrameTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateGroupFacesJobResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateMediaComplexTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateMergeFaceGroupsJobResponseUnmarshaller.cs" />
