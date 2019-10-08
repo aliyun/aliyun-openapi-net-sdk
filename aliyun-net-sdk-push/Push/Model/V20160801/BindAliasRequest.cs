@@ -16,13 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Push;
 using Aliyun.Acs.Push.Transform;
 using Aliyun.Acs.Push.Transform.V20160801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
@@ -33,13 +35,24 @@ namespace Aliyun.Acs.Push.Model.V20160801
         {
         }
 
+		private string deviceId;
+
 		private string aliasName;
 
 		private long? appKey;
 
-		private string deviceId;
-
-		private string accessKeyId;
+		public string DeviceId
+		{
+			get
+			{
+				return deviceId;
+			}
+			set	
+			{
+				deviceId = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
+			}
+		}
 
 		public string AliasName
 		{
@@ -67,33 +80,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string DeviceId
-		{
-			get
-			{
-				return deviceId;
-			}
-			set	
-			{
-				deviceId = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override BindAliasResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override BindAliasResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return BindAliasResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

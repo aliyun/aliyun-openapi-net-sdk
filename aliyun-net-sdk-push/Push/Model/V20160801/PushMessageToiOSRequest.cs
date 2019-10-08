@@ -16,13 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Push;
 using Aliyun.Acs.Push.Transform;
 using Aliyun.Acs.Push.Transform.V20160801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
@@ -33,45 +35,17 @@ namespace Aliyun.Acs.Push.Model.V20160801
         {
         }
 
-		private long? appKey;
-
-		private string targetValue;
-
 		private string title;
 
 		private string body;
 
 		private string jobKey;
 
-		private string accessKeyId;
-
 		private string target;
 
-		public long? AppKey
-		{
-			get
-			{
-				return appKey;
-			}
-			set	
-			{
-				appKey = value;
-				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
-			}
-		}
+		private long? appKey;
 
-		public string TargetValue
-		{
-			get
-			{
-				return targetValue;
-			}
-			set	
-			{
-				targetValue = value;
-				DictionaryUtil.Add(QueryParameters, "TargetValue", value);
-			}
-		}
+		private string targetValue;
 
 		public string Title
 		{
@@ -112,19 +86,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Target
 		{
 			get
@@ -138,7 +99,33 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-        public override PushMessageToiOSResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public long? AppKey
+		{
+			get
+			{
+				return appKey;
+			}
+			set	
+			{
+				appKey = value;
+				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
+			}
+		}
+
+		public string TargetValue
+		{
+			get
+			{
+				return targetValue;
+			}
+			set	
+			{
+				targetValue = value;
+				DictionaryUtil.Add(QueryParameters, "TargetValue", value);
+			}
+		}
+
+        public override PushMessageToiOSResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return PushMessageToiOSResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

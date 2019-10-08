@@ -16,13 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Push;
 using Aliyun.Acs.Push.Transform;
 using Aliyun.Acs.Push.Transform.V20160801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
@@ -35,11 +37,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string phoneNumber;
 
-		private long? appKey;
-
 		private string deviceId;
 
-		private string accessKeyId;
+		private long? appKey;
 
 		public string PhoneNumber
 		{
@@ -51,19 +51,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				phoneNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
-			}
-		}
-
-		public long? AppKey
-		{
-			get
-			{
-				return appKey;
-			}
-			set	
-			{
-				appKey = value;
-				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
 			}
 		}
 
@@ -80,20 +67,20 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AccessKeyId
+		public long? AppKey
 		{
 			get
 			{
-				return accessKeyId;
+				return appKey;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				appKey = value;
+				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
 			}
 		}
 
-        public override BindPhoneResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override BindPhoneResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return BindPhoneResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

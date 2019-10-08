@@ -16,41 +16,30 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Push.Model.V20160801;
 
-namespace Aliyun.Acs.Push.Model.V20160801
+namespace Aliyun.Acs.Push.Transform.V20160801
 {
-	public class PushMessageToAndroidResponse : AcsResponse
-	{
+    public class MassPushResponseUnmarshaller
+    {
+        public static MassPushResponse Unmarshall(UnmarshallerContext context)
+        {
+			MassPushResponse massPushResponse = new MassPushResponse();
 
-		private string requestId;
+			massPushResponse.HttpResponse = context.HttpResponse;
+			massPushResponse.RequestId = context.StringValue("MassPush.RequestId");
 
-		private string messageId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
+			List<string> massPushResponse_messageIds = new List<string>();
+			for (int i = 0; i < context.Length("MassPush.MessageIds.Length"); i++) {
+				massPushResponse_messageIds.Add(context.StringValue("MassPush.MessageIds["+ i +"]"));
 			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string MessageId
-		{
-			get
-			{
-				return messageId;
-			}
-			set	
-			{
-				messageId = value;
-			}
-		}
-	}
+			massPushResponse.MessageIds = massPushResponse_messageIds;
+        
+			return massPushResponse;
+        }
+    }
 }

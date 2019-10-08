@@ -16,13 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Push;
 using Aliyun.Acs.Push.Transform;
 using Aliyun.Acs.Push.Transform.V20160801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
@@ -33,24 +35,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
         {
         }
 
-		private long? appKey;
-
 		private string deviceId;
 
-		private string accessKeyId;
-
-		public long? AppKey
-		{
-			get
-			{
-				return appKey;
-			}
-			set	
-			{
-				appKey = value;
-				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
-			}
-		}
+		private long? appKey;
 
 		public string DeviceId
 		{
@@ -65,20 +52,20 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AccessKeyId
+		public long? AppKey
 		{
 			get
 			{
-				return accessKeyId;
+				return appKey;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				appKey = value;
+				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
 			}
 		}
 
-        public override QueryDeviceInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override QueryDeviceInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return QueryDeviceInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

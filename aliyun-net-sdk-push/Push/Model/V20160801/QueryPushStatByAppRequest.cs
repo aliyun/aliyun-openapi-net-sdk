@@ -16,13 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Push;
 using Aliyun.Acs.Push.Transform;
 using Aliyun.Acs.Push.Transform.V20160801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
@@ -33,28 +35,13 @@ namespace Aliyun.Acs.Push.Model.V20160801
         {
         }
 
-		private string granularity;
-
 		private string endTime;
-
-		private long? appKey;
 
 		private string startTime;
 
-		private string accessKeyId;
+		private string granularity;
 
-		public string Granularity
-		{
-			get
-			{
-				return granularity;
-			}
-			set	
-			{
-				granularity = value;
-				DictionaryUtil.Add(QueryParameters, "Granularity", value);
-			}
-		}
+		private long? appKey;
 
 		public string EndTime
 		{
@@ -66,19 +53,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public long? AppKey
-		{
-			get
-			{
-				return appKey;
-			}
-			set	
-			{
-				appKey = value;
-				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
 			}
 		}
 
@@ -95,20 +69,33 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AccessKeyId
+		public string Granularity
 		{
 			get
 			{
-				return accessKeyId;
+				return granularity;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				granularity = value;
+				DictionaryUtil.Add(QueryParameters, "Granularity", value);
 			}
 		}
 
-        public override QueryPushStatByAppResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public long? AppKey
+		{
+			get
+			{
+				return appKey;
+			}
+			set	
+			{
+				appKey = value;
+				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
+			}
+		}
+
+        public override QueryPushStatByAppResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return QueryPushStatByAppResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

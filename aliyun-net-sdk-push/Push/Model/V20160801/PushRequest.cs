@@ -16,13 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Push;
 using Aliyun.Acs.Push.Transform;
 using Aliyun.Acs.Push.Transform.V20160801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
@@ -37,33 +39,17 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private int? smsSendPolicy;
 
-		private string androidExtParameters;
-
-		private int? iOSBadge;
-
-		private bool? iOSBadgeAutoIncrement;
-
-		private string androidOpenType;
-
-		private string title;
-
 		private string body;
 
 		private string deviceType;
 
 		private string pushTime;
 
-		private string accessKeyId;
-
-		private int? smsDelaySecs;
-
 		private int? sendSpeed;
 
 		private string androidPopupActivity;
 
 		private string iOSRemindBody;
-
-		private string iOSExtParameters;
 
 		private string androidNotifyType;
 
@@ -79,23 +65,47 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string expireTime;
 
-		private string smsTemplateName;
-
-		private string androidPopupBody;
-
 		private string iOSNotificationCategory;
 
 		private bool? storeOffline;
-
-		private bool? iOSSilentNotification;
 
 		private string smsParams;
 
 		private string jobKey;
 
-		private string target;
-
 		private string androidOpenUrl;
+
+		private string androidXiaoMiNotifyBody;
+
+		private string iOSSubtitle;
+
+		private bool? iOSRemind;
+
+		private string androidMusic;
+
+		private string pushType;
+
+		private string androidExtParameters;
+
+		private int? iOSBadge;
+
+		private bool? iOSBadgeAutoIncrement;
+
+		private string androidOpenType;
+
+		private string title;
+
+		private int? smsDelaySecs;
+
+		private string iOSExtParameters;
+
+		private string smsTemplateName;
+
+		private string androidPopupBody;
+
+		private bool? iOSSilentNotification;
+
+		private string target;
 
 		private string androidNotificationChannel;
 
@@ -103,25 +113,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string androidActivity;
 
-		private string androidXiaoMiNotifyBody;
-
-		private string iOSSubtitle;
-
 		private string smsSignName;
-
-		private bool? iOSRemind;
 
 		private long? appKey;
 
 		private string targetValue;
 
-		private string androidMusic;
-
 		private string androidXiaoMiActivity;
 
 		private string androidXiaoMiNotifyTitle;
-
-		private string pushType;
 
 		public int? AndroidNotificationBarType
 		{
@@ -146,71 +146,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				smsSendPolicy = value;
 				DictionaryUtil.Add(QueryParameters, "SmsSendPolicy", value.ToString());
-			}
-		}
-
-		public string AndroidExtParameters
-		{
-			get
-			{
-				return androidExtParameters;
-			}
-			set	
-			{
-				androidExtParameters = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidExtParameters", value);
-			}
-		}
-
-		public int? IOSBadge
-		{
-			get
-			{
-				return iOSBadge;
-			}
-			set	
-			{
-				iOSBadge = value;
-				DictionaryUtil.Add(QueryParameters, "iOSBadge", value.ToString());
-			}
-		}
-
-		public bool? IOSBadgeAutoIncrement
-		{
-			get
-			{
-				return iOSBadgeAutoIncrement;
-			}
-			set	
-			{
-				iOSBadgeAutoIncrement = value;
-				DictionaryUtil.Add(QueryParameters, "iOSBadgeAutoIncrement", value.ToString());
-			}
-		}
-
-		public string AndroidOpenType
-		{
-			get
-			{
-				return androidOpenType;
-			}
-			set	
-			{
-				androidOpenType = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidOpenType", value);
-			}
-		}
-
-		public string Title
-		{
-			get
-			{
-				return title;
-			}
-			set	
-			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
 			}
 		}
 
@@ -253,32 +188,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public int? SmsDelaySecs
-		{
-			get
-			{
-				return smsDelaySecs;
-			}
-			set	
-			{
-				smsDelaySecs = value;
-				DictionaryUtil.Add(QueryParameters, "SmsDelaySecs", value.ToString());
-			}
-		}
-
 		public int? SendSpeed
 		{
 			get
@@ -315,19 +224,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSRemindBody = value;
 				DictionaryUtil.Add(QueryParameters, "iOSRemindBody", value);
-			}
-		}
-
-		public string IOSExtParameters
-		{
-			get
-			{
-				return iOSExtParameters;
-			}
-			set	
-			{
-				iOSExtParameters = value;
-				DictionaryUtil.Add(QueryParameters, "iOSExtParameters", value);
 			}
 		}
 
@@ -422,32 +318,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string SmsTemplateName
-		{
-			get
-			{
-				return smsTemplateName;
-			}
-			set	
-			{
-				smsTemplateName = value;
-				DictionaryUtil.Add(QueryParameters, "SmsTemplateName", value);
-			}
-		}
-
-		public string AndroidPopupBody
-		{
-			get
-			{
-				return androidPopupBody;
-			}
-			set	
-			{
-				androidPopupBody = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidPopupBody", value);
-			}
-		}
-
 		public string IOSNotificationCategory
 		{
 			get
@@ -471,19 +341,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				storeOffline = value;
 				DictionaryUtil.Add(QueryParameters, "StoreOffline", value.ToString());
-			}
-		}
-
-		public bool? IOSSilentNotification
-		{
-			get
-			{
-				return iOSSilentNotification;
-			}
-			set	
-			{
-				iOSSilentNotification = value;
-				DictionaryUtil.Add(QueryParameters, "iOSSilentNotification", value.ToString());
 			}
 		}
 
@@ -513,19 +370,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string Target
-		{
-			get
-			{
-				return target;
-			}
-			set	
-			{
-				target = value;
-				DictionaryUtil.Add(QueryParameters, "Target", value);
-			}
-		}
-
 		public string AndroidOpenUrl
 		{
 			get
@@ -536,6 +380,214 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				androidOpenUrl = value;
 				DictionaryUtil.Add(QueryParameters, "AndroidOpenUrl", value);
+			}
+		}
+
+		public string AndroidXiaoMiNotifyBody
+		{
+			get
+			{
+				return androidXiaoMiNotifyBody;
+			}
+			set	
+			{
+				androidXiaoMiNotifyBody = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidXiaoMiNotifyBody", value);
+			}
+		}
+
+		public string IOSSubtitle
+		{
+			get
+			{
+				return iOSSubtitle;
+			}
+			set	
+			{
+				iOSSubtitle = value;
+				DictionaryUtil.Add(QueryParameters, "iOSSubtitle", value);
+			}
+		}
+
+		public bool? IOSRemind
+		{
+			get
+			{
+				return iOSRemind;
+			}
+			set	
+			{
+				iOSRemind = value;
+				DictionaryUtil.Add(QueryParameters, "iOSRemind", value.ToString());
+			}
+		}
+
+		public string AndroidMusic
+		{
+			get
+			{
+				return androidMusic;
+			}
+			set	
+			{
+				androidMusic = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidMusic", value);
+			}
+		}
+
+		public string PushType
+		{
+			get
+			{
+				return pushType;
+			}
+			set	
+			{
+				pushType = value;
+				DictionaryUtil.Add(QueryParameters, "PushType", value);
+			}
+		}
+
+		public string AndroidExtParameters
+		{
+			get
+			{
+				return androidExtParameters;
+			}
+			set	
+			{
+				androidExtParameters = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidExtParameters", value);
+			}
+		}
+
+		public int? IOSBadge
+		{
+			get
+			{
+				return iOSBadge;
+			}
+			set	
+			{
+				iOSBadge = value;
+				DictionaryUtil.Add(QueryParameters, "iOSBadge", value.ToString());
+			}
+		}
+
+		public bool? IOSBadgeAutoIncrement
+		{
+			get
+			{
+				return iOSBadgeAutoIncrement;
+			}
+			set	
+			{
+				iOSBadgeAutoIncrement = value;
+				DictionaryUtil.Add(QueryParameters, "iOSBadgeAutoIncrement", value.ToString());
+			}
+		}
+
+		public string AndroidOpenType
+		{
+			get
+			{
+				return androidOpenType;
+			}
+			set	
+			{
+				androidOpenType = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidOpenType", value);
+			}
+		}
+
+		public string Title
+		{
+			get
+			{
+				return title;
+			}
+			set	
+			{
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		public int? SmsDelaySecs
+		{
+			get
+			{
+				return smsDelaySecs;
+			}
+			set	
+			{
+				smsDelaySecs = value;
+				DictionaryUtil.Add(QueryParameters, "SmsDelaySecs", value.ToString());
+			}
+		}
+
+		public string IOSExtParameters
+		{
+			get
+			{
+				return iOSExtParameters;
+			}
+			set	
+			{
+				iOSExtParameters = value;
+				DictionaryUtil.Add(QueryParameters, "iOSExtParameters", value);
+			}
+		}
+
+		public string SmsTemplateName
+		{
+			get
+			{
+				return smsTemplateName;
+			}
+			set	
+			{
+				smsTemplateName = value;
+				DictionaryUtil.Add(QueryParameters, "SmsTemplateName", value);
+			}
+		}
+
+		public string AndroidPopupBody
+		{
+			get
+			{
+				return androidPopupBody;
+			}
+			set	
+			{
+				androidPopupBody = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidPopupBody", value);
+			}
+		}
+
+		public bool? IOSSilentNotification
+		{
+			get
+			{
+				return iOSSilentNotification;
+			}
+			set	
+			{
+				iOSSilentNotification = value;
+				DictionaryUtil.Add(QueryParameters, "iOSSilentNotification", value.ToString());
+			}
+		}
+
+		public string Target
+		{
+			get
+			{
+				return target;
+			}
+			set	
+			{
+				target = value;
+				DictionaryUtil.Add(QueryParameters, "Target", value);
 			}
 		}
 
@@ -578,32 +630,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AndroidXiaoMiNotifyBody
-		{
-			get
-			{
-				return androidXiaoMiNotifyBody;
-			}
-			set	
-			{
-				androidXiaoMiNotifyBody = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidXiaoMiNotifyBody", value);
-			}
-		}
-
-		public string IOSSubtitle
-		{
-			get
-			{
-				return iOSSubtitle;
-			}
-			set	
-			{
-				iOSSubtitle = value;
-				DictionaryUtil.Add(QueryParameters, "iOSSubtitle", value);
-			}
-		}
-
 		public string SmsSignName
 		{
 			get
@@ -614,19 +640,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				smsSignName = value;
 				DictionaryUtil.Add(QueryParameters, "SmsSignName", value);
-			}
-		}
-
-		public bool? IOSRemind
-		{
-			get
-			{
-				return iOSRemind;
-			}
-			set	
-			{
-				iOSRemind = value;
-				DictionaryUtil.Add(QueryParameters, "iOSRemind", value.ToString());
 			}
 		}
 
@@ -656,19 +669,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string AndroidMusic
-		{
-			get
-			{
-				return androidMusic;
-			}
-			set	
-			{
-				androidMusic = value;
-				DictionaryUtil.Add(QueryParameters, "AndroidMusic", value);
-			}
-		}
-
 		public string AndroidXiaoMiActivity
 		{
 			get
@@ -695,20 +695,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string PushType
-		{
-			get
-			{
-				return pushType;
-			}
-			set	
-			{
-				pushType = value;
-				DictionaryUtil.Add(QueryParameters, "PushType", value);
-			}
-		}
-
-        public override PushResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override PushResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return PushResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

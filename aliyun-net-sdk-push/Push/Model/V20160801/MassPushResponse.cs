@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-	public class PushMessageToAndroidResponse : AcsResponse
+	public class MassPushResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string messageId;
+		private List<string> messageIds;
 
 		public string RequestId
 		{
@@ -41,15 +41,15 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string MessageId
+		public List<string> MessageIds
 		{
 			get
 			{
-				return messageId;
+				return messageIds;
 			}
 			set	
 			{
-				messageId = value;
+				messageIds = value;
 			}
 		}
 	}
