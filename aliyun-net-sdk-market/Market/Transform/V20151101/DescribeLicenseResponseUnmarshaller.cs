@@ -56,7 +56,7 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 			for (int i = 0; i < context.Length("DescribeLicense.License.ExtendArray.Length"); i++) {
 				DescribeLicenseResponse.DescribeLicense_License.DescribeLicense_LicenseAttribute licenseAttribute = new DescribeLicenseResponse.DescribeLicense_License.DescribeLicense_LicenseAttribute();
 				licenseAttribute.Code = context.StringValue("DescribeLicense.License.ExtendArray["+ i +"].Code");
-				licenseAttribute._Value = context.StringValue("DescribeLicense.License.ExtendArray["+ i +"]._Value");
+				licenseAttribute._Value = context.StringValue("DescribeLicense.License.ExtendArray["+ i +"].Value");
 
 				license_extendArray.Add(licenseAttribute);
 			}

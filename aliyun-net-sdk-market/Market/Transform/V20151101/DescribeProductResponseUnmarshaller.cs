@@ -105,7 +105,7 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 						List<DescribeProductResponse.DescribeProduct_ProductSku.DescribeProduct_Module.DescribeProduct_Property.DescribeProduct_PropertyValue> property_propertyValues = new List<DescribeProductResponse.DescribeProduct_ProductSku.DescribeProduct_Module.DescribeProduct_Property.DescribeProduct_PropertyValue>();
 						for (int l = 0; l < context.Length("DescribeProduct.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues.Length"); l++) {
 							DescribeProductResponse.DescribeProduct_ProductSku.DescribeProduct_Module.DescribeProduct_Property.DescribeProduct_PropertyValue propertyValue = new DescribeProductResponse.DescribeProduct_ProductSku.DescribeProduct_Module.DescribeProduct_Property.DescribeProduct_PropertyValue();
-							propertyValue._Value = context.StringValue("DescribeProduct.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"]._Value");
+							propertyValue._Value = context.StringValue("DescribeProduct.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Value");
 							propertyValue.DisplayName = context.StringValue("DescribeProduct.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].DisplayName");
 							propertyValue.Type = context.StringValue("DescribeProduct.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Type");
 							propertyValue.Min = context.StringValue("DescribeProduct.ProductSkus["+ i +"].Modules["+ j +"].Properties["+ k +"].PropertyValues["+ l +"].Min");

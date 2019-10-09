@@ -35,6 +35,10 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 			describePriceResponse.OriginalPrice = context.FloatValue("DescribePrice.OriginalPrice");
 			describePriceResponse.TradePrice = context.FloatValue("DescribePrice.TradePrice");
 			describePriceResponse.DiscountPrice = context.FloatValue("DescribePrice.DiscountPrice");
+			describePriceResponse.Cuxiao = context.BooleanValue("DescribePrice.Cuxiao");
+			describePriceResponse.Duration = context.IntegerValue("DescribePrice.Duration");
+			describePriceResponse.Cycle = context.StringValue("DescribePrice.Cycle");
+			describePriceResponse.InfoTitle = context.StringValue("DescribePrice.InfoTitle");
 
 			List<DescribePriceResponse.DescribePrice_PromotionRule> describePriceResponse_promotionRules = new List<DescribePriceResponse.DescribePrice_PromotionRule>();
 			for (int i = 0; i < context.Length("DescribePrice.PromotionRules.Length"); i++) {
@@ -46,6 +50,20 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 				describePriceResponse_promotionRules.Add(promotionRule);
 			}
 			describePriceResponse.PromotionRules = describePriceResponse_promotionRules;
+
+			List<DescribePriceResponse.DescribePrice_Coupon> describePriceResponse_coupons = new List<DescribePriceResponse.DescribePrice_Coupon>();
+			for (int i = 0; i < context.Length("DescribePrice.Coupons.Length"); i++) {
+				DescribePriceResponse.DescribePrice_Coupon coupon = new DescribePriceResponse.DescribePrice_Coupon();
+				coupon.CouponOptionCode = context.StringValue("DescribePrice.Coupons["+ i +"].CouponOptionCode");
+				coupon.CouponOptionNo = context.StringValue("DescribePrice.Coupons["+ i +"].CouponOptionNo");
+				coupon.CouponName = context.StringValue("DescribePrice.Coupons["+ i +"].CouponName");
+				coupon.CouponDesc = context.StringValue("DescribePrice.Coupons["+ i +"].CouponDesc");
+				coupon.CanPromFee = context.FloatValue("DescribePrice.Coupons["+ i +"].CanPromFee");
+				coupon.IsSelected = context.BooleanValue("DescribePrice.Coupons["+ i +"].IsSelected");
+
+				describePriceResponse_coupons.Add(coupon);
+			}
+			describePriceResponse.Coupons = describePriceResponse_coupons;
         
 			return describePriceResponse;
         }

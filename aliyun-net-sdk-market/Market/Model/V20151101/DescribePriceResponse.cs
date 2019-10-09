@@ -33,7 +33,17 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private float? discountPrice;
 
+		private bool? cuxiao;
+
+		private int? duration;
+
+		private string cycle;
+
+		private string infoTitle;
+
 		private List<DescribePrice_PromotionRule> promotionRules;
+
+		private List<DescribePrice_Coupon> coupons;
 
 		public string ProductCode
 		{
@@ -83,6 +93,54 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
+		public bool? Cuxiao
+		{
+			get
+			{
+				return cuxiao;
+			}
+			set	
+			{
+				cuxiao = value;
+			}
+		}
+
+		public int? Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
+			}
+		}
+
+		public string Cycle
+		{
+			get
+			{
+				return cycle;
+			}
+			set	
+			{
+				cycle = value;
+			}
+		}
+
+		public string InfoTitle
+		{
+			get
+			{
+				return infoTitle;
+			}
+			set	
+			{
+				infoTitle = value;
+			}
+		}
+
 		public List<DescribePrice_PromotionRule> PromotionRules
 		{
 			get
@@ -92,6 +150,18 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			set	
 			{
 				promotionRules = value;
+			}
+		}
+
+		public List<DescribePrice_Coupon> Coupons
+		{
+			get
+			{
+				return coupons;
+			}
+			set	
+			{
+				coupons = value;
 			}
 		}
 
@@ -137,6 +207,94 @@ namespace Aliyun.Acs.Market.Model.V20151101
 				set	
 				{
 					title = value;
+				}
+			}
+		}
+
+		public class DescribePrice_Coupon
+		{
+
+			private string couponOptionCode;
+
+			private string couponOptionNo;
+
+			private string couponName;
+
+			private string couponDesc;
+
+			private float? canPromFee;
+
+			private bool? isSelected;
+
+			public string CouponOptionCode
+			{
+				get
+				{
+					return couponOptionCode;
+				}
+				set	
+				{
+					couponOptionCode = value;
+				}
+			}
+
+			public string CouponOptionNo
+			{
+				get
+				{
+					return couponOptionNo;
+				}
+				set	
+				{
+					couponOptionNo = value;
+				}
+			}
+
+			public string CouponName
+			{
+				get
+				{
+					return couponName;
+				}
+				set	
+				{
+					couponName = value;
+				}
+			}
+
+			public string CouponDesc
+			{
+				get
+				{
+					return couponDesc;
+				}
+				set	
+				{
+					couponDesc = value;
+				}
+			}
+
+			public float? CanPromFee
+			{
+				get
+				{
+					return canPromFee;
+				}
+				set	
+				{
+					canPromFee = value;
+				}
+			}
+
+			public bool? IsSelected
+			{
+				get
+				{
+					return isSelected;
+				}
+				set	
+				{
+					isSelected = value;
 				}
 			}
 		}

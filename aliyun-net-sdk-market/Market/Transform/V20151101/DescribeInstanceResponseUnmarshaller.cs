@@ -70,7 +70,7 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 					List<DescribeInstanceResponse.DescribeInstance_Module.DescribeInstance_Property.DescribeInstance_PropertyValue> property_propertyValues = new List<DescribeInstanceResponse.DescribeInstance_Module.DescribeInstance_Property.DescribeInstance_PropertyValue>();
 					for (int k = 0; k < context.Length("DescribeInstance.Modules["+ i +"].Properties["+ j +"].PropertyValues.Length"); k++) {
 						DescribeInstanceResponse.DescribeInstance_Module.DescribeInstance_Property.DescribeInstance_PropertyValue propertyValue = new DescribeInstanceResponse.DescribeInstance_Module.DescribeInstance_Property.DescribeInstance_PropertyValue();
-						propertyValue._Value = context.StringValue("DescribeInstance.Modules["+ i +"].Properties["+ j +"].PropertyValues["+ k +"]._Value");
+						propertyValue._Value = context.StringValue("DescribeInstance.Modules["+ i +"].Properties["+ j +"].PropertyValues["+ k +"].Value");
 						propertyValue.DisplayName = context.StringValue("DescribeInstance.Modules["+ i +"].Properties["+ j +"].PropertyValues["+ k +"].DisplayName");
 						propertyValue.Type = context.StringValue("DescribeInstance.Modules["+ i +"].Properties["+ j +"].PropertyValues["+ k +"].Type");
 						propertyValue.Min = context.StringValue("DescribeInstance.Modules["+ i +"].Properties["+ j +"].PropertyValues["+ k +"].Min");
