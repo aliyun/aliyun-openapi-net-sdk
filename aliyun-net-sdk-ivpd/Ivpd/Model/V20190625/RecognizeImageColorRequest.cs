@@ -40,22 +40,9 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			Method = MethodType.POST;
         }
 
-		private string colorCount;
-
 		private string url;
 
-		public string ColorCount
-		{
-			get
-			{
-				return colorCount;
-			}
-			set	
-			{
-				colorCount = value;
-				DictionaryUtil.Add(BodyParameters, "ColorCount", value);
-			}
-		}
+		private string colorCount;
 
 		public string Url
 		{
@@ -67,6 +54,19 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			{
 				url = value;
 				DictionaryUtil.Add(BodyParameters, "Url", value);
+			}
+		}
+
+		public string ColorCount
+		{
+			get
+			{
+				return colorCount;
+			}
+			set	
+			{
+				colorCount = value;
+				DictionaryUtil.Add(BodyParameters, "ColorCount", value);
 			}
 		}
 

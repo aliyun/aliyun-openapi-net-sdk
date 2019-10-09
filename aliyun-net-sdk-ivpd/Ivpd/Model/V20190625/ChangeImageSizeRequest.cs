@@ -40,24 +40,11 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			Method = MethodType.POST;
         }
 
-		private int? width;
-
 		private string url;
 
-		private int? height;
+		private int? width;
 
-		public int? Width
-		{
-			get
-			{
-				return width;
-			}
-			set	
-			{
-				width = value;
-				DictionaryUtil.Add(BodyParameters, "Width", value.ToString());
-			}
-		}
+		private int? height;
 
 		public string Url
 		{
@@ -69,6 +56,19 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			{
 				url = value;
 				DictionaryUtil.Add(BodyParameters, "Url", value);
+			}
+		}
+
+		public int? Width
+		{
+			get
+			{
+				return width;
+			}
+			set	
+			{
+				width = value;
+				DictionaryUtil.Add(BodyParameters, "Width", value.ToString());
 			}
 		}
 

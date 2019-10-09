@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{bebcabeb-06f6-4adf-80cc-8f376fab688b}</ProjectGuid>
+    <ProjectGuid>{3bfa4b1b-ed9f-4908-b493-7820c2ac24fe}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,23 +40,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Ivpd\Model\V20190625\RecolorImageRequest.cs" />
-	<Compile Include="Ivpd\Model\V20190625\ExtendImageStyleResponse.cs" />
-	<Compile Include="Ivpd\Model\V20190625\MakeSuperResolutionImageResponse.cs" />
-	<Compile Include="Ivpd\Model\V20190625\MakeSuperResolutionImageRequest.cs" />
 	<Compile Include="Ivpd\Model\V20190625\ChangeImageSizeRequest.cs" />
-	<Compile Include="Ivpd\Model\V20190625\RecognizeImageStyleResponse.cs" />
-	<Compile Include="Ivpd\Model\V20190625\RecolorImageResponse.cs" />
-	<Compile Include="Ivpd\Model\V20190625\ExtendImageStyleRequest.cs" />
 	<Compile Include="Ivpd\Model\V20190625\ChangeImageSizeResponse.cs" />
+	<Compile Include="Ivpd\Model\V20190625\DetectImageElementsRequest.cs" />
+	<Compile Include="Ivpd\Model\V20190625\DetectImageElementsResponse.cs" />
+	<Compile Include="Ivpd\Model\V20190625\ExtendImageStyleRequest.cs" />
+	<Compile Include="Ivpd\Model\V20190625\ExtendImageStyleResponse.cs" />
+	<Compile Include="Ivpd\Model\V20190625\MakeSuperResolutionImageRequest.cs" />
+	<Compile Include="Ivpd\Model\V20190625\MakeSuperResolutionImageResponse.cs" />
+	<Compile Include="Ivpd\Model\V20190625\RecognizeImageColorRequest.cs" />
+	<Compile Include="Ivpd\Model\V20190625\RecognizeImageColorResponse.cs" />
 	<Compile Include="Ivpd\Model\V20190625\RecognizeImageStyleRequest.cs" />
-	<Compile Include="Ivpd\Transform\V20190625\RecolorImageResponseUnmarshaller.cs" />
+	<Compile Include="Ivpd\Model\V20190625\RecognizeImageStyleResponse.cs" />
+	<Compile Include="Ivpd\Model\V20190625\RecolorImageRequest.cs" />
+	<Compile Include="Ivpd\Model\V20190625\RecolorImageResponse.cs" />
+	<Compile Include="Ivpd\Model\V20190625\SegmentImageRequest.cs" />
+	<Compile Include="Ivpd\Model\V20190625\SegmentImageResponse.cs" />
+	<Compile Include="Ivpd\Transform\V20190625\ChangeImageSizeResponseUnmarshaller.cs" />
+	<Compile Include="Ivpd\Transform\V20190625\DetectImageElementsResponseUnmarshaller.cs" />
 	<Compile Include="Ivpd\Transform\V20190625\ExtendImageStyleResponseUnmarshaller.cs" />
 	<Compile Include="Ivpd\Transform\V20190625\MakeSuperResolutionImageResponseUnmarshaller.cs" />
-	<Compile Include="Ivpd\Transform\V20190625\DetectImageElementsResponseUnmarshaller.cs" />
-	<Compile Include="Ivpd\Transform\V20190625\ChangeImageSizeResponseUnmarshaller.cs" />
 	<Compile Include="Ivpd\Transform\V20190625\RecognizeImageColorResponseUnmarshaller.cs" />
 	<Compile Include="Ivpd\Transform\V20190625\RecognizeImageStyleResponseUnmarshaller.cs" />
+	<Compile Include="Ivpd\Transform\V20190625\RecolorImageResponseUnmarshaller.cs" />
+	<Compile Include="Ivpd\Transform\V20190625\SegmentImageResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

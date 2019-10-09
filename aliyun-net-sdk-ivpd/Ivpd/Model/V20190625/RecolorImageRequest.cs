@@ -40,28 +40,15 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			Method = MethodType.POST;
         }
 
-		private string mode;
+		private List<ColorTemplate> colorTemplates = new List<ColorTemplate>(){ };
 
-		private List<ColorTemplate> colorTemplates;
+		private string url;
+
+		private string mode;
 
 		private int? colorCount;
 
 		private string refUrl;
-
-		private string url;
-
-		public string Mode
-		{
-			get
-			{
-				return mode;
-			}
-			set	
-			{
-				mode = value;
-				DictionaryUtil.Add(BodyParameters, "Mode", value);
-			}
-		}
 
 		public List<ColorTemplate> ColorTemplates
 		{
@@ -77,6 +64,32 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 				{
 					DictionaryUtil.Add(BodyParameters,"ColorTemplate." + (i + 1) + ".Color", colorTemplates[i].Color);
 				}
+			}
+		}
+
+		public string Url
+		{
+			get
+			{
+				return url;
+			}
+			set	
+			{
+				url = value;
+				DictionaryUtil.Add(BodyParameters, "Url", value);
+			}
+		}
+
+		public string Mode
+		{
+			get
+			{
+				return mode;
+			}
+			set	
+			{
+				mode = value;
+				DictionaryUtil.Add(BodyParameters, "Mode", value);
 			}
 		}
 
@@ -103,19 +116,6 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			{
 				refUrl = value;
 				DictionaryUtil.Add(BodyParameters, "RefUrl", value);
-			}
-		}
-
-		public string Url
-		{
-			get
-			{
-				return url;
-			}
-			set	
-			{
-				url = value;
-				DictionaryUtil.Add(BodyParameters, "Url", value);
 			}
 		}
 
