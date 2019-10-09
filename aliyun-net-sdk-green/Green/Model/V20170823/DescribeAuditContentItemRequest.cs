@@ -32,34 +32,26 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public DescribeAuditContentItemRequest()
             : base("Green", "2017-08-23", "DescribeAuditContentItem", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private int? totalCount;
 
 		private string sourceIp;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private string lang;
-
-		private string resourceType;
 
 		private string taskId;
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
-			}
-		}
+		private int? totalCount;
+
+		private int? currentPage;
+
+		private string resourceType;
 
 		public string SourceIp
 		{
@@ -87,19 +79,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -113,19 +92,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
-
 		public string TaskId
 		{
 			get
@@ -136,6 +102,45 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				taskId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

@@ -32,13 +32,31 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public DeleteNotificationContactsRequest()
             : base("Green", "2017-08-23", "DeleteNotificationContacts", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string contactTypes;
 
 		private string sourceIp;
 
 		private string lang;
 
-		private string contactTypes;
+		public string ContactTypes
+		{
+			get
+			{
+				return contactTypes;
+			}
+			set	
+			{
+				contactTypes = value;
+				DictionaryUtil.Add(QueryParameters, "ContactTypes", value);
+			}
+		}
 
 		public string SourceIp
 		{
@@ -63,19 +81,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string ContactTypes
-		{
-			get
-			{
-				return contactTypes;
-			}
-			set	
-			{
-				contactTypes = value;
-				DictionaryUtil.Add(QueryParameters, "ContactTypes", value);
 			}
 		}
 

@@ -32,21 +32,39 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public UpdateKeywordLibRequest()
             : base("Green", "2017-08-23", "UpdateKeywordLib", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string matchMode;
 
 		private string sourceIp;
 
 		private bool? enable;
 
-		private string name;
-
-		private string bizTypes;
-
 		private int? id;
 
 		private string lang;
 
-		private string matchMode;
+		private string bizTypes;
+
+		private string name;
+
+		public string MatchMode
+		{
+			get
+			{
+				return matchMode;
+			}
+			set	
+			{
+				matchMode = value;
+				DictionaryUtil.Add(QueryParameters, "MatchMode", value);
+			}
+		}
 
 		public string SourceIp
 		{
@@ -71,32 +89,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				enable = value;
 				DictionaryUtil.Add(QueryParameters, "Enable", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string BizTypes
-		{
-			get
-			{
-				return bizTypes;
-			}
-			set	
-			{
-				bizTypes = value;
-				DictionaryUtil.Add(QueryParameters, "BizTypes", value);
 			}
 		}
 
@@ -126,16 +118,29 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string MatchMode
+		public string BizTypes
 		{
 			get
 			{
-				return matchMode;
+				return bizTypes;
 			}
 			set	
 			{
-				matchMode = value;
-				DictionaryUtil.Add(QueryParameters, "MatchMode", value);
+				bizTypes = value;
+				DictionaryUtil.Add(QueryParameters, "BizTypes", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

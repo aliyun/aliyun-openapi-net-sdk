@@ -32,15 +32,20 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public UpdateNotificationSettingRequest()
             : base("Green", "2017-08-23", "UpdateNotificationSetting", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string realtimeMessageList;
 
+		private int? scheduleMessageTime;
+
 		private string sourceIp;
 
 		private string reminderModeList;
-
-		private int? scheduleMessageTime;
 
 		private string lang;
 
@@ -56,6 +61,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				realtimeMessageList = value;
 				DictionaryUtil.Add(QueryParameters, "RealtimeMessageList", value);
+			}
+		}
+
+		public int? ScheduleMessageTime
+		{
+			get
+			{
+				return scheduleMessageTime;
+			}
+			set	
+			{
+				scheduleMessageTime = value;
+				DictionaryUtil.Add(QueryParameters, "ScheduleMessageTime", value.ToString());
 			}
 		}
 
@@ -82,19 +100,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				reminderModeList = value;
 				DictionaryUtil.Add(QueryParameters, "ReminderModeList", value);
-			}
-		}
-
-		public int? ScheduleMessageTime
-		{
-			get
-			{
-				return scheduleMessageTime;
-			}
-			set	
-			{
-				scheduleMessageTime = value;
-				DictionaryUtil.Add(QueryParameters, "ScheduleMessageTime", value.ToString());
 			}
 		}
 

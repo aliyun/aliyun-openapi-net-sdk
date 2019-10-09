@@ -32,41 +32,20 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public UpdateBizTypeSettingRequest()
             : base("Green", "2017-08-23", "UpdateBizTypeSetting", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string terrorism;
-
-		private string bizTypeName;
 
 		private string resourceType;
 
 		private string porn;
 
-		public string Terrorism
-		{
-			get
-			{
-				return terrorism;
-			}
-			set	
-			{
-				terrorism = value;
-				DictionaryUtil.Add(QueryParameters, "Terrorism", value);
-			}
-		}
+		private string terrorism;
 
-		public string BizTypeName
-		{
-			get
-			{
-				return bizTypeName;
-			}
-			set	
-			{
-				bizTypeName = value;
-				DictionaryUtil.Add(QueryParameters, "BizTypeName", value);
-			}
-		}
+		private string bizTypeName;
 
 		public string ResourceType
 		{
@@ -91,6 +70,32 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				porn = value;
 				DictionaryUtil.Add(QueryParameters, "Porn", value);
+			}
+		}
+
+		public string Terrorism
+		{
+			get
+			{
+				return terrorism;
+			}
+			set	
+			{
+				terrorism = value;
+				DictionaryUtil.Add(QueryParameters, "Terrorism", value);
+			}
+		}
+
+		public string BizTypeName
+		{
+			get
+			{
+				return bizTypeName;
+			}
+			set	
+			{
+				bizTypeName = value;
+				DictionaryUtil.Add(QueryParameters, "BizTypeName", value);
 			}
 		}
 

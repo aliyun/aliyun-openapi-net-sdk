@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Green.Model.V20161222
         public SampleFeedbackRequest()
             : base("Green", "2016-12-22", "SampleFeedback", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/sample/feedback";
 			Method = MethodType.POST;
         }

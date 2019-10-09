@@ -32,15 +32,33 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public VerifyWebsiteInstanceRequest()
             : base("Green", "2017-08-23", "VerifyWebsiteInstance", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string verifyMethod;
 
 		private string instanceId;
 
 		private string sourceIp;
 
-		private string verifyMethod;
-
 		private string lang;
+
+		public string VerifyMethod
+		{
+			get
+			{
+				return verifyMethod;
+			}
+			set	
+			{
+				verifyMethod = value;
+				DictionaryUtil.Add(QueryParameters, "VerifyMethod", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -65,19 +83,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				sourceIp = value;
 				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
-
-		public string VerifyMethod
-		{
-			get
-			{
-				return verifyMethod;
-			}
-			set	
-			{
-				verifyMethod = value;
-				DictionaryUtil.Add(QueryParameters, "VerifyMethod", value);
 			}
 		}
 

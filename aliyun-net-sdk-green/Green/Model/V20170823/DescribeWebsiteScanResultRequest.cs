@@ -32,40 +32,32 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public DescribeWebsiteScanResultRequest()
             : base("Green", "2017-08-23", "DescribeWebsiteScanResult", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private int? totalCount;
 
 		private string subServiceModule;
 
-		private string siteUrl;
-
 		private string sourceIp;
 
-		private string handleStatus;
-
-		private string domain;
-
 		private int? pageSize;
+
+		private string lang;
+
+		private int? totalCount;
+
+		private string siteUrl;
+
+		private string handleStatus;
 
 		private int? currentPage;
 
 		private string label;
 
-		private string lang;
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
-			}
-		}
+		private string domain;
 
 		public string SubServiceModule
 		{
@@ -77,19 +69,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				subServiceModule = value;
 				DictionaryUtil.Add(QueryParameters, "SubServiceModule", value);
-			}
-		}
-
-		public string SiteUrl
-		{
-			get
-			{
-				return siteUrl;
-			}
-			set	
-			{
-				siteUrl = value;
-				DictionaryUtil.Add(QueryParameters, "SiteUrl", value);
 			}
 		}
 
@@ -106,32 +85,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string HandleStatus
-		{
-			get
-			{
-				return handleStatus;
-			}
-			set	
-			{
-				handleStatus = value;
-				DictionaryUtil.Add(QueryParameters, "HandleStatus", value);
-			}
-		}
-
-		public string Domain
-		{
-			get
-			{
-				return domain;
-			}
-			set	
-			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -142,6 +95,58 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
+			}
+		}
+
+		public string SiteUrl
+		{
+			get
+			{
+				return siteUrl;
+			}
+			set	
+			{
+				siteUrl = value;
+				DictionaryUtil.Add(QueryParameters, "SiteUrl", value);
+			}
+		}
+
+		public string HandleStatus
+		{
+			get
+			{
+				return handleStatus;
+			}
+			set	
+			{
+				handleStatus = value;
+				DictionaryUtil.Add(QueryParameters, "HandleStatus", value);
 			}
 		}
 
@@ -171,16 +176,16 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string Lang
+		public string Domain
 		{
 			get
 			{
-				return lang;
+				return domain;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
 			}
 		}
 

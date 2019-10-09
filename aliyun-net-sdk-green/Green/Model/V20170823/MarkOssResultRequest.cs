@@ -32,21 +32,39 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public MarkOssResultRequest()
             : base("Green", "2017-08-23", "MarkOssResult", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string sourceIp;
+		private string scene;
 
-		private string ids;
+		private string sourceIp;
 
 		private string lang;
 
 		private bool? stock;
 
-		private string operation;
-
 		private string resourceType;
 
-		private string scene;
+		private string ids;
+
+		private string operation;
+
+		public string Scene
+		{
+			get
+			{
+				return scene;
+			}
+			set	
+			{
+				scene = value;
+				DictionaryUtil.Add(QueryParameters, "Scene", value);
+			}
+		}
 
 		public string SourceIp
 		{
@@ -58,19 +76,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				sourceIp = value;
 				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
-
-		public string Ids
-		{
-			get
-			{
-				return ids;
-			}
-			set	
-			{
-				ids = value;
-				DictionaryUtil.Add(QueryParameters, "Ids", value);
 			}
 		}
 
@@ -100,19 +105,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string Operation
-		{
-			get
-			{
-				return operation;
-			}
-			set	
-			{
-				operation = value;
-				DictionaryUtil.Add(QueryParameters, "Operation", value);
-			}
-		}
-
 		public string ResourceType
 		{
 			get
@@ -126,16 +118,29 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string Scene
+		public string Ids
 		{
 			get
 			{
-				return scene;
+				return ids;
 			}
 			set	
 			{
-				scene = value;
-				DictionaryUtil.Add(QueryParameters, "Scene", value);
+				ids = value;
+				DictionaryUtil.Add(QueryParameters, "Ids", value);
+			}
+		}
+
+		public string Operation
+		{
+			get
+			{
+				return operation;
+			}
+			set	
+			{
+				operation = value;
+				DictionaryUtil.Add(QueryParameters, "Operation", value);
 			}
 		}
 

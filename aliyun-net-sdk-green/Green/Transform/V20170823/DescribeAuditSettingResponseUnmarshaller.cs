@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			describeAuditSettingResponse.Callback = context.StringValue("DescribeAuditSetting.Callback");
 
 			DescribeAuditSettingResponse.DescribeAuditSetting_AuditRange auditRange = new DescribeAuditSettingResponse.DescribeAuditSetting_AuditRange();
-			auditRange.Block = context.BooleanValue("DescribeAuditSetting.AuditRange.Block");
-			auditRange.Review = context.BooleanValue("DescribeAuditSetting.AuditRange.Review");
-			auditRange.Pass = context.BooleanValue("DescribeAuditSetting.AuditRange.Pass");
+			auditRange.Block = context.BooleanValue("DescribeAuditSetting.AuditRange.block");
+			auditRange.Review = context.BooleanValue("DescribeAuditSetting.AuditRange.review");
+			auditRange.Pass = context.BooleanValue("DescribeAuditSetting.AuditRange.pass");
 			describeAuditSettingResponse.AuditRange = auditRange;
         
 			return describeAuditSettingResponse;

@@ -32,9 +32,16 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public UpdateAppPackageRequest()
             : base("Green", "2017-08-23", "UpdateAppPackage", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private bool? debug;
+
+		private string platform;
 
 		private string sourceIp;
 
@@ -43,8 +50,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 		private long? id;
 
 		private string lang;
-
-		private string platform;
 
 		public bool? Debug
 		{
@@ -56,6 +61,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				debug = value;
 				DictionaryUtil.Add(QueryParameters, "Debug", value.ToString());
+			}
+		}
+
+		public string Platform
+		{
+			get
+			{
+				return platform;
+			}
+			set	
+			{
+				platform = value;
+				DictionaryUtil.Add(QueryParameters, "Platform", value);
 			}
 		}
 
@@ -108,19 +126,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string Platform
-		{
-			get
-			{
-				return platform;
-			}
-			set	
-			{
-				platform = value;
-				DictionaryUtil.Add(QueryParameters, "Platform", value);
 			}
 		}
 

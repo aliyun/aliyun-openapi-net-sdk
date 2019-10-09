@@ -32,13 +32,12 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public DescribeOssIncrementStatsRequest()
             : base("Green", "2017-08-23", "DescribeOssIncrementStats", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string endDate;
-
-		private string sourceIp;
-
-		private string lang;
 
 		private string startDate;
 
@@ -46,44 +45,11 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private string scene;
 
-		public string EndDate
-		{
-			get
-			{
-				return endDate;
-			}
-			set	
-			{
-				endDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndDate", value);
-			}
-		}
+		private string endDate;
 
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
+		private string sourceIp;
 
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
+		private string lang;
 
 		public string StartDate
 		{
@@ -121,6 +87,45 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				scene = value;
 				DictionaryUtil.Add(QueryParameters, "Scene", value);
+			}
+		}
+
+		public string EndDate
+		{
+			get
+			{
+				return endDate;
+			}
+			set	
+			{
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
+			}
+		}
+
+		public string SourceIp
+		{
+			get
+			{
+				return sourceIp;
+			}
+			set	
+			{
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

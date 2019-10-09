@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			describeUserStatusResponse.OpenApiBeginTime = context.StringValue("DescribeUserStatus.OpenApiBeginTime");
 			describeUserStatusResponse.OssCheckStatus = context.StringValue("DescribeUserStatus.OssCheckStatus");
 			describeUserStatusResponse.OssVideoSizeLimit = context.IntegerValue("DescribeUserStatus.OssVideoSizeLimit");
+			describeUserStatusResponse.Uid = context.StringValue("DescribeUserStatus.Uid");
         
 			return describeUserStatusResponse;
         }

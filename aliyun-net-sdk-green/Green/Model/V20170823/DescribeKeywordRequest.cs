@@ -32,34 +32,26 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public DescribeKeywordRequest()
             : base("Green", "2017-08-23", "DescribeKeyword", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private int? totalCount;
 
 		private string sourceIp;
 
-		private int? keywordLibId;
-
 		private int? pageSize;
-
-		private int? currentPage;
 
 		private string lang;
 
 		private string keyword;
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
-			}
-		}
+		private int? totalCount;
+
+		private int? keywordLibId;
+
+		private int? currentPage;
 
 		public string SourceIp
 		{
@@ -74,19 +66,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public int? KeywordLibId
-		{
-			get
-			{
-				return keywordLibId;
-			}
-			set	
-			{
-				keywordLibId = value;
-				DictionaryUtil.Add(QueryParameters, "KeywordLibId", value.ToString());
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -97,19 +76,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
@@ -136,6 +102,45 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				keyword = value;
 				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
+			}
+		}
+
+		public int? KeywordLibId
+		{
+			get
+			{
+				return keywordLibId;
+			}
+			set	
+			{
+				keywordLibId = value;
+				DictionaryUtil.Add(QueryParameters, "KeywordLibId", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 

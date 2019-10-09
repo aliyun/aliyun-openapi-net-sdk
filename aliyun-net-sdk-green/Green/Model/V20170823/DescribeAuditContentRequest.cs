@@ -32,33 +32,20 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public DescribeAuditContentRequest()
             : base("Green", "2017-08-23", "DescribeAuditContent", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private int? totalCount;
-
-		private string keywordId;
 
 		private string imageId;
 
-		private string suggestion;
-
-		private int? currentPage;
-
-		private string label;
-
 		private string startDate;
-
-		private string resourceType;
 
 		private string scene;
 
-		private string bizType;
-
-		private string endDate;
-
 		private string sourceIp;
-
-		private string dataId;
 
 		private string libType;
 
@@ -70,31 +57,23 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private string taskId;
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
-			}
-		}
+		private int? totalCount;
 
-		public string KeywordId
-		{
-			get
-			{
-				return keywordId;
-			}
-			set	
-			{
-				keywordId = value;
-				DictionaryUtil.Add(QueryParameters, "KeywordId", value);
-			}
-		}
+		private string keywordId;
+
+		private string suggestion;
+
+		private int? currentPage;
+
+		private string label;
+
+		private string resourceType;
+
+		private string bizType;
+
+		private string endDate;
+
+		private string dataId;
 
 		public string ImageId
 		{
@@ -106,45 +85,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
-
-		public string Suggestion
-		{
-			get
-			{
-				return suggestion;
-			}
-			set	
-			{
-				suggestion = value;
-				DictionaryUtil.Add(QueryParameters, "Suggestion", value);
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public string Label
-		{
-			get
-			{
-				return label;
-			}
-			set	
-			{
-				label = value;
-				DictionaryUtil.Add(QueryParameters, "Label", value);
 			}
 		}
 
@@ -161,19 +101,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
-
 		public string Scene
 		{
 			get
@@ -187,32 +114,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string BizType
-		{
-			get
-			{
-				return bizType;
-			}
-			set	
-			{
-				bizType = value;
-				DictionaryUtil.Add(QueryParameters, "BizType", value);
-			}
-		}
-
-		public string EndDate
-		{
-			get
-			{
-				return endDate;
-			}
-			set	
-			{
-				endDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndDate", value);
-			}
-		}
-
 		public string SourceIp
 		{
 			get
@@ -223,19 +124,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				sourceIp = value;
 				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
-
-		public string DataId
-		{
-			get
-			{
-				return dataId;
-			}
-			set	
-			{
-				dataId = value;
-				DictionaryUtil.Add(QueryParameters, "DataId", value);
 			}
 		}
 
@@ -301,6 +189,123 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				taskId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
+			}
+		}
+
+		public string KeywordId
+		{
+			get
+			{
+				return keywordId;
+			}
+			set	
+			{
+				keywordId = value;
+				DictionaryUtil.Add(QueryParameters, "KeywordId", value);
+			}
+		}
+
+		public string Suggestion
+		{
+			get
+			{
+				return suggestion;
+			}
+			set	
+			{
+				suggestion = value;
+				DictionaryUtil.Add(QueryParameters, "Suggestion", value);
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string Label
+		{
+			get
+			{
+				return label;
+			}
+			set	
+			{
+				label = value;
+				DictionaryUtil.Add(QueryParameters, "Label", value);
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public string BizType
+		{
+			get
+			{
+				return bizType;
+			}
+			set	
+			{
+				bizType = value;
+				DictionaryUtil.Add(QueryParameters, "BizType", value);
+			}
+		}
+
+		public string EndDate
+		{
+			get
+			{
+				return endDate;
+			}
+			set	
+			{
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
+			}
+		}
+
+		public string DataId
+		{
+			get
+			{
+				return dataId;
+			}
+			set	
+			{
+				dataId = value;
+				DictionaryUtil.Add(QueryParameters, "DataId", value);
 			}
 		}
 

@@ -32,11 +32,12 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public RenewWebSiteInstanceRequest()
             : base("Green", "2017-08-23", "RenewWebSiteInstance", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private int? duration;
-
-		private string instanceId;
 
 		private string clientToken;
 
@@ -46,35 +47,13 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private long? ownerId;
 
+		private int? duration;
+
+		private string instanceId;
+
 		private string pricingCycle;
 
 		private string orderType;
-
-		public int? Duration
-		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
 
 		public string ClientToken
 		{
@@ -125,6 +104,32 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
+				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

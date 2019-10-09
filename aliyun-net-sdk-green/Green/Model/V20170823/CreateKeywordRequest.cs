@@ -32,28 +32,20 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public CreateKeywordRequest()
             : base("Green", "2017-08-23", "CreateKeyword", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string sourceIp;
 
 		private string keywords;
 
 		private int? keywordLibId;
 
-		private string lang;
+		private string sourceIp;
 
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
+		private string lang;
 
 		public string Keywords
 		{
@@ -78,6 +70,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				keywordLibId = value;
 				DictionaryUtil.Add(QueryParameters, "KeywordLibId", value.ToString());
+			}
+		}
+
+		public string SourceIp
+		{
+			get
+			{
+				return sourceIp;
+			}
+			set	
+			{
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 

@@ -32,24 +32,16 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public DescribeBizTypeSettingRequest()
             : base("Green", "2017-08-23", "DescribeBizTypeSetting", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string bizTypeName;
 
 		private string resourceType;
 
-		public string BizTypeName
-		{
-			get
-			{
-				return bizTypeName;
-			}
-			set	
-			{
-				bizTypeName = value;
-				DictionaryUtil.Add(QueryParameters, "BizTypeName", value);
-			}
-		}
+		private string bizTypeName;
 
 		public string ResourceType
 		{
@@ -61,6 +53,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				resourceType = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public string BizTypeName
+		{
+			get
+			{
+				return bizTypeName;
+			}
+			set	
+			{
+				bizTypeName = value;
+				DictionaryUtil.Add(QueryParameters, "BizTypeName", value);
 			}
 		}
 

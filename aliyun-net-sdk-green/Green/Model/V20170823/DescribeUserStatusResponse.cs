@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private int? ossVideoSizeLimit;
 
+		private string uid;
+
 		public string RequestId
 		{
 			get
@@ -120,6 +122,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			set	
 			{
 				ossVideoSizeLimit = value;
+			}
+		}
+
+		public string Uid
+		{
+			get
+			{
+				return uid;
+			}
+			set	
+			{
+				uid = value;
 			}
 		}
 	}

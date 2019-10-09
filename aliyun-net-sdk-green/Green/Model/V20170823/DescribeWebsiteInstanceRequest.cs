@@ -32,17 +32,22 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public DescribeWebsiteInstanceRequest()
             : base("Green", "2017-08-23", "DescribeWebsiteInstance", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private int? totalCount;
+
+		private int? currentPage;
 
 		private string instanceId;
 
 		private string sourceIp;
 
 		private int? pageSize;
-
-		private int? currentPage;
 
 		private string lang;
 
@@ -56,6 +61,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				totalCount = value;
 				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
@@ -95,19 +113,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 

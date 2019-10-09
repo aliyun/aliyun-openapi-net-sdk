@@ -32,41 +32,20 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public DescribeOpenApiUsageRequest()
             : base("Green", "2017-08-23", "DescribeOpenApiUsage", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string endDate;
-
-		private string sourceIp;
 
 		private string startDate;
 
 		private string resourceType;
 
-		public string EndDate
-		{
-			get
-			{
-				return endDate;
-			}
-			set	
-			{
-				endDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndDate", value);
-			}
-		}
+		private string endDate;
 
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
+		private string sourceIp;
 
 		public string StartDate
 		{
@@ -91,6 +70,32 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				resourceType = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public string EndDate
+		{
+			get
+			{
+				return endDate;
+			}
+			set	
+			{
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
+			}
+		}
+
+		public string SourceIp
+		{
+			get
+			{
+				return sourceIp;
+			}
+			set	
+			{
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 

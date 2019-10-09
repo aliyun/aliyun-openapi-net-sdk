@@ -32,17 +32,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public UpdateOssIncrementCheckSettingRequest()
             : base("Green", "2017-08-23", "UpdateOssIncrementCheckSetting", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string imageAutoFreeze;
 
 		private string videoSceneList;
 
-		private string autoFreezeType;
-
 		private string imageSceneList;
 
-		private string bucketConfigList;
+		private int? videoFrameInterval;
 
 		private string sourceIp;
 
@@ -50,26 +51,17 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private string videoAutoFreezeSceneList;
 
-		private int? videoFrameInterval;
+		private string lang;
+
+		private string imageAutoFreeze;
 
 		private int? videoMaxSize;
 
-		private string lang;
+		private string autoFreezeType;
+
+		private string bucketConfigList;
 
 		private int? videoMaxFrames;
-
-		public string ImageAutoFreeze
-		{
-			get
-			{
-				return imageAutoFreeze;
-			}
-			set	
-			{
-				imageAutoFreeze = value;
-				DictionaryUtil.Add(QueryParameters, "ImageAutoFreeze", value);
-			}
-		}
 
 		public string VideoSceneList
 		{
@@ -81,19 +73,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				videoSceneList = value;
 				DictionaryUtil.Add(QueryParameters, "VideoSceneList", value);
-			}
-		}
-
-		public string AutoFreezeType
-		{
-			get
-			{
-				return autoFreezeType;
-			}
-			set	
-			{
-				autoFreezeType = value;
-				DictionaryUtil.Add(QueryParameters, "AutoFreezeType", value);
 			}
 		}
 
@@ -110,16 +89,16 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string BucketConfigList
+		public int? VideoFrameInterval
 		{
 			get
 			{
-				return bucketConfigList;
+				return videoFrameInterval;
 			}
 			set	
 			{
-				bucketConfigList = value;
-				DictionaryUtil.Add(QueryParameters, "BucketConfigList", value);
+				videoFrameInterval = value;
+				DictionaryUtil.Add(QueryParameters, "VideoFrameInterval", value.ToString());
 			}
 		}
 
@@ -162,16 +141,29 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public int? VideoFrameInterval
+		public string Lang
 		{
 			get
 			{
-				return videoFrameInterval;
+				return lang;
 			}
 			set	
 			{
-				videoFrameInterval = value;
-				DictionaryUtil.Add(QueryParameters, "VideoFrameInterval", value.ToString());
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string ImageAutoFreeze
+		{
+			get
+			{
+				return imageAutoFreeze;
+			}
+			set	
+			{
+				imageAutoFreeze = value;
+				DictionaryUtil.Add(QueryParameters, "ImageAutoFreeze", value);
 			}
 		}
 
@@ -188,16 +180,29 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string Lang
+		public string AutoFreezeType
 		{
 			get
 			{
-				return lang;
+				return autoFreezeType;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				autoFreezeType = value;
+				DictionaryUtil.Add(QueryParameters, "AutoFreezeType", value);
+			}
+		}
+
+		public string BucketConfigList
+		{
+			get
+			{
+				return bucketConfigList;
+			}
+			set	
+			{
+				bucketConfigList = value;
+				DictionaryUtil.Add(QueryParameters, "BucketConfigList", value);
 			}
 		}
 

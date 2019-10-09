@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Green.Model.V20161222
         public ImageResultRequest()
             : base("Green", "2016-12-22", "ImageResult", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/image/result/[taskid]";
 			Method = MethodType.GET;
         }

@@ -32,7 +32,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
         public CreateKeywordLibRequest()
             : base("Green", "2017-08-23", "CreateKeywordLib", "green", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string language;
+
+		private string serviceModule;
+
+		private string matchMode;
 
 		private string sourceIp;
 
@@ -40,21 +51,54 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private bool? enable;
 
-		private string name;
+		private string lang;
 
 		private string bizTypes;
 
-		private string language;
+		private string resourceType;
 
-		private string serviceModule;
-
-		private string lang;
+		private string name;
 
 		private string category;
 
-		private string matchMode;
+		public string Language
+		{
+			get
+			{
+				return language;
+			}
+			set	
+			{
+				language = value;
+				DictionaryUtil.Add(QueryParameters, "Language", value);
+			}
+		}
 
-		private string resourceType;
+		public string ServiceModule
+		{
+			get
+			{
+				return serviceModule;
+			}
+			set	
+			{
+				serviceModule = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceModule", value);
+			}
+		}
+
+		public string MatchMode
+		{
+			get
+			{
+				return matchMode;
+			}
+			set	
+			{
+				matchMode = value;
+				DictionaryUtil.Add(QueryParameters, "MatchMode", value);
+			}
+		}
 
 		public string SourceIp
 		{
@@ -95,16 +139,16 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string Name
+		public string Lang
 		{
 			get
 			{
-				return name;
+				return lang;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -121,42 +165,29 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public string Language
+		public string ResourceType
 		{
 			get
 			{
-				return language;
+				return resourceType;
 			}
 			set	
 			{
-				language = value;
-				DictionaryUtil.Add(QueryParameters, "Language", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string ServiceModule
+		public string Name
 		{
 			get
 			{
-				return serviceModule;
+				return name;
 			}
 			set	
 			{
-				serviceModule = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceModule", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -170,32 +201,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				category = value;
 				DictionaryUtil.Add(QueryParameters, "Category", value);
-			}
-		}
-
-		public string MatchMode
-		{
-			get
-			{
-				return matchMode;
-			}
-			set	
-			{
-				matchMode = value;
-				DictionaryUtil.Add(QueryParameters, "MatchMode", value);
-			}
-		}
-
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
