@@ -1,3 +1,6 @@
+### 2019-10-10 Version 1.5.4
+* Fixed RoaSignatureComposer. 
+
 ### 2019-09-12 Version 1.5.3
 * Fixed endpoint resolve. 
 

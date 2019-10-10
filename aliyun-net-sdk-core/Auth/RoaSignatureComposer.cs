@@ -125,7 +125,7 @@ namespace Aliyun.Acs.Core.Auth
             foreach (var e in sortedDictionary)
             {
                 queryBuilder.Append(e.Key);
-                if (null != e.Value)
+                if (!string.IsNullOrEmpty(e.Value))
                 {
                     queryBuilder.Append("=").Append(e.Value);
                 }
