@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -125,7 +125,7 @@ namespace Aliyun.Acs.Core.Auth
             foreach (var e in sortedDictionary)
             {
                 queryBuilder.Append(e.Key);
-                if (null != e.Value)
+                if (!string.IsNullOrEmpty(e.Value))
                 {
                     queryBuilder.Append("=").Append(e.Value);
                 }
