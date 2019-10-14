@@ -28,10 +28,10 @@ using Aliyun.Acs.Push.Transform.V20160801;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-    public class QueryDevicesByAccountRequest : RpcAcsRequest<QueryDevicesByAccountResponse>
+    public class CompleteContinuouslyPushRequest : RpcAcsRequest<CompleteContinuouslyPushResponse>
     {
-        public QueryDevicesByAccountRequest()
-            : base("Push", "2016-08-01", "QueryDevicesByAccount")
+        public CompleteContinuouslyPushRequest()
+            : base("Push", "2016-08-01", "CompleteContinuouslyPush")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +40,22 @@ namespace Aliyun.Acs.Push.Model.V20160801
             }
         }
 
+		private string messageId;
+
 		private long? appKey;
 
-		private string account;
+		public string MessageId
+		{
+			get
+			{
+				return messageId;
+			}
+			set	
+			{
+				messageId = value;
+				DictionaryUtil.Add(QueryParameters, "MessageId", value);
+			}
+		}
 
 		public long? AppKey
 		{
@@ -57,22 +70,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string Account
-		{
-			get
-			{
-				return account;
-			}
-			set	
-			{
-				account = value;
-				DictionaryUtil.Add(QueryParameters, "Account", value);
-			}
-		}
-
-        public override QueryDevicesByAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CompleteContinuouslyPushResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDevicesByAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CompleteContinuouslyPushResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

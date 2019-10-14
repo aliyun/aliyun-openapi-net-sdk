@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{74001c90-8283-429f-9912-dfaece0c0a6e}</ProjectGuid>
+    <ProjectGuid>{f742303b-35d5-4f73-8c1b-14b380141af1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -52,6 +52,10 @@
 	<Compile Include="Push\Model\V20160801\CheckDeviceResponse.cs" />
 	<Compile Include="Push\Model\V20160801\CheckDevicesRequest.cs" />
 	<Compile Include="Push\Model\V20160801\CheckDevicesResponse.cs" />
+	<Compile Include="Push\Model\V20160801\CompleteContinuouslyPushRequest.cs" />
+	<Compile Include="Push\Model\V20160801\CompleteContinuouslyPushResponse.cs" />
+	<Compile Include="Push\Model\V20160801\ContinuouslyPushRequest.cs" />
+	<Compile Include="Push\Model\V20160801\ContinuouslyPushResponse.cs" />
 	<Compile Include="Push\Model\V20160801\ListPushRecordsRequest.cs" />
 	<Compile Include="Push\Model\V20160801\ListPushRecordsResponse.cs" />
 	<Compile Include="Push\Model\V20160801\ListSummaryAppsRequest.cs" />
@@ -104,6 +108,8 @@
 	<Compile Include="Push\Transform\V20160801\CancelPushResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\CheckDeviceResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\CheckDevicesResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\CompleteContinuouslyPushResponseUnmarshaller.cs" />
+	<Compile Include="Push\Transform\V20160801\ContinuouslyPushResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\ListPushRecordsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\ListSummaryAppsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\ListTagsResponseUnmarshaller.cs" />

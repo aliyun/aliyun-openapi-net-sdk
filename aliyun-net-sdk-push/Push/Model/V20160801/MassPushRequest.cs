@@ -33,6 +33,11 @@ namespace Aliyun.Acs.Push.Model.V20160801
         public MassPushRequest()
             : base("Push", "2016-08-01", "MassPush")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private List<PushTask> pushTasks = new List<PushTask>(){ };

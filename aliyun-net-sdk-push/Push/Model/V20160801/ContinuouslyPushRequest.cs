@@ -28,10 +28,10 @@ using Aliyun.Acs.Push.Transform.V20160801;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-    public class QueryDevicesByAccountRequest : RpcAcsRequest<QueryDevicesByAccountResponse>
+    public class ContinuouslyPushRequest : RpcAcsRequest<ContinuouslyPushResponse>
     {
-        public QueryDevicesByAccountRequest()
-            : base("Push", "2016-08-01", "QueryDevicesByAccount")
+        public ContinuouslyPushRequest()
+            : base("Push", "2016-08-01", "ContinuouslyPush")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +40,39 @@ namespace Aliyun.Acs.Push.Model.V20160801
             }
         }
 
+		private string messageId;
+
+		private string target;
+
 		private long? appKey;
 
-		private string account;
+		private string targetValue;
+
+		public string MessageId
+		{
+			get
+			{
+				return messageId;
+			}
+			set	
+			{
+				messageId = value;
+				DictionaryUtil.Add(QueryParameters, "MessageId", value);
+			}
+		}
+
+		public string Target
+		{
+			get
+			{
+				return target;
+			}
+			set	
+			{
+				target = value;
+				DictionaryUtil.Add(QueryParameters, "Target", value);
+			}
+		}
 
 		public long? AppKey
 		{
@@ -57,22 +87,22 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-		public string Account
+		public string TargetValue
 		{
 			get
 			{
-				return account;
+				return targetValue;
 			}
 			set	
 			{
-				account = value;
-				DictionaryUtil.Add(QueryParameters, "Account", value);
+				targetValue = value;
+				DictionaryUtil.Add(QueryParameters, "TargetValue", value);
 			}
 		}
 
-        public override QueryDevicesByAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ContinuouslyPushResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDevicesByAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ContinuouslyPushResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
