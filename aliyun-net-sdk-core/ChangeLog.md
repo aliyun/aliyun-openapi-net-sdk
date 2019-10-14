@@ -1,3 +1,6 @@
+### 2019-10-14 Version 1.5.4
+* Fixed signatureComposer
+
 ### 2019-09-12 Version 1.5.3
 * Fixed endpoint resolve. 
 
