@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         public CreateDBInstanceRequest()
             : base("Rds", "2014-08-15", "CreateDBInstance", "rds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -41,6 +46,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string systemDBCharset;
 
 		private string engineVersion;
+
+		private string targetDedicatedHostIdForMaster;
 
 		private string dBInstanceDescription;
 
@@ -56,6 +63,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string privateIpAddress;
 
+		private string targetDedicatedHostIdForLog;
+
 		private string autoRenew;
 
 		private string zoneId;
@@ -66,9 +75,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string clientToken;
 
+		private string targetDedicatedHostIdForSlave;
+
 		private string engine;
 
 		private string dBInstanceStorageType;
+
+		private string dedicatedHostGroupId;
 
 		private string dBInstanceNetType;
 
@@ -129,6 +142,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+			}
+		}
+
+		public string TargetDedicatedHostIdForMaster
+		{
+			get
+			{
+				return targetDedicatedHostIdForMaster;
+			}
+			set	
+			{
+				targetDedicatedHostIdForMaster = value;
+				DictionaryUtil.Add(QueryParameters, "TargetDedicatedHostIdForMaster", value);
 			}
 		}
 
@@ -223,6 +249,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string TargetDedicatedHostIdForLog
+		{
+			get
+			{
+				return targetDedicatedHostIdForLog;
+			}
+			set	
+			{
+				targetDedicatedHostIdForLog = value;
+				DictionaryUtil.Add(QueryParameters, "TargetDedicatedHostIdForLog", value);
+			}
+		}
+
 		public string AutoRenew
 		{
 			get
@@ -288,6 +327,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string TargetDedicatedHostIdForSlave
+		{
+			get
+			{
+				return targetDedicatedHostIdForSlave;
+			}
+			set	
+			{
+				targetDedicatedHostIdForSlave = value;
+				DictionaryUtil.Add(QueryParameters, "TargetDedicatedHostIdForSlave", value);
+			}
+		}
+
 		public string Engine
 		{
 			get
@@ -311,6 +363,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceStorageType = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
+			}
+		}
+
+		public string DedicatedHostGroupId
+		{
+			get
+			{
+				return dedicatedHostGroupId;
+			}
+			set	
+			{
+				dedicatedHostGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostGroupId", value);
 			}
 		}
 

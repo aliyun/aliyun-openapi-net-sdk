@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         public RecoveryDBInstanceRequest()
             : base("Rds", "2014-08-15", "RecoveryDBInstance", "rds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -39,6 +44,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private int? dBInstanceStorage;
 
 		private string dBInstanceId;
+
+		private string dBInstanceStorageType;
 
 		private string restoreTime;
 
@@ -100,6 +107,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string DBInstanceStorageType
+		{
+			get
+			{
+				return dBInstanceStorageType;
+			}
+			set	
+			{
+				dBInstanceStorageType = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
 			}
 		}
 

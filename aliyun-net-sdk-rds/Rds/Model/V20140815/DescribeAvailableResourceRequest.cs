@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         public DescribeAvailableResourceRequest()
             : base("Rds", "2014-08-15", "DescribeAvailableResource", "rds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -40,7 +45,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engine;
 
-		private string dBInstanceId;
+		private string dBInstanceStorageType;
 
 		private string instanceChargeType;
 
@@ -89,16 +94,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string DBInstanceStorageType
 		{
 			get
 			{
-				return dBInstanceId;
+				return dBInstanceStorageType;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				dBInstanceStorageType = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
 			}
 		}
 

@@ -104,6 +104,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.DispenseMode = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DispenseMode");
 				dBInstanceAttribute.MasterZone = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].MasterZone");
 				dBInstanceAttribute.AutoUpgradeMinorVersion = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].AutoUpgradeMinorVersion");
+				dBInstanceAttribute.ProxyType = context.IntegerValue("DescribeDBInstanceAttribute.Items["+ i +"].ProxyType");
+				dBInstanceAttribute.ConsoleVersion = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].ConsoleVersion");
 
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra extra = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra();
 				extra.ReplicaGroupID = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupID");

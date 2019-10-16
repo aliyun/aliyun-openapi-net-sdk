@@ -60,6 +60,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				backup.StoreStatus = context.StringValue("DescribeBackups.Items["+ i +"].StoreStatus");
 				backup.MetaStatus = context.StringValue("DescribeBackups.Items["+ i +"].MetaStatus");
 				backup.SlaveStatus = context.StringValue("DescribeBackups.Items["+ i +"].SlaveStatus");
+				backup.ConsistentTime = context.LongValue("DescribeBackups.Items["+ i +"].ConsistentTime");
 
 				describeBackupsResponse_items.Add(backup);
 			}

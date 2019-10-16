@@ -70,6 +70,13 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstance.ReplicateId = context.StringValue("DescribeDBInstances.Items["+ i +"].ReplicateId");
 				dBInstance.ResourceGroupId = context.StringValue("DescribeDBInstances.Items["+ i +"].ResourceGroupId");
 				dBInstance.AutoUpgradeMinorVersion = context.StringValue("DescribeDBInstances.Items["+ i +"].AutoUpgradeMinorVersion");
+				dBInstance.DedicatedHostGroupId = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostGroupId");
+				dBInstance.DedicatedHostIdForMaster = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostIdForMaster");
+				dBInstance.DedicatedHostIdForSlave = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostIdForSlave");
+				dBInstance.DedicatedHostIdForLog = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostIdForLog");
+				dBInstance.DedicatedHostNameForMaster = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostNameForMaster");
+				dBInstance.DedicatedHostNameForSlave = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostNameForSlave");
+				dBInstance.DedicatedHostNameForLog = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostNameForLog");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId> dBInstance_readOnlyDBInstanceIds = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId>();
 				for (int j = 0; j < context.Length("DescribeDBInstances.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

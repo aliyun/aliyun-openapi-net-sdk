@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         public ModifyBackupPolicyRequest()
             : base("Rds", "2014-08-15", "ModifyBackupPolicy", "rds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -39,6 +44,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string localLogRetentionHours;
 
 		private string logBackupFrequency;
+
+		private string archiveBackupKeepCount;
 
 		private string backupLog;
 
@@ -64,6 +71,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
+		private string archiveBackupKeepPolicy;
+
 		private string duplication;
 
 		private string preferredBackupTime;
@@ -71,6 +80,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string backupRetentionPeriod;
 
 		private string duplicationLocation;
+
+		private string archiveBackupRetentionPeriod;
 
 		private string logBackupRetentionPeriod;
 
@@ -110,6 +121,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				logBackupFrequency = value;
 				DictionaryUtil.Add(QueryParameters, "LogBackupFrequency", value);
+			}
+		}
+
+		public string ArchiveBackupKeepCount
+		{
+			get
+			{
+				return archiveBackupKeepCount;
+			}
+			set	
+			{
+				archiveBackupKeepCount = value;
+				DictionaryUtil.Add(QueryParameters, "ArchiveBackupKeepCount", value);
 			}
 		}
 
@@ -269,6 +293,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ArchiveBackupKeepPolicy
+		{
+			get
+			{
+				return archiveBackupKeepPolicy;
+			}
+			set	
+			{
+				archiveBackupKeepPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "ArchiveBackupKeepPolicy", value);
+			}
+		}
+
 		public string Duplication
 		{
 			get
@@ -318,6 +355,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				duplicationLocation = value;
 				DictionaryUtil.Add(QueryParameters, "DuplicationLocation", value);
+			}
+		}
+
+		public string ArchiveBackupRetentionPeriod
+		{
+			get
+			{
+				return archiveBackupRetentionPeriod;
+			}
+			set	
+			{
+				archiveBackupRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "ArchiveBackupRetentionPeriod", value);
 			}
 		}
 

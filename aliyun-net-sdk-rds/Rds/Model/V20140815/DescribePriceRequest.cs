@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         public DescribePriceRequest()
             : base("Rds", "2014-08-15", "DescribePrice", "rds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -54,7 +59,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
-		private string usedTime;
+		private int? usedTime;
 
 		private string dBInstanceClass;
 
@@ -198,7 +203,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string UsedTime
+		public int? UsedTime
 		{
 			get
 			{
@@ -207,7 +212,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				usedTime = value;
-				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+				DictionaryUtil.Add(QueryParameters, "UsedTime", value.ToString());
 			}
 		}
 

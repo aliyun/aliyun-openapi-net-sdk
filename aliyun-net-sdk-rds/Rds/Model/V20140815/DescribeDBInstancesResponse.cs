@@ -160,6 +160,20 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string autoUpgradeMinorVersion;
 
+			private string dedicatedHostGroupId;
+
+			private string dedicatedHostIdForMaster;
+
+			private string dedicatedHostIdForSlave;
+
+			private string dedicatedHostIdForLog;
+
+			private string dedicatedHostNameForMaster;
+
+			private string dedicatedHostNameForSlave;
+
+			private string dedicatedHostNameForLog;
+
 			private List<DescribeDBInstances_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 			public int? InsId
@@ -531,6 +545,90 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					autoUpgradeMinorVersion = value;
+				}
+			}
+
+			public string DedicatedHostGroupId
+			{
+				get
+				{
+					return dedicatedHostGroupId;
+				}
+				set	
+				{
+					dedicatedHostGroupId = value;
+				}
+			}
+
+			public string DedicatedHostIdForMaster
+			{
+				get
+				{
+					return dedicatedHostIdForMaster;
+				}
+				set	
+				{
+					dedicatedHostIdForMaster = value;
+				}
+			}
+
+			public string DedicatedHostIdForSlave
+			{
+				get
+				{
+					return dedicatedHostIdForSlave;
+				}
+				set	
+				{
+					dedicatedHostIdForSlave = value;
+				}
+			}
+
+			public string DedicatedHostIdForLog
+			{
+				get
+				{
+					return dedicatedHostIdForLog;
+				}
+				set	
+				{
+					dedicatedHostIdForLog = value;
+				}
+			}
+
+			public string DedicatedHostNameForMaster
+			{
+				get
+				{
+					return dedicatedHostNameForMaster;
+				}
+				set	
+				{
+					dedicatedHostNameForMaster = value;
+				}
+			}
+
+			public string DedicatedHostNameForSlave
+			{
+				get
+				{
+					return dedicatedHostNameForSlave;
+				}
+				set	
+				{
+					dedicatedHostNameForSlave = value;
+				}
+			}
+
+			public string DedicatedHostNameForLog
+			{
+				get
+				{
+					return dedicatedHostNameForLog;
+				}
+				set	
+				{
+					dedicatedHostNameForLog = value;
 				}
 			}
 

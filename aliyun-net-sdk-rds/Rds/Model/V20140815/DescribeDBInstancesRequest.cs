@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         public DescribeDBInstancesRequest()
             : base("Rds", "2014-08-15", "DescribeDBInstances", "rds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string tag4value;
@@ -85,6 +90,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string dBInstanceStatus;
 
 		private string dBInstanceId;
+
+		private string dedicatedHostGroupId;
 
 		private string tag3value;
 
@@ -437,6 +444,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string DedicatedHostGroupId
+		{
+			get
+			{
+				return dedicatedHostGroupId;
+			}
+			set	
+			{
+				dedicatedHostGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostGroupId", value);
 			}
 		}
 

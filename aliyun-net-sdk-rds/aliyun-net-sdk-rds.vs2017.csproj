@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
     <RootNamespace>Aliyun.Acs.Rds</RootNamespace>
-    <Version>0.0.1</Version>
+    <Version>2.3.10</Version>
     <Authors>Alibaba Cloud</Authors>
     <Copyright>©2009-2019 Alibaba Cloud</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -13,7 +13,7 @@
     <Description>Alibaba Cloud SDK for .NET</Description>
     <PackageReleaseNotes/>
     <PackageTags>alibaba aliyun SDK Rds</PackageTags>
-    <AssemblyName>aliyun-net-sdk-rds-test</AssemblyName>
+    <AssemblyName>aliyun-net-sdk-rds</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2017.csproj"/>

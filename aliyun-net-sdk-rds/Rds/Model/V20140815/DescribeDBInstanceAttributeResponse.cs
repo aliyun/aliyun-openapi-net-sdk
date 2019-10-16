@@ -192,6 +192,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string autoUpgradeMinorVersion;
 
+			private int? proxyType;
+
+			private string consoleVersion;
+
 			private List<DescribeDBInstanceAttribute_SlaveZone> slaveZones;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -1011,6 +1015,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					autoUpgradeMinorVersion = value;
+				}
+			}
+
+			public int? ProxyType
+			{
+				get
+				{
+					return proxyType;
+				}
+				set	
+				{
+					proxyType = value;
+				}
+			}
+
+			public string ConsoleVersion
+			{
+				get
+				{
+					return consoleVersion;
+				}
+				set	
+				{
+					consoleVersion = value;
 				}
 			}
 

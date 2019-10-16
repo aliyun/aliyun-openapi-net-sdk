@@ -152,6 +152,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string slaveStatus;
 
+			private long? consistentTime;
+
 			public string BackupId
 			{
 				get
@@ -389,6 +391,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					slaveStatus = value;
+				}
+			}
+
+			public long? ConsistentTime
+			{
+				get
+				{
+					return consistentTime;
+				}
+				set	
+				{
+					consistentTime = value;
 				}
 			}
 		}

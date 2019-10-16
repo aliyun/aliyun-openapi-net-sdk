@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         public ResetAccountForPGRequest()
             : base("Rds", "2014-08-15", "ResetAccountForPG", "rds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;

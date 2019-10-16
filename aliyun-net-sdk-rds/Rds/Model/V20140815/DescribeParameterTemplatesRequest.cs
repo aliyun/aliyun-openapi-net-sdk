@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         public DescribeParameterTemplatesRequest()
             : base("Rds", "2014-08-15", "DescribeParameterTemplates", "rds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -41,6 +46,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string engineVersion;
 
 		private string engine;
+
+		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
 
@@ -99,6 +106,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

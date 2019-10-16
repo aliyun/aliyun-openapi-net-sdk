@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3d094d60-5d7f-4f08-98d0-b8e2b8b880c0}</ProjectGuid>
+    <ProjectGuid>{528281c2-a15a-46d9-8cfd-7568fab37fde}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -64,8 +64,12 @@
 	<Compile Include="Rds\Model\V20140815\CheckRecoveryConditionsResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\CheckResourceRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\CheckResourceResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\ClearDedicatedHostRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\ClearDedicatedHostResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\CloneDBInstanceRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\CloneDBInstanceResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\CloneParameterGroupRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\CloneParameterGroupResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\CopyDatabaseBetweenInstancesRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\CopyDatabaseBetweenInstancesResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\CopyDatabaseRequest.cs" />
@@ -82,6 +86,10 @@
 	<Compile Include="Rds\Model\V20140815\CreateDatabaseResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateDdrInstanceRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateDdrInstanceResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\CreateDedicatedHostGroupRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\CreateDedicatedHostGroupResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\CreateDedicatedHostRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\CreateDedicatedHostResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateDiagnosticReportRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateDiagnosticReportResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateMigrateTaskForSQLServerRequest.cs" />
@@ -90,6 +98,8 @@
 	<Compile Include="Rds\Model\V20140815\CreateMigrateTaskResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateOnlineDatabaseTaskRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateOnlineDatabaseTaskResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\CreateParameterGroupRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\CreateParameterGroupResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateReadOnlyDBInstanceRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateReadOnlyDBInstanceResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\CreateTempDBInstanceRequest.cs" />
@@ -102,6 +112,12 @@
 	<Compile Include="Rds\Model\V20140815\DeleteDBInstanceResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DeleteDatabaseRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DeleteDatabaseResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\DeleteDedicatedHostGroupRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\DeleteDedicatedHostGroupResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\DeleteDedicatedHostRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\DeleteDedicatedHostResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\DeleteParameterGroupRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\DeleteParameterGroupResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescibeImportsFromDatabaseRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescibeImportsFromDatabaseResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeAccountsRequest.cs" />
@@ -168,10 +184,22 @@
 	<Compile Include="Rds\Model\V20140815\DescribeDBInstancesByPerformanceResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeDBInstancesRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeDBInstancesResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeDBProxyEndpointRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeDBProxyEndpointResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeDBProxyPerformanceRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeDBProxyPerformanceResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeDBProxyRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeDBProxyResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeDTCSecurityIpHostsForSQLServerRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeDTCSecurityIpHostsForSQLServerResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeDatabasesRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeDatabasesResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeDedicatedHostAttributeRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeDedicatedHostAttributeResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeDedicatedHostGroupsRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeDedicatedHostGroupsResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeDedicatedHostsRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeDedicatedHostsResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeDiagnosticReportListRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeDiagnosticReportListResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeErrorLogsRequest.cs" />
@@ -200,6 +228,10 @@
 	<Compile Include="Rds\Model\V20140815\DescribeOssDownloadsForSQLServerResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeOssDownloadsRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeOssDownloadsResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeParameterGroupRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeParameterGroupResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeParameterGroupsRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\DescribeParameterGroupsResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeParameterTemplatesRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeParameterTemplatesResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\DescribeParametersRequest.cs" />
@@ -250,6 +282,10 @@
 	<Compile Include="Rds\Model\V20140815\ImportDataForSQLServerResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ImportDatabaseBetweenInstancesRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\ImportDatabaseBetweenInstancesResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\ListTagResourcesRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\ListTagResourcesResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\MigrateDBInstanceRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\MigrateDBInstanceResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\MigrateSecurityIPModeRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\MigrateSecurityIPModeResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\MigrateToOtherRegionRequest.cs" />
@@ -294,8 +330,18 @@
 	<Compile Include="Rds\Model\V20140815\ModifyDBInstanceSpecResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyDBInstanceTDERequest.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyDBInstanceTDEResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\ModifyDBProxyEndpointRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\ModifyDBProxyEndpointResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\ModifyDBProxyInstanceRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\ModifyDBProxyInstanceResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\ModifyDBProxyRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\ModifyDBProxyResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyDTCSecurityIpHostsForSQLServerRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyDTCSecurityIpHostsForSQLServerResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\ModifyDedicatedHostAttributeRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\ModifyDedicatedHostAttributeResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\ModifyDedicatedHostGroupAttributeRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\ModifyDedicatedHostGroupAttributeResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyHASwitchConfigRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyHASwitchConfigResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyInstanceAutoRenewalAttributeRequest.cs" />
@@ -304,6 +350,8 @@
 	<Compile Include="Rds\Model\V20140815\ModifyInstanceCrossBackupPolicyResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyMySQLDBInstanceDelayRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyMySQLDBInstanceDelayResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\ModifyParameterGroupRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\ModifyParameterGroupResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyParameterRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyParameterResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ModifyReadWriteSplittingConnectionRequest.cs" />
@@ -338,6 +386,8 @@
 	<Compile Include="Rds\Model\V20140815\PreCheckDBInstanceOperationResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\PurgeDBInstanceLogRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\PurgeDBInstanceLogResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\RebuildDBInstanceRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\RebuildDBInstanceResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\RecoveryDBInstanceRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\RecoveryDBInstanceResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ReleaseInstancePublicConnectionRequest.cs" />
@@ -348,6 +398,8 @@
 	<Compile Include="Rds\Model\V20140815\RemoveTagsFromResourceResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\RenewInstanceRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\RenewInstanceResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\ReplaceDedicatedHostRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\ReplaceDedicatedHostResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\RequestServiceOfCloudDBExpertRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\RequestServiceOfCloudDBExpertResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\ResetAccountForPGRequest.cs" />
@@ -358,6 +410,8 @@
 	<Compile Include="Rds\Model\V20140815\ResetAccountResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\RestartDBInstanceRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\RestartDBInstanceResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\RestartDedicatedHostRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\RestartDedicatedHostResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\RestoreDBInstanceRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\RestoreDBInstanceResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\RestoreTableRequest.cs" />
@@ -372,6 +426,10 @@
 	<Compile Include="Rds\Model\V20140815\SwitchDBInstanceNetTypeResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\SwitchDBInstanceVpcRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\SwitchDBInstanceVpcResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\TagResourcesRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\TagResourcesResponse.cs" />
+	<Compile Include="Rds\Model\V20140815\UntagResourcesRequest.cs" />
+	<Compile Include="Rds\Model\V20140815\UntagResourcesResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\UpgradeDBInstanceEngineVersionRequest.cs" />
 	<Compile Include="Rds\Model\V20140815\UpgradeDBInstanceEngineVersionResponse.cs" />
 	<Compile Include="Rds\Model\V20140815\UpgradeDBInstanceKernelVersionRequest.cs" />
@@ -388,7 +446,9 @@
 	<Compile Include="Rds\Transform\V20140815\CheckInstanceExistResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CheckRecoveryConditionsResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CheckResourceResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\ClearDedicatedHostResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CloneDBInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\CloneParameterGroupResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CopyDatabaseBetweenInstancesResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CopyDatabaseResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CreateAccountResponseUnmarshaller.cs" />
@@ -397,16 +457,22 @@
 	<Compile Include="Rds\Transform\V20140815\CreateDBInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CreateDatabaseResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CreateDdrInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\CreateDedicatedHostGroupResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\CreateDedicatedHostResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CreateDiagnosticReportResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CreateMigrateTaskForSQLServerResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CreateMigrateTaskResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CreateOnlineDatabaseTaskResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\CreateParameterGroupResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CreateReadOnlyDBInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\CreateTempDBInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DeleteAccountResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DeleteBackupResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DeleteDBInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DeleteDatabaseResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\DeleteDedicatedHostGroupResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\DeleteDedicatedHostResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\DeleteParameterGroupResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescibeImportsFromDatabaseResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeAccountsResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeActionEventPolicyResponseUnmarshaller.cs" />
@@ -440,8 +506,14 @@
 	<Compile Include="Rds\Transform\V20140815\DescribeDBInstancesByExpireTimeResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeDBInstancesByPerformanceResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeDBInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\DescribeDBProxyEndpointResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\DescribeDBProxyPerformanceResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\DescribeDBProxyResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeDTCSecurityIpHostsForSQLServerResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeDatabasesResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\DescribeDedicatedHostAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\DescribeDedicatedHostGroupsResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\DescribeDedicatedHostsResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeDiagnosticReportListResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeErrorLogsResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeEventsResponseUnmarshaller.cs" />
@@ -456,6 +528,8 @@
 	<Compile Include="Rds\Transform\V20140815\DescribeModifyParameterLogResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeOssDownloadsForSQLServerResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeOssDownloadsResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\DescribeParameterGroupResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\DescribeParameterGroupsResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeParameterTemplatesResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribeParametersResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\DescribePriceResponseUnmarshaller.cs" />
@@ -481,6 +555,8 @@
 	<Compile Include="Rds\Transform\V20140815\GrantOperatorPermissionResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ImportDataForSQLServerResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ImportDatabaseBetweenInstancesResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\ListTagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\MigrateDBInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\MigrateSecurityIPModeResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\MigrateToOtherRegionResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\MigrateToOtherZoneResponseUnmarshaller.cs" />
@@ -503,11 +579,17 @@
 	<Compile Include="Rds\Transform\V20140815\ModifyDBInstanceSSLResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyDBInstanceSpecResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyDBInstanceTDEResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\ModifyDBProxyEndpointResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\ModifyDBProxyInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\ModifyDBProxyResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyDTCSecurityIpHostsForSQLServerResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\ModifyDedicatedHostAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\ModifyDedicatedHostGroupAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyHASwitchConfigResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyInstanceAutoRenewalAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyInstanceCrossBackupPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyMySQLDBInstanceDelayResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\ModifyParameterGroupResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyParameterResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyReadWriteSplittingConnectionResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ModifyReadonlyInstanceDelayReplicationTimeResponseUnmarshaller.cs" />
@@ -525,16 +607,19 @@
 	<Compile Include="Rds\Transform\V20140815\PreCheckCreateOrderResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\PreCheckDBInstanceOperationResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\PurgeDBInstanceLogResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\RebuildDBInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\RecoveryDBInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ReleaseInstancePublicConnectionResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ReleaseReadWriteSplittingConnectionResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\RemoveTagsFromResourceResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\RenewInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\ReplaceDedicatedHostResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\RequestServiceOfCloudDBExpertResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ResetAccountForPGResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ResetAccountPasswordResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\ResetAccountResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\RestartDBInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\RestartDedicatedHostResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\RestoreDBInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\RestoreTableResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\RevokeAccountPrivilegeResponseUnmarshaller.cs" />
@@ -542,6 +627,8 @@
 	<Compile Include="Rds\Transform\V20140815\SwitchDBInstanceHAResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\SwitchDBInstanceNetTypeResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\SwitchDBInstanceVpcResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\TagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Rds\Transform\V20140815\UntagResourcesResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\UpgradeDBInstanceEngineVersionResponseUnmarshaller.cs" />
 	<Compile Include="Rds\Transform\V20140815\UpgradeDBInstanceKernelVersionResponseUnmarshaller.cs" />
   </ItemGroup>

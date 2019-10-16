@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
         public ModifyMySQLDBInstanceDelayRequest()
             : base("Rds", "2014-08-15", "ModifyMySQLDBInstanceDelay", "rds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
