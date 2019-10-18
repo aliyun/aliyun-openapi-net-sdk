@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{eab2dfbd-37c7-4d51-a803-2485b4eb0497}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-dnsknocker</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="DnsKnocker\Model\V20190910\BatchCreateRrRequest.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\BatchCreateRrResponse.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\BatchDeleteRrRequest.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\BatchDeleteRrResponse.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\ChangeResourceRecordRequest.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\ChangeResourceRecordResponse.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\ChangeResourceRecordsRequest.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\ChangeResourceRecordsResponse.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\CreateResourceRecordRequest.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\CreateResourceRecordResponse.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\DeleteDomainRequest.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\DeleteDomainResponse.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\DeleteResourceRecordRequest.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\DeleteResourceRecordResponse.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\DeleteResourceRecordsRequest.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\DeleteResourceRecordsResponse.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\GetDomainRequest.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\GetDomainResponse.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\GetResourceRecordsRequest.cs" />
+	<Compile Include="DnsKnocker\Model\V20190910\GetResourceRecordsResponse.cs" />
+	<Compile Include="DnsKnocker\Transform\V20190910\BatchCreateRrResponseUnmarshaller.cs" />
+	<Compile Include="DnsKnocker\Transform\V20190910\BatchDeleteRrResponseUnmarshaller.cs" />
+	<Compile Include="DnsKnocker\Transform\V20190910\ChangeResourceRecordResponseUnmarshaller.cs" />
+	<Compile Include="DnsKnocker\Transform\V20190910\ChangeResourceRecordsResponseUnmarshaller.cs" />
+	<Compile Include="DnsKnocker\Transform\V20190910\CreateResourceRecordResponseUnmarshaller.cs" />
+	<Compile Include="DnsKnocker\Transform\V20190910\DeleteDomainResponseUnmarshaller.cs" />
+	<Compile Include="DnsKnocker\Transform\V20190910\DeleteResourceRecordResponseUnmarshaller.cs" />
+	<Compile Include="DnsKnocker\Transform\V20190910\DeleteResourceRecordsResponseUnmarshaller.cs" />
+	<Compile Include="DnsKnocker\Transform\V20190910\GetDomainResponseUnmarshaller.cs" />
+	<Compile Include="DnsKnocker\Transform\V20190910\GetResourceRecordsResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
