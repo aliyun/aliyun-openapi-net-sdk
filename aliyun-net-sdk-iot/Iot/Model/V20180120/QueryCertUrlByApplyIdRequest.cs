@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class BindDriverToEdgeInstanceRequest : RpcAcsRequest<BindDriverToEdgeInstanceResponse>
+    public class QueryCertUrlByApplyIdRequest : RpcAcsRequest<QueryCertUrlByApplyIdResponse>
     {
-        public BindDriverToEdgeInstanceRequest()
-            : base("Iot", "2018-01-20", "BindDriverToEdgeInstance", "iot", "openAPI")
+        public QueryCertUrlByApplyIdRequest()
+            : base("Iot", "2018-01-20", "QueryCertUrlByApplyId", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,50 +39,20 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string orderId;
-
-		private string instanceId;
-
-		private string driverId;
+		private long? applyId;
 
 		private string iotInstanceId;
 
-		public string OrderId
+		public long? ApplyId
 		{
 			get
 			{
-				return orderId;
+				return applyId;
 			}
 			set	
 			{
-				orderId = value;
-				DictionaryUtil.Add(QueryParameters, "OrderId", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string DriverId
-		{
-			get
-			{
-				return driverId;
-			}
-			set	
-			{
-				driverId = value;
-				DictionaryUtil.Add(QueryParameters, "DriverId", value);
+				applyId = value;
+				DictionaryUtil.Add(QueryParameters, "ApplyId", value.ToString());
 			}
 		}
 
@@ -99,14 +69,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override BindDriverToEdgeInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryCertUrlByApplyIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BindDriverToEdgeInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryCertUrlByApplyIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

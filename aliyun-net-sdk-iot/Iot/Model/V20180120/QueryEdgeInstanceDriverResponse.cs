@@ -159,6 +159,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 				private string driverId;
 
+				private string orderId;
+
 				private string gmtCreate;
 
 				private string gmtModified;
@@ -172,6 +174,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					set	
 					{
 						driverId = value;
+					}
+				}
+
+				public string OrderId
+				{
+					get
+					{
+						return orderId;
+					}
+					set	
+					{
+						orderId = value;
 					}
 				}
 

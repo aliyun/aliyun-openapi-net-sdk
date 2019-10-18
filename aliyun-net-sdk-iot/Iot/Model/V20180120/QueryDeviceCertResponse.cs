@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class CreateProductResponse : AcsResponse
+	public class QueryDeviceCertResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,9 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private string productKey;
-
-		private CreateProduct_Data data;
+		private QueryDeviceCert_DeviceCertInfo deviceCertInfo;
 
 		public string RequestId
 		{
@@ -85,156 +83,74 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ProductKey
+		public QueryDeviceCert_DeviceCertInfo DeviceCertInfo
 		{
 			get
 			{
-				return productKey;
+				return deviceCertInfo;
 			}
 			set	
 			{
-				productKey = value;
+				deviceCertInfo = value;
 			}
 		}
 
-		public CreateProduct_Data Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
-
-		public class CreateProduct_Data
+		public class QueryDeviceCert_DeviceCertInfo
 		{
 
-			private int? dataFormat;
+			private int? status;
 
-			private string description;
+			private string certificate;
 
-			private int? nodeType;
+			private string privateKey;
 
-			private string productKey;
+			private string certSN;
 
-			private string productName;
-
-			private string aliyunCommodityCode;
-
-			private bool? id2;
-
-			private string protocolType;
-
-			private string authType;
-
-			public int? DataFormat
+			public int? Status
 			{
 				get
 				{
-					return dataFormat;
+					return status;
 				}
 				set	
 				{
-					dataFormat = value;
+					status = value;
 				}
 			}
 
-			public string Description
+			public string Certificate
 			{
 				get
 				{
-					return description;
+					return certificate;
 				}
 				set	
 				{
-					description = value;
+					certificate = value;
 				}
 			}
 
-			public int? NodeType
+			public string PrivateKey
 			{
 				get
 				{
-					return nodeType;
+					return privateKey;
 				}
 				set	
 				{
-					nodeType = value;
+					privateKey = value;
 				}
 			}
 
-			public string ProductKey
+			public string CertSN
 			{
 				get
 				{
-					return productKey;
+					return certSN;
 				}
 				set	
 				{
-					productKey = value;
-				}
-			}
-
-			public string ProductName
-			{
-				get
-				{
-					return productName;
-				}
-				set	
-				{
-					productName = value;
-				}
-			}
-
-			public string AliyunCommodityCode
-			{
-				get
-				{
-					return aliyunCommodityCode;
-				}
-				set	
-				{
-					aliyunCommodityCode = value;
-				}
-			}
-
-			public bool? Id2
-			{
-				get
-				{
-					return id2;
-				}
-				set	
-				{
-					id2 = value;
-				}
-			}
-
-			public string ProtocolType
-			{
-				get
-				{
-					return protocolType;
-				}
-				set	
-				{
-					protocolType = value;
-				}
-			}
-
-			public string AuthType
-			{
-				get
-				{
-					return authType;
-				}
-				set	
-				{
-					authType = value;
+					certSN = value;
 				}
 			}
 		}

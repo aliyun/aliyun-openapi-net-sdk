@@ -130,6 +130,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private int? netType;
 
+			private string authType;
+
 			public long? GmtCreate
 			{
 				get
@@ -319,6 +321,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					netType = value;
+				}
+			}
+
+			public string AuthType
+			{
+				get
+				{
+					return authType;
+				}
+				set	
+				{
+					authType = value;
 				}
 			}
 		}

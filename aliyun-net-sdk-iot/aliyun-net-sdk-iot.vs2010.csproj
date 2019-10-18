@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5491b904-d227-48cf-9f0c-9fbb595a4139}</ProjectGuid>
+    <ProjectGuid>{66cc5dbd-599d-4dda-bf61-ed322e872d25}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -172,10 +172,14 @@
 	<Compile Include="Iot\Model\V20180120\QueryAppDeviceListResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryBatchRegisterDeviceStatusRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryBatchRegisterDeviceStatusResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryCertUrlByApplyIdRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryCertUrlByApplyIdResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceByDriverRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceByDriverResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceByTagsRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceByTagsResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDeviceCertRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDeviceCertResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceDesiredPropertyRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceDesiredPropertyResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceDetailRequest.cs" />
@@ -344,8 +348,10 @@
 	<Compile Include="Iot\Transform\V20180120\PubResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryAppDeviceListResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryBatchRegisterDeviceStatusResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryCertUrlByApplyIdResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryDeviceByDriverResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryDeviceByTagsResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryDeviceCertResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryDeviceDesiredPropertyResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryDeviceDetailResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryDeviceEventDataResponseUnmarshaller.cs" />

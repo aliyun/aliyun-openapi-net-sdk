@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				productInfo.NodeType = context.IntegerValue("QueryProductList.Data.List["+ i +"].NodeType");
 				productInfo.ProductKey = context.StringValue("QueryProductList.Data.List["+ i +"].ProductKey");
 				productInfo.ProductName = context.StringValue("QueryProductList.Data.List["+ i +"].ProductName");
+				productInfo.AuthType = context.StringValue("QueryProductList.Data.List["+ i +"].AuthType");
 
 				data_list.Add(productInfo);
 			}

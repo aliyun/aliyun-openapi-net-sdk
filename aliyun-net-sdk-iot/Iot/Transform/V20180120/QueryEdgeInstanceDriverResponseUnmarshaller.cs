@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			for (int i = 0; i < context.Length("QueryEdgeInstanceDriver.Data.DriverList.Length"); i++) {
 				QueryEdgeInstanceDriverResponse.QueryEdgeInstanceDriver_Data.QueryEdgeInstanceDriver_Driver driver = new QueryEdgeInstanceDriverResponse.QueryEdgeInstanceDriver_Data.QueryEdgeInstanceDriver_Driver();
 				driver.DriverId = context.StringValue("QueryEdgeInstanceDriver.Data.DriverList["+ i +"].DriverId");
+				driver.OrderId = context.StringValue("QueryEdgeInstanceDriver.Data.DriverList["+ i +"].OrderId");
 				driver.GmtCreate = context.StringValue("QueryEdgeInstanceDriver.Data.DriverList["+ i +"].GmtCreate");
 				driver.GmtModified = context.StringValue("QueryEdgeInstanceDriver.Data.DriverList["+ i +"].GmtModified");
 

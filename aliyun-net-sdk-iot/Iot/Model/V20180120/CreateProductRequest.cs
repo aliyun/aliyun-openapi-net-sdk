@@ -45,6 +45,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string joinPermissionId;
 
+		private string authType;
+
+		private string resourceGroupId;
+
 		private string iotInstanceId;
 
 		private string productName;
@@ -97,6 +101,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				joinPermissionId = value;
 				DictionaryUtil.Add(QueryParameters, "JoinPermissionId", value);
+			}
+		}
+
+		public string AuthType
+		{
+			get
+			{
+				return authType;
+			}
+			set	
+			{
+				authType = value;
+				DictionaryUtil.Add(QueryParameters, "AuthType", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

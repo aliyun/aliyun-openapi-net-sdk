@@ -1,3 +1,7 @@
+2019-10-18 Version 7.1.0
+- Add X509 API, including queryDeviceCert, queryCertUrlByApplyId, createDeviceCert.
+- Add authType parameter of APIs, including createProduct, queryProduct, queryProductList, CreateProductPop, QueryProductAllInfo, QueryProductListPop, ListProductConsole, QueryAllProductListPop, QueryDeviceBatchList.
+
 2019-09-17 Version 7.0.2
 - Fixed Response Unmarshaller.
 

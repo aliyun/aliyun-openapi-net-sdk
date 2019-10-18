@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class BindDriverToEdgeInstanceRequest : RpcAcsRequest<BindDriverToEdgeInstanceResponse>
+    public class QueryDeviceCertRequest : RpcAcsRequest<QueryDeviceCertResponse>
     {
-        public BindDriverToEdgeInstanceRequest()
-            : base("Iot", "2018-01-20", "BindDriverToEdgeInstance", "iot", "openAPI")
+        public QueryDeviceCertRequest()
+            : base("Iot", "2018-01-20", "QueryDeviceCert", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,50 +39,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string orderId;
-
-		private string instanceId;
-
-		private string driverId;
+		private string productKey;
 
 		private string iotInstanceId;
 
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-				DictionaryUtil.Add(QueryParameters, "OrderId", value);
-			}
-		}
+		private string deviceName;
 
-		public string InstanceId
+		public string ProductKey
 		{
 			get
 			{
-				return instanceId;
+				return productKey;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string DriverId
-		{
-			get
-			{
-				return driverId;
-			}
-			set	
-			{
-				driverId = value;
-				DictionaryUtil.Add(QueryParameters, "DriverId", value);
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
@@ -99,14 +71,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string DeviceName
 		{
-			return false;
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
+			}
 		}
 
-        public override BindDriverToEdgeInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryDeviceCertResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BindDriverToEdgeInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDeviceCertResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
