@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{b7f11bf5-7ee5-4666-8ff3-0e6b2414de03}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-iqa</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Iqa\Model\V20190813\CreateProjectRequest.cs" />
+	<Compile Include="Iqa\Model\V20190813\CreateProjectResponse.cs" />
+	<Compile Include="Iqa\Model\V20190813\DeleteProjectRequest.cs" />
+	<Compile Include="Iqa\Model\V20190813\DeleteProjectResponse.cs" />
+	<Compile Include="Iqa\Model\V20190813\DeployServiceRequest.cs" />
+	<Compile Include="Iqa\Model\V20190813\DeployServiceResponse.cs" />
+	<Compile Include="Iqa\Model\V20190813\DescribeProjectRequest.cs" />
+	<Compile Include="Iqa\Model\V20190813\DescribeProjectResponse.cs" />
+	<Compile Include="Iqa\Model\V20190813\GetPredictResultRequest.cs" />
+	<Compile Include="Iqa\Model\V20190813\GetPredictResultResponse.cs" />
+	<Compile Include="Iqa\Model\V20190813\ListProjectsRequest.cs" />
+	<Compile Include="Iqa\Model\V20190813\ListProjectsResponse.cs" />
+	<Compile Include="Iqa\Model\V20190813\ModifiyProjectRequest.cs" />
+	<Compile Include="Iqa\Model\V20190813\ModifiyProjectResponse.cs" />
+	<Compile Include="Iqa\Model\V20190813\UploadDictionaryRequest.cs" />
+	<Compile Include="Iqa\Model\V20190813\UploadDictionaryResponse.cs" />
+	<Compile Include="Iqa\Model\V20190813\UploadDocumentRequest.cs" />
+	<Compile Include="Iqa\Model\V20190813\UploadDocumentResponse.cs" />
+	<Compile Include="Iqa\Transform\V20190813\CreateProjectResponseUnmarshaller.cs" />
+	<Compile Include="Iqa\Transform\V20190813\DeleteProjectResponseUnmarshaller.cs" />
+	<Compile Include="Iqa\Transform\V20190813\DeployServiceResponseUnmarshaller.cs" />
+	<Compile Include="Iqa\Transform\V20190813\DescribeProjectResponseUnmarshaller.cs" />
+	<Compile Include="Iqa\Transform\V20190813\GetPredictResultResponseUnmarshaller.cs" />
+	<Compile Include="Iqa\Transform\V20190813\ListProjectsResponseUnmarshaller.cs" />
+	<Compile Include="Iqa\Transform\V20190813\ModifiyProjectResponseUnmarshaller.cs" />
+	<Compile Include="Iqa\Transform\V20190813\UploadDictionaryResponseUnmarshaller.cs" />
+	<Compile Include="Iqa\Transform\V20190813\UploadDocumentResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
