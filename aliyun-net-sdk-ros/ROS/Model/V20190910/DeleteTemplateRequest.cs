@@ -28,10 +28,10 @@ using Aliyun.Acs.ROS.Transform.V20190910;
 
 namespace Aliyun.Acs.ROS.Model.V20190910
 {
-    public class DeleteChangeSetRequest : RpcAcsRequest<DeleteChangeSetResponse>
+    public class DeleteTemplateRequest : RpcAcsRequest<DeleteTemplateResponse>
     {
-        public DeleteChangeSetRequest()
-            : base("ROS", "2019-09-10", "DeleteChangeSet")
+        public DeleteTemplateRequest()
+            : base("ROS", "2019-09-10", "DeleteTemplate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,18 +40,18 @@ namespace Aliyun.Acs.ROS.Model.V20190910
             }
         }
 
-		private string changeSetId;
+		private string templateId;
 
-		public string ChangeSetId
+		public string TemplateId
 		{
 			get
 			{
-				return changeSetId;
+				return templateId;
 			}
 			set	
 			{
-				changeSetId = value;
-				DictionaryUtil.Add(QueryParameters, "ChangeSetId", value);
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
 			}
 		}
 
@@ -60,9 +60,9 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			return false;
 		}
 
-        public override DeleteChangeSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteChangeSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

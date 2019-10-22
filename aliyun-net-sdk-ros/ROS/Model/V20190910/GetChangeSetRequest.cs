@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -30,26 +31,18 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class GetChangeSetRequest : RpcAcsRequest<GetChangeSetResponse>
     {
         public GetChangeSetRequest()
-            : base("ROS", "2019-09-10", "GetChangeSet", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "GetChangeSet")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string changeSetId;
 
 		private bool? showTemplate;
 
-		public string ChangeSetId
-		{
-			get
-			{
-				return changeSetId;
-			}
-			set	
-			{
-				changeSetId = value;
-				DictionaryUtil.Add(QueryParameters, "ChangeSetId", value);
-			}
-		}
+		private string changeSetId;
 
 		public bool? ShowTemplate
 		{
@@ -61,6 +54,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				showTemplate = value;
 				DictionaryUtil.Add(QueryParameters, "ShowTemplate", value.ToString());
+			}
+		}
+
+		public string ChangeSetId
+		{
+			get
+			{
+				return changeSetId;
+			}
+			set	
+			{
+				changeSetId = value;
+				DictionaryUtil.Add(QueryParameters, "ChangeSetId", value);
 			}
 		}
 

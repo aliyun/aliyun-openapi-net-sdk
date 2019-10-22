@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -30,34 +31,26 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class ListStacksRequest : RpcAcsRequest<ListStacksResponse>
     {
         public ListStacksRequest()
-            : base("ROS", "2019-09-10", "ListStacks", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "ListStacks")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string parentStackId;
-
 		private bool? showNestedStack;
+
+		private long? pageNumber;
 
 		private long? pageSize;
 
 		private List<string> stackNames = new List<string>(){ };
 
-		private long? pageNumber;
+		private string parentStackId;
 
 		private List<string> statuss = new List<string>(){ };
-
-		public string ParentStackId
-		{
-			get
-			{
-				return parentStackId;
-			}
-			set	
-			{
-				parentStackId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentStackId", value);
-			}
-		}
 
 		public bool? ShowNestedStack
 		{
@@ -69,6 +62,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				showNestedStack = value;
 				DictionaryUtil.Add(QueryParameters, "ShowNestedStack", value.ToString());
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -102,16 +108,16 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
-		public long? PageNumber
+		public string ParentStackId
 		{
 			get
 			{
-				return pageNumber;
+				return parentStackId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				parentStackId = value;
+				DictionaryUtil.Add(QueryParameters, "ParentStackId", value);
 			}
 		}
 

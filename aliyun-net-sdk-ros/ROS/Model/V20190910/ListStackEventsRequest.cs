@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -30,19 +31,24 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class ListStackEventsRequest : RpcAcsRequest<ListStackEventsResponse>
     {
         public ListStackEventsRequest()
-            : base("ROS", "2019-09-10", "ListStackEvents", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "ListStackEvents")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string stackId;
+
+		private long? pageNumber;
 
 		private long? pageSize;
 
 		private List<string> logicalResourceIds = new List<string>(){ };
 
 		private List<string> resourceTypes = new List<string>(){ };
-
-		private long? pageNumber;
 
 		private List<string> statuss = new List<string>(){ };
 
@@ -56,6 +62,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				stackId = value;
 				DictionaryUtil.Add(QueryParameters, "StackId", value);
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -103,19 +122,6 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				{
 					DictionaryUtil.Add(QueryParameters,"ResourceType." + (i + 1) , resourceTypes[i]);
 				}
-			}
-		}
-
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

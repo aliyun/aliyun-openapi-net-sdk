@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20150901;
 
@@ -30,8 +31,13 @@ namespace Aliyun.Acs.ROS.Model.V20150901
     public class DescribeChangeSetDetailRequest : RoaAcsRequest<DescribeChangeSetDetailResponse>
     {
         public DescribeChangeSetDetailRequest()
-            : base("ROS", "2015-09-01", "DescribeChangeSetDetail", "ROS", "openAPI")
+            : base("ROS", "2015-09-01", "DescribeChangeSetDetail")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]";
 			Method = MethodType.GET;
         }

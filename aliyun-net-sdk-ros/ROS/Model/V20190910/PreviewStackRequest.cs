@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -30,40 +31,32 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class PreviewStackRequest : RpcAcsRequest<PreviewStackResponse>
     {
         public PreviewStackRequest()
-            : base("ROS", "2019-09-10", "PreviewStack", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "PreviewStack")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string stackPolicyURL;
 
 		private string clientToken;
 
 		private string templateBody;
 
-		private bool? disableRollback;
-
-		private string stackName;
-
-		private List<Parameters> parameterss = new List<Parameters>(){ };
-
-		private string stackPolicyBody;
-
 		private long? timeoutInMinutes;
 
 		private string templateURL;
 
-		public string StackPolicyURL
-		{
-			get
-			{
-				return stackPolicyURL;
-			}
-			set	
-			{
-				stackPolicyURL = value;
-				DictionaryUtil.Add(QueryParameters, "StackPolicyURL", value);
-			}
-		}
+		private string stackName;
+
+		private string stackPolicyBody;
+
+		private bool? disableRollback;
+
+		private string stackPolicyURL;
+
+		private List<Parameters> parameterss = new List<Parameters>(){ };
 
 		public string ClientToken
 		{
@@ -91,63 +84,6 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
-		public bool? DisableRollback
-		{
-			get
-			{
-				return disableRollback;
-			}
-			set	
-			{
-				disableRollback = value;
-				DictionaryUtil.Add(QueryParameters, "DisableRollback", value.ToString());
-			}
-		}
-
-		public string StackName
-		{
-			get
-			{
-				return stackName;
-			}
-			set	
-			{
-				stackName = value;
-				DictionaryUtil.Add(QueryParameters, "StackName", value);
-			}
-		}
-
-		public List<Parameters> Parameterss
-		{
-			get
-			{
-				return parameterss;
-			}
-
-			set
-			{
-				parameterss = value;
-				for (int i = 0; i < parameterss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterValue", parameterss[i].ParameterValue);
-					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterKey", parameterss[i].ParameterKey);
-				}
-			}
-		}
-
-		public string StackPolicyBody
-		{
-			get
-			{
-				return stackPolicyBody;
-			}
-			set	
-			{
-				stackPolicyBody = value;
-				DictionaryUtil.Add(QueryParameters, "StackPolicyBody", value);
-			}
-		}
-
 		public long? TimeoutInMinutes
 		{
 			get
@@ -171,6 +107,76 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				templateURL = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateURL", value);
+			}
+		}
+
+		public string StackName
+		{
+			get
+			{
+				return stackName;
+			}
+			set	
+			{
+				stackName = value;
+				DictionaryUtil.Add(QueryParameters, "StackName", value);
+			}
+		}
+
+		public string StackPolicyBody
+		{
+			get
+			{
+				return stackPolicyBody;
+			}
+			set	
+			{
+				stackPolicyBody = value;
+				DictionaryUtil.Add(QueryParameters, "StackPolicyBody", value);
+			}
+		}
+
+		public bool? DisableRollback
+		{
+			get
+			{
+				return disableRollback;
+			}
+			set	
+			{
+				disableRollback = value;
+				DictionaryUtil.Add(QueryParameters, "DisableRollback", value.ToString());
+			}
+		}
+
+		public string StackPolicyURL
+		{
+			get
+			{
+				return stackPolicyURL;
+			}
+			set	
+			{
+				stackPolicyURL = value;
+				DictionaryUtil.Add(QueryParameters, "StackPolicyURL", value);
+			}
+		}
+
+		public List<Parameters> Parameterss
+		{
+			get
+			{
+				return parameterss;
+			}
+
+			set
+			{
+				parameterss = value;
+				for (int i = 0; i < parameterss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterValue", parameterss[i].ParameterValue);
+					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterKey", parameterss[i].ParameterKey);
+				}
 			}
 		}
 

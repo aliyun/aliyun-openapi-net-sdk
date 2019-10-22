@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20150901;
 
@@ -30,8 +31,13 @@ namespace Aliyun.Acs.ROS.Model.V20150901
     public class DescribeRegionsRequest : RoaAcsRequest<DescribeRegionsResponse>
     {
         public DescribeRegionsRequest()
-            : base("ROS", "2015-09-01", "DescribeRegions", "ROS", "openAPI")
+            : base("ROS", "2015-09-01", "DescribeRegions")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/regions";
 			Method = MethodType.GET;
         }

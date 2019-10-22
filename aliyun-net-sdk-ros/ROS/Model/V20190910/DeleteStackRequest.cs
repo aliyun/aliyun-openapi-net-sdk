@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -30,26 +31,18 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class DeleteStackRequest : RpcAcsRequest<DeleteStackResponse>
     {
         public DeleteStackRequest()
-            : base("ROS", "2019-09-10", "DeleteStack", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "DeleteStack")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private bool? retainAllResources;
 
 		private string stackId;
 
-		public bool? RetainAllResources
-		{
-			get
-			{
-				return retainAllResources;
-			}
-			set	
-			{
-				retainAllResources = value;
-				DictionaryUtil.Add(QueryParameters, "RetainAllResources", value.ToString());
-			}
-		}
+		private bool? retainAllResources;
 
 		public string StackId
 		{
@@ -61,6 +54,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				stackId = value;
 				DictionaryUtil.Add(QueryParameters, "StackId", value);
+			}
+		}
+
+		public bool? RetainAllResources
+		{
+			get
+			{
+				return retainAllResources;
+			}
+			set	
+			{
+				retainAllResources = value;
+				DictionaryUtil.Add(QueryParameters, "RetainAllResources", value.ToString());
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -30,11 +31,22 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class UpdateStackRequest : RpcAcsRequest<UpdateStackResponse>
     {
         public UpdateStackRequest()
-            : base("ROS", "2019-09-10", "UpdateStack", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "UpdateStack")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string stackPolicyDuringUpdateURL;
+		private long? timeoutInMinutes;
+
+		private string stackPolicyDuringUpdateBody;
+
+		private bool? disableRollback;
+
+		private List<Parameters> parameterss = new List<Parameters>(){ };
 
 		private string clientToken;
 
@@ -42,32 +54,70 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private string stackId;
 
-		private bool? disableRollback;
-
-		private long? timeoutInMinutes;
-
-		private bool? usePreviousParameters;
-
 		private string templateURL;
-
-		private string stackPolicyDuringUpdateBody;
-
-		private string stackPolicyURL;
-
-		private List<Parameters> parameterss = new List<Parameters>(){ };
 
 		private string stackPolicyBody;
 
-		public string StackPolicyDuringUpdateURL
+		private string stackPolicyDuringUpdateURL;
+
+		private bool? usePreviousParameters;
+
+		private string stackPolicyURL;
+
+		public long? TimeoutInMinutes
 		{
 			get
 			{
-				return stackPolicyDuringUpdateURL;
+				return timeoutInMinutes;
 			}
 			set	
 			{
-				stackPolicyDuringUpdateURL = value;
-				DictionaryUtil.Add(QueryParameters, "StackPolicyDuringUpdateURL", value);
+				timeoutInMinutes = value;
+				DictionaryUtil.Add(QueryParameters, "TimeoutInMinutes", value.ToString());
+			}
+		}
+
+		public string StackPolicyDuringUpdateBody
+		{
+			get
+			{
+				return stackPolicyDuringUpdateBody;
+			}
+			set	
+			{
+				stackPolicyDuringUpdateBody = value;
+				DictionaryUtil.Add(QueryParameters, "StackPolicyDuringUpdateBody", value);
+			}
+		}
+
+		public bool? DisableRollback
+		{
+			get
+			{
+				return disableRollback;
+			}
+			set	
+			{
+				disableRollback = value;
+				DictionaryUtil.Add(QueryParameters, "DisableRollback", value.ToString());
+			}
+		}
+
+		public List<Parameters> Parameterss
+		{
+			get
+			{
+				return parameterss;
+			}
+
+			set
+			{
+				parameterss = value;
+				for (int i = 0; i < parameterss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterValue", parameterss[i].ParameterValue);
+					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterKey", parameterss[i].ParameterKey);
+				}
 			}
 		}
 
@@ -110,29 +160,42 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
-		public bool? DisableRollback
+		public string TemplateURL
 		{
 			get
 			{
-				return disableRollback;
+				return templateURL;
 			}
 			set	
 			{
-				disableRollback = value;
-				DictionaryUtil.Add(QueryParameters, "DisableRollback", value.ToString());
+				templateURL = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateURL", value);
 			}
 		}
 
-		public long? TimeoutInMinutes
+		public string StackPolicyBody
 		{
 			get
 			{
-				return timeoutInMinutes;
+				return stackPolicyBody;
 			}
 			set	
 			{
-				timeoutInMinutes = value;
-				DictionaryUtil.Add(QueryParameters, "TimeoutInMinutes", value.ToString());
+				stackPolicyBody = value;
+				DictionaryUtil.Add(QueryParameters, "StackPolicyBody", value);
+			}
+		}
+
+		public string StackPolicyDuringUpdateURL
+		{
+			get
+			{
+				return stackPolicyDuringUpdateURL;
+			}
+			set	
+			{
+				stackPolicyDuringUpdateURL = value;
+				DictionaryUtil.Add(QueryParameters, "StackPolicyDuringUpdateURL", value);
 			}
 		}
 
@@ -149,32 +212,6 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
-		public string TemplateURL
-		{
-			get
-			{
-				return templateURL;
-			}
-			set	
-			{
-				templateURL = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateURL", value);
-			}
-		}
-
-		public string StackPolicyDuringUpdateBody
-		{
-			get
-			{
-				return stackPolicyDuringUpdateBody;
-			}
-			set	
-			{
-				stackPolicyDuringUpdateBody = value;
-				DictionaryUtil.Add(QueryParameters, "StackPolicyDuringUpdateBody", value);
-			}
-		}
-
 		public string StackPolicyURL
 		{
 			get
@@ -185,37 +222,6 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				stackPolicyURL = value;
 				DictionaryUtil.Add(QueryParameters, "StackPolicyURL", value);
-			}
-		}
-
-		public List<Parameters> Parameterss
-		{
-			get
-			{
-				return parameterss;
-			}
-
-			set
-			{
-				parameterss = value;
-				for (int i = 0; i < parameterss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterValue", parameterss[i].ParameterValue);
-					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterKey", parameterss[i].ParameterKey);
-				}
-			}
-		}
-
-		public string StackPolicyBody
-		{
-			get
-			{
-				return stackPolicyBody;
-			}
-			set	
-			{
-				stackPolicyBody = value;
-				DictionaryUtil.Add(QueryParameters, "StackPolicyBody", value);
 			}
 		}
 

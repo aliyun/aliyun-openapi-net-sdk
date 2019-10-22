@@ -28,10 +28,10 @@ using Aliyun.Acs.ROS.Transform.V20190910;
 
 namespace Aliyun.Acs.ROS.Model.V20190910
 {
-    public class DeleteChangeSetRequest : RpcAcsRequest<DeleteChangeSetResponse>
+    public class ListTemplatesRequest : RpcAcsRequest<ListTemplatesResponse>
     {
-        public DeleteChangeSetRequest()
-            : base("ROS", "2019-09-10", "DeleteChangeSet")
+        public ListTemplatesRequest()
+            : base("ROS", "2019-09-10", "ListTemplates")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,18 +40,48 @@ namespace Aliyun.Acs.ROS.Model.V20190910
             }
         }
 
-		private string changeSetId;
+		private long? pageNumber;
 
-		public string ChangeSetId
+		private long? pageSize;
+
+		private string templateName;
+
+		public long? PageNumber
 		{
 			get
 			{
-				return changeSetId;
+				return pageNumber;
 			}
 			set	
 			{
-				changeSetId = value;
-				DictionaryUtil.Add(QueryParameters, "ChangeSetId", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string TemplateName
+		{
+			get
+			{
+				return templateName;
+			}
+			set	
+			{
+				templateName = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
 			}
 		}
 
@@ -60,9 +90,9 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			return false;
 		}
 
-        public override DeleteChangeSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTemplatesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteChangeSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

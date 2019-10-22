@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -30,26 +31,18 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class CancelUpdateStackRequest : RpcAcsRequest<CancelUpdateStackResponse>
     {
         public CancelUpdateStackRequest()
-            : base("ROS", "2019-09-10", "CancelUpdateStack", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "CancelUpdateStack")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string cancelType;
 
 		private string stackId;
 
-		public string CancelType
-		{
-			get
-			{
-				return cancelType;
-			}
-			set	
-			{
-				cancelType = value;
-				DictionaryUtil.Add(QueryParameters, "CancelType", value);
-			}
-		}
+		private string cancelType;
 
 		public string StackId
 		{
@@ -61,6 +54,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				stackId = value;
 				DictionaryUtil.Add(QueryParameters, "StackId", value);
+			}
+		}
+
+		public string CancelType
+		{
+			get
+			{
+				return cancelType;
+			}
+			set	
+			{
+				cancelType = value;
+				DictionaryUtil.Add(QueryParameters, "CancelType", value);
 			}
 		}
 

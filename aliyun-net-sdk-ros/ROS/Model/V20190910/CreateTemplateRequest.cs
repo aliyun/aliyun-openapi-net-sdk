@@ -28,10 +28,10 @@ using Aliyun.Acs.ROS.Transform.V20190910;
 
 namespace Aliyun.Acs.ROS.Model.V20190910
 {
-    public class DeleteChangeSetRequest : RpcAcsRequest<DeleteChangeSetResponse>
+    public class CreateTemplateRequest : RpcAcsRequest<CreateTemplateResponse>
     {
-        public DeleteChangeSetRequest()
-            : base("ROS", "2019-09-10", "DeleteChangeSet")
+        public CreateTemplateRequest()
+            : base("ROS", "2019-09-10", "CreateTemplate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,18 +40,63 @@ namespace Aliyun.Acs.ROS.Model.V20190910
             }
         }
 
-		private string changeSetId;
+		private string templateBody;
 
-		public string ChangeSetId
+		private string description;
+
+		private string templateURL;
+
+		private string templateName;
+
+		public string TemplateBody
 		{
 			get
 			{
-				return changeSetId;
+				return templateBody;
 			}
 			set	
 			{
-				changeSetId = value;
-				DictionaryUtil.Add(QueryParameters, "ChangeSetId", value);
+				templateBody = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateBody", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string TemplateURL
+		{
+			get
+			{
+				return templateURL;
+			}
+			set	
+			{
+				templateURL = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateURL", value);
+			}
+		}
+
+		public string TemplateName
+		{
+			get
+			{
+				return templateName;
+			}
+			set	
+			{
+				templateName = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
 			}
 		}
 
@@ -60,9 +105,9 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			return false;
 		}
 
-        public override DeleteChangeSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteChangeSetResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -30,28 +31,20 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class SetStackPolicyRequest : RpcAcsRequest<SetStackPolicyResponse>
     {
         public SetStackPolicyRequest()
-            : base("ROS", "2019-09-10", "SetStackPolicy", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "SetStackPolicy")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string stackPolicyURL;
 
 		private string stackId;
 
 		private string stackPolicyBody;
 
-		public string StackPolicyURL
-		{
-			get
-			{
-				return stackPolicyURL;
-			}
-			set	
-			{
-				stackPolicyURL = value;
-				DictionaryUtil.Add(QueryParameters, "StackPolicyURL", value);
-			}
-		}
+		private string stackPolicyURL;
 
 		public string StackId
 		{
@@ -76,6 +69,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				stackPolicyBody = value;
 				DictionaryUtil.Add(QueryParameters, "StackPolicyBody", value);
+			}
+		}
+
+		public string StackPolicyURL
+		{
+			get
+			{
+				return stackPolicyURL;
+			}
+			set	
+			{
+				stackPolicyURL = value;
+				DictionaryUtil.Add(QueryParameters, "StackPolicyURL", value);
 			}
 		}
 
