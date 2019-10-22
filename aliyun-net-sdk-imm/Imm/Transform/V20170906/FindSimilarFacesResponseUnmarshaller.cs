@@ -39,6 +39,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				facesItem.FaceId = context.StringValue("FindSimilarFaces.Faces["+ i +"].FaceId");
 				facesItem.ImageUri = context.StringValue("FindSimilarFaces.Faces["+ i +"].ImageUri");
 				facesItem.Similarity = context.FloatValue("FindSimilarFaces.Faces["+ i +"].Similarity");
+				facesItem.ExternalId = context.StringValue("FindSimilarFaces.Faces["+ i +"].ExternalId");
 
 				FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_FaceAttributes faceAttributes = new FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_FaceAttributes();
 
@@ -56,6 +57,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 					similarFacesItem.FaceId = context.StringValue("FindSimilarFaces.Faces["+ i +"].SimilarFaces["+ j +"].FaceId");
 					similarFacesItem.ImageUri = context.StringValue("FindSimilarFaces.Faces["+ i +"].SimilarFaces["+ j +"].ImageUri");
 					similarFacesItem.Similarity = context.FloatValue("FindSimilarFaces.Faces["+ i +"].SimilarFaces["+ j +"].Similarity");
+					similarFacesItem.ExternalId = context.StringValue("FindSimilarFaces.Faces["+ i +"].SimilarFaces["+ j +"].ExternalId");
 
 					FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_SimilarFacesItem.FindSimilarFaces_FaceAttributes1 faceAttributes1 = new FindSimilarFacesResponse.FindSimilarFaces_FacesItem.FindSimilarFaces_SimilarFacesItem.FindSimilarFaces_FaceAttributes1();
 

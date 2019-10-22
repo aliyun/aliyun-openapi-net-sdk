@@ -62,6 +62,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private float? similarity;
 
+			private string externalId;
+
 			private List<FindSimilarFaces_SimilarFacesItem> similarFaces;
 
 			private FindSimilarFaces_FaceAttributes faceAttributes;
@@ -102,6 +104,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				}
 			}
 
+			public string ExternalId
+			{
+				get
+				{
+					return externalId;
+				}
+				set	
+				{
+					externalId = value;
+				}
+			}
+
 			public List<FindSimilarFaces_SimilarFacesItem> SimilarFaces
 			{
 				get
@@ -134,6 +148,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				private string imageUri;
 
 				private float? similarity;
+
+				private string externalId;
 
 				private FindSimilarFaces_FaceAttributes1 faceAttributes1;
 
@@ -170,6 +186,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						similarity = value;
+					}
+				}
+
+				public string ExternalId
+				{
+					get
+					{
+						return externalId;
+					}
+					set	
+					{
+						externalId = value;
 					}
 				}
 
