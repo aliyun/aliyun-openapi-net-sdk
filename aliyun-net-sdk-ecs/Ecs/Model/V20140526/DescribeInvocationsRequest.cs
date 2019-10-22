@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string invokeStatus;
 
+		private bool? includeOutput;
+
 		private string commandId;
 
 		private long? pageNumber;
@@ -90,6 +92,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				invokeStatus = value;
 				DictionaryUtil.Add(QueryParameters, "InvokeStatus", value);
+			}
+		}
+
+		public bool? IncludeOutput
+		{
+			get
+			{
+				return includeOutput;
+			}
+			set	
+			{
+				includeOutput = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeOutput", value.ToString());
 			}
 		}
 

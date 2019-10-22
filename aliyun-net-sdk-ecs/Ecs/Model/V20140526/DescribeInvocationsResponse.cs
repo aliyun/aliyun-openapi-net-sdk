@@ -245,6 +245,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string instanceInvokeStatus;
 
+				private string output;
+
+				private long? exitCode;
+
 				private string creationTime;
 
 				private string startTime;
@@ -272,6 +276,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						instanceInvokeStatus = value;
+					}
+				}
+
+				public string Output
+				{
+					get
+					{
+						return output;
+					}
+					set	
+					{
+						output = value;
+					}
+				}
+
+				public long? ExitCode
+				{
+					get
+					{
+						return exitCode;
+					}
+					set	
+					{
+						exitCode = value;
 					}
 				}
 

@@ -73,6 +73,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string platform;
 
+		private int? capacity;
+
 		private string systemDiskPerformanceLevel;
 
 		private string dataDisk4Category;
@@ -323,6 +325,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				platform = value;
 				DictionaryUtil.Add(QueryParameters, "Platform", value);
+			}
+		}
+
+		public int? Capacity
+		{
+			get
+			{
+				return capacity;
+			}
+			set	
+			{
+				capacity = value;
+				DictionaryUtil.Add(QueryParameters, "Capacity", value.ToString());
 			}
 		}
 

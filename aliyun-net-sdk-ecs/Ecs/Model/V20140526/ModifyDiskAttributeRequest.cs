@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? deleteAutoSnapshot;
 
+		private List<string> diskIdss = new List<string>(){ };
+
 		private string diskId;
 
 		private bool? deleteWithInstance;
@@ -109,6 +111,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				deleteAutoSnapshot = value;
 				DictionaryUtil.Add(QueryParameters, "DeleteAutoSnapshot", value.ToString());
+			}
+		}
+
+		public List<string> DiskIdss
+		{
+			get
+			{
+				return diskIdss;
+			}
+
+			set
+			{
+				diskIdss = value;
+				for (int i = 0; i < diskIdss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DiskIds." + (i + 1) , diskIdss[i]);
+				}
 			}
 		}
 

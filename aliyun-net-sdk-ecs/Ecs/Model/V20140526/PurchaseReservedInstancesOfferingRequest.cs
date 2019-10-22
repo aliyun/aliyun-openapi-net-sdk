@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string description;
 
+		private string platform;
+
 		private string resourceGroupId;
 
 		private string scope;
@@ -106,6 +108,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string Platform
+		{
+			get
+			{
+				return platform;
+			}
+			set	
+			{
+				platform = value;
+				DictionaryUtil.Add(QueryParameters, "Platform", value);
 			}
 		}
 

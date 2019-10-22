@@ -68,6 +68,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<Tag> tags = new List<Tag>(){ };
 
+		private string systemDiskAutoSnapshotPolicyId;
+
 		private int? autoRenewPeriod;
 
 		private int? period;
@@ -348,6 +350,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 				}
+			}
+		}
+
+		public string SystemDiskAutoSnapshotPolicyId
+		{
+			get
+			{
+				return systemDiskAutoSnapshotPolicyId;
+			}
+			set	
+			{
+				systemDiskAutoSnapshotPolicyId = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDisk.AutoSnapshotPolicyId", value);
 			}
 		}
 
@@ -948,6 +963,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Device", dataDisks[i].Device);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".PerformanceLevel", dataDisks[i].PerformanceLevel);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".AutoSnapshotPolicyId", dataDisks[i].AutoSnapshotPolicyId);
 				}
 			}
 		}
@@ -1133,6 +1149,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string performanceLevel;
 
+			private string autoSnapshotPolicyId;
+
 			public int? Size
 			{
 				get
@@ -1250,6 +1268,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					performanceLevel = value;
+				}
+			}
+
+			public string AutoSnapshotPolicyId
+			{
+				get
+				{
+					return autoSnapshotPolicyId;
+				}
+				set	
+				{
+					autoSnapshotPolicyId = value;
 				}
 			}
 		}

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0f4a3465-df2f-4656-8e4a-a8d3e4555de8}</ProjectGuid>
+    <ProjectGuid>{43e7e8eb-2141-4b46-8a13-45ea6f164318}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -104,8 +104,6 @@
 	<Compile Include="Ecs\Model\V20140526\CreateDeploymentSetResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateDiskRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateDiskResponse.cs" />
-	<Compile Include="Ecs\Model\V20140526\CreateFleetRequest.cs" />
-	<Compile Include="Ecs\Model\V20140526\CreateFleetResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateForwardEntryRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateForwardEntryResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateHaVipRequest.cs" />
@@ -162,8 +160,6 @@
 	<Compile Include="Ecs\Model\V20140526\DeleteDeploymentSetResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteDiskRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteDiskResponse.cs" />
-	<Compile Include="Ecs\Model\V20140526\DeleteFleetRequest.cs" />
-	<Compile Include="Ecs\Model\V20140526\DeleteFleetResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteForwardEntryRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteForwardEntryResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteHaVipRequest.cs" />
@@ -254,12 +250,6 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeEipMonitorDataResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeEniMonitorDataRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeEniMonitorDataResponse.cs" />
-	<Compile Include="Ecs\Model\V20140526\DescribeFleetHistoryRequest.cs" />
-	<Compile Include="Ecs\Model\V20140526\DescribeFleetHistoryResponse.cs" />
-	<Compile Include="Ecs\Model\V20140526\DescribeFleetInstancesRequest.cs" />
-	<Compile Include="Ecs\Model\V20140526\DescribeFleetInstancesResponse.cs" />
-	<Compile Include="Ecs\Model\V20140526\DescribeFleetsRequest.cs" />
-	<Compile Include="Ecs\Model\V20140526\DescribeFleetsResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeForwardTableEntriesRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeForwardTableEntriesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeHaVipsRequest.cs" />
@@ -452,8 +442,6 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyDiskSpecResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyEipAddressAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyEipAddressAttributeResponse.cs" />
-	<Compile Include="Ecs\Model\V20140526\ModifyFleetRequest.cs" />
-	<Compile Include="Ecs\Model\V20140526\ModifyFleetResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyForwardEntryRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyForwardEntryResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyHaVipAttributeRequest.cs" />
@@ -618,7 +606,6 @@
 	<Compile Include="Ecs\Transform\V20140526\CreateCommandResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateDeploymentSetResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateDiskResponseUnmarshaller.cs" />
-	<Compile Include="Ecs\Transform\V20140526\CreateFleetResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateForwardEntryResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateHaVipResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateHpcClusterResponseUnmarshaller.cs" />
@@ -647,7 +634,6 @@
 	<Compile Include="Ecs\Transform\V20140526\DeleteCommandResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteDeploymentSetResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteDiskResponseUnmarshaller.cs" />
-	<Compile Include="Ecs\Transform\V20140526\DeleteFleetResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteForwardEntryResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteHaVipResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteHpcClusterResponseUnmarshaller.cs" />
@@ -693,9 +679,6 @@
 	<Compile Include="Ecs\Transform\V20140526\DescribeEipAddressesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeEipMonitorDataResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeEniMonitorDataResponseUnmarshaller.cs" />
-	<Compile Include="Ecs\Transform\V20140526\DescribeFleetHistoryResponseUnmarshaller.cs" />
-	<Compile Include="Ecs\Transform\V20140526\DescribeFleetInstancesResponseUnmarshaller.cs" />
-	<Compile Include="Ecs\Transform\V20140526\DescribeFleetsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeForwardTableEntriesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeHaVipsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeHpcClustersResponseUnmarshaller.cs" />
@@ -792,7 +775,6 @@
 	<Compile Include="Ecs\Transform\V20140526\ModifyDiskChargeTypeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyDiskSpecResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyEipAddressAttributeResponseUnmarshaller.cs" />
-	<Compile Include="Ecs\Transform\V20140526\ModifyFleetResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyForwardEntryResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyHaVipAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyHpcClusterAttributeResponseUnmarshaller.cs" />
