@@ -45,6 +45,7 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 				streamPredict.StreamId = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].StreamId");
 				streamPredict.ModelIds = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].ModelIds");
 				streamPredict.ProbabilityThresholds = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].ProbabilityThresholds");
+				streamPredict.DetectIntervals = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].DetectIntervals");
 				streamPredict.Output = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].Output");
 				streamPredict.Notify = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].Notify");
 				streamPredict.UserData = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].UserData");

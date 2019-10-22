@@ -27,10 +27,10 @@ using Aliyun.Acs.ivision.Transform.V20190308;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
 {
-    public class StopStreamPredictRequest : RpcAcsRequest<StopStreamPredictResponse>
+    public class UnregisterFaceRequest : RpcAcsRequest<UnregisterFaceResponse>
     {
-        public StopStreamPredictRequest()
-            : base("ivision", "2019-03-08", "StopStreamPredict", "ivision", "openAPI")
+        public UnregisterFaceRequest()
+            : base("ivision", "2019-03-08", "UnregisterFace", "ivision", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,20 +39,22 @@ namespace Aliyun.Acs.ivision.Model.V20190308
             }
         }
 
-		private string predictId;
+		private string groupId;
 
 		private long? ownerId;
 
-		public string PredictId
+		private string faceToken;
+
+		public string GroupId
 		{
 			get
 			{
-				return predictId;
+				return groupId;
 			}
 			set	
 			{
-				predictId = value;
-				DictionaryUtil.Add(QueryParameters, "PredictId", value);
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -69,9 +71,22 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-        public override StopStreamPredictResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string FaceToken
+		{
+			get
+			{
+				return faceToken;
+			}
+			set	
+			{
+				faceToken = value;
+				DictionaryUtil.Add(QueryParameters, "FaceToken", value);
+			}
+		}
+
+        public override UnregisterFaceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StopStreamPredictResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UnregisterFaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -32,7 +32,14 @@ namespace Aliyun.Acs.ivision.Model.V20190308
         public CreateStreamPredictRequest()
             : base("ivision", "2019-03-08", "CreateStreamPredict", "ivision", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string clientToken;
 
 		private string autoStart;
 
@@ -40,21 +47,34 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 		private string output;
 
-		private string userData;
-
-		private string action;
-
-		private string showLog;
-
 		private string streamType;
 
+		private string faceGroupId;
+
 		private string streamId;
+
+		private string detectIntervals;
 
 		private long? ownerId;
 
 		private string probabilityThresholds;
 
 		private string modelIds;
+
+		private string modelUserData;
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
 
 		public string AutoStart
 		{
@@ -95,45 +115,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ShowLog
-		{
-			get
-			{
-				return showLog;
-			}
-			set	
-			{
-				showLog = value;
-				DictionaryUtil.Add(QueryParameters, "ShowLog", value);
-			}
-		}
-
 		public string StreamType
 		{
 			get
@@ -147,6 +128,19 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
+		public string FaceGroupId
+		{
+			get
+			{
+				return faceGroupId;
+			}
+			set	
+			{
+				faceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "FaceGroupId", value);
+			}
+		}
+
 		public string StreamId
 		{
 			get
@@ -157,6 +151,19 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			{
 				streamId = value;
 				DictionaryUtil.Add(QueryParameters, "StreamId", value);
+			}
+		}
+
+		public string DetectIntervals
+		{
+			get
+			{
+				return detectIntervals;
+			}
+			set	
+			{
+				detectIntervals = value;
+				DictionaryUtil.Add(QueryParameters, "DetectIntervals", value);
 			}
 		}
 
@@ -196,6 +203,19 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			{
 				modelIds = value;
 				DictionaryUtil.Add(QueryParameters, "ModelIds", value);
+			}
+		}
+
+		public string ModelUserData
+		{
+			get
+			{
+				return modelUserData;
+			}
+			set	
+			{
+				modelUserData = value;
+				DictionaryUtil.Add(QueryParameters, "ModelUserData", value);
 			}
 		}
 

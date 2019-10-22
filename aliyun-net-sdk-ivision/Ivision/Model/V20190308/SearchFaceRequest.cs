@@ -27,10 +27,10 @@ using Aliyun.Acs.ivision.Transform.V20190308;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
 {
-    public class StopStreamPredictRequest : RpcAcsRequest<StopStreamPredictResponse>
+    public class SearchFaceRequest : RpcAcsRequest<SearchFaceResponse>
     {
-        public StopStreamPredictRequest()
-            : base("ivision", "2019-03-08", "StopStreamPredict", "ivision", "openAPI")
+        public SearchFaceRequest()
+            : base("ivision", "2019-03-08", "SearchFace", "ivision", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,20 +39,80 @@ namespace Aliyun.Acs.ivision.Model.V20190308
             }
         }
 
-		private string predictId;
+		private string content;
+
+		private string dataType;
+
+		private float? probabilityThreshold;
+
+		private string groupId;
+
+		private int? count;
 
 		private long? ownerId;
 
-		public string PredictId
+		public string Content
 		{
 			get
 			{
-				return predictId;
+				return content;
 			}
 			set	
 			{
-				predictId = value;
-				DictionaryUtil.Add(QueryParameters, "PredictId", value);
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
+			}
+		}
+
+		public string DataType
+		{
+			get
+			{
+				return dataType;
+			}
+			set	
+			{
+				dataType = value;
+				DictionaryUtil.Add(QueryParameters, "DataType", value);
+			}
+		}
+
+		public float? ProbabilityThreshold
+		{
+			get
+			{
+				return probabilityThreshold;
+			}
+			set	
+			{
+				probabilityThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "ProbabilityThreshold", value.ToString());
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public int? Count
+		{
+			get
+			{
+				return count;
+			}
+			set	
+			{
+				count = value;
+				DictionaryUtil.Add(QueryParameters, "Count", value.ToString());
 			}
 		}
 
@@ -69,9 +129,14 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-        public override StopStreamPredictResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override SearchFaceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StopStreamPredictResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SearchFaceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

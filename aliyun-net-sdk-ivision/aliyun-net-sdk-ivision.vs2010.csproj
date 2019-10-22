@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{c128881f-f799-4b51-aabc-8bd11ac08331}</ProjectGuid>
+    <ProjectGuid>{2590ade4-6444-4408-8b20-a29a97dcc552}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,105 +40,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-	<Compile Include="Ivision\Model\V20190308\CreateTrainDatasFromPredictionRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeTrainResultRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\ModifyTagAttributeResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeletePredictDatasResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeleteIterationRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeleteTagRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeTrainDatasByIdsResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeleteProjectRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeTrainResultResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeleteStreamPredictRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeTrainDatasResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeTagsRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeStreamPredictsRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\StartStreamPredictRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeStreamPredictsResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\ModifyTrainDataRegionTagAttributeRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateUploadTokenRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateTagResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateTrainDataTagResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\TrainProjectRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\ModifyTrainDataTagAttributeResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeProjectsResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeleteProjectResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeleteTrainDatasTagRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateTagRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\ModifyProjectAttributeRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeStreamPredictResultRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\StartStreamPredictResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\ModifyTrainDataTagAttributeRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeStreamPredictResultResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateTrainDataRegionTagRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeTrainDatasByIdsRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateTrainDatasTagRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeleteTrainDatasResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeleteTagResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeleteStreamPredictResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateTrainDataRegionTagResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateStreamPredictResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeletePredictDatasRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateTrainDataTagRequest.cs" />
+	<Compile Include="Ivision\Model\V20190308\CreateFaceGroupRequest.cs" />
+	<Compile Include="Ivision\Model\V20190308\CreateFaceGroupResponse.cs" />
 	<Compile Include="Ivision\Model\V20190308\CreateStreamPredictRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeleteIterationResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribePredictDatasRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateTrainDatasFromUrlsResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeProjectsRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\StopStreamPredictResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\PredictImageRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\ModifyTrainDataRegionTagAttributeResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\TrainProjectResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeTrainDatasRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeleteTrainDatasRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeIterationsResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DeleteTrainDatasTagResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeTagsResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribeIterationsRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateTrainDatasFromPredictionResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateProjectRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateTrainDatasFromUrlsRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\DescribePredictDatasResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateUploadTokenResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\PredictImageResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\ModifyTagAttributeRequest.cs" />
-	<Compile Include="Ivision\Model\V20190308\ModifyProjectAttributeResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateProjectResponse.cs" />
-	<Compile Include="Ivision\Model\V20190308\CreateTrainDatasTagResponse.cs" />
+	<Compile Include="Ivision\Model\V20190308\CreateStreamPredictResponse.cs" />
+	<Compile Include="Ivision\Model\V20190308\DeleteFaceGroupRequest.cs" />
+	<Compile Include="Ivision\Model\V20190308\DeleteFaceGroupResponse.cs" />
+	<Compile Include="Ivision\Model\V20190308\DeleteStreamPredictRequest.cs" />
+	<Compile Include="Ivision\Model\V20190308\DeleteStreamPredictResponse.cs" />
+	<Compile Include="Ivision\Model\V20190308\DescribeFaceGroupsRequest.cs" />
+	<Compile Include="Ivision\Model\V20190308\DescribeFaceGroupsResponse.cs" />
+	<Compile Include="Ivision\Model\V20190308\DescribeStreamPredictResultRequest.cs" />
+	<Compile Include="Ivision\Model\V20190308\DescribeStreamPredictResultResponse.cs" />
+	<Compile Include="Ivision\Model\V20190308\DescribeStreamPredictsRequest.cs" />
+	<Compile Include="Ivision\Model\V20190308\DescribeStreamPredictsResponse.cs" />
+	<Compile Include="Ivision\Model\V20190308\ImagePredictRequest.cs" />
+	<Compile Include="Ivision\Model\V20190308\ImagePredictResponse.cs" />
+	<Compile Include="Ivision\Model\V20190308\RegisterFaceRequest.cs" />
+	<Compile Include="Ivision\Model\V20190308\RegisterFaceResponse.cs" />
+	<Compile Include="Ivision\Model\V20190308\SearchFaceRequest.cs" />
+	<Compile Include="Ivision\Model\V20190308\SearchFaceResponse.cs" />
+	<Compile Include="Ivision\Model\V20190308\StartStreamPredictRequest.cs" />
+	<Compile Include="Ivision\Model\V20190308\StartStreamPredictResponse.cs" />
 	<Compile Include="Ivision\Model\V20190308\StopStreamPredictRequest.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DeleteIterationResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\StartStreamPredictResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DeleteStreamPredictResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DescribeTrainResultResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DescribeTagsResponseUnmarshaller.cs" />
+	<Compile Include="Ivision\Model\V20190308\StopStreamPredictResponse.cs" />
+	<Compile Include="Ivision\Model\V20190308\UnregisterFaceRequest.cs" />
+	<Compile Include="Ivision\Model\V20190308\UnregisterFaceResponse.cs" />
+	<Compile Include="Ivision\Transform\V20190308\CreateFaceGroupResponseUnmarshaller.cs" />
 	<Compile Include="Ivision\Transform\V20190308\CreateStreamPredictResponseUnmarshaller.cs" />
+	<Compile Include="Ivision\Transform\V20190308\DeleteFaceGroupResponseUnmarshaller.cs" />
+	<Compile Include="Ivision\Transform\V20190308\DeleteStreamPredictResponseUnmarshaller.cs" />
+	<Compile Include="Ivision\Transform\V20190308\DescribeFaceGroupsResponseUnmarshaller.cs" />
 	<Compile Include="Ivision\Transform\V20190308\DescribeStreamPredictResultResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\CreateTrainDataRegionTagResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\CreateTrainDataTagResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\TrainProjectResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\ModifyTrainDataTagAttributeResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DeleteTrainDatasTagResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\CreateTrainDatasTagResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DeleteTrainDatasResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\ModifyProjectAttributeResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DescribePredictDatasResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\PredictImageResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DescribeIterationsResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\CreateTrainDatasFromUrlsResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DeleteTagResponseUnmarshaller.cs" />
 	<Compile Include="Ivision\Transform\V20190308\DescribeStreamPredictsResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\CreateProjectResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DeletePredictDatasResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DescribeTrainDatasByIdsResponseUnmarshaller.cs" />
+	<Compile Include="Ivision\Transform\V20190308\ImagePredictResponseUnmarshaller.cs" />
+	<Compile Include="Ivision\Transform\V20190308\RegisterFaceResponseUnmarshaller.cs" />
+	<Compile Include="Ivision\Transform\V20190308\SearchFaceResponseUnmarshaller.cs" />
+	<Compile Include="Ivision\Transform\V20190308\StartStreamPredictResponseUnmarshaller.cs" />
 	<Compile Include="Ivision\Transform\V20190308\StopStreamPredictResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\CreateTrainDatasFromPredictionResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\CreateTagResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\ModifyTrainDataRegionTagAttributeResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DescribeProjectsResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DeleteProjectResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\DescribeTrainDatasResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\CreateUploadTokenResponseUnmarshaller.cs" />
-	<Compile Include="Ivision\Transform\V20190308\ModifyTagAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Ivision\Transform\V20190308\UnregisterFaceResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

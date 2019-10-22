@@ -32,6 +32,11 @@ namespace Aliyun.Acs.ivision.Model.V20190308
         public DescribeStreamPredictResultRequest()
             : base("ivision", "2019-03-08", "DescribeStreamPredictResult", "ivision", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string nextPageToken;
@@ -42,11 +47,7 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 		private long? pageSize;
 
-		private string action;
-
 		private string probabilityThreshold;
-
-		private string showLog;
 
 		private string modelId;
 
@@ -108,19 +109,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ProbabilityThreshold
 		{
 			get
@@ -131,19 +119,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			{
 				probabilityThreshold = value;
 				DictionaryUtil.Add(QueryParameters, "ProbabilityThreshold", value);
-			}
-		}
-
-		public string ShowLog
-		{
-			get
-			{
-				return showLog;
-			}
-			set	
-			{
-				showLog = value;
-				DictionaryUtil.Add(QueryParameters, "ShowLog", value);
 			}
 		}
 
@@ -197,6 +172,11 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
 		}
 
         public override DescribeStreamPredictResultResponse GetResponse(UnmarshallerContext unmarshallerContext)

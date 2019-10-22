@@ -22,12 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
 {
-	public class DescribeStreamPredictResultResponse : AcsResponse
+	public class DescribeFaceGroupsResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private long? totalNum;
 
 		private long? currentPage;
 
@@ -35,7 +33,9 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 		private string nextPageToken;
 
-		private List<DescribeStreamPredictResult_StreamPredictData> streamPredictDatas;
+		private long? totalNum;
+
+		private List<DescribeFaceGroups_Group> groups;
 
 		public string RequestId
 		{
@@ -46,18 +46,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public long? TotalNum
-		{
-			get
-			{
-				return totalNum;
-			}
-			set	
-			{
-				totalNum = value;
 			}
 		}
 
@@ -97,116 +85,72 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public List<DescribeStreamPredictResult_StreamPredictData> StreamPredictDatas
+		public long? TotalNum
 		{
 			get
 			{
-				return streamPredictDatas;
+				return totalNum;
 			}
 			set	
 			{
-				streamPredictDatas = value;
+				totalNum = value;
 			}
 		}
 
-		public class DescribeStreamPredictResult_StreamPredictData
+		public List<DescribeFaceGroups_Group> Groups
+		{
+			get
+			{
+				return groups;
+			}
+			set	
+			{
+				groups = value;
+			}
+		}
+
+		public class DescribeFaceGroups_Group
 		{
 
-			private string predictId;
+			private string groupId;
 
-			private string modelId;
+			private string name;
 
-			private string dataUrl;
+			private string creationTime;
 
-			private long? timestamp;
-
-			private string predictTime;
-
-			private string status;
-
-			private string predictResult;
-
-			public string PredictId
+			public string GroupId
 			{
 				get
 				{
-					return predictId;
+					return groupId;
 				}
 				set	
 				{
-					predictId = value;
+					groupId = value;
 				}
 			}
 
-			public string ModelId
+			public string Name
 			{
 				get
 				{
-					return modelId;
+					return name;
 				}
 				set	
 				{
-					modelId = value;
+					name = value;
 				}
 			}
 
-			public string DataUrl
+			public string CreationTime
 			{
 				get
 				{
-					return dataUrl;
+					return creationTime;
 				}
 				set	
 				{
-					dataUrl = value;
-				}
-			}
-
-			public long? Timestamp
-			{
-				get
-				{
-					return timestamp;
-				}
-				set	
-				{
-					timestamp = value;
-				}
-			}
-
-			public string PredictTime
-			{
-				get
-				{
-					return predictTime;
-				}
-				set	
-				{
-					predictTime = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string PredictResult
-			{
-				get
-				{
-					return predictResult;
-				}
-				set	
-				{
-					predictResult = value;
+					creationTime = value;
 				}
 			}
 		}

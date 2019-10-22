@@ -22,20 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
 {
-	public class DescribeStreamPredictResultResponse : AcsResponse
+	public class ImagePredictResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private long? totalNum;
-
-		private long? currentPage;
-
-		private long? pageSize;
-
-		private string nextPageToken;
-
-		private List<DescribeStreamPredictResult_StreamPredictData> streamPredictDatas;
+		private ImagePredict_ImagePredict imagePredict;
 
 		public string RequestId
 		{
@@ -49,67 +41,19 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public long? TotalNum
+		public ImagePredict_ImagePredict ImagePredict
 		{
 			get
 			{
-				return totalNum;
+				return imagePredict;
 			}
 			set	
 			{
-				totalNum = value;
+				imagePredict = value;
 			}
 		}
 
-		public long? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-			}
-		}
-
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public string NextPageToken
-		{
-			get
-			{
-				return nextPageToken;
-			}
-			set	
-			{
-				nextPageToken = value;
-			}
-		}
-
-		public List<DescribeStreamPredictResult_StreamPredictData> StreamPredictDatas
-		{
-			get
-			{
-				return streamPredictDatas;
-			}
-			set	
-			{
-				streamPredictDatas = value;
-			}
-		}
-
-		public class DescribeStreamPredictResult_StreamPredictData
+		public class ImagePredict_ImagePredict
 		{
 
 			private string predictId;
@@ -118,11 +62,13 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 			private string dataUrl;
 
-			private long? timestamp;
-
 			private string predictTime;
 
 			private string status;
+
+			private string code;
+
+			private string message;
 
 			private string predictResult;
 
@@ -162,18 +108,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
-			public long? Timestamp
-			{
-				get
-				{
-					return timestamp;
-				}
-				set	
-				{
-					timestamp = value;
-				}
-			}
-
 			public string PredictTime
 			{
 				get
@@ -195,6 +129,30 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string Code
+			{
+				get
+				{
+					return code;
+				}
+				set	
+				{
+					code = value;
+				}
+			}
+
+			public string Message
+			{
+				get
+				{
+					return message;
+				}
+				set	
+				{
+					message = value;
 				}
 			}
 

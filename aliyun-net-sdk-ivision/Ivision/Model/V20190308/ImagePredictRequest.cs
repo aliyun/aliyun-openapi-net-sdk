@@ -27,10 +27,10 @@ using Aliyun.Acs.ivision.Transform.V20190308;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
 {
-    public class StopStreamPredictRequest : RpcAcsRequest<StopStreamPredictResponse>
+    public class ImagePredictRequest : RpcAcsRequest<ImagePredictResponse>
     {
-        public StopStreamPredictRequest()
-            : base("ivision", "2019-03-08", "StopStreamPredict", "ivision", "openAPI")
+        public ImagePredictRequest()
+            : base("ivision", "2019-03-08", "ImagePredict", "ivision", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,20 +39,35 @@ namespace Aliyun.Acs.ivision.Model.V20190308
             }
         }
 
-		private string predictId;
+		private string dataUrl;
+
+		private string modelId;
 
 		private long? ownerId;
 
-		public string PredictId
+		public string DataUrl
 		{
 			get
 			{
-				return predictId;
+				return dataUrl;
 			}
 			set	
 			{
-				predictId = value;
-				DictionaryUtil.Add(QueryParameters, "PredictId", value);
+				dataUrl = value;
+				DictionaryUtil.Add(QueryParameters, "DataUrl", value);
+			}
+		}
+
+		public string ModelId
+		{
+			get
+			{
+				return modelId;
+			}
+			set	
+			{
+				modelId = value;
+				DictionaryUtil.Add(QueryParameters, "ModelId", value);
 			}
 		}
 
@@ -69,9 +84,9 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-        public override StopStreamPredictResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ImagePredictResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StopStreamPredictResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ImagePredictResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

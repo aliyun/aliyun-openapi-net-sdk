@@ -32,13 +32,14 @@ namespace Aliyun.Acs.ivision.Model.V20190308
         public StartStreamPredictRequest()
             : base("ivision", "2019-03-08", "StartStreamPredict", "ivision", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string predictId;
-
-		private string action;
-
-		private string showLog;
 
 		private long? ownerId;
 
@@ -52,32 +53,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			{
 				predictId = value;
 				DictionaryUtil.Add(QueryParameters, "PredictId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ShowLog
-		{
-			get
-			{
-				return showLog;
-			}
-			set	
-			{
-				showLog = value;
-				DictionaryUtil.Add(QueryParameters, "ShowLog", value);
 			}
 		}
 

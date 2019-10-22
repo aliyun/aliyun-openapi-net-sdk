@@ -32,6 +32,11 @@ namespace Aliyun.Acs.ivision.Model.V20190308
         public DescribeStreamPredictsRequest()
             : base("ivision", "2019-03-08", "DescribeStreamPredicts", "ivision", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string nextPageToken;
@@ -39,10 +44,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 		private string predictIds;
 
 		private long? pageSize;
-
-		private string action;
-
-		private string showLog;
 
 		private long? currentPage;
 
@@ -87,32 +88,6 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ShowLog
-		{
-			get
-			{
-				return showLog;
-			}
-			set	
-			{
-				showLog = value;
-				DictionaryUtil.Add(QueryParameters, "ShowLog", value);
-			}
-		}
-
 		public long? CurrentPage
 		{
 			get
@@ -137,6 +112,11 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
 		}
 
         public override DescribeStreamPredictsResponse GetResponse(UnmarshallerContext unmarshallerContext)

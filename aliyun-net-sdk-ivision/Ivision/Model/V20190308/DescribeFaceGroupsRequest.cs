@@ -27,10 +27,10 @@ using Aliyun.Acs.ivision.Transform.V20190308;
 
 namespace Aliyun.Acs.ivision.Model.V20190308
 {
-    public class StopStreamPredictRequest : RpcAcsRequest<StopStreamPredictResponse>
+    public class DescribeFaceGroupsRequest : RpcAcsRequest<DescribeFaceGroupsResponse>
     {
-        public StopStreamPredictRequest()
-            : base("ivision", "2019-03-08", "StopStreamPredict", "ivision", "openAPI")
+        public DescribeFaceGroupsRequest()
+            : base("ivision", "2019-03-08", "DescribeFaceGroups", "ivision", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,20 +39,50 @@ namespace Aliyun.Acs.ivision.Model.V20190308
             }
         }
 
-		private string predictId;
+		private string nextPageToken;
+
+		private long? pageSize;
+
+		private long? currentPage;
 
 		private long? ownerId;
 
-		public string PredictId
+		public string NextPageToken
 		{
 			get
 			{
-				return predictId;
+				return nextPageToken;
 			}
 			set	
 			{
-				predictId = value;
-				DictionaryUtil.Add(QueryParameters, "PredictId", value);
+				nextPageToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextPageToken", value);
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public long? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
@@ -69,9 +99,14 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			}
 		}
 
-        public override StopStreamPredictResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeFaceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StopStreamPredictResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeFaceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

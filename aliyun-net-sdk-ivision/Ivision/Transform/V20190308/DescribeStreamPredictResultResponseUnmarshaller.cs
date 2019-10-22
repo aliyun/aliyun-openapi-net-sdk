@@ -43,45 +43,10 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 				streamPredictData.PredictId = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictId");
 				streamPredictData.ModelId = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].ModelId");
 				streamPredictData.DataUrl = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].DataUrl");
-				streamPredictData.StreamTimestamp = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].StreamTimestamp");
+				streamPredictData.Timestamp = context.LongValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].Timestamp");
 				streamPredictData.PredictTime = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictTime");
 				streamPredictData.Status = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].Status");
-
-				List<DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData.DescribeStreamPredictResult_ResultStatisticsItem> streamPredictData_resultStatistics = new List<DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData.DescribeStreamPredictResult_ResultStatisticsItem>();
-				for (int j = 0; j < context.Length("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].ResultStatistics.Length"); j++) {
-					DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData.DescribeStreamPredictResult_ResultStatisticsItem resultStatisticsItem = new DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData.DescribeStreamPredictResult_ResultStatisticsItem();
-					resultStatisticsItem.TagId = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].ResultStatistics["+ j +"].TagId");
-					resultStatisticsItem.TagName = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].ResultStatistics["+ j +"].TagName");
-					resultStatisticsItem.Count = context.LongValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].ResultStatistics["+ j +"].Count");
-
-					streamPredictData_resultStatistics.Add(resultStatisticsItem);
-				}
-				streamPredictData.ResultStatistics = streamPredictData_resultStatistics;
-
-				List<DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData.DescribeStreamPredictResult_PredictionResult> streamPredictData_predictionResults = new List<DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData.DescribeStreamPredictResult_PredictionResult>();
-				for (int j = 0; j < context.Length("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictionResults.Length"); j++) {
-					DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData.DescribeStreamPredictResult_PredictionResult predictionResult = new DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData.DescribeStreamPredictResult_PredictionResult();
-					predictionResult.TagId = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictionResults["+ j +"].TagId");
-					predictionResult.TagName = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictionResults["+ j +"].TagName");
-					predictionResult.Probability = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictionResults["+ j +"].Probability");
-					predictionResult.Overlap = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictionResults["+ j +"].Overlap");
-					predictionResult.RegionType = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictionResults["+ j +"].RegionType");
-
-					DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData.DescribeStreamPredictResult_PredictionResult.DescribeStreamPredictResult_Region region = new DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData.DescribeStreamPredictResult_PredictionResult.DescribeStreamPredictResult_Region();
-					region.Left = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictionResults["+ j +"].Region.Left");
-					region.Top = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictionResults["+ j +"].Region.Top");
-					region.Width = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictionResults["+ j +"].Region.Width");
-					region.Height = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictionResults["+ j +"].Region.Height");
-					predictionResult.Region = region;
-
-					DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData.DescribeStreamPredictResult_PredictionResult.DescribeStreamPredictResult_Properties properties = new DescribeStreamPredictResultResponse.DescribeStreamPredictResult_StreamPredictData.DescribeStreamPredictResult_PredictionResult.DescribeStreamPredictResult_Properties();
-					properties.WithGloves = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictionResults["+ j +"].Properties.WithGloves");
-					properties.WithGlovesProbability = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictionResults["+ j +"].Properties.WithGlovesProbability");
-					predictionResult.Properties = properties;
-
-					streamPredictData_predictionResults.Add(predictionResult);
-				}
-				streamPredictData.PredictionResults = streamPredictData_predictionResults;
+				streamPredictData.PredictResult = context.StringValue("DescribeStreamPredictResult.StreamPredictDatas["+ i +"].PredictResult");
 
 				describeStreamPredictResultResponse_streamPredictDatas.Add(streamPredictData);
 			}

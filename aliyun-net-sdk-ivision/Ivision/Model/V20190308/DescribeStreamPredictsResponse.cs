@@ -122,6 +122,8 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 			private string probabilityThresholds;
 
+			private string detectIntervals;
+
 			private string output;
 
 			private string notify;
@@ -189,6 +191,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				set	
 				{
 					probabilityThresholds = value;
+				}
+			}
+
+			public string DetectIntervals
+			{
+				get
+				{
+					return detectIntervals;
+				}
+				set	
+				{
+					detectIntervals = value;
 				}
 			}
 
