@@ -82,6 +82,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string regionId;
 
+			private string auditStatus;
+
 			private GetImageInfo_Mezzanine mezzanine;
 
 			public string ImageId
@@ -237,6 +239,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string AuditStatus
+			{
+				get
+				{
+					return auditStatus;
+				}
+				set	
+				{
+					auditStatus = value;
 				}
 			}
 

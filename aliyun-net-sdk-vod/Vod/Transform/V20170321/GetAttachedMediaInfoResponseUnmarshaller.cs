@@ -49,7 +49,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				attachedMedia.URL = context.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].URL");
 				attachedMedia.Description = context.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].Description");
 				attachedMedia.FileSize = context.LongValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].FileSize");
-				attachedMedia.StorageLocation = context.LongValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].StorageLocation");
+				attachedMedia.StorageLocation = context.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].StorageLocation");
 				attachedMedia.CreationTime = context.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].CreationTime");
 				attachedMedia.ModificationTime = context.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].ModificationTime");
 				attachedMedia.AppId = context.StringValue("GetAttachedMediaInfo.AttachedMediaList["+ i +"].AppId");

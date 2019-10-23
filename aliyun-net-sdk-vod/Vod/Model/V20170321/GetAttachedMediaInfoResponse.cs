@@ -84,7 +84,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private long? fileSize;
 
-			private long? storageLocation;
+			private string storageLocation;
 
 			private string creationTime;
 
@@ -186,7 +186,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public long? StorageLocation
+			public string StorageLocation
 			{
 				get
 				{

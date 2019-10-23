@@ -42,14 +42,14 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 
 				DescribePlayUserTotalResponse.DescribePlayUserTotal_UserPlayStatisTotal.DescribePlayUserTotal_VV vV = new DescribePlayUserTotalResponse.DescribePlayUserTotal_UserPlayStatisTotal.DescribePlayUserTotal_VV();
 				vV.Android = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.Android");
-				vV.IOS = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.IOS");
+				vV.IOS = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.iOS");
 				vV.Flash = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.Flash");
 				vV.HTML5 = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].VV.HTML5");
 				userPlayStatisTotal.VV = vV;
 
 				DescribePlayUserTotalResponse.DescribePlayUserTotal_UserPlayStatisTotal.DescribePlayUserTotal_UV uV = new DescribePlayUserTotalResponse.DescribePlayUserTotal_UserPlayStatisTotal.DescribePlayUserTotal_UV();
 				uV.Android = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.Android");
-				uV.IOS = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.IOS");
+				uV.IOS = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.iOS");
 				uV.Flash = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.Flash");
 				uV.HTML5 = context.StringValue("DescribePlayUserTotal.UserPlayStatisTotals["+ i +"].UV.HTML5");
 				userPlayStatisTotal.UV = uV;

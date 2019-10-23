@@ -32,6 +32,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
         public SubmitTranscodeJobsRequest()
             : base("vod", "2017-03-21", "SubmitTranscodeJobs", "vod", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -51,6 +56,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string pipelineId;
 
 		private string templateGroupId;
+
+		private string fileUrl;
 
 		private string encryptConfig;
 
@@ -168,6 +175,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				templateGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateGroupId", value);
+			}
+		}
+
+		public string FileUrl
+		{
+			get
+			{
+				return fileUrl;
+			}
+			set	
+			{
+				fileUrl = value;
+				DictionaryUtil.Add(QueryParameters, "FileUrl", value);
 			}
 		}
 

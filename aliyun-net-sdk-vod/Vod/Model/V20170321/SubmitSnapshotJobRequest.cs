@@ -32,6 +32,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
         public SubmitSnapshotJobRequest()
             : base("vod", "2017-03-21", "SubmitSnapshotJob", "vod", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -55,6 +60,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private long? ownerId;
 
 		private string width;
+
+		private string fileUrl;
 
 		private long? interval;
 
@@ -198,6 +205,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				width = value;
 				DictionaryUtil.Add(QueryParameters, "Width", value);
+			}
+		}
+
+		public string FileUrl
+		{
+			get
+			{
+				return fileUrl;
+			}
+			set	
+			{
+				fileUrl = value;
+				DictionaryUtil.Add(QueryParameters, "FileUrl", value);
 			}
 		}
 

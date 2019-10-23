@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetVideoInfoRequest : RpcAcsRequest<GetVideoInfoResponse>
+    public class SubmitDynamicImageJobRequest : RpcAcsRequest<SubmitDynamicImageJobResponse>
     {
-        public GetVideoInfoRequest()
-            : base("vod", "2017-03-21", "GetVideoInfo", "vod", "openAPI")
+        public SubmitDynamicImageJobRequest()
+            : base("vod", "2017-03-21", "SubmitDynamicImageJob", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
+		private string dynamicImageTemplateId;
+
 		private string resourceOwnerAccount;
 
 		private string videoId;
 
-		private long? ownerId;
+		private string overrideParams;
 
-		private string additionType;
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string DynamicImageTemplateId
+		{
+			get
+			{
+				return dynamicImageTemplateId;
+			}
+			set	
+			{
+				dynamicImageTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "DynamicImageTemplateId", value);
 			}
 		}
 
@@ -88,6 +103,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string OverrideParams
+		{
+			get
+			{
+				return overrideParams;
+			}
+			set	
+			{
+				overrideParams = value;
+				DictionaryUtil.Add(QueryParameters, "OverrideParams", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -101,22 +129,14 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AdditionType
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return additionType;
-			}
-			set	
-			{
-				additionType = value;
-				DictionaryUtil.Add(QueryParameters, "AdditionType", value);
-			}
+			return false;
 		}
 
-        public override GetVideoInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SubmitDynamicImageJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetVideoInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitDynamicImageJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

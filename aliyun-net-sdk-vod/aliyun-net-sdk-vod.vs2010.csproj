@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{598ebbb3-9d40-4d44-96c4-826d7b0d5757}</ProjectGuid>
+    <ProjectGuid>{dc00450c-1a6a-4a2a-b4e6-2958da6e2ad6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -222,8 +222,6 @@
 	<Compile Include="Vod\Model\V20170321\ListVodTemplateResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\ListWatermarkRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\ListWatermarkResponse.cs" />
-	<Compile Include="Vod\Model\V20170321\ModifyVodDomainSchdmByPropertyRequest.cs" />
-	<Compile Include="Vod\Model\V20170321\ModifyVodDomainSchdmByPropertyResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\MoveAppResourceRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\MoveAppResourceResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\PreloadVodObjectCachesRequest.cs" />
@@ -258,12 +256,16 @@
 	<Compile Include="Vod\Model\V20170321\SubmitAIJobResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitAIMediaAuditJobRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitAIMediaAuditJobResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\SubmitDynamicImageJobRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\SubmitDynamicImageJobResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitPreprocessJobsRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitPreprocessJobsResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitSnapshotJobRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitSnapshotJobResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitTranscodeJobsRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\SubmitTranscodeJobsResponse.cs" />
+	<Compile Include="Vod\Model\V20170321\SubmitWorkflowJobRequest.cs" />
+	<Compile Include="Vod\Model\V20170321\SubmitWorkflowJobResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\UpdateAITemplateRequest.cs" />
 	<Compile Include="Vod\Model\V20170321\UpdateAITemplateResponse.cs" />
 	<Compile Include="Vod\Model\V20170321\UpdateAppInfoRequest.cs" />
@@ -381,7 +383,6 @@
 	<Compile Include="Vod\Transform\V20170321\ListTranscodeTemplateGroupResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\ListVodTemplateResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\ListWatermarkResponseUnmarshaller.cs" />
-	<Compile Include="Vod\Transform\V20170321\ModifyVodDomainSchdmByPropertyResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\MoveAppResourceResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\PreloadVodObjectCachesResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\ProduceEditingProjectVideoResponseUnmarshaller.cs" />
@@ -399,9 +400,11 @@
 	<Compile Include="Vod\Transform\V20170321\SetVodDomainCertificateResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SubmitAIJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SubmitAIMediaAuditJobResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\SubmitDynamicImageJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SubmitPreprocessJobsResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SubmitSnapshotJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\SubmitTranscodeJobsResponseUnmarshaller.cs" />
+	<Compile Include="Vod\Transform\V20170321\SubmitWorkflowJobResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\UpdateAITemplateResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\UpdateAppInfoResponseUnmarshaller.cs" />
 	<Compile Include="Vod\Transform\V20170321\UpdateAttachedMediaInfosResponseUnmarshaller.cs" />

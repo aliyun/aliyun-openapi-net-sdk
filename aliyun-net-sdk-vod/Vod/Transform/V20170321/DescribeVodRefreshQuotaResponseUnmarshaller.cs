@@ -39,7 +39,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			describeVodRefreshQuotaResponse.PreloadQuota = context.StringValue("DescribeVodRefreshQuota.PreloadQuota");
 			describeVodRefreshQuotaResponse.BlockQuota = context.StringValue("DescribeVodRefreshQuota.BlockQuota");
 			describeVodRefreshQuotaResponse.PreloadRemain = context.StringValue("DescribeVodRefreshQuota.PreloadRemain");
-			describeVodRefreshQuotaResponse.BlockRemain = context.StringValue("DescribeVodRefreshQuota.BlockRemain");
+			describeVodRefreshQuotaResponse.BlockRemain = context.StringValue("DescribeVodRefreshQuota.blockRemain");
         
 			return describeVodRefreshQuotaResponse;
         }

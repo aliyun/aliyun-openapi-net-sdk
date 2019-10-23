@@ -41,7 +41,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			for (int i = 0; i < context.Length("DescribeVodDomainTrafficData.TrafficDataPerInterval.Length"); i++) {
 				DescribeVodDomainTrafficDataResponse.DescribeVodDomainTrafficData_DataModule dataModule = new DescribeVodDomainTrafficDataResponse.DescribeVodDomainTrafficData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"]._Value");
+				dataModule._Value = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].Value");
 				dataModule.DomesticValue = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].DomesticValue");
 				dataModule.OverseasValue = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].OverseasValue");
 				dataModule.HttpsValue = context.StringValue("DescribeVodDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsValue");

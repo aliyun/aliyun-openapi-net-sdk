@@ -47,6 +47,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 			imageInfo.Status = context.StringValue("GetImageInfo.ImageInfo.Status");
 			imageInfo.AppId = context.StringValue("GetImageInfo.ImageInfo.AppId");
 			imageInfo.RegionId = context.StringValue("GetImageInfo.ImageInfo.RegionId");
+			imageInfo.AuditStatus = context.StringValue("GetImageInfo.ImageInfo.AuditStatus");
 
 			GetImageInfoResponse.GetImageInfo_ImageInfo.GetImageInfo_Mezzanine mezzanine = new GetImageInfoResponse.GetImageInfo_ImageInfo.GetImageInfo_Mezzanine();
 			mezzanine.OriginalFileName = context.StringValue("GetImageInfo.ImageInfo.Mezzanine.OriginalFileName");

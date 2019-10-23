@@ -32,6 +32,11 @@ namespace Aliyun.Acs.vod.Model.V20170321
         public UpdateVodDomainRequest()
             : base("vod", "2017-03-21", "UpdateVodDomain", "vod", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string topLevelDomain;

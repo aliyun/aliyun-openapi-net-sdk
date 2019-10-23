@@ -32,17 +32,16 @@ namespace Aliyun.Acs.vod.Model.V20170321
         public GetPlayInfoRequest()
             : base("vod", "2017-03-21", "GetPlayInfo", "vod", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string formats;
-
-		private string channel;
-
-		private string playerVersion;
-
-		private string rand;
 
 		private string reAuthInfo;
 
@@ -63,8 +62,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private long? ownerId;
 
 		private string resultType;
-
-		private string authInfo;
 
 		public long? ResourceOwnerId
 		{
@@ -89,45 +86,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				formats = value;
 				DictionaryUtil.Add(QueryParameters, "Formats", value);
-			}
-		}
-
-		public string Channel
-		{
-			get
-			{
-				return channel;
-			}
-			set	
-			{
-				channel = value;
-				DictionaryUtil.Add(QueryParameters, "Channel", value);
-			}
-		}
-
-		public string PlayerVersion
-		{
-			get
-			{
-				return playerVersion;
-			}
-			set	
-			{
-				playerVersion = value;
-				DictionaryUtil.Add(QueryParameters, "PlayerVersion", value);
-			}
-		}
-
-		public string Rand
-		{
-			get
-			{
-				return rand;
-			}
-			set	
-			{
-				rand = value;
-				DictionaryUtil.Add(QueryParameters, "Rand", value);
 			}
 		}
 
@@ -258,19 +216,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resultType = value;
 				DictionaryUtil.Add(QueryParameters, "ResultType", value);
-			}
-		}
-
-		public string AuthInfo
-		{
-			get
-			{
-				return authInfo;
-			}
-			set	
-			{
-				authInfo = value;
-				DictionaryUtil.Add(QueryParameters, "AuthInfo", value);
 			}
 		}
 

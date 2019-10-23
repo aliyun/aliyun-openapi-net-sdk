@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class GetVideoInfoRequest : RpcAcsRequest<GetVideoInfoResponse>
+    public class SubmitWorkflowJobRequest : RpcAcsRequest<SubmitWorkflowJobResponse>
     {
-        public GetVideoInfoRequest()
-            : base("vod", "2017-03-21", "GetVideoInfo", "vod", "openAPI")
+        public SubmitWorkflowJobRequest()
+            : base("vod", "2017-03-21", "SubmitWorkflowJob", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string workflowId;
 
-		private string videoId;
+		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string additionType;
+		private string mediaId;
+
+		private string fileUrl;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string WorkflowId
+		{
+			get
+			{
+				return workflowId;
+			}
+			set	
+			{
+				workflowId = value;
+				DictionaryUtil.Add(QueryParameters, "WorkflowId", value);
 			}
 		}
 
@@ -75,19 +90,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string VideoId
-		{
-			get
-			{
-				return videoId;
-			}
-			set	
-			{
-				videoId = value;
-				DictionaryUtil.Add(QueryParameters, "VideoId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -101,22 +103,35 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string AdditionType
+		public string MediaId
 		{
 			get
 			{
-				return additionType;
+				return mediaId;
 			}
 			set	
 			{
-				additionType = value;
-				DictionaryUtil.Add(QueryParameters, "AdditionType", value);
+				mediaId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaId", value);
 			}
 		}
 
-        public override GetVideoInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string FileUrl
+		{
+			get
+			{
+				return fileUrl;
+			}
+			set	
+			{
+				fileUrl = value;
+				DictionaryUtil.Add(QueryParameters, "FileUrl", value);
+			}
+		}
+
+        public override SubmitWorkflowJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetVideoInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitWorkflowJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
