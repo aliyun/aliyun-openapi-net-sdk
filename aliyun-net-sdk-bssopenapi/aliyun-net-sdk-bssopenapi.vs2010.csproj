@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{bd3d5d74-9755-469a-a2e5-14c329b81f4b}</ProjectGuid>
+    <ProjectGuid>{b2491036-8b0c-4d58-af99-e1c0311e19af}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="BssOpenApi\Model\V20171214\AllocateCostUnitResourceRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\AllocateCostUnitResourceResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\ApplyInvoiceRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\ApplyInvoiceResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CancelOrderRequest.cs" />
@@ -50,12 +52,16 @@
 	<Compile Include="BssOpenApi\Model\V20171214\ConvertChargeTypeResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CreateAgAccountRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CreateAgAccountResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\CreateCostUnitRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\CreateCostUnitResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CreateInstanceRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CreateInstanceResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CreateResellerUserQuotaRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CreateResellerUserQuotaResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CreateResourcePackageRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\CreateResourcePackageResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\DeleteCostUnitRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\DeleteCostUnitResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\DescribePricingModuleRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\DescribePricingModuleResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\DescribeResourcePackageProductRequest.cs" />
@@ -74,6 +80,8 @@
 	<Compile Include="BssOpenApi\Model\V20171214\GetResourcePackagePriceResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\GetSubscriptionPriceRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\GetSubscriptionPriceResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\ModifyCostUnitRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\ModifyCostUnitResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\ModifyInstanceRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\ModifyInstanceResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountBalanceRequest.cs" />
@@ -88,6 +96,10 @@
 	<Compile Include="BssOpenApi\Model\V20171214\QueryBillResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryCashCouponsRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryCashCouponsResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryCostUnitRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryCostUnitResourceRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryCostUnitResourceResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryCostUnitResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryCustomerAddressListRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryCustomerAddressListResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryEvaluateListRequest.cs" />
@@ -136,14 +148,17 @@
 	<Compile Include="BssOpenApi\Model\V20171214\UnsubscribeBillToOSSResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\UpgradeResourcePackageRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\UpgradeResourcePackageResponse.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\AllocateCostUnitResourceResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\ApplyInvoiceResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\CancelOrderResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\ChangeResellerConsumeAmountResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\ConvertChargeTypeResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\CreateAgAccountResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\CreateCostUnitResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\CreateInstanceResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\CreateResellerUserQuotaResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\CreateResourcePackageResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\DeleteCostUnitResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\DescribePricingModuleResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\DescribeResourcePackageProductResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\EnableBillGenerationResponseUnmarshaller.cs" />
@@ -153,6 +168,7 @@
 	<Compile Include="BssOpenApi\Transform\V20171214\GetPayAsYouGoPriceResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\GetResourcePackagePriceResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\GetSubscriptionPriceResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\ModifyCostUnitResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\ModifyInstanceResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryAccountBalanceResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryAccountTransactionsResponseUnmarshaller.cs" />
@@ -160,6 +176,8 @@
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryBillOverviewResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryBillResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryCashCouponsResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryCostUnitResourceResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryCostUnitResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryCustomerAddressListResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryEvaluateListResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryInstanceBillResponseUnmarshaller.cs" />
