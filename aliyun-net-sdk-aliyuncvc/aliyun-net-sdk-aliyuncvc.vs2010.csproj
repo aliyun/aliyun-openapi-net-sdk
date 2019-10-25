@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{d67c4525-2014-4de2-a55b-edbac6048794}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-aliyuncvc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Aliyuncvc\Model\V20190919\ActiveMeetingCodeRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\ActiveMeetingCodeResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\CheckMeetingCodeRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\CheckMeetingCodeResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\CreateMeetingRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\CreateMeetingResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\CreateUserEvaluationsRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\CreateUserEvaluationsResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\CreateUserRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\CreateUserResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\DeleteUserRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\DeleteUserResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\ListCommoditiesRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\ListCommoditiesResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryIsvUserInfoRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryIsvUserInfoResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryMeetingInfoRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryMeetingInfoResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryMemberRecordRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryMemberRecordResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryStatisticsRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryStatisticsResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryUserBuyAttributeRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryUserBuyAttributeResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryUserEvaluationRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryUserEvaluationResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryUserInfoRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryUserInfoResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryUserListRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\QueryUserListResponse.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\RemoveMeetingRequest.cs" />
+	<Compile Include="Aliyuncvc\Model\V20190919\RemoveMeetingResponse.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\ActiveMeetingCodeResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\CheckMeetingCodeResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\CreateMeetingResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\CreateUserEvaluationsResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\CreateUserResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\DeleteUserResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\ListCommoditiesResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\QueryIsvUserInfoResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\QueryMeetingInfoResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\QueryMemberRecordResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\QueryStatisticsResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\QueryUserBuyAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\QueryUserEvaluationResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\QueryUserInfoResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\QueryUserListResponseUnmarshaller.cs" />
+	<Compile Include="Aliyuncvc\Transform\V20190919\RemoveMeetingResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
