@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class CloseDBClusterMigrationRequest : RpcAcsRequest<CloseDBClusterMigrationResponse>
+    public class DescribeDBClusterPerformanceRequest : RpcAcsRequest<DescribeDBClusterPerformanceResponse>
     {
-        public CloseDBClusterMigrationRequest()
-            : base("polardb", "2017-08-01", "CloseDBClusterMigration", "polardb", "openAPI")
+        public DescribeDBClusterPerformanceRequest()
+            : base("polardb", "2017-08-01", "DescribeDBClusterPerformance", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,41 +39,37 @@ namespace Aliyun.Acs.polardb.Model.V20170801
             }
         }
 
-		private long? resourceOwnerId;
+		private string startTime;
 
-		private string resourceOwnerAccount;
+		private string key;
 
 		private string dBClusterId;
 
-		private string ownerAccount;
+		private string endTime;
 
-		private long? ownerId;
-
-		private bool? continueEnableBinlog;
-
-		public long? ResourceOwnerId
+		public string StartTime
 		{
 			get
 			{
-				return resourceOwnerId;
+				return startTime;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string Key
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return key;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				key = value;
+				DictionaryUtil.Add(QueryParameters, "Key", value);
 			}
 		}
 
@@ -90,53 +86,22 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string OwnerAccount
+		public string EndTime
 		{
 			get
 			{
-				return ownerAccount;
+				return endTime;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public bool? ContinueEnableBinlog
-		{
-			get
-			{
-				return continueEnableBinlog;
-			}
-			set	
-			{
-				continueEnableBinlog = value;
-				DictionaryUtil.Add(QueryParameters, "ContinueEnableBinlog", value.ToString());
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override CloseDBClusterMigrationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDBClusterPerformanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CloseDBClusterMigrationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDBClusterPerformanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

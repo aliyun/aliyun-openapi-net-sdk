@@ -59,7 +59,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			for (int i = 0; i < context.Length("DescribeDBClusterAttribute.Tags.Length"); i++) {
 				DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_Tag tag = new DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_Tag();
 				tag.Key = context.StringValue("DescribeDBClusterAttribute.Tags["+ i +"].Key");
-				tag._Value = context.StringValue("DescribeDBClusterAttribute.Tags["+ i +"]._Value");
+				tag._Value = context.StringValue("DescribeDBClusterAttribute.Tags["+ i +"].Value");
 
 				describeDBClusterAttributeResponse_tags.Add(tag);
 			}
@@ -76,6 +76,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBNode.DBNodeRole = context.StringValue("DescribeDBClusterAttribute.DBNodes["+ i +"].DBNodeRole");
 				dBNode.MaxIOPS = context.IntegerValue("DescribeDBClusterAttribute.DBNodes["+ i +"].MaxIOPS");
 				dBNode.MaxConnections = context.IntegerValue("DescribeDBClusterAttribute.DBNodes["+ i +"].MaxConnections");
+				dBNode.FailoverPriority = context.IntegerValue("DescribeDBClusterAttribute.DBNodes["+ i +"].FailoverPriority");
 
 				describeDBClusterAttributeResponse_dBNodes.Add(dBNode);
 			}

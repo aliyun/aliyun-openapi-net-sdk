@@ -64,6 +64,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string accountType;
 
+			private string accountLockState;
+
 			private string privilegeExceeded;
 
 			private List<DescribeAccounts_DatabasePrivilege> databasePrivileges;
@@ -113,6 +115,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					accountType = value;
+				}
+			}
+
+			public string AccountLockState
+			{
+				get
+				{
+					return accountLockState;
+				}
+				set	
+				{
+					accountLockState = value;
 				}
 			}
 

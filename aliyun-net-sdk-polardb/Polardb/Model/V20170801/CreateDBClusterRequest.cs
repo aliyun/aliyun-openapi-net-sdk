@@ -49,8 +49,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBNodeClass;
 
-		private string engine;
-
 		private string creationOption;
 
 		private string sourceResourceId;
@@ -143,19 +141,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBNodeClass = value;
 				DictionaryUtil.Add(QueryParameters, "DBNodeClass", value);
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 

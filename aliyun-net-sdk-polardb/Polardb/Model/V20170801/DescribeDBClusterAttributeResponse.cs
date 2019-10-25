@@ -426,6 +426,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private int? maxConnections;
 
+			private int? failoverPriority;
+
 			public string DBNodeId
 			{
 				get
@@ -519,6 +521,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					maxConnections = value;
+				}
+			}
+
+			public int? FailoverPriority
+			{
+				get
+				{
+					return failoverPriority;
+				}
+				set	
+				{
+					failoverPriority = value;
 				}
 			}
 		}

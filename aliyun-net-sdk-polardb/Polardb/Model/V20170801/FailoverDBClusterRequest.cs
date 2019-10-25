@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class CreateDatabaseRequest : RpcAcsRequest<CreateDatabaseResponse>
+    public class FailoverDBClusterRequest : RpcAcsRequest<FailoverDBClusterResponse>
     {
-        public CreateDatabaseRequest()
-            : base("polardb", "2017-08-01", "CreateDatabase", "polardb", "openAPI")
+        public FailoverDBClusterRequest()
+            : base("polardb", "2017-08-01", "FailoverDBCluster", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,11 +41,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string accountPrivilege;
-
-		private string accountName;
-
-		private string dBDescription;
+		private string clientToken;
 
 		private string resourceOwnerAccount;
 
@@ -55,13 +51,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? ownerId;
 
-		private string collate;
-
-		private string dBName;
-
-		private string ctype;
-
-		private string characterSetName;
+		private string targetDBNodeId;
 
 		public long? ResourceOwnerId
 		{
@@ -76,42 +66,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string AccountPrivilege
+		public string ClientToken
 		{
 			get
 			{
-				return accountPrivilege;
+				return clientToken;
 			}
 			set	
 			{
-				accountPrivilege = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
-			}
-		}
-
-		public string AccountName
-		{
-			get
-			{
-				return accountName;
-			}
-			set	
-			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
-			}
-		}
-
-		public string DBDescription
-		{
-			get
-			{
-				return dBDescription;
-			}
-			set	
-			{
-				dBDescription = value;
-				DictionaryUtil.Add(QueryParameters, "DBDescription", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -167,61 +131,22 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string Collate
+		public string TargetDBNodeId
 		{
 			get
 			{
-				return collate;
+				return targetDBNodeId;
 			}
 			set	
 			{
-				collate = value;
-				DictionaryUtil.Add(QueryParameters, "Collate", value);
+				targetDBNodeId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetDBNodeId", value);
 			}
 		}
 
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
-			}
-		}
-
-		public string Ctype
-		{
-			get
-			{
-				return ctype;
-			}
-			set	
-			{
-				ctype = value;
-				DictionaryUtil.Add(QueryParameters, "Ctype", value);
-			}
-		}
-
-		public string CharacterSetName
-		{
-			get
-			{
-				return characterSetName;
-			}
-			set	
-			{
-				characterSetName = value;
-				DictionaryUtil.Add(QueryParameters, "CharacterSetName", value);
-			}
-		}
-
-        public override CreateDatabaseResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override FailoverDBClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateDatabaseResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FailoverDBClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -40,6 +40,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBAccount.AccountStatus = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountStatus");
 				dBAccount.AccountDescription = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountDescription");
 				dBAccount.AccountType = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountType");
+				dBAccount.AccountLockState = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountLockState");
 				dBAccount.PrivilegeExceeded = context.StringValue("DescribeAccounts.Accounts["+ i +"].PrivilegeExceeded");
 
 				List<DescribeAccountsResponse.DescribeAccounts_DBAccount.DescribeAccounts_DatabasePrivilege> dBAccount_databasePrivileges = new List<DescribeAccountsResponse.DescribeAccounts_DBAccount.DescribeAccounts_DatabasePrivilege>();
