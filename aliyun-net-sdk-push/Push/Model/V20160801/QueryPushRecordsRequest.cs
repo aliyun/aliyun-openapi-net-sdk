@@ -27,10 +27,10 @@ using Aliyun.Acs.Push.Transform.V20160801;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-    public class ListPushRecordsRequest : RpcAcsRequest<ListPushRecordsResponse>
+    public class QueryPushRecordsRequest : RpcAcsRequest<QueryPushRecordsResponse>
     {
-        public ListPushRecordsRequest()
-            : base("Push", "2016-08-01", "ListPushRecords", "cps", "openAPI")
+        public QueryPushRecordsRequest()
+            : base("Push", "2016-08-01", "QueryPushRecords", "cps", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,30 +39,23 @@ namespace Aliyun.Acs.Push.Model.V20160801
             }
         }
 
-		private string endTime;
-
 		private string startTime;
+
+		private string source;
+
+		private string nextToken;
 
 		private int? pageSize;
 
+		private string keyword;
+
+		private string endTime;
+
+		private string target;
+
 		private long? appKey;
 
-		private int? page;
-
 		private string pushType;
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
 
 		public string StartTime
 		{
@@ -74,6 +67,32 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string Source
+		{
+			get
+			{
+				return source;
+			}
+			set	
+			{
+				source = value;
+				DictionaryUtil.Add(QueryParameters, "Source", value);
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
@@ -90,6 +109,45 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public string Keyword
+		{
+			get
+			{
+				return keyword;
+			}
+			set	
+			{
+				keyword = value;
+				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string Target
+		{
+			get
+			{
+				return target;
+			}
+			set	
+			{
+				target = value;
+				DictionaryUtil.Add(QueryParameters, "Target", value);
+			}
+		}
+
 		public long? AppKey
 		{
 			get
@@ -100,19 +158,6 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				appKey = value;
 				DictionaryUtil.Add(QueryParameters, "AppKey", value.ToString());
-			}
-		}
-
-		public int? Page
-		{
-			get
-			{
-				return page;
-			}
-			set	
-			{
-				page = value;
-				DictionaryUtil.Add(QueryParameters, "Page", value.ToString());
 			}
 		}
 
@@ -129,9 +174,9 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-        public override ListPushRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryPushRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListPushRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryPushRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
