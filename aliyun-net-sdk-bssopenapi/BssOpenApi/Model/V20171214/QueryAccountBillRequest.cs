@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class EnableBillGenerationRequest : RpcAcsRequest<EnableBillGenerationResponse>
+    public class QueryAccountBillRequest : RpcAcsRequest<QueryAccountBillResponse>
     {
-        public EnableBillGenerationRequest()
-            : base("BssOpenApi", "2017-12-14", "EnableBillGeneration")
+        public QueryAccountBillRequest()
+            : base("BssOpenApi", "2017-12-14", "QueryAccountBill")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,44 +40,69 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
             }
         }
 
-		private string productCode;
+		private string billingCycle;
 
-		private long? ownerId;
+		private int? pageNum;
 
-		public string ProductCode
+		private long? ownerID;
+
+		private int? pageSize;
+
+		public string BillingCycle
 		{
 			get
 			{
-				return productCode;
+				return billingCycle;
 			}
 			set	
 			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+				billingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
 			}
 		}
 
-		public long? OwnerId
+		public int? PageNum
 		{
 			get
 			{
-				return ownerId;
+				return pageNum;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public long? OwnerID
 		{
-			return false;
+			get
+			{
+				return ownerID;
+			}
+			set	
+			{
+				ownerID = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerID", value.ToString());
+			}
 		}
 
-        public override EnableBillGenerationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+        public override QueryAccountBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return EnableBillGenerationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryAccountBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

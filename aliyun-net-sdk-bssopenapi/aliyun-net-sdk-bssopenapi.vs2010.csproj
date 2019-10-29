@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{b2491036-8b0c-4d58-af99-e1c0311e19af}</ProjectGuid>
+    <ProjectGuid>{a57c1586-74bc-4b02-95de-103e7ac0702c}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -86,6 +86,8 @@
 	<Compile Include="BssOpenApi\Model\V20171214\ModifyInstanceResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountBalanceRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountBalanceResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountBillRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountBillResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountTransactionsRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryAccountTransactionsResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryAvailableInstancesRequest.cs" />
@@ -171,6 +173,7 @@
 	<Compile Include="BssOpenApi\Transform\V20171214\ModifyCostUnitResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\ModifyInstanceResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryAccountBalanceResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryAccountBillResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryAccountTransactionsResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryAvailableInstancesResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryBillOverviewResponseUnmarshaller.cs" />
