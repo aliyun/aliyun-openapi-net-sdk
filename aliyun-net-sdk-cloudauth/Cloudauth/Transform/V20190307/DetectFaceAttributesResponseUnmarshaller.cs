@@ -60,11 +60,11 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 
 				DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceAttributes.DetectFaceAttributes_Gender gender = new DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceAttributes.DetectFaceAttributes_Gender();
 				gender.Score = context.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Gender.Score");
-				gender._Value = context.StringValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Gender._Value");
+				gender._Value = context.StringValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Gender.Value");
 				faceAttributes.Gender = gender;
 
 				DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceAttributes.DetectFaceAttributes_Smiling smiling = new DetectFaceAttributesResponse.DetectFaceAttributes_Data.DetectFaceAttributes_FaceAttributesDetectInfo.DetectFaceAttributes_FaceAttributes.DetectFaceAttributes_Smiling();
-				smiling._Value = context.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Smiling._Value");
+				smiling._Value = context.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Smiling.Value");
 				smiling.Threshold = context.FloatValue("DetectFaceAttributes.Data.FaceInfos["+ i +"].FaceAttributes.Smiling.Threshold");
 				faceAttributes.Smiling = smiling;
 

@@ -40,6 +40,12 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			material.IdCardName = context.StringValue("DescribeVerifyResult.Material.IdCardName");
 			material.IdCardNumber = context.StringValue("DescribeVerifyResult.Material.IdCardNumber");
 
+			List<string> material_videoUrls = new List<string>();
+			for (int i = 0; i < context.Length("DescribeVerifyResult.Material.VideoUrls.Length"); i++) {
+				material_videoUrls.Add(context.StringValue("DescribeVerifyResult.Material.VideoUrls["+ i +"]"));
+			}
+			material.VideoUrls = material_videoUrls;
+
 			DescribeVerifyResultResponse.DescribeVerifyResult_Material.DescribeVerifyResult_IdCardInfo idCardInfo = new DescribeVerifyResultResponse.DescribeVerifyResult_Material.DescribeVerifyResult_IdCardInfo();
 			idCardInfo.Number = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.Number");
 			idCardInfo.Address = context.StringValue("DescribeVerifyResult.Material.IdCardInfo.Address");

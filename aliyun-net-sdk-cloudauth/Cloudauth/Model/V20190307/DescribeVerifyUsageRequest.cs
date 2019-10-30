@@ -39,11 +39,24 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
+		private string startDate;
+
 		private string bizType;
 
 		private string endDate;
 
-		private string startDate;
+		public string StartDate
+		{
+			get
+			{
+				return startDate;
+			}
+			set	
+			{
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
+			}
+		}
 
 		public string BizType
 		{
@@ -68,19 +81,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				endDate = value;
 				DictionaryUtil.Add(QueryParameters, "EndDate", value);
-			}
-		}
-
-		public string StartDate
-		{
-			get
-			{
-				return startDate;
-			}
-			set	
-			{
-				startDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartDate", value);
 			}
 		}
 

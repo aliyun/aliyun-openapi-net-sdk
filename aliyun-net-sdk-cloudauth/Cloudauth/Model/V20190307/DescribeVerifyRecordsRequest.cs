@@ -39,25 +39,103 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
+		private string statusList;
+
+		private string startDate;
+
+		private int? pageSize;
+
+		private int? totalCount;
+
+		private int? currentPage;
+
+		private string queryId;
+
 		private string bizType;
 
 		private string idCardNum;
 
-		private int? totalCount;
-
 		private string endDate;
-
-		private string statusList;
-
-		private int? pageSize;
 
 		private string bizId;
 
-		private int? currentPage;
+		public string StatusList
+		{
+			get
+			{
+				return statusList;
+			}
+			set	
+			{
+				statusList = value;
+				DictionaryUtil.Add(QueryParameters, "StatusList", value);
+			}
+		}
 
-		private string startDate;
+		public string StartDate
+		{
+			get
+			{
+				return startDate;
+			}
+			set	
+			{
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
+			}
+		}
 
-		private string queryId;
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string QueryId
+		{
+			get
+			{
+				return queryId;
+			}
+			set	
+			{
+				queryId = value;
+				DictionaryUtil.Add(QueryParameters, "QueryId", value);
+			}
+		}
 
 		public string BizType
 		{
@@ -85,19 +163,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
-			}
-		}
-
 		public string EndDate
 		{
 			get
@@ -111,32 +176,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string StatusList
-		{
-			get
-			{
-				return statusList;
-			}
-			set	
-			{
-				statusList = value;
-				DictionaryUtil.Add(QueryParameters, "StatusList", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public string BizId
 		{
 			get
@@ -147,45 +186,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				bizId = value;
 				DictionaryUtil.Add(QueryParameters, "BizId", value);
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public string StartDate
-		{
-			get
-			{
-				return startDate;
-			}
-			set	
-			{
-				startDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartDate", value);
-			}
-		}
-
-		public string QueryId
-		{
-			get
-			{
-				return queryId;
-			}
-			set	
-			{
-				queryId = value;
-				DictionaryUtil.Add(QueryParameters, "QueryId", value);
 			}
 		}
 

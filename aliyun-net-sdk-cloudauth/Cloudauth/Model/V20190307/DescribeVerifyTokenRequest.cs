@@ -39,57 +39,29 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
-		private string idCardNumber;
-
-		private string idCardFrontImageUrl;
-
 		private string faceRetainedImageUrl;
 
 		private string userId;
 
+		private string callbackSeed;
+
+		private string idCardBackImageUrl;
+
+		private string idCardNumber;
+
+		private string idCardFrontImageUrl;
+
 		private string bizType;
 
-		private string idImageUrl;
-
 		private string passedRedirectUrl;
-
-		private string callbackSeed;
 
 		private string bizId;
 
 		private string name;
 
-		private string idCardBackImageUrl;
-
 		private string callbackUrl;
 
 		private string failedRedirectUrl;
-
-		public string IdCardNumber
-		{
-			get
-			{
-				return idCardNumber;
-			}
-			set	
-			{
-				idCardNumber = value;
-				DictionaryUtil.Add(QueryParameters, "IdCardNumber", value);
-			}
-		}
-
-		public string IdCardFrontImageUrl
-		{
-			get
-			{
-				return idCardFrontImageUrl;
-			}
-			set	
-			{
-				idCardFrontImageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "IdCardFrontImageUrl", value);
-			}
-		}
 
 		public string FaceRetainedImageUrl
 		{
@@ -117,6 +89,58 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
+		public string CallbackSeed
+		{
+			get
+			{
+				return callbackSeed;
+			}
+			set	
+			{
+				callbackSeed = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackSeed", value);
+			}
+		}
+
+		public string IdCardBackImageUrl
+		{
+			get
+			{
+				return idCardBackImageUrl;
+			}
+			set	
+			{
+				idCardBackImageUrl = value;
+				DictionaryUtil.Add(QueryParameters, "IdCardBackImageUrl", value);
+			}
+		}
+
+		public string IdCardNumber
+		{
+			get
+			{
+				return idCardNumber;
+			}
+			set	
+			{
+				idCardNumber = value;
+				DictionaryUtil.Add(QueryParameters, "IdCardNumber", value);
+			}
+		}
+
+		public string IdCardFrontImageUrl
+		{
+			get
+			{
+				return idCardFrontImageUrl;
+			}
+			set	
+			{
+				idCardFrontImageUrl = value;
+				DictionaryUtil.Add(QueryParameters, "IdCardFrontImageUrl", value);
+			}
+		}
+
 		public string BizType
 		{
 			get
@@ -130,19 +154,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string IdImageUrl
-		{
-			get
-			{
-				return idImageUrl;
-			}
-			set	
-			{
-				idImageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "IdImageUrl", value);
-			}
-		}
-
 		public string PassedRedirectUrl
 		{
 			get
@@ -153,19 +164,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				passedRedirectUrl = value;
 				DictionaryUtil.Add(QueryParameters, "PassedRedirectUrl", value);
-			}
-		}
-
-		public string CallbackSeed
-		{
-			get
-			{
-				return callbackSeed;
-			}
-			set	
-			{
-				callbackSeed = value;
-				DictionaryUtil.Add(QueryParameters, "CallbackSeed", value);
 			}
 		}
 
@@ -192,19 +190,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string IdCardBackImageUrl
-		{
-			get
-			{
-				return idCardBackImageUrl;
-			}
-			set	
-			{
-				idCardBackImageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "IdCardBackImageUrl", value);
 			}
 		}
 

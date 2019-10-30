@@ -39,32 +39,58 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
-		private string bizType;
+		private string faceImageUrl;
+
+		private string userId;
+
+		private string idCardBackImageUrl;
 
 		private string idCardNumber;
+
+		private string idCardFrontImageUrl;
+
+		private string bizType;
 
 		private string bizId;
 
 		private string name;
 
-		private string idCardFrontImageUrl;
-
-		private string idCardBackImageUrl;
-
-		private string faceImageUrl;
-
-		private string userId;
-
-		public string BizType
+		public string FaceImageUrl
 		{
 			get
 			{
-				return bizType;
+				return faceImageUrl;
 			}
 			set	
 			{
-				bizType = value;
-				DictionaryUtil.Add(QueryParameters, "BizType", value);
+				faceImageUrl = value;
+				DictionaryUtil.Add(QueryParameters, "FaceImageUrl", value);
+			}
+		}
+
+		public string UserId
+		{
+			get
+			{
+				return userId;
+			}
+			set	
+			{
+				userId = value;
+				DictionaryUtil.Add(QueryParameters, "UserId", value);
+			}
+		}
+
+		public string IdCardBackImageUrl
+		{
+			get
+			{
+				return idCardBackImageUrl;
+			}
+			set	
+			{
+				idCardBackImageUrl = value;
+				DictionaryUtil.Add(QueryParameters, "IdCardBackImageUrl", value);
 			}
 		}
 
@@ -78,6 +104,32 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				idCardNumber = value;
 				DictionaryUtil.Add(QueryParameters, "IdCardNumber", value);
+			}
+		}
+
+		public string IdCardFrontImageUrl
+		{
+			get
+			{
+				return idCardFrontImageUrl;
+			}
+			set	
+			{
+				idCardFrontImageUrl = value;
+				DictionaryUtil.Add(QueryParameters, "IdCardFrontImageUrl", value);
+			}
+		}
+
+		public string BizType
+		{
+			get
+			{
+				return bizType;
+			}
+			set	
+			{
+				bizType = value;
+				DictionaryUtil.Add(QueryParameters, "BizType", value);
 			}
 		}
 
@@ -104,58 +156,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string IdCardFrontImageUrl
-		{
-			get
-			{
-				return idCardFrontImageUrl;
-			}
-			set	
-			{
-				idCardFrontImageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "IdCardFrontImageUrl", value);
-			}
-		}
-
-		public string IdCardBackImageUrl
-		{
-			get
-			{
-				return idCardBackImageUrl;
-			}
-			set	
-			{
-				idCardBackImageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "IdCardBackImageUrl", value);
-			}
-		}
-
-		public string FaceImageUrl
-		{
-			get
-			{
-				return faceImageUrl;
-			}
-			set	
-			{
-				faceImageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "FaceImageUrl", value);
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 

@@ -41,8 +41,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string userDeviceId;
 
-		private string bizType;
-
 		private string duration;
 
 		private string expiredDay;
@@ -52,6 +50,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		private string lang;
 
 		private string deviceId;
+
+		private string bizType;
 
 		public string UserDeviceId
 		{
@@ -63,19 +63,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				userDeviceId = value;
 				DictionaryUtil.Add(QueryParameters, "UserDeviceId", value);
-			}
-		}
-
-		public string BizType
-		{
-			get
-			{
-				return bizType;
-			}
-			set	
-			{
-				bizType = value;
-				DictionaryUtil.Add(QueryParameters, "BizType", value);
 			}
 		}
 
@@ -141,6 +128,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				deviceId = value;
 				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
+			}
+		}
+
+		public string BizType
+		{
+			get
+			{
+				return bizType;
+			}
+			set	
+			{
+				bizType = value;
+				DictionaryUtil.Add(QueryParameters, "BizType", value);
 			}
 		}
 

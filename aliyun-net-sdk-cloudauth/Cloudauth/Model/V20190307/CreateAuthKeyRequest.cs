@@ -39,30 +39,17 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
-		private string bizType;
-
 		private string userDeviceId;
 
-		private string sourceIp;
-
 		private bool? test;
+
+		private string bizType;
+
+		private string sourceIp;
 
 		private int? authYears;
 
 		private string lang;
-
-		public string BizType
-		{
-			get
-			{
-				return bizType;
-			}
-			set	
-			{
-				bizType = value;
-				DictionaryUtil.Add(QueryParameters, "BizType", value);
-			}
-		}
 
 		public string UserDeviceId
 		{
@@ -77,19 +64,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
-
 		public bool? Test
 		{
 			get
@@ -100,6 +74,32 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				test = value;
 				DictionaryUtil.Add(QueryParameters, "Test", value.ToString());
+			}
+		}
+
+		public string BizType
+		{
+			get
+			{
+				return bizType;
+			}
+			set	
+			{
+				bizType = value;
+				DictionaryUtil.Add(QueryParameters, "BizType", value);
+			}
+		}
+
+		public string SourceIp
+		{
+			get
+			{
+				return sourceIp;
+			}
+			set	
+			{
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 

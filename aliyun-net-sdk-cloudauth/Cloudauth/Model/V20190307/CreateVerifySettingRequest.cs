@@ -39,28 +39,28 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
-		private string bizType;
+		private bool? guideStep;
 
 		private bool? resultStep;
 
-		private bool? guideStep;
+		private string solution;
 
 		private string bizName;
 
-		private string solution;
+		private string bizType;
 
 		private bool? privacyStep;
 
-		public string BizType
+		public bool? GuideStep
 		{
 			get
 			{
-				return bizType;
+				return guideStep;
 			}
 			set	
 			{
-				bizType = value;
-				DictionaryUtil.Add(QueryParameters, "BizType", value);
+				guideStep = value;
+				DictionaryUtil.Add(QueryParameters, "GuideStep", value.ToString());
 			}
 		}
 
@@ -77,16 +77,16 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public bool? GuideStep
+		public string Solution
 		{
 			get
 			{
-				return guideStep;
+				return solution;
 			}
 			set	
 			{
-				guideStep = value;
-				DictionaryUtil.Add(QueryParameters, "GuideStep", value.ToString());
+				solution = value;
+				DictionaryUtil.Add(QueryParameters, "Solution", value);
 			}
 		}
 
@@ -103,16 +103,16 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string Solution
+		public string BizType
 		{
 			get
 			{
-				return solution;
+				return bizType;
 			}
 			set	
 			{
-				solution = value;
-				DictionaryUtil.Add(QueryParameters, "Solution", value);
+				bizType = value;
+				DictionaryUtil.Add(QueryParameters, "BizType", value);
 			}
 		}
 

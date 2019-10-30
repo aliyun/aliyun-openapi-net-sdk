@@ -90,6 +90,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 			private string idCardNumber;
 
+			private List<string> videoUrls;
+
 			private DescribeVerifyResult_IdCardInfo idCardInfo;
 
 			public string FaceImageUrl
@@ -125,6 +127,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					idCardNumber = value;
+				}
+			}
+
+			public List<string> VideoUrls
+			{
+				get
+				{
+					return videoUrls;
+				}
+				set	
+				{
+					videoUrls = value;
 				}
 			}
 
