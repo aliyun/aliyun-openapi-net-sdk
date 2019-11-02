@@ -28,24 +28,24 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class GetRtcTokenRequest : RpcAcsRequest<GetRtcTokenResponse>
+    public class QueryRobotTaskCallDetailRequest : RpcAcsRequest<QueryRobotTaskCallDetailResponse>
     {
-        public GetRtcTokenRequest()
-            : base("Dyvmsapi", "2017-05-25", "GetRtcToken")
+        public QueryRobotTaskCallDetailRequest()
+            : base("Dyvmsapi", "2017-05-25", "QueryRobotTaskCallDetail")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string userId;
+		private string callee;
+
+		private long? taskId;
+
+		private long? queryDate;
 
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
-
-		private string deviceId;
-
-		private bool? isCustomAccount;
 
 		public long? ResourceOwnerId
 		{
@@ -60,16 +60,42 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string UserId
+		public string Callee
 		{
 			get
 			{
-				return userId;
+				return callee;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				callee = value;
+				DictionaryUtil.Add(QueryParameters, "Callee", value);
+			}
+		}
+
+		public long? TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
+			}
+		}
+
+		public long? QueryDate
+		{
+			get
+			{
+				return queryDate;
+			}
+			set	
+			{
+				queryDate = value;
+				DictionaryUtil.Add(QueryParameters, "QueryDate", value.ToString());
 			}
 		}
 
@@ -99,35 +125,9 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string DeviceId
-		{
-			get
-			{
-				return deviceId;
-			}
-			set	
-			{
-				deviceId = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
-			}
-		}
-
-		public bool? IsCustomAccount
-		{
-			get
-			{
-				return isCustomAccount;
-			}
-			set	
-			{
-				isCustomAccount = value;
-				DictionaryUtil.Add(QueryParameters, "IsCustomAccount", value.ToString());
-			}
-		}
-
-        public override GetRtcTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryRobotTaskCallDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetRtcTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryRobotTaskCallDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

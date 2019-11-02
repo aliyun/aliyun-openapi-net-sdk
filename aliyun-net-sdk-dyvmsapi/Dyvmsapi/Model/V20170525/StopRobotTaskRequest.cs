@@ -28,24 +28,20 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class GetRtcTokenRequest : RpcAcsRequest<GetRtcTokenResponse>
+    public class StopRobotTaskRequest : RpcAcsRequest<StopRobotTaskResponse>
     {
-        public GetRtcTokenRequest()
-            : base("Dyvmsapi", "2017-05-25", "GetRtcToken")
+        public StopRobotTaskRequest()
+            : base("Dyvmsapi", "2017-05-25", "StopRobotTask")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string userId;
-
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string deviceId;
-
-		private bool? isCustomAccount;
+		private long? taskId;
 
 		public long? ResourceOwnerId
 		{
@@ -57,19 +53,6 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 
@@ -99,35 +82,22 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string DeviceId
+		public long? TaskId
 		{
 			get
 			{
-				return deviceId;
+				return taskId;
 			}
 			set	
 			{
-				deviceId = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
 			}
 		}
 
-		public bool? IsCustomAccount
-		{
-			get
-			{
-				return isCustomAccount;
-			}
-			set	
-			{
-				isCustomAccount = value;
-				DictionaryUtil.Add(QueryParameters, "IsCustomAccount", value.ToString());
-			}
-		}
-
-        public override GetRtcTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override StopRobotTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetRtcTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StopRobotTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

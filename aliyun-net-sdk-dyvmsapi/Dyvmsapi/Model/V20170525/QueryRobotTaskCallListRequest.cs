@@ -28,34 +28,38 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class SingleCallByTtsRequest : RpcAcsRequest<SingleCallByTtsResponse>
+    public class QueryRobotTaskCallListRequest : RpcAcsRequest<QueryRobotTaskCallListResponse>
     {
-        public SingleCallByTtsRequest()
-            : base("Dyvmsapi", "2017-05-25", "SingleCallByTts")
+        public QueryRobotTaskCallListRequest()
+            : base("Dyvmsapi", "2017-05-25", "QueryRobotTaskCallList")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string ttsParam;
+		private string called;
 
-		private int? speed;
+		private string dialogCountTo;
 
-		private string calledNumber;
+		private string durationFrom;
 
-		private string calledShowNumber;
+		private int? pageSize;
+
+		private string taskId;
 
 		private string resourceOwnerAccount;
 
-		private string ttsCode;
+		private string dialogCountFrom;
 
-		private int? playTimes;
+		private string durationTo;
+
+		private string hangupDirection;
 
 		private long? ownerId;
 
-		private int? volume;
+		private int? pageNo;
 
-		private string outId;
+		private string callResult;
 
 		public long? ResourceOwnerId
 		{
@@ -70,55 +74,68 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string TtsParam
+		public string Called
 		{
 			get
 			{
-				return ttsParam;
+				return called;
 			}
 			set	
 			{
-				ttsParam = value;
-				DictionaryUtil.Add(QueryParameters, "TtsParam", value);
+				called = value;
+				DictionaryUtil.Add(QueryParameters, "Called", value);
 			}
 		}
 
-		public int? Speed
+		public string DialogCountTo
 		{
 			get
 			{
-				return speed;
+				return dialogCountTo;
 			}
 			set	
 			{
-				speed = value;
-				DictionaryUtil.Add(QueryParameters, "Speed", value.ToString());
+				dialogCountTo = value;
+				DictionaryUtil.Add(QueryParameters, "DialogCountTo", value);
 			}
 		}
 
-		public string CalledNumber
+		public string DurationFrom
 		{
 			get
 			{
-				return calledNumber;
+				return durationFrom;
 			}
 			set	
 			{
-				calledNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
+				durationFrom = value;
+				DictionaryUtil.Add(QueryParameters, "DurationFrom", value);
 			}
 		}
 
-		public string CalledShowNumber
+		public int? PageSize
 		{
 			get
 			{
-				return calledShowNumber;
+				return pageSize;
 			}
 			set	
 			{
-				calledShowNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CalledShowNumber", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
@@ -135,29 +152,42 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string TtsCode
+		public string DialogCountFrom
 		{
 			get
 			{
-				return ttsCode;
+				return dialogCountFrom;
 			}
 			set	
 			{
-				ttsCode = value;
-				DictionaryUtil.Add(QueryParameters, "TtsCode", value);
+				dialogCountFrom = value;
+				DictionaryUtil.Add(QueryParameters, "DialogCountFrom", value);
 			}
 		}
 
-		public int? PlayTimes
+		public string DurationTo
 		{
 			get
 			{
-				return playTimes;
+				return durationTo;
 			}
 			set	
 			{
-				playTimes = value;
-				DictionaryUtil.Add(QueryParameters, "PlayTimes", value.ToString());
+				durationTo = value;
+				DictionaryUtil.Add(QueryParameters, "DurationTo", value);
+			}
+		}
+
+		public string HangupDirection
+		{
+			get
+			{
+				return hangupDirection;
+			}
+			set	
+			{
+				hangupDirection = value;
+				DictionaryUtil.Add(QueryParameters, "HangupDirection", value);
 			}
 		}
 
@@ -174,35 +204,35 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public int? Volume
+		public int? PageNo
 		{
 			get
 			{
-				return volume;
+				return pageNo;
 			}
 			set	
 			{
-				volume = value;
-				DictionaryUtil.Add(QueryParameters, "Volume", value.ToString());
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 
-		public string OutId
+		public string CallResult
 		{
 			get
 			{
-				return outId;
+				return callResult;
 			}
 			set	
 			{
-				outId = value;
-				DictionaryUtil.Add(QueryParameters, "OutId", value);
+				callResult = value;
+				DictionaryUtil.Add(QueryParameters, "CallResult", value);
 			}
 		}
 
-        public override SingleCallByTtsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryRobotTaskCallListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SingleCallByTtsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryRobotTaskCallListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

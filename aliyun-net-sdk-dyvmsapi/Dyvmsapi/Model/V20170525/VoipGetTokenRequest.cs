@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dyvmsapi;
 using Aliyun.Acs.Dyvmsapi.Transform;
 using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
@@ -40,15 +41,11 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 
 		private string resourceOwnerAccount;
 
-		private string action;
-
 		private long? ownerId;
 
 		private string deviceId;
 
 		private bool? isCustomAccount;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -89,19 +86,6 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -138,19 +122,6 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				isCustomAccount = value;
 				DictionaryUtil.Add(QueryParameters, "IsCustomAccount", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

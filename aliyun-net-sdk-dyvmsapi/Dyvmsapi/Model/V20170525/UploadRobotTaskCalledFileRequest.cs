@@ -28,24 +28,26 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class GetRtcTokenRequest : RpcAcsRequest<GetRtcTokenResponse>
+    public class UploadRobotTaskCalledFileRequest : RpcAcsRequest<UploadRobotTaskCalledFileResponse>
     {
-        public GetRtcTokenRequest()
-            : base("Dyvmsapi", "2017-05-25", "GetRtcToken")
+        public UploadRobotTaskCalledFileRequest()
+            : base("Dyvmsapi", "2017-05-25", "UploadRobotTaskCalledFile")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string userId;
+		private string ttsParamHead;
+
+		private string ttsParam;
+
+		private string calledNumber;
+
+		private long? id;
 
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
-
-		private string deviceId;
-
-		private bool? isCustomAccount;
 
 		public long? ResourceOwnerId
 		{
@@ -60,16 +62,55 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string UserId
+		public string TtsParamHead
 		{
 			get
 			{
-				return userId;
+				return ttsParamHead;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				ttsParamHead = value;
+				DictionaryUtil.Add(QueryParameters, "TtsParamHead", value);
+			}
+		}
+
+		public string TtsParam
+		{
+			get
+			{
+				return ttsParam;
+			}
+			set	
+			{
+				ttsParam = value;
+				DictionaryUtil.Add(QueryParameters, "TtsParam", value);
+			}
+		}
+
+		public string CalledNumber
+		{
+			get
+			{
+				return calledNumber;
+			}
+			set	
+			{
+				calledNumber = value;
+				DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
+			}
+		}
+
+		public long? Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
+				DictionaryUtil.Add(QueryParameters, "Id", value.ToString());
 			}
 		}
 
@@ -99,35 +140,9 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string DeviceId
-		{
-			get
-			{
-				return deviceId;
-			}
-			set	
-			{
-				deviceId = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
-			}
-		}
-
-		public bool? IsCustomAccount
-		{
-			get
-			{
-				return isCustomAccount;
-			}
-			set	
-			{
-				isCustomAccount = value;
-				DictionaryUtil.Add(QueryParameters, "IsCustomAccount", value.ToString());
-			}
-		}
-
-        public override GetRtcTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UploadRobotTaskCalledFileResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetRtcTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UploadRobotTaskCalledFileResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

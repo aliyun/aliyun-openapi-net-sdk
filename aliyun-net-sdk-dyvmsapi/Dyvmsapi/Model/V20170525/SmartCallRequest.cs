@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dyvmsapi;
 using Aliyun.Acs.Dyvmsapi.Transform;
 using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
@@ -42,7 +43,7 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 
 		private int? speed;
 
-		private string accessKeyId;
+		private string asrBaseId;
 
 		private int? sessionTimeout;
 
@@ -55,8 +56,6 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 		private string voiceCode;
 
 		private string calledShowNumber;
-
-		private string action;
 
 		private int? actionCodeTimeBreak;
 
@@ -136,16 +135,16 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string AccessKeyId
+		public string AsrBaseId
 		{
 			get
 			{
-				return accessKeyId;
+				return asrBaseId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				asrBaseId = value;
+				DictionaryUtil.Add(QueryParameters, "AsrBaseId", value);
 			}
 		}
 
@@ -224,19 +223,6 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				calledShowNumber = value;
 				DictionaryUtil.Add(QueryParameters, "CalledShowNumber", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

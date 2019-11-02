@@ -28,40 +28,38 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class BatchRobotSmartCallRequest : RpcAcsRequest<BatchRobotSmartCallResponse>
+    public class CreateRobotTaskRequest : RpcAcsRequest<CreateRobotTaskResponse>
     {
-        public BatchRobotSmartCallRequest()
-            : base("Dyvmsapi", "2017-05-25", "BatchRobotSmartCall")
+        public CreateRobotTaskRequest()
+            : base("Dyvmsapi", "2017-05-25", "CreateRobotTask")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private bool? earlyMediaAsr;
-
-		private string ttsParamHead;
+		private string recallStateCodes;
 
 		private string taskName;
 
-		private string ttsParam;
-
-		private string calledNumber;
-
-		private string calledShowNumber;
+		private int? recallTimes;
 
 		private bool? isSelfLine;
 
 		private string resourceOwnerAccount;
 
+		private int? retryType;
+
 		private long? ownerId;
 
-		private string dialogId;
+		private long? dialogId;
 
-		private long? scheduleTime;
+		private string caller;
+
+		private bool? numberStatusIdent;
 
 		private string corpName;
 
-		private bool? scheduleCall;
+		private int? recallInterval;
 
 		public long? ResourceOwnerId
 		{
@@ -76,29 +74,16 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public bool? EarlyMediaAsr
+		public string RecallStateCodes
 		{
 			get
 			{
-				return earlyMediaAsr;
+				return recallStateCodes;
 			}
 			set	
 			{
-				earlyMediaAsr = value;
-				DictionaryUtil.Add(QueryParameters, "EarlyMediaAsr", value.ToString());
-			}
-		}
-
-		public string TtsParamHead
-		{
-			get
-			{
-				return ttsParamHead;
-			}
-			set	
-			{
-				ttsParamHead = value;
-				DictionaryUtil.Add(QueryParameters, "TtsParamHead", value);
+				recallStateCodes = value;
+				DictionaryUtil.Add(QueryParameters, "RecallStateCodes", value);
 			}
 		}
 
@@ -115,42 +100,16 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string TtsParam
+		public int? RecallTimes
 		{
 			get
 			{
-				return ttsParam;
+				return recallTimes;
 			}
 			set	
 			{
-				ttsParam = value;
-				DictionaryUtil.Add(QueryParameters, "TtsParam", value);
-			}
-		}
-
-		public string CalledNumber
-		{
-			get
-			{
-				return calledNumber;
-			}
-			set	
-			{
-				calledNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
-			}
-		}
-
-		public string CalledShowNumber
-		{
-			get
-			{
-				return calledShowNumber;
-			}
-			set	
-			{
-				calledShowNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CalledShowNumber", value);
+				recallTimes = value;
+				DictionaryUtil.Add(QueryParameters, "RecallTimes", value.ToString());
 			}
 		}
 
@@ -180,6 +139,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
+		public int? RetryType
+		{
+			get
+			{
+				return retryType;
+			}
+			set	
+			{
+				retryType = value;
+				DictionaryUtil.Add(QueryParameters, "RetryType", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -193,7 +165,7 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string DialogId
+		public long? DialogId
 		{
 			get
 			{
@@ -202,20 +174,33 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			set	
 			{
 				dialogId = value;
-				DictionaryUtil.Add(QueryParameters, "DialogId", value);
+				DictionaryUtil.Add(QueryParameters, "DialogId", value.ToString());
 			}
 		}
 
-		public long? ScheduleTime
+		public string Caller
 		{
 			get
 			{
-				return scheduleTime;
+				return caller;
 			}
 			set	
 			{
-				scheduleTime = value;
-				DictionaryUtil.Add(QueryParameters, "ScheduleTime", value.ToString());
+				caller = value;
+				DictionaryUtil.Add(QueryParameters, "Caller", value);
+			}
+		}
+
+		public bool? NumberStatusIdent
+		{
+			get
+			{
+				return numberStatusIdent;
+			}
+			set	
+			{
+				numberStatusIdent = value;
+				DictionaryUtil.Add(QueryParameters, "NumberStatusIdent", value.ToString());
 			}
 		}
 
@@ -232,22 +217,22 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public bool? ScheduleCall
+		public int? RecallInterval
 		{
 			get
 			{
-				return scheduleCall;
+				return recallInterval;
 			}
 			set	
 			{
-				scheduleCall = value;
-				DictionaryUtil.Add(QueryParameters, "ScheduleCall", value.ToString());
+				recallInterval = value;
+				DictionaryUtil.Add(QueryParameters, "RecallInterval", value.ToString());
 			}
 		}
 
-        public override BatchRobotSmartCallResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateRobotTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchRobotSmartCallResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateRobotTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,24 +28,37 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class GetRtcTokenRequest : RpcAcsRequest<GetRtcTokenResponse>
+    public class SmartCallOperateRequest : RpcAcsRequest<SmartCallOperateResponse>
     {
-        public GetRtcTokenRequest()
-            : base("Dyvmsapi", "2017-05-25", "GetRtcToken")
+        public SmartCallOperateRequest()
+            : base("Dyvmsapi", "2017-05-25", "SmartCallOperate")
         {
         }
 
+		private string callId;
+
 		private long? resourceOwnerId;
 
-		private string userId;
+		private string param;
 
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string deviceId;
+		private string command;
 
-		private bool? isCustomAccount;
+		public string CallId
+		{
+			get
+			{
+				return callId;
+			}
+			set	
+			{
+				callId = value;
+				DictionaryUtil.Add(QueryParameters, "CallId", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -60,16 +73,16 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string UserId
+		public string Param
 		{
 			get
 			{
-				return userId;
+				return param;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				param = value;
+				DictionaryUtil.Add(QueryParameters, "Param", value);
 			}
 		}
 
@@ -99,35 +112,22 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string DeviceId
+		public string Command
 		{
 			get
 			{
-				return deviceId;
+				return command;
 			}
 			set	
 			{
-				deviceId = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
+				command = value;
+				DictionaryUtil.Add(QueryParameters, "Command", value);
 			}
 		}
 
-		public bool? IsCustomAccount
-		{
-			get
-			{
-				return isCustomAccount;
-			}
-			set	
-			{
-				isCustomAccount = value;
-				DictionaryUtil.Add(QueryParameters, "IsCustomAccount", value.ToString());
-			}
-		}
-
-        public override GetRtcTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SmartCallOperateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetRtcTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SmartCallOperateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

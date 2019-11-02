@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Dyvmsapi;
 using Aliyun.Acs.Dyvmsapi.Transform;
 using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
@@ -34,11 +35,9 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
         {
         }
 
-		private int? volume;
-
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private int? speed;
 
 		private string calledNumber;
 
@@ -46,30 +45,15 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 
 		private string calledShowNumber;
 
+		private string resourceOwnerAccount;
+
 		private int? playTimes;
-
-		private string action;
-
-		private string outId;
 
 		private long? ownerId;
 
-		private int? speed;
+		private int? volume;
 
-		private string accessKeyId;
-
-		public int? Volume
-		{
-			get
-			{
-				return volume;
-			}
-			set	
-			{
-				volume = value;
-				DictionaryUtil.Add(QueryParameters, "Volume", value.ToString());
-			}
-		}
+		private string outId;
 
 		public long? ResourceOwnerId
 		{
@@ -84,16 +68,16 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public int? Speed
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return speed;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				speed = value;
+				DictionaryUtil.Add(QueryParameters, "Speed", value.ToString());
 			}
 		}
 
@@ -136,6 +120,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public int? PlayTimes
 		{
 			get
@@ -146,32 +143,6 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				playTimes = value;
 				DictionaryUtil.Add(QueryParameters, "PlayTimes", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string OutId
-		{
-			get
-			{
-				return outId;
-			}
-			set	
-			{
-				outId = value;
-				DictionaryUtil.Add(QueryParameters, "OutId", value);
 			}
 		}
 
@@ -188,29 +159,29 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public int? Speed
+		public int? Volume
 		{
 			get
 			{
-				return speed;
+				return volume;
 			}
 			set	
 			{
-				speed = value;
-				DictionaryUtil.Add(QueryParameters, "Speed", value.ToString());
+				volume = value;
+				DictionaryUtil.Add(QueryParameters, "Volume", value.ToString());
 			}
 		}
 
-		public string AccessKeyId
+		public string OutId
 		{
 			get
 			{
-				return accessKeyId;
+				return outId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				outId = value;
+				DictionaryUtil.Add(QueryParameters, "OutId", value);
 			}
 		}
 

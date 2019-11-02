@@ -28,24 +28,28 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class GetRtcTokenRequest : RpcAcsRequest<GetRtcTokenResponse>
+    public class QueryRobotTaskListRequest : RpcAcsRequest<QueryRobotTaskListResponse>
     {
-        public GetRtcTokenRequest()
-            : base("Dyvmsapi", "2017-05-25", "GetRtcToken")
+        public QueryRobotTaskListRequest()
+            : base("Dyvmsapi", "2017-05-25", "QueryRobotTaskList")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string userId;
+		private string taskName;
+
+		private int? pageSize;
 
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string deviceId;
+		private int? pageNo;
 
-		private bool? isCustomAccount;
+		private string time;
+
+		private string status;
 
 		public long? ResourceOwnerId
 		{
@@ -60,16 +64,29 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string UserId
+		public string TaskName
 		{
 			get
 			{
-				return userId;
+				return taskName;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				taskName = value;
+				DictionaryUtil.Add(QueryParameters, "TaskName", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -99,35 +116,48 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string DeviceId
+		public int? PageNo
 		{
 			get
 			{
-				return deviceId;
+				return pageNo;
 			}
 			set	
 			{
-				deviceId = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 
-		public bool? IsCustomAccount
+		public string Time
 		{
 			get
 			{
-				return isCustomAccount;
+				return time;
 			}
 			set	
 			{
-				isCustomAccount = value;
-				DictionaryUtil.Add(QueryParameters, "IsCustomAccount", value.ToString());
+				time = value;
+				DictionaryUtil.Add(QueryParameters, "Time", value);
 			}
 		}
 
-        public override GetRtcTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+        public override QueryRobotTaskListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetRtcTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryRobotTaskListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

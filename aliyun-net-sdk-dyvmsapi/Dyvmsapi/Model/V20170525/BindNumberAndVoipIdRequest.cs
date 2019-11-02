@@ -28,24 +28,22 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class GetRtcTokenRequest : RpcAcsRequest<GetRtcTokenResponse>
+    public class BindNumberAndVoipIdRequest : RpcAcsRequest<BindNumberAndVoipIdResponse>
     {
-        public GetRtcTokenRequest()
-            : base("Dyvmsapi", "2017-05-25", "GetRtcToken")
+        public BindNumberAndVoipIdRequest()
+            : base("Dyvmsapi", "2017-05-25", "BindNumberAndVoipId")
         {
         }
 
 		private long? resourceOwnerId;
 
-		private string userId;
-
 		private string resourceOwnerAccount;
+
+		private string phoneNumber;
 
 		private long? ownerId;
 
-		private string deviceId;
-
-		private bool? isCustomAccount;
+		private string voipId;
 
 		public long? ResourceOwnerId
 		{
@@ -57,19 +55,6 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
 			}
 		}
 
@@ -86,6 +71,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
+		public string PhoneNumber
+		{
+			get
+			{
+				return phoneNumber;
+			}
+			set	
+			{
+				phoneNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -99,35 +97,22 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string DeviceId
+		public string VoipId
 		{
 			get
 			{
-				return deviceId;
+				return voipId;
 			}
 			set	
 			{
-				deviceId = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceId", value);
+				voipId = value;
+				DictionaryUtil.Add(QueryParameters, "VoipId", value);
 			}
 		}
 
-		public bool? IsCustomAccount
-		{
-			get
-			{
-				return isCustomAccount;
-			}
-			set	
-			{
-				isCustomAccount = value;
-				DictionaryUtil.Add(QueryParameters, "IsCustomAccount", value.ToString());
-			}
-		}
-
-        public override GetRtcTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BindNumberAndVoipIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetRtcTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BindNumberAndVoipIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
