@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3256c29a-739a-44ae-aaac-c732acf3012c}</ProjectGuid>
+    <ProjectGuid>{835cdc91-cbb7-4ed2-9aaa-301fb7e4d726}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -54,6 +54,8 @@
 	<Compile Include="Dyplsapi\Model\V20170525\CreateAxgGroupResponse.cs" />
 	<Compile Include="Dyplsapi\Model\V20170525\OperateAxgGroupRequest.cs" />
 	<Compile Include="Dyplsapi\Model\V20170525\OperateAxgGroupResponse.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\OperateBlackNoRequest.cs" />
+	<Compile Include="Dyplsapi\Model\V20170525\OperateBlackNoResponse.cs" />
 	<Compile Include="Dyplsapi\Model\V20170525\QueryCallStatusRequest.cs" />
 	<Compile Include="Dyplsapi\Model\V20170525\QueryCallStatusResponse.cs" />
 	<Compile Include="Dyplsapi\Model\V20170525\QueryRecordFileDownloadUrlRequest.cs" />
@@ -77,6 +79,7 @@
 	<Compile Include="Dyplsapi\Transform\V20170525\BuySecretNoResponseUnmarshaller.cs" />
 	<Compile Include="Dyplsapi\Transform\V20170525\CreateAxgGroupResponseUnmarshaller.cs" />
 	<Compile Include="Dyplsapi\Transform\V20170525\OperateAxgGroupResponseUnmarshaller.cs" />
+	<Compile Include="Dyplsapi\Transform\V20170525\OperateBlackNoResponseUnmarshaller.cs" />
 	<Compile Include="Dyplsapi\Transform\V20170525\QueryCallStatusResponseUnmarshaller.cs" />
 	<Compile Include="Dyplsapi\Transform\V20170525\QueryRecordFileDownloadUrlResponseUnmarshaller.cs" />
 	<Compile Include="Dyplsapi\Transform\V20170525\QuerySecretNoRemainResponseUnmarshaller.cs" />
