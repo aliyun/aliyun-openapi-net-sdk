@@ -36,25 +36,25 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string databaseType;
 
-		private string period;
-
 		private string clientToken;
-
-		private string ownerId;
-
-		private int? usedTime;
 
 		private string instanceClass;
 
 		private string storageType;
 
-		private string backupMethod;
-
 		private string databaseRegion;
 
-		private string storageRegion;
-
 		private string instanceType;
+
+		private string period;
+
+		private string ownerId;
+
+		private int? usedTime;
+
+		private string backupMethod;
+
+		private string storageRegion;
 
 		private string region;
 
@@ -73,19 +73,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
-			}
-		}
-
 		public string ClientToken
 		{
 			get
@@ -96,32 +83,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
-			}
-		}
-
-		public int? UsedTime
-		{
-			get
-			{
-				return usedTime;
-			}
-			set	
-			{
-				usedTime = value;
-				DictionaryUtil.Add(QueryParameters, "UsedTime", value.ToString());
 			}
 		}
 
@@ -151,19 +112,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string BackupMethod
-		{
-			get
-			{
-				return backupMethod;
-			}
-			set	
-			{
-				backupMethod = value;
-				DictionaryUtil.Add(QueryParameters, "BackupMethod", value);
-			}
-		}
-
 		public string DatabaseRegion
 		{
 			get
@@ -177,19 +125,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string StorageRegion
-		{
-			get
-			{
-				return storageRegion;
-			}
-			set	
-			{
-				storageRegion = value;
-				DictionaryUtil.Add(QueryParameters, "StorageRegion", value);
-			}
-		}
-
 		public string InstanceType
 		{
 			get
@@ -200,6 +135,71 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				instanceType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value);
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public int? UsedTime
+		{
+			get
+			{
+				return usedTime;
+			}
+			set	
+			{
+				usedTime = value;
+				DictionaryUtil.Add(QueryParameters, "UsedTime", value.ToString());
+			}
+		}
+
+		public string BackupMethod
+		{
+			get
+			{
+				return backupMethod;
+			}
+			set	
+			{
+				backupMethod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupMethod", value);
+			}
+		}
+
+		public string StorageRegion
+		{
+			get
+			{
+				return storageRegion;
+			}
+			set	
+			{
+				storageRegion = value;
+				DictionaryUtil.Add(QueryParameters, "StorageRegion", value);
 			}
 		}
 

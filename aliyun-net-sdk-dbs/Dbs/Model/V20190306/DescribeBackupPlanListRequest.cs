@@ -36,15 +36,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
-		private int? pageSize;
-
 		private string backupPlanId;
-
-		private string region;
 
 		private int? pageNum;
 
 		private string ownerId;
+
+		private int? pageSize;
+
+		private string region;
 
 		public string ClientToken
 		{
@@ -59,19 +59,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public string BackupPlanId
 		{
 			get
@@ -82,19 +69,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				backupPlanId = value;
 				DictionaryUtil.Add(QueryParameters, "BackupPlanId", value);
-			}
-		}
-
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
@@ -121,6 +95,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 

@@ -34,41 +34,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
         {
         }
 
-		private string backupPeriod;
-
-		private string backupStartTime;
-
 		private string clientToken;
 
 		private string backupPlanId;
 
 		private string ownerId;
 
-		public string BackupPeriod
-		{
-			get
-			{
-				return backupPeriod;
-			}
-			set	
-			{
-				backupPeriod = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPeriod", value);
-			}
-		}
+		private string backupPeriod;
 
-		public string BackupStartTime
-		{
-			get
-			{
-				return backupStartTime;
-			}
-			set	
-			{
-				backupStartTime = value;
-				DictionaryUtil.Add(QueryParameters, "BackupStartTime", value);
-			}
-		}
+		private string backupStartTime;
 
 		public string ClientToken
 		{
@@ -106,6 +80,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string BackupPeriod
+		{
+			get
+			{
+				return backupPeriod;
+			}
+			set	
+			{
+				backupPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupPeriod", value);
+			}
+		}
+
+		public string BackupStartTime
+		{
+			get
+			{
+				return backupStartTime;
+			}
+			set	
+			{
+				backupStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "BackupStartTime", value);
 			}
 		}
 

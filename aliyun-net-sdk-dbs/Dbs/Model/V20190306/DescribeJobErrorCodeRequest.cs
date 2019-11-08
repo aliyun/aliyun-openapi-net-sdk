@@ -27,20 +27,20 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class ModifyBackupPlanNameRequest : RpcAcsRequest<ModifyBackupPlanNameResponse>
+    public class DescribeJobErrorCodeRequest : RpcAcsRequest<DescribeJobErrorCodeResponse>
     {
-        public ModifyBackupPlanNameRequest()
-            : base("Dbs", "2019-03-06", "ModifyBackupPlanName", "cbs", "openAPI")
+        public DescribeJobErrorCodeRequest()
+            : base("Dbs", "2019-03-06", "DescribeJobErrorCode", "cbs", "openAPI")
         {
         }
 
 		private string clientToken;
 
-		private string backupPlanId;
+		private string language;
 
 		private string ownerId;
 
-		private string backupPlanName;
+		private string taskId;
 
 		public string ClientToken
 		{
@@ -55,16 +55,16 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string BackupPlanId
+		public string Language
 		{
 			get
 			{
-				return backupPlanId;
+				return language;
 			}
 			set	
 			{
-				backupPlanId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPlanId", value);
+				language = value;
+				DictionaryUtil.Add(QueryParameters, "Language", value);
 			}
 		}
 
@@ -81,22 +81,22 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string BackupPlanName
+		public string TaskId
 		{
 			get
 			{
-				return backupPlanName;
+				return taskId;
 			}
 			set	
 			{
-				backupPlanName = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPlanName", value);
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
-        public override ModifyBackupPlanNameResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeJobErrorCodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyBackupPlanNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeJobErrorCodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

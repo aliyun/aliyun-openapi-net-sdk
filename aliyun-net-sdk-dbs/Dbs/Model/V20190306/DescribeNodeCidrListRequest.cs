@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
-		private string region;
-
 		private string ownerId;
+
+		private string region;
 
 		public string ClientToken
 		{
@@ -53,19 +53,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
 		public string OwnerId
 		{
 			get
@@ -76,6 +63,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 

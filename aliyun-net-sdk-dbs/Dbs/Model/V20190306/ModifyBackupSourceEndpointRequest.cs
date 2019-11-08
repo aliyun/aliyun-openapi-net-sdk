@@ -44,9 +44,13 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
-		private string sourceEndpointPassword;
-
 		private string backupPlanId;
+
+		private string sourceEndpointDatabaseName;
+
+		private string sourceEndpointIP;
+
+		private string sourceEndpointPassword;
 
 		private string backupObjects;
 
@@ -54,11 +58,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private int? sourceEndpointPort;
 
-		private string sourceEndpointDatabaseName;
-
 		private string sourceEndpointInstanceType;
-
-		private string sourceEndpointIP;
 
 		private string sourceEndpointOracleSID;
 
@@ -127,19 +127,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string SourceEndpointPassword
-		{
-			get
-			{
-				return sourceEndpointPassword;
-			}
-			set	
-			{
-				sourceEndpointPassword = value;
-				DictionaryUtil.Add(QueryParameters, "SourceEndpointPassword", value);
-			}
-		}
-
 		public string BackupPlanId
 		{
 			get
@@ -150,6 +137,45 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				backupPlanId = value;
 				DictionaryUtil.Add(QueryParameters, "BackupPlanId", value);
+			}
+		}
+
+		public string SourceEndpointDatabaseName
+		{
+			get
+			{
+				return sourceEndpointDatabaseName;
+			}
+			set	
+			{
+				sourceEndpointDatabaseName = value;
+				DictionaryUtil.Add(QueryParameters, "SourceEndpointDatabaseName", value);
+			}
+		}
+
+		public string SourceEndpointIP
+		{
+			get
+			{
+				return sourceEndpointIP;
+			}
+			set	
+			{
+				sourceEndpointIP = value;
+				DictionaryUtil.Add(QueryParameters, "SourceEndpointIP", value);
+			}
+		}
+
+		public string SourceEndpointPassword
+		{
+			get
+			{
+				return sourceEndpointPassword;
+			}
+			set	
+			{
+				sourceEndpointPassword = value;
+				DictionaryUtil.Add(QueryParameters, "SourceEndpointPassword", value);
 			}
 		}
 
@@ -192,19 +218,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string SourceEndpointDatabaseName
-		{
-			get
-			{
-				return sourceEndpointDatabaseName;
-			}
-			set	
-			{
-				sourceEndpointDatabaseName = value;
-				DictionaryUtil.Add(QueryParameters, "SourceEndpointDatabaseName", value);
-			}
-		}
-
 		public string SourceEndpointInstanceType
 		{
 			get
@@ -215,19 +228,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				sourceEndpointInstanceType = value;
 				DictionaryUtil.Add(QueryParameters, "SourceEndpointInstanceType", value);
-			}
-		}
-
-		public string SourceEndpointIP
-		{
-			get
-			{
-				return sourceEndpointIP;
-			}
-			set	
-			{
-				sourceEndpointIP = value;
-				DictionaryUtil.Add(QueryParameters, "SourceEndpointIP", value);
 			}
 		}
 

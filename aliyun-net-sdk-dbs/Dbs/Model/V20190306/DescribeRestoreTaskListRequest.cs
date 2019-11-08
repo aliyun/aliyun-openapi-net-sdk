@@ -36,15 +36,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
-		private string restoreTaskId;
-
-		private int? pageSize;
-
 		private string backupPlanId;
 
 		private int? pageNum;
 
 		private string ownerId;
+
+		private string restoreTaskId;
+
+		private int? pageSize;
 
 		public string ClientToken
 		{
@@ -56,32 +56,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string RestoreTaskId
-		{
-			get
-			{
-				return restoreTaskId;
-			}
-			set	
-			{
-				restoreTaskId = value;
-				DictionaryUtil.Add(QueryParameters, "RestoreTaskId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -121,6 +95,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string RestoreTaskId
+		{
+			get
+			{
+				return restoreTaskId;
+			}
+			set	
+			{
+				restoreTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTaskId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
