@@ -62,7 +62,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			for (int i = 0; i < context.Length("QueryCostUnitResource.Data.ResourceInstanceDtoList.Length"); i++) {
 				QueryCostUnitResourceResponse.QueryCostUnitResource_Data.QueryCostUnitResource_ResourceInstanceList resourceInstanceList = new QueryCostUnitResourceResponse.QueryCostUnitResource_Data.QueryCostUnitResource_ResourceInstanceList();
 				resourceInstanceList.ResourceUserId = context.LongValue("QueryCostUnitResource.Data.ResourceInstanceDtoList["+ i +"].ResourceUserId");
-				resourceInstanceList.ResourceId = context.LongValue("QueryCostUnitResource.Data.ResourceInstanceDtoList["+ i +"].ResourceId");
+				resourceInstanceList.ResourceId = context.StringValue("QueryCostUnitResource.Data.ResourceInstanceDtoList["+ i +"].ResourceId");
 				resourceInstanceList.CommodityCode = context.StringValue("QueryCostUnitResource.Data.ResourceInstanceDtoList["+ i +"].CommodityCode");
 				resourceInstanceList.ResourceUserName = context.StringValue("QueryCostUnitResource.Data.ResourceInstanceDtoList["+ i +"].ResourceUserName");
 				resourceInstanceList.CommodityName = context.StringValue("QueryCostUnitResource.Data.ResourceInstanceDtoList["+ i +"].CommodityName");

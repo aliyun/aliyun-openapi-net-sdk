@@ -187,7 +187,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private long? resourceUserId;
 
-				private long? resourceId;
+				private string resourceId;
 
 				private string commodityCode;
 
@@ -223,7 +223,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public long? ResourceId
+				public string ResourceId
 				{
 					get
 					{
