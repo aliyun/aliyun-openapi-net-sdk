@@ -27,61 +27,62 @@ using Aliyun.Acs.Alidns.Transform.V20150109;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-    public class CheckDomainRecordRequest : RpcAcsRequest<CheckDomainRecordResponse>
+    public class PreviewGtmRecoveryPlanRequest : RpcAcsRequest<PreviewGtmRecoveryPlanResponse>
     {
-        public CheckDomainRecordRequest()
-            : base("Alidns", "2015-01-09", "CheckDomainRecord", "Alidns", "openAPI")
+        public PreviewGtmRecoveryPlanRequest()
+            : base("Alidns", "2015-01-09", "PreviewGtmRecoveryPlan", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string rR;
+		private int? pageNumber;
 
-		private string userClientIp;
+		private int? pageSize;
 
-		private string domainName;
+		private long? recoveryPlanId;
 
 		private string lang;
 
-		private string type;
-
-		private string _value;
-
-		public string RR
+		public int? PageNumber
 		{
 			get
 			{
-				return rR;
+				return pageNumber;
 			}
 			set	
 			{
-				rR = value;
-				DictionaryUtil.Add(QueryParameters, "RR", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string UserClientIp
+		public int? PageSize
 		{
 			get
 			{
-				return userClientIp;
+				return pageSize;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string DomainName
+		public long? RecoveryPlanId
 		{
 			get
 			{
-				return domainName;
+				return recoveryPlanId;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				recoveryPlanId = value;
+				DictionaryUtil.Add(QueryParameters, "RecoveryPlanId", value.ToString());
 			}
 		}
 
@@ -98,35 +99,9 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string _Value
-		{
-			get
-			{
-				return _value;
-			}
-			set	
-			{
-				_value = value;
-				DictionaryUtil.Add(QueryParameters, "Value", value);
-			}
-		}
-
-        public override CheckDomainRecordResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override PreviewGtmRecoveryPlanResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CheckDomainRecordResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return PreviewGtmRecoveryPlanResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

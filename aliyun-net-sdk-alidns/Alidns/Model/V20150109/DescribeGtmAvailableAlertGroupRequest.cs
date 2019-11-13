@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeGtmAvailableAlertGroupRequest : RpcAcsRequest<DescribeGtmAvailableAlertGroupResponse>
     {
         public DescribeGtmAvailableAlertGroupRequest()
-            : base("Alidns", "2015-01-09", "DescribeGtmAvailableAlertGroup", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeGtmAvailableAlertGroup", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string lang;

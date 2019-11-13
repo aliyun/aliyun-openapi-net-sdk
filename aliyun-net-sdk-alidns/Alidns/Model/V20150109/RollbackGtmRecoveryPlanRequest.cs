@@ -27,46 +27,32 @@ using Aliyun.Acs.Alidns.Transform.V20150109;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-    public class QueryCreateInstancePriceRequest : RpcAcsRequest<QueryCreateInstancePriceResponse>
+    public class RollbackGtmRecoveryPlanRequest : RpcAcsRequest<RollbackGtmRecoveryPlanResponse>
     {
-        public QueryCreateInstancePriceRequest()
-            : base("Alidns", "2015-01-09", "QueryCreateInstancePrice", "Alidns", "openAPI")
+        public RollbackGtmRecoveryPlanRequest()
+            : base("Alidns", "2015-01-09", "RollbackGtmRecoveryPlan", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private int? month;
-
-		private string userClientIp;
+		private long? recoveryPlanId;
 
 		private string lang;
 
-		private string instanceVersion;
-
-		private long? ownerId;
-
-		public int? Month
+		public long? RecoveryPlanId
 		{
 			get
 			{
-				return month;
+				return recoveryPlanId;
 			}
 			set	
 			{
-				month = value;
-				DictionaryUtil.Add(QueryParameters, "Month", value.ToString());
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				recoveryPlanId = value;
+				DictionaryUtil.Add(QueryParameters, "RecoveryPlanId", value.ToString());
 			}
 		}
 
@@ -83,35 +69,9 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string InstanceVersion
-		{
-			get
-			{
-				return instanceVersion;
-			}
-			set	
-			{
-				instanceVersion = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceVersion", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-        public override QueryCreateInstancePriceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RollbackGtmRecoveryPlanResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryCreateInstancePriceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RollbackGtmRecoveryPlanResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

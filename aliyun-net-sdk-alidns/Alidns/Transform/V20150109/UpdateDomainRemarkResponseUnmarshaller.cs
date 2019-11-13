@@ -24,18 +24,16 @@ using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
-    public class CreateInstanceResponseUnmarshaller
+    public class UpdateDomainRemarkResponseUnmarshaller
     {
-        public static CreateInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateDomainRemarkResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateInstanceResponse createInstanceResponse = new CreateInstanceResponse();
+			UpdateDomainRemarkResponse updateDomainRemarkResponse = new UpdateDomainRemarkResponse();
 
-			createInstanceResponse.HttpResponse = context.HttpResponse;
-			createInstanceResponse.RequestId = context.StringValue("CreateInstance.RequestId");
-			createInstanceResponse.OrderId = context.StringValue("CreateInstance.OrderId");
-			createInstanceResponse.InstanceId = context.StringValue("CreateInstance.InstanceId");
+			updateDomainRemarkResponse.HttpResponse = context.HttpResponse;
+			updateDomainRemarkResponse.RequestId = context.StringValue("UpdateDomainRemark.RequestId");
         
-			return createInstanceResponse;
+			return updateDomainRemarkResponse;
         }
     }
 }

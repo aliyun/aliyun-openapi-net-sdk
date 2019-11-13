@@ -30,28 +30,20 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeSupportLinesRequest : RpcAcsRequest<DescribeSupportLinesResponse>
     {
         public DescribeSupportLinesRequest()
-            : base("Alidns", "2015-01-09", "DescribeSupportLines", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeSupportLines", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string userClientIp;
 
 		private string domainName;
 
-		private string lang;
+		private string userClientIp;
 
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
+		private string lang;
 
 		public string DomainName
 		{
@@ -63,6 +55,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

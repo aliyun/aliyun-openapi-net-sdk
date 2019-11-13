@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DeleteDomainGroupRequest : RpcAcsRequest<DeleteDomainGroupResponse>
     {
         public DeleteDomainGroupRequest()
-            : base("Alidns", "2015-01-09", "DeleteDomainGroup", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DeleteDomainGroup", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string groupId;

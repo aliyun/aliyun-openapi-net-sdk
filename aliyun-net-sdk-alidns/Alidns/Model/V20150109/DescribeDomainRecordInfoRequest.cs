@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeDomainRecordInfoRequest : RpcAcsRequest<DescribeDomainRecordInfoResponse>
     {
         public DescribeDomainRecordInfoRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainRecordInfo", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeDomainRecordInfo", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string recordId;

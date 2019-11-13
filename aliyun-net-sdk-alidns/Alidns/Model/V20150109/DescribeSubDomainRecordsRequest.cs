@@ -30,11 +30,22 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeSubDomainRecordsRequest : RpcAcsRequest<DescribeSubDomainRecordsResponse>
     {
         public DescribeSubDomainRecordsRequest()
-            : base("Alidns", "2015-01-09", "DescribeSubDomainRecords", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeSubDomainRecords", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string line;
+
+		private string domainName;
+
+		private string type;
+
+		private long? pageNumber;
 
 		private string userClientIp;
 
@@ -43,10 +54,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string subDomain;
 
 		private string lang;
-
-		private string type;
-
-		private long? pageNumber;
 
 		public string Line
 		{
@@ -58,6 +65,45 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				line = value;
 				DictionaryUtil.Add(QueryParameters, "Line", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -110,32 +156,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

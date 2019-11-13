@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			addGtmAddressPoolResponse.HttpResponse = context.HttpResponse;
 			addGtmAddressPoolResponse.RequestId = context.StringValue("AddGtmAddressPool.RequestId");
 			addGtmAddressPoolResponse.AddrPoolId = context.StringValue("AddGtmAddressPool.AddrPoolId");
+			addGtmAddressPoolResponse.MonitorConfigId = context.StringValue("AddGtmAddressPool.MonitorConfigId");
         
 			return addGtmAddressPoolResponse;
         }

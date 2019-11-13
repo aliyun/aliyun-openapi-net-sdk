@@ -30,27 +30,32 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class AddDomainRecordRequest : RpcAcsRequest<AddDomainRecordResponse>
     {
         public AddDomainRecordRequest()
-            : base("Alidns", "2015-01-09", "AddDomainRecord", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "AddDomainRecord", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string rR;
 
 		private string line;
 
-		private string userClientIp;
-
-		private string domainName;
+		private string type;
 
 		private string lang;
 
-		private string type;
+		private string _value;
+
+		private string domainName;
 
 		private long? priority;
 
-		private string _value;
-
 		private long? tTL;
+
+		private string userClientIp;
 
 		public string RR
 		{
@@ -78,29 +83,16 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string UserClientIp
+		public string Type
 		{
 			get
 			{
-				return userClientIp;
+				return type;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -117,16 +109,29 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string Type
+		public string _Value
 		{
 			get
 			{
-				return type;
+				return _value;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				_value = value;
+				DictionaryUtil.Add(QueryParameters, "Value", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -143,19 +148,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string _Value
-		{
-			get
-			{
-				return _value;
-			}
-			set	
-			{
-				_value = value;
-				DictionaryUtil.Add(QueryParameters, "Value", value);
-			}
-		}
-
 		public long? TTL
 		{
 			get
@@ -166,6 +158,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				tTL = value;
 				DictionaryUtil.Add(QueryParameters, "TTL", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

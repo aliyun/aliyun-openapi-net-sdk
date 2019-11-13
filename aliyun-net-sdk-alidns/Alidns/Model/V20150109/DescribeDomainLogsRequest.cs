@@ -30,13 +30,24 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeDomainLogsRequest : RpcAcsRequest<DescribeDomainLogsResponse>
     {
         public DescribeDomainLogsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainLogs", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeDomainLogs", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string endDate;
-
 		private string groupId;
+
+		private string startDate;
+
+		private string type;
+
+		private long? pageNumber;
+
+		private string endDate;
 
 		private string userClientIp;
 
@@ -45,25 +56,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 		private string lang;
 
 		private string keyWord;
-
-		private string startDate;
-
-		private string type;
-
-		private long? pageNumber;
-
-		public string EndDate
-		{
-			get
-			{
-				return endDate;
-			}
-			set	
-			{
-				endDate = value;
-				DictionaryUtil.Add(QueryParameters, "endDate", value);
-			}
-		}
 
 		public string GroupId
 		{
@@ -75,6 +67,58 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string StartDate
+		{
+			get
+			{
+				return startDate;
+			}
+			set	
+			{
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string EndDate
+		{
+			get
+			{
+				return endDate;
+			}
+			set	
+			{
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "endDate", value);
 			}
 		}
 
@@ -127,45 +171,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				keyWord = value;
 				DictionaryUtil.Add(QueryParameters, "KeyWord", value);
-			}
-		}
-
-		public string StartDate
-		{
-			get
-			{
-				return startDate;
-			}
-			set	
-			{
-				startDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartDate", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

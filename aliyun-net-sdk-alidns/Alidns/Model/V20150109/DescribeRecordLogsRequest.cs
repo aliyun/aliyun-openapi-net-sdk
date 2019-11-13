@@ -30,15 +30,24 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeRecordLogsRequest : RpcAcsRequest<DescribeRecordLogsResponse>
     {
         public DescribeRecordLogsRequest()
-            : base("Alidns", "2015-01-09", "DescribeRecordLogs", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeRecordLogs", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string domainName;
+
+		private string startDate;
+
+		private long? pageNumber;
 
 		private string endDate;
 
 		private string userClientIp;
-
-		private string domainName;
 
 		private long? pageSize;
 
@@ -46,9 +55,44 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string keyWord;
 
-		private string startDate;
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
 
-		private long? pageNumber;
+		public string StartDate
+		{
+			get
+			{
+				return startDate;
+			}
+			set	
+			{
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public string EndDate
 		{
@@ -73,19 +117,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -125,32 +156,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				keyWord = value;
 				DictionaryUtil.Add(QueryParameters, "KeyWord", value);
-			}
-		}
-
-		public string StartDate
-		{
-			get
-			{
-				return startDate;
-			}
-			set	
-			{
-				startDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartDate", value);
-			}
-		}
-
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

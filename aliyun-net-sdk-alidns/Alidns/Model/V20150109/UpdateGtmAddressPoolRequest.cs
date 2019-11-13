@@ -30,9 +30,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class UpdateGtmAddressPoolRequest : RpcAcsRequest<UpdateGtmAddressPoolResponse>
     {
         public UpdateGtmAddressPoolRequest()
-            : base("Alidns", "2015-01-09", "UpdateGtmAddressPool", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "UpdateGtmAddressPool", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string type;
+
+		private int? minAvailableAddrNum;
 
 		private string addrPoolId;
 
@@ -40,11 +49,33 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string lang;
 
-		private string type;
+		private List<Addr> addrs = new List<Addr>(){ };
 
-		private List<Addr> addrs;
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
 
-		private int? minAvailableAddrNum;
+		public int? MinAvailableAddrNum
+		{
+			get
+			{
+				return minAvailableAddrNum;
+			}
+			set	
+			{
+				minAvailableAddrNum = value;
+				DictionaryUtil.Add(QueryParameters, "MinAvailableAddrNum", value.ToString());
+			}
+		}
 
 		public string AddrPoolId
 		{
@@ -85,19 +116,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
 		public List<Addr> Addrs
 		{
 			get
@@ -114,19 +132,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 					DictionaryUtil.Add(QueryParameters,"Addr." + (i + 1) + ".LbaWeight", addrs[i].LbaWeight);
 					DictionaryUtil.Add(QueryParameters,"Addr." + (i + 1) + ".Value", addrs[i].Value);
 				}
-			}
-		}
-
-		public int? MinAvailableAddrNum
-		{
-			get
-			{
-				return minAvailableAddrNum;
-			}
-			set	
-			{
-				minAvailableAddrNum = value;
-				DictionaryUtil.Add(QueryParameters, "MinAvailableAddrNum", value.ToString());
 			}
 		}
 

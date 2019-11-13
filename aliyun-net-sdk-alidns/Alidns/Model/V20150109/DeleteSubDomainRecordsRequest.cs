@@ -30,19 +30,24 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DeleteSubDomainRecordsRequest : RpcAcsRequest<DeleteSubDomainRecordsResponse>
     {
         public DeleteSubDomainRecordsRequest()
-            : base("Alidns", "2015-01-09", "DeleteSubDomainRecords", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DeleteSubDomainRecords", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string rR;
 
-		private string userClientIp;
-
 		private string domainName;
 
-		private string lang;
-
 		private string type;
+
+		private string userClientIp;
+
+		private string lang;
 
 		public string RR
 		{
@@ -54,19 +59,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				rR = value;
 				DictionaryUtil.Add(QueryParameters, "RR", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -83,19 +75,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
 		public string Type
 		{
 			get
@@ -106,6 +85,32 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

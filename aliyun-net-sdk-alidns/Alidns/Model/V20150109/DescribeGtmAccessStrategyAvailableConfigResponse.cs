@@ -112,6 +112,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private string status;
 
+			private string fatherCode;
+
 			public string LineCode
 			{
 				get
@@ -169,6 +171,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string FatherCode
+			{
+				get
+				{
+					return fatherCode;
+				}
+				set	
+				{
+					fatherCode = value;
 				}
 			}
 		}

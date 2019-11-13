@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				ispCityNode.CityCode = context.StringValue("DescribeGtmMonitorAvailableConfig.IspCityNodes["+ i +"].CityCode");
 				ispCityNode.DefaultSelected = context.BooleanValue("DescribeGtmMonitorAvailableConfig.IspCityNodes["+ i +"].DefaultSelected");
 				ispCityNode.Mainland = context.BooleanValue("DescribeGtmMonitorAvailableConfig.IspCityNodes["+ i +"].Mainland");
+				ispCityNode.GroupType = context.StringValue("DescribeGtmMonitorAvailableConfig.IspCityNodes["+ i +"].GroupType");
+				ispCityNode.GroupName = context.StringValue("DescribeGtmMonitorAvailableConfig.IspCityNodes["+ i +"].GroupName");
 
 				describeGtmMonitorAvailableConfigResponse_ispCityNodes.Add(ispCityNode);
 			}

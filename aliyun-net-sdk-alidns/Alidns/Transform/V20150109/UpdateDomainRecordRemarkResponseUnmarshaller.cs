@@ -16,41 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
-namespace Aliyun.Acs.Alidns.Model.V20150109
+namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
-	public class CheckDomainRecordResponse : AcsResponse
-	{
+    public class UpdateDomainRecordRemarkResponseUnmarshaller
+    {
+        public static UpdateDomainRecordRemarkResponse Unmarshall(UnmarshallerContext context)
+        {
+			UpdateDomainRecordRemarkResponse updateDomainRecordRemarkResponse = new UpdateDomainRecordRemarkResponse();
 
-		private string requestId;
-
-		private bool? isExist;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? IsExist
-		{
-			get
-			{
-				return isExist;
-			}
-			set	
-			{
-				isExist = value;
-			}
-		}
-	}
+			updateDomainRecordRemarkResponse.HttpResponse = context.HttpResponse;
+			updateDomainRecordRemarkResponse.RequestId = context.StringValue("UpdateDomainRecordRemark.RequestId");
+        
+			return updateDomainRecordRemarkResponse;
+        }
+    }
 }

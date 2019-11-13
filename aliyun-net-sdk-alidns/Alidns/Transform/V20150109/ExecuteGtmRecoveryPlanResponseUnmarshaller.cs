@@ -24,17 +24,16 @@ using Aliyun.Acs.Alidns.Model.V20150109;
 
 namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
-    public class CheckDomainRecordResponseUnmarshaller
+    public class ExecuteGtmRecoveryPlanResponseUnmarshaller
     {
-        public static CheckDomainRecordResponse Unmarshall(UnmarshallerContext context)
+        public static ExecuteGtmRecoveryPlanResponse Unmarshall(UnmarshallerContext context)
         {
-			CheckDomainRecordResponse checkDomainRecordResponse = new CheckDomainRecordResponse();
+			ExecuteGtmRecoveryPlanResponse executeGtmRecoveryPlanResponse = new ExecuteGtmRecoveryPlanResponse();
 
-			checkDomainRecordResponse.HttpResponse = context.HttpResponse;
-			checkDomainRecordResponse.RequestId = context.StringValue("CheckDomainRecord.RequestId");
-			checkDomainRecordResponse.IsExist = context.BooleanValue("CheckDomainRecord.IsExist");
+			executeGtmRecoveryPlanResponse.HttpResponse = context.HttpResponse;
+			executeGtmRecoveryPlanResponse.RequestId = context.StringValue("ExecuteGtmRecoveryPlan.RequestId");
         
-			return checkDomainRecordResponse;
+			return executeGtmRecoveryPlanResponse;
         }
     }
 }

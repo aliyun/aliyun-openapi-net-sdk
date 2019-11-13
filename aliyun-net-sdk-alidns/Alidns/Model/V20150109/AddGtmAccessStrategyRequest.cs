@@ -30,34 +30,26 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class AddGtmAccessStrategyRequest : RpcAcsRequest<AddGtmAccessStrategyResponse>
     {
         public AddGtmAccessStrategyRequest()
-            : base("Alidns", "2015-01-09", "AddGtmAccessStrategy", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "AddGtmAccessStrategy", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string strategyName;
-
 		private string defaultAddrPoolId;
+
+		private string failoverAddrPoolId;
+
+		private string strategyName;
 
 		private string accessLines;
 
 		private string instanceId;
 
-		private string failoverAddrPoolId;
-
 		private string lang;
-
-		public string StrategyName
-		{
-			get
-			{
-				return strategyName;
-			}
-			set	
-			{
-				strategyName = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyName", value);
-			}
-		}
 
 		public string DefaultAddrPoolId
 		{
@@ -69,6 +61,32 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				defaultAddrPoolId = value;
 				DictionaryUtil.Add(QueryParameters, "DefaultAddrPoolId", value);
+			}
+		}
+
+		public string FailoverAddrPoolId
+		{
+			get
+			{
+				return failoverAddrPoolId;
+			}
+			set	
+			{
+				failoverAddrPoolId = value;
+				DictionaryUtil.Add(QueryParameters, "FailoverAddrPoolId", value);
+			}
+		}
+
+		public string StrategyName
+		{
+			get
+			{
+				return strategyName;
+			}
+			set	
+			{
+				strategyName = value;
+				DictionaryUtil.Add(QueryParameters, "StrategyName", value);
 			}
 		}
 
@@ -95,19 +113,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string FailoverAddrPoolId
-		{
-			get
-			{
-				return failoverAddrPoolId;
-			}
-			set	
-			{
-				failoverAddrPoolId = value;
-				DictionaryUtil.Add(QueryParameters, "FailoverAddrPoolId", value);
 			}
 		}
 

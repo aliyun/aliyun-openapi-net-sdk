@@ -30,30 +30,22 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class AddDomainRequest : RpcAcsRequest<AddDomainResponse>
     {
         public AddDomainRequest()
-            : base("Alidns", "2015-01-09", "AddDomain", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "AddDomain", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string resourceGroupId;
 
 		private string groupId;
 
 		private string domainName;
 
-		private string lang;
+		private string resourceGroupId;
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
+		private string lang;
 
 		public string GroupId
 		{
@@ -78,6 +70,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

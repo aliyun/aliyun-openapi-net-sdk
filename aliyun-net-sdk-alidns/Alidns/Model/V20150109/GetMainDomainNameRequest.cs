@@ -30,13 +30,16 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class GetMainDomainNameRequest : RpcAcsRequest<GetMainDomainNameResponse>
     {
         public GetMainDomainNameRequest()
-            : base("Alidns", "2015-01-09", "GetMainDomainName", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "GetMainDomainName", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string inputString;
-
-		private string userClientIp;
 
 		private string lang;
 
@@ -50,19 +53,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				inputString = value;
 				DictionaryUtil.Add(QueryParameters, "InputString", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

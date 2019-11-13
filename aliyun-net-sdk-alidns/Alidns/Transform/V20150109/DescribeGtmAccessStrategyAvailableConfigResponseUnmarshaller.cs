@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				line.GroupCode = context.StringValue("DescribeGtmAccessStrategyAvailableConfig.Lines["+ i +"].GroupCode");
 				line.GroupName = context.StringValue("DescribeGtmAccessStrategyAvailableConfig.Lines["+ i +"].GroupName");
 				line.Status = context.StringValue("DescribeGtmAccessStrategyAvailableConfig.Lines["+ i +"].Status");
+				line.FatherCode = context.StringValue("DescribeGtmAccessStrategyAvailableConfig.Lines["+ i +"].FatherCode");
 
 				describeGtmAccessStrategyAvailableConfigResponse_lines.Add(line);
 			}

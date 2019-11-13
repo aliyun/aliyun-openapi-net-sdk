@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string addrPoolId;
 
+		private string monitorConfigId;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				addrPoolId = value;
+			}
+		}
+
+		public string MonitorConfigId
+		{
+			get
+			{
+				return monitorConfigId;
+			}
+			set	
+			{
+				monitorConfigId = value;
 			}
 		}
 	}

@@ -126,6 +126,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private bool? instanceExpired;
 
+			private bool? starmark;
+
 			private List<string> dnsServers;
 
 			public string DomainId
@@ -293,6 +295,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					instanceExpired = value;
+				}
+			}
+
+			public bool? Starmark
+			{
+				get
+				{
+					return starmark;
+				}
+				set	
+				{
+					starmark = value;
 				}
 			}
 

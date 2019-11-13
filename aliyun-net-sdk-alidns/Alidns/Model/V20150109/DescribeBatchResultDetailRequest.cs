@@ -30,19 +30,24 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeBatchResultDetailRequest : RpcAcsRequest<DescribeBatchResultDetailResponse>
     {
         public DescribeBatchResultDetailRequest()
-            : base("Alidns", "2015-01-09", "DescribeBatchResultDetail", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeBatchResultDetail", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string batchType;
+
+		private int? pageNumber;
 
 		private string userClientIp;
 
 		private int? pageSize;
 
 		private string lang;
-
-		private int? pageNumber;
 
 		private long? taskId;
 
@@ -56,6 +61,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				batchType = value;
 				DictionaryUtil.Add(QueryParameters, "BatchType", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -95,19 +113,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

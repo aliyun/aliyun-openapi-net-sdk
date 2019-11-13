@@ -68,6 +68,10 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private bool? mainland;
 
+			private string groupType;
+
+			private string groupName;
+
 			public string IspName
 			{
 				get
@@ -137,6 +141,30 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					mainland = value;
+				}
+			}
+
+			public string GroupType
+			{
+				get
+				{
+					return groupType;
+				}
+				set	
+				{
+					groupType = value;
+				}
+			}
+
+			public string GroupName
+			{
+				get
+				{
+					return groupName;
+				}
+				set	
+				{
+					groupName = value;
 				}
 			}
 		}

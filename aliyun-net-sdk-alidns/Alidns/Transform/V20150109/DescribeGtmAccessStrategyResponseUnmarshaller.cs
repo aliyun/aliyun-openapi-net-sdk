@@ -42,6 +42,10 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeGtmAccessStrategyResponse.AccessMode = context.StringValue("DescribeGtmAccessStrategy.AccessMode");
 			describeGtmAccessStrategyResponse.AccessStatus = context.StringValue("DescribeGtmAccessStrategy.AccessStatus");
 			describeGtmAccessStrategyResponse.InstanceId = context.StringValue("DescribeGtmAccessStrategy.InstanceId");
+			describeGtmAccessStrategyResponse.DefaultAddrPoolStatus = context.StringValue("DescribeGtmAccessStrategy.DefaultAddrPoolStatus");
+			describeGtmAccessStrategyResponse.FailoverAddrPoolStatus = context.StringValue("DescribeGtmAccessStrategy.FailoverAddrPoolStatus");
+			describeGtmAccessStrategyResponse.DefaultAddrPoolMonitorStatus = context.StringValue("DescribeGtmAccessStrategy.DefaultAddrPoolMonitorStatus");
+			describeGtmAccessStrategyResponse.FailoverAddrPoolMonitorStatus = context.StringValue("DescribeGtmAccessStrategy.FailoverAddrPoolMonitorStatus");
 
 			List<DescribeGtmAccessStrategyResponse.DescribeGtmAccessStrategy_Line> describeGtmAccessStrategyResponse_lines = new List<DescribeGtmAccessStrategyResponse.DescribeGtmAccessStrategy_Line>();
 			for (int i = 0; i < context.Length("DescribeGtmAccessStrategy.Lines.Length"); i++) {

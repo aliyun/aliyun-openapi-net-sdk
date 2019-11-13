@@ -37,7 +37,6 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeGtmMonitorConfigResponse.CreateTimestamp = context.LongValue("DescribeGtmMonitorConfig.CreateTimestamp");
 			describeGtmMonitorConfigResponse.UpdateTime = context.StringValue("DescribeGtmMonitorConfig.UpdateTime");
 			describeGtmMonitorConfigResponse.UpdateTimestamp = context.LongValue("DescribeGtmMonitorConfig.UpdateTimestamp");
-			describeGtmMonitorConfigResponse.Name = context.StringValue("DescribeGtmMonitorConfig.Name");
 			describeGtmMonitorConfigResponse.ProtocolType = context.StringValue("DescribeGtmMonitorConfig.ProtocolType");
 			describeGtmMonitorConfigResponse.Interval = context.IntegerValue("DescribeGtmMonitorConfig.Interval");
 			describeGtmMonitorConfigResponse.EvaluationCount = context.IntegerValue("DescribeGtmMonitorConfig.EvaluationCount");
@@ -51,6 +50,8 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				ispCityNode.CountryCode = context.StringValue("DescribeGtmMonitorConfig.IspCityNodes["+ i +"].CountryCode");
 				ispCityNode.CityName = context.StringValue("DescribeGtmMonitorConfig.IspCityNodes["+ i +"].CityName");
 				ispCityNode.CityCode = context.StringValue("DescribeGtmMonitorConfig.IspCityNodes["+ i +"].CityCode");
+				ispCityNode.IspCode = context.StringValue("DescribeGtmMonitorConfig.IspCityNodes["+ i +"].IspCode");
+				ispCityNode.IspName = context.StringValue("DescribeGtmMonitorConfig.IspCityNodes["+ i +"].IspName");
 
 				describeGtmMonitorConfigResponse_ispCityNodes.Add(ispCityNode);
 			}

@@ -30,19 +30,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeDomainRecordsRequest : RpcAcsRequest<DescribeDomainRecordsResponse>
     {
         public DescribeDomainRecordsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainRecords", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeDomainRecords", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string valueKeyWord;
 
 		private string line;
-
-		private long? groupId;
-
-		private string domainName;
-
-		private string orderBy;
 
 		private string type;
 
@@ -50,17 +49,23 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private long? pageSize;
 
-		private string searchMode;
-
 		private string lang;
 
 		private string keyWord;
 
-		private string typeKeyWord;
-
 		private string rRKeyWord;
 
 		private string direction;
+
+		private long? groupId;
+
+		private string domainName;
+
+		private string orderBy;
+
+		private string searchMode;
+
+		private string typeKeyWord;
 
 		private string status;
 
@@ -87,45 +92,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				line = value;
 				DictionaryUtil.Add(QueryParameters, "Line", value);
-			}
-		}
-
-		public long? GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string OrderBy
-		{
-			get
-			{
-				return orderBy;
-			}
-			set	
-			{
-				orderBy = value;
-				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
 			}
 		}
 
@@ -168,19 +134,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string SearchMode
-		{
-			get
-			{
-				return searchMode;
-			}
-			set	
-			{
-				searchMode = value;
-				DictionaryUtil.Add(QueryParameters, "SearchMode", value);
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -207,19 +160,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string TypeKeyWord
-		{
-			get
-			{
-				return typeKeyWord;
-			}
-			set	
-			{
-				typeKeyWord = value;
-				DictionaryUtil.Add(QueryParameters, "TypeKeyWord", value);
-			}
-		}
-
 		public string RRKeyWord
 		{
 			get
@@ -243,6 +183,71 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				direction = value;
 				DictionaryUtil.Add(QueryParameters, "Direction", value);
+			}
+		}
+
+		public long? GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string OrderBy
+		{
+			get
+			{
+				return orderBy;
+			}
+			set	
+			{
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
+			}
+		}
+
+		public string SearchMode
+		{
+			get
+			{
+				return searchMode;
+			}
+			set	
+			{
+				searchMode = value;
+				DictionaryUtil.Add(QueryParameters, "SearchMode", value);
+			}
+		}
+
+		public string TypeKeyWord
+		{
+			get
+			{
+				return typeKeyWord;
+			}
+			set	
+			{
+				typeKeyWord = value;
+				DictionaryUtil.Add(QueryParameters, "TypeKeyWord", value);
 			}
 		}
 

@@ -138,6 +138,10 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private string cnameMode;
 
+			private int? accessStrategyNum;
+
+			private int? addressPoolNum;
+
 			public string InstanceId
 			{
 				get
@@ -291,6 +295,30 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					cnameMode = value;
+				}
+			}
+
+			public int? AccessStrategyNum
+			{
+				get
+				{
+					return accessStrategyNum;
+				}
+				set	
+				{
+					accessStrategyNum = value;
+				}
+			}
+
+			public int? AddressPoolNum
+			{
+				get
+				{
+					return addressPoolNum;
+				}
+				set	
+				{
+					addressPoolNum = value;
 				}
 			}
 		}

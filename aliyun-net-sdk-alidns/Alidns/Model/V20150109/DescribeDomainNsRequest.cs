@@ -30,28 +30,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeDomainNsRequest : RpcAcsRequest<DescribeDomainNsResponse>
     {
         public DescribeDomainNsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainNs", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeDomainNs", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string userClientIp;
 
 		private string domainName;
 
 		private string lang;
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public string DomainName
 		{

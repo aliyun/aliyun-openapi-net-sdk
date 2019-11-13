@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DeleteDomainRequest : RpcAcsRequest<DeleteDomainResponse>
     {
         public DeleteDomainRequest()
-            : base("Alidns", "2015-01-09", "DeleteDomain", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DeleteDomain", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string domainName;

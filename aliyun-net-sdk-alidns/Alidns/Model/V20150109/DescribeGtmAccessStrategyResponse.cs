@@ -47,6 +47,14 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string instanceId;
 
+		private string defaultAddrPoolStatus;
+
+		private string failoverAddrPoolStatus;
+
+		private string defaultAddrPoolMonitorStatus;
+
+		private string failoverAddrPoolMonitorStatus;
+
 		private List<DescribeGtmAccessStrategy_Line> lines;
 
 		public string RequestId
@@ -178,6 +186,54 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				instanceId = value;
+			}
+		}
+
+		public string DefaultAddrPoolStatus
+		{
+			get
+			{
+				return defaultAddrPoolStatus;
+			}
+			set	
+			{
+				defaultAddrPoolStatus = value;
+			}
+		}
+
+		public string FailoverAddrPoolStatus
+		{
+			get
+			{
+				return failoverAddrPoolStatus;
+			}
+			set	
+			{
+				failoverAddrPoolStatus = value;
+			}
+		}
+
+		public string DefaultAddrPoolMonitorStatus
+		{
+			get
+			{
+				return defaultAddrPoolMonitorStatus;
+			}
+			set	
+			{
+				defaultAddrPoolMonitorStatus = value;
+			}
+		}
+
+		public string FailoverAddrPoolMonitorStatus
+		{
+			get
+			{
+				return failoverAddrPoolMonitorStatus;
+			}
+			set	
+			{
+				failoverAddrPoolMonitorStatus = value;
 			}
 		}
 

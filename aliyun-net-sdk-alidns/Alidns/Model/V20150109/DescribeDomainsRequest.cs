@@ -30,23 +30,43 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeDomainsRequest : RpcAcsRequest<DescribeDomainsResponse>
     {
         public DescribeDomainsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomains", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeDomains", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private long? pageNumber;
 
 		private string resourceGroupId;
 
-		private string groupId;
-
 		private long? pageSize;
-
-		private string searchMode;
 
 		private string lang;
 
 		private string keyWord;
 
-		private long? pageNumber;
+		private bool? starmark;
+
+		private string groupId;
+
+		private string searchMode;
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public string ResourceGroupId
 		{
@@ -61,19 +81,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
 		public long? PageSize
 		{
 			get
@@ -84,19 +91,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string SearchMode
-		{
-			get
-			{
-				return searchMode;
-			}
-			set	
-			{
-				searchMode = value;
-				DictionaryUtil.Add(QueryParameters, "SearchMode", value);
 			}
 		}
 
@@ -126,16 +120,42 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public long? PageNumber
+		public bool? Starmark
 		{
 			get
 			{
-				return pageNumber;
+				return starmark;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				starmark = value;
+				DictionaryUtil.Add(QueryParameters, "Starmark", value.ToString());
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
+			}
+		}
+
+		public string SearchMode
+		{
+			get
+			{
+				return searchMode;
+			}
+			set	
+			{
+				searchMode = value;
+				DictionaryUtil.Add(QueryParameters, "SearchMode", value);
 			}
 		}
 

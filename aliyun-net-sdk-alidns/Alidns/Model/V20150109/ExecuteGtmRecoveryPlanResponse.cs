@@ -22,12 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-	public class DescribeDomainDnsStatisticsResponse : AcsResponse
+	public class ExecuteGtmRecoveryPlanResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private List<DescribeDomainDnsStatistics_Statistic> statistics;
 
 		public string RequestId
 		{
@@ -38,50 +36,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public List<DescribeDomainDnsStatistics_Statistic> Statistics
-		{
-			get
-			{
-				return statistics;
-			}
-			set	
-			{
-				statistics = value;
-			}
-		}
-
-		public class DescribeDomainDnsStatistics_Statistic
-		{
-
-			private long? timestamp;
-
-			private long? count;
-
-			public long? Timestamp
-			{
-				get
-				{
-					return timestamp;
-				}
-				set	
-				{
-					timestamp = value;
-				}
-			}
-
-			public long? Count
-			{
-				get
-				{
-					return count;
-				}
-				set	
-				{
-					count = value;
-				}
 			}
 		}
 	}

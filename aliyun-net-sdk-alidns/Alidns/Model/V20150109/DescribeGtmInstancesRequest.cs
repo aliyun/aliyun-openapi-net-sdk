@@ -30,9 +30,16 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeGtmInstancesRequest : RpcAcsRequest<DescribeGtmInstancesResponse>
     {
         public DescribeGtmInstancesRequest()
-            : base("Alidns", "2015-01-09", "DescribeGtmInstances", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeGtmInstances", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private int? pageNumber;
 
 		private string resourceGroupId;
 
@@ -42,7 +49,20 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string keyword;
 
-		private int? pageNumber;
+		private bool? needDetailAttributes;
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public string ResourceGroupId
 		{
@@ -96,16 +116,16 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public int? PageNumber
+		public bool? NeedDetailAttributes
 		{
 			get
 			{
-				return pageNumber;
+				return needDetailAttributes;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				needDetailAttributes = value;
+				DictionaryUtil.Add(QueryParameters, "NeedDetailAttributes", value.ToString());
 			}
 		}
 

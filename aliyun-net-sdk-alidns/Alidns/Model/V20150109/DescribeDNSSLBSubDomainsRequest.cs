@@ -30,32 +30,24 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeDNSSLBSubDomainsRequest : RpcAcsRequest<DescribeDNSSLBSubDomainsResponse>
     {
         public DescribeDNSSLBSubDomainsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDNSSLBSubDomains", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeDNSSLBSubDomains", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string userClientIp;
-
 		private string domainName;
+
+		private long? pageNumber;
+
+		private string userClientIp;
 
 		private long? pageSize;
 
 		private string lang;
-
-		private long? pageNumber;
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public string DomainName
 		{
@@ -67,6 +59,32 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -93,19 +111,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public long? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

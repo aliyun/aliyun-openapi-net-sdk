@@ -30,15 +30,20 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class UpdateGtmMonitorRequest : RpcAcsRequest<UpdateGtmMonitorResponse>
     {
         public UpdateGtmMonitorRequest()
-            : base("Alidns", "2015-01-09", "UpdateGtmMonitor", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "UpdateGtmMonitor", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string monitorExtendInfo;
 
-		private string name;
-
 		private string monitorConfigId;
+
+		private int? timeout;
 
 		private int? evaluationCount;
 
@@ -48,9 +53,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string lang;
 
-		private int? timeout;
-
-		private List<IspCityNode> ispCityNodes;
+		private List<IspCityNode> ispCityNodes = new List<IspCityNode>(){ };
 
 		public string MonitorExtendInfo
 		{
@@ -65,19 +68,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public string MonitorConfigId
 		{
 			get
@@ -88,6 +78,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				monitorConfigId = value;
 				DictionaryUtil.Add(QueryParameters, "MonitorConfigId", value);
+			}
+		}
+
+		public int? Timeout
+		{
+			get
+			{
+				return timeout;
+			}
+			set	
+			{
+				timeout = value;
+				DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
 			}
 		}
 
@@ -140,19 +143,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public int? Timeout
-		{
-			get
-			{
-				return timeout;
-			}
-			set	
-			{
-				timeout = value;
-				DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
 			}
 		}
 

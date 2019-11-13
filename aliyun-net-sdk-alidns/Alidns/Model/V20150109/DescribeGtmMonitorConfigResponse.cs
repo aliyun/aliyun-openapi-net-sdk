@@ -37,8 +37,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private long? updateTimestamp;
 
-		private string name;
-
 		private string protocolType;
 
 		private int? interval;
@@ -120,18 +118,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				updateTimestamp = value;
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
 			}
 		}
 
@@ -218,6 +204,10 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private string cityCode;
 
+			private string ispCode;
+
+			private string ispName;
+
 			public string CountryName
 			{
 				get
@@ -263,6 +253,30 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					cityCode = value;
+				}
+			}
+
+			public string IspCode
+			{
+				get
+				{
+					return ispCode;
+				}
+				set	
+				{
+					ispCode = value;
+				}
+			}
+
+			public string IspName
+			{
+				get
+				{
+					return ispName;
+				}
+				set	
+				{
+					ispName = value;
 				}
 			}
 		}

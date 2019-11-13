@@ -52,6 +52,10 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				strategy.AccessStatus = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].AccessStatus");
 				strategy.StrategyMode = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].StrategyMode");
 				strategy.InstanceId = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].InstanceId");
+				strategy.DefaultAddrPoolStatus = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].DefaultAddrPoolStatus");
+				strategy.FailoverAddrPoolStatus = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].FailoverAddrPoolStatus");
+				strategy.DefaultAddrPoolMonitorStatus = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].DefaultAddrPoolMonitorStatus");
+				strategy.FailoverAddrPoolMonitorStatus = context.StringValue("DescribeGtmAccessStrategies.Strategies["+ i +"].FailoverAddrPoolMonitorStatus");
 
 				List<DescribeGtmAccessStrategiesResponse.DescribeGtmAccessStrategies_Strategy.DescribeGtmAccessStrategies_Line> strategy_lines = new List<DescribeGtmAccessStrategiesResponse.DescribeGtmAccessStrategies_Strategy.DescribeGtmAccessStrategies_Line>();
 				for (int j = 0; j < context.Length("DescribeGtmAccessStrategies.Strategies["+ i +"].Lines.Length"); j++) {

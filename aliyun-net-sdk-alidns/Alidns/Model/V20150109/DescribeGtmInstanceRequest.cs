@@ -30,13 +30,20 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeGtmInstanceRequest : RpcAcsRequest<DescribeGtmInstanceResponse>
     {
         public DescribeGtmInstanceRequest()
-            : base("Alidns", "2015-01-09", "DescribeGtmInstance", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeGtmInstance", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string instanceId;
 
 		private string lang;
+
+		private bool? needDetailAttributes;
 
 		public string InstanceId
 		{
@@ -61,6 +68,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public bool? NeedDetailAttributes
+		{
+			get
+			{
+				return needDetailAttributes;
+			}
+			set	
+			{
+				needDetailAttributes = value;
+				DictionaryUtil.Add(QueryParameters, "NeedDetailAttributes", value.ToString());
 			}
 		}
 

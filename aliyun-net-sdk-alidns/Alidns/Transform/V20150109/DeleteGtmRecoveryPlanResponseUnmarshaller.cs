@@ -16,55 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Alidns.Model.V20150109;
 
-namespace Aliyun.Acs.Alidns.Model.V20150109
+namespace Aliyun.Acs.Alidns.Transform.V20150109
 {
-	public class CreateInstanceResponse : AcsResponse
-	{
+    public class DeleteGtmRecoveryPlanResponseUnmarshaller
+    {
+        public static DeleteGtmRecoveryPlanResponse Unmarshall(UnmarshallerContext context)
+        {
+			DeleteGtmRecoveryPlanResponse deleteGtmRecoveryPlanResponse = new DeleteGtmRecoveryPlanResponse();
 
-		private string requestId;
-
-		private string orderId;
-
-		private string instanceId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-			}
-		}
-	}
+			deleteGtmRecoveryPlanResponse.HttpResponse = context.HttpResponse;
+			deleteGtmRecoveryPlanResponse.RequestId = context.StringValue("DeleteGtmRecoveryPlan.RequestId");
+        
+			return deleteGtmRecoveryPlanResponse;
+        }
+    }
 }

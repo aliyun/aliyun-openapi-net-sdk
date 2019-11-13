@@ -30,21 +30,150 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class AddGtmAddressPoolRequest : RpcAcsRequest<AddGtmAddressPoolResponse>
     {
         public AddGtmAddressPoolRequest()
-            : base("Alidns", "2015-01-09", "AddGtmAddressPool", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "AddGtmAddressPool", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string monitorExtendInfo;
+
+		private string type;
+
+		private int? timeout;
+
+		private int? minAvailableAddrNum;
+
+		private int? evaluationCount;
+
+		private string lang;
+
+		private List<Addr> addrs = new List<Addr>(){ };
+
+		private string monitorStatus;
 
 		private string instanceId;
 
 		private string name;
 
-		private string lang;
+		private string protocolType;
 
-		private string type;
+		private int? interval;
 
-		private List<Addr> addrs;
+		private List<IspCityNode> ispCityNodes = new List<IspCityNode>(){ };
 
-		private int? minAvailableAddrNum;
+		public string MonitorExtendInfo
+		{
+			get
+			{
+				return monitorExtendInfo;
+			}
+			set	
+			{
+				monitorExtendInfo = value;
+				DictionaryUtil.Add(QueryParameters, "MonitorExtendInfo", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public int? Timeout
+		{
+			get
+			{
+				return timeout;
+			}
+			set	
+			{
+				timeout = value;
+				DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
+			}
+		}
+
+		public int? MinAvailableAddrNum
+		{
+			get
+			{
+				return minAvailableAddrNum;
+			}
+			set	
+			{
+				minAvailableAddrNum = value;
+				DictionaryUtil.Add(QueryParameters, "MinAvailableAddrNum", value.ToString());
+			}
+		}
+
+		public int? EvaluationCount
+		{
+			get
+			{
+				return evaluationCount;
+			}
+			set	
+			{
+				evaluationCount = value;
+				DictionaryUtil.Add(QueryParameters, "EvaluationCount", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public List<Addr> Addrs
+		{
+			get
+			{
+				return addrs;
+			}
+
+			set
+			{
+				addrs = value;
+				for (int i = 0; i < addrs.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Addr." + (i + 1) + ".Mode", addrs[i].Mode);
+					DictionaryUtil.Add(QueryParameters,"Addr." + (i + 1) + ".LbaWeight", addrs[i].LbaWeight);
+					DictionaryUtil.Add(QueryParameters,"Addr." + (i + 1) + ".Value", addrs[i].Value);
+				}
+			}
+		}
+
+		public string MonitorStatus
+		{
+			get
+			{
+				return monitorStatus;
+			}
+			set	
+			{
+				monitorStatus = value;
+				DictionaryUtil.Add(QueryParameters, "MonitorStatus", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -72,61 +201,47 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string Lang
+		public string ProtocolType
 		{
 			get
 			{
-				return lang;
+				return protocolType;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				protocolType = value;
+				DictionaryUtil.Add(QueryParameters, "ProtocolType", value);
 			}
 		}
 
-		public string Type
+		public int? Interval
 		{
 			get
 			{
-				return type;
+				return interval;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value.ToString());
 			}
 		}
 
-		public List<Addr> Addrs
+		public List<IspCityNode> IspCityNodes
 		{
 			get
 			{
-				return addrs;
+				return ispCityNodes;
 			}
 
 			set
 			{
-				addrs = value;
-				for (int i = 0; i < addrs.Count; i++)
+				ispCityNodes = value;
+				for (int i = 0; i < ispCityNodes.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Addr." + (i + 1) + ".Mode", addrs[i].Mode);
-					DictionaryUtil.Add(QueryParameters,"Addr." + (i + 1) + ".LbaWeight", addrs[i].LbaWeight);
-					DictionaryUtil.Add(QueryParameters,"Addr." + (i + 1) + ".Value", addrs[i].Value);
+					DictionaryUtil.Add(QueryParameters,"IspCityNode." + (i + 1) + ".CityCode", ispCityNodes[i].CityCode);
+					DictionaryUtil.Add(QueryParameters,"IspCityNode." + (i + 1) + ".IspCode", ispCityNodes[i].IspCode);
 				}
-			}
-		}
-
-		public int? MinAvailableAddrNum
-		{
-			get
-			{
-				return minAvailableAddrNum;
-			}
-			set	
-			{
-				minAvailableAddrNum = value;
-				DictionaryUtil.Add(QueryParameters, "MinAvailableAddrNum", value.ToString());
 			}
 		}
 
@@ -172,6 +287,38 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					value_ = value;
+				}
+			}
+		}
+
+		public class IspCityNode
+		{
+
+			private string cityCode;
+
+			private string ispCode;
+
+			public string CityCode
+			{
+				get
+				{
+					return cityCode;
+				}
+				set	
+				{
+					cityCode = value;
+				}
+			}
+
+			public string IspCode
+			{
+				get
+				{
+					return ispCode;
+				}
+				set	
+				{
+					ispCode = value;
 				}
 			}
 		}

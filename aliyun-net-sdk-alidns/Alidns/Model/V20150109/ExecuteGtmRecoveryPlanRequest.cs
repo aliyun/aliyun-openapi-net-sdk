@@ -27,44 +27,32 @@ using Aliyun.Acs.Alidns.Transform.V20150109;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-    public class DescribeDomainDnsStatisticsRequest : RpcAcsRequest<DescribeDomainDnsStatisticsResponse>
+    public class ExecuteGtmRecoveryPlanRequest : RpcAcsRequest<ExecuteGtmRecoveryPlanResponse>
     {
-        public DescribeDomainDnsStatisticsRequest()
-            : base("Alidns", "2015-01-09", "DescribeDomainDnsStatistics", "Alidns", "openAPI")
+        public ExecuteGtmRecoveryPlanRequest()
+            : base("Alidns", "2015-01-09", "ExecuteGtmRecoveryPlan", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string endDate;
-
-		private string domainName;
+		private long? recoveryPlanId;
 
 		private string lang;
 
-		private string startDate;
-
-		public string EndDate
+		public long? RecoveryPlanId
 		{
 			get
 			{
-				return endDate;
+				return recoveryPlanId;
 			}
 			set	
 			{
-				endDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndDate", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				recoveryPlanId = value;
+				DictionaryUtil.Add(QueryParameters, "RecoveryPlanId", value.ToString());
 			}
 		}
 
@@ -81,22 +69,9 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string StartDate
-		{
-			get
-			{
-				return startDate;
-			}
-			set	
-			{
-				startDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartDate", value);
-			}
-		}
-
-        public override DescribeDomainDnsStatisticsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ExecuteGtmRecoveryPlanResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainDnsStatisticsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ExecuteGtmRecoveryPlanResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

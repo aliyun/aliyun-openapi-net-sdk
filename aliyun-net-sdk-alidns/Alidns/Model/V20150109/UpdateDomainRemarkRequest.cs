@@ -27,48 +27,23 @@ using Aliyun.Acs.Alidns.Transform.V20150109;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-    public class DescribeRecordStatisticsHistoryRequest : RpcAcsRequest<DescribeRecordStatisticsHistoryResponse>
+    public class UpdateDomainRemarkRequest : RpcAcsRequest<UpdateDomainRemarkResponse>
     {
-        public DescribeRecordStatisticsHistoryRequest()
-            : base("Alidns", "2015-01-09", "DescribeRecordStatisticsHistory", "Alidns", "openAPI")
+        public UpdateDomainRemarkRequest()
+            : base("Alidns", "2015-01-09", "UpdateDomainRemark", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string rr;
-
-		private string endDate;
 
 		private string domainName;
 
+		private string remark;
+
 		private string lang;
-
-		private string startDate;
-
-		public string Rr
-		{
-			get
-			{
-				return rr;
-			}
-			set	
-			{
-				rr = value;
-				DictionaryUtil.Add(QueryParameters, "Rr", value);
-			}
-		}
-
-		public string EndDate
-		{
-			get
-			{
-				return endDate;
-			}
-			set	
-			{
-				endDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndDate", value);
-			}
-		}
 
 		public string DomainName
 		{
@@ -80,6 +55,19 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string Remark
+		{
+			get
+			{
+				return remark;
+			}
+			set	
+			{
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
 			}
 		}
 
@@ -96,22 +84,9 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string StartDate
-		{
-			get
-			{
-				return startDate;
-			}
-			set	
-			{
-				startDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartDate", value);
-			}
-		}
-
-        public override DescribeRecordStatisticsHistoryResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateDomainRemarkResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRecordStatisticsHistoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateDomainRemarkResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

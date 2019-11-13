@@ -30,11 +30,24 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class UpdateGtmInstanceGlobalConfigRequest : RpcAcsRequest<UpdateGtmInstanceGlobalConfigResponse>
     {
         public UpdateGtmInstanceGlobalConfigRequest()
-            : base("Alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string alertGroup;
+
+		private string cnameMode;
+
+		private string lbaStrategy;
+
+		private int? ttl;
+
+		private string cnameCustomDomainName;
 
 		private string instanceId;
 
@@ -42,15 +55,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string userDomainName;
 
-		private string cnameMode;
-
-		private string lbaStrategy;
-
 		private string lang;
-
-		private int? ttl;
-
-		private string cnameCustomDomainName;
 
 		public string AlertGroup
 		{
@@ -62,6 +67,58 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				alertGroup = value;
 				DictionaryUtil.Add(QueryParameters, "AlertGroup", value);
+			}
+		}
+
+		public string CnameMode
+		{
+			get
+			{
+				return cnameMode;
+			}
+			set	
+			{
+				cnameMode = value;
+				DictionaryUtil.Add(QueryParameters, "CnameMode", value);
+			}
+		}
+
+		public string LbaStrategy
+		{
+			get
+			{
+				return lbaStrategy;
+			}
+			set	
+			{
+				lbaStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "LbaStrategy", value);
+			}
+		}
+
+		public int? Ttl
+		{
+			get
+			{
+				return ttl;
+			}
+			set	
+			{
+				ttl = value;
+				DictionaryUtil.Add(QueryParameters, "Ttl", value.ToString());
+			}
+		}
+
+		public string CnameCustomDomainName
+		{
+			get
+			{
+				return cnameCustomDomainName;
+			}
+			set	
+			{
+				cnameCustomDomainName = value;
+				DictionaryUtil.Add(QueryParameters, "CnameCustomDomainName", value);
 			}
 		}
 
@@ -104,32 +161,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string CnameMode
-		{
-			get
-			{
-				return cnameMode;
-			}
-			set	
-			{
-				cnameMode = value;
-				DictionaryUtil.Add(QueryParameters, "CnameMode", value);
-			}
-		}
-
-		public string LbaStrategy
-		{
-			get
-			{
-				return lbaStrategy;
-			}
-			set	
-			{
-				lbaStrategy = value;
-				DictionaryUtil.Add(QueryParameters, "LbaStrategy", value);
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -140,32 +171,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public int? Ttl
-		{
-			get
-			{
-				return ttl;
-			}
-			set	
-			{
-				ttl = value;
-				DictionaryUtil.Add(QueryParameters, "Ttl", value.ToString());
-			}
-		}
-
-		public string CnameCustomDomainName
-		{
-			get
-			{
-				return cnameCustomDomainName;
-			}
-			set	
-			{
-				cnameCustomDomainName = value;
-				DictionaryUtil.Add(QueryParameters, "CnameCustomDomainName", value);
 			}
 		}
 

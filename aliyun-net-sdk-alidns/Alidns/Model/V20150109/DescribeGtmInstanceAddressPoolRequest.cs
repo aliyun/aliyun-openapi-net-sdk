@@ -30,8 +30,13 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
     public class DescribeGtmInstanceAddressPoolRequest : RpcAcsRequest<DescribeGtmInstanceAddressPoolResponse>
     {
         public DescribeGtmInstanceAddressPoolRequest()
-            : base("Alidns", "2015-01-09", "DescribeGtmInstanceAddressPool", "Alidns", "openAPI")
+            : base("Alidns", "2015-01-09", "DescribeGtmInstanceAddressPool", "alidns", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string addrPoolId;

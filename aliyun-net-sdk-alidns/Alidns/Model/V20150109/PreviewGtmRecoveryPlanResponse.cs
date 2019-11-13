@@ -22,20 +22,20 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-	public class QueryCreateInstancePriceResponse : AcsResponse
+	public class PreviewGtmRecoveryPlanResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string origin;
+		private int? totalItems;
 
-		private string discount;
+		private int? totalPages;
 
-		private string amount;
+		private int? pageSize;
 
-		private string currency;
+		private int? pageNumber;
 
-		private List<QueryCreateInstancePrice_Rule> rules;
+		private List<PreviewGtmRecoveryPlan_Preview> previews;
 
 		public string RequestId
 		{
@@ -49,84 +49,86 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string Origin
+		public int? TotalItems
 		{
 			get
 			{
-				return origin;
+				return totalItems;
 			}
 			set	
 			{
-				origin = value;
+				totalItems = value;
 			}
 		}
 
-		public string Discount
+		public int? TotalPages
 		{
 			get
 			{
-				return discount;
+				return totalPages;
 			}
 			set	
 			{
-				discount = value;
+				totalPages = value;
 			}
 		}
 
-		public string Amount
+		public int? PageSize
 		{
 			get
 			{
-				return amount;
+				return pageSize;
 			}
 			set	
 			{
-				amount = value;
+				pageSize = value;
 			}
 		}
 
-		public string Currency
+		public int? PageNumber
 		{
 			get
 			{
-				return currency;
+				return pageNumber;
 			}
 			set	
 			{
-				currency = value;
+				pageNumber = value;
 			}
 		}
 
-		public List<QueryCreateInstancePrice_Rule> Rules
+		public List<PreviewGtmRecoveryPlan_Preview> Previews
 		{
 			get
 			{
-				return rules;
+				return previews;
 			}
 			set	
 			{
-				rules = value;
+				previews = value;
 			}
 		}
 
-		public class QueryCreateInstancePrice_Rule
+		public class PreviewGtmRecoveryPlan_Preview
 		{
 
-			private long? ruleId;
+			private string instanceId;
 
 			private string name;
 
-			private string title;
+			private string userDomainName;
 
-			public long? RuleId
+			private List<PreviewGtmRecoveryPlan_SwitchInfo> switchInfos;
+
+			public string InstanceId
 			{
 				get
 				{
-					return ruleId;
+					return instanceId;
 				}
 				set	
 				{
-					ruleId = value;
+					instanceId = value;
 				}
 			}
 
@@ -142,15 +144,59 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
-			public string Title
+			public string UserDomainName
 			{
 				get
 				{
-					return title;
+					return userDomainName;
 				}
 				set	
 				{
-					title = value;
+					userDomainName = value;
+				}
+			}
+
+			public List<PreviewGtmRecoveryPlan_SwitchInfo> SwitchInfos
+			{
+				get
+				{
+					return switchInfos;
+				}
+				set	
+				{
+					switchInfos = value;
+				}
+			}
+
+			public class PreviewGtmRecoveryPlan_SwitchInfo
+			{
+
+				private string strategyName;
+
+				private string content;
+
+				public string StrategyName
+				{
+					get
+					{
+						return strategyName;
+					}
+					set	
+					{
+						strategyName = value;
+					}
+				}
+
+				public string Content
+				{
+					get
+					{
+						return content;
+					}
+					set	
+					{
+						content = value;
+					}
 				}
 			}
 		}
