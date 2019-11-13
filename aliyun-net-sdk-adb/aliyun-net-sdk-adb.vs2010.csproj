@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ed3c9c2f-d598-491f-b12f-8069e1325538}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-adb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Adb\Model\V20190315\AllocateClusterPublicConnectionRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\AllocateClusterPublicConnectionResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\CreateAccountRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\CreateAccountResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\CreateDBClusterRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\CreateDBClusterResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DeleteAccountRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DeleteAccountResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeAccountsRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeAccountsResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeAutoRenewAttributeRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeAutoRenewAttributeResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeBackupPolicyRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeBackupPolicyResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeBackupsRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeBackupsResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeDBClusterAccessWhiteListRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeDBClusterAccessWhiteListResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeDBClusterAttributeRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeDBClusterAttributeResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeDBClusterNetInfoRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeDBClusterNetInfoResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeDBClusterPerformanceRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeDBClusterPerformanceResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeDBClustersRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeDBClustersResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeOperatorPermissionRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeOperatorPermissionResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeRegionsRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeRegionsResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeSlowLogRecordsRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeSlowLogRecordsResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeSlowLogTrendRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\DescribeSlowLogTrendResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\GrantOperatorPermissionRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\GrantOperatorPermissionResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\ModifyAccountDescriptionRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\ModifyAccountDescriptionResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\ModifyAutoRenewAttributeRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\ModifyAutoRenewAttributeResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\ModifyDBClusterAccessWhiteListRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\ModifyDBClusterAccessWhiteListResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\ModifyDBClusterDescriptionRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\ModifyDBClusterDescriptionResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\ModifyDBClusterMaintainTimeRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\ModifyDBClusterMaintainTimeResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\ReleaseClusterPublicConnectionRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\ReleaseClusterPublicConnectionResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\ResetAccountPasswordRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\ResetAccountPasswordResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\RevokeOperatorPermissionRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\RevokeOperatorPermissionResponse.cs" />
+	<Compile Include="Adb\Transform\V20190315\AllocateClusterPublicConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\CreateAccountResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\CreateDBClusterResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DeleteAccountResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeAccountsResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeAutoRenewAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeBackupPolicyResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeBackupsResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeDBClusterAccessWhiteListResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeDBClusterAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeDBClusterNetInfoResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeDBClusterPerformanceResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeDBClustersResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeOperatorPermissionResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeSlowLogRecordsResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\DescribeSlowLogTrendResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\GrantOperatorPermissionResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\ModifyAccountDescriptionResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\ModifyAutoRenewAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\ModifyDBClusterAccessWhiteListResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\ModifyDBClusterDescriptionResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\ModifyDBClusterMaintainTimeResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\ReleaseClusterPublicConnectionResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\ResetAccountPasswordResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\RevokeOperatorPermissionResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
