@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{315af67f-e5b5-46b2-9eb4-9e75c47ce07d}</ProjectGuid>
+    <ProjectGuid>{72baa644-1e73-4f64-bca7-9d3e90f632b1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -62,6 +62,8 @@
 	<Compile Include="Imm\Model\V20170906\CreateOfficeConversionTaskResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateSetRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateSetResponse.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateStreamAnalyseTaskRequest.cs" />
+	<Compile Include="Imm\Model\V20170906\CreateStreamAnalyseTaskResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateVideoAbstractTaskRequest.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateVideoAbstractTaskResponse.cs" />
 	<Compile Include="Imm\Model\V20170906\CreateVideoAnalyseTaskRequest.cs" />
@@ -189,6 +191,7 @@
 	<Compile Include="Imm\Transform\V20170906\CreateMergeFaceGroupsJobResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateOfficeConversionTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateSetResponseUnmarshaller.cs" />
+	<Compile Include="Imm\Transform\V20170906\CreateStreamAnalyseTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateVideoAbstractTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateVideoAnalyseTaskResponseUnmarshaller.cs" />
 	<Compile Include="Imm\Transform\V20170906\CreateVideoCompressTaskResponseUnmarshaller.cs" />
