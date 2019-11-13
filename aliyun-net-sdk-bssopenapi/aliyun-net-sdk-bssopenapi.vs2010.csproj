@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{a57c1586-74bc-4b02-95de-103e7ac0702c}</ProjectGuid>
+    <ProjectGuid>{43453d77-2d55-411e-bf29-2602f2b70f83}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -96,6 +96,8 @@
 	<Compile Include="BssOpenApi\Model\V20171214\QueryBillOverviewResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryBillRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryBillResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryBillToOSSSubscriptionRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryBillToOSSSubscriptionResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryCashCouponsRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryCashCouponsResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryCostUnitRequest.cs" />
@@ -178,6 +180,7 @@
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryAvailableInstancesResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryBillOverviewResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryBillResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryBillToOSSSubscriptionResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryCashCouponsResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryCostUnitResourceResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryCostUnitResponseUnmarshaller.cs" />
