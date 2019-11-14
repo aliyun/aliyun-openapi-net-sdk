@@ -27,10 +27,10 @@ using Aliyun.Acs.Dysmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 {
-    public class SendBatchSmsRequest : RpcAcsRequest<SendBatchSmsResponse>
+    public class QuerySmsTemplateRequest : RpcAcsRequest<QuerySmsTemplateResponse>
     {
-        public SendBatchSmsRequest()
-            : base("Dysmsapi", "2017-05-25", "SendBatchSms", "dysms", "openAPI")
+        public QuerySmsTemplateRequest()
+            : base("Dysmsapi", "2017-05-25", "QuerySmsTemplate", "dysms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,19 +41,11 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 
 		private long? resourceOwnerId;
 
-		private string templateParamJson;
-
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string smsUpExtendCodeJson;
-
-		private string signNameJson;
-
 		private string templateCode;
-
-		private string phoneNumberJson;
 
 		public long? ResourceOwnerId
 		{
@@ -65,19 +57,6 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string TemplateParamJson
-		{
-			get
-			{
-				return templateParamJson;
-			}
-			set	
-			{
-				templateParamJson = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateParamJson", value);
 			}
 		}
 
@@ -107,32 +86,6 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 			}
 		}
 
-		public string SmsUpExtendCodeJson
-		{
-			get
-			{
-				return smsUpExtendCodeJson;
-			}
-			set	
-			{
-				smsUpExtendCodeJson = value;
-				DictionaryUtil.Add(QueryParameters, "SmsUpExtendCodeJson", value);
-			}
-		}
-
-		public string SignNameJson
-		{
-			get
-			{
-				return signNameJson;
-			}
-			set	
-			{
-				signNameJson = value;
-				DictionaryUtil.Add(QueryParameters, "SignNameJson", value);
-			}
-		}
-
 		public string TemplateCode
 		{
 			get
@@ -146,22 +99,9 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 			}
 		}
 
-		public string PhoneNumberJson
-		{
-			get
-			{
-				return phoneNumberJson;
-			}
-			set	
-			{
-				phoneNumberJson = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNumberJson", value);
-			}
-		}
-
-        public override SendBatchSmsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QuerySmsTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SendBatchSmsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QuerySmsTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

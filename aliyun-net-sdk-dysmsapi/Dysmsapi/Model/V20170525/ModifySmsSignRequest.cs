@@ -27,10 +27,10 @@ using Aliyun.Acs.Dysmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 {
-    public class SendBatchSmsRequest : RpcAcsRequest<SendBatchSmsResponse>
+    public class ModifySmsSignRequest : RpcAcsRequest<ModifySmsSignResponse>
     {
-        public SendBatchSmsRequest()
-            : base("Dysmsapi", "2017-05-25", "SendBatchSms", "dysms", "openAPI")
+        public ModifySmsSignRequest()
+            : base("Dysmsapi", "2017-05-25", "ModifySmsSign", "dysms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,19 +41,17 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 
 		private long? resourceOwnerId;
 
-		private string templateParamJson;
+		private string remark;
+
+		private string signName;
+
+		private List<SignFileList> signFileLists = new List<SignFileList>(){ };
 
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string smsUpExtendCodeJson;
-
-		private string signNameJson;
-
-		private string templateCode;
-
-		private string phoneNumberJson;
+		private int? signSource;
 
 		public long? ResourceOwnerId
 		{
@@ -68,16 +66,47 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 			}
 		}
 
-		public string TemplateParamJson
+		public string Remark
 		{
 			get
 			{
-				return templateParamJson;
+				return remark;
 			}
 			set	
 			{
-				templateParamJson = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateParamJson", value);
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
+			}
+		}
+
+		public string SignName
+		{
+			get
+			{
+				return signName;
+			}
+			set	
+			{
+				signName = value;
+				DictionaryUtil.Add(QueryParameters, "SignName", value);
+			}
+		}
+
+		public List<SignFileList> SignFileLists
+		{
+			get
+			{
+				return signFileLists;
+			}
+
+			set
+			{
+				signFileLists = value;
+				for (int i = 0; i < signFileLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SignFileList." + (i + 1) + ".FileContents", signFileLists[i].FileContents);
+					DictionaryUtil.Add(QueryParameters,"SignFileList." + (i + 1) + ".FileSuffix", signFileLists[i].FileSuffix);
+				}
 			}
 		}
 
@@ -107,61 +136,54 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 			}
 		}
 
-		public string SmsUpExtendCodeJson
+		public int? SignSource
 		{
 			get
 			{
-				return smsUpExtendCodeJson;
+				return signSource;
 			}
 			set	
 			{
-				smsUpExtendCodeJson = value;
-				DictionaryUtil.Add(QueryParameters, "SmsUpExtendCodeJson", value);
+				signSource = value;
+				DictionaryUtil.Add(QueryParameters, "SignSource", value.ToString());
 			}
 		}
 
-		public string SignNameJson
+		public class SignFileList
 		{
-			get
+
+			private string fileContents;
+
+			private string fileSuffix;
+
+			public string FileContents
 			{
-				return signNameJson;
+				get
+				{
+					return fileContents;
+				}
+				set	
+				{
+					fileContents = value;
+				}
 			}
-			set	
+
+			public string FileSuffix
 			{
-				signNameJson = value;
-				DictionaryUtil.Add(QueryParameters, "SignNameJson", value);
+				get
+				{
+					return fileSuffix;
+				}
+				set	
+				{
+					fileSuffix = value;
+				}
 			}
 		}
 
-		public string TemplateCode
-		{
-			get
-			{
-				return templateCode;
-			}
-			set	
-			{
-				templateCode = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateCode", value);
-			}
-		}
-
-		public string PhoneNumberJson
-		{
-			get
-			{
-				return phoneNumberJson;
-			}
-			set	
-			{
-				phoneNumberJson = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNumberJson", value);
-			}
-		}
-
-        public override SendBatchSmsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifySmsSignResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SendBatchSmsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifySmsSignResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

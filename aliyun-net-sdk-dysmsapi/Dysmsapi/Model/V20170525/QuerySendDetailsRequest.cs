@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dysmsapi;
 using Aliyun.Acs.Dysmsapi.Transform;
 using Aliyun.Acs.Dysmsapi.Transform.V20170525;
 
@@ -31,25 +30,30 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
     public class QuerySendDetailsRequest : RpcAcsRequest<QuerySendDetailsResponse>
     {
         public QuerySendDetailsRequest()
-            : base("Dysmsapi", "2017-05-25", "QuerySendDetails")
+            : base("Dysmsapi", "2017-05-25", "QuerySendDetails", "dysms", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string phoneNumber;
 
 		private string sendDate;
 
-		private string phoneNumber;
-
-		private string bizId;
-
 		private long? pageSize;
+
+		private string resourceOwnerAccount;
 
 		private long? currentPage;
 
 		private long? ownerId;
+
+		private string bizId;
 
 		public long? ResourceOwnerId
 		{
@@ -61,32 +65,6 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string SendDate
-		{
-			get
-			{
-				return sendDate;
-			}
-			set	
-			{
-				sendDate = value;
-				DictionaryUtil.Add(QueryParameters, "SendDate", value);
 			}
 		}
 
@@ -103,16 +81,16 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 			}
 		}
 
-		public string BizId
+		public string SendDate
 		{
 			get
 			{
-				return bizId;
+				return sendDate;
 			}
 			set	
 			{
-				bizId = value;
-				DictionaryUtil.Add(QueryParameters, "BizId", value);
+				sendDate = value;
+				DictionaryUtil.Add(QueryParameters, "SendDate", value);
 			}
 		}
 
@@ -126,6 +104,19 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -152,6 +143,19 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 

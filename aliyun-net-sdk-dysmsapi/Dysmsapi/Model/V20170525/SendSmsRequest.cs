@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dysmsapi;
 using Aliyun.Acs.Dysmsapi.Transform;
 using Aliyun.Acs.Dysmsapi.Transform.V20170525;
 
@@ -31,13 +30,18 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
     public class SendSmsRequest : RpcAcsRequest<SendSmsResponse>
     {
         public SendSmsRequest()
-            : base("Dysmsapi", "2017-05-25", "SendSms")
+            : base("Dysmsapi", "2017-05-25", "SendSms", "dysms", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string smsUpExtendCode;
-
 		private long? resourceOwnerId;
+
+		private string smsUpExtendCode;
 
 		private string signName;
 
@@ -45,26 +49,13 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 
 		private string phoneNumbers;
 
-		private string outId;
-
 		private long? ownerId;
+
+		private string outId;
 
 		private string templateCode;
 
 		private string templateParam;
-
-		public string SmsUpExtendCode
-		{
-			get
-			{
-				return smsUpExtendCode;
-			}
-			set	
-			{
-				smsUpExtendCode = value;
-				DictionaryUtil.Add(QueryParameters, "SmsUpExtendCode", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -76,6 +67,19 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SmsUpExtendCode
+		{
+			get
+			{
+				return smsUpExtendCode;
+			}
+			set	
+			{
+				smsUpExtendCode = value;
+				DictionaryUtil.Add(QueryParameters, "SmsUpExtendCode", value);
 			}
 		}
 
@@ -118,19 +122,6 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 			}
 		}
 
-		public string OutId
-		{
-			get
-			{
-				return outId;
-			}
-			set	
-			{
-				outId = value;
-				DictionaryUtil.Add(QueryParameters, "OutId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -141,6 +132,19 @@ namespace Aliyun.Acs.Dysmsapi.Model.V20170525
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string OutId
+		{
+			get
+			{
+				return outId;
+			}
+			set	
+			{
+				outId = value;
+				DictionaryUtil.Add(QueryParameters, "OutId", value);
 			}
 		}
 
