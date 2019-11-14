@@ -116,9 +116,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private string sourceEndpointInstanceID;
 
-			private string beginTimestampForRestore;
+			private long? beginTimestampForRestore;
 
-			private string endTimestampForRestore;
+			private long? endTimestampForRestore;
 
 			private string rangeType;
 
@@ -148,7 +148,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string BeginTimestampForRestore
+			public long? BeginTimestampForRestore
 			{
 				get
 				{
@@ -160,7 +160,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				}
 			}
 
-			public string EndTimestampForRestore
+			public long? EndTimestampForRestore
 			{
 				get
 				{
@@ -201,9 +201,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 				private string backupSetId;
 
-				private string startTime;
+				private long? startTime;
 
-				private string endTime;
+				private long? endTime;
 
 				public string BackupSetId
 				{
@@ -217,7 +217,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 					}
 				}
 
-				public string StartTime
+				public long? StartTime
 				{
 					get
 					{
@@ -229,7 +229,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 					}
 				}
 
-				public string EndTime
+				public long? EndTime
 				{
 					get
 					{

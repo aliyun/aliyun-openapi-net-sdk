@@ -42,16 +42,16 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 				DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange dBSRecoverRange = new DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange();
 				dBSRecoverRange.SourceEndpointInstanceType = context.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].SourceEndpointInstanceType");
 				dBSRecoverRange.SourceEndpointInstanceID = context.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].SourceEndpointInstanceID");
-				dBSRecoverRange.BeginTimestampForRestore = context.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].BeginTimestampForRestore");
-				dBSRecoverRange.EndTimestampForRestore = context.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].EndTimestampForRestore");
+				dBSRecoverRange.BeginTimestampForRestore = context.LongValue("DescribeRestoreRangeInfo.Items["+ i +"].BeginTimestampForRestore");
+				dBSRecoverRange.EndTimestampForRestore = context.LongValue("DescribeRestoreRangeInfo.Items["+ i +"].EndTimestampForRestore");
 				dBSRecoverRange.RangeType = context.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].RangeType");
 
 				List<DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange.DescribeRestoreRangeInfo_FullBackupDetail> dBSRecoverRange_fullBackupList = new List<DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange.DescribeRestoreRangeInfo_FullBackupDetail>();
 				for (int j = 0; j < context.Length("DescribeRestoreRangeInfo.Items["+ i +"].FullBackupList.Length"); j++) {
 					DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange.DescribeRestoreRangeInfo_FullBackupDetail fullBackupDetail = new DescribeRestoreRangeInfoResponse.DescribeRestoreRangeInfo_DBSRecoverRange.DescribeRestoreRangeInfo_FullBackupDetail();
 					fullBackupDetail.BackupSetId = context.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].FullBackupList["+ j +"].BackupSetId");
-					fullBackupDetail.StartTime = context.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].FullBackupList["+ j +"].StartTime");
-					fullBackupDetail.EndTime = context.StringValue("DescribeRestoreRangeInfo.Items["+ i +"].FullBackupList["+ j +"].EndTime");
+					fullBackupDetail.StartTime = context.LongValue("DescribeRestoreRangeInfo.Items["+ i +"].FullBackupList["+ j +"].StartTime");
+					fullBackupDetail.EndTime = context.LongValue("DescribeRestoreRangeInfo.Items["+ i +"].FullBackupList["+ j +"].EndTime");
 
 					dBSRecoverRange_fullBackupList.Add(fullBackupDetail);
 				}
