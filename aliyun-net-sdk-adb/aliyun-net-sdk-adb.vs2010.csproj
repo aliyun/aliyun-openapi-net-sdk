@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ed3c9c2f-d598-491f-b12f-8069e1325538}</ProjectGuid>
+    <ProjectGuid>{bbef53ef-a56a-41e0-b917-ed779f5b4cfc}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -76,6 +76,8 @@
 	<Compile Include="Adb\Model\V20190315\DescribeSlowLogTrendResponse.cs" />
 	<Compile Include="Adb\Model\V20190315\GrantOperatorPermissionRequest.cs" />
 	<Compile Include="Adb\Model\V20190315\GrantOperatorPermissionResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\ListTagResourcesRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\ListTagResourcesResponse.cs" />
 	<Compile Include="Adb\Model\V20190315\ModifyAccountDescriptionRequest.cs" />
 	<Compile Include="Adb\Model\V20190315\ModifyAccountDescriptionResponse.cs" />
 	<Compile Include="Adb\Model\V20190315\ModifyAutoRenewAttributeRequest.cs" />
@@ -92,6 +94,10 @@
 	<Compile Include="Adb\Model\V20190315\ResetAccountPasswordResponse.cs" />
 	<Compile Include="Adb\Model\V20190315\RevokeOperatorPermissionRequest.cs" />
 	<Compile Include="Adb\Model\V20190315\RevokeOperatorPermissionResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\TagResourcesRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\TagResourcesResponse.cs" />
+	<Compile Include="Adb\Model\V20190315\UntagResourcesRequest.cs" />
+	<Compile Include="Adb\Model\V20190315\UntagResourcesResponse.cs" />
 	<Compile Include="Adb\Transform\V20190315\AllocateClusterPublicConnectionResponseUnmarshaller.cs" />
 	<Compile Include="Adb\Transform\V20190315\CreateAccountResponseUnmarshaller.cs" />
 	<Compile Include="Adb\Transform\V20190315\CreateDBClusterResponseUnmarshaller.cs" />
@@ -110,6 +116,7 @@
 	<Compile Include="Adb\Transform\V20190315\DescribeSlowLogRecordsResponseUnmarshaller.cs" />
 	<Compile Include="Adb\Transform\V20190315\DescribeSlowLogTrendResponseUnmarshaller.cs" />
 	<Compile Include="Adb\Transform\V20190315\GrantOperatorPermissionResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\ListTagResourcesResponseUnmarshaller.cs" />
 	<Compile Include="Adb\Transform\V20190315\ModifyAccountDescriptionResponseUnmarshaller.cs" />
 	<Compile Include="Adb\Transform\V20190315\ModifyAutoRenewAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Adb\Transform\V20190315\ModifyDBClusterAccessWhiteListResponseUnmarshaller.cs" />
@@ -118,6 +125,8 @@
 	<Compile Include="Adb\Transform\V20190315\ReleaseClusterPublicConnectionResponseUnmarshaller.cs" />
 	<Compile Include="Adb\Transform\V20190315\ResetAccountPasswordResponseUnmarshaller.cs" />
 	<Compile Include="Adb\Transform\V20190315\RevokeOperatorPermissionResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\TagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Adb\Transform\V20190315\UntagResourcesResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
