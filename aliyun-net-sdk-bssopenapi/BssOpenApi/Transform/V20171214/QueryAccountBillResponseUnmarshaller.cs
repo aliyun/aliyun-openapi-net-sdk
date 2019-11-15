@@ -59,6 +59,9 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.OutstandingAmount = context.FloatValue("QueryAccountBill.Data.Items["+ i +"].OutstandingAmount");
 				item.Currency = context.StringValue("QueryAccountBill.Data.Items["+ i +"].Currency");
 				item.OwnerName = context.StringValue("QueryAccountBill.Data.Items["+ i +"].OwnerName");
+				item.ProductCode = context.StringValue("QueryAccountBill.Data.Items["+ i +"].ProductCode");
+				item.ProductName = context.StringValue("QueryAccountBill.Data.Items["+ i +"].ProductName");
+				item.SubscriptionType = context.StringValue("QueryAccountBill.Data.Items["+ i +"].SubscriptionType");
 
 				data_items.Add(item);
 			}

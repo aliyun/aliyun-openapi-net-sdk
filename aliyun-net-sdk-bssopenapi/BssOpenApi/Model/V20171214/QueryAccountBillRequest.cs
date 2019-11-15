@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.BssOpenApi;
 using Aliyun.Acs.BssOpenApi.Transform;
 using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
     public class QueryAccountBillRequest : RpcAcsRequest<QueryAccountBillResponse>
     {
         public QueryAccountBillRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryAccountBill", "BssOpenApi", "openAPI")
+            : base("BssOpenApi", "2017-12-14", "QueryAccountBill")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,13 +40,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
             }
         }
 
+		private string productCode;
+
 		private string billingCycle;
 
 		private int? pageNum;
 
 		private long? ownerID;
 
+		private bool? isGroupByProduct;
+
 		private int? pageSize;
+
+		public string ProductCode
+		{
+			get
+			{
+				return productCode;
+			}
+			set	
+			{
+				productCode = value;
+				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+			}
+		}
 
 		public string BillingCycle
 		{
@@ -83,6 +101,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				ownerID = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerID", value.ToString());
+			}
+		}
+
+		public bool? IsGroupByProduct
+		{
+			get
+			{
+				return isGroupByProduct;
+			}
+			set	
+			{
+				isGroupByProduct = value;
+				DictionaryUtil.Add(QueryParameters, "IsGroupByProduct", value.ToString());
 			}
 		}
 

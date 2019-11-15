@@ -223,6 +223,12 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string ownerName;
 
+				private string productCode;
+
+				private string productName;
+
+				private string subscriptionType;
+
 				public string CostUnit
 				{
 					get
@@ -364,6 +370,42 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						ownerName = value;
+					}
+				}
+
+				public string ProductCode
+				{
+					get
+					{
+						return productCode;
+					}
+					set	
+					{
+						productCode = value;
+					}
+				}
+
+				public string ProductName
+				{
+					get
+					{
+						return productName;
+					}
+					set	
+					{
+						productName = value;
+					}
+				}
+
+				public string SubscriptionType
+				{
+					get
+					{
+						return subscriptionType;
+					}
+					set	
+					{
+						subscriptionType = value;
 					}
 				}
 			}
