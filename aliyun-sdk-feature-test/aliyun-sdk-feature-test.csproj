@@ -29,6 +29,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="aliyun-net-sdk-ccc" Version="1.0.9" />
     <PackageReference Include="aliyun-net-sdk-cdn" Version="3.0.8" />
     <PackageReference Include="aliyun-net-sdk-ecs" Version="4.16.10" />
