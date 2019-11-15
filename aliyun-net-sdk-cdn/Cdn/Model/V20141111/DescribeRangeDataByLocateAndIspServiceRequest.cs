@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20141111;
 
@@ -32,49 +33,24 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         public DescribeRangeDataByLocateAndIspServiceRequest()
             : base("Cdn", "2014-11-11", "DescribeRangeDataByLocateAndIspService")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string ispNames;
-
-		private string securityToken;
 
 		private string domainNames;
 
 		private string locationNames;
 
-		private string action;
+		private string startTime;
+
+		private string ispNames;
 
 		private string endTime;
 
-		private string startTime;
-
 		private long? ownerId;
-
-		public string IspNames
-		{
-			get
-			{
-				return ispNames;
-			}
-			set	
-			{
-				ispNames = value;
-				DictionaryUtil.Add(QueryParameters, "IspNames", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
 
 		public string DomainNames
 		{
@@ -102,16 +78,29 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Action
+		public string StartTime
 		{
 			get
 			{
-				return action;
+				return startTime;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string IspNames
+		{
+			get
+			{
+				return ispNames;
+			}
+			set	
+			{
+				ispNames = value;
+				DictionaryUtil.Add(QueryParameters, "IspNames", value);
 			}
 		}
 
@@ -125,19 +114,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "startTime", value);
 			}
 		}
 

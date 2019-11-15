@@ -22,15 +22,16 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class DeleteSpecificStagingConfigRequest : RpcAcsRequest<DeleteSpecificStagingConfigResponse>
+    public class DescribeDomainSrcTopUrlVisitRequest : RpcAcsRequest<DescribeDomainSrcTopUrlVisitResponse>
     {
-        public DeleteSpecificStagingConfigRequest()
-            : base("Cdn", "2018-05-10", "DeleteSpecificStagingConfig", "cdn", "openAPI")
+        public DescribeDomainSrcTopUrlVisitRequest()
+            : base("Cdn", "2018-05-10", "DescribeDomainSrcTopUrlVisit")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,37 +40,26 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string securityToken;
-
-		private string configId;
+		private string startTime;
 
 		private string domainName;
 
+		private string endTime;
+
 		private long? ownerId;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string sortBy;
 
-		public string ConfigId
+		public string StartTime
 		{
 			get
 			{
-				return configId;
+				return startTime;
 			}
 			set	
 			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -86,6 +76,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -99,9 +102,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override DeleteSpecificStagingConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string SortBy
+		{
+			get
+			{
+				return sortBy;
+			}
+			set	
+			{
+				sortBy = value;
+				DictionaryUtil.Add(QueryParameters, "SortBy", value);
+			}
+		}
+
+        public override DescribeDomainSrcTopUrlVisitResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteSpecificStagingConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainSrcTopUrlVisitResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeUserDomainsRequest : RpcAcsRequest<DescribeUserDomainsResponse>
     {
         public DescribeUserDomainsRequest()
-            : base("Cdn", "2018-05-10", "DescribeUserDomains", "cdn", "openAPI")
+            : base("Cdn", "2018-05-10", "DescribeUserDomains")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,19 +40,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string funcFilter;
-
-		private string domainName;
-
-		private long? ownerId;
-
-		private string funcId;
-
 		private int? pageNumber;
-
-		private string domainStatus;
-
-		private string domainSearchType;
 
 		private bool? checkDomainShow;
 
@@ -61,61 +50,25 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string cdnType;
 
+		private string changeEndTime;
+
 		private int? pageSize;
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
-		public string FuncFilter
-		{
-			get
-			{
-				return funcFilter;
-			}
-			set	
-			{
-				funcFilter = value;
-				DictionaryUtil.Add(QueryParameters, "FuncFilter", value);
-			}
-		}
+		private string funcFilter;
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+		private string domainName;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private long? ownerId;
 
-		public string FuncId
-		{
-			get
-			{
-				return funcId;
-			}
-			set	
-			{
-				funcId = value;
-				DictionaryUtil.Add(QueryParameters, "FuncId", value);
-			}
-		}
+		private string funcId;
+
+		private string domainStatus;
+
+		private string domainSearchType;
+
+		private string changeStartTime;
 
 		public int? PageNumber
 		{
@@ -127,32 +80,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string DomainStatus
-		{
-			get
-			{
-				return domainStatus;
-			}
-			set	
-			{
-				domainStatus = value;
-				DictionaryUtil.Add(QueryParameters, "DomainStatus", value);
-			}
-		}
-
-		public string DomainSearchType
-		{
-			get
-			{
-				return domainSearchType;
-			}
-			set	
-			{
-				domainSearchType = value;
-				DictionaryUtil.Add(QueryParameters, "DomainSearchType", value);
 			}
 		}
 
@@ -208,6 +135,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
+		public string ChangeEndTime
+		{
+			get
+			{
+				return changeEndTime;
+			}
+			set	
+			{
+				changeEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "ChangeEndTime", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -236,6 +176,97 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public string FuncFilter
+		{
+			get
+			{
+				return funcFilter;
+			}
+			set	
+			{
+				funcFilter = value;
+				DictionaryUtil.Add(QueryParameters, "FuncFilter", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string FuncId
+		{
+			get
+			{
+				return funcId;
+			}
+			set	
+			{
+				funcId = value;
+				DictionaryUtil.Add(QueryParameters, "FuncId", value);
+			}
+		}
+
+		public string DomainStatus
+		{
+			get
+			{
+				return domainStatus;
+			}
+			set	
+			{
+				domainStatus = value;
+				DictionaryUtil.Add(QueryParameters, "DomainStatus", value);
+			}
+		}
+
+		public string DomainSearchType
+		{
+			get
+			{
+				return domainSearchType;
+			}
+			set	
+			{
+				domainSearchType = value;
+				DictionaryUtil.Add(QueryParameters, "DomainSearchType", value);
+			}
+		}
+
+		public string ChangeStartTime
+		{
+			get
+			{
+				return changeStartTime;
+			}
+			set	
+			{
+				changeStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "ChangeStartTime", value);
 			}
 		}
 

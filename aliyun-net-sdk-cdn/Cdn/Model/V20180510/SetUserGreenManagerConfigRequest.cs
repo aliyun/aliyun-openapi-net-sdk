@@ -22,15 +22,16 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class SetL2OssKeyConfigRequest : RpcAcsRequest<SetL2OssKeyConfigResponse>
+    public class SetUserGreenManagerConfigRequest : RpcAcsRequest<SetUserGreenManagerConfigResponse>
     {
-        public SetL2OssKeyConfigRequest()
-            : base("Cdn", "2018-05-10", "SetL2OssKeyConfig", "cdn", "openAPI")
+        public SetUserGreenManagerConfigRequest()
+            : base("Cdn", "2018-05-10", "SetUserGreenManagerConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,26 +40,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string domainName;
-
 		private long? ownerId;
 
-		private long? configId;
+		private string securityToken;
 
-		private string privateOssAuth;
+		private string quota;
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+		private string ratio;
 
 		public long? OwnerId
 		{
@@ -73,35 +61,48 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public long? ConfigId
+		public string SecurityToken
 		{
 			get
 			{
-				return configId;
+				return securityToken;
 			}
 			set	
 			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public string PrivateOssAuth
+		public string Quota
 		{
 			get
 			{
-				return privateOssAuth;
+				return quota;
 			}
 			set	
 			{
-				privateOssAuth = value;
-				DictionaryUtil.Add(QueryParameters, "PrivateOssAuth", value);
+				quota = value;
+				DictionaryUtil.Add(QueryParameters, "Quota", value);
 			}
 		}
 
-        public override SetL2OssKeyConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Ratio
+		{
+			get
+			{
+				return ratio;
+			}
+			set	
+			{
+				ratio = value;
+				DictionaryUtil.Add(QueryParameters, "Ratio", value);
+			}
+		}
+
+        public override SetUserGreenManagerConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetL2OssKeyConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetUserGreenManagerConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

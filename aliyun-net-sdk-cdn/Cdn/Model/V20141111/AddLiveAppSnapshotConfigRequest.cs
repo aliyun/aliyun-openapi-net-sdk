@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20141111;
 
@@ -32,25 +33,28 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         public AddLiveAppSnapshotConfigRequest()
             : base("Cdn", "2014-11-11", "AddLiveAppSnapshotConfig")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private int? timeInterval;
 
-		private string ossBucket;
+		private string ossEndpoint;
 
 		private string appName;
 
 		private string securityToken;
 
+		private string overwriteOssObject;
+
+		private string ossBucket;
+
 		private string domainName;
 
-		private string ossEndpoint;
-
-		private string action;
-
 		private string sequenceOssObject;
-
-		private string overwriteOssObject;
 
 		private long? ownerId;
 
@@ -67,16 +71,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string OssBucket
+		public string OssEndpoint
 		{
 			get
 			{
-				return ossBucket;
+				return ossEndpoint;
 			}
 			set	
 			{
-				ossBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+				ossEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "OssEndpoint", value);
 			}
 		}
 
@@ -106,6 +110,32 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
+		public string OverwriteOssObject
+		{
+			get
+			{
+				return overwriteOssObject;
+			}
+			set	
+			{
+				overwriteOssObject = value;
+				DictionaryUtil.Add(QueryParameters, "OverwriteOssObject", value);
+			}
+		}
+
+		public string OssBucket
+		{
+			get
+			{
+				return ossBucket;
+			}
+			set	
+			{
+				ossBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OssBucket", value);
+			}
+		}
+
 		public string DomainName
 		{
 			get
@@ -119,32 +149,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string OssEndpoint
-		{
-			get
-			{
-				return ossEndpoint;
-			}
-			set	
-			{
-				ossEndpoint = value;
-				DictionaryUtil.Add(QueryParameters, "OssEndpoint", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string SequenceOssObject
 		{
 			get
@@ -155,19 +159,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				sequenceOssObject = value;
 				DictionaryUtil.Add(QueryParameters, "SequenceOssObject", value);
-			}
-		}
-
-		public string OverwriteOssObject
-		{
-			get
-			{
-				return overwriteOssObject;
-			}
-			set	
-			{
-				overwriteOssObject = value;
-				DictionaryUtil.Add(QueryParameters, "OverwriteOssObject", value);
 			}
 		}
 

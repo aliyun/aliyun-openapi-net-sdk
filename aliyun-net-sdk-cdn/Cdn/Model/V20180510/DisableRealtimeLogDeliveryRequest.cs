@@ -22,49 +22,27 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class DescribeUserCdnStatusRequest : RpcAcsRequest<DescribeUserCdnStatusResponse>
+    public class DisableRealtimeLogDeliveryRequest : RpcAcsRequest<DisableRealtimeLogDeliveryResponse>
     {
-        public DescribeUserCdnStatusRequest()
-            : base("Cdn", "2018-05-10", "DescribeUserCdnStatus")
+        public DisableRealtimeLogDeliveryRequest()
+            : base("Cdn", "2018-05-10", "DisableRealtimeLogDelivery")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string securityToken;
-
-		private string action;
 
 		private long? ownerId;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+		private string domain;
 
 		public long? OwnerId
 		{
@@ -79,9 +57,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override DescribeUserCdnStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
+			}
+		}
+
+        public override DisableRealtimeLogDeliveryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeUserCdnStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DisableRealtimeLogDeliveryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

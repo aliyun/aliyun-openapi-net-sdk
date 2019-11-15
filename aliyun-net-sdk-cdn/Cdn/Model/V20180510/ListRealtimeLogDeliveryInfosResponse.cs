@@ -22,18 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeUserCdnStatusResponse : AcsResponse
+	public class ListRealtimeLogDeliveryInfosResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private bool? enabled;
-
-		private bool? onService;
-
-		private bool? inDebt;
-
-		private bool? inDebtOverdue;
+		private List<ListRealtimeLogDeliveryInfos_RealtimeLogDeliveryInfos> content;
 
 		public string RequestId
 		{
@@ -47,51 +41,61 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public bool? Enabled
+		public List<ListRealtimeLogDeliveryInfos_RealtimeLogDeliveryInfos> Content
 		{
 			get
 			{
-				return enabled;
+				return content;
 			}
 			set	
 			{
-				enabled = value;
+				content = value;
 			}
 		}
 
-		public bool? OnService
+		public class ListRealtimeLogDeliveryInfos_RealtimeLogDeliveryInfos
 		{
-			get
-			{
-				return onService;
-			}
-			set	
-			{
-				onService = value;
-			}
-		}
 
-		public bool? InDebt
-		{
-			get
-			{
-				return inDebt;
-			}
-			set	
-			{
-				inDebt = value;
-			}
-		}
+			private string project;
 
-		public bool? InDebtOverdue
-		{
-			get
+			private string logstore;
+
+			private string region;
+
+			public string Project
 			{
-				return inDebtOverdue;
+				get
+				{
+					return project;
+				}
+				set	
+				{
+					project = value;
+				}
 			}
-			set	
+
+			public string Logstore
 			{
-				inDebtOverdue = value;
+				get
+				{
+					return logstore;
+				}
+				set	
+				{
+					logstore = value;
+				}
+			}
+
+			public string Region
+			{
+				get
+				{
+					return region;
+				}
+				set	
+				{
+					region = value;
+				}
 			}
 		}
 	}

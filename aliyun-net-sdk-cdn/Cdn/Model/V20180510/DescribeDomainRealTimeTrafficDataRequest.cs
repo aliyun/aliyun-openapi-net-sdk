@@ -22,40 +22,42 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class DescribeDomainCCAttackInfoRequest : RpcAcsRequest<DescribeDomainCCAttackInfoResponse>
+    public class DescribeDomainRealTimeTrafficDataRequest : RpcAcsRequest<DescribeDomainRealTimeTrafficDataResponse>
     {
-        public DescribeDomainCCAttackInfoRequest()
-            : base("Cdn", "2014-11-11", "DescribeDomainCCAttackInfo")
+        public DescribeDomainRealTimeTrafficDataRequest()
+            : base("Cdn", "2018-05-10", "DescribeDomainRealTimeTrafficData")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string securityToken;
-
-		private string domainName;
-
-		private string action;
-
-		private string endTime;
 
 		private string startTime;
 
+		private string domainName;
+
+		private string endTime;
+
 		private long? ownerId;
 
-		public string SecurityToken
+		public string StartTime
 		{
 			get
 			{
-				return securityToken;
+				return startTime;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -72,19 +74,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string EndTime
 		{
 			get
@@ -95,19 +84,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -124,9 +100,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-        public override DescribeDomainCCAttackInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainRealTimeTrafficDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainCCAttackInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainRealTimeTrafficDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

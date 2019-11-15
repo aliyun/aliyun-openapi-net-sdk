@@ -42,7 +42,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				for (int j = 0; j < context.Length("DescribeTagResources.TagResources["+ i +"].Tag.Length"); j++) {
 					DescribeTagResourcesResponse.DescribeTagResources_TagResource.DescribeTagResources_TagItem tagItem = new DescribeTagResourcesResponse.DescribeTagResources_TagResource.DescribeTagResources_TagItem();
 					tagItem.Key = context.StringValue("DescribeTagResources.TagResources["+ i +"].Tag["+ j +"].Key");
-					tagItem._Value = context.StringValue("DescribeTagResources.TagResources["+ i +"].Tag["+ j +"]._Value");
+					tagItem._Value = context.StringValue("DescribeTagResources.TagResources["+ i +"].Tag["+ j +"].Value");
 
 					tagResource_tag.Add(tagItem);
 				}

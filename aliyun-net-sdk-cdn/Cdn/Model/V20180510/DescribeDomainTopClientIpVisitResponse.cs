@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeCdnTypesResponse : AcsResponse
+	public class DescribeDomainTopClientIpVisitResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeCdnTypes_CdnType> cdnTypes;
+		private List<DescribeDomainTopClientIpVisit_ClientIp> clientIpList;
 
 		public string RequestId
 		{
@@ -41,46 +41,74 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public List<DescribeCdnTypes_CdnType> CdnTypes
+		public List<DescribeDomainTopClientIpVisit_ClientIp> ClientIpList
 		{
 			get
 			{
-				return cdnTypes;
+				return clientIpList;
 			}
 			set	
 			{
-				cdnTypes = value;
+				clientIpList = value;
 			}
 		}
 
-		public class DescribeCdnTypes_CdnType
+		public class DescribeDomainTopClientIpVisit_ClientIp
 		{
 
-			private string type;
+			private int? rank;
 
-			private string desc;
+			private string clientIp;
 
-			public string Type
+			private long? traffic;
+
+			private long? acc;
+
+			public int? Rank
 			{
 				get
 				{
-					return type;
+					return rank;
 				}
 				set	
 				{
-					type = value;
+					rank = value;
 				}
 			}
 
-			public string Desc
+			public string ClientIp
 			{
 				get
 				{
-					return desc;
+					return clientIp;
 				}
 				set	
 				{
-					desc = value;
+					clientIp = value;
+				}
+			}
+
+			public long? Traffic
+			{
+				get
+				{
+					return traffic;
+				}
+				set	
+				{
+					traffic = value;
+				}
+			}
+
+			public long? Acc
+			{
+				get
+				{
+					return acc;
+				}
+				set	
+				{
+					acc = value;
 				}
 			}
 		}

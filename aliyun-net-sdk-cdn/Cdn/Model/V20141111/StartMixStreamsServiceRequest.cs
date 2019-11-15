@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20141111;
 
@@ -32,7 +33,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         public StartMixStreamsServiceRequest()
             : base("Cdn", "2014-11-11", "StartMixStreamsService")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string mixStreamName;
+
+		private string mixAppName;
+
+		private string mainStreamName;
 
 		private string mixType;
 
@@ -40,11 +52,7 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string mainDomainName;
 
-		private string mixStreamName;
-
 		private string mixTemplate;
-
-		private string action;
 
 		private string mixDomainName;
 
@@ -52,9 +60,44 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string mainAppName;
 
-		private string mixAppName;
+		public string MixStreamName
+		{
+			get
+			{
+				return mixStreamName;
+			}
+			set	
+			{
+				mixStreamName = value;
+				DictionaryUtil.Add(QueryParameters, "MixStreamName", value);
+			}
+		}
 
-		private string mainStreamName;
+		public string MixAppName
+		{
+			get
+			{
+				return mixAppName;
+			}
+			set	
+			{
+				mixAppName = value;
+				DictionaryUtil.Add(QueryParameters, "MixAppName", value);
+			}
+		}
+
+		public string MainStreamName
+		{
+			get
+			{
+				return mainStreamName;
+			}
+			set	
+			{
+				mainStreamName = value;
+				DictionaryUtil.Add(QueryParameters, "MainStreamName", value);
+			}
+		}
 
 		public string MixType
 		{
@@ -95,19 +138,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string MixStreamName
-		{
-			get
-			{
-				return mixStreamName;
-			}
-			set	
-			{
-				mixStreamName = value;
-				DictionaryUtil.Add(QueryParameters, "MixStreamName", value);
-			}
-		}
-
 		public string MixTemplate
 		{
 			get
@@ -118,19 +148,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				mixTemplate = value;
 				DictionaryUtil.Add(QueryParameters, "MixTemplate", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -170,32 +187,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				mainAppName = value;
 				DictionaryUtil.Add(QueryParameters, "MainAppName", value);
-			}
-		}
-
-		public string MixAppName
-		{
-			get
-			{
-				return mixAppName;
-			}
-			set	
-			{
-				mixAppName = value;
-				DictionaryUtil.Add(QueryParameters, "MixAppName", value);
-			}
-		}
-
-		public string MainStreamName
-		{
-			get
-			{
-				return mainStreamName;
-			}
-			set	
-			{
-				mainStreamName = value;
-				DictionaryUtil.Add(QueryParameters, "MainStreamName", value);
 			}
 		}
 

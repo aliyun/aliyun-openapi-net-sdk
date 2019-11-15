@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class ModifyHttpHeaderConfigRequest : RpcAcsRequest<ModifyHttpHeaderConfigResponse>
     {
         public ModifyHttpHeaderConfigRequest()
-            : base("Cdn", "2018-05-10", "ModifyHttpHeaderConfig", "cdn", "openAPI")
+            : base("Cdn", "2018-05-10", "ModifyHttpHeaderConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,17 +40,43 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
+		private string domainName;
+
+		private long? ownerId;
+
 		private string headerValue;
 
 		private string securityToken;
 
 		private string configID;
 
-		private string domainName;
-
 		private string headerKey;
 
-		private long? ownerId;
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
 
 		public string HeaderValue
 		{
@@ -90,19 +117,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
 		public string HeaderKey
 		{
 			get
@@ -113,19 +127,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				headerKey = value;
 				DictionaryUtil.Add(QueryParameters, "HeaderKey", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

@@ -24,20 +24,23 @@ using Aliyun.Acs.Cdn.Model.V20180510;
 
 namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
-    public class DescribeUserCdnStatusResponseUnmarshaller
+    public class DescribeUserVipsByDomainResponseUnmarshaller
     {
-        public static DescribeUserCdnStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserVipsByDomainResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeUserCdnStatusResponse describeUserCdnStatusResponse = new DescribeUserCdnStatusResponse();
+			DescribeUserVipsByDomainResponse describeUserVipsByDomainResponse = new DescribeUserVipsByDomainResponse();
 
-			describeUserCdnStatusResponse.HttpResponse = context.HttpResponse;
-			describeUserCdnStatusResponse.RequestId = context.StringValue("DescribeUserCdnStatus.RequestId");
-			describeUserCdnStatusResponse.Enabled = context.BooleanValue("DescribeUserCdnStatus.Enabled");
-			describeUserCdnStatusResponse.OnService = context.BooleanValue("DescribeUserCdnStatus.OnService");
-			describeUserCdnStatusResponse.InDebt = context.BooleanValue("DescribeUserCdnStatus.InDebt");
-			describeUserCdnStatusResponse.InDebtOverdue = context.BooleanValue("DescribeUserCdnStatus.InDebtOverdue");
+			describeUserVipsByDomainResponse.HttpResponse = context.HttpResponse;
+			describeUserVipsByDomainResponse.RequestId = context.StringValue("DescribeUserVipsByDomain.RequestId");
+			describeUserVipsByDomainResponse.DomainName = context.StringValue("DescribeUserVipsByDomain.DomainName");
+
+			List<string> describeUserVipsByDomainResponse_vips = new List<string>();
+			for (int i = 0; i < context.Length("DescribeUserVipsByDomain.Vips.Length"); i++) {
+				describeUserVipsByDomainResponse_vips.Add(context.StringValue("DescribeUserVipsByDomain.Vips["+ i +"]"));
+			}
+			describeUserVipsByDomainResponse.Vips = describeUserVipsByDomainResponse_vips;
         
-			return describeUserCdnStatusResponse;
+			return describeUserVipsByDomainResponse;
         }
     }
 }

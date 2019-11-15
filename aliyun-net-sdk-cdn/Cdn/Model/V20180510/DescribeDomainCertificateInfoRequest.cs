@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeDomainCertificateInfoRequest : RpcAcsRequest<DescribeDomainCertificateInfoResponse>
     {
         public DescribeDomainCertificateInfoRequest()
-            : base("Cdn", "2018-05-10", "DescribeDomainCertificateInfo", "cdn", "openAPI")
+            : base("Cdn", "2018-05-10", "DescribeDomainCertificateInfo")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20141111;
 
@@ -32,7 +33,14 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         public DeleteLiveDomainMappingRequest()
             : base("Cdn", "2014-11-11", "DeleteLiveDomainMapping")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private long? ownerId;
 
 		private string pullDomain;
 
@@ -40,9 +48,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string pushDomain;
 
-		private string action;
-
-		private long? ownerId;
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
 
 		public string PullDomain
 		{
@@ -80,32 +97,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				pushDomain = value;
 				DictionaryUtil.Add(QueryParameters, "PushDomain", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

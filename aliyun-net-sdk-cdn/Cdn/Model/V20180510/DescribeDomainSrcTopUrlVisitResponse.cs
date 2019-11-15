@@ -20,9 +20,9 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeDomainCCAttackInfoResponse : AcsResponse
+	public class DescribeDomainSrcTopUrlVisitResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -31,11 +31,15 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string startTime;
 
-		private string endTime;
+		private List<DescribeDomainSrcTopUrlVisit_UrlList> allUrlList;
 
-		private List<DescribeDomainCCAttackInfo_AttackIpDatas> attackIpDataList;
+		private List<DescribeDomainSrcTopUrlVisit_UrlList> url200List;
 
-		private List<DescribeDomainCCAttackInfo_AttackedUrlDatas> attackedUrlDataList;
+		private List<DescribeDomainSrcTopUrlVisit_UrlList> url300List;
+
+		private List<DescribeDomainSrcTopUrlVisit_UrlList> url400List;
+
+		private List<DescribeDomainSrcTopUrlVisit_UrlList> url500List;
 
 		public string RequestId
 		{
@@ -73,130 +77,136 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string EndTime
+		public List<DescribeDomainSrcTopUrlVisit_UrlList> AllUrlList
 		{
 			get
 			{
-				return endTime;
+				return allUrlList;
 			}
 			set	
 			{
-				endTime = value;
+				allUrlList = value;
 			}
 		}
 
-		public List<DescribeDomainCCAttackInfo_AttackIpDatas> AttackIpDataList
+		public List<DescribeDomainSrcTopUrlVisit_UrlList> Url200List
 		{
 			get
 			{
-				return attackIpDataList;
+				return url200List;
 			}
 			set	
 			{
-				attackIpDataList = value;
+				url200List = value;
 			}
 		}
 
-		public List<DescribeDomainCCAttackInfo_AttackedUrlDatas> AttackedUrlDataList
+		public List<DescribeDomainSrcTopUrlVisit_UrlList> Url300List
 		{
 			get
 			{
-				return attackedUrlDataList;
+				return url300List;
 			}
 			set	
 			{
-				attackedUrlDataList = value;
+				url300List = value;
 			}
 		}
 
-		public class DescribeDomainCCAttackInfo_AttackIpDatas
+		public List<DescribeDomainSrcTopUrlVisit_UrlList> Url400List
 		{
-
-			private string ip;
-
-			private string attackCount;
-
-			private string result;
-
-			public string Ip
+			get
 			{
-				get
-				{
-					return ip;
-				}
-				set	
-				{
-					ip = value;
-				}
+				return url400List;
 			}
-
-			public string AttackCount
+			set	
 			{
-				get
-				{
-					return attackCount;
-				}
-				set	
-				{
-					attackCount = value;
-				}
-			}
-
-			public string Result
-			{
-				get
-				{
-					return result;
-				}
-				set	
-				{
-					result = value;
-				}
+				url400List = value;
 			}
 		}
 
-		public class DescribeDomainCCAttackInfo_AttackedUrlDatas
+		public List<DescribeDomainSrcTopUrlVisit_UrlList> Url500List
+		{
+			get
+			{
+				return url500List;
+			}
+			set	
+			{
+				url500List = value;
+			}
+		}
+
+		public class DescribeDomainSrcTopUrlVisit_UrlList
 		{
 
-			private string url;
+			private string urlDetail;
 
-			private string attackCount;
+			private string visitData;
 
-			private string result;
+			private float? visitProportion;
 
-			public string Url
+			private string flow;
+
+			private float? flowProportion;
+
+			public string UrlDetail
 			{
 				get
 				{
-					return url;
+					return urlDetail;
 				}
 				set	
 				{
-					url = value;
+					urlDetail = value;
 				}
 			}
 
-			public string AttackCount
+			public string VisitData
 			{
 				get
 				{
-					return attackCount;
+					return visitData;
 				}
 				set	
 				{
-					attackCount = value;
+					visitData = value;
 				}
 			}
 
-			public string Result
+			public float? VisitProportion
 			{
 				get
 				{
-					return result;
+					return visitProportion;
 				}
 				set	
 				{
-					result = value;
+					visitProportion = value;
+				}
+			}
+
+			public string Flow
+			{
+				get
+				{
+					return flow;
+				}
+				set	
+				{
+					flow = value;
+				}
+			}
+
+			public float? FlowProportion
+			{
+				get
+				{
+					return flowProportion;
+				}
+				set	
+				{
+					flowProportion = value;
 				}
 			}
 		}

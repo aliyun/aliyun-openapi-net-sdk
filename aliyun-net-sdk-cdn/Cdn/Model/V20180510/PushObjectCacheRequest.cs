@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class PushObjectCacheRequest : RpcAcsRequest<PushObjectCacheResponse>
     {
         public PushObjectCacheRequest()
-            : base("Cdn", "2018-05-10", "PushObjectCache", "cdn", "openAPI")
+            : base("Cdn", "2018-05-10", "PushObjectCache")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,11 +42,11 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string area;
 
-		private string securityToken;
-
 		private string objectPath;
 
 		private long? ownerId;
+
+		private string securityToken;
 
 		public string Area
 		{
@@ -57,19 +58,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				area = value;
 				DictionaryUtil.Add(QueryParameters, "Area", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -96,6 +84,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

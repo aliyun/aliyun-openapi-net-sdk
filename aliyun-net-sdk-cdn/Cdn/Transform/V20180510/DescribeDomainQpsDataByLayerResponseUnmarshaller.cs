@@ -42,7 +42,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			for (int i = 0; i < context.Length("DescribeDomainQpsDataByLayer.QpsDataInterval.Length"); i++) {
 				DescribeDomainQpsDataByLayerResponse.DescribeDomainQpsDataByLayer_DataModule dataModule = new DescribeDomainQpsDataByLayerResponse.DescribeDomainQpsDataByLayer_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"]._Value");
+				dataModule._Value = context.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].Value");
 				dataModule.DomesticValue = context.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].DomesticValue");
 				dataModule.OverseasValue = context.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].OverseasValue");
 				dataModule.AccValue = context.StringValue("DescribeDomainQpsDataByLayer.QpsDataInterval["+ i +"].AccValue");

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeCdnDomainConfigsRequest : RpcAcsRequest<DescribeCdnDomainConfigsResponse>
     {
         public DescribeCdnDomainConfigsRequest()
-            : base("Cdn", "2018-05-10", "DescribeCdnDomainConfigs", "cdn", "openAPI")
+            : base("Cdn", "2018-05-10", "DescribeCdnDomainConfigs")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,11 +42,11 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string functionNames;
 
-		private string securityToken;
-
 		private string domainName;
 
 		private long? ownerId;
+
+		private string securityToken;
 
 		public string FunctionNames
 		{
@@ -57,19 +58,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				functionNames = value;
 				DictionaryUtil.Add(QueryParameters, "FunctionNames", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -96,6 +84,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

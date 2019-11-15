@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20141111;
 
@@ -32,23 +33,16 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         public DescribeUserDomainsRequest()
             : base("Cdn", "2014-11-11", "DescribeUserDomains")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string funcFilter;
 
 		private string sources;
 
-		private string domainName;
-
-		private long? ownerId;
-
-		private string funcId;
-
 		private int? pageNumber;
-
-		private string domainStatus;
-
-		private string domainSearchType;
 
 		private bool? checkDomainShow;
 
@@ -60,20 +54,17 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private int? pageSize;
 
-		private string action;
+		private string funcFilter;
 
-		public string FuncFilter
-		{
-			get
-			{
-				return funcFilter;
-			}
-			set	
-			{
-				funcFilter = value;
-				DictionaryUtil.Add(QueryParameters, "FuncFilter", value);
-			}
-		}
+		private string domainName;
+
+		private long? ownerId;
+
+		private string funcId;
+
+		private string domainStatus;
+
+		private string domainSearchType;
 
 		public string Sources
 		{
@@ -88,45 +79,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string FuncId
-		{
-			get
-			{
-				return funcId;
-			}
-			set	
-			{
-				funcId = value;
-				DictionaryUtil.Add(QueryParameters, "FuncId", value);
-			}
-		}
-
 		public int? PageNumber
 		{
 			get
@@ -137,32 +89,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string DomainStatus
-		{
-			get
-			{
-				return domainStatus;
-			}
-			set	
-			{
-				domainStatus = value;
-				DictionaryUtil.Add(QueryParameters, "DomainStatus", value);
-			}
-		}
-
-		public string DomainSearchType
-		{
-			get
-			{
-				return domainSearchType;
-			}
-			set	
-			{
-				domainSearchType = value;
-				DictionaryUtil.Add(QueryParameters, "DomainSearchType", value);
 			}
 		}
 
@@ -231,16 +157,81 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Action
+		public string FuncFilter
 		{
 			get
 			{
-				return action;
+				return funcFilter;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				funcFilter = value;
+				DictionaryUtil.Add(QueryParameters, "FuncFilter", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string FuncId
+		{
+			get
+			{
+				return funcId;
+			}
+			set	
+			{
+				funcId = value;
+				DictionaryUtil.Add(QueryParameters, "FuncId", value);
+			}
+		}
+
+		public string DomainStatus
+		{
+			get
+			{
+				return domainStatus;
+			}
+			set	
+			{
+				domainStatus = value;
+				DictionaryUtil.Add(QueryParameters, "DomainStatus", value);
+			}
+		}
+
+		public string DomainSearchType
+		{
+			get
+			{
+				return domainSearchType;
+			}
+			set	
+			{
+				domainSearchType = value;
+				DictionaryUtil.Add(QueryParameters, "DomainSearchType", value);
 			}
 		}
 

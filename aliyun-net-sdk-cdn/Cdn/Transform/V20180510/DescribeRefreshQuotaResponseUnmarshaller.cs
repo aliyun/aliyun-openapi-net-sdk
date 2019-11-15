@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			describeRefreshQuotaResponse.PreloadQuota = context.StringValue("DescribeRefreshQuota.PreloadQuota");
 			describeRefreshQuotaResponse.BlockQuota = context.StringValue("DescribeRefreshQuota.BlockQuota");
 			describeRefreshQuotaResponse.PreloadRemain = context.StringValue("DescribeRefreshQuota.PreloadRemain");
-			describeRefreshQuotaResponse.BlockRemain = context.StringValue("DescribeRefreshQuota.BlockRemain");
+			describeRefreshQuotaResponse.BlockRemain = context.StringValue("DescribeRefreshQuota.blockRemain");
         
 			return describeRefreshQuotaResponse;
         }

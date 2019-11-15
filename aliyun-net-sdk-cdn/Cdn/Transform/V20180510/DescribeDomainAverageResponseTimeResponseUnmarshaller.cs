@@ -35,17 +35,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			describeDomainAverageResponseTimeResponse.DomainName = context.StringValue("DescribeDomainAverageResponseTime.DomainName");
 			describeDomainAverageResponseTimeResponse.StartTime = context.StringValue("DescribeDomainAverageResponseTime.StartTime");
 			describeDomainAverageResponseTimeResponse.EndTime = context.StringValue("DescribeDomainAverageResponseTime.EndTime");
-			describeDomainAverageResponseTimeResponse.LocationNameEn = context.StringValue("DescribeDomainAverageResponseTime.LocationNameEn");
-			describeDomainAverageResponseTimeResponse.IspNameEn = context.StringValue("DescribeDomainAverageResponseTime.IspNameEn");
-			describeDomainAverageResponseTimeResponse.LocationName = context.StringValue("DescribeDomainAverageResponseTime.LocationName");
-			describeDomainAverageResponseTimeResponse.IspName = context.StringValue("DescribeDomainAverageResponseTime.IspName");
 			describeDomainAverageResponseTimeResponse.DataInterval = context.StringValue("DescribeDomainAverageResponseTime.DataInterval");
 
 			List<DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule> describeDomainAverageResponseTimeResponse_avgRTPerInterval = new List<DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule>();
 			for (int i = 0; i < context.Length("DescribeDomainAverageResponseTime.AvgRTPerInterval.Length"); i++) {
 				DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule dataModule = new DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"]._Value");
+				dataModule._Value = context.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"].Value");
 
 				describeDomainAverageResponseTimeResponse_avgRTPerInterval.Add(dataModule);
 			}

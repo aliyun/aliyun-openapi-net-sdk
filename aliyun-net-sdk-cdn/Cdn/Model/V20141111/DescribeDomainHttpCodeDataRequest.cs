@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20141111;
 
@@ -32,6 +33,11 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
         public DescribeDomainHttpCodeDataRequest()
             : base("Cdn", "2014-11-11", "DescribeDomainHttpCodeData")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string locationNameEn;
@@ -39,8 +45,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 		private string startTime;
 
 		private string ispNameEn;
-
-		private string action;
 
 		private string timeMerge;
 
@@ -88,19 +92,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				ispNameEn = value;
 				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

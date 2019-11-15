@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class SetL2OssKeyConfigResponse : AcsResponse
+	public class DeleteRealtimeLogDeliveryResponse : AcsResponse
 	{
 
 		private string requestId;

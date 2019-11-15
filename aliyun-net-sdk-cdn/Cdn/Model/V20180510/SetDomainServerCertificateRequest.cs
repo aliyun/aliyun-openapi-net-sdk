@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class SetDomainServerCertificateRequest : RpcAcsRequest<SetDomainServerCertificateResponse>
     {
         public SetDomainServerCertificateRequest()
-            : base("Cdn", "2018-05-10", "SetDomainServerCertificate", "cdn", "openAPI")
+            : base("Cdn", "2018-05-10", "SetDomainServerCertificate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,17 +40,17 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
+		private string serverCertificate;
+
 		private string privateKey;
 
-		private string forceSet;
-
 		private string serverCertificateStatus;
-
-		private string serverCertificate;
 
 		private string securityToken;
 
 		private string certType;
+
+		private string forceSet;
 
 		private string certName;
 
@@ -58,6 +59,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private long? ownerId;
 
 		private string region;
+
+		public string ServerCertificate
+		{
+			get
+			{
+				return serverCertificate;
+			}
+			set	
+			{
+				serverCertificate = value;
+				DictionaryUtil.Add(QueryParameters, "ServerCertificate", value);
+			}
+		}
 
 		public string PrivateKey
 		{
@@ -72,19 +86,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string ForceSet
-		{
-			get
-			{
-				return forceSet;
-			}
-			set	
-			{
-				forceSet = value;
-				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
-			}
-		}
-
 		public string ServerCertificateStatus
 		{
 			get
@@ -95,19 +96,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				serverCertificateStatus = value;
 				DictionaryUtil.Add(QueryParameters, "ServerCertificateStatus", value);
-			}
-		}
-
-		public string ServerCertificate
-		{
-			get
-			{
-				return serverCertificate;
-			}
-			set	
-			{
-				serverCertificate = value;
-				DictionaryUtil.Add(QueryParameters, "ServerCertificate", value);
 			}
 		}
 
@@ -134,6 +122,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				certType = value;
 				DictionaryUtil.Add(QueryParameters, "CertType", value);
+			}
+		}
+
+		public string ForceSet
+		{
+			get
+			{
+				return forceSet;
+			}
+			set	
+			{
+				forceSet = value;
+				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class ModifyCdnServiceRequest : RpcAcsRequest<ModifyCdnServiceResponse>
     {
         public ModifyCdnServiceRequest()
-            : base("Cdn", "2018-05-10", "ModifyCdnService", "cdn", "openAPI")
+            : base("Cdn", "2018-05-10", "ModifyCdnService")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,11 +40,24 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
+		private long? ownerId;
+
 		private string securityToken;
 
 		private string internetChargeType;
 
-		private long? ownerId;
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
 
 		public string SecurityToken
 		{
@@ -68,19 +82,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				internetChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

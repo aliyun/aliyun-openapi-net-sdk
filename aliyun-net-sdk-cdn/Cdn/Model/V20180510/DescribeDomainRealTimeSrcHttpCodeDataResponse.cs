@@ -20,22 +20,22 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeDomainCCDataResponse : AcsResponse
+	public class DescribeDomainRealTimeSrcHttpCodeDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private string domainName;
 
-		private string dataInterval;
-
 		private string startTime;
 
 		private string endTime;
 
-		private List<DescribeDomainCCData_CCDatas> cCDataList;
+		private string dataInterval;
+
+		private List<DescribeDomainRealTimeSrcHttpCodeData_UsageData> realTimeSrcHttpCodeData;
 
 		public string RequestId
 		{
@@ -58,18 +58,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				domainName = value;
-			}
-		}
-
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
 			}
 		}
 
@@ -97,24 +85,36 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<DescribeDomainCCData_CCDatas> CCDataList
+		public string DataInterval
 		{
 			get
 			{
-				return cCDataList;
+				return dataInterval;
 			}
 			set	
 			{
-				cCDataList = value;
+				dataInterval = value;
 			}
 		}
 
-		public class DescribeDomainCCData_CCDatas
+		public List<DescribeDomainRealTimeSrcHttpCodeData_UsageData> RealTimeSrcHttpCodeData
+		{
+			get
+			{
+				return realTimeSrcHttpCodeData;
+			}
+			set	
+			{
+				realTimeSrcHttpCodeData = value;
+			}
+		}
+
+		public class DescribeDomainRealTimeSrcHttpCodeData_UsageData
 		{
 
 			private string timeStamp;
 
-			private string count;
+			private List<DescribeDomainRealTimeSrcHttpCodeData_RealTimeSrcCodeProportionData> _value;
 
 			public string TimeStamp
 			{
@@ -128,15 +128,61 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string Count
+			public List<DescribeDomainRealTimeSrcHttpCodeData_RealTimeSrcCodeProportionData> _Value
 			{
 				get
 				{
-					return count;
+					return _value;
 				}
 				set	
 				{
-					count = value;
+					_value = value;
+				}
+			}
+
+			public class DescribeDomainRealTimeSrcHttpCodeData_RealTimeSrcCodeProportionData
+			{
+
+				private string code;
+
+				private string proportion;
+
+				private string count;
+
+				public string Code
+				{
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
+					}
+				}
+
+				public string Proportion
+				{
+					get
+					{
+						return proportion;
+					}
+					set	
+					{
+						proportion = value;
+					}
+				}
+
+				public string Count
+				{
+					get
+					{
+						return count;
+					}
+					set	
+					{
+						count = value;
+					}
 				}
 			}
 		}

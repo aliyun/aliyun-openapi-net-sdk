@@ -16,24 +16,55 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cdn.Model.V20180510;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cdn.Transform.V20180510
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class DeleteSpecificStagingConfigResponseUnmarshaller
-    {
-        public static DeleteSpecificStagingConfigResponse Unmarshall(UnmarshallerContext context)
-        {
-			DeleteSpecificStagingConfigResponse deleteSpecificStagingConfigResponse = new DeleteSpecificStagingConfigResponse();
+	public class DescribeUserVipsByDomainResponse : AcsResponse
+	{
 
-			deleteSpecificStagingConfigResponse.HttpResponse = context.HttpResponse;
-			deleteSpecificStagingConfigResponse.RequestId = context.StringValue("DeleteSpecificStagingConfig.RequestId");
-        
-			return deleteSpecificStagingConfigResponse;
-        }
-    }
+		private string requestId;
+
+		private string domainName;
+
+		private List<string> vips;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+			}
+		}
+
+		public List<string> Vips
+		{
+			get
+			{
+				return vips;
+			}
+			set	
+			{
+				vips = value;
+			}
+		}
+	}
 }

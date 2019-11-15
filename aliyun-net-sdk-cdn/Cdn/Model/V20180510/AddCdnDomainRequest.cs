@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class AddCdnDomainRequest : RpcAcsRequest<AddCdnDomainResponse>
     {
         public AddCdnDomainRequest()
-            : base("Cdn", "2018-05-10", "AddCdnDomain", "cdn", "openAPI")
+            : base("Cdn", "2018-05-10", "AddCdnDomain")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,19 +40,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string topLevelDomain;
+		private string sources;
 
 		private string resourceGroupId;
-
-		private string sources;
 
 		private string securityToken;
 
 		private string cdnType;
 
-		private string ownerAccount;
-
 		private string scope;
+
+		private string topLevelDomain;
+
+		private string ownerAccount;
 
 		private string domainName;
 
@@ -59,16 +60,16 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string checkUrl;
 
-		public string TopLevelDomain
+		public string Sources
 		{
 			get
 			{
-				return topLevelDomain;
+				return sources;
 			}
 			set	
 			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+				sources = value;
+				DictionaryUtil.Add(QueryParameters, "Sources", value);
 			}
 		}
 
@@ -82,19 +83,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string Sources
-		{
-			get
-			{
-				return sources;
-			}
-			set	
-			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
 			}
 		}
 
@@ -124,19 +112,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string Scope
 		{
 			get
@@ -147,6 +122,32 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				scope = value;
 				DictionaryUtil.Add(QueryParameters, "Scope", value);
+			}
+		}
+
+		public string TopLevelDomain
+		{
+			get
+			{
+				return topLevelDomain;
+			}
+			set	
+			{
+				topLevelDomain = value;
+				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 

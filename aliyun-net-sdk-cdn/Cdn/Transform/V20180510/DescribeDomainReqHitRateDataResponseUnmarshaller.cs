@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			for (int i = 0; i < context.Length("DescribeDomainReqHitRateData.ReqHitRateInterval.Length"); i++) {
 				DescribeDomainReqHitRateDataResponse.DescribeDomainReqHitRateData_DataModule dataModule = new DescribeDomainReqHitRateDataResponse.DescribeDomainReqHitRateData_DataModule();
 				dataModule.TimeStamp = context.StringValue("DescribeDomainReqHitRateData.ReqHitRateInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainReqHitRateData.ReqHitRateInterval["+ i +"]._Value");
+				dataModule._Value = context.StringValue("DescribeDomainReqHitRateData.ReqHitRateInterval["+ i +"].Value");
 				dataModule.HttpsValue = context.StringValue("DescribeDomainReqHitRateData.ReqHitRateInterval["+ i +"].HttpsValue");
 
 				describeDomainReqHitRateDataResponse_reqHitRateInterval.Add(dataModule);

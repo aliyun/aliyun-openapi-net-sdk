@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DeleteSpecificStagingConfigResponse : AcsResponse
+	public class EnableRealtimeLogDeliveryResponse : AcsResponse
 	{
 
 		private string requestId;

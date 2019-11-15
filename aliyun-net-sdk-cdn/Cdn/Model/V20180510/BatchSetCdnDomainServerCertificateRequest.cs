@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class BatchSetCdnDomainServerCertificateRequest : RpcAcsRequest<BatchSetCdnDomainServerCertificateResponse>
     {
         public BatchSetCdnDomainServerCertificateRequest()
-            : base("Cdn", "2018-05-10", "BatchSetCdnDomainServerCertificate", "cdn", "openAPI")
+            : base("Cdn", "2018-05-10", "BatchSetCdnDomainServerCertificate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,36 +40,36 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string forceSet;
+		private string sSLProtocol;
 
 		private string securityToken;
 
 		private string certType;
 
-		private string sSLPub;
+		private string sSLPri;
+
+		private string forceSet;
 
 		private string certName;
-
-		private string sSLProtocol;
 
 		private string domainName;
 
 		private long? ownerId;
 
+		private string sSLPub;
+
 		private string region;
 
-		private string sSLPri;
-
-		public string ForceSet
+		public string SSLProtocol
 		{
 			get
 			{
-				return forceSet;
+				return sSLProtocol;
 			}
 			set	
 			{
-				forceSet = value;
-				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
+				sSLProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "SSLProtocol", value);
 			}
 		}
 
@@ -98,16 +99,29 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string SSLPub
+		public string SSLPri
 		{
 			get
 			{
-				return sSLPub;
+				return sSLPri;
 			}
 			set	
 			{
-				sSLPub = value;
-				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
+				sSLPri = value;
+				DictionaryUtil.Add(QueryParameters, "SSLPri", value);
+			}
+		}
+
+		public string ForceSet
+		{
+			get
+			{
+				return forceSet;
+			}
+			set	
+			{
+				forceSet = value;
+				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
 			}
 		}
 
@@ -121,19 +135,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				certName = value;
 				DictionaryUtil.Add(QueryParameters, "CertName", value);
-			}
-		}
-
-		public string SSLProtocol
-		{
-			get
-			{
-				return sSLProtocol;
-			}
-			set	
-			{
-				sSLProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "SSLProtocol", value);
 			}
 		}
 
@@ -163,6 +164,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
+		public string SSLPub
+		{
+			get
+			{
+				return sSLPub;
+			}
+			set	
+			{
+				sSLPub = value;
+				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
+			}
+		}
+
 		public string Region
 		{
 			get
@@ -173,19 +187,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				region = value;
 				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
-		public string SSLPri
-		{
-			get
-			{
-				return sSLPri;
-			}
-			set	
-			{
-				sSLPri = value;
-				DictionaryUtil.Add(QueryParameters, "SSLPri", value);
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
     public class DescribeDomainTopUrlVisitRequest : RpcAcsRequest<DescribeDomainTopUrlVisitResponse>
     {
         public DescribeDomainTopUrlVisitRequest()
-            : base("Cdn", "2018-05-10", "DescribeDomainTopUrlVisit", "cdn", "openAPI")
+            : base("Cdn", "2018-05-10", "DescribeDomainTopUrlVisit")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,8 +41,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
         }
 
 		private string startTime;
-
-		private string percent;
 
 		private string domainName;
 
@@ -61,19 +60,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string Percent
-		{
-			get
-			{
-				return percent;
-			}
-			set	
-			{
-				percent = value;
-				DictionaryUtil.Add(QueryParameters, "Percent", value);
 			}
 		}
 

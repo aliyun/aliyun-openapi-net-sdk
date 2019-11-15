@@ -22,15 +22,16 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
 using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class DescribeCdnTypesRequest : RpcAcsRequest<DescribeCdnTypesResponse>
+    public class ListUserCustomLogConfigRequest : RpcAcsRequest<ListUserCustomLogConfigResponse>
     {
-        public DescribeCdnTypesRequest()
-            : base("Cdn", "2018-05-10", "DescribeCdnTypes", "cdn", "openAPI")
+        public ListUserCustomLogConfigRequest()
+            : base("Cdn", "2018-05-10", "ListUserCustomLogConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,37 +40,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string securityToken;
-
-		private string ownerAccount;
-
 		private long? ownerId;
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
 
 		public long? OwnerId
 		{
@@ -84,9 +55,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override DescribeCdnTypesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListUserCustomLogConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCdnTypesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListUserCustomLogConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
