@@ -16,13 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dcdn;
 using Aliyun.Acs.dcdn.Transform;
 using Aliyun.Acs.dcdn.Transform.V20180115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
@@ -31,6 +33,11 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
         public DescribeDcdnDomainTrafficDataRequest()
             : base("dcdn", "2018-01-15", "DescribeDcdnDomainTrafficData")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string locationNameEn;
@@ -38,12 +45,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 		private string startTime;
 
 		private string ispNameEn;
-
-		private string action;
-
-		private string fixTimeGap;
-
-		private string timeMerge;
 
 		private string domainName;
 
@@ -89,45 +90,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				ispNameEn = value;
 				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string FixTimeGap
-		{
-			get
-			{
-				return fixTimeGap;
-			}
-			set	
-			{
-				fixTimeGap = value;
-				DictionaryUtil.Add(QueryParameters, "FixTimeGap", value);
-			}
-		}
-
-		public string TimeMerge
-		{
-			get
-			{
-				return timeMerge;
-			}
-			set	
-			{
-				timeMerge = value;
-				DictionaryUtil.Add(QueryParameters, "TimeMerge", value);
 			}
 		}
 
@@ -183,7 +145,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-        public override DescribeDcdnDomainTrafficDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDcdnDomainTrafficDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDcdnDomainTrafficDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

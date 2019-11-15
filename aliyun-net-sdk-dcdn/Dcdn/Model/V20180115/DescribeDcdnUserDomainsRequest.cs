@@ -16,13 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dcdn;
 using Aliyun.Acs.dcdn.Transform;
 using Aliyun.Acs.dcdn.Transform.V20180115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
@@ -31,9 +33,14 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
         public DescribeDcdnUserDomainsRequest()
             : base("dcdn", "2018-01-15", "DescribeDcdnUserDomains")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string funcFilter;
+		private int? pageNumber;
 
 		private bool? checkDomainShow;
 
@@ -41,32 +48,34 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 		private string securityToken;
 
+		private string changeEndTime;
+
 		private int? pageSize;
 
-		private string domainName;
+		private string funcFilter;
 
-		private string action;
+		private string domainName;
 
 		private long? ownerId;
 
 		private string funcId;
 
-		private int? pageNumber;
-
 		private string domainStatus;
 
 		private string domainSearchType;
 
-		public string FuncFilter
+		private string changeStartTime;
+
+		public int? PageNumber
 		{
 			get
 			{
-				return funcFilter;
+				return pageNumber;
 			}
 			set	
 			{
-				funcFilter = value;
-				DictionaryUtil.Add(QueryParameters, "FuncFilter", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -109,6 +118,19 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
+		public string ChangeEndTime
+		{
+			get
+			{
+				return changeEndTime;
+			}
+			set	
+			{
+				changeEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "ChangeEndTime", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -122,6 +144,19 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
+		public string FuncFilter
+		{
+			get
+			{
+				return funcFilter;
+			}
+			set	
+			{
+				funcFilter = value;
+				DictionaryUtil.Add(QueryParameters, "FuncFilter", value);
+			}
+		}
+
 		public string DomainName
 		{
 			get
@@ -132,19 +167,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -174,19 +196,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string DomainStatus
 		{
 			get
@@ -213,7 +222,20 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-        public override DescribeDcdnUserDomainsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string ChangeStartTime
+		{
+			get
+			{
+				return changeStartTime;
+			}
+			set	
+			{
+				changeStartTime = value;
+				DictionaryUtil.Add(QueryParameters, "ChangeStartTime", value);
+			}
+		}
+
+        public override DescribeDcdnUserDomainsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDcdnUserDomainsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

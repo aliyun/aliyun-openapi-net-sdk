@@ -16,13 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dcdn;
 using Aliyun.Acs.dcdn.Transform;
 using Aliyun.Acs.dcdn.Transform.V20180115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
@@ -31,17 +33,20 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
         public PreloadDcdnObjectCachesRequest()
             : base("dcdn", "2018-01-15", "PreloadDcdnObjectCaches")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string area;
 
-		private string securityToken;
-
 		private string objectPath;
 
-		private string action;
-
 		private long? ownerId;
+
+		private string securityToken;
 
 		public string Area
 		{
@@ -53,19 +58,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				area = value;
 				DictionaryUtil.Add(QueryParameters, "Area", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -82,19 +74,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -108,7 +87,20 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-        public override PreloadDcdnObjectCachesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+        public override PreloadDcdnObjectCachesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return PreloadDcdnObjectCachesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

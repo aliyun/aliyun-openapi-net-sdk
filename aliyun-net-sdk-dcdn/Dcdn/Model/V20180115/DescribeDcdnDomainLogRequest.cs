@@ -16,13 +16,15 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dcdn;
 using Aliyun.Acs.dcdn.Transform;
 using Aliyun.Acs.dcdn.Transform.V20180115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
@@ -31,6 +33,11 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
         public DescribeDcdnDomainLogRequest()
             : base("dcdn", "2018-01-15", "DescribeDcdnDomainLog")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string startTime;
@@ -38,8 +45,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 		private long? pageNumber;
 
 		private long? pageSize;
-
-		private string action;
 
 		private string domainName;
 
@@ -86,19 +91,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string DomainName
 		{
 			get
@@ -138,7 +130,7 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-        public override DescribeDcdnDomainLogResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeDcdnDomainLogResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeDcdnDomainLogResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
