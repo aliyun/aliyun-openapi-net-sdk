@@ -22,18 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-	public class DescribeScdnCertificateDetailResponse : AcsResponse
+	public class BatchSetScdnDomainConfigsResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string cert;
-
-		private string key;
-
-		private long? certId;
-
-		private string certName;
 
 		public string RequestId
 		{
@@ -44,54 +36,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Cert
-		{
-			get
-			{
-				return cert;
-			}
-			set	
-			{
-				cert = value;
-			}
-		}
-
-		public string Key
-		{
-			get
-			{
-				return key;
-			}
-			set	
-			{
-				key = value;
-			}
-		}
-
-		public long? CertId
-		{
-			get
-			{
-				return certId;
-			}
-			set	
-			{
-				certId = value;
-			}
-		}
-
-		public string CertName
-		{
-			get
-			{
-				return certName;
-			}
-			set	
-			{
-				certName = value;
 			}
 		}
 	}

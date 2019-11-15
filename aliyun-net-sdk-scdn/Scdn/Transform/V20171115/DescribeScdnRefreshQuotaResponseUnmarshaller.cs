@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.scdn.Model.V20171115;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.scdn.Model.V20171115;
 
 namespace Aliyun.Acs.scdn.Transform.V20171115
 {
@@ -38,7 +39,7 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			describeScdnRefreshQuotaResponse.PreloadQuota = context.StringValue("DescribeScdnRefreshQuota.PreloadQuota");
 			describeScdnRefreshQuotaResponse.BlockQuota = context.StringValue("DescribeScdnRefreshQuota.BlockQuota");
 			describeScdnRefreshQuotaResponse.PreloadRemain = context.StringValue("DescribeScdnRefreshQuota.PreloadRemain");
-			describeScdnRefreshQuotaResponse.BlockRemain = context.StringValue("DescribeScdnRefreshQuota.BlockRemain");
+			describeScdnRefreshQuotaResponse.BlockRemain = context.StringValue("DescribeScdnRefreshQuota.blockRemain");
         
 			return describeScdnRefreshQuotaResponse;
         }

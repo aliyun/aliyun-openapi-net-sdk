@@ -16,57 +16,60 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.scdn;
 using Aliyun.Acs.scdn.Transform;
 using Aliyun.Acs.scdn.Transform.V20171115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
     public class SetScdnDomainCertificateRequest : RpcAcsRequest<SetScdnDomainCertificateResponse>
     {
         public SetScdnDomainCertificateRequest()
-            : base("scdn", "2017-11-15", "SetScdnDomainCertificate", "scdn", "openAPI")
+            : base("scdn", "2017-11-15", "SetScdnDomainCertificate")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string forceSet;
+		private string sSLProtocol;
 
 		private string securityToken;
 
 		private string certType;
 
-		private string sSLPub;
+		private string sSLPri;
+
+		private string forceSet;
 
 		private string certName;
 
-		private string sSLProtocol;
-
 		private string domainName;
-
-		private string action;
 
 		private long? ownerId;
 
+		private string sSLPub;
+
 		private string region;
 
-		private string accessKeyId;
-
-		private string sSLPri;
-
-		public string ForceSet
+		public string SSLProtocol
 		{
 			get
 			{
-				return forceSet;
+				return sSLProtocol;
 			}
 			set	
 			{
-				forceSet = value;
-				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
+				sSLProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "SSLProtocol", value);
 			}
 		}
 
@@ -96,16 +99,29 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string SSLPub
+		public string SSLPri
 		{
 			get
 			{
-				return sSLPub;
+				return sSLPri;
 			}
 			set	
 			{
-				sSLPub = value;
-				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
+				sSLPri = value;
+				DictionaryUtil.Add(QueryParameters, "SSLPri", value);
+			}
+		}
+
+		public string ForceSet
+		{
+			get
+			{
+				return forceSet;
+			}
+			set	
+			{
+				forceSet = value;
+				DictionaryUtil.Add(QueryParameters, "ForceSet", value);
 			}
 		}
 
@@ -122,19 +138,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string SSLProtocol
-		{
-			get
-			{
-				return sSLProtocol;
-			}
-			set	
-			{
-				sSLProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "SSLProtocol", value);
-			}
-		}
-
 		public string DomainName
 		{
 			get
@@ -145,19 +148,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -174,6 +164,19 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
+		public string SSLPub
+		{
+			get
+			{
+				return sSLPub;
+			}
+			set	
+			{
+				sSLPub = value;
+				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
+			}
+		}
+
 		public string Region
 		{
 			get
@@ -187,33 +190,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string SSLPri
-		{
-			get
-			{
-				return sSLPri;
-			}
-			set	
-			{
-				sSLPri = value;
-				DictionaryUtil.Add(QueryParameters, "SSLPri", value);
-			}
-		}
-
-        public override SetScdnDomainCertificateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override SetScdnDomainCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SetScdnDomainCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

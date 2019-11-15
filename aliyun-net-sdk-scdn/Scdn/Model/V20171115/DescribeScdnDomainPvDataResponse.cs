@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
@@ -28,11 +29,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private string domainName;
 
-		private string dataInterval;
-
 		private string startTime;
-
-		private string endTime;
 
 		private List<DescribeScdnDomainPvData_UsageData> pvDataInterval;
 
@@ -60,18 +57,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
-
 		public string StartTime
 		{
 			get
@@ -81,18 +66,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				startTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
 			}
 		}
 
@@ -111,21 +84,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		public class DescribeScdnDomainPvData_UsageData
 		{
 
-			private string timeStamp;
-
 			private string _value;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
 			public string _Value
 			{
@@ -136,6 +97,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					_value = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

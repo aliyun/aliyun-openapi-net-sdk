@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.scdn.Model.V20171115;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.scdn.Model.V20171115;
 
 namespace Aliyun.Acs.scdn.Transform.V20171115
 {
@@ -32,15 +33,13 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			describeScdnDomainPvDataResponse.HttpResponse = context.HttpResponse;
 			describeScdnDomainPvDataResponse.RequestId = context.StringValue("DescribeScdnDomainPvData.RequestId");
 			describeScdnDomainPvDataResponse.DomainName = context.StringValue("DescribeScdnDomainPvData.DomainName");
-			describeScdnDomainPvDataResponse.DataInterval = context.StringValue("DescribeScdnDomainPvData.DataInterval");
 			describeScdnDomainPvDataResponse.StartTime = context.StringValue("DescribeScdnDomainPvData.StartTime");
-			describeScdnDomainPvDataResponse.EndTime = context.StringValue("DescribeScdnDomainPvData.EndTime");
 
 			List<DescribeScdnDomainPvDataResponse.DescribeScdnDomainPvData_UsageData> describeScdnDomainPvDataResponse_pvDataInterval = new List<DescribeScdnDomainPvDataResponse.DescribeScdnDomainPvData_UsageData>();
 			for (int i = 0; i < context.Length("DescribeScdnDomainPvData.PvDataInterval.Length"); i++) {
 				DescribeScdnDomainPvDataResponse.DescribeScdnDomainPvData_UsageData usageData = new DescribeScdnDomainPvDataResponse.DescribeScdnDomainPvData_UsageData();
-				usageData.TimeStamp = context.StringValue("DescribeScdnDomainPvData.PvDataInterval["+ i +"].TimeStamp");
 				usageData._Value = context.StringValue("DescribeScdnDomainPvData.PvDataInterval["+ i +"].Value");
+				usageData.TimeStamp = context.StringValue("DescribeScdnDomainPvData.PvDataInterval["+ i +"].TimeStamp");
 
 				describeScdnDomainPvDataResponse_pvDataInterval.Add(usageData);
 			}

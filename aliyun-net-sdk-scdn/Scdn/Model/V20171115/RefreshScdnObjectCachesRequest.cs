@@ -16,47 +16,37 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.scdn;
 using Aliyun.Acs.scdn.Transform;
 using Aliyun.Acs.scdn.Transform.V20171115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
     public class RefreshScdnObjectCachesRequest : RpcAcsRequest<RefreshScdnObjectCachesResponse>
     {
         public RefreshScdnObjectCachesRequest()
-            : base("scdn", "2017-11-15", "RefreshScdnObjectCaches", "scdn", "openAPI")
+            : base("scdn", "2017-11-15", "RefreshScdnObjectCaches")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string securityToken;
 
 		private string objectPath;
 
-		private string action;
-
 		private long? ownerId;
 
+		private string securityToken;
+
 		private string objectType;
-
-		private string accessKeyId;
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
 
 		public string ObjectPath
 		{
@@ -68,19 +58,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				objectPath = value;
 				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -97,6 +74,19 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
 		public string ObjectType
 		{
 			get
@@ -110,20 +100,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override RefreshScdnObjectCachesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RefreshScdnObjectCachesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return RefreshScdnObjectCachesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

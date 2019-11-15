@@ -16,55 +16,45 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.scdn;
 using Aliyun.Acs.scdn.Transform;
 using Aliyun.Acs.scdn.Transform.V20171115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
     public class AddScdnDomainRequest : RpcAcsRequest<AddScdnDomainResponse>
     {
         public AddScdnDomainRequest()
-            : base("scdn", "2017-11-15", "AddScdnDomain", "scdn", "openAPI")
+            : base("scdn", "2017-11-15", "AddScdnDomain")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string resourceGroupId;
 
 		private string sources;
 
-		private string securityToken;
+		private string resourceGroupId;
 
-		private string ownerAccount;
+		private string securityToken;
 
 		private string scope;
 
-		private string domainName;
+		private string ownerAccount;
 
-		private string action;
+		private string domainName;
 
 		private long? ownerId;
 
 		private string checkUrl;
-
-		private string accessKeyId;
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
 
 		public string Sources
 		{
@@ -76,6 +66,19 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				sources = value;
 				DictionaryUtil.Add(QueryParameters, "Sources", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -92,19 +95,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string Scope
 		{
 			get
@@ -118,6 +108,19 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public string DomainName
 		{
 			get
@@ -128,19 +131,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -170,20 +160,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override AddScdnDomainResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override AddScdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return AddScdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

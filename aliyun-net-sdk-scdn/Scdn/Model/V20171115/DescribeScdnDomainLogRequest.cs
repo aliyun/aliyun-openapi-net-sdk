@@ -16,21 +16,28 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.scdn;
 using Aliyun.Acs.scdn.Transform;
 using Aliyun.Acs.scdn.Transform.V20171115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
     public class DescribeScdnDomainLogRequest : RpcAcsRequest<DescribeScdnDomainLogResponse>
     {
         public DescribeScdnDomainLogRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainLog", "scdn", "openAPI")
+            : base("scdn", "2017-11-15", "DescribeScdnDomainLog")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string startTime;
@@ -38,8 +45,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 		private long? pageNumber;
 
 		private long? pageSize;
-
-		private string action;
 
 		private string domainName;
 
@@ -86,19 +91,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string DomainName
 		{
 			get
@@ -138,7 +130,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-        public override DescribeScdnDomainLogResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeScdnDomainLogResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeScdnDomainLogResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

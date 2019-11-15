@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.scdn.Model.V20171115;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.scdn.Model.V20171115;
 
 namespace Aliyun.Acs.scdn.Transform.V20171115
 {
@@ -31,6 +32,9 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 
 			describeScdnServiceResponse.HttpResponse = context.HttpResponse;
 			describeScdnServiceResponse.RequestId = context.StringValue("DescribeScdnService.RequestId");
+			describeScdnServiceResponse.ChangingAffectTime = context.StringValue("DescribeScdnService.ChangingAffectTime");
+			describeScdnServiceResponse.InternetChargeType = context.StringValue("DescribeScdnService.InternetChargeType");
+			describeScdnServiceResponse.ChangingChargeType = context.StringValue("DescribeScdnService.ChangingChargeType");
 			describeScdnServiceResponse.InstanceId = context.StringValue("DescribeScdnService.InstanceId");
 			describeScdnServiceResponse.OpenTime = context.StringValue("DescribeScdnService.OpenTime");
 			describeScdnServiceResponse.EndTime = context.StringValue("DescribeScdnService.EndTime");
@@ -46,8 +50,21 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			describeScdnServiceResponse.DDoSBasicValue = context.StringValue("DescribeScdnService.DDoSBasicValue");
 			describeScdnServiceResponse.DomainCountValue = context.StringValue("DescribeScdnService.DomainCountValue");
 			describeScdnServiceResponse.ElasticProtectionValue = context.StringValue("DescribeScdnService.ElasticProtectionValue");
+			describeScdnServiceResponse.CurrentProtectType = context.StringValue("DescribeScdnService.CurrentProtectType");
+			describeScdnServiceResponse.CurrentProtectTypeValue = context.StringValue("DescribeScdnService.CurrentProtectTypeValue");
+			describeScdnServiceResponse.CurrentBandwidth = context.StringValue("DescribeScdnService.CurrentBandwidth");
+			describeScdnServiceResponse.CurrentCcProtection = context.StringValue("DescribeScdnService.CurrentCcProtection");
+			describeScdnServiceResponse.CurrentDDoSBasic = context.StringValue("DescribeScdnService.CurrentDDoSBasic");
+			describeScdnServiceResponse.CurrentDomainCount = context.StringValue("DescribeScdnService.CurrentDomainCount");
+			describeScdnServiceResponse.CurrentElasticProtection = context.StringValue("DescribeScdnService.CurrentElasticProtection");
+			describeScdnServiceResponse.CurrentBandwidthValue = context.StringValue("DescribeScdnService.CurrentBandwidthValue");
+			describeScdnServiceResponse.CurrentCcProtectionValue = context.StringValue("DescribeScdnService.CurrentCcProtectionValue");
+			describeScdnServiceResponse.CurrentDDoSBasicValue = context.StringValue("DescribeScdnService.CurrentDDoSBasicValue");
+			describeScdnServiceResponse.CurrentDomainCountValue = context.StringValue("DescribeScdnService.CurrentDomainCountValue");
+			describeScdnServiceResponse.CurrentElasticProtectionValue = context.StringValue("DescribeScdnService.CurrentElasticProtectionValue");
 			describeScdnServiceResponse.PriceType = context.StringValue("DescribeScdnService.PriceType");
 			describeScdnServiceResponse.PricingCycle = context.StringValue("DescribeScdnService.PricingCycle");
+			describeScdnServiceResponse.ChangingChargeType1 = context.StringValue("DescribeScdnService.ChangingChargeType");
 
 			List<DescribeScdnServiceResponse.DescribeScdnService_LockReason> describeScdnServiceResponse_operationLocks = new List<DescribeScdnServiceResponse.DescribeScdnService_LockReason>();
 			for (int i = 0; i < context.Length("DescribeScdnService.OperationLocks.Length"); i++) {

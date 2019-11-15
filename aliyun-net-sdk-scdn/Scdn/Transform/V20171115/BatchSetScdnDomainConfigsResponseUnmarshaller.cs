@@ -24,16 +24,16 @@ using Aliyun.Acs.scdn.Model.V20171115;
 
 namespace Aliyun.Acs.scdn.Transform.V20171115
 {
-    public class StartScdnDomainResponseUnmarshaller
+    public class BatchSetScdnDomainConfigsResponseUnmarshaller
     {
-        public static StartScdnDomainResponse Unmarshall(UnmarshallerContext context)
+        public static BatchSetScdnDomainConfigsResponse Unmarshall(UnmarshallerContext context)
         {
-			StartScdnDomainResponse startScdnDomainResponse = new StartScdnDomainResponse();
+			BatchSetScdnDomainConfigsResponse batchSetScdnDomainConfigsResponse = new BatchSetScdnDomainConfigsResponse();
 
-			startScdnDomainResponse.HttpResponse = context.HttpResponse;
-			startScdnDomainResponse.RequestId = context.StringValue("StartScdnDomain.RequestId");
+			batchSetScdnDomainConfigsResponse.HttpResponse = context.HttpResponse;
+			batchSetScdnDomainConfigsResponse.RequestId = context.StringValue("BatchSetScdnDomainConfigs.RequestId");
         
-			return startScdnDomainResponse;
+			return batchSetScdnDomainConfigsResponse;
         }
     }
 }

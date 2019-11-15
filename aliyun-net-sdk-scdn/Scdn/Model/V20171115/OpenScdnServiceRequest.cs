@@ -16,57 +16,73 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.scdn;
 using Aliyun.Acs.scdn.Transform;
 using Aliyun.Acs.scdn.Transform.V20171115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
     public class OpenScdnServiceRequest : RpcAcsRequest<OpenScdnServiceResponse>
     {
         public OpenScdnServiceRequest()
-            : base("scdn", "2017-11-15", "OpenScdnService", "scdn", "openAPI")
+            : base("scdn", "2017-11-15", "OpenScdnService")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string endDate;
+		private string startDate;
+
+		private int? ccProtection;
 
 		private string securityToken;
+
+		private string protectType;
+
+		private int? dDoSBasic;
 
 		private int? bandwidth;
 
 		private int? domainCount;
 
-		private string action;
-
 		private long? ownerId;
 
-		private string protectType;
-
-		private string startDate;
+		private string endDate;
 
 		private int? elasticProtection;
 
-		private int? dDoSBasic;
-
-		private int? ccProtection;
-
-		private string accessKeyId;
-
-		public string EndDate
+		public string StartDate
 		{
 			get
 			{
-				return endDate;
+				return startDate;
 			}
 			set	
 			{
-				endDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndDate", value);
+				startDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartDate", value);
+			}
+		}
+
+		public int? CcProtection
+		{
+			get
+			{
+				return ccProtection;
+			}
+			set	
+			{
+				ccProtection = value;
+				DictionaryUtil.Add(QueryParameters, "CcProtection", value.ToString());
 			}
 		}
 
@@ -80,6 +96,32 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string ProtectType
+		{
+			get
+			{
+				return protectType;
+			}
+			set	
+			{
+				protectType = value;
+				DictionaryUtil.Add(QueryParameters, "ProtectType", value);
+			}
+		}
+
+		public int? DDoSBasic
+		{
+			get
+			{
+				return dDoSBasic;
+			}
+			set	
+			{
+				dDoSBasic = value;
+				DictionaryUtil.Add(QueryParameters, "DDoSBasic", value.ToString());
 			}
 		}
 
@@ -109,19 +151,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -135,29 +164,16 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string ProtectType
+		public string EndDate
 		{
 			get
 			{
-				return protectType;
+				return endDate;
 			}
 			set	
 			{
-				protectType = value;
-				DictionaryUtil.Add(QueryParameters, "ProtectType", value);
-			}
-		}
-
-		public string StartDate
-		{
-			get
-			{
-				return startDate;
-			}
-			set	
-			{
-				startDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartDate", value);
+				endDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndDate", value);
 			}
 		}
 
@@ -174,46 +190,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public int? DDoSBasic
-		{
-			get
-			{
-				return dDoSBasic;
-			}
-			set	
-			{
-				dDoSBasic = value;
-				DictionaryUtil.Add(QueryParameters, "DDoSBasic", value.ToString());
-			}
-		}
-
-		public int? CcProtection
-		{
-			get
-			{
-				return ccProtection;
-			}
-			set	
-			{
-				ccProtection = value;
-				DictionaryUtil.Add(QueryParameters, "CcProtection", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override OpenScdnServiceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override OpenScdnServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return OpenScdnServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

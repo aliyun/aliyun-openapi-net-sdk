@@ -16,28 +16,33 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.scdn;
 using Aliyun.Acs.scdn.Transform;
 using Aliyun.Acs.scdn.Transform.V20171115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
     public class DescribeScdnDomainCnameRequest : RpcAcsRequest<DescribeScdnDomainCnameResponse>
     {
         public DescribeScdnDomainCnameRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainCname", "scdn", "openAPI")
+            : base("scdn", "2017-11-15", "DescribeScdnDomainCname")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string domainName;
 
 		private long? ownerId;
-
-		private string action;
 
 		public string DomainName
 		{
@@ -65,20 +70,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-        public override DescribeScdnDomainCnameResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeScdnDomainCnameResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeScdnDomainCnameResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

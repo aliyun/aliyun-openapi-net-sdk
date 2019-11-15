@@ -16,28 +16,33 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.scdn;
 using Aliyun.Acs.scdn.Transform;
 using Aliyun.Acs.scdn.Transform.V20171115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
     public class DescribeScdnDomainCertificateInfoRequest : RpcAcsRequest<DescribeScdnDomainCertificateInfoResponse>
     {
         public DescribeScdnDomainCertificateInfoRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainCertificateInfo", "scdn", "openAPI")
+            : base("scdn", "2017-11-15", "DescribeScdnDomainCertificateInfo")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string domainName;
 
 		private long? ownerId;
-
-		private string action;
 
 		public string DomainName
 		{
@@ -65,20 +70,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-        public override DescribeScdnDomainCertificateInfoResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeScdnDomainCertificateInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeScdnDomainCertificateInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

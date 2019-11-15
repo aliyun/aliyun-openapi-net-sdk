@@ -16,36 +16,35 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.scdn;
 using Aliyun.Acs.scdn.Transform;
 using Aliyun.Acs.scdn.Transform.V20171115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
     public class DescribeScdnRefreshTasksRequest : RpcAcsRequest<DescribeScdnRefreshTasksResponse>
     {
         public DescribeScdnRefreshTasksRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnRefreshTasks", "scdn", "openAPI")
+            : base("scdn", "2017-11-15", "DescribeScdnRefreshTasks")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string objectPath;
 
-		private string domainName;
-
-		private string endTime;
-
 		private string startTime;
 
-		private long? ownerId;
-
 		private int? pageNumber;
-
-		private string accessKeyId;
 
 		private string resourceGroupId;
 
@@ -53,11 +52,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private int? pageSize;
 
-		private string action;
-
 		private string objectType;
 
 		private string taskId;
+
+		private string domainName;
+
+		private string endTime;
+
+		private long? ownerId;
 
 		private string status;
 
@@ -74,32 +77,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
 		public string StartTime
 		{
 			get
@@ -113,19 +90,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public int? PageNumber
 		{
 			get
@@ -136,19 +100,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -191,19 +142,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ObjectType
 		{
 			get
@@ -230,6 +168,45 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public string Status
 		{
 			get
@@ -243,7 +220,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-        public override DescribeScdnRefreshTasksResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeScdnRefreshTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeScdnRefreshTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

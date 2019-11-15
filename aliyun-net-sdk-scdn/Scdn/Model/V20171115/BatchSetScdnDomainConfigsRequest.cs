@@ -28,10 +28,10 @@ using Aliyun.Acs.scdn.Transform.V20171115;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class DescribeScdnDomainHitRateDataRequest : RpcAcsRequest<DescribeScdnDomainHitRateDataResponse>
+    public class BatchSetScdnDomainConfigsRequest : RpcAcsRequest<BatchSetScdnDomainConfigsResponse>
     {
-        public DescribeScdnDomainHitRateDataRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainHitRateData")
+        public BatchSetScdnDomainConfigsRequest()
+            : base("scdn", "2017-11-15", "BatchSetScdnDomainConfigs")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,52 +40,52 @@ namespace Aliyun.Acs.scdn.Model.V20171115
             }
         }
 
-		private string startTime;
+		private string functions;
 
-		private string domainName;
+		private string domainNames;
 
-		private string endTime;
+		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string interval;
+		private string securityToken;
 
-		public string StartTime
+		public string Functions
 		{
 			get
 			{
-				return startTime;
+				return functions;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				functions = value;
+				DictionaryUtil.Add(QueryParameters, "Functions", value);
 			}
 		}
 
-		public string DomainName
+		public string DomainNames
 		{
 			get
 			{
-				return domainName;
+				return domainNames;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				domainNames = value;
+				DictionaryUtil.Add(QueryParameters, "DomainNames", value);
 			}
 		}
 
-		public string EndTime
+		public string OwnerAccount
 		{
 			get
 			{
-				return endTime;
+				return ownerAccount;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -102,22 +102,22 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string Interval
+		public string SecurityToken
 		{
 			get
 			{
-				return interval;
+				return securityToken;
 			}
 			set	
 			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-        public override DescribeScdnDomainHitRateDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BatchSetScdnDomainConfigsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeScdnDomainHitRateDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchSetScdnDomainConfigsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -16,36 +16,39 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.scdn;
 using Aliyun.Acs.scdn.Transform;
 using Aliyun.Acs.scdn.Transform.V20171115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
     public class BatchDeleteScdnDomainConfigsRequest : RpcAcsRequest<BatchDeleteScdnDomainConfigsResponse>
     {
         public BatchDeleteScdnDomainConfigsRequest()
-            : base("scdn", "2017-11-15", "BatchDeleteScdnDomainConfigs", "scdn", "openAPI")
+            : base("scdn", "2017-11-15", "BatchDeleteScdnDomainConfigs")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string functionNames;
-
-		private string securityToken;
 
 		private string domainNames;
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
 
-		private string accessKeyId;
+		private string securityToken;
 
 		public string FunctionNames
 		{
@@ -57,19 +60,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				functionNames = value;
 				DictionaryUtil.Add(QueryParameters, "FunctionNames", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -99,19 +89,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -125,20 +102,20 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string AccessKeyId
+		public string SecurityToken
 		{
 			get
 			{
-				return accessKeyId;
+				return securityToken;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-        public override BatchDeleteScdnDomainConfigsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override BatchDeleteScdnDomainConfigsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return BatchDeleteScdnDomainConfigsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

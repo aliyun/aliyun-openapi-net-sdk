@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
@@ -71,9 +72,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 			private long? logCount;
 
-			private List<DescribeScdnDomainLog_PageInfoDetail> pageInfos;
-
 			private List<DescribeScdnDomainLog_LogInfoDetail> logInfos;
+
+			private DescribeScdnDomainLog_PageInfos pageInfos;
 
 			public long? LogCount
 			{
@@ -84,18 +85,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				set	
 				{
 					logCount = value;
-				}
-			}
-
-			public List<DescribeScdnDomainLog_PageInfoDetail> PageInfos
-			{
-				get
-				{
-					return pageInfos;
-				}
-				set	
-				{
-					pageInfos = value;
 				}
 			}
 
@@ -111,49 +100,15 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 				}
 			}
 
-			public class DescribeScdnDomainLog_PageInfoDetail
+			public DescribeScdnDomainLog_PageInfos PageInfos
 			{
-
-				private long? pageIndex;
-
-				private long? pageSize;
-
-				private long? total;
-
-				public long? PageIndex
+				get
 				{
-					get
-					{
-						return pageIndex;
-					}
-					set	
-					{
-						pageIndex = value;
-					}
+					return pageInfos;
 				}
-
-				public long? PageSize
+				set	
 				{
-					get
-					{
-						return pageSize;
-					}
-					set	
-					{
-						pageSize = value;
-					}
-				}
-
-				public long? Total
-				{
-					get
-					{
-						return total;
-					}
-					set	
-					{
-						total = value;
-					}
+					pageInfos = value;
 				}
 			}
 
@@ -227,6 +182,52 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 					set	
 					{
 						endTime = value;
+					}
+				}
+			}
+
+			public class DescribeScdnDomainLog_PageInfos
+			{
+
+				private long? pageNumber;
+
+				private long? pageSize;
+
+				private long? total;
+
+				public long? PageNumber
+				{
+					get
+					{
+						return pageNumber;
+					}
+					set	
+					{
+						pageNumber = value;
+					}
+				}
+
+				public long? PageSize
+				{
+					get
+					{
+						return pageSize;
+					}
+					set	
+					{
+						pageSize = value;
+					}
+				}
+
+				public long? Total
+				{
+					get
+					{
+						return total;
+					}
+					set	
+					{
+						total = value;
 					}
 				}
 			}

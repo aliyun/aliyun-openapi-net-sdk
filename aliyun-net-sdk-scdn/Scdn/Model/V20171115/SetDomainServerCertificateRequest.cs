@@ -16,81 +16,45 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.scdn;
 using Aliyun.Acs.scdn.Transform;
 using Aliyun.Acs.scdn.Transform.V20171115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
     public class SetDomainServerCertificateRequest : RpcAcsRequest<SetDomainServerCertificateResponse>
     {
         public SetDomainServerCertificateRequest()
-            : base("scdn", "2017-11-15", "SetDomainServerCertificate", "scdn", "openAPI")
+            : base("scdn", "2017-11-15", "SetDomainServerCertificate")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string securityToken;
-
-		private string sSLPub;
-
-		private string certName;
 
 		private string sSLProtocol;
 
-		private string domainName;
-
-		private string action;
-
-		private long? ownerId;
-
-		private string region;
-
-		private string accessKeyId;
+		private string securityToken;
 
 		private string sSLPri;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string certName;
 
-		public string SSLPub
-		{
-			get
-			{
-				return sSLPub;
-			}
-			set	
-			{
-				sSLPub = value;
-				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
-			}
-		}
+		private string domainName;
 
-		public string CertName
-		{
-			get
-			{
-				return certName;
-			}
-			set	
-			{
-				certName = value;
-				DictionaryUtil.Add(QueryParameters, "CertName", value);
-			}
-		}
+		private long? ownerId;
+
+		private string sSLPub;
+
+		private string region;
 
 		public string SSLProtocol
 		{
@@ -105,68 +69,16 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string DomainName
+		public string SecurityToken
 		{
 			get
 			{
-				return domainName;
+				return securityToken;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -183,7 +95,72 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-        public override SetDomainServerCertificateResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string CertName
+		{
+			get
+			{
+				return certName;
+			}
+			set	
+			{
+				certName = value;
+				DictionaryUtil.Add(QueryParameters, "CertName", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SSLPub
+		{
+			get
+			{
+				return sSLPub;
+			}
+			set	
+			{
+				sSLPub = value;
+				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
+			}
+		}
+
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
+			}
+		}
+
+        public override SetDomainServerCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return SetDomainServerCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

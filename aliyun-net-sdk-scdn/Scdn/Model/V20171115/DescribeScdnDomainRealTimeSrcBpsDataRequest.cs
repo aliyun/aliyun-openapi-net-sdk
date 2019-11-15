@@ -16,26 +16,31 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.scdn;
 using Aliyun.Acs.scdn.Transform;
 using Aliyun.Acs.scdn.Transform.V20171115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
     public class DescribeScdnDomainRealTimeSrcBpsDataRequest : RpcAcsRequest<DescribeScdnDomainRealTimeSrcBpsDataResponse>
     {
         public DescribeScdnDomainRealTimeSrcBpsDataRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainRealTimeSrcBpsData", "scdn", "openAPI")
+            : base("scdn", "2017-11-15", "DescribeScdnDomainRealTimeSrcBpsData")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string startTime;
-
-		private string action;
 
 		private string domainName;
 
@@ -53,19 +58,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -108,7 +100,7 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-        public override DescribeScdnDomainRealTimeSrcBpsDataResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeScdnDomainRealTimeSrcBpsDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeScdnDomainRealTimeSrcBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

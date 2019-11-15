@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
@@ -25,6 +26,12 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 	{
 
 		private string requestId;
+
+		private string changingAffectTime;
+
+		private string internetChargeType;
+
+		private string changingChargeType;
 
 		private string instanceId;
 
@@ -56,9 +63,35 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private string elasticProtectionValue;
 
+		private string currentProtectType;
+
+		private string currentProtectTypeValue;
+
+		private string currentBandwidth;
+
+		private string currentCcProtection;
+
+		private string currentDDoSBasic;
+
+		private string currentDomainCount;
+
+		private string currentElasticProtection;
+
+		private string currentBandwidthValue;
+
+		private string currentCcProtectionValue;
+
+		private string currentDDoSBasicValue;
+
+		private string currentDomainCountValue;
+
+		private string currentElasticProtectionValue;
+
 		private string priceType;
 
 		private string pricingCycle;
+
+		private string changingChargeType1;
 
 		private List<DescribeScdnService_LockReason> operationLocks;
 
@@ -71,6 +104,42 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ChangingAffectTime
+		{
+			get
+			{
+				return changingAffectTime;
+			}
+			set	
+			{
+				changingAffectTime = value;
+			}
+		}
+
+		public string InternetChargeType
+		{
+			get
+			{
+				return internetChargeType;
+			}
+			set	
+			{
+				internetChargeType = value;
+			}
+		}
+
+		public string ChangingChargeType
+		{
+			get
+			{
+				return changingChargeType;
+			}
+			set	
+			{
+				changingChargeType = value;
 			}
 		}
 
@@ -254,6 +323,150 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
+		public string CurrentProtectType
+		{
+			get
+			{
+				return currentProtectType;
+			}
+			set	
+			{
+				currentProtectType = value;
+			}
+		}
+
+		public string CurrentProtectTypeValue
+		{
+			get
+			{
+				return currentProtectTypeValue;
+			}
+			set	
+			{
+				currentProtectTypeValue = value;
+			}
+		}
+
+		public string CurrentBandwidth
+		{
+			get
+			{
+				return currentBandwidth;
+			}
+			set	
+			{
+				currentBandwidth = value;
+			}
+		}
+
+		public string CurrentCcProtection
+		{
+			get
+			{
+				return currentCcProtection;
+			}
+			set	
+			{
+				currentCcProtection = value;
+			}
+		}
+
+		public string CurrentDDoSBasic
+		{
+			get
+			{
+				return currentDDoSBasic;
+			}
+			set	
+			{
+				currentDDoSBasic = value;
+			}
+		}
+
+		public string CurrentDomainCount
+		{
+			get
+			{
+				return currentDomainCount;
+			}
+			set	
+			{
+				currentDomainCount = value;
+			}
+		}
+
+		public string CurrentElasticProtection
+		{
+			get
+			{
+				return currentElasticProtection;
+			}
+			set	
+			{
+				currentElasticProtection = value;
+			}
+		}
+
+		public string CurrentBandwidthValue
+		{
+			get
+			{
+				return currentBandwidthValue;
+			}
+			set	
+			{
+				currentBandwidthValue = value;
+			}
+		}
+
+		public string CurrentCcProtectionValue
+		{
+			get
+			{
+				return currentCcProtectionValue;
+			}
+			set	
+			{
+				currentCcProtectionValue = value;
+			}
+		}
+
+		public string CurrentDDoSBasicValue
+		{
+			get
+			{
+				return currentDDoSBasicValue;
+			}
+			set	
+			{
+				currentDDoSBasicValue = value;
+			}
+		}
+
+		public string CurrentDomainCountValue
+		{
+			get
+			{
+				return currentDomainCountValue;
+			}
+			set	
+			{
+				currentDomainCountValue = value;
+			}
+		}
+
+		public string CurrentElasticProtectionValue
+		{
+			get
+			{
+				return currentElasticProtectionValue;
+			}
+			set	
+			{
+				currentElasticProtectionValue = value;
+			}
+		}
+
 		public string PriceType
 		{
 			get
@@ -275,6 +488,18 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				pricingCycle = value;
+			}
+		}
+
+		public string ChangingChargeType1
+		{
+			get
+			{
+				return changingChargeType1;
+			}
+			set	
+			{
+				changingChargeType1 = value;
 			}
 		}
 

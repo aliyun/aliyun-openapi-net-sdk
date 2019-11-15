@@ -16,49 +16,39 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.scdn;
 using Aliyun.Acs.scdn.Transform;
 using Aliyun.Acs.scdn.Transform.V20171115;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
     public class DescribeScdnDomainTopReferVisitRequest : RpcAcsRequest<DescribeScdnDomainTopReferVisitResponse>
     {
         public DescribeScdnDomainTopReferVisitRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnDomainTopReferVisit", "scdn", "openAPI")
+            : base("scdn", "2017-11-15", "DescribeScdnDomainTopReferVisit")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string securityToken;
-
 		private string domainName;
-
-		private string action;
-
-		private string sortBy;
 
 		private string startTime;
 
 		private long? ownerId;
 
-		private string accessKeyId;
+		private string securityToken;
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
+		private string sortBy;
 
 		public string DomainName
 		{
@@ -70,32 +60,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string SortBy
-		{
-			get
-			{
-				return sortBy;
-			}
-			set	
-			{
-				sortBy = value;
-				DictionaryUtil.Add(QueryParameters, "SortBy", value);
 			}
 		}
 
@@ -125,20 +89,33 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string AccessKeyId
+		public string SecurityToken
 		{
 			get
 			{
-				return accessKeyId;
+				return securityToken;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-        public override DescribeScdnDomainTopReferVisitResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string SortBy
+		{
+			get
+			{
+				return sortBy;
+			}
+			set	
+			{
+				sortBy = value;
+				DictionaryUtil.Add(QueryParameters, "SortBy", value);
+			}
+		}
+
+        public override DescribeScdnDomainTopReferVisitResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeScdnDomainTopReferVisitResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
