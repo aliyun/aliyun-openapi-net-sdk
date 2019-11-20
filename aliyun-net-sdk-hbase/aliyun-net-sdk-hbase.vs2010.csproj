@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{084346db-2a03-4df7-8c08-b07ba2b45e57}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-hbase</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="HBase\Model\V20190101\AddUserHdfsInfoRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\AddUserHdfsInfoResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\ConvertInstanceRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\ConvertInstanceResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\CreateInstanceRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\CreateInstanceResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\DeleteInstanceRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\DeleteInstanceResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\DeleteUserHdfsInfoRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\DeleteUserHdfsInfoResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeEndpointsRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeEndpointsResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeInstanceRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeInstanceResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeInstancesRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeInstancesResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeIpWhitelistRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeIpWhitelistResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeRegionsRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeRegionsResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeSecurityGroupsRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeSecurityGroupsResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\ModifyInstanceNameRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\ModifyInstanceNameResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\ModifyIpWhitelistRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\ModifyIpWhitelistResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\ModifySecurityGroupsRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\ModifySecurityGroupsResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\ModifyUIAccountPasswordRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\ModifyUIAccountPasswordResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\QueryXpackRelateDBRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\QueryXpackRelateDBResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\RenewInstanceRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\RenewInstanceResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\ResizeDiskSizeRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\ResizeDiskSizeResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\ResizeNodeCountRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\ResizeNodeCountResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\RestartInstanceRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\RestartInstanceResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\XpackRelateDBRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\XpackRelateDBResponse.cs" />
+	<Compile Include="HBase\Transform\V20190101\AddUserHdfsInfoResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\ConvertInstanceResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\CreateInstanceResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\DeleteInstanceResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\DeleteUserHdfsInfoResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\DescribeEndpointsResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\DescribeInstanceResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\DescribeInstancesResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\DescribeIpWhitelistResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\DescribeSecurityGroupsResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\ModifyInstanceNameResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\ModifyIpWhitelistResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\ModifySecurityGroupsResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\ModifyUIAccountPasswordResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\QueryXpackRelateDBResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\RenewInstanceResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\ResizeDiskSizeResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\ResizeNodeCountResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\RestartInstanceResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\XpackRelateDBResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

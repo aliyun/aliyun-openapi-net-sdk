@@ -1,0 +1,4 @@
+2019-11-20 Version 2.0.0
+Generated 2019-01-01 for `HBase`.
+
+
