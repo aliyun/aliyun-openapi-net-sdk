@@ -29,12 +29,6 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 
 		private string content;
 
-		private int? code;
-
-		private string message;
-
-		private bool? success;
-
 		public string RequestId
 		{
 			get
@@ -56,42 +50,6 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			set	
 			{
 				content = value;
-			}
-		}
-
-		public int? Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 	}

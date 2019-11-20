@@ -33,9 +33,6 @@ namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 			getPredictResultResponse.HttpResponse = context.HttpResponse;
 			getPredictResultResponse.RequestId = context.StringValue("GetPredictResult.RequestId");
 			getPredictResultResponse.Content = context.StringValue("GetPredictResult.Content");
-			getPredictResultResponse.Code = context.IntegerValue("GetPredictResult.Code");
-			getPredictResultResponse.Message = context.StringValue("GetPredictResult.Message");
-			getPredictResultResponse.Success = context.BooleanValue("GetPredictResult.Success");
         
 			return getPredictResultResponse;
         }
