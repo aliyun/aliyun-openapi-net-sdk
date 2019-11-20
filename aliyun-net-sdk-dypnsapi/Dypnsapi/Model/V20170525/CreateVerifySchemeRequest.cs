@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
     public class CreateVerifySchemeRequest : RpcAcsRequest<CreateVerifySchemeResponse>
     {
         public CreateVerifySchemeRequest()
-            : base("Dypnsapi", "2017-05-25", "CreateVerifyScheme", "dypnsapi", "openAPI")
+            : base("Dypnsapi", "2017-05-25", "CreateVerifyScheme", "dypns", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

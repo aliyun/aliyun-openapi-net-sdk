@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
     public class TwiceTelVerifyRequest : RpcAcsRequest<TwiceTelVerifyResponse>
     {
         public TwiceTelVerifyRequest()
-            : base("Dypnsapi", "2017-05-25", "TwiceTelVerify", "dypnsapi", "openAPI")
+            : base("Dypnsapi", "2017-05-25", "TwiceTelVerify", "dypns", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

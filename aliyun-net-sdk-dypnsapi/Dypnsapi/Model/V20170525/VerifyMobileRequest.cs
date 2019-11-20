@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
     public class VerifyMobileRequest : RpcAcsRequest<VerifyMobileResponse>
     {
         public VerifyMobileRequest()
-            : base("Dypnsapi", "2017-05-25", "VerifyMobile", "dypnsapi", "openAPI")
+            : base("Dypnsapi", "2017-05-25", "VerifyMobile", "dypns", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

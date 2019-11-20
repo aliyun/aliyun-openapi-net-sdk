@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
     public class DeleteVerifySchemeRequest : RpcAcsRequest<DeleteVerifySchemeResponse>
     {
         public DeleteVerifySchemeRequest()
-            : base("Dypnsapi", "2017-05-25", "DeleteVerifyScheme", "dypnsapi", "openAPI")
+            : base("Dypnsapi", "2017-05-25", "DeleteVerifyScheme", "dypns", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
