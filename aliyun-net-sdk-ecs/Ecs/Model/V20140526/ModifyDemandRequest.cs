@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeDemandsRequest : RpcAcsRequest<DescribeDemandsResponse>
+    public class ModifyDemandRequest : RpcAcsRequest<ModifyDemandResponse>
     {
-        public DescribeDemandsRequest()
-            : base("Ecs", "2014-05-26", "DescribeDemands", "ecs", "openAPI")
+        public ModifyDemandRequest()
+            : base("Ecs", "2014-05-26", "ModifyDemand", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +42,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private int? pageNumber;
+		private string clientToken;
 
-		private int? pageSize;
+		private string startTime;
+
+		private string demandDescription;
 
 		private string instanceType;
 
-		private List<Tag> tags = new List<Tag>(){ };
-
 		private string instanceChargeType;
 
-		private bool? dryRun;
+		private string demandName;
+
+		private int? amount;
+
+		private int? period;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string instanceTypeFamily;
+		private string endTime;
 
 		private long? ownerId;
 
-		private List<string> demandStatuss = new List<string>(){ };
+		private string periodUnit;
 
 		private string demandId;
 
 		private string zoneId;
-
-		private string demandType;
 
 		public long? ResourceOwnerId
 		{
@@ -82,29 +85,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageNumber
+		public string ClientToken
 		{
 			get
 			{
-				return pageNumber;
+				return clientToken;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public int? PageSize
+		public string StartTime
 		{
 			get
 			{
-				return pageSize;
+				return startTime;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string DemandDescription
+		{
+			get
+			{
+				return demandDescription;
+			}
+			set	
+			{
+				demandDescription = value;
+				DictionaryUtil.Add(QueryParameters, "DemandDescription", value);
 			}
 		}
 
@@ -121,24 +137,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-				}
-			}
-		}
-
 		public string InstanceChargeType
 		{
 			get
@@ -152,16 +150,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? DryRun
+		public string DemandName
 		{
 			get
 			{
-				return dryRun;
+				return demandName;
 			}
 			set	
 			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+				demandName = value;
+				DictionaryUtil.Add(QueryParameters, "DemandName", value);
+			}
+		}
+
+		public int? Amount
+		{
+			get
+			{
+				return amount;
+			}
+			set	
+			{
+				amount = value;
+				DictionaryUtil.Add(QueryParameters, "Amount", value.ToString());
+			}
+		}
+
+		public int? Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
 			}
 		}
 
@@ -191,16 +215,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceTypeFamily
+		public string EndTime
 		{
 			get
 			{
-				return instanceTypeFamily;
+				return endTime;
 			}
 			set	
 			{
-				instanceTypeFamily = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceTypeFamily", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -217,20 +241,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> DemandStatuss
+		public string PeriodUnit
 		{
 			get
 			{
-				return demandStatuss;
+				return periodUnit;
 			}
-
-			set
+			set	
 			{
-				demandStatuss = value;
-				for (int i = 0; i < demandStatuss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DemandStatus." + (i + 1) , demandStatuss[i]);
-				}
+				periodUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
 			}
 		}
 
@@ -260,54 +280,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DemandType
-		{
-			get
-			{
-				return demandType;
-			}
-			set	
-			{
-				demandType = value;
-				DictionaryUtil.Add(QueryParameters, "DemandType", value);
-			}
-		}
-
-		public class Tag
-		{
-
-			private string key;
-
-			private string value_;
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-		}
-
-        public override DescribeDemandsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyDemandResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDemandsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDemandResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

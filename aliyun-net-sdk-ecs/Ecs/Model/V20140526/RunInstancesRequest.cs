@@ -72,6 +72,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? autoRenewPeriod;
 
+		private int? cpuOptionsCore;
+
 		private int? period;
 
 		private bool? dryRun;
@@ -79,6 +81,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string launchTemplateId;
 
 		private int? ipv6AddressCount;
+
+		private string cpuOptionsNuma;
 
 		private long? ownerId;
 
@@ -117,6 +121,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private int? internetMaxBandwidthOut;
 
 		private string description;
+
+		private int? cpuOptionsThreadsPerCore;
 
 		private string systemDiskCategory;
 
@@ -379,6 +385,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? CpuOptionsCore
+		{
+			get
+			{
+				return cpuOptionsCore;
+			}
+			set	
+			{
+				cpuOptionsCore = value;
+				DictionaryUtil.Add(QueryParameters, "CpuOptions.Core", value.ToString());
+			}
+		}
+
 		public int? Period
 		{
 			get
@@ -428,6 +447,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ipv6AddressCount = value;
 				DictionaryUtil.Add(QueryParameters, "Ipv6AddressCount", value.ToString());
+			}
+		}
+
+		public string CpuOptionsNuma
+		{
+			get
+			{
+				return cpuOptionsNuma;
+			}
+			set	
+			{
+				cpuOptionsNuma = value;
+				DictionaryUtil.Add(QueryParameters, "CpuOptions.Numa", value);
 			}
 		}
 
@@ -679,6 +711,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public int? CpuOptionsThreadsPerCore
+		{
+			get
+			{
+				return cpuOptionsThreadsPerCore;
+			}
+			set	
+			{
+				cpuOptionsThreadsPerCore = value;
+				DictionaryUtil.Add(QueryParameters, "CpuOptions.ThreadsPerCore", value.ToString());
 			}
 		}
 

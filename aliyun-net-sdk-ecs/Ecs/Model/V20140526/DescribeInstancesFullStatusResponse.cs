@@ -163,6 +163,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string notBefore;
 
+				private string reason;
+
 				private DescribeInstancesFullStatus_EventCycleStatus eventCycleStatus;
 
 				private DescribeInstancesFullStatus_EventType eventType;
@@ -202,6 +204,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						notBefore = value;
+					}
+				}
+
+				public string Reason
+				{
+					get
+					{
+						return reason;
+					}
+					set	
+					{
+						reason = value;
 					}
 				}
 

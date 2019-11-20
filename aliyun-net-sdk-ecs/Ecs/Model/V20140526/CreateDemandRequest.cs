@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeRecommendInstanceTypeRequest : RpcAcsRequest<DescribeRecommendInstanceTypeResponse>
+    public class CreateDemandRequest : RpcAcsRequest<CreateDemandResponse>
     {
-        public DescribeRecommendInstanceTypeRequest()
-            : base("Ecs", "2014-05-26", "DescribeRecommendInstanceType", "ecs", "openAPI")
+        public CreateDemandRequest()
+            : base("Ecs", "2014-05-26", "CreateDemand", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,37 +41,31 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private float? memory;
+		private string clientToken;
 
-		private string ioOptimized;
+		private string startTime;
 
-		private string networkType;
-
-		private string scene;
-
-		private int? cores;
-
-		private string systemDiskCategory;
+		private string demandDescription;
 
 		private string instanceType;
 
 		private string instanceChargeType;
 
-		private float? maxPrice;
+		private string demandName;
+
+		private int? amount;
+
+		private int? period;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private List<string> instanceTypeFamilys = new List<string>(){ };
+		private string endTime;
 
 		private long? ownerId;
 
-		private string spotStrategy;
-
-		private string priorityStrategy;
-
-		private string instanceFamilyLevel;
+		private string periodUnit;
 
 		private string zoneId;
 
@@ -88,81 +82,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public float? Memory
+		public string ClientToken
 		{
 			get
 			{
-				return memory;
+				return clientToken;
 			}
 			set	
 			{
-				memory = value;
-				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public string IoOptimized
+		public string StartTime
 		{
 			get
 			{
-				return ioOptimized;
+				return startTime;
 			}
 			set	
 			{
-				ioOptimized = value;
-				DictionaryUtil.Add(QueryParameters, "IoOptimized", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string NetworkType
+		public string DemandDescription
 		{
 			get
 			{
-				return networkType;
+				return demandDescription;
 			}
 			set	
 			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
-		public string Scene
-		{
-			get
-			{
-				return scene;
-			}
-			set	
-			{
-				scene = value;
-				DictionaryUtil.Add(QueryParameters, "Scene", value);
-			}
-		}
-
-		public int? Cores
-		{
-			get
-			{
-				return cores;
-			}
-			set	
-			{
-				cores = value;
-				DictionaryUtil.Add(QueryParameters, "Cores", value.ToString());
-			}
-		}
-
-		public string SystemDiskCategory
-		{
-			get
-			{
-				return systemDiskCategory;
-			}
-			set	
-			{
-				systemDiskCategory = value;
-				DictionaryUtil.Add(QueryParameters, "SystemDiskCategory", value);
+				demandDescription = value;
+				DictionaryUtil.Add(QueryParameters, "DemandDescription", value);
 			}
 		}
 
@@ -192,16 +147,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public float? MaxPrice
+		public string DemandName
 		{
 			get
 			{
-				return maxPrice;
+				return demandName;
 			}
 			set	
 			{
-				maxPrice = value;
-				DictionaryUtil.Add(QueryParameters, "MaxPrice", value.ToString());
+				demandName = value;
+				DictionaryUtil.Add(QueryParameters, "DemandName", value);
+			}
+		}
+
+		public int? Amount
+		{
+			get
+			{
+				return amount;
+			}
+			set	
+			{
+				amount = value;
+				DictionaryUtil.Add(QueryParameters, "Amount", value.ToString());
+			}
+		}
+
+		public int? Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
 			}
 		}
 
@@ -231,20 +212,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> InstanceTypeFamilys
+		public string EndTime
 		{
 			get
 			{
-				return instanceTypeFamilys;
+				return endTime;
 			}
-
-			set
+			set	
 			{
-				instanceTypeFamilys = value;
-				for (int i = 0; i < instanceTypeFamilys.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceTypeFamily." + (i + 1) , instanceTypeFamilys[i]);
-				}
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -261,42 +238,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string SpotStrategy
+		public string PeriodUnit
 		{
 			get
 			{
-				return spotStrategy;
+				return periodUnit;
 			}
 			set	
 			{
-				spotStrategy = value;
-				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
-			}
-		}
-
-		public string PriorityStrategy
-		{
-			get
-			{
-				return priorityStrategy;
-			}
-			set	
-			{
-				priorityStrategy = value;
-				DictionaryUtil.Add(QueryParameters, "PriorityStrategy", value);
-			}
-		}
-
-		public string InstanceFamilyLevel
-		{
-			get
-			{
-				return instanceFamilyLevel;
-			}
-			set	
-			{
-				instanceFamilyLevel = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceFamilyLevel", value);
+				periodUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
 			}
 		}
 
@@ -313,9 +264,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override DescribeRecommendInstanceTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDemandResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRecommendInstanceTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDemandResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

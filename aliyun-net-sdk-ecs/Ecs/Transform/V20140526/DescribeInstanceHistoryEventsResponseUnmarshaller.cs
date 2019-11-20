@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceSystemEventType.EventPublishTime = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventPublishTime");
 				instanceSystemEventType.NotBefore = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].NotBefore");
 				instanceSystemEventType.EventFinishTime = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventFinishTime");
+				instanceSystemEventType.Reason = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].Reason");
 
 				DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventType eventType = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_EventType();
 				eventType.Code = context.IntegerValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].EventType.Code");

@@ -210,6 +210,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private DescribeInstances_DedicatedInstanceAttribute dedicatedInstanceAttribute;
 
+			private DescribeInstances_CpuOptions cpuOptions;
+
 			public string InstanceId
 			{
 				get
@@ -882,6 +884,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public DescribeInstances_CpuOptions CpuOptions
+			{
+				get
+				{
+					return cpuOptions;
+				}
+				set	
+				{
+					cpuOptions = value;
+				}
+			}
+
 			public class DescribeInstances_NetworkInterface
 			{
 
@@ -1218,6 +1232,52 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						affinity = value;
+					}
+				}
+			}
+
+			public class DescribeInstances_CpuOptions
+			{
+
+				private int? coreCount;
+
+				private int? threadsPerCore;
+
+				private string numa;
+
+				public int? CoreCount
+				{
+					get
+					{
+						return coreCount;
+					}
+					set	
+					{
+						coreCount = value;
+					}
+				}
+
+				public int? ThreadsPerCore
+				{
+					get
+					{
+						return threadsPerCore;
+					}
+					set	
+					{
+						threadsPerCore = value;
+					}
+				}
+
+				public string Numa
+				{
+					get
+					{
+						return numa;
+					}
+					set	
+					{
+						numa = value;
 					}
 				}
 			}

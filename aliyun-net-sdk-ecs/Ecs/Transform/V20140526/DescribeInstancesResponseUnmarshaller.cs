@@ -143,6 +143,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				dedicatedInstanceAttribute.Affinity = context.StringValue("DescribeInstances.Instances["+ i +"].DedicatedInstanceAttribute.Affinity");
 				instance.DedicatedInstanceAttribute = dedicatedInstanceAttribute;
 
+				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_CpuOptions cpuOptions = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_CpuOptions();
+				cpuOptions.CoreCount = context.IntegerValue("DescribeInstances.Instances["+ i +"].CpuOptions.CoreCount");
+				cpuOptions.ThreadsPerCore = context.IntegerValue("DescribeInstances.Instances["+ i +"].CpuOptions.ThreadsPerCore");
+				cpuOptions.Numa = context.StringValue("DescribeInstances.Instances["+ i +"].CpuOptions.Numa");
+				instance.CpuOptions = cpuOptions;
+
 				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface> instance_networkInterfaces = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].NetworkInterfaces.Length"); j++) {
 					DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface networkInterface = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface();

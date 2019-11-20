@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeCloudAssistantStatusResponse : AcsResponse
+	public class CreateDemandResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeCloudAssistantStatus_InstanceCloudAssistantStatus> instanceCloudAssistantStatusSet;
+		private string demandId;
 
 		public string RequestId
 		{
@@ -41,61 +41,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<DescribeCloudAssistantStatus_InstanceCloudAssistantStatus> InstanceCloudAssistantStatusSet
+		public string DemandId
 		{
 			get
 			{
-				return instanceCloudAssistantStatusSet;
+				return demandId;
 			}
 			set	
 			{
-				instanceCloudAssistantStatusSet = value;
-			}
-		}
-
-		public class DescribeCloudAssistantStatus_InstanceCloudAssistantStatus
-		{
-
-			private string instanceId;
-
-			private string cloudAssistantStatus;
-
-			private string cloudAssistantVersion;
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public string CloudAssistantStatus
-			{
-				get
-				{
-					return cloudAssistantStatus;
-				}
-				set	
-				{
-					cloudAssistantStatus = value;
-				}
-			}
-
-			public string CloudAssistantVersion
-			{
-				get
-				{
-					return cloudAssistantVersion;
-				}
-				set	
-				{
-					cloudAssistantVersion = value;
-				}
+				demandId = value;
 			}
 		}
 	}

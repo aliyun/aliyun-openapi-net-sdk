@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private List<TagFilter> tagFilters = new List<TagFilter>(){ };
+
 		private string resourceType;
 
 		public long? ResourceOwnerId
@@ -156,6 +158,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<TagFilter> TagFilters
+		{
+			get
+			{
+				return tagFilters;
+			}
+
+			set
+			{
+				tagFilters = value;
+				for (int i = 0; i < tagFilters.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TagFilter." + (i + 1) + ".TagKey", tagFilters[i].TagKey);
+					for (int j = 0; j < tagFilters[i].TagValuess.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"TagFilter." + (i + 1) + ".TagValues." +(j + 1), tagFilters[i].TagValuess[j]);
+					}
+				}
+			}
+		}
+
 		public string ResourceType
 		{
 			get
@@ -197,6 +220,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					value_ = value;
+				}
+			}
+		}
+
+		public class TagFilter
+		{
+
+			private string tagKey;
+
+			private List<string> tagValuess = new List<string>(){ };
+
+			public string TagKey
+			{
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
+				}
+			}
+
+			public List<string> TagValuess
+			{
+				get
+				{
+					return tagValuess;
+				}
+				set	
+				{
+					tagValuess = value;
 				}
 			}
 		}

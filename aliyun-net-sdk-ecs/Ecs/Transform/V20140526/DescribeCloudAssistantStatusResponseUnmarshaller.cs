@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus instanceCloudAssistantStatus = new DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus();
 				instanceCloudAssistantStatus.InstanceId = context.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].InstanceId");
 				instanceCloudAssistantStatus.CloudAssistantStatus = context.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantStatus");
+				instanceCloudAssistantStatus.CloudAssistantVersion = context.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantVersion");
 
 				describeCloudAssistantStatusResponse_instanceCloudAssistantStatusSet.Add(instanceCloudAssistantStatus);
 			}

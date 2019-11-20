@@ -108,6 +108,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string eventFinishTime;
 
+			private string reason;
+
 			private DescribeInstanceHistoryEvents_EventType eventType;
 
 			private DescribeInstanceHistoryEvents_EventCycleStatus eventCycleStatus;
@@ -171,6 +173,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					eventFinishTime = value;
+				}
+			}
+
+			public string Reason
+			{
+				get
+				{
+					return reason;
+				}
+				set	
+				{
+					reason = value;
 				}
 			}
 

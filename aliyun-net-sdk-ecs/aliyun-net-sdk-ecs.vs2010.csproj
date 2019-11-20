@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{43e7e8eb-2141-4b46-8a13-45ea6f164318}</ProjectGuid>
+    <ProjectGuid>{1061b009-3195-4d5f-9640-9703a90418fd}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -100,6 +100,8 @@
 	<Compile Include="Ecs\Model\V20140526\CreateAutoSnapshotPolicyResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateCommandRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateCommandResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\CreateDemandRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\CreateDemandResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateDeploymentSetRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateDeploymentSetResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateDiskRequest.cs" />
@@ -156,6 +158,8 @@
 	<Compile Include="Ecs\Model\V20140526\DeleteBandwidthPackageResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteCommandRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteCommandResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DeleteDemandRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DeleteDemandResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteDeploymentSetRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteDeploymentSetResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteDiskRequest.cs" />
@@ -432,6 +436,8 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyDedicatedHostAutoReleaseTimeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyDedicatedHostAutoRenewAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyDedicatedHostAutoRenewAttributeResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\ModifyDemandRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\ModifyDemandResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyDeploymentSetAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyDeploymentSetAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyDiskAttributeRequest.cs" />
@@ -604,6 +610,7 @@
 	<Compile Include="Ecs\Transform\V20140526\CreateAutoProvisioningGroupResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateAutoSnapshotPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateCommandResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\CreateDemandResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateDeploymentSetResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateDiskResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateForwardEntryResponseUnmarshaller.cs" />
@@ -632,6 +639,7 @@
 	<Compile Include="Ecs\Transform\V20140526\DeleteAutoSnapshotPolicyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteBandwidthPackageResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteCommandResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DeleteDemandResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteDeploymentSetResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteDiskResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteForwardEntryResponseUnmarshaller.cs" />
@@ -770,6 +778,7 @@
 	<Compile Include="Ecs\Transform\V20140526\ModifyDedicatedHostAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyDedicatedHostAutoReleaseTimeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyDedicatedHostAutoRenewAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\ModifyDemandResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyDeploymentSetAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyDiskAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyDiskChargeTypeResponseUnmarshaller.cs" />
