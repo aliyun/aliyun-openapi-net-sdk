@@ -27,10 +27,10 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class QueryRobotTaskCallDetailRequest : RpcAcsRequest<QueryRobotTaskCallDetailResponse>
+    public class QueryVoipNumberBindInfosRequest : RpcAcsRequest<QueryVoipNumberBindInfosResponse>
     {
-        public QueryRobotTaskCallDetailRequest()
-            : base("Dyvmsapi", "2017-05-25", "QueryRobotTaskCallDetail", "dyvms", "openAPI")
+        public QueryVoipNumberBindInfosRequest()
+            : base("Dyvmsapi", "2017-05-25", "QueryVoipNumberBindInfos", "dyvms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,15 +41,13 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 
 		private long? resourceOwnerId;
 
-		private string callee;
-
-		private long? taskId;
-
-		private long? queryDate;
-
 		private string resourceOwnerAccount;
 
+		private string phoneNumber;
+
 		private long? ownerId;
+
+		private string voipId;
 
 		public long? ResourceOwnerId
 		{
@@ -61,45 +59,6 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Callee
-		{
-			get
-			{
-				return callee;
-			}
-			set	
-			{
-				callee = value;
-				DictionaryUtil.Add(QueryParameters, "Callee", value);
-			}
-		}
-
-		public long? TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
-			}
-		}
-
-		public long? QueryDate
-		{
-			get
-			{
-				return queryDate;
-			}
-			set	
-			{
-				queryDate = value;
-				DictionaryUtil.Add(QueryParameters, "QueryDate", value.ToString());
 			}
 		}
 
@@ -116,6 +75,19 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
+		public string PhoneNumber
+		{
+			get
+			{
+				return phoneNumber;
+			}
+			set	
+			{
+				phoneNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -129,9 +101,22 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-        public override QueryRobotTaskCallDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string VoipId
+		{
+			get
+			{
+				return voipId;
+			}
+			set	
+			{
+				voipId = value;
+				DictionaryUtil.Add(QueryParameters, "VoipId", value);
+			}
+		}
+
+        public override QueryVoipNumberBindInfosResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryRobotTaskCallDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryVoipNumberBindInfosResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

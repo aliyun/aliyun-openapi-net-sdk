@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{e23e6692-f61a-433f-a0a9-8d52e783de75}</ProjectGuid>
+    <ProjectGuid>{2d4b6882-7f3b-4631-9370-ea828b94cdba}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -78,6 +78,10 @@
 	<Compile Include="Dyvmsapi\Model\V20170525\QueryRobotTaskListResponse.cs" />
 	<Compile Include="Dyvmsapi\Model\V20170525\QueryRobotv2AllListRequest.cs" />
 	<Compile Include="Dyvmsapi\Model\V20170525\QueryRobotv2AllListResponse.cs" />
+	<Compile Include="Dyvmsapi\Model\V20170525\QueryVoipNumberBindInfosRequest.cs" />
+	<Compile Include="Dyvmsapi\Model\V20170525\QueryVoipNumberBindInfosResponse.cs" />
+	<Compile Include="Dyvmsapi\Model\V20170525\ReportVoipProblemsRequest.cs" />
+	<Compile Include="Dyvmsapi\Model\V20170525\ReportVoipProblemsResponse.cs" />
 	<Compile Include="Dyvmsapi\Model\V20170525\SingleCallByTtsRequest.cs" />
 	<Compile Include="Dyvmsapi\Model\V20170525\SingleCallByTtsResponse.cs" />
 	<Compile Include="Dyvmsapi\Model\V20170525\SingleCallByVoiceRequest.cs" />
@@ -117,6 +121,8 @@
 	<Compile Include="Dyvmsapi\Transform\V20170525\QueryRobotTaskDetailResponseUnmarshaller.cs" />
 	<Compile Include="Dyvmsapi\Transform\V20170525\QueryRobotTaskListResponseUnmarshaller.cs" />
 	<Compile Include="Dyvmsapi\Transform\V20170525\QueryRobotv2AllListResponseUnmarshaller.cs" />
+	<Compile Include="Dyvmsapi\Transform\V20170525\QueryVoipNumberBindInfosResponseUnmarshaller.cs" />
+	<Compile Include="Dyvmsapi\Transform\V20170525\ReportVoipProblemsResponseUnmarshaller.cs" />
 	<Compile Include="Dyvmsapi\Transform\V20170525\SingleCallByTtsResponseUnmarshaller.cs" />
 	<Compile Include="Dyvmsapi\Transform\V20170525\SingleCallByVoiceResponseUnmarshaller.cs" />
 	<Compile Include="Dyvmsapi\Transform\V20170525\SmartCallOperateResponseUnmarshaller.cs" />

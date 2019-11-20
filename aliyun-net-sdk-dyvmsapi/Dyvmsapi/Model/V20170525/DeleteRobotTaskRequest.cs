@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dyvmsapi;
 using Aliyun.Acs.Dyvmsapi.Transform;
 using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
@@ -31,8 +30,13 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
     public class DeleteRobotTaskRequest : RpcAcsRequest<DeleteRobotTaskResponse>
     {
         public DeleteRobotTaskRequest()
-            : base("Dyvmsapi", "2017-05-25", "DeleteRobotTask")
+            : base("Dyvmsapi", "2017-05-25", "DeleteRobotTask", "dyvms", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;

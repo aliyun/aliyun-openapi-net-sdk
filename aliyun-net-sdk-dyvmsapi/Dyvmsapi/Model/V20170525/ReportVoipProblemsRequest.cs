@@ -27,10 +27,10 @@ using Aliyun.Acs.Dyvmsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 {
-    public class QueryRobotTaskCallDetailRequest : RpcAcsRequest<QueryRobotTaskCallDetailResponse>
+    public class ReportVoipProblemsRequest : RpcAcsRequest<ReportVoipProblemsResponse>
     {
-        public QueryRobotTaskCallDetailRequest()
-            : base("Dyvmsapi", "2017-05-25", "QueryRobotTaskCallDetail", "dyvms", "openAPI")
+        public ReportVoipProblemsRequest()
+            : base("Dyvmsapi", "2017-05-25", "ReportVoipProblems", "dyvms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,15 +41,17 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 
 		private long? resourceOwnerId;
 
-		private string callee;
+		private string title;
 
-		private long? taskId;
-
-		private long? queryDate;
+		private string voipId;
 
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
+
+		private string channelId;
+
+		private string desc;
 
 		public long? ResourceOwnerId
 		{
@@ -64,42 +66,29 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-		public string Callee
+		public string Title
 		{
 			get
 			{
-				return callee;
+				return title;
 			}
 			set	
 			{
-				callee = value;
-				DictionaryUtil.Add(QueryParameters, "Callee", value);
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
 			}
 		}
 
-		public long? TaskId
+		public string VoipId
 		{
 			get
 			{
-				return taskId;
+				return voipId;
 			}
 			set	
 			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
-			}
-		}
-
-		public long? QueryDate
-		{
-			get
-			{
-				return queryDate;
-			}
-			set	
-			{
-				queryDate = value;
-				DictionaryUtil.Add(QueryParameters, "QueryDate", value.ToString());
+				voipId = value;
+				DictionaryUtil.Add(QueryParameters, "VoipId", value);
 			}
 		}
 
@@ -129,9 +118,35 @@ namespace Aliyun.Acs.Dyvmsapi.Model.V20170525
 			}
 		}
 
-        public override QueryRobotTaskCallDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ChannelId
+		{
+			get
+			{
+				return channelId;
+			}
+			set	
+			{
+				channelId = value;
+				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
+			}
+		}
+
+		public string Desc
+		{
+			get
+			{
+				return desc;
+			}
+			set	
+			{
+				desc = value;
+				DictionaryUtil.Add(QueryParameters, "Desc", value);
+			}
+		}
+
+        public override ReportVoipProblemsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryRobotTaskCallDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ReportVoipProblemsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
