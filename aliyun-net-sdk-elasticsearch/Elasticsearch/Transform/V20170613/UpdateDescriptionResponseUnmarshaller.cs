@@ -34,7 +34,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			updateDescriptionResponse.RequestId = context.StringValue("UpdateDescription.RequestId");
 
 			UpdateDescriptionResponse.UpdateDescription_Result result = new UpdateDescriptionResponse.UpdateDescription_Result();
-			result.Description = context.StringValue("UpdateDescription.Result.Description");
+			result.Description = context.StringValue("UpdateDescription.Result.description");
 			updateDescriptionResponse.Result = result;
         
 			return updateDescriptionResponse;

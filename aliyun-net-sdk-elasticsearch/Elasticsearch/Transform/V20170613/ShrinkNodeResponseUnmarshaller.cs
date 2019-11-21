@@ -32,8 +32,6 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			shrinkNodeResponse.HttpResponse = context.HttpResponse;
 			shrinkNodeResponse.RequestId = context.StringValue("ShrinkNode.RequestId");
-			shrinkNodeResponse.Code = context.StringValue("ShrinkNode.Code");
-			shrinkNodeResponse.Message = context.StringValue("ShrinkNode.Message");
 			shrinkNodeResponse.Result = context.BooleanValue("ShrinkNode.Result");
         
 			return shrinkNodeResponse;

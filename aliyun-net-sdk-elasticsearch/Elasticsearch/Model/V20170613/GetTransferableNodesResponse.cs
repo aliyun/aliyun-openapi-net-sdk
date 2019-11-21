@@ -27,10 +27,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string requestId;
 
-		private string code;
-
-		private string message;
-
 		private List<GetTransferableNodes_ResultItem> result;
 
 		public string RequestId
@@ -42,30 +38,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 

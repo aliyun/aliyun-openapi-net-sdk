@@ -36,15 +36,15 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList> updateSynonymsDictsResponse_result = new List<UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList>();
 			for (int i = 0; i < context.Length("UpdateSynonymsDicts.Result.Length"); i++) {
 				UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList dictList = new UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList();
-				dictList.Name = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].Name");
-				dictList.FileSize = context.LongValue("UpdateSynonymsDicts.Result["+ i +"].FileSize");
-				dictList.Type = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].Type");
-				dictList.SourceType = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].SourceType");
+				dictList.Name = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].name");
+				dictList.FileSize = context.LongValue("UpdateSynonymsDicts.Result["+ i +"].fileSize");
+				dictList.Type = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].type");
+				dictList.SourceType = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].sourceType");
 
 				UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList.UpdateSynonymsDicts_OssObject ossObject = new UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList.UpdateSynonymsDicts_OssObject();
-				ossObject.BucketName = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].OssObject.BucketName");
-				ossObject.Key = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].OssObject.Key");
-				ossObject.Etag = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].OssObject.Etag");
+				ossObject.BucketName = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].OssObject.bucketName");
+				ossObject.Key = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].OssObject.key");
+				ossObject.Etag = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].OssObject.etag");
 				dictList.OssObject = ossObject;
 
 				updateSynonymsDictsResponse_result.Add(dictList);

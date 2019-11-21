@@ -32,8 +32,6 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			cancelTaskResponse.HttpResponse = context.HttpResponse;
 			cancelTaskResponse.RequestId = context.StringValue("CancelTask.RequestId");
-			cancelTaskResponse.Code = context.StringValue("CancelTask.Code");
-			cancelTaskResponse.Message = context.StringValue("CancelTask.Message");
 			cancelTaskResponse.Result = context.BooleanValue("CancelTask.Result");
         
 			return cancelTaskResponse;

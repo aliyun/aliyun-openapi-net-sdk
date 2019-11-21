@@ -32,20 +32,18 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			listAllNodeResponse.HttpResponse = context.HttpResponse;
 			listAllNodeResponse.RequestId = context.StringValue("ListAllNode.RequestId");
-			listAllNodeResponse.Code = context.StringValue("ListAllNode.Code");
-			listAllNodeResponse.Message = context.StringValue("ListAllNode.Message");
 
 			List<ListAllNodeResponse.ListAllNode_ResultItem> listAllNodeResponse_result = new List<ListAllNodeResponse.ListAllNode_ResultItem>();
 			for (int i = 0; i < context.Length("ListAllNode.Result.Length"); i++) {
 				ListAllNodeResponse.ListAllNode_ResultItem resultItem = new ListAllNodeResponse.ListAllNode_ResultItem();
-				resultItem.Host = context.StringValue("ListAllNode.Result["+ i +"].Host");
-				resultItem.Port = context.IntegerValue("ListAllNode.Result["+ i +"].Port");
-				resultItem.ZoneId = context.StringValue("ListAllNode.Result["+ i +"].ZoneId");
-				resultItem.NodeType = context.StringValue("ListAllNode.Result["+ i +"].NodeType");
-				resultItem.CpuPercent = context.StringValue("ListAllNode.Result["+ i +"].CpuPercent");
-				resultItem.LoadFiveM = context.StringValue("ListAllNode.Result["+ i +"].LoadFiveM");
-				resultItem.HeapPercent = context.StringValue("ListAllNode.Result["+ i +"].HeapPercent");
-				resultItem.Health = context.StringValue("ListAllNode.Result["+ i +"].Health");
+				resultItem.Host = context.StringValue("ListAllNode.Result["+ i +"].host");
+				resultItem.Port = context.IntegerValue("ListAllNode.Result["+ i +"].port");
+				resultItem.ZoneId = context.StringValue("ListAllNode.Result["+ i +"].zoneId");
+				resultItem.NodeType = context.StringValue("ListAllNode.Result["+ i +"].nodeType");
+				resultItem.CpuPercent = context.StringValue("ListAllNode.Result["+ i +"].cpuPercent");
+				resultItem.LoadFiveM = context.StringValue("ListAllNode.Result["+ i +"].loadFiveM");
+				resultItem.HeapPercent = context.StringValue("ListAllNode.Result["+ i +"].heapPercent");
+				resultItem.Health = context.StringValue("ListAllNode.Result["+ i +"].health");
 
 				listAllNodeResponse_result.Add(resultItem);
 			}

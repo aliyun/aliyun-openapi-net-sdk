@@ -34,17 +34,17 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			listSearchLogResponse.RequestId = context.StringValue("ListSearchLog.RequestId");
 
 			ListSearchLogResponse.ListSearchLog_Headers headers = new ListSearchLogResponse.ListSearchLog_Headers();
-			headers.XTotalCount = context.IntegerValue("ListSearchLog.Headers.XTotalCount");
+			headers.XTotalCount = context.IntegerValue("ListSearchLog.Headers.X-Total-Count");
 			listSearchLogResponse.Headers = headers;
 
 			List<ListSearchLogResponse.ListSearchLog_ResultItem> listSearchLogResponse_result = new List<ListSearchLogResponse.ListSearchLog_ResultItem>();
 			for (int i = 0; i < context.Length("ListSearchLog.Result.Length"); i++) {
 				ListSearchLogResponse.ListSearchLog_ResultItem resultItem = new ListSearchLogResponse.ListSearchLog_ResultItem();
-				resultItem.Timestamp = context.LongValue("ListSearchLog.Result["+ i +"].Timestamp");
-				resultItem.Host = context.StringValue("ListSearchLog.Result["+ i +"].Host");
-				resultItem.Level = context.StringValue("ListSearchLog.Result["+ i +"].Level");
-				resultItem.Content = context.StringValue("ListSearchLog.Result["+ i +"].Content");
-				resultItem.InstanceId = context.StringValue("ListSearchLog.Result["+ i +"].InstanceId");
+				resultItem.Timestamp = context.LongValue("ListSearchLog.Result["+ i +"].timestamp");
+				resultItem.Host = context.StringValue("ListSearchLog.Result["+ i +"].host");
+				resultItem.Level = context.StringValue("ListSearchLog.Result["+ i +"].level");
+				resultItem.Content = context.StringValue("ListSearchLog.Result["+ i +"].content");
+				resultItem.InstanceId = context.StringValue("ListSearchLog.Result["+ i +"].instanceId");
 
 				listSearchLogResponse_result.Add(resultItem);
 			}

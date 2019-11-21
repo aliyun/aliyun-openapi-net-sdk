@@ -34,7 +34,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			createProjectResponse.RequestId = context.StringValue("CreateProject.RequestId");
 
 			CreateProjectResponse.CreateProject_Result result = new CreateProjectResponse.CreateProject_Result();
-			result.Id = context.StringValue("CreateProject.Result.Id");
+			result.Id = context.StringValue("CreateProject.Result.id");
 			createProjectResponse.Result = result;
         
 			return createProjectResponse;

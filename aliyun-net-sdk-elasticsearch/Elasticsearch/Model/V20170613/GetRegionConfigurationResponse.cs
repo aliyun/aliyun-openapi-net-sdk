@@ -72,6 +72,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private List<GetRegionConfiguration_Disk> masterDiskList;
 
+			private List<GetRegionConfiguration_CategoryEntity> supportVersions;
+
 			private List<string> zones;
 
 			private List<string> esVersions;
@@ -183,6 +185,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					masterDiskList = value;
+				}
+			}
+
+			public List<GetRegionConfiguration_CategoryEntity> SupportVersions
+			{
+				get
+				{
+					return supportVersions;
+				}
+				set	
+				{
+					supportVersions = value;
 				}
 			}
 
@@ -558,6 +572,70 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						scaleLimit = value;
+					}
+				}
+			}
+
+			public class GetRegionConfiguration_CategoryEntity
+			{
+
+				private string instanceCategory;
+
+				private List<GetRegionConfiguration_VersionEntity> supportVersionList;
+
+				public string InstanceCategory
+				{
+					get
+					{
+						return instanceCategory;
+					}
+					set	
+					{
+						instanceCategory = value;
+					}
+				}
+
+				public List<GetRegionConfiguration_VersionEntity> SupportVersionList
+				{
+					get
+					{
+						return supportVersionList;
+					}
+					set	
+					{
+						supportVersionList = value;
+					}
+				}
+
+				public class GetRegionConfiguration_VersionEntity
+				{
+
+					private string key;
+
+					private string _value;
+
+					public string Key
+					{
+						get
+						{
+							return key;
+						}
+						set	
+						{
+							key = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
 					}
 				}
 			}

@@ -36,15 +36,15 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList> updateHotIkDictsResponse_result = new List<UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList>();
 			for (int i = 0; i < context.Length("UpdateHotIkDicts.Result.Length"); i++) {
 				UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList dictList = new UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList();
-				dictList.Name = context.StringValue("UpdateHotIkDicts.Result["+ i +"].Name");
-				dictList.FileSize = context.LongValue("UpdateHotIkDicts.Result["+ i +"].FileSize");
-				dictList.Type = context.StringValue("UpdateHotIkDicts.Result["+ i +"].Type");
-				dictList.SourceType = context.StringValue("UpdateHotIkDicts.Result["+ i +"].SourceType");
+				dictList.Name = context.StringValue("UpdateHotIkDicts.Result["+ i +"].name");
+				dictList.FileSize = context.LongValue("UpdateHotIkDicts.Result["+ i +"].fileSize");
+				dictList.Type = context.StringValue("UpdateHotIkDicts.Result["+ i +"].type");
+				dictList.SourceType = context.StringValue("UpdateHotIkDicts.Result["+ i +"].sourceType");
 
 				UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList.UpdateHotIkDicts_OssObject ossObject = new UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList.UpdateHotIkDicts_OssObject();
-				ossObject.BucketName = context.StringValue("UpdateHotIkDicts.Result["+ i +"].OssObject.BucketName");
-				ossObject.Key = context.StringValue("UpdateHotIkDicts.Result["+ i +"].OssObject.Key");
-				ossObject.Etag = context.StringValue("UpdateHotIkDicts.Result["+ i +"].OssObject.Etag");
+				ossObject.BucketName = context.StringValue("UpdateHotIkDicts.Result["+ i +"].OssObject.bucketName");
+				ossObject.Key = context.StringValue("UpdateHotIkDicts.Result["+ i +"].OssObject.key");
+				ossObject.Etag = context.StringValue("UpdateHotIkDicts.Result["+ i +"].OssObject.etag");
 				dictList.OssObject = ossObject;
 
 				updateHotIkDictsResponse_result.Add(dictList);

@@ -112,6 +112,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private List<DescribeInstance_ZoneInfo> zoneInfos;
 
+			private List<DescribeInstance_Dict> aliwsDicts;
+
 			private List<string> esIPWhitelist;
 
 			private List<string> esIPBlacklist;
@@ -133,6 +135,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			private DescribeInstance_ClientNodeConfiguration clientNodeConfiguration;
 
 			private DescribeInstance_WarmNodeConfiguration warmNodeConfiguration;
+
+			private DescribeInstance_AdvancedSetting advancedSetting;
 
 			public string InstanceId
 			{
@@ -470,6 +474,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public List<DescribeInstance_Dict> AliwsDicts
+			{
+				get
+				{
+					return aliwsDicts;
+				}
+				set	
+				{
+					aliwsDicts = value;
+				}
+			}
+
 			public List<string> EsIPWhitelist
 			{
 				get
@@ -599,6 +615,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					warmNodeConfiguration = value;
+				}
+			}
+
+			public DescribeInstance_AdvancedSetting AdvancedSetting
+			{
+				get
+				{
+					return advancedSetting;
+				}
+				set	
+				{
+					advancedSetting = value;
 				}
 			}
 
@@ -754,6 +782,66 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public class DescribeInstance_Dict
+			{
+
+				private string name;
+
+				private long? fileSize;
+
+				private string type;
+
+				private string sourceType;
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public long? FileSize
+				{
+					get
+					{
+						return fileSize;
+					}
+					set	
+					{
+						fileSize = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string SourceType
+				{
+					get
+					{
+						return sourceType;
+					}
+					set	
+					{
+						sourceType = value;
+					}
+				}
+			}
+
 			public class DescribeInstance_NodeSpec
 			{
 
@@ -762,6 +850,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				private int? disk;
 
 				private string diskType;
+
+				private bool? diskEncryption;
 
 				public string Spec
 				{
@@ -796,6 +886,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						diskType = value;
+					}
+				}
+
+				public bool? DiskEncryption
+				{
+					get
+					{
+						return diskEncryption;
+					}
+					set	
+					{
+						diskEncryption = value;
 					}
 				}
 			}
@@ -1051,6 +1153,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private int? disk;
 
+				private bool? diskEncryption;
+
 				public string Spec
 				{
 					get
@@ -1096,6 +1200,36 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						disk = value;
+					}
+				}
+
+				public bool? DiskEncryption
+				{
+					get
+					{
+						return diskEncryption;
+					}
+					set	
+					{
+						diskEncryption = value;
+					}
+				}
+			}
+
+			public class DescribeInstance_AdvancedSetting
+			{
+
+				private string gcName;
+
+				public string GcName
+				{
+					get
+					{
+						return gcName;
+					}
+					set	
+					{
+						gcName = value;
 					}
 				}
 			}

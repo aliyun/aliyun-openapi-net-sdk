@@ -34,16 +34,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			listPluginsResponse.RequestId = context.StringValue("ListPlugins.RequestId");
 
 			ListPluginsResponse.ListPlugins_Headers headers = new ListPluginsResponse.ListPlugins_Headers();
-			headers.XTotalCount = context.IntegerValue("ListPlugins.Headers.XTotalCount");
+			headers.XTotalCount = context.IntegerValue("ListPlugins.Headers.X-Total-Count");
 			listPluginsResponse.Headers = headers;
 
 			List<ListPluginsResponse.ListPlugins_ResultItem> listPluginsResponse_result = new List<ListPluginsResponse.ListPlugins_ResultItem>();
 			for (int i = 0; i < context.Length("ListPlugins.Result.Length"); i++) {
 				ListPluginsResponse.ListPlugins_ResultItem resultItem = new ListPluginsResponse.ListPlugins_ResultItem();
-				resultItem.Name = context.StringValue("ListPlugins.Result["+ i +"].Name");
-				resultItem.State = context.StringValue("ListPlugins.Result["+ i +"].State");
-				resultItem.Source = context.StringValue("ListPlugins.Result["+ i +"].Source");
-				resultItem.Description = context.StringValue("ListPlugins.Result["+ i +"].Description");
+				resultItem.Name = context.StringValue("ListPlugins.Result["+ i +"].name");
+				resultItem.State = context.StringValue("ListPlugins.Result["+ i +"].state");
+				resultItem.Source = context.StringValue("ListPlugins.Result["+ i +"].source");
+				resultItem.Description = context.StringValue("ListPlugins.Result["+ i +"].description");
 
 				listPluginsResponse_result.Add(resultItem);
 			}

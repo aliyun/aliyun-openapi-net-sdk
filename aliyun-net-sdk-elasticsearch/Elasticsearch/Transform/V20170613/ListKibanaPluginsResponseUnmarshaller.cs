@@ -34,17 +34,17 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			listKibanaPluginsResponse.RequestId = context.StringValue("ListKibanaPlugins.RequestId");
 
 			ListKibanaPluginsResponse.ListKibanaPlugins_Headers headers = new ListKibanaPluginsResponse.ListKibanaPlugins_Headers();
-			headers.XTotalCount = context.IntegerValue("ListKibanaPlugins.Headers.XTotalCount");
+			headers.XTotalCount = context.IntegerValue("ListKibanaPlugins.Headers.X-Total-Count");
 			listKibanaPluginsResponse.Headers = headers;
 
 			List<ListKibanaPluginsResponse.ListKibanaPlugins_PluginItem> listKibanaPluginsResponse_result = new List<ListKibanaPluginsResponse.ListKibanaPlugins_PluginItem>();
 			for (int i = 0; i < context.Length("ListKibanaPlugins.Result.Length"); i++) {
 				ListKibanaPluginsResponse.ListKibanaPlugins_PluginItem pluginItem = new ListKibanaPluginsResponse.ListKibanaPlugins_PluginItem();
-				pluginItem.Name = context.StringValue("ListKibanaPlugins.Result["+ i +"].Name");
-				pluginItem.State = context.StringValue("ListKibanaPlugins.Result["+ i +"].State");
-				pluginItem.Source = context.StringValue("ListKibanaPlugins.Result["+ i +"].Source");
-				pluginItem.Description = context.StringValue("ListKibanaPlugins.Result["+ i +"].Description");
-				pluginItem.SpecificationUrl = context.StringValue("ListKibanaPlugins.Result["+ i +"].SpecificationUrl");
+				pluginItem.Name = context.StringValue("ListKibanaPlugins.Result["+ i +"].name");
+				pluginItem.State = context.StringValue("ListKibanaPlugins.Result["+ i +"].state");
+				pluginItem.Source = context.StringValue("ListKibanaPlugins.Result["+ i +"].source");
+				pluginItem.Description = context.StringValue("ListKibanaPlugins.Result["+ i +"].description");
+				pluginItem.SpecificationUrl = context.StringValue("ListKibanaPlugins.Result["+ i +"].specificationUrl");
 
 				listKibanaPluginsResponse_result.Add(pluginItem);
 			}

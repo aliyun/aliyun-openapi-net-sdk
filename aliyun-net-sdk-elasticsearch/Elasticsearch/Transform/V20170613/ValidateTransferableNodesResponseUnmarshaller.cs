@@ -32,8 +32,6 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			validateTransferableNodesResponse.HttpResponse = context.HttpResponse;
 			validateTransferableNodesResponse.RequestId = context.StringValue("ValidateTransferableNodes.RequestId");
-			validateTransferableNodesResponse.Code = context.StringValue("ValidateTransferableNodes.Code");
-			validateTransferableNodesResponse.Message = context.StringValue("ValidateTransferableNodes.Message");
 			validateTransferableNodesResponse.Result = context.BooleanValue("ValidateTransferableNodes.Result");
         
 			return validateTransferableNodesResponse;

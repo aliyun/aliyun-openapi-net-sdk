@@ -34,26 +34,26 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			rollbackInstanceResponse.RequestId = context.StringValue("RollbackInstance.RequestId");
 
 			RollbackInstanceResponse.RollbackInstance_Result result = new RollbackInstanceResponse.RollbackInstance_Result();
-			result.InstanceId = context.StringValue("RollbackInstance.Result.InstanceId");
-			result.Domain = context.StringValue("RollbackInstance.Result.Domain");
-			result.Description = context.StringValue("RollbackInstance.Result.Description");
-			result.NodeAmount = context.IntegerValue("RollbackInstance.Result.NodeAmount");
-			result.PaymentType = context.StringValue("RollbackInstance.Result.PaymentType");
-			result.Status = context.StringValue("RollbackInstance.Result.Status");
-			result.EsVersion = context.StringValue("RollbackInstance.Result.EsVersion");
-			result.CreatedAt = context.StringValue("RollbackInstance.Result.CreatedAt");
-			result.UpdatedAt = context.StringValue("RollbackInstance.Result.UpdatedAt");
+			result.InstanceId = context.StringValue("RollbackInstance.Result.instanceId");
+			result.Domain = context.StringValue("RollbackInstance.Result.domain");
+			result.Description = context.StringValue("RollbackInstance.Result.description");
+			result.NodeAmount = context.IntegerValue("RollbackInstance.Result.nodeAmount");
+			result.PaymentType = context.StringValue("RollbackInstance.Result.paymentType");
+			result.Status = context.StringValue("RollbackInstance.Result.status");
+			result.EsVersion = context.StringValue("RollbackInstance.Result.esVersion");
+			result.CreatedAt = context.StringValue("RollbackInstance.Result.createdAt");
+			result.UpdatedAt = context.StringValue("RollbackInstance.Result.updatedAt");
 
 			RollbackInstanceResponse.RollbackInstance_Result.RollbackInstance_NodeSpec nodeSpec = new RollbackInstanceResponse.RollbackInstance_Result.RollbackInstance_NodeSpec();
-			nodeSpec.Spec = context.StringValue("RollbackInstance.Result.NodeSpec.Spec");
-			nodeSpec.Disk = context.IntegerValue("RollbackInstance.Result.NodeSpec.Disk");
+			nodeSpec.Spec = context.StringValue("RollbackInstance.Result.NodeSpec.spec");
+			nodeSpec.Disk = context.IntegerValue("RollbackInstance.Result.NodeSpec.disk");
 			result.NodeSpec = nodeSpec;
 
 			RollbackInstanceResponse.RollbackInstance_Result.RollbackInstance_NetworkConfig networkConfig = new RollbackInstanceResponse.RollbackInstance_Result.RollbackInstance_NetworkConfig();
-			networkConfig.Type = context.StringValue("RollbackInstance.Result.NetworkConfig.Type");
-			networkConfig.VpcId = context.StringValue("RollbackInstance.Result.NetworkConfig.VpcId");
-			networkConfig.VswitchId = context.StringValue("RollbackInstance.Result.NetworkConfig.VswitchId");
-			networkConfig.VsArea = context.StringValue("RollbackInstance.Result.NetworkConfig.VsArea");
+			networkConfig.Type = context.StringValue("RollbackInstance.Result.NetworkConfig.type");
+			networkConfig.VpcId = context.StringValue("RollbackInstance.Result.NetworkConfig.vpcId");
+			networkConfig.VswitchId = context.StringValue("RollbackInstance.Result.NetworkConfig.vswitchId");
+			networkConfig.VsArea = context.StringValue("RollbackInstance.Result.NetworkConfig.vsArea");
 			result.NetworkConfig = networkConfig;
 			rollbackInstanceResponse.Result = result;
         

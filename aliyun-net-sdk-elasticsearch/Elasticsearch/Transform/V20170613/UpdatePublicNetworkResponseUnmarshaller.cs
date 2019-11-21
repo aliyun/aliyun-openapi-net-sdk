@@ -34,7 +34,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			updatePublicNetworkResponse.RequestId = context.StringValue("UpdatePublicNetwork.RequestId");
 
 			UpdatePublicNetworkResponse.UpdatePublicNetwork_Result result = new UpdatePublicNetworkResponse.UpdatePublicNetwork_Result();
-			result.EnablePublic = context.BooleanValue("UpdatePublicNetwork.Result.EnablePublic");
+			result.EnablePublic = context.BooleanValue("UpdatePublicNetwork.Result.enablePublic");
 			updatePublicNetworkResponse.Result = result;
         
 			return updatePublicNetworkResponse;

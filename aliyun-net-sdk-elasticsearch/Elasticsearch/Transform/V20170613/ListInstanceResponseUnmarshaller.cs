@@ -34,48 +34,48 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			listInstanceResponse.RequestId = context.StringValue("ListInstance.RequestId");
 
 			ListInstanceResponse.ListInstance_Headers headers = new ListInstanceResponse.ListInstance_Headers();
-			headers.XTotalCount = context.IntegerValue("ListInstance.Headers.XTotalCount");
+			headers.XTotalCount = context.IntegerValue("ListInstance.Headers.X-Total-Count");
 			listInstanceResponse.Headers = headers;
 
 			List<ListInstanceResponse.ListInstance_Instance> listInstanceResponse_result = new List<ListInstanceResponse.ListInstance_Instance>();
 			for (int i = 0; i < context.Length("ListInstance.Result.Length"); i++) {
 				ListInstanceResponse.ListInstance_Instance instance = new ListInstanceResponse.ListInstance_Instance();
-				instance.InstanceId = context.StringValue("ListInstance.Result["+ i +"].InstanceId");
-				instance.Description = context.StringValue("ListInstance.Result["+ i +"].Description");
-				instance.NodeAmount = context.IntegerValue("ListInstance.Result["+ i +"].NodeAmount");
-				instance.PaymentType = context.StringValue("ListInstance.Result["+ i +"].PaymentType");
-				instance.Status = context.StringValue("ListInstance.Result["+ i +"].Status");
-				instance.EsVersion = context.StringValue("ListInstance.Result["+ i +"].EsVersion");
-				instance.CreatedAt = context.StringValue("ListInstance.Result["+ i +"].CreatedAt");
-				instance.UpdatedAt = context.StringValue("ListInstance.Result["+ i +"].UpdatedAt");
-				instance.AdvancedDedicateMaster = context.BooleanValue("ListInstance.Result["+ i +"].AdvancedDedicateMaster");
-				instance.DedicateMaster = context.BooleanValue("ListInstance.Result["+ i +"].DedicateMaster");
+				instance.InstanceId = context.StringValue("ListInstance.Result["+ i +"].instanceId");
+				instance.Description = context.StringValue("ListInstance.Result["+ i +"].description");
+				instance.NodeAmount = context.IntegerValue("ListInstance.Result["+ i +"].nodeAmount");
+				instance.PaymentType = context.StringValue("ListInstance.Result["+ i +"].paymentType");
+				instance.Status = context.StringValue("ListInstance.Result["+ i +"].status");
+				instance.EsVersion = context.StringValue("ListInstance.Result["+ i +"].esVersion");
+				instance.CreatedAt = context.StringValue("ListInstance.Result["+ i +"].createdAt");
+				instance.UpdatedAt = context.StringValue("ListInstance.Result["+ i +"].updatedAt");
+				instance.AdvancedDedicateMaster = context.BooleanValue("ListInstance.Result["+ i +"].advancedDedicateMaster");
+				instance.DedicateMaster = context.BooleanValue("ListInstance.Result["+ i +"].dedicateMaster");
 
 				ListInstanceResponse.ListInstance_Instance.ListInstance_NodeSpec nodeSpec = new ListInstanceResponse.ListInstance_Instance.ListInstance_NodeSpec();
-				nodeSpec.Spec = context.StringValue("ListInstance.Result["+ i +"].NodeSpec.Spec");
-				nodeSpec.Disk = context.IntegerValue("ListInstance.Result["+ i +"].NodeSpec.Disk");
-				nodeSpec.DiskType = context.StringValue("ListInstance.Result["+ i +"].NodeSpec.DiskType");
+				nodeSpec.Spec = context.StringValue("ListInstance.Result["+ i +"].NodeSpec.spec");
+				nodeSpec.Disk = context.IntegerValue("ListInstance.Result["+ i +"].NodeSpec.disk");
+				nodeSpec.DiskType = context.StringValue("ListInstance.Result["+ i +"].NodeSpec.diskType");
 				instance.NodeSpec = nodeSpec;
 
 				ListInstanceResponse.ListInstance_Instance.ListInstance_NetworkConfig networkConfig = new ListInstanceResponse.ListInstance_Instance.ListInstance_NetworkConfig();
-				networkConfig.Type = context.StringValue("ListInstance.Result["+ i +"].NetworkConfig.Type");
-				networkConfig.VpcId = context.StringValue("ListInstance.Result["+ i +"].NetworkConfig.VpcId");
-				networkConfig.VswitchId = context.StringValue("ListInstance.Result["+ i +"].NetworkConfig.VswitchId");
-				networkConfig.VsArea = context.StringValue("ListInstance.Result["+ i +"].NetworkConfig.VsArea");
+				networkConfig.Type = context.StringValue("ListInstance.Result["+ i +"].NetworkConfig.type");
+				networkConfig.VpcId = context.StringValue("ListInstance.Result["+ i +"].NetworkConfig.vpcId");
+				networkConfig.VswitchId = context.StringValue("ListInstance.Result["+ i +"].NetworkConfig.vswitchId");
+				networkConfig.VsArea = context.StringValue("ListInstance.Result["+ i +"].NetworkConfig.vsArea");
 				instance.NetworkConfig = networkConfig;
 
 				ListInstanceResponse.ListInstance_Instance.ListInstance_MasterConfiguration masterConfiguration = new ListInstanceResponse.ListInstance_Instance.ListInstance_MasterConfiguration();
-				masterConfiguration.Spec = context.StringValue("ListInstance.Result["+ i +"].MasterConfiguration.Spec");
-				masterConfiguration.Amount = context.IntegerValue("ListInstance.Result["+ i +"].MasterConfiguration.Amount");
-				masterConfiguration.DiskType = context.StringValue("ListInstance.Result["+ i +"].MasterConfiguration.DiskType");
-				masterConfiguration.Disk = context.IntegerValue("ListInstance.Result["+ i +"].MasterConfiguration.Disk");
+				masterConfiguration.Spec = context.StringValue("ListInstance.Result["+ i +"].MasterConfiguration.spec");
+				masterConfiguration.Amount = context.IntegerValue("ListInstance.Result["+ i +"].MasterConfiguration.amount");
+				masterConfiguration.DiskType = context.StringValue("ListInstance.Result["+ i +"].MasterConfiguration.diskType");
+				masterConfiguration.Disk = context.IntegerValue("ListInstance.Result["+ i +"].MasterConfiguration.disk");
 				instance.MasterConfiguration = masterConfiguration;
 
 				ListInstanceResponse.ListInstance_Instance.ListInstance_KibanaConfiguration kibanaConfiguration = new ListInstanceResponse.ListInstance_Instance.ListInstance_KibanaConfiguration();
-				kibanaConfiguration.Spec = context.StringValue("ListInstance.Result["+ i +"].KibanaConfiguration.Spec");
-				kibanaConfiguration.Disk = context.IntegerValue("ListInstance.Result["+ i +"].KibanaConfiguration.Disk");
-				kibanaConfiguration.Amount = context.IntegerValue("ListInstance.Result["+ i +"].KibanaConfiguration.Amount");
-				kibanaConfiguration.DiskType = context.StringValue("ListInstance.Result["+ i +"].KibanaConfiguration.DiskType");
+				kibanaConfiguration.Spec = context.StringValue("ListInstance.Result["+ i +"].KibanaConfiguration.spec");
+				kibanaConfiguration.Disk = context.IntegerValue("ListInstance.Result["+ i +"].KibanaConfiguration.disk");
+				kibanaConfiguration.Amount = context.IntegerValue("ListInstance.Result["+ i +"].KibanaConfiguration.amount");
+				kibanaConfiguration.DiskType = context.StringValue("ListInstance.Result["+ i +"].KibanaConfiguration.diskType");
 				instance.KibanaConfiguration = kibanaConfiguration;
 
 				listInstanceResponse_result.Add(instance);

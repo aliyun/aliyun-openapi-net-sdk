@@ -34,7 +34,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			createInstanceResponse.RequestId = context.StringValue("CreateInstance.RequestId");
 
 			CreateInstanceResponse.CreateInstance_Result result = new CreateInstanceResponse.CreateInstance_Result();
-			result.InstanceId = context.StringValue("CreateInstance.Result.InstanceId");
+			result.InstanceId = context.StringValue("CreateInstance.Result.instanceId");
 			createInstanceResponse.Result = result;
         
 			return createInstanceResponse;

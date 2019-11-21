@@ -32,14 +32,12 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			getSuggestShrinkableNodesResponse.HttpResponse = context.HttpResponse;
 			getSuggestShrinkableNodesResponse.RequestId = context.StringValue("GetSuggestShrinkableNodes.RequestId");
-			getSuggestShrinkableNodesResponse.Code = context.StringValue("GetSuggestShrinkableNodes.Code");
-			getSuggestShrinkableNodesResponse.Message = context.StringValue("GetSuggestShrinkableNodes.Message");
 
 			List<GetSuggestShrinkableNodesResponse.GetSuggestShrinkableNodes_ResultItem> getSuggestShrinkableNodesResponse_result = new List<GetSuggestShrinkableNodesResponse.GetSuggestShrinkableNodes_ResultItem>();
 			for (int i = 0; i < context.Length("GetSuggestShrinkableNodes.Result.Length"); i++) {
 				GetSuggestShrinkableNodesResponse.GetSuggestShrinkableNodes_ResultItem resultItem = new GetSuggestShrinkableNodesResponse.GetSuggestShrinkableNodes_ResultItem();
-				resultItem.Host = context.StringValue("GetSuggestShrinkableNodes.Result["+ i +"].Host");
-				resultItem.Port = context.IntegerValue("GetSuggestShrinkableNodes.Result["+ i +"].Port");
+				resultItem.Host = context.StringValue("GetSuggestShrinkableNodes.Result["+ i +"].host");
+				resultItem.Port = context.IntegerValue("GetSuggestShrinkableNodes.Result["+ i +"].port");
 
 				getSuggestShrinkableNodesResponse_result.Add(resultItem);
 			}

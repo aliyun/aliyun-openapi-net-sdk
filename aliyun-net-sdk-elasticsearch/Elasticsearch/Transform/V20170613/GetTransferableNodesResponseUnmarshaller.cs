@@ -32,14 +32,12 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			getTransferableNodesResponse.HttpResponse = context.HttpResponse;
 			getTransferableNodesResponse.RequestId = context.StringValue("GetTransferableNodes.RequestId");
-			getTransferableNodesResponse.Code = context.StringValue("GetTransferableNodes.Code");
-			getTransferableNodesResponse.Message = context.StringValue("GetTransferableNodes.Message");
 
 			List<GetTransferableNodesResponse.GetTransferableNodes_ResultItem> getTransferableNodesResponse_result = new List<GetTransferableNodesResponse.GetTransferableNodes_ResultItem>();
 			for (int i = 0; i < context.Length("GetTransferableNodes.Result.Length"); i++) {
 				GetTransferableNodesResponse.GetTransferableNodes_ResultItem resultItem = new GetTransferableNodesResponse.GetTransferableNodes_ResultItem();
-				resultItem.Host = context.StringValue("GetTransferableNodes.Result["+ i +"].Host");
-				resultItem.Port = context.IntegerValue("GetTransferableNodes.Result["+ i +"].Port");
+				resultItem.Host = context.StringValue("GetTransferableNodes.Result["+ i +"].host");
+				resultItem.Port = context.IntegerValue("GetTransferableNodes.Result["+ i +"].port");
 
 				getTransferableNodesResponse_result.Add(resultItem);
 			}

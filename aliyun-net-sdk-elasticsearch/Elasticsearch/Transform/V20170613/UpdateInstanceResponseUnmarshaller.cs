@@ -34,54 +34,54 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			updateInstanceResponse.RequestId = context.StringValue("UpdateInstance.RequestId");
 
 			UpdateInstanceResponse.UpdateInstance_Result result = new UpdateInstanceResponse.UpdateInstance_Result();
-			result.InstanceId = context.StringValue("UpdateInstance.Result.InstanceId");
-			result.Domain = context.StringValue("UpdateInstance.Result.Domain");
-			result.Description = context.StringValue("UpdateInstance.Result.Description");
-			result.NodeAmount = context.IntegerValue("UpdateInstance.Result.NodeAmount");
-			result.PaymentType = context.StringValue("UpdateInstance.Result.PaymentType");
-			result.Status = context.StringValue("UpdateInstance.Result.Status");
-			result.EsVersion = context.StringValue("UpdateInstance.Result.EsVersion");
-			result.CreatedAt = context.StringValue("UpdateInstance.Result.CreatedAt");
-			result.UpdatedAt = context.StringValue("UpdateInstance.Result.UpdatedAt");
-			result.KibanaDomain = context.StringValue("UpdateInstance.Result.KibanaDomain");
-			result.KibanaPort = context.IntegerValue("UpdateInstance.Result.KibanaPort");
-			result.PublicDomain = context.StringValue("UpdateInstance.Result.PublicDomain");
-			result.PublicPort = context.IntegerValue("UpdateInstance.Result.PublicPort");
+			result.InstanceId = context.StringValue("UpdateInstance.Result.instanceId");
+			result.Domain = context.StringValue("UpdateInstance.Result.domain");
+			result.Description = context.StringValue("UpdateInstance.Result.description");
+			result.NodeAmount = context.IntegerValue("UpdateInstance.Result.nodeAmount");
+			result.PaymentType = context.StringValue("UpdateInstance.Result.paymentType");
+			result.Status = context.StringValue("UpdateInstance.Result.status");
+			result.EsVersion = context.StringValue("UpdateInstance.Result.esVersion");
+			result.CreatedAt = context.StringValue("UpdateInstance.Result.createdAt");
+			result.UpdatedAt = context.StringValue("UpdateInstance.Result.updatedAt");
+			result.KibanaDomain = context.StringValue("UpdateInstance.Result.kibanaDomain");
+			result.KibanaPort = context.IntegerValue("UpdateInstance.Result.kibanaPort");
+			result.PublicDomain = context.StringValue("UpdateInstance.Result.publicDomain");
+			result.PublicPort = context.IntegerValue("UpdateInstance.Result.publicPort");
 
 			UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_NodeSpec nodeSpec = new UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_NodeSpec();
-			nodeSpec.Spec = context.StringValue("UpdateInstance.Result.NodeSpec.Spec");
-			nodeSpec.Disk = context.IntegerValue("UpdateInstance.Result.NodeSpec.Disk");
-			nodeSpec.DiskType = context.StringValue("UpdateInstance.Result.NodeSpec.DiskType");
+			nodeSpec.Spec = context.StringValue("UpdateInstance.Result.NodeSpec.spec");
+			nodeSpec.Disk = context.IntegerValue("UpdateInstance.Result.NodeSpec.disk");
+			nodeSpec.DiskType = context.StringValue("UpdateInstance.Result.NodeSpec.diskType");
 			result.NodeSpec = nodeSpec;
 
 			UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_NetworkConfig networkConfig = new UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_NetworkConfig();
-			networkConfig.Type = context.StringValue("UpdateInstance.Result.NetworkConfig.Type");
-			networkConfig.VpcId = context.StringValue("UpdateInstance.Result.NetworkConfig.VpcId");
-			networkConfig.VswitchId = context.StringValue("UpdateInstance.Result.NetworkConfig.VswitchId");
-			networkConfig.VsArea = context.StringValue("UpdateInstance.Result.NetworkConfig.VsArea");
+			networkConfig.Type = context.StringValue("UpdateInstance.Result.NetworkConfig.type");
+			networkConfig.VpcId = context.StringValue("UpdateInstance.Result.NetworkConfig.vpcId");
+			networkConfig.VswitchId = context.StringValue("UpdateInstance.Result.NetworkConfig.vswitchId");
+			networkConfig.VsArea = context.StringValue("UpdateInstance.Result.NetworkConfig.vsArea");
 			result.NetworkConfig = networkConfig;
 
 			UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_KibanaConfiguration kibanaConfiguration = new UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_KibanaConfiguration();
-			kibanaConfiguration.Spec = context.StringValue("UpdateInstance.Result.KibanaConfiguration.Spec");
-			kibanaConfiguration.Amount = context.IntegerValue("UpdateInstance.Result.KibanaConfiguration.Amount");
-			kibanaConfiguration.DiskType = context.StringValue("UpdateInstance.Result.KibanaConfiguration.DiskType");
-			kibanaConfiguration.Disk = context.IntegerValue("UpdateInstance.Result.KibanaConfiguration.Disk");
+			kibanaConfiguration.Spec = context.StringValue("UpdateInstance.Result.KibanaConfiguration.spec");
+			kibanaConfiguration.Amount = context.IntegerValue("UpdateInstance.Result.KibanaConfiguration.amount");
+			kibanaConfiguration.DiskType = context.StringValue("UpdateInstance.Result.KibanaConfiguration.diskType");
+			kibanaConfiguration.Disk = context.IntegerValue("UpdateInstance.Result.KibanaConfiguration.disk");
 			result.KibanaConfiguration = kibanaConfiguration;
 
 			UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_MasterConfiguration masterConfiguration = new UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_MasterConfiguration();
-			masterConfiguration.Spec = context.StringValue("UpdateInstance.Result.MasterConfiguration.Spec");
-			masterConfiguration.Amount = context.IntegerValue("UpdateInstance.Result.MasterConfiguration.Amount");
-			masterConfiguration.DiskType = context.StringValue("UpdateInstance.Result.MasterConfiguration.DiskType");
-			masterConfiguration.Disk = context.IntegerValue("UpdateInstance.Result.MasterConfiguration.Disk");
+			masterConfiguration.Spec = context.StringValue("UpdateInstance.Result.MasterConfiguration.spec");
+			masterConfiguration.Amount = context.IntegerValue("UpdateInstance.Result.MasterConfiguration.amount");
+			masterConfiguration.DiskType = context.StringValue("UpdateInstance.Result.MasterConfiguration.diskType");
+			masterConfiguration.Disk = context.IntegerValue("UpdateInstance.Result.MasterConfiguration.disk");
 			result.MasterConfiguration = masterConfiguration;
 
 			List<UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_DictListItem> result_dictList = new List<UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_DictListItem>();
 			for (int i = 0; i < context.Length("UpdateInstance.Result.DictList.Length"); i++) {
 				UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_DictListItem dictListItem = new UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_DictListItem();
-				dictListItem.Name = context.StringValue("UpdateInstance.Result.DictList["+ i +"].Name");
-				dictListItem.FileSize = context.LongValue("UpdateInstance.Result.DictList["+ i +"].FileSize");
-				dictListItem.Type = context.StringValue("UpdateInstance.Result.DictList["+ i +"].Type");
-				dictListItem.SourceType = context.StringValue("UpdateInstance.Result.DictList["+ i +"].SourceType");
+				dictListItem.Name = context.StringValue("UpdateInstance.Result.DictList["+ i +"].name");
+				dictListItem.FileSize = context.LongValue("UpdateInstance.Result.DictList["+ i +"].fileSize");
+				dictListItem.Type = context.StringValue("UpdateInstance.Result.DictList["+ i +"].type");
+				dictListItem.SourceType = context.StringValue("UpdateInstance.Result.DictList["+ i +"].sourceType");
 
 				result_dictList.Add(dictListItem);
 			}
@@ -90,10 +90,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			List<UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_SynonymsDictsItem> result_synonymsDicts = new List<UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_SynonymsDictsItem>();
 			for (int i = 0; i < context.Length("UpdateInstance.Result.SynonymsDicts.Length"); i++) {
 				UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_SynonymsDictsItem synonymsDictsItem = new UpdateInstanceResponse.UpdateInstance_Result.UpdateInstance_SynonymsDictsItem();
-				synonymsDictsItem.Name = context.StringValue("UpdateInstance.Result.SynonymsDicts["+ i +"].Name");
-				synonymsDictsItem.FileSize = context.LongValue("UpdateInstance.Result.SynonymsDicts["+ i +"].FileSize");
-				synonymsDictsItem.Type = context.StringValue("UpdateInstance.Result.SynonymsDicts["+ i +"].Type");
-				synonymsDictsItem.SourceType = context.StringValue("UpdateInstance.Result.SynonymsDicts["+ i +"].SourceType");
+				synonymsDictsItem.Name = context.StringValue("UpdateInstance.Result.SynonymsDicts["+ i +"].name");
+				synonymsDictsItem.FileSize = context.LongValue("UpdateInstance.Result.SynonymsDicts["+ i +"].fileSize");
+				synonymsDictsItem.Type = context.StringValue("UpdateInstance.Result.SynonymsDicts["+ i +"].type");
+				synonymsDictsItem.SourceType = context.StringValue("UpdateInstance.Result.SynonymsDicts["+ i +"].sourceType");
 
 				result_synonymsDicts.Add(synonymsDictsItem);
 			}

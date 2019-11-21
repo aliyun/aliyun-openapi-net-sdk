@@ -34,8 +34,8 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			updateSnapshotSettingResponse.RequestId = context.StringValue("UpdateSnapshotSetting.RequestId");
 
 			UpdateSnapshotSettingResponse.UpdateSnapshotSetting_Result result = new UpdateSnapshotSettingResponse.UpdateSnapshotSetting_Result();
-			result.QuartzRegex = context.StringValue("UpdateSnapshotSetting.Result.QuartzRegex");
-			result.Enable = context.BooleanValue("UpdateSnapshotSetting.Result.Enable");
+			result.QuartzRegex = context.StringValue("UpdateSnapshotSetting.Result.quartzRegex");
+			result.Enable = context.BooleanValue("UpdateSnapshotSetting.Result.enable");
 			updateSnapshotSettingResponse.Result = result;
         
 			return updateSnapshotSettingResponse;
