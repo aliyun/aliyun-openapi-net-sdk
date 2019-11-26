@@ -100,21 +100,43 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string fileSystemId;
 
-			private string destription;
+			private string description;
 
 			private string createTime;
 
+			private string expiredTime;
+
 			private string regionId;
+
+			private string zoneId;
 
 			private string protocolType;
 
 			private string storageType;
 
+			private string fileSystemType;
+
+			private int? encryptType;
+
 			private long? meteredSize;
+
+			private long? bandwidth;
+
+			private long? capacity;
+
+			private string autoSnapshotPolicyId;
+
+			private string status;
+
+			private string chargeType;
+
+			private long? mountTargetCountLimit;
 
 			private List<DescribeFileSystems_MountTarget> mountTargets;
 
 			private List<DescribeFileSystems_Package> packages;
+
+			private DescribeFileSystems_Ldap ldap;
 
 			public string FileSystemId
 			{
@@ -128,15 +150,15 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
-			public string Destription
+			public string Description
 			{
 				get
 				{
-					return destription;
+					return description;
 				}
 				set	
 				{
-					destription = value;
+					description = value;
 				}
 			}
 
@@ -152,6 +174,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
+				}
+			}
+
 			public string RegionId
 			{
 				get
@@ -161,6 +195,18 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
 				}
 			}
 
@@ -188,6 +234,30 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			public string FileSystemType
+			{
+				get
+				{
+					return fileSystemType;
+				}
+				set	
+				{
+					fileSystemType = value;
+				}
+			}
+
+			public int? EncryptType
+			{
+				get
+				{
+					return encryptType;
+				}
+				set	
+				{
+					encryptType = value;
+				}
+			}
+
 			public long? MeteredSize
 			{
 				get
@@ -197,6 +267,78 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					meteredSize = value;
+				}
+			}
+
+			public long? Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
+			public long? Capacity
+			{
+				get
+				{
+					return capacity;
+				}
+				set	
+				{
+					capacity = value;
+				}
+			}
+
+			public string AutoSnapshotPolicyId
+			{
+				get
+				{
+					return autoSnapshotPolicyId;
+				}
+				set	
+				{
+					autoSnapshotPolicyId = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
+				}
+			}
+
+			public long? MountTargetCountLimit
+			{
+				get
+				{
+					return mountTargetCountLimit;
+				}
+				set	
+				{
+					mountTargetCountLimit = value;
 				}
 			}
 
@@ -224,10 +366,34 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				}
 			}
 
+			public DescribeFileSystems_Ldap Ldap
+			{
+				get
+				{
+					return ldap;
+				}
+				set	
+				{
+					ldap = value;
+				}
+			}
+
 			public class DescribeFileSystems_MountTarget
 			{
 
 				private string mountTargetDomain;
+
+				private string networkType;
+
+				private string vpcId;
+
+				private string vswId;
+
+				private string accessGroupName;
+
+				private string status;
+
+				private List<DescribeFileSystems_Tag> tags;
 
 				public string MountTargetDomain
 				{
@@ -240,12 +406,124 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 						mountTargetDomain = value;
 					}
 				}
+
+				public string NetworkType
+				{
+					get
+					{
+						return networkType;
+					}
+					set	
+					{
+						networkType = value;
+					}
+				}
+
+				public string VpcId
+				{
+					get
+					{
+						return vpcId;
+					}
+					set	
+					{
+						vpcId = value;
+					}
+				}
+
+				public string VswId
+				{
+					get
+					{
+						return vswId;
+					}
+					set	
+					{
+						vswId = value;
+					}
+				}
+
+				public string AccessGroupName
+				{
+					get
+					{
+						return accessGroupName;
+					}
+					set	
+					{
+						accessGroupName = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public List<DescribeFileSystems_Tag> Tags
+				{
+					get
+					{
+						return tags;
+					}
+					set	
+					{
+						tags = value;
+					}
+				}
+
+				public class DescribeFileSystems_Tag
+				{
+
+					private string key;
+
+					private string _value;
+
+					public string Key
+					{
+						get
+						{
+							return key;
+						}
+						set	
+						{
+							key = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
+						}
+					}
+				}
 			}
 
 			public class DescribeFileSystems_Package
 			{
 
 				private string packageId;
+
+				private string packageType;
+
+				private long? size;
+
+				private string startTime;
+
+				private string expiredTime;
 
 				public string PackageId
 				{
@@ -256,6 +534,100 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 					set	
 					{
 						packageId = value;
+					}
+				}
+
+				public string PackageType
+				{
+					get
+					{
+						return packageType;
+					}
+					set	
+					{
+						packageType = value;
+					}
+				}
+
+				public long? Size
+				{
+					get
+					{
+						return size;
+					}
+					set	
+					{
+						size = value;
+					}
+				}
+
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
+				public string ExpiredTime
+				{
+					get
+					{
+						return expiredTime;
+					}
+					set	
+					{
+						expiredTime = value;
+					}
+				}
+			}
+
+			public class DescribeFileSystems_Ldap
+			{
+
+				private string bindDN;
+
+				private string uRI;
+
+				private string searchBase;
+
+				public string BindDN
+				{
+					get
+					{
+						return bindDN;
+					}
+					set	
+					{
+						bindDN = value;
+					}
+				}
+
+				public string URI
+				{
+					get
+					{
+						return uRI;
+					}
+					set	
+					{
+						uRI = value;
+					}
+				}
+
+				public string SearchBase
+				{
+					get
+					{
+						return searchBase;
+					}
+					set	
+					{
+						searchBase = value;
 					}
 				}
 			}

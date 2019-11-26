@@ -110,6 +110,8 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string status;
 
+			private List<DescribeMountTargets_Tag> tags;
+
 			public string MountTargetDomain
 			{
 				get
@@ -179,6 +181,50 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public List<DescribeMountTargets_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeMountTargets_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

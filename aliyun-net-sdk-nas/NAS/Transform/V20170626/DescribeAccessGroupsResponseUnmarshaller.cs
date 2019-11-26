@@ -44,6 +44,17 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				accessGroup.RuleCount = context.IntegerValue("DescribeAccessGroups.AccessGroups["+ i +"].RuleCount");
 				accessGroup.MountTargetCount = context.IntegerValue("DescribeAccessGroups.AccessGroups["+ i +"].MountTargetCount");
 				accessGroup.Description = context.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].Description");
+				accessGroup.CreateTime = context.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].CreateTime");
+
+				List<DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup.DescribeAccessGroups_Tag> accessGroup_tags = new List<DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup.DescribeAccessGroups_Tag>();
+				for (int j = 0; j < context.Length("DescribeAccessGroups.AccessGroups["+ i +"].Tags.Length"); j++) {
+					DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup.DescribeAccessGroups_Tag tag = new DescribeAccessGroupsResponse.DescribeAccessGroups_AccessGroup.DescribeAccessGroups_Tag();
+					tag.Key = context.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeAccessGroups.AccessGroups["+ i +"].Tags["+ j +"].Value");
+
+					accessGroup_tags.Add(tag);
+				}
+				accessGroup.Tags = accessGroup_tags;
 
 				describeAccessGroupsResponse_accessGroups.Add(accessGroup);
 			}

@@ -32,22 +32,29 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public DeleteAccessRuleRequest()
             : base("NAS", "2017-06-26", "DeleteAccessRule", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string accessGroupName;
+		private string fileSystemType;
 
 		private string accessRuleId;
 
-		public string AccessGroupName
+		private string accessGroupName;
+
+		public string FileSystemType
 		{
 			get
 			{
-				return accessGroupName;
+				return fileSystemType;
 			}
 			set	
 			{
-				accessGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "AccessGroupName", value);
+				fileSystemType = value;
+				DictionaryUtil.Add(QueryParameters, "FileSystemType", value);
 			}
 		}
 
@@ -61,6 +68,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				accessRuleId = value;
 				DictionaryUtil.Add(QueryParameters, "AccessRuleId", value);
+			}
+		}
+
+		public string AccessGroupName
+		{
+			get
+			{
+				return accessGroupName;
+			}
+			set	
+			{
+				accessGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "AccessGroupName", value);
 			}
 		}
 

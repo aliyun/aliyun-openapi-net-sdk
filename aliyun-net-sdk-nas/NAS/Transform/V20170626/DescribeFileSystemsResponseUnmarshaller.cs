@@ -40,17 +40,48 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 			for (int i = 0; i < context.Length("DescribeFileSystems.FileSystems.Length"); i++) {
 				DescribeFileSystemsResponse.DescribeFileSystems_FileSystem fileSystem = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem();
 				fileSystem.FileSystemId = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].FileSystemId");
-				fileSystem.Destription = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].Destription");
+				fileSystem.Description = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].Description");
 				fileSystem.CreateTime = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].CreateTime");
+				fileSystem.ExpiredTime = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].ExpiredTime");
 				fileSystem.RegionId = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].RegionId");
+				fileSystem.ZoneId = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].ZoneId");
 				fileSystem.ProtocolType = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].ProtocolType");
 				fileSystem.StorageType = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].StorageType");
+				fileSystem.FileSystemType = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].FileSystemType");
+				fileSystem.EncryptType = context.IntegerValue("DescribeFileSystems.FileSystems["+ i +"].EncryptType");
 				fileSystem.MeteredSize = context.LongValue("DescribeFileSystems.FileSystems["+ i +"].MeteredSize");
+				fileSystem.Bandwidth = context.LongValue("DescribeFileSystems.FileSystems["+ i +"].Bandwidth");
+				fileSystem.Capacity = context.LongValue("DescribeFileSystems.FileSystems["+ i +"].Capacity");
+				fileSystem.AutoSnapshotPolicyId = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].AutoSnapshotPolicyId");
+				fileSystem.Status = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].Status");
+				fileSystem.ChargeType = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].ChargeType");
+				fileSystem.MountTargetCountLimit = context.LongValue("DescribeFileSystems.FileSystems["+ i +"].MountTargetCountLimit");
+
+				DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Ldap ldap = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Ldap();
+				ldap.BindDN = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].Ldap.BindDN");
+				ldap.URI = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].Ldap.URI");
+				ldap.SearchBase = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].Ldap.SearchBase");
+				fileSystem.Ldap = ldap;
 
 				List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget> fileSystem_mountTargets = new List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget>();
 				for (int j = 0; j < context.Length("DescribeFileSystems.FileSystems["+ i +"].MountTargets.Length"); j++) {
 					DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget mountTarget = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget();
 					mountTarget.MountTargetDomain = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].MountTargetDomain");
+					mountTarget.NetworkType = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].NetworkType");
+					mountTarget.VpcId = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].VpcId");
+					mountTarget.VswId = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].VswId");
+					mountTarget.AccessGroupName = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].AccessGroupName");
+					mountTarget.Status = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].Status");
+
+					List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_Tag> mountTarget_tags = new List<DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_Tag>();
+					for (int k = 0; k < context.Length("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].Tags.Length"); k++) {
+						DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_Tag tag = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_MountTarget.DescribeFileSystems_Tag();
+						tag.Key = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].Tags["+ k +"].Key");
+						tag._Value = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].MountTargets["+ j +"].Tags["+ k +"].Value");
+
+						mountTarget_tags.Add(tag);
+					}
+					mountTarget.Tags = mountTarget_tags;
 
 					fileSystem_mountTargets.Add(mountTarget);
 				}
@@ -60,6 +91,10 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				for (int j = 0; j < context.Length("DescribeFileSystems.FileSystems["+ i +"].Packages.Length"); j++) {
 					DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Package package = new DescribeFileSystemsResponse.DescribeFileSystems_FileSystem.DescribeFileSystems_Package();
 					package.PackageId = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].PackageId");
+					package.PackageType = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].PackageType");
+					package.Size = context.LongValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].Size");
+					package.StartTime = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].StartTime");
+					package.ExpiredTime = context.StringValue("DescribeFileSystems.FileSystems["+ i +"].Packages["+ j +"].ExpiredTime");
 
 					fileSystem_packages.Add(package);
 				}

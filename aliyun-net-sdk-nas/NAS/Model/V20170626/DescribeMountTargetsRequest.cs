@@ -32,26 +32,31 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public DescribeMountTargetsRequest()
             : base("NAS", "2017-06-26", "DescribeMountTargets", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string mountTargetDomain;
-
-		private int? pageSize;
 
 		private int? pageNumber;
 
+		private int? pageSize;
+
 		private string fileSystemId;
 
-		public string MountTargetDomain
+		private string mountTargetDomain;
+
+		public int? PageNumber
 		{
 			get
 			{
-				return mountTargetDomain;
+				return pageNumber;
 			}
 			set	
 			{
-				mountTargetDomain = value;
-				DictionaryUtil.Add(QueryParameters, "MountTargetDomain", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -68,19 +73,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string FileSystemId
 		{
 			get
@@ -91,6 +83,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				fileSystemId = value;
 				DictionaryUtil.Add(QueryParameters, "FileSystemId", value);
+			}
+		}
+
+		public string MountTargetDomain
+		{
+			get
+			{
+				return mountTargetDomain;
+			}
+			set	
+			{
+				mountTargetDomain = value;
+				DictionaryUtil.Add(QueryParameters, "MountTargetDomain", value);
 			}
 		}
 

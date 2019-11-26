@@ -32,15 +32,48 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public DescribeAccessRulesRequest()
             : base("NAS", "2017-06-26", "DescribeAccessRules", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string fileSystemType;
+
+		private int? pageNumber;
 
 		private int? pageSize;
 
-		private string accessGroupName;
-
 		private string accessRuleId;
 
-		private int? pageNumber;
+		private string accessGroupName;
+
+		public string FileSystemType
+		{
+			get
+			{
+				return fileSystemType;
+			}
+			set	
+			{
+				fileSystemType = value;
+				DictionaryUtil.Add(QueryParameters, "FileSystemType", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public int? PageSize
 		{
@@ -52,19 +85,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string AccessGroupName
-		{
-			get
-			{
-				return accessGroupName;
-			}
-			set	
-			{
-				accessGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "AccessGroupName", value);
 			}
 		}
 
@@ -81,16 +101,16 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public int? PageNumber
+		public string AccessGroupName
 		{
 			get
 			{
-				return pageNumber;
+				return accessGroupName;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				accessGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "AccessGroupName", value);
 			}
 		}
 

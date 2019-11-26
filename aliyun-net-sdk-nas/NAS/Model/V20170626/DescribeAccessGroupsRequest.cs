@@ -32,13 +32,61 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public DescribeAccessGroupsRequest()
             : base("NAS", "2017-06-26", "DescribeAccessGroups", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private bool? useUTCDateTime;
+
+		private string fileSystemType;
+
+		private int? pageNumber;
 
 		private int? pageSize;
 
 		private string accessGroupName;
 
-		private int? pageNumber;
+		public bool? UseUTCDateTime
+		{
+			get
+			{
+				return useUTCDateTime;
+			}
+			set	
+			{
+				useUTCDateTime = value;
+				DictionaryUtil.Add(QueryParameters, "UseUTCDateTime", value.ToString());
+			}
+		}
+
+		public string FileSystemType
+		{
+			get
+			{
+				return fileSystemType;
+			}
+			set	
+			{
+				fileSystemType = value;
+				DictionaryUtil.Add(QueryParameters, "FileSystemType", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public int? PageSize
 		{
@@ -63,19 +111,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				accessGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "AccessGroupName", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

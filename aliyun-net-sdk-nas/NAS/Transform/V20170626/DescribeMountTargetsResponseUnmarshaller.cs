@@ -46,6 +46,16 @@ namespace Aliyun.Acs.NAS.Transform.V20170626
 				mountTarget.AccessGroup = context.StringValue("DescribeMountTargets.MountTargets["+ i +"].AccessGroup");
 				mountTarget.Status = context.StringValue("DescribeMountTargets.MountTargets["+ i +"].Status");
 
+				List<DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_Tag> mountTarget_tags = new List<DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_Tag>();
+				for (int j = 0; j < context.Length("DescribeMountTargets.MountTargets["+ i +"].Tags.Length"); j++) {
+					DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_Tag tag = new DescribeMountTargetsResponse.DescribeMountTargets_MountTarget.DescribeMountTargets_Tag();
+					tag.Key = context.StringValue("DescribeMountTargets.MountTargets["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeMountTargets.MountTargets["+ i +"].Tags["+ j +"].Value");
+
+					mountTarget_tags.Add(tag);
+				}
+				mountTarget.Tags = mountTarget_tags;
+
 				describeMountTargetsResponse_mountTargets.Add(mountTarget);
 			}
 			describeMountTargetsResponse.MountTargets = describeMountTargetsResponse_mountTargets;

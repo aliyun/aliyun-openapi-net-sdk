@@ -32,24 +32,33 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public DescribeFileSystemsRequest()
             : base("NAS", "2017-06-26", "DescribeFileSystems", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private int? pageSize;
+		private string fileSystemType;
 
 		private int? pageNumber;
 
+		private int? pageSize;
+
 		private string fileSystemId;
 
-		public int? PageSize
+		private string vpcId;
+
+		public string FileSystemType
 		{
 			get
 			{
-				return pageSize;
+				return fileSystemType;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				fileSystemType = value;
+				DictionaryUtil.Add(QueryParameters, "FileSystemType", value);
 			}
 		}
 
@@ -66,6 +75,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string FileSystemId
 		{
 			get
@@ -76,6 +98,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				fileSystemId = value;
 				DictionaryUtil.Add(QueryParameters, "FileSystemId", value);
+			}
+		}
+
+		public string VpcId
+		{
+			get
+			{
+				return vpcId;
+			}
+			set	
+			{
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 

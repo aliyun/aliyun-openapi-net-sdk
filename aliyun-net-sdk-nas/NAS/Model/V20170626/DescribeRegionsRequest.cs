@@ -32,22 +32,29 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public DescribeRegionsRequest()
             : base("NAS", "2017-06-26", "DescribeRegions", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private int? pageSize;
+		private string fileSystemType;
 
 		private int? pageNumber;
 
-		public int? PageSize
+		private int? pageSize;
+
+		public string FileSystemType
 		{
 			get
 			{
-				return pageSize;
+				return fileSystemType;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				fileSystemType = value;
+				DictionaryUtil.Add(QueryParameters, "FileSystemType", value);
 			}
 		}
 
@@ -61,6 +68,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

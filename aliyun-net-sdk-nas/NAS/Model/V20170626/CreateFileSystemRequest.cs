@@ -32,13 +32,22 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public CreateFileSystemRequest()
             : base("NAS", "2017-06-26", "CreateFileSystem", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string description;
 
-		private string protocolType;
-
 		private string storageType;
+
+		private int? encryptType;
+
+		private string zoneId;
+
+		private string protocolType;
 
 		public string Description
 		{
@@ -53,19 +62,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public string ProtocolType
-		{
-			get
-			{
-				return protocolType;
-			}
-			set	
-			{
-				protocolType = value;
-				DictionaryUtil.Add(QueryParameters, "ProtocolType", value);
-			}
-		}
-
 		public string StorageType
 		{
 			get
@@ -76,6 +72,45 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				storageType = value;
 				DictionaryUtil.Add(QueryParameters, "StorageType", value);
+			}
+		}
+
+		public int? EncryptType
+		{
+			get
+			{
+				return encryptType;
+			}
+			set	
+			{
+				encryptType = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptType", value.ToString());
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string ProtocolType
+		{
+			get
+			{
+				return protocolType;
+			}
+			set	
+			{
+				protocolType = value;
+				DictionaryUtil.Add(QueryParameters, "ProtocolType", value);
 			}
 		}
 

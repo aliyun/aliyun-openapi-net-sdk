@@ -32,6 +32,11 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public DeleteFileSystemRequest()
             : base("NAS", "2017-06-26", "DeleteFileSystem", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string fileSystemId;

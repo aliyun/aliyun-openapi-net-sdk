@@ -32,19 +32,26 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public ModifyAccessRuleRequest()
             : base("NAS", "2017-06-26", "ModifyAccessRule", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string rWAccessType;
 
-		private string sourceCidrIp;
-
 		private string userAccessType;
+
+		private string fileSystemType;
+
+		private string accessRuleId;
+
+		private string sourceCidrIp;
 
 		private int? priority;
 
 		private string accessGroupName;
-
-		private string accessRuleId;
 
 		public string RWAccessType
 		{
@@ -59,19 +66,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public string SourceCidrIp
-		{
-			get
-			{
-				return sourceCidrIp;
-			}
-			set	
-			{
-				sourceCidrIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceCidrIp", value);
-			}
-		}
-
 		public string UserAccessType
 		{
 			get
@@ -82,6 +76,45 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				userAccessType = value;
 				DictionaryUtil.Add(QueryParameters, "UserAccessType", value);
+			}
+		}
+
+		public string FileSystemType
+		{
+			get
+			{
+				return fileSystemType;
+			}
+			set	
+			{
+				fileSystemType = value;
+				DictionaryUtil.Add(QueryParameters, "FileSystemType", value);
+			}
+		}
+
+		public string AccessRuleId
+		{
+			get
+			{
+				return accessRuleId;
+			}
+			set	
+			{
+				accessRuleId = value;
+				DictionaryUtil.Add(QueryParameters, "AccessRuleId", value);
+			}
+		}
+
+		public string SourceCidrIp
+		{
+			get
+			{
+				return sourceCidrIp;
+			}
+			set	
+			{
+				sourceCidrIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceCidrIp", value);
 			}
 		}
 
@@ -108,19 +141,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				accessGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "AccessGroupName", value);
-			}
-		}
-
-		public string AccessRuleId
-		{
-			get
-			{
-				return accessRuleId;
-			}
-			set	
-			{
-				accessRuleId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessRuleId", value);
 			}
 		}
 

@@ -32,13 +32,20 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public CreateAccessRuleRequest()
             : base("NAS", "2017-06-26", "CreateAccessRule", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string rWAccessType;
 
-		private string sourceCidrIp;
-
 		private string userAccessType;
+
+		private string fileSystemType;
+
+		private string sourceCidrIp;
 
 		private int? priority;
 
@@ -57,19 +64,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			}
 		}
 
-		public string SourceCidrIp
-		{
-			get
-			{
-				return sourceCidrIp;
-			}
-			set	
-			{
-				sourceCidrIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceCidrIp", value);
-			}
-		}
-
 		public string UserAccessType
 		{
 			get
@@ -80,6 +74,32 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				userAccessType = value;
 				DictionaryUtil.Add(QueryParameters, "UserAccessType", value);
+			}
+		}
+
+		public string FileSystemType
+		{
+			get
+			{
+				return fileSystemType;
+			}
+			set	
+			{
+				fileSystemType = value;
+				DictionaryUtil.Add(QueryParameters, "FileSystemType", value);
+			}
+		}
+
+		public string SourceCidrIp
+		{
+			get
+			{
+				return sourceCidrIp;
+			}
+			set	
+			{
+				sourceCidrIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceCidrIp", value);
 			}
 		}
 

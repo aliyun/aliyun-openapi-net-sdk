@@ -32,9 +32,16 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public ModifyAccessGroupRequest()
             : base("NAS", "2017-06-26", "ModifyAccessGroup", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string description;
+
+		private string fileSystemType;
 
 		private string accessGroupName;
 
@@ -48,6 +55,19 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string FileSystemType
+		{
+			get
+			{
+				return fileSystemType;
+			}
+			set	
+			{
+				fileSystemType = value;
+				DictionaryUtil.Add(QueryParameters, "FileSystemType", value);
 			}
 		}
 

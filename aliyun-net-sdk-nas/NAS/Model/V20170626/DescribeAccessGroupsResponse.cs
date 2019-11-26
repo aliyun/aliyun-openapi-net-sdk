@@ -108,6 +108,10 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 
 			private string description;
 
+			private string createTime;
+
+			private List<DescribeAccessGroups_Tag> tags;
+
 			public string AccessGroupName
 			{
 				get
@@ -165,6 +169,62 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public List<DescribeAccessGroups_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeAccessGroups_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

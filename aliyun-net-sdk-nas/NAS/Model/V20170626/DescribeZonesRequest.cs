@@ -32,6 +32,11 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public DescribeZonesRequest()
             : base("NAS", "2017-06-26", "DescribeZones", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
         public override DescribeZonesResponse GetResponse(UnmarshallerContext unmarshallerContext)

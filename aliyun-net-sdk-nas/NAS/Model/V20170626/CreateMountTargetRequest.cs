@@ -32,17 +32,61 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public CreateMountTargetRequest()
             : base("NAS", "2017-06-26", "CreateMountTarget", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string networkType;
+
+		private string fileSystemId;
+
+		private string accessGroupName;
 
 		private string vSwitchId;
 
 		private string vpcId;
 
-		private string networkType;
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
 
-		private string accessGroupName;
+		public string FileSystemId
+		{
+			get
+			{
+				return fileSystemId;
+			}
+			set	
+			{
+				fileSystemId = value;
+				DictionaryUtil.Add(QueryParameters, "FileSystemId", value);
+			}
+		}
 
-		private string fileSystemId;
+		public string AccessGroupName
+		{
+			get
+			{
+				return accessGroupName;
+			}
+			set	
+			{
+				accessGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "AccessGroupName", value);
+			}
+		}
 
 		public string VSwitchId
 		{
@@ -67,45 +111,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
-		public string AccessGroupName
-		{
-			get
-			{
-				return accessGroupName;
-			}
-			set	
-			{
-				accessGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "AccessGroupName", value);
-			}
-		}
-
-		public string FileSystemId
-		{
-			get
-			{
-				return fileSystemId;
-			}
-			set	
-			{
-				fileSystemId = value;
-				DictionaryUtil.Add(QueryParameters, "FileSystemId", value);
 			}
 		}
 

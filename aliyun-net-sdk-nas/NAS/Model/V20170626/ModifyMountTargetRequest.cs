@@ -32,15 +32,33 @@ namespace Aliyun.Acs.NAS.Model.V20170626
         public ModifyMountTargetRequest()
             : base("NAS", "2017-06-26", "ModifyMountTarget", "nas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string fileSystemId;
 
 		private string mountTargetDomain;
 
 		private string accessGroupName;
 
-		private string fileSystemId;
-
 		private string status;
+
+		public string FileSystemId
+		{
+			get
+			{
+				return fileSystemId;
+			}
+			set	
+			{
+				fileSystemId = value;
+				DictionaryUtil.Add(QueryParameters, "FileSystemId", value);
+			}
+		}
 
 		public string MountTargetDomain
 		{
@@ -65,19 +83,6 @@ namespace Aliyun.Acs.NAS.Model.V20170626
 			{
 				accessGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "AccessGroupName", value);
-			}
-		}
-
-		public string FileSystemId
-		{
-			get
-			{
-				return fileSystemId;
-			}
-			set	
-			{
-				fileSystemId = value;
-				DictionaryUtil.Add(QueryParameters, "FileSystemId", value);
 			}
 		}
 
