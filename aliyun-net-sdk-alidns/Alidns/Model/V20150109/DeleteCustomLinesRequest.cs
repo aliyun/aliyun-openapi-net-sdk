@@ -27,10 +27,10 @@ using Aliyun.Acs.Alidns.Transform.V20150109;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-    public class DescribeBatchResultDetailRequest : RpcAcsRequest<DescribeBatchResultDetailResponse>
+    public class DeleteCustomLinesRequest : RpcAcsRequest<DeleteCustomLinesResponse>
     {
-        public DescribeBatchResultDetailRequest()
-            : base("Alidns", "2015-01-09", "DescribeBatchResultDetail", "alidns", "openAPI")
+        public DeleteCustomLinesRequest()
+            : base("Alidns", "2015-01-09", "DeleteCustomLines", "alidns", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,69 +39,20 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
             }
         }
 
-		private string batchType;
-
-		private int? pageNumber;
-
-		private string userClientIp;
-
-		private int? pageSize;
+		private string lineIds;
 
 		private string lang;
 
-		private long? taskId;
-
-		private string status;
-
-		public string BatchType
+		public string LineIds
 		{
 			get
 			{
-				return batchType;
+				return lineIds;
 			}
 			set	
 			{
-				batchType = value;
-				DictionaryUtil.Add(QueryParameters, "BatchType", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				lineIds = value;
+				DictionaryUtil.Add(QueryParameters, "LineIds", value);
 			}
 		}
 
@@ -118,35 +69,14 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public long? TaskId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
-			}
+			return false;
 		}
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
-        public override DescribeBatchResultDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteCustomLinesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBatchResultDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteCustomLinesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

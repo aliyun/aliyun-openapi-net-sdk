@@ -27,10 +27,10 @@ using Aliyun.Acs.Alidns.Transform.V20150109;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-    public class DescribeBatchResultDetailRequest : RpcAcsRequest<DescribeBatchResultDetailResponse>
+    public class AddCustomLineRequest : RpcAcsRequest<AddCustomLineResponse>
     {
-        public DescribeBatchResultDetailRequest()
-            : base("Alidns", "2015-01-09", "DescribeBatchResultDetail", "alidns", "openAPI")
+        public AddCustomLineRequest()
+            : base("Alidns", "2015-01-09", "AddCustomLine", "alidns", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,69 +39,55 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
             }
         }
 
-		private string batchType;
+		private string domainName;
 
-		private int? pageNumber;
+		private List<IpSegment> ipSegments = new List<IpSegment>(){ };
 
-		private string userClientIp;
-
-		private int? pageSize;
+		private string lineName;
 
 		private string lang;
 
-		private long? taskId;
-
-		private string status;
-
-		public string BatchType
+		public string DomainName
 		{
 			get
 			{
-				return batchType;
+				return domainName;
 			}
 			set	
 			{
-				batchType = value;
-				DictionaryUtil.Add(QueryParameters, "BatchType", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
-		public int? PageNumber
+		public List<IpSegment> IpSegments
 		{
 			get
 			{
-				return pageNumber;
+				return ipSegments;
 			}
-			set	
+
+			set
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				ipSegments = value;
+				for (int i = 0; i < ipSegments.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"IpSegment." + (i + 1) + ".EndIp", ipSegments[i].EndIp);
+					DictionaryUtil.Add(QueryParameters,"IpSegment." + (i + 1) + ".StartIp", ipSegments[i].StartIp);
+				}
 			}
 		}
 
-		public string UserClientIp
+		public string LineName
 		{
 			get
 			{
-				return userClientIp;
+				return lineName;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				lineName = value;
+				DictionaryUtil.Add(QueryParameters, "LineName", value);
 			}
 		}
 
@@ -118,35 +104,46 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public long? TaskId
+		public class IpSegment
 		{
-			get
+
+			private string endIp;
+
+			private string startIp;
+
+			public string EndIp
 			{
-				return taskId;
+				get
+				{
+					return endIp;
+				}
+				set	
+				{
+					endIp = value;
+				}
 			}
-			set	
+
+			public string StartIp
 			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
+				get
+				{
+					return startIp;
+				}
+				set	
+				{
+					startIp = value;
+				}
 			}
 		}
 
-		public string Status
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
+			return false;
 		}
 
-        public override DescribeBatchResultDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AddCustomLineResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBatchResultDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddCustomLineResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

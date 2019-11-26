@@ -27,10 +27,10 @@ using Aliyun.Acs.Alidns.Transform.V20150109;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-    public class DescribeBatchResultDetailRequest : RpcAcsRequest<DescribeBatchResultDetailResponse>
+    public class UnbindInstanceDomainsRequest : RpcAcsRequest<UnbindInstanceDomainsResponse>
     {
-        public DescribeBatchResultDetailRequest()
-            : base("Alidns", "2015-01-09", "DescribeBatchResultDetail", "alidns", "openAPI")
+        public UnbindInstanceDomainsRequest()
+            : base("Alidns", "2015-01-09", "UnbindInstanceDomains", "alidns", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,69 +39,35 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
             }
         }
 
-		private string batchType;
+		private string domainNames;
 
-		private int? pageNumber;
-
-		private string userClientIp;
-
-		private int? pageSize;
+		private string instanceId;
 
 		private string lang;
 
-		private long? taskId;
-
-		private string status;
-
-		public string BatchType
+		public string DomainNames
 		{
 			get
 			{
-				return batchType;
+				return domainNames;
 			}
 			set	
 			{
-				batchType = value;
-				DictionaryUtil.Add(QueryParameters, "BatchType", value);
+				domainNames = value;
+				DictionaryUtil.Add(QueryParameters, "DomainNames", value);
 			}
 		}
 
-		public int? PageNumber
+		public string InstanceId
 		{
 			get
 			{
-				return pageNumber;
+				return instanceId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -118,35 +84,14 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public long? TaskId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
-			}
+			return false;
 		}
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
-        public override DescribeBatchResultDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UnbindInstanceDomainsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBatchResultDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UnbindInstanceDomainsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

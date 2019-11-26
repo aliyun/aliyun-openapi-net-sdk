@@ -49,8 +49,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string endDate;
 
-		private string userClientIp;
-
 		private long? pageSize;
 
 		private string lang;
@@ -119,19 +117,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				endDate = value;
 				DictionaryUtil.Add(QueryParameters, "endDate", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

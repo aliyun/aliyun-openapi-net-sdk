@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{92c92410-e5f1-4f9c-95cb-9f20b74e8ba3}</ProjectGuid>
+    <ProjectGuid>{139e8640-6c25-463d-841c-c7e71d776b58}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="Alidns\Model\V20150109\AddCustomLineRequest.cs" />
+	<Compile Include="Alidns\Model\V20150109\AddCustomLineResponse.cs" />
+	<Compile Include="Alidns\Model\V20150109\AddDomainBackupRequest.cs" />
+	<Compile Include="Alidns\Model\V20150109\AddDomainBackupResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\AddDomainGroupRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\AddDomainGroupResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\AddDomainRecordRequest.cs" />
@@ -54,10 +58,14 @@
 	<Compile Include="Alidns\Model\V20150109\AddGtmMonitorResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\AddGtmRecoveryPlanRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\AddGtmRecoveryPlanResponse.cs" />
+	<Compile Include="Alidns\Model\V20150109\BindInstanceDomainsRequest.cs" />
+	<Compile Include="Alidns\Model\V20150109\BindInstanceDomainsResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\ChangeDomainGroupRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\ChangeDomainGroupResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\ChangeDomainOfDnsProductRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\ChangeDomainOfDnsProductResponse.cs" />
+	<Compile Include="Alidns\Model\V20150109\DeleteCustomLinesRequest.cs" />
+	<Compile Include="Alidns\Model\V20150109\DeleteCustomLinesResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\DeleteDomainGroupRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\DeleteDomainGroupResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\DeleteDomainRecordRequest.cs" />
@@ -76,6 +84,10 @@
 	<Compile Include="Alidns\Model\V20150109\DescribeBatchResultCountResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\DescribeBatchResultDetailRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\DescribeBatchResultDetailResponse.cs" />
+	<Compile Include="Alidns\Model\V20150109\DescribeCustomLineRequest.cs" />
+	<Compile Include="Alidns\Model\V20150109\DescribeCustomLineResponse.cs" />
+	<Compile Include="Alidns\Model\V20150109\DescribeCustomLinesRequest.cs" />
+	<Compile Include="Alidns\Model\V20150109\DescribeCustomLinesResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\DescribeDNSSLBSubDomainsRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\DescribeDNSSLBSubDomainsResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\DescribeDnsProductInstanceRequest.cs" />
@@ -142,6 +154,8 @@
 	<Compile Include="Alidns\Model\V20150109\DescribeSubDomainRecordsResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\DescribeSupportLinesRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\DescribeSupportLinesResponse.cs" />
+	<Compile Include="Alidns\Model\V20150109\DescribeTransferDomainsRequest.cs" />
+	<Compile Include="Alidns\Model\V20150109\DescribeTransferDomainsResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\ExecuteGtmRecoveryPlanRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\ExecuteGtmRecoveryPlanResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\GetMainDomainNameRequest.cs" />
@@ -162,6 +176,12 @@
 	<Compile Include="Alidns\Model\V20150109\SetGtmAccessModeResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\SetGtmMonitorStatusRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\SetGtmMonitorStatusResponse.cs" />
+	<Compile Include="Alidns\Model\V20150109\TransferDomainRequest.cs" />
+	<Compile Include="Alidns\Model\V20150109\TransferDomainResponse.cs" />
+	<Compile Include="Alidns\Model\V20150109\UnbindInstanceDomainsRequest.cs" />
+	<Compile Include="Alidns\Model\V20150109\UnbindInstanceDomainsResponse.cs" />
+	<Compile Include="Alidns\Model\V20150109\UpdateCustomLineRequest.cs" />
+	<Compile Include="Alidns\Model\V20150109\UpdateCustomLineResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\UpdateDNSSLBWeightRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\UpdateDNSSLBWeightResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\UpdateDomainGroupRequest.cs" />
@@ -182,6 +202,8 @@
 	<Compile Include="Alidns\Model\V20150109\UpdateGtmMonitorResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\UpdateGtmRecoveryPlanRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\UpdateGtmRecoveryPlanResponse.cs" />
+	<Compile Include="Alidns\Transform\V20150109\AddCustomLineResponseUnmarshaller.cs" />
+	<Compile Include="Alidns\Transform\V20150109\AddDomainBackupResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\AddDomainGroupResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\AddDomainRecordResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\AddDomainResponseUnmarshaller.cs" />
@@ -189,8 +211,10 @@
 	<Compile Include="Alidns\Transform\V20150109\AddGtmAddressPoolResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\AddGtmMonitorResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\AddGtmRecoveryPlanResponseUnmarshaller.cs" />
+	<Compile Include="Alidns\Transform\V20150109\BindInstanceDomainsResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\ChangeDomainGroupResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\ChangeDomainOfDnsProductResponseUnmarshaller.cs" />
+	<Compile Include="Alidns\Transform\V20150109\DeleteCustomLinesResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\DeleteDomainGroupResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\DeleteDomainRecordResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\DeleteDomainResponseUnmarshaller.cs" />
@@ -200,6 +224,8 @@
 	<Compile Include="Alidns\Transform\V20150109\DeleteSubDomainRecordsResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\DescribeBatchResultCountResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\DescribeBatchResultDetailResponseUnmarshaller.cs" />
+	<Compile Include="Alidns\Transform\V20150109\DescribeCustomLineResponseUnmarshaller.cs" />
+	<Compile Include="Alidns\Transform\V20150109\DescribeCustomLinesResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\DescribeDNSSLBSubDomainsResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\DescribeDnsProductInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\DescribeDnsProductInstancesResponseUnmarshaller.cs" />
@@ -233,6 +259,7 @@
 	<Compile Include="Alidns\Transform\V20150109\DescribeRecordStatisticsSummaryResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\DescribeSubDomainRecordsResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\DescribeSupportLinesResponseUnmarshaller.cs" />
+	<Compile Include="Alidns\Transform\V20150109\DescribeTransferDomainsResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\ExecuteGtmRecoveryPlanResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\GetMainDomainNameResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\ModifyHichinaDomainDNSResponseUnmarshaller.cs" />
@@ -243,6 +270,9 @@
 	<Compile Include="Alidns\Transform\V20150109\SetDomainRecordStatusResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\SetGtmAccessModeResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\SetGtmMonitorStatusResponseUnmarshaller.cs" />
+	<Compile Include="Alidns\Transform\V20150109\TransferDomainResponseUnmarshaller.cs" />
+	<Compile Include="Alidns\Transform\V20150109\UnbindInstanceDomainsResponseUnmarshaller.cs" />
+	<Compile Include="Alidns\Transform\V20150109\UpdateCustomLineResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\UpdateDNSSLBWeightResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\UpdateDomainGroupResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\UpdateDomainRecordRemarkResponseUnmarshaller.cs" />

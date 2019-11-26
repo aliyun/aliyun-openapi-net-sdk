@@ -27,10 +27,10 @@ using Aliyun.Acs.Alidns.Transform.V20150109;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-    public class DescribeBatchResultDetailRequest : RpcAcsRequest<DescribeBatchResultDetailResponse>
+    public class DescribeTransferDomainsRequest : RpcAcsRequest<DescribeTransferDomainsResponse>
     {
-        public DescribeBatchResultDetailRequest()
-            : base("Alidns", "2015-01-09", "DescribeBatchResultDetail", "alidns", "openAPI")
+        public DescribeTransferDomainsRequest()
+            : base("Alidns", "2015-01-09", "DescribeTransferDomains", "alidns", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,34 +39,15 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
             }
         }
 
-		private string batchType;
+		private long? pageNumber;
 
-		private int? pageNumber;
+		private string transferType;
 
-		private string userClientIp;
-
-		private int? pageSize;
+		private long? pageSize;
 
 		private string lang;
 
-		private long? taskId;
-
-		private string status;
-
-		public string BatchType
-		{
-			get
-			{
-				return batchType;
-			}
-			set	
-			{
-				batchType = value;
-				DictionaryUtil.Add(QueryParameters, "BatchType", value);
-			}
-		}
-
-		public int? PageNumber
+		public long? PageNumber
 		{
 			get
 			{
@@ -79,20 +60,20 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string UserClientIp
+		public string TransferType
 		{
 			get
 			{
-				return userClientIp;
+				return transferType;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				transferType = value;
+				DictionaryUtil.Add(QueryParameters, "TransferType", value);
 			}
 		}
 
-		public int? PageSize
+		public long? PageSize
 		{
 			get
 			{
@@ -118,35 +99,9 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public long? TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value.ToString());
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
-			}
-		}
-
-        public override DescribeBatchResultDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeTransferDomainsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBatchResultDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeTransferDomainsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
