@@ -253,6 +253,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string roundDownDiscount;
 
+				private string subOrderId;
+
 				public string RecordID
 				{
 					get
@@ -574,6 +576,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						roundDownDiscount = value;
+					}
+				}
+
+				public string SubOrderId
+				{
+					get
+					{
+						return subOrderId;
+					}
+					set	
+					{
+						subOrderId = value;
 					}
 				}
 			}

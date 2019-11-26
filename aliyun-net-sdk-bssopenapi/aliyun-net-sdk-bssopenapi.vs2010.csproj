@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{cdd149f7-3166-4513-9efe-378639df0abb}</ProjectGuid>
+    <ProjectGuid>{d9c2545d-34f8-4cec-bb00-9badec1010b5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -124,6 +124,8 @@
 	<Compile Include="BssOpenApi\Model\V20171214\QueryPrepaidCardsResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryProductListRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryProductListResponse.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryRIUtilizationDetailRequest.cs" />
+	<Compile Include="BssOpenApi\Model\V20171214\QueryRIUtilizationDetailResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryRedeemRequest.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryRedeemResponse.cs" />
 	<Compile Include="BssOpenApi\Model\V20171214\QueryResellerAvailableQuotaRequest.cs" />
@@ -194,6 +196,7 @@
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryOrdersResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryPrepaidCardsResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryProductListResponseUnmarshaller.cs" />
+	<Compile Include="BssOpenApi\Transform\V20171214\QueryRIUtilizationDetailResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryRedeemResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryResellerAvailableQuotaResponseUnmarshaller.cs" />
 	<Compile Include="BssOpenApi\Transform\V20171214\QueryResourcePackageInstancesResponseUnmarshaller.cs" />
