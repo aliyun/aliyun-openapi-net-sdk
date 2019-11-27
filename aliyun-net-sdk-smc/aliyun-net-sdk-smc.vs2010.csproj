@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{935ddb18-3f2b-4730-b561-4d15812f32e1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-smc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Smc\Model\V20190601\CreateReplicationJobRequest.cs" />
+	<Compile Include="Smc\Model\V20190601\CreateReplicationJobResponse.cs" />
+	<Compile Include="Smc\Model\V20190601\DeleteReplicationJobRequest.cs" />
+	<Compile Include="Smc\Model\V20190601\DeleteReplicationJobResponse.cs" />
+	<Compile Include="Smc\Model\V20190601\DeleteSourceServerRequest.cs" />
+	<Compile Include="Smc\Model\V20190601\DeleteSourceServerResponse.cs" />
+	<Compile Include="Smc\Model\V20190601\DescribeReplicationJobsRequest.cs" />
+	<Compile Include="Smc\Model\V20190601\DescribeReplicationJobsResponse.cs" />
+	<Compile Include="Smc\Model\V20190601\DescribeSourceServersRequest.cs" />
+	<Compile Include="Smc\Model\V20190601\DescribeSourceServersResponse.cs" />
+	<Compile Include="Smc\Model\V20190601\ListTagResourcesRequest.cs" />
+	<Compile Include="Smc\Model\V20190601\ListTagResourcesResponse.cs" />
+	<Compile Include="Smc\Model\V20190601\ModifyReplicationJobAttributeRequest.cs" />
+	<Compile Include="Smc\Model\V20190601\ModifyReplicationJobAttributeResponse.cs" />
+	<Compile Include="Smc\Model\V20190601\ModifySourceServerAttributeRequest.cs" />
+	<Compile Include="Smc\Model\V20190601\ModifySourceServerAttributeResponse.cs" />
+	<Compile Include="Smc\Model\V20190601\StartReplicationJobRequest.cs" />
+	<Compile Include="Smc\Model\V20190601\StartReplicationJobResponse.cs" />
+	<Compile Include="Smc\Model\V20190601\StopReplicationJobRequest.cs" />
+	<Compile Include="Smc\Model\V20190601\StopReplicationJobResponse.cs" />
+	<Compile Include="Smc\Model\V20190601\TagResourcesRequest.cs" />
+	<Compile Include="Smc\Model\V20190601\TagResourcesResponse.cs" />
+	<Compile Include="Smc\Model\V20190601\UntagResourcesRequest.cs" />
+	<Compile Include="Smc\Model\V20190601\UntagResourcesResponse.cs" />
+	<Compile Include="Smc\Transform\V20190601\CreateReplicationJobResponseUnmarshaller.cs" />
+	<Compile Include="Smc\Transform\V20190601\DeleteReplicationJobResponseUnmarshaller.cs" />
+	<Compile Include="Smc\Transform\V20190601\DeleteSourceServerResponseUnmarshaller.cs" />
+	<Compile Include="Smc\Transform\V20190601\DescribeReplicationJobsResponseUnmarshaller.cs" />
+	<Compile Include="Smc\Transform\V20190601\DescribeSourceServersResponseUnmarshaller.cs" />
+	<Compile Include="Smc\Transform\V20190601\ListTagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Smc\Transform\V20190601\ModifyReplicationJobAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Smc\Transform\V20190601\ModifySourceServerAttributeResponseUnmarshaller.cs" />
+	<Compile Include="Smc\Transform\V20190601\StartReplicationJobResponseUnmarshaller.cs" />
+	<Compile Include="Smc\Transform\V20190601\StopReplicationJobResponseUnmarshaller.cs" />
+	<Compile Include="Smc\Transform\V20190601\TagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Smc\Transform\V20190601\UntagResourcesResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

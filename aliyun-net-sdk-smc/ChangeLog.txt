@@ -1,0 +1,3 @@
+2019-11-27 Version 1.0.1
+- CreateReplicationJob API supports the specified instance type.
+
