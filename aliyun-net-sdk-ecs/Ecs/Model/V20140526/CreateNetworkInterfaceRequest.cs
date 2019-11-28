@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private List<string> securityGroupIdss = new List<string>(){ };
+
 		private string vSwitchId;
 
 		private string primaryIpAddress;
@@ -225,6 +227,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public List<string> SecurityGroupIdss
+		{
+			get
+			{
+				return securityGroupIdss;
+			}
+
+			set
+			{
+				securityGroupIdss = value;
+				for (int i = 0; i < securityGroupIdss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SecurityGroupIds." + (i + 1) , securityGroupIdss[i]);
+				}
 			}
 		}
 

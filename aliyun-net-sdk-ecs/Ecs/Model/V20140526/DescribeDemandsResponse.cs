@@ -122,6 +122,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string demandName;
 
+			private string comment;
+
 			private string demandDescription;
 
 			private string instanceType;
@@ -205,6 +207,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					demandName = value;
+				}
+			}
+
+			public string Comment
+			{
+				get
+				{
+					return comment;
+				}
+				set	
+				{
+					comment = value;
 				}
 			}
 

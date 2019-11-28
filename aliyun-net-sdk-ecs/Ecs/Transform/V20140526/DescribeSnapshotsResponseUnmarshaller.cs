@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			for (int i = 0; i < context.Length("DescribeSnapshots.Snapshots.Length"); i++) {
 				DescribeSnapshotsResponse.DescribeSnapshots_Snapshot snapshot = new DescribeSnapshotsResponse.DescribeSnapshots_Snapshot();
 				snapshot.SnapshotId = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotId");
+				snapshot.SnapshotSN = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotSN");
 				snapshot.SnapshotName = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotName");
 				snapshot.Progress = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Progress");
 				snapshot.ProductCode = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].ProductCode");

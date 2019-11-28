@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				demand.InstanceTypeFamily = context.StringValue("DescribeDemands.Demands["+ i +"].InstanceTypeFamily");
 				demand.DemandId = context.StringValue("DescribeDemands.Demands["+ i +"].DemandId");
 				demand.DemandName = context.StringValue("DescribeDemands.Demands["+ i +"].DemandName");
+				demand.Comment = context.StringValue("DescribeDemands.Demands["+ i +"].Comment");
 				demand.DemandDescription = context.StringValue("DescribeDemands.Demands["+ i +"].DemandDescription");
 				demand.InstanceType = context.StringValue("DescribeDemands.Demands["+ i +"].InstanceType");
 				demand.InstanceChargeType = context.StringValue("DescribeDemands.Demands["+ i +"].InstanceChargeType");

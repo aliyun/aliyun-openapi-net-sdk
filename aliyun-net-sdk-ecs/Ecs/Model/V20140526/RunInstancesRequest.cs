@@ -820,6 +820,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".PrimaryIpAddress", networkInterfaces[i].PrimaryIpAddress);
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".VSwitchId", networkInterfaces[i].VSwitchId);
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".SecurityGroupId", networkInterfaces[i].SecurityGroupId);
+					for (int j = 0; j < networkInterfaces[i].SecurityGroupIdss.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".SecurityGroupIds." +(j + 1), networkInterfaces[i].SecurityGroupIdss[j]);
+					}
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".NetworkInterfaceName", networkInterfaces[i].NetworkInterfaceName);
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".Description", networkInterfaces[i].Description);
 				}
@@ -1106,6 +1110,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string securityGroupId;
 
+			private List<string> securityGroupIdss = new List<string>(){ };
+
 			private string networkInterfaceName;
 
 			private string description;
@@ -1143,6 +1149,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					securityGroupId = value;
+				}
+			}
+
+			public List<string> SecurityGroupIdss
+			{
+				get
+				{
+					return securityGroupIdss;
+				}
+				set	
+				{
+					securityGroupIdss = value;
 				}
 			}
 

@@ -100,6 +100,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string snapshotId;
 
+			private string snapshotSN;
+
 			private string snapshotName;
 
 			private string progress;
@@ -145,6 +147,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					snapshotId = value;
+				}
+			}
+
+			public string SnapshotSN
+			{
+				get
+				{
+					return snapshotSN;
+				}
+				set	
+				{
+					snapshotSN = value;
 				}
 			}
 
