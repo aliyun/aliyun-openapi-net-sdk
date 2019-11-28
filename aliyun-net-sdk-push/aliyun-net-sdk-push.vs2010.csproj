@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3dceac1f-2070-4f4b-8af2-416672a790a2}</ProjectGuid>
+    <ProjectGuid>{9658e3ab-da10-483a-8b74-28aca8edf57f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -56,8 +56,6 @@
 	<Compile Include="Push\Model\V20160801\CompleteContinuouslyPushResponse.cs" />
 	<Compile Include="Push\Model\V20160801\ContinuouslyPushRequest.cs" />
 	<Compile Include="Push\Model\V20160801\ContinuouslyPushResponse.cs" />
-	<Compile Include="Push\Model\V20160801\ListPushRecordsRequest.cs" />
-	<Compile Include="Push\Model\V20160801\ListPushRecordsResponse.cs" />
 	<Compile Include="Push\Model\V20160801\ListSummaryAppsRequest.cs" />
 	<Compile Include="Push\Model\V20160801\ListSummaryAppsResponse.cs" />
 	<Compile Include="Push\Model\V20160801\ListTagsRequest.cs" />
@@ -84,8 +82,6 @@
 	<Compile Include="Push\Model\V20160801\QueryDevicesByAccountResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryDevicesByAliasRequest.cs" />
 	<Compile Include="Push\Model\V20160801\QueryDevicesByAliasResponse.cs" />
-	<Compile Include="Push\Model\V20160801\QueryPushListRequest.cs" />
-	<Compile Include="Push\Model\V20160801\QueryPushListResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryPushRecordsRequest.cs" />
 	<Compile Include="Push\Model\V20160801\QueryPushRecordsResponse.cs" />
 	<Compile Include="Push\Model\V20160801\QueryPushStatByAppRequest.cs" />
@@ -112,7 +108,6 @@
 	<Compile Include="Push\Transform\V20160801\CheckDevicesResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\CompleteContinuouslyPushResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\ContinuouslyPushResponseUnmarshaller.cs" />
-	<Compile Include="Push\Transform\V20160801\ListPushRecordsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\ListSummaryAppsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\ListTagsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\MassPushResponseUnmarshaller.cs" />
@@ -126,7 +121,6 @@
 	<Compile Include="Push\Transform\V20160801\QueryDeviceStatResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\QueryDevicesByAccountResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\QueryDevicesByAliasResponseUnmarshaller.cs" />
-	<Compile Include="Push\Transform\V20160801\QueryPushListResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\QueryPushRecordsResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\QueryPushStatByAppResponseUnmarshaller.cs" />
 	<Compile Include="Push\Transform\V20160801\QueryPushStatByMsgResponseUnmarshaller.cs" />

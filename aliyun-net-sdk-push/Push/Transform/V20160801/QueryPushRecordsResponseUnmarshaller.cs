@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Push.Transform.V20160801
 			for (int i = 0; i < context.Length("QueryPushRecords.PushInfos.Length"); i++) {
 				QueryPushRecordsResponse.QueryPushRecords_PushInfo pushInfo = new QueryPushRecordsResponse.QueryPushRecords_PushInfo();
 				pushInfo.AppKey = context.LongValue("QueryPushRecords.PushInfos["+ i +"].AppKey");
-				pushInfo.MessageId = context.LongValue("QueryPushRecords.PushInfos["+ i +"].MessageId");
+				pushInfo.MessageId = context.StringValue("QueryPushRecords.PushInfos["+ i +"].MessageId");
 				pushInfo.PushType = context.StringValue("QueryPushRecords.PushInfos["+ i +"].PushType");
 				pushInfo.DeviceType = context.StringValue("QueryPushRecords.PushInfos["+ i +"].DeviceType");
 				pushInfo.Target = context.StringValue("QueryPushRecords.PushInfos["+ i +"].Target");
