@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{139e8640-6c25-463d-841c-c7e71d776b58}</ProjectGuid>
+    <ProjectGuid>{f97d7c53-883b-42d3-a89a-92005c7a666a}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -160,12 +160,16 @@
 	<Compile Include="Alidns\Model\V20150109\ExecuteGtmRecoveryPlanResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\GetMainDomainNameRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\GetMainDomainNameResponse.cs" />
+	<Compile Include="Alidns\Model\V20150109\GetTxtRecordForVerifyRequest.cs" />
+	<Compile Include="Alidns\Model\V20150109\GetTxtRecordForVerifyResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\ModifyHichinaDomainDNSRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\ModifyHichinaDomainDNSResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\OperateBatchDomainRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\OperateBatchDomainResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\PreviewGtmRecoveryPlanRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\PreviewGtmRecoveryPlanResponse.cs" />
+	<Compile Include="Alidns\Model\V20150109\RetrieveDomainRequest.cs" />
+	<Compile Include="Alidns\Model\V20150109\RetrieveDomainResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\RollbackGtmRecoveryPlanRequest.cs" />
 	<Compile Include="Alidns\Model\V20150109\RollbackGtmRecoveryPlanResponse.cs" />
 	<Compile Include="Alidns\Model\V20150109\SetDNSSLBStatusRequest.cs" />
@@ -262,9 +266,11 @@
 	<Compile Include="Alidns\Transform\V20150109\DescribeTransferDomainsResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\ExecuteGtmRecoveryPlanResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\GetMainDomainNameResponseUnmarshaller.cs" />
+	<Compile Include="Alidns\Transform\V20150109\GetTxtRecordForVerifyResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\ModifyHichinaDomainDNSResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\OperateBatchDomainResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\PreviewGtmRecoveryPlanResponseUnmarshaller.cs" />
+	<Compile Include="Alidns\Transform\V20150109\RetrieveDomainResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\RollbackGtmRecoveryPlanResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\SetDNSSLBStatusResponseUnmarshaller.cs" />
 	<Compile Include="Alidns\Transform\V20150109\SetDomainRecordStatusResponseUnmarshaller.cs" />
