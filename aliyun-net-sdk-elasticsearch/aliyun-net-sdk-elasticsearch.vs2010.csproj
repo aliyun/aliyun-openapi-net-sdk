@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{917efb42-4874-401d-91b7-bb1d5926dee8}</ProjectGuid>
+    <ProjectGuid>{fdc2b2c4-8da5-421d-a8e1-7f60d3f6685b}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -50,10 +50,6 @@
 	<Compile Include="Elasticsearch\Model\V20170613\CancelTaskResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\CloseHttpsRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\CloseHttpsResponse.cs" />
-	<Compile Include="Elasticsearch\Model\V20170613\ConvertLogstashPayTypeRequest.cs" />
-	<Compile Include="Elasticsearch\Model\V20170613\ConvertLogstashPayTypeResponse.cs" />
-	<Compile Include="Elasticsearch\Model\V20170613\ConvertPayTypeRequest.cs" />
-	<Compile Include="Elasticsearch\Model\V20170613\ConvertPayTypeResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\CreateInstanceRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\CreateInstanceResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\CreateLogstashRequest.cs" />
@@ -128,6 +124,10 @@
 	<Compile Include="Elasticsearch\Model\V20170613\MoveResourceGroupResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\OpenHttpsRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\OpenHttpsResponse.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\RenewInstanceRequest.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\RenewInstanceResponse.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\RenewLogstashRequest.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\RenewLogstashResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\RestartInstanceRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\RestartInstanceResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\RestartLogstashRequest.cs" />
@@ -164,6 +164,8 @@
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateDictResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateHotIkDictsRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateHotIkDictsResponse.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\UpdateInstanceChargeTypeRequest.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\UpdateInstanceChargeTypeResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateInstanceRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateInstanceResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateInstanceSettingsRequest.cs" />
@@ -172,6 +174,8 @@
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateKibanaSettingsResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateKibanaWhiteIpsRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateKibanaWhiteIpsResponse.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\UpdateLogstashChargeTypeRequest.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\UpdateLogstashChargeTypeResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateLogstashDescriptionRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateLogstashDescriptionResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateLogstashRequest.cs" />
@@ -201,8 +205,6 @@
 	<Compile Include="Elasticsearch\Transform\V20170613\AddSnapshotRepoResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\CancelTaskResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\CloseHttpsResponseUnmarshaller.cs" />
-	<Compile Include="Elasticsearch\Transform\V20170613\ConvertLogstashPayTypeResponseUnmarshaller.cs" />
-	<Compile Include="Elasticsearch\Transform\V20170613\ConvertPayTypeResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\CreateInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\CreateLogstashResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\CreateProjectResponseUnmarshaller.cs" />
@@ -240,6 +242,8 @@
 	<Compile Include="Elasticsearch\Transform\V20170613\ListSnapshotReposByInstanceIdResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\MoveResourceGroupResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\OpenHttpsResponseUnmarshaller.cs" />
+	<Compile Include="Elasticsearch\Transform\V20170613\RenewInstanceResponseUnmarshaller.cs" />
+	<Compile Include="Elasticsearch\Transform\V20170613\RenewLogstashResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\RestartInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\RestartLogstashResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\ResumeElasticsearchTaskResponseUnmarshaller.cs" />
@@ -258,10 +262,12 @@
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateDescriptionResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateDictResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateHotIkDictsResponseUnmarshaller.cs" />
+	<Compile Include="Elasticsearch\Transform\V20170613\UpdateInstanceChargeTypeResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateInstanceSettingsResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateKibanaSettingsResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateKibanaWhiteIpsResponseUnmarshaller.cs" />
+	<Compile Include="Elasticsearch\Transform\V20170613\UpdateLogstashChargeTypeResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateLogstashDescriptionResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateLogstashResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateLogstashSettingsResponseUnmarshaller.cs" />
