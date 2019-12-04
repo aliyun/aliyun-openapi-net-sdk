@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Sts.Model.V20150401
         public GetCallerIdentityRequest()
             : base("Sts", "2015-04-01", "GetCallerIdentity", "sts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Protocol = ProtocolType.HTTPS;
         }
 
