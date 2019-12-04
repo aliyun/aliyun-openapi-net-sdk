@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{084346db-2a03-4df7-8c08-b07ba2b45e57}</ProjectGuid>
+    <ProjectGuid>{4c5fd3b9-a24b-4d21-a567-f3f6b209cef9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -44,16 +44,24 @@
 	<Compile Include="HBase\Model\V20190101\AddUserHdfsInfoResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\ConvertInstanceRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\ConvertInstanceResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\CreateHbaseHaSlbRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\CreateHbaseHaSlbResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\CreateInstanceRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\CreateInstanceResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\DeleteHbaseHaSlbRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\DeleteHbaseHaSlbResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\DeleteInstanceRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\DeleteInstanceResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\DeleteUserHdfsInfoRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\DeleteUserHdfsInfoResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeDBInstanceUsageRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeDBInstanceUsageResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\DescribeEndpointsRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\DescribeEndpointsResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\DescribeInstanceRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\DescribeInstanceResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeInstanceTypeRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\DescribeInstanceTypeResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\DescribeInstancesRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\DescribeInstancesResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\DescribeIpWhitelistRequest.cs" />
@@ -62,6 +70,10 @@
 	<Compile Include="HBase\Model\V20190101\DescribeRegionsResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\DescribeSecurityGroupsRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\DescribeSecurityGroupsResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\ListTagResourcesRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\ListTagResourcesResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\ModifyInstanceMaintainTimeRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\ModifyInstanceMaintainTimeResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\ModifyInstanceNameRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\ModifyInstanceNameResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\ModifyIpWhitelistRequest.cs" />
@@ -70,6 +82,8 @@
 	<Compile Include="HBase\Model\V20190101\ModifySecurityGroupsResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\ModifyUIAccountPasswordRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\ModifyUIAccountPasswordResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\QueryHBaseHaDBRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\QueryHBaseHaDBResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\QueryXpackRelateDBRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\QueryXpackRelateDBResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\RenewInstanceRequest.cs" />
@@ -80,28 +94,44 @@
 	<Compile Include="HBase\Model\V20190101\ResizeNodeCountResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\RestartInstanceRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\RestartInstanceResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\SwitchHbaseHaSlbRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\SwitchHbaseHaSlbResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\TagResourcesRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\TagResourcesResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\UnTagResourcesRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\UnTagResourcesResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\XpackRelateDBRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\XpackRelateDBResponse.cs" />
 	<Compile Include="HBase\Transform\V20190101\AddUserHdfsInfoResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\ConvertInstanceResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\CreateHbaseHaSlbResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\CreateInstanceResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\DeleteHbaseHaSlbResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\DeleteInstanceResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\DeleteUserHdfsInfoResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\DescribeDBInstanceUsageResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\DescribeEndpointsResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\DescribeInstanceResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\DescribeInstanceTypeResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\DescribeInstancesResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\DescribeIpWhitelistResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\DescribeRegionsResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\DescribeSecurityGroupsResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\ListTagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\ModifyInstanceMaintainTimeResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\ModifyInstanceNameResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\ModifyIpWhitelistResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\ModifySecurityGroupsResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\ModifyUIAccountPasswordResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\QueryHBaseHaDBResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\QueryXpackRelateDBResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\RenewInstanceResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\ResizeDiskSizeResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\ResizeNodeCountResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\RestartInstanceResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\SwitchHbaseHaSlbResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\TagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\UnTagResourcesResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\XpackRelateDBResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>

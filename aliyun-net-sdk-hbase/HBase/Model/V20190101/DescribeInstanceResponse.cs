@@ -79,6 +79,10 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string coreDiskCount;
 
+		private string maintainStartTime;
+
+		private string maintainEndTime;
+
 		private List<DescribeInstance_Tag> tags;
 
 		public string RequestId
@@ -402,6 +406,30 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				coreDiskCount = value;
+			}
+		}
+
+		public string MaintainStartTime
+		{
+			get
+			{
+				return maintainStartTime;
+			}
+			set	
+			{
+				maintainStartTime = value;
+			}
+		}
+
+		public string MaintainEndTime
+		{
+			get
+			{
+				return maintainEndTime;
+			}
+			set	
+			{
+				maintainEndTime = value;
 			}
 		}
 
