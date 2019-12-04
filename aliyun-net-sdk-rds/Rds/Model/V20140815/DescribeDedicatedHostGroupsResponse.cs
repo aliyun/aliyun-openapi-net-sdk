@@ -80,6 +80,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string engine;
 
+			private string text;
+
 			public string DedicatedHostGroupId
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					engine = value;
+				}
+			}
+
+			public string Text
+			{
+				get
+				{
+					return text;
+				}
+				set	
+				{
+					text = value;
 				}
 			}
 		}

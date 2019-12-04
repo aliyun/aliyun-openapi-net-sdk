@@ -120,6 +120,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string taskErrorMessage;
 
+			private string stepsInfo;
+
+			private int? remain;
+
+			private string stepProgressInfo;
+
+			private string currentStepName;
+
 			public string DBName
 			{
 				get
@@ -249,6 +257,54 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					taskErrorMessage = value;
+				}
+			}
+
+			public string StepsInfo
+			{
+				get
+				{
+					return stepsInfo;
+				}
+				set	
+				{
+					stepsInfo = value;
+				}
+			}
+
+			public int? Remain
+			{
+				get
+				{
+					return remain;
+				}
+				set	
+				{
+					remain = value;
+				}
+			}
+
+			public string StepProgressInfo
+			{
+				get
+				{
+					return stepProgressInfo;
+				}
+				set	
+				{
+					stepProgressInfo = value;
+				}
+			}
+
+			public string CurrentStepName
+			{
+				get
+				{
+					return currentStepName;
+				}
+				set	
+				{
+					currentStepName = value;
 				}
 			}
 		}

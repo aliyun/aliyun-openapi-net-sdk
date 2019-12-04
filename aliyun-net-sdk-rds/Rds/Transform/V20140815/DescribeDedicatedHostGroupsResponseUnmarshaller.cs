@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dedicatedHostGroupsItem.HostNumber = context.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].HostNumber");
 				dedicatedHostGroupsItem.InstanceNumber = context.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].InstanceNumber");
 				dedicatedHostGroupsItem.Engine = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].Engine");
+				dedicatedHostGroupsItem.Text = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].Text");
 
 				describeDedicatedHostGroupsResponse_dedicatedHostGroups.Add(dedicatedHostGroupsItem);
 			}

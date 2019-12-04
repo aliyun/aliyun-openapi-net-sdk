@@ -45,8 +45,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string hostName;
 
-		private int? hostCount;
-
 		private string dedicatedHostGroupId;
 
 		private string period;
@@ -103,19 +101,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				hostName = value;
 				DictionaryUtil.Add(QueryParameters, "HostName", value);
-			}
-		}
-
-		public int? HostCount
-		{
-			get
-			{
-				return hostCount;
-			}
-			set	
-			{
-				hostCount = value;
-				DictionaryUtil.Add(QueryParameters, "HostCount", value.ToString());
 			}
 		}
 

@@ -45,13 +45,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string targetDedicatedHostIdForSlave;
 
-		private string engineVersion;
-
-		private int? storage;
-
 		private string effectiveTime;
-
-		private int? dBInstanceTransType;
 
 		private string targetDedicatedHostIdForMaster;
 
@@ -62,14 +56,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
-
-		private string targetDBInstanceClass;
-
-		private string vSwitchId;
-
-		private string targetDedicatedHostIdForLog;
-
-		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -110,32 +96,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
-			}
-		}
-
-		public int? Storage
-		{
-			get
-			{
-				return storage;
-			}
-			set	
-			{
-				storage = value;
-				DictionaryUtil.Add(QueryParameters, "Storage", value.ToString());
-			}
-		}
-
 		public string EffectiveTime
 		{
 			get
@@ -146,19 +106,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				effectiveTime = value;
 				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
-			}
-		}
-
-		public int? DBInstanceTransType
-		{
-			get
-			{
-				return dBInstanceTransType;
-			}
-			set	
-			{
-				dBInstanceTransType = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceTransType", value.ToString());
 			}
 		}
 
@@ -224,58 +171,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string TargetDBInstanceClass
-		{
-			get
-			{
-				return targetDBInstanceClass;
-			}
-			set	
-			{
-				targetDBInstanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "TargetDBInstanceClass", value);
-			}
-		}
-
-		public string VSwitchId
-		{
-			get
-			{
-				return vSwitchId;
-			}
-			set	
-			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
-			}
-		}
-
-		public string TargetDedicatedHostIdForLog
-		{
-			get
-			{
-				return targetDedicatedHostIdForLog;
-			}
-			set	
-			{
-				targetDedicatedHostIdForLog = value;
-				DictionaryUtil.Add(QueryParameters, "TargetDedicatedHostIdForLog", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 

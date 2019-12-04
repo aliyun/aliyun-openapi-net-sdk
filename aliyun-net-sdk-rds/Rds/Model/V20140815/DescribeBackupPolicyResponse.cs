@@ -55,6 +55,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string compressType;
 
+		private string archiveBackupRetentionPeriod;
+
+		private string archiveBackupKeepPolicy;
+
+		private string archiveBackupKeepCount;
+
+		private string releasedKeepPolicy;
+
 		private DescribeBackupPolicy_DuplicationLocation duplicationLocation;
 
 		public string RequestId
@@ -234,6 +242,54 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				compressType = value;
+			}
+		}
+
+		public string ArchiveBackupRetentionPeriod
+		{
+			get
+			{
+				return archiveBackupRetentionPeriod;
+			}
+			set	
+			{
+				archiveBackupRetentionPeriod = value;
+			}
+		}
+
+		public string ArchiveBackupKeepPolicy
+		{
+			get
+			{
+				return archiveBackupKeepPolicy;
+			}
+			set	
+			{
+				archiveBackupKeepPolicy = value;
+			}
+		}
+
+		public string ArchiveBackupKeepCount
+		{
+			get
+			{
+				return archiveBackupKeepCount;
+			}
+			set	
+			{
+				archiveBackupKeepCount = value;
+			}
+		}
+
+		public string ReleasedKeepPolicy
+		{
+			get
+			{
+				return releasedKeepPolicy;
+			}
+			set	
+			{
+				releasedKeepPolicy = value;
 			}
 		}
 

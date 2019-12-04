@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				parameterGroup.ForceRestart = context.IntegerValue("DescribeParameterGroup.ParamGroup["+ i +"].ForceRestart");
 				parameterGroup.Engine = context.StringValue("DescribeParameterGroup.ParamGroup["+ i +"].Engine");
 				parameterGroup.EngineVersion = context.StringValue("DescribeParameterGroup.ParamGroup["+ i +"].EngineVersion");
-				parameterGroup.ParameterGroupId = context.IntegerValue("DescribeParameterGroup.ParamGroup["+ i +"].ParameterGroupId");
+				parameterGroup.ParameterGroupId = context.StringValue("DescribeParameterGroup.ParamGroup["+ i +"].ParameterGroupId");
 				parameterGroup.CreateTime = context.StringValue("DescribeParameterGroup.ParamGroup["+ i +"].CreateTime");
 				parameterGroup.UpdateTime = context.StringValue("DescribeParameterGroup.ParamGroup["+ i +"].UpdateTime");
 

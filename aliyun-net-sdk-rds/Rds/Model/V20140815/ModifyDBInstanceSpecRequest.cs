@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceStorageType;
 
+		private string direction;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -136,6 +138,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceStorageType = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
+			}
+		}
+
+		public string Direction
+		{
+			get
+			{
+				return direction;
+			}
+			set	
+			{
+				direction = value;
+				DictionaryUtil.Add(QueryParameters, "Direction", value);
 			}
 		}
 

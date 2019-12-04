@@ -49,8 +49,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string backupLog;
 
-		private string duplicationContent;
-
 		private string highSpaceUsageProtection;
 
 		private string dBInstanceId;
@@ -60,6 +58,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string backupPolicyMode;
 
 		private string preferredBackupPeriod;
+
+		private string releasedKeepPolicy;
 
 		private string resourceOwnerAccount;
 
@@ -73,13 +73,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string archiveBackupKeepPolicy;
 
-		private string duplication;
-
 		private string preferredBackupTime;
 
 		private string backupRetentionPeriod;
-
-		private string duplicationLocation;
 
 		private string archiveBackupRetentionPeriod;
 
@@ -150,19 +146,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DuplicationContent
-		{
-			get
-			{
-				return duplicationContent;
-			}
-			set	
-			{
-				duplicationContent = value;
-				DictionaryUtil.Add(QueryParameters, "DuplicationContent", value);
-			}
-		}
-
 		public string HighSpaceUsageProtection
 		{
 			get
@@ -225,6 +208,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				preferredBackupPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "PreferredBackupPeriod", value);
+			}
+		}
+
+		public string ReleasedKeepPolicy
+		{
+			get
+			{
+				return releasedKeepPolicy;
+			}
+			set	
+			{
+				releasedKeepPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "ReleasedKeepPolicy", value);
 			}
 		}
 
@@ -306,19 +302,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Duplication
-		{
-			get
-			{
-				return duplication;
-			}
-			set	
-			{
-				duplication = value;
-				DictionaryUtil.Add(QueryParameters, "Duplication", value);
-			}
-		}
-
 		public string PreferredBackupTime
 		{
 			get
@@ -342,19 +325,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupRetentionPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value);
-			}
-		}
-
-		public string DuplicationLocation
-		{
-			get
-			{
-				return duplicationLocation;
-			}
-			set	
-			{
-				duplicationLocation = value;
-				DictionaryUtil.Add(QueryParameters, "DuplicationLocation", value);
 			}
 		}
 

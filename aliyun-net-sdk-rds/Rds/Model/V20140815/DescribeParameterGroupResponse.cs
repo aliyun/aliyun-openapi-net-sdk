@@ -70,7 +70,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string engineVersion;
 
-			private int? parameterGroupId;
+			private string parameterGroupId;
 
 			private string createTime;
 
@@ -162,7 +162,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				}
 			}
 
-			public int? ParameterGroupId
+			public string ParameterGroupId
 			{
 				get
 				{

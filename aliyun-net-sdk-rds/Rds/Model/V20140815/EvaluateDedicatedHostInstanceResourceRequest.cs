@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class SwitchDBInstanceHARequest : RpcAcsRequest<SwitchDBInstanceHAResponse>
+    public class EvaluateDedicatedHostInstanceResourceRequest : RpcAcsRequest<EvaluateDedicatedHostInstanceResourceResponse>
     {
-        public SwitchDBInstanceHARequest()
-            : base("Rds", "2014-08-15", "SwitchDBInstanceHA", "rds", "openAPI")
+        public EvaluateDedicatedHostInstanceResourceRequest()
+            : base("Rds", "2014-08-15", "EvaluateDedicatedHostInstanceResource", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,19 +41,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string effectiveTime;
+		private string engineVersion;
 
-		private string dBInstanceId;
+		private string engine;
 
-		private string nodeId;
+		private string dedicatedHostGroupId;
+
+		private string instanceClassNames;
+
+		private string diskSize;
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
-
 		private long? ownerId;
 
-		private string force;
+		private string diskType;
 
 		public long? ResourceOwnerId
 		{
@@ -68,42 +70,68 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string EffectiveTime
+		public string EngineVersion
 		{
 			get
 			{
-				return effectiveTime;
+				return engineVersion;
 			}
 			set	
 			{
-				effectiveTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
 			}
 		}
 
-		public string DBInstanceId
+		public string Engine
 		{
 			get
 			{
-				return dBInstanceId;
+				return engine;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 
-		public string NodeId
+		public string DedicatedHostGroupId
 		{
 			get
 			{
-				return nodeId;
+				return dedicatedHostGroupId;
 			}
 			set	
 			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+				dedicatedHostGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostGroupId", value);
+			}
+		}
+
+		public string InstanceClassNames
+		{
+			get
+			{
+				return instanceClassNames;
+			}
+			set	
+			{
+				instanceClassNames = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceClassNames", value);
+			}
+		}
+
+		public string DiskSize
+		{
+			get
+			{
+				return diskSize;
+			}
+			set	
+			{
+				diskSize = value;
+				DictionaryUtil.Add(QueryParameters, "DiskSize", value);
 			}
 		}
 
@@ -120,19 +148,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -146,22 +161,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Force
+		public string DiskType
 		{
 			get
 			{
-				return force;
+				return diskType;
 			}
 			set	
 			{
-				force = value;
-				DictionaryUtil.Add(QueryParameters, "Force", value);
+				diskType = value;
+				DictionaryUtil.Add(QueryParameters, "DiskType", value);
 			}
 		}
 
-        public override SwitchDBInstanceHAResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override EvaluateDedicatedHostInstanceResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SwitchDBInstanceHAResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EvaluateDedicatedHostInstanceResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ModifyDBInstancePayTypeRequest : RpcAcsRequest<ModifyDBInstancePayTypeResponse>
+    public class DescribeDetachedBackupsRequest : RpcAcsRequest<DescribeDetachedBackupsResponse>
     {
-        public ModifyDBInstancePayTypeRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstancePayType", "rds", "openAPI")
+        public DescribeDetachedBackupsRequest()
+            : base("Rds", "2014-08-15", "DescribeDetachedBackups", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,23 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string startTime;
+
+		private int? pageNumber;
+
+		private int? pageSize;
+
 		private string dBInstanceId;
 
-		private string period;
+		private string backupId;
 
-		private int? usedTime;
+		private string endTime;
 
-		private string payType;
+		private string backupStatus;
+
+		private string backupMode;
+
+		private string region;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +69,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -75,48 +124,74 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Period
+		public string BackupId
 		{
 			get
 			{
-				return period;
+				return backupId;
 			}
 			set	
 			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
 			}
 		}
 
-		public int? UsedTime
+		public string EndTime
 		{
 			get
 			{
-				return usedTime;
+				return endTime;
 			}
 			set	
 			{
-				usedTime = value;
-				DictionaryUtil.Add(QueryParameters, "UsedTime", value.ToString());
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-		public string PayType
+		public string BackupStatus
 		{
 			get
 			{
-				return payType;
+				return backupStatus;
 			}
 			set	
 			{
-				payType = value;
-				DictionaryUtil.Add(QueryParameters, "PayType", value);
+				backupStatus = value;
+				DictionaryUtil.Add(QueryParameters, "BackupStatus", value);
 			}
 		}
 
-        public override ModifyDBInstancePayTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string BackupMode
+		{
+			get
+			{
+				return backupMode;
+			}
+			set	
+			{
+				backupMode = value;
+				DictionaryUtil.Add(QueryParameters, "BackupMode", value);
+			}
+		}
+
+		public string Region
+		{
+			get
+			{
+				return region;
+			}
+			set	
+			{
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
+			}
+		}
+
+        public override DescribeDetachedBackupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBInstancePayTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDetachedBackupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

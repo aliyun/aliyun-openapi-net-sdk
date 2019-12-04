@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ModifyDBInstancePayTypeRequest : RpcAcsRequest<ModifyDBInstancePayTypeResponse>
+    public class DescribeAvailableDedicatedHostZonesRequest : RpcAcsRequest<DescribeAvailableDedicatedHostZonesResponse>
     {
-        public ModifyDBInstancePayTypeRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstancePayType", "rds", "openAPI")
+        public DescribeAvailableDedicatedHostZonesRequest()
+            : base("Rds", "2014-08-15", "DescribeAvailableDedicatedHostZones", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string dBInstanceId;
+		private string resourceOwnerAccount;
 
-		private string period;
-
-		private int? usedTime;
-
-		private string payType;
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -62,61 +58,35 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return dBInstanceId;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string Period
+		public long? OwnerId
 		{
 			get
 			{
-				return period;
+				return ownerId;
 			}
 			set	
 			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
-		public int? UsedTime
-		{
-			get
-			{
-				return usedTime;
-			}
-			set	
-			{
-				usedTime = value;
-				DictionaryUtil.Add(QueryParameters, "UsedTime", value.ToString());
-			}
-		}
-
-		public string PayType
-		{
-			get
-			{
-				return payType;
-			}
-			set	
-			{
-				payType = value;
-				DictionaryUtil.Add(QueryParameters, "PayType", value);
-			}
-		}
-
-        public override ModifyDBInstancePayTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeAvailableDedicatedHostZonesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBInstancePayTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAvailableDedicatedHostZonesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

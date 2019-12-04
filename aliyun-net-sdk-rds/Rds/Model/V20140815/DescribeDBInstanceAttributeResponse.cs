@@ -196,6 +196,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string consoleVersion;
 
+			private bool? multipleTempUpgrade;
+
+			private string originConfiguration;
+
 			private List<DescribeDBInstanceAttribute_SlaveZone> slaveZones;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -1039,6 +1043,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					consoleVersion = value;
+				}
+			}
+
+			public bool? MultipleTempUpgrade
+			{
+				get
+				{
+					return multipleTempUpgrade;
+				}
+				set	
+				{
+					multipleTempUpgrade = value;
+				}
+			}
+
+			public string OriginConfiguration
+			{
+				get
+				{
+					return originConfiguration;
+				}
+				set	
+				{
+					originConfiguration = value;
 				}
 			}
 

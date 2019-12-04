@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string period;
 
+		private string encryptionKey;
+
 		private string dBInstanceClass;
 
 		private string securityIPList;
@@ -66,6 +68,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string targetDedicatedHostIdForLog;
 
 		private string autoRenew;
+
+		private string roleARN;
 
 		private string zoneId;
 
@@ -197,6 +201,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKey", value);
+			}
+		}
+
 		public string DBInstanceClass
 		{
 			get
@@ -272,6 +289,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				autoRenew = value;
 				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
+			}
+		}
+
+		public string RoleARN
+		{
+			get
+			{
+				return roleARN;
+			}
+			set	
+			{
+				roleARN = value;
+				DictionaryUtil.Add(QueryParameters, "RoleARN", value);
 			}
 		}
 

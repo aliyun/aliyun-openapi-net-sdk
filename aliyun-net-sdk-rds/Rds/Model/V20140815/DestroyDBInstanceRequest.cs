@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ModifyDBInstancePayTypeRequest : RpcAcsRequest<ModifyDBInstancePayTypeResponse>
+    public class DestroyDBInstanceRequest : RpcAcsRequest<DestroyDBInstanceResponse>
     {
-        public ModifyDBInstancePayTypeRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstancePayType", "rds", "openAPI")
+        public DestroyDBInstanceRequest()
+            : base("Rds", "2014-08-15", "DestroyDBInstance", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string resourceOwnerAccount;
+
+		private string clientToken;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
 		private string dBInstanceId;
-
-		private string period;
-
-		private int? usedTime;
-
-		private string payType;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +61,58 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -75,48 +129,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
-			}
-		}
-
-		public int? UsedTime
-		{
-			get
-			{
-				return usedTime;
-			}
-			set	
-			{
-				usedTime = value;
-				DictionaryUtil.Add(QueryParameters, "UsedTime", value.ToString());
-			}
-		}
-
-		public string PayType
-		{
-			get
-			{
-				return payType;
-			}
-			set	
-			{
-				payType = value;
-				DictionaryUtil.Add(QueryParameters, "PayType", value);
-			}
-		}
-
-        public override ModifyDBInstancePayTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DestroyDBInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBInstancePayTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DestroyDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

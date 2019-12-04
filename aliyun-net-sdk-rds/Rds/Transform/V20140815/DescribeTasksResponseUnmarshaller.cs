@@ -50,6 +50,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				taskProgressInfo.Status = context.StringValue("DescribeTasks.Items["+ i +"].Status");
 				taskProgressInfo.TaskErrorCode = context.StringValue("DescribeTasks.Items["+ i +"].TaskErrorCode");
 				taskProgressInfo.TaskErrorMessage = context.StringValue("DescribeTasks.Items["+ i +"].TaskErrorMessage");
+				taskProgressInfo.StepsInfo = context.StringValue("DescribeTasks.Items["+ i +"].StepsInfo");
+				taskProgressInfo.Remain = context.IntegerValue("DescribeTasks.Items["+ i +"].Remain");
+				taskProgressInfo.StepProgressInfo = context.StringValue("DescribeTasks.Items["+ i +"].StepProgressInfo");
+				taskProgressInfo.CurrentStepName = context.StringValue("DescribeTasks.Items["+ i +"].CurrentStepName");
 
 				describeTasksResponse_items.Add(taskProgressInfo);
 			}

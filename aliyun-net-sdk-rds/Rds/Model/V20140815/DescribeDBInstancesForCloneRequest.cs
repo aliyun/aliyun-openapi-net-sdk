@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class CreateReadOnlyDBInstanceRequest : RpcAcsRequest<CreateReadOnlyDBInstanceResponse>
+    public class DescribeDBInstancesForCloneRequest : RpcAcsRequest<DescribeDBInstancesForCloneResponse>
     {
-        public CreateReadOnlyDBInstanceRequest()
-            : base("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds", "openAPI")
+        public DescribeDBInstancesForCloneRequest()
+            : base("Rds", "2014-08-15", "DescribeDBInstancesForClone", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,23 +39,31 @@ namespace Aliyun.Acs.Rds.Model.V20140815
             }
         }
 
+		private string connectionMode;
+
 		private long? resourceOwnerId;
 
-		private int? dBInstanceStorage;
+		private string nodeType;
 
 		private string clientToken;
 
+		private string searchKey;
+
 		private string engineVersion;
 
-		private string resourceGroupId;
+		private int? pageNumber;
+
+		private string expired;
+
+		private string engine;
+
+		private int? pageSize;
+
+		private string dBInstanceStatus;
 
 		private string dBInstanceId;
 
-		private string dBInstanceDescription;
-
-		private string dBInstanceStorageType;
-
-		private string dedicatedHostGroupId;
+		private string proxyId;
 
 		private string resourceOwnerAccount;
 
@@ -63,21 +71,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
+		private string dBInstanceType;
+
 		private string dBInstanceClass;
 
 		private string vSwitchId;
 
-		private string privateIpAddress;
-
-		private string vPCId;
+		private string vpcId;
 
 		private string zoneId;
-
-		private string category;
 
 		private string payType;
 
 		private string instanceNetworkType;
+
+		public string ConnectionMode
+		{
+			get
+			{
+				return connectionMode;
+			}
+			set	
+			{
+				connectionMode = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionMode", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -92,16 +111,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? DBInstanceStorage
+		public string NodeType
 		{
 			get
 			{
-				return dBInstanceStorage;
+				return nodeType;
 			}
 			set	
 			{
-				dBInstanceStorage = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
+				nodeType = value;
+				DictionaryUtil.Add(QueryParameters, "NodeType", value);
 			}
 		}
 
@@ -118,6 +137,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string SearchKey
+		{
+			get
+			{
+				return searchKey;
+			}
+			set	
+			{
+				searchKey = value;
+				DictionaryUtil.Add(QueryParameters, "SearchKey", value);
+			}
+		}
+
 		public string EngineVersion
 		{
 			get
@@ -131,16 +163,68 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceGroupId
+		public int? PageNumber
 		{
 			get
 			{
-				return resourceGroupId;
+				return pageNumber;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string Expired
+		{
+			get
+			{
+				return expired;
+			}
+			set	
+			{
+				expired = value;
+				DictionaryUtil.Add(QueryParameters, "Expired", value);
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string DBInstanceStatus
+		{
+			get
+			{
+				return dBInstanceStatus;
+			}
+			set	
+			{
+				dBInstanceStatus = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStatus", value);
 			}
 		}
 
@@ -157,42 +241,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceDescription
+		public string ProxyId
 		{
 			get
 			{
-				return dBInstanceDescription;
+				return proxyId;
 			}
 			set	
 			{
-				dBInstanceDescription = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceDescription", value);
-			}
-		}
-
-		public string DBInstanceStorageType
-		{
-			get
-			{
-				return dBInstanceStorageType;
-			}
-			set	
-			{
-				dBInstanceStorageType = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
-			}
-		}
-
-		public string DedicatedHostGroupId
-		{
-			get
-			{
-				return dedicatedHostGroupId;
-			}
-			set	
-			{
-				dedicatedHostGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "DedicatedHostGroupId", value);
+				proxyId = value;
+				DictionaryUtil.Add(QueryParameters, "proxyId", value);
 			}
 		}
 
@@ -235,6 +293,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string DBInstanceType
+		{
+			get
+			{
+				return dBInstanceType;
+			}
+			set	
+			{
+				dBInstanceType = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceType", value);
+			}
+		}
+
 		public string DBInstanceClass
 		{
 			get
@@ -261,29 +332,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string PrivateIpAddress
+		public string VpcId
 		{
 			get
 			{
-				return privateIpAddress;
+				return vpcId;
 			}
 			set	
 			{
-				privateIpAddress = value;
-				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
-			}
-		}
-
-		public string VPCId
-		{
-			get
-			{
-				return vPCId;
-			}
-			set	
-			{
-				vPCId = value;
-				DictionaryUtil.Add(QueryParameters, "VPCId", value);
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcId", value);
 			}
 		}
 
@@ -297,19 +355,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string Category
-		{
-			get
-			{
-				return category;
-			}
-			set	
-			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 
@@ -339,9 +384,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override CreateReadOnlyDBInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDBInstancesForCloneResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateReadOnlyDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDBInstancesForCloneResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

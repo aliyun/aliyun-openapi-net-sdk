@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceStorageType;
 
+		private string dedicatedHostGroupId;
+
 		private string restoreTime;
 
 		private string period;
@@ -139,6 +141,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceStorageType = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
+			}
+		}
+
+		public string DedicatedHostGroupId
+		{
+			get
+			{
+				return dedicatedHostGroupId;
+			}
+			set	
+			{
+				dedicatedHostGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostGroupId", value);
 			}
 		}
 
