@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.vod;
 using Aliyun.Acs.vod.Transform;
 using Aliyun.Acs.vod.Transform.V20170321;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class GetEditingProjectRequest : RpcAcsRequest<GetEditingProjectResponse>
     {
         public GetEditingProjectRequest()
-            : base("vod", "2017-03-21", "GetEditingProject", "vod", "openAPI")
+            : base("vod", "2017-03-21", "GetEditingProject")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

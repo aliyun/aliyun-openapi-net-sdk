@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.vod;
 using Aliyun.Acs.vod.Transform;
 using Aliyun.Acs.vod.Transform.V20170321;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DescribeVodDomainDetailRequest : RpcAcsRequest<DescribeVodDomainDetailResponse>
     {
         public DescribeVodDomainDetailRequest()
-            : base("vod", "2017-03-21", "DescribeVodDomainDetail", "vod", "openAPI")
+            : base("vod", "2017-03-21", "DescribeVodDomainDetail")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

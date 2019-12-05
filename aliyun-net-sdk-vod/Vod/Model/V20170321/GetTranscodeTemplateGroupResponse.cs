@@ -217,6 +217,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string rotate;
 
+				private string type;
+
 				private List<string> watermarkIds;
 
 				public string TranscodeTemplateId
@@ -408,6 +410,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						rotate = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
 					}
 				}
 
