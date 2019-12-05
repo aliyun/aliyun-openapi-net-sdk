@@ -50,7 +50,7 @@ namespace Aliyun.Acs.xtrace.Transform.V20190808
 				for (int j = 0; j < context.Length("GetTrace.Spans["+ i +"].TagEntryList.Length"); j++) {
 					GetTraceResponse.GetTrace_Span.GetTrace_TagEntry tagEntry = new GetTraceResponse.GetTrace_Span.GetTrace_TagEntry();
 					tagEntry.Key = context.StringValue("GetTrace.Spans["+ i +"].TagEntryList["+ j +"].Key");
-					tagEntry._Value = context.StringValue("GetTrace.Spans["+ i +"].TagEntryList["+ j +"]._Value");
+					tagEntry._Value = context.StringValue("GetTrace.Spans["+ i +"].TagEntryList["+ j +"].Value");
 
 					span_tagEntryList.Add(tagEntry);
 				}
@@ -65,7 +65,7 @@ namespace Aliyun.Acs.xtrace.Transform.V20190808
 					for (int k = 0; k < context.Length("GetTrace.Spans["+ i +"].LogEventList["+ j +"].TagEntryList.Length"); k++) {
 						GetTraceResponse.GetTrace_Span.GetTrace_LogEvent.GetTrace_TagEntry2 tagEntry2 = new GetTraceResponse.GetTrace_Span.GetTrace_LogEvent.GetTrace_TagEntry2();
 						tagEntry2.Key = context.StringValue("GetTrace.Spans["+ i +"].LogEventList["+ j +"].TagEntryList["+ k +"].Key");
-						tagEntry2._Value = context.StringValue("GetTrace.Spans["+ i +"].LogEventList["+ j +"].TagEntryList["+ k +"]._Value");
+						tagEntry2._Value = context.StringValue("GetTrace.Spans["+ i +"].LogEventList["+ j +"].TagEntryList["+ k +"].Value");
 
 						logEvent_tagEntryList1.Add(tagEntry2);
 					}

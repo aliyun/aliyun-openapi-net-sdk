@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{97d29f72-cf55-4d20-bd85-0dfc7cf3ab52}</ProjectGuid>
+    <ProjectGuid>{157844b4-2daa-44a8-bc68-141c72713005}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,26 +40,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="Xtrace\Model\V20190808\GetTagKeyRequest.cs" />
+	<Compile Include="Xtrace\Model\V20190808\GetTagKeyResponse.cs" />
+	<Compile Include="Xtrace\Model\V20190808\GetTagValRequest.cs" />
+	<Compile Include="Xtrace\Model\V20190808\GetTagValResponse.cs" />
+	<Compile Include="Xtrace\Model\V20190808\GetTokenRequest.cs" />
+	<Compile Include="Xtrace\Model\V20190808\GetTokenResponse.cs" />
 	<Compile Include="Xtrace\Model\V20190808\GetTraceRequest.cs" />
 	<Compile Include="Xtrace\Model\V20190808\GetTraceResponse.cs" />
-	<Compile Include="Xtrace\Model\V20190808\GetTagKeyResponse.cs" />
-	<Compile Include="Xtrace\Model\V20190808\GetTagKeyRequest.cs" />
-	<Compile Include="Xtrace\Model\V20190808\SearchTracesRequest.cs" />
-	<Compile Include="Xtrace\Model\V20190808\GetTagValRequest.cs" />
 	<Compile Include="Xtrace\Model\V20190808\ListIpOrHostsRequest.cs" />
 	<Compile Include="Xtrace\Model\V20190808\ListIpOrHostsResponse.cs" />
-	<Compile Include="Xtrace\Model\V20190808\GetTagValResponse.cs" />
-	<Compile Include="Xtrace\Model\V20190808\ListServicesResponse.cs" />
 	<Compile Include="Xtrace\Model\V20190808\ListServicesRequest.cs" />
+	<Compile Include="Xtrace\Model\V20190808\ListServicesResponse.cs" />
+	<Compile Include="Xtrace\Model\V20190808\ListSpanNamesRequest.cs" />
+	<Compile Include="Xtrace\Model\V20190808\ListSpanNamesResponse.cs" />
+	<Compile Include="Xtrace\Model\V20190808\QueryMetricRequest.cs" />
+	<Compile Include="Xtrace\Model\V20190808\QueryMetricResponse.cs" />
+	<Compile Include="Xtrace\Model\V20190808\SearchTracesRequest.cs" />
 	<Compile Include="Xtrace\Model\V20190808\SearchTracesResponse.cs" />
-	<Compile Include="Xtrace\Transform\V20190808\GetTokenResponseUnmarshaller.cs" />
-	<Compile Include="Xtrace\Transform\V20190808\ListIpOrHostsResponseUnmarshaller.cs" />
 	<Compile Include="Xtrace\Transform\V20190808\GetTagKeyResponseUnmarshaller.cs" />
-	<Compile Include="Xtrace\Transform\V20190808\SearchTracesResponseUnmarshaller.cs" />
 	<Compile Include="Xtrace\Transform\V20190808\GetTagValResponseUnmarshaller.cs" />
+	<Compile Include="Xtrace\Transform\V20190808\GetTokenResponseUnmarshaller.cs" />
 	<Compile Include="Xtrace\Transform\V20190808\GetTraceResponseUnmarshaller.cs" />
+	<Compile Include="Xtrace\Transform\V20190808\ListIpOrHostsResponseUnmarshaller.cs" />
 	<Compile Include="Xtrace\Transform\V20190808\ListServicesResponseUnmarshaller.cs" />
 	<Compile Include="Xtrace\Transform\V20190808\ListSpanNamesResponseUnmarshaller.cs" />
+	<Compile Include="Xtrace\Transform\V20190808\QueryMetricResponseUnmarshaller.cs" />
+	<Compile Include="Xtrace\Transform\V20190808\SearchTracesResponseUnmarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">

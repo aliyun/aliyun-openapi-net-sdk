@@ -27,10 +27,10 @@ using Aliyun.Acs.xtrace.Transform.V20190808;
 
 namespace Aliyun.Acs.xtrace.Model.V20190808
 {
-    public class SearchTracesRequest : RpcAcsRequest<SearchTracesResponse>
+    public class QueryMetricRequest : RpcAcsRequest<QueryMetricResponse>
     {
-        public SearchTracesRequest()
-            : base("xtrace", "2019-08-08", "SearchTraces", "xtrace", "openAPI")
+        public QueryMetricRequest()
+            : base("xtrace", "2019-08-08", "QueryMetric", "xtrace", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,40 +39,25 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
             }
         }
 
-		private string appType;
-
 		private long? endTime;
+
+		private string orderBy;
 
 		private long? startTime;
 
-		private bool? reverse;
+		private List<Filters> filterss = new List<Filters>(){ };
 
-		private long? minDuration;
+		private List<string> measuress = new List<string>(){ };
 
-		private int? pageNumber;
+		private int? intervalInSec;
 
-		private string serviceIp;
+		private string metric;
 
-		private string operationName;
+		private int? limit;
 
-		private int? pageSize;
+		private List<string> dimensionss = new List<string>(){ };
 
-		private string serviceName;
-
-		private List<Tag> tags = new List<Tag>(){ };
-
-		public string AppType
-		{
-			get
-			{
-				return appType;
-			}
-			set	
-			{
-				appType = value;
-				DictionaryUtil.Add(QueryParameters, "AppType", value);
-			}
-		}
+		private string order;
 
 		public long? EndTime
 		{
@@ -84,6 +69,19 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public string OrderBy
+		{
+			get
+			{
+				return orderBy;
+			}
+			set	
+			{
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
 			}
 		}
 
@@ -100,116 +98,111 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 			}
 		}
 
-		public bool? Reverse
+		public List<Filters> Filterss
 		{
 			get
 			{
-				return reverse;
-			}
-			set	
-			{
-				reverse = value;
-				DictionaryUtil.Add(QueryParameters, "Reverse", value.ToString());
-			}
-		}
-
-		public long? MinDuration
-		{
-			get
-			{
-				return minDuration;
-			}
-			set	
-			{
-				minDuration = value;
-				DictionaryUtil.Add(QueryParameters, "MinDuration", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string ServiceIp
-		{
-			get
-			{
-				return serviceIp;
-			}
-			set	
-			{
-				serviceIp = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceIp", value);
-			}
-		}
-
-		public string OperationName
-		{
-			get
-			{
-				return operationName;
-			}
-			set	
-			{
-				operationName = value;
-				DictionaryUtil.Add(QueryParameters, "OperationName", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string ServiceName
-		{
-			get
-			{
-				return serviceName;
-			}
-			set	
-			{
-				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
-			}
-		}
-
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
+				return filterss;
 			}
 
 			set
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				filterss = value;
+				for (int i = 0; i < filterss.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Filters." + (i + 1) + ".Value", filterss[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Filters." + (i + 1) + ".Key", filterss[i].Key);
 				}
 			}
 		}
 
-		public class Tag
+		public List<string> Measuress
+		{
+			get
+			{
+				return measuress;
+			}
+
+			set
+			{
+				measuress = value;
+				for (int i = 0; i < measuress.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Measures." + (i + 1) , measuress[i]);
+				}
+			}
+		}
+
+		public int? IntervalInSec
+		{
+			get
+			{
+				return intervalInSec;
+			}
+			set	
+			{
+				intervalInSec = value;
+				DictionaryUtil.Add(QueryParameters, "IntervalInSec", value.ToString());
+			}
+		}
+
+		public string Metric
+		{
+			get
+			{
+				return metric;
+			}
+			set	
+			{
+				metric = value;
+				DictionaryUtil.Add(QueryParameters, "Metric", value);
+			}
+		}
+
+		public int? Limit
+		{
+			get
+			{
+				return limit;
+			}
+			set	
+			{
+				limit = value;
+				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
+			}
+		}
+
+		public List<string> Dimensionss
+		{
+			get
+			{
+				return dimensionss;
+			}
+
+			set
+			{
+				dimensionss = value;
+				for (int i = 0; i < dimensionss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Dimensions." + (i + 1) , dimensionss[i]);
+				}
+			}
+		}
+
+		public string Order
+		{
+			get
+			{
+				return order;
+			}
+			set	
+			{
+				order = value;
+				DictionaryUtil.Add(QueryParameters, "Order", value);
+			}
+		}
+
+		public class Filters
 		{
 
 			private string value_;
@@ -241,9 +234,9 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 			}
 		}
 
-        public override SearchTracesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryMetricResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SearchTracesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryMetricResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
