@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{66cc5dbd-599d-4dda-bf61-ed322e872d25}</ProjectGuid>
+    <ProjectGuid>{060bba01-1dd0-437f-9bc5-f0a82819f6f3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -42,6 +42,8 @@
   <ItemGroup>
 	<Compile Include="Iot\Model\V20180120\BatchAddDeviceGroupRelationsRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\BatchAddDeviceGroupRelationsResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\BatchAddThingTopoRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\BatchAddThingTopoResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\BatchBindDeviceToEdgeInstanceWithDriverRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\BatchBindDeviceToEdgeInstanceWithDriverResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\BatchCheckDeviceNamesRequest.cs" />
@@ -128,6 +130,8 @@
 	<Compile Include="Iot\Model\V20180120\EnableThingResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\GetDataAPIServiceDetailRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\GetDataAPIServiceDetailResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\GetDeviceListByIotIdsRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\GetDeviceListByIotIdsResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\GetDeviceShadowRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\GetDeviceShadowResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\GetDeviceStatusRequest.cs" />
@@ -142,12 +146,18 @@
 	<Compile Include="Iot\Model\V20180120\GetLoraNodesTaskResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\GetNodesAddingTaskRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\GetNodesAddingTaskResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\GetProductKeyListByNameRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\GetProductKeyListByNameResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\GetProductMetaListByNameRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\GetProductMetaListByNameResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\GetRuleActionRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\GetRuleActionResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\GetRuleRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\GetRuleResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\GetThingTopoRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\GetThingTopoResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\GisQueryDeviceLocationRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\GisQueryDeviceLocationResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\InvokeDataAPIServiceRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\InvokeDataAPIServiceResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\InvokeThingServiceRequest.cs" />
@@ -176,6 +186,8 @@
 	<Compile Include="Iot\Model\V20180120\QueryCertUrlByApplyIdResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceByDriverRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceByDriverResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDeviceByStatusRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryDeviceByStatusResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceByTagsRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceByTagsResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryDeviceCertRequest.cs" />
@@ -230,6 +242,8 @@
 	<Compile Include="Iot\Model\V20180120\QueryLoRaJoinPermissionsResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryPageByApplyIdRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryPageByApplyIdResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryProductCertInfoRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\QueryProductCertInfoResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryProductListRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryProductListResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\QueryProductRequest.cs" />
@@ -260,6 +274,8 @@
 	<Compile Include="Iot\Model\V20180120\SetDevicesPropertyResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\SetEdgeInstanceDriverConfigsRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\SetEdgeInstanceDriverConfigsResponse.cs" />
+	<Compile Include="Iot\Model\V20180120\SetProductCertInfoRequest.cs" />
+	<Compile Include="Iot\Model\V20180120\SetProductCertInfoResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\StartRuleRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\StartRuleResponse.cs" />
 	<Compile Include="Iot\Model\V20180120\StopRuleRequest.cs" />
@@ -283,6 +299,7 @@
 	<Compile Include="Iot\Model\V20180120\UpdateRuleRequest.cs" />
 	<Compile Include="Iot\Model\V20180120\UpdateRuleResponse.cs" />
 	<Compile Include="Iot\Transform\V20180120\BatchAddDeviceGroupRelationsResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\BatchAddThingTopoResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\BatchBindDeviceToEdgeInstanceWithDriverResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\BatchCheckDeviceNamesResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\BatchClearEdgeInstanceDeviceConfigResponseUnmarshaller.cs" />
@@ -326,6 +343,7 @@
 	<Compile Include="Iot\Transform\V20180120\DisableThingResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\EnableThingResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\GetDataAPIServiceDetailResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\GetDeviceListByIotIdsResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\GetDeviceShadowResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\GetDeviceStatusResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\GetEdgeInstanceDeploymentResponseUnmarshaller.cs" />
@@ -333,9 +351,12 @@
 	<Compile Include="Iot\Transform\V20180120\GetGatewayBySubDeviceResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\GetLoraNodesTaskResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\GetNodesAddingTaskResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\GetProductKeyListByNameResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\GetProductMetaListByNameResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\GetRuleActionResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\GetRuleResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\GetThingTopoResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\GisQueryDeviceLocationResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\InvokeDataAPIServiceResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\InvokeThingServiceResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\InvokeThingsServiceResponseUnmarshaller.cs" />
@@ -350,6 +371,7 @@
 	<Compile Include="Iot\Transform\V20180120\QueryBatchRegisterDeviceStatusResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryCertUrlByApplyIdResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryDeviceByDriverResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryDeviceByStatusResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryDeviceByTagsResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryDeviceCertResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryDeviceDesiredPropertyResponseUnmarshaller.cs" />
@@ -377,6 +399,7 @@
 	<Compile Include="Iot\Transform\V20180120\QueryEdgeInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryLoRaJoinPermissionsResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryPageByApplyIdResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\QueryProductCertInfoResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryProductListResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryProductResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\QueryProductTopicResponseUnmarshaller.cs" />
@@ -392,6 +415,7 @@
 	<Compile Include="Iot\Transform\V20180120\SetDevicePropertyResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\SetDevicesPropertyResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\SetEdgeInstanceDriverConfigsResponseUnmarshaller.cs" />
+	<Compile Include="Iot\Transform\V20180120\SetProductCertInfoResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\StartRuleResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\StopRuleResponseUnmarshaller.cs" />
 	<Compile Include="Iot\Transform\V20180120\UnbindDriverFromEdgeInstanceResponseUnmarshaller.cs" />

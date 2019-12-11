@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class BindDriverToEdgeInstanceRequest : RpcAcsRequest<BindDriverToEdgeInstanceResponse>
+    public class GisQueryDeviceLocationRequest : RpcAcsRequest<GisQueryDeviceLocationResponse>
     {
-        public BindDriverToEdgeInstanceRequest()
-            : base("Iot", "2018-01-20", "BindDriverToEdgeInstance", "iot", "openAPI")
+        public GisQueryDeviceLocationRequest()
+            : base("Iot", "2018-01-20", "GisQueryDeviceLocation", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,52 +39,20 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string orderId;
-
-		private string instanceId;
-
-		private string driverId;
+		private string thingList;
 
 		private string iotInstanceId;
 
-		private string driverVersion;
-
-		public string OrderId
+		public string ThingList
 		{
 			get
 			{
-				return orderId;
+				return thingList;
 			}
 			set	
 			{
-				orderId = value;
-				DictionaryUtil.Add(QueryParameters, "OrderId", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string DriverId
-		{
-			get
-			{
-				return driverId;
-			}
-			set	
-			{
-				driverId = value;
-				DictionaryUtil.Add(QueryParameters, "DriverId", value);
+				thingList = value;
+				DictionaryUtil.Add(QueryParameters, "ThingList", value);
 			}
 		}
 
@@ -101,27 +69,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string DriverVersion
-		{
-			get
-			{
-				return driverVersion;
-			}
-			set	
-			{
-				driverVersion = value;
-				DictionaryUtil.Add(QueryParameters, "DriverVersion", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override BindDriverToEdgeInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GisQueryDeviceLocationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BindDriverToEdgeInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GisQueryDeviceLocationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

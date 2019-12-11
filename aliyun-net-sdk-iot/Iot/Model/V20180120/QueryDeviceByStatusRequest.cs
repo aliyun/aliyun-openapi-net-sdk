@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateRuleRequest : RpcAcsRequest<CreateRuleResponse>
+    public class QueryDeviceByStatusRequest : RpcAcsRequest<QueryDeviceByStatusResponse>
     {
-        public CreateRuleRequest()
-            : base("Iot", "2018-01-20", "CreateRule", "iot", "openAPI")
+        public QueryDeviceByStatusRequest()
+            : base("Iot", "2018-01-20", "QueryDeviceByStatus", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,127 +39,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string select;
-
-		private string ruleDesc;
-
-		private string shortTopic;
-
-		private string resourceGroupId;
-
-		private string dataType;
-
-		private string iotInstanceId;
-
-		private string _where;
-
-		private int? topicType;
+		private int? currentPage;
 
 		private string productKey;
 
-		private string name;
+		private string resourceGroupId;
 
-		public string Select
+		private string iotInstanceId;
+
+		private int? pageSize;
+
+		private string bizTenantId;
+
+		private int? status;
+
+		public int? CurrentPage
 		{
 			get
 			{
-				return select;
+				return currentPage;
 			}
 			set	
 			{
-				select = value;
-				DictionaryUtil.Add(QueryParameters, "Select", value);
-			}
-		}
-
-		public string RuleDesc
-		{
-			get
-			{
-				return ruleDesc;
-			}
-			set	
-			{
-				ruleDesc = value;
-				DictionaryUtil.Add(QueryParameters, "RuleDesc", value);
-			}
-		}
-
-		public string ShortTopic
-		{
-			get
-			{
-				return shortTopic;
-			}
-			set	
-			{
-				shortTopic = value;
-				DictionaryUtil.Add(QueryParameters, "ShortTopic", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string DataType
-		{
-			get
-			{
-				return dataType;
-			}
-			set	
-			{
-				dataType = value;
-				DictionaryUtil.Add(QueryParameters, "DataType", value);
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public string _Where
-		{
-			get
-			{
-				return _where;
-			}
-			set	
-			{
-				_where = value;
-				DictionaryUtil.Add(QueryParameters, "Where", value);
-			}
-		}
-
-		public int? TopicType
-		{
-			get
-			{
-				return topicType;
-			}
-			set	
-			{
-				topicType = value;
-				DictionaryUtil.Add(QueryParameters, "TopicType", value.ToString());
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
@@ -176,22 +79,74 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Name
+		public string ResourceGroupId
 		{
 			get
 			{
-				return name;
+				return resourceGroupId;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
-        public override CreateRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string BizTenantId
+		{
+			get
+			{
+				return bizTenantId;
+			}
+			set	
+			{
+				bizTenantId = value;
+				DictionaryUtil.Add(QueryParameters, "BizTenantId", value);
+			}
+		}
+
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
+			}
+		}
+
+        public override QueryDeviceByStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDeviceByStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

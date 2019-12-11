@@ -33,11 +33,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private int? pageSize;
-
 		private int? page;
 
 		private int? total;
+
+		private int? pageSize;
 
 		private List<ListRule_RuleInfo> data;
 
@@ -89,18 +89,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
 		public int? Page
 		{
 			get
@@ -122,6 +110,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				total = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
 			}
 		}
 

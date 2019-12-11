@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class BindDriverToEdgeInstanceRequest : RpcAcsRequest<BindDriverToEdgeInstanceResponse>
+    public class QueryProductCertInfoRequest : RpcAcsRequest<QueryProductCertInfoResponse>
     {
-        public BindDriverToEdgeInstanceRequest()
-            : base("Iot", "2018-01-20", "BindDriverToEdgeInstance", "iot", "openAPI")
+        public QueryProductCertInfoRequest()
+            : base("Iot", "2018-01-20", "QueryProductCertInfo", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,54 +39,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string orderId;
-
-		private string instanceId;
-
-		private string driverId;
-
 		private string iotInstanceId;
 
-		private string driverVersion;
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-				DictionaryUtil.Add(QueryParameters, "OrderId", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string DriverId
-		{
-			get
-			{
-				return driverId;
-			}
-			set	
-			{
-				driverId = value;
-				DictionaryUtil.Add(QueryParameters, "DriverId", value);
-			}
-		}
+		private string productKey;
 
 		public string IotInstanceId
 		{
@@ -101,27 +56,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string DriverVersion
+		public string ProductKey
 		{
 			get
 			{
-				return driverVersion;
+				return productKey;
 			}
 			set	
 			{
-				driverVersion = value;
-				DictionaryUtil.Add(QueryParameters, "DriverVersion", value);
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override BindDriverToEdgeInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override QueryProductCertInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BindDriverToEdgeInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryProductCertInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

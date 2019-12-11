@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class GetEdgeInstanceResponse : AcsResponse
+	public class QueryDeviceByStatusResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private GetEdgeInstance_Data data;
+		private int? page;
+
+		private int? pageSize;
+
+		private int? pageCount;
+
+		private int? total;
+
+		private List<QueryDeviceByStatus_SimpleDeviceInfo> data;
 
 		public string RequestId
 		{
@@ -83,7 +91,55 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public GetEdgeInstance_Data Data
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? PageCount
+		{
+			get
+			{
+				return pageCount;
+			}
+			set	
+			{
+				pageCount = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
+			}
+		}
+
+		public List<QueryDeviceByStatus_SimpleDeviceInfo> Data
 		{
 			get
 			{
@@ -95,104 +151,86 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class GetEdgeInstance_Data
+		public class QueryDeviceByStatus_SimpleDeviceInfo
 		{
 
-			private string instanceId;
+			private string productKey;
 
-			private string name;
+			private string deviceName;
 
-			private string tags;
+			private string status;
 
-			private string type;
+			private string iotId;
 
-			private int? spec;
-
-			private bool? bizEnable;
+			private string nickname;
 
 			private string gmtCreate;
 
 			private string gmtModified;
 
-			private string roleArn;
+			private string utcCreate;
 
-			private string roleName;
+			private string utcModified;
 
-			private string roleAttachTime;
+			private string deviceSecret;
 
-			private int? latestDeploymentStatus;
-
-			private string latestDeploymentType;
-
-			public string InstanceId
+			public string ProductKey
 			{
 				get
 				{
-					return instanceId;
+					return productKey;
 				}
 				set	
 				{
-					instanceId = value;
+					productKey = value;
 				}
 			}
 
-			public string Name
+			public string DeviceName
 			{
 				get
 				{
-					return name;
+					return deviceName;
 				}
 				set	
 				{
-					name = value;
+					deviceName = value;
 				}
 			}
 
-			public string Tags
+			public string Status
 			{
 				get
 				{
-					return tags;
+					return status;
 				}
 				set	
 				{
-					tags = value;
+					status = value;
 				}
 			}
 
-			public string Type
+			public string IotId
 			{
 				get
 				{
-					return type;
+					return iotId;
 				}
 				set	
 				{
-					type = value;
+					iotId = value;
 				}
 			}
 
-			public int? Spec
+			public string Nickname
 			{
 				get
 				{
-					return spec;
+					return nickname;
 				}
 				set	
 				{
-					spec = value;
-				}
-			}
-
-			public bool? BizEnable
-			{
-				get
-				{
-					return bizEnable;
-				}
-				set	
-				{
-					bizEnable = value;
+					nickname = value;
 				}
 			}
 
@@ -220,63 +258,39 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public string RoleArn
+			public string UtcCreate
 			{
 				get
 				{
-					return roleArn;
+					return utcCreate;
 				}
 				set	
 				{
-					roleArn = value;
+					utcCreate = value;
 				}
 			}
 
-			public string RoleName
+			public string UtcModified
 			{
 				get
 				{
-					return roleName;
+					return utcModified;
 				}
 				set	
 				{
-					roleName = value;
+					utcModified = value;
 				}
 			}
 
-			public string RoleAttachTime
+			public string DeviceSecret
 			{
 				get
 				{
-					return roleAttachTime;
+					return deviceSecret;
 				}
 				set	
 				{
-					roleAttachTime = value;
-				}
-			}
-
-			public int? LatestDeploymentStatus
-			{
-				get
-				{
-					return latestDeploymentStatus;
-				}
-				set	
-				{
-					latestDeploymentStatus = value;
-				}
-			}
-
-			public string LatestDeploymentType
-			{
-				get
-				{
-					return latestDeploymentType;
-				}
-				set	
-				{
-					latestDeploymentType = value;
+					deviceSecret = value;
 				}
 			}
 		}

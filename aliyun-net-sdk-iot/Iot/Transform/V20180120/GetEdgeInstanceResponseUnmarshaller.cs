@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.InstanceId = context.StringValue("GetEdgeInstance.Data.InstanceId");
 			data.Name = context.StringValue("GetEdgeInstance.Data.Name");
 			data.Tags = context.StringValue("GetEdgeInstance.Data.Tags");
+			data.Type = context.StringValue("GetEdgeInstance.Data.Type");
 			data.Spec = context.IntegerValue("GetEdgeInstance.Data.Spec");
 			data.BizEnable = context.BooleanValue("GetEdgeInstance.Data.BizEnable");
 			data.GmtCreate = context.StringValue("GetEdgeInstance.Data.GmtCreate");

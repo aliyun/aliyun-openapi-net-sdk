@@ -163,6 +163,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 				private string tags;
 
+				private int? type;
+
 				private string gmtCreate;
 
 				private string gmtModified;
@@ -214,6 +216,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					set	
 					{
 						tags = value;
+					}
+				}
+
+				public int? Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
 					}
 				}
 

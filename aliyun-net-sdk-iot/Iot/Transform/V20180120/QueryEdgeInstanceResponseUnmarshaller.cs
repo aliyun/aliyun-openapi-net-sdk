@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				instance.InstanceId = context.StringValue("QueryEdgeInstance.Data.InstanceList["+ i +"].InstanceId");
 				instance.Name = context.StringValue("QueryEdgeInstance.Data.InstanceList["+ i +"].Name");
 				instance.Tags = context.StringValue("QueryEdgeInstance.Data.InstanceList["+ i +"].Tags");
+				instance.Type = context.IntegerValue("QueryEdgeInstance.Data.InstanceList["+ i +"].Type");
 				instance.GmtCreate = context.StringValue("QueryEdgeInstance.Data.InstanceList["+ i +"].GmtCreate");
 				instance.GmtModified = context.StringValue("QueryEdgeInstance.Data.InstanceList["+ i +"].GmtModified");
 				instance.RoleArn = context.StringValue("QueryEdgeInstance.Data.InstanceList["+ i +"].RoleArn");

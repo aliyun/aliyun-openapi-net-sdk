@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? currentPage;
 
+		private string resourceGroupId;
+
 		private string iotInstanceId;
 
 		private int? pageSize;
@@ -70,6 +72,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

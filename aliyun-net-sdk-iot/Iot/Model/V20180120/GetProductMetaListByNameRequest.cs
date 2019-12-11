@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CreateRuleRequest : RpcAcsRequest<CreateRuleResponse>
+    public class GetProductMetaListByNameRequest : RpcAcsRequest<GetProductMetaListByNameResponse>
     {
-        public CreateRuleRequest()
-            : base("Iot", "2018-01-20", "CreateRule", "iot", "openAPI")
+        public GetProductMetaListByNameRequest()
+            : base("Iot", "2018-01-20", "GetProductMetaListByName", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,62 +39,26 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string select;
-
-		private string ruleDesc;
-
-		private string shortTopic;
+		private string productKey;
 
 		private string resourceGroupId;
 
-		private string dataType;
-
 		private string iotInstanceId;
 
-		private string _where;
+		private string deviceName;
 
-		private int? topicType;
+		private string page;
 
-		private string productKey;
-
-		private string name;
-
-		public string Select
+		public string ProductKey
 		{
 			get
 			{
-				return select;
+				return productKey;
 			}
 			set	
 			{
-				select = value;
-				DictionaryUtil.Add(QueryParameters, "Select", value);
-			}
-		}
-
-		public string RuleDesc
-		{
-			get
-			{
-				return ruleDesc;
-			}
-			set	
-			{
-				ruleDesc = value;
-				DictionaryUtil.Add(QueryParameters, "RuleDesc", value);
-			}
-		}
-
-		public string ShortTopic
-		{
-			get
-			{
-				return shortTopic;
-			}
-			set	
-			{
-				shortTopic = value;
-				DictionaryUtil.Add(QueryParameters, "ShortTopic", value);
+				productKey = value;
+				DictionaryUtil.Add(BodyParameters, "ProductKey", value);
 			}
 		}
 
@@ -111,19 +75,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string DataType
-		{
-			get
-			{
-				return dataType;
-			}
-			set	
-			{
-				dataType = value;
-				DictionaryUtil.Add(QueryParameters, "DataType", value);
-			}
-		}
-
 		public string IotInstanceId
 		{
 			get
@@ -137,61 +88,35 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string _Where
+		public string DeviceName
 		{
 			get
 			{
-				return _where;
+				return deviceName;
 			}
 			set	
 			{
-				_where = value;
-				DictionaryUtil.Add(QueryParameters, "Where", value);
+				deviceName = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
 			}
 		}
 
-		public int? TopicType
+		public string Page
 		{
 			get
 			{
-				return topicType;
+				return page;
 			}
 			set	
 			{
-				topicType = value;
-				DictionaryUtil.Add(QueryParameters, "TopicType", value.ToString());
+				page = value;
+				DictionaryUtil.Add(BodyParameters, "Page", value);
 			}
 		}
 
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-        public override CreateRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetProductMetaListByNameResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetProductMetaListByNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
