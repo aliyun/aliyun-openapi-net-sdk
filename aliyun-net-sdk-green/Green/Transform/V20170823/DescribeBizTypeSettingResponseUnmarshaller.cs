@@ -50,6 +50,15 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			}
 			porn.Categories1 = porn_categories1;
 			describeBizTypeSettingResponse.Porn = porn;
+
+			DescribeBizTypeSettingResponse.DescribeBizTypeSetting_Antispam antispam = new DescribeBizTypeSettingResponse.DescribeBizTypeSetting_Antispam();
+
+			List<string> antispam_categories2 = new List<string>();
+			for (int i = 0; i < context.Length("DescribeBizTypeSetting.Antispam.Categories.Length"); i++) {
+				antispam_categories2.Add(context.StringValue("DescribeBizTypeSetting.Antispam.Categories["+ i +"]"));
+			}
+			antispam.Categories2 = antispam_categories2;
+			describeBizTypeSettingResponse.Antispam = antispam;
         
 			return describeBizTypeSettingResponse;
         }

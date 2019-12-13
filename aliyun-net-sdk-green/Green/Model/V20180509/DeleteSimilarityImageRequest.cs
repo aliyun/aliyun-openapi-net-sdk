@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Green;
 using Aliyun.Acs.Green.Transform;
 using Aliyun.Acs.Green.Transform.V20180509;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Green.Model.V20180509
     public class DeleteSimilarityImageRequest : RoaAcsRequest<DeleteSimilarityImageResponse>
     {
         public DeleteSimilarityImageRequest()
-            : base("Green", "2018-05-09", "DeleteSimilarityImage", "green", "openAPI")
+            : base("Green", "2018-05-09", "DeleteSimilarityImage")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

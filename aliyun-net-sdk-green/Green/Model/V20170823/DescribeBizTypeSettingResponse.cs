@@ -31,6 +31,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private DescribeBizTypeSetting_Porn porn;
 
+		private DescribeBizTypeSetting_Antispam antispam;
+
 		public string RequestId
 		{
 			get
@@ -67,6 +69,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
+		public DescribeBizTypeSetting_Antispam Antispam
+		{
+			get
+			{
+				return antispam;
+			}
+			set	
+			{
+				antispam = value;
+			}
+		}
+
 		public class DescribeBizTypeSetting_Terrorism
 		{
 
@@ -99,6 +113,24 @@ namespace Aliyun.Acs.Green.Model.V20170823
 				set	
 				{
 					categories1 = value;
+				}
+			}
+		}
+
+		public class DescribeBizTypeSetting_Antispam
+		{
+
+			private List<string> categories2;
+
+			public List<string> Categories2
+			{
+				get
+				{
+					return categories2;
+				}
+				set	
+				{
+					categories2 = value;
 				}
 			}
 		}
