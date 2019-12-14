@@ -73,6 +73,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.VpcAuthMode = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].VpcAuthMode");
 				dBInstanceAttribute.AuditLogRetention = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].AuditLogRetention");
 				dBInstanceAttribute.ReplicationMode = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ReplicationMode");
+				dBInstanceAttribute.VpcCloudInstanceId = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].VpcCloudInstanceId");
 
 				List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag> dBInstanceAttribute_tags = new List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag>();
 				for (int j = 0; j < context.Length("DescribeInstanceAttribute.Instances["+ i +"].Tags.Length"); j++) {

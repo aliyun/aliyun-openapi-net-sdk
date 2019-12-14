@@ -22,14 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-	public class DescribeMonthlyServiceStatusResponse : AcsResponse
+	public class FlushExpireKeysResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private long? totalCount;
+		private string instanceId;
 
-		private List<DescribeMonthlyServiceStatus_InstanceSLAInfo> instanceSLAInfos;
+		private string taskId;
 
 		public string RequestId
 		{
@@ -43,59 +43,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public long? TotalCount
+		public string InstanceId
 		{
 			get
 			{
-				return totalCount;
+				return instanceId;
 			}
 			set	
 			{
-				totalCount = value;
+				instanceId = value;
 			}
 		}
 
-		public List<DescribeMonthlyServiceStatus_InstanceSLAInfo> InstanceSLAInfos
+		public string TaskId
 		{
 			get
 			{
-				return instanceSLAInfos;
+				return taskId;
 			}
 			set	
 			{
-				instanceSLAInfos = value;
-			}
-		}
-
-		public class DescribeMonthlyServiceStatus_InstanceSLAInfo
-		{
-
-			private string instanceId;
-
-			private float? uptimePct;
-
-			public string InstanceId
-			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
-			}
-
-			public float? UptimePct
-			{
-				get
-				{
-					return uptimePct;
-				}
-				set	
-				{
-					uptimePct = value;
-				}
+				taskId = value;
 			}
 		}
 	}

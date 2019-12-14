@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,23 +31,28 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeAvailableResourceRequest : RpcAcsRequest<DescribeAvailableResourceResponse>
     {
         public DescribeAvailableResourceRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeAvailableResource", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeAvailableResource")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string securityToken;
 
+		private string instanceChargeType;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string zoneId;
-
 		private long? ownerId;
 
-		private string instanceChargeType;
+		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -71,6 +77,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
 			}
 		}
 
@@ -100,19 +119,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -126,16 +132,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceChargeType
+		public string ZoneId
 		{
 			get
 			{
-				return instanceChargeType;
+				return zoneId;
 			}
 			set	
 			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 

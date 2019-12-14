@@ -22,31 +22,37 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeRdsVSwitchsRequest : RpcAcsRequest<DescribeRdsVSwitchsResponse>
+    public class FlushExpireKeysRequest : RpcAcsRequest<FlushExpireKeysResponse>
     {
-        public DescribeRdsVSwitchsRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeRdsVSwitchs", "redisa", "openAPI")
+        public FlushExpireKeysRequest()
+            : base("R-kvstore", "2015-01-01", "FlushExpireKeys")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string securityToken;
 
+		private string effectiveTime;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string vpcId;
-
-		private string zoneId;
-
 		private long? ownerId;
+
+		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -71,6 +77,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string EffectiveTime
+		{
+			get
+			{
+				return effectiveTime;
+			}
+			set	
+			{
+				effectiveTime = value;
+				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
 			}
 		}
 
@@ -100,32 +119,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string VpcId
-		{
-			get
-			{
-				return vpcId;
-			}
-			set	
-			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -139,14 +132,22 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string InstanceId
 		{
-			return false;
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
 		}
 
-        public override DescribeRdsVSwitchsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override FlushExpireKeysResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRdsVSwitchsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FlushExpireKeysResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

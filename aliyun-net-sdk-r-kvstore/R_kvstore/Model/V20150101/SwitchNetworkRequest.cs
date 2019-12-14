@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,11 +31,20 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class SwitchNetworkRequest : RpcAcsRequest<SwitchNetworkResponse>
     {
         public SwitchNetworkRequest()
-            : base("R-kvstore", "2015-01-01", "SwitchNetwork", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "SwitchNetwork")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string securityToken;
+
+		private string classicExpiredDays;
 
 		private string resourceOwnerAccount;
 
@@ -46,13 +56,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceId;
 
-		private string securityToken;
-
 		private string targetNetworkType;
 
 		private string retainClassic;
-
-		private string classicExpiredDays;
 
 		private string vpcId;
 
@@ -66,6 +72,32 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string ClassicExpiredDays
+		{
+			get
+			{
+				return classicExpiredDays;
+			}
+			set	
+			{
+				classicExpiredDays = value;
+				DictionaryUtil.Add(QueryParameters, "ClassicExpiredDays", value);
 			}
 		}
 
@@ -134,19 +166,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
 		public string TargetNetworkType
 		{
 			get
@@ -170,19 +189,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				retainClassic = value;
 				DictionaryUtil.Add(QueryParameters, "RetainClassic", value);
-			}
-		}
-
-		public string ClassicExpiredDays
-		{
-			get
-			{
-				return classicExpiredDays;
-			}
-			set	
-			{
-				classicExpiredDays = value;
-				DictionaryUtil.Add(QueryParameters, "ClassicExpiredDays", value);
 			}
 		}
 

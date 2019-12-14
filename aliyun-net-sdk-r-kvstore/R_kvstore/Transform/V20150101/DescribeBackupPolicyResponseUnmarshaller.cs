@@ -36,6 +36,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describeBackupPolicyResponse.PreferredBackupTime = context.StringValue("DescribeBackupPolicy.PreferredBackupTime");
 			describeBackupPolicyResponse.PreferredBackupPeriod = context.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
 			describeBackupPolicyResponse.PreferredNextBackupTime = context.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
+			describeBackupPolicyResponse.EnableBackupLog = context.IntegerValue("DescribeBackupPolicy.EnableBackupLog");
         
 			return describeBackupPolicyResponse;
         }

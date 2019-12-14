@@ -47,6 +47,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				instanceNetInfo.IPType = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].IPType");
 				instanceNetInfo.ExpiredTime = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].ExpiredTime");
 				instanceNetInfo.Upgradeable = context.StringValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].Upgradeable");
+				instanceNetInfo.DirectConnection = context.IntegerValue("DescribeDBInstanceNetInfo.NetInfoItems["+ i +"].DirectConnection");
 
 				describeDBInstanceNetInfoResponse_netInfoItems.Add(instanceNetInfo);
 			}

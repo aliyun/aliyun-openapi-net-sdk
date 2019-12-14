@@ -164,7 +164,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string connInfo;
 
-			private long? content;
+			private string content;
 
 			public string Level
 			{
@@ -226,7 +226,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public long? Content
+			public string Content
 			{
 				get
 				{

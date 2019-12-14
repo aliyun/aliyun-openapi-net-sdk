@@ -16,27 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.R_kvstore.Model.V20150101;
 
-namespace Aliyun.Acs.R_kvstore.Model.V20150101
+namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
-	public class ModifyGuardDomainModeResponse : AcsResponse
-	{
+    public class FlushExpireKeysResponseUnmarshaller
+    {
+        public static FlushExpireKeysResponse Unmarshall(UnmarshallerContext context)
+        {
+			FlushExpireKeysResponse flushExpireKeysResponse = new FlushExpireKeysResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			flushExpireKeysResponse.HttpResponse = context.HttpResponse;
+			flushExpireKeysResponse.RequestId = context.StringValue("FlushExpireKeys.RequestId");
+			flushExpireKeysResponse.InstanceId = context.StringValue("FlushExpireKeys.InstanceId");
+			flushExpireKeysResponse.TaskId = context.StringValue("FlushExpireKeys.TaskId");
+        
+			return flushExpireKeysResponse;
+        }
+    }
 }

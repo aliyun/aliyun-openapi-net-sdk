@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,11 +31,26 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class RenewInstanceRequest : RpcAcsRequest<RenewInstanceResponse>
     {
         public RenewInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "RenewInstance", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "RenewInstance")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string couponNo;
+
+		private string instanceClass;
+
+		private string capacity;
+
+		private string securityToken;
+
+		private string businessInfo;
 
 		private long? period;
 
@@ -46,21 +62,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string ownerAccount;
 
-		private string couponNo;
-
 		private long? ownerId;
-
-		private string instanceClass;
-
-		private string capacity;
 
 		private string instanceId;
 
-		private string securityToken;
-
 		private bool? forceUpgrade;
-
-		private string businessInfo;
 
 		public long? ResourceOwnerId
 		{
@@ -72,6 +78,71 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string CouponNo
+		{
+			get
+			{
+				return couponNo;
+			}
+			set	
+			{
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
+			}
+		}
+
+		public string InstanceClass
+		{
+			get
+			{
+				return instanceClass;
+			}
+			set	
+			{
+				instanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
+			}
+		}
+
+		public string Capacity
+		{
+			get
+			{
+				return capacity;
+			}
+			set	
+			{
+				capacity = value;
+				DictionaryUtil.Add(QueryParameters, "Capacity", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string BusinessInfo
+		{
+			get
+			{
+				return businessInfo;
+			}
+			set	
+			{
+				businessInfo = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
 			}
 		}
 
@@ -140,19 +211,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string CouponNo
-		{
-			get
-			{
-				return couponNo;
-			}
-			set	
-			{
-				couponNo = value;
-				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -163,32 +221,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceClass
-		{
-			get
-			{
-				return instanceClass;
-			}
-			set	
-			{
-				instanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceClass", value);
-			}
-		}
-
-		public string Capacity
-		{
-			get
-			{
-				return capacity;
-			}
-			set	
-			{
-				capacity = value;
-				DictionaryUtil.Add(QueryParameters, "Capacity", value);
 			}
 		}
 
@@ -205,19 +237,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
 		public bool? ForceUpgrade
 		{
 			get
@@ -228,19 +247,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				forceUpgrade = value;
 				DictionaryUtil.Add(QueryParameters, "ForceUpgrade", value.ToString());
-			}
-		}
-
-		public string BusinessInfo
-		{
-			get
-			{
-				return businessInfo;
-			}
-			set	
-			{
-				businessInfo = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
 			}
 		}
 

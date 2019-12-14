@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,21 +31,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeAuditRecordsRequest : RpcAcsRequest<DescribeAuditRecordsResponse>
     {
         public DescribeAuditRecordsRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeAuditRecords", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeAuditRecords")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private string endTime;
-
 		private string startTime;
-
-		private long? ownerId;
 
 		private string queryKeywords;
 
@@ -52,17 +50,25 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string hostAddress;
 
-		private string instanceId;
-
 		private string accountName;
 
 		private string securityToken;
 
-		private string databaseName;
-
 		private int? pageSize;
 
 		private string nodeId;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string endTime;
+
+		private long? ownerId;
+
+		private string instanceId;
+
+		private string databaseName;
 
 		public long? ResourceOwnerId
 		{
@@ -77,45 +83,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
 		public string StartTime
 		{
 			get
@@ -126,19 +93,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -181,19 +135,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
 		public string AccountName
 		{
 			get
@@ -220,19 +161,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string DatabaseName
-		{
-			get
-			{
-				return databaseName;
-			}
-			set	
-			{
-				databaseName = value;
-				DictionaryUtil.Add(QueryParameters, "DatabaseName", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -256,6 +184,84 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				nodeId = value;
 				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string DatabaseName
+		{
+			get
+			{
+				return databaseName;
+			}
+			set	
+			{
+				databaseName = value;
+				DictionaryUtil.Add(QueryParameters, "DatabaseName", value);
 			}
 		}
 

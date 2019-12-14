@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,13 +31,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyInstanceMinorVersionRequest : RpcAcsRequest<ModifyInstanceMinorVersionResponse>
     {
         public ModifyInstanceMinorVersionRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
+		private string effectTime;
 
 		private string securityToken;
 
@@ -48,7 +54,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string effectTime;
+		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -63,16 +69,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceId
+		public string EffectTime
 		{
 			get
 			{
-				return instanceId;
+				return effectTime;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				effectTime = value;
+				DictionaryUtil.Add(QueryParameters, "EffectTime", value);
 			}
 		}
 
@@ -141,16 +147,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string EffectTime
+		public string InstanceId
 		{
 			get
 			{
-				return effectTime;
+				return instanceId;
 			}
 			set	
 			{
-				effectTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectTime", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

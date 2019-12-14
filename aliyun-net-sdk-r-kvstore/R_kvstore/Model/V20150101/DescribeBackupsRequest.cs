@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,11 +31,24 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeBackupsRequest : RpcAcsRequest<DescribeBackupsResponse>
     {
         public DescribeBackupsRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeBackups", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeBackups")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string startTime;
+
+		private int? pageNumber;
+
+		private string securityToken;
+
+		private int? pageSize;
 
 		private string resourceOwnerAccount;
 
@@ -42,19 +56,13 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private int? backupId;
 
-		private string endTime;
+		private string needAof;
 
-		private string startTime;
+		private string endTime;
 
 		private long? ownerId;
 
-		private int? pageNumber;
-
 		private string instanceId;
-
-		private string securityToken;
-
-		private int? pageSize;
 
 		public long? ResourceOwnerId
 		{
@@ -66,6 +74,58 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -108,6 +168,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string NeedAof
+		{
+			get
+			{
+				return needAof;
+			}
+			set	
+			{
+				needAof = value;
+				DictionaryUtil.Add(QueryParameters, "NeedAof", value);
+			}
+		}
+
 		public string EndTime
 		{
 			get
@@ -118,19 +191,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -147,19 +207,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string InstanceId
 		{
 			get
@@ -170,32 +217,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

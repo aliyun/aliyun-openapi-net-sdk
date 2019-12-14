@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,15 +31,20 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
         public UntagResourcesRequest()
-            : base("R-kvstore", "2015-01-01", "UntagResources", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "UntagResources")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private bool? all;
 
 		private long? resourceOwnerId;
 
-		private List<string> resourceIds;
+		private bool? all;
+
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -46,22 +52,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private List<string> tagKeys;
-
 		private string resourceType;
 
-		public bool? All
-		{
-			get
-			{
-				return all;
-			}
-			set	
-			{
-				all = value;
-				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
-			}
-		}
+		private List<string> tagKeys = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -73,6 +66,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? All
+		{
+			get
+			{
+				return all;
+			}
+			set	
+			{
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
 			}
 		}
 
@@ -132,6 +138,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
 		public List<string> TagKeys
 		{
 			get
@@ -146,19 +165,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				{
 					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
 				}
-			}
-		}
-
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

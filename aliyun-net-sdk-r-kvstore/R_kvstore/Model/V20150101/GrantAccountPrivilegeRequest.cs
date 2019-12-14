@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,13 +31,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class GrantAccountPrivilegeRequest : RpcAcsRequest<GrantAccountPrivilegeResponse>
     {
         public GrantAccountPrivilegeRequest()
-            : base("R-kvstore", "2015-01-01", "GrantAccountPrivilege", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "GrantAccountPrivilege")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
+		private string accountPrivilege;
 
 		private string accountName;
 
@@ -48,7 +54,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string accountPrivilege;
+		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -63,16 +69,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceId
+		public string AccountPrivilege
 		{
 			get
 			{
-				return instanceId;
+				return accountPrivilege;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				accountPrivilege = value;
+				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
 			}
 		}
 
@@ -141,16 +147,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AccountPrivilege
+		public string InstanceId
 		{
 			get
 			{
-				return accountPrivilege;
+				return instanceId;
 			}
 			set	
 			{
-				accountPrivilege = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPrivilege", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

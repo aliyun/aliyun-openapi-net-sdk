@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,25 +31,28 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyAuditLogConfigRequest : RpcAcsRequest<ModifyAuditLogConfigResponse>
     {
         public ModifyAuditLogConfigRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyAuditLogConfig")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
-
 		private string securityToken;
 
-		private string resourceOwnerAccount;
+		private string retention;
 
-		private string auditCommand;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string retention;
+		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -60,19 +64,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -89,6 +80,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string Retention
+		{
+			get
+			{
+				return retention;
+			}
+			set	
+			{
+				retention = value;
+				DictionaryUtil.Add(QueryParameters, "Retention", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -99,19 +103,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string AuditCommand
-		{
-			get
-			{
-				return auditCommand;
-			}
-			set	
-			{
-				auditCommand = value;
-				DictionaryUtil.Add(QueryParameters, "AuditCommand", value);
 			}
 		}
 
@@ -141,16 +132,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Retention
+		public string InstanceId
 		{
 			get
 			{
-				return retention;
+				return instanceId;
 			}
 			set	
 			{
-				retention = value;
-				DictionaryUtil.Add(QueryParameters, "Retention", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

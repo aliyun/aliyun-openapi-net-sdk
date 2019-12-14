@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,13 +31,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ModifyAccountDescriptionRequest : RpcAcsRequest<ModifyAccountDescriptionResponse>
     {
         public ModifyAccountDescriptionRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyAccountDescription", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ModifyAccountDescription")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string instanceId;
+		private string accountDescription;
 
 		private string accountName;
 
@@ -48,7 +54,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string accountDescription;
+		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -63,16 +69,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceId
+		public string AccountDescription
 		{
 			get
 			{
-				return instanceId;
+				return accountDescription;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				accountDescription = value;
+				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
 			}
 		}
 
@@ -141,16 +147,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AccountDescription
+		public string InstanceId
 		{
 			get
 			{
-				return accountDescription;
+				return instanceId;
 			}
 			set	
 			{
-				accountDescription = value;
-				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

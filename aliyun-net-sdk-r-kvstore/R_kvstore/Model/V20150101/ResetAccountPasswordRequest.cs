@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,15 +31,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class ResetAccountPasswordRequest : RpcAcsRequest<ResetAccountPasswordResponse>
     {
         public ResetAccountPasswordRequest()
-            : base("R-kvstore", "2015-01-01", "ResetAccountPassword", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "ResetAccountPassword")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
-
-		private string accountPassword;
-
-		private string instanceId;
 
 		private string accountName;
 
@@ -50,6 +52,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
+		private string accountPassword;
+
+		private string instanceId;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -60,32 +66,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string AccountPassword
-		{
-			get
-			{
-				return accountPassword;
-			}
-			set	
-			{
-				accountPassword = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -151,6 +131,32 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AccountPassword
+		{
+			get
+			{
+				return accountPassword;
+			}
+			set	
+			{
+				accountPassword = value;
+				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

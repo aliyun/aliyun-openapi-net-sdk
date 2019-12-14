@@ -35,6 +35,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string preferredNextBackupTime;
 
+		private int? enableBackupLog;
+
 		public string RequestId
 		{
 			get
@@ -92,6 +94,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				preferredNextBackupTime = value;
+			}
+		}
+
+		public int? EnableBackupLog
+		{
+			get
+			{
+				return enableBackupLog;
+			}
+			set	
+			{
+				enableBackupLog = value;
 			}
 		}
 	}

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,11 +31,24 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeCacheAnalysisReportListRequest : RpcAcsRequest<DescribeCacheAnalysisReportListResponse>
     {
         public DescribeCacheAnalysisReportListRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReportList", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReportList")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string securityToken;
+
+		private int? pageSize;
+
+		private int? pageNumbers;
+
+		private string nodeId;
 
 		private string resourceOwnerAccount;
 
@@ -44,15 +58,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceId;
 
-		private string securityToken;
-
-		private int? pageSize;
-
-		private int? pageNumbers;
-
 		private int? days;
-
-		private string nodeId;
 
 		public long? ResourceOwnerId
 		{
@@ -64,6 +70,58 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? PageNumbers
+		{
+			get
+			{
+				return pageNumbers;
+			}
+			set	
+			{
+				pageNumbers = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumbers", value.ToString());
+			}
+		}
+
+		public string NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 
@@ -119,45 +177,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? PageNumbers
-		{
-			get
-			{
-				return pageNumbers;
-			}
-			set	
-			{
-				pageNumbers = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumbers", value.ToString());
-			}
-		}
-
 		public int? Days
 		{
 			get
@@ -168,19 +187,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				days = value;
 				DictionaryUtil.Add(QueryParameters, "Days", value.ToString());
-			}
-		}
-
-		public string NodeId
-		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 

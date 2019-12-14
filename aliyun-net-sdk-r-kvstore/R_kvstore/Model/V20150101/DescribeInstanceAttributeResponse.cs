@@ -130,6 +130,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string replicationMode;
 
+			private string vpcCloudInstanceId;
+
 			private List<DescribeInstanceAttribute_Tag> tags;
 
 			public string InstanceId
@@ -573,6 +575,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					replicationMode = value;
+				}
+			}
+
+			public string VpcCloudInstanceId
+			{
+				get
+				{
+					return vpcCloudInstanceId;
+				}
+				set	
+				{
+					vpcCloudInstanceId = value;
 				}
 			}
 

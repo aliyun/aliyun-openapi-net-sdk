@@ -90,6 +90,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string upgradeable;
 
+			private int? directConnection;
+
 			public string ConnectionString
 			{
 				get
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					upgradeable = value;
+				}
+			}
+
+			public int? DirectConnection
+			{
+				get
+				{
+					return directConnection;
+				}
+				set	
+				{
+					directConnection = value;
 				}
 			}
 		}

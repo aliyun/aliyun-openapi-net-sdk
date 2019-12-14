@@ -64,6 +64,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string networkTypes;
 
+			private string zoneName;
+
 			private List<DescribeAvailableResource_SupportedEngine> supportedEngines;
 
 			public string RegionId
@@ -114,6 +116,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
+			public string ZoneName
+			{
+				get
+				{
+					return zoneName;
+				}
+				set	
+				{
+					zoneName = value;
+				}
+			}
+
 			public List<DescribeAvailableResource_SupportedEngine> SupportedEngines
 			{
 				get
@@ -131,7 +145,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 				private string engine;
 
-				private List<DescribeAvailableResource_SupportedEngineVersion> supportedEngineVersions;
+				private List<DescribeAvailableResource_SupportedEditionType> supportedEditionTypes;
 
 				public string Engine
 				{
@@ -145,189 +159,189 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 					}
 				}
 
-				public List<DescribeAvailableResource_SupportedEngineVersion> SupportedEngineVersions
+				public List<DescribeAvailableResource_SupportedEditionType> SupportedEditionTypes
 				{
 					get
 					{
-						return supportedEngineVersions;
+						return supportedEditionTypes;
 					}
 					set	
 					{
-						supportedEngineVersions = value;
+						supportedEditionTypes = value;
 					}
 				}
 
-				public class DescribeAvailableResource_SupportedEngineVersion
+				public class DescribeAvailableResource_SupportedEditionType
 				{
 
-					private string version;
+					private string editionType;
 
-					private List<DescribeAvailableResource_SupportedArchitectureType> supportedArchitectureTypes;
+					private List<DescribeAvailableResource_SupportedSeriesType> supportedSeriesTypes;
 
-					public string Version
+					public string EditionType
 					{
 						get
 						{
-							return version;
+							return editionType;
 						}
 						set	
 						{
-							version = value;
+							editionType = value;
 						}
 					}
 
-					public List<DescribeAvailableResource_SupportedArchitectureType> SupportedArchitectureTypes
+					public List<DescribeAvailableResource_SupportedSeriesType> SupportedSeriesTypes
 					{
 						get
 						{
-							return supportedArchitectureTypes;
+							return supportedSeriesTypes;
 						}
 						set	
 						{
-							supportedArchitectureTypes = value;
+							supportedSeriesTypes = value;
 						}
 					}
 
-					public class DescribeAvailableResource_SupportedArchitectureType
+					public class DescribeAvailableResource_SupportedSeriesType
 					{
 
-						private string architecture;
+						private string seriesType;
 
-						private List<DescribeAvailableResource_SupportedPerformanceType> supportedPerformanceTypes;
+						private List<DescribeAvailableResource_SupportedEngineVersion> supportedEngineVersions;
 
-						public string Architecture
+						public string SeriesType
 						{
 							get
 							{
-								return architecture;
+								return seriesType;
 							}
 							set	
 							{
-								architecture = value;
+								seriesType = value;
 							}
 						}
 
-						public List<DescribeAvailableResource_SupportedPerformanceType> SupportedPerformanceTypes
+						public List<DescribeAvailableResource_SupportedEngineVersion> SupportedEngineVersions
 						{
 							get
 							{
-								return supportedPerformanceTypes;
+								return supportedEngineVersions;
 							}
 							set	
 							{
-								supportedPerformanceTypes = value;
+								supportedEngineVersions = value;
 							}
 						}
 
-						public class DescribeAvailableResource_SupportedPerformanceType
+						public class DescribeAvailableResource_SupportedEngineVersion
 						{
 
-							private string performanceType;
+							private string version;
 
-							private List<DescribeAvailableResource_SupportedStorageType> supportedStorageTypes;
+							private List<DescribeAvailableResource_SupportedArchitectureType> supportedArchitectureTypes;
 
-							public string PerformanceType
+							public string Version
 							{
 								get
 								{
-									return performanceType;
+									return version;
 								}
 								set	
 								{
-									performanceType = value;
+									version = value;
 								}
 							}
 
-							public List<DescribeAvailableResource_SupportedStorageType> SupportedStorageTypes
+							public List<DescribeAvailableResource_SupportedArchitectureType> SupportedArchitectureTypes
 							{
 								get
 								{
-									return supportedStorageTypes;
+									return supportedArchitectureTypes;
 								}
 								set	
 								{
-									supportedStorageTypes = value;
+									supportedArchitectureTypes = value;
 								}
 							}
 
-							public class DescribeAvailableResource_SupportedStorageType
+							public class DescribeAvailableResource_SupportedArchitectureType
 							{
 
-								private string storageType;
+								private string architecture;
 
-								private List<DescribeAvailableResource_SupportedNodeType> supportedNodeTypes;
+								private List<DescribeAvailableResource_SupportedShardNumber> supportedShardNumbers;
 
-								public string StorageType
+								public string Architecture
 								{
 									get
 									{
-										return storageType;
+										return architecture;
 									}
 									set	
 									{
-										storageType = value;
+										architecture = value;
 									}
 								}
 
-								public List<DescribeAvailableResource_SupportedNodeType> SupportedNodeTypes
+								public List<DescribeAvailableResource_SupportedShardNumber> SupportedShardNumbers
 								{
 									get
 									{
-										return supportedNodeTypes;
+										return supportedShardNumbers;
 									}
 									set	
 									{
-										supportedNodeTypes = value;
+										supportedShardNumbers = value;
 									}
 								}
 
-								public class DescribeAvailableResource_SupportedNodeType
+								public class DescribeAvailableResource_SupportedShardNumber
 								{
 
-									private string nodeType;
+									private string shardNumber;
 
-									private List<DescribeAvailableResource_SupportedPackageType> supportedPackageTypes;
+									private List<DescribeAvailableResource_SupportedNodeType> supportedNodeTypes;
 
-									public string NodeType
+									public string ShardNumber
 									{
 										get
 										{
-											return nodeType;
+											return shardNumber;
 										}
 										set	
 										{
-											nodeType = value;
+											shardNumber = value;
 										}
 									}
 
-									public List<DescribeAvailableResource_SupportedPackageType> SupportedPackageTypes
+									public List<DescribeAvailableResource_SupportedNodeType> SupportedNodeTypes
 									{
 										get
 										{
-											return supportedPackageTypes;
+											return supportedNodeTypes;
 										}
 										set	
 										{
-											supportedPackageTypes = value;
+											supportedNodeTypes = value;
 										}
 									}
 
-									public class DescribeAvailableResource_SupportedPackageType
+									public class DescribeAvailableResource_SupportedNodeType
 									{
 
-										private string packageType;
+										private string supportedNodeType;
 
 										private List<DescribeAvailableResource_AvailableResource> availableResources;
 
-										public string PackageType
+										public string SupportedNodeType
 										{
 											get
 											{
-												return packageType;
+												return supportedNodeType;
 											}
 											set	
 											{
-												packageType = value;
+												supportedNodeType = value;
 											}
 										}
 

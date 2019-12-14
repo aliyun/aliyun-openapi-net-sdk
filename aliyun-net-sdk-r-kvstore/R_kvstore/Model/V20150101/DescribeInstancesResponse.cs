@@ -162,6 +162,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string connectionMode;
 
+			private string vpcCloudInstanceId;
+
 			private List<DescribeInstances_Tag> tags;
 
 			public string ReplacateId
@@ -545,6 +547,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					connectionMode = value;
+				}
+			}
+
+			public string VpcCloudInstanceId
+			{
+				get
+				{
+					return vpcCloudInstanceId;
+				}
+				set	
+				{
+					vpcCloudInstanceId = value;
 				}
 			}
 

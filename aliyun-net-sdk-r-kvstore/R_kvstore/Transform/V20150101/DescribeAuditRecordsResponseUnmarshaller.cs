@@ -42,7 +42,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribeAuditRecordsResponse.DescribeAuditRecords_SQL> describeAuditRecordsResponse_items = new List<DescribeAuditRecordsResponse.DescribeAuditRecords_SQL>();
 			for (int i = 0; i < context.Length("DescribeAuditRecords.Items.Length"); i++) {
 				DescribeAuditRecordsResponse.DescribeAuditRecords_SQL sQL = new DescribeAuditRecordsResponse.DescribeAuditRecords_SQL();
-				sQL.HostAddress = context.IntegerValue("DescribeAuditRecords.Items["+ i +"].HostAddress");
+				sQL.HostAddress = context.StringValue("DescribeAuditRecords.Items["+ i +"].HostAddress");
 				sQL.DatabaseName = context.StringValue("DescribeAuditRecords.Items["+ i +"].DatabaseName");
 				sQL.IPAddress = context.StringValue("DescribeAuditRecords.Items["+ i +"].IPAddress");
 				sQL.SQLText = context.StringValue("DescribeAuditRecords.Items["+ i +"].SQLText");

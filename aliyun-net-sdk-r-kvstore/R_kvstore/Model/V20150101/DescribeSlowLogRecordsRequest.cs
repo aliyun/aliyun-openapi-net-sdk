@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,29 +31,20 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeSlowLogRecordsRequest : RpcAcsRequest<DescribeSlowLogRecordsResponse>
     {
         public DescribeSlowLogRecordsRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeSlowLogRecords", "redisa", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeSlowLogRecords")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private long? sQLId;
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private string endTime;
-
 		private string startTime;
 
-		private long? ownerId;
-
 		private int? pageNumber;
-
-		private string instanceId;
-
-		private string dBName;
 
 		private string securityToken;
 
@@ -60,18 +52,25 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string nodeId;
 
-		public long? SQLId
-		{
-			get
-			{
-				return sQLId;
-			}
-			set	
-			{
-				sQLId = value;
-				DictionaryUtil.Add(QueryParameters, "SQLId", value.ToString());
-			}
-		}
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string queryKeyword;
+
+		private string endTime;
+
+		private string orderBy;
+
+		private long? ownerId;
+
+		private string slowLogRecordType;
+
+		private string instanceId;
+
+		private string dBName;
+
+		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -83,45 +82,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -138,19 +98,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
 		public int? PageNumber
 		{
 			get
@@ -161,32 +108,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string DBName
-		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
 			}
 		}
 
@@ -226,6 +147,136 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				nodeId = value;
 				DictionaryUtil.Add(QueryParameters, "NodeId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string QueryKeyword
+		{
+			get
+			{
+				return queryKeyword;
+			}
+			set	
+			{
+				queryKeyword = value;
+				DictionaryUtil.Add(QueryParameters, "QueryKeyword", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string OrderBy
+		{
+			get
+			{
+				return orderBy;
+			}
+			set	
+			{
+				orderBy = value;
+				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SlowLogRecordType
+		{
+			get
+			{
+				return slowLogRecordType;
+			}
+			set	
+			{
+				slowLogRecordType = value;
+				DictionaryUtil.Add(QueryParameters, "SlowLogRecordType", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string DBName
+		{
+			get
+			{
+				return dBName;
+			}
+			set	
+			{
+				dBName = value;
+				DictionaryUtil.Add(QueryParameters, "DBName", value);
+			}
+		}
+
+		public string OrderType
+		{
+			get
+			{
+				return orderType;
+			}
+			set	
+			{
+				orderType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderType", value);
 			}
 		}
 
