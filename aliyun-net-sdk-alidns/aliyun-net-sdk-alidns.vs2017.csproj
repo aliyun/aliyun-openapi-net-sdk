@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
     <RootNamespace>Aliyun.Acs.Alidns</RootNamespace>
-    <Version>2.0.13</Version>
+    <Version>2.0.14</Version>
     <Authors>Alibaba Cloud</Authors>
     <Copyright>©2009-2019 Alibaba Cloud</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>

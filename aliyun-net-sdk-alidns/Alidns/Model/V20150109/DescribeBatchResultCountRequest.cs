@@ -41,8 +41,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string batchType;
 
-		private string userClientIp;
-
 		private string lang;
 
 		private long? taskId;
@@ -57,19 +55,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				batchType = value;
 				DictionaryUtil.Add(QueryParameters, "BatchType", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

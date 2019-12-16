@@ -43,8 +43,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private int? pageNumber;
 
-		private string userClientIp;
-
 		private int? pageSize;
 
 		private string lang;
@@ -76,19 +74,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

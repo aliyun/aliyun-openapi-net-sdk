@@ -39,13 +39,32 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
             }
         }
 
+		private long? fromUserId;
+
 		private long? pageNumber;
 
-		private string transferType;
+		private long? targetUserId;
 
 		private long? pageSize;
 
 		private string lang;
+
+		private string domainName;
+
+		private string transferType;
+
+		public long? FromUserId
+		{
+			get
+			{
+				return fromUserId;
+			}
+			set	
+			{
+				fromUserId = value;
+				DictionaryUtil.Add(QueryParameters, "FromUserId", value.ToString());
+			}
+		}
 
 		public long? PageNumber
 		{
@@ -60,16 +79,16 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public string TransferType
+		public long? TargetUserId
 		{
 			get
 			{
-				return transferType;
+				return targetUserId;
 			}
 			set	
 			{
-				transferType = value;
-				DictionaryUtil.Add(QueryParameters, "TransferType", value);
+				targetUserId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetUserId", value.ToString());
 			}
 		}
 
@@ -96,6 +115,32 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string TransferType
+		{
+			get
+			{
+				return transferType;
+			}
+			set	
+			{
+				transferType = value;
+				DictionaryUtil.Add(QueryParameters, "TransferType", value);
 			}
 		}
 

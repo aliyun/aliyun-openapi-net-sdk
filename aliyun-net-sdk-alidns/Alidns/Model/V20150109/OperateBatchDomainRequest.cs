@@ -43,8 +43,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string type;
 
-		private string userClientIp;
-
 		private string lang;
 
 		public List<DomainRecordInfo> DomainRecordInfos
@@ -83,19 +81,6 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
