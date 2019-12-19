@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceGroupId;
 
+		private string nextToken;
+
 		private int? pageSize;
 
 		private List<Tag> tags = new List<Tag>(){ };
@@ -72,6 +74,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string vpcId;
 
 		private string primaryIpAddress;
+
+		private int? maxResults;
 
 		private List<string> networkInterfaceIds = new List<string>(){ };
 
@@ -150,6 +154,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
@@ -302,6 +319,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				primaryIpAddress = value;
 				DictionaryUtil.Add(QueryParameters, "PrimaryIpAddress", value);
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 

@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeNetworkInterfacesResponse.TotalCount = context.IntegerValue("DescribeNetworkInterfaces.TotalCount");
 			describeNetworkInterfacesResponse.PageNumber = context.IntegerValue("DescribeNetworkInterfaces.PageNumber");
 			describeNetworkInterfacesResponse.PageSize = context.IntegerValue("DescribeNetworkInterfaces.PageSize");
+			describeNetworkInterfacesResponse.NextToken = context.StringValue("DescribeNetworkInterfaces.NextToken");
 
 			List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet> describeNetworkInterfacesResponse_networkInterfaceSets = new List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet>();
 			for (int i = 0; i < context.Length("DescribeNetworkInterfaces.NetworkInterfaceSets.Length"); i++) {

@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageSize;
 
+		private string nextToken;
+
 		private List<DescribeNetworkInterfaces_NetworkInterfaceSet> networkInterfaceSets;
 
 		public string RequestId
@@ -80,6 +82,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
 			}
 		}
 

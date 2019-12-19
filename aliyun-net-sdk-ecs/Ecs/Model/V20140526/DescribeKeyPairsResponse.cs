@@ -102,6 +102,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string keyPairFingerPrint;
 
+			private string creationTime;
+
 			private string resourceGroupId;
 
 			private List<DescribeKeyPairs_Tag> tags;
@@ -127,6 +129,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					keyPairFingerPrint = value;
+				}
+			}
+
+			public string CreationTime
+			{
+				get
+				{
+					return creationTime;
+				}
+				set	
+				{
+					creationTime = value;
 				}
 			}
 

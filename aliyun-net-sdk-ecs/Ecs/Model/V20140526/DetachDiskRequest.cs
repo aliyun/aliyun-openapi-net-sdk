@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string diskId;
 
+		private bool? deleteWithInstance;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -74,6 +76,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				diskId = value;
 				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+			}
+		}
+
+		public bool? DeleteWithInstance
+		{
+			get
+			{
+				return deleteWithInstance;
+			}
+			set	
+			{
+				deleteWithInstance = value;
+				DictionaryUtil.Add(QueryParameters, "DeleteWithInstance", value.ToString());
 			}
 		}
 

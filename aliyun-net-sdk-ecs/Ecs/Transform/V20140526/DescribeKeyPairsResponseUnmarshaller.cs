@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				DescribeKeyPairsResponse.DescribeKeyPairs_KeyPair keyPair = new DescribeKeyPairsResponse.DescribeKeyPairs_KeyPair();
 				keyPair.KeyPairName = context.StringValue("DescribeKeyPairs.KeyPairs["+ i +"].KeyPairName");
 				keyPair.KeyPairFingerPrint = context.StringValue("DescribeKeyPairs.KeyPairs["+ i +"].KeyPairFingerPrint");
+				keyPair.CreationTime = context.StringValue("DescribeKeyPairs.KeyPairs["+ i +"].CreationTime");
 				keyPair.ResourceGroupId = context.StringValue("DescribeKeyPairs.KeyPairs["+ i +"].ResourceGroupId");
 
 				List<DescribeKeyPairsResponse.DescribeKeyPairs_KeyPair.DescribeKeyPairs_Tag> keyPair_tags = new List<DescribeKeyPairsResponse.DescribeKeyPairs_KeyPair.DescribeKeyPairs_Tag>();
