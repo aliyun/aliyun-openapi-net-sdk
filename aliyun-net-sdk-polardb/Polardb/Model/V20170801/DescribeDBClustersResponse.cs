@@ -136,6 +136,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private long? storageUsed;
 
+			private string resourceGroupId;
+
 			private List<DescribeDBClusters_DBNode> dBNodes;
 
 			private List<DescribeDBClusters_Tag> tags;
@@ -365,6 +367,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					storageUsed = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

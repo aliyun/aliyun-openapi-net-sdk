@@ -68,6 +68,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string privilegeExceeded;
 
+			private string accountPasswordValidTime;
+
 			private List<DescribeAccounts_DatabasePrivilege> databasePrivileges;
 
 			public string AccountName
@@ -139,6 +141,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					privilegeExceeded = value;
+				}
+			}
+
+			public string AccountPasswordValidTime
+			{
+				get
+				{
+					return accountPasswordValidTime;
+				}
+				set	
+				{
+					accountPasswordValidTime = value;
 				}
 			}
 

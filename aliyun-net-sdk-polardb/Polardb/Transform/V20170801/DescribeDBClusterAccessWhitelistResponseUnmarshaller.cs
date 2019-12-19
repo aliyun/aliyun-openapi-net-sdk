@@ -43,6 +43,16 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				describeDBClusterAccessWhitelistResponse_items.Add(dBClusterIPArray);
 			}
 			describeDBClusterAccessWhitelistResponse.Items = describeDBClusterAccessWhitelistResponse_items;
+
+			List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup> describeDBClusterAccessWhitelistResponse_dBClusterSecurityGroups = new List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup>();
+			for (int i = 0; i < context.Length("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups.Length"); i++) {
+				DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup dBClusterSecurityGroup = new DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup();
+				dBClusterSecurityGroup.SecurityGroupId = context.StringValue("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups["+ i +"].SecurityGroupId");
+				dBClusterSecurityGroup.SecurityGroupName = context.StringValue("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups["+ i +"].SecurityGroupName");
+
+				describeDBClusterAccessWhitelistResponse_dBClusterSecurityGroups.Add(dBClusterSecurityGroup);
+			}
+			describeDBClusterAccessWhitelistResponse.DBClusterSecurityGroups = describeDBClusterAccessWhitelistResponse_dBClusterSecurityGroups;
         
 			return describeDBClusterAccessWhitelistResponse;
         }

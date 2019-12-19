@@ -58,6 +58,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				dBCluster.DBNodeNumber = context.IntegerValue("DescribeDBClusters.Items["+ i +"].DBNodeNumber");
 				dBCluster.DBNodeClass = context.StringValue("DescribeDBClusters.Items["+ i +"].DBNodeClass");
 				dBCluster.StorageUsed = context.LongValue("DescribeDBClusters.Items["+ i +"].StorageUsed");
+				dBCluster.ResourceGroupId = context.StringValue("DescribeDBClusters.Items["+ i +"].ResourceGroupId");
 
 				List<DescribeDBClustersResponse.DescribeDBClusters_DBCluster.DescribeDBClusters_DBNode> dBCluster_dBNodes = new List<DescribeDBClustersResponse.DescribeDBClusters_DBCluster.DescribeDBClusters_DBNode>();
 				for (int j = 0; j < context.Length("DescribeDBClusters.Items["+ i +"].DBNodes.Length"); j++) {

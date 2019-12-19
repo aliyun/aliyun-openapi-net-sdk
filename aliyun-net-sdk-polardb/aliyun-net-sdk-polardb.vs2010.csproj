@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{eddd208d-4a29-4606-9938-3b3abb6a3258}</ProjectGuid>
+    <ProjectGuid>{7ff8def0-e1a4-48b7-973c-adf2e6aedb6d}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -98,10 +98,16 @@
 	<Compile Include="Polardb\Model\V20170801\DescribeDatabasesResponse.cs" />
 	<Compile Include="Polardb\Model\V20170801\DescribeRegionsRequest.cs" />
 	<Compile Include="Polardb\Model\V20170801\DescribeRegionsResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeSlowLogRecordsRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeSlowLogRecordsResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeSlowLogsRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\DescribeSlowLogsResponse.cs" />
 	<Compile Include="Polardb\Model\V20170801\FailoverDBClusterRequest.cs" />
 	<Compile Include="Polardb\Model\V20170801\FailoverDBClusterResponse.cs" />
 	<Compile Include="Polardb\Model\V20170801\GrantAccountPrivilegeRequest.cs" />
 	<Compile Include="Polardb\Model\V20170801\GrantAccountPrivilegeResponse.cs" />
+	<Compile Include="Polardb\Model\V20170801\ListTagResourcesRequest.cs" />
+	<Compile Include="Polardb\Model\V20170801\ListTagResourcesResponse.cs" />
 	<Compile Include="Polardb\Model\V20170801\ModifyAccountDescriptionRequest.cs" />
 	<Compile Include="Polardb\Model\V20170801\ModifyAccountDescriptionResponse.cs" />
 	<Compile Include="Polardb\Model\V20170801\ModifyAccountPasswordRequest.cs" />
@@ -167,8 +173,11 @@
 	<Compile Include="Polardb\Transform\V20170801\DescribeDBNodePerformanceResponseUnmarshaller.cs" />
 	<Compile Include="Polardb\Transform\V20170801\DescribeDatabasesResponseUnmarshaller.cs" />
 	<Compile Include="Polardb\Transform\V20170801\DescribeRegionsResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeSlowLogRecordsResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\DescribeSlowLogsResponseUnmarshaller.cs" />
 	<Compile Include="Polardb\Transform\V20170801\FailoverDBClusterResponseUnmarshaller.cs" />
 	<Compile Include="Polardb\Transform\V20170801\GrantAccountPrivilegeResponseUnmarshaller.cs" />
+	<Compile Include="Polardb\Transform\V20170801\ListTagResourcesResponseUnmarshaller.cs" />
 	<Compile Include="Polardb\Transform\V20170801\ModifyAccountDescriptionResponseUnmarshaller.cs" />
 	<Compile Include="Polardb\Transform\V20170801\ModifyAccountPasswordResponseUnmarshaller.cs" />
 	<Compile Include="Polardb\Transform\V20170801\ModifyAutoRenewAttributeResponseUnmarshaller.cs" />

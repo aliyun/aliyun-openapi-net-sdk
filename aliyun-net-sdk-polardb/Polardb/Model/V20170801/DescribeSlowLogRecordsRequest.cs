@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class ModifyDBClusterAccessWhitelistRequest : RpcAcsRequest<ModifyDBClusterAccessWhitelistResponse>
+    public class DescribeSlowLogRecordsRequest : RpcAcsRequest<DescribeSlowLogRecordsResponse>
     {
-        public ModifyDBClusterAccessWhitelistRequest()
-            : base("polardb", "2017-08-01", "ModifyDBClusterAccessWhitelist", "polardb", "openAPI")
+        public DescribeSlowLogRecordsRequest()
+            : base("polardb", "2017-08-01", "DescribeSlowLogRecords", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,9 +41,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string securityIps;
+		private string startTime;
 
-		private string dBClusterIPArrayAttribute;
+		private int? pageNumber;
+
+		private int? pageSize;
 
 		private string resourceOwnerAccount;
 
@@ -51,13 +53,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string ownerAccount;
 
-		private string whiteListType;
+		private string endTime;
 
 		private long? ownerId;
 
-		private string securityGroupIds;
+		private string dBName;
 
-		private string dBClusterIPArrayName;
+		private string sQLHASH;
 
 		public long? ResourceOwnerId
 		{
@@ -72,29 +74,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string SecurityIps
+		public string StartTime
 		{
 			get
 			{
-				return securityIps;
+				return startTime;
 			}
 			set	
 			{
-				securityIps = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityIps", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string DBClusterIPArrayAttribute
+		public int? PageNumber
 		{
 			get
 			{
-				return dBClusterIPArrayAttribute;
+				return pageNumber;
 			}
 			set	
 			{
-				dBClusterIPArrayAttribute = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterIPArrayAttribute", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -137,16 +152,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string WhiteListType
+		public string EndTime
 		{
 			get
 			{
-				return whiteListType;
+				return endTime;
 			}
 			set	
 			{
-				whiteListType = value;
-				DictionaryUtil.Add(QueryParameters, "WhiteListType", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -163,35 +178,35 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string SecurityGroupIds
+		public string DBName
 		{
 			get
 			{
-				return securityGroupIds;
+				return dBName;
 			}
 			set	
 			{
-				securityGroupIds = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupIds", value);
+				dBName = value;
+				DictionaryUtil.Add(QueryParameters, "DBName", value);
 			}
 		}
 
-		public string DBClusterIPArrayName
+		public string SQLHASH
 		{
 			get
 			{
-				return dBClusterIPArrayName;
+				return sQLHASH;
 			}
 			set	
 			{
-				dBClusterIPArrayName = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterIPArrayName", value);
+				sQLHASH = value;
+				DictionaryUtil.Add(QueryParameters, "SQLHASH", value);
 			}
 		}
 
-        public override ModifyDBClusterAccessWhitelistResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeSlowLogRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBClusterAccessWhitelistResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeSlowLogRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

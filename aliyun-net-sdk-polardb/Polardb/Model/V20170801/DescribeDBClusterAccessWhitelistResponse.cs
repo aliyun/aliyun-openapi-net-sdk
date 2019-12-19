@@ -29,6 +29,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private List<DescribeDBClusterAccessWhitelist_DBClusterIPArray> items;
 
+		private List<DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup> dBClusterSecurityGroups;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				items = value;
+			}
+		}
+
+		public List<DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup> DBClusterSecurityGroups
+		{
+			get
+			{
+				return dBClusterSecurityGroups;
+			}
+			set	
+			{
+				dBClusterSecurityGroups = value;
 			}
 		}
 
@@ -95,6 +109,38 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					securityIps = value;
+				}
+			}
+		}
+
+		public class DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup
+		{
+
+			private string securityGroupId;
+
+			private string securityGroupName;
+
+			public string SecurityGroupId
+			{
+				get
+				{
+					return securityGroupId;
+				}
+				set	
+				{
+					securityGroupId = value;
+				}
+			}
+
+			public string SecurityGroupName
+			{
+				get
+				{
+					return securityGroupName;
+				}
+				set	
+				{
+					securityGroupName = value;
 				}
 			}
 		}

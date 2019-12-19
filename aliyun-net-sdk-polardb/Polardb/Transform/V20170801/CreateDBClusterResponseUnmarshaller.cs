@@ -34,6 +34,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			createDBClusterResponse.RequestId = context.StringValue("CreateDBCluster.RequestId");
 			createDBClusterResponse.DBClusterId = context.StringValue("CreateDBCluster.DBClusterId");
 			createDBClusterResponse.OrderId = context.StringValue("CreateDBCluster.OrderId");
+			createDBClusterResponse.ResourceGroupId = context.StringValue("CreateDBCluster.ResourceGroupId");
         
 			return createDBClusterResponse;
         }

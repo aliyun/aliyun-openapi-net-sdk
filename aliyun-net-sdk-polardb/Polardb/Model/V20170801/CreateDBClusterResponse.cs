@@ -31,6 +31,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string orderId;
 
+		private string resourceGroupId;
+
 		public string RequestId
 		{
 			get
@@ -64,6 +66,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 	}

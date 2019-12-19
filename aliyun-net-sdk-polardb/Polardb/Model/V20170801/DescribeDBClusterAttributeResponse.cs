@@ -71,6 +71,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private bool? isLatestVersion;
 
+		private string resourceGroupId;
+
 		private List<DescribeDBClusterAttribute_Tag> tags;
 
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
@@ -348,6 +350,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				isLatestVersion = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 

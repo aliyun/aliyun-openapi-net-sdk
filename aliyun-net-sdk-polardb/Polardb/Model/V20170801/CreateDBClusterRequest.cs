@@ -47,6 +47,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string clusterNetworkType;
 
+		private string resourceGroupId;
+
 		private string dBNodeClass;
 
 		private string creationOption;
@@ -128,6 +130,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				clusterNetworkType = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterNetworkType", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

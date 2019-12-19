@@ -54,6 +54,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterAttributeResponse.ZoneIds = context.StringValue("DescribeDBClusterAttribute.ZoneIds");
 			describeDBClusterAttributeResponse.SQLSize = context.LongValue("DescribeDBClusterAttribute.SQLSize");
 			describeDBClusterAttributeResponse.IsLatestVersion = context.BooleanValue("DescribeDBClusterAttribute.IsLatestVersion");
+			describeDBClusterAttributeResponse.ResourceGroupId = context.StringValue("DescribeDBClusterAttribute.ResourceGroupId");
 
 			List<DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_Tag> describeDBClusterAttributeResponse_tags = new List<DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_Tag>();
 			for (int i = 0; i < context.Length("DescribeDBClusterAttribute.Tags.Length"); i++) {
