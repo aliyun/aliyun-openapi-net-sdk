@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ab64e63a-8a21-4e43-bf29-b4a3b59a3e05}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aliyun.Acs</RootNamespace>
+    <AssemblyName>aliyun-net-sdk-reid</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+	<Compile Include="Reid\Model\V20190928\DescribeBaseStatisticsRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeBaseStatisticsResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeCursorRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeCursorResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeCustomerFlowByLocationRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeCustomerFlowByLocationResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeHeatMapRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeHeatMapResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeImageUrlsRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeImageUrlsResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeOverviewDataRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeOverviewDataResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\ImportSpecialPersonnelRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\ImportSpecialPersonnelResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\ListActionDataRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\ListActionDataResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\ListEmapRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\ListEmapResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\ListLocationRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\ListLocationResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\ListPersonByImageRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\ListPersonByImageResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\ListStoreRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\ListStoreResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\PullActionDataRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\PullActionDataResponse.cs" />
+	<Compile Include="Reid\Transform\V20190928\DescribeBaseStatisticsResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\DescribeCursorResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\DescribeCustomerFlowByLocationResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\DescribeHeatMapResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\DescribeImageUrlsResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\DescribeOverviewDataResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\ImportSpecialPersonnelResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\ListActionDataResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\ListEmapResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\ListLocationResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\ListPersonByImageResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\ListStoreResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\PullActionDataResponseUnmarshaller.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\aliyun-net-sdk-core\aliyun-net-sdk-core.vs2010.csproj">
+      <Project>{bb84cecb-295d-4772-a669-3726e511ccfa}</Project>
+      <Name>aliyun-net-sdk-core.vs2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
