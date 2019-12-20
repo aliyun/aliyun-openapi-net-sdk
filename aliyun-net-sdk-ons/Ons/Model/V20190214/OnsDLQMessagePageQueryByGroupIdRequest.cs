@@ -32,15 +32,14 @@ namespace Aliyun.Acs.Ons.Model.V20190214
         public OnsDLQMessagePageQueryByGroupIdRequest()
             : base("Ons", "2019-02-14", "OnsDLQMessagePageQueryByGroupId", "ons", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private long? preventCache;
-
-		private string instanceId;
-
 		private string groupId;
-
-		private int? pageSize;
 
 		private long? endTime;
 
@@ -48,33 +47,11 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 		private int? currentPage;
 
+		private string instanceId;
+
+		private int? pageSize;
+
 		private string taskId;
-
-		public long? PreventCache
-		{
-			get
-			{
-				return preventCache;
-			}
-			set	
-			{
-				preventCache = value;
-				DictionaryUtil.Add(QueryParameters, "PreventCache", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
 
 		public string GroupId
 		{
@@ -86,19 +63,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			{
 				groupId = value;
 				DictionaryUtil.Add(QueryParameters, "GroupId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -138,6 +102,32 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

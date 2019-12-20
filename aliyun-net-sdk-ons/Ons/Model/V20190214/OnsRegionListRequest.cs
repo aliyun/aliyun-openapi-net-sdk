@@ -32,22 +32,12 @@ namespace Aliyun.Acs.Ons.Model.V20190214
         public OnsRegionListRequest()
             : base("Ons", "2019-02-14", "OnsRegionList", "ons", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private long? preventCache;
-
-		public long? PreventCache
-		{
-			get
-			{
-				return preventCache;
-			}
-			set	
-			{
-				preventCache = value;
-				DictionaryUtil.Add(QueryParameters, "PreventCache", value.ToString());
-			}
-		}
 
         public override OnsRegionListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

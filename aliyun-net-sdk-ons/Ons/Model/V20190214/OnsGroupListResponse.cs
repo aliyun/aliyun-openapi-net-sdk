@@ -82,6 +82,8 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private bool? independentNaming;
 
+			private long? createTime;
+
 			public string Owner
 			{
 				get
@@ -151,6 +153,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					independentNaming = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
 				}
 			}
 		}

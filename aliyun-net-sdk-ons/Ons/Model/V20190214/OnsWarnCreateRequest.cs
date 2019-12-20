@@ -32,13 +32,12 @@ namespace Aliyun.Acs.Ons.Model.V20190214
         public OnsWarnCreateRequest()
             : base("Ons", "2019-02-14", "OnsWarnCreate", "ons", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private long? preventCache;
-
-		private string instanceId;
-
-		private string blockTime;
 
 		private string level;
 
@@ -46,52 +45,15 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 		private string delayTime;
 
-		private string topic;
-
 		private string threshold;
 
 		private string alertTime;
 
+		private string instanceId;
+
+		private string topic;
+
 		private string contacts;
-
-		public long? PreventCache
-		{
-			get
-			{
-				return preventCache;
-			}
-			set	
-			{
-				preventCache = value;
-				DictionaryUtil.Add(QueryParameters, "PreventCache", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string BlockTime
-		{
-			get
-			{
-				return blockTime;
-			}
-			set	
-			{
-				blockTime = value;
-				DictionaryUtil.Add(QueryParameters, "BlockTime", value);
-			}
-		}
 
 		public string Level
 		{
@@ -132,19 +94,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			}
 		}
 
-		public string Topic
-		{
-			get
-			{
-				return topic;
-			}
-			set	
-			{
-				topic = value;
-				DictionaryUtil.Add(QueryParameters, "Topic", value);
-			}
-		}
-
 		public string Threshold
 		{
 			get
@@ -168,6 +117,32 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			{
 				alertTime = value;
 				DictionaryUtil.Add(QueryParameters, "AlertTime", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string Topic
+		{
+			get
+			{
+				return topic;
+			}
+			set	
+			{
+				topic = value;
+				DictionaryUtil.Add(QueryParameters, "Topic", value);
 			}
 		}
 

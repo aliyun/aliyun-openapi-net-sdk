@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 				connectionDo.ClientAddr = context.StringValue("OnsConsumerStatus.Data.ConnectionSet["+ i +"].ClientAddr");
 				connectionDo.Language = context.StringValue("OnsConsumerStatus.Data.ConnectionSet["+ i +"].Language");
 				connectionDo.Version = context.StringValue("OnsConsumerStatus.Data.ConnectionSet["+ i +"].Version");
+				connectionDo.RemoteIP = context.StringValue("OnsConsumerStatus.Data.ConnectionSet["+ i +"].RemoteIP");
 
 				data_connectionSet.Add(connectionDo);
 			}

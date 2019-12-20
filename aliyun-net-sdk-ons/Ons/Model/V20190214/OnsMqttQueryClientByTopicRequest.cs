@@ -32,26 +32,29 @@ namespace Aliyun.Acs.Ons.Model.V20190214
         public OnsMqttQueryClientByTopicRequest()
             : base("Ons", "2019-02-14", "OnsMqttQueryClientByTopic", "ons", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private long? preventCache;
-
-		private string instanceId;
 
 		private string parentTopic;
 
+		private string instanceId;
+
 		private string subTopic;
 
-		public long? PreventCache
+		public string ParentTopic
 		{
 			get
 			{
-				return preventCache;
+				return parentTopic;
 			}
 			set	
 			{
-				preventCache = value;
-				DictionaryUtil.Add(QueryParameters, "PreventCache", value.ToString());
+				parentTopic = value;
+				DictionaryUtil.Add(QueryParameters, "ParentTopic", value);
 			}
 		}
 
@@ -65,19 +68,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string ParentTopic
-		{
-			get
-			{
-				return parentTopic;
-			}
-			set	
-			{
-				parentTopic = value;
-				DictionaryUtil.Add(QueryParameters, "ParentTopic", value);
 			}
 		}
 

@@ -32,28 +32,31 @@ namespace Aliyun.Acs.Ons.Model.V20190214
         public OnsConsumerStatusRequest()
             : base("Ons", "2019-02-14", "OnsConsumerStatus", "ons", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private long? preventCache;
+		private string groupId;
 
 		private string instanceId;
 
 		private bool? needJstack;
 
-		private string groupId;
-
 		private bool? detail;
 
-		public long? PreventCache
+		public string GroupId
 		{
 			get
 			{
-				return preventCache;
+				return groupId;
 			}
 			set	
 			{
-				preventCache = value;
-				DictionaryUtil.Add(QueryParameters, "PreventCache", value.ToString());
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -80,19 +83,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			{
 				needJstack = value;
 				DictionaryUtil.Add(QueryParameters, "NeedJstack", value.ToString());
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 

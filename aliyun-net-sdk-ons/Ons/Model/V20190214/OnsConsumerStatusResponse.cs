@@ -249,6 +249,8 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 				private string version;
 
+				private string remoteIP;
+
 				public string ClientId
 				{
 					get
@@ -294,6 +296,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 					set	
 					{
 						version = value;
+					}
+				}
+
+				public string RemoteIP
+				{
+					get
+					{
+						return remoteIP;
+					}
+					set	
+					{
+						remoteIP = value;
 					}
 				}
 			}

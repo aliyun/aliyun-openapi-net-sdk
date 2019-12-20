@@ -32,26 +32,29 @@ namespace Aliyun.Acs.Ons.Model.V20190214
         public OnsMessageTraceRequest()
             : base("Ons", "2019-02-14", "OnsMessageTrace", "ons", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private long? preventCache;
+		private string msgId;
 
 		private string instanceId;
 
 		private string topic;
 
-		private string msgId;
-
-		public long? PreventCache
+		public string MsgId
 		{
 			get
 			{
-				return preventCache;
+				return msgId;
 			}
 			set	
 			{
-				preventCache = value;
-				DictionaryUtil.Add(QueryParameters, "PreventCache", value.ToString());
+				msgId = value;
+				DictionaryUtil.Add(QueryParameters, "MsgId", value);
 			}
 		}
 
@@ -78,19 +81,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			{
 				topic = value;
 				DictionaryUtil.Add(QueryParameters, "Topic", value);
-			}
-		}
-
-		public string MsgId
-		{
-			get
-			{
-				return msgId;
-			}
-			set	
-			{
-				msgId = value;
-				DictionaryUtil.Add(QueryParameters, "MsgId", value);
 			}
 		}
 

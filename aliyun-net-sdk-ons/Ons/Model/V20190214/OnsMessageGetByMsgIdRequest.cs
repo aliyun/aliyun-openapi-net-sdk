@@ -32,26 +32,29 @@ namespace Aliyun.Acs.Ons.Model.V20190214
         public OnsMessageGetByMsgIdRequest()
             : base("Ons", "2019-02-14", "OnsMessageGetByMsgId", "ons", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private long? preventCache;
-
-		private string instanceId;
 
 		private string msgId;
 
+		private string instanceId;
+
 		private string topic;
 
-		public long? PreventCache
+		public string MsgId
 		{
 			get
 			{
-				return preventCache;
+				return msgId;
 			}
 			set	
 			{
-				preventCache = value;
-				DictionaryUtil.Add(QueryParameters, "PreventCache", value.ToString());
+				msgId = value;
+				DictionaryUtil.Add(QueryParameters, "MsgId", value);
 			}
 		}
 
@@ -65,19 +68,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string MsgId
-		{
-			get
-			{
-				return msgId;
-			}
-			set	
-			{
-				msgId = value;
-				DictionaryUtil.Add(QueryParameters, "MsgId", value);
 			}
 		}
 

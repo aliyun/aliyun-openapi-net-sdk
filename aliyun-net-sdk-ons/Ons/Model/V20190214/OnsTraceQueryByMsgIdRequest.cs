@@ -32,13 +32,12 @@ namespace Aliyun.Acs.Ons.Model.V20190214
         public OnsTraceQueryByMsgIdRequest()
             : base("Ons", "2019-02-14", "OnsTraceQueryByMsgId", "ons", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private long? preventCache;
-
-		private string instanceId;
-
-		private string topic;
 
 		private string msgId;
 
@@ -46,44 +45,9 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 		private long? beginTime;
 
-		public long? PreventCache
-		{
-			get
-			{
-				return preventCache;
-			}
-			set	
-			{
-				preventCache = value;
-				DictionaryUtil.Add(QueryParameters, "PreventCache", value.ToString());
-			}
-		}
+		private string instanceId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string Topic
-		{
-			get
-			{
-				return topic;
-			}
-			set	
-			{
-				topic = value;
-				DictionaryUtil.Add(QueryParameters, "Topic", value);
-			}
-		}
+		private string topic;
 
 		public string MsgId
 		{
@@ -121,6 +85,32 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			{
 				beginTime = value;
 				DictionaryUtil.Add(QueryParameters, "BeginTime", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string Topic
+		{
+			get
+			{
+				return topic;
+			}
+			set	
+			{
+				topic = value;
+				DictionaryUtil.Add(QueryParameters, "Topic", value);
 			}
 		}
 

@@ -32,24 +32,27 @@ namespace Aliyun.Acs.Ons.Model.V20190214
         public OnsGroupSubDetailRequest()
             : base("Ons", "2019-02-14", "OnsGroupSubDetail", "ons", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private long? preventCache;
-
-		private string instanceId;
 
 		private string groupId;
 
-		public long? PreventCache
+		private string instanceId;
+
+		public string GroupId
 		{
 			get
 			{
-				return preventCache;
+				return groupId;
 			}
 			set	
 			{
-				preventCache = value;
-				DictionaryUtil.Add(QueryParameters, "PreventCache", value.ToString());
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -63,19 +66,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 

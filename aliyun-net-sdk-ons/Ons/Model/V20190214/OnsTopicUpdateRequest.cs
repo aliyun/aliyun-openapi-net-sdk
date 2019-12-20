@@ -32,26 +32,29 @@ namespace Aliyun.Acs.Ons.Model.V20190214
         public OnsTopicUpdateRequest()
             : base("Ons", "2019-02-14", "OnsTopicUpdate", "ons", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private long? preventCache;
-
-		private string instanceId;
 
 		private int? perm;
 
+		private string instanceId;
+
 		private string topic;
 
-		public long? PreventCache
+		public int? Perm
 		{
 			get
 			{
-				return preventCache;
+				return perm;
 			}
 			set	
 			{
-				preventCache = value;
-				DictionaryUtil.Add(QueryParameters, "PreventCache", value.ToString());
+				perm = value;
+				DictionaryUtil.Add(QueryParameters, "Perm", value.ToString());
 			}
 		}
 
@@ -65,19 +68,6 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public int? Perm
-		{
-			get
-			{
-				return perm;
-			}
-			set	
-			{
-				perm = value;
-				DictionaryUtil.Add(QueryParameters, "Perm", value.ToString());
 			}
 		}
 

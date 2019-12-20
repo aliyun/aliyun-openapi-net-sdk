@@ -82,6 +82,8 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private bool? independentNaming;
 
+			private string remark;
+
 			private OnsInstanceBaseInfo_Endpoints endpoints;
 
 			public string InstanceId
@@ -153,6 +155,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					independentNaming = value;
+				}
+			}
+
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
 				}
 			}
 
