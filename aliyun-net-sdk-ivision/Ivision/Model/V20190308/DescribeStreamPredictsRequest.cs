@@ -45,6 +45,8 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 		private long? pageSize;
 
+		private string modelId;
+
 		private long? currentPage;
 
 		private long? ownerId;
@@ -85,6 +87,19 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ModelId
+		{
+			get
+			{
+				return modelId;
+			}
+			set	
+			{
+				modelId = value;
+				DictionaryUtil.Add(QueryParameters, "ModelId", value);
 			}
 		}
 
