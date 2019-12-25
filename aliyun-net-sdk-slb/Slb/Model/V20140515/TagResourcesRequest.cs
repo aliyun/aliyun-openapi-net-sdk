@@ -27,10 +27,10 @@ using Aliyun.Acs.Slb.Transform.V20140515;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-    public class CreateMasterSlaveVServerGroupRequest : RpcAcsRequest<CreateMasterSlaveVServerGroupResponse>
+    public class TagResourcesRequest : RpcAcsRequest<TagResourcesResponse>
     {
-        public CreateMasterSlaveVServerGroupRequest()
-            : base("Slb", "2014-05-15", "CreateMasterSlaveVServerGroup", "slb", "openAPI")
+        public TagResourcesRequest()
+            : base("Slb", "2014-05-15", "TagResources", "slb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,34 +39,19 @@ namespace Aliyun.Acs.Slb.Model.V20140515
             }
         }
 
-		private string access_key_id;
-
 		private long? resourceOwnerId;
 
-		private string masterSlaveBackendServers;
+		private List<Tag> tags = new List<Tag>(){ };
+
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string masterSlaveVServerGroupName;
-
 		private long? ownerId;
 
-		private string loadBalancerId;
-
-		public string Access_key_id
-		{
-			get
-			{
-				return access_key_id;
-			}
-			set	
-			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
+		private string resourceType;
 
 		public long? ResourceOwnerId
 		{
@@ -81,16 +66,38 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string MasterSlaveBackendServers
+		public List<Tag> Tags
 		{
 			get
 			{
-				return masterSlaveBackendServers;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				masterSlaveBackendServers = value;
-				DictionaryUtil.Add(QueryParameters, "MasterSlaveBackendServers", value);
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
+		public List<string> ResourceIds
+		{
+			get
+			{
+				return resourceIds;
+			}
+
+			set
+			{
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
+				}
 			}
 		}
 
@@ -120,19 +127,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string MasterSlaveVServerGroupName
-		{
-			get
-			{
-				return masterSlaveVServerGroupName;
-			}
-			set	
-			{
-				masterSlaveVServerGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "MasterSlaveVServerGroupName", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -146,22 +140,54 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string LoadBalancerId
+		public string ResourceType
 		{
 			get
 			{
-				return loadBalancerId;
+				return resourceType;
 			}
 			set	
 			{
-				loadBalancerId = value;
-				DictionaryUtil.Add(QueryParameters, "LoadBalancerId", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-        public override CreateMasterSlaveVServerGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+		}
+
+        public override TagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateMasterSlaveVServerGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

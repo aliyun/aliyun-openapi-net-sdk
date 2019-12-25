@@ -96,6 +96,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 			private string vpcId;
 
+			private string vbrId;
+
+			private string serverRegionId;
+
 			private string description;
 
 			public string ServerId
@@ -167,6 +171,30 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 				set	
 				{
 					vpcId = value;
+				}
+			}
+
+			public string VbrId
+			{
+				get
+				{
+					return vbrId;
+				}
+				set	
+				{
+					vbrId = value;
+				}
+			}
+
+			public string ServerRegionId
+			{
+				get
+				{
+					return serverRegionId;
+				}
+				set	
+				{
+					serverRegionId = value;
 				}
 			}
 

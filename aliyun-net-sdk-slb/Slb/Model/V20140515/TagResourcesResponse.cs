@@ -16,24 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Slb.Model.V20140515;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Slb.Transform.V20140515
+namespace Aliyun.Acs.Slb.Model.V20140515
 {
-    public class DeleteMasterSlaveVServerGroupResponseUnmarshaller
-    {
-        public static DeleteMasterSlaveVServerGroupResponse Unmarshall(UnmarshallerContext context)
-        {
-			DeleteMasterSlaveVServerGroupResponse deleteMasterSlaveVServerGroupResponse = new DeleteMasterSlaveVServerGroupResponse();
+	public class TagResourcesResponse : AcsResponse
+	{
 
-			deleteMasterSlaveVServerGroupResponse.HttpResponse = context.HttpResponse;
-			deleteMasterSlaveVServerGroupResponse.RequestId = context.StringValue("DeleteMasterSlaveVServerGroup.RequestId");
-        
-			return deleteMasterSlaveVServerGroupResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

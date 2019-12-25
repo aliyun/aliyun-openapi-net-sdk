@@ -22,12 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-	public class DescribeMasterSlaveVServerGroupsResponse : AcsResponse
+	public class UntagResourcesResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private List<DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup> masterSlaveVServerGroups;
 
 		public string RequestId
 		{
@@ -38,50 +36,6 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public List<DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup> MasterSlaveVServerGroups
-		{
-			get
-			{
-				return masterSlaveVServerGroups;
-			}
-			set	
-			{
-				masterSlaveVServerGroups = value;
-			}
-		}
-
-		public class DescribeMasterSlaveVServerGroups_MasterSlaveVServerGroup
-		{
-
-			private string masterSlaveVServerGroupId;
-
-			private string masterSlaveVServerGroupName;
-
-			public string MasterSlaveVServerGroupId
-			{
-				get
-				{
-					return masterSlaveVServerGroupId;
-				}
-				set	
-				{
-					masterSlaveVServerGroupId = value;
-				}
-			}
-
-			public string MasterSlaveVServerGroupName
-			{
-				get
-				{
-					return masterSlaveVServerGroupName;
-				}
-				set	
-				{
-					masterSlaveVServerGroupName = value;
-				}
 			}
 		}
 	}

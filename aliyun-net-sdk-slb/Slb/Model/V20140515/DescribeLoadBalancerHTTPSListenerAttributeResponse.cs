@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private int? backendServerPort;
 
-		private int? backendProtocol;
+		private string backendProtocol;
 
 		private int? bandwidth;
 
@@ -113,6 +113,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private List<DescribeLoadBalancerHTTPSListenerAttribute_DomainExtension> domainExtensions;
 
+		private List<string> aclIds;
+
 		public string RequestId
 		{
 			get
@@ -149,7 +151,7 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public int? BackendProtocol
+		public string BackendProtocol
 		{
 			get
 			{
@@ -638,6 +640,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				domainExtensions = value;
+			}
+		}
+
+		public List<string> AclIds
+		{
+			get
+			{
+				return aclIds;
+			}
+			set	
+			{
+				aclIds = value;
 			}
 		}
 

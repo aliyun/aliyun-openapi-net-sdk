@@ -27,10 +27,10 @@ using Aliyun.Acs.Slb.Transform.V20140515;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-    public class DeleteMasterSlaveVServerGroupRequest : RpcAcsRequest<DeleteMasterSlaveVServerGroupResponse>
+    public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
-        public DeleteMasterSlaveVServerGroupRequest()
-            : base("Slb", "2014-05-15", "DeleteMasterSlaveVServerGroup", "slb", "openAPI")
+        public UntagResourcesRequest()
+            : base("Slb", "2014-05-15", "UntagResources", "slb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,11 +39,11 @@ namespace Aliyun.Acs.Slb.Model.V20140515
             }
         }
 
-		private string access_key_id;
-
 		private long? resourceOwnerId;
 
-		private string masterSlaveVServerGroupId;
+		private bool? all;
+
+		private List<string> resourceIds = new List<string>(){ };
 
 		private string resourceOwnerAccount;
 
@@ -51,18 +51,9 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private long? ownerId;
 
-		public string Access_key_id
-		{
-			get
-			{
-				return access_key_id;
-			}
-			set	
-			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
+		private string resourceType;
+
+		private List<string> tagKeys = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -77,16 +68,33 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string MasterSlaveVServerGroupId
+		public bool? All
 		{
 			get
 			{
-				return masterSlaveVServerGroupId;
+				return all;
 			}
 			set	
 			{
-				masterSlaveVServerGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "MasterSlaveVServerGroupId", value);
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
+			}
+		}
+
+		public List<string> ResourceIds
+		{
+			get
+			{
+				return resourceIds;
+			}
+
+			set
+			{
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
+				}
 			}
 		}
 
@@ -129,9 +137,39 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-        public override DeleteMasterSlaveVServerGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public List<string> TagKeys
+		{
+			get
+			{
+				return tagKeys;
+			}
+
+			set
+			{
+				tagKeys = value;
+				for (int i = 0; i < tagKeys.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
+				}
+			}
+		}
+
+        public override UntagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteMasterSlaveVServerGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UntagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -71,6 +71,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPListenerAttributeResponse.IdleTimeout = context.IntegerValue("DescribeLoadBalancerHTTPListenerAttribute.IdleTimeout");
 			describeLoadBalancerHTTPListenerAttributeResponse.Description = context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.Description");
 
+			List<string> describeLoadBalancerHTTPListenerAttributeResponse_aclIds = new List<string>();
+			for (int i = 0; i < context.Length("DescribeLoadBalancerHTTPListenerAttribute.AclIds.Length"); i++) {
+				describeLoadBalancerHTTPListenerAttributeResponse_aclIds.Add(context.StringValue("DescribeLoadBalancerHTTPListenerAttribute.AclIds["+ i +"]"));
+			}
+			describeLoadBalancerHTTPListenerAttributeResponse.AclIds = describeLoadBalancerHTTPListenerAttributeResponse_aclIds;
+
 			List<DescribeLoadBalancerHTTPListenerAttributeResponse.DescribeLoadBalancerHTTPListenerAttribute_Rule> describeLoadBalancerHTTPListenerAttributeResponse_rules = new List<DescribeLoadBalancerHTTPListenerAttributeResponse.DescribeLoadBalancerHTTPListenerAttribute_Rule>();
 			for (int i = 0; i < context.Length("DescribeLoadBalancerHTTPListenerAttribute.Rules.Length"); i++) {
 				DescribeLoadBalancerHTTPListenerAttributeResponse.DescribeLoadBalancerHTTPListenerAttribute_Rule rule = new DescribeLoadBalancerHTTPListenerAttributeResponse.DescribeLoadBalancerHTTPListenerAttribute_Rule();

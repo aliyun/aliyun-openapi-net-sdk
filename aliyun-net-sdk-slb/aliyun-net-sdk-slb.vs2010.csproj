@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{26e02950-e8f8-469b-a0fc-a018230fb17e}</ProjectGuid>
+    <ProjectGuid>{6f9d3ba6-4d93-48ab-a0a5-7e9be0f92eeb}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -66,8 +66,6 @@
 	<Compile Include="Slb\Model\V20140515\CreateLoadBalancerUDPListenerResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateMasterSlaveServerGroupRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateMasterSlaveServerGroupResponse.cs" />
-	<Compile Include="Slb\Model\V20140515\CreateMasterSlaveVServerGroupRequest.cs" />
-	<Compile Include="Slb\Model\V20140515\CreateMasterSlaveVServerGroupResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateRulesRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateRulesResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\CreateVServerGroupRequest.cs" />
@@ -84,8 +82,6 @@
 	<Compile Include="Slb\Model\V20140515\DeleteLoadBalancerResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteMasterSlaveServerGroupRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteMasterSlaveServerGroupResponse.cs" />
-	<Compile Include="Slb\Model\V20140515\DeleteMasterSlaveVServerGroupRequest.cs" />
-	<Compile Include="Slb\Model\V20140515\DeleteMasterSlaveVServerGroupResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteRulesRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteRulesResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DeleteServerCertificateRequest.cs" />
@@ -100,6 +96,8 @@
 	<Compile Include="Slb\Model\V20140515\DescribeAvailableResourceResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeCACertificatesRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeCACertificatesResponse.cs" />
+	<Compile Include="Slb\Model\V20140515\DescribeDomainExtensionAttributeRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\DescribeDomainExtensionAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeDomainExtensionsRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeDomainExtensionsResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeHealthStatusRequest.cs" />
@@ -122,10 +120,6 @@
 	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveServerGroupAttributeResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveServerGroupsRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveServerGroupsResponse.cs" />
-	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveVServerGroupAttributeRequest.cs" />
-	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveVServerGroupAttributeResponse.cs" />
-	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveVServerGroupsRequest.cs" />
-	<Compile Include="Slb\Model\V20140515\DescribeMasterSlaveVServerGroupsResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeRegionsRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeRegionsResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeRuleAttributeRequest.cs" />
@@ -142,6 +136,8 @@
 	<Compile Include="Slb\Model\V20140515\DescribeVServerGroupsResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeZonesRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\DescribeZonesResponse.cs" />
+	<Compile Include="Slb\Model\V20140515\ListTagResourcesRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\ListTagResourcesResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\ModifyLoadBalancerInstanceSpecRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\ModifyLoadBalancerInstanceSpecResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\ModifyLoadBalancerInternetSpecRequest.cs" />
@@ -194,6 +190,10 @@
 	<Compile Include="Slb\Model\V20140515\StartLoadBalancerListenerResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\StopLoadBalancerListenerRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\StopLoadBalancerListenerResponse.cs" />
+	<Compile Include="Slb\Model\V20140515\TagResourcesRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\TagResourcesResponse.cs" />
+	<Compile Include="Slb\Model\V20140515\UntagResourcesRequest.cs" />
+	<Compile Include="Slb\Model\V20140515\UntagResourcesResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\UploadCACertificateRequest.cs" />
 	<Compile Include="Slb\Model\V20140515\UploadCACertificateResponse.cs" />
 	<Compile Include="Slb\Model\V20140515\UploadServerCertificateRequest.cs" />
@@ -211,7 +211,6 @@
 	<Compile Include="Slb\Transform\V20140515\CreateLoadBalancerTCPListenerResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateLoadBalancerUDPListenerResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateMasterSlaveServerGroupResponseUnmarshaller.cs" />
-	<Compile Include="Slb\Transform\V20140515\CreateMasterSlaveVServerGroupResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateRulesResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\CreateVServerGroupResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DeleteAccessControlListResponseUnmarshaller.cs" />
@@ -220,7 +219,6 @@
 	<Compile Include="Slb\Transform\V20140515\DeleteLoadBalancerListenerResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DeleteLoadBalancerResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DeleteMasterSlaveServerGroupResponseUnmarshaller.cs" />
-	<Compile Include="Slb\Transform\V20140515\DeleteMasterSlaveVServerGroupResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DeleteRulesResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DeleteServerCertificateResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DeleteVServerGroupResponseUnmarshaller.cs" />
@@ -228,6 +226,7 @@
 	<Compile Include="Slb\Transform\V20140515\DescribeAccessControlListsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeAvailableResourceResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeCACertificatesResponseUnmarshaller.cs" />
+	<Compile Include="Slb\Transform\V20140515\DescribeDomainExtensionAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeDomainExtensionsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeHealthStatusResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeListenerAccessControlAttributeResponseUnmarshaller.cs" />
@@ -239,8 +238,6 @@
 	<Compile Include="Slb\Transform\V20140515\DescribeLoadBalancersResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeMasterSlaveServerGroupAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeMasterSlaveServerGroupsResponseUnmarshaller.cs" />
-	<Compile Include="Slb\Transform\V20140515\DescribeMasterSlaveVServerGroupAttributeResponseUnmarshaller.cs" />
-	<Compile Include="Slb\Transform\V20140515\DescribeMasterSlaveVServerGroupsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeRegionsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeRuleAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeRulesResponseUnmarshaller.cs" />
@@ -249,6 +246,7 @@
 	<Compile Include="Slb\Transform\V20140515\DescribeVServerGroupAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeVServerGroupsResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\DescribeZonesResponseUnmarshaller.cs" />
+	<Compile Include="Slb\Transform\V20140515\ListTagResourcesResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\ModifyLoadBalancerInstanceSpecResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\ModifyLoadBalancerInternetSpecResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\ModifyLoadBalancerPayTypeResponseUnmarshaller.cs" />
@@ -275,6 +273,8 @@
 	<Compile Include="Slb\Transform\V20140515\SetVServerGroupAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\StartLoadBalancerListenerResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\StopLoadBalancerListenerResponseUnmarshaller.cs" />
+	<Compile Include="Slb\Transform\V20140515\TagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="Slb\Transform\V20140515\UntagResourcesResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\UploadCACertificateResponseUnmarshaller.cs" />
 	<Compile Include="Slb\Transform\V20140515\UploadServerCertificateResponseUnmarshaller.cs" />
   </ItemGroup>

@@ -93,6 +93,10 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string deleteProtection;
 
+		private string associatedCenId;
+
+		private string associatedCenStatus;
+
 		private string cloudInstanceType;
 
 		private string cloudInstanceId;
@@ -100,6 +104,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 		private string tunnelType;
 
 		private long? cloudInstanceUid;
+
+		private bool? supportPrivateLink;
 
 		private List<DescribeLoadBalancerAttribute_ListenerPortAndProtocal> listenerPortsAndProtocal;
 
@@ -517,6 +523,30 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
+		public string AssociatedCenId
+		{
+			get
+			{
+				return associatedCenId;
+			}
+			set	
+			{
+				associatedCenId = value;
+			}
+		}
+
+		public string AssociatedCenStatus
+		{
+			get
+			{
+				return associatedCenStatus;
+			}
+			set	
+			{
+				associatedCenStatus = value;
+			}
+		}
+
 		public string CloudInstanceType
 		{
 			get
@@ -562,6 +592,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				cloudInstanceUid = value;
+			}
+		}
+
+		public bool? SupportPrivateLink
+		{
+			get
+			{
+				return supportPrivateLink;
+			}
+			set	
+			{
+				supportPrivateLink = value;
 			}
 		}
 

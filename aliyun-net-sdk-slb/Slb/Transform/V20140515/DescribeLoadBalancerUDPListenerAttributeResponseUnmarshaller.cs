@@ -54,6 +54,24 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerUDPListenerAttributeResponse.AclStatus = context.StringValue("DescribeLoadBalancerUDPListenerAttribute.AclStatus");
 			describeLoadBalancerUDPListenerAttributeResponse.VpcIds = context.StringValue("DescribeLoadBalancerUDPListenerAttribute.VpcIds");
 			describeLoadBalancerUDPListenerAttributeResponse.Description = context.StringValue("DescribeLoadBalancerUDPListenerAttribute.Description");
+			describeLoadBalancerUDPListenerAttributeResponse.ConnectionDrain = context.StringValue("DescribeLoadBalancerUDPListenerAttribute.ConnectionDrain");
+			describeLoadBalancerUDPListenerAttributeResponse.ConnectionDrainTimeout = context.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.ConnectionDrainTimeout");
+
+			List<string> describeLoadBalancerUDPListenerAttributeResponse_aclIds = new List<string>();
+			for (int i = 0; i < context.Length("DescribeLoadBalancerUDPListenerAttribute.AclIds.Length"); i++) {
+				describeLoadBalancerUDPListenerAttributeResponse_aclIds.Add(context.StringValue("DescribeLoadBalancerUDPListenerAttribute.AclIds["+ i +"]"));
+			}
+			describeLoadBalancerUDPListenerAttributeResponse.AclIds = describeLoadBalancerUDPListenerAttributeResponse_aclIds;
+
+			List<DescribeLoadBalancerUDPListenerAttributeResponse.DescribeLoadBalancerUDPListenerAttribute_PortRange> describeLoadBalancerUDPListenerAttributeResponse_portRanges = new List<DescribeLoadBalancerUDPListenerAttributeResponse.DescribeLoadBalancerUDPListenerAttribute_PortRange>();
+			for (int i = 0; i < context.Length("DescribeLoadBalancerUDPListenerAttribute.PortRanges.Length"); i++) {
+				DescribeLoadBalancerUDPListenerAttributeResponse.DescribeLoadBalancerUDPListenerAttribute_PortRange portRange = new DescribeLoadBalancerUDPListenerAttributeResponse.DescribeLoadBalancerUDPListenerAttribute_PortRange();
+				portRange.StartPort = context.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.PortRanges["+ i +"].StartPort");
+				portRange.EndPort = context.IntegerValue("DescribeLoadBalancerUDPListenerAttribute.PortRanges["+ i +"].EndPort");
+
+				describeLoadBalancerUDPListenerAttributeResponse_portRanges.Add(portRange);
+			}
+			describeLoadBalancerUDPListenerAttributeResponse.PortRanges = describeLoadBalancerUDPListenerAttributeResponse_portRanges;
         
 			return describeLoadBalancerUDPListenerAttributeResponse;
         }

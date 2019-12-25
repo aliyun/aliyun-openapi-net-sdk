@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 				backendServer.Type = context.StringValue("SetVServerGroupAttribute.BackendServers["+ i +"].Type");
 				backendServer.ServerIp = context.StringValue("SetVServerGroupAttribute.BackendServers["+ i +"].ServerIp");
 				backendServer.VpcId = context.StringValue("SetVServerGroupAttribute.BackendServers["+ i +"].VpcId");
+				backendServer.VbrId = context.StringValue("SetVServerGroupAttribute.BackendServers["+ i +"].VbrId");
+				backendServer.ServerRegionId = context.StringValue("SetVServerGroupAttribute.BackendServers["+ i +"].ServerRegionId");
 				backendServer.Description = context.StringValue("SetVServerGroupAttribute.BackendServers["+ i +"].Description");
 
 				setVServerGroupAttributeResponse_backendServers.Add(backendServer);

@@ -34,7 +34,7 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPSListenerAttributeResponse.RequestId = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.RequestId");
 			describeLoadBalancerHTTPSListenerAttributeResponse.ListenerPort = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.ListenerPort");
 			describeLoadBalancerHTTPSListenerAttributeResponse.BackendServerPort = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.BackendServerPort");
-			describeLoadBalancerHTTPSListenerAttributeResponse.BackendProtocol = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.BackendProtocol");
+			describeLoadBalancerHTTPSListenerAttributeResponse.BackendProtocol = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.BackendProtocol");
 			describeLoadBalancerHTTPSListenerAttributeResponse.Bandwidth = context.IntegerValue("DescribeLoadBalancerHTTPSListenerAttribute.Bandwidth");
 			describeLoadBalancerHTTPSListenerAttributeResponse.Status = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Status");
 			describeLoadBalancerHTTPSListenerAttributeResponse.SecurityStatus = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.SecurityStatus");
@@ -73,6 +73,12 @@ namespace Aliyun.Acs.Slb.Transform.V20140515
 			describeLoadBalancerHTTPSListenerAttributeResponse.EnableHttp2 = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.EnableHttp2");
 			describeLoadBalancerHTTPSListenerAttributeResponse.TLSCipherPolicy = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.TLSCipherPolicy");
 			describeLoadBalancerHTTPSListenerAttributeResponse.Description = context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.Description");
+
+			List<string> describeLoadBalancerHTTPSListenerAttributeResponse_aclIds = new List<string>();
+			for (int i = 0; i < context.Length("DescribeLoadBalancerHTTPSListenerAttribute.AclIds.Length"); i++) {
+				describeLoadBalancerHTTPSListenerAttributeResponse_aclIds.Add(context.StringValue("DescribeLoadBalancerHTTPSListenerAttribute.AclIds["+ i +"]"));
+			}
+			describeLoadBalancerHTTPSListenerAttributeResponse.AclIds = describeLoadBalancerHTTPSListenerAttributeResponse_aclIds;
 
 			List<DescribeLoadBalancerHTTPSListenerAttributeResponse.DescribeLoadBalancerHTTPSListenerAttribute_Rule> describeLoadBalancerHTTPSListenerAttributeResponse_rules = new List<DescribeLoadBalancerHTTPSListenerAttributeResponse.DescribeLoadBalancerHTTPSListenerAttribute_Rule>();
 			for (int i = 0; i < context.Length("DescribeLoadBalancerHTTPSListenerAttribute.Rules.Length"); i++) {

@@ -105,6 +105,8 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private List<DescribeLoadBalancerHTTPListenerAttribute_Rule> rules;
 
+		private List<string> aclIds;
+
 		public string RequestId
 		{
 			get
@@ -582,6 +584,18 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				rules = value;
+			}
+		}
+
+		public List<string> AclIds
+		{
+			get
+			{
+				return aclIds;
+			}
+			set	
+			{
+				aclIds = value;
 			}
 		}
 

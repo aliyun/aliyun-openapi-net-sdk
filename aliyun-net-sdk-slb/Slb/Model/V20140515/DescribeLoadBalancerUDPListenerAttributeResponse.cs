@@ -71,6 +71,14 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 
 		private string description;
 
+		private string connectionDrain;
+
+		private int? connectionDrainTimeout;
+
+		private List<DescribeLoadBalancerUDPListenerAttribute_PortRange> portRanges;
+
+		private List<string> aclIds;
+
 		public string RequestId
 		{
 			get
@@ -344,6 +352,86 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			set	
 			{
 				description = value;
+			}
+		}
+
+		public string ConnectionDrain
+		{
+			get
+			{
+				return connectionDrain;
+			}
+			set	
+			{
+				connectionDrain = value;
+			}
+		}
+
+		public int? ConnectionDrainTimeout
+		{
+			get
+			{
+				return connectionDrainTimeout;
+			}
+			set	
+			{
+				connectionDrainTimeout = value;
+			}
+		}
+
+		public List<DescribeLoadBalancerUDPListenerAttribute_PortRange> PortRanges
+		{
+			get
+			{
+				return portRanges;
+			}
+			set	
+			{
+				portRanges = value;
+			}
+		}
+
+		public List<string> AclIds
+		{
+			get
+			{
+				return aclIds;
+			}
+			set	
+			{
+				aclIds = value;
+			}
+		}
+
+		public class DescribeLoadBalancerUDPListenerAttribute_PortRange
+		{
+
+			private int? startPort;
+
+			private int? endPort;
+
+			public int? StartPort
+			{
+				get
+				{
+					return startPort;
+				}
+				set	
+				{
+					startPort = value;
+				}
+			}
+
+			public int? EndPort
+			{
+				get
+				{
+					return endPort;
+				}
+				set	
+				{
+					endPort = value;
+				}
 			}
 		}
 	}

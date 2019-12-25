@@ -27,10 +27,10 @@ using Aliyun.Acs.Slb.Transform.V20140515;
 
 namespace Aliyun.Acs.Slb.Model.V20140515
 {
-    public class DescribeMasterSlaveVServerGroupAttributeRequest : RpcAcsRequest<DescribeMasterSlaveVServerGroupAttributeResponse>
+    public class DescribeDomainExtensionAttributeRequest : RpcAcsRequest<DescribeDomainExtensionAttributeResponse>
     {
-        public DescribeMasterSlaveVServerGroupAttributeRequest()
-            : base("Slb", "2014-05-15", "DescribeMasterSlaveVServerGroupAttribute", "slb", "openAPI")
+        public DescribeDomainExtensionAttributeRequest()
+            : base("Slb", "2014-05-15", "DescribeDomainExtensionAttribute", "slb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,30 +39,15 @@ namespace Aliyun.Acs.Slb.Model.V20140515
             }
         }
 
-		private string access_key_id;
-
 		private long? resourceOwnerId;
 
-		private string masterSlaveVServerGroupId;
+		private string domainExtensionId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		public string Access_key_id
-		{
-			get
-			{
-				return access_key_id;
-			}
-			set	
-			{
-				access_key_id = value;
-				DictionaryUtil.Add(QueryParameters, "access_key_id", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -77,16 +62,16 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-		public string MasterSlaveVServerGroupId
+		public string DomainExtensionId
 		{
 			get
 			{
-				return masterSlaveVServerGroupId;
+				return domainExtensionId;
 			}
 			set	
 			{
-				masterSlaveVServerGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "MasterSlaveVServerGroupId", value);
+				domainExtensionId = value;
+				DictionaryUtil.Add(QueryParameters, "DomainExtensionId", value);
 			}
 		}
 
@@ -129,9 +114,9 @@ namespace Aliyun.Acs.Slb.Model.V20140515
 			}
 		}
 
-        public override DescribeMasterSlaveVServerGroupAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainExtensionAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeMasterSlaveVServerGroupAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainExtensionAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
