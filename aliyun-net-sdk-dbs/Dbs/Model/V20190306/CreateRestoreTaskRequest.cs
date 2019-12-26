@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string restoreTaskName;
 
+		private string restoreHome;
+
 		private string destinationEndpointOracleSID;
 
 		private long? restoreTime;
@@ -173,6 +175,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				restoreTaskName = value;
 				DictionaryUtil.Add(QueryParameters, "RestoreTaskName", value);
+			}
+		}
+
+		public string RestoreHome
+		{
+			get
+			{
+				return restoreHome;
+			}
+			set	
+			{
+				restoreHome = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreHome", value);
 			}
 		}
 
