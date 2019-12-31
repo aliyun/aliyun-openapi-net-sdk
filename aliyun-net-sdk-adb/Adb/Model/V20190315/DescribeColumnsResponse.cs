@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
 {
-	public class DescribeRegionsResponse : AcsResponse
+	public class DescribeColumnsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeRegions_Region> regions;
+		private List<DescribeColumns_Column> items;
 
 		public string RequestId
 		{
@@ -41,120 +41,102 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public List<DescribeRegions_Region> Regions
+		public List<DescribeColumns_Column> Items
 		{
 			get
 			{
-				return regions;
+				return items;
 			}
 			set	
 			{
-				regions = value;
+				items = value;
 			}
 		}
 
-		public class DescribeRegions_Region
+		public class DescribeColumns_Column
 		{
 
-			private string regionId;
+			private string dBClusterId;
 
-			private string localName;
+			private string schemaName;
 
-			private string regionEndpoint;
+			private string tableName;
 
-			private List<DescribeRegions_Zone> zones;
+			private string columnName;
 
-			public string RegionId
+			private string type;
+
+			private bool? primaryKey;
+
+			public string DBClusterId
 			{
 				get
 				{
-					return regionId;
+					return dBClusterId;
 				}
 				set	
 				{
-					regionId = value;
+					dBClusterId = value;
 				}
 			}
 
-			public string LocalName
+			public string SchemaName
 			{
 				get
 				{
-					return localName;
+					return schemaName;
 				}
 				set	
 				{
-					localName = value;
+					schemaName = value;
 				}
 			}
 
-			public string RegionEndpoint
+			public string TableName
 			{
 				get
 				{
-					return regionEndpoint;
+					return tableName;
 				}
 				set	
 				{
-					regionEndpoint = value;
+					tableName = value;
 				}
 			}
 
-			public List<DescribeRegions_Zone> Zones
+			public string ColumnName
 			{
 				get
 				{
-					return zones;
+					return columnName;
 				}
 				set	
 				{
-					zones = value;
+					columnName = value;
 				}
 			}
 
-			public class DescribeRegions_Zone
+			public string Type
 			{
-
-				private string zoneId;
-
-				private bool? vpcEnabled;
-
-				private string localName;
-
-				public string ZoneId
+				get
 				{
-					get
-					{
-						return zoneId;
-					}
-					set	
-					{
-						zoneId = value;
-					}
+					return type;
 				}
-
-				public bool? VpcEnabled
+				set	
 				{
-					get
-					{
-						return vpcEnabled;
-					}
-					set	
-					{
-						vpcEnabled = value;
-					}
+					type = value;
 				}
+			}
 
-				public string LocalName
+			public bool? PrimaryKey
+			{
+				get
 				{
-					get
-					{
-						return localName;
-					}
-					set	
-					{
-						localName = value;
-					}
+					return primaryKey;
+				}
+				set	
+				{
+					primaryKey = value;
 				}
 			}
 		}

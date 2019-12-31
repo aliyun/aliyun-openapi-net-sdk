@@ -27,10 +27,10 @@ using Aliyun.Acs.adb.Transform.V20190315;
 
 namespace Aliyun.Acs.adb.Model.V20190315
 {
-    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
+    public class DescribeProcessListRequest : RpcAcsRequest<DescribeProcessListResponse>
     {
-        public DescribeRegionsRequest()
-            : base("adb", "2019-03-15", "DescribeRegions", "ads", "openAPI")
+        public DescribeProcessListRequest()
+            : base("adb", "2019-03-15", "DescribeProcessList", "ads", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,27 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private long? resourceOwnerId;
 
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private bool? showFull;
+
+		private int? runningTime;
+
+		private string keyword;
+
+		private string order;
+
 		private string resourceOwnerAccount;
+
+		private string dBClusterId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string acceptLanguage;
+		private string user;
 
 		public long? ResourceOwnerId
 		{
@@ -62,6 +76,84 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public bool? ShowFull
+		{
+			get
+			{
+				return showFull;
+			}
+			set	
+			{
+				showFull = value;
+				DictionaryUtil.Add(QueryParameters, "ShowFull", value.ToString());
+			}
+		}
+
+		public int? RunningTime
+		{
+			get
+			{
+				return runningTime;
+			}
+			set	
+			{
+				runningTime = value;
+				DictionaryUtil.Add(QueryParameters, "RunningTime", value.ToString());
+			}
+		}
+
+		public string Keyword
+		{
+			get
+			{
+				return keyword;
+			}
+			set	
+			{
+				keyword = value;
+				DictionaryUtil.Add(QueryParameters, "Keyword", value);
+			}
+		}
+
+		public string Order
+		{
+			get
+			{
+				return order;
+			}
+			set	
+			{
+				order = value;
+				DictionaryUtil.Add(QueryParameters, "Order", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -72,6 +164,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -101,22 +206,22 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string AcceptLanguage
+		public string User
 		{
 			get
 			{
-				return acceptLanguage;
+				return user;
 			}
 			set	
 			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
+				user = value;
+				DictionaryUtil.Add(QueryParameters, "User", value);
 			}
 		}
 
-        public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeProcessListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeProcessListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

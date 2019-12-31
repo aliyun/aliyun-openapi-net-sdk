@@ -130,6 +130,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string commodityCode;
 
+			private string category;
+
 			private List<DescribeDBClusters_Tag> tags;
 
 			public string DBClusterId
@@ -321,6 +323,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					commodityCode = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
 				}
 			}
 

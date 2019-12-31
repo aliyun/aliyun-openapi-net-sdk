@@ -22,12 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.adb.Model.V20190315
 {
-	public class DescribeRegionsResponse : AcsResponse
+	public class DescribeInclinedTablesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeRegions_Region> regions;
+		private string totalCount;
+
+		private string pageNumber;
+
+		private string pageSize;
+
+		private List<DescribeInclinedTables_Table> items;
 
 		public string RequestId
 		{
@@ -41,120 +47,124 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public List<DescribeRegions_Region> Regions
+		public string TotalCount
 		{
 			get
 			{
-				return regions;
+				return totalCount;
 			}
 			set	
 			{
-				regions = value;
+				totalCount = value;
 			}
 		}
 
-		public class DescribeRegions_Region
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public string PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public List<DescribeInclinedTables_Table> Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+			}
+		}
+
+		public class DescribeInclinedTables_Table
 		{
 
-			private string regionId;
+			private string schema;
 
-			private string localName;
+			private string name;
 
-			private string regionEndpoint;
+			private string type;
 
-			private List<DescribeRegions_Zone> zones;
+			private long? size;
 
-			public string RegionId
+			private bool? isIncline;
+
+			public string Schema
 			{
 				get
 				{
-					return regionId;
+					return schema;
 				}
 				set	
 				{
-					regionId = value;
+					schema = value;
 				}
 			}
 
-			public string LocalName
+			public string Name
 			{
 				get
 				{
-					return localName;
+					return name;
 				}
 				set	
 				{
-					localName = value;
+					name = value;
 				}
 			}
 
-			public string RegionEndpoint
+			public string Type
 			{
 				get
 				{
-					return regionEndpoint;
+					return type;
 				}
 				set	
 				{
-					regionEndpoint = value;
+					type = value;
 				}
 			}
 
-			public List<DescribeRegions_Zone> Zones
+			public long? Size
 			{
 				get
 				{
-					return zones;
+					return size;
 				}
 				set	
 				{
-					zones = value;
+					size = value;
 				}
 			}
 
-			public class DescribeRegions_Zone
+			public bool? IsIncline
 			{
-
-				private string zoneId;
-
-				private bool? vpcEnabled;
-
-				private string localName;
-
-				public string ZoneId
+				get
 				{
-					get
-					{
-						return zoneId;
-					}
-					set	
-					{
-						zoneId = value;
-					}
+					return isIncline;
 				}
-
-				public bool? VpcEnabled
+				set	
 				{
-					get
-					{
-						return vpcEnabled;
-					}
-					set	
-					{
-						vpcEnabled = value;
-					}
-				}
-
-				public string LocalName
-				{
-					get
-					{
-						return localName;
-					}
-					set	
-					{
-						localName = value;
-					}
+					isIncline = value;
 				}
 			}
 		}

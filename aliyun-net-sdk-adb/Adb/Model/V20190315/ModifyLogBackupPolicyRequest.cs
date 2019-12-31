@@ -27,10 +27,10 @@ using Aliyun.Acs.adb.Transform.V20190315;
 
 namespace Aliyun.Acs.adb.Model.V20190315
 {
-    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
+    public class ModifyLogBackupPolicyRequest : RpcAcsRequest<ModifyLogBackupPolicyResponse>
     {
-        public DescribeRegionsRequest()
-            : base("adb", "2019-03-15", "DescribeRegions", "ads", "openAPI")
+        public ModifyLogBackupPolicyRequest()
+            : base("adb", "2019-03-15", "ModifyLogBackupPolicy", "ads", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,17 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private long? resourceOwnerId;
 
+		private string enableBackupLog;
+
 		private string resourceOwnerAccount;
+
+		private string dBClusterId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string acceptLanguage;
+		private string logBackupRetentionPeriod;
 
 		public long? ResourceOwnerId
 		{
@@ -62,6 +66,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
+		public string EnableBackupLog
+		{
+			get
+			{
+				return enableBackupLog;
+			}
+			set	
+			{
+				enableBackupLog = value;
+				DictionaryUtil.Add(QueryParameters, "EnableBackupLog", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -72,6 +89,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -101,22 +131,22 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string AcceptLanguage
+		public string LogBackupRetentionPeriod
 		{
 			get
 			{
-				return acceptLanguage;
+				return logBackupRetentionPeriod;
 			}
 			set	
 			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
+				logBackupRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "LogBackupRetentionPeriod", value);
 			}
 		}
 
-        public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyLogBackupPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyLogBackupPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

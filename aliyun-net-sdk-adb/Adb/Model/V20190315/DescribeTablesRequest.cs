@@ -27,10 +27,10 @@ using Aliyun.Acs.adb.Transform.V20190315;
 
 namespace Aliyun.Acs.adb.Model.V20190315
 {
-    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
+    public class DescribeTablesRequest : RpcAcsRequest<DescribeTablesResponse>
     {
-        public DescribeRegionsRequest()
-            : base("adb", "2019-03-15", "DescribeRegions", "ads", "openAPI")
+        public DescribeTablesRequest()
+            : base("adb", "2019-03-15", "DescribeTables", "ads", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private long? resourceOwnerId;
 
+		private string schemaName;
+
 		private string resourceOwnerAccount;
+
+		private string dBClusterId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string acceptLanguage;
 
 		public long? ResourceOwnerId
 		{
@@ -62,6 +64,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
+		public string SchemaName
+		{
+			get
+			{
+				return schemaName;
+			}
+			set	
+			{
+				schemaName = value;
+				DictionaryUtil.Add(QueryParameters, "SchemaName", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -72,6 +87,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -101,22 +129,9 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string AcceptLanguage
-		{
-			get
-			{
-				return acceptLanguage;
-			}
-			set	
-			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
-			}
-		}
-
-        public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeTablesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeTablesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.adb.Transform.V20190315;
 
 namespace Aliyun.Acs.adb.Model.V20190315
 {
-    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
+    public class DescribeLoghubDetailRequest : RpcAcsRequest<DescribeLoghubDetailResponse>
     {
-        public DescribeRegionsRequest()
-            : base("adb", "2019-03-15", "DescribeRegions", "ads", "openAPI")
+        public DescribeLoghubDetailRequest()
+            : base("adb", "2019-03-15", "DescribeLoghubDetail", "ads", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,15 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private long? resourceOwnerId;
 
+		private string projectName;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string acceptLanguage;
+		private string exportName;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ProjectName
+		{
+			get
+			{
+				return projectName;
+			}
+			set	
+			{
+				projectName = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectName", value);
 			}
 		}
 
@@ -101,22 +116,22 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string AcceptLanguage
+		public string ExportName
 		{
 			get
 			{
-				return acceptLanguage;
+				return exportName;
 			}
 			set	
 			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
+				exportName = value;
+				DictionaryUtil.Add(QueryParameters, "ExportName", value);
 			}
 		}
 
-        public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLoghubDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLoghubDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

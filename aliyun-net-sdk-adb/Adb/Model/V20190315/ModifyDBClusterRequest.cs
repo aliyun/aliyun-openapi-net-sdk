@@ -27,10 +27,10 @@ using Aliyun.Acs.adb.Transform.V20190315;
 
 namespace Aliyun.Acs.adb.Model.V20190315
 {
-    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
+    public class ModifyDBClusterRequest : RpcAcsRequest<ModifyDBClusterResponse>
     {
-        public DescribeRegionsRequest()
-            : base("adb", "2019-03-15", "DescribeRegions", "ads", "openAPI")
+        public ModifyDBClusterRequest()
+            : base("adb", "2019-03-15", "ModifyDBCluster", "ads", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,21 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private long? resourceOwnerId;
 
+		private string dBNodeClass;
+
 		private string resourceOwnerAccount;
+
+		private string dBClusterId;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string acceptLanguage;
+		private string dBNodeGroupCount;
+
+		private string dBNodeStorage;
+
+		private string modifyType;
 
 		public long? ResourceOwnerId
 		{
@@ -62,6 +70,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
+		public string DBNodeClass
+		{
+			get
+			{
+				return dBNodeClass;
+			}
+			set	
+			{
+				dBNodeClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeClass", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -72,6 +93,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -101,22 +135,48 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string AcceptLanguage
+		public string DBNodeGroupCount
 		{
 			get
 			{
-				return acceptLanguage;
+				return dBNodeGroupCount;
 			}
 			set	
 			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
+				dBNodeGroupCount = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeGroupCount", value);
 			}
 		}
 
-        public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string DBNodeStorage
+		{
+			get
+			{
+				return dBNodeStorage;
+			}
+			set	
+			{
+				dBNodeStorage = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeStorage", value);
+			}
+		}
+
+		public string ModifyType
+		{
+			get
+			{
+				return modifyType;
+			}
+			set	
+			{
+				modifyType = value;
+				DictionaryUtil.Add(QueryParameters, "ModifyType", value);
+			}
+		}
+
+        public override ModifyDBClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

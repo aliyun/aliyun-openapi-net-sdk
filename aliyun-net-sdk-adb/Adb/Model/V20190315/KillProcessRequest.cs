@@ -27,10 +27,10 @@ using Aliyun.Acs.adb.Transform.V20190315;
 
 namespace Aliyun.Acs.adb.Model.V20190315
 {
-    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
+    public class KillProcessRequest : RpcAcsRequest<KillProcessResponse>
     {
-        public DescribeRegionsRequest()
-            : base("adb", "2019-03-15", "DescribeRegions", "ads", "openAPI")
+        public KillProcessRequest()
+            : base("adb", "2019-03-15", "KillProcess", "ads", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,11 +43,13 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string resourceOwnerAccount;
 
+		private string dBClusterId;
+
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string acceptLanguage;
+		private string processId;
 
 		public long? ResourceOwnerId
 		{
@@ -72,6 +74,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
 			}
 		}
 
@@ -101,22 +116,22 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
-		public string AcceptLanguage
+		public string ProcessId
 		{
 			get
 			{
-				return acceptLanguage;
+				return processId;
 			}
 			set	
 			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
+				processId = value;
+				DictionaryUtil.Add(QueryParameters, "ProcessId", value);
 			}
 		}
 
-        public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override KillProcessResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return KillProcessResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

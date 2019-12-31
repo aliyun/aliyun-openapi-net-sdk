@@ -27,10 +27,10 @@ using Aliyun.Acs.adb.Transform.V20190315;
 
 namespace Aliyun.Acs.adb.Model.V20190315
 {
-    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
+    public class DescribeAvailableResourceRequest : RpcAcsRequest<DescribeAvailableResourceResponse>
     {
-        public DescribeRegionsRequest()
-            : base("adb", "2019-03-15", "DescribeRegions", "ads", "openAPI")
+        public DescribeAvailableResourceRequest()
+            : base("adb", "2019-03-15", "DescribeAvailableResource", "ads", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,84 +39,44 @@ namespace Aliyun.Acs.adb.Model.V20190315
             }
         }
 
-		private long? resourceOwnerId;
+		private string zoneId;
 
-		private string resourceOwnerAccount;
+		private string chargeType;
 
-		private string ownerAccount;
-
-		private long? ownerId;
-
-		private string acceptLanguage;
-
-		public long? ResourceOwnerId
+		public string ZoneId
 		{
 			get
 			{
-				return resourceOwnerId;
+				return zoneId;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string ChargeType
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return chargeType;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				chargeType = value;
+				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
 			}
 		}
 
-		public string OwnerAccount
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
+			return false;
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AcceptLanguage
-		{
-			get
-			{
-				return acceptLanguage;
-			}
-			set	
-			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
-			}
-		}
-
-        public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeAvailableResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAvailableResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

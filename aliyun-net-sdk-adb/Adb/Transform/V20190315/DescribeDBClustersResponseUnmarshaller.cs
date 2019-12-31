@@ -55,6 +55,7 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 				dBCluster.DBNodeClass = context.StringValue("DescribeDBClusters.Items["+ i +"].DBNodeClass");
 				dBCluster.DBNodeCount = context.LongValue("DescribeDBClusters.Items["+ i +"].DBNodeCount");
 				dBCluster.CommodityCode = context.StringValue("DescribeDBClusters.Items["+ i +"].CommodityCode");
+				dBCluster.Category = context.StringValue("DescribeDBClusters.Items["+ i +"].Category");
 
 				List<DescribeDBClustersResponse.DescribeDBClusters_DBCluster.DescribeDBClusters_Tag> dBCluster_tags = new List<DescribeDBClustersResponse.DescribeDBClusters_DBCluster.DescribeDBClusters_Tag>();
 				for (int j = 0; j < context.Length("DescribeDBClusters.Items["+ i +"].Tags.Length"); j++) {
