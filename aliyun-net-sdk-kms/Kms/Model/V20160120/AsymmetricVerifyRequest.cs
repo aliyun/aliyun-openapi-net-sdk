@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class CreateKeyRequest : RpcAcsRequest<CreateKeyResponse>
+    public class AsymmetricVerifyRequest : RpcAcsRequest<AsymmetricVerifyResponse>
     {
-        public CreateKeyRequest()
-            : base("Kms", "2016-01-20", "CreateKey", "kms", "openAPI")
+        public AsymmetricVerifyRequest()
+            : base("Kms", "2016-01-20", "AsymmetricVerify", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,114 +40,84 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string protectionLevel;
+		private string keyVersionId;
 
-		private string keyUsage;
+		private string digest;
 
-		private string origin;
+		private string keyId;
 
-		private string description;
+		private string _value;
 
-		private string keySpec;
+		private string algorithm;
 
-		private string rotationInterval;
-
-		private bool? enableAutomaticRotation;
-
-		public string ProtectionLevel
+		public string KeyVersionId
 		{
 			get
 			{
-				return protectionLevel;
+				return keyVersionId;
 			}
 			set	
 			{
-				protectionLevel = value;
-				DictionaryUtil.Add(QueryParameters, "ProtectionLevel", value);
+				keyVersionId = value;
+				DictionaryUtil.Add(QueryParameters, "KeyVersionId", value);
 			}
 		}
 
-		public string KeyUsage
+		public string Digest
 		{
 			get
 			{
-				return keyUsage;
+				return digest;
 			}
 			set	
 			{
-				keyUsage = value;
-				DictionaryUtil.Add(QueryParameters, "KeyUsage", value);
+				digest = value;
+				DictionaryUtil.Add(QueryParameters, "Digest", value);
 			}
 		}
 
-		public string Origin
+		public string KeyId
 		{
 			get
 			{
-				return origin;
+				return keyId;
 			}
 			set	
 			{
-				origin = value;
-				DictionaryUtil.Add(QueryParameters, "Origin", value);
+				keyId = value;
+				DictionaryUtil.Add(QueryParameters, "KeyId", value);
 			}
 		}
 
-		public string Description
+		public string _Value
 		{
 			get
 			{
-				return description;
+				return _value;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				_value = value;
+				DictionaryUtil.Add(QueryParameters, "Value", value);
 			}
 		}
 
-		public string KeySpec
+		public string Algorithm
 		{
 			get
 			{
-				return keySpec;
+				return algorithm;
 			}
 			set	
 			{
-				keySpec = value;
-				DictionaryUtil.Add(QueryParameters, "KeySpec", value);
+				algorithm = value;
+				DictionaryUtil.Add(QueryParameters, "Algorithm", value);
 			}
 		}
 
-		public string RotationInterval
-		{
-			get
-			{
-				return rotationInterval;
-			}
-			set	
-			{
-				rotationInterval = value;
-				DictionaryUtil.Add(QueryParameters, "RotationInterval", value);
-			}
-		}
-
-		public bool? EnableAutomaticRotation
-		{
-			get
-			{
-				return enableAutomaticRotation;
-			}
-			set	
-			{
-				enableAutomaticRotation = value;
-				DictionaryUtil.Add(QueryParameters, "EnableAutomaticRotation", value.ToString());
-			}
-		}
-
-        public override CreateKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AsymmetricVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AsymmetricVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

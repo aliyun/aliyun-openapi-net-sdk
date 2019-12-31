@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{61e4ff31-307b-4cdd-ac79-22b3345c76db}</ProjectGuid>
+    <ProjectGuid>{13510c64-d5fd-48e5-8f47-81db489ca29f}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -40,12 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="Kms\Model\V20160120\AsymmetricDecryptRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\AsymmetricDecryptResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\AsymmetricEncryptRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\AsymmetricEncryptResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\AsymmetricSignRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\AsymmetricSignResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\AsymmetricVerifyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\AsymmetricVerifyResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\CancelKeyDeletionRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\CancelKeyDeletionResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\CreateAliasRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\CreateAliasResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\CreateKeyRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\CreateKeyResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\CreateKeyVersionRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\CreateKeyVersionResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\DecryptRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\DecryptResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\DeleteAliasRequest.cs" />
@@ -72,6 +82,8 @@
 	<Compile Include="Kms\Model\V20160120\GenerateDataKeyWithoutPlaintextResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\GetParametersForImportRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\GetParametersForImportResponse.cs" />
+	<Compile Include="Kms\Model\V20160120\GetPublicKeyRequest.cs" />
+	<Compile Include="Kms\Model\V20160120\GetPublicKeyResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\ImportKeyMaterialRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\ImportKeyMaterialResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\ListAliasesByKeyIdRequest.cs" />
@@ -96,9 +108,14 @@
 	<Compile Include="Kms\Model\V20160120\UpdateKeyDescriptionResponse.cs" />
 	<Compile Include="Kms\Model\V20160120\UpdateRotationPolicyRequest.cs" />
 	<Compile Include="Kms\Model\V20160120\UpdateRotationPolicyResponse.cs" />
+	<Compile Include="Kms\Transform\V20160120\AsymmetricDecryptResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\AsymmetricEncryptResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\AsymmetricSignResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\AsymmetricVerifyResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\CancelKeyDeletionResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\CreateAliasResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\CreateKeyResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\CreateKeyVersionResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\DecryptResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\DeleteAliasResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\DeleteKeyMaterialResponseUnmarshaller.cs" />
@@ -112,6 +129,7 @@
 	<Compile Include="Kms\Transform\V20160120\GenerateDataKeyResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\GenerateDataKeyWithoutPlaintextResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\GetParametersForImportResponseUnmarshaller.cs" />
+	<Compile Include="Kms\Transform\V20160120\GetPublicKeyResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\ImportKeyMaterialResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\ListAliasesByKeyIdResponseUnmarshaller.cs" />
 	<Compile Include="Kms\Transform\V20160120\ListAliasesResponseUnmarshaller.cs" />

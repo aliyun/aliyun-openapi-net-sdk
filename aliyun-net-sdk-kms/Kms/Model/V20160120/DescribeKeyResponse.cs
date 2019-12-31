@@ -88,6 +88,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 			private string nextRotationDate;
 
+			private string keySpec;
+
 			public string CreationDate
 			{
 				get
@@ -277,6 +279,18 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					nextRotationDate = value;
+				}
+			}
+
+			public string KeySpec
+			{
+				get
+				{
+					return keySpec;
+				}
+				set	
+				{
+					keySpec = value;
 				}
 			}
 		}

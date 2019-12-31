@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			keyMetadata.AutomaticRotation = context.StringValue("CreateKey.KeyMetadata.AutomaticRotation");
 			keyMetadata.RotationInterval = context.StringValue("CreateKey.KeyMetadata.RotationInterval");
 			keyMetadata.NextRotationDate = context.StringValue("CreateKey.KeyMetadata.NextRotationDate");
+			keyMetadata.KeySpec = context.StringValue("CreateKey.KeyMetadata.KeySpec");
 			createKeyResponse.KeyMetadata = keyMetadata;
         
 			return createKeyResponse;
