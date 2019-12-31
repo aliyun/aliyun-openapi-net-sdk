@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CheckDBNameAvailableRequest : RpcAcsRequest<CheckDBNameAvailableResponse>
     {
         public CheckDBNameAvailableRequest()
-            : base("Rds", "2014-08-15", "CheckDBNameAvailable", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CheckDBNameAvailable", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyAccountDescriptionRequest : RpcAcsRequest<ModifyAccountDescriptionResponse>
     {
         public ModifyAccountDescriptionRequest()
-            : base("Rds", "2014-08-15", "ModifyAccountDescription", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyAccountDescription", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

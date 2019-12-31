@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ReleaseInstancePublicConnectionRequest : RpcAcsRequest<ReleaseInstancePublicConnectionResponse>
     {
         public ReleaseInstancePublicConnectionRequest()
-            : base("Rds", "2014-08-15", "ReleaseInstancePublicConnection", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ReleaseInstancePublicConnection", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

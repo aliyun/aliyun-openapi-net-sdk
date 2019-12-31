@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class AddTagsToResourceRequest : RpcAcsRequest<AddTagsToResourceResponse>
     {
         public AddTagsToResourceRequest()
-            : base("Rds", "2014-08-15", "AddTagsToResource", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "AddTagsToResource", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

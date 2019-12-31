@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyActionEventPolicyRequest : RpcAcsRequest<ModifyActionEventPolicyResponse>
     {
         public ModifyActionEventPolicyRequest()
-            : base("Rds", "2014-08-15", "ModifyActionEventPolicy", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyActionEventPolicy", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDedicatedHostAttributeRequest : RpcAcsRequest<ModifyDedicatedHostAttributeResponse>
     {
         public ModifyDedicatedHostAttributeRequest()
-            : base("Rds", "2014-08-15", "ModifyDedicatedHostAttribute", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDedicatedHostAttribute", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

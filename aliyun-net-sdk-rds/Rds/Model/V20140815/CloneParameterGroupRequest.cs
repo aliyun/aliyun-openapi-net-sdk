@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CloneParameterGroupRequest : RpcAcsRequest<CloneParameterGroupResponse>
     {
         public CloneParameterGroupRequest()
-            : base("Rds", "2014-08-15", "CloneParameterGroup", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CloneParameterGroup", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstancesForCloneRequest : RpcAcsRequest<DescribeDBInstancesForCloneResponse>
     {
         public DescribeDBInstancesForCloneRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstancesForClone", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstancesForClone", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

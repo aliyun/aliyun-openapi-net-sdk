@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeSQLLogFilesRequest : RpcAcsRequest<DescribeSQLLogFilesResponse>
     {
         public DescribeSQLLogFilesRequest()
-            : base("Rds", "2014-08-15", "DescribeSQLLogFiles", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeSQLLogFiles", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

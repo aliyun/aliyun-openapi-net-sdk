@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateDedicatedHostGroupRequest : RpcAcsRequest<CreateDedicatedHostGroupResponse>
     {
         public CreateDedicatedHostGroupRequest()
-            : base("Rds", "2014-08-15", "CreateDedicatedHostGroup", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateDedicatedHostGroup", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

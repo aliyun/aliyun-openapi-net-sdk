@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribePriceRequest : RpcAcsRequest<DescribePriceResponse>
     {
         public DescribePriceRequest()
-            : base("Rds", "2014-08-15", "DescribePrice", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribePrice", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

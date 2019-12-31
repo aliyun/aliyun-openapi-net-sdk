@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class RestoreTableRequest : RpcAcsRequest<RestoreTableResponse>
     {
         public RestoreTableRequest()
-            : base("Rds", "2014-08-15", "RestoreTable", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "RestoreTable", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

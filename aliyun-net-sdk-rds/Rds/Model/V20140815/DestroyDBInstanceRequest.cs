@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DestroyDBInstanceRequest : RpcAcsRequest<DestroyDBInstanceResponse>
     {
         public DestroyDBInstanceRequest()
-            : base("Rds", "2014-08-15", "DestroyDBInstance", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DestroyDBInstance", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeSlowLogsRequest : RpcAcsRequest<DescribeSlowLogsResponse>
     {
         public DescribeSlowLogsRequest()
-            : base("Rds", "2014-08-15", "DescribeSlowLogs", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeSlowLogs", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyInstanceCrossBackupPolicyRequest : RpcAcsRequest<ModifyInstanceCrossBackupPolicyResponse>
     {
         public ModifyInstanceCrossBackupPolicyRequest()
-            : base("Rds", "2014-08-15", "ModifyInstanceCrossBackupPolicy", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyInstanceCrossBackupPolicy", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

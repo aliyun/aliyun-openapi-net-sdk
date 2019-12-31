@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class MigrateDBInstanceRequest : RpcAcsRequest<MigrateDBInstanceResponse>
     {
         public MigrateDBInstanceRequest()
-            : base("Rds", "2014-08-15", "MigrateDBInstance", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "MigrateDBInstance", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

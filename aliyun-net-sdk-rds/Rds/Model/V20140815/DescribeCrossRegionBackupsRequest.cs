@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeCrossRegionBackupsRequest : RpcAcsRequest<DescribeCrossRegionBackupsResponse>
     {
         public DescribeCrossRegionBackupsRequest()
-            : base("Rds", "2014-08-15", "DescribeCrossRegionBackups", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeCrossRegionBackups", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescibeImportsFromDatabaseRequest : RpcAcsRequest<DescibeImportsFromDatabaseResponse>
     {
         public DescibeImportsFromDatabaseRequest()
-            : base("Rds", "2014-08-15", "DescibeImportsFromDatabase", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescibeImportsFromDatabase", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

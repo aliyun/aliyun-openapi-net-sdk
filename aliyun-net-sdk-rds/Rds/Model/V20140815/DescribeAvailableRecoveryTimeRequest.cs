@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeAvailableRecoveryTimeRequest : RpcAcsRequest<DescribeAvailableRecoveryTimeResponse>
     {
         public DescribeAvailableRecoveryTimeRequest()
-            : base("Rds", "2014-08-15", "DescribeAvailableRecoveryTime", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeAvailableRecoveryTime", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

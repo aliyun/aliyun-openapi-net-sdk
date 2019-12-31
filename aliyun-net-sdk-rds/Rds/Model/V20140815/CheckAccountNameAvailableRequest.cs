@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CheckAccountNameAvailableRequest : RpcAcsRequest<CheckAccountNameAvailableResponse>
     {
         public CheckAccountNameAvailableRequest()
-            : base("Rds", "2014-08-15", "CheckAccountNameAvailable", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "CheckAccountNameAvailable", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

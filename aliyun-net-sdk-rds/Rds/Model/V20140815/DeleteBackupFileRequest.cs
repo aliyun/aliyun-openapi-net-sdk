@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DeleteBackupFileRequest : RpcAcsRequest<DeleteBackupFileResponse>
     {
         public DeleteBackupFileRequest()
-            : base("Rds", "2014-08-15", "DeleteBackupFile", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DeleteBackupFile", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

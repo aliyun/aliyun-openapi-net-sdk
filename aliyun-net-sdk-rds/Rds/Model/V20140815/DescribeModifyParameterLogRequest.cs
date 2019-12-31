@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeModifyParameterLogRequest : RpcAcsRequest<DescribeModifyParameterLogResponse>
     {
         public DescribeModifyParameterLogRequest()
-            : base("Rds", "2014-08-15", "DescribeModifyParameterLog", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeModifyParameterLog", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

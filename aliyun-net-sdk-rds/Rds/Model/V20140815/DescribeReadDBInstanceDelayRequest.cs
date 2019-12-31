@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeReadDBInstanceDelayRequest : RpcAcsRequest<DescribeReadDBInstanceDelayResponse>
     {
         public DescribeReadDBInstanceDelayRequest()
-            : base("Rds", "2014-08-15", "DescribeReadDBInstanceDelay", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeReadDBInstanceDelay", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

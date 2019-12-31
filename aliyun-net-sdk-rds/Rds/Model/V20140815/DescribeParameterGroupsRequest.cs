@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeParameterGroupsRequest : RpcAcsRequest<DescribeParameterGroupsResponse>
     {
         public DescribeParameterGroupsRequest()
-            : base("Rds", "2014-08-15", "DescribeParameterGroups", "rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeParameterGroups", "Rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
