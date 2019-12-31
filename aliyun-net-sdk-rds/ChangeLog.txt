@@ -1,3 +1,6 @@
+2019-12-31 Version 2.3.0
+- SQL SERVER support delete backup set according to time range.
+
 2019-12-31 Version 2.1.6
 - SQL SERVER support delete backup set according to time range.
 
