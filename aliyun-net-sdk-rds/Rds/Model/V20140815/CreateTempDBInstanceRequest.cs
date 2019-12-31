@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateTempDBInstanceRequest : RpcAcsRequest<CreateTempDBInstanceResponse>
     {
         public CreateTempDBInstanceRequest()
-            : base("Rds", "2014-08-15", "CreateTempDBInstance", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateTempDBInstance", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

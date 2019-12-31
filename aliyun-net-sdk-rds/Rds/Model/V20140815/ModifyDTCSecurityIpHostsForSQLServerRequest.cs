@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDTCSecurityIpHostsForSQLServerRequest : RpcAcsRequest<ModifyDTCSecurityIpHostsForSQLServerResponse>
     {
         public ModifyDTCSecurityIpHostsForSQLServerRequest()
-            : base("Rds", "2014-08-15", "ModifyDTCSecurityIpHostsForSQLServer", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDTCSecurityIpHostsForSQLServer", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

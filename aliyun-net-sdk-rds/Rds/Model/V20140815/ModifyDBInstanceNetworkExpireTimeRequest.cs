@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBInstanceNetworkExpireTimeRequest : RpcAcsRequest<ModifyDBInstanceNetworkExpireTimeResponse>
     {
         public ModifyDBInstanceNetworkExpireTimeRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceNetworkExpireTime", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceNetworkExpireTime", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

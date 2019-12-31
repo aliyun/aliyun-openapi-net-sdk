@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeBackupsRequest : RpcAcsRequest<DescribeBackupsResponse>
     {
         public DescribeBackupsRequest()
-            : base("Rds", "2014-08-15", "DescribeBackups", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeBackups", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DeleteDedicatedHostGroupRequest : RpcAcsRequest<DeleteDedicatedHostGroupResponse>
     {
         public DeleteDedicatedHostGroupRequest()
-            : base("Rds", "2014-08-15", "DeleteDedicatedHostGroup", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DeleteDedicatedHostGroup", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

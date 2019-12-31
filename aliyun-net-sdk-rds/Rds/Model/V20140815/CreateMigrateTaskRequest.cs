@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateMigrateTaskRequest : RpcAcsRequest<CreateMigrateTaskResponse>
     {
         public CreateMigrateTaskRequest()
-            : base("Rds", "2014-08-15", "CreateMigrateTask", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateMigrateTask", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

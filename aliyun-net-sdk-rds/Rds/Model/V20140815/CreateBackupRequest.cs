@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class CreateBackupRequest : RpcAcsRequest<CreateBackupResponse>
     {
         public CreateBackupRequest()
-            : base("Rds", "2014-08-15", "CreateBackup", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "CreateBackup", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

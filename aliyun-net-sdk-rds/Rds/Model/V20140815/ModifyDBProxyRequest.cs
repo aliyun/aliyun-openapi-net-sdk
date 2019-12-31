@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBProxyRequest : RpcAcsRequest<ModifyDBProxyResponse>
     {
         public ModifyDBProxyRequest()
-            : base("Rds", "2014-08-15", "ModifyDBProxy", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBProxy", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

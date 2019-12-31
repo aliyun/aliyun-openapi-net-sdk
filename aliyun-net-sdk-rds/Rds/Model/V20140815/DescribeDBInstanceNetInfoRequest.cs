@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDBInstanceNetInfoRequest : RpcAcsRequest<DescribeDBInstanceNetInfoResponse>
     {
         public DescribeDBInstanceNetInfoRequest()
-            : base("Rds", "2014-08-15", "DescribeDBInstanceNetInfo", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDBInstanceNetInfo", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

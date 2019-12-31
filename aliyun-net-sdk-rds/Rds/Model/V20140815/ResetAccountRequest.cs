@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ResetAccountRequest : RpcAcsRequest<ResetAccountResponse>
     {
         public ResetAccountRequest()
-            : base("Rds", "2014-08-15", "ResetAccount", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ResetAccount", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeDiagnosticReportListRequest : RpcAcsRequest<DescribeDiagnosticReportListResponse>
     {
         public DescribeDiagnosticReportListRequest()
-            : base("Rds", "2014-08-15", "DescribeDiagnosticReportList", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeDiagnosticReportList", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

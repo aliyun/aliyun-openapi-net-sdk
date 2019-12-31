@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class ModifyDBInstanceHAConfigRequest : RpcAcsRequest<ModifyDBInstanceHAConfigResponse>
     {
         public ModifyDBInstanceHAConfigRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "ModifyDBInstanceHAConfig", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
     public class DescribeMigrateTaskByIdRequest : RpcAcsRequest<DescribeMigrateTaskByIdResponse>
     {
         public DescribeMigrateTaskByIdRequest()
-            : base("Rds", "2014-08-15", "DescribeMigrateTaskById", "Rds", "openAPI")
+            : base("Rds", "2014-08-15", "DescribeMigrateTaskById", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
