@@ -33,8 +33,12 @@ namespace Aliyun.Acs.reid.Transform.V20190928
 			describeOverviewDataResponse.HttpResponse = context.HttpResponse;
 			describeOverviewDataResponse.ErrorCode = context.StringValue("DescribeOverviewData.ErrorCode");
 			describeOverviewDataResponse.ErrorMessage = context.StringValue("DescribeOverviewData.ErrorMessage");
+			describeOverviewDataResponse.Message = context.StringValue("DescribeOverviewData.Message");
+			describeOverviewDataResponse.Code = context.StringValue("DescribeOverviewData.Code");
+			describeOverviewDataResponse.DynamicCode = context.StringValue("DescribeOverviewData.DynamicCode");
 			describeOverviewDataResponse.RequestId = context.StringValue("DescribeOverviewData.RequestId");
 			describeOverviewDataResponse.Success = context.BooleanValue("DescribeOverviewData.Success");
+			describeOverviewDataResponse.DynamicMessage = context.StringValue("DescribeOverviewData.DynamicMessage");
 
 			DescribeOverviewDataResponse.DescribeOverviewData_OverviewDetail overviewDetail = new DescribeOverviewDataResponse.DescribeOverviewData_OverviewDetail();
 			overviewDetail.StayDeepAvgWOWPercent = context.FloatValue("DescribeOverviewData.OverviewDetail.StayDeepAvgWOWPercent");
@@ -48,6 +52,19 @@ namespace Aliyun.Acs.reid.Transform.V20190928
 			overviewDetail.UvAvg = context.FloatValue("DescribeOverviewData.OverviewDetail.UvAvg");
 			overviewDetail.StayAvgPeriod = context.FloatValue("DescribeOverviewData.OverviewDetail.StayAvgPeriod");
 			describeOverviewDataResponse.OverviewDetail = overviewDetail;
+
+			DescribeOverviewDataResponse.DescribeOverviewData_AccurateOverviewDetail accurateOverviewDetail = new DescribeOverviewDataResponse.DescribeOverviewData_AccurateOverviewDetail();
+			accurateOverviewDetail.StayDeepAvgWOWPercent = context.StringValue("DescribeOverviewData.AccurateOverviewDetail.StayDeepAvgWOWPercent");
+			accurateOverviewDetail.StayDeepAvg = context.StringValue("DescribeOverviewData.AccurateOverviewDetail.StayDeepAvg");
+			accurateOverviewDetail.UvAvgWOWPercent = context.StringValue("DescribeOverviewData.AccurateOverviewDetail.UvAvgWOWPercent");
+			accurateOverviewDetail.StayAvgPeriodWOWPercent = context.StringValue("DescribeOverviewData.AccurateOverviewDetail.StayAvgPeriodWOWPercent");
+			accurateOverviewDetail.UvWOWPercent = context.StringValue("DescribeOverviewData.AccurateOverviewDetail.UvWOWPercent");
+			accurateOverviewDetail.UvEverySqmGrowthWOWPercent = context.StringValue("DescribeOverviewData.AccurateOverviewDetail.UvEverySqmGrowthWOWPercent");
+			accurateOverviewDetail.Uv = context.LongValue("DescribeOverviewData.AccurateOverviewDetail.Uv");
+			accurateOverviewDetail.UvEverySqm = context.StringValue("DescribeOverviewData.AccurateOverviewDetail.UvEverySqm");
+			accurateOverviewDetail.UvAvg = context.StringValue("DescribeOverviewData.AccurateOverviewDetail.UvAvg");
+			accurateOverviewDetail.StayAvgPeriod = context.StringValue("DescribeOverviewData.AccurateOverviewDetail.StayAvgPeriod");
+			describeOverviewDataResponse.AccurateOverviewDetail = accurateOverviewDetail;
         
 			return describeOverviewDataResponse;
         }

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ab64e63a-8a21-4e43-bf29-b4a3b59a3e05}</ProjectGuid>
+    <ProjectGuid>{194597d8-4814-413b-ad62-d142d6ca53e5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -46,6 +46,8 @@
 	<Compile Include="Reid\Model\V20190928\DescribeCursorResponse.cs" />
 	<Compile Include="Reid\Model\V20190928\DescribeCustomerFlowByLocationRequest.cs" />
 	<Compile Include="Reid\Model\V20190928\DescribeCustomerFlowByLocationResponse.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeDevicesRequest.cs" />
+	<Compile Include="Reid\Model\V20190928\DescribeDevicesResponse.cs" />
 	<Compile Include="Reid\Model\V20190928\DescribeHeatMapRequest.cs" />
 	<Compile Include="Reid\Model\V20190928\DescribeHeatMapResponse.cs" />
 	<Compile Include="Reid\Model\V20190928\DescribeImageUrlsRequest.cs" />
@@ -69,6 +71,7 @@
 	<Compile Include="Reid\Transform\V20190928\DescribeBaseStatisticsResponseUnmarshaller.cs" />
 	<Compile Include="Reid\Transform\V20190928\DescribeCursorResponseUnmarshaller.cs" />
 	<Compile Include="Reid\Transform\V20190928\DescribeCustomerFlowByLocationResponseUnmarshaller.cs" />
+	<Compile Include="Reid\Transform\V20190928\DescribeDevicesResponseUnmarshaller.cs" />
 	<Compile Include="Reid\Transform\V20190928\DescribeHeatMapResponseUnmarshaller.cs" />
 	<Compile Include="Reid\Transform\V20190928\DescribeImageUrlsResponseUnmarshaller.cs" />
 	<Compile Include="Reid\Transform\V20190928\DescribeOverviewDataResponseUnmarshaller.cs" />

@@ -29,11 +29,21 @@ namespace Aliyun.Acs.reid.Model.V20190928
 
 		private string errorMessage;
 
+		private string message;
+
+		private string code;
+
+		private string dynamicCode;
+
 		private string requestId;
 
 		private bool? success;
 
+		private string dynamicMessage;
+
 		private DescribeOverviewData_OverviewDetail overviewDetail;
+
+		private DescribeOverviewData_AccurateOverviewDetail accurateOverviewDetail;
 
 		public string ErrorCode
 		{
@@ -56,6 +66,42 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string DynamicCode
+		{
+			get
+			{
+				return dynamicCode;
+			}
+			set	
+			{
+				dynamicCode = value;
 			}
 		}
 
@@ -83,6 +129,18 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			}
 		}
 
+		public string DynamicMessage
+		{
+			get
+			{
+				return dynamicMessage;
+			}
+			set	
+			{
+				dynamicMessage = value;
+			}
+		}
+
 		public DescribeOverviewData_OverviewDetail OverviewDetail
 		{
 			get
@@ -92,6 +150,18 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			set	
 			{
 				overviewDetail = value;
+			}
+		}
+
+		public DescribeOverviewData_AccurateOverviewDetail AccurateOverviewDetail
+		{
+			get
+			{
+				return accurateOverviewDetail;
+			}
+			set	
+			{
+				accurateOverviewDetail = value;
 			}
 		}
 
@@ -227,6 +297,150 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			}
 
 			public float? StayAvgPeriod
+			{
+				get
+				{
+					return stayAvgPeriod;
+				}
+				set	
+				{
+					stayAvgPeriod = value;
+				}
+			}
+		}
+
+		public class DescribeOverviewData_AccurateOverviewDetail
+		{
+
+			private string stayDeepAvgWOWPercent;
+
+			private string stayDeepAvg;
+
+			private string uvAvgWOWPercent;
+
+			private string stayAvgPeriodWOWPercent;
+
+			private string uvWOWPercent;
+
+			private string uvEverySqmGrowthWOWPercent;
+
+			private long? uv;
+
+			private string uvEverySqm;
+
+			private string uvAvg;
+
+			private string stayAvgPeriod;
+
+			public string StayDeepAvgWOWPercent
+			{
+				get
+				{
+					return stayDeepAvgWOWPercent;
+				}
+				set	
+				{
+					stayDeepAvgWOWPercent = value;
+				}
+			}
+
+			public string StayDeepAvg
+			{
+				get
+				{
+					return stayDeepAvg;
+				}
+				set	
+				{
+					stayDeepAvg = value;
+				}
+			}
+
+			public string UvAvgWOWPercent
+			{
+				get
+				{
+					return uvAvgWOWPercent;
+				}
+				set	
+				{
+					uvAvgWOWPercent = value;
+				}
+			}
+
+			public string StayAvgPeriodWOWPercent
+			{
+				get
+				{
+					return stayAvgPeriodWOWPercent;
+				}
+				set	
+				{
+					stayAvgPeriodWOWPercent = value;
+				}
+			}
+
+			public string UvWOWPercent
+			{
+				get
+				{
+					return uvWOWPercent;
+				}
+				set	
+				{
+					uvWOWPercent = value;
+				}
+			}
+
+			public string UvEverySqmGrowthWOWPercent
+			{
+				get
+				{
+					return uvEverySqmGrowthWOWPercent;
+				}
+				set	
+				{
+					uvEverySqmGrowthWOWPercent = value;
+				}
+			}
+
+			public long? Uv
+			{
+				get
+				{
+					return uv;
+				}
+				set	
+				{
+					uv = value;
+				}
+			}
+
+			public string UvEverySqm
+			{
+				get
+				{
+					return uvEverySqm;
+				}
+				set	
+				{
+					uvEverySqm = value;
+				}
+			}
+
+			public string UvAvg
+			{
+				get
+				{
+					return uvAvg;
+				}
+				set	
+				{
+					uvAvg = value;
+				}
+			}
+
+			public string StayAvgPeriod
 			{
 				get
 				{
