@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			describeParameterGroupsResponse.HttpResponse = context.HttpResponse;
 			describeParameterGroupsResponse.RequestId = context.StringValue("DescribeParameterGroups.RequestId");
+			describeParameterGroupsResponse.SignalForOptimizeParams = context.BooleanValue("DescribeParameterGroups.SignalForOptimizeParams");
 
 			List<DescribeParameterGroupsResponse.DescribeParameterGroups_ParameterGroup> describeParameterGroupsResponse_parameterGroups = new List<DescribeParameterGroupsResponse.DescribeParameterGroups_ParameterGroup>();
 			for (int i = 0; i < context.Length("DescribeParameterGroups.ParameterGroups.Length"); i++) {

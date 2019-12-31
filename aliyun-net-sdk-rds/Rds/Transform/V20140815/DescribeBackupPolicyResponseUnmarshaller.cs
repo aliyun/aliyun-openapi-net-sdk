@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeBackupPolicyResponse.ArchiveBackupKeepPolicy = context.StringValue("DescribeBackupPolicy.ArchiveBackupKeepPolicy");
 			describeBackupPolicyResponse.ArchiveBackupKeepCount = context.StringValue("DescribeBackupPolicy.ArchiveBackupKeepCount");
 			describeBackupPolicyResponse.ReleasedKeepPolicy = context.StringValue("DescribeBackupPolicy.ReleasedKeepPolicy");
+			describeBackupPolicyResponse.LogBackupLocalRetentionNumber = context.IntegerValue("DescribeBackupPolicy.LogBackupLocalRetentionNumber");
 
 			DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation duplicationLocation = new DescribeBackupPolicyResponse.DescribeBackupPolicy_DuplicationLocation();
 			duplicationLocation.Sotrage = context.StringValue("DescribeBackupPolicy.DuplicationLocation.Sotrage");

@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			modifyBackupPolicyResponse.LocalLogRetentionSpace = context.StringValue("ModifyBackupPolicy.LocalLogRetentionSpace");
 			modifyBackupPolicyResponse.HighSpaceUsageProtection = context.StringValue("ModifyBackupPolicy.HighSpaceUsageProtection");
 			modifyBackupPolicyResponse.CompressType = context.StringValue("ModifyBackupPolicy.CompressType");
+			modifyBackupPolicyResponse.LogBackupLocalRetentionNumber = context.IntegerValue("ModifyBackupPolicy.LogBackupLocalRetentionNumber");
         
 			return modifyBackupPolicyResponse;
         }

@@ -200,6 +200,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string originConfiguration;
 
+			private string dedicatedHostGroupId;
+
 			private List<DescribeDBInstanceAttribute_SlaveZone> slaveZones;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -1067,6 +1069,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					originConfiguration = value;
+				}
+			}
+
+			public string DedicatedHostGroupId
+			{
+				get
+				{
+					return dedicatedHostGroupId;
+				}
+				set	
+				{
+					dedicatedHostGroupId = value;
 				}
 			}
 

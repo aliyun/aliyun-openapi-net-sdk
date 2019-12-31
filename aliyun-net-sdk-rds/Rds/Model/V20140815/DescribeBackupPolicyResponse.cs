@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string releasedKeepPolicy;
 
+		private int? logBackupLocalRetentionNumber;
+
 		private DescribeBackupPolicy_DuplicationLocation duplicationLocation;
 
 		public string RequestId
@@ -290,6 +292,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				releasedKeepPolicy = value;
+			}
+		}
+
+		public int? LogBackupLocalRetentionNumber
+		{
+			get
+			{
+				return logBackupLocalRetentionNumber;
+			}
+			set	
+			{
+				logBackupLocalRetentionNumber = value;
 			}
 		}
 

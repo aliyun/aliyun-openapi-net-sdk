@@ -22,24 +22,26 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class ModifyBackupPolicyResponse : AcsResponse
+	public class DescribeDBProxyEndpointResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string dBInstanceID;
+		private string dBProxyEndpointId;
 
-		private string enableBackupLog;
+		private string dBProxyConnectString;
 
-		private int? localLogRetentionHours;
+		private string dBProxyConnectStringPort;
 
-		private string localLogRetentionSpace;
+		private string dBProxyConnectStringNetType;
 
-		private string highSpaceUsageProtection;
+		private string dBProxyFeatures;
 
-		private string compressType;
+		private string readOnlyInstanceMaxDelayTime;
 
-		private int? logBackupLocalRetentionNumber;
+		private string readOnlyInstanceDistributionType;
+
+		private string readOnlyInstanceWeight;
 
 		public string RequestId
 		{
@@ -53,87 +55,99 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceID
+		public string DBProxyEndpointId
 		{
 			get
 			{
-				return dBInstanceID;
+				return dBProxyEndpointId;
 			}
 			set	
 			{
-				dBInstanceID = value;
+				dBProxyEndpointId = value;
 			}
 		}
 
-		public string EnableBackupLog
+		public string DBProxyConnectString
 		{
 			get
 			{
-				return enableBackupLog;
+				return dBProxyConnectString;
 			}
 			set	
 			{
-				enableBackupLog = value;
+				dBProxyConnectString = value;
 			}
 		}
 
-		public int? LocalLogRetentionHours
+		public string DBProxyConnectStringPort
 		{
 			get
 			{
-				return localLogRetentionHours;
+				return dBProxyConnectStringPort;
 			}
 			set	
 			{
-				localLogRetentionHours = value;
+				dBProxyConnectStringPort = value;
 			}
 		}
 
-		public string LocalLogRetentionSpace
+		public string DBProxyConnectStringNetType
 		{
 			get
 			{
-				return localLogRetentionSpace;
+				return dBProxyConnectStringNetType;
 			}
 			set	
 			{
-				localLogRetentionSpace = value;
+				dBProxyConnectStringNetType = value;
 			}
 		}
 
-		public string HighSpaceUsageProtection
+		public string DBProxyFeatures
 		{
 			get
 			{
-				return highSpaceUsageProtection;
+				return dBProxyFeatures;
 			}
 			set	
 			{
-				highSpaceUsageProtection = value;
+				dBProxyFeatures = value;
 			}
 		}
 
-		public string CompressType
+		public string ReadOnlyInstanceMaxDelayTime
 		{
 			get
 			{
-				return compressType;
+				return readOnlyInstanceMaxDelayTime;
 			}
 			set	
 			{
-				compressType = value;
+				readOnlyInstanceMaxDelayTime = value;
 			}
 		}
 
-		public int? LogBackupLocalRetentionNumber
+		public string ReadOnlyInstanceDistributionType
 		{
 			get
 			{
-				return logBackupLocalRetentionNumber;
+				return readOnlyInstanceDistributionType;
 			}
 			set	
 			{
-				logBackupLocalRetentionNumber = value;
+				readOnlyInstanceDistributionType = value;
+			}
+		}
+
+		public string ReadOnlyInstanceWeight
+		{
+			get
+			{
+				return readOnlyInstanceWeight;
+			}
+			set	
+			{
+				readOnlyInstanceWeight = value;
 			}
 		}
 	}

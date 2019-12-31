@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
+		private bool? signalForOptimizeParams;
+
 		private List<DescribeParameterGroups_ParameterGroup> parameterGroups;
 
 		public string RequestId
@@ -38,6 +40,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public bool? SignalForOptimizeParams
+		{
+			get
+			{
+				return signalForOptimizeParams;
+			}
+			set	
+			{
+				signalForOptimizeParams = value;
 			}
 		}
 

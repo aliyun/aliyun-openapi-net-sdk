@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string highSpaceUsageProtection;
 
+		private int? logBackupLocalRetentionNumber;
+
 		private string dBInstanceId;
 
 		private string enableBackupLog;
@@ -156,6 +158,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				highSpaceUsageProtection = value;
 				DictionaryUtil.Add(QueryParameters, "HighSpaceUsageProtection", value);
+			}
+		}
+
+		public int? LogBackupLocalRetentionNumber
+		{
+			get
+			{
+				return logBackupLocalRetentionNumber;
+			}
+			set	
+			{
+				logBackupLocalRetentionNumber = value;
+				DictionaryUtil.Add(QueryParameters, "LogBackupLocalRetentionNumber", value.ToString());
 			}
 		}
 

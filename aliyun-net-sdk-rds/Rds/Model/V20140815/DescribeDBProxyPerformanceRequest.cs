@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ModifySecurityIpsRequest : RpcAcsRequest<ModifySecurityIpsResponse>
+    public class DescribeDBProxyPerformanceRequest : RpcAcsRequest<DescribeDBProxyPerformanceResponse>
     {
-        public ModifySecurityIpsRequest()
-            : base("Rds", "2014-08-15", "ModifySecurityIps", "rds", "openAPI")
+        public DescribeDBProxyPerformanceRequest()
+            : base("Rds", "2014-08-15", "DescribeDBProxyPerformance", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,34 +39,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
             }
         }
 
-		private string dBInstanceIPArrayName;
-
 		private long? resourceOwnerId;
 
-		private string securityIps;
+		private string metricsName;
 
-		private string whitelistNetworkType;
-
-		private string securityIPType;
+		private string startTime;
 
 		private string dBInstanceId;
 
-		private string modifyMode;
+		private string resourceOwnerAccount;
 
-		private string dBInstanceIPArrayAttribute;
+		private string endTime;
 
-		public string DBInstanceIPArrayName
-		{
-			get
-			{
-				return dBInstanceIPArrayName;
-			}
-			set	
-			{
-				dBInstanceIPArrayName = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayName", value);
-			}
-		}
+		private long? ownerId;
+
+		private string dBProxyInstanceType;
 
 		public long? ResourceOwnerId
 		{
@@ -81,42 +68,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SecurityIps
+		public string MetricsName
 		{
 			get
 			{
-				return securityIps;
+				return metricsName;
 			}
 			set	
 			{
-				securityIps = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityIps", value);
+				metricsName = value;
+				DictionaryUtil.Add(QueryParameters, "MetricsName", value);
 			}
 		}
 
-		public string WhitelistNetworkType
+		public string StartTime
 		{
 			get
 			{
-				return whitelistNetworkType;
+				return startTime;
 			}
 			set	
 			{
-				whitelistNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "WhitelistNetworkType", value);
-			}
-		}
-
-		public string SecurityIPType
-		{
-			get
-			{
-				return securityIPType;
-			}
-			set	
-			{
-				securityIPType = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityIPType", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -133,35 +107,61 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ModifyMode
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return modifyMode;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				modifyMode = value;
-				DictionaryUtil.Add(QueryParameters, "ModifyMode", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string DBInstanceIPArrayAttribute
+		public string EndTime
 		{
 			get
 			{
-				return dBInstanceIPArrayAttribute;
+				return endTime;
 			}
 			set	
 			{
-				dBInstanceIPArrayAttribute = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayAttribute", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
-        public override ModifySecurityIpsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string DBProxyInstanceType
+		{
+			get
+			{
+				return dBProxyInstanceType;
+			}
+			set	
+			{
+				dBProxyInstanceType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyInstanceType", value);
+			}
+		}
+
+        public override DescribeDBProxyPerformanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifySecurityIpsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDBProxyPerformanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

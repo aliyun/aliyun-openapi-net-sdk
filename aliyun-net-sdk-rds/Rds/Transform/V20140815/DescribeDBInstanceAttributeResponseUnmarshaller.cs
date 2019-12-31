@@ -108,6 +108,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceAttribute.ConsoleVersion = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].ConsoleVersion");
 				dBInstanceAttribute.MultipleTempUpgrade = context.BooleanValue("DescribeDBInstanceAttribute.Items["+ i +"].MultipleTempUpgrade");
 				dBInstanceAttribute.OriginConfiguration = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].OriginConfiguration");
+				dBInstanceAttribute.DedicatedHostGroupId = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].DedicatedHostGroupId");
 
 				DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra extra = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_Extra();
 				extra.ReplicaGroupID = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupID");

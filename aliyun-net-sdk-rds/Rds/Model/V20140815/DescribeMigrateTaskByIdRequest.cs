@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ModifySecurityIpsRequest : RpcAcsRequest<ModifySecurityIpsResponse>
+    public class DescribeMigrateTaskByIdRequest : RpcAcsRequest<DescribeMigrateTaskByIdResponse>
     {
-        public ModifySecurityIpsRequest()
-            : base("Rds", "2014-08-15", "ModifySecurityIps", "rds", "openAPI")
+        public DescribeMigrateTaskByIdRequest()
+            : base("Rds", "2014-08-15", "DescribeMigrateTaskById", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,34 +39,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
             }
         }
 
-		private string dBInstanceIPArrayName;
-
 		private long? resourceOwnerId;
 
-		private string securityIps;
+		private string migrateTaskId;
 
-		private string whitelistNetworkType;
+		private string resourceOwnerAccount;
 
-		private string securityIPType;
+		private long? ownerId;
 
 		private string dBInstanceId;
-
-		private string modifyMode;
-
-		private string dBInstanceIPArrayAttribute;
-
-		public string DBInstanceIPArrayName
-		{
-			get
-			{
-				return dBInstanceIPArrayName;
-			}
-			set	
-			{
-				dBInstanceIPArrayName = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayName", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -81,42 +62,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string SecurityIps
+		public string MigrateTaskId
 		{
 			get
 			{
-				return securityIps;
+				return migrateTaskId;
 			}
 			set	
 			{
-				securityIps = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityIps", value);
+				migrateTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "MigrateTaskId", value);
 			}
 		}
 
-		public string WhitelistNetworkType
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return whitelistNetworkType;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				whitelistNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "WhitelistNetworkType", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string SecurityIPType
+		public long? OwnerId
 		{
 			get
 			{
-				return securityIPType;
+				return ownerId;
 			}
 			set	
 			{
-				securityIPType = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityIPType", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -133,35 +114,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ModifyMode
-		{
-			get
-			{
-				return modifyMode;
-			}
-			set	
-			{
-				modifyMode = value;
-				DictionaryUtil.Add(QueryParameters, "ModifyMode", value);
-			}
-		}
-
-		public string DBInstanceIPArrayAttribute
-		{
-			get
-			{
-				return dBInstanceIPArrayAttribute;
-			}
-			set	
-			{
-				dBInstanceIPArrayAttribute = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayAttribute", value);
-			}
-		}
-
-        public override ModifySecurityIpsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeMigrateTaskByIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifySecurityIpsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeMigrateTaskByIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

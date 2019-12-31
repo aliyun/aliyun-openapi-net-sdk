@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ModifySecurityIpsRequest : RpcAcsRequest<ModifySecurityIpsResponse>
+    public class DeleteBackupFileRequest : RpcAcsRequest<DeleteBackupFileResponse>
     {
-        public ModifySecurityIpsRequest()
-            : base("Rds", "2014-08-15", "ModifySecurityIps", "rds", "openAPI")
+        public DeleteBackupFileRequest()
+            : base("Rds", "2014-08-15", "DeleteBackupFile", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,34 +39,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
             }
         }
 
-		private string dBInstanceIPArrayName;
-
 		private long? resourceOwnerId;
-
-		private string securityIps;
-
-		private string whitelistNetworkType;
-
-		private string securityIPType;
 
 		private string dBInstanceId;
 
-		private string modifyMode;
+		private string resourceOwnerAccount;
 
-		private string dBInstanceIPArrayAttribute;
+		private string backupId;
 
-		public string DBInstanceIPArrayName
-		{
-			get
-			{
-				return dBInstanceIPArrayName;
-			}
-			set	
-			{
-				dBInstanceIPArrayName = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayName", value);
-			}
-		}
+		private long? ownerId;
+
+		private string backupTime;
+
+		private string dBName;
 
 		public long? ResourceOwnerId
 		{
@@ -78,45 +63,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string SecurityIps
-		{
-			get
-			{
-				return securityIps;
-			}
-			set	
-			{
-				securityIps = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityIps", value);
-			}
-		}
-
-		public string WhitelistNetworkType
-		{
-			get
-			{
-				return whitelistNetworkType;
-			}
-			set	
-			{
-				whitelistNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "WhitelistNetworkType", value);
-			}
-		}
-
-		public string SecurityIPType
-		{
-			get
-			{
-				return securityIPType;
-			}
-			set	
-			{
-				securityIPType = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityIPType", value);
 			}
 		}
 
@@ -133,35 +79,74 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ModifyMode
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return modifyMode;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				modifyMode = value;
-				DictionaryUtil.Add(QueryParameters, "ModifyMode", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public string DBInstanceIPArrayAttribute
+		public string BackupId
 		{
 			get
 			{
-				return dBInstanceIPArrayAttribute;
+				return backupId;
 			}
 			set	
 			{
-				dBInstanceIPArrayAttribute = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceIPArrayAttribute", value);
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
 			}
 		}
 
-        public override ModifySecurityIpsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string BackupTime
+		{
+			get
+			{
+				return backupTime;
+			}
+			set	
+			{
+				backupTime = value;
+				DictionaryUtil.Add(QueryParameters, "BackupTime", value);
+			}
+		}
+
+		public string DBName
+		{
+			get
+			{
+				return dBName;
+			}
+			set	
+			{
+				dBName = value;
+				DictionaryUtil.Add(QueryParameters, "DBName", value);
+			}
+		}
+
+        public override DeleteBackupFileResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifySecurityIpsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteBackupFileResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

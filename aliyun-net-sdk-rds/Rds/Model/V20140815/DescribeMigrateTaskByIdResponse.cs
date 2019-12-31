@@ -22,24 +22,28 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class ModifyBackupPolicyResponse : AcsResponse
+	public class DescribeMigrateTaskByIdResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string dBInstanceID;
+		private string dBInstanceName;
 
-		private string enableBackupLog;
+		private string dBName;
 
-		private int? localLogRetentionHours;
+		private string migrateTaskId;
 
-		private string localLogRetentionSpace;
+		private string createTime;
 
-		private string highSpaceUsageProtection;
+		private string endTime;
 
-		private string compressType;
+		private string backupMode;
 
-		private int? logBackupLocalRetentionNumber;
+		private string status;
+
+		private string isDBReplaced;
+
+		private string description;
 
 		public string RequestId
 		{
@@ -53,87 +57,111 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceID
+		public string DBInstanceName
 		{
 			get
 			{
-				return dBInstanceID;
+				return dBInstanceName;
 			}
 			set	
 			{
-				dBInstanceID = value;
+				dBInstanceName = value;
 			}
 		}
 
-		public string EnableBackupLog
+		public string DBName
 		{
 			get
 			{
-				return enableBackupLog;
+				return dBName;
 			}
 			set	
 			{
-				enableBackupLog = value;
+				dBName = value;
 			}
 		}
 
-		public int? LocalLogRetentionHours
+		public string MigrateTaskId
 		{
 			get
 			{
-				return localLogRetentionHours;
+				return migrateTaskId;
 			}
 			set	
 			{
-				localLogRetentionHours = value;
+				migrateTaskId = value;
 			}
 		}
 
-		public string LocalLogRetentionSpace
+		public string CreateTime
 		{
 			get
 			{
-				return localLogRetentionSpace;
+				return createTime;
 			}
 			set	
 			{
-				localLogRetentionSpace = value;
+				createTime = value;
 			}
 		}
 
-		public string HighSpaceUsageProtection
+		public string EndTime
 		{
 			get
 			{
-				return highSpaceUsageProtection;
+				return endTime;
 			}
 			set	
 			{
-				highSpaceUsageProtection = value;
+				endTime = value;
 			}
 		}
 
-		public string CompressType
+		public string BackupMode
 		{
 			get
 			{
-				return compressType;
+				return backupMode;
 			}
 			set	
 			{
-				compressType = value;
+				backupMode = value;
 			}
 		}
 
-		public int? LogBackupLocalRetentionNumber
+		public string Status
 		{
 			get
 			{
-				return logBackupLocalRetentionNumber;
+				return status;
 			}
 			set	
 			{
-				logBackupLocalRetentionNumber = value;
+				status = value;
+			}
+		}
+
+		public string IsDBReplaced
+		{
+			get
+			{
+				return isDBReplaced;
+			}
+			set	
+			{
+				isDBReplaced = value;
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
 			}
 		}
 	}

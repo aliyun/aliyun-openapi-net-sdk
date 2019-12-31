@@ -49,6 +49,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engine;
 
+		private string dBInstanceId;
+
+		private string dBInstanceStorageType;
+
 		private int? quantity;
 
 		private string resourceOwnerAccount;
@@ -135,6 +139,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string DBInstanceStorageType
+		{
+			get
+			{
+				return dBInstanceStorageType;
+			}
+			set	
+			{
+				dBInstanceStorageType = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
 			}
 		}
 
