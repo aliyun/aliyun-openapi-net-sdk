@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4c5fd3b9-a24b-4d21-a567-f3f6b209cef9}</ProjectGuid>
+    <ProjectGuid>{9d66be2f-e4f8-43ab-8e61-668e8a801c91}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -72,6 +72,8 @@
 	<Compile Include="HBase\Model\V20190101\DescribeSecurityGroupsResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\ListTagResourcesRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\ListTagResourcesResponse.cs" />
+	<Compile Include="HBase\Model\V20190101\ListTagsRequest.cs" />
+	<Compile Include="HBase\Model\V20190101\ListTagsResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\ModifyInstanceMaintainTimeRequest.cs" />
 	<Compile Include="HBase\Model\V20190101\ModifyInstanceMaintainTimeResponse.cs" />
 	<Compile Include="HBase\Model\V20190101\ModifyInstanceNameRequest.cs" />
@@ -118,6 +120,7 @@
 	<Compile Include="HBase\Transform\V20190101\DescribeRegionsResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\DescribeSecurityGroupsResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\ListTagResourcesResponseUnmarshaller.cs" />
+	<Compile Include="HBase\Transform\V20190101\ListTagsResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\ModifyInstanceMaintainTimeResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\ModifyInstanceNameResponseUnmarshaller.cs" />
 	<Compile Include="HBase\Transform\V20190101\ModifyIpWhitelistResponseUnmarshaller.cs" />

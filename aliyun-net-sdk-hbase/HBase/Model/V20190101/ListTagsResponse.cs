@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-	public class DescribeIpWhitelistResponse : AcsResponse
+	public class ListTagsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeIpWhitelist_Group> groups;
+		private List<ListTags_Tag> tags;
 
 		public string RequestId
 		{
@@ -41,60 +41,46 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public List<DescribeIpWhitelist_Group> Groups
+		public List<ListTags_Tag> Tags
 		{
 			get
 			{
-				return groups;
+				return tags;
 			}
 			set	
 			{
-				groups = value;
+				tags = value;
 			}
 		}
 
-		public class DescribeIpWhitelist_Group
+		public class ListTags_Tag
 		{
 
-			private string groupName;
+			private string tagKey;
 
-			private int? ipVersion;
+			private string tagValue;
 
-			private List<string> ipList;
-
-			public string GroupName
+			public string TagKey
 			{
 				get
 				{
-					return groupName;
+					return tagKey;
 				}
 				set	
 				{
-					groupName = value;
+					tagKey = value;
 				}
 			}
 
-			public int? IpVersion
+			public string TagValue
 			{
 				get
 				{
-					return ipVersion;
+					return tagValue;
 				}
 				set	
 				{
-					ipVersion = value;
-				}
-			}
-
-			public List<string> IpList
-			{
-				get
-				{
-					return ipList;
-				}
-				set	
-				{
-					ipList = value;
+					tagValue = value;
 				}
 			}
 		}

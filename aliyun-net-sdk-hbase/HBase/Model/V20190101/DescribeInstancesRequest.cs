@@ -39,9 +39,28 @@ namespace Aliyun.Acs.HBase.Model.V20190101
             }
         }
 
+		private string clusterName;
+
 		private int? pageNumber;
 
 		private int? pageSize;
+
+		private List<Tag> tags = new List<Tag>(){ };
+
+		private string dbType;
+
+		public string ClusterName
+		{
+			get
+			{
+				return clusterName;
+			}
+			set	
+			{
+				clusterName = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterName", value);
+			}
+		}
 
 		public int? PageNumber
 		{
@@ -66,6 +85,69 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
+		public string DbType
+		{
+			get
+			{
+				return dbType;
+			}
+			set	
+			{
+				dbType = value;
+				DictionaryUtil.Add(QueryParameters, "DbType", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

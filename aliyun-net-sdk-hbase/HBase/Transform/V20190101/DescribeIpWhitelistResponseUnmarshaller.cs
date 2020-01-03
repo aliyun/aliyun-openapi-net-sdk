@@ -33,11 +33,21 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 			describeIpWhitelistResponse.HttpResponse = context.HttpResponse;
 			describeIpWhitelistResponse.RequestId = context.StringValue("DescribeIpWhitelist.RequestId");
 
-			List<string> describeIpWhitelistResponse_ipList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeIpWhitelist.IpList.Length"); i++) {
-				describeIpWhitelistResponse_ipList.Add(context.StringValue("DescribeIpWhitelist.IpList["+ i +"]"));
+			List<DescribeIpWhitelistResponse.DescribeIpWhitelist_Group> describeIpWhitelistResponse_groups = new List<DescribeIpWhitelistResponse.DescribeIpWhitelist_Group>();
+			for (int i = 0; i < context.Length("DescribeIpWhitelist.Groups.Length"); i++) {
+				DescribeIpWhitelistResponse.DescribeIpWhitelist_Group group = new DescribeIpWhitelistResponse.DescribeIpWhitelist_Group();
+				group.GroupName = context.StringValue("DescribeIpWhitelist.Groups["+ i +"].GroupName");
+				group.IpVersion = context.IntegerValue("DescribeIpWhitelist.Groups["+ i +"].IpVersion");
+
+				List<string> group_ipList = new List<string>();
+				for (int j = 0; j < context.Length("DescribeIpWhitelist.Groups["+ i +"].IpList.Length"); j++) {
+					group_ipList.Add(context.StringValue("DescribeIpWhitelist.Groups["+ i +"].IpList["+ j +"]"));
+				}
+				group.IpList = group_ipList;
+
+				describeIpWhitelistResponse_groups.Add(group);
 			}
-			describeIpWhitelistResponse.IpList = describeIpWhitelistResponse_ipList;
+			describeIpWhitelistResponse.Groups = describeIpWhitelistResponse_groups;
         
 			return describeIpWhitelistResponse;
         }

@@ -83,6 +83,10 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string maintainEndTime;
 
+		private string createdTimeUTC;
+
+		private string expireTimeUTC;
+
 		private List<DescribeInstance_Tag> tags;
 
 		public string RequestId
@@ -430,6 +434,30 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				maintainEndTime = value;
+			}
+		}
+
+		public string CreatedTimeUTC
+		{
+			get
+			{
+				return createdTimeUTC;
+			}
+			set	
+			{
+				createdTimeUTC = value;
+			}
+		}
+
+		public string ExpireTimeUTC
+		{
+			get
+			{
+				return expireTimeUTC;
+			}
+			set	
+			{
+				expireTimeUTC = value;
 			}
 		}
 

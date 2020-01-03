@@ -63,6 +63,19 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 				instance.ZoneId = context.StringValue("DescribeInstances.Instances["+ i +"].ZoneId");
 				instance.ColdStorageStatus = context.StringValue("DescribeInstances.Instances["+ i +"].ColdStorageStatus");
 				instance.BackupStatus = context.StringValue("DescribeInstances.Instances["+ i +"].BackupStatus");
+				instance.ClusterType = context.StringValue("DescribeInstances.Instances["+ i +"].ClusterType");
+				instance.CreatedTimeUTC = context.StringValue("DescribeInstances.Instances["+ i +"].CreatedTimeUTC");
+				instance.ExpireTimeUTC = context.StringValue("DescribeInstances.Instances["+ i +"].ExpireTimeUTC");
+
+				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag> instance_tags = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag>();
+				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].Tags.Length"); j++) {
+					DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag tag = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag();
+					tag.Key = context.StringValue("DescribeInstances.Instances["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeInstances.Instances["+ i +"].Tags["+ j +"].Value");
+
+					instance_tags.Add(tag);
+				}
+				instance.Tags = instance_tags;
 
 				describeInstancesResponse_instances.Add(instance);
 			}

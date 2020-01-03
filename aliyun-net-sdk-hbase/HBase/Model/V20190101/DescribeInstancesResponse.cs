@@ -146,6 +146,14 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 			private string backupStatus;
 
+			private string clusterType;
+
+			private string createdTimeUTC;
+
+			private string expireTimeUTC;
+
+			private List<DescribeInstances_Tag> tags;
+
 			public string InstanceId
 			{
 				get
@@ -431,6 +439,86 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				set	
 				{
 					backupStatus = value;
+				}
+			}
+
+			public string ClusterType
+			{
+				get
+				{
+					return clusterType;
+				}
+				set	
+				{
+					clusterType = value;
+				}
+			}
+
+			public string CreatedTimeUTC
+			{
+				get
+				{
+					return createdTimeUTC;
+				}
+				set	
+				{
+					createdTimeUTC = value;
+				}
+			}
+
+			public string ExpireTimeUTC
+			{
+				get
+				{
+					return expireTimeUTC;
+				}
+				set	
+				{
+					expireTimeUTC = value;
+				}
+			}
+
+			public List<DescribeInstances_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeInstances_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

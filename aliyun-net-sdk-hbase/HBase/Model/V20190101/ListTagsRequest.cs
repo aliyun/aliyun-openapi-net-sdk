@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class DeleteInstanceRequest : RpcAcsRequest<DeleteInstanceResponse>
+    public class ListTagsRequest : RpcAcsRequest<ListTagsResponse>
     {
-        public DeleteInstanceRequest()
-            : base("HBase", "2019-01-01", "DeleteInstance", "hbase", "openAPI")
+        public ListTagsRequest()
+            : base("HBase", "2019-01-01", "ListTags", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,39 +39,9 @@ namespace Aliyun.Acs.HBase.Model.V20190101
             }
         }
 
-		private bool? immediateDeleteFlag;
-
-		private string clusterId;
-
-		public bool? ImmediateDeleteFlag
-		{
-			get
-			{
-				return immediateDeleteFlag;
-			}
-			set	
-			{
-				immediateDeleteFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ImmediateDeleteFlag", value.ToString());
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-        public override DeleteInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTagsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

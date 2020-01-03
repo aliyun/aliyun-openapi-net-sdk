@@ -60,6 +60,8 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 			describeInstanceResponse.CoreDiskCount = context.StringValue("DescribeInstance.CoreDiskCount");
 			describeInstanceResponse.MaintainStartTime = context.StringValue("DescribeInstance.MaintainStartTime");
 			describeInstanceResponse.MaintainEndTime = context.StringValue("DescribeInstance.MaintainEndTime");
+			describeInstanceResponse.CreatedTimeUTC = context.StringValue("DescribeInstance.CreatedTimeUTC");
+			describeInstanceResponse.ExpireTimeUTC = context.StringValue("DescribeInstance.ExpireTimeUTC");
 
 			List<DescribeInstanceResponse.DescribeInstance_Tag> describeInstanceResponse_tags = new List<DescribeInstanceResponse.DescribeInstance_Tag>();
 			for (int i = 0; i < context.Length("DescribeInstance.Tags.Length"); i++) {
