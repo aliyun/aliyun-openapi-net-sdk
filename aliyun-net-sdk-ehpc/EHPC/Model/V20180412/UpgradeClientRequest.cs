@@ -36,11 +36,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string clientVersion;
 
-		private string action;
-
 		private string clusterId;
-
-		private string accessKeyId;
 
 		public string ClientVersion
 		{
@@ -55,19 +51,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ClusterId
 		{
 			get
@@ -78,19 +61,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -34,11 +34,25 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
+		private string imageId;
+
+		private string jobQueue;
+
+		private string imageOwnerAlias;
+
+		private string systemDiskType;
+
+		private int? systemDiskSize;
+
+		private string instanceType;
+
+		private string hostNamePrefix;
+
+		private string computeSpotPriceLimit;
+
 		private int? autoRenewPeriod;
 
 		private int? period;
-
-		private string imageId;
 
 		private int? count;
 
@@ -46,15 +60,13 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string computeSpotStrategy;
 
-		private string jobQueue;
-
-		private string accessKeyId;
-
-		private string imageOwnerAlias;
+		private string hostNameSuffix;
 
 		private string vSwitchId;
 
 		private string periodUnit;
+
+		private bool? computeEnableHt;
 
 		private string autoRenew;
 
@@ -62,15 +74,111 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string createMode;
 
-		private int? systemDiskSize;
-
-		private string action;
-
-		private string instanceType;
-
 		private string zoneId;
 
-		private string computeSpotPriceLimit;
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public string JobQueue
+		{
+			get
+			{
+				return jobQueue;
+			}
+			set	
+			{
+				jobQueue = value;
+				DictionaryUtil.Add(QueryParameters, "JobQueue", value);
+			}
+		}
+
+		public string ImageOwnerAlias
+		{
+			get
+			{
+				return imageOwnerAlias;
+			}
+			set	
+			{
+				imageOwnerAlias = value;
+				DictionaryUtil.Add(QueryParameters, "ImageOwnerAlias", value);
+			}
+		}
+
+		public string SystemDiskType
+		{
+			get
+			{
+				return systemDiskType;
+			}
+			set	
+			{
+				systemDiskType = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskType", value);
+			}
+		}
+
+		public int? SystemDiskSize
+		{
+			get
+			{
+				return systemDiskSize;
+			}
+			set	
+			{
+				systemDiskSize = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskSize", value.ToString());
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string HostNamePrefix
+		{
+			get
+			{
+				return hostNamePrefix;
+			}
+			set	
+			{
+				hostNamePrefix = value;
+				DictionaryUtil.Add(QueryParameters, "HostNamePrefix", value);
+			}
+		}
+
+		public string ComputeSpotPriceLimit
+		{
+			get
+			{
+				return computeSpotPriceLimit;
+			}
+			set	
+			{
+				computeSpotPriceLimit = value;
+				DictionaryUtil.Add(QueryParameters, "ComputeSpotPriceLimit", value);
+			}
+		}
 
 		public int? AutoRenewPeriod
 		{
@@ -95,19 +203,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
-			}
-		}
-
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
 			}
 		}
 
@@ -150,42 +245,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string JobQueue
+		public string HostNameSuffix
 		{
 			get
 			{
-				return jobQueue;
+				return hostNameSuffix;
 			}
 			set	
 			{
-				jobQueue = value;
-				DictionaryUtil.Add(QueryParameters, "JobQueue", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string ImageOwnerAlias
-		{
-			get
-			{
-				return imageOwnerAlias;
-			}
-			set	
-			{
-				imageOwnerAlias = value;
-				DictionaryUtil.Add(QueryParameters, "ImageOwnerAlias", value);
+				hostNameSuffix = value;
+				DictionaryUtil.Add(QueryParameters, "HostNameSuffix", value);
 			}
 		}
 
@@ -212,6 +281,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				periodUnit = value;
 				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
+			}
+		}
+
+		public bool? ComputeEnableHt
+		{
+			get
+			{
+				return computeEnableHt;
+			}
+			set	
+			{
+				computeEnableHt = value;
+				DictionaryUtil.Add(QueryParameters, "ComputeEnableHt", value.ToString());
 			}
 		}
 
@@ -254,45 +336,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public int? SystemDiskSize
-		{
-			get
-			{
-				return systemDiskSize;
-			}
-			set	
-			{
-				systemDiskSize = value;
-				DictionaryUtil.Add(QueryParameters, "SystemDiskSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
 		public string ZoneId
 		{
 			get
@@ -303,19 +346,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string ComputeSpotPriceLimit
-		{
-			get
-			{
-				return computeSpotPriceLimit;
-			}
-			set	
-			{
-				computeSpotPriceLimit = value;
-				DictionaryUtil.Add(QueryParameters, "ComputeSpotPriceLimit", value);
 			}
 		}
 

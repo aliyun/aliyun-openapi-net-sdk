@@ -41,11 +41,16 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				ListFileSystemWithMountTargetsResponse.ListFileSystemWithMountTargets_FileSystems fileSystems = new ListFileSystemWithMountTargetsResponse.ListFileSystemWithMountTargets_FileSystems();
 				fileSystems.RegionId = context.StringValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].RegionId");
 				fileSystems.FileSystemId = context.StringValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].FileSystemId");
+				fileSystems.FileSystemType = context.StringValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].FileSystemType");
 				fileSystems.ProtocolType = context.StringValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].ProtocolType");
 				fileSystems.CreateTime = context.StringValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].CreateTime");
 				fileSystems.Destription = context.StringValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].Destription");
 				fileSystems.StorageType = context.StringValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].StorageType");
-				fileSystems.MeteredSize = context.StringValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].MeteredSize");
+				fileSystems.MeteredSize = context.IntegerValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].MeteredSize");
+				fileSystems.Capacity = context.IntegerValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].Capacity");
+				fileSystems.EncryptType = context.IntegerValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].EncryptType");
+				fileSystems.BandWidth = context.IntegerValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].BandWidth");
+				fileSystems.Status = context.StringValue("ListFileSystemWithMountTargets.FileSystemList["+ i +"].Status");
 
 				List<ListFileSystemWithMountTargetsResponse.ListFileSystemWithMountTargets_FileSystems.ListFileSystemWithMountTargets_Packages> fileSystems_packageList = new List<ListFileSystemWithMountTargetsResponse.ListFileSystemWithMountTargets_FileSystems.ListFileSystemWithMountTargets_Packages>();
 				for (int j = 0; j < context.Length("ListFileSystemWithMountTargets.FileSystemList["+ i +"].PackageList.Length"); j++) {

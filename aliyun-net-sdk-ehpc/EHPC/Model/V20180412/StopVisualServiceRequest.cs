@@ -34,41 +34,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private int? port;
-
-		private string action;
-
 		private string clusterId;
 
+		private int? port;
+
 		private string cidrIp;
-
-		private string accessKeyId;
-
-		public int? Port
-		{
-			get
-			{
-				return port;
-			}
-			set	
-			{
-				port = value;
-				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
 
 		public string ClusterId
 		{
@@ -83,6 +53,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public int? Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
+			}
+		}
+
 		public string CidrIp
 		{
 			get
@@ -93,19 +76,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				cidrIp = value;
 				DictionaryUtil.Add(QueryParameters, "CidrIp", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

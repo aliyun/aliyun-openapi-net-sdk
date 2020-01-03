@@ -34,13 +34,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private List<Instance> instances;
-
-		private string invokeRecordStatus;
-
-		private int? pageSize;
-
-		private string action;
+		private List<Instance> instances = new List<Instance>(){ };
 
 		private string clusterId;
 
@@ -48,7 +42,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private int? pageNumber;
 
-		private string accessKeyId;
+		private string invokeRecordStatus;
+
+		private int? pageSize;
 
 		public List<Instance> Instances
 		{
@@ -64,45 +60,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				{
 					DictionaryUtil.Add(QueryParameters,"Instance." + (i + 1) + ".Id", instances[i].Id);
 				}
-			}
-		}
-
-		public string InvokeRecordStatus
-		{
-			get
-			{
-				return invokeRecordStatus;
-			}
-			set	
-			{
-				invokeRecordStatus = value;
-				DictionaryUtil.Add(QueryParameters, "InvokeRecordStatus", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -145,16 +102,29 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string AccessKeyId
+		public string InvokeRecordStatus
 		{
 			get
 			{
-				return accessKeyId;
+				return invokeRecordStatus;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				invokeRecordStatus = value;
+				DictionaryUtil.Add(QueryParameters, "InvokeRecordStatus", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

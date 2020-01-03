@@ -135,6 +135,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 				private string gPUSpec;
 
+				private string status;
+
 				public int? CpuCoreCount
 				{
 					get
@@ -252,6 +254,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					set	
 					{
 						gPUSpec = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
 					}
 				}
 			}

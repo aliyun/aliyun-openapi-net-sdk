@@ -106,7 +106,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string nodeList;
 
-			private int? priority;
+			private string priority;
 
 			private string state;
 
@@ -176,7 +176,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				}
 			}
 
-			public int? Priority
+			public string Priority
 			{
 				get
 				{

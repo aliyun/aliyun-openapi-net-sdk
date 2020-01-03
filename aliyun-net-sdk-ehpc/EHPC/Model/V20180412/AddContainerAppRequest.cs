@@ -34,58 +34,15 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private string containerType;
-
-		private string name;
-
-		private string action;
-
 		private string description;
 
 		private string repository;
 
+		private string containerType;
+
+		private string name;
+
 		private string imageTag;
-
-		private string accessKeyId;
-
-		public string ContainerType
-		{
-			get
-			{
-				return containerType;
-			}
-			set	
-			{
-				containerType = value;
-				DictionaryUtil.Add(QueryParameters, "ContainerType", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
 
 		public string Description
 		{
@@ -113,6 +70,32 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string ContainerType
+		{
+			get
+			{
+				return containerType;
+			}
+			set	
+			{
+				containerType = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerType", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
 		public string ImageTag
 		{
 			get
@@ -123,19 +106,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				imageTag = value;
 				DictionaryUtil.Add(QueryParameters, "ImageTag", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

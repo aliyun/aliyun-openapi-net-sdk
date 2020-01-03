@@ -34,30 +34,13 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private string hostName;
-
 		private string role;
-
-		private string action;
 
 		private string clusterId;
 
+		private string hostName;
+
 		private bool? onlyDetached;
-
-		private string accessKeyId;
-
-		public string HostName
-		{
-			get
-			{
-				return hostName;
-			}
-			set	
-			{
-				hostName = value;
-				DictionaryUtil.Add(QueryParameters, "HostName", value);
-			}
-		}
 
 		public string Role
 		{
@@ -69,19 +52,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				role = value;
 				DictionaryUtil.Add(QueryParameters, "Role", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -98,6 +68,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string HostName
+		{
+			get
+			{
+				return hostName;
+			}
+			set	
+			{
+				hostName = value;
+				DictionaryUtil.Add(QueryParameters, "HostName", value);
+			}
+		}
+
 		public bool? OnlyDetached
 		{
 			get
@@ -108,19 +91,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				onlyDetached = value;
 				DictionaryUtil.Add(QueryParameters, "OnlyDetached", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

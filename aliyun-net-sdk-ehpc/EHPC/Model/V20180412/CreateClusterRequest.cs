@@ -34,35 +34,15 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private string sccClusterId;
-
-		private string imageId;
-
-		private List<AdditionalVolumes> additionalVolumess;
+		private List<AdditionalVolumes> additionalVolumess = new List<AdditionalVolumes>(){ };
 
 		private string ecsOrderManagerInstanceType;
-
-		private string ehpcVersion;
-
-		private string accountType;
-
-		private string securityGroupId;
-
-		private string description;
 
 		private string keyPairName;
 
 		private string securityGroupName;
 
-		private string ecsOrderComputeInstanceType;
-
-		private string jobQueue;
-
-		private string accessKeyId;
-
 		private string imageOwnerAlias;
-
-		private string volumeType;
 
 		private string deployMode;
 
@@ -78,19 +58,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private int? systemDiskSize;
 
-		private string action;
-
 		private string computeSpotPriceLimit;
 
 		private int? autoRenewPeriod;
 
 		private int? period;
-
-		private string volumeProtocol;
-
-		private string clientVersion;
-
-		private string osTag;
 
 		private string remoteDirectory;
 
@@ -98,15 +70,49 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string computeSpotStrategy;
 
-		private List<PostInstallScript> postInstallScripts;
+		private List<PostInstallScript> postInstallScripts = new List<PostInstallScript>(){ };
 
 		private string vSwitchId;
 
 		private string periodUnit;
 
-		private List<Application> applications;
+		private bool? computeEnableHt;
 
 		private string autoRenew;
+
+		private string name;
+
+		private string volumeId;
+
+		private string zoneId;
+
+		private string sccClusterId;
+
+		private string imageId;
+
+		private string ehpcVersion;
+
+		private string accountType;
+
+		private string securityGroupId;
+
+		private string description;
+
+		private string ecsOrderComputeInstanceType;
+
+		private string jobQueue;
+
+		private string volumeType;
+
+		private string systemDiskType;
+
+		private string volumeProtocol;
+
+		private string clientVersion;
+
+		private string osTag;
+
+		private List<Application> applications = new List<Application>(){ };
 
 		private string ecsChargeType;
 
@@ -116,43 +122,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private bool? haEnable;
 
-		private string name;
-
 		private string schedulerType;
-
-		private string volumeId;
 
 		private string volumeMountpoint;
 
 		private string ecsOrderLoginInstanceType;
-
-		private string zoneId;
-
-		public string SccClusterId
-		{
-			get
-			{
-				return sccClusterId;
-			}
-			set	
-			{
-				sccClusterId = value;
-				DictionaryUtil.Add(QueryParameters, "SccClusterId", value);
-			}
-		}
-
-		public string ImageId
-		{
-			get
-			{
-				return imageId;
-			}
-			set	
-			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
-			}
-		}
 
 		public List<AdditionalVolumes> AdditionalVolumess
 		{
@@ -195,58 +169,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string EhpcVersion
-		{
-			get
-			{
-				return ehpcVersion;
-			}
-			set	
-			{
-				ehpcVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EhpcVersion", value);
-			}
-		}
-
-		public string AccountType
-		{
-			get
-			{
-				return accountType;
-			}
-			set	
-			{
-				accountType = value;
-				DictionaryUtil.Add(QueryParameters, "AccountType", value);
-			}
-		}
-
-		public string SecurityGroupId
-		{
-			get
-			{
-				return securityGroupId;
-			}
-			set	
-			{
-				securityGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public string KeyPairName
 		{
 			get
@@ -273,45 +195,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string EcsOrderComputeInstanceType
-		{
-			get
-			{
-				return ecsOrderComputeInstanceType;
-			}
-			set	
-			{
-				ecsOrderComputeInstanceType = value;
-				DictionaryUtil.Add(QueryParameters, "EcsOrder.Compute.InstanceType", value);
-			}
-		}
-
-		public string JobQueue
-		{
-			get
-			{
-				return jobQueue;
-			}
-			set	
-			{
-				jobQueue = value;
-				DictionaryUtil.Add(QueryParameters, "JobQueue", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string ImageOwnerAlias
 		{
 			get
@@ -322,19 +205,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				imageOwnerAlias = value;
 				DictionaryUtil.Add(QueryParameters, "ImageOwnerAlias", value);
-			}
-		}
-
-		public string VolumeType
-		{
-			get
-			{
-				return volumeType;
-			}
-			set	
-			{
-				volumeType = value;
-				DictionaryUtil.Add(QueryParameters, "VolumeType", value);
 			}
 		}
 
@@ -429,19 +299,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ComputeSpotPriceLimit
 		{
 			get
@@ -478,45 +335,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
-			}
-		}
-
-		public string VolumeProtocol
-		{
-			get
-			{
-				return volumeProtocol;
-			}
-			set	
-			{
-				volumeProtocol = value;
-				DictionaryUtil.Add(QueryParameters, "VolumeProtocol", value);
-			}
-		}
-
-		public string ClientVersion
-		{
-			get
-			{
-				return clientVersion;
-			}
-			set	
-			{
-				clientVersion = value;
-				DictionaryUtil.Add(QueryParameters, "ClientVersion", value);
-			}
-		}
-
-		public string OsTag
-		{
-			get
-			{
-				return osTag;
-			}
-			set	
-			{
-				osTag = value;
-				DictionaryUtil.Add(QueryParameters, "OsTag", value);
 			}
 		}
 
@@ -603,6 +421,240 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public bool? ComputeEnableHt
+		{
+			get
+			{
+				return computeEnableHt;
+			}
+			set	
+			{
+				computeEnableHt = value;
+				DictionaryUtil.Add(QueryParameters, "ComputeEnableHt", value.ToString());
+			}
+		}
+
+		public string AutoRenew
+		{
+			get
+			{
+				return autoRenew;
+			}
+			set	
+			{
+				autoRenew = value;
+				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string VolumeId
+		{
+			get
+			{
+				return volumeId;
+			}
+			set	
+			{
+				volumeId = value;
+				DictionaryUtil.Add(QueryParameters, "VolumeId", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string SccClusterId
+		{
+			get
+			{
+				return sccClusterId;
+			}
+			set	
+			{
+				sccClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "SccClusterId", value);
+			}
+		}
+
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public string EhpcVersion
+		{
+			get
+			{
+				return ehpcVersion;
+			}
+			set	
+			{
+				ehpcVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EhpcVersion", value);
+			}
+		}
+
+		public string AccountType
+		{
+			get
+			{
+				return accountType;
+			}
+			set	
+			{
+				accountType = value;
+				DictionaryUtil.Add(QueryParameters, "AccountType", value);
+			}
+		}
+
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string EcsOrderComputeInstanceType
+		{
+			get
+			{
+				return ecsOrderComputeInstanceType;
+			}
+			set	
+			{
+				ecsOrderComputeInstanceType = value;
+				DictionaryUtil.Add(QueryParameters, "EcsOrder.Compute.InstanceType", value);
+			}
+		}
+
+		public string JobQueue
+		{
+			get
+			{
+				return jobQueue;
+			}
+			set	
+			{
+				jobQueue = value;
+				DictionaryUtil.Add(QueryParameters, "JobQueue", value);
+			}
+		}
+
+		public string VolumeType
+		{
+			get
+			{
+				return volumeType;
+			}
+			set	
+			{
+				volumeType = value;
+				DictionaryUtil.Add(QueryParameters, "VolumeType", value);
+			}
+		}
+
+		public string SystemDiskType
+		{
+			get
+			{
+				return systemDiskType;
+			}
+			set	
+			{
+				systemDiskType = value;
+				DictionaryUtil.Add(QueryParameters, "SystemDiskType", value);
+			}
+		}
+
+		public string VolumeProtocol
+		{
+			get
+			{
+				return volumeProtocol;
+			}
+			set	
+			{
+				volumeProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "VolumeProtocol", value);
+			}
+		}
+
+		public string ClientVersion
+		{
+			get
+			{
+				return clientVersion;
+			}
+			set	
+			{
+				clientVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ClientVersion", value);
+			}
+		}
+
+		public string OsTag
+		{
+			get
+			{
+				return osTag;
+			}
+			set	
+			{
+				osTag = value;
+				DictionaryUtil.Add(QueryParameters, "OsTag", value);
+			}
+		}
+
 		public List<Application> Applications
 		{
 			get
@@ -617,19 +669,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				{
 					DictionaryUtil.Add(QueryParameters,"Application." + (i + 1) + ".Tag", applications[i].Tag);
 				}
-			}
-		}
-
-		public string AutoRenew
-		{
-			get
-			{
-				return autoRenew;
-			}
-			set	
-			{
-				autoRenew = value;
-				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
 			}
 		}
 
@@ -685,19 +724,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public string SchedulerType
 		{
 			get
@@ -708,19 +734,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				schedulerType = value;
 				DictionaryUtil.Add(QueryParameters, "SchedulerType", value);
-			}
-		}
-
-		public string VolumeId
-		{
-			get
-			{
-				return volumeId;
-			}
-			set	
-			{
-				volumeId = value;
-				DictionaryUtil.Add(QueryParameters, "VolumeId", value);
 			}
 		}
 
@@ -750,19 +763,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
 		public class AdditionalVolumes
 		{
 
@@ -774,7 +774,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string remoteDirectory;
 
-			private List<Roles> roless;
+			private List<Roles> roless = new List<Roles>(){ };
 
 			private string volumeId;
 

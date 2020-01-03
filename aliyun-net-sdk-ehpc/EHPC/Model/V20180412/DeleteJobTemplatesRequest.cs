@@ -36,10 +36,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string templates;
 
-		private string action;
-
-		private string accessKeyId;
-
 		public string Templates
 		{
 			get
@@ -50,32 +46,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				templates = value;
 				DictionaryUtil.Add(QueryParameters, "Templates", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

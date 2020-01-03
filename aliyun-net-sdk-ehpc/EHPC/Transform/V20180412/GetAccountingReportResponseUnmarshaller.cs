@@ -33,7 +33,12 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 			getAccountingReportResponse.HttpResponse = context.HttpResponse;
 			getAccountingReportResponse.RequestId = context.StringValue("GetAccountingReport.RequestId");
 			getAccountingReportResponse.Metrics = context.StringValue("GetAccountingReport.Metrics");
-			getAccountingReportResponse.Data = context.StringValue("GetAccountingReport.Data");
+
+			List<string> getAccountingReportResponse_data = new List<string>();
+			for (int i = 0; i < context.Length("GetAccountingReport.Data.Length"); i++) {
+				getAccountingReportResponse_data.Add(context.StringValue("GetAccountingReport.Data["+ i +"]"));
+			}
+			getAccountingReportResponse.Data = getAccountingReportResponse_data;
         
 			return getAccountingReportResponse;
         }

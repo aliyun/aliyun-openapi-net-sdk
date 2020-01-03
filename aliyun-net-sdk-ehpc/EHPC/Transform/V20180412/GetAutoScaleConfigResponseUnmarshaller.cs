@@ -52,6 +52,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 			for (int i = 0; i < context.Length("GetAutoScaleConfig.Queues.Length"); i++) {
 				GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo queueInfo = new GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo();
 				queueInfo.QueueName = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].QueueName");
+				queueInfo.ResourceGroupId = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].ResourceGroupId");
 				queueInfo.InstanceType = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].InstanceType");
 				queueInfo.SpotStrategy = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].SpotStrategy");
 				queueInfo.SpotPriceLimit = context.FloatValue("GetAutoScaleConfig.Queues["+ i +"].SpotPriceLimit");
@@ -66,6 +67,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 					instanceTypeInfo.SpotPriceLimit = context.FloatValue("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes["+ j +"].SpotPriceLimit");
 					instanceTypeInfo.ZoneId = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes["+ j +"].ZoneId");
 					instanceTypeInfo.VSwitchId = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes["+ j +"].VSwitchId");
+					instanceTypeInfo.HostNamePrefix = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes["+ j +"].HostNamePrefix");
 
 					queueInfo_instanceTypes.Add(instanceTypeInfo);
 				}

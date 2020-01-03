@@ -36,27 +36,23 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string stderrRedirectPath;
 
+		private string commandLine;
+
 		private string arrayRequest;
 
 		private string packagePath;
 
+		private string stdoutRedirectPath;
+
 		private string variables;
 
-		private string name;
-
-		private string action;
-
 		private string runasUser;
-
-		private string stdoutRedirectPath;
 
 		private bool? reRunable;
 
 		private int? priority;
 
-		private string commandLine;
-
-		private string accessKeyId;
+		private string name;
 
 		public string StderrRedirectPath
 		{
@@ -68,6 +64,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				stderrRedirectPath = value;
 				DictionaryUtil.Add(QueryParameters, "StderrRedirectPath", value);
+			}
+		}
+
+		public string CommandLine
+		{
+			get
+			{
+				return commandLine;
+			}
+			set	
+			{
+				commandLine = value;
+				DictionaryUtil.Add(QueryParameters, "CommandLine", value);
 			}
 		}
 
@@ -97,6 +106,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string StdoutRedirectPath
+		{
+			get
+			{
+				return stdoutRedirectPath;
+			}
+			set	
+			{
+				stdoutRedirectPath = value;
+				DictionaryUtil.Add(QueryParameters, "StdoutRedirectPath", value);
+			}
+		}
+
 		public string Variables
 		{
 			get
@@ -110,32 +132,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string RunasUser
 		{
 			get
@@ -146,19 +142,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				runasUser = value;
 				DictionaryUtil.Add(QueryParameters, "RunasUser", value);
-			}
-		}
-
-		public string StdoutRedirectPath
-		{
-			get
-			{
-				return stdoutRedirectPath;
-			}
-			set	
-			{
-				stdoutRedirectPath = value;
-				DictionaryUtil.Add(QueryParameters, "StdoutRedirectPath", value);
 			}
 		}
 
@@ -188,29 +171,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string CommandLine
+		public string Name
 		{
 			get
 			{
-				return commandLine;
+				return name;
 			}
 			set	
 			{
-				commandLine = value;
-				DictionaryUtil.Add(QueryParameters, "CommandLine", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

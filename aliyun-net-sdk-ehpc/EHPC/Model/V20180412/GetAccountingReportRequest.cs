@@ -36,15 +36,13 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string reportType;
 
-		private string action;
-
 		private int? endTime;
+
+		private string filterValue;
 
 		private string clusterId;
 
 		private int? startTime;
-
-		private string accessKeyId;
 
 		public string ReportType
 		{
@@ -59,19 +57,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public int? EndTime
 		{
 			get
@@ -82,6 +67,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public string FilterValue
+		{
+			get
+			{
+				return filterValue;
+			}
+			set	
+			{
+				filterValue = value;
+				DictionaryUtil.Add(QueryParameters, "FilterValue", value);
 			}
 		}
 
@@ -108,19 +106,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

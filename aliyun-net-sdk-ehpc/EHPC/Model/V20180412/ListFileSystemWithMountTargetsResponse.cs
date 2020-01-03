@@ -102,6 +102,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string fileSystemId;
 
+			private string fileSystemType;
+
 			private string protocolType;
 
 			private string createTime;
@@ -110,7 +112,15 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string storageType;
 
-			private string meteredSize;
+			private int? meteredSize;
+
+			private int? capacity;
+
+			private int? encryptType;
+
+			private int? bandWidth;
+
+			private string status;
 
 			private List<ListFileSystemWithMountTargets_Packages> packageList;
 
@@ -137,6 +147,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					fileSystemId = value;
+				}
+			}
+
+			public string FileSystemType
+			{
+				get
+				{
+					return fileSystemType;
+				}
+				set	
+				{
+					fileSystemType = value;
 				}
 			}
 
@@ -188,7 +210,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				}
 			}
 
-			public string MeteredSize
+			public int? MeteredSize
 			{
 				get
 				{
@@ -197,6 +219,54 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					meteredSize = value;
+				}
+			}
+
+			public int? Capacity
+			{
+				get
+				{
+					return capacity;
+				}
+				set	
+				{
+					capacity = value;
+				}
+			}
+
+			public int? EncryptType
+			{
+				get
+				{
+					return encryptType;
+				}
+				set	
+				{
+					encryptType = value;
+				}
+			}
+
+			public int? BandWidth
+			{
+				get
+				{
+					return bandWidth;
+				}
+				set	
+				{
+					bandWidth = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 

@@ -106,6 +106,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string status;
 
+			private string location;
+
 			public string Id
 			{
 				get
@@ -151,6 +153,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string Location
+			{
+				get
+				{
+					return location;
+				}
+				set	
+				{
+					location = value;
 				}
 			}
 		}

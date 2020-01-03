@@ -104,6 +104,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string hostName;
 
+			private string ipAddress;
+
 			private string status;
 
 			private string version;
@@ -173,6 +175,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					hostName = value;
+				}
+			}
+
+			public string IpAddress
+			{
+				get
+				{
+					return ipAddress;
+				}
+				set	
+				{
+					ipAddress = value;
 				}
 			}
 

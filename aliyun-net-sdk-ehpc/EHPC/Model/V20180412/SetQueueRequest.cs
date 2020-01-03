@@ -36,13 +36,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string queueName;
 
-		private List<Node> nodes;
-
-		private string action;
-
 		private string clusterId;
 
-		private string accessKeyId;
+		private List<Node> nodes = new List<Node>(){ };
 
 		public string QueueName
 		{
@@ -54,6 +50,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				queueName = value;
 				DictionaryUtil.Add(QueryParameters, "QueueName", value);
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 
@@ -71,45 +80,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				{
 					DictionaryUtil.Add(QueryParameters,"Node." + (i + 1) + ".Name", nodes[i].Name);
 				}
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

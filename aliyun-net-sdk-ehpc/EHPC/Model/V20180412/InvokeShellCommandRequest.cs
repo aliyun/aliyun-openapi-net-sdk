@@ -34,19 +34,15 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private List<Instance> instances;
+		private List<Instance> instances = new List<Instance>(){ };
 
 		private string workingDir;
-
-		private string action;
 
 		private string clusterId;
 
 		private string command;
 
 		private int? timeout;
-
-		private string accessKeyId;
 
 		public List<Instance> Instances
 		{
@@ -75,19 +71,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				workingDir = value;
 				DictionaryUtil.Add(QueryParameters, "WorkingDir", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -127,19 +110,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				timeout = value;
 				DictionaryUtil.Add(QueryParameters, "Timeout", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

@@ -34,6 +34,12 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
+		private float? spotPriceLimit;
+
+		private string excludeNodes;
+
+		private int? extraNodesGrowRatio;
+
 		private int? shrinkIdleTimes;
 
 		private int? growTimeoutInMinutes;
@@ -42,29 +48,58 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private bool? enableAutoGrow;
 
-		private float? spotPriceLimit;
-
 		private bool? enableAutoShrink;
-
-		private string accessKeyId;
 
 		private string spotStrategy;
 
 		private int? maxNodesInCluster;
 
-		private string excludeNodes;
-
 		private int? shrinkIntervalInMinutes;
 
-		private List<Queues> queuess;
-
-		private string action;
-
-		private int? extraNodesGrowRatio;
+		private List<Queues> queuess = new List<Queues>(){ };
 
 		private int? growIntervalInMinutes;
 
 		private int? growRatio;
+
+		public float? SpotPriceLimit
+		{
+			get
+			{
+				return spotPriceLimit;
+			}
+			set	
+			{
+				spotPriceLimit = value;
+				DictionaryUtil.Add(QueryParameters, "SpotPriceLimit", value.ToString());
+			}
+		}
+
+		public string ExcludeNodes
+		{
+			get
+			{
+				return excludeNodes;
+			}
+			set	
+			{
+				excludeNodes = value;
+				DictionaryUtil.Add(QueryParameters, "ExcludeNodes", value);
+			}
+		}
+
+		public int? ExtraNodesGrowRatio
+		{
+			get
+			{
+				return extraNodesGrowRatio;
+			}
+			set	
+			{
+				extraNodesGrowRatio = value;
+				DictionaryUtil.Add(QueryParameters, "ExtraNodesGrowRatio", value.ToString());
+			}
+		}
 
 		public int? ShrinkIdleTimes
 		{
@@ -118,19 +153,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public float? SpotPriceLimit
-		{
-			get
-			{
-				return spotPriceLimit;
-			}
-			set	
-			{
-				spotPriceLimit = value;
-				DictionaryUtil.Add(QueryParameters, "SpotPriceLimit", value.ToString());
-			}
-		}
-
 		public bool? EnableAutoShrink
 		{
 			get
@@ -141,19 +163,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				enableAutoShrink = value;
 				DictionaryUtil.Add(QueryParameters, "EnableAutoShrink", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -180,19 +189,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				maxNodesInCluster = value;
 				DictionaryUtil.Add(QueryParameters, "MaxNodesInCluster", value.ToString());
-			}
-		}
-
-		public string ExcludeNodes
-		{
-			get
-			{
-				return excludeNodes;
-			}
-			set	
-			{
-				excludeNodes = value;
-				DictionaryUtil.Add(QueryParameters, "ExcludeNodes", value);
 			}
 		}
 
@@ -235,32 +231,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public int? ExtraNodesGrowRatio
-		{
-			get
-			{
-				return extraNodesGrowRatio;
-			}
-			set	
-			{
-				extraNodesGrowRatio = value;
-				DictionaryUtil.Add(QueryParameters, "ExtraNodesGrowRatio", value.ToString());
-			}
-		}
-
 		public int? GrowIntervalInMinutes
 		{
 			get
@@ -294,7 +264,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string queueName;
 
-			private List<InstanceTypes> instanceTypess;
+			private List<InstanceTypes> instanceTypess = new List<InstanceTypes>(){ };
 
 			private string instanceType;
 
@@ -399,6 +369,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 				private string zoneId;
 
+				private string hostNamePrefix;
+
 				private float? spotPriceLimit;
 
 				public string SpotStrategy
@@ -446,6 +418,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					set	
 					{
 						zoneId = value;
+					}
+				}
+
+				public string HostNamePrefix
+				{
+					get
+					{
+						return hostNamePrefix;
+					}
+					set	
+					{
+						hostNamePrefix = value;
 					}
 				}
 

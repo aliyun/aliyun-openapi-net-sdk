@@ -36,13 +36,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string role;
 
-		private List<Instance> instances;
-
-		private string action;
+		private List<Instance> instances = new List<Instance>(){ };
 
 		private string clusterId;
-
-		private string accessKeyId;
 
 		public string Role
 		{
@@ -74,19 +70,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ClusterId
 		{
 			get
@@ -97,19 +80,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

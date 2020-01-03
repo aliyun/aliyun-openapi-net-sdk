@@ -43,6 +43,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				clusterInfoSimple.Name = context.StringValue("ListClustersMeta.Clusters["+ i +"].Name");
 				clusterInfoSimple.Description = context.StringValue("ListClustersMeta.Clusters["+ i +"].Description");
 				clusterInfoSimple.Status = context.StringValue("ListClustersMeta.Clusters["+ i +"].Status");
+				clusterInfoSimple.Location = context.StringValue("ListClustersMeta.Clusters["+ i +"].Location");
 
 				listClustersMetaResponse_clusters.Add(clusterInfoSimple);
 			}

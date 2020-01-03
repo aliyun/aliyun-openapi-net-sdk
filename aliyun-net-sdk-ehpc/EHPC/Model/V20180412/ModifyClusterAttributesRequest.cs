@@ -34,41 +34,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private string name;
-
-		private string action;
-
 		private string description;
 
 		private string clusterId;
 
-		private string accessKeyId;
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
+		private string name;
 
 		public string Description
 		{
@@ -96,16 +66,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string AccessKeyId
+		public string Name
 		{
 			get
 			{
-				return accessKeyId;
+				return name;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

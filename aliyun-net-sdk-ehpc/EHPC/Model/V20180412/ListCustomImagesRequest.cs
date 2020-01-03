@@ -34,24 +34,20 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private string action;
+		private string imageOwnerAlias;
 
 		private string baseOsTag;
 
-		private string accessKeyId;
-
-		private string imageOwnerAlias;
-
-		public string Action
+		public string ImageOwnerAlias
 		{
 			get
 			{
-				return action;
+				return imageOwnerAlias;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
+				imageOwnerAlias = value;
+				DictionaryUtil.Add(QueryParameters, "ImageOwnerAlias", value);
 			}
 		}
 
@@ -65,32 +61,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				baseOsTag = value;
 				DictionaryUtil.Add(QueryParameters, "BaseOsTag", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string ImageOwnerAlias
-		{
-			get
-			{
-				return imageOwnerAlias;
-			}
-			set	
-			{
-				imageOwnerAlias = value;
-				DictionaryUtil.Add(QueryParameters, "ImageOwnerAlias", value);
 			}
 		}
 

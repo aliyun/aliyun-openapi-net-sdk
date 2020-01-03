@@ -34,54 +34,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private string regionId;
-
-		private string action;
-
-		private string profilingId;
-
 		private string clusterId;
 
-		private string accessKeyId;
-
-		public string RegionId
-		{
-			get
-			{
-				return regionId;
-			}
-			set	
-			{
-				regionId = value;
-				DictionaryUtil.Add(QueryParameters, "RegionId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string ProfilingId
-		{
-			get
-			{
-				return profilingId;
-			}
-			set	
-			{
-				profilingId = value;
-				DictionaryUtil.Add(QueryParameters, "ProfilingId", value);
-			}
-		}
+		private string profilingId;
 
 		public string ClusterId
 		{
@@ -96,16 +51,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string AccessKeyId
+		public string ProfilingId
 		{
 			get
 			{
-				return accessKeyId;
+				return profilingId;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				profilingId = value;
+				DictionaryUtil.Add(QueryParameters, "ProfilingId", value);
 			}
 		}
 

@@ -36,6 +36,14 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string stderrRedirectPath;
 
+		private string commandLine;
+
+		private string arrayRequest;
+
+		private string packagePath;
+
+		private string stdoutRedirectPath;
+
 		private string variables;
 
 		private string runasUser;
@@ -46,19 +54,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private int? priority;
 
-		private string commandLine;
-
-		private string accessKeyId;
-
-		private string arrayRequest;
-
-		private string packagePath;
-
 		private string name;
-
-		private string action;
-
-		private string stdoutRedirectPath;
 
 		public string StderrRedirectPath
 		{
@@ -70,6 +66,58 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				stderrRedirectPath = value;
 				DictionaryUtil.Add(QueryParameters, "StderrRedirectPath", value);
+			}
+		}
+
+		public string CommandLine
+		{
+			get
+			{
+				return commandLine;
+			}
+			set	
+			{
+				commandLine = value;
+				DictionaryUtil.Add(QueryParameters, "CommandLine", value);
+			}
+		}
+
+		public string ArrayRequest
+		{
+			get
+			{
+				return arrayRequest;
+			}
+			set	
+			{
+				arrayRequest = value;
+				DictionaryUtil.Add(QueryParameters, "ArrayRequest", value);
+			}
+		}
+
+		public string PackagePath
+		{
+			get
+			{
+				return packagePath;
+			}
+			set	
+			{
+				packagePath = value;
+				DictionaryUtil.Add(QueryParameters, "PackagePath", value);
+			}
+		}
+
+		public string StdoutRedirectPath
+		{
+			get
+			{
+				return stdoutRedirectPath;
+			}
+			set	
+			{
+				stdoutRedirectPath = value;
+				DictionaryUtil.Add(QueryParameters, "StdoutRedirectPath", value);
 			}
 		}
 
@@ -138,58 +186,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string CommandLine
-		{
-			get
-			{
-				return commandLine;
-			}
-			set	
-			{
-				commandLine = value;
-				DictionaryUtil.Add(QueryParameters, "CommandLine", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string ArrayRequest
-		{
-			get
-			{
-				return arrayRequest;
-			}
-			set	
-			{
-				arrayRequest = value;
-				DictionaryUtil.Add(QueryParameters, "ArrayRequest", value);
-			}
-		}
-
-		public string PackagePath
-		{
-			get
-			{
-				return packagePath;
-			}
-			set	
-			{
-				packagePath = value;
-				DictionaryUtil.Add(QueryParameters, "PackagePath", value);
-			}
-		}
-
 		public string Name
 		{
 			get
@@ -200,32 +196,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string StdoutRedirectPath
-		{
-			get
-			{
-				return stdoutRedirectPath;
-			}
-			set	
-			{
-				stdoutRedirectPath = value;
-				DictionaryUtil.Add(QueryParameters, "StdoutRedirectPath", value);
 			}
 		}
 

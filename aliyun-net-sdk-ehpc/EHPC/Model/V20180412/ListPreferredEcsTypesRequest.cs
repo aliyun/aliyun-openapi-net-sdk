@@ -36,13 +36,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string spotStrategy;
 
-		private string action;
-
 		private string zoneId;
 
 		private string instanceChargeType;
-
-		private string accessKeyId;
 
 		public string SpotStrategy
 		{
@@ -54,19 +50,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				spotStrategy = value;
 				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -93,19 +76,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				instanceChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

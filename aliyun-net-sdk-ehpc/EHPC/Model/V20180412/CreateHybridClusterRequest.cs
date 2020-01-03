@@ -50,8 +50,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string jobQueue;
 
-		private string accessKeyId;
-
 		private string volumeType;
 
 		private string resourceGroupId;
@@ -59,8 +57,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string password;
 
 		private string onPremiseVolumeMountPoint;
-
-		private string action;
 
 		private string onPremiseVolumeProtocol;
 
@@ -74,13 +70,13 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string remoteDirectory;
 
-		private List<PostInstallScript> postInstallScripts;
+		private List<PostInstallScript> postInstallScripts = new List<PostInstallScript>(){ };
 
 		private string vSwitchId;
 
-		private string nodes;
+		private List<Nodes> nodess = new List<Nodes>(){ };
 
-		private List<Application> applications;
+		private List<Application> applications = new List<Application>(){ };
 
 		private string domain;
 
@@ -93,6 +89,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string volumeMountpoint;
 
 		private string zoneId;
+
+		private bool? schedulerPreInstall;
 
 		private string location;
 
@@ -200,19 +198,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string VolumeType
 		{
 			get
@@ -262,19 +247,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				onPremiseVolumeMountPoint = value;
 				DictionaryUtil.Add(QueryParameters, "OnPremiseVolumeMountPoint", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -387,16 +359,24 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Nodes
+		public List<Nodes> Nodess
 		{
 			get
 			{
-				return nodes;
+				return nodess;
 			}
-			set	
+
+			set
 			{
-				nodes = value;
-				DictionaryUtil.Add(QueryParameters, "Nodes", value);
+				nodess = value;
+				for (int i = 0; i < nodess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Nodes." + (i + 1) + ".IpAddress", nodess[i].IpAddress);
+					DictionaryUtil.Add(QueryParameters,"Nodes." + (i + 1) + ".HostName", nodess[i].HostName);
+					DictionaryUtil.Add(QueryParameters,"Nodes." + (i + 1) + ".Role", nodess[i].Role);
+					DictionaryUtil.Add(QueryParameters,"Nodes." + (i + 1) + ".AccountType", nodess[i].AccountType);
+					DictionaryUtil.Add(QueryParameters,"Nodes." + (i + 1) + ".SchedulerType", nodess[i].SchedulerType);
+				}
 			}
 		}
 
@@ -495,6 +475,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public bool? SchedulerPreInstall
+		{
+			get
+			{
+				return schedulerPreInstall;
+			}
+			set	
+			{
+				schedulerPreInstall = value;
+				DictionaryUtil.Add(QueryParameters, "SchedulerPreInstall", value.ToString());
+			}
+		}
+
 		public string Location
 		{
 			get
@@ -536,6 +529,80 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					url = value;
+				}
+			}
+		}
+
+		public class Nodes
+		{
+
+			private string ipAddress;
+
+			private string hostName;
+
+			private string role;
+
+			private string accountType;
+
+			private string schedulerType;
+
+			public string IpAddress
+			{
+				get
+				{
+					return ipAddress;
+				}
+				set	
+				{
+					ipAddress = value;
+				}
+			}
+
+			public string HostName
+			{
+				get
+				{
+					return hostName;
+				}
+				set	
+				{
+					hostName = value;
+				}
+			}
+
+			public string Role
+			{
+				get
+				{
+					return role;
+				}
+				set	
+				{
+					role = value;
+				}
+			}
+
+			public string AccountType
+			{
+				get
+				{
+					return accountType;
+				}
+				set	
+				{
+					accountType = value;
+				}
+			}
+
+			public string SchedulerType
+			{
+				get
+				{
+					return schedulerType;
+				}
+				set	
+				{
+					schedulerType = value;
 				}
 			}
 		}

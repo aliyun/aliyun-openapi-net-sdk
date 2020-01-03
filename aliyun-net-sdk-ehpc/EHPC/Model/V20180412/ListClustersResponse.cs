@@ -138,6 +138,10 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string ehpcVersion;
 
+			private string nodePrefix;
+
+			private string nodeSuffix;
+
 			private ListClusters_Managers managers;
 
 			private ListClusters_Computes computes;
@@ -383,6 +387,30 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					ehpcVersion = value;
+				}
+			}
+
+			public string NodePrefix
+			{
+				get
+				{
+					return nodePrefix;
+				}
+				set	
+				{
+					nodePrefix = value;
+				}
+			}
+
+			public string NodeSuffix
+			{
+				get
+				{
+					return nodeSuffix;
+				}
+				set	
+				{
+					nodeSuffix = value;
 				}
 			}
 

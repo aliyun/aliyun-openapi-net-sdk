@@ -34,27 +34,68 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
+		private List<Repo> repos = new List<Repo>(){ };
+
+		private string dBServerInfo;
+
+		private string clusterId;
+
 		private string defaultRepoLocation;
 
 		private string dBPassword;
-
-		private List<Repo> repos;
 
 		private string dBType;
 
 		private string dBUsername;
 
-		private string action;
-
-		private string dBServerInfo;
-
 		private int? pullUpdateTimeout;
 
-		private string clusterId;
-
-		private string accessKeyId;
-
 		private string imageExpirationTimeout;
+
+		public List<Repo> Repos
+		{
+			get
+			{
+				return repos;
+			}
+
+			set
+			{
+				repos = value;
+				for (int i = 0; i < repos.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Repo." + (i + 1) + ".Auth", repos[i].Auth);
+					DictionaryUtil.Add(QueryParameters,"Repo." + (i + 1) + ".Location", repos[i].Location);
+					DictionaryUtil.Add(QueryParameters,"Repo." + (i + 1) + ".URL", repos[i].URL);
+				}
+			}
+		}
+
+		public string DBServerInfo
+		{
+			get
+			{
+				return dBServerInfo;
+			}
+			set	
+			{
+				dBServerInfo = value;
+				DictionaryUtil.Add(QueryParameters, "DBServerInfo", value);
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
 
 		public string DefaultRepoLocation
 		{
@@ -79,25 +120,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				dBPassword = value;
 				DictionaryUtil.Add(QueryParameters, "DBPassword", value);
-			}
-		}
-
-		public List<Repo> Repos
-		{
-			get
-			{
-				return repos;
-			}
-
-			set
-			{
-				repos = value;
-				for (int i = 0; i < repos.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Repo." + (i + 1) + ".Auth", repos[i].Auth);
-					DictionaryUtil.Add(QueryParameters,"Repo." + (i + 1) + ".Location", repos[i].Location);
-					DictionaryUtil.Add(QueryParameters,"Repo." + (i + 1) + ".URL", repos[i].URL);
-				}
 			}
 		}
 
@@ -127,32 +149,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string DBServerInfo
-		{
-			get
-			{
-				return dBServerInfo;
-			}
-			set	
-			{
-				dBServerInfo = value;
-				DictionaryUtil.Add(QueryParameters, "DBServerInfo", value);
-			}
-		}
-
 		public int? PullUpdateTimeout
 		{
 			get
@@ -163,32 +159,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				pullUpdateTimeout = value;
 				DictionaryUtil.Add(QueryParameters, "PullUpdateTimeout", value.ToString());
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

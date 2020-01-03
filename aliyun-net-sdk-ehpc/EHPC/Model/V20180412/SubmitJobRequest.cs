@@ -36,9 +36,21 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string stderrRedirectPath;
 
-		private string variables;
-
 		private string runasUserPassword;
+
+		private string commandLine;
+
+		private string jobQueue;
+
+		private string arrayRequest;
+
+		private string unzipCmd;
+
+		private string packagePath;
+
+		private string stdoutRedirectPath;
+
+		private string variables;
 
 		private string postCmdLine;
 
@@ -50,25 +62,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private int? priority;
 
-		private string commandLine;
-
-		private string jobQueue;
-
-		private string accessKeyId;
-
-		private string arrayRequest;
-
-		private string unzipCmd;
-
-		private string packagePath;
-
 		private string inputFileUrl;
 
 		private string name;
-
-		private string action;
-
-		private string stdoutRedirectPath;
 
 		private string containerId;
 
@@ -85,19 +81,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Variables
-		{
-			get
-			{
-				return variables;
-			}
-			set	
-			{
-				variables = value;
-				DictionaryUtil.Add(QueryParameters, "Variables", value);
-			}
-		}
-
 		public string RunasUserPassword
 		{
 			get
@@ -108,6 +91,97 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				runasUserPassword = value;
 				DictionaryUtil.Add(QueryParameters, "RunasUserPassword", value);
+			}
+		}
+
+		public string CommandLine
+		{
+			get
+			{
+				return commandLine;
+			}
+			set	
+			{
+				commandLine = value;
+				DictionaryUtil.Add(QueryParameters, "CommandLine", value);
+			}
+		}
+
+		public string JobQueue
+		{
+			get
+			{
+				return jobQueue;
+			}
+			set	
+			{
+				jobQueue = value;
+				DictionaryUtil.Add(QueryParameters, "JobQueue", value);
+			}
+		}
+
+		public string ArrayRequest
+		{
+			get
+			{
+				return arrayRequest;
+			}
+			set	
+			{
+				arrayRequest = value;
+				DictionaryUtil.Add(QueryParameters, "ArrayRequest", value);
+			}
+		}
+
+		public string UnzipCmd
+		{
+			get
+			{
+				return unzipCmd;
+			}
+			set	
+			{
+				unzipCmd = value;
+				DictionaryUtil.Add(QueryParameters, "UnzipCmd", value);
+			}
+		}
+
+		public string PackagePath
+		{
+			get
+			{
+				return packagePath;
+			}
+			set	
+			{
+				packagePath = value;
+				DictionaryUtil.Add(QueryParameters, "PackagePath", value);
+			}
+		}
+
+		public string StdoutRedirectPath
+		{
+			get
+			{
+				return stdoutRedirectPath;
+			}
+			set	
+			{
+				stdoutRedirectPath = value;
+				DictionaryUtil.Add(QueryParameters, "StdoutRedirectPath", value);
+			}
+		}
+
+		public string Variables
+		{
+			get
+			{
+				return variables;
+			}
+			set	
+			{
+				variables = value;
+				DictionaryUtil.Add(QueryParameters, "Variables", value);
 			}
 		}
 
@@ -176,84 +250,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string CommandLine
-		{
-			get
-			{
-				return commandLine;
-			}
-			set	
-			{
-				commandLine = value;
-				DictionaryUtil.Add(QueryParameters, "CommandLine", value);
-			}
-		}
-
-		public string JobQueue
-		{
-			get
-			{
-				return jobQueue;
-			}
-			set	
-			{
-				jobQueue = value;
-				DictionaryUtil.Add(QueryParameters, "JobQueue", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string ArrayRequest
-		{
-			get
-			{
-				return arrayRequest;
-			}
-			set	
-			{
-				arrayRequest = value;
-				DictionaryUtil.Add(QueryParameters, "ArrayRequest", value);
-			}
-		}
-
-		public string UnzipCmd
-		{
-			get
-			{
-				return unzipCmd;
-			}
-			set	
-			{
-				unzipCmd = value;
-				DictionaryUtil.Add(QueryParameters, "UnzipCmd", value);
-			}
-		}
-
-		public string PackagePath
-		{
-			get
-			{
-				return packagePath;
-			}
-			set	
-			{
-				packagePath = value;
-				DictionaryUtil.Add(QueryParameters, "PackagePath", value);
-			}
-		}
-
 		public string InputFileUrl
 		{
 			get
@@ -277,32 +273,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string StdoutRedirectPath
-		{
-			get
-			{
-				return stdoutRedirectPath;
-			}
-			set	
-			{
-				stdoutRedirectPath = value;
-				DictionaryUtil.Add(QueryParameters, "StdoutRedirectPath", value);
 			}
 		}
 

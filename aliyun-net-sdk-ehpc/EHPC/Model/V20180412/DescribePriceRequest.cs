@@ -34,43 +34,13 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
+		private List<Commodities> commoditiess = new List<Commodities>(){ };
+
 		private string priceUnit;
-
-		private string action;
-
-		private List<Commodities> commoditiess;
 
 		private string chargeType;
 
-		private string accessKeyId;
-
 		private string orderType;
-
-		public string PriceUnit
-		{
-			get
-			{
-				return priceUnit;
-			}
-			set	
-			{
-				priceUnit = value;
-				DictionaryUtil.Add(QueryParameters, "PriceUnit", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
 
 		public List<Commodities> Commoditiess
 		{
@@ -95,6 +65,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string PriceUnit
+		{
+			get
+			{
+				return priceUnit;
+			}
+			set	
+			{
+				priceUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PriceUnit", value);
+			}
+		}
+
 		public string ChargeType
 		{
 			get
@@ -105,19 +88,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

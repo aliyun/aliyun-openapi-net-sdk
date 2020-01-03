@@ -60,6 +60,10 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string type;
 
+			private string resourceGroupId;
+
+			private string computeInstanceType;
+
 			public string QueueName
 			{
 				get
@@ -81,6 +85,30 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string ComputeInstanceType
+			{
+				get
+				{
+					return computeInstanceType;
+				}
+				set	
+				{
+					computeInstanceType = value;
 				}
 			}
 		}

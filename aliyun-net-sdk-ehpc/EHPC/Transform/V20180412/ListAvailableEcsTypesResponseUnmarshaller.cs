@@ -53,6 +53,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 					typesInfo.InstanceBandwidthTx = context.IntegerValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceBandwidthTx");
 					typesInfo.InstanceTypeId = context.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].InstanceTypeId");
 					typesInfo.GPUSpec = context.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].GPUSpec");
+					typesInfo.Status = context.StringValue("ListAvailableEcsTypes.InstanceTypeFamilies["+ i +"].Types["+ j +"].Status");
 
 					instanceTypeFamilyInfo_types.Add(typesInfo);
 				}

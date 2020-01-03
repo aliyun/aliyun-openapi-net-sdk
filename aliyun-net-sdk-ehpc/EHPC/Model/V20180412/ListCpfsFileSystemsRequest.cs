@@ -34,41 +34,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private int? pageSize;
-
-		private string action;
-
 		private int? pageNumber;
 
-		private string accessKeyId;
+		private int? pageSize;
 
 		private string fileSystemId;
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
 
 		public int? PageNumber
 		{
@@ -83,16 +53,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string AccessKeyId
+		public int? PageSize
 		{
 			get
 			{
-				return accessKeyId;
+				return pageSize;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

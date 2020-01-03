@@ -34,11 +34,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private List<ContainerApp> containerApps;
-
-		private string action;
-
-		private string accessKeyId;
+		private List<ContainerApp> containerApps = new List<ContainerApp>(){ };
 
 		public List<ContainerApp> ContainerApps
 		{
@@ -54,32 +50,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				{
 					DictionaryUtil.Add(QueryParameters,"ContainerApp." + (i + 1) + ".Id", containerApps[i].Id);
 				}
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

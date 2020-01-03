@@ -34,36 +34,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private string action;
-
-		private string accessKeyId;
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
         public override ListAvailableFileSystemTypesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return ListAvailableFileSystemTypesResponseUnmarshaller.Unmarshall(unmarshallerContext);

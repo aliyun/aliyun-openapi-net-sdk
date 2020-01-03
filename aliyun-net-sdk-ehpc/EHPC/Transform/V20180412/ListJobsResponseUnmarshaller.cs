@@ -43,7 +43,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				jobInfo.Name = context.StringValue("ListJobs.Jobs["+ i +"].Name");
 				jobInfo.Owner = context.StringValue("ListJobs.Jobs["+ i +"].Owner");
 				jobInfo.NodeList = context.StringValue("ListJobs.Jobs["+ i +"].NodeList");
-				jobInfo.Priority = context.IntegerValue("ListJobs.Jobs["+ i +"].Priority");
+				jobInfo.Priority = context.StringValue("ListJobs.Jobs["+ i +"].Priority");
 				jobInfo.State = context.StringValue("ListJobs.Jobs["+ i +"].State");
 				jobInfo.SubmitTime = context.StringValue("ListJobs.Jobs["+ i +"].SubmitTime");
 				jobInfo.StartTime = context.StringValue("ListJobs.Jobs["+ i +"].StartTime");

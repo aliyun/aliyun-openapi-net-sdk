@@ -34,13 +34,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private List<AdditionalVolumes> additionalVolumess;
-
-		private string action;
+		private List<AdditionalVolumes> additionalVolumess = new List<AdditionalVolumes>(){ };
 
 		private string clusterId;
-
-		private string accessKeyId;
 
 		public List<AdditionalVolumes> AdditionalVolumess
 		{
@@ -70,19 +66,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ClusterId
 		{
 			get
@@ -93,19 +76,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -120,7 +90,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string remoteDirectory;
 
-			private List<Roles> roless;
+			private List<Roles> roless = new List<Roles>(){ };
 
 			private string volumeId;
 

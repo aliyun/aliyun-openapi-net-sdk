@@ -38,6 +38,8 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				ListQueuesResponse.ListQueues_QueueInfo queueInfo = new ListQueuesResponse.ListQueues_QueueInfo();
 				queueInfo.QueueName = context.StringValue("ListQueues.Queues["+ i +"].QueueName");
 				queueInfo.Type = context.StringValue("ListQueues.Queues["+ i +"].Type");
+				queueInfo.ResourceGroupId = context.StringValue("ListQueues.Queues["+ i +"].ResourceGroupId");
+				queueInfo.ComputeInstanceType = context.StringValue("ListQueues.Queues["+ i +"].ComputeInstanceType");
 
 				listQueuesResponse_queues.Add(queueInfo);
 			}

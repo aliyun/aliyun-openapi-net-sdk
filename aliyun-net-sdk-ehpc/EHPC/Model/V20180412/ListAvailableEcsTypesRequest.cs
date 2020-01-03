@@ -36,13 +36,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string spotStrategy;
 
-		private string action;
-
 		private string zoneId;
 
-		private string instanceChargeType;
+		private bool? showSoldOut;
 
-		private string accessKeyId;
+		private string instanceChargeType;
 
 		public string SpotStrategy
 		{
@@ -54,19 +52,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				spotStrategy = value;
 				DictionaryUtil.Add(QueryParameters, "SpotStrategy", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -83,6 +68,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public bool? ShowSoldOut
+		{
+			get
+			{
+				return showSoldOut;
+			}
+			set	
+			{
+				showSoldOut = value;
+				DictionaryUtil.Add(QueryParameters, "ShowSoldOut", value.ToString());
+			}
+		}
+
 		public string InstanceChargeType
 		{
 			get
@@ -93,19 +91,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				instanceChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

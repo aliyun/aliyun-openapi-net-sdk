@@ -34,30 +34,13 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private string passwd;
-
 		private string runasUserPassword;
-
-		private string action;
 
 		private string runasUser;
 
 		private string clusterId;
 
-		private string accessKeyId;
-
-		public string Passwd
-		{
-			get
-			{
-				return passwd;
-			}
-			set	
-			{
-				passwd = value;
-				DictionaryUtil.Add(QueryParameters, "Passwd", value);
-			}
-		}
+		private string passwd;
 
 		public string RunasUserPassword
 		{
@@ -69,19 +52,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				runasUserPassword = value;
 				DictionaryUtil.Add(QueryParameters, "RunasUserPassword", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 
@@ -111,16 +81,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string AccessKeyId
+		public string Passwd
 		{
 			get
 			{
-				return accessKeyId;
+				return passwd;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				passwd = value;
+				DictionaryUtil.Add(QueryParameters, "Passwd", value);
 			}
 		}
 

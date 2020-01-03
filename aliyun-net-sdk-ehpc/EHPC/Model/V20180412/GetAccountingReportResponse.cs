@@ -29,7 +29,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string metrics;
 
-		private string data;
+		private List<string> data;
 
 		public string RequestId
 		{
@@ -55,7 +55,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Data
+		public List<string> Data
 		{
 			get
 			{

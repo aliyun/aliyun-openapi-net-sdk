@@ -34,28 +34,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         {
         }
 
-		private bool? releaseInstance;
-
-		private List<Instance> instances;
-
-		private string action;
+		private List<Instance> instances = new List<Instance>(){ };
 
 		private string clusterId;
 
-		private string accessKeyId;
-
-		public bool? ReleaseInstance
-		{
-			get
-			{
-				return releaseInstance;
-			}
-			set	
-			{
-				releaseInstance = value;
-				DictionaryUtil.Add(QueryParameters, "ReleaseInstance", value.ToString());
-			}
-		}
+		private bool? releaseInstance;
 
 		public List<Instance> Instances
 		{
@@ -74,19 +57,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public string ClusterId
 		{
 			get
@@ -100,16 +70,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string AccessKeyId
+		public bool? ReleaseInstance
 		{
 			get
 			{
-				return accessKeyId;
+				return releaseInstance;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				releaseInstance = value;
+				DictionaryUtil.Add(QueryParameters, "ReleaseInstance", value.ToString());
 			}
 		}
 

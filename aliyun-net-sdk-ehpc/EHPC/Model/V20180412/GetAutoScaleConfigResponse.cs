@@ -268,6 +268,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string queueName;
 
+			private string resourceGroupId;
+
 			private string instanceType;
 
 			private string spotStrategy;
@@ -289,6 +291,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					queueName = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 
@@ -377,6 +391,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 				private string vSwitchId;
 
+				private string hostNamePrefix;
+
 				public string InstanceType
 				{
 					get
@@ -434,6 +450,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					set	
 					{
 						vSwitchId = value;
+					}
+				}
+
+				public string HostNamePrefix
+				{
+					get
+					{
+						return hostNamePrefix;
+					}
+					set	
+					{
+						hostNamePrefix = value;
 					}
 				}
 			}

@@ -40,13 +40,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string imageId;
 
-		private string priceUnit;
-
 		private string skuCode;
 
-		private string action;
-
-		private string accessKeyId;
+		private string priceUnit;
 
 		private string orderType;
 
@@ -89,19 +85,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string PriceUnit
-		{
-			get
-			{
-				return priceUnit;
-			}
-			set	
-			{
-				priceUnit = value;
-				DictionaryUtil.Add(QueryParameters, "PriceUnit", value);
-			}
-		}
-
 		public string SkuCode
 		{
 			get
@@ -115,29 +98,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Action
+		public string PriceUnit
 		{
 			get
 			{
-				return action;
+				return priceUnit;
 			}
 			set	
 			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				priceUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PriceUnit", value);
 			}
 		}
 
