@@ -64,6 +64,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string accountDescription;
 
+			private string characterType;
+
 			public string DBInstanceId
 			{
 				get
@@ -109,6 +111,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					accountDescription = value;
+				}
+			}
+
+			public string CharacterType
+			{
+				get
+				{
+					return characterType;
+				}
+				set	
+				{
+					characterType = value;
 				}
 			}
 		}

@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public DescribeDBInstancesRequest()
             : base("Dds", "2015-12-01", "DescribeDBInstances", "Dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -44,8 +49,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string replicationFactor;
 
-		private string accessKeyId;
-
 		private string expired;
 
 		private string securityToken;
@@ -54,15 +57,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? pageSize;
 
-		private string action;
-
 		private string dBInstanceId;
 
 		private string dBInstanceDescription;
 
 		private string dBInstanceStatus;
 
-		private List<Tag> tags;
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string expireTime;
 
@@ -149,19 +150,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string Expired
 		{
 			get
@@ -211,19 +199,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

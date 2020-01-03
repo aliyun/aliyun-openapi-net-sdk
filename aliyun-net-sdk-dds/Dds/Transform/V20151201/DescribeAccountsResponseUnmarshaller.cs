@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				account.AccountName = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountName");
 				account.AccountStatus = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountStatus");
 				account.AccountDescription = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountDescription");
+				account.CharacterType = context.StringValue("DescribeAccounts.Accounts["+ i +"].CharacterType");
 
 				describeAccountsResponse_accounts.Add(account);
 			}

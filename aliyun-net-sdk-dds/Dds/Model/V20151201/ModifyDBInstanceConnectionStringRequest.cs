@@ -32,29 +32,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public ModifyDBInstanceConnectionStringRequest()
             : base("Dds", "2015-12-01", "ModifyDBInstanceConnectionString", "Dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string securityToken;
 
+		private string dBInstanceId;
+
+		private string nodeId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string action;
-
-		private string dBInstanceId;
 
 		private string newConnectionString;
 
 		private long? ownerId;
 
-		private string nodeId;
-
 		private string currentConnectionString;
-
-		private string accessKeyId;
 
 		public long? ResourceOwnerId
 		{
@@ -79,6 +80,32 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 
@@ -108,32 +135,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
 		public string NewConnectionString
 		{
 			get
@@ -160,19 +161,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string NodeId
-		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
-			}
-		}
-
 		public string CurrentConnectionString
 		{
 			get
@@ -183,19 +171,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				currentConnectionString = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentConnectionString", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 

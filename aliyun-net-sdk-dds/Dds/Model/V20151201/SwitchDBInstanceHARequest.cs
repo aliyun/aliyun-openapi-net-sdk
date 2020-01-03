@@ -32,31 +32,28 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public SwitchDBInstanceHARequest()
             : base("Dds", "2015-12-01", "SwitchDBInstanceHA", "Dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string roleIds;
+
+		private string securityToken;
+
+		private string dBInstanceId;
+
+		private string nodeId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string accessKeyId;
-
-		private int? targetInstanceId;
-
-		private string securityToken;
-
-		private int? switchType;
-
-		private string action;
-
-		private string dBInstanceId;
-
-		private int? sourceInstanceId;
-
-		private string nodeId;
 
 		public long? ResourceOwnerId
 		{
@@ -68,6 +65,58 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string RoleIds
+		{
+			get
+			{
+				return roleIds;
+			}
+			set	
+			{
+				roleIds = value;
+				DictionaryUtil.Add(QueryParameters, "RoleIds", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
+		}
+
+		public string NodeId
+		{
+			get
+			{
+				return nodeId;
+			}
+			set	
+			{
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 
@@ -107,110 +156,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public int? TargetInstanceId
-		{
-			get
-			{
-				return targetInstanceId;
-			}
-			set	
-			{
-				targetInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "TargetInstanceId", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public int? SwitchType
-		{
-			get
-			{
-				return switchType;
-			}
-			set	
-			{
-				switchType = value;
-				DictionaryUtil.Add(QueryParameters, "SwitchType", value.ToString());
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public int? SourceInstanceId
-		{
-			get
-			{
-				return sourceInstanceId;
-			}
-			set	
-			{
-				sourceInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "SourceInstanceId", value.ToString());
-			}
-		}
-
-		public string NodeId
-		{
-			get
-			{
-				return nodeId;
-			}
-			set	
-			{
-				nodeId = value;
-				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 

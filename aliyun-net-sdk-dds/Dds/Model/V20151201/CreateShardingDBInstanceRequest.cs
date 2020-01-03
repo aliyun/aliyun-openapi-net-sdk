@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public CreateShardingDBInstanceRequest()
             : base("Dds", "2015-12-01", "CreateShardingDBInstance", "Dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -42,17 +47,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string networkType;
 
-		private List<ReplicaSet> replicaSets;
-
-		private string accessKeyId;
+		private List<ReplicaSet> replicaSets = new List<ReplicaSet>(){ };
 
 		private string storageEngine;
 
 		private string securityToken;
 
 		private string engine;
-
-		private string action;
 
 		private string dBInstanceDescription;
 
@@ -66,11 +67,11 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string ownerAccount;
 
-		private List<ConfigServer> configServers;
+		private List<ConfigServer> configServers = new List<ConfigServer>(){ };
 
 		private long? ownerId;
 
-		private List<Mongos> mongoss;
+		private List<Mongos> mongoss = new List<Mongos>(){ };
 
 		private string securityIPList;
 
@@ -156,19 +157,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
 		public string StorageEngine
 		{
 			get
@@ -205,19 +193,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
 			}
 		}
 

@@ -58,6 +58,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.LastDowngradeTime = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].LastDowngradeTime");
 				dBInstance.ReplicationFactor = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].ReplicationFactor");
 				dBInstance.DestroyTime = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].DestroyTime");
+				dBInstance.VpcAuthMode = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].VpcAuthMode");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_MongosAttribute> dBInstance_mongosList = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_MongosAttribute>();
 				for (int j = 0; j < context.Length("DescribeDBInstances.DBInstances["+ i +"].MongosList.Length"); j++) {
@@ -65,8 +66,6 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					mongosAttribute.NodeId = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].MongosList["+ j +"].NodeId");
 					mongosAttribute.NodeDescription = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].MongosList["+ j +"].NodeDescription");
 					mongosAttribute.NodeClass = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].MongosList["+ j +"].NodeClass");
-					mongosAttribute.ConnectSting = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].MongosList["+ j +"].ConnectSting");
-					mongosAttribute.Port = context.IntegerValue("DescribeDBInstances.DBInstances["+ i +"].MongosList["+ j +"].Port");
 
 					dBInstance_mongosList.Add(mongosAttribute);
 				}

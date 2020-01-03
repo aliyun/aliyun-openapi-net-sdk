@@ -27,7 +27,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string requestId;
 
-		private int? dBInstanceName;
+		private string dBInstanceName;
 
 		private bool? isValid;
 
@@ -43,7 +43,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? DBInstanceName
+		public string DBInstanceName
 		{
 			get
 			{

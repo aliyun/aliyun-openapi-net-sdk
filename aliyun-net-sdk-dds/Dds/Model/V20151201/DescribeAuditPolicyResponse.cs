@@ -29,8 +29,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string logAuditStatus;
 
-		private int? storagePeriod;
-
 		public string RequestId
 		{
 			get
@@ -52,18 +50,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				logAuditStatus = value;
-			}
-		}
-
-		public int? StoragePeriod
-		{
-			get
-			{
-				return storagePeriod;
-			}
-			set	
-			{
-				storagePeriod = value;
 			}
 		}
 	}

@@ -72,6 +72,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string expiredTime;
 
+			private string nodeType;
+
+			private string role;
+
 			public string NetworkAddress
 			{
 				get
@@ -165,6 +169,30 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					expiredTime = value;
+				}
+			}
+
+			public string NodeType
+			{
+				get
+				{
+					return nodeType;
+				}
+				set	
+				{
+					nodeType = value;
+				}
+			}
+
+			public string Role
+			{
+				get
+				{
+					return role;
+				}
+				set	
+				{
+					role = value;
 				}
 			}
 		}

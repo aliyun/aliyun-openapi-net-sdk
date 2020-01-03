@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				logRecords.CreateTime = context.StringValue("DescribeRunningLogRecords.Items["+ i +"].CreateTime");
 				logRecords.Category = context.StringValue("DescribeRunningLogRecords.Items["+ i +"].Category");
 				logRecords.ConnInfo = context.StringValue("DescribeRunningLogRecords.Items["+ i +"].ConnInfo");
-				logRecords.Content = context.LongValue("DescribeRunningLogRecords.Items["+ i +"].Content");
+				logRecords.Content = context.StringValue("DescribeRunningLogRecords.Items["+ i +"].Content");
 
 				describeRunningLogRecordsResponse_items.Add(logRecords);
 			}

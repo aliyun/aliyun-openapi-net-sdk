@@ -32,25 +32,26 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public ModifyDBInstanceSSLRequest()
             : base("Dds", "2015-12-01", "ModifyDBInstanceSSL", "Dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string securityToken;
 
+		private string dBInstanceId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string sSLAction;
-
-		private string action;
-
-		private string dBInstanceId;
-
 		private long? ownerId;
 
-		private string accessKeyId;
+		private string sSLAction;
 
 		public long? ResourceOwnerId
 		{
@@ -75,6 +76,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -104,45 +118,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SSLAction
-		{
-			get
-			{
-				return sSLAction;
-			}
-			set	
-			{
-				sSLAction = value;
-				DictionaryUtil.Add(QueryParameters, "SSLAction", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -156,16 +131,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string AccessKeyId
+		public string SSLAction
 		{
 			get
 			{
-				return accessKeyId;
+				return sSLAction;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				sSLAction = value;
+				DictionaryUtil.Add(QueryParameters, "SSLAction", value);
 			}
 		}
 

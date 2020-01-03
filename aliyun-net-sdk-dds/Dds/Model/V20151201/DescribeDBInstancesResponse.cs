@@ -136,6 +136,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string destroyTime;
 
+			private string vpcAuthMode;
+
 			private List<DescribeDBInstances_MongosAttribute> mongosList;
 
 			private List<DescribeDBInstances_ShardAttribute> shardList;
@@ -370,6 +372,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string VpcAuthMode
+			{
+				get
+				{
+					return vpcAuthMode;
+				}
+				set	
+				{
+					vpcAuthMode = value;
+				}
+			}
+
 			public List<DescribeDBInstances_MongosAttribute> MongosList
 			{
 				get
@@ -415,10 +429,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private string nodeClass;
 
-				private string connectSting;
-
-				private int? port;
-
 				public string NodeId
 				{
 					get
@@ -452,30 +462,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						nodeClass = value;
-					}
-				}
-
-				public string ConnectSting
-				{
-					get
-					{
-						return connectSting;
-					}
-					set	
-					{
-						connectSting = value;
-					}
-				}
-
-				public int? Port
-				{
-					get
-					{
-						return port;
-					}
-					set	
-					{
-						port = value;
 					}
 				}
 			}

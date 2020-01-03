@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				networkAddress.VswitchId = context.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].VswitchId");
 				networkAddress.NodeId = context.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].NodeId");
 				networkAddress.ExpiredTime = context.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].ExpiredTime");
+				networkAddress.NodeType = context.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].NodeType");
+				networkAddress.Role = context.StringValue("DescribeShardingNetworkAddress.NetworkAddresses["+ i +"].Role");
 
 				describeShardingNetworkAddressResponse_networkAddresses.Add(networkAddress);
 			}

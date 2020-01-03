@@ -32,9 +32,16 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public DescribeKernelReleaseNotesRequest()
             : base("Dds", "2015-12-01", "DescribeKernelReleaseNotes", "Dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string kernelVersion;
 
 		private string securityToken;
 
@@ -42,13 +49,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string ownerAccount;
 
-		private string action;
-
 		private long? ownerId;
-
-		private string accessKeyId;
-
-		private string kernelVersion;
 
 		public long? ResourceOwnerId
 		{
@@ -60,6 +61,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string KernelVersion
+		{
+			get
+			{
+				return kernelVersion;
+			}
+			set	
+			{
+				kernelVersion = value;
+				DictionaryUtil.Add(QueryParameters, "KernelVersion", value);
 			}
 		}
 
@@ -102,19 +116,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -125,32 +126,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-		public string KernelVersion
-		{
-			get
-			{
-				return kernelVersion;
-			}
-			set	
-			{
-				kernelVersion = value;
-				DictionaryUtil.Add(QueryParameters, "KernelVersion", value);
 			}
 		}
 

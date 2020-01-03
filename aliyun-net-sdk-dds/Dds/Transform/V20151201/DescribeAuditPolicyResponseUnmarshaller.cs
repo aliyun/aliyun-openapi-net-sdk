@@ -33,7 +33,6 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			describeAuditPolicyResponse.HttpResponse = context.HttpResponse;
 			describeAuditPolicyResponse.RequestId = context.StringValue("DescribeAuditPolicy.RequestId");
 			describeAuditPolicyResponse.LogAuditStatus = context.StringValue("DescribeAuditPolicy.LogAuditStatus");
-			describeAuditPolicyResponse.StoragePeriod = context.IntegerValue("DescribeAuditPolicy.StoragePeriod");
         
 			return describeAuditPolicyResponse;
         }

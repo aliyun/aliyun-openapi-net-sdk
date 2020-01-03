@@ -32,7 +32,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 
 			checkRecoveryConditionResponse.HttpResponse = context.HttpResponse;
 			checkRecoveryConditionResponse.RequestId = context.StringValue("CheckRecoveryCondition.RequestId");
-			checkRecoveryConditionResponse.DBInstanceName = context.IntegerValue("CheckRecoveryCondition.DBInstanceName");
+			checkRecoveryConditionResponse.DBInstanceName = context.StringValue("CheckRecoveryCondition.DBInstanceName");
 			checkRecoveryConditionResponse.IsValid = context.BooleanValue("CheckRecoveryCondition.IsValid");
         
 			return checkRecoveryConditionResponse;

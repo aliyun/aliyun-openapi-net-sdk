@@ -58,8 +58,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string regionId;
 
-			private string zoneIds;
-
 			private List<DescribeRegions_Zone> zones;
 
 			public string RegionId
@@ -71,18 +69,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					regionId = value;
-				}
-			}
-
-			public string ZoneIds
-			{
-				get
-				{
-					return zoneIds;
-				}
-				set	
-				{
-					zoneIds = value;
 				}
 			}
 

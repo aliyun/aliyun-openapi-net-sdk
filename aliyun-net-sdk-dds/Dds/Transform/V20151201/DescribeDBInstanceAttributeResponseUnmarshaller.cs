@@ -62,9 +62,11 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.DBInstanceType = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceType");
 				dBInstance.LastDowngradeTime = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].LastDowngradeTime");
 				dBInstance.ReplicationFactor = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicationFactor");
+				dBInstance.ReadonlyReplicas = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReadonlyReplicas");
 				dBInstance.MaxIOPS = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaxIOPS");
 				dBInstance.MaxConnections = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaxConnections");
 				dBInstance.CurrentKernelVersion = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].CurrentKernelVersion");
+				dBInstance.VpcAuthMode = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].VpcAuthMode");
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_MongosAttribute> dBInstance_mongosList = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_MongosAttribute>();
 				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].MongosList.Length"); j++) {
@@ -93,10 +95,28 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					shardAttribute.NodeStorage = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].NodeStorage");
 					shardAttribute.MaxIOPS = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].MaxIOPS");
 					shardAttribute.MaxConnections = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].MaxConnections");
+					shardAttribute.ConnectString = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].ConnectString");
+					shardAttribute.Port = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ShardList["+ j +"].Port");
 
 					dBInstance_shardList.Add(shardAttribute);
 				}
 				dBInstance.ShardList = dBInstance_shardList;
+
+				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ConfigserverAttribute> dBInstance_configserverList = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ConfigserverAttribute>();
+				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList.Length"); j++) {
+					DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ConfigserverAttribute configserverAttribute = new DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ConfigserverAttribute();
+					configserverAttribute.NodeId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList["+ j +"].NodeId");
+					configserverAttribute.NodeDescription = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList["+ j +"].NodeDescription");
+					configserverAttribute.NodeClass = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList["+ j +"].NodeClass");
+					configserverAttribute.NodeStorage = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList["+ j +"].NodeStorage");
+					configserverAttribute.MaxIOPS = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList["+ j +"].MaxIOPS");
+					configserverAttribute.MaxConnections = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList["+ j +"].MaxConnections");
+					configserverAttribute.ConnectString = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList["+ j +"].ConnectString");
+					configserverAttribute.Port = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ConfigserverList["+ j +"].Port");
+
+					dBInstance_configserverList.Add(configserverAttribute);
+				}
+				dBInstance.ConfigserverList = dBInstance_configserverList;
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet> dBInstance_replicaSets = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_ReplicaSet>();
 				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.DBInstances["+ i +"].ReplicaSets.Length"); j++) {

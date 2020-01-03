@@ -32,33 +32,34 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         public ModifyDBInstanceNetworkTypeRequest()
             : base("Dds", "2015-12-01", "ModifyDBInstanceNetworkType", "Dds", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string networkType;
+
+		private string securityToken;
+
+		private int? classicExpiredDays;
+
+		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string networkType;
-
 		private long? ownerId;
-
-		private string accessKeyId;
 
 		private string vSwitchId;
 
-		private string securityToken;
-
 		private string retainClassic;
 
-		private int? classicExpiredDays;
-
 		private string vpcId;
-
-		private string action;
-
-		private string dBInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -70,6 +71,58 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string NetworkType
+		{
+			get
+			{
+				return networkType;
+			}
+			set	
+			{
+				networkType = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public int? ClassicExpiredDays
+		{
+			get
+			{
+				return classicExpiredDays;
+			}
+			set	
+			{
+				classicExpiredDays = value;
+				DictionaryUtil.Add(QueryParameters, "ClassicExpiredDays", value.ToString());
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -99,19 +152,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string NetworkType
-		{
-			get
-			{
-				return networkType;
-			}
-			set	
-			{
-				networkType = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkType", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -122,19 +162,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
 			}
 		}
 
@@ -151,19 +178,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
 		public string RetainClassic
 		{
 			get
@@ -177,19 +191,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? ClassicExpiredDays
-		{
-			get
-			{
-				return classicExpiredDays;
-			}
-			set	
-			{
-				classicExpiredDays = value;
-				DictionaryUtil.Add(QueryParameters, "ClassicExpiredDays", value.ToString());
-			}
-		}
-
 		public string VpcId
 		{
 			get
@@ -200,32 +201,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
-		public string Action
-		{
-			get
-			{
-				return action;
-			}
-			set	
-			{
-				action = value;
-				DictionaryUtil.Add(QueryParameters, "Action", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 

@@ -108,15 +108,21 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string replicationFactor;
 
+			private string readonlyReplicas;
+
 			private int? maxIOPS;
 
 			private int? maxConnections;
 
 			private string currentKernelVersion;
 
+			private string vpcAuthMode;
+
 			private List<DescribeDBInstanceAttribute_MongosAttribute> mongosList;
 
 			private List<DescribeDBInstanceAttribute_ShardAttribute> shardList;
+
+			private List<DescribeDBInstanceAttribute_ConfigserverAttribute> configserverList;
 
 			private List<DescribeDBInstanceAttribute_ReplicaSet> replicaSets;
 
@@ -434,6 +440,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string ReadonlyReplicas
+			{
+				get
+				{
+					return readonlyReplicas;
+				}
+				set	
+				{
+					readonlyReplicas = value;
+				}
+			}
+
 			public int? MaxIOPS
 			{
 				get
@@ -470,6 +488,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
+			public string VpcAuthMode
+			{
+				get
+				{
+					return vpcAuthMode;
+				}
+				set	
+				{
+					vpcAuthMode = value;
+				}
+			}
+
 			public List<DescribeDBInstanceAttribute_MongosAttribute> MongosList
 			{
 				get
@@ -491,6 +521,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					shardList = value;
+				}
+			}
+
+			public List<DescribeDBInstanceAttribute_ConfigserverAttribute> ConfigserverList
+			{
+				get
+				{
+					return configserverList;
+				}
+				set	
+				{
+					configserverList = value;
 				}
 			}
 
@@ -677,6 +719,10 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private int? maxConnections;
 
+				private string connectString;
+
+				private int? port;
+
 				public string NodeId
 				{
 					get
@@ -746,6 +792,146 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						maxConnections = value;
+					}
+				}
+
+				public string ConnectString
+				{
+					get
+					{
+						return connectString;
+					}
+					set	
+					{
+						connectString = value;
+					}
+				}
+
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+			}
+
+			public class DescribeDBInstanceAttribute_ConfigserverAttribute
+			{
+
+				private string nodeId;
+
+				private string nodeDescription;
+
+				private string nodeClass;
+
+				private int? nodeStorage;
+
+				private int? maxIOPS;
+
+				private int? maxConnections;
+
+				private string connectString;
+
+				private int? port;
+
+				public string NodeId
+				{
+					get
+					{
+						return nodeId;
+					}
+					set	
+					{
+						nodeId = value;
+					}
+				}
+
+				public string NodeDescription
+				{
+					get
+					{
+						return nodeDescription;
+					}
+					set	
+					{
+						nodeDescription = value;
+					}
+				}
+
+				public string NodeClass
+				{
+					get
+					{
+						return nodeClass;
+					}
+					set	
+					{
+						nodeClass = value;
+					}
+				}
+
+				public int? NodeStorage
+				{
+					get
+					{
+						return nodeStorage;
+					}
+					set	
+					{
+						nodeStorage = value;
+					}
+				}
+
+				public int? MaxIOPS
+				{
+					get
+					{
+						return maxIOPS;
+					}
+					set	
+					{
+						maxIOPS = value;
+					}
+				}
+
+				public int? MaxConnections
+				{
+					get
+					{
+						return maxConnections;
+					}
+					set	
+					{
+						maxConnections = value;
+					}
+				}
+
+				public string ConnectString
+				{
+					get
+					{
+						return connectString;
+					}
+					set	
+					{
+						connectString = value;
+					}
+				}
+
+				public int? Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
 					}
 				}
 			}
