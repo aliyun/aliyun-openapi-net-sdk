@@ -27,23 +27,21 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class UpdateInstanceRequest : RoaAcsRequest<UpdateInstanceResponse>
+    public class ListConnectedClustersRequest : RoaAcsRequest<ListConnectedClustersResponse>
     {
-        public UpdateInstanceRequest()
-            : base("elasticsearch", "2017-06-13", "UpdateInstance", "elasticsearch", "openAPI")
+        public ListConnectedClustersRequest()
+            : base("elasticsearch", "2017-06-13", "ListConnectedClusters", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]";
-			Method = MethodType.PUT;
+			UriPattern = "/openapi/instances/[InstanceId]/connected-clusters";
+			Method = MethodType.GET;
         }
 
 		private string instanceId;
-
-		private string clientToken;
 
 		public string InstanceId
 		{
@@ -58,27 +56,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "clientToken", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override UpdateInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListConnectedClustersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListConnectedClustersResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

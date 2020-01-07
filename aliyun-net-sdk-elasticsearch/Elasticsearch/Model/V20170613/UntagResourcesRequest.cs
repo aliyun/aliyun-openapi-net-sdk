@@ -27,47 +27,77 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class UpdateInstanceRequest : RoaAcsRequest<UpdateInstanceResponse>
+    public class UntagResourcesRequest : RoaAcsRequest<UntagResourcesResponse>
     {
-        public UpdateInstanceRequest()
-            : base("elasticsearch", "2017-06-13", "UpdateInstance", "elasticsearch", "openAPI")
+        public UntagResourcesRequest()
+            : base("elasticsearch", "2017-06-13", "UntagResources", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]";
-			Method = MethodType.PUT;
+			UriPattern = "/openapi/tags";
+			Method = MethodType.DELETE;
         }
 
-		private string instanceId;
+		private bool? all;
 
-		private string clientToken;
+		private string tagKeys;
 
-		public string InstanceId
+		private string resourceType;
+
+		private string resourceIds;
+
+		public bool? All
 		{
 			get
 			{
-				return instanceId;
+				return all;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(PathParameters, "InstanceId", value);
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
 			}
 		}
 
-		public string ClientToken
+		public string TagKeys
 		{
 			get
 			{
-				return clientToken;
+				return tagKeys;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "clientToken", value);
+				tagKeys = value;
+				DictionaryUtil.Add(QueryParameters, "TagKeys", value);
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public string ResourceIds
+		{
+			get
+			{
+				return resourceIds;
+			}
+			set	
+			{
+				resourceIds = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceIds", value);
 			}
 		}
 
@@ -76,9 +106,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override UpdateInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UntagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UntagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

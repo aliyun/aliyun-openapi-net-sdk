@@ -107,8 +107,6 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_KibanaConfiguration kibanaConfiguration = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_KibanaConfiguration();
 			kibanaConfiguration.Spec = context.StringValue("DescribeInstance.Result.KibanaConfiguration.spec");
 			kibanaConfiguration.Amount = context.IntegerValue("DescribeInstance.Result.KibanaConfiguration.amount");
-			kibanaConfiguration.DiskType = context.StringValue("DescribeInstance.Result.KibanaConfiguration.diskType");
-			kibanaConfiguration.Disk = context.IntegerValue("DescribeInstance.Result.KibanaConfiguration.disk");
 			result.KibanaConfiguration = kibanaConfiguration;
 
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_MasterConfiguration masterConfiguration = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_MasterConfiguration();

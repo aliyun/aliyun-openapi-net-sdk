@@ -969,10 +969,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 				private int? amount;
 
-				private string diskType;
-
-				private int? disk;
-
 				public string Spec
 				{
 					get
@@ -994,30 +990,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						amount = value;
-					}
-				}
-
-				public string DiskType
-				{
-					get
-					{
-						return diskType;
-					}
-					set	
-					{
-						diskType = value;
-					}
-				}
-
-				public int? Disk
-				{
-					get
-					{
-						return disk;
-					}
-					set	
-					{
-						disk = value;
 					}
 				}
 			}

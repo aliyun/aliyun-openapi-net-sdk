@@ -27,58 +27,28 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class UpdateInstanceRequest : RoaAcsRequest<UpdateInstanceResponse>
+    public class TagResourcesRequest : RoaAcsRequest<TagResourcesResponse>
     {
-        public UpdateInstanceRequest()
-            : base("elasticsearch", "2017-06-13", "UpdateInstance", "elasticsearch", "openAPI")
+        public TagResourcesRequest()
+            : base("elasticsearch", "2017-06-13", "TagResources", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]";
-			Method = MethodType.PUT;
+			UriPattern = "/openapi/tags";
+			Method = MethodType.POST;
         }
-
-		private string instanceId;
-
-		private string clientToken;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(PathParameters, "InstanceId", value);
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "clientToken", value);
-			}
-		}
 
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override UpdateInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

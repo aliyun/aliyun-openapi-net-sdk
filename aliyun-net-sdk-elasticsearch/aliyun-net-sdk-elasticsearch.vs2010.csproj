@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{fdc2b2c4-8da5-421d-a8e1-7f60d3f6685b}</ProjectGuid>
+    <ProjectGuid>{7ba4824c-5832-440a-a52d-edf18336b14c}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -104,6 +104,8 @@
 	<Compile Include="Elasticsearch\Model\V20170613\ListAllNodeResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\ListAlternativeSnapshotReposRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\ListAlternativeSnapshotReposResponse.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\ListConnectedClustersRequest.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\ListConnectedClustersResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\ListInstanceRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\ListInstanceResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\ListKibanaPluginsRequest.cs" />
@@ -120,6 +122,8 @@
 	<Compile Include="Elasticsearch\Model\V20170613\ListSearchLogResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\ListSnapshotReposByInstanceIdRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\ListSnapshotReposByInstanceIdResponse.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\ListTagResourcesRequest.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\ListTagResourcesResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\MoveResourceGroupRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\MoveResourceGroupResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\OpenHttpsRequest.cs" />
@@ -140,6 +144,8 @@
 	<Compile Include="Elasticsearch\Model\V20170613\RollbackInstanceResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\ShrinkNodeRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\ShrinkNodeResponse.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\TagResourcesRequest.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\TagResourcesResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\TransferNodeRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\TransferNodeResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\TriggerNetworkRequest.cs" />
@@ -150,6 +156,8 @@
 	<Compile Include="Elasticsearch\Model\V20170613\UninstallLogstashPluginResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UninstallPluginRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UninstallPluginResponse.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\UntagResourcesRequest.cs" />
+	<Compile Include="Elasticsearch\Model\V20170613\UntagResourcesResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateAdminPasswordRequest.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateAdminPasswordResponse.cs" />
 	<Compile Include="Elasticsearch\Model\V20170613\UpdateAdvancedSettingRequest.cs" />
@@ -232,6 +240,7 @@
 	<Compile Include="Elasticsearch\Transform\V20170613\InterruptLogstashTaskResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\ListAllNodeResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\ListAlternativeSnapshotReposResponseUnmarshaller.cs" />
+	<Compile Include="Elasticsearch\Transform\V20170613\ListConnectedClustersResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\ListInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\ListKibanaPluginsResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\ListLogstashLogResponseUnmarshaller.cs" />
@@ -240,6 +249,7 @@
 	<Compile Include="Elasticsearch\Transform\V20170613\ListPluginsResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\ListSearchLogResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\ListSnapshotReposByInstanceIdResponseUnmarshaller.cs" />
+	<Compile Include="Elasticsearch\Transform\V20170613\ListTagResourcesResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\MoveResourceGroupResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\OpenHttpsResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\RenewInstanceResponseUnmarshaller.cs" />
@@ -250,11 +260,13 @@
 	<Compile Include="Elasticsearch\Transform\V20170613\ResumeLogstashTaskResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\RollbackInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\ShrinkNodeResponseUnmarshaller.cs" />
+	<Compile Include="Elasticsearch\Transform\V20170613\TagResourcesResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\TransferNodeResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\TriggerNetworkResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UninstallKibanaPluginResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UninstallLogstashPluginResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UninstallPluginResponseUnmarshaller.cs" />
+	<Compile Include="Elasticsearch\Transform\V20170613\UntagResourcesResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateAdminPasswordResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateAdvancedSettingResponseUnmarshaller.cs" />
 	<Compile Include="Elasticsearch\Transform\V20170613\UpdateAliwsDictResponseUnmarshaller.cs" />
