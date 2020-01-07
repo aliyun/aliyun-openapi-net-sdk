@@ -24,21 +24,19 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class ResumeDeployResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static ResumeDeployResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			ResumeDeployResponse resumeDeployResponse = new ResumeDeployResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			resumeDeployResponse.HttpResponse = context.HttpResponse;
+			resumeDeployResponse.Code = context.IntegerValue("ResumeDeploy.Code");
+			resumeDeployResponse.ErrMsg = context.StringValue("ResumeDeploy.ErrMsg");
+			resumeDeployResponse.RequestId = context.StringValue("ResumeDeploy.RequestId");
+			resumeDeployResponse.Success = context.BooleanValue("ResumeDeploy.Success");
         
-			return getInstTransInfoResponse;
+			return resumeDeployResponse;
         }
     }
 }

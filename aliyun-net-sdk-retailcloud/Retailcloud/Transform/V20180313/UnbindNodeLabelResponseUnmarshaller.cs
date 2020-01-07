@@ -24,21 +24,19 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class UnbindNodeLabelResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static UnbindNodeLabelResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			UnbindNodeLabelResponse unbindNodeLabelResponse = new UnbindNodeLabelResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			unbindNodeLabelResponse.HttpResponse = context.HttpResponse;
+			unbindNodeLabelResponse.Code = context.IntegerValue("UnbindNodeLabel.Code");
+			unbindNodeLabelResponse.ErrMsg = context.StringValue("UnbindNodeLabel.ErrMsg");
+			unbindNodeLabelResponse.RequestId = context.StringValue("UnbindNodeLabel.RequestId");
+			unbindNodeLabelResponse.Success = context.BooleanValue("UnbindNodeLabel.Success");
         
-			return getInstTransInfoResponse;
+			return unbindNodeLabelResponse;
         }
     }
 }

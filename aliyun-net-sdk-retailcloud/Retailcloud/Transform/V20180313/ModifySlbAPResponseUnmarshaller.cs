@@ -24,21 +24,19 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class ModifySlbAPResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static ModifySlbAPResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			ModifySlbAPResponse modifySlbAPResponse = new ModifySlbAPResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			modifySlbAPResponse.HttpResponse = context.HttpResponse;
+			modifySlbAPResponse.Code = context.IntegerValue("ModifySlbAP.Code");
+			modifySlbAPResponse.ErrMsg = context.StringValue("ModifySlbAP.ErrMsg");
+			modifySlbAPResponse.RequestId = context.StringValue("ModifySlbAP.RequestId");
+			modifySlbAPResponse.Success = context.BooleanValue("ModifySlbAP.Success");
         
-			return getInstTransInfoResponse;
+			return modifySlbAPResponse;
         }
     }
 }

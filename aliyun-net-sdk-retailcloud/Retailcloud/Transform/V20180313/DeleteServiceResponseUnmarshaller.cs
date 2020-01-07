@@ -24,21 +24,19 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class DeleteServiceResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteServiceResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			DeleteServiceResponse deleteServiceResponse = new DeleteServiceResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			deleteServiceResponse.HttpResponse = context.HttpResponse;
+			deleteServiceResponse.Code = context.IntegerValue("DeleteService.Code");
+			deleteServiceResponse.ErrMsg = context.StringValue("DeleteService.ErrMsg");
+			deleteServiceResponse.RequestId = context.StringValue("DeleteService.RequestId");
+			deleteServiceResponse.Success = context.BooleanValue("DeleteService.Success");
         
-			return getInstTransInfoResponse;
+			return deleteServiceResponse;
         }
     }
 }

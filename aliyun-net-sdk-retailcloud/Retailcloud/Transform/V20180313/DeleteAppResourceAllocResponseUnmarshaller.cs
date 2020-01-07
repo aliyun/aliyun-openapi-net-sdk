@@ -24,21 +24,19 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class DeleteAppResourceAllocResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteAppResourceAllocResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			DeleteAppResourceAllocResponse deleteAppResourceAllocResponse = new DeleteAppResourceAllocResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			deleteAppResourceAllocResponse.HttpResponse = context.HttpResponse;
+			deleteAppResourceAllocResponse.Code = context.IntegerValue("DeleteAppResourceAlloc.Code");
+			deleteAppResourceAllocResponse.ErrMsg = context.StringValue("DeleteAppResourceAlloc.ErrMsg");
+			deleteAppResourceAllocResponse.RequestId = context.StringValue("DeleteAppResourceAlloc.RequestId");
+			deleteAppResourceAllocResponse.Success = context.BooleanValue("DeleteAppResourceAlloc.Success");
         
-			return getInstTransInfoResponse;
+			return deleteAppResourceAllocResponse;
         }
     }
 }

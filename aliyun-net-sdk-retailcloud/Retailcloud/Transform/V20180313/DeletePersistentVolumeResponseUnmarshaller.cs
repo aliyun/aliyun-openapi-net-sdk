@@ -24,21 +24,22 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class DeletePersistentVolumeResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DeletePersistentVolumeResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			DeletePersistentVolumeResponse deletePersistentVolumeResponse = new DeletePersistentVolumeResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			deletePersistentVolumeResponse.HttpResponse = context.HttpResponse;
+			deletePersistentVolumeResponse.RequestId = context.StringValue("DeletePersistentVolume.RequestId");
+			deletePersistentVolumeResponse.Code = context.IntegerValue("DeletePersistentVolume.Code");
+			deletePersistentVolumeResponse.ErrMsg = context.StringValue("DeletePersistentVolume.ErrMsg");
+
+			DeletePersistentVolumeResponse.DeletePersistentVolume_Result result = new DeletePersistentVolumeResponse.DeletePersistentVolume_Result();
+			result.Success = context.BooleanValue("DeletePersistentVolume.Result.Success");
+			deletePersistentVolumeResponse.Result = result;
         
-			return getInstTransInfoResponse;
+			return deletePersistentVolumeResponse;
         }
     }
 }

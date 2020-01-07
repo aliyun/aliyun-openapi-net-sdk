@@ -24,21 +24,19 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class CloseDeployOrderResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static CloseDeployOrderResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			CloseDeployOrderResponse closeDeployOrderResponse = new CloseDeployOrderResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			closeDeployOrderResponse.HttpResponse = context.HttpResponse;
+			closeDeployOrderResponse.Code = context.IntegerValue("CloseDeployOrder.Code");
+			closeDeployOrderResponse.ErrMsg = context.StringValue("CloseDeployOrder.ErrMsg");
+			closeDeployOrderResponse.RequestId = context.StringValue("CloseDeployOrder.RequestId");
+			closeDeployOrderResponse.Success = context.BooleanValue("CloseDeployOrder.Success");
         
-			return getInstTransInfoResponse;
+			return closeDeployOrderResponse;
         }
     }
 }

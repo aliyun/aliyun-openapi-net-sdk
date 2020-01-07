@@ -24,21 +24,22 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class UpdateDeployConfigResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateDeployConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			UpdateDeployConfigResponse updateDeployConfigResponse = new UpdateDeployConfigResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			updateDeployConfigResponse.HttpResponse = context.HttpResponse;
+			updateDeployConfigResponse.Code = context.IntegerValue("UpdateDeployConfig.Code");
+			updateDeployConfigResponse.RequestId = context.StringValue("UpdateDeployConfig.RequestId");
+			updateDeployConfigResponse.ErrMsg = context.StringValue("UpdateDeployConfig.ErrMsg");
+
+			UpdateDeployConfigResponse.UpdateDeployConfig_Result result = new UpdateDeployConfigResponse.UpdateDeployConfig_Result();
+			result.Success = context.BooleanValue("UpdateDeployConfig.Result.Success");
+			updateDeployConfigResponse.Result = result;
         
-			return getInstTransInfoResponse;
+			return updateDeployConfigResponse;
         }
     }
 }

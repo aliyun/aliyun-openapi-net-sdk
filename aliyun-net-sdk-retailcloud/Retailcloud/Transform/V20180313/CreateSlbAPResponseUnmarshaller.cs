@@ -24,21 +24,23 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class CreateSlbAPResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static CreateSlbAPResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			CreateSlbAPResponse createSlbAPResponse = new CreateSlbAPResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			createSlbAPResponse.HttpResponse = context.HttpResponse;
+			createSlbAPResponse.Code = context.IntegerValue("CreateSlbAP.Code");
+			createSlbAPResponse.ErrMsg = context.StringValue("CreateSlbAP.ErrMsg");
+			createSlbAPResponse.RequestId = context.StringValue("CreateSlbAP.RequestId");
+			createSlbAPResponse.Success = context.BooleanValue("CreateSlbAP.Success");
+
+			CreateSlbAPResponse.CreateSlbAP_Result result = new CreateSlbAPResponse.CreateSlbAP_Result();
+			result.SlbAPId = context.LongValue("CreateSlbAP.Result.SlbAPId");
+			createSlbAPResponse.Result = result;
         
-			return getInstTransInfoResponse;
+			return createSlbAPResponse;
         }
     }
 }

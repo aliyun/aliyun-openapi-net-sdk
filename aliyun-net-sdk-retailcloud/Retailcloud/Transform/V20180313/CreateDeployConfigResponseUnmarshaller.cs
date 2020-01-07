@@ -24,21 +24,24 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class CreateDeployConfigResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDeployConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			CreateDeployConfigResponse createDeployConfigResponse = new CreateDeployConfigResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			createDeployConfigResponse.HttpResponse = context.HttpResponse;
+			createDeployConfigResponse.Code = context.IntegerValue("CreateDeployConfig.Code");
+			createDeployConfigResponse.RequestId = context.StringValue("CreateDeployConfig.RequestId");
+			createDeployConfigResponse.ErrMessage = context.StringValue("CreateDeployConfig.ErrMessage");
+
+			CreateDeployConfigResponse.CreateDeployConfig_Result result = new CreateDeployConfigResponse.CreateDeployConfig_Result();
+			result.AppId = context.LongValue("CreateDeployConfig.Result.AppId");
+			result.Name = context.StringValue("CreateDeployConfig.Result.Name");
+			result.SchemaId = context.LongValue("CreateDeployConfig.Result.SchemaId");
+			createDeployConfigResponse.Result = result;
         
-			return getInstTransInfoResponse;
+			return createDeployConfigResponse;
         }
     }
 }

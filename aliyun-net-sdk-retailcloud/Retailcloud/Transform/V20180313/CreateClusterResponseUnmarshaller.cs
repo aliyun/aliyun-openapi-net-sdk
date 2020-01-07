@@ -24,21 +24,23 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class CreateClusterResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static CreateClusterResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			CreateClusterResponse createClusterResponse = new CreateClusterResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			createClusterResponse.HttpResponse = context.HttpResponse;
+			createClusterResponse.Code = context.IntegerValue("CreateCluster.Code");
+			createClusterResponse.ErrMsg = context.StringValue("CreateCluster.ErrMsg");
+			createClusterResponse.RequestId = context.StringValue("CreateCluster.RequestId");
+			createClusterResponse.Success = context.BooleanValue("CreateCluster.Success");
+
+			CreateClusterResponse.CreateCluster_Result result = new CreateClusterResponse.CreateCluster_Result();
+			result.ClusterInstanceId = context.StringValue("CreateCluster.Result.ClusterInstanceId");
+			createClusterResponse.Result = result;
         
-			return getInstTransInfoResponse;
+			return createClusterResponse;
         }
     }
 }

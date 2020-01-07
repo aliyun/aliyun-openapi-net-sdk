@@ -24,21 +24,22 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class UpdateEnvironmentResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateEnvironmentResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			UpdateEnvironmentResponse updateEnvironmentResponse = new UpdateEnvironmentResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			updateEnvironmentResponse.HttpResponse = context.HttpResponse;
+			updateEnvironmentResponse.Code = context.IntegerValue("UpdateEnvironment.Code");
+			updateEnvironmentResponse.RequestId = context.StringValue("UpdateEnvironment.RequestId");
+			updateEnvironmentResponse.ErrMsg = context.StringValue("UpdateEnvironment.ErrMsg");
+
+			UpdateEnvironmentResponse.UpdateEnvironment_Result result = new UpdateEnvironmentResponse.UpdateEnvironment_Result();
+			result.Success = context.BooleanValue("UpdateEnvironment.Result.Success");
+			updateEnvironmentResponse.Result = result;
         
-			return getInstTransInfoResponse;
+			return updateEnvironmentResponse;
         }
     }
 }

@@ -24,21 +24,22 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class UpdateAppResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateAppResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			UpdateAppResponse updateAppResponse = new UpdateAppResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			updateAppResponse.HttpResponse = context.HttpResponse;
+			updateAppResponse.RequestId = context.StringValue("UpdateApp.RequestId");
+			updateAppResponse.Code = context.IntegerValue("UpdateApp.Code");
+			updateAppResponse.ErrMsg = context.StringValue("UpdateApp.ErrMsg");
+
+			UpdateAppResponse.UpdateApp_Result result = new UpdateAppResponse.UpdateApp_Result();
+			result.Success = context.BooleanValue("UpdateApp.Result.Success");
+			updateAppResponse.Result = result;
         
-			return getInstTransInfoResponse;
+			return updateAppResponse;
         }
     }
 }

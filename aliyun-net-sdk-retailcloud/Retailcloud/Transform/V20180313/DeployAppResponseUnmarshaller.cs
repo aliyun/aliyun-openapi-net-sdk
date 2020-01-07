@@ -24,21 +24,25 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class DeployAppResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DeployAppResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			DeployAppResponse deployAppResponse = new DeployAppResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			deployAppResponse.HttpResponse = context.HttpResponse;
+			deployAppResponse.Code = context.IntegerValue("DeployApp.Code");
+			deployAppResponse.ErrMsg = context.StringValue("DeployApp.ErrMsg");
+			deployAppResponse.RequestId = context.StringValue("DeployApp.RequestId");
+			deployAppResponse.Success = context.BooleanValue("DeployApp.Success");
+
+			DeployAppResponse.DeployApp_Result result = new DeployAppResponse.DeployApp_Result();
+			result.Admitted = context.BooleanValue("DeployApp.Result.Admitted");
+			result.BusinessCode = context.StringValue("DeployApp.Result.BusinessCode");
+			result.DeployOrderId = context.LongValue("DeployApp.Result.DeployOrderId");
+			deployAppResponse.Result = result;
         
-			return getInstTransInfoResponse;
+			return deployAppResponse;
         }
     }
 }

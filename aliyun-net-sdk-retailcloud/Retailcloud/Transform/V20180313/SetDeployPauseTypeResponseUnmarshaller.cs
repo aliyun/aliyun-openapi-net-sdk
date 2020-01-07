@@ -24,21 +24,19 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class SetDeployPauseTypeResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static SetDeployPauseTypeResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			SetDeployPauseTypeResponse setDeployPauseTypeResponse = new SetDeployPauseTypeResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			setDeployPauseTypeResponse.HttpResponse = context.HttpResponse;
+			setDeployPauseTypeResponse.Code = context.IntegerValue("SetDeployPauseType.Code");
+			setDeployPauseTypeResponse.ErrMsg = context.StringValue("SetDeployPauseType.ErrMsg");
+			setDeployPauseTypeResponse.RequestId = context.StringValue("SetDeployPauseType.RequestId");
+			setDeployPauseTypeResponse.Success = context.BooleanValue("SetDeployPauseType.Success");
         
-			return getInstTransInfoResponse;
+			return setDeployPauseTypeResponse;
         }
     }
 }

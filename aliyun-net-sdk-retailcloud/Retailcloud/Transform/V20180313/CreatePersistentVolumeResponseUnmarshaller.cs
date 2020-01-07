@@ -24,21 +24,22 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class CreatePersistentVolumeResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static CreatePersistentVolumeResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			CreatePersistentVolumeResponse createPersistentVolumeResponse = new CreatePersistentVolumeResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			createPersistentVolumeResponse.HttpResponse = context.HttpResponse;
+			createPersistentVolumeResponse.RequestId = context.StringValue("CreatePersistentVolume.RequestId");
+			createPersistentVolumeResponse.Code = context.IntegerValue("CreatePersistentVolume.Code");
+			createPersistentVolumeResponse.ErrMsg = context.StringValue("CreatePersistentVolume.ErrMsg");
+
+			CreatePersistentVolumeResponse.CreatePersistentVolume_Result result = new CreatePersistentVolumeResponse.CreatePersistentVolume_Result();
+			result.PersistentVolumeId = context.LongValue("CreatePersistentVolume.Result.PersistentVolumeId");
+			createPersistentVolumeResponse.Result = result;
         
-			return getInstTransInfoResponse;
+			return createPersistentVolumeResponse;
         }
     }
 }

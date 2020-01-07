@@ -24,21 +24,23 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class CreateServiceResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static CreateServiceResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			CreateServiceResponse createServiceResponse = new CreateServiceResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			createServiceResponse.HttpResponse = context.HttpResponse;
+			createServiceResponse.Code = context.IntegerValue("CreateService.Code");
+			createServiceResponse.ErrMsg = context.StringValue("CreateService.ErrMsg");
+			createServiceResponse.RequestId = context.StringValue("CreateService.RequestId");
+			createServiceResponse.Success = context.BooleanValue("CreateService.Success");
+
+			CreateServiceResponse.CreateService_Result result = new CreateServiceResponse.CreateService_Result();
+			result.ServiceId = context.LongValue("CreateService.Result.ServiceId");
+			createServiceResponse.Result = result;
         
-			return getInstTransInfoResponse;
+			return createServiceResponse;
         }
     }
 }

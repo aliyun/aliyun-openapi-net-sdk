@@ -24,21 +24,22 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class DeleteDeployConfigResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDeployConfigResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			DeleteDeployConfigResponse deleteDeployConfigResponse = new DeleteDeployConfigResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			deleteDeployConfigResponse.HttpResponse = context.HttpResponse;
+			deleteDeployConfigResponse.Code = context.IntegerValue("DeleteDeployConfig.Code");
+			deleteDeployConfigResponse.ErrMsg = context.StringValue("DeleteDeployConfig.ErrMsg");
+			deleteDeployConfigResponse.RequestId = context.StringValue("DeleteDeployConfig.RequestId");
+
+			DeleteDeployConfigResponse.DeleteDeployConfig_Result result = new DeleteDeployConfigResponse.DeleteDeployConfig_Result();
+			result.Success = context.BooleanValue("DeleteDeployConfig.Result.Success");
+			deleteDeployConfigResponse.Result = result;
         
-			return getInstTransInfoResponse;
+			return deleteDeployConfigResponse;
         }
     }
 }

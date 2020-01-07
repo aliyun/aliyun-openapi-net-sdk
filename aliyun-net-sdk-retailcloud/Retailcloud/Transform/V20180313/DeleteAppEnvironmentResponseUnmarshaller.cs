@@ -24,21 +24,22 @@ using Aliyun.Acs.retailcloud.Model.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Transform.V20180313
 {
-    public class GetInstTransInfoResponseUnmarshaller
+    public class DeleteAppEnvironmentResponseUnmarshaller
     {
-        public static GetInstTransInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteAppEnvironmentResponse Unmarshall(UnmarshallerContext context)
         {
-			GetInstTransInfoResponse getInstTransInfoResponse = new GetInstTransInfoResponse();
+			DeleteAppEnvironmentResponse deleteAppEnvironmentResponse = new DeleteAppEnvironmentResponse();
 
-			getInstTransInfoResponse.HttpResponse = context.HttpResponse;
-			getInstTransInfoResponse.InstanceId = context.StringValue("GetInstTransInfo.instanceId");
-			getInstTransInfoResponse.IsAutoRenew = context.BooleanValue("GetInstTransInfo.isAutoRenew");
-			getInstTransInfoResponse.RenewCycle = context.IntegerValue("GetInstTransInfo.renewCycle");
-			getInstTransInfoResponse.ChargeType = context.StringValue("GetInstTransInfo.chargeType");
-			getInstTransInfoResponse.EndTime = context.LongValue("GetInstTransInfo.endTime");
-			getInstTransInfoResponse.StartTime = context.LongValue("GetInstTransInfo.startTime");
+			deleteAppEnvironmentResponse.HttpResponse = context.HttpResponse;
+			deleteAppEnvironmentResponse.Code = context.IntegerValue("DeleteAppEnvironment.Code");
+			deleteAppEnvironmentResponse.RequestId = context.StringValue("DeleteAppEnvironment.RequestId");
+			deleteAppEnvironmentResponse.ErrMsg = context.StringValue("DeleteAppEnvironment.ErrMsg");
+
+			DeleteAppEnvironmentResponse.DeleteAppEnvironment_Result result = new DeleteAppEnvironmentResponse.DeleteAppEnvironment_Result();
+			result.Success = context.BooleanValue("DeleteAppEnvironment.Result.Success");
+			deleteAppEnvironmentResponse.Result = result;
         
-			return getInstTransInfoResponse;
+			return deleteAppEnvironmentResponse;
         }
     }
 }
