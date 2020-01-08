@@ -74,6 +74,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private int? tagCount;
 
+			private int? tagLevel;
+
 			public string TagName
 			{
 				get
@@ -95,6 +97,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					tagCount = value;
+				}
+			}
+
+			public int? TagLevel
+			{
+				get
+				{
+					return tagLevel;
+				}
+				set	
+				{
+					tagLevel = value;
 				}
 			}
 		}

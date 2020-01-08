@@ -39,6 +39,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				ListSetTagsResponse.ListSetTags_TagsItem tagsItem = new ListSetTagsResponse.ListSetTags_TagsItem();
 				tagsItem.TagName = context.StringValue("ListSetTags.Tags["+ i +"].TagName");
 				tagsItem.TagCount = context.IntegerValue("ListSetTags.Tags["+ i +"].TagCount");
+				tagsItem.TagLevel = context.IntegerValue("ListSetTags.Tags["+ i +"].TagLevel");
 
 				listSetTagsResponse_tags.Add(tagsItem);
 			}
