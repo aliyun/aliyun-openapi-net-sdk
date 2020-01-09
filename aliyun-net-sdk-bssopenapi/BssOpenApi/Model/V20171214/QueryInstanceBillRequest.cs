@@ -52,9 +52,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? pageNum;
 
+		private string billingDate;
+
 		private string productType;
 
 		private bool? isBillingItem;
+
+		private string granularity;
 
 		private int? pageSize;
 
@@ -136,6 +140,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public string BillingDate
+		{
+			get
+			{
+				return billingDate;
+			}
+			set	
+			{
+				billingDate = value;
+				DictionaryUtil.Add(QueryParameters, "BillingDate", value);
+			}
+		}
+
 		public string ProductType
 		{
 			get
@@ -159,6 +176,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				isBillingItem = value;
 				DictionaryUtil.Add(QueryParameters, "IsBillingItem", value.ToString());
+			}
+		}
+
+		public string Granularity
+		{
+			get
+			{
+				return granularity;
+			}
+			set	
+			{
+				granularity = value;
+				DictionaryUtil.Add(QueryParameters, "Granularity", value);
 			}
 		}
 
