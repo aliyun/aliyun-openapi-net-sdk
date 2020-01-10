@@ -45,6 +45,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBClusterIPArrayAttribute;
 
+		private string modifyMode;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -95,6 +97,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBClusterIPArrayAttribute = value;
 				DictionaryUtil.Add(QueryParameters, "DBClusterIPArrayAttribute", value);
+			}
+		}
+
+		public string ModifyMode
+		{
+			get
+			{
+				return modifyMode;
+			}
+			set	
+			{
+				modifyMode = value;
+				DictionaryUtil.Add(QueryParameters, "ModifyMode", value);
 			}
 		}
 

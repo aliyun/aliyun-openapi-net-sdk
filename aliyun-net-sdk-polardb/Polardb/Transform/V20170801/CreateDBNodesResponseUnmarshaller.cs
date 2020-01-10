@@ -34,6 +34,12 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			createDBNodesResponse.RequestId = context.StringValue("CreateDBNodes.RequestId");
 			createDBNodesResponse.DBClusterId = context.StringValue("CreateDBNodes.DBClusterId");
 			createDBNodesResponse.OrderId = context.StringValue("CreateDBNodes.OrderId");
+
+			List<string> createDBNodesResponse_dBNodeIds = new List<string>();
+			for (int i = 0; i < context.Length("CreateDBNodes.DBNodeIds.Length"); i++) {
+				createDBNodesResponse_dBNodeIds.Add(context.StringValue("CreateDBNodes.DBNodeIds["+ i +"]"));
+			}
+			createDBNodesResponse.DBNodeIds = createDBNodesResponse_dBNodeIds;
         
 			return createDBNodesResponse;
         }

@@ -31,6 +31,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string orderId;
 
+		private List<string> dBNodeIds;
+
 		public string RequestId
 		{
 			get
@@ -64,6 +66,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public List<string> DBNodeIds
+		{
+			get
+			{
+				return dBNodeIds;
+			}
+			set	
+			{
+				dBNodeIds = value;
 			}
 		}
 	}

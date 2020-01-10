@@ -67,6 +67,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string vSwitchId;
 
+		private string securityIPList;
+
 		private bool? autoRenew;
 
 		private string vPCId;
@@ -260,6 +262,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string SecurityIPList
+		{
+			get
+			{
+				return securityIPList;
+			}
+			set	
+			{
+				securityIPList = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityIPList", value);
 			}
 		}
 

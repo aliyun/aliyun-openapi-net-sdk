@@ -49,6 +49,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 				backup.BackupMethod = context.StringValue("DescribeBackups.Items["+ i +"].BackupMethod");
 				backup.StoreStatus = context.StringValue("DescribeBackups.Items["+ i +"].StoreStatus");
 				backup.BackupSetSize = context.StringValue("DescribeBackups.Items["+ i +"].BackupSetSize");
+				backup.ConsistentTime = context.StringValue("DescribeBackups.Items["+ i +"].ConsistentTime");
 
 				describeBackupsResponse_items.Add(backup);
 			}

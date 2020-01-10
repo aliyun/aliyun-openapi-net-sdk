@@ -118,6 +118,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string backupSetSize;
 
+			private string consistentTime;
+
 			public string BackupId
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					backupSetSize = value;
+				}
+			}
+
+			public string ConsistentTime
+			{
+				get
+				{
+					return consistentTime;
+				}
+				set	
+				{
+					consistentTime = value;
 				}
 			}
 		}
