@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class CreateMaintenancePropertyResponse : AcsResponse
+	public class ModifyInstanceMaintenanceAttributesResponse : AcsResponse
 	{
 
 		private string requestId;

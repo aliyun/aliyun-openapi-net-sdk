@@ -59,6 +59,19 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute extendedAttribute = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute();
 				extendedAttribute.DiskId = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.DiskId");
 				extendedAttribute.Device = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.Device");
+
+				List<DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute.DescribeInstanceHistoryEvents_InactiveDisk> extendedAttribute_inactiveDisks = new List<DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute.DescribeInstanceHistoryEvents_InactiveDisk>();
+				for (int j = 0; j < context.Length("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks.Length"); j++) {
+					DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute.DescribeInstanceHistoryEvents_InactiveDisk inactiveDisk = new DescribeInstanceHistoryEventsResponse.DescribeInstanceHistoryEvents_InstanceSystemEventType.DescribeInstanceHistoryEvents_ExtendedAttribute.DescribeInstanceHistoryEvents_InactiveDisk();
+					inactiveDisk.CreationTime = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].CreationTime");
+					inactiveDisk.ReleaseTime = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].ReleaseTime");
+					inactiveDisk.DeviceType = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].DeviceType");
+					inactiveDisk.DeviceCategory = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].DeviceCategory");
+					inactiveDisk.DeviceSize = context.StringValue("DescribeInstanceHistoryEvents.InstanceSystemEventSet["+ i +"].ExtendedAttribute.InactiveDisks["+ j +"].DeviceSize");
+
+					extendedAttribute_inactiveDisks.Add(inactiveDisk);
+				}
+				extendedAttribute.InactiveDisks = extendedAttribute_inactiveDisks;
 				instanceSystemEventType.ExtendedAttribute = extendedAttribute;
 
 				describeInstanceHistoryEventsResponse_instanceSystemEventSet.Add(instanceSystemEventType);

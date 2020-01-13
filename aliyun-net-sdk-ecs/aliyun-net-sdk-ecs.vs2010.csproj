@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7bdad14b-4ea2-4cbf-a98d-1617dea7329b}</ProjectGuid>
+    <ProjectGuid>{e290c7b2-9c07-49eb-aa29-4cce64f7f86e}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aliyun.Acs</RootNamespace>
@@ -122,8 +122,6 @@
 	<Compile Include="Ecs\Model\V20140526\CreateLaunchTemplateResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateLaunchTemplateVersionRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateLaunchTemplateVersionResponse.cs" />
-	<Compile Include="Ecs\Model\V20140526\CreateMaintenancePropertyRequest.cs" />
-	<Compile Include="Ecs\Model\V20140526\CreateMaintenancePropertyResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateNatGatewayRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateNatGatewayResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\CreateNetworkInterfacePermissionRequest.cs" />
@@ -184,8 +182,6 @@
 	<Compile Include="Ecs\Model\V20140526\DeleteLaunchTemplateResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteLaunchTemplateVersionRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteLaunchTemplateVersionResponse.cs" />
-	<Compile Include="Ecs\Model\V20140526\DeleteMaintenancePropertyRequest.cs" />
-	<Compile Include="Ecs\Model\V20140526\DeleteMaintenancePropertyResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteNatGatewayRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteNatGatewayResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DeleteNetworkInterfacePermissionRequest.cs" />
@@ -276,6 +272,8 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceAutoRenewAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceHistoryEventsRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceHistoryEventsResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeInstanceMaintenanceAttributesRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\DescribeInstanceMaintenanceAttributesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceMonitorDataRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceMonitorDataResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeInstanceRamRoleRequest.cs" />
@@ -308,8 +306,6 @@
 	<Compile Include="Ecs\Model\V20140526\DescribeLaunchTemplatesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeLimitationRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeLimitationResponse.cs" />
-	<Compile Include="Ecs\Model\V20140526\DescribeMaintenancePropertyRequest.cs" />
-	<Compile Include="Ecs\Model\V20140526\DescribeMaintenancePropertyResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeNatGatewaysRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeNatGatewaysResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\DescribeNetworkInterfacePermissionsRequest.cs" />
@@ -476,6 +472,8 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceChargeTypeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceDeploymentRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceDeploymentResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\ModifyInstanceMaintenanceAttributesRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\ModifyInstanceMaintenanceAttributesResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceNetworkSpecRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceNetworkSpecResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceSpecRequest.cs" />
@@ -486,8 +484,6 @@
 	<Compile Include="Ecs\Model\V20140526\ModifyInstanceVpcAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyLaunchTemplateDefaultVersionRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyLaunchTemplateDefaultVersionResponse.cs" />
-	<Compile Include="Ecs\Model\V20140526\ModifyMaintenancePropertyRequest.cs" />
-	<Compile Include="Ecs\Model\V20140526\ModifyMaintenancePropertyResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyNetworkInterfaceAttributeRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyNetworkInterfaceAttributeResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ModifyPhysicalConnectionAttributeRequest.cs" />
@@ -534,6 +530,8 @@
 	<Compile Include="Ecs\Model\V20140526\RebootInstanceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\RecoverVirtualBorderRouterRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\RecoverVirtualBorderRouterResponse.cs" />
+	<Compile Include="Ecs\Model\V20140526\RedeployDedicatedHostRequest.cs" />
+	<Compile Include="Ecs\Model\V20140526\RedeployDedicatedHostResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\RedeployInstanceRequest.cs" />
 	<Compile Include="Ecs\Model\V20140526\RedeployInstanceResponse.cs" />
 	<Compile Include="Ecs\Model\V20140526\ReleaseDedicatedHostRequest.cs" />
@@ -629,7 +627,6 @@
 	<Compile Include="Ecs\Transform\V20140526\CreateKeyPairResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateLaunchTemplateResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateLaunchTemplateVersionResponseUnmarshaller.cs" />
-	<Compile Include="Ecs\Transform\V20140526\CreateMaintenancePropertyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateNatGatewayResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateNetworkInterfacePermissionResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\CreateNetworkInterfaceResponseUnmarshaller.cs" />
@@ -660,7 +657,6 @@
 	<Compile Include="Ecs\Transform\V20140526\DeleteKeyPairsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteLaunchTemplateResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteLaunchTemplateVersionResponseUnmarshaller.cs" />
-	<Compile Include="Ecs\Transform\V20140526\DeleteMaintenancePropertyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteNatGatewayResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteNetworkInterfacePermissionResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DeleteNetworkInterfaceResponseUnmarshaller.cs" />
@@ -706,6 +702,7 @@
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceAutoRenewAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceHistoryEventsResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceMaintenanceAttributesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceMonitorDataResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceRamRoleResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeInstanceStatusResponseUnmarshaller.cs" />
@@ -722,7 +719,6 @@
 	<Compile Include="Ecs\Transform\V20140526\DescribeLaunchTemplateVersionsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeLaunchTemplatesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeLimitationResponseUnmarshaller.cs" />
-	<Compile Include="Ecs\Transform\V20140526\DescribeMaintenancePropertyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeNatGatewaysResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeNetworkInterfacePermissionsResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\DescribeNetworkInterfacesResponseUnmarshaller.cs" />
@@ -806,12 +802,12 @@
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceAutoRenewAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceChargeTypeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceDeploymentResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceMaintenanceAttributesResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceNetworkSpecResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceSpecResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceVncPasswdResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyInstanceVpcAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyLaunchTemplateDefaultVersionResponseUnmarshaller.cs" />
-	<Compile Include="Ecs\Transform\V20140526\ModifyMaintenancePropertyResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyNetworkInterfaceAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyPhysicalConnectionAttributeResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ModifyPrepayInstanceSpecResponseUnmarshaller.cs" />
@@ -835,6 +831,7 @@
 	<Compile Include="Ecs\Transform\V20140526\ReInitDiskResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\RebootInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\RecoverVirtualBorderRouterResponseUnmarshaller.cs" />
+	<Compile Include="Ecs\Transform\V20140526\RedeployDedicatedHostResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\RedeployInstanceResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ReleaseDedicatedHostResponseUnmarshaller.cs" />
 	<Compile Include="Ecs\Transform\V20140526\ReleaseEipAddressResponseUnmarshaller.cs" />

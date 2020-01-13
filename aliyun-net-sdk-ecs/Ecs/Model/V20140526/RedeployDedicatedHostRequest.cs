@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DeleteMaintenancePropertyRequest : RpcAcsRequest<DeleteMaintenancePropertyResponse>
+    public class RedeployDedicatedHostRequest : RpcAcsRequest<RedeployDedicatedHostResponse>
     {
-        public DeleteMaintenancePropertyRequest()
-            : base("Ecs", "2014-05-26", "DeleteMaintenanceProperty", "ecs", "openAPI")
+        public RedeployDedicatedHostRequest()
+            : base("Ecs", "2014-05-26", "RedeployDedicatedHost", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,9 +46,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
-		private long? ownerId;
+		private string dedicatedHostId;
 
-		private List<string> instanceIds = new List<string>(){ };
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -88,6 +89,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string DedicatedHostId
+		{
+			get
+			{
+				return dedicatedHostId;
+			}
+			set	
+			{
+				dedicatedHostId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -101,26 +115,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> InstanceIds
-		{
-			get
-			{
-				return instanceIds;
-			}
-
-			set
-			{
-				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
-			}
-		}
-
-        public override DeleteMaintenancePropertyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RedeployDedicatedHostResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteMaintenancePropertyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RedeployDedicatedHostResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

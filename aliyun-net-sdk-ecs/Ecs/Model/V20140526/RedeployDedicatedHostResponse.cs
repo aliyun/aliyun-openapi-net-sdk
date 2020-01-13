@@ -16,24 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Ecs.Model.V20140526;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Ecs.Transform.V20140526
+namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class ModifyMaintenancePropertyResponseUnmarshaller
-    {
-        public static ModifyMaintenancePropertyResponse Unmarshall(UnmarshallerContext context)
-        {
-			ModifyMaintenancePropertyResponse modifyMaintenancePropertyResponse = new ModifyMaintenancePropertyResponse();
+	public class RedeployDedicatedHostResponse : AcsResponse
+	{
 
-			modifyMaintenancePropertyResponse.HttpResponse = context.HttpResponse;
-			modifyMaintenancePropertyResponse.RequestId = context.StringValue("ModifyMaintenanceProperty.RequestId");
-        
-			return modifyMaintenancePropertyResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class ModifyMaintenancePropertyRequest : RpcAcsRequest<ModifyMaintenancePropertyResponse>
+    public class ModifyInstanceMaintenanceAttributesRequest : RpcAcsRequest<ModifyInstanceMaintenanceAttributesResponse>
     {
-        public ModifyMaintenancePropertyRequest()
-            : base("Ecs", "2014-05-26", "ModifyMaintenanceProperty", "ecs", "openAPI")
+        public ModifyInstanceMaintenanceAttributesRequest()
+            : base("Ecs", "2014-05-26", "ModifyInstanceMaintenanceAttributes", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,15 +42,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string startTime;
+		private List<MaintenanceWindow> maintenanceWindows = new List<MaintenanceWindow>(){ };
 
 		private string actionOnMaintenance;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string endTime;
 
 		private long? ownerId;
 
@@ -69,16 +67,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string StartTime
+		public List<MaintenanceWindow> MaintenanceWindows
 		{
 			get
 			{
-				return startTime;
+				return maintenanceWindows;
 			}
-			set	
+
+			set
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				maintenanceWindows = value;
+				for (int i = 0; i < maintenanceWindows.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"MaintenanceWindow." + (i + 1) + ".StartTime", maintenanceWindows[i].StartTime);
+					DictionaryUtil.Add(QueryParameters,"MaintenanceWindow." + (i + 1) + ".EndTime", maintenanceWindows[i].EndTime);
+				}
 			}
 		}
 
@@ -121,19 +124,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -164,9 +154,41 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override ModifyMaintenancePropertyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public class MaintenanceWindow
+		{
+
+			private string startTime;
+
+			private string endTime;
+
+			public string StartTime
+			{
+				get
+				{
+					return startTime;
+				}
+				set	
+				{
+					startTime = value;
+				}
+			}
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+		}
+
+        public override ModifyInstanceMaintenanceAttributesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyMaintenancePropertyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyInstanceMaintenanceAttributesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

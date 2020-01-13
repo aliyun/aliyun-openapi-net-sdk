@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string description;
 
+		private int? secondaryPrivateIpAddressCount;
+
 		private string businessType;
 
 		private string resourceGroupId;
@@ -66,6 +68,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private List<string> securityGroupIdss = new List<string>(){ };
 
 		private string vSwitchId;
+
+		private List<string> privateIpAddresss = new List<string>(){ };
 
 		private string primaryIpAddress;
 
@@ -118,6 +122,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public int? SecondaryPrivateIpAddressCount
+		{
+			get
+			{
+				return secondaryPrivateIpAddressCount;
+			}
+			set	
+			{
+				secondaryPrivateIpAddressCount = value;
+				DictionaryUtil.Add(QueryParameters, "SecondaryPrivateIpAddressCount", value.ToString());
 			}
 		}
 
@@ -257,6 +274,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public List<string> PrivateIpAddresss
+		{
+			get
+			{
+				return privateIpAddresss;
+			}
+
+			set
+			{
+				privateIpAddresss = value;
+				for (int i = 0; i < privateIpAddresss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"PrivateIpAddress." + (i + 1) , privateIpAddresss[i]);
+				}
 			}
 		}
 

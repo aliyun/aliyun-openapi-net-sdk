@@ -24,16 +24,16 @@ using Aliyun.Acs.Ecs.Model.V20140526;
 
 namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
-    public class CreateMaintenancePropertyResponseUnmarshaller
+    public class ModifyInstanceMaintenanceAttributesResponseUnmarshaller
     {
-        public static CreateMaintenancePropertyResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyInstanceMaintenanceAttributesResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateMaintenancePropertyResponse createMaintenancePropertyResponse = new CreateMaintenancePropertyResponse();
+			ModifyInstanceMaintenanceAttributesResponse modifyInstanceMaintenanceAttributesResponse = new ModifyInstanceMaintenanceAttributesResponse();
 
-			createMaintenancePropertyResponse.HttpResponse = context.HttpResponse;
-			createMaintenancePropertyResponse.RequestId = context.StringValue("CreateMaintenanceProperty.RequestId");
+			modifyInstanceMaintenanceAttributesResponse.HttpResponse = context.HttpResponse;
+			modifyInstanceMaintenanceAttributesResponse.RequestId = context.StringValue("ModifyInstanceMaintenanceAttributes.RequestId");
         
-			return createMaintenancePropertyResponse;
+			return modifyInstanceMaintenanceAttributesResponse;
         }
     }
 }

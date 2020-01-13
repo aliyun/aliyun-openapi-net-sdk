@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? autoPay;
 
+		private bool? rebootWhenFinished;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -167,6 +169,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				autoPay = value;
 				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
+		public bool? RebootWhenFinished
+		{
+			get
+			{
+				return rebootWhenFinished;
+			}
+			set	
+			{
+				rebootWhenFinished = value;
+				DictionaryUtil.Add(QueryParameters, "RebootWhenFinished", value.ToString());
 			}
 		}
 

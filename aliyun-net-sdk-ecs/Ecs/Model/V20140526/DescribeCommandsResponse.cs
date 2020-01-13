@@ -112,6 +112,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private long? timeout;
 
+			private int? invokeTimes;
+
 			private string creationTime;
 
 			private bool? enableParameter;
@@ -199,6 +201,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					timeout = value;
+				}
+			}
+
+			public int? InvokeTimes
+			{
+				get
+				{
+					return invokeTimes;
+				}
+				set	
+				{
+					invokeTimes = value;
 				}
 			}
 

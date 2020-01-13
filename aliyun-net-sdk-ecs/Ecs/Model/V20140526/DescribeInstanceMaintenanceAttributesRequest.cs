@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class CreateMaintenancePropertyRequest : RpcAcsRequest<CreateMaintenancePropertyResponse>
+    public class DescribeInstanceMaintenanceAttributesRequest : RpcAcsRequest<DescribeInstanceMaintenanceAttributesResponse>
     {
-        public CreateMaintenancePropertyRequest()
-            : base("Ecs", "2014-05-26", "CreateMaintenanceProperty", "ecs", "openAPI")
+        public DescribeInstanceMaintenanceAttributesRequest()
+            : base("Ecs", "2014-05-26", "DescribeInstanceMaintenanceAttributes", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,15 +41,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string startTime;
+		private long? pageNumber;
 
-		private string actionOnMaintenance;
+		private long? pageSize;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string endTime;
 
 		private long? ownerId;
 
@@ -68,29 +66,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string StartTime
+		public long? PageNumber
 		{
 			get
 			{
-				return startTime;
+				return pageNumber;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string ActionOnMaintenance
+		public long? PageSize
 		{
 			get
 			{
-				return actionOnMaintenance;
+				return pageSize;
 			}
 			set	
 			{
-				actionOnMaintenance = value;
-				DictionaryUtil.Add(QueryParameters, "ActionOnMaintenance", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -117,19 +115,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -163,9 +148,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override CreateMaintenancePropertyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeInstanceMaintenanceAttributesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateMaintenancePropertyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeInstanceMaintenanceAttributesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

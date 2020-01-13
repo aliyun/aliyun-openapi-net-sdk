@@ -72,6 +72,19 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					DescribeInstancesFullStatusResponse.DescribeInstancesFullStatus_InstanceFullStatusType.DescribeInstancesFullStatus_ScheduledSystemEventType.DescribeInstancesFullStatus_ExtendedAttribute extendedAttribute = new DescribeInstancesFullStatusResponse.DescribeInstancesFullStatus_InstanceFullStatusType.DescribeInstancesFullStatus_ScheduledSystemEventType.DescribeInstancesFullStatus_ExtendedAttribute();
 					extendedAttribute.DiskId = context.StringValue("DescribeInstancesFullStatus.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.DiskId");
 					extendedAttribute.Device = context.StringValue("DescribeInstancesFullStatus.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.Device");
+
+					List<DescribeInstancesFullStatusResponse.DescribeInstancesFullStatus_InstanceFullStatusType.DescribeInstancesFullStatus_ScheduledSystemEventType.DescribeInstancesFullStatus_ExtendedAttribute.DescribeInstancesFullStatus_InactiveDisk> extendedAttribute_inactiveDisks = new List<DescribeInstancesFullStatusResponse.DescribeInstancesFullStatus_InstanceFullStatusType.DescribeInstancesFullStatus_ScheduledSystemEventType.DescribeInstancesFullStatus_ExtendedAttribute.DescribeInstancesFullStatus_InactiveDisk>();
+					for (int k = 0; k < context.Length("DescribeInstancesFullStatus.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks.Length"); k++) {
+						DescribeInstancesFullStatusResponse.DescribeInstancesFullStatus_InstanceFullStatusType.DescribeInstancesFullStatus_ScheduledSystemEventType.DescribeInstancesFullStatus_ExtendedAttribute.DescribeInstancesFullStatus_InactiveDisk inactiveDisk = new DescribeInstancesFullStatusResponse.DescribeInstancesFullStatus_InstanceFullStatusType.DescribeInstancesFullStatus_ScheduledSystemEventType.DescribeInstancesFullStatus_ExtendedAttribute.DescribeInstancesFullStatus_InactiveDisk();
+						inactiveDisk.CreationTime = context.StringValue("DescribeInstancesFullStatus.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].CreationTime");
+						inactiveDisk.ReleaseTime = context.StringValue("DescribeInstancesFullStatus.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].ReleaseTime");
+						inactiveDisk.DeviceType = context.StringValue("DescribeInstancesFullStatus.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].DeviceType");
+						inactiveDisk.DeviceCategory = context.StringValue("DescribeInstancesFullStatus.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].DeviceCategory");
+						inactiveDisk.DeviceSize = context.StringValue("DescribeInstancesFullStatus.InstanceFullStatusSet["+ i +"].ScheduledSystemEventSet["+ j +"].ExtendedAttribute.InactiveDisks["+ k +"].DeviceSize");
+
+						extendedAttribute_inactiveDisks.Add(inactiveDisk);
+					}
+					extendedAttribute.InactiveDisks = extendedAttribute_inactiveDisks;
 					scheduledSystemEventType.ExtendedAttribute = extendedAttribute;
 
 					instanceFullStatusType_scheduledSystemEventSet.Add(scheduledSystemEventType);
