@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -41,5 +41,9 @@ namespace Aliyun.Acs.Core.Profile
         void SetLocationConfig(string regionId, string product, string endpoint);
 
         void SetCredentialsProvider(AlibabaCloudCredentialsProvider credentialsProvider);
+
+        void AddEndpoint(string endpointName, string regionId, string product, string domain,
+            bool isNeverExpire = false);
+
     }
 }

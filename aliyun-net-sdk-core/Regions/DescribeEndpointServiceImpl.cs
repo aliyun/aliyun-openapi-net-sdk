@@ -28,7 +28,7 @@ using Aliyun.Acs.Core.Regions.Location;
 using Aliyun.Acs.Core.Regions.Location.Model;
 using Aliyun.Acs.Core.Transform;
 
-[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
+[assembly : InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace Aliyun.Acs.Core.Regions
 {
     internal class DescribeEndpointServiceImpl : DescribeEndpointService
@@ -62,6 +62,8 @@ namespace Aliyun.Acs.Core.Regions
             var domain = new ProductDomain(locationConfig.Product, locationConfig.Endpoint);
 
             var httpRequest = request.SignRequest(signer, credential, FormatType.JSON, domain);
+            httpRequest.SetConnectTimeoutInMilliSeconds(100000);
+            httpRequest.SetReadTimeoutInMilliSeconds(100000);
             var httpResponse = GetResponse(httpRequest);
 
             if (httpResponse.isSuccess())
@@ -95,7 +97,7 @@ namespace Aliyun.Acs.Core.Regions
             for (var i = 0; i < endpointsLength; i++)
             {
                 if (string.Equals(endpointType, context.StringValue("DescribeEndpoints.Endpoints[" + i + "].Type"),
-                    StringComparison.InvariantCultureIgnoreCase))
+                        StringComparison.InvariantCultureIgnoreCase))
                 {
                     var response = new DescribeEndpointResponse();
                     response.RequestId = context.StringValue("DescribeEndpoints.RequestId");
