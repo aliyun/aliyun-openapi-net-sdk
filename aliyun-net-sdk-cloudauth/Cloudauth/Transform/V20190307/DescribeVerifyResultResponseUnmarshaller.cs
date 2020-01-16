@@ -34,6 +34,8 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			describeVerifyResultResponse.RequestId = context.StringValue("DescribeVerifyResult.RequestId");
 			describeVerifyResultResponse.VerifyStatus = context.IntegerValue("DescribeVerifyResult.VerifyStatus");
 			describeVerifyResultResponse.AuthorityComparisionScore = context.FloatValue("DescribeVerifyResult.AuthorityComparisionScore");
+			describeVerifyResultResponse.FaceComparisonScore = context.FloatValue("DescribeVerifyResult.FaceComparisonScore");
+			describeVerifyResultResponse.IdCardFaceComparisonScore = context.FloatValue("DescribeVerifyResult.IdCardFaceComparisonScore");
 
 			DescribeVerifyResultResponse.DescribeVerifyResult_Material material = new DescribeVerifyResultResponse.DescribeVerifyResult_Material();
 			material.FaceImageUrl = context.StringValue("DescribeVerifyResult.Material.FaceImageUrl");
