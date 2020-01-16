@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class RenewInstanceRequest : RpcAcsRequest<RenewInstanceResponse>
     {
         public RenewInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "RenewInstance")
+            : base("R-kvstore", "2015-01-01", "RenewInstance", "R-kvstore", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -65,8 +64,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? ownerId;
 
 		private string instanceId;
-
-		private bool? forceUpgrade;
 
 		public long? ResourceOwnerId
 		{
@@ -234,19 +231,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public bool? ForceUpgrade
-		{
-			get
-			{
-				return forceUpgrade;
-			}
-			set	
-			{
-				forceUpgrade = value;
-				DictionaryUtil.Add(QueryParameters, "ForceUpgrade", value.ToString());
 			}
 		}
 

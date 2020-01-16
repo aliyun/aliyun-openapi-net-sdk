@@ -362,6 +362,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 											private string instanceClass;
 
+											private string instanceClassRemark;
+
 											public string InstanceClass
 											{
 												get
@@ -371,6 +373,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 												set	
 												{
 													instanceClass = value;
+												}
+											}
+
+											public string InstanceClassRemark
+											{
+												get
+												{
+													return instanceClassRemark;
+												}
+												set	
+												{
+													instanceClassRemark = value;
 												}
 											}
 										}

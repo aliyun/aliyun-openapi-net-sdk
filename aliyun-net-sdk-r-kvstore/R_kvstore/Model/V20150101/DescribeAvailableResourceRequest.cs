@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeAvailableResourceRequest : RpcAcsRequest<DescribeAvailableResourceResponse>
     {
         public DescribeAvailableResourceRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeAvailableResource")
+            : base("R-kvstore", "2015-01-01", "DescribeAvailableResource", "R-kvstore", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,6 +42,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? resourceOwnerId;
 
 		private string securityToken;
+
+		private string engine;
 
 		private string instanceChargeType;
 
@@ -77,6 +78,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string Engine
+		{
+			get
+			{
+				return engine;
+			}
+			set	
+			{
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 

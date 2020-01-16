@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeInstanceAttributeRequest : RpcAcsRequest<DescribeInstanceAttributeResponse>
     {
         public DescribeInstanceAttributeRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeInstanceAttribute")
+            : base("R-kvstore", "2015-01-01", "DescribeInstanceAttribute", "R-kvstore", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
