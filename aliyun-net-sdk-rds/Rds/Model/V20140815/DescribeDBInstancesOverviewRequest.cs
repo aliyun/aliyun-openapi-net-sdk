@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ModifyDBInstanceSpecRequest : RpcAcsRequest<ModifyDBInstanceSpecResponse>
+    public class DescribeDBInstancesOverviewRequest : RpcAcsRequest<DescribeDBInstancesOverviewResponse>
     {
-        public ModifyDBInstanceSpecRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceSpec", "rds", "openAPI")
+        public DescribeDBInstancesOverviewRequest()
+            : base("Rds", "2014-08-15", "DescribeDBInstancesOverview", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,29 +41,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private int? dBInstanceStorage;
+		private string clientToken;
 
-		private string engineVersion;
+		private string expired;
 
-		private string effectiveTime;
+		private string engine;
 
 		private string dBInstanceId;
 
-		private string dBInstanceStorageType;
-
-		private string sourceBiz;
-
-		private string direction;
+		private string proxyId;
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
-
 		private long? ownerId;
 
-		private string dBInstanceClass;
-
-		private string payType;
+		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -78,42 +70,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? DBInstanceStorage
+		public string ClientToken
 		{
 			get
 			{
-				return dBInstanceStorage;
+				return clientToken;
 			}
 			set	
 			{
-				dBInstanceStorage = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public string EngineVersion
+		public string Expired
 		{
 			get
 			{
-				return engineVersion;
+				return expired;
 			}
 			set	
 			{
-				engineVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
+				expired = value;
+				DictionaryUtil.Add(QueryParameters, "Expired", value);
 			}
 		}
 
-		public string EffectiveTime
+		public string Engine
 		{
 			get
 			{
-				return effectiveTime;
+				return engine;
 			}
 			set	
 			{
-				effectiveTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 
@@ -130,42 +122,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceStorageType
+		public string ProxyId
 		{
 			get
 			{
-				return dBInstanceStorageType;
+				return proxyId;
 			}
 			set	
 			{
-				dBInstanceStorageType = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
-			}
-		}
-
-		public string SourceBiz
-		{
-			get
-			{
-				return sourceBiz;
-			}
-			set	
-			{
-				sourceBiz = value;
-				DictionaryUtil.Add(QueryParameters, "SourceBiz", value);
-			}
-		}
-
-		public string Direction
-		{
-			get
-			{
-				return direction;
-			}
-			set	
-			{
-				direction = value;
-				DictionaryUtil.Add(QueryParameters, "Direction", value);
+				proxyId = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyId", value);
 			}
 		}
 
@@ -182,19 +148,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -208,35 +161,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceClass
+		public string ZoneId
 		{
 			get
 			{
-				return dBInstanceClass;
+				return zoneId;
 			}
 			set	
 			{
-				dBInstanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
-		public string PayType
-		{
-			get
-			{
-				return payType;
-			}
-			set	
-			{
-				payType = value;
-				DictionaryUtil.Add(QueryParameters, "PayType", value);
-			}
-		}
-
-        public override ModifyDBInstanceSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDBInstancesOverviewResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBInstanceSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDBInstancesOverviewResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

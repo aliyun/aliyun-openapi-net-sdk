@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ModifyDBInstanceSpecRequest : RpcAcsRequest<ModifyDBInstanceSpecResponse>
+    public class ModifySQLCollectorRetentionRequest : RpcAcsRequest<ModifySQLCollectorRetentionResponse>
     {
-        public ModifyDBInstanceSpecRequest()
-            : base("Rds", "2014-08-15", "ModifyDBInstanceSpec", "rds", "openAPI")
+        public ModifySQLCollectorRetentionRequest()
+            : base("Rds", "2014-08-15", "ModifySQLCollectorRetention", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,29 +41,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private int? dBInstanceStorage;
-
-		private string engineVersion;
-
-		private string effectiveTime;
+		private string securityToken;
 
 		private string dBInstanceId;
-
-		private string dBInstanceStorageType;
-
-		private string sourceBiz;
-
-		private string direction;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
+		private string configValue;
+
 		private long? ownerId;
-
-		private string dBInstanceClass;
-
-		private string payType;
 
 		public long? ResourceOwnerId
 		{
@@ -78,42 +66,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? DBInstanceStorage
+		public string SecurityToken
 		{
 			get
 			{
-				return dBInstanceStorage;
+				return securityToken;
 			}
 			set	
 			{
-				dBInstanceStorage = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorage", value.ToString());
-			}
-		}
-
-		public string EngineVersion
-		{
-			get
-			{
-				return engineVersion;
-			}
-			set	
-			{
-				engineVersion = value;
-				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
-			}
-		}
-
-		public string EffectiveTime
-		{
-			get
-			{
-				return effectiveTime;
-			}
-			set	
-			{
-				effectiveTime = value;
-				DictionaryUtil.Add(QueryParameters, "EffectiveTime", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -127,45 +89,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string DBInstanceStorageType
-		{
-			get
-			{
-				return dBInstanceStorageType;
-			}
-			set	
-			{
-				dBInstanceStorageType = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceStorageType", value);
-			}
-		}
-
-		public string SourceBiz
-		{
-			get
-			{
-				return sourceBiz;
-			}
-			set	
-			{
-				sourceBiz = value;
-				DictionaryUtil.Add(QueryParameters, "SourceBiz", value);
-			}
-		}
-
-		public string Direction
-		{
-			get
-			{
-				return direction;
-			}
-			set	
-			{
-				direction = value;
-				DictionaryUtil.Add(QueryParameters, "Direction", value);
 			}
 		}
 
@@ -195,6 +118,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string ConfigValue
+		{
+			get
+			{
+				return configValue;
+			}
+			set	
+			{
+				configValue = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigValue", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -208,35 +144,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceClass
-		{
-			get
-			{
-				return dBInstanceClass;
-			}
-			set	
-			{
-				dBInstanceClass = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
-			}
-		}
-
-		public string PayType
-		{
-			get
-			{
-				return payType;
-			}
-			set	
-			{
-				payType = value;
-				DictionaryUtil.Add(QueryParameters, "PayType", value);
-			}
-		}
-
-        public override ModifyDBInstanceSpecResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifySQLCollectorRetentionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDBInstanceSpecResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifySQLCollectorRetentionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

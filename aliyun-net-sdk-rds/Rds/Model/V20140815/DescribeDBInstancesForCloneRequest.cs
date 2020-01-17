@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engine;
 
+		private string currentInstanceId;
+
 		private int? pageSize;
 
 		private string dBInstanceStatus;
@@ -199,6 +201,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string CurrentInstanceId
+		{
+			get
+			{
+				return currentInstanceId;
+			}
+			set	
+			{
+				currentInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentInstanceId", value);
 			}
 		}
 
