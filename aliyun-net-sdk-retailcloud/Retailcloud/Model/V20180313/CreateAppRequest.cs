@@ -45,6 +45,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 		private string operatingSystem;
 
+		private string _namespace;
+
 		private string description;
 
 		private string language;
@@ -113,6 +115,19 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				operatingSystem = value;
 				DictionaryUtil.Add(BodyParameters, "OperatingSystem", value);
+			}
+		}
+
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+				DictionaryUtil.Add(BodyParameters, "Namespace", value);
 			}
 		}
 

@@ -54,6 +54,12 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 				containerYamlConf.Deployment = context.StringValue("ListDeployConfig.Data["+ i +"].ContainerYamlConf.Deployment");
 				containerYamlConf.ConfigMap = context.StringValue("ListDeployConfig.Data["+ i +"].ContainerYamlConf.ConfigMap");
 				containerYamlConf.StatefulSet = context.StringValue("ListDeployConfig.Data["+ i +"].ContainerYamlConf.StatefulSet");
+
+				List<string> containerYamlConf_configMapList = new List<string>();
+				for (int j = 0; j < context.Length("ListDeployConfig.Data["+ i +"].ContainerYamlConf.ConfigMapList.Length"); j++) {
+					containerYamlConf_configMapList.Add(context.StringValue("ListDeployConfig.Data["+ i +"].ContainerYamlConf.ConfigMapList["+ j +"]"));
+				}
+				containerYamlConf.ConfigMapList = containerYamlConf_configMapList;
 				deployConfigInstance.ContainerYamlConf = containerYamlConf;
 
 				listDeployConfigResponse_data.Add(deployConfigInstance);

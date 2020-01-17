@@ -37,6 +37,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 		private string codePath;
 
+		private List<string> configMapLists = new List<string>(){ };
+
 		private string configMap;
 
 		private string statefulSet;
@@ -57,6 +59,23 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				codePath = value;
 				DictionaryUtil.Add(QueryParameters, "CodePath", value);
+			}
+		}
+
+		public List<string> ConfigMapLists
+		{
+			get
+			{
+				return configMapLists;
+			}
+
+			set
+			{
+				configMapLists = value;
+				for (int i = 0; i < configMapLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ConfigMapList." + (i + 1) , configMapLists[i]);
+				}
 			}
 		}
 

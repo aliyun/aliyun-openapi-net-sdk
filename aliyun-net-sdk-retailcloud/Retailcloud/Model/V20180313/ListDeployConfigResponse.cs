@@ -237,6 +237,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 				private string statefulSet;
 
+				private List<string> configMapList;
+
 				public string Deployment
 				{
 					get
@@ -270,6 +272,18 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 					set	
 					{
 						statefulSet = value;
+					}
+				}
+
+				public List<string> ConfigMapList
+				{
+					get
+					{
+						return configMapList;
+					}
+					set	
+					{
+						configMapList = value;
 					}
 				}
 			}
