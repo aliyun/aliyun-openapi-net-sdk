@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class InvokeDataAPIServiceResponse : AcsResponse
+	public class GetThingModelTslResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private InvokeDataAPIService_Data data;
+		private GetThingModelTsl_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public InvokeDataAPIService_Data Data
+		public GetThingModelTsl_Data Data
 		{
 			get
 			{
@@ -95,76 +95,34 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class InvokeDataAPIService_Data
+		public class GetThingModelTsl_Data
 		{
 
-			private int? pageNo;
+			private string tslStr;
 
-			private int? pageSize;
+			private string tslUri;
 
-			private string apiSrn;
-
-			private List<string> fieldNameList;
-
-			private List<Dictionary<string, string>> resultList;
-
-			public int? PageNo
+			public string TslStr
 			{
 				get
 				{
-					return pageNo;
+					return tslStr;
 				}
 				set	
 				{
-					pageNo = value;
+					tslStr = value;
 				}
 			}
 
-			public int? PageSize
+			public string TslUri
 			{
 				get
 				{
-					return pageSize;
+					return tslUri;
 				}
 				set	
 				{
-					pageSize = value;
-				}
-			}
-
-			public string ApiSrn
-			{
-				get
-				{
-					return apiSrn;
-				}
-				set	
-				{
-					apiSrn = value;
-				}
-			}
-
-			public List<string> FieldNameList
-			{
-				get
-				{
-					return fieldNameList;
-				}
-				set	
-				{
-					fieldNameList = value;
-				}
-			}
-
-			public List<Dictionary<string, string>> ResultList
-			{
-				get
-				{
-					return resultList;
-				}
-				set	
-				{
-					resultList = value;
+					tslUri = value;
 				}
 			}
 		}

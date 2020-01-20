@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class InvokeDataAPIServiceResponse : AcsResponse
+	public class ListThingModelVersionResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private InvokeDataAPIService_Data data;
+		private ListThingModelVersion_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public InvokeDataAPIService_Data Data
+		public ListThingModelVersion_Data Data
 		{
 			get
 			{
@@ -95,76 +95,66 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class InvokeDataAPIService_Data
+		public class ListThingModelVersion_Data
 		{
 
-			private int? pageNo;
+			private List<ListThingModelVersion_ModelVersion> modelVersions;
 
-			private int? pageSize;
-
-			private string apiSrn;
-
-			private List<string> fieldNameList;
-
-			private List<Dictionary<string, string>> resultList;
-
-			public int? PageNo
+			public List<ListThingModelVersion_ModelVersion> ModelVersions
 			{
 				get
 				{
-					return pageNo;
+					return modelVersions;
 				}
 				set	
 				{
-					pageNo = value;
+					modelVersions = value;
 				}
 			}
 
-			public int? PageSize
+			public class ListThingModelVersion_ModelVersion
 			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
 
-			public string ApiSrn
-			{
-				get
-				{
-					return apiSrn;
-				}
-				set	
-				{
-					apiSrn = value;
-				}
-			}
+				private string modelVersion;
 
-			public List<string> FieldNameList
-			{
-				get
-				{
-					return fieldNameList;
-				}
-				set	
-				{
-					fieldNameList = value;
-				}
-			}
+				private string description;
 
-			public List<Dictionary<string, string>> ResultList
-			{
-				get
+				private long? gmtCreate;
+
+				public string ModelVersion
 				{
-					return resultList;
+					get
+					{
+						return modelVersion;
+					}
+					set	
+					{
+						modelVersion = value;
+					}
 				}
-				set	
+
+				public string Description
 				{
-					resultList = value;
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public long? GmtCreate
+				{
+					get
+					{
+						return gmtCreate;
+					}
+					set	
+					{
+						gmtCreate = value;
+					}
 				}
 			}
 		}

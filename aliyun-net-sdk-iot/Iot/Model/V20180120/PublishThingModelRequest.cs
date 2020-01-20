@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CancelOTATaskByJobRequest : RpcAcsRequest<CancelOTATaskByJobResponse>
+    public class PublishThingModelRequest : RpcAcsRequest<PublishThingModelResponse>
     {
-        public CancelOTATaskByJobRequest()
-            : base("Iot", "2018-01-20", "CancelOTATaskByJob", "iot", "openAPI")
+        public PublishThingModelRequest()
+            : base("Iot", "2018-01-20", "PublishThingModel", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,41 +39,52 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private bool? cancelScheduledTask;
+		private string description;
 
-		private string jobId;
+		private string productKey;
+
+		private string resourceGroupId;
 
 		private string iotInstanceId;
 
-		private bool? cancelQueuedTask;
+		private string modelVersion;
 
-		private bool? cancelInProgressTask;
-
-		private bool? cancelNotifiedTask;
-
-		public bool? CancelScheduledTask
+		public string Description
 		{
 			get
 			{
-				return cancelScheduledTask;
+				return description;
 			}
 			set	
 			{
-				cancelScheduledTask = value;
-				DictionaryUtil.Add(QueryParameters, "CancelScheduledTask", value.ToString());
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public string JobId
+		public string ProductKey
 		{
 			get
 			{
-				return jobId;
+				return productKey;
 			}
 			set	
 			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -90,48 +101,27 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public bool? CancelQueuedTask
+		public string ModelVersion
 		{
 			get
 			{
-				return cancelQueuedTask;
+				return modelVersion;
 			}
 			set	
 			{
-				cancelQueuedTask = value;
-				DictionaryUtil.Add(QueryParameters, "CancelQueuedTask", value.ToString());
+				modelVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ModelVersion", value);
 			}
 		}
 
-		public bool? CancelInProgressTask
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return cancelInProgressTask;
-			}
-			set	
-			{
-				cancelInProgressTask = value;
-				DictionaryUtil.Add(QueryParameters, "CancelInProgressTask", value.ToString());
-			}
+			return false;
 		}
 
-		public bool? CancelNotifiedTask
-		{
-			get
-			{
-				return cancelNotifiedTask;
-			}
-			set	
-			{
-				cancelNotifiedTask = value;
-				DictionaryUtil.Add(QueryParameters, "CancelNotifiedTask", value.ToString());
-			}
-		}
-
-        public override CancelOTATaskByJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override PublishThingModelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CancelOTATaskByJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return PublishThingModelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

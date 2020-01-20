@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string description;
 
+		private string categoryKey;
+
 		private string joinPermissionId;
 
 		private string authType;
@@ -54,6 +56,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string productName;
 
 		private string aliyunCommodityCode;
+
+		private bool? publishAuto;
 
 		private long? categoryId;
 
@@ -88,6 +92,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string CategoryKey
+		{
+			get
+			{
+				return categoryKey;
+			}
+			set	
+			{
+				categoryKey = value;
+				DictionaryUtil.Add(QueryParameters, "CategoryKey", value);
 			}
 		}
 
@@ -169,6 +186,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public bool? PublishAuto
+		{
+			get
+			{
+				return publishAuto;
+			}
+			set	
+			{
+				publishAuto = value;
+				DictionaryUtil.Add(QueryParameters, "PublishAuto", value.ToString());
+			}
+		}
+
 		public long? CategoryId
 		{
 			get
@@ -232,6 +262,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				protocolType = value;
 				DictionaryUtil.Add(QueryParameters, "ProtocolType", value);
 			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
 		}
 
         public override CreateProductResponse GetResponse(UnmarshallerContext unmarshallerContext)

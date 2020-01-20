@@ -33,8 +33,8 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			invokeDataAPIServiceResponse.HttpResponse = context.HttpResponse;
 			invokeDataAPIServiceResponse.RequestId = context.StringValue("InvokeDataAPIService.RequestId");
 			invokeDataAPIServiceResponse.Success = context.BooleanValue("InvokeDataAPIService.Success");
-			invokeDataAPIServiceResponse.ErrorMessage = context.StringValue("InvokeDataAPIService.ErrorMessage");
 			invokeDataAPIServiceResponse.Code = context.StringValue("InvokeDataAPIService.Code");
+			invokeDataAPIServiceResponse.ErrorMessage = context.StringValue("InvokeDataAPIService.ErrorMessage");
 
 			InvokeDataAPIServiceResponse.InvokeDataAPIService_Data data = new InvokeDataAPIServiceResponse.InvokeDataAPIService_Data();
 			data.PageNo = context.IntegerValue("InvokeDataAPIService.Data.PageNo");

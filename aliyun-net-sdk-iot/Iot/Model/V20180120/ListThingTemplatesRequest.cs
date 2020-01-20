@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CancelOTATaskByJobRequest : RpcAcsRequest<CancelOTATaskByJobResponse>
+    public class ListThingTemplatesRequest : RpcAcsRequest<ListThingTemplatesResponse>
     {
-        public CancelOTATaskByJobRequest()
-            : base("Iot", "2018-01-20", "CancelOTATaskByJob", "iot", "openAPI")
+        public ListThingTemplatesRequest()
+            : base("Iot", "2018-01-20", "ListThingTemplates", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,41 +39,20 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private bool? cancelScheduledTask;
-
-		private string jobId;
+		private string resourceGroupId;
 
 		private string iotInstanceId;
 
-		private bool? cancelQueuedTask;
-
-		private bool? cancelInProgressTask;
-
-		private bool? cancelNotifiedTask;
-
-		public bool? CancelScheduledTask
+		public string ResourceGroupId
 		{
 			get
 			{
-				return cancelScheduledTask;
+				return resourceGroupId;
 			}
 			set	
 			{
-				cancelScheduledTask = value;
-				DictionaryUtil.Add(QueryParameters, "CancelScheduledTask", value.ToString());
-			}
-		}
-
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -90,48 +69,14 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public bool? CancelQueuedTask
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return cancelQueuedTask;
-			}
-			set	
-			{
-				cancelQueuedTask = value;
-				DictionaryUtil.Add(QueryParameters, "CancelQueuedTask", value.ToString());
-			}
+			return false;
 		}
 
-		public bool? CancelInProgressTask
-		{
-			get
-			{
-				return cancelInProgressTask;
-			}
-			set	
-			{
-				cancelInProgressTask = value;
-				DictionaryUtil.Add(QueryParameters, "CancelInProgressTask", value.ToString());
-			}
-		}
-
-		public bool? CancelNotifiedTask
-		{
-			get
-			{
-				return cancelNotifiedTask;
-			}
-			set	
-			{
-				cancelNotifiedTask = value;
-				DictionaryUtil.Add(QueryParameters, "CancelNotifiedTask", value.ToString());
-			}
-		}
-
-        public override CancelOTATaskByJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListThingTemplatesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CancelOTATaskByJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListThingTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class InvokeDataAPIServiceResponse : AcsResponse
+	public class ListThingTemplatesResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private InvokeDataAPIService_Data data;
+		private List<ListThingTemplates_CategoryInfo> data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public InvokeDataAPIService_Data Data
+		public List<ListThingTemplates_CategoryInfo> Data
 		{
 			get
 			{
@@ -95,76 +95,34 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class InvokeDataAPIService_Data
+		public class ListThingTemplates_CategoryInfo
 		{
 
-			private int? pageNo;
+			private string categoryKey;
 
-			private int? pageSize;
+			private string categoryName;
 
-			private string apiSrn;
-
-			private List<string> fieldNameList;
-
-			private List<Dictionary<string, string>> resultList;
-
-			public int? PageNo
+			public string CategoryKey
 			{
 				get
 				{
-					return pageNo;
+					return categoryKey;
 				}
 				set	
 				{
-					pageNo = value;
+					categoryKey = value;
 				}
 			}
 
-			public int? PageSize
+			public string CategoryName
 			{
 				get
 				{
-					return pageSize;
+					return categoryName;
 				}
 				set	
 				{
-					pageSize = value;
-				}
-			}
-
-			public string ApiSrn
-			{
-				get
-				{
-					return apiSrn;
-				}
-				set	
-				{
-					apiSrn = value;
-				}
-			}
-
-			public List<string> FieldNameList
-			{
-				get
-				{
-					return fieldNameList;
-				}
-				set	
-				{
-					fieldNameList = value;
-				}
-			}
-
-			public List<Dictionary<string, string>> ResultList
-			{
-				get
-				{
-					return resultList;
-				}
-				set	
-				{
-					resultList = value;
+					categoryName = value;
 				}
 			}
 		}

@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class GetProductMetaListByNameRequest : RpcAcsRequest<GetProductMetaListByNameResponse>
+    public class ListThingModelVersionRequest : RpcAcsRequest<ListThingModelVersionResponse>
     {
-        public GetProductMetaListByNameRequest()
-            : base("Iot", "2018-01-20", "GetProductMetaListByName", "iot", "openAPI")
+        public ListThingModelVersionRequest()
+            : base("Iot", "2018-01-20", "ListThingModelVersion", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,10 +45,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string iotInstanceId;
 
-		private string deviceName;
-
-		private string page;
-
 		public string ProductKey
 		{
 			get
@@ -58,7 +54,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				productKey = value;
-				DictionaryUtil.Add(BodyParameters, "ProductKey", value);
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
@@ -88,35 +84,14 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string DeviceName
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
-			}
+			return false;
 		}
 
-		public string Page
-		{
-			get
-			{
-				return page;
-			}
-			set	
-			{
-				page = value;
-				DictionaryUtil.Add(BodyParameters, "Page", value);
-			}
-		}
-
-        public override GetProductMetaListByNameResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListThingModelVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetProductMetaListByNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListThingModelVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

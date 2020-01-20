@@ -22,18 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class GetProductMetaListByNameResponse : AcsResponse
+	public class DeleteThingModelResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
 
-		private string errorMessage;
-
 		private string code;
 
-		private string data;
+		private string errorMessage;
 
 		public string RequestId
 		{
@@ -59,18 +57,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
 		public string Code
 		{
 			get
@@ -83,15 +69,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string Data
+		public string ErrorMessage
 		{
 			get
 			{
-				return data;
+				return errorMessage;
 			}
 			set	
 			{
-				data = value;
+				errorMessage = value;
 			}
 		}
 	}

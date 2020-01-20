@@ -24,20 +24,19 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class GetProductMetaListByNameResponseUnmarshaller
+    public class CopyThingModelResponseUnmarshaller
     {
-        public static GetProductMetaListByNameResponse Unmarshall(UnmarshallerContext context)
+        public static CopyThingModelResponse Unmarshall(UnmarshallerContext context)
         {
-			GetProductMetaListByNameResponse getProductMetaListByNameResponse = new GetProductMetaListByNameResponse();
+			CopyThingModelResponse copyThingModelResponse = new CopyThingModelResponse();
 
-			getProductMetaListByNameResponse.HttpResponse = context.HttpResponse;
-			getProductMetaListByNameResponse.RequestId = context.StringValue("GetProductMetaListByName.RequestId");
-			getProductMetaListByNameResponse.Success = context.BooleanValue("GetProductMetaListByName.Success");
-			getProductMetaListByNameResponse.ErrorMessage = context.StringValue("GetProductMetaListByName.ErrorMessage");
-			getProductMetaListByNameResponse.Code = context.StringValue("GetProductMetaListByName.Code");
-			getProductMetaListByNameResponse.Data = context.StringValue("GetProductMetaListByName.Data");
+			copyThingModelResponse.HttpResponse = context.HttpResponse;
+			copyThingModelResponse.RequestId = context.StringValue("CopyThingModel.RequestId");
+			copyThingModelResponse.Success = context.BooleanValue("CopyThingModel.Success");
+			copyThingModelResponse.Code = context.StringValue("CopyThingModel.Code");
+			copyThingModelResponse.ErrorMessage = context.StringValue("CopyThingModel.ErrorMessage");
         
-			return getProductMetaListByNameResponse;
+			return copyThingModelResponse;
         }
     }
 }

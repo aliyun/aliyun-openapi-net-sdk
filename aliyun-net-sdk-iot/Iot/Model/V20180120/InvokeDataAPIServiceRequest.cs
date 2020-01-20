@@ -39,22 +39,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string apiSrn;
-
 		private List<Param> params_ = new List<Param>(){ };
 
-		public string ApiSrn
-		{
-			get
-			{
-				return apiSrn;
-			}
-			set	
-			{
-				apiSrn = value;
-				DictionaryUtil.Add(QueryParameters, "ApiSrn", value);
-			}
-		}
+		private string iotInstanceId;
+
+		private string apiSrn;
 
 		public List<Param> Params
 		{
@@ -68,37 +57,66 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				params_ = value;
 				for (int i = 0; i < params_.Count; i++)
 				{
-					DictionaryUtil.Add(BodyParameters,"Param." + (i + 1) + ".ListParamType", params_[i].ListParamType);
+					DictionaryUtil.Add(BodyParameters,"Param." + (i + 1) + ".ParamType", params_[i].ParamType);
 					for (int j = 0; j < params_[i].ListParamValues.Count; j++)
 					{
 						DictionaryUtil.Add(BodyParameters,"Param." + (i + 1) + ".ListParamValue." +(j + 1), params_[i].ListParamValues[j]);
 					}
-					DictionaryUtil.Add(BodyParameters,"Param." + (i + 1) + ".ParamValue", params_[i].ParamValue);
+					DictionaryUtil.Add(BodyParameters,"Param." + (i + 1) + ".ListParamType", params_[i].ListParamType);
 					DictionaryUtil.Add(BodyParameters,"Param." + (i + 1) + ".ParamName", params_[i].ParamName);
+					DictionaryUtil.Add(BodyParameters,"Param." + (i + 1) + ".ParamValue", params_[i].ParamValue);
 				}
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string ApiSrn
+		{
+			get
+			{
+				return apiSrn;
+			}
+			set	
+			{
+				apiSrn = value;
+				DictionaryUtil.Add(BodyParameters, "ApiSrn", value);
 			}
 		}
 
 		public class Param
 		{
 
-			private string listParamType;
+			private string paramType;
 
 			private List<string> listParamValues = new List<string>(){ };
 
-			private string paramValue;
+			private string listParamType;
 
 			private string paramName;
 
-			public string ListParamType
+			private string paramValue;
+
+			public string ParamType
 			{
 				get
 				{
-					return listParamType;
+					return paramType;
 				}
 				set	
 				{
-					listParamType = value;
+					paramType = value;
 				}
 			}
 
@@ -114,15 +132,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public string ParamValue
+			public string ListParamType
 			{
 				get
 				{
-					return paramValue;
+					return listParamType;
 				}
 				set	
 				{
-					paramValue = value;
+					listParamType = value;
 				}
 			}
 
@@ -135,6 +153,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					paramName = value;
+				}
+			}
+
+			public string ParamValue
+			{
+				get
+				{
+					return paramValue;
+				}
+				set	
+				{
+					paramValue = value;
 				}
 			}
 		}
