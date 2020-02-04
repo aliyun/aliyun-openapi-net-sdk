@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				domain.InstanceEndTime = context.StringValue("DescribeDomains.Domains["+ i +"].InstanceEndTime");
 				domain.InstanceExpired = context.BooleanValue("DescribeDomains.Domains["+ i +"].InstanceExpired");
 				domain.Starmark = context.BooleanValue("DescribeDomains.Domains["+ i +"].Starmark");
+				domain.CreateTime = context.StringValue("DescribeDomains.Domains["+ i +"].CreateTime");
+				domain.CreateTimestamp = context.LongValue("DescribeDomains.Domains["+ i +"].CreateTimestamp");
 
 				List<string> domain_dnsServers = new List<string>();
 				for (int j = 0; j < context.Length("DescribeDomains.Domains["+ i +"].DnsServers.Length"); j++) {

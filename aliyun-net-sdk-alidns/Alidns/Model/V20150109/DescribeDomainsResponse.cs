@@ -128,6 +128,10 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private bool? starmark;
 
+			private string createTime;
+
+			private long? createTimestamp;
+
 			private List<string> dnsServers;
 
 			public string DomainId
@@ -307,6 +311,30 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					starmark = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public long? CreateTimestamp
+			{
+				get
+				{
+					return createTimestamp;
+				}
+				set	
+				{
+					createTimestamp = value;
 				}
 			}
 
