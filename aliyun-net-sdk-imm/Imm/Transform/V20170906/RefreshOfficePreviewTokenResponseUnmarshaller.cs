@@ -24,21 +24,20 @@ using Aliyun.Acs.imm.Model.V20170906;
 
 namespace Aliyun.Acs.imm.Transform.V20170906
 {
-    public class GetOfficePreviewURLResponseUnmarshaller
+    public class RefreshOfficePreviewTokenResponseUnmarshaller
     {
-        public static GetOfficePreviewURLResponse Unmarshall(UnmarshallerContext context)
+        public static RefreshOfficePreviewTokenResponse Unmarshall(UnmarshallerContext context)
         {
-			GetOfficePreviewURLResponse getOfficePreviewURLResponse = new GetOfficePreviewURLResponse();
+			RefreshOfficePreviewTokenResponse refreshOfficePreviewTokenResponse = new RefreshOfficePreviewTokenResponse();
 
-			getOfficePreviewURLResponse.HttpResponse = context.HttpResponse;
-			getOfficePreviewURLResponse.RequestId = context.StringValue("GetOfficePreviewURL.RequestId");
-			getOfficePreviewURLResponse.PreviewURL = context.StringValue("GetOfficePreviewURL.PreviewURL");
-			getOfficePreviewURLResponse.AccessToken = context.StringValue("GetOfficePreviewURL.AccessToken");
-			getOfficePreviewURLResponse.RefreshToken = context.StringValue("GetOfficePreviewURL.RefreshToken");
-			getOfficePreviewURLResponse.AccessTokenExpiredTime = context.StringValue("GetOfficePreviewURL.AccessTokenExpiredTime");
-			getOfficePreviewURLResponse.RefreshTokenExpiredTime = context.StringValue("GetOfficePreviewURL.RefreshTokenExpiredTime");
+			refreshOfficePreviewTokenResponse.HttpResponse = context.HttpResponse;
+			refreshOfficePreviewTokenResponse.AccessToken = context.StringValue("RefreshOfficePreviewToken.AccessToken");
+			refreshOfficePreviewTokenResponse.AccessTokenExpiredTime = context.StringValue("RefreshOfficePreviewToken.AccessTokenExpiredTime");
+			refreshOfficePreviewTokenResponse.RefreshToken = context.StringValue("RefreshOfficePreviewToken.RefreshToken");
+			refreshOfficePreviewTokenResponse.RefreshTokenExpiredTime = context.StringValue("RefreshOfficePreviewToken.RefreshTokenExpiredTime");
+			refreshOfficePreviewTokenResponse.RequestId = context.StringValue("RefreshOfficePreviewToken.RequestId");
         
-			return getOfficePreviewURLResponse;
+			return refreshOfficePreviewTokenResponse;
         }
     }
 }

@@ -22,44 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class GetOfficePreviewURLResponse : AcsResponse
+	public class RefreshOfficePreviewTokenResponse : AcsResponse
 	{
-
-		private string requestId;
-
-		private string previewURL;
 
 		private string accessToken;
 
-		private string refreshToken;
-
 		private string accessTokenExpiredTime;
+
+		private string refreshToken;
 
 		private string refreshTokenExpiredTime;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string PreviewURL
-		{
-			get
-			{
-				return previewURL;
-			}
-			set	
-			{
-				previewURL = value;
-			}
-		}
+		private string requestId;
 
 		public string AccessToken
 		{
@@ -70,18 +44,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				accessToken = value;
-			}
-		}
-
-		public string RefreshToken
-		{
-			get
-			{
-				return refreshToken;
-			}
-			set	
-			{
-				refreshToken = value;
 			}
 		}
 
@@ -97,6 +59,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string RefreshToken
+		{
+			get
+			{
+				return refreshToken;
+			}
+			set	
+			{
+				refreshToken = value;
+			}
+		}
+
 		public string RefreshTokenExpiredTime
 		{
 			get
@@ -106,6 +80,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				refreshTokenExpiredTime = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

@@ -36,8 +36,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string srcType;
 
-		private int? expires;
-
 		private string project;
 
 		private bool? useHTTPS;
@@ -54,19 +52,6 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				srcType = value;
 				DictionaryUtil.Add(QueryParameters, "SrcType", value);
-			}
-		}
-
-		public int? Expires
-		{
-			get
-			{
-				return expires;
-			}
-			set	
-			{
-				expires = value;
-				DictionaryUtil.Add(QueryParameters, "Expires", value.ToString());
 			}
 		}
 

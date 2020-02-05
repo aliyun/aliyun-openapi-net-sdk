@@ -19,45 +19,37 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.imm.Transform;
+using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-	public class GetOfficePreviewURLResponse : AcsResponse
-	{
+    public class RefreshOfficePreviewTokenRequest : RpcAcsRequest<RefreshOfficePreviewTokenResponse>
+    {
+        public RefreshOfficePreviewTokenRequest()
+            : base("imm", "2017-09-06", "RefreshOfficePreviewToken", "imm", "openAPI")
+        {
+        }
 
-		private string requestId;
-
-		private string previewURL;
+		private string project;
 
 		private string accessToken;
 
 		private string refreshToken;
 
-		private string accessTokenExpiredTime;
-
-		private string refreshTokenExpiredTime;
-
-		public string RequestId
+		public string Project
 		{
 			get
 			{
-				return requestId;
+				return project;
 			}
 			set	
 			{
-				requestId = value;
-			}
-		}
-
-		public string PreviewURL
-		{
-			get
-			{
-				return previewURL;
-			}
-			set	
-			{
-				previewURL = value;
+				project = value;
+				DictionaryUtil.Add(QueryParameters, "Project", value);
 			}
 		}
 
@@ -70,6 +62,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				accessToken = value;
+				DictionaryUtil.Add(QueryParameters, "AccessToken", value);
 			}
 		}
 
@@ -82,31 +75,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				refreshToken = value;
+				DictionaryUtil.Add(QueryParameters, "RefreshToken", value);
 			}
 		}
 
-		public string AccessTokenExpiredTime
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return accessTokenExpiredTime;
-			}
-			set	
-			{
-				accessTokenExpiredTime = value;
-			}
+			return false;
 		}
 
-		public string RefreshTokenExpiredTime
-		{
-			get
-			{
-				return refreshTokenExpiredTime;
-			}
-			set	
-			{
-				refreshTokenExpiredTime = value;
-			}
-		}
-	}
+        public override RefreshOfficePreviewTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        {
+            return RefreshOfficePreviewTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }
