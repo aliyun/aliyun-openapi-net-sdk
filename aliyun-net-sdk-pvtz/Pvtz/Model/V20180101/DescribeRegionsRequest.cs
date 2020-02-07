@@ -34,11 +34,26 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
         {
         }
 
+		private long? authorizedUserId;
+
 		private string userClientIp;
 
 		private string acceptLanguage;
 
 		private string lang;
+
+		public long? AuthorizedUserId
+		{
+			get
+			{
+				return authorizedUserId;
+			}
+			set	
+			{
+				authorizedUserId = value;
+				DictionaryUtil.Add(QueryParameters, "AuthorizedUserId", value.ToString());
+			}
+		}
 
 		public string UserClientIp
 		{

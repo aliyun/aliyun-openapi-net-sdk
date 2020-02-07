@@ -126,6 +126,10 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 
 			private string status;
 
+			private string regionId;
+
+			private string remark;
+
 			public long? RecordId
 			{
 				get
@@ -207,6 +211,30 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string Remark
+			{
+				get
+				{
+					return remark;
+				}
+				set	
+				{
+					remark = value;
 				}
 			}
 		}

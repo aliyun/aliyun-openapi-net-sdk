@@ -42,11 +42,11 @@ namespace Aliyun.Acs.pvtz.Transform.V20180101
 			describeZoneInfoResponse.UpdateTimestamp = context.LongValue("DescribeZoneInfo.UpdateTimestamp");
 			describeZoneInfoResponse.IsPtr = context.BooleanValue("DescribeZoneInfo.IsPtr");
 			describeZoneInfoResponse.ProxyPattern = context.StringValue("DescribeZoneInfo.ProxyPattern");
+			describeZoneInfoResponse.SlaveDns = context.BooleanValue("DescribeZoneInfo.SlaveDns");
 
 			List<DescribeZoneInfoResponse.DescribeZoneInfo_Vpc> describeZoneInfoResponse_bindVpcs = new List<DescribeZoneInfoResponse.DescribeZoneInfo_Vpc>();
 			for (int i = 0; i < context.Length("DescribeZoneInfo.BindVpcs.Length"); i++) {
 				DescribeZoneInfoResponse.DescribeZoneInfo_Vpc vpc = new DescribeZoneInfoResponse.DescribeZoneInfo_Vpc();
-				vpc.ReionId = context.StringValue("DescribeZoneInfo.BindVpcs["+ i +"].ReionId");
 				vpc.VpcId = context.StringValue("DescribeZoneInfo.BindVpcs["+ i +"].VpcId");
 				vpc.VpcName = context.StringValue("DescribeZoneInfo.BindVpcs["+ i +"].VpcName");
 				vpc.RegionName = context.StringValue("DescribeZoneInfo.BindVpcs["+ i +"].RegionName");

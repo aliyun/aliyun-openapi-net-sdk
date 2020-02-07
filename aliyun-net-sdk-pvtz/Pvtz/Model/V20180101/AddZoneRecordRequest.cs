@@ -36,17 +36,17 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 
 		private string rr;
 
-		private string userClientIp;
-
-		private string zoneId;
-
-		private string lang;
-
 		private string type;
 
 		private int? priority;
 
 		private int? ttl;
+
+		private string userClientIp;
+
+		private string zoneId;
+
+		private string lang;
 
 		private string _value;
 
@@ -60,45 +60,6 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			{
 				rr = value;
 				DictionaryUtil.Add(QueryParameters, "Rr", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -138,6 +99,45 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			{
 				ttl = value;
 				DictionaryUtil.Add(QueryParameters, "Ttl", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

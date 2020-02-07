@@ -47,6 +47,8 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 
 		private string proxyPattern;
 
+		private bool? slaveDns;
+
 		private List<DescribeZoneInfo_Vpc> bindVpcs;
 
 		public string RequestId
@@ -181,6 +183,18 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			}
 		}
 
+		public bool? SlaveDns
+		{
+			get
+			{
+				return slaveDns;
+			}
+			set	
+			{
+				slaveDns = value;
+			}
+		}
+
 		public List<DescribeZoneInfo_Vpc> BindVpcs
 		{
 			get
@@ -196,8 +210,6 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 		public class DescribeZoneInfo_Vpc
 		{
 
-			private string reionId;
-
 			private string vpcId;
 
 			private string vpcName;
@@ -205,18 +217,6 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			private string regionName;
 
 			private string regionId;
-
-			public string ReionId
-			{
-				get
-				{
-					return reionId;
-				}
-				set	
-				{
-					reionId = value;
-				}
-			}
 
 			public string VpcId
 			{

@@ -47,6 +47,8 @@ namespace Aliyun.Acs.pvtz.Transform.V20180101
 				record.Priority = context.IntegerValue("DescribeZoneRecords.Records["+ i +"].Priority");
 				record._Value = context.StringValue("DescribeZoneRecords.Records["+ i +"].Value");
 				record.Status = context.StringValue("DescribeZoneRecords.Records["+ i +"].Status");
+				record.RegionId = context.StringValue("DescribeZoneRecords.Records["+ i +"].RegionId");
+				record.Remark = context.StringValue("DescribeZoneRecords.Records["+ i +"].Remark");
 
 				describeZoneRecordsResponse_records.Add(record);
 			}

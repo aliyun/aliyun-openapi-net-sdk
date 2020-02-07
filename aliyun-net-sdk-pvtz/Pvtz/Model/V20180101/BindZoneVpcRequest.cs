@@ -40,7 +40,7 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 
 		private string lang;
 
-		private List<Vpcs> vpcss;
+		private List<Vpcs> vpcss = new List<Vpcs>(){ };
 
 		public string UserClientIp
 		{

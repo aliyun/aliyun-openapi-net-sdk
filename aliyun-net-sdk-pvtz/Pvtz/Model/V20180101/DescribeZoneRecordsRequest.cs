@@ -34,6 +34,8 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
         {
         }
 
+		private int? pageNumber;
+
 		private int? pageSize;
 
 		private string userClientIp;
@@ -48,7 +50,18 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 
 		private string keyword;
 
-		private int? pageNumber;
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public int? PageSize
 		{
@@ -138,19 +151,6 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			{
 				keyword = value;
 				DictionaryUtil.Add(QueryParameters, "Keyword", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

@@ -27,42 +27,42 @@ using Aliyun.Acs.pvtz.Transform.V20180101;
 
 namespace Aliyun.Acs.pvtz.Model.V20180101
 {
-    public class CheckZoneNameRequest : RpcAcsRequest<CheckZoneNameResponse>
+    public class UpdateRecordRemarkRequest : RpcAcsRequest<UpdateRecordRemarkResponse>
     {
-        public CheckZoneNameRequest()
-            : base("pvtz", "2018-01-01", "CheckZoneName", "pvtz", "openAPI")
+        public UpdateRecordRemarkRequest()
+            : base("pvtz", "2018-01-01", "UpdateRecordRemark", "pvtz", "openAPI")
         {
         }
 
-		private string zoneName;
+		private string remark;
 
-		private string userClientIp;
+		private long? recordId;
 
 		private string lang;
 
-		public string ZoneName
+		public string Remark
 		{
 			get
 			{
-				return zoneName;
+				return remark;
 			}
 			set	
 			{
-				zoneName = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneName", value);
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
 			}
 		}
 
-		public string UserClientIp
+		public long? RecordId
 		{
 			get
 			{
-				return userClientIp;
+				return recordId;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				recordId = value;
+				DictionaryUtil.Add(QueryParameters, "RecordId", value.ToString());
 			}
 		}
 
@@ -79,9 +79,9 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			}
 		}
 
-        public override CheckZoneNameResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateRecordRemarkResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CheckZoneNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateRecordRemarkResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

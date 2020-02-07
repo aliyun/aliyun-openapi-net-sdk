@@ -34,13 +34,26 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
         {
         }
 
+		private string remark;
+
 		private string userClientIp;
 
 		private string zoneId;
 
-		private string remark;
-
 		private string lang;
+
+		public string Remark
+		{
+			get
+			{
+				return remark;
+			}
+			set	
+			{
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -65,19 +78,6 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string Remark
-		{
-			get
-			{
-				return remark;
-			}
-			set	
-			{
-				remark = value;
-				DictionaryUtil.Add(QueryParameters, "Remark", value);
 			}
 		}
 

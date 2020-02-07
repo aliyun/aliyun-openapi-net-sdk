@@ -34,6 +34,10 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
         {
         }
 
+		private long? startTimestamp;
+
+		private long? endTimestamp;
+
 		private string vpcId;
 
 		private string userClientIp;
@@ -42,9 +46,31 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 
 		private string lang;
 
-		private long? startTimestamp;
+		public long? StartTimestamp
+		{
+			get
+			{
+				return startTimestamp;
+			}
+			set	
+			{
+				startTimestamp = value;
+				DictionaryUtil.Add(QueryParameters, "StartTimestamp", value.ToString());
+			}
+		}
 
-		private long? endTimestamp;
+		public long? EndTimestamp
+		{
+			get
+			{
+				return endTimestamp;
+			}
+			set	
+			{
+				endTimestamp = value;
+				DictionaryUtil.Add(QueryParameters, "EndTimestamp", value.ToString());
+			}
+		}
 
 		public string VpcId
 		{
@@ -95,32 +121,6 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public long? StartTimestamp
-		{
-			get
-			{
-				return startTimestamp;
-			}
-			set	
-			{
-				startTimestamp = value;
-				DictionaryUtil.Add(QueryParameters, "StartTimestamp", value.ToString());
-			}
-		}
-
-		public long? EndTimestamp
-		{
-			get
-			{
-				return endTimestamp;
-			}
-			set	
-			{
-				endTimestamp = value;
-				DictionaryUtil.Add(QueryParameters, "EndTimestamp", value.ToString());
 			}
 		}
 
