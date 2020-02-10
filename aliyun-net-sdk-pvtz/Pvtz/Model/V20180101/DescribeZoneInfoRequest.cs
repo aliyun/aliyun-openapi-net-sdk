@@ -32,6 +32,11 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
         public DescribeZoneInfoRequest()
             : base("pvtz", "2018-01-01", "DescribeZoneInfo", "pvtz", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string userClientIp;

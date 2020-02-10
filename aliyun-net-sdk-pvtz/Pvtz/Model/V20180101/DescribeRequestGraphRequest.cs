@@ -32,6 +32,11 @@ namespace Aliyun.Acs.pvtz.Model.V20180101
         public DescribeRequestGraphRequest()
             : base("pvtz", "2018-01-01", "DescribeRequestGraph", "pvtz", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? startTimestamp;
