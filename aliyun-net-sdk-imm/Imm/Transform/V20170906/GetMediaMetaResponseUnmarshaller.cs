@@ -47,6 +47,15 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			mediaFormat.Bitrate = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Bitrate");
 			mediaFormat.CreationTime = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.CreationTime");
 			mediaFormat.Location = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Location");
+
+			GetMediaMetaResponse.GetMediaMeta_MediaMeta.GetMediaMeta_MediaFormat.GetMediaMeta_Address address = new GetMediaMetaResponse.GetMediaMeta_MediaMeta.GetMediaMeta_MediaFormat.GetMediaMeta_Address();
+			address.AddressLine = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Address.AddressLine");
+			address.Country = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Address.Country");
+			address.Province = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Address.Province");
+			address.City = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Address.City");
+			address.District = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Address.District");
+			address.Township = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Address.Township");
+			mediaFormat.Address = address;
 			mediaMeta.MediaFormat = mediaFormat;
 
 			GetMediaMetaResponse.GetMediaMeta_MediaMeta.GetMediaMeta_MediaStreams mediaStreams = new GetMediaMetaResponse.GetMediaMeta_MediaMeta.GetMediaMeta_MediaStreams();

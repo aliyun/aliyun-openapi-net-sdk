@@ -121,6 +121,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 				private string location;
 
+				private GetMediaMeta_Address address;
+
 				public int? NumberStreams
 				{
 					get
@@ -238,6 +240,106 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					set	
 					{
 						location = value;
+					}
+				}
+
+				public GetMediaMeta_Address Address
+				{
+					get
+					{
+						return address;
+					}
+					set	
+					{
+						address = value;
+					}
+				}
+
+				public class GetMediaMeta_Address
+				{
+
+					private string addressLine;
+
+					private string country;
+
+					private string province;
+
+					private string city;
+
+					private string district;
+
+					private string township;
+
+					public string AddressLine
+					{
+						get
+						{
+							return addressLine;
+						}
+						set	
+						{
+							addressLine = value;
+						}
+					}
+
+					public string Country
+					{
+						get
+						{
+							return country;
+						}
+						set	
+						{
+							country = value;
+						}
+					}
+
+					public string Province
+					{
+						get
+						{
+							return province;
+						}
+						set	
+						{
+							province = value;
+						}
+					}
+
+					public string City
+					{
+						get
+						{
+							return city;
+						}
+						set	
+						{
+							city = value;
+						}
+					}
+
+					public string District
+					{
+						get
+						{
+							return district;
+						}
+						set	
+						{
+							district = value;
+						}
+					}
+
+					public string Township
+					{
+						get
+						{
+							return township;
+						}
+						set	
+						{
+							township = value;
+						}
 					}
 				}
 			}
