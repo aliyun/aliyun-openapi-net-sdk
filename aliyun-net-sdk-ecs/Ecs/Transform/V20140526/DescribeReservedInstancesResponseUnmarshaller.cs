@@ -54,6 +54,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				reservedInstance.ExpiredTime = context.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].ExpiredTime");
 				reservedInstance.StartTime = context.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].StartTime");
 				reservedInstance.ResourceGroupId = context.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].ResourceGroupId");
+				reservedInstance.AllocationStatus = context.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].AllocationStatus");
 
 				List<DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance.DescribeReservedInstances_OperationLock> reservedInstance_operationLocks = new List<DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance.DescribeReservedInstances_OperationLock>();
 				for (int j = 0; j < context.Length("DescribeReservedInstances.ReservedInstances["+ i +"].OperationLocks.Length"); j++) {

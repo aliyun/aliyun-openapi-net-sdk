@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? retentionDays;
 
+		private string category;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -191,6 +193,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				retentionDays = value;
 				DictionaryUtil.Add(QueryParameters, "RetentionDays", value.ToString());
+			}
+		}
+
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

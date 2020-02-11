@@ -128,6 +128,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string resourceGroupId;
 
+			private string allocationStatus;
+
 			private List<DescribeReservedInstances_OperationLock> operationLocks;
 
 			public string ReservedInstanceId
@@ -307,6 +309,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string AllocationStatus
+			{
+				get
+				{
+					return allocationStatus;
+				}
+				set	
+				{
+					allocationStatus = value;
 				}
 			}
 

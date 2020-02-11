@@ -114,6 +114,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string sourceDiskType;
 
+			private string category;
+
 			private long? totalSize;
 
 			private int? totalCount;
@@ -211,6 +213,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					sourceDiskType = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
 				}
 			}
 

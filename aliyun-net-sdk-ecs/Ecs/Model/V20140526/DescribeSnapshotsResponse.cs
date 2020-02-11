@@ -136,6 +136,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string kMSKeyId;
 
+			private string category;
+
 			private List<DescribeSnapshots_Tag> tags;
 
 			public string SnapshotId
@@ -363,6 +365,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					kMSKeyId = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
 				}
 			}
 
