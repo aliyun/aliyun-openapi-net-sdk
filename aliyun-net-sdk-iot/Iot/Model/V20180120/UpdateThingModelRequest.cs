@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class ListOTAJobByFirmwareRequest : RpcAcsRequest<ListOTAJobByFirmwareResponse>
+    public class UpdateThingModelRequest : RpcAcsRequest<UpdateThingModelResponse>
     {
-        public ListOTAJobByFirmwareRequest()
-            : base("Iot", "2018-01-20", "ListOTAJobByFirmware", "iot", "openAPI")
+        public UpdateThingModelRequest()
+            : base("Iot", "2018-01-20", "UpdateThingModel", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,69 +39,54 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string iotInstanceId;
+		private string identifier;
 
-		private int? pageSize;
+		private string productKey;
 
-		private string firmwareId;
+		private string thingModelJson;
 
-		private int? currentPage;
-
-		public string IotInstanceId
+		public string Identifier
 		{
 			get
 			{
-				return iotInstanceId;
+				return identifier;
 			}
 			set	
 			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				identifier = value;
+				DictionaryUtil.Add(QueryParameters, "Identifier", value);
 			}
 		}
 
-		public int? PageSize
+		public string ProductKey
 		{
 			get
 			{
-				return pageSize;
+				return productKey;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-		public string FirmwareId
+		public string ThingModelJson
 		{
 			get
 			{
-				return firmwareId;
+				return thingModelJson;
 			}
 			set	
 			{
-				firmwareId = value;
-				DictionaryUtil.Add(QueryParameters, "FirmwareId", value);
+				thingModelJson = value;
+				DictionaryUtil.Add(QueryParameters, "ThingModelJson", value);
 			}
 		}
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-        public override ListOTAJobByFirmwareResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateThingModelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListOTAJobByFirmwareResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateThingModelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class ListOTAJobByFirmwareRequest : RpcAcsRequest<ListOTAJobByFirmwareResponse>
+    public class CreateThingModelRequest : RpcAcsRequest<CreateThingModelResponse>
     {
-        public ListOTAJobByFirmwareRequest()
-            : base("Iot", "2018-01-20", "ListOTAJobByFirmware", "iot", "openAPI")
+        public CreateThingModelRequest()
+            : base("Iot", "2018-01-20", "CreateThingModel", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,69 +39,39 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string iotInstanceId;
+		private string productKey;
 
-		private int? pageSize;
+		private string thingModelJson;
 
-		private string firmwareId;
-
-		private int? currentPage;
-
-		public string IotInstanceId
+		public string ProductKey
 		{
 			get
 			{
-				return iotInstanceId;
+				return productKey;
 			}
 			set	
 			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 
-		public int? PageSize
+		public string ThingModelJson
 		{
 			get
 			{
-				return pageSize;
+				return thingModelJson;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				thingModelJson = value;
+				DictionaryUtil.Add(QueryParameters, "ThingModelJson", value);
 			}
 		}
 
-		public string FirmwareId
-		{
-			get
-			{
-				return firmwareId;
-			}
-			set	
-			{
-				firmwareId = value;
-				DictionaryUtil.Add(QueryParameters, "FirmwareId", value);
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-        public override ListOTAJobByFirmwareResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateThingModelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListOTAJobByFirmwareResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateThingModelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class ListOTAJobByFirmwareRequest : RpcAcsRequest<ListOTAJobByFirmwareResponse>
+    public class ListOTATaskByJobRequest : RpcAcsRequest<ListOTATaskByJobResponse>
     {
-        public ListOTAJobByFirmwareRequest()
-            : base("Iot", "2018-01-20", "ListOTAJobByFirmware", "iot", "openAPI")
+        public ListOTATaskByJobRequest()
+            : base("Iot", "2018-01-20", "ListOTATaskByJob", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,13 +39,41 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
+		private string jobId;
+
+		private string taskStatus;
+
 		private string iotInstanceId;
 
 		private int? pageSize;
 
-		private string firmwareId;
-
 		private int? currentPage;
+
+		public string JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
+			}
+		}
+
+		public string TaskStatus
+		{
+			get
+			{
+				return taskStatus;
+			}
+			set	
+			{
+				taskStatus = value;
+				DictionaryUtil.Add(QueryParameters, "TaskStatus", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -73,19 +101,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string FirmwareId
-		{
-			get
-			{
-				return firmwareId;
-			}
-			set	
-			{
-				firmwareId = value;
-				DictionaryUtil.Add(QueryParameters, "FirmwareId", value);
-			}
-		}
-
 		public int? CurrentPage
 		{
 			get
@@ -99,9 +114,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override ListOTAJobByFirmwareResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListOTATaskByJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListOTAJobByFirmwareResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListOTATaskByJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
