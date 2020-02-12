@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
         public DescribeFullBackupListRequest()
             : base("Dbs", "2019-03-06", "DescribeFullBackupList", "cbs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string clientToken;
@@ -41,6 +46,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private int? pageNum;
 
 		private string ownerId;
+
+		private bool? showStorageType;
 
 		private int? pageSize;
 
@@ -93,6 +100,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public bool? ShowStorageType
+		{
+			get
+			{
+				return showStorageType;
+			}
+			set	
+			{
+				showStorageType = value;
+				DictionaryUtil.Add(QueryParameters, "ShowStorageType", value.ToString());
 			}
 		}
 

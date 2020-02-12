@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
         public StartBackupPlanRequest()
             : base("Dbs", "2019-03-06", "StartBackupPlan", "cbs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string clientToken;
