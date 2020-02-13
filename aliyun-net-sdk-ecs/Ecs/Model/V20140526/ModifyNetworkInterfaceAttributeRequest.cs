@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
+		private int? queueNumber;
+
 		private long? resourceOwnerId;
 
 		private List<string> securityGroupIds = new List<string>(){ };
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private long? ownerId;
 
 		private string networkInterfaceId;
+
+		public int? QueueNumber
+		{
+			get
+			{
+				return queueNumber;
+			}
+			set	
+			{
+				queueNumber = value;
+				DictionaryUtil.Add(QueryParameters, "QueueNumber", value.ToString());
+			}
+		}
 
 		public long? ResourceOwnerId
 		{

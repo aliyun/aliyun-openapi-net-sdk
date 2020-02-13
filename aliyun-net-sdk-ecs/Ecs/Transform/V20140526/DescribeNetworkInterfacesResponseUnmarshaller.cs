@@ -55,6 +55,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				networkInterfaceSet.ResourceGroupId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].ResourceGroupId");
 				networkInterfaceSet.ServiceID = context.LongValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].ServiceID");
 				networkInterfaceSet.ServiceManaged = context.BooleanValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].ServiceManaged");
+				networkInterfaceSet.QueueNumber = context.IntegerValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].QueueNumber");
 
 				List<string> networkInterfaceSet_securityGroupIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].SecurityGroupIds.Length"); j++) {

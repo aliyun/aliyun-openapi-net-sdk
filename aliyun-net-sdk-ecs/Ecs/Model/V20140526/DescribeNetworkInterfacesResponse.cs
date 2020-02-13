@@ -142,6 +142,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? serviceManaged;
 
+			private int? queueNumber;
+
 			private List<DescribeNetworkInterfaces_PrivateIpSet> privateIpSets;
 
 			private List<DescribeNetworkInterfaces_Ipv6Set> ipv6Sets;
@@ -329,6 +331,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					serviceManaged = value;
+				}
+			}
+
+			public int? QueueNumber
+			{
+				get
+				{
+					return queueNumber;
+				}
+				set	
+				{
+					queueNumber = value;
 				}
 			}
 
