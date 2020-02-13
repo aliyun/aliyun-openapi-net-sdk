@@ -78,13 +78,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 			private string serverCertificateStatus;
 
-			private string serverCertificate;
-
 			private string region;
 
 			private string scope;
-
-			private string certificateName;
 
 			private string resourceGroupId;
 
@@ -224,18 +220,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				}
 			}
 
-			public string ServerCertificate
-			{
-				get
-				{
-					return serverCertificate;
-				}
-				set	
-				{
-					serverCertificate = value;
-				}
-			}
-
 			public string Region
 			{
 				get
@@ -257,18 +241,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 				set	
 				{
 					scope = value;
-				}
-			}
-
-			public string CertificateName
-			{
-				get
-				{
-					return certificateName;
-				}
-				set	
-				{
-					certificateName = value;
 				}
 			}
 

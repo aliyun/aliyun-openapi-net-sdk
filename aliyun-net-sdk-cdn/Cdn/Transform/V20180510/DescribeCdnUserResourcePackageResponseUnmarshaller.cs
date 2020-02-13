@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				resourcePackageInfo.InitCapacity = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].InitCapacity");
 				resourcePackageInfo.CommodityCode = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].CommodityCode");
 				resourcePackageInfo.DisplayName = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].DisplayName");
+				resourcePackageInfo.TemplateName = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].TemplateName");
 				resourcePackageInfo.InstanceId = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].InstanceId");
 				resourcePackageInfo.Status = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].Status");
 				resourcePackageInfo.StartTime = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].StartTime");

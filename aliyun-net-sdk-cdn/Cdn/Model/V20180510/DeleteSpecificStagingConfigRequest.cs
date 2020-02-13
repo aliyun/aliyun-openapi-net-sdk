@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class ModifyCdnDomainRequest : RpcAcsRequest<ModifyCdnDomainResponse>
+    public class DeleteSpecificStagingConfigRequest : RpcAcsRequest<DeleteSpecificStagingConfigResponse>
     {
-        public ModifyCdnDomainRequest()
-            : base("Cdn", "2018-05-10", "ModifyCdnDomain")
+        public DeleteSpecificStagingConfigRequest()
+            : base("Cdn", "2018-05-10", "DeleteSpecificStagingConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,43 +40,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string sources;
-
-		private string resourceGroupId;
-
 		private string securityToken;
-
-		private string topLevelDomain;
 
 		private string domainName;
 
 		private long? ownerId;
 
-		public string Sources
-		{
-			get
-			{
-				return sources;
-			}
-			set	
-			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
+		private string configId;
 
 		public string SecurityToken
 		{
@@ -88,19 +58,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
 			}
 		}
 
@@ -130,9 +87,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override ModifyCdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ConfigId
+		{
+			get
+			{
+				return configId;
+			}
+			set	
+			{
+				configId = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
+			}
+		}
+
+        public override DeleteSpecificStagingConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyCdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteSpecificStagingConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

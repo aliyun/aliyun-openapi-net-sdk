@@ -45,10 +45,8 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 			getDomainDetailModel.DomainName = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.DomainName");
 			getDomainDetailModel.Description = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Description");
 			getDomainDetailModel.ServerCertificateStatus = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.ServerCertificateStatus");
-			getDomainDetailModel.ServerCertificate = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.ServerCertificate");
 			getDomainDetailModel.Region = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Region");
 			getDomainDetailModel.Scope = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Scope");
-			getDomainDetailModel.CertificateName = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.CertificateName");
 			getDomainDetailModel.ResourceGroupId = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.ResourceGroupId");
 
 			List<string> getDomainDetailModel_sources = new List<string>();

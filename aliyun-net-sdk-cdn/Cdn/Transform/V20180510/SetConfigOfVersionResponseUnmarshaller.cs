@@ -20,20 +20,20 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Cdn.Model.V20141111;
+using Aliyun.Acs.Cdn.Model.V20180510;
 
-namespace Aliyun.Acs.Cdn.Transform.V20141111
+namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
-    public class SetDomainGreenManagerConfigResponseUnmarshaller
+    public class SetConfigOfVersionResponseUnmarshaller
     {
-        public static SetDomainGreenManagerConfigResponse Unmarshall(UnmarshallerContext context)
+        public static SetConfigOfVersionResponse Unmarshall(UnmarshallerContext context)
         {
-			SetDomainGreenManagerConfigResponse setDomainGreenManagerConfigResponse = new SetDomainGreenManagerConfigResponse();
+			SetConfigOfVersionResponse setConfigOfVersionResponse = new SetConfigOfVersionResponse();
 
-			setDomainGreenManagerConfigResponse.HttpResponse = context.HttpResponse;
-			setDomainGreenManagerConfigResponse.RequestId = context.StringValue("SetDomainGreenManagerConfig.RequestId");
+			setConfigOfVersionResponse.HttpResponse = context.HttpResponse;
+			setConfigOfVersionResponse.RequestId = context.StringValue("SetConfigOfVersion.RequestId");
         
-			return setDomainGreenManagerConfigResponse;
+			return setConfigOfVersionResponse;
         }
     }
 }

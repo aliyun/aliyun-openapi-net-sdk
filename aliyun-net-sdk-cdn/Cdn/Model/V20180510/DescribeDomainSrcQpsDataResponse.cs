@@ -22,30 +22,20 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeRefreshQuotaResponse : AcsResponse
+	public class DescribeDomainSrcQpsDataResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string urlQuota;
+		private string domainName;
 
-		private string dirQuota;
+		private string startTime;
 
-		private string urlRemain;
+		private string endTime;
 
-		private string dirRemain;
+		private string dataInterval;
 
-		private string preloadQuota;
-
-		private string blockQuota;
-
-		private string preloadRemain;
-
-		private string blockRemain;
-
-		private string regexQuota;
-
-		private string regexRemain;
+		private List<DescribeDomainSrcQpsData_DataModule> srcQpsDataPerInterval;
 
 		public string RequestId
 		{
@@ -59,123 +49,95 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string UrlQuota
+		public string DomainName
 		{
 			get
 			{
-				return urlQuota;
+				return domainName;
 			}
 			set	
 			{
-				urlQuota = value;
+				domainName = value;
 			}
 		}
 
-		public string DirQuota
+		public string StartTime
 		{
 			get
 			{
-				return dirQuota;
+				return startTime;
 			}
 			set	
 			{
-				dirQuota = value;
+				startTime = value;
 			}
 		}
 
-		public string UrlRemain
+		public string EndTime
 		{
 			get
 			{
-				return urlRemain;
+				return endTime;
 			}
 			set	
 			{
-				urlRemain = value;
+				endTime = value;
 			}
 		}
 
-		public string DirRemain
+		public string DataInterval
 		{
 			get
 			{
-				return dirRemain;
+				return dataInterval;
 			}
 			set	
 			{
-				dirRemain = value;
+				dataInterval = value;
 			}
 		}
 
-		public string PreloadQuota
+		public List<DescribeDomainSrcQpsData_DataModule> SrcQpsDataPerInterval
 		{
 			get
 			{
-				return preloadQuota;
+				return srcQpsDataPerInterval;
 			}
 			set	
 			{
-				preloadQuota = value;
+				srcQpsDataPerInterval = value;
 			}
 		}
 
-		public string BlockQuota
+		public class DescribeDomainSrcQpsData_DataModule
 		{
-			get
-			{
-				return blockQuota;
-			}
-			set	
-			{
-				blockQuota = value;
-			}
-		}
 
-		public string PreloadRemain
-		{
-			get
-			{
-				return preloadRemain;
-			}
-			set	
-			{
-				preloadRemain = value;
-			}
-		}
+			private string timeStamp;
 
-		public string BlockRemain
-		{
-			get
-			{
-				return blockRemain;
-			}
-			set	
-			{
-				blockRemain = value;
-			}
-		}
+			private string _value;
 
-		public string RegexQuota
-		{
-			get
+			public string TimeStamp
 			{
-				return regexQuota;
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
+				}
 			}
-			set	
-			{
-				regexQuota = value;
-			}
-		}
 
-		public string RegexRemain
-		{
-			get
+			public string _Value
 			{
-				return regexRemain;
-			}
-			set	
-			{
-				regexRemain = value;
+				get
+				{
+					return _value;
+				}
+				set	
+				{
+					_value = value;
+				}
 			}
 		}
 	}

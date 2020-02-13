@@ -42,15 +42,15 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string referList;
 
-		private string domainName;
-
-		private long? ownerId;
-
 		private string securityToken;
 
 		private string referType;
 
 		private string disableAst;
+
+		private string domainName;
+
+		private long? ownerId;
 
 		private string allowEmpty;
 
@@ -64,32 +64,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				referList = value;
 				DictionaryUtil.Add(QueryParameters, "ReferList", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -129,6 +103,32 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				disableAst = value;
 				DictionaryUtil.Add(QueryParameters, "DisableAst", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

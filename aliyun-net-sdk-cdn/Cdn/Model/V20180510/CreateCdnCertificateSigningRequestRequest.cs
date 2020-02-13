@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class ModifyCdnDomainRequest : RpcAcsRequest<ModifyCdnDomainResponse>
+    public class CreateCdnCertificateSigningRequestRequest : RpcAcsRequest<CreateCdnCertificateSigningRequestResponse>
     {
-        public ModifyCdnDomainRequest()
-            : base("Cdn", "2018-05-10", "ModifyCdnDomain")
+        public CreateCdnCertificateSigningRequestRequest()
+            : base("Cdn", "2018-05-10", "CreateCdnCertificateSigningRequest")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,80 +40,99 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string sources;
+		private string country;
 
-		private string resourceGroupId;
+		private string city;
 
-		private string securityToken;
+		private string commonName;
 
-		private string topLevelDomain;
+		private string state;
 
-		private string domainName;
+		private string email;
+
+		private string sANs;
 
 		private long? ownerId;
 
-		public string Sources
+		private string organization;
+
+		private string organizationUnit;
+
+		public string Country
 		{
 			get
 			{
-				return sources;
+				return country;
 			}
 			set	
 			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
+				country = value;
+				DictionaryUtil.Add(QueryParameters, "Country", value);
 			}
 		}
 
-		public string ResourceGroupId
+		public string City
 		{
 			get
 			{
-				return resourceGroupId;
+				return city;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+				city = value;
+				DictionaryUtil.Add(QueryParameters, "City", value);
 			}
 		}
 
-		public string SecurityToken
+		public string CommonName
 		{
 			get
 			{
-				return securityToken;
+				return commonName;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				commonName = value;
+				DictionaryUtil.Add(QueryParameters, "CommonName", value);
 			}
 		}
 
-		public string TopLevelDomain
+		public string State
 		{
 			get
 			{
-				return topLevelDomain;
+				return state;
 			}
 			set	
 			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+				state = value;
+				DictionaryUtil.Add(QueryParameters, "State", value);
 			}
 		}
 
-		public string DomainName
+		public string Email
 		{
 			get
 			{
-				return domainName;
+				return email;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				email = value;
+				DictionaryUtil.Add(QueryParameters, "Email", value);
+			}
+		}
+
+		public string SANs
+		{
+			get
+			{
+				return sANs;
+			}
+			set	
+			{
+				sANs = value;
+				DictionaryUtil.Add(QueryParameters, "SANs", value);
 			}
 		}
 
@@ -130,9 +149,35 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override ModifyCdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Organization
+		{
+			get
+			{
+				return organization;
+			}
+			set	
+			{
+				organization = value;
+				DictionaryUtil.Add(QueryParameters, "Organization", value);
+			}
+		}
+
+		public string OrganizationUnit
+		{
+			get
+			{
+				return organizationUnit;
+			}
+			set	
+			{
+				organizationUnit = value;
+				DictionaryUtil.Add(QueryParameters, "OrganizationUnit", value);
+			}
+		}
+
+        public override CreateCdnCertificateSigningRequestResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyCdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateCdnCertificateSigningRequestResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

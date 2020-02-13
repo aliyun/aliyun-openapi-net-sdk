@@ -40,6 +40,12 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
             }
         }
 
+		private string appName;
+
+		private string securityToken;
+
+		private string streamName;
+
 		private string resumeTime;
 
 		private string liveStreamType;
@@ -48,11 +54,44 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private long? ownerId;
 
-		private string appName;
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
 
-		private string securityToken;
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
 
-		private string streamName;
+		public string StreamName
+		{
+			get
+			{
+				return streamName;
+			}
+			set	
+			{
+				streamName = value;
+				DictionaryUtil.Add(QueryParameters, "StreamName", value);
+			}
+		}
 
 		public string ResumeTime
 		{
@@ -103,45 +142,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string StreamName
-		{
-			get
-			{
-				return streamName;
-			}
-			set	
-			{
-				streamName = value;
-				DictionaryUtil.Add(QueryParameters, "StreamName", value);
 			}
 		}
 

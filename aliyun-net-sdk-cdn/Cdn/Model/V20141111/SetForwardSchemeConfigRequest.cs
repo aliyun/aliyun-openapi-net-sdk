@@ -40,30 +40,17 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
             }
         }
 
-		private string schemeOrigin;
-
 		private string schemeOriginPort;
-
-		private string domainName;
-
-		private long? ownerId;
 
 		private string securityToken;
 
 		private string enable;
 
-		public string SchemeOrigin
-		{
-			get
-			{
-				return schemeOrigin;
-			}
-			set	
-			{
-				schemeOrigin = value;
-				DictionaryUtil.Add(QueryParameters, "SchemeOrigin", value);
-			}
-		}
+		private string schemeOrigin;
+
+		private string domainName;
+
+		private long? ownerId;
 
 		public string SchemeOriginPort
 		{
@@ -75,32 +62,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				schemeOriginPort = value;
 				DictionaryUtil.Add(QueryParameters, "SchemeOriginPort", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -127,6 +88,45 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				enable = value;
 				DictionaryUtil.Add(QueryParameters, "Enable", value);
+			}
+		}
+
+		public string SchemeOrigin
+		{
+			get
+			{
+				return schemeOrigin;
+			}
+			set	
+			{
+				schemeOrigin = value;
+				DictionaryUtil.Add(QueryParameters, "SchemeOrigin", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

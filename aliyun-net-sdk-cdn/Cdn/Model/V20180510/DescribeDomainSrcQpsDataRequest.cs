@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class DescribeDomainCnameRequest : RpcAcsRequest<DescribeDomainCnameResponse>
+    public class DescribeDomainSrcQpsDataRequest : RpcAcsRequest<DescribeDomainSrcQpsDataResponse>
     {
-        public DescribeDomainCnameRequest()
-            : base("Cdn", "2018-05-10", "DescribeDomainCname")
+        public DescribeDomainSrcQpsDataRequest()
+            : base("Cdn", "2018-05-10", "DescribeDomainSrcQpsData")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +40,28 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
+		private string startTime;
+
 		private string domainName;
 
+		private string endTime;
+
 		private long? ownerId;
+
+		private string interval;
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
 
 		public string DomainName
 		{
@@ -54,6 +73,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -70,9 +102,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override DescribeDomainCnameResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
+			}
+		}
+
+        public override DescribeDomainSrcQpsDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainCnameResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainSrcQpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

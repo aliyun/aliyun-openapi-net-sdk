@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class ModifyCdnDomainRequest : RpcAcsRequest<ModifyCdnDomainResponse>
+    public class SetCdnDomainCSRCertificateRequest : RpcAcsRequest<SetCdnDomainCSRCertificateResponse>
     {
-        public ModifyCdnDomainRequest()
-            : base("Cdn", "2018-05-10", "ModifyCdnDomain")
+        public SetCdnDomainCSRCertificateRequest()
+            : base("Cdn", "2018-05-10", "SetCdnDomainCSRCertificate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,67 +40,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string sources;
-
-		private string resourceGroupId;
-
-		private string securityToken;
-
-		private string topLevelDomain;
+		private string certificate;
 
 		private string domainName;
 
 		private long? ownerId;
 
-		public string Sources
+		public string Certificate
 		{
 			get
 			{
-				return sources;
+				return certificate;
 			}
 			set	
 			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+				certificate = value;
+				DictionaryUtil.Add(QueryParameters, "Certificate", value);
 			}
 		}
 
@@ -130,9 +85,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override ModifyCdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetCdnDomainCSRCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyCdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetCdnDomainCSRCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

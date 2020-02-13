@@ -22,12 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DescribeCdnUserResourcePackageResponse : AcsResponse
+	public class DescribeCertificateInfoByIDResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeCdnUserResourcePackage_ResourcePackageInfo> resourcePackageInfos;
+		private List<DescribeCertificateInfoByID_CertInfo> certInfos;
 
 		public string RequestId
 		{
@@ -41,144 +41,116 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public List<DescribeCdnUserResourcePackage_ResourcePackageInfo> ResourcePackageInfos
+		public List<DescribeCertificateInfoByID_CertInfo> CertInfos
 		{
 			get
 			{
-				return resourcePackageInfos;
+				return certInfos;
 			}
 			set	
 			{
-				resourcePackageInfos = value;
+				certInfos = value;
 			}
 		}
 
-		public class DescribeCdnUserResourcePackage_ResourcePackageInfo
+		public class DescribeCertificateInfoByID_CertInfo
 		{
 
-			private string currCapacity;
+			private string certId;
 
-			private string initCapacity;
+			private string certName;
 
-			private string commodityCode;
+			private string createTime;
 
-			private string displayName;
+			private string httpsCrt;
 
-			private string templateName;
+			private string certType;
 
-			private string instanceId;
+			private string certExpireTime;
 
-			private string status;
+			private string domainList;
 
-			private string startTime;
-
-			private string endTime;
-
-			public string CurrCapacity
+			public string CertId
 			{
 				get
 				{
-					return currCapacity;
+					return certId;
 				}
 				set	
 				{
-					currCapacity = value;
+					certId = value;
 				}
 			}
 
-			public string InitCapacity
+			public string CertName
 			{
 				get
 				{
-					return initCapacity;
+					return certName;
 				}
 				set	
 				{
-					initCapacity = value;
+					certName = value;
 				}
 			}
 
-			public string CommodityCode
+			public string CreateTime
 			{
 				get
 				{
-					return commodityCode;
+					return createTime;
 				}
 				set	
 				{
-					commodityCode = value;
+					createTime = value;
 				}
 			}
 
-			public string DisplayName
+			public string HttpsCrt
 			{
 				get
 				{
-					return displayName;
+					return httpsCrt;
 				}
 				set	
 				{
-					displayName = value;
+					httpsCrt = value;
 				}
 			}
 
-			public string TemplateName
+			public string CertType
 			{
 				get
 				{
-					return templateName;
+					return certType;
 				}
 				set	
 				{
-					templateName = value;
+					certType = value;
 				}
 			}
 
-			public string InstanceId
+			public string CertExpireTime
 			{
 				get
 				{
-					return instanceId;
+					return certExpireTime;
 				}
 				set	
 				{
-					instanceId = value;
+					certExpireTime = value;
 				}
 			}
 
-			public string Status
+			public string DomainList
 			{
 				get
 				{
-					return status;
+					return domainList;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			public string StartTime
-			{
-				get
-				{
-					return startTime;
-				}
-				set	
-				{
-					startTime = value;
-				}
-			}
-
-			public string EndTime
-			{
-				get
-				{
-					return endTime;
-				}
-				set	
-				{
-					endTime = value;
+					domainList = value;
 				}
 			}
 		}

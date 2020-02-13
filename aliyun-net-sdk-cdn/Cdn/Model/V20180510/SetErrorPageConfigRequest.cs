@@ -42,13 +42,13 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string pageType;
 
+		private string securityToken;
+
 		private string domainName;
 
 		private string customPageUrl;
 
 		private long? ownerId;
-
-		private string securityToken;
 
 		public string PageType
 		{
@@ -60,6 +60,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				pageType = value;
 				DictionaryUtil.Add(QueryParameters, "PageType", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -99,19 +112,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

@@ -40,12 +40,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
             }
         }
 
-		private string streamType;
-
-		private string domainName;
-
-		private long? ownerId;
-
 		private int? pageNum;
 
 		private string appName;
@@ -54,44 +48,11 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private int? pageSize;
 
-		public string StreamType
-		{
-			get
-			{
-				return streamType;
-			}
-			set	
-			{
-				streamType = value;
-				DictionaryUtil.Add(QueryParameters, "StreamType", value);
-			}
-		}
+		private string streamType;
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+		private string domainName;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private long? ownerId;
 
 		public int? PageNum
 		{
@@ -142,6 +103,45 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string StreamType
+		{
+			get
+			{
+				return streamType;
+			}
+			set	
+			{
+				streamType = value;
+				DictionaryUtil.Add(QueryParameters, "StreamType", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

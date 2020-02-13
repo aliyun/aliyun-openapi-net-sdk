@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
             }
         }
 
+		private string securityToken;
+
 		private string domainName;
 
 		private string weight;
@@ -50,7 +52,18 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string tTL;
 
-		private string securityToken;
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
 
 		public string DomainName
 		{
@@ -114,19 +127,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				tTL = value;
 				DictionaryUtil.Add(QueryParameters, "TTL", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

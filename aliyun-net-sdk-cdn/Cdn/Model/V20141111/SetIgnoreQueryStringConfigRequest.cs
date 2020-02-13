@@ -40,6 +40,10 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
             }
         }
 
+		private string securityToken;
+
+		private string enable;
+
 		private string keepOssArgs;
 
 		private string domainName;
@@ -48,9 +52,31 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string hashKeyArgs;
 
-		private string securityToken;
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
 
-		private string enable;
+		public string Enable
+		{
+			get
+			{
+				return enable;
+			}
+			set	
+			{
+				enable = value;
+				DictionaryUtil.Add(QueryParameters, "Enable", value);
+			}
+		}
 
 		public string KeepOssArgs
 		{
@@ -101,32 +127,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				hashKeyArgs = value;
 				DictionaryUtil.Add(QueryParameters, "HashKeyArgs", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Enable
-		{
-			get
-			{
-				return enable;
-			}
-			set	
-			{
-				enable = value;
-				DictionaryUtil.Add(QueryParameters, "Enable", value);
 			}
 		}
 

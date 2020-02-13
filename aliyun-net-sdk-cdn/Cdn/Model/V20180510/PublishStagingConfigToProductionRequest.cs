@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class ModifyCdnDomainRequest : RpcAcsRequest<ModifyCdnDomainResponse>
+    public class PublishStagingConfigToProductionRequest : RpcAcsRequest<PublishStagingConfigToProductionResponse>
     {
-        public ModifyCdnDomainRequest()
-            : base("Cdn", "2018-05-10", "ModifyCdnDomain")
+        public PublishStagingConfigToProductionRequest()
+            : base("Cdn", "2018-05-10", "PublishStagingConfigToProduction")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,67 +40,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string sources;
-
-		private string resourceGroupId;
-
-		private string securityToken;
-
-		private string topLevelDomain;
+		private string functionName;
 
 		private string domainName;
 
 		private long? ownerId;
 
-		public string Sources
+		public string FunctionName
 		{
 			get
 			{
-				return sources;
+				return functionName;
 			}
 			set	
 			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+				functionName = value;
+				DictionaryUtil.Add(QueryParameters, "FunctionName", value);
 			}
 		}
 
@@ -130,9 +85,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override ModifyCdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override PublishStagingConfigToProductionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyCdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return PublishStagingConfigToProductionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

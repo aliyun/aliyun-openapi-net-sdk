@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class SetDomainGreenManagerConfigRequest : RpcAcsRequest<SetDomainGreenManagerConfigResponse>
+    public class RollbackStagingConfigRequest : RpcAcsRequest<RollbackStagingConfigResponse>
     {
-        public SetDomainGreenManagerConfigRequest()
-            : base("Cdn", "2014-11-11", "SetDomainGreenManagerConfig")
+        public RollbackStagingConfigRequest()
+            : base("Cdn", "2018-05-10", "RollbackStagingConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +40,24 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
             }
         }
 
+		private string functionName;
+
 		private string domainName;
 
 		private long? ownerId;
 
-		private string enable;
+		public string FunctionName
+		{
+			get
+			{
+				return functionName;
+			}
+			set	
+			{
+				functionName = value;
+				DictionaryUtil.Add(QueryParameters, "FunctionName", value);
+			}
+		}
 
 		public string DomainName
 		{
@@ -72,22 +85,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Enable
-		{
-			get
-			{
-				return enable;
-			}
-			set	
-			{
-				enable = value;
-				DictionaryUtil.Add(QueryParameters, "Enable", value);
-			}
-		}
-
-        public override SetDomainGreenManagerConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RollbackStagingConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDomainGreenManagerConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RollbackStagingConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

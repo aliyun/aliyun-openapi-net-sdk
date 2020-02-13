@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 		private string endTime;
 
+		private string mergeLocIsp;
+
 		private long? ownerId;
 
 		private string field;
@@ -131,6 +133,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public string MergeLocIsp
+		{
+			get
+			{
+				return mergeLocIsp;
+			}
+			set	
+			{
+				mergeLocIsp = value;
+				DictionaryUtil.Add(QueryParameters, "MergeLocIsp", value);
 			}
 		}
 

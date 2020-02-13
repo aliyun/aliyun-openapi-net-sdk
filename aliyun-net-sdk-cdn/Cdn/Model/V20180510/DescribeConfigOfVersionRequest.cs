@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class ModifyCdnDomainRequest : RpcAcsRequest<ModifyCdnDomainResponse>
+    public class DescribeConfigOfVersionRequest : RpcAcsRequest<DescribeConfigOfVersionResponse>
     {
-        public ModifyCdnDomainRequest()
-            : base("Cdn", "2018-05-10", "ModifyCdnDomain")
+        public DescribeConfigOfVersionRequest()
+            : base("Cdn", "2018-05-10", "DescribeConfigOfVersion")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,41 +40,28 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string sources;
-
-		private string resourceGroupId;
+		private string versionId;
 
 		private string securityToken;
 
-		private string topLevelDomain;
+		private string functionName;
 
-		private string domainName;
+		private long? groupId;
 
 		private long? ownerId;
 
-		public string Sources
-		{
-			get
-			{
-				return sources;
-			}
-			set	
-			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
-			}
-		}
+		private int? functionId;
 
-		public string ResourceGroupId
+		public string VersionId
 		{
 			get
 			{
-				return resourceGroupId;
+				return versionId;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+				versionId = value;
+				DictionaryUtil.Add(QueryParameters, "VersionId", value);
 			}
 		}
 
@@ -91,29 +78,29 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string TopLevelDomain
+		public string FunctionName
 		{
 			get
 			{
-				return topLevelDomain;
+				return functionName;
 			}
 			set	
 			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+				functionName = value;
+				DictionaryUtil.Add(QueryParameters, "FunctionName", value);
 			}
 		}
 
-		public string DomainName
+		public long? GroupId
 		{
 			get
 			{
-				return domainName;
+				return groupId;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
 			}
 		}
 
@@ -130,9 +117,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override ModifyCdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? FunctionId
+		{
+			get
+			{
+				return functionId;
+			}
+			set	
+			{
+				functionId = value;
+				DictionaryUtil.Add(QueryParameters, "FunctionId", value.ToString());
+			}
+		}
+
+        public override DescribeConfigOfVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyCdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeConfigOfVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
