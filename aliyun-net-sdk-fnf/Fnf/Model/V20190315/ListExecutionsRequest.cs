@@ -32,6 +32,11 @@ namespace Aliyun.Acs.fnf.Model.V20190315
         public ListExecutionsRequest()
             : base("fnf", "2019-03-15", "ListExecutions", "fnf", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string nextToken;
@@ -41,6 +46,8 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 		private int? limit;
 
 		private string flowName;
+
+		private string status;
 
 		public string NextToken
 		{
@@ -91,6 +98,19 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				flowName = value;
 				DictionaryUtil.Add(QueryParameters, "FlowName", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 

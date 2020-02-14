@@ -32,18 +32,23 @@ namespace Aliyun.Acs.fnf.Model.V20190315
         public StopExecutionRequest()
             : base("fnf", "2019-03-15", "StopExecution", "fnf", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
 		private string executionName;
 
-		private string requestId;
-
 		private string cause;
 
-		private string flowName;
-
 		private string error;
+
+		private string requestId;
+
+		private string flowName;
 
 		public string ExecutionName
 		{
@@ -55,19 +60,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				executionName = value;
 				DictionaryUtil.Add(BodyParameters, "ExecutionName", value);
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 
@@ -84,19 +76,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			}
 		}
 
-		public string FlowName
-		{
-			get
-			{
-				return flowName;
-			}
-			set	
-			{
-				flowName = value;
-				DictionaryUtil.Add(BodyParameters, "FlowName", value);
-			}
-		}
-
 		public string Error
 		{
 			get
@@ -107,6 +86,32 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				error = value;
 				DictionaryUtil.Add(BodyParameters, "Error", value);
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+				DictionaryUtil.Add(QueryParameters, "RequestId", value);
+			}
+		}
+
+		public string FlowName
+		{
+			get
+			{
+				return flowName;
+			}
+			set	
+			{
+				flowName = value;
+				DictionaryUtil.Add(BodyParameters, "FlowName", value);
 			}
 		}
 

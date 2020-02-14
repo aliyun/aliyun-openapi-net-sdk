@@ -32,8 +32,17 @@ namespace Aliyun.Acs.fnf.Model.V20190315
         public CreateFlowRequest()
             : base("fnf", "2019-03-15", "CreateFlow", "fnf", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
+
+		private string description;
+
+		private string type;
 
 		private string requestId;
 
@@ -41,11 +50,33 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string name;
 
-		private string description;
-
 		private string definition;
 
-		private string type;
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(BodyParameters, "Description", value);
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(BodyParameters, "Type", value);
+			}
+		}
 
 		public string RequestId
 		{
@@ -86,19 +117,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
-			}
-		}
-
 		public string Definition
 		{
 			get
@@ -109,19 +127,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				definition = value;
 				DictionaryUtil.Add(BodyParameters, "Definition", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "Type", value);
 			}
 		}
 

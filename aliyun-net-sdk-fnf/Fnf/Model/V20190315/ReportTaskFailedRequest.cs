@@ -32,29 +32,21 @@ namespace Aliyun.Acs.fnf.Model.V20190315
         public ReportTaskFailedRequest()
             : base("fnf", "2019-03-15", "ReportTaskFailed", "fnf", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
-		private string requestId;
-
 		private string cause;
-
-		private string taskToken;
 
 		private string error;
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
-			}
-		}
+		private string requestId;
+
+		private string taskToken;
 
 		public string Cause
 		{
@@ -69,19 +61,6 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			}
 		}
 
-		public string TaskToken
-		{
-			get
-			{
-				return taskToken;
-			}
-			set	
-			{
-				taskToken = value;
-				DictionaryUtil.Add(QueryParameters, "TaskToken", value);
-			}
-		}
-
 		public string Error
 		{
 			get
@@ -92,6 +71,32 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				error = value;
 				DictionaryUtil.Add(BodyParameters, "Error", value);
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+				DictionaryUtil.Add(QueryParameters, "RequestId", value);
+			}
+		}
+
+		public string TaskToken
+		{
+			get
+			{
+				return taskToken;
+			}
+			set	
+			{
+				taskToken = value;
+				DictionaryUtil.Add(QueryParameters, "TaskToken", value);
 			}
 		}
 

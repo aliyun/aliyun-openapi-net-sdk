@@ -32,6 +32,11 @@ namespace Aliyun.Acs.fnf.Model.V20190315
         public ReportTaskSucceededRequest()
             : base("fnf", "2019-03-15", "ReportTaskSucceeded", "fnf", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
