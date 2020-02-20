@@ -30,7 +30,7 @@ namespace Aliyun.Acs.reid.Model.V20190928
     public class DescribeCursorRequest : RpcAcsRequest<DescribeCursorResponse>
     {
         public DescribeCursorRequest()
-            : base("reid", "2019-09-28", "DescribeCursor", "reid", "openAPI")
+            : base("reid", "2019-09-28", "DescribeCursor", "1.0.0", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
