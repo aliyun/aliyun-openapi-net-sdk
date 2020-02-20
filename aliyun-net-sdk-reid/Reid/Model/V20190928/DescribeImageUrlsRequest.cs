@@ -30,7 +30,7 @@ namespace Aliyun.Acs.reid.Model.V20190928
     public class DescribeImageUrlsRequest : RpcAcsRequest<DescribeImageUrlsResponse>
     {
         public DescribeImageUrlsRequest()
-            : base("reid", "2019-09-28", "DescribeImageUrls", "1.0.0", "openAPI")
+            : base("reid", "2019-09-28", "DescribeImageUrls", "reid", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

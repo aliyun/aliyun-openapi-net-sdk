@@ -27,10 +27,10 @@ using Aliyun.Acs.reid.Transform.V20190928;
 
 namespace Aliyun.Acs.reid.Model.V20190928
 {
-    public class DescribeDevicesRequest : RpcAcsRequest<DescribeDevicesResponse>
+    public class ListMaskDetectionResultsRequest : RpcAcsRequest<ListMaskDetectionResultsResponse>
     {
-        public DescribeDevicesRequest()
-            : base("reid", "2019-09-28", "DescribeDevices", "reid", "openAPI")
+        public ListMaskDetectionResultsRequest()
+            : base("reid", "2019-09-28", "ListMaskDetectionResults", "reid", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,7 +39,41 @@ namespace Aliyun.Acs.reid.Model.V20190928
             }
         }
 
+		private long? endTime;
+
+		private long? startTime;
+
 		private long? storeId;
+
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
+			}
+		}
 
 		public long? StoreId
 		{
@@ -54,9 +88,40 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			}
 		}
 
-        public override DescribeDevicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ListMaskDetectionResultsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDevicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListMaskDetectionResultsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

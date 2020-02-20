@@ -30,7 +30,7 @@ namespace Aliyun.Acs.reid.Model.V20190928
     public class PullActionDataRequest : RpcAcsRequest<PullActionDataResponse>
     {
         public PullActionDataRequest()
-            : base("reid", "2019-09-28", "PullActionData", "1.0.0", "openAPI")
+            : base("reid", "2019-09-28", "PullActionData", "reid", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.reid.Model.V20190928
     public class DescribeCustomerFlowByLocationRequest : RpcAcsRequest<DescribeCustomerFlowByLocationResponse>
     {
         public DescribeCustomerFlowByLocationRequest()
-            : base("reid", "2019-09-28", "DescribeCustomerFlowByLocation", "1.0.0", "openAPI")
+            : base("reid", "2019-09-28", "DescribeCustomerFlowByLocation", "reid", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
