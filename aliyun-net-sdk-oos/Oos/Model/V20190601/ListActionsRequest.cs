@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -34,11 +35,24 @@ namespace Aliyun.Acs.oos.Model.V20190601
         {
         }
 
+		private string oOSActionName;
+
 		private string nextToken;
 
 		private int? maxResults;
 
-		private string oOSActionName;
+		public string OOSActionName
+		{
+			get
+			{
+				return oOSActionName;
+			}
+			set	
+			{
+				oOSActionName = value;
+				DictionaryUtil.Add(QueryParameters, "OOSActionName", value);
+			}
+		}
 
 		public string NextToken
 		{
@@ -63,19 +77,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				maxResults = value;
 				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
-			}
-		}
-
-		public string OOSActionName
-		{
-			get
-			{
-				return oOSActionName;
-			}
-			set	
-			{
-				oOSActionName = value;
-				DictionaryUtil.Add(QueryParameters, "OOSActionName", value);
 			}
 		}
 

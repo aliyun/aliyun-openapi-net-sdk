@@ -45,6 +45,8 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			template.ShareType = context.StringValue("CreateTemplate.Template.ShareType");
 			template.TemplateFormat = context.StringValue("CreateTemplate.Template.TemplateFormat");
 			template.TemplateVersion = context.StringValue("CreateTemplate.Template.TemplateVersion");
+			template.HasTrigger = context.BooleanValue("CreateTemplate.Template.HasTrigger");
+			template.Tags = context.StringValue("CreateTemplate.Template.Tags");
 			createTemplateResponse.Template = template;
         
 			return createTemplateResponse;

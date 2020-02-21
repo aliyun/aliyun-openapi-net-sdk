@@ -22,18 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-	public class ListExecutionLogsResponse : AcsResponse
+	public class ListTagResourcesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? maxResults;
-
 		private string nextToken;
 
-		private bool? isTruncated;
-
-		private List<ListExecutionLogs_ExecutionLog> executionLogs;
+		private List<ListTagResources_TagResource> tagResources;
 
 		public string RequestId
 		{
@@ -44,18 +40,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
 			}
 		}
 
@@ -71,86 +55,74 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public bool? IsTruncated
+		public List<ListTagResources_TagResource> TagResources
 		{
 			get
 			{
-				return isTruncated;
+				return tagResources;
 			}
 			set	
 			{
-				isTruncated = value;
+				tagResources = value;
 			}
 		}
 
-		public List<ListExecutionLogs_ExecutionLog> ExecutionLogs
-		{
-			get
-			{
-				return executionLogs;
-			}
-			set	
-			{
-				executionLogs = value;
-			}
-		}
-
-		public class ListExecutionLogs_ExecutionLog
+		public class ListTagResources_TagResource
 		{
 
-			private string timestamp;
+			private string tagKey;
 
-			private string message;
+			private string tagValue;
 
-			private string taskExecutionId;
+			private string resourceId;
 
-			private string logType;
+			private string resourceType;
 
-			public string Timestamp
+			public string TagKey
 			{
 				get
 				{
-					return timestamp;
+					return tagKey;
 				}
 				set	
 				{
-					timestamp = value;
+					tagKey = value;
 				}
 			}
 
-			public string Message
+			public string TagValue
 			{
 				get
 				{
-					return message;
+					return tagValue;
 				}
 				set	
 				{
-					message = value;
+					tagValue = value;
 				}
 			}
 
-			public string TaskExecutionId
+			public string ResourceId
 			{
 				get
 				{
-					return taskExecutionId;
+					return resourceId;
 				}
 				set	
 				{
-					taskExecutionId = value;
+					resourceId = value;
 				}
 			}
 
-			public string LogType
+			public string ResourceType
 			{
 				get
 				{
-					return logType;
+					return resourceType;
 				}
 				set	
 				{
-					logType = value;
+					resourceType = value;
 				}
 			}
 		}

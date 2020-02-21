@@ -28,40 +28,25 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class DeleteTemplateRequest : RpcAcsRequest<DeleteTemplateResponse>
+    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
     {
-        public DeleteTemplateRequest()
-            : base("oos", "2019-06-01", "DeleteTemplate", "oos", "openAPI")
+        public DescribeRegionsRequest()
+            : base("oos", "2019-06-01", "DescribeRegions", "oos", "openAPI")
         {
         }
 
-		private bool? autoDeleteExecutions;
+		private string acceptLanguage;
 
-		private string templateName;
-
-		public bool? AutoDeleteExecutions
+		public string AcceptLanguage
 		{
 			get
 			{
-				return autoDeleteExecutions;
+				return acceptLanguage;
 			}
 			set	
 			{
-				autoDeleteExecutions = value;
-				DictionaryUtil.Add(QueryParameters, "AutoDeleteExecutions", value.ToString());
-			}
-		}
-
-		public string TemplateName
-		{
-			get
-			{
-				return templateName;
-			}
-			set	
-			{
-				templateName = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
+				acceptLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
 			}
 		}
 
@@ -70,9 +55,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override DeleteTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

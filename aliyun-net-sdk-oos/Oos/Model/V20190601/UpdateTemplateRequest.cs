@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -34,22 +35,11 @@ namespace Aliyun.Acs.oos.Model.V20190601
         {
         }
 
-		private string templateName;
-
 		private string content;
 
-		public string TemplateName
-		{
-			get
-			{
-				return templateName;
-			}
-			set	
-			{
-				templateName = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
-			}
-		}
+		private Dictionary<object,object> tags;
+
+		private string templateName;
 
 		public string Content
 		{
@@ -61,6 +51,32 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				content = value;
 				DictionaryUtil.Add(QueryParameters, "Content", value);
+			}
+		}
+
+		public Dictionary<object,object> Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", JsonConvert.SerializeObject(value));
+			}
+		}
+
+		public string TemplateName
+		{
+			get
+			{
+				return templateName;
+			}
+			set	
+			{
+				templateName = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
 			}
 		}
 

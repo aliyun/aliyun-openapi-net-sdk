@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -40,19 +41,25 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string nextToken;
 
-		private string createdDateAfter;
-
-		private int? maxResults;
-
 		private string templateName;
 
 		private string sortOrder;
 
-		private string templateFormat;
-
 		private string shareType;
 
+		private bool? hasTrigger;
+
+		private string createdDateAfter;
+
+		private Dictionary<object,object> tags;
+
+		private int? maxResults;
+
+		private string templateFormat;
+
 		private string sortField;
+
+		private string category;
 
 		public string CreatedDateBefore
 		{
@@ -93,32 +100,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string CreatedDateAfter
-		{
-			get
-			{
-				return createdDateAfter;
-			}
-			set	
-			{
-				createdDateAfter = value;
-				DictionaryUtil.Add(QueryParameters, "CreatedDateAfter", value);
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
-			}
-		}
-
 		public string TemplateName
 		{
 			get
@@ -145,19 +126,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string TemplateFormat
-		{
-			get
-			{
-				return templateFormat;
-			}
-			set	
-			{
-				templateFormat = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateFormat", value);
-			}
-		}
-
 		public string ShareType
 		{
 			get
@@ -171,6 +139,71 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		public bool? HasTrigger
+		{
+			get
+			{
+				return hasTrigger;
+			}
+			set	
+			{
+				hasTrigger = value;
+				DictionaryUtil.Add(QueryParameters, "HasTrigger", value.ToString());
+			}
+		}
+
+		public string CreatedDateAfter
+		{
+			get
+			{
+				return createdDateAfter;
+			}
+			set	
+			{
+				createdDateAfter = value;
+				DictionaryUtil.Add(QueryParameters, "CreatedDateAfter", value);
+			}
+		}
+
+		public Dictionary<object,object> Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", JsonConvert.SerializeObject(value));
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public string TemplateFormat
+		{
+			get
+			{
+				return templateFormat;
+			}
+			set	
+			{
+				templateFormat = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateFormat", value);
+			}
+		}
+
 		public string SortField
 		{
 			get
@@ -181,6 +214,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				sortField = value;
 				DictionaryUtil.Add(QueryParameters, "SortField", value);
+			}
+		}
+
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

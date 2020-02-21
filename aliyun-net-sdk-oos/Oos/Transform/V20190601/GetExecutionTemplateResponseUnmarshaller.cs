@@ -46,6 +46,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			template.ShareType = context.StringValue("GetExecutionTemplate.Template.ShareType");
 			template.TemplateFormat = context.StringValue("GetExecutionTemplate.Template.TemplateFormat");
 			template.TemplateVersion = context.StringValue("GetExecutionTemplate.Template.TemplateVersion");
+			template.Tags = context.StringValue("GetExecutionTemplate.Template.Tags");
 			getExecutionTemplateResponse.Template = template;
         
 			return getExecutionTemplateResponse;

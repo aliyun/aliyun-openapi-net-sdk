@@ -66,6 +66,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string mode;
 
+			private string loopMode;
+
 			private string executedBy;
 
 			private string startDate;
@@ -88,9 +90,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string safetyCheck;
 
+			private bool? isParent;
+
 			private string counters;
 
 			private string ramRole;
+
+			private string tags;
+
+			private string description;
 
 			private List<StartExecution_CurrentTask> currentTasks;
 
@@ -151,6 +159,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					mode = value;
+				}
+			}
+
+			public string LoopMode
+			{
+				get
+				{
+					return loopMode;
+				}
+				set	
+				{
+					loopMode = value;
 				}
 			}
 
@@ -286,6 +306,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			public bool? IsParent
+			{
+				get
+				{
+					return isParent;
+				}
+				set	
+				{
+					isParent = value;
+				}
+			}
+
 			public string Counters
 			{
 				get
@@ -307,6 +339,30 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					ramRole = value;
+				}
+			}
+
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 

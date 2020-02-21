@@ -108,6 +108,10 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string statusMessage;
 
+			private string statusReason;
+
+			private string waitingStatus;
+
 			private string parentExecutionId;
 
 			private string parameters;
@@ -116,11 +120,17 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string safetyCheck;
 
+			private bool? isParent;
+
 			private string ramRole;
 
 			private string counters;
 
-			private bool? isParent;
+			private string category;
+
+			private string tags;
+
+			private string description;
 
 			private List<ListExecutions_CurrentTask> currentTasks;
 
@@ -268,6 +278,30 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			public string StatusReason
+			{
+				get
+				{
+					return statusReason;
+				}
+				set	
+				{
+					statusReason = value;
+				}
+			}
+
+			public string WaitingStatus
+			{
+				get
+				{
+					return waitingStatus;
+				}
+				set	
+				{
+					waitingStatus = value;
+				}
+			}
+
 			public string ParentExecutionId
 			{
 				get
@@ -316,6 +350,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			public bool? IsParent
+			{
+				get
+				{
+					return isParent;
+				}
+				set	
+				{
+					isParent = value;
+				}
+			}
+
 			public string RamRole
 			{
 				get
@@ -340,15 +386,39 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public bool? IsParent
+			public string Category
 			{
 				get
 				{
-					return isParent;
+					return category;
 				}
 				set	
 				{
-					isParent = value;
+					category = value;
+				}
+			}
+
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 

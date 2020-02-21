@@ -34,12 +34,15 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			listExecutionLogsResponse.RequestId = context.StringValue("ListExecutionLogs.RequestId");
 			listExecutionLogsResponse.MaxResults = context.IntegerValue("ListExecutionLogs.MaxResults");
 			listExecutionLogsResponse.NextToken = context.StringValue("ListExecutionLogs.NextToken");
+			listExecutionLogsResponse.IsTruncated = context.BooleanValue("ListExecutionLogs.IsTruncated");
 
 			List<ListExecutionLogsResponse.ListExecutionLogs_ExecutionLog> listExecutionLogsResponse_executionLogs = new List<ListExecutionLogsResponse.ListExecutionLogs_ExecutionLog>();
 			for (int i = 0; i < context.Length("ListExecutionLogs.ExecutionLogs.Length"); i++) {
 				ListExecutionLogsResponse.ListExecutionLogs_ExecutionLog executionLog = new ListExecutionLogsResponse.ListExecutionLogs_ExecutionLog();
 				executionLog.Timestamp = context.StringValue("ListExecutionLogs.ExecutionLogs["+ i +"].Timestamp");
 				executionLog.Message = context.StringValue("ListExecutionLogs.ExecutionLogs["+ i +"].Message");
+				executionLog.TaskExecutionId = context.StringValue("ListExecutionLogs.ExecutionLogs["+ i +"].TaskExecutionId");
+				executionLog.LogType = context.StringValue("ListExecutionLogs.ExecutionLogs["+ i +"].LogType");
 
 				listExecutionLogsResponse_executionLogs.Add(executionLog);
 			}

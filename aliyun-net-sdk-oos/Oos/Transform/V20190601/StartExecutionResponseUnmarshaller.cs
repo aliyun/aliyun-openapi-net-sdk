@@ -39,6 +39,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			execution.TemplateId = context.StringValue("StartExecution.Execution.TemplateId");
 			execution.TemplateVersion = context.StringValue("StartExecution.Execution.TemplateVersion");
 			execution.Mode = context.StringValue("StartExecution.Execution.Mode");
+			execution.LoopMode = context.StringValue("StartExecution.Execution.LoopMode");
 			execution.ExecutedBy = context.StringValue("StartExecution.Execution.ExecutedBy");
 			execution.StartDate = context.StringValue("StartExecution.Execution.StartDate");
 			execution.EndDate = context.StringValue("StartExecution.Execution.EndDate");
@@ -50,8 +51,11 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			execution.Parameters = context.StringValue("StartExecution.Execution.Parameters");
 			execution.Outputs = context.StringValue("StartExecution.Execution.Outputs");
 			execution.SafetyCheck = context.StringValue("StartExecution.Execution.SafetyCheck");
+			execution.IsParent = context.BooleanValue("StartExecution.Execution.IsParent");
 			execution.Counters = context.StringValue("StartExecution.Execution.Counters");
 			execution.RamRole = context.StringValue("StartExecution.Execution.RamRole");
+			execution.Tags = context.StringValue("StartExecution.Execution.Tags");
+			execution.Description = context.StringValue("StartExecution.Execution.Description");
 
 			List<StartExecutionResponse.StartExecution_Execution.StartExecution_CurrentTask> execution_currentTasks = new List<StartExecutionResponse.StartExecution_Execution.StartExecution_CurrentTask>();
 			for (int i = 0; i < context.Length("StartExecution.Execution.CurrentTasks.Length"); i++) {

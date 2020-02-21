@@ -28,29 +28,14 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class DeleteTemplateRequest : RpcAcsRequest<DeleteTemplateResponse>
+    public class ListExecutionRiskyTasksRequest : RpcAcsRequest<ListExecutionRiskyTasksResponse>
     {
-        public DeleteTemplateRequest()
-            : base("oos", "2019-06-01", "DeleteTemplate", "oos", "openAPI")
+        public ListExecutionRiskyTasksRequest()
+            : base("oos", "2019-06-01", "ListExecutionRiskyTasks", "oos", "openAPI")
         {
         }
 
-		private bool? autoDeleteExecutions;
-
 		private string templateName;
-
-		public bool? AutoDeleteExecutions
-		{
-			get
-			{
-				return autoDeleteExecutions;
-			}
-			set	
-			{
-				autoDeleteExecutions = value;
-				DictionaryUtil.Add(QueryParameters, "AutoDeleteExecutions", value.ToString());
-			}
-		}
 
 		public string TemplateName
 		{
@@ -70,9 +55,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override DeleteTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListExecutionRiskyTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListExecutionRiskyTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

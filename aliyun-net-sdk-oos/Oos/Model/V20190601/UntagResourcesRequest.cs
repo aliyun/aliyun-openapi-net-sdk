@@ -28,40 +28,70 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class DeleteTemplateRequest : RpcAcsRequest<DeleteTemplateResponse>
+    public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
-        public DeleteTemplateRequest()
-            : base("oos", "2019-06-01", "DeleteTemplate", "oos", "openAPI")
+        public UntagResourcesRequest()
+            : base("oos", "2019-06-01", "UntagResources", "oos", "openAPI")
         {
         }
 
-		private bool? autoDeleteExecutions;
+		private bool? all;
 
-		private string templateName;
+		private string resourceType;
 
-		public bool? AutoDeleteExecutions
+		private List<object> tagKeys;
+
+		private List<object> resourceIds;
+
+		public bool? All
 		{
 			get
 			{
-				return autoDeleteExecutions;
+				return all;
 			}
 			set	
 			{
-				autoDeleteExecutions = value;
-				DictionaryUtil.Add(QueryParameters, "AutoDeleteExecutions", value.ToString());
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
 			}
 		}
 
-		public string TemplateName
+		public string ResourceType
 		{
 			get
 			{
-				return templateName;
+				return resourceType;
 			}
 			set	
 			{
-				templateName = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public List<object> TagKeys
+		{
+			get
+			{
+				return tagKeys;
+			}
+			set	
+			{
+				tagKeys = value;
+				DictionaryUtil.Add(QueryParameters, "TagKeys", JsonConvert.SerializeObject(value));
+			}
+		}
+
+		public List<object> ResourceIds
+		{
+			get
+			{
+				return resourceIds;
+			}
+			set	
+			{
+				resourceIds = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceIds", JsonConvert.SerializeObject(value));
 			}
 		}
 
@@ -70,9 +100,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override DeleteTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UntagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UntagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

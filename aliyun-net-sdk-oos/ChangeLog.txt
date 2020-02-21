@@ -1,2 +1,4 @@
+2020-02-21 Version 1.1.0
+- Support TAG API.
 2019-07-18 Version 1.0.0
 - OOS C Sharp SDK first release for managing of templates, executions and actions.

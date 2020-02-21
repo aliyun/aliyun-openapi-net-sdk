@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -38,23 +39,13 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private bool? includeChildExecution;
 
-		private string startDateAfter;
-
-		private string startDateBefore;
-
 		private string mode;
 
 		private string executionId;
 
-		private string parentExecutionId;
-
 		private string ramRole;
 
 		private string nextToken;
-
-		private string endDateAfter;
-
-		private int? maxResults;
 
 		private string templateName;
 
@@ -62,7 +53,21 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string sortOrder;
 
+		private string startDateAfter;
+
+		private string startDateBefore;
+
+		private Dictionary<object,object> tags;
+
+		private string parentExecutionId;
+
+		private string endDateAfter;
+
+		private int? maxResults;
+
 		private string sortField;
+
+		private string category;
 
 		private string status;
 
@@ -92,32 +97,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string StartDateAfter
-		{
-			get
-			{
-				return startDateAfter;
-			}
-			set	
-			{
-				startDateAfter = value;
-				DictionaryUtil.Add(QueryParameters, "StartDateAfter", value);
-			}
-		}
-
-		public string StartDateBefore
-		{
-			get
-			{
-				return startDateBefore;
-			}
-			set	
-			{
-				startDateBefore = value;
-				DictionaryUtil.Add(QueryParameters, "StartDateBefore", value);
-			}
-		}
-
 		public string Mode
 		{
 			get
@@ -144,19 +123,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string ParentExecutionId
-		{
-			get
-			{
-				return parentExecutionId;
-			}
-			set	
-			{
-				parentExecutionId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentExecutionId", value);
-			}
-		}
-
 		public string RamRole
 		{
 			get
@@ -180,32 +146,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
-			}
-		}
-
-		public string EndDateAfter
-		{
-			get
-			{
-				return endDateAfter;
-			}
-			set	
-			{
-				endDateAfter = value;
-				DictionaryUtil.Add(QueryParameters, "EndDateAfter", value);
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 
@@ -248,6 +188,84 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		public string StartDateAfter
+		{
+			get
+			{
+				return startDateAfter;
+			}
+			set	
+			{
+				startDateAfter = value;
+				DictionaryUtil.Add(QueryParameters, "StartDateAfter", value);
+			}
+		}
+
+		public string StartDateBefore
+		{
+			get
+			{
+				return startDateBefore;
+			}
+			set	
+			{
+				startDateBefore = value;
+				DictionaryUtil.Add(QueryParameters, "StartDateBefore", value);
+			}
+		}
+
+		public Dictionary<object,object> Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", JsonConvert.SerializeObject(value));
+			}
+		}
+
+		public string ParentExecutionId
+		{
+			get
+			{
+				return parentExecutionId;
+			}
+			set	
+			{
+				parentExecutionId = value;
+				DictionaryUtil.Add(QueryParameters, "ParentExecutionId", value);
+			}
+		}
+
+		public string EndDateAfter
+		{
+			get
+			{
+				return endDateAfter;
+			}
+			set	
+			{
+				endDateAfter = value;
+				DictionaryUtil.Add(QueryParameters, "EndDateAfter", value);
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
 		public string SortField
 		{
 			get
@@ -258,6 +276,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				sortField = value;
 				DictionaryUtil.Add(QueryParameters, "SortField", value);
+			}
+		}
+
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

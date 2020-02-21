@@ -28,40 +28,55 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class DeleteTemplateRequest : RpcAcsRequest<DeleteTemplateResponse>
+    public class ListTagKeysRequest : RpcAcsRequest<ListTagKeysResponse>
     {
-        public DeleteTemplateRequest()
-            : base("oos", "2019-06-01", "DeleteTemplate", "oos", "openAPI")
+        public ListTagKeysRequest()
+            : base("oos", "2019-06-01", "ListTagKeys", "oos", "openAPI")
         {
         }
 
-		private bool? autoDeleteExecutions;
+		private string resourceType;
 
-		private string templateName;
+		private string nextToken;
 
-		public bool? AutoDeleteExecutions
+		private int? maxResults;
+
+		public string ResourceType
 		{
 			get
 			{
-				return autoDeleteExecutions;
+				return resourceType;
 			}
 			set	
 			{
-				autoDeleteExecutions = value;
-				DictionaryUtil.Add(QueryParameters, "AutoDeleteExecutions", value.ToString());
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string TemplateName
+		public string NextToken
 		{
 			get
 			{
-				return templateName;
+				return nextToken;
 			}
 			set	
 			{
-				templateName = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 
@@ -70,9 +85,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override DeleteTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTagKeysResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTagKeysResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

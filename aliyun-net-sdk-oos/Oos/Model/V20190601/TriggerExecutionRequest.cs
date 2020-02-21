@@ -28,40 +28,70 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class DeleteTemplateRequest : RpcAcsRequest<DeleteTemplateResponse>
+    public class TriggerExecutionRequest : RpcAcsRequest<TriggerExecutionResponse>
     {
-        public DeleteTemplateRequest()
-            : base("oos", "2019-06-01", "DeleteTemplate", "oos", "openAPI")
+        public TriggerExecutionRequest()
+            : base("oos", "2019-06-01", "TriggerExecution", "oos", "openAPI")
         {
         }
 
-		private bool? autoDeleteExecutions;
+		private string clientToken;
 
-		private string templateName;
+		private string type;
 
-		public bool? AutoDeleteExecutions
+		private string content;
+
+		private string executionId;
+
+		public string ClientToken
 		{
 			get
 			{
-				return autoDeleteExecutions;
+				return clientToken;
 			}
 			set	
 			{
-				autoDeleteExecutions = value;
-				DictionaryUtil.Add(QueryParameters, "AutoDeleteExecutions", value.ToString());
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public string TemplateName
+		public string Type
 		{
 			get
 			{
-				return templateName;
+				return type;
 			}
 			set	
 			{
-				templateName = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
+			}
+		}
+
+		public string ExecutionId
+		{
+			get
+			{
+				return executionId;
+			}
+			set	
+			{
+				executionId = value;
+				DictionaryUtil.Add(QueryParameters, "ExecutionId", value);
 			}
 		}
 
@@ -70,9 +100,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override DeleteTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TriggerExecutionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TriggerExecutionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

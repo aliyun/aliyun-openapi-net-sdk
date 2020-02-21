@@ -17,47 +17,26 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.oos.Transform;
-using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class ValidateTemplateContentRequest : RpcAcsRequest<ValidateTemplateContentResponse>
-    {
-        public ValidateTemplateContentRequest()
-            : base("oos", "2019-06-01", "ValidateTemplateContent", "oos", "openAPI")
-        {
-        }
+	public class UntagResourcesResponse : AcsResponse
+	{
 
-		private string content;
+		private string requestId;
 
-		public string Content
+		public string RequestId
 		{
 			get
 			{
-				return content;
+				return requestId;
 			}
 			set	
 			{
-				content = value;
-				DictionaryUtil.Add(QueryParameters, "Content", value);
+				requestId = value;
 			}
 		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override ValidateTemplateContentResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return ValidateTemplateContentResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+	}
 }

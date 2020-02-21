@@ -49,8 +49,11 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 				template.ShareType = context.StringValue("ListTemplates.Templates["+ i +"].ShareType");
 				template.TemplateFormat = context.StringValue("ListTemplates.Templates["+ i +"].TemplateFormat");
 				template.TemplateVersion = context.StringValue("ListTemplates.Templates["+ i +"].TemplateVersion");
+				template.HasTrigger = context.BooleanValue("ListTemplates.Templates["+ i +"].HasTrigger");
 				template.TotalExecutionCount = context.IntegerValue("ListTemplates.Templates["+ i +"].TotalExecutionCount");
 				template.Popularity = context.IntegerValue("ListTemplates.Templates["+ i +"].Popularity");
+				template.Tags = context.StringValue("ListTemplates.Templates["+ i +"].Tags");
+				template.Category = context.StringValue("ListTemplates.Templates["+ i +"].Category");
 
 				listTemplatesResponse_templates.Add(template);
 			}

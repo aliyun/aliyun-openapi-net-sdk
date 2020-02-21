@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -34,17 +35,51 @@ namespace Aliyun.Acs.oos.Model.V20190601
         {
         }
 
+		private string clientToken;
+
+		private string description;
+
 		private string mode;
 
 		private string templateVersion;
 
-		private string parentExecutionId;
-
 		private string templateName;
+
+		private string loopMode;
 
 		private string safetyCheck;
 
+		private Dictionary<object,object> tags;
+
+		private string parentExecutionId;
+
 		private string parameters;
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
 
 		public string Mode
 		{
@@ -72,19 +107,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string ParentExecutionId
-		{
-			get
-			{
-				return parentExecutionId;
-			}
-			set	
-			{
-				parentExecutionId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentExecutionId", value);
-			}
-		}
-
 		public string TemplateName
 		{
 			get
@@ -98,6 +120,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		public string LoopMode
+		{
+			get
+			{
+				return loopMode;
+			}
+			set	
+			{
+				loopMode = value;
+				DictionaryUtil.Add(QueryParameters, "LoopMode", value);
+			}
+		}
+
 		public string SafetyCheck
 		{
 			get
@@ -108,6 +143,32 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				safetyCheck = value;
 				DictionaryUtil.Add(QueryParameters, "SafetyCheck", value);
+			}
+		}
+
+		public Dictionary<object,object> Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", JsonConvert.SerializeObject(value));
+			}
+		}
+
+		public string ParentExecutionId
+		{
+			get
+			{
+				return parentExecutionId;
+			}
+			set	
+			{
+				parentExecutionId = value;
+				DictionaryUtil.Add(QueryParameters, "ParentExecutionId", value);
 			}
 		}
 

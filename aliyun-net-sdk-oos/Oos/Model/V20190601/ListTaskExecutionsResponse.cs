@@ -120,6 +120,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string extraData;
 
+			private int? loopBatchNumber;
+
 			public string ExecutionId
 			{
 				get
@@ -333,6 +335,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					extraData = value;
+				}
+			}
+
+			public int? LoopBatchNumber
+			{
+				get
+				{
+					return loopBatchNumber;
+				}
+				set	
+				{
+					loopBatchNumber = value;
 				}
 			}
 		}

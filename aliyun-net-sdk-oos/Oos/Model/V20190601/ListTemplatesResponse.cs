@@ -106,9 +106,15 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string templateVersion;
 
+			private bool? hasTrigger;
+
 			private int? totalExecutionCount;
 
 			private int? popularity;
+
+			private string tags;
+
+			private string category;
 
 			public string TemplateName
 			{
@@ -242,6 +248,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
+			public bool? HasTrigger
+			{
+				get
+				{
+					return hasTrigger;
+				}
+				set	
+				{
+					hasTrigger = value;
+				}
+			}
+
 			public int? TotalExecutionCount
 			{
 				get
@@ -263,6 +281,30 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					popularity = value;
+				}
+			}
+
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
 				}
 			}
 		}

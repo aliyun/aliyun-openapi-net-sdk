@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -34,10 +35,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
         {
         }
 
-		private string startDateAfter;
-
-		private string startDateBefore;
-
 		private string taskName;
 
 		private bool? includeChildTaskExecution;
@@ -48,47 +45,25 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string nextToken;
 
+		private string endDateBefore;
+
+		private string sortOrder;
+
+		private string startDateAfter;
+
+		private string startDateBefore;
+
 		private string endDateAfter;
 
 		private int? maxResults;
 
-		private string endDateBefore;
-
 		private string taskExecutionId;
-
-		private string sortOrder;
 
 		private string sortField;
 
 		private string taskAction;
 
 		private string status;
-
-		public string StartDateAfter
-		{
-			get
-			{
-				return startDateAfter;
-			}
-			set	
-			{
-				startDateAfter = value;
-				DictionaryUtil.Add(QueryParameters, "StartDateAfter", value);
-			}
-		}
-
-		public string StartDateBefore
-		{
-			get
-			{
-				return startDateBefore;
-			}
-			set	
-			{
-				startDateBefore = value;
-				DictionaryUtil.Add(QueryParameters, "StartDateBefore", value);
-			}
-		}
 
 		public string TaskName
 		{
@@ -155,6 +130,58 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		public string EndDateBefore
+		{
+			get
+			{
+				return endDateBefore;
+			}
+			set	
+			{
+				endDateBefore = value;
+				DictionaryUtil.Add(QueryParameters, "EndDateBefore", value);
+			}
+		}
+
+		public string SortOrder
+		{
+			get
+			{
+				return sortOrder;
+			}
+			set	
+			{
+				sortOrder = value;
+				DictionaryUtil.Add(QueryParameters, "SortOrder", value);
+			}
+		}
+
+		public string StartDateAfter
+		{
+			get
+			{
+				return startDateAfter;
+			}
+			set	
+			{
+				startDateAfter = value;
+				DictionaryUtil.Add(QueryParameters, "StartDateAfter", value);
+			}
+		}
+
+		public string StartDateBefore
+		{
+			get
+			{
+				return startDateBefore;
+			}
+			set	
+			{
+				startDateBefore = value;
+				DictionaryUtil.Add(QueryParameters, "StartDateBefore", value);
+			}
+		}
+
 		public string EndDateAfter
 		{
 			get
@@ -181,19 +208,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string EndDateBefore
-		{
-			get
-			{
-				return endDateBefore;
-			}
-			set	
-			{
-				endDateBefore = value;
-				DictionaryUtil.Add(QueryParameters, "EndDateBefore", value);
-			}
-		}
-
 		public string TaskExecutionId
 		{
 			get
@@ -204,19 +218,6 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				taskExecutionId = value;
 				DictionaryUtil.Add(QueryParameters, "TaskExecutionId", value);
-			}
-		}
-
-		public string SortOrder
-		{
-			get
-			{
-				return sortOrder;
-			}
-			set	
-			{
-				sortOrder = value;
-				DictionaryUtil.Add(QueryParameters, "SortOrder", value);
 			}
 		}
 

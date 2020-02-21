@@ -56,6 +56,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 				taskExecution.LoopItem = context.StringValue("ListTaskExecutions.TaskExecutions["+ i +"].LoopItem");
 				taskExecution.Loop = context.StringValue("ListTaskExecutions.TaskExecutions["+ i +"].Loop");
 				taskExecution.ExtraData = context.StringValue("ListTaskExecutions.TaskExecutions["+ i +"].ExtraData");
+				taskExecution.LoopBatchNumber = context.IntegerValue("ListTaskExecutions.TaskExecutions["+ i +"].LoopBatchNumber");
 
 				listTaskExecutionsResponse_taskExecutions.Add(taskExecution);
 			}

@@ -50,13 +50,18 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 				execution.UpdateDate = context.StringValue("ListExecutions.Executions["+ i +"].UpdateDate");
 				execution.Status = context.StringValue("ListExecutions.Executions["+ i +"].Status");
 				execution.StatusMessage = context.StringValue("ListExecutions.Executions["+ i +"].StatusMessage");
+				execution.StatusReason = context.StringValue("ListExecutions.Executions["+ i +"].StatusReason");
+				execution.WaitingStatus = context.StringValue("ListExecutions.Executions["+ i +"].WaitingStatus");
 				execution.ParentExecutionId = context.StringValue("ListExecutions.Executions["+ i +"].ParentExecutionId");
 				execution.Parameters = context.StringValue("ListExecutions.Executions["+ i +"].Parameters");
 				execution.Outputs = context.StringValue("ListExecutions.Executions["+ i +"].Outputs");
 				execution.SafetyCheck = context.StringValue("ListExecutions.Executions["+ i +"].SafetyCheck");
+				execution.IsParent = context.BooleanValue("ListExecutions.Executions["+ i +"].IsParent");
 				execution.RamRole = context.StringValue("ListExecutions.Executions["+ i +"].RamRole");
 				execution.Counters = context.StringValue("ListExecutions.Executions["+ i +"].Counters");
-				execution.IsParent = context.BooleanValue("ListExecutions.Executions["+ i +"].IsParent");
+				execution.Category = context.StringValue("ListExecutions.Executions["+ i +"].Category");
+				execution.Tags = context.StringValue("ListExecutions.Executions["+ i +"].Tags");
+				execution.Description = context.StringValue("ListExecutions.Executions["+ i +"].Description");
 
 				List<ListExecutionsResponse.ListExecutions_Execution.ListExecutions_CurrentTask> execution_currentTasks = new List<ListExecutionsResponse.ListExecutions_Execution.ListExecutions_CurrentTask>();
 				for (int j = 0; j < context.Length("ListExecutions.Executions["+ i +"].CurrentTasks.Length"); j++) {

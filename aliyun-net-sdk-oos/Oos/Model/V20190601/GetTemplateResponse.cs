@@ -92,6 +92,10 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string templateVersion;
 
+			private bool? hasTrigger;
+
+			private string tags;
+
 			public string TemplateName
 			{
 				get
@@ -221,6 +225,30 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					templateVersion = value;
+				}
+			}
+
+			public bool? HasTrigger
+			{
+				get
+				{
+					return hasTrigger;
+				}
+				set	
+				{
+					hasTrigger = value;
+				}
+			}
+
+			public string Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
 				}
 			}
 		}

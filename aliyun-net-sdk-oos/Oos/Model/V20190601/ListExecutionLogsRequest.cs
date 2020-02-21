@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -36,9 +37,13 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string executionId;
 
+		private string logType;
+
 		private string nextToken;
 
 		private int? maxResults;
+
+		private string taskExecutionId;
 
 		public string ExecutionId
 		{
@@ -50,6 +55,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				executionId = value;
 				DictionaryUtil.Add(QueryParameters, "ExecutionId", value);
+			}
+		}
+
+		public string LogType
+		{
+			get
+			{
+				return logType;
+			}
+			set	
+			{
+				logType = value;
+				DictionaryUtil.Add(QueryParameters, "LogType", value);
 			}
 		}
 
@@ -76,6 +94,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				maxResults = value;
 				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public string TaskExecutionId
+		{
+			get
+			{
+				return taskExecutionId;
+			}
+			set	
+			{
+				taskExecutionId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskExecutionId", value);
 			}
 		}
 

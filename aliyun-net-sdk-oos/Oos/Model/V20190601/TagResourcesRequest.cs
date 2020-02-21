@@ -28,40 +28,55 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class DeleteTemplateRequest : RpcAcsRequest<DeleteTemplateResponse>
+    public class TagResourcesRequest : RpcAcsRequest<TagResourcesResponse>
     {
-        public DeleteTemplateRequest()
-            : base("oos", "2019-06-01", "DeleteTemplate", "oos", "openAPI")
+        public TagResourcesRequest()
+            : base("oos", "2019-06-01", "TagResources", "oos", "openAPI")
         {
         }
 
-		private bool? autoDeleteExecutions;
+		private string resourceType;
 
-		private string templateName;
+		private Dictionary<object,object> tags;
 
-		public bool? AutoDeleteExecutions
+		private List<object> resourceIds;
+
+		public string ResourceType
 		{
 			get
 			{
-				return autoDeleteExecutions;
+				return resourceType;
 			}
 			set	
 			{
-				autoDeleteExecutions = value;
-				DictionaryUtil.Add(QueryParameters, "AutoDeleteExecutions", value.ToString());
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string TemplateName
+		public Dictionary<object,object> Tags
 		{
 			get
 			{
-				return templateName;
+				return tags;
 			}
 			set	
 			{
-				templateName = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", JsonConvert.SerializeObject(value));
+			}
+		}
+
+		public List<object> ResourceIds
+		{
+			get
+			{
+				return resourceIds;
+			}
+			set	
+			{
+				resourceIds = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceIds", JsonConvert.SerializeObject(value));
 			}
 		}
 
@@ -70,9 +85,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override DeleteTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

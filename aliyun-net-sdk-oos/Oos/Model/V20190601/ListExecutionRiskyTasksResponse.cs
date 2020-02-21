@@ -22,18 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-	public class ListExecutionLogsResponse : AcsResponse
+	public class ListExecutionRiskyTasksResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? maxResults;
-
-		private string nextToken;
-
-		private bool? isTruncated;
-
-		private List<ListExecutionLogs_ExecutionLog> executionLogs;
+		private List<ListExecutionRiskyTasks_RiskyTask> riskyTasks;
 
 		public string RequestId
 		{
@@ -47,110 +41,74 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public int? MaxResults
+		public List<ListExecutionRiskyTasks_RiskyTask> RiskyTasks
 		{
 			get
 			{
-				return maxResults;
+				return riskyTasks;
 			}
 			set	
 			{
-				maxResults = value;
+				riskyTasks = value;
 			}
 		}
 
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
-		public bool? IsTruncated
-		{
-			get
-			{
-				return isTruncated;
-			}
-			set	
-			{
-				isTruncated = value;
-			}
-		}
-
-		public List<ListExecutionLogs_ExecutionLog> ExecutionLogs
-		{
-			get
-			{
-				return executionLogs;
-			}
-			set	
-			{
-				executionLogs = value;
-			}
-		}
-
-		public class ListExecutionLogs_ExecutionLog
+		public class ListExecutionRiskyTasks_RiskyTask
 		{
 
-			private string timestamp;
+			private string service;
 
-			private string message;
+			private string aPI;
 
-			private string taskExecutionId;
+			private List<string> task;
 
-			private string logType;
+			private List<string> template;
 
-			public string Timestamp
+			public string Service
 			{
 				get
 				{
-					return timestamp;
+					return service;
 				}
 				set	
 				{
-					timestamp = value;
+					service = value;
 				}
 			}
 
-			public string Message
+			public string API
 			{
 				get
 				{
-					return message;
+					return aPI;
 				}
 				set	
 				{
-					message = value;
+					aPI = value;
 				}
 			}
 
-			public string TaskExecutionId
+			public List<string> Task
 			{
 				get
 				{
-					return taskExecutionId;
+					return task;
 				}
 				set	
 				{
-					taskExecutionId = value;
+					task = value;
 				}
 			}
 
-			public string LogType
+			public List<string> Template
 			{
 				get
 				{
-					return logType;
+					return template;
 				}
 				set	
 				{
-					logType = value;
+					template = value;
 				}
 			}
 		}

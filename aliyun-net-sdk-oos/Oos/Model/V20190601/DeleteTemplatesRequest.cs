@@ -28,16 +28,29 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class DeleteTemplateRequest : RpcAcsRequest<DeleteTemplateResponse>
+    public class DeleteTemplatesRequest : RpcAcsRequest<DeleteTemplatesResponse>
     {
-        public DeleteTemplateRequest()
-            : base("oos", "2019-06-01", "DeleteTemplate", "oos", "openAPI")
+        public DeleteTemplatesRequest()
+            : base("oos", "2019-06-01", "DeleteTemplates", "oos", "openAPI")
         {
         }
 
+		private string templateNames;
+
 		private bool? autoDeleteExecutions;
 
-		private string templateName;
+		public string TemplateNames
+		{
+			get
+			{
+				return templateNames;
+			}
+			set	
+			{
+				templateNames = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateNames", value);
+			}
+		}
 
 		public bool? AutoDeleteExecutions
 		{
@@ -52,27 +65,14 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string TemplateName
-		{
-			get
-			{
-				return templateName;
-			}
-			set	
-			{
-				templateName = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DeleteTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteTemplatesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteTemplatesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

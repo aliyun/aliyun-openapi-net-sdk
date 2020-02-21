@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -34,17 +35,34 @@ namespace Aliyun.Acs.oos.Model.V20190601
         {
         }
 
+		private string taskName;
+
 		private string executionId;
+
+		private string notifyType;
 
 		private string executionStatus;
 
 		private string notifyNote;
 
-		private string taskName;
+		private string loopItem;
 
-		private string notifyType;
+		private string taskExecutionId;
 
 		private string parameters;
+
+		public string TaskName
+		{
+			get
+			{
+				return taskName;
+			}
+			set	
+			{
+				taskName = value;
+				DictionaryUtil.Add(QueryParameters, "TaskName", value);
+			}
+		}
 
 		public string ExecutionId
 		{
@@ -56,6 +74,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				executionId = value;
 				DictionaryUtil.Add(QueryParameters, "ExecutionId", value);
+			}
+		}
+
+		public string NotifyType
+		{
+			get
+			{
+				return notifyType;
+			}
+			set	
+			{
+				notifyType = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyType", value);
 			}
 		}
 
@@ -85,29 +116,29 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string TaskName
+		public string LoopItem
 		{
 			get
 			{
-				return taskName;
+				return loopItem;
 			}
 			set	
 			{
-				taskName = value;
-				DictionaryUtil.Add(QueryParameters, "TaskName", value);
+				loopItem = value;
+				DictionaryUtil.Add(QueryParameters, "LoopItem", value);
 			}
 		}
 
-		public string NotifyType
+		public string TaskExecutionId
 		{
 			get
 			{
-				return notifyType;
+				return taskExecutionId;
 			}
 			set	
 			{
-				notifyType = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyType", value);
+				taskExecutionId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskExecutionId", value);
 			}
 		}
 
