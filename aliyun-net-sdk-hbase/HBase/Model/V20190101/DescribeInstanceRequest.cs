@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.HBase;
 using Aliyun.Acs.HBase.Transform;
 using Aliyun.Acs.HBase.Transform.V20190101;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.HBase.Model.V20190101
     public class DescribeInstanceRequest : RpcAcsRequest<DescribeInstanceResponse>
     {
         public DescribeInstanceRequest()
-            : base("HBase", "2019-01-01", "DescribeInstance", "hbase", "openAPI")
+            : base("HBase", "2019-01-01", "DescribeInstance")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

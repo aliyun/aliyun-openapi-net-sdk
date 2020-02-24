@@ -62,6 +62,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 			describeInstanceResponse.MaintainEndTime = context.StringValue("DescribeInstance.MaintainEndTime");
 			describeInstanceResponse.CreatedTimeUTC = context.StringValue("DescribeInstance.CreatedTimeUTC");
 			describeInstanceResponse.ExpireTimeUTC = context.StringValue("DescribeInstance.ExpireTimeUTC");
+			describeInstanceResponse.IsLatestVersion = context.BooleanValue("DescribeInstance.IsLatestVersion");
+			describeInstanceResponse.IsMultiModel = context.BooleanValue("DescribeInstance.IsMultiModel");
+			describeInstanceResponse.ClusterType = context.StringValue("DescribeInstance.ClusterType");
+			describeInstanceResponse.ClusterId = context.StringValue("DescribeInstance.ClusterId");
+			describeInstanceResponse.ClusterName = context.StringValue("DescribeInstance.ClusterName");
+			describeInstanceResponse.IsDeletionProtection = context.BooleanValue("DescribeInstance.IsDeletionProtection");
 
 			List<DescribeInstanceResponse.DescribeInstance_Tag> describeInstanceResponse_tags = new List<DescribeInstanceResponse.DescribeInstance_Tag>();
 			for (int i = 0; i < context.Length("DescribeInstance.Tags.Length"); i++) {

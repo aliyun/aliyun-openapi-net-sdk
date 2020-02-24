@@ -152,6 +152,12 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 			private string expireTimeUTC;
 
+			private string clusterId;
+
+			private string clusterName;
+
+			private bool? isDeletionProtection;
+
 			private List<DescribeInstances_Tag> tags;
 
 			public string InstanceId
@@ -475,6 +481,42 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				set	
 				{
 					expireTimeUTC = value;
+				}
+			}
+
+			public string ClusterId
+			{
+				get
+				{
+					return clusterId;
+				}
+				set	
+				{
+					clusterId = value;
+				}
+			}
+
+			public string ClusterName
+			{
+				get
+				{
+					return clusterName;
+				}
+				set	
+				{
+					clusterName = value;
+				}
+			}
+
+			public bool? IsDeletionProtection
+			{
+				get
+				{
+					return isDeletionProtection;
+				}
+				set	
+				{
+					isDeletionProtection = value;
 				}
 			}
 

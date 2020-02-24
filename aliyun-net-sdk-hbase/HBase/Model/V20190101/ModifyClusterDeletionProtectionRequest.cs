@@ -28,10 +28,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class ListTagsRequest : RpcAcsRequest<ListTagsResponse>
+    public class ModifyClusterDeletionProtectionRequest : RpcAcsRequest<ModifyClusterDeletionProtectionResponse>
     {
-        public ListTagsRequest()
-            : base("HBase", "2019-01-01", "ListTags")
+        public ModifyClusterDeletionProtectionRequest()
+            : base("HBase", "2019-01-01", "ModifyClusterDeletionProtection")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +40,39 @@ namespace Aliyun.Acs.HBase.Model.V20190101
             }
         }
 
-        public override ListTagsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		private bool? protection;
+
+		private string clusterId;
+
+		public bool? Protection
+		{
+			get
+			{
+				return protection;
+			}
+			set	
+			{
+				protection = value;
+				DictionaryUtil.Add(QueryParameters, "Protection", value.ToString());
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+        public override ModifyClusterDeletionProtectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyClusterDeletionProtectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -87,6 +87,18 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string expireTimeUTC;
 
+		private bool? isLatestVersion;
+
+		private bool? isMultiModel;
+
+		private string clusterType;
+
+		private string clusterId;
+
+		private string clusterName;
+
+		private bool? isDeletionProtection;
+
 		private List<DescribeInstance_Tag> tags;
 
 		public string RequestId
@@ -458,6 +470,78 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				expireTimeUTC = value;
+			}
+		}
+
+		public bool? IsLatestVersion
+		{
+			get
+			{
+				return isLatestVersion;
+			}
+			set	
+			{
+				isLatestVersion = value;
+			}
+		}
+
+		public bool? IsMultiModel
+		{
+			get
+			{
+				return isMultiModel;
+			}
+			set	
+			{
+				isMultiModel = value;
+			}
+		}
+
+		public string ClusterType
+		{
+			get
+			{
+				return clusterType;
+			}
+			set	
+			{
+				clusterType = value;
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+			}
+		}
+
+		public string ClusterName
+		{
+			get
+			{
+				return clusterName;
+			}
+			set	
+			{
+				clusterName = value;
+			}
+		}
+
+		public bool? IsDeletionProtection
+		{
+			get
+			{
+				return isDeletionProtection;
+			}
+			set	
+			{
+				isDeletionProtection = value;
 			}
 		}
 

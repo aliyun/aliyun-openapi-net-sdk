@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.HBase;
 using Aliyun.Acs.HBase.Transform;
 using Aliyun.Acs.HBase.Transform.V20190101;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.HBase.Model.V20190101
     public class QueryXpackRelateDBRequest : RpcAcsRequest<QueryXpackRelateDBResponse>
     {
         public QueryXpackRelateDBRequest()
-            : base("HBase", "2019-01-01", "QueryXpackRelateDB", "hbase", "openAPI")
+            : base("HBase", "2019-01-01", "QueryXpackRelateDB")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,9 +40,24 @@ namespace Aliyun.Acs.HBase.Model.V20190101
             }
         }
 
+		private bool? hasSingleNode;
+
 		private string clusterId;
 
 		private string relateDbType;
+
+		public bool? HasSingleNode
+		{
+			get
+			{
+				return hasSingleNode;
+			}
+			set	
+			{
+				hasSingleNode = value;
+				DictionaryUtil.Add(QueryParameters, "HasSingleNode", value.ToString());
+			}
+		}
 
 		public string ClusterId
 		{

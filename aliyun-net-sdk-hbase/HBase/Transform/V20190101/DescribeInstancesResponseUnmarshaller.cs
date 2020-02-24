@@ -66,6 +66,9 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 				instance.ClusterType = context.StringValue("DescribeInstances.Instances["+ i +"].ClusterType");
 				instance.CreatedTimeUTC = context.StringValue("DescribeInstances.Instances["+ i +"].CreatedTimeUTC");
 				instance.ExpireTimeUTC = context.StringValue("DescribeInstances.Instances["+ i +"].ExpireTimeUTC");
+				instance.ClusterId = context.StringValue("DescribeInstances.Instances["+ i +"].ClusterId");
+				instance.ClusterName = context.StringValue("DescribeInstances.Instances["+ i +"].ClusterName");
+				instance.IsDeletionProtection = context.BooleanValue("DescribeInstances.Instances["+ i +"].IsDeletionProtection");
 
 				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag> instance_tags = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].Tags.Length"); j++) {
