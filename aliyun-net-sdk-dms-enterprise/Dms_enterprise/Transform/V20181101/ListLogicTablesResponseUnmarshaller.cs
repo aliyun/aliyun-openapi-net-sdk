@@ -1,0 +1,69 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using System;
+using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.dms_enterprise.Model.V20181101;
+
+namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
+{
+    public class ListLogicTablesResponseUnmarshaller
+    {
+        public static ListLogicTablesResponse Unmarshall(UnmarshallerContext context)
+        {
+			ListLogicTablesResponse listLogicTablesResponse = new ListLogicTablesResponse();
+
+			listLogicTablesResponse.HttpResponse = context.HttpResponse;
+			listLogicTablesResponse.RequestId = context.StringValue("ListLogicTables.RequestId");
+			listLogicTablesResponse.Success = context.BooleanValue("ListLogicTables.Success");
+			listLogicTablesResponse.ErrorMessage = context.StringValue("ListLogicTables.ErrorMessage");
+			listLogicTablesResponse.ErrorCode = context.StringValue("ListLogicTables.ErrorCode");
+			listLogicTablesResponse.TotalCount = context.LongValue("ListLogicTables.TotalCount");
+
+			List<ListLogicTablesResponse.ListLogicTables_LogicTable> listLogicTablesResponse_logicTableList = new List<ListLogicTablesResponse.ListLogicTables_LogicTable>();
+			for (int i = 0; i < context.Length("ListLogicTables.LogicTableList.Length"); i++) {
+				ListLogicTablesResponse.ListLogicTables_LogicTable logicTable = new ListLogicTablesResponse.ListLogicTables_LogicTable();
+				logicTable.TableId = context.StringValue("ListLogicTables.LogicTableList["+ i +"].TableId");
+				logicTable.DatabaseId = context.StringValue("ListLogicTables.LogicTableList["+ i +"].DatabaseId");
+				logicTable.TableName = context.StringValue("ListLogicTables.LogicTableList["+ i +"].TableName");
+				logicTable.Logic = context.BooleanValue("ListLogicTables.LogicTableList["+ i +"].Logic");
+				logicTable.TableExpr = context.StringValue("ListLogicTables.LogicTableList["+ i +"].TableExpr");
+				logicTable.TableCount = context.StringValue("ListLogicTables.LogicTableList["+ i +"].TableCount");
+
+				List<string> logicTable_ownerIdList = new List<string>();
+				for (int j = 0; j < context.Length("ListLogicTables.LogicTableList["+ i +"].OwnerIdList.Length"); j++) {
+					logicTable_ownerIdList.Add(context.StringValue("ListLogicTables.LogicTableList["+ i +"].OwnerIdList["+ j +"]"));
+				}
+				logicTable.OwnerIdList = logicTable_ownerIdList;
+
+				List<string> logicTable_ownerNameList = new List<string>();
+				for (int j = 0; j < context.Length("ListLogicTables.LogicTableList["+ i +"].OwnerNameList.Length"); j++) {
+					logicTable_ownerNameList.Add(context.StringValue("ListLogicTables.LogicTableList["+ i +"].OwnerNameList["+ j +"]"));
+				}
+				logicTable.OwnerNameList = logicTable_ownerNameList;
+
+				listLogicTablesResponse_logicTableList.Add(logicTable);
+			}
+			listLogicTablesResponse.LogicTableList = listLogicTablesResponse_logicTableList;
+        
+			return listLogicTablesResponse;
+        }
+    }
+}

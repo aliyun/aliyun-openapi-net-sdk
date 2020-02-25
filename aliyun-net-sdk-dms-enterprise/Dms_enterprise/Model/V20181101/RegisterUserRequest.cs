@@ -16,21 +16,29 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
     public class RegisterUserRequest : RpcAcsRequest<RegisterUserResponse>
     {
         public RegisterUserRequest()
-            : base("dms_enterprise", "2018-11-01", "RegisterUser", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "RegisterUser")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string roleNames;
@@ -38,6 +46,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		private long? uid;
 
 		private string userNick;
+
+		private string mobile;
 
 		private long? tid;
 
@@ -80,6 +90,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
+		public string Mobile
+		{
+			get
+			{
+				return mobile;
+			}
+			set	
+			{
+				mobile = value;
+				DictionaryUtil.Add(QueryParameters, "Mobile", value);
+			}
+		}
+
 		public long? Tid
 		{
 			get
@@ -93,7 +116,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-        public override RegisterUserResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override RegisterUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return RegisterUserResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

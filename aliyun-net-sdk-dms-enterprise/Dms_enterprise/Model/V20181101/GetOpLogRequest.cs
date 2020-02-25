@@ -16,21 +16,29 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+using Newtonsoft.Json;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
     public class GetOpLogRequest : RpcAcsRequest<GetOpLogResponse>
     {
         public GetOpLogRequest()
-            : base("dms_enterprise", "2018-11-01", "GetOpLog", "dmsenterprise", "openAPI")
+            : base("dms-enterprise", "2018-11-01", "GetOpLog")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string module;
@@ -123,7 +131,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-        public override GetOpLogResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetOpLogResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetOpLogResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
