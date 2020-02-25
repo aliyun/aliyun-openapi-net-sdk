@@ -28,10 +28,10 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class ModifyBackupPlanNameRequest : RpcAcsRequest<ModifyBackupPlanNameResponse>
+    public class DescribeBackupSetDownloadTaskListRequest : RpcAcsRequest<DescribeBackupSetDownloadTaskListResponse>
     {
-        public ModifyBackupPlanNameRequest()
-            : base("Dbs", "2019-03-06", "ModifyBackupPlanName")
+        public DescribeBackupSetDownloadTaskListRequest()
+            : base("Dbs", "2019-03-06", "DescribeBackupSetDownloadTaskList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
+		private string backupSetDownloadTaskId;
+
 		private string backupPlanId;
+
+		private int? pageNum;
 
 		private string ownerId;
 
-		private string backupPlanName;
+		private int? pageSize;
 
 		public string ClientToken
 		{
@@ -58,6 +62,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string BackupSetDownloadTaskId
+		{
+			get
+			{
+				return backupSetDownloadTaskId;
+			}
+			set	
+			{
+				backupSetDownloadTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetDownloadTaskId", value);
 			}
 		}
 
@@ -74,6 +91,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
 		public string OwnerId
 		{
 			get
@@ -87,22 +117,22 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string BackupPlanName
+		public int? PageSize
 		{
 			get
 			{
-				return backupPlanName;
+				return pageSize;
 			}
 			set	
 			{
-				backupPlanName = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPlanName", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-        public override ModifyBackupPlanNameResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeBackupSetDownloadTaskListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyBackupPlanNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeBackupSetDownloadTaskListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

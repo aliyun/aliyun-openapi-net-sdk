@@ -28,10 +28,10 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class ModifyBackupPlanNameRequest : RpcAcsRequest<ModifyBackupPlanNameResponse>
+    public class ModifyBackupSetDownloadRulesRequest : RpcAcsRequest<ModifyBackupSetDownloadRulesResponse>
     {
-        public ModifyBackupPlanNameRequest()
-            : base("Dbs", "2019-03-06", "ModifyBackupPlanName")
+        public ModifyBackupSetDownloadRulesRequest()
+            : base("Dbs", "2019-03-06", "ModifyBackupSetDownloadRules")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,13 +40,49 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
             }
         }
 
+		private string fullDataFormat;
+
+		private long? backupGatewayId;
+
 		private string clientToken;
+
+		private string backupSetDownloadTargetType;
 
 		private string backupPlanId;
 
 		private string ownerId;
 
-		private string backupPlanName;
+		private bool? openAutoDownload;
+
+		private string incrementDataFormat;
+
+		private string backupSetDownloadDir;
+
+		public string FullDataFormat
+		{
+			get
+			{
+				return fullDataFormat;
+			}
+			set	
+			{
+				fullDataFormat = value;
+				DictionaryUtil.Add(QueryParameters, "FullDataFormat", value);
+			}
+		}
+
+		public long? BackupGatewayId
+		{
+			get
+			{
+				return backupGatewayId;
+			}
+			set	
+			{
+				backupGatewayId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupGatewayId", value.ToString());
+			}
+		}
 
 		public string ClientToken
 		{
@@ -58,6 +94,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string BackupSetDownloadTargetType
+		{
+			get
+			{
+				return backupSetDownloadTargetType;
+			}
+			set	
+			{
+				backupSetDownloadTargetType = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetDownloadTargetType", value);
 			}
 		}
 
@@ -87,22 +136,48 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string BackupPlanName
+		public bool? OpenAutoDownload
 		{
 			get
 			{
-				return backupPlanName;
+				return openAutoDownload;
 			}
 			set	
 			{
-				backupPlanName = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPlanName", value);
+				openAutoDownload = value;
+				DictionaryUtil.Add(QueryParameters, "OpenAutoDownload", value.ToString());
 			}
 		}
 
-        public override ModifyBackupPlanNameResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string IncrementDataFormat
+		{
+			get
+			{
+				return incrementDataFormat;
+			}
+			set	
+			{
+				incrementDataFormat = value;
+				DictionaryUtil.Add(QueryParameters, "IncrementDataFormat", value);
+			}
+		}
+
+		public string BackupSetDownloadDir
+		{
+			get
+			{
+				return backupSetDownloadDir;
+			}
+			set	
+			{
+				backupSetDownloadDir = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetDownloadDir", value);
+			}
+		}
+
+        public override ModifyBackupSetDownloadRulesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyBackupPlanNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyBackupSetDownloadRulesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

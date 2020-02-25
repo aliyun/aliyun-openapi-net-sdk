@@ -28,10 +28,10 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class ModifyBackupPlanNameRequest : RpcAcsRequest<ModifyBackupPlanNameResponse>
+    public class StartTaskRequest : RpcAcsRequest<StartTaskResponse>
     {
-        public ModifyBackupPlanNameRequest()
-            : base("Dbs", "2019-03-06", "ModifyBackupPlanName")
+        public StartTaskRequest()
+            : base("Dbs", "2019-03-06", "StartTask")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
-		private string backupPlanId;
-
 		private string ownerId;
 
-		private string backupPlanName;
+		private string taskId;
 
 		public string ClientToken
 		{
@@ -58,19 +56,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string BackupPlanId
-		{
-			get
-			{
-				return backupPlanId;
-			}
-			set	
-			{
-				backupPlanId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPlanId", value);
 			}
 		}
 
@@ -87,22 +72,22 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string BackupPlanName
+		public string TaskId
 		{
 			get
 			{
-				return backupPlanName;
+				return taskId;
 			}
 			set	
 			{
-				backupPlanName = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPlanName", value);
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
-        public override ModifyBackupPlanNameResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override StartTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyBackupPlanNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StartTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

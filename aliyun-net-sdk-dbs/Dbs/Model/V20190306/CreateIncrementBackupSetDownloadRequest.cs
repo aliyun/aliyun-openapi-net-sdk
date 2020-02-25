@@ -28,10 +28,10 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class ModifyBackupPlanNameRequest : RpcAcsRequest<ModifyBackupPlanNameResponse>
+    public class CreateIncrementBackupSetDownloadRequest : RpcAcsRequest<CreateIncrementBackupSetDownloadResponse>
     {
-        public ModifyBackupPlanNameRequest()
-            : base("Dbs", "2019-03-06", "ModifyBackupPlanName")
+        public CreateIncrementBackupSetDownloadRequest()
+            : base("Dbs", "2019-03-06", "CreateIncrementBackupSetDownload")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,13 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
-		private string backupPlanId;
+		private string backupSetName;
+
+		private string backupSetId;
 
 		private string ownerId;
 
-		private string backupPlanName;
+		private string backupSetDataFormat;
 
 		public string ClientToken
 		{
@@ -61,16 +63,29 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string BackupPlanId
+		public string BackupSetName
 		{
 			get
 			{
-				return backupPlanId;
+				return backupSetName;
 			}
 			set	
 			{
-				backupPlanId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPlanId", value);
+				backupSetName = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetName", value);
+			}
+		}
+
+		public string BackupSetId
+		{
+			get
+			{
+				return backupSetId;
+			}
+			set	
+			{
+				backupSetId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetId", value);
 			}
 		}
 
@@ -87,22 +102,22 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string BackupPlanName
+		public string BackupSetDataFormat
 		{
 			get
 			{
-				return backupPlanName;
+				return backupSetDataFormat;
 			}
 			set	
 			{
-				backupPlanName = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPlanName", value);
+				backupSetDataFormat = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetDataFormat", value);
 			}
 		}
 
-        public override ModifyBackupPlanNameResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateIncrementBackupSetDownloadResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyBackupPlanNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateIncrementBackupSetDownloadResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
