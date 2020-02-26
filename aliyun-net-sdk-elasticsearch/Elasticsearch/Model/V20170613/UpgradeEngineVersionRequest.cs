@@ -27,21 +27,23 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class UpdateAdvancedSettingRequest : RoaAcsRequest<UpdateAdvancedSettingResponse>
+    public class UpgradeEngineVersionRequest : RoaAcsRequest<UpgradeEngineVersionResponse>
     {
-        public UpdateAdvancedSettingRequest()
-            : base("elasticsearch", "2017-06-13", "UpdateAdvancedSetting", "elasticsearch", "openAPI")
+        public UpgradeEngineVersionRequest()
+            : base("elasticsearch", "2017-06-13", "UpgradeEngineVersion", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/actions/update-advanced-setting";
+			UriPattern = "/openapi/instances/[InstanceId]/actions/upgrade-version";
 			Method = MethodType.POST;
         }
 
 		private string instanceId;
+
+		private bool? dryRun;
 
 		private string clientToken;
 
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				instanceId = value;
 				DictionaryUtil.Add(PathParameters, "InstanceId", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "dryRun", value.ToString());
 			}
 		}
 
@@ -76,9 +91,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override UpdateAdvancedSettingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpgradeEngineVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateAdvancedSettingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpgradeEngineVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

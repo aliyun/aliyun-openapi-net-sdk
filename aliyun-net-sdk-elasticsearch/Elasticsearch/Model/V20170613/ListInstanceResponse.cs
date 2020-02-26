@@ -90,6 +90,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private bool? dedicateMaster;
 
+			private List<ListInstance_Tag> tags;
+
 			private ListInstance_NodeSpec nodeSpec;
 
 			private ListInstance_NetworkConfig networkConfig;
@@ -218,6 +220,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public List<ListInstance_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public ListInstance_NodeSpec NodeSpec
 			{
 				get
@@ -263,6 +277,38 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					kibanaConfiguration = value;
+				}
+			}
+
+			public class ListInstance_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
 				}
 			}
 

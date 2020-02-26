@@ -78,6 +78,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				kibanaConfiguration.DiskType = context.StringValue("ListInstance.Result["+ i +"].KibanaConfiguration.diskType");
 				instance.KibanaConfiguration = kibanaConfiguration;
 
+				List<ListInstanceResponse.ListInstance_Instance.ListInstance_Tag> instance_tags = new List<ListInstanceResponse.ListInstance_Instance.ListInstance_Tag>();
+				for (int j = 0; j < context.Length("ListInstance.Result["+ i +"].Tags.Length"); j++) {
+					ListInstanceResponse.ListInstance_Instance.ListInstance_Tag tag = new ListInstanceResponse.ListInstance_Instance.ListInstance_Tag();
+					tag.TagKey = context.StringValue("ListInstance.Result["+ i +"].Tags["+ j +"].tagKey");
+					tag.TagValue = context.StringValue("ListInstance.Result["+ i +"].Tags["+ j +"].tagValue");
+
+					instance_tags.Add(tag);
+				}
+				instance.Tags = instance_tags;
+
 				listInstanceResponse_result.Add(instance);
 			}
 			listInstanceResponse.Result = listInstanceResponse_result;

@@ -27,23 +27,25 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class UpdateAdvancedSettingRequest : RoaAcsRequest<UpdateAdvancedSettingResponse>
+    public class UpdatePipelinesRequest : RoaAcsRequest<UpdatePipelinesResponse>
     {
-        public UpdateAdvancedSettingRequest()
-            : base("elasticsearch", "2017-06-13", "UpdateAdvancedSetting", "elasticsearch", "openAPI")
+        public UpdatePipelinesRequest()
+            : base("elasticsearch", "2017-06-13", "UpdatePipelines", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/actions/update-advanced-setting";
-			Method = MethodType.POST;
+			UriPattern = "/openapi/logstashes/[InstanceId]/pipelines";
+			Method = MethodType.PUT;
         }
 
 		private string instanceId;
 
 		private string clientToken;
+
+		private bool? trigger;
 
 		public string InstanceId
 		{
@@ -71,14 +73,27 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
+		public bool? Trigger
+		{
+			get
+			{
+				return trigger;
+			}
+			set	
+			{
+				trigger = value;
+				DictionaryUtil.Add(QueryParameters, "trigger", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override UpdateAdvancedSettingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdatePipelinesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateAdvancedSettingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdatePipelinesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
 			UriPattern = "/openapi/logstashes/[InstanceId]";
-			Method = MethodType.PUT;
+			Method = MethodType.GET;
         }
 
 		private string instanceId;

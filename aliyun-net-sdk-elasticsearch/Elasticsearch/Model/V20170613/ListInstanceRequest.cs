@@ -41,6 +41,14 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			Method = MethodType.GET;
         }
 
+		private string description;
+
+		private string instanceCategory;
+
+		private string ownerId;
+
+		private string tags;
+
 		private string resourceGroupId;
 
 		private string instanceId;
@@ -49,11 +57,65 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string esVersion;
 
-		private string description;
+		private string vpcId;
+
+		private string zoneId;
 
 		private int? page;
 
-		private string ownerId;
+		private string paymentType;
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "description", value);
+			}
+		}
+
+		public string InstanceCategory
+		{
+			get
+			{
+				return instanceCategory;
+			}
+			set	
+			{
+				instanceCategory = value;
+				DictionaryUtil.Add(QueryParameters, "instanceCategory", value);
+			}
+		}
+
+		public string OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "ownerId", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "tags", value);
+			}
+		}
 
 		public string ResourceGroupId
 		{
@@ -107,16 +169,29 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string Description
+		public string VpcId
 		{
 			get
 			{
-				return description;
+				return vpcId;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "description", value);
+				vpcId = value;
+				DictionaryUtil.Add(QueryParameters, "vpcId", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "zoneId", value);
 			}
 		}
 
@@ -133,16 +208,16 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string OwnerId
+		public string PaymentType
 		{
 			get
 			{
-				return ownerId;
+				return paymentType;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "ownerId", value);
+				paymentType = value;
+				DictionaryUtil.Add(QueryParameters, "paymentType", value);
 			}
 		}
 

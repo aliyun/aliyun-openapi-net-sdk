@@ -180,6 +180,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				result_aliwsDicts.Add(dict);
 			}
 			result.AliwsDicts = result_aliwsDicts;
+
+			List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_Tag> result_tags = new List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_Tag>();
+			for (int i = 0; i < context.Length("DescribeInstance.Result.Tags.Length"); i++) {
+				DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_Tag tag = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_Tag();
+				tag.TagKey = context.StringValue("DescribeInstance.Result.Tags["+ i +"].tagKey");
+				tag.TagValue = context.StringValue("DescribeInstance.Result.Tags["+ i +"].tagValue");
+
+				result_tags.Add(tag);
+			}
+			result.Tags = result_tags;
 			describeInstanceResponse.Result = result;
         
 			return describeInstanceResponse;

@@ -114,6 +114,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private List<DescribeInstance_Dict> aliwsDicts;
 
+			private List<DescribeInstance_Tag> tags;
+
 			private List<string> esIPWhitelist;
 
 			private List<string> esIPBlacklist;
@@ -486,6 +488,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public List<DescribeInstance_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public List<string> EsIPWhitelist
 			{
 				get
@@ -838,6 +852,38 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						sourceType = value;
+					}
+				}
+			}
+
+			public class DescribeInstance_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
 					}
 				}
 			}

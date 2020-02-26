@@ -71,6 +71,11 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
         public override DescribeConnectableClustersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeConnectableClustersResponseUnmarshaller.Unmarshall(unmarshallerContext);
