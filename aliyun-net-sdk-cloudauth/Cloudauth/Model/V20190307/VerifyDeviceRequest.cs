@@ -28,10 +28,10 @@ using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class DescribeVerifySettingRequest : RpcAcsRequest<DescribeVerifySettingResponse>
+    public class VerifyDeviceRequest : RpcAcsRequest<VerifyDeviceResponse>
     {
-        public DescribeVerifySettingRequest()
-            : base("Cloudauth", "2019-03-07", "DescribeVerifySetting")
+        public VerifyDeviceRequest()
+            : base("Cloudauth", "2019-03-07", "VerifyDevice")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,14 +40,59 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
+		private string certifyData;
+
+		private string appVersion;
+
+		private string certifyId;
+
+		public string CertifyData
+		{
+			get
+			{
+				return certifyData;
+			}
+			set	
+			{
+				certifyData = value;
+				DictionaryUtil.Add(QueryParameters, "CertifyData", value);
+			}
+		}
+
+		public string AppVersion
+		{
+			get
+			{
+				return appVersion;
+			}
+			set	
+			{
+				appVersion = value;
+				DictionaryUtil.Add(QueryParameters, "AppVersion", value);
+			}
+		}
+
+		public string CertifyId
+		{
+			get
+			{
+				return certifyId;
+			}
+			set	
+			{
+				certifyId = value;
+				DictionaryUtil.Add(QueryParameters, "CertifyId", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeVerifySettingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override VerifyDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeVerifySettingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return VerifyDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

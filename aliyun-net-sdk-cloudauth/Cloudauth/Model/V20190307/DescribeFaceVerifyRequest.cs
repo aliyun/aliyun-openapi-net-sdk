@@ -28,10 +28,10 @@ using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class DescribeVerifySettingRequest : RpcAcsRequest<DescribeVerifySettingResponse>
+    public class DescribeFaceVerifyRequest : RpcAcsRequest<DescribeFaceVerifyResponse>
     {
-        public DescribeVerifySettingRequest()
-            : base("Cloudauth", "2019-03-07", "DescribeVerifySetting")
+        public DescribeFaceVerifyRequest()
+            : base("Cloudauth", "2019-03-07", "DescribeFaceVerify")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,14 +40,44 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
+		private long? sceneId;
+
+		private string certifyId;
+
+		public long? SceneId
+		{
+			get
+			{
+				return sceneId;
+			}
+			set	
+			{
+				sceneId = value;
+				DictionaryUtil.Add(QueryParameters, "SceneId", value.ToString());
+			}
+		}
+
+		public string CertifyId
+		{
+			get
+			{
+				return certifyId;
+			}
+			set	
+			{
+				certifyId = value;
+				DictionaryUtil.Add(QueryParameters, "CertifyId", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeVerifySettingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeFaceVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeVerifySettingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeFaceVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

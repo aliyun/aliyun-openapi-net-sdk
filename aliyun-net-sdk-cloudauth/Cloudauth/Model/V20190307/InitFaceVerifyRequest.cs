@@ -28,10 +28,10 @@ using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class DescribeVerifyRecordsRequest : RpcAcsRequest<DescribeVerifyRecordsResponse>
+    public class InitFaceVerifyRequest : RpcAcsRequest<InitFaceVerifyResponse>
     {
-        public DescribeVerifyRecordsRequest()
-            : base("Cloudauth", "2019-03-07", "DescribeVerifyRecords")
+        public InitFaceVerifyRequest()
+            : base("Cloudauth", "2019-03-07", "InitFaceVerify")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,153 +40,138 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
-		private string statusList;
+		private string productCode;
 
-		private string startDate;
+		private string faceContrastPicture;
 
-		private int? pageSize;
+		private string certName;
 
-		private int? totalCount;
+		private string certNo;
 
-		private int? currentPage;
+		private string outerOrderNo;
 
-		private string queryId;
+		private string certType;
 
-		private string bizType;
+		private long? sceneId;
 
-		private string idCardNum;
+		private string returnUrl;
 
-		private string endDate;
+		private string metaInfo;
 
-		private string bizId;
-
-		public string StatusList
+		public string ProductCode
 		{
 			get
 			{
-				return statusList;
+				return productCode;
 			}
 			set	
 			{
-				statusList = value;
-				DictionaryUtil.Add(QueryParameters, "StatusList", value);
+				productCode = value;
+				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
 			}
 		}
 
-		public string StartDate
+		public string FaceContrastPicture
 		{
 			get
 			{
-				return startDate;
+				return faceContrastPicture;
 			}
 			set	
 			{
-				startDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartDate", value);
+				faceContrastPicture = value;
+				DictionaryUtil.Add(QueryParameters, "FaceContrastPicture", value);
 			}
 		}
 
-		public int? PageSize
+		public string CertName
 		{
 			get
 			{
-				return pageSize;
+				return certName;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				certName = value;
+				DictionaryUtil.Add(QueryParameters, "CertName", value);
 			}
 		}
 
-		public int? TotalCount
+		public string CertNo
 		{
 			get
 			{
-				return totalCount;
+				return certNo;
 			}
 			set	
 			{
-				totalCount = value;
-				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
+				certNo = value;
+				DictionaryUtil.Add(QueryParameters, "CertNo", value);
 			}
 		}
 
-		public int? CurrentPage
+		public string OuterOrderNo
 		{
 			get
 			{
-				return currentPage;
+				return outerOrderNo;
 			}
 			set	
 			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+				outerOrderNo = value;
+				DictionaryUtil.Add(QueryParameters, "OuterOrderNo", value);
 			}
 		}
 
-		public string QueryId
+		public string CertType
 		{
 			get
 			{
-				return queryId;
+				return certType;
 			}
 			set	
 			{
-				queryId = value;
-				DictionaryUtil.Add(QueryParameters, "QueryId", value);
+				certType = value;
+				DictionaryUtil.Add(QueryParameters, "CertType", value);
 			}
 		}
 
-		public string BizType
+		public long? SceneId
 		{
 			get
 			{
-				return bizType;
+				return sceneId;
 			}
 			set	
 			{
-				bizType = value;
-				DictionaryUtil.Add(QueryParameters, "BizType", value);
+				sceneId = value;
+				DictionaryUtil.Add(QueryParameters, "SceneId", value.ToString());
 			}
 		}
 
-		public string IdCardNum
+		public string ReturnUrl
 		{
 			get
 			{
-				return idCardNum;
+				return returnUrl;
 			}
 			set	
 			{
-				idCardNum = value;
-				DictionaryUtil.Add(QueryParameters, "IdCardNum", value);
+				returnUrl = value;
+				DictionaryUtil.Add(QueryParameters, "ReturnUrl", value);
 			}
 		}
 
-		public string EndDate
+		public string MetaInfo
 		{
 			get
 			{
-				return endDate;
+				return metaInfo;
 			}
 			set	
 			{
-				endDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndDate", value);
-			}
-		}
-
-		public string BizId
-		{
-			get
-			{
-				return bizId;
-			}
-			set	
-			{
-				bizId = value;
-				DictionaryUtil.Add(QueryParameters, "BizId", value);
+				metaInfo = value;
+				DictionaryUtil.Add(QueryParameters, "MetaInfo", value);
 			}
 		}
 
@@ -195,9 +180,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			return false;
 		}
 
-        public override DescribeVerifyRecordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override InitFaceVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeVerifyRecordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return InitFaceVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
