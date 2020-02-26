@@ -41,7 +41,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string regionId;
 
-		private bool? capacity;
+		private long? capacity;
 
 		private string qPS;
 
@@ -49,7 +49,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private int? connections;
 
-		private bool? zoneId;
+		private string zoneId;
 
 		private string config;
 
@@ -159,7 +159,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public bool? Capacity
+		public long? Capacity
 		{
 			get
 			{
@@ -207,7 +207,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public bool? ZoneId
+		public string ZoneId
 		{
 			get
 			{

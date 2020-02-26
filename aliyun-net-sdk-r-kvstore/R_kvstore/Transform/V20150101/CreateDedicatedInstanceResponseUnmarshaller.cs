@@ -39,11 +39,11 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			createDedicatedInstanceResponse.UserName = context.StringValue("CreateDedicatedInstance.UserName");
 			createDedicatedInstanceResponse.InstanceStatus = context.StringValue("CreateDedicatedInstance.InstanceStatus");
 			createDedicatedInstanceResponse.RegionId = context.StringValue("CreateDedicatedInstance.RegionId");
-			createDedicatedInstanceResponse.Capacity = context.BooleanValue("CreateDedicatedInstance.Capacity");
+			createDedicatedInstanceResponse.Capacity = context.LongValue("CreateDedicatedInstance.Capacity");
 			createDedicatedInstanceResponse.QPS = context.StringValue("CreateDedicatedInstance.QPS");
 			createDedicatedInstanceResponse.Bandwidth = context.IntegerValue("CreateDedicatedInstance.Bandwidth");
 			createDedicatedInstanceResponse.Connections = context.IntegerValue("CreateDedicatedInstance.Connections");
-			createDedicatedInstanceResponse.ZoneId = context.BooleanValue("CreateDedicatedInstance.ZoneId");
+			createDedicatedInstanceResponse.ZoneId = context.StringValue("CreateDedicatedInstance.ZoneId");
 			createDedicatedInstanceResponse.Config = context.StringValue("CreateDedicatedInstance.Config");
 			createDedicatedInstanceResponse.NodeType = context.StringValue("CreateDedicatedInstance.NodeType");
 			createDedicatedInstanceResponse.NetworkType = context.StringValue("CreateDedicatedInstance.NetworkType");

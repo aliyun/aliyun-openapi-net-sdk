@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DeleteInstanceRequest : RpcAcsRequest<DeleteInstanceResponse>
     {
         public DeleteInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "DeleteInstance", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DeleteInstance")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.R_kvstore;
 using Aliyun.Acs.R_kvstore.Transform;
 using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
     public class DescribeRunningLogRecordsRequest : RpcAcsRequest<DescribeRunningLogRecordsResponse>
     {
         public DescribeRunningLogRecordsRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "R-kvstore", "openAPI")
+            : base("R-kvstore", "2015-01-01", "DescribeRunningLogRecords")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -52,8 +53,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string roleType;
 
 		private string nodeId;
-
-		private long? sQLId;
 
 		private string resourceOwnerAccount;
 
@@ -155,19 +154,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				nodeId = value;
 				DictionaryUtil.Add(QueryParameters, "NodeId", value);
-			}
-		}
-
-		public long? SQLId
-		{
-			get
-			{
-				return sQLId;
-			}
-			set	
-			{
-				sQLId = value;
-				DictionaryUtil.Add(QueryParameters, "SQLId", value.ToString());
 			}
 		}
 
