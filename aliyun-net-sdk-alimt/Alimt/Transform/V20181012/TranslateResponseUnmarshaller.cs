@@ -24,22 +24,22 @@ using Aliyun.Acs.alimt.Model.V20181012;
 
 namespace Aliyun.Acs.alimt.Transform.V20181012
 {
-    public class TranslateGeneralResponseUnmarshaller
+    public class TranslateResponseUnmarshaller
     {
-        public static TranslateGeneralResponse Unmarshall(UnmarshallerContext context)
+        public static TranslateResponse Unmarshall(UnmarshallerContext context)
         {
-			TranslateGeneralResponse translateGeneralResponse = new TranslateGeneralResponse();
+			TranslateResponse translateResponse = new TranslateResponse();
 
-			translateGeneralResponse.HttpResponse = context.HttpResponse;
-			translateGeneralResponse.RequestId = context.StringValue("TranslateGeneral.RequestId");
-			translateGeneralResponse.Code = context.IntegerValue("TranslateGeneral.Code");
-			translateGeneralResponse.Message = context.StringValue("TranslateGeneral.Message");
+			translateResponse.HttpResponse = context.HttpResponse;
+			translateResponse.RequestId = context.StringValue("Translate.RequestId");
+			translateResponse.Code = context.IntegerValue("Translate.Code");
+			translateResponse.Message = context.StringValue("Translate.Message");
 
-			TranslateGeneralResponse.TranslateGeneral_Data data = new TranslateGeneralResponse.TranslateGeneral_Data();
-			data.Translated = context.StringValue("TranslateGeneral.Data.Translated");
-			translateGeneralResponse.Data = data;
+			TranslateResponse.Translate_Data data = new TranslateResponse.Translate_Data();
+			data.Translated = context.StringValue("Translate.Data.Translated");
+			translateResponse.Data = data;
         
-			return translateGeneralResponse;
+			return translateResponse;
         }
     }
 }

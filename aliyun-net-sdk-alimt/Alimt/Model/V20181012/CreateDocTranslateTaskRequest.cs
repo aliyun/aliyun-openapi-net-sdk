@@ -27,27 +27,30 @@ using Aliyun.Acs.alimt.Transform.V20181012;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-    public class TranslateGeneralRequest : RpcAcsRequest<TranslateGeneralResponse>
+    public class CreateDocTranslateTaskRequest : RpcAcsRequest<CreateDocTranslateTaskResponse>
     {
-        public TranslateGeneralRequest()
-            : base("alimt", "2018-10-12", "TranslateGeneral", "alimt", "openAPI")
+        public CreateDocTranslateTaskRequest()
+            : base("alimt", "2018-10-12", "CreateDocTranslateTask", "alimt", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string sourceLanguage;
 
-		private string sourceText;
-
-		private string formatType;
+		private string clientToken;
 
 		private string scene;
 
+		private string fileUrl;
+
 		private string targetLanguage;
+
+		private string callbackUrl;
 
 		public string SourceLanguage
 		{
@@ -62,29 +65,16 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
-		public string SourceText
+		public string ClientToken
 		{
 			get
 			{
-				return sourceText;
+				return clientToken;
 			}
 			set	
 			{
-				sourceText = value;
-				DictionaryUtil.Add(BodyParameters, "SourceText", value);
-			}
-		}
-
-		public string FormatType
-		{
-			get
-			{
-				return formatType;
-			}
-			set	
-			{
-				formatType = value;
-				DictionaryUtil.Add(BodyParameters, "FormatType", value);
+				clientToken = value;
+				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
 			}
 		}
 
@@ -101,6 +91,19 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
+		public string FileUrl
+		{
+			get
+			{
+				return fileUrl;
+			}
+			set	
+			{
+				fileUrl = value;
+				DictionaryUtil.Add(BodyParameters, "FileUrl", value);
+			}
+		}
+
 		public string TargetLanguage
 		{
 			get
@@ -114,14 +117,27 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
+		public string CallbackUrl
+		{
+			get
+			{
+				return callbackUrl;
+			}
+			set	
+			{
+				callbackUrl = value;
+				DictionaryUtil.Add(BodyParameters, "CallbackUrl", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override TranslateGeneralResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDocTranslateTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TranslateGeneralResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDocTranslateTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

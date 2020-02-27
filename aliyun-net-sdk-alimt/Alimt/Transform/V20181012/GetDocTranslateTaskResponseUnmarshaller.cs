@@ -24,22 +24,19 @@ using Aliyun.Acs.alimt.Model.V20181012;
 
 namespace Aliyun.Acs.alimt.Transform.V20181012
 {
-    public class TranslateGeneralResponseUnmarshaller
+    public class GetDocTranslateTaskResponseUnmarshaller
     {
-        public static TranslateGeneralResponse Unmarshall(UnmarshallerContext context)
+        public static GetDocTranslateTaskResponse Unmarshall(UnmarshallerContext context)
         {
-			TranslateGeneralResponse translateGeneralResponse = new TranslateGeneralResponse();
+			GetDocTranslateTaskResponse getDocTranslateTaskResponse = new GetDocTranslateTaskResponse();
 
-			translateGeneralResponse.HttpResponse = context.HttpResponse;
-			translateGeneralResponse.RequestId = context.StringValue("TranslateGeneral.RequestId");
-			translateGeneralResponse.Code = context.IntegerValue("TranslateGeneral.Code");
-			translateGeneralResponse.Message = context.StringValue("TranslateGeneral.Message");
-
-			TranslateGeneralResponse.TranslateGeneral_Data data = new TranslateGeneralResponse.TranslateGeneral_Data();
-			data.Translated = context.StringValue("TranslateGeneral.Data.Translated");
-			translateGeneralResponse.Data = data;
+			getDocTranslateTaskResponse.HttpResponse = context.HttpResponse;
+			getDocTranslateTaskResponse.RequestId = context.StringValue("GetDocTranslateTask.RequestId");
+			getDocTranslateTaskResponse.TaskId = context.StringValue("GetDocTranslateTask.TaskId");
+			getDocTranslateTaskResponse.Status = context.StringValue("GetDocTranslateTask.Status");
+			getDocTranslateTaskResponse.TranslateFileUrl = context.StringValue("GetDocTranslateTask.TranslateFileUrl");
         
-			return translateGeneralResponse;
+			return getDocTranslateTaskResponse;
         }
     }
 }

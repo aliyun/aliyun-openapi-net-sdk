@@ -27,10 +27,10 @@ using Aliyun.Acs.alimt.Transform.V20181012;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-    public class TranslateGeneralRequest : RpcAcsRequest<TranslateGeneralResponse>
+    public class TranslateRequest : RpcAcsRequest<TranslateResponse>
     {
-        public TranslateGeneralRequest()
-            : base("alimt", "2018-10-12", "TranslateGeneral", "alimt", "openAPI")
+        public TranslateRequest()
+            : base("alimt", "2018-10-12", "Translate", "alimt", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -119,9 +119,9 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			return false;
 		}
 
-        public override TranslateGeneralResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TranslateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TranslateGeneralResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TranslateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

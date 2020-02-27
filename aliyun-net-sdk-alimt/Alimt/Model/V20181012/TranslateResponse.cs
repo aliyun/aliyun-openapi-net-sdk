@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-	public class TranslateGeneralResponse : AcsResponse
+	public class TranslateResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 
 		private string message;
 
-		private TranslateGeneral_Data data;
+		private Translate_Data data;
 
 		public string RequestId
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
-		public TranslateGeneral_Data Data
+		public Translate_Data Data
 		{
 			get
 			{
@@ -81,7 +81,7 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
-		public class TranslateGeneral_Data
+		public class Translate_Data
 		{
 
 			private string translated;

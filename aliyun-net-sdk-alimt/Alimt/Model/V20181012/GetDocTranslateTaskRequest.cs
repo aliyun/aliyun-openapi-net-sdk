@@ -27,10 +27,10 @@ using Aliyun.Acs.alimt.Transform.V20181012;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-    public class TranslateGeneralRequest : RpcAcsRequest<TranslateGeneralResponse>
+    public class GetDocTranslateTaskRequest : RpcAcsRequest<GetDocTranslateTaskResponse>
     {
-        public TranslateGeneralRequest()
-            : base("alimt", "2018-10-12", "TranslateGeneral", "alimt", "openAPI")
+        public GetDocTranslateTaskRequest()
+            : base("alimt", "2018-10-12", "GetDocTranslateTask", "alimt", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,78 +39,18 @@ namespace Aliyun.Acs.alimt.Model.V20181012
             }
         }
 
-		private string sourceLanguage;
+		private string taskId;
 
-		private string sourceText;
-
-		private string formatType;
-
-		private string scene;
-
-		private string targetLanguage;
-
-		public string SourceLanguage
+		public string TaskId
 		{
 			get
 			{
-				return sourceLanguage;
+				return taskId;
 			}
 			set	
 			{
-				sourceLanguage = value;
-				DictionaryUtil.Add(BodyParameters, "SourceLanguage", value);
-			}
-		}
-
-		public string SourceText
-		{
-			get
-			{
-				return sourceText;
-			}
-			set	
-			{
-				sourceText = value;
-				DictionaryUtil.Add(BodyParameters, "SourceText", value);
-			}
-		}
-
-		public string FormatType
-		{
-			get
-			{
-				return formatType;
-			}
-			set	
-			{
-				formatType = value;
-				DictionaryUtil.Add(BodyParameters, "FormatType", value);
-			}
-		}
-
-		public string Scene
-		{
-			get
-			{
-				return scene;
-			}
-			set	
-			{
-				scene = value;
-				DictionaryUtil.Add(BodyParameters, "Scene", value);
-			}
-		}
-
-		public string TargetLanguage
-		{
-			get
-			{
-				return targetLanguage;
-			}
-			set	
-			{
-				targetLanguage = value;
-				DictionaryUtil.Add(BodyParameters, "TargetLanguage", value);
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
@@ -119,9 +59,9 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			return false;
 		}
 
-        public override TranslateGeneralResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetDocTranslateTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TranslateGeneralResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetDocTranslateTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

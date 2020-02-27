@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.alimt.Transform;
 using Aliyun.Acs.alimt.Transform.V20181012;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
@@ -31,6 +32,11 @@ namespace Aliyun.Acs.alimt.Model.V20181012
         public TranslateECommerceRequest()
             : base("alimt", "2018-10-12", "TranslateECommerce", "alimt", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string sourceLanguage;
@@ -39,9 +45,9 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 
 		private string formatType;
 
-		private string targetLanguage;
-
 		private string scene;
+
+		private string targetLanguage;
 
 		public string SourceLanguage
 		{
@@ -82,19 +88,6 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
-		public string TargetLanguage
-		{
-			get
-			{
-				return targetLanguage;
-			}
-			set	
-			{
-				targetLanguage = value;
-				DictionaryUtil.Add(BodyParameters, "TargetLanguage", value);
-			}
-		}
-
 		public string Scene
 		{
 			get
@@ -108,12 +101,25 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
+		public string TargetLanguage
+		{
+			get
+			{
+				return targetLanguage;
+			}
+			set	
+			{
+				targetLanguage = value;
+				DictionaryUtil.Add(BodyParameters, "TargetLanguage", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override TranslateECommerceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override TranslateECommerceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return TranslateECommerceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

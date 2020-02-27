@@ -24,22 +24,18 @@ using Aliyun.Acs.alimt.Model.V20181012;
 
 namespace Aliyun.Acs.alimt.Transform.V20181012
 {
-    public class TranslateGeneralResponseUnmarshaller
+    public class CreateDocTranslateTaskResponseUnmarshaller
     {
-        public static TranslateGeneralResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDocTranslateTaskResponse Unmarshall(UnmarshallerContext context)
         {
-			TranslateGeneralResponse translateGeneralResponse = new TranslateGeneralResponse();
+			CreateDocTranslateTaskResponse createDocTranslateTaskResponse = new CreateDocTranslateTaskResponse();
 
-			translateGeneralResponse.HttpResponse = context.HttpResponse;
-			translateGeneralResponse.RequestId = context.StringValue("TranslateGeneral.RequestId");
-			translateGeneralResponse.Code = context.IntegerValue("TranslateGeneral.Code");
-			translateGeneralResponse.Message = context.StringValue("TranslateGeneral.Message");
-
-			TranslateGeneralResponse.TranslateGeneral_Data data = new TranslateGeneralResponse.TranslateGeneral_Data();
-			data.Translated = context.StringValue("TranslateGeneral.Data.Translated");
-			translateGeneralResponse.Data = data;
+			createDocTranslateTaskResponse.HttpResponse = context.HttpResponse;
+			createDocTranslateTaskResponse.RequestId = context.StringValue("CreateDocTranslateTask.RequestId");
+			createDocTranslateTaskResponse.TaskId = context.StringValue("CreateDocTranslateTask.TaskId");
+			createDocTranslateTaskResponse.Status = context.StringValue("CreateDocTranslateTask.Status");
         
-			return translateGeneralResponse;
+			return createDocTranslateTaskResponse;
         }
     }
 }

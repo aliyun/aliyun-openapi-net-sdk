@@ -22,16 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-	public class TranslateGeneralResponse : AcsResponse
+	public class GetDocTranslateTaskResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? code;
+		private string taskId;
 
-		private string message;
+		private string status;
 
-		private TranslateGeneral_Data data;
+		private string translateFileUrl;
 
 		public string RequestId
 		{
@@ -45,57 +45,39 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
-		public int? Code
+		public string TaskId
 		{
 			get
 			{
-				return code;
+				return taskId;
 			}
 			set	
 			{
-				code = value;
+				taskId = value;
 			}
 		}
 
-		public string Message
+		public string Status
 		{
 			get
 			{
-				return message;
+				return status;
 			}
 			set	
 			{
-				message = value;
+				status = value;
 			}
 		}
 
-		public TranslateGeneral_Data Data
+		public string TranslateFileUrl
 		{
 			get
 			{
-				return data;
+				return translateFileUrl;
 			}
 			set	
 			{
-				data = value;
-			}
-		}
-
-		public class TranslateGeneral_Data
-		{
-
-			private string translated;
-
-			public string Translated
-			{
-				get
-				{
-					return translated;
-				}
-				set	
-				{
-					translated = value;
-				}
+				translateFileUrl = value;
 			}
 		}
 	}
