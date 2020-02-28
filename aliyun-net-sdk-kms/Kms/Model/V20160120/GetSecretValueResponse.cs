@@ -22,10 +22,22 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class UntagResourceResponse : AcsResponse
+	public class GetSecretValueResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private string secretName;
+
+		private string versionId;
+
+		private string createTime;
+
+		private string secretData;
+
+		private string secretDataType;
+
+		private List<string> versionStages;
 
 		public string RequestId
 		{
@@ -36,6 +48,78 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string SecretName
+		{
+			get
+			{
+				return secretName;
+			}
+			set	
+			{
+				secretName = value;
+			}
+		}
+
+		public string VersionId
+		{
+			get
+			{
+				return versionId;
+			}
+			set	
+			{
+				versionId = value;
+			}
+		}
+
+		public string CreateTime
+		{
+			get
+			{
+				return createTime;
+			}
+			set	
+			{
+				createTime = value;
+			}
+		}
+
+		public string SecretData
+		{
+			get
+			{
+				return secretData;
+			}
+			set	
+			{
+				secretData = value;
+			}
+		}
+
+		public string SecretDataType
+		{
+			get
+			{
+				return secretDataType;
+			}
+			set	
+			{
+				secretDataType = value;
+			}
+		}
+
+		public List<string> VersionStages
+		{
+			get
+			{
+				return versionStages;
+			}
+			set	
+			{
+				versionStages = value;
 			}
 		}
 	}

@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class UntagResourceRequest : RpcAcsRequest<UntagResourceResponse>
+    public class CreateSecretRequest : RpcAcsRequest<CreateSecretResponse>
     {
-        public UntagResourceRequest()
-            : base("Kms", "2016-01-20", "UntagResource", "kms", "openAPI")
+        public CreateSecretRequest()
+            : base("Kms", "2016-01-20", "CreateSecret", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,35 +40,56 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string tagKeys;
+		private string versionId;
 
-		private string keyId;
+		private string secretData;
+
+		private string description;
 
 		private string secretName;
 
-		public string TagKeys
+		private string encryptionKeyId;
+
+		private string secretDataType;
+
+		private string tags;
+
+		public string VersionId
 		{
 			get
 			{
-				return tagKeys;
+				return versionId;
 			}
 			set	
 			{
-				tagKeys = value;
-				DictionaryUtil.Add(QueryParameters, "TagKeys", value);
+				versionId = value;
+				DictionaryUtil.Add(QueryParameters, "VersionId", value);
 			}
 		}
 
-		public string KeyId
+		public string SecretData
 		{
 			get
 			{
-				return keyId;
+				return secretData;
 			}
 			set	
 			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+				secretData = value;
+				DictionaryUtil.Add(QueryParameters, "SecretData", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -85,9 +106,53 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override UntagResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string EncryptionKeyId
+		{
+			get
+			{
+				return encryptionKeyId;
+			}
+			set	
+			{
+				encryptionKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKeyId", value);
+			}
+		}
+
+		public string SecretDataType
+		{
+			get
+			{
+				return secretDataType;
+			}
+			set	
+			{
+				secretDataType = value;
+				DictionaryUtil.Add(QueryParameters, "SecretDataType", value);
+			}
+		}
+
+		public string Tags
+		{
+			get
+			{
+				return tags;
+			}
+			set	
+			{
+				tags = value;
+				DictionaryUtil.Add(QueryParameters, "Tags", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateSecretResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UntagResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateSecretResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

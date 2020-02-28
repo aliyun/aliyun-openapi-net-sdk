@@ -22,10 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class UntagResourceResponse : AcsResponse
+	public class DeleteSecretResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private string secretName;
+
+		private string plannedDeleteTime;
 
 		public string RequestId
 		{
@@ -36,6 +40,30 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string SecretName
+		{
+			get
+			{
+				return secretName;
+			}
+			set	
+			{
+				secretName = value;
+			}
+		}
+
+		public string PlannedDeleteTime
+		{
+			get
+			{
+				return plannedDeleteTime;
+			}
+			set	
+			{
+				plannedDeleteTime = value;
 			}
 		}
 	}

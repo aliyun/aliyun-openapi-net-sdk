@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class UntagResourceRequest : RpcAcsRequest<UntagResourceResponse>
+    public class ListSecretsRequest : RpcAcsRequest<ListSecretsResponse>
     {
-        public UntagResourceRequest()
-            : base("Kms", "2016-01-20", "UntagResource", "kms", "openAPI")
+        public ListSecretsRequest()
+            : base("Kms", "2016-01-20", "ListSecrets", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,54 +40,59 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string tagKeys;
+		private int? pageSize;
 
-		private string keyId;
+		private string fetchTags;
 
-		private string secretName;
+		private int? pageNumber;
 
-		public string TagKeys
+		public int? PageSize
 		{
 			get
 			{
-				return tagKeys;
+				return pageSize;
 			}
 			set	
 			{
-				tagKeys = value;
-				DictionaryUtil.Add(QueryParameters, "TagKeys", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string KeyId
+		public string FetchTags
 		{
 			get
 			{
-				return keyId;
+				return fetchTags;
 			}
 			set	
 			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+				fetchTags = value;
+				DictionaryUtil.Add(QueryParameters, "FetchTags", value);
 			}
 		}
 
-		public string SecretName
+		public int? PageNumber
 		{
 			get
 			{
-				return secretName;
+				return pageNumber;
 			}
 			set	
 			{
-				secretName = value;
-				DictionaryUtil.Add(QueryParameters, "SecretName", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-        public override UntagResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ListSecretsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UntagResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListSecretsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

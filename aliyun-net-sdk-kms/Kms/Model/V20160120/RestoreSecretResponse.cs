@@ -22,10 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class UntagResourceResponse : AcsResponse
+	public class RestoreSecretResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private string secretName;
 
 		public string RequestId
 		{
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string SecretName
+		{
+			get
+			{
+				return secretName;
+			}
+			set	
+			{
+				secretName = value;
 			}
 		}
 	}

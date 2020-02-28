@@ -16,27 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Kms.Model.V20160120;
 
-namespace Aliyun.Acs.Kms.Model.V20160120
+namespace Aliyun.Acs.Kms.Transform.V20160120
 {
-	public class UntagResourceResponse : AcsResponse
-	{
+    public class RestoreSecretResponseUnmarshaller
+    {
+        public static RestoreSecretResponse Unmarshall(UnmarshallerContext context)
+        {
+			RestoreSecretResponse restoreSecretResponse = new RestoreSecretResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			restoreSecretResponse.HttpResponse = context.HttpResponse;
+			restoreSecretResponse.RequestId = context.StringValue("RestoreSecret.RequestId");
+			restoreSecretResponse.SecretName = context.StringValue("RestoreSecret.SecretName");
+        
+			return restoreSecretResponse;
+        }
+    }
 }

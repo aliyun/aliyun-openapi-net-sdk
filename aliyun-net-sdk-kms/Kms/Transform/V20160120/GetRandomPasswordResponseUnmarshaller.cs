@@ -16,27 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Kms.Model.V20160120;
 
-namespace Aliyun.Acs.Kms.Model.V20160120
+namespace Aliyun.Acs.Kms.Transform.V20160120
 {
-	public class UntagResourceResponse : AcsResponse
-	{
+    public class GetRandomPasswordResponseUnmarshaller
+    {
+        public static GetRandomPasswordResponse Unmarshall(UnmarshallerContext context)
+        {
+			GetRandomPasswordResponse getRandomPasswordResponse = new GetRandomPasswordResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			getRandomPasswordResponse.HttpResponse = context.HttpResponse;
+			getRandomPasswordResponse.RequestId = context.StringValue("GetRandomPassword.RequestId");
+			getRandomPasswordResponse.RandomPassword = context.StringValue("GetRandomPassword.RandomPassword");
+        
+			return getRandomPasswordResponse;
+        }
+    }
 }

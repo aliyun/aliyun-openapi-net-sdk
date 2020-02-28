@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class UntagResourceRequest : RpcAcsRequest<UntagResourceResponse>
+    public class GetSecretValueRequest : RpcAcsRequest<GetSecretValueResponse>
     {
-        public UntagResourceRequest()
-            : base("Kms", "2016-01-20", "UntagResource", "kms", "openAPI")
+        public GetSecretValueRequest()
+            : base("Kms", "2016-01-20", "GetSecretValue", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,35 +40,35 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string tagKeys;
+		private string versionId;
 
-		private string keyId;
+		private string versionStage;
 
 		private string secretName;
 
-		public string TagKeys
+		public string VersionId
 		{
 			get
 			{
-				return tagKeys;
+				return versionId;
 			}
 			set	
 			{
-				tagKeys = value;
-				DictionaryUtil.Add(QueryParameters, "TagKeys", value);
+				versionId = value;
+				DictionaryUtil.Add(QueryParameters, "VersionId", value);
 			}
 		}
 
-		public string KeyId
+		public string VersionStage
 		{
 			get
 			{
-				return keyId;
+				return versionStage;
 			}
 			set	
 			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+				versionStage = value;
+				DictionaryUtil.Add(QueryParameters, "VersionStage", value);
 			}
 		}
 
@@ -85,9 +85,14 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override UntagResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override GetSecretValueResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UntagResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSecretValueResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

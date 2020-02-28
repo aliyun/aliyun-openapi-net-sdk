@@ -22,10 +22,24 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class UntagResourceResponse : AcsResponse
+	public class UpdateSecretVersionStageResponse : AcsResponse
 	{
 
+		private string secretName;
+
 		private string requestId;
+
+		public string SecretName
+		{
+			get
+			{
+				return secretName;
+			}
+			set	
+			{
+				secretName = value;
+			}
+		}
 
 		public string RequestId
 		{

@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class UntagResourceRequest : RpcAcsRequest<UntagResourceResponse>
+    public class ListSecretVersionIdsRequest : RpcAcsRequest<ListSecretVersionIdsResponse>
     {
-        public UntagResourceRequest()
-            : base("Kms", "2016-01-20", "UntagResource", "kms", "openAPI")
+        public ListSecretVersionIdsRequest()
+            : base("Kms", "2016-01-20", "ListSecretVersionIds", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,35 +40,37 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string tagKeys;
+		private string includeDeprecated;
 
-		private string keyId;
+		private int? pageSize;
 
 		private string secretName;
 
-		public string TagKeys
+		private int? pageNumber;
+
+		public string IncludeDeprecated
 		{
 			get
 			{
-				return tagKeys;
+				return includeDeprecated;
 			}
 			set	
 			{
-				tagKeys = value;
-				DictionaryUtil.Add(QueryParameters, "TagKeys", value);
+				includeDeprecated = value;
+				DictionaryUtil.Add(QueryParameters, "IncludeDeprecated", value);
 			}
 		}
 
-		public string KeyId
+		public int? PageSize
 		{
 			get
 			{
-				return keyId;
+				return pageSize;
 			}
 			set	
 			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -85,9 +87,27 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override UntagResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ListSecretVersionIdsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UntagResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListSecretVersionIdsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

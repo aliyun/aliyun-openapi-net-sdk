@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class UntagResourceRequest : RpcAcsRequest<UntagResourceResponse>
+    public class UpdateSecretVersionStageRequest : RpcAcsRequest<UpdateSecretVersionStageResponse>
     {
-        public UntagResourceRequest()
-            : base("Kms", "2016-01-20", "UntagResource", "kms", "openAPI")
+        public UpdateSecretVersionStageRequest()
+            : base("Kms", "2016-01-20", "UpdateSecretVersionStage", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,35 +40,50 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string tagKeys;
+		private string removeFromVersion;
 
-		private string keyId;
+		private string moveToVersion;
+
+		private string versionStage;
 
 		private string secretName;
 
-		public string TagKeys
+		public string RemoveFromVersion
 		{
 			get
 			{
-				return tagKeys;
+				return removeFromVersion;
 			}
 			set	
 			{
-				tagKeys = value;
-				DictionaryUtil.Add(QueryParameters, "TagKeys", value);
+				removeFromVersion = value;
+				DictionaryUtil.Add(QueryParameters, "RemoveFromVersion", value);
 			}
 		}
 
-		public string KeyId
+		public string MoveToVersion
 		{
 			get
 			{
-				return keyId;
+				return moveToVersion;
 			}
 			set	
 			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+				moveToVersion = value;
+				DictionaryUtil.Add(QueryParameters, "MoveToVersion", value);
+			}
+		}
+
+		public string VersionStage
+		{
+			get
+			{
+				return versionStage;
+			}
+			set	
+			{
+				versionStage = value;
+				DictionaryUtil.Add(QueryParameters, "VersionStage", value);
 			}
 		}
 
@@ -85,9 +100,14 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override UntagResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override UpdateSecretVersionStageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UntagResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateSecretVersionStageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

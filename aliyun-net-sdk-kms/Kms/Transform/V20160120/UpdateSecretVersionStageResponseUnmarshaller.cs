@@ -16,27 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Kms.Model.V20160120;
 
-namespace Aliyun.Acs.Kms.Model.V20160120
+namespace Aliyun.Acs.Kms.Transform.V20160120
 {
-	public class UntagResourceResponse : AcsResponse
-	{
+    public class UpdateSecretVersionStageResponseUnmarshaller
+    {
+        public static UpdateSecretVersionStageResponse Unmarshall(UnmarshallerContext context)
+        {
+			UpdateSecretVersionStageResponse updateSecretVersionStageResponse = new UpdateSecretVersionStageResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			updateSecretVersionStageResponse.HttpResponse = context.HttpResponse;
+			updateSecretVersionStageResponse.SecretName = context.StringValue("UpdateSecretVersionStage.SecretName");
+			updateSecretVersionStageResponse.RequestId = context.StringValue("UpdateSecretVersionStage.RequestId");
+        
+			return updateSecretVersionStageResponse;
+        }
+    }
 }

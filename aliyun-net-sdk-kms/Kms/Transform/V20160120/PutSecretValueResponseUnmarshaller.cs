@@ -24,16 +24,24 @@ using Aliyun.Acs.Kms.Model.V20160120;
 
 namespace Aliyun.Acs.Kms.Transform.V20160120
 {
-    public class UntagResourceResponseUnmarshaller
+    public class PutSecretValueResponseUnmarshaller
     {
-        public static UntagResourceResponse Unmarshall(UnmarshallerContext context)
+        public static PutSecretValueResponse Unmarshall(UnmarshallerContext context)
         {
-			UntagResourceResponse untagResourceResponse = new UntagResourceResponse();
+			PutSecretValueResponse putSecretValueResponse = new PutSecretValueResponse();
 
-			untagResourceResponse.HttpResponse = context.HttpResponse;
-			untagResourceResponse.RequestId = context.StringValue("UntagResource.RequestId");
+			putSecretValueResponse.HttpResponse = context.HttpResponse;
+			putSecretValueResponse.RequestId = context.StringValue("PutSecretValue.RequestId");
+			putSecretValueResponse.SecretName = context.StringValue("PutSecretValue.SecretName");
+			putSecretValueResponse.VersionId = context.StringValue("PutSecretValue.VersionId");
+
+			List<string> putSecretValueResponse_versionStages = new List<string>();
+			for (int i = 0; i < context.Length("PutSecretValue.VersionStages.Length"); i++) {
+				putSecretValueResponse_versionStages.Add(context.StringValue("PutSecretValue.VersionStages["+ i +"]"));
+			}
+			putSecretValueResponse.VersionStages = putSecretValueResponse_versionStages;
         
-			return untagResourceResponse;
+			return putSecretValueResponse;
         }
     }
 }

@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 
 		private string keyId;
 
+		private string secretName;
+
 		private string tags;
 
 		public string KeyId
@@ -54,6 +56,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				keyId = value;
 				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+			}
+		}
+
+		public string SecretName
+		{
+			get
+			{
+				return secretName;
+			}
+			set	
+			{
+				secretName = value;
+				DictionaryUtil.Add(QueryParameters, "SecretName", value);
 			}
 		}
 

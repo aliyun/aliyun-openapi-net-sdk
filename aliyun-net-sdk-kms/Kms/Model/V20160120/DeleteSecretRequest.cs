@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class UntagResourceRequest : RpcAcsRequest<UntagResourceResponse>
+    public class DeleteSecretRequest : RpcAcsRequest<DeleteSecretResponse>
     {
-        public UntagResourceRequest()
-            : base("Kms", "2016-01-20", "UntagResource", "kms", "openAPI")
+        public DeleteSecretRequest()
+            : base("Kms", "2016-01-20", "DeleteSecret", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,35 +40,35 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string tagKeys;
+		private string forceDeleteWithoutRecovery;
 
-		private string keyId;
+		private string recoveryWindowInDays;
 
 		private string secretName;
 
-		public string TagKeys
+		public string ForceDeleteWithoutRecovery
 		{
 			get
 			{
-				return tagKeys;
+				return forceDeleteWithoutRecovery;
 			}
 			set	
 			{
-				tagKeys = value;
-				DictionaryUtil.Add(QueryParameters, "TagKeys", value);
+				forceDeleteWithoutRecovery = value;
+				DictionaryUtil.Add(QueryParameters, "ForceDeleteWithoutRecovery", value);
 			}
 		}
 
-		public string KeyId
+		public string RecoveryWindowInDays
 		{
 			get
 			{
-				return keyId;
+				return recoveryWindowInDays;
 			}
 			set	
 			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+				recoveryWindowInDays = value;
+				DictionaryUtil.Add(QueryParameters, "RecoveryWindowInDays", value);
 			}
 		}
 
@@ -85,9 +85,14 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override UntagResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DeleteSecretResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UntagResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteSecretResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class UntagResourceRequest : RpcAcsRequest<UntagResourceResponse>
+    public class DescribeSecretRequest : RpcAcsRequest<DescribeSecretResponse>
     {
-        public UntagResourceRequest()
-            : base("Kms", "2016-01-20", "UntagResource", "kms", "openAPI")
+        public DescribeSecretRequest()
+            : base("Kms", "2016-01-20", "DescribeSecret", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,37 +40,9 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string tagKeys;
-
-		private string keyId;
-
 		private string secretName;
 
-		public string TagKeys
-		{
-			get
-			{
-				return tagKeys;
-			}
-			set	
-			{
-				tagKeys = value;
-				DictionaryUtil.Add(QueryParameters, "TagKeys", value);
-			}
-		}
-
-		public string KeyId
-		{
-			get
-			{
-				return keyId;
-			}
-			set	
-			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
-			}
-		}
+		private string fetchTags;
 
 		public string SecretName
 		{
@@ -85,9 +57,27 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-        public override UntagResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string FetchTags
+		{
+			get
+			{
+				return fetchTags;
+			}
+			set	
+			{
+				fetchTags = value;
+				DictionaryUtil.Add(QueryParameters, "FetchTags", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeSecretResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UntagResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeSecretResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

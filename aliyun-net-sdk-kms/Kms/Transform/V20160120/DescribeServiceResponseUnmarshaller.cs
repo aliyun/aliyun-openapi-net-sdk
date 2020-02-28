@@ -41,6 +41,27 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 				describeServiceResponse_protectionLevels.Add(protectionLevel);
 			}
 			describeServiceResponse.ProtectionLevels = describeServiceResponse_protectionLevels;
+
+			List<DescribeServiceResponse.DescribeService_KeySpec> describeServiceResponse_keySpecs = new List<DescribeServiceResponse.DescribeService_KeySpec>();
+			for (int i = 0; i < context.Length("DescribeService.KeySpecs.Length"); i++) {
+				DescribeServiceResponse.DescribeService_KeySpec keySpec = new DescribeServiceResponse.DescribeService_KeySpec();
+				keySpec.Name = context.StringValue("DescribeService.KeySpecs["+ i +"].Name");
+
+				List<string> keySpec_supportedProtectionLevels = new List<string>();
+				for (int j = 0; j < context.Length("DescribeService.KeySpecs["+ i +"].SupportedProtectionLevels.Length"); j++) {
+					keySpec_supportedProtectionLevels.Add(context.StringValue("DescribeService.KeySpecs["+ i +"].SupportedProtectionLevels["+ j +"]"));
+				}
+				keySpec.SupportedProtectionLevels = keySpec_supportedProtectionLevels;
+
+				List<string> keySpec_usages = new List<string>();
+				for (int j = 0; j < context.Length("DescribeService.KeySpecs["+ i +"].Usages.Length"); j++) {
+					keySpec_usages.Add(context.StringValue("DescribeService.KeySpecs["+ i +"].Usages["+ j +"]"));
+				}
+				keySpec.Usages = keySpec_usages;
+
+				describeServiceResponse_keySpecs.Add(keySpec);
+			}
+			describeServiceResponse.KeySpecs = describeServiceResponse_keySpecs;
         
 			return describeServiceResponse;
         }

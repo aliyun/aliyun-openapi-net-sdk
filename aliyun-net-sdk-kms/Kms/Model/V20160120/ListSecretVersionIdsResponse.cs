@@ -22,14 +22,44 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class DescribeServiceResponse : AcsResponse
+	public class ListSecretVersionIdsResponse : AcsResponse
 	{
+
+		private int? pageNumber;
+
+		private int? pageSize;
 
 		private string requestId;
 
-		private List<DescribeService_ProtectionLevel> protectionLevels;
+		private string secretName;
 
-		private List<DescribeService_KeySpec> keySpecs;
+		private int? totalCount;
+
+		private List<ListSecretVersionIds_VersionId> versionIds;
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -43,90 +73,84 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public List<DescribeService_ProtectionLevel> ProtectionLevels
+		public string SecretName
 		{
 			get
 			{
-				return protectionLevels;
+				return secretName;
 			}
 			set	
 			{
-				protectionLevels = value;
+				secretName = value;
 			}
 		}
 
-		public List<DescribeService_KeySpec> KeySpecs
+		public int? TotalCount
 		{
 			get
 			{
-				return keySpecs;
+				return totalCount;
 			}
 			set	
 			{
-				keySpecs = value;
+				totalCount = value;
 			}
 		}
 
-		public class DescribeService_ProtectionLevel
+		public List<ListSecretVersionIds_VersionId> VersionIds
 		{
-
-			private string type;
-
-			public string Type
+			get
 			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
-				}
+				return versionIds;
+			}
+			set	
+			{
+				versionIds = value;
 			}
 		}
 
-		public class DescribeService_KeySpec
+		public class ListSecretVersionIds_VersionId
 		{
 
-			private string name;
+			private string createTime;
 
-			private List<string> supportedProtectionLevels;
+			private string versionId;
 
-			private List<string> usages;
+			private List<string> versionStages;
 
-			public string Name
+			public string CreateTime
 			{
 				get
 				{
-					return name;
+					return createTime;
 				}
 				set	
 				{
-					name = value;
+					createTime = value;
 				}
 			}
 
-			public List<string> SupportedProtectionLevels
+			public string VersionId
 			{
 				get
 				{
-					return supportedProtectionLevels;
+					return versionId;
 				}
 				set	
 				{
-					supportedProtectionLevels = value;
+					versionId = value;
 				}
 			}
 
-			public List<string> Usages
+			public List<string> VersionStages
 			{
 				get
 				{
-					return usages;
+					return versionStages;
 				}
 				set	
 				{
-					usages = value;
+					versionStages = value;
 				}
 			}
 		}
