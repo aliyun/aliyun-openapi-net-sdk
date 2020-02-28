@@ -27,10 +27,10 @@ using Aliyun.Acs.Dyplsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 {
-    public class BindAxbRequest : RpcAcsRequest<BindAxbResponse>
+    public class AddAxnTrackNoRequest : RpcAcsRequest<AddAxnTrackNoResponse>
     {
-        public BindAxbRequest()
-            : base("Dyplsapi", "2017-05-25", "BindAxb", "dypls", "openAPI")
+        public AddAxnTrackNoRequest()
+            : base("Dyplsapi", "2017-05-25", "AddAxnTrackNo", "dypls", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +41,17 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 
 		private long? resourceOwnerId;
 
-		private int? callDisplayType;
+		private string subsId;
 
 		private string phoneNoX;
-
-		private string ringConfig;
-
-		private string phoneNoB;
-
-		private string phoneNoA;
-
-		private string expectCity;
 
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string outOrderId;
+		private string trackNo;
 
 		private string poolKey;
-
-		private string expiration;
-
-		private bool? isRecordingEnabled;
-
-		private string outId;
-
-		private string callRestrict;
 
 		public long? ResourceOwnerId
 		{
@@ -82,16 +66,16 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			}
 		}
 
-		public int? CallDisplayType
+		public string SubsId
 		{
 			get
 			{
-				return callDisplayType;
+				return subsId;
 			}
 			set	
 			{
-				callDisplayType = value;
-				DictionaryUtil.Add(QueryParameters, "CallDisplayType", value.ToString());
+				subsId = value;
+				DictionaryUtil.Add(QueryParameters, "SubsId", value);
 			}
 		}
 
@@ -105,58 +89,6 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			{
 				phoneNoX = value;
 				DictionaryUtil.Add(QueryParameters, "PhoneNoX", value);
-			}
-		}
-
-		public string RingConfig
-		{
-			get
-			{
-				return ringConfig;
-			}
-			set	
-			{
-				ringConfig = value;
-				DictionaryUtil.Add(QueryParameters, "RingConfig", value);
-			}
-		}
-
-		public string PhoneNoB
-		{
-			get
-			{
-				return phoneNoB;
-			}
-			set	
-			{
-				phoneNoB = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNoB", value);
-			}
-		}
-
-		public string PhoneNoA
-		{
-			get
-			{
-				return phoneNoA;
-			}
-			set	
-			{
-				phoneNoA = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNoA", value);
-			}
-		}
-
-		public string ExpectCity
-		{
-			get
-			{
-				return expectCity;
-			}
-			set	
-			{
-				expectCity = value;
-				DictionaryUtil.Add(QueryParameters, "ExpectCity", value);
 			}
 		}
 
@@ -186,16 +118,16 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			}
 		}
 
-		public string OutOrderId
+		public string TrackNo
 		{
 			get
 			{
-				return outOrderId;
+				return trackNo;
 			}
 			set	
 			{
-				outOrderId = value;
-				DictionaryUtil.Add(QueryParameters, "OutOrderId", value);
+				trackNo = value;
+				DictionaryUtil.Add(QueryParameters, "trackNo", value);
 			}
 		}
 
@@ -212,61 +144,9 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			}
 		}
 
-		public string Expiration
-		{
-			get
-			{
-				return expiration;
-			}
-			set	
-			{
-				expiration = value;
-				DictionaryUtil.Add(QueryParameters, "Expiration", value);
-			}
-		}
-
-		public bool? IsRecordingEnabled
-		{
-			get
-			{
-				return isRecordingEnabled;
-			}
-			set	
-			{
-				isRecordingEnabled = value;
-				DictionaryUtil.Add(QueryParameters, "IsRecordingEnabled", value.ToString());
-			}
-		}
-
-		public string OutId
-		{
-			get
-			{
-				return outId;
-			}
-			set	
-			{
-				outId = value;
-				DictionaryUtil.Add(QueryParameters, "OutId", value);
-			}
-		}
-
-		public string CallRestrict
-		{
-			get
-			{
-				return callRestrict;
-			}
-			set	
-			{
-				callRestrict = value;
-				DictionaryUtil.Add(QueryParameters, "CallRestrict", value);
-			}
-		}
-
-        public override BindAxbResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AddAxnTrackNoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BindAxbResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddAxnTrackNoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
