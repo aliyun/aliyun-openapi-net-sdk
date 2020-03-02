@@ -85,11 +85,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
         public override DeleteSecretResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteSecretResponseUnmarshaller.Unmarshall(unmarshallerContext);

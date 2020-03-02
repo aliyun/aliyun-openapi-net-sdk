@@ -100,11 +100,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
         public override UpdateSecretVersionStageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UpdateSecretVersionStageResponseUnmarshaller.Unmarshall(unmarshallerContext);
