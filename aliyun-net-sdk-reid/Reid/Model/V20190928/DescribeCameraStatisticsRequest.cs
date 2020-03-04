@@ -27,10 +27,10 @@ using Aliyun.Acs.reid.Transform.V20190928;
 
 namespace Aliyun.Acs.reid.Model.V20190928
 {
-    public class ListEmapRequest : RpcAcsRequest<ListEmapResponse>
+    public class DescribeCameraStatisticsRequest : RpcAcsRequest<DescribeCameraStatisticsResponse>
     {
-        public ListEmapRequest()
-            : base("reid", "2019-09-28", "ListEmap", "1.1.2", "openAPI")
+        public DescribeCameraStatisticsRequest()
+            : base("reid", "2019-09-28", "DescribeCameraStatistics", "1.1.2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,7 +39,24 @@ namespace Aliyun.Acs.reid.Model.V20190928
             }
         }
 
+		private long? startTimestamp;
+
 		private long? storeId;
+
+		private long? endTimestamp;
+
+		public long? StartTimestamp
+		{
+			get
+			{
+				return startTimestamp;
+			}
+			set	
+			{
+				startTimestamp = value;
+				DictionaryUtil.Add(BodyParameters, "StartTimestamp", value.ToString());
+			}
+		}
 
 		public long? StoreId
 		{
@@ -54,9 +71,22 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			}
 		}
 
-        public override ListEmapResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public long? EndTimestamp
+		{
+			get
+			{
+				return endTimestamp;
+			}
+			set	
+			{
+				endTimestamp = value;
+				DictionaryUtil.Add(BodyParameters, "EndTimestamp", value.ToString());
+			}
+		}
+
+        public override DescribeCameraStatisticsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListEmapResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCameraStatisticsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
