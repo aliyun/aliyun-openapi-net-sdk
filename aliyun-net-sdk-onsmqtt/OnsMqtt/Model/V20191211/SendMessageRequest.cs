@@ -35,8 +35,6 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20191211
 			Method = MethodType.POST;
         }
 
-		private bool? noPersistFlag;
-
 		private string mqttTopic;
 
 		private string instanceId;
@@ -44,19 +42,6 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20191211
 		private string payload;
 
 		private string receiptId;
-
-		public bool? NoPersistFlag
-		{
-			get
-			{
-				return noPersistFlag;
-			}
-			set	
-			{
-				noPersistFlag = value;
-				DictionaryUtil.Add(QueryParameters, "NoPersistFlag", value.ToString());
-			}
-		}
 
 		public string MqttTopic
 		{
