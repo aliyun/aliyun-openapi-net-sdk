@@ -32,7 +32,42 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         public ListImagesRequest()
             : base("EHPC", "2018-04-12", "ListImages", "ehs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string baseOsTag;
+
+		private string instanceType;
+
+		public string BaseOsTag
+		{
+			get
+			{
+				return baseOsTag;
+			}
+			set	
+			{
+				baseOsTag = value;
+				DictionaryUtil.Add(QueryParameters, "BaseOsTag", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
 
         public override ListImagesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {

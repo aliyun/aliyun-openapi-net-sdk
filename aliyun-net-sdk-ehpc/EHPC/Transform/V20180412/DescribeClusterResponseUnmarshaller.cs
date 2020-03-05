@@ -60,6 +60,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 			clusterInfo.ImageOwnerAlias = context.StringValue("DescribeCluster.ClusterInfo.ImageOwnerAlias");
 			clusterInfo.ImageId = context.StringValue("DescribeCluster.ClusterInfo.ImageId");
 			clusterInfo.Location = context.StringValue("DescribeCluster.ClusterInfo.Location");
+			clusterInfo.BaseOsTag = context.StringValue("DescribeCluster.ClusterInfo.BaseOsTag");
 
 			DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_EcsInfo ecsInfo = new DescribeClusterResponse.DescribeCluster_ClusterInfo.DescribeCluster_EcsInfo();
 

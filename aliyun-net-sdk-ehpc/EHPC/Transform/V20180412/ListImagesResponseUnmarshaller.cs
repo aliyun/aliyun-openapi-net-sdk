@@ -40,6 +40,8 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				osInfo.Platform = context.StringValue("ListImages.OsTags["+ i +"].Platform");
 				osInfo.Version = context.StringValue("ListImages.OsTags["+ i +"].Version");
 				osInfo.Architecture = context.StringValue("ListImages.OsTags["+ i +"].Architecture");
+				osInfo.BaseOsTag = context.StringValue("ListImages.OsTags["+ i +"].BaseOsTag");
+				osInfo.ImageId = context.StringValue("ListImages.OsTags["+ i +"].ImageId");
 
 				listImagesResponse_osTags.Add(osInfo);
 			}

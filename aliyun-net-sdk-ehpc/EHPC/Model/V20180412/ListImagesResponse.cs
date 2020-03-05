@@ -64,6 +64,10 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string architecture;
 
+			private string baseOsTag;
+
+			private string imageId;
+
 			public string OsTag
 			{
 				get
@@ -109,6 +113,30 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					architecture = value;
+				}
+			}
+
+			public string BaseOsTag
+			{
+				get
+				{
+					return baseOsTag;
+				}
+				set	
+				{
+					baseOsTag = value;
+				}
+			}
+
+			public string ImageId
+			{
+				get
+				{
+					return imageId;
+				}
+				set	
+				{
+					imageId = value;
 				}
 			}
 		}

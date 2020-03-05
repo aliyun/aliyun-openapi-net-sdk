@@ -32,6 +32,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         public DeleteContainerAppsRequest()
             : base("EHPC", "2018-04-12", "DeleteContainerApps", "ehs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private List<ContainerApp> containerApps = new List<ContainerApp>(){ };

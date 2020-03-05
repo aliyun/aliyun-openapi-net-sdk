@@ -32,6 +32,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         public ListCurrentClientVersionRequest()
             : base("EHPC", "2018-04-12", "ListCurrentClientVersion", "ehs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
         public override ListCurrentClientVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)

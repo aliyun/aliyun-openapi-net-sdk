@@ -61,6 +61,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				clusterInfoSimple.EhpcVersion = context.StringValue("ListClusters.Clusters["+ i +"].EhpcVersion");
 				clusterInfoSimple.NodePrefix = context.StringValue("ListClusters.Clusters["+ i +"].NodePrefix");
 				clusterInfoSimple.NodeSuffix = context.StringValue("ListClusters.Clusters["+ i +"].NodeSuffix");
+				clusterInfoSimple.BaseOsTag = context.StringValue("ListClusters.Clusters["+ i +"].BaseOsTag");
 
 				ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_Managers managers = new ListClustersResponse.ListClusters_ClusterInfoSimple.ListClusters_Managers();
 				managers.Total = context.IntegerValue("ListClusters.Clusters["+ i +"].Managers.Total");

@@ -22,22 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-	public class GetAccountingReportResponse : AcsResponse
+	public class SetGWSClusterPolicyResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string metrics;
-
-		private int? totalCoreTime;
-
-		private int? totalCount;
-
-		private int? pageSize;
-
-		private int? pageNumber;
-
-		private List<string> data;
 
 		public string RequestId
 		{
@@ -48,78 +36,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Metrics
-		{
-			get
-			{
-				return metrics;
-			}
-			set	
-			{
-				metrics = value;
-			}
-		}
-
-		public int? TotalCoreTime
-		{
-			get
-			{
-				return totalCoreTime;
-			}
-			set	
-			{
-				totalCoreTime = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public List<string> Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
 			}
 		}
 	}

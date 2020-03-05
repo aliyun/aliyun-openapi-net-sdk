@@ -32,7 +32,14 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
         public SetAutoScaleConfigRequest()
             : base("EHPC", "2018-04-12", "SetAutoScaleConfig", "ehs", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string imageId;
 
 		private float? spotPriceLimit;
 
@@ -61,6 +68,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private int? growIntervalInMinutes;
 
 		private int? growRatio;
+
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
 
 		public float? SpotPriceLimit
 		{
@@ -223,6 +243,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					{
 						DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".InstanceTypes." +(j + 1), queuess[i].InstanceTypess[j]);
 					}
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".MaxNodesInQueue", queuess[i].MaxNodesInQueue);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".InstanceType", queuess[i].InstanceType);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".EnableAutoGrow", queuess[i].EnableAutoGrow);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SpotPriceLimit", queuess[i].SpotPriceLimit);
@@ -266,6 +287,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private List<InstanceTypes> instanceTypess = new List<InstanceTypes>(){ };
 
+			private int? maxNodesInQueue;
+
 			private string instanceType;
 
 			private bool? enableAutoGrow;
@@ -307,6 +330,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					instanceTypess = value;
+				}
+			}
+
+			public int? MaxNodesInQueue
+			{
+				get
+				{
+					return maxNodesInQueue;
+				}
+				set	
+				{
+					maxNodesInQueue = value;
 				}
 			}
 

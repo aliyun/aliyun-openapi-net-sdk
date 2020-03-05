@@ -80,6 +80,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private ListCustomImages_BaseOsTag baseOsTag;
 
+			private ListCustomImages_OsTag osTag;
+
 			public string Uid
 			{
 				get
@@ -224,6 +226,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				}
 			}
 
+			public ListCustomImages_OsTag OsTag
+			{
+				get
+				{
+					return osTag;
+				}
+				set	
+				{
+					osTag = value;
+				}
+			}
+
 			public class ListCustomImages_BaseOsTag
 			{
 
@@ -244,6 +258,80 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					set	
 					{
 						osTag = value;
+					}
+				}
+
+				public string Platform
+				{
+					get
+					{
+						return platform;
+					}
+					set	
+					{
+						platform = value;
+					}
+				}
+
+				public string Version
+				{
+					get
+					{
+						return version;
+					}
+					set	
+					{
+						version = value;
+					}
+				}
+
+				public string Architecture
+				{
+					get
+					{
+						return architecture;
+					}
+					set	
+					{
+						architecture = value;
+					}
+				}
+			}
+
+			public class ListCustomImages_OsTag
+			{
+
+				private string osTag;
+
+				private string baseOsTag;
+
+				private string platform;
+
+				private string version;
+
+				private string architecture;
+
+				public string OsTag
+				{
+					get
+					{
+						return osTag;
+					}
+					set	
+					{
+						osTag = value;
+					}
+				}
+
+				public string BaseOsTag
+				{
+					get
+					{
+						return baseOsTag;
+					}
+					set	
+					{
+						baseOsTag = value;
 					}
 				}
 

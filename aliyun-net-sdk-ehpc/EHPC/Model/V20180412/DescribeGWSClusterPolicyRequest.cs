@@ -27,10 +27,10 @@ using Aliyun.Acs.EHPC.Transform.V20180412;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class ListCustomImagesRequest : RpcAcsRequest<ListCustomImagesResponse>
+    public class DescribeGWSClusterPolicyRequest : RpcAcsRequest<DescribeGWSClusterPolicyResponse>
     {
-        public ListCustomImagesRequest()
-            : base("EHPC", "2018-04-12", "ListCustomImages", "ehs", "openAPI")
+        public DescribeGWSClusterPolicyRequest()
+            : base("EHPC", "2018-04-12", "DescribeGWSClusterPolicy", "ehs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,54 +39,29 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
             }
         }
 
-		private string imageOwnerAlias;
+		private string clusterId;
 
-		private string baseOsTag;
-
-		private string instanceType;
-
-		public string ImageOwnerAlias
+		public string ClusterId
 		{
 			get
 			{
-				return imageOwnerAlias;
+				return clusterId;
 			}
 			set	
 			{
-				imageOwnerAlias = value;
-				DictionaryUtil.Add(QueryParameters, "ImageOwnerAlias", value);
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 
-		public string BaseOsTag
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return baseOsTag;
-			}
-			set	
-			{
-				baseOsTag = value;
-				DictionaryUtil.Add(QueryParameters, "BaseOsTag", value);
-			}
+			return false;
 		}
 
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
-        public override ListCustomImagesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeGWSClusterPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListCustomImagesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeGWSClusterPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

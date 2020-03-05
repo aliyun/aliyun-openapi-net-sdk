@@ -124,6 +124,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string imageId;
 
+			private bool? htEnabled;
+
 			private List<string> roles;
 
 			private ListNodesNoPaging_TotalResources totalResources;
@@ -283,6 +285,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					imageId = value;
+				}
+			}
+
+			public bool? HtEnabled
+			{
+				get
+				{
+					return htEnabled;
+				}
+				set	
+				{
+					htEnabled = value;
 				}
 			}
 

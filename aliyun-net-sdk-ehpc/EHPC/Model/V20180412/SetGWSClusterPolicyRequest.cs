@@ -27,10 +27,10 @@ using Aliyun.Acs.EHPC.Transform.V20180412;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class ListCustomImagesRequest : RpcAcsRequest<ListCustomImagesResponse>
+    public class SetGWSClusterPolicyRequest : RpcAcsRequest<SetGWSClusterPolicyResponse>
     {
-        public ListCustomImagesRequest()
-            : base("EHPC", "2018-04-12", "ListCustomImages", "ehs", "openAPI")
+        public SetGWSClusterPolicyRequest()
+            : base("EHPC", "2018-04-12", "SetGWSClusterPolicy", "ehs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,54 +39,89 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
             }
         }
 
-		private string imageOwnerAlias;
+		private string watermark;
 
-		private string baseOsTag;
+		private string localDrive;
 
-		private string instanceType;
+		private string clusterId;
 
-		public string ImageOwnerAlias
+		private string clipboard;
+
+		private string usbRedirect;
+
+		public string Watermark
 		{
 			get
 			{
-				return imageOwnerAlias;
+				return watermark;
 			}
 			set	
 			{
-				imageOwnerAlias = value;
-				DictionaryUtil.Add(QueryParameters, "ImageOwnerAlias", value);
+				watermark = value;
+				DictionaryUtil.Add(QueryParameters, "Watermark", value);
 			}
 		}
 
-		public string BaseOsTag
+		public string LocalDrive
 		{
 			get
 			{
-				return baseOsTag;
+				return localDrive;
 			}
 			set	
 			{
-				baseOsTag = value;
-				DictionaryUtil.Add(QueryParameters, "BaseOsTag", value);
+				localDrive = value;
+				DictionaryUtil.Add(QueryParameters, "LocalDrive", value);
 			}
 		}
 
-		public string InstanceType
+		public string ClusterId
 		{
 			get
 			{
-				return instanceType;
+				return clusterId;
 			}
 			set	
 			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 
-        public override ListCustomImagesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Clipboard
+		{
+			get
+			{
+				return clipboard;
+			}
+			set	
+			{
+				clipboard = value;
+				DictionaryUtil.Add(QueryParameters, "Clipboard", value);
+			}
+		}
+
+		public string UsbRedirect
+		{
+			get
+			{
+				return usbRedirect;
+			}
+			set	
+			{
+				usbRedirect = value;
+				DictionaryUtil.Add(QueryParameters, "UsbRedirect", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override SetGWSClusterPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListCustomImagesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetGWSClusterPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

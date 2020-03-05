@@ -22,22 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-	public class GetAccountingReportResponse : AcsResponse
+	public class DescribeGWSClusterPolicyResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string metrics;
+		private string clipboard;
 
-		private int? totalCoreTime;
+		private string usbRedirect;
 
-		private int? totalCount;
+		private string watermark;
 
-		private int? pageSize;
-
-		private int? pageNumber;
-
-		private List<string> data;
+		private string localDrive;
 
 		public string RequestId
 		{
@@ -51,75 +47,51 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string Metrics
+		public string Clipboard
 		{
 			get
 			{
-				return metrics;
+				return clipboard;
 			}
 			set	
 			{
-				metrics = value;
+				clipboard = value;
 			}
 		}
 
-		public int? TotalCoreTime
+		public string UsbRedirect
 		{
 			get
 			{
-				return totalCoreTime;
+				return usbRedirect;
 			}
 			set	
 			{
-				totalCoreTime = value;
+				usbRedirect = value;
 			}
 		}
 
-		public int? TotalCount
+		public string Watermark
 		{
 			get
 			{
-				return totalCount;
+				return watermark;
 			}
 			set	
 			{
-				totalCount = value;
+				watermark = value;
 			}
 		}
 
-		public int? PageSize
+		public string LocalDrive
 		{
 			get
 			{
-				return pageSize;
+				return localDrive;
 			}
 			set	
 			{
-				pageSize = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public List<string> Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
+				localDrive = value;
 			}
 		}
 	}

@@ -57,6 +57,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private float? spotPriceLimit;
 
+		private string imageId;
+
 		private List<GetAutoScaleConfig_QueueInfo> queues;
 
 		public string RequestId
@@ -251,6 +253,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
+			}
+		}
+
 		public List<GetAutoScaleConfig_QueueInfo> Queues
 		{
 			get
@@ -279,6 +293,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			private bool? enableAutoGrow;
 
 			private bool? enableAutoShrink;
+
+			private int? maxNodesInQueue;
 
 			private List<GetAutoScaleConfig_InstanceTypeInfo> instanceTypes;
 
@@ -363,6 +379,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					enableAutoShrink = value;
+				}
+			}
+
+			public int? MaxNodesInQueue
+			{
+				get
+				{
+					return maxNodesInQueue;
+				}
+				set	
+				{
+					maxNodesInQueue = value;
 				}
 			}
 

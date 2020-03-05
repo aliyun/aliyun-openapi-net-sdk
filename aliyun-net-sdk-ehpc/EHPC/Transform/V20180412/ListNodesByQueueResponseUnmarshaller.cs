@@ -57,6 +57,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				nodeInfo.VpcId = context.StringValue("ListNodesByQueue.Nodes["+ i +"].VpcId");
 				nodeInfo.ZoneId = context.StringValue("ListNodesByQueue.Nodes["+ i +"].ZoneId");
 				nodeInfo.VSwitchId = context.StringValue("ListNodesByQueue.Nodes["+ i +"].VSwitchId");
+				nodeInfo.HtEnabled = context.BooleanValue("ListNodesByQueue.Nodes["+ i +"].HtEnabled");
 
 				ListNodesByQueueResponse.ListNodesByQueue_NodeInfo.ListNodesByQueue_TotalResources totalResources = new ListNodesByQueueResponse.ListNodesByQueue_NodeInfo.ListNodesByQueue_TotalResources();
 				totalResources.Cpu = context.IntegerValue("ListNodesByQueue.Nodes["+ i +"].TotalResources.Cpu");

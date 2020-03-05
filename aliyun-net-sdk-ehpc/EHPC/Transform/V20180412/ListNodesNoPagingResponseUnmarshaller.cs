@@ -52,6 +52,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				nodeInfo.LockReason = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].LockReason");
 				nodeInfo.ImageOwnerAlias = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].ImageOwnerAlias");
 				nodeInfo.ImageId = context.StringValue("ListNodesNoPaging.Nodes["+ i +"].ImageId");
+				nodeInfo.HtEnabled = context.BooleanValue("ListNodesNoPaging.Nodes["+ i +"].HtEnabled");
 
 				List<string> nodeInfo_roles = new List<string>();
 				for (int j = 0; j < context.Length("ListNodesNoPaging.Nodes["+ i +"].Roles.Length"); j++) {

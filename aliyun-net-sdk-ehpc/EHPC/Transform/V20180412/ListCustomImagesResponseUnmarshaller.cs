@@ -55,6 +55,14 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				baseOsTag.Architecture = context.StringValue("ListCustomImages.Images["+ i +"].BaseOsTag.Architecture");
 				imageInfo.BaseOsTag = baseOsTag;
 
+				ListCustomImagesResponse.ListCustomImages_ImageInfo.ListCustomImages_OsTag osTag = new ListCustomImagesResponse.ListCustomImages_ImageInfo.ListCustomImages_OsTag();
+				osTag.OsTag = context.StringValue("ListCustomImages.Images["+ i +"].OsTag.OsTag");
+				osTag.BaseOsTag = context.StringValue("ListCustomImages.Images["+ i +"].OsTag.BaseOsTag");
+				osTag.Platform = context.StringValue("ListCustomImages.Images["+ i +"].OsTag.Platform");
+				osTag.Version = context.StringValue("ListCustomImages.Images["+ i +"].OsTag.Version");
+				osTag.Architecture = context.StringValue("ListCustomImages.Images["+ i +"].OsTag.Architecture");
+				imageInfo.OsTag = osTag;
+
 				listCustomImagesResponse_images.Add(imageInfo);
 			}
 			listCustomImagesResponse.Images = listCustomImagesResponse_images;
