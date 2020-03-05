@@ -29,9 +29,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private bool? success;
 
-		private string errorMessage;
-
 		private string code;
+
+		private string errorMessage;
 
 		private GetDataAPIServiceDetail_Data data;
 
@@ -59,18 +59,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ErrorMessage
-		{
-			get
-			{
-				return errorMessage;
-			}
-			set	
-			{
-				errorMessage = value;
-			}
-		}
-
 		public string Code
 		{
 			get
@@ -80,6 +68,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string ErrorMessage
+		{
+			get
+			{
+				return errorMessage;
+			}
+			set	
+			{
+				errorMessage = value;
 			}
 		}
 

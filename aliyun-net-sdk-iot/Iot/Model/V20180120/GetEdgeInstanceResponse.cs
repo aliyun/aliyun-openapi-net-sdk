@@ -124,6 +124,12 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string latestDeploymentType;
 
+			private long? gmtCreateTimestamp;
+
+			private long? gmtModifiedTimestamp;
+
+			private long? roleAttachTimestamp;
+
 			public string InstanceId
 			{
 				get
@@ -277,6 +283,42 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					latestDeploymentType = value;
+				}
+			}
+
+			public long? GmtCreateTimestamp
+			{
+				get
+				{
+					return gmtCreateTimestamp;
+				}
+				set	
+				{
+					gmtCreateTimestamp = value;
+				}
+			}
+
+			public long? GmtModifiedTimestamp
+			{
+				get
+				{
+					return gmtModifiedTimestamp;
+				}
+				set	
+				{
+					gmtModifiedTimestamp = value;
+				}
+			}
+
+			public long? RoleAttachTimestamp
+			{
+				get
+				{
+					return roleAttachTimestamp;
+				}
+				set	
+				{
+					roleAttachTimestamp = value;
 				}
 			}
 		}

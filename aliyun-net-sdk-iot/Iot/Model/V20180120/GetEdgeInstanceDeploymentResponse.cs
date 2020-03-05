@@ -112,6 +112,12 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string type;
 
+			private long? gmtCreateTimestamp;
+
+			private long? gmtModifiedTimestamp;
+
+			private long? gmtCompletedTimestamp;
+
 			private List<GetEdgeInstanceDeployment_Task> taskList;
 
 			public string GmtCreate
@@ -198,6 +204,42 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
+			public long? GmtCreateTimestamp
+			{
+				get
+				{
+					return gmtCreateTimestamp;
+				}
+				set	
+				{
+					gmtCreateTimestamp = value;
+				}
+			}
+
+			public long? GmtModifiedTimestamp
+			{
+				get
+				{
+					return gmtModifiedTimestamp;
+				}
+				set	
+				{
+					gmtModifiedTimestamp = value;
+				}
+			}
+
+			public long? GmtCompletedTimestamp
+			{
+				get
+				{
+					return gmtCompletedTimestamp;
+				}
+				set	
+				{
+					gmtCompletedTimestamp = value;
+				}
+			}
+
 			public List<GetEdgeInstanceDeployment_Task> TaskList
 			{
 				get
@@ -226,6 +268,12 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				private int? stage;
 
 				private int? status;
+
+				private long? gmtCreateTimestamp;
+
+				private long? gmtModifiedTimestamp;
+
+				private long? gmtCompletedTimestamp;
 
 				private List<GetEdgeInstanceDeployment_ResourceSnapshot> resourceSnapshotList;
 
@@ -313,6 +361,42 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					}
 				}
 
+				public long? GmtCreateTimestamp
+				{
+					get
+					{
+						return gmtCreateTimestamp;
+					}
+					set	
+					{
+						gmtCreateTimestamp = value;
+					}
+				}
+
+				public long? GmtModifiedTimestamp
+				{
+					get
+					{
+						return gmtModifiedTimestamp;
+					}
+					set	
+					{
+						gmtModifiedTimestamp = value;
+					}
+				}
+
+				public long? GmtCompletedTimestamp
+				{
+					get
+					{
+						return gmtCompletedTimestamp;
+					}
+					set	
+					{
+						gmtCompletedTimestamp = value;
+					}
+				}
+
 				public List<GetEdgeInstanceDeployment_ResourceSnapshot> ResourceSnapshotList
 				{
 					get
@@ -349,6 +433,12 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					private int? status;
 
 					private string log;
+
+					private long? gmtCreateTimestamp;
+
+					private long? gmtModifiedTimestamp;
+
+					private long? gmtCompletedTimestamp;
 
 					public string GmtCreate
 					{
@@ -479,6 +569,42 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 						set	
 						{
 							log = value;
+						}
+					}
+
+					public long? GmtCreateTimestamp
+					{
+						get
+						{
+							return gmtCreateTimestamp;
+						}
+						set	
+						{
+							gmtCreateTimestamp = value;
+						}
+					}
+
+					public long? GmtModifiedTimestamp
+					{
+						get
+						{
+							return gmtModifiedTimestamp;
+						}
+						set	
+						{
+							gmtModifiedTimestamp = value;
+						}
+					}
+
+					public long? GmtCompletedTimestamp
+					{
+						get
+						{
+							return gmtCompletedTimestamp;
+						}
+						set	
+						{
+							gmtCompletedTimestamp = value;
 						}
 					}
 				}

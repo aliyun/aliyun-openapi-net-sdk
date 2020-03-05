@@ -50,6 +50,9 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.RoleAttachTime = context.StringValue("GetEdgeInstance.Data.RoleAttachTime");
 			data.LatestDeploymentStatus = context.IntegerValue("GetEdgeInstance.Data.LatestDeploymentStatus");
 			data.LatestDeploymentType = context.StringValue("GetEdgeInstance.Data.LatestDeploymentType");
+			data.GmtCreateTimestamp = context.LongValue("GetEdgeInstance.Data.GmtCreateTimestamp");
+			data.GmtModifiedTimestamp = context.LongValue("GetEdgeInstance.Data.GmtModifiedTimestamp");
+			data.RoleAttachTimestamp = context.LongValue("GetEdgeInstance.Data.RoleAttachTimestamp");
 			getEdgeInstanceResponse.Data = data;
         
 			return getEdgeInstanceResponse;

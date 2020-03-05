@@ -184,6 +184,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private int? type;
 
+			private string moduleName;
+
 			public string FirmwareName
 			{
 				get
@@ -361,6 +363,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string ModuleName
+			{
+				get
+				{
+					return moduleName;
+				}
+				set	
+				{
+					moduleName = value;
 				}
 			}
 		}

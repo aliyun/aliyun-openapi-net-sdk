@@ -33,8 +33,8 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			getDataAPIServiceDetailResponse.HttpResponse = context.HttpResponse;
 			getDataAPIServiceDetailResponse.RequestId = context.StringValue("GetDataAPIServiceDetail.RequestId");
 			getDataAPIServiceDetailResponse.Success = context.BooleanValue("GetDataAPIServiceDetail.Success");
-			getDataAPIServiceDetailResponse.ErrorMessage = context.StringValue("GetDataAPIServiceDetail.ErrorMessage");
 			getDataAPIServiceDetailResponse.Code = context.StringValue("GetDataAPIServiceDetail.Code");
+			getDataAPIServiceDetailResponse.ErrorMessage = context.StringValue("GetDataAPIServiceDetail.ErrorMessage");
 
 			GetDataAPIServiceDetailResponse.GetDataAPIServiceDetail_Data data = new GetDataAPIServiceDetailResponse.GetDataAPIServiceDetail_Data();
 			data.ApiSrn = context.StringValue("GetDataAPIServiceDetail.Data.ApiSrn");

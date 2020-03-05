@@ -51,6 +51,9 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				deployment.Description = context.StringValue("QueryEdgeInstanceHistoricDeployment.Data.DeploymentList["+ i +"].Description");
 				deployment.Status = context.IntegerValue("QueryEdgeInstanceHistoricDeployment.Data.DeploymentList["+ i +"].Status");
 				deployment.Type = context.StringValue("QueryEdgeInstanceHistoricDeployment.Data.DeploymentList["+ i +"].Type");
+				deployment.GmtCreateTimestamp = context.LongValue("QueryEdgeInstanceHistoricDeployment.Data.DeploymentList["+ i +"].GmtCreateTimestamp");
+				deployment.GmtModifiedTimestamp = context.LongValue("QueryEdgeInstanceHistoricDeployment.Data.DeploymentList["+ i +"].GmtModifiedTimestamp");
+				deployment.GmtCompletedTimestamp = context.LongValue("QueryEdgeInstanceHistoricDeployment.Data.DeploymentList["+ i +"].GmtCompletedTimestamp");
 
 				data_deploymentList.Add(deployment);
 			}

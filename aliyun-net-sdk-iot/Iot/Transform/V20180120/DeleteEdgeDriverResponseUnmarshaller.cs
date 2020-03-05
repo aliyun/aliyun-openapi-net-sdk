@@ -24,20 +24,19 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class GetDeviceListByIotIdsResponseUnmarshaller
+    public class DeleteEdgeDriverResponseUnmarshaller
     {
-        public static GetDeviceListByIotIdsResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteEdgeDriverResponse Unmarshall(UnmarshallerContext context)
         {
-			GetDeviceListByIotIdsResponse getDeviceListByIotIdsResponse = new GetDeviceListByIotIdsResponse();
+			DeleteEdgeDriverResponse deleteEdgeDriverResponse = new DeleteEdgeDriverResponse();
 
-			getDeviceListByIotIdsResponse.HttpResponse = context.HttpResponse;
-			getDeviceListByIotIdsResponse.RequestId = context.StringValue("GetDeviceListByIotIds.RequestId");
-			getDeviceListByIotIdsResponse.Success = context.BooleanValue("GetDeviceListByIotIds.Success");
-			getDeviceListByIotIdsResponse.ErrorMessage = context.StringValue("GetDeviceListByIotIds.ErrorMessage");
-			getDeviceListByIotIdsResponse.Code = context.StringValue("GetDeviceListByIotIds.Code");
-			getDeviceListByIotIdsResponse.Data = context.StringValue("GetDeviceListByIotIds.Data");
+			deleteEdgeDriverResponse.HttpResponse = context.HttpResponse;
+			deleteEdgeDriverResponse.RequestId = context.StringValue("DeleteEdgeDriver.RequestId");
+			deleteEdgeDriverResponse.Success = context.BooleanValue("DeleteEdgeDriver.Success");
+			deleteEdgeDriverResponse.Code = context.StringValue("DeleteEdgeDriver.Code");
+			deleteEdgeDriverResponse.ErrorMessage = context.StringValue("DeleteEdgeDriver.ErrorMessage");
         
-			return getDeviceListByIotIdsResponse;
+			return deleteEdgeDriverResponse;
         }
     }
 }

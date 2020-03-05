@@ -37,9 +37,18 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			createTopicRouteTableResponse.IsAllSucceed = context.BooleanValue("CreateTopicRouteTable.IsAllSucceed");
 			createTopicRouteTableResponse.ErrorMessage = context.StringValue("CreateTopicRouteTable.ErrorMessage");
 
-			List<string> createTopicRouteTableResponse_failureTopics = new List<string>();
+			List<Dictionary<string, string>> createTopicRouteTableResponse_failureTopics = new List<Dictionary<string, string>>();
 			for (int i = 0; i < context.Length("CreateTopicRouteTable.FailureTopics.Length"); i++) {
-				createTopicRouteTableResponse_failureTopics.Add(context.StringValue("CreateTopicRouteTable.FailureTopics["+ i +"]"));
+				Dictionary<string, string> tmp = new Dictionary<string, string>() { };
+				foreach (var item in context.ResponseDictionary){
+					string prefix = "CreateTopicRouteTable.FailureTopics["+ i +"].";
+					if (item.Key.IndexOf(prefix) == 0){
+						tmp.Add(item.Key.Substring(prefix.Length), item.Value);
+					}
+				}
+				if (tmp.Count > 0){
+					createTopicRouteTableResponse_failureTopics.Add(tmp);
+				}
 			}
 			createTopicRouteTableResponse.FailureTopics = createTopicRouteTableResponse_failureTopics;
         

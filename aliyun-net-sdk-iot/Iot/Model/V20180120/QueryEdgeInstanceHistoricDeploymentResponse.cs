@@ -171,6 +171,12 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 				private string type;
 
+				private long? gmtCreateTimestamp;
+
+				private long? gmtModifiedTimestamp;
+
+				private long? gmtCompletedTimestamp;
+
 				public string GmtCreate
 				{
 					get
@@ -252,6 +258,42 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					set	
 					{
 						type = value;
+					}
+				}
+
+				public long? GmtCreateTimestamp
+				{
+					get
+					{
+						return gmtCreateTimestamp;
+					}
+					set	
+					{
+						gmtCreateTimestamp = value;
+					}
+				}
+
+				public long? GmtModifiedTimestamp
+				{
+					get
+					{
+						return gmtModifiedTimestamp;
+					}
+					set	
+					{
+						gmtModifiedTimestamp = value;
+					}
+				}
+
+				public long? GmtCompletedTimestamp
+				{
+					get
+					{
+						return gmtCompletedTimestamp;
+					}
+					set	
+					{
+						gmtCompletedTimestamp = value;
 					}
 				}
 			}

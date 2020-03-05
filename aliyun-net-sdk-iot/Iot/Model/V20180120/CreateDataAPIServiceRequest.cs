@@ -39,11 +39,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string apiPath;
-
 		private List<RequestParam> requestParams = new List<RequestParam>(){ };
 
 		private string folderId;
+
+		private string iotInstanceId;
+
+		private string apiPath;
 
 		private string templateSql;
 
@@ -54,19 +56,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string displayName;
 
 		private string desc;
-
-		public string ApiPath
-		{
-			get
-			{
-				return apiPath;
-			}
-			set	
-			{
-				apiPath = value;
-				DictionaryUtil.Add(QueryParameters, "ApiPath", value);
-			}
-		}
 
 		public List<RequestParam> RequestParams
 		{
@@ -82,9 +71,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				{
 					DictionaryUtil.Add(BodyParameters,"RequestParam." + (i + 1) + ".Name", requestParams[i].Name);
 					DictionaryUtil.Add(BodyParameters,"RequestParam." + (i + 1) + ".Type", requestParams[i].Type);
-					DictionaryUtil.Add(BodyParameters,"RequestParam." + (i + 1) + ".Required", requestParams[i].Required);
 					DictionaryUtil.Add(BodyParameters,"RequestParam." + (i + 1) + ".Desc", requestParams[i].Desc);
 					DictionaryUtil.Add(BodyParameters,"RequestParam." + (i + 1) + ".Example", requestParams[i].Example);
+					DictionaryUtil.Add(BodyParameters,"RequestParam." + (i + 1) + ".Required", requestParams[i].Required);
 				}
 			}
 		}
@@ -98,7 +87,33 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				folderId = value;
-				DictionaryUtil.Add(QueryParameters, "FolderId", value);
+				DictionaryUtil.Add(BodyParameters, "FolderId", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string ApiPath
+		{
+			get
+			{
+				return apiPath;
+			}
+			set	
+			{
+				apiPath = value;
+				DictionaryUtil.Add(BodyParameters, "ApiPath", value);
 			}
 		}
 
@@ -111,7 +126,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				templateSql = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateSql", value);
+				DictionaryUtil.Add(BodyParameters, "TemplateSql", value);
 			}
 		}
 
@@ -129,9 +144,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				{
 					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Name", responseParams[i].Name);
 					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Type", responseParams[i].Type);
-					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Required", responseParams[i].Required);
 					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Desc", responseParams[i].Desc);
 					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Example", responseParams[i].Example);
+					DictionaryUtil.Add(BodyParameters,"ResponseParam." + (i + 1) + ".Required", responseParams[i].Required);
 				}
 			}
 		}
@@ -145,7 +160,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				originSql = value;
-				DictionaryUtil.Add(QueryParameters, "OriginSql", value);
+				DictionaryUtil.Add(BodyParameters, "OriginSql", value);
 			}
 		}
 
@@ -158,7 +173,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				displayName = value;
-				DictionaryUtil.Add(QueryParameters, "DisplayName", value);
+				DictionaryUtil.Add(BodyParameters, "DisplayName", value);
 			}
 		}
 
@@ -171,7 +186,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				desc = value;
-				DictionaryUtil.Add(QueryParameters, "Desc", value);
+				DictionaryUtil.Add(BodyParameters, "Desc", value);
 			}
 		}
 
@@ -182,11 +197,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string type;
 
-			private bool? required;
-
 			private string desc;
 
 			private string example;
+
+			private bool? required;
 
 			public string Name
 			{
@@ -212,18 +227,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public bool? Required
-			{
-				get
-				{
-					return required;
-				}
-				set	
-				{
-					required = value;
-				}
-			}
-
 			public string Desc
 			{
 				get
@@ -245,6 +248,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					example = value;
+				}
+			}
+
+			public bool? Required
+			{
+				get
+				{
+					return required;
+				}
+				set	
+				{
+					required = value;
 				}
 			}
 		}
@@ -256,11 +271,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string type;
 
-			private bool? required;
-
 			private string desc;
 
 			private string example;
+
+			private bool? required;
 
 			public string Name
 			{
@@ -286,18 +301,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public bool? Required
-			{
-				get
-				{
-					return required;
-				}
-				set	
-				{
-					required = value;
-				}
-			}
-
 			public string Desc
 			{
 				get
@@ -319,6 +322,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					example = value;
+				}
+			}
+
+			public bool? Required
+			{
+				get
+				{
+					return required;
+				}
+				set	
+				{
+					required = value;
 				}
 			}
 		}

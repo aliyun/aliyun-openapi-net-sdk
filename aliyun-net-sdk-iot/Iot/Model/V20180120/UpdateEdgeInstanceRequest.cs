@@ -43,11 +43,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? spec;
 
+		private string iotInstanceId;
+
 		private string tags;
 
 		private string instanceId;
-
-		private string iotInstanceId;
 
 		private string name;
 
@@ -77,6 +77,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
 		public string Tags
 		{
 			get
@@ -100,19 +113,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

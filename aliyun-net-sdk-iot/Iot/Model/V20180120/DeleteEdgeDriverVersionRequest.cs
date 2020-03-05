@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class GetProductKeyListByNameRequest : RpcAcsRequest<GetProductKeyListByNameResponse>
+    public class DeleteEdgeDriverVersionRequest : RpcAcsRequest<DeleteEdgeDriverVersionResponse>
     {
-        public GetProductKeyListByNameRequest()
-            : base("Iot", "2018-01-20", "GetProductKeyListByName", "iot", "openAPI")
+        public DeleteEdgeDriverVersionRequest()
+            : base("Iot", "2018-01-20", "DeleteEdgeDriverVersion", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,24 +39,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string resourceGroupId;
+		private string driverId;
 
 		private string iotInstanceId;
 
-		private string productName;
+		private string driverVersion;
 
-		private string page;
-
-		public string ResourceGroupId
+		public string DriverId
 		{
 			get
 			{
-				return resourceGroupId;
+				return driverId;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+				driverId = value;
+				DictionaryUtil.Add(QueryParameters, "DriverId", value);
 			}
 		}
 
@@ -73,35 +71,27 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ProductName
+		public string DriverVersion
 		{
 			get
 			{
-				return productName;
+				return driverVersion;
 			}
 			set	
 			{
-				productName = value;
-				DictionaryUtil.Add(QueryParameters, "ProductName", value);
+				driverVersion = value;
+				DictionaryUtil.Add(QueryParameters, "DriverVersion", value);
 			}
 		}
 
-		public string Page
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return page;
-			}
-			set	
-			{
-				page = value;
-				DictionaryUtil.Add(QueryParameters, "Page", value);
-			}
+			return false;
 		}
 
-        public override GetProductKeyListByNameResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteEdgeDriverVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetProductKeyListByNameResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteEdgeDriverVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

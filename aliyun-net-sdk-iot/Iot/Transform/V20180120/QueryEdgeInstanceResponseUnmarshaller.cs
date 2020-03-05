@@ -57,6 +57,9 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				instance.BizEnable = context.BooleanValue("QueryEdgeInstance.Data.InstanceList["+ i +"].BizEnable");
 				instance.LatestDeploymentStatus = context.IntegerValue("QueryEdgeInstance.Data.InstanceList["+ i +"].LatestDeploymentStatus");
 				instance.LatestDeploymentType = context.StringValue("QueryEdgeInstance.Data.InstanceList["+ i +"].LatestDeploymentType");
+				instance.GmtCreateTimestamp = context.LongValue("QueryEdgeInstance.Data.InstanceList["+ i +"].GmtCreateTimestamp");
+				instance.GmtModifiedTimestamp = context.LongValue("QueryEdgeInstance.Data.InstanceList["+ i +"].GmtModifiedTimestamp");
+				instance.RoleAttachTimestamp = context.LongValue("QueryEdgeInstance.Data.InstanceList["+ i +"].RoleAttachTimestamp");
 
 				data_instanceList.Add(instance);
 			}

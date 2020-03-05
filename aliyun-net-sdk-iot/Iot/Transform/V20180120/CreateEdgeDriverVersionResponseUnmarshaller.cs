@@ -24,20 +24,19 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class GetProductKeyListByNameResponseUnmarshaller
+    public class CreateEdgeDriverVersionResponseUnmarshaller
     {
-        public static GetProductKeyListByNameResponse Unmarshall(UnmarshallerContext context)
+        public static CreateEdgeDriverVersionResponse Unmarshall(UnmarshallerContext context)
         {
-			GetProductKeyListByNameResponse getProductKeyListByNameResponse = new GetProductKeyListByNameResponse();
+			CreateEdgeDriverVersionResponse createEdgeDriverVersionResponse = new CreateEdgeDriverVersionResponse();
 
-			getProductKeyListByNameResponse.HttpResponse = context.HttpResponse;
-			getProductKeyListByNameResponse.RequestId = context.StringValue("GetProductKeyListByName.RequestId");
-			getProductKeyListByNameResponse.Success = context.BooleanValue("GetProductKeyListByName.Success");
-			getProductKeyListByNameResponse.ErrorMessage = context.StringValue("GetProductKeyListByName.ErrorMessage");
-			getProductKeyListByNameResponse.Code = context.StringValue("GetProductKeyListByName.Code");
-			getProductKeyListByNameResponse.Data = context.StringValue("GetProductKeyListByName.Data");
+			createEdgeDriverVersionResponse.HttpResponse = context.HttpResponse;
+			createEdgeDriverVersionResponse.RequestId = context.StringValue("CreateEdgeDriverVersion.RequestId");
+			createEdgeDriverVersionResponse.Success = context.BooleanValue("CreateEdgeDriverVersion.Success");
+			createEdgeDriverVersionResponse.Code = context.StringValue("CreateEdgeDriverVersion.Code");
+			createEdgeDriverVersionResponse.ErrorMessage = context.StringValue("CreateEdgeDriverVersion.ErrorMessage");
         
-			return getProductKeyListByNameResponse;
+			return createEdgeDriverVersionResponse;
         }
     }
 }

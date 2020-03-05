@@ -130,6 +130,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private int? verifyProgress;
 
+			private string moduleName;
+
 			public string FirmwareName
 			{
 				get
@@ -319,6 +321,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					verifyProgress = value;
+				}
+			}
+
+			public string ModuleName
+			{
+				get
+				{
+					return moduleName;
+				}
+				set	
+				{
+					moduleName = value;
 				}
 			}
 		}

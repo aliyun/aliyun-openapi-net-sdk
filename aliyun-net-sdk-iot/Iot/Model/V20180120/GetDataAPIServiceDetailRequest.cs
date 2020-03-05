@@ -39,7 +39,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
+		private string iotInstanceId;
+
 		private string apiSrn;
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(BodyParameters, "IotInstanceId", value);
+			}
+		}
 
 		public string ApiSrn
 		{
@@ -50,7 +65,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				apiSrn = value;
-				DictionaryUtil.Add(QueryParameters, "ApiSrn", value);
+				DictionaryUtil.Add(BodyParameters, "ApiSrn", value);
 			}
 		}
 

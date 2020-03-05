@@ -39,41 +39,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string orderId;
-
-		private string instanceId;
-
 		private string driverId;
 
 		private string iotInstanceId;
 
 		private string driverVersion;
 
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-				DictionaryUtil.Add(QueryParameters, "OrderId", value);
-			}
-		}
+		private string orderId;
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
+		private string instanceId;
 
 		public string DriverId
 		{
@@ -111,6 +85,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				driverVersion = value;
 				DictionaryUtil.Add(QueryParameters, "DriverVersion", value);
+			}
+		}
+
+		public string OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
+				DictionaryUtil.Add(QueryParameters, "OrderId", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

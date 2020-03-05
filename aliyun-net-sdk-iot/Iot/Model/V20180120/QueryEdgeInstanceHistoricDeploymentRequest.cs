@@ -39,17 +39,56 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private long? endTime;
-
-		private int? currentPage;
-
 		private long? startTime;
-
-		private string instanceId;
 
 		private string iotInstanceId;
 
 		private int? pageSize;
+
+		private long? endTime;
+
+		private int? currentPage;
+
+		private string instanceId;
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
 
 		public long? EndTime
 		{
@@ -77,19 +116,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
-
 		public string InstanceId
 		{
 			get
@@ -100,32 +126,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

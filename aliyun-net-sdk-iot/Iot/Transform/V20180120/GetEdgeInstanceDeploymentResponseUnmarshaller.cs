@@ -44,6 +44,9 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.Description = context.StringValue("GetEdgeInstanceDeployment.Data.Description");
 			data.Status = context.IntegerValue("GetEdgeInstanceDeployment.Data.Status");
 			data.Type = context.StringValue("GetEdgeInstanceDeployment.Data.Type");
+			data.GmtCreateTimestamp = context.LongValue("GetEdgeInstanceDeployment.Data.GmtCreateTimestamp");
+			data.GmtModifiedTimestamp = context.LongValue("GetEdgeInstanceDeployment.Data.GmtModifiedTimestamp");
+			data.GmtCompletedTimestamp = context.LongValue("GetEdgeInstanceDeployment.Data.GmtCompletedTimestamp");
 
 			List<GetEdgeInstanceDeploymentResponse.GetEdgeInstanceDeployment_Data.GetEdgeInstanceDeployment_Task> data_taskList = new List<GetEdgeInstanceDeploymentResponse.GetEdgeInstanceDeployment_Data.GetEdgeInstanceDeployment_Task>();
 			for (int i = 0; i < context.Length("GetEdgeInstanceDeployment.Data.TaskList.Length"); i++) {
@@ -55,6 +58,9 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				task.TaskId = context.StringValue("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].TaskId");
 				task.Stage = context.IntegerValue("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].Stage");
 				task.Status = context.IntegerValue("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].Status");
+				task.GmtCreateTimestamp = context.LongValue("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].GmtCreateTimestamp");
+				task.GmtModifiedTimestamp = context.LongValue("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].GmtModifiedTimestamp");
+				task.GmtCompletedTimestamp = context.LongValue("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].GmtCompletedTimestamp");
 
 				List<GetEdgeInstanceDeploymentResponse.GetEdgeInstanceDeployment_Data.GetEdgeInstanceDeployment_Task.GetEdgeInstanceDeployment_ResourceSnapshot> task_resourceSnapshotList = new List<GetEdgeInstanceDeploymentResponse.GetEdgeInstanceDeployment_Data.GetEdgeInstanceDeployment_Task.GetEdgeInstanceDeployment_ResourceSnapshot>();
 				for (int j = 0; j < context.Length("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].ResourceSnapshotList.Length"); j++) {
@@ -70,6 +76,9 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 					resourceSnapshot.Stage = context.IntegerValue("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].Stage");
 					resourceSnapshot.Status = context.IntegerValue("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].Status");
 					resourceSnapshot.Log = context.StringValue("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].Log");
+					resourceSnapshot.GmtCreateTimestamp = context.LongValue("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtCreateTimestamp");
+					resourceSnapshot.GmtModifiedTimestamp = context.LongValue("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtModifiedTimestamp");
+					resourceSnapshot.GmtCompletedTimestamp = context.LongValue("GetEdgeInstanceDeployment.Data.TaskList["+ i +"].ResourceSnapshotList["+ j +"].GmtCompletedTimestamp");
 
 					task_resourceSnapshotList.Add(resourceSnapshot);
 				}

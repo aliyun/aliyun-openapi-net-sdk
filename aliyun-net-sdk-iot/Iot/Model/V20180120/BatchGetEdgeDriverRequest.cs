@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class GetDeviceListByIotIdsRequest : RpcAcsRequest<GetDeviceListByIotIdsResponse>
+    public class BatchGetEdgeDriverRequest : RpcAcsRequest<BatchGetEdgeDriverResponse>
     {
-        public GetDeviceListByIotIdsRequest()
-            : base("Iot", "2018-01-20", "GetDeviceListByIotIds", "iot", "openAPI")
+        public BatchGetEdgeDriverRequest()
+            : base("Iot", "2018-01-20", "BatchGetEdgeDriver", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,35 +39,24 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string resourceGroupId;
-
-		private string iotIds;
+		private List<string> driverIdss = new List<string>(){ };
 
 		private string iotInstanceId;
 
-		public string ResourceGroupId
+		public List<string> DriverIdss
 		{
 			get
 			{
-				return resourceGroupId;
+				return driverIdss;
 			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
 
-		public string IotIds
-		{
-			get
+			set
 			{
-				return iotIds;
-			}
-			set	
-			{
-				iotIds = value;
-				DictionaryUtil.Add(QueryParameters, "IotIds", value);
+				driverIdss = value;
+				for (int i = 0; i < driverIdss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DriverIds." + (i + 1) , driverIdss[i]);
+				}
 			}
 		}
 
@@ -84,9 +73,14 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override GetDeviceListByIotIdsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override BatchGetEdgeDriverResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetDeviceListByIotIdsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchGetEdgeDriverResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

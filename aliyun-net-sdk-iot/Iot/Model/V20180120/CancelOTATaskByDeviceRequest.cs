@@ -39,41 +39,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string firmwareId;
-
-		private string productKey;
-
 		private string jobId;
 
 		private string iotInstanceId;
 
+		private string firmwareId;
+
+		private string productKey;
+
 		private List<string> deviceNames = new List<string>(){ };
-
-		public string FirmwareId
-		{
-			get
-			{
-				return firmwareId;
-			}
-			set	
-			{
-				firmwareId = value;
-				DictionaryUtil.Add(QueryParameters, "FirmwareId", value);
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
 
 		public string JobId
 		{
@@ -98,6 +72,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string FirmwareId
+		{
+			get
+			{
+				return firmwareId;
+			}
+			set	
+			{
+				firmwareId = value;
+				DictionaryUtil.Add(QueryParameters, "FirmwareId", value);
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

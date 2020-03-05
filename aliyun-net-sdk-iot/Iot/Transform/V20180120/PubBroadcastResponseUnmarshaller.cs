@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			pubBroadcastResponse.Success = context.BooleanValue("PubBroadcast.Success");
 			pubBroadcastResponse.Code = context.StringValue("PubBroadcast.Code");
 			pubBroadcastResponse.ErrorMessage = context.StringValue("PubBroadcast.ErrorMessage");
+			pubBroadcastResponse.MessageId = context.LongValue("PubBroadcast.MessageId");
         
 			return pubBroadcastResponse;
         }

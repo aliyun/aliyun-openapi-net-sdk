@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string firmwareDesc;
 
+		private string moduleName;
+
 		private string firmwareSign;
 
 		private int? firmwareSize;
@@ -123,6 +125,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				firmwareDesc = value;
 				DictionaryUtil.Add(QueryParameters, "FirmwareDesc", value);
+			}
+		}
+
+		public string ModuleName
+		{
+			get
+			{
+				return moduleName;
+			}
+			set	
+			{
+				moduleName = value;
+				DictionaryUtil.Add(QueryParameters, "ModuleName", value);
 			}
 		}
 

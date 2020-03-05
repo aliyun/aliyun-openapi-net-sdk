@@ -41,11 +41,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private List<Configs> configss = new List<Configs>(){ };
 
-		private string instanceId;
-
 		private string driverId;
 
 		private string iotInstanceId;
+
+		private string instanceId;
 
 		public List<Configs> Configss
 		{
@@ -63,19 +63,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					DictionaryUtil.Add(QueryParameters,"Configs." + (i + 1) + ".Content", configss[i].Content);
 					DictionaryUtil.Add(QueryParameters,"Configs." + (i + 1) + ".Key", configss[i].Key);
 				}
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -102,6 +89,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

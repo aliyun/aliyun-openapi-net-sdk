@@ -39,22 +39,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string thingList;
-
 		private string iotInstanceId;
 
-		public string ThingList
-		{
-			get
-			{
-				return thingList;
-			}
-			set	
-			{
-				thingList = value;
-				DictionaryUtil.Add(QueryParameters, "ThingList", value);
-			}
-		}
+		private string thingList;
 
 		public string IotInstanceId
 		{
@@ -66,6 +53,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string ThingList
+		{
+			get
+			{
+				return thingList;
+			}
+			set	
+			{
+				thingList = value;
+				DictionaryUtil.Add(QueryParameters, "ThingList", value);
 			}
 		}
 

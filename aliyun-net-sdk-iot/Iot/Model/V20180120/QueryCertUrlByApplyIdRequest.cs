@@ -39,22 +39,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private long? applyId;
-
 		private string iotInstanceId;
 
-		public long? ApplyId
-		{
-			get
-			{
-				return applyId;
-			}
-			set	
-			{
-				applyId = value;
-				DictionaryUtil.Add(QueryParameters, "ApplyId", value.ToString());
-			}
-		}
+		private long? applyId;
 
 		public string IotInstanceId
 		{
@@ -66,6 +53,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public long? ApplyId
+		{
+			get
+			{
+				return applyId;
+			}
+			set	
+			{
+				applyId = value;
+				DictionaryUtil.Add(QueryParameters, "ApplyId", value.ToString());
 			}
 		}
 

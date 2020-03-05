@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
+		private long? messageId;
+
 		public string RequestId
 		{
 			get
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public long? MessageId
+		{
+			get
+			{
+				return messageId;
+			}
+			set	
+			{
+				messageId = value;
 			}
 		}
 	}

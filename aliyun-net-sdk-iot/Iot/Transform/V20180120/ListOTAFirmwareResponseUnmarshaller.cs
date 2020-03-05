@@ -58,6 +58,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				simpleFirmwareInfo.SignMethod = context.StringValue("ListOTAFirmware.FirmwareInfo["+ i +"].SignMethod");
 				simpleFirmwareInfo.ProductName = context.StringValue("ListOTAFirmware.FirmwareInfo["+ i +"].ProductName");
 				simpleFirmwareInfo.Type = context.IntegerValue("ListOTAFirmware.FirmwareInfo["+ i +"].Type");
+				simpleFirmwareInfo.ModuleName = context.StringValue("ListOTAFirmware.FirmwareInfo["+ i +"].ModuleName");
 
 				listOTAFirmwareResponse_firmwareInfo.Add(simpleFirmwareInfo);
 			}

@@ -33,8 +33,8 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			createDataAPIServiceResponse.HttpResponse = context.HttpResponse;
 			createDataAPIServiceResponse.RequestId = context.StringValue("CreateDataAPIService.RequestId");
 			createDataAPIServiceResponse.Success = context.BooleanValue("CreateDataAPIService.Success");
-			createDataAPIServiceResponse.ErrorMessage = context.StringValue("CreateDataAPIService.ErrorMessage");
 			createDataAPIServiceResponse.Code = context.StringValue("CreateDataAPIService.Code");
+			createDataAPIServiceResponse.ErrorMessage = context.StringValue("CreateDataAPIService.ErrorMessage");
 
 			CreateDataAPIServiceResponse.CreateDataAPIService_Data data = new CreateDataAPIServiceResponse.CreateDataAPIService_Data();
 			data.ApiSrn = context.StringValue("CreateDataAPIService.Data.ApiSrn");

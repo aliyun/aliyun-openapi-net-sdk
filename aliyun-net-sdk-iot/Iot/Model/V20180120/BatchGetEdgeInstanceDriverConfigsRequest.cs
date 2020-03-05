@@ -41,9 +41,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private List<string> driverIdss = new List<string>(){ };
 
-		private string instanceId;
-
 		private string iotInstanceId;
+
+		private string instanceId;
 
 		public List<string> DriverIdss
 		{
@@ -62,19 +62,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
 		public string IotInstanceId
 		{
 			get
@@ -85,6 +72,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
