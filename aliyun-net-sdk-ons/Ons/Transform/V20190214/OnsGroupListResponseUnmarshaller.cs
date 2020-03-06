@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 				subscribeInfoDo.InstanceId = context.StringValue("OnsGroupList.Data["+ i +"].InstanceId");
 				subscribeInfoDo.IndependentNaming = context.BooleanValue("OnsGroupList.Data["+ i +"].IndependentNaming");
 				subscribeInfoDo.CreateTime = context.LongValue("OnsGroupList.Data["+ i +"].CreateTime");
+				subscribeInfoDo.GroupType = context.StringValue("OnsGroupList.Data["+ i +"].GroupType");
 
 				onsGroupListResponse_data.Add(subscribeInfoDo);
 			}

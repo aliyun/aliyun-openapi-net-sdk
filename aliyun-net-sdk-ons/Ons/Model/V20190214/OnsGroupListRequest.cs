@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 		private string instanceId;
 
+		private string groupType;
+
 		public string GroupId
 		{
 			get
@@ -66,6 +68,19 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string GroupType
+		{
+			get
+			{
+				return groupType;
+			}
+			set	
+			{
+				groupType = value;
+				DictionaryUtil.Add(QueryParameters, "GroupType", value);
 			}
 		}
 

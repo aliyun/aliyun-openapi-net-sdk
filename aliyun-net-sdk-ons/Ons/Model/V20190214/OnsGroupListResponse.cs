@@ -84,6 +84,8 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private long? createTime;
 
+			private string groupType;
+
 			public string Owner
 			{
 				get
@@ -165,6 +167,18 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string GroupType
+			{
+				get
+				{
+					return groupType;
+				}
+				set	
+				{
+					groupType = value;
 				}
 			}
 		}
