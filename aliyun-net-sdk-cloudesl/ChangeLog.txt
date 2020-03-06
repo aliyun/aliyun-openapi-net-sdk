@@ -1,3 +1,6 @@
+2020-03-06 Version: 1.1.4
+- Support light up led lamp for ESL.
+
 2019-11-29 Version 1.1.2
 - Support limit the number of stores and items when adding.
 - POP version updated to 20190801.
