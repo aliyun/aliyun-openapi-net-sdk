@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class GetNodesAddingTaskRequest : RpcAcsRequest<GetNodesAddingTaskResponse>
     {
         public GetNodesAddingTaskRequest()
-            : base("Iot", "2018-01-20", "GetNodesAddingTask", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "GetNodesAddingTask", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

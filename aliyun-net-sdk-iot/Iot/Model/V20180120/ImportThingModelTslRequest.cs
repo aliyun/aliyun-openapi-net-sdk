@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class ImportThingModelTslRequest : RpcAcsRequest<ImportThingModelTslResponse>
     {
         public ImportThingModelTslRequest()
-            : base("Iot", "2018-01-20", "ImportThingModelTsl", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "ImportThingModelTsl", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

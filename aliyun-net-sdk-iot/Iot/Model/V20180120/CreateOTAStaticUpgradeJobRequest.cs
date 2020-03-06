@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class CreateOTAStaticUpgradeJobRequest : RpcAcsRequest<CreateOTAStaticUpgradeJobResponse>
     {
         public CreateOTAStaticUpgradeJobRequest()
-            : base("Iot", "2018-01-20", "CreateOTAStaticUpgradeJob", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "CreateOTAStaticUpgradeJob", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

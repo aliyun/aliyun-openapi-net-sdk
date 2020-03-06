@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class BatchClearEdgeInstanceDeviceConfigRequest : RpcAcsRequest<BatchClearEdgeInstanceDeviceConfigResponse>
     {
         public BatchClearEdgeInstanceDeviceConfigRequest()
-            : base("Iot", "2018-01-20", "BatchClearEdgeInstanceDeviceConfig", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "BatchClearEdgeInstanceDeviceConfig", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

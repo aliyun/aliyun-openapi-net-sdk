@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class CancelOTATaskByJobRequest : RpcAcsRequest<CancelOTATaskByJobResponse>
+    public class CreateEdgeOssPreSignedAddressRequest : RpcAcsRequest<CreateEdgeOssPreSignedAddressResponse>
     {
-        public CancelOTATaskByJobRequest()
-            : base("Iot", "2018-01-20", "CancelOTATaskByJob", "Iot", "openAPI")
+        public CreateEdgeOssPreSignedAddressRequest()
+            : base("Iot", "2018-01-20", "CreateEdgeOssPreSignedAddress", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,41 +39,28 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private bool? cancelScheduledTask;
-
-		private string jobId;
+		private string type;
 
 		private string iotInstanceId;
 
-		private bool? cancelQueuedTask;
+		private string resourceVersion;
 
-		private bool? cancelInProgressTask;
+		private string resourceId;
 
-		private bool? cancelNotifiedTask;
+		private string fileName;
 
-		public bool? CancelScheduledTask
+		private string instanceId;
+
+		public string Type
 		{
 			get
 			{
-				return cancelScheduledTask;
+				return type;
 			}
 			set	
 			{
-				cancelScheduledTask = value;
-				DictionaryUtil.Add(QueryParameters, "CancelScheduledTask", value.ToString());
-			}
-		}
-
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -90,48 +77,66 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public bool? CancelQueuedTask
+		public string ResourceVersion
 		{
 			get
 			{
-				return cancelQueuedTask;
+				return resourceVersion;
 			}
 			set	
 			{
-				cancelQueuedTask = value;
-				DictionaryUtil.Add(QueryParameters, "CancelQueuedTask", value.ToString());
+				resourceVersion = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceVersion", value);
 			}
 		}
 
-		public bool? CancelInProgressTask
+		public string ResourceId
 		{
 			get
 			{
-				return cancelInProgressTask;
+				return resourceId;
 			}
 			set	
 			{
-				cancelInProgressTask = value;
-				DictionaryUtil.Add(QueryParameters, "CancelInProgressTask", value.ToString());
+				resourceId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
 			}
 		}
 
-		public bool? CancelNotifiedTask
+		public string FileName
 		{
 			get
 			{
-				return cancelNotifiedTask;
+				return fileName;
 			}
 			set	
 			{
-				cancelNotifiedTask = value;
-				DictionaryUtil.Add(QueryParameters, "CancelNotifiedTask", value.ToString());
+				fileName = value;
+				DictionaryUtil.Add(QueryParameters, "FileName", value);
 			}
 		}
 
-        public override CancelOTATaskByJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateEdgeOssPreSignedAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CancelOTATaskByJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateEdgeOssPreSignedAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

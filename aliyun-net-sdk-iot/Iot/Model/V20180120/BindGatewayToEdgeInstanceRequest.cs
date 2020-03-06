@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class BindGatewayToEdgeInstanceRequest : RpcAcsRequest<BindGatewayToEdgeInstanceResponse>
     {
         public BindGatewayToEdgeInstanceRequest()
-            : base("Iot", "2018-01-20", "BindGatewayToEdgeInstance", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "BindGatewayToEdgeInstance", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

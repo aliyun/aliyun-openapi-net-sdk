@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class GetRuleRequest : RpcAcsRequest<GetRuleResponse>
     {
         public GetRuleRequest()
-            : base("Iot", "2018-01-20", "GetRule", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "GetRule", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

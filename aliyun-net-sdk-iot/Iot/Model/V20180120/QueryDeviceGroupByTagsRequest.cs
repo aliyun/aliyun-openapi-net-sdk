@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryDeviceGroupByTagsRequest : RpcAcsRequest<QueryDeviceGroupByTagsResponse>
     {
         public QueryDeviceGroupByTagsRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceGroupByTags", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "QueryDeviceGroupByTags", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class GisQueryDeviceLocationRequest : RpcAcsRequest<GisQueryDeviceLocationResponse>
     {
         public GisQueryDeviceLocationRequest()
-            : base("Iot", "2018-01-20", "GisQueryDeviceLocation", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "GisQueryDeviceLocation", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

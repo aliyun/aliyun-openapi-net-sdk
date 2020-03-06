@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryProductCertInfoRequest : RpcAcsRequest<QueryProductCertInfoResponse>
     {
         public QueryProductCertInfoRequest()
-            : base("Iot", "2018-01-20", "QueryProductCertInfo", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "QueryProductCertInfo", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class SetDeviceDesiredPropertyRequest : RpcAcsRequest<SetDeviceDesiredPropertyResponse>
     {
         public SetDeviceDesiredPropertyRequest()
-            : base("Iot", "2018-01-20", "SetDeviceDesiredProperty", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "SetDeviceDesiredProperty", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

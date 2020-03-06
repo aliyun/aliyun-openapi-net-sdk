@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class CreateThingModelRequest : RpcAcsRequest<CreateThingModelResponse>
     {
         public CreateThingModelRequest()
-            : base("Iot", "2018-01-20", "CreateThingModel", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "CreateThingModel", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

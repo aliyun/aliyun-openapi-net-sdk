@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class DeleteProductTagsRequest : RpcAcsRequest<DeleteProductTagsResponse>
     {
         public DeleteProductTagsRequest()
-            : base("Iot", "2018-01-20", "DeleteProductTags", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "DeleteProductTags", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

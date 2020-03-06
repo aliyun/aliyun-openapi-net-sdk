@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class DeleteEdgeInstanceRequest : RpcAcsRequest<DeleteEdgeInstanceResponse>
     {
         public DeleteEdgeInstanceRequest()
-            : base("Iot", "2018-01-20", "DeleteEdgeInstance", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "DeleteEdgeInstance", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

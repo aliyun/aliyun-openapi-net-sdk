@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class BatchGetEdgeInstanceDriverConfigsRequest : RpcAcsRequest<BatchGetEdgeInstanceDriverConfigsResponse>
     {
         public BatchGetEdgeInstanceDriverConfigsRequest()
-            : base("Iot", "2018-01-20", "BatchGetEdgeInstanceDriverConfigs", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "BatchGetEdgeInstanceDriverConfigs", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class ResetThingRequest : RpcAcsRequest<ResetThingResponse>
     {
         public ResetThingRequest()
-            : base("Iot", "2018-01-20", "ResetThing", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "ResetThing", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

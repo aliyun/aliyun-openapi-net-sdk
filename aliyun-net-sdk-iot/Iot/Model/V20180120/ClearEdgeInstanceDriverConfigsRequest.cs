@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class ClearEdgeInstanceDriverConfigsRequest : RpcAcsRequest<ClearEdgeInstanceDriverConfigsResponse>
     {
         public ClearEdgeInstanceDriverConfigsRequest()
-            : base("Iot", "2018-01-20", "ClearEdgeInstanceDriverConfigs", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "ClearEdgeInstanceDriverConfigs", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class BatchGetDeviceDriverRequest : RpcAcsRequest<BatchGetDeviceDriverResponse>
     {
         public BatchGetDeviceDriverRequest()
-            : base("Iot", "2018-01-20", "BatchGetDeviceDriver", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "BatchGetDeviceDriver", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

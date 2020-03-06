@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class BatchCheckDeviceNamesRequest : RpcAcsRequest<BatchCheckDeviceNamesResponse>
     {
         public BatchCheckDeviceNamesRequest()
-            : base("Iot", "2018-01-20", "BatchCheckDeviceNames", "iot", "openAPI")
+            : base("Iot", "2018-01-20", "BatchCheckDeviceNames", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
