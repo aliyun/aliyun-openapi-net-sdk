@@ -79,6 +79,11 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
         public override CreateSetResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateSetResponseUnmarshaller.Unmarshall(unmarshallerContext);

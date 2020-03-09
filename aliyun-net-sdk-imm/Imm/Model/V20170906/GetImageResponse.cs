@@ -620,6 +620,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private float? faceQuality;
 
+			private float? emotionConfidence;
+
 			private GetImage_FaceAttributes faceAttributes;
 
 			private GetImage_EmotionDetails emotionDetails;
@@ -729,6 +731,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					faceQuality = value;
+				}
+			}
+
+			public float? EmotionConfidence
+			{
+				get
+				{
+					return emotionConfidence;
+				}
+				set	
+				{
+					emotionConfidence = value;
 				}
 			}
 

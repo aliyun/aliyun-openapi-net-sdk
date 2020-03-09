@@ -89,6 +89,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				facesItem.GenderConfidence = context.FloatValue("GetImage.Faces["+ i +"].GenderConfidence");
 				facesItem.GroupId = context.StringValue("GetImage.Faces["+ i +"].GroupId");
 				facesItem.FaceQuality = context.FloatValue("GetImage.Faces["+ i +"].FaceQuality");
+				facesItem.EmotionConfidence = context.FloatValue("GetImage.Faces["+ i +"].EmotionConfidence");
 
 				GetImageResponse.GetImage_FacesItem.GetImage_FaceAttributes faceAttributes = new GetImageResponse.GetImage_FacesItem.GetImage_FaceAttributes();
 				faceAttributes.Glasses = context.StringValue("GetImage.Faces["+ i +"].FaceAttributes.Glasses");
