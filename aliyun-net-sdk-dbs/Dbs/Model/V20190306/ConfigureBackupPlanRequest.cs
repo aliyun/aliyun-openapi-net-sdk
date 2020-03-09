@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Dbs;
 using Aliyun.Acs.Dbs.Transform;
 using Aliyun.Acs.Dbs.Transform.V20190306;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
     public class ConfigureBackupPlanRequest : RpcAcsRequest<ConfigureBackupPlanResponse>
     {
         public ConfigureBackupPlanRequest()
-            : base("Dbs", "2019-03-06", "ConfigureBackupPlan")
+            : base("Dbs", "2019-03-06", "ConfigureBackupPlan", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -61,6 +60,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private string sourceEndpointIP;
 
 		private bool? enableBackupLog;
+
+		private string backupStorageType;
 
 		private int? duplicationArchivePeriod;
 
@@ -224,6 +225,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				enableBackupLog = value;
 				DictionaryUtil.Add(QueryParameters, "EnableBackupLog", value.ToString());
+			}
+		}
+
+		public string BackupStorageType
+		{
+			get
+			{
+				return backupStorageType;
+			}
+			set	
+			{
+				backupStorageType = value;
+				DictionaryUtil.Add(QueryParameters, "BackupStorageType", value);
 			}
 		}
 
