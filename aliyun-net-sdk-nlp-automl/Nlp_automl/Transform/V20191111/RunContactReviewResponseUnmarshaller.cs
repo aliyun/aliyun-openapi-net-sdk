@@ -32,6 +32,7 @@ namespace Aliyun.Acs.nlp_automl.Transform.V20191111
 
 			runContactReviewResponse.HttpResponse = context.HttpResponse;
 			runContactReviewResponse.RequestId = context.StringValue("RunContactReview.RequestId");
+			runContactReviewResponse.RawContractContent = context.StringValue("RunContactReview.RawContractContent");
 
 			RunContactReviewResponse.RunContactReview_ContactContent contactContent = new RunContactReviewResponse.RunContactReview_ContactContent();
 

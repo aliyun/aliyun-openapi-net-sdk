@@ -27,6 +27,8 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 
 		private string requestId;
 
+		private string rawContractContent;
+
 		private RunContactReview_ContactContent contactContent;
 
 		public string RequestId
@@ -38,6 +40,18 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string RawContractContent
+		{
+			get
+			{
+				return rawContractContent;
+			}
+			set	
+			{
+				rawContractContent = value;
 			}
 		}
 
