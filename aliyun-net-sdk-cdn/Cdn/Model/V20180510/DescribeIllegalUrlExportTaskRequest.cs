@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class RefreshObjectCachesRequest : RpcAcsRequest<RefreshObjectCachesResponse>
+    public class DescribeIllegalUrlExportTaskRequest : RpcAcsRequest<DescribeIllegalUrlExportTaskResponse>
     {
-        public RefreshObjectCachesRequest()
-            : base("Cdn", "2018-05-10", "RefreshObjectCaches")
+        public DescribeIllegalUrlExportTaskRequest()
+            : base("Cdn", "2018-05-10", "DescribeIllegalUrlExportTask")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,50 +40,20 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string objectPath;
-
-		private string securityToken;
-
-		private string objectType;
+		private string taskId;
 
 		private long? ownerId;
 
-		public string ObjectPath
+		public string TaskId
 		{
 			get
 			{
-				return objectPath;
+				return taskId;
 			}
 			set	
 			{
-				objectPath = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string ObjectType
-		{
-			get
-			{
-				return objectType;
-			}
-			set	
-			{
-				objectType = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
@@ -100,9 +70,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override RefreshObjectCachesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeIllegalUrlExportTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RefreshObjectCachesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeIllegalUrlExportTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

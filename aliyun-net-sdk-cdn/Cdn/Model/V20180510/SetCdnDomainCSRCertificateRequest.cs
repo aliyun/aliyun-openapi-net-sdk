@@ -40,22 +40,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string certificate;
+		private string serverCertificate;
 
 		private string domainName;
 
 		private long? ownerId;
 
-		public string Certificate
+		public string ServerCertificate
 		{
 			get
 			{
-				return certificate;
+				return serverCertificate;
 			}
 			set	
 			{
-				certificate = value;
-				DictionaryUtil.Add(QueryParameters, "Certificate", value);
+				serverCertificate = value;
+				DictionaryUtil.Add(QueryParameters, "ServerCertificate", value);
 			}
 		}
 

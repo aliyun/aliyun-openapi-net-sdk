@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class RefreshObjectCachesRequest : RpcAcsRequest<RefreshObjectCachesResponse>
+    public class CreateIllegalUrlExportTaskRequest : RpcAcsRequest<CreateIllegalUrlExportTaskResponse>
     {
-        public RefreshObjectCachesRequest()
-            : base("Cdn", "2018-05-10", "RefreshObjectCaches")
+        public CreateIllegalUrlExportTaskRequest()
+            : base("Cdn", "2018-05-10", "CreateIllegalUrlExportTask")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,50 +40,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
-		private string objectPath;
-
-		private string securityToken;
-
-		private string objectType;
+		private string taskName;
 
 		private long? ownerId;
 
-		public string ObjectPath
-		{
-			get
-			{
-				return objectPath;
-			}
-			set	
-			{
-				objectPath = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectPath", value);
-			}
-		}
+		private string timePoint;
 
-		public string SecurityToken
+		public string TaskName
 		{
 			get
 			{
-				return securityToken;
+				return taskName;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string ObjectType
-		{
-			get
-			{
-				return objectType;
-			}
-			set	
-			{
-				objectType = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
+				taskName = value;
+				DictionaryUtil.Add(QueryParameters, "TaskName", value);
 			}
 		}
 
@@ -100,9 +72,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override RefreshObjectCachesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string TimePoint
+		{
+			get
+			{
+				return timePoint;
+			}
+			set	
+			{
+				timePoint = value;
+				DictionaryUtil.Add(QueryParameters, "TimePoint", value);
+			}
+		}
+
+        public override CreateIllegalUrlExportTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RefreshObjectCachesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateIllegalUrlExportTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
