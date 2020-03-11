@@ -27,25 +27,26 @@ using Aliyun.Acs.alimt.Transform.V20181012;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-    public class TranslateGeneralRequest : RpcAcsRequest<TranslateGeneralResponse>
+    public class TranslateCertificateRequest : RpcAcsRequest<TranslateCertificateResponse>
     {
-        public TranslateGeneralRequest()
-            : base("alimt", "2018-10-12", "TranslateGeneral", "alimtct", "openAPI")
+        public TranslateCertificateRequest()
+            : base("alimt", "2018-10-12", "TranslateCertificate", "alimtct", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string sourceLanguage;
 
-		private string sourceText;
+		private string certificateType;
 
-		private string formatType;
+		private string resultType;
 
-		private string scene;
+		private string imageUrl;
 
 		private string targetLanguage;
 
@@ -62,42 +63,42 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
-		public string SourceText
+		public string CertificateType
 		{
 			get
 			{
-				return sourceText;
+				return certificateType;
 			}
 			set	
 			{
-				sourceText = value;
-				DictionaryUtil.Add(BodyParameters, "SourceText", value);
+				certificateType = value;
+				DictionaryUtil.Add(BodyParameters, "CertificateType", value);
 			}
 		}
 
-		public string FormatType
+		public string ResultType
 		{
 			get
 			{
-				return formatType;
+				return resultType;
 			}
 			set	
 			{
-				formatType = value;
-				DictionaryUtil.Add(BodyParameters, "FormatType", value);
+				resultType = value;
+				DictionaryUtil.Add(BodyParameters, "ResultType", value);
 			}
 		}
 
-		public string Scene
+		public string ImageUrl
 		{
 			get
 			{
-				return scene;
+				return imageUrl;
 			}
 			set	
 			{
-				scene = value;
-				DictionaryUtil.Add(BodyParameters, "Scene", value);
+				imageUrl = value;
+				DictionaryUtil.Add(BodyParameters, "ImageUrl", value);
 			}
 		}
 
@@ -119,9 +120,9 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			return false;
 		}
 
-        public override TranslateGeneralResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TranslateCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TranslateGeneralResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TranslateCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

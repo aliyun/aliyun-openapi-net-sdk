@@ -30,7 +30,7 @@ namespace Aliyun.Acs.alimt.Model.V20181012
     public class CreateDocTranslateTaskRequest : RpcAcsRequest<CreateDocTranslateTaskResponse>
     {
         public CreateDocTranslateTaskRequest()
-            : base("alimt", "2018-10-12", "CreateDocTranslateTask", "alimt", "openAPI")
+            : base("alimt", "2018-10-12", "CreateDocTranslateTask", "alimtct", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
