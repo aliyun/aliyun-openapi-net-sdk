@@ -27,10 +27,10 @@ using Aliyun.Acs.ivpd.Transform.V20190625;
 
 namespace Aliyun.Acs.ivpd.Model.V20190625
 {
-    public class RecognizeImageStyleRequest : RpcAcsRequest<RecognizeImageStyleResponse>
+    public class SegmentBodyRequest : RpcAcsRequest<SegmentBodyResponse>
     {
-        public RecognizeImageStyleRequest()
-            : base("ivpd", "2019-06-25", "RecognizeImageStyle", "ivpd", "openAPI")
+        public SegmentBodyRequest()
+            : base("ivpd", "2019-06-25", "SegmentBody", "ivpd", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,18 +39,18 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
             }
         }
 
-		private string url;
+		private string imageUrl;
 
-		public string Url
+		public string ImageUrl
 		{
 			get
 			{
-				return url;
+				return imageUrl;
 			}
 			set	
 			{
-				url = value;
-				DictionaryUtil.Add(BodyParameters, "Url", value);
+				imageUrl = value;
+				DictionaryUtil.Add(BodyParameters, "ImageUrl", value);
 			}
 		}
 
@@ -59,9 +59,9 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			return false;
 		}
 
-        public override RecognizeImageStyleResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SegmentBodyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RecognizeImageStyleResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SegmentBodyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

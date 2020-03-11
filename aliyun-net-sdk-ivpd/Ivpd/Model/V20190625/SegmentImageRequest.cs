@@ -37,7 +37,6 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
 		private string url;
