@@ -16,24 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Dds.Model.V20151201;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Dds.Transform.V20151201
+namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class CreateAccountResponseUnmarshaller
-    {
-        public static CreateAccountResponse Unmarshall(UnmarshallerContext context)
-        {
-			CreateAccountResponse createAccountResponse = new CreateAccountResponse();
+	public class DescribeUserEncryptionKeyListResponse : AcsResponse
+	{
 
-			createAccountResponse.HttpResponse = context.HttpResponse;
-			createAccountResponse.RequestId = context.StringValue("CreateAccount.RequestId");
-        
-			return createAccountResponse;
-        }
-    }
+		private string requestId;
+
+		private List<string> keyIds;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public List<string> KeyIds
+		{
+			get
+			{
+				return keyIds;
+			}
+			set	
+			{
+				keyIds = value;
+			}
+		}
+	}
 }

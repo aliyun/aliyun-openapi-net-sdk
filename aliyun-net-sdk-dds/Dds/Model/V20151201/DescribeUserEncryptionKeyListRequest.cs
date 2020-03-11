@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class CreateAccountRequest : RpcAcsRequest<CreateAccountResponse>
+    public class DescribeUserEncryptionKeyListRequest : RpcAcsRequest<DescribeUserEncryptionKeyListResponse>
     {
-        public CreateAccountRequest()
-            : base("Dds", "2015-12-01", "CreateAccount", "Dds", "openAPI")
+        public DescribeUserEncryptionKeyListRequest()
+            : base("Dds", "2015-12-01", "DescribeUserEncryptionKeyList", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,10 +40,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         }
 
 		private long? resourceOwnerId;
-
-		private string accountDescription;
-
-		private string accountName;
 
 		private string securityToken;
 
@@ -55,8 +51,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? ownerId;
 
-		private string accountPassword;
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -67,32 +61,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string AccountDescription
-		{
-			get
-			{
-				return accountDescription;
-			}
-			set	
-			{
-				accountDescription = value;
-				DictionaryUtil.Add(QueryParameters, "AccountDescription", value);
-			}
-		}
-
-		public string AccountName
-		{
-			get
-			{
-				return accountName;
-			}
-			set	
-			{
-				accountName = value;
-				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
@@ -161,22 +129,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string AccountPassword
-		{
-			get
-			{
-				return accountPassword;
-			}
-			set	
-			{
-				accountPassword = value;
-				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
-			}
-		}
-
-        public override CreateAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeUserEncryptionKeyListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeUserEncryptionKeyListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

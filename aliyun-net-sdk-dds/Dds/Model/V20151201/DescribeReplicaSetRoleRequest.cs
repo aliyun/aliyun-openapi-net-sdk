@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeReplicaSetRoleRequest : RpcAcsRequest<DescribeReplicaSetRoleResponse>
     {
         public DescribeReplicaSetRoleRequest()
-            : base("Dds", "2015-12-01", "DescribeReplicaSetRole", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeReplicaSetRole", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

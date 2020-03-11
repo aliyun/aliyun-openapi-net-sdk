@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class ModifyInstanceVpcAuthModeRequest : RpcAcsRequest<ModifyInstanceVpcAuthModeResponse>
     {
         public ModifyInstanceVpcAuthModeRequest()
-            : base("Dds", "2015-12-01", "ModifyInstanceVpcAuthMode", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "ModifyInstanceVpcAuthMode", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

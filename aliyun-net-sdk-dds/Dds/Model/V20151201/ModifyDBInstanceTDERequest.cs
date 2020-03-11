@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class ModifyDBInstanceTDERequest : RpcAcsRequest<ModifyDBInstanceTDEResponse>
     {
         public ModifyDBInstanceTDERequest()
-            : base("Dds", "2015-12-01", "ModifyDBInstanceTDE", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "ModifyDBInstanceTDE", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,9 +49,13 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string ownerAccount;
 
+		private string encryptionKey;
+
 		private long? ownerId;
 
 		private string encryptorName;
+
+		private string roleARN;
 
 		private string tDEStatus;
 
@@ -120,6 +124,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKey", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -143,6 +160,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				encryptorName = value;
 				DictionaryUtil.Add(QueryParameters, "EncryptorName", value);
+			}
+		}
+
+		public string RoleARN
+		{
+			get
+			{
+				return roleARN;
+			}
+			set	
+			{
+				roleARN = value;
+				DictionaryUtil.Add(QueryParameters, "RoleARN", value);
 			}
 		}
 

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeDBInstanceTDEInfoRequest : RpcAcsRequest<DescribeDBInstanceTDEInfoResponse>
     {
         public DescribeDBInstanceTDEInfoRequest()
-            : base("Dds", "2015-12-01", "DescribeDBInstanceTDEInfo", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeDBInstanceTDEInfo", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class ModifyNodeSpecRequest : RpcAcsRequest<ModifyNodeSpecResponse>
     {
         public ModifyNodeSpecRequest()
-            : base("Dds", "2015-12-01", "ModifyNodeSpec", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "ModifyNodeSpec", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

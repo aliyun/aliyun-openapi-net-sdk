@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DeleteNodeRequest : RpcAcsRequest<DeleteNodeResponse>
     {
         public DeleteNodeRequest()
-            : base("Dds", "2015-12-01", "DeleteNode", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DeleteNode", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

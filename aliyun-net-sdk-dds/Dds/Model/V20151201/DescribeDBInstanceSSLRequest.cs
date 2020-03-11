@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeDBInstanceSSLRequest : RpcAcsRequest<DescribeDBInstanceSSLResponse>
     {
         public DescribeDBInstanceSSLRequest()
-            : base("Dds", "2015-12-01", "DescribeDBInstanceSSL", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeDBInstanceSSL", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

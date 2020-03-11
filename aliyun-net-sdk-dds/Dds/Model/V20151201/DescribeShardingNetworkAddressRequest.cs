@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeShardingNetworkAddressRequest : RpcAcsRequest<DescribeShardingNetworkAddressResponse>
     {
         public DescribeShardingNetworkAddressRequest()
-            : base("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

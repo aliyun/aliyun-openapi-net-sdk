@@ -27,7 +27,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string requestId;
 
-		private List<DescribeAvailableResource_AvailableZone> availableZones;
+		private List<DescribeAvailableResource_SupportedDBType> supportedDBTypes;
 
 		public string RequestId
 		{
@@ -41,184 +41,230 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public List<DescribeAvailableResource_AvailableZone> AvailableZones
+		public List<DescribeAvailableResource_SupportedDBType> SupportedDBTypes
 		{
 			get
 			{
-				return availableZones;
+				return supportedDBTypes;
 			}
 			set	
 			{
-				availableZones = value;
+				supportedDBTypes = value;
 			}
 		}
 
-		public class DescribeAvailableResource_AvailableZone
+		public class DescribeAvailableResource_SupportedDBType
 		{
 
-			private string regionId;
+			private string dbType;
 
-			private string zoneId;
+			private List<DescribeAvailableResource_AvailableZone> availableZones;
 
-			private List<DescribeAvailableResource_SupportedEngineVersion> supportedEngineVersions;
-
-			public string RegionId
+			public string DbType
 			{
 				get
 				{
-					return regionId;
+					return dbType;
 				}
 				set	
 				{
-					regionId = value;
+					dbType = value;
 				}
 			}
 
-			public string ZoneId
+			public List<DescribeAvailableResource_AvailableZone> AvailableZones
 			{
 				get
 				{
-					return zoneId;
+					return availableZones;
 				}
 				set	
 				{
-					zoneId = value;
+					availableZones = value;
 				}
 			}
 
-			public List<DescribeAvailableResource_SupportedEngineVersion> SupportedEngineVersions
-			{
-				get
-				{
-					return supportedEngineVersions;
-				}
-				set	
-				{
-					supportedEngineVersions = value;
-				}
-			}
-
-			public class DescribeAvailableResource_SupportedEngineVersion
+			public class DescribeAvailableResource_AvailableZone
 			{
 
-				private string version;
+				private string regionId;
 
-				private List<DescribeAvailableResource_SupportedEngine> supportedEngines;
+				private string zoneId;
 
-				public string Version
+				private List<DescribeAvailableResource_SupportedEngineVersion> supportedEngineVersions;
+
+				public string RegionId
 				{
 					get
 					{
-						return version;
+						return regionId;
 					}
 					set	
 					{
-						version = value;
+						regionId = value;
 					}
 				}
 
-				public List<DescribeAvailableResource_SupportedEngine> SupportedEngines
+				public string ZoneId
 				{
 					get
 					{
-						return supportedEngines;
+						return zoneId;
 					}
 					set	
 					{
-						supportedEngines = value;
+						zoneId = value;
 					}
 				}
 
-				public class DescribeAvailableResource_SupportedEngine
+				public List<DescribeAvailableResource_SupportedEngineVersion> SupportedEngineVersions
+				{
+					get
+					{
+						return supportedEngineVersions;
+					}
+					set	
+					{
+						supportedEngineVersions = value;
+					}
+				}
+
+				public class DescribeAvailableResource_SupportedEngineVersion
 				{
 
-					private string engine;
+					private string version;
 
-					private List<DescribeAvailableResource_SupportedNodeType> supportedNodeTypes;
+					private List<DescribeAvailableResource_SupportedEngine> supportedEngines;
 
-					public string Engine
+					public string Version
 					{
 						get
 						{
-							return engine;
+							return version;
 						}
 						set	
 						{
-							engine = value;
+							version = value;
 						}
 					}
 
-					public List<DescribeAvailableResource_SupportedNodeType> SupportedNodeTypes
+					public List<DescribeAvailableResource_SupportedEngine> SupportedEngines
 					{
 						get
 						{
-							return supportedNodeTypes;
+							return supportedEngines;
 						}
 						set	
 						{
-							supportedNodeTypes = value;
+							supportedEngines = value;
 						}
 					}
 
-					public class DescribeAvailableResource_SupportedNodeType
+					public class DescribeAvailableResource_SupportedEngine
 					{
 
-						private string nodeType;
+						private string engine;
 
-						private string networkTypes;
+						private List<DescribeAvailableResource_SupportedNodeType> supportedNodeTypes;
 
-						private List<DescribeAvailableResource_AvailableResource> availableResources;
-
-						public string NodeType
+						public string Engine
 						{
 							get
 							{
-								return nodeType;
+								return engine;
 							}
 							set	
 							{
-								nodeType = value;
+								engine = value;
 							}
 						}
 
-						public string NetworkTypes
+						public List<DescribeAvailableResource_SupportedNodeType> SupportedNodeTypes
 						{
 							get
 							{
-								return networkTypes;
+								return supportedNodeTypes;
 							}
 							set	
 							{
-								networkTypes = value;
+								supportedNodeTypes = value;
 							}
 						}
 
-						public List<DescribeAvailableResource_AvailableResource> AvailableResources
-						{
-							get
-							{
-								return availableResources;
-							}
-							set	
-							{
-								availableResources = value;
-							}
-						}
-
-						public class DescribeAvailableResource_AvailableResource
+						public class DescribeAvailableResource_SupportedNodeType
 						{
 
-							private string instanceClass;
+							private string nodeType;
 
-							public string InstanceClass
+							private string networkTypes;
+
+							private List<DescribeAvailableResource_AvailableResource> availableResources;
+
+							public string NodeType
 							{
 								get
 								{
-									return instanceClass;
+									return nodeType;
 								}
 								set	
 								{
-									instanceClass = value;
+									nodeType = value;
+								}
+							}
+
+							public string NetworkTypes
+							{
+								get
+								{
+									return networkTypes;
+								}
+								set	
+								{
+									networkTypes = value;
+								}
+							}
+
+							public List<DescribeAvailableResource_AvailableResource> AvailableResources
+							{
+								get
+								{
+									return availableResources;
+								}
+								set	
+								{
+									availableResources = value;
+								}
+							}
+
+							public class DescribeAvailableResource_AvailableResource
+							{
+
+								private string instanceClass;
+
+								private string instanceClassRemark;
+
+								public string InstanceClass
+								{
+									get
+									{
+										return instanceClass;
+									}
+									set	
+									{
+										instanceClass = value;
+									}
+								}
+
+								public string InstanceClassRemark
+								{
+									get
+									{
+										return instanceClassRemark;
+									}
+									set	
+									{
+										instanceClassRemark = value;
+									}
 								}
 							}
 						}

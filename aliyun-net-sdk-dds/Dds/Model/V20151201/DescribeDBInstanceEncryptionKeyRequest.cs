@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class CheckCloudResourceAuthorizedRequest : RpcAcsRequest<CheckCloudResourceAuthorizedResponse>
+    public class DescribeDBInstanceEncryptionKeyRequest : RpcAcsRequest<DescribeDBInstanceEncryptionKeyResponse>
     {
-        public CheckCloudResourceAuthorizedRequest()
-            : base("Dds", "2015-12-01", "CheckCloudResourceAuthorized", "dds", "openAPI")
+        public DescribeDBInstanceEncryptionKeyRequest()
+            : base("Dds", "2015-12-01", "DescribeDBInstanceEncryptionKey", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,9 +49,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string ownerAccount;
 
-		private long? ownerId;
+		private string encryptionKey;
 
-		private string targetRegionId;
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -118,6 +118,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKey", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -131,22 +144,9 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string TargetRegionId
-		{
-			get
-			{
-				return targetRegionId;
-			}
-			set	
-			{
-				targetRegionId = value;
-				DictionaryUtil.Add(QueryParameters, "TargetRegionId", value);
-			}
-		}
-
-        public override CheckCloudResourceAuthorizedResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDBInstanceEncryptionKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CheckCloudResourceAuthorizedResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDBInstanceEncryptionKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

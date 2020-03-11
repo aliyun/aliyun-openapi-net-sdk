@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class ReleasePublicNetworkAddressRequest : RpcAcsRequest<ReleasePublicNetworkAddressResponse>
     {
         public ReleasePublicNetworkAddressRequest()
-            : base("Dds", "2015-12-01", "ReleasePublicNetworkAddress", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "ReleasePublicNetworkAddress", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

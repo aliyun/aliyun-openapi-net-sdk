@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class SwitchDBInstanceHARequest : RpcAcsRequest<SwitchDBInstanceHAResponse>
     {
         public SwitchDBInstanceHARequest()
-            : base("Dds", "2015-12-01", "SwitchDBInstanceHA", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "SwitchDBInstanceHA", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

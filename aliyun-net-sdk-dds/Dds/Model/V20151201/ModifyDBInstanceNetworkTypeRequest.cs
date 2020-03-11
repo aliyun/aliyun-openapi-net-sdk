@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class ModifyDBInstanceNetworkTypeRequest : RpcAcsRequest<ModifyDBInstanceNetworkTypeResponse>
     {
         public ModifyDBInstanceNetworkTypeRequest()
-            : base("Dds", "2015-12-01", "ModifyDBInstanceNetworkType", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "ModifyDBInstanceNetworkType", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

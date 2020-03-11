@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class ReleaseNodePrivateNetworkAddressRequest : RpcAcsRequest<ReleaseNodePrivateNetworkAddressResponse>
     {
         public ReleaseNodePrivateNetworkAddressRequest()
-            : base("Dds", "2015-12-01", "ReleaseNodePrivateNetworkAddress", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "ReleaseNodePrivateNetworkAddress", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

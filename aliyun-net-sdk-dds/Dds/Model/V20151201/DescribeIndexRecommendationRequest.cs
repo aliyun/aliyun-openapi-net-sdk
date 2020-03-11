@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeIndexRecommendationRequest : RpcAcsRequest<DescribeIndexRecommendationResponse>
     {
         public DescribeIndexRecommendationRequest()
-            : base("Dds", "2015-12-01", "DescribeIndexRecommendation", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeIndexRecommendation", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

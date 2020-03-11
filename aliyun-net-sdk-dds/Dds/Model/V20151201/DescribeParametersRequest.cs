@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeParametersRequest : RpcAcsRequest<DescribeParametersResponse>
     {
         public DescribeParametersRequest()
-            : base("Dds", "2015-12-01", "DescribeParameters", "Dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeParameters", "dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
