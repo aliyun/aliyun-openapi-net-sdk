@@ -22,20 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class DescribeImagesResponse : AcsResponse
+	public class DescribeImageFromFamilyResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string regionId;
-
-		private int? totalCount;
-
-		private int? pageNumber;
-
-		private int? pageSize;
-
-		private List<DescribeImages_Image> images;
+		private DescribeImageFromFamily_Image image;
 
 		public string RequestId
 		{
@@ -49,67 +41,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string RegionId
+		public DescribeImageFromFamily_Image Image
 		{
 			get
 			{
-				return regionId;
+				return image;
 			}
 			set	
 			{
-				regionId = value;
+				image = value;
 			}
 		}
 
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public List<DescribeImages_Image> Images
-		{
-			get
-			{
-				return images;
-			}
-			set	
-			{
-				images = value;
-			}
-		}
-
-		public class DescribeImages_Image
+		public class DescribeImageFromFamily_Image
 		{
 
 			private string progress;
@@ -134,8 +78,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string oSName;
 
-			private string oSNameEn;
-
 			private string architecture;
 
 			private string status;
@@ -156,11 +98,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? isCopied;
 
-			private string resourceGroupId;
+			private List<DescribeImageFromFamily_DiskDeviceMapping> diskDeviceMappings;
 
-			private List<DescribeImages_DiskDeviceMapping> diskDeviceMappings;
-
-			private List<DescribeImages_Tag> tags;
+			private List<DescribeImageFromFamily_Tag> tags;
 
 			public string Progress
 			{
@@ -294,18 +234,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string OSNameEn
-			{
-				get
-				{
-					return oSNameEn;
-				}
-				set	
-				{
-					oSNameEn = value;
-				}
-			}
-
 			public string Architecture
 			{
 				get
@@ -426,19 +354,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string ResourceGroupId
-			{
-				get
-				{
-					return resourceGroupId;
-				}
-				set	
-				{
-					resourceGroupId = value;
-				}
-			}
-
-			public List<DescribeImages_DiskDeviceMapping> DiskDeviceMappings
+			public List<DescribeImageFromFamily_DiskDeviceMapping> DiskDeviceMappings
 			{
 				get
 				{
@@ -450,7 +366,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public List<DescribeImages_Tag> Tags
+			public List<DescribeImageFromFamily_Tag> Tags
 			{
 				get
 				{
@@ -462,7 +378,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public class DescribeImages_DiskDeviceMapping
+			public class DescribeImageFromFamily_DiskDeviceMapping
 			{
 
 				private string snapshotId;
@@ -478,10 +394,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				private string importOSSBucket;
 
 				private string importOSSObject;
-
-				private string progress;
-
-				private int? remainTime;
 
 				public string SnapshotId
 				{
@@ -566,33 +478,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 						importOSSObject = value;
 					}
 				}
-
-				public string Progress
-				{
-					get
-					{
-						return progress;
-					}
-					set	
-					{
-						progress = value;
-					}
-				}
-
-				public int? RemainTime
-				{
-					get
-					{
-						return remainTime;
-					}
-					set	
-					{
-						remainTime = value;
-					}
-				}
 			}
 
-			public class DescribeImages_Tag
+			public class DescribeImageFromFamily_Tag
 			{
 
 				private string tagKey;

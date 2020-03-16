@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string clientToken;
 
+		private string encryptAlgorithm;
+
 		private string description;
 
 		private string diskName;
@@ -117,6 +119,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string EncryptAlgorithm
+		{
+			get
+			{
+				return encryptAlgorithm;
+			}
+			set	
+			{
+				encryptAlgorithm = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptAlgorithm", value);
 			}
 		}
 

@@ -151,6 +151,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? systemDiskSize;
 
+		private string imageFamily;
+
 		private string systemDiskDescription;
 
 		public long? ResourceOwnerId
@@ -870,6 +872,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Encrypted", dataDisks[i].Encrypted);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".PerformanceLevel", dataDisks[i].PerformanceLevel);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".EncryptAlgorithm", dataDisks[i].EncryptAlgorithm);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Description", dataDisks[i].Description);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Category", dataDisks[i].Category);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".KMSKeyId", dataDisks[i].KMSKeyId);
@@ -902,6 +905,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				systemDiskSize = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDisk.Size", value.ToString());
+			}
+		}
+
+		public string ImageFamily
+		{
+			get
+			{
+				return imageFamily;
+			}
+			set	
+			{
+				imageFamily = value;
+				DictionaryUtil.Add(QueryParameters, "ImageFamily", value);
 			}
 		}
 
@@ -1009,6 +1025,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string performanceLevel;
 
+			private string encryptAlgorithm;
+
 			private string description;
 
 			private string category;
@@ -1076,6 +1094,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					performanceLevel = value;
+				}
+			}
+
+			public string EncryptAlgorithm
+			{
+				get
+				{
+					return encryptAlgorithm;
+				}
+				set	
+				{
+					encryptAlgorithm = value;
 				}
 			}
 

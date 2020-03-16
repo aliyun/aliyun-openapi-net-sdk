@@ -144,6 +144,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? queueNumber;
 
+			private string ownerId;
+
 			private List<DescribeNetworkInterfaces_PrivateIpSet> privateIpSets;
 
 			private List<DescribeNetworkInterfaces_Ipv6Set> ipv6Sets;
@@ -343,6 +345,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					queueNumber = value;
+				}
+			}
+
+			public string OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
 				}
 			}
 

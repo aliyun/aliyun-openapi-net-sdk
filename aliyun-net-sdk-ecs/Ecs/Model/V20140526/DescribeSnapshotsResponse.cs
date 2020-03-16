@@ -138,6 +138,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string category;
 
+			private string snapshotType;
+
 			private List<DescribeSnapshots_Tag> tags;
 
 			public string SnapshotId
@@ -377,6 +379,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					category = value;
+				}
+			}
+
+			public string SnapshotType
+			{
+				get
+				{
+					return snapshotType;
+				}
+				set	
+				{
+					snapshotType = value;
 				}
 			}
 

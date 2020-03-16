@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					valueItem.InstanceChargeType = context.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceChargeType");
 					valueItem.InstanceType = context.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].InstanceType");
 					valueItem.Count = context.IntegerValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].Count");
+					valueItem.DiskCategory = context.StringValue("DescribeAccountAttributes.AccountAttributeItems["+ i +"].AttributeValues["+ j +"].DiskCategory");
 
 					accountAttributeItem_attributeValues.Add(valueItem);
 				}

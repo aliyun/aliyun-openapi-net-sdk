@@ -170,6 +170,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string systemDiskSize;
 
+		private string imageFamily;
+
 		private string systemDiskDescription;
 
 		public string LaunchTemplateName
@@ -1013,6 +1015,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".DeleteWithInstance", dataDisks[i].DeleteWithInstance);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".PerformanceLevel", dataDisks[i].PerformanceLevel);
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".AutoSnapshotPolicyId", dataDisks[i].AutoSnapshotPolicyId);
+					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".EncryptAlgorithm", dataDisks[i].EncryptAlgorithm);
 				}
 			}
 		}
@@ -1053,6 +1056,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				systemDiskSize = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDisk.Size", value);
+			}
+		}
+
+		public string ImageFamily
+		{
+			get
+			{
+				return imageFamily;
+			}
+			set	
+			{
+				imageFamily = value;
+				DictionaryUtil.Add(QueryParameters, "ImageFamily", value);
 			}
 		}
 
@@ -1214,6 +1230,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string autoSnapshotPolicyId;
 
+			private string encryptAlgorithm;
+
 			public int? Size
 			{
 				get
@@ -1343,6 +1361,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					autoSnapshotPolicyId = value;
+				}
+			}
+
+			public string EncryptAlgorithm
+			{
+				get
+				{
+					return encryptAlgorithm;
+				}
+				set	
+				{
+					encryptAlgorithm = value;
 				}
 			}
 		}

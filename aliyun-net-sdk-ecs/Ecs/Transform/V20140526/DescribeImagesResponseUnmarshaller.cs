@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				image.Progress = context.StringValue("DescribeImages.Images["+ i +"].Progress");
 				image.ImageId = context.StringValue("DescribeImages.Images["+ i +"].ImageId");
 				image.ImageName = context.StringValue("DescribeImages.Images["+ i +"].ImageName");
+				image.ImageFamily = context.StringValue("DescribeImages.Images["+ i +"].ImageFamily");
 				image.ImageVersion = context.StringValue("DescribeImages.Images["+ i +"].ImageVersion");
 				image.Description = context.StringValue("DescribeImages.Images["+ i +"].Description");
 				image.Size = context.IntegerValue("DescribeImages.Images["+ i +"].Size");

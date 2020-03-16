@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeInstanceStatusRequest : RpcAcsRequest<DescribeInstanceStatusResponse>
+    public class RebootInstancesRequest : RpcAcsRequest<RebootInstancesResponse>
     {
-        public DescribeInstanceStatusRequest()
-            : base("Ecs", "2014-05-26", "DescribeInstanceStatus", "ecs", "openAPI")
+        public RebootInstancesRequest()
+            : base("Ecs", "2014-05-26", "RebootInstances", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,21 +42,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private int? pageNumber;
-
-		private int? pageSize;
+		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string clusterId;
-
 		private long? ownerId;
 
-		private List<string> instanceIds = new List<string>(){ };
+		private bool? forceReboot;
 
-		private string zoneId;
+		private List<string> instanceIds = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -70,29 +67,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? PageNumber
+		public bool? DryRun
 		{
 			get
 			{
-				return pageNumber;
+				return dryRun;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -122,19 +106,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -145,6 +116,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? ForceReboot
+		{
+			get
+			{
+				return forceReboot;
+			}
+			set	
+			{
+				forceReboot = value;
+				DictionaryUtil.Add(QueryParameters, "ForceReboot", value.ToString());
 			}
 		}
 
@@ -165,22 +149,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-        public override DescribeInstanceStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RebootInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstanceStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RebootInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -59,6 +59,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				snapshot.ResourceGroupId = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].ResourceGroupId");
 				snapshot.KMSKeyId = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].KMSKeyId");
 				snapshot.Category = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].Category");
+				snapshot.SnapshotType = context.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotType");
 
 				List<DescribeSnapshotsResponse.DescribeSnapshots_Snapshot.DescribeSnapshots_Tag> snapshot_tags = new List<DescribeSnapshotsResponse.DescribeSnapshots_Snapshot.DescribeSnapshots_Tag>();
 				for (int j = 0; j < context.Length("DescribeSnapshots.Snapshots["+ i +"].Tags.Length"); j++) {

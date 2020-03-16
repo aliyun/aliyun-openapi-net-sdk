@@ -99,6 +99,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private int? count;
 
+				private string diskCategory;
+
 				public string _Value
 				{
 					get
@@ -168,6 +170,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						count = value;
+					}
+				}
+
+				public string DiskCategory
+				{
+					get
+					{
+						return diskCategory;
+					}
+					set	
+					{
+						diskCategory = value;
 					}
 				}
 			}

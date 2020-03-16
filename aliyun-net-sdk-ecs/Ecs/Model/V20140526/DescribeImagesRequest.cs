@@ -83,6 +83,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<Filter> filters = new List<Filter>(){ };
 
+		private string imageFamily;
+
 		private string status;
 
 		public string ActionType
@@ -378,6 +380,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Value", filters[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Filter." + (i + 1) + ".Key", filters[i].Key);
 				}
+			}
+		}
+
+		public string ImageFamily
+		{
+			get
+			{
+				return imageFamily;
+			}
+			set	
+			{
+				imageFamily = value;
+				DictionaryUtil.Add(QueryParameters, "ImageFamily", value);
 			}
 		}
 

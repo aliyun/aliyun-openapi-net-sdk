@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeInstanceStatusRequest : RpcAcsRequest<DescribeInstanceStatusResponse>
+    public class DescribeImageFromFamilyRequest : RpcAcsRequest<DescribeImageFromFamilyResponse>
     {
-        public DescribeInstanceStatusRequest()
-            : base("Ecs", "2014-05-26", "DescribeInstanceStatus", "ecs", "openAPI")
+        public DescribeImageFromFamilyRequest()
+            : base("Ecs", "2014-05-26", "DescribeImageFromFamily", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,21 +41,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private int? pageNumber;
-
-		private int? pageSize;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string clusterId;
-
 		private long? ownerId;
 
-		private List<string> instanceIds = new List<string>(){ };
-
-		private string zoneId;
+		private string imageFamily;
 
 		public long? ResourceOwnerId
 		{
@@ -67,32 +59,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -122,19 +88,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -148,39 +101,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> InstanceIds
+		public string ImageFamily
 		{
 			get
 			{
-				return instanceIds;
-			}
-
-			set
-			{
-				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
+				return imageFamily;
 			}
 			set	
 			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+				imageFamily = value;
+				DictionaryUtil.Add(QueryParameters, "ImageFamily", value);
 			}
 		}
 
-        public override DescribeInstanceStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeImageFromFamilyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstanceStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeImageFromFamilyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

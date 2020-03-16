@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string imageId;
 
+		private string encryptAlgorithm;
+
 		private string destinationRegionId;
 
 		private List<Tag> tags = new List<Tag>(){ };
@@ -84,6 +86,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public string EncryptAlgorithm
+		{
+			get
+			{
+				return encryptAlgorithm;
+			}
+			set	
+			{
+				encryptAlgorithm = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptAlgorithm", value);
 			}
 		}
 
