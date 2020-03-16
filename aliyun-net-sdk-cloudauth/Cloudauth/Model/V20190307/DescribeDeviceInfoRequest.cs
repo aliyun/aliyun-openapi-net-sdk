@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Cloudauth;
 using Aliyun.Acs.Cloudauth.Transform;
 using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
     public class DescribeDeviceInfoRequest : RpcAcsRequest<DescribeDeviceInfoResponse>
     {
         public DescribeDeviceInfoRequest()
-            : base("Cloudauth", "2019-03-07", "DescribeDeviceInfo")
+            : base("Cloudauth", "2019-03-07", "DescribeDeviceInfo", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,15 +41,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string userDeviceId;
 
-		private string sourceIp;
-
 		private int? pageSize;
 
-		private string lang;
-
 		private string expiredStartDay;
-
-		private int? totalCount;
 
 		private int? currentPage;
 
@@ -73,19 +66,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -99,19 +79,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
 		public string ExpiredStartDay
 		{
 			get
@@ -122,19 +89,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				expiredStartDay = value;
 				DictionaryUtil.Add(QueryParameters, "ExpiredStartDay", value);
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-				DictionaryUtil.Add(QueryParameters, "TotalCount", value.ToString());
 			}
 		}
 

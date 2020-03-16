@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Cloudauth;
 using Aliyun.Acs.Cloudauth.Transform;
 using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
     public class ModifyDeviceInfoRequest : RpcAcsRequest<ModifyDeviceInfoResponse>
     {
         public ModifyDeviceInfoRequest()
-            : base("Cloudauth", "2019-03-07", "ModifyDeviceInfo")
+            : base("Cloudauth", "2019-03-07", "ModifyDeviceInfo", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,10 +44,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		private string duration;
 
 		private string expiredDay;
-
-		private string sourceIp;
-
-		private string lang;
 
 		private string deviceId;
 
@@ -90,32 +85,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				expiredDay = value;
 				DictionaryUtil.Add(QueryParameters, "ExpiredDay", value);
-			}
-		}
-
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

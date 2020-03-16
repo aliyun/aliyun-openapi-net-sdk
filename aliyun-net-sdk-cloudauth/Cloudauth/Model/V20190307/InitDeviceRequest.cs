@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Cloudauth;
 using Aliyun.Acs.Cloudauth.Transform;
 using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
     public class InitDeviceRequest : RpcAcsRequest<InitDeviceResponse>
     {
         public InitDeviceRequest()
-            : base("Cloudauth", "2019-03-07", "InitDevice")
+            : base("Cloudauth", "2019-03-07", "InitDevice", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -47,6 +46,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		private string merchant;
 
 		private string appVersion;
+
+		private string deviceToken;
 
 		private string certifyId;
 
@@ -109,6 +110,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				appVersion = value;
 				DictionaryUtil.Add(QueryParameters, "AppVersion", value);
+			}
+		}
+
+		public string DeviceToken
+		{
+			get
+			{
+				return deviceToken;
+			}
+			set	
+			{
+				deviceToken = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceToken", value);
 			}
 		}
 

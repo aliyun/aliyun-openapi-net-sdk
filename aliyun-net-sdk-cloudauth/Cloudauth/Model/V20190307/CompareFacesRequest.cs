@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Cloudauth;
 using Aliyun.Acs.Cloudauth.Transform;
 using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
     public class CompareFacesRequest : RpcAcsRequest<CompareFacesResponse>
     {
         public CompareFacesRequest()
-            : base("Cloudauth", "2019-03-07", "CompareFaces")
+            : base("Cloudauth", "2019-03-07", "CompareFaces", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,8 +48,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		private string targetImageType;
 
 		private string targetImageValue;
-
-		private string sourceIp;
 
 		private string sourceImageValue;
 
@@ -103,19 +100,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				targetImageValue = value;
 				DictionaryUtil.Add(BodyParameters, "TargetImageValue", value);
-			}
-		}
-
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
