@@ -31,11 +31,9 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 			ListTemplatesResponse listTemplatesResponse = new ListTemplatesResponse();
 
 			listTemplatesResponse.HttpResponse = context.HttpResponse;
-			listTemplatesResponse.HttpStatusCode = context.IntegerValue("ListTemplates.HttpStatusCode");
 			listTemplatesResponse.PageNumber = context.IntegerValue("ListTemplates.PageNumber");
 			listTemplatesResponse.PageSize = context.IntegerValue("ListTemplates.PageSize");
 			listTemplatesResponse.RequestId = context.StringValue("ListTemplates.RequestId");
-			listTemplatesResponse.Success = context.BooleanValue("ListTemplates.Success");
 			listTemplatesResponse.TotalCount = context.IntegerValue("ListTemplates.TotalCount");
 
 			List<ListTemplatesResponse.ListTemplates_Template> listTemplatesResponse_templates = new List<ListTemplatesResponse.ListTemplates_Template>();

@@ -43,6 +43,8 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 			getStackResourceResponse.Status = context.StringValue("GetStackResource.Status");
 			getStackResourceResponse.StatusReason = context.StringValue("GetStackResource.StatusReason");
 			getStackResourceResponse.UpdateTime = context.StringValue("GetStackResource.UpdateTime");
+			getStackResourceResponse.ResourceDriftStatus = context.StringValue("GetStackResource.ResourceDriftStatus");
+			getStackResourceResponse.DriftDetectionTime = context.StringValue("GetStackResource.DriftDetectionTime");
 
 			List<Dictionary<string, string>> getStackResourceResponse_resourceAttributes = new List<Dictionary<string, string>>();
 			for (int i = 0; i < context.Length("GetStackResource.ResourceAttributes.Length"); i++) {

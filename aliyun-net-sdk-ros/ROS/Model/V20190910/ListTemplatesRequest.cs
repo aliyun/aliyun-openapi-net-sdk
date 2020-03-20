@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class ListTemplatesRequest : RpcAcsRequest<ListTemplatesResponse>
     {
         public ListTemplatesRequest()
-            : base("ROS", "2019-09-10", "ListTemplates")
+            : base("ROS", "2019-09-10", "ListTemplates", "ROS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,6 +45,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 		private long? pageSize;
 
 		private string templateName;
+
+		private List<Tag> tags = new List<Tag>(){ };
 
 		public long? PageNumber
 		{
@@ -82,6 +84,56 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				templateName = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

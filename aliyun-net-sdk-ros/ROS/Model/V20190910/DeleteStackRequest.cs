@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class DeleteStackRequest : RpcAcsRequest<DeleteStackResponse>
     {
         public DeleteStackRequest()
-            : base("ROS", "2019-09-10", "DeleteStack")
+            : base("ROS", "2019-09-10", "DeleteStack", "ROS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,7 +42,11 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private string stackId;
 
+		private List<string> retainResourcess = new List<string>(){ };
+
 		private bool? retainAllResources;
+
+		private string ramRoleName;
 
 		public string StackId
 		{
@@ -57,6 +61,23 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
+		public List<string> RetainResourcess
+		{
+			get
+			{
+				return retainResourcess;
+			}
+
+			set
+			{
+				retainResourcess = value;
+				for (int i = 0; i < retainResourcess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"RetainResources." + (i + 1) , retainResourcess[i]);
+				}
+			}
+		}
+
 		public bool? RetainAllResources
 		{
 			get
@@ -67,6 +88,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				retainAllResources = value;
 				DictionaryUtil.Add(QueryParameters, "RetainAllResources", value.ToString());
+			}
+		}
+
+		public string RamRoleName
+		{
+			get
+			{
+				return ramRoleName;
+			}
+			set	
+			{
+				ramRoleName = value;
+				DictionaryUtil.Add(QueryParameters, "RamRoleName", value);
 			}
 		}
 

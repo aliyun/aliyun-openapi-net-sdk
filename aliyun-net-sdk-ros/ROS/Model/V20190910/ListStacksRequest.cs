@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class ListStacksRequest : RpcAcsRequest<ListStacksResponse>
     {
         public ListStacksRequest()
-            : base("ROS", "2019-09-10", "ListStacks")
+            : base("ROS", "2019-09-10", "ListStacks", "ROS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,15 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private bool? showNestedStack;
 
+		private string stackId;
+
 		private long? pageNumber;
 
 		private long? pageSize;
 
 		private List<string> stackNames = new List<string>(){ };
+
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string parentStackId;
 
@@ -62,6 +66,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				showNestedStack = value;
 				DictionaryUtil.Add(QueryParameters, "ShowNestedStack", value.ToString());
+			}
+		}
+
+		public string StackId
+		{
+			get
+			{
+				return stackId;
+			}
+			set	
+			{
+				stackId = value;
+				DictionaryUtil.Add(QueryParameters, "StackId", value);
 			}
 		}
 
@@ -108,6 +125,24 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
 		public string ParentStackId
 		{
 			get
@@ -134,6 +169,38 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				for (int i = 0; i < statuss.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"Status." + (i + 1) , statuss[i]);
+				}
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

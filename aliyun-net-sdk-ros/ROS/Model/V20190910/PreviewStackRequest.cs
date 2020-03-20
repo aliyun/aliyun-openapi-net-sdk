@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class PreviewStackRequest : RpcAcsRequest<PreviewStackResponse>
     {
         public PreviewStackRequest()
-            : base("ROS", "2019-09-10", "PreviewStack")
+            : base("ROS", "2019-09-10", "PreviewStack", "ROS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

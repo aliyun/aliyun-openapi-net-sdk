@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class CreateStackRequest : RpcAcsRequest<CreateStackResponse>
     {
         public CreateStackRequest()
-            : base("ROS", "2019-09-10", "CreateStack")
+            : base("ROS", "2019-09-10", "CreateStack", "ROS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -57,6 +56,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 		private List<string> notificationURLss = new List<string>(){ };
 
 		private string stackPolicyBody;
+
+		private string ramRoleName;
 
 		private string stackPolicyURL;
 
@@ -183,6 +184,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				stackPolicyBody = value;
 				DictionaryUtil.Add(QueryParameters, "StackPolicyBody", value);
+			}
+		}
+
+		public string RamRoleName
+		{
+			get
+			{
+				return ramRoleName;
+			}
+			set	
+			{
+				ramRoleName = value;
+				DictionaryUtil.Add(QueryParameters, "RamRoleName", value);
 			}
 		}
 

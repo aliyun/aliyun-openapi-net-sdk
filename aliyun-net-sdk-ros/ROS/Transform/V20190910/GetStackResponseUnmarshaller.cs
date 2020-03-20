@@ -44,6 +44,9 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 			getStackResponse.TimeoutInMinutes = context.IntegerValue("GetStack.TimeoutInMinutes");
 			getStackResponse.UpdateTime = context.StringValue("GetStack.UpdateTime");
 			getStackResponse.ParentStackId = context.StringValue("GetStack.ParentStackId");
+			getStackResponse.StackDriftStatus = context.StringValue("GetStack.StackDriftStatus");
+			getStackResponse.DriftDetectionTime = context.StringValue("GetStack.DriftDetectionTime");
+			getStackResponse.RamRoleName = context.StringValue("GetStack.RamRoleName");
 
 			List<Dictionary<string, string>> getStackResponse_outputs = new List<Dictionary<string, string>>();
 			for (int i = 0; i < context.Length("GetStack.Outputs.Length"); i++) {

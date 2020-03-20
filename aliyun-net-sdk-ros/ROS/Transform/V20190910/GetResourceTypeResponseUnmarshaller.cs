@@ -35,6 +35,7 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 			getResourceTypeResponse.Properties = context.StringValue("GetResourceType.Properties");
 			getResourceTypeResponse.RequestId = context.StringValue("GetResourceType.RequestId");
 			getResourceTypeResponse.ResourceType = context.StringValue("GetResourceType.ResourceType");
+			getResourceTypeResponse.SupportDriftDetection = context.BooleanValue("GetResourceType.SupportDriftDetection");
         
 			return getResourceTypeResponse;
         }

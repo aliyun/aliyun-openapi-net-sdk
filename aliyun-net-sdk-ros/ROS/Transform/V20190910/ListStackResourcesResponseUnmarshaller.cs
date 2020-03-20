@@ -45,6 +45,8 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 				resource.Status = context.StringValue("ListStackResources.Resources["+ i +"].Status");
 				resource.StatusReason = context.StringValue("ListStackResources.Resources["+ i +"].StatusReason");
 				resource.UpdateTime = context.StringValue("ListStackResources.Resources["+ i +"].UpdateTime");
+				resource.ResourceDriftStatus = context.StringValue("ListStackResources.Resources["+ i +"].ResourceDriftStatus");
+				resource.DriftDetectionTime = context.StringValue("ListStackResources.Resources["+ i +"].DriftDetectionTime");
 
 				listStackResourcesResponse_resources.Add(resource);
 			}

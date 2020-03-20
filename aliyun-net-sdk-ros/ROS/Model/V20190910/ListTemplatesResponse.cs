@@ -25,31 +25,15 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 	public class ListTemplatesResponse : AcsResponse
 	{
 
-		private int? httpStatusCode;
-
 		private int? pageNumber;
 
 		private int? pageSize;
 
 		private string requestId;
 
-		private bool? success;
-
 		private int? totalCount;
 
 		private List<ListTemplates_Template> templates;
-
-		public int? HttpStatusCode
-		{
-			get
-			{
-				return httpStatusCode;
-			}
-			set	
-			{
-				httpStatusCode = value;
-			}
-		}
 
 		public int? PageNumber
 		{
@@ -84,18 +68,6 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
 			}
 		}
 

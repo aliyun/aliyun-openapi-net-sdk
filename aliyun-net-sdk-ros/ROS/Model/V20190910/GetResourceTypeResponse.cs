@@ -33,6 +33,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private string resourceType;
 
+		private bool? supportDriftDetection;
+
 		public string Attributes
 		{
 			get
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			set	
 			{
 				resourceType = value;
+			}
+		}
+
+		public bool? SupportDriftDetection
+		{
+			get
+			{
+				return supportDriftDetection;
+			}
+			set	
+			{
+				supportDriftDetection = value;
 			}
 		}
 	}

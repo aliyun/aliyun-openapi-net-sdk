@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20190910;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class ListChangeSetsRequest : RpcAcsRequest<ListChangeSetsResponse>
     {
         public ListChangeSetsRequest()
-            : base("ROS", "2019-09-10", "ListChangeSets")
+            : base("ROS", "2019-09-10", "ListChangeSets", "ROS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +49,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 		private List<string> executionStatuss = new List<string>(){ };
 
 		private List<string> changeSetNames = new List<string>(){ };
+
+		private string changeSetId;
 
 		private List<string> statuss = new List<string>(){ };
 
@@ -122,6 +124,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				{
 					DictionaryUtil.Add(QueryParameters,"ChangeSetName." + (i + 1) , changeSetNames[i]);
 				}
+			}
+		}
+
+		public string ChangeSetId
+		{
+			get
+			{
+				return changeSetId;
+			}
+			set	
+			{
+				changeSetId = value;
+				DictionaryUtil.Add(QueryParameters, "ChangeSetId", value);
 			}
 		}
 

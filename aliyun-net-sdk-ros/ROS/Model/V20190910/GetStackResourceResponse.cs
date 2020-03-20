@@ -49,6 +49,10 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private string updateTime;
 
+		private string resourceDriftStatus;
+
+		private string driftDetectionTime;
+
 		private List<Dictionary<string, string>> resourceAttributes;
 
 		public string CreateTime
@@ -192,6 +196,30 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			set	
 			{
 				updateTime = value;
+			}
+		}
+
+		public string ResourceDriftStatus
+		{
+			get
+			{
+				return resourceDriftStatus;
+			}
+			set	
+			{
+				resourceDriftStatus = value;
+			}
+		}
+
+		public string DriftDetectionTime
+		{
+			get
+			{
+				return driftDetectionTime;
+			}
+			set	
+			{
+				driftDetectionTime = value;
 			}
 		}
 

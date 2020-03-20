@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.ROS;
 using Aliyun.Acs.ROS.Transform;
 using Aliyun.Acs.ROS.Transform.V20150901;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.ROS.Model.V20150901
     public class CreateStacksRequest : RoaAcsRequest<CreateStacksResponse>
     {
         public CreateStacksRequest()
-            : base("ROS", "2015-09-01", "CreateStacks")
+            : base("ROS", "2015-09-01", "CreateStacks", "ROS", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

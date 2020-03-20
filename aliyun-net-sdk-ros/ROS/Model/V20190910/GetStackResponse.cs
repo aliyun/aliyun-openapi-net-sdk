@@ -51,6 +51,12 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private string parentStackId;
 
+		private string stackDriftStatus;
+
+		private string driftDetectionTime;
+
+		private string ramRoleName;
+
 		private List<GetStack_Parameter> parameters;
 
 		private List<Dictionary<string, string>> outputs;
@@ -210,6 +216,42 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			set	
 			{
 				parentStackId = value;
+			}
+		}
+
+		public string StackDriftStatus
+		{
+			get
+			{
+				return stackDriftStatus;
+			}
+			set	
+			{
+				stackDriftStatus = value;
+			}
+		}
+
+		public string DriftDetectionTime
+		{
+			get
+			{
+				return driftDetectionTime;
+			}
+			set	
+			{
+				driftDetectionTime = value;
+			}
+		}
+
+		public string RamRoleName
+		{
+			get
+			{
+				return ramRoleName;
+			}
+			set	
+			{
+				ramRoleName = value;
 			}
 		}
 

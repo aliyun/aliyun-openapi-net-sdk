@@ -49,6 +49,8 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 				stack.TimeoutInMinutes = context.IntegerValue("ListStacks.Stacks["+ i +"].TimeoutInMinutes");
 				stack.ParentStackId = context.StringValue("ListStacks.Stacks["+ i +"].ParentStackId");
 				stack.UpdateTime = context.StringValue("ListStacks.Stacks["+ i +"].UpdateTime");
+				stack.StackDriftStatus = context.StringValue("ListStacks.Stacks["+ i +"].StackDriftStatus");
+				stack.DriftDetectionTime = context.StringValue("ListStacks.Stacks["+ i +"].DriftDetectionTime");
 
 				listStacksResponse_stacks.Add(stack);
 			}
