@@ -22,28 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeMigrateTaskByIdResponse : AcsResponse
+	public class UpgradeDBProxyInstanceKernelVersionResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private string dBInstanceName;
 
-		private string dBName;
+		private string taskId;
 
-		private string migrateTaskId;
-
-		private string createTime;
-
-		private string endTime;
-
-		private string backupMode;
-
-		private string status;
-
-		private string isDBReplaced;
-
-		private string description;
+		private string targetMinorVersion;
 
 		public string RequestId
 		{
@@ -69,99 +57,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBName
+		public string TaskId
 		{
 			get
 			{
-				return dBName;
+				return taskId;
 			}
 			set	
 			{
-				dBName = value;
+				taskId = value;
 			}
 		}
 
-		public string MigrateTaskId
+		public string TargetMinorVersion
 		{
 			get
 			{
-				return migrateTaskId;
+				return targetMinorVersion;
 			}
 			set	
 			{
-				migrateTaskId = value;
-			}
-		}
-
-		public string CreateTime
-		{
-			get
-			{
-				return createTime;
-			}
-			set	
-			{
-				createTime = value;
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string BackupMode
-		{
-			get
-			{
-				return backupMode;
-			}
-			set	
-			{
-				backupMode = value;
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-
-		public string IsDBReplaced
-		{
-			get
-			{
-				return isDBReplaced;
-			}
-			set	
-			{
-				isDBReplaced = value;
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
+				targetMinorVersion = value;
 			}
 		}
 	}

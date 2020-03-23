@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class ModifyReplicaDescriptionRequest : RpcAcsRequest<ModifyReplicaDescriptionResponse>
+    public class DescribeLocalAvailableRecoveryTimeRequest : RpcAcsRequest<DescribeLocalAvailableRecoveryTimeResponse>
     {
-        public ModifyReplicaDescriptionRequest()
-            : base("Rds", "2014-08-15", "ModifyReplicaDescription", "rds", "openAPI")
+        public DescribeLocalAvailableRecoveryTimeRequest()
+            : base("Rds", "2014-08-15", "DescribeLocalAvailableRecoveryTime", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,32 +39,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
             }
         }
 
-		private string replicaDescription;
-
 		private long? resourceOwnerId;
-
-		private string securityToken;
-
-		private string replicaId;
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
-
 		private long? ownerId;
 
-		public string ReplicaDescription
-		{
-			get
-			{
-				return replicaDescription;
-			}
-			set	
-			{
-				replicaDescription = value;
-				DictionaryUtil.Add(QueryParameters, "ReplicaDescription", value);
-			}
-		}
+		private string dBInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -76,32 +57,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string ReplicaId
-		{
-			get
-			{
-				return replicaId;
-			}
-			set	
-			{
-				replicaId = value;
-				DictionaryUtil.Add(QueryParameters, "ReplicaId", value);
 			}
 		}
 
@@ -118,19 +73,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -144,14 +86,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string DBInstanceId
 		{
-			return false;
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+			}
 		}
 
-        public override ModifyReplicaDescriptionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLocalAvailableRecoveryTimeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyReplicaDescriptionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLocalAvailableRecoveryTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

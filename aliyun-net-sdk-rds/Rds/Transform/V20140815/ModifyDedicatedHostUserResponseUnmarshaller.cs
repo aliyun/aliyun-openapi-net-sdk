@@ -24,16 +24,16 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class RestoreDBInstanceResponseUnmarshaller
+    public class ModifyDedicatedHostUserResponseUnmarshaller
     {
-        public static RestoreDBInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDedicatedHostUserResponse Unmarshall(UnmarshallerContext context)
         {
-			RestoreDBInstanceResponse restoreDBInstanceResponse = new RestoreDBInstanceResponse();
+			ModifyDedicatedHostUserResponse modifyDedicatedHostUserResponse = new ModifyDedicatedHostUserResponse();
 
-			restoreDBInstanceResponse.HttpResponse = context.HttpResponse;
-			restoreDBInstanceResponse.RequestId = context.StringValue("RestoreDBInstance.RequestId");
+			modifyDedicatedHostUserResponse.HttpResponse = context.HttpResponse;
+			modifyDedicatedHostUserResponse.RequestId = context.StringValue("ModifyDedicatedHostUser.RequestId");
         
-			return restoreDBInstanceResponse;
+			return modifyDedicatedHostUserResponse;
         }
     }
 }

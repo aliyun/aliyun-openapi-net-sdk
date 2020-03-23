@@ -61,6 +61,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				backup.MetaStatus = context.StringValue("DescribeBackups.Items["+ i +"].MetaStatus");
 				backup.SlaveStatus = context.StringValue("DescribeBackups.Items["+ i +"].SlaveStatus");
 				backup.ConsistentTime = context.LongValue("DescribeBackups.Items["+ i +"].ConsistentTime");
+				backup.BackupInitiator = context.StringValue("DescribeBackups.Items["+ i +"].BackupInitiator");
 
 				describeBackupsResponse_items.Add(backup);
 			}

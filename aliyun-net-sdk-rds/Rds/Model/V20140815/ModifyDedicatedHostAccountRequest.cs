@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAvailableDedicatedHostClassesRequest : RpcAcsRequest<DescribeAvailableDedicatedHostClassesResponse>
+    public class ModifyDedicatedHostAccountRequest : RpcAcsRequest<ModifyDedicatedHostAccountResponse>
     {
-        public DescribeAvailableDedicatedHostClassesRequest()
-            : base("Rds", "2014-08-15", "DescribeAvailableDedicatedHostClasses", "rds", "openAPI")
+        public ModifyDedicatedHostAccountRequest()
+            : base("Rds", "2014-08-15", "ModifyDedicatedHostAccount", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string accountName;
+
 		private string resourceOwnerAccount;
+
+		private string dedicatedHostId;
 
 		private long? ownerId;
 
-		private string storageType;
-
-		private string zoneId;
+		private string accountPassword;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string AccountName
+		{
+			get
+			{
+				return accountName;
+			}
+			set	
+			{
+				accountName = value;
+				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
@@ -75,6 +90,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string DedicatedHostId
+		{
+			get
+			{
+				return dedicatedHostId;
+			}
+			set	
+			{
+				dedicatedHostId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -88,35 +116,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string StorageType
+		public string AccountPassword
 		{
 			get
 			{
-				return storageType;
+				return accountPassword;
 			}
 			set	
 			{
-				storageType = value;
-				DictionaryUtil.Add(QueryParameters, "StorageType", value);
+				accountPassword = value;
+				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-        public override DescribeAvailableDedicatedHostClassesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyDedicatedHostAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAvailableDedicatedHostClassesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDedicatedHostAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

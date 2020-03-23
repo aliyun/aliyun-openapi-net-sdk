@@ -16,27 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Rds.Model.V20140815;
 
-namespace Aliyun.Acs.Rds.Model.V20140815
+namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-	public class ModifyReplicaDescriptionResponse : AcsResponse
-	{
+    public class DeleteDedicatedHostAccountResponseUnmarshaller
+    {
+        public static DeleteDedicatedHostAccountResponse Unmarshall(UnmarshallerContext context)
+        {
+			DeleteDedicatedHostAccountResponse deleteDedicatedHostAccountResponse = new DeleteDedicatedHostAccountResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			deleteDedicatedHostAccountResponse.HttpResponse = context.HttpResponse;
+			deleteDedicatedHostAccountResponse.RequestId = context.StringValue("DeleteDedicatedHostAccount.RequestId");
+        
+			return deleteDedicatedHostAccountResponse;
+        }
+    }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAvailableDedicatedHostClassesRequest : RpcAcsRequest<DescribeAvailableDedicatedHostClassesResponse>
+    public class DescribeAvailableZonesRequest : RpcAcsRequest<DescribeAvailableZonesResponse>
     {
-        public DescribeAvailableDedicatedHostClassesRequest()
-            : base("Rds", "2014-08-15", "DescribeAvailableDedicatedHostClasses", "rds", "openAPI")
+        public DescribeAvailableZonesRequest()
+            : base("Rds", "2014-08-15", "DescribeAvailableZones", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,11 +41,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string engineVersion;
 
-		private long? ownerId;
-
-		private string storageType;
+		private string engine;
 
 		private string zoneId;
 
@@ -62,42 +60,29 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string EngineVersion
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return engineVersion;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
 			}
 		}
 
-		public long? OwnerId
+		public string Engine
 		{
 			get
 			{
-				return ownerId;
+				return engine;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string StorageType
-		{
-			get
-			{
-				return storageType;
-			}
-			set	
-			{
-				storageType = value;
-				DictionaryUtil.Add(QueryParameters, "StorageType", value);
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 
@@ -114,9 +99,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override DescribeAvailableDedicatedHostClassesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeAvailableZonesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAvailableDedicatedHostClassesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAvailableZonesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

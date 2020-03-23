@@ -51,6 +51,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dedicatedHostsItem.CreatedTime = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].CreatedTime");
 				dedicatedHostsItem.DedicatedHostId = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].DedicatedHostId");
 				dedicatedHostsItem.AllocationStatus = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].AllocationStatus");
+				dedicatedHostsItem.EndTime = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].EndTime");
+				dedicatedHostsItem.HostType = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].HostType");
+				dedicatedHostsItem.BastionInstanceId = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].BastionInstanceId");
+				dedicatedHostsItem.OpenPermission = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].OpenPermission");
+				dedicatedHostsItem.AccountName = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].AccountName");
 
 				describeDedicatedHostsResponse_dedicatedHosts.Add(dedicatedHostsItem);
 			}

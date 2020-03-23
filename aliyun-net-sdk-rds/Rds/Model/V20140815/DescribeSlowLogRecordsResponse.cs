@@ -142,6 +142,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string executionStartTime;
 
+			private long? queryTimeMS;
+
 			public string HostAddress
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					executionStartTime = value;
+				}
+			}
+
+			public long? QueryTimeMS
+			{
+				get
+				{
+					return queryTimeMS;
+				}
+				set	
+				{
+					queryTimeMS = value;
 				}
 			}
 		}

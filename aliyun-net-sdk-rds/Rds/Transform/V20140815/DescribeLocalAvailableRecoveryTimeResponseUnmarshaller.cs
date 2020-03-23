@@ -24,17 +24,19 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class DescribeSQLCollectorRetentionResponseUnmarshaller
+    public class DescribeLocalAvailableRecoveryTimeResponseUnmarshaller
     {
-        public static DescribeSQLCollectorRetentionResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLocalAvailableRecoveryTimeResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeSQLCollectorRetentionResponse describeSQLCollectorRetentionResponse = new DescribeSQLCollectorRetentionResponse();
+			DescribeLocalAvailableRecoveryTimeResponse describeLocalAvailableRecoveryTimeResponse = new DescribeLocalAvailableRecoveryTimeResponse();
 
-			describeSQLCollectorRetentionResponse.HttpResponse = context.HttpResponse;
-			describeSQLCollectorRetentionResponse.RequestId = context.StringValue("DescribeSQLCollectorRetention.RequestId");
-			describeSQLCollectorRetentionResponse.ConfigValue = context.StringValue("DescribeSQLCollectorRetention.ConfigValue");
+			describeLocalAvailableRecoveryTimeResponse.HttpResponse = context.HttpResponse;
+			describeLocalAvailableRecoveryTimeResponse.RequestId = context.StringValue("DescribeLocalAvailableRecoveryTime.RequestId");
+			describeLocalAvailableRecoveryTimeResponse.DBInstanceId = context.StringValue("DescribeLocalAvailableRecoveryTime.DBInstanceId");
+			describeLocalAvailableRecoveryTimeResponse.RecoveryBeginTime = context.StringValue("DescribeLocalAvailableRecoveryTime.RecoveryBeginTime");
+			describeLocalAvailableRecoveryTimeResponse.RecoveryEndTime = context.StringValue("DescribeLocalAvailableRecoveryTime.RecoveryEndTime");
         
-			return describeSQLCollectorRetentionResponse;
+			return describeLocalAvailableRecoveryTimeResponse;
         }
     }
 }

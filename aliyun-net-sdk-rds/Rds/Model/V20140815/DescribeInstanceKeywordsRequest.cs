@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAvailableDedicatedHostClassesRequest : RpcAcsRequest<DescribeAvailableDedicatedHostClassesResponse>
+    public class DescribeInstanceKeywordsRequest : RpcAcsRequest<DescribeInstanceKeywordsResponse>
     {
-        public DescribeAvailableDedicatedHostClassesRequest()
-            : base("Rds", "2014-08-15", "DescribeAvailableDedicatedHostClasses", "rds", "openAPI")
+        public DescribeInstanceKeywordsRequest()
+            : base("Rds", "2014-08-15", "DescribeInstanceKeywords", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,11 +43,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceOwnerAccount;
 
+		private string ownerAccount;
+
 		private long? ownerId;
 
-		private string storageType;
-
-		private string zoneId;
+		private string key;
 
 		public long? ResourceOwnerId
 		{
@@ -75,6 +75,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -88,35 +101,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string StorageType
+		public string Key
 		{
 			get
 			{
-				return storageType;
+				return key;
 			}
 			set	
 			{
-				storageType = value;
-				DictionaryUtil.Add(QueryParameters, "StorageType", value);
+				key = value;
+				DictionaryUtil.Add(QueryParameters, "Key", value);
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-        public override DescribeAvailableDedicatedHostClassesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeInstanceKeywordsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAvailableDedicatedHostClassesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeInstanceKeywordsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

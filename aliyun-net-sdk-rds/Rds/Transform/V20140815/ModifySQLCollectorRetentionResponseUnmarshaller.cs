@@ -32,9 +32,6 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 
 			modifySQLCollectorRetentionResponse.HttpResponse = context.HttpResponse;
 			modifySQLCollectorRetentionResponse.RequestId = context.StringValue("ModifySQLCollectorRetention.RequestId");
-			modifySQLCollectorRetentionResponse.DBInstanceID = context.IntegerValue("ModifySQLCollectorRetention.DBInstanceID");
-			modifySQLCollectorRetentionResponse.DBInstanceName = context.StringValue("ModifySQLCollectorRetention.DBInstanceName");
-			modifySQLCollectorRetentionResponse.TaskId = context.IntegerValue("ModifySQLCollectorRetention.TaskId");
         
 			return modifySQLCollectorRetentionResponse;
         }

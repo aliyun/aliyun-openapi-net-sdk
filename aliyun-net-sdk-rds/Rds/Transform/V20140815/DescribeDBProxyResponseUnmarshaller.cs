@@ -36,6 +36,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDBProxyResponse.DBProxyInstanceType = context.StringValue("DescribeDBProxy.DBProxyInstanceType");
 			describeDBProxyResponse.DBProxyInstanceNum = context.IntegerValue("DescribeDBProxy.DBProxyInstanceNum");
 			describeDBProxyResponse.DBProxyInstanceStatus = context.StringValue("DescribeDBProxy.DBProxyInstanceStatus");
+			describeDBProxyResponse.DBProxyInstanceCurrentMinorVersion = context.StringValue("DescribeDBProxy.DBProxyInstanceCurrentMinorVersion");
+			describeDBProxyResponse.DBProxyInstanceLatestMinorVersion = context.StringValue("DescribeDBProxy.DBProxyInstanceLatestMinorVersion");
+			describeDBProxyResponse.DBProxyInstanceName = context.StringValue("DescribeDBProxy.DBProxyInstanceName");
 
 			List<DescribeDBProxyResponse.DescribeDBProxy_DBProxyConnectStringItemsItem> describeDBProxyResponse_dBProxyConnectStringItems = new List<DescribeDBProxyResponse.DescribeDBProxy_DBProxyConnectStringItemsItem>();
 			for (int i = 0; i < context.Length("DescribeDBProxy.DBProxyConnectStringItems.Length"); i++) {
@@ -45,6 +48,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBProxyConnectStringItemsItem.DBProxyConnectStringPort = context.StringValue("DescribeDBProxy.DBProxyConnectStringItems["+ i +"].DBProxyConnectStringPort");
 				dBProxyConnectStringItemsItem.DBProxyConnectStringNetType = context.StringValue("DescribeDBProxy.DBProxyConnectStringItems["+ i +"].DBProxyConnectStringNetType");
 				dBProxyConnectStringItemsItem.DBProxyVpcInstanceId = context.StringValue("DescribeDBProxy.DBProxyConnectStringItems["+ i +"].DBProxyVpcInstanceId");
+				dBProxyConnectStringItemsItem.DBProxyEndpointName = context.StringValue("DescribeDBProxy.DBProxyConnectStringItems["+ i +"].DBProxyEndpointName");
+				dBProxyConnectStringItemsItem.DBProxyConnectStringNetWorkType = context.StringValue("DescribeDBProxy.DBProxyConnectStringItems["+ i +"].DBProxyConnectStringNetWorkType");
 
 				describeDBProxyResponse_dBProxyConnectStringItems.Add(dBProxyConnectStringItemsItem);
 			}

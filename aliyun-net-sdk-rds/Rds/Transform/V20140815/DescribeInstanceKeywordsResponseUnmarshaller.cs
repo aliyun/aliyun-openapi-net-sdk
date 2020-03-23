@@ -24,17 +24,23 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class DescribeSQLCollectorRetentionResponseUnmarshaller
+    public class DescribeInstanceKeywordsResponseUnmarshaller
     {
-        public static DescribeSQLCollectorRetentionResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInstanceKeywordsResponse Unmarshall(UnmarshallerContext context)
         {
-			DescribeSQLCollectorRetentionResponse describeSQLCollectorRetentionResponse = new DescribeSQLCollectorRetentionResponse();
+			DescribeInstanceKeywordsResponse describeInstanceKeywordsResponse = new DescribeInstanceKeywordsResponse();
 
-			describeSQLCollectorRetentionResponse.HttpResponse = context.HttpResponse;
-			describeSQLCollectorRetentionResponse.RequestId = context.StringValue("DescribeSQLCollectorRetention.RequestId");
-			describeSQLCollectorRetentionResponse.ConfigValue = context.StringValue("DescribeSQLCollectorRetention.ConfigValue");
+			describeInstanceKeywordsResponse.HttpResponse = context.HttpResponse;
+			describeInstanceKeywordsResponse.RequestId = context.StringValue("DescribeInstanceKeywords.RequestId");
+			describeInstanceKeywordsResponse.Key = context.StringValue("DescribeInstanceKeywords.Key");
+
+			List<string> describeInstanceKeywordsResponse_words = new List<string>();
+			for (int i = 0; i < context.Length("DescribeInstanceKeywords.Words.Length"); i++) {
+				describeInstanceKeywordsResponse_words.Add(context.StringValue("DescribeInstanceKeywords.Words["+ i +"]"));
+			}
+			describeInstanceKeywordsResponse.Words = describeInstanceKeywordsResponse_words;
         
-			return describeSQLCollectorRetentionResponse;
+			return describeInstanceKeywordsResponse;
         }
     }
 }

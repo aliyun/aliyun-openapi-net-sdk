@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAvailableDedicatedHostClassesRequest : RpcAcsRequest<DescribeAvailableDedicatedHostClassesResponse>
+    public class StopDBInstanceRequest : RpcAcsRequest<StopDBInstanceResponse>
     {
-        public DescribeAvailableDedicatedHostClassesRequest()
-            : base("Rds", "2014-08-15", "DescribeAvailableDedicatedHostClasses", "rds", "openAPI")
+        public StopDBInstanceRequest()
+            : base("Rds", "2014-08-15", "StopDBInstance", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,9 +45,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
-		private string storageType;
-
-		private string zoneId;
+		private string dBInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -88,35 +86,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string StorageType
+		public string DBInstanceId
 		{
 			get
 			{
-				return storageType;
+				return dBInstanceId;
 			}
 			set	
 			{
-				storageType = value;
-				DictionaryUtil.Add(QueryParameters, "StorageType", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
-		public string ZoneId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
+			return false;
 		}
 
-        public override DescribeAvailableDedicatedHostClassesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override StopDBInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAvailableDedicatedHostClassesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StopDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

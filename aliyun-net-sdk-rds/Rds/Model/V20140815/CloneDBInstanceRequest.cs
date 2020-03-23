@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dedicatedHostGroupId;
 
+		private string backupType;
+
 		private string restoreTime;
 
 		private string period;
@@ -59,7 +61,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string restoreTable;
 
-		private string usedTime;
+		private int? usedTime;
 
 		private string dBInstanceClass;
 
@@ -157,6 +159,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string BackupType
+		{
+			get
+			{
+				return backupType;
+			}
+			set	
+			{
+				backupType = value;
+				DictionaryUtil.Add(QueryParameters, "BackupType", value);
+			}
+		}
+
 		public string RestoreTime
 		{
 			get
@@ -209,7 +224,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string UsedTime
+		public int? UsedTime
 		{
 			get
 			{
@@ -218,7 +233,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				usedTime = value;
-				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+				DictionaryUtil.Add(QueryParameters, "UsedTime", value.ToString());
 			}
 		}
 

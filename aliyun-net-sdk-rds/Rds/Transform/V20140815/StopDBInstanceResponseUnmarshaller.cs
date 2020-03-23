@@ -24,20 +24,16 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class CreateDBInstanceReplicaResponseUnmarshaller
+    public class StopDBInstanceResponseUnmarshaller
     {
-        public static CreateDBInstanceReplicaResponse Unmarshall(UnmarshallerContext context)
+        public static StopDBInstanceResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateDBInstanceReplicaResponse createDBInstanceReplicaResponse = new CreateDBInstanceReplicaResponse();
+			StopDBInstanceResponse stopDBInstanceResponse = new StopDBInstanceResponse();
 
-			createDBInstanceReplicaResponse.HttpResponse = context.HttpResponse;
-			createDBInstanceReplicaResponse.RequestId = context.StringValue("CreateDBInstanceReplica.RequestId");
-			createDBInstanceReplicaResponse.DBInstanceId = context.StringValue("CreateDBInstanceReplica.DBInstanceId");
-			createDBInstanceReplicaResponse.OrderId = context.LongValue("CreateDBInstanceReplica.OrderId");
-			createDBInstanceReplicaResponse.ReplicaId = context.StringValue("CreateDBInstanceReplica.ReplicaId");
-			createDBInstanceReplicaResponse.WorkflowId = context.StringValue("CreateDBInstanceReplica.WorkflowId");
+			stopDBInstanceResponse.HttpResponse = context.HttpResponse;
+			stopDBInstanceResponse.RequestId = context.StringValue("StopDBInstance.RequestId");
         
-			return createDBInstanceReplicaResponse;
+			return stopDBInstanceResponse;
         }
     }
 }

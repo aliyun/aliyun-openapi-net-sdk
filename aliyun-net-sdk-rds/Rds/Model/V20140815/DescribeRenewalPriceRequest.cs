@@ -53,15 +53,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string ownerAccount;
 
-		private string commodityCode;
-
 		private long? ownerId;
 
 		private int? usedTime;
 
 		private string dBInstanceClass;
-
-		private string promotionCode;
 
 		private string timeType;
 
@@ -160,19 +156,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string CommodityCode
-		{
-			get
-			{
-				return commodityCode;
-			}
-			set	
-			{
-				commodityCode = value;
-				DictionaryUtil.Add(QueryParameters, "CommodityCode", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -209,19 +192,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dBInstanceClass = value;
 				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
-			}
-		}
-
-		public string PromotionCode
-		{
-			get
-			{
-				return promotionCode;
-			}
-			set	
-			{
-				promotionCode = value;
-				DictionaryUtil.Add(QueryParameters, "PromotionCode", value);
 			}
 		}
 

@@ -83,6 +83,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string storageUsed;
 
+		private string hostType;
+
+		private string accountName;
+
+		private string openPermission;
+
 		public string RequestId
 		{
 			get
@@ -428,6 +434,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				storageUsed = value;
+			}
+		}
+
+		public string HostType
+		{
+			get
+			{
+				return hostType;
+			}
+			set	
+			{
+				hostType = value;
+			}
+		}
+
+		public string AccountName
+		{
+			get
+			{
+				return accountName;
+			}
+			set	
+			{
+				accountName = value;
+			}
+		}
+
+		public string OpenPermission
+		{
+			get
+			{
+				return openPermission;
+			}
+			set	
+			{
+				openPermission = value;
 			}
 		}
 	}

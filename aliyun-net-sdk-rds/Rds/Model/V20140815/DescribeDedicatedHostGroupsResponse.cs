@@ -82,6 +82,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string text;
 
+			private string dedicatedHostCountGroupByHostType;
+
+			private string bastionInstanceId;
+
+			private string openPermission;
+
+			private List<string> zoneIDList;
+
 			public string DedicatedHostGroupId
 			{
 				get
@@ -235,6 +243,54 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					text = value;
+				}
+			}
+
+			public string DedicatedHostCountGroupByHostType
+			{
+				get
+				{
+					return dedicatedHostCountGroupByHostType;
+				}
+				set	
+				{
+					dedicatedHostCountGroupByHostType = value;
+				}
+			}
+
+			public string BastionInstanceId
+			{
+				get
+				{
+					return bastionInstanceId;
+				}
+				set	
+				{
+					bastionInstanceId = value;
+				}
+			}
+
+			public string OpenPermission
+			{
+				get
+				{
+					return openPermission;
+				}
+				set	
+				{
+					openPermission = value;
+				}
+			}
+
+			public List<string> ZoneIDList
+			{
+				get
+				{
+					return zoneIDList;
+				}
+				set	
+				{
+					zoneIDList = value;
 				}
 			}
 		}

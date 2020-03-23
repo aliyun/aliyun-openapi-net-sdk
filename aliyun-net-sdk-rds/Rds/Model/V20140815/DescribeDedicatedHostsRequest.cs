@@ -41,13 +41,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string hostType;
+
+		private string dedicatedHostGroupId;
+
 		private string resourceOwnerAccount;
 
 		private long? orderId;
 
 		private long? ownerId;
-
-		private string dedicatedHostGroupId;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +61,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string HostType
+		{
+			get
+			{
+				return hostType;
+			}
+			set	
+			{
+				hostType = value;
+				DictionaryUtil.Add(QueryParameters, "HostType", value);
+			}
+		}
+
+		public string DedicatedHostGroupId
+		{
+			get
+			{
+				return dedicatedHostGroupId;
+			}
+			set	
+			{
+				dedicatedHostGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostGroupId", value);
 			}
 		}
 
@@ -98,19 +126,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string DedicatedHostGroupId
-		{
-			get
-			{
-				return dedicatedHostGroupId;
-			}
-			set	
-			{
-				dedicatedHostGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "DedicatedHostGroupId", value);
 			}
 		}
 

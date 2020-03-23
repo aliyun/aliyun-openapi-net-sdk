@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				sQLSlowRecord.ParseRowCounts = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].ParseRowCounts");
 				sQLSlowRecord.ReturnRowCounts = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");
 				sQLSlowRecord.ExecutionStartTime = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecutionStartTime");
+				sQLSlowRecord.QueryTimeMS = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueryTimeMS");
 
 				describeSlowLogRecordsResponse_items.Add(sQLSlowRecord);
 			}

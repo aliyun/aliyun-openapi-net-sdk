@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeMigrateTaskByIdRequest : RpcAcsRequest<DescribeMigrateTaskByIdResponse>
+    public class DeleteDedicatedHostAccountRequest : RpcAcsRequest<DeleteDedicatedHostAccountResponse>
     {
-        public DescribeMigrateTaskByIdRequest()
-            : base("Rds", "2014-08-15", "DescribeMigrateTaskById", "rds", "openAPI")
+        public DeleteDedicatedHostAccountRequest()
+            : base("Rds", "2014-08-15", "DeleteDedicatedHostAccount", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string migrateTaskId;
-
 		private string resourceOwnerAccount;
+
+		private string dedicatedHostId;
 
 		private long? ownerId;
 
-		private string dBInstanceId;
+		private string accountName;
 
 		public long? ResourceOwnerId
 		{
@@ -59,19 +59,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string MigrateTaskId
-		{
-			get
-			{
-				return migrateTaskId;
-			}
-			set	
-			{
-				migrateTaskId = value;
-				DictionaryUtil.Add(QueryParameters, "MigrateTaskId", value);
 			}
 		}
 
@@ -88,6 +75,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string DedicatedHostId
+		{
+			get
+			{
+				return dedicatedHostId;
+			}
+			set	
+			{
+				dedicatedHostId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -101,22 +101,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public string AccountName
 		{
 			get
 			{
-				return dBInstanceId;
+				return accountName;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				accountName = value;
+				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
-        public override DescribeMigrateTaskByIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteDedicatedHostAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeMigrateTaskByIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDedicatedHostAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

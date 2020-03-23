@@ -77,6 +77,9 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstance.DedicatedHostNameForMaster = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostNameForMaster");
 				dBInstance.DedicatedHostNameForSlave = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostNameForSlave");
 				dBInstance.DedicatedHostNameForLog = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostNameForLog");
+				dBInstance.DedicatedHostZoneIdForMaster = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostZoneIdForMaster");
+				dBInstance.DedicatedHostZoneIdForSlave = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostZoneIdForSlave");
+				dBInstance.DedicatedHostZoneIdForLog = context.StringValue("DescribeDBInstances.Items["+ i +"].DedicatedHostZoneIdForLog");
 
 				List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId> dBInstance_readOnlyDBInstanceIds = new List<DescribeDBInstancesResponse.DescribeDBInstances_DBInstance.DescribeDBInstances_ReadOnlyDBInstanceId>();
 				for (int j = 0; j < context.Length("DescribeDBInstances.Items["+ i +"].ReadOnlyDBInstanceIds.Length"); j++) {

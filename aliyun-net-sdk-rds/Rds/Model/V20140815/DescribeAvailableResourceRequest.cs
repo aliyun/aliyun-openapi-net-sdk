@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string zoneId;
 
+		private string category;
+
 		private string orderType;
 
 		public long? ResourceOwnerId
@@ -143,6 +145,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

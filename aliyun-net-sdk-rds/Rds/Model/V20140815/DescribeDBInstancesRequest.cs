@@ -39,23 +39,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
             }
         }
 
-		private string tag4value;
-
 		private long? resourceOwnerId;
 
-		private string tag2key;
-
-		private string tag3key;
-
 		private string engineVersion;
-
-		private string tag1value;
 
 		private string resourceGroupId;
 
 		private string proxyId;
-
-		private string tag5key;
 
 		private long? ownerId;
 
@@ -68,8 +58,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string vSwitchId;
 
 		private string zoneId;
-
-		private string tag4key;
 
 		private string instanceNetworkType;
 
@@ -93,36 +81,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dedicatedHostGroupId;
 
-		private string tag3value;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private string dedicatedHostId;
 
-		private string tag5value;
-
-		private string tag1key;
-
 		private string vpcId;
 
-		private string tag2value;
-
 		private string payType;
-
-		public string Tag4value
-		{
-			get
-			{
-				return tag4value;
-			}
-			set	
-			{
-				tag4value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.value", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -137,32 +104,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Tag2key
-		{
-			get
-			{
-				return tag2key;
-			}
-			set	
-			{
-				tag2key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.key", value);
-			}
-		}
-
-		public string Tag3key
-		{
-			get
-			{
-				return tag3key;
-			}
-			set	
-			{
-				tag3key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.key", value);
-			}
-		}
-
 		public string EngineVersion
 		{
 			get
@@ -173,19 +114,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engineVersion = value;
 				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
-			}
-		}
-
-		public string Tag1value
-		{
-			get
-			{
-				return tag1value;
-			}
-			set	
-			{
-				tag1value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.value", value);
 			}
 		}
 
@@ -212,19 +140,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				proxyId = value;
 				DictionaryUtil.Add(QueryParameters, "proxyId", value);
-			}
-		}
-
-		public string Tag5key
-		{
-			get
-			{
-				return tag5key;
-			}
-			set	
-			{
-				tag5key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.key", value);
 			}
 		}
 
@@ -303,19 +218,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string Tag4key
-		{
-			get
-			{
-				return tag4key;
-			}
-			set	
-			{
-				tag4key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.4.key", value);
 			}
 		}
 
@@ -462,19 +364,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Tag3value
-		{
-			get
-			{
-				return tag3value;
-			}
-			set	
-			{
-				tag3value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.3.value", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -514,32 +403,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Tag5value
-		{
-			get
-			{
-				return tag5value;
-			}
-			set	
-			{
-				tag5value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.5.value", value);
-			}
-		}
-
-		public string Tag1key
-		{
-			get
-			{
-				return tag1key;
-			}
-			set	
-			{
-				tag1key = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.1.key", value);
-			}
-		}
-
 		public string VpcId
 		{
 			get
@@ -550,19 +413,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
-			}
-		}
-
-		public string Tag2value
-		{
-			get
-			{
-				return tag2value;
-			}
-			set	
-			{
-				tag2value = value;
-				DictionaryUtil.Add(QueryParameters, "Tag.2.value", value);
 			}
 		}
 

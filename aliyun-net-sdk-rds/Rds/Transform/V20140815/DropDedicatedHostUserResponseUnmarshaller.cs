@@ -16,41 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Rds.Model.V20140815;
 
-namespace Aliyun.Acs.Rds.Model.V20140815
+namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-	public class DescribeSQLCollectorRetentionResponse : AcsResponse
-	{
+    public class DropDedicatedHostUserResponseUnmarshaller
+    {
+        public static DropDedicatedHostUserResponse Unmarshall(UnmarshallerContext context)
+        {
+			DropDedicatedHostUserResponse dropDedicatedHostUserResponse = new DropDedicatedHostUserResponse();
 
-		private string requestId;
-
-		private string configValue;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string ConfigValue
-		{
-			get
-			{
-				return configValue;
-			}
-			set	
-			{
-				configValue = value;
-			}
-		}
-	}
+			dropDedicatedHostUserResponse.HttpResponse = context.HttpResponse;
+			dropDedicatedHostUserResponse.RequestId = context.StringValue("DropDedicatedHostUser.RequestId");
+        
+			return dropDedicatedHostUserResponse;
+        }
+    }
 }

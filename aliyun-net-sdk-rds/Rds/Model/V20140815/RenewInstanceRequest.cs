@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBInstanceId;
 
-		private string period;
+		private int? period;
 
 		private string autoPay;
 
@@ -92,7 +92,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Period
+		public int? Period
 		{
 			get
 			{
@@ -101,7 +101,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
 			}
 		}
 

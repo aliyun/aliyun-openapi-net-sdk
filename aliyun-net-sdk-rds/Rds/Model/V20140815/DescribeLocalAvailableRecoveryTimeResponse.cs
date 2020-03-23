@@ -22,12 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeSQLCollectorRetentionResponse : AcsResponse
+	public class DescribeLocalAvailableRecoveryTimeResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string configValue;
+		private string dBInstanceId;
+
+		private string recoveryBeginTime;
+
+		private string recoveryEndTime;
 
 		public string RequestId
 		{
@@ -41,15 +45,39 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ConfigValue
+		public string DBInstanceId
 		{
 			get
 			{
-				return configValue;
+				return dBInstanceId;
 			}
 			set	
 			{
-				configValue = value;
+				dBInstanceId = value;
+			}
+		}
+
+		public string RecoveryBeginTime
+		{
+			get
+			{
+				return recoveryBeginTime;
+			}
+			set	
+			{
+				recoveryBeginTime = value;
+			}
+		}
+
+		public string RecoveryEndTime
+		{
+			get
+			{
+				return recoveryEndTime;
+			}
+			set	
+			{
+				recoveryEndTime = value;
 			}
 		}
 	}

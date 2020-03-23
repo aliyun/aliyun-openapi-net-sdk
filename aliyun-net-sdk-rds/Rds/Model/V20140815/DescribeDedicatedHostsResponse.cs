@@ -98,6 +98,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string allocationStatus;
 
+			private string endTime;
+
+			private string hostType;
+
+			private string bastionInstanceId;
+
+			private string openPermission;
+
+			private string accountName;
+
 			public string HostName
 			{
 				get
@@ -263,6 +273,66 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					allocationStatus = value;
+				}
+			}
+
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string HostType
+			{
+				get
+				{
+					return hostType;
+				}
+				set	
+				{
+					hostType = value;
+				}
+			}
+
+			public string BastionInstanceId
+			{
+				get
+				{
+					return bastionInstanceId;
+				}
+				set	
+				{
+					bastionInstanceId = value;
+				}
+			}
+
+			public string OpenPermission
+			{
+				get
+				{
+					return openPermission;
+				}
+				set	
+				{
+					openPermission = value;
+				}
+			}
+
+			public string AccountName
+			{
+				get
+				{
+					return accountName;
+				}
+				set	
+				{
+					accountName = value;
 				}
 			}
 		}

@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeAvailableDedicatedHostClassesRequest : RpcAcsRequest<DescribeAvailableDedicatedHostClassesResponse>
+    public class UpgradeDBProxyInstanceKernelVersionRequest : RpcAcsRequest<UpgradeDBProxyInstanceKernelVersionResponse>
     {
-        public DescribeAvailableDedicatedHostClassesRequest()
-            : base("Rds", "2014-08-15", "DescribeAvailableDedicatedHostClasses", "rds", "openAPI")
+        public UpgradeDBProxyInstanceKernelVersionRequest()
+            : base("Rds", "2014-08-15", "UpgradeDBProxyInstanceKernelVersion", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,9 +45,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
-		private string storageType;
+		private string upgradeTime;
 
-		private string zoneId;
+		private string dBInstanceId;
+
+		private string switchTime;
 
 		public long? ResourceOwnerId
 		{
@@ -88,35 +90,48 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string StorageType
+		public string UpgradeTime
 		{
 			get
 			{
-				return storageType;
+				return upgradeTime;
 			}
 			set	
 			{
-				storageType = value;
-				DictionaryUtil.Add(QueryParameters, "StorageType", value);
+				upgradeTime = value;
+				DictionaryUtil.Add(QueryParameters, "UpgradeTime", value);
 			}
 		}
 
-		public string ZoneId
+		public string DBInstanceId
 		{
 			get
 			{
-				return zoneId;
+				return dBInstanceId;
 			}
 			set	
 			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
-        public override DescribeAvailableDedicatedHostClassesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string SwitchTime
+		{
+			get
+			{
+				return switchTime;
+			}
+			set	
+			{
+				switchTime = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchTime", value);
+			}
+		}
+
+        public override UpgradeDBProxyInstanceKernelVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAvailableDedicatedHostClassesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpgradeDBProxyInstanceKernelVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

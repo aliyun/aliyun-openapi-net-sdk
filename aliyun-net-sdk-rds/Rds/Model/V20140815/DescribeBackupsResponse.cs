@@ -154,6 +154,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private long? consistentTime;
 
+			private string backupInitiator;
+
 			public string BackupId
 			{
 				get
@@ -403,6 +405,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					consistentTime = value;
+				}
+			}
+
+			public string BackupInitiator
+			{
+				get
+				{
+					return backupInitiator;
+				}
+				set	
+				{
+					backupInitiator = value;
 				}
 			}
 		}

@@ -39,6 +39,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
             }
         }
 
+		private string dBParamGroupId;
+
 		private long? resourceOwnerId;
 
 		private int? dBInstanceStorage;
@@ -81,7 +83,11 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string targetDedicatedHostIdForSlave;
 
+		private string dBIsIgnoreCase;
+
 		private string engine;
+
+		private string dBTimeZone;
 
 		private string dBInstanceStorageType;
 
@@ -96,6 +102,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string category;
 
 		private string payType;
+
+		public string DBParamGroupId
+		{
+			get
+			{
+				return dBParamGroupId;
+			}
+			set	
+			{
+				dBParamGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DBParamGroupId", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -370,6 +389,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string DBIsIgnoreCase
+		{
+			get
+			{
+				return dBIsIgnoreCase;
+			}
+			set	
+			{
+				dBIsIgnoreCase = value;
+				DictionaryUtil.Add(QueryParameters, "DBIsIgnoreCase", value);
+			}
+		}
+
 		public string Engine
 		{
 			get
@@ -380,6 +412,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string DBTimeZone
+		{
+			get
+			{
+				return dBTimeZone;
+			}
+			set	
+			{
+				dBTimeZone = value;
+				DictionaryUtil.Add(QueryParameters, "DBTimeZone", value);
 			}
 		}
 

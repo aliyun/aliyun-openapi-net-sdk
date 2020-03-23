@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeSQLCollectorRetentionResponse : AcsResponse
+	public class DescribeInstanceKeywordsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string configValue;
+		private string key;
+
+		private List<string> words;
 
 		public string RequestId
 		{
@@ -41,15 +43,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ConfigValue
+		public string Key
 		{
 			get
 			{
-				return configValue;
+				return key;
 			}
 			set	
 			{
-				configValue = value;
+				key = value;
+			}
+		}
+
+		public List<string> Words
+		{
+			get
+			{
+				return words;
+			}
+			set	
+			{
+				words = value;
 			}
 		}
 	}

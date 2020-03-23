@@ -27,12 +27,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string requestId;
 
-		private int? dBInstanceID;
-
-		private string dBInstanceName;
-
-		private int? taskId;
-
 		public string RequestId
 		{
 			get
@@ -42,42 +36,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? DBInstanceID
-		{
-			get
-			{
-				return dBInstanceID;
-			}
-			set	
-			{
-				dBInstanceID = value;
-			}
-		}
-
-		public string DBInstanceName
-		{
-			get
-			{
-				return dBInstanceName;
-			}
-			set	
-			{
-				dBInstanceName = value;
-			}
-		}
-
-		public int? TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
 			}
 		}
 	}

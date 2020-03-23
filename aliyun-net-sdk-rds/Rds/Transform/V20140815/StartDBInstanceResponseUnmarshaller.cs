@@ -16,27 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Rds.Model.V20140815;
 
-namespace Aliyun.Acs.Rds.Model.V20140815
+namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-	public class RestoreDBInstanceResponse : AcsResponse
-	{
+    public class StartDBInstanceResponseUnmarshaller
+    {
+        public static StartDBInstanceResponse Unmarshall(UnmarshallerContext context)
+        {
+			StartDBInstanceResponse startDBInstanceResponse = new StartDBInstanceResponse();
 
-		private string requestId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-	}
+			startDBInstanceResponse.HttpResponse = context.HttpResponse;
+			startDBInstanceResponse.RequestId = context.StringValue("StartDBInstance.RequestId");
+			startDBInstanceResponse.TaskId = context.IntegerValue("StartDBInstance.TaskId");
+			startDBInstanceResponse.MigrationId = context.IntegerValue("StartDBInstance.MigrationId");
+        
+			return startDBInstanceResponse;
+        }
+    }
 }

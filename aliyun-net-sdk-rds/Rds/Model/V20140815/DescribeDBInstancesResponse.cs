@@ -174,6 +174,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string dedicatedHostNameForLog;
 
+			private string dedicatedHostZoneIdForMaster;
+
+			private string dedicatedHostZoneIdForSlave;
+
+			private string dedicatedHostZoneIdForLog;
+
 			private List<DescribeDBInstances_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 
 			public int? InsId
@@ -629,6 +635,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dedicatedHostNameForLog = value;
+				}
+			}
+
+			public string DedicatedHostZoneIdForMaster
+			{
+				get
+				{
+					return dedicatedHostZoneIdForMaster;
+				}
+				set	
+				{
+					dedicatedHostZoneIdForMaster = value;
+				}
+			}
+
+			public string DedicatedHostZoneIdForSlave
+			{
+				get
+				{
+					return dedicatedHostZoneIdForSlave;
+				}
+				set	
+				{
+					dedicatedHostZoneIdForSlave = value;
+				}
+			}
+
+			public string DedicatedHostZoneIdForLog
+			{
+				get
+				{
+					return dedicatedHostZoneIdForLog;
+				}
+				set	
+				{
+					dedicatedHostZoneIdForLog = value;
 				}
 			}
 

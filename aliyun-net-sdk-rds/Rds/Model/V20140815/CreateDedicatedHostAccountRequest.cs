@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class RestoreDBInstanceRequest : RpcAcsRequest<RestoreDBInstanceResponse>
+    public class CreateDedicatedHostAccountRequest : RpcAcsRequest<CreateDedicatedHostAccountResponse>
     {
-        public RestoreDBInstanceRequest()
-            : base("Rds", "2014-08-15", "RestoreDBInstance", "rds", "openAPI")
+        public CreateDedicatedHostAccountRequest()
+            : base("Rds", "2014-08-15", "CreateDedicatedHostAccount", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,19 +41,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
-
-		private string dBInstanceId;
-
-		private string restoreTime;
+		private string accountName;
 
 		private string resourceOwnerAccount;
 
-		private string backupId;
-
-		private string ownerAccount;
+		private string dedicatedHostId;
 
 		private long? ownerId;
+
+		private string accountPassword;
 
 		public long? ResourceOwnerId
 		{
@@ -68,42 +64,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ClientToken
+		public string AccountName
 		{
 			get
 			{
-				return clientToken;
+				return accountName;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string RestoreTime
-		{
-			get
-			{
-				return restoreTime;
-			}
-			set	
-			{
-				restoreTime = value;
-				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
+				accountName = value;
+				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
@@ -120,29 +90,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string BackupId
+		public string DedicatedHostId
 		{
 			get
 			{
-				return backupId;
+				return dedicatedHostId;
 			}
 			set	
 			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				dedicatedHostId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
 			}
 		}
 
@@ -159,9 +116,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-        public override RestoreDBInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string AccountPassword
+		{
+			get
+			{
+				return accountPassword;
+			}
+			set	
+			{
+				accountPassword = value;
+				DictionaryUtil.Add(QueryParameters, "AccountPassword", value);
+			}
+		}
+
+        public override CreateDedicatedHostAccountResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RestoreDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDedicatedHostAccountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

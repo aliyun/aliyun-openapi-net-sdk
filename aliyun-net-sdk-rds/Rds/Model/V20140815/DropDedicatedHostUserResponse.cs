@@ -22,12 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class DescribeSQLCollectorRetentionResponse : AcsResponse
+	public class DropDedicatedHostUserResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string configValue;
 
 		public string RequestId
 		{
@@ -38,18 +36,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ConfigValue
-		{
-			get
-			{
-				return configValue;
-			}
-			set	
-			{
-				configValue = value;
 			}
 		}
 	}

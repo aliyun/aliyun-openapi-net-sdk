@@ -22,18 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-	public class CreateDBInstanceReplicaResponse : AcsResponse
+	public class StartDBInstanceResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string dBInstanceId;
+		private int? taskId;
 
-		private long? orderId;
-
-		private string replicaId;
-
-		private string workflowId;
+		private int? migrationId;
 
 		public string RequestId
 		{
@@ -47,51 +43,27 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string DBInstanceId
+		public int? TaskId
 		{
 			get
 			{
-				return dBInstanceId;
+				return taskId;
 			}
 			set	
 			{
-				dBInstanceId = value;
+				taskId = value;
 			}
 		}
 
-		public long? OrderId
+		public int? MigrationId
 		{
 			get
 			{
-				return orderId;
+				return migrationId;
 			}
 			set	
 			{
-				orderId = value;
-			}
-		}
-
-		public string ReplicaId
-		{
-			get
-			{
-				return replicaId;
-			}
-			set	
-			{
-				replicaId = value;
-			}
-		}
-
-		public string WorkflowId
-		{
-			get
-			{
-				return workflowId;
-			}
-			set	
-			{
-				workflowId = value;
+				migrationId = value;
 			}
 		}
 	}

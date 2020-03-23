@@ -35,6 +35,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string dBProxyInstanceStatus;
 
+		private string dBProxyInstanceCurrentMinorVersion;
+
+		private string dBProxyInstanceLatestMinorVersion;
+
+		private string dBProxyInstanceName;
+
 		private List<DescribeDBProxy_DBProxyConnectStringItemsItem> dBProxyConnectStringItems;
 
 		public string RequestId
@@ -97,6 +103,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string DBProxyInstanceCurrentMinorVersion
+		{
+			get
+			{
+				return dBProxyInstanceCurrentMinorVersion;
+			}
+			set	
+			{
+				dBProxyInstanceCurrentMinorVersion = value;
+			}
+		}
+
+		public string DBProxyInstanceLatestMinorVersion
+		{
+			get
+			{
+				return dBProxyInstanceLatestMinorVersion;
+			}
+			set	
+			{
+				dBProxyInstanceLatestMinorVersion = value;
+			}
+		}
+
+		public string DBProxyInstanceName
+		{
+			get
+			{
+				return dBProxyInstanceName;
+			}
+			set	
+			{
+				dBProxyInstanceName = value;
+			}
+		}
+
 		public List<DescribeDBProxy_DBProxyConnectStringItemsItem> DBProxyConnectStringItems
 		{
 			get
@@ -121,6 +163,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			private string dBProxyConnectStringNetType;
 
 			private string dBProxyVpcInstanceId;
+
+			private string dBProxyEndpointName;
+
+			private string dBProxyConnectStringNetWorkType;
 
 			public string DBProxyEndpointId
 			{
@@ -179,6 +225,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dBProxyVpcInstanceId = value;
+				}
+			}
+
+			public string DBProxyEndpointName
+			{
+				get
+				{
+					return dBProxyEndpointName;
+				}
+				set	
+				{
+					dBProxyEndpointName = value;
+				}
+			}
+
+			public string DBProxyConnectStringNetWorkType
+			{
+				get
+				{
+					return dBProxyConnectStringNetWorkType;
+				}
+				set	
+				{
+					dBProxyConnectStringNetWorkType = value;
 				}
 			}
 		}

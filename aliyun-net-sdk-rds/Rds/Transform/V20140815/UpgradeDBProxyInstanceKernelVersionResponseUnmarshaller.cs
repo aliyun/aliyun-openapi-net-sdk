@@ -24,16 +24,19 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class ModifyReplicaDescriptionResponseUnmarshaller
+    public class UpgradeDBProxyInstanceKernelVersionResponseUnmarshaller
     {
-        public static ModifyReplicaDescriptionResponse Unmarshall(UnmarshallerContext context)
+        public static UpgradeDBProxyInstanceKernelVersionResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyReplicaDescriptionResponse modifyReplicaDescriptionResponse = new ModifyReplicaDescriptionResponse();
+			UpgradeDBProxyInstanceKernelVersionResponse upgradeDBProxyInstanceKernelVersionResponse = new UpgradeDBProxyInstanceKernelVersionResponse();
 
-			modifyReplicaDescriptionResponse.HttpResponse = context.HttpResponse;
-			modifyReplicaDescriptionResponse.RequestId = context.StringValue("ModifyReplicaDescription.RequestId");
+			upgradeDBProxyInstanceKernelVersionResponse.HttpResponse = context.HttpResponse;
+			upgradeDBProxyInstanceKernelVersionResponse.RequestId = context.StringValue("UpgradeDBProxyInstanceKernelVersion.RequestId");
+			upgradeDBProxyInstanceKernelVersionResponse.DBInstanceName = context.StringValue("UpgradeDBProxyInstanceKernelVersion.DBInstanceName");
+			upgradeDBProxyInstanceKernelVersionResponse.TaskId = context.StringValue("UpgradeDBProxyInstanceKernelVersion.TaskId");
+			upgradeDBProxyInstanceKernelVersionResponse.TargetMinorVersion = context.StringValue("UpgradeDBProxyInstanceKernelVersion.TargetMinorVersion");
         
-			return modifyReplicaDescriptionResponse;
+			return upgradeDBProxyInstanceKernelVersionResponse;
         }
     }
 }

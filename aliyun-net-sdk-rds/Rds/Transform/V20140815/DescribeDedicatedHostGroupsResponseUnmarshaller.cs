@@ -49,6 +49,15 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dedicatedHostGroupsItem.InstanceNumber = context.IntegerValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].InstanceNumber");
 				dedicatedHostGroupsItem.Engine = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].Engine");
 				dedicatedHostGroupsItem.Text = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].Text");
+				dedicatedHostGroupsItem.DedicatedHostCountGroupByHostType = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DedicatedHostCountGroupByHostType");
+				dedicatedHostGroupsItem.BastionInstanceId = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].BastionInstanceId");
+				dedicatedHostGroupsItem.OpenPermission = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].OpenPermission");
+
+				List<string> dedicatedHostGroupsItem_zoneIDList = new List<string>();
+				for (int j = 0; j < context.Length("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].ZoneIDList.Length"); j++) {
+					dedicatedHostGroupsItem_zoneIDList.Add(context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].ZoneIDList["+ j +"]"));
+				}
+				dedicatedHostGroupsItem.ZoneIDList = dedicatedHostGroupsItem_zoneIDList;
 
 				describeDedicatedHostGroupsResponse_dedicatedHostGroups.Add(dedicatedHostGroupsItem);
 			}
