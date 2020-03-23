@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ReplaceUserClusterHostRequest : RpcAcsRequest<ReplaceUserClusterHostResponse>
+    public class DescribeSecurityGroupConfigurationRequest : RpcAcsRequest<DescribeSecurityGroupConfigurationResponse>
     {
-        public ReplaceUserClusterHostRequest()
-            : base("R-kvstore", "2015-01-01", "ReplaceUserClusterHost", "redisa", "openAPI")
+        public DescribeSecurityGroupConfigurationRequest()
+            : base("R-kvstore", "2015-01-01", "DescribeSecurityGroupConfiguration", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,21 +41,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string hostId;
-
 		private string securityToken;
-
-		private string engine;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string clusterId;
-
 		private long? ownerId;
 
-		private string zoneId;
+		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -70,19 +64,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string HostId
-		{
-			get
-			{
-				return hostId;
-			}
-			set	
-			{
-				hostId = value;
-				DictionaryUtil.Add(QueryParameters, "HostId", value);
-			}
-		}
-
 		public string SecurityToken
 		{
 			get
@@ -93,19 +74,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Engine
-		{
-			get
-			{
-				return engine;
-			}
-			set	
-			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
 			}
 		}
 
@@ -135,19 +103,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -161,27 +116,22 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ZoneId
+		public string InstanceId
 		{
 			get
 			{
-				return zoneId;
+				return instanceId;
 			}
 			set	
 			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override ReplaceUserClusterHostResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeSecurityGroupConfigurationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ReplaceUserClusterHostResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeSecurityGroupConfigurationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
