@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string hpcClusterId;
 
+		private int? httpPutResponseHopLimit;
+
 		private string securityEnhancementStrategy;
 
 		private string keyPairName;
@@ -117,6 +119,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? passwordInherit;
 
+		private string httpEndpoint;
+
 		private string instanceType;
 
 		private List<Arn> arns = new List<Arn>(){ };
@@ -153,6 +157,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string imageFamily;
 
+		private string httpTokens;
+
 		private string systemDiskDescription;
 
 		public long? ResourceOwnerId
@@ -178,6 +184,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				hpcClusterId = value;
 				DictionaryUtil.Add(QueryParameters, "HpcClusterId", value);
+			}
+		}
+
+		public int? HttpPutResponseHopLimit
+		{
+			get
+			{
+				return httpPutResponseHopLimit;
+			}
+			set	
+			{
+				httpPutResponseHopLimit = value;
+				DictionaryUtil.Add(QueryParameters, "HttpPutResponseHopLimit", value.ToString());
 			}
 		}
 
@@ -667,6 +686,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string HttpEndpoint
+		{
+			get
+			{
+				return httpEndpoint;
+			}
+			set	
+			{
+				httpEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "HttpEndpoint", value);
+			}
+		}
+
 		public string InstanceType
 		{
 			get
@@ -918,6 +950,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				imageFamily = value;
 				DictionaryUtil.Add(QueryParameters, "ImageFamily", value);
+			}
+		}
+
+		public string HttpTokens
+		{
+			get
+			{
+				return httpTokens;
+			}
+			set	
+			{
+				httpTokens = value;
+				DictionaryUtil.Add(QueryParameters, "HttpTokens", value);
 			}
 		}
 

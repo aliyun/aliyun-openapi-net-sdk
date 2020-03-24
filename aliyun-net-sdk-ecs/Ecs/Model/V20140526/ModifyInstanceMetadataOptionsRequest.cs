@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class CreateAutoSnapshotPolicyRequest : RpcAcsRequest<CreateAutoSnapshotPolicyResponse>
+    public class ModifyInstanceMetadataOptionsRequest : RpcAcsRequest<ModifyInstanceMetadataOptionsResponse>
     {
-        public CreateAutoSnapshotPolicyRequest()
-            : base("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy", "ecs", "openAPI")
+        public ModifyInstanceMetadataOptionsRequest()
+            : base("Ecs", "2014-05-26", "ModifyInstanceMetadataOptions", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,19 +42,17 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string timePoints;
+		private int? httpPutResponseHopLimit;
 
-		private string repeatWeekdays;
-
-		private List<Tag> tags = new List<Tag>(){ };
+		private string httpEndpoint;
 
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string autoSnapshotPolicyName;
+		private string instanceId;
 
-		private int? retentionDays;
+		private string httpTokens;
 
 		public long? ResourceOwnerId
 		{
@@ -68,47 +67,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string TimePoints
+		public int? HttpPutResponseHopLimit
 		{
 			get
 			{
-				return timePoints;
+				return httpPutResponseHopLimit;
 			}
 			set	
 			{
-				timePoints = value;
-				DictionaryUtil.Add(QueryParameters, "timePoints", value);
+				httpPutResponseHopLimit = value;
+				DictionaryUtil.Add(QueryParameters, "HttpPutResponseHopLimit", value.ToString());
 			}
 		}
 
-		public string RepeatWeekdays
+		public string HttpEndpoint
 		{
 			get
 			{
-				return repeatWeekdays;
+				return httpEndpoint;
 			}
 			set	
 			{
-				repeatWeekdays = value;
-				DictionaryUtil.Add(QueryParameters, "repeatWeekdays", value);
-			}
-		}
-
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
+				httpEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "HttpEndpoint", value);
 			}
 		}
 
@@ -138,67 +119,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string AutoSnapshotPolicyName
+		public string InstanceId
 		{
 			get
 			{
-				return autoSnapshotPolicyName;
+				return instanceId;
 			}
 			set	
 			{
-				autoSnapshotPolicyName = value;
-				DictionaryUtil.Add(QueryParameters, "autoSnapshotPolicyName", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public int? RetentionDays
+		public string HttpTokens
 		{
 			get
 			{
-				return retentionDays;
+				return httpTokens;
 			}
 			set	
 			{
-				retentionDays = value;
-				DictionaryUtil.Add(QueryParameters, "retentionDays", value.ToString());
+				httpTokens = value;
+				DictionaryUtil.Add(QueryParameters, "HttpTokens", value);
 			}
 		}
 
-		public class Tag
-		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-		}
-
-        public override CreateAutoSnapshotPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyInstanceMetadataOptionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateAutoSnapshotPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyInstanceMetadataOptionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -82,6 +82,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? eniPrivateIpAddressQuantity;
 
+			private int? eniIpv6AddressQuantity;
+
 			private int? instanceBandwidthRx;
 
 			private int? instanceBandwidthTx;
@@ -245,6 +247,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					eniPrivateIpAddressQuantity = value;
+				}
+			}
+
+			public int? EniIpv6AddressQuantity
+			{
+				get
+				{
+					return eniIpv6AddressQuantity;
+				}
+				set	
+				{
+					eniIpv6AddressQuantity = value;
 				}
 			}
 

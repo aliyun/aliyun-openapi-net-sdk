@@ -149,6 +149,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				cpuOptions.Numa = context.StringValue("DescribeInstances.Instances["+ i +"].CpuOptions.Numa");
 				instance.CpuOptions = cpuOptions;
 
+				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_MetadataOptions metadataOptions = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_MetadataOptions();
+				metadataOptions.HttpEndpoint = context.StringValue("DescribeInstances.Instances["+ i +"].MetadataOptions.HttpEndpoint");
+				metadataOptions.HttpTokens = context.StringValue("DescribeInstances.Instances["+ i +"].MetadataOptions.HttpTokens");
+				metadataOptions.HttpPutResponseHopLimit = context.IntegerValue("DescribeInstances.Instances["+ i +"].MetadataOptions.HttpPutResponseHopLimit");
+				instance.MetadataOptions = metadataOptions;
+
 				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface> instance_networkInterfaces = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].NetworkInterfaces.Length"); j++) {
 					DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface networkInterface = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_NetworkInterface();

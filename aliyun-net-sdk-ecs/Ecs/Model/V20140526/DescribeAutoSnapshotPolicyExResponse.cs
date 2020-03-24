@@ -118,6 +118,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string status;
 
+			private List<DescribeAutoSnapshotPolicyEx_Tag> tags;
+
 			public string AutoSnapshotPolicyId
 			{
 				get
@@ -235,6 +237,50 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public List<DescribeAutoSnapshotPolicyEx_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeAutoSnapshotPolicyEx_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
+					}
 				}
 			}
 		}

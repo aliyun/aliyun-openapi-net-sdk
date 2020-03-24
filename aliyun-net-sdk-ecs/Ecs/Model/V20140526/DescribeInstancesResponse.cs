@@ -212,6 +212,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private DescribeInstances_CpuOptions cpuOptions;
 
+			private DescribeInstances_MetadataOptions metadataOptions;
+
 			public string InstanceId
 			{
 				get
@@ -896,6 +898,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public DescribeInstances_MetadataOptions MetadataOptions
+			{
+				get
+				{
+					return metadataOptions;
+				}
+				set	
+				{
+					metadataOptions = value;
+				}
+			}
+
 			public class DescribeInstances_NetworkInterface
 			{
 
@@ -1278,6 +1292,52 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						numa = value;
+					}
+				}
+			}
+
+			public class DescribeInstances_MetadataOptions
+			{
+
+				private string httpEndpoint;
+
+				private string httpTokens;
+
+				private int? httpPutResponseHopLimit;
+
+				public string HttpEndpoint
+				{
+					get
+					{
+						return httpEndpoint;
+					}
+					set	
+					{
+						httpEndpoint = value;
+					}
+				}
+
+				public string HttpTokens
+				{
+					get
+					{
+						return httpTokens;
+					}
+					set	
+					{
+						httpTokens = value;
+					}
+				}
+
+				public int? HttpPutResponseHopLimit
+				{
+					get
+					{
+						return httpPutResponseHopLimit;
+					}
+					set	
+					{
+						httpPutResponseHopLimit = value;
 					}
 				}
 			}

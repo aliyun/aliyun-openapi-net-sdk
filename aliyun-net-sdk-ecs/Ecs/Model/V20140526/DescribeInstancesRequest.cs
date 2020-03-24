@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string hpcClusterId;
 
+		private int? httpPutResponseHopLimit;
+
 		private string filter2Value;
 
 		private string keyPairName;
@@ -72,6 +74,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private long? ownerId;
 
 		private string vSwitchId;
+
+		private List<string> additionalAttributess = new List<string>(){ };
 
 		private string instanceName;
 
@@ -99,6 +103,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string rdmaIpAddresses;
 
+		private string httpEndpoint;
+
 		private int? pageSize;
 
 		private string publicIpAddresses;
@@ -118,6 +124,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string eipAddresses;
 
 		private string vpcId;
+
+		private string httpTokens;
 
 		private string filter3Key;
 
@@ -170,6 +178,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				hpcClusterId = value;
 				DictionaryUtil.Add(QueryParameters, "HpcClusterId", value);
+			}
+		}
+
+		public int? HttpPutResponseHopLimit
+		{
+			get
+			{
+				return httpPutResponseHopLimit;
+			}
+			set	
+			{
+				httpPutResponseHopLimit = value;
+				DictionaryUtil.Add(QueryParameters, "HttpPutResponseHopLimit", value.ToString());
 			}
 		}
 
@@ -347,6 +368,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public List<string> AdditionalAttributess
+		{
+			get
+			{
+				return additionalAttributess;
+			}
+
+			set
+			{
+				additionalAttributess = value;
+				for (int i = 0; i < additionalAttributess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"AdditionalAttributes." + (i + 1) , additionalAttributess[i]);
+				}
+			}
+		}
+
 		public string InstanceName
 		{
 			get
@@ -516,6 +554,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string HttpEndpoint
+		{
+			get
+			{
+				return httpEndpoint;
+			}
+			set	
+			{
+				httpEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "HttpEndpoint", value);
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -643,6 +694,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
+		public string HttpTokens
+		{
+			get
+			{
+				return httpTokens;
+			}
+			set	
+			{
+				httpTokens = value;
+				DictionaryUtil.Add(QueryParameters, "HttpTokens", value);
 			}
 		}
 
