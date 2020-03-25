@@ -32,9 +32,14 @@ namespace Aliyun.Acs.rtc.Model.V20180111
         public RemoveTerminalsRequest()
             : base("rtc", "2018-01-11", "RemoveTerminals", "rtc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private List<string> terminalIdss;
+		private List<string> terminalIdss = new List<string>(){ };
 
 		private long? ownerId;
 

@@ -32,21 +32,26 @@ namespace Aliyun.Acs.rtc.Model.V20180111
         public CreateTemplateRequest()
             : base("rtc", "2018-01-11", "CreateTemplate", "rtc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private int? serviceMode;
 
-		private List<LiveConfig> liveConfigs;
+		private List<LiveConfig> liveConfigs = new List<LiveConfig>(){ };
 
 		private int? mediaConfig;
 
 		private int? maxMixStreamCount;
 
-		private List<RecordConfig> recordConfigs;
+		private List<RecordConfig> recordConfigs = new List<RecordConfig>(){ };
 
 		private long? ownerId;
 
-		private List<LayOut> layOuts;
+		private List<LayOut> layOuts = new List<LayOut>(){ };
 
 		private string appId;
 

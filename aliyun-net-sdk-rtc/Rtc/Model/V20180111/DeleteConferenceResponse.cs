@@ -27,8 +27,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private string requestId;
 
-		private string conferenceId;
-
 		public string RequestId
 		{
 			get
@@ -38,18 +36,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ConferenceId
-		{
-			get
-			{
-				return conferenceId;
-			}
-			set	
-			{
-				conferenceId = value;
 			}
 		}
 	}

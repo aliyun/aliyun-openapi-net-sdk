@@ -32,7 +32,6 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 
 			deleteConferenceResponse.HttpResponse = context.HttpResponse;
 			deleteConferenceResponse.RequestId = context.StringValue("DeleteConference.RequestId");
-			deleteConferenceResponse.ConferenceId = context.StringValue("DeleteConference.ConferenceId");
         
 			return deleteConferenceResponse;
         }

@@ -32,6 +32,11 @@ namespace Aliyun.Acs.rtc.Model.V20180111
         public CreateConferenceRequest()
             : base("rtc", "2018-01-11", "CreateConference", "rtc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string clientToken;

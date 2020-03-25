@@ -32,26 +32,18 @@ namespace Aliyun.Acs.rtc.Model.V20180111
         public DeleteConferenceRequest()
             : base("rtc", "2018-01-11", "DeleteConference", "rtc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private long? ownerId;
 
 		private string conferenceId;
 
-		private string appId;
+		private long? ownerId;
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
+		private string appId;
 
 		public string ConferenceId
 		{
@@ -63,6 +55,19 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				conferenceId = value;
 				DictionaryUtil.Add(QueryParameters, "ConferenceId", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

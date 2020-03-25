@@ -32,9 +32,14 @@ namespace Aliyun.Acs.rtc.Model.V20180111
         public StartMPUTaskRequest()
             : base("rtc", "2018-01-11", "StartMPUTask", "rtc", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private List<UserPanes> userPaness;
+		private List<UserPanes> userPaness = new List<UserPanes>(){ };
 
 		private int? backgroundColor;
 
@@ -42,13 +47,15 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private string taskProfile;
 
-		private List<long?> layoutIdss;
+		private List<long?> layoutIdss = new List<long?>(){ };
 
 		private string taskId;
 
 		private string streamURL;
 
 		private long? ownerId;
+
+		private List<string> subSpecUserss = new List<string>(){ };
 
 		private string appId;
 
@@ -167,6 +174,23 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public List<string> SubSpecUserss
+		{
+			get
+			{
+				return subSpecUserss;
+			}
+
+			set
+			{
+				subSpecUserss = value;
+				for (int i = 0; i < subSpecUserss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SubSpecUsers." + (i + 1) , subSpecUserss[i]);
+				}
 			}
 		}
 
