@@ -33,6 +33,11 @@ namespace Aliyun.Acs.oos.Model.V20190601
         public GenerateExecutionPolicyRequest()
             : base("oos", "2019-06-01", "GenerateExecutionPolicy", "oos", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string templateName;

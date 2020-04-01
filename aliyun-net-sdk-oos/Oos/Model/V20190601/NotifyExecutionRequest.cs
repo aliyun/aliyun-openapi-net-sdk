@@ -33,6 +33,11 @@ namespace Aliyun.Acs.oos.Model.V20190601
         public NotifyExecutionRequest()
             : base("oos", "2019-06-01", "NotifyExecution", "oos", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string taskName;
@@ -46,6 +51,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		private string notifyNote;
 
 		private string loopItem;
+
+		private string taskExecutionIds;
 
 		private string taskExecutionId;
 
@@ -126,6 +133,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				loopItem = value;
 				DictionaryUtil.Add(QueryParameters, "LoopItem", value);
+			}
+		}
+
+		public string TaskExecutionIds
+		{
+			get
+			{
+				return taskExecutionIds;
+			}
+			set	
+			{
+				taskExecutionIds = value;
+				DictionaryUtil.Add(QueryParameters, "TaskExecutionIds", value);
 			}
 		}
 
