@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 			private string bizId;
 
+			private string dataStats;
+
 			private string verifyId;
 
 			private long? finishTime;
@@ -149,6 +151,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					bizId = value;
+				}
+			}
+
+			public string DataStats
+			{
+				get
+				{
+					return dataStats;
+				}
+				set	
+				{
+					dataStats = value;
 				}
 			}
 

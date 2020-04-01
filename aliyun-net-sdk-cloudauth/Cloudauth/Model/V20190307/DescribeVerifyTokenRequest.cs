@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string callbackSeed;
 
+		private string userIp;
+
 		private string idCardBackImageUrl;
 
 		private string idCardNumber;
@@ -55,9 +57,13 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string passedRedirectUrl;
 
+		private long? userRegistTime;
+
 		private string bizId;
 
 		private string name;
+
+		private string userPhoneNumber;
 
 		private string callbackUrl;
 
@@ -99,6 +105,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				callbackSeed = value;
 				DictionaryUtil.Add(QueryParameters, "CallbackSeed", value);
+			}
+		}
+
+		public string UserIp
+		{
+			get
+			{
+				return userIp;
+			}
+			set	
+			{
+				userIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserIp", value);
 			}
 		}
 
@@ -167,6 +186,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
+		public long? UserRegistTime
+		{
+			get
+			{
+				return userRegistTime;
+			}
+			set	
+			{
+				userRegistTime = value;
+				DictionaryUtil.Add(QueryParameters, "UserRegistTime", value.ToString());
+			}
+		}
+
 		public string BizId
 		{
 			get
@@ -190,6 +222,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string UserPhoneNumber
+		{
+			get
+			{
+				return userPhoneNumber;
+			}
+			set	
+			{
+				userPhoneNumber = value;
+				DictionaryUtil.Add(QueryParameters, "UserPhoneNumber", value);
 			}
 		}
 

@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 				DescribeVerifyRecordsResponse.DescribeVerifyRecords_Records records = new DescribeVerifyRecordsResponse.DescribeVerifyRecords_Records();
 				records.BizType = context.StringValue("DescribeVerifyRecords.RecordsList["+ i +"].BizType");
 				records.BizId = context.StringValue("DescribeVerifyRecords.RecordsList["+ i +"].BizId");
+				records.DataStats = context.StringValue("DescribeVerifyRecords.RecordsList["+ i +"].DataStats");
 				records.VerifyId = context.StringValue("DescribeVerifyRecords.RecordsList["+ i +"].VerifyId");
 				records.FinishTime = context.LongValue("DescribeVerifyRecords.RecordsList["+ i +"].FinishTime");
 				records.Status = context.IntegerValue("DescribeVerifyRecords.RecordsList["+ i +"].Status");
