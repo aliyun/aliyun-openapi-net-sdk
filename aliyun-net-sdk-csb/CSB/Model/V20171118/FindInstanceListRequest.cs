@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CSB;
 using Aliyun.Acs.CSB.Transform;
 using Aliyun.Acs.CSB.Transform.V20171118;
 
@@ -32,28 +33,20 @@ namespace Aliyun.Acs.CSB.Model.V20171118
         public FindInstanceListRequest()
             : base("CSB", "2017-11-18", "FindInstanceList")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string searchTxt;
 
 		private long? csbId;
 
 		private int? pageNum;
 
-		private int? status;
+		private string searchTxt;
 
-		public string SearchTxt
-		{
-			get
-			{
-				return searchTxt;
-			}
-			set	
-			{
-				searchTxt = value;
-				DictionaryUtil.Add(QueryParameters, "SearchTxt", value);
-			}
-		}
+		private int? status;
 
 		public long? CsbId
 		{
@@ -78,6 +71,19 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string SearchTxt
+		{
+			get
+			{
+				return searchTxt;
+			}
+			set	
+			{
+				searchTxt = value;
+				DictionaryUtil.Add(QueryParameters, "SearchTxt", value);
 			}
 		}
 

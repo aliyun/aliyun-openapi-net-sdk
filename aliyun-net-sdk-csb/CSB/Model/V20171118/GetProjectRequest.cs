@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CSB;
 using Aliyun.Acs.CSB.Transform;
 using Aliyun.Acs.CSB.Transform.V20171118;
 
@@ -32,6 +33,11 @@ namespace Aliyun.Acs.CSB.Model.V20171118
         public GetProjectRequest()
             : base("CSB", "2017-11-18", "GetProject")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Protocol = ProtocolType.HTTPS;
         }
 

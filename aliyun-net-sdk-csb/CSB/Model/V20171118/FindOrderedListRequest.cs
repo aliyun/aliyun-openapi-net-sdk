@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.CSB;
 using Aliyun.Acs.CSB.Transform;
 using Aliyun.Acs.CSB.Transform.V20171118;
 
@@ -32,6 +33,11 @@ namespace Aliyun.Acs.CSB.Model.V20171118
         public FindOrderedListRequest()
             : base("CSB", "2017-11-18", "FindOrderedList")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Protocol = ProtocolType.HTTPS;
         }
 
@@ -41,11 +47,11 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 		private long? csbId;
 
+		private int? pageNum;
+
 		private string alias;
 
 		private string serviceName;
-
-		private int? pageNum;
 
 		private long? serviceId;
 
@@ -90,6 +96,19 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
 		public string Alias
 		{
 			get
@@ -113,19 +132,6 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			{
 				serviceName = value;
 				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
