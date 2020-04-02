@@ -27,10 +27,10 @@ using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class InitFaceVerifyRequest : RpcAcsRequest<InitFaceVerifyResponse>
+    public class ContrastFaceVerifyRequest : RpcAcsRequest<ContrastFaceVerifyResponse>
     {
-        public InitFaceVerifyRequest()
-            : base("Cloudauth", "2019-03-07", "InitFaceVerify", "cloudauth", "openAPI")
+        public ContrastFaceVerifyRequest()
+            : base("Cloudauth", "2019-03-07", "ContrastFaceVerify", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,7 +41,17 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string productCode;
 
+		private string ossObjectName;
+
 		private string faceContrastPicture;
+
+		private string certName;
+
+		private string ip;
+
+		private string mobile;
+
+		private string deviceToken;
 
 		private string userId;
 
@@ -55,21 +65,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string faceContrastPictureUrl;
 
-		private string metaInfo;
-
-		private string ossObjectName;
-
-		private string certName;
-
-		private string ip;
-
-		private string mobile;
-
 		private long? sceneId;
 
 		private string ossBucketName;
-
-		private string returnUrl;
 
 		public string ProductCode
 		{
@@ -84,6 +82,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
+		public string OssObjectName
+		{
+			get
+			{
+				return ossObjectName;
+			}
+			set	
+			{
+				ossObjectName = value;
+				DictionaryUtil.Add(QueryParameters, "OssObjectName", value);
+			}
+		}
+
 		public string FaceContrastPicture
 		{
 			get
@@ -94,6 +105,58 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				faceContrastPicture = value;
 				DictionaryUtil.Add(QueryParameters, "FaceContrastPicture", value);
+			}
+		}
+
+		public string CertName
+		{
+			get
+			{
+				return certName;
+			}
+			set	
+			{
+				certName = value;
+				DictionaryUtil.Add(QueryParameters, "CertName", value);
+			}
+		}
+
+		public string Ip
+		{
+			get
+			{
+				return ip;
+			}
+			set	
+			{
+				ip = value;
+				DictionaryUtil.Add(QueryParameters, "Ip", value);
+			}
+		}
+
+		public string Mobile
+		{
+			get
+			{
+				return mobile;
+			}
+			set	
+			{
+				mobile = value;
+				DictionaryUtil.Add(QueryParameters, "Mobile", value);
+			}
+		}
+
+		public string DeviceToken
+		{
+			get
+			{
+				return deviceToken;
+			}
+			set	
+			{
+				deviceToken = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceToken", value);
 			}
 		}
 
@@ -175,71 +238,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string MetaInfo
-		{
-			get
-			{
-				return metaInfo;
-			}
-			set	
-			{
-				metaInfo = value;
-				DictionaryUtil.Add(QueryParameters, "MetaInfo", value);
-			}
-		}
-
-		public string OssObjectName
-		{
-			get
-			{
-				return ossObjectName;
-			}
-			set	
-			{
-				ossObjectName = value;
-				DictionaryUtil.Add(QueryParameters, "OssObjectName", value);
-			}
-		}
-
-		public string CertName
-		{
-			get
-			{
-				return certName;
-			}
-			set	
-			{
-				certName = value;
-				DictionaryUtil.Add(QueryParameters, "CertName", value);
-			}
-		}
-
-		public string Ip
-		{
-			get
-			{
-				return ip;
-			}
-			set	
-			{
-				ip = value;
-				DictionaryUtil.Add(QueryParameters, "Ip", value);
-			}
-		}
-
-		public string Mobile
-		{
-			get
-			{
-				return mobile;
-			}
-			set	
-			{
-				mobile = value;
-				DictionaryUtil.Add(QueryParameters, "Mobile", value);
-			}
-		}
-
 		public long? SceneId
 		{
 			get
@@ -266,27 +264,14 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string ReturnUrl
-		{
-			get
-			{
-				return returnUrl;
-			}
-			set	
-			{
-				returnUrl = value;
-				DictionaryUtil.Add(QueryParameters, "ReturnUrl", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override InitFaceVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ContrastFaceVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return InitFaceVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ContrastFaceVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
