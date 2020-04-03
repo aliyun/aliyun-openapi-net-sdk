@@ -50,6 +50,7 @@ namespace Aliyun.Acs.linkedmall.Transform.V20180116
 				itemInfo.ReservePrice = context.StringValue("QueryGuideItemGroup.GuideItemGroup["+ i +"].ReservePrice");
 				itemInfo.PointsAmount = context.LongValue("QueryGuideItemGroup.GuideItemGroup["+ i +"].PointsAmount");
 				itemInfo.PointPrice = context.LongValue("QueryGuideItemGroup.GuideItemGroup["+ i +"].PointPrice");
+				itemInfo.LmItemId = context.StringValue("QueryGuideItemGroup.GuideItemGroup["+ i +"].LmItemId");
 
 				queryGuideItemGroupResponse_guideItemGroup.Add(itemInfo);
 			}

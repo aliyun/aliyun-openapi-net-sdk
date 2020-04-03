@@ -377,6 +377,8 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 
 				private long? tbOrderId;
 
+				private string lmItemId;
+
 				private List<QueryOrderList_ItemPriceListItem> itemPriceList;
 
 				public long? ItemId
@@ -496,6 +498,18 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 					set	
 					{
 						tbOrderId = value;
+					}
+				}
+
+				public string LmItemId
+				{
+					get
+					{
+						return lmItemId;
+					}
+					set	
+					{
+						lmItemId = value;
 					}
 				}
 

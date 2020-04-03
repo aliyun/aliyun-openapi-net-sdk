@@ -64,6 +64,7 @@ namespace Aliyun.Acs.linkedmall.Transform.V20180116
 			item.LmItemCategory = context.StringValue("QueryItemDetail.Item.LmItemCategory");
 			item.CenterInventory = context.BooleanValue("QueryItemDetail.Item.CenterInventory");
 			item.CustomizedAttributeMap = context.StringValue("QueryItemDetail.Item.CustomizedAttributeMap");
+			item.LmItemId = context.StringValue("QueryItemDetail.Item.LmItemId");
 
 			List<string> item_itemImages = new List<string>();
 			for (int i = 0; i < context.Length("QueryItemDetail.Item.ItemImages.Length"); i++) {
@@ -89,6 +90,7 @@ namespace Aliyun.Acs.linkedmall.Transform.V20180116
 				sku.ReservePrice = context.LongValue("QueryItemDetail.Item.Skus["+ i +"].ReservePrice");
 				sku.CanSell = context.BooleanValue("QueryItemDetail.Item.Skus["+ i +"].CanSell");
 				sku.CustomizedAttributeMap = context.StringValue("QueryItemDetail.Item.Skus["+ i +"].CustomizedAttributeMap");
+				sku.LmItemId = context.StringValue("QueryItemDetail.Item.Skus["+ i +"].LmItemId");
 
 				item_skus.Add(sku);
 			}

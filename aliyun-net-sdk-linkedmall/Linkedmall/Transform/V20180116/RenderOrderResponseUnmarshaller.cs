@@ -61,7 +61,7 @@ namespace Aliyun.Acs.linkedmall.Transform.V20180116
 					lmItemInfosItem.SellerId = context.LongValue("RenderOrder.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].SellerId");
 					lmItemInfosItem.SellerNick = context.StringValue("RenderOrder.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].SellerNick");
 					lmItemInfosItem.Cash = context.LongValue("RenderOrder.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].Cash");
-					lmItemInfosItem.Points = context.LongValue("RenderOrder.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].points");
+					lmItemInfosItem.Points = context.LongValue("RenderOrder.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].Points");
 					lmItemInfosItem.ActualPrice = context.LongValue("RenderOrder.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].ActualPrice");
 					lmItemInfosItem.ItemPicUrl = context.StringValue("RenderOrder.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].ItemPicUrl");
 					lmItemInfosItem.Message1 = context.StringValue("RenderOrder.Model.RenderOrderInfos["+ i +"].LmItemInfos["+ j +"].Message");

@@ -43,6 +43,8 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 
 		private string bizId;
 
+		private string lmItemId;
+
 		private long? categoryId;
 
 		public long? ItemId
@@ -71,6 +73,19 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			}
 		}
 
+		public string LmItemId
+		{
+			get
+			{
+				return lmItemId;
+			}
+			set	
+			{
+				lmItemId = value;
+				DictionaryUtil.Add(QueryParameters, "LmItemId", value);
+			}
+		}
+
 		public long? CategoryId
 		{
 			get
@@ -82,6 +97,11 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 				categoryId = value;
 				DictionaryUtil.Add(QueryParameters, "CategoryId", value.ToString());
 			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
 		}
 
         public override GetCategoryChainResponse GetResponse(UnmarshallerContext unmarshallerContext)

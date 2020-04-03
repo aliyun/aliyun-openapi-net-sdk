@@ -42,6 +42,7 @@ namespace Aliyun.Acs.linkedmall.Transform.V20180116
 			for (int i = 0; i < context.Length("QueryItemInventory.ItemList.Length"); i++) {
 				QueryItemInventoryResponse.QueryItemInventory_Item item = new QueryItemInventoryResponse.QueryItemInventory_Item();
 				item.ItemId = context.LongValue("QueryItemInventory.ItemList["+ i +"].ItemId");
+				item.LmItemId = context.StringValue("QueryItemInventory.ItemList["+ i +"].LmItemId");
 
 				List<QueryItemInventoryResponse.QueryItemInventory_Item.QueryItemInventory_Sku> item_skuList = new List<QueryItemInventoryResponse.QueryItemInventory_Item.QueryItemInventory_Sku>();
 				for (int j = 0; j < context.Length("QueryItemInventory.ItemList["+ i +"].SkuList.Length"); j++) {

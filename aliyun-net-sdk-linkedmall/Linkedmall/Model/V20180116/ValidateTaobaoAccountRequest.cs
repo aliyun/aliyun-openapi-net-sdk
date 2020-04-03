@@ -44,9 +44,9 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 
 		private string extJson;
 
-		private string bizId;
-
 		private string mobileNo;
+
+		private string bizId;
 
 		private string tbUserNick;
 
@@ -76,19 +76,6 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			}
 		}
 
-		public string BizId
-		{
-			get
-			{
-				return bizId;
-			}
-			set	
-			{
-				bizId = value;
-				DictionaryUtil.Add(QueryParameters, "BizId", value);
-			}
-		}
-
 		public string MobileNo
 		{
 			get
@@ -99,6 +86,19 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			{
 				mobileNo = value;
 				DictionaryUtil.Add(QueryParameters, "MobileNo", value);
+			}
+		}
+
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 

@@ -176,6 +176,8 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 
 			private string customizedAttributeMap;
 
+			private string lmItemId;
+
 			private List<QueryItemDetail_Sku> skus;
 
 			private List<string> itemImages;
@@ -480,6 +482,18 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 				}
 			}
 
+			public string LmItemId
+			{
+				get
+				{
+					return lmItemId;
+				}
+				set	
+				{
+					lmItemId = value;
+				}
+			}
+
 			public List<QueryItemDetail_Sku> Skus
 			{
 				get
@@ -536,6 +550,8 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 				private bool? canSell;
 
 				private string customizedAttributeMap;
+
+				private string lmItemId;
 
 				public string ExtJson
 				{
@@ -714,6 +730,18 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 					set	
 					{
 						customizedAttributeMap = value;
+					}
+				}
+
+				public string LmItemId
+				{
+					get
+					{
+						return lmItemId;
+					}
+					set	
+					{
+						lmItemId = value;
 					}
 				}
 			}

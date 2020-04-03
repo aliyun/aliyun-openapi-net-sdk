@@ -39,30 +39,17 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
             }
         }
 
-		private long? itemId;
-
 		private long? lmActivityId;
-
-		private string bizId;
 
 		private string lmItemId;
 
-		private long? ruleId;
-
 		private string subBizCode;
 
-		public long? ItemId
-		{
-			get
-			{
-				return itemId;
-			}
-			set	
-			{
-				itemId = value;
-				DictionaryUtil.Add(QueryParameters, "ItemId", value.ToString());
-			}
-		}
+		private long? itemId;
+
+		private string bizId;
+
+		private long? ruleId;
 
 		public long? LmActivityId
 		{
@@ -74,19 +61,6 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			{
 				lmActivityId = value;
 				DictionaryUtil.Add(QueryParameters, "LmActivityId", value.ToString());
-			}
-		}
-
-		public string BizId
-		{
-			get
-			{
-				return bizId;
-			}
-			set	
-			{
-				bizId = value;
-				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 
@@ -103,19 +77,6 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			}
 		}
 
-		public long? RuleId
-		{
-			get
-			{
-				return ruleId;
-			}
-			set	
-			{
-				ruleId = value;
-				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
-			}
-		}
-
 		public string SubBizCode
 		{
 			get
@@ -126,6 +87,45 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			{
 				subBizCode = value;
 				DictionaryUtil.Add(QueryParameters, "SubBizCode", value);
+			}
+		}
+
+		public long? ItemId
+		{
+			get
+			{
+				return itemId;
+			}
+			set	
+			{
+				itemId = value;
+				DictionaryUtil.Add(QueryParameters, "ItemId", value.ToString());
+			}
+		}
+
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
+			}
+		}
+
+		public long? RuleId
+		{
+			get
+			{
+				return ruleId;
+			}
+			set	
+			{
+				ruleId = value;
+				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
 			}
 		}
 

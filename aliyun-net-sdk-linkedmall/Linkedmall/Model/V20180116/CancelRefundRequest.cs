@@ -40,19 +40,58 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			Method = MethodType.POST;
         }
 
+		private string bizUid;
+
+		private string accountType;
+
+		private bool? useAnonymousTbAccount;
+
 		private string subLmOrderId;
 
 		private string thirdPartyUserId;
-
-		private string bizUid;
 
 		private long? disputeId;
 
 		private string bizId;
 
-		private string accountType;
+		public string BizUid
+		{
+			get
+			{
+				return bizUid;
+			}
+			set	
+			{
+				bizUid = value;
+				DictionaryUtil.Add(QueryParameters, "BizUid", value);
+			}
+		}
 
-		private bool? useAnonymousTbAccount;
+		public string AccountType
+		{
+			get
+			{
+				return accountType;
+			}
+			set	
+			{
+				accountType = value;
+				DictionaryUtil.Add(QueryParameters, "AccountType", value);
+			}
+		}
+
+		public bool? UseAnonymousTbAccount
+		{
+			get
+			{
+				return useAnonymousTbAccount;
+			}
+			set	
+			{
+				useAnonymousTbAccount = value;
+				DictionaryUtil.Add(QueryParameters, "UseAnonymousTbAccount", value.ToString());
+			}
+		}
 
 		public string SubLmOrderId
 		{
@@ -80,19 +119,6 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			}
 		}
 
-		public string BizUid
-		{
-			get
-			{
-				return bizUid;
-			}
-			set	
-			{
-				bizUid = value;
-				DictionaryUtil.Add(QueryParameters, "BizUid", value);
-			}
-		}
-
 		public long? DisputeId
 		{
 			get
@@ -116,32 +142,6 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			{
 				bizId = value;
 				DictionaryUtil.Add(QueryParameters, "BizId", value);
-			}
-		}
-
-		public string AccountType
-		{
-			get
-			{
-				return accountType;
-			}
-			set	
-			{
-				accountType = value;
-				DictionaryUtil.Add(QueryParameters, "AccountType", value);
-			}
-		}
-
-		public bool? UseAnonymousTbAccount
-		{
-			get
-			{
-				return useAnonymousTbAccount;
-			}
-			set	
-			{
-				useAnonymousTbAccount = value;
-				DictionaryUtil.Add(QueryParameters, "UseAnonymousTbAccount", value.ToString());
 			}
 		}
 

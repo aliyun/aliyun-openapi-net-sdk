@@ -46,6 +46,8 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 
 		private bool? useAnonymousTbAccount;
 
+		private string lmItemId;
+
 		private List<ItemList> itemLists = new List<ItemList>(){ };
 
 		private string thirdPartyUserId;
@@ -93,6 +95,19 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			}
 		}
 
+		public string LmItemId
+		{
+			get
+			{
+				return lmItemId;
+			}
+			set	
+			{
+				lmItemId = value;
+				DictionaryUtil.Add(QueryParameters, "LmItemId", value);
+			}
+		}
+
 		public List<ItemList> ItemLists
 		{
 			get
@@ -107,6 +122,7 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 				{
 					DictionaryUtil.Add(QueryParameters,"ItemList." + (i + 1) + ".ItemId", itemLists[i].ItemId);
 					DictionaryUtil.Add(QueryParameters,"ItemList." + (i + 1) + ".Quantity", itemLists[i].Quantity);
+					DictionaryUtil.Add(QueryParameters,"ItemList." + (i + 1) + ".LmItemId", itemLists[i].LmItemId);
 					DictionaryUtil.Add(QueryParameters,"ItemList." + (i + 1) + ".SkuId", itemLists[i].SkuId);
 				}
 			}
@@ -158,6 +174,8 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 
 			private int? quantity;
 
+			private string lmItemId;
+
 			private long? skuId;
 
 			public long? ItemId
@@ -181,6 +199,18 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 				set	
 				{
 					quantity = value;
+				}
+			}
+
+			public string LmItemId
+			{
+				get
+				{
+					return lmItemId;
+				}
+				set	
+				{
+					lmItemId = value;
 				}
 			}
 

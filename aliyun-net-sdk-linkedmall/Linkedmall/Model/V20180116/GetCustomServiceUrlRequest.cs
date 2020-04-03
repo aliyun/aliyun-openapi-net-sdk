@@ -40,19 +40,58 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			Method = MethodType.POST;
         }
 
+		private string cuid;
+
+		private string bizUid;
+
+		private bool? useAnonymousTbAccount;
+
 		private string nick;
 
 		private string sellerId;
 
-		private string cuid;
-
 		private string thirdPartyUserId;
-
-		private string bizUid;
 
 		private string bizId;
 
-		private bool? useAnonymousTbAccount;
+		public string Cuid
+		{
+			get
+			{
+				return cuid;
+			}
+			set	
+			{
+				cuid = value;
+				DictionaryUtil.Add(QueryParameters, "Cuid", value);
+			}
+		}
+
+		public string BizUid
+		{
+			get
+			{
+				return bizUid;
+			}
+			set	
+			{
+				bizUid = value;
+				DictionaryUtil.Add(QueryParameters, "BizUid", value);
+			}
+		}
+
+		public bool? UseAnonymousTbAccount
+		{
+			get
+			{
+				return useAnonymousTbAccount;
+			}
+			set	
+			{
+				useAnonymousTbAccount = value;
+				DictionaryUtil.Add(QueryParameters, "UseAnonymousTbAccount", value.ToString());
+			}
+		}
 
 		public string Nick
 		{
@@ -80,19 +119,6 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			}
 		}
 
-		public string Cuid
-		{
-			get
-			{
-				return cuid;
-			}
-			set	
-			{
-				cuid = value;
-				DictionaryUtil.Add(QueryParameters, "Cuid", value);
-			}
-		}
-
 		public string ThirdPartyUserId
 		{
 			get
@@ -106,19 +132,6 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			}
 		}
 
-		public string BizUid
-		{
-			get
-			{
-				return bizUid;
-			}
-			set	
-			{
-				bizUid = value;
-				DictionaryUtil.Add(QueryParameters, "BizUid", value);
-			}
-		}
-
 		public string BizId
 		{
 			get
@@ -129,19 +142,6 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			{
 				bizId = value;
 				DictionaryUtil.Add(QueryParameters, "BizId", value);
-			}
-		}
-
-		public bool? UseAnonymousTbAccount
-		{
-			get
-			{
-				return useAnonymousTbAccount;
-			}
-			set	
-			{
-				useAnonymousTbAccount = value;
-				DictionaryUtil.Add(QueryParameters, "UseAnonymousTbAccount", value.ToString());
 			}
 		}
 

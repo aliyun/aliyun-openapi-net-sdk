@@ -87,6 +87,7 @@ namespace Aliyun.Acs.linkedmall.Transform.V20180116
 					subOrderListItem.OrderStatus = context.IntegerValue("QueryOrderList.LmOrderList["+ i +"].SubOrderList["+ j +"].OrderStatus");
 					subOrderListItem.EnableStatus = context.IntegerValue("QueryOrderList.LmOrderList["+ i +"].SubOrderList["+ j +"].EnableStatus");
 					subOrderListItem.TbOrderId = context.LongValue("QueryOrderList.LmOrderList["+ i +"].SubOrderList["+ j +"].TbOrderId");
+					subOrderListItem.LmItemId = context.StringValue("QueryOrderList.LmOrderList["+ i +"].SubOrderList["+ j +"].LmItemId");
 
 					List<QueryOrderListResponse.QueryOrderList_LmOrderListItem.QueryOrderList_SubOrderListItem.QueryOrderList_ItemPriceListItem> subOrderListItem_itemPriceList = new List<QueryOrderListResponse.QueryOrderList_LmOrderListItem.QueryOrderList_SubOrderListItem.QueryOrderList_ItemPriceListItem>();
 					for (int k = 0; k < context.Length("QueryOrderList.LmOrderList["+ i +"].SubOrderList["+ j +"].ItemPriceList.Length"); k++) {

@@ -41,15 +41,15 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 
 		private string lmOrderId;
 
-		private string thirdPartyUserId;
-
 		private string bizUid;
-
-		private string bizId;
 
 		private string accountType;
 
 		private bool? useAnonymousTbAccount;
+
+		private string thirdPartyUserId;
+
+		private string bizId;
 
 		public string LmOrderId
 		{
@@ -64,19 +64,6 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			}
 		}
 
-		public string ThirdPartyUserId
-		{
-			get
-			{
-				return thirdPartyUserId;
-			}
-			set	
-			{
-				thirdPartyUserId = value;
-				DictionaryUtil.Add(QueryParameters, "ThirdPartyUserId", value);
-			}
-		}
-
 		public string BizUid
 		{
 			get
@@ -87,19 +74,6 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			{
 				bizUid = value;
 				DictionaryUtil.Add(QueryParameters, "BizUid", value);
-			}
-		}
-
-		public string BizId
-		{
-			get
-			{
-				return bizId;
-			}
-			set	
-			{
-				bizId = value;
-				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 
@@ -126,6 +100,32 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			{
 				useAnonymousTbAccount = value;
 				DictionaryUtil.Add(QueryParameters, "UseAnonymousTbAccount", value.ToString());
+			}
+		}
+
+		public string ThirdPartyUserId
+		{
+			get
+			{
+				return thirdPartyUserId;
+			}
+			set	
+			{
+				thirdPartyUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ThirdPartyUserId", value);
+			}
+		}
+
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 

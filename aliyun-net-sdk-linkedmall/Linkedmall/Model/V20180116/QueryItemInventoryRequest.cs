@@ -104,6 +104,7 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 					{
 						DictionaryUtil.Add(QueryParameters,"ItemList." + (i + 1) + ".SkuIdList." +(j + 1), itemLists[i].SkuIdLists[j]);
 					}
+					DictionaryUtil.Add(QueryParameters,"ItemList." + (i + 1) + ".LmItemId", itemLists[i].LmItemId);
 				}
 			}
 		}
@@ -114,6 +115,8 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			private long? itemId;
 
 			private List<long?> skuIdLists = new List<long?>(){ };
+
+			private string lmItemId;
 
 			public long? ItemId
 			{
@@ -136,6 +139,18 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 				set	
 				{
 					skuIdLists = value;
+				}
+			}
+
+			public string LmItemId
+			{
+				get
+				{
+					return lmItemId;
+				}
+				set	
+				{
+					lmItemId = value;
 				}
 			}
 		}

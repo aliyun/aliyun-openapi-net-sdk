@@ -144,6 +144,8 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 
 			private long? pointPrice;
 
+			private string lmItemId;
+
 			public long? ItemId
 			{
 				get
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 				set	
 				{
 					pointPrice = value;
+				}
+			}
+
+			public string LmItemId
+			{
+				get
+				{
+					return lmItemId;
+				}
+				set	
+				{
+					lmItemId = value;
 				}
 			}
 		}

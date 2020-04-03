@@ -44,6 +44,8 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 
 		private string bizId;
 
+		private string lmItemId;
+
 		public long? ItemId
 		{
 			get
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.linkedmall.Model.V20180116
 			{
 				bizId = value;
 				DictionaryUtil.Add(QueryParameters, "BizId", value);
+			}
+		}
+
+		public string LmItemId
+		{
+			get
+			{
+				return lmItemId;
+			}
+			set	
+			{
+				lmItemId = value;
+				DictionaryUtil.Add(QueryParameters, "LmItemId", value);
 			}
 		}
 

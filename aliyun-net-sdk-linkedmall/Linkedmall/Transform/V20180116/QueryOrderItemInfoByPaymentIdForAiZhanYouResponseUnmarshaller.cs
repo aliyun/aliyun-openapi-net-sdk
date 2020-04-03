@@ -43,6 +43,7 @@ namespace Aliyun.Acs.linkedmall.Transform.V20180116
 				lmOrderListItem.SkuId = context.LongValue("QueryOrderItemInfoByPaymentIdForAiZhanYou.LmOrderList["+ i +"].SkuId");
 				lmOrderListItem.SkuName = context.StringValue("QueryOrderItemInfoByPaymentIdForAiZhanYou.LmOrderList["+ i +"].SkuName");
 				lmOrderListItem.ItemId = context.LongValue("QueryOrderItemInfoByPaymentIdForAiZhanYou.LmOrderList["+ i +"].ItemId");
+				lmOrderListItem.LmItemId = context.StringValue("QueryOrderItemInfoByPaymentIdForAiZhanYou.LmOrderList["+ i +"].LmItemId");
 
 				queryOrderItemInfoByPaymentIdForAiZhanYouResponse_lmOrderList.Add(lmOrderListItem);
 			}
