@@ -39,11 +39,34 @@ namespace Aliyun.Acs.ROS.Model.V20190910
             }
         }
 
+		private string templateBody;
+
 		private string stackId;
+
+		private string templateURL;
+
+		private string mode;
+
+		private bool? dryRun;
 
 		private string ramRoleName;
 
+		private List<Parameters> parameterss = new List<Parameters>(){ };
+
 		private List<string> recreatingResourcess = new List<string>(){ };
+
+		public string TemplateBody
+		{
+			get
+			{
+				return templateBody;
+			}
+			set	
+			{
+				templateBody = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateBody", value);
+			}
+		}
 
 		public string StackId
 		{
@@ -55,6 +78,45 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				stackId = value;
 				DictionaryUtil.Add(QueryParameters, "StackId", value);
+			}
+		}
+
+		public string TemplateURL
+		{
+			get
+			{
+				return templateURL;
+			}
+			set	
+			{
+				templateURL = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateURL", value);
+			}
+		}
+
+		public string Mode
+		{
+			get
+			{
+				return mode;
+			}
+			set	
+			{
+				mode = value;
+				DictionaryUtil.Add(QueryParameters, "Mode", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -71,6 +133,24 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
+		public List<Parameters> Parameterss
+		{
+			get
+			{
+				return parameterss;
+			}
+
+			set
+			{
+				parameterss = value;
+				for (int i = 0; i < parameterss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterValue", parameterss[i].ParameterValue);
+					DictionaryUtil.Add(QueryParameters,"Parameters." + (i + 1) + ".ParameterKey", parameterss[i].ParameterKey);
+				}
+			}
+		}
+
 		public List<string> RecreatingResourcess
 		{
 			get
@@ -84,6 +164,38 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				for (int i = 0; i < recreatingResourcess.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"RecreatingResources." + (i + 1) , recreatingResourcess[i]);
+				}
+			}
+		}
+
+		public class Parameters
+		{
+
+			private string parameterValue;
+
+			private string parameterKey;
+
+			public string ParameterValue
+			{
+				get
+				{
+					return parameterValue;
+				}
+				set	
+				{
+					parameterValue = value;
+				}
+			}
+
+			public string ParameterKey
+			{
+				get
+				{
+					return parameterKey;
+				}
+				set	
+				{
+					parameterKey = value;
 				}
 			}
 		}

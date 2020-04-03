@@ -47,14 +47,16 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 			getStackResponse.StackDriftStatus = context.StringValue("GetStack.StackDriftStatus");
 			getStackResponse.DriftDetectionTime = context.StringValue("GetStack.DriftDetectionTime");
 			getStackResponse.RamRoleName = context.StringValue("GetStack.RamRoleName");
+			getStackResponse.DeletionProtection = context.StringValue("GetStack.DeletionProtection");
+			getStackResponse.RootStackId = context.StringValue("GetStack.RootStackId");
 
 			List<Dictionary<string, string>> getStackResponse_outputs = new List<Dictionary<string, string>>();
 			for (int i = 0; i < context.Length("GetStack.Outputs.Length"); i++) {
 				Dictionary<string, string> tmp = new Dictionary<string, string>() { };
-				foreach (var item in context.ResponseDictionary){
+				foreach (var _item in context.ResponseDictionary){
 					string prefix = "GetStack.Outputs["+ i +"].";
-					if (item.Key.IndexOf(prefix) == 0){
-						tmp.Add(item.Key.Substring(prefix.Length), item.Value);
+					if (_item.Key.IndexOf(prefix) == 0){
+						tmp.Add(_item.Key.Substring(prefix.Length), _item.Value);
 					}
 				}
 				if (tmp.Count > 0){

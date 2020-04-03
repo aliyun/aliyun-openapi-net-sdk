@@ -41,6 +41,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private long? timeoutInMinutes;
 
+		private string deletionProtection;
+
 		private string stackName;
 
 		private bool? disableRollback;
@@ -71,6 +73,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				timeoutInMinutes = value;
 				DictionaryUtil.Add(QueryParameters, "TimeoutInMinutes", value.ToString());
+			}
+		}
+
+		public string DeletionProtection
+		{
+			get
+			{
+				return deletionProtection;
+			}
+			set	
+			{
+				deletionProtection = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionProtection", value);
 			}
 		}
 

@@ -100,7 +100,7 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 			private string accountId;
 
-			private bool? regionId;
+			private string regionId;
 
 			private string status;
 
@@ -118,7 +118,7 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				}
 			}
 
-			public bool? RegionId
+			public string RegionId
 			{
 				get
 				{

@@ -57,6 +57,10 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private string ramRoleName;
 
+		private string deletionProtection;
+
+		private string rootStackId;
+
 		private List<GetStack_Parameter> parameters;
 
 		private List<Dictionary<string, string>> outputs;
@@ -252,6 +256,30 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			set	
 			{
 				ramRoleName = value;
+			}
+		}
+
+		public string DeletionProtection
+		{
+			get
+			{
+				return deletionProtection;
+			}
+			set	
+			{
+				deletionProtection = value;
+			}
+		}
+
+		public string RootStackId
+		{
+			get
+			{
+				return rootStackId;
+			}
+			set	
+			{
+				rootStackId = value;
 			}
 		}
 

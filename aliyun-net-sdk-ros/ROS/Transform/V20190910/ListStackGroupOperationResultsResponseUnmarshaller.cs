@@ -40,7 +40,7 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 			for (int i = 0; i < context.Length("ListStackGroupOperationResults.StackGroupOperationResults.Length"); i++) {
 				ListStackGroupOperationResultsResponse.ListStackGroupOperationResults_StackGroupOperationResult stackGroupOperationResult = new ListStackGroupOperationResultsResponse.ListStackGroupOperationResults_StackGroupOperationResult();
 				stackGroupOperationResult.AccountId = context.StringValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].AccountId");
-				stackGroupOperationResult.RegionId = context.BooleanValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].RegionId");
+				stackGroupOperationResult.RegionId = context.StringValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].RegionId");
 				stackGroupOperationResult.Status = context.StringValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].Status");
 				stackGroupOperationResult.StatusReason = context.StringValue("ListStackGroupOperationResults.StackGroupOperationResults["+ i +"].StatusReason");
 
