@@ -81,7 +81,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				for (int j = 0; j < context.Length("ListScenarioTemplates.ScenarioTemplates["+ i +"].Variables.Length"); j++) {
 					ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_KeyValuePair keyValuePair = new ListScenarioTemplatesResponse.ListScenarioTemplates_Scenario.ListScenarioTemplates_KeyValuePair();
 					keyValuePair.Key = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Variables["+ j +"].Key");
-					keyValuePair._Value = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Variables["+ j +"]._Value");
+					keyValuePair._Value = context.StringValue("ListScenarioTemplates.ScenarioTemplates["+ i +"].Variables["+ j +"].Value");
 
 					scenario_variables.Add(keyValuePair);
 				}

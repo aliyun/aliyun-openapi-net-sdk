@@ -41,7 +41,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			for (int i = 0; i < context.Length("StartJob.TaskIds.Length"); i++) {
 				StartJobResponse.StartJob_KeyValuePair keyValuePair = new StartJobResponse.StartJob_KeyValuePair();
 				keyValuePair.Key = context.StringValue("StartJob.TaskIds["+ i +"].Key");
-				keyValuePair._Value = context.StringValue("StartJob.TaskIds["+ i +"]._Value");
+				keyValuePair._Value = context.StringValue("StartJob.TaskIds["+ i +"].Value");
 
 				startJobResponse_taskIds.Add(keyValuePair);
 			}

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class DialogueResponse : AcsResponse
+	public class CheckNumberAvaliableResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -35,7 +35,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private int? httpStatusCode;
 
-		private Dialogue_Feedback feedback;
+		private CheckNumberAvaliable_CallerAvaliable callerAvaliable;
+
+		private CheckNumberAvaliable_CalleeAvaliable calleeAvaliable;
 
 		public string RequestId
 		{
@@ -97,74 +99,90 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public Dialogue_Feedback Feedback
+		public CheckNumberAvaliable_CallerAvaliable CallerAvaliable
 		{
 			get
 			{
-				return feedback;
+				return callerAvaliable;
 			}
 			set	
 			{
-				feedback = value;
+				callerAvaliable = value;
 			}
 		}
 
-		public class Dialogue_Feedback
+		public CheckNumberAvaliable_CalleeAvaliable CalleeAvaliable
+		{
+			get
+			{
+				return calleeAvaliable;
+			}
+			set	
+			{
+				calleeAvaliable = value;
+			}
+		}
+
+		public class CheckNumberAvaliable_CallerAvaliable
 		{
 
-			private string content;
+			private bool? avaliable;
 
-			private string action;
+			private string reason;
 
-			private string actionParams;
-
-			private bool? interruptible;
-
-			public string Content
+			public bool? Avaliable
 			{
 				get
 				{
-					return content;
+					return avaliable;
 				}
 				set	
 				{
-					content = value;
+					avaliable = value;
 				}
 			}
 
-			public string Action
+			public string Reason
 			{
 				get
 				{
-					return action;
+					return reason;
 				}
 				set	
 				{
-					action = value;
+					reason = value;
+				}
+			}
+		}
+
+		public class CheckNumberAvaliable_CalleeAvaliable
+		{
+
+			private bool? avaliable;
+
+			private string reason;
+
+			public bool? Avaliable
+			{
+				get
+				{
+					return avaliable;
+				}
+				set	
+				{
+					avaliable = value;
 				}
 			}
 
-			public string ActionParams
+			public string Reason
 			{
 				get
 				{
-					return actionParams;
+					return reason;
 				}
 				set	
 				{
-					actionParams = value;
-				}
-			}
-
-			public bool? Interruptible
-			{
-				get
-				{
-					return interruptible;
-				}
-				set	
-				{
-					interruptible = value;
+					reason = value;
 				}
 			}
 		}

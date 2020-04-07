@@ -24,25 +24,20 @@ using Aliyun.Acs.CCC.Model.V20170705;
 
 namespace Aliyun.Acs.CCC.Transform.V20170705
 {
-    public class GetConfigResponseUnmarshaller
+    public class DeletePhoneTagsResponseUnmarshaller
     {
-        public static GetConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DeletePhoneTagsResponse Unmarshall(UnmarshallerContext context)
         {
-			GetConfigResponse getConfigResponse = new GetConfigResponse();
+			DeletePhoneTagsResponse deletePhoneTagsResponse = new DeletePhoneTagsResponse();
 
-			getConfigResponse.HttpResponse = context.HttpResponse;
-			getConfigResponse.RequestId = context.StringValue("GetConfig.RequestId");
-			getConfigResponse.Success = context.BooleanValue("GetConfig.Success");
-			getConfigResponse.Code = context.StringValue("GetConfig.Code");
-			getConfigResponse.Message = context.StringValue("GetConfig.Message");
-			getConfigResponse.HttpStatusCode = context.IntegerValue("GetConfig.HttpStatusCode");
-
-			GetConfigResponse.GetConfig_ConfigItem configItem = new GetConfigResponse.GetConfig_ConfigItem();
-			configItem.Name = context.StringValue("GetConfig.ConfigItem.Name");
-			configItem._Value = context.StringValue("GetConfig.ConfigItem.Value");
-			getConfigResponse.ConfigItem = configItem;
+			deletePhoneTagsResponse.HttpResponse = context.HttpResponse;
+			deletePhoneTagsResponse.RequestId = context.StringValue("DeletePhoneTags.RequestId");
+			deletePhoneTagsResponse.Success = context.BooleanValue("DeletePhoneTags.Success");
+			deletePhoneTagsResponse.Code = context.StringValue("DeletePhoneTags.Code");
+			deletePhoneTagsResponse.Message = context.StringValue("DeletePhoneTags.Message");
+			deletePhoneTagsResponse.HttpStatusCode = context.IntegerValue("DeletePhoneTags.HttpStatusCode");
         
-			return getConfigResponse;
+			return deletePhoneTagsResponse;
         }
     }
 }

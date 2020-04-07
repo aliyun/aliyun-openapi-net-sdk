@@ -104,7 +104,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			for (int i = 0; i < context.Length("ModifyScenario.Scenario.Variables.Length"); i++) {
 				ModifyScenarioResponse.ModifyScenario_Scenario.ModifyScenario_KeyValuePair keyValuePair = new ModifyScenarioResponse.ModifyScenario_Scenario.ModifyScenario_KeyValuePair();
 				keyValuePair.Key = context.StringValue("ModifyScenario.Scenario.Variables["+ i +"].Key");
-				keyValuePair._Value = context.StringValue("ModifyScenario.Scenario.Variables["+ i +"]._Value");
+				keyValuePair._Value = context.StringValue("ModifyScenario.Scenario.Variables["+ i +"].Value");
 
 				scenario_variables.Add(keyValuePair);
 			}

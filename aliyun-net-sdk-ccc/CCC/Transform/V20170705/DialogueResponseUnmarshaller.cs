@@ -41,6 +41,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			feedback.Content = context.StringValue("Dialogue.Feedback.Content");
 			feedback.Action = context.StringValue("Dialogue.Feedback.Action");
 			feedback.ActionParams = context.StringValue("Dialogue.Feedback.ActionParams");
+			feedback.Interruptible = context.BooleanValue("Dialogue.Feedback.Interruptible");
 			dialogueResponse.Feedback = feedback;
         
 			return dialogueResponse;

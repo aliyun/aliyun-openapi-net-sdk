@@ -28,10 +28,10 @@ using Aliyun.Acs.CCC.Transform.V20170705;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-    public class DialogueRequest : RpcAcsRequest<DialogueResponse>
+    public class ListPhoneTagsRequest : RpcAcsRequest<ListPhoneTagsResponse>
     {
-        public DialogueRequest()
-            : base("CCC", "2017-07-05", "Dialogue")
+        public ListPhoneTagsRequest()
+            : base("CCC", "2017-07-05", "ListPhoneTags")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,127 +40,71 @@ namespace Aliyun.Acs.CCC.Model.V20170705
             }
         }
 
-		private string callId;
+		private List<string> numberGroupIdss = new List<string>(){ };
 
-		private string calledNumber;
+		private int? currentPage;
 
-		private string callType;
+		private bool? outboundOnly;
 
-		private string scenarioId;
-
-		private string taskId;
-
-		private string utterance;
-
-		private string actionParams;
-
-		private string callingNumber;
+		private string number;
 
 		private string instanceId;
 
-		private string actionKey;
+		private int? pageSize;
 
-		public string CallId
+		public List<string> NumberGroupIdss
 		{
 			get
 			{
-				return callId;
+				return numberGroupIdss;
 			}
-			set	
+
+			set
 			{
-				callId = value;
-				DictionaryUtil.Add(QueryParameters, "CallId", value);
+				numberGroupIdss = value;
+				for (int i = 0; i < numberGroupIdss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"NumberGroupIds." + (i + 1) , numberGroupIdss[i]);
+				}
 			}
 		}
 
-		public string CalledNumber
+		public int? CurrentPage
 		{
 			get
 			{
-				return calledNumber;
+				return currentPage;
 			}
 			set	
 			{
-				calledNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CalledNumber", value);
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
-		public string CallType
+		public bool? OutboundOnly
 		{
 			get
 			{
-				return callType;
+				return outboundOnly;
 			}
 			set	
 			{
-				callType = value;
-				DictionaryUtil.Add(QueryParameters, "CallType", value);
+				outboundOnly = value;
+				DictionaryUtil.Add(QueryParameters, "OutboundOnly", value.ToString());
 			}
 		}
 
-		public string ScenarioId
+		public string Number
 		{
 			get
 			{
-				return scenarioId;
+				return number;
 			}
 			set	
 			{
-				scenarioId = value;
-				DictionaryUtil.Add(QueryParameters, "ScenarioId", value);
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
-			}
-		}
-
-		public string Utterance
-		{
-			get
-			{
-				return utterance;
-			}
-			set	
-			{
-				utterance = value;
-				DictionaryUtil.Add(QueryParameters, "Utterance", value);
-			}
-		}
-
-		public string ActionParams
-		{
-			get
-			{
-				return actionParams;
-			}
-			set	
-			{
-				actionParams = value;
-				DictionaryUtil.Add(QueryParameters, "ActionParams", value);
-			}
-		}
-
-		public string CallingNumber
-		{
-			get
-			{
-				return callingNumber;
-			}
-			set	
-			{
-				callingNumber = value;
-				DictionaryUtil.Add(QueryParameters, "CallingNumber", value);
+				number = value;
+				DictionaryUtil.Add(QueryParameters, "Number", value);
 			}
 		}
 
@@ -177,16 +121,16 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
-		public string ActionKey
+		public int? PageSize
 		{
 			get
 			{
-				return actionKey;
+				return pageSize;
 			}
 			set	
 			{
-				actionKey = value;
-				DictionaryUtil.Add(QueryParameters, "ActionKey", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -195,9 +139,9 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			return false;
 		}
 
-        public override DialogueResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListPhoneTagsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DialogueResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListPhoneTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

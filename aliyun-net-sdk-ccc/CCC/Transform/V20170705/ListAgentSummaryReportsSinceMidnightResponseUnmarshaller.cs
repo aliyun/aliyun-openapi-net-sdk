@@ -70,6 +70,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				overall.SatisfactionIndex = context.FloatValue("ListAgentSummaryReportsSinceMidnight.PagedAgentSummaryReport.List["+ i +"].Overall.SatisfactionIndex");
 				overall.SatisfactionSurveysOffered = context.LongValue("ListAgentSummaryReportsSinceMidnight.PagedAgentSummaryReport.List["+ i +"].Overall.SatisfactionSurveysOffered");
 				overall.SatisfactionSurveysResponded = context.LongValue("ListAgentSummaryReportsSinceMidnight.PagedAgentSummaryReport.List["+ i +"].Overall.SatisfactionSurveysResponded");
+				overall.OneTransferCalls = context.LongValue("ListAgentSummaryReportsSinceMidnight.PagedAgentSummaryReport.List["+ i +"].Overall.OneTransferCalls");
 				agentSummaryReport.Overall = overall;
 
 				ListAgentSummaryReportsSinceMidnightResponse.ListAgentSummaryReportsSinceMidnight_PagedAgentSummaryReport.ListAgentSummaryReportsSinceMidnight_AgentSummaryReport.ListAgentSummaryReportsSinceMidnight_Inbound inbound = new ListAgentSummaryReportsSinceMidnightResponse.ListAgentSummaryReportsSinceMidnight_PagedAgentSummaryReport.ListAgentSummaryReportsSinceMidnight_AgentSummaryReport.ListAgentSummaryReportsSinceMidnight_Inbound();

@@ -87,6 +87,9 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				inbound.SatisfactionIndex = context.FloatValue("GetInstanceSummaryReportByInterval.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.SatisfactionIndex");
 				inbound.SatisfactionSurveysOffered = context.LongValue("GetInstanceSummaryReportByInterval.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.SatisfactionSurveysOffered");
 				inbound.SatisfactionSurveysResponded = context.LongValue("GetInstanceSummaryReportByInterval.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.SatisfactionSurveysResponded");
+				inbound.TotalWaitTime = context.LongValue("GetInstanceSummaryReportByInterval.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.TotalWaitTime");
+				inbound.MaxWaitTime = context.LongValue("GetInstanceSummaryReportByInterval.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.MaxWaitTime");
+				inbound.AverageWaitTime = context.LongValue("GetInstanceSummaryReportByInterval.InstanceTimeIntervalReport.IntervalList["+ i +"].Inbound.AverageWaitTime");
 				instanceSummaryReport.Inbound = inbound;
 
 				GetInstanceSummaryReportByIntervalResponse.GetInstanceSummaryReportByInterval_InstanceTimeIntervalReport.GetInstanceSummaryReportByInterval_InstanceSummaryReport.GetInstanceSummaryReportByInterval_Outbound outbound = new GetInstanceSummaryReportByIntervalResponse.GetInstanceSummaryReportByInterval_InstanceTimeIntervalReport.GetInstanceSummaryReportByInterval_InstanceSummaryReport.GetInstanceSummaryReportByInterval_Outbound();

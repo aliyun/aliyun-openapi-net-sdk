@@ -41,7 +41,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			for (int i = 0; i < context.Length("ListConfig.ConfigItems.Length"); i++) {
 				ListConfigResponse.ListConfig_ConfigItem configItem = new ListConfigResponse.ListConfig_ConfigItem();
 				configItem.Name = context.StringValue("ListConfig.ConfigItems["+ i +"].Name");
-				configItem._Value = context.StringValue("ListConfig.ConfigItems["+ i +"]._Value");
+				configItem._Value = context.StringValue("ListConfig.ConfigItems["+ i +"].Value");
 
 				listConfigResponse_configItems.Add(configItem);
 			}

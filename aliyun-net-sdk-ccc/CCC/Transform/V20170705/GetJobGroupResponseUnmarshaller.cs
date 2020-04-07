@@ -95,7 +95,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			for (int i = 0; i < context.Length("GetJobGroup.JobGroup.Progress.Categories.Length"); i++) {
 				GetJobGroupResponse.GetJobGroup_JobGroup.GetJobGroup_Progress.GetJobGroup_KeyValuePair keyValuePair = new GetJobGroupResponse.GetJobGroup_JobGroup.GetJobGroup_Progress.GetJobGroup_KeyValuePair();
 				keyValuePair.Key = context.StringValue("GetJobGroup.JobGroup.Progress.Categories["+ i +"].Key");
-				keyValuePair._Value = context.StringValue("GetJobGroup.JobGroup.Progress.Categories["+ i +"]._Value");
+				keyValuePair._Value = context.StringValue("GetJobGroup.JobGroup.Progress.Categories["+ i +"].Value");
 
 				progress_categories.Add(keyValuePair);
 			}

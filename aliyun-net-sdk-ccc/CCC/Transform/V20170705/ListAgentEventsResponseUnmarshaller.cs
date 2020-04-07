@@ -43,7 +43,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				agentEvent.InstanceId = context.StringValue("ListAgentEvents.AgentEventList["+ i +"].InstanceId");
 				agentEvent.RamId = context.LongValue("ListAgentEvents.AgentEventList["+ i +"].RamId");
 				agentEvent.LoginName = context.StringValue("ListAgentEvents.AgentEventList["+ i +"].LoginName");
-				agentEvent._Event = context.StringValue("ListAgentEvents.AgentEventList["+ i +"]._Event");
+				agentEvent._Event = context.StringValue("ListAgentEvents.AgentEventList["+ i +"].Event");
 				agentEvent.EventTime = context.LongValue("ListAgentEvents.AgentEventList["+ i +"].EventTime");
 
 				List<ListAgentEventsResponse.ListAgentEvents_AgentEvent.ListAgentEvents_SkillGroup> agentEvent_skillGroupIds = new List<ListAgentEventsResponse.ListAgentEvents_AgentEvent.ListAgentEvents_SkillGroup>();

@@ -80,7 +80,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				for (int j = 0; j < context.Length("ListJobStatus.Jobs.List["+ i +"].Extras.Length"); j++) {
 					ListJobStatusResponse.ListJobStatus_Jobs.ListJobStatus_Job.ListJobStatus_KeyValuePair keyValuePair = new ListJobStatusResponse.ListJobStatus_Jobs.ListJobStatus_Job.ListJobStatus_KeyValuePair();
 					keyValuePair.Key = context.StringValue("ListJobStatus.Jobs.List["+ i +"].Extras["+ j +"].Key");
-					keyValuePair._Value = context.StringValue("ListJobStatus.Jobs.List["+ i +"].Extras["+ j +"]._Value");
+					keyValuePair._Value = context.StringValue("ListJobStatus.Jobs.List["+ i +"].Extras["+ j +"].Value");
 
 					job_extras.Add(keyValuePair);
 				}

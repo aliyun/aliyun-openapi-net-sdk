@@ -73,7 +73,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			for (int i = 0; i < context.Length("GetJob.Job.Extras.Length"); i++) {
 				GetJobResponse.GetJob_Job.GetJob_KeyValuePair keyValuePair = new GetJobResponse.GetJob_Job.GetJob_KeyValuePair();
 				keyValuePair.Key = context.StringValue("GetJob.Job.Extras["+ i +"].Key");
-				keyValuePair._Value = context.StringValue("GetJob.Job.Extras["+ i +"]._Value");
+				keyValuePair._Value = context.StringValue("GetJob.Job.Extras["+ i +"].Value");
 
 				job_extras.Add(keyValuePair);
 			}

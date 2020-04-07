@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CCC.Model.V20170705
 {
-	public class DialogueResponse : AcsResponse
+	public class DeletePhoneTagsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -34,8 +34,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 		private string message;
 
 		private int? httpStatusCode;
-
-		private Dialogue_Feedback feedback;
 
 		public string RequestId
 		{
@@ -94,78 +92,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			set	
 			{
 				httpStatusCode = value;
-			}
-		}
-
-		public Dialogue_Feedback Feedback
-		{
-			get
-			{
-				return feedback;
-			}
-			set	
-			{
-				feedback = value;
-			}
-		}
-
-		public class Dialogue_Feedback
-		{
-
-			private string content;
-
-			private string action;
-
-			private string actionParams;
-
-			private bool? interruptible;
-
-			public string Content
-			{
-				get
-				{
-					return content;
-				}
-				set	
-				{
-					content = value;
-				}
-			}
-
-			public string Action
-			{
-				get
-				{
-					return action;
-				}
-				set	
-				{
-					action = value;
-				}
-			}
-
-			public string ActionParams
-			{
-				get
-				{
-					return actionParams;
-				}
-				set	
-				{
-					actionParams = value;
-				}
-			}
-
-			public bool? Interruptible
-			{
-				get
-				{
-					return interruptible;
-				}
-				set	
-				{
-					interruptible = value;
-				}
 			}
 		}
 	}

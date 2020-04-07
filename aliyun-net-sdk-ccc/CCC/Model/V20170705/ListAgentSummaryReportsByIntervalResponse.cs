@@ -377,6 +377,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 						private long? satisfactionSurveysResponded;
 
+						private long? oneTransferCalls;
+
 						public long? TotalCalls
 						{
 							get
@@ -566,6 +568,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 							set	
 							{
 								satisfactionSurveysResponded = value;
+							}
+						}
+
+						public long? OneTransferCalls
+						{
+							get
+							{
+								return oneTransferCalls;
+							}
+							set	
+							{
+								oneTransferCalls = value;
 							}
 						}
 					}

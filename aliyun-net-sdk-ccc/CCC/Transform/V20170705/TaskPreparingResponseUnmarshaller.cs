@@ -24,25 +24,21 @@ using Aliyun.Acs.CCC.Model.V20170705;
 
 namespace Aliyun.Acs.CCC.Transform.V20170705
 {
-    public class GetConfigResponseUnmarshaller
+    public class TaskPreparingResponseUnmarshaller
     {
-        public static GetConfigResponse Unmarshall(UnmarshallerContext context)
+        public static TaskPreparingResponse Unmarshall(UnmarshallerContext context)
         {
-			GetConfigResponse getConfigResponse = new GetConfigResponse();
+			TaskPreparingResponse taskPreparingResponse = new TaskPreparingResponse();
 
-			getConfigResponse.HttpResponse = context.HttpResponse;
-			getConfigResponse.RequestId = context.StringValue("GetConfig.RequestId");
-			getConfigResponse.Success = context.BooleanValue("GetConfig.Success");
-			getConfigResponse.Code = context.StringValue("GetConfig.Code");
-			getConfigResponse.Message = context.StringValue("GetConfig.Message");
-			getConfigResponse.HttpStatusCode = context.IntegerValue("GetConfig.HttpStatusCode");
-
-			GetConfigResponse.GetConfig_ConfigItem configItem = new GetConfigResponse.GetConfig_ConfigItem();
-			configItem.Name = context.StringValue("GetConfig.ConfigItem.Name");
-			configItem._Value = context.StringValue("GetConfig.ConfigItem.Value");
-			getConfigResponse.ConfigItem = configItem;
+			taskPreparingResponse.HttpResponse = context.HttpResponse;
+			taskPreparingResponse.RequestId = context.StringValue("TaskPreparing.RequestId");
+			taskPreparingResponse.Success = context.BooleanValue("TaskPreparing.Success");
+			taskPreparingResponse.Code = context.StringValue("TaskPreparing.Code");
+			taskPreparingResponse.Message = context.StringValue("TaskPreparing.Message");
+			taskPreparingResponse.HttpStatusCode = context.IntegerValue("TaskPreparing.HttpStatusCode");
+			taskPreparingResponse.TaskId = context.StringValue("TaskPreparing.TaskId");
         
-			return getConfigResponse;
+			return taskPreparingResponse;
         }
     }
 }

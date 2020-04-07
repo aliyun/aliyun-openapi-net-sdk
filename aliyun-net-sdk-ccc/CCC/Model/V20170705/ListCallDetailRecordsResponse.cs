@@ -197,6 +197,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private string instanceId;
 
+				private string skillGroupIdList;
+
 				private List<ListCallDetailRecords_CallDetailAgent> agents;
 
 				private List<ListCallDetailRecords_Recording> recordings;
@@ -354,6 +356,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						instanceId = value;
+					}
+				}
+
+				public string SkillGroupIdList
+				{
+					get
+					{
+						return skillGroupIdList;
+					}
+					set	
+					{
+						skillGroupIdList = value;
 					}
 				}
 

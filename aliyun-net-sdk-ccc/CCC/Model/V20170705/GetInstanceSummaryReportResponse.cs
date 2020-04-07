@@ -441,6 +441,12 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private long? satisfactionSurveysResponded;
 
+				private long? totalWaitTime;
+
+				private long? maxWaitTime;
+
+				private long? averageWaitTime;
+
 				public long? CallsIncomingLine
 				{
 					get
@@ -690,6 +696,42 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						satisfactionSurveysResponded = value;
+					}
+				}
+
+				public long? TotalWaitTime
+				{
+					get
+					{
+						return totalWaitTime;
+					}
+					set	
+					{
+						totalWaitTime = value;
+					}
+				}
+
+				public long? MaxWaitTime
+				{
+					get
+					{
+						return maxWaitTime;
+					}
+					set	
+					{
+						maxWaitTime = value;
+					}
+				}
+
+				public long? AverageWaitTime
+				{
+					get
+					{
+						return averageWaitTime;
+					}
+					set	
+					{
+						averageWaitTime = value;
 					}
 				}
 			}

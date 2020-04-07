@@ -50,7 +50,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			for (int i = 0; i < context.Length("ListCallEventDetailByContactId.Data.Events.Length"); i++) {
 				ListCallEventDetailByContactIdResponse.ListCallEventDetailByContactId_Data.ListCallEventDetailByContactId_CallEventDetail callEventDetail = new ListCallEventDetailByContactIdResponse.ListCallEventDetailByContactId_Data.ListCallEventDetailByContactId_CallEventDetail();
 				callEventDetail.TimeStamp = context.StringValue("ListCallEventDetailByContactId.Data.Events["+ i +"].TimeStamp");
-				callEventDetail._Event = context.StringValue("ListCallEventDetailByContactId.Data.Events["+ i +"]._Event");
+				callEventDetail._Event = context.StringValue("ListCallEventDetailByContactId.Data.Events["+ i +"].Event");
 				callEventDetail.AgentName = context.StringValue("ListCallEventDetailByContactId.Data.Events["+ i +"].AgentName");
 				callEventDetail.Status = context.StringValue("ListCallEventDetailByContactId.Data.Events["+ i +"].Status");
 				callEventDetail.CallMode = context.StringValue("ListCallEventDetailByContactId.Data.Events["+ i +"].CallMode");

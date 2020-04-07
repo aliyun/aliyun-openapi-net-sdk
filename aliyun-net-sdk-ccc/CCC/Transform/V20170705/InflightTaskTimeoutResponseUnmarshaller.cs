@@ -24,25 +24,20 @@ using Aliyun.Acs.CCC.Model.V20170705;
 
 namespace Aliyun.Acs.CCC.Transform.V20170705
 {
-    public class GetConfigResponseUnmarshaller
+    public class InflightTaskTimeoutResponseUnmarshaller
     {
-        public static GetConfigResponse Unmarshall(UnmarshallerContext context)
+        public static InflightTaskTimeoutResponse Unmarshall(UnmarshallerContext context)
         {
-			GetConfigResponse getConfigResponse = new GetConfigResponse();
+			InflightTaskTimeoutResponse inflightTaskTimeoutResponse = new InflightTaskTimeoutResponse();
 
-			getConfigResponse.HttpResponse = context.HttpResponse;
-			getConfigResponse.RequestId = context.StringValue("GetConfig.RequestId");
-			getConfigResponse.Success = context.BooleanValue("GetConfig.Success");
-			getConfigResponse.Code = context.StringValue("GetConfig.Code");
-			getConfigResponse.Message = context.StringValue("GetConfig.Message");
-			getConfigResponse.HttpStatusCode = context.IntegerValue("GetConfig.HttpStatusCode");
-
-			GetConfigResponse.GetConfig_ConfigItem configItem = new GetConfigResponse.GetConfig_ConfigItem();
-			configItem.Name = context.StringValue("GetConfig.ConfigItem.Name");
-			configItem._Value = context.StringValue("GetConfig.ConfigItem.Value");
-			getConfigResponse.ConfigItem = configItem;
+			inflightTaskTimeoutResponse.HttpResponse = context.HttpResponse;
+			inflightTaskTimeoutResponse.RequestId = context.StringValue("InflightTaskTimeout.RequestId");
+			inflightTaskTimeoutResponse.Success = context.BooleanValue("InflightTaskTimeout.Success");
+			inflightTaskTimeoutResponse.Code = context.StringValue("InflightTaskTimeout.Code");
+			inflightTaskTimeoutResponse.Message = context.StringValue("InflightTaskTimeout.Message");
+			inflightTaskTimeoutResponse.HttpStatusCode = context.IntegerValue("InflightTaskTimeout.HttpStatusCode");
         
-			return getConfigResponse;
+			return inflightTaskTimeoutResponse;
         }
     }
 }

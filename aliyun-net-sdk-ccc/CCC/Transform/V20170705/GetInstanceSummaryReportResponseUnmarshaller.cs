@@ -81,6 +81,9 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			inbound.SatisfactionIndex = context.FloatValue("GetInstanceSummaryReport.InstanceSummaryReport.Inbound.SatisfactionIndex");
 			inbound.SatisfactionSurveysOffered = context.LongValue("GetInstanceSummaryReport.InstanceSummaryReport.Inbound.SatisfactionSurveysOffered");
 			inbound.SatisfactionSurveysResponded = context.LongValue("GetInstanceSummaryReport.InstanceSummaryReport.Inbound.SatisfactionSurveysResponded");
+			inbound.TotalWaitTime = context.LongValue("GetInstanceSummaryReport.InstanceSummaryReport.Inbound.TotalWaitTime");
+			inbound.MaxWaitTime = context.LongValue("GetInstanceSummaryReport.InstanceSummaryReport.Inbound.MaxWaitTime");
+			inbound.AverageWaitTime = context.LongValue("GetInstanceSummaryReport.InstanceSummaryReport.Inbound.AverageWaitTime");
 			instanceSummaryReport.Inbound = inbound;
 
 			GetInstanceSummaryReportResponse.GetInstanceSummaryReport_InstanceSummaryReport.GetInstanceSummaryReport_Outbound outbound = new GetInstanceSummaryReportResponse.GetInstanceSummaryReport_InstanceSummaryReport.GetInstanceSummaryReport_Outbound();

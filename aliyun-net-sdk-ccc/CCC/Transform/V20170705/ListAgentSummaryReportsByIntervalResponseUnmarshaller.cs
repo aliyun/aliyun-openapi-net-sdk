@@ -75,6 +75,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 					overall.SatisfactionIndex = context.FloatValue("ListAgentSummaryReportsByInterval.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.SatisfactionIndex");
 					overall.SatisfactionSurveysOffered = context.LongValue("ListAgentSummaryReportsByInterval.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.SatisfactionSurveysOffered");
 					overall.SatisfactionSurveysResponded = context.LongValue("ListAgentSummaryReportsByInterval.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.SatisfactionSurveysResponded");
+					overall.OneTransferCalls = context.LongValue("ListAgentSummaryReportsByInterval.PagedAgentSummaryReport.List["+ i +"].IntervalList["+ j +"].Overall.OneTransferCalls");
 					agentSummaryReport.Overall = overall;
 
 					ListAgentSummaryReportsByIntervalResponse.ListAgentSummaryReportsByInterval_PagedAgentSummaryReport.ListAgentSummaryReportsByInterval_AgentTimeIntervalReport.ListAgentSummaryReportsByInterval_AgentSummaryReport.ListAgentSummaryReportsByInterval_Inbound inbound = new ListAgentSummaryReportsByIntervalResponse.ListAgentSummaryReportsByInterval_PagedAgentSummaryReport.ListAgentSummaryReportsByInterval_AgentTimeIntervalReport.ListAgentSummaryReportsByInterval_AgentSummaryReport.ListAgentSummaryReportsByInterval_Inbound();

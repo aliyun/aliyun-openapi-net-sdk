@@ -102,7 +102,7 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				for (int j = 0; j < context.Length("ListJobGroups.JobGroups.List["+ i +"].Progress.Categories.Length"); j++) {
 					ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Progress.ListJobGroups_KeyValuePair keyValuePair = new ListJobGroupsResponse.ListJobGroups_JobGroups.ListJobGroups_JobGroup.ListJobGroups_Progress.ListJobGroups_KeyValuePair();
 					keyValuePair.Key = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Progress.Categories["+ j +"].Key");
-					keyValuePair._Value = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Progress.Categories["+ j +"]._Value");
+					keyValuePair._Value = context.StringValue("ListJobGroups.JobGroups.List["+ i +"].Progress.Categories["+ j +"].Value");
 
 					progress_categories.Add(keyValuePair);
 				}
