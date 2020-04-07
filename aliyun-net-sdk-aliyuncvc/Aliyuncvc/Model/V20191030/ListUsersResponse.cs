@@ -177,6 +177,10 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 
 				private string userAvatarUrl;
 
+				private string jobName;
+
+				private string userId;
+
 				public long? CreateTime
 				{
 					get
@@ -294,6 +298,30 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 					set	
 					{
 						userAvatarUrl = value;
+					}
+				}
+
+				public string JobName
+				{
+					get
+					{
+						return jobName;
+					}
+					set	
+					{
+						jobName = value;
+					}
+				}
+
+				public string UserId
+				{
+					get
+					{
+						return userId;
+					}
+					set	
+					{
+						userId = value;
 					}
 				}
 			}

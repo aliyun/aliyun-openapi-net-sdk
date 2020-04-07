@@ -27,10 +27,10 @@ using Aliyun.Acs.aliyuncvc.Transform.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-    public class JoinMeetingRequest : RpcAcsRequest<JoinMeetingResponse>
+    public class ListIsvStatisticsRequest : RpcAcsRequest<ListIsvStatisticsResponse>
     {
-        public JoinMeetingRequest()
-            : base("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+        public ListIsvStatisticsRequest()
+            : base("aliyuncvc", "2019-10-30", "ListIsvStatistics", "aliyuncvc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,33 +39,33 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
             }
         }
 
-		private string userId;
+		private long? endTime;
 
-		private string meetingCode;
+		private long? startTime;
 
-		public string UserId
+		public long? EndTime
 		{
 			get
 			{
-				return userId;
+				return endTime;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
 			}
 		}
 
-		public string MeetingCode
+		public long? StartTime
 		{
 			get
 			{
-				return meetingCode;
+				return startTime;
 			}
 			set	
 			{
-				meetingCode = value;
-				DictionaryUtil.Add(BodyParameters, "MeetingCode", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 
@@ -74,9 +74,9 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			return false;
 		}
 
-        public override JoinMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListIsvStatisticsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListIsvStatisticsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

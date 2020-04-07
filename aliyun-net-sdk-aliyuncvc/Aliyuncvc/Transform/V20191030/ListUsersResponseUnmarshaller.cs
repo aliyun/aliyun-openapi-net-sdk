@@ -54,6 +54,8 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 				userInfo.UserTel = context.StringValue("ListUsers.Data.UserInfos["+ i +"].UserTel");
 				userInfo.UserMobile = context.StringValue("ListUsers.Data.UserInfos["+ i +"].UserMobile");
 				userInfo.UserAvatarUrl = context.StringValue("ListUsers.Data.UserInfos["+ i +"].UserAvatarUrl");
+				userInfo.JobName = context.StringValue("ListUsers.Data.UserInfos["+ i +"].JobName");
+				userInfo.UserId = context.StringValue("ListUsers.Data.UserInfos["+ i +"].UserId");
 
 				data_userInfos.Add(userInfo);
 			}

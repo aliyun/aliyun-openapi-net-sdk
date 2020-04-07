@@ -48,6 +48,7 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 			userInfo.UserAvatarUrl = context.StringValue("GetUser.UserInfo.UserAvatarUrl");
 			userInfo.DepartId = context.StringValue("GetUser.UserInfo.DepartId");
 			userInfo.DepartName = context.StringValue("GetUser.UserInfo.DepartName");
+			userInfo.JobName = context.StringValue("GetUser.UserInfo.JobName");
 			getUserResponse.UserInfo = userInfo;
         
 			return getUserResponse;

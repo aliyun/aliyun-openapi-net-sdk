@@ -27,10 +27,10 @@ using Aliyun.Acs.aliyuncvc.Transform.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-    public class JoinMeetingRequest : RpcAcsRequest<JoinMeetingResponse>
+    public class GetMeetingMemberRequest : RpcAcsRequest<GetMeetingMemberResponse>
     {
-        public JoinMeetingRequest()
-            : base("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+        public GetMeetingMemberRequest()
+            : base("aliyuncvc", "2019-10-30", "GetMeetingMember", "aliyuncvc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,33 +39,18 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
             }
         }
 
-		private string userId;
+		private string meetingUUID;
 
-		private string meetingCode;
-
-		public string UserId
+		public string MeetingUUID
 		{
 			get
 			{
-				return userId;
+				return meetingUUID;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
-			}
-		}
-
-		public string MeetingCode
-		{
-			get
-			{
-				return meetingCode;
-			}
-			set	
-			{
-				meetingCode = value;
-				DictionaryUtil.Add(BodyParameters, "MeetingCode", value);
+				meetingUUID = value;
+				DictionaryUtil.Add(QueryParameters, "MeetingUUID", value);
 			}
 		}
 
@@ -74,9 +59,9 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			return false;
 		}
 
-        public override JoinMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetMeetingMemberResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetMeetingMemberResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -39,22 +39,9 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
             }
         }
 
-		private int? pageSize;
-
 		private int? pageNumber;
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+		private int? pageSize;
 
 		public int? PageNumber
 		{
@@ -66,6 +53,19 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

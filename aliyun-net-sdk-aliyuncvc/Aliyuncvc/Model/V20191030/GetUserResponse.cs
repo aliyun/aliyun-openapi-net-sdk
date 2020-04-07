@@ -120,6 +120,8 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 
 			private string departName;
 
+			private string jobName;
+
 			public string UserName
 			{
 				get
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 				set	
 				{
 					departName = value;
+				}
+			}
+
+			public string JobName
+			{
+				get
+				{
+					return jobName;
+				}
+				set	
+				{
+					jobName = value;
 				}
 			}
 		}
