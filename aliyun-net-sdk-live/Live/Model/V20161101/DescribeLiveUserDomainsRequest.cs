@@ -47,6 +47,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string regionName;
 
+		private List<Tag> tags = new List<Tag>(){ };
+
 		private string domainName;
 
 		private long? ownerId;
@@ -106,6 +108,24 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				regionName = value;
 				DictionaryUtil.Add(QueryParameters, "RegionName", value);
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 
@@ -171,6 +191,38 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				liveDomainType = value;
 				DictionaryUtil.Add(QueryParameters, "LiveDomainType", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

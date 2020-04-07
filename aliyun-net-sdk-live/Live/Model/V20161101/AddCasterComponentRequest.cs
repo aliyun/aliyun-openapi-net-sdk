@@ -39,9 +39,13 @@ namespace Aliyun.Acs.live.Model.V20161101
             }
         }
 
+		private string htmlLayerContent;
+
 		private string imageLayerContent;
 
 		private string componentName;
+
+		private string layerOrder;
 
 		private string casterId;
 
@@ -58,6 +62,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string captionLayerContent;
 
 		private string textLayerContent;
+
+		public string HtmlLayerContent
+		{
+			get
+			{
+				return htmlLayerContent;
+			}
+			set	
+			{
+				htmlLayerContent = value;
+				DictionaryUtil.Add(QueryParameters, "HtmlLayerContent", value);
+			}
+		}
 
 		public string ImageLayerContent
 		{
@@ -82,6 +99,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				componentName = value;
 				DictionaryUtil.Add(QueryParameters, "ComponentName", value);
+			}
+		}
+
+		public string LayerOrder
+		{
+			get
+			{
+				return layerOrder;
+			}
+			set	
+			{
+				layerOrder = value;
+				DictionaryUtil.Add(QueryParameters, "LayerOrder", value);
 			}
 		}
 

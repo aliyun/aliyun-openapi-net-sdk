@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SetCasterChannelRequest : RpcAcsRequest<SetCasterChannelResponse>
+    public class DescribeLiveDomainPushTrafficDataRequest : RpcAcsRequest<DescribeLiveDomainPushTrafficDataResponse>
     {
-        public SetCasterChannelRequest()
-            : base("live", "2016-11-01", "SetCasterChannel", "live", "openAPI")
+        public DescribeLiveDomainPushTrafficDataRequest()
+            : base("live", "2016-11-01", "DescribeLiveDomainPushTrafficData", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,69 +39,82 @@ namespace Aliyun.Acs.live.Model.V20161101
             }
         }
 
-		private int? seekOffset;
+		private string locationNameEn;
 
-		private int? playStatus;
+		private string startTime;
 
-		private string resourceId;
+		private string ispNameEn;
 
-		private string casterId;
+		private string domainName;
+
+		private string endTime;
 
 		private long? ownerId;
 
-		private int? reloadFlag;
+		private string interval;
 
-		private string channelId;
-
-		public int? SeekOffset
+		public string LocationNameEn
 		{
 			get
 			{
-				return seekOffset;
+				return locationNameEn;
 			}
 			set	
 			{
-				seekOffset = value;
-				DictionaryUtil.Add(QueryParameters, "SeekOffset", value.ToString());
+				locationNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
 			}
 		}
 
-		public int? PlayStatus
+		public string StartTime
 		{
 			get
 			{
-				return playStatus;
+				return startTime;
 			}
 			set	
 			{
-				playStatus = value;
-				DictionaryUtil.Add(QueryParameters, "PlayStatus", value.ToString());
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string ResourceId
+		public string IspNameEn
 		{
 			get
 			{
-				return resourceId;
+				return ispNameEn;
 			}
 			set	
 			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+				ispNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
 			}
 		}
 
-		public string CasterId
+		public string DomainName
 		{
 			get
 			{
-				return casterId;
+				return domainName;
 			}
 			set	
 			{
-				casterId = value;
-				DictionaryUtil.Add(QueryParameters, "CasterId", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -118,35 +131,22 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? ReloadFlag
+		public string Interval
 		{
 			get
 			{
-				return reloadFlag;
+				return interval;
 			}
 			set	
 			{
-				reloadFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ReloadFlag", value.ToString());
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 
-		public string ChannelId
-		{
-			get
-			{
-				return channelId;
-			}
-			set	
-			{
-				channelId = value;
-				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
-			}
-		}
-
-        public override SetCasterChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveDomainPushTrafficDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetCasterChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveDomainPushTrafficDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

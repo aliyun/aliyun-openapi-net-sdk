@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SetCasterChannelRequest : RpcAcsRequest<SetCasterChannelResponse>
+    public class ControlHtmlResourceRequest : RpcAcsRequest<ControlHtmlResourceResponse>
     {
-        public SetCasterChannelRequest()
-            : base("live", "2016-11-01", "SetCasterChannel", "live", "openAPI")
+        public ControlHtmlResourceRequest()
+            : base("live", "2016-11-01", "ControlHtmlResource", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,56 +39,26 @@ namespace Aliyun.Acs.live.Model.V20161101
             }
         }
 
-		private int? seekOffset;
-
-		private int? playStatus;
-
-		private string resourceId;
+		private string htmlUrl;
 
 		private string casterId;
 
 		private long? ownerId;
 
-		private int? reloadFlag;
+		private string operate;
 
-		private string channelId;
+		private string htmlResourceId;
 
-		public int? SeekOffset
+		public string HtmlUrl
 		{
 			get
 			{
-				return seekOffset;
+				return htmlUrl;
 			}
 			set	
 			{
-				seekOffset = value;
-				DictionaryUtil.Add(QueryParameters, "SeekOffset", value.ToString());
-			}
-		}
-
-		public int? PlayStatus
-		{
-			get
-			{
-				return playStatus;
-			}
-			set	
-			{
-				playStatus = value;
-				DictionaryUtil.Add(QueryParameters, "PlayStatus", value.ToString());
-			}
-		}
-
-		public string ResourceId
-		{
-			get
-			{
-				return resourceId;
-			}
-			set	
-			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+				htmlUrl = value;
+				DictionaryUtil.Add(QueryParameters, "htmlUrl", value);
 			}
 		}
 
@@ -118,35 +88,35 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? ReloadFlag
+		public string Operate
 		{
 			get
 			{
-				return reloadFlag;
+				return operate;
 			}
 			set	
 			{
-				reloadFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ReloadFlag", value.ToString());
+				operate = value;
+				DictionaryUtil.Add(QueryParameters, "Operate", value);
 			}
 		}
 
-		public string ChannelId
+		public string HtmlResourceId
 		{
 			get
 			{
-				return channelId;
+				return htmlResourceId;
 			}
 			set	
 			{
-				channelId = value;
-				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
+				htmlResourceId = value;
+				DictionaryUtil.Add(QueryParameters, "HtmlResourceId", value);
 			}
 		}
 
-        public override SetCasterChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ControlHtmlResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetCasterChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ControlHtmlResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SetCasterChannelRequest : RpcAcsRequest<SetCasterChannelResponse>
+    public class DescribeLiveUserTagsRequest : RpcAcsRequest<DescribeLiveUserTagsResponse>
     {
-        public SetCasterChannelRequest()
-            : base("live", "2016-11-01", "SetCasterChannel", "live", "openAPI")
+        public DescribeLiveUserTagsRequest()
+            : base("live", "2016-11-01", "DescribeLiveUserTags", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,71 +39,7 @@ namespace Aliyun.Acs.live.Model.V20161101
             }
         }
 
-		private int? seekOffset;
-
-		private int? playStatus;
-
-		private string resourceId;
-
-		private string casterId;
-
 		private long? ownerId;
-
-		private int? reloadFlag;
-
-		private string channelId;
-
-		public int? SeekOffset
-		{
-			get
-			{
-				return seekOffset;
-			}
-			set	
-			{
-				seekOffset = value;
-				DictionaryUtil.Add(QueryParameters, "SeekOffset", value.ToString());
-			}
-		}
-
-		public int? PlayStatus
-		{
-			get
-			{
-				return playStatus;
-			}
-			set	
-			{
-				playStatus = value;
-				DictionaryUtil.Add(QueryParameters, "PlayStatus", value.ToString());
-			}
-		}
-
-		public string ResourceId
-		{
-			get
-			{
-				return resourceId;
-			}
-			set	
-			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
-
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-				DictionaryUtil.Add(QueryParameters, "CasterId", value);
-			}
-		}
 
 		public long? OwnerId
 		{
@@ -118,35 +54,14 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? ReloadFlag
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return reloadFlag;
-			}
-			set	
-			{
-				reloadFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ReloadFlag", value.ToString());
-			}
+			return false;
 		}
 
-		public string ChannelId
-		{
-			get
-			{
-				return channelId;
-			}
-			set	
-			{
-				channelId = value;
-				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
-			}
-		}
-
-        public override SetCasterChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLiveUserTagsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetCasterChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveUserTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

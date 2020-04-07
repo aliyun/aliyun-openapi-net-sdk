@@ -45,6 +45,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string vodUrl;
 
+		private string streamId;
+
 		private string casterId;
 
 		private long? ownerId;
@@ -97,6 +99,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				vodUrl = value;
 				DictionaryUtil.Add(QueryParameters, "VodUrl", value);
+			}
+		}
+
+		public string StreamId
+		{
+			get
+			{
+				return streamId;
+			}
+			set	
+			{
+				streamId = value;
+				DictionaryUtil.Add(QueryParameters, "StreamId", value);
 			}
 		}
 

@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SetCasterChannelRequest : RpcAcsRequest<SetCasterChannelResponse>
+    public class UnTagLiveResourcesRequest : RpcAcsRequest<UnTagLiveResourcesResponse>
     {
-        public SetCasterChannelRequest()
-            : base("live", "2016-11-01", "SetCasterChannel", "live", "openAPI")
+        public UnTagLiveResourcesRequest()
+            : base("live", "2016-11-01", "UnTagLiveResources", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,69 +39,43 @@ namespace Aliyun.Acs.live.Model.V20161101
             }
         }
 
-		private int? seekOffset;
+		private bool? all;
 
-		private int? playStatus;
-
-		private string resourceId;
-
-		private string casterId;
+		private List<string> resourceIds = new List<string>(){ };
 
 		private long? ownerId;
 
-		private int? reloadFlag;
+		private string resourceType;
 
-		private string channelId;
+		private List<string> tagKeys = new List<string>(){ };
 
-		public int? SeekOffset
+		public bool? All
 		{
 			get
 			{
-				return seekOffset;
+				return all;
 			}
 			set	
 			{
-				seekOffset = value;
-				DictionaryUtil.Add(QueryParameters, "SeekOffset", value.ToString());
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
 			}
 		}
 
-		public int? PlayStatus
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return playStatus;
+				return resourceIds;
 			}
-			set	
-			{
-				playStatus = value;
-				DictionaryUtil.Add(QueryParameters, "PlayStatus", value.ToString());
-			}
-		}
 
-		public string ResourceId
-		{
-			get
+			set
 			{
-				return resourceId;
-			}
-			set	
-			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
-
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-				DictionaryUtil.Add(QueryParameters, "CasterId", value);
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
+				}
 			}
 		}
 
@@ -118,35 +92,39 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? ReloadFlag
+		public string ResourceType
 		{
 			get
 			{
-				return reloadFlag;
+				return resourceType;
 			}
 			set	
 			{
-				reloadFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ReloadFlag", value.ToString());
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string ChannelId
+		public List<string> TagKeys
 		{
 			get
 			{
-				return channelId;
+				return tagKeys;
 			}
-			set	
+
+			set
 			{
-				channelId = value;
-				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
+				tagKeys = value;
+				for (int i = 0; i < tagKeys.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
+				}
 			}
 		}
 
-        public override SetCasterChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UnTagLiveResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetCasterChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UnTagLiveResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -84,6 +84,7 @@ namespace Aliyun.Acs.live.Model.V20161101
 				for (int i = 0; i < syncGroups.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"SyncGroup." + (i + 1) + ".Mode", syncGroups[i].Mode);
+					DictionaryUtil.Add(QueryParameters,"SyncGroup." + (i + 1) + ".SyncDelayThreshold", syncGroups[i].SyncDelayThreshold);
 					DictionaryUtil.Add(QueryParameters,"SyncGroup." + (i + 1) + ".HostResourceId", syncGroups[i].HostResourceId);
 					for (int j = 0; j < syncGroups[i].ResourceIdss.Count; j++)
 					{
@@ -98,6 +99,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private int? mode;
 
+			private long? syncDelayThreshold;
+
 			private string hostResourceId;
 
 			private List<string> resourceIdss = new List<string>(){ };
@@ -111,6 +114,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					mode = value;
+				}
+			}
+
+			public long? SyncDelayThreshold
+			{
+				get
+				{
+					return syncDelayThreshold;
+				}
+				set	
+				{
+					syncDelayThreshold = value;
 				}
 			}
 

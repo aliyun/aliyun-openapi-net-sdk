@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SetCasterChannelRequest : RpcAcsRequest<SetCasterChannelResponse>
+    public class DescribeLiveTagResourcesRequest : RpcAcsRequest<DescribeLiveTagResourcesResponse>
     {
-        public SetCasterChannelRequest()
-            : base("live", "2016-11-01", "SetCasterChannel", "live", "openAPI")
+        public DescribeLiveTagResourcesRequest()
+            : base("live", "2016-11-01", "DescribeLiveTagResources", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,69 +39,46 @@ namespace Aliyun.Acs.live.Model.V20161101
             }
         }
 
-		private int? seekOffset;
+		private List<Tag> tags = new List<Tag>(){ };
 
-		private int? playStatus;
-
-		private string resourceId;
-
-		private string casterId;
+		private List<string> resourceIds = new List<string>(){ };
 
 		private long? ownerId;
 
-		private int? reloadFlag;
+		private string resourceType;
 
-		private string channelId;
-
-		public int? SeekOffset
+		public List<Tag> Tags
 		{
 			get
 			{
-				return seekOffset;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				seekOffset = value;
-				DictionaryUtil.Add(QueryParameters, "SeekOffset", value.ToString());
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+				}
 			}
 		}
 
-		public int? PlayStatus
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return playStatus;
+				return resourceIds;
 			}
-			set	
-			{
-				playStatus = value;
-				DictionaryUtil.Add(QueryParameters, "PlayStatus", value.ToString());
-			}
-		}
 
-		public string ResourceId
-		{
-			get
+			set
 			{
-				return resourceId;
-			}
-			set	
-			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
-
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-				DictionaryUtil.Add(QueryParameters, "CasterId", value);
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
+				}
 			}
 		}
 
@@ -118,35 +95,59 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? ReloadFlag
+		public string ResourceType
 		{
 			get
 			{
-				return reloadFlag;
+				return resourceType;
 			}
 			set	
 			{
-				reloadFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ReloadFlag", value.ToString());
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string ChannelId
+		public class Tag
 		{
-			get
+
+			private string key;
+
+			private string value_;
+
+			public string Key
 			{
-				return channelId;
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
-			set	
+
+			public string Value
 			{
-				channelId = value;
-				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 
-        public override SetCasterChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeLiveTagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetCasterChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLiveTagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

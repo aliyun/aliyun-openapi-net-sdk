@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SetCasterChannelRequest : RpcAcsRequest<SetCasterChannelResponse>
+    public class UpdateLiveAudioAuditNotifyConfigRequest : RpcAcsRequest<UpdateLiveAudioAuditNotifyConfigResponse>
     {
-        public SetCasterChannelRequest()
-            : base("live", "2016-11-01", "SetCasterChannel", "live", "openAPI")
+        public UpdateLiveAudioAuditNotifyConfigRequest()
+            : base("live", "2016-11-01", "UpdateLiveAudioAuditNotifyConfig", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,69 +39,24 @@ namespace Aliyun.Acs.live.Model.V20161101
             }
         }
 
-		private int? seekOffset;
-
-		private int? playStatus;
-
-		private string resourceId;
-
-		private string casterId;
+		private string domainName;
 
 		private long? ownerId;
 
-		private int? reloadFlag;
+		private string callbackTemplate;
 
-		private string channelId;
+		private string callback;
 
-		public int? SeekOffset
+		public string DomainName
 		{
 			get
 			{
-				return seekOffset;
+				return domainName;
 			}
 			set	
 			{
-				seekOffset = value;
-				DictionaryUtil.Add(QueryParameters, "SeekOffset", value.ToString());
-			}
-		}
-
-		public int? PlayStatus
-		{
-			get
-			{
-				return playStatus;
-			}
-			set	
-			{
-				playStatus = value;
-				DictionaryUtil.Add(QueryParameters, "PlayStatus", value.ToString());
-			}
-		}
-
-		public string ResourceId
-		{
-			get
-			{
-				return resourceId;
-			}
-			set	
-			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
-			}
-		}
-
-		public string CasterId
-		{
-			get
-			{
-				return casterId;
-			}
-			set	
-			{
-				casterId = value;
-				DictionaryUtil.Add(QueryParameters, "CasterId", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -118,35 +73,35 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? ReloadFlag
+		public string CallbackTemplate
 		{
 			get
 			{
-				return reloadFlag;
+				return callbackTemplate;
 			}
 			set	
 			{
-				reloadFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ReloadFlag", value.ToString());
+				callbackTemplate = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackTemplate", value);
 			}
 		}
 
-		public string ChannelId
+		public string Callback
 		{
 			get
 			{
-				return channelId;
+				return callback;
 			}
 			set	
 			{
-				channelId = value;
-				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
+				callback = value;
+				DictionaryUtil.Add(QueryParameters, "Callback", value);
 			}
 		}
 
-        public override SetCasterChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateLiveAudioAuditNotifyConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetCasterChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateLiveAudioAuditNotifyConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

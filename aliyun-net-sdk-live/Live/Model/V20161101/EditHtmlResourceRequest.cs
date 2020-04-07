@@ -27,10 +27,10 @@ using Aliyun.Acs.live.Transform.V20161101;
 
 namespace Aliyun.Acs.live.Model.V20161101
 {
-    public class SetCasterChannelRequest : RpcAcsRequest<SetCasterChannelResponse>
+    public class EditHtmlResourceRequest : RpcAcsRequest<EditHtmlResourceResponse>
     {
-        public SetCasterChannelRequest()
-            : base("live", "2016-11-01", "SetCasterChannel", "live", "openAPI")
+        public EditHtmlResourceRequest()
+            : base("live", "2016-11-01", "EditHtmlResource", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,56 +39,28 @@ namespace Aliyun.Acs.live.Model.V20161101
             }
         }
 
-		private int? seekOffset;
-
-		private int? playStatus;
-
-		private string resourceId;
+		private string htmlUrl;
 
 		private string casterId;
 
+		private string htmlContent;
+
 		private long? ownerId;
 
-		private int? reloadFlag;
+		private string htmlResourceId;
 
-		private string channelId;
+		private string config;
 
-		public int? SeekOffset
+		public string HtmlUrl
 		{
 			get
 			{
-				return seekOffset;
+				return htmlUrl;
 			}
 			set	
 			{
-				seekOffset = value;
-				DictionaryUtil.Add(QueryParameters, "SeekOffset", value.ToString());
-			}
-		}
-
-		public int? PlayStatus
-		{
-			get
-			{
-				return playStatus;
-			}
-			set	
-			{
-				playStatus = value;
-				DictionaryUtil.Add(QueryParameters, "PlayStatus", value.ToString());
-			}
-		}
-
-		public string ResourceId
-		{
-			get
-			{
-				return resourceId;
-			}
-			set	
-			{
-				resourceId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+				htmlUrl = value;
+				DictionaryUtil.Add(QueryParameters, "HtmlUrl", value);
 			}
 		}
 
@@ -105,6 +77,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
+		public string HtmlContent
+		{
+			get
+			{
+				return htmlContent;
+			}
+			set	
+			{
+				htmlContent = value;
+				DictionaryUtil.Add(QueryParameters, "htmlContent", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -118,35 +103,35 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public int? ReloadFlag
+		public string HtmlResourceId
 		{
 			get
 			{
-				return reloadFlag;
+				return htmlResourceId;
 			}
 			set	
 			{
-				reloadFlag = value;
-				DictionaryUtil.Add(QueryParameters, "ReloadFlag", value.ToString());
+				htmlResourceId = value;
+				DictionaryUtil.Add(QueryParameters, "HtmlResourceId", value);
 			}
 		}
 
-		public string ChannelId
+		public string Config
 		{
 			get
 			{
-				return channelId;
+				return config;
 			}
 			set	
 			{
-				channelId = value;
-				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
+				config = value;
+				DictionaryUtil.Add(QueryParameters, "Config", value);
 			}
 		}
 
-        public override SetCasterChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override EditHtmlResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetCasterChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EditHtmlResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
