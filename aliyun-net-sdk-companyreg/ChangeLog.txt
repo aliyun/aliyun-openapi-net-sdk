@@ -4,6 +4,9 @@
 2020-04-07 Version: 1.0.3
 - Generated 2019-05-08 for `companyreg`.
 
+2020-04-07 Version: 1.0.3
+- Generated 2019-05-08 for `companyreg`.
+
 2019-09-19 Version 1.0.2
 - Add bizSubCode and so on.
 
