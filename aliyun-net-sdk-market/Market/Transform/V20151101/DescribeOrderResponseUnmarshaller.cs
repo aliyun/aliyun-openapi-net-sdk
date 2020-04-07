@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 			describeOrderResponse.TotalPrice = context.FloatValue("DescribeOrder.TotalPrice");
 			describeOrderResponse.PaymentPrice = context.FloatValue("DescribeOrder.PaymentPrice");
 			describeOrderResponse.CouponPrice = context.FloatValue("DescribeOrder.CouponPrice");
+			describeOrderResponse.Components = context.StringValue("DescribeOrder.Components");
+			describeOrderResponse.RequestId = context.StringValue("DescribeOrder.RequestId");
 
 			List<string> describeOrderResponse_supplierTelephones = new List<string>();
 			for (int i = 0; i < context.Length("DescribeOrder.SupplierTelephones.Length"); i++) {

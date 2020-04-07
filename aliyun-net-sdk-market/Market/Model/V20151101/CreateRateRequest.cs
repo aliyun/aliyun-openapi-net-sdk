@@ -39,26 +39,13 @@ namespace Aliyun.Acs.Market.Model.V20151101
             }
         }
 
-		private string score;
-
 		private string orderId;
-
-		private string requestId;
 
 		private string content;
 
-		public string Score
-		{
-			get
-			{
-				return score;
-			}
-			set	
-			{
-				score = value;
-				DictionaryUtil.Add(QueryParameters, "Score", value);
-			}
-		}
+		private string score;
+
+		private string requestId;
 
 		public string OrderId
 		{
@@ -73,19 +60,6 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			}
 		}
 
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-				DictionaryUtil.Add(QueryParameters, "RequestId", value);
-			}
-		}
-
 		public string Content
 		{
 			get
@@ -96,6 +70,32 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			{
 				content = value;
 				DictionaryUtil.Add(QueryParameters, "Content", value);
+			}
+		}
+
+		public string Score
+		{
+			get
+			{
+				return score;
+			}
+			set	
+			{
+				score = value;
+				DictionaryUtil.Add(QueryParameters, "Score", value);
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+				DictionaryUtil.Add(QueryParameters, "RequestId", value);
 			}
 		}
 

@@ -41,6 +41,12 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private string infoTitle;
 
+		private string expressionCode;
+
+		private string currency;
+
+		private string expressionMessage;
+
 		private List<DescribePrice_PromotionRule> promotionRules;
 
 		private List<DescribePrice_Coupon> coupons;
@@ -138,6 +144,42 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			set	
 			{
 				infoTitle = value;
+			}
+		}
+
+		public string ExpressionCode
+		{
+			get
+			{
+				return expressionCode;
+			}
+			set	
+			{
+				expressionCode = value;
+			}
+		}
+
+		public string Currency
+		{
+			get
+			{
+				return currency;
+			}
+			set	
+			{
+				currency = value;
+			}
+		}
+
+		public string ExpressionMessage
+		{
+			get
+			{
+				return expressionMessage;
+			}
+			set	
+			{
+				expressionMessage = value;
 			}
 		}
 

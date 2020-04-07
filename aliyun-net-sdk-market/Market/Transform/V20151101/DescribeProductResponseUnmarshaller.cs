@@ -45,6 +45,9 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 			describeProductResponse.AuditTime = context.LongValue("DescribeProduct.AuditTime");
 			describeProductResponse.GmtCreated = context.LongValue("DescribeProduct.GmtCreated");
 			describeProductResponse.GmtModified = context.LongValue("DescribeProduct.GmtModified");
+			describeProductResponse.RequestId = context.StringValue("DescribeProduct.RequestId");
+			describeProductResponse.SupplierPk = context.LongValue("DescribeProduct.SupplierPk");
+			describeProductResponse.FrontCategoryId = context.LongValue("DescribeProduct.FrontCategoryId");
 
 			DescribeProductResponse.DescribeProduct_ShopInfo shopInfo = new DescribeProductResponse.DescribeProduct_ShopInfo();
 			shopInfo.Id = context.LongValue("DescribeProduct.ShopInfo.Id");

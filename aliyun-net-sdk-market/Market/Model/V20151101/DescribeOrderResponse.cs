@@ -61,6 +61,10 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private float? couponPrice;
 
+		private string components;
+
+		private string requestId;
+
 		private List<string> supplierTelephones;
 
 		private List<string> instanceIds;
@@ -278,6 +282,30 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			set	
 			{
 				couponPrice = value;
+			}
+		}
+
+		public string Components
+		{
+			get
+			{
+				return components;
+			}
+			set	
+			{
+				components = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 

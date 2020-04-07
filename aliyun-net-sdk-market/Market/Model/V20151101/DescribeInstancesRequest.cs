@@ -39,24 +39,11 @@ namespace Aliyun.Acs.Market.Model.V20151101
             }
         }
 
-		private int? pageSize;
-
 		private int? pageNumber;
 
 		private string productType;
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+		private int? pageSize;
 
 		public int? PageNumber
 		{
@@ -81,6 +68,19 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			{
 				productType = value;
 				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

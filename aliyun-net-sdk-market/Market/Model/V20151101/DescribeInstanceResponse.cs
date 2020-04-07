@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private string constraints;
 
+		private bool? isTrial;
+
 		private List<DescribeInstance_Module> modules;
 
 		private DescribeInstance_RelationalData relationalData;
@@ -250,6 +252,18 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			set	
 			{
 				constraints = value;
+			}
+		}
+
+		public bool? IsTrial
+		{
+			get
+			{
+				return isTrial;
+			}
+			set	
+			{
+				isTrial = value;
 			}
 		}
 

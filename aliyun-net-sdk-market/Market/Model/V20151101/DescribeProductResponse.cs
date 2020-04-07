@@ -53,6 +53,12 @@ namespace Aliyun.Acs.Market.Model.V20151101
 
 		private long? gmtModified;
 
+		private string requestId;
+
+		private long? supplierPk;
+
+		private long? frontCategoryId;
+
 		private List<DescribeProduct_ProductSku> productSkus;
 
 		private List<DescribeProduct_ProductExtra> productExtras;
@@ -224,6 +230,42 @@ namespace Aliyun.Acs.Market.Model.V20151101
 			set	
 			{
 				gmtModified = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public long? SupplierPk
+		{
+			get
+			{
+				return supplierPk;
+			}
+			set	
+			{
+				supplierPk = value;
+			}
+		}
+
+		public long? FrontCategoryId
+		{
+			get
+			{
+				return frontCategoryId;
+			}
+			set	
+			{
+				frontCategoryId = value;
 			}
 		}
 

@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 			describeInstanceResponse.AppJson = context.StringValue("DescribeInstance.AppJson");
 			describeInstanceResponse.ComponentJson = context.StringValue("DescribeInstance.ComponentJson");
 			describeInstanceResponse.Constraints = context.StringValue("DescribeInstance.Constraints");
+			describeInstanceResponse.IsTrial = context.BooleanValue("DescribeInstance.IsTrial");
 
 			DescribeInstanceResponse.DescribeInstance_RelationalData relationalData = new DescribeInstanceResponse.DescribeInstance_RelationalData();
 			relationalData.ServiceStatus = context.StringValue("DescribeInstance.RelationalData.ServiceStatus");

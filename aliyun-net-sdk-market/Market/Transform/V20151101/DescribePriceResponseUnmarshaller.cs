@@ -39,6 +39,9 @@ namespace Aliyun.Acs.Market.Transform.V20151101
 			describePriceResponse.Duration = context.IntegerValue("DescribePrice.Duration");
 			describePriceResponse.Cycle = context.StringValue("DescribePrice.Cycle");
 			describePriceResponse.InfoTitle = context.StringValue("DescribePrice.InfoTitle");
+			describePriceResponse.ExpressionCode = context.StringValue("DescribePrice.ExpressionCode");
+			describePriceResponse.Currency = context.StringValue("DescribePrice.Currency");
+			describePriceResponse.ExpressionMessage = context.StringValue("DescribePrice.ExpressionMessage");
 
 			List<DescribePriceResponse.DescribePrice_PromotionRule> describePriceResponse_promotionRules = new List<DescribePriceResponse.DescribePrice_PromotionRule>();
 			for (int i = 0; i < context.Length("DescribePrice.PromotionRules.Length"); i++) {
