@@ -56,6 +56,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				bgpPeer.RouteLimit = context.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].RouteLimit");
 				bgpPeer.RegionId = context.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].RegionId");
 				bgpPeer.EnableBfd = context.BooleanValue("DescribeBgpPeers.BgpPeers["+ i +"].EnableBfd");
+				bgpPeer.IpVersion = context.StringValue("DescribeBgpPeers.BgpPeers["+ i +"].IpVersion");
 
 				describeBgpPeersResponse_bgpPeers.Add(bgpPeer);
 			}

@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string clientToken;
 
+		private string description;
+
 		private string nextHopId;
 
 		private string nextHopType;
@@ -97,6 +99,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 

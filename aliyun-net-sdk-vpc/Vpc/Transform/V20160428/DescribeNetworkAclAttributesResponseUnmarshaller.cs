@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			networkAclAttribute.VpcId = context.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.VpcId");
 			networkAclAttribute.CreationTime = context.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.CreationTime");
 			networkAclAttribute.Status = context.StringValue("DescribeNetworkAclAttributes.NetworkAclAttribute.Status");
+			networkAclAttribute.OwnerId = context.LongValue("DescribeNetworkAclAttributes.NetworkAclAttribute.OwnerId");
 
 			List<DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_IngressAclEntry> networkAclAttribute_ingressAclEntries = new List<DescribeNetworkAclAttributesResponse.DescribeNetworkAclAttributes_NetworkAclAttribute.DescribeNetworkAclAttributes_IngressAclEntry>();
 			for (int i = 0; i < context.Length("DescribeNetworkAclAttributes.NetworkAclAttribute.IngressAclEntries.Length"); i++) {

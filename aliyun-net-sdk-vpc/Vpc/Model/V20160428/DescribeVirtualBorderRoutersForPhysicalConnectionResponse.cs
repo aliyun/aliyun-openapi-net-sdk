@@ -126,6 +126,22 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string peeringSubnetMask;
 
+			private string pConnVbrChargeType;
+
+			private string pConnVbrExpireTime;
+
+			private string pConnVbrBussinessStatus;
+
+			private string bandwidth;
+
+			private string localIpv6GatewayIp;
+
+			private string peerIpv6GatewayIp;
+
+			private string peeringIpv6SubnetMask;
+
+			private bool? enableIpv6;
+
 			public string VbrId
 			{
 				get
@@ -291,6 +307,102 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					peeringSubnetMask = value;
+				}
+			}
+
+			public string PConnVbrChargeType
+			{
+				get
+				{
+					return pConnVbrChargeType;
+				}
+				set	
+				{
+					pConnVbrChargeType = value;
+				}
+			}
+
+			public string PConnVbrExpireTime
+			{
+				get
+				{
+					return pConnVbrExpireTime;
+				}
+				set	
+				{
+					pConnVbrExpireTime = value;
+				}
+			}
+
+			public string PConnVbrBussinessStatus
+			{
+				get
+				{
+					return pConnVbrBussinessStatus;
+				}
+				set	
+				{
+					pConnVbrBussinessStatus = value;
+				}
+			}
+
+			public string Bandwidth
+			{
+				get
+				{
+					return bandwidth;
+				}
+				set	
+				{
+					bandwidth = value;
+				}
+			}
+
+			public string LocalIpv6GatewayIp
+			{
+				get
+				{
+					return localIpv6GatewayIp;
+				}
+				set	
+				{
+					localIpv6GatewayIp = value;
+				}
+			}
+
+			public string PeerIpv6GatewayIp
+			{
+				get
+				{
+					return peerIpv6GatewayIp;
+				}
+				set	
+				{
+					peerIpv6GatewayIp = value;
+				}
+			}
+
+			public string PeeringIpv6SubnetMask
+			{
+				get
+				{
+					return peeringIpv6SubnetMask;
+				}
+				set	
+				{
+					peeringIpv6SubnetMask = value;
+				}
+			}
+
+			public bool? EnableIpv6
+			{
+				get
+				{
+					return enableIpv6;
+				}
+				set	
+				{
+					enableIpv6 = value;
 				}
 			}
 		}

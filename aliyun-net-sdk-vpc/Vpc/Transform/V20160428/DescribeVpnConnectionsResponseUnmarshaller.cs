@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vpnConnection.CreateTime = context.LongValue("DescribeVpnConnections.VpnConnections["+ i +"].CreateTime");
 				vpnConnection.EffectImmediately = context.BooleanValue("DescribeVpnConnections.VpnConnections["+ i +"].EffectImmediately");
 				vpnConnection.Status = context.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].Status");
+				vpnConnection.EnableDpd = context.BooleanValue("DescribeVpnConnections.VpnConnections["+ i +"].EnableDpd");
+				vpnConnection.EnableNatTraversal = context.BooleanValue("DescribeVpnConnections.VpnConnections["+ i +"].EnableNatTraversal");
 
 				DescribeVpnConnectionsResponse.DescribeVpnConnections_VpnConnection.DescribeVpnConnections_IkeConfig ikeConfig = new DescribeVpnConnectionsResponse.DescribeVpnConnections_VpnConnection.DescribeVpnConnections_IkeConfig();
 				ikeConfig.Psk = context.StringValue("DescribeVpnConnections.VpnConnections["+ i +"].IkeConfig.Psk");

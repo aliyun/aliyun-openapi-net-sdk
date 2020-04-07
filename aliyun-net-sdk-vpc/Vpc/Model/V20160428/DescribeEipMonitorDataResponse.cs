@@ -56,9 +56,9 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		public class DescribeEipMonitorData_EipMonitorData
 		{
 
-			private int? eipRX;
+			private long? eipRX;
 
-			private int? eipTX;
+			private long? eipTX;
 
 			private int? eipFlow;
 
@@ -68,7 +68,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string timeStamp;
 
-			public int? EipRX
+			public long? EipRX
 			{
 				get
 				{
@@ -80,7 +80,7 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public int? EipTX
+			public long? EipTX
 			{
 				get
 				{

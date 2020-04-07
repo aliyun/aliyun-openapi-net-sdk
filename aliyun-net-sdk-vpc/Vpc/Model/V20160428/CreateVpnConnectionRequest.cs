@@ -67,7 +67,11 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
+		private bool? enableDpd;
+
 		private string name;
+
+		private bool? enableNatTraversal;
 
 		public string IkeConfig
 		{
@@ -251,6 +255,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public bool? EnableDpd
+		{
+			get
+			{
+				return enableDpd;
+			}
+			set	
+			{
+				enableDpd = value;
+				DictionaryUtil.Add(QueryParameters, "EnableDpd", value.ToString());
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -261,6 +278,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				name = value;
 				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public bool? EnableNatTraversal
+		{
+			get
+			{
+				return enableNatTraversal;
+			}
+			set	
+			{
+				enableNatTraversal = value;
+				DictionaryUtil.Add(QueryParameters, "EnableNatTraversal", value.ToString());
 			}
 		}
 

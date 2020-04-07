@@ -43,8 +43,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string clientToken;
 
-		private string userCidr;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -76,19 +74,6 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string UserCidr
-		{
-			get
-			{
-				return userCidr;
-			}
-			set	
-			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
 			}
 		}
 

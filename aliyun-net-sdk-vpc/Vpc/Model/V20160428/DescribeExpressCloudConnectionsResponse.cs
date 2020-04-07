@@ -150,15 +150,25 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string applicationBandwidth;
 
+			private string endTime;
+
+			private string chargeType;
+
 			private string contactTel;
 
 			private string contactMail;
 
 			private string iDCardNo;
 
-			private string endTime;
+			private string estimatedTime;
 
-			private string chargeType;
+			private string bgpAs;
+
+			private string peIp;
+
+			private string ceIp;
+
+			private string constructionPeriod;
 
 			private List<DescribeExpressCloudConnections_VirtualBorderRouterModel> virtualBorderRouterModels;
 
@@ -474,6 +484,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string EndTime
+			{
+				get
+				{
+					return endTime;
+				}
+				set	
+				{
+					endTime = value;
+				}
+			}
+
+			public string ChargeType
+			{
+				get
+				{
+					return chargeType;
+				}
+				set	
+				{
+					chargeType = value;
+				}
+			}
+
 			public string ContactTel
 			{
 				get
@@ -510,27 +544,63 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
-			public string EndTime
+			public string EstimatedTime
 			{
 				get
 				{
-					return endTime;
+					return estimatedTime;
 				}
 				set	
 				{
-					endTime = value;
+					estimatedTime = value;
 				}
 			}
 
-			public string ChargeType
+			public string BgpAs
 			{
 				get
 				{
-					return chargeType;
+					return bgpAs;
 				}
 				set	
 				{
-					chargeType = value;
+					bgpAs = value;
+				}
+			}
+
+			public string PeIp
+			{
+				get
+				{
+					return peIp;
+				}
+				set	
+				{
+					peIp = value;
+				}
+			}
+
+			public string CeIp
+			{
+				get
+				{
+					return ceIp;
+				}
+				set	
+				{
+					ceIp = value;
+				}
+			}
+
+			public string ConstructionPeriod
+			{
+				get
+				{
+					return constructionPeriod;
+				}
+				set	
+				{
+					constructionPeriod = value;
 				}
 			}
 

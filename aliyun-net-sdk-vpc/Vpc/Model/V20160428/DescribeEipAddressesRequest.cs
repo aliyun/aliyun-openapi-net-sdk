@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private int? pageSize;
 
+		private string segmentInstanceId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -232,6 +234,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string SegmentInstanceId
+		{
+			get
+			{
+				return segmentInstanceId;
+			}
+			set	
+			{
+				segmentInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "SegmentInstanceId", value);
 			}
 		}
 

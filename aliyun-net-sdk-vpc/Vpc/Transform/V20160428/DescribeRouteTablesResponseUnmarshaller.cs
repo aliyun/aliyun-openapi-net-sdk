@@ -62,6 +62,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 					routeEntry.InstanceId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].InstanceId");
 					routeEntry.NextHopType = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopType");
 					routeEntry.RouteEntryName = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].RouteEntryName");
+					routeEntry.Description = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].Description");
 					routeEntry.RouteEntryId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].RouteEntryId");
 					routeEntry.NextHopRegionId = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopRegionId");
 					routeEntry.NextHopOppsiteType = context.StringValue("DescribeRouteTables.RouteTables["+ i +"].RouteEntrys["+ j +"].NextHopOppsiteType");

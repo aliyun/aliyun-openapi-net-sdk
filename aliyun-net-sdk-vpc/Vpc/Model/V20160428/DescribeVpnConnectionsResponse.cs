@@ -116,6 +116,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string status;
 
+			private bool? enableDpd;
+
+			private bool? enableNatTraversal;
+
 			private DescribeVpnConnections_IkeConfig ikeConfig;
 
 			private DescribeVpnConnections_IpsecConfig ipsecConfig;
@@ -227,6 +231,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public bool? EnableDpd
+			{
+				get
+				{
+					return enableDpd;
+				}
+				set	
+				{
+					enableDpd = value;
+				}
+			}
+
+			public bool? EnableNatTraversal
+			{
+				get
+				{
+					return enableNatTraversal;
+				}
+				set	
+				{
+					enableNatTraversal = value;
 				}
 			}
 

@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string vSwitchId;
 
+		private long? vSwitchOwnerId;
+
 		private string vpcId;
 
 		private string vSwitchName;
@@ -207,6 +209,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				vSwitchId = value;
 				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public long? VSwitchOwnerId
+		{
+			get
+			{
+				return vSwitchOwnerId;
+			}
+			set	
+			{
+				vSwitchOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchOwnerId", value.ToString());
 			}
 		}
 

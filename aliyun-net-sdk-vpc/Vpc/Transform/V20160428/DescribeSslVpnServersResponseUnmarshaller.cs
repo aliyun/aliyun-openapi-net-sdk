@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				sslVpnServer.Connections = context.IntegerValue("DescribeSslVpnServers.SslVpnServers["+ i +"].Connections");
 				sslVpnServer.MaxConnections = context.IntegerValue("DescribeSslVpnServers.SslVpnServers["+ i +"].MaxConnections");
 				sslVpnServer.InternetIp = context.StringValue("DescribeSslVpnServers.SslVpnServers["+ i +"].InternetIp");
+				sslVpnServer.EnableMultiFactorAuth = context.BooleanValue("DescribeSslVpnServers.SslVpnServers["+ i +"].EnableMultiFactorAuth");
+				sslVpnServer.IDaaSInstanceId = context.StringValue("DescribeSslVpnServers.SslVpnServers["+ i +"].IDaaSInstanceId");
 
 				describeSslVpnServersResponse_sslVpnServers.Add(sslVpnServer);
 			}

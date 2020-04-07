@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? ownerId;
 
+		private string ipType;
+
 		private string ipInstanceId;
 
 		public long? ResourceOwnerId
@@ -113,6 +115,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string IpType
+		{
+			get
+			{
+				return ipType;
+			}
+			set	
+			{
+				ipType = value;
+				DictionaryUtil.Add(QueryParameters, "IpType", value);
 			}
 		}
 

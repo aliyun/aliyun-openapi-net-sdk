@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? resourceOwnerId;
 
+		private long? vpcOwnerId;
+
 		private int? pageNumber;
 
 		private string vpcName;
@@ -71,6 +73,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public long? VpcOwnerId
+		{
+			get
+			{
+				return vpcOwnerId;
+			}
+			set	
+			{
+				vpcOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "VpcOwnerId", value.ToString());
 			}
 		}
 

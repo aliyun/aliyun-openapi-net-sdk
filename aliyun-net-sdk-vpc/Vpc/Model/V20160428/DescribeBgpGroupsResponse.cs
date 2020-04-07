@@ -124,6 +124,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string regionId;
 
+			private string ipVersion;
+
 			public string Name
 			{
 				get
@@ -277,6 +279,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					regionId = value;
+				}
+			}
+
+			public string IpVersion
+			{
+				get
+				{
+					return ipVersion;
+				}
+				set	
+				{
+					ipVersion = value;
 				}
 			}
 		}

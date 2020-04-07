@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string routeEntryName;
 
+		private string description;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				routeEntryName = value;
 				DictionaryUtil.Add(QueryParameters, "RouteEntryName", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 

@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				bgpNetwork.VpcId = context.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].VpcId");
 				bgpNetwork.DstCidrBlock = context.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].DstCidrBlock");
 				bgpNetwork.RouterId = context.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].RouterId");
+				bgpNetwork.Status = context.StringValue("DescribeBgpNetworks.BgpNetworks["+ i +"].Status");
 
 				describeBgpNetworksResponse_bgpNetworks.Add(bgpNetwork);
 			}

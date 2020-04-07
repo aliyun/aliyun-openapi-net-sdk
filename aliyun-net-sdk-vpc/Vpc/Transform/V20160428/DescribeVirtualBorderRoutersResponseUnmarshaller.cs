@@ -59,11 +59,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				virtualBorderRouterType.AccessPointId = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AccessPointId");
 				virtualBorderRouterType.Name = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Name");
 				virtualBorderRouterType.Description = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Description");
+				virtualBorderRouterType.PConnVbrExpireTime = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PConnVbrExpireTime");
 				virtualBorderRouterType.EccId = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].EccId");
 				virtualBorderRouterType.Type = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].Type");
 				virtualBorderRouterType.MinTxInterval = context.LongValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].MinTxInterval");
 				virtualBorderRouterType.MinRxInterval = context.LongValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].MinRxInterval");
 				virtualBorderRouterType.DetectMultiplier = context.LongValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].DetectMultiplier");
+				virtualBorderRouterType.LocalIpv6GatewayIp = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].LocalIpv6GatewayIp");
+				virtualBorderRouterType.PeerIpv6GatewayIp = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PeerIpv6GatewayIp");
+				virtualBorderRouterType.PeeringIpv6SubnetMask = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].PeeringIpv6SubnetMask");
+				virtualBorderRouterType.EnableIpv6 = context.BooleanValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].EnableIpv6");
 
 				List<DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType.DescribeVirtualBorderRouters_AssociatedPhysicalConnection> virtualBorderRouterType_associatedPhysicalConnections = new List<DescribeVirtualBorderRoutersResponse.DescribeVirtualBorderRouters_VirtualBorderRouterType.DescribeVirtualBorderRouters_AssociatedPhysicalConnection>();
 				for (int j = 0; j < context.Length("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections.Length"); j++) {
@@ -78,6 +83,9 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 					associatedPhysicalConnection.PhysicalConnectionBusinessStatus = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].PhysicalConnectionBusinessStatus");
 					associatedPhysicalConnection.PhysicalConnectionOwnerUid = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].PhysicalConnectionOwnerUid");
 					associatedPhysicalConnection.VlanId = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].VlanId");
+					associatedPhysicalConnection.LocalIpv6GatewayIp = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].LocalIpv6GatewayIp");
+					associatedPhysicalConnection.PeerIpv6GatewayIp = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].PeerIpv6GatewayIp");
+					associatedPhysicalConnection.PeeringIpv6SubnetMask = context.StringValue("DescribeVirtualBorderRouters.VirtualBorderRouterSet["+ i +"].AssociatedPhysicalConnections["+ j +"].PeeringIpv6SubnetMask");
 
 					virtualBorderRouterType_associatedPhysicalConnections.Add(associatedPhysicalConnection);
 				}

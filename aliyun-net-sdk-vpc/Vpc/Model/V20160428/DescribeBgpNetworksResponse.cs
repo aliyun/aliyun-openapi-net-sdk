@@ -104,6 +104,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string routerId;
 
+			private string status;
+
 			public string VpcId
 			{
 				get
@@ -137,6 +139,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					routerId = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
 				}
 			}
 		}

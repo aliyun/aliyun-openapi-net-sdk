@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describeVpcAttributeResponse.ClassicLinkEnabled = context.BooleanValue("DescribeVpcAttribute.ClassicLinkEnabled");
 			describeVpcAttributeResponse.ResourceGroupId = context.StringValue("DescribeVpcAttribute.ResourceGroupId");
 			describeVpcAttributeResponse.NetworkAclNum = context.StringValue("DescribeVpcAttribute.NetworkAclNum");
+			describeVpcAttributeResponse.OwnerId = context.LongValue("DescribeVpcAttribute.OwnerId");
 
 			List<string> describeVpcAttributeResponse_vSwitchIds = new List<string>();
 			for (int i = 0; i < context.Length("DescribeVpcAttribute.VSwitchIds.Length"); i++) {
@@ -57,6 +58,12 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				describeVpcAttributeResponse_userCidrs.Add(context.StringValue("DescribeVpcAttribute.UserCidrs["+ i +"]"));
 			}
 			describeVpcAttributeResponse.UserCidrs = describeVpcAttributeResponse_userCidrs;
+
+			List<string> describeVpcAttributeResponse_secondaryCidrBlocks = new List<string>();
+			for (int i = 0; i < context.Length("DescribeVpcAttribute.SecondaryCidrBlocks.Length"); i++) {
+				describeVpcAttributeResponse_secondaryCidrBlocks.Add(context.StringValue("DescribeVpcAttribute.SecondaryCidrBlocks["+ i +"]"));
+			}
+			describeVpcAttributeResponse.SecondaryCidrBlocks = describeVpcAttributeResponse_secondaryCidrBlocks;
 
 			List<DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen> describeVpcAttributeResponse_associatedCens = new List<DescribeVpcAttributeResponse.DescribeVpcAttribute_AssociatedCen>();
 			for (int i = 0; i < context.Length("DescribeVpcAttribute.AssociatedCens.Length"); i++) {

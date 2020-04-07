@@ -160,6 +160,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string status;
 
+			private long? ownerId;
+
 			private List<DescribeRouteTableList_Tag> tags;
 
 			private List<string> vSwitchIds;
@@ -281,6 +283,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public long? OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
 				}
 			}
 

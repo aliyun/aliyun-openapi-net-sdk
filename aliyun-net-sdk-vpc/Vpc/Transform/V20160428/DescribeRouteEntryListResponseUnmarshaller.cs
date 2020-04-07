@@ -42,6 +42,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				routeEntry.Type = context.StringValue("DescribeRouteEntryList.RouteEntrys["+ i +"].Type");
 				routeEntry.RouteEntryId = context.StringValue("DescribeRouteEntryList.RouteEntrys["+ i +"].RouteEntryId");
 				routeEntry.RouteEntryName = context.StringValue("DescribeRouteEntryList.RouteEntrys["+ i +"].RouteEntryName");
+				routeEntry.Description = context.StringValue("DescribeRouteEntryList.RouteEntrys["+ i +"].Description");
 				routeEntry.Status = context.StringValue("DescribeRouteEntryList.RouteEntrys["+ i +"].Status");
 				routeEntry.IpVersion = context.StringValue("DescribeRouteEntryList.RouteEntrys["+ i +"].IpVersion");
 

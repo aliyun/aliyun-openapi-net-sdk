@@ -122,6 +122,12 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string status;
 
+			private string natType;
+
+			private string internetChargeType;
+
+			private string resourceGroupId;
+
 			private bool? deletionProtection;
 
 			private List<DescribeNatGateways_IpList> ipLists;
@@ -131,6 +137,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private List<string> snatTableIds;
 
 			private List<string> bandwidthPackageIds;
+
+			private DescribeNatGateways_NatGatewayPrivateInfo natGatewayPrivateInfo;
 
 			public string NatGatewayId
 			{
@@ -276,6 +284,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string NatType
+			{
+				get
+				{
+					return natType;
+				}
+				set	
+				{
+					natType = value;
+				}
+			}
+
+			public string InternetChargeType
+			{
+				get
+				{
+					return internetChargeType;
+				}
+				set	
+				{
+					internetChargeType = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
 			public bool? DeletionProtection
 			{
 				get
@@ -336,6 +380,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public DescribeNatGateways_NatGatewayPrivateInfo NatGatewayPrivateInfo
+			{
+				get
+				{
+					return natGatewayPrivateInfo;
+				}
+				set	
+				{
+					natGatewayPrivateInfo = value;
+				}
+			}
+
 			public class DescribeNatGateways_IpList
 			{
 
@@ -346,6 +402,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				private string usingStatus;
 
 				private bool? apAccessEnabled;
+
+				private bool? snatEntryEnabled;
 
 				public string AllocationId
 				{
@@ -392,6 +450,92 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						apAccessEnabled = value;
+					}
+				}
+
+				public bool? SnatEntryEnabled
+				{
+					get
+					{
+						return snatEntryEnabled;
+					}
+					set	
+					{
+						snatEntryEnabled = value;
+					}
+				}
+			}
+
+			public class DescribeNatGateways_NatGatewayPrivateInfo
+			{
+
+				private int? eniInstanceId;
+
+				private string privateIpAddress;
+
+				private string vswitchId;
+
+				private string izNo;
+
+				private int? maxBandwidth;
+
+				public int? EniInstanceId
+				{
+					get
+					{
+						return eniInstanceId;
+					}
+					set	
+					{
+						eniInstanceId = value;
+					}
+				}
+
+				public string PrivateIpAddress
+				{
+					get
+					{
+						return privateIpAddress;
+					}
+					set	
+					{
+						privateIpAddress = value;
+					}
+				}
+
+				public string VswitchId
+				{
+					get
+					{
+						return vswitchId;
+					}
+					set	
+					{
+						vswitchId = value;
+					}
+				}
+
+				public string IzNo
+				{
+					get
+					{
+						return izNo;
+					}
+					set	
+					{
+						izNo = value;
+					}
+				}
+
+				public int? MaxBandwidth
+				{
+					get
+					{
+						return maxBandwidth;
+					}
+					set	
+					{
+						maxBandwidth = value;
 					}
 				}
 			}

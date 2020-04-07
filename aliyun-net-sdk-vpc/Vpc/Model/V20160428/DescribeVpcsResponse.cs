@@ -124,6 +124,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string cenStatus;
 
+			private long? ownerId;
+
 			private List<DescribeVpcs_Tag> tags;
 
 			private List<string> vSwitchIds;
@@ -133,6 +135,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private List<string> natGatewayIds;
 
 			private List<string> routerTableIds;
+
+			private List<string> secondaryCidrBlocks;
 
 			public string VpcId
 			{
@@ -290,6 +294,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public long? OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
+				}
+			}
+
 			public List<DescribeVpcs_Tag> Tags
 			{
 				get
@@ -347,6 +363,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					routerTableIds = value;
+				}
+			}
+
+			public List<string> SecondaryCidrBlocks
+			{
+				get
+				{
+					return secondaryCidrBlocks;
+				}
+				set	
+				{
+					secondaryCidrBlocks = value;
 				}
 			}
 

@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private bool? isFakeAsn;
 
+		private string ipVersion;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -138,6 +140,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				isFakeAsn = value;
 				DictionaryUtil.Add(QueryParameters, "IsFakeAsn", value.ToString());
+			}
+		}
+
+		public string IpVersion
+		{
+			get
+			{
+				return ipVersion;
+			}
+			set	
+			{
+				ipVersion = value;
+				DictionaryUtil.Add(QueryParameters, "IpVersion", value);
 			}
 		}
 

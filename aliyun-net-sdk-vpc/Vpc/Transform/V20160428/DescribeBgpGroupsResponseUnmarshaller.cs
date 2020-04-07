@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				bgpGroup.IsFake = context.StringValue("DescribeBgpGroups.BgpGroups["+ i +"].IsFake");
 				bgpGroup.RouteLimit = context.StringValue("DescribeBgpGroups.BgpGroups["+ i +"].RouteLimit");
 				bgpGroup.RegionId = context.StringValue("DescribeBgpGroups.BgpGroups["+ i +"].RegionId");
+				bgpGroup.IpVersion = context.StringValue("DescribeBgpGroups.BgpGroups["+ i +"].IpVersion");
 
 				describeBgpGroupsResponse_bgpGroups.Add(bgpGroup);
 			}

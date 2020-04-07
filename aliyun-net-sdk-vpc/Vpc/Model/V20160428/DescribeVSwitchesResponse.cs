@@ -124,6 +124,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string networkAclId;
 
+			private long? ownerId;
+
+			private string shareType;
+
 			private List<DescribeVSwitches_Tag> tags;
 
 			private DescribeVSwitches_RouteTable routeTable;
@@ -281,6 +285,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					networkAclId = value;
+				}
+			}
+
+			public long? OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
+				}
+			}
+
+			public string ShareType
+			{
+				get
+				{
+					return shareType;
+				}
+				set	
+				{
+					shareType = value;
 				}
 			}
 

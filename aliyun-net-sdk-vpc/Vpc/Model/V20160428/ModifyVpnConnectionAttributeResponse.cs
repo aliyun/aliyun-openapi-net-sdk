@@ -45,6 +45,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private bool? effectImmediately;
 
+		private bool? enableDpd;
+
+		private bool? enableNatTraversal;
+
 		private ModifyVpnConnectionAttribute_IkeConfig ikeConfig;
 
 		private ModifyVpnConnectionAttribute_IpsecConfig ipsecConfig;
@@ -168,6 +172,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				effectImmediately = value;
+			}
+		}
+
+		public bool? EnableDpd
+		{
+			get
+			{
+				return enableDpd;
+			}
+			set	
+			{
+				enableDpd = value;
+			}
+		}
+
+		public bool? EnableNatTraversal
+		{
+			get
+			{
+				return enableNatTraversal;
+			}
+			set	
+			{
+				enableNatTraversal = value;
 			}
 		}
 

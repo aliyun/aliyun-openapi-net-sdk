@@ -49,11 +49,15 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string clientToken;
 
+		private bool? enableIpv6;
+
 		private string description;
 
 		private string vbrId;
 
 		private string peerGatewayIp;
+
+		private string peerIpv6GatewayIp;
 
 		private long? detectMultiplier;
 
@@ -63,6 +67,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private long? minTxInterval;
 
+		private string peeringIpv6SubnetMask;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -70,6 +76,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private long? ownerId;
 
 		private long? minRxInterval;
+
+		private string localIpv6GatewayIp;
 
 		private string name;
 
@@ -138,6 +146,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public bool? EnableIpv6
+		{
+			get
+			{
+				return enableIpv6;
+			}
+			set	
+			{
+				enableIpv6 = value;
+				DictionaryUtil.Add(QueryParameters, "EnableIpv6", value.ToString());
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -174,6 +195,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				peerGatewayIp = value;
 				DictionaryUtil.Add(QueryParameters, "PeerGatewayIp", value);
+			}
+		}
+
+		public string PeerIpv6GatewayIp
+		{
+			get
+			{
+				return peerIpv6GatewayIp;
+			}
+			set	
+			{
+				peerIpv6GatewayIp = value;
+				DictionaryUtil.Add(QueryParameters, "PeerIpv6GatewayIp", value);
 			}
 		}
 
@@ -229,6 +263,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string PeeringIpv6SubnetMask
+		{
+			get
+			{
+				return peeringIpv6SubnetMask;
+			}
+			set	
+			{
+				peeringIpv6SubnetMask = value;
+				DictionaryUtil.Add(QueryParameters, "PeeringIpv6SubnetMask", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -278,6 +325,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				minRxInterval = value;
 				DictionaryUtil.Add(QueryParameters, "MinRxInterval", value.ToString());
+			}
+		}
+
+		public string LocalIpv6GatewayIp
+		{
+			get
+			{
+				return localIpv6GatewayIp;
+			}
+			set	
+			{
+				localIpv6GatewayIp = value;
+				DictionaryUtil.Add(QueryParameters, "LocalIpv6GatewayIp", value);
 			}
 		}
 

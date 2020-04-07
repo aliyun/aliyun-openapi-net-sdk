@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				routerTableListType.ResourceGroupId = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].ResourceGroupId");
 				routerTableListType.CreationTime = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].CreationTime");
 				routerTableListType.Status = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Status");
+				routerTableListType.OwnerId = context.LongValue("DescribeRouteTableList.RouterTableList["+ i +"].OwnerId");
 
 				List<string> routerTableListType_vSwitchIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeRouteTableList.RouterTableList["+ i +"].VSwitchIds.Length"); j++) {
@@ -63,7 +64,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				for (int j = 0; j < context.Length("DescribeRouteTableList.RouterTableList["+ i +"].Tags.Length"); j++) {
 					DescribeRouteTableListResponse.DescribeRouteTableList_RouterTableListType.DescribeRouteTableList_Tag tag = new DescribeRouteTableListResponse.DescribeRouteTableList_RouterTableListType.DescribeRouteTableList_Tag();
 					tag.Key = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Tags["+ j +"].Key");
-					tag._Value = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Tags["+ j +"]._Value");
+					tag._Value = context.StringValue("DescribeRouteTableList.RouterTableList["+ i +"].Tags["+ j +"].Value");
 
 					routerTableListType_tags.Add(tag);
 				}

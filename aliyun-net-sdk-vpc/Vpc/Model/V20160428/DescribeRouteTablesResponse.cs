@@ -227,6 +227,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 				private string routeEntryName;
 
+				private string description;
+
 				private string routeEntryId;
 
 				private string nextHopRegionId;
@@ -322,6 +324,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						routeEntryName = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
 					}
 				}
 

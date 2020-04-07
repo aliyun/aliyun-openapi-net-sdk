@@ -45,6 +45,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private int? pageNumber;
 
+		private string resourceGroupId;
+
+		private string natType;
+
 		private int? pageSize;
 
 		private string natGatewayId;
@@ -97,6 +101,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string NatType
+		{
+			get
+			{
+				return natType;
+			}
+			set	
+			{
+				natType = value;
+				DictionaryUtil.Add(QueryParameters, "NatType", value);
 			}
 		}
 

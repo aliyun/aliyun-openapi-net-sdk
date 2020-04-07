@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string duration;
 
+		private string natType;
+
 		private List<BandwidthPackage> bandwidthPackages = new List<BandwidthPackage>(){ };
 
 		private string instanceChargeType;
@@ -60,6 +62,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string vSwitchId;
+
+		private string internetChargeType;
 
 		private string vpcId;
 
@@ -129,6 +135,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				duration = value;
 				DictionaryUtil.Add(QueryParameters, "Duration", value);
+			}
+		}
+
+		public string NatType
+		{
+			get
+			{
+				return natType;
+			}
+			set	
+			{
+				natType = value;
+				DictionaryUtil.Add(QueryParameters, "NatType", value);
 			}
 		}
 
@@ -215,6 +234,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+			}
+		}
+
+		public string InternetChargeType
+		{
+			get
+			{
+				return internetChargeType;
+			}
+			set	
+			{
+				internetChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InternetChargeType", value);
 			}
 		}
 

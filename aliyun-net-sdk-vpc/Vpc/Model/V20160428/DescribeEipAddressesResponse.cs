@@ -158,6 +158,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private bool? secondLimited;
 
+			private string segmentInstanceId;
+
 			private List<DescribeEipAddresses_LockReason> operationLocks;
 
 			private List<DescribeEipAddresses_Tag> tags;
@@ -521,6 +523,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					secondLimited = value;
+				}
+			}
+
+			public string SegmentInstanceId
+			{
+				get
+				{
+					return segmentInstanceId;
+				}
+				set	
+				{
+					segmentInstanceId = value;
 				}
 			}
 

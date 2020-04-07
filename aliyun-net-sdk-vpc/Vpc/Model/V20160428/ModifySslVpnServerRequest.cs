@@ -47,6 +47,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string localSubnet;
 
+		private bool? enableMultiFactorAuth;
+
+		private string iDaaSInstanceId;
+
 		private string cipher;
 
 		private string clientIpPool;
@@ -114,6 +118,32 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				localSubnet = value;
 				DictionaryUtil.Add(QueryParameters, "LocalSubnet", value);
+			}
+		}
+
+		public bool? EnableMultiFactorAuth
+		{
+			get
+			{
+				return enableMultiFactorAuth;
+			}
+			set	
+			{
+				enableMultiFactorAuth = value;
+				DictionaryUtil.Add(QueryParameters, "EnableMultiFactorAuth", value.ToString());
+			}
+		}
+
+		public string IDaaSInstanceId
+		{
+			get
+			{
+				return iDaaSInstanceId;
+			}
+			set	
+			{
+				iDaaSInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IDaaSInstanceId", value);
 			}
 		}
 

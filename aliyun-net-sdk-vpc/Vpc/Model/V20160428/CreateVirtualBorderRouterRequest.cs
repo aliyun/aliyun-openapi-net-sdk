@@ -47,13 +47,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string clientToken;
 
+		private bool? enableIpv6;
+
 		private string description;
 
 		private string peerGatewayIp;
 
+		private string peerIpv6GatewayIp;
+
 		private string peeringSubnetMask;
 
 		private string localGatewayIp;
+
+		private string peeringIpv6SubnetMask;
 
 		private string resourceOwnerAccount;
 
@@ -62,6 +68,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private long? ownerId;
 
 		private string physicalConnectionId;
+
+		private string localIpv6GatewayIp;
 
 		private string name;
 
@@ -119,6 +127,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public bool? EnableIpv6
+		{
+			get
+			{
+				return enableIpv6;
+			}
+			set	
+			{
+				enableIpv6 = value;
+				DictionaryUtil.Add(QueryParameters, "EnableIpv6", value.ToString());
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -145,6 +166,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public string PeerIpv6GatewayIp
+		{
+			get
+			{
+				return peerIpv6GatewayIp;
+			}
+			set	
+			{
+				peerIpv6GatewayIp = value;
+				DictionaryUtil.Add(QueryParameters, "PeerIpv6GatewayIp", value);
+			}
+		}
+
 		public string PeeringSubnetMask
 		{
 			get
@@ -168,6 +202,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				localGatewayIp = value;
 				DictionaryUtil.Add(QueryParameters, "LocalGatewayIp", value);
+			}
+		}
+
+		public string PeeringIpv6SubnetMask
+		{
+			get
+			{
+				return peeringIpv6SubnetMask;
+			}
+			set	
+			{
+				peeringIpv6SubnetMask = value;
+				DictionaryUtil.Add(QueryParameters, "PeeringIpv6SubnetMask", value);
 			}
 		}
 
@@ -220,6 +267,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				physicalConnectionId = value;
 				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
+			}
+		}
+
+		public string LocalIpv6GatewayIp
+		{
+			get
+			{
+				return localIpv6GatewayIp;
+			}
+			set	
+			{
+				localIpv6GatewayIp = value;
+				DictionaryUtil.Add(QueryParameters, "LocalIpv6GatewayIp", value);
 			}
 		}
 

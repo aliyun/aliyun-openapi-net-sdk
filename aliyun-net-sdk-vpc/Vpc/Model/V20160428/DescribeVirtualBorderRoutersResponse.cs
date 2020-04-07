@@ -138,6 +138,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string description;
 
+			private string pConnVbrExpireTime;
+
 			private string eccId;
 
 			private string type;
@@ -147,6 +149,14 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			private long? minRxInterval;
 
 			private long? detectMultiplier;
+
+			private string localIpv6GatewayIp;
+
+			private string peerIpv6GatewayIp;
+
+			private string peeringIpv6SubnetMask;
+
+			private bool? enableIpv6;
 
 			private List<DescribeVirtualBorderRouters_AssociatedPhysicalConnection> associatedPhysicalConnections;
 
@@ -392,6 +402,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string PConnVbrExpireTime
+			{
+				get
+				{
+					return pConnVbrExpireTime;
+				}
+				set	
+				{
+					pConnVbrExpireTime = value;
+				}
+			}
+
 			public string EccId
 			{
 				get
@@ -452,6 +474,54 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				}
 			}
 
+			public string LocalIpv6GatewayIp
+			{
+				get
+				{
+					return localIpv6GatewayIp;
+				}
+				set	
+				{
+					localIpv6GatewayIp = value;
+				}
+			}
+
+			public string PeerIpv6GatewayIp
+			{
+				get
+				{
+					return peerIpv6GatewayIp;
+				}
+				set	
+				{
+					peerIpv6GatewayIp = value;
+				}
+			}
+
+			public string PeeringIpv6SubnetMask
+			{
+				get
+				{
+					return peeringIpv6SubnetMask;
+				}
+				set	
+				{
+					peeringIpv6SubnetMask = value;
+				}
+			}
+
+			public bool? EnableIpv6
+			{
+				get
+				{
+					return enableIpv6;
+				}
+				set	
+				{
+					enableIpv6 = value;
+				}
+			}
+
 			public List<DescribeVirtualBorderRouters_AssociatedPhysicalConnection> AssociatedPhysicalConnections
 			{
 				get
@@ -498,6 +568,12 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				private string physicalConnectionOwnerUid;
 
 				private string vlanId;
+
+				private string localIpv6GatewayIp;
+
+				private string peerIpv6GatewayIp;
+
+				private string peeringIpv6SubnetMask;
 
 				public string CircuitCode
 				{
@@ -616,6 +692,42 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 					set	
 					{
 						vlanId = value;
+					}
+				}
+
+				public string LocalIpv6GatewayIp
+				{
+					get
+					{
+						return localIpv6GatewayIp;
+					}
+					set	
+					{
+						localIpv6GatewayIp = value;
+					}
+				}
+
+				public string PeerIpv6GatewayIp
+				{
+					get
+					{
+						return peerIpv6GatewayIp;
+					}
+					set	
+					{
+						peerIpv6GatewayIp = value;
+					}
+				}
+
+				public string PeeringIpv6SubnetMask
+				{
+					get
+					{
+						return peeringIpv6SubnetMask;
+					}
+					set	
+					{
+						peeringIpv6SubnetMask = value;
 					}
 				}
 			}

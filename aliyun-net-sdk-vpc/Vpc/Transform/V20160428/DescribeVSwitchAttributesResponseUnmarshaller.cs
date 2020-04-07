@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			describeVSwitchAttributesResponse.IsDefault = context.BooleanValue("DescribeVSwitchAttributes.IsDefault");
 			describeVSwitchAttributesResponse.ResourceGroupId = context.StringValue("DescribeVSwitchAttributes.ResourceGroupId");
 			describeVSwitchAttributesResponse.NetworkAclId = context.StringValue("DescribeVSwitchAttributes.NetworkAclId");
+			describeVSwitchAttributesResponse.OwnerId = context.LongValue("DescribeVSwitchAttributes.OwnerId");
+			describeVSwitchAttributesResponse.ShareType = context.StringValue("DescribeVSwitchAttributes.ShareType");
 
 			DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_RouteTable routeTable = new DescribeVSwitchAttributesResponse.DescribeVSwitchAttributes_RouteTable();
 			routeTable.RouteTableId = context.StringValue("DescribeVSwitchAttributes.RouteTable.RouteTableId");

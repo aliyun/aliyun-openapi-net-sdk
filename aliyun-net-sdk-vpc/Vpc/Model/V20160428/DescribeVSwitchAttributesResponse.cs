@@ -53,6 +53,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string networkAclId;
 
+		private long? ownerId;
+
+		private string shareType;
+
 		private List<DescribeVSwitchAttributes_CloudResourceSetType> cloudResources;
 
 		private DescribeVSwitchAttributes_RouteTable routeTable;
@@ -222,6 +226,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				networkAclId = value;
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+			}
+		}
+
+		public string ShareType
+		{
+			get
+			{
+				return shareType;
+			}
+			set	
+			{
+				shareType = value;
 			}
 		}
 

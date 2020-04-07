@@ -49,6 +49,12 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string ownerAccount;
 
+		private string ceIp;
+
+		private string bgpAs;
+
+		private string peIp;
+
 		private long? ownerId;
 
 		private string name;
@@ -115,6 +121,45 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string CeIp
+		{
+			get
+			{
+				return ceIp;
+			}
+			set	
+			{
+				ceIp = value;
+				DictionaryUtil.Add(QueryParameters, "CeIp", value);
+			}
+		}
+
+		public string BgpAs
+		{
+			get
+			{
+				return bgpAs;
+			}
+			set	
+			{
+				bgpAs = value;
+				DictionaryUtil.Add(QueryParameters, "BgpAs", value);
+			}
+		}
+
+		public string PeIp
+		{
+			get
+			{
+				return peIp;
+			}
+			set	
+			{
+				peIp = value;
+				DictionaryUtil.Add(QueryParameters, "PeIp", value);
 			}
 		}
 

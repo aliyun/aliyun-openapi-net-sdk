@@ -65,11 +65,16 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				expressCloudConnectionType.ApplicationId = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].ApplicationId");
 				expressCloudConnectionType.ApplicationStatus = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].ApplicationStatus");
 				expressCloudConnectionType.ApplicationBandwidth = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].ApplicationBandwidth");
+				expressCloudConnectionType.EndTime = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].EndTime");
+				expressCloudConnectionType.ChargeType = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].ChargeType");
 				expressCloudConnectionType.ContactTel = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].ContactTel");
 				expressCloudConnectionType.ContactMail = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].ContactMail");
 				expressCloudConnectionType.IDCardNo = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].IDCardNo");
-				expressCloudConnectionType.EndTime = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].EndTime");
-				expressCloudConnectionType.ChargeType = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].ChargeType");
+				expressCloudConnectionType.EstimatedTime = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].EstimatedTime");
+				expressCloudConnectionType.BgpAs = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].BgpAs");
+				expressCloudConnectionType.PeIp = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].PeIp");
+				expressCloudConnectionType.CeIp = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].CeIp");
+				expressCloudConnectionType.ConstructionPeriod = context.StringValue("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].ConstructionPeriod");
 
 				List<DescribeExpressCloudConnectionsResponse.DescribeExpressCloudConnections_ExpressCloudConnectionType.DescribeExpressCloudConnections_VirtualBorderRouterModel> expressCloudConnectionType_virtualBorderRouterModels = new List<DescribeExpressCloudConnectionsResponse.DescribeExpressCloudConnections_ExpressCloudConnectionType.DescribeExpressCloudConnections_VirtualBorderRouterModel>();
 				for (int j = 0; j < context.Length("DescribeExpressCloudConnections.ExpressCloudConnectionSet["+ i +"].VirtualBorderRouterModels.Length"); j++) {

@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				physicalConnectionType.CircuitCode = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].CircuitCode");
 				physicalConnectionType.Bandwidth = context.LongValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Bandwidth");
 				physicalConnectionType.LoaStatus = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].LoaStatus");
-				physicalConnectionType.Spec1 = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Spec1");
+				physicalConnectionType.Spec1 = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].Spec");
 				physicalConnectionType.HasReservationData = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].HasReservationData");
 				physicalConnectionType.ReservationInternetChargeType = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].ReservationInternetChargeType");
 				physicalConnectionType.ReservationActiveTime = context.StringValue("DescribePhysicalConnections.PhysicalConnectionSet["+ i +"].ReservationActiveTime");

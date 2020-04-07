@@ -126,6 +126,10 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string internetIp;
 
+			private bool? enableMultiFactorAuth;
+
+			private string iDaaSInstanceId;
+
 			public string RegionId
 			{
 				get
@@ -291,6 +295,30 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					internetIp = value;
+				}
+			}
+
+			public bool? EnableMultiFactorAuth
+			{
+				get
+				{
+					return enableMultiFactorAuth;
+				}
+				set	
+				{
+					enableMultiFactorAuth = value;
+				}
+			}
+
+			public string IDaaSInstanceId
+			{
+				get
+				{
+					return iDaaSInstanceId;
+				}
+				set	
+				{
+					iDaaSInstanceId = value;
 				}
 			}
 		}

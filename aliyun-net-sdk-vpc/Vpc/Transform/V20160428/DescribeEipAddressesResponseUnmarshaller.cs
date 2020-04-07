@@ -69,6 +69,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				eipAddress.Mode = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Mode");
 				eipAddress.DeletionProtection = context.BooleanValue("DescribeEipAddresses.EipAddresses["+ i +"].DeletionProtection");
 				eipAddress.SecondLimited = context.BooleanValue("DescribeEipAddresses.EipAddresses["+ i +"].SecondLimited");
+				eipAddress.SegmentInstanceId = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].SegmentInstanceId");
 
 				List<string> eipAddress_availableRegions = new List<string>();
 				for (int j = 0; j < context.Length("DescribeEipAddresses.EipAddresses["+ i +"].AvailableRegions.Length"); j++) {
@@ -89,7 +90,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				for (int j = 0; j < context.Length("DescribeEipAddresses.EipAddresses["+ i +"].Tags.Length"); j++) {
 					DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress.DescribeEipAddresses_Tag tag = new DescribeEipAddressesResponse.DescribeEipAddresses_EipAddress.DescribeEipAddresses_Tag();
 					tag.Key = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Tags["+ j +"].Key");
-					tag._Value = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Tags["+ j +"]._Value");
+					tag._Value = context.StringValue("DescribeEipAddresses.EipAddresses["+ i +"].Tags["+ j +"].Value");
 
 					eipAddress_tags.Add(tag);
 				}

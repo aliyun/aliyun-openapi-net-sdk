@@ -53,6 +53,14 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				virtualBorderRouterForPhysicalConnectionType.LocalGatewayIp = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].LocalGatewayIp");
 				virtualBorderRouterForPhysicalConnectionType.PeerGatewayIp = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeerGatewayIp");
 				virtualBorderRouterForPhysicalConnectionType.PeeringSubnetMask = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeeringSubnetMask");
+				virtualBorderRouterForPhysicalConnectionType.PConnVbrChargeType = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PConnVbrChargeType");
+				virtualBorderRouterForPhysicalConnectionType.PConnVbrExpireTime = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PConnVbrExpireTime");
+				virtualBorderRouterForPhysicalConnectionType.PConnVbrBussinessStatus = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PConnVbrBussinessStatus");
+				virtualBorderRouterForPhysicalConnectionType.Bandwidth = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].Bandwidth");
+				virtualBorderRouterForPhysicalConnectionType.LocalIpv6GatewayIp = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].LocalIpv6GatewayIp");
+				virtualBorderRouterForPhysicalConnectionType.PeerIpv6GatewayIp = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeerIpv6GatewayIp");
+				virtualBorderRouterForPhysicalConnectionType.PeeringIpv6SubnetMask = context.StringValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].PeeringIpv6SubnetMask");
+				virtualBorderRouterForPhysicalConnectionType.EnableIpv6 = context.BooleanValue("DescribeVirtualBorderRoutersForPhysicalConnection.VirtualBorderRouterForPhysicalConnectionSet["+ i +"].EnableIpv6");
 
 				describeVirtualBorderRoutersForPhysicalConnectionResponse_virtualBorderRouterForPhysicalConnectionSet.Add(virtualBorderRouterForPhysicalConnectionType);
 			}

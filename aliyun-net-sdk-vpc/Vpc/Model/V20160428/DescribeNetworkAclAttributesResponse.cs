@@ -70,6 +70,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private string status;
 
+			private long? ownerId;
+
 			private List<DescribeNetworkAclAttributes_IngressAclEntry> ingressAclEntries;
 
 			private List<DescribeNetworkAclAttributes_EgressAclEntry> egressAclEntries;
@@ -157,6 +159,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public long? OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
 				}
 			}
 

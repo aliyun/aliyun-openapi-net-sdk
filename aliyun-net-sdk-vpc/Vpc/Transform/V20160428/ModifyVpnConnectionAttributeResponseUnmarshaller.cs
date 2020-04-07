@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			modifyVpnConnectionAttributeResponse.RemoteSubnet = context.StringValue("ModifyVpnConnectionAttribute.RemoteSubnet");
 			modifyVpnConnectionAttributeResponse.CreateTime = context.LongValue("ModifyVpnConnectionAttribute.CreateTime");
 			modifyVpnConnectionAttributeResponse.EffectImmediately = context.BooleanValue("ModifyVpnConnectionAttribute.EffectImmediately");
+			modifyVpnConnectionAttributeResponse.EnableDpd = context.BooleanValue("ModifyVpnConnectionAttribute.EnableDpd");
+			modifyVpnConnectionAttributeResponse.EnableNatTraversal = context.BooleanValue("ModifyVpnConnectionAttribute.EnableNatTraversal");
 
 			ModifyVpnConnectionAttributeResponse.ModifyVpnConnectionAttribute_IkeConfig ikeConfig = new ModifyVpnConnectionAttributeResponse.ModifyVpnConnectionAttribute_IkeConfig();
 			ikeConfig.Psk = context.StringValue("ModifyVpnConnectionAttribute.IkeConfig.Psk");

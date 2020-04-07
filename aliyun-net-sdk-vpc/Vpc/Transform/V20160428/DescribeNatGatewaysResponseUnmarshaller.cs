@@ -51,6 +51,9 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				natGateway.BusinessStatus = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].BusinessStatus");
 				natGateway.CreationTime = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].CreationTime");
 				natGateway.Status = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].Status");
+				natGateway.NatType = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatType");
+				natGateway.InternetChargeType = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].InternetChargeType");
+				natGateway.ResourceGroupId = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].ResourceGroupId");
 				natGateway.DeletionProtection = context.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].DeletionProtection");
 
 				List<string> natGateway_forwardTableIds = new List<string>();
@@ -71,6 +74,14 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				}
 				natGateway.BandwidthPackageIds = natGateway_bandwidthPackageIds;
 
+				DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_NatGatewayPrivateInfo natGatewayPrivateInfo = new DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_NatGatewayPrivateInfo();
+				natGatewayPrivateInfo.EniInstanceId = context.IntegerValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.EniInstanceId");
+				natGatewayPrivateInfo.PrivateIpAddress = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.PrivateIpAddress");
+				natGatewayPrivateInfo.VswitchId = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.VswitchId");
+				natGatewayPrivateInfo.IzNo = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.IzNo");
+				natGatewayPrivateInfo.MaxBandwidth = context.IntegerValue("DescribeNatGateways.NatGateways["+ i +"].NatGatewayPrivateInfo.MaxBandwidth");
+				natGateway.NatGatewayPrivateInfo = natGatewayPrivateInfo;
+
 				List<DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_IpList> natGateway_ipLists = new List<DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_IpList>();
 				for (int j = 0; j < context.Length("DescribeNatGateways.NatGateways["+ i +"].IpLists.Length"); j++) {
 					DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_IpList ipList = new DescribeNatGatewaysResponse.DescribeNatGateways_NatGateway.DescribeNatGateways_IpList();
@@ -78,6 +89,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 					ipList.IpAddress = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].IpAddress");
 					ipList.UsingStatus = context.StringValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].UsingStatus");
 					ipList.ApAccessEnabled = context.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].ApAccessEnabled");
+					ipList.SnatEntryEnabled = context.BooleanValue("DescribeNatGateways.NatGateways["+ i +"].IpLists["+ j +"].SnatEntryEnabled");
 
 					natGateway_ipLists.Add(ipList);
 				}

@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				vSwitch.IsDefault = context.BooleanValue("DescribeVSwitches.VSwitches["+ i +"].IsDefault");
 				vSwitch.ResourceGroupId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].ResourceGroupId");
 				vSwitch.NetworkAclId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].NetworkAclId");
+				vSwitch.OwnerId = context.LongValue("DescribeVSwitches.VSwitches["+ i +"].OwnerId");
+				vSwitch.ShareType = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].ShareType");
 
 				DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_RouteTable routeTable = new DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_RouteTable();
 				routeTable.RouteTableId = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].RouteTable.RouteTableId");
@@ -62,7 +64,7 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 				for (int j = 0; j < context.Length("DescribeVSwitches.VSwitches["+ i +"].Tags.Length"); j++) {
 					DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_Tag tag = new DescribeVSwitchesResponse.DescribeVSwitches_VSwitch.DescribeVSwitches_Tag();
 					tag.Key = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Tags["+ j +"].Key");
-					tag._Value = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Tags["+ j +"]._Value");
+					tag._Value = context.StringValue("DescribeVSwitches.VSwitches["+ i +"].Tags["+ j +"].Value");
 
 					vSwitch_tags.Add(tag);
 				}

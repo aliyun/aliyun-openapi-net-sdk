@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Vpc.Transform.V20160428
 			modifySslVpnServerResponse.Connections = context.IntegerValue("ModifySslVpnServer.Connections");
 			modifySslVpnServerResponse.MaxConnections = context.IntegerValue("ModifySslVpnServer.MaxConnections");
 			modifySslVpnServerResponse.InternetIp = context.StringValue("ModifySslVpnServer.InternetIp");
+			modifySslVpnServerResponse.EnableMultiFactorAuth = context.BooleanValue("ModifySslVpnServer.EnableMultiFactorAuth");
+			modifySslVpnServerResponse.IDaaSInstanceId = context.StringValue("ModifySslVpnServer.IDaaSInstanceId");
         
 			return modifySslVpnServerResponse;
         }

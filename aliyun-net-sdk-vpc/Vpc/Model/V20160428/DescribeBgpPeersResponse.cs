@@ -132,6 +132,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 			private bool? enableBfd;
 
+			private string ipVersion;
+
 			public string Name
 			{
 				get
@@ -333,6 +335,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 				set	
 				{
 					enableBfd = value;
+				}
+			}
+
+			public string IpVersion
+			{
+				get
+				{
+					return ipVersion;
+				}
+				set	
+				{
+					ipVersion = value;
 				}
 			}
 		}

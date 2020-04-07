@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string networkAclNum;
 
+		private long? ownerId;
+
 		private List<DescribeVpcAttribute_AssociatedCen> associatedCens;
 
 		private List<DescribeVpcAttribute_CloudResourceSetType> cloudResources;
@@ -60,6 +62,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 		private List<string> vSwitchIds;
 
 		private List<string> userCidrs;
+
+		private List<string> secondaryCidrBlocks;
 
 		public string RequestId
 		{
@@ -229,6 +233,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			}
 		}
 
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+			}
+		}
+
 		public List<DescribeVpcAttribute_AssociatedCen> AssociatedCens
 		{
 			get
@@ -274,6 +290,18 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			set	
 			{
 				userCidrs = value;
+			}
+		}
+
+		public List<string> SecondaryCidrBlocks
+		{
+			get
+			{
+				return secondaryCidrBlocks;
+			}
+			set	
+			{
+				secondaryCidrBlocks = value;
 			}
 		}
 

@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 
 		private string peerIpAddress;
 
+		private string ipVersion;
+
 		private bool? enableBfd;
 
 		private string resourceOwnerAccount;
@@ -104,6 +106,19 @@ namespace Aliyun.Acs.Vpc.Model.V20160428
 			{
 				peerIpAddress = value;
 				DictionaryUtil.Add(QueryParameters, "PeerIpAddress", value);
+			}
+		}
+
+		public string IpVersion
+		{
+			get
+			{
+				return ipVersion;
+			}
+			set	
+			{
+				ipVersion = value;
+				DictionaryUtil.Add(QueryParameters, "IpVersion", value);
 			}
 		}
 
