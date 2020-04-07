@@ -57,6 +57,14 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string httpsPolicy;
 
+		private string userLogConfig;
+
+		private string customTraceConfig;
+
+		private string rpcPattern;
+
+		private string compatibleFlags;
+
 		private List<DescribeApiGroup_DomainItem> customDomains;
 
 		private List<DescribeApiGroup_StageInfo> stageItems;
@@ -253,6 +261,54 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string UserLogConfig
+		{
+			get
+			{
+				return userLogConfig;
+			}
+			set	
+			{
+				userLogConfig = value;
+			}
+		}
+
+		public string CustomTraceConfig
+		{
+			get
+			{
+				return customTraceConfig;
+			}
+			set	
+			{
+				customTraceConfig = value;
+			}
+		}
+
+		public string RpcPattern
+		{
+			get
+			{
+				return rpcPattern;
+			}
+			set	
+			{
+				rpcPattern = value;
+			}
+		}
+
+		public string CompatibleFlags
+		{
+			get
+			{
+				return compatibleFlags;
+			}
+			set	
+			{
+				compatibleFlags = value;
+			}
+		}
+
 		public List<DescribeApiGroup_DomainItem> CustomDomains
 		{
 			get
@@ -289,6 +345,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			private string domainCNAMEStatus;
 
 			private string domainBindingStatus;
+
+			private string bindStageName;
 
 			private string domainLegalStatus;
 
@@ -353,6 +411,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					domainBindingStatus = value;
+				}
+			}
+
+			public string BindStageName
+			{
+				get
+				{
+					return bindStageName;
+				}
+				set	
+				{
+					bindStageName = value;
 				}
 			}
 

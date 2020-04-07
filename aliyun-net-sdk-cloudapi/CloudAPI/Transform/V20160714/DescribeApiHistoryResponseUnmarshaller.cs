@@ -72,6 +72,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			serviceConfig.MockResult = context.StringValue("DescribeApiHistory.ServiceConfig.MockResult");
 			serviceConfig.ServiceVpcEnable = context.StringValue("DescribeApiHistory.ServiceConfig.ServiceVpcEnable");
 			serviceConfig.MockStatusCode = context.IntegerValue("DescribeApiHistory.ServiceConfig.MockStatusCode");
+			serviceConfig.VpcId = context.StringValue("DescribeApiHistory.ServiceConfig.VpcId");
 
 			DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_VpcConfig vpcConfig = new DescribeApiHistoryResponse.DescribeApiHistory_ServiceConfig.DescribeApiHistory_VpcConfig();
 			vpcConfig.Name = context.StringValue("DescribeApiHistory.ServiceConfig.VpcConfig.Name");
@@ -189,6 +190,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				requestParameter.DocShow = context.StringValue("DescribeApiHistory.RequestParameters["+ i +"].DocShow");
 				requestParameter.DocOrder = context.IntegerValue("DescribeApiHistory.RequestParameters["+ i +"].DocOrder");
 				requestParameter.Description = context.StringValue("DescribeApiHistory.RequestParameters["+ i +"].Description");
+				requestParameter.ArrayItemsType = context.StringValue("DescribeApiHistory.RequestParameters["+ i +"].ArrayItemsType");
 
 				describeApiHistoryResponse_requestParameters.Add(requestParameter);
 			}

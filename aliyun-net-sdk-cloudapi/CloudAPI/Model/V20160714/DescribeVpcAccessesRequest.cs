@@ -45,6 +45,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private int? pageSize;
 
+		private string name;
+
 		public int? PageNumber
 		{
 			get
@@ -81,6 +83,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

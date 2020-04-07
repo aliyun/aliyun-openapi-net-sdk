@@ -27,10 +27,10 @@ using Aliyun.Acs.CloudAPI.Transform.V20160714;
 
 namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
-    public class DeleteInstanceRequest : RpcAcsRequest<DeleteInstanceResponse>
+    public class ModifyApiMarketAttributesRequest : RpcAcsRequest<ModifyApiMarketAttributesResponse>
     {
-        public DeleteInstanceRequest()
-            : base("CloudAPI", "2016-07-14", "DeleteInstance", "apigateway", "openAPI")
+        public ModifyApiMarketAttributesRequest()
+            : base("CloudAPI", "2016-07-14", "ModifyApiMarketAttributes", "apigateway", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,91 +39,84 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
-		private string token;
+		private string groupId;
 
-		private string instanceId;
+		private string securityToken;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private string marketChargingMode;
 
-		public string Token
+		private bool? needCharging;
+
+		private string apiId;
+
+		public string GroupId
 		{
 			get
 			{
-				return token;
+				return groupId;
 			}
 			set	
 			{
-				token = value;
-				DictionaryUtil.Add(QueryParameters, "Token", value);
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
-		public string InstanceId
+		public string SecurityToken
 		{
 			get
 			{
-				return instanceId;
+				return securityToken;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public List<Tag> Tags
+		public string MarketChargingMode
 		{
 			get
 			{
-				return tags;
+				return marketChargingMode;
 			}
-
-			set
+			set	
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
+				marketChargingMode = value;
+				DictionaryUtil.Add(QueryParameters, "MarketChargingMode", value);
 			}
 		}
 
-		public class Tag
+		public bool? NeedCharging
 		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
+			get
 			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
+				return needCharging;
 			}
-
-			public string Key
+			set	
 			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
+				needCharging = value;
+				DictionaryUtil.Add(QueryParameters, "NeedCharging", value.ToString());
 			}
 		}
 
-        public override DeleteInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ApiId
+		{
+			get
+			{
+				return apiId;
+			}
+			set	
+			{
+				apiId = value;
+				DictionaryUtil.Add(QueryParameters, "ApiId", value);
+			}
+		}
+
+        public override ModifyApiMarketAttributesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyApiMarketAttributesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

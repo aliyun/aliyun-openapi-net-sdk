@@ -43,7 +43,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				authorizedApi.GroupId = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].GroupId");
 				authorizedApi.GroupName = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].GroupName");
 				authorizedApi.StageName = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].StageName");
-				authorizedApi._Operator = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"]._Operator");
+				authorizedApi._Operator = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].Operator");
 				authorizedApi.ApiId = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].ApiId");
 				authorizedApi.ApiName = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].ApiName");
 				authorizedApi.AuthorizationSource = context.StringValue("DescribeAuthorizedApis.AuthorizedApis["+ i +"].AuthorizationSource");

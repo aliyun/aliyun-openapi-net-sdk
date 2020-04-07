@@ -47,6 +47,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private int? pageNumber;
 
+		private string instanceId;
+
 		private string securityToken;
 
 		private int? pageSize;
@@ -102,6 +104,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

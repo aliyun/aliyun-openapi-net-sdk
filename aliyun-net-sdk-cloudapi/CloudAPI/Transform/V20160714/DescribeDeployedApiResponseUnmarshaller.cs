@@ -70,6 +70,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			serviceConfig.MockResult = context.StringValue("DescribeDeployedApi.ServiceConfig.MockResult");
 			serviceConfig.ServiceVpcEnable = context.StringValue("DescribeDeployedApi.ServiceConfig.ServiceVpcEnable");
 			serviceConfig.MockStatusCode = context.IntegerValue("DescribeDeployedApi.ServiceConfig.MockStatusCode");
+			serviceConfig.VpcId = context.StringValue("DescribeDeployedApi.ServiceConfig.VpcId");
 
 			DescribeDeployedApiResponse.DescribeDeployedApi_ServiceConfig.DescribeDeployedApi_VpcConfig vpcConfig = new DescribeDeployedApiResponse.DescribeDeployedApi_ServiceConfig.DescribeDeployedApi_VpcConfig();
 			vpcConfig.Name = context.StringValue("DescribeDeployedApi.ServiceConfig.VpcConfig.Name");
@@ -187,6 +188,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				requestParameter.DocShow = context.StringValue("DescribeDeployedApi.RequestParameters["+ i +"].DocShow");
 				requestParameter.DocOrder = context.IntegerValue("DescribeDeployedApi.RequestParameters["+ i +"].DocOrder");
 				requestParameter.Description = context.StringValue("DescribeDeployedApi.RequestParameters["+ i +"].Description");
+				requestParameter.ArrayItemsType = context.StringValue("DescribeDeployedApi.RequestParameters["+ i +"].ArrayItemsType");
 
 				describeDeployedApiResponse_requestParameters.Add(requestParameter);
 			}

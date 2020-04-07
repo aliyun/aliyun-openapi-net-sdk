@@ -43,7 +43,11 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string domainName;
 
+		private string bindStageName;
+
 		private string securityToken;
+
+		private bool? isForce;
 
 		public string GroupId
 		{
@@ -71,6 +75,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string BindStageName
+		{
+			get
+			{
+				return bindStageName;
+			}
+			set	
+			{
+				bindStageName = value;
+				DictionaryUtil.Add(QueryParameters, "BindStageName", value);
+			}
+		}
+
 		public string SecurityToken
 		{
 			get
@@ -81,6 +98,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public bool? IsForce
+		{
+			get
+			{
+				return isForce;
+			}
+			set	
+			{
+				isForce = value;
+				DictionaryUtil.Add(QueryParameters, "IsForce", value.ToString());
 			}
 		}
 

@@ -47,7 +47,15 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string securityToken;
 
+		private string compatibleFlags;
+
+		private string rpcPattern;
+
+		private string userLogConfig;
+
 		private List<Tag> tags = new List<Tag>(){ };
+
+		private string customTraceConfig;
 
 		public string GroupId
 		{
@@ -101,6 +109,45 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			}
 		}
 
+		public string CompatibleFlags
+		{
+			get
+			{
+				return compatibleFlags;
+			}
+			set	
+			{
+				compatibleFlags = value;
+				DictionaryUtil.Add(QueryParameters, "CompatibleFlags", value);
+			}
+		}
+
+		public string RpcPattern
+		{
+			get
+			{
+				return rpcPattern;
+			}
+			set	
+			{
+				rpcPattern = value;
+				DictionaryUtil.Add(QueryParameters, "RpcPattern", value);
+			}
+		}
+
+		public string UserLogConfig
+		{
+			get
+			{
+				return userLogConfig;
+			}
+			set	
+			{
+				userLogConfig = value;
+				DictionaryUtil.Add(QueryParameters, "UserLogConfig", value);
+			}
+		}
+
 		public List<Tag> Tags
 		{
 			get
@@ -116,6 +163,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public string CustomTraceConfig
+		{
+			get
+			{
+				return customTraceConfig;
+			}
+			set	
+			{
+				customTraceConfig = value;
+				DictionaryUtil.Add(QueryParameters, "CustomTraceConfig", value);
 			}
 		}
 

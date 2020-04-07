@@ -47,6 +47,10 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiGroupResponse.InstanceType = context.StringValue("DescribeApiGroup.InstanceType");
 			describeApiGroupResponse.InstanceId = context.StringValue("DescribeApiGroup.InstanceId");
 			describeApiGroupResponse.HttpsPolicy = context.StringValue("DescribeApiGroup.HttpsPolicy");
+			describeApiGroupResponse.UserLogConfig = context.StringValue("DescribeApiGroup.UserLogConfig");
+			describeApiGroupResponse.CustomTraceConfig = context.StringValue("DescribeApiGroup.CustomTraceConfig");
+			describeApiGroupResponse.RpcPattern = context.StringValue("DescribeApiGroup.RpcPattern");
+			describeApiGroupResponse.CompatibleFlags = context.StringValue("DescribeApiGroup.CompatibleFlags");
 
 			List<DescribeApiGroupResponse.DescribeApiGroup_DomainItem> describeApiGroupResponse_customDomains = new List<DescribeApiGroupResponse.DescribeApiGroup_DomainItem>();
 			for (int i = 0; i < context.Length("DescribeApiGroup.CustomDomains.Length"); i++) {
@@ -56,6 +60,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				domainItem.CertificateName = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].CertificateName");
 				domainItem.DomainCNAMEStatus = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainCNAMEStatus");
 				domainItem.DomainBindingStatus = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainBindingStatus");
+				domainItem.BindStageName = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].BindStageName");
 				domainItem.DomainLegalStatus = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainLegalStatus");
 				domainItem.DomainWebSocketStatus = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainWebSocketStatus");
 				domainItem.DomainRemark = context.StringValue("DescribeApiGroup.CustomDomains["+ i +"].DomainRemark");

@@ -43,7 +43,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				appApiRelationInfo.GroupId = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].GroupId");
 				appApiRelationInfo.GroupName = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].GroupName");
 				appApiRelationInfo.StageName = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].StageName");
-				appApiRelationInfo._Operator = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"]._Operator");
+				appApiRelationInfo._Operator = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].Operator");
 				appApiRelationInfo.ApiId = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].ApiId");
 				appApiRelationInfo.ApiName = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].ApiName");
 				appApiRelationInfo.AuthorizationSource = context.StringValue("DescribeApisByApp.AppApiRelationInfos["+ i +"].AuthorizationSource");

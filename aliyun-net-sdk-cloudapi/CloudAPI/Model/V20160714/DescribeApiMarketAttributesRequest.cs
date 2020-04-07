@@ -27,10 +27,10 @@ using Aliyun.Acs.CloudAPI.Transform.V20160714;
 
 namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
-    public class DeleteInstanceRequest : RpcAcsRequest<DeleteInstanceResponse>
+    public class DescribeApiMarketAttributesRequest : RpcAcsRequest<DescribeApiMarketAttributesResponse>
     {
-        public DeleteInstanceRequest()
-            : base("CloudAPI", "2016-07-14", "DeleteInstance", "apigateway", "openAPI")
+        public DescribeApiMarketAttributesRequest()
+            : base("CloudAPI", "2016-07-14", "DescribeApiMarketAttributes", "apigateway", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,91 +39,54 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
-		private string token;
+		private string groupId;
 
-		private string instanceId;
+		private string securityToken;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private string apiId;
 
-		public string Token
+		public string GroupId
 		{
 			get
 			{
-				return token;
+				return groupId;
 			}
 			set	
 			{
-				token = value;
-				DictionaryUtil.Add(QueryParameters, "Token", value);
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
-		public string InstanceId
+		public string SecurityToken
 		{
 			get
 			{
-				return instanceId;
+				return securityToken;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public List<Tag> Tags
+		public string ApiId
 		{
 			get
 			{
-				return tags;
+				return apiId;
 			}
-
-			set
+			set	
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
+				apiId = value;
+				DictionaryUtil.Add(QueryParameters, "ApiId", value);
 			}
 		}
 
-		public class Tag
-		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-		}
-
-        public override DeleteInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeApiMarketAttributesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeApiMarketAttributesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -52,6 +52,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 			describeApiResponse.ResultBodyModel = context.StringValue("DescribeApi.ResultBodyModel");
 			describeApiResponse.ForceNonceCheck = context.BooleanValue("DescribeApi.ForceNonceCheck");
 			describeApiResponse.DisableInternet = context.BooleanValue("DescribeApi.DisableInternet");
+			describeApiResponse.AppCodeAuthType = context.StringValue("DescribeApi.AppCodeAuthType");
 
 			DescribeApiResponse.DescribeApi_RequestConfig requestConfig = new DescribeApiResponse.DescribeApi_RequestConfig();
 			requestConfig.RequestProtocol = context.StringValue("DescribeApi.RequestConfig.RequestProtocol");
@@ -194,6 +195,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				requestParameter.DocShow = context.StringValue("DescribeApi.RequestParameters["+ i +"].DocShow");
 				requestParameter.DocOrder = context.IntegerValue("DescribeApi.RequestParameters["+ i +"].DocOrder");
 				requestParameter.Description = context.StringValue("DescribeApi.RequestParameters["+ i +"].Description");
+				requestParameter.ArrayItemsType = context.StringValue("DescribeApi.RequestParameters["+ i +"].ArrayItemsType");
 
 				describeApiResponse_requestParameters.Add(requestParameter);
 			}

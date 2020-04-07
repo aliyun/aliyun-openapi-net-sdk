@@ -47,6 +47,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private string certificateBody;
 
+		private string caCertificateBody;
+
 		private string securityToken;
 
 		private string certificateName;
@@ -100,6 +102,19 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			{
 				certificateBody = value;
 				DictionaryUtil.Add(QueryParameters, "CertificateBody", value);
+			}
+		}
+
+		public string CaCertificateBody
+		{
+			get
+			{
+				return caCertificateBody;
+			}
+			set	
+			{
+				caCertificateBody = value;
+				DictionaryUtil.Add(QueryParameters, "CaCertificateBody", value);
 			}
 		}
 

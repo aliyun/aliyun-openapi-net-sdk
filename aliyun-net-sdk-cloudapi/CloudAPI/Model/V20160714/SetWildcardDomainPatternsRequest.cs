@@ -27,10 +27,10 @@ using Aliyun.Acs.CloudAPI.Transform.V20160714;
 
 namespace Aliyun.Acs.CloudAPI.Model.V20160714
 {
-    public class DeleteInstanceRequest : RpcAcsRequest<DeleteInstanceResponse>
+    public class SetWildcardDomainPatternsRequest : RpcAcsRequest<SetWildcardDomainPatternsResponse>
     {
-        public DeleteInstanceRequest()
-            : base("CloudAPI", "2016-07-14", "DeleteInstance", "apigateway", "openAPI")
+        public SetWildcardDomainPatternsRequest()
+            : base("CloudAPI", "2016-07-14", "SetWildcardDomainPatterns", "apigateway", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,91 +39,69 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
             }
         }
 
-		private string token;
+		private string groupId;
 
-		private string instanceId;
+		private string domainName;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private string securityToken;
 
-		public string Token
+		private string wildcardDomainPatterns;
+
+		public string GroupId
 		{
 			get
 			{
-				return token;
+				return groupId;
 			}
 			set	
 			{
-				token = value;
-				DictionaryUtil.Add(QueryParameters, "Token", value);
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
-		public string InstanceId
+		public string DomainName
 		{
 			get
 			{
-				return instanceId;
+				return domainName;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
-		public List<Tag> Tags
+		public string SecurityToken
 		{
 			get
 			{
-				return tags;
+				return securityToken;
 			}
-
-			set
+			set	
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public class Tag
+		public string WildcardDomainPatterns
 		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
+			get
 			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
+				return wildcardDomainPatterns;
 			}
-
-			public string Key
+			set	
 			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
+				wildcardDomainPatterns = value;
+				DictionaryUtil.Add(QueryParameters, "WildcardDomainPatterns", value);
 			}
 		}
 
-        public override DeleteInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetWildcardDomainPatternsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetWildcardDomainPatternsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

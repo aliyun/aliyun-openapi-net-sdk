@@ -42,7 +42,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				authorizedApp.StageName = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].StageName");
 				authorizedApp.AppId = context.LongValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AppId");
 				authorizedApp.AppName = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AppName");
-				authorizedApp._Operator = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"]._Operator");
+				authorizedApp._Operator = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].Operator");
 				authorizedApp.AuthorizationSource = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AuthorizationSource");
 				authorizedApp.Description = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].Description");
 				authorizedApp.AuthorizedTime = context.StringValue("DescribeAuthorizedApps.AuthorizedApps["+ i +"].AuthorizedTime");

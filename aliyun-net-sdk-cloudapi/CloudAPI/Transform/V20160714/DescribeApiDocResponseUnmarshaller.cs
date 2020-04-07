@@ -103,6 +103,7 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				requestParameter.DocShow = context.StringValue("DescribeApiDoc.RequestParameters["+ i +"].DocShow");
 				requestParameter.DocOrder = context.IntegerValue("DescribeApiDoc.RequestParameters["+ i +"].DocOrder");
 				requestParameter.Description = context.StringValue("DescribeApiDoc.RequestParameters["+ i +"].Description");
+				requestParameter.ArrayItemsType = context.StringValue("DescribeApiDoc.RequestParameters["+ i +"].ArrayItemsType");
 
 				describeApiDocResponse_requestParameters.Add(requestParameter);
 			}

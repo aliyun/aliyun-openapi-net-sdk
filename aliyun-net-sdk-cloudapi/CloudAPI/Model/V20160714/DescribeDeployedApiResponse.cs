@@ -836,6 +836,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private string description;
 
+			private string arrayItemsType;
+
 			public string ApiParameterName
 			{
 				get
@@ -1025,6 +1027,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string ArrayItemsType
+			{
+				get
+				{
+					return arrayItemsType;
+				}
+				set	
+				{
+					arrayItemsType = value;
 				}
 			}
 		}
@@ -1230,6 +1244,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private int? mockStatusCode;
 
+			private string vpcId;
+
 			private List<DescribeDeployedApi_MockHeader> mockHeaders;
 
 			private DescribeDeployedApi_VpcConfig vpcConfig;
@@ -1341,6 +1357,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					mockStatusCode = value;
+				}
+			}
+
+			public string VpcId
+			{
+				get
+				{
+					return vpcId;
+				}
+				set	
+				{
+					vpcId = value;
 				}
 			}
 

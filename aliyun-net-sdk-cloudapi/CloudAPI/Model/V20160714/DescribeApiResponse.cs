@@ -67,6 +67,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 		private bool? disableInternet;
 
+		private string appCodeAuthType;
+
 		private List<DescribeApi_ErrorCodeSample> errorCodeSamples;
 
 		private List<DescribeApi_ResultDescription> resultDescriptions;
@@ -340,6 +342,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 			set	
 			{
 				disableInternet = value;
+			}
+		}
+
+		public string AppCodeAuthType
+		{
+			get
+			{
+				return appCodeAuthType;
+			}
+			set	
+			{
+				appCodeAuthType = value;
 			}
 		}
 
@@ -906,6 +920,8 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 
 			private string description;
 
+			private string arrayItemsType;
+
 			public string ApiParameterName
 			{
 				get
@@ -1095,6 +1111,18 @@ namespace Aliyun.Acs.CloudAPI.Model.V20160714
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string ArrayItemsType
+			{
+				get
+				{
+					return arrayItemsType;
+				}
+				set	
+				{
+					arrayItemsType = value;
 				}
 			}
 		}

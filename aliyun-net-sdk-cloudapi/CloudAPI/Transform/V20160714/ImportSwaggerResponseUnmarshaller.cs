@@ -55,6 +55,29 @@ namespace Aliyun.Acs.CloudAPI.Transform.V20160714
 				importSwaggerResponse_failed.Add(apiImportSwaggerFailed);
 			}
 			importSwaggerResponse.Failed = importSwaggerResponse_failed;
+
+			List<ImportSwaggerResponse.ImportSwagger_ApiImportModelFailed> importSwaggerResponse_modelFailed = new List<ImportSwaggerResponse.ImportSwagger_ApiImportModelFailed>();
+			for (int i = 0; i < context.Length("ImportSwagger.ModelFailed.Length"); i++) {
+				ImportSwaggerResponse.ImportSwagger_ApiImportModelFailed apiImportModelFailed = new ImportSwaggerResponse.ImportSwagger_ApiImportModelFailed();
+				apiImportModelFailed.GroupId = context.StringValue("ImportSwagger.ModelFailed["+ i +"].GroupId");
+				apiImportModelFailed.ModelName = context.StringValue("ImportSwagger.ModelFailed["+ i +"].ModelName");
+				apiImportModelFailed.ErrorMsg = context.StringValue("ImportSwagger.ModelFailed["+ i +"].ErrorMsg");
+
+				importSwaggerResponse_modelFailed.Add(apiImportModelFailed);
+			}
+			importSwaggerResponse.ModelFailed = importSwaggerResponse_modelFailed;
+
+			List<ImportSwaggerResponse.ImportSwagger_ApiImportModelSuccess> importSwaggerResponse_modelSuccess = new List<ImportSwaggerResponse.ImportSwagger_ApiImportModelSuccess>();
+			for (int i = 0; i < context.Length("ImportSwagger.ModelSuccess.Length"); i++) {
+				ImportSwaggerResponse.ImportSwagger_ApiImportModelSuccess apiImportModelSuccess = new ImportSwaggerResponse.ImportSwagger_ApiImportModelSuccess();
+				apiImportModelSuccess.ModelUid = context.StringValue("ImportSwagger.ModelSuccess["+ i +"].ModelUid");
+				apiImportModelSuccess.ModelOperation = context.StringValue("ImportSwagger.ModelSuccess["+ i +"].ModelOperation");
+				apiImportModelSuccess.GroupId = context.StringValue("ImportSwagger.ModelSuccess["+ i +"].GroupId");
+				apiImportModelSuccess.ModelName = context.StringValue("ImportSwagger.ModelSuccess["+ i +"].ModelName");
+
+				importSwaggerResponse_modelSuccess.Add(apiImportModelSuccess);
+			}
+			importSwaggerResponse.ModelSuccess = importSwaggerResponse_modelSuccess;
         
 			return importSwaggerResponse;
         }
