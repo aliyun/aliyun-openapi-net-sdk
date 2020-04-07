@@ -47,6 +47,18 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Transform.V20190524
 				analyzePlaceItem.Count = context.LongValue("GetAnalyzePlaceData.AnalyzePlaceItems["+ i +"].Count");
 				analyzePlaceItem.StoreId = context.LongValue("GetAnalyzePlaceData.AnalyzePlaceItems["+ i +"].StoreId");
 				analyzePlaceItem.Percent = context.FloatValue("GetAnalyzePlaceData.AnalyzePlaceItems["+ i +"].Percent");
+				analyzePlaceItem.MaleCount = context.IntegerValue("GetAnalyzePlaceData.AnalyzePlaceItems["+ i +"].MaleCount");
+				analyzePlaceItem.FemaleCount = context.IntegerValue("GetAnalyzePlaceData.AnalyzePlaceItems["+ i +"].FemaleCount");
+
+				List<GetAnalyzePlaceDataResponse.GetAnalyzePlaceData_AnalyzePlaceItem.GetAnalyzePlaceData_AgeItem> analyzePlaceItem_ageItems = new List<GetAnalyzePlaceDataResponse.GetAnalyzePlaceData_AnalyzePlaceItem.GetAnalyzePlaceData_AgeItem>();
+				for (int j = 0; j < context.Length("GetAnalyzePlaceData.AnalyzePlaceItems["+ i +"].AgeItems.Length"); j++) {
+					GetAnalyzePlaceDataResponse.GetAnalyzePlaceData_AnalyzePlaceItem.GetAnalyzePlaceData_AgeItem ageItem = new GetAnalyzePlaceDataResponse.GetAnalyzePlaceData_AnalyzePlaceItem.GetAnalyzePlaceData_AgeItem();
+					ageItem.Count = context.IntegerValue("GetAnalyzePlaceData.AnalyzePlaceItems["+ i +"].AgeItems["+ j +"].Count");
+					ageItem.Age = context.IntegerValue("GetAnalyzePlaceData.AnalyzePlaceItems["+ i +"].AgeItems["+ j +"].Age");
+
+					analyzePlaceItem_ageItems.Add(ageItem);
+				}
+				analyzePlaceItem.AgeItems = analyzePlaceItem_ageItems;
 
 				getAnalyzePlaceDataResponse_analyzePlaceItems.Add(analyzePlaceItem);
 			}

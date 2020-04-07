@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 {
-	public class DescribeActionDataResponse : AcsResponse
+	public class DescribeHistoryActionDataResponse : AcsResponse
 	{
 
 		private int? pageNo;
@@ -39,9 +39,11 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 
 		private string storeId;
 
+		private long? totalCount;
+
 		private long? tsEnd;
 
-		private List<DescribeActionData_ActionsMsgItem> actionsMsgItems;
+		private List<DescribeHistoryActionData_ActionsMsgItem> actionsMsgItems;
 
 		public int? PageNo
 		{
@@ -127,6 +129,18 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
 		public long? TsEnd
 		{
 			get
@@ -139,7 +153,7 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public List<DescribeActionData_ActionsMsgItem> ActionsMsgItems
+		public List<DescribeHistoryActionData_ActionsMsgItem> ActionsMsgItems
 		{
 			get
 			{
@@ -151,7 +165,7 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public class DescribeActionData_ActionsMsgItem
+		public class DescribeHistoryActionData_ActionsMsgItem
 		{
 
 			private long? locationId;
@@ -172,9 +186,9 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 
 			private string locationLayerType;
 
-			private DescribeActionData_ActionInfosItem actionInfosItem;
+			private DescribeHistoryActionData_Infos infos;
 
-			private DescribeActionData_AttributesMsgItem attributesMsgItem;
+			private DescribeHistoryActionData_Attributes attributes;
 
 			public long? LocationId
 			{
@@ -284,32 +298,34 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 				}
 			}
 
-			public DescribeActionData_ActionInfosItem ActionInfosItem
+			public DescribeHistoryActionData_Infos Infos
 			{
 				get
 				{
-					return actionInfosItem;
+					return infos;
 				}
 				set	
 				{
-					actionInfosItem = value;
+					infos = value;
 				}
 			}
 
-			public DescribeActionData_AttributesMsgItem AttributesMsgItem
+			public DescribeHistoryActionData_Attributes Attributes
 			{
 				get
 				{
-					return attributesMsgItem;
+					return attributes;
 				}
 				set	
 				{
-					attributesMsgItem = value;
+					attributes = value;
 				}
 			}
 
-			public class DescribeActionData_ActionInfosItem
+			public class DescribeHistoryActionData_Infos
 			{
+
+				private long? inStay;
 
 				private long? maxts;
 
@@ -321,11 +337,21 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 
 				private long? mints;
 
-				private long? inStay;
+				private DescribeHistoryActionData_MapImagePoint mapImagePoint;
 
-				private DescribeActionData_MapImagePoint mapImagePoint;
+				private DescribeHistoryActionData_FaceImgRect faceImgRect;
 
-				private DescribeActionData_FaceImgRect faceImgRect;
+				public long? InStay
+				{
+					get
+					{
+						return inStay;
+					}
+					set	
+					{
+						inStay = value;
+					}
+				}
 
 				public long? Maxts
 				{
@@ -387,19 +413,7 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 					}
 				}
 
-				public long? InStay
-				{
-					get
-					{
-						return inStay;
-					}
-					set	
-					{
-						inStay = value;
-					}
-				}
-
-				public DescribeActionData_MapImagePoint MapImagePoint
+				public DescribeHistoryActionData_MapImagePoint MapImagePoint
 				{
 					get
 					{
@@ -411,7 +425,7 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 					}
 				}
 
-				public DescribeActionData_FaceImgRect FaceImgRect
+				public DescribeHistoryActionData_FaceImgRect FaceImgRect
 				{
 					get
 					{
@@ -423,7 +437,7 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 					}
 				}
 
-				public class DescribeActionData_MapImagePoint
+				public class DescribeHistoryActionData_MapImagePoint
 				{
 
 					private float? x;
@@ -455,7 +469,7 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 					}
 				}
 
-				public class DescribeActionData_FaceImgRect
+				public class DescribeHistoryActionData_FaceImgRect
 				{
 
 					private float? bottom;
@@ -516,7 +530,7 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 				}
 			}
 
-			public class DescribeActionData_AttributesMsgItem
+			public class DescribeHistoryActionData_Attributes
 			{
 
 				private string imgUrl;

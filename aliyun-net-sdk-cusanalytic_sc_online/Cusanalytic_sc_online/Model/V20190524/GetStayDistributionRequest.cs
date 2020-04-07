@@ -28,10 +28,10 @@ using Aliyun.Acs.cusanalytic_sc_online.Transform.V20190524;
 
 namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 {
-    public class GetHeatMapDataRequest : RpcAcsRequest<GetHeatMapDataResponse>
+    public class GetStayDistributionRequest : RpcAcsRequest<GetStayDistributionResponse>
     {
-        public GetHeatMapDataRequest()
-            : base("cusanalytic_sc_online", "2019-05-24", "GetHeatMapData")
+        public GetStayDistributionRequest()
+            : base("cusanalytic_sc_online", "2019-05-24", "GetStayDistribution")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,24 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
             }
         }
 
-		private string eMapName;
+		private long? summaryTime;
 
 		private long? storeId;
 
-		private string statDate;
+		private string summaryType;
 
-		public string EMapName
+		private long? locationId;
+
+		public long? SummaryTime
 		{
 			get
 			{
-				return eMapName;
+				return summaryTime;
 			}
 			set	
 			{
-				eMapName = value;
-				DictionaryUtil.Add(BodyParameters, "EMapName", value);
+				summaryTime = value;
+				DictionaryUtil.Add(BodyParameters, "SummaryTime", value.ToString());
 			}
 		}
 
@@ -72,22 +74,35 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public string StatDate
+		public string SummaryType
 		{
 			get
 			{
-				return statDate;
+				return summaryType;
 			}
 			set	
 			{
-				statDate = value;
-				DictionaryUtil.Add(BodyParameters, "StatDate", value);
+				summaryType = value;
+				DictionaryUtil.Add(BodyParameters, "SummaryType", value);
 			}
 		}
 
-        public override GetHeatMapDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public long? LocationId
+		{
+			get
+			{
+				return locationId;
+			}
+			set	
+			{
+				locationId = value;
+				DictionaryUtil.Add(BodyParameters, "LocationId", value.ToString());
+			}
+		}
+
+        public override GetStayDistributionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetHeatMapDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetStayDistributionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

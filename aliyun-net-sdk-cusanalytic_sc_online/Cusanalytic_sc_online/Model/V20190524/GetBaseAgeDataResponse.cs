@@ -22,58 +22,38 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 {
-	public class GetHeatMapDataResponse : AcsResponse
+	public class GetBaseAgeDataResponse : AcsResponse
 	{
 
-		private string eMapName;
-
-		private float? width;
-
-		private string eMapUrl;
+		private string day;
 
 		private long? storeId;
 
-		private float? height;
+		private string errorMsg;
 
-		private string msg;
+		private string hour;
+
+		private long? locationId;
+
+		private string summaryType;
 
 		private bool? success;
 
-		private List<GetHeatMapData_HeatMapItem> heatMapItems;
+		private List<GetBaseAgeData_AgeItem> ageItems;
 
-		public string EMapName
+		private List<GetBaseAgeData_AgeItem> femaleAgeItems;
+
+		private List<GetBaseAgeData_AgeItem> maleAgeItems;
+
+		public string Day
 		{
 			get
 			{
-				return eMapName;
+				return day;
 			}
 			set	
 			{
-				eMapName = value;
-			}
-		}
-
-		public float? Width
-		{
-			get
-			{
-				return width;
-			}
-			set	
-			{
-				width = value;
-			}
-		}
-
-		public string EMapUrl
-		{
-			get
-			{
-				return eMapUrl;
-			}
-			set	
-			{
-				eMapUrl = value;
+				day = value;
 			}
 		}
 
@@ -89,27 +69,51 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public float? Height
+		public string ErrorMsg
 		{
 			get
 			{
-				return height;
+				return errorMsg;
 			}
 			set	
 			{
-				height = value;
+				errorMsg = value;
 			}
 		}
 
-		public string Msg
+		public string Hour
 		{
 			get
 			{
-				return msg;
+				return hour;
 			}
 			set	
 			{
-				msg = value;
+				hour = value;
+			}
+		}
+
+		public long? LocationId
+		{
+			get
+			{
+				return locationId;
+			}
+			set	
+			{
+				locationId = value;
+			}
+		}
+
+		public string SummaryType
+		{
+			get
+			{
+				return summaryType;
+			}
+			set	
+			{
+				summaryType = value;
 			}
 		}
 
@@ -125,60 +129,70 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public List<GetHeatMapData_HeatMapItem> HeatMapItems
+		public List<GetBaseAgeData_AgeItem> AgeItems
 		{
 			get
 			{
-				return heatMapItems;
+				return ageItems;
 			}
 			set	
 			{
-				heatMapItems = value;
+				ageItems = value;
 			}
 		}
 
-		public class GetHeatMapData_HeatMapItem
+		public List<GetBaseAgeData_AgeItem> FemaleAgeItems
+		{
+			get
+			{
+				return femaleAgeItems;
+			}
+			set	
+			{
+				femaleAgeItems = value;
+			}
+		}
+
+		public List<GetBaseAgeData_AgeItem> MaleAgeItems
+		{
+			get
+			{
+				return maleAgeItems;
+			}
+			set	
+			{
+				maleAgeItems = value;
+			}
+		}
+
+		public class GetBaseAgeData_AgeItem
 		{
 
-			private float? y;
+			private string name;
 
-			private float? weight;
+			private int? count;
 
-			private float? x;
-
-			public float? Y
+			public string Name
 			{
 				get
 				{
-					return y;
+					return name;
 				}
 				set	
 				{
-					y = value;
+					name = value;
 				}
 			}
 
-			public float? Weight
+			public int? Count
 			{
 				get
 				{
-					return weight;
+					return count;
 				}
 				set	
 				{
-					weight = value;
-				}
-			}
-
-			public float? X
-			{
-				get
-				{
-					return x;
-				}
-				set	
-				{
-					x = value;
+					count = value;
 				}
 			}
 		}

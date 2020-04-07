@@ -28,10 +28,10 @@ using Aliyun.Acs.cusanalytic_sc_online.Transform.V20190524;
 
 namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 {
-    public class GetHeatMapDataRequest : RpcAcsRequest<GetHeatMapDataResponse>
+    public class GetBaseAgeDataRequest : RpcAcsRequest<GetBaseAgeDataResponse>
     {
-        public GetHeatMapDataRequest()
-            : base("cusanalytic_sc_online", "2019-05-24", "GetHeatMapData")
+        public GetBaseAgeDataRequest()
+            : base("cusanalytic_sc_online", "2019-05-24", "GetBaseAgeData")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,15 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
             }
         }
 
-		private string eMapName;
-
 		private long? storeId;
 
-		private string statDate;
+		private string hour;
 
-		public string EMapName
-		{
-			get
-			{
-				return eMapName;
-			}
-			set	
-			{
-				eMapName = value;
-				DictionaryUtil.Add(BodyParameters, "EMapName", value);
-			}
-		}
+		private string summaryType;
+
+		private long? locationId;
+
+		private string day;
 
 		public long? StoreId
 		{
@@ -72,22 +63,61 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public string StatDate
+		public string Hour
 		{
 			get
 			{
-				return statDate;
+				return hour;
 			}
 			set	
 			{
-				statDate = value;
-				DictionaryUtil.Add(BodyParameters, "StatDate", value);
+				hour = value;
+				DictionaryUtil.Add(BodyParameters, "Hour", value);
 			}
 		}
 
-        public override GetHeatMapDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string SummaryType
+		{
+			get
+			{
+				return summaryType;
+			}
+			set	
+			{
+				summaryType = value;
+				DictionaryUtil.Add(BodyParameters, "SummaryType", value);
+			}
+		}
+
+		public long? LocationId
+		{
+			get
+			{
+				return locationId;
+			}
+			set	
+			{
+				locationId = value;
+				DictionaryUtil.Add(BodyParameters, "LocationId", value.ToString());
+			}
+		}
+
+		public string Day
+		{
+			get
+			{
+				return day;
+			}
+			set	
+			{
+				day = value;
+				DictionaryUtil.Add(BodyParameters, "Day", value);
+			}
+		}
+
+        public override GetBaseAgeDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetHeatMapDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetBaseAgeDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

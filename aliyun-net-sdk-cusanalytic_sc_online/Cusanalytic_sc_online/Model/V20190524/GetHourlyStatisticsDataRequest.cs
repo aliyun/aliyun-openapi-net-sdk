@@ -28,10 +28,10 @@ using Aliyun.Acs.cusanalytic_sc_online.Transform.V20190524;
 
 namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 {
-    public class GetHeatMapDataRequest : RpcAcsRequest<GetHeatMapDataResponse>
+    public class GetHourlyStatisticsDataRequest : RpcAcsRequest<GetHourlyStatisticsDataResponse>
     {
-        public GetHeatMapDataRequest()
-            : base("cusanalytic_sc_online", "2019-05-24", "GetHeatMapData")
+        public GetHourlyStatisticsDataRequest()
+            : base("cusanalytic_sc_online", "2019-05-24", "GetHourlyStatisticsData")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,11 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
             }
         }
 
-		private string eMapName;
-
 		private long? storeId;
 
-		private string statDate;
+		private long? locationId;
 
-		public string EMapName
-		{
-			get
-			{
-				return eMapName;
-			}
-			set	
-			{
-				eMapName = value;
-				DictionaryUtil.Add(BodyParameters, "EMapName", value);
-			}
-		}
+		private string day;
 
 		public long? StoreId
 		{
@@ -72,22 +59,35 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public string StatDate
+		public long? LocationId
 		{
 			get
 			{
-				return statDate;
+				return locationId;
 			}
 			set	
 			{
-				statDate = value;
-				DictionaryUtil.Add(BodyParameters, "StatDate", value);
+				locationId = value;
+				DictionaryUtil.Add(BodyParameters, "LocationId", value.ToString());
 			}
 		}
 
-        public override GetHeatMapDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Day
+		{
+			get
+			{
+				return day;
+			}
+			set	
+			{
+				day = value;
+				DictionaryUtil.Add(BodyParameters, "Day", value);
+			}
+		}
+
+        public override GetHourlyStatisticsDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetHeatMapDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetHourlyStatisticsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

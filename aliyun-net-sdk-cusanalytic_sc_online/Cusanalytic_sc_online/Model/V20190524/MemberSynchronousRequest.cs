@@ -28,10 +28,10 @@ using Aliyun.Acs.cusanalytic_sc_online.Transform.V20190524;
 
 namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 {
-    public class GetHeatMapDataRequest : RpcAcsRequest<GetHeatMapDataResponse>
+    public class MemberSynchronousRequest : RpcAcsRequest<MemberSynchronousResponse>
     {
-        public GetHeatMapDataRequest()
-            : base("cusanalytic_sc_online", "2019-05-24", "GetHeatMapData")
+        public MemberSynchronousRequest()
+            : base("cusanalytic_sc_online", "2019-05-24", "MemberSynchronous")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,39 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
             }
         }
 
-		private string eMapName;
+		private long? ukId;
+
+		private string faceUrls;
 
 		private long? storeId;
 
-		private string statDate;
+		private string type;
 
-		public string EMapName
+		private long? custId;
+
+		public long? UkId
 		{
 			get
 			{
-				return eMapName;
+				return ukId;
 			}
 			set	
 			{
-				eMapName = value;
-				DictionaryUtil.Add(BodyParameters, "EMapName", value);
+				ukId = value;
+				DictionaryUtil.Add(BodyParameters, "UkId", value.ToString());
+			}
+		}
+
+		public string FaceUrls
+		{
+			get
+			{
+				return faceUrls;
+			}
+			set	
+			{
+				faceUrls = value;
+				DictionaryUtil.Add(BodyParameters, "FaceUrls", value);
 			}
 		}
 
@@ -72,22 +89,35 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public string StatDate
+		public string Type
 		{
 			get
 			{
-				return statDate;
+				return type;
 			}
 			set	
 			{
-				statDate = value;
-				DictionaryUtil.Add(BodyParameters, "StatDate", value);
+				type = value;
+				DictionaryUtil.Add(BodyParameters, "Type", value);
 			}
 		}
 
-        public override GetHeatMapDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public long? CustId
+		{
+			get
+			{
+				return custId;
+			}
+			set	
+			{
+				custId = value;
+				DictionaryUtil.Add(BodyParameters, "CustId", value.ToString());
+			}
+		}
+
+        public override MemberSynchronousResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetHeatMapDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return MemberSynchronousResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

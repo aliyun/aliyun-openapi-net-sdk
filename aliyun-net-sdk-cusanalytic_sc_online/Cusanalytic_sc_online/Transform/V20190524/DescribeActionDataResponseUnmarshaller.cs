@@ -59,6 +59,7 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Transform.V20190524
 				actionInfosItem.StayPeriod = context.LongValue("DescribeActionData.ActionsMsgItems["+ i +"].ActionInfosItem.StayPeriod");
 				actionInfosItem.RawId = context.LongValue("DescribeActionData.ActionsMsgItems["+ i +"].ActionInfosItem.RawId");
 				actionInfosItem.Mints = context.LongValue("DescribeActionData.ActionsMsgItems["+ i +"].ActionInfosItem.Mints");
+				actionInfosItem.InStay = context.LongValue("DescribeActionData.ActionsMsgItems["+ i +"].ActionInfosItem.InStay");
 
 				DescribeActionDataResponse.DescribeActionData_ActionsMsgItem.DescribeActionData_ActionInfosItem.DescribeActionData_MapImagePoint mapImagePoint = new DescribeActionDataResponse.DescribeActionData_ActionsMsgItem.DescribeActionData_ActionInfosItem.DescribeActionData_MapImagePoint();
 				mapImagePoint.X = context.FloatValue("DescribeActionData.ActionsMsgItems["+ i +"].ActionInfosItem.MapImagePoint.X");

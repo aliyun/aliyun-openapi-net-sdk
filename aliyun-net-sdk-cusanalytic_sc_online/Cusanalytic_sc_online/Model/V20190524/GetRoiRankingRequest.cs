@@ -28,10 +28,10 @@ using Aliyun.Acs.cusanalytic_sc_online.Transform.V20190524;
 
 namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 {
-    public class GetHeatMapDataRequest : RpcAcsRequest<GetHeatMapDataResponse>
+    public class GetRoiRankingRequest : RpcAcsRequest<GetRoiRankingResponse>
     {
-        public GetHeatMapDataRequest()
-            : base("cusanalytic_sc_online", "2019-05-24", "GetHeatMapData")
+        public GetRoiRankingRequest()
+            : base("cusanalytic_sc_online", "2019-05-24", "GetRoiRanking")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,20 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
             }
         }
 
-		private string eMapName;
+		private string date;
 
 		private long? storeId;
 
-		private string statDate;
-
-		public string EMapName
+		public string Date
 		{
 			get
 			{
-				return eMapName;
+				return date;
 			}
 			set	
 			{
-				eMapName = value;
-				DictionaryUtil.Add(BodyParameters, "EMapName", value);
+				date = value;
+				DictionaryUtil.Add(BodyParameters, "Date", value);
 			}
 		}
 
@@ -72,22 +70,9 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public string StatDate
-		{
-			get
-			{
-				return statDate;
-			}
-			set	
-			{
-				statDate = value;
-				DictionaryUtil.Add(BodyParameters, "StatDate", value);
-			}
-		}
-
-        public override GetHeatMapDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetRoiRankingResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetHeatMapDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetRoiRankingResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,84 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 {
-	public class GetHeatMapDataResponse : AcsResponse
+	public class GetRoiRankingResponse : AcsResponse
 	{
-
-		private string eMapName;
-
-		private float? width;
-
-		private string eMapUrl;
-
-		private long? storeId;
-
-		private float? height;
 
 		private string msg;
 
 		private bool? success;
 
-		private List<GetHeatMapData_HeatMapItem> heatMapItems;
-
-		public string EMapName
-		{
-			get
-			{
-				return eMapName;
-			}
-			set	
-			{
-				eMapName = value;
-			}
-		}
-
-		public float? Width
-		{
-			get
-			{
-				return width;
-			}
-			set	
-			{
-				width = value;
-			}
-		}
-
-		public string EMapUrl
-		{
-			get
-			{
-				return eMapUrl;
-			}
-			set	
-			{
-				eMapUrl = value;
-			}
-		}
-
-		public long? StoreId
-		{
-			get
-			{
-				return storeId;
-			}
-			set	
-			{
-				storeId = value;
-			}
-		}
-
-		public float? Height
-		{
-			get
-			{
-				return height;
-			}
-			set	
-			{
-				height = value;
-			}
-		}
+		private List<GetRoiRanking_RoiRankingItem> roiRankingItems;
 
 		public string Msg
 		{
@@ -125,60 +55,46 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public List<GetHeatMapData_HeatMapItem> HeatMapItems
+		public List<GetRoiRanking_RoiRankingItem> RoiRankingItems
 		{
 			get
 			{
-				return heatMapItems;
+				return roiRankingItems;
 			}
 			set	
 			{
-				heatMapItems = value;
+				roiRankingItems = value;
 			}
 		}
 
-		public class GetHeatMapData_HeatMapItem
+		public class GetRoiRanking_RoiRankingItem
 		{
 
-			private float? y;
+			private string locationName;
 
-			private float? weight;
+			private int? visitorNum;
 
-			private float? x;
-
-			public float? Y
+			public string LocationName
 			{
 				get
 				{
-					return y;
+					return locationName;
 				}
 				set	
 				{
-					y = value;
+					locationName = value;
 				}
 			}
 
-			public float? Weight
+			public int? VisitorNum
 			{
 				get
 				{
-					return weight;
+					return visitorNum;
 				}
 				set	
 				{
-					weight = value;
-				}
-			}
-
-			public float? X
-			{
-				get
-				{
-					return x;
-				}
-				set	
-				{
-					x = value;
+					visitorNum = value;
 				}
 			}
 		}

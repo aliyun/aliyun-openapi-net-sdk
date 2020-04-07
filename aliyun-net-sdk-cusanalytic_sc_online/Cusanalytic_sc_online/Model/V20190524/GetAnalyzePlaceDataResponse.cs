@@ -138,6 +138,12 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 
 			private float? percent;
 
+			private int? maleCount;
+
+			private int? femaleCount;
+
+			private List<GetAnalyzePlaceData_AgeItem> ageItems;
+
 			public string LocationName
 			{
 				get
@@ -207,6 +213,74 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 				set	
 				{
 					percent = value;
+				}
+			}
+
+			public int? MaleCount
+			{
+				get
+				{
+					return maleCount;
+				}
+				set	
+				{
+					maleCount = value;
+				}
+			}
+
+			public int? FemaleCount
+			{
+				get
+				{
+					return femaleCount;
+				}
+				set	
+				{
+					femaleCount = value;
+				}
+			}
+
+			public List<GetAnalyzePlaceData_AgeItem> AgeItems
+			{
+				get
+				{
+					return ageItems;
+				}
+				set	
+				{
+					ageItems = value;
+				}
+			}
+
+			public class GetAnalyzePlaceData_AgeItem
+			{
+
+				private int? count;
+
+				private int? age;
+
+				public int? Count
+				{
+					get
+					{
+						return count;
+					}
+					set	
+					{
+						count = value;
+					}
+				}
+
+				public int? Age
+				{
+					get
+					{
+						return age;
+					}
+					set	
+					{
+						age = value;
+					}
 				}
 			}
 		}

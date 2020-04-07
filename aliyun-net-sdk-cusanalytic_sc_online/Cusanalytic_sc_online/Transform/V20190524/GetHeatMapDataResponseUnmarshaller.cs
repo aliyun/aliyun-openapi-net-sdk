@@ -36,6 +36,8 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Transform.V20190524
 			getHeatMapDataResponse.EMapUrl = context.StringValue("GetHeatMapData.EMapUrl");
 			getHeatMapDataResponse.StoreId = context.LongValue("GetHeatMapData.StoreId");
 			getHeatMapDataResponse.Height = context.FloatValue("GetHeatMapData.Height");
+			getHeatMapDataResponse.Msg = context.StringValue("GetHeatMapData.Msg");
+			getHeatMapDataResponse.Success = context.BooleanValue("GetHeatMapData.Success");
 
 			List<GetHeatMapDataResponse.GetHeatMapData_HeatMapItem> getHeatMapDataResponse_heatMapItems = new List<GetHeatMapDataResponse.GetHeatMapData_HeatMapItem>();
 			for (int i = 0; i < context.Length("GetHeatMapData.HeatMapItems.Length"); i++) {

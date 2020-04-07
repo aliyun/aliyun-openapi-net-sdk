@@ -22,60 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 {
-	public class GetHeatMapDataResponse : AcsResponse
+	public class GetStayDistributionResponse : AcsResponse
 	{
-
-		private string eMapName;
-
-		private float? width;
-
-		private string eMapUrl;
 
 		private long? storeId;
 
-		private float? height;
+		private string errorMsg;
 
-		private string msg;
+		private long? locationId;
 
 		private bool? success;
 
-		private List<GetHeatMapData_HeatMapItem> heatMapItems;
-
-		public string EMapName
-		{
-			get
-			{
-				return eMapName;
-			}
-			set	
-			{
-				eMapName = value;
-			}
-		}
-
-		public float? Width
-		{
-			get
-			{
-				return width;
-			}
-			set	
-			{
-				width = value;
-			}
-		}
-
-		public string EMapUrl
-		{
-			get
-			{
-				return eMapUrl;
-			}
-			set	
-			{
-				eMapUrl = value;
-			}
-		}
+		private List<GetStayDistribution_StayDistributionItem> stayDistributionItems;
 
 		public long? StoreId
 		{
@@ -89,27 +47,27 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public float? Height
+		public string ErrorMsg
 		{
 			get
 			{
-				return height;
+				return errorMsg;
 			}
 			set	
 			{
-				height = value;
+				errorMsg = value;
 			}
 		}
 
-		public string Msg
+		public long? LocationId
 		{
 			get
 			{
-				return msg;
+				return locationId;
 			}
 			set	
 			{
-				msg = value;
+				locationId = value;
 			}
 		}
 
@@ -125,60 +83,60 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public List<GetHeatMapData_HeatMapItem> HeatMapItems
+		public List<GetStayDistribution_StayDistributionItem> StayDistributionItems
 		{
 			get
 			{
-				return heatMapItems;
+				return stayDistributionItems;
 			}
 			set	
 			{
-				heatMapItems = value;
+				stayDistributionItems = value;
 			}
 		}
 
-		public class GetHeatMapData_HeatMapItem
+		public class GetStayDistribution_StayDistributionItem
 		{
 
-			private float? y;
+			private long? endTs;
 
-			private float? weight;
+			private int? count;
 
-			private float? x;
+			private long? startTs;
 
-			public float? Y
+			public long? EndTs
 			{
 				get
 				{
-					return y;
+					return endTs;
 				}
 				set	
 				{
-					y = value;
+					endTs = value;
 				}
 			}
 
-			public float? Weight
+			public int? Count
 			{
 				get
 				{
-					return weight;
+					return count;
 				}
 				set	
 				{
-					weight = value;
+					count = value;
 				}
 			}
 
-			public float? X
+			public long? StartTs
 			{
 				get
 				{
-					return x;
+					return startTs;
 				}
 				set	
 				{
-					x = value;
+					startTs = value;
 				}
 			}
 		}

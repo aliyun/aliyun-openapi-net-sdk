@@ -42,13 +42,13 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 
 		private long? endUVCount;
 
-		private long? parentAmount;
-
 		private string startDate;
 
-		private long? startUVCount;
-
 		private long? storeId;
+
+		private long? parentAmount;
+
+		private long? startUVCount;
 
 		private string endDate;
 
@@ -69,19 +69,6 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public long? ParentAmount
-		{
-			get
-			{
-				return parentAmount;
-			}
-			set	
-			{
-				parentAmount = value;
-				DictionaryUtil.Add(BodyParameters, "ParentAmount", value.ToString());
-			}
-		}
-
 		public string StartDate
 		{
 			get
@@ -95,19 +82,6 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public long? StartUVCount
-		{
-			get
-			{
-				return startUVCount;
-			}
-			set	
-			{
-				startUVCount = value;
-				DictionaryUtil.Add(BodyParameters, "StartUVCount", value.ToString());
-			}
-		}
-
 		public long? StoreId
 		{
 			get
@@ -118,6 +92,32 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			{
 				storeId = value;
 				DictionaryUtil.Add(BodyParameters, "StoreId", value.ToString());
+			}
+		}
+
+		public long? ParentAmount
+		{
+			get
+			{
+				return parentAmount;
+			}
+			set	
+			{
+				parentAmount = value;
+				DictionaryUtil.Add(BodyParameters, "ParentAmount", value.ToString());
+			}
+		}
+
+		public long? StartUVCount
+		{
+			get
+			{
+				return startUVCount;
+			}
+			set	
+			{
+				startUVCount = value;
+				DictionaryUtil.Add(BodyParameters, "StartUVCount", value.ToString());
 			}
 		}
 

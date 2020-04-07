@@ -28,10 +28,10 @@ using Aliyun.Acs.cusanalytic_sc_online.Transform.V20190524;
 
 namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 {
-    public class GetHeatMapDataRequest : RpcAcsRequest<GetHeatMapDataResponse>
+    public class GetCameraStatisticRequest : RpcAcsRequest<GetCameraStatisticResponse>
     {
-        public GetHeatMapDataRequest()
-            : base("cusanalytic_sc_online", "2019-05-24", "GetHeatMapData")
+        public GetCameraStatisticRequest()
+            : base("cusanalytic_sc_online", "2019-05-24", "GetCameraStatistic")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,22 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
             }
         }
 
-		private string eMapName;
+		private long? startTs;
 
 		private long? storeId;
 
-		private string statDate;
+		private long? endTs;
 
-		public string EMapName
+		public long? StartTs
 		{
 			get
 			{
-				return eMapName;
+				return startTs;
 			}
 			set	
 			{
-				eMapName = value;
-				DictionaryUtil.Add(BodyParameters, "EMapName", value);
+				startTs = value;
+				DictionaryUtil.Add(BodyParameters, "StartTs", value.ToString());
 			}
 		}
 
@@ -72,22 +72,22 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public string StatDate
+		public long? EndTs
 		{
 			get
 			{
-				return statDate;
+				return endTs;
 			}
 			set	
 			{
-				statDate = value;
-				DictionaryUtil.Add(BodyParameters, "StatDate", value);
+				endTs = value;
+				DictionaryUtil.Add(BodyParameters, "EndTs", value.ToString());
 			}
 		}
 
-        public override GetHeatMapDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetCameraStatisticResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetHeatMapDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetCameraStatisticResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

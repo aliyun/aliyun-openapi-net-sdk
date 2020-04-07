@@ -28,10 +28,10 @@ using Aliyun.Acs.cusanalytic_sc_online.Transform.V20190524;
 
 namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 {
-    public class GetHeatMapDataRequest : RpcAcsRequest<GetHeatMapDataResponse>
+    public class GetDailyStatisticsDataRequest : RpcAcsRequest<GetDailyStatisticsDataResponse>
     {
-        public GetHeatMapDataRequest()
-            : base("cusanalytic_sc_online", "2019-05-24", "GetHeatMapData")
+        public GetDailyStatisticsDataRequest()
+            : base("cusanalytic_sc_online", "2019-05-24", "GetDailyStatisticsData")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,9 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
             }
         }
 
-		private string eMapName;
-
 		private long? storeId;
 
-		private string statDate;
-
-		public string EMapName
-		{
-			get
-			{
-				return eMapName;
-			}
-			set	
-			{
-				eMapName = value;
-				DictionaryUtil.Add(BodyParameters, "EMapName", value);
-			}
-		}
+		private string day;
 
 		public long? StoreId
 		{
@@ -72,22 +57,22 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			}
 		}
 
-		public string StatDate
+		public string Day
 		{
 			get
 			{
-				return statDate;
+				return day;
 			}
 			set	
 			{
-				statDate = value;
-				DictionaryUtil.Add(BodyParameters, "StatDate", value);
+				day = value;
+				DictionaryUtil.Add(BodyParameters, "Day", value);
 			}
 		}
 
-        public override GetHeatMapDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetDailyStatisticsDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetHeatMapDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetDailyStatisticsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

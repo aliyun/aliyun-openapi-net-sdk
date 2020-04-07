@@ -28,10 +28,10 @@ using Aliyun.Acs.cusanalytic_sc_online.Transform.V20190524;
 
 namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 {
-    public class GetHeatMapDataRequest : RpcAcsRequest<GetHeatMapDataResponse>
+    public class DescribeHistoryActionDataRequest : RpcAcsRequest<DescribeHistoryActionDataResponse>
     {
-        public GetHeatMapDataRequest()
-            : base("cusanalytic_sc_online", "2019-05-24", "GetHeatMapData")
+        public DescribeHistoryActionDataRequest()
+            : base("cusanalytic_sc_online", "2019-05-24", "DescribeHistoryActionData")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,26 +40,30 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
             }
         }
 
-		private string eMapName;
+		private long? tsEnd;
 
-		private long? storeId;
+		private string storeId;
 
-		private string statDate;
+		private int? pageLimit;
 
-		public string EMapName
+		private int? pageNo;
+
+		private long? tsStart;
+
+		public long? TsEnd
 		{
 			get
 			{
-				return eMapName;
+				return tsEnd;
 			}
 			set	
 			{
-				eMapName = value;
-				DictionaryUtil.Add(BodyParameters, "EMapName", value);
+				tsEnd = value;
+				DictionaryUtil.Add(BodyParameters, "TsEnd", value.ToString());
 			}
 		}
 
-		public long? StoreId
+		public string StoreId
 		{
 			get
 			{
@@ -68,26 +72,52 @@ namespace Aliyun.Acs.cusanalytic_sc_online.Model.V20190524
 			set	
 			{
 				storeId = value;
-				DictionaryUtil.Add(BodyParameters, "StoreId", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "StoreId", value);
 			}
 		}
 
-		public string StatDate
+		public int? PageLimit
 		{
 			get
 			{
-				return statDate;
+				return pageLimit;
 			}
 			set	
 			{
-				statDate = value;
-				DictionaryUtil.Add(BodyParameters, "StatDate", value);
+				pageLimit = value;
+				DictionaryUtil.Add(BodyParameters, "PageLimit", value.ToString());
 			}
 		}
 
-        public override GetHeatMapDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(BodyParameters, "PageNo", value.ToString());
+			}
+		}
+
+		public long? TsStart
+		{
+			get
+			{
+				return tsStart;
+			}
+			set	
+			{
+				tsStart = value;
+				DictionaryUtil.Add(BodyParameters, "TsStart", value.ToString());
+			}
+		}
+
+        public override DescribeHistoryActionDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetHeatMapDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeHistoryActionDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
