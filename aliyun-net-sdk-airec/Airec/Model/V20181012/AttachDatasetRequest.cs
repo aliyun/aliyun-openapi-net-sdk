@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Airec.Model.V20181012
         public AttachDatasetRequest()
             : base("Airec", "2018-10-12", "AttachDataset", "airec", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/openapi/instances/[InstanceId]/dataSets/[VersionId]/actions/current";
 			Method = MethodType.POST;
         }

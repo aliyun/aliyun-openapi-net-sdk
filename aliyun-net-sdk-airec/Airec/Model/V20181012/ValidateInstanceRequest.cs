@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Airec.Model.V20181012
         public ValidateInstanceRequest()
             : base("Airec", "2018-10-12", "ValidateInstance", "airec", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/openapi/instances/[InstanceId]/actions/validate";
 			Method = MethodType.POST;
         }

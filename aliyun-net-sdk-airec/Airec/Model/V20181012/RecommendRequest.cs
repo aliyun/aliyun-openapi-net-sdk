@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Airec.Model.V20181012
         public RecommendRequest()
             : base("Airec", "2018-10-12", "Recommend", "airec", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/openapi/instances/[InstanceId]/actions/recommend";
 			Method = MethodType.GET;
         }
@@ -47,6 +52,8 @@ namespace Aliyun.Acs.Airec.Model.V20181012
 		private string imei;
 
 		private string userId;
+
+		private string items;
 
 		public int? ReturnCount
 		{
@@ -123,6 +130,19 @@ namespace Aliyun.Acs.Airec.Model.V20181012
 			{
 				userId = value;
 				DictionaryUtil.Add(QueryParameters, "UserId", value);
+			}
+		}
+
+		public string Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+				DictionaryUtil.Add(QueryParameters, "Items", value);
 			}
 		}
 

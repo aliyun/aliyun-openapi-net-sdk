@@ -32,9 +32,44 @@ namespace Aliyun.Acs.Airec.Model.V20181012
         public ListInstanceRequest()
             : base("Airec", "2018-10-12", "ListInstance", "airec", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			UriPattern = "/openapi/instances";
 			Method = MethodType.GET;
         }
+
+		private int? size;
+
+		private int? page;
+
+		public int? Size
+		{
+			get
+			{
+				return size;
+			}
+			set	
+			{
+				size = value;
+				DictionaryUtil.Add(QueryParameters, "size", value.ToString());
+			}
+		}
+
+		public int? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "page", value.ToString());
+			}
+		}
 
 		public override bool CheckShowJsonItemName()
 		{
