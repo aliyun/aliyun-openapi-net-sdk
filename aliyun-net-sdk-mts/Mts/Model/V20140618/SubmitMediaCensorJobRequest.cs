@@ -32,9 +32,22 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitMediaCensorJobRequest()
             : base("Mts", "2014-06-18", "SubmitMediaCensorJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string description;
+
+		private string title;
+
+		private string videoCensorConfig;
+
+		private string userData;
 
 		private string coverImages;
 
@@ -42,19 +55,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerAccount;
 
-		private string description;
-
 		private long? ownerId;
-
-		private string title;
 
 		private string pipelineId;
 
-		private string videoCensorConfig;
-
 		private string input;
-
-		private string userData;
 
 		private string barrages;
 
@@ -68,6 +73,58 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string Title
+		{
+			get
+			{
+				return title;
+			}
+			set	
+			{
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		public string VideoCensorConfig
+		{
+			get
+			{
+				return videoCensorConfig;
+			}
+			set	
+			{
+				videoCensorConfig = value;
+				DictionaryUtil.Add(QueryParameters, "VideoCensorConfig", value);
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 
@@ -110,19 +167,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -133,19 +177,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Title
-		{
-			get
-			{
-				return title;
-			}
-			set	
-			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
 			}
 		}
 
@@ -162,19 +193,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string VideoCensorConfig
-		{
-			get
-			{
-				return videoCensorConfig;
-			}
-			set	
-			{
-				videoCensorConfig = value;
-				DictionaryUtil.Add(QueryParameters, "VideoCensorConfig", value);
-			}
-		}
-
 		public string Input
 		{
 			get
@@ -185,19 +203,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				input = value;
 				DictionaryUtil.Add(QueryParameters, "Input", value);
-			}
-		}
-
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 

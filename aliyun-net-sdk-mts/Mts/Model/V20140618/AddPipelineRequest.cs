@@ -32,25 +32,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public AddPipelineRequest()
             : base("Mts", "2014-06-18", "AddPipeline", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string role;
 
+		private string speed;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string name;
 
 		private string notifyConfig;
 
 		private long? ownerId;
 
-		private long? speedLevel;
+		private string name;
 
-		private string speed;
+		private long? speedLevel;
 
 		public long? ResourceOwnerId
 		{
@@ -75,6 +80,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				role = value;
 				DictionaryUtil.Add(QueryParameters, "Role", value);
+			}
+		}
+
+		public string Speed
+		{
+			get
+			{
+				return speed;
+			}
+			set	
+			{
+				speed = value;
+				DictionaryUtil.Add(QueryParameters, "Speed", value);
 			}
 		}
 
@@ -104,19 +122,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public string NotifyConfig
 		{
 			get
@@ -143,6 +148,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
 		public long? SpeedLevel
 		{
 			get
@@ -153,19 +171,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				speedLevel = value;
 				DictionaryUtil.Add(QueryParameters, "SpeedLevel", value.ToString());
-			}
-		}
-
-		public string Speed
-		{
-			get
-			{
-				return speed;
-			}
-			set	
-			{
-				speed = value;
-				DictionaryUtil.Add(QueryParameters, "Speed", value);
 			}
 		}
 

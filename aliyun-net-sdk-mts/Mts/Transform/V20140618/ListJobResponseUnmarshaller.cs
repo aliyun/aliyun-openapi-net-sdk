@@ -331,7 +331,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				List<ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Opening> output_openingList = new List<ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Opening>();
 				for (int j = 0; j < context.Length("ListJob.JobList["+ i +"].Output.OpeningList.Length"); j++) {
 					ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Opening opening = new ListJobResponse.ListJob_Job.ListJob_Output.ListJob_Opening();
-					opening.OpenUrl = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].OpenUrl");
+					opening.OpenUrl = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].openUrl");
 					opening.Start = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].Start");
 					opening.Width = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].Width");
 					opening.Height = context.StringValue("ListJob.JobList["+ i +"].Output.OpeningList["+ j +"].Height");

@@ -399,7 +399,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					List<SubmitComplexJobResponse.SubmitComplexJob_ComplexJob.SubmitComplexJob_ComplexEditingConfigsItem.SubmitComplexJob_Editing.SubmitComplexJob_Timeline.SubmitComplexJob_Track.SubmitComplexJob_Clip1> track_clips = new List<SubmitComplexJobResponse.SubmitComplexJob_ComplexJob.SubmitComplexJob_ComplexEditingConfigsItem.SubmitComplexJob_Editing.SubmitComplexJob_Timeline.SubmitComplexJob_Track.SubmitComplexJob_Clip1>();
 					for (int k = 0; k < context.Length("SubmitComplexJob.ComplexJob.ComplexEditingConfigs["+ i +"].Editing.Timeline.TrackList["+ j +"].Clips.Length"); k++) {
 						SubmitComplexJobResponse.SubmitComplexJob_ComplexJob.SubmitComplexJob_ComplexEditingConfigsItem.SubmitComplexJob_Editing.SubmitComplexJob_Timeline.SubmitComplexJob_Track.SubmitComplexJob_Clip1 clip1 = new SubmitComplexJobResponse.SubmitComplexJob_ComplexJob.SubmitComplexJob_ComplexEditingConfigsItem.SubmitComplexJob_Editing.SubmitComplexJob_Timeline.SubmitComplexJob_Track.SubmitComplexJob_Clip1();
-						clip1.ClipID = context.StringValue("SubmitComplexJob.ComplexJob.ComplexEditingConfigs["+ i +"].Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].ClipID");
+						clip1.ClipID = context.StringValue("SubmitComplexJob.ComplexJob.ComplexEditingConfigs["+ i +"].Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].clipID");
 						clip1._In = context.StringValue("SubmitComplexJob.ComplexJob.ComplexEditingConfigs["+ i +"].Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].In");
 						clip1._Out = context.StringValue("SubmitComplexJob.ComplexJob.ComplexEditingConfigs["+ i +"].Editing.Timeline.TrackList["+ j +"].Clips["+ k +"].Out");
 

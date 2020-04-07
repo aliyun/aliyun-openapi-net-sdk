@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public AddCoverPipelineRequest()
             : base("Mts", "2014-06-18", "AddCoverPipeline", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -42,13 +47,13 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerAccount;
 
-		private string name;
-
 		private string notifyConfig;
 
 		private long? ownerId;
 
 		private string priority;
+
+		private string name;
 
 		public long? ResourceOwnerId
 		{
@@ -102,19 +107,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public string NotifyConfig
 		{
 			get
@@ -151,6 +143,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				priority = value;
 				DictionaryUtil.Add(QueryParameters, "Priority", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

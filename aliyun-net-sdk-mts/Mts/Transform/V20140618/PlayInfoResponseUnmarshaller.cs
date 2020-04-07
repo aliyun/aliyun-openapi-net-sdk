@@ -43,21 +43,21 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 			for (int i = 0; i < context.Length("PlayInfo.PlayInfoList.Length"); i++) {
 				PlayInfoResponse.PlayInfo_PlayInfo playInfo = new PlayInfoResponse.PlayInfo_PlayInfo();
 				playInfo.Url = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Url");
-				playInfo.Duration = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Duration");
-				playInfo.Size = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Size");
-				playInfo.Width = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Width");
-				playInfo.Height = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Height");
-				playInfo.Bitrate = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Bitrate");
-				playInfo.Fps = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Fps");
-				playInfo.Format = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Format");
-				playInfo.Definition = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Definition");
-				playInfo.Encryption = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Encryption");
-				playInfo.Rand = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Rand");
-				playInfo.Plaintext = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Plaintext");
-				playInfo.Complexity = context.StringValue("PlayInfo.PlayInfoList["+ i +"].Complexity");
-				playInfo.ActivityName = context.StringValue("PlayInfo.PlayInfoList["+ i +"].ActivityName");
-				playInfo.EncryptionType = context.StringValue("PlayInfo.PlayInfoList["+ i +"].EncryptionType");
-				playInfo.DownloadType = context.StringValue("PlayInfo.PlayInfoList["+ i +"].DownloadType");
+				playInfo.Duration = context.StringValue("PlayInfo.PlayInfoList["+ i +"].duration");
+				playInfo.Size = context.StringValue("PlayInfo.PlayInfoList["+ i +"].size");
+				playInfo.Width = context.StringValue("PlayInfo.PlayInfoList["+ i +"].width");
+				playInfo.Height = context.StringValue("PlayInfo.PlayInfoList["+ i +"].height");
+				playInfo.Bitrate = context.StringValue("PlayInfo.PlayInfoList["+ i +"].bitrate");
+				playInfo.Fps = context.StringValue("PlayInfo.PlayInfoList["+ i +"].fps");
+				playInfo.Format = context.StringValue("PlayInfo.PlayInfoList["+ i +"].format");
+				playInfo.Definition = context.StringValue("PlayInfo.PlayInfoList["+ i +"].definition");
+				playInfo.Encryption = context.StringValue("PlayInfo.PlayInfoList["+ i +"].encryption");
+				playInfo.Rand = context.StringValue("PlayInfo.PlayInfoList["+ i +"].rand");
+				playInfo.Plaintext = context.StringValue("PlayInfo.PlayInfoList["+ i +"].plaintext");
+				playInfo.Complexity = context.StringValue("PlayInfo.PlayInfoList["+ i +"].complexity");
+				playInfo.ActivityName = context.StringValue("PlayInfo.PlayInfoList["+ i +"].activityName");
+				playInfo.EncryptionType = context.StringValue("PlayInfo.PlayInfoList["+ i +"].encryptionType");
+				playInfo.DownloadType = context.StringValue("PlayInfo.PlayInfoList["+ i +"].downloadType");
 
 				playInfoResponse_playInfoList.Add(playInfo);
 			}

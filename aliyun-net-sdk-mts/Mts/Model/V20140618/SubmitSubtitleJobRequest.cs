@@ -32,15 +32,20 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitSubtitleJobRequest()
             : base("Mts", "2014-06-18", "SubmitSubtitleJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string userData;
 
 		private long? resourceOwnerId;
 
 		private string outputConfig;
 
 		private string inputConfig;
+
+		private string userData;
 
 		private string resourceOwnerAccount;
 
@@ -49,19 +54,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		private long? ownerId;
 
 		private string pipelineId;
-
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -99,6 +91,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				inputConfig = value;
 				DictionaryUtil.Add(QueryParameters, "InputConfig", value);
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 

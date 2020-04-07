@@ -32,25 +32,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitJobsRequest()
             : base("Mts", "2014-06-18", "SubmitJobs", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string outputs;
 
-		private string input;
-
-		private string outputBucket;
-
 		private long? resourceOwnerId;
+
+		private string outputLocation;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string outputLocation;
-
 		private long? ownerId;
 
 		private string pipelineId;
+
+		private string input;
+
+		private string outputBucket;
 
 		public string Outputs
 		{
@@ -65,32 +70,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Input
-		{
-			get
-			{
-				return input;
-			}
-			set	
-			{
-				input = value;
-				DictionaryUtil.Add(QueryParameters, "Input", value);
-			}
-		}
-
-		public string OutputBucket
-		{
-			get
-			{
-				return outputBucket;
-			}
-			set	
-			{
-				outputBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OutputBucket", value);
-			}
-		}
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -101,6 +80,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string OutputLocation
+		{
+			get
+			{
+				return outputLocation;
+			}
+			set	
+			{
+				outputLocation = value;
+				DictionaryUtil.Add(QueryParameters, "OutputLocation", value);
 			}
 		}
 
@@ -130,19 +122,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string OutputLocation
-		{
-			get
-			{
-				return outputLocation;
-			}
-			set	
-			{
-				outputLocation = value;
-				DictionaryUtil.Add(QueryParameters, "OutputLocation", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -166,6 +145,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
+			}
+		}
+
+		public string OutputBucket
+		{
+			get
+			{
+				return outputBucket;
+			}
+			set	
+			{
+				outputBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OutputBucket", value);
 			}
 		}
 

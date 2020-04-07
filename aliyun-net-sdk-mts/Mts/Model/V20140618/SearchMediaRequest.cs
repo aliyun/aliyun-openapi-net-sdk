@@ -32,17 +32,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SearchMediaRequest()
             : base("Mts", "2014-06-18", "SearchMedia", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
 		private string description;
-
-		private long? ownerId;
 
 		private string title;
 
@@ -54,13 +53,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string from;
 
-		private string sortBy;
-
-		private string to;
-
 		private string tag;
 
 		private string keyWord;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
+		private string sortBy;
+
+		private string to;
 
 		public long? ResourceOwnerId
 		{
@@ -75,32 +80,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -111,19 +90,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -192,32 +158,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string SortBy
-		{
-			get
-			{
-				return sortBy;
-			}
-			set	
-			{
-				sortBy = value;
-				DictionaryUtil.Add(QueryParameters, "SortBy", value);
-			}
-		}
-
-		public string To
-		{
-			get
-			{
-				return to;
-			}
-			set	
-			{
-				to = value;
-				DictionaryUtil.Add(QueryParameters, "To", value);
-			}
-		}
-
 		public string Tag
 		{
 			get
@@ -241,6 +181,71 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				keyWord = value;
 				DictionaryUtil.Add(QueryParameters, "KeyWord", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string SortBy
+		{
+			get
+			{
+				return sortBy;
+			}
+			set	
+			{
+				sortBy = value;
+				DictionaryUtil.Add(QueryParameters, "SortBy", value);
+			}
+		}
+
+		public string To
+		{
+			get
+			{
+				return to;
+			}
+			set	
+			{
+				to = value;
+				DictionaryUtil.Add(QueryParameters, "To", value);
 			}
 		}
 

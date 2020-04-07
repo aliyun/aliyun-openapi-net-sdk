@@ -32,13 +32,22 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public PlayInfoRequest()
             : base("Mts", "2014-06-18", "PlayInfo", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string playDomain;
 
 		private string resourceOwnerId;
 
 		private string formats;
+
+		private string rand;
+
+		private long? authTimeout;
+
+		private string playDomain;
 
 		private string resourceOwnerAccount;
 
@@ -52,24 +61,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string mediaId;
 
-		private string rand;
-
-		private long? authTimeout;
-
 		private string authInfo;
-
-		public string PlayDomain
-		{
-			get
-			{
-				return playDomain;
-			}
-			set	
-			{
-				playDomain = value;
-				DictionaryUtil.Add(QueryParameters, "PlayDomain", value);
-			}
-		}
 
 		public string ResourceOwnerId
 		{
@@ -94,6 +86,45 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				formats = value;
 				DictionaryUtil.Add(QueryParameters, "Formats", value);
+			}
+		}
+
+		public string Rand
+		{
+			get
+			{
+				return rand;
+			}
+			set	
+			{
+				rand = value;
+				DictionaryUtil.Add(QueryParameters, "Rand", value);
+			}
+		}
+
+		public long? AuthTimeout
+		{
+			get
+			{
+				return authTimeout;
+			}
+			set	
+			{
+				authTimeout = value;
+				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
+			}
+		}
+
+		public string PlayDomain
+		{
+			get
+			{
+				return playDomain;
+			}
+			set	
+			{
+				playDomain = value;
+				DictionaryUtil.Add(QueryParameters, "PlayDomain", value);
 			}
 		}
 
@@ -172,32 +203,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				mediaId = value;
 				DictionaryUtil.Add(QueryParameters, "MediaId", value);
-			}
-		}
-
-		public string Rand
-		{
-			get
-			{
-				return rand;
-			}
-			set	
-			{
-				rand = value;
-				DictionaryUtil.Add(QueryParameters, "Rand", value);
-			}
-		}
-
-		public long? AuthTimeout
-		{
-			get
-			{
-				return authTimeout;
-			}
-			set	
-			{
-				authTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "AuthTimeout", value.ToString());
 			}
 		}
 

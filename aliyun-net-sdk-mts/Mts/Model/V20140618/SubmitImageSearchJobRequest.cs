@@ -32,53 +32,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitImageSearchJobRequest()
             : base("Mts", "2014-06-18", "SubmitImageSearchJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string inputImage;
-
-		private string userData;
 
 		private long? resourceOwnerId;
 
 		private string fpDBId;
 
-		private string resourceOwnerAccount;
+		private string userData;
 
 		private string inputVideo;
+
+		private string inputImage;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string config;
-
 		private string pipelineId;
 
-		public string InputImage
-		{
-			get
-			{
-				return inputImage;
-			}
-			set	
-			{
-				inputImage = value;
-				DictionaryUtil.Add(QueryParameters, "InputImage", value);
-			}
-		}
-
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
+		private string config;
 
 		public long? ResourceOwnerId
 		{
@@ -106,16 +85,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string UserData
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return userData;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 
@@ -129,6 +108,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				inputVideo = value;
 				DictionaryUtil.Add(QueryParameters, "InputVideo", value);
+			}
+		}
+
+		public string InputImage
+		{
+			get
+			{
+				return inputImage;
+			}
+			set	
+			{
+				inputImage = value;
+				DictionaryUtil.Add(QueryParameters, "InputImage", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -158,19 +163,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Config
-		{
-			get
-			{
-				return config;
-			}
-			set	
-			{
-				config = value;
-				DictionaryUtil.Add(QueryParameters, "Config", value);
-			}
-		}
-
 		public string PipelineId
 		{
 			get
@@ -181,6 +173,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string Config
+		{
+			get
+			{
+				return config;
+			}
+			set	
+			{
+				config = value;
+				DictionaryUtil.Add(QueryParameters, "Config", value);
 			}
 		}
 

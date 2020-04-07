@@ -32,13 +32,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitSnapshotJobRequest()
             : base("Mts", "2014-06-18", "SubmitSnapshotJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string input;
+		private long? resourceOwnerId;
+
+		private string snapshotConfig;
 
 		private string userData;
-
-		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
@@ -46,20 +51,33 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private long? ownerId;
 
-		private string snapshotConfig;
-
 		private string pipelineId;
 
-		public string Input
+		private string input;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return input;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				input = value;
-				DictionaryUtil.Add(QueryParameters, "Input", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string SnapshotConfig
+		{
+			get
+			{
+				return snapshotConfig;
+			}
+			set	
+			{
+				snapshotConfig = value;
+				DictionaryUtil.Add(QueryParameters, "SnapshotConfig", value);
 			}
 		}
 
@@ -73,19 +91,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				userData = value;
 				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -128,19 +133,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string SnapshotConfig
-		{
-			get
-			{
-				return snapshotConfig;
-			}
-			set	
-			{
-				snapshotConfig = value;
-				DictionaryUtil.Add(QueryParameters, "SnapshotConfig", value);
-			}
-		}
-
 		public string PipelineId
 		{
 			get
@@ -151,6 +143,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
 			}
 		}
 

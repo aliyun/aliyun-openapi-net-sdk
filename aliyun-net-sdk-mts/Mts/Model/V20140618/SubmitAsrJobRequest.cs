@@ -32,34 +32,39 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitAsrJobRequest()
             : base("Mts", "2014-06-18", "SubmitAsrJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string input;
+		private long? resourceOwnerId;
 
 		private string userData;
 
-		private long? resourceOwnerId;
+		private string asrConfig;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string asrConfig;
-
 		private long? ownerId;
 
 		private string pipelineId;
 
-		public string Input
+		private string input;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return input;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				input = value;
-				DictionaryUtil.Add(QueryParameters, "Input", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -76,16 +81,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string AsrConfig
 		{
 			get
 			{
-				return resourceOwnerId;
+				return asrConfig;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				asrConfig = value;
+				DictionaryUtil.Add(QueryParameters, "AsrConfig", value);
 			}
 		}
 
@@ -115,19 +120,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string AsrConfig
-		{
-			get
-			{
-				return asrConfig;
-			}
-			set	
-			{
-				asrConfig = value;
-				DictionaryUtil.Add(QueryParameters, "AsrConfig", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -151,6 +143,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
 			}
 		}
 

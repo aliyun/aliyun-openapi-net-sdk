@@ -32,19 +32,24 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public UpdateCategoryNameRequest()
             : base("Mts", "2014-06-18", "UpdateCategoryName", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string cateId;
+
+		private string cateName;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string cateName;
 
 		public long? ResourceOwnerId
 		{
@@ -59,19 +64,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string CateId
 		{
 			get
@@ -82,6 +74,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				cateId = value;
 				DictionaryUtil.Add(QueryParameters, "CateId", value);
+			}
+		}
+
+		public string CateName
+		{
+			get
+			{
+				return cateName;
+			}
+			set	
+			{
+				cateName = value;
+				DictionaryUtil.Add(QueryParameters, "CateName", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -108,19 +126,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string CateName
-		{
-			get
-			{
-				return cateName;
-			}
-			set	
-			{
-				cateName = value;
-				DictionaryUtil.Add(QueryParameters, "CateName", value);
 			}
 		}
 

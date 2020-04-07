@@ -594,6 +594,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private string totalMatchFrameNum;
 
+					private string score;
+
 					public string QueryStartFrame
 					{
 						get
@@ -701,6 +703,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 							totalMatchFrameNum = value;
 						}
 					}
+
+					public string Score
+					{
+						get
+						{
+							return score;
+						}
+						set	
+						{
+							score = value;
+						}
+					}
 				}
 
 				public class QueryFpCompareJobList_MasterMediaInfo
@@ -717,6 +731,12 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					private string fps;
 
 					private string totalVideoFrame;
+
+					private string audioBitRate;
+
+					private string audioChannels;
+
+					private string audioSampleRate;
 
 					public string Duration
 					{
@@ -787,6 +807,42 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							totalVideoFrame = value;
+						}
+					}
+
+					public string AudioBitRate
+					{
+						get
+						{
+							return audioBitRate;
+						}
+						set	
+						{
+							audioBitRate = value;
+						}
+					}
+
+					public string AudioChannels
+					{
+						get
+						{
+							return audioChannels;
+						}
+						set	
+						{
+							audioChannels = value;
+						}
+					}
+
+					public string AudioSampleRate
+					{
+						get
+						{
+							return audioSampleRate;
+						}
+						set	
+						{
+							audioSampleRate = value;
 						}
 					}
 				}
@@ -806,6 +862,12 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 					private string totalVideoFrame;
 
+					private string audioBitRate;
+
+					private string audioChannels;
+
+					private string audioSampleRate;
+
 					public string Duration
 					{
 						get
@@ -875,6 +937,42 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						set	
 						{
 							totalVideoFrame = value;
+						}
+					}
+
+					public string AudioBitRate
+					{
+						get
+						{
+							return audioBitRate;
+						}
+						set	
+						{
+							audioBitRate = value;
+						}
+					}
+
+					public string AudioChannels
+					{
+						get
+						{
+							return audioChannels;
+						}
+						set	
+						{
+							audioChannels = value;
+						}
+					}
+
+					public string AudioSampleRate
+					{
+						get
+						{
+							return audioSampleRate;
+						}
+						set	
+						{
+							audioSampleRate = value;
 						}
 					}
 				}

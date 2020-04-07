@@ -140,6 +140,17 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				}
 				job.FaceResult = job_faceResult;
 
+				List<QueryMcuJobResponse.QueryMcuJob_Job.QueryMcuJob_SubTask> job_subTaskInfo = new List<QueryMcuJobResponse.QueryMcuJob_Job.QueryMcuJob_SubTask>();
+				for (int j = 0; j < context.Length("QueryMcuJob.JobResult["+ i +"].SubTaskInfo.Length"); j++) {
+					QueryMcuJobResponse.QueryMcuJob_Job.QueryMcuJob_SubTask subTask = new QueryMcuJobResponse.QueryMcuJob_Job.QueryMcuJob_SubTask();
+					subTask.Type = context.StringValue("QueryMcuJob.JobResult["+ i +"].SubTaskInfo["+ j +"].Type");
+					subTask.Code = context.StringValue("QueryMcuJob.JobResult["+ i +"].SubTaskInfo["+ j +"].Code");
+					subTask.Message = context.StringValue("QueryMcuJob.JobResult["+ i +"].SubTaskInfo["+ j +"].Message");
+
+					job_subTaskInfo.Add(subTask);
+				}
+				job.SubTaskInfo = job_subTaskInfo;
+
 				queryMcuJobResponse_jobResult.Add(job);
 			}
 			queryMcuJobResponse.JobResult = queryMcuJobResponse_jobResult;

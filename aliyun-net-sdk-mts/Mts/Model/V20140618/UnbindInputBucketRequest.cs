@@ -32,32 +32,24 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public UnbindInputBucketRequest()
             : base("Mts", "2014-06-18", "UnbindInputBucket", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string bucket;
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private string roleArn;
-
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		public string Bucket
-		{
-			get
-			{
-				return bucket;
-			}
-			set	
-			{
-				bucket = value;
-				DictionaryUtil.Add(QueryParameters, "Bucket", value);
-			}
-		}
+		private string bucket;
+
+		private string roleArn;
 
 		public long? ResourceOwnerId
 		{
@@ -85,19 +77,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string RoleArn
-		{
-			get
-			{
-				return roleArn;
-			}
-			set	
-			{
-				roleArn = value;
-				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -121,6 +100,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Bucket
+		{
+			get
+			{
+				return bucket;
+			}
+			set	
+			{
+				bucket = value;
+				DictionaryUtil.Add(QueryParameters, "Bucket", value);
+			}
+		}
+
+		public string RoleArn
+		{
+			get
+			{
+				return roleArn;
+			}
+			set	
+			{
+				roleArn = value;
+				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
 			}
 		}
 

@@ -32,34 +32,26 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public QueryMediaCensorJobDetailRequest()
             : base("Mts", "2014-06-18", "QueryMediaCensorJobDetail", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string jobId;
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string nextPageToken;
+
+		private string jobId;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? maximumPageSize;
 
 		private long? ownerId;
-
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -74,19 +66,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string NextPageToken
 		{
 			get
@@ -97,6 +76,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				nextPageToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextPageToken", value);
+			}
+		}
+
+		public string JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 

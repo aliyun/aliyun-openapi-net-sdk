@@ -94,6 +94,9 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				masterMediaInfo.Height = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.Height");
 				masterMediaInfo.Fps = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.Fps");
 				masterMediaInfo.TotalVideoFrame = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.TotalVideoFrame");
+				masterMediaInfo.AudioBitRate = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.AudioBitRate");
+				masterMediaInfo.AudioChannels = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.AudioChannels");
+				masterMediaInfo.AudioSampleRate = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.MasterMediaInfo.AudioSampleRate");
 				fpCompareResult.MasterMediaInfo = masterMediaInfo;
 
 				QueryFpCompareJobListResponse.QueryFpCompareJobList_FpCompareJob.QueryFpCompareJobList_FpCompareResult.QueryFpCompareJobList_QueryMediaInfo queryMediaInfo = new QueryFpCompareJobListResponse.QueryFpCompareJobList_FpCompareJob.QueryFpCompareJobList_FpCompareResult.QueryFpCompareJobList_QueryMediaInfo();
@@ -103,6 +106,9 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				queryMediaInfo.Height = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.Height");
 				queryMediaInfo.Fps = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.Fps");
 				queryMediaInfo.TotalVideoFrame = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.TotalVideoFrame");
+				queryMediaInfo.AudioBitRate = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.AudioBitRate");
+				queryMediaInfo.AudioChannels = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.AudioChannels");
+				queryMediaInfo.AudioSampleRate = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.QueryMediaInfo.AudioSampleRate");
 				fpCompareResult.QueryMediaInfo = queryMediaInfo;
 
 				List<QueryFpCompareJobListResponse.QueryFpCompareJobList_FpCompareJob.QueryFpCompareJobList_FpCompareResult.QueryFpCompareJobList_MediaMatchSegment> fpCompareResult_mediaMatchSegments = new List<QueryFpCompareJobListResponse.QueryFpCompareJobList_FpCompareJob.QueryFpCompareJobList_FpCompareResult.QueryFpCompareJobList_MediaMatchSegment>();
@@ -117,6 +123,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 					mediaMatchSegment.MasterStartTime = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].MasterStartTime");
 					mediaMatchSegment.MasterEndTime = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].MasterEndTime");
 					mediaMatchSegment.TotalMatchFrameNum = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].TotalMatchFrameNum");
+					mediaMatchSegment.Score = context.StringValue("QueryFpCompareJobList.FpCompareJobList["+ i +"].FpCompareResult.MediaMatchSegments["+ j +"].Score");
 
 					fpCompareResult_mediaMatchSegments.Add(mediaMatchSegment);
 				}

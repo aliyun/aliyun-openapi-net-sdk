@@ -32,17 +32,22 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public DeleteCategoryRequest()
             : base("Mts", "2014-06-18", "DeleteCategory", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private long? cateId;
-
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private long? cateId;
 
 		public long? ResourceOwnerId
 		{
@@ -70,19 +75,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public long? CateId
-		{
-			get
-			{
-				return cateId;
-			}
-			set	
-			{
-				cateId = value;
-				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -106,6 +98,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public long? CateId
+		{
+			get
+			{
+				return cateId;
+			}
+			set	
+			{
+				cateId = value;
+				DictionaryUtil.Add(QueryParameters, "CateId", value.ToString());
 			}
 		}
 

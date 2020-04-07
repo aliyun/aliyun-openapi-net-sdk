@@ -346,7 +346,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Opening> output_openingList = new List<SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Opening>();
 				for (int j = 0; j < context.Length("SubmitJobs.JobResultList["+ i +"].Job.Output.OpeningList.Length"); j++) {
 					SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Opening opening = new SubmitJobsResponse.SubmitJobs_JobResult.SubmitJobs_Job.SubmitJobs_Output.SubmitJobs_Opening();
-					opening.OpenUrl = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OpeningList["+ j +"].OpenUrl");
+					opening.OpenUrl = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OpeningList["+ j +"].openUrl");
 					opening.Start = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OpeningList["+ j +"].Start");
 					opening.Width = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OpeningList["+ j +"].Width");
 					opening.Height = context.StringValue("SubmitJobs.JobResultList["+ i +"].Job.Output.OpeningList["+ j +"].Height");

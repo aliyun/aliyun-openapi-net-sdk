@@ -32,15 +32,20 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public DeleteMediaTagRequest()
             : base("Mts", "2014-06-18", "DeleteMediaTag", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
+		private string tag;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string tag;
 
 		private long? ownerId;
 
@@ -56,6 +61,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Tag
+		{
+			get
+			{
+				return tag;
+			}
+			set	
+			{
+				tag = value;
+				DictionaryUtil.Add(QueryParameters, "Tag", value);
 			}
 		}
 
@@ -82,19 +100,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Tag
-		{
-			get
-			{
-				return tag;
-			}
-			set	
-			{
-				tag = value;
-				DictionaryUtil.Add(QueryParameters, "Tag", value);
 			}
 		}
 

@@ -32,19 +32,24 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public AddCategoryRequest()
             : base("Mts", "2014-06-18", "AddCategory", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private long? parentId;
+
+		private string cateName;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private long? parentId;
-
-		private string cateName;
 
 		public long? ResourceOwnerId
 		{
@@ -56,6 +61,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public long? ParentId
+		{
+			get
+			{
+				return parentId;
+			}
+			set	
+			{
+				parentId = value;
+				DictionaryUtil.Add(QueryParameters, "ParentId", value.ToString());
+			}
+		}
+
+		public string CateName
+		{
+			get
+			{
+				return cateName;
+			}
+			set	
+			{
+				cateName = value;
+				DictionaryUtil.Add(QueryParameters, "CateName", value);
 			}
 		}
 
@@ -95,32 +126,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public long? ParentId
-		{
-			get
-			{
-				return parentId;
-			}
-			set	
-			{
-				parentId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentId", value.ToString());
-			}
-		}
-
-		public string CateName
-		{
-			get
-			{
-				return cateName;
-			}
-			set	
-			{
-				cateName = value;
-				DictionaryUtil.Add(QueryParameters, "CateName", value);
 			}
 		}
 

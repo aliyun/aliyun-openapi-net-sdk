@@ -32,9 +32,12 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public UnbindOutputBucketRequest()
             : base("Mts", "2014-06-18", "UnbindOutputBucket", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string bucket;
 
 		private long? resourceOwnerId;
 
@@ -44,18 +47,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private long? ownerId;
 
-		public string Bucket
-		{
-			get
-			{
-				return bucket;
-			}
-			set	
-			{
-				bucket = value;
-				DictionaryUtil.Add(QueryParameters, "Bucket", value);
-			}
-		}
+		private string bucket;
 
 		public long? ResourceOwnerId
 		{
@@ -106,6 +98,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Bucket
+		{
+			get
+			{
+				return bucket;
+			}
+			set	
+			{
+				bucket = value;
+				DictionaryUtil.Add(QueryParameters, "Bucket", value);
 			}
 		}
 

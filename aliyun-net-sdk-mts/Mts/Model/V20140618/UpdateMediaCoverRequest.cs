@@ -32,11 +32,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public UpdateMediaCoverRequest()
             : base("Mts", "2014-06-18", "UpdateMediaCover", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string coverURL;
-
 		private long? resourceOwnerId;
+
+		private string coverURL;
 
 		private string resourceOwnerAccount;
 
@@ -45,19 +50,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		private long? ownerId;
 
 		private string mediaId;
-
-		public string CoverURL
-		{
-			get
-			{
-				return coverURL;
-			}
-			set	
-			{
-				coverURL = value;
-				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -69,6 +61,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string CoverURL
+		{
+			get
+			{
+				return coverURL;
+			}
+			set	
+			{
+				coverURL = value;
+				DictionaryUtil.Add(QueryParameters, "CoverURL", value);
 			}
 		}
 

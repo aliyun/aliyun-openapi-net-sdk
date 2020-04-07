@@ -32,13 +32,20 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitMediaFpDeleteJobRequest()
             : base("Mts", "2014-06-18", "SubmitMediaFpDeleteJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string userData;
 
 		private long? resourceOwnerId;
 
 		private string fpDBId;
+
+		private string userData;
+
+		private string primaryKey;
 
 		private string resourceOwnerAccount;
 
@@ -47,21 +54,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 		private long? ownerId;
 
 		private string pipelineId;
-
-		private string primaryKey;
-
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -86,6 +78,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				fpDBId = value;
 				DictionaryUtil.Add(QueryParameters, "FpDBId", value);
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public string PrimaryKey
+		{
+			get
+			{
+				return primaryKey;
+			}
+			set	
+			{
+				primaryKey = value;
+				DictionaryUtil.Add(QueryParameters, "PrimaryKey", value);
 			}
 		}
 
@@ -138,19 +156,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
-			}
-		}
-
-		public string PrimaryKey
-		{
-			get
-			{
-				return primaryKey;
-			}
-			set	
-			{
-				primaryKey = value;
-				DictionaryUtil.Add(QueryParameters, "PrimaryKey", value);
 			}
 		}
 

@@ -32,34 +32,52 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitCoverJobRequest()
             : base("Mts", "2014-06-18", "SubmitCoverJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string input;
+		private long? resourceOwnerId;
+
+		private string coverConfig;
 
 		private string userData;
-
-		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string coverConfig;
-
 		private long? ownerId;
 
 		private string pipelineId;
 
-		public string Input
+		private string input;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return input;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				input = value;
-				DictionaryUtil.Add(QueryParameters, "Input", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string CoverConfig
+		{
+			get
+			{
+				return coverConfig;
+			}
+			set	
+			{
+				coverConfig = value;
+				DictionaryUtil.Add(QueryParameters, "CoverConfig", value);
 			}
 		}
 
@@ -73,19 +91,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				userData = value;
 				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -115,19 +120,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string CoverConfig
-		{
-			get
-			{
-				return coverConfig;
-			}
-			set	
-			{
-				coverConfig = value;
-				DictionaryUtil.Add(QueryParameters, "CoverConfig", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -151,6 +143,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
 			}
 		}
 

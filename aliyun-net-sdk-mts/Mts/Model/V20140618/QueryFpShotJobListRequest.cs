@@ -32,15 +32,24 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public QueryFpShotJobListRequest()
             : base("Mts", "2014-06-18", "QueryFpShotJobList", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string nextPageToken;
 
 		private string startOfJobCreatedTimeRange;
+
+		private string state;
+
+		private string endOfJobCreatedTimeRange;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
@@ -54,10 +63,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string jobIds;
 
-		private string state;
-
-		private string endOfJobCreatedTimeRange;
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -68,19 +73,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -107,6 +99,45 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				startOfJobCreatedTimeRange = value;
 				DictionaryUtil.Add(QueryParameters, "StartOfJobCreatedTimeRange", value);
+			}
+		}
+
+		public string State
+		{
+			get
+			{
+				return state;
+			}
+			set	
+			{
+				state = value;
+				DictionaryUtil.Add(QueryParameters, "State", value);
+			}
+		}
+
+		public string EndOfJobCreatedTimeRange
+		{
+			get
+			{
+				return endOfJobCreatedTimeRange;
+			}
+			set	
+			{
+				endOfJobCreatedTimeRange = value;
+				DictionaryUtil.Add(QueryParameters, "EndOfJobCreatedTimeRange", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -185,32 +216,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				jobIds = value;
 				DictionaryUtil.Add(QueryParameters, "JobIds", value);
-			}
-		}
-
-		public string State
-		{
-			get
-			{
-				return state;
-			}
-			set	
-			{
-				state = value;
-				DictionaryUtil.Add(QueryParameters, "State", value);
-			}
-		}
-
-		public string EndOfJobCreatedTimeRange
-		{
-			get
-			{
-				return endOfJobCreatedTimeRange;
-			}
-			set	
-			{
-				endOfJobCreatedTimeRange = value;
-				DictionaryUtil.Add(QueryParameters, "EndOfJobCreatedTimeRange", value);
 			}
 		}
 

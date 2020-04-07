@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public QueryMcuJobRequest()
             : base("Mts", "2014-06-18", "QueryMcuJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -40,9 +45,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerAccount;
 
-		private string jobIds;
-
 		private long? ownerId;
+
+		private string jobIds;
 
 		public long? ResourceOwnerId
 		{
@@ -83,19 +88,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string JobIds
-		{
-			get
-			{
-				return jobIds;
-			}
-			set	
-			{
-				jobIds = value;
-				DictionaryUtil.Add(QueryParameters, "JobIds", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -106,6 +98,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string JobIds
+		{
+			get
+			{
+				return jobIds;
+			}
+			set	
+			{
+				jobIds = value;
+				DictionaryUtil.Add(QueryParameters, "JobIds", value);
 			}
 		}
 

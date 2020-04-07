@@ -32,21 +32,24 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitMCJobRequest()
             : base("Mts", "2014-06-18", "SubmitMCJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string userData;
 
 		private long? resourceOwnerId;
 
-		private string images;
+		private string video;
 
-		private string texts;
+		private string userData;
+
+		private string images;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string video;
 
 		private long? ownerId;
 
@@ -54,18 +57,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string pipelineId;
 
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
+		private string texts;
 
 		public long? ResourceOwnerId
 		{
@@ -80,6 +72,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string Video
+		{
+			get
+			{
+				return video;
+			}
+			set	
+			{
+				video = value;
+				DictionaryUtil.Add(QueryParameters, "Video", value);
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
 		public string Images
 		{
 			get
@@ -90,19 +108,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				images = value;
 				DictionaryUtil.Add(QueryParameters, "Images", value);
-			}
-		}
-
-		public string Texts
-		{
-			get
-			{
-				return texts;
-			}
-			set	
-			{
-				texts = value;
-				DictionaryUtil.Add(QueryParameters, "Texts", value);
 			}
 		}
 
@@ -129,19 +134,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Video
-		{
-			get
-			{
-				return video;
-			}
-			set	
-			{
-				video = value;
-				DictionaryUtil.Add(QueryParameters, "Video", value);
 			}
 		}
 
@@ -181,6 +173,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string Texts
+		{
+			get
+			{
+				return texts;
+			}
+			set	
+			{
+				texts = value;
+				DictionaryUtil.Add(QueryParameters, "Texts", value);
 			}
 		}
 

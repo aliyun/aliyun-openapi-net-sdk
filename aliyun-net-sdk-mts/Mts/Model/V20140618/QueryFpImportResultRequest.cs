@@ -32,21 +32,26 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public QueryFpImportResultRequest()
             : base("Mts", "2014-06-18", "QueryFpImportResult", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private long? startTime;
+
+		private long? pageSize;
+
+		private long? pageIndex;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private long? pageSize;
-
 		private long? endTime;
-
-		private long? pageIndex;
-
-		private long? startTime;
 
 		private long? ownerId;
 
@@ -60,6 +65,45 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public long? PageIndex
+		{
+			get
+			{
+				return pageIndex;
+			}
+			set	
+			{
+				pageIndex = value;
+				DictionaryUtil.Add(QueryParameters, "PageIndex", value.ToString());
 			}
 		}
 
@@ -89,19 +133,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public long? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public long? EndTime
 		{
 			get
@@ -112,32 +143,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				endTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
-			}
-		}
-
-		public long? PageIndex
-		{
-			get
-			{
-				return pageIndex;
-			}
-			set	
-			{
-				pageIndex = value;
-				DictionaryUtil.Add(QueryParameters, "PageIndex", value.ToString());
-			}
-		}
-
-		public long? StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 

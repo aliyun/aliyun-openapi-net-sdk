@@ -32,21 +32,34 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public UpdateMCTemplateRequest()
             : base("Mts", "2014-06-18", "UpdateMCTemplate", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string politics;
 
 		private long? resourceOwnerId;
 
+		private string abuse;
+
+		private string qrcode;
+
+		private string porn;
+
+		private string terrorism;
+
+		private string logo;
+
+		private string live;
+
 		private string contraband;
 
 		private string ad;
 
-		private string abuse;
-
 		private string resourceOwnerAccount;
-
-		private string qrcode;
 
 		private string ownerAccount;
 
@@ -54,17 +67,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string templateId;
 
-		private string porn;
-
-		private string terrorism;
-
 		private string name;
 
-		private string logo;
-
 		private string spam;
-
-		private string live;
 
 		public string Politics
 		{
@@ -89,6 +94,84 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Abuse
+		{
+			get
+			{
+				return abuse;
+			}
+			set	
+			{
+				abuse = value;
+				DictionaryUtil.Add(QueryParameters, "Abuse", value);
+			}
+		}
+
+		public string Qrcode
+		{
+			get
+			{
+				return qrcode;
+			}
+			set	
+			{
+				qrcode = value;
+				DictionaryUtil.Add(QueryParameters, "Qrcode", value);
+			}
+		}
+
+		public string Porn
+		{
+			get
+			{
+				return porn;
+			}
+			set	
+			{
+				porn = value;
+				DictionaryUtil.Add(QueryParameters, "Porn", value);
+			}
+		}
+
+		public string Terrorism
+		{
+			get
+			{
+				return terrorism;
+			}
+			set	
+			{
+				terrorism = value;
+				DictionaryUtil.Add(QueryParameters, "Terrorism", value);
+			}
+		}
+
+		public string Logo
+		{
+			get
+			{
+				return logo;
+			}
+			set	
+			{
+				logo = value;
+				DictionaryUtil.Add(QueryParameters, "Logo", value);
+			}
+		}
+
+		public string Live
+		{
+			get
+			{
+				return live;
+			}
+			set	
+			{
+				live = value;
+				DictionaryUtil.Add(QueryParameters, "Live", value);
 			}
 		}
 
@@ -118,19 +201,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Abuse
-		{
-			get
-			{
-				return abuse;
-			}
-			set	
-			{
-				abuse = value;
-				DictionaryUtil.Add(QueryParameters, "Abuse", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -141,19 +211,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string Qrcode
-		{
-			get
-			{
-				return qrcode;
-			}
-			set	
-			{
-				qrcode = value;
-				DictionaryUtil.Add(QueryParameters, "Qrcode", value);
 			}
 		}
 
@@ -196,32 +253,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Porn
-		{
-			get
-			{
-				return porn;
-			}
-			set	
-			{
-				porn = value;
-				DictionaryUtil.Add(QueryParameters, "Porn", value);
-			}
-		}
-
-		public string Terrorism
-		{
-			get
-			{
-				return terrorism;
-			}
-			set	
-			{
-				terrorism = value;
-				DictionaryUtil.Add(QueryParameters, "Terrorism", value);
-			}
-		}
-
 		public string Name
 		{
 			get
@@ -235,19 +266,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Logo
-		{
-			get
-			{
-				return logo;
-			}
-			set	
-			{
-				logo = value;
-				DictionaryUtil.Add(QueryParameters, "Logo", value);
-			}
-		}
-
 		public string Spam
 		{
 			get
@@ -258,19 +276,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				spam = value;
 				DictionaryUtil.Add(QueryParameters, "spam", value);
-			}
-		}
-
-		public string Live
-		{
-			get
-			{
-				return live;
-			}
-			set	
-			{
-				live = value;
-				DictionaryUtil.Add(QueryParameters, "Live", value);
 			}
 		}
 

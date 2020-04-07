@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public CreateMcuTemplateRequest()
             : base("Mts", "2014-06-18", "CreateMcuTemplate", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string template;

@@ -32,17 +32,22 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public QueryPipelineListRequest()
             : base("Mts", "2014-06-18", "QueryPipelineList", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private string pipelineIds;
-
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string pipelineIds;
 
 		public long? ResourceOwnerId
 		{
@@ -70,19 +75,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string PipelineIds
-		{
-			get
-			{
-				return pipelineIds;
-			}
-			set	
-			{
-				pipelineIds = value;
-				DictionaryUtil.Add(QueryParameters, "PipelineIds", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -106,6 +98,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PipelineIds
+		{
+			get
+			{
+				return pipelineIds;
+			}
+			set	
+			{
+				pipelineIds = value;
+				DictionaryUtil.Add(QueryParameters, "PipelineIds", value);
 			}
 		}
 

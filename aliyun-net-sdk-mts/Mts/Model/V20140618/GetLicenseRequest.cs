@@ -32,23 +32,28 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public GetLicenseRequest()
             : base("Mts", "2014-06-18", "GetLicense", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string resourceOwnerId;
 
 		private string data;
 
+		private string type;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string header;
 
 		private string ownerId;
 
 		private string mediaId;
 
-		private string type;
+		private string header;
 
 		private string licenseUrl;
 
@@ -78,6 +83,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -101,19 +119,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Header
-		{
-			get
-			{
-				return header;
-			}
-			set	
-			{
-				header = value;
-				DictionaryUtil.Add(QueryParameters, "Header", value);
 			}
 		}
 
@@ -143,16 +148,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Type
+		public string Header
 		{
 			get
 			{
-				return type;
+				return header;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				header = value;
+				DictionaryUtil.Add(QueryParameters, "Header", value);
 			}
 		}
 

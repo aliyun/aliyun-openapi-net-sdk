@@ -32,15 +32,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitMediaInfoJobRequest()
             : base("Mts", "2014-06-18", "SubmitMediaInfoJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string input;
+		private long? resourceOwnerId;
 
 		private string userData;
-
-		private bool? async;
-
-		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
@@ -50,16 +51,20 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string pipelineId;
 
-		public string Input
+		private string input;
+
+		private bool? async;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return input;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				input = value;
-				DictionaryUtil.Add(QueryParameters, "Input", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -73,32 +78,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				userData = value;
 				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
-
-		public bool? Async
-		{
-			get
-			{
-				return async;
-			}
-			set	
-			{
-				async = value;
-				DictionaryUtil.Add(QueryParameters, "Async", value.ToString());
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -151,6 +130,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
+			}
+		}
+
+		public bool? Async
+		{
+			get
+			{
+				return async;
+			}
+			set	
+			{
+				async = value;
+				DictionaryUtil.Add(QueryParameters, "Async", value.ToString());
 			}
 		}
 

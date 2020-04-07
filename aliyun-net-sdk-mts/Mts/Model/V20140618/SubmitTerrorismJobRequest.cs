@@ -32,13 +32,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitTerrorismJobRequest()
             : base("Mts", "2014-06-18", "SubmitTerrorismJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string input;
+		private long? resourceOwnerId;
+
+		private string terrorismConfig;
 
 		private string userData;
-
-		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
@@ -48,18 +53,31 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string pipelineId;
 
-		private string terrorismConfig;
+		private string input;
 
-		public string Input
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return input;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				input = value;
-				DictionaryUtil.Add(QueryParameters, "Input", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string TerrorismConfig
+		{
+			get
+			{
+				return terrorismConfig;
+			}
+			set	
+			{
+				terrorismConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TerrorismConfig", value);
 			}
 		}
 
@@ -73,19 +91,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				userData = value;
 				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -141,16 +146,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string TerrorismConfig
+		public string Input
 		{
 			get
 			{
-				return terrorismConfig;
+				return input;
 			}
 			set	
 			{
-				terrorismConfig = value;
-				DictionaryUtil.Add(QueryParameters, "TerrorismConfig", value);
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
 			}
 		}
 

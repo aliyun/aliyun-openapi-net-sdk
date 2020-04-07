@@ -106,6 +106,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private string fileId;
 
+			private string transactionId;
+
+			private string txHash;
+
 			private string state;
 
 			private string code;
@@ -167,6 +171,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					fileId = value;
+				}
+			}
+
+			public string TransactionId
+			{
+				get
+				{
+					return transactionId;
+				}
+				set	
+				{
+					transactionId = value;
+				}
+			}
+
+			public string TxHash
+			{
+				get
+				{
+					return txHash;
+				}
+				set	
+				{
+					txHash = value;
 				}
 			}
 
@@ -319,6 +347,10 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 				private string saveType;
 
+				private string notary;
+
+				private string fpDBId;
+
 				public string PrimaryKey
 				{
 					get
@@ -340,6 +372,30 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					set	
 					{
 						saveType = value;
+					}
+				}
+
+				public string Notary
+				{
+					get
+					{
+						return notary;
+					}
+					set	
+					{
+						notary = value;
+					}
+				}
+
+				public string FpDBId
+				{
+					get
+					{
+						return fpDBId;
+					}
+					set	
+					{
+						fpDBId = value;
 					}
 				}
 			}
@@ -423,9 +479,23 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 					public class QueryFpShotJobList_FpShotSlice
 					{
 
+						private string similarity;
+
 						private QueryFpShotJobList_Input input;
 
 						private QueryFpShotJobList_Duplication duplication;
+
+						public string Similarity
+						{
+							get
+							{
+								return similarity;
+							}
+							set	
+							{
+								similarity = value;
+							}
+						}
 
 						public QueryFpShotJobList_Input Input
 						{

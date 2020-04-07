@@ -32,11 +32,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitEditingJobsRequest()
             : base("Mts", "2014-06-18", "SubmitEditingJobs", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string outputBucket;
-
 		private long? resourceOwnerId;
+
+		private string outputLocation;
+
+		private string editingInputs;
 
 		private string editingJobOutputs;
 
@@ -44,26 +51,11 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerAccount;
 
-		private string outputLocation;
-
 		private long? ownerId;
-
-		private string editingInputs;
 
 		private string pipelineId;
 
-		public string OutputBucket
-		{
-			get
-			{
-				return outputBucket;
-			}
-			set	
-			{
-				outputBucket = value;
-				DictionaryUtil.Add(QueryParameters, "OutputBucket", value);
-			}
-		}
+		private string outputBucket;
 
 		public long? ResourceOwnerId
 		{
@@ -75,6 +67,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string OutputLocation
+		{
+			get
+			{
+				return outputLocation;
+			}
+			set	
+			{
+				outputLocation = value;
+				DictionaryUtil.Add(QueryParameters, "OutputLocation", value);
+			}
+		}
+
+		public string EditingInputs
+		{
+			get
+			{
+				return editingInputs;
+			}
+			set	
+			{
+				editingInputs = value;
+				DictionaryUtil.Add(QueryParameters, "EditingInputs", value);
 			}
 		}
 
@@ -117,19 +135,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string OutputLocation
-		{
-			get
-			{
-				return outputLocation;
-			}
-			set	
-			{
-				outputLocation = value;
-				DictionaryUtil.Add(QueryParameters, "OutputLocation", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -143,19 +148,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string EditingInputs
-		{
-			get
-			{
-				return editingInputs;
-			}
-			set	
-			{
-				editingInputs = value;
-				DictionaryUtil.Add(QueryParameters, "EditingInputs", value);
-			}
-		}
-
 		public string PipelineId
 		{
 			get
@@ -166,6 +158,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string OutputBucket
+		{
+			get
+			{
+				return outputBucket;
+			}
+			set	
+			{
+				outputBucket = value;
+				DictionaryUtil.Add(QueryParameters, "OutputBucket", value);
 			}
 		}
 

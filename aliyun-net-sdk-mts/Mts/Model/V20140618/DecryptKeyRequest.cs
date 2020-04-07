@@ -32,11 +32,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public DecryptKeyRequest()
             : base("Mts", "2014-06-18", "DecryptKey", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string resourceOwnerId;
 
 		private string rand;
 
-		private string resourceOwnerId;
+		private string ciphertextBlob;
 
 		private string resourceOwnerAccount;
 
@@ -44,7 +51,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerId;
 
-		private string ciphertextBlob;
+		public string ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+			}
+		}
 
 		public string Rand
 		{
@@ -59,16 +77,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string ResourceOwnerId
+		public string CiphertextBlob
 		{
 			get
 			{
-				return resourceOwnerId;
+				return ciphertextBlob;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
+				ciphertextBlob = value;
+				DictionaryUtil.Add(QueryParameters, "CiphertextBlob", value);
 			}
 		}
 
@@ -108,19 +126,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
-			}
-		}
-
-		public string CiphertextBlob
-		{
-			get
-			{
-				return ciphertextBlob;
-			}
-			set	
-			{
-				ciphertextBlob = value;
-				DictionaryUtil.Add(QueryParameters, "CiphertextBlob", value);
 			}
 		}
 

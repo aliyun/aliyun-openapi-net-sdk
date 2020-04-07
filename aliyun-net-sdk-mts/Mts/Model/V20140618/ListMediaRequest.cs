@@ -32,23 +32,28 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public ListMediaRequest()
             : base("Mts", "2014-06-18", "ListMedia", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string nextPageToken;
+
+		private string from;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? maximumPageSize;
 
-		private string from;
+		private long? ownerId;
 
 		private string to;
-
-		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -63,19 +68,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string NextPageToken
 		{
 			get
@@ -86,6 +78,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				nextPageToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextPageToken", value);
+			}
+		}
+
+		public string From
+		{
+			get
+			{
+				return from;
+			}
+			set	
+			{
+				from = value;
+				DictionaryUtil.Add(QueryParameters, "From", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -115,16 +133,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string From
+		public long? OwnerId
 		{
 			get
 			{
-				return from;
+				return ownerId;
 			}
 			set	
 			{
-				from = value;
-				DictionaryUtil.Add(QueryParameters, "From", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -138,19 +156,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				to = value;
 				DictionaryUtil.Add(QueryParameters, "To", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

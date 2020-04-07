@@ -32,17 +32,22 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public CreateSessionRequest()
             : base("Mts", "2014-06-18", "CreateSession", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string resourceOwnerId;
 
 		private int? sessionTime;
 
+		private string endUserId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string endUserId;
 
 		private string ownerId;
 
@@ -74,6 +79,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
+		public string EndUserId
+		{
+			get
+			{
+				return endUserId;
+			}
+			set	
+			{
+				endUserId = value;
+				DictionaryUtil.Add(QueryParameters, "EndUserId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -97,19 +115,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string EndUserId
-		{
-			get
-			{
-				return endUserId;
-			}
-			set	
-			{
-				endUserId = value;
-				DictionaryUtil.Add(QueryParameters, "EndUserId", value);
 			}
 		}
 

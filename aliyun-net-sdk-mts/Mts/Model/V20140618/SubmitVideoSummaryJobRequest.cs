@@ -32,34 +32,39 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitVideoSummaryJobRequest()
             : base("Mts", "2014-06-18", "SubmitVideoSummaryJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string input;
+		private long? resourceOwnerId;
 
 		private string userData;
 
-		private long? resourceOwnerId;
+		private string videoSummaryConfig;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string videoSummaryConfig;
-
 		private long? ownerId;
 
 		private string pipelineId;
 
-		public string Input
+		private string input;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return input;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				input = value;
-				DictionaryUtil.Add(QueryParameters, "Input", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -76,16 +81,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string VideoSummaryConfig
 		{
 			get
 			{
-				return resourceOwnerId;
+				return videoSummaryConfig;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				videoSummaryConfig = value;
+				DictionaryUtil.Add(QueryParameters, "VideoSummaryConfig", value);
 			}
 		}
 
@@ -115,19 +120,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string VideoSummaryConfig
-		{
-			get
-			{
-				return videoSummaryConfig;
-			}
-			set	
-			{
-				videoSummaryConfig = value;
-				DictionaryUtil.Add(QueryParameters, "VideoSummaryConfig", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -151,6 +143,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
 			}
 		}
 

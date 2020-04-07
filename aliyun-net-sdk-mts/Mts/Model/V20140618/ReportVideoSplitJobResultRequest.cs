@@ -32,21 +32,39 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public ReportVideoSplitJobResultRequest()
             : base("Mts", "2014-06-18", "ReportVideoSplitJobResult", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private long? resourceOwnerId;
 
 		private string result;
 
 		private string jobId;
 
-		private long? resourceOwnerId;
+		private string details;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string details;
-
 		private long? ownerId;
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
 
 		public string Result
 		{
@@ -74,16 +92,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string Details
 		{
 			get
 			{
-				return resourceOwnerId;
+				return details;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				details = value;
+				DictionaryUtil.Add(QueryParameters, "Details", value);
 			}
 		}
 
@@ -110,19 +128,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Details
-		{
-			get
-			{
-				return details;
-			}
-			set	
-			{
-				details = value;
-				DictionaryUtil.Add(QueryParameters, "Details", value);
 			}
 		}
 

@@ -32,27 +32,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public AddTemplateRequest()
             : base("Mts", "2014-06-18", "AddTemplate", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string container;
 
 		private long? resourceOwnerId;
 
+		private string video;
+
+		private string transConfig;
+
+		private string audio;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string name;
-
-		private string transConfig;
-
 		private string muxConfig;
 
-		private string video;
-
-		private string audio;
-
 		private long? ownerId;
+
+		private string name;
 
 		public string Container
 		{
@@ -77,6 +82,45 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Video
+		{
+			get
+			{
+				return video;
+			}
+			set	
+			{
+				video = value;
+				DictionaryUtil.Add(QueryParameters, "Video", value);
+			}
+		}
+
+		public string TransConfig
+		{
+			get
+			{
+				return transConfig;
+			}
+			set	
+			{
+				transConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TransConfig", value);
+			}
+		}
+
+		public string Audio
+		{
+			get
+			{
+				return audio;
+			}
+			set	
+			{
+				audio = value;
+				DictionaryUtil.Add(QueryParameters, "Audio", value);
 			}
 		}
 
@@ -106,32 +150,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string TransConfig
-		{
-			get
-			{
-				return transConfig;
-			}
-			set	
-			{
-				transConfig = value;
-				DictionaryUtil.Add(QueryParameters, "TransConfig", value);
-			}
-		}
-
 		public string MuxConfig
 		{
 			get
@@ -145,32 +163,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Video
-		{
-			get
-			{
-				return video;
-			}
-			set	
-			{
-				video = value;
-				DictionaryUtil.Add(QueryParameters, "Video", value);
-			}
-		}
-
-		public string Audio
-		{
-			get
-			{
-				return audio;
-			}
-			set	
-			{
-				audio = value;
-				DictionaryUtil.Add(QueryParameters, "Audio", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -181,6 +173,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

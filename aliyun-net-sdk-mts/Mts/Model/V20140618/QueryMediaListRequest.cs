@@ -32,11 +32,20 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public QueryMediaListRequest()
             : base("Mts", "2014-06-18", "QueryMediaList", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private bool? includeSummaryList;
+
+		private string mediaIds;
+
+		private bool? includePlayList;
 
 		private string resourceOwnerAccount;
 
@@ -44,11 +53,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerAccount;
 
-		private string mediaIds;
-
 		private long? ownerId;
-
-		private bool? includePlayList;
 
 		private bool? includeMediaInfo;
 
@@ -75,6 +80,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				includeSummaryList = value;
 				DictionaryUtil.Add(QueryParameters, "IncludeSummaryList", value.ToString());
+			}
+		}
+
+		public string MediaIds
+		{
+			get
+			{
+				return mediaIds;
+			}
+			set	
+			{
+				mediaIds = value;
+				DictionaryUtil.Add(QueryParameters, "MediaIds", value);
+			}
+		}
+
+		public bool? IncludePlayList
+		{
+			get
+			{
+				return includePlayList;
+			}
+			set	
+			{
+				includePlayList = value;
+				DictionaryUtil.Add(QueryParameters, "IncludePlayList", value.ToString());
 			}
 		}
 
@@ -117,19 +148,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string MediaIds
-		{
-			get
-			{
-				return mediaIds;
-			}
-			set	
-			{
-				mediaIds = value;
-				DictionaryUtil.Add(QueryParameters, "MediaIds", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -140,19 +158,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public bool? IncludePlayList
-		{
-			get
-			{
-				return includePlayList;
-			}
-			set	
-			{
-				includePlayList = value;
-				DictionaryUtil.Add(QueryParameters, "IncludePlayList", value.ToString());
 			}
 		}
 

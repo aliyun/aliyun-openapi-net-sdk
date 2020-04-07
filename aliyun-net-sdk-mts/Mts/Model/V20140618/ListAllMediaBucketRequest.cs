@@ -32,13 +32,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public ListAllMediaBucketRequest()
             : base("Mts", "2014-06-18", "ListAllMediaBucket", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string nextPageToken;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
@@ -59,19 +64,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string NextPageToken
 		{
 			get
@@ -82,6 +74,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				nextPageToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextPageToken", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 

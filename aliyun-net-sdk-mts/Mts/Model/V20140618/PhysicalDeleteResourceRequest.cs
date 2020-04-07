@@ -32,11 +32,20 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public PhysicalDeleteResourceRequest()
             : base("Mts", "2014-06-18", "PhysicalDeleteResource", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string country;
 
 		private long? hid;
+
+		private string invoker;
+
+		private string message;
 
 		private bool? success;
 
@@ -46,11 +55,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string pk;
 
-		private string invoker;
-
 		private string bid;
-
-		private string message;
 
 		private string taskExtraData;
 
@@ -79,6 +84,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				hid = value;
 				DictionaryUtil.Add(QueryParameters, "Hid", value.ToString());
+			}
+		}
+
+		public string Invoker
+		{
+			get
+			{
+				return invoker;
+			}
+			set	
+			{
+				invoker = value;
+				DictionaryUtil.Add(QueryParameters, "Invoker", value);
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+				DictionaryUtil.Add(QueryParameters, "Message", value);
 			}
 		}
 
@@ -134,19 +165,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Invoker
-		{
-			get
-			{
-				return invoker;
-			}
-			set	
-			{
-				invoker = value;
-				DictionaryUtil.Add(QueryParameters, "Invoker", value);
-			}
-		}
-
 		public string Bid
 		{
 			get
@@ -157,19 +175,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				bid = value;
 				DictionaryUtil.Add(QueryParameters, "Bid", value);
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-				DictionaryUtil.Add(QueryParameters, "Message", value);
 			}
 		}
 

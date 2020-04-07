@@ -32,21 +32,24 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitFpCompareJobRequest()
             : base("Mts", "2014-06-18", "SubmitFpCompareJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string matchedFrameStorage;
-
-		private string userData;
 
 		private long? resourceOwnerId;
 
-		private string queryMedia;
-
 		private string fpDBId;
 
-		private string resourceOwnerAccount;
-
 		private string masterMedia;
+
+		private string userData;
+
+		private string queryMedia;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
@@ -54,31 +57,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string pipelineId;
 
-		public string MatchedFrameStorage
-		{
-			get
-			{
-				return matchedFrameStorage;
-			}
-			set	
-			{
-				matchedFrameStorage = value;
-				DictionaryUtil.Add(QueryParameters, "MatchedFrameStorage", value);
-			}
-		}
-
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
+		private string matchedFrameStorage;
 
 		public long? ResourceOwnerId
 		{
@@ -90,19 +69,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string QueryMedia
-		{
-			get
-			{
-				return queryMedia;
-			}
-			set	
-			{
-				queryMedia = value;
-				DictionaryUtil.Add(QueryParameters, "QueryMedia", value);
 			}
 		}
 
@@ -119,19 +85,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string MasterMedia
 		{
 			get
@@ -142,6 +95,45 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				masterMedia = value;
 				DictionaryUtil.Add(QueryParameters, "MasterMedia", value);
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
+			}
+		}
+
+		public string QueryMedia
+		{
+			get
+			{
+				return queryMedia;
+			}
+			set	
+			{
+				queryMedia = value;
+				DictionaryUtil.Add(QueryParameters, "QueryMedia", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -181,6 +173,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string MatchedFrameStorage
+		{
+			get
+			{
+				return matchedFrameStorage;
+			}
+			set	
+			{
+				matchedFrameStorage = value;
+				DictionaryUtil.Add(QueryParameters, "MatchedFrameStorage", value);
 			}
 		}
 

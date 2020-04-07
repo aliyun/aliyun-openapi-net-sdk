@@ -32,32 +32,37 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public ReportAnnotationJobResultRequest()
             : base("Mts", "2014-06-18", "ReportAnnotationJobResult", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string annotation;
+		private long? resourceOwnerId;
 
 		private string jobId;
 
-		private long? resourceOwnerId;
+		private string details;
+
+		private string annotation;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string details;
-
 		private long? ownerId;
 
-		public string Annotation
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return annotation;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				annotation = value;
-				DictionaryUtil.Add(QueryParameters, "Annotation", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
@@ -74,16 +79,29 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string Details
 		{
 			get
 			{
-				return resourceOwnerId;
+				return details;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				details = value;
+				DictionaryUtil.Add(QueryParameters, "Details", value);
+			}
+		}
+
+		public string Annotation
+		{
+			get
+			{
+				return annotation;
+			}
+			set	
+			{
+				annotation = value;
+				DictionaryUtil.Add(QueryParameters, "Annotation", value);
 			}
 		}
 
@@ -110,19 +128,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Details
-		{
-			get
-			{
-				return details;
-			}
-			set	
-			{
-				details = value;
-				DictionaryUtil.Add(QueryParameters, "Details", value);
 			}
 		}
 

@@ -32,15 +32,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public SubmitVideoPoseJobRequest()
             : base("Mts", "2014-06-18", "SubmitVideoPoseJob", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string input;
-
-		private string userData;
 
 		private long? resourceOwnerId;
 
 		private string outputConfig;
+
+		private string userData;
 
 		private string resourceOwnerAccount;
 
@@ -50,31 +53,7 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string pipelineId;
 
-		public string Input
-		{
-			get
-			{
-				return input;
-			}
-			set	
-			{
-				input = value;
-				DictionaryUtil.Add(QueryParameters, "Input", value);
-			}
-		}
-
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
-			}
-		}
+		private string input;
 
 		public long? ResourceOwnerId
 		{
@@ -99,6 +78,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				outputConfig = value;
 				DictionaryUtil.Add(QueryParameters, "OutputConfig", value);
+			}
+		}
+
+		public string UserData
+		{
+			get
+			{
+				return userData;
+			}
+			set	
+			{
+				userData = value;
+				DictionaryUtil.Add(QueryParameters, "UserData", value);
 			}
 		}
 
@@ -151,6 +143,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				pipelineId = value;
 				DictionaryUtil.Add(QueryParameters, "PipelineId", value);
+			}
+		}
+
+		public string Input
+		{
+			get
+			{
+				return input;
+			}
+			set	
+			{
+				input = value;
+				DictionaryUtil.Add(QueryParameters, "Input", value);
 			}
 		}
 

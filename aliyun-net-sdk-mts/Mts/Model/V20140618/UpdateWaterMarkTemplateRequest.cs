@@ -32,19 +32,24 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public UpdateWaterMarkTemplateRequest()
             : base("Mts", "2014-06-18", "UpdateWaterMarkTemplate", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string waterMarkTemplateId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string name;
-
 		private long? ownerId;
 
-		private string waterMarkTemplateId;
+		private string name;
 
 		private string config;
 
@@ -58,6 +63,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string WaterMarkTemplateId
+		{
+			get
+			{
+				return waterMarkTemplateId;
+			}
+			set	
+			{
+				waterMarkTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "WaterMarkTemplateId", value);
 			}
 		}
 
@@ -87,19 +105,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -113,16 +118,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string WaterMarkTemplateId
+		public string Name
 		{
 			get
 			{
-				return waterMarkTemplateId;
+				return name;
 			}
 			set	
 			{
-				waterMarkTemplateId = value;
-				DictionaryUtil.Add(QueryParameters, "WaterMarkTemplateId", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

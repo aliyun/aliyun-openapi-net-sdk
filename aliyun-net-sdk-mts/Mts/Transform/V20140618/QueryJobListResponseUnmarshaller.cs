@@ -345,7 +345,7 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				List<QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_Opening> output_openingList = new List<QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_Opening>();
 				for (int j = 0; j < context.Length("QueryJobList.JobList["+ i +"].Output.OpeningList.Length"); j++) {
 					QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_Opening opening = new QueryJobListResponse.QueryJobList_Job.QueryJobList_Output.QueryJobList_Opening();
-					opening.OpenUrl = context.StringValue("QueryJobList.JobList["+ i +"].Output.OpeningList["+ j +"].OpenUrl");
+					opening.OpenUrl = context.StringValue("QueryJobList.JobList["+ i +"].Output.OpeningList["+ j +"].openUrl");
 					opening.Start = context.StringValue("QueryJobList.JobList["+ i +"].Output.OpeningList["+ j +"].Start");
 					opening.Width = context.StringValue("QueryJobList.JobList["+ i +"].Output.OpeningList["+ j +"].Width");
 					opening.Height = context.StringValue("QueryJobList.JobList["+ i +"].Output.OpeningList["+ j +"].Height");

@@ -84,6 +84,8 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 			private List<QueryMcuJob_Face> faceResult;
 
+			private List<QueryMcuJob_SubTask> subTaskInfo;
+
 			private QueryMcuJob_Input input;
 
 			private QueryMcuJob_AsrResult asrResult;
@@ -171,6 +173,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 				set	
 				{
 					faceResult = value;
+				}
+			}
+
+			public List<QueryMcuJob_SubTask> SubTaskInfo
+			{
+				get
+				{
+					return subTaskInfo;
+				}
+				set	
+				{
+					subTaskInfo = value;
 				}
 			}
 
@@ -478,6 +492,52 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 						{
 							target = value;
 						}
+					}
+				}
+			}
+
+			public class QueryMcuJob_SubTask
+			{
+
+				private string type;
+
+				private string code;
+
+				private string message;
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string Code
+				{
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
+					}
+				}
+
+				public string Message
+				{
+					get
+					{
+						return message;
+					}
+					set	
+					{
+						message = value;
 					}
 				}
 			}

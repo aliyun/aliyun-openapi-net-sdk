@@ -32,19 +32,24 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public UpdateMediaPublishStateRequest()
             : base("Mts", "2014-06-18", "UpdateMediaPublishState", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private bool? publish;
-
 		private string ownerAccount;
 
 		private long? ownerId;
 
 		private string mediaId;
+
+		private bool? publish;
 
 		public long? ResourceOwnerId
 		{
@@ -69,19 +74,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public bool? Publish
-		{
-			get
-			{
-				return publish;
-			}
-			set	
-			{
-				publish = value;
-				DictionaryUtil.Add(QueryParameters, "Publish", value.ToString());
 			}
 		}
 
@@ -121,6 +113,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				mediaId = value;
 				DictionaryUtil.Add(QueryParameters, "MediaId", value);
+			}
+		}
+
+		public bool? Publish
+		{
+			get
+			{
+				return publish;
+			}
+			set	
+			{
+				publish = value;
+				DictionaryUtil.Add(QueryParameters, "Publish", value.ToString());
 			}
 		}
 

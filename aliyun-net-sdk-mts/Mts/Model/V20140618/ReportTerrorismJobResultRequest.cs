@@ -32,11 +32,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public ReportTerrorismJobResultRequest()
             : base("Mts", "2014-06-18", "ReportTerrorismJobResult", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string jobId;
-
 		private long? resourceOwnerId;
+
+		private string jobId;
 
 		private string resourceOwnerAccount;
 
@@ -44,22 +49,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string label;
 
-		private string detail;
-
 		private long? ownerId;
 
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(QueryParameters, "JobId", value);
-			}
-		}
+		private string detail;
 
 		public long? ResourceOwnerId
 		{
@@ -71,6 +63,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string JobId
+		{
+			get
+			{
+				return jobId;
+			}
+			set	
+			{
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
 			}
 		}
 
@@ -113,19 +118,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Detail
-		{
-			get
-			{
-				return detail;
-			}
-			set	
-			{
-				detail = value;
-				DictionaryUtil.Add(QueryParameters, "Detail", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -136,6 +128,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Detail
+		{
+			get
+			{
+				return detail;
+			}
+			set	
+			{
+				detail = value;
+				DictionaryUtil.Add(QueryParameters, "Detail", value);
 			}
 		}
 

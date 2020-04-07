@@ -32,9 +32,18 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public RegisterMediaDetailPersonRequest()
             : base("Mts", "2014-06-18", "RegisterMediaDetailPerson", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string personLib;
+
+		private string personName;
 
 		private string images;
 
@@ -42,13 +51,9 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 
 		private string ownerAccount;
 
-		private string personLib;
-
 		private long? ownerId;
 
 		private string category;
-
-		private string personName;
 
 		public long? ResourceOwnerId
 		{
@@ -60,6 +65,32 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string PersonLib
+		{
+			get
+			{
+				return personLib;
+			}
+			set	
+			{
+				personLib = value;
+				DictionaryUtil.Add(QueryParameters, "PersonLib", value);
+			}
+		}
+
+		public string PersonName
+		{
+			get
+			{
+				return personName;
+			}
+			set	
+			{
+				personName = value;
+				DictionaryUtil.Add(QueryParameters, "PersonName", value);
 			}
 		}
 
@@ -102,19 +133,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string PersonLib
-		{
-			get
-			{
-				return personLib;
-			}
-			set	
-			{
-				personLib = value;
-				DictionaryUtil.Add(QueryParameters, "PersonLib", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -138,19 +156,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				category = value;
 				DictionaryUtil.Add(QueryParameters, "Category", value);
-			}
-		}
-
-		public string PersonName
-		{
-			get
-			{
-				return personName;
-			}
-			set	
-			{
-				personName = value;
-				DictionaryUtil.Add(QueryParameters, "PersonName", value);
 			}
 		}
 

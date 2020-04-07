@@ -44,8 +44,8 @@ namespace Aliyun.Acs.Mts.Transform.V20140618
 				pipeline.Name = context.StringValue("ListCoverPipeline.PipelineList["+ i +"].Name");
 				pipeline.State = context.StringValue("ListCoverPipeline.PipelineList["+ i +"].State");
 				pipeline.Priority = context.StringValue("ListCoverPipeline.PipelineList["+ i +"].Priority");
-				pipeline.QuotaNum = context.IntegerValue("ListCoverPipeline.PipelineList["+ i +"].QuotaNum");
-				pipeline.QuotaUsed = context.IntegerValue("ListCoverPipeline.PipelineList["+ i +"].QuotaUsed");
+				pipeline.QuotaNum = context.IntegerValue("ListCoverPipeline.PipelineList["+ i +"].quotaNum");
+				pipeline.QuotaUsed = context.IntegerValue("ListCoverPipeline.PipelineList["+ i +"].quotaUsed");
 				pipeline.NotifyConfig = context.StringValue("ListCoverPipeline.PipelineList["+ i +"].NotifyConfig");
 				pipeline.Role = context.StringValue("ListCoverPipeline.PipelineList["+ i +"].Role");
 				pipeline.ExtendConfig = context.StringValue("ListCoverPipeline.PipelineList["+ i +"].ExtendConfig");

@@ -32,21 +32,39 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public ReportTagJobResultRequest()
             : base("Mts", "2014-06-18", "ReportTagJobResult", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private long? resourceOwnerId;
 
 		private string result;
 
 		private string jobId;
 
-		private long? resourceOwnerId;
+		private string tag;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string tag;
-
 		private long? ownerId;
+
+		public long? ResourceOwnerId
+		{
+			get
+			{
+				return resourceOwnerId;
+			}
+			set	
+			{
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
 
 		public string Result
 		{
@@ -74,16 +92,16 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string Tag
 		{
 			get
 			{
-				return resourceOwnerId;
+				return tag;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				tag = value;
+				DictionaryUtil.Add(QueryParameters, "Tag", value);
 			}
 		}
 
@@ -110,19 +128,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Tag
-		{
-			get
-			{
-				return tag;
-			}
-			set	
-			{
-				tag = value;
-				DictionaryUtil.Add(QueryParameters, "Tag", value);
 			}
 		}
 

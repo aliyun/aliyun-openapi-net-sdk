@@ -32,17 +32,22 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public UpdateMediaWorkflowRequest()
             : base("Mts", "2014-06-18", "UpdateMediaWorkflow", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string mediaWorkflowId;
 
 		private string resourceOwnerAccount;
 
 		private string topology;
 
 		private string ownerAccount;
-
-		private string mediaWorkflowId;
 
 		private long? ownerId;
 
@@ -56,6 +61,19 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string MediaWorkflowId
+		{
+			get
+			{
+				return mediaWorkflowId;
+			}
+			set	
+			{
+				mediaWorkflowId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaWorkflowId", value);
 			}
 		}
 
@@ -95,19 +113,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string MediaWorkflowId
-		{
-			get
-			{
-				return mediaWorkflowId;
-			}
-			set	
-			{
-				mediaWorkflowId = value;
-				DictionaryUtil.Add(QueryParameters, "MediaWorkflowId", value);
 			}
 		}
 

@@ -32,37 +32,42 @@ namespace Aliyun.Acs.Mts.Model.V20140618
         public AddMCTemplateRequest()
             : base("Mts", "2014-06-18", "AddMCTemplate", "mts", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string politics;
 
 		private long? resourceOwnerId;
 
-		private string contraband;
-
-		private string ad;
-
 		private string abuse;
 
-		private string resourceOwnerAccount;
-
 		private string qrcode;
-
-		private string ownerAccount;
-
-		private long? ownerId;
 
 		private string porn;
 
 		private string terrorism;
 
-		private string name;
-
 		private string logo;
 
-		private string spam;
-
 		private string live;
+
+		private string contraband;
+
+		private string ad;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
+
+		private string name;
+
+		private string spam;
 
 		public string Politics
 		{
@@ -90,32 +95,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Contraband
-		{
-			get
-			{
-				return contraband;
-			}
-			set	
-			{
-				contraband = value;
-				DictionaryUtil.Add(QueryParameters, "Contraband", value);
-			}
-		}
-
-		public string Ad
-		{
-			get
-			{
-				return ad;
-			}
-			set	
-			{
-				ad = value;
-				DictionaryUtil.Add(QueryParameters, "Ad", value);
-			}
-		}
-
 		public string Abuse
 		{
 			get
@@ -129,19 +108,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string Qrcode
 		{
 			get
@@ -152,32 +118,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				qrcode = value;
 				DictionaryUtil.Add(QueryParameters, "Qrcode", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -207,19 +147,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public string Logo
 		{
 			get
@@ -233,19 +160,6 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			}
 		}
 
-		public string Spam
-		{
-			get
-			{
-				return spam;
-			}
-			set	
-			{
-				spam = value;
-				DictionaryUtil.Add(QueryParameters, "spam", value);
-			}
-		}
-
 		public string Live
 		{
 			get
@@ -256,6 +170,97 @@ namespace Aliyun.Acs.Mts.Model.V20140618
 			{
 				live = value;
 				DictionaryUtil.Add(QueryParameters, "Live", value);
+			}
+		}
+
+		public string Contraband
+		{
+			get
+			{
+				return contraband;
+			}
+			set	
+			{
+				contraband = value;
+				DictionaryUtil.Add(QueryParameters, "Contraband", value);
+			}
+		}
+
+		public string Ad
+		{
+			get
+			{
+				return ad;
+			}
+			set	
+			{
+				ad = value;
+				DictionaryUtil.Add(QueryParameters, "Ad", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string Spam
+		{
+			get
+			{
+				return spam;
+			}
+			set	
+			{
+				spam = value;
+				DictionaryUtil.Add(QueryParameters, "spam", value);
 			}
 		}
 
