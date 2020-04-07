@@ -27,10 +27,10 @@ using Aliyun.Acs.ARMS.Transform.V20190808;
 
 namespace Aliyun.Acs.ARMS.Model.V20190808
 {
-    public class SearchAlertContactGroupRequest : RpcAcsRequest<SearchAlertContactGroupResponse>
+    public class DeleteAlertRulesRequest : RpcAcsRequest<DeleteAlertRulesResponse>
     {
-        public SearchAlertContactGroupRequest()
-            : base("ARMS", "2019-08-08", "SearchAlertContactGroup", "arms", "openAPI")
+        public DeleteAlertRulesRequest()
+            : base("ARMS", "2019-08-08", "DeleteAlertRules", "arms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,50 +39,20 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
             }
         }
 
-		private string contactName;
-
-		private long? contactId;
-
-		private string contactGroupName;
+		private string alertIds;
 
 		private string proxyUserId;
 
-		public string ContactName
+		public string AlertIds
 		{
 			get
 			{
-				return contactName;
+				return alertIds;
 			}
 			set	
 			{
-				contactName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactName", value);
-			}
-		}
-
-		public long? ContactId
-		{
-			get
-			{
-				return contactId;
-			}
-			set	
-			{
-				contactId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactId", value.ToString());
-			}
-		}
-
-		public string ContactGroupName
-		{
-			get
-			{
-				return contactGroupName;
-			}
-			set	
-			{
-				contactGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactGroupName", value);
+				alertIds = value;
+				DictionaryUtil.Add(QueryParameters, "AlertIds", value);
 			}
 		}
 
@@ -99,14 +69,9 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override SearchAlertContactGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteAlertRulesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SearchAlertContactGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteAlertRulesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

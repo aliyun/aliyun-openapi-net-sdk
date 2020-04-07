@@ -27,10 +27,10 @@ using Aliyun.Acs.ARMS.Transform.V20190808;
 
 namespace Aliyun.Acs.ARMS.Model.V20190808
 {
-    public class SearchAlertContactGroupRequest : RpcAcsRequest<SearchAlertContactGroupResponse>
+    public class SetRetcodeShareStatusRequest : RpcAcsRequest<SetRetcodeShareStatusResponse>
     {
-        public SearchAlertContactGroupRequest()
-            : base("ARMS", "2019-08-08", "SearchAlertContactGroup", "arms", "openAPI")
+        public SetRetcodeShareStatusRequest()
+            : base("ARMS", "2019-08-08", "SetRetcodeShareStatus", "arms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,63 +39,33 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
             }
         }
 
-		private string contactName;
+		private string pid;
 
-		private long? contactId;
+		private bool? status;
 
-		private string contactGroupName;
-
-		private string proxyUserId;
-
-		public string ContactName
+		public string Pid
 		{
 			get
 			{
-				return contactName;
+				return pid;
 			}
 			set	
 			{
-				contactName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactName", value);
+				pid = value;
+				DictionaryUtil.Add(QueryParameters, "Pid", value);
 			}
 		}
 
-		public long? ContactId
+		public bool? Status
 		{
 			get
 			{
-				return contactId;
+				return status;
 			}
 			set	
 			{
-				contactId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactId", value.ToString());
-			}
-		}
-
-		public string ContactGroupName
-		{
-			get
-			{
-				return contactGroupName;
-			}
-			set	
-			{
-				contactGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactGroupName", value);
-			}
-		}
-
-		public string ProxyUserId
-		{
-			get
-			{
-				return proxyUserId;
-			}
-			set	
-			{
-				proxyUserId = value;
-				DictionaryUtil.Add(QueryParameters, "ProxyUserId", value);
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
 			}
 		}
 
@@ -104,9 +74,9 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			return false;
 		}
 
-        public override SearchAlertContactGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetRetcodeShareStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SearchAlertContactGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetRetcodeShareStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -43,13 +43,15 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 
 		private long? minTime;
 
+		private string proxyUserId;
+
 		private bool? reduceTail;
 
 		private long? maxTime;
 
-		private List<OptionalDims> optionalDimss;
+		private List<OptionalDims> optionalDimss = new List<OptionalDims>(){ };
 
-		private List<string> measuress;
+		private List<string> measuress = new List<string>(){ };
 
 		private int? intervalInSec;
 
@@ -63,9 +65,9 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 
 		private long? datasetId;
 
-		private List<RequiredDims> requiredDimss;
+		private List<RequiredDims> requiredDimss = new List<RequiredDims>(){ };
 
-		private List<Dimensions> dimensionss;
+		private List<Dimensions> dimensionss = new List<Dimensions>(){ };
 
 		public string DateStr
 		{
@@ -90,6 +92,19 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			{
 				minTime = value;
 				DictionaryUtil.Add(QueryParameters, "MinTime", value.ToString());
+			}
+		}
+
+		public string ProxyUserId
+		{
+			get
+			{
+				return proxyUserId;
+			}
+			set	
+			{
+				proxyUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyUserId", value);
 			}
 		}
 

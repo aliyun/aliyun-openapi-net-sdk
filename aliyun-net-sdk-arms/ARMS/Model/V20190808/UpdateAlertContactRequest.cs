@@ -27,10 +27,10 @@ using Aliyun.Acs.ARMS.Transform.V20190808;
 
 namespace Aliyun.Acs.ARMS.Model.V20190808
 {
-    public class SearchAlertContactGroupRequest : RpcAcsRequest<SearchAlertContactGroupResponse>
+    public class UpdateAlertContactRequest : RpcAcsRequest<UpdateAlertContactResponse>
     {
-        public SearchAlertContactGroupRequest()
-            : base("ARMS", "2019-08-08", "SearchAlertContactGroup", "arms", "openAPI")
+        public UpdateAlertContactRequest()
+            : base("ARMS", "2019-08-08", "UpdateAlertContact", "arms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,26 +39,19 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
             }
         }
 
-		private string contactName;
-
 		private long? contactId;
 
-		private string contactGroupName;
+		private string phoneNum;
 
 		private string proxyUserId;
 
-		public string ContactName
-		{
-			get
-			{
-				return contactName;
-			}
-			set	
-			{
-				contactName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactName", value);
-			}
-		}
+		private string contactName;
+
+		private string dingRobotWebhookUrl;
+
+		private string email;
+
+		private bool? systemNoc;
 
 		public long? ContactId
 		{
@@ -73,16 +66,16 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			}
 		}
 
-		public string ContactGroupName
+		public string PhoneNum
 		{
 			get
 			{
-				return contactGroupName;
+				return phoneNum;
 			}
 			set	
 			{
-				contactGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactGroupName", value);
+				phoneNum = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNum", value);
 			}
 		}
 
@@ -99,14 +92,61 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string ContactName
 		{
-			return false;
+			get
+			{
+				return contactName;
+			}
+			set	
+			{
+				contactName = value;
+				DictionaryUtil.Add(QueryParameters, "ContactName", value);
+			}
 		}
 
-        public override SearchAlertContactGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string DingRobotWebhookUrl
+		{
+			get
+			{
+				return dingRobotWebhookUrl;
+			}
+			set	
+			{
+				dingRobotWebhookUrl = value;
+				DictionaryUtil.Add(QueryParameters, "DingRobotWebhookUrl", value);
+			}
+		}
+
+		public string Email
+		{
+			get
+			{
+				return email;
+			}
+			set	
+			{
+				email = value;
+				DictionaryUtil.Add(QueryParameters, "Email", value);
+			}
+		}
+
+		public bool? SystemNoc
+		{
+			get
+			{
+				return systemNoc;
+			}
+			set	
+			{
+				systemNoc = value;
+				DictionaryUtil.Add(QueryParameters, "SystemNoc", value.ToString());
+			}
+		}
+
+        public override UpdateAlertContactResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SearchAlertContactGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateAlertContactResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

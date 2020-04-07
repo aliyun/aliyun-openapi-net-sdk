@@ -27,10 +27,10 @@ using Aliyun.Acs.ARMS.Transform.V20190808;
 
 namespace Aliyun.Acs.ARMS.Model.V20190808
 {
-    public class SearchAlertContactGroupRequest : RpcAcsRequest<SearchAlertContactGroupResponse>
+    public class SearchAlertHistoriesRequest : RpcAcsRequest<SearchAlertHistoriesResponse>
     {
-        public SearchAlertContactGroupRequest()
-            : base("ARMS", "2019-08-08", "SearchAlertContactGroup", "arms", "openAPI")
+        public SearchAlertHistoriesRequest()
+            : base("ARMS", "2019-08-08", "SearchAlertHistories", "arms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,50 +39,56 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
             }
         }
 
-		private string contactName;
+		private long? endTime;
 
-		private long? contactId;
+		private int? currentPage;
 
-		private string contactGroupName;
+		private long? startTime;
 
 		private string proxyUserId;
 
-		public string ContactName
+		private int? alertType;
+
+		private int? pageSize;
+
+		private long? alertId;
+
+		public long? EndTime
 		{
 			get
 			{
-				return contactName;
+				return endTime;
 			}
 			set	
 			{
-				contactName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactName", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
 			}
 		}
 
-		public long? ContactId
+		public int? CurrentPage
 		{
 			get
 			{
-				return contactId;
+				return currentPage;
 			}
 			set	
 			{
-				contactId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactId", value.ToString());
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
-		public string ContactGroupName
+		public long? StartTime
 		{
 			get
 			{
-				return contactGroupName;
+				return startTime;
 			}
 			set	
 			{
-				contactGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactGroupName", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
 			}
 		}
 
@@ -99,14 +105,53 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			}
 		}
 
+		public int? AlertType
+		{
+			get
+			{
+				return alertType;
+			}
+			set	
+			{
+				alertType = value;
+				DictionaryUtil.Add(QueryParameters, "AlertType", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public long? AlertId
+		{
+			get
+			{
+				return alertId;
+			}
+			set	
+			{
+				alertId = value;
+				DictionaryUtil.Add(QueryParameters, "AlertId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override SearchAlertContactGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SearchAlertHistoriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SearchAlertContactGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SearchAlertHistoriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

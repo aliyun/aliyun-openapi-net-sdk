@@ -27,16 +27,19 @@ namespace Aliyun.Acs.ARMS
         {
             { "ap-south-1", "arms.ap-southeast-1.aliyuncs.com" },
             { "eu-west-1", "arms.ap-southeast-1.aliyuncs.com" },
+            { "ap-northeast-1", "arms.ap-southeast-1.aliyuncs.com" },
+            { "cn-shenzhen-finance-1", "arms.aliyuncs.com" },
+            { "me-east-1", "arms.ap-southeast-1.aliyuncs.com" },
+            { "cn-chengdu", "arms.aliyuncs.com" },
+            { "cn-north-2-gov-1", "arms.aliyuncs.com" },
+            { "cn-shanghai-finance-1", "arms.aliyuncs.com" },
+            { "cn-hangzhou-finance", "arms.aliyuncs.com" },
             { "ap-southeast-2", "arms.ap-southeast-1.aliyuncs.com" },
             { "ap-southeast-3", "arms.ap-southeast-1.aliyuncs.com" },
             { "eu-central-1", "arms.ap-southeast-1.aliyuncs.com" },
-            { "ap-northeast-1", "arms.ap-southeast-1.aliyuncs.com" },
             { "cn-huhehaote", "arms.aliyuncs.com" },
             { "ap-southeast-5", "arms.ap-southeast-1.aliyuncs.com" },
             { "us-east-1", "arms.ap-southeast-1.aliyuncs.com" },
-            { "me-east-1", "arms.ap-southeast-1.aliyuncs.com" },
-            { "us-west-1", "arms.ap-southeast-1.aliyuncs.com" },
-            { "cn-chengdu", "arms.aliyuncs.com" },
         };
 
         public static string endpointRegionalType = "regional";

@@ -27,10 +27,10 @@ using Aliyun.Acs.ARMS.Transform.V20190808;
 
 namespace Aliyun.Acs.ARMS.Model.V20190808
 {
-    public class SearchAlertContactGroupRequest : RpcAcsRequest<SearchAlertContactGroupResponse>
+    public class UpdateAlertRuleRequest : RpcAcsRequest<UpdateAlertRuleResponse>
     {
-        public SearchAlertContactGroupRequest()
-            : base("ARMS", "2019-08-08", "SearchAlertContactGroup", "arms", "openAPI")
+        public UpdateAlertRuleRequest()
+            : base("ARMS", "2019-08-08", "UpdateAlertRule", "arms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,50 +39,26 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
             }
         }
 
-		private string contactName;
-
-		private long? contactId;
-
-		private string contactGroupName;
+		private bool? isAutoStart;
 
 		private string proxyUserId;
 
-		public string ContactName
-		{
-			get
-			{
-				return contactName;
-			}
-			set	
-			{
-				contactName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactName", value);
-			}
-		}
+		private string contactGroupIds;
 
-		public long? ContactId
-		{
-			get
-			{
-				return contactId;
-			}
-			set	
-			{
-				contactId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactId", value.ToString());
-			}
-		}
+		private long? alertId;
 
-		public string ContactGroupName
+		private string templageAlertConfig;
+
+		public bool? IsAutoStart
 		{
 			get
 			{
-				return contactGroupName;
+				return isAutoStart;
 			}
 			set	
 			{
-				contactGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactGroupName", value);
+				isAutoStart = value;
+				DictionaryUtil.Add(QueryParameters, "IsAutoStart", value.ToString());
 			}
 		}
 
@@ -99,14 +75,48 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string ContactGroupIds
 		{
-			return false;
+			get
+			{
+				return contactGroupIds;
+			}
+			set	
+			{
+				contactGroupIds = value;
+				DictionaryUtil.Add(QueryParameters, "ContactGroupIds", value);
+			}
 		}
 
-        public override SearchAlertContactGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public long? AlertId
+		{
+			get
+			{
+				return alertId;
+			}
+			set	
+			{
+				alertId = value;
+				DictionaryUtil.Add(QueryParameters, "AlertId", value.ToString());
+			}
+		}
+
+		public string TemplageAlertConfig
+		{
+			get
+			{
+				return templageAlertConfig;
+			}
+			set	
+			{
+				templageAlertConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TemplageAlertConfig", value);
+			}
+		}
+
+        public override UpdateAlertRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SearchAlertContactGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateAlertRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

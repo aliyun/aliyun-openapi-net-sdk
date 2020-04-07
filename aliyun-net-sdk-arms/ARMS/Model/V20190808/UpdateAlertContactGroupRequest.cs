@@ -27,10 +27,10 @@ using Aliyun.Acs.ARMS.Transform.V20190808;
 
 namespace Aliyun.Acs.ARMS.Model.V20190808
 {
-    public class SearchAlertContactGroupRequest : RpcAcsRequest<SearchAlertContactGroupResponse>
+    public class UpdateAlertContactGroupRequest : RpcAcsRequest<UpdateAlertContactGroupResponse>
     {
-        public SearchAlertContactGroupRequest()
-            : base("ARMS", "2019-08-08", "SearchAlertContactGroup", "arms", "openAPI")
+        public UpdateAlertContactGroupRequest()
+            : base("ARMS", "2019-08-08", "UpdateAlertContactGroup", "arms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,37 +39,24 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
             }
         }
 
-		private string contactName;
-
-		private long? contactId;
+		private long? contactGroupId;
 
 		private string contactGroupName;
 
 		private string proxyUserId;
 
-		public string ContactName
-		{
-			get
-			{
-				return contactName;
-			}
-			set	
-			{
-				contactName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactName", value);
-			}
-		}
+		private string contactIds;
 
-		public long? ContactId
+		public long? ContactGroupId
 		{
 			get
 			{
-				return contactId;
+				return contactGroupId;
 			}
 			set	
 			{
-				contactId = value;
-				DictionaryUtil.Add(QueryParameters, "ContactId", value.ToString());
+				contactGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ContactGroupId", value.ToString());
 			}
 		}
 
@@ -99,14 +86,22 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
+		public string ContactIds
 		{
-			return false;
+			get
+			{
+				return contactIds;
+			}
+			set	
+			{
+				contactIds = value;
+				DictionaryUtil.Add(QueryParameters, "ContactIds", value);
+			}
 		}
 
-        public override SearchAlertContactGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateAlertContactGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SearchAlertContactGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateAlertContactGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

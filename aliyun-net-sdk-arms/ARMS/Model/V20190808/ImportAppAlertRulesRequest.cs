@@ -41,6 +41,8 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 
 		private bool? isAutoStart;
 
+		private string proxyUserId;
+
 		private string contactGroupIds;
 
 		private string pids;
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			{
 				isAutoStart = value;
 				DictionaryUtil.Add(QueryParameters, "IsAutoStart", value.ToString());
+			}
+		}
+
+		public string ProxyUserId
+		{
+			get
+			{
+				return proxyUserId;
+			}
+			set	
+			{
+				proxyUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyUserId", value);
 			}
 		}
 

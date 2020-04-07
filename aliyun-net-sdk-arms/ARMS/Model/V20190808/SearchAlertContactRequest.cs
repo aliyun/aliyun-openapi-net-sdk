@@ -39,15 +39,43 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
             }
         }
 
+		private string currentPage;
+
+		private string proxyUserId;
+
 		private string contactName;
 
 		private string phone;
 
 		private string pageSize;
 
-		private string currentPage;
-
 		private string email;
+
+		public string CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value);
+			}
+		}
+
+		public string ProxyUserId
+		{
+			get
+			{
+				return proxyUserId;
+			}
+			set	
+			{
+				proxyUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyUserId", value);
+			}
+		}
 
 		public string ContactName
 		{
@@ -85,19 +113,6 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value);
-			}
-		}
-
-		public string CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value);
 			}
 		}
 

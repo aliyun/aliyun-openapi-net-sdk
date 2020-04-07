@@ -41,6 +41,8 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 
 		private string contactGroupName;
 
+		private string proxyUserId;
+
 		private string contactIds;
 
 		public string ContactGroupName
@@ -53,6 +55,19 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			{
 				contactGroupName = value;
 				DictionaryUtil.Add(QueryParameters, "ContactGroupName", value);
+			}
+		}
+
+		public string ProxyUserId
+		{
+			get
+			{
+				return proxyUserId;
+			}
+			set	
+			{
+				proxyUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyUserId", value);
 			}
 		}
 

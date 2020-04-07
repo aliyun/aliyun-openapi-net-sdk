@@ -39,28 +39,17 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
             }
         }
 
-		private string contactName;
-
 		private string phoneNum;
+
+		private string proxyUserId;
+
+		private string contactName;
 
 		private string dingRobotWebhookUrl;
 
 		private string email;
 
 		private bool? systemNoc;
-
-		public string ContactName
-		{
-			get
-			{
-				return contactName;
-			}
-			set	
-			{
-				contactName = value;
-				DictionaryUtil.Add(QueryParameters, "ContactName", value);
-			}
-		}
 
 		public string PhoneNum
 		{
@@ -72,6 +61,32 @@ namespace Aliyun.Acs.ARMS.Model.V20190808
 			{
 				phoneNum = value;
 				DictionaryUtil.Add(QueryParameters, "PhoneNum", value);
+			}
+		}
+
+		public string ProxyUserId
+		{
+			get
+			{
+				return proxyUserId;
+			}
+			set	
+			{
+				proxyUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyUserId", value);
+			}
+		}
+
+		public string ContactName
+		{
+			get
+			{
+				return contactName;
+			}
+			set	
+			{
+				contactName = value;
+				DictionaryUtil.Add(QueryParameters, "ContactName", value);
 			}
 		}
 
