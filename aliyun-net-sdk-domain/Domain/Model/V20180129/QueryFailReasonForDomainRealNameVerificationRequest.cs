@@ -35,13 +35,26 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
+		private string domainName;
+
 		private string realNameVerificationAction;
 
 		private string userClientIp;
 
-		private string domainName;
-
 		private string lang;
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
 
 		public string RealNameVerificationAction
 		{
@@ -66,19 +79,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 

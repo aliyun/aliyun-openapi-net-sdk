@@ -35,32 +35,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
-		private string promotionNo;
-
-		private List<OrderTransferParam> orderTransferParams;
-
-		private string userClientIp;
+		private List<OrderTransferParam> orderTransferParams = new List<OrderTransferParam>(){ };
 
 		private string couponNo;
 
 		private bool? useCoupon;
 
+		private string promotionNo;
+
+		private string userClientIp;
+
 		private string lang;
 
 		private bool? usePromotion;
-
-		public string PromotionNo
-		{
-			get
-			{
-				return promotionNo;
-			}
-			set	
-			{
-				promotionNo = value;
-				DictionaryUtil.Add(QueryParameters, "PromotionNo", value);
-			}
-		}
 
 		public List<OrderTransferParam> OrderTransferParams
 		{
@@ -79,19 +66,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".DomainName", orderTransferParams[i].DomainName);
 					DictionaryUtil.Add(QueryParameters,"OrderTransferParam." + (i + 1) + ".RegistrantProfileId", orderTransferParams[i].RegistrantProfileId);
 				}
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -118,6 +92,32 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				useCoupon = value;
 				DictionaryUtil.Add(QueryParameters, "UseCoupon", value.ToString());
+			}
+		}
+
+		public string PromotionNo
+		{
+			get
+			{
+				return promotionNo;
+			}
+			set	
+			{
+				promotionNo = value;
+				DictionaryUtil.Add(QueryParameters, "PromotionNo", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
-		private List<string> taskDetailNos;
+		private List<string> taskDetailNos = new List<string>(){ };
 
 		private string userClientIp;
 

@@ -35,9 +35,9 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
-		private long? beginCreateTime;
-
 		private long? endCreateTime;
+
+		private long? beginCreateTime;
 
 		private string taskNoCursor;
 
@@ -49,19 +49,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private long? createTimeCursor;
 
-		public long? BeginCreateTime
-		{
-			get
-			{
-				return beginCreateTime;
-			}
-			set	
-			{
-				beginCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "BeginCreateTime", value.ToString());
-			}
-		}
-
 		public long? EndCreateTime
 		{
 			get
@@ -72,6 +59,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				endCreateTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndCreateTime", value.ToString());
+			}
+		}
+
+		public long? BeginCreateTime
+		{
+			get
+			{
+				return beginCreateTime;
+			}
+			set	
+			{
+				beginCreateTime = value;
+				DictionaryUtil.Add(QueryParameters, "BeginCreateTime", value.ToString());
 			}
 		}
 

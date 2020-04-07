@@ -35,13 +35,26 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
+		private string qualificationType;
+
 		private string instanceId;
 
 		private string userClientIp;
 
 		private string lang;
 
-		private string qualificationType;
+		public string QualificationType
+		{
+			get
+			{
+				return qualificationType;
+			}
+			set	
+			{
+				qualificationType = value;
+				DictionaryUtil.Add(QueryParameters, "QualificationType", value);
+			}
+		}
 
 		public string InstanceId
 		{
@@ -79,19 +92,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string QualificationType
-		{
-			get
-			{
-				return qualificationType;
-			}
-			set	
-			{
-				qualificationType = value;
-				DictionaryUtil.Add(QueryParameters, "QualificationType", value);
 			}
 		}
 

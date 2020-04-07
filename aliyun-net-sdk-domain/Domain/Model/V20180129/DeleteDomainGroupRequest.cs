@@ -35,11 +35,24 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
+		private long? domainGroupId;
+
 		private string userClientIp;
 
 		private string lang;
 
-		private long? domainGroupId;
+		public long? DomainGroupId
+		{
+			get
+			{
+				return domainGroupId;
+			}
+			set	
+			{
+				domainGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DomainGroupId", value.ToString());
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -64,19 +77,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public long? DomainGroupId
-		{
-			get
-			{
-				return domainGroupId;
-			}
-			set	
-			{
-				domainGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "DomainGroupId", value.ToString());
 			}
 		}
 

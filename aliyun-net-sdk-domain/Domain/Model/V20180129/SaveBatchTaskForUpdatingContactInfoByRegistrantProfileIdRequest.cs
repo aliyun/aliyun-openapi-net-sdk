@@ -37,13 +37,13 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string contactType;
 
-		private string userClientIp;
-
 		private long? registrantProfileId;
 
-		private List<string> domainNames;
+		private List<string> domainNames = new List<string>(){ };
 
 		private bool? transferOutProhibited;
+
+		private string userClientIp;
 
 		private string lang;
 
@@ -57,19 +57,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				contactType = value;
 				DictionaryUtil.Add(QueryParameters, "ContactType", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -113,6 +100,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				transferOutProhibited = value;
 				DictionaryUtil.Add(QueryParameters, "TransferOutProhibited", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

@@ -37,19 +37,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private long? submissionStartDate;
 
-		private string userClientIp;
-
 		private long? submissionEndDate;
 
 		private string domainName;
+
+		private int? pageNum;
+
+		private string userClientIp;
 
 		private string simpleTransferInStatus;
 
 		private int? pageSize;
 
 		private string lang;
-
-		private int? pageNum;
 
 		public long? SubmissionStartDate
 		{
@@ -61,19 +61,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				submissionStartDate = value;
 				DictionaryUtil.Add(QueryParameters, "SubmissionStartDate", value.ToString());
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -100,6 +87,32 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -139,19 +152,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

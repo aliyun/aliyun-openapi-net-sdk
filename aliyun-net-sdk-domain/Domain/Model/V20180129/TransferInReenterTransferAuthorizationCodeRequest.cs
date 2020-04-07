@@ -35,26 +35,13 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
-		private string transferAuthorizationCode;
-
 		private string domainName;
+
+		private string transferAuthorizationCode;
 
 		private string userClientIp;
 
 		private string lang;
-
-		public string TransferAuthorizationCode
-		{
-			get
-			{
-				return transferAuthorizationCode;
-			}
-			set	
-			{
-				transferAuthorizationCode = value;
-				DictionaryUtil.Add(QueryParameters, "TransferAuthorizationCode", value);
-			}
-		}
 
 		public string DomainName
 		{
@@ -66,6 +53,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public string TransferAuthorizationCode
+		{
+			get
+			{
+				return transferAuthorizationCode;
+			}
+			set	
+			{
+				transferAuthorizationCode = value;
+				DictionaryUtil.Add(QueryParameters, "TransferAuthorizationCode", value);
 			}
 		}
 

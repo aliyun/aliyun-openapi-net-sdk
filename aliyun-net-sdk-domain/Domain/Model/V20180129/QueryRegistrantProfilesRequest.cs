@@ -35,55 +35,29 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
-		private string registrantOrganization;
-
-		private string userClientIp;
-
 		private long? registrantProfileId;
 
+		private int? pageNum;
+
 		private int? pageSize;
-
-		private string registrantType;
-
-		private string registrantProfileType;
 
 		private string realNameStatus;
 
 		private string lang;
 
-		private int? pageNum;
-
-		private bool? defaultRegistrantProfile;
-
 		private string email;
 
 		private string zhRegistrantOrganization;
 
-		public string RegistrantOrganization
-		{
-			get
-			{
-				return registrantOrganization;
-			}
-			set	
-			{
-				registrantOrganization = value;
-				DictionaryUtil.Add(QueryParameters, "RegistrantOrganization", value);
-			}
-		}
+		private string registrantType;
 
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
+		private string registrantProfileType;
+
+		private bool? defaultRegistrantProfile;
+
+		private string registrantOrganization;
+
+		private string userClientIp;
 
 		public long? RegistrantProfileId
 		{
@@ -98,6 +72,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
 		public int? PageSize
 		{
 			get
@@ -108,32 +95,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string RegistrantType
-		{
-			get
-			{
-				return registrantType;
-			}
-			set	
-			{
-				registrantType = value;
-				DictionaryUtil.Add(QueryParameters, "RegistrantType", value);
-			}
-		}
-
-		public string RegistrantProfileType
-		{
-			get
-			{
-				return registrantProfileType;
-			}
-			set	
-			{
-				registrantProfileType = value;
-				DictionaryUtil.Add(QueryParameters, "RegistrantProfileType", value);
 			}
 		}
 
@@ -163,32 +124,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public bool? DefaultRegistrantProfile
-		{
-			get
-			{
-				return defaultRegistrantProfile;
-			}
-			set	
-			{
-				defaultRegistrantProfile = value;
-				DictionaryUtil.Add(QueryParameters, "DefaultRegistrantProfile", value.ToString());
-			}
-		}
-
 		public string Email
 		{
 			get
@@ -212,6 +147,71 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				zhRegistrantOrganization = value;
 				DictionaryUtil.Add(QueryParameters, "ZhRegistrantOrganization", value);
+			}
+		}
+
+		public string RegistrantType
+		{
+			get
+			{
+				return registrantType;
+			}
+			set	
+			{
+				registrantType = value;
+				DictionaryUtil.Add(QueryParameters, "RegistrantType", value);
+			}
+		}
+
+		public string RegistrantProfileType
+		{
+			get
+			{
+				return registrantProfileType;
+			}
+			set	
+			{
+				registrantProfileType = value;
+				DictionaryUtil.Add(QueryParameters, "RegistrantProfileType", value);
+			}
+		}
+
+		public bool? DefaultRegistrantProfile
+		{
+			get
+			{
+				return defaultRegistrantProfile;
+			}
+			set	
+			{
+				defaultRegistrantProfile = value;
+				DictionaryUtil.Add(QueryParameters, "DefaultRegistrantProfile", value.ToString());
+			}
+		}
+
+		public string RegistrantOrganization
+		{
+			get
+			{
+				return registrantOrganization;
+			}
+			set	
+			{
+				registrantOrganization = value;
+				DictionaryUtil.Add(QueryParameters, "RegistrantOrganization", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

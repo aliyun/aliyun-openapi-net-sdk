@@ -35,15 +35,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
-		private List<OrderActivateParam> orderActivateParams;
-
-		private string promotionNo;
-
-		private string userClientIp;
+		private List<OrderActivateParam> orderActivateParams = new List<OrderActivateParam>(){ };
 
 		private string couponNo;
 
 		private bool? useCoupon;
+
+		private string promotionNo;
+
+		private string userClientIp;
 
 		private string lang;
 
@@ -91,32 +91,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string PromotionNo
-		{
-			get
-			{
-				return promotionNo;
-			}
-			set	
-			{
-				promotionNo = value;
-				DictionaryUtil.Add(QueryParameters, "PromotionNo", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
 		public string CouponNo
 		{
 			get
@@ -140,6 +114,32 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				useCoupon = value;
 				DictionaryUtil.Add(QueryParameters, "UseCoupon", value.ToString());
+			}
+		}
+
+		public string PromotionNo
+		{
+			get
+			{
+				return promotionNo;
+			}
+			set	
+			{
+				promotionNo = value;
+				DictionaryUtil.Add(QueryParameters, "PromotionNo", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

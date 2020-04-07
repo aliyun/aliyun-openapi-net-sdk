@@ -36,45 +36,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			Method = MethodType.POST;
         }
 
+		private string fileToUpload;
+
+		private List<string> domainNames = new List<string>(){ };
+
+		private bool? replace;
+
+		private long? domainGroupId;
+
 		private int? dataSource;
 
 		private string userClientIp;
 
-		private string fileToUpload;
-
-		private List<string> domainNames;
-
-		private bool? replace;
-
 		private string lang;
-
-		private long? domainGroupId;
-
-		public int? DataSource
-		{
-			get
-			{
-				return dataSource;
-			}
-			set	
-			{
-				dataSource = value;
-				DictionaryUtil.Add(QueryParameters, "DataSource", value.ToString());
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public string FileToUpload
 		{
@@ -119,19 +93,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
 		public long? DomainGroupId
 		{
 			get
@@ -142,6 +103,45 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				domainGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "DomainGroupId", value.ToString());
+			}
+		}
+
+		public int? DataSource
+		{
+			get
+			{
+				return dataSource;
+			}
+			set	
+			{
+				dataSource = value;
+				DictionaryUtil.Add(QueryParameters, "DataSource", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

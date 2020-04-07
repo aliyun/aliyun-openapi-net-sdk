@@ -35,13 +35,26 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
+		private bool? showDeletingGroup;
+
 		private string userClientIp;
 
 		private string domainGroupName;
 
 		private string lang;
 
-		private bool? showDeletingGroup;
+		public bool? ShowDeletingGroup
+		{
+			get
+			{
+				return showDeletingGroup;
+			}
+			set	
+			{
+				showDeletingGroup = value;
+				DictionaryUtil.Add(QueryParameters, "ShowDeletingGroup", value.ToString());
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -79,19 +92,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public bool? ShowDeletingGroup
-		{
-			get
-			{
-				return showDeletingGroup;
-			}
-			set	
-			{
-				showDeletingGroup = value;
-				DictionaryUtil.Add(QueryParameters, "ShowDeletingGroup", value.ToString());
 			}
 		}
 

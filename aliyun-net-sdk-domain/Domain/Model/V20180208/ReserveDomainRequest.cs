@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Domain.Model.V20180208
         {
         }
 
-		private List<string> channelss;
+		private List<string> channelss = new List<string>(){ };
 
 		private string domainName;
 

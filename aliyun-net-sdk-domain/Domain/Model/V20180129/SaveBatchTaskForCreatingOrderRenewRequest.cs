@@ -35,19 +35,45 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
-		private string promotionNo;
-
-		private string userClientIp;
-
-		private List<OrderRenewParam> orderRenewParams;
-
 		private string couponNo;
 
 		private bool? useCoupon;
 
+		private string promotionNo;
+
+		private string userClientIp;
+
+		private List<OrderRenewParam> orderRenewParams = new List<OrderRenewParam>(){ };
+
 		private string lang;
 
 		private bool? usePromotion;
+
+		public string CouponNo
+		{
+			get
+			{
+				return couponNo;
+			}
+			set	
+			{
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
+			}
+		}
+
+		public bool? UseCoupon
+		{
+			get
+			{
+				return useCoupon;
+			}
+			set	
+			{
+				useCoupon = value;
+				DictionaryUtil.Add(QueryParameters, "UseCoupon", value.ToString());
+			}
+		}
 
 		public string PromotionNo
 		{
@@ -91,32 +117,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 					DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (i + 1) + ".CurrentExpirationDate", orderRenewParams[i].CurrentExpirationDate);
 					DictionaryUtil.Add(QueryParameters,"OrderRenewParam." + (i + 1) + ".DomainName", orderRenewParams[i].DomainName);
 				}
-			}
-		}
-
-		public string CouponNo
-		{
-			get
-			{
-				return couponNo;
-			}
-			set	
-			{
-				couponNo = value;
-				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
-			}
-		}
-
-		public bool? UseCoupon
-		{
-			get
-			{
-				return useCoupon;
-			}
-			set	
-			{
-				useCoupon = value;
-				DictionaryUtil.Add(QueryParameters, "UseCoupon", value.ToString());
 			}
 		}
 

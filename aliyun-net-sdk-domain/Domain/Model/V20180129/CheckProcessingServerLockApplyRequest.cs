@@ -35,26 +35,13 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
-		private int? feePeriod;
-
 		private string domainName;
+
+		private int? feePeriod;
 
 		private string userClientIp;
 
 		private string lang;
-
-		public int? FeePeriod
-		{
-			get
-			{
-				return feePeriod;
-			}
-			set	
-			{
-				feePeriod = value;
-				DictionaryUtil.Add(QueryParameters, "FeePeriod", value.ToString());
-			}
-		}
 
 		public string DomainName
 		{
@@ -66,6 +53,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public int? FeePeriod
+		{
+			get
+			{
+				return feePeriod;
+			}
+			set	
+			{
+				feePeriod = value;
+				DictionaryUtil.Add(QueryParameters, "FeePeriod", value.ToString());
 			}
 		}
 

@@ -35,13 +35,15 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
+		private string domainName;
+
+		private int? pageNum;
+
 		private int? taskStatus;
 
 		private string instanceId;
 
 		private string taskNo;
-
-		private string domainName;
 
 		private string userClientIp;
 
@@ -49,7 +51,31 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string lang;
 
-		private int? pageNum;
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
 
 		public int? TaskStatus
 		{
@@ -90,19 +116,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
 		public string UserClientIp
 		{
 			get
@@ -139,19 +152,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

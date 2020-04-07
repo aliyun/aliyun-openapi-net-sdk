@@ -35,13 +35,26 @@ namespace Aliyun.Acs.Domain.Model.V20180129
         {
         }
 
+		private string remark;
+
 		private string instanceIds;
 
 		private string userClientIp;
 
-		private string remark;
-
 		private string lang;
+
+		public string Remark
+		{
+			get
+			{
+				return remark;
+			}
+			set	
+			{
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
+			}
+		}
 
 		public string InstanceIds
 		{
@@ -66,19 +79,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public string Remark
-		{
-			get
-			{
-				return remark;
-			}
-			set	
-			{
-				remark = value;
-				DictionaryUtil.Add(QueryParameters, "Remark", value);
 			}
 		}
 

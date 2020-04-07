@@ -38,11 +38,11 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 
 		private string identityCredentialType;
 
-		private string userClientIp;
-
 		private long? registrantProfileID;
 
 		private string identityCredential;
+
+		private string userClientIp;
 
 		private string lang;
 
@@ -58,19 +58,6 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				identityCredentialType = value;
 				DictionaryUtil.Add(QueryParameters, "IdentityCredentialType", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -97,6 +84,19 @@ namespace Aliyun.Acs.Domain.Model.V20180129
 			{
 				identityCredential = value;
 				DictionaryUtil.Add(BodyParameters, "IdentityCredential", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
