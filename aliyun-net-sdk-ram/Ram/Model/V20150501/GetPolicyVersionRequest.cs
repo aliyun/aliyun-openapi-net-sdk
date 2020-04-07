@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Ram;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
 
@@ -32,27 +33,19 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public GetPolicyVersionRequest()
             : base("Ram", "2015-05-01", "GetPolicyVersion")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string versionId;
-
 		private string policyType;
 
-		private string policyName;
+		private string versionId;
 
-		public string VersionId
-		{
-			get
-			{
-				return versionId;
-			}
-			set	
-			{
-				versionId = value;
-				DictionaryUtil.Add(QueryParameters, "VersionId", value);
-			}
-		}
+		private string policyName;
 
 		public string PolicyType
 		{
@@ -64,6 +57,19 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			{
 				policyType = value;
 				DictionaryUtil.Add(QueryParameters, "PolicyType", value);
+			}
+		}
+
+		public string VersionId
+		{
+			get
+			{
+				return versionId;
+			}
+			set	
+			{
+				versionId = value;
+				DictionaryUtil.Add(QueryParameters, "VersionId", value);
 			}
 		}
 

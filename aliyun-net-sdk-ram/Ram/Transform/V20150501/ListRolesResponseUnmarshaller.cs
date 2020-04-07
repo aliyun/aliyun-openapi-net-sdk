@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 				role.Description = context.StringValue("ListRoles.Roles["+ i +"].Description");
 				role.CreateDate = context.StringValue("ListRoles.Roles["+ i +"].CreateDate");
 				role.UpdateDate = context.StringValue("ListRoles.Roles["+ i +"].UpdateDate");
+				role.MaxSessionDuration = context.LongValue("ListRoles.Roles["+ i +"].MaxSessionDuration");
 
 				listRolesResponse_roles.Add(role);
 			}

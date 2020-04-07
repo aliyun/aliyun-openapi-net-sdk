@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Ram;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
 
@@ -32,44 +33,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public CreateUserRequest()
             : base("Ram", "2015-05-01", "CreateUser")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Protocol = ProtocolType.HTTPS;
         }
-
-		private string comments;
-
-		private string displayName;
 
 		private string mobilePhone;
 
 		private string email;
 
+		private string comments;
+
+		private string displayName;
+
 		private string userName;
-
-		public string Comments
-		{
-			get
-			{
-				return comments;
-			}
-			set	
-			{
-				comments = value;
-				DictionaryUtil.Add(QueryParameters, "Comments", value);
-			}
-		}
-
-		public string DisplayName
-		{
-			get
-			{
-				return displayName;
-			}
-			set	
-			{
-				displayName = value;
-				DictionaryUtil.Add(QueryParameters, "DisplayName", value);
-			}
-		}
 
 		public string MobilePhone
 		{
@@ -94,6 +74,32 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			{
 				email = value;
 				DictionaryUtil.Add(QueryParameters, "Email", value);
+			}
+		}
+
+		public string Comments
+		{
+			get
+			{
+				return comments;
+			}
+			set	
+			{
+				comments = value;
+				DictionaryUtil.Add(QueryParameters, "Comments", value);
+			}
+		}
+
+		public string DisplayName
+		{
+			get
+			{
+				return displayName;
+			}
+			set	
+			{
+				displayName = value;
+				DictionaryUtil.Add(QueryParameters, "DisplayName", value);
 			}
 		}
 

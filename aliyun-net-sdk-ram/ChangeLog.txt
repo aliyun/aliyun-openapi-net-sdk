@@ -1,3 +1,6 @@
+2020-04-07 Version: 3.1.1
+- Generated 2015-05-01 for `Ram`.
+
 2019-06-19 Version 3.1.0
 1, Add DefaultPolicyVersion as return field to GetPolicy interface, Facilitating to get policy document from this interface.
 2, Add RotateStrategy as input field to CreatePolicyVersion interface for rotating policy version when reaching policy version lim

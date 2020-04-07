@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 			role.Description = context.StringValue("CreateRole.Role.Description");
 			role.AssumeRolePolicyDocument = context.StringValue("CreateRole.Role.AssumeRolePolicyDocument");
 			role.CreateDate = context.StringValue("CreateRole.Role.CreateDate");
+			role.MaxSessionDuration = context.LongValue("CreateRole.Role.MaxSessionDuration");
 			createRoleResponse.Role = role;
         
 			return createRoleResponse;

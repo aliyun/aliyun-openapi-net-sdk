@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Ram;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
 
@@ -32,18 +33,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public UpdateUserRequest()
             : base("Ram", "2015-05-01", "UpdateUser")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Protocol = ProtocolType.HTTPS;
         }
 
 		private string newUserName;
 
-		private string newDisplayName;
-
 		private string newMobilePhone;
 
-		private string newComments;
-
 		private string newEmail;
+
+		private string newDisplayName;
+
+		private string newComments;
 
 		private string userName;
 
@@ -60,19 +66,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-		public string NewDisplayName
-		{
-			get
-			{
-				return newDisplayName;
-			}
-			set	
-			{
-				newDisplayName = value;
-				DictionaryUtil.Add(QueryParameters, "NewDisplayName", value);
-			}
-		}
-
 		public string NewMobilePhone
 		{
 			get
@@ -86,19 +79,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-		public string NewComments
-		{
-			get
-			{
-				return newComments;
-			}
-			set	
-			{
-				newComments = value;
-				DictionaryUtil.Add(QueryParameters, "NewComments", value);
-			}
-		}
-
 		public string NewEmail
 		{
 			get
@@ -109,6 +89,32 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			{
 				newEmail = value;
 				DictionaryUtil.Add(QueryParameters, "NewEmail", value);
+			}
+		}
+
+		public string NewDisplayName
+		{
+			get
+			{
+				return newDisplayName;
+			}
+			set	
+			{
+				newDisplayName = value;
+				DictionaryUtil.Add(QueryParameters, "NewDisplayName", value);
+			}
+		}
+
+		public string NewComments
+		{
+			get
+			{
+				return newComments;
+			}
+			set	
+			{
+				newComments = value;
+				DictionaryUtil.Add(QueryParameters, "NewComments", value);
 			}
 		}
 

@@ -96,6 +96,8 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 
 			private string updateDate;
 
+			private long? maxSessionDuration;
+
 			public string RoleId
 			{
 				get
@@ -165,6 +167,18 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 				set	
 				{
 					updateDate = value;
+				}
+			}
+
+			public long? MaxSessionDuration
+			{
+				get
+				{
+					return maxSessionDuration;
+				}
+				set	
+				{
+					maxSessionDuration = value;
 				}
 			}
 		}

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Ram;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
 
@@ -32,29 +33,21 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public CreateLoginProfileRequest()
             : base("Ram", "2015-05-01", "CreateLoginProfile")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Protocol = ProtocolType.HTTPS;
         }
 
-		private string password;
-
 		private bool? passwordResetRequired;
+
+		private string password;
 
 		private bool? mFABindRequired;
 
 		private string userName;
-
-		public string Password
-		{
-			get
-			{
-				return password;
-			}
-			set	
-			{
-				password = value;
-				DictionaryUtil.Add(QueryParameters, "Password", value);
-			}
-		}
 
 		public bool? PasswordResetRequired
 		{
@@ -66,6 +59,19 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			{
 				passwordResetRequired = value;
 				DictionaryUtil.Add(QueryParameters, "PasswordResetRequired", value.ToString());
+			}
+		}
+
+		public string Password
+		{
+			get
+			{
+				return password;
+			}
+			set	
+			{
+				password = value;
+				DictionaryUtil.Add(QueryParameters, "Password", value);
 			}
 		}
 

@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Ram.Transform.V20150501
 			role.AssumeRolePolicyDocument = context.StringValue("UpdateRole.Role.AssumeRolePolicyDocument");
 			role.CreateDate = context.StringValue("UpdateRole.Role.CreateDate");
 			role.UpdateDate = context.StringValue("UpdateRole.Role.UpdateDate");
+			role.MaxSessionDuration = context.LongValue("UpdateRole.Role.MaxSessionDuration");
 			updateRoleResponse.Role = role;
         
 			return updateRoleResponse;

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Ram;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
 
@@ -32,14 +33,32 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public ListUsersForGroupRequest()
             : base("Ram", "2015-05-01", "ListUsersForGroup")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Protocol = ProtocolType.HTTPS;
         }
+
+		private string groupName;
 
 		private string marker;
 
 		private int? maxItems;
 
-		private string groupName;
+		public string GroupName
+		{
+			get
+			{
+				return groupName;
+			}
+			set	
+			{
+				groupName = value;
+				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
 
 		public string Marker
 		{
@@ -64,19 +83,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			{
 				maxItems = value;
 				DictionaryUtil.Add(QueryParameters, "MaxItems", value.ToString());
-			}
-		}
-
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
 			}
 		}
 

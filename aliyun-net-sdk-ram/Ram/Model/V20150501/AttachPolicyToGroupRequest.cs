@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Ram;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
 
@@ -32,14 +33,19 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public AttachPolicyToGroupRequest()
             : base("Ram", "2015-05-01", "AttachPolicyToGroup")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Protocol = ProtocolType.HTTPS;
         }
 
 		private string policyType;
 
-		private string policyName;
-
 		private string groupName;
+
+		private string policyName;
 
 		public string PolicyType
 		{
@@ -54,19 +60,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			}
 		}
 
-		public string PolicyName
-		{
-			get
-			{
-				return policyName;
-			}
-			set	
-			{
-				policyName = value;
-				DictionaryUtil.Add(QueryParameters, "PolicyName", value);
-			}
-		}
-
 		public string GroupName
 		{
 			get
@@ -77,6 +70,19 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
+
+		public string PolicyName
+		{
+			get
+			{
+				return policyName;
+			}
+			set	
+			{
+				policyName = value;
+				DictionaryUtil.Add(QueryParameters, "PolicyName", value);
 			}
 		}
 

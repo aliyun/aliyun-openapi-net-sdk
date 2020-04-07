@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Ram;
 using Aliyun.Acs.Ram.Transform;
 using Aliyun.Acs.Ram.Transform.V20150501;
 
@@ -32,14 +33,23 @@ namespace Aliyun.Acs.Ram.Model.V20150501
         public SetPasswordPolicyRequest()
             : base("Ram", "2015-05-01", "SetPasswordPolicy")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Protocol = ProtocolType.HTTPS;
         }
-
-		private bool? requireNumbers;
 
 		private int? passwordReusePrevention;
 
 		private bool? requireUppercaseCharacters;
+
+		private int? minimumPasswordLength;
+
+		private bool? requireNumbers;
+
+		private bool? requireLowercaseCharacters;
 
 		private int? maxPasswordAge;
 
@@ -47,24 +57,7 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 
 		private bool? hardExpiry;
 
-		private int? minimumPasswordLength;
-
-		private bool? requireLowercaseCharacters;
-
 		private bool? requireSymbols;
-
-		public bool? RequireNumbers
-		{
-			get
-			{
-				return requireNumbers;
-			}
-			set	
-			{
-				requireNumbers = value;
-				DictionaryUtil.Add(QueryParameters, "RequireNumbers", value.ToString());
-			}
-		}
 
 		public int? PasswordReusePrevention
 		{
@@ -89,6 +82,45 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			{
 				requireUppercaseCharacters = value;
 				DictionaryUtil.Add(QueryParameters, "RequireUppercaseCharacters", value.ToString());
+			}
+		}
+
+		public int? MinimumPasswordLength
+		{
+			get
+			{
+				return minimumPasswordLength;
+			}
+			set	
+			{
+				minimumPasswordLength = value;
+				DictionaryUtil.Add(QueryParameters, "MinimumPasswordLength", value.ToString());
+			}
+		}
+
+		public bool? RequireNumbers
+		{
+			get
+			{
+				return requireNumbers;
+			}
+			set	
+			{
+				requireNumbers = value;
+				DictionaryUtil.Add(QueryParameters, "RequireNumbers", value.ToString());
+			}
+		}
+
+		public bool? RequireLowercaseCharacters
+		{
+			get
+			{
+				return requireLowercaseCharacters;
+			}
+			set	
+			{
+				requireLowercaseCharacters = value;
+				DictionaryUtil.Add(QueryParameters, "RequireLowercaseCharacters", value.ToString());
 			}
 		}
 
@@ -128,32 +160,6 @@ namespace Aliyun.Acs.Ram.Model.V20150501
 			{
 				hardExpiry = value;
 				DictionaryUtil.Add(QueryParameters, "HardExpiry", value.ToString());
-			}
-		}
-
-		public int? MinimumPasswordLength
-		{
-			get
-			{
-				return minimumPasswordLength;
-			}
-			set	
-			{
-				minimumPasswordLength = value;
-				DictionaryUtil.Add(QueryParameters, "MinimumPasswordLength", value.ToString());
-			}
-		}
-
-		public bool? RequireLowercaseCharacters
-		{
-			get
-			{
-				return requireLowercaseCharacters;
-			}
-			set	
-			{
-				requireLowercaseCharacters = value;
-				DictionaryUtil.Add(QueryParameters, "RequireLowercaseCharacters", value.ToString());
 			}
 		}
 
