@@ -108,6 +108,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string accountName;
 
+			private string hostCPU;
+
+			private string hostMem;
+
+			private string hostStorage;
+
+			private string cpuUsed;
+
+			private string memoryUsed;
+
+			private string storageUsed;
+
 			public string HostName
 			{
 				get
@@ -333,6 +345,78 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					accountName = value;
+				}
+			}
+
+			public string HostCPU
+			{
+				get
+				{
+					return hostCPU;
+				}
+				set	
+				{
+					hostCPU = value;
+				}
+			}
+
+			public string HostMem
+			{
+				get
+				{
+					return hostMem;
+				}
+				set	
+				{
+					hostMem = value;
+				}
+			}
+
+			public string HostStorage
+			{
+				get
+				{
+					return hostStorage;
+				}
+				set	
+				{
+					hostStorage = value;
+				}
+			}
+
+			public string CpuUsed
+			{
+				get
+				{
+					return cpuUsed;
+				}
+				set	
+				{
+					cpuUsed = value;
+				}
+			}
+
+			public string MemoryUsed
+			{
+				get
+				{
+					return memoryUsed;
+				}
+				set	
+				{
+					memoryUsed = value;
+				}
+			}
+
+			public string StorageUsed
+			{
+				get
+				{
+					return storageUsed;
+				}
+				set	
+				{
+					storageUsed = value;
 				}
 			}
 		}

@@ -65,6 +65,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string clientToken;
 
+		private string instanceLevel;
+
 		private string searchKey;
 
 		private int? pageNumber;
@@ -257,6 +259,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string InstanceLevel
+		{
+			get
+			{
+				return instanceLevel;
+			}
+			set	
+			{
+				instanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceLevel", value);
 			}
 		}
 

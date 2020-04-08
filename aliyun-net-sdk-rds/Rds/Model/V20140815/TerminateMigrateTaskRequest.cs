@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeLocalAvailableRecoveryTimeRequest : RpcAcsRequest<DescribeLocalAvailableRecoveryTimeResponse>
+    public class TerminateMigrateTaskRequest : RpcAcsRequest<TerminateMigrateTaskResponse>
     {
-        public DescribeLocalAvailableRecoveryTimeRequest()
-            : base("Rds", "2014-08-15", "DescribeLocalAvailableRecoveryTime", "rds", "openAPI")
+        public TerminateMigrateTaskRequest()
+            : base("Rds", "2014-08-15", "TerminateMigrateTask", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,13 +41,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
+		private string migrateTaskId;
+
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
 		private string dBInstanceId;
-
-		private string region;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +59,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string MigrateTaskId
+		{
+			get
+			{
+				return migrateTaskId;
+			}
+			set	
+			{
+				migrateTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "MigrateTaskId", value);
 			}
 		}
 
@@ -101,22 +114,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
-        public override DescribeLocalAvailableRecoveryTimeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TerminateMigrateTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeLocalAvailableRecoveryTimeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TerminateMigrateTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
