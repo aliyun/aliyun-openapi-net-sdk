@@ -40,6 +40,7 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			resultObject.IdentityInfo = context.StringValue("DescribeFaceVerify.ResultObject.IdentityInfo");
 			resultObject.MaterialInfo = context.StringValue("DescribeFaceVerify.ResultObject.MaterialInfo");
 			resultObject.DeviceToken = context.StringValue("DescribeFaceVerify.ResultObject.DeviceToken");
+			resultObject.SubCode = context.StringValue("DescribeFaceVerify.ResultObject.SubCode");
 			describeFaceVerifyResponse.ResultObject = resultObject;
         
 			return describeFaceVerifyResponse;
