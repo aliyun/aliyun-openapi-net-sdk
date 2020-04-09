@@ -1,0 +1,50 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using System;
+using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.waf_openapi.Model.V20190910;
+
+namespace Aliyun.Acs.waf_openapi.Transform.V20190910
+{
+    public class DescribeProtectBlockSummaryResponseUnmarshaller
+    {
+        public static DescribeProtectBlockSummaryResponse Unmarshall(UnmarshallerContext context)
+        {
+			DescribeProtectBlockSummaryResponse describeProtectBlockSummaryResponse = new DescribeProtectBlockSummaryResponse();
+
+			describeProtectBlockSummaryResponse.HttpResponse = context.HttpResponse;
+			describeProtectBlockSummaryResponse.RequestId = context.StringValue("DescribeProtectBlockSummary.RequestId");
+
+			List<DescribeProtectBlockSummaryResponse.DescribeProtectBlockSummary_Item> describeProtectBlockSummaryResponse_protectBlockSummarys = new List<DescribeProtectBlockSummaryResponse.DescribeProtectBlockSummary_Item>();
+			for (int i = 0; i < context.Length("DescribeProtectBlockSummary.ProtectBlockSummarys.Length"); i++) {
+				DescribeProtectBlockSummaryResponse.DescribeProtectBlockSummary_Item item = new DescribeProtectBlockSummaryResponse.DescribeProtectBlockSummary_Item();
+				item.BlockPv = context.LongValue("DescribeProtectBlockSummary.ProtectBlockSummarys["+ i +"].BlockPv");
+				item.Index = context.LongValue("DescribeProtectBlockSummary.ProtectBlockSummarys["+ i +"].Index");
+				item.AllPv = context.LongValue("DescribeProtectBlockSummary.ProtectBlockSummarys["+ i +"].AllPv");
+
+				describeProtectBlockSummaryResponse_protectBlockSummarys.Add(item);
+			}
+			describeProtectBlockSummaryResponse.ProtectBlockSummarys = describeProtectBlockSummaryResponse_protectBlockSummarys;
+        
+			return describeProtectBlockSummaryResponse;
+        }
+    }
+}
