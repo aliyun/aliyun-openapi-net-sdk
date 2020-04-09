@@ -36,20 +36,32 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 			listAppResponse.ErrorMsg = context.StringValue("ListApp.ErrorMsg");
 			listAppResponse.TotalCount = context.IntegerValue("ListApp.TotalCount");
 
-			List<ListAppResponse.ListApp_ListAppResponse1> listAppResponse_data = new List<ListAppResponse.ListApp_ListAppResponse1>();
+			List<ListAppResponse.ListApp_AppDetail> listAppResponse_data = new List<ListAppResponse.ListApp_AppDetail>();
 			for (int i = 0; i < context.Length("ListApp.Data.Length"); i++) {
-				ListAppResponse.ListApp_ListAppResponse1 listAppResponse1 = new ListAppResponse.ListApp_ListAppResponse1();
-				listAppResponse1.AppId = context.LongValue("ListApp.Data["+ i +"].AppId");
-				listAppResponse1.Title = context.StringValue("ListApp.Data["+ i +"].Title");
-				listAppResponse1.Description = context.StringValue("ListApp.Data["+ i +"].Description");
-				listAppResponse1.Language = context.StringValue("ListApp.Data["+ i +"].Language");
-				listAppResponse1.OperatingSystem = context.StringValue("ListApp.Data["+ i +"].OperatingSystem");
-				listAppResponse1.BizName = context.StringValue("ListApp.Data["+ i +"].BizName");
-				listAppResponse1.ServiceType = context.StringValue("ListApp.Data["+ i +"].ServiceType");
-				listAppResponse1.DeployType = context.StringValue("ListApp.Data["+ i +"].DeployType");
-				listAppResponse1.BizTitle = context.StringValue("ListApp.Data["+ i +"].BizTitle");
+				ListAppResponse.ListApp_AppDetail appDetail = new ListAppResponse.ListApp_AppDetail();
+				appDetail.AppId = context.LongValue("ListApp.Data["+ i +"].AppId");
+				appDetail.Title = context.StringValue("ListApp.Data["+ i +"].Title");
+				appDetail.Description = context.StringValue("ListApp.Data["+ i +"].Description");
+				appDetail.Language = context.StringValue("ListApp.Data["+ i +"].Language");
+				appDetail.OperatingSystem = context.StringValue("ListApp.Data["+ i +"].OperatingSystem");
+				appDetail.BizName = context.StringValue("ListApp.Data["+ i +"].BizName");
+				appDetail.ServiceType = context.StringValue("ListApp.Data["+ i +"].ServiceType");
+				appDetail.DeployType = context.StringValue("ListApp.Data["+ i +"].DeployType");
+				appDetail.BizTitle = context.StringValue("ListApp.Data["+ i +"].BizTitle");
+				appDetail.AppStateType = context.StringValue("ListApp.Data["+ i +"].AppStateType");
 
-				listAppResponse_data.Add(listAppResponse1);
+				List<ListAppResponse.ListApp_AppDetail.ListApp_MiddleWareInfo> appDetail_middleWareList = new List<ListAppResponse.ListApp_AppDetail.ListApp_MiddleWareInfo>();
+				for (int j = 0; j < context.Length("ListApp.Data["+ i +"].MiddleWareList.Length"); j++) {
+					ListAppResponse.ListApp_AppDetail.ListApp_MiddleWareInfo middleWareInfo = new ListAppResponse.ListApp_AppDetail.ListApp_MiddleWareInfo();
+					middleWareInfo.AppId = context.LongValue("ListApp.Data["+ i +"].MiddleWareList["+ j +"].AppId");
+					middleWareInfo.Code = context.IntegerValue("ListApp.Data["+ i +"].MiddleWareList["+ j +"].Code");
+					middleWareInfo.Name = context.StringValue("ListApp.Data["+ i +"].MiddleWareList["+ j +"].Name");
+
+					appDetail_middleWareList.Add(middleWareInfo);
+				}
+				appDetail.MiddleWareList = appDetail_middleWareList;
+
+				listAppResponse_data.Add(appDetail);
 			}
 			listAppResponse.Data = listAppResponse_data;
         

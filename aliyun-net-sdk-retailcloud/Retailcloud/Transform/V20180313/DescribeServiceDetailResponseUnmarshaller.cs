@@ -44,6 +44,7 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 			result.Name = context.StringValue("DescribeServiceDetail.Result.Name");
 			result.ServiceId = context.LongValue("DescribeServiceDetail.Result.ServiceId");
 			result.ServiceType = context.StringValue("DescribeServiceDetail.Result.ServiceType");
+			result.ClusterIP = context.StringValue("DescribeServiceDetail.Result.ClusterIP");
 
 			List<DescribeServiceDetailResponse.DescribeServiceDetail_Result.DescribeServiceDetail_ServicePortMapping> result_portMappings = new List<DescribeServiceDetailResponse.DescribeServiceDetail_Result.DescribeServiceDetail_ServicePortMapping>();
 			for (int i = 0; i < context.Length("DescribeServiceDetail.Result.PortMappings.Length"); i++) {

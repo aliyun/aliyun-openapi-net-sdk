@@ -37,7 +37,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 		private long? totalCount;
 
-		private List<ListPods_ListPodsResponse1> data;
+		private List<ListPods_PodDetail> data;
 
 		public int? Code
 		{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public List<ListPods_ListPodsResponse1> Data
+		public List<ListPods_PodDetail> Data
 		{
 			get
 			{
@@ -123,7 +123,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public class ListPods_ListPodsResponse1
+		public class ListPods_PodDetail
 		{
 
 			private string appInstanceId;

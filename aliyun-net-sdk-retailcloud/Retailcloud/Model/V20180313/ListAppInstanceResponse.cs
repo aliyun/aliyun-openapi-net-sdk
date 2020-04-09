@@ -37,7 +37,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 		private string errMsg;
 
-		private List<ListAppInstance_ListAppInstanceResponse1> data;
+		private List<ListAppInstance_AppInstanceDetail> data;
 
 		public string RequestId
 		{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public List<ListAppInstance_ListAppInstanceResponse1> Data
+		public List<ListAppInstance_AppInstanceDetail> Data
 		{
 			get
 			{
@@ -123,7 +123,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public class ListAppInstance_ListAppInstanceResponse1
+		public class ListAppInstance_AppInstanceDetail
 		{
 
 			private string appInstanceId;
@@ -139,6 +139,10 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			private string podIp;
 
 			private string health;
+
+			private string requests;
+
+			private string limits;
 
 			public string AppInstanceId
 			{
@@ -221,6 +225,30 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				set	
 				{
 					health = value;
+				}
+			}
+
+			public string Requests
+			{
+				get
+				{
+					return requests;
+				}
+				set	
+				{
+					requests = value;
+				}
+			}
+
+			public string Limits
+			{
+				get
+				{
+					return limits;
+				}
+				set	
+				{
+					limits = value;
 				}
 			}
 		}

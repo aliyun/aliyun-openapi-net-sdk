@@ -45,6 +45,30 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 			result.OperatingSystem = context.StringValue("DescribeAppDetail.Result.OperatingSystem");
 			result.DeployType = context.StringValue("DescribeAppDetail.Result.DeployType");
 			result.Description = context.StringValue("DescribeAppDetail.Result.Description");
+			result.AppStateType = context.StringValue("DescribeAppDetail.Result.AppStateType");
+
+			List<DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_UserRole> result_userRoles = new List<DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_UserRole>();
+			for (int i = 0; i < context.Length("DescribeAppDetail.Result.UserRoles.Length"); i++) {
+				DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_UserRole userRole = new DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_UserRole();
+				userRole.UserId = context.StringValue("DescribeAppDetail.Result.UserRoles["+ i +"].UserId");
+				userRole.UserType = context.StringValue("DescribeAppDetail.Result.UserRoles["+ i +"].UserType");
+				userRole.RealName = context.StringValue("DescribeAppDetail.Result.UserRoles["+ i +"].RealName");
+				userRole.RoleName = context.StringValue("DescribeAppDetail.Result.UserRoles["+ i +"].RoleName");
+
+				result_userRoles.Add(userRole);
+			}
+			result.UserRoles = result_userRoles;
+
+			List<DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_MiddleWareInfo> result_middleWareInfoList = new List<DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_MiddleWareInfo>();
+			for (int i = 0; i < context.Length("DescribeAppDetail.Result.MiddleWareInfoList.Length"); i++) {
+				DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_MiddleWareInfo middleWareInfo = new DescribeAppDetailResponse.DescribeAppDetail_Result.DescribeAppDetail_MiddleWareInfo();
+				middleWareInfo.AppId = context.LongValue("DescribeAppDetail.Result.MiddleWareInfoList["+ i +"].AppId");
+				middleWareInfo.Code = context.IntegerValue("DescribeAppDetail.Result.MiddleWareInfoList["+ i +"].Code");
+				middleWareInfo.Name = context.StringValue("DescribeAppDetail.Result.MiddleWareInfoList["+ i +"].Name");
+
+				result_middleWareInfoList.Add(middleWareInfo);
+			}
+			result.MiddleWareInfoList = result_middleWareInfoList;
 			describeAppDetailResponse.Result = result;
         
 			return describeAppDetailResponse;

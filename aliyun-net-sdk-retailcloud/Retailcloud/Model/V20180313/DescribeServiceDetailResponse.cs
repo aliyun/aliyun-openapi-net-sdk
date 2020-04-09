@@ -112,6 +112,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 			private string serviceType;
 
+			private string clusterIP;
+
 			private List<DescribeServiceDetail_ServicePortMapping> portMappings;
 
 			public long? AppId
@@ -195,6 +197,18 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				set	
 				{
 					serviceType = value;
+				}
+			}
+
+			public string ClusterIP
+			{
+				get
+				{
+					return clusterIP;
+				}
+				set	
+				{
+					clusterIP = value;
 				}
 			}
 

@@ -27,31 +27,45 @@ using Aliyun.Acs.retailcloud.Transform.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Model.V20180313
 {
-    public class DescribeAppDetailRequest : RpcAcsRequest<DescribeAppDetailResponse>
+    public class ListUsersRequest : RpcAcsRequest<ListUsersResponse>
     {
-        public DescribeAppDetailRequest()
-            : base("retailcloud", "2018-03-13", "DescribeAppDetail", "retailcloud", "openAPI")
+        public ListUsersRequest()
+            : base("retailcloud", "2018-03-13", "ListUsers", "retailcloud", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private long? appId;
+		private int? pageSize;
 
-		public long? AppId
+		private int? pageNumber;
+
+		public int? PageSize
 		{
 			get
 			{
-				return appId;
+				return pageSize;
 			}
 			set	
 			{
-				appId = value;
-				DictionaryUtil.Add(QueryParameters, "AppId", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -60,9 +74,9 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			return false;
 		}
 
-        public override DescribeAppDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListUsersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAppDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListUsersResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

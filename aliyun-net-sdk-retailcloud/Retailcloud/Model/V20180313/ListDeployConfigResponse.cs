@@ -239,6 +239,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 				private List<string> configMapList;
 
+				private List<string> secretList;
+
 				public string Deployment
 				{
 					get
@@ -284,6 +286,18 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 					set	
 					{
 						configMapList = value;
+					}
+				}
+
+				public List<string> SecretList
+				{
+					get
+					{
+						return secretList;
+					}
+					set	
+					{
+						secretList = value;
 					}
 				}
 			}

@@ -38,18 +38,18 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 			listPersistentVolumeClaimResponse.TotalCount = context.LongValue("ListPersistentVolumeClaim.TotalCount");
 			listPersistentVolumeClaimResponse.ErrorMsg = context.StringValue("ListPersistentVolumeClaim.ErrorMsg");
 
-			List<ListPersistentVolumeClaimResponse.ListPersistentVolumeClaim_ListPersistentVolumeClaimResponse1> listPersistentVolumeClaimResponse_data = new List<ListPersistentVolumeClaimResponse.ListPersistentVolumeClaim_ListPersistentVolumeClaimResponse1>();
+			List<ListPersistentVolumeClaimResponse.ListPersistentVolumeClaim_PersistentVolumeClaimDetail> listPersistentVolumeClaimResponse_data = new List<ListPersistentVolumeClaimResponse.ListPersistentVolumeClaim_PersistentVolumeClaimDetail>();
 			for (int i = 0; i < context.Length("ListPersistentVolumeClaim.Data.Length"); i++) {
-				ListPersistentVolumeClaimResponse.ListPersistentVolumeClaim_ListPersistentVolumeClaimResponse1 listPersistentVolumeClaimResponse1 = new ListPersistentVolumeClaimResponse.ListPersistentVolumeClaim_ListPersistentVolumeClaimResponse1();
-				listPersistentVolumeClaimResponse1.Name = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].Name");
-				listPersistentVolumeClaimResponse1.Capacity = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].Capacity");
-				listPersistentVolumeClaimResponse1.AccessModes = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].AccessModes");
-				listPersistentVolumeClaimResponse1.Status = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].Status");
-				listPersistentVolumeClaimResponse1.StorageClass = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].StorageClass");
-				listPersistentVolumeClaimResponse1.VolumeName = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].VolumeName");
-				listPersistentVolumeClaimResponse1.CreateTime = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].CreateTime");
+				ListPersistentVolumeClaimResponse.ListPersistentVolumeClaim_PersistentVolumeClaimDetail persistentVolumeClaimDetail = new ListPersistentVolumeClaimResponse.ListPersistentVolumeClaim_PersistentVolumeClaimDetail();
+				persistentVolumeClaimDetail.Name = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].Name");
+				persistentVolumeClaimDetail.Capacity = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].Capacity");
+				persistentVolumeClaimDetail.AccessModes = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].AccessModes");
+				persistentVolumeClaimDetail.Status = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].Status");
+				persistentVolumeClaimDetail.StorageClass = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].StorageClass");
+				persistentVolumeClaimDetail.VolumeName = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].VolumeName");
+				persistentVolumeClaimDetail.CreateTime = context.StringValue("ListPersistentVolumeClaim.Data["+ i +"].CreateTime");
 
-				listPersistentVolumeClaimResponse_data.Add(listPersistentVolumeClaimResponse1);
+				listPersistentVolumeClaimResponse_data.Add(persistentVolumeClaimDetail);
 			}
 			listPersistentVolumeClaimResponse.Data = listPersistentVolumeClaimResponse_data;
         

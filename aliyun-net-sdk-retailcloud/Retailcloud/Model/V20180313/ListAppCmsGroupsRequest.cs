@@ -27,20 +27,25 @@ using Aliyun.Acs.retailcloud.Transform.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Model.V20180313
 {
-    public class DescribeAppDetailRequest : RpcAcsRequest<DescribeAppDetailResponse>
+    public class ListAppCmsGroupsRequest : RpcAcsRequest<ListAppCmsGroupsResponse>
     {
-        public DescribeAppDetailRequest()
-            : base("retailcloud", "2018-03-13", "DescribeAppDetail", "retailcloud", "openAPI")
+        public ListAppCmsGroupsRequest()
+            : base("retailcloud", "2018-03-13", "ListAppCmsGroups", "retailcloud", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
 		private long? appId;
+
+		private int? pageSize;
+
+		private long? envId;
+
+		private int? pageNumber;
 
 		public long? AppId
 		{
@@ -55,14 +60,53 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public long? EnvId
+		{
+			get
+			{
+				return envId;
+			}
+			set	
+			{
+				envId = value;
+				DictionaryUtil.Add(QueryParameters, "EnvId", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeAppDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListAppCmsGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAppDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListAppCmsGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -32,6 +32,11 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
         public UpdateDeployConfigRequest()
             : base("retailcloud", "2018-03-13", "UpdateDeployConfig", "retailcloud", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
@@ -44,6 +49,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 		private string statefulSet;
 
 		private long? appId;
+
+		private List<string> secretLists = new List<string>(){ };
 
 		private long? id;
 
@@ -115,6 +122,23 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value.ToString());
+			}
+		}
+
+		public List<string> SecretLists
+		{
+			get
+			{
+				return secretLists;
+			}
+
+			set
+			{
+				secretLists = value;
+				for (int i = 0; i < secretLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SecretList." + (i + 1) , secretLists[i]);
+				}
 			}
 		}
 

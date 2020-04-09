@@ -37,6 +37,10 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 		private long? totalCount;
 
+		private string clusterIP;
+
+		private string clusterIP1;
+
 		private List<ListServices_ServiceInstance> data;
 
 		public int? Code
@@ -111,6 +115,30 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
+		public string ClusterIP
+		{
+			get
+			{
+				return clusterIP;
+			}
+			set	
+			{
+				clusterIP = value;
+			}
+		}
+
+		public string ClusterIP1
+		{
+			get
+			{
+				return clusterIP1;
+			}
+			set	
+			{
+				clusterIP1 = value;
+			}
+		}
+
 		public List<ListServices_ServiceInstance> Data
 		{
 			get
@@ -139,6 +167,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			private long? serviceId;
 
 			private string serviceType;
+
+			private string clusterIP;
 
 			private List<ListServices_ServicePortMapping> portMappings;
 
@@ -223,6 +253,18 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				set	
 				{
 					serviceType = value;
+				}
+			}
+
+			public string ClusterIP
+			{
+				get
+				{
+					return clusterIP;
+				}
+				set	
+				{
+					clusterIP = value;
 				}
 			}
 

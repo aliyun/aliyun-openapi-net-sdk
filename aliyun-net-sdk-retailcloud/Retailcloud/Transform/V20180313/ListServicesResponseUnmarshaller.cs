@@ -37,6 +37,8 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 			listServicesResponse.PageSize = context.IntegerValue("ListServices.PageSize");
 			listServicesResponse.RequestId = context.StringValue("ListServices.RequestId");
 			listServicesResponse.TotalCount = context.LongValue("ListServices.TotalCount");
+			listServicesResponse.ClusterIP = context.StringValue("ListServices.ClusterIP");
+			listServicesResponse.ClusterIP1 = context.StringValue("ListServices.ClusterIP");
 
 			List<ListServicesResponse.ListServices_ServiceInstance> listServicesResponse_data = new List<ListServicesResponse.ListServices_ServiceInstance>();
 			for (int i = 0; i < context.Length("ListServices.Data.Length"); i++) {
@@ -48,6 +50,7 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 				serviceInstance.Name = context.StringValue("ListServices.Data["+ i +"].Name");
 				serviceInstance.ServiceId = context.LongValue("ListServices.Data["+ i +"].ServiceId");
 				serviceInstance.ServiceType = context.StringValue("ListServices.Data["+ i +"].ServiceType");
+				serviceInstance.ClusterIP = context.StringValue("ListServices.Data["+ i +"].ClusterIP");
 
 				List<ListServicesResponse.ListServices_ServiceInstance.ListServices_ServicePortMapping> serviceInstance_portMappings = new List<ListServicesResponse.ListServices_ServiceInstance.ListServices_ServicePortMapping>();
 				for (int j = 0; j < context.Length("ListServices.Data["+ i +"].PortMappings.Length"); j++) {

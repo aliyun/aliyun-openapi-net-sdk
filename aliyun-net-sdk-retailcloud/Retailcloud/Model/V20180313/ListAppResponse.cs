@@ -33,7 +33,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 		private int? totalCount;
 
-		private List<ListApp_ListAppResponse1> data;
+		private List<ListApp_AppDetail> data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public List<ListApp_ListAppResponse1> Data
+		public List<ListApp_AppDetail> Data
 		{
 			get
 			{
@@ -95,7 +95,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public class ListApp_ListAppResponse1
+		public class ListApp_AppDetail
 		{
 
 			private long? appId;
@@ -115,6 +115,10 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			private string deployType;
 
 			private string bizTitle;
+
+			private string appStateType;
+
+			private List<ListApp_MiddleWareInfo> middleWareList;
 
 			public long? AppId
 			{
@@ -221,6 +225,76 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				set	
 				{
 					bizTitle = value;
+				}
+			}
+
+			public string AppStateType
+			{
+				get
+				{
+					return appStateType;
+				}
+				set	
+				{
+					appStateType = value;
+				}
+			}
+
+			public List<ListApp_MiddleWareInfo> MiddleWareList
+			{
+				get
+				{
+					return middleWareList;
+				}
+				set	
+				{
+					middleWareList = value;
+				}
+			}
+
+			public class ListApp_MiddleWareInfo
+			{
+
+				private long? appId;
+
+				private int? code;
+
+				private string name;
+
+				public long? AppId
+				{
+					get
+					{
+						return appId;
+					}
+					set	
+					{
+						appId = value;
+					}
+				}
+
+				public int? Code
+				{
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
 				}
 			}
 		}

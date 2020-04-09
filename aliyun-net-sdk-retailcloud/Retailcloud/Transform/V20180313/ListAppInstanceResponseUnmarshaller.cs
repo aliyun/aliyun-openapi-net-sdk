@@ -38,18 +38,20 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 			listAppInstanceResponse.TotalCount = context.LongValue("ListAppInstance.TotalCount");
 			listAppInstanceResponse.ErrMsg = context.StringValue("ListAppInstance.ErrMsg");
 
-			List<ListAppInstanceResponse.ListAppInstance_ListAppInstanceResponse1> listAppInstanceResponse_data = new List<ListAppInstanceResponse.ListAppInstance_ListAppInstanceResponse1>();
+			List<ListAppInstanceResponse.ListAppInstance_AppInstanceDetail> listAppInstanceResponse_data = new List<ListAppInstanceResponse.ListAppInstance_AppInstanceDetail>();
 			for (int i = 0; i < context.Length("ListAppInstance.Data.Length"); i++) {
-				ListAppInstanceResponse.ListAppInstance_ListAppInstanceResponse1 listAppInstanceResponse1 = new ListAppInstanceResponse.ListAppInstance_ListAppInstanceResponse1();
-				listAppInstanceResponse1.AppInstanceId = context.StringValue("ListAppInstance.Data["+ i +"].AppInstanceId");
-				listAppInstanceResponse1.CreateTime = context.StringValue("ListAppInstance.Data["+ i +"].CreateTime");
-				listAppInstanceResponse1.Spec = context.StringValue("ListAppInstance.Data["+ i +"].Spec");
-				listAppInstanceResponse1.RestartCount = context.IntegerValue("ListAppInstance.Data["+ i +"].RestartCount");
-				listAppInstanceResponse1.HostIp = context.StringValue("ListAppInstance.Data["+ i +"].HostIp");
-				listAppInstanceResponse1.PodIp = context.StringValue("ListAppInstance.Data["+ i +"].PodIp");
-				listAppInstanceResponse1.Health = context.StringValue("ListAppInstance.Data["+ i +"].Health");
+				ListAppInstanceResponse.ListAppInstance_AppInstanceDetail appInstanceDetail = new ListAppInstanceResponse.ListAppInstance_AppInstanceDetail();
+				appInstanceDetail.AppInstanceId = context.StringValue("ListAppInstance.Data["+ i +"].AppInstanceId");
+				appInstanceDetail.CreateTime = context.StringValue("ListAppInstance.Data["+ i +"].CreateTime");
+				appInstanceDetail.Spec = context.StringValue("ListAppInstance.Data["+ i +"].Spec");
+				appInstanceDetail.RestartCount = context.IntegerValue("ListAppInstance.Data["+ i +"].RestartCount");
+				appInstanceDetail.HostIp = context.StringValue("ListAppInstance.Data["+ i +"].HostIp");
+				appInstanceDetail.PodIp = context.StringValue("ListAppInstance.Data["+ i +"].PodIp");
+				appInstanceDetail.Health = context.StringValue("ListAppInstance.Data["+ i +"].Health");
+				appInstanceDetail.Requests = context.StringValue("ListAppInstance.Data["+ i +"].Requests");
+				appInstanceDetail.Limits = context.StringValue("ListAppInstance.Data["+ i +"].Limits");
 
-				listAppInstanceResponse_data.Add(listAppInstanceResponse1);
+				listAppInstanceResponse_data.Add(appInstanceDetail);
 			}
 			listAppInstanceResponse.Data = listAppInstanceResponse_data;
         

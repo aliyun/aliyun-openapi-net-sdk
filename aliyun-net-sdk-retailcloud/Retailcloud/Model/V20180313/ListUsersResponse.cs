@@ -22,22 +22,22 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.retailcloud.Model.V20180313
 {
-	public class ListPersistentVolumeClaimResponse : AcsResponse
+	public class ListUsersResponse : AcsResponse
 	{
 
 		private int? code;
 
-		private int? pageNumber;
+		private string errorMsg;
 
-		private string requestId;
+		private int? pageNumber;
 
 		private int? pageSize;
 
+		private string requestId;
+
 		private long? totalCount;
 
-		private string errorMsg;
-
-		private List<ListPersistentVolumeClaim_PersistentVolumeClaimDetail> data;
+		private List<ListUsers_ListUserResponse> data;
 
 		public int? Code
 		{
@@ -48,54 +48,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public long? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
 			}
 		}
 
@@ -111,7 +63,55 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public List<ListPersistentVolumeClaim_PersistentVolumeClaimDetail> Data
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public List<ListUsers_ListUserResponse> Data
 		{
 			get
 			{
@@ -123,104 +123,48 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public class ListPersistentVolumeClaim_PersistentVolumeClaimDetail
+		public class ListUsers_ListUserResponse
 		{
 
-			private string name;
+			private string userId;
 
-			private string capacity;
+			private string userType;
 
-			private string accessModes;
+			private string realName;
 
-			private string status;
-
-			private string storageClass;
-
-			private string volumeName;
-
-			private string createTime;
-
-			public string Name
+			public string UserId
 			{
 				get
 				{
-					return name;
+					return userId;
 				}
 				set	
 				{
-					name = value;
+					userId = value;
 				}
 			}
 
-			public string Capacity
+			public string UserType
 			{
 				get
 				{
-					return capacity;
+					return userType;
 				}
 				set	
 				{
-					capacity = value;
+					userType = value;
 				}
 			}
 
-			public string AccessModes
+			public string RealName
 			{
 				get
 				{
-					return accessModes;
+					return realName;
 				}
 				set	
 				{
-					accessModes = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string StorageClass
-			{
-				get
-				{
-					return storageClass;
-				}
-				set	
-				{
-					storageClass = value;
-				}
-			}
-
-			public string VolumeName
-			{
-				get
-				{
-					return volumeName;
-				}
-				set	
-				{
-					volumeName = value;
-				}
-			}
-
-			public string CreateTime
-			{
-				get
-				{
-					return createTime;
-				}
-				set	
-				{
-					createTime = value;
+					realName = value;
 				}
 			}
 		}

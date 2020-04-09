@@ -102,6 +102,12 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 			private string description;
 
+			private string appStateType;
+
+			private List<DescribeAppDetail_UserRole> userRoles;
+
+			private List<DescribeAppDetail_MiddleWareInfo> middleWareInfoList;
+
 			public string ServiceType
 			{
 				get
@@ -207,6 +213,148 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string AppStateType
+			{
+				get
+				{
+					return appStateType;
+				}
+				set	
+				{
+					appStateType = value;
+				}
+			}
+
+			public List<DescribeAppDetail_UserRole> UserRoles
+			{
+				get
+				{
+					return userRoles;
+				}
+				set	
+				{
+					userRoles = value;
+				}
+			}
+
+			public List<DescribeAppDetail_MiddleWareInfo> MiddleWareInfoList
+			{
+				get
+				{
+					return middleWareInfoList;
+				}
+				set	
+				{
+					middleWareInfoList = value;
+				}
+			}
+
+			public class DescribeAppDetail_UserRole
+			{
+
+				private string userId;
+
+				private string userType;
+
+				private string realName;
+
+				private string roleName;
+
+				public string UserId
+				{
+					get
+					{
+						return userId;
+					}
+					set	
+					{
+						userId = value;
+					}
+				}
+
+				public string UserType
+				{
+					get
+					{
+						return userType;
+					}
+					set	
+					{
+						userType = value;
+					}
+				}
+
+				public string RealName
+				{
+					get
+					{
+						return realName;
+					}
+					set	
+					{
+						realName = value;
+					}
+				}
+
+				public string RoleName
+				{
+					get
+					{
+						return roleName;
+					}
+					set	
+					{
+						roleName = value;
+					}
+				}
+			}
+
+			public class DescribeAppDetail_MiddleWareInfo
+			{
+
+				private long? appId;
+
+				private int? code;
+
+				private string name;
+
+				public long? AppId
+				{
+					get
+					{
+						return appId;
+					}
+					set	
+					{
+						appId = value;
+					}
+				}
+
+				public int? Code
+				{
+					get
+					{
+						return code;
+					}
+					set	
+					{
+						code = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
 				}
 			}
 		}

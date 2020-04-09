@@ -38,36 +38,36 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 			listPodsResponse.RequestId = context.StringValue("ListPods.RequestId");
 			listPodsResponse.TotalCount = context.LongValue("ListPods.TotalCount");
 
-			List<ListPodsResponse.ListPods_ListPodsResponse1> listPodsResponse_data = new List<ListPodsResponse.ListPods_ListPodsResponse1>();
+			List<ListPodsResponse.ListPods_PodDetail> listPodsResponse_data = new List<ListPodsResponse.ListPods_PodDetail>();
 			for (int i = 0; i < context.Length("ListPods.Data.Length"); i++) {
-				ListPodsResponse.ListPods_ListPodsResponse1 listPodsResponse1 = new ListPodsResponse.ListPods_ListPodsResponse1();
-				listPodsResponse1.AppInstanceId = context.StringValue("ListPods.Data["+ i +"].AppInstanceId");
-				listPodsResponse1.DeployOrderId = context.LongValue("ListPods.Data["+ i +"].DeployOrderId");
-				listPodsResponse1.DeployPartitionNum = context.IntegerValue("ListPods.Data["+ i +"].DeployPartitionNum");
-				listPodsResponse1.GroupName = context.StringValue("ListPods.Data["+ i +"].GroupName");
-				listPodsResponse1.HostIp = context.StringValue("ListPods.Data["+ i +"].HostIp");
-				listPodsResponse1.HostName = context.StringValue("ListPods.Data["+ i +"].HostName");
-				listPodsResponse1.PodIp = context.StringValue("ListPods.Data["+ i +"].PodIp");
-				listPodsResponse1.Region = context.StringValue("ListPods.Data["+ i +"].Region");
-				listPodsResponse1.Result = context.IntegerValue("ListPods.Data["+ i +"].Result");
-				listPodsResponse1.ResultName = context.StringValue("ListPods.Data["+ i +"].ResultName");
-				listPodsResponse1.StartTime = context.StringValue("ListPods.Data["+ i +"].StartTime");
-				listPodsResponse1.Status = context.IntegerValue("ListPods.Data["+ i +"].Status");
-				listPodsResponse1.StatusName = context.StringValue("ListPods.Data["+ i +"].StatusName");
-				listPodsResponse1.UpdateTime = context.StringValue("ListPods.Data["+ i +"].UpdateTime");
+				ListPodsResponse.ListPods_PodDetail podDetail = new ListPodsResponse.ListPods_PodDetail();
+				podDetail.AppInstanceId = context.StringValue("ListPods.Data["+ i +"].AppInstanceId");
+				podDetail.DeployOrderId = context.LongValue("ListPods.Data["+ i +"].DeployOrderId");
+				podDetail.DeployPartitionNum = context.IntegerValue("ListPods.Data["+ i +"].DeployPartitionNum");
+				podDetail.GroupName = context.StringValue("ListPods.Data["+ i +"].GroupName");
+				podDetail.HostIp = context.StringValue("ListPods.Data["+ i +"].HostIp");
+				podDetail.HostName = context.StringValue("ListPods.Data["+ i +"].HostName");
+				podDetail.PodIp = context.StringValue("ListPods.Data["+ i +"].PodIp");
+				podDetail.Region = context.StringValue("ListPods.Data["+ i +"].Region");
+				podDetail.Result = context.IntegerValue("ListPods.Data["+ i +"].Result");
+				podDetail.ResultName = context.StringValue("ListPods.Data["+ i +"].ResultName");
+				podDetail.StartTime = context.StringValue("ListPods.Data["+ i +"].StartTime");
+				podDetail.Status = context.IntegerValue("ListPods.Data["+ i +"].Status");
+				podDetail.StatusName = context.StringValue("ListPods.Data["+ i +"].StatusName");
+				podDetail.UpdateTime = context.StringValue("ListPods.Data["+ i +"].UpdateTime");
 
-				List<ListPodsResponse.ListPods_ListPodsResponse1.ListPods_DeployStep> listPodsResponse1_deploySteps = new List<ListPodsResponse.ListPods_ListPodsResponse1.ListPods_DeployStep>();
+				List<ListPodsResponse.ListPods_PodDetail.ListPods_DeployStep> podDetail_deploySteps = new List<ListPodsResponse.ListPods_PodDetail.ListPods_DeployStep>();
 				for (int j = 0; j < context.Length("ListPods.Data["+ i +"].DeploySteps.Length"); j++) {
-					ListPodsResponse.ListPods_ListPodsResponse1.ListPods_DeployStep deployStep = new ListPodsResponse.ListPods_ListPodsResponse1.ListPods_DeployStep();
+					ListPodsResponse.ListPods_PodDetail.ListPods_DeployStep deployStep = new ListPodsResponse.ListPods_PodDetail.ListPods_DeployStep();
 					deployStep.Status = context.StringValue("ListPods.Data["+ i +"].DeploySteps["+ j +"].Status");
 					deployStep.StepCode = context.StringValue("ListPods.Data["+ i +"].DeploySteps["+ j +"].StepCode");
 					deployStep.StepName = context.StringValue("ListPods.Data["+ i +"].DeploySteps["+ j +"].StepName");
 
-					listPodsResponse1_deploySteps.Add(deployStep);
+					podDetail_deploySteps.Add(deployStep);
 				}
-				listPodsResponse1.DeploySteps = listPodsResponse1_deploySteps;
+				podDetail.DeploySteps = podDetail_deploySteps;
 
-				listPodsResponse_data.Add(listPodsResponse1);
+				listPodsResponse_data.Add(podDetail);
 			}
 			listPodsResponse.Data = listPodsResponse_data;
         

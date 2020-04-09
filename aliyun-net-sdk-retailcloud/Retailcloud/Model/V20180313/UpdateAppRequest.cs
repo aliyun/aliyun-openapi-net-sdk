@@ -32,12 +32,19 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
         public UpdateAppRequest()
             : base("retailcloud", "2018-03-13", "UpdateApp", "retailcloud", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
 		private string bizTitle;
 
 		private string serviceType;
+
+		private List<UserRoles> userRoless = new List<UserRoles>(){ };
 
 		private long? appId;
 
@@ -46,6 +53,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 		private string description;
 
 		private string language;
+
+		private List<int?> middleWareIdLists = new List<int?>(){ };
 
 		public string BizTitle
 		{
@@ -70,6 +79,25 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				serviceType = value;
 				DictionaryUtil.Add(BodyParameters, "ServiceType", value);
+			}
+		}
+
+		public List<UserRoles> UserRoless
+		{
+			get
+			{
+				return userRoless;
+			}
+
+			set
+			{
+				userRoless = value;
+				for (int i = 0; i < userRoless.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"UserRoles." + (i + 1) + ".RoleName", userRoless[i].RoleName);
+					DictionaryUtil.Add(BodyParameters,"UserRoles." + (i + 1) + ".UserType", userRoless[i].UserType);
+					DictionaryUtil.Add(BodyParameters,"UserRoles." + (i + 1) + ".UserId", userRoless[i].UserId);
+				}
 			}
 		}
 
@@ -122,6 +150,69 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				language = value;
 				DictionaryUtil.Add(BodyParameters, "Language", value);
+			}
+		}
+
+		public List<int?> MiddleWareIdLists
+		{
+			get
+			{
+				return middleWareIdLists;
+			}
+
+			set
+			{
+				middleWareIdLists = value;
+				for (int i = 0; i < middleWareIdLists.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"MiddleWareIdList." + (i + 1) , middleWareIdLists[i]);
+				}
+			}
+		}
+
+		public class UserRoles
+		{
+
+			private string roleName;
+
+			private string userType;
+
+			private string userId;
+
+			public string RoleName
+			{
+				get
+				{
+					return roleName;
+				}
+				set	
+				{
+					roleName = value;
+				}
+			}
+
+			public string UserType
+			{
+				get
+				{
+					return userType;
+				}
+				set	
+				{
+					userType = value;
+				}
+			}
+
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
 			}
 		}
 

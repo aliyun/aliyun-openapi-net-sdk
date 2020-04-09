@@ -32,26 +32,35 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
         public CreateAppRequest()
             : base("retailcloud", "2018-03-13", "CreateApp", "retailcloud", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
 		private string bizTitle;
 
-		private int? stateType;
-
-		private string serviceType;
-
-		private string bizCode;
-
 		private string operatingSystem;
-
-		private string _namespace;
 
 		private string description;
 
 		private string language;
 
 		private string title;
+
+		private List<int?> middleWareIdLists = new List<int?>(){ };
+
+		private int? stateType;
+
+		private string serviceType;
+
+		private List<UserRoles> userRoless = new List<UserRoles>(){ };
+
+		private string bizCode;
+
+		private string _namespace;
 
 		public string BizTitle
 		{
@@ -66,45 +75,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public int? StateType
-		{
-			get
-			{
-				return stateType;
-			}
-			set	
-			{
-				stateType = value;
-				DictionaryUtil.Add(BodyParameters, "StateType", value.ToString());
-			}
-		}
-
-		public string ServiceType
-		{
-			get
-			{
-				return serviceType;
-			}
-			set	
-			{
-				serviceType = value;
-				DictionaryUtil.Add(BodyParameters, "ServiceType", value);
-			}
-		}
-
-		public string BizCode
-		{
-			get
-			{
-				return bizCode;
-			}
-			set	
-			{
-				bizCode = value;
-				DictionaryUtil.Add(BodyParameters, "BizCode", value);
-			}
-		}
-
 		public string OperatingSystem
 		{
 			get
@@ -115,19 +85,6 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				operatingSystem = value;
 				DictionaryUtil.Add(BodyParameters, "OperatingSystem", value);
-			}
-		}
-
-		public string _Namespace
-		{
-			get
-			{
-				return _namespace;
-			}
-			set	
-			{
-				_namespace = value;
-				DictionaryUtil.Add(BodyParameters, "Namespace", value);
 			}
 		}
 
@@ -167,6 +124,140 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				title = value;
 				DictionaryUtil.Add(BodyParameters, "Title", value);
+			}
+		}
+
+		public List<int?> MiddleWareIdLists
+		{
+			get
+			{
+				return middleWareIdLists;
+			}
+
+			set
+			{
+				middleWareIdLists = value;
+				for (int i = 0; i < middleWareIdLists.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"MiddleWareIdList." + (i + 1) , middleWareIdLists[i]);
+				}
+			}
+		}
+
+		public int? StateType
+		{
+			get
+			{
+				return stateType;
+			}
+			set	
+			{
+				stateType = value;
+				DictionaryUtil.Add(BodyParameters, "StateType", value.ToString());
+			}
+		}
+
+		public string ServiceType
+		{
+			get
+			{
+				return serviceType;
+			}
+			set	
+			{
+				serviceType = value;
+				DictionaryUtil.Add(BodyParameters, "ServiceType", value);
+			}
+		}
+
+		public List<UserRoles> UserRoless
+		{
+			get
+			{
+				return userRoless;
+			}
+
+			set
+			{
+				userRoless = value;
+				for (int i = 0; i < userRoless.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"UserRoles." + (i + 1) + ".RoleName", userRoless[i].RoleName);
+					DictionaryUtil.Add(BodyParameters,"UserRoles." + (i + 1) + ".UserType", userRoless[i].UserType);
+					DictionaryUtil.Add(BodyParameters,"UserRoles." + (i + 1) + ".UserId", userRoless[i].UserId);
+				}
+			}
+		}
+
+		public string BizCode
+		{
+			get
+			{
+				return bizCode;
+			}
+			set	
+			{
+				bizCode = value;
+				DictionaryUtil.Add(BodyParameters, "BizCode", value);
+			}
+		}
+
+		public string _Namespace
+		{
+			get
+			{
+				return _namespace;
+			}
+			set	
+			{
+				_namespace = value;
+				DictionaryUtil.Add(BodyParameters, "Namespace", value);
+			}
+		}
+
+		public class UserRoles
+		{
+
+			private string roleName;
+
+			private string userType;
+
+			private string userId;
+
+			public string RoleName
+			{
+				get
+				{
+					return roleName;
+				}
+				set	
+				{
+					roleName = value;
+				}
+			}
+
+			public string UserType
+			{
+				get
+				{
+					return userType;
+				}
+				set	
+				{
+					userType = value;
+				}
+			}
+
+			public string UserId
+			{
+				get
+				{
+					return userId;
+				}
+				set	
+				{
+					userId = value;
+				}
 			}
 		}
 

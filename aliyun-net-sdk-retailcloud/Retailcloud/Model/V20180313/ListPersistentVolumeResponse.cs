@@ -37,7 +37,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 		private string errMsg;
 
-		private List<ListPersistentVolume_ListPersistentVolumeResponse1> data;
+		private List<ListPersistentVolume_PersistentVolumeDetail> data;
 
 		public string RequestId
 		{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public List<ListPersistentVolume_ListPersistentVolumeResponse1> Data
+		public List<ListPersistentVolume_PersistentVolumeDetail> Data
 		{
 			get
 			{
@@ -123,7 +123,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			}
 		}
 
-		public class ListPersistentVolume_ListPersistentVolumeResponse1
+		public class ListPersistentVolume_PersistentVolumeDetail
 		{
 
 			private string name;
