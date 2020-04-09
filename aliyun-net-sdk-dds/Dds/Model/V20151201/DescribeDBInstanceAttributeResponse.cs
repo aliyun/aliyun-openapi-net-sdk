@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string currentKernelVersion;
 
+			private string protocolType;
+
 			private string vpcAuthMode;
 
 			private List<DescribeDBInstanceAttribute_MongosAttribute> mongosList;
@@ -485,6 +487,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					currentKernelVersion = value;
+				}
+			}
+
+			public string ProtocolType
+			{
+				get
+				{
+					return protocolType;
+				}
+				set	
+				{
+					protocolType = value;
 				}
 			}
 

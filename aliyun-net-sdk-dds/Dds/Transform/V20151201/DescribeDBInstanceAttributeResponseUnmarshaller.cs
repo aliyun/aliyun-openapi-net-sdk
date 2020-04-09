@@ -66,6 +66,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.MaxIOPS = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaxIOPS");
 				dBInstance.MaxConnections = context.IntegerValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].MaxConnections");
 				dBInstance.CurrentKernelVersion = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].CurrentKernelVersion");
+				dBInstance.ProtocolType = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ProtocolType");
 				dBInstance.VpcAuthMode = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].VpcAuthMode");
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_MongosAttribute> dBInstance_mongosList = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstance.DescribeDBInstanceAttribute_MongosAttribute>();

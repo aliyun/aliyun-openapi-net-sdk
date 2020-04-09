@@ -50,6 +50,21 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				describeShardingNetworkAddressResponse_networkAddresses.Add(networkAddress);
 			}
 			describeShardingNetworkAddressResponse.NetworkAddresses = describeShardingNetworkAddressResponse_networkAddresses;
+
+			List<DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_CompatibleConnection> describeShardingNetworkAddressResponse_compatibleConnections = new List<DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_CompatibleConnection>();
+			for (int i = 0; i < context.Length("DescribeShardingNetworkAddress.CompatibleConnections.Length"); i++) {
+				DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_CompatibleConnection compatibleConnection = new DescribeShardingNetworkAddressResponse.DescribeShardingNetworkAddress_CompatibleConnection();
+				compatibleConnection.NetworkAddress = context.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].NetworkAddress");
+				compatibleConnection.IPAddress = context.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].IPAddress");
+				compatibleConnection.NetworkType = context.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].NetworkType");
+				compatibleConnection.Port = context.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].Port");
+				compatibleConnection.VPCId = context.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].VPCId");
+				compatibleConnection.VswitchId = context.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].VswitchId");
+				compatibleConnection.ExpiredTime = context.StringValue("DescribeShardingNetworkAddress.CompatibleConnections["+ i +"].ExpiredTime");
+
+				describeShardingNetworkAddressResponse_compatibleConnections.Add(compatibleConnection);
+			}
+			describeShardingNetworkAddressResponse.CompatibleConnections = describeShardingNetworkAddressResponse_compatibleConnections;
         
 			return describeShardingNetworkAddressResponse;
         }

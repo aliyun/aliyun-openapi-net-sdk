@@ -114,6 +114,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string threadID;
 
+			private string tableName;
+
 			public string DBName
 			{
 				get
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					threadID = value;
+				}
+			}
+
+			public string TableName
+			{
+				get
+				{
+					return tableName;
+				}
+				set	
+				{
+					tableName = value;
 				}
 			}
 		}

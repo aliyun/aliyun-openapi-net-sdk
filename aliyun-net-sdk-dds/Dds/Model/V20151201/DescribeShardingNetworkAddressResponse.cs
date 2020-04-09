@@ -29,6 +29,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private List<DescribeShardingNetworkAddress_NetworkAddress> networkAddresses;
 
+		private List<DescribeShardingNetworkAddress_CompatibleConnection> compatibleConnections;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				networkAddresses = value;
+			}
+		}
+
+		public List<DescribeShardingNetworkAddress_CompatibleConnection> CompatibleConnections
+		{
+			get
+			{
+				return compatibleConnections;
+			}
+			set	
+			{
+				compatibleConnections = value;
 			}
 		}
 
@@ -193,6 +207,108 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					role = value;
+				}
+			}
+		}
+
+		public class DescribeShardingNetworkAddress_CompatibleConnection
+		{
+
+			private string networkAddress;
+
+			private string iPAddress;
+
+			private string networkType;
+
+			private string port;
+
+			private string vPCId;
+
+			private string vswitchId;
+
+			private string expiredTime;
+
+			public string NetworkAddress
+			{
+				get
+				{
+					return networkAddress;
+				}
+				set	
+				{
+					networkAddress = value;
+				}
+			}
+
+			public string IPAddress
+			{
+				get
+				{
+					return iPAddress;
+				}
+				set	
+				{
+					iPAddress = value;
+				}
+			}
+
+			public string NetworkType
+			{
+				get
+				{
+					return networkType;
+				}
+				set	
+				{
+					networkType = value;
+				}
+			}
+
+			public string Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			public string VPCId
+			{
+				get
+				{
+					return vPCId;
+				}
+				set	
+				{
+					vPCId = value;
+				}
+			}
+
+			public string VswitchId
+			{
+				get
+				{
+					return vswitchId;
+				}
+				set	
+				{
+					vswitchId = value;
+				}
+			}
+
+			public string ExpiredTime
+			{
+				get
+				{
+					return expiredTime;
+				}
+				set	
+				{
+					expiredTime = value;
 				}
 			}
 		}

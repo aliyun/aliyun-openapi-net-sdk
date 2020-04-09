@@ -22,12 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-	public class DescribeRegionsResponse : AcsResponse
+	public class DescribeMongoDBLogConfigResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<DescribeRegions_DdsRegion> regions;
+		private string userProjectName;
+
+		private int? isUserProjectLogstoreExist;
+
+		private int? isEtlMetaExist;
 
 		public string RequestId
 		{
@@ -41,93 +45,39 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public List<DescribeRegions_DdsRegion> Regions
+		public string UserProjectName
 		{
 			get
 			{
-				return regions;
+				return userProjectName;
 			}
 			set	
 			{
-				regions = value;
+				userProjectName = value;
 			}
 		}
 
-		public class DescribeRegions_DdsRegion
+		public int? IsUserProjectLogstoreExist
 		{
-
-			private string regionId;
-
-			private string zoneIds;
-
-			private List<DescribeRegions_Zone> zones;
-
-			public string RegionId
+			get
 			{
-				get
-				{
-					return regionId;
-				}
-				set	
-				{
-					regionId = value;
-				}
+				return isUserProjectLogstoreExist;
 			}
-
-			public string ZoneIds
+			set	
 			{
-				get
-				{
-					return zoneIds;
-				}
-				set	
-				{
-					zoneIds = value;
-				}
+				isUserProjectLogstoreExist = value;
 			}
+		}
 
-			public List<DescribeRegions_Zone> Zones
+		public int? IsEtlMetaExist
+		{
+			get
 			{
-				get
-				{
-					return zones;
-				}
-				set	
-				{
-					zones = value;
-				}
+				return isEtlMetaExist;
 			}
-
-			public class DescribeRegions_Zone
+			set	
 			{
-
-				private string zoneId;
-
-				private bool? vpcEnabled;
-
-				public string ZoneId
-				{
-					get
-					{
-						return zoneId;
-					}
-					set	
-					{
-						zoneId = value;
-					}
-				}
-
-				public bool? VpcEnabled
-				{
-					get
-					{
-						return vpcEnabled;
-					}
-					set	
-					{
-						vpcEnabled = value;
-					}
-				}
+				isEtlMetaExist = value;
 			}
 		}
 	}

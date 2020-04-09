@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				sQLRecord.ReturnRowCounts = context.LongValue("DescribeAuditRecords.Items["+ i +"].ReturnRowCounts");
 				sQLRecord.ExecuteTime = context.StringValue("DescribeAuditRecords.Items["+ i +"].ExecuteTime");
 				sQLRecord.ThreadID = context.StringValue("DescribeAuditRecords.Items["+ i +"].ThreadID");
+				sQLRecord.TableName = context.StringValue("DescribeAuditRecords.Items["+ i +"].TableName");
 
 				describeAuditRecordsResponse_items.Add(sQLRecord);
 			}
