@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class ModifyAutoRenewAttributeRequest : RpcAcsRequest<ModifyAutoRenewAttributeResponse>
+    public class DescribeDBClusterAvailableResourcesRequest : RpcAcsRequest<DescribeDBClusterAvailableResourcesResponse>
     {
-        public ModifyAutoRenewAttributeRequest()
-            : base("polardb", "2017-08-01", "ModifyAutoRenewAttribute", "polardb", "openAPI")
+        public DescribeDBClusterAvailableResourcesRequest()
+            : base("polardb", "2017-08-01", "DescribeDBClusterAvailableResources", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,11 +41,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string duration;
-
-		private string resourceGroupId;
-
-		private string renewalStatus;
+		private string dBNodeClass;
 
 		private string resourceOwnerAccount;
 
@@ -53,9 +49,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? ownerId;
 
-		private string periodUnit;
+		private string dBType;
 
-		private string dBClusterIds;
+		private string dBVersion;
+
+		private string zoneId;
+
+		private string payType;
 
 		public long? ResourceOwnerId
 		{
@@ -70,42 +70,16 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string Duration
+		public string DBNodeClass
 		{
 			get
 			{
-				return duration;
+				return dBNodeClass;
 			}
 			set	
 			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string RenewalStatus
-		{
-			get
-			{
-				return renewalStatus;
-			}
-			set	
-			{
-				renewalStatus = value;
-				DictionaryUtil.Add(QueryParameters, "RenewalStatus", value);
+				dBNodeClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBNodeClass", value);
 			}
 		}
 
@@ -148,35 +122,66 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string PeriodUnit
+		public string DBType
 		{
 			get
 			{
-				return periodUnit;
+				return dBType;
 			}
 			set	
 			{
-				periodUnit = value;
-				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
+				dBType = value;
+				DictionaryUtil.Add(QueryParameters, "DBType", value);
 			}
 		}
 
-		public string DBClusterIds
+		public string DBVersion
 		{
 			get
 			{
-				return dBClusterIds;
+				return dBVersion;
 			}
 			set	
 			{
-				dBClusterIds = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterIds", value);
+				dBVersion = value;
+				DictionaryUtil.Add(QueryParameters, "DBVersion", value);
 			}
 		}
 
-        public override ModifyAutoRenewAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string PayType
+		{
+			get
+			{
+				return payType;
+			}
+			set	
+			{
+				payType = value;
+				DictionaryUtil.Add(QueryParameters, "PayType", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeDBClusterAvailableResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyAutoRenewAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDBClusterAvailableResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

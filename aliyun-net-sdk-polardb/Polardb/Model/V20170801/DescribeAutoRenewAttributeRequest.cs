@@ -43,6 +43,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private int? pageNumber;
 
+		private string resourceGroupId;
+
 		private int? pageSize;
 
 		private string resourceOwnerAccount;
@@ -76,6 +78,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

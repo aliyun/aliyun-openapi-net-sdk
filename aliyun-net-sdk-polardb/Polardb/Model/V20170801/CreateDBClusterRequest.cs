@@ -51,6 +51,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBNodeClass;
 
+		private string gDNId;
+
 		private string creationOption;
 
 		private string sourceResourceId;
@@ -80,6 +82,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string dBVersion;
 
 		private string cloneDataPoint;
+
+		private bool? tDEStatus;
 
 		private string payType;
 
@@ -158,6 +162,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBNodeClass = value;
 				DictionaryUtil.Add(QueryParameters, "DBNodeClass", value);
+			}
+		}
+
+		public string GDNId
+		{
+			get
+			{
+				return gDNId;
+			}
+			set	
+			{
+				gDNId = value;
+				DictionaryUtil.Add(QueryParameters, "GDNId", value);
 			}
 		}
 
@@ -353,6 +370,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				cloneDataPoint = value;
 				DictionaryUtil.Add(QueryParameters, "CloneDataPoint", value);
+			}
+		}
+
+		public bool? TDEStatus
+		{
+			get
+			{
+				return tDEStatus;
+			}
+			set	
+			{
+				tDEStatus = value;
+				DictionaryUtil.Add(QueryParameters, "TDEStatus", value.ToString());
 			}
 		}
 

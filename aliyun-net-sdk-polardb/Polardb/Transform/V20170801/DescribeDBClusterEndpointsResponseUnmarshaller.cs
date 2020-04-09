@@ -53,6 +53,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 					address.VPCId = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VPCId");
 					address.VSwitchId = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VSwitchId");
 					address.VpcInstanceId = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VpcInstanceId");
+					address.PrivateZoneConnectionString = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].PrivateZoneConnectionString");
 
 					dBEndpoint_addressItems.Add(address);
 				}

@@ -45,6 +45,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBEndpointId;
 
+		private string privateZoneName;
+
+		private string privateZoneAddressPrefix;
+
 		private string resourceOwnerAccount;
 
 		private string dBClusterId;
@@ -91,6 +95,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				dBEndpointId = value;
 				DictionaryUtil.Add(QueryParameters, "DBEndpointId", value);
+			}
+		}
+
+		public string PrivateZoneName
+		{
+			get
+			{
+				return privateZoneName;
+			}
+			set	
+			{
+				privateZoneName = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateZoneName", value);
+			}
+		}
+
+		public string PrivateZoneAddressPrefix
+		{
+			get
+			{
+				return privateZoneAddressPrefix;
+			}
+			set	
+			{
+				privateZoneAddressPrefix = value;
+				DictionaryUtil.Add(QueryParameters, "PrivateZoneAddressPrefix", value);
 			}
 		}
 

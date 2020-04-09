@@ -171,6 +171,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 				private string vpcInstanceId;
 
+				private string privateZoneConnectionString;
+
 				public string ConnectionString
 				{
 					get
@@ -252,6 +254,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 					set	
 					{
 						vpcInstanceId = value;
+					}
+				}
+
+				public string PrivateZoneConnectionString
+				{
+					get
+					{
+						return privateZoneConnectionString;
+					}
+					set	
+					{
+						privateZoneConnectionString = value;
 					}
 				}
 			}

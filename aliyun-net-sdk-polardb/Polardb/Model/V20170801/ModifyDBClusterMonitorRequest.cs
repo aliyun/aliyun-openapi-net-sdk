@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DescribeDBNodePerformanceRequest : RpcAcsRequest<DescribeDBNodePerformanceResponse>
+    public class ModifyDBClusterMonitorRequest : RpcAcsRequest<ModifyDBClusterMonitorResponse>
     {
-        public DescribeDBNodePerformanceRequest()
-            : base("polardb", "2017-08-01", "DescribeDBNodePerformance", "polardb", "openAPI")
+        public ModifyDBClusterMonitorRequest()
+            : base("polardb", "2017-08-01", "ModifyDBClusterMonitor", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,52 +39,54 @@ namespace Aliyun.Acs.polardb.Model.V20170801
             }
         }
 
-		private string dBNodeId;
+		private long? resourceOwnerId;
 
-		private string startTime;
+		private string period;
 
-		private string key;
+		private string resourceOwnerAccount;
 
 		private string dBClusterId;
 
-		private string endTime;
+		private string ownerAccount;
 
-		public string DBNodeId
+		private long? ownerId;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return dBNodeId;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				dBNodeId = value;
-				DictionaryUtil.Add(QueryParameters, "DBNodeId", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
-		public string StartTime
+		public string Period
 		{
 			get
 			{
-				return startTime;
+				return period;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value);
 			}
 		}
 
-		public string Key
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return key;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				key = value;
-				DictionaryUtil.Add(QueryParameters, "Key", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -101,22 +103,35 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string EndTime
+		public string OwnerAccount
 		{
 			get
 			{
-				return endTime;
+				return ownerAccount;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
-        public override DescribeDBNodePerformanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+        public override ModifyDBClusterMonitorResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDBNodePerformanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBClusterMonitorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
