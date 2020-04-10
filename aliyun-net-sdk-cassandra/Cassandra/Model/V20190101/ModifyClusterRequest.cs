@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
         public ModifyClusterRequest()
             : base("Cassandra", "2019-01-01", "ModifyCluster", "Cassandra", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string clusterName;
