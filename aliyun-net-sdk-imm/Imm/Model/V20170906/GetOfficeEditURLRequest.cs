@@ -27,10 +27,10 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class GetOfficePreviewURLRequest : RpcAcsRequest<GetOfficePreviewURLResponse>
+    public class GetOfficeEditURLRequest : RpcAcsRequest<GetOfficeEditURLResponse>
     {
-        public GetOfficePreviewURLRequest()
-            : base("imm", "2017-09-06", "GetOfficePreviewURL", "imm", "openAPI")
+        public GetOfficeEditURLRequest()
+            : base("imm", "2017-09-06", "GetOfficeEditURL", "imm", "openAPI")
         {
         }
 
@@ -38,9 +38,21 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string project;
 
-		private bool? useOldURL;
+		private string userID;
+
+		private string notifyEndpoint;
+
+		private string fileID;
+
+		private string notifyTopicName;
+
+		private string fileName;
 
 		private string srcUri;
+
+		private string tgtUri;
+
+		private string userName;
 
 		public string SrcType
 		{
@@ -68,16 +80,68 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public bool? UseOldURL
+		public string UserID
 		{
 			get
 			{
-				return useOldURL;
+				return userID;
 			}
 			set	
 			{
-				useOldURL = value;
-				DictionaryUtil.Add(QueryParameters, "UseOldURL", value.ToString());
+				userID = value;
+				DictionaryUtil.Add(QueryParameters, "UserID", value);
+			}
+		}
+
+		public string NotifyEndpoint
+		{
+			get
+			{
+				return notifyEndpoint;
+			}
+			set	
+			{
+				notifyEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
+			}
+		}
+
+		public string FileID
+		{
+			get
+			{
+				return fileID;
+			}
+			set	
+			{
+				fileID = value;
+				DictionaryUtil.Add(QueryParameters, "FileID", value);
+			}
+		}
+
+		public string NotifyTopicName
+		{
+			get
+			{
+				return notifyTopicName;
+			}
+			set	
+			{
+				notifyTopicName = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
+			}
+		}
+
+		public string FileName
+		{
+			get
+			{
+				return fileName;
+			}
+			set	
+			{
+				fileName = value;
+				DictionaryUtil.Add(QueryParameters, "FileName", value);
 			}
 		}
 
@@ -94,14 +158,40 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string TgtUri
+		{
+			get
+			{
+				return tgtUri;
+			}
+			set	
+			{
+				tgtUri = value;
+				DictionaryUtil.Add(QueryParameters, "TgtUri", value);
+			}
+		}
+
+		public string UserName
+		{
+			get
+			{
+				return userName;
+			}
+			set	
+			{
+				userName = value;
+				DictionaryUtil.Add(QueryParameters, "UserName", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetOfficePreviewURLResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetOfficeEditURLResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetOfficePreviewURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetOfficeEditURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,33 +27,18 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class GetOfficePreviewURLRequest : RpcAcsRequest<GetOfficePreviewURLResponse>
+    public class RefreshOfficeEditTokenRequest : RpcAcsRequest<RefreshOfficeEditTokenResponse>
     {
-        public GetOfficePreviewURLRequest()
-            : base("imm", "2017-09-06", "GetOfficePreviewURL", "imm", "openAPI")
+        public RefreshOfficeEditTokenRequest()
+            : base("imm", "2017-09-06", "RefreshOfficeEditToken", "imm", "openAPI")
         {
         }
 
-		private string srcType;
-
 		private string project;
 
-		private bool? useOldURL;
+		private string accessToken;
 
-		private string srcUri;
-
-		public string SrcType
-		{
-			get
-			{
-				return srcType;
-			}
-			set	
-			{
-				srcType = value;
-				DictionaryUtil.Add(QueryParameters, "SrcType", value);
-			}
-		}
+		private string refreshToken;
 
 		public string Project
 		{
@@ -68,29 +53,29 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public bool? UseOldURL
+		public string AccessToken
 		{
 			get
 			{
-				return useOldURL;
+				return accessToken;
 			}
 			set	
 			{
-				useOldURL = value;
-				DictionaryUtil.Add(QueryParameters, "UseOldURL", value.ToString());
+				accessToken = value;
+				DictionaryUtil.Add(QueryParameters, "AccessToken", value);
 			}
 		}
 
-		public string SrcUri
+		public string RefreshToken
 		{
 			get
 			{
-				return srcUri;
+				return refreshToken;
 			}
 			set	
 			{
-				srcUri = value;
-				DictionaryUtil.Add(QueryParameters, "SrcUri", value);
+				refreshToken = value;
+				DictionaryUtil.Add(QueryParameters, "RefreshToken", value);
 			}
 		}
 
@@ -99,9 +84,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override GetOfficePreviewURLResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RefreshOfficeEditTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetOfficePreviewURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RefreshOfficeEditTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
