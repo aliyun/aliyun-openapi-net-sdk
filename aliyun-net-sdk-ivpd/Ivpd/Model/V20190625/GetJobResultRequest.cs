@@ -28,10 +28,10 @@ using Aliyun.Acs.ivpd.Transform.V20190625;
 
 namespace Aliyun.Acs.ivpd.Model.V20190625
 {
-    public class SegmentImageRequest : RpcAcsRequest<SegmentImageResponse>
+    public class GetJobResultRequest : RpcAcsRequest<GetJobResultResponse>
     {
-        public SegmentImageRequest()
-            : base("ivpd", "2019-06-25", "SegmentImage")
+        public GetJobResultRequest()
+            : base("ivpd", "2019-06-25", "GetJobResult")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,18 +40,18 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
             }
         }
 
-		private string url;
+		private string jobId;
 
-		public string Url
+		public string JobId
 		{
 			get
 			{
-				return url;
+				return jobId;
 			}
 			set	
 			{
-				url = value;
-				DictionaryUtil.Add(BodyParameters, "Url", value);
+				jobId = value;
+				DictionaryUtil.Add(BodyParameters, "JobId", value);
 			}
 		}
 
@@ -60,9 +60,9 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			return false;
 		}
 
-        public override SegmentImageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetJobResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SegmentImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetJobResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,111 +28,97 @@ using Aliyun.Acs.ivpd.Transform.V20190625;
 
 namespace Aliyun.Acs.ivpd.Model.V20190625
 {
-    public class RecolorImageRequest : RpcAcsRequest<RecolorImageResponse>
+    public class CreateSegmentBodyJobRequest : RpcAcsRequest<CreateSegmentBodyJobResponse>
     {
-        public RecolorImageRequest()
-            : base("ivpd", "2019-06-25", "RecolorImage")
+        public CreateSegmentBodyJobRequest()
+            : base("ivpd", "2019-06-25", "CreateSegmentBodyJob")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private List<ColorTemplate> colorTemplates = new List<ColorTemplate>(){ };
+		private List<DataList> dataLists = new List<DataList>(){ };
 
-		private string url;
+		private string jobId;
 
-		private string mode;
+		private int? timeToLive;
 
-		private int? colorCount;
-
-		private string refUrl;
-
-		public List<ColorTemplate> ColorTemplates
+		public List<DataList> DataLists
 		{
 			get
 			{
-				return colorTemplates;
+				return dataLists;
 			}
 
 			set
 			{
-				colorTemplates = value;
-				for (int i = 0; i < colorTemplates.Count; i++)
+				dataLists = value;
+				for (int i = 0; i < dataLists.Count; i++)
 				{
-					DictionaryUtil.Add(BodyParameters,"ColorTemplate." + (i + 1) + ".Color", colorTemplates[i].Color);
+					DictionaryUtil.Add(BodyParameters,"DataList." + (i + 1) + ".DataId", dataLists[i].DataId);
+					DictionaryUtil.Add(BodyParameters,"DataList." + (i + 1) + ".ImageUrl", dataLists[i].ImageUrl);
 				}
 			}
 		}
 
-		public string Url
+		public string JobId
 		{
 			get
 			{
-				return url;
+				return jobId;
 			}
 			set	
 			{
-				url = value;
-				DictionaryUtil.Add(BodyParameters, "Url", value);
+				jobId = value;
+				DictionaryUtil.Add(BodyParameters, "JobId", value);
 			}
 		}
 
-		public string Mode
+		public int? TimeToLive
 		{
 			get
 			{
-				return mode;
+				return timeToLive;
 			}
 			set	
 			{
-				mode = value;
-				DictionaryUtil.Add(BodyParameters, "Mode", value);
+				timeToLive = value;
+				DictionaryUtil.Add(BodyParameters, "TimeToLive", value.ToString());
 			}
 		}
 
-		public int? ColorCount
-		{
-			get
-			{
-				return colorCount;
-			}
-			set	
-			{
-				colorCount = value;
-				DictionaryUtil.Add(BodyParameters, "ColorCount", value.ToString());
-			}
-		}
-
-		public string RefUrl
-		{
-			get
-			{
-				return refUrl;
-			}
-			set	
-			{
-				refUrl = value;
-				DictionaryUtil.Add(BodyParameters, "RefUrl", value);
-			}
-		}
-
-		public class ColorTemplate
+		public class DataList
 		{
 
-			private string color;
+			private string dataId;
 
-			public string Color
+			private string imageUrl;
+
+			public string DataId
 			{
 				get
 				{
-					return color;
+					return dataId;
 				}
 				set	
 				{
-					color = value;
+					dataId = value;
+				}
+			}
+
+			public string ImageUrl
+			{
+				get
+				{
+					return imageUrl;
+				}
+				set	
+				{
+					imageUrl = value;
 				}
 			}
 		}
@@ -142,9 +128,9 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			return false;
 		}
 
-        public override RecolorImageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateSegmentBodyJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RecolorImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateSegmentBodyJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

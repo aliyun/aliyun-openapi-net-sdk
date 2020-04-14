@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.ivpd;
 using Aliyun.Acs.ivpd.Transform;
 using Aliyun.Acs.ivpd.Transform.V20190625;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
     public class ExtendImageStyleRequest : RpcAcsRequest<ExtendImageStyleResponse>
     {
         public ExtendImageStyleRequest()
-            : base("ivpd", "2019-06-25", "ExtendImageStyle", "ivpd", "openAPI")
+            : base("ivpd", "2019-06-25", "ExtendImageStyle")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
