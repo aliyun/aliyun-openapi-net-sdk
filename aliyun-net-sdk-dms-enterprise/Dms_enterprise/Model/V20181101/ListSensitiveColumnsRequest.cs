@@ -28,10 +28,10 @@ using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-    public class ListDatabasesRequest : RpcAcsRequest<ListDatabasesResponse>
+    public class ListSensitiveColumnsRequest : RpcAcsRequest<ListSensitiveColumnsResponse>
     {
-        public ListDatabasesRequest()
-            : base("dms-enterprise", "2018-11-01", "ListDatabases", "dmsenterprise", "openAPI")
+        public ListSensitiveColumnsRequest()
+            : base("dms-enterprise", "2018-11-01", "ListSensitiveColumns", "dmsenterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,43 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
             }
         }
 
-		private string instanceId;
+		private string schemaName;
+
+		private string securityLevel;
 
 		private int? pageSize;
+
+		private string tableName;
+
+		private string columnName;
 
 		private long? tid;
 
 		private int? pageNumber;
 
-		public string InstanceId
+		public string SchemaName
 		{
 			get
 			{
-				return instanceId;
+				return schemaName;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				schemaName = value;
+				DictionaryUtil.Add(QueryParameters, "SchemaName", value);
+			}
+		}
+
+		public string SecurityLevel
+		{
+			get
+			{
+				return securityLevel;
+			}
+			set	
+			{
+				securityLevel = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityLevel", value);
 			}
 		}
 
@@ -71,6 +90,32 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string TableName
+		{
+			get
+			{
+				return tableName;
+			}
+			set	
+			{
+				tableName = value;
+				DictionaryUtil.Add(QueryParameters, "TableName", value);
+			}
+		}
+
+		public string ColumnName
+		{
+			get
+			{
+				return columnName;
+			}
+			set	
+			{
+				columnName = value;
+				DictionaryUtil.Add(QueryParameters, "ColumnName", value);
 			}
 		}
 
@@ -100,9 +145,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-        public override ListDatabasesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListSensitiveColumnsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListDatabasesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListSensitiveColumnsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

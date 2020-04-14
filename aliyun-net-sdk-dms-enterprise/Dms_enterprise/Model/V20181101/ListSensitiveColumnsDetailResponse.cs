@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-	public class ListUsersResponse : AcsResponse
+	public class ListSensitiveColumnsDetailResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,9 +33,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string errorCode;
 
-		private long? totalCount;
-
-		private List<ListUsers_User> userList;
+		private List<ListSensitiveColumnsDetail_SensitiveColumnsDetail> sensitiveColumnsDetailList;
 
 		public string RequestId
 		{
@@ -85,212 +83,158 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public long? TotalCount
+		public List<ListSensitiveColumnsDetail_SensitiveColumnsDetail> SensitiveColumnsDetailList
 		{
 			get
 			{
-				return totalCount;
+				return sensitiveColumnsDetailList;
 			}
 			set	
 			{
-				totalCount = value;
+				sensitiveColumnsDetailList = value;
 			}
 		}
 
-		public List<ListUsers_User> UserList
-		{
-			get
-			{
-				return userList;
-			}
-			set	
-			{
-				userList = value;
-			}
-		}
-
-		public class ListUsers_User
+		public class ListSensitiveColumnsDetail_SensitiveColumnsDetail
 		{
 
-			private string userId;
+			private string schemaName;
 
-			private long? uid;
+			private string tableName;
 
-			private string nickName;
+			private string columnName;
 
-			private string mobile;
+			private string searchName;
 
-			private long? parentUid;
+			private long? dbId;
 
-			private string state;
+			private string envType;
 
-			private string lastLoginTime;
+			private string dbType;
 
-			private long? curExecuteCount;
+			private bool? logic;
 
-			private long? curResultCount;
+			private string columnType;
 
-			private long? maxExecuteCount;
+			private string columnDescription;
 
-			private long? maxResultCount;
-
-			private List<string> roleIdList;
-
-			private List<string> roleNameList;
-
-			public string UserId
+			public string SchemaName
 			{
 				get
 				{
-					return userId;
+					return schemaName;
 				}
 				set	
 				{
-					userId = value;
+					schemaName = value;
 				}
 			}
 
-			public long? Uid
+			public string TableName
 			{
 				get
 				{
-					return uid;
+					return tableName;
 				}
 				set	
 				{
-					uid = value;
+					tableName = value;
 				}
 			}
 
-			public string NickName
+			public string ColumnName
 			{
 				get
 				{
-					return nickName;
+					return columnName;
 				}
 				set	
 				{
-					nickName = value;
+					columnName = value;
 				}
 			}
 
-			public string Mobile
+			public string SearchName
 			{
 				get
 				{
-					return mobile;
+					return searchName;
 				}
 				set	
 				{
-					mobile = value;
+					searchName = value;
 				}
 			}
 
-			public long? ParentUid
+			public long? DbId
 			{
 				get
 				{
-					return parentUid;
+					return dbId;
 				}
 				set	
 				{
-					parentUid = value;
+					dbId = value;
 				}
 			}
 
-			public string State
+			public string EnvType
 			{
 				get
 				{
-					return state;
+					return envType;
 				}
 				set	
 				{
-					state = value;
+					envType = value;
 				}
 			}
 
-			public string LastLoginTime
+			public string DbType
 			{
 				get
 				{
-					return lastLoginTime;
+					return dbType;
 				}
 				set	
 				{
-					lastLoginTime = value;
+					dbType = value;
 				}
 			}
 
-			public long? CurExecuteCount
+			public bool? Logic
 			{
 				get
 				{
-					return curExecuteCount;
+					return logic;
 				}
 				set	
 				{
-					curExecuteCount = value;
+					logic = value;
 				}
 			}
 
-			public long? CurResultCount
+			public string ColumnType
 			{
 				get
 				{
-					return curResultCount;
+					return columnType;
 				}
 				set	
 				{
-					curResultCount = value;
+					columnType = value;
 				}
 			}
 
-			public long? MaxExecuteCount
+			public string ColumnDescription
 			{
 				get
 				{
-					return maxExecuteCount;
+					return columnDescription;
 				}
 				set	
 				{
-					maxExecuteCount = value;
-				}
-			}
-
-			public long? MaxResultCount
-			{
-				get
-				{
-					return maxResultCount;
-				}
-				set	
-				{
-					maxResultCount = value;
-				}
-			}
-
-			public List<string> RoleIdList
-			{
-				get
-				{
-					return roleIdList;
-				}
-				set	
-				{
-					roleIdList = value;
-				}
-			}
-
-			public List<string> RoleNameList
-			{
-				get
-				{
-					return roleNameList;
-				}
-				set	
-				{
-					roleNameList = value;
+					columnDescription = value;
 				}
 			}
 		}

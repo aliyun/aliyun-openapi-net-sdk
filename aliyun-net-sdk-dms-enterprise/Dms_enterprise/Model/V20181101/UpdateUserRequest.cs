@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.dms_enterprise;
 using Aliyun.Acs.dms_enterprise.Transform;
 using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
@@ -32,19 +31,22 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
     public class UpdateUserRequest : RpcAcsRequest<UpdateUserResponse>
     {
         public UpdateUserRequest()
-            : base("dms-enterprise", "2018-11-01", "UpdateUser")
+            : base("dms-enterprise", "2018-11-01", "UpdateUser", "dmsenterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
 		private string roleNames;
 
 		private long? uid;
+
+		private long? maxResultCount;
+
+		private long? maxExecuteCount;
 
 		private string userNick;
 
@@ -75,6 +77,32 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				uid = value;
 				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
+			}
+		}
+
+		public long? MaxResultCount
+		{
+			get
+			{
+				return maxResultCount;
+			}
+			set	
+			{
+				maxResultCount = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResultCount", value.ToString());
+			}
+		}
+
+		public long? MaxExecuteCount
+		{
+			get
+			{
+				return maxExecuteCount;
+			}
+			set	
+			{
+				maxExecuteCount = value;
+				DictionaryUtil.Add(QueryParameters, "MaxExecuteCount", value.ToString());
 			}
 		}
 

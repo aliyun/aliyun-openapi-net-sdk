@@ -46,6 +46,11 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				user.Mobile = context.StringValue("ListUsers.UserList["+ i +"].Mobile");
 				user.ParentUid = context.LongValue("ListUsers.UserList["+ i +"].ParentUid");
 				user.State = context.StringValue("ListUsers.UserList["+ i +"].State");
+				user.LastLoginTime = context.StringValue("ListUsers.UserList["+ i +"].LastLoginTime");
+				user.CurExecuteCount = context.LongValue("ListUsers.UserList["+ i +"].CurExecuteCount");
+				user.CurResultCount = context.LongValue("ListUsers.UserList["+ i +"].CurResultCount");
+				user.MaxExecuteCount = context.LongValue("ListUsers.UserList["+ i +"].MaxExecuteCount");
+				user.MaxResultCount = context.LongValue("ListUsers.UserList["+ i +"].MaxResultCount");
 
 				List<string> user_roleIdList = new List<string>();
 				for (int j = 0; j < context.Length("ListUsers.UserList["+ i +"].RoleIdList.Length"); j++) {

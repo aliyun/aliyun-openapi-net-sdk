@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-	public class ListUsersResponse : AcsResponse
+	public class ListSensitiveColumnsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -35,7 +35,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private long? totalCount;
 
-		private List<ListUsers_User> userList;
+		private List<ListSensitiveColumns_SensitiveColumn> sensitiveColumnList;
 
 		public string RequestId
 		{
@@ -97,200 +97,102 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public List<ListUsers_User> UserList
+		public List<ListSensitiveColumns_SensitiveColumn> SensitiveColumnList
 		{
 			get
 			{
-				return userList;
+				return sensitiveColumnList;
 			}
 			set	
 			{
-				userList = value;
+				sensitiveColumnList = value;
 			}
 		}
 
-		public class ListUsers_User
+		public class ListSensitiveColumns_SensitiveColumn
 		{
 
-			private string userId;
+			private string schemaName;
 
-			private long? uid;
+			private string tableName;
 
-			private string nickName;
+			private string columnName;
 
-			private string mobile;
+			private string securityLevel;
 
-			private long? parentUid;
+			private long? columnCount;
 
-			private string state;
+			private string functionType;
 
-			private string lastLoginTime;
-
-			private long? curExecuteCount;
-
-			private long? curResultCount;
-
-			private long? maxExecuteCount;
-
-			private long? maxResultCount;
-
-			private List<string> roleIdList;
-
-			private List<string> roleNameList;
-
-			public string UserId
+			public string SchemaName
 			{
 				get
 				{
-					return userId;
+					return schemaName;
 				}
 				set	
 				{
-					userId = value;
+					schemaName = value;
 				}
 			}
 
-			public long? Uid
+			public string TableName
 			{
 				get
 				{
-					return uid;
+					return tableName;
 				}
 				set	
 				{
-					uid = value;
+					tableName = value;
 				}
 			}
 
-			public string NickName
+			public string ColumnName
 			{
 				get
 				{
-					return nickName;
+					return columnName;
 				}
 				set	
 				{
-					nickName = value;
+					columnName = value;
 				}
 			}
 
-			public string Mobile
+			public string SecurityLevel
 			{
 				get
 				{
-					return mobile;
+					return securityLevel;
 				}
 				set	
 				{
-					mobile = value;
+					securityLevel = value;
 				}
 			}
 
-			public long? ParentUid
+			public long? ColumnCount
 			{
 				get
 				{
-					return parentUid;
+					return columnCount;
 				}
 				set	
 				{
-					parentUid = value;
+					columnCount = value;
 				}
 			}
 
-			public string State
+			public string FunctionType
 			{
 				get
 				{
-					return state;
+					return functionType;
 				}
 				set	
 				{
-					state = value;
-				}
-			}
-
-			public string LastLoginTime
-			{
-				get
-				{
-					return lastLoginTime;
-				}
-				set	
-				{
-					lastLoginTime = value;
-				}
-			}
-
-			public long? CurExecuteCount
-			{
-				get
-				{
-					return curExecuteCount;
-				}
-				set	
-				{
-					curExecuteCount = value;
-				}
-			}
-
-			public long? CurResultCount
-			{
-				get
-				{
-					return curResultCount;
-				}
-				set	
-				{
-					curResultCount = value;
-				}
-			}
-
-			public long? MaxExecuteCount
-			{
-				get
-				{
-					return maxExecuteCount;
-				}
-				set	
-				{
-					maxExecuteCount = value;
-				}
-			}
-
-			public long? MaxResultCount
-			{
-				get
-				{
-					return maxResultCount;
-				}
-				set	
-				{
-					maxResultCount = value;
-				}
-			}
-
-			public List<string> RoleIdList
-			{
-				get
-				{
-					return roleIdList;
-				}
-				set	
-				{
-					roleIdList = value;
-				}
-			}
-
-			public List<string> RoleNameList
-			{
-				get
-				{
-					return roleNameList;
-				}
-				set	
-				{
-					roleNameList = value;
+					functionType = value;
 				}
 			}
 		}

@@ -108,6 +108,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string enabled;
 
+			private long? createUserId;
+
 			private List<ListWorkFlowTemplates_WorkflowNode> workflowNodes;
 
 			public string TemplateName
@@ -170,6 +172,18 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
+			public long? CreateUserId
+			{
+				get
+				{
+					return createUserId;
+				}
+				set	
+				{
+					createUserId = value;
+				}
+			}
+
 			public List<ListWorkFlowTemplates_WorkflowNode> WorkflowNodes
 			{
 				get
@@ -196,6 +210,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				private string comment;
 
 				private int? position;
+
+				private long? createUserId;
 
 				public long? NodeId
 				{
@@ -266,6 +282,18 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 					set	
 					{
 						position = value;
+					}
+				}
+
+				public long? CreateUserId
+				{
+					get
+					{
+						return createUserId;
+					}
+					set	
+					{
+						createUserId = value;
 					}
 				}
 			}

@@ -1,0 +1,57 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using System;
+using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.dms_enterprise.Model.V20181101;
+
+namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
+{
+    public class ListSensitiveColumnsResponseUnmarshaller
+    {
+        public static ListSensitiveColumnsResponse Unmarshall(UnmarshallerContext context)
+        {
+			ListSensitiveColumnsResponse listSensitiveColumnsResponse = new ListSensitiveColumnsResponse();
+
+			listSensitiveColumnsResponse.HttpResponse = context.HttpResponse;
+			listSensitiveColumnsResponse.RequestId = context.StringValue("ListSensitiveColumns.RequestId");
+			listSensitiveColumnsResponse.Success = context.BooleanValue("ListSensitiveColumns.Success");
+			listSensitiveColumnsResponse.ErrorMessage = context.StringValue("ListSensitiveColumns.ErrorMessage");
+			listSensitiveColumnsResponse.ErrorCode = context.StringValue("ListSensitiveColumns.ErrorCode");
+			listSensitiveColumnsResponse.TotalCount = context.LongValue("ListSensitiveColumns.TotalCount");
+
+			List<ListSensitiveColumnsResponse.ListSensitiveColumns_SensitiveColumn> listSensitiveColumnsResponse_sensitiveColumnList = new List<ListSensitiveColumnsResponse.ListSensitiveColumns_SensitiveColumn>();
+			for (int i = 0; i < context.Length("ListSensitiveColumns.SensitiveColumnList.Length"); i++) {
+				ListSensitiveColumnsResponse.ListSensitiveColumns_SensitiveColumn sensitiveColumn = new ListSensitiveColumnsResponse.ListSensitiveColumns_SensitiveColumn();
+				sensitiveColumn.SchemaName = context.StringValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].SchemaName");
+				sensitiveColumn.TableName = context.StringValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].TableName");
+				sensitiveColumn.ColumnName = context.StringValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].ColumnName");
+				sensitiveColumn.SecurityLevel = context.StringValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].SecurityLevel");
+				sensitiveColumn.ColumnCount = context.LongValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].ColumnCount");
+				sensitiveColumn.FunctionType = context.StringValue("ListSensitiveColumns.SensitiveColumnList["+ i +"].FunctionType");
+
+				listSensitiveColumnsResponse_sensitiveColumnList.Add(sensitiveColumn);
+			}
+			listSensitiveColumnsResponse.SensitiveColumnList = listSensitiveColumnsResponse_sensitiveColumnList;
+        
+			return listSensitiveColumnsResponse;
+        }
+    }
+}

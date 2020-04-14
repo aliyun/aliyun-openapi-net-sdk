@@ -44,6 +44,7 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				workFlowTemplate.TemplateId = context.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].TemplateId");
 				workFlowTemplate.IsSystem = context.IntegerValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].IsSystem");
 				workFlowTemplate.Enabled = context.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].Enabled");
+				workFlowTemplate.CreateUserId = context.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].CreateUserId");
 
 				List<ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate.ListWorkFlowTemplates_WorkflowNode> workFlowTemplate_workflowNodes = new List<ListWorkFlowTemplatesResponse.ListWorkFlowTemplates_WorkFlowTemplate.ListWorkFlowTemplates_WorkflowNode>();
 				for (int j = 0; j < context.Length("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes.Length"); j++) {
@@ -54,6 +55,7 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 					workflowNode.NodeType = context.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].NodeType");
 					workflowNode.Comment = context.StringValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Comment");
 					workflowNode.Position = context.IntegerValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].Position");
+					workflowNode.CreateUserId = context.LongValue("ListWorkFlowTemplates.WorkFlowTemplates["+ i +"].WorkflowNodes["+ j +"].CreateUserId");
 
 					workFlowTemplate_workflowNodes.Add(workflowNode);
 				}

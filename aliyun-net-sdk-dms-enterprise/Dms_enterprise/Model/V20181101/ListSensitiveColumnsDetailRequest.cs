@@ -28,10 +28,10 @@ using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-    public class ListDatabasesRequest : RpcAcsRequest<ListDatabasesResponse>
+    public class ListSensitiveColumnsDetailRequest : RpcAcsRequest<ListSensitiveColumnsDetailResponse>
     {
-        public ListDatabasesRequest()
-            : base("dms-enterprise", "2018-11-01", "ListDatabases", "dmsenterprise", "openAPI")
+        public ListSensitiveColumnsDetailRequest()
+            : base("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dmsenterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,37 +40,50 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
             }
         }
 
-		private string instanceId;
+		private string schemaName;
 
-		private int? pageSize;
+		private string tableName;
+
+		private string columnName;
 
 		private long? tid;
 
-		private int? pageNumber;
-
-		public string InstanceId
+		public string SchemaName
 		{
 			get
 			{
-				return instanceId;
+				return schemaName;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				schemaName = value;
+				DictionaryUtil.Add(QueryParameters, "SchemaName", value);
 			}
 		}
 
-		public int? PageSize
+		public string TableName
 		{
 			get
 			{
-				return pageSize;
+				return tableName;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				tableName = value;
+				DictionaryUtil.Add(QueryParameters, "TableName", value);
+			}
+		}
+
+		public string ColumnName
+		{
+			get
+			{
+				return columnName;
+			}
+			set	
+			{
+				columnName = value;
+				DictionaryUtil.Add(QueryParameters, "ColumnName", value);
 			}
 		}
 
@@ -87,22 +100,9 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-        public override ListDatabasesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListSensitiveColumnsDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListDatabasesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListSensitiveColumnsDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
