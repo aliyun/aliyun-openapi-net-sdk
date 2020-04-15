@@ -98,6 +98,8 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 			private float? refundAmount;
 
+			private int? source;
+
 			public string BizId
 			{
 				get
@@ -347,6 +349,18 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 				set	
 				{
 					refundAmount = value;
+				}
+			}
+
+			public int? Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
 				}
 			}
 		}

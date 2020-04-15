@@ -32,9 +32,14 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public UpdateTmMonitorRuleRequest()
             : base("Trademark", "2018-07-24", "UpdateTmMonitorRule", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private List<int?> notifyStatuss;
+		private List<int?> notifyStatuss = new List<int?>(){ };
 
 		private string ruleName;
 

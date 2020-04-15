@@ -32,9 +32,29 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public QueryMaterialRequest()
             : base("Trademark", "2018-07-24", "QueryMaterial", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
+		private bool? queryUnconfirmedInfo;
+
 		private long? id;
+
+		public bool? QueryUnconfirmedInfo
+		{
+			get
+			{
+				return queryUnconfirmedInfo;
+			}
+			set	
+			{
+				queryUnconfirmedInfo = value;
+				DictionaryUtil.Add(QueryParameters, "QueryUnconfirmedInfo", value.ToString());
+			}
+		}
 
 		public long? Id
 		{

@@ -57,6 +57,8 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 				tmProduces.UpdateTime = context.LongValue("QueryTradeMarkApplications.Data["+ i +"].UpdateTime");
 				tmProduces.SupplementStatus = context.IntegerValue("QueryTradeMarkApplications.Data["+ i +"].SupplementStatus");
 				tmProduces.SupplementId = context.LongValue("QueryTradeMarkApplications.Data["+ i +"].SupplementId");
+				tmProduces.TotalPrice = context.FloatValue("QueryTradeMarkApplications.Data["+ i +"].TotalPrice");
+				tmProduces.ServicePrice = context.FloatValue("QueryTradeMarkApplications.Data["+ i +"].ServicePrice");
 
 				List<string> tmProduces_flags = new List<string>();
 				for (int j = 0; j < context.Length("QueryTradeMarkApplications.Data["+ i +"].Flags.Length"); j++) {

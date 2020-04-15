@@ -32,9 +32,14 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public QueryMonitorKeywordsRequest()
             : base("Trademark", "2018-07-24", "QueryMonitorKeywords", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private List<string> keywordss;
+		private List<string> keywordss = new List<string>(){ };
 
 		private int? ruleType;
 

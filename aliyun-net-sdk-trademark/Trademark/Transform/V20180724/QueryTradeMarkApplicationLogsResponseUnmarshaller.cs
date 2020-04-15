@@ -41,6 +41,7 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 				dataItem.OperateType = context.IntegerValue("QueryTradeMarkApplicationLogs.Data["+ i +"].OperateType");
 				dataItem.OperateTime = context.LongValue("QueryTradeMarkApplicationLogs.Data["+ i +"].OperateTime");
 				dataItem.BizStatus = context.IntegerValue("QueryTradeMarkApplicationLogs.Data["+ i +"].BizStatus");
+				dataItem.ExtendContent = context.StringValue("QueryTradeMarkApplicationLogs.Data["+ i +"].ExtendContent");
 
 				queryTradeMarkApplicationLogsResponse_data.Add(dataItem);
 			}

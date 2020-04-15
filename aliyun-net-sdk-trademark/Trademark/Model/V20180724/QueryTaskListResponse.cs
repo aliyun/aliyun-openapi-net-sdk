@@ -27,6 +27,14 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private string requestId;
 
+		private int? totalItemNum;
+
+		private int? currentPageNum;
+
+		private int? pageSize;
+
+		private int? totalPageNum;
+
 		private List<QueryTaskList_TaskList> data;
 
 		public string RequestId
@@ -38,6 +46,54 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? TotalItemNum
+		{
+			get
+			{
+				return totalItemNum;
+			}
+			set	
+			{
+				totalItemNum = value;
+			}
+		}
+
+		public int? CurrentPageNum
+		{
+			get
+			{
+				return currentPageNum;
+			}
+			set	
+			{
+				currentPageNum = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalPageNum
+		{
+			get
+			{
+				return totalPageNum;
+			}
+			set	
+			{
+				totalPageNum = value;
 			}
 		}
 
@@ -63,6 +119,12 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			private string errMsg;
 
 			private string result;
+
+			private string fileName;
+
+			private long? createTime;
+
+			private long? completeTime;
 
 			public string TaskStatus
 			{
@@ -109,6 +171,42 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 				set	
 				{
 					result = value;
+				}
+			}
+
+			public string FileName
+			{
+				get
+				{
+					return fileName;
+				}
+				set	
+				{
+					fileName = value;
+				}
+			}
+
+			public long? CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public long? CompleteTime
+			{
+				get
+				{
+					return completeTime;
+				}
+				set	
+				{
+					completeTime = value;
 				}
 			}
 		}

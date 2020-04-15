@@ -58,6 +58,15 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 			queryMaterialResponse.LegalNoticeUrl = context.StringValue("QueryMaterial.LegalNoticeUrl");
 			queryMaterialResponse.Note = context.StringValue("QueryMaterial.Note");
 			queryMaterialResponse.Country = context.StringValue("QueryMaterial.Country");
+			queryMaterialResponse.ReviewApplicationFile = context.StringValue("QueryMaterial.ReviewApplicationFile");
+			queryMaterialResponse.PrincipalName = context.IntegerValue("QueryMaterial.PrincipalName");
+			queryMaterialResponse.ValidDate = context.LongValue("QueryMaterial.ValidDate");
+
+			List<string> queryMaterialResponse_reviewAdditionalFiles = new List<string>();
+			for (int i = 0; i < context.Length("QueryMaterial.ReviewAdditionalFiles.Length"); i++) {
+				queryMaterialResponse_reviewAdditionalFiles.Add(context.StringValue("QueryMaterial.ReviewAdditionalFiles["+ i +"]"));
+			}
+			queryMaterialResponse.ReviewAdditionalFiles = queryMaterialResponse_reviewAdditionalFiles;
         
 			return queryMaterialResponse;
         }

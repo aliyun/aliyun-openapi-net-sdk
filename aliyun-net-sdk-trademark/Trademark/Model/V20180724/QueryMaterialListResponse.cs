@@ -130,6 +130,10 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 			private string cardNumber;
 
+			private long? validDate;
+
+			private int? principalName;
+
 			public long? Id
 			{
 				get
@@ -235,6 +239,30 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 				set	
 				{
 					cardNumber = value;
+				}
+			}
+
+			public long? ValidDate
+			{
+				get
+				{
+					return validDate;
+				}
+				set	
+				{
+					validDate = value;
+				}
+			}
+
+			public int? PrincipalName
+			{
+				get
+				{
+					return principalName;
+				}
+				set	
+				{
+					principalName = value;
 				}
 			}
 		}

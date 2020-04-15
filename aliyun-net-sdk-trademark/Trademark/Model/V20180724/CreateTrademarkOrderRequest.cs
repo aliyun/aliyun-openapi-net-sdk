@@ -32,19 +32,18 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public CreateTrademarkOrderRequest()
             : base("Trademark", "2018-07-24", "CreateTrademarkOrder", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string tmName;
 
 		private string realUserName;
 
 		private string orderData;
 
 		private string channel;
-
-		private string partnerCode;
-
-		private string phoneNum;
 
 		private int? type;
 
@@ -54,19 +53,13 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private string tmComment;
 
-		private string registerName;
-
 		private string tmNameType;
 
 		private string tmIcon;
 
 		private string uid;
 
-		private bool? isBlackIcon;
-
 		private string renewInfoId;
-
-		private string bizId;
 
 		private string rootCode;
 
@@ -74,18 +67,17 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private string registerNumber;
 
-		public string TmName
-		{
-			get
-			{
-				return tmName;
-			}
-			set	
-			{
-				tmName = value;
-				DictionaryUtil.Add(QueryParameters, "TmName", value);
-			}
-		}
+		private string tmName;
+
+		private string partnerCode;
+
+		private string phoneNum;
+
+		private string registerName;
+
+		private bool? isBlackIcon;
+
+		private string bizId;
 
 		public string RealUserName
 		{
@@ -123,32 +115,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				channel = value;
 				DictionaryUtil.Add(QueryParameters, "Channel", value);
-			}
-		}
-
-		public string PartnerCode
-		{
-			get
-			{
-				return partnerCode;
-			}
-			set	
-			{
-				partnerCode = value;
-				DictionaryUtil.Add(QueryParameters, "PartnerCode", value);
-			}
-		}
-
-		public string PhoneNum
-		{
-			get
-			{
-				return phoneNum;
-			}
-			set	
-			{
-				phoneNum = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNum", value);
 			}
 		}
 
@@ -204,19 +170,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
-		public string RegisterName
-		{
-			get
-			{
-				return registerName;
-			}
-			set	
-			{
-				registerName = value;
-				DictionaryUtil.Add(QueryParameters, "RegisterName", value);
-			}
-		}
-
 		public string TmNameType
 		{
 			get
@@ -256,19 +209,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
-		public bool? IsBlackIcon
-		{
-			get
-			{
-				return isBlackIcon;
-			}
-			set	
-			{
-				isBlackIcon = value;
-				DictionaryUtil.Add(QueryParameters, "IsBlackIcon", value.ToString());
-			}
-		}
-
 		public string RenewInfoId
 		{
 			get
@@ -279,19 +219,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				renewInfoId = value;
 				DictionaryUtil.Add(QueryParameters, "RenewInfoId", value);
-			}
-		}
-
-		public string BizId
-		{
-			get
-			{
-				return bizId;
-			}
-			set	
-			{
-				bizId = value;
-				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 
@@ -331,6 +258,84 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				registerNumber = value;
 				DictionaryUtil.Add(QueryParameters, "RegisterNumber", value);
+			}
+		}
+
+		public string TmName
+		{
+			get
+			{
+				return tmName;
+			}
+			set	
+			{
+				tmName = value;
+				DictionaryUtil.Add(QueryParameters, "TmName", value);
+			}
+		}
+
+		public string PartnerCode
+		{
+			get
+			{
+				return partnerCode;
+			}
+			set	
+			{
+				partnerCode = value;
+				DictionaryUtil.Add(QueryParameters, "PartnerCode", value);
+			}
+		}
+
+		public string PhoneNum
+		{
+			get
+			{
+				return phoneNum;
+			}
+			set	
+			{
+				phoneNum = value;
+				DictionaryUtil.Add(QueryParameters, "PhoneNum", value);
+			}
+		}
+
+		public string RegisterName
+		{
+			get
+			{
+				return registerName;
+			}
+			set	
+			{
+				registerName = value;
+				DictionaryUtil.Add(QueryParameters, "RegisterName", value);
+			}
+		}
+
+		public bool? IsBlackIcon
+		{
+			get
+			{
+				return isBlackIcon;
+			}
+			set	
+			{
+				isBlackIcon = value;
+				DictionaryUtil.Add(QueryParameters, "IsBlackIcon", value.ToString());
+			}
+		}
+
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
 			}
 		}
 

@@ -32,9 +32,16 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public InsertTradeIntentionUserRequest()
             : base("Trademark", "2018-07-24", "InsertTradeIntentionUser", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string mobile;
+
+		private string description;
 
 		private string partnerCode;
 
@@ -42,9 +49,9 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private int? type;
 
-		private string registerNumber;
-
 		private string vcode;
+
+		private string registerNumber;
 
 		private string userName;
 
@@ -58,6 +65,19 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				mobile = value;
 				DictionaryUtil.Add(QueryParameters, "Mobile", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -100,19 +120,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
-		public string RegisterNumber
-		{
-			get
-			{
-				return registerNumber;
-			}
-			set	
-			{
-				registerNumber = value;
-				DictionaryUtil.Add(QueryParameters, "RegisterNumber", value);
-			}
-		}
-
 		public string Vcode
 		{
 			get
@@ -123,6 +130,19 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				vcode = value;
 				DictionaryUtil.Add(QueryParameters, "Vcode", value);
+			}
+		}
+
+		public string RegisterNumber
+		{
+			get
+			{
+				return registerNumber;
+			}
+			set	
+			{
+				registerNumber = value;
+				DictionaryUtil.Add(QueryParameters, "RegisterNumber", value);
 			}
 		}
 

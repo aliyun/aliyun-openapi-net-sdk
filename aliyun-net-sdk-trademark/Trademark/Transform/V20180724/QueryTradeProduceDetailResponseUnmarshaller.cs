@@ -55,6 +55,7 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 			data.PaidAmount = context.FloatValue("QueryTradeProduceDetail.Data.PaidAmount");
 			data.ConfiscateAmount = context.FloatValue("QueryTradeProduceDetail.Data.ConfiscateAmount");
 			data.RefundAmount = context.FloatValue("QueryTradeProduceDetail.Data.RefundAmount");
+			data.Source = context.IntegerValue("QueryTradeProduceDetail.Data.Source");
 			queryTradeProduceDetailResponse.Data = data;
         
 			return queryTradeProduceDetailResponse;

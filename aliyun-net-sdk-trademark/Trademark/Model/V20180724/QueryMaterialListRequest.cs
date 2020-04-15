@@ -32,7 +32,16 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public QueryMaterialListRequest()
             : base("Trademark", "2018-07-24", "QueryMaterialList", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private int? type;
+
+		private int? pageNum;
 
 		private string name;
 
@@ -40,13 +49,35 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private string cardNumber;
 
-		private int? type;
-
 		private int? region;
 
-		private int? pageNum;
-
 		private int? status;
+
+		public int? Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
 
 		public string Name
 		{
@@ -87,19 +118,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
-		public int? Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value.ToString());
-			}
-		}
-
 		public int? Region
 		{
 			get
@@ -110,19 +128,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				region = value;
 				DictionaryUtil.Add(QueryParameters, "Region", value.ToString());
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

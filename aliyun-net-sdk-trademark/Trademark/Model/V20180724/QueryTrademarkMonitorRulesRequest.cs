@@ -32,17 +32,48 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public QueryTrademarkMonitorRulesRequest()
             : base("Trademark", "2018-07-24", "QueryTrademarkMonitorRules", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string ruleName;
+
+		private int? pageNum;
 
 		private int? notifyUpdate;
 
 		private int? pageSize;
 
-		private string ruleName;
-
 		private string id;
 
-		private int? pageNum;
+		public string RuleName
+		{
+			get
+			{
+				return ruleName;
+			}
+			set	
+			{
+				ruleName = value;
+				DictionaryUtil.Add(QueryParameters, "RuleName", value);
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
 
 		public int? NotifyUpdate
 		{
@@ -70,19 +101,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
-		public string RuleName
-		{
-			get
-			{
-				return ruleName;
-			}
-			set	
-			{
-				ruleName = value;
-				DictionaryUtil.Add(QueryParameters, "RuleName", value);
-			}
-		}
-
 		public string Id
 		{
 			get
@@ -93,19 +111,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				id = value;
 				DictionaryUtil.Add(QueryParameters, "Id", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private string loaUrl;
 
-		private int? orderPrice;
+		private float? orderPrice;
 
 		private string tmIcon;
 
@@ -67,6 +67,18 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private long? materialId;
 
+		private float? totalPrice;
+
+		private float? servicePrice;
+
+		private string partnerCode;
+
+		private string partnerMobile;
+
+		private string notAcceptUrl;
+
+		private string partnerName;
+
 		private List<QueryTradeMarkApplicationDetail_ThirdClassifications> thirdClassification;
 
 		private List<QueryTradeMarkApplicationDetail_SupplementsItem> supplements;
@@ -75,6 +87,8 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private List<string> judgeResultUrl;
 
+		private List<string> flags;
+
 		private QueryTradeMarkApplicationDetail_AdminUploads adminUploads;
 
 		private QueryTradeMarkApplicationDetail_MaterialDetail materialDetail;
@@ -82,6 +96,8 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 		private QueryTradeMarkApplicationDetail_FirstClassification firstClassification;
 
 		private QueryTradeMarkApplicationDetail_RenewResponse renewResponse;
+
+		private QueryTradeMarkApplicationDetail_ReviewOfficialFiles reviewOfficialFiles;
 
 		public int? Status
 		{
@@ -119,7 +135,7 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
-		public int? OrderPrice
+		public float? OrderPrice
 		{
 			get
 			{
@@ -335,6 +351,78 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
+		public float? TotalPrice
+		{
+			get
+			{
+				return totalPrice;
+			}
+			set	
+			{
+				totalPrice = value;
+			}
+		}
+
+		public float? ServicePrice
+		{
+			get
+			{
+				return servicePrice;
+			}
+			set	
+			{
+				servicePrice = value;
+			}
+		}
+
+		public string PartnerCode
+		{
+			get
+			{
+				return partnerCode;
+			}
+			set	
+			{
+				partnerCode = value;
+			}
+		}
+
+		public string PartnerMobile
+		{
+			get
+			{
+				return partnerMobile;
+			}
+			set	
+			{
+				partnerMobile = value;
+			}
+		}
+
+		public string NotAcceptUrl
+		{
+			get
+			{
+				return notAcceptUrl;
+			}
+			set	
+			{
+				notAcceptUrl = value;
+			}
+		}
+
+		public string PartnerName
+		{
+			get
+			{
+				return partnerName;
+			}
+			set	
+			{
+				partnerName = value;
+			}
+		}
+
 		public List<QueryTradeMarkApplicationDetail_ThirdClassifications> ThirdClassification
 		{
 			get
@@ -383,6 +471,18 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
+		public List<string> Flags
+		{
+			get
+			{
+				return flags;
+			}
+			set	
+			{
+				flags = value;
+			}
+		}
+
 		public QueryTradeMarkApplicationDetail_AdminUploads AdminUploads
 		{
 			get
@@ -428,6 +528,18 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			set	
 			{
 				renewResponse = value;
+			}
+		}
+
+		public QueryTradeMarkApplicationDetail_ReviewOfficialFiles ReviewOfficialFiles
+		{
+			get
+			{
+				return reviewOfficialFiles;
+			}
+			set	
+			{
+				reviewOfficialFiles = value;
 			}
 		}
 
@@ -758,6 +870,10 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 			private string legalNoticeUrl;
 
+			private string reviewApplicationFile;
+
+			private List<string> reviewAdditionalFiles;
+
 			public string CardNumber
 			{
 				get
@@ -1033,6 +1149,30 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 					legalNoticeUrl = value;
 				}
 			}
+
+			public string ReviewApplicationFile
+			{
+				get
+				{
+					return reviewApplicationFile;
+				}
+				set	
+				{
+					reviewApplicationFile = value;
+				}
+			}
+
+			public List<string> ReviewAdditionalFiles
+			{
+				get
+				{
+					return reviewAdditionalFiles;
+				}
+				set	
+				{
+					reviewAdditionalFiles = value;
+				}
+			}
 		}
 
 		public class QueryTradeMarkApplicationDetail_FirstClassification
@@ -1151,6 +1291,80 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 				set	
 				{
 					submitSbjtime = value;
+				}
+			}
+		}
+
+		public class QueryTradeMarkApplicationDetail_ReviewOfficialFiles
+		{
+
+			private string reviewAudit;
+
+			private string reviewPass;
+
+			private string reviewKeep;
+
+			private string reviewPart;
+
+			private List<string> reviewSupplements;
+
+			public string ReviewAudit
+			{
+				get
+				{
+					return reviewAudit;
+				}
+				set	
+				{
+					reviewAudit = value;
+				}
+			}
+
+			public string ReviewPass
+			{
+				get
+				{
+					return reviewPass;
+				}
+				set	
+				{
+					reviewPass = value;
+				}
+			}
+
+			public string ReviewKeep
+			{
+				get
+				{
+					return reviewKeep;
+				}
+				set	
+				{
+					reviewKeep = value;
+				}
+			}
+
+			public string ReviewPart
+			{
+				get
+				{
+					return reviewPart;
+				}
+				set	
+				{
+					reviewPart = value;
+				}
+			}
+
+			public List<string> ReviewSupplements
+			{
+				get
+				{
+					return reviewSupplements;
+				}
+				set	
+				{
+					reviewSupplements = value;
 				}
 			}
 		}

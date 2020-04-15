@@ -146,6 +146,10 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 			private long? supplementId;
 
+			private float? totalPrice;
+
+			private float? servicePrice;
+
 			private List<QueryTradeMarkApplications_ThirdClassifications> thirdClassification;
 
 			private List<string> flags;
@@ -355,6 +359,30 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 				set	
 				{
 					supplementId = value;
+				}
+			}
+
+			public float? TotalPrice
+			{
+				get
+				{
+					return totalPrice;
+				}
+				set	
+				{
+					totalPrice = value;
+				}
+			}
+
+			public float? ServicePrice
+			{
+				get
+				{
+					return servicePrice;
+				}
+				set	
+				{
+					servicePrice = value;
 				}
 			}
 

@@ -32,27 +32,71 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public ListNotaryOrdersRequest()
             : base("Trademark", "2018-07-24", "ListNotaryOrders", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private long? startOrderDate;
+
+		private int? notaryType;
+
+		private int? pageNum;
 
 		private int? sortKeyType;
 
 		private string sortByType;
 
-		private long? startOrderDate;
-
 		private int? pageSize;
 
 		private string bizId;
-
-		private int? notaryType;
 
 		private long? endOrderDate;
 
 		private string aliyunOrderId;
 
-		private int? pageNum;
-
 		private int? notaryStatus;
+
+		public long? StartOrderDate
+		{
+			get
+			{
+				return startOrderDate;
+			}
+			set	
+			{
+				startOrderDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartOrderDate", value.ToString());
+			}
+		}
+
+		public int? NotaryType
+		{
+			get
+			{
+				return notaryType;
+			}
+			set	
+			{
+				notaryType = value;
+				DictionaryUtil.Add(QueryParameters, "NotaryType", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
 
 		public int? SortKeyType
 		{
@@ -77,19 +121,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				sortByType = value;
 				DictionaryUtil.Add(QueryParameters, "SortByType", value);
-			}
-		}
-
-		public long? StartOrderDate
-		{
-			get
-			{
-				return startOrderDate;
-			}
-			set	
-			{
-				startOrderDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartOrderDate", value.ToString());
 			}
 		}
 
@@ -119,19 +150,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
-		public int? NotaryType
-		{
-			get
-			{
-				return notaryType;
-			}
-			set	
-			{
-				notaryType = value;
-				DictionaryUtil.Add(QueryParameters, "NotaryType", value.ToString());
-			}
-		}
-
 		public long? EndOrderDate
 		{
 			get
@@ -155,19 +173,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				aliyunOrderId = value;
 				DictionaryUtil.Add(QueryParameters, "AliyunOrderId", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

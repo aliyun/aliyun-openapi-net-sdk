@@ -32,11 +32,14 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public StoreMaterialTemporarilyRequest()
             : base("Trademark", "2018-07-24", "StoreMaterialTemporarily", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string contactEmail;
-
-		private string contactAddress;
 
 		private string eAddress;
 
@@ -44,15 +47,9 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private string legalNoticeOssKey;
 
-		private string address;
-
-		private string town;
-
 		private string contactNumber;
 
 		private string city;
-
-		private string idCardOssKey;
 
 		private string type;
 
@@ -60,11 +57,21 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private string passportOssKey;
 
+		private string province;
+
+		private string loaOssKey;
+
+		private string contactAddress;
+
+		private string address;
+
+		private string town;
+
+		private string idCardOssKey;
+
 		private string contactZipcode;
 
 		private string eName;
-
-		private string province;
 
 		private string businessLicenceOssKey;
 
@@ -73,8 +80,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 		private string cardNumber;
 
 		private string region;
-
-		private string loaOssKey;
 
 		public string ContactEmail
 		{
@@ -86,19 +91,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				contactEmail = value;
 				DictionaryUtil.Add(QueryParameters, "ContactEmail", value);
-			}
-		}
-
-		public string ContactAddress
-		{
-			get
-			{
-				return contactAddress;
-			}
-			set	
-			{
-				contactAddress = value;
-				DictionaryUtil.Add(QueryParameters, "ContactAddress", value);
 			}
 		}
 
@@ -141,32 +133,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
-		public string Address
-		{
-			get
-			{
-				return address;
-			}
-			set	
-			{
-				address = value;
-				DictionaryUtil.Add(QueryParameters, "Address", value);
-			}
-		}
-
-		public string Town
-		{
-			get
-			{
-				return town;
-			}
-			set	
-			{
-				town = value;
-				DictionaryUtil.Add(QueryParameters, "Town", value);
-			}
-		}
-
 		public string ContactNumber
 		{
 			get
@@ -190,19 +156,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				city = value;
 				DictionaryUtil.Add(QueryParameters, "City", value);
-			}
-		}
-
-		public string IdCardOssKey
-		{
-			get
-			{
-				return idCardOssKey;
-			}
-			set	
-			{
-				idCardOssKey = value;
-				DictionaryUtil.Add(QueryParameters, "IdCardOssKey", value);
 			}
 		}
 
@@ -245,6 +198,84 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
+		public string Province
+		{
+			get
+			{
+				return province;
+			}
+			set	
+			{
+				province = value;
+				DictionaryUtil.Add(QueryParameters, "Province", value);
+			}
+		}
+
+		public string LoaOssKey
+		{
+			get
+			{
+				return loaOssKey;
+			}
+			set	
+			{
+				loaOssKey = value;
+				DictionaryUtil.Add(QueryParameters, "LoaOssKey", value);
+			}
+		}
+
+		public string ContactAddress
+		{
+			get
+			{
+				return contactAddress;
+			}
+			set	
+			{
+				contactAddress = value;
+				DictionaryUtil.Add(QueryParameters, "ContactAddress", value);
+			}
+		}
+
+		public string Address
+		{
+			get
+			{
+				return address;
+			}
+			set	
+			{
+				address = value;
+				DictionaryUtil.Add(QueryParameters, "Address", value);
+			}
+		}
+
+		public string Town
+		{
+			get
+			{
+				return town;
+			}
+			set	
+			{
+				town = value;
+				DictionaryUtil.Add(QueryParameters, "Town", value);
+			}
+		}
+
+		public string IdCardOssKey
+		{
+			get
+			{
+				return idCardOssKey;
+			}
+			set	
+			{
+				idCardOssKey = value;
+				DictionaryUtil.Add(QueryParameters, "IdCardOssKey", value);
+			}
+		}
+
 		public string ContactZipcode
 		{
 			get
@@ -268,19 +299,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				eName = value;
 				DictionaryUtil.Add(QueryParameters, "EName", value);
-			}
-		}
-
-		public string Province
-		{
-			get
-			{
-				return province;
-			}
-			set	
-			{
-				province = value;
-				DictionaryUtil.Add(QueryParameters, "Province", value);
 			}
 		}
 
@@ -333,19 +351,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				region = value;
 				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
-		public string LoaOssKey
-		{
-			get
-			{
-				return loaOssKey;
-			}
-			set	
-			{
-				loaOssKey = value;
-				DictionaryUtil.Add(QueryParameters, "LoaOssKey", value);
 			}
 		}
 

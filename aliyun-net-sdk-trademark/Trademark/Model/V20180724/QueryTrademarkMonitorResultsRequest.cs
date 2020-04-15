@@ -32,11 +32,22 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public QueryTrademarkMonitorResultsRequest()
             : base("Trademark", "2018-07-24", "QueryTrademarkMonitorResults", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private int? actionType;
 
 		private string tmName;
+
+		private string classification;
+
+		private int? pageNum;
+
+		private string registrationNumber;
 
 		private string applyYear;
 
@@ -45,12 +56,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 		private int? procedureStatus;
 
 		private long? ruleId;
-
-		private string classification;
-
-		private int? pageNum;
-
-		private string registrationNumber;
 
 		public int? ActionType
 		{
@@ -75,6 +80,45 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				tmName = value;
 				DictionaryUtil.Add(QueryParameters, "TmName", value);
+			}
+		}
+
+		public string Classification
+		{
+			get
+			{
+				return classification;
+			}
+			set	
+			{
+				classification = value;
+				DictionaryUtil.Add(QueryParameters, "Classification", value);
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string RegistrationNumber
+		{
+			get
+			{
+				return registrationNumber;
+			}
+			set	
+			{
+				registrationNumber = value;
+				DictionaryUtil.Add(QueryParameters, "RegistrationNumber", value);
 			}
 		}
 
@@ -127,45 +171,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				ruleId = value;
 				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
-			}
-		}
-
-		public string Classification
-		{
-			get
-			{
-				return classification;
-			}
-			set	
-			{
-				classification = value;
-				DictionaryUtil.Add(QueryParameters, "Classification", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string RegistrationNumber
-		{
-			get
-			{
-				return registrationNumber;
-			}
-			set	
-			{
-				registrationNumber = value;
-				DictionaryUtil.Add(QueryParameters, "RegistrationNumber", value);
 			}
 		}
 

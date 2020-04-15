@@ -32,32 +32,26 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public CombineLoaRequest()
             : base("Trademark", "2018-07-24", "CombineLoa", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string trademarkName;
 
 		private string materialName;
 
 		private string address;
 
+		private string materialId;
+
+		private string trademarkName;
+
 		private string nationality;
 
 		private string tmProduceType;
 
-		private string materialId;
-
-		public string TrademarkName
-		{
-			get
-			{
-				return trademarkName;
-			}
-			set	
-			{
-				trademarkName = value;
-				DictionaryUtil.Add(QueryParameters, "TrademarkName", value);
-			}
-		}
+		private int? principalName;
 
 		public string MaterialName
 		{
@@ -82,6 +76,32 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				address = value;
 				DictionaryUtil.Add(QueryParameters, "Address", value);
+			}
+		}
+
+		public string MaterialId
+		{
+			get
+			{
+				return materialId;
+			}
+			set	
+			{
+				materialId = value;
+				DictionaryUtil.Add(QueryParameters, "MaterialId", value);
+			}
+		}
+
+		public string TrademarkName
+		{
+			get
+			{
+				return trademarkName;
+			}
+			set	
+			{
+				trademarkName = value;
+				DictionaryUtil.Add(QueryParameters, "TrademarkName", value);
 			}
 		}
 
@@ -111,16 +131,16 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
-		public string MaterialId
+		public int? PrincipalName
 		{
 			get
 			{
-				return materialId;
+				return principalName;
 			}
 			set	
 			{
-				materialId = value;
-				DictionaryUtil.Add(QueryParameters, "MaterialId", value);
+				principalName = value;
+				DictionaryUtil.Add(QueryParameters, "PrincipalName", value.ToString());
 			}
 		}
 

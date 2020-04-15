@@ -32,9 +32,18 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public QueryTaskListRequest()
             : base("Trademark", "2018-07-24", "QueryTaskList", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string bizType;
+
+		private int? pageSize;
+
+		private int? pageNum;
 
 		public string BizType
 		{
@@ -46,6 +55,32 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				bizType = value;
 				DictionaryUtil.Add(QueryParameters, "BizType", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

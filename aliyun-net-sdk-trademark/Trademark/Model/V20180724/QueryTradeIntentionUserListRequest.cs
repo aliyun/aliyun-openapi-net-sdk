@@ -32,11 +32,63 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public QueryTradeIntentionUserListRequest()
             : base("Trademark", "2018-07-24", "QueryTradeIntentionUserList", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private int? pageNum;
+
+		private int? pageSize;
+
+		private string bizId;
 
 		private long? end;
 
 		private long? begin;
+
+		private int? status;
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string BizId
+		{
+			get
+			{
+				return bizId;
+			}
+			set	
+			{
+				bizId = value;
+				DictionaryUtil.Add(QueryParameters, "BizId", value);
+			}
+		}
 
 		public long? End
 		{
@@ -61,6 +113,19 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				begin = value;
 				DictionaryUtil.Add(QueryParameters, "Begin", value.ToString());
+			}
+		}
+
+		public int? Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value.ToString());
 			}
 		}
 

@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 				tradeProduces.CreateTime = context.LongValue("QueryTradeProduceList.Data["+ i +"].CreateTime");
 				tradeProduces.UpdateTime = context.LongValue("QueryTradeProduceList.Data["+ i +"].UpdateTime");
 				tradeProduces.AllowCancel = context.BooleanValue("QueryTradeProduceList.Data["+ i +"].AllowCancel");
+				tradeProduces.FailReason = context.IntegerValue("QueryTradeProduceList.Data["+ i +"].FailReason");
+				tradeProduces.Source = context.IntegerValue("QueryTradeProduceList.Data["+ i +"].Source");
 
 				queryTradeProduceListResponse_data.Add(tradeProduces);
 			}

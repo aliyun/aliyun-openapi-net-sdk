@@ -32,6 +32,10 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 
 			queryTaskListResponse.HttpResponse = context.HttpResponse;
 			queryTaskListResponse.RequestId = context.StringValue("QueryTaskList.RequestId");
+			queryTaskListResponse.TotalItemNum = context.IntegerValue("QueryTaskList.TotalItemNum");
+			queryTaskListResponse.CurrentPageNum = context.IntegerValue("QueryTaskList.CurrentPageNum");
+			queryTaskListResponse.PageSize = context.IntegerValue("QueryTaskList.PageSize");
+			queryTaskListResponse.TotalPageNum = context.IntegerValue("QueryTaskList.TotalPageNum");
 
 			List<QueryTaskListResponse.QueryTaskList_TaskList> queryTaskListResponse_data = new List<QueryTaskListResponse.QueryTaskList_TaskList>();
 			for (int i = 0; i < context.Length("QueryTaskList.Data.Length"); i++) {
@@ -40,6 +44,9 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 				taskList.TaskType = context.StringValue("QueryTaskList.Data["+ i +"].TaskType");
 				taskList.ErrMsg = context.StringValue("QueryTaskList.Data["+ i +"].ErrMsg");
 				taskList.Result = context.StringValue("QueryTaskList.Data["+ i +"].Result");
+				taskList.FileName = context.StringValue("QueryTaskList.Data["+ i +"].FileName");
+				taskList.CreateTime = context.LongValue("QueryTaskList.Data["+ i +"].CreateTime");
+				taskList.CompleteTime = context.LongValue("QueryTaskList.Data["+ i +"].CompleteTime");
 
 				queryTaskListResponse_data.Add(taskList);
 			}

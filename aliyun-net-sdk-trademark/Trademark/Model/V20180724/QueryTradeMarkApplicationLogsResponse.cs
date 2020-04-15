@@ -66,6 +66,8 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 			private int? bizStatus;
 
+			private string extendContent;
+
 			public string BizId
 			{
 				get
@@ -123,6 +125,18 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 				set	
 				{
 					bizStatus = value;
+				}
+			}
+
+			public string ExtendContent
+			{
+				get
+				{
+					return extendContent;
+				}
+				set	
+				{
+					extendContent = value;
 				}
 			}
 		}

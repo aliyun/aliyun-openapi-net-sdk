@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 				trademark.LoaKey = context.StringValue("QueryMaterialList.Data["+ i +"].LoaKey");
 				trademark.LoaStatus = context.IntegerValue("QueryMaterialList.Data["+ i +"].LoaStatus");
 				trademark.CardNumber = context.StringValue("QueryMaterialList.Data["+ i +"].CardNumber");
+				trademark.ValidDate = context.LongValue("QueryMaterialList.Data["+ i +"].ValidDate");
+				trademark.PrincipalName = context.IntegerValue("QueryMaterialList.Data["+ i +"].PrincipalName");
 
 				queryMaterialListResponse_data.Add(trademark);
 			}

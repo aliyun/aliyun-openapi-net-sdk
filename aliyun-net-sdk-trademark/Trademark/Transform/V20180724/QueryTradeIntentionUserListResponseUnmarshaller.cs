@@ -40,12 +40,14 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 			List<QueryTradeIntentionUserListResponse.QueryTradeIntentionUserList_Trademark> queryTradeIntentionUserListResponse_data = new List<QueryTradeIntentionUserListResponse.QueryTradeIntentionUserList_Trademark>();
 			for (int i = 0; i < context.Length("QueryTradeIntentionUserList.Data.Length"); i++) {
 				QueryTradeIntentionUserListResponse.QueryTradeIntentionUserList_Trademark trademark = new QueryTradeIntentionUserListResponse.QueryTradeIntentionUserList_Trademark();
-				trademark.UserId = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].UserId");
 				trademark.RegisterNumber = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].RegisterNumber");
 				trademark.Classification = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].Classification");
-				trademark.Mobile = context.IntegerValue("QueryTradeIntentionUserList.Data["+ i +"].Mobile");
-				trademark.Id = context.LongValue("QueryTradeIntentionUserList.Data["+ i +"].Id");
+				trademark.Mobile = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].Mobile");
 				trademark.UserName = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].UserName");
+				trademark.BizId = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].BizId");
+				trademark.Description = context.StringValue("QueryTradeIntentionUserList.Data["+ i +"].Description");
+				trademark.Status = context.IntegerValue("QueryTradeIntentionUserList.Data["+ i +"].Status");
+				trademark.Type = context.IntegerValue("QueryTradeIntentionUserList.Data["+ i +"].Type");
 
 				queryTradeIntentionUserListResponse_data.Add(trademark);
 			}

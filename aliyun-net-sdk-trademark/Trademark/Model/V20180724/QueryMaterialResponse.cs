@@ -79,6 +79,14 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private string country;
 
+		private string reviewApplicationFile;
+
+		private int? principalName;
+
+		private long? validDate;
+
+		private List<string> reviewAdditionalFiles;
+
 		public string RequestId
 		{
 			get
@@ -400,6 +408,54 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			set	
 			{
 				country = value;
+			}
+		}
+
+		public string ReviewApplicationFile
+		{
+			get
+			{
+				return reviewApplicationFile;
+			}
+			set	
+			{
+				reviewApplicationFile = value;
+			}
+		}
+
+		public int? PrincipalName
+		{
+			get
+			{
+				return principalName;
+			}
+			set	
+			{
+				principalName = value;
+			}
+		}
+
+		public long? ValidDate
+		{
+			get
+			{
+				return validDate;
+			}
+			set	
+			{
+				validDate = value;
+			}
+		}
+
+		public List<string> ReviewAdditionalFiles
+		{
+			get
+			{
+				return reviewAdditionalFiles;
+			}
+			set	
+			{
+				reviewAdditionalFiles = value;
 			}
 		}
 	}

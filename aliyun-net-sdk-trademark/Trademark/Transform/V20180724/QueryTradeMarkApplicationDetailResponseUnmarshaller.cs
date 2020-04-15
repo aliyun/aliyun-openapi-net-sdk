@@ -34,7 +34,7 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 			queryTradeMarkApplicationDetailResponse.Status = context.IntegerValue("QueryTradeMarkApplicationDetail.Status");
 			queryTradeMarkApplicationDetailResponse.RequestId = context.StringValue("QueryTradeMarkApplicationDetail.RequestId");
 			queryTradeMarkApplicationDetailResponse.LoaUrl = context.StringValue("QueryTradeMarkApplicationDetail.LoaUrl");
-			queryTradeMarkApplicationDetailResponse.OrderPrice = context.IntegerValue("QueryTradeMarkApplicationDetail.OrderPrice");
+			queryTradeMarkApplicationDetailResponse.OrderPrice = context.FloatValue("QueryTradeMarkApplicationDetail.OrderPrice");
 			queryTradeMarkApplicationDetailResponse.TmIcon = context.StringValue("QueryTradeMarkApplicationDetail.TmIcon");
 			queryTradeMarkApplicationDetailResponse.OrderId = context.StringValue("QueryTradeMarkApplicationDetail.OrderId");
 			queryTradeMarkApplicationDetailResponse.Type = context.IntegerValue("QueryTradeMarkApplicationDetail.Type");
@@ -52,6 +52,12 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 			queryTradeMarkApplicationDetailResponse.SendUserLogistics = context.StringValue("QueryTradeMarkApplicationDetail.SendUserLogistics");
 			queryTradeMarkApplicationDetailResponse.RecvUserLogistics = context.StringValue("QueryTradeMarkApplicationDetail.RecvUserLogistics");
 			queryTradeMarkApplicationDetailResponse.MaterialId = context.LongValue("QueryTradeMarkApplicationDetail.MaterialId");
+			queryTradeMarkApplicationDetailResponse.TotalPrice = context.FloatValue("QueryTradeMarkApplicationDetail.TotalPrice");
+			queryTradeMarkApplicationDetailResponse.ServicePrice = context.FloatValue("QueryTradeMarkApplicationDetail.ServicePrice");
+			queryTradeMarkApplicationDetailResponse.PartnerCode = context.StringValue("QueryTradeMarkApplicationDetail.PartnerCode");
+			queryTradeMarkApplicationDetailResponse.PartnerMobile = context.StringValue("QueryTradeMarkApplicationDetail.PartnerMobile");
+			queryTradeMarkApplicationDetailResponse.NotAcceptUrl = context.StringValue("QueryTradeMarkApplicationDetail.NotAcceptUrl");
+			queryTradeMarkApplicationDetailResponse.PartnerName = context.StringValue("QueryTradeMarkApplicationDetail.PartnerName");
 
 			List<string> queryTradeMarkApplicationDetailResponse_receiptUrl = new List<string>();
 			for (int i = 0; i < context.Length("QueryTradeMarkApplicationDetail.ReceiptUrl.Length"); i++) {
@@ -64,6 +70,12 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 				queryTradeMarkApplicationDetailResponse_judgeResultUrl.Add(context.StringValue("QueryTradeMarkApplicationDetail.JudgeResultUrl["+ i +"]"));
 			}
 			queryTradeMarkApplicationDetailResponse.JudgeResultUrl = queryTradeMarkApplicationDetailResponse_judgeResultUrl;
+
+			List<string> queryTradeMarkApplicationDetailResponse_flags = new List<string>();
+			for (int i = 0; i < context.Length("QueryTradeMarkApplicationDetail.Flags.Length"); i++) {
+				queryTradeMarkApplicationDetailResponse_flags.Add(context.StringValue("QueryTradeMarkApplicationDetail.Flags["+ i +"]"));
+			}
+			queryTradeMarkApplicationDetailResponse.Flags = queryTradeMarkApplicationDetailResponse_flags;
 
 			QueryTradeMarkApplicationDetailResponse.QueryTradeMarkApplicationDetail_AdminUploads adminUploads = new QueryTradeMarkApplicationDetailResponse.QueryTradeMarkApplicationDetail_AdminUploads();
 			adminUploads.LoaPicUrl = context.StringValue("QueryTradeMarkApplicationDetail.AdminUploads.LoaPicUrl");
@@ -94,6 +106,13 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 			materialDetail.Region = context.IntegerValue("QueryTradeMarkApplicationDetail.MaterialDetail.Region");
 			materialDetail.ContactName = context.StringValue("QueryTradeMarkApplicationDetail.MaterialDetail.ContactName");
 			materialDetail.LegalNoticeUrl = context.StringValue("QueryTradeMarkApplicationDetail.MaterialDetail.LegalNoticeUrl");
+			materialDetail.ReviewApplicationFile = context.StringValue("QueryTradeMarkApplicationDetail.MaterialDetail.ReviewApplicationFile");
+
+			List<string> materialDetail_reviewAdditionalFiles = new List<string>();
+			for (int i = 0; i < context.Length("QueryTradeMarkApplicationDetail.MaterialDetail.ReviewAdditionalFiles.Length"); i++) {
+				materialDetail_reviewAdditionalFiles.Add(context.StringValue("QueryTradeMarkApplicationDetail.MaterialDetail.ReviewAdditionalFiles["+ i +"]"));
+			}
+			materialDetail.ReviewAdditionalFiles = materialDetail_reviewAdditionalFiles;
 			queryTradeMarkApplicationDetailResponse.MaterialDetail = materialDetail;
 
 			QueryTradeMarkApplicationDetailResponse.QueryTradeMarkApplicationDetail_FirstClassification firstClassification = new QueryTradeMarkApplicationDetailResponse.QueryTradeMarkApplicationDetail_FirstClassification();
@@ -109,6 +128,19 @@ namespace Aliyun.Acs.Trademark.Transform.V20180724
 			renewResponse.RegisterTime = context.LongValue("QueryTradeMarkApplicationDetail.RenewResponse.RegisterTime");
 			renewResponse.SubmitSbjtime = context.LongValue("QueryTradeMarkApplicationDetail.RenewResponse.SubmitSbjtime");
 			queryTradeMarkApplicationDetailResponse.RenewResponse = renewResponse;
+
+			QueryTradeMarkApplicationDetailResponse.QueryTradeMarkApplicationDetail_ReviewOfficialFiles reviewOfficialFiles = new QueryTradeMarkApplicationDetailResponse.QueryTradeMarkApplicationDetail_ReviewOfficialFiles();
+			reviewOfficialFiles.ReviewAudit = context.StringValue("QueryTradeMarkApplicationDetail.ReviewOfficialFiles.ReviewAudit");
+			reviewOfficialFiles.ReviewPass = context.StringValue("QueryTradeMarkApplicationDetail.ReviewOfficialFiles.ReviewPass");
+			reviewOfficialFiles.ReviewKeep = context.StringValue("QueryTradeMarkApplicationDetail.ReviewOfficialFiles.ReviewKeep");
+			reviewOfficialFiles.ReviewPart = context.StringValue("QueryTradeMarkApplicationDetail.ReviewOfficialFiles.ReviewPart");
+
+			List<string> reviewOfficialFiles_reviewSupplements = new List<string>();
+			for (int i = 0; i < context.Length("QueryTradeMarkApplicationDetail.ReviewOfficialFiles.ReviewSupplements.Length"); i++) {
+				reviewOfficialFiles_reviewSupplements.Add(context.StringValue("QueryTradeMarkApplicationDetail.ReviewOfficialFiles.ReviewSupplements["+ i +"]"));
+			}
+			reviewOfficialFiles.ReviewSupplements = reviewOfficialFiles_reviewSupplements;
+			queryTradeMarkApplicationDetailResponse.ReviewOfficialFiles = reviewOfficialFiles;
 
 			List<QueryTradeMarkApplicationDetailResponse.QueryTradeMarkApplicationDetail_ThirdClassifications> queryTradeMarkApplicationDetailResponse_thirdClassification = new List<QueryTradeMarkApplicationDetailResponse.QueryTradeMarkApplicationDetail_ThirdClassifications>();
 			for (int i = 0; i < context.Length("QueryTradeMarkApplicationDetail.ThirdClassification.Length"); i++) {

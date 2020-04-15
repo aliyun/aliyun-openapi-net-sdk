@@ -32,11 +32,14 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public InsertTmMonitorRuleRequest()
             : base("Trademark", "2018-07-24", "InsertTmMonitorRule", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string startApplyDate;
-
-		private string notifyStatus;
 
 		private int? ruleType;
 
@@ -44,9 +47,11 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private string ruleName;
 
-		private string endApplyDate;
-
 		private string classification;
+
+		private string notifyStatus;
+
+		private string endApplyDate;
 
 		private string ruleKeyword;
 
@@ -60,19 +65,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				startApplyDate = value;
 				DictionaryUtil.Add(QueryParameters, "StartApplyDate", value);
-			}
-		}
-
-		public string NotifyStatus
-		{
-			get
-			{
-				return notifyStatus;
-			}
-			set	
-			{
-				notifyStatus = value;
-				DictionaryUtil.Add(QueryParameters, "NotifyStatus", value);
 			}
 		}
 
@@ -115,19 +107,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
-		public string EndApplyDate
-		{
-			get
-			{
-				return endApplyDate;
-			}
-			set	
-			{
-				endApplyDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndApplyDate", value);
-			}
-		}
-
 		public string Classification
 		{
 			get
@@ -138,6 +117,32 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				classification = value;
 				DictionaryUtil.Add(QueryParameters, "Classification", value);
+			}
+		}
+
+		public string NotifyStatus
+		{
+			get
+			{
+				return notifyStatus;
+			}
+			set	
+			{
+				notifyStatus = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyStatus", value);
+			}
+		}
+
+		public string EndApplyDate
+		{
+			get
+			{
+				return endApplyDate;
+			}
+			set	
+			{
+				endApplyDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndApplyDate", value);
 			}
 		}
 

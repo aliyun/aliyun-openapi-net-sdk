@@ -32,17 +32,22 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public QueryTrademarkPriceRequest()
             : base("Trademark", "2018-07-24", "QueryTrademarkPrice", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string tmName;
-
-		private string tmIcon;
 
 		private string orderData;
 
 		private int? type;
 
 		private long? userId;
+
+		private string tmIcon;
 
 		public string TmName
 		{
@@ -54,19 +59,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				tmName = value;
 				DictionaryUtil.Add(QueryParameters, "TmName", value);
-			}
-		}
-
-		public string TmIcon
-		{
-			get
-			{
-				return tmIcon;
-			}
-			set	
-			{
-				tmIcon = value;
-				DictionaryUtil.Add(QueryParameters, "TmIcon", value);
 			}
 		}
 
@@ -106,6 +98,19 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				userId = value;
 				DictionaryUtil.Add(QueryParameters, "UserId", value.ToString());
+			}
+		}
+
+		public string TmIcon
+		{
+			get
+			{
+				return tmIcon;
+			}
+			set	
+			{
+				tmIcon = value;
+				DictionaryUtil.Add(QueryParameters, "TmIcon", value);
 			}
 		}
 

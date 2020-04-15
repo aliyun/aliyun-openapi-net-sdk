@@ -112,29 +112,21 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 		public class QueryTradeIntentionUserList_Trademark
 		{
 
-			private string userId;
-
 			private string registerNumber;
 
 			private string classification;
 
-			private int? mobile;
-
-			private long? id;
+			private string mobile;
 
 			private string userName;
 
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
+			private string bizId;
+
+			private string description;
+
+			private int? status;
+
+			private int? type;
 
 			public string RegisterNumber
 			{
@@ -160,7 +152,7 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 				}
 			}
 
-			public int? Mobile
+			public string Mobile
 			{
 				get
 				{
@@ -169,18 +161,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 				set	
 				{
 					mobile = value;
-				}
-			}
-
-			public long? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
 				}
 			}
 
@@ -193,6 +173,54 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 				set	
 				{
 					userName = value;
+				}
+			}
+
+			public string BizId
+			{
+				get
+				{
+					return bizId;
+				}
+				set	
+				{
+					bizId = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public int? Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}

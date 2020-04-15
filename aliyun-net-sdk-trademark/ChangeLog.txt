@@ -1,3 +1,6 @@
+2020-04-15 Version: 1.2.2
+- Fixed requeired Newtownsoft_Json.
+
 2019-05-20 Version: 1.2.1
 1, Add both api, ListNotaryInfos
 

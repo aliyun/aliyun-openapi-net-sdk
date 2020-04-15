@@ -138,6 +138,10 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 			private bool? allowCancel;
 
+			private int? failReason;
+
+			private int? source;
+
 			public string BizId
 			{
 				get
@@ -291,6 +295,30 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 				set	
 				{
 					allowCancel = value;
+				}
+			}
+
+			public int? FailReason
+			{
+				get
+				{
+					return failReason;
+				}
+				set	
+				{
+					failReason = value;
+				}
+			}
+
+			public int? Source
+			{
+				get
+				{
+					return source;
+				}
+				set	
+				{
+					source = value;
 				}
 			}
 		}

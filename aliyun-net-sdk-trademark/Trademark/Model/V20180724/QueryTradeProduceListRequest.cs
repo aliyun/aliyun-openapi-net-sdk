@@ -32,9 +32,18 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public QueryTradeProduceListRequest()
             : base("Trademark", "2018-07-24", "QueryTradeProduceList", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private int? buyerStatus;
+
+		private int? pageNum;
+
+		private string sortFiled;
 
 		private int? pageSize;
 
@@ -43,10 +52,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 		private string bizId;
 
 		private string sortOrder;
-
-		private int? pageNum;
-
-		private string sortFiled;
 
 		private string registerNumber;
 
@@ -60,6 +65,32 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				buyerStatus = value;
 				DictionaryUtil.Add(QueryParameters, "BuyerStatus", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string SortFiled
+		{
+			get
+			{
+				return sortFiled;
+			}
+			set	
+			{
+				sortFiled = value;
+				DictionaryUtil.Add(QueryParameters, "SortFiled", value);
 			}
 		}
 
@@ -112,32 +143,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				sortOrder = value;
 				DictionaryUtil.Add(QueryParameters, "SortOrder", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string SortFiled
-		{
-			get
-			{
-				return sortFiled;
-			}
-			set	
-			{
-				sortFiled = value;
-				DictionaryUtil.Add(QueryParameters, "SortFiled", value);
 			}
 		}
 

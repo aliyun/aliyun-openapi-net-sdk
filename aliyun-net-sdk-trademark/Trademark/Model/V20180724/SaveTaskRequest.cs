@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public SaveTaskRequest()
             : base("Trademark", "2018-07-24", "SaveTask", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string bizType;

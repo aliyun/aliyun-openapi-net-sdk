@@ -32,13 +32,28 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public QueryTradeMarkApplicationsRequest()
             : base("Trademark", "2018-07-24", "QueryTradeMarkApplications", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string tmName;
 
 		private string materialName;
 
+		private int? hidden;
+
 		private string orderId;
+
+		private string tmNumber;
+
+		private string intentionBizId;
+
+		private int? pageNum;
+
+		private string type;
 
 		private int? supplementStatus;
 
@@ -46,13 +61,7 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 
 		private string bizId;
 
-		private string tmNumber;
-
 		private string sortOrder;
-
-		private int? pageNum;
-
-		private string type;
 
 		private int? status;
 
@@ -82,6 +91,19 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
+		public int? Hidden
+		{
+			get
+			{
+				return hidden;
+			}
+			set	
+			{
+				hidden = value;
+				DictionaryUtil.Add(QueryParameters, "Hidden", value.ToString());
+			}
+		}
+
 		public string OrderId
 		{
 			get
@@ -92,6 +114,58 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				orderId = value;
 				DictionaryUtil.Add(QueryParameters, "OrderId", value);
+			}
+		}
+
+		public string TmNumber
+		{
+			get
+			{
+				return tmNumber;
+			}
+			set	
+			{
+				tmNumber = value;
+				DictionaryUtil.Add(QueryParameters, "TmNumber", value);
+			}
+		}
+
+		public string IntentionBizId
+		{
+			get
+			{
+				return intentionBizId;
+			}
+			set	
+			{
+				intentionBizId = value;
+				DictionaryUtil.Add(QueryParameters, "IntentionBizId", value);
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -134,19 +208,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			}
 		}
 
-		public string TmNumber
-		{
-			get
-			{
-				return tmNumber;
-			}
-			set	
-			{
-				tmNumber = value;
-				DictionaryUtil.Add(QueryParameters, "TmNumber", value);
-			}
-		}
-
 		public string SortOrder
 		{
 			get
@@ -157,32 +218,6 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				sortOrder = value;
 				DictionaryUtil.Add(QueryParameters, "SortOrder", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 

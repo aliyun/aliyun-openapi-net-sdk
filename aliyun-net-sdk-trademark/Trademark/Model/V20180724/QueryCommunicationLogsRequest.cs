@@ -32,9 +32,20 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
         public QueryCommunicationLogsRequest()
             : base("Trademark", "2018-07-24", "QueryCommunicationLogs", "trademark", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string bizId;
+
+		private int? pageSize;
+
+		private int? type;
+
+		private int? pageNum;
 
 		public string BizId
 		{
@@ -46,6 +57,45 @@ namespace Aliyun.Acs.Trademark.Model.V20180724
 			{
 				bizId = value;
 				DictionaryUtil.Add(QueryParameters, "BizId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
