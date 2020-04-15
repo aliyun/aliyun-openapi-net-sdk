@@ -36,11 +36,11 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 
 		private string productCode;
 
-		private long? instanceId;
-
 		private int? featureType;
 
 		private int? countType;
+
+		private long? instanceId;
 
 		private string lang;
 
@@ -54,19 +54,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				productCode = value;
 				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
-			}
-		}
-
-		public long? InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
 			}
 		}
 
@@ -93,6 +80,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				countType = value;
 				DictionaryUtil.Add(QueryParameters, "CountType", value.ToString());
+			}
+		}
+
+		public long? InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
 			}
 		}
 

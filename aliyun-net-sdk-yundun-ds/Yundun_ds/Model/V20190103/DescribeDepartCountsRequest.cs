@@ -36,15 +36,15 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 
 		private string typeCode;
 
-		private string departName;
+		private int? pageSize;
+
+		private string lang;
 
 		private int? featureType;
 
-		private int? pageSize;
-
 		private int? currentPage;
 
-		private string lang;
+		private string departName;
 
 		public string TypeCode
 		{
@@ -56,32 +56,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				typeCode = value;
 				DictionaryUtil.Add(QueryParameters, "TypeCode", value);
-			}
-		}
-
-		public string DepartName
-		{
-			get
-			{
-				return departName;
-			}
-			set	
-			{
-				departName = value;
-				DictionaryUtil.Add(QueryParameters, "DepartName", value);
-			}
-		}
-
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 
@@ -98,6 +72,32 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -111,16 +111,16 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public string Lang
+		public string DepartName
 		{
 			get
 			{
-				return lang;
+				return departName;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				departName = value;
+				DictionaryUtil.Add(QueryParameters, "DepartName", value);
 			}
 		}
 

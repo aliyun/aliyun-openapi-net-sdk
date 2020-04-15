@@ -36,15 +36,15 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 
 		private string code;
 
-		private int? featureType;
-
 		private string description;
-
-		private string configList;
 
 		private string lang;
 
 		private string _value;
+
+		private int? featureType;
+
+		private string configList;
 
 		public string Code
 		{
@@ -59,19 +59,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -82,19 +69,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string ConfigList
-		{
-			get
-			{
-				return configList;
-			}
-			set	
-			{
-				configList = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigList", value);
 			}
 		}
 
@@ -121,6 +95,32 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				_value = value;
 				DictionaryUtil.Add(QueryParameters, "Value", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
+
+		public string ConfigList
+		{
+			get
+			{
+				return configList;
+			}
+			set	
+			{
+				configList = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigList", value);
 			}
 		}
 

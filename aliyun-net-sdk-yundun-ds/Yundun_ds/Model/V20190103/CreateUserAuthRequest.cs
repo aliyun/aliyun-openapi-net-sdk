@@ -34,13 +34,26 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
+		private string accessKeySecret;
+
 		private long? accountId;
 
 		private string accessKey;
 
-		private string accessKeySecret;
-
 		private string lang;
+
+		public string AccessKeySecret
+		{
+			get
+			{
+				return accessKeySecret;
+			}
+			set	
+			{
+				accessKeySecret = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKeySecret", value);
+			}
+		}
 
 		public long? AccountId
 		{
@@ -65,19 +78,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				accessKey = value;
 				DictionaryUtil.Add(QueryParameters, "AccessKey", value);
-			}
-		}
-
-		public string AccessKeySecret
-		{
-			get
-			{
-				return accessKeySecret;
-			}
-			set	
-			{
-				accessKeySecret = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeySecret", value);
 			}
 		}
 

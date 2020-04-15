@@ -34,19 +34,32 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
-		private string password;
+		private string parentId;
 
-		private string connector;
+		private string password;
 
 		private string lang;
 
-		private int? resourceType;
-
 		private string serviceRegionId;
 
-		private string parentId;
+		private int? resourceType;
+
+		private string connector;
 
 		private string userName;
+
+		public string ParentId
+		{
+			get
+			{
+				return parentId;
+			}
+			set	
+			{
+				parentId = value;
+				DictionaryUtil.Add(QueryParameters, "ParentId", value);
+			}
+		}
 
 		public string Password
 		{
@@ -58,19 +71,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				password = value;
 				DictionaryUtil.Add(QueryParameters, "Password", value);
-			}
-		}
-
-		public string Connector
-		{
-			get
-			{
-				return connector;
-			}
-			set	
-			{
-				connector = value;
-				DictionaryUtil.Add(QueryParameters, "Connector", value);
 			}
 		}
 
@@ -87,19 +87,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public int? ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value.ToString());
-			}
-		}
-
 		public string ServiceRegionId
 		{
 			get
@@ -113,16 +100,29 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public string ParentId
+		public int? ResourceType
 		{
 			get
 			{
-				return parentId;
+				return resourceType;
 			}
 			set	
 			{
-				parentId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentId", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value.ToString());
+			}
+		}
+
+		public string Connector
+		{
+			get
+			{
+				return connector;
+			}
+			set	
+			{
+				connector = value;
+				DictionaryUtil.Add(QueryParameters, "Connector", value);
 			}
 		}
 

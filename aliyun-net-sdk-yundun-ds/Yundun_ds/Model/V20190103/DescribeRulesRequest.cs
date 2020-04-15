@@ -34,58 +34,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
-		private int? pageSize;
-
-		private string name;
-
-		private int? currentPage;
-
 		private long? riskLevelId;
+
+		private int? pageSize;
 
 		private string lang;
 
+		private int? currentPage;
+
 		private int? customType;
 
+		private string name;
+
 		private int? category;
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
 
 		public long? RiskLevelId
 		{
@@ -97,6 +58,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				riskLevelId = value;
 				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -113,6 +87,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
 		public int? CustomType
 		{
 			get
@@ -123,6 +110,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				customType = value;
 				DictionaryUtil.Add(QueryParameters, "CustomType", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

@@ -45,7 +45,7 @@ namespace Aliyun.Acs.Yundun_ds.Transform.V20190103
 				privilege.UseAccountId = context.LongValue("DescribePrivileges.Items["+ i +"].UseAccountId");
 				privilege.UseAccountType = context.IntegerValue("DescribePrivileges.Items["+ i +"].UseAccountType");
 				privilege.ProductName = context.StringValue("DescribePrivileges.Items["+ i +"].ProductName");
-				privilege.ProductCode = context.StringValue("DescribePrivileges.Items["+ i +"].ProductCode");
+				privilege.ProductCode = context.StringValue("DescribePrivileges.Items["+ i +"].productCode");
 				privilege.DataType = context.StringValue("DescribePrivileges.Items["+ i +"].DataType");
 				privilege.DataTypeId = context.StringValue("DescribePrivileges.Items["+ i +"].DataTypeId");
 				privilege.DataTypeName = context.StringValue("DescribePrivileges.Items["+ i +"].DataTypeName");

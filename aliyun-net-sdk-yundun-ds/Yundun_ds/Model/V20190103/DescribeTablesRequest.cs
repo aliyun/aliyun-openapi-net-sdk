@@ -36,27 +36,27 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 
 		private long? productId;
 
-		private int? featureType;
-
 		private long? packageId;
-
-		private int? currentPage;
 
 		private string queryName;
 
 		private long? riskLevelId;
 
-		private long? instanceId;
-
-		private string name;
-
 		private int? pageSize;
 
 		private string lang;
 
-		private long? ruleId;
-
 		private int? queryType;
+
+		private int? featureType;
+
+		private int? currentPage;
+
+		private long? instanceId;
+
+		private string name;
+
+		private long? ruleId;
 
 		public long? ProductId
 		{
@@ -71,19 +71,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
-
 		public long? PackageId
 		{
 			get
@@ -94,19 +81,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				packageId = value;
 				DictionaryUtil.Add(QueryParameters, "PackageId", value.ToString());
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
@@ -136,32 +110,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public long? InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -188,19 +136,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public long? RuleId
-		{
-			get
-			{
-				return ruleId;
-			}
-			set	
-			{
-				ruleId = value;
-				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
-			}
-		}
-
 		public int? QueryType
 		{
 			get
@@ -211,6 +146,71 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				queryType = value;
 				DictionaryUtil.Add(QueryParameters, "QueryType", value.ToString());
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public long? InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public long? RuleId
+		{
+			get
+			{
+				return ruleId;
+			}
+			set	
+			{
+				ruleId = value;
+				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
 			}
 		}
 

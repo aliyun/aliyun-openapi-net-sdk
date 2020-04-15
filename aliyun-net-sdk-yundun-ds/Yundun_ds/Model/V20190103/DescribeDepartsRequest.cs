@@ -34,30 +34,17 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
-		private int? featureType;
-
 		private int? accountType;
 
 		private int? pageSize;
-
-		private int? currentPage;
 
 		private string lang;
 
 		private string key;
 
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
+		private int? featureType;
+
+		private int? currentPage;
 
 		public int? AccountType
 		{
@@ -85,19 +72,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -121,6 +95,32 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				key = value;
 				DictionaryUtil.Add(QueryParameters, "Key", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 

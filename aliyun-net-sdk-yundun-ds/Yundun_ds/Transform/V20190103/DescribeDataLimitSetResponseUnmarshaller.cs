@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Yundun_ds.Transform.V20190103
 				dataLimit.UserName = context.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].UserName");
 				dataLimit.GmtCreate = context.LongValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].GmtCreate");
 				dataLimit.Connector = context.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].Connector");
+				dataLimit.CheckStatus = context.IntegerValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].CheckStatus");
+				dataLimit.CheckStatusName = context.StringValue("DescribeDataLimitSet.DataLimitSet.DataLimitList["+ i +"].CheckStatusName");
 
 				dataLimitSet_dataLimitList.Add(dataLimit);
 			}

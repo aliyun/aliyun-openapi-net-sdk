@@ -34,45 +34,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
-		private int? featureType;
-
-		private string name;
-
 		private long? riskLevelId;
-
-		private string lang;
-
-		private long? customType;
-
-		private int? category;
 
 		private string content;
 
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
+		private string lang;
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
+		private int? featureType;
+
+		private long? customType;
+
+		private string name;
+
+		private int? category;
 
 		public long? RiskLevelId
 		{
@@ -84,6 +58,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				riskLevelId = value;
 				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
+			}
+		}
+
+		public string Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
 			}
 		}
 
@@ -100,6 +87,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
+
 		public long? CustomType
 		{
 			get
@@ -113,6 +113,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
 		public int? Category
 		{
 			get
@@ -123,19 +136,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				category = value;
 				DictionaryUtil.Add(QueryParameters, "Category", value.ToString());
-			}
-		}
-
-		public string Content
-		{
-			get
-			{
-				return content;
-			}
-			set	
-			{
-				content = value;
-				DictionaryUtil.Add(QueryParameters, "Content", value);
 			}
 		}
 

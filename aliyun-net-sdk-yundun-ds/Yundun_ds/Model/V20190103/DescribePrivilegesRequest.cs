@@ -36,19 +36,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 
 		private long? accountId;
 
-		private long? useAccountId;
-
-		private string dataTypeIds;
-
-		private int? featureType;
-
 		private int? pageSize;
-
-		private int? currentPage;
 
 		private string lang;
 
 		private string key;
+
+		private long? useAccountId;
+
+		private int? featureType;
+
+		private int? currentPage;
+
+		private string dataTypeIds;
 
 		public long? AccountId
 		{
@@ -63,45 +63,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public long? UseAccountId
-		{
-			get
-			{
-				return useAccountId;
-			}
-			set	
-			{
-				useAccountId = value;
-				DictionaryUtil.Add(QueryParameters, "UseAccountId", value.ToString());
-			}
-		}
-
-		public string DataTypeIds
-		{
-			get
-			{
-				return dataTypeIds;
-			}
-			set	
-			{
-				dataTypeIds = value;
-				DictionaryUtil.Add(QueryParameters, "DataTypeIds", value);
-			}
-		}
-
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -112,19 +73,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
@@ -151,6 +99,58 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				key = value;
 				DictionaryUtil.Add(QueryParameters, "Key", value);
+			}
+		}
+
+		public long? UseAccountId
+		{
+			get
+			{
+				return useAccountId;
+			}
+			set	
+			{
+				useAccountId = value;
+				DictionaryUtil.Add(QueryParameters, "UseAccountId", value.ToString());
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string DataTypeIds
+		{
+			get
+			{
+				return dataTypeIds;
+			}
+			set	
+			{
+				dataTypeIds = value;
+				DictionaryUtil.Add(QueryParameters, "DataTypeIds", value);
 			}
 		}
 

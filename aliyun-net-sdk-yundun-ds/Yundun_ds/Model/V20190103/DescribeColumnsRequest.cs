@@ -34,36 +34,23 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
-		private int? featureType;
-
 		private string riskLevels;
 
-		private string name;
+		private string queryName;
 
 		private int? pageSize;
 
 		private long? tableId;
 
-		private int? currentPage;
-
-		private string queryName;
-
 		private string lang;
 
-		private long? ruleId;
+		private int? featureType;
 
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
+		private int? currentPage;
+
+		private string name;
+
+		private long? ruleId;
 
 		public string RiskLevels
 		{
@@ -78,16 +65,16 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public string Name
+		public string QueryName
 		{
 			get
 			{
-				return name;
+				return queryName;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				queryName = value;
+				DictionaryUtil.Add(QueryParameters, "QueryName", value);
 			}
 		}
 
@@ -117,6 +104,32 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -130,29 +143,16 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public string QueryName
+		public string Name
 		{
 			get
 			{
-				return queryName;
+				return name;
 			}
 			set	
 			{
-				queryName = value;
-				DictionaryUtil.Add(QueryParameters, "QueryName", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

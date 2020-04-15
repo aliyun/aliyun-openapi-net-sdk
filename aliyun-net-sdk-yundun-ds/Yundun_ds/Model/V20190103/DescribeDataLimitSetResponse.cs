@@ -129,6 +129,10 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 
 				private string connector;
 
+				private int? checkStatus;
+
+				private string checkStatusName;
+
 				public string RegionId
 				{
 					get
@@ -210,6 +214,30 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 					set	
 					{
 						connector = value;
+					}
+				}
+
+				public int? CheckStatus
+				{
+					get
+					{
+						return checkStatus;
+					}
+					set	
+					{
+						checkStatus = value;
+					}
+				}
+
+				public string CheckStatusName
+				{
+					get
+					{
+						return checkStatusName;
+					}
+					set	
+					{
+						checkStatusName = value;
 					}
 				}
 			}

@@ -34,45 +34,45 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
-		private int? featureType;
-
-		private string name;
-
-		private long? id;
-
 		private long? riskLevelId;
-
-		private string lang;
-
-		private int? customType;
-
-		private int? category;
 
 		private string content;
 
-		public int? FeatureType
+		private long? id;
+
+		private string lang;
+
+		private int? featureType;
+
+		private int? customType;
+
+		private string name;
+
+		private int? category;
+
+		public long? RiskLevelId
 		{
 			get
 			{
-				return featureType;
+				return riskLevelId;
 			}
 			set	
 			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+				riskLevelId = value;
+				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
 			}
 		}
 
-		public string Name
+		public string Content
 		{
 			get
 			{
-				return name;
+				return content;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
 			}
 		}
 
@@ -89,19 +89,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public long? RiskLevelId
-		{
-			get
-			{
-				return riskLevelId;
-			}
-			set	
-			{
-				riskLevelId = value;
-				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -112,6 +99,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 
@@ -128,6 +128,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
 		public int? Category
 		{
 			get
@@ -138,19 +151,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				category = value;
 				DictionaryUtil.Add(QueryParameters, "Category", value.ToString());
-			}
-		}
-
-		public string Content
-		{
-			get
-			{
-				return content;
-			}
-			set	
-			{
-				content = value;
-				DictionaryUtil.Add(QueryParameters, "Content", value);
 			}
 		}
 

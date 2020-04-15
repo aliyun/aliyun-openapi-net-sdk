@@ -34,47 +34,21 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
-		private int? rangeId;
-
-		private int? featureType;
-
 		private string riskLevels;
 
-		private string name;
+		private int? rangeId;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private string lang;
 
+		private int? featureType;
+
+		private int? currentPage;
+
+		private string name;
+
 		private long? ruleId;
-
-		public int? RangeId
-		{
-			get
-			{
-				return rangeId;
-			}
-			set	
-			{
-				rangeId = value;
-				DictionaryUtil.Add(QueryParameters, "RangeId", value.ToString());
-			}
-		}
-
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
 
 		public string RiskLevels
 		{
@@ -89,16 +63,16 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public string Name
+		public int? RangeId
 		{
 			get
 			{
-				return name;
+				return rangeId;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				rangeId = value;
+				DictionaryUtil.Add(QueryParameters, "RangeId", value.ToString());
 			}
 		}
 
@@ -115,6 +89,32 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -128,16 +128,16 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public string Lang
+		public string Name
 		{
 			get
 			{
-				return lang;
+				return name;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

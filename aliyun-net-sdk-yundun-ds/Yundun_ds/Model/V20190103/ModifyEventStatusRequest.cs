@@ -36,13 +36,13 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 
 		private bool? backed;
 
-		private int? featureType;
-
 		private string dealReason;
 
 		private long? id;
 
 		private string lang;
+
+		private int? featureType;
 
 		private int? status;
 
@@ -56,19 +56,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				backed = value;
 				DictionaryUtil.Add(QueryParameters, "Backed", value.ToString());
-			}
-		}
-
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 
@@ -108,6 +95,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 

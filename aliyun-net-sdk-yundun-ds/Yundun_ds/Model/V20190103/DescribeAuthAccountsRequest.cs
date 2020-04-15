@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 
 		private int? featureType;
 
-		private int? pageSize;
-
 		private int? currentPage;
+
+		private int? pageSize;
 
 		private string lang;
 
@@ -55,19 +55,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public int? CurrentPage
 		{
 			get
@@ -78,6 +65,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				currentPage = value;
 				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

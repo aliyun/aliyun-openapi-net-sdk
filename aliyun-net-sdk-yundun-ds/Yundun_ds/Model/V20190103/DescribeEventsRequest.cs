@@ -34,12 +34,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
-		private int? featureType;
-
-		private string endTime;
-
-		private int? currentPage;
-
 		private string startTime;
 
 		private long? userId;
@@ -50,52 +44,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 
 		private int? pageSize;
 
-		private long? departId;
-
 		private string lang;
 
 		private string dealUserId;
 
+		private int? featureType;
+
+		private string endTime;
+
+		private int? currentPage;
+
+		private long? departId;
+
 		private string status;
-
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
 
 		public string StartTime
 		{
@@ -162,19 +123,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			}
 		}
 
-		public long? DepartId
-		{
-			get
-			{
-				return departId;
-			}
-			set	
-			{
-				departId = value;
-				DictionaryUtil.Add(QueryParameters, "DepartId", value.ToString());
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -198,6 +146,58 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				dealUserId = value;
 				DictionaryUtil.Add(QueryParameters, "DealUserId", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public long? DepartId
+		{
+			get
+			{
+				return departId;
+			}
+			set	
+			{
+				departId = value;
+				DictionaryUtil.Add(QueryParameters, "DepartId", value.ToString());
 			}
 		}
 

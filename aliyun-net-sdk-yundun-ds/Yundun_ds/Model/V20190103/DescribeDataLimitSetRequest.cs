@@ -34,22 +34,9 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
-		private string lang;
-
 		private int? resourceType;
 
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
+		private string lang;
 
 		public int? ResourceType
 		{
@@ -61,6 +48,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				resourceType = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceType", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

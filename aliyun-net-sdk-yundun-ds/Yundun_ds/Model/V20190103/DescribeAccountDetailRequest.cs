@@ -34,24 +34,11 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
-		private string lang;
-
 		private long? userId;
 
 		private long? accountTypeId;
 
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
+		private string lang;
 
 		public long? UserId
 		{
@@ -76,6 +63,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				accountTypeId = value;
 				DictionaryUtil.Add(QueryParameters, "AccountTypeId", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

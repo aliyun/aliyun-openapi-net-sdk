@@ -34,13 +34,7 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
-		private int? featureType;
-
 		private int? pageSize;
-
-		private long? departId;
-
-		private int? currentPage;
 
 		private string lang;
 
@@ -48,18 +42,11 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 
 		private string key;
 
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
+		private int? featureType;
+
+		private int? currentPage;
+
+		private long? departId;
 
 		public int? PageSize
 		{
@@ -71,32 +58,6 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public long? DepartId
-		{
-			get
-			{
-				return departId;
-			}
-			set	
-			{
-				departId = value;
-				DictionaryUtil.Add(QueryParameters, "DepartId", value.ToString());
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
@@ -136,6 +97,45 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				key = value;
 				DictionaryUtil.Add(QueryParameters, "Key", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public long? DepartId
+		{
+			get
+			{
+				return departId;
+			}
+			set	
+			{
+				departId = value;
+				DictionaryUtil.Add(QueryParameters, "DepartId", value.ToString());
 			}
 		}
 

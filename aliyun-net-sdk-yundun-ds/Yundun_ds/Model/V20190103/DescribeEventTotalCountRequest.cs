@@ -34,26 +34,13 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
         {
         }
 
-		private string typeCode;
-
 		private int? featureType;
 
 		private int? countType;
 
-		private string lang;
+		private string typeCode;
 
-		public string TypeCode
-		{
-			get
-			{
-				return typeCode;
-			}
-			set	
-			{
-				typeCode = value;
-				DictionaryUtil.Add(QueryParameters, "TypeCode", value);
-			}
-		}
+		private string lang;
 
 		public int? FeatureType
 		{
@@ -78,6 +65,19 @@ namespace Aliyun.Acs.Yundun_ds.Model.V20190103
 			{
 				countType = value;
 				DictionaryUtil.Add(QueryParameters, "CountType", value.ToString());
+			}
+		}
+
+		public string TypeCode
+		{
+			get
+			{
+				return typeCode;
+			}
+			set	
+			{
+				typeCode = value;
+				DictionaryUtil.Add(QueryParameters, "TypeCode", value);
 			}
 		}
 
