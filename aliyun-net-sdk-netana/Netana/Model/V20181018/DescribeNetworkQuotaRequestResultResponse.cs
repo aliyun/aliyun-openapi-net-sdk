@@ -102,6 +102,8 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 
 			private string product;
 
+			private string requestId;
+
 			private string resourceType;
 
 			private string quotaPublicityName;
@@ -114,15 +116,13 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 
 			private string requestResult;
 
-			private string resultQuantity;
+			private string requestQuantity;
 
 			private string resultReason;
 
-			private string requestId;
-
 			private string createTime;
 
-			private string requestQuantity;
+			private string resultQuantity;
 
 			public string RegionId
 			{
@@ -145,6 +145,18 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 				set	
 				{
 					product = value;
+				}
+			}
+
+			public string RequestId
+			{
+				get
+				{
+					return requestId;
+				}
+				set	
+				{
+					requestId = value;
 				}
 			}
 
@@ -220,15 +232,15 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 				}
 			}
 
-			public string ResultQuantity
+			public string RequestQuantity
 			{
 				get
 				{
-					return resultQuantity;
+					return requestQuantity;
 				}
 				set	
 				{
-					resultQuantity = value;
+					requestQuantity = value;
 				}
 			}
 
@@ -244,18 +256,6 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 				}
 			}
 
-			public string RequestId
-			{
-				get
-				{
-					return requestId;
-				}
-				set	
-				{
-					requestId = value;
-				}
-			}
-
 			public string CreateTime
 			{
 				get
@@ -268,15 +268,15 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 				}
 			}
 
-			public string RequestQuantity
+			public string ResultQuantity
 			{
 				get
 				{
-					return requestQuantity;
+					return resultQuantity;
 				}
 				set	
 				{
-					requestQuantity = value;
+					resultQuantity = value;
 				}
 			}
 		}

@@ -41,17 +41,17 @@ namespace Aliyun.Acs.Netana.Transform.V20181018
 				DescribeNetworkQuotaRequestResultResponse.DescribeNetworkQuotaRequestResult_QuotaRequest quotaRequest = new DescribeNetworkQuotaRequestResultResponse.DescribeNetworkQuotaRequestResult_QuotaRequest();
 				quotaRequest.RegionId = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].RegionId");
 				quotaRequest.Product = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].Product");
+				quotaRequest.RequestId = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].RequestId");
 				quotaRequest.ResourceType = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].ResourceType");
 				quotaRequest.QuotaPublicityName = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].QuotaPublicityName");
 				quotaRequest.RequestReason = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].RequestReason");
 				quotaRequest.MobilePhone = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].MobilePhone");
 				quotaRequest.Email = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].Email");
 				quotaRequest.RequestResult = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].RequestResult");
-				quotaRequest.ResultQuantity = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].ResultQuantity");
-				quotaRequest.ResultReason = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].ResultReason");
-				quotaRequest.RequestId = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].RequestId");
-				quotaRequest.CreateTime = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].CreateTime");
 				quotaRequest.RequestQuantity = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].RequestQuantity");
+				quotaRequest.ResultReason = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].ResultReason");
+				quotaRequest.CreateTime = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].CreateTime");
+				quotaRequest.ResultQuantity = context.StringValue("DescribeNetworkQuotaRequestResult.QuotaRequests["+ i +"].ResultQuantity");
 
 				describeNetworkQuotaRequestResultResponse_quotaRequests.Add(quotaRequest);
 			}

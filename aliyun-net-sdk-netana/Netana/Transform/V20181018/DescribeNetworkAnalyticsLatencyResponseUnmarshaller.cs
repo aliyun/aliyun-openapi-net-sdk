@@ -46,19 +46,19 @@ namespace Aliyun.Acs.Netana.Transform.V20181018
 
 				DescribeNetworkAnalyticsLatencyResponse.DescribeNetworkAnalyticsLatency_RoundTripLatencyInfo.DescribeNetworkAnalyticsLatency_Country country = new DescribeNetworkAnalyticsLatencyResponse.DescribeNetworkAnalyticsLatency_RoundTripLatencyInfo.DescribeNetworkAnalyticsLatency_Country();
 				country.CountryCode = context.StringValue("DescribeNetworkAnalyticsLatency.RoundTripLatencies["+ i +"].Country.CountryCode");
-				country.CountryCn = context.BooleanValue("DescribeNetworkAnalyticsLatency.RoundTripLatencies["+ i +"].Country.CountryCn");
+				country.CountryCn = context.StringValue("DescribeNetworkAnalyticsLatency.RoundTripLatencies["+ i +"].Country.CountryCn");
 				country.CountryEn = context.StringValue("DescribeNetworkAnalyticsLatency.RoundTripLatencies["+ i +"].Country.CountryEn");
 				roundTripLatencyInfo.Country = country;
 
 				DescribeNetworkAnalyticsLatencyResponse.DescribeNetworkAnalyticsLatency_RoundTripLatencyInfo.DescribeNetworkAnalyticsLatency_Province province = new DescribeNetworkAnalyticsLatencyResponse.DescribeNetworkAnalyticsLatency_RoundTripLatencyInfo.DescribeNetworkAnalyticsLatency_Province();
 				province.ProvinceCode = context.StringValue("DescribeNetworkAnalyticsLatency.RoundTripLatencies["+ i +"].Province.ProvinceCode");
-				province.ProvinceCn = context.BooleanValue("DescribeNetworkAnalyticsLatency.RoundTripLatencies["+ i +"].Province.ProvinceCn");
+				province.ProvinceCn = context.StringValue("DescribeNetworkAnalyticsLatency.RoundTripLatencies["+ i +"].Province.ProvinceCn");
 				province.ProvinceEn = context.StringValue("DescribeNetworkAnalyticsLatency.RoundTripLatencies["+ i +"].Province.ProvinceEn");
 				roundTripLatencyInfo.Province = province;
 
 				DescribeNetworkAnalyticsLatencyResponse.DescribeNetworkAnalyticsLatency_RoundTripLatencyInfo.DescribeNetworkAnalyticsLatency_Carrier carrier = new DescribeNetworkAnalyticsLatencyResponse.DescribeNetworkAnalyticsLatency_RoundTripLatencyInfo.DescribeNetworkAnalyticsLatency_Carrier();
 				carrier.CarrierCode = context.StringValue("DescribeNetworkAnalyticsLatency.RoundTripLatencies["+ i +"].Carrier.CarrierCode");
-				carrier.CarrierCn = context.BooleanValue("DescribeNetworkAnalyticsLatency.RoundTripLatencies["+ i +"].Carrier.CarrierCn");
+				carrier.CarrierCn = context.StringValue("DescribeNetworkAnalyticsLatency.RoundTripLatencies["+ i +"].Carrier.CarrierCn");
 				carrier.CarrierEn = context.StringValue("DescribeNetworkAnalyticsLatency.RoundTripLatencies["+ i +"].Carrier.CarrierEn");
 				roundTripLatencyInfo.Carrier = carrier;
 

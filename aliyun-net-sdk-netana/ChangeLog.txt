@@ -1,2 +1,5 @@
+2020-04-15 Version: 1.0.1
+- Fixed requeired Newtownsoft_Json.
+
 2019-06-13 Version 1.0.0
 Add Network Assistant openapi sdk

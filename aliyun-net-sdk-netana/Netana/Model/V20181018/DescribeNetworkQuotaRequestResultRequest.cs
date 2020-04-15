@@ -36,19 +36,19 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 
 		private long? resourceOwnerId;
 
-		private string product;
-
 		private string quotaPublicityName;
 
 		private string quotaRequestId;
 
+		private int? pageSize;
+
+		private string product;
+
 		private string resourceOwnerAccount;
 
-		private string pageNo;
-
-		private string pageSize;
-
 		private string resourceType;
+
+		private int? pageNo;
 
 		public long? ResourceOwnerId
 		{
@@ -60,19 +60,6 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Product
-		{
-			get
-			{
-				return product;
-			}
-			set	
-			{
-				product = value;
-				DictionaryUtil.Add(QueryParameters, "Product", value);
 			}
 		}
 
@@ -102,6 +89,32 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Product
+		{
+			get
+			{
+				return product;
+			}
+			set	
+			{
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -115,32 +128,6 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			}
 		}
 
-		public string PageNo
-		{
-			get
-			{
-				return pageNo;
-			}
-			set	
-			{
-				pageNo = value;
-				DictionaryUtil.Add(QueryParameters, "PageNo", value);
-			}
-		}
-
-		public string PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value);
-			}
-		}
-
 		public string ResourceType
 		{
 			get
@@ -151,6 +138,19 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			{
 				resourceType = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+			}
+		}
+
+		public int? PageNo
+		{
+			get
+			{
+				return pageNo;
+			}
+			set	
+			{
+				pageNo = value;
+				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
 			}
 		}
 

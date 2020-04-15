@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string productType;
+
+		private string resourceOwnerAccount;
 
 		public long? ResourceOwnerId
 		{
@@ -53,19 +53,6 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string ProductType
 		{
 			get
@@ -76,6 +63,19 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			{
 				productType = value;
 				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 

@@ -46,19 +46,19 @@ namespace Aliyun.Acs.Netana.Transform.V20181018
 
 				DescribeNetworkAnalyticsNetQualityResponse.DescribeNetworkAnalyticsNetQuality_NetQuality.DescribeNetworkAnalyticsNetQuality_Country country = new DescribeNetworkAnalyticsNetQualityResponse.DescribeNetworkAnalyticsNetQuality_NetQuality.DescribeNetworkAnalyticsNetQuality_Country();
 				country.CountryCode = context.StringValue("DescribeNetworkAnalyticsNetQuality.NetQualities["+ i +"].Country.CountryCode");
-				country.CountryCn = context.BooleanValue("DescribeNetworkAnalyticsNetQuality.NetQualities["+ i +"].Country.CountryCn");
+				country.CountryCn = context.StringValue("DescribeNetworkAnalyticsNetQuality.NetQualities["+ i +"].Country.CountryCn");
 				country.CountryEn = context.StringValue("DescribeNetworkAnalyticsNetQuality.NetQualities["+ i +"].Country.CountryEn");
 				netQuality.Country = country;
 
 				DescribeNetworkAnalyticsNetQualityResponse.DescribeNetworkAnalyticsNetQuality_NetQuality.DescribeNetworkAnalyticsNetQuality_Province province = new DescribeNetworkAnalyticsNetQualityResponse.DescribeNetworkAnalyticsNetQuality_NetQuality.DescribeNetworkAnalyticsNetQuality_Province();
 				province.ProvinceCode = context.StringValue("DescribeNetworkAnalyticsNetQuality.NetQualities["+ i +"].Province.ProvinceCode");
-				province.ProvinceCn = context.BooleanValue("DescribeNetworkAnalyticsNetQuality.NetQualities["+ i +"].Province.ProvinceCn");
+				province.ProvinceCn = context.StringValue("DescribeNetworkAnalyticsNetQuality.NetQualities["+ i +"].Province.ProvinceCn");
 				province.ProvinceEn = context.StringValue("DescribeNetworkAnalyticsNetQuality.NetQualities["+ i +"].Province.ProvinceEn");
 				netQuality.Province = province;
 
 				DescribeNetworkAnalyticsNetQualityResponse.DescribeNetworkAnalyticsNetQuality_NetQuality.DescribeNetworkAnalyticsNetQuality_Carrier carrier = new DescribeNetworkAnalyticsNetQualityResponse.DescribeNetworkAnalyticsNetQuality_NetQuality.DescribeNetworkAnalyticsNetQuality_Carrier();
 				carrier.CarrierCode = context.StringValue("DescribeNetworkAnalyticsNetQuality.NetQualities["+ i +"].Carrier.CarrierCode");
-				carrier.CarrierCn = context.BooleanValue("DescribeNetworkAnalyticsNetQuality.NetQualities["+ i +"].Carrier.CarrierCn");
+				carrier.CarrierCn = context.StringValue("DescribeNetworkAnalyticsNetQuality.NetQualities["+ i +"].Carrier.CarrierCn");
 				carrier.CarrierEn = context.StringValue("DescribeNetworkAnalyticsNetQuality.NetQualities["+ i +"].Carrier.CarrierEn");
 				netQuality.Carrier = carrier;
 

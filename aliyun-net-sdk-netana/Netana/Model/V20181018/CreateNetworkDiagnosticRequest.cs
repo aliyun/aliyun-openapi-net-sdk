@@ -38,19 +38,19 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 
 		private string requestParams;
 
-		private string instanceId;
-
-		private string resourceOwnerAccount;
-
 		private string userRequestId;
 
 		private string type;
 
 		private string requestApiName;
 
+		private string productType;
+
 		private string errorCode;
 
-		private string productType;
+		private string resourceOwnerAccount;
+
+		private string instanceId;
 
 		private string responseParams;
 
@@ -77,32 +77,6 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			{
 				requestParams = value;
 				DictionaryUtil.Add(QueryParameters, "RequestParams", value);
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -145,6 +119,19 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			}
 		}
 
+		public string ProductType
+		{
+			get
+			{
+				return productType;
+			}
+			set	
+			{
+				productType = value;
+				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+			}
+		}
+
 		public string ErrorCode
 		{
 			get
@@ -158,16 +145,29 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			}
 		}
 
-		public string ProductType
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return productType;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				productType = value;
-				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

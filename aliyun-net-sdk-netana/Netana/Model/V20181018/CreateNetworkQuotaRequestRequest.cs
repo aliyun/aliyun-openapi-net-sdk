@@ -34,36 +34,23 @@ namespace Aliyun.Acs.Netana.Model.V20181018
         {
         }
 
-		private string requestReason;
-
 		private long? resourceOwnerId;
-
-		private string product;
-
-		private string quotaPublicityName;
-
-		private string resourceOwnerAccount;
 
 		private string requestQuantity;
 
-		private string mobilePhone;
+		private string quotaPublicityName;
 
-		private string resourceType;
+		private string mobilePhone;
 
 		private string email;
 
-		public string RequestReason
-		{
-			get
-			{
-				return requestReason;
-			}
-			set	
-			{
-				requestReason = value;
-				DictionaryUtil.Add(QueryParameters, "RequestReason", value);
-			}
-		}
+		private string requestReason;
+
+		private string product;
+
+		private string resourceOwnerAccount;
+
+		private string resourceType;
 
 		public long? ResourceOwnerId
 		{
@@ -75,45 +62,6 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Product
-		{
-			get
-			{
-				return product;
-			}
-			set	
-			{
-				product = value;
-				DictionaryUtil.Add(QueryParameters, "Product", value);
-			}
-		}
-
-		public string QuotaPublicityName
-		{
-			get
-			{
-				return quotaPublicityName;
-			}
-			set	
-			{
-				quotaPublicityName = value;
-				DictionaryUtil.Add(QueryParameters, "QuotaPublicityName", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -130,6 +78,19 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			}
 		}
 
+		public string QuotaPublicityName
+		{
+			get
+			{
+				return quotaPublicityName;
+			}
+			set	
+			{
+				quotaPublicityName = value;
+				DictionaryUtil.Add(QueryParameters, "QuotaPublicityName", value);
+			}
+		}
+
 		public string MobilePhone
 		{
 			get
@@ -143,19 +104,6 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			}
 		}
 
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
-		}
-
 		public string Email
 		{
 			get
@@ -166,6 +114,58 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			{
 				email = value;
 				DictionaryUtil.Add(QueryParameters, "Email", value);
+			}
+		}
+
+		public string RequestReason
+		{
+			get
+			{
+				return requestReason;
+			}
+			set	
+			{
+				requestReason = value;
+				DictionaryUtil.Add(QueryParameters, "RequestReason", value);
+			}
+		}
+
+		public string Product
+		{
+			get
+			{
+				return product;
+			}
+			set	
+			{
+				product = value;
+				DictionaryUtil.Add(QueryParameters, "Product", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

@@ -47,19 +47,19 @@ namespace Aliyun.Acs.Netana.Transform.V20181018
 
 				DescribeNetworkAnalyticsDataTransferResponse.DescribeNetworkAnalyticsDataTransfer_DataTransferInfo.DescribeNetworkAnalyticsDataTransfer_Country country = new DescribeNetworkAnalyticsDataTransferResponse.DescribeNetworkAnalyticsDataTransfer_DataTransferInfo.DescribeNetworkAnalyticsDataTransfer_Country();
 				country.CountryCode = context.StringValue("DescribeNetworkAnalyticsDataTransfer.DataTransferInfos["+ i +"].Country.CountryCode");
-				country.CountryCn = context.BooleanValue("DescribeNetworkAnalyticsDataTransfer.DataTransferInfos["+ i +"].Country.CountryCn");
+				country.CountryCn = context.StringValue("DescribeNetworkAnalyticsDataTransfer.DataTransferInfos["+ i +"].Country.CountryCn");
 				country.CountryEn = context.StringValue("DescribeNetworkAnalyticsDataTransfer.DataTransferInfos["+ i +"].Country.CountryEn");
 				dataTransferInfo.Country = country;
 
 				DescribeNetworkAnalyticsDataTransferResponse.DescribeNetworkAnalyticsDataTransfer_DataTransferInfo.DescribeNetworkAnalyticsDataTransfer_Province province = new DescribeNetworkAnalyticsDataTransferResponse.DescribeNetworkAnalyticsDataTransfer_DataTransferInfo.DescribeNetworkAnalyticsDataTransfer_Province();
 				province.ProvinceCode = context.StringValue("DescribeNetworkAnalyticsDataTransfer.DataTransferInfos["+ i +"].Province.ProvinceCode");
-				province.ProvinceCn = context.BooleanValue("DescribeNetworkAnalyticsDataTransfer.DataTransferInfos["+ i +"].Province.ProvinceCn");
+				province.ProvinceCn = context.StringValue("DescribeNetworkAnalyticsDataTransfer.DataTransferInfos["+ i +"].Province.ProvinceCn");
 				province.ProvinceEn = context.StringValue("DescribeNetworkAnalyticsDataTransfer.DataTransferInfos["+ i +"].Province.ProvinceEn");
 				dataTransferInfo.Province = province;
 
 				DescribeNetworkAnalyticsDataTransferResponse.DescribeNetworkAnalyticsDataTransfer_DataTransferInfo.DescribeNetworkAnalyticsDataTransfer_Carrier carrier = new DescribeNetworkAnalyticsDataTransferResponse.DescribeNetworkAnalyticsDataTransfer_DataTransferInfo.DescribeNetworkAnalyticsDataTransfer_Carrier();
 				carrier.CarrierCode = context.StringValue("DescribeNetworkAnalyticsDataTransfer.DataTransferInfos["+ i +"].Carrier.CarrierCode");
-				carrier.CarrierCn = context.BooleanValue("DescribeNetworkAnalyticsDataTransfer.DataTransferInfos["+ i +"].Carrier.CarrierCn");
+				carrier.CarrierCn = context.StringValue("DescribeNetworkAnalyticsDataTransfer.DataTransferInfos["+ i +"].Carrier.CarrierCn");
 				carrier.CarrierEn = context.StringValue("DescribeNetworkAnalyticsDataTransfer.DataTransferInfos["+ i +"].Carrier.CarrierEn");
 				dataTransferInfo.Carrier = carrier;
 

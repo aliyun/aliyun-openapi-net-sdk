@@ -38,23 +38,23 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 
 		private long? resourceOwnerId;
 
+		private long? startTime;
+
+		private int? pageNumber;
+
+		private string province;
+
+		private int? pageSize;
+
 		private string period;
 
 		private string resourceOwnerAccount;
 
-		private string endTime;
-
-		private string startTime;
-
-		private string pageNumber;
+		private long? endTime;
 
 		private string carrier;
 
-		private string province;
-
 		private string grade;
-
-		private string pageSize;
 
 		public string Country
 		{
@@ -79,6 +79,58 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string Province
+		{
+			get
+			{
+				return province;
+			}
+			set	
+			{
+				province = value;
+				DictionaryUtil.Add(QueryParameters, "Province", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -108,7 +160,7 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			}
 		}
 
-		public string EndTime
+		public long? EndTime
 		{
 			get
 			{
@@ -117,33 +169,7 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			set	
 			{
 				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
 			}
 		}
 
@@ -160,19 +186,6 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			}
 		}
 
-		public string Province
-		{
-			get
-			{
-				return province;
-			}
-			set	
-			{
-				province = value;
-				DictionaryUtil.Add(QueryParameters, "Province", value);
-			}
-		}
-
 		public string Grade
 		{
 			get
@@ -183,19 +196,6 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 			{
 				grade = value;
 				DictionaryUtil.Add(QueryParameters, "Grade", value);
-			}
-		}
-
-		public string PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value);
 			}
 		}
 

@@ -47,19 +47,19 @@ namespace Aliyun.Acs.Netana.Transform.V20181018
 
 				DescribeNetworkAnalyticsPacketLossResponse.DescribeNetworkAnalyticsPacketLoss_PacketLossInfo.DescribeNetworkAnalyticsPacketLoss_Country country = new DescribeNetworkAnalyticsPacketLossResponse.DescribeNetworkAnalyticsPacketLoss_PacketLossInfo.DescribeNetworkAnalyticsPacketLoss_Country();
 				country.CountryCode = context.StringValue("DescribeNetworkAnalyticsPacketLoss.PacketLossInfos["+ i +"].Country.CountryCode");
-				country.CountryCn = context.BooleanValue("DescribeNetworkAnalyticsPacketLoss.PacketLossInfos["+ i +"].Country.CountryCn");
+				country.CountryCn = context.StringValue("DescribeNetworkAnalyticsPacketLoss.PacketLossInfos["+ i +"].Country.CountryCn");
 				country.CountryEn = context.StringValue("DescribeNetworkAnalyticsPacketLoss.PacketLossInfos["+ i +"].Country.CountryEn");
 				packetLossInfo.Country = country;
 
 				DescribeNetworkAnalyticsPacketLossResponse.DescribeNetworkAnalyticsPacketLoss_PacketLossInfo.DescribeNetworkAnalyticsPacketLoss_Province province = new DescribeNetworkAnalyticsPacketLossResponse.DescribeNetworkAnalyticsPacketLoss_PacketLossInfo.DescribeNetworkAnalyticsPacketLoss_Province();
 				province.ProvinceCode = context.StringValue("DescribeNetworkAnalyticsPacketLoss.PacketLossInfos["+ i +"].Province.ProvinceCode");
-				province.ProvinceCn = context.BooleanValue("DescribeNetworkAnalyticsPacketLoss.PacketLossInfos["+ i +"].Province.ProvinceCn");
+				province.ProvinceCn = context.StringValue("DescribeNetworkAnalyticsPacketLoss.PacketLossInfos["+ i +"].Province.ProvinceCn");
 				province.ProvinceEn = context.StringValue("DescribeNetworkAnalyticsPacketLoss.PacketLossInfos["+ i +"].Province.ProvinceEn");
 				packetLossInfo.Province = province;
 
 				DescribeNetworkAnalyticsPacketLossResponse.DescribeNetworkAnalyticsPacketLoss_PacketLossInfo.DescribeNetworkAnalyticsPacketLoss_Carrier carrier = new DescribeNetworkAnalyticsPacketLossResponse.DescribeNetworkAnalyticsPacketLoss_PacketLossInfo.DescribeNetworkAnalyticsPacketLoss_Carrier();
 				carrier.CarrierCode = context.StringValue("DescribeNetworkAnalyticsPacketLoss.PacketLossInfos["+ i +"].Carrier.CarrierCode");
-				carrier.CarrierCn = context.BooleanValue("DescribeNetworkAnalyticsPacketLoss.PacketLossInfos["+ i +"].Carrier.CarrierCn");
+				carrier.CarrierCn = context.StringValue("DescribeNetworkAnalyticsPacketLoss.PacketLossInfos["+ i +"].Carrier.CarrierCn");
 				carrier.CarrierEn = context.StringValue("DescribeNetworkAnalyticsPacketLoss.PacketLossInfos["+ i +"].Carrier.CarrierEn");
 				packetLossInfo.Carrier = carrier;
 

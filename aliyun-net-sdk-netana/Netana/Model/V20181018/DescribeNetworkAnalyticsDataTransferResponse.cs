@@ -215,7 +215,7 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 
 				private string countryCode;
 
-				private bool? countryCn;
+				private string countryCn;
 
 				private string countryEn;
 
@@ -231,7 +231,7 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 					}
 				}
 
-				public bool? CountryCn
+				public string CountryCn
 				{
 					get
 					{
@@ -261,7 +261,7 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 
 				private string provinceCode;
 
-				private bool? provinceCn;
+				private string provinceCn;
 
 				private string provinceEn;
 
@@ -277,7 +277,7 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 					}
 				}
 
-				public bool? ProvinceCn
+				public string ProvinceCn
 				{
 					get
 					{
@@ -307,7 +307,7 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 
 				private string carrierCode;
 
-				private bool? carrierCn;
+				private string carrierCn;
 
 				private string carrierEn;
 
@@ -323,7 +323,7 @@ namespace Aliyun.Acs.Netana.Model.V20181018
 					}
 				}
 
-				public bool? CarrierCn
+				public string CarrierCn
 				{
 					get
 					{
