@@ -33,6 +33,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			createNodeResponse.HttpResponse = context.HttpResponse;
 			createNodeResponse.RequestId = context.StringValue("CreateNode.RequestId");
 			createNodeResponse.OrderId = context.StringValue("CreateNode.OrderId");
+			createNodeResponse.NodeId = context.StringValue("CreateNode.NodeId");
         
 			return createNodeResponse;
         }
