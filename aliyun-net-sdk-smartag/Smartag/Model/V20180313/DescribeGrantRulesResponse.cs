@@ -102,7 +102,7 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 			private long? cenUid;
 
-			private long? ccnId;
+			private long? ccnUid;
 
 			private string cenInstanceId;
 
@@ -138,15 +138,15 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 				}
 			}
 
-			public long? CcnId
+			public long? CcnUid
 			{
 				get
 				{
-					return ccnId;
+					return ccnUid;
 				}
 				set	
 				{
-					ccnId = value;
+					ccnUid = value;
 				}
 			}
 

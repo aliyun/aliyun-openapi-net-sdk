@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 			describeNetworkOptimizationSettingsResponse.HttpResponse = context.HttpResponse;
 			describeNetworkOptimizationSettingsResponse.RequestId = context.StringValue("DescribeNetworkOptimizationSettings.RequestId");
 			describeNetworkOptimizationSettingsResponse.TotalCount = context.IntegerValue("DescribeNetworkOptimizationSettings.TotalCount");
-			describeNetworkOptimizationSettingsResponse.PageNo = context.IntegerValue("DescribeNetworkOptimizationSettings.PageNo");
+			describeNetworkOptimizationSettingsResponse.PageNumber = context.IntegerValue("DescribeNetworkOptimizationSettings.PageNumber");
 			describeNetworkOptimizationSettingsResponse.PageSize = context.IntegerValue("DescribeNetworkOptimizationSettings.PageSize");
 
 			List<DescribeNetworkOptimizationSettingsResponse.DescribeNetworkOptimizationSettings_Setting> describeNetworkOptimizationSettingsResponse_settings = new List<DescribeNetworkOptimizationSettingsResponse.DescribeNetworkOptimizationSettings_Setting>();

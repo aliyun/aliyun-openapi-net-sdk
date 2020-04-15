@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public CreateSmartAccessGatewayRequest()
             : base("Smartag", "2018-03-13", "CreateSmartAccessGateway", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private int? maxBandWidth;
@@ -44,11 +49,7 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string receiverDistrict;
 
-		private int? userCount;
-
 		private string receiverAddress;
-
-		private string instanceType;
 
 		private string buyerMessage;
 
@@ -80,11 +81,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string name;
 
+		private bool? alreadyHaveSag;
+
 		private string receiverCountry;
 
 		private string chargeType;
-
-		private long? dataPlan;
 
 		private string receiverZip;
 
@@ -153,19 +154,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public int? UserCount
-		{
-			get
-			{
-				return userCount;
-			}
-			set	
-			{
-				userCount = value;
-				DictionaryUtil.Add(QueryParameters, "UserCount", value.ToString());
-			}
-		}
-
 		public string ReceiverAddress
 		{
 			get
@@ -176,19 +164,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				receiverAddress = value;
 				DictionaryUtil.Add(QueryParameters, "ReceiverAddress", value);
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 
@@ -387,6 +362,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public bool? AlreadyHaveSag
+		{
+			get
+			{
+				return alreadyHaveSag;
+			}
+			set	
+			{
+				alreadyHaveSag = value;
+				DictionaryUtil.Add(QueryParameters, "AlreadyHaveSag", value.ToString());
+			}
+		}
+
 		public string ReceiverCountry
 		{
 			get
@@ -410,19 +398,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
-			}
-		}
-
-		public long? DataPlan
-		{
-			get
-			{
-				return dataPlan;
-			}
-			set	
-			{
-				dataPlan = value;
-				DictionaryUtil.Add(QueryParameters, "DataPlan", value.ToString());
 			}
 		}
 

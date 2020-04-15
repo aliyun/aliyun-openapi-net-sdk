@@ -32,45 +32,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public ModifySmartAccessGatewayRequest()
             : base("Smartag", "2018-03-13", "ModifySmartAccessGateway", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private List<SnatEntries> snatEntriess;
-
 		private long? resourceOwnerId;
+
+		private string description;
+
+		private int? securityLockThreshold;
+
+		private string routingStrategy;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string description;
-
 		private long? ownerId;
-
-		private int? securityLockThreshold;
 
 		private string name;
 
 		private string cidrBlock;
 
 		private string smartAGId;
-
-		public List<SnatEntries> SnatEntriess
-		{
-			get
-			{
-				return snatEntriess;
-			}
-
-			set
-			{
-				snatEntriess = value;
-				for (int i = 0; i < snatEntriess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SnatEntries." + (i + 1) + ".CidrBlock", snatEntriess[i].CidrBlock);
-					DictionaryUtil.Add(QueryParameters,"SnatEntries." + (i + 1) + ".SnatIp", snatEntriess[i].SnatIp);
-				}
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -82,6 +69,45 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public int? SecurityLockThreshold
+		{
+			get
+			{
+				return securityLockThreshold;
+			}
+			set	
+			{
+				securityLockThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityLockThreshold", value.ToString());
+			}
+		}
+
+		public string RoutingStrategy
+		{
+			get
+			{
+				return routingStrategy;
+			}
+			set	
+			{
+				routingStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "RoutingStrategy", value);
 			}
 		}
 
@@ -111,19 +137,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -134,19 +147,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? SecurityLockThreshold
-		{
-			get
-			{
-				return securityLockThreshold;
-			}
-			set	
-			{
-				securityLockThreshold = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityLockThreshold", value.ToString());
 			}
 		}
 
@@ -186,38 +186,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				smartAGId = value;
 				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
-			}
-		}
-
-		public class SnatEntries
-		{
-
-			private string cidrBlock;
-
-			private string snatIp;
-
-			public string CidrBlock
-			{
-				get
-				{
-					return cidrBlock;
-				}
-				set	
-				{
-					cidrBlock = value;
-				}
-			}
-
-			public string SnatIp
-			{
-				get
-				{
-					return snatIp;
-				}
-				set	
-				{
-					snatIp = value;
-				}
 			}
 		}
 

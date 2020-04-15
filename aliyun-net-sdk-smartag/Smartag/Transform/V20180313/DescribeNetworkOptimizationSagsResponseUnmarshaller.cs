@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 			describeNetworkOptimizationSagsResponse.HttpResponse = context.HttpResponse;
 			describeNetworkOptimizationSagsResponse.RequestId = context.StringValue("DescribeNetworkOptimizationSags.RequestId");
 			describeNetworkOptimizationSagsResponse.TotalCount = context.IntegerValue("DescribeNetworkOptimizationSags.TotalCount");
-			describeNetworkOptimizationSagsResponse.PageNo = context.IntegerValue("DescribeNetworkOptimizationSags.PageNo");
+			describeNetworkOptimizationSagsResponse.PageNumber = context.IntegerValue("DescribeNetworkOptimizationSags.PageNumber");
 			describeNetworkOptimizationSagsResponse.PageSize = context.IntegerValue("DescribeNetworkOptimizationSags.PageSize");
 
 			List<DescribeNetworkOptimizationSagsResponse.DescribeNetworkOptimizationSags_SmartAccessGateway> describeNetworkOptimizationSagsResponse_smartAccessGateways = new List<DescribeNetworkOptimizationSagsResponse.DescribeNetworkOptimizationSags_SmartAccessGateway>();

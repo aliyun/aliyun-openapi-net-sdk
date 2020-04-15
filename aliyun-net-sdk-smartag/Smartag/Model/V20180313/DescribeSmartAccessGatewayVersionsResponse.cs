@@ -62,6 +62,8 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 			private long? createTime;
 
+			private string type;
+
 			public string VersionCode
 			{
 				get
@@ -95,6 +97,18 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
 				}
 			}
 		}

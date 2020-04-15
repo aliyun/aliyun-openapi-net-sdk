@@ -32,25 +32,30 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public ModifyCloudConnectNetworkRequest()
             : base("Smartag", "2018-03-13", "ModifyCloudConnectNetwork", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string ccnId;
+
+		private string description;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string ccnId;
+		private long? ownerId;
 
 		private string name;
 
 		private string cidrBlock;
 
-		private string description;
-
-		private string snatCidrBlock;
-
-		private long? ownerId;
+		private string interworkingStatus;
 
 		public long? ResourceOwnerId
 		{
@@ -62,6 +67,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string CcnId
+		{
+			get
+			{
+				return ccnId;
+			}
+			set	
+			{
+				ccnId = value;
+				DictionaryUtil.Add(QueryParameters, "CcnId", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -91,16 +122,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string CcnId
+		public long? OwnerId
 		{
 			get
 			{
-				return ccnId;
+				return ownerId;
 			}
 			set	
 			{
-				ccnId = value;
-				DictionaryUtil.Add(QueryParameters, "CcnId", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -130,42 +161,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string Description
+		public string InterworkingStatus
 		{
 			get
 			{
-				return description;
+				return interworkingStatus;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string SnatCidrBlock
-		{
-			get
-			{
-				return snatCidrBlock;
-			}
-			set	
-			{
-				snatCidrBlock = value;
-				DictionaryUtil.Add(QueryParameters, "SnatCidrBlock", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				interworkingStatus = value;
+				DictionaryUtil.Add(QueryParameters, "InterworkingStatus", value);
 			}
 		}
 

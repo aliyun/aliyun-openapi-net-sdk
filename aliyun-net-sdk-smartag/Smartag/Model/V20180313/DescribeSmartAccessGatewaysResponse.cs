@@ -134,7 +134,27 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 			private int? userCount;
 
-			private List<DescribeSmartAccessGateways_SnatEntry> snatEntries;
+			private string routingStrategy;
+
+			private int? upBandwidthWan;
+
+			private int? upBandwidth4G;
+
+			private string qosIds;
+
+			private string backupSoftwareVersion;
+
+			private long? smartAGUid;
+
+			private string backupStatus;
+
+			private string resourceGroupId;
+
+			private string vpnStatus;
+
+			private string ipsecStatus;
+
+			private List<DescribeSmartAccessGateways_Link> links;
 
 			public string SmartAGId
 			{
@@ -352,46 +372,250 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 				}
 			}
 
-			public List<DescribeSmartAccessGateways_SnatEntry> SnatEntries
+			public string RoutingStrategy
 			{
 				get
 				{
-					return snatEntries;
+					return routingStrategy;
 				}
 				set	
 				{
-					snatEntries = value;
+					routingStrategy = value;
 				}
 			}
 
-			public class DescribeSmartAccessGateways_SnatEntry
+			public int? UpBandwidthWan
+			{
+				get
+				{
+					return upBandwidthWan;
+				}
+				set	
+				{
+					upBandwidthWan = value;
+				}
+			}
+
+			public int? UpBandwidth4G
+			{
+				get
+				{
+					return upBandwidth4G;
+				}
+				set	
+				{
+					upBandwidth4G = value;
+				}
+			}
+
+			public string QosIds
+			{
+				get
+				{
+					return qosIds;
+				}
+				set	
+				{
+					qosIds = value;
+				}
+			}
+
+			public string BackupSoftwareVersion
+			{
+				get
+				{
+					return backupSoftwareVersion;
+				}
+				set	
+				{
+					backupSoftwareVersion = value;
+				}
+			}
+
+			public long? SmartAGUid
+			{
+				get
+				{
+					return smartAGUid;
+				}
+				set	
+				{
+					smartAGUid = value;
+				}
+			}
+
+			public string BackupStatus
+			{
+				get
+				{
+					return backupStatus;
+				}
+				set	
+				{
+					backupStatus = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public string VpnStatus
+			{
+				get
+				{
+					return vpnStatus;
+				}
+				set	
+				{
+					vpnStatus = value;
+				}
+			}
+
+			public string IpsecStatus
+			{
+				get
+				{
+					return ipsecStatus;
+				}
+				set	
+				{
+					ipsecStatus = value;
+				}
+			}
+
+			public List<DescribeSmartAccessGateways_Link> Links
+			{
+				get
+				{
+					return links;
+				}
+				set	
+				{
+					links = value;
+				}
+			}
+
+			public class DescribeSmartAccessGateways_Link
 			{
 
-				private string cidrBlock;
+				private string instanceId;
 
-				private string snatIp;
+				private string type;
 
-				public string CidrBlock
+				private string status;
+
+				private long? endTime;
+
+				private string bandwidth;
+
+				private string relateInstanceId;
+
+				private string relateInstanceRegionId;
+
+				private string commodityType;
+
+				public string InstanceId
 				{
 					get
 					{
-						return cidrBlock;
+						return instanceId;
 					}
 					set	
 					{
-						cidrBlock = value;
+						instanceId = value;
 					}
 				}
 
-				public string SnatIp
+				public string Type
 				{
 					get
 					{
-						return snatIp;
+						return type;
 					}
 					set	
 					{
-						snatIp = value;
+						type = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public long? EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
+
+				public string Bandwidth
+				{
+					get
+					{
+						return bandwidth;
+					}
+					set	
+					{
+						bandwidth = value;
+					}
+				}
+
+				public string RelateInstanceId
+				{
+					get
+					{
+						return relateInstanceId;
+					}
+					set	
+					{
+						relateInstanceId = value;
+					}
+				}
+
+				public string RelateInstanceRegionId
+				{
+					get
+					{
+						return relateInstanceRegionId;
+					}
+					set	
+					{
+						relateInstanceRegionId = value;
+					}
+				}
+
+				public string CommodityType
+				{
+					get
+					{
+						return commodityType;
+					}
+					set	
+					{
+						commodityType = value;
 					}
 				}
 			}

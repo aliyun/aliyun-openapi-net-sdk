@@ -32,13 +32,18 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public DeleteNetworkOptimizationRequest()
             : base("Smartag", "2018-03-13", "DeleteNetworkOptimization", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
-
 		private string networkOptId;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
@@ -57,19 +62,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string NetworkOptId
 		{
 			get
@@ -80,6 +72,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				networkOptId = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkOptId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 

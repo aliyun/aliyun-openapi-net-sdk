@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 				cloudConnectNetwork.IsDefault = context.BooleanValue("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].IsDefault");
 				cloudConnectNetwork.CidrBlock = context.StringValue("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].CidrBlock");
 				cloudConnectNetwork.SnatCidrBlock = context.StringValue("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].SnatCidrBlock");
+				cloudConnectNetwork.InterworkingStatus = context.StringValue("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].InterworkingStatus");
 
 				List<DescribeCloudConnectNetworksResponse.DescribeCloudConnectNetworks_CloudConnectNetwork.DescribeCloudConnectNetworks_Tag> cloudConnectNetwork_tags = new List<DescribeCloudConnectNetworksResponse.DescribeCloudConnectNetworks_CloudConnectNetwork.DescribeCloudConnectNetworks_Tag>();
 				for (int j = 0; j < context.Length("DescribeCloudConnectNetworks.CloudConnectNetworks["+ i +"].Tags.Length"); j++) {

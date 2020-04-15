@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 			describeSmartAccessGatewayClientUsersResponse.HttpResponse = context.HttpResponse;
 			describeSmartAccessGatewayClientUsersResponse.RequestId = context.StringValue("DescribeSmartAccessGatewayClientUsers.RequestId");
 			describeSmartAccessGatewayClientUsersResponse.TotalCount = context.IntegerValue("DescribeSmartAccessGatewayClientUsers.TotalCount");
-			describeSmartAccessGatewayClientUsersResponse.PageNo = context.IntegerValue("DescribeSmartAccessGatewayClientUsers.PageNo");
+			describeSmartAccessGatewayClientUsersResponse.PageNumber = context.IntegerValue("DescribeSmartAccessGatewayClientUsers.PageNumber");
 			describeSmartAccessGatewayClientUsersResponse.PageSize = context.IntegerValue("DescribeSmartAccessGatewayClientUsers.PageSize");
 
 			List<DescribeSmartAccessGatewayClientUsersResponse.DescribeSmartAccessGatewayClientUsers_User> describeSmartAccessGatewayClientUsersResponse_users = new List<DescribeSmartAccessGatewayClientUsersResponse.DescribeSmartAccessGatewayClientUsers_User>();
@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 				user.UserMail = context.StringValue("DescribeSmartAccessGatewayClientUsers.Users["+ i +"].UserMail");
 				user.UserName = context.StringValue("DescribeSmartAccessGatewayClientUsers.Users["+ i +"].UserName");
 				user.Bandwidth = context.IntegerValue("DescribeSmartAccessGatewayClientUsers.Users["+ i +"].Bandwidth");
+				user.State = context.IntegerValue("DescribeSmartAccessGatewayClientUsers.Users["+ i +"].State");
 
 				describeSmartAccessGatewayClientUsersResponse_users.Add(user);
 			}

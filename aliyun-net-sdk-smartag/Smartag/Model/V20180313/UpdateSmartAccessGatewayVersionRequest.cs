@@ -32,9 +32,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public UpdateSmartAccessGatewayVersionRequest()
             : base("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string versionCode;
 
 		private string serialNumber;
 
@@ -42,11 +49,9 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string ownerAccount;
 
-		private string smartAGId;
-
 		private long? ownerId;
 
-		private string versionCode;
+		private string smartAGId;
 
 		public long? ResourceOwnerId
 		{
@@ -58,6 +63,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string VersionCode
+		{
+			get
+			{
+				return versionCode;
+			}
+			set	
+			{
+				versionCode = value;
+				DictionaryUtil.Add(QueryParameters, "VersionCode", value);
 			}
 		}
 
@@ -100,19 +118,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string SmartAGId
-		{
-			get
-			{
-				return smartAGId;
-			}
-			set	
-			{
-				smartAGId = value;
-				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -126,16 +131,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string VersionCode
+		public string SmartAGId
 		{
 			get
 			{
-				return versionCode;
+				return smartAGId;
 			}
 			set	
 			{
-				versionCode = value;
-				DictionaryUtil.Add(QueryParameters, "VersionCode", value);
+				smartAGId = value;
+				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
 			}
 		}
 

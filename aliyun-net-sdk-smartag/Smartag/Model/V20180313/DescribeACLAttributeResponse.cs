@@ -122,6 +122,10 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 			private string aclId;
 
+			private string type;
+
+			private string name;
+
 			public string AcrId
 			{
 				get
@@ -263,6 +267,30 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 				set	
 				{
 					aclId = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 		}

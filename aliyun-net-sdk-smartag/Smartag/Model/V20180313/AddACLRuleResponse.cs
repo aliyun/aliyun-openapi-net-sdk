@@ -51,6 +51,10 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private long? gmtCreate;
 
+		private string type;
+
+		private string name;
+
 		public string RequestId
 		{
 			get
@@ -204,6 +208,30 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			set	
 			{
 				gmtCreate = value;
+			}
+		}
+
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
 			}
 		}
 	}

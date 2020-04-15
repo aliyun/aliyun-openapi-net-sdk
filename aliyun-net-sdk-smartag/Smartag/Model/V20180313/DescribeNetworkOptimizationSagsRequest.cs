@@ -32,19 +32,24 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public DescribeNetworkOptimizationSagsRequest()
             : base("Smartag", "2018-03-13", "DescribeNetworkOptimizationSags", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private int? pageNumber;
 
 		private string networkOptId;
 
-		private int? pageNo;
+		private int? pageSize;
+
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private int? pageSize;
 
 		private long? ownerId;
 
@@ -61,16 +66,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public int? PageNumber
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return pageNumber;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -87,16 +92,29 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public int? PageNo
+		public int? PageSize
 		{
 			get
 			{
-				return pageNo;
+				return pageSize;
 			}
 			set	
 			{
-				pageNo = value;
-				DictionaryUtil.Add(QueryParameters, "PageNo", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -110,19 +128,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

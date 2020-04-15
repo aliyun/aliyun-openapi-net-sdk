@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 			private string snatCidrBlock;
 
+			private string interworkingStatus;
+
 			private List<DescribeCloudConnectNetworks_Tag> tags;
 
 			public string CcnId
@@ -251,6 +253,18 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 				set	
 				{
 					snatCidrBlock = value;
+				}
+			}
+
+			public string InterworkingStatus
+			{
+				get
+				{
+					return interworkingStatus;
+				}
+				set	
+				{
+					interworkingStatus = value;
 				}
 			}
 

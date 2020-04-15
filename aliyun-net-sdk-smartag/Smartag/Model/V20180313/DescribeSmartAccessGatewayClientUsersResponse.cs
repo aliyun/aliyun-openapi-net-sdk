@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private int? totalCount;
 
-		private int? pageNo;
+		private int? pageNumber;
 
 		private int? pageSize;
 
@@ -59,15 +59,15 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public int? PageNo
+		public int? PageNumber
 		{
 			get
 			{
-				return pageNo;
+				return pageNumber;
 			}
 			set	
 			{
-				pageNo = value;
+				pageNumber = value;
 			}
 		}
 
@@ -105,6 +105,8 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			private string userName;
 
 			private int? bandwidth;
+
+			private int? state;
 
 			public string ClientIp
 			{
@@ -151,6 +153,18 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 				set	
 				{
 					bandwidth = value;
+				}
+			}
+
+			public int? State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
 				}
 			}
 		}

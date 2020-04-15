@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public UnicomSignConfirmRequest()
             : base("Smartag", "2018-03-13", "UnicomSignConfirm", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -40,7 +45,7 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string ownerAccount;
 
-		private List<TmsOrder> tmsOrders;
+		private List<TmsOrder> tmsOrders = new List<TmsOrder>(){ };
 
 		private long? ownerId;
 

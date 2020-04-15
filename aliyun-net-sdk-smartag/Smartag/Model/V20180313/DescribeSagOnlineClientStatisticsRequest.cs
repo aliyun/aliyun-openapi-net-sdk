@@ -32,15 +32,20 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public DescribeSagOnlineClientStatisticsRequest()
             : base("Smartag", "2018-03-13", "DescribeSagOnlineClientStatistics", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
+		private List<string> smartAGIdss = new List<string>(){ };
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private List<string> smartAGIdss;
 
 		private long? ownerId;
 
@@ -54,6 +59,23 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public List<string> SmartAGIdss
+		{
+			get
+			{
+				return smartAGIdss;
+			}
+
+			set
+			{
+				smartAGIdss = value;
+				for (int i = 0; i < smartAGIdss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SmartAGIds." + (i + 1) , smartAGIdss[i]);
+				}
 			}
 		}
 
@@ -80,23 +102,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public List<string> SmartAGIdss
-		{
-			get
-			{
-				return smartAGIdss;
-			}
-
-			set
-			{
-				smartAGIdss = value;
-				for (int i = 0; i < smartAGIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"SmartAGIds." + (i + 1) , smartAGIdss[i]);
-				}
 			}
 		}
 

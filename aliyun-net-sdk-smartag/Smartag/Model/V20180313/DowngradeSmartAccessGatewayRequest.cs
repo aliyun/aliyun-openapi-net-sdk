@@ -32,25 +32,26 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public DowngradeSmartAccessGatewayRequest()
             : base("Smartag", "2018-03-13", "DowngradeSmartAccessGateway", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private bool? autoPay;
-
 		private long? bandWidthSpec;
+
+		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private int? userCount;
-
-		private string smartAGId;
-
 		private long? ownerId;
 
-		private long? dataPlan;
+		private string smartAGId;
 
 		public long? ResourceOwnerId
 		{
@@ -65,19 +66,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public bool? AutoPay
-		{
-			get
-			{
-				return autoPay;
-			}
-			set	
-			{
-				autoPay = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
-			}
-		}
-
 		public long? BandWidthSpec
 		{
 			get
@@ -88,6 +76,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				bandWidthSpec = value;
 				DictionaryUtil.Add(QueryParameters, "BandWidthSpec", value.ToString());
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 
@@ -117,32 +118,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public int? UserCount
-		{
-			get
-			{
-				return userCount;
-			}
-			set	
-			{
-				userCount = value;
-				DictionaryUtil.Add(QueryParameters, "UserCount", value.ToString());
-			}
-		}
-
-		public string SmartAGId
-		{
-			get
-			{
-				return smartAGId;
-			}
-			set	
-			{
-				smartAGId = value;
-				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -156,16 +131,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public long? DataPlan
+		public string SmartAGId
 		{
 			get
 			{
-				return dataPlan;
+				return smartAGId;
 			}
 			set	
 			{
-				dataPlan = value;
-				DictionaryUtil.Add(QueryParameters, "DataPlan", value.ToString());
+				smartAGId = value;
+				DictionaryUtil.Add(QueryParameters, "SmartAGId", value);
 			}
 		}
 

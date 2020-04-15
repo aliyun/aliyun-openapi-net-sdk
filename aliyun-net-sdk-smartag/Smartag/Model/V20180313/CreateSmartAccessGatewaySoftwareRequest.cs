@@ -32,9 +32,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public CreateSmartAccessGatewaySoftwareRequest()
             : base("Smartag", "2018-03-13", "CreateSmartAccessGatewaySoftware", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private int? userCount;
 
 		private int? period;
 
@@ -44,11 +51,9 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private string ownerAccount;
 
-		private int? userCount;
+		private long? ownerId;
 
 		private string chargeType;
-
-		private long? ownerId;
 
 		private long? dataPlan;
 
@@ -62,6 +67,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? UserCount
+		{
+			get
+			{
+				return userCount;
+			}
+			set	
+			{
+				userCount = value;
+				DictionaryUtil.Add(QueryParameters, "UserCount", value.ToString());
 			}
 		}
 
@@ -117,16 +135,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public int? UserCount
+		public long? OwnerId
 		{
 			get
 			{
-				return userCount;
+				return ownerId;
 			}
 			set	
 			{
-				userCount = value;
-				DictionaryUtil.Add(QueryParameters, "UserCount", value.ToString());
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -140,19 +158,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				chargeType = value;
 				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

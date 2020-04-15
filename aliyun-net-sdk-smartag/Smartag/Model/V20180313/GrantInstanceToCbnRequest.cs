@@ -32,21 +32,26 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public GrantInstanceToCbnRequest()
             : base("Smartag", "2018-03-13", "GrantInstanceToCbn", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
+		private string ccnInstanceId;
+
 		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private long? ownerId;
 
 		private string cenUid;
 
 		private string cenInstanceId;
-
-		private string ownerAccount;
-
-		private string ccnInstanceId;
-
-		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -61,6 +66,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string CcnInstanceId
+		{
+			get
+			{
+				return ccnInstanceId;
+			}
+			set	
+			{
+				ccnInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "CcnInstanceId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -71,6 +89,32 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -97,45 +141,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				cenInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "CenInstanceId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string CcnInstanceId
-		{
-			get
-			{
-				return ccnInstanceId;
-			}
-			set	
-			{
-				ccnInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "CcnInstanceId", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

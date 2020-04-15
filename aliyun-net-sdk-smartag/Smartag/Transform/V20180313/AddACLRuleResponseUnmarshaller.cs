@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 			addACLRuleResponse.Policy = context.StringValue("AddACLRule.Policy");
 			addACLRuleResponse.Priority = context.IntegerValue("AddACLRule.Priority");
 			addACLRuleResponse.GmtCreate = context.LongValue("AddACLRule.GmtCreate");
+			addACLRuleResponse.Type = context.StringValue("AddACLRule.Type");
+			addACLRuleResponse.Name = context.StringValue("AddACLRule.Name");
         
 			return addACLRuleResponse;
         }

@@ -32,19 +32,24 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public CreateNetworkOptimizationRequest()
             : base("Smartag", "2018-03-13", "CreateNetworkOptimization", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
+
+		private string ccnId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string name;
-
-		private string ccnId;
-
 		private long? ownerId;
+
+		private string name;
 
 		public long? ResourceOwnerId
 		{
@@ -56,6 +61,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string CcnId
+		{
+			get
+			{
+				return ccnId;
+			}
+			set	
+			{
+				ccnId = value;
+				DictionaryUtil.Add(QueryParameters, "CcnId", value);
 			}
 		}
 
@@ -85,32 +103,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string CcnId
-		{
-			get
-			{
-				return ccnId;
-			}
-			set	
-			{
-				ccnId = value;
-				DictionaryUtil.Add(QueryParameters, "CcnId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -121,6 +113,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

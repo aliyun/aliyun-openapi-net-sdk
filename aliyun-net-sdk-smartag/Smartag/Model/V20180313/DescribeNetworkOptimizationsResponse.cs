@@ -29,7 +29,7 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 
 		private int? totalCount;
 
-		private int? pageNo;
+		private int? pageNumber;
 
 		private int? pageSize;
 
@@ -59,15 +59,15 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public int? PageNo
+		public int? PageNumber
 		{
 			get
 			{
-				return pageNo;
+				return pageNumber;
 			}
 			set	
 			{
-				pageNo = value;
+				pageNumber = value;
 			}
 		}
 

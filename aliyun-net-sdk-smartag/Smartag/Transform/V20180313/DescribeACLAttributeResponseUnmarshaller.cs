@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 				acr.Priority = context.IntegerValue("DescribeACLAttribute.Acrs["+ i +"].Priority");
 				acr.GmtCreate = context.LongValue("DescribeACLAttribute.Acrs["+ i +"].GmtCreate");
 				acr.AclId = context.StringValue("DescribeACLAttribute.Acrs["+ i +"].AclId");
+				acr.Type = context.StringValue("DescribeACLAttribute.Acrs["+ i +"].Type");
+				acr.Name = context.StringValue("DescribeACLAttribute.Acrs["+ i +"].Name");
 
 				describeACLAttributeResponse_acrs.Add(acr);
 			}

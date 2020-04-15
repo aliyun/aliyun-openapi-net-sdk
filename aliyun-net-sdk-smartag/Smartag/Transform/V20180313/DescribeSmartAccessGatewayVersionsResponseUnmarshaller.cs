@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 				smartAGVersion.VersionCode = context.StringValue("DescribeSmartAccessGatewayVersions.SmartAGVersions["+ i +"].VersionCode");
 				smartAGVersion.VersionName = context.StringValue("DescribeSmartAccessGatewayVersions.SmartAGVersions["+ i +"].VersionName");
 				smartAGVersion.CreateTime = context.LongValue("DescribeSmartAccessGatewayVersions.SmartAGVersions["+ i +"].CreateTime");
+				smartAGVersion.Type = context.StringValue("DescribeSmartAccessGatewayVersions.SmartAGVersions["+ i +"].Type");
 
 				describeSmartAccessGatewayVersionsResponse_smartAGVersions.Add(smartAGVersion);
 			}

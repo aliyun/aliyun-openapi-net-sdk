@@ -57,16 +57,32 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 				smartAccessGateway.AclIds = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].AclIds");
 				smartAccessGateway.DataPlan = context.LongValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].DataPlan");
 				smartAccessGateway.UserCount = context.IntegerValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].UserCount");
+				smartAccessGateway.RoutingStrategy = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].RoutingStrategy");
+				smartAccessGateway.UpBandwidthWan = context.IntegerValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].UpBandwidthWan");
+				smartAccessGateway.UpBandwidth4G = context.IntegerValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].UpBandwidth4G");
+				smartAccessGateway.QosIds = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].QosIds");
+				smartAccessGateway.BackupSoftwareVersion = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].BackupSoftwareVersion");
+				smartAccessGateway.SmartAGUid = context.LongValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].SmartAGUid");
+				smartAccessGateway.BackupStatus = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].BackupStatus");
+				smartAccessGateway.ResourceGroupId = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].ResourceGroupId");
+				smartAccessGateway.VpnStatus = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].VpnStatus");
+				smartAccessGateway.IpsecStatus = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].IpsecStatus");
 
-				List<DescribeSmartAccessGatewaysResponse.DescribeSmartAccessGateways_SmartAccessGateway.DescribeSmartAccessGateways_SnatEntry> smartAccessGateway_snatEntries = new List<DescribeSmartAccessGatewaysResponse.DescribeSmartAccessGateways_SmartAccessGateway.DescribeSmartAccessGateways_SnatEntry>();
-				for (int j = 0; j < context.Length("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].SnatEntries.Length"); j++) {
-					DescribeSmartAccessGatewaysResponse.DescribeSmartAccessGateways_SmartAccessGateway.DescribeSmartAccessGateways_SnatEntry snatEntry = new DescribeSmartAccessGatewaysResponse.DescribeSmartAccessGateways_SmartAccessGateway.DescribeSmartAccessGateways_SnatEntry();
-					snatEntry.CidrBlock = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].SnatEntries["+ j +"].CidrBlock");
-					snatEntry.SnatIp = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].SnatEntries["+ j +"].SnatIp");
+				List<DescribeSmartAccessGatewaysResponse.DescribeSmartAccessGateways_SmartAccessGateway.DescribeSmartAccessGateways_Link> smartAccessGateway_links = new List<DescribeSmartAccessGatewaysResponse.DescribeSmartAccessGateways_SmartAccessGateway.DescribeSmartAccessGateways_Link>();
+				for (int j = 0; j < context.Length("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].Links.Length"); j++) {
+					DescribeSmartAccessGatewaysResponse.DescribeSmartAccessGateways_SmartAccessGateway.DescribeSmartAccessGateways_Link link = new DescribeSmartAccessGatewaysResponse.DescribeSmartAccessGateways_SmartAccessGateway.DescribeSmartAccessGateways_Link();
+					link.InstanceId = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].Links["+ j +"].InstanceId");
+					link.Type = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].Links["+ j +"].Type");
+					link.Status = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].Links["+ j +"].Status");
+					link.EndTime = context.LongValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].Links["+ j +"].EndTime");
+					link.Bandwidth = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].Links["+ j +"].Bandwidth");
+					link.RelateInstanceId = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].Links["+ j +"].RelateInstanceId");
+					link.RelateInstanceRegionId = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].Links["+ j +"].RelateInstanceRegionId");
+					link.CommodityType = context.StringValue("DescribeSmartAccessGateways.SmartAccessGateways["+ i +"].Links["+ j +"].CommodityType");
 
-					smartAccessGateway_snatEntries.Add(snatEntry);
+					smartAccessGateway_links.Add(link);
 				}
-				smartAccessGateway.SnatEntries = smartAccessGateway_snatEntries;
+				smartAccessGateway.Links = smartAccessGateway_links;
 
 				describeSmartAccessGatewaysResponse_smartAccessGateways.Add(smartAccessGateway);
 			}

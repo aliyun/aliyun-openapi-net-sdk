@@ -32,19 +32,24 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
         public SetSagRouteableAddressRequest()
             : base("Smartag", "2018-03-13", "SetSagRouteableAddress", "smartag", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string resourceOwnerAccount;
+		private string routeableAddress;
 
-		private string sagId;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string routeableAddress;
+		private string sagId;
 
 		public long? ResourceOwnerId
 		{
@@ -59,6 +64,19 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
+		public string RouteableAddress
+		{
+			get
+			{
+				return routeableAddress;
+			}
+			set	
+			{
+				routeableAddress = value;
+				DictionaryUtil.Add(QueryParameters, "RouteableAddress", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -69,19 +87,6 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string SagId
-		{
-			get
-			{
-				return sagId;
-			}
-			set	
-			{
-				sagId = value;
-				DictionaryUtil.Add(QueryParameters, "SagId", value);
 			}
 		}
 
@@ -111,16 +116,16 @@ namespace Aliyun.Acs.Smartag.Model.V20180313
 			}
 		}
 
-		public string RouteableAddress
+		public string SagId
 		{
 			get
 			{
-				return routeableAddress;
+				return sagId;
 			}
 			set	
 			{
-				routeableAddress = value;
-				DictionaryUtil.Add(QueryParameters, "RouteableAddress", value);
+				sagId = value;
+				DictionaryUtil.Add(QueryParameters, "SagId", value);
 			}
 		}
 

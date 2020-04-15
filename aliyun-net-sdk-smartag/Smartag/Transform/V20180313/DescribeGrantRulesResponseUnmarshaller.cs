@@ -41,7 +41,7 @@ namespace Aliyun.Acs.Smartag.Transform.V20180313
 				DescribeGrantRulesResponse.DescribeGrantRules_GrantRule grantRule = new DescribeGrantRulesResponse.DescribeGrantRules_GrantRule();
 				grantRule.GrantRuleId = context.StringValue("DescribeGrantRules.GrantRules["+ i +"].GrantRuleId");
 				grantRule.CenUid = context.LongValue("DescribeGrantRules.GrantRules["+ i +"].CenUid");
-				grantRule.CcnId = context.LongValue("DescribeGrantRules.GrantRules["+ i +"].CcnId");
+				grantRule.CcnUid = context.LongValue("DescribeGrantRules.GrantRules["+ i +"].CcnUid");
 				grantRule.CenInstanceId = context.StringValue("DescribeGrantRules.GrantRules["+ i +"].CenInstanceId");
 				grantRule.CcnInstanceId = context.StringValue("DescribeGrantRules.GrantRules["+ i +"].CcnInstanceId");
 				grantRule.GmtCreate = context.LongValue("DescribeGrantRules.GrantRules["+ i +"].GmtCreate");
