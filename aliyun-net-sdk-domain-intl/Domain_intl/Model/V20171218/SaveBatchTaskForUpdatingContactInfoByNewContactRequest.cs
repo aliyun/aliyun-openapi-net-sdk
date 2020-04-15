@@ -36,21 +36,9 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string country;
 
-		private string address;
-
-		private string telArea;
-
-		private string contactType;
-
 		private string city;
 
-		private List<string> domainNames;
-
-		private string telephone;
-
 		private bool? transferOutProhibited;
-
-		private string registrantOrganization;
 
 		private string telExt;
 
@@ -58,11 +46,23 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string postalCode;
 
-		private string userClientIp;
-
 		private string lang;
 
 		private string email;
+
+		private string address;
+
+		private string telArea;
+
+		private string contactType;
+
+		private List<string> domainNames = new List<string>(){ };
+
+		private string telephone;
+
+		private string registrantOrganization;
+
+		private string userClientIp;
 
 		private string registrantName;
 
@@ -79,45 +79,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string Address
-		{
-			get
-			{
-				return address;
-			}
-			set	
-			{
-				address = value;
-				DictionaryUtil.Add(QueryParameters, "Address", value);
-			}
-		}
-
-		public string TelArea
-		{
-			get
-			{
-				return telArea;
-			}
-			set	
-			{
-				telArea = value;
-				DictionaryUtil.Add(QueryParameters, "TelArea", value);
-			}
-		}
-
-		public string ContactType
-		{
-			get
-			{
-				return contactType;
-			}
-			set	
-			{
-				contactType = value;
-				DictionaryUtil.Add(QueryParameters, "ContactType", value);
-			}
-		}
-
 		public string City
 		{
 			get
@@ -131,36 +92,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public List<string> DomainNames
-		{
-			get
-			{
-				return domainNames;
-			}
-
-			set
-			{
-				domainNames = value;
-				for (int i = 0; i < domainNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DomainName." + (i + 1) , domainNames[i]);
-				}
-			}
-		}
-
-		public string Telephone
-		{
-			get
-			{
-				return telephone;
-			}
-			set	
-			{
-				telephone = value;
-				DictionaryUtil.Add(QueryParameters, "Telephone", value);
-			}
-		}
-
 		public bool? TransferOutProhibited
 		{
 			get
@@ -171,19 +102,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				transferOutProhibited = value;
 				DictionaryUtil.Add(QueryParameters, "TransferOutProhibited", value.ToString());
-			}
-		}
-
-		public string RegistrantOrganization
-		{
-			get
-			{
-				return registrantOrganization;
-			}
-			set	
-			{
-				registrantOrganization = value;
-				DictionaryUtil.Add(QueryParameters, "RegistrantOrganization", value);
 			}
 		}
 
@@ -226,19 +144,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -262,6 +167,101 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				email = value;
 				DictionaryUtil.Add(QueryParameters, "Email", value);
+			}
+		}
+
+		public string Address
+		{
+			get
+			{
+				return address;
+			}
+			set	
+			{
+				address = value;
+				DictionaryUtil.Add(QueryParameters, "Address", value);
+			}
+		}
+
+		public string TelArea
+		{
+			get
+			{
+				return telArea;
+			}
+			set	
+			{
+				telArea = value;
+				DictionaryUtil.Add(QueryParameters, "TelArea", value);
+			}
+		}
+
+		public string ContactType
+		{
+			get
+			{
+				return contactType;
+			}
+			set	
+			{
+				contactType = value;
+				DictionaryUtil.Add(QueryParameters, "ContactType", value);
+			}
+		}
+
+		public List<string> DomainNames
+		{
+			get
+			{
+				return domainNames;
+			}
+
+			set
+			{
+				domainNames = value;
+				for (int i = 0; i < domainNames.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DomainName." + (i + 1) , domainNames[i]);
+				}
+			}
+		}
+
+		public string Telephone
+		{
+			get
+			{
+				return telephone;
+			}
+			set	
+			{
+				telephone = value;
+				DictionaryUtil.Add(QueryParameters, "Telephone", value);
+			}
+		}
+
+		public string RegistrantOrganization
+		{
+			get
+			{
+				return registrantOrganization;
+			}
+			set	
+			{
+				registrantOrganization = value;
+				DictionaryUtil.Add(QueryParameters, "RegistrantOrganization", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

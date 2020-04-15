@@ -34,28 +34,15 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
         {
         }
 
-		private string userClientIp;
-
 		private long? registrantProfileId;
 
-		private List<string> domainNames;
+		private List<string> domainNames = new List<string>(){ };
 
 		private bool? transferOutProhibited;
 
-		private string lang;
+		private string userClientIp;
 
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
+		private string lang;
 
 		public long? RegistrantProfileId
 		{
@@ -97,6 +84,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				transferOutProhibited = value;
 				DictionaryUtil.Add(QueryParameters, "TransferOutProhibited", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

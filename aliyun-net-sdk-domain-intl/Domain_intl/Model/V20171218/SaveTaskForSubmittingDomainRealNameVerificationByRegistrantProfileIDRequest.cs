@@ -34,41 +34,15 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
         {
         }
 
-		private string instanceId;
-
-		private string userClientIp;
-
 		private string domainName;
 
 		private long? registrantProfileId;
 
+		private string instanceId;
+
+		private string userClientIp;
+
 		private string lang;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public string DomainName
 		{
@@ -93,6 +67,32 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				registrantProfileId = value;
 				DictionaryUtil.Add(QueryParameters, "RegistrantProfileId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

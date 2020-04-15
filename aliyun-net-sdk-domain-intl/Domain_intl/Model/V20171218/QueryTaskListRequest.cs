@@ -34,30 +34,17 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
         {
         }
 
-		private long? beginCreateTime;
-
 		private long? endCreateTime;
+
+		private int? pageNum;
+
+		private long? beginCreateTime;
 
 		private string userClientIp;
 
 		private int? pageSize;
 
 		private string lang;
-
-		private int? pageNum;
-
-		public long? BeginCreateTime
-		{
-			get
-			{
-				return beginCreateTime;
-			}
-			set	
-			{
-				beginCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "BeginCreateTime", value.ToString());
-			}
-		}
 
 		public long? EndCreateTime
 		{
@@ -69,6 +56,32 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				endCreateTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndCreateTime", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public long? BeginCreateTime
+		{
+			get
+			{
+				return beginCreateTime;
+			}
+			set	
+			{
+				beginCreateTime = value;
+				DictionaryUtil.Add(QueryParameters, "BeginCreateTime", value.ToString());
 			}
 		}
 
@@ -108,19 +121,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 

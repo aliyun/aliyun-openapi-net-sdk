@@ -34,28 +34,15 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
         {
         }
 
-		private string instanceId;
+		private List<string> ips = new List<string>(){ };
 
-		private List<string> ips;
+		private string instanceId;
 
 		private string dnsName;
 
 		private string userClientIp;
 
 		private string lang;
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
 
 		public List<string> Ips
 		{
@@ -71,6 +58,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				{
 					DictionaryUtil.Add(QueryParameters,"Ip." + (i + 1) , ips[i]);
 				}
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 

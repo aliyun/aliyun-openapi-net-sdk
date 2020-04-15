@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Domain_intl.Transform.V20171218
 				taskInfo.TaskNo = context.StringValue("QueryTaskList.Data["+ i +"].TaskNo");
 				taskInfo.TaskTypeDescription = context.StringValue("QueryTaskList.Data["+ i +"].TaskTypeDescription");
 				taskInfo.TaskStatusCode = context.IntegerValue("QueryTaskList.Data["+ i +"].TaskStatusCode");
+				taskInfo.TaskCancelStatus = context.StringValue("QueryTaskList.Data["+ i +"].TaskCancelStatus");
+				taskInfo.TaskCancelStatusCode = context.IntegerValue("QueryTaskList.Data["+ i +"].TaskCancelStatusCode");
 
 				queryTaskListResponse_data.Add(taskInfo);
 			}

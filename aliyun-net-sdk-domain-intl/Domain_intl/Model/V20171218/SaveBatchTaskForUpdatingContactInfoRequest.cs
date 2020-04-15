@@ -36,13 +36,13 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string contactType;
 
-		private string userClientIp;
-
 		private long? registrantProfileId;
 
-		private List<string> domainNames;
+		private List<string> domainNames = new List<string>(){ };
 
 		private bool? addTransferLock;
+
+		private string userClientIp;
 
 		private string lang;
 
@@ -56,19 +56,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				contactType = value;
 				DictionaryUtil.Add(QueryParameters, "ContactType", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -112,6 +99,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				addTransferLock = value;
 				DictionaryUtil.Add(QueryParameters, "AddTransferLock", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

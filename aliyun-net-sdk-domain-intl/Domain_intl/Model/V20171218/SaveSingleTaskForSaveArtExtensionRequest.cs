@@ -34,29 +34,68 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
         {
         }
 
+		private string subject;
+
+		private string title;
+
+		private string dateOrPeriod;
+
 		private string reference;
 
 		private string features;
 
 		private string inscriptionsAndMarkings;
 
-		private string subject;
+		private string objectType;
+
+		private string lang;
 
 		private string domainName;
 
 		private string maker;
 
-		private string objectType;
-
-		private string title;
-
-		private string lang;
-
 		private string materialsAndTechniques;
 
-		private string dateOrPeriod;
-
 		private string dimensions;
+
+		public string Subject
+		{
+			get
+			{
+				return subject;
+			}
+			set	
+			{
+				subject = value;
+				DictionaryUtil.Add(QueryParameters, "Subject", value);
+			}
+		}
+
+		public string Title
+		{
+			get
+			{
+				return title;
+			}
+			set	
+			{
+				title = value;
+				DictionaryUtil.Add(QueryParameters, "Title", value);
+			}
+		}
+
+		public string DateOrPeriod
+		{
+			get
+			{
+				return dateOrPeriod;
+			}
+			set	
+			{
+				dateOrPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "DateOrPeriod", value);
+			}
+		}
 
 		public string Reference
 		{
@@ -97,16 +136,29 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string Subject
+		public string ObjectType
 		{
 			get
 			{
-				return subject;
+				return objectType;
 			}
 			set	
 			{
-				subject = value;
-				DictionaryUtil.Add(QueryParameters, "Subject", value);
+				objectType = value;
+				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -136,45 +188,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string ObjectType
-		{
-			get
-			{
-				return objectType;
-			}
-			set	
-			{
-				objectType = value;
-				DictionaryUtil.Add(QueryParameters, "ObjectType", value);
-			}
-		}
-
-		public string Title
-		{
-			get
-			{
-				return title;
-			}
-			set	
-			{
-				title = value;
-				DictionaryUtil.Add(QueryParameters, "Title", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
 		public string MaterialsAndTechniques
 		{
 			get
@@ -185,19 +198,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				materialsAndTechniques = value;
 				DictionaryUtil.Add(QueryParameters, "MaterialsAndTechniques", value);
-			}
-		}
-
-		public string DateOrPeriod
-		{
-			get
-			{
-				return dateOrPeriod;
-			}
-			set	
-			{
-				dateOrPeriod = value;
-				DictionaryUtil.Add(QueryParameters, "DateOrPeriod", value);
 			}
 		}
 

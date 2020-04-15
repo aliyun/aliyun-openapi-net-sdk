@@ -37,11 +37,11 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string identityCredentialType;
 
-		private string userClientIp;
-
 		private string identityCredential;
 
-		private List<string> domainNames;
+		private List<string> domainNames = new List<string>(){ };
+
+		private string userClientIp;
 
 		private string lang;
 
@@ -57,19 +57,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				identityCredentialType = value;
 				DictionaryUtil.Add(QueryParameters, "IdentityCredentialType", value);
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -100,6 +87,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				{
 					DictionaryUtil.Add(QueryParameters,"DomainName." + (i + 1) , domainNames[i]);
 				}
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

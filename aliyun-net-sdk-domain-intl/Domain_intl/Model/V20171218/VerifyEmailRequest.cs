@@ -34,11 +34,24 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
         {
         }
 
+		private string token;
+
 		private string userClientIp;
 
 		private string lang;
 
-		private string token;
+		public string Token
+		{
+			get
+			{
+				return token;
+			}
+			set	
+			{
+				token = value;
+				DictionaryUtil.Add(QueryParameters, "Token", value);
+			}
+		}
 
 		public string UserClientIp
 		{
@@ -63,19 +76,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string Token
-		{
-			get
-			{
-				return token;
-			}
-			set	
-			{
-				token = value;
-				DictionaryUtil.Add(QueryParameters, "Token", value);
 			}
 		}
 

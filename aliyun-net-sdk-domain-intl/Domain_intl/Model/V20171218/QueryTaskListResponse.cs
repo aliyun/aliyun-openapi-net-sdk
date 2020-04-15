@@ -156,6 +156,10 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 			private int? taskStatusCode;
 
+			private string taskCancelStatus;
+
+			private int? taskCancelStatusCode;
+
 			public string TaskType
 			{
 				get
@@ -249,6 +253,30 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				set	
 				{
 					taskStatusCode = value;
+				}
+			}
+
+			public string TaskCancelStatus
+			{
+				get
+				{
+					return taskCancelStatus;
+				}
+				set	
+				{
+					taskCancelStatus = value;
+				}
+			}
+
+			public int? TaskCancelStatusCode
+			{
+				get
+				{
+					return taskCancelStatusCode;
+				}
+				set	
+				{
+					taskCancelStatusCode = value;
 				}
 			}
 		}

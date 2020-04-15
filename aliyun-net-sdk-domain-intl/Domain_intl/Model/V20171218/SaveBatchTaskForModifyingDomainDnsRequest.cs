@@ -34,28 +34,15 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
         {
         }
 
-		private string userClientIp;
-
-		private List<string> domainNames;
-
-		private List<string> domainNameServers;
-
-		private string lang;
+		private List<string> domainNames = new List<string>(){ };
 
 		private bool? aliyunDns;
 
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
+		private string userClientIp;
+
+		private List<string> domainNameServers = new List<string>(){ };
+
+		private string lang;
 
 		public List<string> DomainNames
 		{
@@ -71,6 +58,32 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 				{
 					DictionaryUtil.Add(QueryParameters,"DomainName." + (i + 1) , domainNames[i]);
 				}
+			}
+		}
+
+		public bool? AliyunDns
+		{
+			get
+			{
+				return aliyunDns;
+			}
+			set	
+			{
+				aliyunDns = value;
+				DictionaryUtil.Add(QueryParameters, "AliyunDns", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -101,19 +114,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public bool? AliyunDns
-		{
-			get
-			{
-				return aliyunDns;
-			}
-			set	
-			{
-				aliyunDns = value;
-				DictionaryUtil.Add(QueryParameters, "AliyunDns", value.ToString());
 			}
 		}
 

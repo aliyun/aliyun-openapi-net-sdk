@@ -36,19 +36,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private int? subscriptionDuration;
 
-		private string promotionNo;
+		private string couponNo;
 
 		private long? currentExpirationDate;
 
-		private string userClientIp;
+		private string lang;
 
 		private string domainName;
 
-		private string couponNo;
-
 		private bool? useCoupon;
 
-		private string lang;
+		private string promotionNo;
+
+		private string userClientIp;
 
 		private bool? usePromotion;
 
@@ -65,16 +65,16 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string PromotionNo
+		public string CouponNo
 		{
 			get
 			{
-				return promotionNo;
+				return couponNo;
 			}
 			set	
 			{
-				promotionNo = value;
-				DictionaryUtil.Add(QueryParameters, "PromotionNo", value);
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
 			}
 		}
 
@@ -91,16 +91,16 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string UserClientIp
+		public string Lang
 		{
 			get
 			{
-				return userClientIp;
+				return lang;
 			}
 			set	
 			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -117,19 +117,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string CouponNo
-		{
-			get
-			{
-				return couponNo;
-			}
-			set	
-			{
-				couponNo = value;
-				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
-			}
-		}
-
 		public bool? UseCoupon
 		{
 			get
@@ -143,16 +130,29 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string Lang
+		public string PromotionNo
 		{
 			get
 			{
-				return lang;
+				return promotionNo;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				promotionNo = value;
+				DictionaryUtil.Add(QueryParameters, "PromotionNo", value);
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

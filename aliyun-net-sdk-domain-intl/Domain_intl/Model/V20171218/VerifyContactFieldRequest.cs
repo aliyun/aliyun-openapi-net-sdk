@@ -36,11 +36,21 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string country;
 
+		private string city;
+
+		private string telExt;
+
+		private string province;
+
+		private string postalCode;
+
+		private string lang;
+
+		private string email;
+
 		private string address;
 
 		private string telArea;
-
-		private string city;
 
 		private string domainName;
 
@@ -50,17 +60,7 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string registrantOrganization;
 
-		private string telExt;
-
-		private string province;
-
-		private string postalCode;
-
 		private string userClientIp;
-
-		private string lang;
-
-		private string email;
 
 		private string registrantName;
 
@@ -74,6 +74,84 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				country = value;
 				DictionaryUtil.Add(QueryParameters, "Country", value);
+			}
+		}
+
+		public string City
+		{
+			get
+			{
+				return city;
+			}
+			set	
+			{
+				city = value;
+				DictionaryUtil.Add(QueryParameters, "City", value);
+			}
+		}
+
+		public string TelExt
+		{
+			get
+			{
+				return telExt;
+			}
+			set	
+			{
+				telExt = value;
+				DictionaryUtil.Add(QueryParameters, "TelExt", value);
+			}
+		}
+
+		public string Province
+		{
+			get
+			{
+				return province;
+			}
+			set	
+			{
+				province = value;
+				DictionaryUtil.Add(QueryParameters, "Province", value);
+			}
+		}
+
+		public string PostalCode
+		{
+			get
+			{
+				return postalCode;
+			}
+			set	
+			{
+				postalCode = value;
+				DictionaryUtil.Add(QueryParameters, "PostalCode", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string Email
+		{
+			get
+			{
+				return email;
+			}
+			set	
+			{
+				email = value;
+				DictionaryUtil.Add(QueryParameters, "Email", value);
 			}
 		}
 
@@ -100,19 +178,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				telArea = value;
 				DictionaryUtil.Add(QueryParameters, "TelArea", value);
-			}
-		}
-
-		public string City
-		{
-			get
-			{
-				return city;
-			}
-			set	
-			{
-				city = value;
-				DictionaryUtil.Add(QueryParameters, "City", value);
 			}
 		}
 
@@ -168,45 +233,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string TelExt
-		{
-			get
-			{
-				return telExt;
-			}
-			set	
-			{
-				telExt = value;
-				DictionaryUtil.Add(QueryParameters, "TelExt", value);
-			}
-		}
-
-		public string Province
-		{
-			get
-			{
-				return province;
-			}
-			set	
-			{
-				province = value;
-				DictionaryUtil.Add(QueryParameters, "Province", value);
-			}
-		}
-
-		public string PostalCode
-		{
-			get
-			{
-				return postalCode;
-			}
-			set	
-			{
-				postalCode = value;
-				DictionaryUtil.Add(QueryParameters, "PostalCode", value);
-			}
-		}
-
 		public string UserClientIp
 		{
 			get
@@ -217,32 +243,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				userClientIp = value;
 				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string Email
-		{
-			get
-			{
-				return email;
-			}
-			set	
-			{
-				email = value;
-				DictionaryUtil.Add(QueryParameters, "Email", value);
 			}
 		}
 

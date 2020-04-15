@@ -34,13 +34,13 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
         {
         }
 
+		private string domainName;
+
 		private int? taskStatus;
 
 		private string userClientIp;
 
 		private string taskNo;
-
-		private string domainName;
 
 		private int? pageSize;
 
@@ -49,6 +49,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 		private string lang;
 
 		private string domainNameCursor;
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
 
 		public int? TaskStatus
 		{
@@ -86,19 +99,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				taskNo = value;
 				DictionaryUtil.Add(QueryParameters, "TaskNo", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 

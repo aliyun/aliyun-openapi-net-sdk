@@ -36,9 +36,9 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private bool? fetchImage;
 
-		private string userClientIp;
-
 		private long? registrantProfileId;
+
+		private string userClientIp;
 
 		private string lang;
 
@@ -55,19 +55,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
-
 		public long? RegistrantProfileId
 		{
 			get
@@ -78,6 +65,19 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				registrantProfileId = value;
 				DictionaryUtil.Add(QueryParameters, "RegistrantProfileId", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

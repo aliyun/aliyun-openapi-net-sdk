@@ -34,23 +34,13 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
         {
         }
 
-		private long? endExpirationDate;
-
 		private string productDomainType;
 
 		private string orderKeyType;
 
-		private string domainName;
-
-		private long? startExpirationDate;
-
 		private int? pageNum;
 
 		private string orderByType;
-
-		private long? endRegistrationDate;
-
-		private string userClientIp;
 
 		private int? pageSize;
 
@@ -58,20 +48,17 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string queryType;
 
-		private long? startRegistrationDate;
+		private long? endExpirationDate;
 
-		public long? EndExpirationDate
-		{
-			get
-			{
-				return endExpirationDate;
-			}
-			set	
-			{
-				endExpirationDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndExpirationDate", value.ToString());
-			}
-		}
+		private string domainName;
+
+		private long? startExpirationDate;
+
+		private long? endRegistrationDate;
+
+		private string userClientIp;
+
+		private long? startRegistrationDate;
 
 		public string ProductDomainType
 		{
@@ -99,32 +86,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public long? StartExpirationDate
-		{
-			get
-			{
-				return startExpirationDate;
-			}
-			set	
-			{
-				startExpirationDate = value;
-				DictionaryUtil.Add(QueryParameters, "StartExpirationDate", value.ToString());
-			}
-		}
-
 		public int? PageNum
 		{
 			get
@@ -148,32 +109,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				orderByType = value;
 				DictionaryUtil.Add(QueryParameters, "OrderByType", value);
-			}
-		}
-
-		public long? EndRegistrationDate
-		{
-			get
-			{
-				return endRegistrationDate;
-			}
-			set	
-			{
-				endRegistrationDate = value;
-				DictionaryUtil.Add(QueryParameters, "EndRegistrationDate", value.ToString());
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
@@ -213,6 +148,71 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				queryType = value;
 				DictionaryUtil.Add(QueryParameters, "QueryType", value);
+			}
+		}
+
+		public long? EndExpirationDate
+		{
+			get
+			{
+				return endExpirationDate;
+			}
+			set	
+			{
+				endExpirationDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndExpirationDate", value.ToString());
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+			}
+		}
+
+		public long? StartExpirationDate
+		{
+			get
+			{
+				return startExpirationDate;
+			}
+			set	
+			{
+				startExpirationDate = value;
+				DictionaryUtil.Add(QueryParameters, "StartExpirationDate", value.ToString());
+			}
+		}
+
+		public long? EndRegistrationDate
+		{
+			get
+			{
+				return endRegistrationDate;
+			}
+			set	
+			{
+				endRegistrationDate = value;
+				DictionaryUtil.Add(QueryParameters, "EndRegistrationDate", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 

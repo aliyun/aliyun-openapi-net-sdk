@@ -34,9 +34,13 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
         {
         }
 
-		private long? beginCreateTime;
-
 		private long? endCreateTime;
+
+		private int? pageNum;
+
+		private int? verificationStatus;
+
+		private long? beginCreateTime;
 
 		private int? pageSize;
 
@@ -44,24 +48,7 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 
 		private string lang;
 
-		private int? pageNum;
-
 		private string email;
-
-		private int? verificationStatus;
-
-		public long? BeginCreateTime
-		{
-			get
-			{
-				return beginCreateTime;
-			}
-			set	
-			{
-				beginCreateTime = value;
-				DictionaryUtil.Add(QueryParameters, "BeginCreateTime", value.ToString());
-			}
-		}
 
 		public long? EndCreateTime
 		{
@@ -73,6 +60,45 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				endCreateTime = value;
 				DictionaryUtil.Add(QueryParameters, "EndCreateTime", value.ToString());
+			}
+		}
+
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public int? VerificationStatus
+		{
+			get
+			{
+				return verificationStatus;
+			}
+			set	
+			{
+				verificationStatus = value;
+				DictionaryUtil.Add(QueryParameters, "VerificationStatus", value.ToString());
+			}
+		}
+
+		public long? BeginCreateTime
+		{
+			get
+			{
+				return beginCreateTime;
+			}
+			set	
+			{
+				beginCreateTime = value;
+				DictionaryUtil.Add(QueryParameters, "BeginCreateTime", value.ToString());
 			}
 		}
 
@@ -115,19 +141,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			}
 		}
 
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
 		public string Email
 		{
 			get
@@ -138,19 +151,6 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				email = value;
 				DictionaryUtil.Add(QueryParameters, "Email", value);
-			}
-		}
-
-		public int? VerificationStatus
-		{
-			get
-			{
-				return verificationStatus;
-			}
-			set	
-			{
-				verificationStatus = value;
-				DictionaryUtil.Add(QueryParameters, "VerificationStatus", value.ToString());
 			}
 		}
 

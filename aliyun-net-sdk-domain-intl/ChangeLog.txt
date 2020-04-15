@@ -1,3 +1,6 @@
+2020-04-15 Version: 1.6.1
+- Fixed requeired Newtownsoft_Json.
+
 2019-05-13 Version: 1.6.0
 1, Add three new apis, SaveSingleTaskForSaveArtExtension, QueryArtExtension and CancelTask.
 

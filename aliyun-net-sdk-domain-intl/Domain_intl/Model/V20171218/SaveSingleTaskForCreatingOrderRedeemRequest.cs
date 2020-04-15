@@ -34,60 +34,21 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
         {
         }
 
-		private string promotionNo;
-
-		private long? currentExpirationDate;
-
-		private string userClientIp;
-
 		private string domainName;
 
 		private string couponNo;
 
 		private bool? useCoupon;
 
+		private string promotionNo;
+
+		private long? currentExpirationDate;
+
+		private string userClientIp;
+
 		private string lang;
 
 		private bool? usePromotion;
-
-		public string PromotionNo
-		{
-			get
-			{
-				return promotionNo;
-			}
-			set	
-			{
-				promotionNo = value;
-				DictionaryUtil.Add(QueryParameters, "PromotionNo", value);
-			}
-		}
-
-		public long? CurrentExpirationDate
-		{
-			get
-			{
-				return currentExpirationDate;
-			}
-			set	
-			{
-				currentExpirationDate = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentExpirationDate", value.ToString());
-			}
-		}
-
-		public string UserClientIp
-		{
-			get
-			{
-				return userClientIp;
-			}
-			set	
-			{
-				userClientIp = value;
-				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
-			}
-		}
 
 		public string DomainName
 		{
@@ -125,6 +86,45 @@ namespace Aliyun.Acs.Domain_intl.Model.V20171218
 			{
 				useCoupon = value;
 				DictionaryUtil.Add(QueryParameters, "UseCoupon", value.ToString());
+			}
+		}
+
+		public string PromotionNo
+		{
+			get
+			{
+				return promotionNo;
+			}
+			set	
+			{
+				promotionNo = value;
+				DictionaryUtil.Add(QueryParameters, "PromotionNo", value);
+			}
+		}
+
+		public long? CurrentExpirationDate
+		{
+			get
+			{
+				return currentExpirationDate;
+			}
+			set	
+			{
+				currentExpirationDate = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentExpirationDate", value.ToString());
+			}
+		}
+
+		public string UserClientIp
+		{
+			get
+			{
+				return userClientIp;
+			}
+			set	
+			{
+				userClientIp = value;
+				DictionaryUtil.Add(QueryParameters, "UserClientIp", value);
 			}
 		}
 
