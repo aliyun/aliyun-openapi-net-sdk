@@ -98,7 +98,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeColumns_Column
 		{
 
-			private long? id;
+			private string id;
 
 			private string name;
 
@@ -128,7 +128,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string departName;
 
-			public long? Id
+			public string Id
 			{
 				get
 				{

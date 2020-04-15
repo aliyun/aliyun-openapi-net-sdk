@@ -112,7 +112,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private bool? protection;
 
-			private int? labelsec;
+			private bool? labelsec;
 
 			private string odpsRiskLevelName;
 
@@ -131,6 +131,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			private int? sensitiveCount;
 
 			private string acl;
+
+			private int? s2Count;
+
+			private int? s3Count;
+
+			private long? lastFinishTime;
+
+			private string regionName;
+
+			private string regionId;
+
+			private string engineType;
 
 			public long? Id
 			{
@@ -216,7 +228,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public int? Labelsec
+			public bool? Labelsec
 			{
 				get
 				{
@@ -333,6 +345,78 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					acl = value;
+				}
+			}
+
+			public int? S2Count
+			{
+				get
+				{
+					return s2Count;
+				}
+				set	
+				{
+					s2Count = value;
+				}
+			}
+
+			public int? S3Count
+			{
+				get
+				{
+					return s3Count;
+				}
+				set	
+				{
+					s3Count = value;
+				}
+			}
+
+			public long? LastFinishTime
+			{
+				get
+				{
+					return lastFinishTime;
+				}
+				set	
+				{
+					lastFinishTime = value;
+				}
+			}
+
+			public string RegionName
+			{
+				get
+				{
+					return regionName;
+				}
+				set	
+				{
+					regionName = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public string EngineType
+			{
+				get
+				{
+					return engineType;
+				}
+				set	
+				{
+					engineType = value;
 				}
 			}
 		}

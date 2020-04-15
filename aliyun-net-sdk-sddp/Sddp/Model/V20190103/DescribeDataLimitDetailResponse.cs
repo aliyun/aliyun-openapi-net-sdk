@@ -66,8 +66,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string userName;
 
-			private string password;
-
 			private long? gmtCreate;
 
 			private string connector;
@@ -75,6 +73,16 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			private int? checkStatus;
 
 			private string checkStatusName;
+
+			private long? resourceType;
+
+			private string resourceTypeCode;
+
+			private int? auditStatus;
+
+			private int? logStoreDay;
+
+			private int? port;
 
 			public string RegionId
 			{
@@ -136,18 +144,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public string Password
-			{
-				get
-				{
-					return password;
-				}
-				set	
-				{
-					password = value;
-				}
-			}
-
 			public long? GmtCreate
 			{
 				get
@@ -193,6 +189,66 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					checkStatusName = value;
+				}
+			}
+
+			public long? ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
+
+			public string ResourceTypeCode
+			{
+				get
+				{
+					return resourceTypeCode;
+				}
+				set	
+				{
+					resourceTypeCode = value;
+				}
+			}
+
+			public int? AuditStatus
+			{
+				get
+				{
+					return auditStatus;
+				}
+				set	
+				{
+					auditStatus = value;
+				}
+			}
+
+			public int? LogStoreDay
+			{
+				get
+				{
+					return logStoreDay;
+				}
+				set	
+				{
+					logStoreDay = value;
+				}
+			}
+
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
 				}
 			}
 		}

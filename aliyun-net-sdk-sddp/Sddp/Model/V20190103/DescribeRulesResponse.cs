@@ -130,6 +130,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string departName;
 
+			private string statExpress;
+
+			private long? productId;
+
+			private int? hitTotalCount;
+
+			private string productCode;
+
+			private int? warnLevel;
+
+			private string majorKey;
+
 			public long? Id
 			{
 				get
@@ -319,6 +331,78 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					departName = value;
+				}
+			}
+
+			public string StatExpress
+			{
+				get
+				{
+					return statExpress;
+				}
+				set	
+				{
+					statExpress = value;
+				}
+			}
+
+			public long? ProductId
+			{
+				get
+				{
+					return productId;
+				}
+				set	
+				{
+					productId = value;
+				}
+			}
+
+			public int? HitTotalCount
+			{
+				get
+				{
+					return hitTotalCount;
+				}
+				set	
+				{
+					hitTotalCount = value;
+				}
+			}
+
+			public string ProductCode
+			{
+				get
+				{
+					return productCode;
+				}
+				set	
+				{
+					productCode = value;
+				}
+			}
+
+			public int? WarnLevel
+			{
+				get
+				{
+					return warnLevel;
+				}
+				set	
+				{
+					warnLevel = value;
+				}
+			}
+
+			public string MajorKey
+			{
+				get
+				{
+					return majorKey;
+				}
+				set	
+				{
+					majorKey = value;
 				}
 			}
 		}

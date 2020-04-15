@@ -32,13 +32,69 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
         public DescribeDataLimitsRequest()
             : base("Sddp", "2019-01-03", "DescribeDataLimits", "sddp", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string parentId;
+
+		private int? pageSize;
+
+		private int? checkStatus;
 
 		private string lang;
 
+		private string serviceRegionId;
+
+		private string engineType;
+
+		private int? auditStatus;
+
+		private int? currentPage;
+
 		private int? resourceType;
 
-		private string parentId;
+		public string ParentId
+		{
+			get
+			{
+				return parentId;
+			}
+			set	
+			{
+				parentId = value;
+				DictionaryUtil.Add(QueryParameters, "ParentId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? CheckStatus
+		{
+			get
+			{
+				return checkStatus;
+			}
+			set	
+			{
+				checkStatus = value;
+				DictionaryUtil.Add(QueryParameters, "CheckStatus", value.ToString());
+			}
+		}
 
 		public string Lang
 		{
@@ -53,6 +109,58 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public string ServiceRegionId
+		{
+			get
+			{
+				return serviceRegionId;
+			}
+			set	
+			{
+				serviceRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceRegionId", value);
+			}
+		}
+
+		public string EngineType
+		{
+			get
+			{
+				return engineType;
+			}
+			set	
+			{
+				engineType = value;
+				DictionaryUtil.Add(QueryParameters, "EngineType", value);
+			}
+		}
+
+		public int? AuditStatus
+		{
+			get
+			{
+				return auditStatus;
+			}
+			set	
+			{
+				auditStatus = value;
+				DictionaryUtil.Add(QueryParameters, "AuditStatus", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
 		public int? ResourceType
 		{
 			get
@@ -63,19 +171,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				resourceType = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceType", value.ToString());
-			}
-		}
-
-		public string ParentId
-		{
-			get
-			{
-				return parentId;
-			}
-			set	
-			{
-				parentId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentId", value);
 			}
 		}
 

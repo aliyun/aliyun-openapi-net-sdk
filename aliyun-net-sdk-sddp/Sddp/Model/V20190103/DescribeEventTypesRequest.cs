@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
         public DescribeEventTypesRequest()
             : base("Sddp", "2019-01-03", "DescribeEventTypes", "sddp", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? parentTypeId;

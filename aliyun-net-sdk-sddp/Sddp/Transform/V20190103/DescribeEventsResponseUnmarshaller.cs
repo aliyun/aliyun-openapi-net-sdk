@@ -47,7 +47,6 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				_event.TargetProductCode = context.StringValue("DescribeEvents.Items["+ i +"].TargetProductCode");
 				_event.TypeCode = context.StringValue("DescribeEvents.Items["+ i +"].TypeCode");
 				_event.TypeName = context.StringValue("DescribeEvents.Items["+ i +"].TypeName");
-				_event.TelephoneNum = context.StringValue("DescribeEvents.Items["+ i +"].TelephoneNum");
 				_event.SubTypeCode = context.StringValue("DescribeEvents.Items["+ i +"].SubTypeCode");
 				_event.SubTypeName = context.StringValue("DescribeEvents.Items["+ i +"].SubTypeName");
 				_event.AlertTime = context.LongValue("DescribeEvents.Items["+ i +"].AlertTime");

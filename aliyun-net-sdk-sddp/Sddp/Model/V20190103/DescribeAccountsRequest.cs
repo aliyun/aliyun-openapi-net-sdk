@@ -32,27 +32,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
         public DescribeAccountsRequest()
             : base("Sddp", "2019-01-03", "DescribeAccounts", "sddp", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string productCode;
 
-		private string loginName;
-
-		private int? featureType;
-
-		private string columnId;
-
 		private string packageId;
 
-		private int? currentPage;
-
-		private string instanceId;
-
 		private int? pageSize;
-
-		private long? departId;
-
-		private int? operationId;
 
 		private string tableId;
 
@@ -61,6 +52,20 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		private string key;
 
 		private int? queryType;
+
+		private string loginName;
+
+		private int? featureType;
+
+		private string columnId;
+
+		private int? currentPage;
+
+		private string instanceId;
+
+		private long? departId;
+
+		private int? operationId;
 
 		public string ProductCode
 		{
@@ -72,45 +77,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				productCode = value;
 				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
-			}
-		}
-
-		public string LoginName
-		{
-			get
-			{
-				return loginName;
-			}
-			set	
-			{
-				loginName = value;
-				DictionaryUtil.Add(QueryParameters, "LoginName", value);
-			}
-		}
-
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
-
-		public string ColumnId
-		{
-			get
-			{
-				return columnId;
-			}
-			set	
-			{
-				columnId = value;
-				DictionaryUtil.Add(QueryParameters, "ColumnId", value);
 			}
 		}
 
@@ -127,32 +93,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -163,32 +103,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public long? DepartId
-		{
-			get
-			{
-				return departId;
-			}
-			set	
-			{
-				departId = value;
-				DictionaryUtil.Add(QueryParameters, "DepartId", value.ToString());
-			}
-		}
-
-		public int? OperationId
-		{
-			get
-			{
-				return operationId;
-			}
-			set	
-			{
-				operationId = value;
-				DictionaryUtil.Add(QueryParameters, "OperationId", value.ToString());
 			}
 		}
 
@@ -241,6 +155,97 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				queryType = value;
 				DictionaryUtil.Add(QueryParameters, "QueryType", value.ToString());
+			}
+		}
+
+		public string LoginName
+		{
+			get
+			{
+				return loginName;
+			}
+			set	
+			{
+				loginName = value;
+				DictionaryUtil.Add(QueryParameters, "LoginName", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
+
+		public string ColumnId
+		{
+			get
+			{
+				return columnId;
+			}
+			set	
+			{
+				columnId = value;
+				DictionaryUtil.Add(QueryParameters, "ColumnId", value);
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public long? DepartId
+		{
+			get
+			{
+				return departId;
+			}
+			set	
+			{
+				departId = value;
+				DictionaryUtil.Add(QueryParameters, "DepartId", value.ToString());
+			}
+		}
+
+		public int? OperationId
+		{
+			get
+			{
+				return operationId;
+			}
+			set	
+			{
+				operationId = value;
+				DictionaryUtil.Add(QueryParameters, "OperationId", value.ToString());
 			}
 		}
 

@@ -147,6 +147,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 				private long? count;
 
+				private int? category;
+
 				public string RuleName
 				{
 					get
@@ -168,6 +170,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					set	
 					{
 						count = value;
+					}
+				}
+
+				public int? Category
+				{
+					get
+					{
+						return category;
+					}
+					set	
+					{
+						category = value;
 					}
 				}
 			}

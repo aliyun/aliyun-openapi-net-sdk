@@ -32,23 +32,47 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
         public CreateDataLimitRequest()
             : base("Sddp", "2019-01-03", "CreateDataLimit", "sddp", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string password;
-
-		private string connector;
-
-		private string dataLimitList;
-
-		private string lang;
-
-		private int? resourceType;
-
-		private string serviceRegionId;
 
 		private string parentId;
 
+		private string password;
+
+		private string lang;
+
+		private string serviceRegionId;
+
+		private string engineType;
+
+		private int? auditStatus;
+
+		private int? autoScan;
+
+		private int? logStoreDay;
+
+		private int? resourceType;
+
+		private int? port;
+
 		private string userName;
+
+		public string ParentId
+		{
+			get
+			{
+				return parentId;
+			}
+			set	
+			{
+				parentId = value;
+				DictionaryUtil.Add(QueryParameters, "ParentId", value);
+			}
+		}
 
 		public string Password
 		{
@@ -60,32 +84,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				password = value;
 				DictionaryUtil.Add(QueryParameters, "Password", value);
-			}
-		}
-
-		public string Connector
-		{
-			get
-			{
-				return connector;
-			}
-			set	
-			{
-				connector = value;
-				DictionaryUtil.Add(QueryParameters, "Connector", value);
-			}
-		}
-
-		public string DataLimitList
-		{
-			get
-			{
-				return dataLimitList;
-			}
-			set	
-			{
-				dataLimitList = value;
-				DictionaryUtil.Add(QueryParameters, "DataLimitList", value);
 			}
 		}
 
@@ -102,19 +100,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public int? ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value.ToString());
-			}
-		}
-
 		public string ServiceRegionId
 		{
 			get
@@ -128,16 +113,81 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public string ParentId
+		public string EngineType
 		{
 			get
 			{
-				return parentId;
+				return engineType;
 			}
 			set	
 			{
-				parentId = value;
-				DictionaryUtil.Add(QueryParameters, "ParentId", value);
+				engineType = value;
+				DictionaryUtil.Add(QueryParameters, "EngineType", value);
+			}
+		}
+
+		public int? AuditStatus
+		{
+			get
+			{
+				return auditStatus;
+			}
+			set	
+			{
+				auditStatus = value;
+				DictionaryUtil.Add(QueryParameters, "AuditStatus", value.ToString());
+			}
+		}
+
+		public int? AutoScan
+		{
+			get
+			{
+				return autoScan;
+			}
+			set	
+			{
+				autoScan = value;
+				DictionaryUtil.Add(QueryParameters, "AutoScan", value.ToString());
+			}
+		}
+
+		public int? LogStoreDay
+		{
+			get
+			{
+				return logStoreDay;
+			}
+			set	
+			{
+				logStoreDay = value;
+				DictionaryUtil.Add(QueryParameters, "LogStoreDay", value.ToString());
+			}
+		}
+
+		public int? ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value.ToString());
+			}
+		}
+
+		public int? Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value.ToString());
 			}
 		}
 

@@ -41,7 +41,6 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			_event.ProductCode = context.StringValue("DescribeEventDetail.Event.ProductCode");
 			_event.TypeCode = context.StringValue("DescribeEventDetail.Event.TypeCode");
 			_event.TypeName = context.StringValue("DescribeEventDetail.Event.TypeName");
-			_event.TelephoneNum = context.StringValue("DescribeEventDetail.Event.TelephoneNum");
 			_event.SubTypeCode = context.StringValue("DescribeEventDetail.Event.SubTypeCode");
 			_event.SubTypeName = context.StringValue("DescribeEventDetail.Event.SubTypeName");
 			_event.AlertTime = context.LongValue("DescribeEventDetail.Event.AlertTime");
@@ -75,6 +74,7 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				chartItem.Label = context.StringValue("DescribeEventDetail.Event.Detail.Chart["+ i +"].Label");
 				chartItem.XLabel = context.StringValue("DescribeEventDetail.Event.Detail.Chart["+ i +"].XLabel");
 				chartItem.YLabel = context.StringValue("DescribeEventDetail.Event.Detail.Chart["+ i +"].YLabel");
+				chartItem.Type = context.StringValue("DescribeEventDetail.Event.Detail.Chart["+ i +"].Type");
 
 				DescribeEventDetailResponse.DescribeEventDetail__Event.DescribeEventDetail_Detail.DescribeEventDetail_ChartItem.DescribeEventDetail_Data data = new DescribeEventDetailResponse.DescribeEventDetail__Event.DescribeEventDetail_Detail.DescribeEventDetail_ChartItem.DescribeEventDetail_Data();
 				data.X = context.StringValue("DescribeEventDetail.Event.Detail.Chart["+ i +"].Data.X");
@@ -84,6 +84,16 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				detail_chart.Add(chartItem);
 			}
 			detail.Chart = detail_chart;
+
+			List<DescribeEventDetailResponse.DescribeEventDetail__Event.DescribeEventDetail_Detail.DescribeEventDetail_ResourceInfoItem> detail_resourceInfo = new List<DescribeEventDetailResponse.DescribeEventDetail__Event.DescribeEventDetail_Detail.DescribeEventDetail_ResourceInfoItem>();
+			for (int i = 0; i < context.Length("DescribeEventDetail.Event.Detail.ResourceInfo.Length"); i++) {
+				DescribeEventDetailResponse.DescribeEventDetail__Event.DescribeEventDetail_Detail.DescribeEventDetail_ResourceInfoItem resourceInfoItem = new DescribeEventDetailResponse.DescribeEventDetail__Event.DescribeEventDetail_Detail.DescribeEventDetail_ResourceInfoItem();
+				resourceInfoItem.Label = context.StringValue("DescribeEventDetail.Event.Detail.ResourceInfo["+ i +"].Label");
+				resourceInfoItem._Value = context.StringValue("DescribeEventDetail.Event.Detail.ResourceInfo["+ i +"].Value");
+
+				detail_resourceInfo.Add(resourceInfoItem);
+			}
+			detail.ResourceInfo = detail_resourceInfo;
 			_event.Detail = detail;
 			describeEventDetailResponse._Event = _event;
         

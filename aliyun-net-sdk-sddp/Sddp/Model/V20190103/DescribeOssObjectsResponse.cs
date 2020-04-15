@@ -98,7 +98,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 		public class DescribeOssObjects_Column
 		{
 
-			private long? id;
+			private string id;
 
 			private string name;
 
@@ -112,9 +112,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string fileId;
 
-			private long? riskLevelName;
+			private string riskLevelName;
 
-			public long? Id
+			private long? size;
+
+			private int? sensitiveCount;
+
+			private int? ruleCount;
+
+			private string categoryName;
+
+			private string bucketName;
+
+			public string Id
 			{
 				get
 				{
@@ -198,7 +208,7 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				}
 			}
 
-			public long? RiskLevelName
+			public string RiskLevelName
 			{
 				get
 				{
@@ -207,6 +217,66 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					riskLevelName = value;
+				}
+			}
+
+			public long? Size
+			{
+				get
+				{
+					return size;
+				}
+				set	
+				{
+					size = value;
+				}
+			}
+
+			public int? SensitiveCount
+			{
+				get
+				{
+					return sensitiveCount;
+				}
+				set	
+				{
+					sensitiveCount = value;
+				}
+			}
+
+			public int? RuleCount
+			{
+				get
+				{
+					return ruleCount;
+				}
+				set	
+				{
+					ruleCount = value;
+				}
+			}
+
+			public string CategoryName
+			{
+				get
+				{
+					return categoryName;
+				}
+				set	
+				{
+					categoryName = value;
+				}
+			}
+
+			public string BucketName
+			{
+				get
+				{
+					return bucketName;
+				}
+				set	
+				{
+					bucketName = value;
 				}
 			}
 		}

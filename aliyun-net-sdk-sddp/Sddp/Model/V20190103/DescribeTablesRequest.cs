@@ -32,31 +32,45 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
         public DescribeTablesRequest()
             : base("Sddp", "2019-01-03", "DescribeTables", "sddp", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string productCode;
 
 		private long? productId;
 
-		private int? featureType;
-
 		private long? packageId;
 
-		private int? currentPage;
-
-		private string queryName;
-
 		private long? riskLevelId;
-
-		private long? instanceId;
-
-		private string name;
 
 		private int? pageSize;
 
 		private string lang;
 
+		private int? currentPage;
+
+		private long? instanceId;
+
+		private string name;
+
 		private long? ruleId;
 
-		private int? queryType;
+		public string ProductCode
+		{
+			get
+			{
+				return productCode;
+			}
+			set	
+			{
+				productCode = value;
+				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+			}
+		}
 
 		public long? ProductId
 		{
@@ -68,19 +82,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				productId = value;
 				DictionaryUtil.Add(QueryParameters, "ProductId", value.ToString());
-			}
-		}
-
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
 			}
 		}
 
@@ -97,32 +98,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public string QueryName
-		{
-			get
-			{
-				return queryName;
-			}
-			set	
-			{
-				queryName = value;
-				DictionaryUtil.Add(QueryParameters, "QueryName", value);
-			}
-		}
-
 		public long? RiskLevelId
 		{
 			get
@@ -133,32 +108,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				riskLevelId = value;
 				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
-			}
-		}
-
-		public long? InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -188,6 +137,45 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public long? InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
 		public long? RuleId
 		{
 			get
@@ -198,19 +186,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				ruleId = value;
 				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
-			}
-		}
-
-		public int? QueryType
-		{
-			get
-			{
-				return queryType;
-			}
-			set	
-			{
-				queryType = value;
-				DictionaryUtil.Add(QueryParameters, "QueryType", value.ToString());
 			}
 		}
 

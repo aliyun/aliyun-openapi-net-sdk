@@ -1,3 +1,6 @@
+2020-04-15 Version: 1.0.2
+- Fixed requeired Newtownsoft_Json.
+
 2019-06-05 Version: 1.0.1
 1, Update DescribeDataLimitDetail interface, add password for response
 

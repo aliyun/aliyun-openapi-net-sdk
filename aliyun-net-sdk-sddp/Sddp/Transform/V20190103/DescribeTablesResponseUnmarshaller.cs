@@ -53,6 +53,10 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				table.SensitiveCount = context.IntegerValue("DescribeTables.Items["+ i +"].SensitiveCount");
 				table.SensitiveRatio = context.StringValue("DescribeTables.Items["+ i +"].SensitiveRatio");
 				table.InstanceId = context.LongValue("DescribeTables.Items["+ i +"].InstanceId");
+				table.S2Count = context.IntegerValue("DescribeTables.Items["+ i +"].S2Count");
+				table.S3Count = context.IntegerValue("DescribeTables.Items["+ i +"].S3Count");
+				table.TotalRows = context.IntegerValue("DescribeTables.Items["+ i +"].TotalRows");
+				table.LastScanTime = context.LongValue("DescribeTables.Items["+ i +"].LastScanTime");
 
 				describeTablesResponse_items.Add(table);
 			}

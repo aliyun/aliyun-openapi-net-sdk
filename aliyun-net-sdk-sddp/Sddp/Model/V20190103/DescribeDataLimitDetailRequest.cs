@@ -32,26 +32,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
         public DescribeDataLimitDetailRequest()
             : base("Sddp", "2019-01-03", "DescribeDataLimitDetail", "sddp", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private long? id;
 
 		private int? networkType;
 
-		private string lang;
+		private long? id;
 
-		public long? Id
-		{
-			get
-			{
-				return id;
-			}
-			set	
-			{
-				id = value;
-				DictionaryUtil.Add(QueryParameters, "id", value.ToString());
-			}
-		}
+		private string lang;
 
 		public int? NetworkType
 		{
@@ -63,6 +55,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				networkType = value;
 				DictionaryUtil.Add(QueryParameters, "NetworkType", value.ToString());
+			}
+		}
+
+		public long? Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
+				DictionaryUtil.Add(QueryParameters, "Id", value.ToString());
 			}
 		}
 

@@ -126,6 +126,14 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private long? instanceId;
 
+			private int? s2Count;
+
+			private int? s3Count;
+
+			private int? totalRows;
+
+			private long? lastScanTime;
+
 			public long? Id
 			{
 				get
@@ -291,6 +299,54 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					instanceId = value;
+				}
+			}
+
+			public int? S2Count
+			{
+				get
+				{
+					return s2Count;
+				}
+				set	
+				{
+					s2Count = value;
+				}
+			}
+
+			public int? S3Count
+			{
+				get
+				{
+					return s3Count;
+				}
+				set	
+				{
+					s3Count = value;
+				}
+			}
+
+			public int? TotalRows
+			{
+				get
+				{
+					return totalRows;
+				}
+				set	
+				{
+					totalRows = value;
+				}
+			}
+
+			public long? LastScanTime
+			{
+				get
+				{
+					return lastScanTime;
+				}
+				set	
+				{
+					lastScanTime = value;
 				}
 			}
 		}

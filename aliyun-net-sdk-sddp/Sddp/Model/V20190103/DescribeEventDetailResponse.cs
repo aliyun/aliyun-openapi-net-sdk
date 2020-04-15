@@ -70,8 +70,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string typeName;
 
-			private string telephoneNum;
-
 			private string subTypeCode;
 
 			private string subTypeName;
@@ -183,18 +181,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					typeName = value;
-				}
-			}
-
-			public string TelephoneNum
-			{
-				get
-				{
-					return telephoneNum;
-				}
-				set	
-				{
-					telephoneNum = value;
 				}
 			}
 
@@ -385,6 +371,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 				private List<DescribeEventDetail_ChartItem> chart;
 
+				private List<DescribeEventDetail_ResourceInfoItem> resourceInfo;
+
 				public List<DescribeEventDetail_ContentItem> Content
 				{
 					get
@@ -406,6 +394,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 					set	
 					{
 						chart = value;
+					}
+				}
+
+				public List<DescribeEventDetail_ResourceInfoItem> ResourceInfo
+				{
+					get
+					{
+						return resourceInfo;
+					}
+					set	
+					{
+						resourceInfo = value;
 					}
 				}
 
@@ -450,6 +450,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 					private string yLabel;
 
+					private string type;
+
 					private DescribeEventDetail_Data data;
 
 					public string Label
@@ -485,6 +487,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 						set	
 						{
 							yLabel = value;
+						}
+					}
+
+					public string Type
+					{
+						get
+						{
+							return type;
+						}
+						set	
+						{
+							type = value;
 						}
 					}
 
@@ -529,6 +543,38 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 							{
 								y = value;
 							}
+						}
+					}
+				}
+
+				public class DescribeEventDetail_ResourceInfoItem
+				{
+
+					private string label;
+
+					private string _value;
+
+					public string Label
+					{
+						get
+						{
+							return label;
+						}
+						set	
+						{
+							label = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
 						}
 					}
 				}

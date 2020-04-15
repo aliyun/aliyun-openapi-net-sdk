@@ -32,15 +32,16 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
         public CreateConfigRequest()
             : base("Sddp", "2019-01-03", "CreateConfig", "sddp", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string code;
 
-		private int? featureType;
-
 		private string description;
-
-		private string configList;
 
 		private string lang;
 
@@ -59,19 +60,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -82,19 +70,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string ConfigList
-		{
-			get
-			{
-				return configList;
-			}
-			set	
-			{
-				configList = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigList", value);
 			}
 		}
 

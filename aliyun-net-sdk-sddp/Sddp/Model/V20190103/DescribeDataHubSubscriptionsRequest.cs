@@ -32,23 +32,28 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
         public DescribeDataHubSubscriptionsRequest()
             : base("Sddp", "2019-01-03", "DescribeDataHubSubscriptions", "sddp", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? topicId;
 
-		private int? featureType;
-
 		private int? pageSize;
-
-		private long? departId;
-
-		private int? currentPage;
 
 		private string lang;
 
 		private long? projectId;
 
 		private string key;
+
+		private int? featureType;
+
+		private int? currentPage;
+
+		private long? departId;
 
 		public long? TopicId
 		{
@@ -63,19 +68,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -86,32 +78,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public long? DepartId
-		{
-			get
-			{
-				return departId;
-			}
-			set	
-			{
-				departId = value;
-				DictionaryUtil.Add(QueryParameters, "DepartId", value.ToString());
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
@@ -151,6 +117,45 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				key = value;
 				DictionaryUtil.Add(QueryParameters, "Key", value);
+			}
+		}
+
+		public int? FeatureType
+		{
+			get
+			{
+				return featureType;
+			}
+			set	
+			{
+				featureType = value;
+				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public long? DepartId
+		{
+			get
+			{
+				return departId;
+			}
+			set	
+			{
+				departId = value;
+				DictionaryUtil.Add(QueryParameters, "DepartId", value.ToString());
 			}
 		}
 

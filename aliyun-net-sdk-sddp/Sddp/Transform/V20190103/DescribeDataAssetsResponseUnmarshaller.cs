@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			List<DescribeDataAssetsResponse.DescribeDataAssets_Asset> describeDataAssetsResponse_items = new List<DescribeDataAssetsResponse.DescribeDataAssets_Asset>();
 			for (int i = 0; i < context.Length("DescribeDataAssets.Items.Length"); i++) {
 				DescribeDataAssetsResponse.DescribeDataAssets_Asset asset = new DescribeDataAssetsResponse.DescribeDataAssets_Asset();
-				asset.Id = context.LongValue("DescribeDataAssets.Items["+ i +"].Id");
+				asset.Id = context.StringValue("DescribeDataAssets.Items["+ i +"].Id");
 				asset.Name = context.StringValue("DescribeDataAssets.Items["+ i +"].Name");
 				asset.Owner = context.StringValue("DescribeDataAssets.Items["+ i +"].Owner");
 				asset.CreationTime = context.LongValue("DescribeDataAssets.Items["+ i +"].CreationTime");

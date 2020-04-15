@@ -32,62 +32,54 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
         public DescribeColumnsRequest()
             : base("Sddp", "2019-01-03", "DescribeColumns", "sddp", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private int? featureType;
+		private string productCode;
 
-		private string riskLevels;
-
-		private string name;
+		private long? riskLevelId;
 
 		private int? pageSize;
 
 		private long? tableId;
 
+		private string lang;
+
 		private int? currentPage;
 
-		private string queryName;
+		private long? instanceId;
 
-		private string lang;
+		private string name;
 
 		private long? ruleId;
 
-		public int? FeatureType
+		public string ProductCode
 		{
 			get
 			{
-				return featureType;
+				return productCode;
 			}
 			set	
 			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+				productCode = value;
+				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
 			}
 		}
 
-		public string RiskLevels
+		public long? RiskLevelId
 		{
 			get
 			{
-				return riskLevels;
+				return riskLevelId;
 			}
 			set	
 			{
-				riskLevels = value;
-				DictionaryUtil.Add(QueryParameters, "RiskLevels", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				riskLevelId = value;
+				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
 			}
 		}
 
@@ -117,6 +109,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -130,29 +135,29 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public string QueryName
+		public long? InstanceId
 		{
 			get
 			{
-				return queryName;
+				return instanceId;
 			}
 			set	
 			{
-				queryName = value;
-				DictionaryUtil.Add(QueryParameters, "QueryName", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value.ToString());
 			}
 		}
 
-		public string Lang
+		public string Name
 		{
 			get
 			{
-				return lang;
+				return name;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

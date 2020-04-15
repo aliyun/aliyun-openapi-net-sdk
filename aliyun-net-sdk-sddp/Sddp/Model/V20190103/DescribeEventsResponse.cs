@@ -114,8 +114,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 			private string typeName;
 
-			private string telephoneNum;
-
 			private string subTypeCode;
 
 			private string subTypeName;
@@ -233,18 +231,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					typeName = value;
-				}
-			}
-
-			public string TelephoneNum
-			{
-				get
-				{
-					return telephoneNum;
-				}
-				set	
-				{
-					telephoneNum = value;
 				}
 			}
 

@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			List<DescribeColumnsResponse.DescribeColumns_Column> describeColumnsResponse_items = new List<DescribeColumnsResponse.DescribeColumns_Column>();
 			for (int i = 0; i < context.Length("DescribeColumns.Items.Length"); i++) {
 				DescribeColumnsResponse.DescribeColumns_Column column = new DescribeColumnsResponse.DescribeColumns_Column();
-				column.Id = context.LongValue("DescribeColumns.Items["+ i +"].Id");
+				column.Id = context.StringValue("DescribeColumns.Items["+ i +"].Id");
 				column.Name = context.StringValue("DescribeColumns.Items["+ i +"].Name");
 				column.InstanceId = context.LongValue("DescribeColumns.Items["+ i +"].InstanceId");
 				column.TableId = context.LongValue("DescribeColumns.Items["+ i +"].TableId");

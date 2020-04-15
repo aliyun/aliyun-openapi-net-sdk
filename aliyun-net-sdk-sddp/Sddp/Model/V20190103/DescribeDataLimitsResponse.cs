@@ -27,7 +27,13 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string requestId;
 
-		private List<DescribeDataLimits_DataLimit> dataLimitList;
+		private int? pageSize;
+
+		private int? currentPage;
+
+		private int? totalCount;
+
+		private List<DescribeDataLimits_DataLimit> items;
 
 		public string RequestId
 		{
@@ -41,15 +47,51 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public List<DescribeDataLimits_DataLimit> DataLimitList
+		public int? PageSize
 		{
 			get
 			{
-				return dataLimitList;
+				return pageSize;
 			}
 			set	
 			{
-				dataLimitList = value;
+				pageSize = value;
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public List<DescribeDataLimits_DataLimit> Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
 			}
 		}
 
@@ -73,6 +115,34 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			private int? checkStatus;
 
 			private string checkStatusName;
+
+			private long? resourceType;
+
+			private string resourceTypeCode;
+
+			private int? auditStatus;
+
+			private int? logStoreDay;
+
+			private int? enable;
+
+			private int? autoScan;
+
+			private string engineType;
+
+			private int? processStatus;
+
+			private int? processTotalCount;
+
+			private int? totalCount;
+
+			private long? lastFinishedTime;
+
+			private string errorCode;
+
+			private string errorMessage;
+
+			private int? port;
 
 			public string RegionId
 			{
@@ -179,6 +249,174 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 				set	
 				{
 					checkStatusName = value;
+				}
+			}
+
+			public long? ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
+			}
+
+			public string ResourceTypeCode
+			{
+				get
+				{
+					return resourceTypeCode;
+				}
+				set	
+				{
+					resourceTypeCode = value;
+				}
+			}
+
+			public int? AuditStatus
+			{
+				get
+				{
+					return auditStatus;
+				}
+				set	
+				{
+					auditStatus = value;
+				}
+			}
+
+			public int? LogStoreDay
+			{
+				get
+				{
+					return logStoreDay;
+				}
+				set	
+				{
+					logStoreDay = value;
+				}
+			}
+
+			public int? Enable
+			{
+				get
+				{
+					return enable;
+				}
+				set	
+				{
+					enable = value;
+				}
+			}
+
+			public int? AutoScan
+			{
+				get
+				{
+					return autoScan;
+				}
+				set	
+				{
+					autoScan = value;
+				}
+			}
+
+			public string EngineType
+			{
+				get
+				{
+					return engineType;
+				}
+				set	
+				{
+					engineType = value;
+				}
+			}
+
+			public int? ProcessStatus
+			{
+				get
+				{
+					return processStatus;
+				}
+				set	
+				{
+					processStatus = value;
+				}
+			}
+
+			public int? ProcessTotalCount
+			{
+				get
+				{
+					return processTotalCount;
+				}
+				set	
+				{
+					processTotalCount = value;
+				}
+			}
+
+			public int? TotalCount
+			{
+				get
+				{
+					return totalCount;
+				}
+				set	
+				{
+					totalCount = value;
+				}
+			}
+
+			public long? LastFinishedTime
+			{
+				get
+				{
+					return lastFinishedTime;
+				}
+				set	
+				{
+					lastFinishedTime = value;
+				}
+			}
+
+			public string ErrorCode
+			{
+				get
+				{
+					return errorCode;
+				}
+				set	
+				{
+					errorCode = value;
+				}
+			}
+
+			public string ErrorMessage
+			{
+				get
+				{
+					return errorMessage;
+				}
+				set	
+				{
+					errorMessage = value;
+				}
+			}
+
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
 				}
 			}
 		}

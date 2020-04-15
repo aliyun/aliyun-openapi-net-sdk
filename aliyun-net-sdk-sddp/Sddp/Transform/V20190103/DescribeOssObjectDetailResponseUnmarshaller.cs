@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule rule = new DescribeOssObjectDetailResponse.DescribeOssObjectDetail_OssObjectDetail.DescribeOssObjectDetail_Rule();
 				rule.RuleName = context.StringValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].RuleName");
 				rule.Count = context.LongValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].Count");
+				rule.Category = context.IntegerValue("DescribeOssObjectDetail.OssObjectDetail.RuleList["+ i +"].Category");
 
 				ossObjectDetail_ruleList.Add(rule);
 			}

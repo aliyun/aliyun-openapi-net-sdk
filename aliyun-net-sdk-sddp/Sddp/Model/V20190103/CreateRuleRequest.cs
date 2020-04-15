@@ -32,45 +32,69 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
         public CreateRuleRequest()
             : base("Sddp", "2019-01-03", "CreateRule", "sddp", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private int? featureType;
+		private int? warnLevel;
 
-		private string name;
+		private string productCode;
+
+		private long? productId;
 
 		private long? riskLevelId;
 
+		private string content;
+
 		private string lang;
 
-		private long? customType;
+		private int? ruleType;
+
+		private string statExpress;
+
+		private string name;
 
 		private int? category;
 
-		private string content;
-
-		public int? FeatureType
+		public int? WarnLevel
 		{
 			get
 			{
-				return featureType;
+				return warnLevel;
 			}
 			set	
 			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
+				warnLevel = value;
+				DictionaryUtil.Add(QueryParameters, "WarnLevel", value.ToString());
 			}
 		}
 
-		public string Name
+		public string ProductCode
 		{
 			get
 			{
-				return name;
+				return productCode;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				productCode = value;
+				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+			}
+		}
+
+		public long? ProductId
+		{
+			get
+			{
+				return productId;
+			}
+			set	
+			{
+				productId = value;
+				DictionaryUtil.Add(QueryParameters, "ProductId", value.ToString());
 			}
 		}
 
@@ -87,6 +111,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public string Content
+		{
+			get
+			{
+				return content;
+			}
+			set	
+			{
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
+			}
+		}
+
 		public string Lang
 		{
 			get
@@ -100,16 +137,42 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public long? CustomType
+		public int? RuleType
 		{
 			get
 			{
-				return customType;
+				return ruleType;
 			}
 			set	
 			{
-				customType = value;
-				DictionaryUtil.Add(QueryParameters, "CustomType", value.ToString());
+				ruleType = value;
+				DictionaryUtil.Add(QueryParameters, "RuleType", value.ToString());
+			}
+		}
+
+		public string StatExpress
+		{
+			get
+			{
+				return statExpress;
+			}
+			set	
+			{
+				statExpress = value;
+				DictionaryUtil.Add(QueryParameters, "StatExpress", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
@@ -123,19 +186,6 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			{
 				category = value;
 				DictionaryUtil.Add(QueryParameters, "Category", value.ToString());
-			}
-		}
-
-		public string Content
-		{
-			get
-			{
-				return content;
-			}
-			set	
-			{
-				content = value;
-				DictionaryUtil.Add(QueryParameters, "Content", value);
 			}
 		}
 

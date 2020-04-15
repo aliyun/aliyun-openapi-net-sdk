@@ -32,23 +32,40 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 
 			describeDataLimitsResponse.HttpResponse = context.HttpResponse;
 			describeDataLimitsResponse.RequestId = context.StringValue("DescribeDataLimits.RequestId");
+			describeDataLimitsResponse.PageSize = context.IntegerValue("DescribeDataLimits.PageSize");
+			describeDataLimitsResponse.CurrentPage = context.IntegerValue("DescribeDataLimits.CurrentPage");
+			describeDataLimitsResponse.TotalCount = context.IntegerValue("DescribeDataLimits.TotalCount");
 
-			List<DescribeDataLimitsResponse.DescribeDataLimits_DataLimit> describeDataLimitsResponse_dataLimitList = new List<DescribeDataLimitsResponse.DescribeDataLimits_DataLimit>();
-			for (int i = 0; i < context.Length("DescribeDataLimits.DataLimitList.Length"); i++) {
+			List<DescribeDataLimitsResponse.DescribeDataLimits_DataLimit> describeDataLimitsResponse_items = new List<DescribeDataLimitsResponse.DescribeDataLimits_DataLimit>();
+			for (int i = 0; i < context.Length("DescribeDataLimits.Items.Length"); i++) {
 				DescribeDataLimitsResponse.DescribeDataLimits_DataLimit dataLimit = new DescribeDataLimitsResponse.DescribeDataLimits_DataLimit();
-				dataLimit.RegionId = context.StringValue("DescribeDataLimits.DataLimitList["+ i +"].RegionId");
-				dataLimit.LocalName = context.StringValue("DescribeDataLimits.DataLimitList["+ i +"].LocalName");
-				dataLimit.ParentId = context.StringValue("DescribeDataLimits.DataLimitList["+ i +"].ParentId");
-				dataLimit.Id = context.LongValue("DescribeDataLimits.DataLimitList["+ i +"].Id");
-				dataLimit.UserName = context.StringValue("DescribeDataLimits.DataLimitList["+ i +"].UserName");
-				dataLimit.GmtCreate = context.LongValue("DescribeDataLimits.DataLimitList["+ i +"].GmtCreate");
-				dataLimit.Connector = context.StringValue("DescribeDataLimits.DataLimitList["+ i +"].Connector");
-				dataLimit.CheckStatus = context.IntegerValue("DescribeDataLimits.DataLimitList["+ i +"].CheckStatus");
-				dataLimit.CheckStatusName = context.StringValue("DescribeDataLimits.DataLimitList["+ i +"].CheckStatusName");
+				dataLimit.RegionId = context.StringValue("DescribeDataLimits.Items["+ i +"].RegionId");
+				dataLimit.LocalName = context.StringValue("DescribeDataLimits.Items["+ i +"].LocalName");
+				dataLimit.ParentId = context.StringValue("DescribeDataLimits.Items["+ i +"].ParentId");
+				dataLimit.Id = context.LongValue("DescribeDataLimits.Items["+ i +"].Id");
+				dataLimit.UserName = context.StringValue("DescribeDataLimits.Items["+ i +"].UserName");
+				dataLimit.GmtCreate = context.LongValue("DescribeDataLimits.Items["+ i +"].GmtCreate");
+				dataLimit.Connector = context.StringValue("DescribeDataLimits.Items["+ i +"].Connector");
+				dataLimit.CheckStatus = context.IntegerValue("DescribeDataLimits.Items["+ i +"].CheckStatus");
+				dataLimit.CheckStatusName = context.StringValue("DescribeDataLimits.Items["+ i +"].CheckStatusName");
+				dataLimit.ResourceType = context.LongValue("DescribeDataLimits.Items["+ i +"].ResourceType");
+				dataLimit.ResourceTypeCode = context.StringValue("DescribeDataLimits.Items["+ i +"].ResourceTypeCode");
+				dataLimit.AuditStatus = context.IntegerValue("DescribeDataLimits.Items["+ i +"].AuditStatus");
+				dataLimit.LogStoreDay = context.IntegerValue("DescribeDataLimits.Items["+ i +"].LogStoreDay");
+				dataLimit.Enable = context.IntegerValue("DescribeDataLimits.Items["+ i +"].Enable");
+				dataLimit.AutoScan = context.IntegerValue("DescribeDataLimits.Items["+ i +"].AutoScan");
+				dataLimit.EngineType = context.StringValue("DescribeDataLimits.Items["+ i +"].EngineType");
+				dataLimit.ProcessStatus = context.IntegerValue("DescribeDataLimits.Items["+ i +"].ProcessStatus");
+				dataLimit.ProcessTotalCount = context.IntegerValue("DescribeDataLimits.Items["+ i +"].ProcessTotalCount");
+				dataLimit.TotalCount = context.IntegerValue("DescribeDataLimits.Items["+ i +"].TotalCount");
+				dataLimit.LastFinishedTime = context.LongValue("DescribeDataLimits.Items["+ i +"].LastFinishedTime");
+				dataLimit.ErrorCode = context.StringValue("DescribeDataLimits.Items["+ i +"].ErrorCode");
+				dataLimit.ErrorMessage = context.StringValue("DescribeDataLimits.Items["+ i +"].ErrorMessage");
+				dataLimit.Port = context.IntegerValue("DescribeDataLimits.Items["+ i +"].Port");
 
-				describeDataLimitsResponse_dataLimitList.Add(dataLimit);
+				describeDataLimitsResponse_items.Add(dataLimit);
 			}
-			describeDataLimitsResponse.DataLimitList = describeDataLimitsResponse_dataLimitList;
+			describeDataLimitsResponse.Items = describeDataLimitsResponse_items;
         
 			return describeDataLimitsResponse;
         }

@@ -46,7 +46,7 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				instance.ProductId = context.StringValue("DescribeInstances.Items["+ i +"].ProductId");
 				instance.ProductCode = context.StringValue("DescribeInstances.Items["+ i +"].ProductCode");
 				instance.Protection = context.BooleanValue("DescribeInstances.Items["+ i +"].Protection");
-				instance.Labelsec = context.IntegerValue("DescribeInstances.Items["+ i +"].Labelsec");
+				instance.Labelsec = context.BooleanValue("DescribeInstances.Items["+ i +"].Labelsec");
 				instance.OdpsRiskLevelName = context.StringValue("DescribeInstances.Items["+ i +"].OdpsRiskLevelName");
 				instance.Sensitive = context.BooleanValue("DescribeInstances.Items["+ i +"].Sensitive");
 				instance.RiskLevelId = context.LongValue("DescribeInstances.Items["+ i +"].RiskLevelId");
@@ -56,6 +56,12 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				instance.TotalCount = context.IntegerValue("DescribeInstances.Items["+ i +"].TotalCount");
 				instance.SensitiveCount = context.IntegerValue("DescribeInstances.Items["+ i +"].SensitiveCount");
 				instance.Acl = context.StringValue("DescribeInstances.Items["+ i +"].Acl");
+				instance.S2Count = context.IntegerValue("DescribeInstances.Items["+ i +"].S2Count");
+				instance.S3Count = context.IntegerValue("DescribeInstances.Items["+ i +"].S3Count");
+				instance.LastFinishTime = context.LongValue("DescribeInstances.Items["+ i +"].LastFinishTime");
+				instance.RegionName = context.StringValue("DescribeInstances.Items["+ i +"].RegionName");
+				instance.RegionId = context.StringValue("DescribeInstances.Items["+ i +"].RegionId");
+				instance.EngineType = context.StringValue("DescribeInstances.Items["+ i +"].EngineType");
 
 				describeInstancesResponse_items.Add(instance);
 			}

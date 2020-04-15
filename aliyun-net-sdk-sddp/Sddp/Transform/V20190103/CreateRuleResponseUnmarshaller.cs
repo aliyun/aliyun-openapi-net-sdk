@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 
 			createRuleResponse.HttpResponse = context.HttpResponse;
 			createRuleResponse.RequestId = context.StringValue("CreateRule.RequestId");
+			createRuleResponse.Id = context.IntegerValue("CreateRule.Id");
         
 			return createRuleResponse;
         }

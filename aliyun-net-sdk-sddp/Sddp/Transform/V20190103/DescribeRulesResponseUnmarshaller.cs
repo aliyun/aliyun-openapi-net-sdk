@@ -55,6 +55,12 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 				rule.RiskLevelId = context.LongValue("DescribeRules.Items["+ i +"].RiskLevelId");
 				rule.Content = context.StringValue("DescribeRules.Items["+ i +"].Content");
 				rule.DepartName = context.StringValue("DescribeRules.Items["+ i +"].DepartName");
+				rule.StatExpress = context.StringValue("DescribeRules.Items["+ i +"].StatExpress");
+				rule.ProductId = context.LongValue("DescribeRules.Items["+ i +"].ProductId");
+				rule.HitTotalCount = context.IntegerValue("DescribeRules.Items["+ i +"].HitTotalCount");
+				rule.ProductCode = context.StringValue("DescribeRules.Items["+ i +"].ProductCode");
+				rule.WarnLevel = context.IntegerValue("DescribeRules.Items["+ i +"].WarnLevel");
+				rule.MajorKey = context.StringValue("DescribeRules.Items["+ i +"].MajorKey");
 
 				describeRulesResponse_items.Add(rule);
 			}

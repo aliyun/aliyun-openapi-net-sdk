@@ -39,11 +39,15 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			dataLimit.ParentId = context.StringValue("DescribeDataLimitDetail.DataLimit.ParentId");
 			dataLimit.Id = context.LongValue("DescribeDataLimitDetail.DataLimit.Id");
 			dataLimit.UserName = context.StringValue("DescribeDataLimitDetail.DataLimit.UserName");
-			dataLimit.Password = context.StringValue("DescribeDataLimitDetail.DataLimit.Password");
 			dataLimit.GmtCreate = context.LongValue("DescribeDataLimitDetail.DataLimit.GmtCreate");
 			dataLimit.Connector = context.StringValue("DescribeDataLimitDetail.DataLimit.Connector");
 			dataLimit.CheckStatus = context.IntegerValue("DescribeDataLimitDetail.DataLimit.CheckStatus");
 			dataLimit.CheckStatusName = context.StringValue("DescribeDataLimitDetail.DataLimit.CheckStatusName");
+			dataLimit.ResourceType = context.LongValue("DescribeDataLimitDetail.DataLimit.ResourceType");
+			dataLimit.ResourceTypeCode = context.StringValue("DescribeDataLimitDetail.DataLimit.ResourceTypeCode");
+			dataLimit.AuditStatus = context.IntegerValue("DescribeDataLimitDetail.DataLimit.AuditStatus");
+			dataLimit.LogStoreDay = context.IntegerValue("DescribeDataLimitDetail.DataLimit.LogStoreDay");
+			dataLimit.Port = context.IntegerValue("DescribeDataLimitDetail.DataLimit.Port");
 			describeDataLimitDetailResponse.DataLimit = dataLimit;
         
 			return describeDataLimitDetailResponse;

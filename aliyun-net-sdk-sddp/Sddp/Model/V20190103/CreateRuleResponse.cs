@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 
 		private string requestId;
 
+		private int? id;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
 			}
 		}
 	}

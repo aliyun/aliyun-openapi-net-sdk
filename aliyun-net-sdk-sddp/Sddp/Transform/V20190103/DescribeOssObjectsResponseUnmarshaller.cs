@@ -39,14 +39,19 @@ namespace Aliyun.Acs.Sddp.Transform.V20190103
 			List<DescribeOssObjectsResponse.DescribeOssObjects_Column> describeOssObjectsResponse_items = new List<DescribeOssObjectsResponse.DescribeOssObjects_Column>();
 			for (int i = 0; i < context.Length("DescribeOssObjects.Items.Length"); i++) {
 				DescribeOssObjectsResponse.DescribeOssObjects_Column column = new DescribeOssObjectsResponse.DescribeOssObjects_Column();
-				column.Id = context.LongValue("DescribeOssObjects.Items["+ i +"].Id");
+				column.Id = context.StringValue("DescribeOssObjects.Items["+ i +"].Id");
 				column.Name = context.StringValue("DescribeOssObjects.Items["+ i +"].Name");
 				column.RegionId = context.StringValue("DescribeOssObjects.Items["+ i +"].RegionId");
 				column.RiskLevelId = context.LongValue("DescribeOssObjects.Items["+ i +"].RiskLevelId");
 				column.Category = context.LongValue("DescribeOssObjects.Items["+ i +"].Category");
 				column.InstanceId = context.LongValue("DescribeOssObjects.Items["+ i +"].InstanceId");
 				column.FileId = context.StringValue("DescribeOssObjects.Items["+ i +"].FileId");
-				column.RiskLevelName = context.LongValue("DescribeOssObjects.Items["+ i +"].RiskLevelName");
+				column.RiskLevelName = context.StringValue("DescribeOssObjects.Items["+ i +"].RiskLevelName");
+				column.Size = context.LongValue("DescribeOssObjects.Items["+ i +"].Size");
+				column.SensitiveCount = context.IntegerValue("DescribeOssObjects.Items["+ i +"].SensitiveCount");
+				column.RuleCount = context.IntegerValue("DescribeOssObjects.Items["+ i +"].RuleCount");
+				column.CategoryName = context.StringValue("DescribeOssObjects.Items["+ i +"].CategoryName");
+				column.BucketName = context.StringValue("DescribeOssObjects.Items["+ i +"].BucketName");
 
 				describeOssObjectsResponse_items.Add(column);
 			}

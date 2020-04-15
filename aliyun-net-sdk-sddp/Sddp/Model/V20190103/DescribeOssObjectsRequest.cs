@@ -32,62 +32,37 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
         public DescribeOssObjectsRequest()
             : base("Sddp", "2019-01-03", "DescribeOssObjects", "sddp", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string instanceId;
-
-		private int? featureType;
-
-		private string name;
-
-		private int? pageSize;
-
-		private int? currentPage;
-
-		private string queryName;
 
 		private int? riskLevelId;
 
+		private int? pageSize;
+
 		private string lang;
+
+		private int? currentPage;
+
+		private string instanceId;
+
+		private string name;
 
 		private long? ruleId;
 
-		public string InstanceId
+		public int? RiskLevelId
 		{
 			get
 			{
-				return instanceId;
+				return riskLevelId;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public int? FeatureType
-		{
-			get
-			{
-				return featureType;
-			}
-			set	
-			{
-				featureType = value;
-				DictionaryUtil.Add(QueryParameters, "FeatureType", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				riskLevelId = value;
+				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
 			}
 		}
 
@@ -104,6 +79,19 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
 		public int? CurrentPage
 		{
 			get
@@ -117,42 +105,29 @@ namespace Aliyun.Acs.Sddp.Model.V20190103
 			}
 		}
 
-		public string QueryName
+		public string InstanceId
 		{
 			get
 			{
-				return queryName;
+				return instanceId;
 			}
 			set	
 			{
-				queryName = value;
-				DictionaryUtil.Add(QueryParameters, "QueryName", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public int? RiskLevelId
+		public string Name
 		{
 			get
 			{
-				return riskLevelId;
+				return name;
 			}
 			set	
 			{
-				riskLevelId = value;
-				DictionaryUtil.Add(QueryParameters, "RiskLevelId", value.ToString());
-			}
-		}
-
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
