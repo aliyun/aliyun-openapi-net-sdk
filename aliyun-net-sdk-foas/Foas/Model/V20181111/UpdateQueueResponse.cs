@@ -16,25 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.foas.Model.V20181111;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.foas.Transform.V20181111
+namespace Aliyun.Acs.foas.Model.V20181111
 {
-    public class StartJobResponseUnmarshaller
-    {
-        public static StartJobResponse Unmarshall(UnmarshallerContext context)
-        {
-			StartJobResponse startJobResponse = new StartJobResponse();
+	public class UpdateQueueResponse : AcsResponse
+	{
 
-			startJobResponse.HttpResponse = context.HttpResponse;
-			startJobResponse.RequestId = context.StringValue("StartJob.RequestId");
-			startJobResponse.InstanceId = context.LongValue("StartJob.instanceId");
-        
-			return startJobResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

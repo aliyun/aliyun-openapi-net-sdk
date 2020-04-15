@@ -60,6 +60,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
 
 			private List<ValidateJob_Output> outputs;
 
+			private List<ValidateJob_Dim> dims;
+
 			public List<ValidateJob_Input> Inputs
 			{
 				get
@@ -84,6 +86,18 @@ namespace Aliyun.Acs.foas.Model.V20181111
 				}
 			}
 
+			public List<ValidateJob_Dim> Dims
+			{
+				get
+				{
+					return dims;
+				}
+				set	
+				{
+					dims = value;
+				}
+			}
+
 			public class ValidateJob_Input
 			{
 
@@ -94,6 +108,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
 				private string name;
 
 				private string properties;
+
+				private string alias;
 
 				public string Type
 				{
@@ -140,6 +156,18 @@ namespace Aliyun.Acs.foas.Model.V20181111
 					set	
 					{
 						properties = value;
+					}
+				}
+
+				public string Alias
+				{
+					get
+					{
+						return alias;
+					}
+					set	
+					{
+						alias = value;
 					}
 				}
 			}
@@ -155,6 +183,8 @@ namespace Aliyun.Acs.foas.Model.V20181111
 
 				private string properties;
 
+				private string alias;
+
 				public string Type
 				{
 					get
@@ -200,6 +230,92 @@ namespace Aliyun.Acs.foas.Model.V20181111
 					set	
 					{
 						properties = value;
+					}
+				}
+
+				public string Alias
+				{
+					get
+					{
+						return alias;
+					}
+					set	
+					{
+						alias = value;
+					}
+				}
+			}
+
+			public class ValidateJob_Dim
+			{
+
+				private string type;
+
+				private string workspace;
+
+				private string name;
+
+				private string properties;
+
+				private string alias;
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public string Workspace
+				{
+					get
+					{
+						return workspace;
+					}
+					set	
+					{
+						workspace = value;
+					}
+				}
+
+				public string Name
+				{
+					get
+					{
+						return name;
+					}
+					set	
+					{
+						name = value;
+					}
+				}
+
+				public string Properties
+				{
+					get
+					{
+						return properties;
+					}
+					set	
+					{
+						properties = value;
+					}
+				}
+
+				public string Alias
+				{
+					get
+					{
+						return alias;
+					}
+					set	
+					{
+						alias = value;
 					}
 				}
 			}

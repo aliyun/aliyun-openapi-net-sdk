@@ -41,7 +41,7 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 			details.Description = context.StringValue("GetClusterDetails.Details.Description");
 			details.DisplayName = context.StringValue("GetClusterDetails.Details.DisplayName");
 			details.OwnerId = context.StringValue("GetClusterDetails.Details.OwnerId");
-			details._Operator = context.StringValue("GetClusterDetails.Details._Operator");
+			details._Operator = context.StringValue("GetClusterDetails.Details.Operator");
 			details.StorageType = context.StringValue("GetClusterDetails.Details.StorageType");
 			details.GmtCreate = context.LongValue("GetClusterDetails.Details.GmtCreate");
 			details.GmtModified = context.LongValue("GetClusterDetails.Details.GmtModified");

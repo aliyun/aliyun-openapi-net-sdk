@@ -45,7 +45,7 @@ namespace Aliyun.Acs.foas.Transform.V20181111
 				cluster.ZoneId = context.StringValue("ListCluster.Clusters["+ i +"].ZoneId");
 				cluster.State = context.StringValue("ListCluster.Clusters["+ i +"].State");
 				cluster.OwnerId = context.StringValue("ListCluster.Clusters["+ i +"].OwnerId");
-				cluster._Operator = context.StringValue("ListCluster.Clusters["+ i +"]._Operator");
+				cluster._Operator = context.StringValue("ListCluster.Clusters["+ i +"].Operator");
 				cluster.DisplayName = context.StringValue("ListCluster.Clusters["+ i +"].DisplayName");
 				cluster.Description = context.StringValue("ListCluster.Clusters["+ i +"].Description");
 				cluster.GmtCreate = context.LongValue("ListCluster.Clusters["+ i +"].GmtCreate");

@@ -1,3 +1,6 @@
+2020-04-15 Version: 2.3.4
+- Fixed requeired Newtownsoft_Json.
+
 2019-09-05 Version 2.3.3
 Generated 2018-11-11 for `foas`.
 

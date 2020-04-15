@@ -24,17 +24,16 @@ using Aliyun.Acs.foas.Model.V20181111;
 
 namespace Aliyun.Acs.foas.Transform.V20181111
 {
-    public class StartJobResponseUnmarshaller
+    public class UpdateQueueResponseUnmarshaller
     {
-        public static StartJobResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateQueueResponse Unmarshall(UnmarshallerContext context)
         {
-			StartJobResponse startJobResponse = new StartJobResponse();
+			UpdateQueueResponse updateQueueResponse = new UpdateQueueResponse();
 
-			startJobResponse.HttpResponse = context.HttpResponse;
-			startJobResponse.RequestId = context.StringValue("StartJob.RequestId");
-			startJobResponse.InstanceId = context.LongValue("StartJob.instanceId");
+			updateQueueResponse.HttpResponse = context.HttpResponse;
+			updateQueueResponse.RequestId = context.StringValue("UpdateQueue.RequestId");
         
-			return startJobResponse;
+			return updateQueueResponse;
         }
     }
 }
