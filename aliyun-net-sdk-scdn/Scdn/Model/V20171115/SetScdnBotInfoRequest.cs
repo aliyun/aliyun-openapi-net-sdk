@@ -28,10 +28,10 @@ using Aliyun.Acs.scdn.Transform.V20171115;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class BatchUpdateScdnDomainRequest : RpcAcsRequest<BatchUpdateScdnDomainResponse>
+    public class SetScdnBotInfoRequest : RpcAcsRequest<SetScdnBotInfoResponse>
     {
-        public BatchUpdateScdnDomainRequest()
-            : base("scdn", "2017-11-15", "BatchUpdateScdnDomain")
+        public SetScdnBotInfoRequest()
+            : base("scdn", "2017-11-15", "SetScdnBotInfo")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,67 +40,24 @@ namespace Aliyun.Acs.scdn.Model.V20171115
             }
         }
 
-		private string sources;
-
-		private string resourceGroupId;
-
-		private string securityToken;
-
-		private string topLevelDomain;
+		private string enable;
 
 		private string domainName;
 
 		private long? ownerId;
 
-		public string Sources
-		{
-			get
-			{
-				return sources;
-			}
-			set	
-			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
-			}
-		}
+		private string status;
 
-		public string ResourceGroupId
+		public string Enable
 		{
 			get
 			{
-				return resourceGroupId;
+				return enable;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+				enable = value;
+				DictionaryUtil.Add(QueryParameters, "Enable", value);
 			}
 		}
 
@@ -130,9 +87,22 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-        public override BatchUpdateScdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+        public override SetScdnBotInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchUpdateScdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetScdnBotInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

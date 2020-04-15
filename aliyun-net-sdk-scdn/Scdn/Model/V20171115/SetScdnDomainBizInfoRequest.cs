@@ -28,10 +28,10 @@ using Aliyun.Acs.scdn.Transform.V20171115;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class BatchUpdateScdnDomainRequest : RpcAcsRequest<BatchUpdateScdnDomainResponse>
+    public class SetScdnDomainBizInfoRequest : RpcAcsRequest<SetScdnDomainBizInfoResponse>
     {
-        public BatchUpdateScdnDomainRequest()
-            : base("scdn", "2017-11-15", "BatchUpdateScdnDomain")
+        public SetScdnDomainBizInfoRequest()
+            : base("scdn", "2017-11-15", "SetScdnDomainBizInfo")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,67 +40,22 @@ namespace Aliyun.Acs.scdn.Model.V20171115
             }
         }
 
-		private string sources;
-
-		private string resourceGroupId;
-
-		private string securityToken;
-
-		private string topLevelDomain;
+		private string bizName;
 
 		private string domainName;
 
 		private long? ownerId;
 
-		public string Sources
+		public string BizName
 		{
 			get
 			{
-				return sources;
+				return bizName;
 			}
 			set	
 			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+				bizName = value;
+				DictionaryUtil.Add(QueryParameters, "BizName", value);
 			}
 		}
 
@@ -130,9 +85,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-        public override BatchUpdateScdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetScdnDomainBizInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchUpdateScdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetScdnDomainBizInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

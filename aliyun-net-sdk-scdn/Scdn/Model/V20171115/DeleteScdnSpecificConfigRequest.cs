@@ -28,10 +28,10 @@ using Aliyun.Acs.scdn.Transform.V20171115;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class BatchUpdateScdnDomainRequest : RpcAcsRequest<BatchUpdateScdnDomainResponse>
+    public class DeleteScdnSpecificConfigRequest : RpcAcsRequest<DeleteScdnSpecificConfigResponse>
     {
-        public BatchUpdateScdnDomainRequest()
-            : base("scdn", "2017-11-15", "BatchUpdateScdnDomain")
+        public DeleteScdnSpecificConfigRequest()
+            : base("scdn", "2017-11-15", "DeleteScdnSpecificConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,69 +40,13 @@ namespace Aliyun.Acs.scdn.Model.V20171115
             }
         }
 
-		private string sources;
-
-		private string resourceGroupId;
-
-		private string securityToken;
-
-		private string topLevelDomain;
-
 		private string domainName;
 
 		private long? ownerId;
 
-		public string Sources
-		{
-			get
-			{
-				return sources;
-			}
-			set	
-			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
-			}
-		}
+		private string securityToken;
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
-			}
-		}
+		private string configId;
 
 		public string DomainName
 		{
@@ -130,9 +74,35 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-        public override BatchUpdateScdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string ConfigId
+		{
+			get
+			{
+				return configId;
+			}
+			set	
+			{
+				configId = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
+			}
+		}
+
+        public override DeleteScdnSpecificConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchUpdateScdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteScdnSpecificConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.scdn.Transform.V20171115;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class BatchUpdateScdnDomainRequest : RpcAcsRequest<BatchUpdateScdnDomainResponse>
+    public class DescribeScdnDdosTrafficInfoRequest : RpcAcsRequest<DescribeScdnDdosTrafficInfoResponse>
     {
-        public BatchUpdateScdnDomainRequest()
-            : base("scdn", "2017-11-15", "BatchUpdateScdnDomain")
+        public DescribeScdnDdosTrafficInfoRequest()
+            : base("scdn", "2017-11-15", "DescribeScdnDdosTrafficInfo")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,80 +40,50 @@ namespace Aliyun.Acs.scdn.Model.V20171115
             }
         }
 
-		private string sources;
+		private string line;
 
-		private string resourceGroupId;
+		private string startTime;
 
-		private string securityToken;
-
-		private string topLevelDomain;
-
-		private string domainName;
+		private string endTime;
 
 		private long? ownerId;
 
-		public string Sources
+		public string Line
 		{
 			get
 			{
-				return sources;
+				return line;
 			}
 			set	
 			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
+				line = value;
+				DictionaryUtil.Add(QueryParameters, "Line", value);
 			}
 		}
 
-		public string ResourceGroupId
+		public string StartTime
 		{
 			get
 			{
-				return resourceGroupId;
+				return startTime;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string SecurityToken
+		public string EndTime
 		{
 			get
 			{
-				return securityToken;
+				return endTime;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -130,9 +100,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-        public override BatchUpdateScdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeScdnDdosTrafficInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchUpdateScdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeScdnDdosTrafficInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

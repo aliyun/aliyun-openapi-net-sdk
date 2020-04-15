@@ -52,13 +52,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private int? pageSize;
 
-		private string funcFilter;
-
 		private string domainName;
 
 		private long? ownerId;
-
-		private string funcId;
 
 		private string domainStatus;
 
@@ -144,19 +140,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-		public string FuncFilter
-		{
-			get
-			{
-				return funcFilter;
-			}
-			set	
-			{
-				funcFilter = value;
-				DictionaryUtil.Add(QueryParameters, "FuncFilter", value);
-			}
-		}
-
 		public string DomainName
 		{
 			get
@@ -180,19 +163,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string FuncId
-		{
-			get
-			{
-				return funcId;
-			}
-			set	
-			{
-				funcId = value;
-				DictionaryUtil.Add(QueryParameters, "FuncId", value);
 			}
 		}
 
