@@ -99,7 +99,6 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
             var tmpHeaders = new Dictionary<string, string>
             {
                 {"Content-MD5", "md5"},
-                {"Content-Length", "length"},
                 {"Content-Type", "text/json"}
             };
             var instance = new HttpRequest("https://www.alibabacloud.com", tmpHeaders);
@@ -109,6 +108,7 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
             // when content is null
             instance.SetContent(null, "UTF-8", FormatType.JSON);
             Assert.Null(instance.Content);
+            Assert.False(instance.Headers.ContainsKey("Content-Length"));
 
             // When content is not null
             var content = Encoding.ASCII.GetBytes("someString");
@@ -121,6 +121,10 @@ namespace Aliyun.Acs.Core.Tests.Units.Http
             Assert.NotNull(instance.Content);
             Assert.Equal(content, instance.Content);
             Assert.Equal(FormatType.JSON, instance.ContentType);
+
+            instance.Method = MethodType.POST;
+            instance.SetContent(content, "UTF-8", null);
+            Assert.True(instance.Headers.ContainsKey("Content-Length"));
 
             return instance;
         }

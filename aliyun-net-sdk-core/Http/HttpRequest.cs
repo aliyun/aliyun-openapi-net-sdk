@@ -117,7 +117,10 @@ namespace Aliyun.Acs.Core.Http
             DictionaryUtil.Pop(Headers, "Content-Type");
 
             DictionaryUtil.Add(Headers, "Content-MD5", strMd5);
-            DictionaryUtil.Add(Headers, "Content-Length", contentLen);
+            if(this.Method.ToString() == "POST" || this.Method.ToString() == "PUT")
+            {
+                DictionaryUtil.Add(Headers, "Content-Length", contentLen);
+            }
             DictionaryUtil.Add(Headers, "Content-Type", ParameterHelper.FormatTypeToString(type));
 
             Content = content;
