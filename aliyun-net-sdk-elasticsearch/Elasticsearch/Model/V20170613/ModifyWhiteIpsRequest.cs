@@ -27,32 +27,47 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class GetRegionConfigurationRequest : RoaAcsRequest<GetRegionConfigurationResponse>
+    public class ModifyWhiteIpsRequest : RoaAcsRequest<ModifyWhiteIpsResponse>
     {
-        public GetRegionConfigurationRequest()
-            : base("elasticsearch", "2017-06-13", "GetRegionConfiguration", "elasticsearch", "openAPI")
+        public ModifyWhiteIpsRequest()
+            : base("elasticsearch", "2017-06-13", "ModifyWhiteIps", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/region";
-			Method = MethodType.GET;
+			UriPattern = "/openapi/instances/[InstanceId]/actions/modify-white-ips";
+			Method = MethodType.POST;
         }
 
-		private string zoneId;
+		private string instanceId;
 
-		public string ZoneId
+		private string clientToken;
+
+		public string InstanceId
 		{
 			get
 			{
-				return zoneId;
+				return instanceId;
 			}
 			set	
 			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "zoneId", value);
+				instanceId = value;
+				DictionaryUtil.Add(PathParameters, "InstanceId", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "clientToken", value);
 			}
 		}
 
@@ -61,9 +76,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			return false;
 		}
 
-        public override GetRegionConfigurationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyWhiteIpsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetRegionConfigurationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyWhiteIpsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

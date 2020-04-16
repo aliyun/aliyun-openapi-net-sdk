@@ -59,6 +59,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			result.Protocol = context.StringValue("DescribeInstance.Result.protocol");
 			result.EnableKibanaPublicNetwork = context.BooleanValue("DescribeInstance.Result.enableKibanaPublicNetwork");
 			result.HaveKibana = context.BooleanValue("DescribeInstance.Result.haveKibana");
+			result.ResourceGroupId = context.StringValue("DescribeInstance.Result.resourceGroupId");
 
 			List<string> result_esIPWhitelist = new List<string>();
 			for (int i = 0; i < context.Length("DescribeInstance.Result.EsIPWhitelist.Length"); i++) {

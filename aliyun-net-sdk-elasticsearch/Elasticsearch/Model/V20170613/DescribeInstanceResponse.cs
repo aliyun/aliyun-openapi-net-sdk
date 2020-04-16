@@ -106,6 +106,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private bool? haveKibana;
 
+			private string resourceGroupId;
+
 			private List<DescribeInstance_DictListItem> dictList;
 
 			private List<DescribeInstance_SynonymsDictsItem> synonymsDicts;
@@ -437,6 +439,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					haveKibana = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

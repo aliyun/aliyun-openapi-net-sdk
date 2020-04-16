@@ -90,6 +90,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private bool? dedicateMaster;
 
+			private string resourceGroupId;
+
 			private List<ListInstance_Tag> tags;
 
 			private ListInstance_NodeSpec nodeSpec;
@@ -217,6 +219,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					dedicateMaster = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

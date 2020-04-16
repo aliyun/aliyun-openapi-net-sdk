@@ -50,6 +50,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				instance.UpdatedAt = context.StringValue("ListInstance.Result["+ i +"].updatedAt");
 				instance.AdvancedDedicateMaster = context.BooleanValue("ListInstance.Result["+ i +"].advancedDedicateMaster");
 				instance.DedicateMaster = context.BooleanValue("ListInstance.Result["+ i +"].dedicateMaster");
+				instance.ResourceGroupId = context.StringValue("ListInstance.Result["+ i +"].resourceGroupId");
 
 				ListInstanceResponse.ListInstance_Instance.ListInstance_NodeSpec nodeSpec = new ListInstanceResponse.ListInstance_Instance.ListInstance_NodeSpec();
 				nodeSpec.Spec = context.StringValue("ListInstance.Result["+ i +"].NodeSpec.spec");
