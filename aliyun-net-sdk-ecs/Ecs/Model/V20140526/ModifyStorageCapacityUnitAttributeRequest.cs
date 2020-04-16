@@ -28,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class StartInstancesRequest : RpcAcsRequest<StartInstancesResponse>
+    public class ModifyStorageCapacityUnitAttributeRequest : RpcAcsRequest<ModifyStorageCapacityUnitAttributeResponse>
     {
-        public StartInstancesRequest()
-            : base("Ecs", "2014-05-26", "StartInstances", "ecs", "openAPI")
+        public ModifyStorageCapacityUnitAttributeRequest()
+            : base("Ecs", "2014-05-26", "ModifyStorageCapacityUnitAttribute", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +42,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string batchOptimization;
+		private string description;
 
-		private bool? dryRun;
+		private string storageCapacityUnitId;
 
 		private string resourceOwnerAccount;
 
@@ -52,7 +52,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<string> instanceIds = new List<string>(){ };
+		private string name;
 
 		public long? ResourceOwnerId
 		{
@@ -67,29 +67,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string BatchOptimization
+		public string Description
 		{
 			get
 			{
-				return batchOptimization;
+				return description;
 			}
 			set	
 			{
-				batchOptimization = value;
-				DictionaryUtil.Add(QueryParameters, "BatchOptimization", value);
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
-		public bool? DryRun
+		public string StorageCapacityUnitId
 		{
 			get
 			{
-				return dryRun;
+				return storageCapacityUnitId;
 			}
 			set	
 			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+				storageCapacityUnitId = value;
+				DictionaryUtil.Add(QueryParameters, "StorageCapacityUnitId", value);
 			}
 		}
 
@@ -132,26 +132,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> InstanceIds
+		public string Name
 		{
 			get
 			{
-				return instanceIds;
+				return name;
 			}
-
-			set
+			set	
 			{
-				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 
-        public override StartInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyStorageCapacityUnitAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyStorageCapacityUnitAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

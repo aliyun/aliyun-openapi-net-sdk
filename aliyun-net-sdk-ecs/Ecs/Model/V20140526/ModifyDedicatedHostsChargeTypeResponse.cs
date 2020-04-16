@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class StartInstancesResponse : AcsResponse
+	public class ModifyDedicatedHostsChargeTypeResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<StartInstances_InstanceResponse> instanceResponses;
+		private string orderId;
+
+		private List<ModifyDedicatedHostsChargeType_FeeOfInstance> feeOfInstances;
 
 		public string RequestId
 		{
@@ -41,30 +43,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<StartInstances_InstanceResponse> InstanceResponses
+		public string OrderId
 		{
 			get
 			{
-				return instanceResponses;
+				return orderId;
 			}
 			set	
 			{
-				instanceResponses = value;
+				orderId = value;
 			}
 		}
 
-		public class StartInstances_InstanceResponse
+		public List<ModifyDedicatedHostsChargeType_FeeOfInstance> FeeOfInstances
+		{
+			get
+			{
+				return feeOfInstances;
+			}
+			set	
+			{
+				feeOfInstances = value;
+			}
+		}
+
+		public class ModifyDedicatedHostsChargeType_FeeOfInstance
 		{
 
 			private string instanceId;
 
-			private string previousStatus;
+			private string fee;
 
-			private string currentStatus;
-
-			private string code;
-
-			private string message;
+			private string currency;
 
 			public string InstanceId
 			{
@@ -78,51 +88,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
-			public string PreviousStatus
+			public string Fee
 			{
 				get
 				{
-					return previousStatus;
+					return fee;
 				}
 				set	
 				{
-					previousStatus = value;
+					fee = value;
 				}
 			}
 
-			public string CurrentStatus
+			public string Currency
 			{
 				get
 				{
-					return currentStatus;
+					return currency;
 				}
 				set	
 				{
-					currentStatus = value;
-				}
-			}
-
-			public string Code
-			{
-				get
-				{
-					return code;
-				}
-				set	
-				{
-					code = value;
-				}
-			}
-
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
+					currency = value;
 				}
 			}
 		}

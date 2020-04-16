@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-	public class StartInstancesResponse : AcsResponse
+	public class PurchaseStorageCapacityUnitResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<StartInstances_InstanceResponse> instanceResponses;
+		private string orderId;
+
+		private List<string> storageCapacityUnitIds;
 
 		public string RequestId
 		{
@@ -41,89 +43,27 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<StartInstances_InstanceResponse> InstanceResponses
+		public string OrderId
 		{
 			get
 			{
-				return instanceResponses;
+				return orderId;
 			}
 			set	
 			{
-				instanceResponses = value;
+				orderId = value;
 			}
 		}
 
-		public class StartInstances_InstanceResponse
+		public List<string> StorageCapacityUnitIds
 		{
-
-			private string instanceId;
-
-			private string previousStatus;
-
-			private string currentStatus;
-
-			private string code;
-
-			private string message;
-
-			public string InstanceId
+			get
 			{
-				get
-				{
-					return instanceId;
-				}
-				set	
-				{
-					instanceId = value;
-				}
+				return storageCapacityUnitIds;
 			}
-
-			public string PreviousStatus
+			set	
 			{
-				get
-				{
-					return previousStatus;
-				}
-				set	
-				{
-					previousStatus = value;
-				}
-			}
-
-			public string CurrentStatus
-			{
-				get
-				{
-					return currentStatus;
-				}
-				set	
-				{
-					currentStatus = value;
-				}
-			}
-
-			public string Code
-			{
-				get
-				{
-					return code;
-				}
-				set	
-				{
-					code = value;
-				}
-			}
-
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
-				}
+				storageCapacityUnitIds = value;
 			}
 		}
 	}

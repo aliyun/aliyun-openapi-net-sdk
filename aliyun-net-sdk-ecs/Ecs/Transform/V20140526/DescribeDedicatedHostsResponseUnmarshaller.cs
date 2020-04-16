@@ -66,6 +66,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				}
 				dedicatedHost.SupportedInstanceTypeFamilies = dedicatedHost_supportedInstanceTypeFamilies;
 
+				List<string> dedicatedHost_supportedCustomInstanceTypeFamilies = new List<string>();
+				for (int j = 0; j < context.Length("DescribeDedicatedHosts.DedicatedHosts["+ i +"].SupportedCustomInstanceTypeFamilies.Length"); j++) {
+					dedicatedHost_supportedCustomInstanceTypeFamilies.Add(context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].SupportedCustomInstanceTypeFamilies["+ j +"]"));
+				}
+				dedicatedHost.SupportedCustomInstanceTypeFamilies = dedicatedHost_supportedCustomInstanceTypeFamilies;
+
 				List<string> dedicatedHost_supportedInstanceTypesList = new List<string>();
 				for (int j = 0; j < context.Length("DescribeDedicatedHosts.DedicatedHosts["+ i +"].SupportedInstanceTypesList.Length"); j++) {
 					dedicatedHost_supportedInstanceTypesList.Add(context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].SupportedInstanceTypesList["+ j +"]"));

@@ -28,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class StartInstancesRequest : RpcAcsRequest<StartInstancesResponse>
+    public class ModifyDedicatedHostsChargeTypeRequest : RpcAcsRequest<ModifyDedicatedHostsChargeTypeResponse>
     {
-        public StartInstancesRequest()
-            : base("Ecs", "2014-05-26", "StartInstances", "ecs", "openAPI")
+        public ModifyDedicatedHostsChargeTypeRequest()
+            : base("Ecs", "2014-05-26", "ModifyDedicatedHostsChargeType", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +40,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
             }
         }
 
+		private string dedicatedHostIds;
+
 		private long? resourceOwnerId;
 
-		private string batchOptimization;
+		private string clientToken;
+
+		private string dedicatedHostChargeType;
+
+		private int? period;
 
 		private bool? dryRun;
+
+		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
@@ -52,7 +60,22 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<string> instanceIds = new List<string>(){ };
+		private bool? detailFee;
+
+		private string periodUnit;
+
+		public string DedicatedHostIds
+		{
+			get
+			{
+				return dedicatedHostIds;
+			}
+			set	
+			{
+				dedicatedHostIds = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostIds", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -67,16 +90,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string BatchOptimization
+		public string ClientToken
 		{
 			get
 			{
-				return batchOptimization;
+				return clientToken;
 			}
 			set	
 			{
-				batchOptimization = value;
-				DictionaryUtil.Add(QueryParameters, "BatchOptimization", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string DedicatedHostChargeType
+		{
+			get
+			{
+				return dedicatedHostChargeType;
+			}
+			set	
+			{
+				dedicatedHostChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostChargeType", value);
+			}
+		}
+
+		public int? Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
 			}
 		}
 
@@ -90,6 +139,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dryRun = value;
 				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 
@@ -132,26 +194,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> InstanceIds
+		public bool? DetailFee
 		{
 			get
 			{
-				return instanceIds;
+				return detailFee;
 			}
-
-			set
+			set	
 			{
-				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
+				detailFee = value;
+				DictionaryUtil.Add(QueryParameters, "DetailFee", value.ToString());
 			}
 		}
 
-        public override StartInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string PeriodUnit
+		{
+			get
+			{
+				return periodUnit;
+			}
+			set	
+			{
+				periodUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
+			}
+		}
+
+        public override ModifyDedicatedHostsChargeTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDedicatedHostsChargeTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

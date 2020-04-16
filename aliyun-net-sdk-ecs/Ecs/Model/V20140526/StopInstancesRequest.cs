@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? forceStop;
 
+		private string batchOptimization;
+
 		private bool? dryRun;
 
 		private string resourceOwnerAccount;
@@ -92,6 +94,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				forceStop = value;
 				DictionaryUtil.Add(QueryParameters, "ForceStop", value.ToString());
+			}
+		}
+
+		public string BatchOptimization
+		{
+			get
+			{
+				return batchOptimization;
+			}
+			set	
+			{
+				batchOptimization = value;
+				DictionaryUtil.Add(QueryParameters, "BatchOptimization", value);
 			}
 		}
 

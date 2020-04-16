@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private bool? removeSymbols;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? RemoveSymbols
+		{
+			get
+			{
+				return removeSymbols;
+			}
+			set	
+			{
+				removeSymbols = value;
+				DictionaryUtil.Add(QueryParameters, "RemoveSymbols", value.ToString());
 			}
 		}
 

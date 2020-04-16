@@ -146,6 +146,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private List<string> supportedInstanceTypeFamilies;
 
+			private List<string> supportedCustomInstanceTypeFamilies;
+
 			private List<string> supportedInstanceTypesList;
 
 			private DescribeDedicatedHosts_Capacity capacity;
@@ -437,6 +439,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					supportedInstanceTypeFamilies = value;
+				}
+			}
+
+			public List<string> SupportedCustomInstanceTypeFamilies
+			{
+				get
+				{
+					return supportedCustomInstanceTypeFamilies;
+				}
+				set	
+				{
+					supportedCustomInstanceTypeFamilies = value;
 				}
 			}
 

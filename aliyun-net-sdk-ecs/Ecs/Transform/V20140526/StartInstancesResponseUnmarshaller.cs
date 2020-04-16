@@ -32,6 +32,19 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			startInstancesResponse.HttpResponse = context.HttpResponse;
 			startInstancesResponse.RequestId = context.StringValue("StartInstances.RequestId");
+
+			List<StartInstancesResponse.StartInstances_InstanceResponse> startInstancesResponse_instanceResponses = new List<StartInstancesResponse.StartInstances_InstanceResponse>();
+			for (int i = 0; i < context.Length("StartInstances.InstanceResponses.Length"); i++) {
+				StartInstancesResponse.StartInstances_InstanceResponse instanceResponse = new StartInstancesResponse.StartInstances_InstanceResponse();
+				instanceResponse.InstanceId = context.StringValue("StartInstances.InstanceResponses["+ i +"].InstanceId");
+				instanceResponse.PreviousStatus = context.StringValue("StartInstances.InstanceResponses["+ i +"].PreviousStatus");
+				instanceResponse.CurrentStatus = context.StringValue("StartInstances.InstanceResponses["+ i +"].CurrentStatus");
+				instanceResponse.Code = context.StringValue("StartInstances.InstanceResponses["+ i +"].Code");
+				instanceResponse.Message = context.StringValue("StartInstances.InstanceResponses["+ i +"].Message");
+
+				startInstancesResponse_instanceResponses.Add(instanceResponse);
+			}
+			startInstancesResponse.InstanceResponses = startInstancesResponse_instanceResponses;
         
 			return startInstancesResponse;
         }

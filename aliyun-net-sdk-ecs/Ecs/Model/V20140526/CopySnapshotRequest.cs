@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class RebootInstancesRequest : RpcAcsRequest<RebootInstancesResponse>
+    public class CopySnapshotRequest : RpcAcsRequest<CopySnapshotResponse>
     {
-        public RebootInstancesRequest()
-            : base("Ecs", "2014-05-26", "RebootInstances", "ecs", "openAPI")
+        public CopySnapshotRequest()
+            : base("Ecs", "2014-05-26", "CopySnapshot", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,19 +41,21 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string batchOptimization;
+		private string snapshotId;
 
-		private bool? dryRun;
+		private string destinationRegionId;
+
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
-
 		private long? ownerId;
 
-		private bool? forceReboot;
+		private string destinationSnapshotName;
 
-		private List<string> instanceIds = new List<string>(){ };
+		private string destinationSnapshotDescription;
+
+		private int? retentionDays;
 
 		public long? ResourceOwnerId
 		{
@@ -69,29 +70,47 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string BatchOptimization
+		public string SnapshotId
 		{
 			get
 			{
-				return batchOptimization;
+				return snapshotId;
 			}
 			set	
 			{
-				batchOptimization = value;
-				DictionaryUtil.Add(QueryParameters, "BatchOptimization", value);
+				snapshotId = value;
+				DictionaryUtil.Add(QueryParameters, "SnapshotId", value);
 			}
 		}
 
-		public bool? DryRun
+		public string DestinationRegionId
 		{
 			get
 			{
-				return dryRun;
+				return destinationRegionId;
 			}
 			set	
 			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+				destinationRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationRegionId", value);
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+				}
 			}
 		}
 
@@ -108,19 +127,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -134,39 +140,80 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? ForceReboot
+		public string DestinationSnapshotName
 		{
 			get
 			{
-				return forceReboot;
+				return destinationSnapshotName;
 			}
 			set	
 			{
-				forceReboot = value;
-				DictionaryUtil.Add(QueryParameters, "ForceReboot", value.ToString());
+				destinationSnapshotName = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationSnapshotName", value);
 			}
 		}
 
-		public List<string> InstanceIds
+		public string DestinationSnapshotDescription
 		{
 			get
 			{
-				return instanceIds;
+				return destinationSnapshotDescription;
+			}
+			set	
+			{
+				destinationSnapshotDescription = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationSnapshotDescription", value);
+			}
+		}
+
+		public int? RetentionDays
+		{
+			get
+			{
+				return retentionDays;
+			}
+			set	
+			{
+				retentionDays = value;
+				DictionaryUtil.Add(QueryParameters, "RetentionDays", value.ToString());
+			}
+		}
+
+		public class Tag
+		{
+
+			private string key;
+
+			private string value_;
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 
-			set
+			public string Value
 			{
-				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
+				get
 				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
 				}
 			}
 		}
 
-        public override RebootInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CopySnapshotResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RebootInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CopySnapshotResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

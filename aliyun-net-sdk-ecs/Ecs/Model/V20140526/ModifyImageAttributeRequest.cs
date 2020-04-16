@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
+		private string imageFamily;
+
 		private string status;
 
 		public long? ResourceOwnerId
@@ -144,6 +146,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ImageFamily
+		{
+			get
+			{
+				return imageFamily;
+			}
+			set	
+			{
+				imageFamily = value;
+				DictionaryUtil.Add(QueryParameters, "ImageFamily", value);
 			}
 		}
 

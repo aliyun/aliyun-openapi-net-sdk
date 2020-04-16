@@ -27,6 +27,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string requestId;
 
+		private List<StopInstances_InstanceResponse> instanceResponses;
+
 		public string RequestId
 		{
 			get
@@ -36,6 +38,92 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public List<StopInstances_InstanceResponse> InstanceResponses
+		{
+			get
+			{
+				return instanceResponses;
+			}
+			set	
+			{
+				instanceResponses = value;
+			}
+		}
+
+		public class StopInstances_InstanceResponse
+		{
+
+			private string instanceId;
+
+			private string previousStatus;
+
+			private string currentStatus;
+
+			private string code;
+
+			private string message;
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public string PreviousStatus
+			{
+				get
+				{
+					return previousStatus;
+				}
+				set	
+				{
+					previousStatus = value;
+				}
+			}
+
+			public string CurrentStatus
+			{
+				get
+				{
+					return currentStatus;
+				}
+				set	
+				{
+					currentStatus = value;
+				}
+			}
+
+			public string Code
+			{
+				get
+				{
+					return code;
+				}
+				set	
+				{
+					code = value;
+				}
+			}
+
+			public string Message
+			{
+				get
+				{
+					return message;
+				}
+				set	
+				{
+					message = value;
+				}
 			}
 		}
 	}

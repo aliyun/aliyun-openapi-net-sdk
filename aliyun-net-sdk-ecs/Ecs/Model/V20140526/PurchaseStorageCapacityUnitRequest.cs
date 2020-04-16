@@ -28,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class StartInstancesRequest : RpcAcsRequest<StartInstancesResponse>
+    public class PurchaseStorageCapacityUnitRequest : RpcAcsRequest<PurchaseStorageCapacityUnitResponse>
     {
-        public StartInstancesRequest()
-            : base("Ecs", "2014-05-26", "StartInstances", "ecs", "openAPI")
+        public PurchaseStorageCapacityUnitRequest()
+            : base("Ecs", "2014-05-26", "PurchaseStorageCapacityUnit", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +42,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string batchOptimization;
+		private string clientToken;
 
-		private bool? dryRun;
+		private string description;
+
+		private string startTime;
+
+		private int? capacity;
+
+		private int? period;
+
+		private int? amount;
+
+		private string fromApp;
 
 		private string resourceOwnerAccount;
 
@@ -52,7 +62,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private List<string> instanceIds = new List<string>(){ };
+		private string periodUnit;
+
+		private string name;
 
 		public long? ResourceOwnerId
 		{
@@ -67,29 +79,94 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string BatchOptimization
+		public string ClientToken
 		{
 			get
 			{
-				return batchOptimization;
+				return clientToken;
 			}
 			set	
 			{
-				batchOptimization = value;
-				DictionaryUtil.Add(QueryParameters, "BatchOptimization", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public bool? DryRun
+		public string Description
 		{
 			get
 			{
-				return dryRun;
+				return description;
 			}
 			set	
 			{
-				dryRun = value;
-				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public int? Capacity
+		{
+			get
+			{
+				return capacity;
+			}
+			set	
+			{
+				capacity = value;
+				DictionaryUtil.Add(QueryParameters, "Capacity", value.ToString());
+			}
+		}
+
+		public int? Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public int? Amount
+		{
+			get
+			{
+				return amount;
+			}
+			set	
+			{
+				amount = value;
+				DictionaryUtil.Add(QueryParameters, "Amount", value.ToString());
+			}
+		}
+
+		public string FromApp
+		{
+			get
+			{
+				return fromApp;
+			}
+			set	
+			{
+				fromApp = value;
+				DictionaryUtil.Add(QueryParameters, "FromApp", value);
 			}
 		}
 
@@ -132,26 +209,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> InstanceIds
+		public string PeriodUnit
 		{
 			get
 			{
-				return instanceIds;
+				return periodUnit;
 			}
-
-			set
+			set	
 			{
-				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
+				periodUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
 			}
 		}
 
-        public override StartInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+        public override PurchaseStorageCapacityUnitResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return PurchaseStorageCapacityUnitResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
