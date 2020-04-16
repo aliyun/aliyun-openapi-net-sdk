@@ -49,53 +49,21 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 				phoneNumber.InstanceId = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].InstanceId");
 				phoneNumber.Number = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].Number");
 				phoneNumber.PhoneNumberDescription = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].PhoneNumberDescription");
-				phoneNumber.TestOnly = context.BooleanValue("ListPhoneTags.PhoneNumbers.List["+ i +"].TestOnly");
-				phoneNumber.RemainingTime = context.IntegerValue("ListPhoneTags.PhoneNumbers.List["+ i +"].RemainingTime");
-				phoneNumber.AllowOutbound = context.BooleanValue("ListPhoneTags.PhoneNumbers.List["+ i +"].AllowOutbound");
 				phoneNumber.Usage = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].Usage");
-				phoneNumber.Trunks = context.IntegerValue("ListPhoneTags.PhoneNumbers.List["+ i +"].Trunks");
 				phoneNumber.Province = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].Province");
 				phoneNumber.City = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].City");
-				phoneNumber.Assignee = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].Assignee");
-				phoneNumber.NumberCommodityStatus = context.IntegerValue("ListPhoneTags.PhoneNumbers.List["+ i +"].NumberCommodityStatus");
 				phoneNumber.Type = context.IntegerValue("ListPhoneTags.PhoneNumbers.List["+ i +"].Type");
 				phoneNumber.Concurrency = context.IntegerValue("ListPhoneTags.PhoneNumbers.List["+ i +"].Concurrency");
 				phoneNumber.ServiceTag = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].ServiceTag");
-				phoneNumber.SipTelX = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].SipTelX");
-				phoneNumber.NumberGroupId = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].NumberGroupId");
-				phoneNumber.NumberGroupName = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].NumberGroupName");
 				phoneNumber.Provider = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].Provider");
 				phoneNumber.CreateTime = context.LongValue("ListPhoneTags.PhoneNumbers.List["+ i +"].CreateTime");
+				phoneNumber.ContactFlowId = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].ContactFlowId");
 
-				ListPhoneTagsResponse.ListPhoneTags_PhoneNumbers.ListPhoneTags_PhoneNumber.ListPhoneTags_ContactFlow contactFlow = new ListPhoneTagsResponse.ListPhoneTags_PhoneNumbers.ListPhoneTags_PhoneNumber.ListPhoneTags_ContactFlow();
-				contactFlow.ContactFlowId = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].ContactFlow.ContactFlowId");
-				contactFlow.InstanceId = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].ContactFlow.InstanceId");
-				contactFlow.ContactFlowName = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].ContactFlow.ContactFlowName");
-				contactFlow.ContactFlowDescription = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].ContactFlow.ContactFlowDescription");
-				contactFlow.Type = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].ContactFlow.Type");
-				phoneNumber.ContactFlow = contactFlow;
-
-				ListPhoneTagsResponse.ListPhoneTags_PhoneNumbers.ListPhoneTags_PhoneNumber.ListPhoneTags_PrivacyNumber privacyNumber = new ListPhoneTagsResponse.ListPhoneTags_PhoneNumbers.ListPhoneTags_PhoneNumber.ListPhoneTags_PrivacyNumber();
-				privacyNumber.PoolId = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].PrivacyNumber.PoolId");
-				privacyNumber.Type = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].PrivacyNumber.Type");
-				privacyNumber.TelX = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].PrivacyNumber.TelX");
-				privacyNumber.PoolName = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].PrivacyNumber.PoolName");
-				privacyNumber.PhoneNumber = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].PrivacyNumber.PhoneNumber");
-				privacyNumber.Extra = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].PrivacyNumber.Extra");
-				privacyNumber.BizId = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].PrivacyNumber.BizId");
-				privacyNumber.SubId = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].PrivacyNumber.SubId");
-				privacyNumber.RegionNameCity = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].PrivacyNumber.RegionNameCity");
-				phoneNumber.PrivacyNumber = privacyNumber;
-
-				List<ListPhoneTagsResponse.ListPhoneTags_PhoneNumbers.ListPhoneTags_PhoneNumber.ListPhoneTags_SkillGroup> phoneNumber_skillGroups = new List<ListPhoneTagsResponse.ListPhoneTags_PhoneNumbers.ListPhoneTags_PhoneNumber.ListPhoneTags_SkillGroup>();
-				for (int j = 0; j < context.Length("ListPhoneTags.PhoneNumbers.List["+ i +"].SkillGroups.Length"); j++) {
-					ListPhoneTagsResponse.ListPhoneTags_PhoneNumbers.ListPhoneTags_PhoneNumber.ListPhoneTags_SkillGroup skillGroup = new ListPhoneTagsResponse.ListPhoneTags_PhoneNumbers.ListPhoneTags_PhoneNumber.ListPhoneTags_SkillGroup();
-					skillGroup.SkillGroupId = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].SkillGroups["+ j +"].SkillGroupId");
-					skillGroup.SkillGroupName = context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].SkillGroups["+ j +"].SkillGroupName");
-
-					phoneNumber_skillGroups.Add(skillGroup);
+				List<string> phoneNumber_skillGroupIdList = new List<string>();
+				for (int j = 0; j < context.Length("ListPhoneTags.PhoneNumbers.List["+ i +"].SkillGroupIdList.Length"); j++) {
+					phoneNumber_skillGroupIdList.Add(context.StringValue("ListPhoneTags.PhoneNumbers.List["+ i +"].SkillGroupIdList["+ j +"]"));
 				}
-				phoneNumber.SkillGroups = phoneNumber_skillGroups;
+				phoneNumber.SkillGroupIdList = phoneNumber_skillGroupIdList;
 
 				phoneNumbers_list.Add(phoneNumber);
 			}

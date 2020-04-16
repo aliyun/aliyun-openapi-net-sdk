@@ -37,6 +37,8 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 		private List<ListOutboundPhoneNumberOfUser_PhoneNumber> outboundPhoneNumbers;
 
+		private List<string> numberList;
+
 		public string RequestId
 		{
 			get
@@ -106,6 +108,18 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			set	
 			{
 				outboundPhoneNumbers = value;
+			}
+		}
+
+		public List<string> NumberList
+		{
+			get
+			{
+				return numberList;
+			}
+			set	
+			{
+				numberList = value;
 			}
 		}
 

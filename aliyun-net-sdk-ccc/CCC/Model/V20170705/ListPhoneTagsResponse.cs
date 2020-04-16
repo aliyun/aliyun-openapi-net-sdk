@@ -179,23 +179,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private string phoneNumberDescription;
 
-				private bool? testOnly;
-
-				private int? remainingTime;
-
-				private bool? allowOutbound;
-
 				private string usage;
-
-				private int? trunks;
 
 				private string province;
 
 				private string city;
-
-				private string assignee;
-
-				private int? numberCommodityStatus;
 
 				private int? type;
 
@@ -203,21 +191,13 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 
 				private string serviceTag;
 
-				private string sipTelX;
-
-				private string numberGroupId;
-
-				private string numberGroupName;
-
 				private string provider;
 
 				private long? createTime;
 
-				private List<ListPhoneTags_SkillGroup> skillGroups;
+				private string contactFlowId;
 
-				private ListPhoneTags_ContactFlow contactFlow;
-
-				private ListPhoneTags_PrivacyNumber privacyNumber;
+				private List<string> skillGroupIdList;
 
 				public string PhoneNumberId
 				{
@@ -267,42 +247,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public bool? TestOnly
-				{
-					get
-					{
-						return testOnly;
-					}
-					set	
-					{
-						testOnly = value;
-					}
-				}
-
-				public int? RemainingTime
-				{
-					get
-					{
-						return remainingTime;
-					}
-					set	
-					{
-						remainingTime = value;
-					}
-				}
-
-				public bool? AllowOutbound
-				{
-					get
-					{
-						return allowOutbound;
-					}
-					set	
-					{
-						allowOutbound = value;
-					}
-				}
-
 				public string Usage
 				{
 					get
@@ -312,18 +256,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						usage = value;
-					}
-				}
-
-				public int? Trunks
-				{
-					get
-					{
-						return trunks;
-					}
-					set	
-					{
-						trunks = value;
 					}
 				}
 
@@ -348,30 +280,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					set	
 					{
 						city = value;
-					}
-				}
-
-				public string Assignee
-				{
-					get
-					{
-						return assignee;
-					}
-					set	
-					{
-						assignee = value;
-					}
-				}
-
-				public int? NumberCommodityStatus
-				{
-					get
-					{
-						return numberCommodityStatus;
-					}
-					set	
-					{
-						numberCommodityStatus = value;
 					}
 				}
 
@@ -411,42 +319,6 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public string SipTelX
-				{
-					get
-					{
-						return sipTelX;
-					}
-					set	
-					{
-						sipTelX = value;
-					}
-				}
-
-				public string NumberGroupId
-				{
-					get
-					{
-						return numberGroupId;
-					}
-					set	
-					{
-						numberGroupId = value;
-					}
-				}
-
-				public string NumberGroupName
-				{
-					get
-					{
-						return numberGroupName;
-					}
-					set	
-					{
-						numberGroupName = value;
-					}
-				}
-
 				public string Provider
 				{
 					get
@@ -471,275 +343,27 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 					}
 				}
 
-				public List<ListPhoneTags_SkillGroup> SkillGroups
+				public string ContactFlowId
 				{
 					get
 					{
-						return skillGroups;
+						return contactFlowId;
 					}
 					set	
 					{
-						skillGroups = value;
+						contactFlowId = value;
 					}
 				}
 
-				public ListPhoneTags_ContactFlow ContactFlow
+				public List<string> SkillGroupIdList
 				{
 					get
 					{
-						return contactFlow;
+						return skillGroupIdList;
 					}
 					set	
 					{
-						contactFlow = value;
-					}
-				}
-
-				public ListPhoneTags_PrivacyNumber PrivacyNumber
-				{
-					get
-					{
-						return privacyNumber;
-					}
-					set	
-					{
-						privacyNumber = value;
-					}
-				}
-
-				public class ListPhoneTags_SkillGroup
-				{
-
-					private string skillGroupId;
-
-					private string skillGroupName;
-
-					public string SkillGroupId
-					{
-						get
-						{
-							return skillGroupId;
-						}
-						set	
-						{
-							skillGroupId = value;
-						}
-					}
-
-					public string SkillGroupName
-					{
-						get
-						{
-							return skillGroupName;
-						}
-						set	
-						{
-							skillGroupName = value;
-						}
-					}
-				}
-
-				public class ListPhoneTags_ContactFlow
-				{
-
-					private string contactFlowId;
-
-					private string instanceId;
-
-					private string contactFlowName;
-
-					private string contactFlowDescription;
-
-					private string type;
-
-					public string ContactFlowId
-					{
-						get
-						{
-							return contactFlowId;
-						}
-						set	
-						{
-							contactFlowId = value;
-						}
-					}
-
-					public string InstanceId
-					{
-						get
-						{
-							return instanceId;
-						}
-						set	
-						{
-							instanceId = value;
-						}
-					}
-
-					public string ContactFlowName
-					{
-						get
-						{
-							return contactFlowName;
-						}
-						set	
-						{
-							contactFlowName = value;
-						}
-					}
-
-					public string ContactFlowDescription
-					{
-						get
-						{
-							return contactFlowDescription;
-						}
-						set	
-						{
-							contactFlowDescription = value;
-						}
-					}
-
-					public string Type
-					{
-						get
-						{
-							return type;
-						}
-						set	
-						{
-							type = value;
-						}
-					}
-				}
-
-				public class ListPhoneTags_PrivacyNumber
-				{
-
-					private string poolId;
-
-					private string type;
-
-					private string telX;
-
-					private string poolName;
-
-					private string phoneNumber;
-
-					private string extra;
-
-					private string bizId;
-
-					private string subId;
-
-					private string regionNameCity;
-
-					public string PoolId
-					{
-						get
-						{
-							return poolId;
-						}
-						set	
-						{
-							poolId = value;
-						}
-					}
-
-					public string Type
-					{
-						get
-						{
-							return type;
-						}
-						set	
-						{
-							type = value;
-						}
-					}
-
-					public string TelX
-					{
-						get
-						{
-							return telX;
-						}
-						set	
-						{
-							telX = value;
-						}
-					}
-
-					public string PoolName
-					{
-						get
-						{
-							return poolName;
-						}
-						set	
-						{
-							poolName = value;
-						}
-					}
-
-					public string PhoneNumber
-					{
-						get
-						{
-							return phoneNumber;
-						}
-						set	
-						{
-							phoneNumber = value;
-						}
-					}
-
-					public string Extra
-					{
-						get
-						{
-							return extra;
-						}
-						set	
-						{
-							extra = value;
-						}
-					}
-
-					public string BizId
-					{
-						get
-						{
-							return bizId;
-						}
-						set	
-						{
-							bizId = value;
-						}
-					}
-
-					public string SubId
-					{
-						get
-						{
-							return subId;
-						}
-						set	
-						{
-							subId = value;
-						}
-					}
-
-					public string RegionNameCity
-					{
-						get
-						{
-							return regionNameCity;
-						}
-						set	
-						{
-							regionNameCity = value;
-						}
+						skillGroupIdList = value;
 					}
 				}
 			}

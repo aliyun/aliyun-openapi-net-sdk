@@ -130,6 +130,11 @@ namespace Aliyun.Acs.CCC.Model.V20170705
 			}
 		}
 
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
         public override GetAgentDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetAgentDataResponseUnmarshaller.Unmarshall(unmarshallerContext);

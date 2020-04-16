@@ -37,6 +37,12 @@ namespace Aliyun.Acs.CCC.Transform.V20170705
 			listOutboundPhoneNumberOfUserResponse.Message = context.StringValue("ListOutboundPhoneNumberOfUser.Message");
 			listOutboundPhoneNumberOfUserResponse.HttpStatusCode = context.IntegerValue("ListOutboundPhoneNumberOfUser.HttpStatusCode");
 
+			List<string> listOutboundPhoneNumberOfUserResponse_numberList = new List<string>();
+			for (int i = 0; i < context.Length("ListOutboundPhoneNumberOfUser.NumberList.Length"); i++) {
+				listOutboundPhoneNumberOfUserResponse_numberList.Add(context.StringValue("ListOutboundPhoneNumberOfUser.NumberList["+ i +"]"));
+			}
+			listOutboundPhoneNumberOfUserResponse.NumberList = listOutboundPhoneNumberOfUserResponse_numberList;
+
 			List<ListOutboundPhoneNumberOfUserResponse.ListOutboundPhoneNumberOfUser_PhoneNumber> listOutboundPhoneNumberOfUserResponse_outboundPhoneNumbers = new List<ListOutboundPhoneNumberOfUserResponse.ListOutboundPhoneNumberOfUser_PhoneNumber>();
 			for (int i = 0; i < context.Length("ListOutboundPhoneNumberOfUser.OutboundPhoneNumbers.Length"); i++) {
 				ListOutboundPhoneNumberOfUserResponse.ListOutboundPhoneNumberOfUser_PhoneNumber phoneNumber = new ListOutboundPhoneNumberOfUserResponse.ListOutboundPhoneNumberOfUser_PhoneNumber();
