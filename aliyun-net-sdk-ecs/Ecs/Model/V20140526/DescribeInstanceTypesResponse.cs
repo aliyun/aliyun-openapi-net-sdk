@@ -94,6 +94,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string instanceFamilyLevel;
 
+			private int? totalEniQueueQuantity;
+
 			public string InstanceTypeId
 			{
 				get
@@ -319,6 +321,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					instanceFamilyLevel = value;
+				}
+			}
+
+			public int? TotalEniQueueQuantity
+			{
+				get
+				{
+					return totalEniQueueQuantity;
+				}
+				set	
+				{
+					totalEniQueueQuantity = value;
 				}
 			}
 		}

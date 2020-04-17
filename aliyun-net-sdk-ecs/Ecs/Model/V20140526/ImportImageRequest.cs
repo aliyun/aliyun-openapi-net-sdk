@@ -47,7 +47,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string platform;
 
+		private string resourceGroupId;
+
 		private string imageName;
+
+		private List<Tag> tags = new List<Tag>(){ };
 
 		private string architecture;
 
@@ -122,6 +126,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public string ImageName
 		{
 			get
@@ -132,6 +149,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				imageName = value;
 				DictionaryUtil.Add(QueryParameters, "ImageName", value);
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 
@@ -297,6 +332,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					diskImageSize = value;
+				}
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
 				}
 			}
 		}

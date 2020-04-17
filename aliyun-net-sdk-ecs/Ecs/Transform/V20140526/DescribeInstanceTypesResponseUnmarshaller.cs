@@ -55,6 +55,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceType.InstancePpsRx = context.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstancePpsRx");
 				instanceType.InstancePpsTx = context.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstancePpsTx");
 				instanceType.InstanceFamilyLevel = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceFamilyLevel");
+				instanceType.TotalEniQueueQuantity = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].TotalEniQueueQuantity");
 
 				describeInstanceTypesResponse_instanceTypes.Add(instanceType);
 			}
