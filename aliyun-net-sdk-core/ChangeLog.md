@@ -1,3 +1,7 @@
+### 2020-04-17 Version 1.5.5
+* Fixed set Content-Length
+* TimeoutConfig Thread safe
+
 ### 2019-10-14 Version 1.5.4
 * Fixed signatureComposer
 
