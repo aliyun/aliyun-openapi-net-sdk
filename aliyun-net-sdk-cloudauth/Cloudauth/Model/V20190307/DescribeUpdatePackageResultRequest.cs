@@ -27,10 +27,10 @@ using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class DescribeUploadInfoRequest : RpcAcsRequest<DescribeUploadInfoResponse>
+    public class DescribeUpdatePackageResultRequest : RpcAcsRequest<DescribeUpdatePackageResultResponse>
     {
-        public DescribeUploadInfoRequest()
-            : base("Cloudauth", "2019-03-07", "DescribeUploadInfo", "cloudauth", "openAPI")
+        public DescribeUpdatePackageResultRequest()
+            : base("Cloudauth", "2019-03-07", "DescribeUpdatePackageResult", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,18 +39,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
-		private string biz;
+		private string taskId;
 
-		public string Biz
+		public string TaskId
 		{
 			get
 			{
-				return biz;
+				return taskId;
 			}
 			set	
 			{
-				biz = value;
-				DictionaryUtil.Add(QueryParameters, "Biz", value);
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
@@ -59,9 +59,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			return false;
 		}
 
-        public override DescribeUploadInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeUpdatePackageResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeUploadInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeUpdatePackageResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

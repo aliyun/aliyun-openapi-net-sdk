@@ -27,10 +27,10 @@ using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class DescribeUploadInfoRequest : RpcAcsRequest<DescribeUploadInfoResponse>
+    public class UpdateAppPackageRequest : RpcAcsRequest<UpdateAppPackageResponse>
     {
-        public DescribeUploadInfoRequest()
-            : base("Cloudauth", "2019-03-07", "DescribeUploadInfo", "cloudauth", "openAPI")
+        public UpdateAppPackageRequest()
+            : base("Cloudauth", "2019-03-07", "UpdateAppPackage", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,18 +39,63 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
-		private string biz;
+		private bool? debug;
 
-		public string Biz
+		private string platform;
+
+		private string packageUrl;
+
+		private long? id;
+
+		public bool? Debug
 		{
 			get
 			{
-				return biz;
+				return debug;
 			}
 			set	
 			{
-				biz = value;
-				DictionaryUtil.Add(QueryParameters, "Biz", value);
+				debug = value;
+				DictionaryUtil.Add(QueryParameters, "Debug", value.ToString());
+			}
+		}
+
+		public string Platform
+		{
+			get
+			{
+				return platform;
+			}
+			set	
+			{
+				platform = value;
+				DictionaryUtil.Add(QueryParameters, "Platform", value);
+			}
+		}
+
+		public string PackageUrl
+		{
+			get
+			{
+				return packageUrl;
+			}
+			set	
+			{
+				packageUrl = value;
+				DictionaryUtil.Add(QueryParameters, "PackageUrl", value);
+			}
+		}
+
+		public long? Id
+		{
+			get
+			{
+				return id;
+			}
+			set	
+			{
+				id = value;
+				DictionaryUtil.Add(QueryParameters, "Id", value.ToString());
 			}
 		}
 
@@ -59,9 +104,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			return false;
 		}
 
-        public override DescribeUploadInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateAppPackageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeUploadInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateAppPackageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

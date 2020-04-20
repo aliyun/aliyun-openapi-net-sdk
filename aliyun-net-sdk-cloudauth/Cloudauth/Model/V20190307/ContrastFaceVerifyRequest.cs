@@ -78,7 +78,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+				DictionaryUtil.Add(BodyParameters, "ProductCode", value);
 			}
 		}
 
@@ -91,7 +91,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				ossObjectName = value;
-				DictionaryUtil.Add(QueryParameters, "OssObjectName", value);
+				DictionaryUtil.Add(BodyParameters, "OssObjectName", value);
 			}
 		}
 
@@ -104,7 +104,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				faceContrastPicture = value;
-				DictionaryUtil.Add(QueryParameters, "FaceContrastPicture", value);
+				DictionaryUtil.Add(BodyParameters, "FaceContrastPicture", value);
 			}
 		}
 
@@ -117,7 +117,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				certName = value;
-				DictionaryUtil.Add(QueryParameters, "CertName", value);
+				DictionaryUtil.Add(BodyParameters, "CertName", value);
 			}
 		}
 
@@ -130,7 +130,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				ip = value;
-				DictionaryUtil.Add(QueryParameters, "Ip", value);
+				DictionaryUtil.Add(BodyParameters, "Ip", value);
 			}
 		}
 
@@ -143,7 +143,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				mobile = value;
-				DictionaryUtil.Add(QueryParameters, "Mobile", value);
+				DictionaryUtil.Add(BodyParameters, "Mobile", value);
 			}
 		}
 
@@ -156,7 +156,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				deviceToken = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceToken", value);
+				DictionaryUtil.Add(BodyParameters, "DeviceToken", value);
 			}
 		}
 
@@ -169,7 +169,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				userId = value;
-				DictionaryUtil.Add(QueryParameters, "UserId", value);
+				DictionaryUtil.Add(BodyParameters, "UserId", value);
 			}
 		}
 
@@ -182,7 +182,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				certifyId = value;
-				DictionaryUtil.Add(QueryParameters, "CertifyId", value);
+				DictionaryUtil.Add(BodyParameters, "CertifyId", value);
 			}
 		}
 
@@ -195,7 +195,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				certNo = value;
-				DictionaryUtil.Add(QueryParameters, "CertNo", value);
+				DictionaryUtil.Add(BodyParameters, "CertNo", value);
 			}
 		}
 
@@ -208,7 +208,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				outerOrderNo = value;
-				DictionaryUtil.Add(QueryParameters, "OuterOrderNo", value);
+				DictionaryUtil.Add(BodyParameters, "OuterOrderNo", value);
 			}
 		}
 
@@ -221,7 +221,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				certType = value;
-				DictionaryUtil.Add(QueryParameters, "CertType", value);
+				DictionaryUtil.Add(BodyParameters, "CertType", value);
 			}
 		}
 
@@ -234,7 +234,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				faceContrastPictureUrl = value;
-				DictionaryUtil.Add(QueryParameters, "FaceContrastPictureUrl", value);
+				DictionaryUtil.Add(BodyParameters, "FaceContrastPictureUrl", value);
 			}
 		}
 
@@ -247,7 +247,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				sceneId = value;
-				DictionaryUtil.Add(QueryParameters, "SceneId", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "SceneId", value.ToString());
 			}
 		}
 
@@ -260,7 +260,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				ossBucketName = value;
-				DictionaryUtil.Add(QueryParameters, "OssBucketName", value);
+				DictionaryUtil.Add(BodyParameters, "OssBucketName", value);
 			}
 		}
 

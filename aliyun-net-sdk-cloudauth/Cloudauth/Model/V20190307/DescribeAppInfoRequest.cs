@@ -27,10 +27,10 @@ using Aliyun.Acs.Cloudauth.Transform.V20190307;
 
 namespace Aliyun.Acs.Cloudauth.Model.V20190307
 {
-    public class DescribeUploadInfoRequest : RpcAcsRequest<DescribeUploadInfoResponse>
+    public class DescribeAppInfoRequest : RpcAcsRequest<DescribeAppInfoResponse>
     {
-        public DescribeUploadInfoRequest()
-            : base("Cloudauth", "2019-03-07", "DescribeUploadInfo", "cloudauth", "openAPI")
+        public DescribeAppInfoRequest()
+            : base("Cloudauth", "2019-03-07", "DescribeAppInfo", "cloudauth", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,18 +39,48 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
-		private string biz;
+		private int? currentPage;
 
-		public string Biz
+		private string platform;
+
+		private int? pageSize;
+
+		public int? CurrentPage
 		{
 			get
 			{
-				return biz;
+				return currentPage;
 			}
 			set	
 			{
-				biz = value;
-				DictionaryUtil.Add(QueryParameters, "Biz", value);
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string Platform
+		{
+			get
+			{
+				return platform;
+			}
+			set	
+			{
+				platform = value;
+				DictionaryUtil.Add(QueryParameters, "Platform", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -59,9 +89,9 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			return false;
 		}
 
-        public override DescribeUploadInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeAppInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeUploadInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeAppInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -93,7 +93,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				faceContrastPicture = value;
-				DictionaryUtil.Add(QueryParameters, "FaceContrastPicture", value);
+				DictionaryUtil.Add(BodyParameters, "FaceContrastPicture", value);
 			}
 		}
 
