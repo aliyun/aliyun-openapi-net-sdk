@@ -108,6 +108,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string resourceGroupId;
 
+			private bool? enableKibanaPrivateNetwork;
+
 			private List<DescribeInstance_DictListItem> dictList;
 
 			private List<DescribeInstance_SynonymsDictsItem> synonymsDicts;
@@ -127,6 +129,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			private List<string> publicIpWhitelist;
 
 			private List<string> privateNetworkIpWhiteList;
+
+			private List<string> kibanaPrivateIPWhitelist;
 
 			private DescribeInstance_NodeSpec nodeSpec;
 
@@ -454,6 +458,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public bool? EnableKibanaPrivateNetwork
+			{
+				get
+				{
+					return enableKibanaPrivateNetwork;
+				}
+				set	
+				{
+					enableKibanaPrivateNetwork = value;
+				}
+			}
+
 			public List<DescribeInstance_DictListItem> DictList
 			{
 				get
@@ -571,6 +587,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					privateNetworkIpWhiteList = value;
+				}
+			}
+
+			public List<string> KibanaPrivateIPWhitelist
+			{
+				get
+				{
+					return kibanaPrivateIPWhitelist;
+				}
+				set	
+				{
+					kibanaPrivateIPWhitelist = value;
 				}
 			}
 

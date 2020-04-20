@@ -60,6 +60,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			result.EnableKibanaPublicNetwork = context.BooleanValue("DescribeInstance.Result.enableKibanaPublicNetwork");
 			result.HaveKibana = context.BooleanValue("DescribeInstance.Result.haveKibana");
 			result.ResourceGroupId = context.StringValue("DescribeInstance.Result.resourceGroupId");
+			result.EnableKibanaPrivateNetwork = context.BooleanValue("DescribeInstance.Result.enableKibanaPrivateNetwork");
 
 			List<string> result_esIPWhitelist = new List<string>();
 			for (int i = 0; i < context.Length("DescribeInstance.Result.EsIPWhitelist.Length"); i++) {
@@ -90,6 +91,12 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				result_privateNetworkIpWhiteList.Add(context.StringValue("DescribeInstance.Result.PrivateNetworkIpWhiteList["+ i +"]"));
 			}
 			result.PrivateNetworkIpWhiteList = result_privateNetworkIpWhiteList;
+
+			List<string> result_kibanaPrivateIPWhitelist = new List<string>();
+			for (int i = 0; i < context.Length("DescribeInstance.Result.KibanaPrivateIPWhitelist.Length"); i++) {
+				result_kibanaPrivateIPWhitelist.Add(context.StringValue("DescribeInstance.Result.KibanaPrivateIPWhitelist["+ i +"]"));
+			}
+			result.KibanaPrivateIPWhitelist = result_kibanaPrivateIPWhitelist;
 
 			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NodeSpec nodeSpec = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_NodeSpec();
 			nodeSpec.Spec = context.StringValue("DescribeInstance.Result.NodeSpec.spec");
