@@ -27,7 +27,7 @@ namespace Aliyun.Acs.Core.Utils
     {
         public static void Add<T>(Dictionary<string, string> dic, string key, T value)
         {
-            var stringValue = value as string;
+            var stringValue = value == null ? null : value.ToString();
             Add<string, string>(dic, key, stringValue);
         }
 
