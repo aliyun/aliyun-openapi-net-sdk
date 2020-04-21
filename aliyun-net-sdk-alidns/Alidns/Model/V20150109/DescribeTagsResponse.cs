@@ -22,22 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-	public class DescribeGtmInstanceStatusResponse : AcsResponse
+	public class DescribeTagsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? addrNotAvailableNum;
+		private long? totalCount;
 
-		private int? addrPoolNotAvailableNum;
+		private long? pageNumber;
 
-		private int? switchToFailoverStrategyNum;
+		private long? pageSize;
 
-		private int? strategyNotAvailableNum;
-
-		private string status;
-
-		private string statusReason;
+		private List<DescribeTags_Tag> tags;
 
 		public string RequestId
 		{
@@ -51,75 +47,83 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public int? AddrNotAvailableNum
+		public long? TotalCount
 		{
 			get
 			{
-				return addrNotAvailableNum;
+				return totalCount;
 			}
 			set	
 			{
-				addrNotAvailableNum = value;
+				totalCount = value;
 			}
 		}
 
-		public int? AddrPoolNotAvailableNum
+		public long? PageNumber
 		{
 			get
 			{
-				return addrPoolNotAvailableNum;
+				return pageNumber;
 			}
 			set	
 			{
-				addrPoolNotAvailableNum = value;
+				pageNumber = value;
 			}
 		}
 
-		public int? SwitchToFailoverStrategyNum
+		public long? PageSize
 		{
 			get
 			{
-				return switchToFailoverStrategyNum;
+				return pageSize;
 			}
 			set	
 			{
-				switchToFailoverStrategyNum = value;
+				pageSize = value;
 			}
 		}
 
-		public int? StrategyNotAvailableNum
+		public List<DescribeTags_Tag> Tags
 		{
 			get
 			{
-				return strategyNotAvailableNum;
+				return tags;
 			}
 			set	
 			{
-				strategyNotAvailableNum = value;
+				tags = value;
 			}
 		}
 
-		public string Status
+		public class DescribeTags_Tag
 		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
 
-		public string StatusReason
-		{
-			get
+			private string key;
+
+			private List<string> values;
+
+			public string Key
 			{
-				return statusReason;
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
-			set	
+
+			public List<string> Values
 			{
-				statusReason = value;
+				get
+				{
+					return values;
+				}
+				set	
+				{
+					values = value;
+				}
 			}
 		}
 	}

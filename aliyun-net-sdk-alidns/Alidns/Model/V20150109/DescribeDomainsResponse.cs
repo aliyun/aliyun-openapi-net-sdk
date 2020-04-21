@@ -132,6 +132,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private long? createTimestamp;
 
+			private List<DescribeDomains_Tag> tags;
+
 			private List<string> dnsServers;
 
 			public string DomainId
@@ -338,6 +340,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				}
 			}
 
+			public List<DescribeDomains_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public List<string> DnsServers
 			{
 				get
@@ -347,6 +361,38 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					dnsServers = value;
+				}
+			}
+
+			public class DescribeDomains_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

@@ -36,6 +36,8 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeGtmInstanceStatusResponse.AddrPoolNotAvailableNum = context.IntegerValue("DescribeGtmInstanceStatus.AddrPoolNotAvailableNum");
 			describeGtmInstanceStatusResponse.SwitchToFailoverStrategyNum = context.IntegerValue("DescribeGtmInstanceStatus.SwitchToFailoverStrategyNum");
 			describeGtmInstanceStatusResponse.StrategyNotAvailableNum = context.IntegerValue("DescribeGtmInstanceStatus.StrategyNotAvailableNum");
+			describeGtmInstanceStatusResponse.Status = context.StringValue("DescribeGtmInstanceStatus.Status");
+			describeGtmInstanceStatusResponse.StatusReason = context.StringValue("DescribeGtmInstanceStatus.StatusReason");
         
 			return describeGtmInstanceStatusResponse;
         }

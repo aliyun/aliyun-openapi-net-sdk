@@ -63,6 +63,16 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				}
 				domain.DnsServers = domain_dnsServers;
 
+				List<DescribeDomainsResponse.DescribeDomains_Domain.DescribeDomains_Tag> domain_tags = new List<DescribeDomainsResponse.DescribeDomains_Domain.DescribeDomains_Tag>();
+				for (int j = 0; j < context.Length("DescribeDomains.Domains["+ i +"].Tags.Length"); j++) {
+					DescribeDomainsResponse.DescribeDomains_Domain.DescribeDomains_Tag tag = new DescribeDomainsResponse.DescribeDomains_Domain.DescribeDomains_Tag();
+					tag.Key = context.StringValue("DescribeDomains.Domains["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeDomains.Domains["+ i +"].Tags["+ j +"].Value");
+
+					domain_tags.Add(tag);
+				}
+				domain.Tags = domain_tags;
+
 				describeDomainsResponse_domains.Add(domain);
 			}
 			describeDomainsResponse.Domains = describeDomainsResponse_domains;

@@ -22,22 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Alidns.Model.V20150109
 {
-	public class DescribeGtmInstanceStatusResponse : AcsResponse
+	public class ListTagResourcesResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? addrNotAvailableNum;
+		private string nextToken;
 
-		private int? addrPoolNotAvailableNum;
-
-		private int? switchToFailoverStrategyNum;
-
-		private int? strategyNotAvailableNum;
-
-		private string status;
-
-		private string statusReason;
+		private List<ListTagResources_TagResource> tagResources;
 
 		public string RequestId
 		{
@@ -51,75 +43,87 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			}
 		}
 
-		public int? AddrNotAvailableNum
+		public string NextToken
 		{
 			get
 			{
-				return addrNotAvailableNum;
+				return nextToken;
 			}
 			set	
 			{
-				addrNotAvailableNum = value;
+				nextToken = value;
 			}
 		}
 
-		public int? AddrPoolNotAvailableNum
+		public List<ListTagResources_TagResource> TagResources
 		{
 			get
 			{
-				return addrPoolNotAvailableNum;
+				return tagResources;
 			}
 			set	
 			{
-				addrPoolNotAvailableNum = value;
+				tagResources = value;
 			}
 		}
 
-		public int? SwitchToFailoverStrategyNum
+		public class ListTagResources_TagResource
 		{
-			get
-			{
-				return switchToFailoverStrategyNum;
-			}
-			set	
-			{
-				switchToFailoverStrategyNum = value;
-			}
-		}
 
-		public int? StrategyNotAvailableNum
-		{
-			get
-			{
-				return strategyNotAvailableNum;
-			}
-			set	
-			{
-				strategyNotAvailableNum = value;
-			}
-		}
+			private string tagKey;
 
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
+			private string tagValue;
 
-		public string StatusReason
-		{
-			get
+			private string resourceId;
+
+			private string resourceType;
+
+			public string TagKey
 			{
-				return statusReason;
+				get
+				{
+					return tagKey;
+				}
+				set	
+				{
+					tagKey = value;
+				}
 			}
-			set	
+
+			public string TagValue
 			{
-				statusReason = value;
+				get
+				{
+					return tagValue;
+				}
+				set	
+				{
+					tagValue = value;
+				}
+			}
+
+			public string ResourceId
+			{
+				get
+				{
+					return resourceId;
+				}
+				set	
+				{
+					resourceId = value;
+				}
+			}
+
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
+				}
 			}
 		}
 	}
