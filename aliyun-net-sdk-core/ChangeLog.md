@@ -1,3 +1,6 @@
+### 2020-04-21 Version 1.5.6
+* Fixed Dict.Add
+
 ### 2020-04-17 Version 1.5.5
 * Fixed set Content-Length
 * TimeoutConfig Thread safe
