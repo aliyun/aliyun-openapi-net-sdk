@@ -28,10 +28,10 @@ using Aliyun.Acs.CSB.Transform.V20171118;
 
 namespace Aliyun.Acs.CSB.Model.V20171118
 {
-    public class FindServiceStatisticalDataRequest : RpcAcsRequest<FindServiceStatisticalDataResponse>
+    public class FindProjectStatisticalDataRequest : RpcAcsRequest<FindProjectStatisticalDataResponse>
     {
-        public FindServiceStatisticalDataRequest()
-            : base("CSB", "2017-11-18", "FindServiceStatisticalData")
+        public FindProjectStatisticalDataRequest()
+            : base("CSB", "2017-11-18", "FindProjectStatisticalData")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,13 +40,26 @@ namespace Aliyun.Acs.CSB.Model.V20171118
             }
         }
 
+		private string projectName;
+
 		private long? csbId;
 
 		private long? endTime;
 
 		private long? startTime;
 
-		private string serviceNameVersion;
+		public string ProjectName
+		{
+			get
+			{
+				return projectName;
+			}
+			set	
+			{
+				projectName = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectName", value);
+			}
+		}
 
 		public long? CsbId
 		{
@@ -87,27 +100,14 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public string ServiceNameVersion
-		{
-			get
-			{
-				return serviceNameVersion;
-			}
-			set	
-			{
-				serviceNameVersion = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceNameVersion", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override FindServiceStatisticalDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override FindProjectStatisticalDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FindServiceStatisticalDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FindProjectStatisticalDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

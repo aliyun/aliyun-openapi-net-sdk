@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CSB.Model.V20171118
 {
-	public class FindServiceStatisticalDataResponse : AcsResponse
+	public class FindServiceCredentialStatisticalDataResponse : AcsResponse
 	{
 
 		private int? code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 		private string requestId;
 
-		private FindServiceStatisticalData_Data data;
+		private FindServiceCredentialStatisticalData_Data data;
 
 		public int? Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public FindServiceStatisticalData_Data Data
+		public FindServiceCredentialStatisticalData_Data Data
 		{
 			get
 			{
@@ -81,7 +81,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public class FindServiceStatisticalData_Data
+		public class FindServiceCredentialStatisticalData_Data
 		{
 
 			private int? currentPage;
@@ -90,7 +90,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 			private long? total;
 
-			private List<FindServiceStatisticalData_ServiceStatisticData> monitorStatisticData;
+			private List<FindServiceCredentialStatisticalData_ServiceStatisticData> monitorStatisticData;
 
 			public int? CurrentPage
 			{
@@ -128,7 +128,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 				}
 			}
 
-			public List<FindServiceStatisticalData_ServiceStatisticData> MonitorStatisticData
+			public List<FindServiceCredentialStatisticalData_ServiceStatisticData> MonitorStatisticData
 			{
 				get
 				{
@@ -140,7 +140,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 				}
 			}
 
-			public class FindServiceStatisticalData_ServiceStatisticData
+			public class FindServiceCredentialStatisticalData_ServiceStatisticData
 			{
 
 				private float? avgRt;
@@ -151,7 +151,9 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 				private string serviceName;
 
-				private FindServiceStatisticalData_Total total;
+				private string credentialName;
+
+				private FindServiceCredentialStatisticalData_Total total;
 
 				public float? AvgRt
 				{
@@ -201,7 +203,19 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 					}
 				}
 
-				public FindServiceStatisticalData_Total Total
+				public string CredentialName
+				{
+					get
+					{
+						return credentialName;
+					}
+					set	
+					{
+						credentialName = value;
+					}
+				}
+
+				public FindServiceCredentialStatisticalData_Total Total
 				{
 					get
 					{
@@ -213,7 +227,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 					}
 				}
 
-				public class FindServiceStatisticalData_Total
+				public class FindServiceCredentialStatisticalData_Total
 				{
 
 					private long? total;

@@ -28,10 +28,10 @@ using Aliyun.Acs.CSB.Transform.V20171118;
 
 namespace Aliyun.Acs.CSB.Model.V20171118
 {
-    public class FindServiceStatisticalDataRequest : RpcAcsRequest<FindServiceStatisticalDataResponse>
+    public class FindServiceCredentialStatisticalDataRequest : RpcAcsRequest<FindServiceCredentialStatisticalDataResponse>
     {
-        public FindServiceStatisticalDataRequest()
-            : base("CSB", "2017-11-18", "FindServiceStatisticalData")
+        public FindServiceCredentialStatisticalDataRequest()
+            : base("CSB", "2017-11-18", "FindServiceCredentialStatisticalData")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,6 +45,8 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 		private long? endTime;
 
 		private long? startTime;
+
+		private string credentialName;
 
 		private string serviceNameVersion;
 
@@ -87,6 +89,19 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
+		public string CredentialName
+		{
+			get
+			{
+				return credentialName;
+			}
+			set	
+			{
+				credentialName = value;
+				DictionaryUtil.Add(QueryParameters, "CredentialName", value);
+			}
+		}
+
 		public string ServiceNameVersion
 		{
 			get
@@ -105,9 +120,9 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			return false;
 		}
 
-        public override FindServiceStatisticalDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override FindServiceCredentialStatisticalDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FindServiceStatisticalDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FindServiceCredentialStatisticalDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

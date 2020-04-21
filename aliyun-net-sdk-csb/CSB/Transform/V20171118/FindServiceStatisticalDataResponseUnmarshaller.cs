@@ -38,6 +38,7 @@ namespace Aliyun.Acs.CSB.Transform.V20171118
 			FindServiceStatisticalDataResponse.FindServiceStatisticalData_Data data = new FindServiceStatisticalDataResponse.FindServiceStatisticalData_Data();
 			data.CurrentPage = context.IntegerValue("FindServiceStatisticalData.Data.CurrentPage");
 			data.PageNumber = context.IntegerValue("FindServiceStatisticalData.Data.PageNumber");
+			data.Total = context.LongValue("FindServiceStatisticalData.Data.Total");
 
 			List<FindServiceStatisticalDataResponse.FindServiceStatisticalData_Data.FindServiceStatisticalData_ServiceStatisticData> data_monitorStatisticData = new List<FindServiceStatisticalDataResponse.FindServiceStatisticalData_Data.FindServiceStatisticalData_ServiceStatisticData>();
 			for (int i = 0; i < context.Length("FindServiceStatisticalData.Data.MonitorStatisticData.Length"); i++) {
@@ -45,13 +46,11 @@ namespace Aliyun.Acs.CSB.Transform.V20171118
 				serviceStatisticData.AvgRt = context.FloatValue("FindServiceStatisticalData.Data.MonitorStatisticData["+ i +"].AvgRt");
 				serviceStatisticData.MaxRt = context.FloatValue("FindServiceStatisticalData.Data.MonitorStatisticData["+ i +"].MaxRt");
 				serviceStatisticData.MinRt = context.FloatValue("FindServiceStatisticalData.Data.MonitorStatisticData["+ i +"].MinRt");
-				serviceStatisticData.RequestTime = context.LongValue("FindServiceStatisticalData.Data.MonitorStatisticData["+ i +"].RequestTime");
 				serviceStatisticData.ServiceName = context.StringValue("FindServiceStatisticalData.Data.MonitorStatisticData["+ i +"].ServiceName");
-				serviceStatisticData.UserId = context.StringValue("FindServiceStatisticalData.Data.MonitorStatisticData["+ i +"].UserId");
 
 				FindServiceStatisticalDataResponse.FindServiceStatisticalData_Data.FindServiceStatisticalData_ServiceStatisticData.FindServiceStatisticalData_Total total = new FindServiceStatisticalDataResponse.FindServiceStatisticalData_Data.FindServiceStatisticalData_ServiceStatisticData.FindServiceStatisticalData_Total();
-				total.ErrorNum = context.IntegerValue("FindServiceStatisticalData.Data.MonitorStatisticData["+ i +"].Total.ErrorNum");
-				total.Total = context.IntegerValue("FindServiceStatisticalData.Data.MonitorStatisticData["+ i +"].Total.Total");
+				total.Total = context.LongValue("FindServiceStatisticalData.Data.MonitorStatisticData["+ i +"].Total.Total");
+				total.ErrorNum = context.LongValue("FindServiceStatisticalData.Data.MonitorStatisticData["+ i +"].Total.ErrorNum");
 				serviceStatisticData.Total = total;
 
 				data_monitorStatisticData.Add(serviceStatisticData);
