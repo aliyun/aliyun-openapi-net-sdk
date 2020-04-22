@@ -27,10 +27,10 @@ using Aliyun.Acs.Cassandra.Transform.V20190101;
 
 namespace Aliyun.Acs.Cassandra.Model.V20190101
 {
-    public class DescribeClustersRequest : RpcAcsRequest<DescribeClustersResponse>
+    public class ListTagResourcesRequest : RpcAcsRequest<ListTagResourcesResponse>
     {
-        public DescribeClustersRequest()
-            : base("Cassandra", "2019-01-01", "DescribeClusters", "Cassandra", "openAPI")
+        public ListTagResourcesRequest()
+            : base("Cassandra", "2019-01-01", "ListTagResources", "Cassandra", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,50 +39,22 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
             }
         }
 
-		private string clusterName;
-
-		private int? pageNumber;
-
-		private int? pageSize;
+		private string nextToken;
 
 		private List<Tag> tags = new List<Tag>(){ };
 
-		public string ClusterName
-		{
-			get
-			{
-				return clusterName;
-			}
-			set	
-			{
-				clusterName = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterName", value);
-			}
-		}
+		private List<string> resourceIds = new List<string>(){ };
 
-		public int? PageNumber
+		public string NextToken
 		{
 			get
 			{
-				return pageNumber;
+				return nextToken;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
@@ -100,6 +72,23 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 				{
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
+			}
+		}
+
+		public List<string> ResourceIds
+		{
+			get
+			{
+				return resourceIds;
+			}
+
+			set
+			{
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
 				}
 			}
 		}
@@ -136,9 +125,9 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 			}
 		}
 
-        public override DescribeClustersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeClustersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

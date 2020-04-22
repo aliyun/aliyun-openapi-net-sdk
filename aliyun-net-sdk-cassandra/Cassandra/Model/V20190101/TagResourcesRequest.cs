@@ -27,10 +27,10 @@ using Aliyun.Acs.Cassandra.Transform.V20190101;
 
 namespace Aliyun.Acs.Cassandra.Model.V20190101
 {
-    public class DescribeClustersRequest : RpcAcsRequest<DescribeClustersResponse>
+    public class TagResourcesRequest : RpcAcsRequest<TagResourcesResponse>
     {
-        public DescribeClustersRequest()
-            : base("Cassandra", "2019-01-01", "DescribeClusters", "Cassandra", "openAPI")
+        public TagResourcesRequest()
+            : base("Cassandra", "2019-01-01", "TagResources", "Cassandra", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,50 +39,24 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
             }
         }
 
-		private string clusterName;
-
-		private int? pageNumber;
-
-		private int? pageSize;
+		private List<string> resourceIds = new List<string>(){ };
 
 		private List<Tag> tags = new List<Tag>(){ };
 
-		public string ClusterName
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return clusterName;
+				return resourceIds;
 			}
-			set	
-			{
-				clusterName = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterName", value);
-			}
-		}
 
-		public int? PageNumber
-		{
-			get
+			set
 			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
+				}
 			}
 		}
 
@@ -136,9 +110,9 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 			}
 		}
 
-        public override DescribeClustersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override TagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeClustersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return TagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

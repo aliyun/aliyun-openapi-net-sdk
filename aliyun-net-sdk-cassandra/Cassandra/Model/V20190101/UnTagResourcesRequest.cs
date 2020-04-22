@@ -27,10 +27,10 @@ using Aliyun.Acs.Cassandra.Transform.V20190101;
 
 namespace Aliyun.Acs.Cassandra.Model.V20190101
 {
-    public class DescribeClustersRequest : RpcAcsRequest<DescribeClustersResponse>
+    public class UnTagResourcesRequest : RpcAcsRequest<UnTagResourcesResponse>
     {
-        public DescribeClustersRequest()
-            : base("Cassandra", "2019-01-01", "DescribeClusters", "Cassandra", "openAPI")
+        public UnTagResourcesRequest()
+            : base("Cassandra", "2019-01-01", "UnTagResources", "Cassandra", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,106 +39,62 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
             }
         }
 
-		private string clusterName;
+		private bool? all;
 
-		private int? pageNumber;
+		private List<string> resourceIds = new List<string>(){ };
 
-		private int? pageSize;
+		private List<string> tagKeys = new List<string>(){ };
 
-		private List<Tag> tags = new List<Tag>(){ };
-
-		public string ClusterName
+		public bool? All
 		{
 			get
 			{
-				return clusterName;
+				return all;
 			}
 			set	
 			{
-				clusterName = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterName", value);
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
 			}
 		}
 
-		public int? PageNumber
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
+				return resourceIds;
 			}
 
 			set
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
 				}
 			}
 		}
 
-		public class Tag
+		public List<string> TagKeys
 		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
+			get
 			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
+				return tagKeys;
 			}
 
-			public string Key
+			set
 			{
-				get
+				tagKeys = value;
+				for (int i = 0; i < tagKeys.Count; i++)
 				{
-					return key;
-				}
-				set	
-				{
-					key = value;
+					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
 				}
 			}
 		}
 
-        public override DescribeClustersResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UnTagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeClustersResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UnTagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

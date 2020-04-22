@@ -47,6 +47,16 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 			cluster.MaintainStartTime = context.StringValue("DescribeCluster.Cluster.MaintainStartTime");
 			cluster.MaintainEndTime = context.StringValue("DescribeCluster.Cluster.MaintainEndTime");
 			cluster.LockMode = context.StringValue("DescribeCluster.Cluster.LockMode");
+
+			List<DescribeClusterResponse.DescribeCluster_Cluster.DescribeCluster_Tag> cluster_tags = new List<DescribeClusterResponse.DescribeCluster_Cluster.DescribeCluster_Tag>();
+			for (int i = 0; i < context.Length("DescribeCluster.Cluster.Tags.Length"); i++) {
+				DescribeClusterResponse.DescribeCluster_Cluster.DescribeCluster_Tag tag = new DescribeClusterResponse.DescribeCluster_Cluster.DescribeCluster_Tag();
+				tag.Key = context.StringValue("DescribeCluster.Cluster.Tags["+ i +"].Key");
+				tag._Value = context.StringValue("DescribeCluster.Cluster.Tags["+ i +"].Value");
+
+				cluster_tags.Add(tag);
+			}
+			cluster.Tags = cluster_tags;
 			describeClusterResponse.Cluster = cluster;
         
 			return describeClusterResponse;

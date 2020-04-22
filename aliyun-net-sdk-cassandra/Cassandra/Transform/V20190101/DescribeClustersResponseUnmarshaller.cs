@@ -50,6 +50,16 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 				cluster.DataCenterCount = context.IntegerValue("DescribeClusters.Clusters["+ i +"].DataCenterCount");
 				cluster.LockMode = context.StringValue("DescribeClusters.Clusters["+ i +"].LockMode");
 
+				List<DescribeClustersResponse.DescribeClusters_Cluster.DescribeClusters_Tag> cluster_tags = new List<DescribeClustersResponse.DescribeClusters_Cluster.DescribeClusters_Tag>();
+				for (int j = 0; j < context.Length("DescribeClusters.Clusters["+ i +"].Tags.Length"); j++) {
+					DescribeClustersResponse.DescribeClusters_Cluster.DescribeClusters_Tag tag = new DescribeClustersResponse.DescribeClusters_Cluster.DescribeClusters_Tag();
+					tag.Key = context.StringValue("DescribeClusters.Clusters["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("DescribeClusters.Clusters["+ i +"].Tags["+ j +"].Value");
+
+					cluster_tags.Add(tag);
+				}
+				cluster.Tags = cluster_tags;
+
 				describeClustersResponse_clusters.Add(cluster);
 			}
 			describeClustersResponse.Clusters = describeClustersResponse_clusters;

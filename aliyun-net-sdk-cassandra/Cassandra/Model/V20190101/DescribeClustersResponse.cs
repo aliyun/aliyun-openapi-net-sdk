@@ -118,6 +118,8 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 
 			private string lockMode;
 
+			private List<DescribeClusters_Tag> tags;
+
 			public string ClusterId
 			{
 				get
@@ -235,6 +237,50 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 				set	
 				{
 					lockMode = value;
+				}
+			}
+
+			public List<DescribeClusters_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class DescribeClusters_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}
