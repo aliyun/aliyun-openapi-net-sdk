@@ -20,14 +20,14 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.OnsMqtt.Model.V20191211
+namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 {
-	public class BatchQuerySessionByClientIdsResponse : AcsResponse
+	public class ListGroupIdResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<BatchQuerySessionByClientIds_OnlineStatusListItem> onlineStatusList;
+		private List<ListGroupId_MqttGroupIdDo> data;
 
 		public string RequestId
 		{
@@ -41,46 +41,88 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20191211
 			}
 		}
 
-		public List<BatchQuerySessionByClientIds_OnlineStatusListItem> OnlineStatusList
+		public List<ListGroupId_MqttGroupIdDo> Data
 		{
 			get
 			{
-				return onlineStatusList;
+				return data;
 			}
 			set	
 			{
-				onlineStatusList = value;
+				data = value;
 			}
 		}
 
-		public class BatchQuerySessionByClientIds_OnlineStatusListItem
+		public class ListGroupId_MqttGroupIdDo
 		{
 
-			private string clientId;
+			private long? createTime;
 
-			private bool? onlineStatus;
+			private string groupId;
 
-			public string ClientId
+			private bool? independentNaming;
+
+			private string instanceId;
+
+			private long? updateTime;
+
+			public long? CreateTime
 			{
 				get
 				{
-					return clientId;
+					return createTime;
 				}
 				set	
 				{
-					clientId = value;
+					createTime = value;
 				}
 			}
 
-			public bool? OnlineStatus
+			public string GroupId
 			{
 				get
 				{
-					return onlineStatus;
+					return groupId;
 				}
 				set	
 				{
-					onlineStatus = value;
+					groupId = value;
+				}
+			}
+
+			public bool? IndependentNaming
+			{
+				get
+				{
+					return independentNaming;
+				}
+				set	
+				{
+					independentNaming = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
+				}
+			}
+
+			public long? UpdateTime
+			{
+				get
+				{
+					return updateTime;
+				}
+				set	
+				{
+					updateTime = value;
 				}
 			}
 		}

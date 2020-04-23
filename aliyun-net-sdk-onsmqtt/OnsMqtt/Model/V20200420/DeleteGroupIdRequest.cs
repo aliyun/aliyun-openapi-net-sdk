@@ -22,50 +22,34 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OnsMqtt;
 using Aliyun.Acs.OnsMqtt.Transform;
-using Aliyun.Acs.OnsMqtt.Transform.V20191211;
+using Aliyun.Acs.OnsMqtt.Transform.V20200420;
 
-namespace Aliyun.Acs.OnsMqtt.Model.V20191211
+namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 {
-    public class ApplyTokenRequest : RpcAcsRequest<ApplyTokenResponse>
+    public class DeleteGroupIdRequest : RpcAcsRequest<DeleteGroupIdResponse>
     {
-        public ApplyTokenRequest()
-            : base("OnsMqtt", "2019-12-11", "ApplyToken", "onsmqtt", "openAPI")
+        public DeleteGroupIdRequest()
+            : base("OnsMqtt", "2020-04-20", "DeleteGroupId")
         {
 			Method = MethodType.POST;
         }
 
-		private long? expireTime;
-
-		private string resources;
+		private string groupId;
 
 		private string instanceId;
 
-		private string actions;
-
-		public long? ExpireTime
+		public string GroupId
 		{
 			get
 			{
-				return expireTime;
+				return groupId;
 			}
 			set	
 			{
-				expireTime = value;
-				DictionaryUtil.Add(QueryParameters, "ExpireTime", value.ToString());
-			}
-		}
-
-		public string Resources
-		{
-			get
-			{
-				return resources;
-			}
-			set	
-			{
-				resources = value;
-				DictionaryUtil.Add(QueryParameters, "Resources", value);
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -82,27 +66,14 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20191211
 			}
 		}
 
-		public string Actions
-		{
-			get
-			{
-				return actions;
-			}
-			set	
-			{
-				actions = value;
-				DictionaryUtil.Add(QueryParameters, "Actions", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ApplyTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteGroupIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ApplyTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteGroupIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

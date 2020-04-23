@@ -22,36 +22,34 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OnsMqtt;
 using Aliyun.Acs.OnsMqtt.Transform;
-using Aliyun.Acs.OnsMqtt.Transform.V20191211;
+using Aliyun.Acs.OnsMqtt.Transform.V20200420;
 
-namespace Aliyun.Acs.OnsMqtt.Model.V20191211
+namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 {
-    public class BatchQuerySessionByClientIdsRequest : RpcAcsRequest<BatchQuerySessionByClientIdsResponse>
+    public class RevokeTokenRequest : RpcAcsRequest<RevokeTokenResponse>
     {
-        public BatchQuerySessionByClientIdsRequest()
-            : base("OnsMqtt", "2019-12-11", "BatchQuerySessionByClientIds", "onsmqtt", "openAPI")
+        public RevokeTokenRequest()
+            : base("OnsMqtt", "2020-04-20", "RevokeToken")
         {
+			Method = MethodType.POST;
         }
 
-		private List<string> clientIdLists = new List<string>(){ };
+		private string token;
 
 		private string instanceId;
 
-		public List<string> ClientIdLists
+		public string Token
 		{
 			get
 			{
-				return clientIdLists;
+				return token;
 			}
-
-			set
+			set	
 			{
-				clientIdLists = value;
-				for (int i = 0; i < clientIdLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ClientIdList." + (i + 1) , clientIdLists[i]);
-				}
+				token = value;
+				DictionaryUtil.Add(QueryParameters, "Token", value);
 			}
 		}
 
@@ -73,9 +71,9 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20191211
 			return false;
 		}
 
-        public override BatchQuerySessionByClientIdsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RevokeTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchQuerySessionByClientIdsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RevokeTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

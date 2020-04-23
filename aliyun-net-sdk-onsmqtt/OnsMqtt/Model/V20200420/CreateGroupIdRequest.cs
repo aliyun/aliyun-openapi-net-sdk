@@ -22,32 +22,34 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OnsMqtt;
 using Aliyun.Acs.OnsMqtt.Transform;
-using Aliyun.Acs.OnsMqtt.Transform.V20191211;
+using Aliyun.Acs.OnsMqtt.Transform.V20200420;
 
-namespace Aliyun.Acs.OnsMqtt.Model.V20191211
+namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 {
-    public class QuerySessionByClientIdRequest : RpcAcsRequest<QuerySessionByClientIdResponse>
+    public class CreateGroupIdRequest : RpcAcsRequest<CreateGroupIdResponse>
     {
-        public QuerySessionByClientIdRequest()
-            : base("OnsMqtt", "2019-12-11", "QuerySessionByClientId", "onsmqtt", "openAPI")
+        public CreateGroupIdRequest()
+            : base("OnsMqtt", "2020-04-20", "CreateGroupId")
         {
+			Method = MethodType.POST;
         }
 
-		private string clientId;
+		private string groupId;
 
 		private string instanceId;
 
-		public string ClientId
+		public string GroupId
 		{
 			get
 			{
-				return clientId;
+				return groupId;
 			}
 			set	
 			{
-				clientId = value;
-				DictionaryUtil.Add(QueryParameters, "ClientId", value);
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -69,9 +71,9 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20191211
 			return false;
 		}
 
-        public override QuerySessionByClientIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateGroupIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySessionByClientIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateGroupIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

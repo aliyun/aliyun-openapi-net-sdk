@@ -19,15 +19,25 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OnsMqtt;
+using Aliyun.Acs.OnsMqtt.Transform;
+using Aliyun.Acs.OnsMqtt.Transform.V20200420;
 
-namespace Aliyun.Acs.OnsMqtt.Model.V20191211
+namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 {
-	public class ApplyTokenResponse : AcsResponse
-	{
+    public class QueryTokenRequest : RpcAcsRequest<QueryTokenResponse>
+    {
+        public QueryTokenRequest()
+            : base("OnsMqtt", "2020-04-20", "QueryToken")
+        {
+        }
 
 		private string token;
 
-		private string requestId;
+		private string instanceId;
 
 		public string Token
 		{
@@ -38,19 +48,31 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20191211
 			set	
 			{
 				token = value;
+				DictionaryUtil.Add(QueryParameters, "Token", value);
 			}
 		}
 
-		public string RequestId
+		public string InstanceId
 		{
 			get
 			{
-				return requestId;
+				return instanceId;
 			}
 			set	
 			{
-				requestId = value;
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
-	}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override QueryTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        {
+            return QueryTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

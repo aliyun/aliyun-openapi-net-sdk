@@ -20,21 +20,21 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.OnsMqtt.Model.V20191211;
+using Aliyun.Acs.OnsMqtt.Model.V20200420;
 
-namespace Aliyun.Acs.OnsMqtt.Transform.V20191211
+namespace Aliyun.Acs.OnsMqtt.Transform.V20200420
 {
-    public class ApplyTokenResponseUnmarshaller
+    public class DeleteGroupIdResponseUnmarshaller
     {
-        public static ApplyTokenResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGroupIdResponse Unmarshall(UnmarshallerContext context)
         {
-			ApplyTokenResponse applyTokenResponse = new ApplyTokenResponse();
+			DeleteGroupIdResponse deleteGroupIdResponse = new DeleteGroupIdResponse();
 
-			applyTokenResponse.HttpResponse = context.HttpResponse;
-			applyTokenResponse.Token = context.StringValue("ApplyToken.Token");
-			applyTokenResponse.RequestId = context.StringValue("ApplyToken.RequestId");
+			deleteGroupIdResponse.HttpResponse = context.HttpResponse;
+			deleteGroupIdResponse.HelpUrl = context.StringValue("DeleteGroupId.HelpUrl");
+			deleteGroupIdResponse.RequestId = context.StringValue("DeleteGroupId.RequestId");
         
-			return applyTokenResponse;
+			return deleteGroupIdResponse;
         }
     }
 }

@@ -20,14 +20,12 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.OnsMqtt.Model.V20191211
+namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 {
-	public class BatchSendMessagesResponse : AcsResponse
+	public class RevokeTokenResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private List<BatchSendMessages_ResponsesItem> responses;
 
 		public string RequestId
 		{
@@ -38,78 +36,6 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20191211
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public List<BatchSendMessages_ResponsesItem> Responses
-		{
-			get
-			{
-				return responses;
-			}
-			set	
-			{
-				responses = value;
-			}
-		}
-
-		public class BatchSendMessages_ResponsesItem
-		{
-
-			private int? id;
-
-			private string msgId;
-
-			private int? errorCode;
-
-			private string errorMessage;
-
-			public int? Id
-			{
-				get
-				{
-					return id;
-				}
-				set	
-				{
-					id = value;
-				}
-			}
-
-			public string MsgId
-			{
-				get
-				{
-					return msgId;
-				}
-				set	
-				{
-					msgId = value;
-				}
-			}
-
-			public int? ErrorCode
-			{
-				get
-				{
-					return errorCode;
-				}
-				set	
-				{
-					errorCode = value;
-				}
-			}
-
-			public string ErrorMessage
-			{
-				get
-				{
-					return errorMessage;
-				}
-				set	
-				{
-					errorMessage = value;
-				}
 			}
 		}
 	}

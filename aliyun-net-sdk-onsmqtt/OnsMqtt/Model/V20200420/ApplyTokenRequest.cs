@@ -22,37 +22,51 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OnsMqtt;
 using Aliyun.Acs.OnsMqtt.Transform;
-using Aliyun.Acs.OnsMqtt.Transform.V20191211;
+using Aliyun.Acs.OnsMqtt.Transform.V20200420;
 
-namespace Aliyun.Acs.OnsMqtt.Model.V20191211
+namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 {
-    public class SendMessageRequest : RpcAcsRequest<SendMessageResponse>
+    public class ApplyTokenRequest : RpcAcsRequest<ApplyTokenResponse>
     {
-        public SendMessageRequest()
-            : base("OnsMqtt", "2019-12-11", "SendMessage", "onsmqtt", "openAPI")
+        public ApplyTokenRequest()
+            : base("OnsMqtt", "2020-04-20", "ApplyToken")
         {
 			Method = MethodType.POST;
         }
 
-		private string mqttTopic;
+		private long? expireTime;
+
+		private string resources;
 
 		private string instanceId;
 
-		private string payload;
+		private string actions;
 
-		private string receiptId;
-
-		public string MqttTopic
+		public long? ExpireTime
 		{
 			get
 			{
-				return mqttTopic;
+				return expireTime;
 			}
 			set	
 			{
-				mqttTopic = value;
-				DictionaryUtil.Add(QueryParameters, "MqttTopic", value);
+				expireTime = value;
+				DictionaryUtil.Add(QueryParameters, "ExpireTime", value.ToString());
+			}
+		}
+
+		public string Resources
+		{
+			get
+			{
+				return resources;
+			}
+			set	
+			{
+				resources = value;
+				DictionaryUtil.Add(QueryParameters, "Resources", value);
 			}
 		}
 
@@ -69,29 +83,16 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20191211
 			}
 		}
 
-		public string Payload
+		public string Actions
 		{
 			get
 			{
-				return payload;
+				return actions;
 			}
 			set	
 			{
-				payload = value;
-				DictionaryUtil.Add(QueryParameters, "Payload", value);
-			}
-		}
-
-		public string ReceiptId
-		{
-			get
-			{
-				return receiptId;
-			}
-			set	
-			{
-				receiptId = value;
-				DictionaryUtil.Add(QueryParameters, "ReceiptId", value);
+				actions = value;
+				DictionaryUtil.Add(QueryParameters, "Actions", value);
 			}
 		}
 
@@ -100,9 +101,9 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20191211
 			return false;
 		}
 
-        public override SendMessageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ApplyTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SendMessageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ApplyTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

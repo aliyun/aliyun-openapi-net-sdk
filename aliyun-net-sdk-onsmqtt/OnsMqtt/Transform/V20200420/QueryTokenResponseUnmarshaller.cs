@@ -20,20 +20,21 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.OnsMqtt.Model.V20191211;
+using Aliyun.Acs.OnsMqtt.Model.V20200420;
 
-namespace Aliyun.Acs.OnsMqtt.Transform.V20191211
+namespace Aliyun.Acs.OnsMqtt.Transform.V20200420
 {
-    public class RevokeTokenResponseUnmarshaller
+    public class QueryTokenResponseUnmarshaller
     {
-        public static RevokeTokenResponse Unmarshall(UnmarshallerContext context)
+        public static QueryTokenResponse Unmarshall(UnmarshallerContext context)
         {
-			RevokeTokenResponse revokeTokenResponse = new RevokeTokenResponse();
+			QueryTokenResponse queryTokenResponse = new QueryTokenResponse();
 
-			revokeTokenResponse.HttpResponse = context.HttpResponse;
-			revokeTokenResponse.RequestId = context.StringValue("RevokeToken.RequestId");
+			queryTokenResponse.HttpResponse = context.HttpResponse;
+			queryTokenResponse.RequestId = context.StringValue("QueryToken.RequestId");
+			queryTokenResponse.TokenStatus = context.BooleanValue("QueryToken.TokenStatus");
         
-			return revokeTokenResponse;
+			return queryTokenResponse;
         }
     }
 }

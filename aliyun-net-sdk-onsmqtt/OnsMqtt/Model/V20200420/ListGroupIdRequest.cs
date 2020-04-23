@@ -19,38 +19,45 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Http;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.OnsMqtt;
+using Aliyun.Acs.OnsMqtt.Transform;
+using Aliyun.Acs.OnsMqtt.Transform.V20200420;
 
-namespace Aliyun.Acs.OnsMqtt.Model.V20191211
+namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 {
-	public class SendMessageResponse : AcsResponse
-	{
+    public class ListGroupIdRequest : RpcAcsRequest<ListGroupIdResponse>
+    {
+        public ListGroupIdRequest()
+            : base("OnsMqtt", "2020-04-20", "ListGroupId")
+        {
+        }
 
-		private string msgId;
+		private string instanceId;
 
-		private string requestId;
-
-		public string MsgId
+		public string InstanceId
 		{
 			get
 			{
-				return msgId;
+				return instanceId;
 			}
 			set	
 			{
-				msgId = value;
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public string RequestId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
+			return false;
 		}
-	}
+
+        public override ListGroupIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        {
+            return ListGroupIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
+        }
+    }
 }

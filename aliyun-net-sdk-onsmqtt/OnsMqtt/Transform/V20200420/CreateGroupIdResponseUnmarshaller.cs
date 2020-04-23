@@ -16,41 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.OnsMqtt.Model.V20200420;
 
-namespace Aliyun.Acs.OnsMqtt.Model.V20191211
+namespace Aliyun.Acs.OnsMqtt.Transform.V20200420
 {
-	public class QuerySessionByClientIdResponse : AcsResponse
-	{
+    public class CreateGroupIdResponseUnmarshaller
+    {
+        public static CreateGroupIdResponse Unmarshall(UnmarshallerContext context)
+        {
+			CreateGroupIdResponse createGroupIdResponse = new CreateGroupIdResponse();
 
-		private string requestId;
-
-		private bool? onlineStatus;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? OnlineStatus
-		{
-			get
-			{
-				return onlineStatus;
-			}
-			set	
-			{
-				onlineStatus = value;
-			}
-		}
-	}
+			createGroupIdResponse.HttpResponse = context.HttpResponse;
+			createGroupIdResponse.HelpUrl = context.StringValue("CreateGroupId.HelpUrl");
+			createGroupIdResponse.RequestId = context.StringValue("CreateGroupId.RequestId");
+        
+			return createGroupIdResponse;
+        }
+    }
 }

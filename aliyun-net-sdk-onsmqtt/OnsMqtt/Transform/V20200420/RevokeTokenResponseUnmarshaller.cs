@@ -20,21 +20,20 @@ using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.OnsMqtt.Model.V20191211;
+using Aliyun.Acs.OnsMqtt.Model.V20200420;
 
-namespace Aliyun.Acs.OnsMqtt.Transform.V20191211
+namespace Aliyun.Acs.OnsMqtt.Transform.V20200420
 {
-    public class SendMessageResponseUnmarshaller
+    public class RevokeTokenResponseUnmarshaller
     {
-        public static SendMessageResponse Unmarshall(UnmarshallerContext context)
+        public static RevokeTokenResponse Unmarshall(UnmarshallerContext context)
         {
-			SendMessageResponse sendMessageResponse = new SendMessageResponse();
+			RevokeTokenResponse revokeTokenResponse = new RevokeTokenResponse();
 
-			sendMessageResponse.HttpResponse = context.HttpResponse;
-			sendMessageResponse.MsgId = context.StringValue("SendMessage.MsgId");
-			sendMessageResponse.RequestId = context.StringValue("SendMessage.RequestId");
+			revokeTokenResponse.HttpResponse = context.HttpResponse;
+			revokeTokenResponse.RequestId = context.StringValue("RevokeToken.RequestId");
         
-			return sendMessageResponse;
+			return revokeTokenResponse;
         }
     }
 }

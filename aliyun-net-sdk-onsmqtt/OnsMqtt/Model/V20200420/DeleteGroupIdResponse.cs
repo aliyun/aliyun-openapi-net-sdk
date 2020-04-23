@@ -20,12 +20,26 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.OnsMqtt.Model.V20191211
+namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 {
-	public class RevokeTokenResponse : AcsResponse
+	public class DeleteGroupIdResponse : AcsResponse
 	{
 
+		private string helpUrl;
+
 		private string requestId;
+
+		public string HelpUrl
+		{
+			get
+			{
+				return helpUrl;
+			}
+			set	
+			{
+				helpUrl = value;
+			}
+		}
 
 		public string RequestId
 		{
