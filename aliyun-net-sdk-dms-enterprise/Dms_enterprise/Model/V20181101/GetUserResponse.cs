@@ -110,6 +110,16 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string state;
 
+			private string lastLoginTime;
+
+			private long? curExecuteCount;
+
+			private long? curResultCount;
+
+			private long? maxExecuteCount;
+
+			private long? maxResultCount;
+
 			private List<string> roleIdList;
 
 			private List<string> roleNameList;
@@ -183,6 +193,66 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					state = value;
+				}
+			}
+
+			public string LastLoginTime
+			{
+				get
+				{
+					return lastLoginTime;
+				}
+				set	
+				{
+					lastLoginTime = value;
+				}
+			}
+
+			public long? CurExecuteCount
+			{
+				get
+				{
+					return curExecuteCount;
+				}
+				set	
+				{
+					curExecuteCount = value;
+				}
+			}
+
+			public long? CurResultCount
+			{
+				get
+				{
+					return curResultCount;
+				}
+				set	
+				{
+					curResultCount = value;
+				}
+			}
+
+			public long? MaxExecuteCount
+			{
+				get
+				{
+					return maxExecuteCount;
+				}
+				set	
+				{
+					maxExecuteCount = value;
+				}
+			}
+
+			public long? MaxResultCount
+			{
+				get
+				{
+					return maxResultCount;
+				}
+				set	
+				{
+					maxResultCount = value;
 				}
 			}
 
