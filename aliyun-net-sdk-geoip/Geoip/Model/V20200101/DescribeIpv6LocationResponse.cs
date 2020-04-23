@@ -39,6 +39,18 @@ namespace Aliyun.Acs.geoip.Model.V20200101
 
 		private string isp;
 
+		private string countryCode;
+
+		private string countryEn;
+
+		private string provinceEn;
+
+		private string cityEn;
+
+		private string longitude;
+
+		private string latitude;
+
 		public string RequestId
 		{
 			get
@@ -120,6 +132,78 @@ namespace Aliyun.Acs.geoip.Model.V20200101
 			set	
 			{
 				isp = value;
+			}
+		}
+
+		public string CountryCode
+		{
+			get
+			{
+				return countryCode;
+			}
+			set	
+			{
+				countryCode = value;
+			}
+		}
+
+		public string CountryEn
+		{
+			get
+			{
+				return countryEn;
+			}
+			set	
+			{
+				countryEn = value;
+			}
+		}
+
+		public string ProvinceEn
+		{
+			get
+			{
+				return provinceEn;
+			}
+			set	
+			{
+				provinceEn = value;
+			}
+		}
+
+		public string CityEn
+		{
+			get
+			{
+				return cityEn;
+			}
+			set	
+			{
+				cityEn = value;
+			}
+		}
+
+		public string Longitude
+		{
+			get
+			{
+				return longitude;
+			}
+			set	
+			{
+				longitude = value;
+			}
+		}
+
+		public string Latitude
+		{
+			get
+			{
+				return latitude;
+			}
+			set	
+			{
+				latitude = value;
 			}
 		}
 	}

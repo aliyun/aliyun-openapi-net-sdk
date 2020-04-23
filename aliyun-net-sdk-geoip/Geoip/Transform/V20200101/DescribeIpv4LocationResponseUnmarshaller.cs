@@ -38,6 +38,12 @@ namespace Aliyun.Acs.geoip.Transform.V20200101
 			describeIpv4LocationResponse.City = context.StringValue("DescribeIpv4Location.City");
 			describeIpv4LocationResponse.County = context.StringValue("DescribeIpv4Location.County");
 			describeIpv4LocationResponse.Isp = context.StringValue("DescribeIpv4Location.Isp");
+			describeIpv4LocationResponse.CountryCode = context.StringValue("DescribeIpv4Location.CountryCode");
+			describeIpv4LocationResponse.CountryEn = context.StringValue("DescribeIpv4Location.CountryEn");
+			describeIpv4LocationResponse.ProvinceEn = context.StringValue("DescribeIpv4Location.ProvinceEn");
+			describeIpv4LocationResponse.CityEn = context.StringValue("DescribeIpv4Location.CityEn");
+			describeIpv4LocationResponse.Longitude = context.StringValue("DescribeIpv4Location.Longitude");
+			describeIpv4LocationResponse.Latitude = context.StringValue("DescribeIpv4Location.Latitude");
         
 			return describeIpv4LocationResponse;
         }
