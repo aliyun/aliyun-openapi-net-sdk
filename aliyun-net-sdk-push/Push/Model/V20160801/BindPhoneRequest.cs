@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Push;
 using Aliyun.Acs.Push.Transform;
 using Aliyun.Acs.Push.Transform.V20160801;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
     public class BindPhoneRequest : RpcAcsRequest<BindPhoneResponse>
     {
         public BindPhoneRequest()
-            : base("Push", "2016-08-01", "BindPhone", "cps", "openAPI")
+            : base("Push", "2016-08-01", "BindPhone")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

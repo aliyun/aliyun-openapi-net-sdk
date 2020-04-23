@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Push;
 using Aliyun.Acs.Push.Transform;
 using Aliyun.Acs.Push.Transform.V20160801;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
     public class MassPushRequest : RpcAcsRequest<MassPushResponse>
     {
         public MassPushRequest()
-            : base("Push", "2016-08-01", "MassPush", "cps", "openAPI")
+            : base("Push", "2016-08-01", "MassPush")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -55,44 +56,44 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				pushTasks = value;
 				for (int i = 0; i < pushTasks.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidNotificationBarType", pushTasks[i].AndroidNotificationBarType);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidExtParameters", pushTasks[i].AndroidExtParameters);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".iOSBadge", pushTasks[i].IOSBadge);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".iOSBadgeAutoIncrement", pushTasks[i].IOSBadgeAutoIncrement);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidOpenType", pushTasks[i].AndroidOpenType);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".Title", pushTasks[i].Title);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".Body", pushTasks[i].Body);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".DeviceType", pushTasks[i].DeviceType);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".PushTime", pushTasks[i].PushTime);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".SendSpeed", pushTasks[i].SendSpeed);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidPopupActivity", pushTasks[i].AndroidPopupActivity);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".iOSRemindBody", pushTasks[i].IOSRemindBody);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".iOSExtParameters", pushTasks[i].IOSExtParameters);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidNotifyType", pushTasks[i].AndroidNotifyType);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidPopupTitle", pushTasks[i].AndroidPopupTitle);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".iOSMusic", pushTasks[i].IOSMusic);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".iOSApnsEnv", pushTasks[i].IOSApnsEnv);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".iOSMutableContent", pushTasks[i].IOSMutableContent);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidNotificationBarPriority", pushTasks[i].AndroidNotificationBarPriority);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".ExpireTime", pushTasks[i].ExpireTime);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidPopupBody", pushTasks[i].AndroidPopupBody);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".iOSNotificationCategory", pushTasks[i].IOSNotificationCategory);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".StoreOffline", pushTasks[i].StoreOffline);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".iOSSilentNotification", pushTasks[i].IOSSilentNotification);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".JobKey", pushTasks[i].JobKey);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".Target", pushTasks[i].Target);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidOpenUrl", pushTasks[i].AndroidOpenUrl);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidNotificationChannel", pushTasks[i].AndroidNotificationChannel);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidRemind", pushTasks[i].AndroidRemind);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidActivity", pushTasks[i].AndroidActivity);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiNotifyBody", pushTasks[i].AndroidXiaoMiNotifyBody);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".iOSSubtitle", pushTasks[i].IOSSubtitle);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".iOSRemind", pushTasks[i].IOSRemind);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".TargetValue", pushTasks[i].TargetValue);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidMusic", pushTasks[i].AndroidMusic);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiActivity", pushTasks[i].AndroidXiaoMiActivity);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiNotifyTitle", pushTasks[i].AndroidXiaoMiNotifyTitle);
-					DictionaryUtil.Add(QueryParameters,"PushTask." + (i + 1) + ".PushType", pushTasks[i].PushType);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationBarType", pushTasks[i].AndroidNotificationBarType);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidExtParameters", pushTasks[i].AndroidExtParameters);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSBadge", pushTasks[i].IOSBadge);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSBadgeAutoIncrement", pushTasks[i].IOSBadgeAutoIncrement);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidOpenType", pushTasks[i].AndroidOpenType);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".Title", pushTasks[i].Title);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".Body", pushTasks[i].Body);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".DeviceType", pushTasks[i].DeviceType);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".PushTime", pushTasks[i].PushTime);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".SendSpeed", pushTasks[i].SendSpeed);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupActivity", pushTasks[i].AndroidPopupActivity);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSRemindBody", pushTasks[i].IOSRemindBody);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSExtParameters", pushTasks[i].IOSExtParameters);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotifyType", pushTasks[i].AndroidNotifyType);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupTitle", pushTasks[i].AndroidPopupTitle);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSMusic", pushTasks[i].IOSMusic);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSApnsEnv", pushTasks[i].IOSApnsEnv);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSMutableContent", pushTasks[i].IOSMutableContent);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationBarPriority", pushTasks[i].AndroidNotificationBarPriority);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".ExpireTime", pushTasks[i].ExpireTime);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupBody", pushTasks[i].AndroidPopupBody);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSNotificationCategory", pushTasks[i].IOSNotificationCategory);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".StoreOffline", pushTasks[i].StoreOffline);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSSilentNotification", pushTasks[i].IOSSilentNotification);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".JobKey", pushTasks[i].JobKey);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".Target", pushTasks[i].Target);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidOpenUrl", pushTasks[i].AndroidOpenUrl);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationChannel", pushTasks[i].AndroidNotificationChannel);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidRemind", pushTasks[i].AndroidRemind);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidActivity", pushTasks[i].AndroidActivity);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiNotifyBody", pushTasks[i].AndroidXiaoMiNotifyBody);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSSubtitle", pushTasks[i].IOSSubtitle);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSRemind", pushTasks[i].IOSRemind);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".TargetValue", pushTasks[i].TargetValue);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidMusic", pushTasks[i].AndroidMusic);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiActivity", pushTasks[i].AndroidXiaoMiActivity);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiNotifyTitle", pushTasks[i].AndroidXiaoMiNotifyTitle);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".PushType", pushTasks[i].PushType);
 				}
 			}
 		}
