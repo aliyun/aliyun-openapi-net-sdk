@@ -25,27 +25,11 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 	public class CreateOutboundOrderResponse : AcsResponse
 	{
 
-		private string message;
-
 		private string requestId;
 
 		private bool? success;
 
-		private string code;
-
 		private string orderId;
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -68,18 +52,6 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public string Code
-		{
-			get
-			{
-				return code;
-			}
-			set	
-			{
-				code = value;
 			}
 		}
 

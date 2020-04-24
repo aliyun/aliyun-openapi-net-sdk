@@ -24,18 +24,18 @@ using Aliyun.Acs.digitalstore.Model.V20200107;
 
 namespace Aliyun.Acs.digitalstore.Transform.V20200107
 {
-    public class CreateCaseResponseUnmarshaller
+    public class CreateApplicationOrderResponseUnmarshaller
     {
-        public static CreateCaseResponse Unmarshall(UnmarshallerContext context)
+        public static CreateApplicationOrderResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateCaseResponse createCaseResponse = new CreateCaseResponse();
+			CreateApplicationOrderResponse createApplicationOrderResponse = new CreateApplicationOrderResponse();
 
-			createCaseResponse.HttpResponse = context.HttpResponse;
-			createCaseResponse.RequestId = context.StringValue("CreateCase.RequestId");
-			createCaseResponse.Success = context.BooleanValue("CreateCase.Success");
-			createCaseResponse.CaseId = context.StringValue("CreateCase.CaseId");
+			createApplicationOrderResponse.HttpResponse = context.HttpResponse;
+			createApplicationOrderResponse.OrderId = context.StringValue("CreateApplicationOrder.OrderId");
+			createApplicationOrderResponse.RequestId = context.StringValue("CreateApplicationOrder.RequestId");
+			createApplicationOrderResponse.Success = context.BooleanValue("CreateApplicationOrder.Success");
         
-			return createCaseResponse;
+			return createApplicationOrderResponse;
         }
     }
 }

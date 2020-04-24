@@ -31,10 +31,8 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 			UpdateCaseExpressResponse updateCaseExpressResponse = new UpdateCaseExpressResponse();
 
 			updateCaseExpressResponse.HttpResponse = context.HttpResponse;
-			updateCaseExpressResponse.Message = context.StringValue("UpdateCaseExpress.Message");
 			updateCaseExpressResponse.RequestId = context.StringValue("UpdateCaseExpress.RequestId");
 			updateCaseExpressResponse.Success = context.BooleanValue("UpdateCaseExpress.Success");
-			updateCaseExpressResponse.Code = context.StringValue("UpdateCaseExpress.Code");
         
 			return updateCaseExpressResponse;
         }

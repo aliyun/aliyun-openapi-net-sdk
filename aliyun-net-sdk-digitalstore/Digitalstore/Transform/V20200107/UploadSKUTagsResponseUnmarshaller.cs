@@ -16,41 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.digitalstore.Model.V20200107;
 
-namespace Aliyun.Acs.digitalstore.Model.V20200107
+namespace Aliyun.Acs.digitalstore.Transform.V20200107
 {
-	public class UpdateCaseExpressResponse : AcsResponse
-	{
+    public class UploadSKUTagsResponseUnmarshaller
+    {
+        public static UploadSKUTagsResponse Unmarshall(UnmarshallerContext context)
+        {
+			UploadSKUTagsResponse uploadSKUTagsResponse = new UploadSKUTagsResponse();
 
-		private string requestId;
-
-		private bool? success;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public bool? Success
-		{
-			get
-			{
-				return success;
-			}
-			set	
-			{
-				success = value;
-			}
-		}
-	}
+			uploadSKUTagsResponse.HttpResponse = context.HttpResponse;
+			uploadSKUTagsResponse.RequestId = context.StringValue("UploadSKUTags.RequestId");
+			uploadSKUTagsResponse.Success = context.BooleanValue("UploadSKUTags.Success");
+			uploadSKUTagsResponse.ProcessCount = context.IntegerValue("UploadSKUTags.ProcessCount");
+        
+			return uploadSKUTagsResponse;
+        }
+    }
 }

@@ -22,12 +22,26 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.digitalstore.Model.V20200107
 {
-	public class UpdateCaseExpressResponse : AcsResponse
+	public class CreateApplicationOrderResponse : AcsResponse
 	{
+
+		private string orderId;
 
 		private string requestId;
 
 		private bool? success;
+
+		public string OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
+			}
+		}
 
 		public string RequestId
 		{

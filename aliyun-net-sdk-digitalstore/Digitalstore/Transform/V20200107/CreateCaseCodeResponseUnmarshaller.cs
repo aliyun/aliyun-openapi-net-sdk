@@ -31,10 +31,8 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 			CreateCaseCodeResponse createCaseCodeResponse = new CreateCaseCodeResponse();
 
 			createCaseCodeResponse.HttpResponse = context.HttpResponse;
-			createCaseCodeResponse.Message = context.StringValue("CreateCaseCode.Message");
 			createCaseCodeResponse.RequestId = context.StringValue("CreateCaseCode.RequestId");
 			createCaseCodeResponse.Success = context.BooleanValue("CreateCaseCode.Success");
-			createCaseCodeResponse.Code = context.StringValue("CreateCaseCode.Code");
 			createCaseCodeResponse.CaseCode = context.StringValue("CreateCaseCode.CaseCode");
         
 			return createCaseCodeResponse;

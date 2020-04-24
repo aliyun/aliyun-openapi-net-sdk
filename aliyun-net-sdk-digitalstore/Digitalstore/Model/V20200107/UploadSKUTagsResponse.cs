@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.digitalstore.Model.V20200107
 {
-	public class UpdateCaseExpressResponse : AcsResponse
+	public class UploadSKUTagsResponse : AcsResponse
 	{
 
 		private string requestId;
 
 		private bool? success;
+
+		private int? processCount;
 
 		public string RequestId
 		{
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public int? ProcessCount
+		{
+			get
+			{
+				return processCount;
+			}
+			set	
+			{
+				processCount = value;
 			}
 		}
 	}

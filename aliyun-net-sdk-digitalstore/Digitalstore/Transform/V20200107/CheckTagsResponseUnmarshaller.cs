@@ -31,10 +31,8 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 			CheckTagsResponse checkTagsResponse = new CheckTagsResponse();
 
 			checkTagsResponse.HttpResponse = context.HttpResponse;
-			checkTagsResponse.Message = context.StringValue("CheckTags.Message");
 			checkTagsResponse.RequestId = context.StringValue("CheckTags.RequestId");
 			checkTagsResponse.Success = context.BooleanValue("CheckTags.Success");
-			checkTagsResponse.Code = context.StringValue("CheckTags.Code");
 
 			List<CheckTagsResponse.CheckTags_CheckTagResultBiz> checkTagsResponse_checkResult = new List<CheckTagsResponse.CheckTags_CheckTagResultBiz>();
 			for (int i = 0; i < context.Length("CheckTags.CheckResult.Length"); i++) {

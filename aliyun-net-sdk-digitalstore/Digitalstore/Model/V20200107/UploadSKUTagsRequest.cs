@@ -27,10 +27,10 @@ using Aliyun.Acs.digitalstore.Transform.V20200107;
 
 namespace Aliyun.Acs.digitalstore.Model.V20200107
 {
-    public class CheckTagsRequest : RpcAcsRequest<CheckTagsResponse>
+    public class UploadSKUTagsRequest : RpcAcsRequest<UploadSKUTagsResponse>
     {
-        public CheckTagsRequest()
-            : base("digitalstore", "2020-01-07", "CheckTags", "digitalstore", "openAPI")
+        public UploadSKUTagsRequest()
+            : base("digitalstore", "2020-01-07", "UploadSKUTags", "digitalstore", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,58 +39,58 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
             }
         }
 
-		private string orderId;
+		private List<string> tagLists = new List<string>(){ };
 
-		private List<string> tagss = new List<string>(){ };
+		private string takeStockOrderId;
 
-		private string orderType;
+		private string taskId;
 
-		public string OrderId
+		public List<string> TagLists
 		{
 			get
 			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-				DictionaryUtil.Add(BodyParameters, "OrderId", value);
-			}
-		}
-
-		public List<string> Tagss
-		{
-			get
-			{
-				return tagss;
+				return tagLists;
 			}
 
 			set
 			{
-				tagss = value;
-				for (int i = 0; i < tagss.Count; i++)
+				tagLists = value;
+				for (int i = 0; i < tagLists.Count; i++)
 				{
-					DictionaryUtil.Add(BodyParameters,"Tags." + (i + 1) , tagss[i]);
+					DictionaryUtil.Add(BodyParameters,"TagList." + (i + 1) , tagLists[i]);
 				}
 			}
 		}
 
-		public string OrderType
+		public string TakeStockOrderId
 		{
 			get
 			{
-				return orderType;
+				return takeStockOrderId;
 			}
 			set	
 			{
-				orderType = value;
-				DictionaryUtil.Add(BodyParameters, "OrderType", value);
+				takeStockOrderId = value;
+				DictionaryUtil.Add(BodyParameters, "TakeStockOrderId", value);
 			}
 		}
 
-        public override CheckTagsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(BodyParameters, "TaskId", value);
+			}
+		}
+
+        public override UploadSKUTagsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CheckTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UploadSKUTagsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

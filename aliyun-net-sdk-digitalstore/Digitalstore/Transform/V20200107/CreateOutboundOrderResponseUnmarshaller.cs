@@ -31,10 +31,8 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 			CreateOutboundOrderResponse createOutboundOrderResponse = new CreateOutboundOrderResponse();
 
 			createOutboundOrderResponse.HttpResponse = context.HttpResponse;
-			createOutboundOrderResponse.Message = context.StringValue("CreateOutboundOrder.Message");
 			createOutboundOrderResponse.RequestId = context.StringValue("CreateOutboundOrder.RequestId");
 			createOutboundOrderResponse.Success = context.BooleanValue("CreateOutboundOrder.Success");
-			createOutboundOrderResponse.Code = context.StringValue("CreateOutboundOrder.Code");
 			createOutboundOrderResponse.OrderId = context.StringValue("CreateOutboundOrder.OrderId");
         
 			return createOutboundOrderResponse;
