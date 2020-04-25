@@ -41,6 +41,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private bool? upgradeMinorVersion;
+
 		private string securityToken;
 
 		private string effectiveTime;
@@ -63,6 +65,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public bool? UpgradeMinorVersion
+		{
+			get
+			{
+				return upgradeMinorVersion;
+			}
+			set	
+			{
+				upgradeMinorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "UpgradeMinorVersion", value.ToString());
 			}
 		}
 

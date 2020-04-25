@@ -83,6 +83,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceType;
 
+		private string restoreTime;
+
 		private string resourceOwnerAccount;
 
 		private string srcDBInstanceId;
@@ -380,6 +382,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string RestoreTime
+		{
+			get
+			{
+				return restoreTime;
+			}
+			set	
+			{
+				restoreTime = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreTime", value);
 			}
 		}
 
