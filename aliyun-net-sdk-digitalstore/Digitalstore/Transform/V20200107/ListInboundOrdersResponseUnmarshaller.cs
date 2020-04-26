@@ -62,6 +62,7 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 				inboundOrder.SourceOrderCode = context.StringValue("ListInboundOrders.InboundOrders["+ i +"].SourceOrderCode");
 				inboundOrder.OrderId = context.StringValue("ListInboundOrders.InboundOrders["+ i +"].OrderId");
 				inboundOrder.ToBusinessUnitId = context.StringValue("ListInboundOrders.InboundOrders["+ i +"].ToBusinessUnitId");
+				inboundOrder.CaseCount = context.IntegerValue("ListInboundOrders.InboundOrders["+ i +"].CaseCount");
 
 				listInboundOrdersResponse_inboundOrders.Add(inboundOrder);
 			}

@@ -39,6 +39,8 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
             }
         }
 
+		private string beginDate;
+
 		private string orderByField;
 
 		private int? pageNumber;
@@ -59,7 +61,22 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 		private string toBusinessUnitId;
 
+		private string endDate;
+
 		private string orderByMethod;
+
+		public string BeginDate
+		{
+			get
+			{
+				return beginDate;
+			}
+			set	
+			{
+				beginDate = value;
+				DictionaryUtil.Add(BodyParameters, "BeginDate", value);
+			}
+		}
 
 		public string OrderByField
 		{
@@ -192,6 +209,19 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			{
 				toBusinessUnitId = value;
 				DictionaryUtil.Add(BodyParameters, "ToBusinessUnitId", value);
+			}
+		}
+
+		public string EndDate
+		{
+			get
+			{
+				return endDate;
+			}
+			set	
+			{
+				endDate = value;
+				DictionaryUtil.Add(BodyParameters, "EndDate", value);
 			}
 		}
 

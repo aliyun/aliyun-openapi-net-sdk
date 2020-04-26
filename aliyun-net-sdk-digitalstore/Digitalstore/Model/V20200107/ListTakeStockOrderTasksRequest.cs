@@ -45,6 +45,8 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 		private int? pageNumber;
 
+		private List<string> statusCodes = new List<string>(){ };
+
 		private string deviceNumber;
 
 		private string takeStockOrderId;
@@ -91,6 +93,23 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public List<string> StatusCodes
+		{
+			get
+			{
+				return statusCodes;
+			}
+
+			set
+			{
+				statusCodes = value;
+				for (int i = 0; i < statusCodes.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"StatusCode." + (i + 1) , statusCodes[i]);
+				}
 			}
 		}
 

@@ -156,6 +156,8 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private string toBusinessUnitId;
 
+			private int? caseCount;
+
 			public string ToWarehouseName
 			{
 				get
@@ -417,6 +419,18 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				set	
 				{
 					toBusinessUnitId = value;
+				}
+			}
+
+			public int? CaseCount
+			{
+				get
+				{
+					return caseCount;
+				}
+				set	
+				{
+					caseCount = value;
 				}
 			}
 		}

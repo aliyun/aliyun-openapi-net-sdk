@@ -39,11 +39,13 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
             }
         }
 
+		private string beginDate;
+
 		private string orderByField;
 
 		private int? pageNumber;
 
-		private string statusCode;
+		private List<string> statusCodes = new List<string>(){ };
 
 		private string orderCode;
 
@@ -59,7 +61,22 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 		private string toBusinessUnitId;
 
+		private string endDate;
+
 		private string orderByMethod;
+
+		public string BeginDate
+		{
+			get
+			{
+				return beginDate;
+			}
+			set	
+			{
+				beginDate = value;
+				DictionaryUtil.Add(BodyParameters, "BeginDate", value);
+			}
+		}
 
 		public string OrderByField
 		{
@@ -87,16 +104,20 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			}
 		}
 
-		public string StatusCode
+		public List<string> StatusCodes
 		{
 			get
 			{
-				return statusCode;
+				return statusCodes;
 			}
-			set	
+
+			set
 			{
-				statusCode = value;
-				DictionaryUtil.Add(BodyParameters, "StatusCode", value);
+				statusCodes = value;
+				for (int i = 0; i < statusCodes.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"StatusCode." + (i + 1) , statusCodes[i]);
+				}
 			}
 		}
 
@@ -188,6 +209,19 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			{
 				toBusinessUnitId = value;
 				DictionaryUtil.Add(BodyParameters, "ToBusinessUnitId", value);
+			}
+		}
+
+		public string EndDate
+		{
+			get
+			{
+				return endDate;
+			}
+			set	
+			{
+				endDate = value;
+				DictionaryUtil.Add(BodyParameters, "EndDate", value);
 			}
 		}
 
