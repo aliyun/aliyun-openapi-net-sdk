@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			resultObject.Passed = context.StringValue("ContrastFaceVerify.ResultObject.Passed");
 			resultObject.IdentityInfo = context.StringValue("ContrastFaceVerify.ResultObject.IdentityInfo");
 			resultObject.MaterialInfo = context.StringValue("ContrastFaceVerify.ResultObject.MaterialInfo");
+			resultObject.SubCode = context.StringValue("ContrastFaceVerify.ResultObject.SubCode");
 			contrastFaceVerifyResponse.ResultObject = resultObject;
         
 			return contrastFaceVerifyResponse;
