@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.HBase;
 using Aliyun.Acs.HBase.Transform;
 using Aliyun.Acs.HBase.Transform.V20190101;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.HBase.Model.V20190101
     public class DeleteHbaseHaSlbRequest : RpcAcsRequest<DeleteHbaseHaSlbResponse>
     {
         public DeleteHbaseHaSlbRequest()
-            : base("HBase", "2019-01-01", "DeleteHbaseHaSlb")
+            : base("HBase", "2019-01-01", "DeleteHbaseHaSlb", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -24,18 +24,16 @@ using Aliyun.Acs.HBase.Model.V20190101;
 
 namespace Aliyun.Acs.HBase.Transform.V20190101
 {
-    public class CreateInstanceResponseUnmarshaller
+    public class CreateRestorePlanResponseUnmarshaller
     {
-        public static CreateInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static CreateRestorePlanResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateInstanceResponse createInstanceResponse = new CreateInstanceResponse();
+			CreateRestorePlanResponse createRestorePlanResponse = new CreateRestorePlanResponse();
 
-			createInstanceResponse.HttpResponse = context.HttpResponse;
-			createInstanceResponse.RequestId = context.StringValue("CreateInstance.RequestId");
-			createInstanceResponse.ClusterId = context.StringValue("CreateInstance.ClusterId");
-			createInstanceResponse.OrderId = context.StringValue("CreateInstance.OrderId");
+			createRestorePlanResponse.HttpResponse = context.HttpResponse;
+			createRestorePlanResponse.RequestId = context.StringValue("CreateRestorePlan.RequestId");
         
-			return createInstanceResponse;
+			return createRestorePlanResponse;
         }
     }
 }

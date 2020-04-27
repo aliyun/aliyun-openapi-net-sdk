@@ -68,6 +68,9 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 			describeInstanceResponse.ClusterId = context.StringValue("DescribeInstance.ClusterId");
 			describeInstanceResponse.ClusterName = context.StringValue("DescribeInstance.ClusterName");
 			describeInstanceResponse.IsDeletionProtection = context.BooleanValue("DescribeInstance.IsDeletionProtection");
+			describeInstanceResponse.ParentId = context.StringValue("DescribeInstance.ParentId");
+			describeInstanceResponse.ModuleId = context.IntegerValue("DescribeInstance.ModuleId");
+			describeInstanceResponse.ModuleStackVersion = context.StringValue("DescribeInstance.ModuleStackVersion");
 
 			List<DescribeInstanceResponse.DescribeInstance_Tag> describeInstanceResponse_tags = new List<DescribeInstanceResponse.DescribeInstance_Tag>();
 			for (int i = 0; i < context.Length("DescribeInstance.Tags.Length"); i++) {

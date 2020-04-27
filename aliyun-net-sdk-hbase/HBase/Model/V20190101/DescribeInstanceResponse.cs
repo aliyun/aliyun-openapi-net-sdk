@@ -99,6 +99,12 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private bool? isDeletionProtection;
 
+		private string parentId;
+
+		private int? moduleId;
+
+		private string moduleStackVersion;
+
 		private List<DescribeInstance_Tag> tags;
 
 		public string RequestId
@@ -542,6 +548,42 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				isDeletionProtection = value;
+			}
+		}
+
+		public string ParentId
+		{
+			get
+			{
+				return parentId;
+			}
+			set	
+			{
+				parentId = value;
+			}
+		}
+
+		public int? ModuleId
+		{
+			get
+			{
+				return moduleId;
+			}
+			set	
+			{
+				moduleId = value;
+			}
+		}
+
+		public string ModuleStackVersion
+		{
+			get
+			{
+				return moduleStackVersion;
+			}
+			set	
+			{
+				moduleStackVersion = value;
 			}
 		}
 

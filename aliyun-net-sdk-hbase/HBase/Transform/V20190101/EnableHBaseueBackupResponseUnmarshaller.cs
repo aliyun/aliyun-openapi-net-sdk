@@ -16,55 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.HBase.Model.V20190101;
 
-namespace Aliyun.Acs.HBase.Model.V20190101
+namespace Aliyun.Acs.HBase.Transform.V20190101
 {
-	public class CreateInstanceResponse : AcsResponse
-	{
+    public class EnableHBaseueBackupResponseUnmarshaller
+    {
+        public static EnableHBaseueBackupResponse Unmarshall(UnmarshallerContext context)
+        {
+			EnableHBaseueBackupResponse enableHBaseueBackupResponse = new EnableHBaseueBackupResponse();
 
-		private string requestId;
-
-		private string clusterId;
-
-		private string orderId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-	}
+			enableHBaseueBackupResponse.HttpResponse = context.HttpResponse;
+			enableHBaseueBackupResponse.RequestId = context.StringValue("EnableHBaseueBackup.RequestId");
+			enableHBaseueBackupResponse.ClusterId = context.StringValue("EnableHBaseueBackup.ClusterId");
+			enableHBaseueBackupResponse.OrderId = context.StringValue("EnableHBaseueBackup.OrderId");
+        
+			return enableHBaseueBackupResponse;
+        }
+    }
 }
