@@ -38,9 +38,21 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string project;
 
-		private bool? useOldURL;
+		private int? watermarkVertical;
+
+		private int? watermarkType;
+
+		private float? watermarkRotate;
+
+		private string watermarkValue;
+
+		private string watermarkFont;
+
+		private int? watermarkHorizontal;
 
 		private string srcUri;
+
+		private string watermarkFillStyle;
 
 		public string SrcType
 		{
@@ -68,16 +80,81 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
-		public bool? UseOldURL
+		public int? WatermarkVertical
 		{
 			get
 			{
-				return useOldURL;
+				return watermarkVertical;
 			}
 			set	
 			{
-				useOldURL = value;
-				DictionaryUtil.Add(QueryParameters, "UseOldURL", value.ToString());
+				watermarkVertical = value;
+				DictionaryUtil.Add(QueryParameters, "WatermarkVertical", value.ToString());
+			}
+		}
+
+		public int? WatermarkType
+		{
+			get
+			{
+				return watermarkType;
+			}
+			set	
+			{
+				watermarkType = value;
+				DictionaryUtil.Add(QueryParameters, "WatermarkType", value.ToString());
+			}
+		}
+
+		public float? WatermarkRotate
+		{
+			get
+			{
+				return watermarkRotate;
+			}
+			set	
+			{
+				watermarkRotate = value;
+				DictionaryUtil.Add(QueryParameters, "WatermarkRotate", value.ToString());
+			}
+		}
+
+		public string WatermarkValue
+		{
+			get
+			{
+				return watermarkValue;
+			}
+			set	
+			{
+				watermarkValue = value;
+				DictionaryUtil.Add(QueryParameters, "WatermarkValue", value);
+			}
+		}
+
+		public string WatermarkFont
+		{
+			get
+			{
+				return watermarkFont;
+			}
+			set	
+			{
+				watermarkFont = value;
+				DictionaryUtil.Add(QueryParameters, "WatermarkFont", value);
+			}
+		}
+
+		public int? WatermarkHorizontal
+		{
+			get
+			{
+				return watermarkHorizontal;
+			}
+			set	
+			{
+				watermarkHorizontal = value;
+				DictionaryUtil.Add(QueryParameters, "WatermarkHorizontal", value.ToString());
 			}
 		}
 
@@ -91,6 +168,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				srcUri = value;
 				DictionaryUtil.Add(QueryParameters, "SrcUri", value);
+			}
+		}
+
+		public string WatermarkFillStyle
+		{
+			get
+			{
+				return watermarkFillStyle;
+			}
+			set	
+			{
+				watermarkFillStyle = value;
+				DictionaryUtil.Add(QueryParameters, "WatermarkFillStyle", value);
 			}
 		}
 
