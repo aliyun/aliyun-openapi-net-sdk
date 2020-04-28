@@ -39,11 +39,26 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
             }
         }
 
+		private string extInfo;
+
 		private string certifyData;
 
 		private string appVersion;
 
 		private string certifyId;
+
+		public string ExtInfo
+		{
+			get
+			{
+				return extInfo;
+			}
+			set	
+			{
+				extInfo = value;
+				DictionaryUtil.Add(BodyParameters, "ExtInfo", value);
+			}
+		}
 
 		public string CertifyData
 		{
