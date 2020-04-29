@@ -30,7 +30,7 @@ namespace Aliyun.Acs.alimt.Model.V20181012
     public class TranslateCertificateRequest : RpcAcsRequest<TranslateCertificateResponse>
     {
         public TranslateCertificateRequest()
-            : base("alimt", "2018-10-12", "TranslateCertificate", "alimtct", "openAPI")
+            : base("alimt", "2018-10-12", "TranslateCertificate", "alimt", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

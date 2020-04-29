@@ -27,10 +27,10 @@ using Aliyun.Acs.alimt.Transform.V20181012;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-    public class GetDocTranslateTaskRequest : RpcAcsRequest<GetDocTranslateTaskResponse>
+    public class GetDetectLanguageRequest : RpcAcsRequest<GetDetectLanguageResponse>
     {
-        public GetDocTranslateTaskRequest()
-            : base("alimt", "2018-10-12", "GetDocTranslateTask", "alimt", "openAPI")
+        public GetDetectLanguageRequest()
+            : base("alimt", "2018-10-12", "GetDetectLanguage", "alimt", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,18 +39,18 @@ namespace Aliyun.Acs.alimt.Model.V20181012
             }
         }
 
-		private string taskId;
+		private string sourceText;
 
-		public string TaskId
+		public string SourceText
 		{
 			get
 			{
-				return taskId;
+				return sourceText;
 			}
 			set	
 			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+				sourceText = value;
+				DictionaryUtil.Add(BodyParameters, "SourceText", value);
 			}
 		}
 
@@ -59,9 +59,9 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			return false;
 		}
 
-        public override GetDocTranslateTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetDetectLanguageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetDocTranslateTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetDetectLanguageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

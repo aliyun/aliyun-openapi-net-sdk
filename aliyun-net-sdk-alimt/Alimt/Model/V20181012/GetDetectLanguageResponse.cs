@@ -22,22 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-	public class GetDocTranslateTaskResponse : AcsResponse
+	public class GetDetectLanguageResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string taskId;
-
-		private string status;
-
-		private string translateFileUrl;
-
-		private string translateErrorCode;
-
-		private string translateErrorMessage;
-
-		private int? pageCount;
+		private string detectedLanguage;
 
 		public string RequestId
 		{
@@ -51,75 +41,15 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
-		public string TaskId
+		public string DetectedLanguage
 		{
 			get
 			{
-				return taskId;
+				return detectedLanguage;
 			}
 			set	
 			{
-				taskId = value;
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-			}
-		}
-
-		public string TranslateFileUrl
-		{
-			get
-			{
-				return translateFileUrl;
-			}
-			set	
-			{
-				translateFileUrl = value;
-			}
-		}
-
-		public string TranslateErrorCode
-		{
-			get
-			{
-				return translateErrorCode;
-			}
-			set	
-			{
-				translateErrorCode = value;
-			}
-		}
-
-		public string TranslateErrorMessage
-		{
-			get
-			{
-				return translateErrorMessage;
-			}
-			set	
-			{
-				translateErrorMessage = value;
-			}
-		}
-
-		public int? PageCount
-		{
-			get
-			{
-				return pageCount;
-			}
-			set	
-			{
-				pageCount = value;
+				detectedLanguage = value;
 			}
 		}
 	}

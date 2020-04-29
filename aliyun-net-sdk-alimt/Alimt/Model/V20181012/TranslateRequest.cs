@@ -30,7 +30,7 @@ namespace Aliyun.Acs.alimt.Model.V20181012
     public class TranslateRequest : RpcAcsRequest<TranslateResponse>
     {
         public TranslateRequest()
-            : base("alimt", "2018-10-12", "Translate", "alimtct", "openAPI")
+            : base("alimt", "2018-10-12", "Translate", "alimt", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

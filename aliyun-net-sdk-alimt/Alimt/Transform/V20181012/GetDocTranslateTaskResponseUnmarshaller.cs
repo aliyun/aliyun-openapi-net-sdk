@@ -35,6 +35,9 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			getDocTranslateTaskResponse.TaskId = context.StringValue("GetDocTranslateTask.TaskId");
 			getDocTranslateTaskResponse.Status = context.StringValue("GetDocTranslateTask.Status");
 			getDocTranslateTaskResponse.TranslateFileUrl = context.StringValue("GetDocTranslateTask.TranslateFileUrl");
+			getDocTranslateTaskResponse.TranslateErrorCode = context.StringValue("GetDocTranslateTask.TranslateErrorCode");
+			getDocTranslateTaskResponse.TranslateErrorMessage = context.StringValue("GetDocTranslateTask.TranslateErrorMessage");
+			getDocTranslateTaskResponse.PageCount = context.IntegerValue("GetDocTranslateTask.PageCount");
         
 			return getDocTranslateTaskResponse;
         }
