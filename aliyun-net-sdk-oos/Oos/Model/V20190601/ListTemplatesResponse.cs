@@ -116,6 +116,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string category;
 
+			private string templateType;
+
 			public string TemplateName
 			{
 				get
@@ -305,6 +307,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					category = value;
+				}
+			}
+
+			public string TemplateType
+			{
+				get
+				{
+					return templateType;
+				}
+				set	
+				{
+					templateType = value;
 				}
 			}
 		}

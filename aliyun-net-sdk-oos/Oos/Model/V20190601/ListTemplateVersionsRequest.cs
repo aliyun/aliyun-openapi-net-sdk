@@ -28,10 +28,10 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class CreateTemplateRequest : RpcAcsRequest<CreateTemplateResponse>
+    public class ListTemplateVersionsRequest : RpcAcsRequest<ListTemplateVersionsResponse>
     {
-        public CreateTemplateRequest()
-            : base("oos", "2019-06-01", "CreateTemplate", "oos", "openAPI")
+        public ListTemplateVersionsRequest()
+            : base("oos", "2019-06-01", "ListTemplateVersions", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,37 +40,37 @@ namespace Aliyun.Acs.oos.Model.V20190601
             }
         }
 
-		private string content;
+		private string nextToken;
 
-		private Dictionary<object,object> tags;
+		private int? maxResults;
 
 		private string templateName;
 
-		private string versionName;
+		private string shareType;
 
-		public string Content
+		public string NextToken
 		{
 			get
 			{
-				return content;
+				return nextToken;
 			}
 			set	
 			{
-				content = value;
-				DictionaryUtil.Add(QueryParameters, "Content", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-		public Dictionary<object,object> Tags
+		public int? MaxResults
 		{
 			get
 			{
-				return tags;
+				return maxResults;
 			}
 			set	
 			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", JsonConvert.SerializeObject(value));
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 
@@ -87,16 +87,16 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public string VersionName
+		public string ShareType
 		{
 			get
 			{
-				return versionName;
+				return shareType;
 			}
 			set	
 			{
-				versionName = value;
-				DictionaryUtil.Add(QueryParameters, "VersionName", value);
+				shareType = value;
+				DictionaryUtil.Add(QueryParameters, "ShareType", value);
 			}
 		}
 
@@ -105,9 +105,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override CreateTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTemplateVersionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTemplateVersionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

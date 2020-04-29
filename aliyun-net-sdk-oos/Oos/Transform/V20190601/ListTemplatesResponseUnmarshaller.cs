@@ -54,6 +54,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 				template.Popularity = context.IntegerValue("ListTemplates.Templates["+ i +"].Popularity");
 				template.Tags = context.StringValue("ListTemplates.Templates["+ i +"].Tags");
 				template.Category = context.StringValue("ListTemplates.Templates["+ i +"].Category");
+				template.TemplateType = context.StringValue("ListTemplates.Templates["+ i +"].TemplateType");
 
 				listTemplatesResponse_templates.Add(template);
 			}

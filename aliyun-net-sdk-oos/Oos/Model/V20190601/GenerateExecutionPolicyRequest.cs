@@ -40,7 +40,22 @@ namespace Aliyun.Acs.oos.Model.V20190601
             }
         }
 
+		private string templateVersion;
+
 		private string templateName;
+
+		public string TemplateVersion
+		{
+			get
+			{
+				return templateVersion;
+			}
+			set	
+			{
+				templateVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateVersion", value);
+			}
+		}
 
 		public string TemplateName
 		{

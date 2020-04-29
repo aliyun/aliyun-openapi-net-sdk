@@ -27,6 +27,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string requestId;
 
+		private string templateType;
+
 		private CreateTemplate_Template template;
 
 		public string RequestId
@@ -38,6 +40,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string TemplateType
+		{
+			get
+			{
+				return templateType;
+			}
+			set	
+			{
+				templateType = value;
 			}
 		}
 

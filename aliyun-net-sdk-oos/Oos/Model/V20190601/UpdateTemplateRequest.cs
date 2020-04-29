@@ -46,6 +46,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string templateName;
 
+		private string versionName;
+
 		public string Content
 		{
 			get
@@ -82,6 +84,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				templateName = value;
 				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
+			}
+		}
+
+		public string VersionName
+		{
+			get
+			{
+				return versionName;
+			}
+			set	
+			{
+				versionName = value;
+				DictionaryUtil.Add(QueryParameters, "VersionName", value);
 			}
 		}
 

@@ -46,6 +46,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string nextToken;
 
+		private string templateType;
+
 		private string templateName;
 
 		private string sortOrder;
@@ -102,6 +104,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public string TemplateType
+		{
+			get
+			{
+				return templateType;
+			}
+			set	
+			{
+				templateType = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateType", value);
 			}
 		}
 

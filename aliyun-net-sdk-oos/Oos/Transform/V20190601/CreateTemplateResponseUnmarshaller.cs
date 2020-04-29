@@ -32,6 +32,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 
 			createTemplateResponse.HttpResponse = context.HttpResponse;
 			createTemplateResponse.RequestId = context.StringValue("CreateTemplate.RequestId");
+			createTemplateResponse.TemplateType = context.StringValue("CreateTemplate.TemplateType");
 
 			CreateTemplateResponse.CreateTemplate_Template template = new CreateTemplateResponse.CreateTemplate_Template();
 			template.TemplateName = context.StringValue("CreateTemplate.Template.TemplateName");
