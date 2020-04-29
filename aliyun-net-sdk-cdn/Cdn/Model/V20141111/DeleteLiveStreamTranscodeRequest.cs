@@ -42,13 +42,13 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 
 		private string template;
 
+		private string securityToken;
+
 		private string app;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string securityToken;
 
 		private string domain;
 
@@ -62,6 +62,19 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				template = value;
 				DictionaryUtil.Add(QueryParameters, "Template", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -101,19 +114,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

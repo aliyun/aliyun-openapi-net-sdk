@@ -40,19 +40,58 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
             }
         }
 
-		private string ossBucket;
-
-		private string domainName;
-
 		private string ossEndpoint;
-
-		private long? ownerId;
 
 		private string appName;
 
 		private string securityToken;
 
+		private string ossBucket;
+
+		private string domainName;
+
+		private long? ownerId;
+
 		private string ossObjectPrefix;
+
+		public string OssEndpoint
+		{
+			get
+			{
+				return ossEndpoint;
+			}
+			set	
+			{
+				ossEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "OssEndpoint", value);
+			}
+		}
+
+		public string AppName
+		{
+			get
+			{
+				return appName;
+			}
+			set	
+			{
+				appName = value;
+				DictionaryUtil.Add(QueryParameters, "AppName", value);
+			}
+		}
+
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
 
 		public string OssBucket
 		{
@@ -80,19 +119,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string OssEndpoint
-		{
-			get
-			{
-				return ossEndpoint;
-			}
-			set	
-			{
-				ossEndpoint = value;
-				DictionaryUtil.Add(QueryParameters, "OssEndpoint", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -103,32 +129,6 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 

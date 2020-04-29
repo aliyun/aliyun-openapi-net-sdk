@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class DescribeDomainPvDataRequest : RpcAcsRequest<DescribeDomainPvDataResponse>
+    public class DescribeDomainCcActivityLogRequest : RpcAcsRequest<DescribeDomainCcActivityLogResponse>
     {
-        public DescribeDomainPvDataRequest()
-            : base("Cdn", "2018-05-10", "DescribeDomainPvData")
+        public DescribeDomainCcActivityLogRequest()
+            : base("Cdn", "2018-05-10", "DescribeDomainCcActivityLog")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,15 +40,36 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
             }
         }
 
+		private string ruleName;
+
 		private string startTime;
 
-		private string securityToken;
+		private string triggerObject;
+
+		private long? pageNumber;
+
+		private long? pageSize;
+
+		private string _value;
 
 		private string domainName;
 
 		private string endTime;
 
 		private long? ownerId;
+
+		public string RuleName
+		{
+			get
+			{
+				return ruleName;
+			}
+			set	
+			{
+				ruleName = value;
+				DictionaryUtil.Add(QueryParameters, "RuleName", value);
+			}
+		}
 
 		public string StartTime
 		{
@@ -63,16 +84,55 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string SecurityToken
+		public string TriggerObject
 		{
 			get
 			{
-				return securityToken;
+				return triggerObject;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				triggerObject = value;
+				DictionaryUtil.Add(QueryParameters, "TriggerObject", value);
+			}
+		}
+
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string _Value
+		{
+			get
+			{
+				return _value;
+			}
+			set	
+			{
+				_value = value;
+				DictionaryUtil.Add(QueryParameters, "Value", value);
 			}
 		}
 
@@ -115,9 +175,14 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-        public override DescribeDomainPvDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeDomainCcActivityLogResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDomainPvDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainCcActivityLogResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
