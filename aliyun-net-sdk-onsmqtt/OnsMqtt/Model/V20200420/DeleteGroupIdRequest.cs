@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.OnsMqtt;
 using Aliyun.Acs.OnsMqtt.Transform;
 using Aliyun.Acs.OnsMqtt.Transform.V20200420;
 
@@ -31,8 +30,13 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20200420
     public class DeleteGroupIdRequest : RpcAcsRequest<DeleteGroupIdResponse>
     {
         public DeleteGroupIdRequest()
-            : base("OnsMqtt", "2020-04-20", "DeleteGroupId")
+            : base("OnsMqtt", "2020-04-20", "DeleteGroupId", "onsmqtt", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
