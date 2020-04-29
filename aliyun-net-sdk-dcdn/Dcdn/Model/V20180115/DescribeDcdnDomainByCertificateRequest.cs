@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class UpdateDcdnDomainRequest : RpcAcsRequest<UpdateDcdnDomainResponse>
+    public class DescribeDcdnDomainByCertificateRequest : RpcAcsRequest<DescribeDcdnDomainByCertificateResponse>
     {
-        public UpdateDcdnDomainRequest()
-            : base("dcdn", "2018-01-15", "UpdateDcdnDomain")
+        public DescribeDcdnDomainByCertificateRequest()
+            : base("dcdn", "2018-01-15", "DescribeDcdnDomainByCertificate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,82 +40,9 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
             }
         }
 
-		private string sources;
-
-		private string resourceGroupId;
-
-		private string securityToken;
-
-		private string topLevelDomain;
-
-		private string domainName;
-
 		private long? ownerId;
 
-		public string Sources
-		{
-			get
-			{
-				return sources;
-			}
-			set	
-			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
+		private string sSLPub;
 
 		public long? OwnerId
 		{
@@ -130,9 +57,22 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-        public override UpdateDcdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string SSLPub
+		{
+			get
+			{
+				return sSLPub;
+			}
+			set	
+			{
+				sSLPub = value;
+				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
+			}
+		}
+
+        public override DescribeDcdnDomainByCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDcdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDcdnDomainByCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

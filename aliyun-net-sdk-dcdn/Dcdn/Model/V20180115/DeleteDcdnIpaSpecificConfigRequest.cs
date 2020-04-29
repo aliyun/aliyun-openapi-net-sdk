@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class UpdateDcdnDomainRequest : RpcAcsRequest<UpdateDcdnDomainResponse>
+    public class DeleteDcdnIpaSpecificConfigRequest : RpcAcsRequest<DeleteDcdnIpaSpecificConfigResponse>
     {
-        public UpdateDcdnDomainRequest()
-            : base("dcdn", "2018-01-15", "UpdateDcdnDomain")
+        public DeleteDcdnIpaSpecificConfigRequest()
+            : base("dcdn", "2018-01-15", "DeleteDcdnIpaSpecificConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,69 +40,13 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
             }
         }
 
-		private string sources;
-
-		private string resourceGroupId;
-
-		private string securityToken;
-
-		private string topLevelDomain;
-
 		private string domainName;
 
 		private long? ownerId;
 
-		public string Sources
-		{
-			get
-			{
-				return sources;
-			}
-			set	
-			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
-			}
-		}
+		private string securityToken;
 
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
-			}
-		}
+		private string configId;
 
 		public string DomainName
 		{
@@ -130,9 +74,35 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-        public override UpdateDcdnDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string SecurityToken
+		{
+			get
+			{
+				return securityToken;
+			}
+			set	
+			{
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string ConfigId
+		{
+			get
+			{
+				return configId;
+			}
+			set	
+			{
+				configId = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigId", value);
+			}
+		}
+
+        public override DeleteDcdnIpaSpecificConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDcdnDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDcdnIpaSpecificConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
