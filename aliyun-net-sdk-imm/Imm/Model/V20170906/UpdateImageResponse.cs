@@ -45,6 +45,10 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string externalId;
 
+		private string remarksArrayA;
+
+		private string remarksArrayB;
+
 		public string RequestId
 		{
 			get
@@ -162,6 +166,30 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				externalId = value;
+			}
+		}
+
+		public string RemarksArrayA
+		{
+			get
+			{
+				return remarksArrayA;
+			}
+			set	
+			{
+				remarksArrayA = value;
+			}
+		}
+
+		public string RemarksArrayB
+		{
+			get
+			{
+				return remarksArrayB;
+			}
+			set	
+			{
+				remarksArrayB = value;
 			}
 		}
 	}

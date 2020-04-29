@@ -152,6 +152,10 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private string addressFailReason;
 
+			private string remarksArrayA;
+
+			private string remarksArrayB;
+
 			private List<FindImagesByTagNames_FacesItem> faces;
 
 			private List<FindImagesByTagNames_TagsItem> tags;
@@ -567,6 +571,30 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					addressFailReason = value;
+				}
+			}
+
+			public string RemarksArrayA
+			{
+				get
+				{
+					return remarksArrayA;
+				}
+				set	
+				{
+					remarksArrayA = value;
+				}
+			}
+
+			public string RemarksArrayB
+			{
+				get
+				{
+					return remarksArrayB;
+				}
+				set	
+				{
+					remarksArrayB = value;
 				}
 			}
 

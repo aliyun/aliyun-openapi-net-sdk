@@ -50,6 +50,10 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string imageUri;
 
+		private string remarksArrayA;
+
+		private string remarksArrayB;
+
 		private string sourceUri;
 
 		private string sourcePosition;
@@ -161,6 +165,32 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				imageUri = value;
 				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+			}
+		}
+
+		public string RemarksArrayA
+		{
+			get
+			{
+				return remarksArrayA;
+			}
+			set	
+			{
+				remarksArrayA = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksArrayA", value);
+			}
+		}
+
+		public string RemarksArrayB
+		{
+			get
+			{
+				return remarksArrayB;
+			}
+			set	
+			{
+				remarksArrayB = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksArrayB", value);
 			}
 		}
 

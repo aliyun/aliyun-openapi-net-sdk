@@ -72,6 +72,8 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				frames.AddressModifyTime = context.StringValue("FindImagesByTagNames.Images["+ i +"].AddressModifyTime");
 				frames.AddressStatus = context.StringValue("FindImagesByTagNames.Images["+ i +"].AddressStatus");
 				frames.AddressFailReason = context.StringValue("FindImagesByTagNames.Images["+ i +"].AddressFailReason");
+				frames.RemarksArrayA = context.StringValue("FindImagesByTagNames.Images["+ i +"].RemarksArrayA");
+				frames.RemarksArrayB = context.StringValue("FindImagesByTagNames.Images["+ i +"].RemarksArrayB");
 
 				FindImagesByTagNamesResponse.FindImagesByTagNames_Frames.FindImagesByTagNames_Address address = new FindImagesByTagNamesResponse.FindImagesByTagNames_Frames.FindImagesByTagNames_Address();
 				address.AddressLine = context.StringValue("FindImagesByTagNames.Images["+ i +"].Address.AddressLine");

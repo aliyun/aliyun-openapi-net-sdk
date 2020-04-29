@@ -34,6 +34,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
         {
         }
 
+		private string remarksArrayBIn;
+
 		private string project;
 
 		private string externalId;
@@ -66,6 +68,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string gender;
 
+		private string remarksArrayAIn;
+
 		private string imageSizeRange;
 
 		private string remarksBPrefix;
@@ -87,6 +91,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string createTimeRange;
 
 		private string setId;
+
+		public string RemarksArrayBIn
+		{
+			get
+			{
+				return remarksArrayBIn;
+			}
+			set	
+			{
+				remarksArrayBIn = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksArrayBIn", value);
+			}
+		}
 
 		public string Project
 		{
@@ -293,6 +310,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				gender = value;
 				DictionaryUtil.Add(QueryParameters, "Gender", value);
+			}
+		}
+
+		public string RemarksArrayAIn
+		{
+			get
+			{
+				return remarksArrayAIn;
+			}
+			set	
+			{
+				remarksArrayAIn = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksArrayAIn", value);
 			}
 		}
 

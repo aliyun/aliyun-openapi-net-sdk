@@ -67,6 +67,8 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getImageResponse.AddressModifyTime = context.StringValue("GetImage.AddressModifyTime");
 			getImageResponse.AddressStatus = context.StringValue("GetImage.AddressStatus");
 			getImageResponse.AddressFailReason = context.StringValue("GetImage.AddressFailReason");
+			getImageResponse.RemarksArrayA = context.StringValue("GetImage.RemarksArrayA");
+			getImageResponse.RemarksArrayB = context.StringValue("GetImage.RemarksArrayB");
 
 			GetImageResponse.GetImage_Address address = new GetImageResponse.GetImage_Address();
 			address.AddressLine = context.StringValue("GetImage.Address.AddressLine");

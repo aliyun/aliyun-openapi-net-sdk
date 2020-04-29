@@ -41,6 +41,8 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			indexImageResponse.RemarksC = context.StringValue("IndexImage.RemarksC");
 			indexImageResponse.RemarksD = context.StringValue("IndexImage.RemarksD");
 			indexImageResponse.ExternalId = context.StringValue("IndexImage.ExternalId");
+			indexImageResponse.RemarksArrayA = context.StringValue("IndexImage.RemarksArrayA");
+			indexImageResponse.RemarksArrayB = context.StringValue("IndexImage.RemarksArrayB");
         
 			return indexImageResponse;
         }
