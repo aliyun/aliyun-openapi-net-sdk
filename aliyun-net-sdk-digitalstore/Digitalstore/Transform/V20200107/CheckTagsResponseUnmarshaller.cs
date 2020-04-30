@@ -40,7 +40,20 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 				checkTagResultBiz.TagValue = context.StringValue("CheckTags.CheckResult["+ i +"].TagValue");
 				checkTagResultBiz.TagId = context.StringValue("CheckTags.CheckResult["+ i +"].TagId");
 				checkTagResultBiz.Barcode = context.StringValue("CheckTags.CheckResult["+ i +"].Barcode");
-				checkTagResultBiz.IsExist = context.IntegerValue("CheckTags.CheckResult["+ i +"].IsExist");
+				checkTagResultBiz.BeValid = context.BooleanValue("CheckTags.CheckResult["+ i +"].BeValid");
+				checkTagResultBiz.BeBound = context.BooleanValue("CheckTags.CheckResult["+ i +"].BeBound");
+				checkTagResultBiz.BeOrderTag = context.BooleanValue("CheckTags.CheckResult["+ i +"].BeOrderTag");
+				checkTagResultBiz.BeBoxing = context.BooleanValue("CheckTags.CheckResult["+ i +"].BeBoxing");
+				checkTagResultBiz.TagPositionType = context.StringValue("CheckTags.CheckResult["+ i +"].TagPositionType");
+				checkTagResultBiz.StyleId = context.StringValue("CheckTags.CheckResult["+ i +"].StyleId");
+				checkTagResultBiz.StyleCode = context.StringValue("CheckTags.CheckResult["+ i +"].StyleCode");
+				checkTagResultBiz.StyleName = context.StringValue("CheckTags.CheckResult["+ i +"].StyleName");
+				checkTagResultBiz.SKUId = context.StringValue("CheckTags.CheckResult["+ i +"].SKUId");
+				checkTagResultBiz.SKUName = context.StringValue("CheckTags.CheckResult["+ i +"].SKUName");
+				checkTagResultBiz.ColorCode = context.StringValue("CheckTags.CheckResult["+ i +"].ColorCode");
+				checkTagResultBiz.ColorName = context.StringValue("CheckTags.CheckResult["+ i +"].ColorName");
+				checkTagResultBiz.SizeCode = context.StringValue("CheckTags.CheckResult["+ i +"].SizeCode");
+				checkTagResultBiz.SizeName = context.StringValue("CheckTags.CheckResult["+ i +"].SizeName");
 
 				checkTagsResponse_checkResult.Add(checkTagResultBiz);
 			}

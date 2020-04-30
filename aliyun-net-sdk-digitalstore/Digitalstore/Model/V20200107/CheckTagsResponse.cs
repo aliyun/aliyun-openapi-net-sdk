@@ -76,7 +76,33 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private string barcode;
 
-			private int? isExist;
+			private bool? beValid;
+
+			private bool? beBound;
+
+			private bool? beOrderTag;
+
+			private bool? beBoxing;
+
+			private string tagPositionType;
+
+			private string styleId;
+
+			private string styleCode;
+
+			private string styleName;
+
+			private string sKUId;
+
+			private string sKUName;
+
+			private string colorCode;
+
+			private string colorName;
+
+			private string sizeCode;
+
+			private string sizeName;
 
 			public string TagValue
 			{
@@ -114,15 +140,171 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				}
 			}
 
-			public int? IsExist
+			public bool? BeValid
 			{
 				get
 				{
-					return isExist;
+					return beValid;
 				}
 				set	
 				{
-					isExist = value;
+					beValid = value;
+				}
+			}
+
+			public bool? BeBound
+			{
+				get
+				{
+					return beBound;
+				}
+				set	
+				{
+					beBound = value;
+				}
+			}
+
+			public bool? BeOrderTag
+			{
+				get
+				{
+					return beOrderTag;
+				}
+				set	
+				{
+					beOrderTag = value;
+				}
+			}
+
+			public bool? BeBoxing
+			{
+				get
+				{
+					return beBoxing;
+				}
+				set	
+				{
+					beBoxing = value;
+				}
+			}
+
+			public string TagPositionType
+			{
+				get
+				{
+					return tagPositionType;
+				}
+				set	
+				{
+					tagPositionType = value;
+				}
+			}
+
+			public string StyleId
+			{
+				get
+				{
+					return styleId;
+				}
+				set	
+				{
+					styleId = value;
+				}
+			}
+
+			public string StyleCode
+			{
+				get
+				{
+					return styleCode;
+				}
+				set	
+				{
+					styleCode = value;
+				}
+			}
+
+			public string StyleName
+			{
+				get
+				{
+					return styleName;
+				}
+				set	
+				{
+					styleName = value;
+				}
+			}
+
+			public string SKUId
+			{
+				get
+				{
+					return sKUId;
+				}
+				set	
+				{
+					sKUId = value;
+				}
+			}
+
+			public string SKUName
+			{
+				get
+				{
+					return sKUName;
+				}
+				set	
+				{
+					sKUName = value;
+				}
+			}
+
+			public string ColorCode
+			{
+				get
+				{
+					return colorCode;
+				}
+				set	
+				{
+					colorCode = value;
+				}
+			}
+
+			public string ColorName
+			{
+				get
+				{
+					return colorName;
+				}
+				set	
+				{
+					colorName = value;
+				}
+			}
+
+			public string SizeCode
+			{
+				get
+				{
+					return sizeCode;
+				}
+				set	
+				{
+					sizeCode = value;
+				}
+			}
+
+			public string SizeName
+			{
+				get
+				{
+					return sizeName;
+				}
+				set	
+				{
+					sizeName = value;
 				}
 			}
 		}
