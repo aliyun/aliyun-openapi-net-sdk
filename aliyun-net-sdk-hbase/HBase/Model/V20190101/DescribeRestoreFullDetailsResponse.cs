@@ -22,14 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-	public class DescribeBackupSummaryResponse : AcsResponse
+	public class DescribeRestoreFullDetailsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private DescribeBackupSummary_Incr incr;
-
-		private DescribeBackupSummary_Full full;
+		private DescribeRestoreFullDetails_RestoreFull restoreFull;
 
 		public string RequestId
 		{
@@ -43,66 +41,70 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public DescribeBackupSummary_Incr Incr
+		public DescribeRestoreFullDetails_RestoreFull RestoreFull
 		{
 			get
 			{
-				return incr;
+				return restoreFull;
 			}
 			set	
 			{
-				incr = value;
+				restoreFull = value;
 			}
 		}
 
-		public DescribeBackupSummary_Full Full
-		{
-			get
-			{
-				return full;
-			}
-			set	
-			{
-				full = value;
-			}
-		}
-
-		public class DescribeBackupSummary_Incr
+		public class DescribeRestoreFullDetails_RestoreFull
 		{
 
-			private string pos;
+			private int? succeed;
 
-			private string queueLogNum;
+			private int? fail;
+
+			private string dataSize;
 
 			private string speed;
 
-			private string status;
+			private long? total;
 
-			private string runningLogNum;
+			private int? pageNumber;
 
-			private string backupLogSize;
+			private int? pageSize;
 
-			public string Pos
+			private List<DescribeRestoreFullDetails_RestoreFullDetail> restoreFullDetails;
+
+			public int? Succeed
 			{
 				get
 				{
-					return pos;
+					return succeed;
 				}
 				set	
 				{
-					pos = value;
+					succeed = value;
 				}
 			}
 
-			public string QueueLogNum
+			public int? Fail
 			{
 				get
 				{
-					return queueLogNum;
+					return fail;
 				}
 				set	
 				{
-					queueLogNum = value;
+					fail = value;
+				}
+			}
+
+			public string DataSize
+			{
+				get
+				{
+					return dataSize;
+				}
+				set	
+				{
+					dataSize = value;
 				}
 			}
 
@@ -118,79 +120,15 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				}
 			}
 
-			public string Status
+			public long? Total
 			{
 				get
 				{
-					return status;
+					return total;
 				}
 				set	
 				{
-					status = value;
-				}
-			}
-
-			public string RunningLogNum
-			{
-				get
-				{
-					return runningLogNum;
-				}
-				set	
-				{
-					runningLogNum = value;
-				}
-			}
-
-			public string BackupLogSize
-			{
-				get
-				{
-					return backupLogSize;
-				}
-				set	
-				{
-					backupLogSize = value;
-				}
-			}
-		}
-
-		public class DescribeBackupSummary_Full
-		{
-
-			private string hasMore;
-
-			private string nextFullBackupDate;
-
-			private int? pageNumber;
-
-			private int? pageSize;
-
-			private int? total;
-
-			private List<DescribeBackupSummary_Record> records;
-
-			public string HasMore
-			{
-				get
-				{
-					return hasMore;
-				}
-				set	
-				{
-					hasMore = value;
-				}
-			}
-
-			public string NextFullBackupDate
-			{
-				get
-				{
-					return nextFullBackupDate;
-				}
-				set	
-				{
-					nextFullBackupDate = value;
+					total = value;
 				}
 			}
 
@@ -218,68 +156,82 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				}
 			}
 
-			public int? Total
+			public List<DescribeRestoreFullDetails_RestoreFullDetail> RestoreFullDetails
 			{
 				get
 				{
-					return total;
+					return restoreFullDetails;
 				}
 				set	
 				{
-					total = value;
+					restoreFullDetails = value;
 				}
 			}
 
-			public List<DescribeBackupSummary_Record> Records
-			{
-				get
-				{
-					return records;
-				}
-				set	
-				{
-					records = value;
-				}
-			}
-
-			public class DescribeBackupSummary_Record
+			public class DescribeRestoreFullDetails_RestoreFullDetail
 			{
 
-				private string recordId;
+				private string table;
 
-				private string finishTime;
+				private string state;
+
+				private string startTime;
+
+				private string endTime;
 
 				private string process;
-
-				private string createTime;
 
 				private string dataSize;
 
 				private string speed;
 
-				private string status;
+				private string message;
 
-				public string RecordId
+				public string Table
 				{
 					get
 					{
-						return recordId;
+						return table;
 					}
 					set	
 					{
-						recordId = value;
+						table = value;
 					}
 				}
 
-				public string FinishTime
+				public string State
 				{
 					get
 					{
-						return finishTime;
+						return state;
 					}
 					set	
 					{
-						finishTime = value;
+						state = value;
+					}
+				}
+
+				public string StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
+				public string EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
 					}
 				}
 
@@ -292,18 +244,6 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 					set	
 					{
 						process = value;
-					}
-				}
-
-				public string CreateTime
-				{
-					get
-					{
-						return createTime;
-					}
-					set	
-					{
-						createTime = value;
 					}
 				}
 
@@ -331,15 +271,15 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 					}
 				}
 
-				public string Status
+				public string Message
 				{
 					get
 					{
-						return status;
+						return message;
 					}
 					set	
 					{
-						status = value;
+						message = value;
 					}
 				}
 			}

@@ -27,9 +27,13 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string requestId;
 
-		private int? restoreRecordSize;
-
 		private int? hasMoreRestoreRecord;
+
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private int? total;
 
 		private List<DescribeRestoreSummary_Rescord> rescords;
 
@@ -45,18 +49,6 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public int? RestoreRecordSize
-		{
-			get
-			{
-				return restoreRecordSize;
-			}
-			set	
-			{
-				restoreRecordSize = value;
-			}
-		}
-
 		public int? HasMoreRestoreRecord
 		{
 			get
@@ -66,6 +58,42 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				hasMoreRestoreRecord = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 

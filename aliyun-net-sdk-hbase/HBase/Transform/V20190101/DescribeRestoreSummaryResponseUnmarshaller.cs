@@ -32,8 +32,10 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 
 			describeRestoreSummaryResponse.HttpResponse = context.HttpResponse;
 			describeRestoreSummaryResponse.RequestId = context.StringValue("DescribeRestoreSummary.RequestId");
-			describeRestoreSummaryResponse.RestoreRecordSize = context.IntegerValue("DescribeRestoreSummary.RestoreRecordSize");
 			describeRestoreSummaryResponse.HasMoreRestoreRecord = context.IntegerValue("DescribeRestoreSummary.HasMoreRestoreRecord");
+			describeRestoreSummaryResponse.PageNumber = context.IntegerValue("DescribeRestoreSummary.PageNumber");
+			describeRestoreSummaryResponse.PageSize = context.IntegerValue("DescribeRestoreSummary.PageSize");
+			describeRestoreSummaryResponse.Total = context.IntegerValue("DescribeRestoreSummary.Total");
 
 			List<DescribeRestoreSummaryResponse.DescribeRestoreSummary_Rescord> describeRestoreSummaryResponse_rescords = new List<DescribeRestoreSummaryResponse.DescribeRestoreSummary_Rescord>();
 			for (int i = 0; i < context.Length("DescribeRestoreSummary.Rescords.Length"); i++) {

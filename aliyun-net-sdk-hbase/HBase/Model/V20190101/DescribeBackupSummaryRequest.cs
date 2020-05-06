@@ -41,6 +41,10 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string clusterId;
 
+		private int? pageNumber;
+
+		private int? pageSize;
+
 		public string ClusterId
 		{
 			get
@@ -51,6 +55,32 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

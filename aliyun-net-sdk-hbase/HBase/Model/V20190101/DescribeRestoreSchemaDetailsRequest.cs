@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class DescribeBackupTablesRequest : RpcAcsRequest<DescribeBackupTablesResponse>
+    public class DescribeRestoreSchemaDetailsRequest : RpcAcsRequest<DescribeRestoreSchemaDetailsResponse>
     {
-        public DescribeBackupTablesRequest()
-            : base("HBase", "2019-01-01", "DescribeBackupTables", "hbase", "openAPI")
+        public DescribeRestoreSchemaDetailsRequest()
+            : base("HBase", "2019-01-01", "DescribeRestoreSchemaDetails", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,9 +43,9 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private int? pageSize;
 
-		private string backupRecordId;
-
 		private string clusterId;
+
+		private string restoreRecordId;
 
 		public int? PageNumber
 		{
@@ -73,19 +73,6 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public string BackupRecordId
-		{
-			get
-			{
-				return backupRecordId;
-			}
-			set	
-			{
-				backupRecordId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupRecordId", value);
-			}
-		}
-
 		public string ClusterId
 		{
 			get
@@ -99,9 +86,22 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-        public override DescribeBackupTablesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string RestoreRecordId
+		{
+			get
+			{
+				return restoreRecordId;
+			}
+			set	
+			{
+				restoreRecordId = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreRecordId", value);
+			}
+		}
+
+        public override DescribeRestoreSchemaDetailsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBackupTablesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRestoreSchemaDetailsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

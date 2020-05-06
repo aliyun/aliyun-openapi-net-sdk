@@ -44,8 +44,10 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 
 			DescribeBackupSummaryResponse.DescribeBackupSummary_Full full = new DescribeBackupSummaryResponse.DescribeBackupSummary_Full();
 			full.HasMore = context.StringValue("DescribeBackupSummary.Full.HasMore");
-			full.RecordSize = context.StringValue("DescribeBackupSummary.Full.RecordSize");
 			full.NextFullBackupDate = context.StringValue("DescribeBackupSummary.Full.NextFullBackupDate");
+			full.PageNumber = context.IntegerValue("DescribeBackupSummary.Full.PageNumber");
+			full.PageSize = context.IntegerValue("DescribeBackupSummary.Full.PageSize");
+			full.Total = context.IntegerValue("DescribeBackupSummary.Full.Total");
 
 			List<DescribeBackupSummaryResponse.DescribeBackupSummary_Full.DescribeBackupSummary_Record> full_records = new List<DescribeBackupSummaryResponse.DescribeBackupSummary_Full.DescribeBackupSummary_Record>();
 			for (int i = 0; i < context.Length("DescribeBackupSummary.Full.Records.Length"); i++) {

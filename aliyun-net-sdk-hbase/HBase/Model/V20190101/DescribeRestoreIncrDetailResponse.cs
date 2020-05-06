@@ -22,20 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-	public class DescribeBackupTablesResponse : AcsResponse
+	public class DescribeRestoreIncrDetailResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private long? total;
-
-		private int? pageSize;
-
-		private int? pageNumber;
-
-		private List<DescribeBackupTables_BackupRecord> backupRecords;
-
-		private List<string> tables;
+		private DescribeRestoreIncrDetail_RestoreIncrDetail restoreIncrDetail;
 
 		public string RequestId
 		{
@@ -49,70 +41,20 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public long? Total
+		public DescribeRestoreIncrDetail_RestoreIncrDetail RestoreIncrDetail
 		{
 			get
 			{
-				return total;
+				return restoreIncrDetail;
 			}
 			set	
 			{
-				total = value;
+				restoreIncrDetail = value;
 			}
 		}
 
-		public int? PageSize
+		public class DescribeRestoreIncrDetail_RestoreIncrDetail
 		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public List<DescribeBackupTables_BackupRecord> BackupRecords
-		{
-			get
-			{
-				return backupRecords;
-			}
-			set	
-			{
-				backupRecords = value;
-			}
-		}
-
-		public List<string> Tables
-		{
-			get
-			{
-				return tables;
-			}
-			set	
-			{
-				tables = value;
-			}
-		}
-
-		public class DescribeBackupTables_BackupRecord
-		{
-
-			private string table;
 
 			private string state;
 
@@ -120,25 +62,13 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 			private string endTime;
 
+			private string restoreStartTs;
+
+			private string restoredTs;
+
+			private string restoreDelay;
+
 			private string process;
-
-			private string dataSize;
-
-			private string speed;
-
-			private string message;
-
-			public string Table
-			{
-				get
-				{
-					return table;
-				}
-				set	
-				{
-					table = value;
-				}
-			}
 
 			public string State
 			{
@@ -176,6 +106,42 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				}
 			}
 
+			public string RestoreStartTs
+			{
+				get
+				{
+					return restoreStartTs;
+				}
+				set	
+				{
+					restoreStartTs = value;
+				}
+			}
+
+			public string RestoredTs
+			{
+				get
+				{
+					return restoredTs;
+				}
+				set	
+				{
+					restoredTs = value;
+				}
+			}
+
+			public string RestoreDelay
+			{
+				get
+				{
+					return restoreDelay;
+				}
+				set	
+				{
+					restoreDelay = value;
+				}
+			}
+
 			public string Process
 			{
 				get
@@ -185,42 +151,6 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				set	
 				{
 					process = value;
-				}
-			}
-
-			public string DataSize
-			{
-				get
-				{
-					return dataSize;
-				}
-				set	
-				{
-					dataSize = value;
-				}
-			}
-
-			public string Speed
-			{
-				get
-				{
-					return speed;
-				}
-				set	
-				{
-					speed = value;
-				}
-			}
-
-			public string Message
-			{
-				get
-				{
-					return message;
-				}
-				set	
-				{
-					message = value;
 				}
 			}
 		}

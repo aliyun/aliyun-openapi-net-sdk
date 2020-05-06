@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class DescribeBackupTablesRequest : RpcAcsRequest<DescribeBackupTablesResponse>
+    public class DescribeRestoreIncrDetailRequest : RpcAcsRequest<DescribeRestoreIncrDetailResponse>
     {
-        public DescribeBackupTablesRequest()
-            : base("HBase", "2019-01-01", "DescribeBackupTables", "hbase", "openAPI")
+        public DescribeRestoreIncrDetailRequest()
+            : base("HBase", "2019-01-01", "DescribeRestoreIncrDetail", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,52 +39,9 @@ namespace Aliyun.Acs.HBase.Model.V20190101
             }
         }
 
-		private int? pageNumber;
-
-		private int? pageSize;
-
-		private string backupRecordId;
-
 		private string clusterId;
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string BackupRecordId
-		{
-			get
-			{
-				return backupRecordId;
-			}
-			set	
-			{
-				backupRecordId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupRecordId", value);
-			}
-		}
+		private string restoreRecordId;
 
 		public string ClusterId
 		{
@@ -99,9 +56,22 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-        public override DescribeBackupTablesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string RestoreRecordId
+		{
+			get
+			{
+				return restoreRecordId;
+			}
+			set	
+			{
+				restoreRecordId = value;
+				DictionaryUtil.Add(QueryParameters, "RestoreRecordId", value);
+			}
+		}
+
+        public override DescribeRestoreIncrDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeBackupTablesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRestoreIncrDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
