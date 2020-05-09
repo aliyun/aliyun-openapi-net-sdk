@@ -162,6 +162,8 @@ namespace Aliyun.Acs.reid.Model.V20190928
 
 			private long? locationId;
 
+			private string pvType;
+
 			private List<DescribeCameraStatistics_Rect> pvRects;
 
 			public long? ProcessCursor
@@ -209,6 +211,18 @@ namespace Aliyun.Acs.reid.Model.V20190928
 				set	
 				{
 					locationId = value;
+				}
+			}
+
+			public string PvType
+			{
+				get
+				{
+					return pvType;
+				}
+				set	
+				{
+					pvType = value;
 				}
 			}
 

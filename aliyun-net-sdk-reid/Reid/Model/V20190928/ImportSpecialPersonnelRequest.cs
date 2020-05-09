@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.reid;
 using Aliyun.Acs.reid.Transform;
 using Aliyun.Acs.reid.Transform.V20190928;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.reid.Model.V20190928
     public class ImportSpecialPersonnelRequest : RpcAcsRequest<ImportSpecialPersonnelResponse>
     {
         public ImportSpecialPersonnelRequest()
-            : base("reid", "2019-09-28", "ImportSpecialPersonnel", "1.1.2", "openAPI")
+            : base("reid", "2019-09-28", "ImportSpecialPersonnel")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
