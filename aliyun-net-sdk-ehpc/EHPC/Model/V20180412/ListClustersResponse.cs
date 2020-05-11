@@ -144,6 +144,12 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string baseOsTag;
 
+			private string instanceChargeType;
+
+			private string computeSpotStrategy;
+
+			private float? computeSpotPriceLimit;
+
 			private ListClusters_Managers managers;
 
 			private ListClusters_Computes computes;
@@ -425,6 +431,42 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					baseOsTag = value;
+				}
+			}
+
+			public string InstanceChargeType
+			{
+				get
+				{
+					return instanceChargeType;
+				}
+				set	
+				{
+					instanceChargeType = value;
+				}
+			}
+
+			public string ComputeSpotStrategy
+			{
+				get
+				{
+					return computeSpotStrategy;
+				}
+				set	
+				{
+					computeSpotStrategy = value;
+				}
+			}
+
+			public float? ComputeSpotPriceLimit
+			{
+				get
+				{
+					return computeSpotPriceLimit;
+				}
+				set	
+				{
+					computeSpotPriceLimit = value;
 				}
 			}
 

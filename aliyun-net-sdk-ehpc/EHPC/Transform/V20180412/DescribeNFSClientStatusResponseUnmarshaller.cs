@@ -32,6 +32,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 
 			describeNFSClientStatusResponse.HttpResponse = context.HttpResponse;
 			describeNFSClientStatusResponse.Status = context.StringValue("DescribeNFSClientStatus.Status");
+			describeNFSClientStatusResponse.RequestId = context.StringValue("DescribeNFSClientStatus.RequestId");
 
 			DescribeNFSClientStatusResponse.DescribeNFSClientStatus_Result result = new DescribeNFSClientStatusResponse.DescribeNFSClientStatus_Result();
 			result.InvokeRecordStatus = context.StringValue("DescribeNFSClientStatus.Result.InvokeRecordStatus");

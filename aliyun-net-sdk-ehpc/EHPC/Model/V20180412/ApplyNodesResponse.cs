@@ -16,25 +16,55 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.EHPC.Model.V20180412;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.EHPC.Transform.V20180412
+namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class InstallNFSClientResponseUnmarshaller
-    {
-        public static InstallNFSClientResponse Unmarshall(UnmarshallerContext context)
-        {
-			InstallNFSClientResponse installNFSClientResponse = new InstallNFSClientResponse();
+	public class ApplyNodesResponse : AcsResponse
+	{
 
-			installNFSClientResponse.HttpResponse = context.HttpResponse;
-			installNFSClientResponse.RequestId = context.StringValue("InstallNFSClient.RequestId");
-			installNFSClientResponse.InvokeId = context.StringValue("InstallNFSClient.InvokeId");
-        
-			return installNFSClientResponse;
-        }
-    }
+		private string requestId;
+
+		private string detail;
+
+		private List<string> instanceIds;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string Detail
+		{
+			get
+			{
+				return detail;
+			}
+			set	
+			{
+				detail = value;
+			}
+		}
+
+		public List<string> InstanceIds
+		{
+			get
+			{
+				return instanceIds;
+			}
+			set	
+			{
+				instanceIds = value;
+			}
+		}
+	}
 }

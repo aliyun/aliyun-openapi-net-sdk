@@ -32,6 +32,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 
 			getGWSConnectTicketResponse.HttpResponse = context.HttpResponse;
 			getGWSConnectTicketResponse.Ticket = context.StringValue("GetGWSConnectTicket.Ticket");
+			getGWSConnectTicketResponse.RequestId = context.StringValue("GetGWSConnectTicket.RequestId");
         
 			return getGWSConnectTicketResponse;
         }

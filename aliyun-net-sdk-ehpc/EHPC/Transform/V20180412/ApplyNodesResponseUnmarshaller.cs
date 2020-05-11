@@ -24,23 +24,23 @@ using Aliyun.Acs.EHPC.Model.V20180412;
 
 namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
-    public class GetJobReportResponseUnmarshaller
+    public class ApplyNodesResponseUnmarshaller
     {
-        public static GetJobReportResponse Unmarshall(UnmarshallerContext context)
+        public static ApplyNodesResponse Unmarshall(UnmarshallerContext context)
         {
-			GetJobReportResponse getJobReportResponse = new GetJobReportResponse();
+			ApplyNodesResponse applyNodesResponse = new ApplyNodesResponse();
 
-			getJobReportResponse.HttpResponse = context.HttpResponse;
-			getJobReportResponse.RequestId = context.StringValue("GetJobReport.RequestId");
-			getJobReportResponse.Metrics = context.StringValue("GetJobReport.Metrics");
+			applyNodesResponse.HttpResponse = context.HttpResponse;
+			applyNodesResponse.RequestId = context.StringValue("ApplyNodes.RequestId");
+			applyNodesResponse.Detail = context.StringValue("ApplyNodes.Detail");
 
-			List<string> getJobReportResponse_data = new List<string>();
-			for (int i = 0; i < context.Length("GetJobReport.Data.Length"); i++) {
-				getJobReportResponse_data.Add(context.StringValue("GetJobReport.Data["+ i +"]"));
+			List<string> applyNodesResponse_instanceIds = new List<string>();
+			for (int i = 0; i < context.Length("ApplyNodes.InstanceIds.Length"); i++) {
+				applyNodesResponse_instanceIds.Add(context.StringValue("ApplyNodes.InstanceIds["+ i +"]"));
 			}
-			getJobReportResponse.Data = getJobReportResponse_data;
+			applyNodesResponse.InstanceIds = applyNodesResponse_instanceIds;
         
-			return getJobReportResponse;
+			return applyNodesResponse;
         }
     }
 }

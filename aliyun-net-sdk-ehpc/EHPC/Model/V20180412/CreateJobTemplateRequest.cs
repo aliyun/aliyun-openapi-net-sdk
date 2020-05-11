@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.EHPC;
 using Aliyun.Acs.EHPC.Transform;
 using Aliyun.Acs.EHPC.Transform.V20180412;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
     public class CreateJobTemplateRequest : RpcAcsRequest<CreateJobTemplateResponse>
     {
         public CreateJobTemplateRequest()
-            : base("EHPC", "2018-04-12", "CreateJobTemplate", "ehs", "openAPI")
+            : base("EHPC", "2018-04-12", "CreateJobTemplate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

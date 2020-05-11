@@ -28,10 +28,10 @@ using Aliyun.Acs.EHPC.Transform.V20180412;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class AddNodesRequest : RpcAcsRequest<AddNodesResponse>
+    public class ApplyNodesRequest : RpcAcsRequest<ApplyNodesResponse>
     {
-        public AddNodesRequest()
-            : base("EHPC", "2018-04-12", "AddNodes")
+        public ApplyNodesRequest()
+            : base("EHPC", "2018-04-12", "ApplyNodes")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,29 +42,25 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string imageId;
 
+		private int? memory;
+
 		private bool? allocatePublicAddress;
 
 		private int? internetMaxBandWidthOut;
 
-		private string jobQueue;
-
-		private string imageOwnerAlias;
+		private string resourceAmountType;
 
 		private string systemDiskType;
 
+		private int? cores;
+
 		private int? systemDiskSize;
 
-		private string instanceType;
+		private List<ZoneInfos> zoneInfoss = new List<ZoneInfos>(){ };
 
 		private string hostNamePrefix;
 
 		private string computeSpotPriceLimit;
-
-		private int? autoRenewPeriod;
-
-		private int? period;
-
-		private int? count;
 
 		private string clusterId;
 
@@ -72,23 +68,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string hostNameSuffix;
 
-		private string vSwitchId;
+		private string priorityStrategy;
 
-		private string periodUnit;
-
-		private bool? computeEnableHt;
-
-		private string autoRenew;
+		private string instanceFamilyLevel;
 
 		private string ecsChargeType;
 
 		private string internetChargeType;
 
-		private string createMode;
-
-		private string zoneId;
+		private List<InstanceTypeModel> instanceTypeModels = new List<InstanceTypeModel>(){ };
 
 		private int? internetMaxBandWidthIn;
+
+		private int? targetCapacity;
 
 		public string ImageId
 		{
@@ -100,6 +92,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public int? Memory
+		{
+			get
+			{
+				return memory;
+			}
+			set	
+			{
+				memory = value;
+				DictionaryUtil.Add(QueryParameters, "Memory", value.ToString());
 			}
 		}
 
@@ -129,29 +134,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string JobQueue
+		public string ResourceAmountType
 		{
 			get
 			{
-				return jobQueue;
+				return resourceAmountType;
 			}
 			set	
 			{
-				jobQueue = value;
-				DictionaryUtil.Add(QueryParameters, "JobQueue", value);
-			}
-		}
-
-		public string ImageOwnerAlias
-		{
-			get
-			{
-				return imageOwnerAlias;
-			}
-			set	
-			{
-				imageOwnerAlias = value;
-				DictionaryUtil.Add(QueryParameters, "ImageOwnerAlias", value);
+				resourceAmountType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceAmountType", value);
 			}
 		}
 
@@ -168,6 +160,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
+		public int? Cores
+		{
+			get
+			{
+				return cores;
+			}
+			set	
+			{
+				cores = value;
+				DictionaryUtil.Add(QueryParameters, "Cores", value.ToString());
+			}
+		}
+
 		public int? SystemDiskSize
 		{
 			get
@@ -181,16 +186,21 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string InstanceType
+		public List<ZoneInfos> ZoneInfoss
 		{
 			get
 			{
-				return instanceType;
+				return zoneInfoss;
 			}
-			set	
+
+			set
 			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+				zoneInfoss = value;
+				for (int i = 0; i < zoneInfoss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ZoneInfos." + (i + 1) + ".VSwitchId", zoneInfoss[i].VSwitchId);
+					DictionaryUtil.Add(QueryParameters,"ZoneInfos." + (i + 1) + ".ZoneId", zoneInfoss[i].ZoneId);
+				}
 			}
 		}
 
@@ -217,45 +227,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				computeSpotPriceLimit = value;
 				DictionaryUtil.Add(QueryParameters, "ComputeSpotPriceLimit", value);
-			}
-		}
-
-		public int? AutoRenewPeriod
-		{
-			get
-			{
-				return autoRenewPeriod;
-			}
-			set	
-			{
-				autoRenewPeriod = value;
-				DictionaryUtil.Add(QueryParameters, "AutoRenewPeriod", value.ToString());
-			}
-		}
-
-		public int? Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
-			}
-		}
-
-		public int? Count
-		{
-			get
-			{
-				return count;
-			}
-			set	
-			{
-				count = value;
-				DictionaryUtil.Add(QueryParameters, "Count", value.ToString());
 			}
 		}
 
@@ -298,55 +269,29 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string VSwitchId
+		public string PriorityStrategy
 		{
 			get
 			{
-				return vSwitchId;
+				return priorityStrategy;
 			}
 			set	
 			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+				priorityStrategy = value;
+				DictionaryUtil.Add(QueryParameters, "PriorityStrategy", value);
 			}
 		}
 
-		public string PeriodUnit
+		public string InstanceFamilyLevel
 		{
 			get
 			{
-				return periodUnit;
+				return instanceFamilyLevel;
 			}
 			set	
 			{
-				periodUnit = value;
-				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
-			}
-		}
-
-		public bool? ComputeEnableHt
-		{
-			get
-			{
-				return computeEnableHt;
-			}
-			set	
-			{
-				computeEnableHt = value;
-				DictionaryUtil.Add(QueryParameters, "ComputeEnableHt", value.ToString());
-			}
-		}
-
-		public string AutoRenew
-		{
-			get
-			{
-				return autoRenew;
-			}
-			set	
-			{
-				autoRenew = value;
-				DictionaryUtil.Add(QueryParameters, "AutoRenew", value);
+				instanceFamilyLevel = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceFamilyLevel", value);
 			}
 		}
 
@@ -376,29 +321,21 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string CreateMode
+		public List<InstanceTypeModel> InstanceTypeModels
 		{
 			get
 			{
-				return createMode;
+				return instanceTypeModels;
 			}
-			set	
-			{
-				createMode = value;
-				DictionaryUtil.Add(QueryParameters, "CreateMode", value);
-			}
-		}
 
-		public string ZoneId
-		{
-			get
+			set
 			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+				instanceTypeModels = value;
+				for (int i = 0; i < instanceTypeModels.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceTypeModel." + (i + 1) + ".MaxPrice", instanceTypeModels[i].MaxPrice);
+					DictionaryUtil.Add(QueryParameters,"InstanceTypeModel." + (i + 1) + ".InstanceType", instanceTypeModels[i].InstanceType);
+				}
 			}
 		}
 
@@ -415,9 +352,86 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-        public override AddNodesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? TargetCapacity
+		{
+			get
+			{
+				return targetCapacity;
+			}
+			set	
+			{
+				targetCapacity = value;
+				DictionaryUtil.Add(QueryParameters, "TargetCapacity", value.ToString());
+			}
+		}
+
+		public class ZoneInfos
+		{
+
+			private string vSwitchId;
+
+			private string zoneId;
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+		}
+
+		public class InstanceTypeModel
+		{
+
+			private float? maxPrice;
+
+			private string instanceType;
+
+			public float? MaxPrice
+			{
+				get
+				{
+					return maxPrice;
+				}
+				set	
+				{
+					maxPrice = value;
+				}
+			}
+
+			public string InstanceType
+			{
+				get
+				{
+					return instanceType;
+				}
+				set	
+				{
+					instanceType = value;
+				}
+			}
+		}
+
+        public override ApplyNodesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddNodesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ApplyNodesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

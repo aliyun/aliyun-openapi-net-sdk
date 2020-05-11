@@ -296,6 +296,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private int? maxNodesInQueue;
 
+			private int? minNodesInQueue;
+
 			private List<GetAutoScaleConfig_InstanceTypeInfo> instanceTypes;
 
 			public string QueueName
@@ -391,6 +393,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					maxNodesInQueue = value;
+				}
+			}
+
+			public int? MinNodesInQueue
+			{
+				get
+				{
+					return minNodesInQueue;
+				}
+				set	
+				{
+					minNodesInQueue = value;
 				}
 			}
 

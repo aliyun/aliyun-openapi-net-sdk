@@ -27,6 +27,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string ticket;
 
+		private string requestId;
+
 		public string Ticket
 		{
 			get
@@ -36,6 +38,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			set	
 			{
 				ticket = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 	}

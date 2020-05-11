@@ -31,6 +31,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 			ListInstalledSoftwareResponse listInstalledSoftwareResponse = new ListInstalledSoftwareResponse();
 
 			listInstalledSoftwareResponse.HttpResponse = context.HttpResponse;
+			listInstalledSoftwareResponse.RequestId = context.StringValue("ListInstalledSoftware.RequestId");
 
 			List<ListInstalledSoftwareResponse.ListInstalledSoftware_SoftwareListItem> listInstalledSoftwareResponse_softwareList = new List<ListInstalledSoftwareResponse.ListInstalledSoftware_SoftwareListItem>();
 			for (int i = 0; i < context.Length("ListInstalledSoftware.SoftwareList.Length"); i++) {

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.EHPC;
 using Aliyun.Acs.EHPC.Transform;
 using Aliyun.Acs.EHPC.Transform.V20180412;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
     public class SetAutoScaleConfigRequest : RpcAcsRequest<SetAutoScaleConfigResponse>
     {
         public SetAutoScaleConfigRequest()
-            : base("EHPC", "2018-04-12", "SetAutoScaleConfig", "ehs", "openAPI")
+            : base("EHPC", "2018-04-12", "SetAutoScaleConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -239,6 +240,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				{
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SpotStrategy", queuess[i].SpotStrategy);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".QueueName", queuess[i].QueueName);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".MinNodesInQueue", queuess[i].MinNodesInQueue);
 					for (int j = 0; j < queuess[i].InstanceTypess.Count; j++)
 					{
 						DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".InstanceTypes." +(j + 1), queuess[i].InstanceTypess[j]);
@@ -285,6 +287,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string queueName;
 
+			private int? minNodesInQueue;
+
 			private List<InstanceTypes> instanceTypess = new List<InstanceTypes>(){ };
 
 			private int? maxNodesInQueue;
@@ -318,6 +322,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					queueName = value;
+				}
+			}
+
+			public int? MinNodesInQueue
+			{
+				get
+				{
+					return minNodesInQueue;
+				}
+				set	
+				{
+					minNodesInQueue = value;
 				}
 			}
 

@@ -25,7 +25,21 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 	public class ListInstalledSoftwareResponse : AcsResponse
 	{
 
+		private string requestId;
+
 		private List<ListInstalledSoftware_SoftwareListItem> softwareList;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
 
 		public List<ListInstalledSoftware_SoftwareListItem> SoftwareList
 		{

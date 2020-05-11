@@ -59,6 +59,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				nodeInfo.ZoneId = context.StringValue("ListNodes.Nodes["+ i +"].ZoneId");
 				nodeInfo.VSwitchId = context.StringValue("ListNodes.Nodes["+ i +"].VSwitchId");
 				nodeInfo.HtEnabled = context.BooleanValue("ListNodes.Nodes["+ i +"].HtEnabled");
+				nodeInfo.PublicIpAddress = context.StringValue("ListNodes.Nodes["+ i +"].PublicIpAddress");
 
 				List<string> nodeInfo_roles = new List<string>();
 				for (int j = 0; j < context.Length("ListNodes.Nodes["+ i +"].Roles.Length"); j++) {

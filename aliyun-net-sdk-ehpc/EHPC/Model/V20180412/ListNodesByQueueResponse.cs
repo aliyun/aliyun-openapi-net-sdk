@@ -136,6 +136,10 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private bool? htEnabled;
 
+			private string ipAddress;
+
+			private string publicIpAddress;
+
 			private ListNodesByQueue_TotalResources totalResources;
 
 			private ListNodesByQueue_UsedResources usedResources;
@@ -365,6 +369,30 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					htEnabled = value;
+				}
+			}
+
+			public string IpAddress
+			{
+				get
+				{
+					return ipAddress;
+				}
+				set	
+				{
+					ipAddress = value;
+				}
+			}
+
+			public string PublicIpAddress
+			{
+				get
+				{
+					return publicIpAddress;
+				}
+				set	
+				{
+					publicIpAddress = value;
 				}
 			}
 

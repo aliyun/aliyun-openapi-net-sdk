@@ -110,6 +110,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private string baseOsTag;
 
+			private string imageName;
+
 			private List<DescribeCluster_ApplicationInfo> applications;
 
 			private List<DescribeCluster_PostInstallScriptInfo> postInstallScripts;
@@ -437,6 +439,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					baseOsTag = value;
+				}
+			}
+
+			public string ImageName
+			{
+				get
+				{
+					return imageName;
+				}
+				set	
+				{
+					imageName = value;
 				}
 			}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.EHPC;
 using Aliyun.Acs.EHPC.Transform;
 using Aliyun.Acs.EHPC.Transform.V20180412;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
     public class DeleteImageRequest : RpcAcsRequest<DeleteImageResponse>
     {
         public DeleteImageRequest()
-            : base("EHPC", "2018-04-12", "DeleteImage", "ehs", "openAPI")
+            : base("EHPC", "2018-04-12", "DeleteImage")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

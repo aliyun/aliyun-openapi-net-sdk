@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.EHPC;
 using Aliyun.Acs.EHPC.Transform;
 using Aliyun.Acs.EHPC.Transform.V20180412;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
     public class ModifyClusterAttributesRequest : RpcAcsRequest<ModifyClusterAttributesResponse>
     {
         public ModifyClusterAttributesRequest()
-            : base("EHPC", "2018-04-12", "ModifyClusterAttributes", "ehs", "openAPI")
+            : base("EHPC", "2018-04-12", "ModifyClusterAttributes")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,11 +40,28 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
             }
         }
 
+		private string imageId;
+
 		private string description;
 
 		private string clusterId;
 
+		private string imageOwnerAlias;
+
 		private string name;
+
+		public string ImageId
+		{
+			get
+			{
+				return imageId;
+			}
+			set	
+			{
+				imageId = value;
+				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
 
 		public string Description
 		{
@@ -68,6 +86,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string ImageOwnerAlias
+		{
+			get
+			{
+				return imageOwnerAlias;
+			}
+			set	
+			{
+				imageOwnerAlias = value;
+				DictionaryUtil.Add(QueryParameters, "ImageOwnerAlias", value);
 			}
 		}
 
