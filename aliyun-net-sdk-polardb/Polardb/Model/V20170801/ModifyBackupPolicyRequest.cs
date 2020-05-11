@@ -41,7 +41,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
+		private string dataLevel2BackupRetentionPeriod;
+
 		private string preferredBackupPeriod;
+
+		private string dataLevel1BackupRetentionPeriod;
+
+		private string backupRetentionPolicyOnClusterDeletion;
 
 		private string resourceOwnerAccount;
 
@@ -68,6 +74,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string DataLevel2BackupRetentionPeriod
+		{
+			get
+			{
+				return dataLevel2BackupRetentionPeriod;
+			}
+			set	
+			{
+				dataLevel2BackupRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "DataLevel2BackupRetentionPeriod", value);
+			}
+		}
+
 		public string PreferredBackupPeriod
 		{
 			get
@@ -78,6 +97,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				preferredBackupPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "PreferredBackupPeriod", value);
+			}
+		}
+
+		public string DataLevel1BackupRetentionPeriod
+		{
+			get
+			{
+				return dataLevel1BackupRetentionPeriod;
+			}
+			set	
+			{
+				dataLevel1BackupRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "DataLevel1BackupRetentionPeriod", value);
+			}
+		}
+
+		public string BackupRetentionPolicyOnClusterDeletion
+		{
+			get
+			{
+				return backupRetentionPolicyOnClusterDeletion;
+			}
+			set	
+			{
+				backupRetentionPolicyOnClusterDeletion = value;
+				DictionaryUtil.Add(QueryParameters, "BackupRetentionPolicyOnClusterDeletion", value);
 			}
 		}
 

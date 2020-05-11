@@ -45,6 +45,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string clientToken;
 
+		private string creationCategory;
+
 		private string clusterNetworkType;
 
 		private string resourceGroupId;
@@ -123,6 +125,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string CreationCategory
+		{
+			get
+			{
+				return creationCategory;
+			}
+			set	
+			{
+				creationCategory = value;
+				DictionaryUtil.Add(QueryParameters, "CreationCategory", value);
 			}
 		}
 

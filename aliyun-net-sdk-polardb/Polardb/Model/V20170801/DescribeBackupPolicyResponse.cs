@@ -35,6 +35,12 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string preferredBackupPeriod;
 
+		private string dataLevel1BackupRetentionPeriod;
+
+		private string dataLevel2BackupRetentionPeriod;
+
+		private string backupRetentionPolicyOnClusterDeletion;
+
 		public string RequestId
 		{
 			get
@@ -92,6 +98,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				preferredBackupPeriod = value;
+			}
+		}
+
+		public string DataLevel1BackupRetentionPeriod
+		{
+			get
+			{
+				return dataLevel1BackupRetentionPeriod;
+			}
+			set	
+			{
+				dataLevel1BackupRetentionPeriod = value;
+			}
+		}
+
+		public string DataLevel2BackupRetentionPeriod
+		{
+			get
+			{
+				return dataLevel2BackupRetentionPeriod;
+			}
+			set	
+			{
+				dataLevel2BackupRetentionPeriod = value;
+			}
+		}
+
+		public string BackupRetentionPolicyOnClusterDeletion
+		{
+			get
+			{
+				return backupRetentionPolicyOnClusterDeletion;
+			}
+			set	
+			{
+				backupRetentionPolicyOnClusterDeletion = value;
 			}
 		}
 	}

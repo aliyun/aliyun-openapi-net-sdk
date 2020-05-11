@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DeleteDBClusterRequest : RpcAcsRequest<DeleteDBClusterResponse>
+    public class DescribeDetachedBackupsRequest : RpcAcsRequest<DescribeDetachedBackupsResponse>
     {
-        public DeleteDBClusterRequest()
-            : base("polardb", "2017-08-01", "DeleteDBCluster", "polardb", "openAPI")
+        public DescribeDetachedBackupsRequest()
+            : base("polardb", "2017-08-01", "DescribeDetachedBackups", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,7 +41,11 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private string backupRetentionPolicyOnClusterDeletion;
+		private string startTime;
+
+		private int? pageNumber;
+
+		private int? pageSize;
 
 		private string resourceOwnerAccount;
 
@@ -49,7 +53,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string ownerAccount;
 
+		private string backupId;
+
+		private string endTime;
+
 		private long? ownerId;
+
+		private string backupStatus;
+
+		private string backupMode;
 
 		public long? ResourceOwnerId
 		{
@@ -64,16 +76,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string BackupRetentionPolicyOnClusterDeletion
+		public string StartTime
 		{
 			get
 			{
-				return backupRetentionPolicyOnClusterDeletion;
+				return startTime;
 			}
 			set	
 			{
-				backupRetentionPolicyOnClusterDeletion = value;
-				DictionaryUtil.Add(QueryParameters, "BackupRetentionPolicyOnClusterDeletion", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -116,6 +154,32 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string BackupId
+		{
+			get
+			{
+				return backupId;
+			}
+			set	
+			{
+				backupId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupId", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -129,9 +193,35 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-        public override DeleteDBClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string BackupStatus
+		{
+			get
+			{
+				return backupStatus;
+			}
+			set	
+			{
+				backupStatus = value;
+				DictionaryUtil.Add(QueryParameters, "BackupStatus", value);
+			}
+		}
+
+		public string BackupMode
+		{
+			get
+			{
+				return backupMode;
+			}
+			set	
+			{
+				backupMode = value;
+				DictionaryUtil.Add(QueryParameters, "BackupMode", value);
+			}
+		}
+
+        public override DescribeDetachedBackupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteDBClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDetachedBackupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

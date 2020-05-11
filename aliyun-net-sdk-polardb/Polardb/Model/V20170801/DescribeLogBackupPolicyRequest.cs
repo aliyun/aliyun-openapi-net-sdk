@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DeleteDBClusterRequest : RpcAcsRequest<DeleteDBClusterResponse>
+    public class DescribeLogBackupPolicyRequest : RpcAcsRequest<DescribeLogBackupPolicyResponse>
     {
-        public DeleteDBClusterRequest()
-            : base("polardb", "2017-08-01", "DeleteDBCluster", "polardb", "openAPI")
+        public DescribeLogBackupPolicyRequest()
+            : base("polardb", "2017-08-01", "DescribeLogBackupPolicy", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,8 +40,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
         }
 
 		private long? resourceOwnerId;
-
-		private string backupRetentionPolicyOnClusterDeletion;
 
 		private string resourceOwnerAccount;
 
@@ -61,19 +59,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string BackupRetentionPolicyOnClusterDeletion
-		{
-			get
-			{
-				return backupRetentionPolicyOnClusterDeletion;
-			}
-			set	
-			{
-				backupRetentionPolicyOnClusterDeletion = value;
-				DictionaryUtil.Add(QueryParameters, "BackupRetentionPolicyOnClusterDeletion", value);
 			}
 		}
 
@@ -129,9 +114,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-        public override DeleteDBClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeLogBackupPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteDBClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeLogBackupPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -36,6 +36,9 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeBackupPolicyResponse.PreferredNextBackupTime = context.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
 			describeBackupPolicyResponse.PreferredBackupTime = context.StringValue("DescribeBackupPolicy.PreferredBackupTime");
 			describeBackupPolicyResponse.PreferredBackupPeriod = context.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
+			describeBackupPolicyResponse.DataLevel1BackupRetentionPeriod = context.StringValue("DescribeBackupPolicy.DataLevel1BackupRetentionPeriod");
+			describeBackupPolicyResponse.DataLevel2BackupRetentionPeriod = context.StringValue("DescribeBackupPolicy.DataLevel2BackupRetentionPeriod");
+			describeBackupPolicyResponse.BackupRetentionPolicyOnClusterDeletion = context.StringValue("DescribeBackupPolicy.BackupRetentionPolicyOnClusterDeletion");
         
 			return describeBackupPolicyResponse;
         }

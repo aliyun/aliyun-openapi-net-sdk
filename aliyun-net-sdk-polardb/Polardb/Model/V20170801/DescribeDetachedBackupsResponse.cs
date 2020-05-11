@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-	public class DescribeBackupsResponse : AcsResponse
+	public class DescribeDetachedBackupsResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string pageRecordCount;
 
-		private List<DescribeBackups_Backup> items;
+		private List<DescribeDetachedBackups_Backup> items;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public List<DescribeBackups_Backup> Items
+		public List<DescribeDetachedBackups_Backup> Items
 		{
 			get
 			{
@@ -95,7 +95,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public class DescribeBackups_Backup
+		public class DescribeDetachedBackups_Backup
 		{
 
 			private string backupId;

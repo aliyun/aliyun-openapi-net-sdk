@@ -134,6 +134,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 					private string dBNodeClass;
 
+					private string category;
+
 					public string DBNodeClass
 					{
 						get
@@ -143,6 +145,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 						set	
 						{
 							dBNodeClass = value;
+						}
+					}
+
+					public string Category
+					{
+						get
+						{
+							return category;
+						}
+						set	
+						{
+							category = value;
 						}
 					}
 				}

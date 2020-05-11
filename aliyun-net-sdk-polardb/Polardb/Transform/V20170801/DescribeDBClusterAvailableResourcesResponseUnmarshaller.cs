@@ -48,6 +48,7 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 					for (int k = 0; k < context.Length("DescribeDBClusterAvailableResources.AvailableZones["+ i +"].SupportedEngines["+ j +"].AvailableResources.Length"); k++) {
 						DescribeDBClusterAvailableResourcesResponse.DescribeDBClusterAvailableResources_AvailableZone.DescribeDBClusterAvailableResources_SupportedEngine.DescribeDBClusterAvailableResources_AvailableResource availableResource = new DescribeDBClusterAvailableResourcesResponse.DescribeDBClusterAvailableResources_AvailableZone.DescribeDBClusterAvailableResources_SupportedEngine.DescribeDBClusterAvailableResources_AvailableResource();
 						availableResource.DBNodeClass = context.StringValue("DescribeDBClusterAvailableResources.AvailableZones["+ i +"].SupportedEngines["+ j +"].AvailableResources["+ k +"].DBNodeClass");
+						availableResource.Category = context.StringValue("DescribeDBClusterAvailableResources.AvailableZones["+ i +"].SupportedEngines["+ j +"].AvailableResources["+ k +"].Category");
 
 						supportedEngine_availableResources.Add(availableResource);
 					}
