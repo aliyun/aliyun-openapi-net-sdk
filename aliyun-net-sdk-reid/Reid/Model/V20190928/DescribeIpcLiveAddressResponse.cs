@@ -22,8 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.reid.Model.V20190928
 {
-	public class DescribeDevicesResponse : AcsResponse
+	public class DescribeIpcLiveAddressResponse : AcsResponse
 	{
+
+		private string rtmpUrl;
 
 		private string errorCode;
 
@@ -33,15 +35,29 @@ namespace Aliyun.Acs.reid.Model.V20190928
 
 		private string code;
 
+		private string expiredTime;
+
 		private string dynamicCode;
 
 		private string requestId;
 
 		private bool? success;
 
+		private long? ipcId;
+
 		private string dynamicMessage;
 
-		private List<DescribeDevices_Device> devices;
+		public string RtmpUrl
+		{
+			get
+			{
+				return rtmpUrl;
+			}
+			set	
+			{
+				rtmpUrl = value;
+			}
+		}
 
 		public string ErrorCode
 		{
@@ -91,6 +107,18 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			}
 		}
 
+		public string ExpiredTime
+		{
+			get
+			{
+				return expiredTime;
+			}
+			set	
+			{
+				expiredTime = value;
+			}
+		}
+
 		public string DynamicCode
 		{
 			get
@@ -127,6 +155,18 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			}
 		}
 
+		public long? IpcId
+		{
+			get
+			{
+				return ipcId;
+			}
+			set	
+			{
+				ipcId = value;
+			}
+		}
+
 		public string DynamicMessage
 		{
 			get
@@ -136,148 +176,6 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			set	
 			{
 				dynamicMessage = value;
-			}
-		}
-
-		public List<DescribeDevices_Device> Devices
-		{
-			get
-			{
-				return devices;
-			}
-			set	
-			{
-				devices = value;
-			}
-		}
-
-		public class DescribeDevices_Device
-		{
-
-			private string agentStatus;
-
-			private string ipcStatus;
-
-			private string agentIp;
-
-			private string ipcIp;
-
-			private long? agentReceiveTime;
-
-			private string agentMac;
-
-			private long? ipcReceiveTime;
-
-			private long? ipcId;
-
-			private string ipcName;
-
-			public string AgentStatus
-			{
-				get
-				{
-					return agentStatus;
-				}
-				set	
-				{
-					agentStatus = value;
-				}
-			}
-
-			public string IpcStatus
-			{
-				get
-				{
-					return ipcStatus;
-				}
-				set	
-				{
-					ipcStatus = value;
-				}
-			}
-
-			public string AgentIp
-			{
-				get
-				{
-					return agentIp;
-				}
-				set	
-				{
-					agentIp = value;
-				}
-			}
-
-			public string IpcIp
-			{
-				get
-				{
-					return ipcIp;
-				}
-				set	
-				{
-					ipcIp = value;
-				}
-			}
-
-			public long? AgentReceiveTime
-			{
-				get
-				{
-					return agentReceiveTime;
-				}
-				set	
-				{
-					agentReceiveTime = value;
-				}
-			}
-
-			public string AgentMac
-			{
-				get
-				{
-					return agentMac;
-				}
-				set	
-				{
-					agentMac = value;
-				}
-			}
-
-			public long? IpcReceiveTime
-			{
-				get
-				{
-					return ipcReceiveTime;
-				}
-				set	
-				{
-					ipcReceiveTime = value;
-				}
-			}
-
-			public long? IpcId
-			{
-				get
-				{
-					return ipcId;
-				}
-				set	
-				{
-					ipcId = value;
-				}
-			}
-
-			public string IpcName
-			{
-				get
-				{
-					return ipcName;
-				}
-				set	
-				{
-					ipcName = value;
-				}
 			}
 		}
 	}

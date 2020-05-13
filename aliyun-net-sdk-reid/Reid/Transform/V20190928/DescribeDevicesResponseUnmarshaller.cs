@@ -50,6 +50,8 @@ namespace Aliyun.Acs.reid.Transform.V20190928
 				device.AgentReceiveTime = context.LongValue("DescribeDevices.Devices["+ i +"].AgentReceiveTime");
 				device.AgentMac = context.StringValue("DescribeDevices.Devices["+ i +"].AgentMac");
 				device.IpcReceiveTime = context.LongValue("DescribeDevices.Devices["+ i +"].IpcReceiveTime");
+				device.IpcId = context.LongValue("DescribeDevices.Devices["+ i +"].IpcId");
+				device.IpcName = context.StringValue("DescribeDevices.Devices["+ i +"].IpcName");
 
 				describeDevicesResponse_devices.Add(device);
 			}

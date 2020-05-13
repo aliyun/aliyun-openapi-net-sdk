@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.reid.Model.V20190928
 {
-	public class DescribeDevicesResponse : AcsResponse
+	public class ListDevicesImagesResponse : AcsResponse
 	{
 
 		private string errorCode;
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.reid.Model.V20190928
 
 		private string dynamicMessage;
 
-		private List<DescribeDevices_Device> devices;
+		private List<ListDevicesImages_DeviceImage> deviceImages;
 
 		public string ErrorCode
 		{
@@ -139,122 +139,24 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			}
 		}
 
-		public List<DescribeDevices_Device> Devices
+		public List<ListDevicesImages_DeviceImage> DeviceImages
 		{
 			get
 			{
-				return devices;
+				return deviceImages;
 			}
 			set	
 			{
-				devices = value;
+				deviceImages = value;
 			}
 		}
 
-		public class DescribeDevices_Device
+		public class ListDevicesImages_DeviceImage
 		{
-
-			private string agentStatus;
-
-			private string ipcStatus;
-
-			private string agentIp;
-
-			private string ipcIp;
-
-			private long? agentReceiveTime;
-
-			private string agentMac;
-
-			private long? ipcReceiveTime;
 
 			private long? ipcId;
 
-			private string ipcName;
-
-			public string AgentStatus
-			{
-				get
-				{
-					return agentStatus;
-				}
-				set	
-				{
-					agentStatus = value;
-				}
-			}
-
-			public string IpcStatus
-			{
-				get
-				{
-					return ipcStatus;
-				}
-				set	
-				{
-					ipcStatus = value;
-				}
-			}
-
-			public string AgentIp
-			{
-				get
-				{
-					return agentIp;
-				}
-				set	
-				{
-					agentIp = value;
-				}
-			}
-
-			public string IpcIp
-			{
-				get
-				{
-					return ipcIp;
-				}
-				set	
-				{
-					ipcIp = value;
-				}
-			}
-
-			public long? AgentReceiveTime
-			{
-				get
-				{
-					return agentReceiveTime;
-				}
-				set	
-				{
-					agentReceiveTime = value;
-				}
-			}
-
-			public string AgentMac
-			{
-				get
-				{
-					return agentMac;
-				}
-				set	
-				{
-					agentMac = value;
-				}
-			}
-
-			public long? IpcReceiveTime
-			{
-				get
-				{
-					return ipcReceiveTime;
-				}
-				set	
-				{
-					ipcReceiveTime = value;
-				}
-			}
+			private string imageUrl;
 
 			public long? IpcId
 			{
@@ -268,15 +170,15 @@ namespace Aliyun.Acs.reid.Model.V20190928
 				}
 			}
 
-			public string IpcName
+			public string ImageUrl
 			{
 				get
 				{
-					return ipcName;
+					return imageUrl;
 				}
 				set	
 				{
-					ipcName = value;
+					imageUrl = value;
 				}
 			}
 		}
