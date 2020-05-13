@@ -104,6 +104,22 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private string sizeName;
 
+			private string tagPositionId;
+
+			private string brandCode;
+
+			private string brandName;
+
+			private string caseId;
+
+			private string sizeId;
+
+			private string colorId;
+
+			private string caseCode;
+
+			private string brandId;
+
 			public string TagValue
 			{
 				get
@@ -305,6 +321,102 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				set	
 				{
 					sizeName = value;
+				}
+			}
+
+			public string TagPositionId
+			{
+				get
+				{
+					return tagPositionId;
+				}
+				set	
+				{
+					tagPositionId = value;
+				}
+			}
+
+			public string BrandCode
+			{
+				get
+				{
+					return brandCode;
+				}
+				set	
+				{
+					brandCode = value;
+				}
+			}
+
+			public string BrandName
+			{
+				get
+				{
+					return brandName;
+				}
+				set	
+				{
+					brandName = value;
+				}
+			}
+
+			public string CaseId
+			{
+				get
+				{
+					return caseId;
+				}
+				set	
+				{
+					caseId = value;
+				}
+			}
+
+			public string SizeId
+			{
+				get
+				{
+					return sizeId;
+				}
+				set	
+				{
+					sizeId = value;
+				}
+			}
+
+			public string ColorId
+			{
+				get
+				{
+					return colorId;
+				}
+				set	
+				{
+					colorId = value;
+				}
+			}
+
+			public string CaseCode
+			{
+				get
+				{
+					return caseCode;
+				}
+				set	
+				{
+					caseCode = value;
+				}
+			}
+
+			public string BrandId
+			{
+				get
+				{
+					return brandId;
+				}
+				set	
+				{
+					brandId = value;
 				}
 			}
 		}

@@ -54,6 +54,14 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 				checkTagResultBiz.ColorName = context.StringValue("CheckTags.CheckResult["+ i +"].ColorName");
 				checkTagResultBiz.SizeCode = context.StringValue("CheckTags.CheckResult["+ i +"].SizeCode");
 				checkTagResultBiz.SizeName = context.StringValue("CheckTags.CheckResult["+ i +"].SizeName");
+				checkTagResultBiz.TagPositionId = context.StringValue("CheckTags.CheckResult["+ i +"].TagPositionId");
+				checkTagResultBiz.BrandCode = context.StringValue("CheckTags.CheckResult["+ i +"].BrandCode");
+				checkTagResultBiz.BrandName = context.StringValue("CheckTags.CheckResult["+ i +"].BrandName");
+				checkTagResultBiz.CaseId = context.StringValue("CheckTags.CheckResult["+ i +"].CaseId");
+				checkTagResultBiz.SizeId = context.StringValue("CheckTags.CheckResult["+ i +"].SizeId");
+				checkTagResultBiz.ColorId = context.StringValue("CheckTags.CheckResult["+ i +"].ColorId");
+				checkTagResultBiz.CaseCode = context.StringValue("CheckTags.CheckResult["+ i +"].CaseCode");
+				checkTagResultBiz.BrandId = context.StringValue("CheckTags.CheckResult["+ i +"].BrandId");
 
 				checkTagsResponse_checkResult.Add(checkTagResultBiz);
 			}
