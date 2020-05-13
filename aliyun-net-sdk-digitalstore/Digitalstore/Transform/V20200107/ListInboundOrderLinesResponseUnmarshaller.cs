@@ -44,6 +44,17 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 				inboundOrderLineBiz.OperateQuantity = context.IntegerValue("ListInboundOrderLines.InboundOrderLines["+ i +"].OperateQuantity");
 				inboundOrderLineBiz.Quantity = context.IntegerValue("ListInboundOrderLines.InboundOrderLines["+ i +"].Quantity");
 				inboundOrderLineBiz.ConfirmQuantity = context.IntegerValue("ListInboundOrderLines.InboundOrderLines["+ i +"].ConfirmQuantity");
+				inboundOrderLineBiz.SKUId = context.StringValue("ListInboundOrderLines.InboundOrderLines["+ i +"].SKUId");
+				inboundOrderLineBiz.SKUName = context.StringValue("ListInboundOrderLines.InboundOrderLines["+ i +"].SKUName");
+				inboundOrderLineBiz.StyleId = context.StringValue("ListInboundOrderLines.InboundOrderLines["+ i +"].StyleId");
+				inboundOrderLineBiz.StyleCode = context.StringValue("ListInboundOrderLines.InboundOrderLines["+ i +"].StyleCode");
+				inboundOrderLineBiz.StyleName = context.StringValue("ListInboundOrderLines.InboundOrderLines["+ i +"].StyleName");
+				inboundOrderLineBiz.SizeId = context.StringValue("ListInboundOrderLines.InboundOrderLines["+ i +"].SizeId");
+				inboundOrderLineBiz.SizeCode = context.StringValue("ListInboundOrderLines.InboundOrderLines["+ i +"].SizeCode");
+				inboundOrderLineBiz.SizeName = context.StringValue("ListInboundOrderLines.InboundOrderLines["+ i +"].SizeName");
+				inboundOrderLineBiz.ColorId = context.StringValue("ListInboundOrderLines.InboundOrderLines["+ i +"].ColorId");
+				inboundOrderLineBiz.ColorCode = context.StringValue("ListInboundOrderLines.InboundOrderLines["+ i +"].ColorCode");
+				inboundOrderLineBiz.ColorName = context.StringValue("ListInboundOrderLines.InboundOrderLines["+ i +"].ColorName");
 
 				listInboundOrderLinesResponse_inboundOrderLines.Add(inboundOrderLineBiz);
 			}

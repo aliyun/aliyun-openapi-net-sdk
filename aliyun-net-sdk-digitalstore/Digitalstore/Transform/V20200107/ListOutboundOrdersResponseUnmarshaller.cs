@@ -63,6 +63,13 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 				outboundOrder.OrderId = context.StringValue("ListOutboundOrders.OutboundOrders["+ i +"].OrderId");
 				outboundOrder.ToBusinessUnitId = context.StringValue("ListOutboundOrders.OutboundOrders["+ i +"].ToBusinessUnitId");
 				outboundOrder.CaseCount = context.IntegerValue("ListOutboundOrders.OutboundOrders["+ i +"].CaseCount");
+				outboundOrder.ToWarehouseCode = context.StringValue("ListOutboundOrders.OutboundOrders["+ i +"].ToWarehouseCode");
+				outboundOrder.FromWarehouseCode = context.StringValue("ListOutboundOrders.OutboundOrders["+ i +"].FromWarehouseCode");
+				outboundOrder.ToBusinessUnitCode = context.StringValue("ListOutboundOrders.OutboundOrders["+ i +"].ToBusinessUnitCode");
+				outboundOrder.FromBusinessUnitCode = context.StringValue("ListOutboundOrders.OutboundOrders["+ i +"].FromBusinessUnitCode");
+				outboundOrder.CreateUserId = context.StringValue("ListOutboundOrders.OutboundOrders["+ i +"].CreateUserId");
+				outboundOrder.CreateUserName = context.StringValue("ListOutboundOrders.OutboundOrders["+ i +"].CreateUserName");
+				outboundOrder.CreateDateTime = context.StringValue("ListOutboundOrders.OutboundOrders["+ i +"].CreateDateTime");
 
 				listOutboundOrdersResponse_outboundOrders.Add(outboundOrder);
 			}

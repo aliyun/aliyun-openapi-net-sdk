@@ -44,6 +44,17 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 				inboundOrderSkuTagBiz.CaseId = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].CaseId");
 				inboundOrderSkuTagBiz.TagValue = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].TagValue");
 				inboundOrderSkuTagBiz.CaseCode = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].CaseCode");
+				inboundOrderSkuTagBiz.SKUId = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].SKUId");
+				inboundOrderSkuTagBiz.SKUName = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].SKUName");
+				inboundOrderSkuTagBiz.StyleId = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].StyleId");
+				inboundOrderSkuTagBiz.StyleCode = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].StyleCode");
+				inboundOrderSkuTagBiz.StyleName = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].StyleName");
+				inboundOrderSkuTagBiz.SizeId = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].SizeId");
+				inboundOrderSkuTagBiz.SizeCode = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].SizeCode");
+				inboundOrderSkuTagBiz.SizeName = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].SizeName");
+				inboundOrderSkuTagBiz.ColorId = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].ColorId");
+				inboundOrderSkuTagBiz.ColorCode = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].ColorCode");
+				inboundOrderSkuTagBiz.ColorName = context.StringValue("ListInboundOrderSKUTags.SkuTags["+ i +"].ColorName");
 
 				listInboundOrderSKUTagsResponse_skuTags.Add(inboundOrderSkuTagBiz);
 			}

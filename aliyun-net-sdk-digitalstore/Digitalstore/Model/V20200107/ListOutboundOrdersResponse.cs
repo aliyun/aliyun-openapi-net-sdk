@@ -158,6 +158,20 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private int? caseCount;
 
+			private string toWarehouseCode;
+
+			private string fromWarehouseCode;
+
+			private string toBusinessUnitCode;
+
+			private string fromBusinessUnitCode;
+
+			private string createUserId;
+
+			private string createUserName;
+
+			private string createDateTime;
+
 			public string ToWarehouseName
 			{
 				get
@@ -431,6 +445,90 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				set	
 				{
 					caseCount = value;
+				}
+			}
+
+			public string ToWarehouseCode
+			{
+				get
+				{
+					return toWarehouseCode;
+				}
+				set	
+				{
+					toWarehouseCode = value;
+				}
+			}
+
+			public string FromWarehouseCode
+			{
+				get
+				{
+					return fromWarehouseCode;
+				}
+				set	
+				{
+					fromWarehouseCode = value;
+				}
+			}
+
+			public string ToBusinessUnitCode
+			{
+				get
+				{
+					return toBusinessUnitCode;
+				}
+				set	
+				{
+					toBusinessUnitCode = value;
+				}
+			}
+
+			public string FromBusinessUnitCode
+			{
+				get
+				{
+					return fromBusinessUnitCode;
+				}
+				set	
+				{
+					fromBusinessUnitCode = value;
+				}
+			}
+
+			public string CreateUserId
+			{
+				get
+				{
+					return createUserId;
+				}
+				set	
+				{
+					createUserId = value;
+				}
+			}
+
+			public string CreateUserName
+			{
+				get
+				{
+					return createUserName;
+				}
+				set	
+				{
+					createUserName = value;
+				}
+			}
+
+			public string CreateDateTime
+			{
+				get
+				{
+					return createDateTime;
+				}
+				set	
+				{
+					createDateTime = value;
 				}
 			}
 		}

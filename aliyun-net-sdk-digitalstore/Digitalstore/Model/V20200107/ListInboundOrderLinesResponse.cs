@@ -120,6 +120,28 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private int? confirmQuantity;
 
+			private string sKUId;
+
+			private string sKUName;
+
+			private string styleId;
+
+			private string styleCode;
+
+			private string styleName;
+
+			private string sizeId;
+
+			private string sizeCode;
+
+			private string sizeName;
+
+			private string colorId;
+
+			private string colorCode;
+
+			private string colorName;
+
 			public string Barcode
 			{
 				get
@@ -165,6 +187,138 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				set	
 				{
 					confirmQuantity = value;
+				}
+			}
+
+			public string SKUId
+			{
+				get
+				{
+					return sKUId;
+				}
+				set	
+				{
+					sKUId = value;
+				}
+			}
+
+			public string SKUName
+			{
+				get
+				{
+					return sKUName;
+				}
+				set	
+				{
+					sKUName = value;
+				}
+			}
+
+			public string StyleId
+			{
+				get
+				{
+					return styleId;
+				}
+				set	
+				{
+					styleId = value;
+				}
+			}
+
+			public string StyleCode
+			{
+				get
+				{
+					return styleCode;
+				}
+				set	
+				{
+					styleCode = value;
+				}
+			}
+
+			public string StyleName
+			{
+				get
+				{
+					return styleName;
+				}
+				set	
+				{
+					styleName = value;
+				}
+			}
+
+			public string SizeId
+			{
+				get
+				{
+					return sizeId;
+				}
+				set	
+				{
+					sizeId = value;
+				}
+			}
+
+			public string SizeCode
+			{
+				get
+				{
+					return sizeCode;
+				}
+				set	
+				{
+					sizeCode = value;
+				}
+			}
+
+			public string SizeName
+			{
+				get
+				{
+					return sizeName;
+				}
+				set	
+				{
+					sizeName = value;
+				}
+			}
+
+			public string ColorId
+			{
+				get
+				{
+					return colorId;
+				}
+				set	
+				{
+					colorId = value;
+				}
+			}
+
+			public string ColorCode
+			{
+				get
+				{
+					return colorCode;
+				}
+				set	
+				{
+					colorCode = value;
+				}
+			}
+
+			public string ColorName
+			{
+				get
+				{
+					return colorName;
+				}
+				set	
+				{
+					colorName = value;
 				}
 			}
 		}
