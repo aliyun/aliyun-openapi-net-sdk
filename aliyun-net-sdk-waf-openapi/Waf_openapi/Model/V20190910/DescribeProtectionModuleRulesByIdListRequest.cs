@@ -27,10 +27,10 @@ using Aliyun.Acs.waf_openapi.Transform.V20190910;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
 {
-    public class ModifyDomainClusterTypeRequest : RpcAcsRequest<ModifyDomainClusterTypeResponse>
+    public class DescribeProtectionModuleRulesByIdListRequest : RpcAcsRequest<DescribeProtectionModuleRulesByIdListResponse>
     {
-        public ModifyDomainClusterTypeRequest()
-            : base("waf-openapi", "2019-09-10", "ModifyDomainClusterType", "waf", "openAPI")
+        public DescribeProtectionModuleRulesByIdListRequest()
+            : base("waf-openapi", "2019-09-10", "DescribeProtectionModuleRulesByIdList", "waf", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,22 +39,37 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
             }
         }
 
-		private int? clusterType;
+		private string ruleIdList;
+
+		private string resourceGroupId;
 
 		private string instanceId;
 
-		private string domain;
+		private string lang;
 
-		public int? ClusterType
+		public string RuleIdList
 		{
 			get
 			{
-				return clusterType;
+				return ruleIdList;
 			}
 			set	
 			{
-				clusterType = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterType", value.ToString());
+				ruleIdList = value;
+				DictionaryUtil.Add(QueryParameters, "RuleIdList", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -71,22 +86,27 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
-		public string Domain
+		public string Lang
 		{
 			get
 			{
-				return domain;
+				return lang;
 			}
 			set	
 			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
-        public override ModifyDomainClusterTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeProtectionModuleRulesByIdListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDomainClusterTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeProtectionModuleRulesByIdListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

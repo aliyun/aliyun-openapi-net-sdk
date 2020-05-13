@@ -40,11 +40,11 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 			domain.Cname = context.StringValue("DescribeDomain.Domain.Cname");
 			domain.IsAccessProduct = context.IntegerValue("DescribeDomain.Domain.IsAccessProduct");
 			domain.Version = context.LongValue("DescribeDomain.Domain.Version");
-			domain.LogHeaders = context.StringValue("DescribeDomain.Domain.LogHeaders");
 			domain.ClusterType = context.IntegerValue("DescribeDomain.Domain.ClusterType");
 			domain.ConnectionTime = context.IntegerValue("DescribeDomain.Domain.ConnectionTime");
 			domain.ReadTime = context.IntegerValue("DescribeDomain.Domain.ReadTime");
 			domain.WriteTime = context.IntegerValue("DescribeDomain.Domain.WriteTime");
+			domain.ResourceGroupId = context.StringValue("DescribeDomain.Domain.ResourceGroupId");
 
 			List<string> domain_sourceIps = new List<string>();
 			for (int i = 0; i < context.Length("DescribeDomain.Domain.SourceIps.Length"); i++) {
@@ -69,6 +69,16 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 				domain_httpsPort.Add(context.StringValue("DescribeDomain.Domain.HttpsPort["+ i +"]"));
 			}
 			domain.HttpsPort = domain_httpsPort;
+
+			List<DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_LogHeader> domain_logHeaders = new List<DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_LogHeader>();
+			for (int i = 0; i < context.Length("DescribeDomain.Domain.LogHeaders.Length"); i++) {
+				DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_LogHeader logHeader = new DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_LogHeader();
+				logHeader.V = context.StringValue("DescribeDomain.Domain.LogHeaders["+ i +"].v");
+				logHeader.K = context.StringValue("DescribeDomain.Domain.LogHeaders["+ i +"].k");
+
+				domain_logHeaders.Add(logHeader);
+			}
+			domain.LogHeaders = domain_logHeaders;
 			describeDomainResponse.Domain = domain;
         
 			return describeDomainResponse;

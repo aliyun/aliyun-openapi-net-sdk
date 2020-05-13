@@ -68,8 +68,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 			private long? version;
 
-			private string logHeaders;
-
 			private int? clusterType;
 
 			private int? connectionTime;
@@ -77,6 +75,10 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			private int? readTime;
 
 			private int? writeTime;
+
+			private string resourceGroupId;
+
+			private List<DescribeDomain_LogHeader> logHeaders;
 
 			private List<string> sourceIps;
 
@@ -158,18 +160,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
-			public string LogHeaders
-			{
-				get
-				{
-					return logHeaders;
-				}
-				set	
-				{
-					logHeaders = value;
-				}
-			}
-
 			public int? ClusterType
 			{
 				get
@@ -218,6 +208,30 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
+				}
+			}
+
+			public List<DescribeDomain_LogHeader> LogHeaders
+			{
+				get
+				{
+					return logHeaders;
+				}
+				set	
+				{
+					logHeaders = value;
+				}
+			}
+
 			public List<string> SourceIps
 			{
 				get
@@ -263,6 +277,38 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					httpsPort = value;
+				}
+			}
+
+			public class DescribeDomain_LogHeader
+			{
+
+				private string v;
+
+				private string k;
+
+				public string V
+				{
+					get
+					{
+						return v;
+					}
+					set	
+					{
+						v = value;
+					}
+				}
+
+				public string K
+				{
+					get
+					{
+						return k;
+					}
+					set	
+					{
+						k = value;
+					}
 				}
 			}
 		}
