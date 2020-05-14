@@ -37,6 +37,7 @@ namespace Aliyun.Acs.DemoCenter.Transform.V20200121
 			describeDemoAccessTokenResponse.OpenUserId = context.StringValue("DescribeDemoAccessToken.OpenUserId");
 			describeDemoAccessTokenResponse.DemoTrialPage = context.StringValue("DescribeDemoAccessToken.DemoTrialPage");
 			describeDemoAccessTokenResponse.DemoDetailPage = context.StringValue("DescribeDemoAccessToken.DemoDetailPage");
+			describeDemoAccessTokenResponse.Edition = context.StringValue("DescribeDemoAccessToken.Edition");
         
 			return describeDemoAccessTokenResponse;
         }

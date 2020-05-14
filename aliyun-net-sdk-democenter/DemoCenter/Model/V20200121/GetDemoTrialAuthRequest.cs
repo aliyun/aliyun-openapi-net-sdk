@@ -28,32 +28,30 @@ using Aliyun.Acs.DemoCenter.Transform.V20200121;
 
 namespace Aliyun.Acs.DemoCenter.Model.V20200121
 {
-    public class ExpireDemoAccessTokenRequest : RpcAcsRequest<ExpireDemoAccessTokenResponse>
+    public class GetDemoTrialAuthRequest : RpcAcsRequest<GetDemoTrialAuthResponse>
     {
-        public ExpireDemoAccessTokenRequest()
-            : base("DemoCenter", "2020-01-21", "ExpireDemoAccessToken")
+        public GetDemoTrialAuthRequest()
+            : base("DemoCenter", "2020-01-21", "GetDemoTrialAuth")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
-			Method = MethodType.POST;
         }
 
-		private string demoAccessToken;
+		private long? demoId;
 
-		public string DemoAccessToken
+		public long? DemoId
 		{
 			get
 			{
-				return demoAccessToken;
+				return demoId;
 			}
 			set	
 			{
-				demoAccessToken = value;
-				DictionaryUtil.Add(BodyParameters, "DemoAccessToken", value);
+				demoId = value;
+				DictionaryUtil.Add(BodyParameters, "DemoId", value.ToString());
 			}
 		}
 
@@ -62,9 +60,9 @@ namespace Aliyun.Acs.DemoCenter.Model.V20200121
 			return false;
 		}
 
-        public override ExpireDemoAccessTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetDemoTrialAuthResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ExpireDemoAccessTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetDemoTrialAuthResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

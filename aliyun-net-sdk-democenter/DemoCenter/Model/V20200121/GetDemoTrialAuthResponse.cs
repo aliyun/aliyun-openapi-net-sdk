@@ -22,22 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.DemoCenter.Model.V20200121
 {
-	public class DescribeDemoAccessTokenResponse : AcsResponse
+	public class GetDemoTrialAuthResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string demoAccessToken;
-
-		private string expiredDate;
-
-		private string openUserId;
-
-		private string demoTrialPage;
-
-		private string demoDetailPage;
-
-		private string edition;
+		private string authorization;
 
 		public string RequestId
 		{
@@ -51,75 +41,15 @@ namespace Aliyun.Acs.DemoCenter.Model.V20200121
 			}
 		}
 
-		public string DemoAccessToken
+		public string Authorization
 		{
 			get
 			{
-				return demoAccessToken;
+				return authorization;
 			}
 			set	
 			{
-				demoAccessToken = value;
-			}
-		}
-
-		public string ExpiredDate
-		{
-			get
-			{
-				return expiredDate;
-			}
-			set	
-			{
-				expiredDate = value;
-			}
-		}
-
-		public string OpenUserId
-		{
-			get
-			{
-				return openUserId;
-			}
-			set	
-			{
-				openUserId = value;
-			}
-		}
-
-		public string DemoTrialPage
-		{
-			get
-			{
-				return demoTrialPage;
-			}
-			set	
-			{
-				demoTrialPage = value;
-			}
-		}
-
-		public string DemoDetailPage
-		{
-			get
-			{
-				return demoDetailPage;
-			}
-			set	
-			{
-				demoDetailPage = value;
-			}
-		}
-
-		public string Edition
-		{
-			get
-			{
-				return edition;
-			}
-			set	
-			{
-				edition = value;
+				authorization = value;
 			}
 		}
 	}

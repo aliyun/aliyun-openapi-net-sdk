@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.DemoCenter;
 using Aliyun.Acs.DemoCenter.Transform;
 using Aliyun.Acs.DemoCenter.Transform.V20200121;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.DemoCenter.Model.V20200121
     public class DescribeDemoAccessTokenRequest : RpcAcsRequest<DescribeDemoAccessTokenResponse>
     {
         public DescribeDemoAccessTokenRequest()
-            : base("DemoCenter", "2020-01-21", "DescribeDemoAccessToken", "DemoCenter", "openAPI")
+            : base("DemoCenter", "2020-01-21", "DescribeDemoAccessToken")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
