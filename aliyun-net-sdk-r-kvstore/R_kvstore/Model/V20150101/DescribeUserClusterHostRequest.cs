@@ -41,7 +41,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string pageNumber;
+		private int? pageNumber;
 
 		private string securityToken;
 
@@ -51,7 +51,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string ownerAccount;
 
-		private string maxRecordsPerPage;
+		private int? maxRecordsPerPage;
 
 		private string clusterId;
 
@@ -72,7 +72,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string PageNumber
+		public int? PageNumber
 		{
 			get
 			{
@@ -81,7 +81,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
@@ -137,7 +137,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string MaxRecordsPerPage
+		public int? MaxRecordsPerPage
 		{
 			get
 			{
@@ -146,7 +146,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			set	
 			{
 				maxRecordsPerPage = value;
-				DictionaryUtil.Add(QueryParameters, "MaxRecordsPerPage", value);
+				DictionaryUtil.Add(QueryParameters, "MaxRecordsPerPage", value.ToString());
 			}
 		}
 

@@ -35,9 +35,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private int? pageRecordCount;
 
-		private string hotKeys;
+		private List<Dictionary<string, string>> hotKeys;
 
-		private string bigKeys;
+		private List<Dictionary<string, string>> bigKeys;
 
 		public string RequestId
 		{
@@ -99,7 +99,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string HotKeys
+		public List<Dictionary<string, string>> HotKeys
 		{
 			get
 			{
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string BigKeys
+		public List<Dictionary<string, string>> BigKeys
 		{
 			get
 			{

@@ -132,6 +132,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string vpcCloudInstanceId;
 
+			private bool? instanceReleaseProtection;
+
 			private List<DescribeInstanceAttribute_Tag> tags;
 
 			public string InstanceId
@@ -587,6 +589,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					vpcCloudInstanceId = value;
+				}
+			}
+
+			public bool? InstanceReleaseProtection
+			{
+				get
+				{
+					return instanceReleaseProtection;
+				}
+				set	
+				{
+					instanceReleaseProtection = value;
 				}
 			}
 

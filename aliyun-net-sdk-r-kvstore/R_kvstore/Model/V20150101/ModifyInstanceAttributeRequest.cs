@@ -43,6 +43,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string securityToken;
 
+		private bool? instanceReleaseProtection;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -78,6 +80,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public bool? InstanceReleaseProtection
+		{
+			get
+			{
+				return instanceReleaseProtection;
+			}
+			set	
+			{
+				instanceReleaseProtection = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceReleaseProtection", value.ToString());
 			}
 		}
 

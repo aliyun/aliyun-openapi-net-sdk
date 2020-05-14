@@ -204,6 +204,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
         public override DescribeCacheAnalysisReportResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeCacheAnalysisReportResponseUnmarshaller.Unmarshall(unmarshallerContext);
