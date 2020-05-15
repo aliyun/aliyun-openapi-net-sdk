@@ -46,6 +46,9 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 				produceOrderCaseModel.BoxQuantity = context.IntegerValue("ListProduceOrderCases.ProduceOrderCases["+ i +"].BoxQuantity");
 				produceOrderCaseModel.CaseId = context.StringValue("ListProduceOrderCases.ProduceOrderCases["+ i +"].CaseId");
 				produceOrderCaseModel.EncasementMode = context.StringValue("ListProduceOrderCases.ProduceOrderCases["+ i +"].EncasementMode");
+				produceOrderCaseModel.BeConfirmInboundCase = context.BooleanValue("ListProduceOrderCases.ProduceOrderCases["+ i +"].BeConfirmInboundCase");
+				produceOrderCaseModel.BeConfirmOutboundCase = context.BooleanValue("ListProduceOrderCases.ProduceOrderCases["+ i +"].BeConfirmOutboundCase");
+				produceOrderCaseModel.ApplyStatus = context.StringValue("ListProduceOrderCases.ProduceOrderCases["+ i +"].ApplyStatus");
 
 				listProduceOrderCasesResponse_produceOrderCases.Add(produceOrderCaseModel);
 			}

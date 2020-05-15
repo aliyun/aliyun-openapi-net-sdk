@@ -120,6 +120,12 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private string caseStatus;
 
+			private bool? beConfirmInboundCase;
+
+			private bool? beConfirmOutboundCase;
+
+			private string applyStatus;
+
 			public string Id
 			{
 				get
@@ -165,6 +171,42 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				set	
 				{
 					caseStatus = value;
+				}
+			}
+
+			public bool? BeConfirmInboundCase
+			{
+				get
+				{
+					return beConfirmInboundCase;
+				}
+				set	
+				{
+					beConfirmInboundCase = value;
+				}
+			}
+
+			public bool? BeConfirmOutboundCase
+			{
+				get
+				{
+					return beConfirmOutboundCase;
+				}
+				set	
+				{
+					beConfirmOutboundCase = value;
+				}
+			}
+
+			public string ApplyStatus
+			{
+				get
+				{
+					return applyStatus;
+				}
+				set	
+				{
+					applyStatus = value;
 				}
 			}
 		}

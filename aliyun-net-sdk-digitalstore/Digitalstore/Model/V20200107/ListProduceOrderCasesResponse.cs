@@ -124,6 +124,12 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private string encasementMode;
 
+			private bool? beConfirmInboundCase;
+
+			private bool? beConfirmOutboundCase;
+
+			private string applyStatus;
+
 			public int? BindingQuantity
 			{
 				get
@@ -193,6 +199,42 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				set	
 				{
 					encasementMode = value;
+				}
+			}
+
+			public bool? BeConfirmInboundCase
+			{
+				get
+				{
+					return beConfirmInboundCase;
+				}
+				set	
+				{
+					beConfirmInboundCase = value;
+				}
+			}
+
+			public bool? BeConfirmOutboundCase
+			{
+				get
+				{
+					return beConfirmOutboundCase;
+				}
+				set	
+				{
+					beConfirmOutboundCase = value;
+				}
+			}
+
+			public string ApplyStatus
+			{
+				get
+				{
+					return applyStatus;
+				}
+				set	
+				{
+					applyStatus = value;
 				}
 			}
 		}
