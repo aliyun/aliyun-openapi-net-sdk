@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class BatchGetDeviceDriverResponse : AcsResponse
+	public class BatchDeleteEdgeInstanceChannelResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,8 +32,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string code;
 
 		private string errorMessage;
-
-		private List<BatchGetDeviceDriver_DeviceDriver> deviceDriverList;
 
 		public string RequestId
 		{
@@ -80,50 +78,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				errorMessage = value;
-			}
-		}
-
-		public List<BatchGetDeviceDriver_DeviceDriver> DeviceDriverList
-		{
-			get
-			{
-				return deviceDriverList;
-			}
-			set	
-			{
-				deviceDriverList = value;
-			}
-		}
-
-		public class BatchGetDeviceDriver_DeviceDriver
-		{
-
-			private string driverId;
-
-			private string iotId;
-
-			public string DriverId
-			{
-				get
-				{
-					return driverId;
-				}
-				set	
-				{
-					driverId = value;
-				}
-			}
-
-			public string IotId
-			{
-				get
-				{
-					return iotId;
-				}
-				set	
-				{
-					iotId = value;
-				}
 			}
 		}
 	}

@@ -35,10 +35,6 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			queryOTAJobResponse.Success = context.BooleanValue("QueryOTAJob.Success");
 			queryOTAJobResponse.Code = context.StringValue("QueryOTAJob.Code");
 			queryOTAJobResponse.ErrorMessage = context.StringValue("QueryOTAJob.ErrorMessage");
-			queryOTAJobResponse.Total = context.IntegerValue("QueryOTAJob.Total");
-			queryOTAJobResponse.PageSize = context.IntegerValue("QueryOTAJob.PageSize");
-			queryOTAJobResponse.PageCount = context.IntegerValue("QueryOTAJob.PageCount");
-			queryOTAJobResponse.CurrentPage = context.IntegerValue("QueryOTAJob.CurrentPage");
 
 			QueryOTAJobResponse.QueryOTAJob_Data data = new QueryOTAJobResponse.QueryOTAJob_Data();
 			data.JobId = context.StringValue("QueryOTAJob.Data.JobId");

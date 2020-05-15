@@ -39,24 +39,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string productKey;
-
 		private string resourceGroupId;
 
 		private string iotInstanceId;
 
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
+		private string productKey;
 
 		public string ResourceGroupId
 		{
@@ -81,6 +68,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

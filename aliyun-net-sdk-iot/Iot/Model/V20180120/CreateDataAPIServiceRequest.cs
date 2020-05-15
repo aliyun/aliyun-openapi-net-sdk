@@ -41,8 +41,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private List<RequestParam> requestParams = new List<RequestParam>(){ };
 
-		private string folderId;
-
 		private string iotInstanceId;
 
 		private string apiPath;
@@ -75,19 +73,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					DictionaryUtil.Add(BodyParameters,"RequestParam." + (i + 1) + ".Example", requestParams[i].Example);
 					DictionaryUtil.Add(BodyParameters,"RequestParam." + (i + 1) + ".Required", requestParams[i].Required);
 				}
-			}
-		}
-
-		public string FolderId
-		{
-			get
-			{
-				return folderId;
-			}
-			set	
-			{
-				folderId = value;
-				DictionaryUtil.Add(BodyParameters, "FolderId", value);
 			}
 		}
 

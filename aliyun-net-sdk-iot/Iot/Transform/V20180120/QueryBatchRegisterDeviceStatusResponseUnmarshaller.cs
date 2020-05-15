@@ -39,15 +39,33 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			QueryBatchRegisterDeviceStatusResponse.QueryBatchRegisterDeviceStatus_Data data = new QueryBatchRegisterDeviceStatusResponse.QueryBatchRegisterDeviceStatus_Data();
 			data.Status = context.StringValue("QueryBatchRegisterDeviceStatus.Data.Status");
 
-			List<string> data_validList = new List<string>();
+			List<Dictionary<string, string>> data_validList = new List<Dictionary<string, string>>();
 			for (int i = 0; i < context.Length("QueryBatchRegisterDeviceStatus.Data.ValidList.Length"); i++) {
-				data_validList.Add(context.StringValue("QueryBatchRegisterDeviceStatus.Data.ValidList["+ i +"]"));
+				Dictionary<string, string> tmp = new Dictionary<string, string>() { };
+				foreach (var _item in context.ResponseDictionary){
+					string prefix = "QueryBatchRegisterDeviceStatus.Data.ValidList["+ i +"].";
+					if (_item.Key.IndexOf(prefix) == 0){
+						tmp.Add(_item.Key.Substring(prefix.Length), _item.Value);
+					}
+				}
+				if (tmp.Count > 0){
+					data_validList.Add(tmp);
+				}
 			}
 			data.ValidList = data_validList;
 
-			List<string> data_invalidList = new List<string>();
+			List<Dictionary<string, string>> data_invalidList = new List<Dictionary<string, string>>();
 			for (int i = 0; i < context.Length("QueryBatchRegisterDeviceStatus.Data.InvalidList.Length"); i++) {
-				data_invalidList.Add(context.StringValue("QueryBatchRegisterDeviceStatus.Data.InvalidList["+ i +"]"));
+				Dictionary<string, string> tmp = new Dictionary<string, string>() { };
+				foreach (var _item in context.ResponseDictionary){
+					string prefix = "QueryBatchRegisterDeviceStatus.Data.InvalidList["+ i +"].";
+					if (_item.Key.IndexOf(prefix) == 0){
+						tmp.Add(_item.Key.Substring(prefix.Length), _item.Value);
+					}
+				}
+				if (tmp.Count > 0){
+					data_invalidList.Add(tmp);
+				}
 			}
 			data.InvalidList = data_invalidList;
 			queryBatchRegisterDeviceStatusResponse.Data = data;

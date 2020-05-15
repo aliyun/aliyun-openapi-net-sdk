@@ -39,28 +39,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string productKey;
-
 		private string iotInstanceId;
 
 		private string topicShortName;
 
+		private string productKey;
+
 		private string operation;
 
 		private string desc;
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
 
 		public string IotInstanceId
 		{
@@ -85,6 +72,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				topicShortName = value;
 				DictionaryUtil.Add(QueryParameters, "TopicShortName", value);
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

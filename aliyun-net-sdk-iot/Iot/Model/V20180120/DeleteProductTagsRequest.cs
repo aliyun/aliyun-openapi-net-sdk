@@ -39,24 +39,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string productKey;
-
 		private string iotInstanceId;
 
 		private List<string> productTagKeys = new List<string>(){ };
 
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
+		private string productKey;
 
 		public string IotInstanceId
 		{
@@ -85,6 +72,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				{
 					DictionaryUtil.Add(QueryParameters,"ProductTagKey." + (i + 1) , productTagKeys[i]);
 				}
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

@@ -39,15 +39,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string identifier;
-
-		private long? endTime;
-
 		private long? startTime;
-
-		private string productKey;
-
-		private int? asc;
 
 		private string iotId;
 
@@ -55,33 +47,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? pageSize;
 
+		private string identifier;
+
+		private long? endTime;
+
+		private string productKey;
+
+		private int? asc;
+
 		private string deviceName;
-
-		public string Identifier
-		{
-			get
-			{
-				return identifier;
-			}
-			set	
-			{
-				identifier = value;
-				DictionaryUtil.Add(QueryParameters, "Identifier", value);
-			}
-		}
-
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
-			}
-		}
 
 		public long? StartTime
 		{
@@ -93,32 +67,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public int? Asc
-		{
-			get
-			{
-				return asc;
-			}
-			set	
-			{
-				asc = value;
-				DictionaryUtil.Add(QueryParameters, "Asc", value.ToString());
 			}
 		}
 
@@ -158,6 +106,58 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Identifier
+		{
+			get
+			{
+				return identifier;
+			}
+			set	
+			{
+				identifier = value;
+				DictionaryUtil.Add(QueryParameters, "Identifier", value);
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public int? Asc
+		{
+			get
+			{
+				return asc;
+			}
+			set	
+			{
+				asc = value;
+				DictionaryUtil.Add(QueryParameters, "Asc", value.ToString());
 			}
 		}
 

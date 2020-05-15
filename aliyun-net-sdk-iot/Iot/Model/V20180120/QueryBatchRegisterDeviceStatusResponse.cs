@@ -100,9 +100,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string status;
 
-			private List<string> validList;
+			private List<Dictionary<string, string>> validList;
 
-			private List<string> invalidList;
+			private List<Dictionary<string, string>> invalidList;
 
 			public string Status
 			{
@@ -116,7 +116,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public List<string> ValidList
+			public List<Dictionary<string, string>> ValidList
 			{
 				get
 				{
@@ -128,7 +128,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public List<string> InvalidList
+			public List<Dictionary<string, string>> InvalidList
 			{
 				get
 				{

@@ -41,13 +41,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string superGroupId;
 
-		private int? currentPage;
-
-		private string groupName;
-
 		private string iotInstanceId;
 
 		private int? pageSize;
+
+		private int? currentPage;
+
+		private string groupName;
 
 		public string SuperGroupId
 		{
@@ -59,32 +59,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				superGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "SuperGroupId", value);
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public string GroupName
-		{
-			get
-			{
-				return groupName;
-			}
-			set	
-			{
-				groupName = value;
-				DictionaryUtil.Add(QueryParameters, "GroupName", value);
 			}
 		}
 
@@ -111,6 +85,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string GroupName
+		{
+			get
+			{
+				return groupName;
+			}
+			set	
+			{
+				groupName = value;
+				DictionaryUtil.Add(QueryParameters, "GroupName", value);
 			}
 		}
 

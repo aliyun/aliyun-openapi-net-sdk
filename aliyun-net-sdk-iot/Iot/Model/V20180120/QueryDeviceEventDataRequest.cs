@@ -55,9 +55,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? asc;
 
-		private string eventType;
-
 		private string deviceName;
+
+		private string eventType;
 
 		public long? StartTime
 		{
@@ -163,19 +163,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string EventType
-		{
-			get
-			{
-				return eventType;
-			}
-			set	
-			{
-				eventType = value;
-				DictionaryUtil.Add(QueryParameters, "EventType", value);
-			}
-		}
-
 		public string DeviceName
 		{
 			get
@@ -186,6 +173,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				deviceName = value;
 				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
+			}
+		}
+
+		public string EventType
+		{
+			get
+			{
+				return eventType;
+			}
+			set	
+			{
+				eventType = value;
+				DictionaryUtil.Add(QueryParameters, "EventType", value);
 			}
 		}
 

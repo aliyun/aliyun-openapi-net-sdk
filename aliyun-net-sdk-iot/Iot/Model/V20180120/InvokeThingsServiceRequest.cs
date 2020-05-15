@@ -39,15 +39,28 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
+		private string iotInstanceId;
+
 		private string identifier;
 
 		private string productKey;
 
 		private string args;
 
-		private string iotInstanceId;
-
 		private List<string> deviceNames = new List<string>(){ };
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
 
 		public string Identifier
 		{
@@ -85,19 +98,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				args = value;
 				DictionaryUtil.Add(QueryParameters, "Args", value);
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

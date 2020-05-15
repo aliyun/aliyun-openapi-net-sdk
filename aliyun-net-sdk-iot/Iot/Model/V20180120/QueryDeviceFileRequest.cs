@@ -39,28 +39,15 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string productKey;
-
 		private string iotId;
 
 		private string iotInstanceId;
 
-		private string deviceName;
-
 		private string fileId;
 
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
+		private string productKey;
+
+		private string deviceName;
 
 		public string IotId
 		{
@@ -88,19 +75,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
-			}
-		}
-
 		public string FileId
 		{
 			get
@@ -111,6 +85,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				fileId = value;
 				DictionaryUtil.Add(QueryParameters, "FileId", value);
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public string DeviceName
+		{
+			get
+			{
+				return deviceName;
+			}
+			set	
+			{
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 

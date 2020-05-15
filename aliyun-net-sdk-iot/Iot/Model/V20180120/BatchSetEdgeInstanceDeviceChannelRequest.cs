@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class BatchGetDeviceDriverRequest : RpcAcsRequest<BatchGetDeviceDriverResponse>
+    public class BatchSetEdgeInstanceDeviceChannelRequest : RpcAcsRequest<BatchSetEdgeInstanceDeviceChannelResponse>
     {
-        public BatchGetDeviceDriverRequest()
-            : base("Iot", "2018-01-20", "BatchGetDeviceDriver", "Iot", "openAPI")
+        public BatchSetEdgeInstanceDeviceChannelRequest()
+            : base("Iot", "2018-01-20", "BatchSetEdgeInstanceDeviceChannel", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,11 +39,28 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
+		private string driverId;
+
 		private List<string> iotIdss = new List<string>(){ };
 
 		private string iotInstanceId;
 
 		private string instanceId;
+
+		private string channelId;
+
+		public string DriverId
+		{
+			get
+			{
+				return driverId;
+			}
+			set	
+			{
+				driverId = value;
+				DictionaryUtil.Add(QueryParameters, "DriverId", value);
+			}
+		}
 
 		public List<string> IotIdss
 		{
@@ -88,14 +105,27 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public string ChannelId
+		{
+			get
+			{
+				return channelId;
+			}
+			set	
+			{
+				channelId = value;
+				DictionaryUtil.Add(QueryParameters, "ChannelId", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override BatchGetDeviceDriverResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BatchSetEdgeInstanceDeviceChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchGetDeviceDriverResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchSetEdgeInstanceDeviceChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

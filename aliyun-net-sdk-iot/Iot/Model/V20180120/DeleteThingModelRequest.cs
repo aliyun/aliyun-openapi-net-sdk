@@ -39,47 +39,17 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private List<string> serviceIdentifiers = new List<string>(){ };
-
-		private string productKey;
-
 		private string resourceGroupId;
 
 		private List<string> propertyIdentifiers = new List<string>(){ };
 
 		private string iotInstanceId;
 
+		private List<string> serviceIdentifiers = new List<string>(){ };
+
+		private string productKey;
+
 		private List<string> eventIdentifiers = new List<string>(){ };
-
-		public List<string> ServiceIdentifiers
-		{
-			get
-			{
-				return serviceIdentifiers;
-			}
-
-			set
-			{
-				serviceIdentifiers = value;
-				for (int i = 0; i < serviceIdentifiers.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ServiceIdentifier." + (i + 1) , serviceIdentifiers[i]);
-				}
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
 
 		public string ResourceGroupId
 		{
@@ -121,6 +91,36 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				iotInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
+
+		public List<string> ServiceIdentifiers
+		{
+			get
+			{
+				return serviceIdentifiers;
+			}
+
+			set
+			{
+				serviceIdentifiers = value;
+				for (int i = 0; i < serviceIdentifiers.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ServiceIdentifier." + (i + 1) , serviceIdentifiers[i]);
+				}
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

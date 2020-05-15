@@ -45,9 +45,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string iotInstanceId;
 
-		private long? ruleId;
-
 		private bool? errorActionFlag;
+
+		private long? ruleId;
 
 		public string Configuration
 		{
@@ -88,19 +88,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public long? RuleId
-		{
-			get
-			{
-				return ruleId;
-			}
-			set	
-			{
-				ruleId = value;
-				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
-			}
-		}
-
 		public bool? ErrorActionFlag
 		{
 			get
@@ -111,6 +98,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				errorActionFlag = value;
 				DictionaryUtil.Add(QueryParameters, "ErrorActionFlag", value.ToString());
+			}
+		}
+
+		public long? RuleId
+		{
+			get
+			{
+				return ruleId;
+			}
+			set	
+			{
+				ruleId = value;
+				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
 			}
 		}
 

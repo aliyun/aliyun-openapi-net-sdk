@@ -39,8 +39,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private int? currentPage;
-
 		private string resourceGroupId;
 
 		private string iotInstanceId;
@@ -49,18 +47,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string aliyunCommodityCode;
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
+		private int? currentPage;
 
 		public string ResourceGroupId
 		{
@@ -111,6 +98,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				aliyunCommodityCode = value;
 				DictionaryUtil.Add(QueryParameters, "AliyunCommodityCode", value);
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 

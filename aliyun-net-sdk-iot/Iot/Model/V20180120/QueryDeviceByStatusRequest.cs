@@ -39,45 +39,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private int? currentPage;
-
-		private string productKey;
-
 		private string resourceGroupId;
 
 		private string iotInstanceId;
 
 		private int? pageSize;
 
+		private int? currentPage;
+
+		private string productKey;
+
 		private string bizTenantId;
 
 		private int? status;
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
-		public string ProductKey
-		{
-			get
-			{
-				return productKey;
-			}
-			set	
-			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
 
 		public string ResourceGroupId
 		{
@@ -115,6 +89,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public string ProductKey
+		{
+			get
+			{
+				return productKey;
+			}
+			set	
+			{
+				productKey = value;
+				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
 			}
 		}
 

@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class QueryDeviceByDriverRequest : RpcAcsRequest<QueryDeviceByDriverResponse>
+    public class CreateEdgeInstanceChannelRequest : RpcAcsRequest<CreateEdgeInstanceChannelResponse>
     {
-        public QueryDeviceByDriverRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceByDriver", "Iot", "openAPI")
+        public CreateEdgeInstanceChannelRequest()
+            : base("Iot", "2018-01-20", "CreateEdgeInstanceChannel", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,15 +39,34 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
+		private List<Configs> configss = new List<Configs>(){ };
+
 		private string driverId;
 
 		private string iotInstanceId;
 
-		private int? pageSize;
-
-		private int? currentPage;
+		private string channelName;
 
 		private string instanceId;
+
+		public List<Configs> Configss
+		{
+			get
+			{
+				return configss;
+			}
+
+			set
+			{
+				configss = value;
+				for (int i = 0; i < configss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Configs." + (i + 1) + ".Format", configss[i].Format);
+					DictionaryUtil.Add(QueryParameters,"Configs." + (i + 1) + ".Content", configss[i].Content);
+					DictionaryUtil.Add(QueryParameters,"Configs." + (i + 1) + ".Key", configss[i].Key);
+				}
+			}
+		}
 
 		public string DriverId
 		{
@@ -75,29 +94,16 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? PageSize
+		public string ChannelName
 		{
 			get
 			{
-				return pageSize;
+				return channelName;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+				channelName = value;
+				DictionaryUtil.Add(QueryParameters, "ChannelName", value);
 			}
 		}
 
@@ -114,14 +120,60 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public class Configs
+		{
+
+			private string format;
+
+			private string content;
+
+			private string key;
+
+			public string Format
+			{
+				get
+				{
+					return format;
+				}
+				set	
+				{
+					format = value;
+				}
+			}
+
+			public string Content
+			{
+				get
+				{
+					return content;
+				}
+				set	
+				{
+					content = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override QueryDeviceByDriverResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateEdgeInstanceChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryDeviceByDriverResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateEdgeInstanceChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

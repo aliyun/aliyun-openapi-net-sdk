@@ -39,39 +39,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private int? currentPage;
-
-		private long? applyId;
-
 		private string iotInstanceId;
 
 		private int? pageSize;
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
+		private int? currentPage;
 
-		public long? ApplyId
-		{
-			get
-			{
-				return applyId;
-			}
-			set	
-			{
-				applyId = value;
-				DictionaryUtil.Add(QueryParameters, "ApplyId", value.ToString());
-			}
-		}
+		private long? applyId;
 
 		public string IotInstanceId
 		{
@@ -96,6 +70,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
+		public long? ApplyId
+		{
+			get
+			{
+				return applyId;
+			}
+			set	
+			{
+				applyId = value;
+				DictionaryUtil.Add(QueryParameters, "ApplyId", value.ToString());
 			}
 		}
 

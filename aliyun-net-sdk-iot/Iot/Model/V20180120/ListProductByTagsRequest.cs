@@ -39,13 +39,39 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
+		private string iotInstanceId;
+
+		private int? pageSize;
+
 		private int? currentPage;
 
 		private List<ProductTag> productTags = new List<ProductTag>(){ };
 
-		private string iotInstanceId;
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
 
-		private int? pageSize;
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
 
 		public int? CurrentPage
 		{
@@ -75,32 +101,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					DictionaryUtil.Add(QueryParameters,"ProductTag." + (i + 1) + ".TagValue", productTags[i].TagValue);
 					DictionaryUtil.Add(QueryParameters,"ProductTag." + (i + 1) + ".TagKey", productTags[i].TagKey);
 				}
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 

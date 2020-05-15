@@ -35,7 +35,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private List<string> failureTopics;
+		private List<Dictionary<string, string>> failureTopics;
 
 		public string RequestId
 		{
@@ -97,7 +97,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<string> FailureTopics
+		public List<Dictionary<string, string>> FailureTopics
 		{
 			get
 			{

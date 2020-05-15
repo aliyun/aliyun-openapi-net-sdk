@@ -39,11 +39,24 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private List<string> dstTopics = new List<string>(){ };
-
 		private string iotInstanceId;
 
+		private List<string> dstTopics = new List<string>(){ };
+
 		private string srcTopic;
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
+			}
+		}
 
 		public List<string> DstTopics
 		{
@@ -59,19 +72,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				{
 					DictionaryUtil.Add(QueryParameters,"DstTopic." + (i + 1) , dstTopics[i]);
 				}
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

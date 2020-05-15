@@ -37,9 +37,18 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			deleteTopicRouteTableResponse.IsAllSucceed = context.BooleanValue("DeleteTopicRouteTable.IsAllSucceed");
 			deleteTopicRouteTableResponse.ErrorMessage = context.StringValue("DeleteTopicRouteTable.ErrorMessage");
 
-			List<string> deleteTopicRouteTableResponse_failureTopics = new List<string>();
+			List<Dictionary<string, string>> deleteTopicRouteTableResponse_failureTopics = new List<Dictionary<string, string>>();
 			for (int i = 0; i < context.Length("DeleteTopicRouteTable.FailureTopics.Length"); i++) {
-				deleteTopicRouteTableResponse_failureTopics.Add(context.StringValue("DeleteTopicRouteTable.FailureTopics["+ i +"]"));
+				Dictionary<string, string> tmp = new Dictionary<string, string>() { };
+				foreach (var _item in context.ResponseDictionary){
+					string prefix = "DeleteTopicRouteTable.FailureTopics["+ i +"].";
+					if (_item.Key.IndexOf(prefix) == 0){
+						tmp.Add(_item.Key.Substring(prefix.Length), _item.Value);
+					}
+				}
+				if (tmp.Count > 0){
+					deleteTopicRouteTableResponse_failureTopics.Add(tmp);
+				}
 			}
 			deleteTopicRouteTableResponse.FailureTopics = deleteTopicRouteTableResponse_failureTopics;
         

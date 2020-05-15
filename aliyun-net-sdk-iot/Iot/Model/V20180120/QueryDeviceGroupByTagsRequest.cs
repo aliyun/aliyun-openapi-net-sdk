@@ -39,26 +39,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private int? currentPage;
-
 		private string iotInstanceId;
 
 		private int? pageSize;
 
 		private List<Tag> tags = new List<Tag>(){ };
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
+		private int? currentPage;
 
 		public string IotInstanceId
 		{
@@ -101,6 +88,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".TagValue", tags[i].TagValue);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".TagKey", tags[i].TagKey);
 				}
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 

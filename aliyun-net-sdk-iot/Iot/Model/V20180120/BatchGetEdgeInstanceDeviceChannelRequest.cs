@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class GisQueryDeviceLocationRequest : RpcAcsRequest<GisQueryDeviceLocationResponse>
+    public class BatchGetEdgeInstanceDeviceChannelRequest : RpcAcsRequest<BatchGetEdgeInstanceDeviceChannelResponse>
     {
-        public GisQueryDeviceLocationRequest()
-            : base("Iot", "2018-01-20", "GisQueryDeviceLocation", "Iot", "openAPI")
+        public BatchGetEdgeInstanceDeviceChannelRequest()
+            : base("Iot", "2018-01-20", "BatchGetEdgeInstanceDeviceChannel", "Iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,9 +39,43 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
+		private string driverId;
+
+		private List<string> iotIdss = new List<string>(){ };
+
 		private string iotInstanceId;
 
-		private string thingList;
+		private string instanceId;
+
+		public string DriverId
+		{
+			get
+			{
+				return driverId;
+			}
+			set	
+			{
+				driverId = value;
+				DictionaryUtil.Add(QueryParameters, "DriverId", value);
+			}
+		}
+
+		public List<string> IotIdss
+		{
+			get
+			{
+				return iotIdss;
+			}
+
+			set
+			{
+				iotIdss = value;
+				for (int i = 0; i < iotIdss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"IotIds." + (i + 1) , iotIdss[i]);
+				}
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -56,22 +90,27 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ThingList
+		public string InstanceId
 		{
 			get
 			{
-				return thingList;
+				return instanceId;
 			}
 			set	
 			{
-				thingList = value;
-				DictionaryUtil.Add(QueryParameters, "ThingList", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-        public override GisQueryDeviceLocationResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override BatchGetEdgeInstanceDeviceChannelResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GisQueryDeviceLocationResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchGetEdgeInstanceDeviceChannelResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private List<string> srcTopics;
+		private List<Dictionary<string, string>> srcTopics;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<string> SrcTopics
+		public List<Dictionary<string, string>> SrcTopics
 		{
 			get
 			{

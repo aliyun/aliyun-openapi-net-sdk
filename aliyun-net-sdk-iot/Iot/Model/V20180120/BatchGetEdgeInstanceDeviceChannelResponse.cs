@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class QueryDeviceByDriverResponse : AcsResponse
+	public class BatchGetEdgeInstanceDeviceChannelResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private QueryDeviceByDriver_Data data;
+		private List<BatchGetEdgeInstanceDeviceChannel_DeviceChannel> deviceChannelList;
 
 		public string RequestId
 		{
@@ -83,120 +83,60 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public QueryDeviceByDriver_Data Data
+		public List<BatchGetEdgeInstanceDeviceChannel_DeviceChannel> DeviceChannelList
 		{
 			get
 			{
-				return data;
+				return deviceChannelList;
 			}
 			set	
 			{
-				data = value;
+				deviceChannelList = value;
 			}
 		}
 
-		public class QueryDeviceByDriver_Data
+		public class BatchGetEdgeInstanceDeviceChannel_DeviceChannel
 		{
 
-			private int? total;
+			private string channelId;
 
-			private int? pageSize;
+			private string channelName;
 
-			private int? currentPage;
+			private string iotId;
 
-			private List<QueryDeviceByDriver_Device> deviceList;
-
-			public int? Total
+			public string ChannelId
 			{
 				get
 				{
-					return total;
+					return channelId;
 				}
 				set	
 				{
-					total = value;
+					channelId = value;
 				}
 			}
 
-			public int? PageSize
+			public string ChannelName
 			{
 				get
 				{
-					return pageSize;
+					return channelName;
 				}
 				set	
 				{
-					pageSize = value;
+					channelName = value;
 				}
 			}
 
-			public int? CurrentPage
+			public string IotId
 			{
 				get
 				{
-					return currentPage;
+					return iotId;
 				}
 				set	
 				{
-					currentPage = value;
-				}
-			}
-
-			public List<QueryDeviceByDriver_Device> DeviceList
-			{
-				get
-				{
-					return deviceList;
-				}
-				set	
-				{
-					deviceList = value;
-				}
-			}
-
-			public class QueryDeviceByDriver_Device
-			{
-
-				private string iotId;
-
-				private string productKey;
-
-				private string deviceName;
-
-				public string IotId
-				{
-					get
-					{
-						return iotId;
-					}
-					set	
-					{
-						iotId = value;
-					}
-				}
-
-				public string ProductKey
-				{
-					get
-					{
-						return productKey;
-					}
-					set	
-					{
-						productKey = value;
-					}
-				}
-
-				public string DeviceName
-				{
-					get
-					{
-						return deviceName;
-					}
-					set	
-					{
-						deviceName = value;
-					}
+					iotId = value;
 				}
 			}
 		}

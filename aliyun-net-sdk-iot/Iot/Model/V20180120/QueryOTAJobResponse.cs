@@ -33,14 +33,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private int? total;
-
-		private int? pageSize;
-
-		private int? pageCount;
-
-		private int? currentPage;
-
 		private QueryOTAJob_Data data;
 
 		public string RequestId
@@ -88,54 +80,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				errorMessage = value;
-			}
-		}
-
-		public int? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? PageCount
-		{
-			get
-			{
-				return pageCount;
-			}
-			set	
-			{
-				pageCount = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
 			}
 		}
 

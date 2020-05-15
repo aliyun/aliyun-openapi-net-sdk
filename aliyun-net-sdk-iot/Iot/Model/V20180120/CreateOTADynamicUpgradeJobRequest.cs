@@ -41,17 +41,17 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private int? retryCount;
 
+		private int? timeoutInMinutes;
+
+		private string iotInstanceId;
+
 		private string firmwareId;
 
 		private string productKey;
 
-		private int? timeoutInMinutes;
-
 		private int? retryInterval;
 
 		private List<string> srcVersions = new List<string>(){ };
-
-		private string iotInstanceId;
 
 		private int? maximumPerMinute;
 
@@ -65,6 +65,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				retryCount = value;
 				DictionaryUtil.Add(QueryParameters, "RetryCount", value.ToString());
+			}
+		}
+
+		public int? TimeoutInMinutes
+		{
+			get
+			{
+				return timeoutInMinutes;
+			}
+			set	
+			{
+				timeoutInMinutes = value;
+				DictionaryUtil.Add(QueryParameters, "TimeoutInMinutes", value.ToString());
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
@@ -91,19 +117,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public int? TimeoutInMinutes
-		{
-			get
-			{
-				return timeoutInMinutes;
-			}
-			set	
-			{
-				timeoutInMinutes = value;
-				DictionaryUtil.Add(QueryParameters, "TimeoutInMinutes", value.ToString());
 			}
 		}
 
@@ -134,19 +147,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				{
 					DictionaryUtil.Add(QueryParameters,"SrcVersion." + (i + 1) , srcVersions[i]);
 				}
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

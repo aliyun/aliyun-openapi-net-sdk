@@ -50,10 +50,10 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			List<Dictionary<string, string>> data_resultList = new List<Dictionary<string, string>>();
 			for (int i = 0; i < context.Length("InvokeDataAPIService.Data.ResultList.Length"); i++) {
 				Dictionary<string, string> tmp = new Dictionary<string, string>() { };
-				foreach (var item in context.ResponseDictionary){
+				foreach (var _item in context.ResponseDictionary){
 					string prefix = "InvokeDataAPIService.Data.ResultList["+ i +"].";
-					if (item.Key.IndexOf(prefix) == 0){
-						tmp.Add(item.Key.Substring(prefix.Length), item.Value);
+					if (_item.Key.IndexOf(prefix) == 0){
+						tmp.Add(_item.Key.Substring(prefix.Length), _item.Value);
 					}
 				}
 				if (tmp.Count > 0){

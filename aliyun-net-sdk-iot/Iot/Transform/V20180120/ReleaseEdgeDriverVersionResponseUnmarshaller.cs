@@ -24,20 +24,19 @@ using Aliyun.Acs.Iot.Model.V20180120;
 
 namespace Aliyun.Acs.Iot.Transform.V20180120
 {
-    public class GisQueryDeviceLocationResponseUnmarshaller
+    public class ReleaseEdgeDriverVersionResponseUnmarshaller
     {
-        public static GisQueryDeviceLocationResponse Unmarshall(UnmarshallerContext context)
+        public static ReleaseEdgeDriverVersionResponse Unmarshall(UnmarshallerContext context)
         {
-			GisQueryDeviceLocationResponse gisQueryDeviceLocationResponse = new GisQueryDeviceLocationResponse();
+			ReleaseEdgeDriverVersionResponse releaseEdgeDriverVersionResponse = new ReleaseEdgeDriverVersionResponse();
 
-			gisQueryDeviceLocationResponse.HttpResponse = context.HttpResponse;
-			gisQueryDeviceLocationResponse.RequestId = context.StringValue("GisQueryDeviceLocation.RequestId");
-			gisQueryDeviceLocationResponse.Success = context.BooleanValue("GisQueryDeviceLocation.Success");
-			gisQueryDeviceLocationResponse.Code = context.StringValue("GisQueryDeviceLocation.Code");
-			gisQueryDeviceLocationResponse.ErrorMessage = context.StringValue("GisQueryDeviceLocation.ErrorMessage");
-			gisQueryDeviceLocationResponse.Data = context.StringValue("GisQueryDeviceLocation.Data");
+			releaseEdgeDriverVersionResponse.HttpResponse = context.HttpResponse;
+			releaseEdgeDriverVersionResponse.RequestId = context.StringValue("ReleaseEdgeDriverVersion.RequestId");
+			releaseEdgeDriverVersionResponse.Success = context.BooleanValue("ReleaseEdgeDriverVersion.Success");
+			releaseEdgeDriverVersionResponse.Code = context.StringValue("ReleaseEdgeDriverVersion.Code");
+			releaseEdgeDriverVersionResponse.ErrorMessage = context.StringValue("ReleaseEdgeDriverVersion.ErrorMessage");
         
-			return gisQueryDeviceLocationResponse;
+			return releaseEdgeDriverVersionResponse;
         }
     }
 }

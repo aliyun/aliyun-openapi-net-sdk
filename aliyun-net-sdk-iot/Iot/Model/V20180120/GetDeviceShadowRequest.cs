@@ -39,24 +39,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string shadowMessage;
+		private string iotInstanceId;
 
 		private string productKey;
 
-		private string iotInstanceId;
-
 		private string deviceName;
 
-		public string ShadowMessage
+		public string IotInstanceId
 		{
 			get
 			{
-				return shadowMessage;
+				return iotInstanceId;
 			}
 			set	
 			{
-				shadowMessage = value;
-				DictionaryUtil.Add(QueryParameters, "ShadowMessage", value);
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
@@ -70,19 +68,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

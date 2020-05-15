@@ -41,11 +41,11 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string gwProductKey;
 
+		private string iotInstanceId;
+
 		private List<TopoAddItem> topoAddItems = new List<TopoAddItem>(){ };
 
 		private string gwDeviceName;
-
-		private string iotInstanceId;
 
 		public string GwProductKey
 		{
@@ -57,6 +57,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				gwProductKey = value;
 				DictionaryUtil.Add(QueryParameters, "GwProductKey", value);
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
@@ -92,19 +105,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				gwDeviceName = value;
 				DictionaryUtil.Add(QueryParameters, "GwDeviceName", value);
-			}
-		}
-
-		public string IotInstanceId
-		{
-			get
-			{
-				return iotInstanceId;
-			}
-			set	
-			{
-				iotInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 

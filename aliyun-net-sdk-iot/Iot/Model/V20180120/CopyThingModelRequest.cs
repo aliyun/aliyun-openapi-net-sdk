@@ -39,8 +39,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
             }
         }
 
-		private string sourceProductKey;
-
 		private string targetProductKey;
 
 		private string resourceGroupId;
@@ -49,18 +47,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string sourceModelVersion;
 
-		public string SourceProductKey
-		{
-			get
-			{
-				return sourceProductKey;
-			}
-			set	
-			{
-				sourceProductKey = value;
-				DictionaryUtil.Add(QueryParameters, "SourceProductKey", value);
-			}
-		}
+		private string sourceProductKey;
 
 		public string TargetProductKey
 		{
@@ -111,6 +98,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				sourceModelVersion = value;
 				DictionaryUtil.Add(QueryParameters, "SourceModelVersion", value);
+			}
+		}
+
+		public string SourceProductKey
+		{
+			get
+			{
+				return sourceProductKey;
+			}
+			set	
+			{
+				sourceProductKey = value;
+				DictionaryUtil.Add(QueryParameters, "SourceProductKey", value);
 			}
 		}
 

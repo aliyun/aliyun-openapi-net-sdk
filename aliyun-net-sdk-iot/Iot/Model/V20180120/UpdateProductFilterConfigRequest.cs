@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private bool? propertyTimestampFilter;
 
+		private string iotInstanceId;
+
 		private string productKey;
 
 		private bool? propertyValueFilter;
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				propertyTimestampFilter = value;
 				DictionaryUtil.Add(QueryParameters, "PropertyTimestampFilter", value.ToString());
+			}
+		}
+
+		public string IotInstanceId
+		{
+			get
+			{
+				return iotInstanceId;
+			}
+			set	
+			{
+				iotInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "IotInstanceId", value);
 			}
 		}
 
