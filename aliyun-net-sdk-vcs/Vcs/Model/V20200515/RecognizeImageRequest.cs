@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -31,8 +30,13 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class RecognizeImageRequest : RpcAcsRequest<RecognizeImageResponse>
     {
         public RecognizeImageRequest()
-            : base("Vcs", "2020-05-15", "RecognizeImage")
+            : base("Vcs", "2020-05-15", "RecognizeImage", "VCS", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
