@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class ListCorpsRequest : RpcAcsRequest<ListCorpsResponse>
     {
         public ListCorpsRequest()
-            : base("Vcs", "2020-05-15", "ListCorps", "VCS", "openAPI")
+            : base("Vcs", "2020-05-15", "ListCorps", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

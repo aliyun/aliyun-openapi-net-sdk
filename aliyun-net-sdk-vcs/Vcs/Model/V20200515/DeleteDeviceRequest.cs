@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class DeleteDeviceRequest : RpcAcsRequest<DeleteDeviceResponse>
     {
         public DeleteDeviceRequest()
-            : base("Vcs", "2020-05-15", "DeleteDevice", "VCS", "openAPI")
+            : base("Vcs", "2020-05-15", "DeleteDevice", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

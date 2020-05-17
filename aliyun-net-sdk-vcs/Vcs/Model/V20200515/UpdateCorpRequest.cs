@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class UpdateCorpRequest : RpcAcsRequest<UpdateCorpResponse>
     {
         public UpdateCorpRequest()
-            : base("Vcs", "2020-05-15", "UpdateCorp", "VCS", "openAPI")
+            : base("Vcs", "2020-05-15", "UpdateCorp", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

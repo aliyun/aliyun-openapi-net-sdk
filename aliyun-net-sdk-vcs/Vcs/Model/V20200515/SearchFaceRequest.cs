@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class SearchFaceRequest : RpcAcsRequest<SearchFaceResponse>
     {
         public SearchFaceRequest()
-            : base("Vcs", "2020-05-15", "SearchFace", "VCS", "openAPI")
+            : base("Vcs", "2020-05-15", "SearchFace", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

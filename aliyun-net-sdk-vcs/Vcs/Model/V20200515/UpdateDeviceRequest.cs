@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class UpdateDeviceRequest : RpcAcsRequest<UpdateDeviceResponse>
     {
         public UpdateDeviceRequest()
-            : base("Vcs", "2020-05-15", "UpdateDevice", "VCS", "openAPI")
+            : base("Vcs", "2020-05-15", "UpdateDevice", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class GetInventoryRequest : RpcAcsRequest<GetInventoryResponse>
     {
         public GetInventoryRequest()
-            : base("Vcs", "2020-05-15", "GetInventory", "VCS", "openAPI")
+            : base("Vcs", "2020-05-15", "GetInventory", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class RecognizeImageRequest : RpcAcsRequest<RecognizeImageResponse>
     {
         public RecognizeImageRequest()
-            : base("Vcs", "2020-05-15", "RecognizeImage", "VCS", "openAPI")
+            : base("Vcs", "2020-05-15", "RecognizeImage", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

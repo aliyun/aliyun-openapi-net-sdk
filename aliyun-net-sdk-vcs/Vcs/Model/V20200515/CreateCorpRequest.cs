@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class CreateCorpRequest : RpcAcsRequest<CreateCorpResponse>
     {
         public CreateCorpRequest()
-            : base("Vcs", "2020-05-15", "CreateCorp", "VCS", "openAPI")
+            : base("Vcs", "2020-05-15", "CreateCorp", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
