@@ -44,6 +44,8 @@ namespace Aliyun.Acs.reid.Model.V20190928
 
 		private long? storeId;
 
+		private string protocolType;
+
 		public long? IpcId
 		{
 			get
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			{
 				storeId = value;
 				DictionaryUtil.Add(BodyParameters, "StoreId", value.ToString());
+			}
+		}
+
+		public string ProtocolType
+		{
+			get
+			{
+				return protocolType;
+			}
+			set	
+			{
+				protocolType = value;
+				DictionaryUtil.Add(BodyParameters, "ProtocolType", value);
 			}
 		}
 
