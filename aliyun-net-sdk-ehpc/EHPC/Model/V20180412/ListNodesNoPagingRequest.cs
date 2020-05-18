@@ -44,6 +44,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string clusterId;
 
+		private string sequence;
+
 		private string hostName;
 
 		private bool? onlyDetached;
@@ -71,6 +73,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public string Sequence
+		{
+			get
+			{
+				return sequence;
+			}
+			set	
+			{
+				sequence = value;
+				DictionaryUtil.Add(QueryParameters, "Sequence", value);
 			}
 		}
 

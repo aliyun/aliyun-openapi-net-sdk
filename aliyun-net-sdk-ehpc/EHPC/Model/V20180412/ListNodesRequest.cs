@@ -46,6 +46,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private int? pageNumber;
 
+		private string sequence;
+
 		private string hostName;
 
 		private int? pageSize;
@@ -86,6 +88,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string Sequence
+		{
+			get
+			{
+				return sequence;
+			}
+			set	
+			{
+				sequence = value;
+				DictionaryUtil.Add(QueryParameters, "Sequence", value);
 			}
 		}
 

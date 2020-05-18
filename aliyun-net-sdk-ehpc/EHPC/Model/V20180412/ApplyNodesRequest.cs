@@ -82,6 +82,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private int? targetCapacity;
 
+		private bool? strictSatisfiedTargetCapacity;
+
 		public string ImageId
 		{
 			get
@@ -362,6 +364,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				targetCapacity = value;
 				DictionaryUtil.Add(QueryParameters, "TargetCapacity", value.ToString());
+			}
+		}
+
+		public bool? StrictSatisfiedTargetCapacity
+		{
+			get
+			{
+				return strictSatisfiedTargetCapacity;
+			}
+			set	
+			{
+				strictSatisfiedTargetCapacity = value;
+				DictionaryUtil.Add(QueryParameters, "StrictSatisfiedTargetCapacity", value.ToString());
 			}
 		}
 
