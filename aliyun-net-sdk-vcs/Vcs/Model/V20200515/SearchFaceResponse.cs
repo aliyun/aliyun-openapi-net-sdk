@@ -161,15 +161,15 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string imageUrl;
 
-				private int? leftTopX;
+				private float? leftTopX;
 
-				private int? leftTopY;
+				private float? leftTopY;
 
-				private int? rightBottomX;
+				private float? rightBottomX;
 
-				private int? rightBottomY;
+				private float? rightBottomY;
 
-				private int? score;
+				private float? score;
 
 				private string targetImageUrl;
 
@@ -197,7 +197,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public int? LeftTopX
+				public float? LeftTopX
 				{
 					get
 					{
@@ -209,7 +209,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public int? LeftTopY
+				public float? LeftTopY
 				{
 					get
 					{
@@ -221,7 +221,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public int? RightBottomX
+				public float? RightBottomX
 				{
 					get
 					{
@@ -233,7 +233,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public int? RightBottomY
+				public float? RightBottomY
 				{
 					get
 					{
@@ -245,7 +245,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public int? Score
+				public float? Score
 				{
 					get
 					{

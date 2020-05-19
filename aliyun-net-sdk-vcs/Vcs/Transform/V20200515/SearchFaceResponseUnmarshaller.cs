@@ -46,11 +46,11 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				SearchFaceResponse.SearchFace_Data.SearchFace_Record record = new SearchFaceResponse.SearchFace_Data.SearchFace_Record();
 				record.GbId = context.StringValue("SearchFace.Data.Records["+ i +"].GbId");
 				record.ImageUrl = context.StringValue("SearchFace.Data.Records["+ i +"].ImageUrl");
-				record.LeftTopX = context.IntegerValue("SearchFace.Data.Records["+ i +"].LeftTopX");
-				record.LeftTopY = context.IntegerValue("SearchFace.Data.Records["+ i +"].LeftTopY");
-				record.RightBottomX = context.IntegerValue("SearchFace.Data.Records["+ i +"].RightBottomX");
-				record.RightBottomY = context.IntegerValue("SearchFace.Data.Records["+ i +"].RightBottomY");
-				record.Score = context.IntegerValue("SearchFace.Data.Records["+ i +"].Score");
+				record.LeftTopX = context.FloatValue("SearchFace.Data.Records["+ i +"].LeftTopX");
+				record.LeftTopY = context.FloatValue("SearchFace.Data.Records["+ i +"].LeftTopY");
+				record.RightBottomX = context.FloatValue("SearchFace.Data.Records["+ i +"].RightBottomX");
+				record.RightBottomY = context.FloatValue("SearchFace.Data.Records["+ i +"].RightBottomY");
+				record.Score = context.FloatValue("SearchFace.Data.Records["+ i +"].Score");
 				record.TargetImageUrl = context.StringValue("SearchFace.Data.Records["+ i +"].TargetImageUrl");
 
 				data_records.Add(record);
