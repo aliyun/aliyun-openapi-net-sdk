@@ -24,20 +24,19 @@ using Aliyun.Acs.aliyuncvc.Model.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
-    public class GetMeetingMemberResponseUnmarshaller
+    public class ModifyMeetingPasswordInternationalResponseUnmarshaller
     {
-        public static GetMeetingMemberResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyMeetingPasswordInternationalResponse Unmarshall(UnmarshallerContext context)
         {
-			GetMeetingMemberResponse getMeetingMemberResponse = new GetMeetingMemberResponse();
+			ModifyMeetingPasswordInternationalResponse modifyMeetingPasswordInternationalResponse = new ModifyMeetingPasswordInternationalResponse();
 
-			getMeetingMemberResponse.HttpResponse = context.HttpResponse;
-			getMeetingMemberResponse.RequestId = context.StringValue("GetMeetingMember.RequestId");
-			getMeetingMemberResponse.Message = context.StringValue("GetMeetingMember.Message");
-			getMeetingMemberResponse.Success = context.BooleanValue("GetMeetingMember.Success");
-			getMeetingMemberResponse.ErrorCode = context.IntegerValue("GetMeetingMember.ErrorCode");
-			getMeetingMemberResponse.Members = context.StringValue("GetMeetingMember.Members");
+			modifyMeetingPasswordInternationalResponse.HttpResponse = context.HttpResponse;
+			modifyMeetingPasswordInternationalResponse.ErrorCode = context.IntegerValue("ModifyMeetingPasswordInternational.ErrorCode");
+			modifyMeetingPasswordInternationalResponse.Message = context.StringValue("ModifyMeetingPasswordInternational.Message");
+			modifyMeetingPasswordInternationalResponse.Success = context.BooleanValue("ModifyMeetingPasswordInternational.Success");
+			modifyMeetingPasswordInternationalResponse.RequestId = context.StringValue("ModifyMeetingPasswordInternational.RequestId");
         
-			return getMeetingMemberResponse;
+			return modifyMeetingPasswordInternationalResponse;
         }
     }
 }

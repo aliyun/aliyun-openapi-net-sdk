@@ -27,10 +27,10 @@ using Aliyun.Acs.aliyuncvc.Transform.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-    public class JoinMeetingRequest : RpcAcsRequest<JoinMeetingResponse>
+    public class ActiveDeviceRequest : RpcAcsRequest<ActiveDeviceResponse>
     {
-        public JoinMeetingRequest()
-            : base("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+        public ActiveDeviceRequest()
+            : base("aliyuncvc", "2019-10-30", "ActiveDevice", "aliyuncvc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,48 +39,78 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
             }
         }
 
-		private string userId;
+		private string iP;
 
-		private string password;
+		private string activeCode;
 
-		private string meetingCode;
+		private string mac;
 
-		public string UserId
+		private string deviceVersion;
+
+		private string sN;
+
+		public string IP
 		{
 			get
 			{
-				return userId;
+				return iP;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
+				iP = value;
+				DictionaryUtil.Add(BodyParameters, "IP", value);
 			}
 		}
 
-		public string Password
+		public string ActiveCode
 		{
 			get
 			{
-				return password;
+				return activeCode;
 			}
 			set	
 			{
-				password = value;
-				DictionaryUtil.Add(BodyParameters, "Password", value);
+				activeCode = value;
+				DictionaryUtil.Add(BodyParameters, "ActiveCode", value);
 			}
 		}
 
-		public string MeetingCode
+		public string Mac
 		{
 			get
 			{
-				return meetingCode;
+				return mac;
 			}
 			set	
 			{
-				meetingCode = value;
-				DictionaryUtil.Add(BodyParameters, "MeetingCode", value);
+				mac = value;
+				DictionaryUtil.Add(BodyParameters, "Mac", value);
+			}
+		}
+
+		public string DeviceVersion
+		{
+			get
+			{
+				return deviceVersion;
+			}
+			set	
+			{
+				deviceVersion = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceVersion", value);
+			}
+		}
+
+		public string SN
+		{
+			get
+			{
+				return sN;
+			}
+			set	
+			{
+				sN = value;
+				DictionaryUtil.Add(BodyParameters, "SN", value);
 			}
 		}
 
@@ -89,9 +119,9 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			return false;
 		}
 
-        public override JoinMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ActiveDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ActiveDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

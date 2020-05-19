@@ -22,18 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-	public class GetMeetingResponse : AcsResponse
+	public class JoinLiveResponse : AcsResponse
 	{
 
 		private int? errorCode;
-
-		private string message;
 
 		private bool? success;
 
 		private string requestId;
 
-		private GetMeeting_MeetingInfo meetingInfo;
+		private string message;
+
+		private JoinLive_MeetingInfo meetingInfo;
 
 		public int? ErrorCode
 		{
@@ -44,18 +44,6 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			set	
 			{
 				errorCode = value;
-			}
-		}
-
-		public string Message
-		{
-			get
-			{
-				return message;
-			}
-			set	
-			{
-				message = value;
 			}
 		}
 
@@ -83,7 +71,19 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
-		public GetMeeting_MeetingInfo MeetingInfo
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public JoinLive_MeetingInfo MeetingInfo
 		{
 			get
 			{
@@ -95,46 +95,46 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
-		public class GetMeeting_MeetingInfo
+		public class JoinLive_MeetingInfo
 		{
 
-			private string meetingName;
+			private string meetingDomain;
 
-			private long? validTime;
+			private string meetingToken;
 
 			private string meetingCode;
 
-			private long? createTime;
+			private string memberUUID;
 
-			private string userId;
+			private string clientAppId;
 
 			private string meetingUUID;
 
-			private string password;
+			private string meetingAppId;
 
-			private List<GetMeeting_MemberListItem> memberList;
+			private JoinLive_SlsInfo slsInfo;
 
-			public string MeetingName
+			public string MeetingDomain
 			{
 				get
 				{
-					return meetingName;
+					return meetingDomain;
 				}
 				set	
 				{
-					meetingName = value;
+					meetingDomain = value;
 				}
 			}
 
-			public long? ValidTime
+			public string MeetingToken
 			{
 				get
 				{
-					return validTime;
+					return meetingToken;
 				}
 				set	
 				{
-					validTime = value;
+					meetingToken = value;
 				}
 			}
 
@@ -150,27 +150,27 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 				}
 			}
 
-			public long? CreateTime
+			public string MemberUUID
 			{
 				get
 				{
-					return createTime;
+					return memberUUID;
 				}
 				set	
 				{
-					createTime = value;
+					memberUUID = value;
 				}
 			}
 
-			public string UserId
+			public string ClientAppId
 			{
 				get
 				{
-					return userId;
+					return clientAppId;
 				}
 				set	
 				{
-					userId = value;
+					clientAppId = value;
 				}
 			}
 
@@ -186,100 +186,72 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 				}
 			}
 
-			public string Password
+			public string MeetingAppId
 			{
 				get
 				{
-					return password;
+					return meetingAppId;
 				}
 				set	
 				{
-					password = value;
+					meetingAppId = value;
 				}
 			}
 
-			public List<GetMeeting_MemberListItem> MemberList
+			public JoinLive_SlsInfo SlsInfo
 			{
 				get
 				{
-					return memberList;
+					return slsInfo;
 				}
 				set	
 				{
-					memberList = value;
+					slsInfo = value;
 				}
 			}
 
-			public class GetMeeting_MemberListItem
+			public class JoinLive_SlsInfo
 			{
 
-				private string userAvatarUrl;
+				private string logServiceEndpoint;
 
-				private string memberUUID;
+				private string logstore;
 
-				private string userName;
+				private string project;
 
-				private string userId;
-
-				private string status;
-
-				public string UserAvatarUrl
+				public string LogServiceEndpoint
 				{
 					get
 					{
-						return userAvatarUrl;
+						return logServiceEndpoint;
 					}
 					set	
 					{
-						userAvatarUrl = value;
+						logServiceEndpoint = value;
 					}
 				}
 
-				public string MemberUUID
+				public string Logstore
 				{
 					get
 					{
-						return memberUUID;
+						return logstore;
 					}
 					set	
 					{
-						memberUUID = value;
+						logstore = value;
 					}
 				}
 
-				public string UserName
+				public string Project
 				{
 					get
 					{
-						return userName;
+						return project;
 					}
 					set	
 					{
-						userName = value;
-					}
-				}
-
-				public string UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
+						project = value;
 					}
 				}
 			}

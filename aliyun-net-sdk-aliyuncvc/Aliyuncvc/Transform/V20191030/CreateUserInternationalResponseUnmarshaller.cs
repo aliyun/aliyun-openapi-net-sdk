@@ -24,20 +24,20 @@ using Aliyun.Acs.aliyuncvc.Model.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
-    public class GetMeetingMemberResponseUnmarshaller
+    public class CreateUserInternationalResponseUnmarshaller
     {
-        public static GetMeetingMemberResponse Unmarshall(UnmarshallerContext context)
+        public static CreateUserInternationalResponse Unmarshall(UnmarshallerContext context)
         {
-			GetMeetingMemberResponse getMeetingMemberResponse = new GetMeetingMemberResponse();
+			CreateUserInternationalResponse createUserInternationalResponse = new CreateUserInternationalResponse();
 
-			getMeetingMemberResponse.HttpResponse = context.HttpResponse;
-			getMeetingMemberResponse.RequestId = context.StringValue("GetMeetingMember.RequestId");
-			getMeetingMemberResponse.Message = context.StringValue("GetMeetingMember.Message");
-			getMeetingMemberResponse.Success = context.BooleanValue("GetMeetingMember.Success");
-			getMeetingMemberResponse.ErrorCode = context.IntegerValue("GetMeetingMember.ErrorCode");
-			getMeetingMemberResponse.Members = context.StringValue("GetMeetingMember.Members");
+			createUserInternationalResponse.HttpResponse = context.HttpResponse;
+			createUserInternationalResponse.ErrorCode = context.IntegerValue("CreateUserInternational.ErrorCode");
+			createUserInternationalResponse.Message = context.StringValue("CreateUserInternational.Message");
+			createUserInternationalResponse.Success = context.BooleanValue("CreateUserInternational.Success");
+			createUserInternationalResponse.RequestId = context.StringValue("CreateUserInternational.RequestId");
+			createUserInternationalResponse.UserId = context.StringValue("CreateUserInternational.UserId");
         
-			return getMeetingMemberResponse;
+			return createUserInternationalResponse;
         }
     }
 }

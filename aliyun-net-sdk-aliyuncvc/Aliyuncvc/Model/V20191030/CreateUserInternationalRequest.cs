@@ -27,10 +27,10 @@ using Aliyun.Acs.aliyuncvc.Transform.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-    public class JoinMeetingRequest : RpcAcsRequest<JoinMeetingResponse>
+    public class CreateUserInternationalRequest : RpcAcsRequest<CreateUserInternationalResponse>
     {
-        public JoinMeetingRequest()
-            : base("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+        public CreateUserInternationalRequest()
+            : base("aliyuncvc", "2019-10-30", "CreateUserInternational", "aliyuncvc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,48 +39,33 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
             }
         }
 
-		private string userId;
+		private int? count;
 
-		private string password;
+		private string userInfo;
 
-		private string meetingCode;
-
-		public string UserId
+		public int? Count
 		{
 			get
 			{
-				return userId;
+				return count;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
+				count = value;
+				DictionaryUtil.Add(BodyParameters, "Count", value.ToString());
 			}
 		}
 
-		public string Password
+		public string UserInfo
 		{
 			get
 			{
-				return password;
+				return userInfo;
 			}
 			set	
 			{
-				password = value;
-				DictionaryUtil.Add(BodyParameters, "Password", value);
-			}
-		}
-
-		public string MeetingCode
-		{
-			get
-			{
-				return meetingCode;
-			}
-			set	
-			{
-				meetingCode = value;
-				DictionaryUtil.Add(BodyParameters, "MeetingCode", value);
+				userInfo = value;
+				DictionaryUtil.Add(BodyParameters, "UserInfo", value);
 			}
 		}
 
@@ -89,9 +74,9 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			return false;
 		}
 
-        public override JoinMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateUserInternationalResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateUserInternationalResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

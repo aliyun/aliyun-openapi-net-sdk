@@ -43,6 +43,7 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 			meetingInfo.CreateTime = context.LongValue("GetMeeting.MeetingInfo.CreateTime");
 			meetingInfo.UserId = context.StringValue("GetMeeting.MeetingInfo.UserId");
 			meetingInfo.MeetingUUID = context.StringValue("GetMeeting.MeetingInfo.MeetingUUID");
+			meetingInfo.Password = context.StringValue("GetMeeting.MeetingInfo.Password");
 
 			List<GetMeetingResponse.GetMeeting_MeetingInfo.GetMeeting_MemberListItem> meetingInfo_memberList = new List<GetMeetingResponse.GetMeeting_MeetingInfo.GetMeeting_MemberListItem>();
 			for (int i = 0; i < context.Length("GetMeeting.MeetingInfo.MemberList.Length"); i++) {

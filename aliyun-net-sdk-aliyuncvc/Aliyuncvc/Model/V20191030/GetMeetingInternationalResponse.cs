@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-	public class GetMeetingResponse : AcsResponse
+	public class GetMeetingInternationalResponse : AcsResponse
 	{
 
 		private int? errorCode;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 
 		private string requestId;
 
-		private GetMeeting_MeetingInfo meetingInfo;
+		private GetMeetingInternational_MeetingInfo meetingInfo;
 
 		public int? ErrorCode
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
-		public GetMeeting_MeetingInfo MeetingInfo
+		public GetMeetingInternational_MeetingInfo MeetingInfo
 		{
 			get
 			{
@@ -95,7 +95,7 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
-		public class GetMeeting_MeetingInfo
+		public class GetMeetingInternational_MeetingInfo
 		{
 
 			private string meetingName;
@@ -112,7 +112,7 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 
 			private string password;
 
-			private List<GetMeeting_MemberListItem> memberList;
+			private List<GetMeetingInternational_MemberListItem> memberList;
 
 			public string MeetingName
 			{
@@ -198,7 +198,7 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 				}
 			}
 
-			public List<GetMeeting_MemberListItem> MemberList
+			public List<GetMeetingInternational_MemberListItem> MemberList
 			{
 				get
 				{
@@ -210,7 +210,7 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 				}
 			}
 
-			public class GetMeeting_MemberListItem
+			public class GetMeetingInternational_MemberListItem
 			{
 
 				private string userAvatarUrl;

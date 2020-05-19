@@ -27,10 +27,10 @@ using Aliyun.Acs.aliyuncvc.Transform.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-    public class JoinMeetingRequest : RpcAcsRequest<JoinMeetingResponse>
+    public class GetMeetingInternationalRequest : RpcAcsRequest<GetMeetingInternationalResponse>
     {
-        public JoinMeetingRequest()
-            : base("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+        public GetMeetingInternationalRequest()
+            : base("aliyuncvc", "2019-10-30", "GetMeetingInternational", "aliyuncvc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,48 +39,18 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
             }
         }
 
-		private string userId;
+		private string meetingUUID;
 
-		private string password;
-
-		private string meetingCode;
-
-		public string UserId
+		public string MeetingUUID
 		{
 			get
 			{
-				return userId;
+				return meetingUUID;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
-			}
-		}
-
-		public string Password
-		{
-			get
-			{
-				return password;
-			}
-			set	
-			{
-				password = value;
-				DictionaryUtil.Add(BodyParameters, "Password", value);
-			}
-		}
-
-		public string MeetingCode
-		{
-			get
-			{
-				return meetingCode;
-			}
-			set	
-			{
-				meetingCode = value;
-				DictionaryUtil.Add(BodyParameters, "MeetingCode", value);
+				meetingUUID = value;
+				DictionaryUtil.Add(BodyParameters, "MeetingUUID", value);
 			}
 		}
 
@@ -89,9 +59,9 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			return false;
 		}
 
-        public override JoinMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetMeetingInternationalResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetMeetingInternationalResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

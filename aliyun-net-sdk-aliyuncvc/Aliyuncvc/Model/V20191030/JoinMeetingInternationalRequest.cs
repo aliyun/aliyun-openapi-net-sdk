@@ -27,10 +27,10 @@ using Aliyun.Acs.aliyuncvc.Transform.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-    public class JoinMeetingRequest : RpcAcsRequest<JoinMeetingResponse>
+    public class JoinMeetingInternationalRequest : RpcAcsRequest<JoinMeetingInternationalResponse>
     {
-        public JoinMeetingRequest()
-            : base("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+        public JoinMeetingInternationalRequest()
+            : base("aliyuncvc", "2019-10-30", "JoinMeetingInternational", "aliyuncvc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -89,9 +89,9 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			return false;
 		}
 
-        public override JoinMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override JoinMeetingInternationalResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return JoinMeetingInternationalResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

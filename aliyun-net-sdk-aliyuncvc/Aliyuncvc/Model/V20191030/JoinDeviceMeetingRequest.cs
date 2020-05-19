@@ -27,10 +27,10 @@ using Aliyun.Acs.aliyuncvc.Transform.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-    public class JoinMeetingRequest : RpcAcsRequest<JoinMeetingResponse>
+    public class JoinDeviceMeetingRequest : RpcAcsRequest<JoinDeviceMeetingResponse>
     {
-        public JoinMeetingRequest()
-            : base("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+        public JoinDeviceMeetingRequest()
+            : base("aliyuncvc", "2019-10-30", "JoinDeviceMeeting", "aliyuncvc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,22 +39,24 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
             }
         }
 
-		private string userId;
+		private string token;
 
 		private string password;
 
 		private string meetingCode;
 
-		public string UserId
+		private string sN;
+
+		public string Token
 		{
 			get
 			{
-				return userId;
+				return token;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
+				token = value;
+				DictionaryUtil.Add(BodyParameters, "Token", value);
 			}
 		}
 
@@ -84,14 +86,27 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
+		public string SN
+		{
+			get
+			{
+				return sN;
+			}
+			set	
+			{
+				sN = value;
+				DictionaryUtil.Add(BodyParameters, "SN", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override JoinMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override JoinDeviceMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return JoinDeviceMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

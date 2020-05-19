@@ -24,20 +24,19 @@ using Aliyun.Acs.aliyuncvc.Model.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
-    public class GetMeetingMemberResponseUnmarshaller
+    public class EndDeviceMeetingResponseUnmarshaller
     {
-        public static GetMeetingMemberResponse Unmarshall(UnmarshallerContext context)
+        public static EndDeviceMeetingResponse Unmarshall(UnmarshallerContext context)
         {
-			GetMeetingMemberResponse getMeetingMemberResponse = new GetMeetingMemberResponse();
+			EndDeviceMeetingResponse endDeviceMeetingResponse = new EndDeviceMeetingResponse();
 
-			getMeetingMemberResponse.HttpResponse = context.HttpResponse;
-			getMeetingMemberResponse.RequestId = context.StringValue("GetMeetingMember.RequestId");
-			getMeetingMemberResponse.Message = context.StringValue("GetMeetingMember.Message");
-			getMeetingMemberResponse.Success = context.BooleanValue("GetMeetingMember.Success");
-			getMeetingMemberResponse.ErrorCode = context.IntegerValue("GetMeetingMember.ErrorCode");
-			getMeetingMemberResponse.Members = context.StringValue("GetMeetingMember.Members");
+			endDeviceMeetingResponse.HttpResponse = context.HttpResponse;
+			endDeviceMeetingResponse.ErrorCode = context.IntegerValue("EndDeviceMeeting.ErrorCode");
+			endDeviceMeetingResponse.Message = context.StringValue("EndDeviceMeeting.Message");
+			endDeviceMeetingResponse.Success = context.BooleanValue("EndDeviceMeeting.Success");
+			endDeviceMeetingResponse.RequestId = context.StringValue("EndDeviceMeeting.RequestId");
         
-			return getMeetingMemberResponse;
+			return endDeviceMeetingResponse;
         }
     }
 }

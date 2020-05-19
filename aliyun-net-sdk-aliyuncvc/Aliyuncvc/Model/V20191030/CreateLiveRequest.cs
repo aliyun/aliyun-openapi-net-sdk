@@ -27,10 +27,10 @@ using Aliyun.Acs.aliyuncvc.Transform.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-    public class JoinMeetingRequest : RpcAcsRequest<JoinMeetingResponse>
+    public class CreateLiveRequest : RpcAcsRequest<CreateLiveResponse>
     {
-        public JoinMeetingRequest()
-            : base("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+        public CreateLiveRequest()
+            : base("aliyuncvc", "2019-10-30", "CreateLive", "aliyuncvc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,11 +39,28 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
             }
         }
 
+		private string memo;
+
 		private string userId;
+
+		private bool? openPasswordFlag;
 
 		private string password;
 
-		private string meetingCode;
+		private string liveName;
+
+		public string Memo
+		{
+			get
+			{
+				return memo;
+			}
+			set	
+			{
+				memo = value;
+				DictionaryUtil.Add(BodyParameters, "Memo", value);
+			}
+		}
 
 		public string UserId
 		{
@@ -55,6 +72,19 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			{
 				userId = value;
 				DictionaryUtil.Add(BodyParameters, "UserId", value);
+			}
+		}
+
+		public bool? OpenPasswordFlag
+		{
+			get
+			{
+				return openPasswordFlag;
+			}
+			set	
+			{
+				openPasswordFlag = value;
+				DictionaryUtil.Add(BodyParameters, "OpenPasswordFlag", value.ToString());
 			}
 		}
 
@@ -71,16 +101,16 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
-		public string MeetingCode
+		public string LiveName
 		{
 			get
 			{
-				return meetingCode;
+				return liveName;
 			}
 			set	
 			{
-				meetingCode = value;
-				DictionaryUtil.Add(BodyParameters, "MeetingCode", value);
+				liveName = value;
+				DictionaryUtil.Add(BodyParameters, "LiveName", value);
 			}
 		}
 
@@ -89,9 +119,9 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			return false;
 		}
 
-        public override JoinMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateLiveResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateLiveResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

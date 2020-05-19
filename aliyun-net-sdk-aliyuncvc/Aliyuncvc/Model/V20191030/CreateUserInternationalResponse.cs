@@ -22,28 +22,28 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-	public class GetMeetingMemberResponse : AcsResponse
+	public class CreateUserInternationalResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? errorCode;
 
 		private string message;
 
 		private bool? success;
 
-		private int? errorCode;
+		private string requestId;
 
-		private string members;
+		private string userId;
 
-		public string RequestId
+		public int? ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
 			}
 		}
 
@@ -71,27 +71,27 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
-		public int? ErrorCode
+		public string RequestId
 		{
 			get
 			{
-				return errorCode;
+				return requestId;
 			}
 			set	
 			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
-		public string Members
+		public string UserId
 		{
 			get
 			{
-				return members;
+				return userId;
 			}
 			set	
 			{
-				members = value;
+				userId = value;
 			}
 		}
 	}

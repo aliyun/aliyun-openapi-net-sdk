@@ -22,28 +22,28 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-	public class GetMeetingMemberResponse : AcsResponse
+	public class ListDeviceIpResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? errorCode;
 
 		private string message;
 
 		private bool? success;
 
-		private int? errorCode;
+		private string requestId;
 
-		private string members;
+		private List<ListDeviceIp_DevicesItem> devices;
 
-		public string RequestId
+		public int? ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
 			}
 		}
 
@@ -71,27 +71,87 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
-		public int? ErrorCode
+		public string RequestId
 		{
 			get
 			{
-				return errorCode;
+				return requestId;
 			}
 			set	
 			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
-		public string Members
+		public List<ListDeviceIp_DevicesItem> Devices
 		{
 			get
 			{
-				return members;
+				return devices;
 			}
 			set	
 			{
-				members = value;
+				devices = value;
+			}
+		}
+
+		public class ListDeviceIp_DevicesItem
+		{
+
+			private string screenCode;
+
+			private string ip;
+
+			private string mac;
+
+			private string ssId;
+
+			public string ScreenCode
+			{
+				get
+				{
+					return screenCode;
+				}
+				set	
+				{
+					screenCode = value;
+				}
+			}
+
+			public string Ip
+			{
+				get
+				{
+					return ip;
+				}
+				set	
+				{
+					ip = value;
+				}
+			}
+
+			public string Mac
+			{
+				get
+				{
+					return mac;
+				}
+				set	
+				{
+					mac = value;
+				}
+			}
+
+			public string SsId
+			{
+				get
+				{
+					return ssId;
+				}
+				set	
+				{
+					ssId = value;
+				}
 			}
 		}
 	}

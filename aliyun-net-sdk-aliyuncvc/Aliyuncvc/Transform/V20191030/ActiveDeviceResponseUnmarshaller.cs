@@ -24,20 +24,20 @@ using Aliyun.Acs.aliyuncvc.Model.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
-    public class GetMeetingMemberResponseUnmarshaller
+    public class ActiveDeviceResponseUnmarshaller
     {
-        public static GetMeetingMemberResponse Unmarshall(UnmarshallerContext context)
+        public static ActiveDeviceResponse Unmarshall(UnmarshallerContext context)
         {
-			GetMeetingMemberResponse getMeetingMemberResponse = new GetMeetingMemberResponse();
+			ActiveDeviceResponse activeDeviceResponse = new ActiveDeviceResponse();
 
-			getMeetingMemberResponse.HttpResponse = context.HttpResponse;
-			getMeetingMemberResponse.RequestId = context.StringValue("GetMeetingMember.RequestId");
-			getMeetingMemberResponse.Message = context.StringValue("GetMeetingMember.Message");
-			getMeetingMemberResponse.Success = context.BooleanValue("GetMeetingMember.Success");
-			getMeetingMemberResponse.ErrorCode = context.IntegerValue("GetMeetingMember.ErrorCode");
-			getMeetingMemberResponse.Members = context.StringValue("GetMeetingMember.Members");
+			activeDeviceResponse.HttpResponse = context.HttpResponse;
+			activeDeviceResponse.ErrorCode = context.IntegerValue("ActiveDevice.ErrorCode");
+			activeDeviceResponse.Message = context.StringValue("ActiveDevice.Message");
+			activeDeviceResponse.Success = context.BooleanValue("ActiveDevice.Success");
+			activeDeviceResponse.RequestId = context.StringValue("ActiveDevice.RequestId");
+			activeDeviceResponse.Token = context.StringValue("ActiveDevice.Token");
         
-			return getMeetingMemberResponse;
+			return activeDeviceResponse;
         }
     }
 }

@@ -24,20 +24,19 @@ using Aliyun.Acs.aliyuncvc.Model.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
-    public class GetMeetingMemberResponseUnmarshaller
+    public class DeleteLiveResponseUnmarshaller
     {
-        public static GetMeetingMemberResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteLiveResponse Unmarshall(UnmarshallerContext context)
         {
-			GetMeetingMemberResponse getMeetingMemberResponse = new GetMeetingMemberResponse();
+			DeleteLiveResponse deleteLiveResponse = new DeleteLiveResponse();
 
-			getMeetingMemberResponse.HttpResponse = context.HttpResponse;
-			getMeetingMemberResponse.RequestId = context.StringValue("GetMeetingMember.RequestId");
-			getMeetingMemberResponse.Message = context.StringValue("GetMeetingMember.Message");
-			getMeetingMemberResponse.Success = context.BooleanValue("GetMeetingMember.Success");
-			getMeetingMemberResponse.ErrorCode = context.IntegerValue("GetMeetingMember.ErrorCode");
-			getMeetingMemberResponse.Members = context.StringValue("GetMeetingMember.Members");
+			deleteLiveResponse.HttpResponse = context.HttpResponse;
+			deleteLiveResponse.ErrorCode = context.IntegerValue("DeleteLive.ErrorCode");
+			deleteLiveResponse.Message = context.StringValue("DeleteLive.Message");
+			deleteLiveResponse.Success = context.BooleanValue("DeleteLive.Success");
+			deleteLiveResponse.RequestId = context.StringValue("DeleteLive.RequestId");
         
-			return getMeetingMemberResponse;
+			return deleteLiveResponse;
         }
     }
 }

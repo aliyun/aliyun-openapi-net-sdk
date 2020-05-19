@@ -22,28 +22,28 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-	public class GetMeetingMemberResponse : AcsResponse
+	public class UpdateDeviceHeartBeatResponse : AcsResponse
 	{
 
-		private string requestId;
+		private int? errorCode;
 
 		private string message;
 
 		private bool? success;
 
-		private int? errorCode;
+		private string requestId;
 
-		private string members;
+		private UpdateDeviceHeartBeat_DeviceInfo deviceInfo;
 
-		public string RequestId
+		public int? ErrorCode
 		{
 			get
 			{
-				return requestId;
+				return errorCode;
 			}
 			set	
 			{
-				requestId = value;
+				errorCode = value;
 			}
 		}
 
@@ -71,27 +71,45 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
-		public int? ErrorCode
+		public string RequestId
 		{
 			get
 			{
-				return errorCode;
+				return requestId;
 			}
 			set	
 			{
-				errorCode = value;
+				requestId = value;
 			}
 		}
 
-		public string Members
+		public UpdateDeviceHeartBeat_DeviceInfo DeviceInfo
 		{
 			get
 			{
-				return members;
+				return deviceInfo;
 			}
 			set	
 			{
-				members = value;
+				deviceInfo = value;
+			}
+		}
+
+		public class UpdateDeviceHeartBeat_DeviceInfo
+		{
+
+			private string channelType;
+
+			public string ChannelType
+			{
+				get
+				{
+					return channelType;
+				}
+				set	
+				{
+					channelType = value;
+				}
 			}
 		}
 	}

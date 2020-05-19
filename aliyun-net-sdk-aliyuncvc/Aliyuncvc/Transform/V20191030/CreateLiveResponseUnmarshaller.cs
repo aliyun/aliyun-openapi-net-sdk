@@ -24,20 +24,24 @@ using Aliyun.Acs.aliyuncvc.Model.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
-    public class GetMeetingMemberResponseUnmarshaller
+    public class CreateLiveResponseUnmarshaller
     {
-        public static GetMeetingMemberResponse Unmarshall(UnmarshallerContext context)
+        public static CreateLiveResponse Unmarshall(UnmarshallerContext context)
         {
-			GetMeetingMemberResponse getMeetingMemberResponse = new GetMeetingMemberResponse();
+			CreateLiveResponse createLiveResponse = new CreateLiveResponse();
 
-			getMeetingMemberResponse.HttpResponse = context.HttpResponse;
-			getMeetingMemberResponse.RequestId = context.StringValue("GetMeetingMember.RequestId");
-			getMeetingMemberResponse.Message = context.StringValue("GetMeetingMember.Message");
-			getMeetingMemberResponse.Success = context.BooleanValue("GetMeetingMember.Success");
-			getMeetingMemberResponse.ErrorCode = context.IntegerValue("GetMeetingMember.ErrorCode");
-			getMeetingMemberResponse.Members = context.StringValue("GetMeetingMember.Members");
+			createLiveResponse.HttpResponse = context.HttpResponse;
+			createLiveResponse.ErrorCode = context.IntegerValue("CreateLive.ErrorCode");
+			createLiveResponse.Message = context.StringValue("CreateLive.Message");
+			createLiveResponse.Success = context.BooleanValue("CreateLive.Success");
+			createLiveResponse.RequestId = context.StringValue("CreateLive.RequestId");
+
+			CreateLiveResponse.CreateLive_LiveInfo liveInfo = new CreateLiveResponse.CreateLive_LiveInfo();
+			liveInfo.LiveUUID = context.StringValue("CreateLive.LiveInfo.LiveUUID");
+			liveInfo.StreamUUID = context.StringValue("CreateLive.LiveInfo.StreamUUID");
+			createLiveResponse.LiveInfo = liveInfo;
         
-			return getMeetingMemberResponse;
+			return createLiveResponse;
         }
     }
 }

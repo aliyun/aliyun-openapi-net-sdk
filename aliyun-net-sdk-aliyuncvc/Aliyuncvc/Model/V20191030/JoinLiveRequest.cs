@@ -27,10 +27,10 @@ using Aliyun.Acs.aliyuncvc.Transform.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-    public class JoinMeetingRequest : RpcAcsRequest<JoinMeetingResponse>
+    public class JoinLiveRequest : RpcAcsRequest<JoinLiveResponse>
     {
-        public JoinMeetingRequest()
-            : base("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+        public JoinLiveRequest()
+            : base("aliyuncvc", "2019-10-30", "JoinLive", "aliyuncvc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,11 +39,24 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
             }
         }
 
+		private string liveUUID;
+
 		private string userId;
 
 		private string password;
 
-		private string meetingCode;
+		public string LiveUUID
+		{
+			get
+			{
+				return liveUUID;
+			}
+			set	
+			{
+				liveUUID = value;
+				DictionaryUtil.Add(BodyParameters, "LiveUUID", value);
+			}
+		}
 
 		public string UserId
 		{
@@ -71,27 +84,14 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
-		public string MeetingCode
-		{
-			get
-			{
-				return meetingCode;
-			}
-			set	
-			{
-				meetingCode = value;
-				DictionaryUtil.Add(BodyParameters, "MeetingCode", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override JoinMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override JoinLiveResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return JoinLiveResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

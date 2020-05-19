@@ -27,10 +27,10 @@ using Aliyun.Acs.aliyuncvc.Transform.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-    public class JoinMeetingRequest : RpcAcsRequest<JoinMeetingResponse>
+    public class DeleteDeviceRequest : RpcAcsRequest<DeleteDeviceResponse>
     {
-        public JoinMeetingRequest()
-            : base("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+        public DeleteDeviceRequest()
+            : base("aliyuncvc", "2019-10-30", "DeleteDevice", "aliyuncvc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,48 +39,33 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
             }
         }
 
-		private string userId;
+		private string groupId;
 
-		private string password;
+		private string sN;
 
-		private string meetingCode;
-
-		public string UserId
+		public string GroupId
 		{
 			get
 			{
-				return userId;
+				return groupId;
 			}
 			set	
 			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
+				groupId = value;
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
 			}
 		}
 
-		public string Password
+		public string SN
 		{
 			get
 			{
-				return password;
+				return sN;
 			}
 			set	
 			{
-				password = value;
-				DictionaryUtil.Add(BodyParameters, "Password", value);
-			}
-		}
-
-		public string MeetingCode
-		{
-			get
-			{
-				return meetingCode;
-			}
-			set	
-			{
-				meetingCode = value;
-				DictionaryUtil.Add(BodyParameters, "MeetingCode", value);
+				sN = value;
+				DictionaryUtil.Add(BodyParameters, "SN", value);
 			}
 		}
 
@@ -89,9 +74,9 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			return false;
 		}
 
-        public override JoinMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.aliyuncvc.Transform.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-    public class JoinMeetingRequest : RpcAcsRequest<JoinMeetingResponse>
+    public class CreateMeetingInternationalRequest : RpcAcsRequest<CreateMeetingInternationalResponse>
     {
-        public JoinMeetingRequest()
-            : base("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+        public CreateMeetingInternationalRequest()
+            : base("aliyuncvc", "2019-10-30", "CreateMeetingInternational", "aliyuncvc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,11 +39,26 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
             }
         }
 
+		private string meetingName;
+
 		private string userId;
+
+		private string openPasswordFlag;
 
 		private string password;
 
-		private string meetingCode;
+		public string MeetingName
+		{
+			get
+			{
+				return meetingName;
+			}
+			set	
+			{
+				meetingName = value;
+				DictionaryUtil.Add(BodyParameters, "MeetingName", value);
+			}
+		}
 
 		public string UserId
 		{
@@ -55,6 +70,19 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			{
 				userId = value;
 				DictionaryUtil.Add(BodyParameters, "UserId", value);
+			}
+		}
+
+		public string OpenPasswordFlag
+		{
+			get
+			{
+				return openPasswordFlag;
+			}
+			set	
+			{
+				openPasswordFlag = value;
+				DictionaryUtil.Add(BodyParameters, "OpenPasswordFlag", value);
 			}
 		}
 
@@ -71,27 +99,14 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
-		public string MeetingCode
-		{
-			get
-			{
-				return meetingCode;
-			}
-			set	
-			{
-				meetingCode = value;
-				DictionaryUtil.Add(BodyParameters, "MeetingCode", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override JoinMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateMeetingInternationalResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateMeetingInternationalResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

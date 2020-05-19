@@ -27,10 +27,10 @@ using Aliyun.Acs.aliyuncvc.Transform.V20191030;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-    public class JoinMeetingRequest : RpcAcsRequest<JoinMeetingResponse>
+    public class ModifyMeetingPasswordInternationalRequest : RpcAcsRequest<ModifyMeetingPasswordInternationalResponse>
     {
-        public JoinMeetingRequest()
-            : base("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+        public ModifyMeetingPasswordInternationalRequest()
+            : base("aliyuncvc", "2019-10-30", "ModifyMeetingPasswordInternational", "aliyuncvc", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,9 +41,11 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 
 		private string userId;
 
-		private string password;
+		private bool? openPasswordFlag;
 
-		private string meetingCode;
+		private string meetingUUID;
+
+		private string password;
 
 		public string UserId
 		{
@@ -55,6 +57,32 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			{
 				userId = value;
 				DictionaryUtil.Add(BodyParameters, "UserId", value);
+			}
+		}
+
+		public bool? OpenPasswordFlag
+		{
+			get
+			{
+				return openPasswordFlag;
+			}
+			set	
+			{
+				openPasswordFlag = value;
+				DictionaryUtil.Add(BodyParameters, "OpenPasswordFlag", value.ToString());
+			}
+		}
+
+		public string MeetingUUID
+		{
+			get
+			{
+				return meetingUUID;
+			}
+			set	
+			{
+				meetingUUID = value;
+				DictionaryUtil.Add(BodyParameters, "MeetingUUID", value);
 			}
 		}
 
@@ -71,27 +99,14 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
-		public string MeetingCode
-		{
-			get
-			{
-				return meetingCode;
-			}
-			set	
-			{
-				meetingCode = value;
-				DictionaryUtil.Add(BodyParameters, "MeetingCode", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override JoinMeetingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyMeetingPasswordInternationalResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return JoinMeetingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyMeetingPasswordInternationalResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 {
-	public class GetMeetingResponse : AcsResponse
+	public class JoinDeviceMeetingResponse : AcsResponse
 	{
 
 		private int? errorCode;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 
 		private string requestId;
 
-		private GetMeeting_MeetingInfo meetingInfo;
+		private JoinDeviceMeeting_Device device;
 
 		public int? ErrorCode
 		{
@@ -83,58 +83,58 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			}
 		}
 
-		public GetMeeting_MeetingInfo MeetingInfo
+		public JoinDeviceMeeting_Device Device
 		{
 			get
 			{
-				return meetingInfo;
+				return device;
 			}
 			set	
 			{
-				meetingInfo = value;
+				device = value;
 			}
 		}
 
-		public class GetMeeting_MeetingInfo
+		public class JoinDeviceMeeting_Device
 		{
 
-			private string meetingName;
+			private string meetingDomain;
 
-			private long? validTime;
+			private string meetingToken;
 
 			private string meetingCode;
 
-			private long? createTime;
+			private string memberUUID;
 
-			private string userId;
+			private string clientAppId;
 
 			private string meetingUUID;
 
-			private string password;
+			private string meetingAppId;
 
-			private List<GetMeeting_MemberListItem> memberList;
+			private JoinDeviceMeeting_SlsInfo slsInfo;
 
-			public string MeetingName
+			public string MeetingDomain
 			{
 				get
 				{
-					return meetingName;
+					return meetingDomain;
 				}
 				set	
 				{
-					meetingName = value;
+					meetingDomain = value;
 				}
 			}
 
-			public long? ValidTime
+			public string MeetingToken
 			{
 				get
 				{
-					return validTime;
+					return meetingToken;
 				}
 				set	
 				{
-					validTime = value;
+					meetingToken = value;
 				}
 			}
 
@@ -150,27 +150,27 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 				}
 			}
 
-			public long? CreateTime
+			public string MemberUUID
 			{
 				get
 				{
-					return createTime;
+					return memberUUID;
 				}
 				set	
 				{
-					createTime = value;
+					memberUUID = value;
 				}
 			}
 
-			public string UserId
+			public string ClientAppId
 			{
 				get
 				{
-					return userId;
+					return clientAppId;
 				}
 				set	
 				{
-					userId = value;
+					clientAppId = value;
 				}
 			}
 
@@ -186,100 +186,72 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 				}
 			}
 
-			public string Password
+			public string MeetingAppId
 			{
 				get
 				{
-					return password;
+					return meetingAppId;
 				}
 				set	
 				{
-					password = value;
+					meetingAppId = value;
 				}
 			}
 
-			public List<GetMeeting_MemberListItem> MemberList
+			public JoinDeviceMeeting_SlsInfo SlsInfo
 			{
 				get
 				{
-					return memberList;
+					return slsInfo;
 				}
 				set	
 				{
-					memberList = value;
+					slsInfo = value;
 				}
 			}
 
-			public class GetMeeting_MemberListItem
+			public class JoinDeviceMeeting_SlsInfo
 			{
 
-				private string userAvatarUrl;
+				private string logServiceEndpoint;
 
-				private string memberUUID;
+				private string project;
 
-				private string userName;
+				private string logstore;
 
-				private string userId;
-
-				private string status;
-
-				public string UserAvatarUrl
+				public string LogServiceEndpoint
 				{
 					get
 					{
-						return userAvatarUrl;
+						return logServiceEndpoint;
 					}
 					set	
 					{
-						userAvatarUrl = value;
+						logServiceEndpoint = value;
 					}
 				}
 
-				public string MemberUUID
+				public string Project
 				{
 					get
 					{
-						return memberUUID;
+						return project;
 					}
 					set	
 					{
-						memberUUID = value;
+						project = value;
 					}
 				}
 
-				public string UserName
+				public string Logstore
 				{
 					get
 					{
-						return userName;
+						return logstore;
 					}
 					set	
 					{
-						userName = value;
-					}
-				}
-
-				public string UserId
-				{
-					get
-					{
-						return userId;
-					}
-					set	
-					{
-						userId = value;
-					}
-				}
-
-				public string Status
-				{
-					get
-					{
-						return status;
-					}
-					set	
-					{
-						status = value;
+						logstore = value;
 					}
 				}
 			}

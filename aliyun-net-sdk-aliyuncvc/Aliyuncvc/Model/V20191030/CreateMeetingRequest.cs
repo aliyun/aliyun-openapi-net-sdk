@@ -43,6 +43,14 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 
 		private string userId;
 
+		private bool? openPasswordFlag;
+
+		private string password;
+
+		private bool? masterEnableFlag;
+
+		private string meetingMode;
+
 		public string MeetingName
 		{
 			get
@@ -66,6 +74,58 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			{
 				userId = value;
 				DictionaryUtil.Add(BodyParameters, "UserId", value);
+			}
+		}
+
+		public bool? OpenPasswordFlag
+		{
+			get
+			{
+				return openPasswordFlag;
+			}
+			set	
+			{
+				openPasswordFlag = value;
+				DictionaryUtil.Add(BodyParameters, "OpenPasswordFlag", value.ToString());
+			}
+		}
+
+		public string Password
+		{
+			get
+			{
+				return password;
+			}
+			set	
+			{
+				password = value;
+				DictionaryUtil.Add(BodyParameters, "Password", value);
+			}
+		}
+
+		public bool? MasterEnableFlag
+		{
+			get
+			{
+				return masterEnableFlag;
+			}
+			set	
+			{
+				masterEnableFlag = value;
+				DictionaryUtil.Add(BodyParameters, "MasterEnableFlag", value.ToString());
+			}
+		}
+
+		public string MeetingMode
+		{
+			get
+			{
+				return meetingMode;
+			}
+			set	
+			{
+				meetingMode = value;
+				DictionaryUtil.Add(BodyParameters, "MeetingMode", value);
 			}
 		}
 
