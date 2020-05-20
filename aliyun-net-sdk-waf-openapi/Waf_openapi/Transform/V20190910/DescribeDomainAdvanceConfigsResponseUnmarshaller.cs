@@ -50,7 +50,7 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 				profile.Http2Port = context.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Http2Port");
 				profile.Rs = context.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Rs");
 				profile.ClusterType = context.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ClusterType");
-				profile.GSLBStatus = context.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.GSLBStatus");
+				profile.GSLBStatus = context.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.GSLBStatus");
 				domainConfig.Profile = profile;
 
 				describeDomainAdvanceConfigsResponse_domainConfigs.Add(domainConfig);

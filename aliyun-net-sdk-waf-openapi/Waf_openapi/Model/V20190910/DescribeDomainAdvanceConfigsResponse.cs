@@ -109,7 +109,7 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 				private int? clusterType;
 
-				private int? gSLBStatus;
+				private string gSLBStatus;
 
 				public string Cname
 				{
@@ -243,7 +243,7 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 					}
 				}
 
-				public int? GSLBStatus
+				public string GSLBStatus
 				{
 					get
 					{
