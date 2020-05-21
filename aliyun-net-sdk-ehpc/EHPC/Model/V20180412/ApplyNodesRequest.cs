@@ -60,7 +60,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string hostNamePrefix;
 
-		private string computeSpotPriceLimit;
+		private float? computeSpotPriceLimit;
 
 		private string clusterId;
 
@@ -71,8 +71,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string priorityStrategy;
 
 		private string instanceFamilyLevel;
-
-		private string ecsChargeType;
 
 		private string internetChargeType;
 
@@ -219,7 +217,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string ComputeSpotPriceLimit
+		public float? ComputeSpotPriceLimit
 		{
 			get
 			{
@@ -228,7 +226,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			set	
 			{
 				computeSpotPriceLimit = value;
-				DictionaryUtil.Add(QueryParameters, "ComputeSpotPriceLimit", value);
+				DictionaryUtil.Add(QueryParameters, "ComputeSpotPriceLimit", value.ToString());
 			}
 		}
 
@@ -294,19 +292,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				instanceFamilyLevel = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceFamilyLevel", value);
-			}
-		}
-
-		public string EcsChargeType
-		{
-			get
-			{
-				return ecsChargeType;
-			}
-			set	
-			{
-				ecsChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "EcsChargeType", value);
 			}
 		}
 

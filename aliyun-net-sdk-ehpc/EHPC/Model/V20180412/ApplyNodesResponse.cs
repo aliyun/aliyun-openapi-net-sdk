@@ -29,6 +29,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string detail;
 
+		private int? satisfiedAmount;
+
 		private List<string> instanceIds;
 
 		public string RequestId
@@ -52,6 +54,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			set	
 			{
 				detail = value;
+			}
+		}
+
+		public int? SatisfiedAmount
+		{
+			get
+			{
+				return satisfiedAmount;
+			}
+			set	
+			{
+				satisfiedAmount = value;
 			}
 		}
 
