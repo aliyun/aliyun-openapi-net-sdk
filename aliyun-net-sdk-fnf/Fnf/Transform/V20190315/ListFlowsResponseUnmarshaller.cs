@@ -45,6 +45,7 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 				flowsItem.RoleArn = context.StringValue("ListFlows.Flows["+ i +"].RoleArn");
 				flowsItem.CreatedTime = context.StringValue("ListFlows.Flows["+ i +"].CreatedTime");
 				flowsItem.LastModifiedTime = context.StringValue("ListFlows.Flows["+ i +"].LastModifiedTime");
+				flowsItem.ExternalStorageLocation = context.StringValue("ListFlows.Flows["+ i +"].ExternalStorageLocation");
 
 				listFlowsResponse_flows.Add(flowsItem);
 			}

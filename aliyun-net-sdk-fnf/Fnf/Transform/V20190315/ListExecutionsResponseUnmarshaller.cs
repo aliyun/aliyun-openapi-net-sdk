@@ -45,6 +45,8 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 				executionsItem.Status = context.StringValue("ListExecutions.Executions["+ i +"].Status");
 				executionsItem.StartedTime = context.StringValue("ListExecutions.Executions["+ i +"].StartedTime");
 				executionsItem.StoppedTime = context.StringValue("ListExecutions.Executions["+ i +"].StoppedTime");
+				executionsItem.ExternalInputUri = context.StringValue("ListExecutions.Executions["+ i +"].ExternalInputUri");
+				executionsItem.ExternalOutputUri = context.StringValue("ListExecutions.Executions["+ i +"].ExternalOutputUri");
 
 				listExecutionsResponse_executions.Add(executionsItem);
 			}

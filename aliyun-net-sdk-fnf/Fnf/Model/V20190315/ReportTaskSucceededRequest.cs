@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.fnf;
 using Aliyun.Acs.fnf.Transform;
 using Aliyun.Acs.fnf.Transform.V20190315;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.fnf.Model.V20190315
     public class ReportTaskSucceededRequest : RpcAcsRequest<ReportTaskSucceededResponse>
     {
         public ReportTaskSucceededRequest()
-            : base("fnf", "2019-03-15", "ReportTaskSucceeded", "fnf", "openAPI")
+            : base("fnf", "2019-03-15", "ReportTaskSucceeded")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

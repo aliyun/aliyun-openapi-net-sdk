@@ -43,6 +43,8 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string lastModifiedTime;
 
+		private string externalStorageLocation;
+
 		public string RequestId
 		{
 			get
@@ -148,6 +150,18 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				lastModifiedTime = value;
+			}
+		}
+
+		public string ExternalStorageLocation
+		{
+			get
+			{
+				return externalStorageLocation;
+			}
+			set	
+			{
+				externalStorageLocation = value;
 			}
 		}
 	}

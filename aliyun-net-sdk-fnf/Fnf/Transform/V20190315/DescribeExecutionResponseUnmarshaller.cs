@@ -40,6 +40,8 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 			describeExecutionResponse.Status = context.StringValue("DescribeExecution.Status");
 			describeExecutionResponse.StartedTime = context.StringValue("DescribeExecution.StartedTime");
 			describeExecutionResponse.StoppedTime = context.StringValue("DescribeExecution.StoppedTime");
+			describeExecutionResponse.ExternalInputUri = context.StringValue("DescribeExecution.ExternalInputUri");
+			describeExecutionResponse.ExternalOutputUri = context.StringValue("DescribeExecution.ExternalOutputUri");
         
 			return describeExecutionResponse;
         }

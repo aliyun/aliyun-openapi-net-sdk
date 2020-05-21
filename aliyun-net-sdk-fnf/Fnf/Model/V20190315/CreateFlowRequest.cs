@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.fnf;
 using Aliyun.Acs.fnf.Transform;
 using Aliyun.Acs.fnf.Transform.V20190315;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.fnf.Model.V20190315
     public class CreateFlowRequest : RpcAcsRequest<CreateFlowResponse>
     {
         public CreateFlowRequest()
-            : base("fnf", "2019-03-15", "CreateFlow", "fnf", "openAPI")
+            : base("fnf", "2019-03-15", "CreateFlow")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,6 +52,8 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 		private string name;
 
 		private string definition;
+
+		private string externalStorageLocation;
 
 		public string Description
 		{
@@ -127,6 +130,19 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				definition = value;
 				DictionaryUtil.Add(BodyParameters, "Definition", value);
+			}
+		}
+
+		public string ExternalStorageLocation
+		{
+			get
+			{
+				return externalStorageLocation;
+			}
+			set	
+			{
+				externalStorageLocation = value;
+				DictionaryUtil.Add(BodyParameters, "ExternalStorageLocation", value);
 			}
 		}
 

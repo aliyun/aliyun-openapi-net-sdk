@@ -40,6 +40,7 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 			createFlowResponse.RoleArn = context.StringValue("CreateFlow.RoleArn");
 			createFlowResponse.CreatedTime = context.StringValue("CreateFlow.CreatedTime");
 			createFlowResponse.LastModifiedTime = context.StringValue("CreateFlow.LastModifiedTime");
+			createFlowResponse.ExternalStorageLocation = context.StringValue("CreateFlow.ExternalStorageLocation");
         
 			return createFlowResponse;
         }

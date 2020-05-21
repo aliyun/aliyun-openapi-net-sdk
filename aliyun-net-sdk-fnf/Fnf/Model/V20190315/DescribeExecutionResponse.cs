@@ -43,6 +43,10 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string stoppedTime;
 
+		private string externalInputUri;
+
+		private string externalOutputUri;
+
 		public string RequestId
 		{
 			get
@@ -148,6 +152,30 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			set	
 			{
 				stoppedTime = value;
+			}
+		}
+
+		public string ExternalInputUri
+		{
+			get
+			{
+				return externalInputUri;
+			}
+			set	
+			{
+				externalInputUri = value;
+			}
+		}
+
+		public string ExternalOutputUri
+		{
+			get
+			{
+				return externalOutputUri;
+			}
+			set	
+			{
+				externalOutputUri = value;
 			}
 		}
 	}
