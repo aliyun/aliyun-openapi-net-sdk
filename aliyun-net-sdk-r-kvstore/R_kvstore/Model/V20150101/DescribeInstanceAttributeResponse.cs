@@ -134,6 +134,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private bool? instanceReleaseProtection;
 
+			private string resourceGroupId;
+
 			private List<DescribeInstanceAttribute_Tag> tags;
 
 			public string InstanceId
@@ -601,6 +603,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					instanceReleaseProtection = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 
