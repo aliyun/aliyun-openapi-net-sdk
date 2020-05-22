@@ -40,6 +40,17 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 			getProduceOrderByTagResponse.CaseCode = context.StringValue("GetProduceOrderByTag.CaseCode");
 			getProduceOrderByTagResponse.Tag = context.StringValue("GetProduceOrderByTag.Tag");
 			getProduceOrderByTagResponse.Barcode = context.StringValue("GetProduceOrderByTag.Barcode");
+			getProduceOrderByTagResponse.SKUId = context.StringValue("GetProduceOrderByTag.SKUId");
+			getProduceOrderByTagResponse.ProductId = context.StringValue("GetProduceOrderByTag.ProductId");
+			getProduceOrderByTagResponse.ProductCode = context.StringValue("GetProduceOrderByTag.ProductCode");
+			getProduceOrderByTagResponse.ProductName = context.StringValue("GetProduceOrderByTag.ProductName");
+			getProduceOrderByTagResponse.ProductColorCode = context.StringValue("GetProduceOrderByTag.ProductColorCode");
+			getProduceOrderByTagResponse.ProductColorId = context.StringValue("GetProduceOrderByTag.ProductColorId");
+			getProduceOrderByTagResponse.ProductColorName = context.StringValue("GetProduceOrderByTag.ProductColorName");
+			getProduceOrderByTagResponse.ProductSizeCode = context.StringValue("GetProduceOrderByTag.ProductSizeCode");
+			getProduceOrderByTagResponse.ProductSizeId = context.StringValue("GetProduceOrderByTag.ProductSizeId");
+			getProduceOrderByTagResponse.ProductSizeName = context.StringValue("GetProduceOrderByTag.ProductSizeName");
+			getProduceOrderByTagResponse.SKUName = context.StringValue("GetProduceOrderByTag.SKUName");
         
 			return getProduceOrderByTagResponse;
         }

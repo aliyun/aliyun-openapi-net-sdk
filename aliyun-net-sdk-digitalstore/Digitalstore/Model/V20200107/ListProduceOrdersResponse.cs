@@ -168,6 +168,10 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private string scanType;
 
+			private int? applyOrderQuantity;
+
+			private int? applyCaseQuantity;
+
 			public string OrderId
 			{
 				get
@@ -501,6 +505,30 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				set	
 				{
 					scanType = value;
+				}
+			}
+
+			public int? ApplyOrderQuantity
+			{
+				get
+				{
+					return applyOrderQuantity;
+				}
+				set	
+				{
+					applyOrderQuantity = value;
+				}
+			}
+
+			public int? ApplyCaseQuantity
+			{
+				get
+				{
+					return applyCaseQuantity;
+				}
+				set	
+				{
+					applyCaseQuantity = value;
 				}
 			}
 		}

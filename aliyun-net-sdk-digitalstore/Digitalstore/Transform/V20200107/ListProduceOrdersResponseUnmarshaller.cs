@@ -68,6 +68,8 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 				produceOrderModel.SourceOrderType = context.StringValue("ListProduceOrders.Orders["+ i +"].SourceOrderType");
 				produceOrderModel.Status = context.StringValue("ListProduceOrders.Orders["+ i +"].Status");
 				produceOrderModel.ScanType = context.StringValue("ListProduceOrders.Orders["+ i +"].ScanType");
+				produceOrderModel.ApplyOrderQuantity = context.IntegerValue("ListProduceOrders.Orders["+ i +"].ApplyOrderQuantity");
+				produceOrderModel.ApplyCaseQuantity = context.IntegerValue("ListProduceOrders.Orders["+ i +"].ApplyCaseQuantity");
 
 				listProduceOrdersResponse_orders.Add(produceOrderModel);
 			}

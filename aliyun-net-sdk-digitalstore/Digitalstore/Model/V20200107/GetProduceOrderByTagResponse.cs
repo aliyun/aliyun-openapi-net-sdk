@@ -43,6 +43,28 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 		private string barcode;
 
+		private string sKUId;
+
+		private string productId;
+
+		private string productCode;
+
+		private string productName;
+
+		private string productColorCode;
+
+		private string productColorId;
+
+		private string productColorName;
+
+		private string productSizeCode;
+
+		private string productSizeId;
+
+		private string productSizeName;
+
+		private string sKUName;
+
 		public string RequestId
 		{
 			get
@@ -148,6 +170,138 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			set	
 			{
 				barcode = value;
+			}
+		}
+
+		public string SKUId
+		{
+			get
+			{
+				return sKUId;
+			}
+			set	
+			{
+				sKUId = value;
+			}
+		}
+
+		public string ProductId
+		{
+			get
+			{
+				return productId;
+			}
+			set	
+			{
+				productId = value;
+			}
+		}
+
+		public string ProductCode
+		{
+			get
+			{
+				return productCode;
+			}
+			set	
+			{
+				productCode = value;
+			}
+		}
+
+		public string ProductName
+		{
+			get
+			{
+				return productName;
+			}
+			set	
+			{
+				productName = value;
+			}
+		}
+
+		public string ProductColorCode
+		{
+			get
+			{
+				return productColorCode;
+			}
+			set	
+			{
+				productColorCode = value;
+			}
+		}
+
+		public string ProductColorId
+		{
+			get
+			{
+				return productColorId;
+			}
+			set	
+			{
+				productColorId = value;
+			}
+		}
+
+		public string ProductColorName
+		{
+			get
+			{
+				return productColorName;
+			}
+			set	
+			{
+				productColorName = value;
+			}
+		}
+
+		public string ProductSizeCode
+		{
+			get
+			{
+				return productSizeCode;
+			}
+			set	
+			{
+				productSizeCode = value;
+			}
+		}
+
+		public string ProductSizeId
+		{
+			get
+			{
+				return productSizeId;
+			}
+			set	
+			{
+				productSizeId = value;
+			}
+		}
+
+		public string ProductSizeName
+		{
+			get
+			{
+				return productSizeName;
+			}
+			set	
+			{
+				productSizeName = value;
+			}
+		}
+
+		public string SKUName
+		{
+			get
+			{
+				return sKUName;
+			}
+			set	
+			{
+				sKUName = value;
 			}
 		}
 	}
