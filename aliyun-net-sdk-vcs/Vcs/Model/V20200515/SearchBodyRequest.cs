@@ -27,10 +27,10 @@ using Aliyun.Acs.Vcs.Transform.V20200515;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-    public class UpdateDeviceRequest : RpcAcsRequest<UpdateDeviceResponse>
+    public class SearchBodyRequest : RpcAcsRequest<SearchBodyResponse>
     {
-        public UpdateDeviceRequest()
-            : base("Vcs", "2020-05-15", "UpdateDevice", "vcs", "openAPI")
+        public SearchBodyRequest()
+            : base("Vcs", "2020-05-15", "SearchBody", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,38 +40,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
-		private string deviceSite;
-
 		private string corpId;
 
 		private string gbId;
 
-		private string bitRate;
+		private long? startTimeStamp;
 
-		private string deviceDirection;
+		private long? endTimeStamp;
 
-		private string deviceAddress;
+		private int? pageNo;
 
-		private string deviceType;
+		private int? pageSize;
 
-		private string deviceResolution;
-
-		private string vendor;
-
-		private string deviceName;
-
-		public string DeviceSite
-		{
-			get
-			{
-				return deviceSite;
-			}
-			set	
-			{
-				deviceSite = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceSite", value);
-			}
-		}
+		private string optionList;
 
 		public string CorpId
 		{
@@ -99,94 +80,68 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string BitRate
+		public long? StartTimeStamp
 		{
 			get
 			{
-				return bitRate;
+				return startTimeStamp;
 			}
 			set	
 			{
-				bitRate = value;
-				DictionaryUtil.Add(BodyParameters, "BitRate", value);
+				startTimeStamp = value;
+				DictionaryUtil.Add(BodyParameters, "StartTimeStamp", value.ToString());
 			}
 		}
 
-		public string DeviceDirection
+		public long? EndTimeStamp
 		{
 			get
 			{
-				return deviceDirection;
+				return endTimeStamp;
 			}
 			set	
 			{
-				deviceDirection = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceDirection", value);
+				endTimeStamp = value;
+				DictionaryUtil.Add(BodyParameters, "EndTimeStamp", value.ToString());
 			}
 		}
 
-		public string DeviceAddress
+		public int? PageNo
 		{
 			get
 			{
-				return deviceAddress;
+				return pageNo;
 			}
 			set	
 			{
-				deviceAddress = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceAddress", value);
+				pageNo = value;
+				DictionaryUtil.Add(BodyParameters, "PageNo", value.ToString());
 			}
 		}
 
-		public string DeviceType
+		public int? PageSize
 		{
 			get
 			{
-				return deviceType;
+				return pageSize;
 			}
 			set	
 			{
-				deviceType = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceType", value);
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string DeviceResolution
+		public string OptionList
 		{
 			get
 			{
-				return deviceResolution;
+				return optionList;
 			}
 			set	
 			{
-				deviceResolution = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceResolution", value);
-			}
-		}
-
-		public string Vendor
-		{
-			get
-			{
-				return vendor;
-			}
-			set	
-			{
-				vendor = value;
-				DictionaryUtil.Add(BodyParameters, "Vendor", value);
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
+				optionList = value;
+				DictionaryUtil.Add(BodyParameters, "OptionList", value);
 			}
 		}
 
@@ -195,9 +150,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			return false;
 		}
 
-        public override UpdateDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SearchBodyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SearchBodyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

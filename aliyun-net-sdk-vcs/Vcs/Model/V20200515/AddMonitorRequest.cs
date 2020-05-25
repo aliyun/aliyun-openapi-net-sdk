@@ -27,10 +27,10 @@ using Aliyun.Acs.Vcs.Transform.V20200515;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-    public class GetDeviceLiveUrlRequest : RpcAcsRequest<GetDeviceLiveUrlResponse>
+    public class AddMonitorRequest : RpcAcsRequest<AddMonitorResponse>
     {
-        public GetDeviceLiveUrlRequest()
-            : base("Vcs", "2020-05-15", "GetDeviceLiveUrl", "vcs", "openAPI")
+        public AddMonitorRequest()
+            : base("Vcs", "2020-05-15", "AddMonitor", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +40,26 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
+		private string monitorType;
+
 		private string corpId;
 
-		private string gbId;
+		private string description;
+
+		private int? batchIndicator;
+
+		public string MonitorType
+		{
+			get
+			{
+				return monitorType;
+			}
+			set	
+			{
+				monitorType = value;
+				DictionaryUtil.Add(BodyParameters, "MonitorType", value);
+			}
+		}
 
 		public string CorpId
 		{
@@ -57,16 +74,29 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string GbId
+		public string Description
 		{
 			get
 			{
-				return gbId;
+				return description;
 			}
 			set	
 			{
-				gbId = value;
-				DictionaryUtil.Add(BodyParameters, "GbId", value);
+				description = value;
+				DictionaryUtil.Add(BodyParameters, "Description", value);
+			}
+		}
+
+		public int? BatchIndicator
+		{
+			get
+			{
+				return batchIndicator;
+			}
+			set	
+			{
+				batchIndicator = value;
+				DictionaryUtil.Add(BodyParameters, "BatchIndicator", value.ToString());
 			}
 		}
 
@@ -75,9 +105,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			return false;
 		}
 
-        public override GetDeviceLiveUrlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AddMonitorResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetDeviceLiveUrlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddMonitorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

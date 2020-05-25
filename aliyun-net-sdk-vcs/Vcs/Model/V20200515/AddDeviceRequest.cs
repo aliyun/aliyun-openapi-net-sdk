@@ -46,9 +46,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string gbId;
 
-		private string deviceDirection;
+		private string bitRate;
 
-		private string deviceRate;
+		private string deviceDirection;
 
 		private string deviceAddress;
 
@@ -99,6 +99,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
+		public string BitRate
+		{
+			get
+			{
+				return bitRate;
+			}
+			set	
+			{
+				bitRate = value;
+				DictionaryUtil.Add(BodyParameters, "BitRate", value);
+			}
+		}
+
 		public string DeviceDirection
 		{
 			get
@@ -109,19 +122,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				deviceDirection = value;
 				DictionaryUtil.Add(BodyParameters, "DeviceDirection", value);
-			}
-		}
-
-		public string DeviceRate
-		{
-			get
-			{
-				return deviceRate;
-			}
-			set	
-			{
-				deviceRate = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceRate", value);
 			}
 		}
 

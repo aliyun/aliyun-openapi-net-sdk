@@ -47,7 +47,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				record.AccessProtocolType = context.StringValue("ListDevices.Data.Records["+ i +"].AccessProtocolType");
 				record.BitRate = context.StringValue("ListDevices.Data.Records["+ i +"].BitRate");
 				record.CoverImageUrl = context.StringValue("ListDevices.Data.Records["+ i +"].CoverImageUrl");
-				record.GBid = context.StringValue("ListDevices.Data.Records["+ i +"].GBid");
+				record.GbId = context.StringValue("ListDevices.Data.Records["+ i +"].GbId");
 				record.DeviceAddress = context.StringValue("ListDevices.Data.Records["+ i +"].DeviceAddress");
 				record.DeviceDirection = context.StringValue("ListDevices.Data.Records["+ i +"].DeviceDirection");
 				record.DeviceSite = context.StringValue("ListDevices.Data.Records["+ i +"].DeviceSite");

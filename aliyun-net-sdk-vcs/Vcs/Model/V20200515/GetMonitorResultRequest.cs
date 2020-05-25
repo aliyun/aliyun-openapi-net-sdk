@@ -27,10 +27,10 @@ using Aliyun.Acs.Vcs.Transform.V20200515;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-    public class GetDeviceLiveUrlRequest : RpcAcsRequest<GetDeviceLiveUrlResponse>
+    public class GetMonitorResultRequest : RpcAcsRequest<GetMonitorResultResponse>
     {
-        public GetDeviceLiveUrlRequest()
-            : base("Vcs", "2020-05-15", "GetDeviceLiveUrl", "vcs", "openAPI")
+        public GetMonitorResultRequest()
+            : base("Vcs", "2020-05-15", "GetMonitorResult", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,7 +42,13 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string corpId;
 
-		private string gbId;
+		private long? endTime;
+
+		private long? startTime;
+
+		private string minRecordId;
+
+		private string taskId;
 
 		public string CorpId
 		{
@@ -57,16 +63,55 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string GbId
+		public long? EndTime
 		{
 			get
 			{
-				return gbId;
+				return endTime;
 			}
 			set	
 			{
-				gbId = value;
-				DictionaryUtil.Add(BodyParameters, "GbId", value);
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value.ToString());
+			}
+		}
+
+		public long? StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string MinRecordId
+		{
+			get
+			{
+				return minRecordId;
+			}
+			set	
+			{
+				minRecordId = value;
+				DictionaryUtil.Add(BodyParameters, "MinRecordId", value);
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(BodyParameters, "TaskId", value);
 			}
 		}
 
@@ -75,9 +120,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			return false;
 		}
 
-        public override GetDeviceLiveUrlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetMonitorResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetDeviceLiveUrlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetMonitorResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

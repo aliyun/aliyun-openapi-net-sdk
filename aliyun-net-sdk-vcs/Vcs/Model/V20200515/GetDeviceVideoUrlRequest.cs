@@ -27,10 +27,10 @@ using Aliyun.Acs.Vcs.Transform.V20200515;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-    public class UpdateDeviceRequest : RpcAcsRequest<UpdateDeviceResponse>
+    public class GetDeviceVideoUrlRequest : RpcAcsRequest<GetDeviceVideoUrlResponse>
     {
-        public UpdateDeviceRequest()
-            : base("Vcs", "2020-05-15", "UpdateDevice", "vcs", "openAPI")
+        public GetDeviceVideoUrlRequest()
+            : base("Vcs", "2020-05-15", "GetDeviceVideoUrl", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,38 +40,13 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
-		private string deviceSite;
-
 		private string corpId;
 
 		private string gbId;
 
-		private string bitRate;
+		private long? endTime;
 
-		private string deviceDirection;
-
-		private string deviceAddress;
-
-		private string deviceType;
-
-		private string deviceResolution;
-
-		private string vendor;
-
-		private string deviceName;
-
-		public string DeviceSite
-		{
-			get
-			{
-				return deviceSite;
-			}
-			set	
-			{
-				deviceSite = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceSite", value);
-			}
-		}
+		private long? startTime;
 
 		public string CorpId
 		{
@@ -99,94 +74,29 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string BitRate
+		public long? EndTime
 		{
 			get
 			{
-				return bitRate;
+				return endTime;
 			}
 			set	
 			{
-				bitRate = value;
-				DictionaryUtil.Add(BodyParameters, "BitRate", value);
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value.ToString());
 			}
 		}
 
-		public string DeviceDirection
+		public long? StartTime
 		{
 			get
 			{
-				return deviceDirection;
+				return startTime;
 			}
 			set	
 			{
-				deviceDirection = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceDirection", value);
-			}
-		}
-
-		public string DeviceAddress
-		{
-			get
-			{
-				return deviceAddress;
-			}
-			set	
-			{
-				deviceAddress = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceAddress", value);
-			}
-		}
-
-		public string DeviceType
-		{
-			get
-			{
-				return deviceType;
-			}
-			set	
-			{
-				deviceType = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceType", value);
-			}
-		}
-
-		public string DeviceResolution
-		{
-			get
-			{
-				return deviceResolution;
-			}
-			set	
-			{
-				deviceResolution = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceResolution", value);
-			}
-		}
-
-		public string Vendor
-		{
-			get
-			{
-				return vendor;
-			}
-			set	
-			{
-				vendor = value;
-				DictionaryUtil.Add(BodyParameters, "Vendor", value);
-			}
-		}
-
-		public string DeviceName
-		{
-			get
-			{
-				return deviceName;
-			}
-			set	
-			{
-				deviceName = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
 			}
 		}
 
@@ -195,9 +105,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			return false;
 		}
 
-        public override UpdateDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetDeviceVideoUrlResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetDeviceVideoUrlResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

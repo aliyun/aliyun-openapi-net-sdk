@@ -27,10 +27,10 @@ using Aliyun.Acs.Vcs.Transform.V20200515;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-    public class UpdateDeviceRequest : RpcAcsRequest<UpdateDeviceResponse>
+    public class UpdateMonitorRequest : RpcAcsRequest<UpdateMonitorResponse>
     {
-        public UpdateDeviceRequest()
-            : base("Vcs", "2020-05-15", "UpdateDevice", "vcs", "openAPI")
+        public UpdateMonitorRequest()
+            : base("Vcs", "2020-05-15", "UpdateMonitor", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,36 +40,38 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
-		private string deviceSite;
+		private string deviceOperateType;
 
 		private string corpId;
 
-		private string gbId;
+		private string picList;
 
-		private string bitRate;
+		private string description;
 
-		private string deviceDirection;
+		private string ruleName;
 
-		private string deviceAddress;
+		private string picOperateType;
 
-		private string deviceType;
+		private string attributeName;
 
-		private string deviceResolution;
+		private string attributeValueList;
 
-		private string vendor;
+		private string deviceList;
 
-		private string deviceName;
+		private string attributeOperateType;
 
-		public string DeviceSite
+		private string taskId;
+
+		public string DeviceOperateType
 		{
 			get
 			{
-				return deviceSite;
+				return deviceOperateType;
 			}
 			set	
 			{
-				deviceSite = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceSite", value);
+				deviceOperateType = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceOperateType", value);
 			}
 		}
 
@@ -86,107 +88,120 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string GbId
+		public string PicList
 		{
 			get
 			{
-				return gbId;
+				return picList;
 			}
 			set	
 			{
-				gbId = value;
-				DictionaryUtil.Add(BodyParameters, "GbId", value);
+				picList = value;
+				DictionaryUtil.Add(BodyParameters, "PicList", value);
 			}
 		}
 
-		public string BitRate
+		public string Description
 		{
 			get
 			{
-				return bitRate;
+				return description;
 			}
 			set	
 			{
-				bitRate = value;
-				DictionaryUtil.Add(BodyParameters, "BitRate", value);
+				description = value;
+				DictionaryUtil.Add(BodyParameters, "Description", value);
 			}
 		}
 
-		public string DeviceDirection
+		public string RuleName
 		{
 			get
 			{
-				return deviceDirection;
+				return ruleName;
 			}
 			set	
 			{
-				deviceDirection = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceDirection", value);
+				ruleName = value;
+				DictionaryUtil.Add(BodyParameters, "RuleName", value);
 			}
 		}
 
-		public string DeviceAddress
+		public string PicOperateType
 		{
 			get
 			{
-				return deviceAddress;
+				return picOperateType;
 			}
 			set	
 			{
-				deviceAddress = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceAddress", value);
+				picOperateType = value;
+				DictionaryUtil.Add(BodyParameters, "PicOperateType", value);
 			}
 		}
 
-		public string DeviceType
+		public string AttributeName
 		{
 			get
 			{
-				return deviceType;
+				return attributeName;
 			}
 			set	
 			{
-				deviceType = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceType", value);
+				attributeName = value;
+				DictionaryUtil.Add(BodyParameters, "AttributeName", value);
 			}
 		}
 
-		public string DeviceResolution
+		public string AttributeValueList
 		{
 			get
 			{
-				return deviceResolution;
+				return attributeValueList;
 			}
 			set	
 			{
-				deviceResolution = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceResolution", value);
+				attributeValueList = value;
+				DictionaryUtil.Add(BodyParameters, "AttributeValueList", value);
 			}
 		}
 
-		public string Vendor
+		public string DeviceList
 		{
 			get
 			{
-				return vendor;
+				return deviceList;
 			}
 			set	
 			{
-				vendor = value;
-				DictionaryUtil.Add(BodyParameters, "Vendor", value);
+				deviceList = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceList", value);
 			}
 		}
 
-		public string DeviceName
+		public string AttributeOperateType
 		{
 			get
 			{
-				return deviceName;
+				return attributeOperateType;
 			}
 			set	
 			{
-				deviceName = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceName", value);
+				attributeOperateType = value;
+				DictionaryUtil.Add(BodyParameters, "AttributeOperateType", value);
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(BodyParameters, "TaskId", value);
 			}
 		}
 
@@ -195,9 +210,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			return false;
 		}
 
-        public override UpdateDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateMonitorResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateMonitorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

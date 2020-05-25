@@ -163,7 +163,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string coverImageUrl;
 
-				private string gBid;
+				private string gbId;
 
 				private string deviceAddress;
 
@@ -231,15 +231,15 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public string GBid
+				public string GbId
 				{
 					get
 					{
-						return gBid;
+						return gbId;
 					}
 					set	
 					{
-						gBid = value;
+						gbId = value;
 					}
 				}
 

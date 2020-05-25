@@ -27,10 +27,10 @@ using Aliyun.Acs.Vcs.Transform.V20200515;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-    public class GetDeviceLiveUrlRequest : RpcAcsRequest<GetDeviceLiveUrlResponse>
+    public class StopMonitorRequest : RpcAcsRequest<StopMonitorResponse>
     {
-        public GetDeviceLiveUrlRequest()
-            : base("Vcs", "2020-05-15", "GetDeviceLiveUrl", "vcs", "openAPI")
+        public StopMonitorRequest()
+            : base("Vcs", "2020-05-15", "StopMonitor", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,33 +40,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
-		private string corpId;
+		private string taskId;
 
-		private string gbId;
-
-		public string CorpId
+		public string TaskId
 		{
 			get
 			{
-				return corpId;
+				return taskId;
 			}
 			set	
 			{
-				corpId = value;
-				DictionaryUtil.Add(BodyParameters, "CorpId", value);
-			}
-		}
-
-		public string GbId
-		{
-			get
-			{
-				return gbId;
-			}
-			set	
-			{
-				gbId = value;
-				DictionaryUtil.Add(BodyParameters, "GbId", value);
+				taskId = value;
+				DictionaryUtil.Add(BodyParameters, "TaskId", value);
 			}
 		}
 
@@ -75,9 +60,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			return false;
 		}
 
-        public override GetDeviceLiveUrlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override StopMonitorResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetDeviceLiveUrlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StopMonitorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

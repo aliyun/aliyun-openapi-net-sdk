@@ -27,10 +27,10 @@ using Aliyun.Acs.Vcs.Transform.V20200515;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-    public class GetDeviceLiveUrlRequest : RpcAcsRequest<GetDeviceLiveUrlResponse>
+    public class GetBodyOptionsRequest : RpcAcsRequest<GetBodyOptionsResponse>
     {
-        public GetDeviceLiveUrlRequest()
-            : base("Vcs", "2020-05-15", "GetDeviceLiveUrl", "vcs", "openAPI")
+        public GetBodyOptionsRequest()
+            : base("Vcs", "2020-05-15", "GetBodyOptions", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,8 +41,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
         }
 
 		private string corpId;
-
-		private string gbId;
 
 		public string CorpId
 		{
@@ -57,27 +55,14 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string GbId
-		{
-			get
-			{
-				return gbId;
-			}
-			set	
-			{
-				gbId = value;
-				DictionaryUtil.Add(BodyParameters, "GbId", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetDeviceLiveUrlResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetBodyOptionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetDeviceLiveUrlResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetBodyOptionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
