@@ -31,18 +31,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string requestId;
 
-		private string score;
-
-		private string leftTopX;
-
-		private string leftTopY;
-
-		private string rightBottomX;
-
-		private string rightBottomY;
-
-		private List<GetMonitorResult_RecordsItem> records;
-
 		private GetMonitorResult_Data data;
 
 		public string Code
@@ -81,78 +69,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string Score
-		{
-			get
-			{
-				return score;
-			}
-			set	
-			{
-				score = value;
-			}
-		}
-
-		public string LeftTopX
-		{
-			get
-			{
-				return leftTopX;
-			}
-			set	
-			{
-				leftTopX = value;
-			}
-		}
-
-		public string LeftTopY
-		{
-			get
-			{
-				return leftTopY;
-			}
-			set	
-			{
-				leftTopY = value;
-			}
-		}
-
-		public string RightBottomX
-		{
-			get
-			{
-				return rightBottomX;
-			}
-			set	
-			{
-				rightBottomX = value;
-			}
-		}
-
-		public string RightBottomY
-		{
-			get
-			{
-				return rightBottomY;
-			}
-			set	
-			{
-				rightBottomY = value;
-			}
-		}
-
-		public List<GetMonitorResult_RecordsItem> Records
-		{
-			get
-			{
-				return records;
-			}
-			set	
-			{
-				records = value;
-			}
-		}
-
 		public GetMonitorResult_Data Data
 		{
 			get
@@ -165,80 +81,164 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public class GetMonitorResult_RecordsItem
-		{
-
-			private string gbId;
-
-			private string shotTime;
-
-			private string monitorPicUrl;
-
-			private string shotPicUrl;
-
-			public string GbId
-			{
-				get
-				{
-					return gbId;
-				}
-				set	
-				{
-					gbId = value;
-				}
-			}
-
-			public string ShotTime
-			{
-				get
-				{
-					return shotTime;
-				}
-				set	
-				{
-					shotTime = value;
-				}
-			}
-
-			public string MonitorPicUrl
-			{
-				get
-				{
-					return monitorPicUrl;
-				}
-				set	
-				{
-					monitorPicUrl = value;
-				}
-			}
-
-			public string ShotPicUrl
-			{
-				get
-				{
-					return shotPicUrl;
-				}
-				set	
-				{
-					shotPicUrl = value;
-				}
-			}
-		}
-
 		public class GetMonitorResult_Data
 		{
 
-			private string maxRecordId;
+			private string maxId;
 
-			public string MaxRecordId
+			private List<GetMonitorResult_RecordsItem> records;
+
+			public string MaxId
 			{
 				get
 				{
-					return maxRecordId;
+					return maxId;
 				}
 				set	
 				{
-					maxRecordId = value;
+					maxId = value;
+				}
+			}
+
+			public List<GetMonitorResult_RecordsItem> Records
+			{
+				get
+				{
+					return records;
+				}
+				set	
+				{
+					records = value;
+				}
+			}
+
+			public class GetMonitorResult_RecordsItem
+			{
+
+				private string rightBottomY;
+
+				private string rightBottomX;
+
+				private string leftUpY;
+
+				private string leftUpX;
+
+				private string gbId;
+
+				private string score;
+
+				private string picUrl;
+
+				private string shotTime;
+
+				private string monitorPicUrl;
+
+				public string RightBottomY
+				{
+					get
+					{
+						return rightBottomY;
+					}
+					set	
+					{
+						rightBottomY = value;
+					}
+				}
+
+				public string RightBottomX
+				{
+					get
+					{
+						return rightBottomX;
+					}
+					set	
+					{
+						rightBottomX = value;
+					}
+				}
+
+				public string LeftUpY
+				{
+					get
+					{
+						return leftUpY;
+					}
+					set	
+					{
+						leftUpY = value;
+					}
+				}
+
+				public string LeftUpX
+				{
+					get
+					{
+						return leftUpX;
+					}
+					set	
+					{
+						leftUpX = value;
+					}
+				}
+
+				public string GbId
+				{
+					get
+					{
+						return gbId;
+					}
+					set	
+					{
+						gbId = value;
+					}
+				}
+
+				public string Score
+				{
+					get
+					{
+						return score;
+					}
+					set	
+					{
+						score = value;
+					}
+				}
+
+				public string PicUrl
+				{
+					get
+					{
+						return picUrl;
+					}
+					set	
+					{
+						picUrl = value;
+					}
+				}
+
+				public string ShotTime
+				{
+					get
+					{
+						return shotTime;
+					}
+					set	
+					{
+						shotTime = value;
+					}
+				}
+
+				public string MonitorPicUrl
+				{
+					get
+					{
+						return monitorPicUrl;
+					}
+					set	
+					{
+						monitorPicUrl = value;
+					}
 				}
 			}
 		}

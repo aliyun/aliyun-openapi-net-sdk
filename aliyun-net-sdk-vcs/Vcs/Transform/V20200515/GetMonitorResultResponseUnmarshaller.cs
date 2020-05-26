@@ -34,27 +34,27 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			getMonitorResultResponse.Code = context.StringValue("GetMonitorResult.Code");
 			getMonitorResultResponse.Message = context.StringValue("GetMonitorResult.Message");
 			getMonitorResultResponse.RequestId = context.StringValue("GetMonitorResult.RequestId");
-			getMonitorResultResponse.Score = context.StringValue("GetMonitorResult.Score");
-			getMonitorResultResponse.LeftTopX = context.StringValue("GetMonitorResult.LeftTopX");
-			getMonitorResultResponse.LeftTopY = context.StringValue("GetMonitorResult.LeftTopY");
-			getMonitorResultResponse.RightBottomX = context.StringValue("GetMonitorResult.RightBottomX");
-			getMonitorResultResponse.RightBottomY = context.StringValue("GetMonitorResult.RightBottomY");
 
 			GetMonitorResultResponse.GetMonitorResult_Data data = new GetMonitorResultResponse.GetMonitorResult_Data();
-			data.MaxRecordId = context.StringValue("GetMonitorResult.Data.MaxRecordId");
-			getMonitorResultResponse.Data = data;
+			data.MaxId = context.StringValue("GetMonitorResult.Data.MaxId");
 
-			List<GetMonitorResultResponse.GetMonitorResult_RecordsItem> getMonitorResultResponse_records = new List<GetMonitorResultResponse.GetMonitorResult_RecordsItem>();
-			for (int i = 0; i < context.Length("GetMonitorResult.Records.Length"); i++) {
-				GetMonitorResultResponse.GetMonitorResult_RecordsItem recordsItem = new GetMonitorResultResponse.GetMonitorResult_RecordsItem();
-				recordsItem.GbId = context.StringValue("GetMonitorResult.Records["+ i +"].GbId");
-				recordsItem.ShotTime = context.StringValue("GetMonitorResult.Records["+ i +"].ShotTime");
-				recordsItem.MonitorPicUrl = context.StringValue("GetMonitorResult.Records["+ i +"].MonitorPicUrl");
-				recordsItem.ShotPicUrl = context.StringValue("GetMonitorResult.Records["+ i +"].ShotPicUrl");
+			List<GetMonitorResultResponse.GetMonitorResult_Data.GetMonitorResult_RecordsItem> data_records = new List<GetMonitorResultResponse.GetMonitorResult_Data.GetMonitorResult_RecordsItem>();
+			for (int i = 0; i < context.Length("GetMonitorResult.Data.Records.Length"); i++) {
+				GetMonitorResultResponse.GetMonitorResult_Data.GetMonitorResult_RecordsItem recordsItem = new GetMonitorResultResponse.GetMonitorResult_Data.GetMonitorResult_RecordsItem();
+				recordsItem.RightBottomY = context.StringValue("GetMonitorResult.Data.Records["+ i +"].RightBottomY");
+				recordsItem.RightBottomX = context.StringValue("GetMonitorResult.Data.Records["+ i +"].RightBottomX");
+				recordsItem.LeftUpY = context.StringValue("GetMonitorResult.Data.Records["+ i +"].LeftUpY");
+				recordsItem.LeftUpX = context.StringValue("GetMonitorResult.Data.Records["+ i +"].LeftUpX");
+				recordsItem.GbId = context.StringValue("GetMonitorResult.Data.Records["+ i +"].GbId");
+				recordsItem.Score = context.StringValue("GetMonitorResult.Data.Records["+ i +"].Score");
+				recordsItem.PicUrl = context.StringValue("GetMonitorResult.Data.Records["+ i +"].PicUrl");
+				recordsItem.ShotTime = context.StringValue("GetMonitorResult.Data.Records["+ i +"].ShotTime");
+				recordsItem.MonitorPicUrl = context.StringValue("GetMonitorResult.Data.Records["+ i +"].MonitorPicUrl");
 
-				getMonitorResultResponse_records.Add(recordsItem);
+				data_records.Add(recordsItem);
 			}
-			getMonitorResultResponse.Records = getMonitorResultResponse_records;
+			data.Records = data_records;
+			getMonitorResultResponse.Data = data;
         
 			return getMonitorResultResponse;
         }
