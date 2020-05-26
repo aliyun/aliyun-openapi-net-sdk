@@ -32,17 +32,33 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public DescribeVulDetailsRequest()
             : base("Sas", "2018-12-03", "DescribeVulDetails", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string aliasName;
+		private string type;
 
-		private string sourceIp;
+		private string aliasName;
 
 		private string name;
 
 		private string lang;
 
-		private string type;
+		public string Type
+		{
+			get
+			{
+				return type;
+			}
+			set	
+			{
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
 
 		public string AliasName
 		{
@@ -54,19 +70,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				aliasName = value;
 				DictionaryUtil.Add(QueryParameters, "AliasName", value);
-			}
-		}
-
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
@@ -93,19 +96,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 

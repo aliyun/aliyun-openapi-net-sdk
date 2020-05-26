@@ -32,40 +32,45 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public DescribeSuspEventsRequest()
             : base("Sas", "2018-12-03", "DescribeSuspEvents", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string alarmUniqueInfo;
-
-		private string sourceIp;
-
-		private string name;
-
-		private string pageSize;
-
-		private string dealed;
 
 		private string remark;
 
-		private string currentPage;
+		private string sourceIp;
+
+		private string pageSize;
 
 		private string from;
 
 		private string lang;
 
+		private string alarmUniqueInfo;
+
+		private string dealed;
+
+		private string currentPage;
+
+		private string name;
+
 		private string levels;
 
 		private string parentEventTypes;
 
-		public string AlarmUniqueInfo
+		public string Remark
 		{
 			get
 			{
-				return alarmUniqueInfo;
+				return remark;
 			}
 			set	
 			{
-				alarmUniqueInfo = value;
-				DictionaryUtil.Add(QueryParameters, "AlarmUniqueInfo", value);
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
 			}
 		}
 
@@ -82,19 +87,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public string PageSize
 		{
 			get
@@ -105,45 +97,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value);
-			}
-		}
-
-		public string Dealed
-		{
-			get
-			{
-				return dealed;
-			}
-			set	
-			{
-				dealed = value;
-				DictionaryUtil.Add(QueryParameters, "Dealed", value);
-			}
-		}
-
-		public string Remark
-		{
-			get
-			{
-				return remark;
-			}
-			set	
-			{
-				remark = value;
-				DictionaryUtil.Add(QueryParameters, "Remark", value);
-			}
-		}
-
-		public string CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value);
 			}
 		}
 
@@ -170,6 +123,58 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string AlarmUniqueInfo
+		{
+			get
+			{
+				return alarmUniqueInfo;
+			}
+			set	
+			{
+				alarmUniqueInfo = value;
+				DictionaryUtil.Add(QueryParameters, "AlarmUniqueInfo", value);
+			}
+		}
+
+		public string Dealed
+		{
+			get
+			{
+				return dealed;
+			}
+			set	
+			{
+				dealed = value;
+				DictionaryUtil.Add(QueryParameters, "Dealed", value);
+			}
+		}
+
+		public string CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

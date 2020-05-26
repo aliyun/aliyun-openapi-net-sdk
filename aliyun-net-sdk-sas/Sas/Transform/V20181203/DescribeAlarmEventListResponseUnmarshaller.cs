@@ -60,6 +60,13 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				suspEventsItem.SaleVersion = context.StringValue("DescribeAlarmEventList.SuspEvents["+ i +"].SaleVersion");
 				suspEventsItem.DataSource = context.StringValue("DescribeAlarmEventList.SuspEvents["+ i +"].DataSource");
 				suspEventsItem.CanCancelFault = context.BooleanValue("DescribeAlarmEventList.SuspEvents["+ i +"].CanCancelFault");
+				suspEventsItem.Dealed = context.BooleanValue("DescribeAlarmEventList.SuspEvents["+ i +"].Dealed");
+				suspEventsItem.GmtModified = context.LongValue("DescribeAlarmEventList.SuspEvents["+ i +"].GmtModified");
+				suspEventsItem.HasTraceInfo = context.BooleanValue("DescribeAlarmEventList.SuspEvents["+ i +"].HasTraceInfo");
+				suspEventsItem.SecurityEventIds = context.StringValue("DescribeAlarmEventList.SuspEvents["+ i +"].SecurityEventIds");
+				suspEventsItem.OperateErrorCode = context.StringValue("DescribeAlarmEventList.SuspEvents["+ i +"].OperateErrorCode");
+				suspEventsItem.AlarmEventNameOriginal = context.StringValue("DescribeAlarmEventList.SuspEvents["+ i +"].AlarmEventNameOriginal");
+				suspEventsItem.InstanceId = context.StringValue("DescribeAlarmEventList.SuspEvents["+ i +"].InstanceId");
 
 				describeAlarmEventListResponse_suspEvents.Add(suspEventsItem);
 			}

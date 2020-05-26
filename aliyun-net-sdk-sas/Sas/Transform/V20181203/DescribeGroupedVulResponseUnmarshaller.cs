@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			List<DescribeGroupedVulResponse.DescribeGroupedVul_GroupedVulItem> describeGroupedVulResponse_groupedVulItems = new List<DescribeGroupedVulResponse.DescribeGroupedVul_GroupedVulItem>();
 			for (int i = 0; i < context.Length("DescribeGroupedVul.GroupedVulItems.Length"); i++) {
 				DescribeGroupedVulResponse.DescribeGroupedVul_GroupedVulItem groupedVulItem = new DescribeGroupedVulResponse.DescribeGroupedVul_GroupedVulItem();
+				groupedVulItem.Name = context.StringValue("DescribeGroupedVul.GroupedVulItems["+ i +"].Name");
 				groupedVulItem.AliasName = context.StringValue("DescribeGroupedVul.GroupedVulItems["+ i +"].AliasName");
 				groupedVulItem.Type = context.StringValue("DescribeGroupedVul.GroupedVulItems["+ i +"].Type");
 				groupedVulItem.GmtLast = context.LongValue("DescribeGroupedVul.GroupedVulItems["+ i +"].GmtLast");

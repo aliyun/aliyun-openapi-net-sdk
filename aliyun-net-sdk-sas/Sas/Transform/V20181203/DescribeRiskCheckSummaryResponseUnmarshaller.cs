@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			riskCheckSummary.RiskRate = context.FloatValue("DescribeRiskCheckSummary.RiskCheckSummary.RiskRate");
 			riskCheckSummary.AffectedAssetCount = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.AffectedAssetCount");
 			riskCheckSummary.PreviousTime = context.LongValue("DescribeRiskCheckSummary.RiskCheckSummary.PreviousTime");
+			riskCheckSummary.EnabledRiskCount = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.EnabledRiskCount");
+			riskCheckSummary.DisabledRiskCount = context.IntegerValue("DescribeRiskCheckSummary.RiskCheckSummary.DisabledRiskCount");
 
 			List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_LevelCount> riskCheckSummary_riskLevelCount = new List<DescribeRiskCheckSummaryResponse.DescribeRiskCheckSummary_RiskCheckSummary.DescribeRiskCheckSummary_LevelCount>();
 			for (int i = 0; i < context.Length("DescribeRiskCheckSummary.RiskCheckSummary.RiskLevelCount.Length"); i++) {

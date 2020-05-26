@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public ModifyPushAllTaskRequest()
             : base("Sas", "2018-12-03", "ModifyPushAllTask", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string sourceIp;

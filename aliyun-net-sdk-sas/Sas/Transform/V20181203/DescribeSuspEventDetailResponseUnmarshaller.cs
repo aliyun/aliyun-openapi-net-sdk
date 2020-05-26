@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 			describeSuspEventDetailResponse.SasId = context.StringValue("DescribeSuspEventDetail.SasId");
 			describeSuspEventDetailResponse.EventName = context.StringValue("DescribeSuspEventDetail.EventName");
 			describeSuspEventDetailResponse.CanBeDealOnLine = context.BooleanValue("DescribeSuspEventDetail.CanBeDealOnLine");
+			describeSuspEventDetailResponse.OperateErrorCode = context.StringValue("DescribeSuspEventDetail.OperateErrorCode");
 
 			List<DescribeSuspEventDetailResponse.DescribeSuspEventDetail_QuaraFile> describeSuspEventDetailResponse_details = new List<DescribeSuspEventDetailResponse.DescribeSuspEventDetail_QuaraFile>();
 			for (int i = 0; i < context.Length("DescribeSuspEventDetail.Details.Length"); i++) {

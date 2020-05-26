@@ -118,6 +118,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private long? id;
 
+			private string uniqueInfo;
+
 			private string instanceName;
 
 			private string internetIp;
@@ -149,6 +151,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			private string alarmEventName;
 
 			private string alarmUniqueInfo;
+
+			private bool? advanced;
 
 			public string LastTime
 			{
@@ -183,6 +187,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public string UniqueInfo
+			{
+				get
+				{
+					return uniqueInfo;
+				}
+				set	
+				{
+					uniqueInfo = value;
 				}
 			}
 
@@ -375,6 +391,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					alarmUniqueInfo = value;
+				}
+			}
+
+			public bool? Advanced
+			{
+				get
+				{
+					return advanced;
+				}
+				set	
+				{
+					advanced = value;
 				}
 			}
 		}

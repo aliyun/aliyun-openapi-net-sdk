@@ -82,6 +82,12 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string type;
 
+			private int? status;
+
+			private int? progress;
+
+			private long? gmtLastCheck;
+
 			public string AliasName
 			{
 				get
@@ -151,6 +157,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public int? Progress
+			{
+				get
+				{
+					return progress;
+				}
+				set	
+				{
+					progress = value;
+				}
+			}
+
+			public long? GmtLastCheck
+			{
+				get
+				{
+					return gmtLastCheck;
+				}
+				set	
+				{
+					gmtLastCheck = value;
 				}
 			}
 		}

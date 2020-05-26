@@ -68,6 +68,10 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private long? previousTime;
 
+			private int? enabledRiskCount;
+
+			private int? disabledRiskCount;
+
 			private List<DescribeRiskCheckSummary_LevelCount> riskLevelCount;
 
 			private List<DescribeRiskCheckSummary_Group> groups;
@@ -141,6 +145,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					previousTime = value;
+				}
+			}
+
+			public int? EnabledRiskCount
+			{
+				get
+				{
+					return enabledRiskCount;
+				}
+				set	
+				{
+					enabledRiskCount = value;
+				}
+			}
+
+			public int? DisabledRiskCount
+			{
+				get
+				{
+					return disabledRiskCount;
+				}
+				set	
+				{
+					disabledRiskCount = value;
 				}
 			}
 

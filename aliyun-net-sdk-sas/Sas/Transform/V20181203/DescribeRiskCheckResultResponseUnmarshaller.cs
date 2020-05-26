@@ -51,6 +51,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				riskCheckResultForDisplay.RemainingTime = context.IntegerValue("DescribeRiskCheckResult.List["+ i +"].RemainingTime");
 				riskCheckResultForDisplay.Sort = context.IntegerValue("DescribeRiskCheckResult.List["+ i +"].Sort");
 				riskCheckResultForDisplay.Type = context.StringValue("DescribeRiskCheckResult.List["+ i +"].Type");
+				riskCheckResultForDisplay.StartStatus = context.StringValue("DescribeRiskCheckResult.List["+ i +"].StartStatus");
+				riskCheckResultForDisplay.RepairStatus = context.StringValue("DescribeRiskCheckResult.List["+ i +"].RepairStatus");
+				riskCheckResultForDisplay.RiskAssertType = context.StringValue("DescribeRiskCheckResult.List["+ i +"].RiskAssertType");
 
 				List<DescribeRiskCheckResultResponse.DescribeRiskCheckResult_RiskCheckResultForDisplay.DescribeRiskCheckResult_RiskItemResource> riskCheckResultForDisplay_riskItemResources = new List<DescribeRiskCheckResultResponse.DescribeRiskCheckResult_RiskCheckResultForDisplay.DescribeRiskCheckResult_RiskItemResource>();
 				for (int j = 0; j < context.Length("DescribeRiskCheckResult.List["+ i +"].RiskItemResources.Length"); j++) {

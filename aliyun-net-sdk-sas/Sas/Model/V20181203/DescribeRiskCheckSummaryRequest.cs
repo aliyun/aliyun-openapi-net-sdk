@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public DescribeRiskCheckSummaryRequest()
             : base("Sas", "2018-12-03", "DescribeRiskCheckSummary", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
@@ -39,6 +44,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private string sourceIp;
 
 		private string lang;
+
+		private string resourceDirectoryAccountId;
 
 		public long? ResourceOwnerId
 		{
@@ -76,6 +83,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string ResourceDirectoryAccountId
+		{
+			get
+			{
+				return resourceDirectoryAccountId;
+			}
+			set	
+			{
+				resourceDirectoryAccountId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceDirectoryAccountId", value);
 			}
 		}
 

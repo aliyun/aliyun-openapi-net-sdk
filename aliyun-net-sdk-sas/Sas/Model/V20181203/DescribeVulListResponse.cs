@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string related;
 
+			private long? recordId;
+
 			private string resultCode;
 
 			private string resultMessage;
@@ -134,6 +136,12 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string instanceName;
 
+			private string regionId;
+
+			private bool? online;
+
+			private string level;
+
 			private string internetIp;
 
 			private string intranetIp;
@@ -144,7 +152,13 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string needReboot;
 
+			private int? progress;
+
+			private string canFix;
+
 			private DescribeVulList_ExtendContentJson extendContentJson;
+
+			private DescribeVulList_ProcessInfo processInfo;
 
 			public long? PrimaryId
 			{
@@ -278,6 +292,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public long? RecordId
+			{
+				get
+				{
+					return recordId;
+				}
+				set	
+				{
+					recordId = value;
+				}
+			}
+
 			public string ResultCode
 			{
 				get
@@ -362,6 +388,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
+			}
+
+			public bool? Online
+			{
+				get
+				{
+					return online;
+				}
+				set	
+				{
+					online = value;
+				}
+			}
+
+			public string Level
+			{
+				get
+				{
+					return level;
+				}
+				set	
+				{
+					level = value;
+				}
+			}
+
 			public string InternetIp
 			{
 				get
@@ -422,6 +484,30 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				}
 			}
 
+			public int? Progress
+			{
+				get
+				{
+					return progress;
+				}
+				set	
+				{
+					progress = value;
+				}
+			}
+
+			public string CanFix
+			{
+				get
+				{
+					return canFix;
+				}
+				set	
+				{
+					canFix = value;
+				}
+			}
+
 			public DescribeVulList_ExtendContentJson ExtendContentJson
 			{
 				get
@@ -431,6 +517,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					extendContentJson = value;
+				}
+			}
+
+			public DescribeVulList_ProcessInfo ProcessInfo
+			{
+				get
+				{
+					return processInfo;
+				}
+				set	
+				{
+					processInfo = value;
 				}
 			}
 
@@ -452,6 +550,34 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				private long? primaryId;
 
 				private string absolutePath;
+
+				private string target;
+
+				private string emgProof;
+
+				private string reason;
+
+				private string title;
+
+				private string description;
+
+				private string ip;
+
+				private string owasp;
+
+				private string cwe;
+
+				private string wasc;
+
+				private string vulType;
+
+				private string effect;
+
+				private string solution;
+
+				private string reference;
+
+				private string proof;
 
 				private List<DescribeVulList_RpmEntity> rpmEntityList;
 
@@ -552,6 +678,174 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 					set	
 					{
 						absolutePath = value;
+					}
+				}
+
+				public string Target
+				{
+					get
+					{
+						return target;
+					}
+					set	
+					{
+						target = value;
+					}
+				}
+
+				public string EmgProof
+				{
+					get
+					{
+						return emgProof;
+					}
+					set	
+					{
+						emgProof = value;
+					}
+				}
+
+				public string Reason
+				{
+					get
+					{
+						return reason;
+					}
+					set	
+					{
+						reason = value;
+					}
+				}
+
+				public string Title
+				{
+					get
+					{
+						return title;
+					}
+					set	
+					{
+						title = value;
+					}
+				}
+
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
+
+				public string Ip
+				{
+					get
+					{
+						return ip;
+					}
+					set	
+					{
+						ip = value;
+					}
+				}
+
+				public string Owasp
+				{
+					get
+					{
+						return owasp;
+					}
+					set	
+					{
+						owasp = value;
+					}
+				}
+
+				public string Cwe
+				{
+					get
+					{
+						return cwe;
+					}
+					set	
+					{
+						cwe = value;
+					}
+				}
+
+				public string Wasc
+				{
+					get
+					{
+						return wasc;
+					}
+					set	
+					{
+						wasc = value;
+					}
+				}
+
+				public string VulType
+				{
+					get
+					{
+						return vulType;
+					}
+					set	
+					{
+						vulType = value;
+					}
+				}
+
+				public string Effect
+				{
+					get
+					{
+						return effect;
+					}
+					set	
+					{
+						effect = value;
+					}
+				}
+
+				public string Solution
+				{
+					get
+					{
+						return solution;
+					}
+					set	
+					{
+						solution = value;
+					}
+				}
+
+				public string Reference
+				{
+					get
+					{
+						return reference;
+					}
+					set	
+					{
+						reference = value;
+					}
+				}
+
+				public string Proof
+				{
+					get
+					{
+						return proof;
+					}
+					set	
+					{
+						proof = value;
 					}
 				}
 
@@ -791,6 +1085,158 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 						set	
 						{
 							time_factor = value;
+						}
+					}
+				}
+			}
+
+			public class DescribeVulList_ProcessInfo
+			{
+
+				private long? gmtLastTs;
+
+				private int? totalCount;
+
+				private List<DescribeVulList_Process> processList;
+
+				public long? GmtLastTs
+				{
+					get
+					{
+						return gmtLastTs;
+					}
+					set	
+					{
+						gmtLastTs = value;
+					}
+				}
+
+				public int? TotalCount
+				{
+					get
+					{
+						return totalCount;
+					}
+					set	
+					{
+						totalCount = value;
+					}
+				}
+
+				public List<DescribeVulList_Process> ProcessList
+				{
+					get
+					{
+						return processList;
+					}
+					set	
+					{
+						processList = value;
+					}
+				}
+
+				public class DescribeVulList_Process
+				{
+
+					private string rpm;
+
+					private string pname;
+
+					private string pid;
+
+					private List<DescribeVulList_SubProcess> subProcessList;
+
+					public string Rpm
+					{
+						get
+						{
+							return rpm;
+						}
+						set	
+						{
+							rpm = value;
+						}
+					}
+
+					public string Pname
+					{
+						get
+						{
+							return pname;
+						}
+						set	
+						{
+							pname = value;
+						}
+					}
+
+					public string Pid
+					{
+						get
+						{
+							return pid;
+						}
+						set	
+						{
+							pid = value;
+						}
+					}
+
+					public List<DescribeVulList_SubProcess> SubProcessList
+					{
+						get
+						{
+							return subProcessList;
+						}
+						set	
+						{
+							subProcessList = value;
+						}
+					}
+
+					public class DescribeVulList_SubProcess
+					{
+
+						private string rpm;
+
+						private string pname;
+
+						private string pid;
+
+						public string Rpm
+						{
+							get
+							{
+								return rpm;
+							}
+							set	
+							{
+								rpm = value;
+							}
+						}
+
+						public string Pname
+						{
+							get
+							{
+								return pname;
+							}
+							set	
+							{
+								pname = value;
+							}
+						}
+
+						public string Pid
+						{
+							get
+							{
+								return pid;
+							}
+							set	
+							{
+								pid = value;
+							}
 						}
 					}
 				}

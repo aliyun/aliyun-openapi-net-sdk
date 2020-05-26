@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private bool? canBeDealOnLine;
 
+		private string operateErrorCode;
+
 		private List<DescribeSuspEventDetail_QuaraFile> details;
 
 		public string RequestId
@@ -276,6 +278,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			set	
 			{
 				canBeDealOnLine = value;
+			}
+		}
+
+		public string OperateErrorCode
+		{
+			get
+			{
+				return operateErrorCode;
+			}
+			set	
+			{
+				operateErrorCode = value;
 			}
 		}
 

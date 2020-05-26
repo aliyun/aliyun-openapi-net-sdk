@@ -32,24 +32,27 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public DescribeVulWhitelistRequest()
             : base("Sas", "2018-12-03", "DescribeVulWhitelist", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
-
-		private string sourceIp;
-
-		private int? pageSize;
 
 		private int? currentPage;
 
-		public string SourceIp
+		private int? pageSize;
+
+		public int? CurrentPage
 		{
 			get
 			{
-				return sourceIp;
+				return currentPage;
 			}
 			set	
 			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
@@ -63,19 +66,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 

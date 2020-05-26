@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				vulRecord.RepairTs = context.LongValue("DescribeVulList.VulRecords["+ i +"].RepairTs");
 				vulRecord.Status = context.IntegerValue("DescribeVulList.VulRecords["+ i +"].Status");
 				vulRecord.Related = context.StringValue("DescribeVulList.VulRecords["+ i +"].Related");
+				vulRecord.RecordId = context.LongValue("DescribeVulList.VulRecords["+ i +"].RecordId");
 				vulRecord.ResultCode = context.StringValue("DescribeVulList.VulRecords["+ i +"].ResultCode");
 				vulRecord.ResultMessage = context.StringValue("DescribeVulList.VulRecords["+ i +"].ResultMessage");
 				vulRecord.ModifyTs = context.LongValue("DescribeVulList.VulRecords["+ i +"].ModifyTs");
@@ -57,11 +58,16 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				vulRecord.GroupId = context.IntegerValue("DescribeVulList.VulRecords["+ i +"].GroupId");
 				vulRecord.InstanceId = context.StringValue("DescribeVulList.VulRecords["+ i +"].InstanceId");
 				vulRecord.InstanceName = context.StringValue("DescribeVulList.VulRecords["+ i +"].InstanceName");
+				vulRecord.RegionId = context.StringValue("DescribeVulList.VulRecords["+ i +"].RegionId");
+				vulRecord.Online = context.BooleanValue("DescribeVulList.VulRecords["+ i +"].Online");
+				vulRecord.Level = context.StringValue("DescribeVulList.VulRecords["+ i +"].Level");
 				vulRecord.InternetIp = context.StringValue("DescribeVulList.VulRecords["+ i +"].InternetIp");
 				vulRecord.IntranetIp = context.StringValue("DescribeVulList.VulRecords["+ i +"].IntranetIp");
 				vulRecord.Ip = context.StringValue("DescribeVulList.VulRecords["+ i +"].Ip");
 				vulRecord.OsVersion = context.StringValue("DescribeVulList.VulRecords["+ i +"].OsVersion");
 				vulRecord.NeedReboot = context.StringValue("DescribeVulList.VulRecords["+ i +"].NeedReboot");
+				vulRecord.Progress = context.IntegerValue("DescribeVulList.VulRecords["+ i +"].Progress");
+				vulRecord.CanFix = context.StringValue("DescribeVulList.VulRecords["+ i +"].CanFix");
 
 				DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ExtendContentJson extendContentJson = new DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ExtendContentJson();
 				extendContentJson.Os = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Os");
@@ -72,6 +78,20 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				extendContentJson.Tag = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Tag");
 				extendContentJson.PrimaryId = context.LongValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.PrimaryId");
 				extendContentJson.AbsolutePath = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.AbsolutePath");
+				extendContentJson.Target = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Target");
+				extendContentJson.EmgProof = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.EmgProof");
+				extendContentJson.Reason = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Reason");
+				extendContentJson.Title = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Title");
+				extendContentJson.Description = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Description");
+				extendContentJson.Ip = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Ip");
+				extendContentJson.Owasp = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Owasp");
+				extendContentJson.Cwe = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Cwe");
+				extendContentJson.Wasc = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Wasc");
+				extendContentJson.VulType = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.VulType");
+				extendContentJson.Effect = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Effect");
+				extendContentJson.Solution = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Solution");
+				extendContentJson.Reference = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Reference");
+				extendContentJson.Proof = context.StringValue("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.Proof");
 
 				List<string> extendContentJson_cveList = new List<string>();
 				for (int j = 0; j < context.Length("DescribeVulList.VulRecords["+ i +"].ExtendContentJson.CveList.Length"); j++) {
@@ -104,6 +124,33 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				}
 				extendContentJson.RpmEntityList = extendContentJson_rpmEntityList;
 				vulRecord.ExtendContentJson = extendContentJson;
+
+				DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ProcessInfo processInfo = new DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ProcessInfo();
+				processInfo.GmtLastTs = context.LongValue("DescribeVulList.VulRecords["+ i +"].ProcessInfo.GmtLastTs");
+				processInfo.TotalCount = context.IntegerValue("DescribeVulList.VulRecords["+ i +"].ProcessInfo.TotalCount");
+
+				List<DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ProcessInfo.DescribeVulList_Process> processInfo_processList = new List<DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ProcessInfo.DescribeVulList_Process>();
+				for (int j = 0; j < context.Length("DescribeVulList.VulRecords["+ i +"].ProcessInfo.ProcessList.Length"); j++) {
+					DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ProcessInfo.DescribeVulList_Process process = new DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ProcessInfo.DescribeVulList_Process();
+					process.Rpm = context.StringValue("DescribeVulList.VulRecords["+ i +"].ProcessInfo.ProcessList["+ j +"].Rpm");
+					process.Pname = context.StringValue("DescribeVulList.VulRecords["+ i +"].ProcessInfo.ProcessList["+ j +"].Pname");
+					process.Pid = context.StringValue("DescribeVulList.VulRecords["+ i +"].ProcessInfo.ProcessList["+ j +"].Pid");
+
+					List<DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ProcessInfo.DescribeVulList_Process.DescribeVulList_SubProcess> process_subProcessList = new List<DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ProcessInfo.DescribeVulList_Process.DescribeVulList_SubProcess>();
+					for (int k = 0; k < context.Length("DescribeVulList.VulRecords["+ i +"].ProcessInfo.ProcessList["+ j +"].SubProcessList.Length"); k++) {
+						DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ProcessInfo.DescribeVulList_Process.DescribeVulList_SubProcess subProcess = new DescribeVulListResponse.DescribeVulList_VulRecord.DescribeVulList_ProcessInfo.DescribeVulList_Process.DescribeVulList_SubProcess();
+						subProcess.Rpm = context.StringValue("DescribeVulList.VulRecords["+ i +"].ProcessInfo.ProcessList["+ j +"].SubProcessList["+ k +"].Rpm");
+						subProcess.Pname = context.StringValue("DescribeVulList.VulRecords["+ i +"].ProcessInfo.ProcessList["+ j +"].SubProcessList["+ k +"].Pname");
+						subProcess.Pid = context.StringValue("DescribeVulList.VulRecords["+ i +"].ProcessInfo.ProcessList["+ j +"].SubProcessList["+ k +"].Pid");
+
+						process_subProcessList.Add(subProcess);
+					}
+					process.SubProcessList = process_subProcessList;
+
+					processInfo_processList.Add(process);
+				}
+				processInfo.ProcessList = processInfo_processList;
+				vulRecord.ProcessInfo = processInfo;
 
 				describeVulListResponse_vulRecords.Add(vulRecord);
 			}

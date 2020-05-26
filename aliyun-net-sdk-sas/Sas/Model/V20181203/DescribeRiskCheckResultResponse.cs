@@ -146,6 +146,12 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private string type;
 
+			private string startStatus;
+
+			private string repairStatus;
+
+			private string riskAssertType;
+
 			private List<DescribeRiskCheckResult_RiskItemResource> riskItemResources;
 
 			public long? ItemId
@@ -265,6 +271,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string StartStatus
+			{
+				get
+				{
+					return startStatus;
+				}
+				set	
+				{
+					startStatus = value;
+				}
+			}
+
+			public string RepairStatus
+			{
+				get
+				{
+					return repairStatus;
+				}
+				set	
+				{
+					repairStatus = value;
+				}
+			}
+
+			public string RiskAssertType
+			{
+				get
+				{
+					return riskAssertType;
+				}
+				set	
+				{
+					riskAssertType = value;
 				}
 			}
 

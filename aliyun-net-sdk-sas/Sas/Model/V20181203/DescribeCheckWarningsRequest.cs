@@ -32,19 +32,63 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public DescribeCheckWarningsRequest()
             : base("Sas", "2018-12-03", "DescribeCheckWarnings", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private int? currentPage;
+
+		private long? riskId;
+
+		private string uuid;
 
 		private string sourceIp;
 
 		private int? pageSize;
 
-		private int? currentPage;
-
 		private string lang;
 
-		private long? riskId;
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
 
-		private string uuid;
+		public long? RiskId
+		{
+			get
+			{
+				return riskId;
+			}
+			set	
+			{
+				riskId = value;
+				DictionaryUtil.Add(QueryParameters, "RiskId", value.ToString());
+			}
+		}
+
+		public string Uuid
+		{
+			get
+			{
+				return uuid;
+			}
+			set	
+			{
+				uuid = value;
+				DictionaryUtil.Add(QueryParameters, "Uuid", value);
+			}
+		}
 
 		public string SourceIp
 		{
@@ -72,19 +116,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
-			}
-		}
-
 		public string Lang
 		{
 			get
@@ -95,32 +126,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				lang = value;
 				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public long? RiskId
-		{
-			get
-			{
-				return riskId;
-			}
-			set	
-			{
-				riskId = value;
-				DictionaryUtil.Add(QueryParameters, "RiskId", value.ToString());
-			}
-		}
-
-		public string Uuid
-		{
-			get
-			{
-				return uuid;
-			}
-			set	
-			{
-				uuid = value;
-				DictionaryUtil.Add(QueryParameters, "Uuid", value);
 			}
 		}
 

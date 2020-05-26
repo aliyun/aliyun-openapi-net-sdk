@@ -43,6 +43,9 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				emgVulGroup.GmtPublish = context.LongValue("DescribeEmgVulGroup.EmgVulGroupList["+ i +"].GmtPublish");
 				emgVulGroup.Description = context.StringValue("DescribeEmgVulGroup.EmgVulGroupList["+ i +"].Description");
 				emgVulGroup.Type = context.StringValue("DescribeEmgVulGroup.EmgVulGroupList["+ i +"].Type");
+				emgVulGroup.Status = context.IntegerValue("DescribeEmgVulGroup.EmgVulGroupList["+ i +"].Status");
+				emgVulGroup.Progress = context.IntegerValue("DescribeEmgVulGroup.EmgVulGroupList["+ i +"].Progress");
+				emgVulGroup.GmtLastCheck = context.LongValue("DescribeEmgVulGroup.EmgVulGroupList["+ i +"].GmtLastCheck");
 
 				describeEmgVulGroupResponse_emgVulGroupList.Add(emgVulGroup);
 			}

@@ -98,6 +98,8 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		public class DescribeGroupedVul_GroupedVulItem
 		{
 
+			private string name;
+
 			private string aliasName;
 
 			private string type;
@@ -113,6 +115,18 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			private int? handledCount;
 
 			private string tags;
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
+				}
+			}
 
 			public string AliasName
 			{

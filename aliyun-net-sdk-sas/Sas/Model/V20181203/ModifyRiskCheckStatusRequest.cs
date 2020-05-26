@@ -32,11 +32,16 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public ModifyRiskCheckStatusRequest()
             : base("Sas", "2018-12-03", "ModifyRiskCheckStatus", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private long? itemId;
-
 		private long? resourceOwnerId;
+
+		private long? itemId;
 
 		private string sourceIp;
 
@@ -45,19 +50,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 		private long? taskId;
 
 		private string status;
-
-		public long? ItemId
-		{
-			get
-			{
-				return itemId;
-			}
-			set	
-			{
-				itemId = value;
-				DictionaryUtil.Add(QueryParameters, "ItemId", value.ToString());
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -69,6 +61,19 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public long? ItemId
+		{
+			get
+			{
+				return itemId;
+			}
+			set	
+			{
+				itemId = value;
+				DictionaryUtil.Add(QueryParameters, "ItemId", value.ToString());
 			}
 		}
 

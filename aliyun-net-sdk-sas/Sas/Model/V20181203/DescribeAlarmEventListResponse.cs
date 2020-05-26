@@ -104,6 +104,20 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 			private bool? canCancelFault;
 
+			private bool? dealed;
+
+			private long? gmtModified;
+
+			private bool? hasTraceInfo;
+
+			private string securityEventIds;
+
+			private string operateErrorCode;
+
+			private string alarmEventNameOriginal;
+
+			private string instanceId;
+
 			public string AlarmUniqueInfo
 			{
 				get
@@ -305,6 +319,90 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 				set	
 				{
 					canCancelFault = value;
+				}
+			}
+
+			public bool? Dealed
+			{
+				get
+				{
+					return dealed;
+				}
+				set	
+				{
+					dealed = value;
+				}
+			}
+
+			public long? GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
+				}
+			}
+
+			public bool? HasTraceInfo
+			{
+				get
+				{
+					return hasTraceInfo;
+				}
+				set	
+				{
+					hasTraceInfo = value;
+				}
+			}
+
+			public string SecurityEventIds
+			{
+				get
+				{
+					return securityEventIds;
+				}
+				set	
+				{
+					securityEventIds = value;
+				}
+			}
+
+			public string OperateErrorCode
+			{
+				get
+				{
+					return operateErrorCode;
+				}
+				set	
+				{
+					operateErrorCode = value;
+				}
+			}
+
+			public string AlarmEventNameOriginal
+			{
+				get
+				{
+					return alarmEventNameOriginal;
+				}
+				set	
+				{
+					alarmEventNameOriginal = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 		}

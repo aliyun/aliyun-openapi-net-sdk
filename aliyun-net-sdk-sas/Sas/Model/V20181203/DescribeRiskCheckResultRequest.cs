@@ -32,23 +32,34 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public DescribeRiskCheckResultRequest()
             : base("Sas", "2018-12-03", "DescribeRiskCheckResult", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
 		private string sourceIp;
 
-		private long? groupId;
-
-		private string name;
-
 		private int? pageSize;
-
-		private int? currentPage;
 
 		private string lang;
 
+		private string assetType;
+
+		private long? groupId;
+
+		private List<string> itemIdss = new List<string>(){ };
+
+		private int? currentPage;
+
 		private string riskLevel;
+
+		private string name;
+
+		private string status;
 
 		public long? ResourceOwnerId
 		{
@@ -76,32 +87,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public long? GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -112,19 +97,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
 			}
 		}
 
@@ -141,6 +113,62 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
+		public string AssetType
+		{
+			get
+			{
+				return assetType;
+			}
+			set	
+			{
+				assetType = value;
+				DictionaryUtil.Add(QueryParameters, "AssetType", value);
+			}
+		}
+
+		public long? GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
+			}
+		}
+
+		public List<string> ItemIdss
+		{
+			get
+			{
+				return itemIdss;
+			}
+
+			set
+			{
+				itemIdss = value;
+				for (int i = 0; i < itemIdss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ItemIds." + (i + 1) , itemIdss[i]);
+				}
+			}
+		}
+
+		public int? CurrentPage
+		{
+			get
+			{
+				return currentPage;
+			}
+			set	
+			{
+				currentPage = value;
+				DictionaryUtil.Add(QueryParameters, "CurrentPage", value.ToString());
+			}
+		}
+
 		public string RiskLevel
 		{
 			get
@@ -151,6 +179,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				riskLevel = value;
 				DictionaryUtil.Add(QueryParameters, "RiskLevel", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 

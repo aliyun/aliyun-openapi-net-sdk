@@ -32,7 +32,16 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public DescribeAlarmEventListRequest()
             : base("Sas", "2018-12-03", "DescribeAlarmEventList", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
+
+		private string alarmEventType;
+
+		private string remark;
 
 		private string alarmEventName;
 
@@ -40,19 +49,45 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 
 		private string pageSize;
 
-		private string alarmEventType;
-
-		private string dealed;
-
 		private string from;
-
-		private string remark;
-
-		private int? currentPage;
 
 		private string lang;
 
+		private string groupId;
+
+		private string dealed;
+
+		private int? currentPage;
+
+		private List<string> operateErrorCodeLists = new List<string>(){ };
+
 		private string levels;
+
+		public string AlarmEventType
+		{
+			get
+			{
+				return alarmEventType;
+			}
+			set	
+			{
+				alarmEventType = value;
+				DictionaryUtil.Add(QueryParameters, "AlarmEventType", value);
+			}
+		}
+
+		public string Remark
+		{
+			get
+			{
+				return remark;
+			}
+			set	
+			{
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
+			}
+		}
 
 		public string AlarmEventName
 		{
@@ -93,16 +128,42 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string AlarmEventType
+		public string From
 		{
 			get
 			{
-				return alarmEventType;
+				return from;
 			}
 			set	
 			{
-				alarmEventType = value;
-				DictionaryUtil.Add(QueryParameters, "AlarmEventType", value);
+				from = value;
+				DictionaryUtil.Add(QueryParameters, "From", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -119,32 +180,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string From
-		{
-			get
-			{
-				return from;
-			}
-			set	
-			{
-				from = value;
-				DictionaryUtil.Add(QueryParameters, "From", value);
-			}
-		}
-
-		public string Remark
-		{
-			get
-			{
-				return remark;
-			}
-			set	
-			{
-				remark = value;
-				DictionaryUtil.Add(QueryParameters, "Remark", value);
-			}
-		}
-
 		public int? CurrentPage
 		{
 			get
@@ -158,16 +193,20 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Lang
+		public List<string> OperateErrorCodeLists
 		{
 			get
 			{
-				return lang;
+				return operateErrorCodeLists;
 			}
-			set	
+
+			set
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				operateErrorCodeLists = value;
+				for (int i = 0; i < operateErrorCodeLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"OperateErrorCodeList." + (i + 1) , operateErrorCodeLists[i]);
+				}
 			}
 		}
 

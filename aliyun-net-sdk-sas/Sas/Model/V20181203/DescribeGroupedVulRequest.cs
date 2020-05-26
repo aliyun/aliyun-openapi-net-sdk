@@ -32,49 +32,41 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public DescribeGroupedVulRequest()
             : base("Sas", "2018-12-03", "DescribeGroupedVul", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string aliasName;
-
-		private string sourceIp;
+		private string type;
 
 		private int? pageSize;
+
+		private string lang;
+
+		private string groupId;
 
 		private string dealed;
 
 		private int? currentPage;
 
-		private string lang;
-
-		private string type;
+		private string aliasName;
 
 		private string necessity;
 
 		private string uuids;
 
-		public string AliasName
+		public string Type
 		{
 			get
 			{
-				return aliasName;
+				return type;
 			}
 			set	
 			{
-				aliasName = value;
-				DictionaryUtil.Add(QueryParameters, "AliasName", value);
-			}
-		}
-
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -88,6 +80,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
+			}
+		}
+
+		public string GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value);
 			}
 		}
 
@@ -117,29 +135,16 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Lang
+		public string AliasName
 		{
 			get
 			{
-				return lang;
+				return aliasName;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				aliasName = value;
+				DictionaryUtil.Add(QueryParameters, "AliasName", value);
 			}
 		}
 

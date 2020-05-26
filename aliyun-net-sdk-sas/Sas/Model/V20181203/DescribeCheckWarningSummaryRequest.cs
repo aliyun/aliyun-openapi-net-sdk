@@ -32,21 +32,26 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public DescribeCheckWarningSummaryRequest()
             : base("Sas", "2018-12-03", "DescribeCheckWarningSummary", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private string riskName;
 
 		private string sourceIp;
 
-		private int? riskStatus;
-
 		private int? pageSize;
 
-		private long? strategyId;
+		private string lang;
 
 		private int? currentPage;
 
-		private string lang;
+		private int? riskStatus;
+
+		private long? strategyId;
 
 		private string typeName;
 
@@ -80,19 +85,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public int? RiskStatus
-		{
-			get
-			{
-				return riskStatus;
-			}
-			set	
-			{
-				riskStatus = value;
-				DictionaryUtil.Add(QueryParameters, "RiskStatus", value.ToString());
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -106,16 +98,16 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public long? StrategyId
+		public string Lang
 		{
 			get
 			{
-				return strategyId;
+				return lang;
 			}
 			set	
 			{
-				strategyId = value;
-				DictionaryUtil.Add(QueryParameters, "StrategyId", value.ToString());
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 
@@ -132,16 +124,29 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Lang
+		public int? RiskStatus
 		{
 			get
 			{
-				return lang;
+				return riskStatus;
 			}
 			set	
 			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
+				riskStatus = value;
+				DictionaryUtil.Add(QueryParameters, "RiskStatus", value.ToString());
+			}
+		}
+
+		public long? StrategyId
+		{
+			get
+			{
+				return strategyId;
+			}
+			set	
+			{
+				strategyId = value;
+				DictionaryUtil.Add(QueryParameters, "StrategyId", value.ToString());
 			}
 		}
 

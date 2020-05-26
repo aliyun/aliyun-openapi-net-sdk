@@ -32,19 +32,22 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public StartBaselineSecurityCheckRequest()
             : base("Sas", "2018-12-03", "StartBaselineSecurityCheck", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private List<string> assetss;
+		private List<long?> itemIdss = new List<long?>(){ };
+
+		private string type;
 
 		private string sourceIp;
 
-		private List<long?> itemIdss;
-
 		private string lang;
-
-		private string type;
 
 		public long? ResourceOwnerId
 		{
@@ -56,36 +59,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public List<string> Assetss
-		{
-			get
-			{
-				return assetss;
-			}
-
-			set
-			{
-				assetss = value;
-				for (int i = 0; i < assetss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Assets." + (i + 1) , assetss[i]);
-				}
-			}
-		}
-
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 
@@ -106,19 +79,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			}
 		}
 
-		public string Lang
-		{
-			get
-			{
-				return lang;
-			}
-			set	
-			{
-				lang = value;
-				DictionaryUtil.Add(QueryParameters, "Lang", value);
-			}
-		}
-
 		public string Type
 		{
 			get
@@ -129,6 +89,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string SourceIp
+		{
+			get
+			{
+				return sourceIp;
+			}
+			set	
+			{
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+			}
+		}
+
+		public string Lang
+		{
+			get
+			{
+				return lang;
+			}
+			set	
+			{
+				lang = value;
+				DictionaryUtil.Add(QueryParameters, "Lang", value);
 			}
 		}
 

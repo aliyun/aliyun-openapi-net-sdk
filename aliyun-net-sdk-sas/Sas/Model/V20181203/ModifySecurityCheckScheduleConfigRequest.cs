@@ -32,17 +32,22 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public ModifySecurityCheckScheduleConfigRequest()
             : base("Sas", "2018-12-03", "ModifySecurityCheckScheduleConfig", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
 		private long? resourceOwnerId;
 
-		private string sourceIp;
-
-		private string daysOfWeek;
-
 		private int? endTime;
 
 		private int? startTime;
+
+		private string sourceIp;
+
+		private string daysOfWeek;
 
 		private string lang;
 
@@ -56,32 +61,6 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
-
-		public string DaysOfWeek
-		{
-			get
-			{
-				return daysOfWeek;
-			}
-			set	
-			{
-				daysOfWeek = value;
-				DictionaryUtil.Add(QueryParameters, "DaysOfWeek", value);
 			}
 		}
 
@@ -108,6 +87,32 @@ namespace Aliyun.Acs.Sas.Model.V20181203
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string SourceIp
+		{
+			get
+			{
+				return sourceIp;
+			}
+			set	
+			{
+				sourceIp = value;
+				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+			}
+		}
+
+		public string DaysOfWeek
+		{
+			get
+			{
+				return daysOfWeek;
+			}
+			set	
+			{
+				daysOfWeek = value;
+				DictionaryUtil.Add(QueryParameters, "DaysOfWeek", value);
 			}
 		}
 

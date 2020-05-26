@@ -43,6 +43,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				warningSummary.LastTime = context.StringValue("DescribeSuspEvents.SuspEvents["+ i +"].LastTime");
 				warningSummary.OccurrenceTime = context.StringValue("DescribeSuspEvents.SuspEvents["+ i +"].OccurrenceTime");
 				warningSummary.Id = context.LongValue("DescribeSuspEvents.SuspEvents["+ i +"].Id");
+				warningSummary.UniqueInfo = context.StringValue("DescribeSuspEvents.SuspEvents["+ i +"].UniqueInfo");
 				warningSummary.InstanceName = context.StringValue("DescribeSuspEvents.SuspEvents["+ i +"].InstanceName");
 				warningSummary.InternetIp = context.StringValue("DescribeSuspEvents.SuspEvents["+ i +"].InternetIp");
 				warningSummary.IntranetIp = context.StringValue("DescribeSuspEvents.SuspEvents["+ i +"].IntranetIp");
@@ -59,6 +60,7 @@ namespace Aliyun.Acs.Sas.Transform.V20181203
 				warningSummary.AlarmEventType = context.StringValue("DescribeSuspEvents.SuspEvents["+ i +"].AlarmEventType");
 				warningSummary.AlarmEventName = context.StringValue("DescribeSuspEvents.SuspEvents["+ i +"].AlarmEventName");
 				warningSummary.AlarmUniqueInfo = context.StringValue("DescribeSuspEvents.SuspEvents["+ i +"].AlarmUniqueInfo");
+				warningSummary.Advanced = context.BooleanValue("DescribeSuspEvents.SuspEvents["+ i +"].Advanced");
 
 				describeSuspEventsResponse_suspEvents.Add(warningSummary);
 			}

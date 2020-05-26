@@ -32,24 +32,14 @@ namespace Aliyun.Acs.Sas.Model.V20181203
         public DescribeConcernNecessityRequest()
             : base("Sas", "2018-12-03", "DescribeConcernNecessity", "sas", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
         }
 
-		private string sourceIp;
-
 		private string lang;
-
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
-			}
-		}
 
 		public string Lang
 		{
