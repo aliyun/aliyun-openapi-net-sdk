@@ -142,6 +142,8 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private string barcode;
 
+			private string sKUName;
+
 			public string ProductSizeName
 			{
 				get
@@ -319,6 +321,18 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				set	
 				{
 					barcode = value;
+				}
+			}
+
+			public string SKUName
+			{
+				get
+				{
+					return sKUName;
+				}
+				set	
+				{
+					sKUName = value;
 				}
 			}
 		}

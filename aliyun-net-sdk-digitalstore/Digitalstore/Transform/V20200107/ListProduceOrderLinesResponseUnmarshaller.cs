@@ -57,6 +57,7 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 				produceOrderLineModel.BusinessPrice = context.IntegerValue("ListProduceOrderLines.ProduceOrderLines["+ i +"].BusinessPrice");
 				produceOrderLineModel.BarcodeId = context.StringValue("ListProduceOrderLines.ProduceOrderLines["+ i +"].BarcodeId");
 				produceOrderLineModel.Barcode = context.StringValue("ListProduceOrderLines.ProduceOrderLines["+ i +"].Barcode");
+				produceOrderLineModel.SKUName = context.StringValue("ListProduceOrderLines.ProduceOrderLines["+ i +"].SKUName");
 
 				listProduceOrderLinesResponse_produceOrderLines.Add(produceOrderLineModel);
 			}

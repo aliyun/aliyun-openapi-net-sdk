@@ -55,6 +55,7 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 				produceOrderCaseSkuModel.BindingQuantity = context.IntegerValue("ListProduceOrderCaseSkus.ProductionOrderCaseSkus["+ i +"].BindingQuantity");
 				produceOrderCaseSkuModel.BarcodeId = context.StringValue("ListProduceOrderCaseSkus.ProductionOrderCaseSkus["+ i +"].BarcodeId");
 				produceOrderCaseSkuModel.Barcode = context.StringValue("ListProduceOrderCaseSkus.ProductionOrderCaseSkus["+ i +"].Barcode");
+				produceOrderCaseSkuModel.SKUName = context.StringValue("ListProduceOrderCaseSkus.ProductionOrderCaseSkus["+ i +"].SKUName");
 
 				listProduceOrderCaseSkusResponse_productionOrderCaseSkus.Add(produceOrderCaseSkuModel);
 			}
