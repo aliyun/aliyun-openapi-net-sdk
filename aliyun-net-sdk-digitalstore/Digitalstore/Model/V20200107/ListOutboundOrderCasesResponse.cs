@@ -124,7 +124,7 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private bool? beConfirmOutboundCase;
 
-			private bool? applyStatus;
+			private string applyStatus;
 
 			public string Id
 			{
@@ -198,7 +198,7 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				}
 			}
 
-			public bool? ApplyStatus
+			public string ApplyStatus
 			{
 				get
 				{
