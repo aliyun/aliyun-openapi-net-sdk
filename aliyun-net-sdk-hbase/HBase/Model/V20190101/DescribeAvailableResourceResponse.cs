@@ -241,6 +241,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 								private string instanceType;
 
+								private int? maxCoreCount;
+
 								private DescribeAvailableResource_DBInstanceStorageRange dBInstanceStorageRange;
 
 								private DescribeAvailableResource_InstanceTypeDetail instanceTypeDetail;
@@ -254,6 +256,18 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 									set	
 									{
 										instanceType = value;
+									}
+								}
+
+								public int? MaxCoreCount
+								{
+									get
+									{
+										return maxCoreCount;
+									}
+									set	
+									{
+										maxCoreCount = value;
 									}
 								}
 

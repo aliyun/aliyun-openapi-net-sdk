@@ -164,6 +164,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 			private string moduleStackVersion;
 
+			private string coreDiskCount;
+
 			private List<DescribeInstances_Tag> tags;
 
 			public string InstanceId
@@ -559,6 +561,18 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				set	
 				{
 					moduleStackVersion = value;
+				}
+			}
+
+			public string CoreDiskCount
+			{
+				get
+				{
+					return coreDiskCount;
+				}
+				set	
+				{
+					coreDiskCount = value;
 				}
 			}
 
