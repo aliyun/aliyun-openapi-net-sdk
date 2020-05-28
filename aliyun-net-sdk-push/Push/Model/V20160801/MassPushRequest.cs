@@ -78,6 +78,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".ExpireTime", pushTasks[i].ExpireTime);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupBody", pushTasks[i].AndroidPopupBody);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSNotificationCategory", pushTasks[i].IOSNotificationCategory);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationXiaomiChannel", pushTasks[i].AndroidNotificationXiaomiChannel);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".StoreOffline", pushTasks[i].StoreOffline);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSSilentNotification", pushTasks[i].IOSSilentNotification);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".JobKey", pushTasks[i].JobKey);
@@ -157,6 +158,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string androidPopupBody;
 
 			private string iOSNotificationCategory;
+
+			private string androidNotificationXiaomiChannel;
 
 			private bool? storeOffline;
 
@@ -451,6 +454,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					iOSNotificationCategory = value;
+				}
+			}
+
+			public string AndroidNotificationXiaomiChannel
+			{
+				get
+				{
+					return androidNotificationXiaomiChannel;
+				}
+				set	
+				{
+					androidNotificationXiaomiChannel = value;
 				}
 			}
 

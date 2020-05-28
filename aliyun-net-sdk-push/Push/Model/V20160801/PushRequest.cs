@@ -72,6 +72,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string iOSNotificationCategory;
 
+		private string androidNotificationXiaomiChannel;
+
 		private bool? storeOffline;
 
 		private string smsParams;
@@ -333,6 +335,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				iOSNotificationCategory = value;
 				DictionaryUtil.Add(QueryParameters, "iOSNotificationCategory", value);
+			}
+		}
+
+		public string AndroidNotificationXiaomiChannel
+		{
+			get
+			{
+				return androidNotificationXiaomiChannel;
+			}
+			set	
+			{
+				androidNotificationXiaomiChannel = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationXiaomiChannel", value);
 			}
 		}
 
