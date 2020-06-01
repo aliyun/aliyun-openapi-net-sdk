@@ -104,6 +104,12 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private string sizeName;
 
+			private string sKUName;
+
+			private string sKUId;
+
+			private string caseCode;
+
 			public string OrderId
 			{
 				get
@@ -305,6 +311,42 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				set	
 				{
 					sizeName = value;
+				}
+			}
+
+			public string SKUName
+			{
+				get
+				{
+					return sKUName;
+				}
+				set	
+				{
+					sKUName = value;
+				}
+			}
+
+			public string SKUId
+			{
+				get
+				{
+					return sKUId;
+				}
+				set	
+				{
+					sKUId = value;
+				}
+			}
+
+			public string CaseCode
+			{
+				get
+				{
+					return caseCode;
+				}
+				set	
+				{
+					caseCode = value;
 				}
 			}
 		}

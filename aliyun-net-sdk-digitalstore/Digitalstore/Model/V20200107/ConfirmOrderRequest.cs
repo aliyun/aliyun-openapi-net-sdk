@@ -27,10 +27,10 @@ using Aliyun.Acs.digitalstore.Transform.V20200107;
 
 namespace Aliyun.Acs.digitalstore.Model.V20200107
 {
-    public class ListInboundOrderPreboxingsRequest : RpcAcsRequest<ListInboundOrderPreboxingsResponse>
+    public class ConfirmOrderRequest : RpcAcsRequest<ConfirmOrderResponse>
     {
-        public ListInboundOrderPreboxingsRequest()
-            : base("digitalstore", "2020-01-07", "ListInboundOrderPreboxings", "digitalstore", "openAPI")
+        public ConfirmOrderRequest()
+            : base("digitalstore", "2020-01-07", "ConfirmOrder", "digitalstore", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,9 +41,7 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 		private string orderId;
 
-		private string caseCode;
-
-		private string caseId;
+		private string orderType;
 
 		public string OrderId
 		{
@@ -58,35 +56,22 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			}
 		}
 
-		public string CaseCode
+		public string OrderType
 		{
 			get
 			{
-				return caseCode;
+				return orderType;
 			}
 			set	
 			{
-				caseCode = value;
-				DictionaryUtil.Add(BodyParameters, "CaseCode", value);
+				orderType = value;
+				DictionaryUtil.Add(BodyParameters, "OrderType", value);
 			}
 		}
 
-		public string CaseId
-		{
-			get
-			{
-				return caseId;
-			}
-			set	
-			{
-				caseId = value;
-				DictionaryUtil.Add(BodyParameters, "CaseId", value);
-			}
-		}
-
-        public override ListInboundOrderPreboxingsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ConfirmOrderResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListInboundOrderPreboxingsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ConfirmOrderResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
