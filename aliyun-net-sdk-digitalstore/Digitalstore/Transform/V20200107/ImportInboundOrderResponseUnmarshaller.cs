@@ -24,19 +24,19 @@ using Aliyun.Acs.digitalstore.Model.V20200107;
 
 namespace Aliyun.Acs.digitalstore.Transform.V20200107
 {
-    public class ImportOutBoundOrderResponseUnmarshaller
+    public class ImportInboundOrderResponseUnmarshaller
     {
-        public static ImportOutBoundOrderResponse Unmarshall(UnmarshallerContext context)
+        public static ImportInboundOrderResponse Unmarshall(UnmarshallerContext context)
         {
-			ImportOutBoundOrderResponse importOutBoundOrderResponse = new ImportOutBoundOrderResponse();
+			ImportInboundOrderResponse importInboundOrderResponse = new ImportInboundOrderResponse();
 
-			importOutBoundOrderResponse.HttpResponse = context.HttpResponse;
-			importOutBoundOrderResponse.RequestId = context.StringValue("ImportOutBoundOrder.RequestId");
-			importOutBoundOrderResponse.Success = context.BooleanValue("ImportOutBoundOrder.Success");
-			importOutBoundOrderResponse.OrderId = context.StringValue("ImportOutBoundOrder.OrderId");
-			importOutBoundOrderResponse.OrderCode = context.StringValue("ImportOutBoundOrder.OrderCode");
+			importInboundOrderResponse.HttpResponse = context.HttpResponse;
+			importInboundOrderResponse.RequestId = context.StringValue("ImportInboundOrder.RequestId");
+			importInboundOrderResponse.Success = context.BooleanValue("ImportInboundOrder.Success");
+			importInboundOrderResponse.OrderId = context.StringValue("ImportInboundOrder.OrderId");
+			importInboundOrderResponse.OrderCode = context.StringValue("ImportInboundOrder.OrderCode");
         
-			return importOutBoundOrderResponse;
+			return importInboundOrderResponse;
         }
     }
 }

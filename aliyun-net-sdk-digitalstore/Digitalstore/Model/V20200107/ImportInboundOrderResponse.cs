@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.digitalstore.Model.V20200107
 {
-	public class ImportOutBoundOrderResponse : AcsResponse
+	public class ImportInboundOrderResponse : AcsResponse
 	{
 
 		private string requestId;

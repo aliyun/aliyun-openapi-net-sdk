@@ -43,6 +43,8 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 		private string orderByField;
 
+		private List<string> barcodess = new List<string>(){ };
+
 		private int? pageNumber;
 
 		private string caseId;
@@ -74,6 +76,23 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			{
 				orderByField = value;
 				DictionaryUtil.Add(BodyParameters, "OrderByField", value);
+			}
+		}
+
+		public List<string> Barcodess
+		{
+			get
+			{
+				return barcodess;
+			}
+
+			set
+			{
+				barcodess = value;
+				for (int i = 0; i < barcodess.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"Barcodes." + (i + 1) , barcodess[i]);
+				}
 			}
 		}
 
