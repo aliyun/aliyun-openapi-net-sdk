@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 			describeDataCenterResponse.CommodityInstance = context.StringValue("DescribeDataCenter.CommodityInstance");
 			describeDataCenterResponse.ExpireTime = context.StringValue("DescribeDataCenter.ExpireTime");
 			describeDataCenterResponse.LockMode = context.StringValue("DescribeDataCenter.LockMode");
+			describeDataCenterResponse.AutoRenewal = context.BooleanValue("DescribeDataCenter.AutoRenewal");
+			describeDataCenterResponse.AutoRenewPeriod = context.IntegerValue("DescribeDataCenter.AutoRenewPeriod");
         
 			return describeDataCenterResponse;
         }

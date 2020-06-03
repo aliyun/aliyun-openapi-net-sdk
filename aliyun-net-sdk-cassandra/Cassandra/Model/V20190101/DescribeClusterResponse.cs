@@ -82,6 +82,10 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 
 			private string lockMode;
 
+			private bool? autoRenewal;
+
+			private int? autoRenewPeriod;
+
 			private List<DescribeCluster_Tag> tags;
 
 			public string ClusterId
@@ -237,6 +241,30 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 				set	
 				{
 					lockMode = value;
+				}
+			}
+
+			public bool? AutoRenewal
+			{
+				get
+				{
+					return autoRenewal;
+				}
+				set	
+				{
+					autoRenewal = value;
+				}
+			}
+
+			public int? AutoRenewPeriod
+			{
+				get
+				{
+					return autoRenewPeriod;
+				}
+				set	
+				{
+					autoRenewPeriod = value;
 				}
 			}
 

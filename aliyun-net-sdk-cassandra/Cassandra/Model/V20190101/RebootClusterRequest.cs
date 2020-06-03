@@ -39,7 +39,22 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
             }
         }
 
+		private string dataCenterId;
+
 		private string clusterId;
+
+		public string DataCenterId
+		{
+			get
+			{
+				return dataCenterId;
+			}
+			set	
+			{
+				dataCenterId = value;
+				DictionaryUtil.Add(QueryParameters, "DataCenterId", value);
+			}
+		}
 
 		public string ClusterId
 		{

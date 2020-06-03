@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Cassandra.Transform.V20190101
 				cluster.MinorVersion = context.StringValue("DescribeClusters.Clusters["+ i +"].MinorVersion");
 				cluster.DataCenterCount = context.IntegerValue("DescribeClusters.Clusters["+ i +"].DataCenterCount");
 				cluster.LockMode = context.StringValue("DescribeClusters.Clusters["+ i +"].LockMode");
+				cluster.AutoRenewal = context.BooleanValue("DescribeClusters.Clusters["+ i +"].AutoRenewal");
+				cluster.AutoRenewPeriod = context.IntegerValue("DescribeClusters.Clusters["+ i +"].AutoRenewPeriod");
 
 				List<DescribeClustersResponse.DescribeClusters_Cluster.DescribeClusters_Tag> cluster_tags = new List<DescribeClustersResponse.DescribeClusters_Cluster.DescribeClusters_Tag>();
 				for (int j = 0; j < context.Length("DescribeClusters.Clusters["+ i +"].Tags.Length"); j++) {
