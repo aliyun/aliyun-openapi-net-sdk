@@ -166,6 +166,10 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 			private string coreDiskCount;
 
+			private bool? autoRenewal;
+
+			private int? duration;
+
 			private List<DescribeInstances_Tag> tags;
 
 			public string InstanceId
@@ -573,6 +577,30 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 				set	
 				{
 					coreDiskCount = value;
+				}
+			}
+
+			public bool? AutoRenewal
+			{
+				get
+				{
+					return autoRenewal;
+				}
+				set	
+				{
+					autoRenewal = value;
+				}
+			}
+
+			public int? Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
 				}
 			}
 

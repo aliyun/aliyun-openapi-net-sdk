@@ -73,6 +73,8 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 				instance.ModuleId = context.IntegerValue("DescribeInstances.Instances["+ i +"].ModuleId");
 				instance.ModuleStackVersion = context.StringValue("DescribeInstances.Instances["+ i +"].ModuleStackVersion");
 				instance.CoreDiskCount = context.StringValue("DescribeInstances.Instances["+ i +"].CoreDiskCount");
+				instance.AutoRenewal = context.BooleanValue("DescribeInstances.Instances["+ i +"].AutoRenewal");
+				instance.Duration = context.IntegerValue("DescribeInstances.Instances["+ i +"].Duration");
 
 				List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag> instance_tags = new List<DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_Tag>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].Tags.Length"); j++) {

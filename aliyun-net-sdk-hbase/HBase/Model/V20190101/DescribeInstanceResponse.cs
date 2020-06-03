@@ -105,6 +105,10 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string moduleStackVersion;
 
+		private bool? autoRenewal;
+
+		private int? duration;
+
 		private List<DescribeInstance_Tag> tags;
 
 		public string RequestId
@@ -584,6 +588,30 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				moduleStackVersion = value;
+			}
+		}
+
+		public bool? AutoRenewal
+		{
+			get
+			{
+				return autoRenewal;
+			}
+			set	
+			{
+				autoRenewal = value;
+			}
+		}
+
+		public int? Duration
+		{
+			get
+			{
+				return duration;
+			}
+			set	
+			{
+				duration = value;
 			}
 		}
 
