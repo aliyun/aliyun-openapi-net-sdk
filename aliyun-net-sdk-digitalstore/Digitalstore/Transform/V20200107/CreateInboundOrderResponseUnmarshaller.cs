@@ -24,19 +24,19 @@ using Aliyun.Acs.digitalstore.Model.V20200107;
 
 namespace Aliyun.Acs.digitalstore.Transform.V20200107
 {
-    public class CreateOutboundOrderResponseUnmarshaller
+    public class CreateInboundOrderResponseUnmarshaller
     {
-        public static CreateOutboundOrderResponse Unmarshall(UnmarshallerContext context)
+        public static CreateInboundOrderResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateOutboundOrderResponse createOutboundOrderResponse = new CreateOutboundOrderResponse();
+			CreateInboundOrderResponse createInboundOrderResponse = new CreateInboundOrderResponse();
 
-			createOutboundOrderResponse.HttpResponse = context.HttpResponse;
-			createOutboundOrderResponse.RequestId = context.StringValue("CreateOutboundOrder.RequestId");
-			createOutboundOrderResponse.Success = context.BooleanValue("CreateOutboundOrder.Success");
-			createOutboundOrderResponse.OrderId = context.StringValue("CreateOutboundOrder.OrderId");
-			createOutboundOrderResponse.OrderCode = context.StringValue("CreateOutboundOrder.OrderCode");
+			createInboundOrderResponse.HttpResponse = context.HttpResponse;
+			createInboundOrderResponse.RequestId = context.StringValue("CreateInboundOrder.RequestId");
+			createInboundOrderResponse.Success = context.BooleanValue("CreateInboundOrder.Success");
+			createInboundOrderResponse.OrderId = context.StringValue("CreateInboundOrder.OrderId");
+			createInboundOrderResponse.OrderCode = context.StringValue("CreateInboundOrder.OrderCode");
         
-			return createOutboundOrderResponse;
+			return createInboundOrderResponse;
         }
     }
 }

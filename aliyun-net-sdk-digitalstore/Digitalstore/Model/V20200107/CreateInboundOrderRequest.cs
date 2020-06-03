@@ -27,10 +27,10 @@ using Aliyun.Acs.digitalstore.Transform.V20200107;
 
 namespace Aliyun.Acs.digitalstore.Model.V20200107
 {
-    public class CreateOutboundOrderRequest : RpcAcsRequest<CreateOutboundOrderResponse>
+    public class CreateInboundOrderRequest : RpcAcsRequest<CreateInboundOrderResponse>
     {
-        public CreateOutboundOrderRequest()
-            : base("digitalstore", "2020-01-07", "CreateOutboundOrder", "digitalstore", "openAPI")
+        public CreateInboundOrderRequest()
+            : base("digitalstore", "2020-01-07", "CreateInboundOrder", "digitalstore", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,9 +43,9 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 		private string toWarehouseId;
 
-		private string toBusinessUnitId;
-
 		private string orderCode;
+
+		private string fromBusinessUnitId;
 
 		private string fromWarehouseId;
 
@@ -75,19 +75,6 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			}
 		}
 
-		public string ToBusinessUnitId
-		{
-			get
-			{
-				return toBusinessUnitId;
-			}
-			set	
-			{
-				toBusinessUnitId = value;
-				DictionaryUtil.Add(BodyParameters, "ToBusinessUnitId", value);
-			}
-		}
-
 		public string OrderCode
 		{
 			get
@@ -98,6 +85,19 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			{
 				orderCode = value;
 				DictionaryUtil.Add(BodyParameters, "OrderCode", value);
+			}
+		}
+
+		public string FromBusinessUnitId
+		{
+			get
+			{
+				return fromBusinessUnitId;
+			}
+			set	
+			{
+				fromBusinessUnitId = value;
+				DictionaryUtil.Add(BodyParameters, "FromBusinessUnitId", value);
 			}
 		}
 
@@ -114,9 +114,14 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			}
 		}
 
-        public override CreateOutboundOrderResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateInboundOrderResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateOutboundOrderResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateInboundOrderResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
