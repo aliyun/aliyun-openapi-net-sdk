@@ -164,6 +164,8 @@ namespace Aliyun.Acs.reid.Model.V20190928
 
 			private string pvType;
 
+			private long? maxDataTime;
+
 			private List<DescribeCameraStatistics_Rect> pvRects;
 
 			public long? ProcessCursor
@@ -223,6 +225,18 @@ namespace Aliyun.Acs.reid.Model.V20190928
 				set	
 				{
 					pvType = value;
+				}
+			}
+
+			public long? MaxDataTime
+			{
+				get
+				{
+					return maxDataTime;
+				}
+				set	
+				{
+					maxDataTime = value;
 				}
 			}
 

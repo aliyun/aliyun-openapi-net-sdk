@@ -48,6 +48,7 @@ namespace Aliyun.Acs.reid.Transform.V20190928
 				pvStatisticResult.PvCount = context.LongValue("DescribeCameraStatistics.PvStatisticResults["+ i +"].PvCount");
 				pvStatisticResult.LocationId = context.LongValue("DescribeCameraStatistics.PvStatisticResults["+ i +"].LocationId");
 				pvStatisticResult.PvType = context.StringValue("DescribeCameraStatistics.PvStatisticResults["+ i +"].PvType");
+				pvStatisticResult.MaxDataTime = context.LongValue("DescribeCameraStatistics.PvStatisticResults["+ i +"].MaxDataTime");
 
 				List<DescribeCameraStatisticsResponse.DescribeCameraStatistics_PvStatisticResult.DescribeCameraStatistics_Rect> pvStatisticResult_pvRects = new List<DescribeCameraStatisticsResponse.DescribeCameraStatistics_PvStatisticResult.DescribeCameraStatistics_Rect>();
 				for (int j = 0; j < context.Length("DescribeCameraStatistics.PvStatisticResults["+ i +"].PvRects.Length"); j++) {
