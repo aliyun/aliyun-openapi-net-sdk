@@ -22,14 +22,56 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.digitalstore.Model.V20200107
 {
-	public class ListInboundOrderPreboxingsResponse : AcsResponse
+	public class ListApplicationOrderLinesResponse : AcsResponse
 	{
+
+		private int? pageSize;
+
+		private int? totalCount;
+
+		private int? pageNumber;
 
 		private string requestId;
 
 		private bool? success;
 
-		private List<ListInboundOrderPreboxings_InboundOrderPreboxingBiz> inboundOrderPreboxings;
+		private List<ListApplicationOrderLines_ApplyOrderLineBiz> applyOrderLines;
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
 
 		public string RequestId
 		{
@@ -55,36 +97,30 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			}
 		}
 
-		public List<ListInboundOrderPreboxings_InboundOrderPreboxingBiz> InboundOrderPreboxings
+		public List<ListApplicationOrderLines_ApplyOrderLineBiz> ApplyOrderLines
 		{
 			get
 			{
-				return inboundOrderPreboxings;
+				return applyOrderLines;
 			}
 			set	
 			{
-				inboundOrderPreboxings = value;
+				applyOrderLines = value;
 			}
 		}
 
-		public class ListInboundOrderPreboxings_InboundOrderPreboxingBiz
+		public class ListApplicationOrderLines_ApplyOrderLineBiz
 		{
-
-			private string orderId;
-
-			private string orderType;
-
-			private string orderCode;
-
-			private string caseId;
 
 			private string barcode;
 
-			private string tagValue;
-
-			private int? quantity;
-
 			private int? operateQuantity;
+
+			private int? inboundQuantity;
+
+			private string sKUId;
+
+			private string sKUName;
 
 			private string styleId;
 
@@ -92,73 +128,17 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private string styleName;
 
-			private string colorId;
-
-			private string colorCode;
-
-			private string colorName;
-
 			private string sizeId;
 
 			private string sizeCode;
 
 			private string sizeName;
 
-			private string sKUName;
+			private string colorId;
 
-			private string sKUId;
+			private string colorCode;
 
-			private string caseCode;
-
-			private int? preboxingQuantity;
-
-			public string OrderId
-			{
-				get
-				{
-					return orderId;
-				}
-				set	
-				{
-					orderId = value;
-				}
-			}
-
-			public string OrderType
-			{
-				get
-				{
-					return orderType;
-				}
-				set	
-				{
-					orderType = value;
-				}
-			}
-
-			public string OrderCode
-			{
-				get
-				{
-					return orderCode;
-				}
-				set	
-				{
-					orderCode = value;
-				}
-			}
-
-			public string CaseId
-			{
-				get
-				{
-					return caseId;
-				}
-				set	
-				{
-					caseId = value;
-				}
-			}
+			private string colorName;
 
 			public string Barcode
 			{
@@ -172,30 +152,6 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				}
 			}
 
-			public string TagValue
-			{
-				get
-				{
-					return tagValue;
-				}
-				set	
-				{
-					tagValue = value;
-				}
-			}
-
-			public int? Quantity
-			{
-				get
-				{
-					return quantity;
-				}
-				set	
-				{
-					quantity = value;
-				}
-			}
-
 			public int? OperateQuantity
 			{
 				get
@@ -205,6 +161,42 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				set	
 				{
 					operateQuantity = value;
+				}
+			}
+
+			public int? InboundQuantity
+			{
+				get
+				{
+					return inboundQuantity;
+				}
+				set	
+				{
+					inboundQuantity = value;
+				}
+			}
+
+			public string SKUId
+			{
+				get
+				{
+					return sKUId;
+				}
+				set	
+				{
+					sKUId = value;
+				}
+			}
+
+			public string SKUName
+			{
+				get
+				{
+					return sKUName;
+				}
+				set	
+				{
+					sKUName = value;
 				}
 			}
 
@@ -244,42 +236,6 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				}
 			}
 
-			public string ColorId
-			{
-				get
-				{
-					return colorId;
-				}
-				set	
-				{
-					colorId = value;
-				}
-			}
-
-			public string ColorCode
-			{
-				get
-				{
-					return colorCode;
-				}
-				set	
-				{
-					colorCode = value;
-				}
-			}
-
-			public string ColorName
-			{
-				get
-				{
-					return colorName;
-				}
-				set	
-				{
-					colorName = value;
-				}
-			}
-
 			public string SizeId
 			{
 				get
@@ -316,51 +272,39 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				}
 			}
 
-			public string SKUName
+			public string ColorId
 			{
 				get
 				{
-					return sKUName;
+					return colorId;
 				}
 				set	
 				{
-					sKUName = value;
+					colorId = value;
 				}
 			}
 
-			public string SKUId
+			public string ColorCode
 			{
 				get
 				{
-					return sKUId;
+					return colorCode;
 				}
 				set	
 				{
-					sKUId = value;
+					colorCode = value;
 				}
 			}
 
-			public string CaseCode
+			public string ColorName
 			{
 				get
 				{
-					return caseCode;
+					return colorName;
 				}
 				set	
 				{
-					caseCode = value;
-				}
-			}
-
-			public int? PreboxingQuantity
-			{
-				get
-				{
-					return preboxingQuantity;
-				}
-				set	
-				{
-					preboxingQuantity = value;
+					colorName = value;
 				}
 			}
 		}

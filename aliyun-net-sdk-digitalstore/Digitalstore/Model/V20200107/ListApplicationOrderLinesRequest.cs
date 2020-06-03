@@ -27,10 +27,10 @@ using Aliyun.Acs.digitalstore.Transform.V20200107;
 
 namespace Aliyun.Acs.digitalstore.Model.V20200107
 {
-    public class CreateOutboundOrderRequest : RpcAcsRequest<CreateOutboundOrderResponse>
+    public class ListApplicationOrderLinesRequest : RpcAcsRequest<ListApplicationOrderLinesResponse>
     {
-        public CreateOutboundOrderRequest()
-            : base("digitalstore", "2020-01-07", "CreateOutboundOrder", "digitalstore", "openAPI")
+        public ListApplicationOrderLinesRequest()
+            : base("digitalstore", "2020-01-07", "ListApplicationOrderLines", "digitalstore", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -39,99 +39,89 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
             }
         }
 
-		private string clientToken;
+		private string orderId;
 
-		private string description;
+		private string orderByField;
 
-		private string toWarehouseId;
+		private int? pageNumber;
 
-		private string toBusinessUnitId;
+		private int? pageSize;
 
-		private string orderCode;
+		private string orderByMethod;
 
-		private string fromWarehouseId;
-
-		public string ClientToken
+		public string OrderId
 		{
 			get
 			{
-				return clientToken;
+				return orderId;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
+				orderId = value;
+				DictionaryUtil.Add(BodyParameters, "OrderId", value);
 			}
 		}
 
-		public string Description
+		public string OrderByField
 		{
 			get
 			{
-				return description;
+				return orderByField;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
+				orderByField = value;
+				DictionaryUtil.Add(BodyParameters, "OrderByField", value);
 			}
 		}
 
-		public string ToWarehouseId
+		public int? PageNumber
 		{
 			get
 			{
-				return toWarehouseId;
+				return pageNumber;
 			}
 			set	
 			{
-				toWarehouseId = value;
-				DictionaryUtil.Add(BodyParameters, "ToWarehouseId", value);
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string ToBusinessUnitId
+		public int? PageSize
 		{
 			get
 			{
-				return toBusinessUnitId;
+				return pageSize;
 			}
 			set	
 			{
-				toBusinessUnitId = value;
-				DictionaryUtil.Add(BodyParameters, "ToBusinessUnitId", value);
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string OrderCode
+		public string OrderByMethod
 		{
 			get
 			{
-				return orderCode;
+				return orderByMethod;
 			}
 			set	
 			{
-				orderCode = value;
-				DictionaryUtil.Add(BodyParameters, "OrderCode", value);
+				orderByMethod = value;
+				DictionaryUtil.Add(BodyParameters, "OrderByMethod", value);
 			}
 		}
 
-		public string FromWarehouseId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return fromWarehouseId;
-			}
-			set	
-			{
-				fromWarehouseId = value;
-				DictionaryUtil.Add(BodyParameters, "FromWarehouseId", value);
-			}
+			return false;
 		}
 
-        public override CreateOutboundOrderResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListApplicationOrderLinesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateOutboundOrderResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListApplicationOrderLinesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

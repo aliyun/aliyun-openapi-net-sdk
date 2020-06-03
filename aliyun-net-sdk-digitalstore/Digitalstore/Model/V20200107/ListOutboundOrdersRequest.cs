@@ -63,6 +63,8 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 		private string endDate;
 
+		private bool? beHasSourceOrder;
+
 		private string orderByMethod;
 
 		public string BeginDate
@@ -222,6 +224,19 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			{
 				endDate = value;
 				DictionaryUtil.Add(BodyParameters, "EndDate", value);
+			}
+		}
+
+		public bool? BeHasSourceOrder
+		{
+			get
+			{
+				return beHasSourceOrder;
+			}
+			set	
+			{
+				beHasSourceOrder = value;
+				DictionaryUtil.Add(BodyParameters, "BeHasSourceOrder", value.ToString());
 			}
 		}
 

@@ -57,6 +57,7 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 				inboundOrderPreboxingBiz.SKUName = context.StringValue("ListInboundOrderPreboxings.InboundOrderPreboxings["+ i +"].SKUName");
 				inboundOrderPreboxingBiz.SKUId = context.StringValue("ListInboundOrderPreboxings.InboundOrderPreboxings["+ i +"].SKUId");
 				inboundOrderPreboxingBiz.CaseCode = context.StringValue("ListInboundOrderPreboxings.InboundOrderPreboxings["+ i +"].CaseCode");
+				inboundOrderPreboxingBiz.PreboxingQuantity = context.IntegerValue("ListInboundOrderPreboxings.InboundOrderPreboxings["+ i +"].PreboxingQuantity");
 
 				listInboundOrderPreboxingsResponse_inboundOrderPreboxings.Add(inboundOrderPreboxingBiz);
 			}

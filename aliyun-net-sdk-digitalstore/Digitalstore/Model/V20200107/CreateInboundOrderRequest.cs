@@ -41,6 +41,8 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 		private string clientToken;
 
+		private string description;
+
 		private string toWarehouseId;
 
 		private string orderCode;
@@ -59,6 +61,19 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 			{
 				clientToken = value;
 				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(BodyParameters, "Description", value);
 			}
 		}
 
