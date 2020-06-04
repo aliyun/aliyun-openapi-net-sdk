@@ -40,11 +40,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
-		private string deviceOperateType;
-
 		private string corpId;
-
-		private string picList;
 
 		private string description;
 
@@ -54,26 +50,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string attributeName;
 
-		private string attributeValueList;
-
-		private string deviceList;
-
 		private string attributeOperateType;
+
+		private string ruleExpression;
 
 		private string taskId;
 
-		public string DeviceOperateType
-		{
-			get
-			{
-				return deviceOperateType;
-			}
-			set	
-			{
-				deviceOperateType = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceOperateType", value);
-			}
-		}
+		private string deviceOperateType;
+
+		private string picList;
+
+		private string attributeValueList;
+
+		private string deviceList;
 
 		public string CorpId
 		{
@@ -85,19 +74,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				corpId = value;
 				DictionaryUtil.Add(BodyParameters, "CorpId", value);
-			}
-		}
-
-		public string PicList
-		{
-			get
-			{
-				return picList;
-			}
-			set	
-			{
-				picList = value;
-				DictionaryUtil.Add(BodyParameters, "PicList", value);
 			}
 		}
 
@@ -153,6 +129,71 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
+		public string AttributeOperateType
+		{
+			get
+			{
+				return attributeOperateType;
+			}
+			set	
+			{
+				attributeOperateType = value;
+				DictionaryUtil.Add(BodyParameters, "AttributeOperateType", value);
+			}
+		}
+
+		public string RuleExpression
+		{
+			get
+			{
+				return ruleExpression;
+			}
+			set	
+			{
+				ruleExpression = value;
+				DictionaryUtil.Add(BodyParameters, "RuleExpression", value);
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(BodyParameters, "TaskId", value);
+			}
+		}
+
+		public string DeviceOperateType
+		{
+			get
+			{
+				return deviceOperateType;
+			}
+			set	
+			{
+				deviceOperateType = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceOperateType", value);
+			}
+		}
+
+		public string PicList
+		{
+			get
+			{
+				return picList;
+			}
+			set	
+			{
+				picList = value;
+				DictionaryUtil.Add(BodyParameters, "PicList", value);
+			}
+		}
+
 		public string AttributeValueList
 		{
 			get
@@ -176,32 +217,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				deviceList = value;
 				DictionaryUtil.Add(BodyParameters, "DeviceList", value);
-			}
-		}
-
-		public string AttributeOperateType
-		{
-			get
-			{
-				return attributeOperateType;
-			}
-			set	
-			{
-				attributeOperateType = value;
-				DictionaryUtil.Add(BodyParameters, "AttributeOperateType", value);
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-				DictionaryUtil.Add(BodyParameters, "TaskId", value);
 			}
 		}
 

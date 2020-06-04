@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string message;
 
-		private string data;
+		private AddMonitor_Data data;
 
 		public string RequestId
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string Data
+		public AddMonitor_Data Data
 		{
 			get
 			{
@@ -78,6 +78,24 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public class AddMonitor_Data
+		{
+
+			private string taskId;
+
+			public string TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
+				}
 			}
 		}
 	}

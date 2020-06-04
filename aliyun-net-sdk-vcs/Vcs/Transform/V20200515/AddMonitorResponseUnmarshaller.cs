@@ -34,7 +34,10 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			addMonitorResponse.RequestId = context.StringValue("AddMonitor.RequestId");
 			addMonitorResponse.Code = context.StringValue("AddMonitor.Code");
 			addMonitorResponse.Message = context.StringValue("AddMonitor.Message");
-			addMonitorResponse.Data = context.StringValue("AddMonitor.Data");
+
+			AddMonitorResponse.AddMonitor_Data data = new AddMonitorResponse.AddMonitor_Data();
+			data.TaskId = context.StringValue("AddMonitor.Data.TaskId");
+			addMonitorResponse.Data = data;
         
 			return addMonitorResponse;
         }
