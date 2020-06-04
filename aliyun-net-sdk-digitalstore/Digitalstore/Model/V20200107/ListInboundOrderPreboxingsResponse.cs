@@ -110,8 +110,6 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private string caseCode;
 
-			private int? preboxingQuantity;
-
 			public string OrderId
 			{
 				get
@@ -349,18 +347,6 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				set	
 				{
 					caseCode = value;
-				}
-			}
-
-			public int? PreboxingQuantity
-			{
-				get
-				{
-					return preboxingQuantity;
-				}
-				set	
-				{
-					preboxingQuantity = value;
 				}
 			}
 		}

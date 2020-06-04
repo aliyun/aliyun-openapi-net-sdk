@@ -126,6 +126,8 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private string applyStatus;
 
+			private int? preboxingQuantity;
+
 			public string Id
 			{
 				get
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				set	
 				{
 					applyStatus = value;
+				}
+			}
+
+			public int? PreboxingQuantity
+			{
+				get
+				{
+					return preboxingQuantity;
+				}
+				set	
+				{
+					preboxingQuantity = value;
 				}
 			}
 		}

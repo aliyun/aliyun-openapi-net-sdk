@@ -41,7 +41,7 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 			for (int i = 0; i < context.Length("ListOutboundOrderCases.Cases.Length"); i++) {
 				ListOutboundOrderCasesResponse.ListOutboundOrderCases_CaseBiz caseBiz = new ListOutboundOrderCasesResponse.ListOutboundOrderCases_CaseBiz();
 				caseBiz.Id = context.StringValue("ListOutboundOrderCases.Cases["+ i +"].Id");
-				caseBiz.OperateQuantity = context.StringValue("ListOutboundOrderCases.Cases["+ i +"].OperateQuantity");
+				caseBiz.OperateQuantity = context.IntegerValue("ListOutboundOrderCases.Cases["+ i +"].OperateQuantity");
 				caseBiz.CaseCode = context.StringValue("ListOutboundOrderCases.Cases["+ i +"].CaseCode");
 				caseBiz.CaseStatus = context.StringValue("ListOutboundOrderCases.Cases["+ i +"].CaseStatus");
 				caseBiz.BeConfirmInboundCase = context.BooleanValue("ListOutboundOrderCases.Cases["+ i +"].BeConfirmInboundCase");

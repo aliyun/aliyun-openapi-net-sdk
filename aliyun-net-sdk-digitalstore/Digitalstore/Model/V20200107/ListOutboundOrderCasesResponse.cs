@@ -114,7 +114,7 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 
 			private string id;
 
-			private string operateQuantity;
+			private int? operateQuantity;
 
 			private string caseCode;
 
@@ -138,7 +138,7 @@ namespace Aliyun.Acs.digitalstore.Model.V20200107
 				}
 			}
 
-			public string OperateQuantity
+			public int? OperateQuantity
 			{
 				get
 				{

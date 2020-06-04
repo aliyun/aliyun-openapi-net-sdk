@@ -47,6 +47,7 @@ namespace Aliyun.Acs.digitalstore.Transform.V20200107
 				caseBiz.BeConfirmInboundCase = context.BooleanValue("ListInboundOrderCases.Cases["+ i +"].BeConfirmInboundCase");
 				caseBiz.BeConfirmOutboundCase = context.BooleanValue("ListInboundOrderCases.Cases["+ i +"].BeConfirmOutboundCase");
 				caseBiz.ApplyStatus = context.StringValue("ListInboundOrderCases.Cases["+ i +"].ApplyStatus");
+				caseBiz.PreboxingQuantity = context.IntegerValue("ListInboundOrderCases.Cases["+ i +"].PreboxingQuantity");
 
 				listInboundOrderCasesResponse_cases.Add(caseBiz);
 			}
