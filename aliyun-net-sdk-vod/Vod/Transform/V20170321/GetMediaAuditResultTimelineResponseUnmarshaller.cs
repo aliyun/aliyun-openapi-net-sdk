@@ -56,6 +56,39 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				mediaAuditResultTimeline_terrorism.Add(terrorismItem);
 			}
 			mediaAuditResultTimeline.Terrorism = mediaAuditResultTimeline_terrorism;
+
+			List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LogoItem> mediaAuditResultTimeline_logo = new List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LogoItem>();
+			for (int i = 0; i < context.Length("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Logo.Length"); i++) {
+				GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LogoItem logoItem = new GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LogoItem();
+				logoItem.Label = context.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Logo["+ i +"].Label");
+				logoItem.Score = context.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Logo["+ i +"].Score");
+				logoItem.Timestamp = context.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Logo["+ i +"].Timestamp");
+
+				mediaAuditResultTimeline_logo.Add(logoItem);
+			}
+			mediaAuditResultTimeline.Logo = mediaAuditResultTimeline_logo;
+
+			List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LiveItem> mediaAuditResultTimeline_live = new List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LiveItem>();
+			for (int i = 0; i < context.Length("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Live.Length"); i++) {
+				GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LiveItem liveItem = new GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_LiveItem();
+				liveItem.Label = context.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Live["+ i +"].Label");
+				liveItem.Score = context.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Live["+ i +"].Score");
+				liveItem.Timestamp = context.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Live["+ i +"].Timestamp");
+
+				mediaAuditResultTimeline_live.Add(liveItem);
+			}
+			mediaAuditResultTimeline.Live = mediaAuditResultTimeline_live;
+
+			List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_AdItem> mediaAuditResultTimeline_ad = new List<GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_AdItem>();
+			for (int i = 0; i < context.Length("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Ad.Length"); i++) {
+				GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_AdItem adItem = new GetMediaAuditResultTimelineResponse.GetMediaAuditResultTimeline_MediaAuditResultTimeline.GetMediaAuditResultTimeline_AdItem();
+				adItem.Label = context.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Ad["+ i +"].Label");
+				adItem.Score = context.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Ad["+ i +"].Score");
+				adItem.Timestamp = context.StringValue("GetMediaAuditResultTimeline.MediaAuditResultTimeline.Ad["+ i +"].Timestamp");
+
+				mediaAuditResultTimeline_ad.Add(adItem);
+			}
+			mediaAuditResultTimeline.Ad = mediaAuditResultTimeline_ad;
 			getMediaAuditResultTimelineResponse.MediaAuditResultTimeline = mediaAuditResultTimeline;
         
 			return getMediaAuditResultTimelineResponse;

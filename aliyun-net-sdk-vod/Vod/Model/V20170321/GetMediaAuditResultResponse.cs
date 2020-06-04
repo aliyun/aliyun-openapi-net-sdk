@@ -62,6 +62,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private string suggestion;
 
+			private List<GetMediaAuditResult_AudioResultItem> audioResult;
+
 			private List<GetMediaAuditResult_ImageResultItem> imageResult;
 
 			private List<GetMediaAuditResult_TextResultItem> textResult;
@@ -104,6 +106,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
+			public List<GetMediaAuditResult_AudioResultItem> AudioResult
+			{
+				get
+				{
+					return audioResult;
+				}
+				set	
+				{
+					audioResult = value;
+				}
+			}
+
 			public List<GetMediaAuditResult_ImageResultItem> ImageResult
 			{
 				get
@@ -140,18 +154,52 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				}
 			}
 
-			public class GetMediaAuditResult_ImageResultItem
+			public class GetMediaAuditResult_AudioResultItem
 			{
-
-				private string suggestion;
 
 				private string label;
 
-				private string type;
+				private string scene;
 
-				private string url;
+				private string score;
 
-				private List<GetMediaAuditResult_ResultItem> result;
+				private string suggestion;
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
+					}
+				}
+
+				public string Scene
+				{
+					get
+					{
+						return scene;
+					}
+					set	
+					{
+						scene = value;
+					}
+				}
+
+				public string Score
+				{
+					get
+					{
+						return score;
+					}
+					set	
+					{
+						score = value;
+					}
+				}
 
 				public string Suggestion
 				{
@@ -164,6 +212,20 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						suggestion = value;
 					}
 				}
+			}
+
+			public class GetMediaAuditResult_ImageResultItem
+			{
+
+				private string label;
+
+				private string suggestion;
+
+				private string type;
+
+				private string url;
+
+				private List<GetMediaAuditResult_ResultItem> result;
 
 				public string Label
 				{
@@ -174,6 +236,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						label = value;
+					}
+				}
+
+				public string Suggestion
+				{
+					get
+					{
+						return suggestion;
+					}
+					set	
+					{
+						suggestion = value;
 					}
 				}
 
@@ -216,25 +290,13 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				public class GetMediaAuditResult_ResultItem
 				{
 
-					private string suggestion;
-
 					private string label;
-
-					private string score;
 
 					private string scene;
 
-					public string Suggestion
-					{
-						get
-						{
-							return suggestion;
-						}
-						set	
-						{
-							suggestion = value;
-						}
-					}
+					private string score;
+
+					private string suggestion;
 
 					public string Label
 					{
@@ -245,6 +307,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						set	
 						{
 							label = value;
+						}
+					}
+
+					public string Scene
+					{
+						get
+						{
+							return scene;
+						}
+						set	
+						{
+							scene = value;
 						}
 					}
 
@@ -260,15 +334,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						}
 					}
 
-					public string Scene
+					public string Suggestion
 					{
 						get
 						{
-							return scene;
+							return suggestion;
 						}
 						set	
 						{
-							scene = value;
+							suggestion = value;
 						}
 					}
 				}
@@ -277,27 +351,27 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			public class GetMediaAuditResult_TextResultItem
 			{
 
-				private string suggestion;
+				private string content;
 
 				private string label;
 
+				private string scene;
+
 				private string score;
 
-				private string scene;
+				private string suggestion;
 
 				private string type;
 
-				private string content;
-
-				public string Suggestion
+				public string Content
 				{
 					get
 					{
-						return suggestion;
+						return content;
 					}
 					set	
 					{
-						suggestion = value;
+						content = value;
 					}
 				}
 
@@ -310,18 +384,6 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						label = value;
-					}
-				}
-
-				public string Score
-				{
-					get
-					{
-						return score;
-					}
-					set	
-					{
-						score = value;
 					}
 				}
 
@@ -337,41 +399,17 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public string Type
+				public string Score
 				{
 					get
 					{
-						return type;
+						return score;
 					}
 					set	
 					{
-						type = value;
+						score = value;
 					}
 				}
-
-				public string Content
-				{
-					get
-					{
-						return content;
-					}
-					set	
-					{
-						content = value;
-					}
-				}
-			}
-
-			public class GetMediaAuditResult_VideoResult
-			{
-
-				private string suggestion;
-
-				private string label;
-
-				private GetMediaAuditResult_TerrorismResult terrorismResult;
-
-				private GetMediaAuditResult_PornResult pornResult;
 
 				public string Suggestion
 				{
@@ -385,6 +423,36 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+			}
+
+			public class GetMediaAuditResult_VideoResult
+			{
+
+				private string label;
+
+				private string suggestion;
+
+				private GetMediaAuditResult_PornResult pornResult;
+
+				private GetMediaAuditResult_AdResult adResult;
+
+				private GetMediaAuditResult_LogoResult logoResult;
+
+				private GetMediaAuditResult_LiveResult liveResult;
+
+				private GetMediaAuditResult_TerrorismResult terrorismResult;
+
 				public string Label
 				{
 					get
@@ -397,15 +465,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public GetMediaAuditResult_TerrorismResult TerrorismResult
+				public string Suggestion
 				{
 					get
 					{
-						return terrorismResult;
+						return suggestion;
 					}
 					set	
 					{
-						terrorismResult = value;
+						suggestion = value;
 					}
 				}
 
@@ -421,30 +489,78 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public class GetMediaAuditResult_TerrorismResult
+				public GetMediaAuditResult_AdResult AdResult
+				{
+					get
+					{
+						return adResult;
+					}
+					set	
+					{
+						adResult = value;
+					}
+				}
+
+				public GetMediaAuditResult_LogoResult LogoResult
+				{
+					get
+					{
+						return logoResult;
+					}
+					set	
+					{
+						logoResult = value;
+					}
+				}
+
+				public GetMediaAuditResult_LiveResult LiveResult
+				{
+					get
+					{
+						return liveResult;
+					}
+					set	
+					{
+						liveResult = value;
+					}
+				}
+
+				public GetMediaAuditResult_TerrorismResult TerrorismResult
+				{
+					get
+					{
+						return terrorismResult;
+					}
+					set	
+					{
+						terrorismResult = value;
+					}
+				}
+
+				public class GetMediaAuditResult_PornResult
 				{
 
-					private string suggestion;
+					private string averageScore;
 
 					private string label;
 
 					private string maxScore;
 
-					private string averageScore;
+					private string suggestion;
 
 					private List<GetMediaAuditResult_CounterListItem> counterList;
 
 					private List<GetMediaAuditResult_TopListItem> topList;
 
-					public string Suggestion
+					public string AverageScore
 					{
 						get
 						{
-							return suggestion;
+							return averageScore;
 						}
 						set	
 						{
-							suggestion = value;
+							averageScore = value;
 						}
 					}
 
@@ -472,15 +588,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						}
 					}
 
-					public string AverageScore
+					public string Suggestion
 					{
 						get
 						{
-							return averageScore;
+							return suggestion;
 						}
 						set	
 						{
-							averageScore = value;
+							suggestion = value;
 						}
 					}
 
@@ -511,21 +627,9 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					public class GetMediaAuditResult_CounterListItem
 					{
 
-						private string label;
-
 						private int? count;
 
-						public string Label
-						{
-							get
-							{
-								return label;
-							}
-							set	
-							{
-								label = value;
-							}
-						}
+						private string label;
 
 						public int? Count
 						{
@@ -536,6 +640,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							set	
 							{
 								count = value;
+							}
+						}
+
+						public string Label
+						{
+							get
+							{
+								return label;
+							}
+							set	
+							{
+								label = value;
 							}
 						}
 					}
@@ -601,30 +717,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					}
 				}
 
-				public class GetMediaAuditResult_PornResult
+				public class GetMediaAuditResult_AdResult
 				{
 
-					private string suggestion;
+					private string averageScore;
 
 					private string label;
 
 					private string maxScore;
 
-					private string averageScore;
+					private string suggestion;
 
 					private List<GetMediaAuditResult_CounterListItem3> counterList1;
 
 					private List<GetMediaAuditResult_TopListItem4> topList2;
 
-					public string Suggestion
+					public string AverageScore
 					{
 						get
 						{
-							return suggestion;
+							return averageScore;
 						}
 						set	
 						{
-							suggestion = value;
+							averageScore = value;
 						}
 					}
 
@@ -652,15 +768,15 @@ namespace Aliyun.Acs.vod.Model.V20170321
 						}
 					}
 
-					public string AverageScore
+					public string Suggestion
 					{
 						get
 						{
-							return averageScore;
+							return suggestion;
 						}
 						set	
 						{
-							averageScore = value;
+							suggestion = value;
 						}
 					}
 
@@ -691,9 +807,45 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					public class GetMediaAuditResult_CounterListItem3
 					{
 
+						private int? count;
+
 						private string label;
 
-						private int? count;
+						public int? Count
+						{
+							get
+							{
+								return count;
+							}
+							set	
+							{
+								count = value;
+							}
+						}
+
+						public string Label
+						{
+							get
+							{
+								return label;
+							}
+							set	
+							{
+								label = value;
+							}
+						}
+					}
+
+					public class GetMediaAuditResult_TopListItem4
+					{
+
+						private string label;
+
+						private string score;
+
+						private string timestamp;
+
+						private string url;
 
 						public string Label
 						{
@@ -707,6 +859,138 @@ namespace Aliyun.Acs.vod.Model.V20170321
 							}
 						}
 
+						public string Score
+						{
+							get
+							{
+								return score;
+							}
+							set	
+							{
+								score = value;
+							}
+						}
+
+						public string Timestamp
+						{
+							get
+							{
+								return timestamp;
+							}
+							set	
+							{
+								timestamp = value;
+							}
+						}
+
+						public string Url
+						{
+							get
+							{
+								return url;
+							}
+							set	
+							{
+								url = value;
+							}
+						}
+					}
+				}
+
+				public class GetMediaAuditResult_LogoResult
+				{
+
+					private string averageScore;
+
+					private string label;
+
+					private string maxScore;
+
+					private string suggestion;
+
+					private List<GetMediaAuditResult_CounterListItem7> counterList5;
+
+					private List<GetMediaAuditResult_TopListItem8> topList6;
+
+					public string AverageScore
+					{
+						get
+						{
+							return averageScore;
+						}
+						set	
+						{
+							averageScore = value;
+						}
+					}
+
+					public string Label
+					{
+						get
+						{
+							return label;
+						}
+						set	
+						{
+							label = value;
+						}
+					}
+
+					public string MaxScore
+					{
+						get
+						{
+							return maxScore;
+						}
+						set	
+						{
+							maxScore = value;
+						}
+					}
+
+					public string Suggestion
+					{
+						get
+						{
+							return suggestion;
+						}
+						set	
+						{
+							suggestion = value;
+						}
+					}
+
+					public List<GetMediaAuditResult_CounterListItem7> CounterList5
+					{
+						get
+						{
+							return counterList5;
+						}
+						set	
+						{
+							counterList5 = value;
+						}
+					}
+
+					public List<GetMediaAuditResult_TopListItem8> TopList6
+					{
+						get
+						{
+							return topList6;
+						}
+						set	
+						{
+							topList6 = value;
+						}
+					}
+
+					public class GetMediaAuditResult_CounterListItem7
+					{
+
+						private int? count;
+
+						private string label;
+
 						public int? Count
 						{
 							get
@@ -718,9 +1002,381 @@ namespace Aliyun.Acs.vod.Model.V20170321
 								count = value;
 							}
 						}
+
+						public string Label
+						{
+							get
+							{
+								return label;
+							}
+							set	
+							{
+								label = value;
+							}
+						}
 					}
 
-					public class GetMediaAuditResult_TopListItem4
+					public class GetMediaAuditResult_TopListItem8
+					{
+
+						private string label;
+
+						private string score;
+
+						private string timestamp;
+
+						private string url;
+
+						public string Label
+						{
+							get
+							{
+								return label;
+							}
+							set	
+							{
+								label = value;
+							}
+						}
+
+						public string Score
+						{
+							get
+							{
+								return score;
+							}
+							set	
+							{
+								score = value;
+							}
+						}
+
+						public string Timestamp
+						{
+							get
+							{
+								return timestamp;
+							}
+							set	
+							{
+								timestamp = value;
+							}
+						}
+
+						public string Url
+						{
+							get
+							{
+								return url;
+							}
+							set	
+							{
+								url = value;
+							}
+						}
+					}
+				}
+
+				public class GetMediaAuditResult_LiveResult
+				{
+
+					private string averageScore;
+
+					private string label;
+
+					private string maxScore;
+
+					private string suggestion;
+
+					private List<GetMediaAuditResult_CounterListItem11> counterList9;
+
+					private List<GetMediaAuditResult_TopListItem12> topList10;
+
+					public string AverageScore
+					{
+						get
+						{
+							return averageScore;
+						}
+						set	
+						{
+							averageScore = value;
+						}
+					}
+
+					public string Label
+					{
+						get
+						{
+							return label;
+						}
+						set	
+						{
+							label = value;
+						}
+					}
+
+					public string MaxScore
+					{
+						get
+						{
+							return maxScore;
+						}
+						set	
+						{
+							maxScore = value;
+						}
+					}
+
+					public string Suggestion
+					{
+						get
+						{
+							return suggestion;
+						}
+						set	
+						{
+							suggestion = value;
+						}
+					}
+
+					public List<GetMediaAuditResult_CounterListItem11> CounterList9
+					{
+						get
+						{
+							return counterList9;
+						}
+						set	
+						{
+							counterList9 = value;
+						}
+					}
+
+					public List<GetMediaAuditResult_TopListItem12> TopList10
+					{
+						get
+						{
+							return topList10;
+						}
+						set	
+						{
+							topList10 = value;
+						}
+					}
+
+					public class GetMediaAuditResult_CounterListItem11
+					{
+
+						private int? count;
+
+						private string label;
+
+						public int? Count
+						{
+							get
+							{
+								return count;
+							}
+							set	
+							{
+								count = value;
+							}
+						}
+
+						public string Label
+						{
+							get
+							{
+								return label;
+							}
+							set	
+							{
+								label = value;
+							}
+						}
+					}
+
+					public class GetMediaAuditResult_TopListItem12
+					{
+
+						private string label;
+
+						private string score;
+
+						private string timestamp;
+
+						private string url;
+
+						public string Label
+						{
+							get
+							{
+								return label;
+							}
+							set	
+							{
+								label = value;
+							}
+						}
+
+						public string Score
+						{
+							get
+							{
+								return score;
+							}
+							set	
+							{
+								score = value;
+							}
+						}
+
+						public string Timestamp
+						{
+							get
+							{
+								return timestamp;
+							}
+							set	
+							{
+								timestamp = value;
+							}
+						}
+
+						public string Url
+						{
+							get
+							{
+								return url;
+							}
+							set	
+							{
+								url = value;
+							}
+						}
+					}
+				}
+
+				public class GetMediaAuditResult_TerrorismResult
+				{
+
+					private string averageScore;
+
+					private string label;
+
+					private string maxScore;
+
+					private string suggestion;
+
+					private List<GetMediaAuditResult_CounterListItem15> counterList13;
+
+					private List<GetMediaAuditResult_TopListItem16> topList14;
+
+					public string AverageScore
+					{
+						get
+						{
+							return averageScore;
+						}
+						set	
+						{
+							averageScore = value;
+						}
+					}
+
+					public string Label
+					{
+						get
+						{
+							return label;
+						}
+						set	
+						{
+							label = value;
+						}
+					}
+
+					public string MaxScore
+					{
+						get
+						{
+							return maxScore;
+						}
+						set	
+						{
+							maxScore = value;
+						}
+					}
+
+					public string Suggestion
+					{
+						get
+						{
+							return suggestion;
+						}
+						set	
+						{
+							suggestion = value;
+						}
+					}
+
+					public List<GetMediaAuditResult_CounterListItem15> CounterList13
+					{
+						get
+						{
+							return counterList13;
+						}
+						set	
+						{
+							counterList13 = value;
+						}
+					}
+
+					public List<GetMediaAuditResult_TopListItem16> TopList14
+					{
+						get
+						{
+							return topList14;
+						}
+						set	
+						{
+							topList14 = value;
+						}
+					}
+
+					public class GetMediaAuditResult_CounterListItem15
+					{
+
+						private int? count;
+
+						private string label;
+
+						public int? Count
+						{
+							get
+							{
+								return count;
+							}
+							set	
+							{
+								count = value;
+							}
+						}
+
+						public string Label
+						{
+							get
+							{
+								return label;
+							}
+							set	
+							{
+								label = value;
+							}
+						}
+					}
+
+					public class GetMediaAuditResult_TopListItem16
 					{
 
 						private string label;

@@ -219,6 +219,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string type;
 
+				private string userData;
+
 				private List<string> watermarkIds;
 
 				public string TranscodeTemplateId
@@ -422,6 +424,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						type = value;
+					}
+				}
+
+				public string UserData
+				{
+					get
+					{
+						return userData;
+					}
+					set	
+					{
+						userData = value;
 					}
 				}
 

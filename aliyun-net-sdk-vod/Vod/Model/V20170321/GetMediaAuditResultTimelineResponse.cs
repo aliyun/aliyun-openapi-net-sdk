@@ -60,6 +60,12 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 			private List<GetMediaAuditResultTimeline_TerrorismItem> terrorism;
 
+			private List<GetMediaAuditResultTimeline_LogoItem> logo;
+
+			private List<GetMediaAuditResultTimeline_LiveItem> live;
+
+			private List<GetMediaAuditResultTimeline_AdItem> ad;
+
 			public List<GetMediaAuditResultTimeline_PornItem> Porn
 			{
 				get
@@ -81,6 +87,42 @@ namespace Aliyun.Acs.vod.Model.V20170321
 				set	
 				{
 					terrorism = value;
+				}
+			}
+
+			public List<GetMediaAuditResultTimeline_LogoItem> Logo
+			{
+				get
+				{
+					return logo;
+				}
+				set	
+				{
+					logo = value;
+				}
+			}
+
+			public List<GetMediaAuditResultTimeline_LiveItem> Live
+			{
+				get
+				{
+					return live;
+				}
+				set	
+				{
+					live = value;
+				}
+			}
+
+			public List<GetMediaAuditResultTimeline_AdItem> Ad
+			{
+				get
+				{
+					return ad;
+				}
+				set	
+				{
+					ad = value;
 				}
 			}
 
@@ -131,6 +173,144 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 
 			public class GetMediaAuditResultTimeline_TerrorismItem
+			{
+
+				private string label;
+
+				private string score;
+
+				private string timestamp;
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
+					}
+				}
+
+				public string Score
+				{
+					get
+					{
+						return score;
+					}
+					set	
+					{
+						score = value;
+					}
+				}
+
+				public string Timestamp
+				{
+					get
+					{
+						return timestamp;
+					}
+					set	
+					{
+						timestamp = value;
+					}
+				}
+			}
+
+			public class GetMediaAuditResultTimeline_LogoItem
+			{
+
+				private string label;
+
+				private string score;
+
+				private string timestamp;
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
+					}
+				}
+
+				public string Score
+				{
+					get
+					{
+						return score;
+					}
+					set	
+					{
+						score = value;
+					}
+				}
+
+				public string Timestamp
+				{
+					get
+					{
+						return timestamp;
+					}
+					set	
+					{
+						timestamp = value;
+					}
+				}
+			}
+
+			public class GetMediaAuditResultTimeline_LiveItem
+			{
+
+				private string label;
+
+				private string score;
+
+				private string timestamp;
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
+					}
+				}
+
+				public string Score
+				{
+					get
+					{
+						return score;
+					}
+					set	
+					{
+						score = value;
+					}
+				}
+
+				public string Timestamp
+				{
+					get
+					{
+						return timestamp;
+					}
+					set	
+					{
+						timestamp = value;
+					}
+				}
+			}
+
+			public class GetMediaAuditResultTimeline_AdItem
 			{
 
 				private string label;

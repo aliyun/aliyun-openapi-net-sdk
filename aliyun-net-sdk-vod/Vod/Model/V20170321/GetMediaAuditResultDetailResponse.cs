@@ -99,6 +99,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string url;
 
+				private string adLabel;
+
+				private string adScore;
+
+				private string liveLabel;
+
+				private string liveScore;
+
+				private string logoLabel;
+
+				private string logoScore;
+
 				public string PornLabel
 				{
 					get
@@ -168,6 +180,78 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						url = value;
+					}
+				}
+
+				public string AdLabel
+				{
+					get
+					{
+						return adLabel;
+					}
+					set	
+					{
+						adLabel = value;
+					}
+				}
+
+				public string AdScore
+				{
+					get
+					{
+						return adScore;
+					}
+					set	
+					{
+						adScore = value;
+					}
+				}
+
+				public string LiveLabel
+				{
+					get
+					{
+						return liveLabel;
+					}
+					set	
+					{
+						liveLabel = value;
+					}
+				}
+
+				public string LiveScore
+				{
+					get
+					{
+						return liveScore;
+					}
+					set	
+					{
+						liveScore = value;
+					}
+				}
+
+				public string LogoLabel
+				{
+					get
+					{
+						return logoLabel;
+					}
+					set	
+					{
+						logoLabel = value;
+					}
+				}
+
+				public string LogoScore
+				{
+					get
+					{
+						return logoScore;
+					}
+					set	
+					{
+						logoScore = value;
 					}
 				}
 			}

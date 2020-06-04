@@ -45,6 +45,12 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				listItem.TerrorismScore = context.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].TerrorismScore");
 				listItem.Timestamp = context.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].Timestamp");
 				listItem.Url = context.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].Url");
+				listItem.AdLabel = context.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].AdLabel");
+				listItem.AdScore = context.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].AdScore");
+				listItem.LiveLabel = context.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].LiveLabel");
+				listItem.LiveScore = context.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].LiveScore");
+				listItem.LogoLabel = context.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].LogoLabel");
+				listItem.LogoScore = context.StringValue("GetMediaAuditResultDetail.MediaAuditResultDetail.List["+ i +"].LogoScore");
 
 				mediaAuditResultDetail_list.Add(listItem);
 			}

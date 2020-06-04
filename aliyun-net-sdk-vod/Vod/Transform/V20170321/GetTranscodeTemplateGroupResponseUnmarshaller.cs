@@ -63,6 +63,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				transcodeTemplate.Clip = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Clip");
 				transcodeTemplate.Rotate = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Rotate");
 				transcodeTemplate.Type = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].Type");
+				transcodeTemplate.UserData = context.StringValue("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].UserData");
 
 				List<string> transcodeTemplate_watermarkIds = new List<string>();
 				for (int j = 0; j < context.Length("GetTranscodeTemplateGroup.TranscodeTemplateGroup.TranscodeTemplateList["+ i +"].WatermarkIds.Length"); j++) {

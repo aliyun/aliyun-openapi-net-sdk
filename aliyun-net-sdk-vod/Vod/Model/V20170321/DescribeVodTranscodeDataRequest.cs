@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.vod;
 using Aliyun.Acs.vod.Transform;
 using Aliyun.Acs.vod.Transform.V20170321;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
     public class DescribeVodTranscodeDataRequest : RpcAcsRequest<DescribeVodTranscodeDataResponse>
     {
         public DescribeVodTranscodeDataRequest()
-            : base("vod", "2017-03-21", "DescribeVodTranscodeData")
+            : base("vod", "2017-03-21", "DescribeVodTranscodeData", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,6 +48,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 		private string specification;
 
 		private long? ownerId;
+
+		private string interval;
 
 		private string region;
 
@@ -114,6 +115,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Interval
+		{
+			get
+			{
+				return interval;
+			}
+			set	
+			{
+				interval = value;
+				DictionaryUtil.Add(QueryParameters, "Interval", value);
 			}
 		}
 
