@@ -123,13 +123,25 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string startTime;
 
+				private string stopTime;
+
 				private string finishedTime;
+
+				private int? repeats;
 
 				private string output;
 
+				private int? dropped;
+
 				private string invokeRecordStatus;
 
+				private string invocationStatus;
+
 				private long? exitCode;
+
+				private string errorCode;
+
+				private string errorInfo;
 
 				public string CommandId
 				{
@@ -179,6 +191,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public string StopTime
+				{
+					get
+					{
+						return stopTime;
+					}
+					set	
+					{
+						stopTime = value;
+					}
+				}
+
 				public string FinishedTime
 				{
 					get
@@ -188,6 +212,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						finishedTime = value;
+					}
+				}
+
+				public int? Repeats
+				{
+					get
+					{
+						return repeats;
+					}
+					set	
+					{
+						repeats = value;
 					}
 				}
 
@@ -203,6 +239,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public int? Dropped
+				{
+					get
+					{
+						return dropped;
+					}
+					set	
+					{
+						dropped = value;
+					}
+				}
+
 				public string InvokeRecordStatus
 				{
 					get
@@ -215,6 +263,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 				}
 
+				public string InvocationStatus
+				{
+					get
+					{
+						return invocationStatus;
+					}
+					set	
+					{
+						invocationStatus = value;
+					}
+				}
+
 				public long? ExitCode
 				{
 					get
@@ -224,6 +284,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						exitCode = value;
+					}
+				}
+
+				public string ErrorCode
+				{
+					get
+					{
+						return errorCode;
+					}
+					set	
+					{
+						errorCode = value;
+					}
+				}
+
+				public string ErrorInfo
+				{
+					get
+					{
+						return errorInfo;
+					}
+					set	
+					{
+						errorInfo = value;
 					}
 				}
 			}

@@ -45,10 +45,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				invocationResult.InvokeId = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvokeId");
 				invocationResult.InstanceId = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InstanceId");
 				invocationResult.StartTime = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].StartTime");
+				invocationResult.StopTime = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].StopTime");
 				invocationResult.FinishedTime = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].FinishedTime");
+				invocationResult.Repeats = context.IntegerValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].Repeats");
 				invocationResult.Output = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].Output");
+				invocationResult.Dropped = context.IntegerValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].Dropped");
 				invocationResult.InvokeRecordStatus = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvokeRecordStatus");
+				invocationResult.InvocationStatus = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].InvocationStatus");
 				invocationResult.ExitCode = context.LongValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].ExitCode");
+				invocationResult.ErrorCode = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].ErrorCode");
+				invocationResult.ErrorInfo = context.StringValue("DescribeInvocationResults.Invocation.InvocationResults["+ i +"].ErrorInfo");
 
 				invocation_invocationResults.Add(invocationResult);
 			}

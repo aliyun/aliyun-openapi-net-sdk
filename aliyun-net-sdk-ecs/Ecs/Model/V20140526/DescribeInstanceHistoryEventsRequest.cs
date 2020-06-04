@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageNumber;
 
+		private string impactLevel;
+
 		private int? pageSize;
 
 		private List<string> instanceEventCycleStatuss = new List<string>(){ };
@@ -124,6 +126,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ImpactLevel
+		{
+			get
+			{
+				return impactLevel;
+			}
+			set	
+			{
+				impactLevel = value;
+				DictionaryUtil.Add(QueryParameters, "ImpactLevel", value);
 			}
 		}
 

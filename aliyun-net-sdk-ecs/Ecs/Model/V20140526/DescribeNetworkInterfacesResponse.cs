@@ -156,6 +156,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private DescribeNetworkInterfaces_AssociatedPublicIp associatedPublicIp;
 
+			private DescribeNetworkInterfaces_Attachment attachment;
+
 			public string NetworkInterfaceId
 			{
 				get
@@ -420,6 +422,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public DescribeNetworkInterfaces_Attachment Attachment
+			{
+				get
+				{
+					return attachment;
+				}
+				set	
+				{
+					attachment = value;
+				}
+			}
+
 			public class DescribeNetworkInterfaces_PrivateIpSet
 			{
 
@@ -576,6 +590,52 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						allocationId = value;
+					}
+				}
+			}
+
+			public class DescribeNetworkInterfaces_Attachment
+			{
+
+				private string instanceId;
+
+				private string trunkNetworkInterfaceId;
+
+				private int? deviceIndex;
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public string TrunkNetworkInterfaceId
+				{
+					get
+					{
+						return trunkNetworkInterfaceId;
+					}
+					set	
+					{
+						trunkNetworkInterfaceId = value;
+					}
+				}
+
+				public int? DeviceIndex
+				{
+					get
+					{
+						return deviceIndex;
+					}
+					set	
+					{
+						deviceIndex = value;
 					}
 				}
 			}

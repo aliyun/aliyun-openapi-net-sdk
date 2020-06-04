@@ -96,6 +96,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? totalEniQueueQuantity;
 
+			private bool? eniTrunkSupported;
+
+			private int? eniTotalQuantity;
+
 			public string InstanceTypeId
 			{
 				get
@@ -333,6 +337,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					totalEniQueueQuantity = value;
+				}
+			}
+
+			public bool? EniTrunkSupported
+			{
+				get
+				{
+					return eniTrunkSupported;
+				}
+				set	
+				{
+					eniTrunkSupported = value;
+				}
+			}
+
+			public int? EniTotalQuantity
+			{
+				get
+				{
+					return eniTotalQuantity;
+				}
+				set	
+				{
+					eniTotalQuantity = value;
 				}
 			}
 		}

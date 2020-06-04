@@ -41,6 +41,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string trunkNetworkInstanceId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -61,6 +63,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string TrunkNetworkInstanceId
+		{
+			get
+			{
+				return trunkNetworkInstanceId;
+			}
+			set	
+			{
+				trunkNetworkInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "TrunkNetworkInstanceId", value);
 			}
 		}
 

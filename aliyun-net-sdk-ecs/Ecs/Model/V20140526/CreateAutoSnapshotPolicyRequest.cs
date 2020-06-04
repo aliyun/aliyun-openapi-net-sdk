@@ -41,11 +41,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private int? copiedSnapshotsRetentionDays;
+
 		private string timePoints;
 
 		private string repeatWeekdays;
 
 		private List<Tag> tags = new List<Tag>(){ };
+
+		private bool? enableCrossRegionCopy;
 
 		private string resourceOwnerAccount;
 
@@ -54,6 +58,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string autoSnapshotPolicyName;
 
 		private int? retentionDays;
+
+		private string targetCopyRegions;
 
 		public long? ResourceOwnerId
 		{
@@ -65,6 +71,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? CopiedSnapshotsRetentionDays
+		{
+			get
+			{
+				return copiedSnapshotsRetentionDays;
+			}
+			set	
+			{
+				copiedSnapshotsRetentionDays = value;
+				DictionaryUtil.Add(QueryParameters, "CopiedSnapshotsRetentionDays", value.ToString());
 			}
 		}
 
@@ -109,6 +128,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public bool? EnableCrossRegionCopy
+		{
+			get
+			{
+				return enableCrossRegionCopy;
+			}
+			set	
+			{
+				enableCrossRegionCopy = value;
+				DictionaryUtil.Add(QueryParameters, "EnableCrossRegionCopy", value.ToString());
 			}
 		}
 
@@ -161,6 +193,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				retentionDays = value;
 				DictionaryUtil.Add(QueryParameters, "retentionDays", value.ToString());
+			}
+		}
+
+		public string TargetCopyRegions
+		{
+			get
+			{
+				return targetCopyRegions;
+			}
+			set	
+			{
+				targetCopyRegions = value;
+				DictionaryUtil.Add(QueryParameters, "TargetCopyRegions", value);
 			}
 		}
 

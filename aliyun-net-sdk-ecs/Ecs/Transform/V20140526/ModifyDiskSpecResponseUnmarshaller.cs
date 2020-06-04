@@ -32,6 +32,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			modifyDiskSpecResponse.HttpResponse = context.HttpResponse;
 			modifyDiskSpecResponse.RequestId = context.StringValue("ModifyDiskSpec.RequestId");
+			modifyDiskSpecResponse.TaskId = context.StringValue("ModifyDiskSpec.TaskId");
         
 			return modifyDiskSpecResponse;
         }

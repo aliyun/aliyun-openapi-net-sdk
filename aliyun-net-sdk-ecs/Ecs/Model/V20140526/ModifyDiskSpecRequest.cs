@@ -42,7 +42,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string diskCategory;
+
 		private string diskId;
+
+		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
@@ -65,6 +69,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string DiskCategory
+		{
+			get
+			{
+				return diskCategory;
+			}
+			set	
+			{
+				diskCategory = value;
+				DictionaryUtil.Add(QueryParameters, "DiskCategory", value);
+			}
+		}
+
 		public string DiskId
 		{
 			get
@@ -75,6 +92,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				diskId = value;
 				DictionaryUtil.Add(QueryParameters, "DiskId", value);
+			}
+		}
+
+		public bool? DryRun
+		{
+			get
+			{
+				return dryRun;
+			}
+			set	
+			{
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 

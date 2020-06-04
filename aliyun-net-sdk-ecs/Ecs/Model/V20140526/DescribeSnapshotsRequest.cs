@@ -85,6 +85,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string kMSKeyId;
 
+		private string category;
+
 		private string status;
 
 		public long? ResourceOwnerId
@@ -388,6 +390,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				kMSKeyId = value;
 				DictionaryUtil.Add(QueryParameters, "KMSKeyId", value);
+			}
+		}
+
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

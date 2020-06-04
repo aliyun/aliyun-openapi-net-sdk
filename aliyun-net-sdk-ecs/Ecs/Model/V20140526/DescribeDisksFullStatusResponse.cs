@@ -191,6 +191,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string eventEndTime;
 
+				private string impactLevel;
+
 				private DescribeDisksFullStatus_EventType eventType;
 
 				public string EventId
@@ -226,6 +228,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						eventEndTime = value;
+					}
+				}
+
+				public string ImpactLevel
+				{
+					get
+					{
+						return impactLevel;
+					}
+					set	
+					{
+						impactLevel = value;
 					}
 				}
 

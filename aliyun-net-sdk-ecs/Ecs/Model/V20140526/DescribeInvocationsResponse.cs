@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string invokeStatus;
 
+			private string invocationStatus;
+
 			private string parameters;
 
 			private List<DescribeInvocations_InvokeInstance> invokeInstances;
@@ -225,6 +227,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					invokeStatus = value;
+				}
+			}
+
+			public string InvocationStatus
+			{
+				get
+				{
+					return invocationStatus;
+				}
+				set	
+				{
+					invocationStatus = value;
 				}
 			}
 

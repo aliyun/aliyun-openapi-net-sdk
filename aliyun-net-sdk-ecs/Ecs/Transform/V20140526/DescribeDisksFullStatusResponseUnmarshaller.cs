@@ -59,6 +59,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 					diskEventType.EventId = context.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventId");
 					diskEventType.EventTime = context.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventTime");
 					diskEventType.EventEndTime = context.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventEndTime");
+					diskEventType.ImpactLevel = context.StringValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].ImpactLevel");
 
 					DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_DiskEventType.DescribeDisksFullStatus_EventType eventType = new DescribeDisksFullStatusResponse.DescribeDisksFullStatus_DiskFullStatusType.DescribeDisksFullStatus_DiskEventType.DescribeDisksFullStatus_EventType();
 					eventType.Code = context.IntegerValue("DescribeDisksFullStatus.DiskFullStatusSet["+ i +"].DiskEventSet["+ j +"].EventType.Code");

@@ -49,6 +49,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				autoSnapshotPolicy.VolumeNums = context.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].VolumeNums");
 				autoSnapshotPolicy.CreationTime = context.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].CreationTime");
 				autoSnapshotPolicy.Status = context.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].Status");
+				autoSnapshotPolicy.EnableCrossRegionCopy = context.BooleanValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].EnableCrossRegionCopy");
+				autoSnapshotPolicy.TargetCopyRegions = context.StringValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].TargetCopyRegions");
+				autoSnapshotPolicy.CopiedSnapshotsRetentionDays = context.IntegerValue("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].CopiedSnapshotsRetentionDays");
 
 				List<DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy.DescribeAutoSnapshotPolicyEx_Tag> autoSnapshotPolicy_tags = new List<DescribeAutoSnapshotPolicyExResponse.DescribeAutoSnapshotPolicyEx_AutoSnapshotPolicy.DescribeAutoSnapshotPolicyEx_Tag>();
 				for (int j = 0; j < context.Length("DescribeAutoSnapshotPolicyEx.AutoSnapshotPolicies["+ i +"].Tags.Length"); j++) {

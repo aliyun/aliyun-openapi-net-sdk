@@ -130,6 +130,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string resourceGroupId;
 
+			private long? serviceID;
+
+			private bool? serviceManaged;
+
 			private List<DescribeSecurityGroups_Tag> tags;
 
 			public string SecurityGroupId
@@ -237,6 +241,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public long? ServiceID
+			{
+				get
+				{
+					return serviceID;
+				}
+				set	
+				{
+					serviceID = value;
+				}
+			}
+
+			public bool? ServiceManaged
+			{
+				get
+				{
+					return serviceManaged;
+				}
+				set	
+				{
+					serviceManaged = value;
 				}
 			}
 

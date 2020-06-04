@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class ModifyImageAttributeRequest : RpcAcsRequest<ModifyImageAttributeResponse>
+    public class DescribeNetworkInterfaceAttributeRequest : RpcAcsRequest<DescribeNetworkInterfaceAttributeResponse>
     {
-        public ModifyImageAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyImageAttribute", "ecs", "openAPI")
+        public DescribeNetworkInterfaceAttributeRequest()
+            : base("Ecs", "2014-05-26", "DescribeNetworkInterfaceAttribute", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +41,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string imageId;
+		private List<Tag> tags = new List<Tag>(){ };
 
-		private string description;
-
-		private string bootMode;
-
-		private string imageName;
+		private string attribute;
 
 		private string resourceOwnerAccount;
 
@@ -56,9 +51,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private string imageFamily;
-
-		private string status;
+		private string networkInterfaceId;
 
 		public long? ResourceOwnerId
 		{
@@ -73,55 +66,34 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ImageId
+		public List<Tag> Tags
 		{
 			get
 			{
-				return imageId;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				imageId = value;
-				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+				}
 			}
 		}
 
-		public string Description
+		public string Attribute
 		{
 			get
 			{
-				return description;
+				return attribute;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string BootMode
-		{
-			get
-			{
-				return bootMode;
-			}
-			set	
-			{
-				bootMode = value;
-				DictionaryUtil.Add(QueryParameters, "BootMode", value);
-			}
-		}
-
-		public string ImageName
-		{
-			get
-			{
-				return imageName;
-			}
-			set	
-			{
-				imageName = value;
-				DictionaryUtil.Add(QueryParameters, "ImageName", value);
+				attribute = value;
+				DictionaryUtil.Add(QueryParameters, "Attribute", value);
 			}
 		}
 
@@ -164,35 +136,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ImageFamily
+		public string NetworkInterfaceId
 		{
 			get
 			{
-				return imageFamily;
+				return networkInterfaceId;
 			}
 			set	
 			{
-				imageFamily = value;
-				DictionaryUtil.Add(QueryParameters, "ImageFamily", value);
+				networkInterfaceId = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkInterfaceId", value);
 			}
 		}
 
-		public string Status
+		public class Tag
 		{
-			get
+
+			private string key;
+
+			private string value_;
+
+			public string Key
 			{
-				return status;
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
-			set	
+
+			public string Value
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 
-        public override ModifyImageAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeNetworkInterfaceAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyImageAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeNetworkInterfaceAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

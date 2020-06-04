@@ -69,6 +69,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				associatedPublicIp.AllocationId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].AssociatedPublicIp.AllocationId");
 				networkInterfaceSet.AssociatedPublicIp = associatedPublicIp;
 
+				DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Attachment attachment = new DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_Attachment();
+				attachment.InstanceId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Attachment.InstanceId");
+				attachment.TrunkNetworkInterfaceId = context.StringValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Attachment.TrunkNetworkInterfaceId");
+				attachment.DeviceIndex = context.IntegerValue("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].Attachment.DeviceIndex");
+				networkInterfaceSet.Attachment = attachment;
+
 				List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_PrivateIpSet> networkInterfaceSet_privateIpSets = new List<DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_PrivateIpSet>();
 				for (int j = 0; j < context.Length("DescribeNetworkInterfaces.NetworkInterfaceSets["+ i +"].PrivateIpSets.Length"); j++) {
 					DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_PrivateIpSet privateIpSet = new DescribeNetworkInterfacesResponse.DescribeNetworkInterfaces_NetworkInterfaceSet.DescribeNetworkInterfaces_PrivateIpSet();

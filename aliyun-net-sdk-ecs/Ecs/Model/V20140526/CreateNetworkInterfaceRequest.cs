@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceGroupId;
 
+		private string instanceType;
+
 		private List<Tag> tags = new List<Tag>(){ };
 
 		private string networkInterfaceName;
@@ -161,6 +163,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 

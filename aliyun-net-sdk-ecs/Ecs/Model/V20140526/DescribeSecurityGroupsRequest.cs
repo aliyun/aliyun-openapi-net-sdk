@@ -69,6 +69,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string securityGroupIds;
 
+		private string securityGroupType;
+
 		private string vpcId;
 
 		public long? ResourceOwnerId
@@ -268,6 +270,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				securityGroupIds = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityGroupIds", value);
+			}
+		}
+
+		public string SecurityGroupType
+		{
+			get
+			{
+				return securityGroupType;
+			}
+			set	
+			{
+				securityGroupType = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupType", value);
 			}
 		}
 

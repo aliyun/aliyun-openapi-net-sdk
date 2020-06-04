@@ -165,6 +165,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string reason;
 
+				private string impactLevel;
+
 				private DescribeInstancesFullStatus_EventCycleStatus eventCycleStatus;
 
 				private DescribeInstancesFullStatus_EventType eventType;
@@ -216,6 +218,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						reason = value;
+					}
+				}
+
+				public string ImpactLevel
+				{
+					get
+					{
+						return impactLevel;
+					}
+					set	
+					{
+						impactLevel = value;
 					}
 				}
 
