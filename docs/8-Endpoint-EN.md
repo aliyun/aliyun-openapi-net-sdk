@@ -1,18 +1,26 @@
 [← Client](7-Client-CN.md) | Endpoint[(中文)](8-Endpoint-CN.md) | [Requirements →](0-Requirements-CN.md)
 ***
 
-# Add Endpoint
-Many times you will encounter an inability to find an Endpoint and you need to manually add an Endpoint.The format added is as follows:
+# Endpoint
+Many times you will encounter an inability to find an Endpoint and you need to manually set an Endpoint. The format added is as follows:
 ```c#
 //...
-DefaultProfile.AddEndpoint("<endpointName>", "<regionId>", "<product>", "<domain>")
+IClientProfile profile = DefaultProfile.GetProfile("<regionId>", "<ACCESS_KEY_ID>", "<ACCESS_KEY_SECRET>");
+// global
+profile.AddEndpoint("<endpointName>", "<regionId>", "<product>", "<domain>");
+IAcsClient client = new DefaultAcsClient(profile);
+DescribeRegionsRequest regionsRequest = new DescribeRegionsRequest();
+// Only valid in the current request
+regionsRequest.SetEndpoint("<your endpoint>");
+
+var request = new AddLiveAppRecordConfigRequest();
+// Splicing rules set the network; parameter:share、 inner、 vpc、 public
+regionsRequest.ProductNetwork = "public";
+
+var response = client.GetAcsResponse(regionsRequest);
 ```
 
-Let's add `Endpoint` manually by taking `dyvmsapi` as an example.
-```c#
-//...
-DefaultProfile.AddEndpoint("cn-hangzhou", "cn-hangzhou", "Dyvmsapi", "dyvmsapi.aliyuncs.com");
-```
+拼接规则方式需要产品端支持并符合规范方可使用。
 
 ***
 [← Client](7-Client-CN.md) | Endpoint[(中文)](8-Endpoint-CN.md) | [Requirements →](0-Requirements-CN.md)
