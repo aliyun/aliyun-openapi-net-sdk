@@ -16,8 +16,8 @@ install:
   - sudo n latest
   - sudo npm install o_o -g --registry=https://registry.npm.taobao.org
   # Install dotnet codecov tool and restore
-  - dotnet tool install --global altcover.visualizer
-  - cd aliyun-net-sdk-core.Tests/ && dotnet add package AltCover && cd ../
+  - dotnet tool install --global altcover.visualizer --version 6.7.750
+  - cd aliyun-net-sdk-core.Tests/ && dotnet add package AltCover --version 6.7.750 && cd ../
 script:
   # Start Proxy
   - sudo o_o &
