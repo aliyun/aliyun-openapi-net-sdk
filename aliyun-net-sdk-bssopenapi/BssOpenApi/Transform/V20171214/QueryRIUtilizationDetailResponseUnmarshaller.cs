@@ -51,6 +51,8 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				detailListItem.DeductDate = context.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductDate");
 				detailListItem.DeductHours = context.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductHours");
 				detailListItem.DeductedProductDetail = context.StringValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductedProductDetail");
+				detailListItem.DeductQuantity = context.FloatValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductQuantity");
+				detailListItem.DeductFactorTotal = context.FloatValue("QueryRIUtilizationDetail.Data.DetailList["+ i +"].DeductFactorTotal");
 
 				data_detailList.Add(detailListItem);
 			}

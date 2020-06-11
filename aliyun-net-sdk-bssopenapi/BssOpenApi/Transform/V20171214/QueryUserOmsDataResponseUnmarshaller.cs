@@ -43,10 +43,10 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 			List<Dictionary<string, string>> data_omsData = new List<Dictionary<string, string>>();
 			for (int i = 0; i < context.Length("QueryUserOmsData.Data.OmsData.Length"); i++) {
 				Dictionary<string, string> tmp = new Dictionary<string, string>() { };
-				foreach (var item in context.ResponseDictionary){
+				foreach (var _item in context.ResponseDictionary){
 					string prefix = "QueryUserOmsData.Data.OmsData["+ i +"].";
-					if (item.Key.IndexOf(prefix) == 0){
-						tmp.Add(item.Key.Substring(prefix.Length), item.Value);
+					if (_item.Key.IndexOf(prefix) == 0){
+						tmp.Add(_item.Key.Substring(prefix.Length), _item.Value);
 					}
 				}
 				if (tmp.Count > 0){

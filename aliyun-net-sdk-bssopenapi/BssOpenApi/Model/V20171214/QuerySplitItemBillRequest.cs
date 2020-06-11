@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QueryCustomerAddressListRequest : RpcAcsRequest<QueryCustomerAddressListResponse>
+    public class QuerySplitItemBillRequest : RpcAcsRequest<QuerySplitItemBillResponse>
     {
-        public QueryCustomerAddressListRequest()
-            : base("BssOpenApi", "2017-12-14", "QueryCustomerAddressList")
+        public QuerySplitItemBillRequest()
+            : base("BssOpenApi", "2017-12-14", "QuerySplitItemBill")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,7 +40,58 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
             }
         }
 
+		private string productCode;
+
+		private string subscriptionType;
+
+		private string billingCycle;
+
 		private long? ownerId;
+
+		private int? pageNum;
+
+		private string productType;
+
+		private int? pageSize;
+
+		public string ProductCode
+		{
+			get
+			{
+				return productCode;
+			}
+			set	
+			{
+				productCode = value;
+				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+			}
+		}
+
+		public string SubscriptionType
+		{
+			get
+			{
+				return subscriptionType;
+			}
+			set	
+			{
+				subscriptionType = value;
+				DictionaryUtil.Add(QueryParameters, "SubscriptionType", value);
+			}
+		}
+
+		public string BillingCycle
+		{
+			get
+			{
+				return billingCycle;
+			}
+			set	
+			{
+				billingCycle = value;
+				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
+			}
+		}
 
 		public long? OwnerId
 		{
@@ -55,9 +106,48 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-        public override QueryCustomerAddressListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? PageNum
+		{
+			get
+			{
+				return pageNum;
+			}
+			set	
+			{
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string ProductType
+		{
+			get
+			{
+				return productType;
+			}
+			set	
+			{
+				productType = value;
+				DictionaryUtil.Add(QueryParameters, "ProductType", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+        public override QuerySplitItemBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryCustomerAddressListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QuerySplitItemBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

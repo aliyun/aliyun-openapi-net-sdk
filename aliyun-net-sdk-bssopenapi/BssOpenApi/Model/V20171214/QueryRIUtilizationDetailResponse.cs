@@ -171,6 +171,10 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string deductedProductDetail;
 
+				private float? deductQuantity;
+
+				private float? deductFactorTotal;
+
 				public string RIInstanceId
 				{
 					get
@@ -252,6 +256,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						deductedProductDetail = value;
+					}
+				}
+
+				public float? DeductQuantity
+				{
+					get
+					{
+						return deductQuantity;
+					}
+					set	
+					{
+						deductQuantity = value;
+					}
+				}
+
+				public float? DeductFactorTotal
+				{
+					get
+					{
+						return deductFactorTotal;
+					}
+					set	
+					{
+						deductFactorTotal = value;
 					}
 				}
 			}

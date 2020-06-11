@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-	public class QueryInstanceBillResponse : AcsResponse
+	public class QuerySplitItemBillResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string message;
 
-		private QueryInstanceBill_Data data;
+		private QuerySplitItemBill_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public QueryInstanceBill_Data Data
+		public QuerySplitItemBill_Data Data
 		{
 			get
 			{
@@ -95,7 +95,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public class QueryInstanceBill_Data
+		public class QuerySplitItemBill_Data
 		{
 
 			private string billingCycle;
@@ -110,7 +110,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private int? pageSize;
 
-			private List<QueryInstanceBill_Item> items;
+			private List<QuerySplitItemBill_Item> items;
 
 			public string BillingCycle
 			{
@@ -184,7 +184,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public List<QueryInstanceBill_Item> Items
+			public List<QuerySplitItemBill_Item> Items
 			{
 				get
 				{
@@ -196,7 +196,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public class QueryInstanceBill_Item
+			public class QuerySplitItemBill_Item
 			{
 
 				private string instanceID;
@@ -271,7 +271,9 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string billingDate;
 
-				private string servicePeriodUnit;
+				private string splitItemID;
+
+				private string splitItemName;
 
 				public string InstanceID
 				{
@@ -705,15 +707,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					}
 				}
 
-				public string ServicePeriodUnit
+				public string SplitItemID
 				{
 					get
 					{
-						return servicePeriodUnit;
+						return splitItemID;
 					}
 					set	
 					{
-						servicePeriodUnit = value;
+						splitItemID = value;
+					}
+				}
+
+				public string SplitItemName
+				{
+					get
+					{
+						return splitItemName;
+					}
+					set	
+					{
+						splitItemName = value;
 					}
 				}
 			}

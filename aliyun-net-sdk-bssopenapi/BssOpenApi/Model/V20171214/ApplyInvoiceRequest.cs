@@ -44,8 +44,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private int? processWay;
 
-		private long? callerBid;
-
 		private long? ownerId;
 
 		private long? invoiceAmount;
@@ -59,8 +57,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		private long? customerId;
 
 		private List<long?> selectedIdss = new List<long?>(){ };
-
-		private long? callerUid;
 
 		public int? InvoicingType
 		{
@@ -85,19 +81,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				processWay = value;
 				DictionaryUtil.Add(QueryParameters, "ProcessWay", value.ToString());
-			}
-		}
-
-		public long? CallerBid
-		{
-			get
-			{
-				return callerBid;
-			}
-			set	
-			{
-				callerBid = value;
-				DictionaryUtil.Add(QueryParameters, "callerBid", value.ToString());
 			}
 		}
 
@@ -193,19 +176,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				{
 					DictionaryUtil.Add(QueryParameters,"SelectedIds." + (i + 1) , selectedIdss[i]);
 				}
-			}
-		}
-
-		public long? CallerUid
-		{
-			get
-			{
-				return callerUid;
-			}
-			set	
-			{
-				callerUid = value;
-				DictionaryUtil.Add(QueryParameters, "callerUid", value.ToString());
 			}
 		}
 
