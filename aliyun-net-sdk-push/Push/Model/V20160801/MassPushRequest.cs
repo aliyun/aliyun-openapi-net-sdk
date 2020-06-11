@@ -76,6 +76,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSMutableContent", pushTasks[i].IOSMutableContent);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationBarPriority", pushTasks[i].AndroidNotificationBarPriority);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".ExpireTime", pushTasks[i].ExpireTime);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationVivoChannel", pushTasks[i].AndroidNotificationVivoChannel);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupBody", pushTasks[i].AndroidPopupBody);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSNotificationCategory", pushTasks[i].IOSNotificationCategory);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationXiaomiChannel", pushTasks[i].AndroidNotificationXiaomiChannel);
@@ -154,6 +155,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private int? androidNotificationBarPriority;
 
 			private string expireTime;
+
+			private string androidNotificationVivoChannel;
 
 			private string androidPopupBody;
 
@@ -430,6 +433,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					expireTime = value;
+				}
+			}
+
+			public string AndroidNotificationVivoChannel
+			{
+				get
+				{
+					return androidNotificationVivoChannel;
+				}
+				set	
+				{
+					androidNotificationVivoChannel = value;
 				}
 			}
 

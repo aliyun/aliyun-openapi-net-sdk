@@ -70,6 +70,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string expireTime;
 
+		private string androidNotificationVivoChannel;
+
 		private string iOSNotificationCategory;
 
 		private string androidNotificationXiaomiChannel;
@@ -322,6 +324,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				expireTime = value;
 				DictionaryUtil.Add(QueryParameters, "ExpireTime", value);
+			}
+		}
+
+		public string AndroidNotificationVivoChannel
+		{
+			get
+			{
+				return androidNotificationVivoChannel;
+			}
+			set	
+			{
+				androidNotificationVivoChannel = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationVivoChannel", value);
 			}
 		}
 
