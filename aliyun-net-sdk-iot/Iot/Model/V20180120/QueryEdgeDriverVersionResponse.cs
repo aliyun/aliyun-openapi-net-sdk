@@ -179,6 +179,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 				private long? gmtModifiedTimestamp;
 
+				private string argument;
+
 				public string DriverId
 				{
 					get
@@ -308,6 +310,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 					set	
 					{
 						gmtModifiedTimestamp = value;
+					}
+				}
+
+				public string Argument
+				{
+					get
+					{
+						return argument;
+					}
+					set	
+					{
+						argument = value;
 					}
 				}
 			}

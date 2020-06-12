@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryDeviceCertRequest : RpcAcsRequest<QueryDeviceCertResponse>
     {
         public QueryDeviceCertRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceCert", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "QueryDeviceCert", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

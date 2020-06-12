@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.Id2 = context.BooleanValue("CreateProduct.Data.Id2");
 			data.ProtocolType = context.StringValue("CreateProduct.Data.ProtocolType");
 			data.AuthType = context.StringValue("CreateProduct.Data.AuthType");
+			data.ProductSecret = context.StringValue("CreateProduct.Data.ProductSecret");
 			createProductResponse.Data = data;
         
 			return createProductResponse;

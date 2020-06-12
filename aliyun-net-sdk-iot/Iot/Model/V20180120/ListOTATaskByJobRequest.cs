@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class ListOTATaskByJobRequest : RpcAcsRequest<ListOTATaskByJobResponse>
     {
         public ListOTATaskByJobRequest()
-            : base("Iot", "2018-01-20", "ListOTATaskByJob", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "ListOTATaskByJob", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

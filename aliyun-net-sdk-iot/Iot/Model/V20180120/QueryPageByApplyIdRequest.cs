@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryPageByApplyIdRequest : RpcAcsRequest<QueryPageByApplyIdResponse>
     {
         public QueryPageByApplyIdRequest()
-            : base("Iot", "2018-01-20", "QueryPageByApplyId", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "QueryPageByApplyId", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

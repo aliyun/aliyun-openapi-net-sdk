@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class PubRequest : RpcAcsRequest<PubResponse>
     {
         public PubRequest()
-            : base("Iot", "2018-01-20", "Pub", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "Pub", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

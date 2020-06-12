@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class UpdateThingModelRequest : RpcAcsRequest<UpdateThingModelResponse>
     {
         public UpdateThingModelRequest()
-            : base("Iot", "2018-01-20", "UpdateThingModel", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "UpdateThingModel", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

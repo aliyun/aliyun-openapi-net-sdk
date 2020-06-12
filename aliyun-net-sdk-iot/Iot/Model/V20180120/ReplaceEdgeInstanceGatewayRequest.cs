@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class ReplaceEdgeInstanceGatewayRequest : RpcAcsRequest<ReplaceEdgeInstanceGatewayResponse>
     {
         public ReplaceEdgeInstanceGatewayRequest()
-            : base("Iot", "2018-01-20", "ReplaceEdgeInstanceGateway", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "ReplaceEdgeInstanceGateway", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

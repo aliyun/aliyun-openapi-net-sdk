@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class CancelOTATaskByJobRequest : RpcAcsRequest<CancelOTATaskByJobResponse>
     {
         public CancelOTATaskByJobRequest()
-            : base("Iot", "2018-01-20", "CancelOTATaskByJob", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "CancelOTATaskByJob", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

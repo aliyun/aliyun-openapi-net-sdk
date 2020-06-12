@@ -100,7 +100,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private long? applyId;
 
-			private List<Dictionary<string, string>> invalidDeviceNameList;
+			private List<string> invalidDeviceNameList;
 
 			public long? ApplyId
 			{
@@ -114,7 +114,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public List<Dictionary<string, string>> InvalidDeviceNameList
+			public List<string> InvalidDeviceNameList
 			{
 				get
 				{

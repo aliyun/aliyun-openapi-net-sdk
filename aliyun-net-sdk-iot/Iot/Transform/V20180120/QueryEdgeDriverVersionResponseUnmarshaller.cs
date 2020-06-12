@@ -55,6 +55,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				driverVersion.ConfigCheckRule = context.StringValue("QueryEdgeDriverVersion.Data.DriverVersionList["+ i +"].ConfigCheckRule");
 				driverVersion.GmtCreateTimestamp = context.LongValue("QueryEdgeDriverVersion.Data.DriverVersionList["+ i +"].GmtCreateTimestamp");
 				driverVersion.GmtModifiedTimestamp = context.LongValue("QueryEdgeDriverVersion.Data.DriverVersionList["+ i +"].GmtModifiedTimestamp");
+				driverVersion.Argument = context.StringValue("QueryEdgeDriverVersion.Data.DriverVersionList["+ i +"].Argument");
 
 				data_driverVersionList.Add(driverVersion);
 			}

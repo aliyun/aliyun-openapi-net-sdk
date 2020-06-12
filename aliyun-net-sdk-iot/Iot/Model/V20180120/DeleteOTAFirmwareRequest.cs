@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class DeleteOTAFirmwareRequest : RpcAcsRequest<DeleteOTAFirmwareResponse>
     {
         public DeleteOTAFirmwareRequest()
-            : base("Iot", "2018-01-20", "DeleteOTAFirmware", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "DeleteOTAFirmware", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

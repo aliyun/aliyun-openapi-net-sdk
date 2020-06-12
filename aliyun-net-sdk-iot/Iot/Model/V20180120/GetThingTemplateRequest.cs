@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class GetThingTemplateRequest : RpcAcsRequest<GetThingTemplateResponse>
     {
         public GetThingTemplateRequest()
-            : base("Iot", "2018-01-20", "GetThingTemplate", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "GetThingTemplate", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

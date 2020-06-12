@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryEdgeInstanceDeviceByDriverRequest : RpcAcsRequest<QueryEdgeInstanceDeviceByDriverResponse>
     {
         public QueryEdgeInstanceDeviceByDriverRequest()
-            : base("Iot", "2018-01-20", "QueryEdgeInstanceDeviceByDriver", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "QueryEdgeInstanceDeviceByDriver", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

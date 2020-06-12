@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class DeleteEdgeDriverVersionRequest : RpcAcsRequest<DeleteEdgeDriverVersionResponse>
     {
         public DeleteEdgeDriverVersionRequest()
-            : base("Iot", "2018-01-20", "DeleteEdgeDriverVersion", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "DeleteEdgeDriverVersion", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class CreateOTAVerifyJobRequest : RpcAcsRequest<CreateOTAVerifyJobResponse>
     {
         public CreateOTAVerifyJobRequest()
-            : base("Iot", "2018-01-20", "CreateOTAVerifyJob", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "CreateOTAVerifyJob", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

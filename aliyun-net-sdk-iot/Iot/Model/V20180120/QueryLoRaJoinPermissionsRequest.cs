@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryLoRaJoinPermissionsRequest : RpcAcsRequest<QueryLoRaJoinPermissionsResponse>
     {
         public QueryLoRaJoinPermissionsRequest()
-            : base("Iot", "2018-01-20", "QueryLoRaJoinPermissions", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "QueryLoRaJoinPermissions", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

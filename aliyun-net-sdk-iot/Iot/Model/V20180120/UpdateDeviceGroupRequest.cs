@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class UpdateDeviceGroupRequest : RpcAcsRequest<UpdateDeviceGroupResponse>
     {
         public UpdateDeviceGroupRequest()
-            : base("Iot", "2018-01-20", "UpdateDeviceGroup", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "UpdateDeviceGroup", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

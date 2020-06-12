@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class InvokeThingsServiceRequest : RpcAcsRequest<InvokeThingsServiceResponse>
     {
         public InvokeThingsServiceRequest()
-            : base("Iot", "2018-01-20", "InvokeThingsService", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "InvokeThingsService", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

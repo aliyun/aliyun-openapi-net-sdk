@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class RemoveThingTopoRequest : RpcAcsRequest<RemoveThingTopoResponse>
     {
         public RemoveThingTopoRequest()
-            : base("Iot", "2018-01-20", "RemoveThingTopo", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "RemoveThingTopo", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class UpdateDeviceShadowRequest : RpcAcsRequest<UpdateDeviceShadowResponse>
     {
         public UpdateDeviceShadowRequest()
-            : base("Iot", "2018-01-20", "UpdateDeviceShadow", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "UpdateDeviceShadow", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

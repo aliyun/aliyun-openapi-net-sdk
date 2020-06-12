@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class NotifyAddThingTopoRequest : RpcAcsRequest<NotifyAddThingTopoResponse>
     {
         public NotifyAddThingTopoRequest()
-            : base("Iot", "2018-01-20", "NotifyAddThingTopo", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "NotifyAddThingTopo", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

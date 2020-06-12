@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class GetEdgeInstanceDeploymentRequest : RpcAcsRequest<GetEdgeInstanceDeploymentResponse>
     {
         public GetEdgeInstanceDeploymentRequest()
-            : base("Iot", "2018-01-20", "GetEdgeInstanceDeployment", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "GetEdgeInstanceDeployment", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

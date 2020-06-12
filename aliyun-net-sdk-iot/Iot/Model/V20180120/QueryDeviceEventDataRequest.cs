@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryDeviceEventDataRequest : RpcAcsRequest<QueryDeviceEventDataResponse>
     {
         public QueryDeviceEventDataRequest()
-            : base("Iot", "2018-01-20", "QueryDeviceEventData", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "QueryDeviceEventData", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

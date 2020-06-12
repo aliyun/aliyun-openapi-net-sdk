@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class DeleteDevicePropRequest : RpcAcsRequest<DeleteDevicePropResponse>
     {
         public DeleteDevicePropRequest()
-            : base("Iot", "2018-01-20", "DeleteDeviceProp", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "DeleteDeviceProp", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

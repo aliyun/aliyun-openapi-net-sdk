@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class ListThingModelVersionRequest : RpcAcsRequest<ListThingModelVersionResponse>
     {
         public ListThingModelVersionRequest()
-            : base("Iot", "2018-01-20", "ListThingModelVersion", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "ListThingModelVersion", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class SetEdgeInstanceDriverConfigsRequest : RpcAcsRequest<SetEdgeInstanceDriverConfigsResponse>
     {
         public SetEdgeInstanceDriverConfigsRequest()
-            : base("Iot", "2018-01-20", "SetEdgeInstanceDriverConfigs", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "SetEdgeInstanceDriverConfigs", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

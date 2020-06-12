@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryEdgeDriverVersionRequest : RpcAcsRequest<QueryEdgeDriverVersionResponse>
     {
         public QueryEdgeDriverVersionRequest()
-            : base("Iot", "2018-01-20", "QueryEdgeDriverVersion", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "QueryEdgeDriverVersion", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -138,7 +138,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string destVersion;
 
-			private string srcVersions;
+			private List<string> srcVersions;
 
 			public string JobId
 			{
@@ -380,7 +380,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public string SrcVersions
+			public List<string> SrcVersions
 			{
 				get
 				{

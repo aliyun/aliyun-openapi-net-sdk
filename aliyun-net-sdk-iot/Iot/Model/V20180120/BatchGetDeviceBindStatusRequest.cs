@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class BatchGetDeviceBindStatusRequest : RpcAcsRequest<BatchGetDeviceBindStatusResponse>
     {
         public BatchGetDeviceBindStatusRequest()
-            : base("Iot", "2018-01-20", "BatchGetDeviceBindStatus", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "BatchGetDeviceBindStatus", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

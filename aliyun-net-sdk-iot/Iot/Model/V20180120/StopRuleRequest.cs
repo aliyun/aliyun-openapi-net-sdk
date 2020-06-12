@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class StopRuleRequest : RpcAcsRequest<StopRuleResponse>
     {
         public StopRuleRequest()
-            : base("Iot", "2018-01-20", "StopRule", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "StopRule", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

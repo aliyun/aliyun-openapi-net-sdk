@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class CreateLoRaNodesTaskRequest : RpcAcsRequest<CreateLoRaNodesTaskResponse>
     {
         public CreateLoRaNodesTaskRequest()
-            : base("Iot", "2018-01-20", "CreateLoRaNodesTask", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "CreateLoRaNodesTask", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

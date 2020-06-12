@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryOTAFirmwareRequest : RpcAcsRequest<QueryOTAFirmwareResponse>
     {
         public QueryOTAFirmwareRequest()
-            : base("Iot", "2018-01-20", "QueryOTAFirmware", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "QueryOTAFirmware", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class CreateEdgeInstanceChannelRequest : RpcAcsRequest<CreateEdgeInstanceChannelResponse>
     {
         public CreateEdgeInstanceChannelRequest()
-            : base("Iot", "2018-01-20", "CreateEdgeInstanceChannel", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "CreateEdgeInstanceChannel", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
     public class QueryEdgeInstanceRequest : RpcAcsRequest<QueryEdgeInstanceResponse>
     {
         public QueryEdgeInstanceRequest()
-            : base("Iot", "2018-01-20", "QueryEdgeInstance", "Iot", "openAPI")
+            : base("Iot", "2018-01-20", "QueryEdgeInstance", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
