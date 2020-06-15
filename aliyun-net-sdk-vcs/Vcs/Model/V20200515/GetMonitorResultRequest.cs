@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private long? startTime;
 
+		private string algorithmVendor;
+
 		private string minRecordId;
 
 		private string taskId;
@@ -86,6 +88,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				startTime = value;
 				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string AlgorithmVendor
+		{
+			get
+			{
+				return algorithmVendor;
+			}
+			set	
+			{
+				algorithmVendor = value;
+				DictionaryUtil.Add(BodyParameters, "AlgorithmVendor", value);
 			}
 		}
 

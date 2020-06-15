@@ -40,7 +40,22 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
+		private string algorithmVendor;
+
 		private string taskId;
+
+		public string AlgorithmVendor
+		{
+			get
+			{
+				return algorithmVendor;
+			}
+			set	
+			{
+				algorithmVendor = value;
+				DictionaryUtil.Add(BodyParameters, "AlgorithmVendor", value);
+			}
+		}
 
 		public string TaskId
 		{

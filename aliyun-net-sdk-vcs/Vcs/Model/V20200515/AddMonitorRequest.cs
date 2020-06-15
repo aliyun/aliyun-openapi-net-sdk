@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private int? batchIndicator;
 
+		private string algorithmVendor;
+
 		public string MonitorType
 		{
 			get
@@ -97,6 +99,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				batchIndicator = value;
 				DictionaryUtil.Add(BodyParameters, "BatchIndicator", value.ToString());
+			}
+		}
+
+		public string AlgorithmVendor
+		{
+			get
+			{
+				return algorithmVendor;
+			}
+			set	
+			{
+				algorithmVendor = value;
+				DictionaryUtil.Add(BodyParameters, "AlgorithmVendor", value);
 			}
 		}
 

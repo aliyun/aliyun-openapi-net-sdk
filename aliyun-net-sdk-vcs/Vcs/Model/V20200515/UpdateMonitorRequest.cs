@@ -64,6 +64,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string deviceList;
 
+		private string algorithmVendor;
+
 		public string CorpId
 		{
 			get
@@ -217,6 +219,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				deviceList = value;
 				DictionaryUtil.Add(BodyParameters, "DeviceList", value);
+			}
+		}
+
+		public string AlgorithmVendor
+		{
+			get
+			{
+				return algorithmVendor;
+			}
+			set	
+			{
+				algorithmVendor = value;
+				DictionaryUtil.Add(BodyParameters, "AlgorithmVendor", value);
 			}
 		}
 
