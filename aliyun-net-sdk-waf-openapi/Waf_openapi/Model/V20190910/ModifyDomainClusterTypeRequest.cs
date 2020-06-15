@@ -37,6 +37,7 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private int? clusterType;

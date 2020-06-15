@@ -38,6 +38,7 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
 
 		private string instanceId;

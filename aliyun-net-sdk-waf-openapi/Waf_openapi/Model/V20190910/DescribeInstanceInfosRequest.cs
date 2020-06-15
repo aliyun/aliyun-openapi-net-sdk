@@ -27,51 +27,35 @@ using Aliyun.Acs.waf_openapi.Transform.V20190910;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
 {
-    public class DescribeCertMatchStatusRequest : RpcAcsRequest<DescribeCertMatchStatusResponse>
+    public class DescribeInstanceInfosRequest : RpcAcsRequest<DescribeInstanceInfosResponse>
     {
-        public DescribeCertMatchStatusRequest()
-            : base("waf-openapi", "2019-09-10", "DescribeCertMatchStatus", "waf", "openAPI")
+        public DescribeInstanceInfosRequest()
+            : base("waf-openapi", "2019-09-10", "DescribeInstanceInfos", "waf", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
-		private string certificate;
-
-		private string privateKey;
+		private string resourceGroupId;
 
 		private string instanceId;
 
-		private string domain;
+		private string instanceSource;
 
-		public string Certificate
+		public string ResourceGroupId
 		{
 			get
 			{
-				return certificate;
+				return resourceGroupId;
 			}
 			set	
 			{
-				certificate = value;
-				DictionaryUtil.Add(QueryParameters, "Certificate", value);
-			}
-		}
-
-		public string PrivateKey
-		{
-			get
-			{
-				return privateKey;
-			}
-			set	
-			{
-				privateKey = value;
-				DictionaryUtil.Add(QueryParameters, "PrivateKey", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -88,22 +72,27 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
-		public string Domain
+		public string InstanceSource
 		{
 			get
 			{
-				return domain;
+				return instanceSource;
 			}
 			set	
 			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
+				instanceSource = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceSource", value);
 			}
 		}
 
-        public override DescribeCertMatchStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override DescribeInstanceInfosResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCertMatchStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeInstanceInfosResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
