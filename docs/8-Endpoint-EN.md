@@ -1,4 +1,4 @@
-[← Client](7-Client-CN.md) | Endpoint[(中文)](8-Endpoint-CN.md) | [Requirements →](0-Requirements-CN.md)
+[← Client & Credentials](7-Client-EN.md) | Endpoint[(中文)](8-Endpoint-CN.md) | [Requirements →](0-Requirements-EN.md)
 ***
 
 # Endpoint
@@ -23,4 +23,4 @@ var response = client.GetAcsResponse(regionsRequest);
 拼接规则方式需要产品端支持并符合规范方可使用。
 
 ***
-[← Client](7-Client-CN.md) | Endpoint[(中文)](8-Endpoint-CN.md) | [Requirements →](0-Requirements-CN.md)
+[← Client & Credentials](7-Client-EN.md) | Endpoint[(中文)](8-Endpoint-CN.md) | [Requirements →](0-Requirements-EN.md)

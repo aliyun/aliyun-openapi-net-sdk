@@ -1,4 +1,4 @@
-[← 日志](6-Log-CN.md) | 客户端[(English)](7-Client-EN.md) | [Endpoint →](8-Endpoint-CN.md)
+[← 日志](6-Log-CN.md) | 客户端与凭证[(English)](7-Client-EN.md) | [Endpoint →](8-Endpoint-CN.md)
 ***
 
 # 使用 AccessKey 调用
@@ -122,4 +122,4 @@ class Program
 ```
 
 ***
-[← 日志](6-Log-CN.md) | 客户端[(English)](7-Client-EN.md) | [Endpoint →](8-Endpoint-CN.md)
+[← 日志](6-Log-CN.md) | 客户端与凭证[(English)](7-Client-EN.md) | [Endpoint →](8-Endpoint-CN.md)

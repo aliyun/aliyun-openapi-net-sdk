@@ -1,4 +1,4 @@
-[← 产品Nuget包](5-Packages-CN.md) | 日志[(English)](6-Log-EN.md) | [客户端 →](7-Client-CN.md)
+[← 产品Nuget包](5-Packages-CN.md) | 日志[(English)](6-Log-EN.md) | [客户端与凭证 →](7-Client-CN.md)
 ***
 
 # 日志
@@ -44,4 +44,4 @@ DefaultAcsClient.DisableLogger();
 | {start_time}     | 开始时间 |
 
 ***
-[← 产品Nuget包](5-Packages-CN.md) | 日志[(English)](6-Log-EN.md) | [客户端 →](7-Client-CN.md)
+[← 产品Nuget包](5-Packages-CN.md) | 日志[(English)](6-Log-EN.md) | [客户端与凭证 →](7-Client-CN.md)
