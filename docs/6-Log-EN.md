@@ -1,4 +1,4 @@
-[← Packages](5-Packages-EN.md) | Log[(中文)](6-Log-CN.md) | [Client →](7-Client-EN.md)
+[← Packages](5-Packages-EN.md) | Log[(中文)](6-Log-CN.md) | [Client & Credentials →](7-Client-EN.md)
 ***
 
 # Log
@@ -44,4 +44,4 @@ DefaultAcsClient.DisableLogger();
 | {start_time}     | Start Time |
 
 ***
-[← Packages](5-Packages-EN.md) | Log[(中文)](6-Log-CN.md) | [Client →](7-Client-EN.md)
+[← Packages](5-Packages-EN.md) | Log[(中文)](6-Log-CN.md) | [Client & Credentials →](7-Client-EN.md)

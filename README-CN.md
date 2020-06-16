@@ -152,7 +152,7 @@ class Program
 * [超时](docs/4-Timeout-CN.md)
 * [产品Nuget包](docs/5-Packages-CN.md)
 * [日志](docs/6-Log-CN.md)
-* [客户端](docs/7-Client-CN.md)
+* [客户端与凭证](docs/7-Client-CN.md)
 * [Endpoint](docs/8-Endpoint-CN.md)
 
 

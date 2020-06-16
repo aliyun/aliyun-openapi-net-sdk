@@ -1,4 +1,4 @@
-[← 客户端](7-Client-CN.md) | Endpoint[(English)](8-Endpoint-EN.md) | [环境要求 →](0-Requirements-CN.md)
+[← 客户端与凭证](7-Client-CN.md) | Endpoint[(English)](8-Endpoint-EN.md) | [环境要求 →](0-Requirements-CN.md)
 ***
 
 # Endpoint
@@ -24,4 +24,4 @@ var response = client.GetAcsResponse(regionsRequest);
 拼接规则方式需要产品端支持并符合规范方可使用。
 
 ***
-[← 客户端](7-Client-CN.md) | Endpoint[(English)](8-Endpoint-EN.md) | [环境要求 →](0-Requirements-CN.md)
+[← 客户端与凭证](7-Client-CN.md) | Endpoint[(English)](8-Endpoint-EN.md) | [环境要求 →](0-Requirements-CN.md)

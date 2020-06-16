@@ -1,4 +1,4 @@
-[← Log](6-Log-EN.md) | Client[(中文)](7-Client-CN.md) | [Endpoint](8-Endpoint-EN.md)
+[← Log](6-Log-EN.md) | Client & Credentials[(中文)](7-Client-CN.md) | [Endpoint](8-Endpoint-EN.md)
 ***
 
 # Using AccessKey call
@@ -122,4 +122,4 @@ class Program
 ```
 
 ***
-[← Log](6-Log-EN.md) | Client[(中文)](7-Client-CN.md) | [Endpoint](8-Endpoint-EN.md)
+[← Log](6-Log-EN.md) | Client & Credentials[(中文)](7-Client-CN.md) | [Endpoint](8-Endpoint-EN.md)
