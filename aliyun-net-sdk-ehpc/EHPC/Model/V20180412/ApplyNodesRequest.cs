@@ -321,6 +321,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				for (int i = 0; i < instanceTypeModels.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"InstanceTypeModel." + (i + 1) + ".MaxPrice", instanceTypeModels[i].MaxPrice);
+					DictionaryUtil.Add(QueryParameters,"InstanceTypeModel." + (i + 1) + ".TargetImageId", instanceTypeModels[i].TargetImageId);
 					DictionaryUtil.Add(QueryParameters,"InstanceTypeModel." + (i + 1) + ".InstanceType", instanceTypeModels[i].InstanceType);
 				}
 			}
@@ -402,6 +403,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 			private float? maxPrice;
 
+			private string targetImageId;
+
 			private string instanceType;
 
 			public float? MaxPrice
@@ -413,6 +416,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					maxPrice = value;
+				}
+			}
+
+			public string TargetImageId
+			{
+				get
+				{
+					return targetImageId;
+				}
+				set	
+				{
+					targetImageId = value;
 				}
 			}
 
