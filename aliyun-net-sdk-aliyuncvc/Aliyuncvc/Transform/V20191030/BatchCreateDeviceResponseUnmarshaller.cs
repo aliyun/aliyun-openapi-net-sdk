@@ -34,6 +34,7 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 			batchCreateDeviceResponse.ErrorCode = context.IntegerValue("BatchCreateDevice.ErrorCode");
 			batchCreateDeviceResponse.Message = context.StringValue("BatchCreateDevice.Message");
 			batchCreateDeviceResponse.Success = context.BooleanValue("BatchCreateDevice.Success");
+			batchCreateDeviceResponse.RequestId = context.StringValue("BatchCreateDevice.RequestId");
 
 			List<BatchCreateDeviceResponse.BatchCreateDevice_Data> batchCreateDeviceResponse_devices = new List<BatchCreateDeviceResponse.BatchCreateDevice_Data>();
 			for (int i = 0; i < context.Length("BatchCreateDevice.Devices.Length"); i++) {

@@ -31,6 +31,8 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 
 		private bool? success;
 
+		private string requestId;
+
 		private List<BatchCreateDevice_Data> devices;
 
 		public int? ErrorCode
@@ -66,6 +68,18 @@ namespace Aliyun.Acs.aliyuncvc.Model.V20191030
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
