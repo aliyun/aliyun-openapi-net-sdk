@@ -32,6 +32,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 
 			assignPrivateIpAddressesResponse.HttpResponse = context.HttpResponse;
 			assignPrivateIpAddressesResponse.RequestId = context.StringValue("AssignPrivateIpAddresses.RequestId");
+
+			AssignPrivateIpAddressesResponse.AssignPrivateIpAddresses_AssignedPrivateIpAddressesSet assignedPrivateIpAddressesSet = new AssignPrivateIpAddressesResponse.AssignPrivateIpAddresses_AssignedPrivateIpAddressesSet();
+			assignedPrivateIpAddressesSet.NetworkInterfaceId = context.StringValue("AssignPrivateIpAddresses.AssignedPrivateIpAddressesSet.NetworkInterfaceId");
+
+			List<string> assignedPrivateIpAddressesSet_privateIpSet = new List<string>();
+			for (int i = 0; i < context.Length("AssignPrivateIpAddresses.AssignedPrivateIpAddressesSet.PrivateIpSet.Length"); i++) {
+				assignedPrivateIpAddressesSet_privateIpSet.Add(context.StringValue("AssignPrivateIpAddresses.AssignedPrivateIpAddressesSet.PrivateIpSet["+ i +"]"));
+			}
+			assignedPrivateIpAddressesSet.PrivateIpSet = assignedPrivateIpAddressesSet_privateIpSet;
+			assignPrivateIpAddressesResponse.AssignedPrivateIpAddressesSet = assignedPrivateIpAddressesSet;
         
 			return assignPrivateIpAddressesResponse;
         }

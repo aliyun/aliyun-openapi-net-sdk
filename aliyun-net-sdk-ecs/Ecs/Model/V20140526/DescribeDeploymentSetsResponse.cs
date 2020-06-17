@@ -126,6 +126,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string granularity;
 
+			private int? groupCount;
+
 			private int? instanceAmount;
 
 			private string creationTime;
@@ -213,6 +215,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					granularity = value;
+				}
+			}
+
+			public int? GroupCount
+			{
+				get
+				{
+					return groupCount;
+				}
+				set	
+				{
+					groupCount = value;
 				}
 			}
 

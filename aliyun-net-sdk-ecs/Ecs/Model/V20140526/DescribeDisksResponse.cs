@@ -170,6 +170,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string bdfId;
 
+			private string serialNumber;
+
 			private List<DescribeDisks_OperationLock> operationLocks;
 
 			private List<DescribeDisks_MountInstance> mountInstances;
@@ -605,6 +607,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					bdfId = value;
+				}
+			}
+
+			public string SerialNumber
+			{
+				get
+				{
+					return serialNumber;
+				}
+				set	
+				{
+					serialNumber = value;
 				}
 			}
 

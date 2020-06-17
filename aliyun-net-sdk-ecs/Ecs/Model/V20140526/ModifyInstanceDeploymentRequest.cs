@@ -38,9 +38,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
+
+		private int? deploymentSetGroupNo;
 
 		private string instanceType;
 
@@ -74,6 +77,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? DeploymentSetGroupNo
+		{
+			get
+			{
+				return deploymentSetGroupNo;
+			}
+			set	
+			{
+				deploymentSetGroupNo = value;
+				DictionaryUtil.Add(QueryParameters, "DeploymentSetGroupNo", value.ToString());
 			}
 		}
 

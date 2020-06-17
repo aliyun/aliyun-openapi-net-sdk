@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string launchTemplateName;
@@ -65,6 +66,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string hostName;
 
 		private string password;
+
+		private int? deploymentSetGroupNo;
 
 		private int? storageSetPartitionNumber;
 
@@ -346,6 +349,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				password = value;
 				DictionaryUtil.Add(QueryParameters, "Password", value);
+			}
+		}
+
+		public int? DeploymentSetGroupNo
+		{
+			get
+			{
+				return deploymentSetGroupNo;
+			}
+			set	
+			{
+				deploymentSetGroupNo = value;
+				DictionaryUtil.Add(QueryParameters, "DeploymentSetGroupNo", value.ToString());
 			}
 		}
 

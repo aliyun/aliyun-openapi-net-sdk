@@ -54,6 +54,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instance.Memory = context.IntegerValue("DescribeInstances.Instances["+ i +"].Memory");
 				instance.HostName = context.StringValue("DescribeInstances.Instances["+ i +"].HostName");
 				instance.DeploymentSetId = context.StringValue("DescribeInstances.Instances["+ i +"].DeploymentSetId");
+				instance.DeploymentSetGroupNo = context.IntegerValue("DescribeInstances.Instances["+ i +"].DeploymentSetGroupNo");
 				instance.Status = context.StringValue("DescribeInstances.Instances["+ i +"].Status");
 				instance.SerialNumber = context.StringValue("DescribeInstances.Instances["+ i +"].SerialNumber");
 				instance.InternetChargeType = context.StringValue("DescribeInstances.Instances["+ i +"].InternetChargeType");

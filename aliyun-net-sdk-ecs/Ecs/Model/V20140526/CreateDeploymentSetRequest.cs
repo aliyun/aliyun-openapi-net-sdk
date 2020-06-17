@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string clientToken;
 
 		private string description;
+
+		private long? groupCount;
 
 		private string resourceOwnerAccount;
 
@@ -97,6 +100,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				description = value;
 				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public long? GroupCount
+		{
+			get
+			{
+				return groupCount;
+			}
+			set	
+			{
+				groupCount = value;
+				DictionaryUtil.Add(QueryParameters, "GroupCount", value.ToString());
 			}
 		}
 

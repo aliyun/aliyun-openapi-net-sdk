@@ -128,6 +128,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string deploymentSetId;
 
+			private int? deploymentSetGroupNo;
+
 			private string status;
 
 			private string serialNumber;
@@ -391,6 +393,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					deploymentSetId = value;
+				}
+			}
+
+			public int? DeploymentSetGroupNo
+			{
+				get
+				{
+					return deploymentSetGroupNo;
+				}
+				set	
+				{
+					deploymentSetGroupNo = value;
 				}
 			}
 

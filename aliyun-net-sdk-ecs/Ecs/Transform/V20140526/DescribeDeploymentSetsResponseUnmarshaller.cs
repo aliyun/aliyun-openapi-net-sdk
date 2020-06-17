@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				deploymentSet.DeploymentStrategy = context.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].DeploymentStrategy");
 				deploymentSet.Domain = context.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Domain");
 				deploymentSet.Granularity = context.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].Granularity");
+				deploymentSet.GroupCount = context.IntegerValue("DescribeDeploymentSets.DeploymentSets["+ i +"].GroupCount");
 				deploymentSet.InstanceAmount = context.IntegerValue("DescribeDeploymentSets.DeploymentSets["+ i +"].InstanceAmount");
 				deploymentSet.CreationTime = context.StringValue("DescribeDeploymentSets.DeploymentSets["+ i +"].CreationTime");
 

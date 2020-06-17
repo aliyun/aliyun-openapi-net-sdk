@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class CancelPhysicalConnectionRequest : RpcAcsRequest<CancelPhysicalConnectionResponse>
+    public class DescribeDeploymentSetSupportedInstanceTypeFamilyRequest : RpcAcsRequest<DescribeDeploymentSetSupportedInstanceTypeFamilyResponse>
     {
-        public CancelPhysicalConnectionRequest()
-            : base("Ecs", "2014-05-26", "CancelPhysicalConnection", "ecs", "openAPI")
+        public DescribeDeploymentSetSupportedInstanceTypeFamilyRequest()
+            : base("Ecs", "2014-05-26", "DescribeDeploymentSetSupportedInstanceTypeFamily", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,17 +42,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
-
-		private string userCidr;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string physicalConnectionId;
 
 		public long? ResourceOwnerId
 		{
@@ -64,32 +58,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string UserCidr
-		{
-			get
-			{
-				return userCidr;
-			}
-			set	
-			{
-				userCidr = value;
-				DictionaryUtil.Add(QueryParameters, "UserCidr", value);
 			}
 		}
 
@@ -132,22 +100,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string PhysicalConnectionId
-		{
-			get
-			{
-				return physicalConnectionId;
-			}
-			set	
-			{
-				physicalConnectionId = value;
-				DictionaryUtil.Add(QueryParameters, "PhysicalConnectionId", value);
-			}
-		}
-
-        public override CancelPhysicalConnectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDeploymentSetSupportedInstanceTypeFamilyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CancelPhysicalConnectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDeploymentSetSupportedInstanceTypeFamilyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
