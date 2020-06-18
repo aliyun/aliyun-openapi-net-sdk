@@ -27,10 +27,10 @@ using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-    public class TwiceTelVerifyRequest : RpcAcsRequest<TwiceTelVerifyResponse>
+    public class GetAuthTokenRequest : RpcAcsRequest<GetAuthTokenResponse>
     {
-        public TwiceTelVerifyRequest()
-            : base("Dypnsapi", "2017-05-25", "TwiceTelVerify", "dypns", "openAPI")
+        public GetAuthTokenRequest()
+            : base("Dypnsapi", "2017-05-25", "GetAuthToken", "dypns", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,11 +44,11 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private string resourceOwnerAccount;
 
-		private string phoneNumber;
+		private string origin;
 
 		private long? ownerId;
 
-		private string since;
+		private string url;
 
 		public long? ResourceOwnerId
 		{
@@ -76,16 +76,16 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string PhoneNumber
+		public string Origin
 		{
 			get
 			{
-				return phoneNumber;
+				return origin;
 			}
 			set	
 			{
-				phoneNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PhoneNumber", value);
+				origin = value;
+				DictionaryUtil.Add(QueryParameters, "Origin", value);
 			}
 		}
 
@@ -102,22 +102,27 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Since
+		public string Url
 		{
 			get
 			{
-				return since;
+				return url;
 			}
 			set	
 			{
-				since = value;
-				DictionaryUtil.Add(QueryParameters, "Since", value);
+				url = value;
+				DictionaryUtil.Add(QueryParameters, "Url", value);
 			}
 		}
 
-        public override TwiceTelVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override GetAuthTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TwiceTelVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetAuthTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

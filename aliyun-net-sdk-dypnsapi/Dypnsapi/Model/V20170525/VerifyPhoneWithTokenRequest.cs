@@ -27,10 +27,10 @@ using Aliyun.Acs.Dypnsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 {
-    public class TwiceTelVerifyRequest : RpcAcsRequest<TwiceTelVerifyResponse>
+    public class VerifyPhoneWithTokenRequest : RpcAcsRequest<VerifyPhoneWithTokenResponse>
     {
-        public TwiceTelVerifyRequest()
-            : base("Dypnsapi", "2017-05-25", "TwiceTelVerify", "dypns", "openAPI")
+        public VerifyPhoneWithTokenRequest()
+            : base("Dypnsapi", "2017-05-25", "VerifyPhoneWithToken", "dypns", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,7 +48,7 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 
 		private long? ownerId;
 
-		private string since;
+		private string spToken;
 
 		public long? ResourceOwnerId
 		{
@@ -102,22 +102,27 @@ namespace Aliyun.Acs.Dypnsapi.Model.V20170525
 			}
 		}
 
-		public string Since
+		public string SpToken
 		{
 			get
 			{
-				return since;
+				return spToken;
 			}
 			set	
 			{
-				since = value;
-				DictionaryUtil.Add(QueryParameters, "Since", value);
+				spToken = value;
+				DictionaryUtil.Add(QueryParameters, "SpToken", value);
 			}
 		}
 
-        public override TwiceTelVerifyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override VerifyPhoneWithTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TwiceTelVerifyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return VerifyPhoneWithTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
