@@ -89,6 +89,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string openPermission;
 
+		private string imageCategory;
+
 		public string RequestId
 		{
 			get
@@ -470,6 +472,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				openPermission = value;
+			}
+		}
+
+		public string ImageCategory
+		{
+			get
+			{
+				return imageCategory;
+			}
+			set	
+			{
+				imageCategory = value;
 			}
 		}
 	}

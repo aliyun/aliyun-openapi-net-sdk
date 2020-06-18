@@ -47,6 +47,14 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? coldBackupSize;
 
+		private long? backupDataSize;
+
+		private long? backupLogSize;
+
+		private long? paidBackupSize;
+
+		private long? archiveBackupSize;
+
 		public string RequestId
 		{
 			get
@@ -176,6 +184,54 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				coldBackupSize = value;
+			}
+		}
+
+		public long? BackupDataSize
+		{
+			get
+			{
+				return backupDataSize;
+			}
+			set	
+			{
+				backupDataSize = value;
+			}
+		}
+
+		public long? BackupLogSize
+		{
+			get
+			{
+				return backupLogSize;
+			}
+			set	
+			{
+				backupLogSize = value;
+			}
+		}
+
+		public long? PaidBackupSize
+		{
+			get
+			{
+				return paidBackupSize;
+			}
+			set	
+			{
+				paidBackupSize = value;
+			}
+		}
+
+		public long? ArchiveBackupSize
+		{
+			get
+			{
+				return archiveBackupSize;
+			}
+			set	
+			{
+				archiveBackupSize = value;
 			}
 		}
 	}

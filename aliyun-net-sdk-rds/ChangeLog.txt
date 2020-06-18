@@ -1,3 +1,6 @@
+2020-06-18 Version: 2.4.8
+- Supported TransformDBInstancePayType API.
+
 2020-04-08 Version: 2.4.6
 - Support terminating SQL Server OSS migration task by id.
 

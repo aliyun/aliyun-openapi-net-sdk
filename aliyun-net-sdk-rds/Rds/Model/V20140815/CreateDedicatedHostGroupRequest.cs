@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -50,6 +51,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string resourceOwnerAccount;
 
 		private int? diskAllocationRatio;
+
+		private int? openPermission;
 
 		private int? memAllocationRatio;
 
@@ -136,6 +139,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				diskAllocationRatio = value;
 				DictionaryUtil.Add(QueryParameters, "DiskAllocationRatio", value.ToString());
+			}
+		}
+
+		public int? OpenPermission
+		{
+			get
+			{
+				return openPermission;
+			}
+			set	
+			{
+				openPermission = value;
+				DictionaryUtil.Add(QueryParameters, "OpenPermission", value.ToString());
 			}
 		}
 

@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -48,6 +49,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string engineVersion;
 
 		private string resourceGroupId;
+
+		private string targetDedicatedHostIdForMaster;
 
 		private string dBInstanceId;
 
@@ -141,6 +144,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string TargetDedicatedHostIdForMaster
+		{
+			get
+			{
+				return targetDedicatedHostIdForMaster;
+			}
+			set	
+			{
+				targetDedicatedHostIdForMaster = value;
+				DictionaryUtil.Add(QueryParameters, "TargetDedicatedHostIdForMaster", value);
 			}
 		}
 

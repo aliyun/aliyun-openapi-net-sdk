@@ -60,6 +60,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				item.DBInstanceStorageType = context.StringValue("DescribeCrossRegionBackups.Items["+ i +"].DBInstanceStorageType");
 				item.Category = context.StringValue("DescribeCrossRegionBackups.Items["+ i +"].Category");
 				item.ConsistentTime = context.StringValue("DescribeCrossRegionBackups.Items["+ i +"].ConsistentTime");
+				item.HasBackupTableMeta = context.StringValue("DescribeCrossRegionBackups.Items["+ i +"].HasBackupTableMeta");
 
 				List<string> item_restoreRegions = new List<string>();
 				for (int j = 0; j < context.Length("DescribeCrossRegionBackups.Items["+ i +"].RestoreRegions.Length"); j++) {

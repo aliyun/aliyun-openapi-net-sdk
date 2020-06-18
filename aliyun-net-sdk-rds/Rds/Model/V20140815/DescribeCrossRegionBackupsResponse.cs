@@ -176,6 +176,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string consistentTime;
 
+			private string hasBackupTableMeta;
+
 			private List<string> restoreRegions;
 
 			public int? CrossBackupId
@@ -391,6 +393,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					consistentTime = value;
+				}
+			}
+
+			public string HasBackupTableMeta
+			{
+				get
+				{
+					return hasBackupTableMeta;
+				}
+				set	
+				{
+					hasBackupTableMeta = value;
 				}
 			}
 

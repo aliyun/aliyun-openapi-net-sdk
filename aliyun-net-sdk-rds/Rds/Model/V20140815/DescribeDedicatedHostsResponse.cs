@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string storageUsed;
 
+			private string imageCategory;
+
 			public string HostName
 			{
 				get
@@ -417,6 +419,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					storageUsed = value;
+				}
+			}
+
+			public string ImageCategory
+			{
+				get
+				{
+					return imageCategory;
+				}
+				set	
+				{
+					imageCategory = value;
 				}
 			}
 		}

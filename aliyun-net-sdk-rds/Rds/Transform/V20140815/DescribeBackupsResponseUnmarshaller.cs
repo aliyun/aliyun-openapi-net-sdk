@@ -36,6 +36,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeBackupsResponse.PageNumber = context.StringValue("DescribeBackups.PageNumber");
 			describeBackupsResponse.PageRecordCount = context.StringValue("DescribeBackups.PageRecordCount");
 			describeBackupsResponse.TotalBackupSize = context.LongValue("DescribeBackups.TotalBackupSize");
+			describeBackupsResponse.TotalEcsSnapshotSize = context.LongValue("DescribeBackups.TotalEcsSnapshotSize");
 
 			List<DescribeBackupsResponse.DescribeBackups_Backup> describeBackupsResponse_items = new List<DescribeBackupsResponse.DescribeBackups_Backup>();
 			for (int i = 0; i < context.Length("DescribeBackups.Items.Length"); i++) {
@@ -62,6 +63,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				backup.SlaveStatus = context.StringValue("DescribeBackups.Items["+ i +"].SlaveStatus");
 				backup.ConsistentTime = context.LongValue("DescribeBackups.Items["+ i +"].ConsistentTime");
 				backup.BackupInitiator = context.StringValue("DescribeBackups.Items["+ i +"].BackupInitiator");
+				backup.CopyOnlyBackup = context.StringValue("DescribeBackups.Items["+ i +"].CopyOnlyBackup");
+				backup.StorageClass = context.StringValue("DescribeBackups.Items["+ i +"].StorageClass");
 
 				describeBackupsResponse_items.Add(backup);
 			}

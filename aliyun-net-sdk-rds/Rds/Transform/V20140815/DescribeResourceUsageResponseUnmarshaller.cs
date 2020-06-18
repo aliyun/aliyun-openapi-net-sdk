@@ -42,6 +42,10 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeResourceUsageResponse.BackupOssLogSize = context.LongValue("DescribeResourceUsage.BackupOssLogSize");
 			describeResourceUsageResponse.SQLSize = context.LongValue("DescribeResourceUsage.SQLSize");
 			describeResourceUsageResponse.ColdBackupSize = context.LongValue("DescribeResourceUsage.ColdBackupSize");
+			describeResourceUsageResponse.BackupDataSize = context.LongValue("DescribeResourceUsage.BackupDataSize");
+			describeResourceUsageResponse.BackupLogSize = context.LongValue("DescribeResourceUsage.BackupLogSize");
+			describeResourceUsageResponse.PaidBackupSize = context.LongValue("DescribeResourceUsage.PaidBackupSize");
+			describeResourceUsageResponse.ArchiveBackupSize = context.LongValue("DescribeResourceUsage.ArchiveBackupSize");
         
 			return describeResourceUsageResponse;
         }

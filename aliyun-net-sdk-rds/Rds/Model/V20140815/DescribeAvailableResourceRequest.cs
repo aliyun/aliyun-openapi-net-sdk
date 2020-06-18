@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -48,6 +49,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string dBInstanceStorageType;
 
 		private string instanceChargeType;
+
+		private int? dispenseMode;
 
 		private string dBInstanceClass;
 
@@ -119,6 +122,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				instanceChargeType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+			}
+		}
+
+		public int? DispenseMode
+		{
+			get
+			{
+				return dispenseMode;
+			}
+			set	
+			{
+				dispenseMode = value;
+				DictionaryUtil.Add(QueryParameters, "DispenseMode", value.ToString());
 			}
 		}
 

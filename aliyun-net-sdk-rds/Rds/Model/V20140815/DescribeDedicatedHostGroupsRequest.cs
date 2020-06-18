@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
+
+		private string imageCategory;
 
 		private string dedicatedHostGroupId;
 
@@ -83,6 +86,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ImageCategory
+		{
+			get
+			{
+				return imageCategory;
+			}
+			set	
+			{
+				imageCategory = value;
+				DictionaryUtil.Add(QueryParameters, "ImageCategory", value);
 			}
 		}
 

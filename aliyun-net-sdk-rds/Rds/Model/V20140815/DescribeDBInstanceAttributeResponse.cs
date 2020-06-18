@@ -202,6 +202,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string dedicatedHostGroupId;
 
+			private string superPermissionMode;
+
 			private List<DescribeDBInstanceAttribute_SlaveZone> slaveZones;
 
 			private List<DescribeDBInstanceAttribute_ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
@@ -1081,6 +1083,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					dedicatedHostGroupId = value;
+				}
+			}
+
+			public string SuperPermissionMode
+			{
+				get
+				{
+					return superPermissionMode;
+				}
+				set	
+				{
+					superPermissionMode = value;
 				}
 			}
 

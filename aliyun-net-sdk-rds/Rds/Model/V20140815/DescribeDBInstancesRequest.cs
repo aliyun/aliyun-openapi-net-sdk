@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -65,7 +66,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string clientToken;
 
-		private string instanceLevel;
+		private int? instanceLevel;
 
 		private string searchKey;
 
@@ -262,7 +263,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string InstanceLevel
+		public int? InstanceLevel
 		{
 			get
 			{
@@ -271,7 +272,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				instanceLevel = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceLevel", value);
+				DictionaryUtil.Add(QueryParameters, "InstanceLevel", value.ToString());
 			}
 		}
 

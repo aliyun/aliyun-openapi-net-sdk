@@ -63,6 +63,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 			describeDedicatedHostAttributeResponse.HostType = context.StringValue("DescribeDedicatedHostAttribute.HostType");
 			describeDedicatedHostAttributeResponse.AccountName = context.StringValue("DescribeDedicatedHostAttribute.AccountName");
 			describeDedicatedHostAttributeResponse.OpenPermission = context.StringValue("DescribeDedicatedHostAttribute.OpenPermission");
+			describeDedicatedHostAttributeResponse.ImageCategory = context.StringValue("DescribeDedicatedHostAttribute.ImageCategory");
         
 			return describeDedicatedHostAttributeResponse;
         }

@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private int? dBInstanceStorage;
 
 		private string systemDBCharset;
+
+		private string binlogRole;
 
 		private string engineVersion;
 
@@ -64,6 +67,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string vSwitchId;
 
 		private string privateIpAddress;
+
+		private string binlogName;
 
 		private string zoneId;
 
@@ -88,6 +93,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string ownerAccount;
 
 		private string usedTime;
+
+		private string binlogPosition;
 
 		private string restoreType;
 
@@ -133,6 +140,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				systemDBCharset = value;
 				DictionaryUtil.Add(QueryParameters, "SystemDBCharset", value);
+			}
+		}
+
+		public string BinlogRole
+		{
+			get
+			{
+				return binlogRole;
+			}
+			set	
+			{
+				binlogRole = value;
+				DictionaryUtil.Add(QueryParameters, "BinlogRole", value);
 			}
 		}
 
@@ -263,6 +283,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				privateIpAddress = value;
 				DictionaryUtil.Add(QueryParameters, "PrivateIpAddress", value);
+			}
+		}
+
+		public string BinlogName
+		{
+			get
+			{
+				return binlogName;
+			}
+			set	
+			{
+				binlogName = value;
+				DictionaryUtil.Add(QueryParameters, "BinlogName", value);
 			}
 		}
 
@@ -419,6 +452,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				usedTime = value;
 				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+			}
+		}
+
+		public string BinlogPosition
+		{
+			get
+			{
+				return binlogPosition;
+			}
+			set	
+			{
+				binlogPosition = value;
+				DictionaryUtil.Add(QueryParameters, "BinlogPosition", value);
 			}
 		}
 
