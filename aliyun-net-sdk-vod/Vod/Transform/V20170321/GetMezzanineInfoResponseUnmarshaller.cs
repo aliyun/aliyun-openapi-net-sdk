@@ -98,6 +98,7 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				videoStream.NumFrames = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].NumFrames");
 				videoStream.Lang = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Lang");
 				videoStream.Rotate = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Rotate");
+				videoStream.Bitrate = context.StringValue("GetMezzanineInfo.Mezzanine.VideoStreamList["+ i +"].Bitrate");
 
 				mezzanine_videoStreamList.Add(videoStream);
 			}

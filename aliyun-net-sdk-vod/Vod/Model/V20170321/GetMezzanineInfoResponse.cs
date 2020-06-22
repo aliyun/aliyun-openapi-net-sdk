@@ -555,6 +555,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string rotate;
 
+				private string bitrate;
+
 				public string Index
 				{
 					get
@@ -816,6 +818,18 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						rotate = value;
+					}
+				}
+
+				public string Bitrate
+				{
+					get
+					{
+						return bitrate;
+					}
+					set	
+					{
+						bitrate = value;
 					}
 				}
 			}
