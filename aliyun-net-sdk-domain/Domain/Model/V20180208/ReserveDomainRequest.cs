@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180208;
 
@@ -31,8 +30,14 @@ namespace Aliyun.Acs.Domain.Model.V20180208
     public class ReserveDomainRequest : RpcAcsRequest<ReserveDomainResponse>
     {
         public ReserveDomainRequest()
-            : base("Domain", "2018-02-08", "ReserveDomain")
+            : base("Domain", "2018-02-08", "ReserveDomain", "domain", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private List<string> channelss = new List<string>(){ };

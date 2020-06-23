@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Domain;
 using Aliyun.Acs.Domain.Transform;
 using Aliyun.Acs.Domain.Transform.V20180129;
 
@@ -31,8 +30,14 @@ namespace Aliyun.Acs.Domain.Model.V20180129
     public class SaveSingleTaskForSaveArtExtensionRequest : RpcAcsRequest<SaveSingleTaskForSaveArtExtensionResponse>
     {
         public SaveSingleTaskForSaveArtExtensionRequest()
-            : base("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension")
+            : base("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension", "domain", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string subject;
