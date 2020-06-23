@@ -173,6 +173,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string targetImageUrl;
 
+				private string matchSuggestion;
+
 				public string GbId
 				{
 					get
@@ -266,6 +268,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						targetImageUrl = value;
+					}
+				}
+
+				public string MatchSuggestion
+				{
+					get
+					{
+						return matchSuggestion;
+					}
+					set	
+					{
+						matchSuggestion = value;
 					}
 				}
 			}

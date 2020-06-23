@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				record.RightBottomY = context.FloatValue("SearchFace.Data.Records["+ i +"].RightBottomY");
 				record.Score = context.FloatValue("SearchFace.Data.Records["+ i +"].Score");
 				record.TargetImageUrl = context.StringValue("SearchFace.Data.Records["+ i +"].TargetImageUrl");
+				record.MatchSuggestion = context.StringValue("SearchFace.Data.Records["+ i +"].MatchSuggestion");
 
 				data_records.Add(record);
 			}
