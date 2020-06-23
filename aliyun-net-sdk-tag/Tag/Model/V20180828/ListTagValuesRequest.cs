@@ -27,10 +27,10 @@ using Aliyun.Acs.Tag.Transform.V20180828;
 
 namespace Aliyun.Acs.Tag.Model.V20180828
 {
-    public class ListTagResourcesRequest : RpcAcsRequest<ListTagResourcesResponse>
+    public class ListTagValuesRequest : RpcAcsRequest<ListTagValuesResponse>
     {
-        public ListTagResourcesRequest()
-            : base("Tag", "2018-08-28", "ListTagResources", "tag", "openAPI")
+        public ListTagValuesRequest()
+            : base("Tag", "2018-08-28", "ListTagValues", "tag", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,7 +44,7 @@ namespace Aliyun.Acs.Tag.Model.V20180828
 
 		private int? pageSize;
 
-		private List<string> resourceARNs = new List<string>(){ };
+		private string key;
 
 		private string resourceOwnerAccount;
 
@@ -52,9 +52,7 @@ namespace Aliyun.Acs.Tag.Model.V20180828
 
 		private long? ownerId;
 
-		private string tags;
-
-		private string category;
+		private string resourceType;
 
 		public string NextToken
 		{
@@ -82,20 +80,16 @@ namespace Aliyun.Acs.Tag.Model.V20180828
 			}
 		}
 
-		public List<string> ResourceARNs
+		public string Key
 		{
 			get
 			{
-				return resourceARNs;
+				return key;
 			}
-
-			set
+			set	
 			{
-				resourceARNs = value;
-				for (int i = 0; i < resourceARNs.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceARN." + (i + 1) , resourceARNs[i]);
-				}
+				key = value;
+				DictionaryUtil.Add(QueryParameters, "Key", value);
 			}
 		}
 
@@ -138,40 +132,22 @@ namespace Aliyun.Acs.Tag.Model.V20180828
 			}
 		}
 
-		public string Tags
+		public string ResourceType
 		{
 			get
 			{
-				return tags;
+				return resourceType;
 			}
 			set	
 			{
-				tags = value;
-				DictionaryUtil.Add(QueryParameters, "Tags", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
-		public string Category
-		{
-			get
-			{
-				return category;
-			}
-			set	
-			{
-				category = value;
-				DictionaryUtil.Add(QueryParameters, "Category", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override ListTagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTagValuesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListTagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTagValuesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

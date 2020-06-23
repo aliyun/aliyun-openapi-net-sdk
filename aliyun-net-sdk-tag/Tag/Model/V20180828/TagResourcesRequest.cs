@@ -37,9 +37,8 @@ namespace Aliyun.Acs.Tag.Model.V20180828
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
-
-		private long? resourceOwnerId;
 
 		private List<string> resourceARNs = new List<string>(){ };
 
@@ -50,19 +49,6 @@ namespace Aliyun.Acs.Tag.Model.V20180828
 		private long? ownerId;
 
 		private string tags;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
 
 		public List<string> ResourceARNs
 		{
