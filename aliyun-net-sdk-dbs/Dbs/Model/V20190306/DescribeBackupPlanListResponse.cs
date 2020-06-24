@@ -218,6 +218,24 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private long? endTimestampForRestore;
 
+			private bool? openBackupSetAutoDownload;
+
+			private string backupSetDownloadTargetType;
+
+			private string backupSetDownloadDir;
+
+			private long? backupSetDownloadGatewayId;
+
+			private string backupSetDownloadFullDataFormat;
+
+			private string backupSetDownloadIncrementDataFormat;
+
+			private string crossAliyunId;
+
+			private string crossRoleName;
+
+			private string backupStorageType;
+
 			public string BackupPlanId
 			{
 				get
@@ -515,6 +533,114 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					endTimestampForRestore = value;
+				}
+			}
+
+			public bool? OpenBackupSetAutoDownload
+			{
+				get
+				{
+					return openBackupSetAutoDownload;
+				}
+				set	
+				{
+					openBackupSetAutoDownload = value;
+				}
+			}
+
+			public string BackupSetDownloadTargetType
+			{
+				get
+				{
+					return backupSetDownloadTargetType;
+				}
+				set	
+				{
+					backupSetDownloadTargetType = value;
+				}
+			}
+
+			public string BackupSetDownloadDir
+			{
+				get
+				{
+					return backupSetDownloadDir;
+				}
+				set	
+				{
+					backupSetDownloadDir = value;
+				}
+			}
+
+			public long? BackupSetDownloadGatewayId
+			{
+				get
+				{
+					return backupSetDownloadGatewayId;
+				}
+				set	
+				{
+					backupSetDownloadGatewayId = value;
+				}
+			}
+
+			public string BackupSetDownloadFullDataFormat
+			{
+				get
+				{
+					return backupSetDownloadFullDataFormat;
+				}
+				set	
+				{
+					backupSetDownloadFullDataFormat = value;
+				}
+			}
+
+			public string BackupSetDownloadIncrementDataFormat
+			{
+				get
+				{
+					return backupSetDownloadIncrementDataFormat;
+				}
+				set	
+				{
+					backupSetDownloadIncrementDataFormat = value;
+				}
+			}
+
+			public string CrossAliyunId
+			{
+				get
+				{
+					return crossAliyunId;
+				}
+				set	
+				{
+					crossAliyunId = value;
+				}
+			}
+
+			public string CrossRoleName
+			{
+				get
+				{
+					return crossRoleName;
+				}
+				set	
+				{
+					crossRoleName = value;
+				}
+			}
+
+			public string BackupStorageType
+			{
+				get
+				{
+					return backupStorageType;
+				}
+				set	
+				{
+					backupStorageType = value;
 				}
 			}
 		}

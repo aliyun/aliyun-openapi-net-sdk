@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string clientToken;
@@ -48,6 +49,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private string backupPeriod;
 
 		private string backupStartTime;
+
+		private string backupStrategyType;
 
 		public string ClientToken
 		{
@@ -111,6 +114,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				backupStartTime = value;
 				DictionaryUtil.Add(QueryParameters, "BackupStartTime", value);
+			}
+		}
+
+		public string BackupStrategyType
+		{
+			get
+			{
+				return backupStrategyType;
+			}
+			set	
+			{
+				backupStrategyType = value;
+				DictionaryUtil.Add(QueryParameters, "BackupStrategyType", value);
 			}
 		}
 

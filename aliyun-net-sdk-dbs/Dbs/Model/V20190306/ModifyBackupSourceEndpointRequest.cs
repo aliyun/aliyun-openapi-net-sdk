@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string sourceEndpointRegion;
@@ -54,6 +55,10 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private string sourceEndpointDatabaseName;
 
 		private string sourceEndpointIP;
+
+		private string crossRoleName;
+
+		private string crossAliyunId;
 
 		private string sourceEndpointPassword;
 
@@ -168,6 +173,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				sourceEndpointIP = value;
 				DictionaryUtil.Add(QueryParameters, "SourceEndpointIP", value);
+			}
+		}
+
+		public string CrossRoleName
+		{
+			get
+			{
+				return crossRoleName;
+			}
+			set	
+			{
+				crossRoleName = value;
+				DictionaryUtil.Add(QueryParameters, "CrossRoleName", value);
+			}
+		}
+
+		public string CrossAliyunId
+		{
+			get
+			{
+				return crossAliyunId;
+			}
+			set	
+			{
+				crossAliyunId = value;
+				DictionaryUtil.Add(QueryParameters, "CrossAliyunId", value);
 			}
 		}
 

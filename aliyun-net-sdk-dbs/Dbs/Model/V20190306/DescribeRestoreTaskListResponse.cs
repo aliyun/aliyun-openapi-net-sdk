@@ -212,6 +212,10 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private int? fullStruAfterRestoreProgress;
 
+			private string crossAliyunId;
+
+			private string crossRoleName;
+
 			private string errMessage;
 
 			public string BackupPlanId
@@ -475,6 +479,30 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					fullStruAfterRestoreProgress = value;
+				}
+			}
+
+			public string CrossAliyunId
+			{
+				get
+				{
+					return crossAliyunId;
+				}
+				set	
+				{
+					crossAliyunId = value;
+				}
+			}
+
+			public string CrossRoleName
+			{
+				get
+				{
+					return crossRoleName;
+				}
+				set	
+				{
+					crossRoleName = value;
 				}
 			}
 

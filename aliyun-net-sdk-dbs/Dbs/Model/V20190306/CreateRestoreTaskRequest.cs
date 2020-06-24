@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? backupGatewayId;
@@ -49,6 +50,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string destinationEndpointRegion;
 
+		private string crossRoleName;
+
 		private string destinationEndpointUserName;
 
 		private string restoreObjects;
@@ -60,6 +63,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private string destinationEndpointOracleSID;
 
 		private long? restoreTime;
+
+		private string crossAliyunId;
 
 		private string destinationEndpointInstanceID;
 
@@ -144,6 +149,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string CrossRoleName
+		{
+			get
+			{
+				return crossRoleName;
+			}
+			set	
+			{
+				crossRoleName = value;
+				DictionaryUtil.Add(QueryParameters, "CrossRoleName", value);
+			}
+		}
+
 		public string DestinationEndpointUserName
 		{
 			get
@@ -219,6 +237,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				restoreTime = value;
 				DictionaryUtil.Add(QueryParameters, "RestoreTime", value.ToString());
+			}
+		}
+
+		public string CrossAliyunId
+		{
+			get
+			{
+				return crossAliyunId;
+			}
+			set	
+			{
+				crossAliyunId = value;
+				DictionaryUtil.Add(QueryParameters, "CrossAliyunId", value);
 			}
 		}
 

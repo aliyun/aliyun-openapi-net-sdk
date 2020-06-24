@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string clientToken;
@@ -46,6 +47,10 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private int? pageNum;
 
 		private string ownerId;
+
+		private string backupPlanStatus;
+
+		private string backupPlanName;
 
 		private int? pageSize;
 
@@ -100,6 +105,32 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public string BackupPlanStatus
+		{
+			get
+			{
+				return backupPlanStatus;
+			}
+			set	
+			{
+				backupPlanStatus = value;
+				DictionaryUtil.Add(QueryParameters, "BackupPlanStatus", value);
+			}
+		}
+
+		public string BackupPlanName
+		{
+			get
+			{
+				return backupPlanName;
+			}
+			set	
+			{
+				backupPlanName = value;
+				DictionaryUtil.Add(QueryParameters, "BackupPlanName", value);
 			}
 		}
 

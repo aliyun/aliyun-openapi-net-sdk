@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string databaseType;
@@ -52,6 +53,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private string instanceType;
 
 		private string period;
+
+		private string fromApp;
 
 		private string ownerId;
 
@@ -153,6 +156,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				period = value;
 				DictionaryUtil.Add(QueryParameters, "Period", value);
+			}
+		}
+
+		public string FromApp
+		{
+			get
+			{
+				return fromApp;
+			}
+			set	
+			{
+				fromApp = value;
+				DictionaryUtil.Add(QueryParameters, "FromApp", value);
 			}
 		}
 

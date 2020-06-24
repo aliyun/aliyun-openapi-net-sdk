@@ -69,6 +69,15 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 				backupPlanDetail.BackupPlanStatus = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupPlanStatus");
 				backupPlanDetail.BeginTimestampForRestore = context.LongValue("DescribeBackupPlanList.Items["+ i +"].BeginTimestampForRestore");
 				backupPlanDetail.EndTimestampForRestore = context.LongValue("DescribeBackupPlanList.Items["+ i +"].EndTimestampForRestore");
+				backupPlanDetail.OpenBackupSetAutoDownload = context.BooleanValue("DescribeBackupPlanList.Items["+ i +"].OpenBackupSetAutoDownload");
+				backupPlanDetail.BackupSetDownloadTargetType = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupSetDownloadTargetType");
+				backupPlanDetail.BackupSetDownloadDir = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupSetDownloadDir");
+				backupPlanDetail.BackupSetDownloadGatewayId = context.LongValue("DescribeBackupPlanList.Items["+ i +"].BackupSetDownloadGatewayId");
+				backupPlanDetail.BackupSetDownloadFullDataFormat = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupSetDownloadFullDataFormat");
+				backupPlanDetail.BackupSetDownloadIncrementDataFormat = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupSetDownloadIncrementDataFormat");
+				backupPlanDetail.CrossAliyunId = context.StringValue("DescribeBackupPlanList.Items["+ i +"].CrossAliyunId");
+				backupPlanDetail.CrossRoleName = context.StringValue("DescribeBackupPlanList.Items["+ i +"].CrossRoleName");
+				backupPlanDetail.BackupStorageType = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupStorageType");
 
 				describeBackupPlanListResponse_items.Add(backupPlanDetail);
 			}

@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string sourceEndpointRegion;
@@ -59,11 +60,15 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string sourceEndpointIP;
 
+		private string crossRoleName;
+
 		private bool? enableBackupLog;
 
 		private string backupStorageType;
 
 		private int? duplicationArchivePeriod;
+
+		private string crossAliyunId;
 
 		private string sourceEndpointPassword;
 
@@ -77,6 +82,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string backupPeriod;
 
+		private long? backupSpeedLimit;
+
 		private string sourceEndpointInstanceType;
 
 		private string backupPlanName;
@@ -84,6 +91,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 		private string sourceEndpointOracleSID;
 
 		private string oSSBucketName;
+
+		private string backupStrategyType;
 
 		public string SourceEndpointRegion
 		{
@@ -215,6 +224,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public string CrossRoleName
+		{
+			get
+			{
+				return crossRoleName;
+			}
+			set	
+			{
+				crossRoleName = value;
+				DictionaryUtil.Add(QueryParameters, "CrossRoleName", value);
+			}
+		}
+
 		public bool? EnableBackupLog
 		{
 			get
@@ -251,6 +273,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				duplicationArchivePeriod = value;
 				DictionaryUtil.Add(QueryParameters, "DuplicationArchivePeriod", value.ToString());
+			}
+		}
+
+		public string CrossAliyunId
+		{
+			get
+			{
+				return crossAliyunId;
+			}
+			set	
+			{
+				crossAliyunId = value;
+				DictionaryUtil.Add(QueryParameters, "CrossAliyunId", value);
 			}
 		}
 
@@ -332,6 +367,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
+		public long? BackupSpeedLimit
+		{
+			get
+			{
+				return backupSpeedLimit;
+			}
+			set	
+			{
+				backupSpeedLimit = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSpeedLimit", value.ToString());
+			}
+		}
+
 		public string SourceEndpointInstanceType
 		{
 			get
@@ -381,6 +429,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				oSSBucketName = value;
 				DictionaryUtil.Add(QueryParameters, "OSSBucketName", value);
+			}
+		}
+
+		public string BackupStrategyType
+		{
+			get
+			{
+				return backupStrategyType;
+			}
+			set	
+			{
+				backupStrategyType = value;
+				DictionaryUtil.Add(QueryParameters, "BackupStrategyType", value);
 			}
 		}
 

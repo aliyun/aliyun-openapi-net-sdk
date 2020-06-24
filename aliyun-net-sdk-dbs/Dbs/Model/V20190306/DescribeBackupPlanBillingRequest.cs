@@ -27,10 +27,10 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class StartTaskRequest : RpcAcsRequest<StartTaskResponse>
+    public class DescribeBackupPlanBillingRequest : RpcAcsRequest<DescribeBackupPlanBillingResponse>
     {
-        public StartTaskRequest()
-            : base("Dbs", "2019-03-06", "StartTask", "cbs", "openAPI")
+        public DescribeBackupPlanBillingRequest()
+            : base("Dbs", "2019-03-06", "DescribeBackupPlanBilling", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +42,11 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string clientToken;
 
+		private string backupPlanId;
+
 		private string ownerId;
 
-		private string taskId;
+		private bool? showStorageType;
 
 		public string ClientToken
 		{
@@ -56,6 +58,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string BackupPlanId
+		{
+			get
+			{
+				return backupPlanId;
+			}
+			set	
+			{
+				backupPlanId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupPlanId", value);
 			}
 		}
 
@@ -72,22 +87,22 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string TaskId
+		public bool? ShowStorageType
 		{
 			get
 			{
-				return taskId;
+				return showStorageType;
 			}
 			set	
 			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+				showStorageType = value;
+				DictionaryUtil.Add(QueryParameters, "ShowStorageType", value.ToString());
 			}
 		}
 
-        public override StartTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeBackupPlanBillingResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeBackupPlanBillingResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
