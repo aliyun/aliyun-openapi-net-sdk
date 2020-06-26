@@ -27,10 +27,10 @@ using Aliyun.Acs.ivpd.Transform.V20190625;
 
 namespace Aliyun.Acs.ivpd.Model.V20190625
 {
-    public class GetJobResultRequest : RpcAcsRequest<GetJobResultResponse>
+    public class EraseLogoInVideoRequest : RpcAcsRequest<EraseLogoInVideoResponse>
     {
-        public GetJobResultRequest()
-            : base("ivpd", "2019-06-25", "GetJobResult", "ivpd", "openAPI")
+        public EraseLogoInVideoRequest()
+            : base("ivpd", "2019-06-25", "EraseLogoInVideo", "ivpd", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,7 +40,31 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			Method = MethodType.POST;
         }
 
+		private List<Boxes> boxess = new List<Boxes>(){ };
+
 		private string jobId;
+
+		private string videoUrl;
+
+		public List<Boxes> Boxess
+		{
+			get
+			{
+				return boxess;
+			}
+
+			set
+			{
+				boxess = value;
+				for (int i = 0; i < boxess.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"Boxes." + (i + 1) + ".W", boxess[i].W);
+					DictionaryUtil.Add(BodyParameters,"Boxes." + (i + 1) + ".H", boxess[i].H);
+					DictionaryUtil.Add(BodyParameters,"Boxes." + (i + 1) + ".X", boxess[i].X);
+					DictionaryUtil.Add(BodyParameters,"Boxes." + (i + 1) + ".Y", boxess[i].Y);
+				}
+			}
+		}
 
 		public string JobId
 		{
@@ -55,14 +79,87 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			}
 		}
 
+		public string VideoUrl
+		{
+			get
+			{
+				return videoUrl;
+			}
+			set	
+			{
+				videoUrl = value;
+				DictionaryUtil.Add(BodyParameters, "VideoUrl", value);
+			}
+		}
+
+		public class Boxes
+		{
+
+			private float? w;
+
+			private float? h;
+
+			private float? x;
+
+			private float? y;
+
+			public float? W
+			{
+				get
+				{
+					return w;
+				}
+				set	
+				{
+					w = value;
+				}
+			}
+
+			public float? H
+			{
+				get
+				{
+					return h;
+				}
+				set	
+				{
+					h = value;
+				}
+			}
+
+			public float? X
+			{
+				get
+				{
+					return x;
+				}
+				set	
+				{
+					x = value;
+				}
+			}
+
+			public float? Y
+			{
+				get
+				{
+					return y;
+				}
+				set	
+				{
+					y = value;
+				}
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetJobResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override EraseLogoInVideoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetJobResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EraseLogoInVideoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
