@@ -101,6 +101,20 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string remarksArrayB;
 
+		private string imageQualityModifyTime;
+
+		private string imageQualityFailReason;
+
+		private string imageQualityStatus;
+
+		private string croppingSuggestionStatus;
+
+		private string croppingSuggestionFailReason;
+
+		private string croppingSuggestionModifyTime;
+
+		private List<GetImage_CroppingSuggestionItem> croppingSuggestion;
+
 		private List<GetImage_FacesItem> faces;
 
 		private List<GetImage_OCRItem> oCR;
@@ -108,6 +122,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private List<GetImage_TagsItem> tags;
 
 		private List<GetImage_CelebrityItem> celebrity;
+
+		private GetImage_ImageQuality imageQuality;
 
 		private GetImage_Address address;
 
@@ -567,6 +583,90 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string ImageQualityModifyTime
+		{
+			get
+			{
+				return imageQualityModifyTime;
+			}
+			set	
+			{
+				imageQualityModifyTime = value;
+			}
+		}
+
+		public string ImageQualityFailReason
+		{
+			get
+			{
+				return imageQualityFailReason;
+			}
+			set	
+			{
+				imageQualityFailReason = value;
+			}
+		}
+
+		public string ImageQualityStatus
+		{
+			get
+			{
+				return imageQualityStatus;
+			}
+			set	
+			{
+				imageQualityStatus = value;
+			}
+		}
+
+		public string CroppingSuggestionStatus
+		{
+			get
+			{
+				return croppingSuggestionStatus;
+			}
+			set	
+			{
+				croppingSuggestionStatus = value;
+			}
+		}
+
+		public string CroppingSuggestionFailReason
+		{
+			get
+			{
+				return croppingSuggestionFailReason;
+			}
+			set	
+			{
+				croppingSuggestionFailReason = value;
+			}
+		}
+
+		public string CroppingSuggestionModifyTime
+		{
+			get
+			{
+				return croppingSuggestionModifyTime;
+			}
+			set	
+			{
+				croppingSuggestionModifyTime = value;
+			}
+		}
+
+		public List<GetImage_CroppingSuggestionItem> CroppingSuggestion
+		{
+			get
+			{
+				return croppingSuggestion;
+			}
+			set	
+			{
+				croppingSuggestion = value;
+			}
+		}
+
 		public List<GetImage_FacesItem> Faces
 		{
 			get
@@ -615,6 +715,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public GetImage_ImageQuality ImageQuality
+		{
+			get
+			{
+				return imageQuality;
+			}
+			set	
+			{
+				imageQuality = value;
+			}
+		}
+
 		public GetImage_Address Address
 		{
 			get
@@ -624,6 +736,112 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				address = value;
+			}
+		}
+
+		public class GetImage_CroppingSuggestionItem
+		{
+
+			private string aspectRatio;
+
+			private float? score;
+
+			private GetImage_CroppingBoundary croppingBoundary;
+
+			public string AspectRatio
+			{
+				get
+				{
+					return aspectRatio;
+				}
+				set	
+				{
+					aspectRatio = value;
+				}
+			}
+
+			public float? Score
+			{
+				get
+				{
+					return score;
+				}
+				set	
+				{
+					score = value;
+				}
+			}
+
+			public GetImage_CroppingBoundary CroppingBoundary
+			{
+				get
+				{
+					return croppingBoundary;
+				}
+				set	
+				{
+					croppingBoundary = value;
+				}
+			}
+
+			public class GetImage_CroppingBoundary
+			{
+
+				private int? width;
+
+				private int? height;
+
+				private int? left;
+
+				private int? top;
+
+				public int? Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
+					}
+				}
+
+				public int? Height
+				{
+					get
+					{
+						return height;
+					}
+					set	
+					{
+						height = value;
+					}
+				}
+
+				public int? Left
+				{
+					get
+					{
+						return left;
+					}
+					set	
+					{
+						left = value;
+					}
+				}
+
+				public int? Top
+				{
+					get
+					{
+						return top;
+					}
+					set	
+					{
+						top = value;
+					}
+				}
 			}
 		}
 
@@ -1447,6 +1665,150 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					{
 						height = value;
 					}
+				}
+			}
+		}
+
+		public class GetImage_ImageQuality
+		{
+
+			private float? overallScore;
+
+			private float? clarityScore;
+
+			private float? clarity;
+
+			private float? exposureScore;
+
+			private float? exposure;
+
+			private float? contrastScore;
+
+			private float? contrast;
+
+			private float? colorScore;
+
+			private float? color;
+
+			private float? compositionScore;
+
+			public float? OverallScore
+			{
+				get
+				{
+					return overallScore;
+				}
+				set	
+				{
+					overallScore = value;
+				}
+			}
+
+			public float? ClarityScore
+			{
+				get
+				{
+					return clarityScore;
+				}
+				set	
+				{
+					clarityScore = value;
+				}
+			}
+
+			public float? Clarity
+			{
+				get
+				{
+					return clarity;
+				}
+				set	
+				{
+					clarity = value;
+				}
+			}
+
+			public float? ExposureScore
+			{
+				get
+				{
+					return exposureScore;
+				}
+				set	
+				{
+					exposureScore = value;
+				}
+			}
+
+			public float? Exposure
+			{
+				get
+				{
+					return exposure;
+				}
+				set	
+				{
+					exposure = value;
+				}
+			}
+
+			public float? ContrastScore
+			{
+				get
+				{
+					return contrastScore;
+				}
+				set	
+				{
+					contrastScore = value;
+				}
+			}
+
+			public float? Contrast
+			{
+				get
+				{
+					return contrast;
+				}
+				set	
+				{
+					contrast = value;
+				}
+			}
+
+			public float? ColorScore
+			{
+				get
+				{
+					return colorScore;
+				}
+				set	
+				{
+					colorScore = value;
+				}
+			}
+
+			public float? Color
+			{
+				get
+				{
+					return color;
+				}
+				set	
+				{
+					color = value;
+				}
+			}
+
+			public float? CompositionScore
+			{
+				get
+				{
+					return compositionScore;
+				}
+				set	
+				{
+					compositionScore = value;
 				}
 			}
 		}

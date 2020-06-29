@@ -32,6 +32,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public SearchDocIndexRequest()
             : base("imm", "2017-09-06", "SearchDocIndex", "imm", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private int? modifiedTimeEnd;

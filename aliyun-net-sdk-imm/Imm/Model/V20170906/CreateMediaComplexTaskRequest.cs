@@ -32,6 +32,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public CreateMediaComplexTaskRequest()
             : base("imm", "2017-09-06", "CreateMediaComplexTask", "imm", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private string project;

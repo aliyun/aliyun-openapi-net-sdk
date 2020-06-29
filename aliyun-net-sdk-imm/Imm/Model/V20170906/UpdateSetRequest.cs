@@ -32,6 +32,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public UpdateSetRequest()
             : base("imm", "2017-09-06", "UpdateSet", "imm", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private string project;

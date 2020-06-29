@@ -32,6 +32,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public ListImageJobsRequest()
             : base("imm", "2017-09-06", "ListImageJobs", "imm", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private int? maxKeys;

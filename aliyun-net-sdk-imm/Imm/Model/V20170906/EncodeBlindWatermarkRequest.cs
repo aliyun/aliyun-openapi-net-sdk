@@ -32,6 +32,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public EncodeBlindWatermarkRequest()
             : base("imm", "2017-09-06", "EncodeBlindWatermark", "imm", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private string imageQuality;

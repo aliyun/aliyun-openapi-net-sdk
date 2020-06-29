@@ -436,6 +436,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 					private string frames;
 
+					private string rotate;
+
 					public int? Index
 					{
 						get
@@ -697,6 +699,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						set	
 						{
 							frames = value;
+						}
+					}
+
+					public string Rotate
+					{
+						get
+						{
+							return rotate;
+						}
+						set	
+						{
+							rotate = value;
 						}
 					}
 				}

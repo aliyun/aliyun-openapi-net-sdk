@@ -32,6 +32,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public GetMediaMetaRequest()
             : base("imm", "2017-09-06", "GetMediaMeta", "imm", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private string mediaUri;

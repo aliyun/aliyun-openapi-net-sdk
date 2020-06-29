@@ -32,6 +32,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public GetDocIndexTaskRequest()
             : base("imm", "2017-09-06", "GetDocIndexTask", "imm", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private string project;

@@ -32,6 +32,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public ListVideoAudiosRequest()
             : base("imm", "2017-09-06", "ListVideoAudios", "imm", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private string project;

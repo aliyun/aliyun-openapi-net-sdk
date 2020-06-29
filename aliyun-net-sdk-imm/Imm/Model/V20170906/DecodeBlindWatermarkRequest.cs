@@ -32,6 +32,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public DecodeBlindWatermarkRequest()
             : base("imm", "2017-09-06", "DecodeBlindWatermark", "imm", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private int? imageQuality;

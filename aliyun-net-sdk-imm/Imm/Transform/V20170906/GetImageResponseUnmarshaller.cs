@@ -69,6 +69,25 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getImageResponse.AddressFailReason = context.StringValue("GetImage.AddressFailReason");
 			getImageResponse.RemarksArrayA = context.StringValue("GetImage.RemarksArrayA");
 			getImageResponse.RemarksArrayB = context.StringValue("GetImage.RemarksArrayB");
+			getImageResponse.ImageQualityModifyTime = context.StringValue("GetImage.ImageQualityModifyTime");
+			getImageResponse.ImageQualityFailReason = context.StringValue("GetImage.ImageQualityFailReason");
+			getImageResponse.ImageQualityStatus = context.StringValue("GetImage.ImageQualityStatus");
+			getImageResponse.CroppingSuggestionStatus = context.StringValue("GetImage.CroppingSuggestionStatus");
+			getImageResponse.CroppingSuggestionFailReason = context.StringValue("GetImage.CroppingSuggestionFailReason");
+			getImageResponse.CroppingSuggestionModifyTime = context.StringValue("GetImage.CroppingSuggestionModifyTime");
+
+			GetImageResponse.GetImage_ImageQuality imageQuality = new GetImageResponse.GetImage_ImageQuality();
+			imageQuality.OverallScore = context.FloatValue("GetImage.ImageQuality.OverallScore");
+			imageQuality.ClarityScore = context.FloatValue("GetImage.ImageQuality.ClarityScore");
+			imageQuality.Clarity = context.FloatValue("GetImage.ImageQuality.Clarity");
+			imageQuality.ExposureScore = context.FloatValue("GetImage.ImageQuality.ExposureScore");
+			imageQuality.Exposure = context.FloatValue("GetImage.ImageQuality.Exposure");
+			imageQuality.ContrastScore = context.FloatValue("GetImage.ImageQuality.ContrastScore");
+			imageQuality.Contrast = context.FloatValue("GetImage.ImageQuality.Contrast");
+			imageQuality.ColorScore = context.FloatValue("GetImage.ImageQuality.ColorScore");
+			imageQuality.Color = context.FloatValue("GetImage.ImageQuality.Color");
+			imageQuality.CompositionScore = context.FloatValue("GetImage.ImageQuality.CompositionScore");
+			getImageResponse.ImageQuality = imageQuality;
 
 			GetImageResponse.GetImage_Address address = new GetImageResponse.GetImage_Address();
 			address.AddressLine = context.StringValue("GetImage.Address.AddressLine");
@@ -78,6 +97,23 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			address.District = context.StringValue("GetImage.Address.District");
 			address.Township = context.StringValue("GetImage.Address.Township");
 			getImageResponse.Address = address;
+
+			List<GetImageResponse.GetImage_CroppingSuggestionItem> getImageResponse_croppingSuggestion = new List<GetImageResponse.GetImage_CroppingSuggestionItem>();
+			for (int i = 0; i < context.Length("GetImage.CroppingSuggestion.Length"); i++) {
+				GetImageResponse.GetImage_CroppingSuggestionItem croppingSuggestionItem = new GetImageResponse.GetImage_CroppingSuggestionItem();
+				croppingSuggestionItem.AspectRatio = context.StringValue("GetImage.CroppingSuggestion["+ i +"].AspectRatio");
+				croppingSuggestionItem.Score = context.FloatValue("GetImage.CroppingSuggestion["+ i +"].Score");
+
+				GetImageResponse.GetImage_CroppingSuggestionItem.GetImage_CroppingBoundary croppingBoundary = new GetImageResponse.GetImage_CroppingSuggestionItem.GetImage_CroppingBoundary();
+				croppingBoundary.Width = context.IntegerValue("GetImage.CroppingSuggestion["+ i +"].CroppingBoundary.Width");
+				croppingBoundary.Height = context.IntegerValue("GetImage.CroppingSuggestion["+ i +"].CroppingBoundary.Height");
+				croppingBoundary.Left = context.IntegerValue("GetImage.CroppingSuggestion["+ i +"].CroppingBoundary.Left");
+				croppingBoundary.Top = context.IntegerValue("GetImage.CroppingSuggestion["+ i +"].CroppingBoundary.Top");
+				croppingSuggestionItem.CroppingBoundary = croppingBoundary;
+
+				getImageResponse_croppingSuggestion.Add(croppingSuggestionItem);
+			}
+			getImageResponse.CroppingSuggestion = getImageResponse_croppingSuggestion;
 
 			List<GetImageResponse.GetImage_FacesItem> getImageResponse_faces = new List<GetImageResponse.GetImage_FacesItem>();
 			for (int i = 0; i < context.Length("GetImage.Faces.Length"); i++) {

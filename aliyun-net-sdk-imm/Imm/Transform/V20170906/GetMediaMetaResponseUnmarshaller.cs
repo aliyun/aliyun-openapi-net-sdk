@@ -85,6 +85,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				videoStream.Duration = context.StringValue("GetMediaMeta.MediaMeta.MediaStreams.VideoStreams["+ i +"].Duration");
 				videoStream.Bitrate = context.StringValue("GetMediaMeta.MediaMeta.MediaStreams.VideoStreams["+ i +"].Bitrate");
 				videoStream.Frames = context.StringValue("GetMediaMeta.MediaMeta.MediaStreams.VideoStreams["+ i +"].Frames");
+				videoStream.Rotate = context.StringValue("GetMediaMeta.MediaMeta.MediaStreams.VideoStreams["+ i +"].Rotate");
 
 				mediaStreams_videoStreams.Add(videoStream);
 			}

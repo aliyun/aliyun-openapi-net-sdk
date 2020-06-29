@@ -74,6 +74,25 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				imagesItem.AddressFailReason = context.StringValue("ListImages.Images["+ i +"].AddressFailReason");
 				imagesItem.RemarksArrayA = context.StringValue("ListImages.Images["+ i +"].RemarksArrayA");
 				imagesItem.RemarksArrayB = context.StringValue("ListImages.Images["+ i +"].RemarksArrayB");
+				imagesItem.ImageQualityStatus = context.StringValue("ListImages.Images["+ i +"].ImageQualityStatus");
+				imagesItem.ImageQualityFailReason = context.StringValue("ListImages.Images["+ i +"].ImageQualityFailReason");
+				imagesItem.ImageQualityModifyTime = context.StringValue("ListImages.Images["+ i +"].ImageQualityModifyTime");
+				imagesItem.CroppingSuggestionStatus = context.StringValue("ListImages.Images["+ i +"].CroppingSuggestionStatus");
+				imagesItem.CroppingSuggestionFailReason = context.StringValue("ListImages.Images["+ i +"].CroppingSuggestionFailReason");
+				imagesItem.CroppingSuggestionModifyTime = context.StringValue("ListImages.Images["+ i +"].CroppingSuggestionModifyTime");
+
+				ListImagesResponse.ListImages_ImagesItem.ListImages_ImageQuality imageQuality = new ListImagesResponse.ListImages_ImagesItem.ListImages_ImageQuality();
+				imageQuality.OverallScore = context.FloatValue("ListImages.Images["+ i +"].ImageQuality.OverallScore");
+				imageQuality.ClarityScore = context.FloatValue("ListImages.Images["+ i +"].ImageQuality.ClarityScore");
+				imageQuality.Clarity = context.FloatValue("ListImages.Images["+ i +"].ImageQuality.Clarity");
+				imageQuality.ExposureScore = context.FloatValue("ListImages.Images["+ i +"].ImageQuality.ExposureScore");
+				imageQuality.Exposure = context.FloatValue("ListImages.Images["+ i +"].ImageQuality.Exposure");
+				imageQuality.ContrastScore = context.FloatValue("ListImages.Images["+ i +"].ImageQuality.ContrastScore");
+				imageQuality.Contrast = context.FloatValue("ListImages.Images["+ i +"].ImageQuality.Contrast");
+				imageQuality.ColorScore = context.FloatValue("ListImages.Images["+ i +"].ImageQuality.ColorScore");
+				imageQuality.Color = context.FloatValue("ListImages.Images["+ i +"].ImageQuality.Color");
+				imageQuality.CompositionScore = context.FloatValue("ListImages.Images["+ i +"].ImageQuality.CompositionScore");
+				imagesItem.ImageQuality = imageQuality;
 
 				ListImagesResponse.ListImages_ImagesItem.ListImages_Address address = new ListImagesResponse.ListImages_ImagesItem.ListImages_Address();
 				address.AddressLine = context.StringValue("ListImages.Images["+ i +"].Address.AddressLine");
@@ -83,6 +102,23 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				address.District = context.StringValue("ListImages.Images["+ i +"].Address.District");
 				address.Township = context.StringValue("ListImages.Images["+ i +"].Address.Township");
 				imagesItem.Address = address;
+
+				List<ListImagesResponse.ListImages_ImagesItem.ListImages_CroppingSuggestionItem> imagesItem_croppingSuggestion = new List<ListImagesResponse.ListImages_ImagesItem.ListImages_CroppingSuggestionItem>();
+				for (int j = 0; j < context.Length("ListImages.Images["+ i +"].CroppingSuggestion.Length"); j++) {
+					ListImagesResponse.ListImages_ImagesItem.ListImages_CroppingSuggestionItem croppingSuggestionItem = new ListImagesResponse.ListImages_ImagesItem.ListImages_CroppingSuggestionItem();
+					croppingSuggestionItem.AspectRatio = context.StringValue("ListImages.Images["+ i +"].CroppingSuggestion["+ j +"].AspectRatio");
+					croppingSuggestionItem.Score = context.FloatValue("ListImages.Images["+ i +"].CroppingSuggestion["+ j +"].Score");
+
+					ListImagesResponse.ListImages_ImagesItem.ListImages_CroppingSuggestionItem.ListImages_CroppingBoundary croppingBoundary = new ListImagesResponse.ListImages_ImagesItem.ListImages_CroppingSuggestionItem.ListImages_CroppingBoundary();
+					croppingBoundary.Width = context.IntegerValue("ListImages.Images["+ i +"].CroppingSuggestion["+ j +"].CroppingBoundary.Width");
+					croppingBoundary.Height = context.IntegerValue("ListImages.Images["+ i +"].CroppingSuggestion["+ j +"].CroppingBoundary.Height");
+					croppingBoundary.Left = context.IntegerValue("ListImages.Images["+ i +"].CroppingSuggestion["+ j +"].CroppingBoundary.Left");
+					croppingBoundary.Top = context.IntegerValue("ListImages.Images["+ i +"].CroppingSuggestion["+ j +"].CroppingBoundary.Top");
+					croppingSuggestionItem.CroppingBoundary = croppingBoundary;
+
+					imagesItem_croppingSuggestion.Add(croppingSuggestionItem);
+				}
+				imagesItem.CroppingSuggestion = imagesItem_croppingSuggestion;
 
 				List<ListImagesResponse.ListImages_ImagesItem.ListImages_FacesItem> imagesItem_faces = new List<ListImagesResponse.ListImages_ImagesItem.ListImages_FacesItem>();
 				for (int j = 0; j < context.Length("ListImages.Images["+ i +"].Faces.Length"); j++) {

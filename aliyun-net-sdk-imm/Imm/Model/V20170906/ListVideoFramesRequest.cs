@@ -32,6 +32,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public ListVideoFramesRequest()
             : base("imm", "2017-09-06", "ListVideoFrames", "imm", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		private string project;

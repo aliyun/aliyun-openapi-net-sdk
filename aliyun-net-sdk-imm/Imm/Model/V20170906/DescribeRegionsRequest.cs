@@ -32,6 +32,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
         public DescribeRegionsRequest()
             : base("imm", "2017-09-06", "DescribeRegions", "imm", "openAPI")
         {
+			Method = MethodType.POST;
         }
 
 		public override bool CheckShowJsonItemName()
