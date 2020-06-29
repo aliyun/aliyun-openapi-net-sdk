@@ -43,8 +43,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string sourceImageType;
 
-		private long? resourceOwnerId;
-
 		private string targetImageType;
 
 		private string targetImageValue;
@@ -61,19 +59,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				sourceImageType = value;
 				DictionaryUtil.Add(BodyParameters, "SourceImageType", value);
-			}
-		}
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 

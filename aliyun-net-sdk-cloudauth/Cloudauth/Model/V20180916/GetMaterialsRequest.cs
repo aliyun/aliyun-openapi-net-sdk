@@ -38,28 +38,12 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
-
-		private long? resourceOwnerId;
 
 		private string biz;
 
-		private string sourceIp;
-
 		private string ticketId;
-
-		public long? ResourceOwnerId
-		{
-			get
-			{
-				return resourceOwnerId;
-			}
-			set	
-			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
 
 		public string Biz
 		{
@@ -71,19 +55,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20180916
 			{
 				biz = value;
 				DictionaryUtil.Add(QueryParameters, "Biz", value);
-			}
-		}
-
-		public string SourceIp
-		{
-			get
-			{
-				return sourceIp;
-			}
-			set	
-			{
-				sourceIp = value;
-				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
 			}
 		}
 

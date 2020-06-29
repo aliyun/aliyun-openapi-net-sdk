@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string productCode;
@@ -54,6 +55,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		private string certType;
 
 		private string faceContrastPictureUrl;
+
+		private string model;
 
 		private string metaInfo;
 
@@ -172,6 +175,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				faceContrastPictureUrl = value;
 				DictionaryUtil.Add(QueryParameters, "FaceContrastPictureUrl", value);
+			}
+		}
+
+		public string Model
+		{
+			get
+			{
+				return model;
+			}
+			set	
+			{
+				model = value;
+				DictionaryUtil.Add(BodyParameters, "Model", value);
 			}
 		}
 
