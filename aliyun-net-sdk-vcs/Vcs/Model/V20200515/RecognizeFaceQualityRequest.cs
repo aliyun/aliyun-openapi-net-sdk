@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string corpId;
 
+		private string picUrl;
+
 		private string picContent;
 
 		private string picFormat;
@@ -56,6 +58,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				corpId = value;
 				DictionaryUtil.Add(BodyParameters, "CorpId", value);
+			}
+		}
+
+		public string PicUrl
+		{
+			get
+			{
+				return picUrl;
+			}
+			set	
+			{
+				picUrl = value;
+				DictionaryUtil.Add(BodyParameters, "PicUrl", value);
 			}
 		}
 
