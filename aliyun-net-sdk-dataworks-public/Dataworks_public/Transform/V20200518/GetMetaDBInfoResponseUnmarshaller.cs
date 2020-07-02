@@ -1,0 +1,57 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using System;
+using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.dataworks_public.Model.V20200518;
+
+namespace Aliyun.Acs.dataworks_public.Transform.V20200518
+{
+    public class GetMetaDBInfoResponseUnmarshaller
+    {
+        public static GetMetaDBInfoResponse Unmarshall(UnmarshallerContext context)
+        {
+			GetMetaDBInfoResponse getMetaDBInfoResponse = new GetMetaDBInfoResponse();
+
+			getMetaDBInfoResponse.HttpResponse = context.HttpResponse;
+			getMetaDBInfoResponse.ErrorCode = context.StringValue("GetMetaDBInfo.ErrorCode");
+			getMetaDBInfoResponse.ErrorMessage = context.StringValue("GetMetaDBInfo.ErrorMessage");
+			getMetaDBInfoResponse.HttpStatusCode = context.IntegerValue("GetMetaDBInfo.HttpStatusCode");
+			getMetaDBInfoResponse.RequestId = context.StringValue("GetMetaDBInfo.RequestId");
+			getMetaDBInfoResponse.Success = context.BooleanValue("GetMetaDBInfo.Success");
+
+			GetMetaDBInfoResponse.GetMetaDBInfo_Data data = new GetMetaDBInfoResponse.GetMetaDBInfo_Data();
+			data.AppGuid = context.StringValue("GetMetaDBInfo.Data.AppGuid");
+			data.TenantId = context.LongValue("GetMetaDBInfo.Data.TenantId");
+			data.Endpoint = context.StringValue("GetMetaDBInfo.Data.Endpoint");
+			data.ProjectId = context.LongValue("GetMetaDBInfo.Data.ProjectId");
+			data.EnvType = context.IntegerValue("GetMetaDBInfo.Data.EnvType");
+			data.ProjectName = context.StringValue("GetMetaDBInfo.Data.ProjectName");
+			data.ProjectNameCn = context.StringValue("GetMetaDBInfo.Data.ProjectNameCn");
+			data.CreateTime = context.LongValue("GetMetaDBInfo.Data.CreateTime");
+			data.ModifyTime = context.LongValue("GetMetaDBInfo.Data.ModifyTime");
+			data.OwnerId = context.StringValue("GetMetaDBInfo.Data.OwnerId");
+			data.OwnerName = context.StringValue("GetMetaDBInfo.Data.OwnerName");
+			getMetaDBInfoResponse.Data = data;
+        
+			return getMetaDBInfoResponse;
+        }
+    }
+}
