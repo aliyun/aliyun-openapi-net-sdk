@@ -130,6 +130,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string accountName;
 
+			private string tableName;
+
 			public string HostAddress
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					accountName = value;
+				}
+			}
+
+			public string TableName
+			{
+				get
+				{
+					return tableName;
+				}
+				set	
+				{
+					tableName = value;
 				}
 			}
 		}

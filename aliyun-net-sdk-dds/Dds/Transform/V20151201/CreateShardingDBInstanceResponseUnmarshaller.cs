@@ -31,9 +31,9 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 			CreateShardingDBInstanceResponse createShardingDBInstanceResponse = new CreateShardingDBInstanceResponse();
 
 			createShardingDBInstanceResponse.HttpResponse = context.HttpResponse;
-			createShardingDBInstanceResponse.RequestId = context.StringValue("CreateShardingDBInstance.RequestId");
-			createShardingDBInstanceResponse.OrderId = context.StringValue("CreateShardingDBInstance.OrderId");
 			createShardingDBInstanceResponse.DBInstanceId = context.StringValue("CreateShardingDBInstance.DBInstanceId");
+			createShardingDBInstanceResponse.OrderId = context.StringValue("CreateShardingDBInstance.OrderId");
+			createShardingDBInstanceResponse.RequestId = context.StringValue("CreateShardingDBInstance.RequestId");
         
 			return createShardingDBInstanceResponse;
         }

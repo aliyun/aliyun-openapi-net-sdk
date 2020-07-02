@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				logRecords.ReturnRowCounts = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].ReturnRowCounts");
 				logRecords.ExecutionStartTime = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].ExecutionStartTime");
 				logRecords.AccountName = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].AccountName");
+				logRecords.TableName = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].TableName");
 
 				describeSlowLogRecordsResponse_items.Add(logRecords);
 			}

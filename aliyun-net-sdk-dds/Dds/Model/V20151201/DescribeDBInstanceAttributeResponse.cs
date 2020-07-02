@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string vpcAuthMode;
 
+			private bool? dBInstanceReleaseProtection;
+
 			private List<DescribeDBInstanceAttribute_MongosAttribute> mongosList;
 
 			private List<DescribeDBInstanceAttribute_ShardAttribute> shardList;
@@ -511,6 +513,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					vpcAuthMode = value;
+				}
+			}
+
+			public bool? DBInstanceReleaseProtection
+			{
+				get
+				{
+					return dBInstanceReleaseProtection;
+				}
+				set	
+				{
+					dBInstanceReleaseProtection = value;
 				}
 			}
 

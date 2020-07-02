@@ -30,13 +30,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class ModifyNodeSpecRequest : RpcAcsRequest<ModifyNodeSpecResponse>
     {
         public ModifyNodeSpecRequest()
-            : base("Dds", "2015-12-01", "ModifyNodeSpec", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "ModifyNodeSpec", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -64,6 +65,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -231,6 +234,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string OrderType
+		{
+			get
+			{
+				return orderType;
+			}
+			set	
+			{
+				orderType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderType", value);
 			}
 		}
 

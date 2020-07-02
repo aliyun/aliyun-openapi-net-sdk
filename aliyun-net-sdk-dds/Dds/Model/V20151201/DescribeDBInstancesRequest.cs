@@ -30,13 +30,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeDBInstancesRequest : RpcAcsRequest<DescribeDBInstancesResponse>
     {
         public DescribeDBInstancesRequest()
-            : base("Dds", "2015-12-01", "DescribeDBInstances", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeDBInstances", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -48,6 +49,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private int? pageNumber;
 
 		private string replicationFactor;
+
+		private string resourceGroupId;
 
 		private string expired;
 
@@ -147,6 +150,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				replicationFactor = value;
 				DictionaryUtil.Add(QueryParameters, "ReplicationFactor", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

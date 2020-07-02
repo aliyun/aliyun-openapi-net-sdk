@@ -30,13 +30,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class MigrateAvailableZoneRequest : RpcAcsRequest<MigrateAvailableZoneResponse>
     {
         public MigrateAvailableZoneRequest()
-            : base("Dds", "2015-12-01", "MigrateAvailableZone", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "MigrateAvailableZone", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;

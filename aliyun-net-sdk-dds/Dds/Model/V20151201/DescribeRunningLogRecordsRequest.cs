@@ -30,13 +30,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeRunningLogRecordsRequest : RpcAcsRequest<DescribeRunningLogRecordsResponse>
     {
         public DescribeRunningLogRecordsRequest()
-            : base("Dds", "2015-12-01", "DescribeRunningLogRecords", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeRunningLogRecords", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -55,6 +56,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string nodeId;
 
+		private long? sQLId;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -64,6 +67,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private long? ownerId;
 
 		private string dBName;
+
+		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -169,6 +174,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
+		public long? SQLId
+		{
+			get
+			{
+				return sQLId;
+			}
+			set	
+			{
+				sQLId = value;
+				DictionaryUtil.Add(QueryParameters, "SQLId", value.ToString());
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -231,6 +249,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				dBName = value;
 				DictionaryUtil.Add(QueryParameters, "DBName", value);
+			}
+		}
+
+		public string OrderType
+		{
+			get
+			{
+				return orderType;
+			}
+			set	
+			{
+				orderType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderType", value);
 			}
 		}
 

@@ -30,13 +30,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class ModifyParametersRequest : RpcAcsRequest<ModifyParametersResponse>
     {
         public ModifyParametersRequest()
-            : base("Dds", "2015-12-01", "ModifyParameters", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "ModifyParameters", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -54,6 +55,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private long? ownerId;
 
 		private string parameters;
+
+		private string characterType;
 
 		public long? ResourceOwnerId
 		{
@@ -156,6 +159,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				parameters = value;
 				DictionaryUtil.Add(QueryParameters, "Parameters", value);
+			}
+		}
+
+		public string CharacterType
+		{
+			get
+			{
+				return characterType;
+			}
+			set	
+			{
+				characterType = value;
+				DictionaryUtil.Add(QueryParameters, "CharacterType", value);
 			}
 		}
 

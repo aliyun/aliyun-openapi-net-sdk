@@ -30,13 +30,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeSecurityGroupConfigurationRequest : RpcAcsRequest<DescribeSecurityGroupConfigurationResponse>
     {
         public DescribeSecurityGroupConfigurationRequest()
-            : base("Dds", "2015-12-01", "DescribeSecurityGroupConfiguration", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeSecurityGroupConfiguration", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;

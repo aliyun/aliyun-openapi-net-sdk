@@ -30,13 +30,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class CreateShardingDBInstanceRequest : RpcAcsRequest<CreateShardingDBInstanceResponse>
     {
         public CreateShardingDBInstanceRequest()
-            : base("Dds", "2015-12-01", "CreateShardingDBInstance", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "CreateShardingDBInstance", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -84,6 +85,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string vpcId;
 
 		private string zoneId;
+
+		private string protocolType;
 
 		private string chargeType;
 
@@ -397,6 +400,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string ProtocolType
+		{
+			get
+			{
+				return protocolType;
+			}
+			set	
+			{
+				protocolType = value;
+				DictionaryUtil.Add(QueryParameters, "ProtocolType", value);
 			}
 		}
 

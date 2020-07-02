@@ -30,13 +30,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class UpgradeDBInstanceKernelVersionRequest : RpcAcsRequest<UpgradeDBInstanceKernelVersionResponse>
     {
         public UpgradeDBInstanceKernelVersionRequest()
-            : base("Dds", "2015-12-01", "UpgradeDBInstanceKernelVersion", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "UpgradeDBInstanceKernelVersion", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;

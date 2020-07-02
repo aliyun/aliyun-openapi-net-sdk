@@ -30,13 +30,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
     public class DescribeAuditRecordsRequest : RpcAcsRequest<DescribeAuditRecordsResponse>
     {
         public DescribeAuditRecordsRequest()
-            : base("Dds", "2015-12-01", "DescribeAuditRecords", "dds", "openAPI")
+            : base("Dds", "2015-12-01", "DescribeAuditRecords", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -68,6 +69,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string form;
 
 		private string user;
+
+		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -261,6 +264,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				user = value;
 				DictionaryUtil.Add(QueryParameters, "User", value);
+			}
+		}
+
+		public string OrderType
+		{
+			get
+			{
+				return orderType;
+			}
+			set	
+			{
+				orderType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderType", value);
 			}
 		}
 
