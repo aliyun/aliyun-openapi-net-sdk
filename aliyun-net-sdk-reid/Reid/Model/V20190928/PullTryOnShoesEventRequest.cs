@@ -27,10 +27,10 @@ using Aliyun.Acs.reid.Transform.V20190928;
 
 namespace Aliyun.Acs.reid.Model.V20190928
 {
-    public class DescribeImageUrlsRequest : RpcAcsRequest<DescribeImageUrlsResponse>
+    public class PullTryOnShoesEventRequest : RpcAcsRequest<PullTryOnShoesEventResponse>
     {
-        public DescribeImageUrlsRequest()
-            : base("reid", "2019-09-28", "DescribeImageUrls", "1.1.7", "openAPI")
+        public PullTryOnShoesEventRequest()
+            : base("reid", "2019-09-28", "PullTryOnShoesEvent", "1.1.7", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,28 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			Method = MethodType.POST;
         }
 
-		private string originUrls;
+		private string date;
 
 		private long? storeId;
 
-		private string objectKeys;
+		private int? pageNumber;
 
-		public string OriginUrls
+		private int? pageSize;
+
+		private string name;
+
+		private string skuId;
+
+		public string Date
 		{
 			get
 			{
-				return originUrls;
+				return date;
 			}
 			set	
 			{
-				originUrls = value;
-				DictionaryUtil.Add(BodyParameters, "OriginUrls", value);
+				date = value;
+				DictionaryUtil.Add(BodyParameters, "Date", value);
 			}
 		}
 
@@ -72,22 +78,61 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			}
 		}
 
-		public string ObjectKeys
+		public int? PageNumber
 		{
 			get
 			{
-				return objectKeys;
+				return pageNumber;
 			}
 			set	
 			{
-				objectKeys = value;
-				DictionaryUtil.Add(BodyParameters, "ObjectKeys", value);
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
 			}
 		}
 
-        public override DescribeImageUrlsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(BodyParameters, "Name", value);
+			}
+		}
+
+		public string SkuId
+		{
+			get
+			{
+				return skuId;
+			}
+			set	
+			{
+				skuId = value;
+				DictionaryUtil.Add(BodyParameters, "SkuId", value);
+			}
+		}
+
+        public override PullTryOnShoesEventResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeImageUrlsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return PullTryOnShoesEventResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

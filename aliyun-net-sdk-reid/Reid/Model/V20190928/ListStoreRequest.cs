@@ -37,6 +37,7 @@ namespace Aliyun.Acs.reid.Model.V20190928
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
         public override ListStoreResponse GetResponse(UnmarshallerContext unmarshallerContext)

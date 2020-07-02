@@ -27,10 +27,10 @@ using Aliyun.Acs.reid.Transform.V20190928;
 
 namespace Aliyun.Acs.reid.Model.V20190928
 {
-    public class DescribeImageUrlsRequest : RpcAcsRequest<DescribeImageUrlsResponse>
+    public class GetFootwearPositionRequest : RpcAcsRequest<GetFootwearPositionResponse>
     {
-        public DescribeImageUrlsRequest()
-            : base("reid", "2019-09-28", "DescribeImageUrls", "1.1.7", "openAPI")
+        public GetFootwearPositionRequest()
+            : base("reid", "2019-09-28", "GetFootwearPosition", "1.1.7", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,22 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			Method = MethodType.POST;
         }
 
-		private string originUrls;
+		private string date;
 
 		private long? storeId;
 
-		private string objectKeys;
+		private string skuId;
 
-		public string OriginUrls
+		public string Date
 		{
 			get
 			{
-				return originUrls;
+				return date;
 			}
 			set	
 			{
-				originUrls = value;
-				DictionaryUtil.Add(BodyParameters, "OriginUrls", value);
+				date = value;
+				DictionaryUtil.Add(BodyParameters, "Date", value);
 			}
 		}
 
@@ -72,22 +72,22 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			}
 		}
 
-		public string ObjectKeys
+		public string SkuId
 		{
 			get
 			{
-				return objectKeys;
+				return skuId;
 			}
 			set	
 			{
-				objectKeys = value;
-				DictionaryUtil.Add(BodyParameters, "ObjectKeys", value);
+				skuId = value;
+				DictionaryUtil.Add(BodyParameters, "SkuId", value);
 			}
 		}
 
-        public override DescribeImageUrlsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetFootwearPositionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeImageUrlsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetFootwearPositionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
