@@ -28,10 +28,10 @@ using Aliyun.Acs.ivpd.Transform.V20190625;
 
 namespace Aliyun.Acs.ivpd.Model.V20190625
 {
-    public class GetAsyncResultRequest : RpcAcsRequest<GetAsyncResultResponse>
+    public class ListUserBucketsRequest : RpcAcsRequest<ListUserBucketsResponse>
     {
-        public GetAsyncResultRequest()
-            : base("ivpd", "2019-06-25", "GetAsyncResult")
+        public ListUserBucketsRequest()
+            : base("ivpd", "2019-06-25", "ListUserBuckets")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,18 +41,40 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			Method = MethodType.POST;
         }
 
-		private string jobId;
+		private List<Data> datas = new List<Data>(){ };
 
-		public string JobId
+		public List<Data> Datas
 		{
 			get
 			{
-				return jobId;
+				return datas;
 			}
-			set	
+
+			set
 			{
-				jobId = value;
-				DictionaryUtil.Add(BodyParameters, "JobId", value);
+				datas = value;
+				for (int i = 0; i < datas.Count; i++)
+				{
+					DictionaryUtil.Add(BodyParameters,"Data." + (i + 1) + ".RegionId", datas[i].RegionId);
+				}
+			}
+		}
+
+		public class Data
+		{
+
+			private string regionId;
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
+				}
 			}
 		}
 
@@ -61,9 +83,9 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			return false;
 		}
 
-        public override GetAsyncResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListUserBucketsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetAsyncResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListUserBucketsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

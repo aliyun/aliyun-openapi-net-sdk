@@ -28,10 +28,10 @@ using Aliyun.Acs.ivpd.Transform.V20190625;
 
 namespace Aliyun.Acs.ivpd.Model.V20190625
 {
-    public class GetAsyncResultRequest : RpcAcsRequest<GetAsyncResultResponse>
+    public class GetUserBucketConfigRequest : RpcAcsRequest<GetUserBucketConfigResponse>
     {
-        public GetAsyncResultRequest()
-            : base("ivpd", "2019-06-25", "GetAsyncResult")
+        public GetUserBucketConfigRequest()
+            : base("ivpd", "2019-06-25", "GetUserBucketConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,29 +41,14 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			Method = MethodType.POST;
         }
 
-		private string jobId;
-
-		public string JobId
-		{
-			get
-			{
-				return jobId;
-			}
-			set	
-			{
-				jobId = value;
-				DictionaryUtil.Add(BodyParameters, "JobId", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override GetAsyncResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetUserBucketConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetAsyncResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetUserBucketConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
