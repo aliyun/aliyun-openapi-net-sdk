@@ -62,6 +62,11 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 				execution.Category = context.StringValue("ListExecutions.Executions["+ i +"].Category");
 				execution.Tags = context.StringValue("ListExecutions.Executions["+ i +"].Tags");
 				execution.Description = context.StringValue("ListExecutions.Executions["+ i +"].Description");
+				execution.Targets = context.StringValue("ListExecutions.Executions["+ i +"].Targets");
+				execution.LastTriggerTime = context.StringValue("ListExecutions.Executions["+ i +"].LastTriggerTime");
+				execution.LastTriggerStatus = context.StringValue("ListExecutions.Executions["+ i +"].LastTriggerStatus");
+				execution.LastSuccessfulTriggerTime = context.StringValue("ListExecutions.Executions["+ i +"].LastSuccessfulTriggerTime");
+				execution.ResourceStatus = context.StringValue("ListExecutions.Executions["+ i +"].ResourceStatus");
 
 				List<ListExecutionsResponse.ListExecutions_Execution.ListExecutions_CurrentTask> execution_currentTasks = new List<ListExecutionsResponse.ListExecutions_Execution.ListExecutions_CurrentTask>();
 				for (int j = 0; j < context.Length("ListExecutions.Executions["+ i +"].CurrentTasks.Length"); j++) {

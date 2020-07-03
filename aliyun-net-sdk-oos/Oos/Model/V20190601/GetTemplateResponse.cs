@@ -98,6 +98,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string templateType;
 
+			private string versionName;
+
 			public string TemplateName
 			{
 				get
@@ -263,6 +265,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					templateType = value;
+				}
+			}
+
+			public string VersionName
+			{
+				get
+				{
+					return versionName;
+				}
+				set	
+				{
+					versionName = value;
 				}
 			}
 		}

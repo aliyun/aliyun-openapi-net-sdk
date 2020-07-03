@@ -49,6 +49,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			template.HasTrigger = context.BooleanValue("GetTemplate.Template.HasTrigger");
 			template.Tags = context.StringValue("GetTemplate.Template.Tags");
 			template.TemplateType = context.StringValue("GetTemplate.Template.TemplateType");
+			template.VersionName = context.StringValue("GetTemplate.Template.VersionName");
 			getTemplateResponse.Template = template;
         
 			return getTemplateResponse;

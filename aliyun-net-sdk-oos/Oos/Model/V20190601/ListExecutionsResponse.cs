@@ -132,6 +132,16 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string description;
 
+			private string targets;
+
+			private string lastTriggerTime;
+
+			private string lastTriggerStatus;
+
+			private string lastSuccessfulTriggerTime;
+
+			private string resourceStatus;
+
 			private List<ListExecutions_CurrentTask> currentTasks;
 
 			public string ExecutionId
@@ -419,6 +429,66 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string Targets
+			{
+				get
+				{
+					return targets;
+				}
+				set	
+				{
+					targets = value;
+				}
+			}
+
+			public string LastTriggerTime
+			{
+				get
+				{
+					return lastTriggerTime;
+				}
+				set	
+				{
+					lastTriggerTime = value;
+				}
+			}
+
+			public string LastTriggerStatus
+			{
+				get
+				{
+					return lastTriggerStatus;
+				}
+				set	
+				{
+					lastTriggerStatus = value;
+				}
+			}
+
+			public string LastSuccessfulTriggerTime
+			{
+				get
+				{
+					return lastSuccessfulTriggerTime;
+				}
+				set	
+				{
+					lastSuccessfulTriggerTime = value;
+				}
+			}
+
+			public string ResourceStatus
+			{
+				get
+				{
+					return resourceStatus;
+				}
+				set	
+				{
+					resourceStatus = value;
 				}
 			}
 

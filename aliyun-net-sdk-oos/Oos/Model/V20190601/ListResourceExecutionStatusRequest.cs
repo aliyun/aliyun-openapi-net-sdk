@@ -29,10 +29,10 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
+    public class ListResourceExecutionStatusRequest : RpcAcsRequest<ListResourceExecutionStatusResponse>
     {
-        public UntagResourcesRequest()
-            : base("oos", "2019-06-01", "UntagResources")
+        public ListResourceExecutionStatusRequest()
+            : base("oos", "2019-06-01", "ListResourceExecutionStatus")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,63 +42,48 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			Method = MethodType.POST;
         }
 
-		private bool? all;
+		private string executionId;
 
-		private string resourceType;
+		private string nextToken;
 
-		private List<object> tagKeys;
+		private int? maxResults;
 
-		private List<object> resourceIds;
-
-		public bool? All
+		public string ExecutionId
 		{
 			get
 			{
-				return all;
+				return executionId;
 			}
 			set	
 			{
-				all = value;
-				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
+				executionId = value;
+				DictionaryUtil.Add(QueryParameters, "ExecutionId", value);
 			}
 		}
 
-		public string ResourceType
+		public string NextToken
 		{
 			get
 			{
-				return resourceType;
+				return nextToken;
 			}
 			set	
 			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-		public List<object> TagKeys
+		public int? MaxResults
 		{
 			get
 			{
-				return tagKeys;
+				return maxResults;
 			}
 			set	
 			{
-				tagKeys = value;
-				DictionaryUtil.Add(QueryParameters, "TagKeys", JsonConvert.SerializeObject(value));
-			}
-		}
-
-		public List<object> ResourceIds
-		{
-			get
-			{
-				return resourceIds;
-			}
-			set	
-			{
-				resourceIds = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceIds", JsonConvert.SerializeObject(value));
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 
@@ -107,9 +92,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override UntagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListResourceExecutionStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UntagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListResourceExecutionStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.oos;
 using Aliyun.Acs.oos.Transform;
 using Aliyun.Acs.oos.Transform.V20190601;
 
@@ -31,13 +32,14 @@ namespace Aliyun.Acs.oos.Model.V20190601
     public class ListExecutionsRequest : RpcAcsRequest<ListExecutionsResponse>
     {
         public ListExecutionsRequest()
-            : base("oos", "2019-06-01", "ListExecutions", "oos", "openAPI")
+            : base("oos", "2019-06-01", "ListExecutions")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string executedBy;
@@ -58,6 +60,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string sortOrder;
 
+		private string resourceId;
+
 		private string startDateAfter;
 
 		private string startDateBefore;
@@ -73,6 +77,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 		private string sortField;
 
 		private string category;
+
+		private string resourceTemplateName;
 
 		private string status;
 
@@ -193,6 +199,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
+		public string ResourceId
+		{
+			get
+			{
+				return resourceId;
+			}
+			set	
+			{
+				resourceId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceId", value);
+			}
+		}
+
 		public string StartDateAfter
 		{
 			get
@@ -294,6 +313,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				category = value;
 				DictionaryUtil.Add(QueryParameters, "Category", value);
+			}
+		}
+
+		public string ResourceTemplateName
+		{
+			get
+			{
+				return resourceTemplateName;
+			}
+			set	
+			{
+				resourceTemplateName = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceTemplateName", value);
 			}
 		}
 
