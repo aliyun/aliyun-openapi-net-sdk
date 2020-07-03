@@ -47,6 +47,16 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 				publishInfoDo.InstanceId = context.StringValue("OnsTopicList.Data["+ i +"].InstanceId");
 				publishInfoDo.IndependentNaming = context.BooleanValue("OnsTopicList.Data["+ i +"].IndependentNaming");
 
+				List<OnsTopicListResponse.OnsTopicList_PublishInfoDo.OnsTopicList_Tag> publishInfoDo_tags = new List<OnsTopicListResponse.OnsTopicList_PublishInfoDo.OnsTopicList_Tag>();
+				for (int j = 0; j < context.Length("OnsTopicList.Data["+ i +"].Tags.Length"); j++) {
+					OnsTopicListResponse.OnsTopicList_PublishInfoDo.OnsTopicList_Tag tag = new OnsTopicListResponse.OnsTopicList_PublishInfoDo.OnsTopicList_Tag();
+					tag.Key = context.StringValue("OnsTopicList.Data["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("OnsTopicList.Data["+ i +"].Tags["+ j +"].Value");
+
+					publishInfoDo_tags.Add(tag);
+				}
+				publishInfoDo.Tags = publishInfoDo_tags;
+
 				onsTopicListResponse_data.Add(publishInfoDo);
 			}
 			onsTopicListResponse.Data = onsTopicListResponse_data;

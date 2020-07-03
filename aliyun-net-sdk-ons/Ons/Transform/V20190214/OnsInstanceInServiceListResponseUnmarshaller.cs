@@ -44,6 +44,16 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 				instanceVO.InstanceName = context.StringValue("OnsInstanceInServiceList.Data["+ i +"].InstanceName");
 				instanceVO.IndependentNaming = context.BooleanValue("OnsInstanceInServiceList.Data["+ i +"].IndependentNaming");
 
+				List<OnsInstanceInServiceListResponse.OnsInstanceInServiceList_InstanceVO.OnsInstanceInServiceList_Tag> instanceVO_tags = new List<OnsInstanceInServiceListResponse.OnsInstanceInServiceList_InstanceVO.OnsInstanceInServiceList_Tag>();
+				for (int j = 0; j < context.Length("OnsInstanceInServiceList.Data["+ i +"].Tags.Length"); j++) {
+					OnsInstanceInServiceListResponse.OnsInstanceInServiceList_InstanceVO.OnsInstanceInServiceList_Tag tag = new OnsInstanceInServiceListResponse.OnsInstanceInServiceList_InstanceVO.OnsInstanceInServiceList_Tag();
+					tag.Key = context.StringValue("OnsInstanceInServiceList.Data["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("OnsInstanceInServiceList.Data["+ i +"].Tags["+ j +"].Value");
+
+					instanceVO_tags.Add(tag);
+				}
+				instanceVO.Tags = instanceVO_tags;
+
 				onsInstanceInServiceListResponse_data.Add(instanceVO);
 			}
 			onsInstanceInServiceListResponse.Data = onsInstanceInServiceListResponse_data;

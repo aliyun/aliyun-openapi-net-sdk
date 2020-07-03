@@ -27,10 +27,10 @@ using Aliyun.Acs.Ons.Transform.V20190214;
 
 namespace Aliyun.Acs.Ons.Model.V20190214
 {
-    public class OnsTopicCreateRequest : RpcAcsRequest<OnsTopicCreateResponse>
+    public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
     {
-        public OnsTopicCreateRequest()
-            : base("Ons", "2019-02-14", "OnsTopicCreate", "ons", "openAPI")
+        public UntagResourcesRequest()
+            : base("Ons", "2019-02-14", "UntagResources", "ons", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,37 +40,56 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			Method = MethodType.POST;
         }
 
-		private int? messageType;
+		private bool? all;
 
-		private string remark;
+		private List<string> resourceIds = new List<string>(){ };
+
+		private string resourceType;
 
 		private string instanceId;
 
-		private string topic;
+		private List<string> tagKeys = new List<string>(){ };
 
-		public int? MessageType
+		public bool? All
 		{
 			get
 			{
-				return messageType;
+				return all;
 			}
 			set	
 			{
-				messageType = value;
-				DictionaryUtil.Add(QueryParameters, "MessageType", value.ToString());
+				all = value;
+				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
 			}
 		}
 
-		public string Remark
+		public List<string> ResourceIds
 		{
 			get
 			{
-				return remark;
+				return resourceIds;
+			}
+
+			set
+			{
+				resourceIds = value;
+				for (int i = 0; i < resourceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
+				}
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
 			}
 			set	
 			{
-				remark = value;
-				DictionaryUtil.Add(QueryParameters, "Remark", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -87,22 +106,31 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 			}
 		}
 
-		public string Topic
+		public List<string> TagKeys
 		{
 			get
 			{
-				return topic;
+				return tagKeys;
 			}
-			set	
+
+			set
 			{
-				topic = value;
-				DictionaryUtil.Add(QueryParameters, "Topic", value);
+				tagKeys = value;
+				for (int i = 0; i < tagKeys.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
+				}
 			}
 		}
 
-        public override OnsTopicCreateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override UntagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return OnsTopicCreateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UntagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

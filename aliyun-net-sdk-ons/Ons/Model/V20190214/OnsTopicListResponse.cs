@@ -88,6 +88,8 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private bool? independentNaming;
 
+			private List<OnsTopicList_Tag> tags;
+
 			public string Topic
 			{
 				get
@@ -193,6 +195,50 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					independentNaming = value;
+				}
+			}
+
+			public List<OnsTopicList_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class OnsTopicList_Tag
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

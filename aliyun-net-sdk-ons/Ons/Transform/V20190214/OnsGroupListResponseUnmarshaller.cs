@@ -46,6 +46,16 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 				subscribeInfoDo.CreateTime = context.LongValue("OnsGroupList.Data["+ i +"].CreateTime");
 				subscribeInfoDo.GroupType = context.StringValue("OnsGroupList.Data["+ i +"].GroupType");
 
+				List<OnsGroupListResponse.OnsGroupList_SubscribeInfoDo.OnsGroupList_Tag> subscribeInfoDo_tags = new List<OnsGroupListResponse.OnsGroupList_SubscribeInfoDo.OnsGroupList_Tag>();
+				for (int j = 0; j < context.Length("OnsGroupList.Data["+ i +"].Tags.Length"); j++) {
+					OnsGroupListResponse.OnsGroupList_SubscribeInfoDo.OnsGroupList_Tag tag = new OnsGroupListResponse.OnsGroupList_SubscribeInfoDo.OnsGroupList_Tag();
+					tag.Key = context.StringValue("OnsGroupList.Data["+ i +"].Tags["+ j +"].Key");
+					tag._Value = context.StringValue("OnsGroupList.Data["+ i +"].Tags["+ j +"].Value");
+
+					subscribeInfoDo_tags.Add(tag);
+				}
+				subscribeInfoDo.Tags = subscribeInfoDo_tags;
+
 				onsGroupListResponse_data.Add(subscribeInfoDo);
 			}
 			onsGroupListResponse.Data = onsGroupListResponse_data;
