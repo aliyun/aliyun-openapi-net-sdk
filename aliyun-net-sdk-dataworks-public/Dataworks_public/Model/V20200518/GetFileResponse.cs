@@ -161,7 +161,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private int? fileType;
 
-				private int? useType;
+				private string useType;
 
 				private string fileDescription;
 
@@ -287,7 +287,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? UseType
+				public string UseType
 				{
 					get
 					{
@@ -399,9 +399,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			public class GetFile_NodeConfiguration
 			{
 
-				private int? taskRerunTime;
+				private int? autoRerunTimes;
 
-				private int? taskRerunIntervalMillis;
+				private int? autoRerunIntervalMillis;
 
 				private string rerunMode;
 
@@ -425,27 +425,27 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private List<GetFile_NodeInputOutput1> outputList;
 
-				public int? TaskRerunTime
+				public int? AutoRerunTimes
 				{
 					get
 					{
-						return taskRerunTime;
+						return autoRerunTimes;
 					}
 					set	
 					{
-						taskRerunTime = value;
+						autoRerunTimes = value;
 					}
 				}
 
-				public int? TaskRerunIntervalMillis
+				public int? AutoRerunIntervalMillis
 				{
 					get
 					{
-						return taskRerunIntervalMillis;
+						return autoRerunIntervalMillis;
 					}
 					set	
 					{
-						taskRerunIntervalMillis = value;
+						autoRerunIntervalMillis = value;
 					}
 				}
 

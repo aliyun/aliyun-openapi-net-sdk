@@ -49,7 +49,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			file.FileFolderId = context.StringValue("GetFile.Data.File.FileFolderId");
 			file.FileName = context.StringValue("GetFile.Data.File.FileName");
 			file.FileType = context.IntegerValue("GetFile.Data.File.FileType");
-			file.UseType = context.IntegerValue("GetFile.Data.File.UseType");
+			file.UseType = context.StringValue("GetFile.Data.File.UseType");
 			file.FileDescription = context.StringValue("GetFile.Data.File.FileDescription");
 			file.Content = context.StringValue("GetFile.Data.File.Content");
 			file.NodeId = context.LongValue("GetFile.Data.File.NodeId");
@@ -61,8 +61,8 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			data.File = file;
 
 			GetFileResponse.GetFile_Data.GetFile_NodeConfiguration nodeConfiguration = new GetFileResponse.GetFile_Data.GetFile_NodeConfiguration();
-			nodeConfiguration.TaskRerunTime = context.IntegerValue("GetFile.Data.NodeConfiguration.TaskRerunTime");
-			nodeConfiguration.TaskRerunIntervalMillis = context.IntegerValue("GetFile.Data.NodeConfiguration.TaskRerunIntervalMillis");
+			nodeConfiguration.AutoRerunTimes = context.IntegerValue("GetFile.Data.NodeConfiguration.AutoRerunTimes");
+			nodeConfiguration.AutoRerunIntervalMillis = context.IntegerValue("GetFile.Data.NodeConfiguration.AutoRerunIntervalMillis");
 			nodeConfiguration.RerunMode = context.StringValue("GetFile.Data.NodeConfiguration.RerunMode");
 			nodeConfiguration.Stop = context.BooleanValue("GetFile.Data.NodeConfiguration.Stop");
 			nodeConfiguration.ParaValue = context.StringValue("GetFile.Data.NodeConfiguration.ParaValue");

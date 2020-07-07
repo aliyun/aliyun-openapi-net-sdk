@@ -189,7 +189,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private int? fileType;
 
-				private int? useType;
+				private string useType;
 
 				private string fileDescription;
 
@@ -315,7 +315,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					}
 				}
 
-				public int? UseType
+				public string UseType
 				{
 					get
 					{

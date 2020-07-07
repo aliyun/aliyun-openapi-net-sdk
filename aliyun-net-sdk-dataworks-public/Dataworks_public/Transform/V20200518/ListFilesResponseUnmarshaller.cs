@@ -54,7 +54,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				file.FileFolderId = context.StringValue("ListFiles.Data.Files["+ i +"].FileFolderId");
 				file.FileName = context.StringValue("ListFiles.Data.Files["+ i +"].FileName");
 				file.FileType = context.IntegerValue("ListFiles.Data.Files["+ i +"].FileType");
-				file.UseType = context.IntegerValue("ListFiles.Data.Files["+ i +"].UseType");
+				file.UseType = context.StringValue("ListFiles.Data.Files["+ i +"].UseType");
 				file.FileDescription = context.StringValue("ListFiles.Data.Files["+ i +"].FileDescription");
 				file.Content = context.StringValue("ListFiles.Data.Files["+ i +"].Content");
 				file.NodeId = context.LongValue("ListFiles.Data.Files["+ i +"].NodeId");

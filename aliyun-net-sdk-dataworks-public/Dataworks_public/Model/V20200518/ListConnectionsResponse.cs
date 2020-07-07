@@ -177,6 +177,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private int? status;
 
+				private string content;
+
 				public bool? Shared
 				{
 					get
@@ -378,6 +380,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						status = value;
+					}
+				}
+
+				public string Content
+				{
+					get
+					{
+						return content;
+					}
+					set	
+					{
+						content = value;
 					}
 				}
 			}

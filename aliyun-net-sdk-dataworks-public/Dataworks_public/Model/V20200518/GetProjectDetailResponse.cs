@@ -86,45 +86,25 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private string gmtModified;
 
-			private int? maxFlowNode;
-
 			private string defaultDiResourceGroupIdentifier;
 
-			private int? destination;
-
 			private int? isAllowDownload;
-
-			private string prodStorageQuota;
 
 			private int? schedulerRetryInterval;
 
 			private string residentArea;
 
-			private int? tablePrivacyMode;
-
 			private string projectOwnerBaseId;
-
-			private bool? useProxyOdpsAccount;
-
-			private bool? disableDevelopment;
 
 			private int? projectMode;
 
 			private string gmtCreate;
 
-			private string devStorageQuota;
-
-			private int? isDefault;
-
 			private int? protectedMode;
-
-			private bool? baseProject;
 
 			private long? tenantId;
 
 			private string projectDescription;
-
-			private string appkey;
 
 			private int? schedulerMaxRetryTimes;
 
@@ -152,18 +132,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? MaxFlowNode
-			{
-				get
-				{
-					return maxFlowNode;
-				}
-				set	
-				{
-					maxFlowNode = value;
-				}
-			}
-
 			public string DefaultDiResourceGroupIdentifier
 			{
 				get
@@ -176,18 +144,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? Destination
-			{
-				get
-				{
-					return destination;
-				}
-				set	
-				{
-					destination = value;
-				}
-			}
-
 			public int? IsAllowDownload
 			{
 				get
@@ -197,18 +153,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					isAllowDownload = value;
-				}
-			}
-
-			public string ProdStorageQuota
-			{
-				get
-				{
-					return prodStorageQuota;
-				}
-				set	
-				{
-					prodStorageQuota = value;
 				}
 			}
 
@@ -236,18 +180,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public int? TablePrivacyMode
-			{
-				get
-				{
-					return tablePrivacyMode;
-				}
-				set	
-				{
-					tablePrivacyMode = value;
-				}
-			}
-
 			public string ProjectOwnerBaseId
 			{
 				get
@@ -257,30 +189,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					projectOwnerBaseId = value;
-				}
-			}
-
-			public bool? UseProxyOdpsAccount
-			{
-				get
-				{
-					return useProxyOdpsAccount;
-				}
-				set	
-				{
-					useProxyOdpsAccount = value;
-				}
-			}
-
-			public bool? DisableDevelopment
-			{
-				get
-				{
-					return disableDevelopment;
-				}
-				set	
-				{
-					disableDevelopment = value;
 				}
 			}
 
@@ -308,30 +216,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public string DevStorageQuota
-			{
-				get
-				{
-					return devStorageQuota;
-				}
-				set	
-				{
-					devStorageQuota = value;
-				}
-			}
-
-			public int? IsDefault
-			{
-				get
-				{
-					return isDefault;
-				}
-				set	
-				{
-					isDefault = value;
-				}
-			}
-
 			public int? ProtectedMode
 			{
 				get
@@ -341,18 +225,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					protectedMode = value;
-				}
-			}
-
-			public bool? BaseProject
-			{
-				get
-				{
-					return baseProject;
-				}
-				set	
-				{
-					baseProject = value;
 				}
 			}
 
@@ -377,18 +249,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				set	
 				{
 					projectDescription = value;
-				}
-			}
-
-			public string Appkey
-			{
-				get
-				{
-					return appkey;
-				}
-				set	
-				{
-					appkey = value;
 				}
 			}
 

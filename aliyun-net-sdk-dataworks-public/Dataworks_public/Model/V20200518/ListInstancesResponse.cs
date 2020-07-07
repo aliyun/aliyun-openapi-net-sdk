@@ -118,7 +118,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 			private int? totalCount;
 
-			private List<ListInstances_InstancesItem> instances;
+			private List<ListInstances_Instance> instances;
 
 			public int? PageNumber
 			{
@@ -156,7 +156,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public List<ListInstances_InstancesItem> Instances
+			public List<ListInstances_Instance> Instances
 			{
 				get
 				{
@@ -168,7 +168,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 				}
 			}
 
-			public class ListInstances_InstancesItem
+			public class ListInstances_Instance
 			{
 
 				private int? nodeId;

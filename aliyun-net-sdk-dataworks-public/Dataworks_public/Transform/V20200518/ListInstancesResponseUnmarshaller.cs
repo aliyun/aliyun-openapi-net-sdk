@@ -42,26 +42,26 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			data.PageSize = context.IntegerValue("ListInstances.Data.PageSize");
 			data.TotalCount = context.IntegerValue("ListInstances.Data.TotalCount");
 
-			List<ListInstancesResponse.ListInstances_Data.ListInstances_InstancesItem> data_instances = new List<ListInstancesResponse.ListInstances_Data.ListInstances_InstancesItem>();
+			List<ListInstancesResponse.ListInstances_Data.ListInstances_Instance> data_instances = new List<ListInstancesResponse.ListInstances_Data.ListInstances_Instance>();
 			for (int i = 0; i < context.Length("ListInstances.Data.Instances.Length"); i++) {
-				ListInstancesResponse.ListInstances_Data.ListInstances_InstancesItem instancesItem = new ListInstancesResponse.ListInstances_Data.ListInstances_InstancesItem();
-				instancesItem.NodeId = context.IntegerValue("ListInstances.Data.Instances["+ i +"].NodeId");
-				instancesItem.InstanceId = context.LongValue("ListInstances.Data.Instances["+ i +"].InstanceId");
-				instancesItem.DagId = context.IntegerValue("ListInstances.Data.Instances["+ i +"].DagId");
-				instancesItem.DagType = context.StringValue("ListInstances.Data.Instances["+ i +"].DagType");
-				instancesItem.Status = context.StringValue("ListInstances.Data.Instances["+ i +"].Status");
-				instancesItem.Bizdate = context.LongValue("ListInstances.Data.Instances["+ i +"].Bizdate");
-				instancesItem.CycTime = context.LongValue("ListInstances.Data.Instances["+ i +"].CycTime");
-				instancesItem.CreateTime = context.LongValue("ListInstances.Data.Instances["+ i +"].CreateTime");
-				instancesItem.ModifyTime = context.LongValue("ListInstances.Data.Instances["+ i +"].ModifyTime");
-				instancesItem.NodeName = context.StringValue("ListInstances.Data.Instances["+ i +"].NodeName");
-				instancesItem.BeginWaitTimeTime = context.LongValue("ListInstances.Data.Instances["+ i +"].BeginWaitTimeTime");
-				instancesItem.BeginWaitResTime = context.LongValue("ListInstances.Data.Instances["+ i +"].BeginWaitResTime");
-				instancesItem.BeginRunningTime = context.LongValue("ListInstances.Data.Instances["+ i +"].BeginRunningTime");
-				instancesItem.ParamValues = context.StringValue("ListInstances.Data.Instances["+ i +"].ParamValues");
-				instancesItem.FinishTime = context.LongValue("ListInstances.Data.Instances["+ i +"].FinishTime");
+				ListInstancesResponse.ListInstances_Data.ListInstances_Instance instance = new ListInstancesResponse.ListInstances_Data.ListInstances_Instance();
+				instance.NodeId = context.IntegerValue("ListInstances.Data.Instances["+ i +"].NodeId");
+				instance.InstanceId = context.LongValue("ListInstances.Data.Instances["+ i +"].InstanceId");
+				instance.DagId = context.IntegerValue("ListInstances.Data.Instances["+ i +"].DagId");
+				instance.DagType = context.StringValue("ListInstances.Data.Instances["+ i +"].DagType");
+				instance.Status = context.StringValue("ListInstances.Data.Instances["+ i +"].Status");
+				instance.Bizdate = context.LongValue("ListInstances.Data.Instances["+ i +"].Bizdate");
+				instance.CycTime = context.LongValue("ListInstances.Data.Instances["+ i +"].CycTime");
+				instance.CreateTime = context.LongValue("ListInstances.Data.Instances["+ i +"].CreateTime");
+				instance.ModifyTime = context.LongValue("ListInstances.Data.Instances["+ i +"].ModifyTime");
+				instance.NodeName = context.StringValue("ListInstances.Data.Instances["+ i +"].NodeName");
+				instance.BeginWaitTimeTime = context.LongValue("ListInstances.Data.Instances["+ i +"].BeginWaitTimeTime");
+				instance.BeginWaitResTime = context.LongValue("ListInstances.Data.Instances["+ i +"].BeginWaitResTime");
+				instance.BeginRunningTime = context.LongValue("ListInstances.Data.Instances["+ i +"].BeginRunningTime");
+				instance.ParamValues = context.StringValue("ListInstances.Data.Instances["+ i +"].ParamValues");
+				instance.FinishTime = context.LongValue("ListInstances.Data.Instances["+ i +"].FinishTime");
 
-				data_instances.Add(instancesItem);
+				data_instances.Add(instance);
 			}
 			data.Instances = data_instances;
 			listInstancesResponse.Data = data;

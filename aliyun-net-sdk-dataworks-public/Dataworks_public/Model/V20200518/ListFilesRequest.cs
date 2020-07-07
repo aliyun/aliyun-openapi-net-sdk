@@ -56,7 +56,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private long? projectId;
 
-		private int? useType;
+		private string useType;
 
 		public string Owner
 		{
@@ -162,7 +162,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? UseType
+		public string UseType
 		{
 			get
 			{
@@ -171,7 +171,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			set	
 			{
 				useType = value;
-				DictionaryUtil.Add(BodyParameters, "UseType", value.ToString());
+				DictionaryUtil.Add(BodyParameters, "UseType", value);
 			}
 		}
 

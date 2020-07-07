@@ -37,26 +37,16 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 
 			GetProjectDetailResponse.GetProjectDetail_Data data = new GetProjectDetailResponse.GetProjectDetail_Data();
 			data.GmtModified = context.StringValue("GetProjectDetail.Data.GmtModified");
-			data.MaxFlowNode = context.IntegerValue("GetProjectDetail.Data.MaxFlowNode");
 			data.DefaultDiResourceGroupIdentifier = context.StringValue("GetProjectDetail.Data.DefaultDiResourceGroupIdentifier");
-			data.Destination = context.IntegerValue("GetProjectDetail.Data.Destination");
 			data.IsAllowDownload = context.IntegerValue("GetProjectDetail.Data.IsAllowDownload");
-			data.ProdStorageQuota = context.StringValue("GetProjectDetail.Data.ProdStorageQuota");
 			data.SchedulerRetryInterval = context.IntegerValue("GetProjectDetail.Data.SchedulerRetryInterval");
 			data.ResidentArea = context.StringValue("GetProjectDetail.Data.ResidentArea");
-			data.TablePrivacyMode = context.IntegerValue("GetProjectDetail.Data.TablePrivacyMode");
 			data.ProjectOwnerBaseId = context.StringValue("GetProjectDetail.Data.ProjectOwnerBaseId");
-			data.UseProxyOdpsAccount = context.BooleanValue("GetProjectDetail.Data.UseProxyOdpsAccount");
-			data.DisableDevelopment = context.BooleanValue("GetProjectDetail.Data.DisableDevelopment");
 			data.ProjectMode = context.IntegerValue("GetProjectDetail.Data.ProjectMode");
 			data.GmtCreate = context.StringValue("GetProjectDetail.Data.GmtCreate");
-			data.DevStorageQuota = context.StringValue("GetProjectDetail.Data.DevStorageQuota");
-			data.IsDefault = context.IntegerValue("GetProjectDetail.Data.IsDefault");
 			data.ProtectedMode = context.IntegerValue("GetProjectDetail.Data.ProtectedMode");
-			data.BaseProject = context.BooleanValue("GetProjectDetail.Data.BaseProject");
 			data.TenantId = context.LongValue("GetProjectDetail.Data.TenantId");
 			data.ProjectDescription = context.StringValue("GetProjectDetail.Data.ProjectDescription");
-			data.Appkey = context.StringValue("GetProjectDetail.Data.Appkey");
 			data.SchedulerMaxRetryTimes = context.IntegerValue("GetProjectDetail.Data.SchedulerMaxRetryTimes");
 			data.ProjectName = context.StringValue("GetProjectDetail.Data.ProjectName");
 			data.ProjectIdentifier = context.StringValue("GetProjectDetail.Data.ProjectIdentifier");

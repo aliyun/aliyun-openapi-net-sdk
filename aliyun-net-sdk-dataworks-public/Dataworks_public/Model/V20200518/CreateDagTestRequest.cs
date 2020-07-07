@@ -27,10 +27,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListNodesRequest : RpcAcsRequest<ListNodesResponse>
+    public class CreateDagTestRequest : RpcAcsRequest<CreateDagTestResponse>
     {
-        public ListNodesRequest()
-            : base("dataworks-public", "2020-05-18", "ListNodes", "dide", "openAPI")
+        public CreateDagTestRequest()
+            : base("dataworks-public", "2020-05-18", "CreateDagTest", "dide", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,34 +40,15 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
-		private string owner;
-
 		private string projectEnv;
 
-		private string bizName;
+		private string bizdate;
 
-		private int? pageNumber;
+		private string name;
 
-		private string nodeName;
+		private string nodeParams;
 
-		private string programType;
-
-		private int? pageSize;
-
-		private long? projectId;
-
-		public string Owner
-		{
-			get
-			{
-				return owner;
-			}
-			set	
-			{
-				owner = value;
-				DictionaryUtil.Add(BodyParameters, "Owner", value);
-			}
-		}
+		private long? nodeId;
 
 		public string ProjectEnv
 		{
@@ -82,81 +63,55 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string BizName
+		public string Bizdate
 		{
 			get
 			{
-				return bizName;
+				return bizdate;
 			}
 			set	
 			{
-				bizName = value;
-				DictionaryUtil.Add(BodyParameters, "BizName", value);
+				bizdate = value;
+				DictionaryUtil.Add(BodyParameters, "Bizdate", value);
 			}
 		}
 
-		public int? PageNumber
+		public string Name
 		{
 			get
 			{
-				return pageNumber;
+				return name;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+				name = value;
+				DictionaryUtil.Add(BodyParameters, "Name", value);
 			}
 		}
 
-		public string NodeName
+		public string NodeParams
 		{
 			get
 			{
-				return nodeName;
+				return nodeParams;
 			}
 			set	
 			{
-				nodeName = value;
-				DictionaryUtil.Add(BodyParameters, "NodeName", value);
+				nodeParams = value;
+				DictionaryUtil.Add(BodyParameters, "NodeParams", value);
 			}
 		}
 
-		public string ProgramType
+		public long? NodeId
 		{
 			get
 			{
-				return programType;
+				return nodeId;
 			}
 			set	
 			{
-				programType = value;
-				DictionaryUtil.Add(BodyParameters, "ProgramType", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public long? ProjectId
-		{
-			get
-			{
-				return projectId;
-			}
-			set	
-			{
-				projectId = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
+				nodeId = value;
+				DictionaryUtil.Add(BodyParameters, "NodeId", value.ToString());
 			}
 		}
 
@@ -165,9 +120,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListNodesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDagTestResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListNodesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDagTestResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

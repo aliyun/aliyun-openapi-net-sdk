@@ -42,6 +42,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private int? fileType;
 
+		private string dependentNodeIdList;
+
 		private string content;
 
 		private string projectIdentifier;
@@ -55,8 +57,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 		private string owner;
 
 		private int? autoRerunIntervalMillis;
-
-		private string dependentCloudUuidList;
 
 		private string inputList;
 
@@ -90,6 +90,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				fileType = value;
 				DictionaryUtil.Add(BodyParameters, "FileType", value.ToString());
+			}
+		}
+
+		public string DependentNodeIdList
+		{
+			get
+			{
+				return dependentNodeIdList;
+			}
+			set	
+			{
+				dependentNodeIdList = value;
+				DictionaryUtil.Add(BodyParameters, "DependentNodeIdList", value);
 			}
 		}
 
@@ -181,19 +194,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				autoRerunIntervalMillis = value;
 				DictionaryUtil.Add(BodyParameters, "AutoRerunIntervalMillis", value.ToString());
-			}
-		}
-
-		public string DependentCloudUuidList
-		{
-			get
-			{
-				return dependentCloudUuidList;
-			}
-			set	
-			{
-				dependentCloudUuidList = value;
-				DictionaryUtil.Add(BodyParameters, "DependentCloudUuidList", value);
 			}
 		}
 

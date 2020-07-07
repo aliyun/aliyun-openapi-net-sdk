@@ -60,6 +60,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				connectionsItem.Id = context.IntegerValue("ListConnections.Data.Connections["+ i +"].Id");
 				connectionsItem.ProjectId = context.IntegerValue("ListConnections.Data.Connections["+ i +"].ProjectId");
 				connectionsItem.Status = context.IntegerValue("ListConnections.Data.Connections["+ i +"].Status");
+				connectionsItem.Content = context.StringValue("ListConnections.Data.Connections["+ i +"].Content");
 
 				data_connections.Add(connectionsItem);
 			}

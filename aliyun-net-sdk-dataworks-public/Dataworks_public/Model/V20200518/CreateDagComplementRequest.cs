@@ -27,10 +27,10 @@ using Aliyun.Acs.dataworks_public.Transform.V20200518;
 
 namespace Aliyun.Acs.dataworks_public.Model.V20200518
 {
-    public class ListInstancesRequest : RpcAcsRequest<ListInstancesResponse>
+    public class CreateDagComplementRequest : RpcAcsRequest<CreateDagComplementResponse>
     {
-        public ListInstancesRequest()
-            : base("dataworks-public", "2020-05-18", "ListInstances", "dide", "openAPI")
+        public CreateDagComplementRequest()
+            : base("dataworks-public", "2020-05-18", "CreateDagComplement", "dide", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,21 +42,25 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string projectEnv;
 
-		private string owner;
+		private string startBizDate;
 
-		private string bizName;
+		private bool? parallelism;
 
-		private int? pageNumber;
+		private long? rootNodeId;
 
-		private string nodeName;
+		private string bizBeginTime;
 
-		private string programType;
+		private string endBizDate;
 
-		private int? pageSize;
+		private string includeNodeIds;
 
-		private long? nodeId;
+		private string bizEndTime;
 
-		private long? projectId;
+		private string name;
+
+		private string excludeNodeIds;
+
+		private string nodeParams;
 
 		public string ProjectEnv
 		{
@@ -71,107 +75,133 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string Owner
+		public string StartBizDate
 		{
 			get
 			{
-				return owner;
+				return startBizDate;
 			}
 			set	
 			{
-				owner = value;
-				DictionaryUtil.Add(BodyParameters, "Owner", value);
+				startBizDate = value;
+				DictionaryUtil.Add(BodyParameters, "StartBizDate", value);
 			}
 		}
 
-		public string BizName
+		public bool? Parallelism
 		{
 			get
 			{
-				return bizName;
+				return parallelism;
 			}
 			set	
 			{
-				bizName = value;
-				DictionaryUtil.Add(BodyParameters, "BizName", value);
+				parallelism = value;
+				DictionaryUtil.Add(BodyParameters, "Parallelism", value.ToString());
 			}
 		}
 
-		public int? PageNumber
+		public long? RootNodeId
 		{
 			get
 			{
-				return pageNumber;
+				return rootNodeId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+				rootNodeId = value;
+				DictionaryUtil.Add(BodyParameters, "RootNodeId", value.ToString());
 			}
 		}
 
-		public string NodeName
+		public string BizBeginTime
 		{
 			get
 			{
-				return nodeName;
+				return bizBeginTime;
 			}
 			set	
 			{
-				nodeName = value;
-				DictionaryUtil.Add(BodyParameters, "NodeName", value);
+				bizBeginTime = value;
+				DictionaryUtil.Add(BodyParameters, "BizBeginTime", value);
 			}
 		}
 
-		public string ProgramType
+		public string EndBizDate
 		{
 			get
 			{
-				return programType;
+				return endBizDate;
 			}
 			set	
 			{
-				programType = value;
-				DictionaryUtil.Add(BodyParameters, "ProgramType", value);
+				endBizDate = value;
+				DictionaryUtil.Add(BodyParameters, "EndBizDate", value);
 			}
 		}
 
-		public int? PageSize
+		public string IncludeNodeIds
 		{
 			get
 			{
-				return pageSize;
+				return includeNodeIds;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+				includeNodeIds = value;
+				DictionaryUtil.Add(BodyParameters, "IncludeNodeIds", value);
 			}
 		}
 
-		public long? NodeId
+		public string BizEndTime
 		{
 			get
 			{
-				return nodeId;
+				return bizEndTime;
 			}
 			set	
 			{
-				nodeId = value;
-				DictionaryUtil.Add(BodyParameters, "NodeId", value.ToString());
+				bizEndTime = value;
+				DictionaryUtil.Add(BodyParameters, "BizEndTime", value);
 			}
 		}
 
-		public long? ProjectId
+		public string Name
 		{
 			get
 			{
-				return projectId;
+				return name;
 			}
 			set	
 			{
-				projectId = value;
-				DictionaryUtil.Add(BodyParameters, "ProjectId", value.ToString());
+				name = value;
+				DictionaryUtil.Add(BodyParameters, "Name", value);
+			}
+		}
+
+		public string ExcludeNodeIds
+		{
+			get
+			{
+				return excludeNodeIds;
+			}
+			set	
+			{
+				excludeNodeIds = value;
+				DictionaryUtil.Add(BodyParameters, "ExcludeNodeIds", value);
+			}
+		}
+
+		public string NodeParams
+		{
+			get
+			{
+				return nodeParams;
+			}
+			set	
+			{
+				nodeParams = value;
+				DictionaryUtil.Add(BodyParameters, "NodeParams", value);
 			}
 		}
 
@@ -180,9 +210,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			return false;
 		}
 
-        public override ListInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDagComplementResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDagComplementResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

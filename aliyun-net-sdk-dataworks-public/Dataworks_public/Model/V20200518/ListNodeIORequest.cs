@@ -42,9 +42,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private string projectEnv;
 
-		private string type;
-
 		private long? nodeId;
+
+		private string ioType;
 
 		public string ProjectEnv
 		{
@@ -59,19 +59,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "Type", value);
-			}
-		}
-
 		public long? NodeId
 		{
 			get
@@ -82,6 +69,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				nodeId = value;
 				DictionaryUtil.Add(BodyParameters, "NodeId", value.ToString());
+			}
+		}
+
+		public string IoType
+		{
+			get
+			{
+				return ioType;
+			}
+			set	
+			{
+				ioType = value;
+				DictionaryUtil.Add(BodyParameters, "IoType", value);
 			}
 		}
 
