@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.RightBottomY = context.FloatValue("ListMotorAlgorithmResults.Data.Records["+ i +"].RightBottomY");
 				recordsItem.ShotTime = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].ShotTime");
 				recordsItem.TargetPicUrlPath = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].TargetPicUrlPath");
+				recordsItem.MotorStyle = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].MotorStyle");
+				recordsItem.MotorModel = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].MotorModel");
 
 				data_records.Add(recordsItem);
 			}

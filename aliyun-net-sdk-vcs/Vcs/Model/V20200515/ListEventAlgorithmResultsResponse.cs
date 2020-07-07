@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-	public class ListMotorAlgorithmResultsResponse : AcsResponse
+	public class ListEventAlgorithmResultsResponse : AcsResponse
 	{
 
 		private string code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string requestId;
 
-		private ListMotorAlgorithmResults_Data data;
+		private ListEventAlgorithmResults_Data data;
 
 		public string Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public ListMotorAlgorithmResults_Data Data
+		public ListEventAlgorithmResults_Data Data
 		{
 			get
 			{
@@ -81,7 +81,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public class ListMotorAlgorithmResults_Data
+		public class ListEventAlgorithmResults_Data
 		{
 
 			private int? pageNumber;
@@ -92,7 +92,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 			private int? totalPage;
 
-			private List<ListMotorAlgorithmResults_RecordsItem> records;
+			private List<ListEventAlgorithmResults_RecordsItem> records;
 
 			public int? PageNumber
 			{
@@ -142,7 +142,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				}
 			}
 
-			public List<ListMotorAlgorithmResults_RecordsItem> Records
+			public List<ListEventAlgorithmResults_RecordsItem> Records
 			{
 				get
 				{
@@ -154,34 +154,36 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				}
 			}
 
-			public class ListMotorAlgorithmResults_RecordsItem
+			public class ListEventAlgorithmResults_RecordsItem
 			{
+
+				private string capStyle;
 
 				private string corpId;
 
 				private string dataSourceId;
 
-				private float? leftTopX;
+				private string eventType;
 
-				private float? leftTopY;
-
-				private string motorId;
+				private string faceCount;
 
 				private string picUrlPath;
-
-				private string plateNumber;
-
-				private float? rightBottomX;
-
-				private float? rightBottomY;
 
 				private string shotTime;
 
 				private string targetPicUrlPath;
 
-				private string motorStyle;
-
-				private string motorModel;
+				public string CapStyle
+				{
+					get
+					{
+						return capStyle;
+					}
+					set	
+					{
+						capStyle = value;
+					}
+				}
 
 				public string CorpId
 				{
@@ -207,39 +209,27 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public float? LeftTopX
+				public string EventType
 				{
 					get
 					{
-						return leftTopX;
+						return eventType;
 					}
 					set	
 					{
-						leftTopX = value;
+						eventType = value;
 					}
 				}
 
-				public float? LeftTopY
+				public string FaceCount
 				{
 					get
 					{
-						return leftTopY;
+						return faceCount;
 					}
 					set	
 					{
-						leftTopY = value;
-					}
-				}
-
-				public string MotorId
-				{
-					get
-					{
-						return motorId;
-					}
-					set	
-					{
-						motorId = value;
+						faceCount = value;
 					}
 				}
 
@@ -252,42 +242,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						picUrlPath = value;
-					}
-				}
-
-				public string PlateNumber
-				{
-					get
-					{
-						return plateNumber;
-					}
-					set	
-					{
-						plateNumber = value;
-					}
-				}
-
-				public float? RightBottomX
-				{
-					get
-					{
-						return rightBottomX;
-					}
-					set	
-					{
-						rightBottomX = value;
-					}
-				}
-
-				public float? RightBottomY
-				{
-					get
-					{
-						return rightBottomY;
-					}
-					set	
-					{
-						rightBottomY = value;
 					}
 				}
 
@@ -312,30 +266,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						targetPicUrlPath = value;
-					}
-				}
-
-				public string MotorStyle
-				{
-					get
-					{
-						return motorStyle;
-					}
-					set	
-					{
-						motorStyle = value;
-					}
-				}
-
-				public string MotorModel
-				{
-					get
-					{
-						return motorModel;
-					}
-					set	
-					{
-						motorModel = value;
 					}
 				}
 			}
