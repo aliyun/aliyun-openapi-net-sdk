@@ -27,7 +27,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private bool? success;
 
-		private bool? errorCode;
+		private string errorCode;
 
 		private string errorMessage;
 
@@ -49,7 +49,7 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public bool? ErrorCode
+		public string ErrorCode
 		{
 			get
 			{
