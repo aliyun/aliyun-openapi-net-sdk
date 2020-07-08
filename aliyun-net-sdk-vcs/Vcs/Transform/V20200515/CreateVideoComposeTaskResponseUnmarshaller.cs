@@ -34,11 +34,8 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			createVideoComposeTaskResponse.Code = context.StringValue("CreateVideoComposeTask.Code");
 			createVideoComposeTaskResponse.Message = context.StringValue("CreateVideoComposeTask.Message");
 			createVideoComposeTaskResponse.RequestId = context.StringValue("CreateVideoComposeTask.RequestId");
-
-			CreateVideoComposeTaskResponse.CreateVideoComposeTask_Data data = new CreateVideoComposeTaskResponse.CreateVideoComposeTask_Data();
-			data.DomainName = context.IntegerValue("CreateVideoComposeTask.Data.DomainName");
-			data.BucketName = context.IntegerValue("CreateVideoComposeTask.Data.BucketName");
-			createVideoComposeTaskResponse.Data = data;
+			createVideoComposeTaskResponse.DomainName = context.StringValue("CreateVideoComposeTask.DomainName");
+			createVideoComposeTaskResponse.BucketName = context.StringValue("CreateVideoComposeTask.BucketName");
         
 			return createVideoComposeTaskResponse;
         }

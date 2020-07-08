@@ -34,6 +34,8 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			getVideoComposeResultResponse.Message = context.StringValue("GetVideoComposeResult.Message");
 			getVideoComposeResultResponse.RequestId = context.StringValue("GetVideoComposeResult.RequestId");
 			getVideoComposeResultResponse.VideoUrl = context.StringValue("GetVideoComposeResult.VideoUrl");
+			getVideoComposeResultResponse.Code = context.StringValue("GetVideoComposeResult.Code");
+			getVideoComposeResultResponse.Status = context.StringValue("GetVideoComposeResult.Status");
         
 			return getVideoComposeResultResponse;
         }

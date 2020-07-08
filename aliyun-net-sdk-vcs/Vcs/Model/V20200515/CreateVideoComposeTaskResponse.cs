@@ -31,7 +31,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string requestId;
 
-		private CreateVideoComposeTask_Data data;
+		private string domainName;
+
+		private string bucketName;
 
 		public string Code
 		{
@@ -69,47 +71,27 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public CreateVideoComposeTask_Data Data
+		public string DomainName
 		{
 			get
 			{
-				return data;
+				return domainName;
 			}
 			set	
 			{
-				data = value;
+				domainName = value;
 			}
 		}
 
-		public class CreateVideoComposeTask_Data
+		public string BucketName
 		{
-
-			private int? domainName;
-
-			private int? bucketName;
-
-			public int? DomainName
+			get
 			{
-				get
-				{
-					return domainName;
-				}
-				set	
-				{
-					domainName = value;
-				}
+				return bucketName;
 			}
-
-			public int? BucketName
+			set	
 			{
-				get
-				{
-					return bucketName;
-				}
-				set	
-				{
-					bucketName = value;
-				}
+				bucketName = value;
 			}
 		}
 	}

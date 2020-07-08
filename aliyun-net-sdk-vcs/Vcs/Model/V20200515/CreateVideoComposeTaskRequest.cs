@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class CreateVideoComposeTaskRequest : RpcAcsRequest<CreateVideoComposeTaskResponse>
     {
         public CreateVideoComposeTaskRequest()
-            : base("Vcs", "2020-05-15", "CreateVideoComposeTask", "vcs", "openAPI")
+            : base("Vcs", "2020-05-15", "CreateVideoComposeTask")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,15 +45,15 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string domainName;
 
-		private string picUrlList;
+		private int? videoFrameRate;
 
-		private string audioUrl;
+		private string imageFileNames;
+
+		private string audioFileName;
 
 		private string bucketName;
 
 		private string imageParameters;
-
-		private string videoRate;
 
 		private string videoFormat;
 
@@ -82,29 +83,42 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string PicUrlList
+		public int? VideoFrameRate
 		{
 			get
 			{
-				return picUrlList;
+				return videoFrameRate;
 			}
 			set	
 			{
-				picUrlList = value;
-				DictionaryUtil.Add(BodyParameters, "PicUrlList", value);
+				videoFrameRate = value;
+				DictionaryUtil.Add(BodyParameters, "VideoFrameRate", value.ToString());
 			}
 		}
 
-		public string AudioUrl
+		public string ImageFileNames
 		{
 			get
 			{
-				return audioUrl;
+				return imageFileNames;
 			}
 			set	
 			{
-				audioUrl = value;
-				DictionaryUtil.Add(BodyParameters, "AudioUrl", value);
+				imageFileNames = value;
+				DictionaryUtil.Add(BodyParameters, "ImageFileNames", value);
+			}
+		}
+
+		public string AudioFileName
+		{
+			get
+			{
+				return audioFileName;
+			}
+			set	
+			{
+				audioFileName = value;
+				DictionaryUtil.Add(BodyParameters, "AudioFileName", value);
 			}
 		}
 
@@ -131,19 +145,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				imageParameters = value;
 				DictionaryUtil.Add(BodyParameters, "ImageParameters", value);
-			}
-		}
-
-		public string VideoRate
-		{
-			get
-			{
-				return videoRate;
-			}
-			set	
-			{
-				videoRate = value;
-				DictionaryUtil.Add(BodyParameters, "VideoRate", value);
 			}
 		}
 

@@ -31,6 +31,10 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string videoUrl;
 
+		private string code;
+
+		private string status;
+
 		public string Message
 		{
 			get
@@ -64,6 +68,30 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				videoUrl = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
 			}
 		}
 	}
