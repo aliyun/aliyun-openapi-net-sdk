@@ -30,7 +30,7 @@ namespace Aliyun.Acs.reid.Model.V20190928
     public class DescribeCameraStatisticsRequest : RpcAcsRequest<DescribeCameraStatisticsResponse>
     {
         public DescribeCameraStatisticsRequest()
-            : base("reid", "2019-09-28", "DescribeCameraStatistics", "1.1.8", "openAPI")
+            : base("reid", "2019-09-28", "DescribeCameraStatistics", "1.1.8.2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

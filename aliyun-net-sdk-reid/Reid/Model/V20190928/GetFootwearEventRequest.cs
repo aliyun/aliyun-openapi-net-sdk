@@ -27,10 +27,10 @@ using Aliyun.Acs.reid.Transform.V20190928;
 
 namespace Aliyun.Acs.reid.Model.V20190928
 {
-    public class DescribeHeatMapRequest : RpcAcsRequest<DescribeHeatMapResponse>
+    public class GetFootwearEventRequest : RpcAcsRequest<GetFootwearEventResponse>
     {
-        public DescribeHeatMapRequest()
-            : base("reid", "2019-09-28", "DescribeHeatMap", "1.1.8.2", "openAPI")
+        public GetFootwearEventRequest()
+            : base("reid", "2019-09-28", "GetFootwearEvent", "1.1.8.2", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,8 +43,6 @@ namespace Aliyun.Acs.reid.Model.V20190928
 		private string date;
 
 		private long? storeId;
-
-		private long? emapId;
 
 		public string Date
 		{
@@ -72,22 +70,9 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			}
 		}
 
-		public long? EmapId
-		{
-			get
-			{
-				return emapId;
-			}
-			set	
-			{
-				emapId = value;
-				DictionaryUtil.Add(BodyParameters, "EmapId", value.ToString());
-			}
-		}
-
-        public override DescribeHeatMapResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetFootwearEventResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeHeatMapResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetFootwearEventResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
