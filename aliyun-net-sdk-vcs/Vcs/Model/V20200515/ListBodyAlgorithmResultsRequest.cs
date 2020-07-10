@@ -27,10 +27,10 @@ using Aliyun.Acs.Vcs.Transform.V20200515;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-    public class RecognizeImageRequest : RpcAcsRequest<RecognizeImageResponse>
+    public class ListBodyAlgorithmResultsRequest : RpcAcsRequest<ListBodyAlgorithmResultsResponse>
     {
-        public RecognizeImageRequest()
-            : base("Vcs", "2020-05-15", "RecognizeImage", "vcs", "openAPI")
+        public ListBodyAlgorithmResultsRequest()
+            : base("Vcs", "2020-05-15", "ListBodyAlgorithmResults", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,13 +40,34 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
+		private string algorithmType;
+
 		private string corpId;
 
-		private string picUrl;
+		private string capStyle;
 
-		private string picContent;
+		private string endTime;
 
-		private string picFormat;
+		private string startTime;
+
+		private string pageNumber;
+
+		private string dataSourceId;
+
+		private string pageSize;
+
+		public string AlgorithmType
+		{
+			get
+			{
+				return algorithmType;
+			}
+			set	
+			{
+				algorithmType = value;
+				DictionaryUtil.Add(BodyParameters, "AlgorithmType", value);
+			}
+		}
 
 		public string CorpId
 		{
@@ -61,42 +82,81 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string PicUrl
+		public string CapStyle
 		{
 			get
 			{
-				return picUrl;
+				return capStyle;
 			}
 			set	
 			{
-				picUrl = value;
-				DictionaryUtil.Add(BodyParameters, "PicUrl", value);
+				capStyle = value;
+				DictionaryUtil.Add(BodyParameters, "CapStyle", value);
 			}
 		}
 
-		public string PicContent
+		public string EndTime
 		{
 			get
 			{
-				return picContent;
+				return endTime;
 			}
 			set	
 			{
-				picContent = value;
-				DictionaryUtil.Add(BodyParameters, "PicContent", value);
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value);
 			}
 		}
 
-		public string PicFormat
+		public string StartTime
 		{
 			get
 			{
-				return picFormat;
+				return startTime;
 			}
 			set	
 			{
-				picFormat = value;
-				DictionaryUtil.Add(BodyParameters, "PicFormat", value);
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value);
+			}
+		}
+
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value);
+			}
+		}
+
+		public string DataSourceId
+		{
+			get
+			{
+				return dataSourceId;
+			}
+			set	
+			{
+				dataSourceId = value;
+				DictionaryUtil.Add(BodyParameters, "DataSourceId", value);
+			}
+		}
+
+		public string PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value);
 			}
 		}
 
@@ -105,9 +165,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			return false;
 		}
 
-        public override RecognizeImageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListBodyAlgorithmResultsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RecognizeImageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListBodyAlgorithmResultsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
