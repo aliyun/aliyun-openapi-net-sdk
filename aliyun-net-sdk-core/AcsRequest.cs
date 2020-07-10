@@ -173,10 +173,10 @@ namespace Aliyun.Acs.Core
                 var key = entry.Key;
                 var val = entry.Value;
 
-                sb.Append(AcsURLEncoder.Encode(key));
+                sb.Append(AcsURLEncoder.PercentEncode(key));
                 if (val != null)
                 {
-                    sb.Append("=").Append(AcsURLEncoder.Encode(val));
+                    sb.Append("=").Append(AcsURLEncoder.PercentEncode(val));
                 }
 
                 sb.Append("&");
