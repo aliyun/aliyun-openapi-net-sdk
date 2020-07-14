@@ -88,6 +88,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 			private string description;
 
+			private RecognizeFaceQuality_Attributes attributes;
+
 			public string QualityScore
 			{
 				get
@@ -109,6 +111,134 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public RecognizeFaceQuality_Attributes Attributes
+			{
+				get
+				{
+					return attributes;
+				}
+				set	
+				{
+					attributes = value;
+				}
+			}
+
+			public class RecognizeFaceQuality_Attributes
+			{
+
+				private int? leftTopX;
+
+				private int? leftTopY;
+
+				private int? rightBottomX;
+
+				private int? rightBottomY;
+
+				private string targetImageStoragePath;
+
+				private string faceStyle;
+
+				private string faceQuality;
+
+				private string faceScore;
+
+				public int? LeftTopX
+				{
+					get
+					{
+						return leftTopX;
+					}
+					set	
+					{
+						leftTopX = value;
+					}
+				}
+
+				public int? LeftTopY
+				{
+					get
+					{
+						return leftTopY;
+					}
+					set	
+					{
+						leftTopY = value;
+					}
+				}
+
+				public int? RightBottomX
+				{
+					get
+					{
+						return rightBottomX;
+					}
+					set	
+					{
+						rightBottomX = value;
+					}
+				}
+
+				public int? RightBottomY
+				{
+					get
+					{
+						return rightBottomY;
+					}
+					set	
+					{
+						rightBottomY = value;
+					}
+				}
+
+				public string TargetImageStoragePath
+				{
+					get
+					{
+						return targetImageStoragePath;
+					}
+					set	
+					{
+						targetImageStoragePath = value;
+					}
+				}
+
+				public string FaceStyle
+				{
+					get
+					{
+						return faceStyle;
+					}
+					set	
+					{
+						faceStyle = value;
+					}
+				}
+
+				public string FaceQuality
+				{
+					get
+					{
+						return faceQuality;
+					}
+					set	
+					{
+						faceQuality = value;
+					}
+				}
+
+				public string FaceScore
+				{
+					get
+					{
+						return faceScore;
+					}
+					set	
+					{
+						faceScore = value;
+					}
 				}
 			}
 		}

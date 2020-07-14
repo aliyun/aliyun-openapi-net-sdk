@@ -38,6 +38,17 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			RecognizeFaceQualityResponse.RecognizeFaceQuality_Data data = new RecognizeFaceQualityResponse.RecognizeFaceQuality_Data();
 			data.QualityScore = context.StringValue("RecognizeFaceQuality.Data.QualityScore");
 			data.Description = context.StringValue("RecognizeFaceQuality.Data.Description");
+
+			RecognizeFaceQualityResponse.RecognizeFaceQuality_Data.RecognizeFaceQuality_Attributes attributes = new RecognizeFaceQualityResponse.RecognizeFaceQuality_Data.RecognizeFaceQuality_Attributes();
+			attributes.LeftTopX = context.IntegerValue("RecognizeFaceQuality.Data.Attributes.LeftTopX");
+			attributes.LeftTopY = context.IntegerValue("RecognizeFaceQuality.Data.Attributes.LeftTopY");
+			attributes.RightBottomX = context.IntegerValue("RecognizeFaceQuality.Data.Attributes.RightBottomX");
+			attributes.RightBottomY = context.IntegerValue("RecognizeFaceQuality.Data.Attributes.RightBottomY");
+			attributes.TargetImageStoragePath = context.StringValue("RecognizeFaceQuality.Data.Attributes.TargetImageStoragePath");
+			attributes.FaceStyle = context.StringValue("RecognizeFaceQuality.Data.Attributes.FaceStyle");
+			attributes.FaceQuality = context.StringValue("RecognizeFaceQuality.Data.Attributes.FaceQuality");
+			attributes.FaceScore = context.StringValue("RecognizeFaceQuality.Data.Attributes.FaceScore");
+			data.Attributes = attributes;
 			recognizeFaceQualityResponse.Data = data;
         
 			return recognizeFaceQualityResponse;
