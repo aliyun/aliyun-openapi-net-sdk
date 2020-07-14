@@ -138,6 +138,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string destVersion;
 
+			private string utcScheduleFinishTime;
+
 			private List<string> srcVersions;
 
 			public string JobId
@@ -377,6 +379,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					destVersion = value;
+				}
+			}
+
+			public string UtcScheduleFinishTime
+			{
+				get
+				{
+					return utcScheduleFinishTime;
+				}
+				set	
+				{
+					utcScheduleFinishTime = value;
 				}
 			}
 

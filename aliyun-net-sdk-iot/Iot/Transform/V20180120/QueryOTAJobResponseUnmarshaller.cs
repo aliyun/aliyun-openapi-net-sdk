@@ -57,6 +57,7 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.GrayPercent = context.StringValue("QueryOTAJob.Data.GrayPercent");
 			data.MaximumPerMinute = context.IntegerValue("QueryOTAJob.Data.MaximumPerMinute");
 			data.DestVersion = context.StringValue("QueryOTAJob.Data.DestVersion");
+			data.UtcScheduleFinishTime = context.StringValue("QueryOTAJob.Data.UtcScheduleFinishTime");
 
 			List<string> data_srcVersions = new List<string>();
 			for (int i = 0; i < context.Length("QueryOTAJob.Data.SrcVersions.Length"); i++) {

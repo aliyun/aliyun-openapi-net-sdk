@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string code;
 
+		private string messageArguments;
+
 		private SetDeviceDesiredProperty_Data data;
 
 		public string RequestId
@@ -80,6 +82,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string MessageArguments
+		{
+			get
+			{
+				return messageArguments;
+			}
+			set	
+			{
+				messageArguments = value;
 			}
 		}
 

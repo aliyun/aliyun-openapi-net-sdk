@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string shadowMessage;
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string iotInstanceId;
 
 		private string productKey;
+
+		private bool? deltaUpdate;
 
 		private string deviceName;
 
@@ -83,6 +86,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				productKey = value;
 				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+			}
+		}
+
+		public bool? DeltaUpdate
+		{
+			get
+			{
+				return deltaUpdate;
+			}
+			set	
+			{
+				deltaUpdate = value;
+				DictionaryUtil.Add(QueryParameters, "DeltaUpdate", value.ToString());
 			}
 		}
 

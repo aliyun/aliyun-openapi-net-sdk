@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private int? retryCount;
@@ -46,6 +47,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string iotInstanceId;
 
 		private string targetSelection;
+
+		private long? scheduleFinishTime;
 
 		private string grayPercent;
 
@@ -112,6 +115,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				targetSelection = value;
 				DictionaryUtil.Add(QueryParameters, "TargetSelection", value);
+			}
+		}
+
+		public long? ScheduleFinishTime
+		{
+			get
+			{
+				return scheduleFinishTime;
+			}
+			set	
+			{
+				scheduleFinishTime = value;
+				DictionaryUtil.Add(QueryParameters, "ScheduleFinishTime", value.ToString());
 			}
 		}
 
