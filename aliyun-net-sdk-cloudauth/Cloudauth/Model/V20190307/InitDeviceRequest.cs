@@ -52,9 +52,13 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string certifyId;
 
+		private string webUmidToken;
+
 		private string outerOrderNo;
 
 		private string produceNode;
+
+		private string uaToken;
 
 		private string productName;
 
@@ -140,6 +144,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
+		public string WebUmidToken
+		{
+			get
+			{
+				return webUmidToken;
+			}
+			set	
+			{
+				webUmidToken = value;
+				DictionaryUtil.Add(BodyParameters, "WebUmidToken", value);
+			}
+		}
+
 		public string OuterOrderNo
 		{
 			get
@@ -163,6 +180,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				produceNode = value;
 				DictionaryUtil.Add(QueryParameters, "ProduceNode", value);
+			}
+		}
+
+		public string UaToken
+		{
+			get
+			{
+				return uaToken;
+			}
+			set	
+			{
+				uaToken = value;
+				DictionaryUtil.Add(BodyParameters, "UaToken", value);
 			}
 		}
 

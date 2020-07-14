@@ -110,6 +110,10 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 			private string fileNamePrefix;
 
+			private string fileName;
+
+			private string presignedUrl;
+
 			public string CertifyId
 			{
 				get
@@ -263,6 +267,30 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					fileNamePrefix = value;
+				}
+			}
+
+			public string FileName
+			{
+				get
+				{
+					return fileName;
+				}
+				set	
+				{
+					fileName = value;
+				}
+			}
+
+			public string PresignedUrl
+			{
+				get
+				{
+					return presignedUrl;
+				}
+				set	
+				{
+					presignedUrl = value;
 				}
 			}
 		}

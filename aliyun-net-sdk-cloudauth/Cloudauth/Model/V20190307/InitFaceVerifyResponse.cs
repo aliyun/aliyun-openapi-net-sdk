@@ -86,6 +86,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 			private string certifyId;
 
+			private string certifyUrl;
+
 			public string CertifyId
 			{
 				get
@@ -95,6 +97,18 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					certifyId = value;
+				}
+			}
+
+			public string CertifyUrl
+			{
+				get
+				{
+					return certifyUrl;
+				}
+				set	
+				{
+					certifyUrl = value;
 				}
 			}
 		}

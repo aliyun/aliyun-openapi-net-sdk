@@ -49,6 +49,8 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			resultObject.SecurityToken = context.StringValue("InitDevice.ResultObject.SecurityToken");
 			resultObject.BucketName = context.StringValue("InitDevice.ResultObject.BucketName");
 			resultObject.FileNamePrefix = context.StringValue("InitDevice.ResultObject.FileNamePrefix");
+			resultObject.FileName = context.StringValue("InitDevice.ResultObject.FileName");
+			resultObject.PresignedUrl = context.StringValue("InitDevice.ResultObject.PresignedUrl");
 			initDeviceResponse.ResultObject = resultObject;
         
 			return initDeviceResponse;
