@@ -78,6 +78,7 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 				backupPlanDetail.CrossAliyunId = context.StringValue("DescribeBackupPlanList.Items["+ i +"].CrossAliyunId");
 				backupPlanDetail.CrossRoleName = context.StringValue("DescribeBackupPlanList.Items["+ i +"].CrossRoleName");
 				backupPlanDetail.BackupStorageType = context.StringValue("DescribeBackupPlanList.Items["+ i +"].BackupStorageType");
+				backupPlanDetail.ErrMessage = context.StringValue("DescribeBackupPlanList.Items["+ i +"].ErrMessage");
 
 				describeBackupPlanListResponse_items.Add(backupPlanDetail);
 			}

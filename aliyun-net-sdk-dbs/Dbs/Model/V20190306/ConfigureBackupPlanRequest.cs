@@ -70,6 +70,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string crossAliyunId;
 
+		private bool? autoStartBackup;
+
 		private string sourceEndpointPassword;
 
 		private string backupObjects;
@@ -286,6 +288,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				crossAliyunId = value;
 				DictionaryUtil.Add(QueryParameters, "CrossAliyunId", value);
+			}
+		}
+
+		public bool? AutoStartBackup
+		{
+			get
+			{
+				return autoStartBackup;
+			}
+			set	
+			{
+				autoStartBackup = value;
+				DictionaryUtil.Add(QueryParameters, "AutoStartBackup", value.ToString());
 			}
 		}
 

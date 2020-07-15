@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string backupPlanId;
 
+		private string backupSetId;
+
 		private int? pageNum;
 
 		private string ownerId;
@@ -75,6 +77,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				backupPlanId = value;
 				DictionaryUtil.Add(QueryParameters, "BackupPlanId", value);
+			}
+		}
+
+		public string BackupSetId
+		{
+			get
+			{
+				return backupSetId;
+			}
+			set	
+			{
+				backupSetId = value;
+				DictionaryUtil.Add(QueryParameters, "BackupSetId", value);
 			}
 		}
 

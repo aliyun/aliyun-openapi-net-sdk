@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 		private string ownerId;
 
+		private bool? recentlyRestore;
+
 		public long? BeginTimestampForRestore
 		{
 			get
@@ -112,6 +114,19 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
+			}
+		}
+
+		public bool? RecentlyRestore
+		{
+			get
+			{
+				return recentlyRestore;
+			}
+			set	
+			{
+				recentlyRestore = value;
+				DictionaryUtil.Add(QueryParameters, "RecentlyRestore", value.ToString());
 			}
 		}
 

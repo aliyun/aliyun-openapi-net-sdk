@@ -236,6 +236,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private string backupStorageType;
 
+			private string errMessage;
+
 			public string BackupPlanId
 			{
 				get
@@ -641,6 +643,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					backupStorageType = value;
+				}
+			}
+
+			public string ErrMessage
+			{
+				get
+				{
+					return errMessage;
+				}
+				set	
+				{
+					errMessage = value;
 				}
 			}
 		}
