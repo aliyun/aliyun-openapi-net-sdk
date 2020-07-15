@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string imageId;
 
+		private string launchPermission;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -78,6 +80,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public string LaunchPermission
+		{
+			get
+			{
+				return launchPermission;
+			}
+			set	
+			{
+				launchPermission = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchPermission", value);
 			}
 		}
 

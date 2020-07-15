@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceGroupId;
 
+		private string bootMode;
+
 		private string imageName;
 
 		private List<Tag> tags = new List<Tag>(){ };
@@ -137,6 +139,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string BootMode
+		{
+			get
+			{
+				return bootMode;
+			}
+			set	
+			{
+				bootMode = value;
+				DictionaryUtil.Add(QueryParameters, "BootMode", value);
 			}
 		}
 
