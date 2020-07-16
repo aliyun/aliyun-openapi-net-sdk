@@ -45,7 +45,6 @@ namespace Aliyun.Acs.Feature.Test
             accessKeyId,
             accessKeySecret
             );
-
             client = new DefaultAcsClient(profile);
             client.SetConnectTimeoutInMilliSeconds(2 * 60 * 1000);
             client.SetReadTimeoutInMilliSeconds(2 * 60 * 1000);
