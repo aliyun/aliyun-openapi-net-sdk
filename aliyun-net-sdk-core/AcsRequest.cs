@@ -17,8 +17,10 @@
  * under the License.
  */
 
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Http;
@@ -36,12 +38,15 @@ namespace Aliyun.Acs.Core
 
         private Dictionary<string, string> domainParameters = new Dictionary<string, string>();
 
-        public string ProductNetwork = "public";
+        private string productNetwork = "public";
+
+        private string productSuffix;
 
         private ProtocolType protocol = ProtocolType.HTTP;
 
         private Dictionary<string, string> queryParameters = new Dictionary<string, string>();
 
+        private string regionId;
 
         public string StringToSign;
         private UserAgent userAgentConfig;
@@ -56,12 +61,61 @@ namespace Aliyun.Acs.Core
         public virtual string Product { get; set; }
         public virtual string Version { get; set; }
         public virtual string ActionName { get; set; }
-        public virtual string RegionId { get; set; }
+        public virtual string RegionId
+        {
+            get
+            {
+                return regionId;
+            }
+            set
+            {
+                var match = Regex.Match(value, "^[a-zA-Z0-9_-]*$");
+                if (!match.Success)
+                {
+                    throw new ArgumentException("regionId is invalid", "regionId");
+                }
+                regionId = value;
+            }
+        }
         public virtual string SecurityToken { get; set; }
         public ISignatureComposer Composer { get; set; }
         public string LocationProduct { get; set; }
         public string LocationEndpointType { get; set; }
         public ProductDomain ProductDomain { get; set; }
+
+        public string ProductNetwork
+        {
+            get
+            {
+                return productNetwork;
+            }
+            set
+            {
+                var match = Regex.Match(value, "^[a-zA-Z0-9_-]+$");
+                if (!match.Success)
+                {
+                    throw new ArgumentException("productNetwork is invalid", "productNetwork");
+                }
+                productNetwork = value;
+            }
+        }
+
+        public string ProductSuffix
+        {
+            get
+            {
+                return productSuffix;
+            }
+            set
+            {
+                var match = Regex.Match(value, "^[a-zA-Z0-9_-]+$");
+                if (!match.Success)
+                {
+                    throw new ArgumentException("productSuffix is invalid", "productSuffix");
+                }
+                productSuffix = value;
+            }
+        }
 
         public virtual FormatType AcceptFormat
         {
@@ -110,13 +164,13 @@ namespace Aliyun.Acs.Core
 
             if (endpoint != "" && ProductDomain == null)
             {
-                ProductDomain = new ProductDomain {ProductName = Product, DomainName = endpoint};
+                ProductDomain = new ProductDomain { ProductName = Product, DomainName = endpoint };
             }
         }
 
         public void SetEndpoint(string endpoint)
         {
-            ProductDomain = new ProductDomain {ProductName = Product, DomainName = endpoint};
+            ProductDomain = new ProductDomain { ProductName = Product, DomainName = endpoint };
         }
 
         public string GetProductEndpoint()
@@ -137,12 +191,21 @@ namespace Aliyun.Acs.Core
             var endpoint = "";
             if (ProductEndpointType == "central")
             {
-                endpoint = "<product_id><network>.aliyuncs.com";
+                endpoint = "<product_id><suffix><network>.aliyuncs.com";
             }
             else if (ProductEndpointType == "regional")
             {
-                endpoint = "<product_id><network>.<region_id>.aliyuncs.com";
+                endpoint = "<product_id><suffix><network>.<region_id>.aliyuncs.com";
                 endpoint = endpoint.Replace("<region_id>", RegionId);
+            }
+
+            if (string.IsNullOrWhiteSpace(ProductSuffix))
+            {
+                endpoint = endpoint.Replace("<suffix>", string.Empty);
+            }
+            else
+            {
+                endpoint = endpoint.Replace("<suffix>", ProductSuffix);
             }
 
             if (endpoint == "")
@@ -152,9 +215,9 @@ namespace Aliyun.Acs.Core
 
             endpoint = endpoint.Replace("<product_id>", Product.ToLower());
 
-            endpoint = ProductNetwork == "public"
-                ? endpoint.Replace("<network>", "")
-                : endpoint.Replace("<network>", "-" + ProductNetwork);
+            endpoint = ProductNetwork == "public" ?
+                endpoint.Replace("<network>", "") :
+                endpoint.Replace("<network>", "-" + ProductNetwork);
 
             return endpoint;
         }

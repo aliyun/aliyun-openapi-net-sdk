@@ -45,8 +45,14 @@ namespace Aliyun.Acs.Core.Regions.Endpoints
 
                     if (endpoint != null)
                     {
-                        _endpoints.Add(endpoint);
-                        CacheTimeHelper.AddLastClearTimePerProduct(product, regionId, DateTime.UtcNow);
+                        foreach (var region in endpoint.RegionIds)
+                        {
+                            foreach (var productDomain in endpoint.ProductDomains.ToList())
+                            {
+                                AddEndpoint(endpoint.Name, region, product, productDomain.DomainName);
+                                CacheTimeHelper.AddLastClearTimePerProduct(product, region, DateTime.UtcNow);
+                            }
+                        }
                     }
                     else
                     {

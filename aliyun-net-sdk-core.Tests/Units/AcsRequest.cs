@@ -17,6 +17,7 @@
  * under the License.
  */
 
+using System;
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core.Auth;
@@ -87,6 +88,9 @@ namespace Aliyun.Acs.Core.Tests.Units
 
             mockAcsRequest.ProductNetwork = "vpc";
             Assert.Equal("test-vpc.aliyuncs.com", mockAcsRequest.GetProductEndpoint());
+
+            mockAcsRequest.ProductSuffix = "suffix";
+            Assert.Equal("testsuffix-vpc.aliyuncs.com", mockAcsRequest.GetProductEndpoint());
 
             var productEndpointMap = new Dictionary<string, string>();
             mockAcsRequest.ProductEndpointType = "test-type";
@@ -176,6 +180,30 @@ namespace Aliyun.Acs.Core.Tests.Units
             var resultStr = UserAgent.GetDefaultMessage() + " test/1.2.4" + " mock/1.1.2";
 
             Assert.Equal(resultStr, userAgent);
+        }
+
+        [Fact]
+        public void validateParam()
+        {
+            var acsRequest = new MockAcsRequest();
+            Assert.Throws<ArgumentException>(() =>
+            {
+                acsRequest.RegionId = "a.b";
+            });
+
+            acsRequest.RegionId = "";
+            Assert.Throws<ArgumentException>(() =>
+            {
+                acsRequest.ProductNetwork = "a.b";
+            });
+
+            acsRequest.ProductNetwork = "private";
+            Assert.Equal("private", acsRequest.ProductNetwork);
+
+            Assert.Throws<ArgumentException>(() =>
+            {
+                acsRequest.ProductSuffix = "a.b";
+            });
         }
     }
 
