@@ -37,6 +37,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -58,8 +59,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private long? ownerId;
 
 		private string preferredBackupTime;
-
-		private string backupRetentionPeriod;
 
 		public long? ResourceOwnerId
 		{
@@ -188,19 +187,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				preferredBackupTime = value;
 				DictionaryUtil.Add(QueryParameters, "PreferredBackupTime", value);
-			}
-		}
-
-		public string BackupRetentionPeriod
-		{
-			get
-			{
-				return backupRetentionPeriod;
-			}
-			set	
-			{
-				backupRetentionPeriod = value;
-				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value);
 			}
 		}
 

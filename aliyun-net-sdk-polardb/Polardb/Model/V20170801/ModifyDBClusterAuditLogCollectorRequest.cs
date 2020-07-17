@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DescribeAutoRenewAttributeRequest : RpcAcsRequest<DescribeAutoRenewAttributeResponse>
+    public class ModifyDBClusterAuditLogCollectorRequest : RpcAcsRequest<ModifyDBClusterAuditLogCollectorResponse>
     {
-        public DescribeAutoRenewAttributeRequest()
-            : base("polardb", "2017-08-01", "DescribeAutoRenewAttribute", "polardb", "openAPI")
+        public ModifyDBClusterAuditLogCollectorRequest()
+            : base("polardb", "2017-08-01", "ModifyDBClusterAuditLogCollector", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,19 +42,15 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? resourceOwnerId;
 
-		private int? pageNumber;
-
-		private string resourceGroupId;
-
-		private int? pageSize;
-
 		private string resourceOwnerAccount;
+
+		private string dBClusterId;
 
 		private string ownerAccount;
 
-		private long? ownerId;
+		private string collectorStatus;
 
-		private string dBClusterIds;
+		private long? ownerId;
 
 		public long? ResourceOwnerId
 		{
@@ -66,45 +62,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -121,6 +78,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string DBClusterId
+		{
+			get
+			{
+				return dBClusterId;
+			}
+			set	
+			{
+				dBClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -131,6 +101,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string CollectorStatus
+		{
+			get
+			{
+				return collectorStatus;
+			}
+			set	
+			{
+				collectorStatus = value;
+				DictionaryUtil.Add(QueryParameters, "CollectorStatus", value);
 			}
 		}
 
@@ -147,22 +130,9 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBClusterIds
-		{
-			get
-			{
-				return dBClusterIds;
-			}
-			set	
-			{
-				dBClusterIds = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterIds", value);
-			}
-		}
-
-        public override DescribeAutoRenewAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyDBClusterAuditLogCollectorResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAutoRenewAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBClusterAuditLogCollectorResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

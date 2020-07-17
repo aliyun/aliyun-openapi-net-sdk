@@ -41,6 +41,54 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 			describeDBClusterMigrationResponse.RdsReadWriteMode = context.StringValue("DescribeDBClusterMigration.RdsReadWriteMode");
 			describeDBClusterMigrationResponse.DBClusterReadWriteMode = context.StringValue("DescribeDBClusterMigration.DBClusterReadWriteMode");
 			describeDBClusterMigrationResponse.Comment = context.StringValue("DescribeDBClusterMigration.Comment");
+
+			List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint> describeDBClusterMigrationResponse_dBClusterEndpointList = new List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint>();
+			for (int i = 0; i < context.Length("DescribeDBClusterMigration.DBClusterEndpointList.Length"); i++) {
+				DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint dBClusterEndpoint = new DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint();
+				dBClusterEndpoint.DBEndpointId = context.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].DBEndpointId");
+				dBClusterEndpoint.EndpointType = context.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].EndpointType");
+
+				List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint.DescribeDBClusterMigration_Address> dBClusterEndpoint_addressItems = new List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint.DescribeDBClusterMigration_Address>();
+				for (int j = 0; j < context.Length("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems.Length"); j++) {
+					DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint.DescribeDBClusterMigration_Address address = new DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_DBClusterEndpoint.DescribeDBClusterMigration_Address();
+					address.ConnectionString = context.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].ConnectionString");
+					address.IPAddress = context.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].IPAddress");
+					address.NetType = context.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].NetType");
+					address.Port = context.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].Port");
+					address.VPCId = context.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].VPCId");
+					address.VSwitchId = context.StringValue("DescribeDBClusterMigration.DBClusterEndpointList["+ i +"].AddressItems["+ j +"].VSwitchId");
+
+					dBClusterEndpoint_addressItems.Add(address);
+				}
+				dBClusterEndpoint.AddressItems = dBClusterEndpoint_addressItems;
+
+				describeDBClusterMigrationResponse_dBClusterEndpointList.Add(dBClusterEndpoint);
+			}
+			describeDBClusterMigrationResponse.DBClusterEndpointList = describeDBClusterMigrationResponse_dBClusterEndpointList;
+
+			List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_RdsEndpoint> describeDBClusterMigrationResponse_rdsEndpointList = new List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_RdsEndpoint>();
+			for (int i = 0; i < context.Length("DescribeDBClusterMigration.RdsEndpointList.Length"); i++) {
+				DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_RdsEndpoint rdsEndpoint = new DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_RdsEndpoint();
+				rdsEndpoint.DBEndpointId = context.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].DBEndpointId");
+				rdsEndpoint.EndpointType = context.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].EndpointType");
+
+				List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_RdsEndpoint.DescribeDBClusterMigration_Address2> rdsEndpoint_addressItems1 = new List<DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_RdsEndpoint.DescribeDBClusterMigration_Address2>();
+				for (int j = 0; j < context.Length("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems.Length"); j++) {
+					DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_RdsEndpoint.DescribeDBClusterMigration_Address2 address2 = new DescribeDBClusterMigrationResponse.DescribeDBClusterMigration_RdsEndpoint.DescribeDBClusterMigration_Address2();
+					address2.ConnectionString = context.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].ConnectionString");
+					address2.IPAddress = context.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].IPAddress");
+					address2.NetType = context.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].NetType");
+					address2.Port = context.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].Port");
+					address2.VPCId = context.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].VPCId");
+					address2.VSwitchId = context.StringValue("DescribeDBClusterMigration.RdsEndpointList["+ i +"].AddressItems["+ j +"].VSwitchId");
+
+					rdsEndpoint_addressItems1.Add(address2);
+				}
+				rdsEndpoint.AddressItems1 = rdsEndpoint_addressItems1;
+
+				describeDBClusterMigrationResponse_rdsEndpointList.Add(rdsEndpoint);
+			}
+			describeDBClusterMigrationResponse.RdsEndpointList = describeDBClusterMigrationResponse_rdsEndpointList;
         
 			return describeDBClusterMigrationResponse;
         }

@@ -37,6 +37,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string autoAddNewNodes;

@@ -37,6 +37,7 @@ namespace Aliyun.Acs.polardb.Model.V20170801
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -52,6 +53,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private string sourceRDSDBInstanceId;
+
+		private string swapConnectionString;
 
 		private long? ownerId;
 
@@ -143,6 +146,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				sourceRDSDBInstanceId = value;
 				DictionaryUtil.Add(QueryParameters, "SourceRDSDBInstanceId", value);
+			}
+		}
+
+		public string SwapConnectionString
+		{
+			get
+			{
+				return swapConnectionString;
+			}
+			set	
+			{
+				swapConnectionString = value;
+				DictionaryUtil.Add(QueryParameters, "SwapConnectionString", value);
 			}
 		}
 

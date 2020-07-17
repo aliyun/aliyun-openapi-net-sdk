@@ -45,6 +45,10 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string comment;
 
+		private List<DescribeDBClusterMigration_DBClusterEndpoint> dBClusterEndpointList;
+
+		private List<DescribeDBClusterMigration_RdsEndpoint> rdsEndpointList;
+
 		public string RequestId
 		{
 			get
@@ -162,6 +166,298 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				comment = value;
+			}
+		}
+
+		public List<DescribeDBClusterMigration_DBClusterEndpoint> DBClusterEndpointList
+		{
+			get
+			{
+				return dBClusterEndpointList;
+			}
+			set	
+			{
+				dBClusterEndpointList = value;
+			}
+		}
+
+		public List<DescribeDBClusterMigration_RdsEndpoint> RdsEndpointList
+		{
+			get
+			{
+				return rdsEndpointList;
+			}
+			set	
+			{
+				rdsEndpointList = value;
+			}
+		}
+
+		public class DescribeDBClusterMigration_DBClusterEndpoint
+		{
+
+			private string dBEndpointId;
+
+			private string endpointType;
+
+			private List<DescribeDBClusterMigration_Address> addressItems;
+
+			public string DBEndpointId
+			{
+				get
+				{
+					return dBEndpointId;
+				}
+				set	
+				{
+					dBEndpointId = value;
+				}
+			}
+
+			public string EndpointType
+			{
+				get
+				{
+					return endpointType;
+				}
+				set	
+				{
+					endpointType = value;
+				}
+			}
+
+			public List<DescribeDBClusterMigration_Address> AddressItems
+			{
+				get
+				{
+					return addressItems;
+				}
+				set	
+				{
+					addressItems = value;
+				}
+			}
+
+			public class DescribeDBClusterMigration_Address
+			{
+
+				private string connectionString;
+
+				private string iPAddress;
+
+				private string netType;
+
+				private string port;
+
+				private string vPCId;
+
+				private string vSwitchId;
+
+				public string ConnectionString
+				{
+					get
+					{
+						return connectionString;
+					}
+					set	
+					{
+						connectionString = value;
+					}
+				}
+
+				public string IPAddress
+				{
+					get
+					{
+						return iPAddress;
+					}
+					set	
+					{
+						iPAddress = value;
+					}
+				}
+
+				public string NetType
+				{
+					get
+					{
+						return netType;
+					}
+					set	
+					{
+						netType = value;
+					}
+				}
+
+				public string Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public string VPCId
+				{
+					get
+					{
+						return vPCId;
+					}
+					set	
+					{
+						vPCId = value;
+					}
+				}
+
+				public string VSwitchId
+				{
+					get
+					{
+						return vSwitchId;
+					}
+					set	
+					{
+						vSwitchId = value;
+					}
+				}
+			}
+		}
+
+		public class DescribeDBClusterMigration_RdsEndpoint
+		{
+
+			private string dBEndpointId;
+
+			private string endpointType;
+
+			private List<DescribeDBClusterMigration_Address2> addressItems1;
+
+			public string DBEndpointId
+			{
+				get
+				{
+					return dBEndpointId;
+				}
+				set	
+				{
+					dBEndpointId = value;
+				}
+			}
+
+			public string EndpointType
+			{
+				get
+				{
+					return endpointType;
+				}
+				set	
+				{
+					endpointType = value;
+				}
+			}
+
+			public List<DescribeDBClusterMigration_Address2> AddressItems1
+			{
+				get
+				{
+					return addressItems1;
+				}
+				set	
+				{
+					addressItems1 = value;
+				}
+			}
+
+			public class DescribeDBClusterMigration_Address2
+			{
+
+				private string connectionString;
+
+				private string iPAddress;
+
+				private string netType;
+
+				private string port;
+
+				private string vPCId;
+
+				private string vSwitchId;
+
+				public string ConnectionString
+				{
+					get
+					{
+						return connectionString;
+					}
+					set	
+					{
+						connectionString = value;
+					}
+				}
+
+				public string IPAddress
+				{
+					get
+					{
+						return iPAddress;
+					}
+					set	
+					{
+						iPAddress = value;
+					}
+				}
+
+				public string NetType
+				{
+					get
+					{
+						return netType;
+					}
+					set	
+					{
+						netType = value;
+					}
+				}
+
+				public string Port
+				{
+					get
+					{
+						return port;
+					}
+					set	
+					{
+						port = value;
+					}
+				}
+
+				public string VPCId
+				{
+					get
+					{
+						return vPCId;
+					}
+					set	
+					{
+						vPCId = value;
+					}
+				}
+
+				public string VSwitchId
+				{
+					get
+					{
+						return vSwitchId;
+					}
+					set	
+					{
+						vSwitchId = value;
+					}
+				}
 			}
 		}
 	}
