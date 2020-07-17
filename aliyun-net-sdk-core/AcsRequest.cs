@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-using Aliyun.Acs.Core.Auth;
+using Aliyun.Acs.Core.Auth; 
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Regions;
 using Aliyun.Acs.Core.Transform;
