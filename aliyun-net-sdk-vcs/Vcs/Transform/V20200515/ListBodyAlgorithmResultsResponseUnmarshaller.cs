@@ -59,6 +59,12 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.RightBottomY = context.FloatValue("ListBodyAlgorithmResults.Data.Records["+ i +"].RightBottomY");
 				recordsItem.ShotTime = context.StringValue("ListBodyAlgorithmResults.Data.Records["+ i +"].ShotTime");
 				recordsItem.TargetPicUrlPath = context.StringValue("ListBodyAlgorithmResults.Data.Records["+ i +"].TargetPicUrlPath");
+				recordsItem.CoatLength = context.StringValue("ListBodyAlgorithmResults.Data.Records["+ i +"].CoatLength");
+				recordsItem.CoatStyle = context.StringValue("ListBodyAlgorithmResults.Data.Records["+ i +"].CoatStyle");
+				recordsItem.TrousersLength = context.StringValue("ListBodyAlgorithmResults.Data.Records["+ i +"].TrousersLength");
+				recordsItem.TrousersStyle = context.StringValue("ListBodyAlgorithmResults.Data.Records["+ i +"].TrousersStyle");
+				recordsItem.CoatColor = context.StringValue("ListBodyAlgorithmResults.Data.Records["+ i +"].CoatColor");
+				recordsItem.TrousersColor = context.StringValue("ListBodyAlgorithmResults.Data.Records["+ i +"].TrousersColor");
 
 				data_records.Add(recordsItem);
 			}

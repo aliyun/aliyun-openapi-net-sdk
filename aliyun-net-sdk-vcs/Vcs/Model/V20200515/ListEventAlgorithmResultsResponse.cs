@@ -173,6 +173,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string targetPicUrlPath;
 
+				private string recordId;
+
 				public string CapStyle
 				{
 					get
@@ -266,6 +268,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						targetPicUrlPath = value;
+					}
+				}
+
+				public string RecordId
+				{
+					get
+					{
+						return recordId;
+					}
+					set	
+					{
+						recordId = value;
 					}
 				}
 			}

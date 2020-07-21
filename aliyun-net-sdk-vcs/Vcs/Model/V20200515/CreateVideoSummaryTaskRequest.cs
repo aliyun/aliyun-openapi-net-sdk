@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class CreateVideoSummaryTaskRequest : RpcAcsRequest<CreateVideoSummaryTaskResponse>
     {
         public CreateVideoSummaryTaskRequest()
-            : base("Vcs", "2020-05-15", "CreateVideoSummaryTask", "vcs", "openAPI")
+            : base("Vcs", "2020-05-15", "CreateVideoSummaryTask")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,11 +45,11 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string liveVideoSummary;
 
-		private string startTimeStamp;
+		private long? startTimeStamp;
 
 		private string deviceId;
 
-		private string endTimeStamp;
+		private long? endTimeStamp;
 
 		private string optionList;
 
@@ -78,7 +79,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string StartTimeStamp
+		public long? StartTimeStamp
 		{
 			get
 			{
@@ -87,7 +88,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				startTimeStamp = value;
-				DictionaryUtil.Add(BodyParameters, "StartTimeStamp", value);
+				DictionaryUtil.Add(BodyParameters, "StartTimeStamp", value.ToString());
 			}
 		}
 
@@ -104,7 +105,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string EndTimeStamp
+		public long? EndTimeStamp
 		{
 			get
 			{
@@ -113,7 +114,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				endTimeStamp = value;
-				DictionaryUtil.Add(BodyParameters, "EndTimeStamp", value);
+				DictionaryUtil.Add(BodyParameters, "EndTimeStamp", value.ToString());
 			}
 		}
 

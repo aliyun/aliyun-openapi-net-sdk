@@ -187,6 +187,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string targetPicUrlPath;
 
+				private string coatLength;
+
+				private string coatStyle;
+
+				private string trousersLength;
+
+				private string trousersStyle;
+
+				private string coatColor;
+
+				private string trousersColor;
+
 				public string CapStyle
 				{
 					get
@@ -364,6 +376,78 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						targetPicUrlPath = value;
+					}
+				}
+
+				public string CoatLength
+				{
+					get
+					{
+						return coatLength;
+					}
+					set	
+					{
+						coatLength = value;
+					}
+				}
+
+				public string CoatStyle
+				{
+					get
+					{
+						return coatStyle;
+					}
+					set	
+					{
+						coatStyle = value;
+					}
+				}
+
+				public string TrousersLength
+				{
+					get
+					{
+						return trousersLength;
+					}
+					set	
+					{
+						trousersLength = value;
+					}
+				}
+
+				public string TrousersStyle
+				{
+					get
+					{
+						return trousersStyle;
+					}
+					set	
+					{
+						trousersStyle = value;
+					}
+				}
+
+				public string CoatColor
+				{
+					get
+					{
+						return coatColor;
+					}
+					set	
+					{
+						coatColor = value;
+					}
+				}
+
+				public string TrousersColor
+				{
+					get
+					{
+						return trousersColor;
+					}
+					set	
+					{
+						trousersColor = value;
 					}
 				}
 			}

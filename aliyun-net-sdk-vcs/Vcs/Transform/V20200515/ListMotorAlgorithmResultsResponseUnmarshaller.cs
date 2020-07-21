@@ -57,6 +57,13 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.TargetPicUrlPath = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].TargetPicUrlPath");
 				recordsItem.MotorStyle = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].MotorStyle");
 				recordsItem.MotorModel = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].MotorModel");
+				recordsItem.MotorColor = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].MotorColor");
+				recordsItem.MotorClass = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].MotorClass");
+				recordsItem.MotorBrand = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].MotorBrand");
+				recordsItem.PlateColor = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].PlateColor");
+				recordsItem.PlateClass = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].PlateClass");
+				recordsItem.SafetyBelt = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].SafetyBelt");
+				recordsItem.Calling = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].Calling");
 
 				data_records.Add(recordsItem);
 			}

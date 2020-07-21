@@ -183,6 +183,20 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string motorModel;
 
+				private string motorColor;
+
+				private string motorClass;
+
+				private string motorBrand;
+
+				private string plateColor;
+
+				private string plateClass;
+
+				private string safetyBelt;
+
+				private string calling;
+
 				public string CorpId
 				{
 					get
@@ -336,6 +350,90 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						motorModel = value;
+					}
+				}
+
+				public string MotorColor
+				{
+					get
+					{
+						return motorColor;
+					}
+					set	
+					{
+						motorColor = value;
+					}
+				}
+
+				public string MotorClass
+				{
+					get
+					{
+						return motorClass;
+					}
+					set	
+					{
+						motorClass = value;
+					}
+				}
+
+				public string MotorBrand
+				{
+					get
+					{
+						return motorBrand;
+					}
+					set	
+					{
+						motorBrand = value;
+					}
+				}
+
+				public string PlateColor
+				{
+					get
+					{
+						return plateColor;
+					}
+					set	
+					{
+						plateColor = value;
+					}
+				}
+
+				public string PlateClass
+				{
+					get
+					{
+						return plateClass;
+					}
+					set	
+					{
+						plateClass = value;
+					}
+				}
+
+				public string SafetyBelt
+				{
+					get
+					{
+						return safetyBelt;
+					}
+					set	
+					{
+						safetyBelt = value;
+					}
+				}
+
+				public string Calling
+				{
+					get
+					{
+						return calling;
+					}
+					set	
+					{
+						calling = value;
 					}
 				}
 			}

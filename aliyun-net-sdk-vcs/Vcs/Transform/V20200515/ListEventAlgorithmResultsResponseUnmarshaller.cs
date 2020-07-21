@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.PicUrlPath = context.StringValue("ListEventAlgorithmResults.Data.Records["+ i +"].PicUrlPath");
 				recordsItem.ShotTime = context.StringValue("ListEventAlgorithmResults.Data.Records["+ i +"].ShotTime");
 				recordsItem.TargetPicUrlPath = context.StringValue("ListEventAlgorithmResults.Data.Records["+ i +"].TargetPicUrlPath");
+				recordsItem.RecordId = context.StringValue("ListEventAlgorithmResults.Data.Records["+ i +"].RecordId");
 
 				data_records.Add(recordsItem);
 			}

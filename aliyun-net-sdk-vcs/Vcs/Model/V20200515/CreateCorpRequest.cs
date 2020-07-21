@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class CreateCorpRequest : RpcAcsRequest<CreateCorpResponse>
     {
         public CreateCorpRequest()
-            : base("Vcs", "2020-05-15", "CreateCorp", "vcs", "openAPI")
+            : base("Vcs", "2020-05-15", "CreateCorp")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,6 +41,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
+		private string algorithmType;
+
 		private string parentCorpId;
 
 		private string description;
@@ -47,6 +50,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 		private string appName;
 
 		private string corpName;
+
+		public string AlgorithmType
+		{
+			get
+			{
+				return algorithmType;
+			}
+			set	
+			{
+				algorithmType = value;
+				DictionaryUtil.Add(BodyParameters, "AlgorithmType", value);
+			}
+		}
 
 		public string ParentCorpId
 		{

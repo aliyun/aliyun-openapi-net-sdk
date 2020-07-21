@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class ListPersonsRequest : RpcAcsRequest<ListPersonsResponse>
     {
         public ListPersonsRequest()
-            : base("Vcs", "2020-05-15", "ListPersons", "vcs", "openAPI")
+            : base("Vcs", "2020-05-15", "ListPersons")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +41,30 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
+		private string algorithmType;
+
 		private string corpId;
+
+		private string endTime;
+
+		private string startTime;
 
 		private string pageNo;
 
 		private string pageSize;
+
+		public string AlgorithmType
+		{
+			get
+			{
+				return algorithmType;
+			}
+			set	
+			{
+				algorithmType = value;
+				DictionaryUtil.Add(BodyParameters, "AlgorithmType", value);
+			}
+		}
 
 		public string CorpId
 		{
@@ -56,6 +76,32 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				corpId = value;
 				DictionaryUtil.Add(BodyParameters, "CorpId", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(BodyParameters, "StartTime", value);
 			}
 		}
 
