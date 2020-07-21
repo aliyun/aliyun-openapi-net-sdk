@@ -49,6 +49,10 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 				slowLogRecord.ParseRowCounts = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].ParseRowCounts");
 				slowLogRecord.ProcessID = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].ProcessID");
 				slowLogRecord.UserName = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].UserName");
+				slowLogRecord.ScanSize = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].ScanSize");
+				slowLogRecord.PeakMemoryUsage = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].PeakMemoryUsage");
+				slowLogRecord.QueueTime = context.LongValue("DescribeSlowLogRecords.Items["+ i +"].QueueTime");
+				slowLogRecord.State = context.StringValue("DescribeSlowLogRecords.Items["+ i +"].State");
 
 				describeSlowLogRecordsResponse_items.Add(slowLogRecord);
 			}

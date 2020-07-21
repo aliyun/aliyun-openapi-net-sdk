@@ -60,6 +60,16 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 				dBCluster.VPCCloudInstanceId = context.StringValue("DescribeDBClusterAttribute.Items["+ i +"].VPCCloudInstanceId");
 				dBCluster.CommodityCode = context.StringValue("DescribeDBClusterAttribute.Items["+ i +"].CommodityCode");
 				dBCluster.DBClusterNetworkType = context.StringValue("DescribeDBClusterAttribute.Items["+ i +"].DBClusterNetworkType");
+				dBCluster.ConnectionString = context.StringValue("DescribeDBClusterAttribute.Items["+ i +"].ConnectionString");
+				dBCluster.Port = context.IntegerValue("DescribeDBClusterAttribute.Items["+ i +"].Port");
+				dBCluster.RdsInstanceId = context.StringValue("DescribeDBClusterAttribute.Items["+ i +"].RdsInstanceId");
+				dBCluster.DtsJobId = context.StringValue("DescribeDBClusterAttribute.Items["+ i +"].DtsJobId");
+				dBCluster.ExecutorCount = context.StringValue("DescribeDBClusterAttribute.Items["+ i +"].ExecutorCount");
+				dBCluster.DiskType = context.StringValue("DescribeDBClusterAttribute.Items["+ i +"].DiskType");
+				dBCluster.ComputeResource = context.StringValue("DescribeDBClusterAttribute.Items["+ i +"].ComputeResource");
+				dBCluster.StorageResource = context.StringValue("DescribeDBClusterAttribute.Items["+ i +"].StorageResource");
+				dBCluster.Mode = context.StringValue("DescribeDBClusterAttribute.Items["+ i +"].Mode");
+				dBCluster.ResourceGroupId = context.StringValue("DescribeDBClusterAttribute.Items["+ i +"].ResourceGroupId");
 
 				List<DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_DBCluster.DescribeDBClusterAttribute_Tag> dBCluster_tags = new List<DescribeDBClusterAttributeResponse.DescribeDBClusterAttribute_DBCluster.DescribeDBClusterAttribute_Tag>();
 				for (int j = 0; j < context.Length("DescribeDBClusterAttribute.Items["+ i +"].Tags.Length"); j++) {

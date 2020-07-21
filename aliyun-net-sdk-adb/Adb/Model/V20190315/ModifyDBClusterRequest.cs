@@ -37,9 +37,12 @@ namespace Aliyun.Acs.adb.Model.V20190315
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
+
+		private string storageResource;
 
 		private string dBNodeClass;
 
@@ -55,7 +58,11 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string dBNodeStorage;
 
+		private string executorCount;
+
 		private string modifyType;
+
+		private string computeResource;
 
 		public long? ResourceOwnerId
 		{
@@ -67,6 +74,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string StorageResource
+		{
+			get
+			{
+				return storageResource;
+			}
+			set	
+			{
+				storageResource = value;
+				DictionaryUtil.Add(QueryParameters, "StorageResource", value);
 			}
 		}
 
@@ -161,6 +181,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
+		public string ExecutorCount
+		{
+			get
+			{
+				return executorCount;
+			}
+			set	
+			{
+				executorCount = value;
+				DictionaryUtil.Add(QueryParameters, "ExecutorCount", value);
+			}
+		}
+
 		public string ModifyType
 		{
 			get
@@ -171,6 +204,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				modifyType = value;
 				DictionaryUtil.Add(QueryParameters, "ModifyType", value);
+			}
+		}
+
+		public string ComputeResource
+		{
+			get
+			{
+				return computeResource;
+			}
+			set	
+			{
+				computeResource = value;
+				DictionaryUtil.Add(QueryParameters, "ComputeResource", value);
 			}
 		}
 

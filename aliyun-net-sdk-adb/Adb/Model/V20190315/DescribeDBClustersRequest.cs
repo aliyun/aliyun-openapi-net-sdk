@@ -37,6 +37,7 @@ namespace Aliyun.Acs.adb.Model.V20190315
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -46,6 +47,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		private string dBClusterStatus;
 
 		private int? pageNumber;
+
+		private string resourceGroupId;
 
 		private int? pageSize;
 
@@ -108,6 +111,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

@@ -104,6 +104,26 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string dBClusterNetworkType;
 
+			private string connectionString;
+
+			private int? port;
+
+			private string rdsInstanceId;
+
+			private string dtsJobId;
+
+			private string executorCount;
+
+			private string diskType;
+
+			private string computeResource;
+
+			private string storageResource;
+
+			private string mode;
+
+			private string resourceGroupId;
+
 			private List<DescribeDBClusterAttribute_Tag> tags;
 
 			public string RegionId
@@ -391,6 +411,126 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					dBClusterNetworkType = value;
+				}
+			}
+
+			public string ConnectionString
+			{
+				get
+				{
+					return connectionString;
+				}
+				set	
+				{
+					connectionString = value;
+				}
+			}
+
+			public int? Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			public string RdsInstanceId
+			{
+				get
+				{
+					return rdsInstanceId;
+				}
+				set	
+				{
+					rdsInstanceId = value;
+				}
+			}
+
+			public string DtsJobId
+			{
+				get
+				{
+					return dtsJobId;
+				}
+				set	
+				{
+					dtsJobId = value;
+				}
+			}
+
+			public string ExecutorCount
+			{
+				get
+				{
+					return executorCount;
+				}
+				set	
+				{
+					executorCount = value;
+				}
+			}
+
+			public string DiskType
+			{
+				get
+				{
+					return diskType;
+				}
+				set	
+				{
+					diskType = value;
+				}
+			}
+
+			public string ComputeResource
+			{
+				get
+				{
+					return computeResource;
+				}
+				set	
+				{
+					computeResource = value;
+				}
+			}
+
+			public string StorageResource
+			{
+				get
+				{
+					return storageResource;
+				}
+				set	
+				{
+					storageResource = value;
+				}
+			}
+
+			public string Mode
+			{
+				get
+				{
+					return mode;
+				}
+				set	
+				{
+					mode = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

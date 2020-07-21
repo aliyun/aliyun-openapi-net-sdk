@@ -37,9 +37,12 @@ namespace Aliyun.Acs.adb.Model.V20190315
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
+
+		private string accountType;
 
 		private string accountDescription;
 
@@ -65,6 +68,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string AccountType
+		{
+			get
+			{
+				return accountType;
+			}
+			set	
+			{
+				accountType = value;
+				DictionaryUtil.Add(QueryParameters, "AccountType", value);
 			}
 		}
 

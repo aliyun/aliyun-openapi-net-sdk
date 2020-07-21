@@ -130,6 +130,14 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string userName;
 
+			private string scanSize;
+
+			private string peakMemoryUsage;
+
+			private long? queueTime;
+
+			private string state;
+
 			public string HostAddress
 			{
 				get
@@ -235,6 +243,54 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					userName = value;
+				}
+			}
+
+			public string ScanSize
+			{
+				get
+				{
+					return scanSize;
+				}
+				set	
+				{
+					scanSize = value;
+				}
+			}
+
+			public string PeakMemoryUsage
+			{
+				get
+				{
+					return peakMemoryUsage;
+				}
+				set	
+				{
+					peakMemoryUsage = value;
+				}
+			}
+
+			public long? QueueTime
+			{
+				get
+				{
+					return queueTime;
+				}
+				set	
+				{
+					queueTime = value;
+				}
+			}
+
+			public string State
+			{
+				get
+				{
+					return state;
+				}
+				set	
+				{
+					state = value;
 				}
 			}
 		}

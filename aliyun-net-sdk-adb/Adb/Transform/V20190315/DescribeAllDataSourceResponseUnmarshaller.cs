@@ -63,6 +63,7 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 				column.ColumnName = context.StringValue("DescribeAllDataSource.Columns["+ i +"].ColumnName");
 				column.Type = context.StringValue("DescribeAllDataSource.Columns["+ i +"].Type");
 				column.PrimaryKey = context.BooleanValue("DescribeAllDataSource.Columns["+ i +"].PrimaryKey");
+				column.AutoIncrementColumn = context.BooleanValue("DescribeAllDataSource.Columns["+ i +"].AutoIncrementColumn");
 
 				describeAllDataSourceResponse_columns.Add(column);
 			}

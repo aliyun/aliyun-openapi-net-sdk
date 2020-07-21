@@ -56,6 +56,22 @@ namespace Aliyun.Acs.adb.Transform.V20190315
 				dBCluster.DBNodeCount = context.LongValue("DescribeDBClusters.Items["+ i +"].DBNodeCount");
 				dBCluster.CommodityCode = context.StringValue("DescribeDBClusters.Items["+ i +"].CommodityCode");
 				dBCluster.Category = context.StringValue("DescribeDBClusters.Items["+ i +"].Category");
+				dBCluster.RdsInstanceId = context.StringValue("DescribeDBClusters.Items["+ i +"].RdsInstanceId");
+				dBCluster.DtsJobId = context.StringValue("DescribeDBClusters.Items["+ i +"].DtsJobId");
+				dBCluster.ExecutorCount = context.StringValue("DescribeDBClusters.Items["+ i +"].ExecutorCount");
+				dBCluster.DiskType = context.StringValue("DescribeDBClusters.Items["+ i +"].DiskType");
+				dBCluster.VPCCloudInstanceId = context.StringValue("DescribeDBClusters.Items["+ i +"].VPCCloudInstanceId");
+				dBCluster.Engine = context.StringValue("DescribeDBClusters.Items["+ i +"].Engine");
+				dBCluster.DBClusterNetworkType = context.StringValue("DescribeDBClusters.Items["+ i +"].DBClusterNetworkType");
+				dBCluster.VPCId = context.StringValue("DescribeDBClusters.Items["+ i +"].VPCId");
+				dBCluster.VSwitchId = context.StringValue("DescribeDBClusters.Items["+ i +"].VSwitchId");
+				dBCluster.ZoneId = context.StringValue("DescribeDBClusters.Items["+ i +"].ZoneId");
+				dBCluster.ConnectionString = context.StringValue("DescribeDBClusters.Items["+ i +"].ConnectionString");
+				dBCluster.Port = context.StringValue("DescribeDBClusters.Items["+ i +"].Port");
+				dBCluster.ComputeResource = context.StringValue("DescribeDBClusters.Items["+ i +"].ComputeResource");
+				dBCluster.StorageResource = context.StringValue("DescribeDBClusters.Items["+ i +"].StorageResource");
+				dBCluster.Mode = context.StringValue("DescribeDBClusters.Items["+ i +"].Mode");
+				dBCluster.ResourceGroupId = context.StringValue("DescribeDBClusters.Items["+ i +"].ResourceGroupId");
 
 				List<DescribeDBClustersResponse.DescribeDBClusters_DBCluster.DescribeDBClusters_Tag> dBCluster_tags = new List<DescribeDBClustersResponse.DescribeDBClusters_DBCluster.DescribeDBClusters_Tag>();
 				for (int j = 0; j < context.Length("DescribeDBClusters.Items["+ i +"].Tags.Length"); j++) {

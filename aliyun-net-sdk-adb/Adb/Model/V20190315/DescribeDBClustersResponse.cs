@@ -132,6 +132,38 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string category;
 
+			private string rdsInstanceId;
+
+			private string dtsJobId;
+
+			private string executorCount;
+
+			private string diskType;
+
+			private string vPCCloudInstanceId;
+
+			private string engine;
+
+			private string dBClusterNetworkType;
+
+			private string vPCId;
+
+			private string vSwitchId;
+
+			private string zoneId;
+
+			private string connectionString;
+
+			private string port;
+
+			private string computeResource;
+
+			private string storageResource;
+
+			private string mode;
+
+			private string resourceGroupId;
+
 			private List<DescribeDBClusters_Tag> tags;
 
 			public string DBClusterId
@@ -335,6 +367,198 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					category = value;
+				}
+			}
+
+			public string RdsInstanceId
+			{
+				get
+				{
+					return rdsInstanceId;
+				}
+				set	
+				{
+					rdsInstanceId = value;
+				}
+			}
+
+			public string DtsJobId
+			{
+				get
+				{
+					return dtsJobId;
+				}
+				set	
+				{
+					dtsJobId = value;
+				}
+			}
+
+			public string ExecutorCount
+			{
+				get
+				{
+					return executorCount;
+				}
+				set	
+				{
+					executorCount = value;
+				}
+			}
+
+			public string DiskType
+			{
+				get
+				{
+					return diskType;
+				}
+				set	
+				{
+					diskType = value;
+				}
+			}
+
+			public string VPCCloudInstanceId
+			{
+				get
+				{
+					return vPCCloudInstanceId;
+				}
+				set	
+				{
+					vPCCloudInstanceId = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
+				}
+			}
+
+			public string DBClusterNetworkType
+			{
+				get
+				{
+					return dBClusterNetworkType;
+				}
+				set	
+				{
+					dBClusterNetworkType = value;
+				}
+			}
+
+			public string VPCId
+			{
+				get
+				{
+					return vPCId;
+				}
+				set	
+				{
+					vPCId = value;
+				}
+			}
+
+			public string VSwitchId
+			{
+				get
+				{
+					return vSwitchId;
+				}
+				set	
+				{
+					vSwitchId = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string ConnectionString
+			{
+				get
+				{
+					return connectionString;
+				}
+				set	
+				{
+					connectionString = value;
+				}
+			}
+
+			public string Port
+			{
+				get
+				{
+					return port;
+				}
+				set	
+				{
+					port = value;
+				}
+			}
+
+			public string ComputeResource
+			{
+				get
+				{
+					return computeResource;
+				}
+				set	
+				{
+					computeResource = value;
+				}
+			}
+
+			public string StorageResource
+			{
+				get
+				{
+					return storageResource;
+				}
+				set	
+				{
+					storageResource = value;
+				}
+			}
+
+			public string Mode
+			{
+				get
+				{
+					return mode;
+				}
+				set	
+				{
+					mode = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

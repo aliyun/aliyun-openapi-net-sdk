@@ -37,6 +37,7 @@ namespace Aliyun.Acs.adb.Model.V20190315
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -44,6 +45,14 @@ namespace Aliyun.Acs.adb.Model.V20190315
 		private string dBClusterDescription;
 
 		private string clientToken;
+
+		private string storageType;
+
+		private string mode;
+
+		private string resourceGroupId;
+
+		private string storageResource;
 
 		private string dBClusterCategory;
 
@@ -69,9 +78,13 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string dBNodeStorage;
 
+		private string executorCount;
+
 		private string vPCId;
 
 		private string zoneId;
+
+		private string computeResource;
 
 		private string payType;
 
@@ -111,6 +124,58 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string StorageType
+		{
+			get
+			{
+				return storageType;
+			}
+			set	
+			{
+				storageType = value;
+				DictionaryUtil.Add(QueryParameters, "StorageType", value);
+			}
+		}
+
+		public string Mode
+		{
+			get
+			{
+				return mode;
+			}
+			set	
+			{
+				mode = value;
+				DictionaryUtil.Add(QueryParameters, "Mode", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string StorageResource
+		{
+			get
+			{
+				return storageResource;
+			}
+			set	
+			{
+				storageResource = value;
+				DictionaryUtil.Add(QueryParameters, "StorageResource", value);
 			}
 		}
 
@@ -270,6 +335,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			}
 		}
 
+		public string ExecutorCount
+		{
+			get
+			{
+				return executorCount;
+			}
+			set	
+			{
+				executorCount = value;
+				DictionaryUtil.Add(QueryParameters, "ExecutorCount", value);
+			}
+		}
+
 		public string VPCId
 		{
 			get
@@ -293,6 +371,19 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			{
 				zoneId = value;
 				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public string ComputeResource
+		{
+			get
+			{
+				return computeResource;
+			}
+			set	
+			{
+				computeResource = value;
+				DictionaryUtil.Add(QueryParameters, "ComputeResource", value);
 			}
 		}
 

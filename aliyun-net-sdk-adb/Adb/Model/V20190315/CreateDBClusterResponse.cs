@@ -31,6 +31,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 		private string orderId;
 
+		private string resourceGroupId;
+
 		public string RequestId
 		{
 			get
@@ -64,6 +66,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 			set	
 			{
 				orderId = value;
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
 			}
 		}
 	}

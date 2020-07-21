@@ -72,7 +72,7 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private string zoneId;
 
-			private List<DescribeAvailableResource_SupportedSerial> supportedSerialList;
+			private List<DescribeAvailableResource_SupportedModeItem> supportedMode;
 
 			public string ZoneId
 			{
@@ -86,122 +86,338 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				}
 			}
 
-			public List<DescribeAvailableResource_SupportedSerial> SupportedSerialList
+			public List<DescribeAvailableResource_SupportedModeItem> SupportedMode
 			{
 				get
 				{
-					return supportedSerialList;
+					return supportedMode;
 				}
 				set	
 				{
-					supportedSerialList = value;
+					supportedMode = value;
 				}
 			}
 
-			public class DescribeAvailableResource_SupportedSerial
+			public class DescribeAvailableResource_SupportedModeItem
 			{
 
-				private string serial;
+				private string mode;
 
-				private List<DescribeAvailableResource_SupportedInstanceClass> supportedInstanceClassList;
+				private List<DescribeAvailableResource_SupportedSerialListItem> supportedSerialList;
 
-				public string Serial
+				public string Mode
 				{
 					get
 					{
-						return serial;
+						return mode;
 					}
 					set	
 					{
-						serial = value;
+						mode = value;
 					}
 				}
 
-				public List<DescribeAvailableResource_SupportedInstanceClass> SupportedInstanceClassList
+				public List<DescribeAvailableResource_SupportedSerialListItem> SupportedSerialList
 				{
 					get
 					{
-						return supportedInstanceClassList;
+						return supportedSerialList;
 					}
 					set	
 					{
-						supportedInstanceClassList = value;
+						supportedSerialList = value;
 					}
 				}
 
-				public class DescribeAvailableResource_SupportedInstanceClass
+				public class DescribeAvailableResource_SupportedSerialListItem
 				{
 
-					private string instanceClass;
+					private string serial;
 
-					private string tips;
+					private List<DescribeAvailableResource_SupportedFlexibleResourceItem> supportedFlexibleResource;
 
-					private List<DescribeAvailableResource_SupportedNodeCount> supportedNodeCountList;
+					private List<DescribeAvailableResource_SupportedInstanceClass> supportedInstanceClassList;
 
-					public string InstanceClass
+					public string Serial
 					{
 						get
 						{
-							return instanceClass;
+							return serial;
 						}
 						set	
 						{
-							instanceClass = value;
+							serial = value;
 						}
 					}
 
-					public string Tips
+					public List<DescribeAvailableResource_SupportedFlexibleResourceItem> SupportedFlexibleResource
 					{
 						get
 						{
-							return tips;
+							return supportedFlexibleResource;
 						}
 						set	
 						{
-							tips = value;
+							supportedFlexibleResource = value;
 						}
 					}
 
-					public List<DescribeAvailableResource_SupportedNodeCount> SupportedNodeCountList
+					public List<DescribeAvailableResource_SupportedInstanceClass> SupportedInstanceClassList
 					{
 						get
 						{
-							return supportedNodeCountList;
+							return supportedInstanceClassList;
 						}
 						set	
 						{
-							supportedNodeCountList = value;
+							supportedInstanceClassList = value;
 						}
 					}
 
-					public class DescribeAvailableResource_SupportedNodeCount
+					public class DescribeAvailableResource_SupportedFlexibleResourceItem
 					{
 
-						private string nodeCount;
+						private string storageType;
 
-						private List<string> storageSize;
+						private List<string> supportedStorageResource;
 
-						public string NodeCount
+						private List<string> supportedComputeResource;
+
+						public string StorageType
 						{
 							get
 							{
-								return nodeCount;
+								return storageType;
 							}
 							set	
 							{
-								nodeCount = value;
+								storageType = value;
 							}
 						}
 
-						public List<string> StorageSize
+						public List<string> SupportedStorageResource
 						{
 							get
 							{
-								return storageSize;
+								return supportedStorageResource;
 							}
 							set	
 							{
-								storageSize = value;
+								supportedStorageResource = value;
+							}
+						}
+
+						public List<string> SupportedComputeResource
+						{
+							get
+							{
+								return supportedComputeResource;
+							}
+							set	
+							{
+								supportedComputeResource = value;
+							}
+						}
+					}
+
+					public class DescribeAvailableResource_SupportedInstanceClass
+					{
+
+						private string instanceClass;
+
+						private string tips;
+
+						private List<DescribeAvailableResource_SupportedNodeCount> supportedNodeCountList;
+
+						private List<DescribeAvailableResource_SupportedExecutor> supportedExecutorList;
+
+						public string InstanceClass
+						{
+							get
+							{
+								return instanceClass;
+							}
+							set	
+							{
+								instanceClass = value;
+							}
+						}
+
+						public string Tips
+						{
+							get
+							{
+								return tips;
+							}
+							set	
+							{
+								tips = value;
+							}
+						}
+
+						public List<DescribeAvailableResource_SupportedNodeCount> SupportedNodeCountList
+						{
+							get
+							{
+								return supportedNodeCountList;
+							}
+							set	
+							{
+								supportedNodeCountList = value;
+							}
+						}
+
+						public List<DescribeAvailableResource_SupportedExecutor> SupportedExecutorList
+						{
+							get
+							{
+								return supportedExecutorList;
+							}
+							set	
+							{
+								supportedExecutorList = value;
+							}
+						}
+
+						public class DescribeAvailableResource_SupportedNodeCount
+						{
+
+							private List<string> storageSize;
+
+							private DescribeAvailableResource_NodeCount nodeCount;
+
+							public List<string> StorageSize
+							{
+								get
+								{
+									return storageSize;
+								}
+								set	
+								{
+									storageSize = value;
+								}
+							}
+
+							public DescribeAvailableResource_NodeCount NodeCount
+							{
+								get
+								{
+									return nodeCount;
+								}
+								set	
+								{
+									nodeCount = value;
+								}
+							}
+
+							public class DescribeAvailableResource_NodeCount
+							{
+
+								private string minCount;
+
+								private string maxCount;
+
+								private string step;
+
+								public string MinCount
+								{
+									get
+									{
+										return minCount;
+									}
+									set	
+									{
+										minCount = value;
+									}
+								}
+
+								public string MaxCount
+								{
+									get
+									{
+										return maxCount;
+									}
+									set	
+									{
+										maxCount = value;
+									}
+								}
+
+								public string Step
+								{
+									get
+									{
+										return step;
+									}
+									set	
+									{
+										step = value;
+									}
+								}
+							}
+						}
+
+						public class DescribeAvailableResource_SupportedExecutor
+						{
+
+							private DescribeAvailableResource_NodeCount1 nodeCount1;
+
+							public DescribeAvailableResource_NodeCount1 NodeCount1
+							{
+								get
+								{
+									return nodeCount1;
+								}
+								set	
+								{
+									nodeCount1 = value;
+								}
+							}
+
+							public class DescribeAvailableResource_NodeCount1
+							{
+
+								private string minCount;
+
+								private string maxCount;
+
+								private string step;
+
+								public string MinCount
+								{
+									get
+									{
+										return minCount;
+									}
+									set	
+									{
+										minCount = value;
+									}
+								}
+
+								public string MaxCount
+								{
+									get
+									{
+										return maxCount;
+									}
+									set	
+									{
+										maxCount = value;
+									}
+								}
+
+								public string Step
+								{
+									get
+									{
+										return step;
+									}
+									set	
+									{
+										step = value;
+									}
+								}
 							}
 						}
 					}

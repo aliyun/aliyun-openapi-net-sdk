@@ -174,6 +174,8 @@ namespace Aliyun.Acs.adb.Model.V20190315
 
 			private bool? primaryKey;
 
+			private bool? autoIncrementColumn;
+
 			public string DBClusterId
 			{
 				get
@@ -243,6 +245,18 @@ namespace Aliyun.Acs.adb.Model.V20190315
 				set	
 				{
 					primaryKey = value;
+				}
+			}
+
+			public bool? AutoIncrementColumn
+			{
+				get
+				{
+					return autoIncrementColumn;
+				}
+				set	
+				{
+					autoIncrementColumn = value;
 				}
 			}
 		}
