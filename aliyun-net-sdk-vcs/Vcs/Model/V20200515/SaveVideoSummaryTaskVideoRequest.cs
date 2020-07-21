@@ -28,10 +28,10 @@ using Aliyun.Acs.Vcs.Transform.V20200515;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-    public class AddDataSourceRequest : RpcAcsRequest<AddDataSourceResponse>
+    public class SaveVideoSummaryTaskVideoRequest : RpcAcsRequest<SaveVideoSummaryTaskVideoResponse>
     {
-        public AddDataSourceRequest()
-            : base("Vcs", "2020-05-15", "AddDataSource")
+        public SaveVideoSummaryTaskVideoRequest()
+            : base("Vcs", "2020-05-15", "SaveVideoSummaryTaskVideo")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,28 +41,11 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
-		private string dataSourceType;
-
 		private string corpId;
 
-		private string description;
+		private bool? saveVideo;
 
-		private string dataSourceName;
-
-		private int? fileRetentionDays;
-
-		public string DataSourceType
-		{
-			get
-			{
-				return dataSourceType;
-			}
-			set	
-			{
-				dataSourceType = value;
-				DictionaryUtil.Add(BodyParameters, "DataSourceType", value);
-			}
-		}
+		private long? taskId;
 
 		public string CorpId
 		{
@@ -77,42 +60,29 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string Description
+		public bool? SaveVideo
 		{
 			get
 			{
-				return description;
+				return saveVideo;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
+				saveVideo = value;
+				DictionaryUtil.Add(BodyParameters, "SaveVideo", value.ToString());
 			}
 		}
 
-		public string DataSourceName
+		public long? TaskId
 		{
 			get
 			{
-				return dataSourceName;
+				return taskId;
 			}
 			set	
 			{
-				dataSourceName = value;
-				DictionaryUtil.Add(BodyParameters, "DataSourceName", value);
-			}
-		}
-
-		public int? FileRetentionDays
-		{
-			get
-			{
-				return fileRetentionDays;
-			}
-			set	
-			{
-				fileRetentionDays = value;
-				DictionaryUtil.Add(BodyParameters, "FileRetentionDays", value.ToString());
+				taskId = value;
+				DictionaryUtil.Add(BodyParameters, "TaskId", value.ToString());
 			}
 		}
 
@@ -121,9 +91,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			return false;
 		}
 
-        public override AddDataSourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SaveVideoSummaryTaskVideoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddDataSourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SaveVideoSummaryTaskVideoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

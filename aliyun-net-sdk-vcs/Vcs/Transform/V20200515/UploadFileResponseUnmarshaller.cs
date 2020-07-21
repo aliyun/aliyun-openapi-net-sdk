@@ -32,9 +32,21 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 
 			uploadFileResponse.HttpResponse = context.HttpResponse;
 			uploadFileResponse.Code = context.StringValue("UploadFile.Code");
-			uploadFileResponse.Data = context.StringValue("UploadFile.Data");
 			uploadFileResponse.Message = context.StringValue("UploadFile.Message");
 			uploadFileResponse.RequestId = context.StringValue("UploadFile.RequestId");
+
+			UploadFileResponse.UploadFile_Data data = new UploadFileResponse.UploadFile_Data();
+
+			List<UploadFileResponse.UploadFile_Data.UploadFile_OssPath> data_records = new List<UploadFileResponse.UploadFile_Data.UploadFile_OssPath>();
+			for (int i = 0; i < context.Length("UploadFile.Data.Records.Length"); i++) {
+				UploadFileResponse.UploadFile_Data.UploadFile_OssPath ossPath = new UploadFileResponse.UploadFile_Data.UploadFile_OssPath();
+				ossPath.OssPath = context.StringValue("UploadFile.Data.Records["+ i +"].OssPath");
+				ossPath.SourceId = context.StringValue("UploadFile.Data.Records["+ i +"].SourceId");
+
+				data_records.Add(ossPath);
+			}
+			data.Records = data_records;
+			uploadFileResponse.Data = data;
         
 			return uploadFileResponse;
         }

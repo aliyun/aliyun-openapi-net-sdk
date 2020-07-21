@@ -22,16 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-	public class UploadFileResponse : AcsResponse
+	public class SaveVideoSummaryTaskVideoResponse : AcsResponse
 	{
 
 		private string code;
 
+		private string data;
+
 		private string message;
 
 		private string requestId;
-
-		private UploadFile_Data data;
 
 		public string Code
 		{
@@ -42,6 +42,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				code = value;
+			}
+		}
+
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
 			}
 		}
 
@@ -66,68 +78,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public UploadFile_Data Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
-
-		public class UploadFile_Data
-		{
-
-			private List<UploadFile_OssPath> records;
-
-			public List<UploadFile_OssPath> Records
-			{
-				get
-				{
-					return records;
-				}
-				set	
-				{
-					records = value;
-				}
-			}
-
-			public class UploadFile_OssPath
-			{
-
-				private string ossPath;
-
-				private string sourceId;
-
-				public string OssPath
-				{
-					get
-					{
-						return ossPath;
-					}
-					set	
-					{
-						ossPath = value;
-					}
-				}
-
-				public string SourceId
-				{
-					get
-					{
-						return sourceId;
-					}
-					set	
-					{
-						sourceId = value;
-					}
-				}
 			}
 		}
 	}
