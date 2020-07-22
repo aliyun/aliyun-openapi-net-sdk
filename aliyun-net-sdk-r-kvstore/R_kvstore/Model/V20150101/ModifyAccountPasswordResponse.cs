@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-	public class ModifyAuditLogConfigResponse : AcsResponse
+	public class ModifyAccountPasswordResponse : AcsResponse
 	{
 
 		private string requestId;

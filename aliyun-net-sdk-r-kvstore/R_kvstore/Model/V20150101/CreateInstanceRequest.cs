@@ -37,6 +37,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -82,6 +83,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? capacity;
 
 		private string instanceType;
+
+		private string dedicatedHostGroupId;
 
 		private string restoreTime;
 
@@ -382,6 +385,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string DedicatedHostGroupId
+		{
+			get
+			{
+				return dedicatedHostGroupId;
+			}
+			set	
+			{
+				dedicatedHostGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostGroupId", value);
 			}
 		}
 

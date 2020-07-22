@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeInstanceAutoRenewalAttributeRequest : RpcAcsRequest<DescribeInstanceAutoRenewalAttributeResponse>
+    public class ModifyAccountPasswordRequest : RpcAcsRequest<ModifyAccountPasswordResponse>
     {
-        public DescribeInstanceAutoRenewalAttributeRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute", "redisa", "openAPI")
+        public ModifyAccountPasswordRequest()
+            : base("R-kvstore", "2015-01-01", "ModifyAccountPassword", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,19 +42,21 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
+		private string accountName;
 
-		private int? pageNumber;
+		private string newAccountPassword;
 
-		private int? pageSize;
+		private string securityToken;
 
-		private string dBInstanceId;
+		private string oldAccountPassword;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -69,55 +71,55 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ClientToken
+		public string AccountName
 		{
 			get
 			{
-				return clientToken;
+				return accountName;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				accountName = value;
+				DictionaryUtil.Add(QueryParameters, "AccountName", value);
 			}
 		}
 
-		public int? PageNumber
+		public string NewAccountPassword
 		{
 			get
 			{
-				return pageNumber;
+				return newAccountPassword;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				newAccountPassword = value;
+				DictionaryUtil.Add(QueryParameters, "NewAccountPassword", value);
 			}
 		}
 
-		public int? PageSize
+		public string SecurityToken
 		{
 			get
 			{
-				return pageSize;
+				return securityToken;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public string DBInstanceId
+		public string OldAccountPassword
 		{
 			get
 			{
-				return dBInstanceId;
+				return oldAccountPassword;
 			}
 			set	
 			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
+				oldAccountPassword = value;
+				DictionaryUtil.Add(QueryParameters, "OldAccountPassword", value);
 			}
 		}
 
@@ -160,9 +162,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override DescribeInstanceAutoRenewalAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ModifyAccountPasswordResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstanceAutoRenewalAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyAccountPasswordResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

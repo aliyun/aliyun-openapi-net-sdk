@@ -37,6 +37,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -59,6 +60,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string ownerAccount;
 
+		private string queryKeyword;
+
 		private string endTime;
 
 		private long? ownerId;
@@ -66,6 +69,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private string instanceId;
 
 		private string dBName;
+
+		private string characterType;
+
+		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -197,6 +204,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string QueryKeyword
+		{
+			get
+			{
+				return queryKeyword;
+			}
+			set	
+			{
+				queryKeyword = value;
+				DictionaryUtil.Add(QueryParameters, "QueryKeyword", value);
+			}
+		}
+
 		public string EndTime
 		{
 			get
@@ -246,6 +266,32 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				dBName = value;
 				DictionaryUtil.Add(QueryParameters, "DBName", value);
+			}
+		}
+
+		public string CharacterType
+		{
+			get
+			{
+				return characterType;
+			}
+			set	
+			{
+				characterType = value;
+				DictionaryUtil.Add(QueryParameters, "CharacterType", value);
+			}
+		}
+
+		public string OrderType
+		{
+			get
+			{
+				return orderType;
+			}
+			set	
+			{
+				orderType = value;
+				DictionaryUtil.Add(QueryParameters, "OrderType", value);
 			}
 		}
 

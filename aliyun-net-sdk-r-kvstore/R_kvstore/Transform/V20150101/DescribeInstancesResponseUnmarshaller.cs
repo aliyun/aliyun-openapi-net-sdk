@@ -72,6 +72,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.DestroyTime = context.StringValue("DescribeInstances.Instances["+ i +"].DestroyTime");
 				kVStoreInstance.ConnectionMode = context.StringValue("DescribeInstances.Instances["+ i +"].ConnectionMode");
 				kVStoreInstance.VpcCloudInstanceId = context.StringValue("DescribeInstances.Instances["+ i +"].VpcCloudInstanceId");
+				kVStoreInstance.ResourceGroupId = context.StringValue("DescribeInstances.Instances["+ i +"].ResourceGroupId");
 
 				List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag> kVStoreInstance_tags = new List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].Tags.Length"); j++) {

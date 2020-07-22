@@ -166,6 +166,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string content;
 
+			private string instanceId;
+
 			public string Level
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					content = value;
+				}
+			}
+
+			public string InstanceId
+			{
+				get
+				{
+					return instanceId;
+				}
+				set	
+				{
+					instanceId = value;
 				}
 			}
 		}

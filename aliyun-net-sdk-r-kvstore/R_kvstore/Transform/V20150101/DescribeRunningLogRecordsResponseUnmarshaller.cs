@@ -49,6 +49,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				logRecords.Category = context.StringValue("DescribeRunningLogRecords.Items["+ i +"].Category");
 				logRecords.ConnInfo = context.StringValue("DescribeRunningLogRecords.Items["+ i +"].ConnInfo");
 				logRecords.Content = context.StringValue("DescribeRunningLogRecords.Items["+ i +"].Content");
+				logRecords.InstanceId = context.StringValue("DescribeRunningLogRecords.Items["+ i +"].InstanceId");
 
 				describeRunningLogRecordsResponse_items.Add(logRecords);
 			}

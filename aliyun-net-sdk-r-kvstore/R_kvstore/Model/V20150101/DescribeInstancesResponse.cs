@@ -164,6 +164,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string vpcCloudInstanceId;
 
+			private string resourceGroupId;
+
 			private List<DescribeInstances_Tag> tags;
 
 			public string ReplacateId
@@ -559,6 +561,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					vpcCloudInstanceId = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 

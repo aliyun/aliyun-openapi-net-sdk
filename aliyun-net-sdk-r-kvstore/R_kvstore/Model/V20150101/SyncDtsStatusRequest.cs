@@ -27,23 +27,22 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class ModifyAuditLogConfigRequest : RpcAcsRequest<ModifyAuditLogConfigResponse>
+    public class SyncDtsStatusRequest : RpcAcsRequest<SyncDtsStatusResponse>
     {
-        public ModifyAuditLogConfigRequest()
-            : base("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "redisa", "openAPI")
+        public SyncDtsStatusRequest()
+            : base("R-kvstore", "2015-01-01", "SyncDtsStatus", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
 		private string securityToken;
-
-		private string retention;
 
 		private string resourceOwnerAccount;
 
@@ -52,6 +51,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? ownerId;
 
 		private string instanceId;
+
+		private string status;
 
 		public long? ResourceOwnerId
 		{
@@ -76,19 +77,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Retention
-		{
-			get
-			{
-				return retention;
-			}
-			set	
-			{
-				retention = value;
-				DictionaryUtil.Add(QueryParameters, "Retention", value);
 			}
 		}
 
@@ -144,9 +132,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override ModifyAuditLogConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override SyncDtsStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyAuditLogConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SyncDtsStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

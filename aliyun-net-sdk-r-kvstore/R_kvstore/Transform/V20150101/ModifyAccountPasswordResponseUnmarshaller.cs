@@ -24,16 +24,16 @@ using Aliyun.Acs.R_kvstore.Model.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 {
-    public class ModifyAuditLogConfigResponseUnmarshaller
+    public class ModifyAccountPasswordResponseUnmarshaller
     {
-        public static ModifyAuditLogConfigResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyAccountPasswordResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyAuditLogConfigResponse modifyAuditLogConfigResponse = new ModifyAuditLogConfigResponse();
+			ModifyAccountPasswordResponse modifyAccountPasswordResponse = new ModifyAccountPasswordResponse();
 
-			modifyAuditLogConfigResponse.HttpResponse = context.HttpResponse;
-			modifyAuditLogConfigResponse.RequestId = context.StringValue("ModifyAuditLogConfig.RequestId");
+			modifyAccountPasswordResponse.HttpResponse = context.HttpResponse;
+			modifyAccountPasswordResponse.RequestId = context.StringValue("ModifyAccountPassword.RequestId");
         
-			return modifyAuditLogConfigResponse;
+			return modifyAccountPasswordResponse;
         }
     }
 }
