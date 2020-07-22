@@ -165,6 +165,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private float? leftTopY;
 
+				private string matchSuggestion;
+
 				private float? rightBottomX;
 
 				private float? rightBottomY;
@@ -173,7 +175,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string targetImageUrl;
 
-				private string matchSuggestion;
+				private string sourceId;
 
 				public string GbId
 				{
@@ -220,6 +222,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						leftTopY = value;
+					}
+				}
+
+				public string MatchSuggestion
+				{
+					get
+					{
+						return matchSuggestion;
+					}
+					set	
+					{
+						matchSuggestion = value;
 					}
 				}
 
@@ -271,15 +285,15 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public string MatchSuggestion
+				public string SourceId
 				{
 					get
 					{
-						return matchSuggestion;
+						return sourceId;
 					}
 					set	
 					{
-						matchSuggestion = value;
+						sourceId = value;
 					}
 				}
 			}

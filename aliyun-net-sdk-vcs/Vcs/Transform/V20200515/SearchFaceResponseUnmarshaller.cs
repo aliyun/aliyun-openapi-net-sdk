@@ -48,11 +48,12 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				record.ImageUrl = context.StringValue("SearchFace.Data.Records["+ i +"].ImageUrl");
 				record.LeftTopX = context.FloatValue("SearchFace.Data.Records["+ i +"].LeftTopX");
 				record.LeftTopY = context.FloatValue("SearchFace.Data.Records["+ i +"].LeftTopY");
+				record.MatchSuggestion = context.StringValue("SearchFace.Data.Records["+ i +"].MatchSuggestion");
 				record.RightBottomX = context.FloatValue("SearchFace.Data.Records["+ i +"].RightBottomX");
 				record.RightBottomY = context.FloatValue("SearchFace.Data.Records["+ i +"].RightBottomY");
 				record.Score = context.FloatValue("SearchFace.Data.Records["+ i +"].Score");
 				record.TargetImageUrl = context.StringValue("SearchFace.Data.Records["+ i +"].TargetImageUrl");
-				record.MatchSuggestion = context.StringValue("SearchFace.Data.Records["+ i +"].MatchSuggestion");
+				record.SourceId = context.StringValue("SearchFace.Data.Records["+ i +"].SourceId");
 
 				data_records.Add(record);
 			}
