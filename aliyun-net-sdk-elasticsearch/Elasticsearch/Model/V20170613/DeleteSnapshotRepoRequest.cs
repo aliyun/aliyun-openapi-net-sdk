@@ -43,6 +43,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string instanceId;
 
+		private string clientToken;
+
 		private string repoPath;
 
 		public string InstanceId
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			{
 				instanceId = value;
 				DictionaryUtil.Add(PathParameters, "InstanceId", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "clientToken", value);
 			}
 		}
 

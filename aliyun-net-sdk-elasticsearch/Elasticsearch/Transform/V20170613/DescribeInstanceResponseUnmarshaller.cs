@@ -143,6 +143,14 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			advancedSetting.GcName = context.StringValue("DescribeInstance.Result.AdvancedSetting.gcName");
 			result.AdvancedSetting = advancedSetting;
 
+			DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_ElasticDataNodeConfiguration elasticDataNodeConfiguration = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_ElasticDataNodeConfiguration();
+			elasticDataNodeConfiguration.Spec = context.StringValue("DescribeInstance.Result.ElasticDataNodeConfiguration.spec");
+			elasticDataNodeConfiguration.Amount = context.IntegerValue("DescribeInstance.Result.ElasticDataNodeConfiguration.amount");
+			elasticDataNodeConfiguration.DiskType = context.StringValue("DescribeInstance.Result.ElasticDataNodeConfiguration.diskType");
+			elasticDataNodeConfiguration.Disk = context.IntegerValue("DescribeInstance.Result.ElasticDataNodeConfiguration.disk");
+			elasticDataNodeConfiguration.DiskEncryption = context.BooleanValue("DescribeInstance.Result.ElasticDataNodeConfiguration.diskEncryption");
+			result.ElasticDataNodeConfiguration = elasticDataNodeConfiguration;
+
 			List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_DictListItem> result_dictList = new List<DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_DictListItem>();
 			for (int i = 0; i < context.Length("DescribeInstance.Result.DictList.Length"); i++) {
 				DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_DictListItem dictListItem = new DescribeInstanceResponse.DescribeInstance_Result.DescribeInstance_DictListItem();

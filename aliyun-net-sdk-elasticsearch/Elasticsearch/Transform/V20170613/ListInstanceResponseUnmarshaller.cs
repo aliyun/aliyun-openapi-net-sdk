@@ -79,6 +79,21 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				kibanaConfiguration.DiskType = context.StringValue("ListInstance.Result["+ i +"].KibanaConfiguration.diskType");
 				instance.KibanaConfiguration = kibanaConfiguration;
 
+				ListInstanceResponse.ListInstance_Instance.ListInstance_ElasticDataNodeConfiguration elasticDataNodeConfiguration = new ListInstanceResponse.ListInstance_Instance.ListInstance_ElasticDataNodeConfiguration();
+				elasticDataNodeConfiguration.Spec = context.StringValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.spec");
+				elasticDataNodeConfiguration.Amount = context.IntegerValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.amount");
+				elasticDataNodeConfiguration.DiskType = context.StringValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.diskType");
+				elasticDataNodeConfiguration.Disk = context.IntegerValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.disk");
+				elasticDataNodeConfiguration.DiskEncryption = context.BooleanValue("ListInstance.Result["+ i +"].ElasticDataNodeConfiguration.diskEncryption");
+				instance.ElasticDataNodeConfiguration = elasticDataNodeConfiguration;
+
+				ListInstanceResponse.ListInstance_Instance.ListInstance_ClientNodeConfiguration clientNodeConfiguration = new ListInstanceResponse.ListInstance_Instance.ListInstance_ClientNodeConfiguration();
+				clientNodeConfiguration.Spec = context.StringValue("ListInstance.Result["+ i +"].ClientNodeConfiguration.spec");
+				clientNodeConfiguration.Amount = context.IntegerValue("ListInstance.Result["+ i +"].ClientNodeConfiguration.amount");
+				clientNodeConfiguration.DiskType = context.StringValue("ListInstance.Result["+ i +"].ClientNodeConfiguration.diskType");
+				clientNodeConfiguration.Disk = context.IntegerValue("ListInstance.Result["+ i +"].ClientNodeConfiguration.disk");
+				instance.ClientNodeConfiguration = clientNodeConfiguration;
+
 				List<ListInstanceResponse.ListInstance_Instance.ListInstance_Tag> instance_tags = new List<ListInstanceResponse.ListInstance_Instance.ListInstance_Tag>();
 				for (int j = 0; j < context.Length("ListInstance.Result["+ i +"].Tags.Length"); j++) {
 					ListInstanceResponse.ListInstance_Instance.ListInstance_Tag tag = new ListInstanceResponse.ListInstance_Instance.ListInstance_Tag();

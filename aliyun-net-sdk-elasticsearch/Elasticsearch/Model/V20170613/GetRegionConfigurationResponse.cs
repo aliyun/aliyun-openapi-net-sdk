@@ -82,6 +82,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private List<string> clientNodeSpec;
 
+			private List<string> instanceSupportNodes;
+
 			private GetRegionConfiguration_Node node;
 
 			private GetRegionConfiguration_JvmConfine jvmConfine;
@@ -91,6 +93,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			private GetRegionConfiguration_WarmNodeProperties warmNodeProperties;
 
 			private GetRegionConfiguration_KibanaNodeProperties kibanaNodeProperties;
+
+			private GetRegionConfiguration_ElasticNodeProperties elasticNodeProperties;
 
 			public string Env
 			{
@@ -248,6 +252,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
+			public List<string> InstanceSupportNodes
+			{
+				get
+				{
+					return instanceSupportNodes;
+				}
+				set	
+				{
+					instanceSupportNodes = value;
+				}
+			}
+
 			public GetRegionConfiguration_Node Node
 			{
 				get
@@ -305,6 +321,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					kibanaNodeProperties = value;
+				}
+			}
+
+			public GetRegionConfiguration_ElasticNodeProperties ElasticNodeProperties
+			{
+				get
+				{
+					return elasticNodeProperties;
+				}
+				set	
+				{
+					elasticNodeProperties = value;
 				}
 			}
 
@@ -800,11 +828,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 					private string diskType;
 
-					private int? minSize;
-
 					private int? maxSize;
 
+					private int? minSize;
+
 					private int? scaleLimit;
+
+					private bool? diskEncryption;
 
 					private List<string> valueLimitSet2;
 
@@ -820,18 +850,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						}
 					}
 
-					public int? MinSize
-					{
-						get
-						{
-							return minSize;
-						}
-						set	
-						{
-							minSize = value;
-						}
-					}
-
 					public int? MaxSize
 					{
 						get
@@ -844,6 +862,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						}
 					}
 
+					public int? MinSize
+					{
+						get
+						{
+							return minSize;
+						}
+						set	
+						{
+							minSize = value;
+						}
+					}
+
 					public int? ScaleLimit
 					{
 						get
@@ -853,6 +883,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						set	
 						{
 							scaleLimit = value;
+						}
+					}
+
+					public bool? DiskEncryption
+					{
+						get
+						{
+							return diskEncryption;
+						}
+						set	
+						{
+							diskEncryption = value;
 						}
 					}
 
@@ -872,21 +914,9 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				public class GetRegionConfiguration_AmountRange
 				{
 
-					private int? minAmount;
-
 					private int? maxAmount;
 
-					public int? MinAmount
-					{
-						get
-						{
-							return minAmount;
-						}
-						set	
-						{
-							minAmount = value;
-						}
-					}
+					private int? minAmount;
 
 					public int? MaxAmount
 					{
@@ -897,6 +927,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						set	
 						{
 							maxAmount = value;
+						}
+					}
+
+					public int? MinAmount
+					{
+						get
+						{
+							return minAmount;
+						}
+						set	
+						{
+							minAmount = value;
 						}
 					}
 				}
@@ -936,9 +978,21 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				public class GetRegionConfiguration_AmountRange4
 				{
 
+					private int? maxAmount;
+
 					private int? minAmount;
 
-					private int? maxAmount;
+					public int? MaxAmount
+					{
+						get
+						{
+							return maxAmount;
+						}
+						set	
+						{
+							maxAmount = value;
+						}
+					}
 
 					public int? MinAmount
 					{
@@ -951,6 +1005,148 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 							minAmount = value;
 						}
 					}
+				}
+			}
+
+			public class GetRegionConfiguration_ElasticNodeProperties
+			{
+
+				private List<GetRegionConfiguration_Disk8> diskList7;
+
+				private List<string> spec5;
+
+				private GetRegionConfiguration_AmountRange6 amountRange6;
+
+				public List<GetRegionConfiguration_Disk8> DiskList7
+				{
+					get
+					{
+						return diskList7;
+					}
+					set	
+					{
+						diskList7 = value;
+					}
+				}
+
+				public List<string> Spec5
+				{
+					get
+					{
+						return spec5;
+					}
+					set	
+					{
+						spec5 = value;
+					}
+				}
+
+				public GetRegionConfiguration_AmountRange6 AmountRange6
+				{
+					get
+					{
+						return amountRange6;
+					}
+					set	
+					{
+						amountRange6 = value;
+					}
+				}
+
+				public class GetRegionConfiguration_Disk8
+				{
+
+					private string diskType;
+
+					private int? maxSize;
+
+					private int? minSize;
+
+					private int? scaleLimit;
+
+					private bool? diskEncryption;
+
+					private List<string> valueLimitSet9;
+
+					public string DiskType
+					{
+						get
+						{
+							return diskType;
+						}
+						set	
+						{
+							diskType = value;
+						}
+					}
+
+					public int? MaxSize
+					{
+						get
+						{
+							return maxSize;
+						}
+						set	
+						{
+							maxSize = value;
+						}
+					}
+
+					public int? MinSize
+					{
+						get
+						{
+							return minSize;
+						}
+						set	
+						{
+							minSize = value;
+						}
+					}
+
+					public int? ScaleLimit
+					{
+						get
+						{
+							return scaleLimit;
+						}
+						set	
+						{
+							scaleLimit = value;
+						}
+					}
+
+					public bool? DiskEncryption
+					{
+						get
+						{
+							return diskEncryption;
+						}
+						set	
+						{
+							diskEncryption = value;
+						}
+					}
+
+					public List<string> ValueLimitSet9
+					{
+						get
+						{
+							return valueLimitSet9;
+						}
+						set	
+						{
+							valueLimitSet9 = value;
+						}
+					}
+				}
+
+				public class GetRegionConfiguration_AmountRange6
+				{
+
+					private int? maxAmount;
+
+					private int? minAmount;
 
 					public int? MaxAmount
 					{
@@ -961,6 +1157,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 						set	
 						{
 							maxAmount = value;
+						}
+					}
+
+					public int? MinAmount
+					{
+						get
+						{
+							return minAmount;
+						}
+						set	
+						{
+							minAmount = value;
 						}
 					}
 				}

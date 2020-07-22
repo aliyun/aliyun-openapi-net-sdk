@@ -146,6 +146,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private DescribeInstance_AdvancedSetting advancedSetting;
 
+			private DescribeInstance_ElasticDataNodeConfiguration elasticDataNodeConfiguration;
+
 			public string InstanceId
 			{
 				get
@@ -683,6 +685,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					advancedSetting = value;
+				}
+			}
+
+			public DescribeInstance_ElasticDataNodeConfiguration ElasticDataNodeConfiguration
+			{
+				get
+				{
+					return elasticDataNodeConfiguration;
+				}
+				set	
+				{
+					elasticDataNodeConfiguration = value;
 				}
 			}
 
@@ -1290,6 +1304,80 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						gcName = value;
+					}
+				}
+			}
+
+			public class DescribeInstance_ElasticDataNodeConfiguration
+			{
+
+				private string spec;
+
+				private int? amount;
+
+				private string diskType;
+
+				private int? disk;
+
+				private bool? diskEncryption;
+
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
+
+				public int? Amount
+				{
+					get
+					{
+						return amount;
+					}
+					set	
+					{
+						amount = value;
+					}
+				}
+
+				public string DiskType
+				{
+					get
+					{
+						return diskType;
+					}
+					set	
+					{
+						diskType = value;
+					}
+				}
+
+				public int? Disk
+				{
+					get
+					{
+						return disk;
+					}
+					set	
+					{
+						disk = value;
+					}
+				}
+
+				public bool? DiskEncryption
+				{
+					get
+					{
+						return diskEncryption;
+					}
+					set	
+					{
+						diskEncryption = value;
 					}
 				}
 			}

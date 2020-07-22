@@ -41,9 +41,24 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			Method = MethodType.PUT;
         }
 
+		private bool? ignoreStatus;
+
 		private string instanceId;
 
 		private string clientToken;
+
+		public bool? IgnoreStatus
+		{
+			get
+			{
+				return ignoreStatus;
+			}
+			set	
+			{
+				ignoreStatus = value;
+				DictionaryUtil.Add(QueryParameters, "ignoreStatus", value.ToString());
+			}
+		}
 
 		public string InstanceId
 		{

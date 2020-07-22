@@ -27,38 +27,21 @@ using Aliyun.Acs.elasticsearch.Transform.V20170613;
 
 namespace Aliyun.Acs.elasticsearch.Model.V20170613
 {
-    public class ValidateShrinkNodesRequest : RoaAcsRequest<ValidateShrinkNodesResponse>
+    public class GetElastictaskRequest : RoaAcsRequest<GetElastictaskResponse>
     {
-        public ValidateShrinkNodesRequest()
-            : base("elasticsearch", "2017-06-13", "ValidateShrinkNodes", "elasticsearch", "openAPI")
+        public GetElastictaskRequest()
+            : base("elasticsearch", "2017-06-13", "GetElastictask", "elasticsearch", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/instances/[InstanceId]/validate-shrink-nodes";
-			Method = MethodType.POST;
+			UriPattern = "/openapi/instances/[InstanceId]/elastic-task";
+			Method = MethodType.GET;
         }
 
-		private bool? ignoreStatus;
-
 		private string instanceId;
-
-		private string nodeType;
-
-		public bool? IgnoreStatus
-		{
-			get
-			{
-				return ignoreStatus;
-			}
-			set	
-			{
-				ignoreStatus = value;
-				DictionaryUtil.Add(QueryParameters, "ignoreStatus", value.ToString());
-			}
-		}
 
 		public string InstanceId
 		{
@@ -73,27 +56,14 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string NodeType
-		{
-			get
-			{
-				return nodeType;
-			}
-			set	
-			{
-				nodeType = value;
-				DictionaryUtil.Add(QueryParameters, "nodeType", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ValidateShrinkNodesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetElastictaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ValidateShrinkNodesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetElastictaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

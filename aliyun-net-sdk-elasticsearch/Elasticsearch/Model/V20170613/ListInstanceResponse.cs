@@ -102,6 +102,10 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private ListInstance_KibanaConfiguration kibanaConfiguration;
 
+			private ListInstance_ElasticDataNodeConfiguration elasticDataNodeConfiguration;
+
+			private ListInstance_ClientNodeConfiguration clientNodeConfiguration;
+
 			public string InstanceId
 			{
 				get
@@ -291,6 +295,30 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					kibanaConfiguration = value;
+				}
+			}
+
+			public ListInstance_ElasticDataNodeConfiguration ElasticDataNodeConfiguration
+			{
+				get
+				{
+					return elasticDataNodeConfiguration;
+				}
+				set	
+				{
+					elasticDataNodeConfiguration = value;
+				}
+			}
+
+			public ListInstance_ClientNodeConfiguration ClientNodeConfiguration
+			{
+				get
+				{
+					return clientNodeConfiguration;
+				}
+				set	
+				{
+					clientNodeConfiguration = value;
 				}
 			}
 
@@ -548,6 +576,140 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 					set	
 					{
 						diskType = value;
+					}
+				}
+			}
+
+			public class ListInstance_ElasticDataNodeConfiguration
+			{
+
+				private string spec;
+
+				private int? amount;
+
+				private string diskType;
+
+				private int? disk;
+
+				private bool? diskEncryption;
+
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
+
+				public int? Amount
+				{
+					get
+					{
+						return amount;
+					}
+					set	
+					{
+						amount = value;
+					}
+				}
+
+				public string DiskType
+				{
+					get
+					{
+						return diskType;
+					}
+					set	
+					{
+						diskType = value;
+					}
+				}
+
+				public int? Disk
+				{
+					get
+					{
+						return disk;
+					}
+					set	
+					{
+						disk = value;
+					}
+				}
+
+				public bool? DiskEncryption
+				{
+					get
+					{
+						return diskEncryption;
+					}
+					set	
+					{
+						diskEncryption = value;
+					}
+				}
+			}
+
+			public class ListInstance_ClientNodeConfiguration
+			{
+
+				private string spec;
+
+				private int? amount;
+
+				private string diskType;
+
+				private int? disk;
+
+				public string Spec
+				{
+					get
+					{
+						return spec;
+					}
+					set	
+					{
+						spec = value;
+					}
+				}
+
+				public int? Amount
+				{
+					get
+					{
+						return amount;
+					}
+					set	
+					{
+						amount = value;
+					}
+				}
+
+				public string DiskType
+				{
+					get
+					{
+						return diskType;
+					}
+					set	
+					{
+						diskType = value;
+					}
+				}
+
+				public int? Disk
+				{
+					get
+					{
+						return disk;
+					}
+					set	
+					{
+						disk = value;
 					}
 				}
 			}
