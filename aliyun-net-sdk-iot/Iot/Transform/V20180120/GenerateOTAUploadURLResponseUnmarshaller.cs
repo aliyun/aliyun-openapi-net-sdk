@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 			data.OSSAccessKeyId = context.StringValue("GenerateOTAUploadURL.Data.OSSAccessKeyId");
 			data.Signature = context.StringValue("GenerateOTAUploadURL.Data.Signature");
 			data.FirmwareUrl = context.StringValue("GenerateOTAUploadURL.Data.FirmwareUrl");
+			data.UtcCreate = context.StringValue("GenerateOTAUploadURL.Data.UtcCreate");
+			data.ObjectStorage = context.StringValue("GenerateOTAUploadURL.Data.ObjectStorage");
 			generateOTAUploadURLResponse.Data = data;
         
 			return generateOTAUploadURLResponse;

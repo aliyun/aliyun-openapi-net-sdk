@@ -110,6 +110,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string firmwareUrl;
 
+			private string utcCreate;
+
+			private string objectStorage;
+
 			public string Key
 			{
 				get
@@ -179,6 +183,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					firmwareUrl = value;
+				}
+			}
+
+			public string UtcCreate
+			{
+				get
+				{
+					return utcCreate;
+				}
+				set	
+				{
+					utcCreate = value;
+				}
+			}
+
+			public string ObjectStorage
+			{
+				get
+				{
+					return objectStorage;
+				}
+				set	
+				{
+					objectStorage = value;
 				}
 			}
 		}
