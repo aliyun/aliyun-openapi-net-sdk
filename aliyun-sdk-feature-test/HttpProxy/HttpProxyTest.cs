@@ -32,38 +32,47 @@ namespace Aliyun.Acs.Feature.Test.HttpProxy
         public void HttpProxy()
         {
             var client = FeatureTest.DefaultClient;
+            try
+            {
+                var request = new DescribeAccessPointsRequest();
+                client.SetHttpProxy("http://localhost:8989");
 
-            var request = new DescribeAccessPointsRequest();
-            client.SetHttpProxy("http://localhost:8989");
+                var response = client.GetAcsResponse(request);
+                Assert.NotNull(response.HttpResponse.Content);
 
-            var response = client.GetAcsResponse(request);
-            Assert.NotNull(response.HttpResponse.Content);
-
-            var expectValue = "HTTP/1.1 o_o";
-            string actualValue;
-            response.HttpResponse.Headers.TryGetValue("Via", out actualValue);
-            Assert.Equal(expectValue, actualValue);
-
-            client.SetHttpProxy(null);
+                var expectValue = "HTTP/1.1 o_o";
+                string actualValue;
+                response.HttpResponse.Headers.TryGetValue("Via", out actualValue);
+                Assert.Equal(expectValue, actualValue);
+            }
+            finally
+            {
+                client.SetHttpProxy(null);
+            }
+            
         }
 
         [Fact]
         public void HttpProxyWithCredential()
         {
             var client = FeatureTest.DefaultClient;
+            try
+            {
+                var request = new DescribeAccessPointsRequest();
+                client.SetHttpProxy("http://username:password@localhost:8989");
+                var response = client.GetAcsResponse(request);
 
-            var request = new DescribeAccessPointsRequest();
-            client.SetHttpProxy("http://username:password@localhost:8989");
-            var response = client.GetAcsResponse(request);
+                var expectValue = "HTTP/1.1 o_o";
+                string actualValue;
+                response.HttpResponse.Headers.TryGetValue("Via", out actualValue);
 
-            var expectValue = "HTTP/1.1 o_o";
-            string actualValue;
-            response.HttpResponse.Headers.TryGetValue("Via", out actualValue);
-
-            Assert.Equal(expectValue, actualValue);
-            Assert.NotNull(response.HttpResponse.Content);
-
-            client.SetHttpProxy(null);
+                Assert.Equal(expectValue, actualValue);
+                Assert.NotNull(response.HttpResponse.Content);
+            }
+            finally
+            {
+                client.SetHttpProxy(null);
+            }
         }
     }
 }
