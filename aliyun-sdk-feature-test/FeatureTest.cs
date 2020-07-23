@@ -60,7 +60,6 @@ namespace Aliyun.Acs.Feature.Test
         {
             get
             {
-                
                 return client;
             }
         }
