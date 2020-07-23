@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -39,23 +39,27 @@ namespace Aliyun.Acs.Feature.Test
             accessKeySecret = Environment.GetEnvironmentVariable("ACCESS_KEY_SECRET") ?? "FakeAccessKeySecret";
             roleArn = Environment.GetEnvironmentVariable("RAM") ?? "FakeRoleArn";
             bearerToken = Environment.GetEnvironmentVariable("BEARERTOKEN") ?? "FakeBearerToken";
+
+            profile = DefaultProfile.GetProfile(
+            regionId,
+            accessKeyId,
+            accessKeySecret
+            );
+
+            client = new DefaultAcsClient(profile);
+            client.SetConnectTimeoutInMilliSeconds(2 * 60 * 1000);
+            client.SetReadTimeoutInMilliSeconds(2 * 60 * 1000);
         }
 
         static FeatureTest featureTest = new FeatureTest();
 
-        static IClientProfile profile = DefaultProfile.GetProfile(
-            RegionId,
-            BasicAccessKeyId,
-            BasicAccessKeySecret
-        );
+        static IClientProfile profile;
+        static DefaultAcsClient client;
 
         public static DefaultAcsClient DefaultClient
         {
             get
             {
-                DefaultAcsClient client = new DefaultAcsClient(profile);
-                client.SetConnectTimeoutInMilliSeconds(2 * 60 * 1000);
-                client.SetReadTimeoutInMilliSeconds(2 * 60 * 1000);
                 return client;
             }
         }
