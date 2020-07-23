@@ -27,10 +27,10 @@ using Aliyun.Acs.Dyplsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 {
-    public class BuySecretNoRequest : RpcAcsRequest<BuySecretNoResponse>
+    public class GetSecretAsrDetailRequest : RpcAcsRequest<GetSecretAsrDetailResponse>
     {
-        public BuySecretNoRequest()
-            : base("Dyplsapi", "2017-05-25", "BuySecretNo", "dypls", "openAPI")
+        public GetSecretAsrDetailRequest()
+            : base("Dyplsapi", "2017-05-25", "GetSecretAsrDetail", "dypls", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,110 +40,35 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			Method = MethodType.POST;
         }
 
-		private long? specId;
+		private string callId;
 
-		private long? resourceOwnerId;
-
-		private string city;
-
-		private string secretNo;
-
-		private string resourceOwnerAccount;
-
-		private bool? displayPool;
-
-		private long? ownerId;
+		private string callTime;
 
 		private string poolKey;
 
-		public long? SpecId
+		public string CallId
 		{
 			get
 			{
-				return specId;
+				return callId;
 			}
 			set	
 			{
-				specId = value;
-				DictionaryUtil.Add(QueryParameters, "SpecId", value.ToString());
+				callId = value;
+				DictionaryUtil.Add(QueryParameters, "CallId", value);
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string CallTime
 		{
 			get
 			{
-				return resourceOwnerId;
+				return callTime;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string City
-		{
-			get
-			{
-				return city;
-			}
-			set	
-			{
-				city = value;
-				DictionaryUtil.Add(QueryParameters, "City", value);
-			}
-		}
-
-		public string SecretNo
-		{
-			get
-			{
-				return secretNo;
-			}
-			set	
-			{
-				secretNo = value;
-				DictionaryUtil.Add(QueryParameters, "SecretNo", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public bool? DisplayPool
-		{
-			get
-			{
-				return displayPool;
-			}
-			set	
-			{
-				displayPool = value;
-				DictionaryUtil.Add(QueryParameters, "DisplayPool", value.ToString());
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				callTime = value;
+				DictionaryUtil.Add(QueryParameters, "CallTime", value);
 			}
 		}
 
@@ -160,9 +85,14 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			}
 		}
 
-        public override BuySecretNoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override GetSecretAsrDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BuySecretNoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSecretAsrDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

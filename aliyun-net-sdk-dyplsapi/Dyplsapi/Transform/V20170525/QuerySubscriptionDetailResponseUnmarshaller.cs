@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Dyplsapi.Transform.V20170525
 			secretBindDetailDTO.NeedRecord = context.BooleanValue("QuerySubscriptionDetail.SecretBindDetailDTO.NeedRecord");
 			secretBindDetailDTO.CallRestrict = context.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.CallRestrict");
 			secretBindDetailDTO.Status = context.LongValue("QuerySubscriptionDetail.SecretBindDetailDTO.Status");
+			secretBindDetailDTO.ASRStatus = context.BooleanValue("QuerySubscriptionDetail.SecretBindDetailDTO.ASRStatus");
+			secretBindDetailDTO.ASRModelId = context.StringValue("QuerySubscriptionDetail.SecretBindDetailDTO.ASRModelId");
 			querySubscriptionDetailResponse.SecretBindDetailDTO = secretBindDetailDTO;
         
 			return querySubscriptionDetailResponse;

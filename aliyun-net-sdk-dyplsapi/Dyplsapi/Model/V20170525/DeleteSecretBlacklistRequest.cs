@@ -27,10 +27,10 @@ using Aliyun.Acs.Dyplsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 {
-    public class QuerySecretNoRemainRequest : RpcAcsRequest<QuerySecretNoRemainResponse>
+    public class DeleteSecretBlacklistRequest : RpcAcsRequest<DeleteSecretBlacklistResponse>
     {
-        public QuerySecretNoRemainRequest()
-            : base("Dyplsapi", "2017-05-25", "QuerySecretNoRemain", "dypls", "openAPI")
+        public DeleteSecretBlacklistRequest()
+            : base("Dyplsapi", "2017-05-25", "DeleteSecretBlacklist", "dypls", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,99 +40,74 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			Method = MethodType.POST;
         }
 
-		private long? specId;
+		private string blackType;
 
-		private long? resourceOwnerId;
+		private string remark;
 
-		private string city;
+		private string poolKey;
 
-		private string secretNo;
+		private string blackNo;
 
-		private string resourceOwnerAccount;
-
-		private long? ownerId;
-
-		public long? SpecId
+		public string BlackType
 		{
 			get
 			{
-				return specId;
+				return blackType;
 			}
 			set	
 			{
-				specId = value;
-				DictionaryUtil.Add(QueryParameters, "SpecId", value.ToString());
+				blackType = value;
+				DictionaryUtil.Add(QueryParameters, "BlackType", value);
 			}
 		}
 
-		public long? ResourceOwnerId
+		public string Remark
 		{
 			get
 			{
-				return resourceOwnerId;
+				return remark;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				remark = value;
+				DictionaryUtil.Add(QueryParameters, "Remark", value);
 			}
 		}
 
-		public string City
+		public string PoolKey
 		{
 			get
 			{
-				return city;
+				return poolKey;
 			}
 			set	
 			{
-				city = value;
-				DictionaryUtil.Add(QueryParameters, "City", value);
+				poolKey = value;
+				DictionaryUtil.Add(QueryParameters, "PoolKey", value);
 			}
 		}
 
-		public string SecretNo
+		public string BlackNo
 		{
 			get
 			{
-				return secretNo;
+				return blackNo;
 			}
 			set	
 			{
-				secretNo = value;
-				DictionaryUtil.Add(QueryParameters, "SecretNo", value);
+				blackNo = value;
+				DictionaryUtil.Add(QueryParameters, "BlackNo", value);
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
+			return false;
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-        public override QuerySecretNoRemainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteSecretBlacklistResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySecretNoRemainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteSecretBlacklistResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

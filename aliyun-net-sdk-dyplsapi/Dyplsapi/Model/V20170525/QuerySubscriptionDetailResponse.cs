@@ -106,6 +106,10 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 
 			private long? status;
 
+			private bool? aSRStatus;
+
+			private string aSRModelId;
+
 			public string SubsId
 			{
 				get
@@ -235,6 +239,30 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public bool? ASRStatus
+			{
+				get
+				{
+					return aSRStatus;
+				}
+				set	
+				{
+					aSRStatus = value;
+				}
+			}
+
+			public string ASRModelId
+			{
+				get
+				{
+					return aSRModelId;
+				}
+				set	
+				{
+					aSRModelId = value;
 				}
 			}
 		}

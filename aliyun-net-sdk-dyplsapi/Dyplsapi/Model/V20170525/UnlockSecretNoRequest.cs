@@ -27,10 +27,10 @@ using Aliyun.Acs.Dyplsapi.Transform.V20170525;
 
 namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 {
-    public class BuySecretNoRequest : RpcAcsRequest<BuySecretNoResponse>
+    public class UnlockSecretNoRequest : RpcAcsRequest<UnlockSecretNoResponse>
     {
-        public BuySecretNoRequest()
-            : base("Dyplsapi", "2017-05-25", "BuySecretNo", "dypls", "openAPI")
+        public UnlockSecretNoRequest()
+            : base("Dyplsapi", "2017-05-25", "UnlockSecretNo", "dypls", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,34 +40,15 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			Method = MethodType.POST;
         }
 
-		private long? specId;
-
 		private long? resourceOwnerId;
 
-		private string city;
-
-		private string secretNo;
-
 		private string resourceOwnerAccount;
-
-		private bool? displayPool;
 
 		private long? ownerId;
 
 		private string poolKey;
 
-		public long? SpecId
-		{
-			get
-			{
-				return specId;
-			}
-			set	
-			{
-				specId = value;
-				DictionaryUtil.Add(QueryParameters, "SpecId", value.ToString());
-			}
-		}
+		private string secretNo;
 
 		public long? ResourceOwnerId
 		{
@@ -82,32 +63,6 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			}
 		}
 
-		public string City
-		{
-			get
-			{
-				return city;
-			}
-			set	
-			{
-				city = value;
-				DictionaryUtil.Add(QueryParameters, "City", value);
-			}
-		}
-
-		public string SecretNo
-		{
-			get
-			{
-				return secretNo;
-			}
-			set	
-			{
-				secretNo = value;
-				DictionaryUtil.Add(QueryParameters, "SecretNo", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -118,19 +73,6 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public bool? DisplayPool
-		{
-			get
-			{
-				return displayPool;
-			}
-			set	
-			{
-				displayPool = value;
-				DictionaryUtil.Add(QueryParameters, "DisplayPool", value.ToString());
 			}
 		}
 
@@ -160,9 +102,27 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			}
 		}
 
-        public override BuySecretNoResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string SecretNo
+		{
+			get
+			{
+				return secretNo;
+			}
+			set	
+			{
+				secretNo = value;
+				DictionaryUtil.Add(QueryParameters, "SecretNo", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override UnlockSecretNoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BuySecretNoResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UnlockSecretNoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

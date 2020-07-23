@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -46,6 +47,8 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 		private string phoneNoX;
 
 		private string ringConfig;
+
+		private bool? aSRStatus;
 
 		private string phoneNoB;
 
@@ -66,6 +69,8 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 		private bool? isRecordingEnabled;
 
 		private string outId;
+
+		private string aSRModelId;
 
 		private string callRestrict;
 
@@ -118,6 +123,19 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			{
 				ringConfig = value;
 				DictionaryUtil.Add(QueryParameters, "RingConfig", value);
+			}
+		}
+
+		public bool? ASRStatus
+		{
+			get
+			{
+				return aSRStatus;
+			}
+			set	
+			{
+				aSRStatus = value;
+				DictionaryUtil.Add(QueryParameters, "ASRStatus", value.ToString());
 			}
 		}
 
@@ -248,6 +266,19 @@ namespace Aliyun.Acs.Dyplsapi.Model.V20170525
 			{
 				outId = value;
 				DictionaryUtil.Add(QueryParameters, "OutId", value);
+			}
+		}
+
+		public string ASRModelId
+		{
+			get
+			{
+				return aSRModelId;
+			}
+			set	
+			{
+				aSRModelId = value;
+				DictionaryUtil.Add(QueryParameters, "ASRModelId", value);
 			}
 		}
 
