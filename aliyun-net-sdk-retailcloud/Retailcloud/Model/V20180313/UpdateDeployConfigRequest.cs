@@ -54,6 +54,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 		private long? id;
 
+		private string cronJob;
+
 		private string deployment;
 
 		public string CodePath
@@ -152,6 +154,19 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			{
 				id = value;
 				DictionaryUtil.Add(QueryParameters, "Id", value.ToString());
+			}
+		}
+
+		public string CronJob
+		{
+			get
+			{
+				return cronJob;
+			}
+			set	
+			{
+				cronJob = value;
+				DictionaryUtil.Add(QueryParameters, "CronJob", value);
 			}
 		}
 

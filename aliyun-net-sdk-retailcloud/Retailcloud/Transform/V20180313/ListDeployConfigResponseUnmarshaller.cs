@@ -54,6 +54,7 @@ namespace Aliyun.Acs.retailcloud.Transform.V20180313
 				containerYamlConf.Deployment = context.StringValue("ListDeployConfig.Data["+ i +"].ContainerYamlConf.Deployment");
 				containerYamlConf.ConfigMap = context.StringValue("ListDeployConfig.Data["+ i +"].ContainerYamlConf.ConfigMap");
 				containerYamlConf.StatefulSet = context.StringValue("ListDeployConfig.Data["+ i +"].ContainerYamlConf.StatefulSet");
+				containerYamlConf.CronJob = context.StringValue("ListDeployConfig.Data["+ i +"].ContainerYamlConf.CronJob");
 
 				List<string> containerYamlConf_configMapList = new List<string>();
 				for (int j = 0; j < context.Length("ListDeployConfig.Data["+ i +"].ContainerYamlConf.ConfigMapList.Length"); j++) {

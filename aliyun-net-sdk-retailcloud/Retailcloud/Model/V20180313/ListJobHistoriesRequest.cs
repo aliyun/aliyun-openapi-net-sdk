@@ -27,50 +27,90 @@ using Aliyun.Acs.retailcloud.Transform.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Model.V20180313
 {
-    public class AddClusterNodeRequest : RpcAcsRequest<AddClusterNodeResponse>
+    public class ListJobHistoriesRequest : RpcAcsRequest<ListJobHistoriesResponse>
     {
-        public AddClusterNodeRequest()
-            : base("retailcloud", "2018-03-13", "AddClusterNode", "retailcloud", "openAPI")
+        public ListJobHistoriesRequest()
+            : base("retailcloud", "2018-03-13", "ListJobHistories", "retailcloud", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private List<string> ecsInstanceIdLists = new List<string>(){ };
+		private long? appId;
 
-		private string clusterInstanceId;
+		private int? pageSize;
 
-		public List<string> EcsInstanceIdLists
+		private long? envId;
+
+		private int? pageNumber;
+
+		private string status;
+
+		public long? AppId
 		{
 			get
 			{
-				return ecsInstanceIdLists;
-			}
-
-			set
-			{
-				ecsInstanceIdLists = value;
-				for (int i = 0; i < ecsInstanceIdLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"EcsInstanceIdList." + (i + 1) , ecsInstanceIdLists[i]);
-				}
-			}
-		}
-
-		public string ClusterInstanceId
-		{
-			get
-			{
-				return clusterInstanceId;
+				return appId;
 			}
 			set	
 			{
-				clusterInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterInstanceId", value);
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public long? EnvId
+		{
+			get
+			{
+				return envId;
+			}
+			set	
+			{
+				envId = value;
+				DictionaryUtil.Add(QueryParameters, "EnvId", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
@@ -79,9 +119,9 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			return false;
 		}
 
-        public override AddClusterNodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListJobHistoriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddClusterNodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListJobHistoriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -237,6 +237,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 
 				private string statefulSet;
 
+				private string cronJob;
+
 				private List<string> configMapList;
 
 				private List<string> secretList;
@@ -274,6 +276,18 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 					set	
 					{
 						statefulSet = value;
+					}
+				}
+
+				public string CronJob
+				{
+					get
+					{
+						return cronJob;
+					}
+					set	
+					{
+						cronJob = value;
 					}
 				}
 

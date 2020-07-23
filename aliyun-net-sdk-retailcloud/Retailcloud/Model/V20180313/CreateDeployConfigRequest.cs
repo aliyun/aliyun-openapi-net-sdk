@@ -37,6 +37,7 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string codePath;
@@ -54,6 +55,8 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 		private string name;
 
 		private List<string> secretLists = new List<string>(){ };
+
+		private string cronJob;
 
 		private string deployment;
 
@@ -166,6 +169,19 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 				{
 					DictionaryUtil.Add(QueryParameters,"SecretList." + (i + 1) , secretLists[i]);
 				}
+			}
+		}
+
+		public string CronJob
+		{
+			get
+			{
+				return cronJob;
+			}
+			set	
+			{
+				cronJob = value;
+				DictionaryUtil.Add(QueryParameters, "CronJob", value);
 			}
 		}
 

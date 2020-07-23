@@ -27,10 +27,10 @@ using Aliyun.Acs.retailcloud.Transform.V20180313;
 
 namespace Aliyun.Acs.retailcloud.Model.V20180313
 {
-    public class AddClusterNodeRequest : RpcAcsRequest<AddClusterNodeResponse>
+    public class RebuildAppInstanceRequest : RpcAcsRequest<RebuildAppInstanceResponse>
     {
-        public AddClusterNodeRequest()
-            : base("retailcloud", "2018-03-13", "AddClusterNode", "retailcloud", "openAPI")
+        public RebuildAppInstanceRequest()
+            : base("retailcloud", "2018-03-13", "RebuildAppInstance", "retailcloud", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,37 +40,48 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			Method = MethodType.POST;
         }
 
-		private List<string> ecsInstanceIdLists = new List<string>(){ };
+		private long? appId;
 
-		private string clusterInstanceId;
+		private long? envId;
 
-		public List<string> EcsInstanceIdLists
+		private string appInstanceId;
+
+		public long? AppId
 		{
 			get
 			{
-				return ecsInstanceIdLists;
-			}
-
-			set
-			{
-				ecsInstanceIdLists = value;
-				for (int i = 0; i < ecsInstanceIdLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"EcsInstanceIdList." + (i + 1) , ecsInstanceIdLists[i]);
-				}
-			}
-		}
-
-		public string ClusterInstanceId
-		{
-			get
-			{
-				return clusterInstanceId;
+				return appId;
 			}
 			set	
 			{
-				clusterInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterInstanceId", value);
+				appId = value;
+				DictionaryUtil.Add(QueryParameters, "AppId", value.ToString());
+			}
+		}
+
+		public long? EnvId
+		{
+			get
+			{
+				return envId;
+			}
+			set	
+			{
+				envId = value;
+				DictionaryUtil.Add(QueryParameters, "EnvId", value.ToString());
+			}
+		}
+
+		public string AppInstanceId
+		{
+			get
+			{
+				return appInstanceId;
+			}
+			set	
+			{
+				appInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "AppInstanceId", value);
 			}
 		}
 
@@ -79,9 +90,9 @@ namespace Aliyun.Acs.retailcloud.Model.V20180313
 			return false;
 		}
 
-        public override AddClusterNodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override RebuildAppInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddClusterNodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return RebuildAppInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
