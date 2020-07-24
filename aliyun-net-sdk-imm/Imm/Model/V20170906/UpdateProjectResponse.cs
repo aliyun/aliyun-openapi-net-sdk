@@ -39,6 +39,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string type;
 
+		private string regionId;
+
 		public string RequestId
 		{
 			get
@@ -120,6 +122,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				type = value;
+			}
+		}
+
+		public string RegionId
+		{
+			get
+			{
+				return regionId;
+			}
+			set	
+			{
+				regionId = value;
 			}
 		}
 	}

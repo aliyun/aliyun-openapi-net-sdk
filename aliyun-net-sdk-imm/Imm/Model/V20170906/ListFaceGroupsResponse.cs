@@ -80,6 +80,22 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private string modifyTime;
 
+			private string remarksA;
+
+			private string remarksB;
+
+			private string remarksC;
+
+			private string remarksD;
+
+			private string remarksArrayA;
+
+			private string remarksArrayB;
+
+			private string externalId;
+
+			private int? imageCount;
+
 			private ListFaceGroups_GroupCoverFace groupCoverFace;
 
 			public string GroupId
@@ -139,6 +155,102 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					modifyTime = value;
+				}
+			}
+
+			public string RemarksA
+			{
+				get
+				{
+					return remarksA;
+				}
+				set	
+				{
+					remarksA = value;
+				}
+			}
+
+			public string RemarksB
+			{
+				get
+				{
+					return remarksB;
+				}
+				set	
+				{
+					remarksB = value;
+				}
+			}
+
+			public string RemarksC
+			{
+				get
+				{
+					return remarksC;
+				}
+				set	
+				{
+					remarksC = value;
+				}
+			}
+
+			public string RemarksD
+			{
+				get
+				{
+					return remarksD;
+				}
+				set	
+				{
+					remarksD = value;
+				}
+			}
+
+			public string RemarksArrayA
+			{
+				get
+				{
+					return remarksArrayA;
+				}
+				set	
+				{
+					remarksArrayA = value;
+				}
+			}
+
+			public string RemarksArrayB
+			{
+				get
+				{
+					return remarksArrayB;
+				}
+				set	
+				{
+					remarksArrayB = value;
+				}
+			}
+
+			public string ExternalId
+			{
+				get
+				{
+					return externalId;
+				}
+				set	
+				{
+					externalId = value;
+				}
+			}
+
+			public int? ImageCount
+			{
+				get
+				{
+					return imageCount;
+				}
+				set	
+				{
+					imageCount = value;
 				}
 			}
 

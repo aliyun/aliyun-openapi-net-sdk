@@ -42,6 +42,14 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				faceGroupsItem.FaceCount = context.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].FaceCount");
 				faceGroupsItem.CreateTime = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].CreateTime");
 				faceGroupsItem.ModifyTime = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].ModifyTime");
+				faceGroupsItem.RemarksA = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksA");
+				faceGroupsItem.RemarksB = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksB");
+				faceGroupsItem.RemarksC = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksC");
+				faceGroupsItem.RemarksD = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksD");
+				faceGroupsItem.RemarksArrayA = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksArrayA");
+				faceGroupsItem.RemarksArrayB = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksArrayB");
+				faceGroupsItem.ExternalId = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].ExternalId");
+				faceGroupsItem.ImageCount = context.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].ImageCount");
 
 				ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem.ListFaceGroups_GroupCoverFace groupCoverFace = new ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem.ListFaceGroups_GroupCoverFace();
 				groupCoverFace.FaceId = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceId");

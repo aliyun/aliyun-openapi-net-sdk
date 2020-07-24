@@ -38,6 +38,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			updateProjectResponse.ServiceRole = context.StringValue("UpdateProject.ServiceRole");
 			updateProjectResponse.CU = context.IntegerValue("UpdateProject.CU");
 			updateProjectResponse.Type = context.StringValue("UpdateProject.Type");
+			updateProjectResponse.RegionId = context.StringValue("UpdateProject.RegionId");
         
 			return updateProjectResponse;
         }

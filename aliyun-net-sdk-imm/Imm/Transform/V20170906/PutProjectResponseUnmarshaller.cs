@@ -40,6 +40,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			putProjectResponse.Type = context.StringValue("PutProject.Type");
 			putProjectResponse.Endpoint = context.StringValue("PutProject.Endpoint");
 			putProjectResponse.BillingType = context.StringValue("PutProject.BillingType");
+			putProjectResponse.RegionId = context.StringValue("PutProject.RegionId");
         
 			return putProjectResponse;
         }

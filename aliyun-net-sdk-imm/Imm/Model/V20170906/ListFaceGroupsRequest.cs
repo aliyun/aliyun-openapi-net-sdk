@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.imm;
 using Aliyun.Acs.imm.Transform;
 using Aliyun.Acs.imm.Transform.V20170906;
 
@@ -30,22 +31,36 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class ListFaceGroupsRequest : RpcAcsRequest<ListFaceGroupsResponse>
     {
         public ListFaceGroupsRequest()
-            : base("imm", "2017-09-06", "ListFaceGroups", "imm", "openAPI")
+            : base("imm", "2017-09-06", "ListFaceGroups")
         {
 			Method = MethodType.POST;
         }
 
 		private string project;
 
+		private string remarksBQuery;
+
+		private string externalId;
+
 		private int? limit;
+
+		private string remarksArrayBQuery;
 
 		private string order;
 
+		private string remarksAQuery;
+
 		private string orderBy;
+
+		private string remarksDQuery;
+
+		private string remarksArrayAQuery;
 
 		private string marker;
 
 		private string setId;
+
+		private string remarksCQuery;
 
 		public string Project
 		{
@@ -57,6 +72,32 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				project = value;
 				DictionaryUtil.Add(QueryParameters, "Project", value);
+			}
+		}
+
+		public string RemarksBQuery
+		{
+			get
+			{
+				return remarksBQuery;
+			}
+			set	
+			{
+				remarksBQuery = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksBQuery", value);
+			}
+		}
+
+		public string ExternalId
+		{
+			get
+			{
+				return externalId;
+			}
+			set	
+			{
+				externalId = value;
+				DictionaryUtil.Add(QueryParameters, "ExternalId", value);
 			}
 		}
 
@@ -73,6 +114,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string RemarksArrayBQuery
+		{
+			get
+			{
+				return remarksArrayBQuery;
+			}
+			set	
+			{
+				remarksArrayBQuery = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksArrayBQuery", value);
+			}
+		}
+
 		public string Order
 		{
 			get
@@ -86,6 +140,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string RemarksAQuery
+		{
+			get
+			{
+				return remarksAQuery;
+			}
+			set	
+			{
+				remarksAQuery = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksAQuery", value);
+			}
+		}
+
 		public string OrderBy
 		{
 			get
@@ -96,6 +163,32 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				orderBy = value;
 				DictionaryUtil.Add(QueryParameters, "OrderBy", value);
+			}
+		}
+
+		public string RemarksDQuery
+		{
+			get
+			{
+				return remarksDQuery;
+			}
+			set	
+			{
+				remarksDQuery = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksDQuery", value);
+			}
+		}
+
+		public string RemarksArrayAQuery
+		{
+			get
+			{
+				return remarksArrayAQuery;
+			}
+			set	
+			{
+				remarksArrayAQuery = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksArrayAQuery", value);
 			}
 		}
 
@@ -122,6 +215,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				setId = value;
 				DictionaryUtil.Add(QueryParameters, "SetId", value);
+			}
+		}
+
+		public string RemarksCQuery
+		{
+			get
+			{
+				return remarksCQuery;
+			}
+			set	
+			{
+				remarksCQuery = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksCQuery", value);
 			}
 		}
 

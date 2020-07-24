@@ -45,6 +45,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				projectsItem.CU = context.IntegerValue("ListProjects.Projects["+ i +"].CU");
 				projectsItem.Type = context.StringValue("ListProjects.Projects["+ i +"].Type");
 				projectsItem.BillingType = context.StringValue("ListProjects.Projects["+ i +"].BillingType");
+				projectsItem.RegionId = context.StringValue("ListProjects.Projects["+ i +"].RegionId");
 
 				listProjectsResponse_projects.Add(projectsItem);
 			}

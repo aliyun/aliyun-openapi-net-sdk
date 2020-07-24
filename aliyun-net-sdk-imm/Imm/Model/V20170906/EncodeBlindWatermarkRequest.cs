@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.imm;
 using Aliyun.Acs.imm.Transform;
 using Aliyun.Acs.imm.Transform.V20170906;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class EncodeBlindWatermarkRequest : RpcAcsRequest<EncodeBlindWatermarkResponse>
     {
         public EncodeBlindWatermarkRequest()
-            : base("imm", "2017-09-06", "EncodeBlindWatermark", "imm", "openAPI")
+            : base("imm", "2017-09-06", "EncodeBlindWatermark")
         {
 			Method = MethodType.POST;
         }
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		private string content;
 
 		private string targetUri;
+
+		private string model;
 
 		private string targetImageType;
 
@@ -111,6 +114,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				targetUri = value;
 				DictionaryUtil.Add(QueryParameters, "TargetUri", value);
+			}
+		}
+
+		public string Model
+		{
+			get
+			{
+				return model;
+			}
+			set	
+			{
+				model = value;
+				DictionaryUtil.Add(QueryParameters, "Model", value);
 			}
 		}
 

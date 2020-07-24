@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.imm;
 using Aliyun.Acs.imm.Transform;
 using Aliyun.Acs.imm.Transform.V20170906;
 
@@ -30,16 +31,30 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class UpdateFaceGroupRequest : RpcAcsRequest<UpdateFaceGroupResponse>
     {
         public UpdateFaceGroupRequest()
-            : base("imm", "2017-09-06", "UpdateFaceGroup", "imm", "openAPI")
+            : base("imm", "2017-09-06", "UpdateFaceGroup")
         {
 			Method = MethodType.POST;
         }
 
 		private string project;
 
+		private string externalId;
+
 		private string groupId;
 
+		private string remarksB;
+
+		private string remarksA;
+
 		private string groupName;
+
+		private string remarksArrayA;
+
+		private string remarksArrayB;
+
+		private string remarksD;
+
+		private string remarksC;
 
 		private string setId;
 
@@ -58,6 +73,19 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string ExternalId
+		{
+			get
+			{
+				return externalId;
+			}
+			set	
+			{
+				externalId = value;
+				DictionaryUtil.Add(QueryParameters, "ExternalId", value);
+			}
+		}
+
 		public string GroupId
 		{
 			get
@@ -71,6 +99,32 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string RemarksB
+		{
+			get
+			{
+				return remarksB;
+			}
+			set	
+			{
+				remarksB = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksB", value);
+			}
+		}
+
+		public string RemarksA
+		{
+			get
+			{
+				return remarksA;
+			}
+			set	
+			{
+				remarksA = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksA", value);
+			}
+		}
+
 		public string GroupName
 		{
 			get
@@ -81,6 +135,58 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				groupName = value;
 				DictionaryUtil.Add(QueryParameters, "GroupName", value);
+			}
+		}
+
+		public string RemarksArrayA
+		{
+			get
+			{
+				return remarksArrayA;
+			}
+			set	
+			{
+				remarksArrayA = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksArrayA", value);
+			}
+		}
+
+		public string RemarksArrayB
+		{
+			get
+			{
+				return remarksArrayB;
+			}
+			set	
+			{
+				remarksArrayB = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksArrayB", value);
+			}
+		}
+
+		public string RemarksD
+		{
+			get
+			{
+				return remarksD;
+			}
+			set	
+			{
+				remarksD = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksD", value);
+			}
+		}
+
+		public string RemarksC
+		{
+			get
+			{
+				return remarksC;
+			}
+			set	
+			{
+				remarksC = value;
+				DictionaryUtil.Add(QueryParameters, "RemarksC", value);
 			}
 		}
 

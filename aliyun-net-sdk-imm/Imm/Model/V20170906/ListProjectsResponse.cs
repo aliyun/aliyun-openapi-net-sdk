@@ -86,6 +86,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private string billingType;
 
+			private string regionId;
+
 			public string Project
 			{
 				get
@@ -179,6 +181,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					billingType = value;
+				}
+			}
+
+			public string RegionId
+			{
+				get
+				{
+					return regionId;
+				}
+				set	
+				{
+					regionId = value;
 				}
 			}
 		}

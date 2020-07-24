@@ -28,15 +28,19 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class DeleteProjectRequest : RpcAcsRequest<DeleteProjectResponse>
+    public class GetImageCroppingSuggestionsRequest : RpcAcsRequest<GetImageCroppingSuggestionsResponse>
     {
-        public DeleteProjectRequest()
-            : base("imm", "2017-09-06", "DeleteProject")
+        public GetImageCroppingSuggestionsRequest()
+            : base("imm", "2017-09-06", "GetImageCroppingSuggestions")
         {
 			Method = MethodType.POST;
         }
 
 		private string project;
+
+		private string aspectRatios;
+
+		private string imageUri;
 
 		public string Project
 		{
@@ -51,14 +55,40 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string AspectRatios
+		{
+			get
+			{
+				return aspectRatios;
+			}
+			set	
+			{
+				aspectRatios = value;
+				DictionaryUtil.Add(QueryParameters, "AspectRatios", value);
+			}
+		}
+
+		public string ImageUri
+		{
+			get
+			{
+				return imageUri;
+			}
+			set	
+			{
+				imageUri = value;
+				DictionaryUtil.Add(QueryParameters, "ImageUri", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DeleteProjectResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetImageCroppingSuggestionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteProjectResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetImageCroppingSuggestionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
