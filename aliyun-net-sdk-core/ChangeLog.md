@@ -1,3 +1,7 @@
+### 2020-07-24 Version 1.5.7
+* Fixed endpointList 
+* add validate for region, productNetwork, productSuffix
+
 ### 2020-04-21 Version 1.5.6
 * Fixed Dict.Add
 
