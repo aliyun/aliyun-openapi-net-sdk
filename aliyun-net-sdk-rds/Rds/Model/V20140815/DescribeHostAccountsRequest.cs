@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class TransformDBInstancePayTypeRequest : RpcAcsRequest<TransformDBInstancePayTypeResponse>
+    public class DescribeHostAccountsRequest : RpcAcsRequest<DescribeHostAccountsResponse>
     {
-        public TransformDBInstancePayTypeRequest()
-            : base("Rds", "2014-08-15", "TransformDBInstancePayType", "rds", "openAPI")
+        public DescribeHostAccountsRequest()
+            : base("Rds", "2014-08-15", "DescribeHostAccounts", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,23 +42,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
-
-		private string dBInstanceId;
-
-		private string businessInfo;
-
-		private string period;
-
 		private string resourceOwnerAccount;
 
-		private string ownerAccount;
+		private string clientToken;
 
 		private long? ownerId;
 
-		private int? usedTime;
-
-		private string payType;
+		private string dBInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -70,58 +60,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string DBInstanceId
-		{
-			get
-			{
-				return dBInstanceId;
-			}
-			set	
-			{
-				dBInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
-			}
-		}
-
-		public string BusinessInfo
-		{
-			get
-			{
-				return businessInfo;
-			}
-			set	
-			{
-				businessInfo = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
-			}
-		}
-
-		public string Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value);
 			}
 		}
 
@@ -138,16 +76,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string OwnerAccount
+		public string ClientToken
 		{
 			get
 			{
-				return ownerAccount;
+				return clientToken;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -164,40 +102,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? UsedTime
+		public string DBInstanceId
 		{
 			get
 			{
-				return usedTime;
+				return dBInstanceId;
 			}
 			set	
 			{
-				usedTime = value;
-				DictionaryUtil.Add(QueryParameters, "UsedTime", value.ToString());
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
-		public string PayType
-		{
-			get
-			{
-				return payType;
-			}
-			set	
-			{
-				payType = value;
-				DictionaryUtil.Add(QueryParameters, "PayType", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override TransformDBInstancePayTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeHostAccountsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TransformDBInstancePayTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeHostAccountsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

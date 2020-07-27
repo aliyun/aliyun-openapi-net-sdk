@@ -116,11 +116,11 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				extra.ReplicaGroupStatus = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ReplicaGroupStatus");
 				extra.ActiveReplicaDBInstanceID = context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.ActiveReplicaDBInstanceID");
 
-				List<string> extra_dBInstanceId = new List<string>();
-				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.Items["+ i +"].Extra.DBInstanceId.Length"); j++) {
-					extra_dBInstanceId.Add(context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.DBInstanceId["+ j +"]"));
+				List<string> extra_dBInstanceIds = new List<string>();
+				for (int j = 0; j < context.Length("DescribeDBInstanceAttribute.Items["+ i +"].Extra.DBInstanceIds.Length"); j++) {
+					extra_dBInstanceIds.Add(context.StringValue("DescribeDBInstanceAttribute.Items["+ i +"].Extra.DBInstanceIds["+ j +"]"));
 				}
-				extra.DBInstanceId = extra_dBInstanceId;
+				extra.DBInstanceIds = extra_dBInstanceIds;
 				dBInstanceAttribute.Extra = extra;
 
 				List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveZone> dBInstanceAttribute_slaveZones = new List<DescribeDBInstanceAttributeResponse.DescribeDBInstanceAttribute_DBInstanceAttribute.DescribeDBInstanceAttribute_SlaveZone>();

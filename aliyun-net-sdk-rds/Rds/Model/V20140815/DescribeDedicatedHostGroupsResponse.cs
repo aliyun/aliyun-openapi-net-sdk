@@ -88,6 +88,26 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string openPermission;
 
+			private float? memUtility;
+
+			private float? memUsedAmount;
+
+			private float? diskUtility;
+
+			private float? diskUsedAmount;
+
+			private float? cpuAllocateRation;
+
+			private float? cpuAllocatedAmount;
+
+			private float? memAllocateRation;
+
+			private float? memAllocatedAmount;
+
+			private float? diskAllocateRation;
+
+			private float? diskAllocatedAmount;
+
 			private List<string> zoneIDList;
 
 			public string DedicatedHostGroupId
@@ -279,6 +299,126 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					openPermission = value;
+				}
+			}
+
+			public float? MemUtility
+			{
+				get
+				{
+					return memUtility;
+				}
+				set	
+				{
+					memUtility = value;
+				}
+			}
+
+			public float? MemUsedAmount
+			{
+				get
+				{
+					return memUsedAmount;
+				}
+				set	
+				{
+					memUsedAmount = value;
+				}
+			}
+
+			public float? DiskUtility
+			{
+				get
+				{
+					return diskUtility;
+				}
+				set	
+				{
+					diskUtility = value;
+				}
+			}
+
+			public float? DiskUsedAmount
+			{
+				get
+				{
+					return diskUsedAmount;
+				}
+				set	
+				{
+					diskUsedAmount = value;
+				}
+			}
+
+			public float? CpuAllocateRation
+			{
+				get
+				{
+					return cpuAllocateRation;
+				}
+				set	
+				{
+					cpuAllocateRation = value;
+				}
+			}
+
+			public float? CpuAllocatedAmount
+			{
+				get
+				{
+					return cpuAllocatedAmount;
+				}
+				set	
+				{
+					cpuAllocatedAmount = value;
+				}
+			}
+
+			public float? MemAllocateRation
+			{
+				get
+				{
+					return memAllocateRation;
+				}
+				set	
+				{
+					memAllocateRation = value;
+				}
+			}
+
+			public float? MemAllocatedAmount
+			{
+				get
+				{
+					return memAllocatedAmount;
+				}
+				set	
+				{
+					memAllocatedAmount = value;
+				}
+			}
+
+			public float? DiskAllocateRation
+			{
+				get
+				{
+					return diskAllocateRation;
+				}
+				set	
+				{
+					diskAllocateRation = value;
+				}
+			}
+
+			public float? DiskAllocatedAmount
+			{
+				get
+				{
+					return diskAllocatedAmount;
+				}
+				set	
+				{
+					diskAllocatedAmount = value;
 				}
 			}
 

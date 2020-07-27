@@ -122,6 +122,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string imageCategory;
 
+			private string dedicatedHostGroupId;
+
+			private string engine;
+
 			public string HostName
 			{
 				get
@@ -431,6 +435,30 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					imageCategory = value;
+				}
+			}
+
+			public string DedicatedHostGroupId
+			{
+				get
+				{
+					return dedicatedHostGroupId;
+				}
+				set	
+				{
+					dedicatedHostGroupId = value;
+				}
+			}
+
+			public string Engine
+			{
+				get
+				{
+					return engine;
+				}
+				set	
+				{
+					engine = value;
 				}
 			}
 		}

@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string backupPolicyMode;
 
+		private string releasedKeepPolicy;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -90,6 +92,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupPolicyMode = value;
 				DictionaryUtil.Add(QueryParameters, "BackupPolicyMode", value);
+			}
+		}
+
+		public string ReleasedKeepPolicy
+		{
+			get
+			{
+				return releasedKeepPolicy;
+			}
+			set	
+			{
+				releasedKeepPolicy = value;
+				DictionaryUtil.Add(QueryParameters, "ReleasedKeepPolicy", value);
 			}
 		}
 

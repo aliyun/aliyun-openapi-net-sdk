@@ -50,6 +50,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string backupLog;
 
+		private string backupInterval;
+
 		private string highSpaceUsageProtection;
 
 		private int? logBackupLocalRetentionNumber;
@@ -81,6 +83,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string backupRetentionPeriod;
 
 		private string archiveBackupRetentionPeriod;
+
+		private string category;
 
 		private string logBackupRetentionPeriod;
 
@@ -146,6 +150,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				backupLog = value;
 				DictionaryUtil.Add(QueryParameters, "BackupLog", value);
+			}
+		}
+
+		public string BackupInterval
+		{
+			get
+			{
+				return backupInterval;
+			}
+			set	
+			{
+				backupInterval = value;
+				DictionaryUtil.Add(QueryParameters, "BackupInterval", value);
 			}
 		}
 
@@ -354,6 +371,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				archiveBackupRetentionPeriod = value;
 				DictionaryUtil.Add(QueryParameters, "ArchiveBackupRetentionPeriod", value);
+			}
+		}
+
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(QueryParameters, "Category", value);
 			}
 		}
 

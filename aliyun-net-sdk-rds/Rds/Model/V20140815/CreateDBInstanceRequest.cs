@@ -86,6 +86,10 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string targetDedicatedHostIdForSlave;
 
+		private string zoneIdSlave1;
+
+		private string zoneIdSlave2;
+
 		private string dBIsIgnoreCase;
 
 		private string engine;
@@ -402,6 +406,32 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				targetDedicatedHostIdForSlave = value;
 				DictionaryUtil.Add(QueryParameters, "TargetDedicatedHostIdForSlave", value);
+			}
+		}
+
+		public string ZoneIdSlave1
+		{
+			get
+			{
+				return zoneIdSlave1;
+			}
+			set	
+			{
+				zoneIdSlave1 = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneIdSlave1", value);
+			}
+		}
+
+		public string ZoneIdSlave2
+		{
+			get
+			{
+				return zoneIdSlave2;
+			}
+			set	
+			{
+				zoneIdSlave2 = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneIdSlave2", value);
 			}
 		}
 

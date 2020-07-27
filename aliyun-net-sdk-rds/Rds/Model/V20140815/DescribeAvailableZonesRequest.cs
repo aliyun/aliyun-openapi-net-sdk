@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string engine;
 
+		private string instanceChargeType;
+
 		private string zoneId;
 
 		public long? ResourceOwnerId
@@ -84,6 +86,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				engine = value;
 				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
 			}
 		}
 

@@ -50,15 +50,21 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string resourceGroupId;
 
+		private string tddlRegionConfig;
+
 		private string targetDedicatedHostIdForMaster;
 
 		private string dBInstanceId;
 
 		private string dBInstanceDescription;
 
+		private string gdnInstanceName;
+
 		private string dBInstanceStorageType;
 
 		private string dedicatedHostGroupId;
+
+		private string tddlBizType;
 
 		private string resourceOwnerAccount;
 
@@ -147,6 +153,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string TddlRegionConfig
+		{
+			get
+			{
+				return tddlRegionConfig;
+			}
+			set	
+			{
+				tddlRegionConfig = value;
+				DictionaryUtil.Add(QueryParameters, "TddlRegionConfig", value);
+			}
+		}
+
 		public string TargetDedicatedHostIdForMaster
 		{
 			get
@@ -186,6 +205,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string GdnInstanceName
+		{
+			get
+			{
+				return gdnInstanceName;
+			}
+			set	
+			{
+				gdnInstanceName = value;
+				DictionaryUtil.Add(QueryParameters, "GdnInstanceName", value);
+			}
+		}
+
 		public string DBInstanceStorageType
 		{
 			get
@@ -209,6 +241,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				dedicatedHostGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "DedicatedHostGroupId", value);
+			}
+		}
+
+		public string TddlBizType
+		{
+			get
+			{
+				return tddlBizType;
+			}
+			set	
+			{
+				tddlBizType = value;
+				DictionaryUtil.Add(QueryParameters, "TddlBizType", value);
 			}
 		}
 

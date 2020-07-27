@@ -52,6 +52,16 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dedicatedHostGroupsItem.DedicatedHostCountGroupByHostType = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DedicatedHostCountGroupByHostType");
 				dedicatedHostGroupsItem.BastionInstanceId = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].BastionInstanceId");
 				dedicatedHostGroupsItem.OpenPermission = context.StringValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].OpenPermission");
+				dedicatedHostGroupsItem.MemUtility = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemUtility");
+				dedicatedHostGroupsItem.MemUsedAmount = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemUsedAmount");
+				dedicatedHostGroupsItem.DiskUtility = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskUtility");
+				dedicatedHostGroupsItem.DiskUsedAmount = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskUsedAmount");
+				dedicatedHostGroupsItem.CpuAllocateRation = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].CpuAllocateRation");
+				dedicatedHostGroupsItem.CpuAllocatedAmount = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].CpuAllocatedAmount");
+				dedicatedHostGroupsItem.MemAllocateRation = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemAllocateRation");
+				dedicatedHostGroupsItem.MemAllocatedAmount = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].MemAllocatedAmount");
+				dedicatedHostGroupsItem.DiskAllocateRation = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskAllocateRation");
+				dedicatedHostGroupsItem.DiskAllocatedAmount = context.FloatValue("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].DiskAllocatedAmount");
 
 				List<string> dedicatedHostGroupsItem_zoneIDList = new List<string>();
 				for (int j = 0; j < context.Length("DescribeDedicatedHostGroups.DedicatedHostGroups["+ i +"].ZoneIDList.Length"); j++) {

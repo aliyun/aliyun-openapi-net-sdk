@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? orderId;
 
+		private string dedicatedHostId;
+
 		private long? ownerId;
 
 		private string zoneId;
@@ -146,6 +148,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				orderId = value;
 				DictionaryUtil.Add(QueryParameters, "OrderId", value.ToString());
+			}
+		}
+
+		public string DedicatedHostId
+		{
+			get
+			{
+				return dedicatedHostId;
+			}
+			set	
+			{
+				dedicatedHostId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
 			}
 		}
 

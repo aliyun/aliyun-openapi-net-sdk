@@ -1179,7 +1179,7 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 				private string activeReplicaDBInstanceID;
 
-				private List<string> dBInstanceId;
+				private List<string> dBInstanceIds;
 
 				public string ReplicaGroupID
 				{
@@ -1217,15 +1217,15 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 					}
 				}
 
-				public List<string> DBInstanceId
+				public List<string> DBInstanceIds
 				{
 					get
 					{
-						return dBInstanceId;
+						return dBInstanceIds;
 					}
 					set	
 					{
-						dBInstanceId = value;
+						dBInstanceIds = value;
 					}
 				}
 			}

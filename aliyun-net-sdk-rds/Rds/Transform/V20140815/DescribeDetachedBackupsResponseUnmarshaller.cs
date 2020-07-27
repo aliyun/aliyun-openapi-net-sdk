@@ -61,6 +61,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				backup.MetaStatus = context.StringValue("DescribeDetachedBackups.Items["+ i +"].MetaStatus");
 				backup.SlaveStatus = context.StringValue("DescribeDetachedBackups.Items["+ i +"].SlaveStatus");
 				backup.ConsistentTime = context.LongValue("DescribeDetachedBackups.Items["+ i +"].ConsistentTime");
+				backup.IsAvail = context.IntegerValue("DescribeDetachedBackups.Items["+ i +"].IsAvail");
 
 				describeDetachedBackupsResponse_items.Add(backup);
 			}

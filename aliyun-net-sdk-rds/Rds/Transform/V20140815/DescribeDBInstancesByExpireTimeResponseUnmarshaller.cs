@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dBInstanceExpireTime.ExpireTime = context.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].ExpireTime");
 				dBInstanceExpireTime.DBInstanceStatus = context.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].DBInstanceStatus");
 				dBInstanceExpireTime.LockMode = context.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].LockMode");
+				dBInstanceExpireTime.PayType = context.StringValue("DescribeDBInstancesByExpireTime.Items["+ i +"].PayType");
 
 				describeDBInstancesByExpireTimeResponse_items.Add(dBInstanceExpireTime);
 			}

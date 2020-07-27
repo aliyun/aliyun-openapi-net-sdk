@@ -65,6 +65,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private int? logBackupLocalRetentionNumber;
 
+		private string category;
+
+		private int? supportReleasedKeep;
+
+		private string backupInterval;
+
 		private DescribeBackupPolicy_DuplicationLocation duplicationLocation;
 
 		public string RequestId
@@ -304,6 +310,42 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			set	
 			{
 				logBackupLocalRetentionNumber = value;
+			}
+		}
+
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+			}
+		}
+
+		public int? SupportReleasedKeep
+		{
+			get
+			{
+				return supportReleasedKeep;
+			}
+			set	
+			{
+				supportReleasedKeep = value;
+			}
+		}
+
+		public string BackupInterval
+		{
+			get
+			{
+				return backupInterval;
+			}
+			set	
+			{
+				backupInterval = value;
 			}
 		}
 

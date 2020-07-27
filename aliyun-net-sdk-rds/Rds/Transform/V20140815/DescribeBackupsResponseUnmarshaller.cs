@@ -65,6 +65,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				backup.BackupInitiator = context.StringValue("DescribeBackups.Items["+ i +"].BackupInitiator");
 				backup.CopyOnlyBackup = context.StringValue("DescribeBackups.Items["+ i +"].CopyOnlyBackup");
 				backup.StorageClass = context.StringValue("DescribeBackups.Items["+ i +"].StorageClass");
+				backup.IsAvail = context.IntegerValue("DescribeBackups.Items["+ i +"].IsAvail");
 
 				describeBackupsResponse_items.Add(backup);
 			}

@@ -63,6 +63,8 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				dedicatedHostsItem.MemoryUsed = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].MemoryUsed");
 				dedicatedHostsItem.StorageUsed = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].StorageUsed");
 				dedicatedHostsItem.ImageCategory = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].ImageCategory");
+				dedicatedHostsItem.DedicatedHostGroupId = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].DedicatedHostGroupId");
+				dedicatedHostsItem.Engine = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].Engine");
 
 				describeDedicatedHostsResponse_dedicatedHosts.Add(dedicatedHostsItem);
 			}

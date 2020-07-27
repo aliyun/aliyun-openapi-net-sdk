@@ -108,6 +108,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string lockMode;
 
+			private string payType;
+
 			public string DBInstanceId
 			{
 				get
@@ -165,6 +167,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					lockMode = value;
+				}
+			}
+
+			public string PayType
+			{
+				get
+				{
+					return payType;
+				}
+				set	
+				{
+					payType = value;
 				}
 			}
 		}

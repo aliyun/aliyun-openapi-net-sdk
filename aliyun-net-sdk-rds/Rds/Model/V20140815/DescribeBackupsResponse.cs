@@ -174,6 +174,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string storageClass;
 
+			private int? isAvail;
+
 			public string BackupId
 			{
 				get
@@ -459,6 +461,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					storageClass = value;
+				}
+			}
+
+			public int? IsAvail
+			{
+				get
+				{
+					return isAvail;
+				}
+				set	
+				{
+					isAvail = value;
 				}
 			}
 		}
