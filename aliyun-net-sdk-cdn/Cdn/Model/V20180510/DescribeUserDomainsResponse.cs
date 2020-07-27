@@ -118,6 +118,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 
 			private string sandbox;
 
+			private string coverage;
+
 			private List<DescribeUserDomains_Source> sources;
 
 			public string DomainName
@@ -237,6 +239,18 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 				set	
 				{
 					sandbox = value;
+				}
+			}
+
+			public string Coverage
+			{
+				get
+				{
+					return coverage;
+				}
+				set	
+				{
+					coverage = value;
 				}
 			}
 

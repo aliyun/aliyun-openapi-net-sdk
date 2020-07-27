@@ -24,29 +24,54 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class SetUserGreenManagerConfigRequest : RpcAcsRequest<SetUserGreenManagerConfigResponse>
+    public class DescribeCdnUserBillTypeRequest : RpcAcsRequest<DescribeCdnUserBillTypeResponse>
     {
-        public SetUserGreenManagerConfigRequest()
-            : base("Cdn", "2014-11-11", "SetUserGreenManagerConfig")
+        public DescribeCdnUserBillTypeRequest()
+            : base("Cdn", "2018-05-10", "DescribeCdnUserBillType")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string startTime;
+
+		private string endTime;
 
 		private long? ownerId;
 
-		private string securityToken;
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
 
-		private string quota;
-
-		private string ratio;
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+			}
+		}
 
 		public long? OwnerId
 		{
@@ -61,48 +86,9 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Quota
-		{
-			get
-			{
-				return quota;
-			}
-			set	
-			{
-				quota = value;
-				DictionaryUtil.Add(QueryParameters, "Quota", value);
-			}
-		}
-
-		public string Ratio
-		{
-			get
-			{
-				return ratio;
-			}
-			set	
-			{
-				ratio = value;
-				DictionaryUtil.Add(QueryParameters, "Ratio", value);
-			}
-		}
-
-        public override SetUserGreenManagerConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeCdnUserBillTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetUserGreenManagerConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCdnUserBillTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

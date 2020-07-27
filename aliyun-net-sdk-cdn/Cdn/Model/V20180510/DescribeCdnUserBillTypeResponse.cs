@@ -20,14 +20,14 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class StartMixStreamsServiceResponse : AcsResponse
+	public class DescribeCdnUserBillTypeResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private List<StartMixStreamsService_MixStreamsInfo> mixStreamsInfoList;
+		private List<DescribeCdnUserBillType_BillTypeDataItem> billTypeData;
 
 		public string RequestId
 		{
@@ -41,60 +41,102 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public List<StartMixStreamsService_MixStreamsInfo> MixStreamsInfoList
+		public List<DescribeCdnUserBillType_BillTypeDataItem> BillTypeData
 		{
 			get
 			{
-				return mixStreamsInfoList;
+				return billTypeData;
 			}
 			set	
 			{
-				mixStreamsInfoList = value;
+				billTypeData = value;
 			}
 		}
 
-		public class StartMixStreamsService_MixStreamsInfo
+		public class DescribeCdnUserBillType_BillTypeDataItem
 		{
 
-			private string domainName;
+			private string startTime;
 
-			private string appName;
+			private string endTime;
 
-			private string streamName;
+			private string product;
 
-			public string DomainName
+			private string dimension;
+
+			private string billType;
+
+			private string billingCycle;
+
+			public string StartTime
 			{
 				get
 				{
-					return domainName;
+					return startTime;
 				}
 				set	
 				{
-					domainName = value;
+					startTime = value;
 				}
 			}
 
-			public string AppName
+			public string EndTime
 			{
 				get
 				{
-					return appName;
+					return endTime;
 				}
 				set	
 				{
-					appName = value;
+					endTime = value;
 				}
 			}
 
-			public string StreamName
+			public string Product
 			{
 				get
 				{
-					return streamName;
+					return product;
 				}
 				set	
 				{
-					streamName = value;
+					product = value;
+				}
+			}
+
+			public string Dimension
+			{
+				get
+				{
+					return dimension;
+				}
+				set	
+				{
+					dimension = value;
+				}
+			}
+
+			public string BillType
+			{
+				get
+				{
+					return billType;
+				}
+				set	
+				{
+					billType = value;
+				}
+			}
+
+			public string BillingCycle
+			{
+				get
+				{
+					return billingCycle;
+				}
+				set	
+				{
+					billingCycle = value;
 				}
 			}
 		}

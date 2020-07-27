@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 				pageData.SslProtocol = context.StringValue("DescribeUserDomains.Domains["+ i +"].SslProtocol");
 				pageData.ResourceGroupId = context.StringValue("DescribeUserDomains.Domains["+ i +"].ResourceGroupId");
 				pageData.Sandbox = context.StringValue("DescribeUserDomains.Domains["+ i +"].Sandbox");
+				pageData.Coverage = context.StringValue("DescribeUserDomains.Domains["+ i +"].Coverage");
 
 				List<DescribeUserDomainsResponse.DescribeUserDomains_PageData.DescribeUserDomains_Source> pageData_sources = new List<DescribeUserDomainsResponse.DescribeUserDomains_PageData.DescribeUserDomains_Source>();
 				for (int j = 0; j < context.Length("DescribeUserDomains.Domains["+ i +"].Sources.Length"); j++) {

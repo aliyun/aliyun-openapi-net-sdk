@@ -20,12 +20,16 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class DeleteLiveDomainMappingResponse : AcsResponse
+	public class DescribeDomainNamesOfVersionResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private int? totalCount;
+
+		private List<DescribeDomainNamesOfVersion_Content> contents;
 
 		public string RequestId
 		{
@@ -36,6 +40,62 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
+		public List<DescribeDomainNamesOfVersion_Content> Contents
+		{
+			get
+			{
+				return contents;
+			}
+			set	
+			{
+				contents = value;
+			}
+		}
+
+		public class DescribeDomainNamesOfVersion_Content
+		{
+
+			private string domainId;
+
+			private string domainName;
+
+			public string DomainId
+			{
+				get
+				{
+					return domainId;
+				}
+				set	
+				{
+					domainId = value;
+				}
+			}
+
+			public string DomainName
+			{
+				get
+				{
+					return domainName;
+				}
+				set	
+				{
+					domainName = value;
+				}
 			}
 		}
 	}

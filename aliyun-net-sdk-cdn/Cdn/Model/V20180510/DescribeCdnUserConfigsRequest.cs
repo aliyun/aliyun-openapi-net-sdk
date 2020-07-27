@@ -24,83 +24,37 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class DeleteLiveStreamTranscodeRequest : RpcAcsRequest<DeleteLiveStreamTranscodeResponse>
+    public class DescribeCdnUserConfigsRequest : RpcAcsRequest<DescribeCdnUserConfigsResponse>
     {
-        public DeleteLiveStreamTranscodeRequest()
-            : base("Cdn", "2014-11-11", "DeleteLiveStreamTranscode")
+        public DescribeCdnUserConfigsRequest()
+            : base("Cdn", "2018-05-10", "DescribeCdnUserConfigs")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string template;
-
-		private string securityToken;
-
-		private string app;
-
-		private string ownerAccount;
+		private string functionName;
 
 		private long? ownerId;
 
-		private string domain;
-
-		public string Template
+		public string FunctionName
 		{
 			get
 			{
-				return template;
+				return functionName;
 			}
 			set	
 			{
-				template = value;
-				DictionaryUtil.Add(QueryParameters, "Template", value);
-			}
-		}
-
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string App
-		{
-			get
-			{
-				return app;
-			}
-			set	
-			{
-				app = value;
-				DictionaryUtil.Add(QueryParameters, "App", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				functionName = value;
+				DictionaryUtil.Add(QueryParameters, "FunctionName", value);
 			}
 		}
 
@@ -117,22 +71,14 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string Domain
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return domain;
-			}
-			set	
-			{
-				domain = value;
-				DictionaryUtil.Add(QueryParameters, "Domain", value);
-			}
+			return false;
 		}
 
-        public override DeleteLiveStreamTranscodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeCdnUserConfigsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteLiveStreamTranscodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCdnUserConfigsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

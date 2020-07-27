@@ -24,42 +24,67 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class SetHttpErrorPageConfigRequest : RpcAcsRequest<SetHttpErrorPageConfigResponse>
+    public class DescribeRefreshTaskByIdRequest : RpcAcsRequest<DescribeRefreshTaskByIdResponse>
     {
-        public SetHttpErrorPageConfigRequest()
-            : base("Cdn", "2014-11-11", "SetHttpErrorPageConfig")
+        public DescribeRefreshTaskByIdRequest()
+            : base("Cdn", "2018-05-10", "DescribeRefreshTaskById")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string domainName;
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private string taskId;
 
 		private long? ownerId;
 
-		private string securityToken;
-
-		private string pageUrl;
-
-		private string errorCode;
-
-		public string DomainName
+		public int? PageNumber
 		{
 			get
 			{
-				return domainName;
+				return pageNumber;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
@@ -76,48 +101,14 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string SecurityToken
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
+			return false;
 		}
 
-		public string PageUrl
-		{
-			get
-			{
-				return pageUrl;
-			}
-			set	
-			{
-				pageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "PageUrl", value);
-			}
-		}
-
-		public string ErrorCode
-		{
-			get
-			{
-				return errorCode;
-			}
-			set	
-			{
-				errorCode = value;
-				DictionaryUtil.Add(QueryParameters, "ErrorCode", value);
-			}
-		}
-
-        public override SetHttpErrorPageConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeRefreshTaskByIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetHttpErrorPageConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeRefreshTaskByIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

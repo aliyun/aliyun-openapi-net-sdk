@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string serverCertificate;
@@ -57,8 +58,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private string domainName;
 
 		private long? ownerId;
-
-		private string region;
 
 		public string ServerCertificate
 		{
@@ -174,19 +173,6 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 

@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private int? pageNumber;
@@ -55,6 +56,8 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 		private int? pageSize;
 
 		private List<Tag> tags = new List<Tag>(){ };
+
+		private string coverage;
 
 		private string domainName;
 
@@ -172,6 +175,19 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public string Coverage
+		{
+			get
+			{
+				return coverage;
+			}
+			set	
+			{
+				coverage = value;
+				DictionaryUtil.Add(QueryParameters, "Coverage", value);
 			}
 		}
 

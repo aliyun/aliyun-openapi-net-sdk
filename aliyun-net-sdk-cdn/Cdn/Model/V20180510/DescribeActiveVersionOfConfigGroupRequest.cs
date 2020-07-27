@@ -24,70 +24,28 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class SetErrorPageConfigRequest : RpcAcsRequest<SetErrorPageConfigResponse>
+    public class DescribeActiveVersionOfConfigGroupRequest : RpcAcsRequest<DescribeActiveVersionOfConfigGroupResponse>
     {
-        public SetErrorPageConfigRequest()
-            : base("Cdn", "2014-11-11", "SetErrorPageConfig")
+        public DescribeActiveVersionOfConfigGroupRequest()
+            : base("Cdn", "2018-05-10", "DescribeActiveVersionOfConfigGroup")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
-
-		private string pageType;
-
-		private string domainName;
-
-		private string customPageUrl;
 
 		private long? ownerId;
 
-		private string securityToken;
+		private string env;
 
-		public string PageType
-		{
-			get
-			{
-				return pageType;
-			}
-			set	
-			{
-				pageType = value;
-				DictionaryUtil.Add(QueryParameters, "PageType", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string CustomPageUrl
-		{
-			get
-			{
-				return customPageUrl;
-			}
-			set	
-			{
-				customPageUrl = value;
-				DictionaryUtil.Add(QueryParameters, "CustomPageUrl", value);
-			}
-		}
+		private string configGroupId;
 
 		public long? OwnerId
 		{
@@ -102,22 +60,35 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string SecurityToken
+		public string Env
 		{
 			get
 			{
-				return securityToken;
+				return env;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				env = value;
+				DictionaryUtil.Add(QueryParameters, "Env", value);
 			}
 		}
 
-        public override SetErrorPageConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ConfigGroupId
+		{
+			get
+			{
+				return configGroupId;
+			}
+			set	
+			{
+				configGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ConfigGroupId", value);
+			}
+		}
+
+        public override DescribeActiveVersionOfConfigGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetErrorPageConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveVersionOfConfigGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

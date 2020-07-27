@@ -24,40 +24,67 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class DeleteLiveAppSnapshotConfigRequest : RpcAcsRequest<DeleteLiveAppSnapshotConfigResponse>
+    public class DescribeDomainNamesOfVersionRequest : RpcAcsRequest<DescribeDomainNamesOfVersionResponse>
     {
-        public DeleteLiveAppSnapshotConfigRequest()
-            : base("Cdn", "2014-11-11", "DeleteLiveAppSnapshotConfig")
+        public DescribeDomainNamesOfVersionRequest()
+            : base("Cdn", "2018-05-10", "DescribeDomainNamesOfVersion")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string domainName;
+		private string versionId;
+
+		private string pageSize;
+
+		private int? pageIndex;
 
 		private long? ownerId;
 
-		private string appName;
-
-		private string securityToken;
-
-		public string DomainName
+		public string VersionId
 		{
 			get
 			{
-				return domainName;
+				return versionId;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				versionId = value;
+				DictionaryUtil.Add(QueryParameters, "VersionId", value);
+			}
+		}
+
+		public string PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
+			}
+		}
+
+		public int? PageIndex
+		{
+			get
+			{
+				return pageIndex;
+			}
+			set	
+			{
+				pageIndex = value;
+				DictionaryUtil.Add(QueryParameters, "PageIndex", value.ToString());
 			}
 		}
 
@@ -74,35 +101,14 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string AppName
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(QueryParameters, "AppName", value);
-			}
+			return false;
 		}
 
-		public string SecurityToken
-		{
-			get
-			{
-				return securityToken;
-			}
-			set	
-			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-        public override DeleteLiveAppSnapshotConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainNamesOfVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteLiveAppSnapshotConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainNamesOfVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

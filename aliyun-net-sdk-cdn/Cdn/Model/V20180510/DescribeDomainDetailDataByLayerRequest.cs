@@ -24,14 +24,14 @@ using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Cdn;
 using Aliyun.Acs.Cdn.Transform;
-using Aliyun.Acs.Cdn.Transform.V20141111;
+using Aliyun.Acs.Cdn.Transform.V20180510;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class StopMixStreamsServiceRequest : RpcAcsRequest<StopMixStreamsServiceResponse>
+    public class DescribeDomainDetailDataByLayerRequest : RpcAcsRequest<DescribeDomainDetailDataByLayerResponse>
     {
-        public StopMixStreamsServiceRequest()
-            : base("Cdn", "2014-11-11", "StopMixStreamsService")
+        public DescribeDomainDetailDataByLayerRequest()
+            : base("Cdn", "2018-05-10", "DescribeDomainDetailDataByLayer")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,97 +40,97 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
             }
         }
 
-		private string mixStreamName;
+		private string locationNameEn;
 
-		private string mixAppName;
+		private string startTime;
 
-		private string mainStreamName;
+		private string ispNameEn;
 
-		private string securityToken;
+		private string layer;
 
-		private string mainDomainName;
+		private string domainName;
 
-		private string mixDomainName;
+		private string endTime;
 
 		private long? ownerId;
 
-		private string mainAppName;
+		private string field;
 
-		public string MixStreamName
+		public string LocationNameEn
 		{
 			get
 			{
-				return mixStreamName;
+				return locationNameEn;
 			}
 			set	
 			{
-				mixStreamName = value;
-				DictionaryUtil.Add(QueryParameters, "MixStreamName", value);
+				locationNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
 			}
 		}
 
-		public string MixAppName
+		public string StartTime
 		{
 			get
 			{
-				return mixAppName;
+				return startTime;
 			}
 			set	
 			{
-				mixAppName = value;
-				DictionaryUtil.Add(QueryParameters, "MixAppName", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string MainStreamName
+		public string IspNameEn
 		{
 			get
 			{
-				return mainStreamName;
+				return ispNameEn;
 			}
 			set	
 			{
-				mainStreamName = value;
-				DictionaryUtil.Add(QueryParameters, "MainStreamName", value);
+				ispNameEn = value;
+				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
 			}
 		}
 
-		public string SecurityToken
+		public string Layer
 		{
 			get
 			{
-				return securityToken;
+				return layer;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				layer = value;
+				DictionaryUtil.Add(QueryParameters, "Layer", value);
 			}
 		}
 
-		public string MainDomainName
+		public string DomainName
 		{
 			get
 			{
-				return mainDomainName;
+				return domainName;
 			}
 			set	
 			{
-				mainDomainName = value;
-				DictionaryUtil.Add(QueryParameters, "MainDomainName", value);
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
-		public string MixDomainName
+		public string EndTime
 		{
 			get
 			{
-				return mixDomainName;
+				return endTime;
 			}
 			set	
 			{
-				mixDomainName = value;
-				DictionaryUtil.Add(QueryParameters, "MixDomainName", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -147,22 +147,22 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			}
 		}
 
-		public string MainAppName
+		public string Field
 		{
 			get
 			{
-				return mainAppName;
+				return field;
 			}
 			set	
 			{
-				mainAppName = value;
-				DictionaryUtil.Add(QueryParameters, "MainAppName", value);
+				field = value;
+				DictionaryUtil.Add(QueryParameters, "Field", value);
 			}
 		}
 
-        public override StopMixStreamsServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDomainDetailDataByLayerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StopMixStreamsServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDomainDetailDataByLayerResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

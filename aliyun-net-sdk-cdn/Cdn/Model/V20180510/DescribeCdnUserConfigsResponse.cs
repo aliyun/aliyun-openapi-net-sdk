@@ -20,12 +20,14 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Cdn.Model.V20141111
+namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-	public class SetHttpErrorPageConfigResponse : AcsResponse
+	public class DescribeCdnUserConfigsResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private List<DescribeCdnUserConfigs_Config> configs;
 
 		public string RequestId
 		{
@@ -36,6 +38,64 @@ namespace Aliyun.Acs.Cdn.Model.V20141111
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public List<DescribeCdnUserConfigs_Config> Configs
+		{
+			get
+			{
+				return configs;
+			}
+			set	
+			{
+				configs = value;
+			}
+		}
+
+		public class DescribeCdnUserConfigs_Config
+		{
+
+			private string argValue;
+
+			private string argName;
+
+			private string functionName;
+
+			public string ArgValue
+			{
+				get
+				{
+					return argValue;
+				}
+				set	
+				{
+					argValue = value;
+				}
+			}
+
+			public string ArgName
+			{
+				get
+				{
+					return argName;
+				}
+				set	
+				{
+					argName = value;
+				}
+			}
+
+			public string FunctionName
+			{
+				get
+				{
+					return functionName;
+				}
+				set	
+				{
+					functionName = value;
+				}
 			}
 		}
 	}
