@@ -192,6 +192,10 @@ namespace Aliyun.Acs.Core.Tests.Units
             });
 
             acsRequest.RegionId = "";
+            Assert.Empty(acsRequest.RegionId);
+
+            acsRequest.RegionId = null;
+            Assert.Null(acsRequest.RegionId);
             Assert.Throws<ArgumentException>(() =>
             {
                 acsRequest.ProductNetwork = "a.b";
@@ -200,10 +204,22 @@ namespace Aliyun.Acs.Core.Tests.Units
             acsRequest.ProductNetwork = "private";
             Assert.Equal("private", acsRequest.ProductNetwork);
 
+            acsRequest.ProductNetwork = "";
+            Assert.Empty(acsRequest.ProductNetwork);
+
+            acsRequest.ProductNetwork = null;
+            Assert.Null(acsRequest.ProductNetwork);
+
             Assert.Throws<ArgumentException>(() =>
             {
                 acsRequest.ProductSuffix = "a.b";
             });
+
+            acsRequest.ProductSuffix = "";
+            Assert.Empty(acsRequest.ProductSuffix);
+
+            acsRequest.ProductSuffix = null;
+            Assert.Null(acsRequest.ProductSuffix);
         }
     }
 

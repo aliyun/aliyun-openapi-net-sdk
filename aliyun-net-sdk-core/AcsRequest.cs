@@ -69,11 +69,15 @@ namespace Aliyun.Acs.Core
             }
             set
             {
-                var match = Regex.Match(value, "^[a-zA-Z0-9_-]*$");
-                if (!match.Success)
+                if(!string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("regionId is invalid", "regionId");
+                    var match = Regex.Match(value, "^[a-zA-Z0-9_-]+$");
+                    if (!match.Success)
+                    {
+                        throw new ArgumentException("regionId is invalid", "regionId");
+                    }
                 }
+                
                 regionId = value;
             }
         }
@@ -91,11 +95,15 @@ namespace Aliyun.Acs.Core
             }
             set
             {
-                var match = Regex.Match(value, "^[a-zA-Z0-9_-]+$");
-                if (!match.Success)
+                if(!string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("productNetwork is invalid", "productNetwork");
+                    var match = Regex.Match(value, "^[a-zA-Z0-9_-]+$");
+                    if (!match.Success)
+                    {
+                        throw new ArgumentException("productNetwork is invalid", "productNetwork");
+                    }
                 }
+                
                 productNetwork = value;
             }
         }
@@ -108,11 +116,15 @@ namespace Aliyun.Acs.Core
             }
             set
             {
-                var match = Regex.Match(value, "^[a-zA-Z0-9_-]+$");
-                if (!match.Success)
+                if(!string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("productSuffix is invalid", "productSuffix");
+                    var match = Regex.Match(value, "^[a-zA-Z0-9_-]+$");
+                    if (!match.Success)
+                    {
+                        throw new ArgumentException("productSuffix is invalid", "productSuffix");
+                    }
                 }
+                
                 productSuffix = value;
             }
         }
