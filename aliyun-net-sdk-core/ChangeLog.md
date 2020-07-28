@@ -1,3 +1,6 @@
+### 2020-07-28 Version 1.5.8
+* region, productNetwork and productSuffix are no need to check regex when they are empty or null.
+
 ### 2020-07-24 Version 1.5.7
 * Fixed endpointList 
 * add validate for region, productNetwork, productSuffix
