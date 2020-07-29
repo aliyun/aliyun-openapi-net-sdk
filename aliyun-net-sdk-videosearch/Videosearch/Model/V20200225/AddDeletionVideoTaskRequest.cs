@@ -33,6 +33,7 @@ namespace Aliyun.Acs.videosearch.Model.V20200225
         public AddDeletionVideoTaskRequest()
             : base("videosearch", "2020-02-25", "AddDeletionVideoTask")
         {
+			Method = MethodType.POST;
         }
 
 		private string clientToken;

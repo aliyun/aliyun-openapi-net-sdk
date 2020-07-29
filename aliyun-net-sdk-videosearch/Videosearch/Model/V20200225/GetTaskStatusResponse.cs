@@ -29,6 +29,8 @@ namespace Aliyun.Acs.videosearch.Model.V20200225
 
 		private int? data;
 
+		private GetTaskStatus_TaskInfo taskInfo;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,232 @@ namespace Aliyun.Acs.videosearch.Model.V20200225
 			set	
 			{
 				data = value;
+			}
+		}
+
+		public GetTaskStatus_TaskInfo TaskInfo
+		{
+			get
+			{
+				return taskInfo;
+			}
+			set	
+			{
+				taskInfo = value;
+			}
+		}
+
+		public class GetTaskStatus_TaskInfo
+		{
+
+			private long? analysisUseTime;
+
+			private float? duration;
+
+			private string processResultOss;
+
+			private string resolution;
+
+			private int? status;
+
+			private long? submitTime;
+
+			private long? finishTime;
+
+			private long? taskId;
+
+			private string errorInfo;
+
+			private int? storageInfo;
+
+			private string description;
+
+			private string videoId;
+
+			private string videoTags;
+
+			private string videoUrl;
+
+			private string queryTags;
+
+			public long? AnalysisUseTime
+			{
+				get
+				{
+					return analysisUseTime;
+				}
+				set	
+				{
+					analysisUseTime = value;
+				}
+			}
+
+			public float? Duration
+			{
+				get
+				{
+					return duration;
+				}
+				set	
+				{
+					duration = value;
+				}
+			}
+
+			public string ProcessResultOss
+			{
+				get
+				{
+					return processResultOss;
+				}
+				set	
+				{
+					processResultOss = value;
+				}
+			}
+
+			public string Resolution
+			{
+				get
+				{
+					return resolution;
+				}
+				set	
+				{
+					resolution = value;
+				}
+			}
+
+			public int? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public long? SubmitTime
+			{
+				get
+				{
+					return submitTime;
+				}
+				set	
+				{
+					submitTime = value;
+				}
+			}
+
+			public long? FinishTime
+			{
+				get
+				{
+					return finishTime;
+				}
+				set	
+				{
+					finishTime = value;
+				}
+			}
+
+			public long? TaskId
+			{
+				get
+				{
+					return taskId;
+				}
+				set	
+				{
+					taskId = value;
+				}
+			}
+
+			public string ErrorInfo
+			{
+				get
+				{
+					return errorInfo;
+				}
+				set	
+				{
+					errorInfo = value;
+				}
+			}
+
+			public int? StorageInfo
+			{
+				get
+				{
+					return storageInfo;
+				}
+				set	
+				{
+					storageInfo = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string VideoId
+			{
+				get
+				{
+					return videoId;
+				}
+				set	
+				{
+					videoId = value;
+				}
+			}
+
+			public string VideoTags
+			{
+				get
+				{
+					return videoTags;
+				}
+				set	
+				{
+					videoTags = value;
+				}
+			}
+
+			public string VideoUrl
+			{
+				get
+				{
+					return videoUrl;
+				}
+				set	
+				{
+					videoUrl = value;
+				}
+			}
+
+			public string QueryTags
+			{
+				get
+				{
+					return queryTags;
+				}
+				set	
+				{
+					queryTags = value;
+				}
 			}
 		}
 	}
