@@ -31,13 +31,14 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class ListTagResourcesRequest : RpcAcsRequest<ListTagResourcesResponse>
     {
         public ListTagResourcesRequest()
-            : base("ROS", "2019-09-10", "ListTagResources", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "ListTagResources", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string nextToken;

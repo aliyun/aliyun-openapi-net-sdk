@@ -28,10 +28,10 @@ using Aliyun.Acs.ROS.Transform.V20190910;
 
 namespace Aliyun.Acs.ROS.Model.V20190910
 {
-    public class SetDeletionProtectionRequest : RpcAcsRequest<SetDeletionProtectionResponse>
+    public class ListStackOperationRisksRequest : RpcAcsRequest<ListStackOperationRisksResponse>
     {
-        public SetDeletionProtectionRequest()
-            : base("ROS", "2019-09-10", "SetDeletionProtection", "ros", "openAPI")
+        public ListStackOperationRisksRequest()
+            : base("ROS", "2019-09-10", "ListStackOperationRisks", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,9 +41,30 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			Method = MethodType.POST;
         }
 
+		private string clientToken;
+
 		private string stackId;
 
-		private string deletionProtection;
+		private List<string> retainResourcess = new List<string>(){ };
+
+		private bool? retainAllResources;
+
+		private string ramRoleName;
+
+		private string operationType;
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
 
 		public string StackId
 		{
@@ -58,16 +79,59 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
-		public string DeletionProtection
+		public List<string> RetainResourcess
 		{
 			get
 			{
-				return deletionProtection;
+				return retainResourcess;
+			}
+
+			set
+			{
+				retainResourcess = value;
+				for (int i = 0; i < retainResourcess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"RetainResources." + (i + 1) , retainResourcess[i]);
+				}
+			}
+		}
+
+		public bool? RetainAllResources
+		{
+			get
+			{
+				return retainAllResources;
 			}
 			set	
 			{
-				deletionProtection = value;
-				DictionaryUtil.Add(QueryParameters, "DeletionProtection", value);
+				retainAllResources = value;
+				DictionaryUtil.Add(QueryParameters, "RetainAllResources", value.ToString());
+			}
+		}
+
+		public string RamRoleName
+		{
+			get
+			{
+				return ramRoleName;
+			}
+			set	
+			{
+				ramRoleName = value;
+				DictionaryUtil.Add(QueryParameters, "RamRoleName", value);
+			}
+		}
+
+		public string OperationType
+		{
+			get
+			{
+				return operationType;
+			}
+			set	
+			{
+				operationType = value;
+				DictionaryUtil.Add(QueryParameters, "OperationType", value);
 			}
 		}
 
@@ -76,9 +140,9 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			return false;
 		}
 
-        public override SetDeletionProtectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListStackOperationRisksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDeletionProtectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListStackOperationRisksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

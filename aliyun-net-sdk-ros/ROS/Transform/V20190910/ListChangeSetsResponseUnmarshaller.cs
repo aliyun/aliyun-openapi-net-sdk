@@ -49,6 +49,7 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 				changeSet.StackId = context.StringValue("ListChangeSets.ChangeSets["+ i +"].StackId");
 				changeSet.StackName = context.StringValue("ListChangeSets.ChangeSets["+ i +"].StackName");
 				changeSet.Status = context.StringValue("ListChangeSets.ChangeSets["+ i +"].Status");
+				changeSet.StatusReason = context.StringValue("ListChangeSets.ChangeSets["+ i +"].StatusReason");
 
 				listChangeSetsResponse_changeSets.Add(changeSet);
 			}

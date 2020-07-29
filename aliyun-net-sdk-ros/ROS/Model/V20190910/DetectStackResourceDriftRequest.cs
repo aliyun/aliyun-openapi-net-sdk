@@ -31,13 +31,14 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class DetectStackResourceDriftRequest : RpcAcsRequest<DetectStackResourceDriftResponse>
     {
         public DetectStackResourceDriftRequest()
-            : base("ROS", "2019-09-10", "DetectStackResourceDrift", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "DetectStackResourceDrift", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string clientToken;

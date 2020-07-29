@@ -41,7 +41,6 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 			stackGroup.TemplateBody = context.StringValue("GetStackGroup.StackGroup.TemplateBody");
 			stackGroup.ExecutionRoleName = context.StringValue("GetStackGroup.StackGroup.ExecutionRoleName");
 			stackGroup.AdministrationRoleName = context.StringValue("GetStackGroup.StackGroup.AdministrationRoleName");
-			stackGroup.TemplateBody1 = context.StringValue("GetStackGroup.StackGroup.TemplateBody");
 
 			GetStackGroupResponse.GetStackGroup_StackGroup.GetStackGroup_StackGroupDriftDetectionDetail stackGroupDriftDetectionDetail = new GetStackGroupResponse.GetStackGroup_StackGroup.GetStackGroup_StackGroupDriftDetectionDetail();
 			stackGroupDriftDetectionDetail.DriftDetectionTime = context.StringValue("GetStackGroup.StackGroup.StackGroupDriftDetectionDetail.DriftDetectionTime");

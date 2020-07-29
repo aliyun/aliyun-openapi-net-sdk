@@ -70,8 +70,6 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 			private string administrationRoleName;
 
-			private string templateBody1;
-
 			private List<GetStackGroup_Parameter> parameters;
 
 			private GetStackGroup_StackGroupDriftDetectionDetail stackGroupDriftDetectionDetail;
@@ -157,18 +155,6 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				set	
 				{
 					administrationRoleName = value;
-				}
-			}
-
-			public string TemplateBody1
-			{
-				get
-				{
-					return templateBody1;
-				}
-				set	
-				{
-					templateBody1 = value;
 				}
 			}
 

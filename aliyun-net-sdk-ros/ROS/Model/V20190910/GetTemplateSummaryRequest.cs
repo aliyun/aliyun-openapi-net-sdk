@@ -28,10 +28,10 @@ using Aliyun.Acs.ROS.Transform.V20190910;
 
 namespace Aliyun.Acs.ROS.Model.V20190910
 {
-    public class SetDeletionProtectionRequest : RpcAcsRequest<SetDeletionProtectionResponse>
+    public class GetTemplateSummaryRequest : RpcAcsRequest<GetTemplateSummaryResponse>
     {
-        public SetDeletionProtectionRequest()
-            : base("ROS", "2019-09-10", "SetDeletionProtection", "ros", "openAPI")
+        public GetTemplateSummaryRequest()
+            : base("ROS", "2019-09-10", "GetTemplateSummary", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,9 +41,28 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			Method = MethodType.POST;
         }
 
+		private string templateBody;
+
 		private string stackId;
 
-		private string deletionProtection;
+		private string templateURL;
+
+		private string templateId;
+
+		private string changeSetId;
+
+		public string TemplateBody
+		{
+			get
+			{
+				return templateBody;
+			}
+			set	
+			{
+				templateBody = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateBody", value);
+			}
+		}
 
 		public string StackId
 		{
@@ -58,16 +77,42 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
-		public string DeletionProtection
+		public string TemplateURL
 		{
 			get
 			{
-				return deletionProtection;
+				return templateURL;
 			}
 			set	
 			{
-				deletionProtection = value;
-				DictionaryUtil.Add(QueryParameters, "DeletionProtection", value);
+				templateURL = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateURL", value);
+			}
+		}
+
+		public string TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+			}
+		}
+
+		public string ChangeSetId
+		{
+			get
+			{
+				return changeSetId;
+			}
+			set	
+			{
+				changeSetId = value;
+				DictionaryUtil.Add(QueryParameters, "ChangeSetId", value);
 			}
 		}
 
@@ -76,9 +121,9 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			return false;
 		}
 
-        public override SetDeletionProtectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetTemplateSummaryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDeletionProtectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetTemplateSummaryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

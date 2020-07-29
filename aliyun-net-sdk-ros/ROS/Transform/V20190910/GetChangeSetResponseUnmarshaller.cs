@@ -45,6 +45,7 @@ namespace Aliyun.Acs.ROS.Transform.V20190910
 			getChangeSetResponse.Status = context.StringValue("GetChangeSet.Status");
 			getChangeSetResponse.TemplateBody = context.StringValue("GetChangeSet.TemplateBody");
 			getChangeSetResponse.TimeoutInMinutes = context.IntegerValue("GetChangeSet.TimeoutInMinutes");
+			getChangeSetResponse.StatusReason = context.StringValue("GetChangeSet.StatusReason");
 
 			List<Dictionary<string, string>> getChangeSetResponse_changes = new List<Dictionary<string, string>>();
 			for (int i = 0; i < context.Length("GetChangeSet.Changes.Length"); i++) {

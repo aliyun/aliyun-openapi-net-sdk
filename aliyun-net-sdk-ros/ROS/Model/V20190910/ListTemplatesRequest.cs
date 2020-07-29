@@ -31,13 +31,14 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class ListTemplatesRequest : RpcAcsRequest<ListTemplatesResponse>
     {
         public ListTemplatesRequest()
-            : base("ROS", "2019-09-10", "ListTemplates", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "ListTemplates", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? pageNumber;

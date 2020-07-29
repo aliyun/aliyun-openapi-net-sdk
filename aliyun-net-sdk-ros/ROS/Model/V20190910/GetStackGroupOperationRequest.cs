@@ -31,13 +31,14 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class GetStackGroupOperationRequest : RpcAcsRequest<GetStackGroupOperationResponse>
     {
         public GetStackGroupOperationRequest()
-            : base("ROS", "2019-09-10", "GetStackGroupOperation", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "GetStackGroupOperation", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string operationId;

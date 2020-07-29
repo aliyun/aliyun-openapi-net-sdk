@@ -28,10 +28,10 @@ using Aliyun.Acs.ROS.Transform.V20190910;
 
 namespace Aliyun.Acs.ROS.Model.V20190910
 {
-    public class SetDeletionProtectionRequest : RpcAcsRequest<SetDeletionProtectionResponse>
+    public class ListTagValuesRequest : RpcAcsRequest<ListTagValuesResponse>
     {
-        public SetDeletionProtectionRequest()
-            : base("ROS", "2019-09-10", "SetDeletionProtection", "ros", "openAPI")
+        public ListTagValuesRequest()
+            : base("ROS", "2019-09-10", "ListTagValues", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +41,48 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			Method = MethodType.POST;
         }
 
-		private string stackId;
+		private string nextToken;
 
-		private string deletionProtection;
+		private string key;
 
-		public string StackId
+		private string resourceType;
+
+		public string NextToken
 		{
 			get
 			{
-				return stackId;
+				return nextToken;
 			}
 			set	
 			{
-				stackId = value;
-				DictionaryUtil.Add(QueryParameters, "StackId", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-		public string DeletionProtection
+		public string Key
 		{
 			get
 			{
-				return deletionProtection;
+				return key;
 			}
 			set	
 			{
-				deletionProtection = value;
-				DictionaryUtil.Add(QueryParameters, "DeletionProtection", value);
+				key = value;
+				DictionaryUtil.Add(QueryParameters, "Key", value);
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -76,9 +91,9 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			return false;
 		}
 
-        public override SetDeletionProtectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTagValuesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDeletionProtectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTagValuesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

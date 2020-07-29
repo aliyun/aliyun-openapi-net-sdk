@@ -118,6 +118,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 			private string status;
 
+			private string statusReason;
+
 			public string ChangeSetId
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string StatusReason
+			{
+				get
+				{
+					return statusReason;
+				}
+				set	
+				{
+					statusReason = value;
 				}
 			}
 		}

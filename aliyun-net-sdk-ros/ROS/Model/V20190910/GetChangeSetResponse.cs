@@ -53,6 +53,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private int? timeoutInMinutes;
 
+		private string statusReason;
+
 		private List<GetChangeSet_Parameter> parameters;
 
 		private List<Dictionary<string, string>> changes;
@@ -222,6 +224,18 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			set	
 			{
 				timeoutInMinutes = value;
+			}
+		}
+
+		public string StatusReason
+		{
+			get
+			{
+				return statusReason;
+			}
+			set	
+			{
+				statusReason = value;
 			}
 		}
 

@@ -31,13 +31,14 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class DeleteStackGroupRequest : RpcAcsRequest<DeleteStackGroupResponse>
     {
         public DeleteStackGroupRequest()
-            : base("ROS", "2019-09-10", "DeleteStackGroup", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "DeleteStackGroup", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string stackGroupName;

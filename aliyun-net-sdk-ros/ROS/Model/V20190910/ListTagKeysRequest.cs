@@ -28,10 +28,10 @@ using Aliyun.Acs.ROS.Transform.V20190910;
 
 namespace Aliyun.Acs.ROS.Model.V20190910
 {
-    public class SetDeletionProtectionRequest : RpcAcsRequest<SetDeletionProtectionResponse>
+    public class ListTagKeysRequest : RpcAcsRequest<ListTagKeysResponse>
     {
-        public SetDeletionProtectionRequest()
-            : base("ROS", "2019-09-10", "SetDeletionProtection", "ros", "openAPI")
+        public ListTagKeysRequest()
+            : base("ROS", "2019-09-10", "ListTagKeys", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,33 +41,33 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			Method = MethodType.POST;
         }
 
-		private string stackId;
+		private string nextToken;
 
-		private string deletionProtection;
+		private string resourceType;
 
-		public string StackId
+		public string NextToken
 		{
 			get
 			{
-				return stackId;
+				return nextToken;
 			}
 			set	
 			{
-				stackId = value;
-				DictionaryUtil.Add(QueryParameters, "StackId", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-		public string DeletionProtection
+		public string ResourceType
 		{
 			get
 			{
-				return deletionProtection;
+				return resourceType;
 			}
 			set	
 			{
-				deletionProtection = value;
-				DictionaryUtil.Add(QueryParameters, "DeletionProtection", value);
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -76,9 +76,9 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			return false;
 		}
 
-        public override SetDeletionProtectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTagKeysResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDeletionProtectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTagKeysResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

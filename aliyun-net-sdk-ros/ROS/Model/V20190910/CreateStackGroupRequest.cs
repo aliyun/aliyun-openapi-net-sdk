@@ -30,13 +30,14 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class CreateStackGroupRequest : RpcAcsRequest<CreateStackGroupResponse>
     {
         public CreateStackGroupRequest()
-            : base("ROS", "2019-09-10", "CreateStackGroup", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "CreateStackGroup", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string clientToken;

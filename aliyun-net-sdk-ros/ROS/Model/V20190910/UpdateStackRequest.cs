@@ -31,13 +31,14 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class UpdateStackRequest : RpcAcsRequest<UpdateStackResponse>
     {
         public UpdateStackRequest()
-            : base("ROS", "2019-09-10", "UpdateStack", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "UpdateStack", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? timeoutInMinutes;
@@ -63,6 +64,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 		private string ramRoleName;
 
 		private bool? usePreviousParameters;
+
+		private string replacementOption;
 
 		private string stackPolicyURL;
 
@@ -224,6 +227,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				usePreviousParameters = value;
 				DictionaryUtil.Add(QueryParameters, "UsePreviousParameters", value.ToString());
+			}
+		}
+
+		public string ReplacementOption
+		{
+			get
+			{
+				return replacementOption;
+			}
+			set	
+			{
+				replacementOption = value;
+				DictionaryUtil.Add(QueryParameters, "ReplacementOption", value);
 			}
 		}
 

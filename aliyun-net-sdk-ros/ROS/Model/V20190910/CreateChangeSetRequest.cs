@@ -30,13 +30,14 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class CreateChangeSetRequest : RpcAcsRequest<CreateChangeSetResponse>
     {
         public CreateChangeSetRequest()
-            : base("ROS", "2019-09-10", "CreateChangeSet", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "CreateChangeSet", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? timeoutInMinutes;
@@ -63,6 +64,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 
 		private List<string> notificationURLss = new List<string>(){ };
 
+		private List<ResourcesToImport> resourcesToImports = new List<ResourcesToImport>(){ };
+
 		private string stackPolicyBody;
 
 		private string stackPolicyDuringUpdateURL;
@@ -70,6 +73,8 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 		private string ramRoleName;
 
 		private bool? usePreviousParameters;
+
+		private string replacementOption;
 
 		private string stackPolicyURL;
 
@@ -240,6 +245,25 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			}
 		}
 
+		public List<ResourcesToImport> ResourcesToImports
+		{
+			get
+			{
+				return resourcesToImports;
+			}
+
+			set
+			{
+				resourcesToImports = value;
+				for (int i = 0; i < resourcesToImports.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ResourcesToImport." + (i + 1) + ".ResourceIdentifier", resourcesToImports[i].ResourceIdentifier);
+					DictionaryUtil.Add(QueryParameters,"ResourcesToImport." + (i + 1) + ".LogicalResourceId", resourcesToImports[i].LogicalResourceId);
+					DictionaryUtil.Add(QueryParameters,"ResourcesToImport." + (i + 1) + ".ResourceType", resourcesToImports[i].ResourceType);
+				}
+			}
+		}
+
 		public string StackPolicyBody
 		{
 			get
@@ -289,6 +313,19 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 			{
 				usePreviousParameters = value;
 				DictionaryUtil.Add(QueryParameters, "UsePreviousParameters", value.ToString());
+			}
+		}
+
+		public string ReplacementOption
+		{
+			get
+			{
+				return replacementOption;
+			}
+			set	
+			{
+				replacementOption = value;
+				DictionaryUtil.Add(QueryParameters, "ReplacementOption", value);
 			}
 		}
 
@@ -346,6 +383,52 @@ namespace Aliyun.Acs.ROS.Model.V20190910
 				set	
 				{
 					parameterKey = value;
+				}
+			}
+		}
+
+		public class ResourcesToImport
+		{
+
+			private string resourceIdentifier;
+
+			private string logicalResourceId;
+
+			private string resourceType;
+
+			public string ResourceIdentifier
+			{
+				get
+				{
+					return resourceIdentifier;
+				}
+				set	
+				{
+					resourceIdentifier = value;
+				}
+			}
+
+			public string LogicalResourceId
+			{
+				get
+				{
+					return logicalResourceId;
+				}
+				set	
+				{
+					logicalResourceId = value;
+				}
+			}
+
+			public string ResourceType
+			{
+				get
+				{
+					return resourceType;
+				}
+				set	
+				{
+					resourceType = value;
 				}
 			}
 		}

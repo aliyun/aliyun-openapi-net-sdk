@@ -31,13 +31,14 @@ namespace Aliyun.Acs.ROS.Model.V20190910
     public class ListStackEventsRequest : RpcAcsRequest<ListStackEventsResponse>
     {
         public ListStackEventsRequest()
-            : base("ROS", "2019-09-10", "ListStackEvents", "ROS", "openAPI")
+            : base("ROS", "2019-09-10", "ListStackEvents", "ros", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string stackId;
