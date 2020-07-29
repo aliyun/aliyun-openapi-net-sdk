@@ -207,6 +207,8 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 				private int? commitStatus;
 
+				private long? fileId;
+
 				public string ConnectionName
 				{
 					get
@@ -420,6 +422,18 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 					set	
 					{
 						commitStatus = value;
+					}
+				}
+
+				public long? FileId
+				{
+					get
+					{
+						return fileId;
+					}
+					set	
+					{
+						fileId = value;
 					}
 				}
 			}

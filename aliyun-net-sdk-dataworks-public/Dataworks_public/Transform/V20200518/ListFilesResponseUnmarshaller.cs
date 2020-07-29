@@ -63,6 +63,7 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 				file.LastEditUser = context.StringValue("ListFiles.Data.Files["+ i +"].LastEditUser");
 				file.LastEditTime = context.LongValue("ListFiles.Data.Files["+ i +"].LastEditTime");
 				file.CommitStatus = context.IntegerValue("ListFiles.Data.Files["+ i +"].CommitStatus");
+				file.FileId = context.LongValue("ListFiles.Data.Files["+ i +"].FileId");
 
 				data_files.Add(file);
 			}
