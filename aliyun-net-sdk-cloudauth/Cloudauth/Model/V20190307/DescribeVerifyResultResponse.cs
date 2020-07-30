@@ -118,6 +118,12 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 			private string idCardNumber;
 
+			private string faceQuality;
+
+			private string faceGlobalUrl;
+
+			private bool? faceMask;
+
 			private List<string> videoUrls;
 
 			private DescribeVerifyResult_IdCardInfo idCardInfo;
@@ -155,6 +161,42 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					idCardNumber = value;
+				}
+			}
+
+			public string FaceQuality
+			{
+				get
+				{
+					return faceQuality;
+				}
+				set	
+				{
+					faceQuality = value;
+				}
+			}
+
+			public string FaceGlobalUrl
+			{
+				get
+				{
+					return faceGlobalUrl;
+				}
+				set	
+				{
+					faceGlobalUrl = value;
+				}
+			}
+
+			public bool? FaceMask
+			{
+				get
+				{
+					return faceMask;
+				}
+				set	
+				{
+					faceMask = value;
 				}
 			}
 

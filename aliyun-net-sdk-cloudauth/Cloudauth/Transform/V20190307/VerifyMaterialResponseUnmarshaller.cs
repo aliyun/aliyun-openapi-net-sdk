@@ -35,7 +35,6 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			verifyMaterialResponse.VerifyToken = context.StringValue("VerifyMaterial.VerifyToken");
 			verifyMaterialResponse.VerifyStatus = context.IntegerValue("VerifyMaterial.VerifyStatus");
 			verifyMaterialResponse.AuthorityComparisionScore = context.FloatValue("VerifyMaterial.AuthorityComparisionScore");
-			verifyMaterialResponse.FaceComparisonScore = context.FloatValue("VerifyMaterial.FaceComparisonScore");
 			verifyMaterialResponse.IdCardFaceComparisonScore = context.FloatValue("VerifyMaterial.IdCardFaceComparisonScore");
 
 			VerifyMaterialResponse.VerifyMaterial_Material material = new VerifyMaterialResponse.VerifyMaterial_Material();

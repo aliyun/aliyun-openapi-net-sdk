@@ -33,8 +33,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private float? authorityComparisionScore;
 
-		private float? faceComparisonScore;
-
 		private float? idCardFaceComparisonScore;
 
 		private VerifyMaterial_Material material;
@@ -84,18 +82,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			set	
 			{
 				authorityComparisionScore = value;
-			}
-		}
-
-		public float? FaceComparisonScore
-		{
-			get
-			{
-				return faceComparisonScore;
-			}
-			set	
-			{
-				faceComparisonScore = value;
 			}
 		}
 

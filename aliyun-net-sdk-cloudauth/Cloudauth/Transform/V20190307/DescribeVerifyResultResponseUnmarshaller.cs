@@ -41,6 +41,9 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 			material.FaceImageUrl = context.StringValue("DescribeVerifyResult.Material.FaceImageUrl");
 			material.IdCardName = context.StringValue("DescribeVerifyResult.Material.IdCardName");
 			material.IdCardNumber = context.StringValue("DescribeVerifyResult.Material.IdCardNumber");
+			material.FaceQuality = context.StringValue("DescribeVerifyResult.Material.FaceQuality");
+			material.FaceGlobalUrl = context.StringValue("DescribeVerifyResult.Material.FaceGlobalUrl");
+			material.FaceMask = context.BooleanValue("DescribeVerifyResult.Material.FaceMask");
 
 			List<string> material_videoUrls = new List<string>();
 			for (int i = 0; i < context.Length("DescribeVerifyResult.Material.VideoUrls.Length"); i++) {
