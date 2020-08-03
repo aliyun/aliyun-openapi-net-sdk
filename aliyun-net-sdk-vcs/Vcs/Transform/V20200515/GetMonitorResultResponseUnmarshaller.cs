@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.PicUrl = context.StringValue("GetMonitorResult.Data.Records["+ i +"].PicUrl");
 				recordsItem.ShotTime = context.StringValue("GetMonitorResult.Data.Records["+ i +"].ShotTime");
 				recordsItem.MonitorPicUrl = context.StringValue("GetMonitorResult.Data.Records["+ i +"].MonitorPicUrl");
+				recordsItem.TargetPicUrl = context.StringValue("GetMonitorResult.Data.Records["+ i +"].TargetPicUrl");
 
 				data_records.Add(recordsItem);
 			}

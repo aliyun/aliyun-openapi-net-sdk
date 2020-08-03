@@ -133,6 +133,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string monitorPicUrl;
 
+				private string targetPicUrl;
+
 				public string RightBottomY
 				{
 					get
@@ -238,6 +240,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						monitorPicUrl = value;
+					}
+				}
+
+				public string TargetPicUrl
+				{
+					get
+					{
+						return targetPicUrl;
+					}
+					set	
+					{
+						targetPicUrl = value;
 					}
 				}
 			}
