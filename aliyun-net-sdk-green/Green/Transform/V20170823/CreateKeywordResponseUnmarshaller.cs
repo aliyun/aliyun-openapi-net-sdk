@@ -40,9 +40,13 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			}
 			createKeywordResponse.InvalidKeywordList = createKeywordResponse_invalidKeywordList;
 
-			List<string> createKeywordResponse_validKeywordList = new List<string>();
+			List<CreateKeywordResponse.CreateKeyword_ValidKeyword> createKeywordResponse_validKeywordList = new List<CreateKeywordResponse.CreateKeyword_ValidKeyword>();
 			for (int i = 0; i < context.Length("CreateKeyword.ValidKeywordList.Length"); i++) {
-				createKeywordResponse_validKeywordList.Add(context.StringValue("CreateKeyword.ValidKeywordList["+ i +"]"));
+				CreateKeywordResponse.CreateKeyword_ValidKeyword validKeyword = new CreateKeywordResponse.CreateKeyword_ValidKeyword();
+				validKeyword.Id = context.IntegerValue("CreateKeyword.ValidKeywordList["+ i +"].id");
+				validKeyword.Keyword = context.StringValue("CreateKeyword.ValidKeywordList["+ i +"].keyword");
+
+				createKeywordResponse_validKeywordList.Add(validKeyword);
 			}
 			createKeywordResponse.ValidKeywordList = createKeywordResponse_validKeywordList;
         

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Green;
 using Aliyun.Acs.Green.Transform;
 using Aliyun.Acs.Green.Transform.V20161222;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Green.Model.V20161222
     public class ImageResultRequest : RoaAcsRequest<ImageResultResponse>
     {
         public ImageResultRequest()
-            : base("Green", "2016-12-22", "ImageResult")
+            : base("Green", "2016-12-22", "ImageResult", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

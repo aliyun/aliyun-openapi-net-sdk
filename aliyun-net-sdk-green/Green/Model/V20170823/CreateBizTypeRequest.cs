@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Green;
 using Aliyun.Acs.Green.Transform;
 using Aliyun.Acs.Green.Transform.V20170823;
 
@@ -31,16 +30,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
     public class CreateBizTypeRequest : RpcAcsRequest<CreateBizTypeResponse>
     {
         public CreateBizTypeRequest()
-            : base("Green", "2017-08-23", "CreateBizType")
+            : base("Green", "2017-08-23", "CreateBizType", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string bizTypeImport;
+
+		private bool? citeTemplate;
 
 		private string industryInfo;
 
@@ -56,6 +58,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				bizTypeImport = value;
 				DictionaryUtil.Add(QueryParameters, "BizTypeImport", value);
+			}
+		}
+
+		public bool? CiteTemplate
+		{
+			get
+			{
+				return citeTemplate;
+			}
+			set	
+			{
+				citeTemplate = value;
+				DictionaryUtil.Add(QueryParameters, "CiteTemplate", value.ToString());
 			}
 		}
 

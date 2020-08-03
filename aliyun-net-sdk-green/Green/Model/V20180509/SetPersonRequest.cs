@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Green;
 using Aliyun.Acs.Green.Transform;
 using Aliyun.Acs.Green.Transform.V20180509;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Green.Model.V20180509
     public class SetPersonRequest : RoaAcsRequest<SetPersonResponse>
     {
         public SetPersonRequest()
-            : base("Green", "2018-05-09", "SetPerson")
+            : base("Green", "2018-05-09", "SetPerson", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

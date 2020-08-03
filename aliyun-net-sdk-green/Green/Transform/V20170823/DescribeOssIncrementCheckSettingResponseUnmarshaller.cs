@@ -61,6 +61,8 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			imageAutoFreeze.Enabled = context.BooleanValue("DescribeOssIncrementCheckSetting.ImageAutoFreeze.Enabled");
 			imageAutoFreeze.Porn = context.StringValue("DescribeOssIncrementCheckSetting.ImageAutoFreeze.Porn");
 			imageAutoFreeze.Terrorism = context.StringValue("DescribeOssIncrementCheckSetting.ImageAutoFreeze.Terrorism");
+			imageAutoFreeze.Ad = context.StringValue("DescribeOssIncrementCheckSetting.ImageAutoFreeze.Ad");
+			imageAutoFreeze.Live = context.StringValue("DescribeOssIncrementCheckSetting.ImageAutoFreeze.Live");
 			describeOssIncrementCheckSettingResponse.ImageAutoFreeze = imageAutoFreeze;
 
 			List<DescribeOssIncrementCheckSettingResponse.DescribeOssIncrementCheckSetting_BucketConfig> describeOssIncrementCheckSettingResponse_bucketConfigList = new List<DescribeOssIncrementCheckSettingResponse.DescribeOssIncrementCheckSetting_BucketConfig>();

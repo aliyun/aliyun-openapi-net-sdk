@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Green;
 using Aliyun.Acs.Green.Transform;
 using Aliyun.Acs.Green.Transform.V20170823;
 
@@ -31,13 +30,14 @@ namespace Aliyun.Acs.Green.Model.V20170823
     public class DescribeWebsiteScanResultDetailRequest : RpcAcsRequest<DescribeWebsiteScanResultDetailResponse>
     {
         public DescribeWebsiteScanResultDetailRequest()
-            : base("Green", "2017-08-23", "DescribeWebsiteScanResultDetail")
+            : base("Green", "2017-08-23", "DescribeWebsiteScanResultDetail", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string resourceType;

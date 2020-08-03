@@ -78,6 +78,10 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 			private string source;
 
+			private bool? citeTemplate;
+
+			private string industryInfo;
+
 			public string BizType
 			{
 				get
@@ -123,6 +127,30 @@ namespace Aliyun.Acs.Green.Model.V20170823
 				set	
 				{
 					source = value;
+				}
+			}
+
+			public bool? CiteTemplate
+			{
+				get
+				{
+					return citeTemplate;
+				}
+				set	
+				{
+					citeTemplate = value;
+				}
+			}
+
+			public string IndustryInfo
+			{
+				get
+				{
+					return industryInfo;
+				}
+				set	
+				{
+					industryInfo = value;
 				}
 			}
 		}

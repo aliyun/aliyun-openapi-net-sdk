@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Green;
 using Aliyun.Acs.Green.Transform;
 using Aliyun.Acs.Green.Transform.V20170823;
 
@@ -31,24 +30,27 @@ namespace Aliyun.Acs.Green.Model.V20170823
     public class UpdateBizTypeSettingRequest : RpcAcsRequest<UpdateBizTypeSettingResponse>
     {
         public UpdateBizTypeSettingRequest()
-            : base("Green", "2017-08-23", "UpdateBizTypeSetting")
+            : base("Green", "2017-08-23", "UpdateBizTypeSetting", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string antispam;
-
-		private string resourceType;
 
 		private string porn;
 
 		private string terrorism;
 
 		private string bizTypeName;
+
+		private string ad;
+
+		private string resourceType;
 
 		public string Antispam
 		{
@@ -60,19 +62,6 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				antispam = value;
 				DictionaryUtil.Add(QueryParameters, "Antispam", value);
-			}
-		}
-
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 
@@ -112,6 +101,32 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				bizTypeName = value;
 				DictionaryUtil.Add(QueryParameters, "BizTypeName", value);
+			}
+		}
+
+		public string Ad
+		{
+			get
+			{
+				return ad;
+			}
+			set	
+			{
+				ad = value;
+				DictionaryUtil.Add(QueryParameters, "Ad", value);
+			}
+		}
+
+		public string ResourceType
+		{
+			get
+			{
+				return resourceType;
+			}
+			set	
+			{
+				resourceType = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
 			}
 		}
 

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Green;
 using Aliyun.Acs.Green.Transform;
 using Aliyun.Acs.Green.Transform.V20170823;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Green.Model.V20170823
     public class ExportKeywordsRequest : RpcAcsRequest<ExportKeywordsResponse>
     {
         public ExportKeywordsRequest()
-            : base("Green", "2017-08-23", "ExportKeywords")
+            : base("Green", "2017-08-23", "ExportKeywords", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

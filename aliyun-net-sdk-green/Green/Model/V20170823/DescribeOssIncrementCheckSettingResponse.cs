@@ -248,6 +248,10 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 			private string terrorism;
 
+			private string ad;
+
+			private string live;
+
 			public bool? Enabled
 			{
 				get
@@ -281,6 +285,30 @@ namespace Aliyun.Acs.Green.Model.V20170823
 				set	
 				{
 					terrorism = value;
+				}
+			}
+
+			public string Ad
+			{
+				get
+				{
+					return ad;
+				}
+				set	
+				{
+					ad = value;
+				}
+			}
+
+			public string Live
+			{
+				get
+				{
+					return live;
+				}
+				set	
+				{
+					live = value;
 				}
 			}
 		}

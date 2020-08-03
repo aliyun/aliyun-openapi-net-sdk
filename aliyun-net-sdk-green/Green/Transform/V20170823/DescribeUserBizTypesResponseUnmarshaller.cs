@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 				item.SourceBizType = context.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].SourceBizType");
 				item.Gray = context.BooleanValue("DescribeUserBizTypes.BizTypeList["+ i +"].Gray");
 				item.Source = context.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].Source");
+				item.CiteTemplate = context.BooleanValue("DescribeUserBizTypes.BizTypeList["+ i +"].CiteTemplate");
+				item.IndustryInfo = context.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].IndustryInfo");
 
 				describeUserBizTypesResponse_bizTypeList.Add(item);
 			}
@@ -52,6 +54,8 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 				item.SourceBizType = context.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].SourceBizType");
 				item.Gray = context.BooleanValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].Gray");
 				item.Source = context.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].Source");
+				item.CiteTemplate = context.BooleanValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].CiteTemplate");
+				item.IndustryInfo = context.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].IndustryInfo");
 
 				describeUserBizTypesResponse_bizTypeListImport.Add(item);
 			}

@@ -59,6 +59,15 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 			}
 			antispam.Categories2 = antispam_categories2;
 			describeBizTypeSettingResponse.Antispam = antispam;
+
+			DescribeBizTypeSettingResponse.DescribeBizTypeSetting_Ad ad = new DescribeBizTypeSettingResponse.DescribeBizTypeSetting_Ad();
+
+			List<string> ad_categories3 = new List<string>();
+			for (int i = 0; i < context.Length("DescribeBizTypeSetting.Ad.Categories.Length"); i++) {
+				ad_categories3.Add(context.StringValue("DescribeBizTypeSetting.Ad.Categories["+ i +"]"));
+			}
+			ad.Categories3 = ad_categories3;
+			describeBizTypeSettingResponse.Ad = ad;
         
 			return describeBizTypeSettingResponse;
         }

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Green;
 using Aliyun.Acs.Green.Transform;
 using Aliyun.Acs.Green.Transform.V20180509;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Green.Model.V20180509
     public class SearchPersonRequest : RoaAcsRequest<SearchPersonResponse>
     {
         public SearchPersonRequest()
-            : base("Green", "2018-05-09", "SearchPerson")
+            : base("Green", "2018-05-09", "SearchPerson", "green", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

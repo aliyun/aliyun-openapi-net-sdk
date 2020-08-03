@@ -29,9 +29,9 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private int? successCount;
 
-		private List<string> invalidKeywordList;
+		private List<CreateKeyword_ValidKeyword> validKeywordList;
 
-		private List<string> validKeywordList;
+		private List<string> invalidKeywordList;
 
 		public string RequestId
 		{
@@ -57,6 +57,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
+		public List<CreateKeyword_ValidKeyword> ValidKeywordList
+		{
+			get
+			{
+				return validKeywordList;
+			}
+			set	
+			{
+				validKeywordList = value;
+			}
+		}
+
 		public List<string> InvalidKeywordList
 		{
 			get
@@ -69,15 +81,35 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			}
 		}
 
-		public List<string> ValidKeywordList
+		public class CreateKeyword_ValidKeyword
 		{
-			get
+
+			private int? id;
+
+			private string keyword;
+
+			public int? Id
 			{
-				return validKeywordList;
+				get
+				{
+					return id;
+				}
+				set	
+				{
+					id = value;
+				}
 			}
-			set	
+
+			public string Keyword
 			{
-				validKeywordList = value;
+				get
+				{
+					return keyword;
+				}
+				set	
+				{
+					keyword = value;
+				}
 			}
 		}
 	}

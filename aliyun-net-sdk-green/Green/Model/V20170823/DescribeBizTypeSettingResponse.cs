@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private DescribeBizTypeSetting_Antispam antispam;
 
+		private DescribeBizTypeSetting_Ad ad;
+
 		public string RequestId
 		{
 			get
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			set	
 			{
 				antispam = value;
+			}
+		}
+
+		public DescribeBizTypeSetting_Ad Ad
+		{
+			get
+			{
+				return ad;
+			}
+			set	
+			{
+				ad = value;
 			}
 		}
 
@@ -131,6 +145,24 @@ namespace Aliyun.Acs.Green.Model.V20170823
 				set	
 				{
 					categories2 = value;
+				}
+			}
+		}
+
+		public class DescribeBizTypeSetting_Ad
+		{
+
+			private List<string> categories3;
+
+			public List<string> Categories3
+			{
+				get
+				{
+					return categories3;
+				}
+				set	
+				{
+					categories3 = value;
 				}
 			}
 		}
