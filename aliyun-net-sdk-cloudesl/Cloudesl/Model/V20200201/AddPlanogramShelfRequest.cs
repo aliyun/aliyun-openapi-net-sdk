@@ -37,13 +37,33 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string clientToken;
 
 		private string shelfType;
 
 		private string storeId;
 
 		private string shelf;
+
+		private string zone;
+
+		private string category;
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
+			}
+		}
 
 		public string ShelfType
 		{
@@ -81,6 +101,32 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				shelf = value;
 				DictionaryUtil.Add(BodyParameters, "Shelf", value);
+			}
+		}
+
+		public string Zone
+		{
+			get
+			{
+				return zone;
+			}
+			set	
+			{
+				zone = value;
+				DictionaryUtil.Add(BodyParameters, "Zone", value);
+			}
+		}
+
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
+				DictionaryUtil.Add(BodyParameters, "Category", value);
 			}
 		}
 

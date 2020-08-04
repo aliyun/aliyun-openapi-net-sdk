@@ -27,10 +27,10 @@ using Aliyun.Acs.cloudesl.Transform.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-    public class AssignUserRequest : RpcAcsRequest<AssignUserResponse>
+    public class DescribeClientPackageRequest : RpcAcsRequest<DescribeClientPackageResponse>
     {
-        public AssignUserRequest()
-            : base("cloudesl", "2020-02-01", "AssignUser", "cloudesl", "openAPI")
+        public DescribeClientPackageRequest()
+            : base("cloudesl", "2020-02-01", "DescribeClientPackage", "cloudesl", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,48 +40,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
-		private string stores;
+		private string clientType;
 
-		private string userType;
-
-		private string userId;
-
-		public string Stores
+		public string ClientType
 		{
 			get
 			{
-				return stores;
+				return clientType;
 			}
 			set	
 			{
-				stores = value;
-				DictionaryUtil.Add(BodyParameters, "Stores", value);
-			}
-		}
-
-		public string UserType
-		{
-			get
-			{
-				return userType;
-			}
-			set	
-			{
-				userType = value;
-				DictionaryUtil.Add(BodyParameters, "UserType", value);
-			}
-		}
-
-		public string UserId
-		{
-			get
-			{
-				return userId;
-			}
-			set	
-			{
-				userId = value;
-				DictionaryUtil.Add(BodyParameters, "UserId", value);
+				clientType = value;
+				DictionaryUtil.Add(BodyParameters, "ClientType", value);
 			}
 		}
 
@@ -90,9 +60,9 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			return false;
 		}
 
-        public override AssignUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeClientPackageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AssignUserResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeClientPackageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

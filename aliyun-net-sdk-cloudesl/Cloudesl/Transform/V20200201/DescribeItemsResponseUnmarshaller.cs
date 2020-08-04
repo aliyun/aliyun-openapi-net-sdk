@@ -96,6 +96,8 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 				itemInfo.ItemBarCode = context.StringValue("DescribeItems.Items["+ i +"].ItemBarCode");
 				itemInfo.ItemId = context.StringValue("DescribeItems.Items["+ i +"].ItemId");
 				itemInfo.PromotionStart = context.StringValue("DescribeItems.Items["+ i +"].PromotionStart");
+				itemInfo.GmtCreate = context.StringValue("DescribeItems.Items["+ i +"].GmtCreate");
+				itemInfo.GmtModified = context.StringValue("DescribeItems.Items["+ i +"].GmtModified");
 
 				describeItemsResponse_items.Add(itemInfo);
 			}

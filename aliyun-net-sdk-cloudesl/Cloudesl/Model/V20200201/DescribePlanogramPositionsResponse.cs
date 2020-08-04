@@ -45,6 +45,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private bool? success;
 
+		private string shelfType;
+
 		private List<DescribePlanogramPositions_LayerInfo> layerInfos;
 
 		public string Code
@@ -167,6 +169,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
+		public string ShelfType
+		{
+			get
+			{
+				return shelfType;
+			}
+			set	
+			{
+				shelfType = value;
+			}
+		}
+
 		public List<DescribePlanogramPositions_LayerInfo> LayerInfos
 		{
 			get
@@ -185,6 +199,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			private int? layer;
 
 			private string layerOrigin;
+
+			private string railCode;
 
 			private List<DescribePlanogramPositions_ShelfPositionInfo> shelfPositionInfos;
 
@@ -209,6 +225,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					layerOrigin = value;
+				}
+			}
+
+			public string RailCode
+			{
+				get
+				{
+					return railCode;
+				}
+				set	
+				{
+					railCode = value;
 				}
 			}
 

@@ -37,19 +37,20 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string actionType;
-
-		private bool? beAutoRefresh;
 
 		private string storeId;
 
 		private int? layer;
 
-		private string shelf;
-
 		private string layerOrigin;
+
+		private bool? beAutoRefresh;
+
+		private string shelf;
 
 		private List<ShelfPositionInfo> shelfPositionInfos = new List<ShelfPositionInfo>(){ };
 
@@ -63,19 +64,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				actionType = value;
 				DictionaryUtil.Add(BodyParameters, "ActionType", value);
-			}
-		}
-
-		public bool? BeAutoRefresh
-		{
-			get
-			{
-				return beAutoRefresh;
-			}
-			set	
-			{
-				beAutoRefresh = value;
-				DictionaryUtil.Add(BodyParameters, "BeAutoRefresh", value.ToString());
 			}
 		}
 
@@ -105,19 +93,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string Shelf
-		{
-			get
-			{
-				return shelf;
-			}
-			set	
-			{
-				shelf = value;
-				DictionaryUtil.Add(BodyParameters, "Shelf", value);
-			}
-		}
-
 		public string LayerOrigin
 		{
 			get
@@ -128,6 +103,32 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				layerOrigin = value;
 				DictionaryUtil.Add(BodyParameters, "LayerOrigin", value);
+			}
+		}
+
+		public bool? BeAutoRefresh
+		{
+			get
+			{
+				return beAutoRefresh;
+			}
+			set	
+			{
+				beAutoRefresh = value;
+				DictionaryUtil.Add(BodyParameters, "BeAutoRefresh", value.ToString());
+			}
+		}
+
+		public string Shelf
+		{
+			get
+			{
+				return shelf;
+			}
+			set	
+			{
+				shelf = value;
+				DictionaryUtil.Add(BodyParameters, "Shelf", value);
 			}
 		}
 

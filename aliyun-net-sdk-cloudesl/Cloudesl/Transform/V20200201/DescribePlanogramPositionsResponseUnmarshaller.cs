@@ -41,12 +41,14 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 			describePlanogramPositionsResponse.Shelf = context.StringValue("DescribePlanogramPositions.Shelf");
 			describePlanogramPositionsResponse.StoreId = context.StringValue("DescribePlanogramPositions.StoreId");
 			describePlanogramPositionsResponse.Success = context.BooleanValue("DescribePlanogramPositions.Success");
+			describePlanogramPositionsResponse.ShelfType = context.StringValue("DescribePlanogramPositions.ShelfType");
 
 			List<DescribePlanogramPositionsResponse.DescribePlanogramPositions_LayerInfo> describePlanogramPositionsResponse_layerInfos = new List<DescribePlanogramPositionsResponse.DescribePlanogramPositions_LayerInfo>();
 			for (int i = 0; i < context.Length("DescribePlanogramPositions.LayerInfos.Length"); i++) {
 				DescribePlanogramPositionsResponse.DescribePlanogramPositions_LayerInfo layerInfo = new DescribePlanogramPositionsResponse.DescribePlanogramPositions_LayerInfo();
 				layerInfo.Layer = context.IntegerValue("DescribePlanogramPositions.LayerInfos["+ i +"].Layer");
 				layerInfo.LayerOrigin = context.StringValue("DescribePlanogramPositions.LayerInfos["+ i +"].LayerOrigin");
+				layerInfo.RailCode = context.StringValue("DescribePlanogramPositions.LayerInfos["+ i +"].RailCode");
 
 				List<DescribePlanogramPositionsResponse.DescribePlanogramPositions_LayerInfo.DescribePlanogramPositions_ShelfPositionInfo> layerInfo_shelfPositionInfos = new List<DescribePlanogramPositionsResponse.DescribePlanogramPositions_LayerInfo.DescribePlanogramPositions_ShelfPositionInfo>();
 				for (int j = 0; j < context.Length("DescribePlanogramPositions.LayerInfos["+ i +"].ShelfPositionInfos.Length"); j++) {

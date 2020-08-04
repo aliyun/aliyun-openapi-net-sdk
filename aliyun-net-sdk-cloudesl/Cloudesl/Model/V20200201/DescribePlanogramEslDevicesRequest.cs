@@ -37,6 +37,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string storeId;
@@ -44,6 +45,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private int? layer;
 
 		private string shelf;
+
+		private string eslBarCode;
 
 		public string StoreId
 		{
@@ -81,6 +84,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				shelf = value;
 				DictionaryUtil.Add(BodyParameters, "Shelf", value);
+			}
+		}
+
+		public string EslBarCode
+		{
+			get
+			{
+				return eslBarCode;
+			}
+			set	
+			{
+				eslBarCode = value;
+				DictionaryUtil.Add(BodyParameters, "EslBarCode", value);
 			}
 		}
 

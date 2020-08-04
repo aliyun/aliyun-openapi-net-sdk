@@ -37,9 +37,14 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string storeId;
+
+		private int? pageNumber;
+
+		private int? pageSize;
 
 		public string StoreId
 		{
@@ -51,6 +56,32 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				storeId = value;
 				DictionaryUtil.Add(BodyParameters, "StoreId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 

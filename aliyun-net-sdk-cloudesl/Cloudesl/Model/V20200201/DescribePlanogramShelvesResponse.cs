@@ -43,6 +43,12 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private bool? success;
 
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private int? totalCount;
+
 		private List<DescribePlanogramShelves_ShelfInfo> shelfInfos;
 
 		public string Code
@@ -153,6 +159,42 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public int? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
 		public List<DescribePlanogramShelves_ShelfInfo> ShelfInfos
 		{
 			get
@@ -170,6 +212,14 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string shelf;
 
+			private bool? beMatch;
+
+			private string zone;
+
+			private string category;
+
+			private string shelfType;
+
 			private List<DescribePlanogramShelves_LayerInfo> layerInfos;
 
 			public string Shelf
@@ -181,6 +231,54 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					shelf = value;
+				}
+			}
+
+			public bool? BeMatch
+			{
+				get
+				{
+					return beMatch;
+				}
+				set	
+				{
+					beMatch = value;
+				}
+			}
+
+			public string Zone
+			{
+				get
+				{
+					return zone;
+				}
+				set	
+				{
+					zone = value;
+				}
+			}
+
+			public string Category
+			{
+				get
+				{
+					return category;
+				}
+				set	
+				{
+					category = value;
+				}
+			}
+
+			public string ShelfType
+			{
+				get
+				{
+					return shelfType;
+				}
+				set	
+				{
+					shelfType = value;
 				}
 			}
 

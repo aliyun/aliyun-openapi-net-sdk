@@ -37,7 +37,10 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string clientToken;
 
 		private string storeName;
 
@@ -46,6 +49,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private string phone;
 
 		private string userStoreCode;
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
+			}
+		}
 
 		public string StoreName
 		{

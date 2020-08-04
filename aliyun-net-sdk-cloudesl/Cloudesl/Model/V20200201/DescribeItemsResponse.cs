@@ -296,6 +296,10 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string promotionStart;
 
+			private string gmtCreate;
+
+			private string gmtModified;
+
 			public string CategoryName
 			{
 				get
@@ -893,6 +897,30 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					promotionStart = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
 				}
 			}
 		}

@@ -40,11 +40,18 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 			describePlanogramShelvesResponse.RequestId = context.StringValue("DescribePlanogramShelves.RequestId");
 			describePlanogramShelvesResponse.StoreId = context.StringValue("DescribePlanogramShelves.StoreId");
 			describePlanogramShelvesResponse.Success = context.BooleanValue("DescribePlanogramShelves.Success");
+			describePlanogramShelvesResponse.PageNumber = context.IntegerValue("DescribePlanogramShelves.PageNumber");
+			describePlanogramShelvesResponse.PageSize = context.IntegerValue("DescribePlanogramShelves.PageSize");
+			describePlanogramShelvesResponse.TotalCount = context.IntegerValue("DescribePlanogramShelves.TotalCount");
 
 			List<DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo> describePlanogramShelvesResponse_shelfInfos = new List<DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo>();
 			for (int i = 0; i < context.Length("DescribePlanogramShelves.ShelfInfos.Length"); i++) {
 				DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo shelfInfo = new DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo();
 				shelfInfo.Shelf = context.StringValue("DescribePlanogramShelves.ShelfInfos["+ i +"].Shelf");
+				shelfInfo.BeMatch = context.BooleanValue("DescribePlanogramShelves.ShelfInfos["+ i +"].BeMatch");
+				shelfInfo.Zone = context.StringValue("DescribePlanogramShelves.ShelfInfos["+ i +"].Zone");
+				shelfInfo.Category = context.StringValue("DescribePlanogramShelves.ShelfInfos["+ i +"].Category");
+				shelfInfo.ShelfType = context.StringValue("DescribePlanogramShelves.ShelfInfos["+ i +"].ShelfType");
 
 				List<DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo.DescribePlanogramShelves_LayerInfo> shelfInfo_layerInfos = new List<DescribePlanogramShelvesResponse.DescribePlanogramShelves_ShelfInfo.DescribePlanogramShelves_LayerInfo>();
 				for (int j = 0; j < context.Length("DescribePlanogramShelves.ShelfInfos["+ i +"].LayerInfos.Length"); j++) {
