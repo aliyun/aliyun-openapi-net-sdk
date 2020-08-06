@@ -90,8 +90,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 
 			private string materialInfo;
 
-			private string deviceToken;
-
 			public string Passed
 			{
 				get
@@ -125,18 +123,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 				set	
 				{
 					materialInfo = value;
-				}
-			}
-
-			public string DeviceToken
-			{
-				get
-				{
-					return deviceToken;
-				}
-				set	
-				{
-					deviceToken = value;
 				}
 			}
 		}

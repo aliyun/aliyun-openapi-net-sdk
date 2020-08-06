@@ -118,6 +118,12 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 			private string idCardNumber;
 
+			private string faceQuality;
+
+			private string faceGlobalUrl;
+
+			private string faceMask;
+
 			private VerifyMaterial_IdCardInfo idCardInfo;
 
 			public string FaceImageUrl
@@ -153,6 +159,42 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 				set	
 				{
 					idCardNumber = value;
+				}
+			}
+
+			public string FaceQuality
+			{
+				get
+				{
+					return faceQuality;
+				}
+				set	
+				{
+					faceQuality = value;
+				}
+			}
+
+			public string FaceGlobalUrl
+			{
+				get
+				{
+					return faceGlobalUrl;
+				}
+				set	
+				{
+					faceGlobalUrl = value;
+				}
+			}
+
+			public string FaceMask
+			{
+				get
+				{
+					return faceMask;
+				}
+				set	
+				{
+					faceMask = value;
 				}
 			}
 
