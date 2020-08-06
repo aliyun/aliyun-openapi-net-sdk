@@ -140,6 +140,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string utcScheduleFinishTime;
 
+			private int? overwriteMode;
+
+			private int? dynamicMode;
+
 			private List<string> srcVersions;
 
 			public string JobId
@@ -391,6 +395,30 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					utcScheduleFinishTime = value;
+				}
+			}
+
+			public int? OverwriteMode
+			{
+				get
+				{
+					return overwriteMode;
+				}
+				set	
+				{
+					overwriteMode = value;
+				}
+			}
+
+			public int? DynamicMode
+			{
+				get
+				{
+					return dynamicMode;
+				}
+				set	
+				{
+					dynamicMode = value;
 				}
 			}
 

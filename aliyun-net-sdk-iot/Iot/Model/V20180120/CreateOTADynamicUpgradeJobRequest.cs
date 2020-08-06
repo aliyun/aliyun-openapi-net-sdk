@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private int? dynamicMode;
+
 		private int? retryCount;
 
 		private int? timeoutInMinutes;
@@ -54,7 +56,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private List<string> srcVersions = new List<string>(){ };
 
+		private int? overwriteMode;
+
 		private int? maximumPerMinute;
+
+		public int? DynamicMode
+		{
+			get
+			{
+				return dynamicMode;
+			}
+			set	
+			{
+				dynamicMode = value;
+				DictionaryUtil.Add(QueryParameters, "DynamicMode", value.ToString());
+			}
+		}
 
 		public int? RetryCount
 		{
@@ -148,6 +165,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				{
 					DictionaryUtil.Add(QueryParameters,"SrcVersion." + (i + 1) , srcVersions[i]);
 				}
+			}
+		}
+
+		public int? OverwriteMode
+		{
+			get
+			{
+				return overwriteMode;
+			}
+			set	
+			{
+				overwriteMode = value;
+				DictionaryUtil.Add(QueryParameters, "OverwriteMode", value.ToString());
 			}
 		}
 

@@ -62,6 +62,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private long? scheduleTime;
 
+		private int? overwriteMode;
+
 		private int? maximumPerMinute;
 
 		private List<string> targetDeviceNames = new List<string>(){ };
@@ -210,6 +212,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				scheduleTime = value;
 				DictionaryUtil.Add(QueryParameters, "ScheduleTime", value.ToString());
+			}
+		}
+
+		public int? OverwriteMode
+		{
+			get
+			{
+				return overwriteMode;
+			}
+			set	
+			{
+				overwriteMode = value;
+				DictionaryUtil.Add(QueryParameters, "OverwriteMode", value.ToString());
 			}
 		}
 
