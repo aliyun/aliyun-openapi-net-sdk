@@ -49,6 +49,10 @@ namespace Aliyun.Acs.CSB.Transform.V20171118
 				instanceNode.BrokerAddress = context.StringValue("FindInstanceNodeList.Data.InstanceNodeList["+ i +"].BrokerAddress");
 				instanceNode.EdasTenantInfo = context.StringValue("FindInstanceNodeList.Data.InstanceNodeList["+ i +"].EdasTenantInfo");
 				instanceNode.ImportedName = context.StringValue("FindInstanceNodeList.Data.InstanceNodeList["+ i +"].ImportedName");
+				instanceNode.CsbId = context.LongValue("FindInstanceNodeList.Data.InstanceNodeList["+ i +"].CsbId");
+				instanceNode.Deleted = context.IntegerValue("FindInstanceNodeList.Data.InstanceNodeList["+ i +"].Deleted");
+				instanceNode.OwnerId = context.StringValue("FindInstanceNodeList.Data.InstanceNodeList["+ i +"].OwnerId");
+				instanceNode.BrokerCmdAddress = context.StringValue("FindInstanceNodeList.Data.InstanceNodeList["+ i +"].BrokerCmdAddress");
 
 				data_instanceNodeList.Add(instanceNode);
 			}

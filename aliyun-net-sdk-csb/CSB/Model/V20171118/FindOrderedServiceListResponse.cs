@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CSB.Model.V20171118
 {
-	public class FindInstanceNodeListResponse : AcsResponse
+	public class FindOrderedServiceListResponse : AcsResponse
 	{
 
 		private int? code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 		private string requestId;
 
-		private FindInstanceNodeList_Data data;
+		private FindOrderedServiceList_Data data;
 
 		public int? Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public FindInstanceNodeList_Data Data
+		public FindOrderedServiceList_Data Data
 		{
 			get
 			{
@@ -81,14 +81,16 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public class FindInstanceNodeList_Data
+		public class FindOrderedServiceList_Data
 		{
 
 			private int? currentPage;
 
 			private int? pageNumber;
 
-			private List<FindInstanceNodeList_InstanceNode> instanceNodeList;
+			private long? total;
+
+			private List<FindOrderedServiceList_Order> orderList;
 
 			public int? CurrentPage
 			{
@@ -114,42 +116,164 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 				}
 			}
 
-			public List<FindInstanceNodeList_InstanceNode> InstanceNodeList
+			public long? Total
 			{
 				get
 				{
-					return instanceNodeList;
+					return total;
 				}
 				set	
 				{
-					instanceNodeList = value;
+					total = value;
 				}
 			}
 
-			public class FindInstanceNodeList_InstanceNode
+			public List<FindOrderedServiceList_Order> OrderList
 			{
+				get
+				{
+					return orderList;
+				}
+				set	
+				{
+					orderList = value;
+				}
+			}
+
+			public class FindOrderedServiceList_Order
+			{
+
+				private string serviceName;
+
+				private string serviceVersion;
+
+				private int? orderStatus;
+
+				private long? gmtCreate;
+
+				private string serviceId;
+
+				private int? serviceStatus;
+
+				private long? credentialGroupId;
+
+				private long? gmtModified;
+
+				private string projectName;
 
 				private long? id;
 
-				private string instanceName;
+				private string credentialGroupName;
 
-				private bool? isImported;
+				private FindOrderedServiceList_SlaInfo slaInfo;
 
-				private string groupAddress;
+				public string ServiceName
+				{
+					get
+					{
+						return serviceName;
+					}
+					set	
+					{
+						serviceName = value;
+					}
+				}
 
-				private string brokerAddress;
+				public string ServiceVersion
+				{
+					get
+					{
+						return serviceVersion;
+					}
+					set	
+					{
+						serviceVersion = value;
+					}
+				}
 
-				private string edasTenantInfo;
+				public int? OrderStatus
+				{
+					get
+					{
+						return orderStatus;
+					}
+					set	
+					{
+						orderStatus = value;
+					}
+				}
 
-				private string importedName;
+				public long? GmtCreate
+				{
+					get
+					{
+						return gmtCreate;
+					}
+					set	
+					{
+						gmtCreate = value;
+					}
+				}
 
-				private long? csbId;
+				public string ServiceId
+				{
+					get
+					{
+						return serviceId;
+					}
+					set	
+					{
+						serviceId = value;
+					}
+				}
 
-				private int? deleted;
+				public int? ServiceStatus
+				{
+					get
+					{
+						return serviceStatus;
+					}
+					set	
+					{
+						serviceStatus = value;
+					}
+				}
 
-				private string ownerId;
+				public long? CredentialGroupId
+				{
+					get
+					{
+						return credentialGroupId;
+					}
+					set	
+					{
+						credentialGroupId = value;
+					}
+				}
 
-				private string brokerCmdAddress;
+				public long? GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
+					}
+				}
+
+				public string ProjectName
+				{
+					get
+					{
+						return projectName;
+					}
+					set	
+					{
+						projectName = value;
+					}
+				}
 
 				public long? Id
 				{
@@ -163,123 +287,59 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 					}
 				}
 
-				public string InstanceName
+				public string CredentialGroupName
 				{
 					get
 					{
-						return instanceName;
+						return credentialGroupName;
 					}
 					set	
 					{
-						instanceName = value;
+						credentialGroupName = value;
 					}
 				}
 
-				public bool? IsImported
+				public FindOrderedServiceList_SlaInfo SlaInfo
 				{
 					get
 					{
-						return isImported;
+						return slaInfo;
 					}
 					set	
 					{
-						isImported = value;
+						slaInfo = value;
 					}
 				}
 
-				public string GroupAddress
+				public class FindOrderedServiceList_SlaInfo
 				{
-					get
-					{
-						return groupAddress;
-					}
-					set	
-					{
-						groupAddress = value;
-					}
-				}
 
-				public string BrokerAddress
-				{
-					get
-					{
-						return brokerAddress;
-					}
-					set	
-					{
-						brokerAddress = value;
-					}
-				}
+					private long? qps;
 
-				public string EdasTenantInfo
-				{
-					get
-					{
-						return edasTenantInfo;
-					}
-					set	
-					{
-						edasTenantInfo = value;
-					}
-				}
+					private long? qph;
 
-				public string ImportedName
-				{
-					get
+					public long? Qps
 					{
-						return importedName;
+						get
+						{
+							return qps;
+						}
+						set	
+						{
+							qps = value;
+						}
 					}
-					set	
-					{
-						importedName = value;
-					}
-				}
 
-				public long? CsbId
-				{
-					get
+					public long? Qph
 					{
-						return csbId;
-					}
-					set	
-					{
-						csbId = value;
-					}
-				}
-
-				public int? Deleted
-				{
-					get
-					{
-						return deleted;
-					}
-					set	
-					{
-						deleted = value;
-					}
-				}
-
-				public string OwnerId
-				{
-					get
-					{
-						return ownerId;
-					}
-					set	
-					{
-						ownerId = value;
-					}
-				}
-
-				public string BrokerCmdAddress
-				{
-					get
-					{
-						return brokerCmdAddress;
-					}
-					set	
-					{
-						brokerCmdAddress = value;
+						get
+						{
+							return qph;
+						}
+						set	
+						{
+							qph = value;
+						}
 					}
 				}
 			}

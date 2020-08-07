@@ -177,6 +177,8 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 				private bool? validProvideType;
 
+				private int? qps;
+
 				private List<GetService_ServiceVersion> serviceVersionsList;
 
 				private List<GetService_VisiableGroup> visiableGroupList;
@@ -638,6 +640,18 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 					set	
 					{
 						validProvideType = value;
+					}
+				}
+
+				public int? Qps
+				{
+					get
+					{
+						return qps;
+					}
+					set	
+					{
+						qps = value;
 					}
 				}
 

@@ -28,10 +28,10 @@ using Aliyun.Acs.CSB.Transform.V20171118;
 
 namespace Aliyun.Acs.CSB.Model.V20171118
 {
-    public class FindBrokerSLOHisListRequest : RpcAcsRequest<FindBrokerSLOHisListResponse>
+    public class FindOtherInstanceListRequest : RpcAcsRequest<FindOtherInstanceListResponse>
     {
-        public FindBrokerSLOHisListRequest()
-            : base("CSB", "2017-11-18", "FindBrokerSLOHisList")
+        public FindOtherInstanceListRequest()
+            : base("CSB", "2017-11-18", "FindOtherInstanceList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,48 +40,48 @@ namespace Aliyun.Acs.CSB.Model.V20171118
             }
         }
 
-		private long? csbId;
+		private int? pageNum;
 
-		private string beginDdHHmm;
+		private string searchTxt;
 
-		private string endDdHHmm;
+		private int? pageSize;
 
-		public long? CsbId
+		public int? PageNum
 		{
 			get
 			{
-				return csbId;
+				return pageNum;
 			}
 			set	
 			{
-				csbId = value;
-				DictionaryUtil.Add(QueryParameters, "CsbId", value.ToString());
+				pageNum = value;
+				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
 			}
 		}
 
-		public string BeginDdHHmm
+		public string SearchTxt
 		{
 			get
 			{
-				return beginDdHHmm;
+				return searchTxt;
 			}
 			set	
 			{
-				beginDdHHmm = value;
-				DictionaryUtil.Add(QueryParameters, "BeginDdHHmm", value);
+				searchTxt = value;
+				DictionaryUtil.Add(QueryParameters, "SearchTxt", value);
 			}
 		}
 
-		public string EndDdHHmm
+		public int? PageSize
 		{
 			get
 			{
-				return endDdHHmm;
+				return pageSize;
 			}
 			set	
 			{
-				endDdHHmm = value;
-				DictionaryUtil.Add(QueryParameters, "EndDdHHmm", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -90,9 +90,9 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			return false;
 		}
 
-        public override FindBrokerSLOHisListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override FindOtherInstanceListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FindBrokerSLOHisListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FindOtherInstanceListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

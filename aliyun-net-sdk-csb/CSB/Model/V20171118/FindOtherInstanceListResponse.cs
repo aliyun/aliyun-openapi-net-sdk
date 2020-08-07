@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.CSB.Model.V20171118
 {
-	public class FindInstanceNodeListResponse : AcsResponse
+	public class FindOtherInstanceListResponse : AcsResponse
 	{
 
 		private int? code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 		private string requestId;
 
-		private FindInstanceNodeList_Data data;
+		private FindOtherInstanceList_Data data;
 
 		public int? Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public FindInstanceNodeList_Data Data
+		public FindOtherInstanceList_Data Data
 		{
 			get
 			{
@@ -81,14 +81,14 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public class FindInstanceNodeList_Data
+		public class FindOtherInstanceList_Data
 		{
 
 			private int? currentPage;
 
 			private int? pageNumber;
 
-			private List<FindInstanceNodeList_InstanceNode> instanceNodeList;
+			private List<FindOtherInstanceList_Item> itemList;
 
 			public int? CurrentPage
 			{
@@ -114,42 +114,88 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 				}
 			}
 
-			public List<FindInstanceNodeList_InstanceNode> InstanceNodeList
+			public List<FindOtherInstanceList_Item> ItemList
 			{
 				get
 				{
-					return instanceNodeList;
+					return itemList;
 				}
 				set	
 				{
-					instanceNodeList = value;
+					itemList = value;
 				}
 			}
 
-			public class FindInstanceNodeList_InstanceNode
+			public class FindOtherInstanceList_Item
 			{
+
+				private string description;
+
+				private string runStatus;
+
+				private long? gmtCreate;
+
+				private long? gmtModified;
 
 				private long? id;
 
-				private string instanceName;
+				private int? instanceCategory;
 
-				private bool? isImported;
+				private string name;
 
-				private string groupAddress;
+				private string statusStr;
 
-				private string brokerAddress;
+				private long? ownerId;
 
-				private string edasTenantInfo;
+				private string vpcName;
 
-				private string importedName;
+				public string Description
+				{
+					get
+					{
+						return description;
+					}
+					set	
+					{
+						description = value;
+					}
+				}
 
-				private long? csbId;
+				public string RunStatus
+				{
+					get
+					{
+						return runStatus;
+					}
+					set	
+					{
+						runStatus = value;
+					}
+				}
 
-				private int? deleted;
+				public long? GmtCreate
+				{
+					get
+					{
+						return gmtCreate;
+					}
+					set	
+					{
+						gmtCreate = value;
+					}
+				}
 
-				private string ownerId;
-
-				private string brokerCmdAddress;
+				public long? GmtModified
+				{
+					get
+					{
+						return gmtModified;
+					}
+					set	
+					{
+						gmtModified = value;
+					}
+				}
 
 				public long? Id
 				{
@@ -163,103 +209,43 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 					}
 				}
 
-				public string InstanceName
+				public int? InstanceCategory
 				{
 					get
 					{
-						return instanceName;
+						return instanceCategory;
 					}
 					set	
 					{
-						instanceName = value;
+						instanceCategory = value;
 					}
 				}
 
-				public bool? IsImported
+				public string Name
 				{
 					get
 					{
-						return isImported;
+						return name;
 					}
 					set	
 					{
-						isImported = value;
+						name = value;
 					}
 				}
 
-				public string GroupAddress
+				public string StatusStr
 				{
 					get
 					{
-						return groupAddress;
+						return statusStr;
 					}
 					set	
 					{
-						groupAddress = value;
+						statusStr = value;
 					}
 				}
 
-				public string BrokerAddress
-				{
-					get
-					{
-						return brokerAddress;
-					}
-					set	
-					{
-						brokerAddress = value;
-					}
-				}
-
-				public string EdasTenantInfo
-				{
-					get
-					{
-						return edasTenantInfo;
-					}
-					set	
-					{
-						edasTenantInfo = value;
-					}
-				}
-
-				public string ImportedName
-				{
-					get
-					{
-						return importedName;
-					}
-					set	
-					{
-						importedName = value;
-					}
-				}
-
-				public long? CsbId
-				{
-					get
-					{
-						return csbId;
-					}
-					set	
-					{
-						csbId = value;
-					}
-				}
-
-				public int? Deleted
-				{
-					get
-					{
-						return deleted;
-					}
-					set	
-					{
-						deleted = value;
-					}
-				}
-
-				public string OwnerId
+				public long? OwnerId
 				{
 					get
 					{
@@ -271,15 +257,15 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 					}
 				}
 
-				public string BrokerCmdAddress
+				public string VpcName
 				{
 					get
 					{
-						return brokerCmdAddress;
+						return vpcName;
 					}
 					set	
 					{
-						brokerCmdAddress = value;
+						vpcName = value;
 					}
 				}
 			}

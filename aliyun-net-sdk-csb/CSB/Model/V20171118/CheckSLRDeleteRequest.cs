@@ -28,10 +28,10 @@ using Aliyun.Acs.CSB.Transform.V20171118;
 
 namespace Aliyun.Acs.CSB.Model.V20171118
 {
-    public class FindBrokerSLOHisListRequest : RpcAcsRequest<FindBrokerSLOHisListResponse>
+    public class CheckSLRDeleteRequest : RpcAcsRequest<CheckSLRDeleteResponse>
     {
-        public FindBrokerSLOHisListRequest()
-            : base("CSB", "2017-11-18", "FindBrokerSLOHisList")
+        public CheckSLRDeleteRequest()
+            : base("CSB", "2017-11-18", "CheckSLRDelete")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,48 +40,78 @@ namespace Aliyun.Acs.CSB.Model.V20171118
             }
         }
 
-		private long? csbId;
+		private string deletionTaskId;
 
-		private string beginDdHHmm;
+		private string accountId;
 
-		private string endDdHHmm;
+		private string sPIRegionId;
 
-		public long? CsbId
+		private string roleArn;
+
+		private string serviceName;
+
+		public string DeletionTaskId
 		{
 			get
 			{
-				return csbId;
+				return deletionTaskId;
 			}
 			set	
 			{
-				csbId = value;
-				DictionaryUtil.Add(QueryParameters, "CsbId", value.ToString());
+				deletionTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionTaskId", value);
 			}
 		}
 
-		public string BeginDdHHmm
+		public string AccountId
 		{
 			get
 			{
-				return beginDdHHmm;
+				return accountId;
 			}
 			set	
 			{
-				beginDdHHmm = value;
-				DictionaryUtil.Add(QueryParameters, "BeginDdHHmm", value);
+				accountId = value;
+				DictionaryUtil.Add(QueryParameters, "AccountId", value);
 			}
 		}
 
-		public string EndDdHHmm
+		public string SPIRegionId
 		{
 			get
 			{
-				return endDdHHmm;
+				return sPIRegionId;
 			}
 			set	
 			{
-				endDdHHmm = value;
-				DictionaryUtil.Add(QueryParameters, "EndDdHHmm", value);
+				sPIRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "SPIRegionId", value);
+			}
+		}
+
+		public string RoleArn
+		{
+			get
+			{
+				return roleArn;
+			}
+			set	
+			{
+				roleArn = value;
+				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
+			}
+		}
+
+		public string ServiceName
+		{
+			get
+			{
+				return serviceName;
+			}
+			set	
+			{
+				serviceName = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
 			}
 		}
 
@@ -90,9 +120,9 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			return false;
 		}
 
-        public override FindBrokerSLOHisListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CheckSLRDeleteResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FindBrokerSLOHisListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckSLRDeleteResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

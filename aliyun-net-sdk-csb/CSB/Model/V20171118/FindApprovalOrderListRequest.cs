@@ -47,6 +47,8 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 		private int? pageNum;
 
+		private string credentialGroupName;
+
 		private string alias;
 
 		private string serviceName;
@@ -91,6 +93,19 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public string CredentialGroupName
+		{
+			get
+			{
+				return credentialGroupName;
+			}
+			set	
+			{
+				credentialGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "CredentialGroupName", value);
 			}
 		}
 

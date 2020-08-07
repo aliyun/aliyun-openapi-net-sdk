@@ -28,10 +28,10 @@ using Aliyun.Acs.CSB.Transform.V20171118;
 
 namespace Aliyun.Acs.CSB.Model.V20171118
 {
-    public class FindOrderedListRequest : RpcAcsRequest<FindOrderedListResponse>
+    public class FindOrderedServiceListRequest : RpcAcsRequest<FindOrderedServiceListResponse>
     {
-        public FindOrderedListRequest()
-            : base("CSB", "2017-11-18", "FindOrderedList")
+        public FindOrderedServiceListRequest()
+            : base("CSB", "2017-11-18", "FindOrderedServiceList")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -51,13 +51,15 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 
 		private string credentialGroupName;
 
-		private string alias;
+		private string accessKey;
+
+		private int? pageSize;
 
 		private string serviceName;
 
 		private long? serviceId;
 
-		private string status;
+		private long? projectId;
 
 		public string ProjectName
 		{
@@ -124,16 +126,29 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public string Alias
+		public string AccessKey
 		{
 			get
 			{
-				return alias;
+				return accessKey;
 			}
 			set	
 			{
-				alias = value;
-				DictionaryUtil.Add(QueryParameters, "Alias", value);
+				accessKey = value;
+				DictionaryUtil.Add(QueryParameters, "AccessKey", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -163,16 +178,16 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			}
 		}
 
-		public string Status
+		public long? ProjectId
 		{
 			get
 			{
-				return status;
+				return projectId;
 			}
 			set	
 			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
+				projectId = value;
+				DictionaryUtil.Add(QueryParameters, "ProjectId", value.ToString());
 			}
 		}
 
@@ -181,9 +196,9 @@ namespace Aliyun.Acs.CSB.Model.V20171118
 			return false;
 		}
 
-        public override FindOrderedListResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override FindOrderedServiceListResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return FindOrderedListResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return FindOrderedServiceListResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

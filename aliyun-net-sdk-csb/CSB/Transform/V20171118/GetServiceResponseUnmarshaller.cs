@@ -76,6 +76,7 @@ namespace Aliyun.Acs.CSB.Transform.V20171118
 			service.UserId = context.StringValue("GetService.Data.Service.UserId");
 			service.ValidConsumeTypes = context.BooleanValue("GetService.Data.Service.ValidConsumeTypes");
 			service.ValidProvideType = context.BooleanValue("GetService.Data.Service.ValidProvideType");
+			service.Qps = context.IntegerValue("GetService.Data.Service.Qps");
 
 			List<string> service_casServTargets = new List<string>();
 			for (int i = 0; i < context.Length("GetService.Data.Service.CasServTargets.Length"); i++) {
