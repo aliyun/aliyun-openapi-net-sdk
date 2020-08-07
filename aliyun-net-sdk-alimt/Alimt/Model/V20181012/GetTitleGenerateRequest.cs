@@ -28,10 +28,10 @@ using Aliyun.Acs.alimt.Transform.V20181012;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-    public class TranslateRequest : RpcAcsRequest<TranslateResponse>
+    public class GetTitleGenerateRequest : RpcAcsRequest<GetTitleGenerateResponse>
     {
-        public TranslateRequest()
-            : base("alimt", "2018-10-12", "Translate")
+        public GetTitleGenerateRequest()
+            : base("alimt", "2018-10-12", "GetTitleGenerate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,78 +41,108 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			Method = MethodType.POST;
         }
 
-		private string sourceLanguage;
+		private string language;
 
-		private string sourceText;
+		private string title;
 
-		private string formatType;
+		private string platform;
 
-		private string scene;
+		private string extra;
 
-		private string targetLanguage;
+		private string attributes;
 
-		public string SourceLanguage
+		private string hotWords;
+
+		private string categoryId;
+
+		public string Language
 		{
 			get
 			{
-				return sourceLanguage;
+				return language;
 			}
 			set	
 			{
-				sourceLanguage = value;
-				DictionaryUtil.Add(BodyParameters, "SourceLanguage", value);
+				language = value;
+				DictionaryUtil.Add(BodyParameters, "Language", value);
 			}
 		}
 
-		public string SourceText
+		public string Title
 		{
 			get
 			{
-				return sourceText;
+				return title;
 			}
 			set	
 			{
-				sourceText = value;
-				DictionaryUtil.Add(BodyParameters, "SourceText", value);
+				title = value;
+				DictionaryUtil.Add(BodyParameters, "Title", value);
 			}
 		}
 
-		public string FormatType
+		public string Platform
 		{
 			get
 			{
-				return formatType;
+				return platform;
 			}
 			set	
 			{
-				formatType = value;
-				DictionaryUtil.Add(BodyParameters, "FormatType", value);
+				platform = value;
+				DictionaryUtil.Add(BodyParameters, "Platform", value);
 			}
 		}
 
-		public string Scene
+		public string Extra
 		{
 			get
 			{
-				return scene;
+				return extra;
 			}
 			set	
 			{
-				scene = value;
-				DictionaryUtil.Add(BodyParameters, "Scene", value);
+				extra = value;
+				DictionaryUtil.Add(BodyParameters, "Extra", value);
 			}
 		}
 
-		public string TargetLanguage
+		public string Attributes
 		{
 			get
 			{
-				return targetLanguage;
+				return attributes;
 			}
 			set	
 			{
-				targetLanguage = value;
-				DictionaryUtil.Add(BodyParameters, "TargetLanguage", value);
+				attributes = value;
+				DictionaryUtil.Add(BodyParameters, "Attributes", value);
+			}
+		}
+
+		public string HotWords
+		{
+			get
+			{
+				return hotWords;
+			}
+			set	
+			{
+				hotWords = value;
+				DictionaryUtil.Add(BodyParameters, "HotWords", value);
+			}
+		}
+
+		public string CategoryId
+		{
+			get
+			{
+				return categoryId;
+			}
+			set	
+			{
+				categoryId = value;
+				DictionaryUtil.Add(BodyParameters, "CategoryId", value);
 			}
 		}
 
@@ -121,9 +151,9 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			return false;
 		}
 
-        public override TranslateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetTitleGenerateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TranslateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetTitleGenerateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

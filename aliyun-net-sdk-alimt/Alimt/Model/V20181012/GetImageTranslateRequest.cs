@@ -28,10 +28,10 @@ using Aliyun.Acs.alimt.Transform.V20181012;
 
 namespace Aliyun.Acs.alimt.Model.V20181012
 {
-    public class TranslateRequest : RpcAcsRequest<TranslateResponse>
+    public class GetImageTranslateRequest : RpcAcsRequest<GetImageTranslateResponse>
     {
-        public TranslateRequest()
-            : base("alimt", "2018-10-12", "Translate")
+        public GetImageTranslateRequest()
+            : base("alimt", "2018-10-12", "GetImageTranslate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,11 +43,9 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 
 		private string sourceLanguage;
 
-		private string sourceText;
+		private string url;
 
-		private string formatType;
-
-		private string scene;
+		private string extra;
 
 		private string targetLanguage;
 
@@ -64,42 +62,29 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			}
 		}
 
-		public string SourceText
+		public string Url
 		{
 			get
 			{
-				return sourceText;
+				return url;
 			}
 			set	
 			{
-				sourceText = value;
-				DictionaryUtil.Add(BodyParameters, "SourceText", value);
+				url = value;
+				DictionaryUtil.Add(BodyParameters, "Url", value);
 			}
 		}
 
-		public string FormatType
+		public string Extra
 		{
 			get
 			{
-				return formatType;
+				return extra;
 			}
 			set	
 			{
-				formatType = value;
-				DictionaryUtil.Add(BodyParameters, "FormatType", value);
-			}
-		}
-
-		public string Scene
-		{
-			get
-			{
-				return scene;
-			}
-			set	
-			{
-				scene = value;
-				DictionaryUtil.Add(BodyParameters, "Scene", value);
+				extra = value;
+				DictionaryUtil.Add(BodyParameters, "Extra", value);
 			}
 		}
 
@@ -121,9 +106,9 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 			return false;
 		}
 
-        public override TranslateResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetImageTranslateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return TranslateResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetImageTranslateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
