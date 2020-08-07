@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.alimt;
 using Aliyun.Acs.alimt.Transform;
 using Aliyun.Acs.alimt.Transform.V20181012;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.alimt.Model.V20181012
     public class TranslateECommerceRequest : RpcAcsRequest<TranslateECommerceResponse>
     {
         public TranslateECommerceRequest()
-            : base("alimt", "2018-10-12", "TranslateECommerce")
+            : base("alimt", "2018-10-12", "TranslateECommerce", "alimt", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
