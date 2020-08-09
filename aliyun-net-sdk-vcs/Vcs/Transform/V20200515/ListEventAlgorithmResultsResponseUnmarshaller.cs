@@ -34,6 +34,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			listEventAlgorithmResultsResponse.Code = context.StringValue("ListEventAlgorithmResults.Code");
 			listEventAlgorithmResultsResponse.Message = context.StringValue("ListEventAlgorithmResults.Message");
 			listEventAlgorithmResultsResponse.RequestId = context.StringValue("ListEventAlgorithmResults.RequestId");
+			listEventAlgorithmResultsResponse.ExtendValue = context.StringValue("ListEventAlgorithmResults.ExtendValue");
 
 			ListEventAlgorithmResultsResponse.ListEventAlgorithmResults_Data data = new ListEventAlgorithmResultsResponse.ListEventAlgorithmResults_Data();
 			data.PageNumber = context.IntegerValue("ListEventAlgorithmResults.Data.PageNumber");
@@ -53,6 +54,9 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.ShotTime = context.StringValue("ListEventAlgorithmResults.Data.Records["+ i +"].ShotTime");
 				recordsItem.TargetPicUrlPath = context.StringValue("ListEventAlgorithmResults.Data.Records["+ i +"].TargetPicUrlPath");
 				recordsItem.RecordId = context.StringValue("ListEventAlgorithmResults.Data.Records["+ i +"].RecordId");
+				recordsItem.ExtendValue = context.StringValue("ListEventAlgorithmResults.Data.Records["+ i +"].ExtendValue");
+				recordsItem.ExtendValueTwo = context.StringValue("ListEventAlgorithmResults.Data.Records["+ i +"].ExtendValueTwo");
+				recordsItem.ExtendValueThree = context.StringValue("ListEventAlgorithmResults.Data.Records["+ i +"].ExtendValueThree");
 
 				data_records.Add(recordsItem);
 			}

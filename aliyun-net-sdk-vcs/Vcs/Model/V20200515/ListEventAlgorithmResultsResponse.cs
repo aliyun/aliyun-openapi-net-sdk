@@ -31,6 +31,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string requestId;
 
+		private string extendValue;
+
 		private ListEventAlgorithmResults_Data data;
 
 		public string Code
@@ -66,6 +68,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string ExtendValue
+		{
+			get
+			{
+				return extendValue;
+			}
+			set	
+			{
+				extendValue = value;
 			}
 		}
 
@@ -175,6 +189,12 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string recordId;
 
+				private string extendValue;
+
+				private string extendValueTwo;
+
+				private string extendValueThree;
+
 				public string CapStyle
 				{
 					get
@@ -280,6 +300,42 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						recordId = value;
+					}
+				}
+
+				public string ExtendValue
+				{
+					get
+					{
+						return extendValue;
+					}
+					set	
+					{
+						extendValue = value;
+					}
+				}
+
+				public string ExtendValueTwo
+				{
+					get
+					{
+						return extendValueTwo;
+					}
+					set	
+					{
+						extendValueTwo = value;
+					}
+				}
+
+				public string ExtendValueThree
+				{
+					get
+					{
+						return extendValueThree;
+					}
+					set	
+					{
+						extendValueThree = value;
 					}
 				}
 			}

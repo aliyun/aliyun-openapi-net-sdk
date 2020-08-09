@@ -63,6 +63,20 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string retryInterval;
 
+		private string deviceId;
+
+		private string userName;
+
+		private string passWord;
+
+		private string protocol;
+
+		private string serverId;
+
+		private string serverPort;
+
+		private string serverIp;
+
 		private List<GetDeviceConfig_OSDListItem> oSDList;
 
 		public bool? AudioEnable
@@ -290,6 +304,90 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				retryInterval = value;
+			}
+		}
+
+		public string DeviceId
+		{
+			get
+			{
+				return deviceId;
+			}
+			set	
+			{
+				deviceId = value;
+			}
+		}
+
+		public string UserName
+		{
+			get
+			{
+				return userName;
+			}
+			set	
+			{
+				userName = value;
+			}
+		}
+
+		public string PassWord
+		{
+			get
+			{
+				return passWord;
+			}
+			set	
+			{
+				passWord = value;
+			}
+		}
+
+		public string Protocol
+		{
+			get
+			{
+				return protocol;
+			}
+			set	
+			{
+				protocol = value;
+			}
+		}
+
+		public string ServerId
+		{
+			get
+			{
+				return serverId;
+			}
+			set	
+			{
+				serverId = value;
+			}
+		}
+
+		public string ServerPort
+		{
+			get
+			{
+				return serverPort;
+			}
+			set	
+			{
+				serverPort = value;
+			}
+		}
+
+		public string ServerIp
+		{
+			get
+			{
+				return serverIp;
+			}
+			set	
+			{
+				serverIp = value;
 			}
 		}
 

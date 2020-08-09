@@ -42,11 +42,11 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string deviceTimeStamp;
 
+		private string deviceSn;
+
 		private string deviceId;
 
 		private string serverId;
-
-		private string deviceSerialNumber;
 
 		public string DeviceTimeStamp
 		{
@@ -58,6 +58,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				deviceTimeStamp = value;
 				DictionaryUtil.Add(BodyParameters, "DeviceTimeStamp", value);
+			}
+		}
+
+		public string DeviceSn
+		{
+			get
+			{
+				return deviceSn;
+			}
+			set	
+			{
+				deviceSn = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceSn", value);
 			}
 		}
 
@@ -84,19 +97,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				serverId = value;
 				DictionaryUtil.Add(BodyParameters, "ServerId", value);
-			}
-		}
-
-		public string DeviceSerialNumber
-		{
-			get
-			{
-				return deviceSerialNumber;
-			}
-			set	
-			{
-				deviceSerialNumber = value;
-				DictionaryUtil.Add(BodyParameters, "DeviceSerialNumber", value);
 			}
 		}
 

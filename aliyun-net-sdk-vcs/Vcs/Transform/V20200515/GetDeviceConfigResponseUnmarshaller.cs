@@ -50,6 +50,13 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			getDeviceConfigResponse.RequestId = context.StringValue("GetDeviceConfig.RequestId");
 			getDeviceConfigResponse.Resolution = context.StringValue("GetDeviceConfig.Resolution");
 			getDeviceConfigResponse.RetryInterval = context.StringValue("GetDeviceConfig.RetryInterval");
+			getDeviceConfigResponse.DeviceId = context.StringValue("GetDeviceConfig.DeviceId");
+			getDeviceConfigResponse.UserName = context.StringValue("GetDeviceConfig.UserName");
+			getDeviceConfigResponse.PassWord = context.StringValue("GetDeviceConfig.PassWord");
+			getDeviceConfigResponse.Protocol = context.StringValue("GetDeviceConfig.Protocol");
+			getDeviceConfigResponse.ServerId = context.StringValue("GetDeviceConfig.ServerId");
+			getDeviceConfigResponse.ServerPort = context.StringValue("GetDeviceConfig.ServerPort");
+			getDeviceConfigResponse.ServerIp = context.StringValue("GetDeviceConfig.ServerIp");
 
 			List<GetDeviceConfigResponse.GetDeviceConfig_OSDListItem> getDeviceConfigResponse_oSDList = new List<GetDeviceConfigResponse.GetDeviceConfig_OSDListItem>();
 			for (int i = 0; i < context.Length("GetDeviceConfig.OSDList.Length"); i++) {

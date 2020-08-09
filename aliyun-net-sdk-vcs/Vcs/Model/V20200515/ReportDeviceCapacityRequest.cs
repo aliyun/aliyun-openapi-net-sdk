@@ -70,6 +70,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					DictionaryUtil.Add(BodyParameters,"StreamCapacities." + (i + 1) + ".MaxStream", streamCapacitiess[i].MaxStream);
 					DictionaryUtil.Add(BodyParameters,"StreamCapacities." + (i + 1) + ".EncodeFormat", streamCapacitiess[i].EncodeFormat);
 					DictionaryUtil.Add(BodyParameters,"StreamCapacities." + (i + 1) + ".MaxFrameRate", streamCapacitiess[i].MaxFrameRate);
+					DictionaryUtil.Add(BodyParameters,"StreamCapacities." + (i + 1) + ".GovLengthRange", streamCapacitiess[i].GovLengthRange);
 					DictionaryUtil.Add(BodyParameters,"StreamCapacities." + (i + 1) + ".Resolution", streamCapacitiess[i].Resolution);
 				}
 			}
@@ -164,6 +165,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 			private string maxFrameRate;
 
+			private string govLengthRange;
+
 			private string resolution;
 
 			public string BitrateRange
@@ -211,6 +214,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				set	
 				{
 					maxFrameRate = value;
+				}
+			}
+
+			public string GovLengthRange
+			{
+				get
+				{
+					return govLengthRange;
+				}
+				set	
+				{
+					govLengthRange = value;
 				}
 			}
 
