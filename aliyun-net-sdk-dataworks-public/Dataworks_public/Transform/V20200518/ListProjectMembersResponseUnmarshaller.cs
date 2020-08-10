@@ -31,36 +31,38 @@ namespace Aliyun.Acs.dataworks_public.Transform.V20200518
 			ListProjectMembersResponse listProjectMembersResponse = new ListProjectMembersResponse();
 
 			listProjectMembersResponse.HttpResponse = context.HttpResponse;
-			listProjectMembersResponse.PageNum = context.IntegerValue("ListProjectMembers.PageNum");
-			listProjectMembersResponse.PageSize = context.IntegerValue("ListProjectMembers.PageSize");
 			listProjectMembersResponse.RequestId = context.StringValue("ListProjectMembers.RequestId");
-			listProjectMembersResponse.TotalNum = context.IntegerValue("ListProjectMembers.TotalNum");
 
-			List<ListProjectMembersResponse.ListProjectMembers_ProjectMember> listProjectMembersResponse_projectMemberList = new List<ListProjectMembersResponse.ListProjectMembers_ProjectMember>();
-			for (int i = 0; i < context.Length("ListProjectMembers.ProjectMemberList.Length"); i++) {
-				ListProjectMembersResponse.ListProjectMembers_ProjectMember projectMember = new ListProjectMembersResponse.ListProjectMembers_ProjectMember();
-				projectMember.ProjectMemberId = context.StringValue("ListProjectMembers.ProjectMemberList["+ i +"].ProjectMemberId");
-				projectMember.ProjectMemberName = context.StringValue("ListProjectMembers.ProjectMemberList["+ i +"].ProjectMemberName");
-				projectMember.ProjectMemberType = context.StringValue("ListProjectMembers.ProjectMemberList["+ i +"].ProjectMemberType");
-				projectMember.CreateOn = context.StringValue("ListProjectMembers.ProjectMemberList["+ i +"].CreateOn");
-				projectMember.Nick = context.StringValue("ListProjectMembers.ProjectMemberList["+ i +"].Nick");
-				projectMember.Status = context.StringValue("ListProjectMembers.ProjectMemberList["+ i +"].Status");
+			ListProjectMembersResponse.ListProjectMembers_Data data = new ListProjectMembersResponse.ListProjectMembers_Data();
+			data.PageNumber = context.IntegerValue("ListProjectMembers.Data.PageNumber");
+			data.PageSize = context.IntegerValue("ListProjectMembers.Data.PageSize");
+			data.TotalCount = context.IntegerValue("ListProjectMembers.Data.TotalCount");
 
-				List<ListProjectMembersResponse.ListProjectMembers_ProjectMember.ListProjectMembers_Role> projectMember_projectRoleList = new List<ListProjectMembersResponse.ListProjectMembers_ProjectMember.ListProjectMembers_Role>();
-				for (int j = 0; j < context.Length("ListProjectMembers.ProjectMemberList["+ i +"].ProjectRoleList.Length"); j++) {
-					ListProjectMembersResponse.ListProjectMembers_ProjectMember.ListProjectMembers_Role role = new ListProjectMembersResponse.ListProjectMembers_ProjectMember.ListProjectMembers_Role();
-					role.ProjectRoleCode = context.StringValue("ListProjectMembers.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleCode");
-					role.ProjectRoleId = context.IntegerValue("ListProjectMembers.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleId");
-					role.ProjectRoleName = context.StringValue("ListProjectMembers.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleName");
-					role.ProjectRoleType = context.StringValue("ListProjectMembers.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleType");
+			List<ListProjectMembersResponse.ListProjectMembers_Data.ListProjectMembers_ProjectMember> data_projectMemberList = new List<ListProjectMembersResponse.ListProjectMembers_Data.ListProjectMembers_ProjectMember>();
+			for (int i = 0; i < context.Length("ListProjectMembers.Data.ProjectMemberList.Length"); i++) {
+				ListProjectMembersResponse.ListProjectMembers_Data.ListProjectMembers_ProjectMember projectMember = new ListProjectMembersResponse.ListProjectMembers_Data.ListProjectMembers_ProjectMember();
+				projectMember.Nick = context.StringValue("ListProjectMembers.Data.ProjectMemberList["+ i +"].Nick");
+				projectMember.ProjectMemberId = context.StringValue("ListProjectMembers.Data.ProjectMemberList["+ i +"].ProjectMemberId");
+				projectMember.ProjectMemberName = context.StringValue("ListProjectMembers.Data.ProjectMemberList["+ i +"].ProjectMemberName");
+				projectMember.ProjectMemberType = context.StringValue("ListProjectMembers.Data.ProjectMemberList["+ i +"].ProjectMemberType");
+				projectMember.Status = context.StringValue("ListProjectMembers.Data.ProjectMemberList["+ i +"].Status");
+
+				List<ListProjectMembersResponse.ListProjectMembers_Data.ListProjectMembers_ProjectMember.ListProjectMembers_Role> projectMember_projectRoleList = new List<ListProjectMembersResponse.ListProjectMembers_Data.ListProjectMembers_ProjectMember.ListProjectMembers_Role>();
+				for (int j = 0; j < context.Length("ListProjectMembers.Data.ProjectMemberList["+ i +"].ProjectRoleList.Length"); j++) {
+					ListProjectMembersResponse.ListProjectMembers_Data.ListProjectMembers_ProjectMember.ListProjectMembers_Role role = new ListProjectMembersResponse.ListProjectMembers_Data.ListProjectMembers_ProjectMember.ListProjectMembers_Role();
+					role.ProjectRoleCode = context.StringValue("ListProjectMembers.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleCode");
+					role.ProjectRoleId = context.IntegerValue("ListProjectMembers.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleId");
+					role.ProjectRoleName = context.StringValue("ListProjectMembers.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleName");
+					role.ProjectRoleType = context.StringValue("ListProjectMembers.Data.ProjectMemberList["+ i +"].ProjectRoleList["+ j +"].ProjectRoleType");
 
 					projectMember_projectRoleList.Add(role);
 				}
 				projectMember.ProjectRoleList = projectMember_projectRoleList;
 
-				listProjectMembersResponse_projectMemberList.Add(projectMember);
+				data_projectMemberList.Add(projectMember);
 			}
-			listProjectMembersResponse.ProjectMemberList = listProjectMembersResponse_projectMemberList;
+			data.ProjectMemberList = data_projectMemberList;
+			listProjectMembersResponse.Data = data;
         
 			return listProjectMembersResponse;
         }

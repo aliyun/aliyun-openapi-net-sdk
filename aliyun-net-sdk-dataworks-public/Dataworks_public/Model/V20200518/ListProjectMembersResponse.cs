@@ -25,39 +25,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 	public class ListProjectMembersResponse : AcsResponse
 	{
 
-		private int? pageNum;
-
-		private int? pageSize;
-
 		private string requestId;
 
-		private int? totalNum;
-
-		private List<ListProjectMembers_ProjectMember> projectMemberList;
-
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+		private ListProjectMembers_Data data;
 
 		public string RequestId
 		{
@@ -71,187 +41,221 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? TotalNum
+		public ListProjectMembers_Data Data
 		{
 			get
 			{
-				return totalNum;
+				return data;
 			}
 			set	
 			{
-				totalNum = value;
+				data = value;
 			}
 		}
 
-		public List<ListProjectMembers_ProjectMember> ProjectMemberList
-		{
-			get
-			{
-				return projectMemberList;
-			}
-			set	
-			{
-				projectMemberList = value;
-			}
-		}
-
-		public class ListProjectMembers_ProjectMember
+		public class ListProjectMembers_Data
 		{
 
-			private string projectMemberId;
+			private int? pageNumber;
 
-			private string projectMemberName;
+			private int? pageSize;
 
-			private string projectMemberType;
+			private int? totalCount;
 
-			private string createOn;
+			private List<ListProjectMembers_ProjectMember> projectMemberList;
 
-			private string nick;
-
-			private string status;
-
-			private List<ListProjectMembers_Role> projectRoleList;
-
-			public string ProjectMemberId
+			public int? PageNumber
 			{
 				get
 				{
-					return projectMemberId;
+					return pageNumber;
 				}
 				set	
 				{
-					projectMemberId = value;
+					pageNumber = value;
 				}
 			}
 
-			public string ProjectMemberName
+			public int? PageSize
 			{
 				get
 				{
-					return projectMemberName;
+					return pageSize;
 				}
 				set	
 				{
-					projectMemberName = value;
+					pageSize = value;
 				}
 			}
 
-			public string ProjectMemberType
+			public int? TotalCount
 			{
 				get
 				{
-					return projectMemberType;
+					return totalCount;
 				}
 				set	
 				{
-					projectMemberType = value;
+					totalCount = value;
 				}
 			}
 
-			public string CreateOn
+			public List<ListProjectMembers_ProjectMember> ProjectMemberList
 			{
 				get
 				{
-					return createOn;
+					return projectMemberList;
 				}
 				set	
 				{
-					createOn = value;
+					projectMemberList = value;
 				}
 			}
 
-			public string Nick
-			{
-				get
-				{
-					return nick;
-				}
-				set	
-				{
-					nick = value;
-				}
-			}
-
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public List<ListProjectMembers_Role> ProjectRoleList
-			{
-				get
-				{
-					return projectRoleList;
-				}
-				set	
-				{
-					projectRoleList = value;
-				}
-			}
-
-			public class ListProjectMembers_Role
+			public class ListProjectMembers_ProjectMember
 			{
 
-				private string projectRoleCode;
+				private string nick;
 
-				private int? projectRoleId;
+				private string projectMemberId;
 
-				private string projectRoleName;
+				private string projectMemberName;
 
-				private string projectRoleType;
+				private string projectMemberType;
 
-				public string ProjectRoleCode
+				private string status;
+
+				private List<ListProjectMembers_Role> projectRoleList;
+
+				public string Nick
 				{
 					get
 					{
-						return projectRoleCode;
+						return nick;
 					}
 					set	
 					{
-						projectRoleCode = value;
+						nick = value;
 					}
 				}
 
-				public int? ProjectRoleId
+				public string ProjectMemberId
 				{
 					get
 					{
-						return projectRoleId;
+						return projectMemberId;
 					}
 					set	
 					{
-						projectRoleId = value;
+						projectMemberId = value;
 					}
 				}
 
-				public string ProjectRoleName
+				public string ProjectMemberName
 				{
 					get
 					{
-						return projectRoleName;
+						return projectMemberName;
 					}
 					set	
 					{
-						projectRoleName = value;
+						projectMemberName = value;
 					}
 				}
 
-				public string ProjectRoleType
+				public string ProjectMemberType
 				{
 					get
 					{
-						return projectRoleType;
+						return projectMemberType;
 					}
 					set	
 					{
-						projectRoleType = value;
+						projectMemberType = value;
+					}
+				}
+
+				public string Status
+				{
+					get
+					{
+						return status;
+					}
+					set	
+					{
+						status = value;
+					}
+				}
+
+				public List<ListProjectMembers_Role> ProjectRoleList
+				{
+					get
+					{
+						return projectRoleList;
+					}
+					set	
+					{
+						projectRoleList = value;
+					}
+				}
+
+				public class ListProjectMembers_Role
+				{
+
+					private string projectRoleCode;
+
+					private int? projectRoleId;
+
+					private string projectRoleName;
+
+					private string projectRoleType;
+
+					public string ProjectRoleCode
+					{
+						get
+						{
+							return projectRoleCode;
+						}
+						set	
+						{
+							projectRoleCode = value;
+						}
+					}
+
+					public int? ProjectRoleId
+					{
+						get
+						{
+							return projectRoleId;
+						}
+						set	
+						{
+							projectRoleId = value;
+						}
+					}
+
+					public string ProjectRoleName
+					{
+						get
+						{
+							return projectRoleName;
+						}
+						set	
+						{
+							projectRoleName = value;
+						}
+					}
+
+					public string ProjectRoleType
+					{
+						get
+						{
+							return projectRoleType;
+						}
+						set	
+						{
+							projectRoleType = value;
+						}
 					}
 				}
 			}

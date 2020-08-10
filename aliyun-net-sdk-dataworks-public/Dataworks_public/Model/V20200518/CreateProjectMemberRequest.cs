@@ -40,11 +40,26 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			Method = MethodType.POST;
         }
 
+		private string roleCode;
+
 		private string clientToken;
 
 		private long? projectId;
 
 		private string userId;
+
+		public string RoleCode
+		{
+			get
+			{
+				return roleCode;
+			}
+			set	
+			{
+				roleCode = value;
+				DictionaryUtil.Add(QueryParameters, "RoleCode", value);
+			}
+		}
 
 		public string ClientToken
 		{

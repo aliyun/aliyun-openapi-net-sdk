@@ -42,9 +42,9 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 
 		private int? pageSize;
 
-		private int? pageNum;
-
 		private long? projectId;
+
+		private int? pageNumber;
 
 		public int? PageSize
 		{
@@ -59,19 +59,6 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			}
 		}
 
-		public int? PageNum
-		{
-			get
-			{
-				return pageNum;
-			}
-			set	
-			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
 		public long? ProjectId
 		{
 			get
@@ -82,6 +69,19 @@ namespace Aliyun.Acs.dataworks_public.Model.V20200518
 			{
 				projectId = value;
 				DictionaryUtil.Add(QueryParameters, "ProjectId", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
