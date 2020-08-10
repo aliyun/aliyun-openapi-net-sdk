@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string presetNum;
 
+		private string deviceTimeStamp;
+
 		private string deviceSn;
 
 		private string audioFormat;
@@ -99,6 +101,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				presetNum = value;
 				DictionaryUtil.Add(BodyParameters, "PresetNum", value);
+			}
+		}
+
+		public string DeviceTimeStamp
+		{
+			get
+			{
+				return deviceTimeStamp;
+			}
+			set	
+			{
+				deviceTimeStamp = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceTimeStamp", value);
 			}
 		}
 

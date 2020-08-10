@@ -187,6 +187,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string targetPicUrlPath;
 
+				private string sourceId;
+
 				public string FaceId
 				{
 					get
@@ -364,6 +366,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						targetPicUrlPath = value;
+					}
+				}
+
+				public string SourceId
+				{
+					get
+					{
+						return sourceId;
+					}
+					set	
+					{
+						sourceId = value;
 					}
 				}
 			}

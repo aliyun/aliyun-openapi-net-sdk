@@ -197,6 +197,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string calling;
 
+				private string sourceId;
+
 				public string CorpId
 				{
 					get
@@ -434,6 +436,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						calling = value;
+					}
+				}
+
+				public string SourceId
+				{
+					get
+					{
+						return sourceId;
+					}
+					set	
+					{
+						sourceId = value;
 					}
 				}
 			}

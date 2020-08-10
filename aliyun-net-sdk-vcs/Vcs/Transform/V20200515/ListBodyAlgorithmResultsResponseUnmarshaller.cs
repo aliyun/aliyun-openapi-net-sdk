@@ -65,6 +65,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.TrousersStyle = context.StringValue("ListBodyAlgorithmResults.Data.Records["+ i +"].TrousersStyle");
 				recordsItem.CoatColor = context.StringValue("ListBodyAlgorithmResults.Data.Records["+ i +"].CoatColor");
 				recordsItem.TrousersColor = context.StringValue("ListBodyAlgorithmResults.Data.Records["+ i +"].TrousersColor");
+				recordsItem.SourceId = context.StringValue("ListBodyAlgorithmResults.Data.Records["+ i +"].SourceId");
 
 				data_records.Add(recordsItem);
 			}

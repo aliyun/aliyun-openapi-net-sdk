@@ -199,6 +199,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string trousersColor;
 
+				private string sourceId;
+
 				public string CapStyle
 				{
 					get
@@ -448,6 +450,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						trousersColor = value;
+					}
+				}
+
+				public string SourceId
+				{
+					get
+					{
+						return sourceId;
+					}
+					set	
+					{
+						sourceId = value;
 					}
 				}
 			}

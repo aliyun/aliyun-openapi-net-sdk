@@ -59,6 +59,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.RightBottomY = context.FloatValue("ListFaceAlgorithmResults.Data.Records["+ i +"].RightBottomY");
 				recordsItem.PicUrlPath = context.StringValue("ListFaceAlgorithmResults.Data.Records["+ i +"].PicUrlPath");
 				recordsItem.TargetPicUrlPath = context.StringValue("ListFaceAlgorithmResults.Data.Records["+ i +"].TargetPicUrlPath");
+				recordsItem.SourceId = context.StringValue("ListFaceAlgorithmResults.Data.Records["+ i +"].SourceId");
 
 				data_records.Add(recordsItem);
 			}

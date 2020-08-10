@@ -64,6 +64,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.PlateClass = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].PlateClass");
 				recordsItem.SafetyBelt = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].SafetyBelt");
 				recordsItem.Calling = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].Calling");
+				recordsItem.SourceId = context.StringValue("ListMotorAlgorithmResults.Data.Records["+ i +"].SourceId");
 
 				data_records.Add(recordsItem);
 			}
