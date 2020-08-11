@@ -163,6 +163,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private int? keyPair;
 
+				private int? snapshotPolicy;
+
 				public int? Instance
 				{
 					get
@@ -280,6 +282,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						keyPair = value;
+					}
+				}
+
+				public int? SnapshotPolicy
+				{
+					get
+					{
+						return snapshotPolicy;
+					}
+					set	
+					{
+						snapshotPolicy = value;
 					}
 				}
 			}

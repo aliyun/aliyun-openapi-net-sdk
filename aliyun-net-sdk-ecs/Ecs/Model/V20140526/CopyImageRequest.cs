@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string destinationRegionId;
 
+		private string resourceGroupId;
+
 		private List<Tag> tags = new List<Tag>(){ };
 
 		private string resourceOwnerAccount;
@@ -113,6 +115,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				destinationRegionId = value;
 				DictionaryUtil.Add(QueryParameters, "DestinationRegionId", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

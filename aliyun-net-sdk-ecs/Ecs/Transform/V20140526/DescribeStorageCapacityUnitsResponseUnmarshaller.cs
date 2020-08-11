@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				storageCapacityUnit.ExpiredTime = context.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].ExpiredTime");
 				storageCapacityUnit.StartTime = context.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].StartTime");
 				storageCapacityUnit.Description = context.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].Description");
+				storageCapacityUnit.AllocationStatus = context.StringValue("DescribeStorageCapacityUnits.StorageCapacityUnits["+ i +"].AllocationStatus");
 
 				describeStorageCapacityUnitsResponse_storageCapacityUnits.Add(storageCapacityUnit);
 			}

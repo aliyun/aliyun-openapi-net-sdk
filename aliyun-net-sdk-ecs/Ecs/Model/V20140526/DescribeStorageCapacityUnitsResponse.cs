@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string description;
 
+			private string allocationStatus;
+
 			public string RegionId
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string AllocationStatus
+			{
+				get
+				{
+					return allocationStatus;
+				}
+				set	
+				{
+					allocationStatus = value;
 				}
 			}
 		}

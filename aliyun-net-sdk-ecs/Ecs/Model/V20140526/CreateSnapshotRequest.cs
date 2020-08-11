@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string snapshotName;
 
+		private string resourceGroupId;
+
 		private string diskId;
 
 		private List<Tag> tags = new List<Tag>(){ };
@@ -111,6 +113,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				snapshotName = value;
 				DictionaryUtil.Add(QueryParameters, "SnapshotName", value);
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

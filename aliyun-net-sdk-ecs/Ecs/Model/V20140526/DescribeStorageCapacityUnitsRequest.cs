@@ -60,6 +60,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private List<string> statuss = new List<string>(){ };
 
+		private string allocationType;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -195,6 +197,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				{
 					DictionaryUtil.Add(QueryParameters,"Status." + (i + 1) , statuss[i]);
 				}
+			}
+		}
+
+		public string AllocationType
+		{
+			get
+			{
+				return allocationType;
+			}
+			set	
+			{
+				allocationType = value;
+				DictionaryUtil.Add(QueryParameters, "AllocationType", value);
 			}
 		}
 
