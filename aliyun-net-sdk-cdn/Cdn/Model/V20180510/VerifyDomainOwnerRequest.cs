@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class DescribeRefreshTaskByIdRequest : RpcAcsRequest<DescribeRefreshTaskByIdResponse>
+    public class VerifyDomainOwnerRequest : RpcAcsRequest<VerifyDomainOwnerResponse>
     {
-        public DescribeRefreshTaskByIdRequest()
-            : base("Cdn", "2018-05-10", "DescribeRefreshTaskById")
+        public VerifyDomainOwnerRequest()
+            : base("Cdn", "2018-05-10", "VerifyDomainOwner")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,20 +41,35 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
-		private string taskId;
+		private string verifyType;
+
+		private string domainName;
 
 		private long? ownerId;
 
-		public string TaskId
+		public string VerifyType
 		{
 			get
 			{
-				return taskId;
+				return verifyType;
 			}
 			set	
 			{
-				taskId = value;
-				DictionaryUtil.Add(QueryParameters, "TaskId", value);
+				verifyType = value;
+				DictionaryUtil.Add(QueryParameters, "VerifyType", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -71,14 +86,9 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DescribeRefreshTaskByIdResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override VerifyDomainOwnerResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRefreshTaskByIdResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return VerifyDomainOwnerResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

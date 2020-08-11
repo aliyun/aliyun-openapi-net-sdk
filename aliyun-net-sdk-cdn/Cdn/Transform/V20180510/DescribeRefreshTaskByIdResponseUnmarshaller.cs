@@ -32,8 +32,6 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 
 			describeRefreshTaskByIdResponse.HttpResponse = context.HttpResponse;
 			describeRefreshTaskByIdResponse.RequestId = context.StringValue("DescribeRefreshTaskById.RequestId");
-			describeRefreshTaskByIdResponse.PageNumber = context.LongValue("DescribeRefreshTaskById.PageNumber");
-			describeRefreshTaskByIdResponse.PageSize = context.LongValue("DescribeRefreshTaskById.PageSize");
 			describeRefreshTaskByIdResponse.TotalCount = context.LongValue("DescribeRefreshTaskById.TotalCount");
 
 			List<DescribeRefreshTaskByIdResponse.DescribeRefreshTaskById_CDNTask> describeRefreshTaskByIdResponse_tasks = new List<DescribeRefreshTaskByIdResponse.DescribeRefreshTaskById_CDNTask>();
