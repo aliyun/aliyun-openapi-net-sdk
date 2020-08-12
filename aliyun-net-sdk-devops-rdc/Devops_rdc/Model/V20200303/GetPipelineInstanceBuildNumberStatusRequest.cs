@@ -28,36 +28,32 @@ using Aliyun.Acs.devops_rdc.Transform.V20200303;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
 {
-    public class CreateCredentialRequest : RpcAcsRequest<CreateCredentialResponse>
+    public class GetPipelineInstanceBuildNumberStatusRequest : RpcAcsRequest<GetPipelineInstanceBuildNumberStatusResponse>
     {
-        public CreateCredentialRequest()
-            : base("devops-rdc", "2020-03-03", "CreateCredential")
+        public GetPipelineInstanceBuildNumberStatusRequest()
+            : base("devops-rdc", "2020-03-03", "GetPipelineInstanceBuildNumberStatus")
         {
 			Method = MethodType.POST;
         }
 
-		private string type;
+		private long? buildNum;
 
 		private string userPk;
 
 		private string orgId;
 
-		private string password;
+		private long? pipelineId;
 
-		private string name;
-
-		private string userName;
-
-		public string Type
+		public long? BuildNum
 		{
 			get
 			{
-				return type;
+				return buildNum;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "Type", value);
+				buildNum = value;
+				DictionaryUtil.Add(BodyParameters, "BuildNum", value.ToString());
 			}
 		}
 
@@ -83,46 +79,20 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			set	
 			{
 				orgId = value;
-				DictionaryUtil.Add(BodyParameters, "OrgId", value);
+				DictionaryUtil.Add(QueryParameters, "OrgId", value);
 			}
 		}
 
-		public string Password
+		public long? PipelineId
 		{
 			get
 			{
-				return password;
+				return pipelineId;
 			}
 			set	
 			{
-				password = value;
-				DictionaryUtil.Add(BodyParameters, "Password", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
-			}
-		}
-
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(BodyParameters, "UserName", value);
+				pipelineId = value;
+				DictionaryUtil.Add(QueryParameters, "PipelineId", value.ToString());
 			}
 		}
 
@@ -131,9 +101,9 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			return false;
 		}
 
-        public override CreateCredentialResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetPipelineInstanceBuildNumberStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateCredentialResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetPipelineInstanceBuildNumberStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

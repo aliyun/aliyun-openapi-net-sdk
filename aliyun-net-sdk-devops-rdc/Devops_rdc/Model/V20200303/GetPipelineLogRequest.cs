@@ -28,38 +28,21 @@ using Aliyun.Acs.devops_rdc.Transform.V20200303;
 
 namespace Aliyun.Acs.devops_rdc.Model.V20200303
 {
-    public class CreateCredentialRequest : RpcAcsRequest<CreateCredentialResponse>
+    public class GetPipelineLogRequest : RpcAcsRequest<GetPipelineLogResponse>
     {
-        public CreateCredentialRequest()
-            : base("devops-rdc", "2020-03-03", "CreateCredential")
+        public GetPipelineLogRequest()
+            : base("devops-rdc", "2020-03-03", "GetPipelineLog")
         {
 			Method = MethodType.POST;
         }
-
-		private string type;
 
 		private string userPk;
 
 		private string orgId;
 
-		private string password;
+		private long? pipelineId;
 
-		private string name;
-
-		private string userName;
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "Type", value);
-			}
-		}
+		private long? jobId;
 
 		public string UserPk
 		{
@@ -87,42 +70,29 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			}
 		}
 
-		public string Password
+		public long? PipelineId
 		{
 			get
 			{
-				return password;
+				return pipelineId;
 			}
 			set	
 			{
-				password = value;
-				DictionaryUtil.Add(BodyParameters, "Password", value);
+				pipelineId = value;
+				DictionaryUtil.Add(BodyParameters, "PipelineId", value.ToString());
 			}
 		}
 
-		public string Name
+		public long? JobId
 		{
 			get
 			{
-				return name;
+				return jobId;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(BodyParameters, "Name", value);
-			}
-		}
-
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(BodyParameters, "UserName", value);
+				jobId = value;
+				DictionaryUtil.Add(BodyParameters, "JobId", value.ToString());
 			}
 		}
 
@@ -131,9 +101,9 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 			return false;
 		}
 
-        public override CreateCredentialResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetPipelineLogResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateCredentialResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetPipelineLogResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
