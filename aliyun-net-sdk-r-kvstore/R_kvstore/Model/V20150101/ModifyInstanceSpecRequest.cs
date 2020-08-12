@@ -54,6 +54,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private bool? autoPay;
 
+		private string majorVersion;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -154,6 +156,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				autoPay = value;
 				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
+			}
+		}
+
+		public string MajorVersion
+		{
+			get
+			{
+				return majorVersion;
+			}
+			set	
+			{
+				majorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "MajorVersion", value);
 			}
 		}
 
