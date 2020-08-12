@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-	public class ListCorpsResponse : AcsResponse
+	public class ListCorpGroupsResponse : AcsResponse
 	{
 
 		private string code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string requestId;
 
-		private ListCorps_Data data;
+		private ListCorpGroups_Data data;
 
 		public string Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public ListCorps_Data Data
+		public ListCorpGroups_Data Data
 		{
 			get
 			{
@@ -81,20 +81,20 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public class ListCorps_Data
+		public class ListCorpGroups_Data
 		{
 
-			private int? pageNumber;
+			private long? pageNumber;
 
-			private int? pageSize;
+			private long? pageSize;
 
-			private int? totalCount;
+			private long? totalCount;
 
-			private int? totalPage;
+			private long? totalPage;
 
-			private List<ListCorps_Record> records;
+			private List<string> records;
 
-			public int? PageNumber
+			public long? PageNumber
 			{
 				get
 				{
@@ -106,7 +106,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				}
 			}
 
-			public int? PageSize
+			public long? PageSize
 			{
 				get
 				{
@@ -118,7 +118,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				}
 			}
 
-			public int? TotalCount
+			public long? TotalCount
 			{
 				get
 				{
@@ -130,7 +130,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				}
 			}
 
-			public int? TotalPage
+			public long? TotalPage
 			{
 				get
 				{
@@ -142,7 +142,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				}
 			}
 
-			public List<ListCorps_Record> Records
+			public List<string> Records
 			{
 				get
 				{
@@ -151,122 +151,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				set	
 				{
 					records = value;
-				}
-			}
-
-			public class ListCorps_Record
-			{
-
-				private string corpId;
-
-				private string corpName;
-
-				private string description;
-
-				private string createDate;
-
-				private string parentCorpId;
-
-				private string appName;
-
-				private int? deviceCount;
-
-				private string isvSubId;
-
-				public string CorpId
-				{
-					get
-					{
-						return corpId;
-					}
-					set	
-					{
-						corpId = value;
-					}
-				}
-
-				public string CorpName
-				{
-					get
-					{
-						return corpName;
-					}
-					set	
-					{
-						corpName = value;
-					}
-				}
-
-				public string Description
-				{
-					get
-					{
-						return description;
-					}
-					set	
-					{
-						description = value;
-					}
-				}
-
-				public string CreateDate
-				{
-					get
-					{
-						return createDate;
-					}
-					set	
-					{
-						createDate = value;
-					}
-				}
-
-				public string ParentCorpId
-				{
-					get
-					{
-						return parentCorpId;
-					}
-					set	
-					{
-						parentCorpId = value;
-					}
-				}
-
-				public string AppName
-				{
-					get
-					{
-						return appName;
-					}
-					set	
-					{
-						appName = value;
-					}
-				}
-
-				public int? DeviceCount
-				{
-					get
-					{
-						return deviceCount;
-					}
-					set	
-					{
-						deviceCount = value;
-					}
-				}
-
-				public string IsvSubId
-				{
-					get
-					{
-						return isvSubId;
-					}
-					set	
-					{
-						isvSubId = value;
-					}
 				}
 			}
 		}

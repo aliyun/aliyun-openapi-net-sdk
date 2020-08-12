@@ -51,6 +51,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				record.ParentCorpId = context.StringValue("ListCorps.Data.Records["+ i +"].ParentCorpId");
 				record.AppName = context.StringValue("ListCorps.Data.Records["+ i +"].AppName");
 				record.DeviceCount = context.IntegerValue("ListCorps.Data.Records["+ i +"].DeviceCount");
+				record.IsvSubId = context.StringValue("ListCorps.Data.Records["+ i +"].IsvSubId");
 
 				data_records.Add(record);
 			}

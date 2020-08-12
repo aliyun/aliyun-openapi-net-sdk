@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
+		private string isvSubId;
+
 		private string corpId;
 
 		private string parentCorpId;
@@ -49,6 +51,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 		private string appName;
 
 		private string corpName;
+
+		public string IsvSubId
+		{
+			get
+			{
+				return isvSubId;
+			}
+			set	
+			{
+				isvSubId = value;
+				DictionaryUtil.Add(BodyParameters, "IsvSubId", value);
+			}
+		}
 
 		public string CorpId
 		{

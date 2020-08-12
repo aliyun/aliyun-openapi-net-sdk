@@ -27,10 +27,10 @@ using Aliyun.Acs.Vcs.Transform.V20200515;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-    public class CreateCorpRequest : RpcAcsRequest<CreateCorpResponse>
+    public class CreateCorpGroupRequest : RpcAcsRequest<CreateCorpGroupResponse>
     {
-        public CreateCorpRequest()
-            : base("Vcs", "2020-05-15", "CreateCorp", "vcs", "openAPI")
+        public CreateCorpGroupRequest()
+            : base("Vcs", "2020-05-15", "CreateCorpGroup", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,93 +40,48 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
-		private string algorithmType;
+		private string corpId;
 
-		private string isvSubId;
+		private string clientToken;
 
-		private string parentCorpId;
+		private string groupId;
 
-		private string description;
-
-		private string appName;
-
-		private string corpName;
-
-		public string AlgorithmType
+		public string CorpId
 		{
 			get
 			{
-				return algorithmType;
+				return corpId;
 			}
 			set	
 			{
-				algorithmType = value;
-				DictionaryUtil.Add(BodyParameters, "AlgorithmType", value);
+				corpId = value;
+				DictionaryUtil.Add(BodyParameters, "CorpId", value);
 			}
 		}
 
-		public string IsvSubId
+		public string ClientToken
 		{
 			get
 			{
-				return isvSubId;
+				return clientToken;
 			}
 			set	
 			{
-				isvSubId = value;
-				DictionaryUtil.Add(BodyParameters, "IsvSubId", value);
+				clientToken = value;
+				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
 			}
 		}
 
-		public string ParentCorpId
+		public string GroupId
 		{
 			get
 			{
-				return parentCorpId;
+				return groupId;
 			}
 			set	
 			{
-				parentCorpId = value;
-				DictionaryUtil.Add(BodyParameters, "ParentCorpId", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
-			}
-		}
-
-		public string AppName
-		{
-			get
-			{
-				return appName;
-			}
-			set	
-			{
-				appName = value;
-				DictionaryUtil.Add(BodyParameters, "AppName", value);
-			}
-		}
-
-		public string CorpName
-		{
-			get
-			{
-				return corpName;
-			}
-			set	
-			{
-				corpName = value;
-				DictionaryUtil.Add(BodyParameters, "CorpName", value);
+				groupId = value;
+				DictionaryUtil.Add(BodyParameters, "GroupId", value);
 			}
 		}
 
@@ -135,9 +90,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			return false;
 		}
 
-        public override CreateCorpResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateCorpGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateCorpResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateCorpGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
