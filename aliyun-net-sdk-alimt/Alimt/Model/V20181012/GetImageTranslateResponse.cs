@@ -86,6 +86,8 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 
 			private string url;
 
+			private string orc;
+
 			public string Url
 			{
 				get
@@ -95,6 +97,18 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 				set	
 				{
 					url = value;
+				}
+			}
+
+			public string Orc
+			{
+				get
+				{
+					return orc;
+				}
+				set	
+				{
+					orc = value;
 				}
 			}
 		}
