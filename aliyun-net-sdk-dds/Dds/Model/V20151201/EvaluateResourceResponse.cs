@@ -22,14 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-	public class DeleteNodeResponse : AcsResponse
+	public class EvaluateResourceResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? taskId;
+		private string engine;
 
-		private string orderId;
+		private string engineVersion;
+
+		private string dBInstanceAvailable;
 
 		public string RequestId
 		{
@@ -43,27 +45,39 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? TaskId
+		public string Engine
 		{
 			get
 			{
-				return taskId;
+				return engine;
 			}
 			set	
 			{
-				taskId = value;
+				engine = value;
 			}
 		}
 
-		public string OrderId
+		public string EngineVersion
 		{
 			get
 			{
-				return orderId;
+				return engineVersion;
 			}
 			set	
 			{
-				orderId = value;
+				engineVersion = value;
+			}
+		}
+
+		public string DBInstanceAvailable
+		{
+			get
+			{
+				return dBInstanceAvailable;
+			}
+			set	
+			{
+				dBInstanceAvailable = value;
 			}
 		}
 	}

@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? pageNumber;
 
+		private string resourceGroupId;
+
 		private string securityToken;
 
 		private int? pageSize;
@@ -55,8 +57,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 		private string roleType;
 
 		private string nodeId;
-
-		private long? sQLId;
 
 		private string resourceOwnerAccount;
 
@@ -106,6 +106,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -171,19 +184,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				nodeId = value;
 				DictionaryUtil.Add(QueryParameters, "NodeId", value);
-			}
-		}
-
-		public long? SQLId
-		{
-			get
-			{
-				return sQLId;
-			}
-			set	
-			{
-				sQLId = value;
-				DictionaryUtil.Add(QueryParameters, "SQLId", value.ToString());
 			}
 		}
 

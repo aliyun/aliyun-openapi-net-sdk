@@ -120,7 +120,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string connInfo;
 
-			private long? content;
+			private string content;
 
 			public int? Id
 			{
@@ -170,7 +170,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public long? Content
+			public string Content
 			{
 				get
 				{

@@ -74,6 +74,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string ownerAccount;
 
+		private string connectionDomain;
+
 		private long? ownerId;
 
 		private string dBInstanceType;
@@ -311,6 +313,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string ConnectionDomain
+		{
+			get
+			{
+				return connectionDomain;
+			}
+			set	
+			{
+				connectionDomain = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionDomain", value);
 			}
 		}
 

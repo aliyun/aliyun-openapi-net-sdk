@@ -22,14 +22,12 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-	public class DeleteNodeResponse : AcsResponse
+	public class DescribeActiveOperationTaskTypeResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? taskId;
-
-		private string orderId;
+		private List<DescribeActiveOperationTaskType_Items> typeList;
 
 		public string RequestId
 		{
@@ -43,27 +41,47 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? TaskId
+		public List<DescribeActiveOperationTaskType_Items> TypeList
 		{
 			get
 			{
-				return taskId;
+				return typeList;
 			}
 			set	
 			{
-				taskId = value;
+				typeList = value;
 			}
 		}
 
-		public string OrderId
+		public class DescribeActiveOperationTaskType_Items
 		{
-			get
+
+			private string taskType;
+
+			private int? count;
+
+			public string TaskType
 			{
-				return orderId;
+				get
+				{
+					return taskType;
+				}
+				set	
+				{
+					taskType = value;
+				}
 			}
-			set	
+
+			public int? Count
 			{
-				orderId = value;
+				get
+				{
+					return count;
+				}
+				set	
+				{
+					count = value;
+				}
 			}
 		}
 	}

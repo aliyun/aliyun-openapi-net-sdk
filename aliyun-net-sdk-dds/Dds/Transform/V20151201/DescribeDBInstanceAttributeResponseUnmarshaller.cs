@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.VPCId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].VPCId");
 				dBInstance.VSwitchId = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].VSwitchId");
 				dBInstance.VPCCloudInstanceIds = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].VPCCloudInstanceIds");
+				dBInstance.KindCode = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].KindCode");
 				dBInstance.DBInstanceStatus = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].DBInstanceStatus");
 				dBInstance.LockMode = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].LockMode");
 				dBInstance.ChargeType = context.StringValue("DescribeDBInstanceAttribute.DBInstances["+ i +"].ChargeType");

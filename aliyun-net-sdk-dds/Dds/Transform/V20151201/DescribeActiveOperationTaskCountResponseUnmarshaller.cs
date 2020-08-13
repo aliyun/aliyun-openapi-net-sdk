@@ -24,18 +24,18 @@ using Aliyun.Acs.Dds.Model.V20151201;
 
 namespace Aliyun.Acs.Dds.Transform.V20151201
 {
-    public class DeleteNodeResponseUnmarshaller
+    public class DescribeActiveOperationTaskCountResponseUnmarshaller
     {
-        public static DeleteNodeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeActiveOperationTaskCountResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteNodeResponse deleteNodeResponse = new DeleteNodeResponse();
+			DescribeActiveOperationTaskCountResponse describeActiveOperationTaskCountResponse = new DescribeActiveOperationTaskCountResponse();
 
-			deleteNodeResponse.HttpResponse = context.HttpResponse;
-			deleteNodeResponse.RequestId = context.StringValue("DeleteNode.RequestId");
-			deleteNodeResponse.TaskId = context.IntegerValue("DeleteNode.TaskId");
-			deleteNodeResponse.OrderId = context.StringValue("DeleteNode.OrderId");
+			describeActiveOperationTaskCountResponse.HttpResponse = context.HttpResponse;
+			describeActiveOperationTaskCountResponse.RequestId = context.StringValue("DescribeActiveOperationTaskCount.RequestId");
+			describeActiveOperationTaskCountResponse.TaskCount = context.IntegerValue("DescribeActiveOperationTaskCount.TaskCount");
+			describeActiveOperationTaskCountResponse.NeedPop = context.IntegerValue("DescribeActiveOperationTaskCount.NeedPop");
         
-			return deleteNodeResponse;
+			return describeActiveOperationTaskCountResponse;
         }
     }
 }

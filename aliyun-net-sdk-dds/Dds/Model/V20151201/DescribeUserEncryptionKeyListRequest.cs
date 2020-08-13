@@ -52,6 +52,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? ownerId;
 
+		private string targetRegionId;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -127,6 +129,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string TargetRegionId
+		{
+			get
+			{
+				return targetRegionId;
+			}
+			set	
+			{
+				targetRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetRegionId", value);
 			}
 		}
 

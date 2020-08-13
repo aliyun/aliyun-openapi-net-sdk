@@ -24,18 +24,19 @@ using Aliyun.Acs.Dds.Model.V20151201;
 
 namespace Aliyun.Acs.Dds.Transform.V20151201
 {
-    public class DeleteNodeResponseUnmarshaller
+    public class EvaluateResourceResponseUnmarshaller
     {
-        public static DeleteNodeResponse Unmarshall(UnmarshallerContext context)
+        public static EvaluateResourceResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteNodeResponse deleteNodeResponse = new DeleteNodeResponse();
+			EvaluateResourceResponse evaluateResourceResponse = new EvaluateResourceResponse();
 
-			deleteNodeResponse.HttpResponse = context.HttpResponse;
-			deleteNodeResponse.RequestId = context.StringValue("DeleteNode.RequestId");
-			deleteNodeResponse.TaskId = context.IntegerValue("DeleteNode.TaskId");
-			deleteNodeResponse.OrderId = context.StringValue("DeleteNode.OrderId");
+			evaluateResourceResponse.HttpResponse = context.HttpResponse;
+			evaluateResourceResponse.RequestId = context.StringValue("EvaluateResource.RequestId");
+			evaluateResourceResponse.Engine = context.StringValue("EvaluateResource.Engine");
+			evaluateResourceResponse.EngineVersion = context.StringValue("EvaluateResource.EngineVersion");
+			evaluateResourceResponse.DBInstanceAvailable = context.StringValue("EvaluateResource.DBInstanceAvailable");
         
-			return deleteNodeResponse;
+			return evaluateResourceResponse;
         }
     }
 }

@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
+		private int? switchMode;
+
 		private string roleIds;
 
 		private string securityToken;
@@ -66,6 +68,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public int? SwitchMode
+		{
+			get
+			{
+				return switchMode;
+			}
+			set	
+			{
+				switchMode = value;
+				DictionaryUtil.Add(QueryParameters, "SwitchMode", value.ToString());
 			}
 		}
 

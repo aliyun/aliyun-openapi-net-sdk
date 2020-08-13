@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribePriceRequest : RpcAcsRequest<DescribePriceResponse>
+    public class DescribeActiveOperationTaskCountRequest : RpcAcsRequest<DescribeActiveOperationTaskCountResponse>
     {
-        public DescribePriceRequest()
-            : base("Dds", "2015-12-01", "DescribePrice", "Dds", "openAPI")
+        public DescribeActiveOperationTaskCountRequest()
+            : base("Dds", "2015-12-01", "DescribeActiveOperationTaskCount", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,29 +42,15 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string productCode;
-
-		private string couponNo;
-
 		private string resourceGroupId;
 
 		private string securityToken;
-
-		private string businessInfo;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string orderParamOut;
-
-		private string commodityCode;
-
 		private long? ownerId;
-
-		private string dBInstances;
-
-		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -76,32 +62,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ProductCode
-		{
-			get
-			{
-				return productCode;
-			}
-			set	
-			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
-			}
-		}
-
-		public string CouponNo
-		{
-			get
-			{
-				return couponNo;
-			}
-			set	
-			{
-				couponNo = value;
-				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
 			}
 		}
 
@@ -131,19 +91,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string BusinessInfo
-		{
-			get
-			{
-				return businessInfo;
-			}
-			set	
-			{
-				businessInfo = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -170,32 +117,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string OrderParamOut
-		{
-			get
-			{
-				return orderParamOut;
-			}
-			set	
-			{
-				orderParamOut = value;
-				DictionaryUtil.Add(QueryParameters, "OrderParamOut", value);
-			}
-		}
-
-		public string CommodityCode
-		{
-			get
-			{
-				return commodityCode;
-			}
-			set	
-			{
-				commodityCode = value;
-				DictionaryUtil.Add(QueryParameters, "CommodityCode", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -209,35 +130,14 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string DBInstances
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return dBInstances;
-			}
-			set	
-			{
-				dBInstances = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstances", value);
-			}
+			return false;
 		}
 
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
-
-        public override DescribePriceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeActiveOperationTaskCountResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribePriceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTaskCountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

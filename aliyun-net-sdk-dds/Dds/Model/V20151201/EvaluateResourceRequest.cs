@@ -27,10 +27,10 @@ using Aliyun.Acs.Dds.Transform.V20151201;
 
 namespace Aliyun.Acs.Dds.Model.V20151201
 {
-    public class DescribePriceRequest : RpcAcsRequest<DescribePriceResponse>
+    public class EvaluateResourceRequest : RpcAcsRequest<EvaluateResourceResponse>
     {
-        public DescribePriceRequest()
-            : base("Dds", "2015-12-01", "DescribePrice", "Dds", "openAPI")
+        public EvaluateResourceRequest()
+            : base("Dds", "2015-12-01", "EvaluateResource", "Dds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,29 +42,25 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private long? resourceOwnerId;
 
-		private string productCode;
+		private string engineVersion;
 
-		private string couponNo;
-
-		private string resourceGroupId;
+		private string shardsInfo;
 
 		private string securityToken;
 
-		private string businessInfo;
+		private string engine;
+
+		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string orderParamOut;
-
-		private string commodityCode;
-
 		private long? ownerId;
 
-		private string dBInstances;
+		private string dBInstanceClass;
 
-		private string orderType;
+		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -79,42 +75,29 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string ProductCode
+		public string EngineVersion
 		{
 			get
 			{
-				return productCode;
+				return engineVersion;
 			}
 			set	
 			{
-				productCode = value;
-				DictionaryUtil.Add(QueryParameters, "ProductCode", value);
+				engineVersion = value;
+				DictionaryUtil.Add(QueryParameters, "EngineVersion", value);
 			}
 		}
 
-		public string CouponNo
+		public string ShardsInfo
 		{
 			get
 			{
-				return couponNo;
+				return shardsInfo;
 			}
 			set	
 			{
-				couponNo = value;
-				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+				shardsInfo = value;
+				DictionaryUtil.Add(QueryParameters, "ShardsInfo", value);
 			}
 		}
 
@@ -131,16 +114,29 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string BusinessInfo
+		public string Engine
 		{
 			get
 			{
-				return businessInfo;
+				return engine;
 			}
 			set	
 			{
-				businessInfo = value;
-				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+				engine = value;
+				DictionaryUtil.Add(QueryParameters, "Engine", value);
+			}
+		}
+
+		public string DBInstanceId
+		{
+			get
+			{
+				return dBInstanceId;
+			}
+			set	
+			{
+				dBInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceId", value);
 			}
 		}
 
@@ -170,32 +166,6 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string OrderParamOut
-		{
-			get
-			{
-				return orderParamOut;
-			}
-			set	
-			{
-				orderParamOut = value;
-				DictionaryUtil.Add(QueryParameters, "OrderParamOut", value);
-			}
-		}
-
-		public string CommodityCode
-		{
-			get
-			{
-				return commodityCode;
-			}
-			set	
-			{
-				commodityCode = value;
-				DictionaryUtil.Add(QueryParameters, "CommodityCode", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -209,35 +179,35 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public string DBInstances
+		public string DBInstanceClass
 		{
 			get
 			{
-				return dBInstances;
+				return dBInstanceClass;
 			}
 			set	
 			{
-				dBInstances = value;
-				DictionaryUtil.Add(QueryParameters, "DBInstances", value);
+				dBInstanceClass = value;
+				DictionaryUtil.Add(QueryParameters, "DBInstanceClass", value);
 			}
 		}
 
-		public string OrderType
+		public string ZoneId
 		{
 			get
 			{
-				return orderType;
+				return zoneId;
 			}
 			set	
 			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
-        public override DescribePriceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override EvaluateResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribePriceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EvaluateResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
