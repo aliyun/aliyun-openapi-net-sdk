@@ -84,6 +84,8 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.ServicePeriod = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ServicePeriod");
 				item.BillingDate = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].BillingDate");
 				item.ServicePeriodUnit = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].ServicePeriodUnit");
+				item.PipCode = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].PipCode");
+				item.CommodityCode = context.StringValue("QueryInstanceBill.Data.Items["+ i +"].CommodityCode");
 
 				data_items.Add(item);
 			}

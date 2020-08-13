@@ -64,6 +64,8 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.AfterTaxAmount = context.FloatValue("QueryBillOverview.Data.Items["+ i +"].AfterTaxAmount");
 				item.PaymentCurrency = context.StringValue("QueryBillOverview.Data.Items["+ i +"].PaymentCurrency");
 				item.RoundDownDiscount = context.StringValue("QueryBillOverview.Data.Items["+ i +"].RoundDownDiscount");
+				item.PipCode = context.StringValue("QueryBillOverview.Data.Items["+ i +"].PipCode");
+				item.CommodityCode = context.StringValue("QueryBillOverview.Data.Items["+ i +"].CommodityCode");
 
 				data_items.Add(item);
 			}

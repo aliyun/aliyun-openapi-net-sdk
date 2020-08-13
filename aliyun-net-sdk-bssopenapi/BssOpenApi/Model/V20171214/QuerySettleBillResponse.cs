@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-	public class QueryBillResponse : AcsResponse
+	public class QuerySettleBillResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private string message;
 
-		private QueryBill_Data data;
+		private QuerySettleBill_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public QueryBill_Data Data
+		public QuerySettleBill_Data Data
 		{
 			get
 			{
@@ -95,7 +95,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public class QueryBill_Data
+		public class QuerySettleBill_Data
 		{
 
 			private string billingCycle;
@@ -104,13 +104,13 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private string accountName;
 
-			private int? pageNum;
+			private string nextToken;
 
-			private int? pageSize;
+			private int? maxResults;
 
 			private int? totalCount;
 
-			private List<QueryBill_Item> items;
+			private List<QuerySettleBill_Item> items;
 
 			public string BillingCycle
 			{
@@ -148,27 +148,27 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public int? PageNum
+			public string NextToken
 			{
 				get
 				{
-					return pageNum;
+					return nextToken;
 				}
 				set	
 				{
-					pageNum = value;
+					nextToken = value;
 				}
 			}
 
-			public int? PageSize
+			public int? MaxResults
 			{
 				get
 				{
-					return pageSize;
+					return maxResults;
 				}
 				set	
 				{
-					pageSize = value;
+					maxResults = value;
 				}
 			}
 
@@ -184,7 +184,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public List<QueryBill_Item> Items
+			public List<QuerySettleBill_Item> Items
 			{
 				get
 				{
@@ -196,7 +196,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				}
 			}
 
-			public class QueryBill_Item
+			public class QuerySettleBill_Item
 			{
 
 				private string recordID;

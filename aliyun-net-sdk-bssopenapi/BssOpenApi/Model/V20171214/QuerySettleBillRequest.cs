@@ -28,10 +28,10 @@ using Aliyun.Acs.BssOpenApi.Transform.V20171214;
 
 namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 {
-    public class QuerySettlementBillRequest : RpcAcsRequest<QuerySettlementBillResponse>
+    public class QuerySettleBillRequest : RpcAcsRequest<QuerySettleBillResponse>
     {
-        public QuerySettlementBillRequest()
-            : base("BssOpenApi", "2017-12-14", "QuerySettlementBill")
+        public QuerySettleBillRequest()
+            : base("BssOpenApi", "2017-12-14", "QuerySettleBill")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,23 +45,23 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 		private bool? isHideZeroCharge;
 
-		private string subscriptionType;
+		private bool? isDisplayLocalCurrency;
 
-		private string endTime;
+		private string subscriptionType;
 
 		private string billingCycle;
 
-		private string startTime;
+		private string type;
 
 		private long? ownerId;
 
-		private int? pageNum;
-
-		private string type;
+		private long? billOwnerId;
 
 		private string productType;
 
-		private int? pageSize;
+		private string nextToken;
+
+		private int? maxResults;
 
 		public string ProductCode
 		{
@@ -89,6 +89,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
+		public bool? IsDisplayLocalCurrency
+		{
+			get
+			{
+				return isDisplayLocalCurrency;
+			}
+			set	
+			{
+				isDisplayLocalCurrency = value;
+				DictionaryUtil.Add(QueryParameters, "IsDisplayLocalCurrency", value.ToString());
+			}
+		}
+
 		public string SubscriptionType
 		{
 			get
@@ -99,19 +112,6 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				subscriptionType = value;
 				DictionaryUtil.Add(QueryParameters, "SubscriptionType", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -128,16 +128,16 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public string StartTime
+		public string Type
 		{
 			get
 			{
-				return startTime;
+				return type;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value);
 			}
 		}
 
@@ -154,29 +154,16 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public int? PageNum
+		public long? BillOwnerId
 		{
 			get
 			{
-				return pageNum;
+				return billOwnerId;
 			}
 			set	
 			{
-				pageNum = value;
-				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				billOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "BillOwnerId", value.ToString());
 			}
 		}
 
@@ -193,22 +180,35 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			}
 		}
 
-		public int? PageSize
+		public string NextToken
 		{
 			get
 			{
-				return pageSize;
+				return nextToken;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-        public override QuerySettlementBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+        public override QuerySettleBillResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QuerySettlementBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QuerySettleBillResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

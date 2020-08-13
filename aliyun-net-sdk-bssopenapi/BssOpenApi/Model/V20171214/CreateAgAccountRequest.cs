@@ -39,6 +39,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
 
 		private string firstName;

@@ -85,6 +85,8 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.BillingDate = context.StringValue("QuerySplitItemBill.Data.Items["+ i +"].BillingDate");
 				item.SplitItemID = context.StringValue("QuerySplitItemBill.Data.Items["+ i +"].SplitItemID");
 				item.SplitItemName = context.StringValue("QuerySplitItemBill.Data.Items["+ i +"].SplitItemName");
+				item.PipCode = context.StringValue("QuerySplitItemBill.Data.Items["+ i +"].PipCode");
+				item.CommodityCode = context.StringValue("QuerySplitItemBill.Data.Items["+ i +"].CommodityCode");
 
 				data_items.Add(item);
 			}

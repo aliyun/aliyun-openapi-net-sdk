@@ -66,6 +66,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".ResourceId", resourceInstanceLists[i].ResourceId);
 					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".CommodityCode", resourceInstanceLists[i].CommodityCode);
 					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".ResourceUserId", resourceInstanceLists[i].ResourceUserId);
+					DictionaryUtil.Add(QueryParameters,"ResourceInstanceList." + (i + 1) + ".ApportionCode", resourceInstanceLists[i].ApportionCode);
 				}
 			}
 		}
@@ -131,6 +132,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 			private long? resourceUserId;
 
+			private string apportionCode;
+
 			public string ResourceId
 			{
 				get
@@ -164,6 +167,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 				set	
 				{
 					resourceUserId = value;
+				}
+			}
+
+			public string ApportionCode
+			{
+				get
+				{
+					return apportionCode;
+				}
+				set	
+				{
+					apportionCode = value;
 				}
 			}
 		}

@@ -62,6 +62,7 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.ProductCode = context.StringValue("QueryAccountBill.Data.Items["+ i +"].ProductCode");
 				item.ProductName = context.StringValue("QueryAccountBill.Data.Items["+ i +"].ProductName");
 				item.SubscriptionType = context.StringValue("QueryAccountBill.Data.Items["+ i +"].SubscriptionType");
+				item.PipCode = context.StringValue("QueryAccountBill.Data.Items["+ i +"].PipCode");
 
 				data_items.Add(item);
 			}

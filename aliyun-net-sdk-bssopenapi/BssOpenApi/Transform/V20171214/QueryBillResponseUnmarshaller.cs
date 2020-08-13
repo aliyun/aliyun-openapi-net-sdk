@@ -75,6 +75,8 @@ namespace Aliyun.Acs.BssOpenApi.Transform.V20171214
 				item.PaymentTransactionID = context.StringValue("QueryBill.Data.Items["+ i +"].PaymentTransactionID");
 				item.RoundDownDiscount = context.StringValue("QueryBill.Data.Items["+ i +"].RoundDownDiscount");
 				item.SubOrderId = context.StringValue("QueryBill.Data.Items["+ i +"].SubOrderId");
+				item.PipCode = context.StringValue("QueryBill.Data.Items["+ i +"].PipCode");
+				item.CommodityCode = context.StringValue("QueryBill.Data.Items["+ i +"].CommodityCode");
 
 				data_items.Add(item);
 			}

@@ -275,6 +275,10 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string splitItemName;
 
+				private string pipCode;
+
+				private string commodityCode;
+
 				public string InstanceID
 				{
 					get
@@ -728,6 +732,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						splitItemName = value;
+					}
+				}
+
+				public string PipCode
+				{
+					get
+					{
+						return pipCode;
+					}
+					set	
+					{
+						pipCode = value;
+					}
+				}
+
+				public string CommodityCode
+				{
+					get
+					{
+						return commodityCode;
+					}
+					set	
+					{
+						commodityCode = value;
 					}
 				}
 			}

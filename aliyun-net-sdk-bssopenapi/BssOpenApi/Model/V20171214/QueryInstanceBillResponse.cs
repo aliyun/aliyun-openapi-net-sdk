@@ -273,6 +273,10 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string servicePeriodUnit;
 
+				private string pipCode;
+
+				private string commodityCode;
+
 				public string InstanceID
 				{
 					get
@@ -714,6 +718,30 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						servicePeriodUnit = value;
+					}
+				}
+
+				public string PipCode
+				{
+					get
+					{
+						return pipCode;
+					}
+					set	
+					{
+						pipCode = value;
+					}
+				}
+
+				public string CommodityCode
+				{
+					get
+					{
+						return commodityCode;
+					}
+					set	
+					{
+						commodityCode = value;
 					}
 				}
 			}

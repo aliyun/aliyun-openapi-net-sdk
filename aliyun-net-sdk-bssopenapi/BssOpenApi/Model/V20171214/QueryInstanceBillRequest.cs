@@ -38,6 +38,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string productCode;
@@ -51,6 +52,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		private long? ownerId;
 
 		private int? pageNum;
+
+		private long? billOwnerId;
 
 		private string billingDate;
 
@@ -137,6 +140,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				pageNum = value;
 				DictionaryUtil.Add(QueryParameters, "PageNum", value.ToString());
+			}
+		}
+
+		public long? BillOwnerId
+		{
+			get
+			{
+				return billOwnerId;
+			}
+			set	
+			{
+				billOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "BillOwnerId", value.ToString());
 			}
 		}
 

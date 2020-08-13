@@ -229,6 +229,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 
 				private string subscriptionType;
 
+				private string pipCode;
+
 				public string CostUnit
 				{
 					get
@@ -406,6 +408,18 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 					set	
 					{
 						subscriptionType = value;
+					}
+				}
+
+				public string PipCode
+				{
+					get
+					{
+						return pipCode;
+					}
+					set	
+					{
+						pipCode = value;
 					}
 				}
 			}

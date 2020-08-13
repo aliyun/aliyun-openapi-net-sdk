@@ -38,6 +38,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
+			Method = MethodType.PUT;
         }
 
 		private string productCode;

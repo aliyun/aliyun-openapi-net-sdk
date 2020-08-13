@@ -38,6 +38,7 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string productCode;
@@ -45,6 +46,8 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 		private string subscriptionType;
 
 		private string billingCycle;
+
+		private long? billOwnerId;
 
 		private string productType;
 
@@ -84,6 +87,19 @@ namespace Aliyun.Acs.BssOpenApi.Model.V20171214
 			{
 				billingCycle = value;
 				DictionaryUtil.Add(QueryParameters, "BillingCycle", value);
+			}
+		}
+
+		public long? BillOwnerId
+		{
+			get
+			{
+				return billOwnerId;
+			}
+			set	
+			{
+				billOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "BillOwnerId", value.ToString());
 			}
 		}
 
