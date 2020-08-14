@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeCrossRegionBackupsRequest : RpcAcsRequest<DescribeCrossRegionBackupsResponse>
+    public class ModifyDasInstanceConfigRequest : RpcAcsRequest<ModifyDasInstanceConfigResponse>
     {
-        public DescribeCrossRegionBackupsRequest()
-            : base("Rds", "2014-08-15", "DescribeCrossRegionBackups", "rds", "openAPI")
+        public ModifyDasInstanceConfigRequest()
+            : base("Rds", "2014-08-15", "ModifyDasInstanceConfig", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,25 +42,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string startTime;
-
-		private int? pageNumber;
-
-		private int? pageSize;
+		private string clientToken;
 
 		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
 
-		private int? backupId;
-
-		private string endTime;
-
 		private long? ownerId;
 
-		private string crossBackupRegion;
+		private int? storageUpperBound;
 
-		private int? crossBackupId;
+		private int? storageThreshold;
+
+		private string storageAutoScale;
 
 		public long? ResourceOwnerId
 		{
@@ -75,42 +69,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string StartTime
+		public string ClientToken
 		{
 			get
 			{
-				return startTime;
+				return clientToken;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -140,32 +108,6 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? BackupId
-		{
-			get
-			{
-				return backupId;
-			}
-			set	
-			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value.ToString());
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -179,35 +121,53 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string CrossBackupRegion
+		public int? StorageUpperBound
 		{
 			get
 			{
-				return crossBackupRegion;
+				return storageUpperBound;
 			}
 			set	
 			{
-				crossBackupRegion = value;
-				DictionaryUtil.Add(QueryParameters, "CrossBackupRegion", value);
+				storageUpperBound = value;
+				DictionaryUtil.Add(QueryParameters, "StorageUpperBound", value.ToString());
 			}
 		}
 
-		public int? CrossBackupId
+		public int? StorageThreshold
 		{
 			get
 			{
-				return crossBackupId;
+				return storageThreshold;
 			}
 			set	
 			{
-				crossBackupId = value;
-				DictionaryUtil.Add(QueryParameters, "CrossBackupId", value.ToString());
+				storageThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "StorageThreshold", value.ToString());
 			}
 		}
 
-        public override DescribeCrossRegionBackupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string StorageAutoScale
+		{
+			get
+			{
+				return storageAutoScale;
+			}
+			set	
+			{
+				storageAutoScale = value;
+				DictionaryUtil.Add(QueryParameters, "StorageAutoScale", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ModifyDasInstanceConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCrossRegionBackupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDasInstanceConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

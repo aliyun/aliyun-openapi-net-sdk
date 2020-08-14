@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class RestartDBInstanceRequest : RpcAcsRequest<RestartDBInstanceResponse>
+    public class DeleteDBProxyEndpointAddressRequest : RpcAcsRequest<DeleteDBProxyEndpointAddressResponse>
     {
-        public RestartDBInstanceRequest()
-            : base("Rds", "2014-08-15", "RestartDBInstance", "rds", "openAPI")
+        public DeleteDBProxyEndpointAddressRequest()
+            : base("Rds", "2014-08-15", "DeleteDBProxyEndpointAddress", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,41 +40,35 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
+		private string dBProxyConnectStringNetType;
 
-		private string clientToken;
+		private string dBProxyEndpointId;
 
 		private string dBInstanceId;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
-		private long? ownerId;
-
-		public long? ResourceOwnerId
+		public string DBProxyConnectStringNetType
 		{
 			get
 			{
-				return resourceOwnerId;
+				return dBProxyConnectStringNetType;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				dBProxyConnectStringNetType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyConnectStringNetType", value);
 			}
 		}
 
-		public string ClientToken
+		public string DBProxyEndpointId
 		{
 			get
 			{
-				return clientToken;
+				return dBProxyEndpointId;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				dBProxyEndpointId = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyEndpointId", value);
 			}
 		}
 
@@ -91,48 +85,9 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-        public override RestartDBInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteDBProxyEndpointAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RestartDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDBProxyEndpointAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

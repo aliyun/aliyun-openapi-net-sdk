@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class RestartDBInstanceRequest : RpcAcsRequest<RestartDBInstanceResponse>
+    public class CreateDBProxyEndpointAddressRequest : RpcAcsRequest<CreateDBProxyEndpointAddressResponse>
     {
-        public RestartDBInstanceRequest()
-            : base("Rds", "2014-08-15", "RestartDBInstance", "rds", "openAPI")
+        public CreateDBProxyEndpointAddressRequest()
+            : base("Rds", "2014-08-15", "CreateDBProxyEndpointAddress", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,41 +40,43 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
+		private string connectionStringPrefix;
 
-		private string clientToken;
+		private string dBProxyConnectStringNetType;
 
 		private string dBInstanceId;
 
-		private string resourceOwnerAccount;
+		private string dBProxyNewConnectStringPort;
 
-		private string ownerAccount;
+		private string vSwitchId;
 
-		private long? ownerId;
+		private string dBProxyEndpointId;
 
-		public long? ResourceOwnerId
+		private string vPCId;
+
+		public string ConnectionStringPrefix
 		{
 			get
 			{
-				return resourceOwnerId;
+				return connectionStringPrefix;
 			}
 			set	
 			{
-				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+				connectionStringPrefix = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionStringPrefix", value);
 			}
 		}
 
-		public string ClientToken
+		public string DBProxyConnectStringNetType
 		{
 			get
 			{
-				return clientToken;
+				return dBProxyConnectStringNetType;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				dBProxyConnectStringNetType = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyConnectStringNetType", value);
 			}
 		}
 
@@ -91,48 +93,61 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string ResourceOwnerAccount
+		public string DBProxyNewConnectStringPort
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return dBProxyNewConnectStringPort;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				dBProxyNewConnectStringPort = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyNewConnectStringPort", value);
 			}
 		}
 
-		public string OwnerAccount
+		public string VSwitchId
 		{
 			get
 			{
-				return ownerAccount;
+				return vSwitchId;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 
-		public long? OwnerId
+		public string DBProxyEndpointId
 		{
 			get
 			{
-				return ownerId;
+				return dBProxyEndpointId;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				dBProxyEndpointId = value;
+				DictionaryUtil.Add(QueryParameters, "DBProxyEndpointId", value);
 			}
 		}
 
-        public override RestartDBInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string VPCId
+		{
+			get
+			{
+				return vPCId;
+			}
+			set	
+			{
+				vPCId = value;
+				DictionaryUtil.Add(QueryParameters, "VPCId", value);
+			}
+		}
+
+        public override CreateDBProxyEndpointAddressResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RestartDBInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDBProxyEndpointAddressResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

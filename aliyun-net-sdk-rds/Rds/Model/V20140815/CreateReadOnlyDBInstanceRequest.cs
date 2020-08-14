@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string clientToken;
 
+		private string instructionSetArch;
+
 		private string engineVersion;
 
 		private string resourceGroupId;
@@ -124,6 +126,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string InstructionSetArch
+		{
+			get
+			{
+				return instructionSetArch;
+			}
+			set	
+			{
+				instructionSetArch = value;
+				DictionaryUtil.Add(QueryParameters, "InstructionSetArch", value);
 			}
 		}
 

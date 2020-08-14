@@ -46,6 +46,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string sourceDBInstanceName;
 
+		private string binlogRole;
+
 		private string engineVersion;
 
 		private string engine;
@@ -58,9 +60,13 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? ownerId;
 
+		private string binlogPosition;
+
 		private string dBInstanceClass;
 
 		private string restoreType;
+
+		private string binlogName;
 
 		private string sourceRegion;
 
@@ -100,6 +106,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				sourceDBInstanceName = value;
 				DictionaryUtil.Add(QueryParameters, "SourceDBInstanceName", value);
+			}
+		}
+
+		public string BinlogRole
+		{
+			get
+			{
+				return binlogRole;
+			}
+			set	
+			{
+				binlogRole = value;
+				DictionaryUtil.Add(QueryParameters, "BinlogRole", value);
 			}
 		}
 
@@ -181,6 +200,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string BinlogPosition
+		{
+			get
+			{
+				return binlogPosition;
+			}
+			set	
+			{
+				binlogPosition = value;
+				DictionaryUtil.Add(QueryParameters, "BinlogPosition", value);
+			}
+		}
+
 		public string DBInstanceClass
 		{
 			get
@@ -204,6 +236,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				restoreType = value;
 				DictionaryUtil.Add(QueryParameters, "RestoreType", value);
+			}
+		}
+
+		public string BinlogName
+		{
+			get
+			{
+				return binlogName;
+			}
+			set	
+			{
+				binlogName = value;
+				DictionaryUtil.Add(QueryParameters, "BinlogName", value);
 			}
 		}
 

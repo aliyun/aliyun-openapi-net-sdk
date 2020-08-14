@@ -78,6 +78,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private string zoneId;
 
+		private string storageAutoScale;
+
 		private string instanceNetworkType;
 
 		private string connectionMode;
@@ -103,6 +105,12 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 		private string dBInstanceNetType;
 
 		private string usedTime;
+
+		private string targetMinorVersion;
+
+		private int? storageUpperBound;
+
+		private int? storageThreshold;
 
 		private string vPCId;
 
@@ -357,6 +365,19 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
+		public string StorageAutoScale
+		{
+			get
+			{
+				return storageAutoScale;
+			}
+			set	
+			{
+				storageAutoScale = value;
+				DictionaryUtil.Add(QueryParameters, "StorageAutoScale", value);
+			}
+		}
+
 		public string InstanceNetworkType
 		{
 			get
@@ -523,6 +544,45 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			{
 				usedTime = value;
 				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+			}
+		}
+
+		public string TargetMinorVersion
+		{
+			get
+			{
+				return targetMinorVersion;
+			}
+			set	
+			{
+				targetMinorVersion = value;
+				DictionaryUtil.Add(QueryParameters, "TargetMinorVersion", value);
+			}
+		}
+
+		public int? StorageUpperBound
+		{
+			get
+			{
+				return storageUpperBound;
+			}
+			set	
+			{
+				storageUpperBound = value;
+				DictionaryUtil.Add(QueryParameters, "StorageUpperBound", value.ToString());
+			}
+		}
+
+		public int? StorageThreshold
+		{
+			get
+			{
+				return storageThreshold;
+			}
+			set	
+			{
+				storageThreshold = value;
+				DictionaryUtil.Add(QueryParameters, "StorageThreshold", value.ToString());
 			}
 		}
 

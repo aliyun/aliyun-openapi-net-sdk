@@ -24,17 +24,16 @@ using Aliyun.Acs.Rds.Model.V20140815;
 
 namespace Aliyun.Acs.Rds.Transform.V20140815
 {
-    public class DeleteDBInstanceResponseUnmarshaller
+    public class DeleteDBProxyEndpointAddressResponseUnmarshaller
     {
-        public static DeleteDBInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDBProxyEndpointAddressResponse Unmarshall(UnmarshallerContext context)
         {
-			DeleteDBInstanceResponse deleteDBInstanceResponse = new DeleteDBInstanceResponse();
+			DeleteDBProxyEndpointAddressResponse deleteDBProxyEndpointAddressResponse = new DeleteDBProxyEndpointAddressResponse();
 
-			deleteDBInstanceResponse.HttpResponse = context.HttpResponse;
-			deleteDBInstanceResponse.RequestId = context.StringValue("DeleteDBInstance.RequestId");
-			deleteDBInstanceResponse.RegionId = context.StringValue("DeleteDBInstance.RegionId");
+			deleteDBProxyEndpointAddressResponse.HttpResponse = context.HttpResponse;
+			deleteDBProxyEndpointAddressResponse.RequestId = context.StringValue("DeleteDBProxyEndpointAddress.RequestId");
         
-			return deleteDBInstanceResponse;
+			return deleteDBProxyEndpointAddressResponse;
         }
     }
 }

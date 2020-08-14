@@ -27,10 +27,10 @@ using Aliyun.Acs.Rds.Transform.V20140815;
 
 namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DescribeCrossRegionBackupsRequest : RpcAcsRequest<DescribeCrossRegionBackupsResponse>
+    public class CheckCloudResourceAuthorizedRequest : RpcAcsRequest<CheckCloudResourceAuthorizedResponse>
     {
-        public DescribeCrossRegionBackupsRequest()
-            : base("Rds", "2014-08-15", "DescribeCrossRegionBackups", "rds", "openAPI")
+        public CheckCloudResourceAuthorizedRequest()
+            : base("Rds", "2014-08-15", "CheckCloudResourceAuthorized", "rds", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,25 +42,17 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 		private long? resourceOwnerId;
 
-		private string startTime;
-
-		private int? pageNumber;
-
-		private int? pageSize;
+		private string securityToken;
 
 		private string dBInstanceId;
 
 		private string resourceOwnerAccount;
 
-		private int? backupId;
-
-		private string endTime;
+		private string ownerAccount;
 
 		private long? ownerId;
 
-		private string crossBackupRegion;
-
-		private int? crossBackupId;
+		private string targetRegionId;
 
 		public long? ResourceOwnerId
 		{
@@ -75,42 +67,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string StartTime
+		public string SecurityToken
 		{
 			get
 			{
-				return startTime;
+				return securityToken;
 			}
 			set	
 			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
@@ -140,29 +106,16 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public int? BackupId
+		public string OwnerAccount
 		{
 			get
 			{
-				return backupId;
+				return ownerAccount;
 			}
 			set	
 			{
-				backupId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupId", value.ToString());
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -179,35 +132,22 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 			}
 		}
 
-		public string CrossBackupRegion
+		public string TargetRegionId
 		{
 			get
 			{
-				return crossBackupRegion;
+				return targetRegionId;
 			}
 			set	
 			{
-				crossBackupRegion = value;
-				DictionaryUtil.Add(QueryParameters, "CrossBackupRegion", value);
+				targetRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "TargetRegionId", value);
 			}
 		}
 
-		public int? CrossBackupId
-		{
-			get
-			{
-				return crossBackupId;
-			}
-			set	
-			{
-				crossBackupId = value;
-				DictionaryUtil.Add(QueryParameters, "CrossBackupId", value.ToString());
-			}
-		}
-
-        public override DescribeCrossRegionBackupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CheckCloudResourceAuthorizedResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCrossRegionBackupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckCloudResourceAuthorizedResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Rds.Transform.V20140815
 				rdsInstanceResourceSetting.PoppedUpButtonType = context.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonType");
 				rdsInstanceResourceSetting.PoppedUpButtonUrl = context.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].PoppedUpButtonUrl");
 				rdsInstanceResourceSetting.PoppedUpContent = context.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].PoppedUpContent");
+				rdsInstanceResourceSetting.IsTop = context.StringValue("DescribeRdsResourceSettings.RdsInstanceResourceSettings["+ i +"].IsTop");
 
 				describeRdsResourceSettingsResponse_rdsInstanceResourceSettings.Add(rdsInstanceResourceSetting);
 			}

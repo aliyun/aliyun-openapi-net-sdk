@@ -72,6 +72,8 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 
 			private string poppedUpContent;
 
+			private string isTop;
+
 			public string StartDate
 			{
 				get
@@ -165,6 +167,18 @@ namespace Aliyun.Acs.Rds.Model.V20140815
 				set	
 				{
 					poppedUpContent = value;
+				}
+			}
+
+			public string IsTop
+			{
+				get
+				{
+					return isTop;
+				}
+				set	
+				{
+					isTop = value;
 				}
 			}
 		}

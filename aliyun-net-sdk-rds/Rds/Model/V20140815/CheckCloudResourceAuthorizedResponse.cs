@@ -16,25 +16,55 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Rds.Model.V20140815;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Rds.Transform.V20140815
+namespace Aliyun.Acs.Rds.Model.V20140815
 {
-    public class DeleteDBInstanceResponseUnmarshaller
-    {
-        public static DeleteDBInstanceResponse Unmarshall(UnmarshallerContext context)
-        {
-			DeleteDBInstanceResponse deleteDBInstanceResponse = new DeleteDBInstanceResponse();
+	public class CheckCloudResourceAuthorizedResponse : AcsResponse
+	{
 
-			deleteDBInstanceResponse.HttpResponse = context.HttpResponse;
-			deleteDBInstanceResponse.RequestId = context.StringValue("DeleteDBInstance.RequestId");
-			deleteDBInstanceResponse.RegionId = context.StringValue("DeleteDBInstance.RegionId");
-        
-			return deleteDBInstanceResponse;
-        }
-    }
+		private string requestId;
+
+		private int? authorizationState;
+
+		private string roleArn;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? AuthorizationState
+		{
+			get
+			{
+				return authorizationState;
+			}
+			set	
+			{
+				authorizationState = value;
+			}
+		}
+
+		public string RoleArn
+		{
+			get
+			{
+				return roleArn;
+			}
+			set	
+			{
+				roleArn = value;
+			}
+		}
+	}
 }
