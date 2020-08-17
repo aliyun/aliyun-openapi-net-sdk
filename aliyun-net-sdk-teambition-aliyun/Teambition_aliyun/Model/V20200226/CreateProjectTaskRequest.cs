@@ -42,6 +42,8 @@ namespace Aliyun.Acs.teambition_aliyun.Model.V20200226
 
 		private string executorId;
 
+		private string taskFlowStatusId;
+
 		private string startDate;
 
 		private int? priority;
@@ -55,8 +57,6 @@ namespace Aliyun.Acs.teambition_aliyun.Model.V20200226
 		private string sprintId;
 
 		private string dueDate;
-
-		private string tasFlowStatusId;
 
 		private string scenarioFieldConfigId;
 
@@ -100,6 +100,19 @@ namespace Aliyun.Acs.teambition_aliyun.Model.V20200226
 			{
 				executorId = value;
 				DictionaryUtil.Add(BodyParameters, "ExecutorId", value);
+			}
+		}
+
+		public string TaskFlowStatusId
+		{
+			get
+			{
+				return taskFlowStatusId;
+			}
+			set	
+			{
+				taskFlowStatusId = value;
+				DictionaryUtil.Add(BodyParameters, "TaskFlowStatusId", value);
 			}
 		}
 
@@ -191,19 +204,6 @@ namespace Aliyun.Acs.teambition_aliyun.Model.V20200226
 			{
 				dueDate = value;
 				DictionaryUtil.Add(BodyParameters, "DueDate", value);
-			}
-		}
-
-		public string TasFlowStatusId
-		{
-			get
-			{
-				return tasFlowStatusId;
-			}
-			set	
-			{
-				tasFlowStatusId = value;
-				DictionaryUtil.Add(BodyParameters, "TasFlowStatusId", value);
 			}
 		}
 
