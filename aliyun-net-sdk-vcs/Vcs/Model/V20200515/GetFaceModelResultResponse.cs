@@ -109,9 +109,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private int? skinColor;
 
-				private int? rightBottomY;
+				private float? rightBottomY;
 
-				private int? rightBottomX;
+				private float? rightBottomX;
 
 				private int? hairStyle;
 
@@ -123,9 +123,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private int? ageLowerLimit;
 
-				private int? leftTopY;
+				private float? leftTopY;
 
-				private int? leftTopX;
+				private float? leftTopX;
 
 				private int? hairColor;
 
@@ -187,7 +187,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public int? RightBottomY
+				public float? RightBottomY
 				{
 					get
 					{
@@ -199,7 +199,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public int? RightBottomX
+				public float? RightBottomX
 				{
 					get
 					{
@@ -271,7 +271,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public int? LeftTopY
+				public float? LeftTopY
 				{
 					get
 					{
@@ -283,7 +283,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public int? LeftTopX
+				public float? LeftTopX
 				{
 					get
 					{
