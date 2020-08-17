@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.ivpd;
 using Aliyun.Acs.ivpd.Transform;
 using Aliyun.Acs.ivpd.Transform.V20190625;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
     public class RenderImageForPackageDesignRequest : RpcAcsRequest<RenderImageForPackageDesignResponse>
     {
         public RenderImageForPackageDesignRequest()
-            : base("ivpd", "2019-06-25", "RenderImageForPackageDesign")
+            : base("ivpd", "2019-06-25", "RenderImageForPackageDesign", "ivpd", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

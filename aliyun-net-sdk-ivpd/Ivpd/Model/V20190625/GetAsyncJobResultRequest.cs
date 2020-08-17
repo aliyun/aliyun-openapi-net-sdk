@@ -27,10 +27,10 @@ using Aliyun.Acs.ivpd.Transform.V20190625;
 
 namespace Aliyun.Acs.ivpd.Model.V20190625
 {
-    public class ChangeImageSizeRequest : RpcAcsRequest<ChangeImageSizeResponse>
+    public class GetAsyncJobResultRequest : RpcAcsRequest<GetAsyncJobResultResponse>
     {
-        public ChangeImageSizeRequest()
-            : base("ivpd", "2019-06-25", "ChangeImageSize", "ivpd", "openAPI")
+        public GetAsyncJobResultRequest()
+            : base("ivpd", "2019-06-25", "GetAsyncJobResult", "ivpd", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,48 +40,18 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			Method = MethodType.POST;
         }
 
-		private string url;
+		private string jobId;
 
-		private int? width;
-
-		private int? height;
-
-		public string Url
+		public string JobId
 		{
 			get
 			{
-				return url;
+				return jobId;
 			}
 			set	
 			{
-				url = value;
-				DictionaryUtil.Add(BodyParameters, "Url", value);
-			}
-		}
-
-		public int? Width
-		{
-			get
-			{
-				return width;
-			}
-			set	
-			{
-				width = value;
-				DictionaryUtil.Add(BodyParameters, "Width", value.ToString());
-			}
-		}
-
-		public int? Height
-		{
-			get
-			{
-				return height;
-			}
-			set	
-			{
-				height = value;
-				DictionaryUtil.Add(BodyParameters, "Height", value.ToString());
+				jobId = value;
+				DictionaryUtil.Add(BodyParameters, "JobId", value);
 			}
 		}
 
@@ -90,9 +60,9 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			return false;
 		}
 
-        public override ChangeImageSizeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetAsyncJobResultResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ChangeImageSizeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetAsyncJobResultResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

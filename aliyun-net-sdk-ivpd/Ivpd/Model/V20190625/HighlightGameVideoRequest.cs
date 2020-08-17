@@ -27,10 +27,10 @@ using Aliyun.Acs.ivpd.Transform.V20190625;
 
 namespace Aliyun.Acs.ivpd.Model.V20190625
 {
-    public class ChangeImageSizeRequest : RpcAcsRequest<ChangeImageSizeResponse>
+    public class HighlightGameVideoRequest : RpcAcsRequest<HighlightGameVideoResponse>
     {
-        public ChangeImageSizeRequest()
-            : base("ivpd", "2019-06-25", "ChangeImageSize", "ivpd", "openAPI")
+        public HighlightGameVideoRequest()
+            : base("ivpd", "2019-06-25", "HighlightGameVideo", "ivpd", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,48 +40,33 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			Method = MethodType.POST;
         }
 
-		private string url;
+		private bool? async;
 
-		private int? width;
+		private string videoUrl;
 
-		private int? height;
-
-		public string Url
+		public bool? Async
 		{
 			get
 			{
-				return url;
+				return async;
 			}
 			set	
 			{
-				url = value;
-				DictionaryUtil.Add(BodyParameters, "Url", value);
+				async = value;
+				DictionaryUtil.Add(BodyParameters, "Async", value.ToString());
 			}
 		}
 
-		public int? Width
+		public string VideoUrl
 		{
 			get
 			{
-				return width;
+				return videoUrl;
 			}
 			set	
 			{
-				width = value;
-				DictionaryUtil.Add(BodyParameters, "Width", value.ToString());
-			}
-		}
-
-		public int? Height
-		{
-			get
-			{
-				return height;
-			}
-			set	
-			{
-				height = value;
-				DictionaryUtil.Add(BodyParameters, "Height", value.ToString());
+				videoUrl = value;
+				DictionaryUtil.Add(BodyParameters, "VideoUrl", value);
 			}
 		}
 
@@ -90,9 +75,9 @@ namespace Aliyun.Acs.ivpd.Model.V20190625
 			return false;
 		}
 
-        public override ChangeImageSizeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override HighlightGameVideoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ChangeImageSizeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return HighlightGameVideoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
