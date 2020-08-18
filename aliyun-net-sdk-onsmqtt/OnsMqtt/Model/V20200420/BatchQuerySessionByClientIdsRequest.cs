@@ -27,10 +27,10 @@ using Aliyun.Acs.OnsMqtt.Transform.V20200420;
 
 namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 {
-    public class QueryTokenRequest : RpcAcsRequest<QueryTokenResponse>
+    public class BatchQuerySessionByClientIdsRequest : RpcAcsRequest<BatchQuerySessionByClientIdsResponse>
     {
-        public QueryTokenRequest()
-            : base("OnsMqtt", "2020-04-20", "QueryToken", "onsmqtt", "openAPI")
+        public BatchQuerySessionByClientIdsRequest()
+            : base("OnsMqtt", "2020-04-20", "BatchQuerySessionByClientIds", "onsmqtt", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,20 +40,24 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 			Method = MethodType.POST;
         }
 
-		private string token;
+		private List<string> clientIdLists = new List<string>(){ };
 
 		private string instanceId;
 
-		public string Token
+		public List<string> ClientIdLists
 		{
 			get
 			{
-				return token;
+				return clientIdLists;
 			}
-			set	
+
+			set
 			{
-				token = value;
-				DictionaryUtil.Add(QueryParameters, "Token", value);
+				clientIdLists = value;
+				for (int i = 0; i < clientIdLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ClientIdList." + (i + 1) , clientIdLists[i]);
+				}
 			}
 		}
 
@@ -75,9 +79,9 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 			return false;
 		}
 
-        public override QueryTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BatchQuerySessionByClientIdsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchQuerySessionByClientIdsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

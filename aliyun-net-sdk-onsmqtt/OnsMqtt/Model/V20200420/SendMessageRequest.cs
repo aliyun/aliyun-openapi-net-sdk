@@ -27,10 +27,10 @@ using Aliyun.Acs.OnsMqtt.Transform.V20200420;
 
 namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 {
-    public class QueryTokenRequest : RpcAcsRequest<QueryTokenResponse>
+    public class SendMessageRequest : RpcAcsRequest<SendMessageResponse>
     {
-        public QueryTokenRequest()
-            : base("OnsMqtt", "2020-04-20", "QueryToken", "onsmqtt", "openAPI")
+        public SendMessageRequest()
+            : base("OnsMqtt", "2020-04-20", "SendMessage", "onsmqtt", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,20 +40,22 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 			Method = MethodType.POST;
         }
 
-		private string token;
+		private string mqttTopic;
 
 		private string instanceId;
 
-		public string Token
+		private string payload;
+
+		public string MqttTopic
 		{
 			get
 			{
-				return token;
+				return mqttTopic;
 			}
 			set	
 			{
-				token = value;
-				DictionaryUtil.Add(QueryParameters, "Token", value);
+				mqttTopic = value;
+				DictionaryUtil.Add(QueryParameters, "MqttTopic", value);
 			}
 		}
 
@@ -70,14 +72,27 @@ namespace Aliyun.Acs.OnsMqtt.Model.V20200420
 			}
 		}
 
+		public string Payload
+		{
+			get
+			{
+				return payload;
+			}
+			set	
+			{
+				payload = value;
+				DictionaryUtil.Add(QueryParameters, "Payload", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override QueryTokenResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SendMessageResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return QueryTokenResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SendMessageResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
