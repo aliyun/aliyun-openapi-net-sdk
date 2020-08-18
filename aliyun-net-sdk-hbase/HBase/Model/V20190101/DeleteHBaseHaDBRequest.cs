@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class DescribeSecurityGroupsRequest : RpcAcsRequest<DescribeSecurityGroupsResponse>
+    public class DeleteHBaseHaDBRequest : RpcAcsRequest<DeleteHBaseHaDBResponse>
     {
-        public DescribeSecurityGroupsRequest()
-            : base("HBase", "2019-01-01", "DescribeSecurityGroups", "hbase", "openAPI")
+        public DeleteHBaseHaDBRequest()
+            : base("HBase", "2019-01-01", "DeleteHBaseHaDB", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,39 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
-		private string clusterId;
+		private string haId;
 
-		public string ClusterId
+		private string bdsId;
+
+		public string HaId
 		{
 			get
 			{
-				return clusterId;
+				return haId;
 			}
 			set	
 			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+				haId = value;
+				DictionaryUtil.Add(QueryParameters, "HaId", value);
 			}
 		}
 
-        public override DescribeSecurityGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string BdsId
+		{
+			get
+			{
+				return bdsId;
+			}
+			set	
+			{
+				bdsId = value;
+				DictionaryUtil.Add(QueryParameters, "BdsId", value);
+			}
+		}
+
+        public override DeleteHBaseHaDBResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSecurityGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteHBaseHaDBResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

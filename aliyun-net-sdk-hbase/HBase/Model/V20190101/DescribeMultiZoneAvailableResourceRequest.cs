@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class DescribeSecurityGroupsRequest : RpcAcsRequest<DescribeSecurityGroupsResponse>
+    public class DescribeMultiZoneAvailableResourceRequest : RpcAcsRequest<DescribeMultiZoneAvailableResourceResponse>
     {
-        public DescribeSecurityGroupsRequest()
-            : base("HBase", "2019-01-01", "DescribeSecurityGroups", "hbase", "openAPI")
+        public DescribeMultiZoneAvailableResourceRequest()
+            : base("HBase", "2019-01-01", "DescribeMultiZoneAvailableResource", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,39 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
-		private string clusterId;
+		private string zoneCombination;
 
-		public string ClusterId
+		private string chargeType;
+
+		public string ZoneCombination
 		{
 			get
 			{
-				return clusterId;
+				return zoneCombination;
 			}
 			set	
 			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+				zoneCombination = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneCombination", value);
 			}
 		}
 
-        public override DescribeSecurityGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ChargeType
+		{
+			get
+			{
+				return chargeType;
+			}
+			set	
+			{
+				chargeType = value;
+				DictionaryUtil.Add(QueryParameters, "ChargeType", value);
+			}
+		}
+
+        public override DescribeMultiZoneAvailableResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSecurityGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeMultiZoneAvailableResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

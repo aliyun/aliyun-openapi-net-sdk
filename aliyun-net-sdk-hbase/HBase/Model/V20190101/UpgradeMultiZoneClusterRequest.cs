@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class DescribeSecurityGroupsRequest : RpcAcsRequest<DescribeSecurityGroupsResponse>
+    public class UpgradeMultiZoneClusterRequest : RpcAcsRequest<UpgradeMultiZoneClusterResponse>
     {
-        public DescribeSecurityGroupsRequest()
-            : base("HBase", "2019-01-01", "DescribeSecurityGroups", "hbase", "openAPI")
+        public UpgradeMultiZoneClusterRequest()
+            : base("HBase", "2019-01-01", "UpgradeMultiZoneCluster", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,7 +40,69 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
+		private string runMode;
+
+		private string components;
+
+		private string upgradeInsName;
+
+		private string restartComponents;
+
 		private string clusterId;
+
+		private string versions;
+
+		public string RunMode
+		{
+			get
+			{
+				return runMode;
+			}
+			set	
+			{
+				runMode = value;
+				DictionaryUtil.Add(QueryParameters, "RunMode", value);
+			}
+		}
+
+		public string Components
+		{
+			get
+			{
+				return components;
+			}
+			set	
+			{
+				components = value;
+				DictionaryUtil.Add(QueryParameters, "Components", value);
+			}
+		}
+
+		public string UpgradeInsName
+		{
+			get
+			{
+				return upgradeInsName;
+			}
+			set	
+			{
+				upgradeInsName = value;
+				DictionaryUtil.Add(QueryParameters, "UpgradeInsName", value);
+			}
+		}
+
+		public string RestartComponents
+		{
+			get
+			{
+				return restartComponents;
+			}
+			set	
+			{
+				restartComponents = value;
+				DictionaryUtil.Add(QueryParameters, "RestartComponents", value);
+			}
+		}
 
 		public string ClusterId
 		{
@@ -55,9 +117,22 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-        public override DescribeSecurityGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Versions
+		{
+			get
+			{
+				return versions;
+			}
+			set	
+			{
+				versions = value;
+				DictionaryUtil.Add(QueryParameters, "Versions", value);
+			}
+		}
+
+        public override UpgradeMultiZoneClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSecurityGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpgradeMultiZoneClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

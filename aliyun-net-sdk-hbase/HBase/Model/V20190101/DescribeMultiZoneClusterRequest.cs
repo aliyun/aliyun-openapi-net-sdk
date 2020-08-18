@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class DescribeSecurityGroupsRequest : RpcAcsRequest<DescribeSecurityGroupsResponse>
+    public class DescribeMultiZoneClusterRequest : RpcAcsRequest<DescribeMultiZoneClusterResponse>
     {
-        public DescribeSecurityGroupsRequest()
-            : base("HBase", "2019-01-01", "DescribeSecurityGroups", "hbase", "openAPI")
+        public DescribeMultiZoneClusterRequest()
+            : base("HBase", "2019-01-01", "DescribeMultiZoneCluster", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -55,9 +55,9 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-        public override DescribeSecurityGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeMultiZoneClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSecurityGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeMultiZoneClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

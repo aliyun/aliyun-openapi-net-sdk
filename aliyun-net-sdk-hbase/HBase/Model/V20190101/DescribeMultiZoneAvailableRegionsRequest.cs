@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class DescribeSecurityGroupsRequest : RpcAcsRequest<DescribeSecurityGroupsResponse>
+    public class DescribeMultiZoneAvailableRegionsRequest : RpcAcsRequest<DescribeMultiZoneAvailableRegionsResponse>
     {
-        public DescribeSecurityGroupsRequest()
-            : base("HBase", "2019-01-01", "DescribeSecurityGroups", "hbase", "openAPI")
+        public DescribeMultiZoneAvailableRegionsRequest()
+            : base("HBase", "2019-01-01", "DescribeMultiZoneAvailableRegions", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,24 +40,24 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
-		private string clusterId;
+		private string acceptLanguage;
 
-		public string ClusterId
+		public string AcceptLanguage
 		{
 			get
 			{
-				return clusterId;
+				return acceptLanguage;
 			}
 			set	
 			{
-				clusterId = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+				acceptLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
 			}
 		}
 
-        public override DescribeSecurityGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeMultiZoneAvailableRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeSecurityGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeMultiZoneAvailableRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
