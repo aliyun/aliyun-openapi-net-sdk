@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.live;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
 
@@ -30,13 +31,14 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class UpdateLiveAppSnapshotConfigRequest : RpcAcsRequest<UpdateLiveAppSnapshotConfigResponse>
     {
         public UpdateLiveAppSnapshotConfigRequest()
-            : base("live", "2016-11-01", "UpdateLiveAppSnapshotConfig", "live", "openAPI")
+            : base("live", "2016-11-01", "UpdateLiveAppSnapshotConfig")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private int? timeInterval;
@@ -56,6 +58,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 		private string sequenceOssObject;
 
 		private long? ownerId;
+
+		private string callback;
 
 		public int? TimeInterval
 		{
@@ -171,6 +175,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Callback
+		{
+			get
+			{
+				return callback;
+			}
+			set	
+			{
+				callback = value;
+				DictionaryUtil.Add(QueryParameters, "Callback", value);
 			}
 		}
 

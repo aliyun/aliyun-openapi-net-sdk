@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.live;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DeleteLiveRealTimeLogLogstoreRequest : RpcAcsRequest<DeleteLiveRealTimeLogLogstoreResponse>
     {
         public DeleteLiveRealTimeLogLogstoreRequest()
-            : base("live", "2016-11-01", "DeleteLiveRealTimeLogLogstore", "live", "openAPI")
+            : base("live", "2016-11-01", "DeleteLiveRealTimeLogLogstore")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -142,6 +142,8 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 			private string createTime;
 
+			private string callback;
+
 			public string DomainName
 			{
 				get
@@ -235,6 +237,18 @@ namespace Aliyun.Acs.live.Model.V20161101
 				set	
 				{
 					createTime = value;
+				}
+			}
+
+			public string Callback
+			{
+				get
+				{
+					return callback;
+				}
+				set	
+				{
+					callback = value;
 				}
 			}
 		}

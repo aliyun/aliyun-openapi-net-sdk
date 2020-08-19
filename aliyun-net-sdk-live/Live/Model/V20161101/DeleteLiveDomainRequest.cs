@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.live;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
 
@@ -30,13 +31,14 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class DeleteLiveDomainRequest : RpcAcsRequest<DeleteLiveDomainResponse>
     {
         public DeleteLiveDomainRequest()
-            : base("live", "2016-11-01", "DeleteLiveDomain", "live", "openAPI")
+            : base("live", "2016-11-01", "DeleteLiveDomain")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string ownerAccount;
