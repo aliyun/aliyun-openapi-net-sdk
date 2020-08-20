@@ -30,7 +30,7 @@ namespace Aliyun.Acs.reid.Model.V20190928
     public class PullActionDataRequest : RpcAcsRequest<PullActionDataResponse>
     {
         public PullActionDataRequest()
-            : base("reid", "2019-09-28", "PullActionData", "1.1.8.2", "openAPI")
+            : base("reid", "2019-09-28", "PullActionData", "1.1.8.3", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,6 +40,8 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			Method = MethodType.POST;
         }
 
+		private int? partitionIndex;
+
 		private long? storeId;
 
 		private long? endMessageId;
@@ -47,6 +49,19 @@ namespace Aliyun.Acs.reid.Model.V20190928
 		private int? limit;
 
 		private long? startMessageId;
+
+		public int? PartitionIndex
+		{
+			get
+			{
+				return partitionIndex;
+			}
+			set	
+			{
+				partitionIndex = value;
+				DictionaryUtil.Add(BodyParameters, "PartitionIndex", value.ToString());
+			}
+		}
 
 		public long? StoreId
 		{

@@ -34,8 +34,12 @@ namespace Aliyun.Acs.reid.Transform.V20190928
 			describeCursorResponse.ErrorCode = context.StringValue("DescribeCursor.ErrorCode");
 			describeCursorResponse.ErrorMessage = context.StringValue("DescribeCursor.ErrorMessage");
 			describeCursorResponse.Cursor = context.StringValue("DescribeCursor.Cursor");
+			describeCursorResponse.Message = context.StringValue("DescribeCursor.Message");
+			describeCursorResponse.Code = context.StringValue("DescribeCursor.Code");
+			describeCursorResponse.DynamicCode = context.StringValue("DescribeCursor.DynamicCode");
 			describeCursorResponse.RequestId = context.StringValue("DescribeCursor.RequestId");
 			describeCursorResponse.Success = context.BooleanValue("DescribeCursor.Success");
+			describeCursorResponse.DynamicMessage = context.StringValue("DescribeCursor.DynamicMessage");
         
 			return describeCursorResponse;
         }

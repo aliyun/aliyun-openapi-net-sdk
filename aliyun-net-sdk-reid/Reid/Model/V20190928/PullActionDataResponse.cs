@@ -29,11 +29,21 @@ namespace Aliyun.Acs.reid.Model.V20190928
 
 		private string errorMessage;
 
+		private string message;
+
+		private string code;
+
+		private int? partitionIndex;
+
+		private string dynamicCode;
+
 		private string requestId;
 
 		private bool? success;
 
 		private long? nextMessageId;
+
+		private string dynamicMessage;
 
 		private List<PullActionData_Action> actions;
 
@@ -58,6 +68,54 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public int? PartitionIndex
+		{
+			get
+			{
+				return partitionIndex;
+			}
+			set	
+			{
+				partitionIndex = value;
+			}
+		}
+
+		public string DynamicCode
+		{
+			get
+			{
+				return dynamicCode;
+			}
+			set	
+			{
+				dynamicCode = value;
 			}
 		}
 
@@ -94,6 +152,18 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			set	
 			{
 				nextMessageId = value;
+			}
+		}
+
+		public string DynamicMessage
+		{
+			get
+			{
+				return dynamicMessage;
+			}
+			set	
+			{
+				dynamicMessage = value;
 			}
 		}
 
@@ -146,13 +216,13 @@ namespace Aliyun.Acs.reid.Model.V20190928
 
 			private int? stayPeriod;
 
+			private int? facePointNumber;
+
 			private float? score;
 
 			private string specialType;
 
 			private string imageObjectKey;
-
-			private int? facePointNumber;
 
 			private PullActionData_ObjectPositionInImage objectPositionInImage;
 
@@ -362,6 +432,18 @@ namespace Aliyun.Acs.reid.Model.V20190928
 				}
 			}
 
+			public int? FacePointNumber
+			{
+				get
+				{
+					return facePointNumber;
+				}
+				set	
+				{
+					facePointNumber = value;
+				}
+			}
+
 			public float? Score
 			{
 				get
@@ -395,18 +477,6 @@ namespace Aliyun.Acs.reid.Model.V20190928
 				set	
 				{
 					imageObjectKey = value;
-				}
-			}
-
-			public int? FacePointNumber
-			{
-				get
-				{
-					return facePointNumber;
-				}
-				set	
-				{
-					facePointNumber = value;
 				}
 			}
 

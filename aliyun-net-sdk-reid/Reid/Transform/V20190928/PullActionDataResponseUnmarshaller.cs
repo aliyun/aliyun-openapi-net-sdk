@@ -33,9 +33,14 @@ namespace Aliyun.Acs.reid.Transform.V20190928
 			pullActionDataResponse.HttpResponse = context.HttpResponse;
 			pullActionDataResponse.ErrorCode = context.StringValue("PullActionData.ErrorCode");
 			pullActionDataResponse.ErrorMessage = context.StringValue("PullActionData.ErrorMessage");
+			pullActionDataResponse.Message = context.StringValue("PullActionData.Message");
+			pullActionDataResponse.Code = context.StringValue("PullActionData.Code");
+			pullActionDataResponse.PartitionIndex = context.IntegerValue("PullActionData.PartitionIndex");
+			pullActionDataResponse.DynamicCode = context.StringValue("PullActionData.DynamicCode");
 			pullActionDataResponse.RequestId = context.StringValue("PullActionData.RequestId");
 			pullActionDataResponse.Success = context.BooleanValue("PullActionData.Success");
 			pullActionDataResponse.NextMessageId = context.LongValue("PullActionData.NextMessageId");
+			pullActionDataResponse.DynamicMessage = context.StringValue("PullActionData.DynamicMessage");
 
 			List<PullActionDataResponse.PullActionData_Action> pullActionDataResponse_actions = new List<PullActionDataResponse.PullActionData_Action>();
 			for (int i = 0; i < context.Length("PullActionData.Actions.Length"); i++) {
@@ -57,10 +62,10 @@ namespace Aliyun.Acs.reid.Transform.V20190928
 				action.ImageUrl = context.StringValue("PullActionData.Actions["+ i +"].ImageUrl");
 				action.LocationId = context.LongValue("PullActionData.Actions["+ i +"].LocationId");
 				action.StayPeriod = context.IntegerValue("PullActionData.Actions["+ i +"].StayPeriod");
+				action.FacePointNumber = context.IntegerValue("PullActionData.Actions["+ i +"].FacePointNumber");
 				action.Score = context.FloatValue("PullActionData.Actions["+ i +"].Score");
 				action.SpecialType = context.StringValue("PullActionData.Actions["+ i +"].SpecialType");
 				action.ImageObjectKey = context.StringValue("PullActionData.Actions["+ i +"].ImageObjectKey");
-				action.FacePointNumber = context.IntegerValue("PullActionData.Actions["+ i +"].FacePointNumber");
 
 				PullActionDataResponse.PullActionData_Action.PullActionData_ObjectPositionInImage objectPositionInImage = new PullActionDataResponse.PullActionData_Action.PullActionData_ObjectPositionInImage();
 				objectPositionInImage.Bottom = context.FloatValue("PullActionData.Actions["+ i +"].ObjectPositionInImage.Bottom");

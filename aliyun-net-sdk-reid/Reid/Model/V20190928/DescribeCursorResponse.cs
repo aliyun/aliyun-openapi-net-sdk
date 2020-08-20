@@ -31,9 +31,17 @@ namespace Aliyun.Acs.reid.Model.V20190928
 
 		private string cursor;
 
+		private string message;
+
+		private string code;
+
+		private string dynamicCode;
+
 		private string requestId;
 
 		private bool? success;
+
+		private string dynamicMessage;
 
 		public string ErrorCode
 		{
@@ -71,6 +79,42 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			}
 		}
 
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string DynamicCode
+		{
+			get
+			{
+				return dynamicCode;
+			}
+			set	
+			{
+				dynamicCode = value;
+			}
+		}
+
 		public string RequestId
 		{
 			get
@@ -92,6 +136,18 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			set	
 			{
 				success = value;
+			}
+		}
+
+		public string DynamicMessage
+		{
+			get
+			{
+				return dynamicMessage;
+			}
+			set	
+			{
+				dynamicMessage = value;
 			}
 		}
 	}
