@@ -70,6 +70,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string ownerAccount;
 
+		private bool? globalInstance;
+
 		private long? ownerId;
 
 		private string vSwitchId;
@@ -281,6 +283,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public bool? GlobalInstance
+		{
+			get
+			{
+				return globalInstance;
+			}
+			set	
+			{
+				globalInstance = value;
+				DictionaryUtil.Add(QueryParameters, "GlobalInstance", value.ToString());
 			}
 		}
 

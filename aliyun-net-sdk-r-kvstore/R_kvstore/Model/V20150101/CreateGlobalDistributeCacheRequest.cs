@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DeleteInstanceRequest : RpcAcsRequest<DeleteInstanceResponse>
+    public class CreateGlobalDistributeCacheRequest : RpcAcsRequest<CreateGlobalDistributeCacheResponse>
     {
-        public DeleteInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "DeleteInstance", "redisa", "openAPI")
+        public CreateGlobalDistributeCacheRequest()
+            : base("R-kvstore", "2015-01-01", "CreateGlobalDistributeCache", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -50,9 +50,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string globalInstanceId;
-
-		private string instanceId;
+		private string seedSubInstanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -119,35 +117,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string GlobalInstanceId
+		public string SeedSubInstanceId
 		{
 			get
 			{
-				return globalInstanceId;
+				return seedSubInstanceId;
 			}
 			set	
 			{
-				globalInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "GlobalInstanceId", value);
+				seedSubInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "SeedSubInstanceId", value);
 			}
 		}
 
-		public string InstanceId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
+			return false;
 		}
 
-        public override DeleteInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateGlobalDistributeCacheResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateGlobalDistributeCacheResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

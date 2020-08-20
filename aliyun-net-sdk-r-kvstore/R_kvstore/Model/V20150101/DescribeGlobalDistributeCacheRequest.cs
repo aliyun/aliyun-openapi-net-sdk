@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DeleteInstanceRequest : RpcAcsRequest<DeleteInstanceResponse>
+    public class DescribeGlobalDistributeCacheRequest : RpcAcsRequest<DescribeGlobalDistributeCacheResponse>
     {
-        public DeleteInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "DeleteInstance", "redisa", "openAPI")
+        public DescribeGlobalDistributeCacheRequest()
+            : base("R-kvstore", "2015-01-01", "DescribeGlobalDistributeCache", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,7 +42,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string pageNumber;
+
 		private string securityToken;
+
+		private string pageSize;
 
 		private string resourceOwnerAccount;
 
@@ -51,8 +55,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? ownerId;
 
 		private string globalInstanceId;
-
-		private string instanceId;
 
 		public long? ResourceOwnerId
 		{
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public string PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value);
+			}
+		}
+
 		public string SecurityToken
 		{
 			get
@@ -77,6 +92,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value);
 			}
 		}
 
@@ -132,22 +160,14 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string InstanceId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
+			return false;
 		}
 
-        public override DeleteInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeGlobalDistributeCacheResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeGlobalDistributeCacheResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

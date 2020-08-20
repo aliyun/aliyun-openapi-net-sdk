@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DeleteInstanceRequest : RpcAcsRequest<DeleteInstanceResponse>
+    public class AllocateDirectConnectionRequest : RpcAcsRequest<AllocateDirectConnectionResponse>
     {
-        public DeleteInstanceRequest()
-            : base("R-kvstore", "2015-01-01", "DeleteInstance", "redisa", "openAPI")
+        public AllocateDirectConnectionRequest()
+            : base("R-kvstore", "2015-01-01", "AllocateDirectConnection", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,6 +42,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
+		private string connectionString;
+
 		private string securityToken;
 
 		private string resourceOwnerAccount;
@@ -50,9 +52,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? ownerId;
 
-		private string globalInstanceId;
-
 		private string instanceId;
+
+		private string port;
 
 		public long? ResourceOwnerId
 		{
@@ -64,6 +66,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ConnectionString
+		{
+			get
+			{
+				return connectionString;
+			}
+			set	
+			{
+				connectionString = value;
+				DictionaryUtil.Add(QueryParameters, "ConnectionString", value);
 			}
 		}
 
@@ -119,19 +134,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string GlobalInstanceId
-		{
-			get
-			{
-				return globalInstanceId;
-			}
-			set	
-			{
-				globalInstanceId = value;
-				DictionaryUtil.Add(QueryParameters, "GlobalInstanceId", value);
-			}
-		}
-
 		public string InstanceId
 		{
 			get
@@ -145,9 +147,22 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-        public override DeleteInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Port
+		{
+			get
+			{
+				return port;
+			}
+			set	
+			{
+				port = value;
+				DictionaryUtil.Add(QueryParameters, "Port", value);
+			}
+		}
+
+        public override AllocateDirectConnectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AllocateDirectConnectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

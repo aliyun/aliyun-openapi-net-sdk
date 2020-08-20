@@ -94,7 +94,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string ownerAccount;
 
+		private bool? globalInstance;
+
 		private string token;
+
+		private string globalInstanceId;
 
 		private string vpcId;
 
@@ -453,6 +457,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
+		public bool? GlobalInstance
+		{
+			get
+			{
+				return globalInstance;
+			}
+			set	
+			{
+				globalInstance = value;
+				DictionaryUtil.Add(QueryParameters, "GlobalInstance", value.ToString());
+			}
+		}
+
 		public string Token
 		{
 			get
@@ -463,6 +480,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				token = value;
 				DictionaryUtil.Add(QueryParameters, "Token", value);
+			}
+		}
+
+		public string GlobalInstanceId
+		{
+			get
+			{
+				return globalInstanceId;
+			}
+			set	
+			{
+				globalInstanceId = value;
+				DictionaryUtil.Add(QueryParameters, "GlobalInstanceId", value);
 			}
 		}
 
