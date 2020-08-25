@@ -30,7 +30,7 @@ namespace Aliyun.Acs.SmartHosting.Model.V20200801
     public class ListManagedHostsRequest : RpcAcsRequest<ListManagedHostsResponse>
     {
         public ListManagedHostsRequest()
-            : base("SmartHosting", "2020-08-01", "ListManagedHosts", "SmartHosting", "openAPI")
+            : base("SmartHosting", "2020-08-01", "ListManagedHosts", "smarthosting", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

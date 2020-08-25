@@ -30,7 +30,7 @@ namespace Aliyun.Acs.SmartHosting.Model.V20200801
     public class UpdateManagedHostAttributesRequest : RpcAcsRequest<UpdateManagedHostAttributesResponse>
     {
         public UpdateManagedHostAttributesRequest()
-            : base("SmartHosting", "2020-08-01", "UpdateManagedHostAttributes", "SmartHosting", "openAPI")
+            : base("SmartHosting", "2020-08-01", "UpdateManagedHostAttributes", "smarthosting", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
