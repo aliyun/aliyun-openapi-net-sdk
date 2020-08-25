@@ -28,10 +28,10 @@ using Aliyun.Acs.multimediaai.Transform.V20190810;
 
 namespace Aliyun.Acs.multimediaai.Model.V20190810
 {
-    public class CreateLabelTaskRequest : RpcAcsRequest<CreateLabelTaskResponse>
+    public class UpdateTemplateRequest : RpcAcsRequest<UpdateTemplateResponse>
     {
-        public CreateLabelTaskRequest()
-            : base("multimediaai", "2019-08-10", "CreateLabelTask")
+        public UpdateTemplateRequest()
+            : base("multimediaai", "2019-08-10", "UpdateTemplate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,17 +41,17 @@ namespace Aliyun.Acs.multimediaai.Model.V20190810
 			Method = MethodType.POST;
         }
 
-		private long? templateId;
+		private string templateId;
 
-		private string videoUrl;
+		private int? type;
 
-		private string videoName;
+		private string content;
 
-		private string callbackUrl;
+		private string templateName;
 
-		private string applicationId;
+		private bool? isDefault;
 
-		public long? TemplateId
+		public string TemplateId
 		{
 			get
 			{
@@ -60,59 +60,59 @@ namespace Aliyun.Acs.multimediaai.Model.V20190810
 			set	
 			{
 				templateId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
 			}
 		}
 
-		public string VideoUrl
+		public int? Type
 		{
 			get
 			{
-				return videoUrl;
+				return type;
 			}
 			set	
 			{
-				videoUrl = value;
-				DictionaryUtil.Add(QueryParameters, "VideoUrl", value);
+				type = value;
+				DictionaryUtil.Add(QueryParameters, "Type", value.ToString());
 			}
 		}
 
-		public string VideoName
+		public string Content
 		{
 			get
 			{
-				return videoName;
+				return content;
 			}
 			set	
 			{
-				videoName = value;
-				DictionaryUtil.Add(QueryParameters, "VideoName", value);
+				content = value;
+				DictionaryUtil.Add(QueryParameters, "Content", value);
 			}
 		}
 
-		public string CallbackUrl
+		public string TemplateName
 		{
 			get
 			{
-				return callbackUrl;
+				return templateName;
 			}
 			set	
 			{
-				callbackUrl = value;
-				DictionaryUtil.Add(QueryParameters, "CallbackUrl", value);
+				templateName = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateName", value);
 			}
 		}
 
-		public string ApplicationId
+		public bool? IsDefault
 		{
 			get
 			{
-				return applicationId;
+				return isDefault;
 			}
 			set	
 			{
-				applicationId = value;
-				DictionaryUtil.Add(QueryParameters, "ApplicationId", value);
+				isDefault = value;
+				DictionaryUtil.Add(QueryParameters, "IsDefault", value.ToString());
 			}
 		}
 
@@ -121,9 +121,9 @@ namespace Aliyun.Acs.multimediaai.Model.V20190810
 			return false;
 		}
 
-        public override CreateLabelTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateLabelTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,12 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.multimediaai.Model.V20190810
 {
-	public class RegisterFaceImageResponse : AcsResponse
+	public class UpdateTemplateResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private List<RegisterFaceImage_FaceImage> faceImages;
 
 		public string RequestId
 		{
@@ -38,36 +36,6 @@ namespace Aliyun.Acs.multimediaai.Model.V20190810
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public List<RegisterFaceImage_FaceImage> FaceImages
-		{
-			get
-			{
-				return faceImages;
-			}
-			set	
-			{
-				faceImages = value;
-			}
-		}
-
-		public class RegisterFaceImage_FaceImage
-		{
-
-			private long? faceImageId;
-
-			public long? FaceImageId
-			{
-				get
-				{
-					return faceImageId;
-				}
-				set	
-				{
-					faceImageId = value;
-				}
 			}
 		}
 	}

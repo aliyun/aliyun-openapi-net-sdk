@@ -28,10 +28,10 @@ using Aliyun.Acs.multimediaai.Transform.V20190810;
 
 namespace Aliyun.Acs.multimediaai.Model.V20190810
 {
-    public class CreateLabelTaskRequest : RpcAcsRequest<CreateLabelTaskResponse>
+    public class GetTemplateRequest : RpcAcsRequest<GetTemplateResponse>
     {
-        public CreateLabelTaskRequest()
-            : base("multimediaai", "2019-08-10", "CreateLabelTask")
+        public GetTemplateRequest()
+            : base("multimediaai", "2019-08-10", "GetTemplate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,14 +42,6 @@ namespace Aliyun.Acs.multimediaai.Model.V20190810
         }
 
 		private long? templateId;
-
-		private string videoUrl;
-
-		private string videoName;
-
-		private string callbackUrl;
-
-		private string applicationId;
 
 		public long? TemplateId
 		{
@@ -64,66 +56,14 @@ namespace Aliyun.Acs.multimediaai.Model.V20190810
 			}
 		}
 
-		public string VideoUrl
-		{
-			get
-			{
-				return videoUrl;
-			}
-			set	
-			{
-				videoUrl = value;
-				DictionaryUtil.Add(QueryParameters, "VideoUrl", value);
-			}
-		}
-
-		public string VideoName
-		{
-			get
-			{
-				return videoName;
-			}
-			set	
-			{
-				videoName = value;
-				DictionaryUtil.Add(QueryParameters, "VideoName", value);
-			}
-		}
-
-		public string CallbackUrl
-		{
-			get
-			{
-				return callbackUrl;
-			}
-			set	
-			{
-				callbackUrl = value;
-				DictionaryUtil.Add(QueryParameters, "CallbackUrl", value);
-			}
-		}
-
-		public string ApplicationId
-		{
-			get
-			{
-				return applicationId;
-			}
-			set	
-			{
-				applicationId = value;
-				DictionaryUtil.Add(QueryParameters, "ApplicationId", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override CreateLabelTaskResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetTemplateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateLabelTaskResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetTemplateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

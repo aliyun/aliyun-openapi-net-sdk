@@ -16,59 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.multimediaai.Model.V20190810;
 
-namespace Aliyun.Acs.multimediaai.Model.V20190810
+namespace Aliyun.Acs.multimediaai.Transform.V20190810
 {
-	public class RegisterFaceImageResponse : AcsResponse
-	{
+    public class UpdateTemplateResponseUnmarshaller
+    {
+        public static UpdateTemplateResponse Unmarshall(UnmarshallerContext context)
+        {
+			UpdateTemplateResponse updateTemplateResponse = new UpdateTemplateResponse();
 
-		private string requestId;
-
-		private List<RegisterFaceImage_FaceImage> faceImages;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public List<RegisterFaceImage_FaceImage> FaceImages
-		{
-			get
-			{
-				return faceImages;
-			}
-			set	
-			{
-				faceImages = value;
-			}
-		}
-
-		public class RegisterFaceImage_FaceImage
-		{
-
-			private long? faceImageId;
-
-			public long? FaceImageId
-			{
-				get
-				{
-					return faceImageId;
-				}
-				set	
-				{
-					faceImageId = value;
-				}
-			}
-		}
-	}
+			updateTemplateResponse.HttpResponse = context.HttpResponse;
+			updateTemplateResponse.RequestId = context.StringValue("UpdateTemplate.RequestId");
+        
+			return updateTemplateResponse;
+        }
+    }
 }
