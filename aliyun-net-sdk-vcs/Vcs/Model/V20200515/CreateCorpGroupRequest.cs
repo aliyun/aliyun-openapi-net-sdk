@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class CreateCorpGroupRequest : RpcAcsRequest<CreateCorpGroupResponse>
     {
         public CreateCorpGroupRequest()
-            : base("Vcs", "2020-05-15", "CreateCorpGroup", "vcs", "openAPI")
+            : base("Vcs", "2020-05-15", "CreateCorpGroup")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

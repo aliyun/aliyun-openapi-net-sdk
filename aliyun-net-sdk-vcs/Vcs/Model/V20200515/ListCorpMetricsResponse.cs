@@ -148,6 +148,16 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 			private string tagValue;
 
+			private string deviceGroupId;
+
+			private string deviceId;
+
+			private string userGroupId;
+
+			private string personId;
+
+			private string dateId;
+
 			public string CorpId
 			{
 				get
@@ -193,6 +203,66 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				set	
 				{
 					tagValue = value;
+				}
+			}
+
+			public string DeviceGroupId
+			{
+				get
+				{
+					return deviceGroupId;
+				}
+				set	
+				{
+					deviceGroupId = value;
+				}
+			}
+
+			public string DeviceId
+			{
+				get
+				{
+					return deviceId;
+				}
+				set	
+				{
+					deviceId = value;
+				}
+			}
+
+			public string UserGroupId
+			{
+				get
+				{
+					return userGroupId;
+				}
+				set	
+				{
+					userGroupId = value;
+				}
+			}
+
+			public string PersonId
+			{
+				get
+				{
+					return personId;
+				}
+				set	
+				{
+					personId = value;
+				}
+			}
+
+			public string DateId
+			{
+				get
+				{
+					return dateId;
+				}
+				set	
+				{
+					dateId = value;
 				}
 			}
 		}

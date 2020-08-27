@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class ListCorpMetricsRequest : RpcAcsRequest<ListCorpMetricsResponse>
     {
         public ListCorpMetricsRequest()
-            : base("Vcs", "2020-05-15", "ListCorpMetrics", "vcs", "openAPI")
+            : base("Vcs", "2020-05-15", "ListCorpMetrics")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,9 +49,15 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string pageNumber;
 
+		private string deviceGroupList;
+
 		private string tagCode;
 
+		private string userGroupList;
+
 		private string pageSize;
+
+		private string deviceIdList;
 
 		public string CorpId
 		{
@@ -104,6 +111,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
+		public string DeviceGroupList
+		{
+			get
+			{
+				return deviceGroupList;
+			}
+			set	
+			{
+				deviceGroupList = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceGroupList", value);
+			}
+		}
+
 		public string TagCode
 		{
 			get
@@ -117,6 +137,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
+		public string UserGroupList
+		{
+			get
+			{
+				return userGroupList;
+			}
+			set	
+			{
+				userGroupList = value;
+				DictionaryUtil.Add(BodyParameters, "UserGroupList", value);
+			}
+		}
+
 		public string PageSize
 		{
 			get
@@ -127,6 +160,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value);
+			}
+		}
+
+		public string DeviceIdList
+		{
+			get
+			{
+				return deviceIdList;
+			}
+			set	
+			{
+				deviceIdList = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceIdList", value);
 			}
 		}
 

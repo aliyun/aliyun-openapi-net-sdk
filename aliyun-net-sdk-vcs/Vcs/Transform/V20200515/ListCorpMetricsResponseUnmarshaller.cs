@@ -46,6 +46,11 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				dataItem.TagCode = context.StringValue("ListCorpMetrics.Data["+ i +"].TagCode");
 				dataItem.TagMetrics = context.StringValue("ListCorpMetrics.Data["+ i +"].TagMetrics");
 				dataItem.TagValue = context.StringValue("ListCorpMetrics.Data["+ i +"].TagValue");
+				dataItem.DeviceGroupId = context.StringValue("ListCorpMetrics.Data["+ i +"].DeviceGroupId");
+				dataItem.DeviceId = context.StringValue("ListCorpMetrics.Data["+ i +"].DeviceId");
+				dataItem.UserGroupId = context.StringValue("ListCorpMetrics.Data["+ i +"].UserGroupId");
+				dataItem.PersonId = context.StringValue("ListCorpMetrics.Data["+ i +"].PersonId");
+				dataItem.DateId = context.StringValue("ListCorpMetrics.Data["+ i +"].DateId");
 
 				listCorpMetricsResponse_data.Add(dataItem);
 			}

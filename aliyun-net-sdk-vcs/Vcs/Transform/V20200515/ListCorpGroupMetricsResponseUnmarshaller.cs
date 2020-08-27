@@ -39,16 +39,21 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			listCorpGroupMetricsResponse.TotalCount = context.IntegerValue("ListCorpGroupMetrics.TotalCount");
 			listCorpGroupMetricsResponse.Success = context.StringValue("ListCorpGroupMetrics.Success");
 
-			List<ListCorpGroupMetricsResponse.ListCorpGroupMetrics_Day> listCorpGroupMetricsResponse_data = new List<ListCorpGroupMetricsResponse.ListCorpGroupMetrics_Day>();
+			List<ListCorpGroupMetricsResponse.ListCorpGroupMetrics_DataItem> listCorpGroupMetricsResponse_data = new List<ListCorpGroupMetricsResponse.ListCorpGroupMetrics_DataItem>();
 			for (int i = 0; i < context.Length("ListCorpGroupMetrics.Data.Length"); i++) {
-				ListCorpGroupMetricsResponse.ListCorpGroupMetrics_Day day = new ListCorpGroupMetricsResponse.ListCorpGroupMetrics_Day();
-				day.CheckedTime = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].CheckedTime");
-				day.TagMetrics = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].TagMetrics");
-				day.TagCode = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].TagCode");
-				day.TagValue = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].TagValue");
-				day.GroupId = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].GroupId");
+				ListCorpGroupMetricsResponse.ListCorpGroupMetrics_DataItem dataItem = new ListCorpGroupMetricsResponse.ListCorpGroupMetrics_DataItem();
+				dataItem.DateId = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].DateId");
+				dataItem.TagMetrics = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].TagMetrics");
+				dataItem.TagCode = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].TagCode");
+				dataItem.TagValue = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].TagValue");
+				dataItem.CorpGroupId = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].CorpGroupId");
+				dataItem.CorpId = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].CorpId");
+				dataItem.DeviceGroupId = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].DeviceGroupId");
+				dataItem.DeviceId = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].DeviceId");
+				dataItem.UserGroupId = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].UserGroupId");
+				dataItem.PersonID = context.StringValue("ListCorpGroupMetrics.Data["+ i +"].PersonID");
 
-				listCorpGroupMetricsResponse_data.Add(day);
+				listCorpGroupMetricsResponse_data.Add(dataItem);
 			}
 			listCorpGroupMetricsResponse.Data = listCorpGroupMetricsResponse_data;
         

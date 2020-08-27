@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class ListCorpGroupMetricsRequest : RpcAcsRequest<ListCorpGroupMetricsResponse>
     {
         public ListCorpGroupMetricsRequest()
-            : base("Vcs", "2020-05-15", "ListCorpGroupMetrics", "vcs", "openAPI")
+            : base("Vcs", "2020-05-15", "ListCorpGroupMetrics")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,17 +41,38 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
+		private string corpId;
+
 		private string groupId;
 
 		private string endTime;
 
 		private string startTime;
 
+		private string deviceId;
+
 		private string pageNumber;
+
+		private string deviceGroup;
 
 		private string tagCode;
 
 		private string pageSize;
+
+		private string userGroup;
+
+		public string CorpId
+		{
+			get
+			{
+				return corpId;
+			}
+			set	
+			{
+				corpId = value;
+				DictionaryUtil.Add(BodyParameters, "CorpId", value);
+			}
+		}
 
 		public string GroupId
 		{
@@ -91,6 +113,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
+		public string DeviceId
+		{
+			get
+			{
+				return deviceId;
+			}
+			set	
+			{
+				deviceId = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceId", value);
+			}
+		}
+
 		public string PageNumber
 		{
 			get
@@ -101,6 +136,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(BodyParameters, "PageNumber", value);
+			}
+		}
+
+		public string DeviceGroup
+		{
+			get
+			{
+				return deviceGroup;
+			}
+			set	
+			{
+				deviceGroup = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceGroup", value);
 			}
 		}
 
@@ -127,6 +175,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value);
+			}
+		}
+
+		public string UserGroup
+		{
+			get
+			{
+				return userGroup;
+			}
+			set	
+			{
+				userGroup = value;
+				DictionaryUtil.Add(BodyParameters, "UserGroup", value);
 			}
 		}
 

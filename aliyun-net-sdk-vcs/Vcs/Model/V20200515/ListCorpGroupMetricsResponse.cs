@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string success;
 
-		private List<ListCorpGroupMetrics_Day> data;
+		private List<ListCorpGroupMetrics_DataItem> data;
 
 		public string Code
 		{
@@ -125,7 +125,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public List<ListCorpGroupMetrics_Day> Data
+		public List<ListCorpGroupMetrics_DataItem> Data
 		{
 			get
 			{
@@ -137,10 +137,10 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public class ListCorpGroupMetrics_Day
+		public class ListCorpGroupMetrics_DataItem
 		{
 
-			private string checkedTime;
+			private string dateId;
 
 			private string tagMetrics;
 
@@ -148,17 +148,27 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 			private string tagValue;
 
-			private string groupId;
+			private string corpGroupId;
 
-			public string CheckedTime
+			private string corpId;
+
+			private string deviceGroupId;
+
+			private string deviceId;
+
+			private string userGroupId;
+
+			private string personID;
+
+			public string DateId
 			{
 				get
 				{
-					return checkedTime;
+					return dateId;
 				}
 				set	
 				{
-					checkedTime = value;
+					dateId = value;
 				}
 			}
 
@@ -198,15 +208,75 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				}
 			}
 
-			public string GroupId
+			public string CorpGroupId
 			{
 				get
 				{
-					return groupId;
+					return corpGroupId;
 				}
 				set	
 				{
-					groupId = value;
+					corpGroupId = value;
+				}
+			}
+
+			public string CorpId
+			{
+				get
+				{
+					return corpId;
+				}
+				set	
+				{
+					corpId = value;
+				}
+			}
+
+			public string DeviceGroupId
+			{
+				get
+				{
+					return deviceGroupId;
+				}
+				set	
+				{
+					deviceGroupId = value;
+				}
+			}
+
+			public string DeviceId
+			{
+				get
+				{
+					return deviceId;
+				}
+				set	
+				{
+					deviceId = value;
+				}
+			}
+
+			public string UserGroupId
+			{
+				get
+				{
+					return userGroupId;
+				}
+				set	
+				{
+					userGroupId = value;
+				}
+			}
+
+			public string PersonID
+			{
+				get
+				{
+					return personID;
+				}
+				set	
+				{
+					personID = value;
 				}
 			}
 		}
