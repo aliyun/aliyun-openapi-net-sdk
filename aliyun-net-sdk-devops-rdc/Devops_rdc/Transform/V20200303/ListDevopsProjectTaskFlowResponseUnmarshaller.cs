@@ -41,6 +41,7 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 				ListDevopsProjectTaskFlowResponse.ListDevopsProjectTaskFlow_Taskflow taskflow = new ListDevopsProjectTaskFlowResponse.ListDevopsProjectTaskFlow_Taskflow();
 				taskflow.Id = context.StringValue("ListDevopsProjectTaskFlow.Object["+ i +"].Id");
 				taskflow.Type = context.StringValue("ListDevopsProjectTaskFlow.Object["+ i +"].Type");
+				taskflow.Name = context.StringValue("ListDevopsProjectTaskFlow.Object["+ i +"].Name");
 
 				listDevopsProjectTaskFlowResponse_object.Add(taskflow);
 			}

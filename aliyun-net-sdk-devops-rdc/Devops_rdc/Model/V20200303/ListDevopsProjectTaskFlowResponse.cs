@@ -102,6 +102,8 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 
 			private string type;
 
+			private string name;
+
 			public string Id
 			{
 				get
@@ -123,6 +125,18 @@ namespace Aliyun.Acs.devops_rdc.Model.V20200303
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 		}
