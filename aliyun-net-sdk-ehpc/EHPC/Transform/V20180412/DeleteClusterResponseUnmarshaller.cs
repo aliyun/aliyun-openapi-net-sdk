@@ -32,6 +32,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 
 			deleteClusterResponse.HttpResponse = context.HttpResponse;
 			deleteClusterResponse.RequestId = context.StringValue("DeleteCluster.RequestId");
+			deleteClusterResponse.TaskId = context.StringValue("DeleteCluster.TaskId");
         
 			return deleteClusterResponse;
         }

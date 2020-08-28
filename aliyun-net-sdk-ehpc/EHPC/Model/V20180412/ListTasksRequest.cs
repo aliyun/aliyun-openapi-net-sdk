@@ -28,10 +28,10 @@ using Aliyun.Acs.EHPC.Transform.V20180412;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class DescribeGWSInstancesRequest : RpcAcsRequest<DescribeGWSInstancesResponse>
+    public class ListTasksRequest : RpcAcsRequest<ListTasksResponse>
     {
-        public DescribeGWSInstancesRequest()
-            : base("EHPC", "2018-04-12", "DescribeGWSInstances")
+        public ListTasksRequest()
+            : base("EHPC", "2018-04-12", "ListTasks")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,13 +44,11 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private int? pageNumber;
 
-		private string instanceId;
+		private bool? archived;
 
 		private int? pageSize;
 
-		private long? userUid;
-
-		private string userName;
+		private string taskId;
 
 		public string ClusterId
 		{
@@ -78,16 +76,16 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string InstanceId
+		public bool? Archived
 		{
 			get
 			{
-				return instanceId;
+				return archived;
 			}
 			set	
 			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+				archived = value;
+				DictionaryUtil.Add(QueryParameters, "Archived", value.ToString());
 			}
 		}
 
@@ -104,35 +102,27 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public long? UserUid
+		public string TaskId
 		{
 			get
 			{
-				return userUid;
+				return taskId;
 			}
 			set	
 			{
-				userUid = value;
-				DictionaryUtil.Add(QueryParameters, "UserUid", value.ToString());
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 
-		public string UserName
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
-			}
+			return false;
 		}
 
-        public override DescribeGWSInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListTasksResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeGWSInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListTasksResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

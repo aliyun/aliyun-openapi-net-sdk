@@ -24,17 +24,23 @@ using Aliyun.Acs.EHPC.Model.V20180412;
 
 namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
-    public class ResetNodesResponseUnmarshaller
+    public class ListSecurityGroupsResponseUnmarshaller
     {
-        public static ResetNodesResponse Unmarshall(UnmarshallerContext context)
+        public static ListSecurityGroupsResponse Unmarshall(UnmarshallerContext context)
         {
-			ResetNodesResponse resetNodesResponse = new ResetNodesResponse();
+			ListSecurityGroupsResponse listSecurityGroupsResponse = new ListSecurityGroupsResponse();
 
-			resetNodesResponse.HttpResponse = context.HttpResponse;
-			resetNodesResponse.RequestId = context.StringValue("ResetNodes.RequestId");
-			resetNodesResponse.TaskId = context.StringValue("ResetNodes.TaskId");
+			listSecurityGroupsResponse.HttpResponse = context.HttpResponse;
+			listSecurityGroupsResponse.RequestId = context.StringValue("ListSecurityGroups.RequestId");
+			listSecurityGroupsResponse.TotalCount = context.IntegerValue("ListSecurityGroups.TotalCount");
+
+			List<string> listSecurityGroupsResponse_securityGroups = new List<string>();
+			for (int i = 0; i < context.Length("ListSecurityGroups.SecurityGroups.Length"); i++) {
+				listSecurityGroupsResponse_securityGroups.Add(context.StringValue("ListSecurityGroups.SecurityGroups["+ i +"]"));
+			}
+			listSecurityGroupsResponse.SecurityGroups = listSecurityGroupsResponse_securityGroups;
         
-			return resetNodesResponse;
+			return listSecurityGroupsResponse;
         }
     }
 }

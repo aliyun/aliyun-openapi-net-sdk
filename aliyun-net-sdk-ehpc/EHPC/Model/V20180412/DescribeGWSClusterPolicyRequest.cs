@@ -43,6 +43,10 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string clusterId;
 
+		private bool? asyncMode;
+
+		private string taskId;
+
 		public string ClusterId
 		{
 			get
@@ -53,6 +57,32 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				clusterId = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
+			}
+		}
+
+		public bool? AsyncMode
+		{
+			get
+			{
+				return asyncMode;
+			}
+			set	
+			{
+				asyncMode = value;
+				DictionaryUtil.Add(QueryParameters, "AsyncMode", value.ToString());
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
+				DictionaryUtil.Add(QueryParameters, "TaskId", value);
 			}
 		}
 

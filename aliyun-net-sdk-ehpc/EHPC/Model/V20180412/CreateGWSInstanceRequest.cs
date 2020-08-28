@@ -62,6 +62,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string workMode;
 
+		private string vSwitchId;
+
 		private string periodUnit;
 
 		private bool? autoRenew;
@@ -212,6 +214,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				workMode = value;
 				DictionaryUtil.Add(QueryParameters, "WorkMode", value);
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 

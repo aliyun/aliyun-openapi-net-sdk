@@ -34,6 +34,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 			applyNodesResponse.RequestId = context.StringValue("ApplyNodes.RequestId");
 			applyNodesResponse.Detail = context.StringValue("ApplyNodes.Detail");
 			applyNodesResponse.SatisfiedAmount = context.IntegerValue("ApplyNodes.SatisfiedAmount");
+			applyNodesResponse.TaskId = context.StringValue("ApplyNodes.TaskId");
 
 			List<string> applyNodesResponse_instanceIds = new List<string>();
 			for (int i = 0; i < context.Length("ApplyNodes.InstanceIds.Length"); i++) {

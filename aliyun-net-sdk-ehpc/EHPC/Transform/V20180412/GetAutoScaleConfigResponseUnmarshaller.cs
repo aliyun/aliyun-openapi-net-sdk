@@ -61,6 +61,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 				queueInfo.EnableAutoShrink = context.BooleanValue("GetAutoScaleConfig.Queues["+ i +"].EnableAutoShrink");
 				queueInfo.MaxNodesInQueue = context.IntegerValue("GetAutoScaleConfig.Queues["+ i +"].MaxNodesInQueue");
 				queueInfo.MinNodesInQueue = context.IntegerValue("GetAutoScaleConfig.Queues["+ i +"].MinNodesInQueue");
+				queueInfo.QueueImageId = context.StringValue("GetAutoScaleConfig.Queues["+ i +"].QueueImageId");
 
 				List<GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo.GetAutoScaleConfig_InstanceTypeInfo> queueInfo_instanceTypes = new List<GetAutoScaleConfigResponse.GetAutoScaleConfig_QueueInfo.GetAutoScaleConfig_InstanceTypeInfo>();
 				for (int j = 0; j < context.Length("GetAutoScaleConfig.Queues["+ i +"].InstanceTypes.Length"); j++) {

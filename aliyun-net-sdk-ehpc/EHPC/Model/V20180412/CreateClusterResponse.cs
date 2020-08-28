@@ -29,6 +29,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string clusterId;
 
+		private string taskId;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			set	
 			{
 				clusterId = value;
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
 			}
 		}
 	}

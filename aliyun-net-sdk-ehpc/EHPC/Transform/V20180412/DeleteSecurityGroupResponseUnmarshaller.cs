@@ -16,41 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.EHPC.Model.V20180412;
 
-namespace Aliyun.Acs.EHPC.Model.V20180412
+namespace Aliyun.Acs.EHPC.Transform.V20180412
 {
-	public class StopNodesResponse : AcsResponse
-	{
+    public class DeleteSecurityGroupResponseUnmarshaller
+    {
+        public static DeleteSecurityGroupResponse Unmarshall(UnmarshallerContext context)
+        {
+			DeleteSecurityGroupResponse deleteSecurityGroupResponse = new DeleteSecurityGroupResponse();
 
-		private string requestId;
-
-		private string taskId;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
-			}
-		}
-	}
+			deleteSecurityGroupResponse.HttpResponse = context.HttpResponse;
+			deleteSecurityGroupResponse.RequestId = context.StringValue("DeleteSecurityGroup.RequestId");
+        
+			return deleteSecurityGroupResponse;
+        }
+    }
 }

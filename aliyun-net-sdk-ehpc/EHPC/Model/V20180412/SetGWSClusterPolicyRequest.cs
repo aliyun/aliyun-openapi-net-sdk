@@ -51,6 +51,10 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string usbRedirect;
 
+		private bool? asyncMode;
+
+		private string udpPort;
+
 		public string Watermark
 		{
 			get
@@ -113,6 +117,32 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				usbRedirect = value;
 				DictionaryUtil.Add(QueryParameters, "UsbRedirect", value);
+			}
+		}
+
+		public bool? AsyncMode
+		{
+			get
+			{
+				return asyncMode;
+			}
+			set	
+			{
+				asyncMode = value;
+				DictionaryUtil.Add(QueryParameters, "AsyncMode", value.ToString());
+			}
+		}
+
+		public string UdpPort
+		{
+			get
+			{
+				return udpPort;
+			}
+			set	
+			{
+				udpPort = value;
+				DictionaryUtil.Add(QueryParameters, "UdpPort", value);
 			}
 		}
 

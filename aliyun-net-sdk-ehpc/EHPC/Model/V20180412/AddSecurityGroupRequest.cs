@@ -28,10 +28,10 @@ using Aliyun.Acs.EHPC.Transform.V20180412;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-    public class DescribeGWSInstancesRequest : RpcAcsRequest<DescribeGWSInstancesResponse>
+    public class AddSecurityGroupRequest : RpcAcsRequest<AddSecurityGroupResponse>
     {
-        public DescribeGWSInstancesRequest()
-            : base("EHPC", "2018-04-12", "DescribeGWSInstances")
+        public AddSecurityGroupRequest()
+            : base("EHPC", "2018-04-12", "AddSecurityGroup")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,17 +40,37 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
             }
         }
 
+		private string clientToken;
+
+		private string securityGroupId;
+
 		private string clusterId;
 
-		private int? pageNumber;
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
 
-		private string instanceId;
-
-		private int? pageSize;
-
-		private long? userUid;
-
-		private string userName;
+		public string SecurityGroupId
+		{
+			get
+			{
+				return securityGroupId;
+			}
+			set	
+			{
+				securityGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityGroupId", value);
+			}
+		}
 
 		public string ClusterId
 		{
@@ -65,74 +85,9 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public long? UserUid
-		{
-			get
-			{
-				return userUid;
-			}
-			set	
-			{
-				userUid = value;
-				DictionaryUtil.Add(QueryParameters, "UserUid", value.ToString());
-			}
-		}
-
-		public string UserName
-		{
-			get
-			{
-				return userName;
-			}
-			set	
-			{
-				userName = value;
-				DictionaryUtil.Add(QueryParameters, "UserName", value);
-			}
-		}
-
-        public override DescribeGWSInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AddSecurityGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeGWSInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddSecurityGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

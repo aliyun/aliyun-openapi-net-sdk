@@ -32,6 +32,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 
 			deleteNodesResponse.HttpResponse = context.HttpResponse;
 			deleteNodesResponse.RequestId = context.StringValue("DeleteNodes.RequestId");
+			deleteNodesResponse.TaskId = context.StringValue("DeleteNodes.TaskId");
         
 			return deleteNodesResponse;
         }

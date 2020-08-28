@@ -22,12 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-	public class StopNodesResponse : AcsResponse
+	public class ListSecurityGroupsResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string taskId;
+		private int? totalCount;
+
+		private List<string> securityGroups;
 
 		public string RequestId
 		{
@@ -41,15 +43,27 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			}
 		}
 
-		public string TaskId
+		public int? TotalCount
 		{
 			get
 			{
-				return taskId;
+				return totalCount;
 			}
 			set	
 			{
-				taskId = value;
+				totalCount = value;
+			}
+		}
+
+		public List<string> SecurityGroups
+		{
+			get
+			{
+				return securityGroups;
+			}
+			set	
+			{
+				securityGroups = value;
 			}
 		}
 	}

@@ -42,6 +42,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string clusterType;
 
+		private string vSwitchId;
+
 		private string vpcId;
 
 		private string name;
@@ -56,6 +58,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				clusterType = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterType", value);
+			}
+		}
+
+		public string VSwitchId
+		{
+			get
+			{
+				return vSwitchId;
+			}
+			set	
+			{
+				vSwitchId = value;
+				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
 			}
 		}
 

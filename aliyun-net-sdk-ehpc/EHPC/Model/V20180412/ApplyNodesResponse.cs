@@ -31,6 +31,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private int? satisfiedAmount;
 
+		private string taskId;
+
 		private List<string> instanceIds;
 
 		public string RequestId
@@ -66,6 +68,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			set	
 			{
 				satisfiedAmount = value;
+			}
+		}
+
+		public string TaskId
+		{
+			get
+			{
+				return taskId;
+			}
+			set	
+			{
+				taskId = value;
 			}
 		}
 

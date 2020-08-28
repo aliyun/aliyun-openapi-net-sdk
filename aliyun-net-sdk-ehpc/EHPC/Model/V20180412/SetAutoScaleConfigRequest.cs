@@ -247,6 +247,7 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 					}
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".MaxNodesInQueue", queuess[i].MaxNodesInQueue);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".InstanceType", queuess[i].InstanceType);
+					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".QueueImageId", queuess[i].QueueImageId);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".EnableAutoGrow", queuess[i].EnableAutoGrow);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".SpotPriceLimit", queuess[i].SpotPriceLimit);
 					DictionaryUtil.Add(QueryParameters,"Queues." + (i + 1) + ".EnableAutoShrink", queuess[i].EnableAutoShrink);
@@ -294,6 +295,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			private int? maxNodesInQueue;
 
 			private string instanceType;
+
+			private string queueImageId;
 
 			private bool? enableAutoGrow;
 
@@ -370,6 +373,18 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 				set	
 				{
 					instanceType = value;
+				}
+			}
+
+			public string QueueImageId
+			{
+				get
+				{
+					return queueImageId;
+				}
+				set	
+				{
+					queueImageId = value;
 				}
 			}
 

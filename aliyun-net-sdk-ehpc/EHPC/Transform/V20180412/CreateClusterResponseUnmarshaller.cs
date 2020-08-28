@@ -33,6 +33,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 			createClusterResponse.HttpResponse = context.HttpResponse;
 			createClusterResponse.RequestId = context.StringValue("CreateCluster.RequestId");
 			createClusterResponse.ClusterId = context.StringValue("CreateCluster.ClusterId");
+			createClusterResponse.TaskId = context.StringValue("CreateCluster.TaskId");
         
 			return createClusterResponse;
         }

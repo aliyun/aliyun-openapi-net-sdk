@@ -74,6 +74,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private string imageId;
 
+		private string clientToken;
+
 		private string ehpcVersion;
 
 		private string securityGroupId;
@@ -331,6 +333,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 

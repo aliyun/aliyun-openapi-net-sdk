@@ -22,12 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.EHPC.Model.V20180412
 {
-	public class StopNodesResponse : AcsResponse
+	public class DeleteSecurityGroupResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string taskId;
 
 		public string RequestId
 		{
@@ -38,18 +36,6 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string TaskId
-		{
-			get
-			{
-				return taskId;
-			}
-			set	
-			{
-				taskId = value;
 			}
 		}
 	}

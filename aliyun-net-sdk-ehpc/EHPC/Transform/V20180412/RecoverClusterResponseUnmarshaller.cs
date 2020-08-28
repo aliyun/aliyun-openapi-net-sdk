@@ -32,6 +32,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 
 			recoverClusterResponse.HttpResponse = context.HttpResponse;
 			recoverClusterResponse.RequestId = context.StringValue("RecoverCluster.RequestId");
+			recoverClusterResponse.TaskId = context.StringValue("RecoverCluster.TaskId");
         
 			return recoverClusterResponse;
         }

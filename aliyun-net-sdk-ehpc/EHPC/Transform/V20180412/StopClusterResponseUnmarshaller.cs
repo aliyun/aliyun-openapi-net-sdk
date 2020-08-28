@@ -32,6 +32,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 
 			stopClusterResponse.HttpResponse = context.HttpResponse;
 			stopClusterResponse.RequestId = context.StringValue("StopCluster.RequestId");
+			stopClusterResponse.TaskId = context.StringValue("StopCluster.TaskId");
         
 			return stopClusterResponse;
         }

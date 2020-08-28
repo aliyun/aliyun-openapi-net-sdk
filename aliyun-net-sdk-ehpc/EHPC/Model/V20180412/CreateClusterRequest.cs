@@ -60,6 +60,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 
 		private int? ecsOrderLoginCount;
 
+		private bool? withoutElasticIp;
+
 		private string remoteVisEnable;
 
 		private int? systemDiskSize;
@@ -95,6 +97,8 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 		private string sccClusterId;
 
 		private string imageId;
+
+		private string clientToken;
 
 		private string ehpcVersion;
 
@@ -276,6 +280,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				ecsOrderLoginCount = value;
 				DictionaryUtil.Add(QueryParameters, "EcsOrder.Login.Count", value.ToString());
+			}
+		}
+
+		public bool? WithoutElasticIp
+		{
+			get
+			{
+				return withoutElasticIp;
+			}
+			set	
+			{
+				withoutElasticIp = value;
+				DictionaryUtil.Add(QueryParameters, "WithoutElasticIp", value.ToString());
 			}
 		}
 
@@ -515,6 +532,19 @@ namespace Aliyun.Acs.EHPC.Model.V20180412
 			{
 				imageId = value;
 				DictionaryUtil.Add(QueryParameters, "ImageId", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 

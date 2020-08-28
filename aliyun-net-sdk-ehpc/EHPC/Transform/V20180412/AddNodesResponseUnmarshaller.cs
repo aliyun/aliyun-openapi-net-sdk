@@ -32,6 +32,7 @@ namespace Aliyun.Acs.EHPC.Transform.V20180412
 
 			addNodesResponse.HttpResponse = context.HttpResponse;
 			addNodesResponse.RequestId = context.StringValue("AddNodes.RequestId");
+			addNodesResponse.TaskId = context.StringValue("AddNodes.TaskId");
 
 			List<string> addNodesResponse_instanceIds = new List<string>();
 			for (int i = 0; i < context.Length("AddNodes.InstanceIds.Length"); i++) {
