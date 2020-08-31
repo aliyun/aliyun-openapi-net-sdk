@@ -151,6 +151,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string searchMatchingRate;
 
+				private long? lastShotTime;
+
 				private List<GetPersonList_TagList> propertyTagList;
 
 				public string FaceUrl
@@ -198,6 +200,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						searchMatchingRate = value;
+					}
+				}
+
+				public long? LastShotTime
+				{
+					get
+					{
+						return lastShotTime;
+					}
+					set	
+					{
+						lastShotTime = value;
 					}
 				}
 

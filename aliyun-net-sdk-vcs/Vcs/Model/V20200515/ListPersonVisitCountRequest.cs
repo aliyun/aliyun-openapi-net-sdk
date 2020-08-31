@@ -23,6 +23,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -31,7 +32,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class ListPersonVisitCountRequest : RpcAcsRequest<ListPersonVisitCountResponse>
     {
         public ListPersonVisitCountRequest()
-            : base("Vcs", "2020-05-15", "ListPersonVisitCount", "vcs", "openAPI")
+            : base("Vcs", "2020-05-15", "ListPersonVisitCount")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,13 +46,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string endTime;
 
+		private string countType;
+
 		private string startTime;
 
 		private int? pageNumber;
 
 		private string timeAggregateType;
 
+		private string maxVal;
+
 		private string tagCode;
+
+		private string minVal;
 
 		private int? pageSize;
 
@@ -80,6 +87,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				endTime = value;
 				DictionaryUtil.Add(BodyParameters, "EndTime", value);
+			}
+		}
+
+		public string CountType
+		{
+			get
+			{
+				return countType;
+			}
+			set	
+			{
+				countType = value;
+				DictionaryUtil.Add(BodyParameters, "CountType", value);
 			}
 		}
 
@@ -122,6 +142,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
+		public string MaxVal
+		{
+			get
+			{
+				return maxVal;
+			}
+			set	
+			{
+				maxVal = value;
+				DictionaryUtil.Add(BodyParameters, "MaxVal", value);
+			}
+		}
+
 		public string TagCode
 		{
 			get
@@ -132,6 +165,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				tagCode = value;
 				DictionaryUtil.Add(BodyParameters, "TagCode", value);
+			}
+		}
+
+		public string MinVal
+		{
+			get
+			{
+				return minVal;
+			}
+			set	
+			{
+				minVal = value;
+				DictionaryUtil.Add(BodyParameters, "MinVal", value);
 			}
 		}
 

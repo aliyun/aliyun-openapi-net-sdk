@@ -47,6 +47,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.FirstShotTime = context.LongValue("GetPersonList.Data.Records["+ i +"].FirstShotTime");
 				recordsItem.PersonId = context.StringValue("GetPersonList.Data.Records["+ i +"].PersonId");
 				recordsItem.SearchMatchingRate = context.StringValue("GetPersonList.Data.Records["+ i +"].SearchMatchingRate");
+				recordsItem.LastShotTime = context.LongValue("GetPersonList.Data.Records["+ i +"].LastShotTime");
 
 				List<GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem.GetPersonList_TagList> recordsItem_propertyTagList = new List<GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem.GetPersonList_TagList>();
 				for (int j = 0; j < context.Length("GetPersonList.Data.Records["+ i +"].PropertyTagList.Length"); j++) {
