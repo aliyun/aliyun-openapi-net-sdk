@@ -38,7 +38,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			GetProfileListResponse.GetProfileList_Data data = new GetProfileListResponse.GetProfileList_Data();
 			data.PageNumber = context.LongValue("GetProfileList.Data.PageNumber");
 			data.PageSize = context.LongValue("GetProfileList.Data.PageSize");
-			data.Success = context.LongValue("GetProfileList.Data.Success");
+			data.Success = context.BooleanValue("GetProfileList.Data.Success");
 			data.Total = context.LongValue("GetProfileList.Data.Total");
 
 			List<GetProfileListResponse.GetProfileList_Data.GetProfileList_RecordsItem> data_records = new List<GetProfileListResponse.GetProfileList_Data.GetProfileList_RecordsItem>();

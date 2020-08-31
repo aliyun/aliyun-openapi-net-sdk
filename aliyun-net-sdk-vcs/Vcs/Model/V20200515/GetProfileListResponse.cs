@@ -88,7 +88,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 			private long? pageSize;
 
-			private long? success;
+			private bool? success;
 
 			private long? total;
 
@@ -118,7 +118,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				}
 			}
 
-			public long? Success
+			public bool? Success
 			{
 				get
 				{
