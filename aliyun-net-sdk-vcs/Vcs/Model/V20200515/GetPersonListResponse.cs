@@ -84,15 +84,15 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 		public class GetPersonList_Data
 		{
 
-			private string pageNumber;
+			private long? pageNumber;
 
-			private string pageSize;
+			private long? pageSize;
 
-			private string totalCount;
+			private long? totalCount;
 
 			private List<GetPersonList_RecordsItem> records;
 
-			public string PageNumber
+			public long? PageNumber
 			{
 				get
 				{
@@ -104,7 +104,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				}
 			}
 
-			public string PageSize
+			public long? PageSize
 			{
 				get
 				{
@@ -116,7 +116,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				}
 			}
 
-			public string TotalCount
+			public long? TotalCount
 			{
 				get
 				{
@@ -143,23 +143,37 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			public class GetPersonList_RecordsItem
 			{
 
-				private string firstAppearTime;
+				private string faceUrl;
+
+				private long? firstShotTime;
 
 				private string personId;
 
-				private string faceImageUrl;
+				private string searchMatchingRate;
 
-				private List<GetPersonList_TagListItem> tagList;
+				private List<GetPersonList_TagList> propertyTagList;
 
-				public string FirstAppearTime
+				public string FaceUrl
 				{
 					get
 					{
-						return firstAppearTime;
+						return faceUrl;
 					}
 					set	
 					{
-						firstAppearTime = value;
+						faceUrl = value;
+					}
+				}
+
+				public long? FirstShotTime
+				{
+					get
+					{
+						return firstShotTime;
+					}
+					set	
+					{
+						firstShotTime = value;
 					}
 				}
 
@@ -175,40 +189,40 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public string FaceImageUrl
+				public string SearchMatchingRate
 				{
 					get
 					{
-						return faceImageUrl;
+						return searchMatchingRate;
 					}
 					set	
 					{
-						faceImageUrl = value;
+						searchMatchingRate = value;
 					}
 				}
 
-				public List<GetPersonList_TagListItem> TagList
+				public List<GetPersonList_TagList> PropertyTagList
 				{
 					get
 					{
-						return tagList;
+						return propertyTagList;
 					}
 					set	
 					{
-						tagList = value;
+						propertyTagList = value;
 					}
 				}
 
-				public class GetPersonList_TagListItem
+				public class GetPersonList_TagList
 				{
 
 					private string code;
 
-					private string _value;
-
 					private string tagCodeName;
 
 					private string tagName;
+
+					private string _value;
 
 					public string Code
 					{
@@ -219,18 +233,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 						set	
 						{
 							code = value;
-						}
-					}
-
-					public string _Value
-					{
-						get
-						{
-							return _value;
-						}
-						set	
-						{
-							_value = value;
 						}
 					}
 
@@ -255,6 +257,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 						set	
 						{
 							tagName = value;
+						}
+					}
+
+					public string _Value
+					{
+						get
+						{
+							return _value;
+						}
+						set	
+						{
+							_value = value;
 						}
 					}
 				}

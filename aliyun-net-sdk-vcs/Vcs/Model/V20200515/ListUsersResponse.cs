@@ -177,6 +177,10 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string isvSubId;
 
+				private string matchingRate;
+
+				private string personId;
+
 				public int? UserGroupId
 				{
 					get
@@ -294,6 +298,30 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						isvSubId = value;
+					}
+				}
+
+				public string MatchingRate
+				{
+					get
+					{
+						return matchingRate;
+					}
+					set	
+					{
+						matchingRate = value;
+					}
+				}
+
+				public string PersonId
+				{
+					get
+					{
+						return personId;
+					}
+					set	
+					{
+						personId = value;
 					}
 				}
 			}

@@ -36,28 +36,29 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			getPersonListResponse.RequestId = context.StringValue("GetPersonList.RequestId");
 
 			GetPersonListResponse.GetPersonList_Data data = new GetPersonListResponse.GetPersonList_Data();
-			data.PageNumber = context.StringValue("GetPersonList.Data.PageNumber");
-			data.PageSize = context.StringValue("GetPersonList.Data.PageSize");
-			data.TotalCount = context.StringValue("GetPersonList.Data.TotalCount");
+			data.PageNumber = context.LongValue("GetPersonList.Data.PageNumber");
+			data.PageSize = context.LongValue("GetPersonList.Data.PageSize");
+			data.TotalCount = context.LongValue("GetPersonList.Data.TotalCount");
 
 			List<GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem> data_records = new List<GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem>();
 			for (int i = 0; i < context.Length("GetPersonList.Data.Records.Length"); i++) {
 				GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem recordsItem = new GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem();
-				recordsItem.FirstAppearTime = context.StringValue("GetPersonList.Data.Records["+ i +"].FirstAppearTime");
+				recordsItem.FaceUrl = context.StringValue("GetPersonList.Data.Records["+ i +"].FaceUrl");
+				recordsItem.FirstShotTime = context.LongValue("GetPersonList.Data.Records["+ i +"].FirstShotTime");
 				recordsItem.PersonId = context.StringValue("GetPersonList.Data.Records["+ i +"].PersonId");
-				recordsItem.FaceImageUrl = context.StringValue("GetPersonList.Data.Records["+ i +"].FaceImageUrl");
+				recordsItem.SearchMatchingRate = context.StringValue("GetPersonList.Data.Records["+ i +"].SearchMatchingRate");
 
-				List<GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem.GetPersonList_TagListItem> recordsItem_tagList = new List<GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem.GetPersonList_TagListItem>();
-				for (int j = 0; j < context.Length("GetPersonList.Data.Records["+ i +"].TagList.Length"); j++) {
-					GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem.GetPersonList_TagListItem tagListItem = new GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem.GetPersonList_TagListItem();
-					tagListItem.Code = context.StringValue("GetPersonList.Data.Records["+ i +"].TagList["+ j +"].Code");
-					tagListItem._Value = context.StringValue("GetPersonList.Data.Records["+ i +"].TagList["+ j +"].Value");
-					tagListItem.TagCodeName = context.StringValue("GetPersonList.Data.Records["+ i +"].TagList["+ j +"].TagCodeName");
-					tagListItem.TagName = context.StringValue("GetPersonList.Data.Records["+ i +"].TagList["+ j +"].TagName");
+				List<GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem.GetPersonList_TagList> recordsItem_propertyTagList = new List<GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem.GetPersonList_TagList>();
+				for (int j = 0; j < context.Length("GetPersonList.Data.Records["+ i +"].PropertyTagList.Length"); j++) {
+					GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem.GetPersonList_TagList tagList = new GetPersonListResponse.GetPersonList_Data.GetPersonList_RecordsItem.GetPersonList_TagList();
+					tagList.Code = context.StringValue("GetPersonList.Data.Records["+ i +"].PropertyTagList["+ j +"].Code");
+					tagList.TagCodeName = context.StringValue("GetPersonList.Data.Records["+ i +"].PropertyTagList["+ j +"].TagCodeName");
+					tagList.TagName = context.StringValue("GetPersonList.Data.Records["+ i +"].PropertyTagList["+ j +"].TagName");
+					tagList._Value = context.StringValue("GetPersonList.Data.Records["+ i +"].PropertyTagList["+ j +"].Value");
 
-					recordsItem_tagList.Add(tagListItem);
+					recordsItem_propertyTagList.Add(tagList);
 				}
-				recordsItem.TagList = recordsItem_tagList;
+				recordsItem.PropertyTagList = recordsItem_propertyTagList;
 
 				data_records.Add(recordsItem);
 			}

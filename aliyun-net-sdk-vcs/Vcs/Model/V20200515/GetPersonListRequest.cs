@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class GetPersonListRequest : RpcAcsRequest<GetPersonListResponse>
     {
         public GetPersonListRequest()
-            : base("Vcs", "2020-05-15", "GetPersonList")
+            : base("Vcs", "2020-05-15", "GetPersonList", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,28 +41,47 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
-		private string faceImageUrl;
+		private string corpId;
 
-		private string pageNumber;
+		private string faceMatchingRateThreshold;
 
-		private string corpIdList;
+		private long? pageNumber;
 
-		private string pageSize;
+		private List<object> corpIdList;
 
-		public string FaceImageUrl
+		private string faceUrl;
+
+		private long? pageSize;
+
+		private List<object> personIdList;
+
+		public string CorpId
 		{
 			get
 			{
-				return faceImageUrl;
+				return corpId;
 			}
 			set	
 			{
-				faceImageUrl = value;
-				DictionaryUtil.Add(BodyParameters, "FaceImageUrl", value);
+				corpId = value;
+				DictionaryUtil.Add(BodyParameters, "CorpId", value);
 			}
 		}
 
-		public string PageNumber
+		public string FaceMatchingRateThreshold
+		{
+			get
+			{
+				return faceMatchingRateThreshold;
+			}
+			set	
+			{
+				faceMatchingRateThreshold = value;
+				DictionaryUtil.Add(BodyParameters, "FaceMatchingRateThreshold", value);
+			}
+		}
+
+		public long? PageNumber
 		{
 			get
 			{
@@ -71,11 +90,11 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				pageNumber = value;
-				DictionaryUtil.Add(BodyParameters, "PageNumber", value);
+				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string CorpIdList
+		public List<object> CorpIdList
 		{
 			get
 			{
@@ -84,11 +103,24 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				corpIdList = value;
-				DictionaryUtil.Add(BodyParameters, "CorpIdList", value);
+				DictionaryUtil.Add(BodyParameters, "CorpIdList", JsonConvert.SerializeObject(value));
 			}
 		}
 
-		public string PageSize
+		public string FaceUrl
+		{
+			get
+			{
+				return faceUrl;
+			}
+			set	
+			{
+				faceUrl = value;
+				DictionaryUtil.Add(BodyParameters, "FaceUrl", value);
+			}
+		}
+
+		public long? PageSize
 		{
 			get
 			{
@@ -97,7 +129,20 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value);
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public List<object> PersonIdList
+		{
+			get
+			{
+				return personIdList;
+			}
+			set	
+			{
+				personIdList = value;
+				DictionaryUtil.Add(BodyParameters, "PersonIdList", JsonConvert.SerializeObject(value));
 			}
 		}
 

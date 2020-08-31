@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.UserId = context.IntegerValue("ListUsers.Data.Records["+ i +"].UserId");
 				recordsItem.UserName = context.StringValue("ListUsers.Data.Records["+ i +"].UserName");
 				recordsItem.IsvSubId = context.StringValue("ListUsers.Data.Records["+ i +"].IsvSubId");
+				recordsItem.MatchingRate = context.StringValue("ListUsers.Data.Records["+ i +"].MatchingRate");
+				recordsItem.PersonId = context.StringValue("ListUsers.Data.Records["+ i +"].PersonId");
 
 				data_records.Add(recordsItem);
 			}

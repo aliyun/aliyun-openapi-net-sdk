@@ -17,12 +17,12 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class ListUsersRequest : RpcAcsRequest<ListUsersResponse>
     {
         public ListUsersRequest()
-            : base("Vcs", "2020-05-15", "ListUsers")
+            : base("Vcs", "2020-05-15", "ListUsers", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
             }
 			Method = MethodType.POST;
         }
+
+		private List<object> userList;
 
 		private string corpId;
 
@@ -50,6 +52,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 		private string idNumber;
 
 		private string faceImageUrl;
+
+		private List<object> personList;
 
 		private long? pageNumber;
 
@@ -69,7 +73,22 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private int? age;
 
+		private string matchingRateThreshold;
+
 		private string userName;
+
+		public List<object> UserList
+		{
+			get
+			{
+				return userList;
+			}
+			set	
+			{
+				userList = value;
+				DictionaryUtil.Add(BodyParameters, "UserList", JsonConvert.SerializeObject(value));
+			}
+		}
 
 		public string CorpId
 		{
@@ -133,6 +152,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				faceImageUrl = value;
 				DictionaryUtil.Add(BodyParameters, "FaceImageUrl", value);
+			}
+		}
+
+		public List<object> PersonList
+		{
+			get
+			{
+				return personList;
+			}
+			set	
+			{
+				personList = value;
+				DictionaryUtil.Add(BodyParameters, "PersonList", JsonConvert.SerializeObject(value));
 			}
 		}
 
@@ -250,6 +282,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				age = value;
 				DictionaryUtil.Add(BodyParameters, "Age", value.ToString());
+			}
+		}
+
+		public string MatchingRateThreshold
+		{
+			get
+			{
+				return matchingRateThreshold;
+			}
+			set	
+			{
+				matchingRateThreshold = value;
+				DictionaryUtil.Add(BodyParameters, "MatchingRateThreshold", value);
 			}
 		}
 
