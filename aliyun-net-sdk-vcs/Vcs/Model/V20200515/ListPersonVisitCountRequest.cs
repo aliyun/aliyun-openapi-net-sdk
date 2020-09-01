@@ -54,11 +54,11 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string timeAggregateType;
 
-		private string maxVal;
+		private int? maxVal;
 
 		private string tagCode;
 
-		private string minVal;
+		private int? minVal;
 
 		private int? pageSize;
 
@@ -142,7 +142,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string MaxVal
+		public int? MaxVal
 		{
 			get
 			{
@@ -151,7 +151,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				maxVal = value;
-				DictionaryUtil.Add(BodyParameters, "MaxVal", value);
+				DictionaryUtil.Add(BodyParameters, "MaxVal", value.ToString());
 			}
 		}
 
@@ -168,7 +168,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public string MinVal
+		public int? MinVal
 		{
 			get
 			{
@@ -177,7 +177,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				minVal = value;
-				DictionaryUtil.Add(BodyParameters, "MinVal", value);
+				DictionaryUtil.Add(BodyParameters, "MinVal", value.ToString());
 			}
 		}
 
