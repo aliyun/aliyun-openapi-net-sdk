@@ -39,6 +39,7 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20200618
 			resultObject.Passed = context.StringValue("DescribeSmartVerify.ResultObject.Passed");
 			resultObject.SubCode = context.StringValue("DescribeSmartVerify.ResultObject.SubCode");
 			resultObject.MaterialInfo = context.StringValue("DescribeSmartVerify.ResultObject.MaterialInfo");
+			resultObject.PassedScore = context.FloatValue("DescribeSmartVerify.ResultObject.PassedScore");
 			describeSmartVerifyResponse.ResultObject = resultObject;
         
 			return describeSmartVerifyResponse;

@@ -42,11 +42,15 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 
 		private string ip;
 
+		private string certName;
+
 		private string mobile;
 
 		private string userId;
 
 		private string mode;
+
+		private string certNo;
 
 		private string outerOrderNo;
 
@@ -55,6 +59,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 		private long? sceneId;
 
 		private string metaInfo;
+
+		private string ocr;
 
 		public string Ip
 		{
@@ -66,6 +72,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			{
 				ip = value;
 				DictionaryUtil.Add(BodyParameters, "Ip", value);
+			}
+		}
+
+		public string CertName
+		{
+			get
+			{
+				return certName;
+			}
+			set	
+			{
+				certName = value;
+				DictionaryUtil.Add(BodyParameters, "CertName", value);
 			}
 		}
 
@@ -105,6 +124,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			{
 				mode = value;
 				DictionaryUtil.Add(BodyParameters, "Mode", value);
+			}
+		}
+
+		public string CertNo
+		{
+			get
+			{
+				return certNo;
+			}
+			set	
+			{
+				certNo = value;
+				DictionaryUtil.Add(BodyParameters, "CertNo", value);
 			}
 		}
 
@@ -157,6 +189,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			{
 				metaInfo = value;
 				DictionaryUtil.Add(BodyParameters, "MetaInfo", value);
+			}
+		}
+
+		public string Ocr
+		{
+			get
+			{
+				return ocr;
+			}
+			set	
+			{
+				ocr = value;
+				DictionaryUtil.Add(BodyParameters, "Ocr", value);
 			}
 		}
 
