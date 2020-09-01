@@ -32,6 +32,11 @@ namespace Aliyun.Acs.Config.Model.V20190108
         public PutConfigRuleRequest()
             : base("Config", "2019-01-08", "PutConfigRule", "config", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
 			Method = MethodType.POST;
         }
 
