@@ -28,10 +28,10 @@ using Aliyun.Acs.Push.Transform.V20160801;
 
 namespace Aliyun.Acs.Push.Model.V20160801
 {
-    public class CancelPushRequest : RpcAcsRequest<CancelPushResponse>
+    public class QueryDeviceCountRequest : RpcAcsRequest<QueryDeviceCountResponse>
     {
-        public CancelPushRequest()
-            : base("Push", "2016-08-01", "CancelPush")
+        public QueryDeviceCountRequest()
+            : base("Push", "2016-08-01", "QueryDeviceCount")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,20 +41,22 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			Method = MethodType.POST;
         }
 
-		private long? messageId;
+		private string target;
 
 		private long? appKey;
 
-		public long? MessageId
+		private string targetValue;
+
+		public string Target
 		{
 			get
 			{
-				return messageId;
+				return target;
 			}
 			set	
 			{
-				messageId = value;
-				DictionaryUtil.Add(QueryParameters, "MessageId", value.ToString());
+				target = value;
+				DictionaryUtil.Add(QueryParameters, "Target", value);
 			}
 		}
 
@@ -71,9 +73,27 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
-        public override CancelPushResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string TargetValue
+		{
+			get
+			{
+				return targetValue;
+			}
+			set	
+			{
+				targetValue = value;
+				DictionaryUtil.Add(QueryParameters, "TargetValue", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override QueryDeviceCountResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CancelPushResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDeviceCountResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
