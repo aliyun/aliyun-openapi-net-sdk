@@ -30,7 +30,7 @@ namespace Aliyun.Acs.saf.Model.V20190521
     public class ExecuteRequestRequest : RpcAcsRequest<ExecuteRequestResponse>
     {
         public ExecuteRequestRequest()
-            : base("saf", "2019-05-21", "ExecuteRequest", "SAF", "openAPI")
+            : base("saf", "2019-05-21", "ExecuteRequest", "saf", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

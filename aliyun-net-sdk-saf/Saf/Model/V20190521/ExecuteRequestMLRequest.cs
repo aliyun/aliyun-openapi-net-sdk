@@ -27,24 +27,23 @@ using Aliyun.Acs.saf.Transform.V20190521;
 
 namespace Aliyun.Acs.saf.Model.V20190521
 {
-    public class ExecuteExtendServiceRequest : RpcAcsRequest<ExecuteExtendServiceResponse>
+    public class ExecuteRequestMLRequest : RpcAcsRequest<ExecuteRequestMLResponse>
     {
-        public ExecuteExtendServiceRequest()
-            : base("saf", "2019-05-21", "ExecuteExtendService", "saf", "openAPI")
+        public ExecuteRequestMLRequest()
+            : base("saf", "2019-05-21", "ExecuteRequestML", "saf", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
 
 		private string serviceParameters;
 
 		private string service;
-
-		private string region;
 
 		public string ServiceParameters
 		{
@@ -72,27 +71,14 @@ namespace Aliyun.Acs.saf.Model.V20190521
 			}
 		}
 
-		public string Region
-		{
-			get
-			{
-				return region;
-			}
-			set	
-			{
-				region = value;
-				DictionaryUtil.Add(QueryParameters, "Region", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override ExecuteExtendServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ExecuteRequestMLResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ExecuteExtendServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ExecuteRequestMLResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
