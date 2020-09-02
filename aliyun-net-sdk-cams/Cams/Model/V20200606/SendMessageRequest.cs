@@ -44,7 +44,13 @@ namespace Aliyun.Acs.cams.Model.V20200606
 
 		private string templateBodyParams;
 
+		private string link;
+
+		private string caption;
+
 		private string type;
+
+		private string body;
 
 		private string channelType;
 
@@ -57,6 +63,8 @@ namespace Aliyun.Acs.cams.Model.V20200606
 		private string to;
 
 		private string templateCode;
+
+		private string mediaType;
 
 		public long? ResourceOwnerId
 		{
@@ -80,7 +88,33 @@ namespace Aliyun.Acs.cams.Model.V20200606
 			set	
 			{
 				templateBodyParams = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateBodyParams", value);
+				DictionaryUtil.Add(BodyParameters, "TemplateBodyParams", value);
+			}
+		}
+
+		public string Link
+		{
+			get
+			{
+				return link;
+			}
+			set	
+			{
+				link = value;
+				DictionaryUtil.Add(BodyParameters, "Link", value);
+			}
+		}
+
+		public string Caption
+		{
+			get
+			{
+				return caption;
+			}
+			set	
+			{
+				caption = value;
+				DictionaryUtil.Add(BodyParameters, "Caption", value);
 			}
 		}
 
@@ -93,7 +127,20 @@ namespace Aliyun.Acs.cams.Model.V20200606
 			set	
 			{
 				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				DictionaryUtil.Add(BodyParameters, "Type", value);
+			}
+		}
+
+		public string Body
+		{
+			get
+			{
+				return body;
+			}
+			set	
+			{
+				body = value;
+				DictionaryUtil.Add(BodyParameters, "Body", value);
 			}
 		}
 
@@ -106,7 +153,7 @@ namespace Aliyun.Acs.cams.Model.V20200606
 			set	
 			{
 				channelType = value;
-				DictionaryUtil.Add(QueryParameters, "ChannelType", value);
+				DictionaryUtil.Add(BodyParameters, "ChannelType", value);
 			}
 		}
 
@@ -119,7 +166,7 @@ namespace Aliyun.Acs.cams.Model.V20200606
 			set	
 			{
 				from = value;
-				DictionaryUtil.Add(QueryParameters, "From", value);
+				DictionaryUtil.Add(BodyParameters, "From", value);
 			}
 		}
 
@@ -158,7 +205,7 @@ namespace Aliyun.Acs.cams.Model.V20200606
 			set	
 			{
 				to = value;
-				DictionaryUtil.Add(QueryParameters, "To", value);
+				DictionaryUtil.Add(BodyParameters, "To", value);
 			}
 		}
 
@@ -171,7 +218,20 @@ namespace Aliyun.Acs.cams.Model.V20200606
 			set	
 			{
 				templateCode = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateCode", value);
+				DictionaryUtil.Add(BodyParameters, "TemplateCode", value);
+			}
+		}
+
+		public string MediaType
+		{
+			get
+			{
+				return mediaType;
+			}
+			set	
+			{
+				mediaType = value;
+				DictionaryUtil.Add(BodyParameters, "MediaType", value);
 			}
 		}
 
