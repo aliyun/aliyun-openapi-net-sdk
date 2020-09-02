@@ -67,6 +67,7 @@ namespace Aliyun.Acs.Push.Model.V20160801
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".DeviceType", pushTasks[i].DeviceType);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".PushTime", pushTasks[i].PushTime);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".SendSpeed", pushTasks[i].SendSpeed);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationHuaweiChannel", pushTasks[i].AndroidNotificationHuaweiChannel);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidPopupActivity", pushTasks[i].AndroidPopupActivity);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSRemindBody", pushTasks[i].IOSRemindBody);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSExtParameters", pushTasks[i].IOSExtParameters);
@@ -136,6 +137,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string pushTime;
 
 			private int? sendSpeed;
+
+			private string androidNotificationHuaweiChannel;
 
 			private string androidPopupActivity;
 
@@ -314,6 +317,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					sendSpeed = value;
+				}
+			}
+
+			public string AndroidNotificationHuaweiChannel
+			{
+				get
+				{
+					return androidNotificationHuaweiChannel;
+				}
+				set	
+				{
+					androidNotificationHuaweiChannel = value;
 				}
 			}
 

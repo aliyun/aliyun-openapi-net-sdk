@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private int? sendSpeed;
 
+		private string androidNotificationHuaweiChannel;
+
 		private string androidPopupActivity;
 
 		private string iOSRemindBody;
@@ -208,6 +210,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				sendSpeed = value;
 				DictionaryUtil.Add(QueryParameters, "SendSpeed", value.ToString());
+			}
+		}
+
+		public string AndroidNotificationHuaweiChannel
+		{
+			get
+			{
+				return androidNotificationHuaweiChannel;
+			}
+			set	
+			{
+				androidNotificationHuaweiChannel = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationHuaweiChannel", value);
 			}
 		}
 
