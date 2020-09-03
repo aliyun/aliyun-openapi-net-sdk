@@ -30,7 +30,7 @@ namespace Aliyun.Acs.reid.Model.V20190928
     public class DescribeCameraStatisticsRequest : RpcAcsRequest<DescribeCameraStatisticsResponse>
     {
         public DescribeCameraStatisticsRequest()
-            : base("reid", "2019-09-28", "DescribeCameraStatistics", "1.1.8.3", "openAPI")
+            : base("reid", "2019-09-28", "DescribeCameraStatistics", "1.1.8.4", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -45,6 +45,8 @@ namespace Aliyun.Acs.reid.Model.V20190928
 		private long? storeId;
 
 		private long? endTimestamp;
+
+		private long? locationId;
 
 		public long? StartTimestamp
 		{
@@ -82,6 +84,19 @@ namespace Aliyun.Acs.reid.Model.V20190928
 			{
 				endTimestamp = value;
 				DictionaryUtil.Add(BodyParameters, "EndTimestamp", value.ToString());
+			}
+		}
+
+		public long? LocationId
+		{
+			get
+			{
+				return locationId;
+			}
+			set	
+			{
+				locationId = value;
+				DictionaryUtil.Add(BodyParameters, "LocationId", value.ToString());
 			}
 		}
 

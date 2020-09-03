@@ -30,7 +30,7 @@ namespace Aliyun.Acs.reid.Model.V20190928
     public class ListDevicesImagesRequest : RpcAcsRequest<ListDevicesImagesResponse>
     {
         public ListDevicesImagesRequest()
-            : base("reid", "2019-09-28", "ListDevicesImages", "1.1.8.3", "openAPI")
+            : base("reid", "2019-09-28", "ListDevicesImages", "1.1.8.4", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
