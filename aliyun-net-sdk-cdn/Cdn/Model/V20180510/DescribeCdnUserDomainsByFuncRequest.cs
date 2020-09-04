@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class SetWafConfigRequest : RpcAcsRequest<SetWafConfigResponse>
+    public class DescribeCdnUserDomainsByFuncRequest : RpcAcsRequest<DescribeCdnUserDomainsByFuncResponse>
     {
-        public SetWafConfigRequest()
-            : base("Cdn", "2018-05-10", "SetWafConfig")
+        public DescribeCdnUserDomainsByFuncRequest()
+            : base("Cdn", "2018-05-10", "DescribeCdnUserDomainsByFunc")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,37 +41,52 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
-		private string enable;
+		private int? pageNumber;
 
-		private string domainName;
+		private string resourceGroupId;
+
+		private int? pageSize;
 
 		private long? ownerId;
 
-		private long? configId;
+		private int? funcId;
 
-		public string Enable
+		public int? PageNumber
 		{
 			get
 			{
-				return enable;
+				return pageNumber;
 			}
 			set	
 			{
-				enable = value;
-				DictionaryUtil.Add(QueryParameters, "Enable", value);
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 
-		public string DomainName
+		public string ResourceGroupId
 		{
 			get
 			{
-				return domainName;
+				return resourceGroupId;
 			}
 			set	
 			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -88,22 +103,22 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public long? ConfigId
+		public int? FuncId
 		{
 			get
 			{
-				return configId;
+				return funcId;
 			}
 			set	
 			{
-				configId = value;
-				DictionaryUtil.Add(QueryParameters, "ConfigId", value.ToString());
+				funcId = value;
+				DictionaryUtil.Add(QueryParameters, "FuncId", value.ToString());
 			}
 		}
 
-        public override SetWafConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeCdnUserDomainsByFuncResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetWafConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCdnUserDomainsByFuncResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
