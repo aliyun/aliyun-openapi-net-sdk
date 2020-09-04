@@ -28,80 +28,19 @@ using Aliyun.Acs.scdn.Transform.V20171115;
 
 namespace Aliyun.Acs.scdn.Model.V20171115
 {
-    public class DescribeScdnTopDomainsByFlowRequest : RpcAcsRequest<DescribeScdnTopDomainsByFlowResponse>
+    public class DescribeScdnUserProtectInfoRequest : RpcAcsRequest<DescribeScdnUserProtectInfoResponse>
     {
-        public DescribeScdnTopDomainsByFlowRequest()
-            : base("scdn", "2017-11-15", "DescribeScdnTopDomainsByFlow")
+        public DescribeScdnUserProtectInfoRequest()
+            : base("scdn", "2017-11-15", "DescribeScdnUserProtectInfo")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string startTime;
-
-		private long? limit;
-
-		private string product;
-
-		private string endTime;
-
 		private long? ownerId;
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public long? Limit
-		{
-			get
-			{
-				return limit;
-			}
-			set	
-			{
-				limit = value;
-				DictionaryUtil.Add(QueryParameters, "Limit", value.ToString());
-			}
-		}
-
-		public string Product
-		{
-			get
-			{
-				return product;
-			}
-			set	
-			{
-				product = value;
-				DictionaryUtil.Add(QueryParameters, "Product", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
 
 		public long? OwnerId
 		{
@@ -116,9 +55,9 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			}
 		}
 
-        public override DescribeScdnTopDomainsByFlowResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeScdnUserProtectInfoResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeScdnTopDomainsByFlowResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeScdnUserProtectInfoResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
