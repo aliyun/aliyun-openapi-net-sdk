@@ -59,6 +59,19 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getVideoResponse.RemarksC = context.StringValue("GetVideo.RemarksC");
 			getVideoResponse.RemarksD = context.StringValue("GetVideo.RemarksD");
 			getVideoResponse.ExternalId = context.StringValue("GetVideo.ExternalId");
+			getVideoResponse.VideoFacesStatus = context.StringValue("GetVideo.VideoFacesStatus");
+			getVideoResponse.VideoFacesFailReason = context.StringValue("GetVideo.VideoFacesFailReason");
+			getVideoResponse.VideoFacesModifyTime = context.StringValue("GetVideo.VideoFacesModifyTime");
+			getVideoResponse.VideoFrameTagsStatus = context.StringValue("GetVideo.VideoFrameTagsStatus");
+			getVideoResponse.VideoFrameTagsFailReason = context.StringValue("GetVideo.VideoFrameTagsFailReason");
+			getVideoResponse.VideoFrameTagsModifyTime = context.StringValue("GetVideo.VideoFrameTagsModifyTime");
+			getVideoResponse.VideoSTTStatus = context.StringValue("GetVideo.VideoSTTStatus");
+			getVideoResponse.VideoSTTFailReason = context.StringValue("GetVideo.VideoSTTFailReason");
+			getVideoResponse.VideoSTTModifyTime = context.StringValue("GetVideo.VideoSTTModifyTime");
+			getVideoResponse.VideoOCRStatus = context.StringValue("GetVideo.VideoOCRStatus");
+			getVideoResponse.VideoOCRFailReason = context.StringValue("GetVideo.VideoOCRFailReason");
+			getVideoResponse.VideoOCRModifyTime = context.StringValue("GetVideo.VideoOCRModifyTime");
+			getVideoResponse.VideoInfo = context.StringValue("GetVideo.VideoInfo");
 
 			List<GetVideoResponse.GetVideo_CelebrityItem> getVideoResponse_celebrity = new List<GetVideoResponse.GetVideo_CelebrityItem>();
 			for (int i = 0; i < context.Length("GetVideo.Celebrity.Length"); i++) {
@@ -77,6 +90,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				videoTagsItem.VideoTagName = context.StringValue("GetVideo.VideoTags["+ i +"].VideoTagName");
 				videoTagsItem.VideoTagEnName = context.StringValue("GetVideo.VideoTags["+ i +"].VideoTagEnName");
 				videoTagsItem.VideoTagConfidence = context.FloatValue("GetVideo.VideoTags["+ i +"].VideoTagConfidence");
+				videoTagsItem.VideoTagLevel = context.IntegerValue("GetVideo.VideoTags["+ i +"].VideoTagLevel");
 
 				getVideoResponse_videoTags.Add(videoTagsItem);
 			}

@@ -96,6 +96,14 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private int? imageCount;
 
+			private string gender;
+
+			private float? maxAge;
+
+			private float? averageAge;
+
+			private float? minAge;
+
 			private ListFaceGroups_GroupCoverFace groupCoverFace;
 
 			public string GroupId
@@ -251,6 +259,54 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					imageCount = value;
+				}
+			}
+
+			public string Gender
+			{
+				get
+				{
+					return gender;
+				}
+				set	
+				{
+					gender = value;
+				}
+			}
+
+			public float? MaxAge
+			{
+				get
+				{
+					return maxAge;
+				}
+				set	
+				{
+					maxAge = value;
+				}
+			}
+
+			public float? AverageAge
+			{
+				get
+				{
+					return averageAge;
+				}
+				set	
+				{
+					averageAge = value;
+				}
+			}
+
+			public float? MinAge
+			{
+				get
+				{
+					return minAge;
+				}
+				set	
+				{
+					minAge = value;
 				}
 			}
 

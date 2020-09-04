@@ -50,6 +50,10 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				faceGroupsItem.RemarksArrayB = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].RemarksArrayB");
 				faceGroupsItem.ExternalId = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].ExternalId");
 				faceGroupsItem.ImageCount = context.IntegerValue("ListFaceGroups.FaceGroups["+ i +"].ImageCount");
+				faceGroupsItem.Gender = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].Gender");
+				faceGroupsItem.MaxAge = context.FloatValue("ListFaceGroups.FaceGroups["+ i +"].MaxAge");
+				faceGroupsItem.AverageAge = context.FloatValue("ListFaceGroups.FaceGroups["+ i +"].AverageAge");
+				faceGroupsItem.MinAge = context.FloatValue("ListFaceGroups.FaceGroups["+ i +"].MinAge");
 
 				ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem.ListFaceGroups_GroupCoverFace groupCoverFace = new ListFaceGroupsResponse.ListFaceGroups_FaceGroupsItem.ListFaceGroups_GroupCoverFace();
 				groupCoverFace.FaceId = context.StringValue("ListFaceGroups.FaceGroups["+ i +"].GroupCoverFace.FaceId");

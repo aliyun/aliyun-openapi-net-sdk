@@ -40,6 +40,10 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string externalId;
 
+		private string notifyEndpoint;
+
+		private string notifyTopicName;
+
 		private string remarksB;
 
 		private string remarksA;
@@ -77,6 +81,32 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			{
 				externalId = value;
 				DictionaryUtil.Add(QueryParameters, "ExternalId", value);
+			}
+		}
+
+		public string NotifyEndpoint
+		{
+			get
+			{
+				return notifyEndpoint;
+			}
+			set	
+			{
+				notifyEndpoint = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyEndpoint", value);
+			}
+		}
+
+		public string NotifyTopicName
+		{
+			get
+			{
+				return notifyTopicName;
+			}
+			set	
+			{
+				notifyTopicName = value;
+				DictionaryUtil.Add(QueryParameters, "NotifyTopicName", value);
 			}
 		}
 

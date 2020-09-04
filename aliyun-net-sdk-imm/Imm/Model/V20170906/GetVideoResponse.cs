@@ -81,6 +81,32 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string externalId;
 
+		private string videoFacesStatus;
+
+		private string videoFacesFailReason;
+
+		private string videoFacesModifyTime;
+
+		private string videoFrameTagsStatus;
+
+		private string videoFrameTagsFailReason;
+
+		private string videoFrameTagsModifyTime;
+
+		private string videoSTTStatus;
+
+		private string videoSTTFailReason;
+
+		private string videoSTTModifyTime;
+
+		private string videoOCRStatus;
+
+		private string videoOCRFailReason;
+
+		private string videoOCRModifyTime;
+
+		private string videoInfo;
+
 		private List<GetVideo_CelebrityItem> celebrity;
 
 		private List<GetVideo_VideoTagsItem> videoTags;
@@ -423,6 +449,162 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			}
 		}
 
+		public string VideoFacesStatus
+		{
+			get
+			{
+				return videoFacesStatus;
+			}
+			set	
+			{
+				videoFacesStatus = value;
+			}
+		}
+
+		public string VideoFacesFailReason
+		{
+			get
+			{
+				return videoFacesFailReason;
+			}
+			set	
+			{
+				videoFacesFailReason = value;
+			}
+		}
+
+		public string VideoFacesModifyTime
+		{
+			get
+			{
+				return videoFacesModifyTime;
+			}
+			set	
+			{
+				videoFacesModifyTime = value;
+			}
+		}
+
+		public string VideoFrameTagsStatus
+		{
+			get
+			{
+				return videoFrameTagsStatus;
+			}
+			set	
+			{
+				videoFrameTagsStatus = value;
+			}
+		}
+
+		public string VideoFrameTagsFailReason
+		{
+			get
+			{
+				return videoFrameTagsFailReason;
+			}
+			set	
+			{
+				videoFrameTagsFailReason = value;
+			}
+		}
+
+		public string VideoFrameTagsModifyTime
+		{
+			get
+			{
+				return videoFrameTagsModifyTime;
+			}
+			set	
+			{
+				videoFrameTagsModifyTime = value;
+			}
+		}
+
+		public string VideoSTTStatus
+		{
+			get
+			{
+				return videoSTTStatus;
+			}
+			set	
+			{
+				videoSTTStatus = value;
+			}
+		}
+
+		public string VideoSTTFailReason
+		{
+			get
+			{
+				return videoSTTFailReason;
+			}
+			set	
+			{
+				videoSTTFailReason = value;
+			}
+		}
+
+		public string VideoSTTModifyTime
+		{
+			get
+			{
+				return videoSTTModifyTime;
+			}
+			set	
+			{
+				videoSTTModifyTime = value;
+			}
+		}
+
+		public string VideoOCRStatus
+		{
+			get
+			{
+				return videoOCRStatus;
+			}
+			set	
+			{
+				videoOCRStatus = value;
+			}
+		}
+
+		public string VideoOCRFailReason
+		{
+			get
+			{
+				return videoOCRFailReason;
+			}
+			set	
+			{
+				videoOCRFailReason = value;
+			}
+		}
+
+		public string VideoOCRModifyTime
+		{
+			get
+			{
+				return videoOCRModifyTime;
+			}
+			set	
+			{
+				videoOCRModifyTime = value;
+			}
+		}
+
+		public string VideoInfo
+		{
+			get
+			{
+				return videoInfo;
+			}
+			set	
+			{
+				videoInfo = value;
+			}
+		}
+
 		public List<GetVideo_CelebrityItem> Celebrity
 		{
 			get
@@ -514,6 +696,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 			private float? videoTagConfidence;
 
+			private int? videoTagLevel;
+
 			public string VideoTagName
 			{
 				get
@@ -547,6 +731,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 				set	
 				{
 					videoTagConfidence = value;
+				}
+			}
+
+			public int? VideoTagLevel
+			{
+				get
+				{
+					return videoTagLevel;
+				}
+				set	
+				{
+					videoTagLevel = value;
 				}
 			}
 		}
