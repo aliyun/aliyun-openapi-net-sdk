@@ -65,6 +65,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				}
 				reservedInstance.OperationLocks = reservedInstance_operationLocks;
 
+				List<DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance.DescribeReservedInstances_Tag> reservedInstance_tags = new List<DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance.DescribeReservedInstances_Tag>();
+				for (int j = 0; j < context.Length("DescribeReservedInstances.ReservedInstances["+ i +"].Tags.Length"); j++) {
+					DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance.DescribeReservedInstances_Tag tag = new DescribeReservedInstancesResponse.DescribeReservedInstances_ReservedInstance.DescribeReservedInstances_Tag();
+					tag.TagKey = context.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Tags["+ j +"].TagKey");
+					tag.TagValue = context.StringValue("DescribeReservedInstances.ReservedInstances["+ i +"].Tags["+ j +"].TagValue");
+
+					reservedInstance_tags.Add(tag);
+				}
+				reservedInstance.Tags = reservedInstance_tags;
+
 				describeReservedInstancesResponse_reservedInstances.Add(reservedInstance);
 			}
 			describeReservedInstancesResponse.ReservedInstances = describeReservedInstancesResponse_reservedInstances;

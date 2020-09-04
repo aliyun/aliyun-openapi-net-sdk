@@ -132,6 +132,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_DedicatedHostAttribute dedicatedHostAttribute = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_DedicatedHostAttribute();
 				dedicatedHostAttribute.DedicatedHostId = context.StringValue("DescribeInstances.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostId");
 				dedicatedHostAttribute.DedicatedHostName = context.StringValue("DescribeInstances.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostName");
+				dedicatedHostAttribute.DedicatedHostClusterId = context.StringValue("DescribeInstances.Instances["+ i +"].DedicatedHostAttribute.DedicatedHostClusterId");
 				instance.DedicatedHostAttribute = dedicatedHostAttribute;
 
 				DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_EcsCapacityReservationAttr ecsCapacityReservationAttr = new DescribeInstancesResponse.DescribeInstances_Instance.DescribeInstances_EcsCapacityReservationAttr();

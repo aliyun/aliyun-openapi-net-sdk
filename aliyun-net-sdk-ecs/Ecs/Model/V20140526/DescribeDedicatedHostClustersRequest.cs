@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeReservedInstancesRequest : RpcAcsRequest<DescribeReservedInstancesResponse>
+    public class DescribeDedicatedHostClustersRequest : RpcAcsRequest<DescribeDedicatedHostClustersResponse>
     {
-        public DescribeReservedInstancesRequest()
-            : base("Ecs", "2014-05-26", "DescribeReservedInstances", "ecs", "openAPI")
+        public DescribeDedicatedHostClustersRequest()
+            : base("Ecs", "2014-05-26", "DescribeDedicatedHostClusters", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,17 +40,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			Method = MethodType.POST;
         }
 
+		private string dedicatedHostClusterName;
+
 		private long? resourceOwnerId;
+
+		private string dedicatedHostClusterIds;
 
 		private int? pageNumber;
 
+		private string resourceGroupId;
+
 		private string lockReason;
 
-		private string scope;
-
 		private int? pageSize;
-
-		private string instanceType;
 
 		private List<Tag> tags = new List<Tag>(){ };
 
@@ -58,21 +60,24 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
-		private string instanceTypeFamily;
-
 		private long? ownerId;
-
-		private List<string> reservedInstanceIds = new List<string>(){ };
-
-		private string offeringType;
 
 		private string zoneId;
 
-		private string reservedInstanceName;
+		private string status;
 
-		private List<string> statuss = new List<string>(){ };
-
-		private string allocationType;
+		public string DedicatedHostClusterName
+		{
+			get
+			{
+				return dedicatedHostClusterName;
+			}
+			set	
+			{
+				dedicatedHostClusterName = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostClusterName", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -84,6 +89,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string DedicatedHostClusterIds
+		{
+			get
+			{
+				return dedicatedHostClusterIds;
+			}
+			set	
+			{
+				dedicatedHostClusterIds = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostClusterIds", value);
 			}
 		}
 
@@ -100,6 +118,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string ResourceGroupId
+		{
+			get
+			{
+				return resourceGroupId;
+			}
+			set	
+			{
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
 		public string LockReason
 		{
 			get
@@ -113,19 +144,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Scope
-		{
-			get
-			{
-				return scope;
-			}
-			set	
-			{
-				scope = value;
-				DictionaryUtil.Add(QueryParameters, "Scope", value);
-			}
-		}
-
 		public int? PageSize
 		{
 			get
@@ -136,19 +154,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
 			}
 		}
 
@@ -196,19 +201,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceTypeFamily
-		{
-			get
-			{
-				return instanceTypeFamily;
-			}
-			set	
-			{
-				instanceTypeFamily = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceTypeFamily", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -219,36 +211,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public List<string> ReservedInstanceIds
-		{
-			get
-			{
-				return reservedInstanceIds;
-			}
-
-			set
-			{
-				reservedInstanceIds = value;
-				for (int i = 0; i < reservedInstanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ReservedInstanceId." + (i + 1) , reservedInstanceIds[i]);
-				}
-			}
-		}
-
-		public string OfferingType
-		{
-			get
-			{
-				return offeringType;
-			}
-			set	
-			{
-				offeringType = value;
-				DictionaryUtil.Add(QueryParameters, "OfferingType", value);
 			}
 		}
 
@@ -265,46 +227,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ReservedInstanceName
+		public string Status
 		{
 			get
 			{
-				return reservedInstanceName;
+				return status;
 			}
 			set	
 			{
-				reservedInstanceName = value;
-				DictionaryUtil.Add(QueryParameters, "ReservedInstanceName", value);
-			}
-		}
-
-		public List<string> Statuss
-		{
-			get
-			{
-				return statuss;
-			}
-
-			set
-			{
-				statuss = value;
-				for (int i = 0; i < statuss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Status." + (i + 1) , statuss[i]);
-				}
-			}
-		}
-
-		public string AllocationType
-		{
-			get
-			{
-				return allocationType;
-			}
-			set	
-			{
-				allocationType = value;
-				DictionaryUtil.Add(QueryParameters, "AllocationType", value);
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 
@@ -340,9 +272,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override DescribeReservedInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDedicatedHostClustersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeReservedInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDedicatedHostClustersResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

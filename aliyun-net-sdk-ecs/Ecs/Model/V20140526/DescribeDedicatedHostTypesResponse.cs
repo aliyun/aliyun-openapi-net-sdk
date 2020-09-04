@@ -78,6 +78,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string gPUSpec;
 
+			private bool? supportCpuOverCommitRatio;
+
+			private string cpuOverCommitRatioRange;
+
 			private List<string> supportedInstanceTypeFamilies;
 
 			private List<string> supportedInstanceTypesList;
@@ -211,6 +215,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					gPUSpec = value;
+				}
+			}
+
+			public bool? SupportCpuOverCommitRatio
+			{
+				get
+				{
+					return supportCpuOverCommitRatio;
+				}
+				set	
+				{
+					supportCpuOverCommitRatio = value;
+				}
+			}
+
+			public string CpuOverCommitRatioRange
+			{
+				get
+				{
+					return cpuOverCommitRatioRange;
+				}
+				set	
+				{
+					cpuOverCommitRatioRange = value;
 				}
 			}
 

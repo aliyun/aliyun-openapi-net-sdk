@@ -132,6 +132,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private List<DescribeReservedInstances_OperationLock> operationLocks;
 
+			private List<DescribeReservedInstances_Tag> tags;
+
 			public string ReservedInstanceId
 			{
 				get
@@ -336,6 +338,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public List<DescribeReservedInstances_Tag> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public class DescribeReservedInstances_OperationLock
 			{
 
@@ -350,6 +364,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						lockReason = value;
+					}
+				}
+			}
+
+			public class DescribeReservedInstances_Tag
+			{
+
+				private string tagKey;
+
+				private string tagValue;
+
+				public string TagKey
+				{
+					get
+					{
+						return tagKey;
+					}
+					set	
+					{
+						tagKey = value;
+					}
+				}
+
+				public string TagValue
+				{
+					get
+					{
+						return tagValue;
+					}
+					set	
+					{
+						tagValue = value;
 					}
 				}
 			}

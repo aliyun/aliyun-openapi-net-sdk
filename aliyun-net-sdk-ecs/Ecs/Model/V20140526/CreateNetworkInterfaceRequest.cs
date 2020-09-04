@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			Method = MethodType.POST;
         }
 
+		private int? queueNumber;
+
 		private long? resourceOwnerId;
 
 		private string clientToken;
@@ -75,6 +77,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private List<string> privateIpAddresss = new List<string>(){ };
 
 		private string primaryIpAddress;
+
+		public int? QueueNumber
+		{
+			get
+			{
+				return queueNumber;
+			}
+			set	
+			{
+				queueNumber = value;
+				DictionaryUtil.Add(QueryParameters, "QueueNumber", value.ToString());
+			}
+		}
 
 		public long? ResourceOwnerId
 		{

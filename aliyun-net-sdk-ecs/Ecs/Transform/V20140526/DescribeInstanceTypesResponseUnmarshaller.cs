@@ -58,6 +58,9 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instanceType.TotalEniQueueQuantity = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].TotalEniQueueQuantity");
 				instanceType.EniTrunkSupported = context.BooleanValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniTrunkSupported");
 				instanceType.EniTotalQuantity = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniTotalQuantity");
+				instanceType.MaximumQueueNumberPerEni = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].MaximumQueueNumberPerEni");
+				instanceType.PrimaryEniQueueNumber = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].PrimaryEniQueueNumber");
+				instanceType.SecondaryEniQueueNumber = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].SecondaryEniQueueNumber");
 
 				describeInstanceTypesResponse_instanceTypes.Add(instanceType);
 			}

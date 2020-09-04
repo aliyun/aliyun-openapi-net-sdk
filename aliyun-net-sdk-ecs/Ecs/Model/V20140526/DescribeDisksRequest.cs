@@ -76,11 +76,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string zoneId;
 
+		private int? maxResults;
+
 		private string status;
 
 		private string snapshotId;
 
 		private int? pageNumber;
+
+		private string nextToken;
 
 		private int? pageSize;
 
@@ -349,6 +353,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
 		public string Status
 		{
 			get
@@ -385,6 +402,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 

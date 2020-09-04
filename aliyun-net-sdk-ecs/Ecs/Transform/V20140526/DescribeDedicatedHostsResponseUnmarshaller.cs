@@ -59,6 +59,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				dedicatedHost.ExpiredTime = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].ExpiredTime");
 				dedicatedHost.AutoReleaseTime = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].AutoReleaseTime");
 				dedicatedHost.ResourceGroupId = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].ResourceGroupId");
+				dedicatedHost.DedicatedHostClusterId = context.StringValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].DedicatedHostClusterId");
+				dedicatedHost.CpuOverCommitRatio = context.FloatValue("DescribeDedicatedHosts.DedicatedHosts["+ i +"].CpuOverCommitRatio");
 
 				List<string> dedicatedHost_supportedInstanceTypeFamilies = new List<string>();
 				for (int j = 0; j < context.Length("DescribeDedicatedHosts.DedicatedHosts["+ i +"].SupportedInstanceTypeFamilies.Length"); j++) {

@@ -87,6 +87,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string spotInterruptionBehavior;
 
+		private int? networkInterfaceQueueNumber;
+
 		private string ioOptimized;
 
 		private string securityGroupId;
@@ -481,6 +483,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				spotInterruptionBehavior = value;
 				DictionaryUtil.Add(QueryParameters, "SpotInterruptionBehavior", value);
+			}
+		}
+
+		public int? NetworkInterfaceQueueNumber
+		{
+			get
+			{
+				return networkInterfaceQueueNumber;
+			}
+			set	
+			{
+				networkInterfaceQueueNumber = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkInterfaceQueueNumber", value.ToString());
 			}
 		}
 
@@ -992,6 +1007,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					}
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".NetworkInterfaceName", networkInterfaces[i].NetworkInterfaceName);
 					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".Description", networkInterfaces[i].Description);
+					DictionaryUtil.Add(QueryParameters,"NetworkInterface." + (i + 1) + ".QueueNumber", networkInterfaces[i].QueueNumber);
 				}
 			}
 		}
@@ -1260,6 +1276,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string description;
 
+			private int? queueNumber;
+
 			public string PrimaryIpAddress
 			{
 				get
@@ -1329,6 +1347,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public int? QueueNumber
+			{
+				get
+				{
+					return queueNumber;
+				}
+				set	
+				{
+					queueNumber = value;
 				}
 			}
 		}

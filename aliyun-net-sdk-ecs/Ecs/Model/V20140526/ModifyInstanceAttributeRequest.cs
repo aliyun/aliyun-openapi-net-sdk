@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private bool? recyclable;
 
+		private int? networkInterfaceQueueNumber;
+
 		private string description;
 
 		private bool? deletionProtection;
@@ -92,6 +94,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				recyclable = value;
 				DictionaryUtil.Add(QueryParameters, "Recyclable", value.ToString());
+			}
+		}
+
+		public int? NetworkInterfaceQueueNumber
+		{
+			get
+			{
+				return networkInterfaceQueueNumber;
+			}
+			set	
+			{
+				networkInterfaceQueueNumber = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkInterfaceQueueNumber", value.ToString());
 			}
 		}
 

@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				dedicatedHostType.LocalStorageAmount = context.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].LocalStorageAmount");
 				dedicatedHostType.LocalStorageCategory = context.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].LocalStorageCategory");
 				dedicatedHostType.GPUSpec = context.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].GPUSpec");
+				dedicatedHostType.SupportCpuOverCommitRatio = context.BooleanValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].SupportCpuOverCommitRatio");
+				dedicatedHostType.CpuOverCommitRatioRange = context.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].CpuOverCommitRatioRange");
 
 				List<string> dedicatedHostType_supportedInstanceTypeFamilies = new List<string>();
 				for (int j = 0; j < context.Length("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].SupportedInstanceTypeFamilies.Length"); j++) {

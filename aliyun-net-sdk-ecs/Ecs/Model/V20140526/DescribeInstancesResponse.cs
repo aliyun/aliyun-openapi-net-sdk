@@ -1175,6 +1175,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string dedicatedHostName;
 
+				private string dedicatedHostClusterId;
+
 				public string DedicatedHostId
 				{
 					get
@@ -1196,6 +1198,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						dedicatedHostName = value;
+					}
+				}
+
+				public string DedicatedHostClusterId
+				{
+					get
+					{
+						return dedicatedHostClusterId;
+					}
+					set	
+					{
+						dedicatedHostClusterId = value;
 					}
 				}
 			}

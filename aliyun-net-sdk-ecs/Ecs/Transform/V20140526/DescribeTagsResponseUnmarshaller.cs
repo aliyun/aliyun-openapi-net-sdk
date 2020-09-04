@@ -54,6 +54,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				resourceTypeCount.Ddh = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.Ddh");
 				resourceTypeCount.KeyPair = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.KeyPair");
 				resourceTypeCount.SnapshotPolicy = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.SnapshotPolicy");
+				resourceTypeCount.ReservedInstance = context.IntegerValue("DescribeTags.Tags["+ i +"].ResourceTypeCount.ReservedInstance");
 				tag.ResourceTypeCount = resourceTypeCount;
 
 				describeTagsResponse_tags.Add(tag);

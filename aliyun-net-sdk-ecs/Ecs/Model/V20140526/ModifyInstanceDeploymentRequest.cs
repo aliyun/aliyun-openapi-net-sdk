@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? deploymentSetGroupNo;
 
+		private string dedicatedHostClusterId;
+
 		private string instanceType;
 
 		private string deploymentSetId;
@@ -90,6 +92,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				deploymentSetGroupNo = value;
 				DictionaryUtil.Add(QueryParameters, "DeploymentSetGroupNo", value.ToString());
+			}
+		}
+
+		public string DedicatedHostClusterId
+		{
+			get
+			{
+				return dedicatedHostClusterId;
+			}
+			set	
+			{
+				dedicatedHostClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostClusterId", value);
 			}
 		}
 

@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string ownerAccount;
 
+		private bool? waitForNetworkConfigurationReady;
+
 		private long? ownerId;
 
 		private string instanceId;
@@ -103,6 +105,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public bool? WaitForNetworkConfigurationReady
+		{
+			get
+			{
+				return waitForNetworkConfigurationReady;
+			}
+			set	
+			{
+				waitForNetworkConfigurationReady = value;
+				DictionaryUtil.Add(QueryParameters, "WaitForNetworkConfigurationReady", value.ToString());
 			}
 		}
 

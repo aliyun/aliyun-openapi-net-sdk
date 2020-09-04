@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class ModifyDedicatedHostAttributeRequest : RpcAcsRequest<ModifyDedicatedHostAttributeResponse>
+    public class CreateDedicatedHostClusterRequest : RpcAcsRequest<CreateDedicatedHostClusterResponse>
     {
-        public ModifyDedicatedHostAttributeRequest()
-            : base("Ecs", "2014-05-26", "ModifyDedicatedHostAttribute", "ecs", "openAPI")
+        public CreateDedicatedHostClusterRequest()
+            : base("Ecs", "2014-05-26", "CreateDedicatedHostCluster", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,31 +40,38 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			Method = MethodType.POST;
         }
 
+		private string dedicatedHostClusterName;
+
 		private long? resourceOwnerId;
 
 		private string description;
 
-		private float? cpuOverCommitRatio;
+		private string resourceGroupId;
 
-		private string actionOnMaintenance;
+		private List<Tag> tags = new List<Tag>(){ };
 
-		private string dedicatedHostClusterId;
-
-		private string dedicatedHostName;
+		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string dedicatedHostId;
-
 		private long? ownerId;
 
-		private int? networkAttributesSlbUdpTimeout;
+		private string zoneId;
 
-		private string autoPlacement;
-
-		private int? networkAttributesUdpTimeout;
+		public string DedicatedHostClusterName
+		{
+			get
+			{
+				return dedicatedHostClusterName;
+			}
+			set	
+			{
+				dedicatedHostClusterName = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostClusterName", value);
+			}
+		}
 
 		public long? ResourceOwnerId
 		{
@@ -93,55 +99,47 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public float? CpuOverCommitRatio
+		public string ResourceGroupId
 		{
 			get
 			{
-				return cpuOverCommitRatio;
+				return resourceGroupId;
 			}
 			set	
 			{
-				cpuOverCommitRatio = value;
-				DictionaryUtil.Add(QueryParameters, "CpuOverCommitRatio", value.ToString());
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
-		public string ActionOnMaintenance
+		public List<Tag> Tags
 		{
 			get
 			{
-				return actionOnMaintenance;
+				return tags;
 			}
-			set	
+
+			set
 			{
-				actionOnMaintenance = value;
-				DictionaryUtil.Add(QueryParameters, "ActionOnMaintenance", value);
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+				}
 			}
 		}
 
-		public string DedicatedHostClusterId
+		public bool? DryRun
 		{
 			get
 			{
-				return dedicatedHostClusterId;
+				return dryRun;
 			}
 			set	
 			{
-				dedicatedHostClusterId = value;
-				DictionaryUtil.Add(QueryParameters, "DedicatedHostClusterId", value);
-			}
-		}
-
-		public string DedicatedHostName
-		{
-			get
-			{
-				return dedicatedHostName;
-			}
-			set	
-			{
-				dedicatedHostName = value;
-				DictionaryUtil.Add(QueryParameters, "DedicatedHostName", value);
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -171,19 +169,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string DedicatedHostId
-		{
-			get
-			{
-				return dedicatedHostId;
-			}
-			set	
-			{
-				dedicatedHostId = value;
-				DictionaryUtil.Add(QueryParameters, "DedicatedHostId", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -197,48 +182,54 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public int? NetworkAttributesSlbUdpTimeout
+		public string ZoneId
 		{
 			get
 			{
-				return networkAttributesSlbUdpTimeout;
+				return zoneId;
 			}
 			set	
 			{
-				networkAttributesSlbUdpTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkAttributes.SlbUdpTimeout", value.ToString());
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
-		public string AutoPlacement
+		public class Tag
 		{
-			get
+
+			private string key;
+
+			private string value_;
+
+			public string Key
 			{
-				return autoPlacement;
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
-			set	
+
+			public string Value
 			{
-				autoPlacement = value;
-				DictionaryUtil.Add(QueryParameters, "AutoPlacement", value);
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
 		}
 
-		public int? NetworkAttributesUdpTimeout
-		{
-			get
-			{
-				return networkAttributesUdpTimeout;
-			}
-			set	
-			{
-				networkAttributesUdpTimeout = value;
-				DictionaryUtil.Add(QueryParameters, "NetworkAttributes.UdpTimeout", value.ToString());
-			}
-		}
-
-        public override ModifyDedicatedHostAttributeResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateDedicatedHostClusterResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyDedicatedHostAttributeResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDedicatedHostClusterResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

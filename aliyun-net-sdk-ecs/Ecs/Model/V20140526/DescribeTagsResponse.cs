@@ -165,6 +165,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private int? snapshotPolicy;
 
+				private int? reservedInstance;
+
 				public int? Instance
 				{
 					get
@@ -294,6 +296,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						snapshotPolicy = value;
+					}
+				}
+
+				public int? ReservedInstance
+				{
+					get
+					{
+						return reservedInstance;
+					}
+					set	
+					{
+						reservedInstance = value;
 					}
 				}
 			}

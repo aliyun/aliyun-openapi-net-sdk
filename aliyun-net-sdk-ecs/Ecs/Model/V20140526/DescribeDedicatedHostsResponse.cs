@@ -138,6 +138,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string resourceGroupId;
 
+			private string dedicatedHostClusterId;
+
+			private float? cpuOverCommitRatio;
+
 			private List<DescribeDedicatedHosts_Instance> instances;
 
 			private List<DescribeDedicatedHosts_OperationLock> operationLocks;
@@ -391,6 +395,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public string DedicatedHostClusterId
+			{
+				get
+				{
+					return dedicatedHostClusterId;
+				}
+				set	
+				{
+					dedicatedHostClusterId = value;
+				}
+			}
+
+			public float? CpuOverCommitRatio
+			{
+				get
+				{
+					return cpuOverCommitRatio;
+				}
+				set	
+				{
+					cpuOverCommitRatio = value;
 				}
 			}
 

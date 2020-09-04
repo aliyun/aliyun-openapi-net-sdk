@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeDisksResponse.TotalCount = context.IntegerValue("DescribeDisks.TotalCount");
 			describeDisksResponse.PageNumber = context.IntegerValue("DescribeDisks.PageNumber");
 			describeDisksResponse.PageSize = context.IntegerValue("DescribeDisks.PageSize");
+			describeDisksResponse.NextToken = context.StringValue("DescribeDisks.NextToken");
 
 			List<DescribeDisksResponse.DescribeDisks_Disk> describeDisksResponse_disks = new List<DescribeDisksResponse.DescribeDisks_Disk>();
 			for (int i = 0; i < context.Length("DescribeDisks.Disks.Length"); i++) {

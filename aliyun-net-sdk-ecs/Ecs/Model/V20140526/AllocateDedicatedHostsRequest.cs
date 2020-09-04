@@ -46,9 +46,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string description;
 
+		private float? cpuOverCommitRatio;
+
 		private string resourceGroupId;
 
 		private string actionOnMaintenance;
+
+		private string dedicatedHostClusterId;
 
 		private List<Tag> tags = new List<Tag>(){ };
 
@@ -123,6 +127,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public float? CpuOverCommitRatio
+		{
+			get
+			{
+				return cpuOverCommitRatio;
+			}
+			set	
+			{
+				cpuOverCommitRatio = value;
+				DictionaryUtil.Add(QueryParameters, "CpuOverCommitRatio", value.ToString());
+			}
+		}
+
 		public string ResourceGroupId
 		{
 			get
@@ -146,6 +163,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				actionOnMaintenance = value;
 				DictionaryUtil.Add(QueryParameters, "ActionOnMaintenance", value);
+			}
+		}
+
+		public string DedicatedHostClusterId
+		{
+			get
+			{
+				return dedicatedHostClusterId;
+			}
+			set	
+			{
+				dedicatedHostClusterId = value;
+				DictionaryUtil.Add(QueryParameters, "DedicatedHostClusterId", value);
 			}
 		}
 

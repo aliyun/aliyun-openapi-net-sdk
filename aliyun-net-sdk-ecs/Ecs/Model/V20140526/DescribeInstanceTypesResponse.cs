@@ -100,6 +100,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private int? eniTotalQuantity;
 
+			private int? maximumQueueNumberPerEni;
+
+			private int? primaryEniQueueNumber;
+
+			private int? secondaryEniQueueNumber;
+
 			public string InstanceTypeId
 			{
 				get
@@ -361,6 +367,42 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					eniTotalQuantity = value;
+				}
+			}
+
+			public int? MaximumQueueNumberPerEni
+			{
+				get
+				{
+					return maximumQueueNumberPerEni;
+				}
+				set	
+				{
+					maximumQueueNumberPerEni = value;
+				}
+			}
+
+			public int? PrimaryEniQueueNumber
+			{
+				get
+				{
+					return primaryEniQueueNumber;
+				}
+				set	
+				{
+					primaryEniQueueNumber = value;
+				}
+			}
+
+			public int? SecondaryEniQueueNumber
+			{
+				get
+				{
+					return secondaryEniQueueNumber;
+				}
+				set	
+				{
+					secondaryEniQueueNumber = value;
 				}
 			}
 		}
