@@ -32,9 +32,11 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 
 			getDeviceLiveUrlResponse.HttpResponse = context.HttpResponse;
 			getDeviceLiveUrlResponse.Code = context.StringValue("GetDeviceLiveUrl.Code");
-			getDeviceLiveUrlResponse.Url = context.StringValue("GetDeviceLiveUrl.Url");
 			getDeviceLiveUrlResponse.Message = context.StringValue("GetDeviceLiveUrl.Message");
 			getDeviceLiveUrlResponse.RequestId = context.StringValue("GetDeviceLiveUrl.RequestId");
+			getDeviceLiveUrlResponse.Url = context.StringValue("GetDeviceLiveUrl.Url");
+			getDeviceLiveUrlResponse.OutProtocol = context.StringValue("GetDeviceLiveUrl.OutProtocol");
+			getDeviceLiveUrlResponse.StreamType = context.IntegerValue("GetDeviceLiveUrl.StreamType");
         
 			return getDeviceLiveUrlResponse;
         }

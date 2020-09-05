@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class GetDeviceVideoUrlRequest : RpcAcsRequest<GetDeviceVideoUrlResponse>
     {
         public GetDeviceVideoUrlRequest()
-            : base("Vcs", "2020-05-15", "GetDeviceVideoUrl")
+            : base("Vcs", "2020-05-15", "GetDeviceVideoUrl", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,6 +40,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
+		private string outProtocol;
+
 		private string corpId;
 
 		private string gbId;
@@ -48,6 +49,21 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 		private long? endTime;
 
 		private long? startTime;
+
+		private string deviceId;
+
+		public string OutProtocol
+		{
+			get
+			{
+				return outProtocol;
+			}
+			set	
+			{
+				outProtocol = value;
+				DictionaryUtil.Add(BodyParameters, "OutProtocol", value);
+			}
+		}
 
 		public string CorpId
 		{
@@ -98,6 +114,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				startTime = value;
 				DictionaryUtil.Add(BodyParameters, "StartTime", value.ToString());
+			}
+		}
+
+		public string DeviceId
+		{
+			get
+			{
+				return deviceId;
+			}
+			set	
+			{
+				deviceId = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceId", value);
 			}
 		}
 

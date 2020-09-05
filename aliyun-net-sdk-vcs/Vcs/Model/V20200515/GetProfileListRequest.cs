@@ -23,7 +23,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.Vcs;
 using Aliyun.Acs.Vcs.Transform;
 using Aliyun.Acs.Vcs.Transform.V20200515;
 
@@ -32,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
     public class GetProfileListRequest : RpcAcsRequest<GetProfileListResponse>
     {
         public GetProfileListRequest()
-            : base("Vcs", "2020-05-15", "GetProfileList")
+            : base("Vcs", "2020-05-15", "GetProfileList", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -53,6 +52,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 		private string idNumber;
 
 		private long? pageNumber;
+
+		private string faceImageId;
 
 		private string faceUrl;
 
@@ -151,6 +152,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string FaceImageId
+		{
+			get
+			{
+				return faceImageId;
+			}
+			set	
+			{
+				faceImageId = value;
+				DictionaryUtil.Add(BodyParameters, "FaceImageId", value);
 			}
 		}
 

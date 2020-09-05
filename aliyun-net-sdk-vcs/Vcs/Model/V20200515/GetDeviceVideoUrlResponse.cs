@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string url;
 
+		private string outProtocol;
+
 		public string Code
 		{
 			get
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				url = value;
+			}
+		}
+
+		public string OutProtocol
+		{
+			get
+			{
+				return outProtocol;
+			}
+			set	
+			{
+				outProtocol = value;
 			}
 		}
 	}

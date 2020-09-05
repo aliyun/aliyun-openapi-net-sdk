@@ -27,11 +27,15 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string code;
 
-		private string url;
-
 		private string message;
 
 		private string requestId;
+
+		private string url;
+
+		private string outProtocol;
+
+		private int? streamType;
 
 		public string Code
 		{
@@ -42,18 +46,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				code = value;
-			}
-		}
-
-		public string Url
-		{
-			get
-			{
-				return url;
-			}
-			set	
-			{
-				url = value;
 			}
 		}
 
@@ -78,6 +70,42 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string Url
+		{
+			get
+			{
+				return url;
+			}
+			set	
+			{
+				url = value;
+			}
+		}
+
+		public string OutProtocol
+		{
+			get
+			{
+				return outProtocol;
+			}
+			set	
+			{
+				outProtocol = value;
+			}
+		}
+
+		public int? StreamType
+		{
+			get
+			{
+				return streamType;
+			}
+			set	
+			{
+				streamType = value;
 			}
 		}
 	}

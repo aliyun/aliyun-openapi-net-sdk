@@ -27,10 +27,10 @@ using Aliyun.Acs.Vcs.Transform.V20200515;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-    public class DeleteProfileCatalogRequest : RpcAcsRequest<DeleteProfileCatalogResponse>
+    public class DescribeDevicesRequest : RpcAcsRequest<DescribeDevicesResponse>
     {
-        public DeleteProfileCatalogRequest()
-            : base("Vcs", "2020-05-15", "DeleteProfileCatalog", "vcs", "openAPI")
+        public DescribeDevicesRequest()
+            : base("Vcs", "2020-05-15", "DescribeDevices", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,48 +40,48 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
-		private string isvSubId;
+		private int? pageNum;
 
-		private string corpId;
+		private string corpIdList;
 
-		private string catalogId;
+		private int? pageSize;
 
-		public string IsvSubId
+		public int? PageNum
 		{
 			get
 			{
-				return isvSubId;
+				return pageNum;
 			}
 			set	
 			{
-				isvSubId = value;
-				DictionaryUtil.Add(BodyParameters, "IsvSubId", value);
+				pageNum = value;
+				DictionaryUtil.Add(BodyParameters, "PageNum", value.ToString());
 			}
 		}
 
-		public string CorpId
+		public string CorpIdList
 		{
 			get
 			{
-				return corpId;
+				return corpIdList;
 			}
 			set	
 			{
-				corpId = value;
-				DictionaryUtil.Add(BodyParameters, "CorpId", value);
+				corpIdList = value;
+				DictionaryUtil.Add(BodyParameters, "CorpIdList", value);
 			}
 		}
 
-		public string CatalogId
+		public int? PageSize
 		{
 			get
 			{
-				return catalogId;
+				return pageSize;
 			}
 			set	
 			{
-				catalogId = value;
-				DictionaryUtil.Add(BodyParameters, "CatalogId", value);
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -90,9 +90,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			return false;
 		}
 
-        public override DeleteProfileCatalogResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDevicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteProfileCatalogResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDevicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

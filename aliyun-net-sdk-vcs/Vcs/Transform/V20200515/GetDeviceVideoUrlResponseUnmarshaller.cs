@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			getDeviceVideoUrlResponse.Message = context.StringValue("GetDeviceVideoUrl.Message");
 			getDeviceVideoUrlResponse.RequestId = context.StringValue("GetDeviceVideoUrl.RequestId");
 			getDeviceVideoUrlResponse.Url = context.StringValue("GetDeviceVideoUrl.Url");
+			getDeviceVideoUrlResponse.OutProtocol = context.StringValue("GetDeviceVideoUrl.OutProtocol");
         
 			return getDeviceVideoUrlResponse;
         }
