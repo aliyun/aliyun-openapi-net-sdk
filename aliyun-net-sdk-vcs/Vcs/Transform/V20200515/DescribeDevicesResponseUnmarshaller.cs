@@ -52,7 +52,7 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				record.DeviceType = context.StringValue("DescribeDevices.Data.Records["+ i +"].DeviceType");
 				record.Latitude = context.StringValue("DescribeDevices.Data.Records["+ i +"].Latitude");
 				record.Longitude = context.StringValue("DescribeDevices.Data.Records["+ i +"].Longitude");
-				record.Status = context.IntegerValue("DescribeDevices.Data.Records["+ i +"].Status");
+				record.Status = context.StringValue("DescribeDevices.Data.Records["+ i +"].Status");
 				record.Vendor = context.StringValue("DescribeDevices.Data.Records["+ i +"].Vendor");
 				record.CorpId = context.StringValue("DescribeDevices.Data.Records["+ i +"].CorpId");
 

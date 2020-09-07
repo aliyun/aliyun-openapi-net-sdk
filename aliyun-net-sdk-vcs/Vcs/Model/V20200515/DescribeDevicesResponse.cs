@@ -173,7 +173,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string longitude;
 
-				private int? status;
+				private string status;
 
 				private string vendor;
 
@@ -275,7 +275,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					}
 				}
 
-				public int? Status
+				public string Status
 				{
 					get
 					{
