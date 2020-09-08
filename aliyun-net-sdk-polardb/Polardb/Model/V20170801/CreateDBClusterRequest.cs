@@ -44,31 +44,21 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string dBClusterDescription;
 
-		private string clientToken;
-
 		private string creationCategory;
-
-		private string clusterNetworkType;
 
 		private string resourceGroupId;
 
 		private string dBNodeClass;
 
-		private string gDNId;
-
 		private string creationOption;
 
 		private string sourceResourceId;
 
+		private string backupRetentionPolicyOnClusterDeletion;
+
 		private string period;
 
-		private string resourceOwnerAccount;
-
-		private string ownerAccount;
-
 		private long? ownerId;
-
-		private string usedTime;
 
 		private string vSwitchId;
 
@@ -76,17 +66,33 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private bool? autoRenew;
 
+		private string zoneId;
+
+		private bool? tDEStatus;
+
+		private string lowerCaseTableNames;
+
+		private string clientToken;
+
+		private string defaultTimeZone;
+
+		private string clusterNetworkType;
+
+		private string gDNId;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string usedTime;
+
 		private string vPCId;
 
 		private string dBType;
 
-		private string zoneId;
-
 		private string dBVersion;
 
 		private string cloneDataPoint;
-
-		private bool? tDEStatus;
 
 		private string payType;
 
@@ -116,19 +122,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ClientToken
-		{
-			get
-			{
-				return clientToken;
-			}
-			set	
-			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
 		public string CreationCategory
 		{
 			get
@@ -139,19 +132,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				creationCategory = value;
 				DictionaryUtil.Add(QueryParameters, "CreationCategory", value);
-			}
-		}
-
-		public string ClusterNetworkType
-		{
-			get
-			{
-				return clusterNetworkType;
-			}
-			set	
-			{
-				clusterNetworkType = value;
-				DictionaryUtil.Add(QueryParameters, "ClusterNetworkType", value);
 			}
 		}
 
@@ -181,19 +161,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string GDNId
-		{
-			get
-			{
-				return gDNId;
-			}
-			set	
-			{
-				gDNId = value;
-				DictionaryUtil.Add(QueryParameters, "GDNId", value);
-			}
-		}
-
 		public string CreationOption
 		{
 			get
@@ -220,6 +187,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string BackupRetentionPolicyOnClusterDeletion
+		{
+			get
+			{
+				return backupRetentionPolicyOnClusterDeletion;
+			}
+			set	
+			{
+				backupRetentionPolicyOnClusterDeletion = value;
+				DictionaryUtil.Add(QueryParameters, "BackupRetentionPolicyOnClusterDeletion", value);
+			}
+		}
+
 		public string Period
 		{
 			get
@@ -233,32 +213,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -269,19 +223,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string UsedTime
-		{
-			get
-			{
-				return usedTime;
-			}
-			set	
-			{
-				usedTime = value;
-				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
 			}
 		}
 
@@ -324,6 +265,136 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
+			}
+		}
+
+		public bool? TDEStatus
+		{
+			get
+			{
+				return tDEStatus;
+			}
+			set	
+			{
+				tDEStatus = value;
+				DictionaryUtil.Add(QueryParameters, "TDEStatus", value.ToString());
+			}
+		}
+
+		public string LowerCaseTableNames
+		{
+			get
+			{
+				return lowerCaseTableNames;
+			}
+			set	
+			{
+				lowerCaseTableNames = value;
+				DictionaryUtil.Add(QueryParameters, "LowerCaseTableNames", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string DefaultTimeZone
+		{
+			get
+			{
+				return defaultTimeZone;
+			}
+			set	
+			{
+				defaultTimeZone = value;
+				DictionaryUtil.Add(QueryParameters, "DefaultTimeZone", value);
+			}
+		}
+
+		public string ClusterNetworkType
+		{
+			get
+			{
+				return clusterNetworkType;
+			}
+			set	
+			{
+				clusterNetworkType = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterNetworkType", value);
+			}
+		}
+
+		public string GDNId
+		{
+			get
+			{
+				return gDNId;
+			}
+			set	
+			{
+				gDNId = value;
+				DictionaryUtil.Add(QueryParameters, "GDNId", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string UsedTime
+		{
+			get
+			{
+				return usedTime;
+			}
+			set	
+			{
+				usedTime = value;
+				DictionaryUtil.Add(QueryParameters, "UsedTime", value);
+			}
+		}
+
 		public string VPCId
 		{
 			get
@@ -350,19 +421,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
 		public string DBVersion
 		{
 			get
@@ -386,19 +444,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				cloneDataPoint = value;
 				DictionaryUtil.Add(QueryParameters, "CloneDataPoint", value);
-			}
-		}
-
-		public bool? TDEStatus
-		{
-			get
-			{
-				return tDEStatus;
-			}
-			set	
-			{
-				tDEStatus = value;
-				DictionaryUtil.Add(QueryParameters, "TDEStatus", value.ToString());
 			}
 		}
 
