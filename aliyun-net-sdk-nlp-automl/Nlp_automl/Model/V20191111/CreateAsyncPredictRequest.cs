@@ -46,6 +46,8 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 
 		private string detailTag;
 
+		private string fetchContent;
+
 		private string content;
 
 		private string fileContent;
@@ -92,6 +94,19 @@ namespace Aliyun.Acs.nlp_automl.Model.V20191111
 			{
 				detailTag = value;
 				DictionaryUtil.Add(BodyParameters, "DetailTag", value);
+			}
+		}
+
+		public string FetchContent
+		{
+			get
+			{
+				return fetchContent;
+			}
+			set	
+			{
+				fetchContent = value;
+				DictionaryUtil.Add(BodyParameters, "FetchContent", value);
 			}
 		}
 
