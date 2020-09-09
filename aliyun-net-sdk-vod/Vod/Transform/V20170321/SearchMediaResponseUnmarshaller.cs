@@ -69,6 +69,8 @@ namespace Aliyun.Acs.vod.Transform.V20170321
 				video.AuditTemplateId = context.StringValue("SearchMedia.MediaList["+ i +"].Video.AuditTemplateId");
 				video.CustomMediaInfo = context.StringValue("SearchMedia.MediaList["+ i +"].Video.CustomMediaInfo");
 				video.AppId = context.StringValue("SearchMedia.MediaList["+ i +"].Video.AppId");
+				video.AuditAbnormalModules = context.StringValue("SearchMedia.MediaList["+ i +"].Video.AuditAbnormalModules");
+				video.AuditLabel = context.StringValue("SearchMedia.MediaList["+ i +"].Video.AuditLabel");
 
 				List<string> video_snapshots = new List<string>();
 				for (int j = 0; j < context.Length("SearchMedia.MediaList["+ i +"].Video.Snapshots.Length"); j++) {

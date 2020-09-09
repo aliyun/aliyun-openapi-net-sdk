@@ -50,6 +50,8 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 		private int? pageSize;
 
+		private List<Tag> tags = new List<Tag>(){ };
+
 		private string funcFilter;
 
 		private string domainName;
@@ -124,6 +126,24 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public List<Tag> Tags
+		{
+			get
+			{
+				return tags;
+			}
+
+			set
+			{
+				tags = value;
+				for (int i = 0; i < tags.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
+					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+				}
 			}
 		}
 
@@ -202,6 +222,38 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			{
 				domainSearchType = value;
 				DictionaryUtil.Add(QueryParameters, "DomainSearchType", value);
+			}
+		}
+
+		public class Tag
+		{
+
+			private string value_;
+
+			private string key;
+
+			public string Value
+			{
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
+			}
+
+			public string Key
+			{
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

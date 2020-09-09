@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class SubmitAIMediaAuditJobRequest : RpcAcsRequest<SubmitAIMediaAuditJobResponse>
+    public class ListMediaDNALibsRequest : RpcAcsRequest<ListMediaDNALibsResponse>
     {
-        public SubmitAIMediaAuditJobRequest()
-            : base("vod", "2017-03-21", "SubmitAIMediaAuditJob", "vod", "openAPI")
+        public ListMediaDNALibsRequest()
+            : base("vod", "2017-03-21", "ListMediaDNALibs", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,23 +40,17 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private long? resourceOwnerId;
-
-		private string userData;
+		private string resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
+		private string ownerAccount;
+
 		private string ownerId;
 
-		private string mediaId;
+		private string libRegion;
 
-		private string templateId;
-
-		private string mediaAuditConfiguration;
-
-		private string mediaType;
-
-		public long? ResourceOwnerId
+		public string ResourceOwnerId
 		{
 			get
 			{
@@ -65,20 +59,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				resourceOwnerId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string UserData
-		{
-			get
-			{
-				return userData;
-			}
-			set	
-			{
-				userData = value;
-				DictionaryUtil.Add(QueryParameters, "UserData", value);
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
 			}
 		}
 
@@ -95,6 +76,19 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
 		public string OwnerId
 		{
 			get
@@ -108,66 +102,22 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string MediaId
+		public string LibRegion
 		{
 			get
 			{
-				return mediaId;
+				return libRegion;
 			}
 			set	
 			{
-				mediaId = value;
-				DictionaryUtil.Add(QueryParameters, "MediaId", value);
+				libRegion = value;
+				DictionaryUtil.Add(QueryParameters, "LibRegion", value);
 			}
 		}
 
-		public string TemplateId
-		{
-			get
-			{
-				return templateId;
-			}
-			set	
-			{
-				templateId = value;
-				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
-			}
-		}
-
-		public string MediaAuditConfiguration
-		{
-			get
-			{
-				return mediaAuditConfiguration;
-			}
-			set	
-			{
-				mediaAuditConfiguration = value;
-				DictionaryUtil.Add(QueryParameters, "MediaAuditConfiguration", value);
-			}
-		}
-
-		public string MediaType
-		{
-			get
-			{
-				return mediaType;
-			}
-			set	
-			{
-				mediaType = value;
-				DictionaryUtil.Add(QueryParameters, "MediaType", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override SubmitAIMediaAuditJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListMediaDNALibsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SubmitAIMediaAuditJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListMediaDNALibsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

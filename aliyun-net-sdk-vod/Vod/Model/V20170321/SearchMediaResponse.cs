@@ -237,6 +237,10 @@ namespace Aliyun.Acs.vod.Model.V20170321
 
 				private string appId;
 
+				private string auditAbnormalModules;
+
+				private string auditLabel;
+
 				private List<SearchMedia_PlayInfo> playInfoList;
 
 				private List<string> snapshots;
@@ -552,6 +556,30 @@ namespace Aliyun.Acs.vod.Model.V20170321
 					set	
 					{
 						appId = value;
+					}
+				}
+
+				public string AuditAbnormalModules
+				{
+					get
+					{
+						return auditAbnormalModules;
+					}
+					set	
+					{
+						auditAbnormalModules = value;
+					}
+				}
+
+				public string AuditLabel
+				{
+					get
+					{
+						return auditLabel;
+					}
+					set	
+					{
+						auditLabel = value;
 					}
 				}
 
