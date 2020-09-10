@@ -62,7 +62,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.PrivateIp = context.StringValue("DescribeInstances.Instances["+ i +"].PrivateIp");
 				kVStoreInstance.CreateTime = context.StringValue("DescribeInstances.Instances["+ i +"].CreateTime");
 				kVStoreInstance.EndTime = context.StringValue("DescribeInstances.Instances["+ i +"].EndTime");
-				kVStoreInstance.HasRenewChangeOrder = context.StringValue("DescribeInstances.Instances["+ i +"].HasRenewChangeOrder");
+				kVStoreInstance.HasRenewChangeOrder = context.BooleanValue("DescribeInstances.Instances["+ i +"].HasRenewChangeOrder");
 				kVStoreInstance.IsRds = context.BooleanValue("DescribeInstances.Instances["+ i +"].IsRds");
 				kVStoreInstance.InstanceType = context.StringValue("DescribeInstances.Instances["+ i +"].InstanceType");
 				kVStoreInstance.ArchitectureType = context.StringValue("DescribeInstances.Instances["+ i +"].ArchitectureType");

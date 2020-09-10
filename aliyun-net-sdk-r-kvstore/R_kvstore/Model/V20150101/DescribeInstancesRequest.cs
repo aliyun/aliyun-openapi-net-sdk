@@ -62,6 +62,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceType;
 
+		private string editionType;
+
 		private List<Tag> tags = new List<Tag>(){ };
 
 		private string instanceStatus;
@@ -226,6 +228,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceType = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string EditionType
+		{
+			get
+			{
+				return editionType;
+			}
+			set	
+			{
+				editionType = value;
+				DictionaryUtil.Add(QueryParameters, "EditionType", value);
 			}
 		}
 

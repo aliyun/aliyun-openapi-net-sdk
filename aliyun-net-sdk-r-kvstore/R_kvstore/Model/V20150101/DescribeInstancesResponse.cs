@@ -144,7 +144,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string endTime;
 
-			private string hasRenewChangeOrder;
+			private bool? hasRenewChangeOrder;
 
 			private bool? isRds;
 
@@ -444,7 +444,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string HasRenewChangeOrder
+			public bool? HasRenewChangeOrder
 			{
 				get
 				{
