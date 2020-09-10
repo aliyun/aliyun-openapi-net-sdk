@@ -27,10 +27,10 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class ModifyBackupStrategyRequest : RpcAcsRequest<ModifyBackupStrategyResponse>
+    public class EnableBackupLogRequest : RpcAcsRequest<EnableBackupLogResponse>
     {
-        public ModifyBackupStrategyRequest()
-            : base("Dbs", "2019-03-06", "ModifyBackupStrategy", "cbs", "openAPI")
+        public EnableBackupLogRequest()
+            : base("Dbs", "2019-03-06", "EnableBackupLog", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,32 +40,11 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			Method = MethodType.POST;
         }
 
-		private int? backupLogIntervalSeconds;
-
 		private string clientToken;
 
 		private string backupPlanId;
 
 		private string ownerId;
-
-		private string backupPeriod;
-
-		private string backupStartTime;
-
-		private string backupStrategyType;
-
-		public int? BackupLogIntervalSeconds
-		{
-			get
-			{
-				return backupLogIntervalSeconds;
-			}
-			set	
-			{
-				backupLogIntervalSeconds = value;
-				DictionaryUtil.Add(QueryParameters, "BackupLogIntervalSeconds", value.ToString());
-			}
-		}
 
 		public string ClientToken
 		{
@@ -106,48 +85,9 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public string BackupPeriod
-		{
-			get
-			{
-				return backupPeriod;
-			}
-			set	
-			{
-				backupPeriod = value;
-				DictionaryUtil.Add(QueryParameters, "BackupPeriod", value);
-			}
-		}
-
-		public string BackupStartTime
-		{
-			get
-			{
-				return backupStartTime;
-			}
-			set	
-			{
-				backupStartTime = value;
-				DictionaryUtil.Add(QueryParameters, "BackupStartTime", value);
-			}
-		}
-
-		public string BackupStrategyType
-		{
-			get
-			{
-				return backupStrategyType;
-			}
-			set	
-			{
-				backupStrategyType = value;
-				DictionaryUtil.Add(QueryParameters, "BackupStrategyType", value);
-			}
-		}
-
-        public override ModifyBackupStrategyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override EnableBackupLogResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyBackupStrategyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return EnableBackupLogResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

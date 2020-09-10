@@ -45,6 +45,7 @@ namespace Aliyun.Acs.Dbs.Transform.V20190306
 			for (int i = 0; i < context.Length("DescribeIncrementBackupList.Items.Length"); i++) {
 				DescribeIncrementBackupListResponse.DescribeIncrementBackupList_IncrementBackupFile incrementBackupFile = new DescribeIncrementBackupListResponse.DescribeIncrementBackupList_IncrementBackupFile();
 				incrementBackupFile.BackupSetId = context.StringValue("DescribeIncrementBackupList.Items["+ i +"].BackupSetId");
+				incrementBackupFile.BackupSetJobId = context.StringValue("DescribeIncrementBackupList.Items["+ i +"].BackupSetJobId");
 				incrementBackupFile.SourceEndpointIpPort = context.StringValue("DescribeIncrementBackupList.Items["+ i +"].SourceEndpointIpPort");
 				incrementBackupFile.StartTime = context.LongValue("DescribeIncrementBackupList.Items["+ i +"].StartTime");
 				incrementBackupFile.EndTime = context.LongValue("DescribeIncrementBackupList.Items["+ i +"].EndTime");

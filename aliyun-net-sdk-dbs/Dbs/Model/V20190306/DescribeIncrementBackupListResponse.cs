@@ -170,6 +170,8 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 
 			private string backupSetId;
 
+			private string backupSetJobId;
+
 			private string sourceEndpointIpPort;
 
 			private long? startTime;
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 				set	
 				{
 					backupSetId = value;
+				}
+			}
+
+			public string BackupSetJobId
+			{
+				get
+				{
+					return backupSetJobId;
+				}
+				set	
+				{
+					backupSetJobId = value;
 				}
 			}
 

@@ -27,10 +27,10 @@ using Aliyun.Acs.Dbs.Transform.V20190306;
 
 namespace Aliyun.Acs.Dbs.Model.V20190306
 {
-    public class ModifyBackupSetDownloadRulesRequest : RpcAcsRequest<ModifyBackupSetDownloadRulesResponse>
+    public class ModifyStorageStrategyRequest : RpcAcsRequest<ModifyStorageStrategyResponse>
     {
-        public ModifyBackupSetDownloadRulesRequest()
-            : base("Dbs", "2019-03-06", "ModifyBackupSetDownloadRules", "cbs", "openAPI")
+        public ModifyStorageStrategyRequest()
+            : base("Dbs", "2019-03-06", "ModifyStorageStrategy", "cbs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,49 +40,28 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			Method = MethodType.POST;
         }
 
-		private string fullDataFormat;
-
-		private long? backupGatewayId;
+		private int? duplicationArchivePeriod;
 
 		private string clientToken;
-
-		private string backupSetDownloadTargetType;
 
 		private string backupPlanId;
 
 		private string ownerId;
 
-		private bool? openAutoDownload;
+		private int? backupRetentionPeriod;
 
-		private string incrementDataFormat;
+		private int? duplicationInfrequentAccessPeriod;
 
-		private string backupSetDownloadTargetTypeLocation;
-
-		private string backupSetDownloadDir;
-
-		public string FullDataFormat
+		public int? DuplicationArchivePeriod
 		{
 			get
 			{
-				return fullDataFormat;
+				return duplicationArchivePeriod;
 			}
 			set	
 			{
-				fullDataFormat = value;
-				DictionaryUtil.Add(QueryParameters, "FullDataFormat", value);
-			}
-		}
-
-		public long? BackupGatewayId
-		{
-			get
-			{
-				return backupGatewayId;
-			}
-			set	
-			{
-				backupGatewayId = value;
-				DictionaryUtil.Add(QueryParameters, "BackupGatewayId", value.ToString());
+				duplicationArchivePeriod = value;
+				DictionaryUtil.Add(QueryParameters, "DuplicationArchivePeriod", value.ToString());
 			}
 		}
 
@@ -96,19 +75,6 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public string BackupSetDownloadTargetType
-		{
-			get
-			{
-				return backupSetDownloadTargetType;
-			}
-			set	
-			{
-				backupSetDownloadTargetType = value;
-				DictionaryUtil.Add(QueryParameters, "BackupSetDownloadTargetType", value);
 			}
 		}
 
@@ -138,61 +104,35 @@ namespace Aliyun.Acs.Dbs.Model.V20190306
 			}
 		}
 
-		public bool? OpenAutoDownload
+		public int? BackupRetentionPeriod
 		{
 			get
 			{
-				return openAutoDownload;
+				return backupRetentionPeriod;
 			}
 			set	
 			{
-				openAutoDownload = value;
-				DictionaryUtil.Add(QueryParameters, "OpenAutoDownload", value.ToString());
+				backupRetentionPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "BackupRetentionPeriod", value.ToString());
 			}
 		}
 
-		public string IncrementDataFormat
+		public int? DuplicationInfrequentAccessPeriod
 		{
 			get
 			{
-				return incrementDataFormat;
+				return duplicationInfrequentAccessPeriod;
 			}
 			set	
 			{
-				incrementDataFormat = value;
-				DictionaryUtil.Add(QueryParameters, "IncrementDataFormat", value);
+				duplicationInfrequentAccessPeriod = value;
+				DictionaryUtil.Add(QueryParameters, "DuplicationInfrequentAccessPeriod", value.ToString());
 			}
 		}
 
-		public string BackupSetDownloadTargetTypeLocation
-		{
-			get
-			{
-				return backupSetDownloadTargetTypeLocation;
-			}
-			set	
-			{
-				backupSetDownloadTargetTypeLocation = value;
-				DictionaryUtil.Add(QueryParameters, "BackupSetDownloadTargetTypeLocation", value);
-			}
-		}
-
-		public string BackupSetDownloadDir
-		{
-			get
-			{
-				return backupSetDownloadDir;
-			}
-			set	
-			{
-				backupSetDownloadDir = value;
-				DictionaryUtil.Add(QueryParameters, "BackupSetDownloadDir", value);
-			}
-		}
-
-        public override ModifyBackupSetDownloadRulesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyStorageStrategyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyBackupSetDownloadRulesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyStorageStrategyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
