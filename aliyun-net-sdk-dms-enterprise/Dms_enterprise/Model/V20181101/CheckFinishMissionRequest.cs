@@ -17,7 +17,6 @@
  * under the License.
  */
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -28,97 +27,36 @@ using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-    public class RegisterUserRequest : RpcAcsRequest<RegisterUserResponse>
+    public class CheckFinishMissionRequest : RpcAcsRequest<CheckFinishMissionResponse>
     {
-        public RegisterUserRequest()
-            : base("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise", "openAPI")
+        public CheckFinishMissionRequest()
+            : base("dms-enterprise", "2018-11-01", "CheckFinishMission", "dmsenterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private string roleNames;
+		private string missionType;
 
-		private long? uid;
-
-		private string userNick;
-
-		private string mobile;
-
-		private long? tid;
-
-		public string RoleNames
+		public string MissionType
 		{
 			get
 			{
-				return roleNames;
+				return missionType;
 			}
 			set	
 			{
-				roleNames = value;
-				DictionaryUtil.Add(QueryParameters, "RoleNames", value);
+				missionType = value;
+				DictionaryUtil.Add(QueryParameters, "MissionType", value);
 			}
 		}
 
-		public long? Uid
-		{
-			get
-			{
-				return uid;
-			}
-			set	
-			{
-				uid = value;
-				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
-			}
-		}
-
-		public string UserNick
-		{
-			get
-			{
-				return userNick;
-			}
-			set	
-			{
-				userNick = value;
-				DictionaryUtil.Add(QueryParameters, "UserNick", value);
-			}
-		}
-
-		public string Mobile
-		{
-			get
-			{
-				return mobile;
-			}
-			set	
-			{
-				mobile = value;
-				DictionaryUtil.Add(QueryParameters, "Mobile", value);
-			}
-		}
-
-		public long? Tid
-		{
-			get
-			{
-				return tid;
-			}
-			set	
-			{
-				tid = value;
-				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
-			}
-		}
-
-        public override RegisterUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CheckFinishMissionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RegisterUserResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckFinishMissionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

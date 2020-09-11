@@ -28,10 +28,10 @@ using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-    public class RegisterUserRequest : RpcAcsRequest<RegisterUserResponse>
+    public class ExecuteScriptRequest : RpcAcsRequest<ExecuteScriptResponse>
     {
-        public RegisterUserRequest()
-            : base("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise", "openAPI")
+        public ExecuteScriptRequest()
+            : base("dms-enterprise", "2018-11-01", "ExecuteScript", "dmsenterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,65 +41,50 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
-		private string roleNames;
+		private int? dbId;
 
-		private long? uid;
+		private bool? logic;
 
-		private string userNick;
-
-		private string mobile;
+		private string script;
 
 		private long? tid;
 
-		public string RoleNames
+		public int? DbId
 		{
 			get
 			{
-				return roleNames;
+				return dbId;
 			}
 			set	
 			{
-				roleNames = value;
-				DictionaryUtil.Add(QueryParameters, "RoleNames", value);
+				dbId = value;
+				DictionaryUtil.Add(QueryParameters, "DbId", value.ToString());
 			}
 		}
 
-		public long? Uid
+		public bool? Logic
 		{
 			get
 			{
-				return uid;
+				return logic;
 			}
 			set	
 			{
-				uid = value;
-				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
+				logic = value;
+				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
 			}
 		}
 
-		public string UserNick
+		public string Script
 		{
 			get
 			{
-				return userNick;
+				return script;
 			}
 			set	
 			{
-				userNick = value;
-				DictionaryUtil.Add(QueryParameters, "UserNick", value);
-			}
-		}
-
-		public string Mobile
-		{
-			get
-			{
-				return mobile;
-			}
-			set	
-			{
-				mobile = value;
-				DictionaryUtil.Add(QueryParameters, "Mobile", value);
+				script = value;
+				DictionaryUtil.Add(QueryParameters, "Script", value);
 			}
 		}
 
@@ -116,9 +101,14 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-        public override RegisterUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ExecuteScriptResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return RegisterUserResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ExecuteScriptResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
