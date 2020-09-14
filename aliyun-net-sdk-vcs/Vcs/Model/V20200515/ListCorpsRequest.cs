@@ -45,6 +45,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private int? pageSize;
 
+		private string corpName;
+
 		public int? PageNumber
 		{
 			get
@@ -68,6 +70,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string CorpName
+		{
+			get
+			{
+				return corpName;
+			}
+			set	
+			{
+				corpName = value;
+				DictionaryUtil.Add(BodyParameters, "CorpName", value);
 			}
 		}
 

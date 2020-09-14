@@ -58,6 +58,20 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.GlassStyle = context.IntegerValue("GetFaceModelResult.Data.Records["+ i +"].GlassStyle");
 				recordsItem.GlassColor = context.IntegerValue("GetFaceModelResult.Data.Records["+ i +"].GlassColor");
 				recordsItem.CapColor = context.IntegerValue("GetFaceModelResult.Data.Records["+ i +"].CapColor");
+				recordsItem.CapColorReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].CapColorReliability");
+				recordsItem.RespiratorColorReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].RespiratorColorReliability");
+				recordsItem.EthicCodeReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].EthicCodeReliability");
+				recordsItem.GenderCodeReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].GenderCodeReliability");
+				recordsItem.GlassColorReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].GlassColorReliability");
+				recordsItem.SkinColorReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].SkinColorReliability");
+				recordsItem.MustacheStyleReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].MustacheStyleReliability");
+				recordsItem.CapStyleReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].CapStyleReliability");
+				recordsItem.FaceStyleReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].FaceStyleReliability");
+				recordsItem.GlassStyleReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].GlassStyleReliability");
+				recordsItem.AgeUpLimitReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].AgeUpLimitReliability");
+				recordsItem.HairStyleReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].HairStyleReliability");
+				recordsItem.AgeLowerLimitReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].AgeLowerLimitReliability");
+				recordsItem.HairColorReliability = context.StringValue("GetFaceModelResult.Data.Records["+ i +"].HairColorReliability");
 
 				List<string> recordsItem_featureData = new List<string>();
 				for (int j = 0; j < context.Length("GetFaceModelResult.Data.Records["+ i +"].FeatureData.Length"); j++) {

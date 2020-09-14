@@ -137,6 +137,34 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private int? capColor;
 
+				private string capColorReliability;
+
+				private string respiratorColorReliability;
+
+				private string ethicCodeReliability;
+
+				private string genderCodeReliability;
+
+				private string glassColorReliability;
+
+				private string skinColorReliability;
+
+				private string mustacheStyleReliability;
+
+				private string capStyleReliability;
+
+				private string faceStyleReliability;
+
+				private string glassStyleReliability;
+
+				private string ageUpLimitReliability;
+
+				private string hairStyleReliability;
+
+				private string ageLowerLimitReliability;
+
+				private string hairColorReliability;
+
 				private List<string> featureData;
 
 				public string MustacheStyle
@@ -352,6 +380,174 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						capColor = value;
+					}
+				}
+
+				public string CapColorReliability
+				{
+					get
+					{
+						return capColorReliability;
+					}
+					set	
+					{
+						capColorReliability = value;
+					}
+				}
+
+				public string RespiratorColorReliability
+				{
+					get
+					{
+						return respiratorColorReliability;
+					}
+					set	
+					{
+						respiratorColorReliability = value;
+					}
+				}
+
+				public string EthicCodeReliability
+				{
+					get
+					{
+						return ethicCodeReliability;
+					}
+					set	
+					{
+						ethicCodeReliability = value;
+					}
+				}
+
+				public string GenderCodeReliability
+				{
+					get
+					{
+						return genderCodeReliability;
+					}
+					set	
+					{
+						genderCodeReliability = value;
+					}
+				}
+
+				public string GlassColorReliability
+				{
+					get
+					{
+						return glassColorReliability;
+					}
+					set	
+					{
+						glassColorReliability = value;
+					}
+				}
+
+				public string SkinColorReliability
+				{
+					get
+					{
+						return skinColorReliability;
+					}
+					set	
+					{
+						skinColorReliability = value;
+					}
+				}
+
+				public string MustacheStyleReliability
+				{
+					get
+					{
+						return mustacheStyleReliability;
+					}
+					set	
+					{
+						mustacheStyleReliability = value;
+					}
+				}
+
+				public string CapStyleReliability
+				{
+					get
+					{
+						return capStyleReliability;
+					}
+					set	
+					{
+						capStyleReliability = value;
+					}
+				}
+
+				public string FaceStyleReliability
+				{
+					get
+					{
+						return faceStyleReliability;
+					}
+					set	
+					{
+						faceStyleReliability = value;
+					}
+				}
+
+				public string GlassStyleReliability
+				{
+					get
+					{
+						return glassStyleReliability;
+					}
+					set	
+					{
+						glassStyleReliability = value;
+					}
+				}
+
+				public string AgeUpLimitReliability
+				{
+					get
+					{
+						return ageUpLimitReliability;
+					}
+					set	
+					{
+						ageUpLimitReliability = value;
+					}
+				}
+
+				public string HairStyleReliability
+				{
+					get
+					{
+						return hairStyleReliability;
+					}
+					set	
+					{
+						hairStyleReliability = value;
+					}
+				}
+
+				public string AgeLowerLimitReliability
+				{
+					get
+					{
+						return ageLowerLimitReliability;
+					}
+					set	
+					{
+						ageLowerLimitReliability = value;
+					}
+				}
+
+				public string HairColorReliability
+				{
+					get
+					{
+						return hairColorReliability;
+					}
+					set	
+					{
+						hairColorReliability = value;
 					}
 				}
 
