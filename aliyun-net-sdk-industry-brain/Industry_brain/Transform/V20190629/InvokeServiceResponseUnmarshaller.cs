@@ -35,6 +35,7 @@ namespace Aliyun.Acs.industry_brain.Transform.V20190629
 			invokeServiceResponse.Data = context.StringValue("InvokeService.Data");
 			invokeServiceResponse.Code = context.StringValue("InvokeService.Code");
 			invokeServiceResponse.Message = context.StringValue("InvokeService.Message");
+			invokeServiceResponse.Context = context.StringValue("InvokeService.Context");
         
 			return invokeServiceResponse;
         }

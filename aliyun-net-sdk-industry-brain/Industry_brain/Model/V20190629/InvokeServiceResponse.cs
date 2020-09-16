@@ -33,6 +33,8 @@ namespace Aliyun.Acs.industry_brain.Model.V20190629
 
 		private string message;
 
+		private string context;
+
 		public string RequestId
 		{
 			get
@@ -78,6 +80,18 @@ namespace Aliyun.Acs.industry_brain.Model.V20190629
 			set	
 			{
 				message = value;
+			}
+		}
+
+		public string Context
+		{
+			get
+			{
+				return context;
+			}
+			set	
+			{
+				context = value;
 			}
 		}
 	}
