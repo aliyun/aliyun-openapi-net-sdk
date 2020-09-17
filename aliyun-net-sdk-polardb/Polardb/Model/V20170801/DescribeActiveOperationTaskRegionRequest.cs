@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class CreateDBClusterEndpointRequest : RpcAcsRequest<CreateDBClusterEndpointResponse>
+    public class DescribeActiveOperationTaskRegionRequest : RpcAcsRequest<DescribeActiveOperationTaskRegionResponse>
     {
-        public CreateDBClusterEndpointRequest()
-            : base("polardb", "2017-08-01", "CreateDBClusterEndpoint", "polardb", "openAPI")
+        public DescribeActiveOperationTaskRegionRequest()
+            : base("polardb", "2017-08-01", "DescribeActiveOperationTaskRegion", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,42 +40,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			Method = MethodType.POST;
         }
 
-		private string autoAddNewNodes;
-
 		private long? resourceOwnerId;
 
-		private string clientToken;
+		private int? isHistory;
 
-		private string readWriteMode;
+		private string securityToken;
 
-		private string endpointType;
+		private string taskType;
 
 		private string resourceOwnerAccount;
 
-		private string dBClusterId;
-
 		private string ownerAccount;
 
-		private string endpointConfig;
-
-		private string dBEndpointDescription;
-
 		private long? ownerId;
-
-		private string nodes;
-
-		public string AutoAddNewNodes
-		{
-			get
-			{
-				return autoAddNewNodes;
-			}
-			set	
-			{
-				autoAddNewNodes = value;
-				DictionaryUtil.Add(QueryParameters, "AutoAddNewNodes", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -90,42 +67,42 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string ClientToken
+		public int? IsHistory
 		{
 			get
 			{
-				return clientToken;
+				return isHistory;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				isHistory = value;
+				DictionaryUtil.Add(QueryParameters, "IsHistory", value.ToString());
 			}
 		}
 
-		public string ReadWriteMode
+		public string SecurityToken
 		{
 			get
 			{
-				return readWriteMode;
+				return securityToken;
 			}
 			set	
 			{
-				readWriteMode = value;
-				DictionaryUtil.Add(QueryParameters, "ReadWriteMode", value);
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
 			}
 		}
 
-		public string EndpointType
+		public string TaskType
 		{
 			get
 			{
-				return endpointType;
+				return taskType;
 			}
 			set	
 			{
-				endpointType = value;
-				DictionaryUtil.Add(QueryParameters, "EndpointType", value);
+				taskType = value;
+				DictionaryUtil.Add(QueryParameters, "TaskType", value);
 			}
 		}
 
@@ -142,19 +119,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBClusterId
-		{
-			get
-			{
-				return dBClusterId;
-			}
-			set	
-			{
-				dBClusterId = value;
-				DictionaryUtil.Add(QueryParameters, "DBClusterId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -165,32 +129,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string EndpointConfig
-		{
-			get
-			{
-				return endpointConfig;
-			}
-			set	
-			{
-				endpointConfig = value;
-				DictionaryUtil.Add(QueryParameters, "EndpointConfig", value);
-			}
-		}
-
-		public string DBEndpointDescription
-		{
-			get
-			{
-				return dBEndpointDescription;
-			}
-			set	
-			{
-				dBEndpointDescription = value;
-				DictionaryUtil.Add(QueryParameters, "DBEndpointDescription", value);
 			}
 		}
 
@@ -207,27 +145,14 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string Nodes
-		{
-			get
-			{
-				return nodes;
-			}
-			set	
-			{
-				nodes = value;
-				DictionaryUtil.Add(QueryParameters, "Nodes", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override CreateDBClusterEndpointResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeActiveOperationTaskRegionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateDBClusterEndpointResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeActiveOperationTaskRegionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

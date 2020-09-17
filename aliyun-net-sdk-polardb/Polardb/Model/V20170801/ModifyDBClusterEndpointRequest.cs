@@ -56,6 +56,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string endpointConfig;
 
+		private string dBEndpointDescription;
+
 		private long? ownerId;
 
 		private string nodes;
@@ -161,6 +163,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			{
 				endpointConfig = value;
 				DictionaryUtil.Add(QueryParameters, "EndpointConfig", value);
+			}
+		}
+
+		public string DBEndpointDescription
+		{
+			get
+			{
+				return dBEndpointDescription;
+			}
+			set	
+			{
+				dBEndpointDescription = value;
+				DictionaryUtil.Add(QueryParameters, "DBEndpointDescription", value);
 			}
 		}
 
