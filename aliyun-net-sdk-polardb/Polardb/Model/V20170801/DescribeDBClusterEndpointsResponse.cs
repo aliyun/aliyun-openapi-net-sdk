@@ -70,6 +70,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 			private string nodeWithRoles;
 
+			private string dBEndpointDescription;
+
 			private List<DescribeDBClusterEndpoints_Address> addressItems;
 
 			public string DBEndpointId
@@ -153,6 +155,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 				set	
 				{
 					nodeWithRoles = value;
+				}
+			}
+
+			public string DBEndpointDescription
+			{
+				get
+				{
+					return dBEndpointDescription;
+				}
+				set	
+				{
+					dBEndpointDescription = value;
 				}
 			}
 

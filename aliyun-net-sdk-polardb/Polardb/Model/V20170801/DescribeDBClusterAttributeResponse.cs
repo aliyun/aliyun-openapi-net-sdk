@@ -75,6 +75,8 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private long? dataLevel1BackupChainSize;
 
+		private string category;
+
 		private List<DescribeDBClusterAttribute_Tag> tags;
 
 		private List<DescribeDBClusterAttribute_DBNode> dBNodes;
@@ -376,6 +378,18 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			set	
 			{
 				dataLevel1BackupChainSize = value;
+			}
+		}
+
+		public string Category
+		{
+			get
+			{
+				return category;
+			}
+			set	
+			{
+				category = value;
 			}
 		}
 
