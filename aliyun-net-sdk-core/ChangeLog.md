@@ -1,3 +1,7 @@
+### 2020-09-17 Version 1.5.9
+* Supported Header x-acs-version
+* Supported Header x-acs-action
+
 ### 2020-07-28 Version 1.5.8
 * region, productNetwork and productSuffix are no need to check regex when they are empty or null.
 
