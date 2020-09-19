@@ -41,11 +41,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
-		private string searchTarget;
-
-		private int? pageSize;
-
-		private string envType;
+		private bool? returnGuid;
 
 		private string searchKey;
 
@@ -55,42 +51,24 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private int? pageNumber;
 
-		public string SearchTarget
-		{
-			get
-			{
-				return searchTarget;
-			}
-			set	
-			{
-				searchTarget = value;
-				DictionaryUtil.Add(QueryParameters, "SearchTarget", value);
-			}
-		}
+		private string searchTarget;
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+		private int? pageSize;
 
-		public string EnvType
+		private string envType;
+
+		private string dbType;
+
+		public bool? ReturnGuid
 		{
 			get
 			{
-				return envType;
+				return returnGuid;
 			}
 			set	
 			{
-				envType = value;
-				DictionaryUtil.Add(QueryParameters, "EnvType", value);
+				returnGuid = value;
+				DictionaryUtil.Add(QueryParameters, "ReturnGuid", value.ToString());
 			}
 		}
 
@@ -143,6 +121,58 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string SearchTarget
+		{
+			get
+			{
+				return searchTarget;
+			}
+			set	
+			{
+				searchTarget = value;
+				DictionaryUtil.Add(QueryParameters, "SearchTarget", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string EnvType
+		{
+			get
+			{
+				return envType;
+			}
+			set	
+			{
+				envType = value;
+				DictionaryUtil.Add(QueryParameters, "EnvType", value);
+			}
+		}
+
+		public string DbType
+		{
+			get
+			{
+				return dbType;
+			}
+			set	
+			{
+				dbType = value;
+				DictionaryUtil.Add(QueryParameters, "DbType", value);
 			}
 		}
 

@@ -83,6 +83,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string vpcId;
 
+		private bool? skipTest;
+
 		public string SafeRuleId
 		{
 			get
@@ -353,6 +355,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				vpcId = value;
 				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+			}
+		}
+
+		public bool? SkipTest
+		{
+			get
+			{
+				return skipTest;
+			}
+			set	
+			{
+				skipTest = value;
+				DictionaryUtil.Add(QueryParameters, "SkipTest", value.ToString());
 			}
 		}
 

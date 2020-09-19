@@ -46,6 +46,8 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				logicTable.Logic = context.BooleanValue("ListLogicTables.LogicTableList["+ i +"].Logic");
 				logicTable.TableExpr = context.StringValue("ListLogicTables.LogicTableList["+ i +"].TableExpr");
 				logicTable.TableCount = context.StringValue("ListLogicTables.LogicTableList["+ i +"].TableCount");
+				logicTable.TableGuid = context.StringValue("ListLogicTables.LogicTableList["+ i +"].TableGuid");
+				logicTable.SchemaName = context.StringValue("ListLogicTables.LogicTableList["+ i +"].SchemaName");
 
 				List<string> logicTable_ownerIdList = new List<string>();
 				for (int j = 0; j < context.Length("ListLogicTables.LogicTableList["+ i +"].OwnerIdList.Length"); j++) {

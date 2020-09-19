@@ -43,6 +43,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string searchName;
 
+		private bool? returnGuid;
+
 		private int? pageSize;
 
 		private string databaseId;
@@ -61,6 +63,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				searchName = value;
 				DictionaryUtil.Add(QueryParameters, "SearchName", value);
+			}
+		}
+
+		public bool? ReturnGuid
+		{
+			get
+			{
+				return returnGuid;
+			}
+			set	
+			{
+				returnGuid = value;
+				DictionaryUtil.Add(QueryParameters, "ReturnGuid", value.ToString());
 			}
 		}
 

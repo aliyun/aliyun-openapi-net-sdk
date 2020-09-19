@@ -49,6 +49,8 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				table.TableType = context.StringValue("ListTables.TableList["+ i +"].TableType");
 				table.NumRows = context.LongValue("ListTables.TableList["+ i +"].NumRows");
 				table.StoreCapacity = context.LongValue("ListTables.TableList["+ i +"].StoreCapacity");
+				table.TableGuid = context.StringValue("ListTables.TableList["+ i +"].TableGuid");
+				table.Description = context.StringValue("ListTables.TableList["+ i +"].Description");
 
 				List<string> table_ownerIdList = new List<string>();
 				for (int j = 0; j < context.Length("ListTables.TableList["+ i +"].OwnerIdList.Length"); j++) {

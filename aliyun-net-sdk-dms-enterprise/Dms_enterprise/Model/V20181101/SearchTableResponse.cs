@@ -130,6 +130,14 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string dBSearchName;
 
+			private string dbType;
+
+			private string description;
+
+			private string dbName;
+
+			private string tableGuid;
+
 			private List<string> ownerIdList;
 
 			private List<string> ownerNameList;
@@ -239,6 +247,54 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					dBSearchName = value;
+				}
+			}
+
+			public string DbType
+			{
+				get
+				{
+					return dbType;
+				}
+				set	
+				{
+					dbType = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
+				}
+			}
+
+			public string DbName
+			{
+				get
+				{
+					return dbName;
+				}
+				set	
+				{
+					dbName = value;
+				}
+			}
+
+			public string TableGuid
+			{
+				get
+				{
+					return tableGuid;
+				}
+				set	
+				{
+					tableGuid = value;
 				}
 			}
 

@@ -81,6 +81,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private long? dbaUid;
 
+		private bool? skipTest;
+
 		private string safeRule;
 
 		public string EcsRegion
@@ -340,6 +342,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				dbaUid = value;
 				DictionaryUtil.Add(QueryParameters, "DbaUid", value.ToString());
+			}
+		}
+
+		public bool? SkipTest
+		{
+			get
+			{
+				return skipTest;
+			}
+			set	
+			{
+				skipTest = value;
+				DictionaryUtil.Add(QueryParameters, "SkipTest", value.ToString());
 			}
 		}
 

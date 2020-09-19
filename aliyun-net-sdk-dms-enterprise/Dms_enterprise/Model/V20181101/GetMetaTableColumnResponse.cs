@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-	public class ListTablesResponse : AcsResponse
+	public class GetMetaTableColumnResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,9 +33,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string errorCode;
 
-		private long? totalCount;
-
-		private List<ListTables_Table> tableList;
+		private List<GetMetaTableColumn_Column> columnList;
 
 		public string RequestId
 		{
@@ -85,176 +83,90 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public long? TotalCount
+		public List<GetMetaTableColumn_Column> ColumnList
 		{
 			get
 			{
-				return totalCount;
+				return columnList;
 			}
 			set	
 			{
-				totalCount = value;
+				columnList = value;
 			}
 		}
 
-		public List<ListTables_Table> TableList
-		{
-			get
-			{
-				return tableList;
-			}
-			set	
-			{
-				tableList = value;
-			}
-		}
-
-		public class ListTables_Table
+		public class GetMetaTableColumn_Column
 		{
 
-			private string tableId;
+			private string columnId;
 
-			private string databaseId;
+			private string columnName;
 
-			private string tableName;
+			private string columnType;
 
-			private string tableSchemaName;
-
-			private string engine;
-
-			private string encoding;
-
-			private string tableType;
-
-			private long? numRows;
-
-			private long? storeCapacity;
-
-			private string tableGuid;
+			private int? dataLength;
 
 			private string description;
 
-			private List<string> ownerIdList;
+			private int? position;
 
-			private List<string> ownerNameList;
+			private bool? autoIncrement;
 
-			public string TableId
+			private bool? nullable;
+
+			private string securityLevel;
+
+			private string primaryKey;
+
+			private int? dataScale;
+
+			private int? dataPrecision;
+
+			public string ColumnId
 			{
 				get
 				{
-					return tableId;
+					return columnId;
 				}
 				set	
 				{
-					tableId = value;
+					columnId = value;
 				}
 			}
 
-			public string DatabaseId
+			public string ColumnName
 			{
 				get
 				{
-					return databaseId;
+					return columnName;
 				}
 				set	
 				{
-					databaseId = value;
+					columnName = value;
 				}
 			}
 
-			public string TableName
+			public string ColumnType
 			{
 				get
 				{
-					return tableName;
+					return columnType;
 				}
 				set	
 				{
-					tableName = value;
+					columnType = value;
 				}
 			}
 
-			public string TableSchemaName
+			public int? DataLength
 			{
 				get
 				{
-					return tableSchemaName;
+					return dataLength;
 				}
 				set	
 				{
-					tableSchemaName = value;
-				}
-			}
-
-			public string Engine
-			{
-				get
-				{
-					return engine;
-				}
-				set	
-				{
-					engine = value;
-				}
-			}
-
-			public string Encoding
-			{
-				get
-				{
-					return encoding;
-				}
-				set	
-				{
-					encoding = value;
-				}
-			}
-
-			public string TableType
-			{
-				get
-				{
-					return tableType;
-				}
-				set	
-				{
-					tableType = value;
-				}
-			}
-
-			public long? NumRows
-			{
-				get
-				{
-					return numRows;
-				}
-				set	
-				{
-					numRows = value;
-				}
-			}
-
-			public long? StoreCapacity
-			{
-				get
-				{
-					return storeCapacity;
-				}
-				set	
-				{
-					storeCapacity = value;
-				}
-			}
-
-			public string TableGuid
-			{
-				get
-				{
-					return tableGuid;
-				}
-				set	
-				{
-					tableGuid = value;
+					dataLength = value;
 				}
 			}
 
@@ -270,27 +182,87 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				}
 			}
 
-			public List<string> OwnerIdList
+			public int? Position
 			{
 				get
 				{
-					return ownerIdList;
+					return position;
 				}
 				set	
 				{
-					ownerIdList = value;
+					position = value;
 				}
 			}
 
-			public List<string> OwnerNameList
+			public bool? AutoIncrement
 			{
 				get
 				{
-					return ownerNameList;
+					return autoIncrement;
 				}
 				set	
 				{
-					ownerNameList = value;
+					autoIncrement = value;
+				}
+			}
+
+			public bool? Nullable
+			{
+				get
+				{
+					return nullable;
+				}
+				set	
+				{
+					nullable = value;
+				}
+			}
+
+			public string SecurityLevel
+			{
+				get
+				{
+					return securityLevel;
+				}
+				set	
+				{
+					securityLevel = value;
+				}
+			}
+
+			public string PrimaryKey
+			{
+				get
+				{
+					return primaryKey;
+				}
+				set	
+				{
+					primaryKey = value;
+				}
+			}
+
+			public int? DataScale
+			{
+				get
+				{
+					return dataScale;
+				}
+				set	
+				{
+					dataScale = value;
+				}
+			}
+
+			public int? DataPrecision
+			{
+				get
+				{
+					return dataPrecision;
+				}
+				set	
+				{
+					dataPrecision = value;
 				}
 			}
 		}

@@ -49,6 +49,10 @@ namespace Aliyun.Acs.dms_enterprise.Transform.V20181101
 				searchTable.Logic = context.BooleanValue("SearchTable.SearchTableList["+ i +"].Logic");
 				searchTable.EnvType = context.StringValue("SearchTable.SearchTableList["+ i +"].EnvType");
 				searchTable.DBSearchName = context.StringValue("SearchTable.SearchTableList["+ i +"].DBSearchName");
+				searchTable.DbType = context.StringValue("SearchTable.SearchTableList["+ i +"].DbType");
+				searchTable.Description = context.StringValue("SearchTable.SearchTableList["+ i +"].Description");
+				searchTable.DbName = context.StringValue("SearchTable.SearchTableList["+ i +"].DbName");
+				searchTable.TableGuid = context.StringValue("SearchTable.SearchTableList["+ i +"].TableGuid");
 
 				List<string> searchTable_ownerIdList = new List<string>();
 				for (int j = 0; j < context.Length("SearchTable.SearchTableList["+ i +"].OwnerIdList.Length"); j++) {

@@ -124,6 +124,10 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 			private string tableCount;
 
+			private string tableGuid;
+
+			private string schemaName;
+
 			private List<string> ownerIdList;
 
 			private List<string> ownerNameList;
@@ -197,6 +201,30 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 				set	
 				{
 					tableCount = value;
+				}
+			}
+
+			public string TableGuid
+			{
+				get
+				{
+					return tableGuid;
+				}
+				set	
+				{
+					tableGuid = value;
+				}
+			}
+
+			public string SchemaName
+			{
+				get
+				{
+					return schemaName;
+				}
+				set	
+				{
+					schemaName = value;
 				}
 			}
 

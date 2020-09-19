@@ -28,10 +28,10 @@ using Aliyun.Acs.dms_enterprise.Transform.V20181101;
 
 namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 {
-    public class ListLogicTablesRequest : RpcAcsRequest<ListLogicTablesResponse>
+    public class GetMetaTableColumnRequest : RpcAcsRequest<GetMetaTableColumnResponse>
     {
-        public ListLogicTablesRequest()
-            : base("dms-enterprise", "2018-11-01", "ListLogicTables", "dmsenterprise", "openAPI")
+        public GetMetaTableColumnRequest()
+            : base("dms-enterprise", "2018-11-01", "GetMetaTableColumn", "dmsenterprise", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,67 +41,20 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
-		private string searchName;
-
-		private bool? returnGuid;
-
-		private int? pageSize;
-
-		private string databaseId;
+		private string tableGuid;
 
 		private long? tid;
 
-		private int? pageNumber;
-
-		public string SearchName
+		public string TableGuid
 		{
 			get
 			{
-				return searchName;
+				return tableGuid;
 			}
 			set	
 			{
-				searchName = value;
-				DictionaryUtil.Add(QueryParameters, "SearchName", value);
-			}
-		}
-
-		public bool? ReturnGuid
-		{
-			get
-			{
-				return returnGuid;
-			}
-			set	
-			{
-				returnGuid = value;
-				DictionaryUtil.Add(QueryParameters, "ReturnGuid", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string DatabaseId
-		{
-			get
-			{
-				return databaseId;
-			}
-			set	
-			{
-				databaseId = value;
-				DictionaryUtil.Add(QueryParameters, "DatabaseId", value);
+				tableGuid = value;
+				DictionaryUtil.Add(QueryParameters, "TableGuid", value);
 			}
 		}
 
@@ -118,22 +71,14 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			}
 		}
 
-		public int? PageNumber
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
+			return false;
 		}
 
-        public override ListLogicTablesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetMetaTableColumnResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListLogicTablesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetMetaTableColumnResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
