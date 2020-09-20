@@ -41,21 +41,15 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
+		private string algorithmType;
+
 		private string corpId;
+
+		private long? endTime;
 
 		private long? startTime;
 
 		private int? pageNumber;
-
-		private string picContent;
-
-		private int? pageSize;
-
-		private string objectType;
-
-		private string algorithmType;
-
-		private long? endTime;
 
 		private List<object> deviceList;
 
@@ -63,7 +57,24 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string imagePath;
 
+		private int? pageSize;
+
+		private string objectType;
+
 		private string conditions;
+
+		public string AlgorithmType
+		{
+			get
+			{
+				return algorithmType;
+			}
+			set	
+			{
+				algorithmType = value;
+				DictionaryUtil.Add(BodyParameters, "AlgorithmType", value);
+			}
+		}
 
 		public string CorpId
 		{
@@ -75,6 +86,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				corpId = value;
 				DictionaryUtil.Add(BodyParameters, "CorpId", value);
+			}
+		}
+
+		public long? EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(BodyParameters, "EndTime", value.ToString());
 			}
 		}
 
@@ -101,71 +125,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(BodyParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string PicContent
-		{
-			get
-			{
-				return picContent;
-			}
-			set	
-			{
-				picContent = value;
-				DictionaryUtil.Add(BodyParameters, "PicContent", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string ObjectType
-		{
-			get
-			{
-				return objectType;
-			}
-			set	
-			{
-				objectType = value;
-				DictionaryUtil.Add(BodyParameters, "ObjectType", value);
-			}
-		}
-
-		public string AlgorithmType
-		{
-			get
-			{
-				return algorithmType;
-			}
-			set	
-			{
-				algorithmType = value;
-				DictionaryUtil.Add(BodyParameters, "AlgorithmType", value);
-			}
-		}
-
-		public long? EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(BodyParameters, "EndTime", value.ToString());
 			}
 		}
 
@@ -205,6 +164,32 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				imagePath = value;
 				DictionaryUtil.Add(BodyParameters, "ImagePath", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string ObjectType
+		{
+			get
+			{
+				return objectType;
+			}
+			set	
+			{
+				objectType = value;
+				DictionaryUtil.Add(BodyParameters, "ObjectType", value);
 			}
 		}
 

@@ -173,6 +173,10 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string isvSubId;
 
+				private int? acuUsed;
+
+				private string iconPath;
+
 				public string CorpId
 				{
 					get
@@ -266,6 +270,30 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						isvSubId = value;
+					}
+				}
+
+				public int? AcuUsed
+				{
+					get
+					{
+						return acuUsed;
+					}
+					set	
+					{
+						acuUsed = value;
+					}
+				}
+
+				public string IconPath
+				{
+					get
+					{
+						return iconPath;
+					}
+					set	
+					{
+						iconPath = value;
 					}
 				}
 			}

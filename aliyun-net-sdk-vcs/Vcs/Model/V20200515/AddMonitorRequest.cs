@@ -46,7 +46,17 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string description;
 
+		private string notifierAppSecret;
+
+		private string notifierExtendValues;
+
+		private string notifierUrl;
+
+		private string notifierType;
+
 		private int? batchIndicator;
+
+		private int? notifierTimeOut;
 
 		private string algorithmVendor;
 
@@ -89,6 +99,58 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
+		public string NotifierAppSecret
+		{
+			get
+			{
+				return notifierAppSecret;
+			}
+			set	
+			{
+				notifierAppSecret = value;
+				DictionaryUtil.Add(BodyParameters, "NotifierAppSecret", value);
+			}
+		}
+
+		public string NotifierExtendValues
+		{
+			get
+			{
+				return notifierExtendValues;
+			}
+			set	
+			{
+				notifierExtendValues = value;
+				DictionaryUtil.Add(BodyParameters, "NotifierExtendValues", value);
+			}
+		}
+
+		public string NotifierUrl
+		{
+			get
+			{
+				return notifierUrl;
+			}
+			set	
+			{
+				notifierUrl = value;
+				DictionaryUtil.Add(BodyParameters, "NotifierUrl", value);
+			}
+		}
+
+		public string NotifierType
+		{
+			get
+			{
+				return notifierType;
+			}
+			set	
+			{
+				notifierType = value;
+				DictionaryUtil.Add(BodyParameters, "NotifierType", value);
+			}
+		}
+
 		public int? BatchIndicator
 		{
 			get
@@ -99,6 +161,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				batchIndicator = value;
 				DictionaryUtil.Add(BodyParameters, "BatchIndicator", value.ToString());
+			}
+		}
+
+		public int? NotifierTimeOut
+		{
+			get
+			{
+				return notifierTimeOut;
+			}
+			set	
+			{
+				notifierTimeOut = value;
+				DictionaryUtil.Add(BodyParameters, "NotifierTimeOut", value.ToString());
 			}
 		}
 

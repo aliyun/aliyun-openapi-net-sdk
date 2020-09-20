@@ -55,6 +55,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string ruleExpression;
 
+		private int? notifierTimeOut;
+
 		private string taskId;
 
 		private string deviceOperateType;
@@ -63,7 +65,15 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string attributeValueList;
 
+		private string notifierAppSecret;
+
+		private string notifierExtendValues;
+
 		private string deviceList;
+
+		private string notifierUrl;
+
+		private string notifierType;
 
 		private string algorithmVendor;
 
@@ -158,6 +168,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
+		public int? NotifierTimeOut
+		{
+			get
+			{
+				return notifierTimeOut;
+			}
+			set	
+			{
+				notifierTimeOut = value;
+				DictionaryUtil.Add(BodyParameters, "NotifierTimeOut", value.ToString());
+			}
+		}
+
 		public string TaskId
 		{
 			get
@@ -210,6 +233,32 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
+		public string NotifierAppSecret
+		{
+			get
+			{
+				return notifierAppSecret;
+			}
+			set	
+			{
+				notifierAppSecret = value;
+				DictionaryUtil.Add(BodyParameters, "NotifierAppSecret", value);
+			}
+		}
+
+		public string NotifierExtendValues
+		{
+			get
+			{
+				return notifierExtendValues;
+			}
+			set	
+			{
+				notifierExtendValues = value;
+				DictionaryUtil.Add(BodyParameters, "NotifierExtendValues", value);
+			}
+		}
+
 		public string DeviceList
 		{
 			get
@@ -220,6 +269,32 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				deviceList = value;
 				DictionaryUtil.Add(BodyParameters, "DeviceList", value);
+			}
+		}
+
+		public string NotifierUrl
+		{
+			get
+			{
+				return notifierUrl;
+			}
+			set	
+			{
+				notifierUrl = value;
+				DictionaryUtil.Add(BodyParameters, "NotifierUrl", value);
+			}
+		}
+
+		public string NotifierType
+		{
+			get
+			{
+				return notifierType;
+			}
+			set	
+			{
+				notifierType = value;
+				DictionaryUtil.Add(BodyParameters, "NotifierType", value);
 			}
 		}
 

@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string description;
 
+		private string iconPath;
+
 		private string appName;
 
 		private string corpName;
@@ -101,6 +103,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				description = value;
 				DictionaryUtil.Add(BodyParameters, "Description", value);
+			}
+		}
+
+		public string IconPath
+		{
+			get
+			{
+				return iconPath;
+			}
+			set	
+			{
+				iconPath = value;
+				DictionaryUtil.Add(BodyParameters, "IconPath", value);
 			}
 		}
 

@@ -28,10 +28,10 @@ using Aliyun.Acs.Vcs.Transform.V20200515;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-    public class UpdateCorpRequest : RpcAcsRequest<UpdateCorpResponse>
+    public class ListDeviceGroupsRequest : RpcAcsRequest<ListDeviceGroupsResponse>
     {
-        public UpdateCorpRequest()
-            : base("Vcs", "2020-05-15", "UpdateCorp", "vcs", "openAPI")
+        public ListDeviceGroupsRequest()
+            : base("Vcs", "2020-05-15", "ListDeviceGroups", "vcs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,108 +41,108 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			Method = MethodType.POST;
         }
 
-		private string isvSubId;
+		private int? isPage;
 
-		private string corpId;
+		private int? pageNum;
 
-		private string parentCorpId;
+		private string corpIdList;
 
-		private string description;
+		private string deviceCodeList;
 
-		private string iconPath;
+		private string name;
 
-		private string appName;
+		private int? pageSize;
 
-		private string corpName;
+		private string group;
 
-		public string IsvSubId
+		public int? IsPage
 		{
 			get
 			{
-				return isvSubId;
+				return isPage;
 			}
 			set	
 			{
-				isvSubId = value;
-				DictionaryUtil.Add(BodyParameters, "IsvSubId", value);
+				isPage = value;
+				DictionaryUtil.Add(BodyParameters, "IsPage", value.ToString());
 			}
 		}
 
-		public string CorpId
+		public int? PageNum
 		{
 			get
 			{
-				return corpId;
+				return pageNum;
 			}
 			set	
 			{
-				corpId = value;
-				DictionaryUtil.Add(BodyParameters, "CorpId", value);
+				pageNum = value;
+				DictionaryUtil.Add(BodyParameters, "PageNum", value.ToString());
 			}
 		}
 
-		public string ParentCorpId
+		public string CorpIdList
 		{
 			get
 			{
-				return parentCorpId;
+				return corpIdList;
 			}
 			set	
 			{
-				parentCorpId = value;
-				DictionaryUtil.Add(BodyParameters, "ParentCorpId", value);
+				corpIdList = value;
+				DictionaryUtil.Add(BodyParameters, "CorpIdList", value);
 			}
 		}
 
-		public string Description
+		public string DeviceCodeList
 		{
 			get
 			{
-				return description;
+				return deviceCodeList;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(BodyParameters, "Description", value);
+				deviceCodeList = value;
+				DictionaryUtil.Add(BodyParameters, "DeviceCodeList", value);
 			}
 		}
 
-		public string IconPath
+		public string Name
 		{
 			get
 			{
-				return iconPath;
+				return name;
 			}
 			set	
 			{
-				iconPath = value;
-				DictionaryUtil.Add(BodyParameters, "IconPath", value);
+				name = value;
+				DictionaryUtil.Add(BodyParameters, "Name", value);
 			}
 		}
 
-		public string AppName
+		public int? PageSize
 		{
 			get
 			{
-				return appName;
+				return pageSize;
 			}
 			set	
 			{
-				appName = value;
-				DictionaryUtil.Add(BodyParameters, "AppName", value);
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 
-		public string CorpName
+		public string Group
 		{
 			get
 			{
-				return corpName;
+				return group;
 			}
 			set	
 			{
-				corpName = value;
-				DictionaryUtil.Add(BodyParameters, "CorpName", value);
+				group = value;
+				DictionaryUtil.Add(BodyParameters, "Group", value);
 			}
 		}
 
@@ -151,9 +151,9 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			return false;
 		}
 
-        public override UpdateCorpResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListDeviceGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateCorpResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListDeviceGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
