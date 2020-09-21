@@ -86,6 +86,8 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 
 			private string translated;
 
+			private string wordCount;
+
 			public string Translated
 			{
 				get
@@ -95,6 +97,18 @@ namespace Aliyun.Acs.alimt.Model.V20181012
 				set	
 				{
 					translated = value;
+				}
+			}
+
+			public string WordCount
+			{
+				get
+				{
+					return wordCount;
+				}
+				set	
+				{
+					wordCount = value;
 				}
 			}
 		}

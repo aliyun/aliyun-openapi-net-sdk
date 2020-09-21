@@ -37,6 +37,7 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 
 			TranslateECommerceResponse.TranslateECommerce_Data data = new TranslateECommerceResponse.TranslateECommerce_Data();
 			data.Translated = context.StringValue("TranslateECommerce.Data.Translated");
+			data.WordCount = context.StringValue("TranslateECommerce.Data.WordCount");
 			translateECommerceResponse.Data = data;
         
 			return translateECommerceResponse;

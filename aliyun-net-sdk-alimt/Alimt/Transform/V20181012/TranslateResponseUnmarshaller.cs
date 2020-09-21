@@ -37,6 +37,7 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 
 			TranslateResponse.Translate_Data data = new TranslateResponse.Translate_Data();
 			data.Translated = context.StringValue("Translate.Data.Translated");
+			data.WordCount = context.StringValue("Translate.Data.WordCount");
 			translateResponse.Data = data;
         
 			return translateResponse;
