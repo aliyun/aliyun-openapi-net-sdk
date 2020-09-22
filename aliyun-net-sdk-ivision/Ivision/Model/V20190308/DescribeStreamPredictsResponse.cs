@@ -114,6 +114,8 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 			private string predictId;
 
+			private string predictTemplateId;
+
 			private string streamType;
 
 			private string streamId;
@@ -130,7 +132,13 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 
 			private string userData;
 
+			private string faceGroupId;
+
+			private string modelUserData;
+
 			private string creationTime;
+
+			private string autoStart;
 
 			private string status;
 
@@ -143,6 +151,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				set	
 				{
 					predictId = value;
+				}
+			}
+
+			public string PredictTemplateId
+			{
+				get
+				{
+					return predictTemplateId;
+				}
+				set	
+				{
+					predictTemplateId = value;
 				}
 			}
 
@@ -242,6 +262,30 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				}
 			}
 
+			public string FaceGroupId
+			{
+				get
+				{
+					return faceGroupId;
+				}
+				set	
+				{
+					faceGroupId = value;
+				}
+			}
+
+			public string ModelUserData
+			{
+				get
+				{
+					return modelUserData;
+				}
+				set	
+				{
+					modelUserData = value;
+				}
+			}
+
 			public string CreationTime
 			{
 				get
@@ -251,6 +295,18 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 				set	
 				{
 					creationTime = value;
+				}
+			}
+
+			public string AutoStart
+			{
+				get
+				{
+					return autoStart;
+				}
+				set	
+				{
+					autoStart = value;
 				}
 			}
 

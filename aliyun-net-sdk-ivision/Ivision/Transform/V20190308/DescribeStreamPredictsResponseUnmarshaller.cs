@@ -41,6 +41,7 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 			for (int i = 0; i < context.Length("DescribeStreamPredicts.StreamPredicts.Length"); i++) {
 				DescribeStreamPredictsResponse.DescribeStreamPredicts_StreamPredict streamPredict = new DescribeStreamPredictsResponse.DescribeStreamPredicts_StreamPredict();
 				streamPredict.PredictId = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].PredictId");
+				streamPredict.PredictTemplateId = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].PredictTemplateId");
 				streamPredict.StreamType = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].StreamType");
 				streamPredict.StreamId = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].StreamId");
 				streamPredict.ModelIds = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].ModelIds");
@@ -49,7 +50,10 @@ namespace Aliyun.Acs.ivision.Transform.V20190308
 				streamPredict.Output = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].Output");
 				streamPredict.Notify = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].Notify");
 				streamPredict.UserData = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].UserData");
+				streamPredict.FaceGroupId = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].FaceGroupId");
+				streamPredict.ModelUserData = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].ModelUserData");
 				streamPredict.CreationTime = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].CreationTime");
+				streamPredict.AutoStart = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].AutoStart");
 				streamPredict.Status = context.StringValue("DescribeStreamPredicts.StreamPredicts["+ i +"].Status");
 
 				describeStreamPredictsResponse_streamPredicts.Add(streamPredict);

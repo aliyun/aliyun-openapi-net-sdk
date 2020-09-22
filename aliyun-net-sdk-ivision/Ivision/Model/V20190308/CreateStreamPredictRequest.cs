@@ -37,6 +37,7 @@ namespace Aliyun.Acs.ivision.Model.V20190308
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string clientToken;
@@ -52,6 +53,8 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 		private string faceGroupId;
 
 		private string streamId;
+
+		private string predictTemplateId;
 
 		private string detectIntervals;
 
@@ -151,6 +154,19 @@ namespace Aliyun.Acs.ivision.Model.V20190308
 			{
 				streamId = value;
 				DictionaryUtil.Add(QueryParameters, "StreamId", value);
+			}
+		}
+
+		public string PredictTemplateId
+		{
+			get
+			{
+				return predictTemplateId;
+			}
+			set	
+			{
+				predictTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "PredictTemplateId", value);
 			}
 		}
 
