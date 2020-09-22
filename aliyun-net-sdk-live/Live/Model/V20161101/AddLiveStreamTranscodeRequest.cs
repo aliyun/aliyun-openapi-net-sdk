@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.live;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class AddLiveStreamTranscodeRequest : RpcAcsRequest<AddLiveStreamTranscodeResponse>
     {
         public AddLiveStreamTranscodeRequest()
-            : base("live", "2016-11-01", "AddLiveStreamTranscode")
+            : base("live", "2016-11-01", "AddLiveStreamTranscode", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -43,13 +42,21 @@ namespace Aliyun.Acs.live.Model.V20161101
 
 		private string template;
 
-		private string securityToken;
+		private string lazy;
+
+		private string mix;
 
 		private string app;
+
+		private string watermark;
 
 		private long? ownerId;
 
 		private string domain;
+
+		private string waterPattern;
+
+		private string onlyAudio;
 
 		public string Template
 		{
@@ -64,16 +71,29 @@ namespace Aliyun.Acs.live.Model.V20161101
 			}
 		}
 
-		public string SecurityToken
+		public string Lazy
 		{
 			get
 			{
-				return securityToken;
+				return lazy;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				lazy = value;
+				DictionaryUtil.Add(QueryParameters, "Lazy", value);
+			}
+		}
+
+		public string Mix
+		{
+			get
+			{
+				return mix;
+			}
+			set	
+			{
+				mix = value;
+				DictionaryUtil.Add(QueryParameters, "Mix", value);
 			}
 		}
 
@@ -87,6 +107,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				app = value;
 				DictionaryUtil.Add(QueryParameters, "App", value);
+			}
+		}
+
+		public string Watermark
+		{
+			get
+			{
+				return watermark;
+			}
+			set	
+			{
+				watermark = value;
+				DictionaryUtil.Add(QueryParameters, "Watermark", value);
 			}
 		}
 
@@ -113,6 +146,32 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				domain = value;
 				DictionaryUtil.Add(QueryParameters, "Domain", value);
+			}
+		}
+
+		public string WaterPattern
+		{
+			get
+			{
+				return waterPattern;
+			}
+			set	
+			{
+				waterPattern = value;
+				DictionaryUtil.Add(QueryParameters, "WaterPattern", value);
+			}
+		}
+
+		public string OnlyAudio
+		{
+			get
+			{
+				return onlyAudio;
+			}
+			set	
+			{
+				onlyAudio = value;
+				DictionaryUtil.Add(QueryParameters, "OnlyAudio", value);
 			}
 		}
 

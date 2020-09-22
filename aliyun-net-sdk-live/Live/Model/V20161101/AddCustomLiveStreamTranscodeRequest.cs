@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.live;
 using Aliyun.Acs.live.Transform;
 using Aliyun.Acs.live.Transform.V20161101;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.live.Model.V20161101
     public class AddCustomLiveStreamTranscodeRequest : RpcAcsRequest<AddCustomLiveStreamTranscodeResponse>
     {
         public AddCustomLiveStreamTranscodeRequest()
-            : base("live", "2016-11-01", "AddCustomLiveStreamTranscode")
+            : base("live", "2016-11-01", "AddCustomLiveStreamTranscode", "live", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,6 +41,8 @@ namespace Aliyun.Acs.live.Model.V20161101
         }
 
 		private string template;
+
+		private string lazy;
 
 		private string gop;
 
@@ -83,6 +84,19 @@ namespace Aliyun.Acs.live.Model.V20161101
 			{
 				template = value;
 				DictionaryUtil.Add(QueryParameters, "Template", value);
+			}
+		}
+
+		public string Lazy
+		{
+			get
+			{
+				return lazy;
+			}
+			set	
+			{
+				lazy = value;
+				DictionaryUtil.Add(QueryParameters, "Lazy", value);
 			}
 		}
 
