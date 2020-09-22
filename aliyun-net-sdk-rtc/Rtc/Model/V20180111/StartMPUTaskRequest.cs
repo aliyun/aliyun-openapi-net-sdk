@@ -37,13 +37,20 @@ namespace Aliyun.Acs.rtc.Model.V20180111
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
+		private int? payloadType;
+
 		private List<UserPanes> userPaness = new List<UserPanes>(){ };
+
+		private int? rtpExtInfo;
 
 		private int? backgroundColor;
 
 		private int? cropMode;
+
+		private int? reportVad;
 
 		private string taskProfile;
 
@@ -53,15 +60,32 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private string streamURL;
 
+		private long? vadInterval;
+
 		private long? ownerId;
 
 		private List<string> subSpecUserss = new List<string>(){ };
 
 		private string appId;
 
+		private long? timeStampRef;
+
 		private int? mediaEncode;
 
 		private string channelId;
+
+		public int? PayloadType
+		{
+			get
+			{
+				return payloadType;
+			}
+			set	
+			{
+				payloadType = value;
+				DictionaryUtil.Add(QueryParameters, "PayloadType", value.ToString());
+			}
+		}
 
 		public List<UserPanes> UserPaness
 		{
@@ -79,6 +103,19 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 					DictionaryUtil.Add(QueryParameters,"UserPanes." + (i + 1) + ".UserId", userPaness[i].UserId);
 					DictionaryUtil.Add(QueryParameters,"UserPanes." + (i + 1) + ".SourceType", userPaness[i].SourceType);
 				}
+			}
+		}
+
+		public int? RtpExtInfo
+		{
+			get
+			{
+				return rtpExtInfo;
+			}
+			set	
+			{
+				rtpExtInfo = value;
+				DictionaryUtil.Add(QueryParameters, "RtpExtInfo", value.ToString());
 			}
 		}
 
@@ -105,6 +142,19 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				cropMode = value;
 				DictionaryUtil.Add(QueryParameters, "CropMode", value.ToString());
+			}
+		}
+
+		public int? ReportVad
+		{
+			get
+			{
+				return reportVad;
+			}
+			set	
+			{
+				reportVad = value;
+				DictionaryUtil.Add(QueryParameters, "ReportVad", value.ToString());
 			}
 		}
 
@@ -164,6 +214,19 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
+		public long? VadInterval
+		{
+			get
+			{
+				return vadInterval;
+			}
+			set	
+			{
+				vadInterval = value;
+				DictionaryUtil.Add(QueryParameters, "VadInterval", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -204,6 +267,19 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
+			}
+		}
+
+		public long? TimeStampRef
+		{
+			get
+			{
+				return timeStampRef;
+			}
+			set	
+			{
+				timeStampRef = value;
+				DictionaryUtil.Add(QueryParameters, "TimeStampRef", value.ToString());
 			}
 		}
 

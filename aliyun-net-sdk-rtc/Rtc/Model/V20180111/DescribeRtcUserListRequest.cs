@@ -37,13 +37,18 @@ namespace Aliyun.Acs.rtc.Model.V20180111
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string startTime;
 
+		private string subUser;
+
 		private string endTime;
 
 		private long? ownerId;
+
+		private string pubUser;
 
 		private string appId;
 
@@ -59,6 +64,19 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				startTime = value;
 				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+			}
+		}
+
+		public string SubUser
+		{
+			get
+			{
+				return subUser;
+			}
+			set	
+			{
+				subUser = value;
+				DictionaryUtil.Add(QueryParameters, "SubUser", value);
 			}
 		}
 
@@ -85,6 +103,19 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string PubUser
+		{
+			get
+			{
+				return pubUser;
+			}
+			set	
+			{
+				pubUser = value;
+				DictionaryUtil.Add(QueryParameters, "PubUser", value);
 			}
 		}
 
