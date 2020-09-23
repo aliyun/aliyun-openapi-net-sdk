@@ -174,6 +174,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private float? spotPriceLimit;
 
+			private int? spotDuration;
+
 			private string resourceGroupId;
 
 			private string keyPairName;
@@ -669,6 +671,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					spotPriceLimit = value;
+				}
+			}
+
+			public int? SpotDuration
+			{
+				get
+				{
+					return spotDuration;
+				}
+				set	
+				{
+					spotDuration = value;
 				}
 			}
 

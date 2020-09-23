@@ -77,6 +77,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				instance.GPUSpec = context.StringValue("DescribeInstances.Instances["+ i +"].GPUSpec");
 				instance.SpotStrategy = context.StringValue("DescribeInstances.Instances["+ i +"].SpotStrategy");
 				instance.SpotPriceLimit = context.FloatValue("DescribeInstances.Instances["+ i +"].SpotPriceLimit");
+				instance.SpotDuration = context.IntegerValue("DescribeInstances.Instances["+ i +"].SpotDuration");
 				instance.ResourceGroupId = context.StringValue("DescribeInstances.Instances["+ i +"].ResourceGroupId");
 				instance.KeyPairName = context.StringValue("DescribeInstances.Instances["+ i +"].KeyPairName");
 				instance.Recyclable = context.BooleanValue("DescribeInstances.Instances["+ i +"].Recyclable");
