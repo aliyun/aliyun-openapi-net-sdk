@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class UntagDcdnResourcesRequest : RpcAcsRequest<UntagDcdnResourcesResponse>
+    public class BatchSetDcdnDomainCertificateRequest : RpcAcsRequest<BatchSetDcdnDomainCertificateResponse>
     {
-        public UntagDcdnResourcesRequest()
-            : base("dcdn", "2018-01-15", "UntagDcdnResources")
+        public BatchSetDcdnDomainCertificateRequest()
+            : base("dcdn", "2018-01-15", "BatchSetDcdnDomainCertificate")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,43 +41,99 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			Method = MethodType.POST;
         }
 
-		private bool? all;
+		private string sSLProtocol;
 
-		private List<string> resourceIds = new List<string>(){ };
+		private string securityToken;
+
+		private string certType;
+
+		private string sSLPri;
+
+		private string certName;
+
+		private string domainName;
 
 		private long? ownerId;
 
-		private string resourceType;
+		private string sSLPub;
 
-		private List<string> tagKeys = new List<string>(){ };
+		private string region;
 
-		public bool? All
+		public string SSLProtocol
 		{
 			get
 			{
-				return all;
+				return sSLProtocol;
 			}
 			set	
 			{
-				all = value;
-				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
+				sSLProtocol = value;
+				DictionaryUtil.Add(QueryParameters, "SSLProtocol", value);
 			}
 		}
 
-		public List<string> ResourceIds
+		public string SecurityToken
 		{
 			get
 			{
-				return resourceIds;
+				return securityToken;
 			}
-
-			set
+			set	
 			{
-				resourceIds = value;
-				for (int i = 0; i < resourceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
-				}
+				securityToken = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+			}
+		}
+
+		public string CertType
+		{
+			get
+			{
+				return certType;
+			}
+			set	
+			{
+				certType = value;
+				DictionaryUtil.Add(QueryParameters, "CertType", value);
+			}
+		}
+
+		public string SSLPri
+		{
+			get
+			{
+				return sSLPri;
+			}
+			set	
+			{
+				sSLPri = value;
+				DictionaryUtil.Add(QueryParameters, "SSLPri", value);
+			}
+		}
+
+		public string CertName
+		{
+			get
+			{
+				return certName;
+			}
+			set	
+			{
+				certName = value;
+				DictionaryUtil.Add(QueryParameters, "CertName", value);
+			}
+		}
+
+		public string DomainName
+		{
+			get
+			{
+				return domainName;
+			}
+			set	
+			{
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -94,39 +150,35 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string ResourceType
+		public string SSLPub
 		{
 			get
 			{
-				return resourceType;
+				return sSLPub;
 			}
 			set	
 			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+				sSLPub = value;
+				DictionaryUtil.Add(QueryParameters, "SSLPub", value);
 			}
 		}
 
-		public List<string> TagKeys
+		public string Region
 		{
 			get
 			{
-				return tagKeys;
+				return region;
 			}
-
-			set
+			set	
 			{
-				tagKeys = value;
-				for (int i = 0; i < tagKeys.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
-				}
+				region = value;
+				DictionaryUtil.Add(QueryParameters, "Region", value);
 			}
 		}
 
-        public override UntagDcdnResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BatchSetDcdnDomainCertificateResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UntagDcdnResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BatchSetDcdnDomainCertificateResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
