@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class AddVodDomainRequest : RpcAcsRequest<AddVodDomainResponse>
+    public class CreateDNADBRequest : RpcAcsRequest<CreateDNADBResponse>
     {
-        public AddVodDomainRequest()
-            : base("vod", "2017-03-21", "AddVodDomain", "vod", "openAPI")
+        public CreateDNADBRequest()
+            : base("vod", "2017-03-21", "CreateDNADB", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,97 +40,84 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string sources;
+		private long? resourceOwnerId;
 
-		private string securityToken;
+		private string clientToken;
 
-		private string scope;
+		private string dBRegion;
 
-		private string topLevelDomain;
+		private string dBDescription;
 
-		private string ownerAccount;
-
-		private string domainName;
+		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string checkUrl;
+		private string dBName;
 
-		public string Sources
+		private string dBType;
+
+		public long? ResourceOwnerId
 		{
 			get
 			{
-				return sources;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
 			}
 		}
 
-		public string SecurityToken
+		public string ClientToken
 		{
 			get
 			{
-				return securityToken;
+				return clientToken;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-		public string Scope
+		public string DBRegion
 		{
 			get
 			{
-				return scope;
+				return dBRegion;
 			}
 			set	
 			{
-				scope = value;
-				DictionaryUtil.Add(QueryParameters, "Scope", value);
+				dBRegion = value;
+				DictionaryUtil.Add(QueryParameters, "DBRegion", value);
 			}
 		}
 
-		public string TopLevelDomain
+		public string DBDescription
 		{
 			get
 			{
-				return topLevelDomain;
+				return dBDescription;
 			}
 			set	
 			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+				dBDescription = value;
+				DictionaryUtil.Add(QueryParameters, "DBDescription", value);
 			}
 		}
 
-		public string OwnerAccount
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return ownerAccount;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -147,22 +134,40 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string CheckUrl
+		public string DBName
 		{
 			get
 			{
-				return checkUrl;
+				return dBName;
 			}
 			set	
 			{
-				checkUrl = value;
-				DictionaryUtil.Add(QueryParameters, "CheckUrl", value);
+				dBName = value;
+				DictionaryUtil.Add(QueryParameters, "DBName", value);
 			}
 		}
 
-        public override AddVodDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string DBType
+		{
+			get
+			{
+				return dBType;
+			}
+			set	
+			{
+				dBType = value;
+				DictionaryUtil.Add(QueryParameters, "DBType", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateDNADBResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddVodDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDNADBResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

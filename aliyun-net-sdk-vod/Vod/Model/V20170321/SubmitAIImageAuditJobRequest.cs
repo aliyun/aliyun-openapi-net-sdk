@@ -27,10 +27,10 @@ using Aliyun.Acs.vod.Transform.V20170321;
 
 namespace Aliyun.Acs.vod.Model.V20170321
 {
-    public class AddVodDomainRequest : RpcAcsRequest<AddVodDomainResponse>
+    public class SubmitAIImageAuditJobRequest : RpcAcsRequest<SubmitAIImageAuditJobResponse>
     {
-        public AddVodDomainRequest()
-            : base("vod", "2017-03-21", "AddVodDomain", "vod", "openAPI")
+        public SubmitAIImageAuditJobRequest()
+            : base("vod", "2017-03-21", "SubmitAIImageAuditJob", "vod", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,71 +40,43 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			Method = MethodType.POST;
         }
 
-		private string sources;
+		private string resourceOwnerId;
 
-		private string securityToken;
-
-		private string scope;
-
-		private string topLevelDomain;
+		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private string domainName;
+		private string ownerId;
 
-		private long? ownerId;
+		private string mediaId;
 
-		private string checkUrl;
+		private string templateId;
 
-		public string Sources
+		private string mediaAuditConfiguration;
+
+		public string ResourceOwnerId
 		{
 			get
 			{
-				return sources;
+				return resourceOwnerId;
 			}
 			set	
 			{
-				sources = value;
-				DictionaryUtil.Add(QueryParameters, "Sources", value);
+				resourceOwnerId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value);
 			}
 		}
 
-		public string SecurityToken
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return securityToken;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				securityToken = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string Scope
-		{
-			get
-			{
-				return scope;
-			}
-			set	
-			{
-				scope = value;
-				DictionaryUtil.Add(QueryParameters, "Scope", value);
-			}
-		}
-
-		public string TopLevelDomain
-		{
-			get
-			{
-				return topLevelDomain;
-			}
-			set	
-			{
-				topLevelDomain = value;
-				DictionaryUtil.Add(QueryParameters, "TopLevelDomain", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -121,20 +93,7 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			}
 		}
 
-		public string DomainName
-		{
-			get
-			{
-				return domainName;
-			}
-			set	
-			{
-				domainName = value;
-				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public long? OwnerId
+		public string OwnerId
 		{
 			get
 			{
@@ -143,26 +102,57 @@ namespace Aliyun.Acs.vod.Model.V20170321
 			set	
 			{
 				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value);
 			}
 		}
 
-		public string CheckUrl
+		public string MediaId
 		{
 			get
 			{
-				return checkUrl;
+				return mediaId;
 			}
 			set	
 			{
-				checkUrl = value;
-				DictionaryUtil.Add(QueryParameters, "CheckUrl", value);
+				mediaId = value;
+				DictionaryUtil.Add(QueryParameters, "MediaId", value);
 			}
 		}
 
-        public override AddVodDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string TemplateId
+		{
+			get
+			{
+				return templateId;
+			}
+			set	
+			{
+				templateId = value;
+				DictionaryUtil.Add(QueryParameters, "TemplateId", value);
+			}
+		}
+
+		public string MediaAuditConfiguration
+		{
+			get
+			{
+				return mediaAuditConfiguration;
+			}
+			set	
+			{
+				mediaAuditConfiguration = value;
+				DictionaryUtil.Add(QueryParameters, "MediaAuditConfiguration", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override SubmitAIImageAuditJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddVodDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SubmitAIImageAuditJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
