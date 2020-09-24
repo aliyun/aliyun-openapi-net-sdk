@@ -42,15 +42,7 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string productCode;
 
-		private string ossObjectName;
-
 		private string faceContrastPicture;
-
-		private string certName;
-
-		private string ip;
-
-		private string mobile;
 
 		private string deviceToken;
 
@@ -65,6 +57,16 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 		private string certType;
 
 		private string faceContrastPictureUrl;
+
+		private string model;
+
+		private string ossObjectName;
+
+		private string certName;
+
+		private string ip;
+
+		private string mobile;
 
 		private long? sceneId;
 
@@ -83,19 +85,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
-		public string OssObjectName
-		{
-			get
-			{
-				return ossObjectName;
-			}
-			set	
-			{
-				ossObjectName = value;
-				DictionaryUtil.Add(BodyParameters, "OssObjectName", value);
-			}
-		}
-
 		public string FaceContrastPicture
 		{
 			get
@@ -106,45 +95,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				faceContrastPicture = value;
 				DictionaryUtil.Add(BodyParameters, "FaceContrastPicture", value);
-			}
-		}
-
-		public string CertName
-		{
-			get
-			{
-				return certName;
-			}
-			set	
-			{
-				certName = value;
-				DictionaryUtil.Add(BodyParameters, "CertName", value);
-			}
-		}
-
-		public string Ip
-		{
-			get
-			{
-				return ip;
-			}
-			set	
-			{
-				ip = value;
-				DictionaryUtil.Add(BodyParameters, "Ip", value);
-			}
-		}
-
-		public string Mobile
-		{
-			get
-			{
-				return mobile;
-			}
-			set	
-			{
-				mobile = value;
-				DictionaryUtil.Add(BodyParameters, "Mobile", value);
 			}
 		}
 
@@ -236,6 +186,71 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				faceContrastPictureUrl = value;
 				DictionaryUtil.Add(BodyParameters, "FaceContrastPictureUrl", value);
+			}
+		}
+
+		public string Model
+		{
+			get
+			{
+				return model;
+			}
+			set	
+			{
+				model = value;
+				DictionaryUtil.Add(QueryParameters, "Model", value);
+			}
+		}
+
+		public string OssObjectName
+		{
+			get
+			{
+				return ossObjectName;
+			}
+			set	
+			{
+				ossObjectName = value;
+				DictionaryUtil.Add(BodyParameters, "OssObjectName", value);
+			}
+		}
+
+		public string CertName
+		{
+			get
+			{
+				return certName;
+			}
+			set	
+			{
+				certName = value;
+				DictionaryUtil.Add(BodyParameters, "CertName", value);
+			}
+		}
+
+		public string Ip
+		{
+			get
+			{
+				return ip;
+			}
+			set	
+			{
+				ip = value;
+				DictionaryUtil.Add(BodyParameters, "Ip", value);
+			}
+		}
+
+		public string Mobile
+		{
+			get
+			{
+				return mobile;
+			}
+			set	
+			{
+				mobile = value;
+				DictionaryUtil.Add(BodyParameters, "Mobile", value);
 			}
 		}
 

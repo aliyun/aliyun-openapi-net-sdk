@@ -1,3 +1,6 @@
+2020-09-24 Version: 2.0.18
+- ContrastFaceVerify API Add Model Parameter.
+
 2020-09-24 Version: 2.15.12
 - Add a new api named SubmitAIImageAuditJob to submit image ai detection job.
 - Add a new api named CreateDNADB to create a DNA analysis library.
