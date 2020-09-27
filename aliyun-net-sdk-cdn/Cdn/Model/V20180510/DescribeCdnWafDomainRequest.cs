@@ -28,10 +28,10 @@ using Aliyun.Acs.Cdn.Transform.V20180510;
 
 namespace Aliyun.Acs.Cdn.Model.V20180510
 {
-    public class UntagResourcesRequest : RpcAcsRequest<UntagResourcesResponse>
+    public class DescribeCdnWafDomainRequest : RpcAcsRequest<DescribeCdnWafDomainResponse>
     {
-        public UntagResourcesRequest()
-            : base("Cdn", "2018-05-10", "UntagResources")
+        public DescribeCdnWafDomainRequest()
+            : base("Cdn", "2018-05-10", "DescribeCdnWafDomain")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,43 +41,20 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			Method = MethodType.POST;
         }
 
-		private bool? all;
-
-		private List<string> resourceIds = new List<string>(){ };
+		private string domainName;
 
 		private long? ownerId;
 
-		private string resourceType;
-
-		private List<string> tagKeys = new List<string>(){ };
-
-		public bool? All
+		public string DomainName
 		{
 			get
 			{
-				return all;
+				return domainName;
 			}
 			set	
 			{
-				all = value;
-				DictionaryUtil.Add(QueryParameters, "All", value.ToString());
-			}
-		}
-
-		public List<string> ResourceIds
-		{
-			get
-			{
-				return resourceIds;
-			}
-
-			set
-			{
-				resourceIds = value;
-				for (int i = 0; i < resourceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"ResourceId." + (i + 1) , resourceIds[i]);
-				}
+				domainName = value;
+				DictionaryUtil.Add(QueryParameters, "DomainName", value);
 			}
 		}
 
@@ -94,39 +71,14 @@ namespace Aliyun.Acs.Cdn.Model.V20180510
 			}
 		}
 
-		public string ResourceType
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
-			}
+			return false;
 		}
 
-		public List<string> TagKeys
-		{
-			get
-			{
-				return tagKeys;
-			}
-
-			set
-			{
-				tagKeys = value;
-				for (int i = 0; i < tagKeys.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"TagKey." + (i + 1) , tagKeys[i]);
-				}
-			}
-		}
-
-        public override UntagResourcesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeCdnWafDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UntagResourcesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCdnWafDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
