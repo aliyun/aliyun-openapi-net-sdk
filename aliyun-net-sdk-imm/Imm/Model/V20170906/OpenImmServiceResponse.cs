@@ -19,60 +19,38 @@
 using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.imm.Transform;
-using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class ListProjectsRequest : RpcAcsRequest<ListProjectsResponse>
-    {
-        public ListProjectsRequest()
-            : base("imm", "2017-09-06", "ListProjects", "imm", "openAPI")
-        {
-			Method = MethodType.POST;
-        }
+	public class OpenImmServiceResponse : AcsResponse
+	{
 
-		private int? maxKeys;
+		private string requestId;
 
-		private string marker;
+		private string orderId;
 
-		public int? MaxKeys
+		public string RequestId
 		{
 			get
 			{
-				return maxKeys;
+				return requestId;
 			}
 			set	
 			{
-				maxKeys = value;
-				DictionaryUtil.Add(QueryParameters, "MaxKeys", value.ToString());
+				requestId = value;
 			}
 		}
 
-		public string Marker
+		public string OrderId
 		{
 			get
 			{
-				return marker;
+				return orderId;
 			}
 			set	
 			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
+				orderId = value;
 			}
 		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override ListProjectsResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return ListProjectsResponseUnmarshaller.Unmarshall(unmarshallerContext);
-        }
-    }
+	}
 }

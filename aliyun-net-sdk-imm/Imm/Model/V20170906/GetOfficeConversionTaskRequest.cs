@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.imm;
 using Aliyun.Acs.imm.Transform;
 using Aliyun.Acs.imm.Transform.V20170906;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class GetOfficeConversionTaskRequest : RpcAcsRequest<GetOfficeConversionTaskResponse>
     {
         public GetOfficeConversionTaskRequest()
-            : base("imm", "2017-09-06", "GetOfficeConversionTask")
+            : base("imm", "2017-09-06", "GetOfficeConversionTask", "imm", "openAPI")
         {
 			Method = MethodType.POST;
         }

@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.imm;
 using Aliyun.Acs.imm.Transform;
 using Aliyun.Acs.imm.Transform.V20170906;
 
@@ -31,7 +30,7 @@ namespace Aliyun.Acs.imm.Model.V20170906
     public class ListVideoTasksRequest : RpcAcsRequest<ListVideoTasksResponse>
     {
         public ListVideoTasksRequest()
-            : base("imm", "2017-09-06", "ListVideoTasks")
+            : base("imm", "2017-09-06", "ListVideoTasks", "imm", "openAPI")
         {
 			Method = MethodType.POST;
         }

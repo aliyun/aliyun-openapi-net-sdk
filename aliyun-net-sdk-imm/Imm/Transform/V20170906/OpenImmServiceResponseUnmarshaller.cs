@@ -16,48 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
-using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.imm.Transform;
-using Aliyun.Acs.imm.Transform.V20170906;
+using Aliyun.Acs.imm.Model.V20170906;
 
-namespace Aliyun.Acs.imm.Model.V20170906
+namespace Aliyun.Acs.imm.Transform.V20170906
 {
-    public class DeleteProjectRequest : RpcAcsRequest<DeleteProjectResponse>
+    public class OpenImmServiceResponseUnmarshaller
     {
-        public DeleteProjectRequest()
-            : base("imm", "2017-09-06", "DeleteProject", "imm", "openAPI")
+        public static OpenImmServiceResponse Unmarshall(UnmarshallerContext context)
         {
-			Method = MethodType.POST;
-        }
+			OpenImmServiceResponse openImmServiceResponse = new OpenImmServiceResponse();
 
-		private string project;
-
-		public string Project
-		{
-			get
-			{
-				return project;
-			}
-			set	
-			{
-				project = value;
-				DictionaryUtil.Add(QueryParameters, "Project", value);
-			}
-		}
-
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override DeleteProjectResponse GetResponse(UnmarshallerContext unmarshallerContext)
-        {
-            return DeleteProjectResponseUnmarshaller.Unmarshall(unmarshallerContext);
+			openImmServiceResponse.HttpResponse = context.HttpResponse;
+			openImmServiceResponse.RequestId = context.StringValue("OpenImmService.RequestId");
+			openImmServiceResponse.OrderId = context.StringValue("OpenImmService.OrderId");
+        
+			return openImmServiceResponse;
         }
     }
 }

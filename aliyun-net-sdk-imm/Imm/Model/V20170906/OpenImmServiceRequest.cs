@@ -27,41 +27,26 @@ using Aliyun.Acs.imm.Transform.V20170906;
 
 namespace Aliyun.Acs.imm.Model.V20170906
 {
-    public class ListProjectsRequest : RpcAcsRequest<ListProjectsResponse>
+    public class OpenImmServiceRequest : RpcAcsRequest<OpenImmServiceResponse>
     {
-        public ListProjectsRequest()
-            : base("imm", "2017-09-06", "ListProjects", "imm", "openAPI")
+        public OpenImmServiceRequest()
+            : base("imm", "2017-09-06", "OpenImmService", "imm", "openAPI")
         {
 			Method = MethodType.POST;
         }
 
-		private int? maxKeys;
+		private long? ownerId;
 
-		private string marker;
-
-		public int? MaxKeys
+		public long? OwnerId
 		{
 			get
 			{
-				return maxKeys;
+				return ownerId;
 			}
 			set	
 			{
-				maxKeys = value;
-				DictionaryUtil.Add(QueryParameters, "MaxKeys", value.ToString());
-			}
-		}
-
-		public string Marker
-		{
-			get
-			{
-				return marker;
-			}
-			set	
-			{
-				marker = value;
-				DictionaryUtil.Add(QueryParameters, "Marker", value);
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -70,9 +55,9 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			return false;
 		}
 
-        public override ListProjectsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override OpenImmServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListProjectsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return OpenImmServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

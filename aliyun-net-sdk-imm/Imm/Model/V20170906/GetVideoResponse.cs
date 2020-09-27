@@ -690,59 +690,59 @@ namespace Aliyun.Acs.imm.Model.V20170906
 		public class GetVideo_VideoTagsItem
 		{
 
-			private string videoTagName;
+			private string tagName;
 
-			private string videoTagEnName;
+			private string parentTagName;
 
-			private float? videoTagConfidence;
+			private float? tagConfidence;
 
-			private int? videoTagLevel;
+			private int? tagLevel;
 
-			public string VideoTagName
+			public string TagName
 			{
 				get
 				{
-					return videoTagName;
+					return tagName;
 				}
 				set	
 				{
-					videoTagName = value;
+					tagName = value;
 				}
 			}
 
-			public string VideoTagEnName
+			public string ParentTagName
 			{
 				get
 				{
-					return videoTagEnName;
+					return parentTagName;
 				}
 				set	
 				{
-					videoTagEnName = value;
+					parentTagName = value;
 				}
 			}
 
-			public float? VideoTagConfidence
+			public float? TagConfidence
 			{
 				get
 				{
-					return videoTagConfidence;
+					return tagConfidence;
 				}
 				set	
 				{
-					videoTagConfidence = value;
+					tagConfidence = value;
 				}
 			}
 
-			public int? VideoTagLevel
+			public int? TagLevel
 			{
 				get
 				{
-					return videoTagLevel;
+					return tagLevel;
 				}
 				set	
 				{
-					videoTagLevel = value;
+					tagLevel = value;
 				}
 			}
 		}

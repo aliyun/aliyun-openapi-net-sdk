@@ -1,3 +1,6 @@
+2020-09-27 Version: 1.19.0
+- Support Open Service API.
+
 2020-09-27 Version: 2.7.0
 - DescribeAvailableResource support list available resource for modify instance.
 

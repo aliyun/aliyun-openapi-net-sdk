@@ -29,6 +29,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 		private string dRMData;
 
+		private string deviceInfo;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 			set	
 			{
 				dRMData = value;
+			}
+		}
+
+		public string DeviceInfo
+		{
+			get
+			{
+				return deviceInfo;
+			}
+			set	
+			{
+				deviceInfo = value;
 			}
 		}
 	}

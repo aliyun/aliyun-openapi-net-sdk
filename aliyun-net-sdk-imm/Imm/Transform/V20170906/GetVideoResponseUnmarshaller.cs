@@ -87,10 +87,10 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			List<GetVideoResponse.GetVideo_VideoTagsItem> getVideoResponse_videoTags = new List<GetVideoResponse.GetVideo_VideoTagsItem>();
 			for (int i = 0; i < context.Length("GetVideo.VideoTags.Length"); i++) {
 				GetVideoResponse.GetVideo_VideoTagsItem videoTagsItem = new GetVideoResponse.GetVideo_VideoTagsItem();
-				videoTagsItem.VideoTagName = context.StringValue("GetVideo.VideoTags["+ i +"].VideoTagName");
-				videoTagsItem.VideoTagEnName = context.StringValue("GetVideo.VideoTags["+ i +"].VideoTagEnName");
-				videoTagsItem.VideoTagConfidence = context.FloatValue("GetVideo.VideoTags["+ i +"].VideoTagConfidence");
-				videoTagsItem.VideoTagLevel = context.IntegerValue("GetVideo.VideoTags["+ i +"].VideoTagLevel");
+				videoTagsItem.TagName = context.StringValue("GetVideo.VideoTags["+ i +"].TagName");
+				videoTagsItem.ParentTagName = context.StringValue("GetVideo.VideoTags["+ i +"].ParentTagName");
+				videoTagsItem.TagConfidence = context.FloatValue("GetVideo.VideoTags["+ i +"].TagConfidence");
+				videoTagsItem.TagLevel = context.IntegerValue("GetVideo.VideoTags["+ i +"].TagLevel");
 
 				getVideoResponse_videoTags.Add(videoTagsItem);
 			}

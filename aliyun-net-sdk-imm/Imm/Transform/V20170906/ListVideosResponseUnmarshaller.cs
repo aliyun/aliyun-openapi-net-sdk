@@ -68,9 +68,10 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 				List<ListVideosResponse.ListVideos_VideosItem.ListVideos_VideoTagsItem> videosItem_videoTags = new List<ListVideosResponse.ListVideos_VideosItem.ListVideos_VideoTagsItem>();
 				for (int j = 0; j < context.Length("ListVideos.Videos["+ i +"].VideoTags.Length"); j++) {
 					ListVideosResponse.ListVideos_VideosItem.ListVideos_VideoTagsItem videoTagsItem = new ListVideosResponse.ListVideos_VideosItem.ListVideos_VideoTagsItem();
-					videoTagsItem.VideoTagName = context.StringValue("ListVideos.Videos["+ i +"].VideoTags["+ j +"].VideoTagName");
-					videoTagsItem.VideoTagEnName = context.StringValue("ListVideos.Videos["+ i +"].VideoTags["+ j +"].VideoTagEnName");
-					videoTagsItem.VideoTagConfidence = context.FloatValue("ListVideos.Videos["+ i +"].VideoTags["+ j +"].VideoTagConfidence");
+					videoTagsItem.TagName = context.StringValue("ListVideos.Videos["+ i +"].VideoTags["+ j +"].TagName");
+					videoTagsItem.ParentTagName = context.StringValue("ListVideos.Videos["+ i +"].VideoTags["+ j +"].ParentTagName");
+					videoTagsItem.TagConfidence = context.FloatValue("ListVideos.Videos["+ i +"].VideoTags["+ j +"].TagConfidence");
+					videoTagsItem.TagLevel = context.IntegerValue("ListVideos.Videos["+ i +"].VideoTags["+ j +"].TagLevel");
 
 					videosItem_videoTags.Add(videoTagsItem);
 				}

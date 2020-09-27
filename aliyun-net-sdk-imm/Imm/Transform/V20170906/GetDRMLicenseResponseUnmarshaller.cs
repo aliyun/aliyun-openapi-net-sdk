@@ -33,6 +33,7 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			getDRMLicenseResponse.HttpResponse = context.HttpResponse;
 			getDRMLicenseResponse.RequestId = context.StringValue("GetDRMLicense.RequestId");
 			getDRMLicenseResponse.DRMData = context.StringValue("GetDRMLicense.DRMData");
+			getDRMLicenseResponse.DeviceInfo = context.StringValue("GetDRMLicense.DeviceInfo");
         
 			return getDRMLicenseResponse;
         }
