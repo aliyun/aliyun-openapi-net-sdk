@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-	public class GetUserResponse : AcsResponse
+	public class UpdateUserResponse : AcsResponse
 	{
 
 		private string errorMessage;
@@ -40,8 +40,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private string requestId;
 
 		private bool? success;
-
-		private GetUser_User user;
 
 		public string ErrorMessage
 		{
@@ -136,152 +134,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			set	
 			{
 				success = value;
-			}
-		}
-
-		public GetUser_User User
-		{
-			get
-			{
-				return user;
-			}
-			set	
-			{
-				user = value;
-			}
-		}
-
-		public class GetUser_User
-		{
-
-			private string stores;
-
-			private string userName;
-
-			private string userId;
-
-			private string userType;
-
-			private string ownerId;
-
-			private string bid;
-
-			private List<GetUser_DingTalkInfo> dingTalkInfos;
-
-			public string Stores
-			{
-				get
-				{
-					return stores;
-				}
-				set	
-				{
-					stores = value;
-				}
-			}
-
-			public string UserName
-			{
-				get
-				{
-					return userName;
-				}
-				set	
-				{
-					userName = value;
-				}
-			}
-
-			public string UserId
-			{
-				get
-				{
-					return userId;
-				}
-				set	
-				{
-					userId = value;
-				}
-			}
-
-			public string UserType
-			{
-				get
-				{
-					return userType;
-				}
-				set	
-				{
-					userType = value;
-				}
-			}
-
-			public string OwnerId
-			{
-				get
-				{
-					return ownerId;
-				}
-				set	
-				{
-					ownerId = value;
-				}
-			}
-
-			public string Bid
-			{
-				get
-				{
-					return bid;
-				}
-				set	
-				{
-					bid = value;
-				}
-			}
-
-			public List<GetUser_DingTalkInfo> DingTalkInfos
-			{
-				get
-				{
-					return dingTalkInfos;
-				}
-				set	
-				{
-					dingTalkInfos = value;
-				}
-			}
-
-			public class GetUser_DingTalkInfo
-			{
-
-				private string dingTalkCompanyId;
-
-				private string dingTalkUserId;
-
-				public string DingTalkCompanyId
-				{
-					get
-					{
-						return dingTalkCompanyId;
-					}
-					set	
-					{
-						dingTalkCompanyId = value;
-					}
-				}
-
-				public string DingTalkUserId
-				{
-					get
-					{
-						return dingTalkUserId;
-					}
-					set	
-					{
-						dingTalkUserId = value;
-					}
-				}
 			}
 		}
 	}

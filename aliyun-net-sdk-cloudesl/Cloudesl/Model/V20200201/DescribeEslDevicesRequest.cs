@@ -40,6 +40,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
+		private string extraParams;
+
 		private string type;
 
 		private string storeId;
@@ -55,6 +57,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private int? toBatteryLevel;
 
 		private int? fromBatteryLevel;
+
+		public string ExtraParams
+		{
+			get
+			{
+				return extraParams;
+			}
+			set	
+			{
+				extraParams = value;
+				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
+			}
+		}
 
 		public string Type
 		{

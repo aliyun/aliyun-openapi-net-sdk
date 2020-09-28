@@ -40,28 +40,30 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
-		private string column;
+		private string extraParams;
 
 		private string storeId;
 
 		private int? layer;
 
-		private string shelf;
-
 		private string eslBarCode;
 
 		private string itemBarCode;
 
-		public string Column
+		private string column;
+
+		private string shelf;
+
+		public string ExtraParams
 		{
 			get
 			{
-				return column;
+				return extraParams;
 			}
 			set	
 			{
-				column = value;
-				DictionaryUtil.Add(BodyParameters, "Column", value);
+				extraParams = value;
+				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
 			}
 		}
 
@@ -91,19 +93,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string Shelf
-		{
-			get
-			{
-				return shelf;
-			}
-			set	
-			{
-				shelf = value;
-				DictionaryUtil.Add(BodyParameters, "Shelf", value);
-			}
-		}
-
 		public string EslBarCode
 		{
 			get
@@ -127,6 +116,32 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				itemBarCode = value;
 				DictionaryUtil.Add(BodyParameters, "ItemBarCode", value);
+			}
+		}
+
+		public string Column
+		{
+			get
+			{
+				return column;
+			}
+			set	
+			{
+				column = value;
+				DictionaryUtil.Add(BodyParameters, "Column", value);
+			}
+		}
+
+		public string Shelf
+		{
+			get
+			{
+				return shelf;
+			}
+			set	
+			{
+				shelf = value;
+				DictionaryUtil.Add(BodyParameters, "Shelf", value);
 			}
 		}
 

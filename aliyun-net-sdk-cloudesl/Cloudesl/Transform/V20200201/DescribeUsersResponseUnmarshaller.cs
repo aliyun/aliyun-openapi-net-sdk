@@ -50,6 +50,18 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 				userInfo.UserName = context.StringValue("DescribeUsers.Users["+ i +"].UserName");
 				userInfo.UserId = context.StringValue("DescribeUsers.Users["+ i +"].UserId");
 				userInfo.UserType = context.StringValue("DescribeUsers.Users["+ i +"].UserType");
+				userInfo.OwnerId = context.StringValue("DescribeUsers.Users["+ i +"].OwnerId");
+				userInfo.Bid = context.StringValue("DescribeUsers.Users["+ i +"].Bid");
+
+				List<DescribeUsersResponse.DescribeUsers_UserInfo.DescribeUsers_DingTalkInfo> userInfo_dingTalkInfos = new List<DescribeUsersResponse.DescribeUsers_UserInfo.DescribeUsers_DingTalkInfo>();
+				for (int j = 0; j < context.Length("DescribeUsers.Users["+ i +"].DingTalkInfos.Length"); j++) {
+					DescribeUsersResponse.DescribeUsers_UserInfo.DescribeUsers_DingTalkInfo dingTalkInfo = new DescribeUsersResponse.DescribeUsers_UserInfo.DescribeUsers_DingTalkInfo();
+					dingTalkInfo.DingTalkCompanyId = context.StringValue("DescribeUsers.Users["+ i +"].DingTalkInfos["+ j +"].DingTalkCompanyId");
+					dingTalkInfo.DingTalkUserId = context.StringValue("DescribeUsers.Users["+ i +"].DingTalkInfos["+ j +"].DingTalkUserId");
+
+					userInfo_dingTalkInfos.Add(dingTalkInfo);
+				}
+				userInfo.DingTalkInfos = userInfo_dingTalkInfos;
 
 				describeUsersResponse_users.Add(userInfo);
 			}

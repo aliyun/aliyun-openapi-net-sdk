@@ -40,6 +40,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
+		private string extraParams;
+
 		private string storeId;
 
 		private string userId;
@@ -63,6 +65,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private string operationType;
 
 		private string logId;
+
+		public string ExtraParams
+		{
+			get
+			{
+				return extraParams;
+			}
+			set	
+			{
+				extraParams = value;
+				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
+			}
+		}
 
 		public string StoreId
 		{

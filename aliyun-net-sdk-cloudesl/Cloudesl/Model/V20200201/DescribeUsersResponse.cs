@@ -204,6 +204,12 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 			private string userType;
 
+			private string ownerId;
+
+			private string bid;
+
+			private List<DescribeUsers_DingTalkInfo> dingTalkInfos;
+
 			public string Stores
 			{
 				get
@@ -249,6 +255,74 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 				set	
 				{
 					userType = value;
+				}
+			}
+
+			public string OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
+				}
+			}
+
+			public string Bid
+			{
+				get
+				{
+					return bid;
+				}
+				set	
+				{
+					bid = value;
+				}
+			}
+
+			public List<DescribeUsers_DingTalkInfo> DingTalkInfos
+			{
+				get
+				{
+					return dingTalkInfos;
+				}
+				set	
+				{
+					dingTalkInfos = value;
+				}
+			}
+
+			public class DescribeUsers_DingTalkInfo
+			{
+
+				private string dingTalkCompanyId;
+
+				private string dingTalkUserId;
+
+				public string DingTalkCompanyId
+				{
+					get
+					{
+						return dingTalkCompanyId;
+					}
+					set	
+					{
+						dingTalkCompanyId = value;
+					}
+				}
+
+				public string DingTalkUserId
+				{
+					get
+					{
+						return dingTalkUserId;
+					}
+					set	
+					{
+						dingTalkUserId = value;
+					}
 				}
 			}
 		}

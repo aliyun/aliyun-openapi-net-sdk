@@ -42,6 +42,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string clientType;
 
+		private string extraParams;
+
 		public string ClientType
 		{
 			get
@@ -52,6 +54,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				clientType = value;
 				DictionaryUtil.Add(BodyParameters, "ClientType", value);
+			}
+		}
+
+		public string ExtraParams
+		{
+			get
+			{
+				return extraParams;
+			}
+			set	
+			{
+				extraParams = value;
+				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
 			}
 		}
 

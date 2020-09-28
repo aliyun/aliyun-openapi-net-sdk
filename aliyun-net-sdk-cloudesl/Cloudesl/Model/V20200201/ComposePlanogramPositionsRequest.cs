@@ -42,6 +42,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string actionType;
 
+		private string extraParams;
+
 		private string storeId;
 
 		private int? layer;
@@ -64,6 +66,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				actionType = value;
 				DictionaryUtil.Add(BodyParameters, "ActionType", value);
+			}
+		}
+
+		public string ExtraParams
+		{
+			get
+			{
+				return extraParams;
+			}
+			set	
+			{
+				extraParams = value;
+				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
 			}
 		}
 

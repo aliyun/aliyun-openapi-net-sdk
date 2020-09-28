@@ -40,6 +40,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
+		private string extraParams;
+
 		private string storeId;
 
 		private int? layer;
@@ -47,6 +49,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private string shelf;
 
 		private string eslBarCode;
+
+		public string ExtraParams
+		{
+			get
+			{
+				return extraParams;
+			}
+			set	
+			{
+				extraParams = value;
+				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
+			}
+		}
 
 		public string StoreId
 		{

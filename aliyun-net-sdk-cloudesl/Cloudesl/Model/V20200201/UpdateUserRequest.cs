@@ -27,10 +27,10 @@ using Aliyun.Acs.cloudesl.Transform.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-    public class AddPlanogramShelfRequest : RpcAcsRequest<AddPlanogramShelfResponse>
+    public class UpdateUserRequest : RpcAcsRequest<UpdateUserResponse>
     {
-        public AddPlanogramShelfRequest()
-            : base("cloudesl", "2020-02-01", "AddPlanogramShelf", "cloudesl", "openAPI")
+        public UpdateUserRequest()
+            : base("cloudesl", "2020-02-01", "UpdateUser", "cloudesl", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,17 +42,11 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string extraParams;
 
-		private string clientToken;
+		private string dingTalkUserId;
 
-		private string shelfType;
+		private string userId;
 
-		private string storeId;
-
-		private string zone;
-
-		private string shelf;
-
-		private string category;
+		private string dingTalkCompanyId;
 
 		public string ExtraParams
 		{
@@ -67,81 +61,42 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string ClientToken
+		public string DingTalkUserId
 		{
 			get
 			{
-				return clientToken;
+				return dingTalkUserId;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
+				dingTalkUserId = value;
+				DictionaryUtil.Add(BodyParameters, "DingTalkUserId", value);
 			}
 		}
 
-		public string ShelfType
+		public string UserId
 		{
 			get
 			{
-				return shelfType;
+				return userId;
 			}
 			set	
 			{
-				shelfType = value;
-				DictionaryUtil.Add(BodyParameters, "ShelfType", value);
+				userId = value;
+				DictionaryUtil.Add(BodyParameters, "UserId", value);
 			}
 		}
 
-		public string StoreId
+		public string DingTalkCompanyId
 		{
 			get
 			{
-				return storeId;
+				return dingTalkCompanyId;
 			}
 			set	
 			{
-				storeId = value;
-				DictionaryUtil.Add(BodyParameters, "StoreId", value);
-			}
-		}
-
-		public string Zone
-		{
-			get
-			{
-				return zone;
-			}
-			set	
-			{
-				zone = value;
-				DictionaryUtil.Add(BodyParameters, "Zone", value);
-			}
-		}
-
-		public string Shelf
-		{
-			get
-			{
-				return shelf;
-			}
-			set	
-			{
-				shelf = value;
-				DictionaryUtil.Add(BodyParameters, "Shelf", value);
-			}
-		}
-
-		public string Category
-		{
-			get
-			{
-				return category;
-			}
-			set	
-			{
-				category = value;
-				DictionaryUtil.Add(BodyParameters, "Category", value);
+				dingTalkCompanyId = value;
+				DictionaryUtil.Add(BodyParameters, "DingTalkCompanyId", value);
 			}
 		}
 
@@ -150,9 +105,9 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			return false;
 		}
 
-        public override AddPlanogramShelfResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateUserResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return AddPlanogramShelfResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateUserResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

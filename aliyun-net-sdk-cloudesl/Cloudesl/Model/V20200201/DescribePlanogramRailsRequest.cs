@@ -40,17 +40,32 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
+		private string extraParams;
+
 		private string storeId;
 
 		private int? layer;
 
 		private int? pageNumber;
 
+		private int? pageSize;
+
 		private string shelf;
 
 		private string railCode;
 
-		private int? pageSize;
+		public string ExtraParams
+		{
+			get
+			{
+				return extraParams;
+			}
+			set	
+			{
+				extraParams = value;
+				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
+			}
+		}
 
 		public string StoreId
 		{
@@ -91,6 +106,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string Shelf
 		{
 			get
@@ -114,19 +142,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				railCode = value;
 				DictionaryUtil.Add(BodyParameters, "RailCode", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
 			}
 		}
 

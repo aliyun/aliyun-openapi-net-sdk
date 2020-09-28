@@ -40,9 +40,24 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
+		private string extraParams;
+
 		private string apMac;
 
 		private string storeId;
+
+		public string ExtraParams
+		{
+			get
+			{
+				return extraParams;
+			}
+			set	
+			{
+				extraParams = value;
+				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
+			}
+		}
 
 		public string ApMac
 		{

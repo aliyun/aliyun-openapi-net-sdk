@@ -45,6 +45,18 @@ namespace Aliyun.Acs.cloudesl.Transform.V20200201
 			user.UserName = context.StringValue("GetUser.User.UserName");
 			user.UserId = context.StringValue("GetUser.User.UserId");
 			user.UserType = context.StringValue("GetUser.User.UserType");
+			user.OwnerId = context.StringValue("GetUser.User.OwnerId");
+			user.Bid = context.StringValue("GetUser.User.Bid");
+
+			List<GetUserResponse.GetUser_User.GetUser_DingTalkInfo> user_dingTalkInfos = new List<GetUserResponse.GetUser_User.GetUser_DingTalkInfo>();
+			for (int i = 0; i < context.Length("GetUser.User.DingTalkInfos.Length"); i++) {
+				GetUserResponse.GetUser_User.GetUser_DingTalkInfo dingTalkInfo = new GetUserResponse.GetUser_User.GetUser_DingTalkInfo();
+				dingTalkInfo.DingTalkCompanyId = context.StringValue("GetUser.User.DingTalkInfos["+ i +"].DingTalkCompanyId");
+				dingTalkInfo.DingTalkUserId = context.StringValue("GetUser.User.DingTalkInfos["+ i +"].DingTalkUserId");
+
+				user_dingTalkInfos.Add(dingTalkInfo);
+			}
+			user.DingTalkInfos = user_dingTalkInfos;
 			getUserResponse.User = user;
         
 			return getUserResponse;

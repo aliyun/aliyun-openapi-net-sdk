@@ -40,7 +40,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
-		private string itemTitle;
+		private string extraParams;
 
 		private string storeId;
 
@@ -52,16 +52,18 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string itemBarCode;
 
-		public string ItemTitle
+		private string itemTitle;
+
+		public string ExtraParams
 		{
 			get
 			{
-				return itemTitle;
+				return extraParams;
 			}
 			set	
 			{
-				itemTitle = value;
-				DictionaryUtil.Add(BodyParameters, "ItemTitle", value);
+				extraParams = value;
+				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
 			}
 		}
 
@@ -127,6 +129,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				itemBarCode = value;
 				DictionaryUtil.Add(BodyParameters, "ItemBarCode", value);
+			}
+		}
+
+		public string ItemTitle
+		{
+			get
+			{
+				return itemTitle;
+			}
+			set	
+			{
+				itemTitle = value;
+				DictionaryUtil.Add(BodyParameters, "ItemTitle", value);
 			}
 		}
 

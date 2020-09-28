@@ -40,6 +40,8 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
+		private string extraParams;
+
 		private bool? enableNotification;
 
 		private string notificationWebHook;
@@ -47,6 +49,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 		private string storeId;
 
 		private string notificationSilentTimes;
+
+		public string ExtraParams
+		{
+			get
+			{
+				return extraParams;
+			}
+			set	
+			{
+				extraParams = value;
+				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
+			}
+		}
 
 		public bool? EnableNotification
 		{
