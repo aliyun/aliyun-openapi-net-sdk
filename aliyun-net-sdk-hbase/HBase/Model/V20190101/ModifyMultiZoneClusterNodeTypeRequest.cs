@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class ResizeNodeCountRequest : RpcAcsRequest<ResizeNodeCountResponse>
+    public class ModifyMultiZoneClusterNodeTypeRequest : RpcAcsRequest<ModifyMultiZoneClusterNodeTypeResponse>
     {
-        public ResizeNodeCountRequest()
-            : base("HBase", "2019-01-01", "ResizeNodeCount", "hbase", "openAPI")
+        public ModifyMultiZoneClusterNodeTypeRequest()
+            : base("HBase", "2019-01-01", "ModifyMultiZoneClusterNodeType", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,13 +40,26 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
+		private string logInstanceType;
+
 		private string clusterId;
 
-		private string vSwitchId;
+		private string masterInstanceType;
 
-		private int? nodeCount;
+		private string coreInstanceType;
 
-		private string zoneId;
+		public string LogInstanceType
+		{
+			get
+			{
+				return logInstanceType;
+			}
+			set	
+			{
+				logInstanceType = value;
+				DictionaryUtil.Add(QueryParameters, "LogInstanceType", value);
+			}
+		}
 
 		public string ClusterId
 		{
@@ -61,48 +74,35 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public string VSwitchId
+		public string MasterInstanceType
 		{
 			get
 			{
-				return vSwitchId;
+				return masterInstanceType;
 			}
 			set	
 			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+				masterInstanceType = value;
+				DictionaryUtil.Add(QueryParameters, "MasterInstanceType", value);
 			}
 		}
 
-		public int? NodeCount
+		public string CoreInstanceType
 		{
 			get
 			{
-				return nodeCount;
+				return coreInstanceType;
 			}
 			set	
 			{
-				nodeCount = value;
-				DictionaryUtil.Add(QueryParameters, "NodeCount", value.ToString());
+				coreInstanceType = value;
+				DictionaryUtil.Add(QueryParameters, "CoreInstanceType", value);
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-        public override ResizeNodeCountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ModifyMultiZoneClusterNodeTypeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ResizeNodeCountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyMultiZoneClusterNodeTypeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

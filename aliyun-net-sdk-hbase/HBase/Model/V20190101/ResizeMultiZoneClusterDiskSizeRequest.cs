@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class ResizeNodeCountRequest : RpcAcsRequest<ResizeNodeCountResponse>
+    public class ResizeMultiZoneClusterDiskSizeRequest : RpcAcsRequest<ResizeMultiZoneClusterDiskSizeResponse>
     {
-        public ResizeNodeCountRequest()
-            : base("HBase", "2019-01-01", "ResizeNodeCount", "hbase", "openAPI")
+        public ResizeMultiZoneClusterDiskSizeRequest()
+            : base("HBase", "2019-01-01", "ResizeMultiZoneClusterDiskSize", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,11 +42,9 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private string clusterId;
 
-		private string vSwitchId;
+		private int? logDiskSize;
 
-		private int? nodeCount;
-
-		private string zoneId;
+		private int? coreDiskSize;
 
 		public string ClusterId
 		{
@@ -61,48 +59,35 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public string VSwitchId
+		public int? LogDiskSize
 		{
 			get
 			{
-				return vSwitchId;
+				return logDiskSize;
 			}
 			set	
 			{
-				vSwitchId = value;
-				DictionaryUtil.Add(QueryParameters, "VSwitchId", value);
+				logDiskSize = value;
+				DictionaryUtil.Add(QueryParameters, "LogDiskSize", value.ToString());
 			}
 		}
 
-		public int? NodeCount
+		public int? CoreDiskSize
 		{
 			get
 			{
-				return nodeCount;
+				return coreDiskSize;
 			}
 			set	
 			{
-				nodeCount = value;
-				DictionaryUtil.Add(QueryParameters, "NodeCount", value.ToString());
+				coreDiskSize = value;
+				DictionaryUtil.Add(QueryParameters, "CoreDiskSize", value.ToString());
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-        public override ResizeNodeCountResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ResizeMultiZoneClusterDiskSizeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ResizeNodeCountResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ResizeMultiZoneClusterDiskSizeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
