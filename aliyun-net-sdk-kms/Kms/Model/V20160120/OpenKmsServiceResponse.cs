@@ -22,42 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class ListKeysResponse : AcsResponse
+	public class OpenKmsServiceResponse : AcsResponse
 	{
 
-		private int? pageNumber;
-
-		private int? pageSize;
-
 		private string requestId;
-
-		private int? totalCount;
-
-		private List<ListKeys_Key> keys;
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
 
 		public string RequestId
 		{
@@ -68,62 +36,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public int? TotalCount
-		{
-			get
-			{
-				return totalCount;
-			}
-			set	
-			{
-				totalCount = value;
-			}
-		}
-
-		public List<ListKeys_Key> Keys
-		{
-			get
-			{
-				return keys;
-			}
-			set	
-			{
-				keys = value;
-			}
-		}
-
-		public class ListKeys_Key
-		{
-
-			private string keyArn;
-
-			private string keyId;
-
-			public string KeyArn
-			{
-				get
-				{
-					return keyArn;
-				}
-				set	
-				{
-					keyArn = value;
-				}
-			}
-
-			public string KeyId
-			{
-				get
-				{
-					return keyId;
-				}
-				set	
-				{
-					keyId = value;
-				}
 			}
 		}
 	}

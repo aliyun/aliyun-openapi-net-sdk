@@ -22,40 +22,52 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class ListKeysResponse : AcsResponse
+	public class GenerateAndExportDataKeyResponse : AcsResponse
 	{
 
-		private int? pageNumber;
+		private string ciphertextBlob;
 
-		private int? pageSize;
+		private string keyId;
+
+		private string exportedDataKey;
 
 		private string requestId;
 
-		private int? totalCount;
+		private string keyVersionId;
 
-		private List<ListKeys_Key> keys;
-
-		public int? PageNumber
+		public string CiphertextBlob
 		{
 			get
 			{
-				return pageNumber;
+				return ciphertextBlob;
 			}
 			set	
 			{
-				pageNumber = value;
+				ciphertextBlob = value;
 			}
 		}
 
-		public int? PageSize
+		public string KeyId
 		{
 			get
 			{
-				return pageSize;
+				return keyId;
 			}
 			set	
 			{
-				pageSize = value;
+				keyId = value;
+			}
+		}
+
+		public string ExportedDataKey
+		{
+			get
+			{
+				return exportedDataKey;
+			}
+			set	
+			{
+				exportedDataKey = value;
 			}
 		}
 
@@ -71,59 +83,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public int? TotalCount
+		public string KeyVersionId
 		{
 			get
 			{
-				return totalCount;
+				return keyVersionId;
 			}
 			set	
 			{
-				totalCount = value;
-			}
-		}
-
-		public List<ListKeys_Key> Keys
-		{
-			get
-			{
-				return keys;
-			}
-			set	
-			{
-				keys = value;
-			}
-		}
-
-		public class ListKeys_Key
-		{
-
-			private string keyArn;
-
-			private string keyId;
-
-			public string KeyArn
-			{
-				get
-				{
-					return keyArn;
-				}
-				set	
-				{
-					keyArn = value;
-				}
-			}
-
-			public string KeyId
-			{
-				get
-				{
-					return keyId;
-				}
-				set	
-				{
-					keyId = value;
-				}
+				keyVersionId = value;
 			}
 		}
 	}

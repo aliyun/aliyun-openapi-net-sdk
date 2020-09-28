@@ -22,42 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-	public class ListKeysResponse : AcsResponse
+	public class ReEncryptResponse : AcsResponse
 	{
-
-		private int? pageNumber;
-
-		private int? pageSize;
 
 		private string requestId;
 
-		private int? totalCount;
+		private string keyId;
 
-		private List<ListKeys_Key> keys;
+		private string keyVersionId;
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
+		private string ciphertextBlob;
 
 		public string RequestId
 		{
@@ -71,59 +45,39 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			}
 		}
 
-		public int? TotalCount
+		public string KeyId
 		{
 			get
 			{
-				return totalCount;
+				return keyId;
 			}
 			set	
 			{
-				totalCount = value;
+				keyId = value;
 			}
 		}
 
-		public List<ListKeys_Key> Keys
+		public string KeyVersionId
 		{
 			get
 			{
-				return keys;
+				return keyVersionId;
 			}
 			set	
 			{
-				keys = value;
+				keyVersionId = value;
 			}
 		}
 
-		public class ListKeys_Key
+		public string CiphertextBlob
 		{
-
-			private string keyArn;
-
-			private string keyId;
-
-			public string KeyArn
+			get
 			{
-				get
-				{
-					return keyArn;
-				}
-				set	
-				{
-					keyArn = value;
-				}
+				return ciphertextBlob;
 			}
-
-			public string KeyId
+			set	
 			{
-				get
-				{
-					return keyId;
-				}
-				set	
-				{
-					keyId = value;
-				}
+				ciphertextBlob = value;
 			}
 		}
 	}

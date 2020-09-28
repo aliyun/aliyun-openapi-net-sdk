@@ -31,18 +31,18 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 			ListSecretsResponse listSecretsResponse = new ListSecretsResponse();
 
 			listSecretsResponse.HttpResponse = context.HttpResponse;
-			listSecretsResponse.RequestId = context.StringValue("ListSecrets.RequestId");
 			listSecretsResponse.PageNumber = context.IntegerValue("ListSecrets.PageNumber");
 			listSecretsResponse.PageSize = context.IntegerValue("ListSecrets.PageSize");
+			listSecretsResponse.RequestId = context.StringValue("ListSecrets.RequestId");
 			listSecretsResponse.TotalCount = context.IntegerValue("ListSecrets.TotalCount");
 
 			List<ListSecretsResponse.ListSecrets_Secret> listSecretsResponse_secretList = new List<ListSecretsResponse.ListSecrets_Secret>();
 			for (int i = 0; i < context.Length("ListSecrets.SecretList.Length"); i++) {
 				ListSecretsResponse.ListSecrets_Secret secret = new ListSecretsResponse.ListSecrets_Secret();
-				secret.SecretName = context.StringValue("ListSecrets.SecretList["+ i +"].SecretName");
 				secret.CreateTime = context.StringValue("ListSecrets.SecretList["+ i +"].CreateTime");
-				secret.UpdateTime = context.StringValue("ListSecrets.SecretList["+ i +"].UpdateTime");
 				secret.PlannedDeleteTime = context.StringValue("ListSecrets.SecretList["+ i +"].PlannedDeleteTime");
+				secret.SecretName = context.StringValue("ListSecrets.SecretList["+ i +"].SecretName");
+				secret.UpdateTime = context.StringValue("ListSecrets.SecretList["+ i +"].UpdateTime");
 
 				List<ListSecretsResponse.ListSecrets_Secret.ListSecrets_Tag> secret_tags = new List<ListSecretsResponse.ListSecrets_Secret.ListSecrets_Tag>();
 				for (int j = 0; j < context.Length("ListSecrets.SecretList["+ i +"].Tags.Length"); j++) {

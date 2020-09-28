@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class UpdateSecretVersionStageRequest : RpcAcsRequest<UpdateSecretVersionStageResponse>
+    public class OpenKmsServiceRequest : RpcAcsRequest<OpenKmsServiceResponse>
     {
-        public UpdateSecretVersionStageRequest()
-            : base("Kms", "2016-01-20", "UpdateSecretVersionStage", "kms", "openAPI")
+        public OpenKmsServiceRequest()
+            : base("Kms", "2016-01-20", "OpenKmsService", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,69 +41,9 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private string removeFromVersion;
-
-		private string moveToVersion;
-
-		private string versionStage;
-
-		private string secretName;
-
-		public string RemoveFromVersion
-		{
-			get
-			{
-				return removeFromVersion;
-			}
-			set	
-			{
-				removeFromVersion = value;
-				DictionaryUtil.Add(QueryParameters, "RemoveFromVersion", value);
-			}
-		}
-
-		public string MoveToVersion
-		{
-			get
-			{
-				return moveToVersion;
-			}
-			set	
-			{
-				moveToVersion = value;
-				DictionaryUtil.Add(QueryParameters, "MoveToVersion", value);
-			}
-		}
-
-		public string VersionStage
-		{
-			get
-			{
-				return versionStage;
-			}
-			set	
-			{
-				versionStage = value;
-				DictionaryUtil.Add(QueryParameters, "VersionStage", value);
-			}
-		}
-
-		public string SecretName
-		{
-			get
-			{
-				return secretName;
-			}
-			set	
-			{
-				secretName = value;
-				DictionaryUtil.Add(QueryParameters, "SecretName", value);
-			}
-		}
-
-        public override UpdateSecretVersionStageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override OpenKmsServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateSecretVersionStageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return OpenKmsServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

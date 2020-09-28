@@ -25,27 +25,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 	public class ListSecretsResponse : AcsResponse
 	{
 
-		private string requestId;
-
 		private int? pageNumber;
 
 		private int? pageSize;
 
+		private string requestId;
+
 		private int? totalCount;
 
 		private List<ListSecrets_Secret> secretList;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
 
 		public int? PageNumber
 		{
@@ -68,6 +56,18 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
 			}
 		}
 
@@ -98,27 +98,15 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 		public class ListSecrets_Secret
 		{
 
-			private string secretName;
-
 			private string createTime;
-
-			private string updateTime;
 
 			private string plannedDeleteTime;
 
-			private List<ListSecrets_Tag> tags;
+			private string secretName;
 
-			public string SecretName
-			{
-				get
-				{
-					return secretName;
-				}
-				set	
-				{
-					secretName = value;
-				}
-			}
+			private string updateTime;
+
+			private List<ListSecrets_Tag> tags;
 
 			public string CreateTime
 			{
@@ -132,18 +120,6 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				}
 			}
 
-			public string UpdateTime
-			{
-				get
-				{
-					return updateTime;
-				}
-				set	
-				{
-					updateTime = value;
-				}
-			}
-
 			public string PlannedDeleteTime
 			{
 				get
@@ -153,6 +129,30 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 				set	
 				{
 					plannedDeleteTime = value;
+				}
+			}
+
+			public string SecretName
+			{
+				get
+				{
+					return secretName;
+				}
+				set	
+				{
+					secretName = value;
+				}
+			}
+
+			public string UpdateTime
+			{
+				get
+				{
+					return updateTime;
+				}
+				set	
+				{
+					updateTime = value;
 				}
 			}
 

@@ -38,6 +38,7 @@ namespace Aliyun.Acs.Kms.Model.V20160120
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
 
 		private string secretName;

@@ -38,9 +38,12 @@ namespace Aliyun.Acs.Kms.Model.V20160120
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
+			Method = MethodType.POST;
         }
 
 		private int? pageSize;
+
+		private string filters;
 
 		private int? pageNumber;
 
@@ -54,6 +57,19 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Filters
+		{
+			get
+			{
+				return filters;
+			}
+			set	
+			{
+				filters = value;
+				DictionaryUtil.Add(QueryParameters, "Filters", value);
 			}
 		}
 

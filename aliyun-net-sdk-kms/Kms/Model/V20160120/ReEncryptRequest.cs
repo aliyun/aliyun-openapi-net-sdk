@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class CreateKeyRequest : RpcAcsRequest<CreateKeyResponse>
+    public class ReEncryptRequest : RpcAcsRequest<ReEncryptResponse>
     {
-        public CreateKeyRequest()
-            : base("Kms", "2016-01-20", "CreateKey", "kms", "openAPI")
+        public ReEncryptRequest()
+            : base("Kms", "2016-01-20", "ReEncrypt", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,114 +41,119 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private string protectionLevel;
+		private string destinationEncryptionContext;
 
-		private string keyUsage;
+		private string sourceEncryptionAlgorithm;
 
-		private string origin;
+		private string sourceKeyVersionId;
 
-		private string description;
+		private string destinationKeyId;
 
-		private string keySpec;
+		private string sourceKeyId;
 
-		private string rotationInterval;
+		private string sourceEncryptionContext;
 
-		private bool? enableAutomaticRotation;
+		private string ciphertextBlob;
 
-		public string ProtectionLevel
+		public string DestinationEncryptionContext
 		{
 			get
 			{
-				return protectionLevel;
+				return destinationEncryptionContext;
 			}
 			set	
 			{
-				protectionLevel = value;
-				DictionaryUtil.Add(QueryParameters, "ProtectionLevel", value);
+				destinationEncryptionContext = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationEncryptionContext", value);
 			}
 		}
 
-		public string KeyUsage
+		public string SourceEncryptionAlgorithm
 		{
 			get
 			{
-				return keyUsage;
+				return sourceEncryptionAlgorithm;
 			}
 			set	
 			{
-				keyUsage = value;
-				DictionaryUtil.Add(QueryParameters, "KeyUsage", value);
+				sourceEncryptionAlgorithm = value;
+				DictionaryUtil.Add(QueryParameters, "SourceEncryptionAlgorithm", value);
 			}
 		}
 
-		public string Origin
+		public string SourceKeyVersionId
 		{
 			get
 			{
-				return origin;
+				return sourceKeyVersionId;
 			}
 			set	
 			{
-				origin = value;
-				DictionaryUtil.Add(QueryParameters, "Origin", value);
+				sourceKeyVersionId = value;
+				DictionaryUtil.Add(QueryParameters, "SourceKeyVersionId", value);
 			}
 		}
 
-		public string Description
+		public string DestinationKeyId
 		{
 			get
 			{
-				return description;
+				return destinationKeyId;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				destinationKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "DestinationKeyId", value);
 			}
 		}
 
-		public string KeySpec
+		public string SourceKeyId
 		{
 			get
 			{
-				return keySpec;
+				return sourceKeyId;
 			}
 			set	
 			{
-				keySpec = value;
-				DictionaryUtil.Add(QueryParameters, "KeySpec", value);
+				sourceKeyId = value;
+				DictionaryUtil.Add(QueryParameters, "SourceKeyId", value);
 			}
 		}
 
-		public string RotationInterval
+		public string SourceEncryptionContext
 		{
 			get
 			{
-				return rotationInterval;
+				return sourceEncryptionContext;
 			}
 			set	
 			{
-				rotationInterval = value;
-				DictionaryUtil.Add(QueryParameters, "RotationInterval", value);
+				sourceEncryptionContext = value;
+				DictionaryUtil.Add(QueryParameters, "SourceEncryptionContext", value);
 			}
 		}
 
-		public bool? EnableAutomaticRotation
+		public string CiphertextBlob
 		{
 			get
 			{
-				return enableAutomaticRotation;
+				return ciphertextBlob;
 			}
 			set	
 			{
-				enableAutomaticRotation = value;
-				DictionaryUtil.Add(QueryParameters, "EnableAutomaticRotation", value.ToString());
+				ciphertextBlob = value;
+				DictionaryUtil.Add(QueryParameters, "CiphertextBlob", value);
 			}
 		}
 
-        public override CreateKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ReEncryptResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ReEncryptResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

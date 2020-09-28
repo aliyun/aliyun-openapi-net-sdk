@@ -27,10 +27,10 @@ using Aliyun.Acs.Kms.Transform.V20160120;
 
 namespace Aliyun.Acs.Kms.Model.V20160120
 {
-    public class UpdateSecretVersionStageRequest : RpcAcsRequest<UpdateSecretVersionStageResponse>
+    public class ExportDataKeyRequest : RpcAcsRequest<ExportDataKeyResponse>
     {
-        public UpdateSecretVersionStageRequest()
-            : base("Kms", "2016-01-20", "UpdateSecretVersionStage", "kms", "openAPI")
+        public ExportDataKeyRequest()
+            : base("Kms", "2016-01-20", "ExportDataKey", "kms", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,69 +41,89 @@ namespace Aliyun.Acs.Kms.Model.V20160120
 			Method = MethodType.POST;
         }
 
-		private string removeFromVersion;
+		private string encryptionContext;
 
-		private string moveToVersion;
+		private string wrappingAlgorithm;
 
-		private string versionStage;
+		private string ciphertextBlob;
 
-		private string secretName;
+		private string publicKeyBlob;
 
-		public string RemoveFromVersion
+		private string wrappingKeySpec;
+
+		public string EncryptionContext
 		{
 			get
 			{
-				return removeFromVersion;
+				return encryptionContext;
 			}
 			set	
 			{
-				removeFromVersion = value;
-				DictionaryUtil.Add(QueryParameters, "RemoveFromVersion", value);
+				encryptionContext = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionContext", value);
 			}
 		}
 
-		public string MoveToVersion
+		public string WrappingAlgorithm
 		{
 			get
 			{
-				return moveToVersion;
+				return wrappingAlgorithm;
 			}
 			set	
 			{
-				moveToVersion = value;
-				DictionaryUtil.Add(QueryParameters, "MoveToVersion", value);
+				wrappingAlgorithm = value;
+				DictionaryUtil.Add(QueryParameters, "WrappingAlgorithm", value);
 			}
 		}
 
-		public string VersionStage
+		public string CiphertextBlob
 		{
 			get
 			{
-				return versionStage;
+				return ciphertextBlob;
 			}
 			set	
 			{
-				versionStage = value;
-				DictionaryUtil.Add(QueryParameters, "VersionStage", value);
+				ciphertextBlob = value;
+				DictionaryUtil.Add(QueryParameters, "CiphertextBlob", value);
 			}
 		}
 
-		public string SecretName
+		public string PublicKeyBlob
 		{
 			get
 			{
-				return secretName;
+				return publicKeyBlob;
 			}
 			set	
 			{
-				secretName = value;
-				DictionaryUtil.Add(QueryParameters, "SecretName", value);
+				publicKeyBlob = value;
+				DictionaryUtil.Add(QueryParameters, "PublicKeyBlob", value);
 			}
 		}
 
-        public override UpdateSecretVersionStageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string WrappingKeySpec
+		{
+			get
+			{
+				return wrappingKeySpec;
+			}
+			set	
+			{
+				wrappingKeySpec = value;
+				DictionaryUtil.Add(QueryParameters, "WrappingKeySpec", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ExportDataKeyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return UpdateSecretVersionStageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ExportDataKeyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
