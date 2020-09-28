@@ -64,7 +64,6 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 			describeScdnServiceResponse.CurrentElasticProtectionValue = context.StringValue("DescribeScdnService.CurrentElasticProtectionValue");
 			describeScdnServiceResponse.PriceType = context.StringValue("DescribeScdnService.PriceType");
 			describeScdnServiceResponse.PricingCycle = context.StringValue("DescribeScdnService.PricingCycle");
-			describeScdnServiceResponse.ChangingChargeType1 = context.StringValue("DescribeScdnService.ChangingChargeType");
 
 			List<DescribeScdnServiceResponse.DescribeScdnService_LockReason> describeScdnServiceResponse_operationLocks = new List<DescribeScdnServiceResponse.DescribeScdnService_LockReason>();
 			for (int i = 0; i < context.Length("DescribeScdnService.OperationLocks.Length"); i++) {

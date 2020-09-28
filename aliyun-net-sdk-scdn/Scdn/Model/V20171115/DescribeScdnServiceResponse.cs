@@ -91,8 +91,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 
 		private string pricingCycle;
 
-		private string changingChargeType1;
-
 		private List<DescribeScdnService_LockReason> operationLocks;
 
 		public string RequestId
@@ -488,18 +486,6 @@ namespace Aliyun.Acs.scdn.Model.V20171115
 			set	
 			{
 				pricingCycle = value;
-			}
-		}
-
-		public string ChangingChargeType1
-		{
-			get
-			{
-				return changingChargeType1;
-			}
-			set	
-			{
-				changingChargeType1 = value;
 			}
 		}
 
