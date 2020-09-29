@@ -342,8 +342,10 @@ namespace Aliyun.Acs.Core
                     var userAgent = UserAgent.Resolve(request.GetSysUserAgentConfig(), userAgentConfig);
                     DictionaryUtil.Add(request.Headers, "User-Agent", userAgent);
                     DictionaryUtil.Add(request.Headers, "x-acs-version", request.Version);
-                    DictionaryUtil.Add(request.Headers, "x-acs-action", request.ActionName);
-
+                    if (!string.IsNullOrWhiteSpace(request.ActionName))
+                    {
+                        DictionaryUtil.Add(request.Headers, "x-acs-action", request.ActionName);
+                    }
                     var httpRequest = request.SignRequest(signer, credentials, format, domain);
                     ResolveTimeout(httpRequest, request.Product, request.Version, request.ActionName);
                     SetHttpsInsecure(IgnoreCertificate);
