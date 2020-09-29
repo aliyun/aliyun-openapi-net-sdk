@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Ons;
 using Aliyun.Acs.Ons.Transform;
 using Aliyun.Acs.Ons.Transform.V20190214;
 
@@ -30,7 +31,7 @@ namespace Aliyun.Acs.Ons.Model.V20190214
     public class OnsTrendGroupOutputTpsRequest : RpcAcsRequest<OnsTrendGroupOutputTpsResponse>
     {
         public OnsTrendGroupOutputTpsRequest()
-            : base("Ons", "2019-02-14", "OnsTrendGroupOutputTps", "ons", "openAPI")
+            : base("Ons", "2019-02-14", "OnsTrendGroupOutputTps")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

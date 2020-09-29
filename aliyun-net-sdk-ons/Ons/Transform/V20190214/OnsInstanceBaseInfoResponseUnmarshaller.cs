@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Ons.Transform.V20190214
 			instanceBaseInfo.InstanceName = context.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.InstanceName");
 			instanceBaseInfo.IndependentNaming = context.BooleanValue("OnsInstanceBaseInfo.InstanceBaseInfo.IndependentNaming");
 			instanceBaseInfo.Remark = context.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Remark");
+			instanceBaseInfo.TopicCapacity = context.IntegerValue("OnsInstanceBaseInfo.InstanceBaseInfo.TopicCapacity");
+			instanceBaseInfo.MaxTps = context.LongValue("OnsInstanceBaseInfo.InstanceBaseInfo.MaxTps");
 
 			OnsInstanceBaseInfoResponse.OnsInstanceBaseInfo_InstanceBaseInfo.OnsInstanceBaseInfo_Endpoints endpoints = new OnsInstanceBaseInfoResponse.OnsInstanceBaseInfo_InstanceBaseInfo.OnsInstanceBaseInfo_Endpoints();
 			endpoints.TcpEndpoint = context.StringValue("OnsInstanceBaseInfo.InstanceBaseInfo.Endpoints.TcpEndpoint");

@@ -84,6 +84,10 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 
 			private string remark;
 
+			private int? topicCapacity;
+
+			private long? maxTps;
+
 			private OnsInstanceBaseInfo_Endpoints endpoints;
 
 			public string InstanceId
@@ -167,6 +171,30 @@ namespace Aliyun.Acs.Ons.Model.V20190214
 				set	
 				{
 					remark = value;
+				}
+			}
+
+			public int? TopicCapacity
+			{
+				get
+				{
+					return topicCapacity;
+				}
+				set	
+				{
+					topicCapacity = value;
+				}
+			}
+
+			public long? MaxTps
+			{
+				get
+				{
+					return maxTps;
+				}
+				set	
+				{
+					maxTps = value;
 				}
 			}
 
