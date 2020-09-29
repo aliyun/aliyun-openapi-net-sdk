@@ -99,7 +99,7 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			set	
 			{
 				pluginParam = value;
-				DictionaryUtil.Add(QueryParameters, "PluginParam", JsonConvert.SerializeObject(value));
+				DictionaryUtil.Add(BodyParameters, "PluginParam", JsonConvert.SerializeObject(value));
 			}
 		}
 

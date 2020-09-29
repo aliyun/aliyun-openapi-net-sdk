@@ -41,6 +41,10 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			Method = MethodType.POST;
         }
 
+		private long? tid;
+
+		private int? pageNumber;
+
 		private string permType;
 
 		private string dbId;
@@ -49,11 +53,33 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private bool? logic;
 
-		private long? tid;
-
-		private int? pageNumber;
-
 		private string userName;
+
+		public long? Tid
+		{
+			get
+			{
+				return tid;
+			}
+			set	
+			{
+				tid = value;
+				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public string PermType
 		{
@@ -104,32 +130,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				logic = value;
 				DictionaryUtil.Add(QueryParameters, "Logic", value.ToString());
-			}
-		}
-
-		public long? Tid
-		{
-			get
-			{
-				return tid;
-			}
-			set	
-			{
-				tid = value;
-				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

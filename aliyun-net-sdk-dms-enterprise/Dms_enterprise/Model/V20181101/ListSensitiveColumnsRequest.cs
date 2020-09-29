@@ -43,17 +43,17 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string schemaName;
 
-		private string securityLevel;
-
-		private int? pageSize;
-
-		private string tableName;
-
 		private string columnName;
 
 		private long? tid;
 
 		private int? pageNumber;
+
+		private string securityLevel;
+
+		private int? pageSize;
+
+		private string tableName;
 
 		public string SchemaName
 		{
@@ -65,45 +65,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				schemaName = value;
 				DictionaryUtil.Add(QueryParameters, "SchemaName", value);
-			}
-		}
-
-		public string SecurityLevel
-		{
-			get
-			{
-				return securityLevel;
-			}
-			set	
-			{
-				securityLevel = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityLevel", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string TableName
-		{
-			get
-			{
-				return tableName;
-			}
-			set	
-			{
-				tableName = value;
-				DictionaryUtil.Add(QueryParameters, "TableName", value);
 			}
 		}
 
@@ -143,6 +104,45 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string SecurityLevel
+		{
+			get
+			{
+				return securityLevel;
+			}
+			set	
+			{
+				securityLevel = value;
+				DictionaryUtil.Add(QueryParameters, "SecurityLevel", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string TableName
+		{
+			get
+			{
+				return tableName;
+			}
+			set	
+			{
+				tableName = value;
+				DictionaryUtil.Add(QueryParameters, "TableName", value);
 			}
 		}
 

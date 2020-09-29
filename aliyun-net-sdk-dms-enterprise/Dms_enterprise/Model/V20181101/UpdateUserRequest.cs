@@ -43,8 +43,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string roleNames;
 
-		private long? uid;
-
 		private long? maxResultCount;
 
 		private long? maxExecuteCount;
@@ -54,6 +52,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 		private string mobile;
 
 		private long? tid;
+
+		private long? uid;
 
 		public string RoleNames
 		{
@@ -65,19 +65,6 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				roleNames = value;
 				DictionaryUtil.Add(QueryParameters, "RoleNames", value);
-			}
-		}
-
-		public long? Uid
-		{
-			get
-			{
-				return uid;
-			}
-			set	
-			{
-				uid = value;
-				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
 			}
 		}
 
@@ -143,6 +130,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				tid = value;
 				DictionaryUtil.Add(QueryParameters, "Tid", value.ToString());
+			}
+		}
+
+		public long? Uid
+		{
+			get
+			{
+				return uid;
+			}
+			set	
+			{
+				uid = value;
+				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
 			}
 		}
 
