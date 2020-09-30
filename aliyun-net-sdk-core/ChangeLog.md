@@ -1,3 +1,6 @@
+### 2020-09-30 Version 1.5.10
+* Do not Send x-acs-action when it is null or empty
+
 ### 2020-09-17 Version 1.5.9
 * Supported Header x-acs-version
 * Supported Header x-acs-action
