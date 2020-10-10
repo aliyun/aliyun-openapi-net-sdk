@@ -51,6 +51,11 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				recordsItem.ShotTime = context.StringValue("GetMonitorResult.Data.Records["+ i +"].ShotTime");
 				recordsItem.MonitorPicUrl = context.StringValue("GetMonitorResult.Data.Records["+ i +"].MonitorPicUrl");
 				recordsItem.TargetPicUrl = context.StringValue("GetMonitorResult.Data.Records["+ i +"].TargetPicUrl");
+				recordsItem.TaskId = context.StringValue("GetMonitorResult.Data.Records["+ i +"].TaskId");
+
+				GetMonitorResultResponse.GetMonitorResult_Data.GetMonitorResult_RecordsItem.GetMonitorResult_ExtendInfo extendInfo = new GetMonitorResultResponse.GetMonitorResult_Data.GetMonitorResult_RecordsItem.GetMonitorResult_ExtendInfo();
+				extendInfo.PlateNo = context.StringValue("GetMonitorResult.Data.Records["+ i +"].ExtendInfo.PlateNo");
+				recordsItem.ExtendInfo = extendInfo;
 
 				data_records.Add(recordsItem);
 			}

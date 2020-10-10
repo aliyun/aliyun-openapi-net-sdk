@@ -135,6 +135,14 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string installAddress;
 
+				private string deviceSn;
+
+				private string deviceStatus;
+
+				private string deviceStreamStatus;
+
+				private string deviceComputeStatus;
+
 				public string DeviceGroup
 				{
 					get
@@ -252,6 +260,54 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						installAddress = value;
+					}
+				}
+
+				public string DeviceSn
+				{
+					get
+					{
+						return deviceSn;
+					}
+					set	
+					{
+						deviceSn = value;
+					}
+				}
+
+				public string DeviceStatus
+				{
+					get
+					{
+						return deviceStatus;
+					}
+					set	
+					{
+						deviceStatus = value;
+					}
+				}
+
+				public string DeviceStreamStatus
+				{
+					get
+					{
+						return deviceStreamStatus;
+					}
+					set	
+					{
+						deviceStreamStatus = value;
+					}
+				}
+
+				public string DeviceComputeStatus
+				{
+					get
+					{
+						return deviceComputeStatus;
+					}
+					set	
+					{
+						deviceComputeStatus = value;
 					}
 				}
 			}

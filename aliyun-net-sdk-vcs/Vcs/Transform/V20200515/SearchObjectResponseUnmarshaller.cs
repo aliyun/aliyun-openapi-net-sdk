@@ -35,41 +35,33 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			searchObjectResponse.Message = context.StringValue("SearchObject.Message");
 			searchObjectResponse.RequestId = context.StringValue("SearchObject.RequestId");
 
-			List<SearchObjectResponse.SearchObject_DataItem> searchObjectResponse_data = new List<SearchObjectResponse.SearchObject_DataItem>();
-			for (int i = 0; i < context.Length("SearchObject.Data.Length"); i++) {
-				SearchObjectResponse.SearchObject_DataItem dataItem = new SearchObjectResponse.SearchObject_DataItem();
-				dataItem.PageNumber = context.IntegerValue("SearchObject.Data["+ i +"].PageNumber");
-				dataItem.PageSize = context.IntegerValue("SearchObject.Data["+ i +"].PageSize");
-				dataItem.TotalCount = context.IntegerValue("SearchObject.Data["+ i +"].TotalCount");
-				dataItem.TotalPage = context.IntegerValue("SearchObject.Data["+ i +"].TotalPage");
+			SearchObjectResponse.SearchObject_Data data = new SearchObjectResponse.SearchObject_Data();
+			data.PageNumber = context.IntegerValue("SearchObject.Data.PageNumber");
+			data.PageSize = context.IntegerValue("SearchObject.Data.PageSize");
+			data.TotalCount = context.IntegerValue("SearchObject.Data.TotalCount");
+			data.TotalPage = context.IntegerValue("SearchObject.Data.TotalPage");
 
-				List<SearchObjectResponse.SearchObject_DataItem.SearchObject_RecordsItem> dataItem_records = new List<SearchObjectResponse.SearchObject_DataItem.SearchObject_RecordsItem>();
-				for (int j = 0; j < context.Length("SearchObject.Data["+ i +"].Records.Length"); j++) {
-					SearchObjectResponse.SearchObject_DataItem.SearchObject_RecordsItem recordsItem = new SearchObjectResponse.SearchObject_DataItem.SearchObject_RecordsItem();
-					recordsItem.BodyShotTime = context.StringValue("SearchObject.Data["+ i +"].Records["+ j +"].BodyShotTime");
-					recordsItem.CompareResult = context.StringValue("SearchObject.Data["+ i +"].Records["+ j +"].CompareResult");
-					recordsItem.DeviceID = context.StringValue("SearchObject.Data["+ i +"].Records["+ j +"].DeviceID");
-					recordsItem.FaceShotTime = context.LongValue("SearchObject.Data["+ i +"].Records["+ j +"].FaceShotTime");
-					recordsItem.LeftTopX = context.IntegerValue("SearchObject.Data["+ i +"].Records["+ j +"].LeftTopX");
-					recordsItem.LeftTopY = context.IntegerValue("SearchObject.Data["+ i +"].Records["+ j +"].LeftTopY");
-					recordsItem.MotorShotTime = context.StringValue("SearchObject.Data["+ i +"].Records["+ j +"].MotorShotTime");
-					recordsItem.PassTime = context.StringValue("SearchObject.Data["+ i +"].Records["+ j +"].PassTime");
-					recordsItem.RightBtmX = context.IntegerValue("SearchObject.Data["+ i +"].Records["+ j +"].RightBtmX");
-					recordsItem.RightBtmY = context.IntegerValue("SearchObject.Data["+ i +"].Records["+ j +"].RightBtmY");
-					recordsItem.Score = context.FloatValue("SearchObject.Data["+ i +"].Records["+ j +"].Score");
-					recordsItem.SourceID = context.StringValue("SearchObject.Data["+ i +"].Records["+ j +"].SourceID");
-					recordsItem.SourceImagePath = context.StringValue("SearchObject.Data["+ i +"].Records["+ j +"].SourceImagePath");
-					recordsItem.SourceImageUrl = context.StringValue("SearchObject.Data["+ i +"].Records["+ j +"].SourceImageUrl");
-					recordsItem.TargetImagePath = context.StringValue("SearchObject.Data["+ i +"].Records["+ j +"].TargetImagePath");
-					recordsItem.TargetImageUrl = context.StringValue("SearchObject.Data["+ i +"].Records["+ j +"].TargetImageUrl");
+			List<SearchObjectResponse.SearchObject_Data.SearchObject_RecordsItem> data_records = new List<SearchObjectResponse.SearchObject_Data.SearchObject_RecordsItem>();
+			for (int i = 0; i < context.Length("SearchObject.Data.Records.Length"); i++) {
+				SearchObjectResponse.SearchObject_Data.SearchObject_RecordsItem recordsItem = new SearchObjectResponse.SearchObject_Data.SearchObject_RecordsItem();
+				recordsItem.CompareResult = context.StringValue("SearchObject.Data.Records["+ i +"].CompareResult");
+				recordsItem.DeviceID = context.StringValue("SearchObject.Data.Records["+ i +"].DeviceID");
+				recordsItem.ShotTime = context.LongValue("SearchObject.Data.Records["+ i +"].ShotTime");
+				recordsItem.LeftTopX = context.IntegerValue("SearchObject.Data.Records["+ i +"].LeftTopX");
+				recordsItem.LeftTopY = context.IntegerValue("SearchObject.Data.Records["+ i +"].LeftTopY");
+				recordsItem.RightBtmX = context.IntegerValue("SearchObject.Data.Records["+ i +"].RightBtmX");
+				recordsItem.RightBtmY = context.IntegerValue("SearchObject.Data.Records["+ i +"].RightBtmY");
+				recordsItem.Score = context.FloatValue("SearchObject.Data.Records["+ i +"].Score");
+				recordsItem.SourceID = context.StringValue("SearchObject.Data.Records["+ i +"].SourceID");
+				recordsItem.SourceImagePath = context.StringValue("SearchObject.Data.Records["+ i +"].SourceImagePath");
+				recordsItem.SourceImageUrl = context.StringValue("SearchObject.Data.Records["+ i +"].SourceImageUrl");
+				recordsItem.TargetImagePath = context.StringValue("SearchObject.Data.Records["+ i +"].TargetImagePath");
+				recordsItem.TargetImageUrl = context.StringValue("SearchObject.Data.Records["+ i +"].TargetImageUrl");
 
-					dataItem_records.Add(recordsItem);
-				}
-				dataItem.Records = dataItem_records;
-
-				searchObjectResponse_data.Add(dataItem);
+				data_records.Add(recordsItem);
 			}
-			searchObjectResponse.Data = searchObjectResponse_data;
+			data.Records = data_records;
+			searchObjectResponse.Data = data;
         
 			return searchObjectResponse;
         }

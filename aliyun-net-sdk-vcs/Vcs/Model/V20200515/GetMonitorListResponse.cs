@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Vcs.Model.V20200515
 {
-	public class SearchObjectResponse : AcsResponse
+	public class GetMonitorListResponse : AcsResponse
 	{
 
 		private string code;
@@ -31,7 +31,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string requestId;
 
-		private SearchObject_Data data;
+		private GetMonitorList_Data data;
 
 		public string Code
 		{
@@ -69,7 +69,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public SearchObject_Data Data
+		public GetMonitorList_Data Data
 		{
 			get
 			{
@@ -81,10 +81,10 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
-		public class SearchObject_Data
+		public class GetMonitorList_Data
 		{
 
-			private int? pageNumber;
+			private int? pageNo;
 
 			private int? pageSize;
 
@@ -92,17 +92,17 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 			private int? totalPage;
 
-			private List<SearchObject_RecordsItem> records;
+			private List<GetMonitorList_Record> records;
 
-			public int? PageNumber
+			public int? PageNo
 			{
 				get
 				{
-					return pageNumber;
+					return pageNo;
 				}
 				set	
 				{
-					pageNumber = value;
+					pageNo = value;
 				}
 			}
 
@@ -142,7 +142,7 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				}
 			}
 
-			public List<SearchObject_RecordsItem> Records
+			public List<GetMonitorList_Record> Records
 			{
 				get
 				{
@@ -154,188 +154,216 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				}
 			}
 
-			public class SearchObject_RecordsItem
+			public class GetMonitorList_Record
 			{
 
-				private string compareResult;
+				private string taskId;
 
-				private string deviceID;
+				private string status;
 
-				private long? shotTime;
+				private string monitorType;
 
-				private int? leftTopX;
+				private string ruleName;
 
-				private int? leftTopY;
+				private string algorithmVendor;
 
-				private int? rightBtmX;
+				private string createDate;
 
-				private int? rightBtmY;
+				private string modifiedDate;
 
-				private float? score;
+				private string deviceList;
 
-				private string sourceID;
+				private string attributes;
 
-				private string sourceImagePath;
+				private string ruleExpression;
 
-				private string sourceImageUrl;
+				private string notifierType;
 
-				private string targetImagePath;
+				private string notifierExtra;
 
-				private string targetImageUrl;
+				private string description;
 
-				public string CompareResult
+				private string expression;
+
+				private string imageMatch;
+
+				public string TaskId
 				{
 					get
 					{
-						return compareResult;
+						return taskId;
 					}
 					set	
 					{
-						compareResult = value;
+						taskId = value;
 					}
 				}
 
-				public string DeviceID
+				public string Status
 				{
 					get
 					{
-						return deviceID;
+						return status;
 					}
 					set	
 					{
-						deviceID = value;
+						status = value;
 					}
 				}
 
-				public long? ShotTime
+				public string MonitorType
 				{
 					get
 					{
-						return shotTime;
+						return monitorType;
 					}
 					set	
 					{
-						shotTime = value;
+						monitorType = value;
 					}
 				}
 
-				public int? LeftTopX
+				public string RuleName
 				{
 					get
 					{
-						return leftTopX;
+						return ruleName;
 					}
 					set	
 					{
-						leftTopX = value;
+						ruleName = value;
 					}
 				}
 
-				public int? LeftTopY
+				public string AlgorithmVendor
 				{
 					get
 					{
-						return leftTopY;
+						return algorithmVendor;
 					}
 					set	
 					{
-						leftTopY = value;
+						algorithmVendor = value;
 					}
 				}
 
-				public int? RightBtmX
+				public string CreateDate
 				{
 					get
 					{
-						return rightBtmX;
+						return createDate;
 					}
 					set	
 					{
-						rightBtmX = value;
+						createDate = value;
 					}
 				}
 
-				public int? RightBtmY
+				public string ModifiedDate
 				{
 					get
 					{
-						return rightBtmY;
+						return modifiedDate;
 					}
 					set	
 					{
-						rightBtmY = value;
+						modifiedDate = value;
 					}
 				}
 
-				public float? Score
+				public string DeviceList
 				{
 					get
 					{
-						return score;
+						return deviceList;
 					}
 					set	
 					{
-						score = value;
+						deviceList = value;
 					}
 				}
 
-				public string SourceID
+				public string Attributes
 				{
 					get
 					{
-						return sourceID;
+						return attributes;
 					}
 					set	
 					{
-						sourceID = value;
+						attributes = value;
 					}
 				}
 
-				public string SourceImagePath
+				public string RuleExpression
 				{
 					get
 					{
-						return sourceImagePath;
+						return ruleExpression;
 					}
 					set	
 					{
-						sourceImagePath = value;
+						ruleExpression = value;
 					}
 				}
 
-				public string SourceImageUrl
+				public string NotifierType
 				{
 					get
 					{
-						return sourceImageUrl;
+						return notifierType;
 					}
 					set	
 					{
-						sourceImageUrl = value;
+						notifierType = value;
 					}
 				}
 
-				public string TargetImagePath
+				public string NotifierExtra
 				{
 					get
 					{
-						return targetImagePath;
+						return notifierExtra;
 					}
 					set	
 					{
-						targetImagePath = value;
+						notifierExtra = value;
 					}
 				}
 
-				public string TargetImageUrl
+				public string Description
 				{
 					get
 					{
-						return targetImageUrl;
+						return description;
 					}
 					set	
 					{
-						targetImageUrl = value;
+						description = value;
+					}
+				}
+
+				public string Expression
+				{
+					get
+					{
+						return expression;
+					}
+					set	
+					{
+						expression = value;
+					}
+				}
+
+				public string ImageMatch
+				{
+					get
+					{
+						return imageMatch;
+					}
+					set	
+					{
+						imageMatch = value;
 					}
 				}
 			}

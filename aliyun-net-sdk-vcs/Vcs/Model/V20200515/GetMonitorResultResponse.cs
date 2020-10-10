@@ -135,6 +135,10 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 				private string targetPicUrl;
 
+				private string taskId;
+
+				private GetMonitorResult_ExtendInfo extendInfo;
+
 				public string RightBottomY
 				{
 					get
@@ -252,6 +256,48 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 					set	
 					{
 						targetPicUrl = value;
+					}
+				}
+
+				public string TaskId
+				{
+					get
+					{
+						return taskId;
+					}
+					set	
+					{
+						taskId = value;
+					}
+				}
+
+				public GetMonitorResult_ExtendInfo ExtendInfo
+				{
+					get
+					{
+						return extendInfo;
+					}
+					set	
+					{
+						extendInfo = value;
+					}
+				}
+
+				public class GetMonitorResult_ExtendInfo
+				{
+
+					private string plateNo;
+
+					public string PlateNo
+					{
+						get
+						{
+							return plateNo;
+						}
+						set	
+						{
+							plateNo = value;
+						}
 					}
 				}
 			}

@@ -53,6 +53,10 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 					listItem.RegionName = context.StringValue("ListDeviceGroups.Data["+ i +"].List["+ j +"].RegionName");
 					listItem.RegionId = context.StringValue("ListDeviceGroups.Data["+ i +"].List["+ j +"].RegionId");
 					listItem.InstallAddress = context.StringValue("ListDeviceGroups.Data["+ i +"].List["+ j +"].InstallAddress");
+					listItem.DeviceSn = context.StringValue("ListDeviceGroups.Data["+ i +"].List["+ j +"].DeviceSn");
+					listItem.DeviceStatus = context.StringValue("ListDeviceGroups.Data["+ i +"].List["+ j +"].DeviceStatus");
+					listItem.DeviceStreamStatus = context.StringValue("ListDeviceGroups.Data["+ i +"].List["+ j +"].DeviceStreamStatus");
+					listItem.DeviceComputeStatus = context.StringValue("ListDeviceGroups.Data["+ i +"].List["+ j +"].DeviceComputeStatus");
 
 					dataItem_list.Add(listItem);
 				}
