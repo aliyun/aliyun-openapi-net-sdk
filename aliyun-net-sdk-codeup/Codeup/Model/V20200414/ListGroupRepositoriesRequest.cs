@@ -28,22 +28,56 @@ using Aliyun.Acs.codeup.Transform.V20200414;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-    public class DeleteRepositoryGroupRequest : RoaAcsRequest<DeleteRepositoryGroupResponse>
+    public class ListGroupRepositoriesRequest : RoaAcsRequest<ListGroupRepositoriesResponse>
     {
-        public DeleteRepositoryGroupRequest()
-            : base("codeup", "2020-04-14", "DeleteRepositoryGroup")
+        public ListGroupRepositoriesRequest()
+            : base("codeup", "2020-04-14", "ListGroupRepositories")
         {
-			UriPattern = "/api/v3/groups/[GroupId]/remove";
-			Method = MethodType.POST;
+			UriPattern = "/api/v3/groups/[Identity]/projects";
+			Method = MethodType.GET;
         }
+
+		private string accessToken;
+
+		private bool? isMember;
 
 		private string organizationId;
 
+		private string search;
+
 		private string subUserId;
 
-		private long? groupId;
+		private string identity;
 
-		private string accessToken;
+		private long? pageSize;
+
+		private long? page;
+
+		public string AccessToken
+		{
+			get
+			{
+				return accessToken;
+			}
+			set	
+			{
+				accessToken = value;
+				DictionaryUtil.Add(QueryParameters, "AccessToken", value);
+			}
+		}
+
+		public bool? IsMember
+		{
+			get
+			{
+				return isMember;
+			}
+			set	
+			{
+				isMember = value;
+				DictionaryUtil.Add(QueryParameters, "IsMember", value.ToString());
+			}
+		}
 
 		public string OrganizationId
 		{
@@ -55,6 +89,19 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			{
 				organizationId = value;
 				DictionaryUtil.Add(QueryParameters, "OrganizationId", value);
+			}
+		}
+
+		public string Search
+		{
+			get
+			{
+				return search;
+			}
+			set	
+			{
+				search = value;
+				DictionaryUtil.Add(QueryParameters, "Search", value);
 			}
 		}
 
@@ -71,29 +118,42 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public long? GroupId
+		public string Identity
 		{
 			get
 			{
-				return groupId;
+				return identity;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(PathParameters, "GroupId", value.ToString());
+				identity = value;
+				DictionaryUtil.Add(PathParameters, "Identity", value);
 			}
 		}
 
-		public string AccessToken
+		public long? PageSize
 		{
 			get
 			{
-				return accessToken;
+				return pageSize;
 			}
 			set	
 			{
-				accessToken = value;
-				DictionaryUtil.Add(QueryParameters, "AccessToken", value);
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public long? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "Page", value.ToString());
 			}
 		}
 
@@ -102,9 +162,9 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			return false;
 		}
 
-        public override DeleteRepositoryGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListGroupRepositoriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteRepositoryGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListGroupRepositoriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

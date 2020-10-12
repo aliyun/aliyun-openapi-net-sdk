@@ -28,22 +28,24 @@ using Aliyun.Acs.codeup.Transform.V20200414;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-    public class DeleteRepositoryGroupRequest : RoaAcsRequest<DeleteRepositoryGroupResponse>
+    public class DeleteBranchRequest : RoaAcsRequest<DeleteBranchResponse>
     {
-        public DeleteRepositoryGroupRequest()
-            : base("codeup", "2020-04-14", "DeleteRepositoryGroup")
+        public DeleteBranchRequest()
+            : base("codeup", "2020-04-14", "DeleteBranch")
         {
-			UriPattern = "/api/v3/groups/[GroupId]/remove";
-			Method = MethodType.POST;
+			UriPattern = "/api/v3/projects/[ProjectId]/repository/branches/[BranchName]";
+			Method = MethodType.DELETE;
         }
 
 		private string organizationId;
 
 		private string subUserId;
 
-		private long? groupId;
-
 		private string accessToken;
+
+		private long? projectId;
+
+		private string branchName;
 
 		public string OrganizationId
 		{
@@ -71,19 +73,6 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public long? GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(PathParameters, "GroupId", value.ToString());
-			}
-		}
-
 		public string AccessToken
 		{
 			get
@@ -97,14 +86,40 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(PathParameters, "ProjectId", value.ToString());
+			}
+		}
+
+		public string BranchName
+		{
+			get
+			{
+				return branchName;
+			}
+			set	
+			{
+				branchName = value;
+				DictionaryUtil.Add(PathParameters, "BranchName", value);
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DeleteRepositoryGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteBranchResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteRepositoryGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteBranchResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,12 +28,12 @@ using Aliyun.Acs.codeup.Transform.V20200414;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-    public class DeleteRepositoryGroupRequest : RoaAcsRequest<DeleteRepositoryGroupResponse>
+    public class CreateBranchRequest : RoaAcsRequest<CreateBranchResponse>
     {
-        public DeleteRepositoryGroupRequest()
-            : base("codeup", "2020-04-14", "DeleteRepositoryGroup")
+        public CreateBranchRequest()
+            : base("codeup", "2020-04-14", "CreateBranch")
         {
-			UriPattern = "/api/v3/groups/[GroupId]/remove";
+			UriPattern = "/api/v3/projects/[ProjectId]/repository/branches";
 			Method = MethodType.POST;
         }
 
@@ -41,9 +41,9 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 
 		private string subUserId;
 
-		private long? groupId;
-
 		private string accessToken;
+
+		private long? projectId;
 
 		public string OrganizationId
 		{
@@ -71,19 +71,6 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public long? GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(PathParameters, "GroupId", value.ToString());
-			}
-		}
-
 		public string AccessToken
 		{
 			get
@@ -97,14 +84,27 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(PathParameters, "ProjectId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DeleteRepositoryGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateBranchResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteRepositoryGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateBranchResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

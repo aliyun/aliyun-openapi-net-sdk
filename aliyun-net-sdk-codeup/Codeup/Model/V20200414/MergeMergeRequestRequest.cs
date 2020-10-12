@@ -28,22 +28,24 @@ using Aliyun.Acs.codeup.Transform.V20200414;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-    public class DeleteRepositoryGroupRequest : RoaAcsRequest<DeleteRepositoryGroupResponse>
+    public class MergeMergeRequestRequest : RoaAcsRequest<MergeMergeRequestResponse>
     {
-        public DeleteRepositoryGroupRequest()
-            : base("codeup", "2020-04-14", "DeleteRepositoryGroup")
+        public MergeMergeRequestRequest()
+            : base("codeup", "2020-04-14", "MergeMergeRequest")
         {
-			UriPattern = "/api/v3/groups/[GroupId]/remove";
-			Method = MethodType.POST;
+			UriPattern = "/api/v3/projects/[ProjectId]/merge_request/[MergeRequestId]/merge";
+			Method = MethodType.PUT;
         }
 
 		private string organizationId;
 
 		private string subUserId;
 
-		private long? groupId;
+		private long? mergeRequestId;
 
 		private string accessToken;
+
+		private long? projectId;
 
 		public string OrganizationId
 		{
@@ -71,16 +73,16 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public long? GroupId
+		public long? MergeRequestId
 		{
 			get
 			{
-				return groupId;
+				return mergeRequestId;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(PathParameters, "GroupId", value.ToString());
+				mergeRequestId = value;
+				DictionaryUtil.Add(PathParameters, "MergeRequestId", value.ToString());
 			}
 		}
 
@@ -97,14 +99,27 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(PathParameters, "ProjectId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DeleteRepositoryGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override MergeMergeRequestResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteRepositoryGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return MergeMergeRequestResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

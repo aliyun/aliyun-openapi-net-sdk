@@ -28,22 +28,28 @@ using Aliyun.Acs.codeup.Transform.V20200414;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-    public class DeleteRepositoryGroupRequest : RoaAcsRequest<DeleteRepositoryGroupResponse>
+    public class ListGroupsRequest : RoaAcsRequest<ListGroupsResponse>
     {
-        public DeleteRepositoryGroupRequest()
-            : base("codeup", "2020-04-14", "DeleteRepositoryGroup")
+        public ListGroupsRequest()
+            : base("codeup", "2020-04-14", "ListGroups")
         {
-			UriPattern = "/api/v3/groups/[GroupId]/remove";
-			Method = MethodType.POST;
+			UriPattern = "/api/v3/groups/all";
+			Method = MethodType.GET;
         }
 
 		private string organizationId;
 
+		private bool? includePersonal;
+
+		private string search;
+
 		private string subUserId;
 
-		private long? groupId;
+		private long? pageSize;
 
 		private string accessToken;
+
+		private long? page;
 
 		public string OrganizationId
 		{
@@ -55,6 +61,32 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			{
 				organizationId = value;
 				DictionaryUtil.Add(QueryParameters, "OrganizationId", value);
+			}
+		}
+
+		public bool? IncludePersonal
+		{
+			get
+			{
+				return includePersonal;
+			}
+			set	
+			{
+				includePersonal = value;
+				DictionaryUtil.Add(QueryParameters, "IncludePersonal", value.ToString());
+			}
+		}
+
+		public string Search
+		{
+			get
+			{
+				return search;
+			}
+			set	
+			{
+				search = value;
+				DictionaryUtil.Add(QueryParameters, "Search", value);
 			}
 		}
 
@@ -71,16 +103,16 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public long? GroupId
+		public long? PageSize
 		{
 			get
 			{
-				return groupId;
+				return pageSize;
 			}
 			set	
 			{
-				groupId = value;
-				DictionaryUtil.Add(PathParameters, "GroupId", value.ToString());
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -97,14 +129,27 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
+		public long? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "Page", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DeleteRepositoryGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListGroupsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteRepositoryGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListGroupsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

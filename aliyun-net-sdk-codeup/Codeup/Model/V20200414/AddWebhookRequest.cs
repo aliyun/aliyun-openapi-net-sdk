@@ -28,22 +28,20 @@ using Aliyun.Acs.codeup.Transform.V20200414;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-    public class DeleteRepositoryGroupRequest : RoaAcsRequest<DeleteRepositoryGroupResponse>
+    public class AddWebhookRequest : RoaAcsRequest<AddWebhookResponse>
     {
-        public DeleteRepositoryGroupRequest()
-            : base("codeup", "2020-04-14", "DeleteRepositoryGroup")
+        public AddWebhookRequest()
+            : base("codeup", "2020-04-14", "AddWebhook")
         {
-			UriPattern = "/api/v3/groups/[GroupId]/remove";
+			UriPattern = "/api/v3/projects/[ProjectId]/hooks";
 			Method = MethodType.POST;
         }
 
 		private string organizationId;
 
-		private string subUserId;
-
-		private long? groupId;
-
 		private string accessToken;
+
+		private long? projectId;
 
 		public string OrganizationId
 		{
@@ -55,32 +53,6 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			{
 				organizationId = value;
 				DictionaryUtil.Add(QueryParameters, "OrganizationId", value);
-			}
-		}
-
-		public string SubUserId
-		{
-			get
-			{
-				return subUserId;
-			}
-			set	
-			{
-				subUserId = value;
-				DictionaryUtil.Add(QueryParameters, "SubUserId", value);
-			}
-		}
-
-		public long? GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(PathParameters, "GroupId", value.ToString());
 			}
 		}
 
@@ -97,14 +69,27 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
+		public long? ProjectId
+		{
+			get
+			{
+				return projectId;
+			}
+			set	
+			{
+				projectId = value;
+				DictionaryUtil.Add(PathParameters, "ProjectId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DeleteRepositoryGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AddWebhookResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteRepositoryGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddWebhookResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
