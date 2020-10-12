@@ -27,10 +27,10 @@ using Aliyun.Acs.cams.Transform.V20200606;
 
 namespace Aliyun.Acs.cams.Model.V20200606
 {
-    public class SendMessageRequest : RpcAcsRequest<SendMessageResponse>
+    public class CheckContactsRequest : RpcAcsRequest<CheckContactsResponse>
     {
-        public SendMessageRequest()
-            : base("cams", "2020-06-06", "SendMessage", "cams", "openAPI")
+        public CheckContactsRequest()
+            : base("cams", "2020-06-06", "CheckContacts", "cams", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,29 +42,15 @@ namespace Aliyun.Acs.cams.Model.V20200606
 
 		private long? resourceOwnerId;
 
-		private string messageType;
-
-		private string templateBodyParams;
-
-		private string link;
-
-		private string caption;
-
-		private string type;
-
 		private string channelType;
 
 		private string from;
-
-		private string text;
 
 		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private string to;
-
-		private string templateCode;
+		private string contacts;
 
 		public long? ResourceOwnerId
 		{
@@ -76,71 +62,6 @@ namespace Aliyun.Acs.cams.Model.V20200606
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string MessageType
-		{
-			get
-			{
-				return messageType;
-			}
-			set	
-			{
-				messageType = value;
-				DictionaryUtil.Add(BodyParameters, "MessageType", value);
-			}
-		}
-
-		public string TemplateBodyParams
-		{
-			get
-			{
-				return templateBodyParams;
-			}
-			set	
-			{
-				templateBodyParams = value;
-				DictionaryUtil.Add(BodyParameters, "TemplateBodyParams", value);
-			}
-		}
-
-		public string Link
-		{
-			get
-			{
-				return link;
-			}
-			set	
-			{
-				link = value;
-				DictionaryUtil.Add(BodyParameters, "Link", value);
-			}
-		}
-
-		public string Caption
-		{
-			get
-			{
-				return caption;
-			}
-			set	
-			{
-				caption = value;
-				DictionaryUtil.Add(BodyParameters, "Caption", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(BodyParameters, "Type", value);
 			}
 		}
 
@@ -170,19 +91,6 @@ namespace Aliyun.Acs.cams.Model.V20200606
 			}
 		}
 
-		public string Text
-		{
-			get
-			{
-				return text;
-			}
-			set	
-			{
-				text = value;
-				DictionaryUtil.Add(BodyParameters, "Text", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -209,29 +117,16 @@ namespace Aliyun.Acs.cams.Model.V20200606
 			}
 		}
 
-		public string To
+		public string Contacts
 		{
 			get
 			{
-				return to;
+				return contacts;
 			}
 			set	
 			{
-				to = value;
-				DictionaryUtil.Add(BodyParameters, "To", value);
-			}
-		}
-
-		public string TemplateCode
-		{
-			get
-			{
-				return templateCode;
-			}
-			set	
-			{
-				templateCode = value;
-				DictionaryUtil.Add(BodyParameters, "TemplateCode", value);
+				contacts = value;
+				DictionaryUtil.Add(BodyParameters, "Contacts", value);
 			}
 		}
 
@@ -240,9 +135,9 @@ namespace Aliyun.Acs.cams.Model.V20200606
 			return false;
 		}
 
-        public override SendMessageResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CheckContactsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SendMessageResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckContactsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
