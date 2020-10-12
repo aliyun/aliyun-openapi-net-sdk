@@ -42,6 +42,8 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 
 		private string approvalType;
 
+		private string comment;
+
 		private long? tid;
 
 		private long? workflowInstanceId;
@@ -56,6 +58,19 @@ namespace Aliyun.Acs.dms_enterprise.Model.V20181101
 			{
 				approvalType = value;
 				DictionaryUtil.Add(QueryParameters, "ApprovalType", value);
+			}
+		}
+
+		public string Comment
+		{
+			get
+			{
+				return comment;
+			}
+			set	
+			{
+				comment = value;
+				DictionaryUtil.Add(QueryParameters, "Comment", value);
 			}
 		}
 
