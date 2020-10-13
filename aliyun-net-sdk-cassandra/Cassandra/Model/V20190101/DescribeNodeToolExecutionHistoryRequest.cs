@@ -27,10 +27,10 @@ using Aliyun.Acs.Cassandra.Transform.V20190101;
 
 namespace Aliyun.Acs.Cassandra.Model.V20190101
 {
-    public class DescribeParameterModificationHistoriesRequest : RpcAcsRequest<DescribeParameterModificationHistoriesResponse>
+    public class DescribeNodeToolExecutionHistoryRequest : RpcAcsRequest<DescribeNodeToolExecutionHistoryResponse>
     {
-        public DescribeParameterModificationHistoriesRequest()
-            : base("Cassandra", "2019-01-01", "DescribeParameterModificationHistories", "Cassandra", "openAPI")
+        public DescribeNodeToolExecutionHistoryRequest()
+            : base("Cassandra", "2019-01-01", "DescribeNodeToolExecutionHistory", "Cassandra", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,9 +42,9 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 
 		private string clusterId;
 
-		private int? pageNumber;
+		private string jobId;
 
-		private int? pageSize;
+		private string dcId;
 
 		public string ClusterId
 		{
@@ -59,35 +59,35 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 			}
 		}
 
-		public int? PageNumber
+		public string JobId
 		{
 			get
 			{
-				return pageNumber;
+				return jobId;
 			}
 			set	
 			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value);
 			}
 		}
 
-		public int? PageSize
+		public string DcId
 		{
 			get
 			{
-				return pageSize;
+				return dcId;
 			}
 			set	
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				dcId = value;
+				DictionaryUtil.Add(QueryParameters, "DcId", value);
 			}
 		}
 
-        public override DescribeParameterModificationHistoriesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeNodeToolExecutionHistoryResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeParameterModificationHistoriesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeNodeToolExecutionHistoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
