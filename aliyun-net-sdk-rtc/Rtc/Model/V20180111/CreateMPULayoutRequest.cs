@@ -46,6 +46,8 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private string appId;
 
+		private string name;
+
 		private int? audioMixCount;
 
 		public List<Panes> Paness
@@ -94,6 +96,19 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				appId = value;
 				DictionaryUtil.Add(QueryParameters, "AppId", value);
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
 			}
 		}
 

@@ -35,6 +35,7 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 
 			DescribeMPULayoutInfoResponse.DescribeMPULayoutInfo_Layout layout = new DescribeMPULayoutInfoResponse.DescribeMPULayoutInfo_Layout();
 			layout.LayoutId = context.LongValue("DescribeMPULayoutInfo.Layout.LayoutId");
+			layout.Name = context.StringValue("DescribeMPULayoutInfo.Layout.Name");
 			layout.AudioMixCount = context.IntegerValue("DescribeMPULayoutInfo.Layout.AudioMixCount");
 
 			List<DescribeMPULayoutInfoResponse.DescribeMPULayoutInfo_Layout.DescribeMPULayoutInfo_PanesItem> layout_panes = new List<DescribeMPULayoutInfoResponse.DescribeMPULayoutInfo_Layout.DescribeMPULayoutInfo_PanesItem>();

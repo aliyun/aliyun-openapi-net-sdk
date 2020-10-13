@@ -58,6 +58,8 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 			private long? layoutId;
 
+			private string name;
+
 			private int? audioMixCount;
 
 			private List<DescribeMPULayoutInfo_PanesItem> panes;
@@ -71,6 +73,18 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 				set	
 				{
 					layoutId = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
