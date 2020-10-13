@@ -64,6 +64,7 @@ namespace Aliyun.Acs.reid.Transform.V20190928
 				action.SpecialType = context.StringValue("ListActionData.Actions["+ i +"].SpecialType");
 				action.ImageObjectKey = context.StringValue("ListActionData.Actions["+ i +"].ImageObjectKey");
 				action.FacePointNumber = context.IntegerValue("ListActionData.Actions["+ i +"].FacePointNumber");
+				action.BodyPointNumber = context.IntegerValue("ListActionData.Actions["+ i +"].BodyPointNumber");
 
 				ListActionDataResponse.ListActionData_Action.ListActionData_ObjectPositionInImage objectPositionInImage = new ListActionDataResponse.ListActionData_Action.ListActionData_ObjectPositionInImage();
 				objectPositionInImage.Bottom = context.FloatValue("ListActionData.Actions["+ i +"].ObjectPositionInImage.Bottom");

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.reid.Model.V20190928
     public class DescribeIpcLiveAddressRequest : RpcAcsRequest<DescribeIpcLiveAddressResponse>
     {
         public DescribeIpcLiveAddressRequest()
-            : base("reid", "2019-09-28", "DescribeIpcLiveAddress", "1.1.8.4", "openAPI")
+            : base("reid", "2019-09-28", "DescribeIpcLiveAddress", "1.1.8.5", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
