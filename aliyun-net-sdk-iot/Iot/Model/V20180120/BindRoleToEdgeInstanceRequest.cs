@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class BatchCheckDeviceNamesRequest : RpcAcsRequest<BatchCheckDeviceNamesResponse>
+    public class BindRoleToEdgeInstanceRequest : RpcAcsRequest<BindRoleToEdgeInstanceResponse>
     {
-        public BatchCheckDeviceNamesRequest()
-            : base("Iot", "2018-01-20", "BatchCheckDeviceNames", "iot", "openAPI")
+        public BindRoleToEdgeInstanceRequest()
+            : base("Iot", "2018-01-20", "BindRoleToEdgeInstance", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,31 +40,13 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private List<DeviceNameList> deviceNameLists = new List<DeviceNameList>(){ };
-
 		private string iotInstanceId;
 
-		private string productKey;
+		private string roleName;
 
-		private List<string> deviceNames = new List<string>(){ };
+		private string instanceId;
 
-		public List<DeviceNameList> DeviceNameLists
-		{
-			get
-			{
-				return deviceNameLists;
-			}
-
-			set
-			{
-				deviceNameLists = value;
-				for (int i = 0; i < deviceNameLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DeviceNameList." + (i + 1) + ".DeviceNickname", deviceNameLists[i].DeviceNickname);
-					DictionaryUtil.Add(QueryParameters,"DeviceNameList." + (i + 1) + ".DeviceName", deviceNameLists[i].DeviceName);
-				}
-			}
-		}
+		private string roleArn;
 
 		public string IotInstanceId
 		{
@@ -79,71 +61,48 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public string ProductKey
+		public string RoleName
 		{
 			get
 			{
-				return productKey;
+				return roleName;
 			}
 			set	
 			{
-				productKey = value;
-				DictionaryUtil.Add(QueryParameters, "ProductKey", value);
+				roleName = value;
+				DictionaryUtil.Add(QueryParameters, "RoleName", value);
 			}
 		}
 
-		public List<string> DeviceNames
+		public string InstanceId
 		{
 			get
 			{
-				return deviceNames;
+				return instanceId;
 			}
-
-			set
+			set	
 			{
-				deviceNames = value;
-				for (int i = 0; i < deviceNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DeviceName." + (i + 1) , deviceNames[i]);
-				}
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public class DeviceNameList
+		public string RoleArn
 		{
-
-			private string deviceNickname;
-
-			private string deviceName;
-
-			public string DeviceNickname
+			get
 			{
-				get
-				{
-					return deviceNickname;
-				}
-				set	
-				{
-					deviceNickname = value;
-				}
+				return roleArn;
 			}
-
-			public string DeviceName
+			set	
 			{
-				get
-				{
-					return deviceName;
-				}
-				set	
-				{
-					deviceName = value;
-				}
+				roleArn = value;
+				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
 			}
 		}
 
-        public override BatchCheckDeviceNamesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override BindRoleToEdgeInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchCheckDeviceNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return BindRoleToEdgeInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

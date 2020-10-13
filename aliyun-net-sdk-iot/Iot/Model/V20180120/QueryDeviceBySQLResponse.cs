@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class ListOTAJobByFirmwareResponse : AcsResponse
+	public class QueryDeviceBySQLResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,15 +33,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private int? total;
+		private long? totalCount;
 
-		private int? pageSize;
-
-		private int? pageCount;
-
-		private int? currentPage;
-
-		private List<ListOTAJobByFirmware_SimpleOTAJobInfo> data;
+		private List<QueryDeviceBySQL_SimpleDeviceSearchInfo> data;
 
 		public string RequestId
 		{
@@ -91,55 +85,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public int? Total
+		public long? TotalCount
 		{
 			get
 			{
-				return total;
+				return totalCount;
 			}
 			set	
 			{
-				total = value;
+				totalCount = value;
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public int? PageCount
-		{
-			get
-			{
-				return pageCount;
-			}
-			set	
-			{
-				pageCount = value;
-			}
-		}
-
-		public int? CurrentPage
-		{
-			get
-			{
-				return currentPage;
-			}
-			set	
-			{
-				currentPage = value;
-			}
-		}
-
-		public List<ListOTAJobByFirmware_SimpleOTAJobInfo> Data
+		public List<QueryDeviceBySQL_SimpleDeviceSearchInfo> Data
 		{
 			get
 			{
@@ -151,68 +109,28 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class ListOTAJobByFirmware_SimpleOTAJobInfo
+		public class QueryDeviceBySQL_SimpleDeviceSearchInfo
 		{
-
-			private string jobId;
-
-			private string utcCreate;
-
-			private string utcModified;
 
 			private string productKey;
 
-			private string firmwareId;
+			private string deviceName;
 
-			private string utcStartTime;
+			private string nickname;
 
-			private string utcEndTime;
+			private string status;
 
-			private string jobStatus;
+			private string activeTime;
 
-			private string jobType;
+			private string iotId;
 
-			private string targetSelection;
+			private string gmtCreate;
 
-			private string selectionType;
+			private string gmtModified;
 
-			private List<ListOTAJobByFirmware_OtaTagDTO> tags;
+			private List<QueryDeviceBySQL_SimpleDeviceGroupInfo> groups;
 
-			public string JobId
-			{
-				get
-				{
-					return jobId;
-				}
-				set	
-				{
-					jobId = value;
-				}
-			}
-
-			public string UtcCreate
-			{
-				get
-				{
-					return utcCreate;
-				}
-				set	
-				{
-					utcCreate = value;
-				}
-			}
-
-			public string UtcModified
-			{
-				get
-				{
-					return utcModified;
-				}
-				set	
-				{
-					utcModified = value;
-				}
-			}
+			private List<QueryDeviceBySQL_TagInfo> tags;
 
 			public string ProductKey
 			{
@@ -226,91 +144,103 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public string FirmwareId
+			public string DeviceName
 			{
 				get
 				{
-					return firmwareId;
+					return deviceName;
 				}
 				set	
 				{
-					firmwareId = value;
+					deviceName = value;
 				}
 			}
 
-			public string UtcStartTime
+			public string Nickname
 			{
 				get
 				{
-					return utcStartTime;
+					return nickname;
 				}
 				set	
 				{
-					utcStartTime = value;
+					nickname = value;
 				}
 			}
 
-			public string UtcEndTime
+			public string Status
 			{
 				get
 				{
-					return utcEndTime;
+					return status;
 				}
 				set	
 				{
-					utcEndTime = value;
+					status = value;
 				}
 			}
 
-			public string JobStatus
+			public string ActiveTime
 			{
 				get
 				{
-					return jobStatus;
+					return activeTime;
 				}
 				set	
 				{
-					jobStatus = value;
+					activeTime = value;
 				}
 			}
 
-			public string JobType
+			public string IotId
 			{
 				get
 				{
-					return jobType;
+					return iotId;
 				}
 				set	
 				{
-					jobType = value;
+					iotId = value;
 				}
 			}
 
-			public string TargetSelection
+			public string GmtCreate
 			{
 				get
 				{
-					return targetSelection;
+					return gmtCreate;
 				}
 				set	
 				{
-					targetSelection = value;
+					gmtCreate = value;
 				}
 			}
 
-			public string SelectionType
+			public string GmtModified
 			{
 				get
 				{
-					return selectionType;
+					return gmtModified;
 				}
 				set	
 				{
-					selectionType = value;
+					gmtModified = value;
 				}
 			}
 
-			public List<ListOTAJobByFirmware_OtaTagDTO> Tags
+			public List<QueryDeviceBySQL_SimpleDeviceGroupInfo> Groups
+			{
+				get
+				{
+					return groups;
+				}
+				set	
+				{
+					groups = value;
+				}
+			}
+
+			public List<QueryDeviceBySQL_TagInfo> Tags
 			{
 				get
 				{
@@ -322,34 +252,52 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
-			public class ListOTAJobByFirmware_OtaTagDTO
+			public class QueryDeviceBySQL_SimpleDeviceGroupInfo
 			{
 
-				private string key;
+				private string groupId;
 
-				private string _value;
-
-				public string Key
+				public string GroupId
 				{
 					get
 					{
-						return key;
+						return groupId;
 					}
 					set	
 					{
-						key = value;
+						groupId = value;
+					}
+				}
+			}
+
+			public class QueryDeviceBySQL_TagInfo
+			{
+
+				private string tagName;
+
+				private string tagValue;
+
+				public string TagName
+				{
+					get
+					{
+						return tagName;
+					}
+					set	
+					{
+						tagName = value;
 					}
 				}
 
-				public string _Value
+				public string TagValue
 				{
 					get
 					{
-						return _value;
+						return tagValue;
 					}
 					set	
 					{
-						_value = value;
+						tagValue = value;
 					}
 				}
 			}

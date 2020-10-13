@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class GenerateOTAUploadURLRequest : RpcAcsRequest<GenerateOTAUploadURLResponse>
+    public class GenerateDeviceNameListURLRequest : RpcAcsRequest<GenerateDeviceNameListURLResponse>
     {
-        public GenerateOTAUploadURLRequest()
-            : base("Iot", "2018-01-20", "GenerateOTAUploadURL", "iot", "openAPI")
+        public GenerateDeviceNameListURLRequest()
+            : base("Iot", "2018-01-20", "GenerateDeviceNameListURL", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string fileSuffix;
-
 		private string iotInstanceId;
-
-		public string FileSuffix
-		{
-			get
-			{
-				return fileSuffix;
-			}
-			set	
-			{
-				fileSuffix = value;
-				DictionaryUtil.Add(QueryParameters, "FileSuffix", value);
-			}
-		}
 
 		public string IotInstanceId
 		{
@@ -70,9 +55,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override GenerateOTAUploadURLResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GenerateDeviceNameListURLResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GenerateOTAUploadURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GenerateDeviceNameListURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

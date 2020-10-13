@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class GenerateOTAUploadURLRequest : RpcAcsRequest<GenerateOTAUploadURLResponse>
+    public class QueryDeviceBySQLRequest : RpcAcsRequest<QueryDeviceBySQLResponse>
     {
-        public GenerateOTAUploadURLRequest()
-            : base("Iot", "2018-01-20", "GenerateOTAUploadURL", "iot", "openAPI")
+        public QueryDeviceBySQLRequest()
+            : base("Iot", "2018-01-20", "QueryDeviceBySQL", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,20 +40,20 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string fileSuffix;
+		private string sQL;
 
 		private string iotInstanceId;
 
-		public string FileSuffix
+		public string SQL
 		{
 			get
 			{
-				return fileSuffix;
+				return sQL;
 			}
 			set	
 			{
-				fileSuffix = value;
-				DictionaryUtil.Add(QueryParameters, "FileSuffix", value);
+				sQL = value;
+				DictionaryUtil.Add(QueryParameters, "SQL", value);
 			}
 		}
 
@@ -70,9 +70,14 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override GenerateOTAUploadURLResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override QueryDeviceBySQLResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GenerateOTAUploadURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return QueryDeviceBySQLResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

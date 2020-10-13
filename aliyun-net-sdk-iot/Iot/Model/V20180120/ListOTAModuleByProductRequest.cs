@@ -27,42 +27,51 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class BatchCheckDeviceNamesRequest : RpcAcsRequest<BatchCheckDeviceNamesResponse>
+    public class ListOTAModuleByProductRequest : RpcAcsRequest<ListOTAModuleByProductResponse>
     {
-        public BatchCheckDeviceNamesRequest()
-            : base("Iot", "2018-01-20", "BatchCheckDeviceNames", "iot", "openAPI")
+        public ListOTAModuleByProductRequest()
+            : base("Iot", "2018-01-20", "ListOTAModuleByProduct", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			Method = MethodType.POST;
         }
 
-		private List<DeviceNameList> deviceNameLists = new List<DeviceNameList>(){ };
+		private string resourceGroupId;
+
+		private string iotId;
 
 		private string iotInstanceId;
 
 		private string productKey;
 
-		private List<string> deviceNames = new List<string>(){ };
+		private string deviceName;
 
-		public List<DeviceNameList> DeviceNameLists
+		public string ResourceGroupId
 		{
 			get
 			{
-				return deviceNameLists;
+				return resourceGroupId;
 			}
-
-			set
+			set	
 			{
-				deviceNameLists = value;
-				for (int i = 0; i < deviceNameLists.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DeviceNameList." + (i + 1) + ".DeviceNickname", deviceNameLists[i].DeviceNickname);
-					DictionaryUtil.Add(QueryParameters,"DeviceNameList." + (i + 1) + ".DeviceName", deviceNameLists[i].DeviceName);
-				}
+				resourceGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public string IotId
+		{
+			get
+			{
+				return iotId;
+			}
+			set	
+			{
+				iotId = value;
+				DictionaryUtil.Add(QueryParameters, "IotId", value);
 			}
 		}
 
@@ -92,58 +101,27 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public List<string> DeviceNames
+		public string DeviceName
 		{
 			get
 			{
-				return deviceNames;
+				return deviceName;
 			}
-
-			set
+			set	
 			{
-				deviceNames = value;
-				for (int i = 0; i < deviceNames.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"DeviceName." + (i + 1) , deviceNames[i]);
-				}
+				deviceName = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
 			}
 		}
 
-		public class DeviceNameList
+		public override bool CheckShowJsonItemName()
 		{
-
-			private string deviceNickname;
-
-			private string deviceName;
-
-			public string DeviceNickname
-			{
-				get
-				{
-					return deviceNickname;
-				}
-				set	
-				{
-					deviceNickname = value;
-				}
-			}
-
-			public string DeviceName
-			{
-				get
-				{
-					return deviceName;
-				}
-				set	
-				{
-					deviceName = value;
-				}
-			}
+			return false;
 		}
 
-        public override BatchCheckDeviceNamesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListOTAModuleByProductResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return BatchCheckDeviceNamesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListOTAModuleByProductResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

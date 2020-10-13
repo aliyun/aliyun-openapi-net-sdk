@@ -27,10 +27,10 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class GenerateOTAUploadURLRequest : RpcAcsRequest<GenerateOTAUploadURLResponse>
+    public class UnbindRoleFromEdgeInstanceRequest : RpcAcsRequest<UnbindRoleFromEdgeInstanceResponse>
     {
-        public GenerateOTAUploadURLRequest()
-            : base("Iot", "2018-01-20", "GenerateOTAUploadURL", "iot", "openAPI")
+        public UnbindRoleFromEdgeInstanceRequest()
+            : base("Iot", "2018-01-20", "UnbindRoleFromEdgeInstance", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,22 +40,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
-		private string fileSuffix;
-
 		private string iotInstanceId;
 
-		public string FileSuffix
-		{
-			get
-			{
-				return fileSuffix;
-			}
-			set	
-			{
-				fileSuffix = value;
-				DictionaryUtil.Add(QueryParameters, "FileSuffix", value);
-			}
-		}
+		private string instanceId;
 
 		public string IotInstanceId
 		{
@@ -70,9 +57,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-        public override GenerateOTAUploadURLResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+        public override UnbindRoleFromEdgeInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GenerateOTAUploadURLResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UnbindRoleFromEdgeInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

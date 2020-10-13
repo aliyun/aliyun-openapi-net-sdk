@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class BatchCheckDeviceNamesResponse : AcsResponse
+	public class GenerateDeviceNameListURLResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private BatchCheckDeviceNames_Data data;
+		private GenerateDeviceNameListURL_Data data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public BatchCheckDeviceNames_Data Data
+		public GenerateDeviceNameListURL_Data Data
 		{
 			get
 			{
@@ -95,48 +95,118 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class BatchCheckDeviceNames_Data
+		public class GenerateDeviceNameListURL_Data
 		{
 
-			private long? applyId;
+			private string key;
 
-			private List<string> invalidDeviceNameList;
+			private string host;
 
-			private List<string> invalidDeviceNicknameList;
+			private string policy;
 
-			public long? ApplyId
+			private string accessKeyId;
+
+			private string signature;
+
+			private string fileUrl;
+
+			private string utcCreate;
+
+			private string objectStorage;
+
+			public string Key
 			{
 				get
 				{
-					return applyId;
+					return key;
 				}
 				set	
 				{
-					applyId = value;
+					key = value;
 				}
 			}
 
-			public List<string> InvalidDeviceNameList
+			public string Host
 			{
 				get
 				{
-					return invalidDeviceNameList;
+					return host;
 				}
 				set	
 				{
-					invalidDeviceNameList = value;
+					host = value;
 				}
 			}
 
-			public List<string> InvalidDeviceNicknameList
+			public string Policy
 			{
 				get
 				{
-					return invalidDeviceNicknameList;
+					return policy;
 				}
 				set	
 				{
-					invalidDeviceNicknameList = value;
+					policy = value;
+				}
+			}
+
+			public string AccessKeyId
+			{
+				get
+				{
+					return accessKeyId;
+				}
+				set	
+				{
+					accessKeyId = value;
+				}
+			}
+
+			public string Signature
+			{
+				get
+				{
+					return signature;
+				}
+				set	
+				{
+					signature = value;
+				}
+			}
+
+			public string FileUrl
+			{
+				get
+				{
+					return fileUrl;
+				}
+				set	
+				{
+					fileUrl = value;
+				}
+			}
+
+			public string UtcCreate
+			{
+				get
+				{
+					return utcCreate;
+				}
+				set	
+				{
+					utcCreate = value;
+				}
+			}
+
+			public string ObjectStorage
+			{
+				get
+				{
+					return objectStorage;
+				}
+				set	
+				{
+					objectStorage = value;
 				}
 			}
 		}

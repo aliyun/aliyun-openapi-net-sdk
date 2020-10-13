@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class BatchCheckDeviceNamesResponse : AcsResponse
+	public class UpdateOTAModuleResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -32,8 +32,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private string code;
 
 		private string errorMessage;
-
-		private BatchCheckDeviceNames_Data data;
 
 		public string RequestId
 		{
@@ -80,64 +78,6 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				errorMessage = value;
-			}
-		}
-
-		public BatchCheckDeviceNames_Data Data
-		{
-			get
-			{
-				return data;
-			}
-			set	
-			{
-				data = value;
-			}
-		}
-
-		public class BatchCheckDeviceNames_Data
-		{
-
-			private long? applyId;
-
-			private List<string> invalidDeviceNameList;
-
-			private List<string> invalidDeviceNicknameList;
-
-			public long? ApplyId
-			{
-				get
-				{
-					return applyId;
-				}
-				set	
-				{
-					applyId = value;
-				}
-			}
-
-			public List<string> InvalidDeviceNameList
-			{
-				get
-				{
-					return invalidDeviceNameList;
-				}
-				set	
-				{
-					invalidDeviceNameList = value;
-				}
-			}
-
-			public List<string> InvalidDeviceNicknameList
-			{
-				get
-				{
-					return invalidDeviceNicknameList;
-				}
-				set	
-				{
-					invalidDeviceNicknameList = value;
-				}
 			}
 		}
 	}

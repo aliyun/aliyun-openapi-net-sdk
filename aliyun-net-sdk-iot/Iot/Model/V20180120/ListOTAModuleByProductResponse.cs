@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-	public class BatchCheckDeviceNamesResponse : AcsResponse
+	public class ListOTAModuleByProductResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string errorMessage;
 
-		private BatchCheckDeviceNames_Data data;
+		private List<ListOTAModuleByProduct_OtaModuleDTO> data;
 
 		public string RequestId
 		{
@@ -83,7 +83,7 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public BatchCheckDeviceNames_Data Data
+		public List<ListOTAModuleByProduct_OtaModuleDTO> Data
 		{
 			get
 			{
@@ -95,48 +95,90 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public class BatchCheckDeviceNames_Data
+		public class ListOTAModuleByProduct_OtaModuleDTO
 		{
 
-			private long? applyId;
+			private string productKey;
 
-			private List<string> invalidDeviceNameList;
+			private string moduleName;
 
-			private List<string> invalidDeviceNicknameList;
+			private string aliasName;
 
-			public long? ApplyId
+			private string desc;
+
+			private string gmtCreate;
+
+			private string gmtModified;
+
+			public string ProductKey
 			{
 				get
 				{
-					return applyId;
+					return productKey;
 				}
 				set	
 				{
-					applyId = value;
+					productKey = value;
 				}
 			}
 
-			public List<string> InvalidDeviceNameList
+			public string ModuleName
 			{
 				get
 				{
-					return invalidDeviceNameList;
+					return moduleName;
 				}
 				set	
 				{
-					invalidDeviceNameList = value;
+					moduleName = value;
 				}
 			}
 
-			public List<string> InvalidDeviceNicknameList
+			public string AliasName
 			{
 				get
 				{
-					return invalidDeviceNicknameList;
+					return aliasName;
 				}
 				set	
 				{
-					invalidDeviceNicknameList = value;
+					aliasName = value;
+				}
+			}
+
+			public string Desc
+			{
+				get
+				{
+					return desc;
+				}
+				set	
+				{
+					desc = value;
+				}
+			}
+
+			public string GmtCreate
+			{
+				get
+				{
+					return gmtCreate;
+				}
+				set	
+				{
+					gmtCreate = value;
+				}
+			}
+
+			public string GmtModified
+			{
+				get
+				{
+					return gmtModified;
+				}
+				set	
+				{
+					gmtModified = value;
 				}
 			}
 		}
