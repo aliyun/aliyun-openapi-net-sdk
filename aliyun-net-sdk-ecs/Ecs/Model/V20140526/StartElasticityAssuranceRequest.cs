@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeInstanceTypesRequest : RpcAcsRequest<DescribeInstanceTypesResponse>
+    public class StartElasticityAssuranceRequest : RpcAcsRequest<StartElasticityAssuranceResponse>
     {
-        public DescribeInstanceTypesRequest()
-            : base("Ecs", "2014-05-26", "DescribeInstanceTypes", "ecs", "openAPI")
+        public StartElasticityAssuranceRequest()
+            : base("Ecs", "2014-05-26", "StartElasticityAssurance", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +43,11 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private List<string> instanceTypess = new List<string>(){ };
+		private string privatePoolOptionsId;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string instanceTypeFamily;
 
 		private long? ownerId;
 
@@ -65,20 +64,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public List<string> InstanceTypess
+		public string PrivatePoolOptionsId
 		{
 			get
 			{
-				return instanceTypess;
+				return privatePoolOptionsId;
 			}
-
-			set
+			set	
 			{
-				instanceTypess = value;
-				for (int i = 0; i < instanceTypess.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceTypes." + (i + 1) , instanceTypess[i]);
-				}
+				privatePoolOptionsId = value;
+				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.Id", value);
 			}
 		}
 
@@ -108,19 +103,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceTypeFamily
-		{
-			get
-			{
-				return instanceTypeFamily;
-			}
-			set	
-			{
-				instanceTypeFamily = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceTypeFamily", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -134,9 +116,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override DescribeInstanceTypesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override StartElasticityAssuranceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeInstanceTypesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return StartElasticityAssuranceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

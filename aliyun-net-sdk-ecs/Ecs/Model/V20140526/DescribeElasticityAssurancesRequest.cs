@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class CreateSecurityGroupRequest : RpcAcsRequest<CreateSecurityGroupResponse>
+    public class DescribeElasticityAssurancesRequest : RpcAcsRequest<DescribeElasticityAssurancesResponse>
     {
-        public CreateSecurityGroupRequest()
-            : base("Ecs", "2014-05-26", "CreateSecurityGroup", "ecs", "openAPI")
+        public DescribeElasticityAssurancesRequest()
+            : base("Ecs", "2014-05-26", "DescribeElasticityAssurances", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,17 +42,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string clientToken;
-
-		private bool? serviceManaged;
-
-		private string description;
-
-		private string securityGroupName;
-
-		private string resourceGroupId;
-
-		private List<Tag> tags = new List<Tag>(){ };
+		private string nextToken;
 
 		private string resourceOwnerAccount;
 
@@ -60,9 +50,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private string securityGroupType;
+		private string privatePoolOptionsIds;
 
-		private string vpcId;
+		private int? maxResults;
 
 		public long? ResourceOwnerId
 		{
@@ -77,86 +67,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ClientToken
+		public string NextToken
 		{
 			get
 			{
-				return clientToken;
+				return nextToken;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
-			}
-		}
-
-		public bool? ServiceManaged
-		{
-			get
-			{
-				return serviceManaged;
-			}
-			set	
-			{
-				serviceManaged = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceManaged", value.ToString());
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string SecurityGroupName
-		{
-			get
-			{
-				return securityGroupName;
-			}
-			set	
-			{
-				securityGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupName", value);
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public List<Tag> Tags
-		{
-			get
-			{
-				return tags;
-			}
-
-			set
-			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
-				}
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
@@ -199,67 +119,35 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string SecurityGroupType
+		public string PrivatePoolOptionsIds
 		{
 			get
 			{
-				return securityGroupType;
+				return privatePoolOptionsIds;
 			}
 			set	
 			{
-				securityGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupType", value);
+				privatePoolOptionsIds = value;
+				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.Ids", value);
 			}
 		}
 
-		public string VpcId
+		public int? MaxResults
 		{
 			get
 			{
-				return vpcId;
+				return maxResults;
 			}
 			set	
 			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 
-		public class Tag
-		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
-			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
-			}
-
-			public string Key
-			{
-				get
-				{
-					return key;
-				}
-				set	
-				{
-					key = value;
-				}
-			}
-		}
-
-        public override CreateSecurityGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeElasticityAssurancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSecurityGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeElasticityAssurancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class CreateSecurityGroupRequest : RpcAcsRequest<CreateSecurityGroupResponse>
+    public class CreateElasticityAssuranceRequest : RpcAcsRequest<CreateElasticityAssuranceResponse>
     {
-        public CreateSecurityGroupRequest()
-            : base("Ecs", "2014-05-26", "CreateSecurityGroup", "ecs", "openAPI")
+        public CreateElasticityAssuranceRequest()
+            : base("Ecs", "2014-05-26", "CreateElasticityAssurance", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -44,25 +44,33 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string clientToken;
 
-		private bool? serviceManaged;
-
 		private string description;
 
-		private string securityGroupName;
+		private string startTime;
 
-		private string resourceGroupId;
+		private string privatePoolOptionsMatchCriteria;
 
-		private List<Tag> tags = new List<Tag>(){ };
+		private List<string> instanceTypes = new List<string>(){ };
+
+		private int? period;
 
 		private string resourceOwnerAccount;
 
+		private string privatePoolOptionsName;
+
 		private string ownerAccount;
+
+		private string assuranceTimes;
 
 		private long? ownerId;
 
-		private string securityGroupType;
+		private int? instanceCpuCoreCount;
 
-		private string vpcId;
+		private string periodUnit;
+
+		private List<string> zoneIds = new List<string>(){ };
+
+		private int? instanceAmount;
 
 		public long? ResourceOwnerId
 		{
@@ -90,19 +98,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public bool? ServiceManaged
-		{
-			get
-			{
-				return serviceManaged;
-			}
-			set	
-			{
-				serviceManaged = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceManaged", value.ToString());
-			}
-		}
-
 		public string Description
 		{
 			get
@@ -116,47 +111,59 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string SecurityGroupName
+		public string StartTime
 		{
 			get
 			{
-				return securityGroupName;
+				return startTime;
 			}
 			set	
 			{
-				securityGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupName", value);
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
-		public string ResourceGroupId
+		public string PrivatePoolOptionsMatchCriteria
 		{
 			get
 			{
-				return resourceGroupId;
+				return privatePoolOptionsMatchCriteria;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+				privatePoolOptionsMatchCriteria = value;
+				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.MatchCriteria", value);
 			}
 		}
 
-		public List<Tag> Tags
+		public List<string> InstanceTypes
 		{
 			get
 			{
-				return tags;
+				return instanceTypes;
 			}
 
 			set
 			{
-				tags = value;
-				for (int i = 0; i < tags.Count; i++)
+				instanceTypes = value;
+				for (int i = 0; i < instanceTypes.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
-					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
+					DictionaryUtil.Add(QueryParameters,"InstanceType." + (i + 1) , instanceTypes[i]);
 				}
+			}
+		}
+
+		public int? Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
 			}
 		}
 
@@ -173,6 +180,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string PrivatePoolOptionsName
+		{
+			get
+			{
+				return privatePoolOptionsName;
+			}
+			set	
+			{
+				privatePoolOptionsName = value;
+				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.Name", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -183,6 +203,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string AssuranceTimes
+		{
+			get
+			{
+				return assuranceTimes;
+			}
+			set	
+			{
+				assuranceTimes = value;
+				DictionaryUtil.Add(QueryParameters, "AssuranceTimes", value);
 			}
 		}
 
@@ -199,67 +232,65 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string SecurityGroupType
+		public int? InstanceCpuCoreCount
 		{
 			get
 			{
-				return securityGroupType;
+				return instanceCpuCoreCount;
 			}
 			set	
 			{
-				securityGroupType = value;
-				DictionaryUtil.Add(QueryParameters, "SecurityGroupType", value);
+				instanceCpuCoreCount = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceCpuCoreCount", value.ToString());
 			}
 		}
 
-		public string VpcId
+		public string PeriodUnit
 		{
 			get
 			{
-				return vpcId;
+				return periodUnit;
 			}
 			set	
 			{
-				vpcId = value;
-				DictionaryUtil.Add(QueryParameters, "VpcId", value);
+				periodUnit = value;
+				DictionaryUtil.Add(QueryParameters, "PeriodUnit", value);
 			}
 		}
 
-		public class Tag
+		public List<string> ZoneIds
 		{
-
-			private string value_;
-
-			private string key;
-
-			public string Value
+			get
 			{
-				get
-				{
-					return value_;
-				}
-				set	
-				{
-					value_ = value;
-				}
+				return zoneIds;
 			}
 
-			public string Key
+			set
 			{
-				get
+				zoneIds = value;
+				for (int i = 0; i < zoneIds.Count; i++)
 				{
-					return key;
-				}
-				set	
-				{
-					key = value;
+					DictionaryUtil.Add(QueryParameters,"ZoneId." + (i + 1) , zoneIds[i]);
 				}
 			}
 		}
 
-        public override CreateSecurityGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public int? InstanceAmount
+		{
+			get
+			{
+				return instanceAmount;
+			}
+			set	
+			{
+				instanceAmount = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceAmount", value.ToString());
+			}
+		}
+
+        public override CreateElasticityAssuranceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSecurityGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateElasticityAssuranceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
