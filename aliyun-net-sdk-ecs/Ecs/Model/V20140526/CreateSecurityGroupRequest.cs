@@ -44,6 +44,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string clientToken;
 
+		private bool? serviceManaged;
+
 		private string description;
 
 		private string securityGroupName;
@@ -85,6 +87,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				clientToken = value;
 				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public bool? ServiceManaged
+		{
+			get
+			{
+				return serviceManaged;
+			}
+			set	
+			{
+				serviceManaged = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceManaged", value.ToString());
 			}
 		}
 

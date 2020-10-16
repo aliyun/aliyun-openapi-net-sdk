@@ -40,6 +40,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string loraNodeType;
+
 		private string iotInstanceId;
 
 		private string nickname;
@@ -50,7 +52,24 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string devEui;
 
+		private string joinEui;
+
 		private string deviceName;
+
+		private string appKey;
+
+		public string LoraNodeType
+		{
+			get
+			{
+				return loraNodeType;
+			}
+			set	
+			{
+				loraNodeType = value;
+				DictionaryUtil.Add(QueryParameters, "LoraNodeType", value);
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -117,6 +136,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public string JoinEui
+		{
+			get
+			{
+				return joinEui;
+			}
+			set	
+			{
+				joinEui = value;
+				DictionaryUtil.Add(QueryParameters, "JoinEui", value);
+			}
+		}
+
 		public string DeviceName
 		{
 			get
@@ -127,6 +159,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				deviceName = value;
 				DictionaryUtil.Add(QueryParameters, "DeviceName", value);
+			}
+		}
+
+		public string AppKey
+		{
+			get
+			{
+				return appKey;
+			}
+			set	
+			{
+				appKey = value;
+				DictionaryUtil.Add(QueryParameters, "AppKey", value);
 			}
 		}
 

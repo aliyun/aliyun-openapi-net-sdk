@@ -66,6 +66,16 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				data_srcVersions.Add(context.StringValue("QueryOTAJob.Data.SrcVersions["+ i +"]"));
 			}
 			data.SrcVersions = data_srcVersions;
+
+			List<QueryOTAJobResponse.QueryOTAJob_Data.QueryOTAJob_OtaTagDTO> data_tags = new List<QueryOTAJobResponse.QueryOTAJob_Data.QueryOTAJob_OtaTagDTO>();
+			for (int i = 0; i < context.Length("QueryOTAJob.Data.Tags.Length"); i++) {
+				QueryOTAJobResponse.QueryOTAJob_Data.QueryOTAJob_OtaTagDTO otaTagDTO = new QueryOTAJobResponse.QueryOTAJob_Data.QueryOTAJob_OtaTagDTO();
+				otaTagDTO.Key = context.StringValue("QueryOTAJob.Data.Tags["+ i +"].Key");
+				otaTagDTO._Value = context.StringValue("QueryOTAJob.Data.Tags["+ i +"].Value");
+
+				data_tags.Add(otaTagDTO);
+			}
+			data.Tags = data_tags;
 			queryOTAJobResponse.Data = data;
         
 			return queryOTAJobResponse;

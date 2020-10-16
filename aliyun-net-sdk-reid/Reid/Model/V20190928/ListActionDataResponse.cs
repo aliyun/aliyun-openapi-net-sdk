@@ -196,6 +196,8 @@ namespace Aliyun.Acs.reid.Model.V20190928
 
 			private int? facePointNumber;
 
+			private int? bodyPointNumber;
+
 			private ListActionData_ObjectPositionInImage objectPositionInImage;
 
 			private ListActionData_PointInMap pointInMap;
@@ -449,6 +451,18 @@ namespace Aliyun.Acs.reid.Model.V20190928
 				set	
 				{
 					facePointNumber = value;
+				}
+			}
+
+			public int? BodyPointNumber
+			{
+				get
+				{
+					return bodyPointNumber;
+				}
+				set	
+				{
+					bodyPointNumber = value;
 				}
 			}
 

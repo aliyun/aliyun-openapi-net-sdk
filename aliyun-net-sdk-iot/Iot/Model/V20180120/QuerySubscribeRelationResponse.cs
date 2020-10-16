@@ -53,6 +53,12 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string mnsConfiguration;
 
+		private bool? deviceTagFlag;
+
+		private bool? otaVersionFlag;
+
+		private bool? otaJobFlag;
+
 		private List<string> consumerGroupIds;
 
 		public string RequestId
@@ -220,6 +226,42 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			set	
 			{
 				mnsConfiguration = value;
+			}
+		}
+
+		public bool? DeviceTagFlag
+		{
+			get
+			{
+				return deviceTagFlag;
+			}
+			set	
+			{
+				deviceTagFlag = value;
+			}
+		}
+
+		public bool? OtaVersionFlag
+		{
+			get
+			{
+				return otaVersionFlag;
+			}
+			set	
+			{
+				otaVersionFlag = value;
+			}
+		}
+
+		public bool? OtaJobFlag
+		{
+			get
+			{
+				return otaJobFlag;
+			}
+			set	
+			{
+				otaJobFlag = value;
 			}
 		}
 

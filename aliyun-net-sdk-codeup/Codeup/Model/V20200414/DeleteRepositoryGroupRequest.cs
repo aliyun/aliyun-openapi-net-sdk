@@ -33,8 +33,8 @@ namespace Aliyun.Acs.codeup.Model.V20200414
         public DeleteRepositoryGroupRequest()
             : base("codeup", "2020-04-14", "DeleteRepositoryGroup")
         {
-			UriPattern = "/api/v3/groups/[GroupId]";
-			Method = MethodType.DELETE;
+			UriPattern = "/api/v3/groups/[GroupId]/remove";
+			Method = MethodType.POST;
         }
 
 		private string organizationId;

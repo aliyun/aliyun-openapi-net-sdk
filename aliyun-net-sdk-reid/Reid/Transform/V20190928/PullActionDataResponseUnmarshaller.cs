@@ -66,6 +66,7 @@ namespace Aliyun.Acs.reid.Transform.V20190928
 				action.Score = context.FloatValue("PullActionData.Actions["+ i +"].Score");
 				action.SpecialType = context.StringValue("PullActionData.Actions["+ i +"].SpecialType");
 				action.ImageObjectKey = context.StringValue("PullActionData.Actions["+ i +"].ImageObjectKey");
+				action.BodyPointNumber = context.IntegerValue("PullActionData.Actions["+ i +"].BodyPointNumber");
 
 				PullActionDataResponse.PullActionData_Action.PullActionData_ObjectPositionInImage objectPositionInImage = new PullActionDataResponse.PullActionData_Action.PullActionData_ObjectPositionInImage();
 				objectPositionInImage.Bottom = context.FloatValue("PullActionData.Actions["+ i +"].ObjectPositionInImage.Bottom");

@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private string signMethod;
 
+		private bool? needToVerify;
+
 		private int? type;
 
 		private string firmwareUrl;
@@ -74,6 +76,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				signMethod = value;
 				DictionaryUtil.Add(QueryParameters, "SignMethod", value);
+			}
+		}
+
+		public bool? NeedToVerify
+		{
+			get
+			{
+				return needToVerify;
+			}
+			set	
+			{
+				needToVerify = value;
+				DictionaryUtil.Add(QueryParameters, "NeedToVerify", value.ToString());
 			}
 		}
 

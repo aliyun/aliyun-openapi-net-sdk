@@ -40,7 +40,22 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private string fileSuffix;
+
 		private string iotInstanceId;
+
+		public string FileSuffix
+		{
+			get
+			{
+				return fileSuffix;
+			}
+			set	
+			{
+				fileSuffix = value;
+				DictionaryUtil.Add(QueryParameters, "FileSuffix", value);
+			}
+		}
 
 		public string IotInstanceId
 		{

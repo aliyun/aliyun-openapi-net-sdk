@@ -56,6 +56,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string resourceGroupId;
 
+		private string privatePoolOptionsMatchCriteria;
+
 		private string hostName;
 
 		private string password;
@@ -65,6 +67,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private int? storageSetPartitionNumber;
 
 		private List<Tag> tags = new List<Tag>(){ };
+
+		private string privatePoolOptionsId;
 
 		private int? autoRenewPeriod;
 
@@ -268,6 +272,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string PrivatePoolOptionsMatchCriteria
+		{
+			get
+			{
+				return privatePoolOptionsMatchCriteria;
+			}
+			set	
+			{
+				privatePoolOptionsMatchCriteria = value;
+				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.MatchCriteria", value);
+			}
+		}
+
 		public string HostName
 		{
 			get
@@ -335,6 +352,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Value", tags[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Tag." + (i + 1) + ".Key", tags[i].Key);
 				}
+			}
+		}
+
+		public string PrivatePoolOptionsId
+		{
+			get
+			{
+				return privatePoolOptionsId;
+			}
+			set	
+			{
+				privatePoolOptionsId = value;
+				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.Id", value);
 			}
 		}
 

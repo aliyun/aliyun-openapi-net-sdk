@@ -224,6 +224,8 @@ namespace Aliyun.Acs.reid.Model.V20190928
 
 			private string imageObjectKey;
 
+			private int? bodyPointNumber;
+
 			private PullActionData_ObjectPositionInImage objectPositionInImage;
 
 			private PullActionData_PointInMap pointInMap;
@@ -477,6 +479,18 @@ namespace Aliyun.Acs.reid.Model.V20190928
 				set	
 				{
 					imageObjectKey = value;
+				}
+			}
+
+			public int? BodyPointNumber
+			{
+				get
+				{
+					return bodyPointNumber;
+				}
+				set	
+				{
+					bodyPointNumber = value;
 				}
 			}
 

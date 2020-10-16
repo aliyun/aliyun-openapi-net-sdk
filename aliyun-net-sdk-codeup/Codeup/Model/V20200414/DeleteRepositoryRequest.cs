@@ -34,7 +34,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
             : base("codeup", "2020-04-14", "DeleteRepository")
         {
 			UriPattern = "/api/v3/projects/[ProjectId]/remove";
-			Method = MethodType.DELETE;
+			Method = MethodType.POST;
         }
 
 		private string organizationId;
