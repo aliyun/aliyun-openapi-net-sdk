@@ -24,19 +24,16 @@ using Aliyun.Acs.HBase.Model.V20190101;
 
 namespace Aliyun.Acs.HBase.Transform.V20190101
 {
-    public class CreateServerlessClusterResponseUnmarshaller
+    public class DeleteServerlessClusterResponseUnmarshaller
     {
-        public static CreateServerlessClusterResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteServerlessClusterResponse Unmarshall(UnmarshallerContext context)
         {
-			CreateServerlessClusterResponse createServerlessClusterResponse = new CreateServerlessClusterResponse();
+			DeleteServerlessClusterResponse deleteServerlessClusterResponse = new DeleteServerlessClusterResponse();
 
-			createServerlessClusterResponse.HttpResponse = context.HttpResponse;
-			createServerlessClusterResponse.RequestId = context.StringValue("CreateServerlessCluster.RequestId");
-			createServerlessClusterResponse.ClusterId = context.StringValue("CreateServerlessCluster.ClusterId");
-			createServerlessClusterResponse.OrderId = context.StringValue("CreateServerlessCluster.OrderId");
-			createServerlessClusterResponse.PassWord = context.StringValue("CreateServerlessCluster.PassWord");
+			deleteServerlessClusterResponse.HttpResponse = context.HttpResponse;
+			deleteServerlessClusterResponse.RequestId = context.StringValue("DeleteServerlessCluster.RequestId");
         
-			return createServerlessClusterResponse;
+			return deleteServerlessClusterResponse;
         }
     }
 }
