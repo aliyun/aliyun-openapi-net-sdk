@@ -20,6 +20,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Vpc.Model.V20160428;
@@ -38,7 +39,7 @@ namespace Aliyun.Acs.Feature.Test.Timeout
             request.Method = MethodType.GET;
             request.SetConnectTimeoutInMilliSeconds(1);
 
-            var exception = await Assert.ThrowsAsync<ClientException>(() => HttpResponse.GetResponseAsync(request, default));
+            var exception = await Assert.ThrowsAsync<ClientException>(() => HttpResponse.GetResponseAsync(request));
 
             Assert.NotNull(exception.Message);
 
@@ -59,7 +60,7 @@ namespace Aliyun.Acs.Feature.Test.Timeout
             var request = new DescribeAccessPointsRequest();
             request.SetConnectTimeoutInMilliSeconds(1);
 
-            Exception exception = await Assert.ThrowsAsync<ClientException>(() => FeatureTest.DefaultClient.GetAcsResponseAsync(request, default));
+            Exception exception = await Assert.ThrowsAsync<ClientException>(() => FeatureTest.DefaultClient.GetAcsResponseAsync(request));
 
             Assert.NotNull(exception.Message);
 

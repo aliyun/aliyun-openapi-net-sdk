@@ -39,7 +39,7 @@ namespace Aliyun.Acs.Core.Profile
 
         List<Endpoint> GetEndpoints(string product, string regionId, string serviceCode, string endpointType);
 
-        Task<List<Endpoint>> GetEndpointsAsync(string product, string regionId, string serviceCode, string endpointType, CancellationToken cancellationToken = default(CancellationToken));
+        Task<List<Endpoint>> GetEndpointsAsync(string product, string regionId, string serviceCode, string endpointType, CancellationToken cancellationToken);
 
         void SetLocationConfig(string regionId, string product, string endpoint);
 

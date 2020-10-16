@@ -58,7 +58,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
         {
             if (basicSessionCredentials == null || basicSessionCredentials.WillSoonExpire())
             {
-                basicSessionCredentials = await GetNewSessionCredentialsAsync().ConfigureAwait(false);
+                basicSessionCredentials = await GetNewSessionCredentialsAsync(cancellationToken).ConfigureAwait(false);
             }
 
             return basicSessionCredentials;
@@ -92,7 +92,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
             );
         }
 
-        private async Task<BasicSessionCredentials> GetNewSessionCredentialsAsync()
+        private async Task<BasicSessionCredentials> GetNewSessionCredentialsAsync(CancellationToken cancellationToken)
         {
             var request = new GetSessionAccessKeyRequest
             {
@@ -101,7 +101,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
                 Protocol = ProtocolType.HTTPS
             };
 
-            var response = await stsClient.GetAcsResponseAsync(request).ConfigureAwait(false);
+            var response = await stsClient.GetAcsResponseAsync(request, cancellationToken).ConfigureAwait(false);
 
             return new BasicSessionCredentials(
                 response.SessionAccesskey.SessionAccessKeyId,

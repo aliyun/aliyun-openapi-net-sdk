@@ -268,7 +268,17 @@ namespace Aliyun.Acs.Core.Http
             }
         }
 
-        public static async Task<HttpResponse> GetResponseAsync(HttpRequest request, CancellationToken cancellationToken, int? timeout = null)
+        public static Task<HttpResponse> GetResponseAsync(HttpRequest request)
+        {
+            return GetResponseAsync(request, default(CancellationToken), null);
+        }
+
+        public static Task<HttpResponse> GetResponseAsync(HttpRequest request, CancellationToken cancellationToken)
+        {
+            return GetResponseAsync(request, cancellationToken, null);
+        }
+
+        public static async Task<HttpResponse> GetResponseAsync(HttpRequest request, CancellationToken cancellationToken, int? timeout)
         {
             var result = await GetWebRequestAsync(request, timeout, cancellationToken).ConfigureAwait(false);
 
