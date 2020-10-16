@@ -61,55 +61,55 @@ namespace Aliyun.Acs.Core
         #region Async
 
         Task<T> GetAcsResponseAsync<T>(AcsRequest<T> request,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken)
             where T : AcsResponse;
 
         Task<T> GetAcsResponseAsync<T>(AcsRequest<T> request,
             bool autoRetry,
             int maxRetryCounts,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken)
             where T : AcsResponse;
 
         Task<T> GetAcsResponseAsync<T>(AcsRequest<T> request,
             IClientProfile profile,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken)
             where T : AcsResponse;
 
         Task<T> GetAcsResponseAsync<T>(AcsRequest<T> request,
             string regionId,
             Credential credential,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken)
             where T : AcsResponse;
 
         Task<CommonResponse> GetCommonResponseAsync(CommonRequest request,
-            CancellationToken cancellationToken = default(CancellationToken));
+            CancellationToken cancellationToken);
 
         Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken)
             where T : AcsResponse;
 
         Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request,
             bool autoRetry,
             int maxRetryCounts,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken)
             where T : AcsResponse;
 
         Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request,
             IClientProfile profile,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken)
             where T : AcsResponse;
 
         Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request,
             string regionId,
             Credential credential,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken)
             where T : AcsResponse;
 
         Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request,
             bool autoRetry,
             int maxRetryCounts,
             IClientProfile profile,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken)
             where T : AcsResponse;
 
         Task<HttpResponse> DoActionAsync<T>(AcsRequest<T> request,
@@ -117,7 +117,7 @@ namespace Aliyun.Acs.Core
             string regionId, Credential credential,
             Signer signer, FormatType? format,
             List<Endpoint> endpoints,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken)
             where T : AcsResponse;
         #endregion
     }
