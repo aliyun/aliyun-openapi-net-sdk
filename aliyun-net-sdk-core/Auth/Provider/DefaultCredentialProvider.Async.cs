@@ -97,7 +97,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     accessKeySecret = iniReader.GetValue("access_key_secret", userDefineSectionNode);
                     regionId = iniReader.GetValue("region_id", userDefineSectionNode);
 
-                    return await GetAccessKeyCredentialAsync().ConfigureAwait(false);
+                    return await GetAccessKeyCredentialAsync(cancellationToken).ConfigureAwait(false);
                 }
 
                 if (iniKeyTypeValue.Equals("ecs_ram_role"))
@@ -114,7 +114,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     accessKeySecret = iniReader.GetValue("access_key_secret", userDefineSectionNode);
                     roleArn = iniReader.GetValue("role_arn", userDefineSectionNode);
 
-                    return await GetRamRoleArnAlibabaCloudCredentialAsync().ConfigureAwait(false);
+                    return await GetRamRoleArnAlibabaCloudCredentialAsync(cancellationToken).ConfigureAwait(false);
                 }
 
                 if (iniKeyTypeValue.Equals("rsa_key_pair"))
@@ -122,7 +122,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     publicKeyId = iniReader.GetValue("public_key_id", userDefineSectionNode);
                     privateKeyFile = iniReader.GetValue("private_key_file", userDefineSectionNode);
 
-                    return await GetRsaKeyPairAlibabaCloudCredentialAsync().ConfigureAwait(false);
+                    return await GetRsaKeyPairAlibabaCloudCredentialAsync(cancellationToken).ConfigureAwait(false);
                 }
             }
             else
