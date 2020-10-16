@@ -93,10 +93,12 @@ namespace Aliyun.Acs.Push.Model.V20160801
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiNotifyBody", pushTasks[i].AndroidXiaoMiNotifyBody);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSSubtitle", pushTasks[i].IOSSubtitle);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSRemind", pushTasks[i].IOSRemind);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidNotificationNotifyId", pushTasks[i].AndroidNotificationNotifyId);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".TargetValue", pushTasks[i].TargetValue);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidMusic", pushTasks[i].AndroidMusic);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiActivity", pushTasks[i].AndroidXiaoMiActivity);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".AndroidXiaoMiNotifyTitle", pushTasks[i].AndroidXiaoMiNotifyTitle);
+					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".iOSNotificationCollapseId", pushTasks[i].IOSNotificationCollapseId);
 					DictionaryUtil.Add(BodyParameters,"PushTask." + (i + 1) + ".PushType", pushTasks[i].PushType);
 				}
 			}
@@ -190,6 +192,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 			private bool? iOSRemind;
 
+			private int? androidNotificationNotifyId;
+
 			private string targetValue;
 
 			private string androidMusic;
@@ -197,6 +201,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			private string androidXiaoMiActivity;
 
 			private string androidXiaoMiNotifyTitle;
+
+			private string iOSNotificationCollapseId;
 
 			private string pushType;
 
@@ -632,6 +638,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				}
 			}
 
+			public int? AndroidNotificationNotifyId
+			{
+				get
+				{
+					return androidNotificationNotifyId;
+				}
+				set	
+				{
+					androidNotificationNotifyId = value;
+				}
+			}
+
 			public string TargetValue
 			{
 				get
@@ -677,6 +695,18 @@ namespace Aliyun.Acs.Push.Model.V20160801
 				set	
 				{
 					androidXiaoMiNotifyTitle = value;
+				}
+			}
+
+			public string IOSNotificationCollapseId
+			{
+				get
+				{
+					return iOSNotificationCollapseId;
+				}
+				set	
+				{
+					iOSNotificationCollapseId = value;
 				}
 			}
 

@@ -22,16 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-	public class CreateServerlessClusterResponse : AcsResponse
+	public class DeleteServerlessClusterResponse : AcsResponse
 	{
 
 		private string requestId;
-
-		private string clusterId;
-
-		private string orderId;
-
-		private string passWord;
 
 		public string RequestId
 		{
@@ -42,42 +36,6 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string ClusterId
-		{
-			get
-			{
-				return clusterId;
-			}
-			set	
-			{
-				clusterId = value;
-			}
-		}
-
-		public string OrderId
-		{
-			get
-			{
-				return orderId;
-			}
-			set	
-			{
-				orderId = value;
-			}
-		}
-
-		public string PassWord
-		{
-			get
-			{
-				return passWord;
-			}
-			set	
-			{
-				passWord = value;
 			}
 		}
 	}
