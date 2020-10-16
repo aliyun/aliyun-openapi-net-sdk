@@ -54,13 +54,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string dataDisk1PerformanceLevel;
 
+		private string assuranceTimes;
+
 		private long? ownerId;
+
+		private int? instanceCpuCoreCount;
 
 		private string internetChargeType;
 
 		private string instanceNetworkType;
 
 		private int? instanceAmount;
+
+		private List<string> instanceTypeLists = new List<string>(){ };
 
 		private string dataDisk3PerformanceLevel;
 
@@ -199,6 +205,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string AssuranceTimes
+		{
+			get
+			{
+				return assuranceTimes;
+			}
+			set	
+			{
+				assuranceTimes = value;
+				DictionaryUtil.Add(QueryParameters, "AssuranceTimes", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -209,6 +228,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? InstanceCpuCoreCount
+		{
+			get
+			{
+				return instanceCpuCoreCount;
+			}
+			set	
+			{
+				instanceCpuCoreCount = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceCpuCoreCount", value.ToString());
 			}
 		}
 
@@ -248,6 +280,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceAmount = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceAmount", value.ToString());
+			}
+		}
+
+		public List<string> InstanceTypeLists
+		{
+			get
+			{
+				return instanceTypeLists;
+			}
+
+			set
+			{
+				instanceTypeLists = value;
+				for (int i = 0; i < instanceTypeLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceTypeList." + (i + 1) , instanceTypeLists[i]);
+				}
 			}
 		}
 

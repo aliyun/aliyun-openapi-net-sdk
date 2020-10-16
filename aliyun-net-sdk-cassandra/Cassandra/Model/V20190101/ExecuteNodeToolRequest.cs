@@ -37,7 +37,10 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private string executeNodes;
 
 		private string dataCenterId;
 
@@ -46,6 +49,19 @@ namespace Aliyun.Acs.Cassandra.Model.V20190101
 		private string command;
 
 		private string arguments;
+
+		public string ExecuteNodes
+		{
+			get
+			{
+				return executeNodes;
+			}
+			set	
+			{
+				executeNodes = value;
+				DictionaryUtil.Add(QueryParameters, "ExecuteNodes", value);
+			}
+		}
 
 		public string DataCenterId
 		{

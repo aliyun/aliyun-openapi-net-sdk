@@ -42,6 +42,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private List<string> instanceTypess = new List<string>(){ };
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -60,6 +62,23 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public List<string> InstanceTypess
+		{
+			get
+			{
+				return instanceTypess;
+			}
+
+			set
+			{
+				instanceTypess = value;
+				for (int i = 0; i < instanceTypess.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceTypes." + (i + 1) , instanceTypess[i]);
+				}
 			}
 		}
 

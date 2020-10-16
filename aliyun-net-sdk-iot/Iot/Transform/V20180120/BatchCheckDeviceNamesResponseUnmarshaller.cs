@@ -44,6 +44,12 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				data_invalidDeviceNameList.Add(context.StringValue("BatchCheckDeviceNames.Data.InvalidDeviceNameList["+ i +"]"));
 			}
 			data.InvalidDeviceNameList = data_invalidDeviceNameList;
+
+			List<string> data_invalidDeviceNicknameList = new List<string>();
+			for (int i = 0; i < context.Length("BatchCheckDeviceNames.Data.InvalidDeviceNicknameList.Length"); i++) {
+				data_invalidDeviceNicknameList.Add(context.StringValue("BatchCheckDeviceNames.Data.InvalidDeviceNicknameList["+ i +"]"));
+			}
+			data.InvalidDeviceNicknameList = data_invalidDeviceNicknameList;
 			batchCheckDeviceNamesResponse.Data = data;
         
 			return batchCheckDeviceNamesResponse;

@@ -52,6 +52,10 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 		private bool? deviceStatusChangeFlag;
 
+		private bool? otaVersionFlag;
+
+		private bool? deviceTagFlag;
+
 		private List<string> consumerGroupIdss = new List<string>(){ };
 
 		private string productKey;
@@ -59,6 +63,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 		private bool? thingHistoryFlag;
 
 		private bool? foundDeviceListFlag;
+
+		private bool? otaJobFlag;
 
 		private bool? deviceDataFlag;
 
@@ -142,6 +148,32 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
+		public bool? OtaVersionFlag
+		{
+			get
+			{
+				return otaVersionFlag;
+			}
+			set	
+			{
+				otaVersionFlag = value;
+				DictionaryUtil.Add(QueryParameters, "OtaVersionFlag", value.ToString());
+			}
+		}
+
+		public bool? DeviceTagFlag
+		{
+			get
+			{
+				return deviceTagFlag;
+			}
+			set	
+			{
+				deviceTagFlag = value;
+				DictionaryUtil.Add(QueryParameters, "DeviceTagFlag", value.ToString());
+			}
+		}
+
 		public List<string> ConsumerGroupIdss
 		{
 			get
@@ -195,6 +227,19 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			{
 				foundDeviceListFlag = value;
 				DictionaryUtil.Add(QueryParameters, "FoundDeviceListFlag", value.ToString());
+			}
+		}
+
+		public bool? OtaJobFlag
+		{
+			get
+			{
+				return otaJobFlag;
+			}
+			set	
+			{
+				otaJobFlag = value;
+				DictionaryUtil.Add(QueryParameters, "OtaJobFlag", value.ToString());
 			}
 		}
 

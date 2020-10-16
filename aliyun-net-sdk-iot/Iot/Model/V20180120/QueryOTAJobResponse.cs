@@ -144,6 +144,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private int? dynamicMode;
 
+			private List<QueryOTAJob_OtaTagDTO> tags;
+
 			private List<string> srcVersions;
 
 			public string JobId
@@ -422,6 +424,18 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				}
 			}
 
+			public List<QueryOTAJob_OtaTagDTO> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
 			public List<string> SrcVersions
 			{
 				get
@@ -431,6 +445,38 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					srcVersions = value;
+				}
+			}
+
+			public class QueryOTAJob_OtaTagDTO
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}

@@ -40,11 +40,31 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			Method = MethodType.POST;
         }
 
+		private List<DeviceNameList> deviceNameLists = new List<DeviceNameList>(){ };
+
 		private string iotInstanceId;
 
 		private string productKey;
 
 		private List<string> deviceNames = new List<string>(){ };
+
+		public List<DeviceNameList> DeviceNameLists
+		{
+			get
+			{
+				return deviceNameLists;
+			}
+
+			set
+			{
+				deviceNameLists = value;
+				for (int i = 0; i < deviceNameLists.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"DeviceNameList." + (i + 1) + ".DeviceNickname", deviceNameLists[i].DeviceNickname);
+					DictionaryUtil.Add(QueryParameters,"DeviceNameList." + (i + 1) + ".DeviceName", deviceNameLists[i].DeviceName);
+				}
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -85,6 +105,38 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				for (int i = 0; i < deviceNames.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"DeviceName." + (i + 1) , deviceNames[i]);
+				}
+			}
+		}
+
+		public class DeviceNameList
+		{
+
+			private string deviceNickname;
+
+			private string deviceName;
+
+			public string DeviceNickname
+			{
+				get
+				{
+					return deviceNickname;
+				}
+				set	
+				{
+					deviceNickname = value;
+				}
+			}
+
+			public string DeviceName
+			{
+				get
+				{
+					return deviceName;
+				}
+				set	
+				{
+					deviceName = value;
 				}
 			}
 		}

@@ -55,6 +55,16 @@ namespace Aliyun.Acs.Iot.Transform.V20180120
 				simpleOTAJobInfo.TargetSelection = context.StringValue("ListOTAJobByFirmware.Data["+ i +"].TargetSelection");
 				simpleOTAJobInfo.SelectionType = context.StringValue("ListOTAJobByFirmware.Data["+ i +"].SelectionType");
 
+				List<ListOTAJobByFirmwareResponse.ListOTAJobByFirmware_SimpleOTAJobInfo.ListOTAJobByFirmware_OtaTagDTO> simpleOTAJobInfo_tags = new List<ListOTAJobByFirmwareResponse.ListOTAJobByFirmware_SimpleOTAJobInfo.ListOTAJobByFirmware_OtaTagDTO>();
+				for (int j = 0; j < context.Length("ListOTAJobByFirmware.Data["+ i +"].Tags.Length"); j++) {
+					ListOTAJobByFirmwareResponse.ListOTAJobByFirmware_SimpleOTAJobInfo.ListOTAJobByFirmware_OtaTagDTO otaTagDTO = new ListOTAJobByFirmwareResponse.ListOTAJobByFirmware_SimpleOTAJobInfo.ListOTAJobByFirmware_OtaTagDTO();
+					otaTagDTO.Key = context.StringValue("ListOTAJobByFirmware.Data["+ i +"].Tags["+ j +"].Key");
+					otaTagDTO._Value = context.StringValue("ListOTAJobByFirmware.Data["+ i +"].Tags["+ j +"].Value");
+
+					simpleOTAJobInfo_tags.Add(otaTagDTO);
+				}
+				simpleOTAJobInfo.Tags = simpleOTAJobInfo_tags;
+
 				listOTAJobByFirmwareResponse_data.Add(simpleOTAJobInfo);
 			}
 			listOTAJobByFirmwareResponse.Data = listOTAJobByFirmwareResponse_data;

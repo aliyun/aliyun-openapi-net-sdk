@@ -176,6 +176,8 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 
 			private string selectionType;
 
+			private List<ListOTAJobByFirmware_OtaTagDTO> tags;
+
 			public string JobId
 			{
 				get
@@ -305,6 +307,50 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 				set	
 				{
 					selectionType = value;
+				}
+			}
+
+			public List<ListOTAJobByFirmware_OtaTagDTO> Tags
+			{
+				get
+				{
+					return tags;
+				}
+				set	
+				{
+					tags = value;
+				}
+			}
+
+			public class ListOTAJobByFirmware_OtaTagDTO
+			{
+
+				private string key;
+
+				private string _value;
+
+				public string Key
+				{
+					get
+					{
+						return key;
+					}
+					set	
+					{
+						key = value;
+					}
+				}
+
+				public string _Value
+				{
+					get
+					{
+						return _value;
+					}
+					set	
+					{
+						_value = value;
+					}
 				}
 			}
 		}
