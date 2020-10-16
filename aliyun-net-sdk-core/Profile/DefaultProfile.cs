@@ -101,7 +101,7 @@ namespace Aliyun.Acs.Core.Profile
             return endpointResolve.Resolve(product, regionId, serviceCode, endpointType, _credential, locationConfig);
         }
 
-        public async Task<List<Endpoint>> GetEndpointsAsync(string product, string regionId, string serviceCode, string endpointType, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Endpoint>> GetEndpointsAsync(string product, string regionId, string serviceCode, string endpointType, CancellationToken cancellationToken)
         {
             return await endpointResolve.ResolveAsync(product, regionId, serviceCode, endpointType, _credential, locationConfig, cancellationToken).ConfigureAwait(false);
         }
@@ -111,7 +111,7 @@ namespace Aliyun.Acs.Core.Profile
             return endpointResolve.GetEndpoints(regionId, product);
         }
 
-        public Task<List<Endpoint>> GetEndpointsAsync(string regionId, string product, CancellationToken cancellationToken = default(CancellationToken))
+        public Task<List<Endpoint>> GetEndpointsAsync(string regionId, string product, CancellationToken cancellationToken)
         {
             return endpointResolve.GetEndpointsAsync(regionId, product, cancellationToken);
         }
@@ -124,8 +124,8 @@ namespace Aliyun.Acs.Core.Profile
         }
 
         public Task AddEndpointAsync(string endpointName, string regionId, string product, string domain,
-            bool isNeverExpire = false,
-            CancellationToken cancellationToken = default(CancellationToken))
+            bool isNeverExpire,
+            CancellationToken cancellationToken)
         {
             EndpointUserConfig.AddEndpoint(product, regionId, domain);
             return endpointResolve.AddEndpointAsync(endpointName, regionId, product, domain, isNeverExpire, cancellationToken);

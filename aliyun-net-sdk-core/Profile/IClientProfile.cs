@@ -49,8 +49,8 @@ namespace Aliyun.Acs.Core.Profile
             bool isNeverExpire = false);
 
         Task AddEndpointAsync(string endpointName, string regionId, string product, string domain,
-            bool isNeverExpire = false,
-            CancellationToken cancellationToken = default(CancellationToken));
+            bool isNeverExpire,
+            CancellationToken cancellationToken);
 
     }
 }
