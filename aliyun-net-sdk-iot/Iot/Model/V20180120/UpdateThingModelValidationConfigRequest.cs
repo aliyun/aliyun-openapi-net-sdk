@@ -27,21 +27,37 @@ using Aliyun.Acs.Iot.Transform.V20180120;
 
 namespace Aliyun.Acs.Iot.Model.V20180120
 {
-    public class ListOTAModuleByProductRequest : RpcAcsRequest<ListOTAModuleByProductResponse>
+    public class UpdateThingModelValidationConfigRequest : RpcAcsRequest<UpdateThingModelValidationConfigResponse>
     {
-        public ListOTAModuleByProductRequest()
-            : base("Iot", "2018-01-20", "ListOTAModuleByProduct", "iot", "openAPI")
+        public UpdateThingModelValidationConfigRequest()
+            : base("Iot", "2018-01-20", "UpdateThingModelValidationConfig", "iot", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
+
+		private int? validateType;
 
 		private string iotInstanceId;
 
 		private string productKey;
+
+		public int? ValidateType
+		{
+			get
+			{
+				return validateType;
+			}
+			set	
+			{
+				validateType = value;
+				DictionaryUtil.Add(QueryParameters, "ValidateType", value.ToString());
+			}
+		}
 
 		public string IotInstanceId
 		{
@@ -69,14 +85,9 @@ namespace Aliyun.Acs.Iot.Model.V20180120
 			}
 		}
 
-		public override bool CheckShowJsonItemName()
-		{
-			return false;
-		}
-
-        public override ListOTAModuleByProductResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateThingModelValidationConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListOTAModuleByProductResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateThingModelValidationConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
