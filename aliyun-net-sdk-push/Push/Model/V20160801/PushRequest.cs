@@ -95,6 +95,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 
 		private string androidMusic;
 
+		private string iOSNotificationCollapseId;
+
 		private string pushType;
 
 		private string androidExtParameters;
@@ -126,6 +128,8 @@ namespace Aliyun.Acs.Push.Model.V20160801
 		private string androidActivity;
 
 		private string smsSignName;
+
+		private int? androidNotificationNotifyId;
 
 		private long? appKey;
 
@@ -486,6 +490,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			}
 		}
 
+		public string IOSNotificationCollapseId
+		{
+			get
+			{
+				return iOSNotificationCollapseId;
+			}
+			set	
+			{
+				iOSNotificationCollapseId = value;
+				DictionaryUtil.Add(QueryParameters, "iOSNotificationCollapseId", value);
+			}
+		}
+
 		public string PushType
 		{
 			get
@@ -691,6 +708,19 @@ namespace Aliyun.Acs.Push.Model.V20160801
 			{
 				smsSignName = value;
 				DictionaryUtil.Add(QueryParameters, "SmsSignName", value);
+			}
+		}
+
+		public int? AndroidNotificationNotifyId
+		{
+			get
+			{
+				return androidNotificationNotifyId;
+			}
+			set	
+			{
+				androidNotificationNotifyId = value;
+				DictionaryUtil.Add(QueryParameters, "AndroidNotificationNotifyId", value.ToString());
 			}
 		}
 
