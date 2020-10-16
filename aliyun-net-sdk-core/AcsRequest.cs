@@ -77,7 +77,7 @@ namespace Aliyun.Acs.Core
                         throw new ArgumentException("regionId is invalid", "regionId");
                     }
                 }
-
+                
                 regionId = value;
             }
         }
@@ -103,7 +103,7 @@ namespace Aliyun.Acs.Core
                         throw new ArgumentException("productNetwork is invalid", "productNetwork");
                     }
                 }
-
+                
                 productNetwork = value;
             }
         }
@@ -124,7 +124,7 @@ namespace Aliyun.Acs.Core
                         throw new ArgumentException("productSuffix is invalid", "productSuffix");
                     }
                 }
-
+                
                 productSuffix = value;
             }
         }
