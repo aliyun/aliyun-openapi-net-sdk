@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -18,7 +18,8 @@
  */
 
 using System;
-
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Auth.Sts;
 using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Utils;
@@ -111,6 +112,16 @@ namespace Aliyun.Acs.Core.Auth
             return credentials;
         }
 
+        public async Task<AlibabaCloudCredentials> GetCredentialsAsync(CancellationToken cancellationToken)
+        {
+            if (credentials == null || credentials.WillSoonExpire())
+            {
+                credentials = await GetNewSessionCredentialsAsync().ConfigureAwait(false);
+            }
+
+            return credentials;
+        }
+
         public void WithRoleSessionName(string roleSessionName)
         {
             this.roleSessionName = roleSessionName;
@@ -152,6 +163,28 @@ namespace Aliyun.Acs.Core.Auth
             }
 
             var response = stsClient.GetAcsResponse(assumeRoleRequest);
+            return new BasicSessionCredentials(
+                response.Credentials.AccessKeyId,
+                response.Credentials.AccessKeySecret,
+                response.Credentials.SecurityToken, roleSessionDurationSeconds
+            );
+        }
+
+        private async Task<BasicSessionCredentials> GetNewSessionCredentialsAsync()
+        {
+            var assumeRoleRequest = new AssumeRoleRequest
+            {
+                RoleArn = roleArn,
+                RoleSessionName = roleSessionName,
+                DurationSeconds = roleSessionDurationSeconds
+            };
+
+            if (!string.IsNullOrEmpty(policy))
+            {
+                assumeRoleRequest.Policy = policy;
+            }
+
+            var response = await stsClient.GetAcsResponseAsync(assumeRoleRequest).ConfigureAwait(false);
             return new BasicSessionCredentials(
                 response.Credentials.AccessKeyId,
                 response.Credentials.AccessKeySecret,

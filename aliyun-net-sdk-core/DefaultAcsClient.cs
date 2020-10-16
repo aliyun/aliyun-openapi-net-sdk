@@ -40,7 +40,7 @@ using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core
 {
-    public class DefaultAcsClient : IAcsClient
+    public partial class DefaultAcsClient : IAcsClient
     {
         private static readonly HttpWebProxy WebProxy = new HttpWebProxy();
         private readonly IClientProfile clientProfile;

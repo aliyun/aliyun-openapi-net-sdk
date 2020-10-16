@@ -21,43 +21,18 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
-
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Http
 {
-    public partial class HttpResponse : HttpRequest
+    public partial class HttpResponse
     {
-        // Default read timeout 10s
-        private const int DEFAULT_READ_TIMEOUT_IN_MilliSeconds = 10000;
-
-        // Default connect timeout 5s
-        private const int DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds = 5000;
-        private static readonly int bufferLength = 1024;
-
-        public HttpResponse(string strUrl) : base(strUrl)
+        private static async Task ParseHttpResponseAsync(HttpResponse httpResponse, HttpWebResponse httpWebResponse, CancellationToken cancellationToken)
         {
-        }
-
-        public HttpResponse()
-        {
-        }
-
-        public int Status { get; set; }
-
-        public string HttpVersion { get; set; }
-
-        public new void SetContent(byte[] content, string encoding, FormatType? format)
-        {
-            Content = content;
-            Encoding = encoding;
-            ContentType = format;
-        }
-
-        private static void ParseHttpResponse(HttpResponse httpResponse, HttpWebResponse httpWebResponse)
-        {
-            httpResponse.Content = ReadContent(httpResponse, httpWebResponse);
+            httpResponse.Content = await ReadContentAsync(httpResponse, httpWebResponse, cancellationToken).ConfigureAwait(false);
             httpResponse.Status = (int)httpWebResponse.StatusCode;
             httpResponse.Headers = new Dictionary<string, string>();
             httpResponse.Method = ParameterHelper.StringToMethodType(httpWebResponse.Method);
@@ -83,7 +58,7 @@ namespace Aliyun.Acs.Core.Http
             }
         }
 
-        public static byte[] ReadContent(HttpResponse response, HttpWebResponse rsp)
+        public static async Task<byte[]> ReadContentAsync(HttpResponse response, HttpWebResponse rsp, CancellationToken cancellationToken)
         {
             using (var ms = new MemoryStream())
             using (var stream = rsp.GetResponseStream())
@@ -93,32 +68,28 @@ namespace Aliyun.Acs.Core.Http
                     return new byte[0];
                 }
 
-                stream.CopyTo(ms, bufferLength);
+                await stream.CopyToAsync(ms, bufferLength, cancellationToken).ConfigureAwait(false);
 
                 return ms.ToArray();
             }
         }
 
-        public static HttpResponse GetResponse(HttpRequest request, int? timeout = null)
+        public static async Task<HttpResponse> GetResponseAsync(HttpRequest request, CancellationToken cancellationToken = default(CancellationToken), int? timeout = null)
         {
-            var httpWebRequest = GetWebRequest(request);
+            var result = await GetWebRequestAsync(request, timeout, cancellationToken).ConfigureAwait(false);
 
-            if (timeout != null)
-            {
-                httpWebRequest.Timeout = (int)timeout;
-            }
+            var httpWebRequest = result.Item1;
 
             HttpWebResponse httpWebResponse;
             var httpResponse = new HttpResponse(httpWebRequest.RequestUri.AbsoluteUri);
 
             try
             {
-                using (httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse())
+                using (httpWebResponse = (HttpWebResponse)await httpWebRequest.GetResponseAsync().ConfigureAwait(false))
                 {
-                    ParseHttpResponse(httpResponse, httpWebResponse);
+                    await ParseHttpResponseAsync(httpResponse, httpWebResponse, cancellationToken).ConfigureAwait(false);
                     return httpResponse;
                 }
-
             }
             catch (WebException ex)
             {
@@ -126,9 +97,16 @@ namespace Aliyun.Acs.Core.Http
                 {
                     using (httpWebResponse = ex.Response as HttpWebResponse)
                     {
-                        ParseHttpResponse(httpResponse, httpWebResponse);
+                        await ParseHttpResponseAsync(httpResponse, httpWebResponse, cancellationToken).ConfigureAwait(false);
                         return httpResponse;
                     }
+                }
+
+                if (result.Item2.IsCancellationRequested)
+                {
+                    throw new ClientException("SDK.WebException",
+                        string.Format("HttpWebRequest timeout, the request url is {0} {1}",
+                            httpWebRequest.RequestUri == null ? "empty" : httpWebRequest.RequestUri.Host, ex));
                 }
 
                 throw new ClientException("SDK.WebException",
@@ -148,10 +126,16 @@ namespace Aliyun.Acs.Core.Http
                     string.Format("The request url is {0} {1}",
                         httpWebRequest.RequestUri == null ? "empty" : httpWebRequest.RequestUri.Host, ex));
             }
+            finally
+            {
+                result.Item2.Dispose();
+            }
         }
 
-        public static HttpWebRequest GetWebRequest(HttpRequest request)
+        private static async Task<Tuple<HttpWebRequest, CancellationTokenSource>> GetWebRequestAsync(HttpRequest request, int? timeout, CancellationToken cancellationToken)
         {
+            cancellationToken.ThrowIfCancellationRequested();
+
             var uri = new Uri(request.Url);
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(uri);
 
@@ -159,9 +143,9 @@ namespace Aliyun.Acs.Core.Http
             httpWebRequest.Method = request.Method.ToString();
             httpWebRequest.KeepAlive = true;
 
-            httpWebRequest.Timeout = request.ConnectTimeout > 0
+            httpWebRequest.Timeout = timeout ?? (request.ConnectTimeout > 0
                 ? request.ConnectTimeout
-                : DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds;
+                : DEFAULT_CONNECT_TIMEOUT_In_MilliSeconds);
 
             httpWebRequest.ReadWriteTimeout =
                 request.ReadTimeout > 0 ? request.ReadTimeout : DEFAULT_READ_TIMEOUT_IN_MilliSeconds;
@@ -205,20 +189,30 @@ namespace Aliyun.Acs.Core.Http
                 httpWebRequest.Headers.Add(header.Key, header.Value);
             }
 
+            var cts = cancellationToken.CanBeCanceled ? CancellationTokenSource.CreateLinkedTokenSource(cancellationToken) : new CancellationTokenSource();
+
+            cts.CancelAfter(timeout > 0 ? timeout.Value : Math.Max(httpWebRequest.Timeout, httpWebRequest.ReadWriteTimeout));
+
+            cts.Token.Register(httpWebRequest.Abort);
+
             if ((request.Method == MethodType.POST || request.Method == MethodType.PUT) && request.Content != null)
             {
-                using (var stream = httpWebRequest.GetRequestStream())
+                try
                 {
-                    stream.Write(request.Content, 0, request.Content.Length);
+                    using (var stream = await httpWebRequest.GetRequestStreamAsync().ConfigureAwait(false))
+                    {
+                        await stream.WriteAsync(request.Content, 0, request.Content.Length, cancellationToken).ConfigureAwait(false);
+                    }
+                }
+                catch
+                {
+                    cts.Dispose();
+
+                    throw;
                 }
             }
 
-            return httpWebRequest;
-        }
-
-        public bool isSuccess()
-        {
-            return 200 <= Status && 300 > Status;
+            return Tuple.Create(httpWebRequest, cts);
         }
     }
 }

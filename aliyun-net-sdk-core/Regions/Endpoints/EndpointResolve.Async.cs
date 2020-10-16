@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Auth;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Regions.Location;
@@ -10,19 +12,8 @@ namespace Aliyun.Acs.Core.Regions.Endpoints
 {
     internal partial class EndpointResolve
     {
-        private static List<Endpoint> _endpoints;
-        private readonly IEndpointsProvider internalEndpointProvider;
-        private readonly IEndpointsProvider remoteEndpointProvider;
-
-        public EndpointResolve()
-        {
-            _endpoints = new List<Endpoint>();
-            internalEndpointProvider = new InternalEndpointsParser();
-            remoteEndpointProvider = new RemoteEndpointsParser();
-        }
-
-        public List<Endpoint> Resolve(string product, string regionId, string serviceCode, string endpointType,
-            Credential credential, LocationConfig locationConfig)
+        public async Task<List<Endpoint>> ResolveAsync(string product, string regionId, string serviceCode, string endpointType,
+            Credential credential, LocationConfig locationConfig, CancellationToken cancellationToken)
         {
             try
             {
@@ -33,12 +24,12 @@ namespace Aliyun.Acs.Core.Regions.Endpoints
 
                 if (_endpoints.FirstOrDefault(x => x.Name == product) != null)
                 {
-                    var endpoint = internalEndpointProvider.GetEndpoint(regionId, product);
+                    var endpoint = await internalEndpointProvider.GetEndpointAsync(regionId, product, cancellationToken).ConfigureAwait(false);
 
                     if (serviceCode != null && endpoint == null)
                     {
-                        endpoint = remoteEndpointProvider.GetEndpoint(regionId, product, serviceCode, endpointType,
-                            credential, locationConfig);
+                        endpoint = await remoteEndpointProvider.GetEndpointAsync(regionId, product, serviceCode, endpointType,
+                            credential, locationConfig, cancellationToken).ConfigureAwait(false);
                     }
 
                     if (endpoint != null)
@@ -60,12 +51,12 @@ namespace Aliyun.Acs.Core.Regions.Endpoints
                 else if (Endpoint.FindProductDomain(regionId, product, _endpoints) == null ||
                     CacheTimeHelper.CheckCacheIsExpire(product, regionId))
                 {
-                    var endpoint = internalEndpointProvider.GetEndpoint(regionId, product);
+                    var endpoint = await internalEndpointProvider.GetEndpointAsync(regionId, product, cancellationToken).ConfigureAwait(false);
 
                     if (serviceCode != null && endpoint == null)
                     {
-                        endpoint = remoteEndpointProvider.GetEndpoint(regionId, product, serviceCode, endpointType,
-                            credential, locationConfig);
+                        endpoint = await remoteEndpointProvider.GetEndpointAsync(regionId, product, serviceCode, endpointType,
+                            credential, locationConfig, cancellationToken).ConfigureAwait(false);
                     }
 
                     if (endpoint != null)
@@ -90,12 +81,13 @@ namespace Aliyun.Acs.Core.Regions.Endpoints
             return _endpoints;
         }
 
-        public void AddEndpoint(string endpointName, string regionId, string product, string domain,
-            bool isNeverExpire = false)
+        public async Task AddEndpointAsync(string endpointName, string regionId, string product, string domain,
+            bool isNeverExpire = false,
+            CancellationToken cancellationToken = default(CancellationToken))
         {
             if (0 == _endpoints.Count)
             {
-                _endpoints = GetEndpoints(regionId, product);
+                _endpoints = await GetEndpointsAsync(regionId, product, cancellationToken).ConfigureAwait(false);
             }
 
             var endpoint = FindEndpointByRegionId(regionId);
@@ -124,29 +116,11 @@ namespace Aliyun.Acs.Core.Regions.Endpoints
             }
         }
 
-        private static Endpoint FindEndpointByRegionId(string regionId)
-        {
-            if (0 == _endpoints.Count)
-            {
-                return null;
-            }
-
-            foreach (var endpoint in _endpoints.ToList())
-            {
-                if (endpoint.RegionIds.Contains(regionId))
-                {
-                    return endpoint;
-                }
-            }
-
-            return null;
-        }
-
-        public List<Endpoint> GetEndpoints(string regionId, string product)
+        public async Task<List<Endpoint>> GetEndpointsAsync(string regionId, string product, CancellationToken cancellationToken)
         {
             if (null == _endpoints)
             {
-                var endpoint = internalEndpointProvider.GetEndpoint(regionId, product);
+                var endpoint = await internalEndpointProvider.GetEndpointAsync(regionId, product, cancellationToken).ConfigureAwait(false);
                 if (endpoint != null)
                 {
                     _endpoints = new List<Endpoint> { endpoint };
@@ -154,36 +128,6 @@ namespace Aliyun.Acs.Core.Regions.Endpoints
             }
 
             return _endpoints;
-        }
-
-        private static void UpdateEndpoint(string regionId, string product, string domain, Endpoint endpoint)
-        {
-            var regionIds = endpoint.RegionIds;
-            regionIds.Add(regionId);
-
-            var productDomains = endpoint.ProductDomains;
-            var productDomain = FindProductDomain(productDomains, product);
-            if (null == productDomain)
-            {
-                productDomains.Add(new ProductDomain(product, domain));
-            }
-            else
-            {
-                productDomain.DomainName = domain;
-            }
-        }
-
-        private static ProductDomain FindProductDomain(List<ProductDomain> productDomains, string product)
-        {
-            foreach (var productDomain in productDomains.ToList())
-            {
-                if (productDomain.ProductName.Equals(product))
-                {
-                    return productDomain;
-                }
-            }
-
-            return null;
         }
     }
 }

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -26,7 +26,7 @@ using Aliyun.Acs.Core.Regions;
 
 namespace Aliyun.Acs.Core
 {
-    public interface IAcsClient
+    public partial interface IAcsClient
     {
         T GetAcsResponse<T>(AcsRequest<T> request) where T : AcsResponse;
 

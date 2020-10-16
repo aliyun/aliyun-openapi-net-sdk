@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Http;
@@ -29,64 +30,15 @@ using Aliyun.Acs.Core.Utils;
 
 namespace Aliyun.Acs.Core.Auth
 {
-    public partial class ECSMetadataServiceCredentialsFetcher : AlibabaCloudCredentialsProvider
+    public partial class ECSMetadataServiceCredentialsFetcher
     {
-        private const string URL_IN_ECS_METADATA = "/latest/meta-data/ram/security-credentials/";
-        private const int DEFAULT_TIMEOUT_IN_MILLISECONDS = 5000;
 
-        private const string ECS_METADAT_FETCH_ERROR_MSG =
-            "Failed to get RAM session credentials from ECS metadata service.";
-
-        // stands for 3600 s
-        private const int DEFAULT_ECS_SESSION_TOKEN_DURATION_SECONDS = 3600;
-        private int connectionTimeoutInMilliseconds;
-        private string credentialUrl;
-        private string metadataServiceHost = "100.100.100.200";
-        private string roleName;
-
-        public ECSMetadataServiceCredentialsFetcher()
+        public async Task<AlibabaCloudCredentials> GetCredentialsAsync(CancellationToken cancellationToken)
         {
-            connectionTimeoutInMilliseconds = DEFAULT_TIMEOUT_IN_MILLISECONDS;
+            return await FetchAsync(cancellationToken).ConfigureAwait(false);
         }
 
-        public AlibabaCloudCredentials GetCredentials()
-        {
-            return Fetch();
-        }
-
-        public void SetRoleName(string roleName)
-        {
-            if (string.IsNullOrEmpty(roleName))
-            {
-                throw new ArgumentNullException("You must specifiy a valid role name.");
-            }
-
-            this.roleName = roleName;
-            SetCredentialUrl();
-        }
-
-        public string GetRoleName()
-        {
-            return roleName;
-        }
-
-        private void SetCredentialUrl()
-        {
-            credentialUrl = "http://" + metadataServiceHost + URL_IN_ECS_METADATA + roleName;
-        }
-
-        public void WithECSMetadataServiceHost(string host)
-        {
-            metadataServiceHost = host;
-            SetCredentialUrl();
-        }
-
-        public void WithConnectionTimeout(int milliseconds)
-        {
-            connectionTimeoutInMilliseconds = milliseconds;
-        }
-
-        public string GetMetadata()
+        public async Task<string> GetMetadataAsync(CancellationToken cancellationToken)
         {
             var request = new HttpRequest(credentialUrl);
             request.Method = MethodType.GET;
@@ -95,7 +47,7 @@ namespace Aliyun.Acs.Core.Auth
             HttpResponse response;
             try
             {
-                response = GetResponse(request);
+                response = await GetResponseAsync(request, cancellationToken).ConfigureAwait(false);
             }
             catch (WebException e)
             {
@@ -110,12 +62,12 @@ namespace Aliyun.Acs.Core.Auth
             return Encoding.UTF8.GetString(response.Content);
         }
 
-        public virtual InstanceProfileCredentials Fetch()
+        public virtual async Task<InstanceProfileCredentials> FetchAsync(CancellationToken cancellationToken)
         {
             Dictionary<string, string> dic;
             try
             {
-                var jsonContent = GetMetadata();
+                var jsonContent = await GetMetadataAsync(cancellationToken).ConfigureAwait(false);
 
                 IReader reader = new JsonReader();
                 dic = reader.Read(jsonContent, "");
@@ -150,13 +102,13 @@ namespace Aliyun.Acs.Core.Auth
             );
         }
 
-        public InstanceProfileCredentials Fetch(int retryTimes)
+        public async Task<InstanceProfileCredentials> FetchAsync(int retryTimes, CancellationToken cancellationToken)
         {
             for (var i = 0; i <= retryTimes; i++)
             {
                 try
                 {
-                    return Fetch();
+                    return await FetchAsync(cancellationToken).ConfigureAwait(false);
                 }
                 catch (ClientException e)
                 {
@@ -170,9 +122,9 @@ namespace Aliyun.Acs.Core.Auth
             throw new ClientException("Failed to connect ECS Metadata Service: Max retry times exceeded.");
         }
 
-        public virtual HttpResponse GetResponse(HttpRequest request)
+        public virtual Task<HttpResponse> GetResponseAsync(HttpRequest request, CancellationToken cancellationToken)
         {
-            return HttpResponse.GetResponse(request);
+            return HttpResponse.GetResponseAsync(request, cancellationToken);
         }
     }
 }

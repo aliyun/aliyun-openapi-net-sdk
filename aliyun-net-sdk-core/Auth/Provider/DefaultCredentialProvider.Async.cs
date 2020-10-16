@@ -18,7 +18,8 @@
  */
 
 using System.IO;
-
+using System.Threading;
+using System.Threading.Tasks;
 using Aliyun.Acs.Core.Exceptions;
 using Aliyun.Acs.Core.Profile;
 using Aliyun.Acs.Core.Utils;
@@ -27,56 +28,11 @@ namespace Aliyun.Acs.Core.Auth.Provider
 {
     public partial class DefaultCredentialProvider
     {
-        private static IClientProfile defaultProfile;
-
-        private readonly AlibabaCloudCredentialsProvider alibabaCloudCredentialProvider;
-
-        private string accessKeyId;
-        private string accessKeySecret;
-        private string credentialFileLocation;
-        private string privateKeyFile;
-        private string publicKeyId;
-        private string regionId;
-        private string roleArn;
-        private string roleName;
-
-        public DefaultCredentialProvider()
+        public async Task<AlibabaCloudCredentials> GetAlibabaCloudClientCredentialAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-        }
-
-        public DefaultCredentialProvider(
-            IClientProfile profile,
-            AlibabaCloudCredentialsProvider alibabaCloudCredentialProvider
-        )
-        {
-            accessKeyId = EnvironmentUtil.GetEnvironmentAccessKeyId();
-            accessKeySecret = EnvironmentUtil.GetEnvironmentAccessKeySecret();
-            regionId = EnvironmentUtil.GetEnvironmentRegionId();
-            credentialFileLocation = EnvironmentUtil.GetEnvironmentCredentialFile();
-            roleName = EnvironmentUtil.GetEnvironmentRoleName();
-            defaultProfile = profile;
-            this.alibabaCloudCredentialProvider = alibabaCloudCredentialProvider;
-        }
-
-        public DefaultCredentialProvider(
-            IClientProfile profile,
-            string publicKeyId,
-            string privateKeyFile,
-            AlibabaCloudCredentialsProvider alibabaCloudCredentialsProvider
-        )
-        {
-            defaultProfile = profile;
-            this.privateKeyFile = privateKeyFile;
-            this.publicKeyId = publicKeyId;
-            regionId = EnvironmentUtil.GetEnvironmentRegionId();
-            alibabaCloudCredentialProvider = alibabaCloudCredentialsProvider;
-        }
-
-        public AlibabaCloudCredentials GetAlibabaCloudClientCredential()
-        {
-            var credential = GetEnvironmentAlibabaCloudCredential() ??
-                             GetCredentialFileAlibabaCloudCredential() ??
-                             GetInstanceRamRoleAlibabaCloudCredential();
+            var credential = await GetEnvironmentAlibabaCloudCredentialAsync(cancellationToken).ConfigureAwait(false) ??
+                             await GetCredentialFileAlibabaCloudCredentialAsync(cancellationToken).ConfigureAwait(false) ??
+                             await GetInstanceRamRoleAlibabaCloudCredentialAsync(cancellationToken).ConfigureAwait(false);
 
             if (credential == null)
             {
@@ -86,7 +42,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
             return credential;
         }
 
-        public AlibabaCloudCredentials GetEnvironmentAlibabaCloudCredential()
+        public async Task<AlibabaCloudCredentials> GetEnvironmentAlibabaCloudCredentialAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             if (null == accessKeyId || null == accessKeySecret)
             {
@@ -99,10 +55,10 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     "Environment credential variable 'ALIBABA_CLOUD_ACCESS_KEY_*' cannot be empty");
             }
 
-            return defaultProfile.DefaultClientName.Equals("default") ? GetAccessKeyCredential() : null;
+            return defaultProfile.DefaultClientName.Equals("default") ? await GetAccessKeyCredentialAsync(cancellationToken).ConfigureAwait(false) : null;
         }
 
-        public AlibabaCloudCredentials GetCredentialFileAlibabaCloudCredential()
+        public async Task<AlibabaCloudCredentials> GetCredentialFileAlibabaCloudCredentialAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             if (null == credentialFileLocation)
             {
@@ -141,7 +97,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     accessKeySecret = iniReader.GetValue("access_key_secret", userDefineSectionNode);
                     regionId = iniReader.GetValue("region_id", userDefineSectionNode);
 
-                    return GetAccessKeyCredential();
+                    return await GetAccessKeyCredentialAsync().ConfigureAwait(false);
                 }
 
                 if (iniKeyTypeValue.Equals("ecs_ram_role"))
@@ -149,7 +105,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     roleName = iniReader.GetValue("role_name", userDefineSectionNode);
                     regionId = iniReader.GetValue("region_id", userDefineSectionNode);
 
-                    return GetInstanceRamRoleAlibabaCloudCredential();
+                    return await GetInstanceRamRoleAlibabaCloudCredentialAsync(cancellationToken).ConfigureAwait(false);
                 }
 
                 if (iniKeyTypeValue.Equals("ram_role_arn"))
@@ -158,7 +114,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     accessKeySecret = iniReader.GetValue("access_key_secret", userDefineSectionNode);
                     roleArn = iniReader.GetValue("role_arn", userDefineSectionNode);
 
-                    return GetRamRoleArnAlibabaCloudCredential();
+                    return await GetRamRoleArnAlibabaCloudCredentialAsync().ConfigureAwait(false);
                 }
 
                 if (iniKeyTypeValue.Equals("rsa_key_pair"))
@@ -166,7 +122,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     publicKeyId = iniReader.GetValue("public_key_id", userDefineSectionNode);
                     privateKeyFile = iniReader.GetValue("private_key_file", userDefineSectionNode);
 
-                    return GetRsaKeyPairAlibabaCloudCredential();
+                    return await GetRsaKeyPairAlibabaCloudCredentialAsync().ConfigureAwait(false);
                 }
             }
             else
@@ -182,14 +138,14 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     accessKeySecret = iniReader.GetValue("access_key_secret", "default");
                     regionId = iniReader.GetValue("region_id", "default");
 
-                    return GetAccessKeyCredential();
+                    return await GetAccessKeyCredentialAsync().ConfigureAwait(false);
                 }
             }
 
             return null;
         }
 
-        public virtual AlibabaCloudCredentials GetInstanceRamRoleAlibabaCloudCredential()
+        public virtual Task<AlibabaCloudCredentials> GetInstanceRamRoleAlibabaCloudCredentialAsync(CancellationToken cancellationToken)
         {
             if (null == regionId || regionId.Equals(""))
             {
@@ -212,10 +168,10 @@ namespace Aliyun.Acs.Core.Auth.Provider
                 instanceProfileCredentialProvider = new InstanceProfileCredentialsProvider(roleName);
             }
 
-            return instanceProfileCredentialProvider.GetCredentials();
+            return instanceProfileCredentialProvider.GetCredentialsAsync(cancellationToken);
         }
 
-        public AlibabaCloudCredentials GetAccessKeyCredential()
+        public Task<AlibabaCloudCredentials> GetAccessKeyCredentialAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             if (string.IsNullOrEmpty(accessKeyId) || string.IsNullOrEmpty(accessKeySecret) ||
                 string.IsNullOrEmpty(regionId))
@@ -226,10 +182,10 @@ namespace Aliyun.Acs.Core.Auth.Provider
             var accessKeyCredentialProvider =
                 new AccessKeyCredentialProvider(accessKeyId, accessKeySecret);
 
-            return accessKeyCredentialProvider.GetCredentials();
+            return accessKeyCredentialProvider.GetCredentialsAsync(cancellationToken);
         }
 
-        public virtual AlibabaCloudCredentials GetRamRoleArnAlibabaCloudCredential()
+        public virtual Task<AlibabaCloudCredentials> GetRamRoleArnAlibabaCloudCredentialAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             if (string.IsNullOrEmpty(accessKeyId) || string.IsNullOrEmpty(accessKeySecret) ||
                 string.IsNullOrEmpty(regionId))
@@ -256,10 +212,10 @@ namespace Aliyun.Acs.Core.Auth.Provider
                     new STSAssumeRoleSessionCredentialsProvider(credential, roleArn, profile);
             }
 
-            return stsAsssumeRoleSessionCredentialProvider.GetCredentials();
+            return stsAsssumeRoleSessionCredentialProvider.GetCredentialsAsync(cancellationToken);
         }
 
-        public virtual AlibabaCloudCredentials GetRsaKeyPairAlibabaCloudCredential()
+        public virtual Task<AlibabaCloudCredentials> GetRsaKeyPairAlibabaCloudCredentialAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             if (string.IsNullOrEmpty(publicKeyId) || string.IsNullOrEmpty(privateKeyFile) ||
                 string.IsNullOrEmpty(regionId))
@@ -281,12 +237,7 @@ namespace Aliyun.Acs.Core.Auth.Provider
                 rsaKeyPairCredentialProvider = new RsaKeyPairCredentialProvider(rsaKeyPairCredential, profile);
             }
 
-            return rsaKeyPairCredentialProvider.GetCredentials();
-        }
-
-        public virtual string GetHomePath()
-        {
-            return EnvironmentUtil.GetHomePath();
+            return rsaKeyPairCredentialProvider.GetCredentialsAsync(cancellationToken);
         }
     }
 }
