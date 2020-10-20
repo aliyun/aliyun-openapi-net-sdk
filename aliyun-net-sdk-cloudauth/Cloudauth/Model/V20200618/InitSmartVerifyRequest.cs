@@ -40,13 +40,11 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			Method = MethodType.POST;
         }
 
-		private string ip;
-
-		private string certName;
-
-		private string mobile;
-
 		private string userId;
+
+		private string certifyId;
+
+		private string facePictureBase64;
 
 		private string mode;
 
@@ -56,50 +54,27 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 
 		private string certType;
 
-		private long? sceneId;
-
 		private string metaInfo;
 
 		private string ocr;
 
-		public string Ip
-		{
-			get
-			{
-				return ip;
-			}
-			set	
-			{
-				ip = value;
-				DictionaryUtil.Add(BodyParameters, "Ip", value);
-			}
-		}
+		private string ossObjectName;
 
-		public string CertName
-		{
-			get
-			{
-				return certName;
-			}
-			set	
-			{
-				certName = value;
-				DictionaryUtil.Add(BodyParameters, "CertName", value);
-			}
-		}
+		private string facePictureUrl;
 
-		public string Mobile
-		{
-			get
-			{
-				return mobile;
-			}
-			set	
-			{
-				mobile = value;
-				DictionaryUtil.Add(BodyParameters, "Mobile", value);
-			}
-		}
+		private string ip;
+
+		private string certName;
+
+		private string mobile;
+
+		private long? sceneId;
+
+		private string callbackToken;
+
+		private string ossBucketName;
+
+		private string callbackUrl;
 
 		public string UserId
 		{
@@ -111,6 +86,32 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			{
 				userId = value;
 				DictionaryUtil.Add(BodyParameters, "UserId", value);
+			}
+		}
+
+		public string CertifyId
+		{
+			get
+			{
+				return certifyId;
+			}
+			set	
+			{
+				certifyId = value;
+				DictionaryUtil.Add(BodyParameters, "CertifyId", value);
+			}
+		}
+
+		public string FacePictureBase64
+		{
+			get
+			{
+				return facePictureBase64;
+			}
+			set	
+			{
+				facePictureBase64 = value;
+				DictionaryUtil.Add(BodyParameters, "FacePictureBase64", value);
 			}
 		}
 
@@ -166,19 +167,6 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			}
 		}
 
-		public long? SceneId
-		{
-			get
-			{
-				return sceneId;
-			}
-			set	
-			{
-				sceneId = value;
-				DictionaryUtil.Add(BodyParameters, "SceneId", value.ToString());
-			}
-		}
-
 		public string MetaInfo
 		{
 			get
@@ -202,6 +190,123 @@ namespace Aliyun.Acs.Cloudauth.Model.V20200618
 			{
 				ocr = value;
 				DictionaryUtil.Add(BodyParameters, "Ocr", value);
+			}
+		}
+
+		public string OssObjectName
+		{
+			get
+			{
+				return ossObjectName;
+			}
+			set	
+			{
+				ossObjectName = value;
+				DictionaryUtil.Add(BodyParameters, "OssObjectName", value);
+			}
+		}
+
+		public string FacePictureUrl
+		{
+			get
+			{
+				return facePictureUrl;
+			}
+			set	
+			{
+				facePictureUrl = value;
+				DictionaryUtil.Add(BodyParameters, "FacePictureUrl", value);
+			}
+		}
+
+		public string Ip
+		{
+			get
+			{
+				return ip;
+			}
+			set	
+			{
+				ip = value;
+				DictionaryUtil.Add(BodyParameters, "Ip", value);
+			}
+		}
+
+		public string CertName
+		{
+			get
+			{
+				return certName;
+			}
+			set	
+			{
+				certName = value;
+				DictionaryUtil.Add(BodyParameters, "CertName", value);
+			}
+		}
+
+		public string Mobile
+		{
+			get
+			{
+				return mobile;
+			}
+			set	
+			{
+				mobile = value;
+				DictionaryUtil.Add(BodyParameters, "Mobile", value);
+			}
+		}
+
+		public long? SceneId
+		{
+			get
+			{
+				return sceneId;
+			}
+			set	
+			{
+				sceneId = value;
+				DictionaryUtil.Add(BodyParameters, "SceneId", value.ToString());
+			}
+		}
+
+		public string CallbackToken
+		{
+			get
+			{
+				return callbackToken;
+			}
+			set	
+			{
+				callbackToken = value;
+				DictionaryUtil.Add(BodyParameters, "CallbackToken", value);
+			}
+		}
+
+		public string OssBucketName
+		{
+			get
+			{
+				return ossBucketName;
+			}
+			set	
+			{
+				ossBucketName = value;
+				DictionaryUtil.Add(BodyParameters, "OssBucketName", value);
+			}
+		}
+
+		public string CallbackUrl
+		{
+			get
+			{
+				return callbackUrl;
+			}
+			set	
+			{
+				callbackUrl = value;
+				DictionaryUtil.Add(BodyParameters, "CallbackUrl", value);
 			}
 		}
 

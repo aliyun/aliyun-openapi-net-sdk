@@ -72,7 +72,11 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string ossBucketName;
 
+		private string callbackToken;
+
 		private string returnUrl;
+
+		private string callbackUrl;
 
 		public string ProductCode
 		{
@@ -282,6 +286,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			}
 		}
 
+		public string CallbackToken
+		{
+			get
+			{
+				return callbackToken;
+			}
+			set	
+			{
+				callbackToken = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackToken", value);
+			}
+		}
+
 		public string ReturnUrl
 		{
 			get
@@ -292,6 +309,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				returnUrl = value;
 				DictionaryUtil.Add(QueryParameters, "ReturnUrl", value);
+			}
+		}
+
+		public string CallbackUrl
+		{
+			get
+			{
+				return callbackUrl;
+			}
+			set	
+			{
+				callbackUrl = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackUrl", value);
 			}
 		}
 

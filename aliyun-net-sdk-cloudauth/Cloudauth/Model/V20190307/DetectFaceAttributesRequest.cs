@@ -40,7 +40,22 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			Method = MethodType.POST;
         }
 
+		private string bizType;
+
 		private string materialValue;
+
+		public string BizType
+		{
+			get
+			{
+				return bizType;
+			}
+			set	
+			{
+				bizType = value;
+				DictionaryUtil.Add(BodyParameters, "BizType", value);
+			}
+		}
 
 		public string MaterialValue
 		{

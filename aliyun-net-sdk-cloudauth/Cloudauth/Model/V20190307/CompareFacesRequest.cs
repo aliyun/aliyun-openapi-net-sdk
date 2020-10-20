@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string targetImageValue;
 
+		private string bizType;
+
 		private string sourceImageValue;
 
 		public string SourceImageType
@@ -85,6 +87,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				targetImageValue = value;
 				DictionaryUtil.Add(BodyParameters, "TargetImageValue", value);
+			}
+		}
+
+		public string BizType
+		{
+			get
+			{
+				return bizType;
+			}
+			set	
+			{
+				bizType = value;
+				DictionaryUtil.Add(BodyParameters, "BizType", value);
 			}
 		}
 
