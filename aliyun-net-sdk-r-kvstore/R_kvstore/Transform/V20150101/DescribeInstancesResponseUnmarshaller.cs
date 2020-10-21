@@ -73,6 +73,8 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				kVStoreInstance.ConnectionMode = context.StringValue("DescribeInstances.Instances["+ i +"].ConnectionMode");
 				kVStoreInstance.VpcCloudInstanceId = context.StringValue("DescribeInstances.Instances["+ i +"].VpcCloudInstanceId");
 				kVStoreInstance.ResourceGroupId = context.StringValue("DescribeInstances.Instances["+ i +"].ResourceGroupId");
+				kVStoreInstance.ShardCount = context.IntegerValue("DescribeInstances.Instances["+ i +"].ShardCount");
+				kVStoreInstance.ProxyCount = context.IntegerValue("DescribeInstances.Instances["+ i +"].ProxyCount");
 
 				List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag> kVStoreInstance_tags = new List<DescribeInstancesResponse.DescribeInstances_KVStoreInstance.DescribeInstances_Tag>();
 				for (int j = 0; j < context.Length("DescribeInstances.Instances["+ i +"].Tags.Length"); j++) {

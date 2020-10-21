@@ -136,6 +136,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string resourceGroupId;
 
+			private int? shardCount;
+
 			private List<DescribeInstanceAttribute_Tag> tags;
 
 			public string InstanceId
@@ -615,6 +617,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public int? ShardCount
+			{
+				get
+				{
+					return shardCount;
+				}
+				set	
+				{
+					shardCount = value;
 				}
 			}
 

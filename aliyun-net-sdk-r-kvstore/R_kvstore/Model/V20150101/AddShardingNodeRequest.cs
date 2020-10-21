@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeAvailableResourceRequest : RpcAcsRequest<DescribeAvailableResourceResponse>
+    public class AddShardingNodeRequest : RpcAcsRequest<AddShardingNodeResponse>
     {
-        public DescribeAvailableResourceRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeAvailableResource", "redisa", "openAPI")
+        public AddShardingNodeRequest()
+            : base("R-kvstore", "2015-01-01", "AddShardingNode", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +42,15 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string resourceGroupId;
+		private string couponNo;
 
 		private string securityToken;
 
-		private string engine;
+		private int? shardCount;
 
-		private string instanceChargeType;
+		private string businessInfo;
+
+		private bool? autoPay;
 
 		private string resourceOwnerAccount;
 
@@ -58,11 +60,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private string instanceId;
 
-		private string acceptLanguage;
-
-		private string zoneId;
-
-		private string orderType;
+		private string shardClass;
 
 		public long? ResourceOwnerId
 		{
@@ -77,16 +75,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string ResourceGroupId
+		public string CouponNo
 		{
 			get
 			{
-				return resourceGroupId;
+				return couponNo;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+				couponNo = value;
+				DictionaryUtil.Add(QueryParameters, "CouponNo", value);
 			}
 		}
 
@@ -103,29 +101,42 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Engine
+		public int? ShardCount
 		{
 			get
 			{
-				return engine;
+				return shardCount;
 			}
 			set	
 			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
+				shardCount = value;
+				DictionaryUtil.Add(QueryParameters, "ShardCount", value.ToString());
 			}
 		}
 
-		public string InstanceChargeType
+		public string BusinessInfo
 		{
 			get
 			{
-				return instanceChargeType;
+				return businessInfo;
 			}
 			set	
 			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+				businessInfo = value;
+				DictionaryUtil.Add(QueryParameters, "BusinessInfo", value);
+			}
+		}
+
+		public bool? AutoPay
+		{
+			get
+			{
+				return autoPay;
+			}
+			set	
+			{
+				autoPay = value;
+				DictionaryUtil.Add(QueryParameters, "AutoPay", value.ToString());
 			}
 		}
 
@@ -181,48 +192,27 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AcceptLanguage
+		public string ShardClass
 		{
 			get
 			{
-				return acceptLanguage;
+				return shardClass;
 			}
 			set	
 			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
+				shardClass = value;
+				DictionaryUtil.Add(QueryParameters, "ShardClass", value);
 			}
 		}
 
-		public string ZoneId
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
+			return false;
 		}
 
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
-
-        public override DescribeAvailableResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override AddShardingNodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAvailableResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return AddShardingNodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

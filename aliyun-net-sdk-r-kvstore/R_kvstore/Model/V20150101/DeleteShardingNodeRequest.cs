@@ -27,10 +27,10 @@ using Aliyun.Acs.R_kvstore.Transform.V20150101;
 
 namespace Aliyun.Acs.R_kvstore.Model.V20150101
 {
-    public class DescribeAvailableResourceRequest : RpcAcsRequest<DescribeAvailableResourceResponse>
+    public class DeleteShardingNodeRequest : RpcAcsRequest<DeleteShardingNodeResponse>
     {
-        public DescribeAvailableResourceRequest()
-            : base("R-kvstore", "2015-01-01", "DescribeAvailableResource", "redisa", "openAPI")
+        public DeleteShardingNodeRequest()
+            : base("R-kvstore", "2015-01-01", "DeleteShardingNode", "redisa", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +42,9 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 		private long? resourceOwnerId;
 
-		private string resourceGroupId;
-
 		private string securityToken;
 
-		private string engine;
-
-		private string instanceChargeType;
+		private string nodeId;
 
 		private string resourceOwnerAccount;
 
@@ -57,12 +53,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? ownerId;
 
 		private string instanceId;
-
-		private string acceptLanguage;
-
-		private string zoneId;
-
-		private string orderType;
 
 		public long? ResourceOwnerId
 		{
@@ -74,19 +64,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 
@@ -103,29 +80,16 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string Engine
+		public string NodeId
 		{
 			get
 			{
-				return engine;
+				return nodeId;
 			}
 			set	
 			{
-				engine = value;
-				DictionaryUtil.Add(QueryParameters, "Engine", value);
-			}
-		}
-
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+				nodeId = value;
+				DictionaryUtil.Add(QueryParameters, "NodeId", value);
 			}
 		}
 
@@ -181,48 +145,14 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			}
 		}
 
-		public string AcceptLanguage
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return acceptLanguage;
-			}
-			set	
-			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
-			}
+			return false;
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-		public string OrderType
-		{
-			get
-			{
-				return orderType;
-			}
-			set	
-			{
-				orderType = value;
-				DictionaryUtil.Add(QueryParameters, "OrderType", value);
-			}
-		}
-
-        public override DescribeAvailableResourceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteShardingNodeResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAvailableResourceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteShardingNodeResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
