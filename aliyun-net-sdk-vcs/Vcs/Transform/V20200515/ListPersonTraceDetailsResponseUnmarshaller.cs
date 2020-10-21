@@ -46,7 +46,6 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 				datas.DataSourceId = context.StringValue("ListPersonTraceDetails.Data["+ i +"].DataSourceId");
 				datas.PersonId = context.StringValue("ListPersonTraceDetails.Data["+ i +"].PersonId");
 				datas.PicUrlPath = context.StringValue("ListPersonTraceDetails.Data["+ i +"].PicUrlPath");
-				datas.IsvId = context.StringValue("ListPersonTraceDetails.Data["+ i +"].IsvId");
 				datas.RightBottomY = context.StringValue("ListPersonTraceDetails.Data["+ i +"].RightBottomY");
 				datas.RightBottomX = context.StringValue("ListPersonTraceDetails.Data["+ i +"].RightBottomX");
 				datas.ShotTime = context.StringValue("ListPersonTraceDetails.Data["+ i +"].ShotTime");

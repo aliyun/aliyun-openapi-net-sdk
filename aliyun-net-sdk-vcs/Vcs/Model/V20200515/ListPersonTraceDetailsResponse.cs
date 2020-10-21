@@ -100,8 +100,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 			private string picUrlPath;
 
-			private string isvId;
-
 			private string rightBottomY;
 
 			private string rightBottomX;
@@ -209,18 +207,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 				set	
 				{
 					picUrlPath = value;
-				}
-			}
-
-			public string IsvId
-			{
-				get
-				{
-					return isvId;
-				}
-				set	
-				{
-					isvId = value;
 				}
 			}
 

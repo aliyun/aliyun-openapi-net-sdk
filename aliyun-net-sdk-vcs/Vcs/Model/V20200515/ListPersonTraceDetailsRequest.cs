@@ -56,8 +56,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string personId;
 
-		private string isvId;
-
 		public string CorpId
 		{
 			get
@@ -146,19 +144,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				personId = value;
 				DictionaryUtil.Add(BodyParameters, "PersonId", value);
-			}
-		}
-
-		public string IsvId
-		{
-			get
-			{
-				return isvId;
-			}
-			set	
-			{
-				isvId = value;
-				DictionaryUtil.Add(BodyParameters, "IsvId", value);
 			}
 		}
 
