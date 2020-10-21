@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net45</TargetFrameworks>
     <RootNamespace>Aliyun.Acs.scdn</RootNamespace>
-    <Version>2.1.4</Version>
+    <Version>2.1.5</Version>
     <Authors>Alibaba Cloud</Authors>
     <Copyright>©2009-2019 Alibaba Cloud</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
