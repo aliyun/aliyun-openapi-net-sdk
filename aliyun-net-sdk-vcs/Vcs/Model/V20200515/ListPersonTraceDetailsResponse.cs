@@ -31,6 +31,12 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private string requestId;
 
+		private long? pageNumber;
+
+		private long? pageSize;
+
+		private long? totalCount;
+
 		private List<ListPersonTraceDetails_Datas> data;
 
 		public string Code
@@ -69,6 +75,42 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			}
 		}
 
+		public long? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public long? TotalCount
+		{
+			get
+			{
+				return totalCount;
+			}
+			set	
+			{
+				totalCount = value;
+			}
+		}
+
 		public List<ListPersonTraceDetails_Datas> Data
 		{
 			get
@@ -83,14 +125,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		public class ListPersonTraceDetails_Datas
 		{
-
-			private long? pageNumber;
-
-			private long? pageSize;
-
-			private long? totalCount;
-
-			private long? totalPage;
 
 			private string targetPicUrlPath;
 
@@ -113,54 +147,6 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			private string leftTopY;
 
 			private string leftTopX;
-
-			public long? PageNumber
-			{
-				get
-				{
-					return pageNumber;
-				}
-				set	
-				{
-					pageNumber = value;
-				}
-			}
-
-			public long? PageSize
-			{
-				get
-				{
-					return pageSize;
-				}
-				set	
-				{
-					pageSize = value;
-				}
-			}
-
-			public long? TotalCount
-			{
-				get
-				{
-					return totalCount;
-				}
-				set	
-				{
-					totalCount = value;
-				}
-			}
-
-			public long? TotalPage
-			{
-				get
-				{
-					return totalPage;
-				}
-				set	
-				{
-					totalPage = value;
-				}
-			}
 
 			public string TargetPicUrlPath
 			{

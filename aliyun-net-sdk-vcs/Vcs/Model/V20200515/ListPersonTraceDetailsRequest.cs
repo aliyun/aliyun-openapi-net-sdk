@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 
 		private long? pageSize;
 
+		private string dataSourceId;
+
 		private string personId;
 
 		public string CorpId
@@ -131,6 +133,19 @@ namespace Aliyun.Acs.Vcs.Model.V20200515
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string DataSourceId
+		{
+			get
+			{
+				return dataSourceId;
+			}
+			set	
+			{
+				dataSourceId = value;
+				DictionaryUtil.Add(BodyParameters, "DataSourceId", value);
 			}
 		}
 

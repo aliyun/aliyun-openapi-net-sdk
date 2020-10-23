@@ -34,14 +34,13 @@ namespace Aliyun.Acs.Vcs.Transform.V20200515
 			listPersonTraceDetailsResponse.Code = context.StringValue("ListPersonTraceDetails.Code");
 			listPersonTraceDetailsResponse.Message = context.StringValue("ListPersonTraceDetails.Message");
 			listPersonTraceDetailsResponse.RequestId = context.StringValue("ListPersonTraceDetails.RequestId");
+			listPersonTraceDetailsResponse.PageNumber = context.LongValue("ListPersonTraceDetails.PageNumber");
+			listPersonTraceDetailsResponse.PageSize = context.LongValue("ListPersonTraceDetails.PageSize");
+			listPersonTraceDetailsResponse.TotalCount = context.LongValue("ListPersonTraceDetails.TotalCount");
 
 			List<ListPersonTraceDetailsResponse.ListPersonTraceDetails_Datas> listPersonTraceDetailsResponse_data = new List<ListPersonTraceDetailsResponse.ListPersonTraceDetails_Datas>();
 			for (int i = 0; i < context.Length("ListPersonTraceDetails.Data.Length"); i++) {
 				ListPersonTraceDetailsResponse.ListPersonTraceDetails_Datas datas = new ListPersonTraceDetailsResponse.ListPersonTraceDetails_Datas();
-				datas.PageNumber = context.LongValue("ListPersonTraceDetails.Data["+ i +"].PageNumber");
-				datas.PageSize = context.LongValue("ListPersonTraceDetails.Data["+ i +"].PageSize");
-				datas.TotalCount = context.LongValue("ListPersonTraceDetails.Data["+ i +"].TotalCount");
-				datas.TotalPage = context.LongValue("ListPersonTraceDetails.Data["+ i +"].TotalPage");
 				datas.TargetPicUrlPath = context.StringValue("ListPersonTraceDetails.Data["+ i +"].TargetPicUrlPath");
 				datas.DataSourceId = context.StringValue("ListPersonTraceDetails.Data["+ i +"].DataSourceId");
 				datas.PersonId = context.StringValue("ListPersonTraceDetails.Data["+ i +"].PersonId");

@@ -1,0 +1,58 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+using System;
+using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Vcs.Model.V20200515;
+
+namespace Aliyun.Acs.Vcs.Transform.V20200515
+{
+    public class ListSubscribeDeviceResponseUnmarshaller
+    {
+        public static ListSubscribeDeviceResponse Unmarshall(UnmarshallerContext context)
+        {
+			ListSubscribeDeviceResponse listSubscribeDeviceResponse = new ListSubscribeDeviceResponse();
+
+			listSubscribeDeviceResponse.HttpResponse = context.HttpResponse;
+			listSubscribeDeviceResponse.Code = context.StringValue("ListSubscribeDevice.Code");
+			listSubscribeDeviceResponse.Message = context.StringValue("ListSubscribeDevice.Message");
+			listSubscribeDeviceResponse.RequestId = context.StringValue("ListSubscribeDevice.RequestId");
+
+			ListSubscribeDeviceResponse.ListSubscribeDevice_Data data = new ListSubscribeDeviceResponse.ListSubscribeDevice_Data();
+			data.TotalCount = context.IntegerValue("ListSubscribeDevice.Data.TotalCount");
+
+			List<ListSubscribeDeviceResponse.ListSubscribeDevice_Data.ListSubscribeDevice_SubscribeListItem> data_subscribeList = new List<ListSubscribeDeviceResponse.ListSubscribeDevice_Data.ListSubscribeDevice_SubscribeListItem>();
+			for (int i = 0; i < context.Length("ListSubscribeDevice.Data.SubscribeList.Length"); i++) {
+				ListSubscribeDeviceResponse.ListSubscribeDevice_Data.ListSubscribeDevice_SubscribeListItem subscribeListItem = new ListSubscribeDeviceResponse.ListSubscribeDevice_Data.ListSubscribeDevice_SubscribeListItem();
+				subscribeListItem.UserId = context.StringValue("ListSubscribeDevice.Data.SubscribeList["+ i +"].UserId");
+				subscribeListItem.DeviceId = context.StringValue("ListSubscribeDevice.Data.SubscribeList["+ i +"].DeviceId");
+				subscribeListItem.PushConfig = context.StringValue("ListSubscribeDevice.Data.SubscribeList["+ i +"].PushConfig");
+				subscribeListItem.CreateTime = context.StringValue("ListSubscribeDevice.Data.SubscribeList["+ i +"].CreateTime");
+				subscribeListItem.UpdateTime = context.StringValue("ListSubscribeDevice.Data.SubscribeList["+ i +"].UpdateTime");
+
+				data_subscribeList.Add(subscribeListItem);
+			}
+			data.SubscribeList = data_subscribeList;
+			listSubscribeDeviceResponse.Data = data;
+        
+			return listSubscribeDeviceResponse;
+        }
+    }
+}
