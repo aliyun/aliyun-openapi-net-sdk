@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeElasticityAssurancesRequest : RpcAcsRequest<DescribeElasticityAssurancesResponse>
+    public class CreateCapacityReservationRequest : RpcAcsRequest<CreateCapacityReservationResponse>
     {
-        public DescribeElasticityAssurancesRequest()
-            : base("Ecs", "2014-05-26", "DescribeElasticityAssurances", "ecs", "openAPI")
+        public CreateCapacityReservationRequest()
+            : base("Ecs", "2014-05-26", "CreateCapacityReservation", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,25 +42,33 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string clientToken;
+
+		private string description;
+
+		private string startTime;
+
 		private string platform;
 
-		private string nextToken;
+		private string privatePoolOptionsMatchCriteria;
 
 		private string instanceType;
 
-		private string instanceChargeType;
+		private string endTimeType;
 
 		private string resourceOwnerAccount;
 
+		private string privatePoolOptionsName;
+
 		private string ownerAccount;
+
+		private string endTime;
 
 		private long? ownerId;
 
-		private string privatePoolOptionsIds;
+		private List<string> zoneIds = new List<string>(){ };
 
-		private int? maxResults;
-
-		private string zoneId;
+		private int? instanceAmount;
 
 		public long? ResourceOwnerId
 		{
@@ -72,6 +80,45 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+				DictionaryUtil.Add(QueryParameters, "StartTime", value);
 			}
 		}
 
@@ -88,16 +135,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string NextToken
+		public string PrivatePoolOptionsMatchCriteria
 		{
 			get
 			{
-				return nextToken;
+				return privatePoolOptionsMatchCriteria;
 			}
 			set	
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+				privatePoolOptionsMatchCriteria = value;
+				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.MatchCriteria", value);
 			}
 		}
 
@@ -114,16 +161,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceChargeType
+		public string EndTimeType
 		{
 			get
 			{
-				return instanceChargeType;
+				return endTimeType;
 			}
 			set	
 			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+				endTimeType = value;
+				DictionaryUtil.Add(QueryParameters, "EndTimeType", value);
 			}
 		}
 
@@ -140,6 +187,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string PrivatePoolOptionsName
+		{
+			get
+			{
+				return privatePoolOptionsName;
+			}
+			set	
+			{
+				privatePoolOptionsName = value;
+				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.Name", value);
+			}
+		}
+
 		public string OwnerAccount
 		{
 			get
@@ -150,6 +210,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -166,48 +239,39 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string PrivatePoolOptionsIds
+		public List<string> ZoneIds
 		{
 			get
 			{
-				return privatePoolOptionsIds;
+				return zoneIds;
 			}
-			set	
+
+			set
 			{
-				privatePoolOptionsIds = value;
-				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.Ids", value);
+				zoneIds = value;
+				for (int i = 0; i < zoneIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ZoneId." + (i + 1) , zoneIds[i]);
+				}
 			}
 		}
 
-		public int? MaxResults
+		public int? InstanceAmount
 		{
 			get
 			{
-				return maxResults;
+				return instanceAmount;
 			}
 			set	
 			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+				instanceAmount = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceAmount", value.ToString());
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-        public override DescribeElasticityAssurancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override CreateCapacityReservationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeElasticityAssurancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateCapacityReservationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeElasticityAssurancesRequest : RpcAcsRequest<DescribeElasticityAssurancesResponse>
+    public class ReleaseCapacityReservationRequest : RpcAcsRequest<ReleaseCapacityReservationResponse>
     {
-        public DescribeElasticityAssurancesRequest()
-            : base("Ecs", "2014-05-26", "DescribeElasticityAssurances", "ecs", "openAPI")
+        public ReleaseCapacityReservationRequest()
+            : base("Ecs", "2014-05-26", "ReleaseCapacityReservation", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,25 +43,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string platform;
+		private string privatePoolOptionsId;
 
-		private string nextToken;
-
-		private string instanceType;
-
-		private string instanceChargeType;
+		private bool? dryRun;
 
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string privatePoolOptionsIds;
-
-		private int? maxResults;
-
-		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -75,55 +66,29 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Platform
+		public string PrivatePoolOptionsId
 		{
 			get
 			{
-				return platform;
+				return privatePoolOptionsId;
 			}
 			set	
 			{
-				platform = value;
-				DictionaryUtil.Add(QueryParameters, "Platform", value);
+				privatePoolOptionsId = value;
+				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.Id", value);
 			}
 		}
 
-		public string NextToken
+		public bool? DryRun
 		{
 			get
 			{
-				return nextToken;
+				return dryRun;
 			}
 			set	
 			{
-				nextToken = value;
-				DictionaryUtil.Add(QueryParameters, "NextToken", value);
-			}
-		}
-
-		public string InstanceType
-		{
-			get
-			{
-				return instanceType;
-			}
-			set	
-			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+				dryRun = value;
+				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
 			}
 		}
 
@@ -166,48 +131,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string PrivatePoolOptionsIds
-		{
-			get
-			{
-				return privatePoolOptionsIds;
-			}
-			set	
-			{
-				privatePoolOptionsIds = value;
-				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.Ids", value);
-			}
-		}
-
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
-			}
-		}
-
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-        public override DescribeElasticityAssurancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ReleaseCapacityReservationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeElasticityAssurancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ReleaseCapacityReservationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

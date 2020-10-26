@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeElasticityAssurancesRequest : RpcAcsRequest<DescribeElasticityAssurancesResponse>
+    public class DescribeCapacityReservationInstancesRequest : RpcAcsRequest<DescribeCapacityReservationInstancesResponse>
     {
-        public DescribeElasticityAssurancesRequest()
-            : base("Ecs", "2014-05-26", "DescribeElasticityAssurances", "ecs", "openAPI")
+        public DescribeCapacityReservationInstancesRequest()
+            : base("Ecs", "2014-05-26", "DescribeCapacityReservationInstances", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -42,13 +42,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
-		private string platform;
-
 		private string nextToken;
 
-		private string instanceType;
-
-		private string instanceChargeType;
+		private string privatePoolOptionsId;
 
 		private string resourceOwnerAccount;
 
@@ -56,11 +52,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? ownerId;
 
-		private string privatePoolOptionsIds;
-
 		private int? maxResults;
-
-		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -72,19 +64,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string Platform
-		{
-			get
-			{
-				return platform;
-			}
-			set	
-			{
-				platform = value;
-				DictionaryUtil.Add(QueryParameters, "Platform", value);
 			}
 		}
 
@@ -101,29 +80,16 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string InstanceType
+		public string PrivatePoolOptionsId
 		{
 			get
 			{
-				return instanceType;
+				return privatePoolOptionsId;
 			}
 			set	
 			{
-				instanceType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
-			}
-		}
-
-		public string InstanceChargeType
-		{
-			get
-			{
-				return instanceChargeType;
-			}
-			set	
-			{
-				instanceChargeType = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
+				privatePoolOptionsId = value;
+				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.Id", value);
 			}
 		}
 
@@ -166,19 +132,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string PrivatePoolOptionsIds
-		{
-			get
-			{
-				return privatePoolOptionsIds;
-			}
-			set	
-			{
-				privatePoolOptionsIds = value;
-				DictionaryUtil.Add(QueryParameters, "PrivatePoolOptions.Ids", value);
-			}
-		}
-
 		public int? MaxResults
 		{
 			get
@@ -192,22 +145,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string ZoneId
-		{
-			get
-			{
-				return zoneId;
-			}
-			set	
-			{
-				zoneId = value;
-				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
-			}
-		}
-
-        public override DescribeElasticityAssurancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeCapacityReservationInstancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeElasticityAssurancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCapacityReservationInstancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

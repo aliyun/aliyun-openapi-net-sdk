@@ -27,10 +27,10 @@ using Aliyun.Acs.Ecs.Transform.V20140526;
 
 namespace Aliyun.Acs.Ecs.Model.V20140526
 {
-    public class DescribeElasticityAssurancesRequest : RpcAcsRequest<DescribeElasticityAssurancesResponse>
+    public class DescribeCapacityReservationsRequest : RpcAcsRequest<DescribeCapacityReservationsResponse>
     {
-        public DescribeElasticityAssurancesRequest()
-            : base("Ecs", "2014-05-26", "DescribeElasticityAssurances", "ecs", "openAPI")
+        public DescribeCapacityReservationsRequest()
+            : base("Ecs", "2014-05-26", "DescribeCapacityReservations", "ecs", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -205,9 +205,9 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-        public override DescribeElasticityAssurancesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeCapacityReservationsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeElasticityAssurancesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeCapacityReservationsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
