@@ -128,6 +128,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private bool? disableScaleIn;
 
+			private int? scaleInEvaluationCount;
+
+			private int? scaleOutEvaluationCount;
+
 			private string predictiveScalingMode;
 
 			private string predictiveValueBehavior;
@@ -319,6 +323,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					disableScaleIn = value;
+				}
+			}
+
+			public int? ScaleInEvaluationCount
+			{
+				get
+				{
+					return scaleInEvaluationCount;
+				}
+				set	
+				{
+					scaleInEvaluationCount = value;
+				}
+			}
+
+			public int? ScaleOutEvaluationCount
+			{
+				get
+				{
+					return scaleOutEvaluationCount;
+				}
+				set	
+				{
+					scaleOutEvaluationCount = value;
 				}
 			}
 

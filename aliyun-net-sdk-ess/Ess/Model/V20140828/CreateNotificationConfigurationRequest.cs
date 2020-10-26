@@ -32,30 +32,23 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public CreateNotificationConfigurationRequest()
             : base("Ess", "2014-08-28", "CreateNotificationConfiguration", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string resourceOwnerAccount;
 
 		private string scalingGroupId;
 
 		private string notificationArn;
 
-		private List<string> notificationTypes;
+		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
+		private List<string> notificationTypes = new List<string>(){ };
 
 		public string ScalingGroupId
 		{
@@ -83,6 +76,32 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
 		public List<string> NotificationTypes
 		{
 			get
@@ -97,19 +116,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				{
 					DictionaryUtil.Add(QueryParameters,"NotificationType." + (i + 1) , notificationTypes[i]);
 				}
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

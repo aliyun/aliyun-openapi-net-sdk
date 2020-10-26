@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,23 +33,55 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public DescribeLifecycleHooksRequest()
             : base("Ess", "2014-08-28", "DescribeLifecycleHooks", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string lifecycleHookName;
-
-		private string resourceOwnerAccount;
 
 		private string scalingGroupId;
 
-		private List<string> lifecycleHookIds;
+		private int? pageNumber;
 
-		private string ownerAccount;
+		private string lifecycleHookName;
 
 		private int? pageSize;
 
+		private string resourceOwnerAccount;
+
+		private List<string> lifecycleHookIds = new List<string>(){ };
+
+		private string ownerAccount;
+
 		private long? ownerId;
 
-		private int? pageNumber;
+		public string ScalingGroupId
+		{
+			get
+			{
+				return scalingGroupId;
+			}
+			set	
+			{
+				scalingGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
 
 		public string LifecycleHookName
 		{
@@ -63,6 +96,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -73,19 +119,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ScalingGroupId
-		{
-			get
-			{
-				return scalingGroupId;
-			}
-			set	
-			{
-				scalingGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
 			}
 		}
 
@@ -119,19 +152,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -142,19 +162,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
 			}
 		}
 

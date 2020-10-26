@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,9 +33,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public VerifyAuthenticationRequest()
             : base("Ess", "2014-08-28", "VerifyAuthentication", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private long? uid;
 
 		private long? resourceOwnerId;
 
@@ -42,18 +47,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private long? ownerId;
 
-		public long? Uid
-		{
-			get
-			{
-				return uid;
-			}
-			set	
-			{
-				uid = value;
-				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
-			}
-		}
+		private bool? onlyCheck;
+
+		private long? uid;
 
 		public long? ResourceOwnerId
 		{
@@ -91,6 +87,32 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public bool? OnlyCheck
+		{
+			get
+			{
+				return onlyCheck;
+			}
+			set	
+			{
+				onlyCheck = value;
+				DictionaryUtil.Add(QueryParameters, "OnlyCheck", value.ToString());
+			}
+		}
+
+		public long? Uid
+		{
+			get
+			{
+				return uid;
+			}
+			set	
+			{
+				uid = value;
+				DictionaryUtil.Add(QueryParameters, "Uid", value.ToString());
 			}
 		}
 

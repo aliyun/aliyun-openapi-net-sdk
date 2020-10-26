@@ -120,6 +120,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string warmupState;
 
+			private bool? entrusted;
+
+			private string createdTime;
+
 			public string InstanceId
 			{
 				get
@@ -249,6 +253,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					warmupState = value;
+				}
+			}
+
+			public bool? Entrusted
+			{
+				get
+				{
+					return entrusted;
+				}
+				set	
+				{
+					entrusted = value;
+				}
+			}
+
+			public string CreatedTime
+			{
+				get
+				{
+					return createdTime;
+				}
+				set	
+				{
+					createdTime = value;
 				}
 			}
 		}

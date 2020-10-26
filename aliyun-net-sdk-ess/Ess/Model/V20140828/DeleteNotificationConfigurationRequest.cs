@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,15 +33,21 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public DeleteNotificationConfigurationRequest()
             : base("Ess", "2014-08-28", "DeleteNotificationConfiguration", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string resourceOwnerAccount;
 
 		private string scalingGroupId;
 
-		private string notificationArn;
-
 		private long? ownerId;
+
+		private string notificationArn;
 
 		public string ResourceOwnerAccount
 		{
@@ -68,19 +75,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string NotificationArn
-		{
-			get
-			{
-				return notificationArn;
-			}
-			set	
-			{
-				notificationArn = value;
-				DictionaryUtil.Add(QueryParameters, "NotificationArn", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -91,6 +85,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string NotificationArn
+		{
+			get
+			{
+				return notificationArn;
+			}
+			set	
+			{
+				notificationArn = value;
+				DictionaryUtil.Add(QueryParameters, "NotificationArn", value);
 			}
 		}
 

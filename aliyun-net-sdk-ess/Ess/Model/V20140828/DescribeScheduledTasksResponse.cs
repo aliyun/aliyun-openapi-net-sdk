@@ -122,6 +122,10 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private int? minValue;
 
+			private int? desiredCapacity;
+
+			private string scalingGroupId;
+
 			public string ScheduledTaskId
 			{
 				get
@@ -263,6 +267,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					minValue = value;
+				}
+			}
+
+			public int? DesiredCapacity
+			{
+				get
+				{
+					return desiredCapacity;
+				}
+				set	
+				{
+					desiredCapacity = value;
+				}
+			}
+
+			public string ScalingGroupId
+			{
+				get
+				{
+					return scalingGroupId;
+				}
+				set	
+				{
+					scalingGroupId = value;
 				}
 			}
 		}

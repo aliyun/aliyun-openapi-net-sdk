@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scheduledTask.TaskEnabled = context.BooleanValue("DescribeScheduledTasks.ScheduledTasks["+ i +"].TaskEnabled");
 				scheduledTask.MaxValue = context.IntegerValue("DescribeScheduledTasks.ScheduledTasks["+ i +"].MaxValue");
 				scheduledTask.MinValue = context.IntegerValue("DescribeScheduledTasks.ScheduledTasks["+ i +"].MinValue");
+				scheduledTask.DesiredCapacity = context.IntegerValue("DescribeScheduledTasks.ScheduledTasks["+ i +"].DesiredCapacity");
+				scheduledTask.ScalingGroupId = context.StringValue("DescribeScheduledTasks.ScheduledTasks["+ i +"].ScalingGroupId");
 
 				describeScheduledTasksResponse_scheduledTasks.Add(scheduledTask);
 			}

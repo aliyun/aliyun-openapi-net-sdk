@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,50 +28,26 @@ using Aliyun.Acs.Ess.Transform.V20140828;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
-    public class ModifyAlertConfigRequest : RpcAcsRequest<ModifyAlertConfigResponse>
+    public class SetInstanceHealthRequest : RpcAcsRequest<SetInstanceHealthResponse>
     {
-        public ModifyAlertConfigRequest()
-            : base("Ess", "2014-08-28", "ModifyAlertConfig", "ess", "openAPI")
+        public SetInstanceHealthRequest()
+            : base("Ess", "2014-08-28", "SetInstanceHealth", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private int? successConfig;
-
-		private int? rejectConfig;
 
 		private string resourceOwnerAccount;
 
-		private string scalingGroupId;
-
 		private long? ownerId;
 
-		private int? failConfig;
+		private string instanceId;
 
-		public int? SuccessConfig
-		{
-			get
-			{
-				return successConfig;
-			}
-			set	
-			{
-				successConfig = value;
-				DictionaryUtil.Add(QueryParameters, "SuccessConfig", value.ToString());
-			}
-		}
-
-		public int? RejectConfig
-		{
-			get
-			{
-				return rejectConfig;
-			}
-			set	
-			{
-				rejectConfig = value;
-				DictionaryUtil.Add(QueryParameters, "RejectConfig", value.ToString());
-			}
-		}
+		private string healthStatus;
 
 		public string ResourceOwnerAccount
 		{
@@ -82,19 +59,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ScalingGroupId
-		{
-			get
-			{
-				return scalingGroupId;
-			}
-			set	
-			{
-				scalingGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
 			}
 		}
 
@@ -111,22 +75,35 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public int? FailConfig
+		public string InstanceId
 		{
 			get
 			{
-				return failConfig;
+				return instanceId;
 			}
 			set	
 			{
-				failConfig = value;
-				DictionaryUtil.Add(QueryParameters, "FailConfig", value.ToString());
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-        public override ModifyAlertConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string HealthStatus
+		{
+			get
+			{
+				return healthStatus;
+			}
+			set	
+			{
+				healthStatus = value;
+				DictionaryUtil.Add(QueryParameters, "HealthStatus", value);
+			}
+		}
+
+        public override SetInstanceHealthResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ModifyAlertConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetInstanceHealthResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,10 +22,16 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
-	public class ModifyAlertConfigResponse : AcsResponse
+	public class ListTagKeysResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private string nextToken;
+
+		private int? pageSize;
+
+		private List<string> keys;
 
 		public string RequestId
 		{
@@ -36,6 +42,42 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public List<string> Keys
+		{
+			get
+			{
+				return keys;
+			}
+			set	
+			{
+				keys = value;
 			}
 		}
 	}

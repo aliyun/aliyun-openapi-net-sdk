@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,37 +28,39 @@ using Aliyun.Acs.Ess.Transform.V20140828;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
-    public class DescribeCapacityHistoryRequest : RpcAcsRequest<DescribeCapacityHistoryResponse>
+    public class SuspendProcessesRequest : RpcAcsRequest<SuspendProcessesResponse>
     {
-        public DescribeCapacityHistoryRequest()
-            : base("Ess", "2014-08-28", "DescribeCapacityHistory", "ess", "openAPI")
+        public SuspendProcessesRequest()
+            : base("Ess", "2014-08-28", "SuspendProcesses", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string resourceOwnerAccount;
+		private string clientToken;
 
 		private string scalingGroupId;
 
-		private int? pageSize;
+		private List<string> processs = new List<string>(){ };
 
-		private string endTime;
-
-		private string startTime;
+		private string resourceOwnerAccount;
 
 		private long? ownerId;
 
-		private int? pageNumber;
-
-		public string ResourceOwnerAccount
+		public string ClientToken
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return clientToken;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -74,42 +77,33 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public int? PageSize
+		public List<string> Processs
 		{
 			get
 			{
-				return pageSize;
+				return processs;
 			}
-			set	
+
+			set
 			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+				processs = value;
+				for (int i = 0; i < processs.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Process." + (i + 1) , processs[i]);
+				}
 			}
 		}
 
-		public string EndTime
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return endTime;
+				return resourceOwnerAccount;
 			}
 			set	
 			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -126,22 +120,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-        public override DescribeCapacityHistoryResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SuspendProcessesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCapacityHistoryResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SuspendProcessesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

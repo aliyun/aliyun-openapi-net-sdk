@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,29 +28,39 @@ using Aliyun.Acs.Ess.Transform.V20140828;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
-    public class DescribeAlertConfigRequest : RpcAcsRequest<DescribeAlertConfigResponse>
+    public class ResumeProcessesRequest : RpcAcsRequest<ResumeProcessesResponse>
     {
-        public DescribeAlertConfigRequest()
-            : base("Ess", "2014-08-28", "DescribeAlertConfig", "ess", "openAPI")
+        public ResumeProcessesRequest()
+            : base("Ess", "2014-08-28", "ResumeProcesses", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string resourceOwnerAccount;
+		private string clientToken;
 
 		private string scalingGroupId;
 
+		private List<string> processs = new List<string>(){ };
+
+		private string resourceOwnerAccount;
+
 		private long? ownerId;
 
-		public string ResourceOwnerAccount
+		public string ClientToken
 		{
 			get
 			{
-				return resourceOwnerAccount;
+				return clientToken;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -66,6 +77,36 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public List<string> Processs
+		{
+			get
+			{
+				return processs;
+			}
+
+			set
+			{
+				processs = value;
+				for (int i = 0; i < processs.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Process." + (i + 1) , processs[i]);
+				}
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -79,9 +120,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override DescribeAlertConfigResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ResumeProcessesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAlertConfigResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ResumeProcessesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

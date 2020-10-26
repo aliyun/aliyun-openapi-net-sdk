@@ -24,16 +24,16 @@ using Aliyun.Acs.Ess.Model.V20140828;
 
 namespace Aliyun.Acs.Ess.Transform.V20140828
 {
-    public class ModifyAlertConfigResponseUnmarshaller
+    public class ResumeProcessesResponseUnmarshaller
     {
-        public static ModifyAlertConfigResponse Unmarshall(UnmarshallerContext context)
+        public static ResumeProcessesResponse Unmarshall(UnmarshallerContext context)
         {
-			ModifyAlertConfigResponse modifyAlertConfigResponse = new ModifyAlertConfigResponse();
+			ResumeProcessesResponse resumeProcessesResponse = new ResumeProcessesResponse();
 
-			modifyAlertConfigResponse.HttpResponse = context.HttpResponse;
-			modifyAlertConfigResponse.RequestId = context.StringValue("ModifyAlertConfig.RequestId");
+			resumeProcessesResponse.HttpResponse = context.HttpResponse;
+			resumeProcessesResponse.RequestId = context.StringValue("ResumeProcesses.RequestId");
         
-			return modifyAlertConfigResponse;
+			return resumeProcessesResponse;
         }
     }
 }

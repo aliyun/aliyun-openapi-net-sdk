@@ -156,7 +156,15 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private bool? spotInstanceRemedy;
 
+			private bool? compensateWithOnDemand;
+
 			private int? spotInstancePools;
+
+			private int? desiredCapacity;
+
+			private bool? groupDeletionProtection;
+
+			private bool? scaleOutAmountCheck;
 
 			private List<DescribeScalingGroups_VServerGroup> vServerGroups;
 
@@ -167,6 +175,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			private List<string> dBInstanceIds;
 
 			private List<string> loadBalancerIds;
+
+			private List<string> suspendedProcesses;
 
 			public int? DefaultCooldown
 			{
@@ -516,6 +526,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public bool? CompensateWithOnDemand
+			{
+				get
+				{
+					return compensateWithOnDemand;
+				}
+				set	
+				{
+					compensateWithOnDemand = value;
+				}
+			}
+
 			public int? SpotInstancePools
 			{
 				get
@@ -525,6 +547,42 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					spotInstancePools = value;
+				}
+			}
+
+			public int? DesiredCapacity
+			{
+				get
+				{
+					return desiredCapacity;
+				}
+				set	
+				{
+					desiredCapacity = value;
+				}
+			}
+
+			public bool? GroupDeletionProtection
+			{
+				get
+				{
+					return groupDeletionProtection;
+				}
+				set	
+				{
+					groupDeletionProtection = value;
+				}
+			}
+
+			public bool? ScaleOutAmountCheck
+			{
+				get
+				{
+					return scaleOutAmountCheck;
+				}
+				set	
+				{
+					scaleOutAmountCheck = value;
 				}
 			}
 
@@ -585,6 +643,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					loadBalancerIds = value;
+				}
+			}
+
+			public List<string> SuspendedProcesses
+			{
+				get
+				{
+					return suspendedProcesses;
+				}
+				set	
+				{
+					suspendedProcesses = value;
 				}
 			}
 

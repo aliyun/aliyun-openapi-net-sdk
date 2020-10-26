@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,15 +33,39 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public ModifyScalingRuleRequest()
             : base("Ess", "2014-08-28", "ModifyScalingRule", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
+		private List<StepAdjustment> stepAdjustments = new List<StepAdjustment>(){ };
+
+		private bool? disableScaleIn;
+
+		private string scalingRuleId;
+
+		private int? initialMaxSize;
+
+		private string scalingRuleName;
+
+		private int? cooldown;
+
+		private string predictiveValueBehavior;
+
+		private int? scaleInEvaluationCount;
+
+		private string metricName;
+
+		private string predictiveScalingMode;
+
 		private string resourceOwnerAccount;
 
 		private int? adjustmentValue;
-
-		private List<StepAdjustment> stepAdjustments;
 
 		private int? estimatedInstanceWarmup;
 
@@ -50,29 +75,15 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string adjustmentType;
 
-		private bool? disableScaleIn;
-
 		private long? ownerId;
-
-		private string scalingRuleId;
-
-		private int? initialMaxSize;
 
 		private int? predictiveValueBuffer;
 
-		private string scalingRuleName;
-
-		private int? cooldown;
+		private int? scaleOutEvaluationCount;
 
 		private int? minAdjustmentMagnitude;
 
-		private string predictiveValueBehavior;
-
 		private float? targetValue;
-
-		private string metricName;
-
-		private string predictiveScalingMode;
 
 		public long? ResourceOwnerId
 		{
@@ -84,6 +95,142 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public List<StepAdjustment> StepAdjustments
+		{
+			get
+			{
+				return stepAdjustments;
+			}
+
+			set
+			{
+				stepAdjustments = value;
+				for (int i = 0; i < stepAdjustments.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"StepAdjustment." + (i + 1) + ".MetricIntervalLowerBound", stepAdjustments[i].MetricIntervalLowerBound);
+					DictionaryUtil.Add(QueryParameters,"StepAdjustment." + (i + 1) + ".MetricIntervalUpperBound", stepAdjustments[i].MetricIntervalUpperBound);
+					DictionaryUtil.Add(QueryParameters,"StepAdjustment." + (i + 1) + ".ScalingAdjustment", stepAdjustments[i].ScalingAdjustment);
+				}
+			}
+		}
+
+		public bool? DisableScaleIn
+		{
+			get
+			{
+				return disableScaleIn;
+			}
+			set	
+			{
+				disableScaleIn = value;
+				DictionaryUtil.Add(QueryParameters, "DisableScaleIn", value.ToString());
+			}
+		}
+
+		public string ScalingRuleId
+		{
+			get
+			{
+				return scalingRuleId;
+			}
+			set	
+			{
+				scalingRuleId = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleId", value);
+			}
+		}
+
+		public int? InitialMaxSize
+		{
+			get
+			{
+				return initialMaxSize;
+			}
+			set	
+			{
+				initialMaxSize = value;
+				DictionaryUtil.Add(QueryParameters, "InitialMaxSize", value.ToString());
+			}
+		}
+
+		public string ScalingRuleName
+		{
+			get
+			{
+				return scalingRuleName;
+			}
+			set	
+			{
+				scalingRuleName = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleName", value);
+			}
+		}
+
+		public int? Cooldown
+		{
+			get
+			{
+				return cooldown;
+			}
+			set	
+			{
+				cooldown = value;
+				DictionaryUtil.Add(QueryParameters, "Cooldown", value.ToString());
+			}
+		}
+
+		public string PredictiveValueBehavior
+		{
+			get
+			{
+				return predictiveValueBehavior;
+			}
+			set	
+			{
+				predictiveValueBehavior = value;
+				DictionaryUtil.Add(QueryParameters, "PredictiveValueBehavior", value);
+			}
+		}
+
+		public int? ScaleInEvaluationCount
+		{
+			get
+			{
+				return scaleInEvaluationCount;
+			}
+			set	
+			{
+				scaleInEvaluationCount = value;
+				DictionaryUtil.Add(QueryParameters, "ScaleInEvaluationCount", value.ToString());
+			}
+		}
+
+		public string MetricName
+		{
+			get
+			{
+				return metricName;
+			}
+			set	
+			{
+				metricName = value;
+				DictionaryUtil.Add(QueryParameters, "MetricName", value);
+			}
+		}
+
+		public string PredictiveScalingMode
+		{
+			get
+			{
+				return predictiveScalingMode;
+			}
+			set	
+			{
+				predictiveScalingMode = value;
+				DictionaryUtil.Add(QueryParameters, "PredictiveScalingMode", value);
 			}
 		}
 
@@ -110,25 +257,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				adjustmentValue = value;
 				DictionaryUtil.Add(QueryParameters, "AdjustmentValue", value.ToString());
-			}
-		}
-
-		public List<StepAdjustment> StepAdjustments
-		{
-			get
-			{
-				return stepAdjustments;
-			}
-
-			set
-			{
-				stepAdjustments = value;
-				for (int i = 0; i < stepAdjustments.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"StepAdjustment." + (i + 1) + ".MetricIntervalLowerBound", stepAdjustments[i].MetricIntervalLowerBound);
-					DictionaryUtil.Add(QueryParameters,"StepAdjustment." + (i + 1) + ".MetricIntervalUpperBound", stepAdjustments[i].MetricIntervalUpperBound);
-					DictionaryUtil.Add(QueryParameters,"StepAdjustment." + (i + 1) + ".ScalingAdjustment", stepAdjustments[i].ScalingAdjustment);
-				}
 			}
 		}
 
@@ -184,19 +312,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public bool? DisableScaleIn
-		{
-			get
-			{
-				return disableScaleIn;
-			}
-			set	
-			{
-				disableScaleIn = value;
-				DictionaryUtil.Add(QueryParameters, "DisableScaleIn", value.ToString());
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -207,32 +322,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ScalingRuleId
-		{
-			get
-			{
-				return scalingRuleId;
-			}
-			set	
-			{
-				scalingRuleId = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleId", value);
-			}
-		}
-
-		public int? InitialMaxSize
-		{
-			get
-			{
-				return initialMaxSize;
-			}
-			set	
-			{
-				initialMaxSize = value;
-				DictionaryUtil.Add(QueryParameters, "InitialMaxSize", value.ToString());
 			}
 		}
 
@@ -249,29 +338,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string ScalingRuleName
+		public int? ScaleOutEvaluationCount
 		{
 			get
 			{
-				return scalingRuleName;
+				return scaleOutEvaluationCount;
 			}
 			set	
 			{
-				scalingRuleName = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleName", value);
-			}
-		}
-
-		public int? Cooldown
-		{
-			get
-			{
-				return cooldown;
-			}
-			set	
-			{
-				cooldown = value;
-				DictionaryUtil.Add(QueryParameters, "Cooldown", value.ToString());
+				scaleOutEvaluationCount = value;
+				DictionaryUtil.Add(QueryParameters, "ScaleOutEvaluationCount", value.ToString());
 			}
 		}
 
@@ -288,19 +364,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string PredictiveValueBehavior
-		{
-			get
-			{
-				return predictiveValueBehavior;
-			}
-			set	
-			{
-				predictiveValueBehavior = value;
-				DictionaryUtil.Add(QueryParameters, "PredictiveValueBehavior", value);
-			}
-		}
-
 		public float? TargetValue
 		{
 			get
@@ -311,32 +374,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				targetValue = value;
 				DictionaryUtil.Add(QueryParameters, "TargetValue", value.ToString());
-			}
-		}
-
-		public string MetricName
-		{
-			get
-			{
-				return metricName;
-			}
-			set	
-			{
-				metricName = value;
-				DictionaryUtil.Add(QueryParameters, "MetricName", value);
-			}
-		}
-
-		public string PredictiveScalingMode
-		{
-			get
-			{
-				return predictiveScalingMode;
-			}
-			set	
-			{
-				predictiveScalingMode = value;
-				DictionaryUtil.Add(QueryParameters, "PredictiveScalingMode", value);
 			}
 		}
 

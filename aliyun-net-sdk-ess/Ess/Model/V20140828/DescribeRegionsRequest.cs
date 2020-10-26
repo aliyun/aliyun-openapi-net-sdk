@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,15 +33,21 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public DescribeRegionsRequest()
             : base("Ess", "2014-08-28", "DescribeRegions", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
 		private string resourceOwnerAccount;
 
-		private string acceptLanguage;
-
 		private long? ownerId;
+
+		private string acceptLanguage;
 
 		public long? ResourceOwnerId
 		{
@@ -68,19 +75,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string AcceptLanguage
-		{
-			get
-			{
-				return acceptLanguage;
-			}
-			set	
-			{
-				acceptLanguage = value;
-				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
-			}
-		}
-
 		public long? OwnerId
 		{
 			get
@@ -91,6 +85,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string AcceptLanguage
+		{
+			get
+			{
+				return acceptLanguage;
+			}
+			set	
+			{
+				acceptLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
 			}
 		}
 

@@ -22,52 +22,10 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
-	public class DescribeAlertConfigResponse : AcsResponse
+	public class SuspendProcessesResponse : AcsResponse
 	{
 
-		private int? successConfig;
-
-		private int? failConfig;
-
-		private int? rejectConfig;
-
 		private string requestId;
-
-		public int? SuccessConfig
-		{
-			get
-			{
-				return successConfig;
-			}
-			set	
-			{
-				successConfig = value;
-			}
-		}
-
-		public int? FailConfig
-		{
-			get
-			{
-				return failConfig;
-			}
-			set	
-			{
-				failConfig = value;
-			}
-		}
-
-		public int? RejectConfig
-		{
-			get
-			{
-				return rejectConfig;
-			}
-			set	
-			{
-				rejectConfig = value;
-			}
-		}
 
 		public string RequestId
 		{

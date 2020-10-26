@@ -22,18 +22,18 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
-	public class DescribeCapacityHistoryResponse : AcsResponse
+	public class DescribeLifecycleActionsResponse : AcsResponse
 	{
 
 		private string requestId;
 
+		private string nextToken;
+
+		private int? maxResults;
+
 		private int? totalCount;
 
-		private int? pageNumber;
-
-		private int? pageSize;
-
-		private List<DescribeCapacityHistory_CapacityHistoryModel> capacityHistoryItems;
+		private List<DescribeLifecycleActions_LifecycleAction> lifecycleActions;
 
 		public string RequestId
 		{
@@ -44,6 +44,30 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
 			}
 		}
 
@@ -59,112 +83,88 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public int? PageNumber
+		public List<DescribeLifecycleActions_LifecycleAction> LifecycleActions
 		{
 			get
 			{
-				return pageNumber;
+				return lifecycleActions;
 			}
 			set	
 			{
-				pageNumber = value;
+				lifecycleActions = value;
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-			}
-		}
-
-		public List<DescribeCapacityHistory_CapacityHistoryModel> CapacityHistoryItems
-		{
-			get
-			{
-				return capacityHistoryItems;
-			}
-			set	
-			{
-				capacityHistoryItems = value;
-			}
-		}
-
-		public class DescribeCapacityHistory_CapacityHistoryModel
+		public class DescribeLifecycleActions_LifecycleAction
 		{
 
-			private string scalingGroupId;
+			private string lifecycleActionToken;
 
-			private int? totalCapacity;
+			private string lifecycleActionStatus;
 
-			private int? attachedCapacity;
+			private string lifecycleActionResult;
 
-			private int? autoCreatedCapacity;
+			private string lifecycleHookId;
 
-			private string timestamp;
+			private List<string> instanceIds;
 
-			public string ScalingGroupId
+			public string LifecycleActionToken
 			{
 				get
 				{
-					return scalingGroupId;
+					return lifecycleActionToken;
 				}
 				set	
 				{
-					scalingGroupId = value;
+					lifecycleActionToken = value;
 				}
 			}
 
-			public int? TotalCapacity
+			public string LifecycleActionStatus
 			{
 				get
 				{
-					return totalCapacity;
+					return lifecycleActionStatus;
 				}
 				set	
 				{
-					totalCapacity = value;
+					lifecycleActionStatus = value;
 				}
 			}
 
-			public int? AttachedCapacity
+			public string LifecycleActionResult
 			{
 				get
 				{
-					return attachedCapacity;
+					return lifecycleActionResult;
 				}
 				set	
 				{
-					attachedCapacity = value;
+					lifecycleActionResult = value;
 				}
 			}
 
-			public int? AutoCreatedCapacity
+			public string LifecycleHookId
 			{
 				get
 				{
-					return autoCreatedCapacity;
+					return lifecycleHookId;
 				}
 				set	
 				{
-					autoCreatedCapacity = value;
+					lifecycleHookId = value;
 				}
 			}
 
-			public string Timestamp
+			public List<string> InstanceIds
 			{
 				get
 				{
-					return timestamp;
+					return instanceIds;
 				}
 				set	
 				{
-					timestamp = value;
+					instanceIds = value;
 				}
 			}
 		}

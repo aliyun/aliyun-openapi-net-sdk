@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,13 +33,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public RecordLifecycleActionHeartbeatRequest()
             : base("Ess", "2014-08-28", "RecordLifecycleActionHeartbeat", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string lifecycleActionToken;
 
-		private string resourceOwnerAccount;
-
 		private int? heartbeatTimeout;
+
+		private string resourceOwnerAccount;
 
 		private string lifecycleHookId;
 
@@ -59,19 +66,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public int? HeartbeatTimeout
 		{
 			get
@@ -82,6 +76,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				heartbeatTimeout = value;
 				DictionaryUtil.Add(QueryParameters, "heartbeatTimeout", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 

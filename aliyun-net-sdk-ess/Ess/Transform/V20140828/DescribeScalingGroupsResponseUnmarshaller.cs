@@ -68,7 +68,11 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingGroup.OnDemandBaseCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].OnDemandBaseCapacity");
 				scalingGroup.OnDemandPercentageAboveBaseCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].OnDemandPercentageAboveBaseCapacity");
 				scalingGroup.SpotInstanceRemedy = context.BooleanValue("DescribeScalingGroups.ScalingGroups["+ i +"].SpotInstanceRemedy");
+				scalingGroup.CompensateWithOnDemand = context.BooleanValue("DescribeScalingGroups.ScalingGroups["+ i +"].CompensateWithOnDemand");
 				scalingGroup.SpotInstancePools = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].SpotInstancePools");
+				scalingGroup.DesiredCapacity = context.IntegerValue("DescribeScalingGroups.ScalingGroups["+ i +"].DesiredCapacity");
+				scalingGroup.GroupDeletionProtection = context.BooleanValue("DescribeScalingGroups.ScalingGroups["+ i +"].GroupDeletionProtection");
+				scalingGroup.ScaleOutAmountCheck = context.BooleanValue("DescribeScalingGroups.ScalingGroups["+ i +"].ScaleOutAmountCheck");
 
 				List<string> scalingGroup_vSwitchIds = new List<string>();
 				for (int j = 0; j < context.Length("DescribeScalingGroups.ScalingGroups["+ i +"].VSwitchIds.Length"); j++) {
@@ -93,6 +97,12 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 					scalingGroup_loadBalancerIds.Add(context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].LoadBalancerIds["+ j +"]"));
 				}
 				scalingGroup.LoadBalancerIds = scalingGroup_loadBalancerIds;
+
+				List<string> scalingGroup_suspendedProcesses = new List<string>();
+				for (int j = 0; j < context.Length("DescribeScalingGroups.ScalingGroups["+ i +"].SuspendedProcesses.Length"); j++) {
+					scalingGroup_suspendedProcesses.Add(context.StringValue("DescribeScalingGroups.ScalingGroups["+ i +"].SuspendedProcesses["+ j +"]"));
+				}
+				scalingGroup.SuspendedProcesses = scalingGroup_suspendedProcesses;
 
 				List<DescribeScalingGroupsResponse.DescribeScalingGroups_ScalingGroup.DescribeScalingGroups_VServerGroup> scalingGroup_vServerGroups = new List<DescribeScalingGroupsResponse.DescribeScalingGroups_ScalingGroup.DescribeScalingGroups_VServerGroup>();
 				for (int j = 0; j < context.Length("DescribeScalingGroups.ScalingGroups["+ i +"].VServerGroups.Length"); j++) {

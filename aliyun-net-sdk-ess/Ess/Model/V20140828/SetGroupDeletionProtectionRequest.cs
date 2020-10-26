@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,14 +28,24 @@ using Aliyun.Acs.Ess.Transform.V20140828;
 
 namespace Aliyun.Acs.Ess.Model.V20140828
 {
-    public class DescribeAccountAttributesRequest : RpcAcsRequest<DescribeAccountAttributesResponse>
+    public class SetGroupDeletionProtectionRequest : RpcAcsRequest<SetGroupDeletionProtectionResponse>
     {
-        public DescribeAccountAttributesRequest()
-            : base("Ess", "2014-08-28", "DescribeAccountAttributes", "ess", "openAPI")
+        public SetGroupDeletionProtectionRequest()
+            : base("Ess", "2014-08-28", "SetGroupDeletionProtection", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string resourceOwnerAccount;
+
+		private string scalingGroupId;
+
+		private bool? groupDeletionProtection;
 
 		private long? ownerId;
 
@@ -51,6 +62,32 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string ScalingGroupId
+		{
+			get
+			{
+				return scalingGroupId;
+			}
+			set	
+			{
+				scalingGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
+			}
+		}
+
+		public bool? GroupDeletionProtection
+		{
+			get
+			{
+				return groupDeletionProtection;
+			}
+			set	
+			{
+				groupDeletionProtection = value;
+				DictionaryUtil.Add(QueryParameters, "GroupDeletionProtection", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -64,9 +101,9 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-        public override DescribeAccountAttributesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override SetGroupDeletionProtectionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeAccountAttributesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SetGroupDeletionProtectionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -32,35 +32,43 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public CreateAlarmRequest()
             : base("Ess", "2014-08-28", "CreateAlarm", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string metricType;
 
-		private int? period;
-
-		private string resourceOwnerAccount;
-
 		private string scalingGroupId;
-
-		private int? groupId;
 
 		private string description;
 
-		private List<string> alarmActions;
+		private List<string> alarmActions = new List<string>(){ };
 
 		private float? threshold;
 
-		private long? ownerId;
-
-		private string name;
+		private string effective;
 
 		private int? evaluationCount;
 
 		private string metricName;
 
-		private string comparisonOperator;
+		private List<Dimension> dimensions = new List<Dimension>(){ };
 
-		private List<Dimension> dimensions;
+		private int? period;
+
+		private string resourceOwnerAccount;
+
+		private int? groupId;
+
+		private long? ownerId;
+
+		private string name;
+
+		private string comparisonOperator;
 
 		private string statistics;
 
@@ -77,32 +85,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public int? Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
 		public string ScalingGroupId
 		{
 			get
@@ -113,19 +95,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scalingGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
-			}
-		}
-
-		public int? GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
 			}
 		}
 
@@ -172,29 +141,16 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public long? OwnerId
+		public string Effective
 		{
 			get
 			{
-				return ownerId;
+				return effective;
 			}
 			set	
 			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				effective = value;
+				DictionaryUtil.Add(QueryParameters, "Effective", value);
 			}
 		}
 
@@ -224,19 +180,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string ComparisonOperator
-		{
-			get
-			{
-				return comparisonOperator;
-			}
-			set	
-			{
-				comparisonOperator = value;
-				DictionaryUtil.Add(QueryParameters, "ComparisonOperator", value);
-			}
-		}
-
 		public List<Dimension> Dimensions
 		{
 			get
@@ -252,6 +195,84 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 					DictionaryUtil.Add(QueryParameters,"Dimension." + (i + 1) + ".DimensionValue", dimensions[i].DimensionValue);
 					DictionaryUtil.Add(QueryParameters,"Dimension." + (i + 1) + ".DimensionKey", dimensions[i].DimensionKey);
 				}
+			}
+		}
+
+		public int? Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public int? GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string Name
+		{
+			get
+			{
+				return name;
+			}
+			set	
+			{
+				name = value;
+				DictionaryUtil.Add(QueryParameters, "Name", value);
+			}
+		}
+
+		public string ComparisonOperator
+		{
+			get
+			{
+				return comparisonOperator;
+			}
+			set	
+			{
+				comparisonOperator = value;
+				DictionaryUtil.Add(QueryParameters, "ComparisonOperator", value);
 			}
 		}
 

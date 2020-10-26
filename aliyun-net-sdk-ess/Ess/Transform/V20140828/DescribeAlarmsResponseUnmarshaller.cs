@@ -52,6 +52,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				alarm.State = context.StringValue("DescribeAlarms.AlarmList["+ i +"].State");
 				alarm.ScalingGroupId = context.StringValue("DescribeAlarms.AlarmList["+ i +"].ScalingGroupId");
 				alarm.Enable = context.BooleanValue("DescribeAlarms.AlarmList["+ i +"].Enable");
+				alarm.Effective = context.StringValue("DescribeAlarms.AlarmList["+ i +"].Effective");
 
 				List<string> alarm_alarmActions = new List<string>();
 				for (int j = 0; j < context.Length("DescribeAlarms.AlarmList["+ i +"].AlarmActions.Length"); j++) {
