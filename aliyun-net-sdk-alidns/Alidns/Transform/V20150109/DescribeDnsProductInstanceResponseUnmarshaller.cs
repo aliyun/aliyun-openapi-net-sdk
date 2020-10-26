@@ -63,6 +63,7 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDnsProductInstanceResponse.BindDomainCount = context.LongValue("DescribeDnsProductInstance.BindDomainCount");
 			describeDnsProductInstanceResponse.BindDomainUsedCount = context.LongValue("DescribeDnsProductInstance.BindDomainUsedCount");
 			describeDnsProductInstanceResponse.DnsSecurity = context.StringValue("DescribeDnsProductInstance.DnsSecurity");
+			describeDnsProductInstanceResponse.PaymentType = context.StringValue("DescribeDnsProductInstance.PaymentType");
 
 			List<string> describeDnsProductInstanceResponse_dnsServers = new List<string>();
 			for (int i = 0; i < context.Length("DescribeDnsProductInstance.DnsServers.Length"); i++) {

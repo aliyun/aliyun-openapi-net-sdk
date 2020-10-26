@@ -70,6 +70,7 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 				dnsProduct.BindDomainCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindDomainCount");
 				dnsProduct.BindDomainUsedCount = context.LongValue("DescribeDnsProductInstances.DnsProducts["+ i +"].BindDomainUsedCount");
 				dnsProduct.DnsSecurity = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].DnsSecurity");
+				dnsProduct.PaymentType = context.StringValue("DescribeDnsProductInstances.DnsProducts["+ i +"].PaymentType");
 
 				describeDnsProductInstancesResponse_dnsProducts.Add(dnsProduct);
 			}

@@ -132,6 +132,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 			private long? createTimestamp;
 
+			private string resourceGroupId;
+
 			private List<DescribeDomains_Tag> tags;
 
 			private List<string> dnsServers;
@@ -337,6 +339,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 				set	
 				{
 					createTimestamp = value;
+				}
+			}
+
+			public string ResourceGroupId
+			{
+				get
+				{
+					return resourceGroupId;
+				}
+				set	
+				{
+					resourceGroupId = value;
 				}
 			}
 
