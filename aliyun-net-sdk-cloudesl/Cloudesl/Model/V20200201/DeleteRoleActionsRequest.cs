@@ -27,10 +27,10 @@ using Aliyun.Acs.cloudesl.Transform.V20200201;
 
 namespace Aliyun.Acs.cloudesl.Model.V20200201
 {
-    public class CreateStoreRequest : RpcAcsRequest<CreateStoreResponse>
+    public class DeleteRoleActionsRequest : RpcAcsRequest<DeleteRoleActionsResponse>
     {
-        public CreateStoreRequest()
-            : base("cloudesl", "2020-02-01", "CreateStore", "cloudesl", "openAPI")
+        public DeleteRoleActionsRequest()
+            : base("cloudesl", "2020-02-01", "DeleteRoleActions", "cloudesl", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,17 +40,24 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			Method = MethodType.POST;
         }
 
+		private string roleCode;
+
 		private string extraParams;
 
-		private string clientToken;
+		private string accessControlLists;
 
-		private string storeName;
-
-		private string parentId;
-
-		private string userStoreCode;
-
-		private string phone;
+		public string RoleCode
+		{
+			get
+			{
+				return roleCode;
+			}
+			set	
+			{
+				roleCode = value;
+				DictionaryUtil.Add(BodyParameters, "RoleCode", value);
+			}
+		}
 
 		public string ExtraParams
 		{
@@ -65,68 +72,16 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string ClientToken
+		public string AccessControlLists
 		{
 			get
 			{
-				return clientToken;
+				return accessControlLists;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(BodyParameters, "ClientToken", value);
-			}
-		}
-
-		public string StoreName
-		{
-			get
-			{
-				return storeName;
-			}
-			set	
-			{
-				storeName = value;
-				DictionaryUtil.Add(BodyParameters, "StoreName", value);
-			}
-		}
-
-		public string ParentId
-		{
-			get
-			{
-				return parentId;
-			}
-			set	
-			{
-				parentId = value;
-				DictionaryUtil.Add(BodyParameters, "ParentId", value);
-			}
-		}
-
-		public string UserStoreCode
-		{
-			get
-			{
-				return userStoreCode;
-			}
-			set	
-			{
-				userStoreCode = value;
-				DictionaryUtil.Add(BodyParameters, "UserStoreCode", value);
-			}
-		}
-
-		public string Phone
-		{
-			get
-			{
-				return phone;
-			}
-			set	
-			{
-				phone = value;
-				DictionaryUtil.Add(BodyParameters, "Phone", value);
+				accessControlLists = value;
+				DictionaryUtil.Add(BodyParameters, "AccessControlLists", value);
 			}
 		}
 
@@ -135,9 +90,9 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			return false;
 		}
 
-        public override CreateStoreResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteRoleActionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateStoreResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteRoleActionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

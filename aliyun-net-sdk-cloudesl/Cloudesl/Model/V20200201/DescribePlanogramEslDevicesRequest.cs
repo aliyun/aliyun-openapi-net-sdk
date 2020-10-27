@@ -46,9 +46,9 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private int? layer;
 
-		private string shelf;
-
 		private string eslBarCode;
+
+		private string shelf;
 
 		public string ExtraParams
 		{
@@ -89,19 +89,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string Shelf
-		{
-			get
-			{
-				return shelf;
-			}
-			set	
-			{
-				shelf = value;
-				DictionaryUtil.Add(BodyParameters, "Shelf", value);
-			}
-		}
-
 		public string EslBarCode
 		{
 			get
@@ -112,6 +99,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				eslBarCode = value;
 				DictionaryUtil.Add(BodyParameters, "EslBarCode", value);
+			}
+		}
+
+		public string Shelf
+		{
+			get
+			{
+				return shelf;
+			}
+			set	
+			{
+				shelf = value;
+				DictionaryUtil.Add(BodyParameters, "Shelf", value);
 			}
 		}
 

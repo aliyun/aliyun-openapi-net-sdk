@@ -42,11 +42,11 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string extraParams;
 
+		private string storeId;
+
 		private bool? enableNotification;
 
 		private string notificationWebHook;
-
-		private string storeId;
 
 		private string notificationSilentTimes;
 
@@ -60,6 +60,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				extraParams = value;
 				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
+			}
+		}
+
+		public string StoreId
+		{
+			get
+			{
+				return storeId;
+			}
+			set	
+			{
+				storeId = value;
+				DictionaryUtil.Add(BodyParameters, "StoreId", value);
 			}
 		}
 
@@ -86,19 +99,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				notificationWebHook = value;
 				DictionaryUtil.Add(BodyParameters, "NotificationWebHook", value);
-			}
-		}
-
-		public string StoreId
-		{
-			get
-			{
-				return storeId;
-			}
-			set	
-			{
-				storeId = value;
-				DictionaryUtil.Add(BodyParameters, "StoreId", value);
 			}
 		}
 
