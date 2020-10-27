@@ -1,3 +1,8 @@
+2020-10-27 Version: 1.7.6
+- Support DescribePendingMaintenanceAction.
+- Support ModifyPendingMaintenanceAction.
+- Support DescribePendingMaintenanceActions.
+
 2020-10-27 Version: 0.2.0
 - Support Sampling for jaeger.
 
