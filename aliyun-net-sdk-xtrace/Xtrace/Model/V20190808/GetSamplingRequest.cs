@@ -28,10 +28,10 @@ using Aliyun.Acs.xtrace.Transform.V20190808;
 
 namespace Aliyun.Acs.xtrace.Model.V20190808
 {
-    public class ListServicesRequest : RpcAcsRequest<ListServicesResponse>
+    public class GetSamplingRequest : RpcAcsRequest<GetSamplingResponse>
     {
-        public ListServicesRequest()
-            : base("xtrace", "2019-08-08", "ListServices")
+        public GetSamplingRequest()
+            : base("xtrace", "2019-08-08", "GetSampling")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +41,29 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 			Method = MethodType.POST;
         }
 
-		private string appType;
+		private string proxyUserId;
 
-		public string AppType
+		public string ProxyUserId
 		{
 			get
 			{
-				return appType;
+				return proxyUserId;
 			}
 			set	
 			{
-				appType = value;
-				DictionaryUtil.Add(QueryParameters, "AppType", value);
+				proxyUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyUserId", value);
 			}
 		}
 
-        public override ListServicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override GetSamplingResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListServicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSamplingResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

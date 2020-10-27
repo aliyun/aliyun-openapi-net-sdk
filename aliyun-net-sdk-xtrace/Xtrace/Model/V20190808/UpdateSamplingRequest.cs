@@ -28,10 +28,10 @@ using Aliyun.Acs.xtrace.Transform.V20190808;
 
 namespace Aliyun.Acs.xtrace.Model.V20190808
 {
-    public class ListServicesRequest : RpcAcsRequest<ListServicesResponse>
+    public class UpdateSamplingRequest : RpcAcsRequest<UpdateSamplingResponse>
     {
-        public ListServicesRequest()
-            : base("xtrace", "2019-08-08", "ListServices")
+        public UpdateSamplingRequest()
+            : base("xtrace", "2019-08-08", "UpdateSampling")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +41,44 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 			Method = MethodType.POST;
         }
 
-		private string appType;
+		private string sampling;
 
-		public string AppType
+		private string proxyUserId;
+
+		public string Sampling
 		{
 			get
 			{
-				return appType;
+				return sampling;
 			}
 			set	
 			{
-				appType = value;
-				DictionaryUtil.Add(QueryParameters, "AppType", value);
+				sampling = value;
+				DictionaryUtil.Add(QueryParameters, "Sampling", value);
 			}
 		}
 
-        public override ListServicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string ProxyUserId
+		{
+			get
+			{
+				return proxyUserId;
+			}
+			set	
+			{
+				proxyUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyUserId", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override UpdateSamplingResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListServicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateSamplingResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -28,10 +28,10 @@ using Aliyun.Acs.xtrace.Transform.V20190808;
 
 namespace Aliyun.Acs.xtrace.Model.V20190808
 {
-    public class ListServicesRequest : RpcAcsRequest<ListServicesResponse>
+    public class CheckServiceLinkedRoleForDeletingRequest : RpcAcsRequest<CheckServiceLinkedRoleForDeletingResponse>
     {
-        public ListServicesRequest()
-            : base("xtrace", "2019-08-08", "ListServices")
+        public CheckServiceLinkedRoleForDeletingRequest()
+            : base("xtrace", "2019-08-08", "CheckServiceLinkedRoleForDeleting")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +41,74 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 			Method = MethodType.POST;
         }
 
-		private string appType;
+		private string sPIRegionId;
 
-		public string AppType
+		private string roleArn;
+
+		private string deletionTaskId;
+
+		private string serviceName;
+
+		public string SPIRegionId
 		{
 			get
 			{
-				return appType;
+				return sPIRegionId;
 			}
 			set	
 			{
-				appType = value;
-				DictionaryUtil.Add(QueryParameters, "AppType", value);
+				sPIRegionId = value;
+				DictionaryUtil.Add(QueryParameters, "SPIRegionId", value);
 			}
 		}
 
-        public override ListServicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string RoleArn
+		{
+			get
+			{
+				return roleArn;
+			}
+			set	
+			{
+				roleArn = value;
+				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
+			}
+		}
+
+		public string DeletionTaskId
+		{
+			get
+			{
+				return deletionTaskId;
+			}
+			set	
+			{
+				deletionTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "DeletionTaskId", value);
+			}
+		}
+
+		public string ServiceName
+		{
+			get
+			{
+				return serviceName;
+			}
+			set	
+			{
+				serviceName = value;
+				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CheckServiceLinkedRoleForDeletingResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListServicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CheckServiceLinkedRoleForDeletingResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

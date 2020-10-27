@@ -28,10 +28,10 @@ using Aliyun.Acs.xtrace.Transform.V20190808;
 
 namespace Aliyun.Acs.xtrace.Model.V20190808
 {
-    public class ListServicesRequest : RpcAcsRequest<ListServicesResponse>
+    public class GetTraceAnalysisRequest : RpcAcsRequest<GetTraceAnalysisResponse>
     {
-        public ListServicesRequest()
-            : base("xtrace", "2019-08-08", "ListServices")
+        public GetTraceAnalysisRequest()
+            : base("xtrace", "2019-08-08", "GetTraceAnalysis")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,24 +41,59 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 			Method = MethodType.POST;
         }
 
-		private string appType;
+		private string query;
 
-		public string AppType
+		private string api;
+
+		private string proxyUserId;
+
+		public string Query
 		{
 			get
 			{
-				return appType;
+				return query;
 			}
 			set	
 			{
-				appType = value;
-				DictionaryUtil.Add(QueryParameters, "AppType", value);
+				query = value;
+				DictionaryUtil.Add(QueryParameters, "Query", value);
 			}
 		}
 
-        public override ListServicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string Api
+		{
+			get
+			{
+				return api;
+			}
+			set	
+			{
+				api = value;
+				DictionaryUtil.Add(QueryParameters, "Api", value);
+			}
+		}
+
+		public string ProxyUserId
+		{
+			get
+			{
+				return proxyUserId;
+			}
+			set	
+			{
+				proxyUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyUserId", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override GetTraceAnalysisResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ListServicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetTraceAnalysisResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
