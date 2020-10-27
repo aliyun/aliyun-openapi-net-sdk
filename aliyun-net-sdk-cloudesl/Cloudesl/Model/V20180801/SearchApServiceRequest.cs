@@ -27,10 +27,10 @@ using Aliyun.Acs.cloudesl.Transform.V20180801;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
-    public class DescribeCompanyRequest : RpcAcsRequest<DescribeCompanyResponse>
+    public class SearchApServiceRequest : RpcAcsRequest<SearchApServiceResponse>
     {
-        public DescribeCompanyRequest()
-            : base("cloudesl", "2018-08-01", "DescribeCompany", "cloudesl", "openAPI")
+        public SearchApServiceRequest()
+            : base("cloudesl", "2018-08-01", "SearchApService", "cloudesl", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +40,84 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			Method = MethodType.POST;
         }
 
-        public override DescribeCompanyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		private string apMac;
+
+		private string storeId;
+
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private bool? activated;
+
+		public string ApMac
+		{
+			get
+			{
+				return apMac;
+			}
+			set	
+			{
+				apMac = value;
+				DictionaryUtil.Add(QueryParameters, "ApMac", value);
+			}
+		}
+
+		public string StoreId
+		{
+			get
+			{
+				return storeId;
+			}
+			set	
+			{
+				storeId = value;
+				DictionaryUtil.Add(QueryParameters, "StoreId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public bool? Activated
+		{
+			get
+			{
+				return activated;
+			}
+			set	
+			{
+				activated = value;
+				DictionaryUtil.Add(QueryParameters, "Activated", value.ToString());
+			}
+		}
+
+        public override SearchApServiceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCompanyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return SearchApServiceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

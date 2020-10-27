@@ -16,105 +16,45 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20180801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
     public class DescribeItemsRequest : RpcAcsRequest<DescribeItemsResponse>
     {
         public DescribeItemsRequest()
-            : base("cloudesl", "2018-08-01", "DescribeItems")
+            : base("cloudesl", "2018-08-01", "DescribeItems", "cloudesl", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private long? itemId;
-
-		private bool? bePromotion;
-
-		private string shelfCode;
-
-		private string itemTitle;
-
-		private int? pageSize;
 
 		private string storeId;
 
-		private string skuId;
-
 		private int? pageNumber;
+
+		private long? itemId;
+
+		private int? pageSize;
 
 		private string itemBarCode;
 
-		public long? ItemId
-		{
-			get
-			{
-				return itemId;
-			}
-			set	
-			{
-				itemId = value;
-				DictionaryUtil.Add(QueryParameters, "ItemId", value.ToString());
-			}
-		}
+		private bool? bePromotion;
 
-		public bool? BePromotion
-		{
-			get
-			{
-				return bePromotion;
-			}
-			set	
-			{
-				bePromotion = value;
-				DictionaryUtil.Add(QueryParameters, "BePromotion", value.ToString());
-			}
-		}
+		private string itemTitle;
 
-		public string ShelfCode
-		{
-			get
-			{
-				return shelfCode;
-			}
-			set	
-			{
-				shelfCode = value;
-				DictionaryUtil.Add(QueryParameters, "ShelfCode", value);
-			}
-		}
-
-		public string ItemTitle
-		{
-			get
-			{
-				return itemTitle;
-			}
-			set	
-			{
-				itemTitle = value;
-				DictionaryUtil.Add(QueryParameters, "ItemTitle", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+		private string skuId;
 
 		public string StoreId
 		{
@@ -126,19 +66,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			{
 				storeId = value;
 				DictionaryUtil.Add(QueryParameters, "StoreId", value);
-			}
-		}
-
-		public string SkuId
-		{
-			get
-			{
-				return skuId;
-			}
-			set	
-			{
-				skuId = value;
-				DictionaryUtil.Add(QueryParameters, "SkuId", value);
 			}
 		}
 
@@ -155,6 +82,32 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
+		public long? ItemId
+		{
+			get
+			{
+				return itemId;
+			}
+			set	
+			{
+				itemId = value;
+				DictionaryUtil.Add(QueryParameters, "ItemId", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string ItemBarCode
 		{
 			get
@@ -168,7 +121,46 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-        public override DescribeItemsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public bool? BePromotion
+		{
+			get
+			{
+				return bePromotion;
+			}
+			set	
+			{
+				bePromotion = value;
+				DictionaryUtil.Add(QueryParameters, "BePromotion", value.ToString());
+			}
+		}
+
+		public string ItemTitle
+		{
+			get
+			{
+				return itemTitle;
+			}
+			set	
+			{
+				itemTitle = value;
+				DictionaryUtil.Add(QueryParameters, "ItemTitle", value);
+			}
+		}
+
+		public string SkuId
+		{
+			get
+			{
+				return skuId;
+			}
+			set	
+			{
+				skuId = value;
+				DictionaryUtil.Add(QueryParameters, "SkuId", value);
+			}
+		}
+
+        public override DescribeItemsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeItemsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,41 +16,35 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20180801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
     public class UnbindEslDeviceRequest : RpcAcsRequest<UnbindEslDeviceResponse>
     {
         public UnbindEslDeviceRequest()
-            : base("cloudesl", "2018-08-01", "UnbindEslDevice")
+            : base("cloudesl", "2018-08-01", "UnbindEslDevice", "cloudesl", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string eslBarCode;
 
 		private string storeId;
 
-		private string itemBarCode;
+		private string eslBarCode;
 
-		public string EslBarCode
-		{
-			get
-			{
-				return eslBarCode;
-			}
-			set	
-			{
-				eslBarCode = value;
-				DictionaryUtil.Add(QueryParameters, "EslBarCode", value);
-			}
-		}
+		private string itemBarCode;
 
 		public string StoreId
 		{
@@ -62,6 +56,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			{
 				storeId = value;
 				DictionaryUtil.Add(QueryParameters, "StoreId", value);
+			}
+		}
+
+		public string EslBarCode
+		{
+			get
+			{
+				return eslBarCode;
+			}
+			set	
+			{
+				eslBarCode = value;
+				DictionaryUtil.Add(QueryParameters, "EslBarCode", value);
 			}
 		}
 
@@ -78,7 +85,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-        public override UnbindEslDeviceResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UnbindEslDeviceResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UnbindEslDeviceResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,21 +16,28 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20180801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
     public class DeleteStoreRequest : RpcAcsRequest<DeleteStoreResponse>
     {
         public DeleteStoreRequest()
-            : base("cloudesl", "2018-08-01", "DeleteStore")
+            : base("cloudesl", "2018-08-01", "DeleteStore", "cloudesl", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string storeId;
@@ -48,7 +55,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-        public override DeleteStoreResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DeleteStoreResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DeleteStoreResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

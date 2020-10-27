@@ -16,32 +16,33 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20180801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
     public class DescribeUserOperationLogRequest : RpcAcsRequest<DescribeUserOperationLogResponse>
     {
         public DescribeUserOperationLogRequest()
-            : base("cloudesl", "2018-08-01", "DescribeUserOperationLog")
+            : base("cloudesl", "2018-08-01", "DescribeUserOperationLog", "cloudesl", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? operateUserId;
 
-		private string itemTitle;
-
-		private string operateStatus;
-
 		private string storeId;
-
-		private bool? reverse;
 
 		private int? pageNumber;
 
@@ -55,9 +56,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 
 		private int? pageSize;
 
-		private string operateType;
-
 		private string itemBarCode;
+
+		private string itemTitle;
+
+		private string operateStatus;
+
+		private bool? reverse;
+
+		private string operateType;
 
 		public long? OperateUserId
 		{
@@ -72,32 +79,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-		public string ItemTitle
-		{
-			get
-			{
-				return itemTitle;
-			}
-			set	
-			{
-				itemTitle = value;
-				DictionaryUtil.Add(QueryParameters, "ItemTitle", value);
-			}
-		}
-
-		public string OperateStatus
-		{
-			get
-			{
-				return operateStatus;
-			}
-			set	
-			{
-				operateStatus = value;
-				DictionaryUtil.Add(QueryParameters, "OperateStatus", value);
-			}
-		}
-
 		public string StoreId
 		{
 			get
@@ -108,19 +89,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			{
 				storeId = value;
 				DictionaryUtil.Add(QueryParameters, "StoreId", value);
-			}
-		}
-
-		public bool? Reverse
-		{
-			get
-			{
-				return reverse;
-			}
-			set	
-			{
-				reverse = value;
-				DictionaryUtil.Add(QueryParameters, "Reverse", value.ToString());
 			}
 		}
 
@@ -202,19 +170,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-		public string OperateType
-		{
-			get
-			{
-				return operateType;
-			}
-			set	
-			{
-				operateType = value;
-				DictionaryUtil.Add(QueryParameters, "OperateType", value);
-			}
-		}
-
 		public string ItemBarCode
 		{
 			get
@@ -228,7 +183,59 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-        public override DescribeUserOperationLogResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string ItemTitle
+		{
+			get
+			{
+				return itemTitle;
+			}
+			set	
+			{
+				itemTitle = value;
+				DictionaryUtil.Add(QueryParameters, "ItemTitle", value);
+			}
+		}
+
+		public string OperateStatus
+		{
+			get
+			{
+				return operateStatus;
+			}
+			set	
+			{
+				operateStatus = value;
+				DictionaryUtil.Add(QueryParameters, "OperateStatus", value);
+			}
+		}
+
+		public bool? Reverse
+		{
+			get
+			{
+				return reverse;
+			}
+			set	
+			{
+				reverse = value;
+				DictionaryUtil.Add(QueryParameters, "Reverse", value.ToString());
+			}
+		}
+
+		public string OperateType
+		{
+			get
+			{
+				return operateType;
+			}
+			set	
+			{
+				operateType = value;
+				DictionaryUtil.Add(QueryParameters, "OperateType", value);
+			}
+		}
+
+        public override DescribeUserOperationLogResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeUserOperationLogResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

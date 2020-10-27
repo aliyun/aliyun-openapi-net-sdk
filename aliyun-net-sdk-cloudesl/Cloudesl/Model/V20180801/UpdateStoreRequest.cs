@@ -16,34 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20180801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
     public class UpdateStoreRequest : RpcAcsRequest<UpdateStoreResponse>
     {
         public UpdateStoreRequest()
-            : base("cloudesl", "2018-08-01", "UpdateStore")
+            : base("cloudesl", "2018-08-01", "UpdateStore", "cloudesl", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string comments;
-
-		private string phone;
 
 		private string storeName;
 
 		private string groups;
 
-		private string outId;
-
 		private string storeId;
+
+		private string phone;
+
+		private string outId;
 
 		private string brand;
 
@@ -57,19 +64,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			{
 				comments = value;
 				DictionaryUtil.Add(QueryParameters, "Comments", value);
-			}
-		}
-
-		public string Phone
-		{
-			get
-			{
-				return phone;
-			}
-			set	
-			{
-				phone = value;
-				DictionaryUtil.Add(QueryParameters, "Phone", value);
 			}
 		}
 
@@ -99,19 +93,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-		public string OutId
-		{
-			get
-			{
-				return outId;
-			}
-			set	
-			{
-				outId = value;
-				DictionaryUtil.Add(QueryParameters, "OutId", value);
-			}
-		}
-
 		public string StoreId
 		{
 			get
@@ -122,6 +103,32 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			{
 				storeId = value;
 				DictionaryUtil.Add(QueryParameters, "StoreId", value);
+			}
+		}
+
+		public string Phone
+		{
+			get
+			{
+				return phone;
+			}
+			set	
+			{
+				phone = value;
+				DictionaryUtil.Add(QueryParameters, "Phone", value);
+			}
+		}
+
+		public string OutId
+		{
+			get
+			{
+				return outId;
+			}
+			set	
+			{
+				outId = value;
+				DictionaryUtil.Add(QueryParameters, "OutId", value);
 			}
 		}
 
@@ -138,7 +145,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-        public override UpdateStoreResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override UpdateStoreResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UpdateStoreResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
-	public class CreateStoreResponse : AcsResponse
+	public class ActivateApService2Response : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 
 		private string errorCode;
 
-		private string storeId;
+		private string code;
 
 		public string RequestId
 		{
@@ -83,15 +83,15 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-		public string StoreId
+		public string Code
 		{
 			get
 			{
-				return storeId;
+				return code;
 			}
 			set	
 			{
-				storeId = value;
+				code = value;
 			}
 		}
 	}

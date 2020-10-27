@@ -27,10 +27,10 @@ using Aliyun.Acs.cloudesl.Transform.V20180801;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
-    public class DescribeCompanyRequest : RpcAcsRequest<DescribeCompanyResponse>
+    public class ActivateApService2Request : RpcAcsRequest<ActivateApService2Response>
     {
-        public DescribeCompanyRequest()
-            : base("cloudesl", "2018-08-01", "DescribeCompany", "cloudesl", "openAPI")
+        public ActivateApService2Request()
+            : base("cloudesl", "2018-08-01", "ActivateApService2", "cloudesl", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,9 +40,39 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			Method = MethodType.POST;
         }
 
-        public override DescribeCompanyResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		private string apMac;
+
+		private string storeId;
+
+		public string ApMac
+		{
+			get
+			{
+				return apMac;
+			}
+			set	
+			{
+				apMac = value;
+				DictionaryUtil.Add(QueryParameters, "ApMac", value);
+			}
+		}
+
+		public string StoreId
+		{
+			get
+			{
+				return storeId;
+			}
+			set	
+			{
+				storeId = value;
+				DictionaryUtil.Add(QueryParameters, "StoreId", value);
+			}
+		}
+
+        public override ActivateApService2Response GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeCompanyResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ActivateApService2ResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -16,51 +16,97 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20180801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
     public class DescribeAlarmsRequest : RpcAcsRequest<DescribeAlarmsResponse>
     {
         public DescribeAlarmsRequest()
-            : base("cloudesl", "2018-08-01", "DescribeAlarms")
+            : base("cloudesl", "2018-08-01", "DescribeAlarms", "cloudesl", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string errorType;
-
-		private string toAlarmTime;
-
-		private string alarmType;
-
-		private string fromAlarmTime;
-
-		private string alarmId;
-
-		private int? pageSize;
 
 		private string storeId;
 
 		private int? pageNumber;
 
+		private string fromAlarmTime;
+
+		private int? pageSize;
+
+		private string toAlarmTime;
+
+		private string alarmType;
+
 		private string alarmStatus;
 
-		public string ErrorType
+		private string errorType;
+
+		private string alarmId;
+
+		public string StoreId
 		{
 			get
 			{
-				return errorType;
+				return storeId;
 			}
 			set	
 			{
-				errorType = value;
-				DictionaryUtil.Add(QueryParameters, "ErrorType", value);
+				storeId = value;
+				DictionaryUtil.Add(QueryParameters, "StoreId", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string FromAlarmTime
+		{
+			get
+			{
+				return fromAlarmTime;
+			}
+			set	
+			{
+				fromAlarmTime = value;
+				DictionaryUtil.Add(QueryParameters, "FromAlarmTime", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
 			}
 		}
 
@@ -90,16 +136,29 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-		public string FromAlarmTime
+		public string AlarmStatus
 		{
 			get
 			{
-				return fromAlarmTime;
+				return alarmStatus;
 			}
 			set	
 			{
-				fromAlarmTime = value;
-				DictionaryUtil.Add(QueryParameters, "FromAlarmTime", value);
+				alarmStatus = value;
+				DictionaryUtil.Add(QueryParameters, "AlarmStatus", value);
+			}
+		}
+
+		public string ErrorType
+		{
+			get
+			{
+				return errorType;
+			}
+			set	
+			{
+				errorType = value;
+				DictionaryUtil.Add(QueryParameters, "ErrorType", value);
 			}
 		}
 
@@ -116,59 +175,7 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string StoreId
-		{
-			get
-			{
-				return storeId;
-			}
-			set	
-			{
-				storeId = value;
-				DictionaryUtil.Add(QueryParameters, "StoreId", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string AlarmStatus
-		{
-			get
-			{
-				return alarmStatus;
-			}
-			set	
-			{
-				alarmStatus = value;
-				DictionaryUtil.Add(QueryParameters, "AlarmStatus", value);
-			}
-		}
-
-        public override DescribeAlarmsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeAlarmsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeAlarmsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

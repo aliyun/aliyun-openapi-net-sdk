@@ -16,27 +16,69 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.cloudesl.Model.V20180801;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.cloudesl.Transform.V20180801
+namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
-    public class UpdateStoreResponseUnmarshaller
-    {
-        public static UpdateStoreResponse Unmarshall(UnmarshallerContext context)
-        {
-			UpdateStoreResponse updateStoreResponse = new UpdateStoreResponse();
+	public class BindApStoreServiceResponse : AcsResponse
+	{
 
-			updateStoreResponse.HttpResponse = context.HttpResponse;
-			updateStoreResponse.RequestId = context.StringValue("UpdateStore.RequestId");
-			updateStoreResponse.Success = context.BooleanValue("UpdateStore.Success");
-			updateStoreResponse.Message = context.StringValue("UpdateStore.Message");
-			updateStoreResponse.ErrorCode = context.StringValue("UpdateStore.ErrorCode");
-        
-			return updateStoreResponse;
-        }
-    }
+		private string requestId;
+
+		private bool? success;
+
+		private string message;
+
+		private string errorCode;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public bool? Success
+		{
+			get
+			{
+				return success;
+			}
+			set	
+			{
+				success = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string ErrorCode
+		{
+			get
+			{
+				return errorCode;
+			}
+			set	
+			{
+				errorCode = value;
+			}
+		}
+	}
 }

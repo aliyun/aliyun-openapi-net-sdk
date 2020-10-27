@@ -16,26 +16,29 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20180801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
     public class DescribeEslDevicesRequest : RpcAcsRequest<DescribeEslDevicesResponse>
     {
         public DescribeEslDevicesRequest()
-            : base("cloudesl", "2018-08-01", "DescribeEslDevices")
+            : base("cloudesl", "2018-08-01", "DescribeEslDevices", "cloudesl", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string eslStatus;
-
-		private int? toBatteryLevel;
 
 		private string storeId;
 
@@ -45,45 +48,21 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 
 		private int? pageNumber;
 
-		private int? fromBatteryLevel;
-
-		private string shelfCode;
-
 		private string eslBarCode;
 
 		private string vendor;
 
 		private int? pageSize;
 
-		private bool? beBind;
-
 		private string itemBarCode;
 
-		public string EslStatus
-		{
-			get
-			{
-				return eslStatus;
-			}
-			set	
-			{
-				eslStatus = value;
-				DictionaryUtil.Add(QueryParameters, "EslStatus", value);
-			}
-		}
+		private int? toBatteryLevel;
 
-		public int? ToBatteryLevel
-		{
-			get
-			{
-				return toBatteryLevel;
-			}
-			set	
-			{
-				toBatteryLevel = value;
-				DictionaryUtil.Add(QueryParameters, "ToBatteryLevel", value.ToString());
-			}
-		}
+		private int? fromBatteryLevel;
+
+		private string shelfCode;
+
+		private bool? beBind;
 
 		public string StoreId
 		{
@@ -137,32 +116,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-		public int? FromBatteryLevel
-		{
-			get
-			{
-				return fromBatteryLevel;
-			}
-			set	
-			{
-				fromBatteryLevel = value;
-				DictionaryUtil.Add(QueryParameters, "FromBatteryLevel", value.ToString());
-			}
-		}
-
-		public string ShelfCode
-		{
-			get
-			{
-				return shelfCode;
-			}
-			set	
-			{
-				shelfCode = value;
-				DictionaryUtil.Add(QueryParameters, "ShelfCode", value);
-			}
-		}
-
 		public string EslBarCode
 		{
 			get
@@ -202,19 +155,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-		public bool? BeBind
-		{
-			get
-			{
-				return beBind;
-			}
-			set	
-			{
-				beBind = value;
-				DictionaryUtil.Add(QueryParameters, "BeBind", value.ToString());
-			}
-		}
-
 		public string ItemBarCode
 		{
 			get
@@ -228,7 +168,59 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-        public override DescribeEslDevicesResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public int? ToBatteryLevel
+		{
+			get
+			{
+				return toBatteryLevel;
+			}
+			set	
+			{
+				toBatteryLevel = value;
+				DictionaryUtil.Add(QueryParameters, "ToBatteryLevel", value.ToString());
+			}
+		}
+
+		public int? FromBatteryLevel
+		{
+			get
+			{
+				return fromBatteryLevel;
+			}
+			set	
+			{
+				fromBatteryLevel = value;
+				DictionaryUtil.Add(QueryParameters, "FromBatteryLevel", value.ToString());
+			}
+		}
+
+		public string ShelfCode
+		{
+			get
+			{
+				return shelfCode;
+			}
+			set	
+			{
+				shelfCode = value;
+				DictionaryUtil.Add(QueryParameters, "ShelfCode", value);
+			}
+		}
+
+		public bool? BeBind
+		{
+			get
+			{
+				return beBind;
+			}
+			set	
+			{
+				beBind = value;
+				DictionaryUtil.Add(QueryParameters, "BeBind", value.ToString());
+			}
+		}
+
+        public override DescribeEslDevicesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeEslDevicesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

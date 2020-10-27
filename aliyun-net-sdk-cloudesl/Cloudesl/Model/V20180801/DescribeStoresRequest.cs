@@ -16,64 +16,45 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20180801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
     public class DescribeStoresRequest : RpcAcsRequest<DescribeStoresResponse>
     {
         public DescribeStoresRequest()
-            : base("cloudesl", "2018-08-01", "DescribeStores")
+            : base("cloudesl", "2018-08-01", "DescribeStores", "cloudesl", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string toDate;
-
-		private int? pageSize;
 
 		private string storeName;
 
-		private string groups;
-
 		private string storeId;
-
-		private string brand;
 
 		private int? pageNumber;
 
 		private string fromDate;
 
-		public string ToDate
-		{
-			get
-			{
-				return toDate;
-			}
-			set	
-			{
-				toDate = value;
-				DictionaryUtil.Add(QueryParameters, "ToDate", value);
-			}
-		}
+		private string toDate;
 
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
+		private int? pageSize;
+
+		private string brand;
+
+		private string groups;
 
 		public string StoreName
 		{
@@ -88,19 +69,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-		public string Groups
-		{
-			get
-			{
-				return groups;
-			}
-			set	
-			{
-				groups = value;
-				DictionaryUtil.Add(QueryParameters, "Groups", value);
-			}
-		}
-
 		public string StoreId
 		{
 			get
@@ -111,19 +79,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			{
 				storeId = value;
 				DictionaryUtil.Add(QueryParameters, "StoreId", value);
-			}
-		}
-
-		public string Brand
-		{
-			get
-			{
-				return brand;
-			}
-			set	
-			{
-				brand = value;
-				DictionaryUtil.Add(QueryParameters, "Brand", value);
 			}
 		}
 
@@ -153,7 +108,59 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-        public override DescribeStoresResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string ToDate
+		{
+			get
+			{
+				return toDate;
+			}
+			set	
+			{
+				toDate = value;
+				DictionaryUtil.Add(QueryParameters, "ToDate", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Brand
+		{
+			get
+			{
+				return brand;
+			}
+			set	
+			{
+				brand = value;
+				DictionaryUtil.Add(QueryParameters, "Brand", value);
+			}
+		}
+
+		public string Groups
+		{
+			get
+			{
+				return groups;
+			}
+			set	
+			{
+				groups = value;
+				DictionaryUtil.Add(QueryParameters, "Groups", value);
+			}
+		}
+
+        public override DescribeStoresResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeStoresResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

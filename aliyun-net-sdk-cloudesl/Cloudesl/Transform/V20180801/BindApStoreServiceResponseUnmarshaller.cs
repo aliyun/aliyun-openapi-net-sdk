@@ -24,19 +24,19 @@ using Aliyun.Acs.cloudesl.Model.V20180801;
 
 namespace Aliyun.Acs.cloudesl.Transform.V20180801
 {
-    public class UpdateStoreResponseUnmarshaller
+    public class BindApStoreServiceResponseUnmarshaller
     {
-        public static UpdateStoreResponse Unmarshall(UnmarshallerContext context)
+        public static BindApStoreServiceResponse Unmarshall(UnmarshallerContext context)
         {
-			UpdateStoreResponse updateStoreResponse = new UpdateStoreResponse();
+			BindApStoreServiceResponse bindApStoreServiceResponse = new BindApStoreServiceResponse();
 
-			updateStoreResponse.HttpResponse = context.HttpResponse;
-			updateStoreResponse.RequestId = context.StringValue("UpdateStore.RequestId");
-			updateStoreResponse.Success = context.BooleanValue("UpdateStore.Success");
-			updateStoreResponse.Message = context.StringValue("UpdateStore.Message");
-			updateStoreResponse.ErrorCode = context.StringValue("UpdateStore.ErrorCode");
+			bindApStoreServiceResponse.HttpResponse = context.HttpResponse;
+			bindApStoreServiceResponse.RequestId = context.StringValue("BindApStoreService.RequestId");
+			bindApStoreServiceResponse.Success = context.BooleanValue("BindApStoreService.Success");
+			bindApStoreServiceResponse.Message = context.StringValue("BindApStoreService.Message");
+			bindApStoreServiceResponse.ErrorCode = context.StringValue("BindApStoreService.ErrorCode");
         
-			return updateStoreResponse;
+			return bindApStoreServiceResponse;
         }
     }
 }

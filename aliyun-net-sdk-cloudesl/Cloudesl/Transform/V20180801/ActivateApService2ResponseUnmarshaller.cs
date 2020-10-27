@@ -24,19 +24,20 @@ using Aliyun.Acs.cloudesl.Model.V20180801;
 
 namespace Aliyun.Acs.cloudesl.Transform.V20180801
 {
-    public class UpdateStoreResponseUnmarshaller
+    public class ActivateApService2ResponseUnmarshaller
     {
-        public static UpdateStoreResponse Unmarshall(UnmarshallerContext context)
+        public static ActivateApService2Response Unmarshall(UnmarshallerContext context)
         {
-			UpdateStoreResponse updateStoreResponse = new UpdateStoreResponse();
+			ActivateApService2Response activateApService2Response = new ActivateApService2Response();
 
-			updateStoreResponse.HttpResponse = context.HttpResponse;
-			updateStoreResponse.RequestId = context.StringValue("UpdateStore.RequestId");
-			updateStoreResponse.Success = context.BooleanValue("UpdateStore.Success");
-			updateStoreResponse.Message = context.StringValue("UpdateStore.Message");
-			updateStoreResponse.ErrorCode = context.StringValue("UpdateStore.ErrorCode");
+			activateApService2Response.HttpResponse = context.HttpResponse;
+			activateApService2Response.RequestId = context.StringValue("ActivateApService2.RequestId");
+			activateApService2Response.Success = context.BooleanValue("ActivateApService2.Success");
+			activateApService2Response.Message = context.StringValue("ActivateApService2.Message");
+			activateApService2Response.ErrorCode = context.StringValue("ActivateApService2.ErrorCode");
+			activateApService2Response.Code = context.StringValue("ActivateApService2.Code");
         
-			return updateStoreResponse;
+			return activateApService2Response;
         }
     }
 }

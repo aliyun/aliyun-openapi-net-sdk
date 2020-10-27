@@ -24,19 +24,19 @@ using Aliyun.Acs.cloudesl.Model.V20180801;
 
 namespace Aliyun.Acs.cloudesl.Transform.V20180801
 {
-    public class UpdateStoreResponseUnmarshaller
+    public class DeleteApServiceResponseUnmarshaller
     {
-        public static UpdateStoreResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteApServiceResponse Unmarshall(UnmarshallerContext context)
         {
-			UpdateStoreResponse updateStoreResponse = new UpdateStoreResponse();
+			DeleteApServiceResponse deleteApServiceResponse = new DeleteApServiceResponse();
 
-			updateStoreResponse.HttpResponse = context.HttpResponse;
-			updateStoreResponse.RequestId = context.StringValue("UpdateStore.RequestId");
-			updateStoreResponse.Success = context.BooleanValue("UpdateStore.Success");
-			updateStoreResponse.Message = context.StringValue("UpdateStore.Message");
-			updateStoreResponse.ErrorCode = context.StringValue("UpdateStore.ErrorCode");
+			deleteApServiceResponse.HttpResponse = context.HttpResponse;
+			deleteApServiceResponse.RequestId = context.StringValue("DeleteApService.RequestId");
+			deleteApServiceResponse.Success = context.BooleanValue("DeleteApService.Success");
+			deleteApServiceResponse.Message = context.StringValue("DeleteApService.Message");
+			deleteApServiceResponse.ErrorCode = context.StringValue("DeleteApService.ErrorCode");
         
-			return updateStoreResponse;
+			return deleteApServiceResponse;
         }
     }
 }

@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
-	public class CreateStoreResponse : AcsResponse
+	public class SearchApServiceResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,7 +33,13 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 
 		private string errorCode;
 
-		private string storeId;
+		private int? totalCount;
+
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private List<SearchApService_ApInfo> items;
 
 		public string RequestId
 		{
@@ -83,15 +89,111 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-		public string StoreId
+		public int? TotalCount
 		{
 			get
 			{
-				return storeId;
+				return totalCount;
 			}
 			set	
 			{
-				storeId = value;
+				totalCount = value;
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+			}
+		}
+
+		public List<SearchApService_ApInfo> Items
+		{
+			get
+			{
+				return items;
+			}
+			set	
+			{
+				items = value;
+			}
+		}
+
+		public class SearchApService_ApInfo
+		{
+
+			private bool? isActivate;
+
+			private string mac;
+
+			private string model;
+
+			private bool? status;
+
+			public bool? IsActivate
+			{
+				get
+				{
+					return isActivate;
+				}
+				set	
+				{
+					isActivate = value;
+				}
+			}
+
+			public string Mac
+			{
+				get
+				{
+					return mac;
+				}
+				set	
+				{
+					mac = value;
+				}
+			}
+
+			public string Model
+			{
+				get
+				{
+					return model;
+				}
+				set	
+				{
+					model = value;
+				}
+			}
+
+			public bool? Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
 			}
 		}
 	}
