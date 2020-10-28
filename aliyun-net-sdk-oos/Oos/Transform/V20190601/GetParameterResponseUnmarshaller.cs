@@ -45,6 +45,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			parameter.ParameterVersion = context.IntegerValue("GetParameter.Parameter.ParameterVersion");
 			parameter.Type = context.StringValue("GetParameter.Parameter.Type");
 			parameter._Value = context.StringValue("GetParameter.Parameter.Value");
+			parameter.Constraints = context.StringValue("GetParameter.Parameter.Constraints");
 			getParameterResponse.Parameter = parameter;
         
 			return getParameterResponse;

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class CreateSecretParameterRequest : RpcAcsRequest<CreateSecretParameterResponse>
+    public class UpdateInstanceInformationRequest : RpcAcsRequest<UpdateInstanceInformationResponse>
     {
-        public CreateSecretParameterRequest()
-            : base("oos", "2019-06-01", "CreateSecretParameter", "oos", "openAPI")
+        public UpdateInstanceInformationRequest()
+            : base("oos", "2019-06-01", "UpdateInstanceInformation", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,108 +41,123 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			Method = MethodType.POST;
         }
 
-		private string clientToken;
+		private string agentVersion;
 
-		private string description;
+		private string ipAddress;
 
-		private string keyId;
+		private string computerName;
 
-		private string type;
+		private string platformName;
 
-		private string constraints;
+		private string instanceId;
 
-		private string name;
+		private string agentName;
 
-		private string _value;
+		private string platformType;
 
-		public string ClientToken
+		private string platformVersion;
+
+		public string AgentVersion
 		{
 			get
 			{
-				return clientToken;
+				return agentVersion;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				agentVersion = value;
+				DictionaryUtil.Add(QueryParameters, "AgentVersion", value);
 			}
 		}
 
-		public string Description
+		public string IpAddress
 		{
 			get
 			{
-				return description;
+				return ipAddress;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				ipAddress = value;
+				DictionaryUtil.Add(QueryParameters, "IpAddress", value);
 			}
 		}
 
-		public string KeyId
+		public string ComputerName
 		{
 			get
 			{
-				return keyId;
+				return computerName;
 			}
 			set	
 			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+				computerName = value;
+				DictionaryUtil.Add(QueryParameters, "ComputerName", value);
 			}
 		}
 
-		public string Type
+		public string PlatformName
 		{
 			get
 			{
-				return type;
+				return platformName;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				platformName = value;
+				DictionaryUtil.Add(QueryParameters, "PlatformName", value);
 			}
 		}
 
-		public string Constraints
+		public string InstanceId
 		{
 			get
 			{
-				return constraints;
+				return instanceId;
 			}
 			set	
 			{
-				constraints = value;
-				DictionaryUtil.Add(QueryParameters, "Constraints", value);
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
-		public string Name
+		public string AgentName
 		{
 			get
 			{
-				return name;
+				return agentName;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				agentName = value;
+				DictionaryUtil.Add(QueryParameters, "AgentName", value);
 			}
 		}
 
-		public string _Value
+		public string PlatformType
 		{
 			get
 			{
-				return _value;
+				return platformType;
 			}
 			set	
 			{
-				_value = value;
-				DictionaryUtil.Add(QueryParameters, "Value", value);
+				platformType = value;
+				DictionaryUtil.Add(QueryParameters, "PlatformType", value);
+			}
+		}
+
+		public string PlatformVersion
+		{
+			get
+			{
+				return platformVersion;
+			}
+			set	
+			{
+				platformVersion = value;
+				DictionaryUtil.Add(QueryParameters, "PlatformVersion", value);
 			}
 		}
 
@@ -150,9 +166,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override CreateSecretParameterResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpdateInstanceInformationResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSecretParameterResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpdateInstanceInformationResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

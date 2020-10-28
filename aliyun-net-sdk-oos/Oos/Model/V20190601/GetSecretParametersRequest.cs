@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class CreateParameterRequest : RpcAcsRequest<CreateParameterResponse>
+    public class GetSecretParametersRequest : RpcAcsRequest<GetSecretParametersResponse>
     {
-        public CreateParameterRequest()
-            : base("oos", "2019-06-01", "CreateParameter", "oos", "openAPI")
+        public GetSecretParametersRequest()
+            : base("oos", "2019-06-01", "GetSecretParameters", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,93 +41,33 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			Method = MethodType.POST;
         }
 
-		private string clientToken;
+		private bool? withDecryption;
 
-		private string description;
+		private string names;
 
-		private string type;
-
-		private string constraints;
-
-		private string name;
-
-		private string _value;
-
-		public string ClientToken
+		public bool? WithDecryption
 		{
 			get
 			{
-				return clientToken;
+				return withDecryption;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				withDecryption = value;
+				DictionaryUtil.Add(QueryParameters, "WithDecryption", value.ToString());
 			}
 		}
 
-		public string Description
+		public string Names
 		{
 			get
 			{
-				return description;
+				return names;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
-			}
-		}
-
-		public string Type
-		{
-			get
-			{
-				return type;
-			}
-			set	
-			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string Constraints
-		{
-			get
-			{
-				return constraints;
-			}
-			set	
-			{
-				constraints = value;
-				DictionaryUtil.Add(QueryParameters, "Constraints", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string _Value
-		{
-			get
-			{
-				return _value;
-			}
-			set	
-			{
-				_value = value;
-				DictionaryUtil.Add(QueryParameters, "Value", value);
+				names = value;
+				DictionaryUtil.Add(QueryParameters, "Names", value);
 			}
 		}
 
@@ -135,9 +76,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override CreateParameterResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetSecretParametersResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateParameterResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSecretParametersResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

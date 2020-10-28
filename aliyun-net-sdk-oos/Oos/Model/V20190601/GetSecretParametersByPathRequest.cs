@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class CreateSecretParameterRequest : RpcAcsRequest<CreateSecretParameterResponse>
+    public class GetSecretParametersByPathRequest : RpcAcsRequest<GetSecretParametersByPathResponse>
     {
-        public CreateSecretParameterRequest()
-            : base("oos", "2019-06-01", "CreateSecretParameter", "oos", "openAPI")
+        public GetSecretParametersByPathRequest()
+            : base("oos", "2019-06-01", "GetSecretParametersByPath", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,108 +41,78 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			Method = MethodType.POST;
         }
 
-		private string clientToken;
+		private bool? withDecryption;
 
-		private string description;
+		private bool? recursive;
 
-		private string keyId;
+		private string path;
 
-		private string type;
+		private string nextToken;
 
-		private string constraints;
+		private int? maxResults;
 
-		private string name;
-
-		private string _value;
-
-		public string ClientToken
+		public bool? WithDecryption
 		{
 			get
 			{
-				return clientToken;
+				return withDecryption;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				withDecryption = value;
+				DictionaryUtil.Add(QueryParameters, "WithDecryption", value.ToString());
 			}
 		}
 
-		public string Description
+		public bool? Recursive
 		{
 			get
 			{
-				return description;
+				return recursive;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				recursive = value;
+				DictionaryUtil.Add(QueryParameters, "Recursive", value.ToString());
 			}
 		}
 
-		public string KeyId
+		public string Path
 		{
 			get
 			{
-				return keyId;
+				return path;
 			}
 			set	
 			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+				path = value;
+				DictionaryUtil.Add(QueryParameters, "Path", value);
 			}
 		}
 
-		public string Type
+		public string NextToken
 		{
 			get
 			{
-				return type;
+				return nextToken;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-		public string Constraints
+		public int? MaxResults
 		{
 			get
 			{
-				return constraints;
+				return maxResults;
 			}
 			set	
 			{
-				constraints = value;
-				DictionaryUtil.Add(QueryParameters, "Constraints", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string _Value
-		{
-			get
-			{
-				return _value;
-			}
-			set	
-			{
-				_value = value;
-				DictionaryUtil.Add(QueryParameters, "Value", value);
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 
@@ -150,9 +121,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override CreateSecretParameterResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetSecretParametersByPathResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSecretParameterResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetSecretParametersByPathResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

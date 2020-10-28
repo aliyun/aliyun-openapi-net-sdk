@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -27,10 +28,10 @@ using Aliyun.Acs.oos.Transform.V20190601;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-    public class CreateSecretParameterRequest : RpcAcsRequest<CreateSecretParameterResponse>
+    public class GetInventorySchemaRequest : RpcAcsRequest<GetInventorySchemaResponse>
     {
-        public CreateSecretParameterRequest()
-            : base("oos", "2019-06-01", "CreateSecretParameter", "oos", "openAPI")
+        public GetInventorySchemaRequest()
+            : base("oos", "2019-06-01", "GetInventorySchema", "oos", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,108 +41,63 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			Method = MethodType.POST;
         }
 
-		private string clientToken;
+		private bool? aggregator;
 
-		private string description;
+		private string nextToken;
 
-		private string keyId;
+		private int? maxResults;
 
-		private string type;
+		private string typeName;
 
-		private string constraints;
-
-		private string name;
-
-		private string _value;
-
-		public string ClientToken
+		public bool? Aggregator
 		{
 			get
 			{
-				return clientToken;
+				return aggregator;
 			}
 			set	
 			{
-				clientToken = value;
-				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+				aggregator = value;
+				DictionaryUtil.Add(QueryParameters, "Aggregator", value.ToString());
 			}
 		}
 
-		public string Description
+		public string NextToken
 		{
 			get
 			{
-				return description;
+				return nextToken;
 			}
 			set	
 			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
 			}
 		}
 
-		public string KeyId
+		public int? MaxResults
 		{
 			get
 			{
-				return keyId;
+				return maxResults;
 			}
 			set	
 			{
-				keyId = value;
-				DictionaryUtil.Add(QueryParameters, "KeyId", value);
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
 			}
 		}
 
-		public string Type
+		public string TypeName
 		{
 			get
 			{
-				return type;
+				return typeName;
 			}
 			set	
 			{
-				type = value;
-				DictionaryUtil.Add(QueryParameters, "Type", value);
-			}
-		}
-
-		public string Constraints
-		{
-			get
-			{
-				return constraints;
-			}
-			set	
-			{
-				constraints = value;
-				DictionaryUtil.Add(QueryParameters, "Constraints", value);
-			}
-		}
-
-		public string Name
-		{
-			get
-			{
-				return name;
-			}
-			set	
-			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
-			}
-		}
-
-		public string _Value
-		{
-			get
-			{
-				return _value;
-			}
-			set	
-			{
-				_value = value;
-				DictionaryUtil.Add(QueryParameters, "Value", value);
+				typeName = value;
+				DictionaryUtil.Add(QueryParameters, "TypeName", value);
 			}
 		}
 
@@ -150,9 +106,9 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			return false;
 		}
 
-        public override CreateSecretParameterResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetInventorySchemaResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return CreateSecretParameterResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetInventorySchemaResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

@@ -22,16 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.oos.Model.V20190601
 {
-	public class ListSecretParametersResponse : AcsResponse
+	public class GetParametersResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private int? maxResults;
+		private List<GetParameters_Parameter> parameters;
 
-		private string nextToken;
-
-		private List<ListSecretParameters_Parameter> parameters;
+		private List<string> invalidParameters;
 
 		public string RequestId
 		{
@@ -45,31 +43,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public int? MaxResults
-		{
-			get
-			{
-				return maxResults;
-			}
-			set	
-			{
-				maxResults = value;
-			}
-		}
-
-		public string NextToken
-		{
-			get
-			{
-				return nextToken;
-			}
-			set	
-			{
-				nextToken = value;
-			}
-		}
-
-		public List<ListSecretParameters_Parameter> Parameters
+		public List<GetParameters_Parameter> Parameters
 		{
 			get
 			{
@@ -81,12 +55,24 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			}
 		}
 
-		public class ListSecretParameters_Parameter
+		public List<string> InvalidParameters
+		{
+			get
+			{
+				return invalidParameters;
+			}
+			set	
+			{
+				invalidParameters = value;
+			}
+		}
+
+		public class GetParameters_Parameter
 		{
 
-			private string name;
-
 			private string id;
+
+			private string name;
 
 			private string createdDate;
 
@@ -100,23 +86,13 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string shareType;
 
-			private string parameterVersion;
+			private int? parameterVersion;
 
 			private string type;
 
-			private string keyId;
+			private string _value;
 
-			public string Name
-			{
-				get
-				{
-					return name;
-				}
-				set	
-				{
-					name = value;
-				}
-			}
+			private string constraints;
 
 			public string Id
 			{
@@ -127,6 +103,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					id = value;
+				}
+			}
+
+			public string Name
+			{
+				get
+				{
+					return name;
+				}
+				set	
+				{
+					name = value;
 				}
 			}
 
@@ -202,7 +190,7 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string ParameterVersion
+			public int? ParameterVersion
 			{
 				get
 				{
@@ -226,15 +214,27 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				}
 			}
 
-			public string KeyId
+			public string _Value
 			{
 				get
 				{
-					return keyId;
+					return _value;
 				}
 				set	
 				{
-					keyId = value;
+					_value = value;
+				}
+			}
+
+			public string Constraints
+			{
+				get
+				{
+					return constraints;
+				}
+				set	
+				{
+					constraints = value;
 				}
 			}
 		}

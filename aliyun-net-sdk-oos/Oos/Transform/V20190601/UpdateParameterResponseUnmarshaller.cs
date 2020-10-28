@@ -44,6 +44,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			parameter.ShareType = context.StringValue("UpdateParameter.Parameter.ShareType");
 			parameter.ParameterVersion = context.IntegerValue("UpdateParameter.Parameter.ParameterVersion");
 			parameter.Type = context.StringValue("UpdateParameter.Parameter.Type");
+			parameter.Constraints = context.StringValue("UpdateParameter.Parameter.Constraints");
 			updateParameterResponse.Parameter = parameter;
         
 			return updateParameterResponse;
