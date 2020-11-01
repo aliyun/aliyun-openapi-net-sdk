@@ -66,11 +66,13 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string cpuPercent;
 
-			private string loadFiveM;
+			private string loadOneM;
 
 			private string heapPercent;
 
 			private string health;
+
+			private string diskUsedPercent;
 
 			public string Host
 			{
@@ -132,15 +134,15 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				}
 			}
 
-			public string LoadFiveM
+			public string LoadOneM
 			{
 				get
 				{
-					return loadFiveM;
+					return loadOneM;
 				}
 				set	
 				{
-					loadFiveM = value;
+					loadOneM = value;
 				}
 			}
 
@@ -165,6 +167,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					health = value;
+				}
+			}
+
+			public string DiskUsedPercent
+			{
+				get
+				{
+					return diskUsedPercent;
+				}
+				set	
+				{
+					diskUsedPercent = value;
 				}
 			}
 		}

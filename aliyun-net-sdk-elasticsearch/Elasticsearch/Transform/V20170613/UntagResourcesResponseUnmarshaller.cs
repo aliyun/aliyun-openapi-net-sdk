@@ -32,6 +32,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			untagResourcesResponse.HttpResponse = context.HttpResponse;
 			untagResourcesResponse.RequestId = context.StringValue("UntagResources.RequestId");
+			untagResourcesResponse.Result = context.BooleanValue("UntagResources.Result");
         
 			return untagResourcesResponse;
         }

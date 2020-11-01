@@ -37,7 +37,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
-			UriPattern = "/openapi/logstashes/[InstanceId]//pipeline-management-config";
+			UriPattern = "/openapi/logstashes/[InstanceId]/pipeline-management-config";
 			Method = MethodType.GET;
         }
 

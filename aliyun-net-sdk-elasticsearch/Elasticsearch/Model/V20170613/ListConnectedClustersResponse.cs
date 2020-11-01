@@ -27,7 +27,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string requestId;
 
-		private List<ListConnectedClusters_ConnectableClustersInfo> result;
+		private List<ListConnectedClusters_ResultItem> result;
 
 		public string RequestId
 		{
@@ -41,7 +41,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public List<ListConnectedClusters_ConnectableClustersInfo> Result
+		public List<ListConnectedClusters_ResultItem> Result
 		{
 			get
 			{
@@ -53,7 +53,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public class ListConnectedClusters_ConnectableClustersInfo
+		public class ListConnectedClusters_ResultItem
 		{
 
 			private string instances;

@@ -36,10 +36,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			GetElastictaskResponse.GetElastictask_Result result = new GetElastictaskResponse.GetElastictask_Result();
 
 			GetElastictaskResponse.GetElastictask_Result.GetElastictask_ElasticExpansionTask elasticExpansionTask = new GetElastictaskResponse.GetElastictask_Result.GetElastictask_ElasticExpansionTask();
-			elasticExpansionTask.TriggerType = context.StringValue("GetElastictask.Result.ElasticExpansionTask.TriggerType");
-			elasticExpansionTask.CronExpression = context.StringValue("GetElastictask.Result.ElasticExpansionTask.CronExpression");
-			elasticExpansionTask.ElasticNodeCount = context.IntegerValue("GetElastictask.Result.ElasticExpansionTask.ElasticNodeCount");
-			elasticExpansionTask.ReplicaCount = context.IntegerValue("GetElastictask.Result.ElasticExpansionTask.ReplicaCount");
+			elasticExpansionTask.TriggerType = context.StringValue("GetElastictask.Result.ElasticExpansionTask.triggerType");
+			elasticExpansionTask.CronExpression = context.StringValue("GetElastictask.Result.ElasticExpansionTask.cronExpression");
+			elasticExpansionTask.ElasticNodeCount = context.IntegerValue("GetElastictask.Result.ElasticExpansionTask.elasticNodeCount");
+			elasticExpansionTask.ReplicaCount = context.IntegerValue("GetElastictask.Result.ElasticExpansionTask.replicaCount");
 
 			List<string> elasticExpansionTask_targetIndices = new List<string>();
 			for (int i = 0; i < context.Length("GetElastictask.Result.ElasticExpansionTask.TargetIndices.Length"); i++) {
@@ -49,10 +49,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			result.ElasticExpansionTask = elasticExpansionTask;
 
 			GetElastictaskResponse.GetElastictask_Result.GetElastictask_ElasticShrinkTask elasticShrinkTask = new GetElastictaskResponse.GetElastictask_Result.GetElastictask_ElasticShrinkTask();
-			elasticShrinkTask.TriggerType = context.StringValue("GetElastictask.Result.ElasticShrinkTask.TriggerType");
-			elasticShrinkTask.CronExpression = context.StringValue("GetElastictask.Result.ElasticShrinkTask.CronExpression");
-			elasticShrinkTask.ElasticNodeCount = context.IntegerValue("GetElastictask.Result.ElasticShrinkTask.ElasticNodeCount");
-			elasticShrinkTask.ReplicaCount = context.IntegerValue("GetElastictask.Result.ElasticShrinkTask.ReplicaCount");
+			elasticShrinkTask.TriggerType = context.StringValue("GetElastictask.Result.ElasticShrinkTask.triggerType");
+			elasticShrinkTask.CronExpression = context.StringValue("GetElastictask.Result.ElasticShrinkTask.cronExpression");
+			elasticShrinkTask.ElasticNodeCount = context.IntegerValue("GetElastictask.Result.ElasticShrinkTask.elasticNodeCount");
+			elasticShrinkTask.ReplicaCount = context.IntegerValue("GetElastictask.Result.ElasticShrinkTask.replicaCount");
 
 			List<string> elasticShrinkTask_targetIndices1 = new List<string>();
 			for (int i = 0; i < context.Length("GetElastictask.Result.ElasticShrinkTask.TargetIndices.Length"); i++) {

@@ -32,8 +32,6 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 
 			resumeElasticsearchTaskResponse.HttpResponse = context.HttpResponse;
 			resumeElasticsearchTaskResponse.RequestId = context.StringValue("ResumeElasticsearchTask.RequestId");
-			resumeElasticsearchTaskResponse.Code = context.StringValue("ResumeElasticsearchTask.Code");
-			resumeElasticsearchTaskResponse.Message = context.StringValue("ResumeElasticsearchTask.Message");
 			resumeElasticsearchTaskResponse.Result = context.BooleanValue("ResumeElasticsearchTask.Result");
         
 			return resumeElasticsearchTaskResponse;

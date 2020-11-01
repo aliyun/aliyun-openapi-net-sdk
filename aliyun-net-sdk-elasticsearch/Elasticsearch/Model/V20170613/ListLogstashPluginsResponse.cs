@@ -64,6 +64,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string description;
 
+			private string specificationUrl;
+
 			public string Name
 			{
 				get
@@ -109,6 +111,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					description = value;
+				}
+			}
+
+			public string SpecificationUrl
+			{
+				get
+				{
+					return specificationUrl;
+				}
+				set	
+				{
+					specificationUrl = value;
 				}
 			}
 		}

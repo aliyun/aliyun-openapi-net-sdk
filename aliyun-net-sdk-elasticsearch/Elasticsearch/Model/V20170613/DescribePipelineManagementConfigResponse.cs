@@ -62,6 +62,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string userName;
 
+			private string esInstanceId;
+
 			private List<string> pipelineIds;
 
 			public string PipelineManagementType
@@ -97,6 +99,18 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					userName = value;
+				}
+			}
+
+			public string EsInstanceId
+			{
+				get
+				{
+					return esInstanceId;
+				}
+				set	
+				{
+					esInstanceId = value;
 				}
 			}
 

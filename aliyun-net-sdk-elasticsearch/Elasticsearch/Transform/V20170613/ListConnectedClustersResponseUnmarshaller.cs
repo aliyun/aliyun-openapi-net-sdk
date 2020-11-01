@@ -33,13 +33,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 			listConnectedClustersResponse.HttpResponse = context.HttpResponse;
 			listConnectedClustersResponse.RequestId = context.StringValue("ListConnectedClusters.RequestId");
 
-			List<ListConnectedClustersResponse.ListConnectedClusters_ConnectableClustersInfo> listConnectedClustersResponse_result = new List<ListConnectedClustersResponse.ListConnectedClusters_ConnectableClustersInfo>();
+			List<ListConnectedClustersResponse.ListConnectedClusters_ResultItem> listConnectedClustersResponse_result = new List<ListConnectedClustersResponse.ListConnectedClusters_ResultItem>();
 			for (int i = 0; i < context.Length("ListConnectedClusters.Result.Length"); i++) {
-				ListConnectedClustersResponse.ListConnectedClusters_ConnectableClustersInfo connectableClustersInfo = new ListConnectedClustersResponse.ListConnectedClusters_ConnectableClustersInfo();
-				connectableClustersInfo.Instances = context.StringValue("ListConnectedClusters.Result["+ i +"].instances");
-				connectableClustersInfo.NetworkType = context.StringValue("ListConnectedClusters.Result["+ i +"].networkType");
+				ListConnectedClustersResponse.ListConnectedClusters_ResultItem resultItem = new ListConnectedClustersResponse.ListConnectedClusters_ResultItem();
+				resultItem.Instances = context.StringValue("ListConnectedClusters.Result["+ i +"].instances");
+				resultItem.NetworkType = context.StringValue("ListConnectedClusters.Result["+ i +"].networkType");
 
-				listConnectedClustersResponse_result.Add(connectableClustersInfo);
+				listConnectedClustersResponse_result.Add(resultItem);
 			}
 			listConnectedClustersResponse.Result = listConnectedClustersResponse_result;
         

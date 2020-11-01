@@ -41,12 +41,6 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				dictList.Type = context.StringValue("UpdateDict.Result["+ i +"].type");
 				dictList.SourceType = context.StringValue("UpdateDict.Result["+ i +"].sourceType");
 
-				UpdateDictResponse.UpdateDict_DictList.UpdateDict_OssObject ossObject = new UpdateDictResponse.UpdateDict_DictList.UpdateDict_OssObject();
-				ossObject.BucketName = context.StringValue("UpdateDict.Result["+ i +"].OssObject.bucketName");
-				ossObject.Key = context.StringValue("UpdateDict.Result["+ i +"].OssObject.key");
-				ossObject.Etag = context.StringValue("UpdateDict.Result["+ i +"].OssObject.etag");
-				dictList.OssObject = ossObject;
-
 				updateDictResponse_result.Add(dictList);
 			}
 			updateDictResponse.Result = updateDictResponse_result;

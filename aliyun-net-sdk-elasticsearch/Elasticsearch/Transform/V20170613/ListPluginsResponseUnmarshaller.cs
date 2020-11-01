@@ -44,6 +44,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				resultItem.State = context.StringValue("ListPlugins.Result["+ i +"].state");
 				resultItem.Source = context.StringValue("ListPlugins.Result["+ i +"].source");
 				resultItem.Description = context.StringValue("ListPlugins.Result["+ i +"].description");
+				resultItem.SpecificationUrl = context.StringValue("ListPlugins.Result["+ i +"].specificationUrl");
 
 				listPluginsResponse_result.Add(resultItem);
 			}

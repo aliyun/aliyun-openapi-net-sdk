@@ -58,8 +58,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string instanceId;
 
-			private string snapWarehouse;
-
 			private string repoPath;
 
 			public string InstanceId
@@ -71,18 +69,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					instanceId = value;
-				}
-			}
-
-			public string SnapWarehouse
-			{
-				get
-				{
-					return snapWarehouse;
-				}
-				set	
-				{
-					snapWarehouse = value;
 				}
 			}
 

@@ -40,6 +40,7 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				resultItem.State = context.StringValue("ListLogstashPlugins.Result["+ i +"].state");
 				resultItem.Source = context.StringValue("ListLogstashPlugins.Result["+ i +"].source");
 				resultItem.Description = context.StringValue("ListLogstashPlugins.Result["+ i +"].description");
+				resultItem.SpecificationUrl = context.StringValue("ListLogstashPlugins.Result["+ i +"].specificationUrl");
 
 				listLogstashPluginsResponse_result.Add(resultItem);
 			}

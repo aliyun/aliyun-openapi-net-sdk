@@ -47,7 +47,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string name;
 
-		private string page;
+		private int? page;
 
 		private string source;
 
@@ -90,7 +90,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string Page
+		public int? Page
 		{
 			get
 			{
@@ -99,7 +99,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				page = value;
-				DictionaryUtil.Add(QueryParameters, "page", value);
+				DictionaryUtil.Add(QueryParameters, "page", value.ToString());
 			}
 		}
 

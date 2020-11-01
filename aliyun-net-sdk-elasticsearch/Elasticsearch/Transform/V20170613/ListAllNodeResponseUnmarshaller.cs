@@ -41,9 +41,10 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 				resultItem.ZoneId = context.StringValue("ListAllNode.Result["+ i +"].zoneId");
 				resultItem.NodeType = context.StringValue("ListAllNode.Result["+ i +"].nodeType");
 				resultItem.CpuPercent = context.StringValue("ListAllNode.Result["+ i +"].cpuPercent");
-				resultItem.LoadFiveM = context.StringValue("ListAllNode.Result["+ i +"].loadFiveM");
+				resultItem.LoadOneM = context.StringValue("ListAllNode.Result["+ i +"].loadOneM");
 				resultItem.HeapPercent = context.StringValue("ListAllNode.Result["+ i +"].heapPercent");
 				resultItem.Health = context.StringValue("ListAllNode.Result["+ i +"].health");
+				resultItem.DiskUsedPercent = context.StringValue("ListAllNode.Result["+ i +"].diskUsedPercent");
 
 				listAllNodeResponse_result.Add(resultItem);
 			}
