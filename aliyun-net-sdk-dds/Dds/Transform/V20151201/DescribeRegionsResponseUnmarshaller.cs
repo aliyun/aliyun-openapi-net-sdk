@@ -44,6 +44,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 					DescribeRegionsResponse.DescribeRegions_DdsRegion.DescribeRegions_Zone zone = new DescribeRegionsResponse.DescribeRegions_DdsRegion.DescribeRegions_Zone();
 					zone.ZoneId = context.StringValue("DescribeRegions.Regions["+ i +"].Zones["+ j +"].ZoneId");
 					zone.VpcEnabled = context.BooleanValue("DescribeRegions.Regions["+ i +"].Zones["+ j +"].VpcEnabled");
+					zone.ZoneName = context.StringValue("DescribeRegions.Regions["+ i +"].Zones["+ j +"].ZoneName");
 
 					ddsRegion_zones.Add(zone);
 				}

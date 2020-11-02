@@ -94,6 +94,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string ownerAccount;
 
+		private string clusterId;
+
 		private string accountPassword;
 
 		private string vpcId;
@@ -448,6 +450,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string ClusterId
+		{
+			get
+			{
+				return clusterId;
+			}
+			set	
+			{
+				clusterId = value;
+				DictionaryUtil.Add(QueryParameters, "ClusterId", value);
 			}
 		}
 

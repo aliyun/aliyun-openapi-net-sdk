@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 				dBInstance.EngineVersion = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].EngineVersion");
 				dBInstance.DBInstanceClass = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceClass");
 				dBInstance.DBInstanceStorage = context.IntegerValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceStorage");
+				dBInstance.KindCode = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].KindCode");
 				dBInstance.DBInstanceStatus = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].DBInstanceStatus");
 				dBInstance.LockMode = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].LockMode");
 				dBInstance.ChargeType = context.StringValue("DescribeDBInstances.DBInstances["+ i +"].ChargeType");
