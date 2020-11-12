@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Actiontrail.Transform;
 using Aliyun.Acs.Actiontrail.Transform.V20171204;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20171204
 {
@@ -31,23 +32,33 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
         public CreateTrailRequest()
             : base("Actiontrail", "2017-12-04", "CreateTrail", "actiontrail", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Actiontrail.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Actiontrail.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string slsProjectArn;
 
 		private string slsWriteRoleArn;
 
+		private bool? isOrganizationTrail;
+
+		private string ossKeyPrefix;
+
+		private string mnsTopicArn;
+
 		private string roleName;
+
+		private string eventRW;
 
 		private string name;
 
 		private string ossBucketName;
 
-		private string ossKeyPrefix;
-
-		private string eventRW;
-
-		private string accessKeyId;
+		private string trailRegion;
 
 		public string SlsProjectArn
 		{
@@ -75,6 +86,45 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
+		public bool? IsOrganizationTrail
+		{
+			get
+			{
+				return isOrganizationTrail;
+			}
+			set	
+			{
+				isOrganizationTrail = value;
+				DictionaryUtil.Add(QueryParameters, "IsOrganizationTrail", value.ToString());
+			}
+		}
+
+		public string OssKeyPrefix
+		{
+			get
+			{
+				return ossKeyPrefix;
+			}
+			set	
+			{
+				ossKeyPrefix = value;
+				DictionaryUtil.Add(QueryParameters, "OssKeyPrefix", value);
+			}
+		}
+
+		public string MnsTopicArn
+		{
+			get
+			{
+				return mnsTopicArn;
+			}
+			set	
+			{
+				mnsTopicArn = value;
+				DictionaryUtil.Add(QueryParameters, "MnsTopicArn", value);
+			}
+		}
+
 		public string RoleName
 		{
 			get
@@ -85,6 +135,19 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			{
 				roleName = value;
 				DictionaryUtil.Add(QueryParameters, "RoleName", value);
+			}
+		}
+
+		public string EventRW
+		{
+			get
+			{
+				return eventRW;
+			}
+			set	
+			{
+				eventRW = value;
+				DictionaryUtil.Add(QueryParameters, "EventRW", value);
 			}
 		}
 
@@ -114,46 +177,20 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public string OssKeyPrefix
+		public string TrailRegion
 		{
 			get
 			{
-				return ossKeyPrefix;
+				return trailRegion;
 			}
 			set	
 			{
-				ossKeyPrefix = value;
-				DictionaryUtil.Add(QueryParameters, "OssKeyPrefix", value);
+				trailRegion = value;
+				DictionaryUtil.Add(QueryParameters, "TrailRegion", value);
 			}
 		}
 
-		public string EventRW
-		{
-			get
-			{
-				return eventRW;
-			}
-			set	
-			{
-				eventRW = value;
-				DictionaryUtil.Add(QueryParameters, "EventRW", value);
-			}
-		}
-
-		public string AccessKeyId
-		{
-			get
-			{
-				return accessKeyId;
-			}
-			set	
-			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
-			}
-		}
-
-        public override CreateTrailResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override CreateTrailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return CreateTrailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20171204
 {
@@ -32,7 +33,7 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 
 		private string endTime;
 
-		private List<string> events;
+		private List<Dictionary<string, string>> events;
 
 		public string RequestId
 		{
@@ -82,7 +83,7 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public List<string> Events
+		public List<Dictionary<string, string>> Events
 		{
 			get
 			{

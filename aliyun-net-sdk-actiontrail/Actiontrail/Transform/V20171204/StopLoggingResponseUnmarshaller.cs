@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Actiontrail.Model.V20171204;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Actiontrail.Model.V20171204;
 
 namespace Aliyun.Acs.Actiontrail.Transform.V20171204
 {
@@ -31,8 +32,6 @@ namespace Aliyun.Acs.Actiontrail.Transform.V20171204
 
 			stopLoggingResponse.HttpResponse = context.HttpResponse;
 			stopLoggingResponse.RequestId = context.StringValue("StopLogging.RequestId");
-			stopLoggingResponse.Param = context.StringValue("StopLogging.Param");
-			stopLoggingResponse.Result = context.StringValue("StopLogging.Result");
         
 			return stopLoggingResponse;
         }

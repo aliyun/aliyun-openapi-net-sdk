@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20171204
 {
@@ -61,23 +62,31 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 
 			private string roleName;
 
-			private string status;
-
-			private string includeGlobalServiceEvent;
-
 			private string ossBucketName;
 
 			private string ossKeyPrefix;
 
-			private string region;
-
 			private string eventRW;
-
-			private string type;
 
 			private string slsWriteRoleArn;
 
 			private string slsProjectArn;
+
+			private string status;
+
+			private string trailRegion;
+
+			private string createTime;
+
+			private string updateTime;
+
+			private string startLoggingTime;
+
+			private string stopLoggingTime;
+
+			private string mnsTopicArn;
+
+			private bool? isOrganizationTrail;
 
 			public string Name
 			{
@@ -115,30 +124,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 				}
 			}
 
-			public string Status
-			{
-				get
-				{
-					return status;
-				}
-				set	
-				{
-					status = value;
-				}
-			}
-
-			public string IncludeGlobalServiceEvent
-			{
-				get
-				{
-					return includeGlobalServiceEvent;
-				}
-				set	
-				{
-					includeGlobalServiceEvent = value;
-				}
-			}
-
 			public string OssBucketName
 			{
 				get
@@ -163,18 +148,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 				}
 			}
 
-			public string Region
-			{
-				get
-				{
-					return region;
-				}
-				set	
-				{
-					region = value;
-				}
-			}
-
 			public string EventRW
 			{
 				get
@@ -184,18 +157,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 				set	
 				{
 					eventRW = value;
-				}
-			}
-
-			public string Type
-			{
-				get
-				{
-					return type;
-				}
-				set	
-				{
-					type = value;
 				}
 			}
 
@@ -220,6 +181,102 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 				set	
 				{
 					slsProjectArn = value;
+				}
+			}
+
+			public string Status
+			{
+				get
+				{
+					return status;
+				}
+				set	
+				{
+					status = value;
+				}
+			}
+
+			public string TrailRegion
+			{
+				get
+				{
+					return trailRegion;
+				}
+				set	
+				{
+					trailRegion = value;
+				}
+			}
+
+			public string CreateTime
+			{
+				get
+				{
+					return createTime;
+				}
+				set	
+				{
+					createTime = value;
+				}
+			}
+
+			public string UpdateTime
+			{
+				get
+				{
+					return updateTime;
+				}
+				set	
+				{
+					updateTime = value;
+				}
+			}
+
+			public string StartLoggingTime
+			{
+				get
+				{
+					return startLoggingTime;
+				}
+				set	
+				{
+					startLoggingTime = value;
+				}
+			}
+
+			public string StopLoggingTime
+			{
+				get
+				{
+					return stopLoggingTime;
+				}
+				set	
+				{
+					stopLoggingTime = value;
+				}
+			}
+
+			public string MnsTopicArn
+			{
+				get
+				{
+					return mnsTopicArn;
+				}
+				set	
+				{
+					mnsTopicArn = value;
+				}
+			}
+
+			public bool? IsOrganizationTrail
+			{
+				get
+				{
+					return isOrganizationTrail;
+				}
+				set	
+				{
+					isOrganizationTrail = value;
 				}
 			}
 		}

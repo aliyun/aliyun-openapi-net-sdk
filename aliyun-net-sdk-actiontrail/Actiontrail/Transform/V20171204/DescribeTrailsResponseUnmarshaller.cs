@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Actiontrail.Model.V20171204;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Actiontrail.Model.V20171204;
 
 namespace Aliyun.Acs.Actiontrail.Transform.V20171204
 {
@@ -38,15 +39,19 @@ namespace Aliyun.Acs.Actiontrail.Transform.V20171204
 				trailListItem.Name = context.StringValue("DescribeTrails.TrailList["+ i +"].Name");
 				trailListItem.HomeRegion = context.StringValue("DescribeTrails.TrailList["+ i +"].HomeRegion");
 				trailListItem.RoleName = context.StringValue("DescribeTrails.TrailList["+ i +"].RoleName");
-				trailListItem.Status = context.StringValue("DescribeTrails.TrailList["+ i +"].Status");
-				trailListItem.IncludeGlobalServiceEvent = context.StringValue("DescribeTrails.TrailList["+ i +"].IncludeGlobalServiceEvent");
 				trailListItem.OssBucketName = context.StringValue("DescribeTrails.TrailList["+ i +"].OssBucketName");
 				trailListItem.OssKeyPrefix = context.StringValue("DescribeTrails.TrailList["+ i +"].OssKeyPrefix");
-				trailListItem.Region = context.StringValue("DescribeTrails.TrailList["+ i +"].Region");
 				trailListItem.EventRW = context.StringValue("DescribeTrails.TrailList["+ i +"].EventRW");
-				trailListItem.Type = context.StringValue("DescribeTrails.TrailList["+ i +"].Type");
 				trailListItem.SlsWriteRoleArn = context.StringValue("DescribeTrails.TrailList["+ i +"].SlsWriteRoleArn");
 				trailListItem.SlsProjectArn = context.StringValue("DescribeTrails.TrailList["+ i +"].SlsProjectArn");
+				trailListItem.Status = context.StringValue("DescribeTrails.TrailList["+ i +"].Status");
+				trailListItem.TrailRegion = context.StringValue("DescribeTrails.TrailList["+ i +"].TrailRegion");
+				trailListItem.CreateTime = context.StringValue("DescribeTrails.TrailList["+ i +"].CreateTime");
+				trailListItem.UpdateTime = context.StringValue("DescribeTrails.TrailList["+ i +"].UpdateTime");
+				trailListItem.StartLoggingTime = context.StringValue("DescribeTrails.TrailList["+ i +"].StartLoggingTime");
+				trailListItem.StopLoggingTime = context.StringValue("DescribeTrails.TrailList["+ i +"].StopLoggingTime");
+				trailListItem.MnsTopicArn = context.StringValue("DescribeTrails.TrailList["+ i +"].MnsTopicArn");
+				trailListItem.IsOrganizationTrail = context.BooleanValue("DescribeTrails.TrailList["+ i +"].IsOrganizationTrail");
 
 				describeTrailsResponse_trailList.Add(trailListItem);
 			}

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Actiontrail.Transform;
 using Aliyun.Acs.Actiontrail.Transform.V20171204;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20171204
 {
@@ -31,11 +32,17 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
         public GetTrailStatusRequest()
             : base("Actiontrail", "2017-12-04", "GetTrailStatus", "actiontrail", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Actiontrail.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Actiontrail.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string name;
 
-		private string accessKeyId;
+		private bool? isOrganizationTrail;
 
 		public string Name
 		{
@@ -50,20 +57,20 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public string AccessKeyId
+		public bool? IsOrganizationTrail
 		{
 			get
 			{
-				return accessKeyId;
+				return isOrganizationTrail;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				isOrganizationTrail = value;
+				DictionaryUtil.Add(QueryParameters, "IsOrganizationTrail", value.ToString());
 			}
 		}
 
-        public override GetTrailStatusResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override GetTrailStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return GetTrailStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
