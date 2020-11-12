@@ -123,6 +123,8 @@ namespace Aliyun.Acs.imm.Model.V20170906
 
 				private GetMediaMeta_Address address;
 
+				private GetMediaMeta_Tag tag;
+
 				public int? NumberStreams
 				{
 					get
@@ -255,6 +257,18 @@ namespace Aliyun.Acs.imm.Model.V20170906
 					}
 				}
 
+				public GetMediaMeta_Tag Tag
+				{
+					get
+					{
+						return tag;
+					}
+					set	
+					{
+						tag = value;
+					}
+				}
+
 				public class GetMediaMeta_Address
 				{
 
@@ -339,6 +353,122 @@ namespace Aliyun.Acs.imm.Model.V20170906
 						set	
 						{
 							township = value;
+						}
+					}
+				}
+
+				public class GetMediaMeta_Tag
+				{
+
+					private string language;
+
+					private string creationTime;
+
+					private string album;
+
+					private string albumArtist;
+
+					private string artist;
+
+					private string composer;
+
+					private string title;
+
+					private string performer;
+
+					public string Language
+					{
+						get
+						{
+							return language;
+						}
+						set	
+						{
+							language = value;
+						}
+					}
+
+					public string CreationTime
+					{
+						get
+						{
+							return creationTime;
+						}
+						set	
+						{
+							creationTime = value;
+						}
+					}
+
+					public string Album
+					{
+						get
+						{
+							return album;
+						}
+						set	
+						{
+							album = value;
+						}
+					}
+
+					public string AlbumArtist
+					{
+						get
+						{
+							return albumArtist;
+						}
+						set	
+						{
+							albumArtist = value;
+						}
+					}
+
+					public string Artist
+					{
+						get
+						{
+							return artist;
+						}
+						set	
+						{
+							artist = value;
+						}
+					}
+
+					public string Composer
+					{
+						get
+						{
+							return composer;
+						}
+						set	
+						{
+							composer = value;
+						}
+					}
+
+					public string Title
+					{
+						get
+						{
+							return title;
+						}
+						set	
+						{
+							title = value;
+						}
+					}
+
+					public string Performer
+					{
+						get
+						{
+							return performer;
+						}
+						set	
+						{
+							performer = value;
 						}
 					}
 				}
