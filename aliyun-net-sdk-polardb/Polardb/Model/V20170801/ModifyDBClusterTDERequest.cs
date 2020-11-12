@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DescribeDatabasesRequest : RpcAcsRequest<DescribeDatabasesResponse>
+    public class ModifyDBClusterTDERequest : RpcAcsRequest<ModifyDBClusterTDEResponse>
     {
-        public DescribeDatabasesRequest()
-            : base("polardb", "2017-08-01", "DescribeDatabases", "polardb", "openAPI")
+        public ModifyDBClusterTDERequest()
+            : base("polardb", "2017-08-01", "ModifyDBClusterTDE", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -48,9 +48,13 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 
 		private string ownerAccount;
 
+		private string encryptionKey;
+
 		private long? ownerId;
 
-		private string dBName;
+		private string roleArn;
+
+		private string tDEStatus;
 
 		public long? ResourceOwnerId
 		{
@@ -104,6 +108,19 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
+		public string EncryptionKey
+		{
+			get
+			{
+				return encryptionKey;
+			}
+			set	
+			{
+				encryptionKey = value;
+				DictionaryUtil.Add(QueryParameters, "EncryptionKey", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -117,22 +134,40 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBName
+		public string RoleArn
 		{
 			get
 			{
-				return dBName;
+				return roleArn;
 			}
 			set	
 			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
+				roleArn = value;
+				DictionaryUtil.Add(QueryParameters, "RoleArn", value);
 			}
 		}
 
-        public override DescribeDatabasesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string TDEStatus
+		{
+			get
+			{
+				return tDEStatus;
+			}
+			set	
+			{
+				tDEStatus = value;
+				DictionaryUtil.Add(QueryParameters, "TDEStatus", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override ModifyDBClusterTDEResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDatabasesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ModifyDBClusterTDEResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

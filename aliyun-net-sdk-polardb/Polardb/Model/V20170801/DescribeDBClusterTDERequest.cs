@@ -27,10 +27,10 @@ using Aliyun.Acs.polardb.Transform.V20170801;
 
 namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DescribeDatabasesRequest : RpcAcsRequest<DescribeDatabasesResponse>
+    public class DescribeDBClusterTDERequest : RpcAcsRequest<DescribeDBClusterTDEResponse>
     {
-        public DescribeDatabasesRequest()
-            : base("polardb", "2017-08-01", "DescribeDatabases", "polardb", "openAPI")
+        public DescribeDBClusterTDERequest()
+            : base("polardb", "2017-08-01", "DescribeDBClusterTDE", "polardb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -49,8 +49,6 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		private string dBName;
 
 		public long? ResourceOwnerId
 		{
@@ -117,22 +115,14 @@ namespace Aliyun.Acs.polardb.Model.V20170801
 			}
 		}
 
-		public string DBName
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return dBName;
-			}
-			set	
-			{
-				dBName = value;
-				DictionaryUtil.Add(QueryParameters, "DBName", value);
-			}
+			return false;
 		}
 
-        public override DescribeDatabasesResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDBClusterTDEResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDatabasesResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDBClusterTDEResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
