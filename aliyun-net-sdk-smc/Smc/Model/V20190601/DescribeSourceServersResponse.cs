@@ -132,6 +132,8 @@ namespace Aliyun.Acs.smc.Model.V20190601
 
 			private List<DescribeSourceServers_DataDisk> dataDisks;
 
+			private List<DescribeSourceServers_SystemDiskPart> systemDiskParts;
+
 			public string SourceId
 			{
 				get
@@ -336,6 +338,18 @@ namespace Aliyun.Acs.smc.Model.V20190601
 				}
 			}
 
+			public List<DescribeSourceServers_SystemDiskPart> SystemDiskParts
+			{
+				get
+				{
+					return systemDiskParts;
+				}
+				set	
+				{
+					systemDiskParts = value;
+				}
+			}
+
 			public class DescribeSourceServers_DataDisk
 			{
 
@@ -344,6 +358,8 @@ namespace Aliyun.Acs.smc.Model.V20190601
 				private int? size;
 
 				private string path;
+
+				private List<DescribeSourceServers_Part> parts;
 
 				public int? Index
 				{
@@ -378,6 +394,166 @@ namespace Aliyun.Acs.smc.Model.V20190601
 					set	
 					{
 						path = value;
+					}
+				}
+
+				public List<DescribeSourceServers_Part> Parts
+				{
+					get
+					{
+						return parts;
+					}
+					set	
+					{
+						parts = value;
+					}
+				}
+
+				public class DescribeSourceServers_Part
+				{
+
+					private string path;
+
+					private string device;
+
+					private long? sizeBytes;
+
+					private bool? need;
+
+					private bool? canBlock;
+
+					public string Path
+					{
+						get
+						{
+							return path;
+						}
+						set	
+						{
+							path = value;
+						}
+					}
+
+					public string Device
+					{
+						get
+						{
+							return device;
+						}
+						set	
+						{
+							device = value;
+						}
+					}
+
+					public long? SizeBytes
+					{
+						get
+						{
+							return sizeBytes;
+						}
+						set	
+						{
+							sizeBytes = value;
+						}
+					}
+
+					public bool? Need
+					{
+						get
+						{
+							return need;
+						}
+						set	
+						{
+							need = value;
+						}
+					}
+
+					public bool? CanBlock
+					{
+						get
+						{
+							return canBlock;
+						}
+						set	
+						{
+							canBlock = value;
+						}
+					}
+				}
+			}
+
+			public class DescribeSourceServers_SystemDiskPart
+			{
+
+				private string path;
+
+				private string device;
+
+				private long? sizeBytes;
+
+				private bool? need;
+
+				private bool? canBlock;
+
+				public string Path
+				{
+					get
+					{
+						return path;
+					}
+					set	
+					{
+						path = value;
+					}
+				}
+
+				public string Device
+				{
+					get
+					{
+						return device;
+					}
+					set	
+					{
+						device = value;
+					}
+				}
+
+				public long? SizeBytes
+				{
+					get
+					{
+						return sizeBytes;
+					}
+					set	
+					{
+						sizeBytes = value;
+					}
+				}
+
+				public bool? Need
+				{
+					get
+					{
+						return need;
+					}
+					set	
+					{
+						need = value;
+					}
+				}
+
+				public bool? CanBlock
+				{
+					get
+					{
+						return canBlock;
+					}
+					set	
+					{
+						canBlock = value;
 					}
 				}
 			}

@@ -68,12 +68,40 @@ namespace Aliyun.Acs.smc.Transform.V20190601
 				replicationJob.Frequency = context.IntegerValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].Frequency");
 				replicationJob.MaxNumberOfImageToKeep = context.IntegerValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].MaxNumberOfImageToKeep");
 				replicationJob.InstanceType = context.StringValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].InstanceType");
+				replicationJob.LaunchTemplateId = context.StringValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].LaunchTemplateId");
+				replicationJob.LaunchTemplateVersion = context.StringValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].LaunchTemplateVersion");
+				replicationJob.InstanceRamRole = context.StringValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].InstanceRamRole");
+				replicationJob.ContainerNamespace = context.StringValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].ContainerNamespace");
+				replicationJob.ContainerRepository = context.StringValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].ContainerRepository");
+				replicationJob.ContainerTag = context.StringValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].ContainerTag");
+
+				List<DescribeReplicationJobsResponse.DescribeReplicationJobs_ReplicationJob.DescribeReplicationJobs_SystemDiskPart> replicationJob_systemDiskParts = new List<DescribeReplicationJobsResponse.DescribeReplicationJobs_ReplicationJob.DescribeReplicationJobs_SystemDiskPart>();
+				for (int j = 0; j < context.Length("DescribeReplicationJobs.ReplicationJobs["+ i +"].SystemDiskParts.Length"); j++) {
+					DescribeReplicationJobsResponse.DescribeReplicationJobs_ReplicationJob.DescribeReplicationJobs_SystemDiskPart systemDiskPart = new DescribeReplicationJobsResponse.DescribeReplicationJobs_ReplicationJob.DescribeReplicationJobs_SystemDiskPart();
+					systemDiskPart.Device = context.StringValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].SystemDiskParts["+ j +"].Device");
+					systemDiskPart.SizeBytes = context.LongValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].SystemDiskParts["+ j +"].SizeBytes");
+					systemDiskPart.Block = context.BooleanValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].SystemDiskParts["+ j +"].Block");
+
+					replicationJob_systemDiskParts.Add(systemDiskPart);
+				}
+				replicationJob.SystemDiskParts = replicationJob_systemDiskParts;
 
 				List<DescribeReplicationJobsResponse.DescribeReplicationJobs_ReplicationJob.DescribeReplicationJobs_DataDisk> replicationJob_dataDisks = new List<DescribeReplicationJobsResponse.DescribeReplicationJobs_ReplicationJob.DescribeReplicationJobs_DataDisk>();
 				for (int j = 0; j < context.Length("DescribeReplicationJobs.ReplicationJobs["+ i +"].DataDisks.Length"); j++) {
 					DescribeReplicationJobsResponse.DescribeReplicationJobs_ReplicationJob.DescribeReplicationJobs_DataDisk dataDisk = new DescribeReplicationJobsResponse.DescribeReplicationJobs_ReplicationJob.DescribeReplicationJobs_DataDisk();
 					dataDisk.Size = context.IntegerValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].DataDisks["+ j +"].Size");
 					dataDisk.Index = context.IntegerValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].DataDisks["+ j +"].Index");
+
+					List<DescribeReplicationJobsResponse.DescribeReplicationJobs_ReplicationJob.DescribeReplicationJobs_DataDisk.DescribeReplicationJobs_Part> dataDisk_parts = new List<DescribeReplicationJobsResponse.DescribeReplicationJobs_ReplicationJob.DescribeReplicationJobs_DataDisk.DescribeReplicationJobs_Part>();
+					for (int k = 0; k < context.Length("DescribeReplicationJobs.ReplicationJobs["+ i +"].DataDisks["+ j +"].Parts.Length"); k++) {
+						DescribeReplicationJobsResponse.DescribeReplicationJobs_ReplicationJob.DescribeReplicationJobs_DataDisk.DescribeReplicationJobs_Part part = new DescribeReplicationJobsResponse.DescribeReplicationJobs_ReplicationJob.DescribeReplicationJobs_DataDisk.DescribeReplicationJobs_Part();
+						part.Device = context.StringValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Device");
+						part.SizeBytes = context.LongValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].DataDisks["+ j +"].Parts["+ k +"].SizeBytes");
+						part.Block = context.BooleanValue("DescribeReplicationJobs.ReplicationJobs["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Block");
+
+						dataDisk_parts.Add(part);
+					}
+					dataDisk.Parts = dataDisk_parts;
 
 					replicationJob_dataDisks.Add(dataDisk);
 				}
