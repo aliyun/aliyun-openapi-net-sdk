@@ -118,8 +118,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string architectureType;
 
-			private string nodeType1;
-
 			private string packageType;
 
 			private string replicaId;
@@ -509,18 +507,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					architectureType = value;
-				}
-			}
-
-			public string NodeType1
-			{
-				get
-				{
-					return nodeType1;
-				}
-				set	
-				{
-					nodeType1 = value;
 				}
 			}
 

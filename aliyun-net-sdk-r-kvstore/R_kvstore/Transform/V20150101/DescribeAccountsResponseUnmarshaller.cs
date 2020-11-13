@@ -41,7 +41,6 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				account.AccountStatus = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountStatus");
 				account.AccountType = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountType");
 				account.AccountDescription = context.StringValue("DescribeAccounts.Accounts["+ i +"].AccountDescription");
-				account.PrivExceeded = context.StringValue("DescribeAccounts.Accounts["+ i +"].PrivExceeded");
 
 				List<DescribeAccountsResponse.DescribeAccounts_Account.DescribeAccounts_DatabasePrivilege> account_databasePrivileges = new List<DescribeAccountsResponse.DescribeAccounts_Account.DescribeAccounts_DatabasePrivilege>();
 				for (int j = 0; j < context.Length("DescribeAccounts.Accounts["+ i +"].DatabasePrivileges.Length"); j++) {

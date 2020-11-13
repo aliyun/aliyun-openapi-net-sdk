@@ -67,7 +67,6 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.SecurityIPList = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].SecurityIPList");
 				dBInstanceAttribute.InstanceType = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].InstanceType");
 				dBInstanceAttribute.ArchitectureType = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ArchitectureType");
-				dBInstanceAttribute.NodeType1 = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].NodeType");
 				dBInstanceAttribute.PackageType = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].PackageType");
 				dBInstanceAttribute.ReplicaId = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ReplicaId");
 				dBInstanceAttribute.VpcAuthMode = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].VpcAuthMode");
