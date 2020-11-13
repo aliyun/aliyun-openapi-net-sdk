@@ -28,24 +28,22 @@ using Aliyun.Acs.codeup.Transform.V20200414;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-    public class DeleteBranchRequest : RoaAcsRequest<DeleteBranchResponse>
+    public class GetGroupDetailRequest : RoaAcsRequest<GetGroupDetailResponse>
     {
-        public DeleteBranchRequest()
-            : base("codeup", "2020-04-14", "DeleteBranch")
+        public GetGroupDetailRequest()
+            : base("codeup", "2020-04-14", "GetGroupDetail")
         {
-			UriPattern = "/api/v3/projects/[ProjectId]/repository/branches/delete";
-			Method = MethodType.DELETE;
+			UriPattern = "/api/v3/groups/detail";
+			Method = MethodType.GET;
         }
 
 		private string organizationId;
 
 		private string subUserId;
 
+		private long? groupId;
+
 		private string accessToken;
-
-		private long? projectId;
-
-		private string branchName;
 
 		public string OrganizationId
 		{
@@ -73,6 +71,19 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
+		public long? GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
+			}
+		}
+
 		public string AccessToken
 		{
 			get
@@ -86,40 +97,14 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public long? ProjectId
-		{
-			get
-			{
-				return projectId;
-			}
-			set	
-			{
-				projectId = value;
-				DictionaryUtil.Add(PathParameters, "ProjectId", value.ToString());
-			}
-		}
-
-		public string BranchName
-		{
-			get
-			{
-				return branchName;
-			}
-			set	
-			{
-				branchName = value;
-				DictionaryUtil.Add(QueryParameters, "BranchName", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DeleteBranchResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override GetGroupDetailResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteBranchResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return GetGroupDetailResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

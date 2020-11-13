@@ -22,7 +22,7 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-	public class ListGroupMemberResponse : AcsResponse
+	public class GetGroupDetailResponse : AcsResponse
 	{
 
 		private string requestId;
@@ -33,9 +33,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 
 		private string errorMessage;
 
-		private long? total;
-
-		private List<ListGroupMember_ResultItem> result;
+		private GetGroupDetail_Result result;
 
 		public string RequestId
 		{
@@ -85,19 +83,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public long? Total
-		{
-			get
-			{
-				return total;
-			}
-			set	
-			{
-				total = value;
-			}
-		}
-
-		public List<ListGroupMember_ResultItem> Result
+		public GetGroupDetail_Result Result
 		{
 			get
 			{
@@ -109,44 +95,32 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public class ListGroupMember_ResultItem
+		public class GetGroupDetail_Result
 		{
-
-			private int? accessLevel;
-
-			private string externUserId;
 
 			private long? id;
 
-			private string state;
+			private string name;
+
+			private string path;
+
+			private string description;
 
 			private string avatarUrl;
 
-			private string email;
+			private string webUrl;
 
-			public int? AccessLevel
-			{
-				get
-				{
-					return accessLevel;
-				}
-				set	
-				{
-					accessLevel = value;
-				}
-			}
+			private string pathWithNamespace;
 
-			public string ExternUserId
-			{
-				get
-				{
-					return externUserId;
-				}
-				set	
-				{
-					externUserId = value;
-				}
-			}
+			private string nameWithNamespace;
+
+			private string type;
+
+			private string visibilityLevel;
+
+			private long? parentId;
+
+			private long? ownerId;
 
 			public long? Id
 			{
@@ -160,15 +134,39 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 				}
 			}
 
-			public string State
+			public string Name
 			{
 				get
 				{
-					return state;
+					return name;
 				}
 				set	
 				{
-					state = value;
+					name = value;
+				}
+			}
+
+			public string Path
+			{
+				get
+				{
+					return path;
+				}
+				set	
+				{
+					path = value;
+				}
+			}
+
+			public string Description
+			{
+				get
+				{
+					return description;
+				}
+				set	
+				{
+					description = value;
 				}
 			}
 
@@ -184,15 +182,87 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 				}
 			}
 
-			public string Email
+			public string WebUrl
 			{
 				get
 				{
-					return email;
+					return webUrl;
 				}
 				set	
 				{
-					email = value;
+					webUrl = value;
+				}
+			}
+
+			public string PathWithNamespace
+			{
+				get
+				{
+					return pathWithNamespace;
+				}
+				set	
+				{
+					pathWithNamespace = value;
+				}
+			}
+
+			public string NameWithNamespace
+			{
+				get
+				{
+					return nameWithNamespace;
+				}
+				set	
+				{
+					nameWithNamespace = value;
+				}
+			}
+
+			public string Type
+			{
+				get
+				{
+					return type;
+				}
+				set	
+				{
+					type = value;
+				}
+			}
+
+			public string VisibilityLevel
+			{
+				get
+				{
+					return visibilityLevel;
+				}
+				set	
+				{
+					visibilityLevel = value;
+				}
+			}
+
+			public long? ParentId
+			{
+				get
+				{
+					return parentId;
+				}
+				set	
+				{
+					parentId = value;
+				}
+			}
+
+			public long? OwnerId
+			{
+				get
+				{
+					return ownerId;
+				}
+				set	
+				{
+					ownerId = value;
 				}
 			}
 		}

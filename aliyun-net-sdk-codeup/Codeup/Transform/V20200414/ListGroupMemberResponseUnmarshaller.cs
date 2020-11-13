@@ -35,6 +35,7 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 			listGroupMemberResponse.ErrorCode = context.StringValue("ListGroupMember.ErrorCode");
 			listGroupMemberResponse.Success = context.BooleanValue("ListGroupMember.Success");
 			listGroupMemberResponse.ErrorMessage = context.StringValue("ListGroupMember.ErrorMessage");
+			listGroupMemberResponse.Total = context.LongValue("ListGroupMember.Total");
 
 			List<ListGroupMemberResponse.ListGroupMember_ResultItem> listGroupMemberResponse_result = new List<ListGroupMemberResponse.ListGroupMember_ResultItem>();
 			for (int i = 0; i < context.Length("ListGroupMember.Result.Length"); i++) {

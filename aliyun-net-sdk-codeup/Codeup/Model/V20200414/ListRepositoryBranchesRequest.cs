@@ -28,24 +28,28 @@ using Aliyun.Acs.codeup.Transform.V20200414;
 
 namespace Aliyun.Acs.codeup.Model.V20200414
 {
-    public class DeleteBranchRequest : RoaAcsRequest<DeleteBranchResponse>
+    public class ListRepositoryBranchesRequest : RoaAcsRequest<ListRepositoryBranchesResponse>
     {
-        public DeleteBranchRequest()
-            : base("codeup", "2020-04-14", "DeleteBranch")
+        public ListRepositoryBranchesRequest()
+            : base("codeup", "2020-04-14", "ListRepositoryBranches")
         {
-			UriPattern = "/api/v3/projects/[ProjectId]/repository/branches/delete";
-			Method = MethodType.DELETE;
+			UriPattern = "/api/v3/projects/[ProjectId]/repository/branches";
+			Method = MethodType.GET;
         }
 
 		private string organizationId;
 
+		private string search;
+
 		private string subUserId;
+
+		private long? pageSize;
 
 		private string accessToken;
 
-		private long? projectId;
+		private long? page;
 
-		private string branchName;
+		private long? projectId;
 
 		public string OrganizationId
 		{
@@ -57,6 +61,19 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			{
 				organizationId = value;
 				DictionaryUtil.Add(QueryParameters, "OrganizationId", value);
+			}
+		}
+
+		public string Search
+		{
+			get
+			{
+				return search;
+			}
+			set	
+			{
+				search = value;
+				DictionaryUtil.Add(QueryParameters, "Search", value);
 			}
 		}
 
@@ -73,6 +90,19 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
+		public long? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public string AccessToken
 		{
 			get
@@ -83,6 +113,19 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			{
 				accessToken = value;
 				DictionaryUtil.Add(QueryParameters, "AccessToken", value);
+			}
+		}
+
+		public long? Page
+		{
+			get
+			{
+				return page;
+			}
+			set	
+			{
+				page = value;
+				DictionaryUtil.Add(QueryParameters, "Page", value.ToString());
 			}
 		}
 
@@ -99,27 +142,14 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			}
 		}
 
-		public string BranchName
-		{
-			get
-			{
-				return branchName;
-			}
-			set	
-			{
-				branchName = value;
-				DictionaryUtil.Add(QueryParameters, "BranchName", value);
-			}
-		}
-
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DeleteBranchResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListRepositoryBranchesResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteBranchResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListRepositoryBranchesResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

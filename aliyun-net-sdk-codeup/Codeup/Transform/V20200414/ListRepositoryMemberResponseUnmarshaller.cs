@@ -35,6 +35,7 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 			listRepositoryMemberResponse.ErrorCode = context.StringValue("ListRepositoryMember.ErrorCode");
 			listRepositoryMemberResponse.Success = context.BooleanValue("ListRepositoryMember.Success");
 			listRepositoryMemberResponse.ErrorMessage = context.StringValue("ListRepositoryMember.ErrorMessage");
+			listRepositoryMemberResponse.Total = context.LongValue("ListRepositoryMember.Total");
 
 			List<ListRepositoryMemberResponse.ListRepositoryMember_ResultItem> listRepositoryMemberResponse_result = new List<ListRepositoryMemberResponse.ListRepositoryMember_ResultItem>();
 			for (int i = 0; i < context.Length("ListRepositoryMember.Result.Length"); i++) {
