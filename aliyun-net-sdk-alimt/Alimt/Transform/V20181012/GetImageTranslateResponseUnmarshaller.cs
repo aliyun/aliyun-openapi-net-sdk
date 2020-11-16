@@ -38,6 +38,7 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 			GetImageTranslateResponse.GetImageTranslate_Data data = new GetImageTranslateResponse.GetImageTranslate_Data();
 			data.Url = context.StringValue("GetImageTranslate.Data.Url");
 			data.Orc = context.StringValue("GetImageTranslate.Data.Orc");
+			data.PictureEditor = context.StringValue("GetImageTranslate.Data.PictureEditor");
 			getImageTranslateResponse.Data = data;
         
 			return getImageTranslateResponse;
