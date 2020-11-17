@@ -26,16 +26,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class EstimatedRestartTimeResponseUnmarshaller
     {
-        public static EstimatedRestartTimeResponse Unmarshall(UnmarshallerContext context)
+        public static EstimatedRestartTimeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EstimatedRestartTimeResponse estimatedRestartTimeResponse = new EstimatedRestartTimeResponse();
 
-			estimatedRestartTimeResponse.HttpResponse = context.HttpResponse;
-			estimatedRestartTimeResponse.RequestId = context.StringValue("EstimatedRestartTime.RequestId");
+			estimatedRestartTimeResponse.HttpResponse = _ctx.HttpResponse;
+			estimatedRestartTimeResponse.RequestId = _ctx.StringValue("EstimatedRestartTime.RequestId");
 
 			EstimatedRestartTimeResponse.EstimatedRestartTime_Result result = new EstimatedRestartTimeResponse.EstimatedRestartTime_Result();
-			result._Value = context.LongValue("EstimatedRestartTime.Result.value");
-			result.Unit = context.StringValue("EstimatedRestartTime.Result.unit");
+			result._Value = _ctx.LongValue("EstimatedRestartTime.Result.value");
+			result.Unit = _ctx.StringValue("EstimatedRestartTime.Result.unit");
 			estimatedRestartTimeResponse.Result = result;
         
 			return estimatedRestartTimeResponse;

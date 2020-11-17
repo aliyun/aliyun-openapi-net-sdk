@@ -26,18 +26,18 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class GetSuggestShrinkableNodesResponseUnmarshaller
     {
-        public static GetSuggestShrinkableNodesResponse Unmarshall(UnmarshallerContext context)
+        public static GetSuggestShrinkableNodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetSuggestShrinkableNodesResponse getSuggestShrinkableNodesResponse = new GetSuggestShrinkableNodesResponse();
 
-			getSuggestShrinkableNodesResponse.HttpResponse = context.HttpResponse;
-			getSuggestShrinkableNodesResponse.RequestId = context.StringValue("GetSuggestShrinkableNodes.RequestId");
+			getSuggestShrinkableNodesResponse.HttpResponse = _ctx.HttpResponse;
+			getSuggestShrinkableNodesResponse.RequestId = _ctx.StringValue("GetSuggestShrinkableNodes.RequestId");
 
 			List<GetSuggestShrinkableNodesResponse.GetSuggestShrinkableNodes_ResultItem> getSuggestShrinkableNodesResponse_result = new List<GetSuggestShrinkableNodesResponse.GetSuggestShrinkableNodes_ResultItem>();
-			for (int i = 0; i < context.Length("GetSuggestShrinkableNodes.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetSuggestShrinkableNodes.Result.Length"); i++) {
 				GetSuggestShrinkableNodesResponse.GetSuggestShrinkableNodes_ResultItem resultItem = new GetSuggestShrinkableNodesResponse.GetSuggestShrinkableNodes_ResultItem();
-				resultItem.Host = context.StringValue("GetSuggestShrinkableNodes.Result["+ i +"].host");
-				resultItem.Port = context.IntegerValue("GetSuggestShrinkableNodes.Result["+ i +"].port");
+				resultItem.Host = _ctx.StringValue("GetSuggestShrinkableNodes.Result["+ i +"].host");
+				resultItem.Port = _ctx.IntegerValue("GetSuggestShrinkableNodes.Result["+ i +"].port");
 
 				getSuggestShrinkableNodesResponse_result.Add(resultItem);
 			}

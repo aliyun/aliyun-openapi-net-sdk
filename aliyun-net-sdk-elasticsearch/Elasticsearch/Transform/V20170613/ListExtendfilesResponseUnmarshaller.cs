@@ -26,20 +26,20 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ListExtendfilesResponseUnmarshaller
     {
-        public static ListExtendfilesResponse Unmarshall(UnmarshallerContext context)
+        public static ListExtendfilesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListExtendfilesResponse listExtendfilesResponse = new ListExtendfilesResponse();
 
-			listExtendfilesResponse.HttpResponse = context.HttpResponse;
-			listExtendfilesResponse.RequestId = context.StringValue("ListExtendfiles.RequestId");
+			listExtendfilesResponse.HttpResponse = _ctx.HttpResponse;
+			listExtendfilesResponse.RequestId = _ctx.StringValue("ListExtendfiles.RequestId");
 
 			List<ListExtendfilesResponse.ListExtendfiles_ResultItem> listExtendfilesResponse_result = new List<ListExtendfilesResponse.ListExtendfiles_ResultItem>();
-			for (int i = 0; i < context.Length("ListExtendfiles.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListExtendfiles.Result.Length"); i++) {
 				ListExtendfilesResponse.ListExtendfiles_ResultItem resultItem = new ListExtendfilesResponse.ListExtendfiles_ResultItem();
-				resultItem.Name = context.StringValue("ListExtendfiles.Result["+ i +"].name");
-				resultItem.FileSize = context.LongValue("ListExtendfiles.Result["+ i +"].fileSize");
-				resultItem.SourceType = context.StringValue("ListExtendfiles.Result["+ i +"].sourceType");
-				resultItem.FilePath = context.StringValue("ListExtendfiles.Result["+ i +"].filePath");
+				resultItem.Name = _ctx.StringValue("ListExtendfiles.Result["+ i +"].name");
+				resultItem.FileSize = _ctx.LongValue("ListExtendfiles.Result["+ i +"].fileSize");
+				resultItem.SourceType = _ctx.StringValue("ListExtendfiles.Result["+ i +"].sourceType");
+				resultItem.FilePath = _ctx.StringValue("ListExtendfiles.Result["+ i +"].filePath");
 
 				listExtendfilesResponse_result.Add(resultItem);
 			}

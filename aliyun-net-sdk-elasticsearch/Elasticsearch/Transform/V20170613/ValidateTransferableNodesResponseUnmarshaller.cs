@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ValidateTransferableNodesResponseUnmarshaller
     {
-        public static ValidateTransferableNodesResponse Unmarshall(UnmarshallerContext context)
+        public static ValidateTransferableNodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ValidateTransferableNodesResponse validateTransferableNodesResponse = new ValidateTransferableNodesResponse();
 
-			validateTransferableNodesResponse.HttpResponse = context.HttpResponse;
-			validateTransferableNodesResponse.RequestId = context.StringValue("ValidateTransferableNodes.RequestId");
-			validateTransferableNodesResponse.Result = context.BooleanValue("ValidateTransferableNodes.Result");
+			validateTransferableNodesResponse.HttpResponse = _ctx.HttpResponse;
+			validateTransferableNodesResponse.RequestId = _ctx.StringValue("ValidateTransferableNodes.RequestId");
+			validateTransferableNodesResponse.Result = _ctx.BooleanValue("ValidateTransferableNodes.Result");
         
 			return validateTransferableNodesResponse;
         }

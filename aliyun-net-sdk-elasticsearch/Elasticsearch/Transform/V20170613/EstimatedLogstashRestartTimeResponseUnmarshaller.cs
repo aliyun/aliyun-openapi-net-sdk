@@ -26,16 +26,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class EstimatedLogstashRestartTimeResponseUnmarshaller
     {
-        public static EstimatedLogstashRestartTimeResponse Unmarshall(UnmarshallerContext context)
+        public static EstimatedLogstashRestartTimeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EstimatedLogstashRestartTimeResponse estimatedLogstashRestartTimeResponse = new EstimatedLogstashRestartTimeResponse();
 
-			estimatedLogstashRestartTimeResponse.HttpResponse = context.HttpResponse;
-			estimatedLogstashRestartTimeResponse.RequestId = context.StringValue("EstimatedLogstashRestartTime.RequestId");
+			estimatedLogstashRestartTimeResponse.HttpResponse = _ctx.HttpResponse;
+			estimatedLogstashRestartTimeResponse.RequestId = _ctx.StringValue("EstimatedLogstashRestartTime.RequestId");
 
 			EstimatedLogstashRestartTimeResponse.EstimatedLogstashRestartTime_Result result = new EstimatedLogstashRestartTimeResponse.EstimatedLogstashRestartTime_Result();
-			result._Value = context.LongValue("EstimatedLogstashRestartTime.Result.value");
-			result.Unit = context.StringValue("EstimatedLogstashRestartTime.Result.unit");
+			result._Value = _ctx.LongValue("EstimatedLogstashRestartTime.Result.value");
+			result.Unit = _ctx.StringValue("EstimatedLogstashRestartTime.Result.unit");
 			estimatedLogstashRestartTimeResponse.Result = result;
         
 			return estimatedLogstashRestartTimeResponse;

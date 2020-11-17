@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class CreateSnapshotResponseUnmarshaller
     {
-        public static CreateSnapshotResponse Unmarshall(UnmarshallerContext context)
+        public static CreateSnapshotResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateSnapshotResponse createSnapshotResponse = new CreateSnapshotResponse();
 
-			createSnapshotResponse.HttpResponse = context.HttpResponse;
-			createSnapshotResponse.RequestId = context.StringValue("CreateSnapshot.RequestId");
-			createSnapshotResponse.Result = context.BooleanValue("CreateSnapshot.Result");
+			createSnapshotResponse.HttpResponse = _ctx.HttpResponse;
+			createSnapshotResponse.RequestId = _ctx.StringValue("CreateSnapshot.RequestId");
+			createSnapshotResponse.Result = _ctx.BooleanValue("CreateSnapshot.Result");
         
 			return createSnapshotResponse;
         }

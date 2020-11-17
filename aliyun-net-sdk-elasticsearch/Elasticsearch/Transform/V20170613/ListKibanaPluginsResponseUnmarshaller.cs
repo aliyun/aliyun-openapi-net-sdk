@@ -26,25 +26,25 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ListKibanaPluginsResponseUnmarshaller
     {
-        public static ListKibanaPluginsResponse Unmarshall(UnmarshallerContext context)
+        public static ListKibanaPluginsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListKibanaPluginsResponse listKibanaPluginsResponse = new ListKibanaPluginsResponse();
 
-			listKibanaPluginsResponse.HttpResponse = context.HttpResponse;
-			listKibanaPluginsResponse.RequestId = context.StringValue("ListKibanaPlugins.RequestId");
+			listKibanaPluginsResponse.HttpResponse = _ctx.HttpResponse;
+			listKibanaPluginsResponse.RequestId = _ctx.StringValue("ListKibanaPlugins.RequestId");
 
 			ListKibanaPluginsResponse.ListKibanaPlugins_Headers headers = new ListKibanaPluginsResponse.ListKibanaPlugins_Headers();
-			headers.XTotalCount = context.IntegerValue("ListKibanaPlugins.Headers.X-Total-Count");
+			headers.XTotalCount = _ctx.IntegerValue("ListKibanaPlugins.Headers.X-Total-Count");
 			listKibanaPluginsResponse.Headers = headers;
 
 			List<ListKibanaPluginsResponse.ListKibanaPlugins_PluginItem> listKibanaPluginsResponse_result = new List<ListKibanaPluginsResponse.ListKibanaPlugins_PluginItem>();
-			for (int i = 0; i < context.Length("ListKibanaPlugins.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListKibanaPlugins.Result.Length"); i++) {
 				ListKibanaPluginsResponse.ListKibanaPlugins_PluginItem pluginItem = new ListKibanaPluginsResponse.ListKibanaPlugins_PluginItem();
-				pluginItem.Name = context.StringValue("ListKibanaPlugins.Result["+ i +"].name");
-				pluginItem.State = context.StringValue("ListKibanaPlugins.Result["+ i +"].state");
-				pluginItem.Source = context.StringValue("ListKibanaPlugins.Result["+ i +"].source");
-				pluginItem.Description = context.StringValue("ListKibanaPlugins.Result["+ i +"].description");
-				pluginItem.SpecificationUrl = context.StringValue("ListKibanaPlugins.Result["+ i +"].specificationUrl");
+				pluginItem.Name = _ctx.StringValue("ListKibanaPlugins.Result["+ i +"].name");
+				pluginItem.State = _ctx.StringValue("ListKibanaPlugins.Result["+ i +"].state");
+				pluginItem.Source = _ctx.StringValue("ListKibanaPlugins.Result["+ i +"].source");
+				pluginItem.Description = _ctx.StringValue("ListKibanaPlugins.Result["+ i +"].description");
+				pluginItem.SpecificationUrl = _ctx.StringValue("ListKibanaPlugins.Result["+ i +"].specificationUrl");
 
 				listKibanaPluginsResponse_result.Add(pluginItem);
 			}

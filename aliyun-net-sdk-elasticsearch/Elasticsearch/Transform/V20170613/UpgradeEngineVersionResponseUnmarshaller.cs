@@ -26,21 +26,21 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpgradeEngineVersionResponseUnmarshaller
     {
-        public static UpgradeEngineVersionResponse Unmarshall(UnmarshallerContext context)
+        public static UpgradeEngineVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpgradeEngineVersionResponse upgradeEngineVersionResponse = new UpgradeEngineVersionResponse();
 
-			upgradeEngineVersionResponse.HttpResponse = context.HttpResponse;
-			upgradeEngineVersionResponse.RequestId = context.StringValue("UpgradeEngineVersion.RequestId");
+			upgradeEngineVersionResponse.HttpResponse = _ctx.HttpResponse;
+			upgradeEngineVersionResponse.RequestId = _ctx.StringValue("UpgradeEngineVersion.RequestId");
 
 			UpgradeEngineVersionResponse.UpgradeEngineVersion_Result result = new UpgradeEngineVersionResponse.UpgradeEngineVersion_Result();
-			result.ValidateType = context.StringValue("UpgradeEngineVersion.Result.validateType");
-			result.Status = context.StringValue("UpgradeEngineVersion.Result.status");
+			result.ValidateType = _ctx.StringValue("UpgradeEngineVersion.Result.validateType");
+			result.Status = _ctx.StringValue("UpgradeEngineVersion.Result.status");
 
 			UpgradeEngineVersionResponse.UpgradeEngineVersion_Result.UpgradeEngineVersion_ValidateResult validateResult = new UpgradeEngineVersionResponse.UpgradeEngineVersion_Result.UpgradeEngineVersion_ValidateResult();
-			validateResult.ErrorType = context.StringValue("UpgradeEngineVersion.Result.ValidateResult.errorType");
-			validateResult.ErrorCode = context.StringValue("UpgradeEngineVersion.Result.ValidateResult.errorCode");
-			validateResult.ErrorMsg = context.StringValue("UpgradeEngineVersion.Result.ValidateResult.errorMsg");
+			validateResult.ErrorType = _ctx.StringValue("UpgradeEngineVersion.Result.ValidateResult.errorType");
+			validateResult.ErrorCode = _ctx.StringValue("UpgradeEngineVersion.Result.ValidateResult.errorCode");
+			validateResult.ErrorMsg = _ctx.StringValue("UpgradeEngineVersion.Result.ValidateResult.errorMsg");
 			result.ValidateResult = validateResult;
 			upgradeEngineVersionResponse.Result = result;
         

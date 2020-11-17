@@ -26,12 +26,12 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class DeleteLogstashResponseUnmarshaller
     {
-        public static DeleteLogstashResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteLogstashResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteLogstashResponse deleteLogstashResponse = new DeleteLogstashResponse();
 
-			deleteLogstashResponse.HttpResponse = context.HttpResponse;
-			deleteLogstashResponse.RequestId = context.StringValue("DeleteLogstash.RequestId");
+			deleteLogstashResponse.HttpResponse = _ctx.HttpResponse;
+			deleteLogstashResponse.RequestId = _ctx.StringValue("DeleteLogstash.RequestId");
         
 			return deleteLogstashResponse;
         }

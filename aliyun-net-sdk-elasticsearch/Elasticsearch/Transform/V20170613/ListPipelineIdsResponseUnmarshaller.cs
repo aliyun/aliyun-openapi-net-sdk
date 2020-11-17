@@ -26,20 +26,20 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ListPipelineIdsResponseUnmarshaller
     {
-        public static ListPipelineIdsResponse Unmarshall(UnmarshallerContext context)
+        public static ListPipelineIdsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListPipelineIdsResponse listPipelineIdsResponse = new ListPipelineIdsResponse();
 
-			listPipelineIdsResponse.HttpResponse = context.HttpResponse;
-			listPipelineIdsResponse.RequestId = context.StringValue("ListPipelineIds.RequestId");
+			listPipelineIdsResponse.HttpResponse = _ctx.HttpResponse;
+			listPipelineIdsResponse.RequestId = _ctx.StringValue("ListPipelineIds.RequestId");
 
 			List<ListPipelineIdsResponse.ListPipelineIds_ResultItem> listPipelineIdsResponse_result = new List<ListPipelineIdsResponse.ListPipelineIds_ResultItem>();
-			for (int i = 0; i < context.Length("ListPipelineIds.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListPipelineIds.Result.Length"); i++) {
 				ListPipelineIdsResponse.ListPipelineIds_ResultItem resultItem = new ListPipelineIdsResponse.ListPipelineIds_ResultItem();
-				resultItem.PipelineId = context.StringValue("ListPipelineIds.Result["+ i +"].pipelineId");
-				resultItem.Available = context.BooleanValue("ListPipelineIds.Result["+ i +"].available");
-				resultItem.Code = context.StringValue("ListPipelineIds.Result["+ i +"].code");
-				resultItem.Message = context.StringValue("ListPipelineIds.Result["+ i +"].message");
+				resultItem.PipelineId = _ctx.StringValue("ListPipelineIds.Result["+ i +"].pipelineId");
+				resultItem.Available = _ctx.BooleanValue("ListPipelineIds.Result["+ i +"].available");
+				resultItem.Code = _ctx.StringValue("ListPipelineIds.Result["+ i +"].code");
+				resultItem.Message = _ctx.StringValue("ListPipelineIds.Result["+ i +"].message");
 
 				listPipelineIdsResponse_result.Add(resultItem);
 			}

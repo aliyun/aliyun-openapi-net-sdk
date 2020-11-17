@@ -26,21 +26,21 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ListDictInformationResponseUnmarshaller
     {
-        public static ListDictInformationResponse Unmarshall(UnmarshallerContext context)
+        public static ListDictInformationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListDictInformationResponse listDictInformationResponse = new ListDictInformationResponse();
 
-			listDictInformationResponse.HttpResponse = context.HttpResponse;
-			listDictInformationResponse.RequestId = context.StringValue("ListDictInformation.RequestId");
+			listDictInformationResponse.HttpResponse = _ctx.HttpResponse;
+			listDictInformationResponse.RequestId = _ctx.StringValue("ListDictInformation.RequestId");
 
 			ListDictInformationResponse.ListDictInformation_Result result = new ListDictInformationResponse.ListDictInformation_Result();
-			result.FileSize = context.LongValue("ListDictInformation.Result.fileSize");
-			result.Type = context.StringValue("ListDictInformation.Result.type");
+			result.FileSize = _ctx.LongValue("ListDictInformation.Result.fileSize");
+			result.Type = _ctx.StringValue("ListDictInformation.Result.type");
 
 			ListDictInformationResponse.ListDictInformation_Result.ListDictInformation_OssObject ossObject = new ListDictInformationResponse.ListDictInformation_Result.ListDictInformation_OssObject();
-			ossObject.BucketName = context.StringValue("ListDictInformation.Result.OssObject.bucketName");
-			ossObject.Key = context.StringValue("ListDictInformation.Result.OssObject.key");
-			ossObject.Etag = context.StringValue("ListDictInformation.Result.OssObject.etag");
+			ossObject.BucketName = _ctx.StringValue("ListDictInformation.Result.OssObject.bucketName");
+			ossObject.Key = _ctx.StringValue("ListDictInformation.Result.OssObject.key");
+			ossObject.Etag = _ctx.StringValue("ListDictInformation.Result.OssObject.etag");
 			result.OssObject = ossObject;
 			listDictInformationResponse.Result = result;
         

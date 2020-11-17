@@ -26,43 +26,43 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class DescribeLogstashResponseUnmarshaller
     {
-        public static DescribeLogstashResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLogstashResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLogstashResponse describeLogstashResponse = new DescribeLogstashResponse();
 
-			describeLogstashResponse.HttpResponse = context.HttpResponse;
-			describeLogstashResponse.RequestId = context.StringValue("DescribeLogstash.RequestId");
+			describeLogstashResponse.HttpResponse = _ctx.HttpResponse;
+			describeLogstashResponse.RequestId = _ctx.StringValue("DescribeLogstash.RequestId");
 
 			DescribeLogstashResponse.DescribeLogstash_Result result = new DescribeLogstashResponse.DescribeLogstash_Result();
-			result.InstanceId = context.StringValue("DescribeLogstash.Result.instanceId");
-			result.Description = context.StringValue("DescribeLogstash.Result.description");
-			result.NodeAmount = context.IntegerValue("DescribeLogstash.Result.nodeAmount");
-			result.PaymentType = context.StringValue("DescribeLogstash.Result.paymentType");
-			result.Status = context.StringValue("DescribeLogstash.Result.status");
-			result.Version = context.StringValue("DescribeLogstash.Result.version");
-			result.CreatedAt = context.StringValue("DescribeLogstash.Result.createdAt");
-			result.UpdatedAt = context.StringValue("DescribeLogstash.Result.updatedAt");
-			result.VpcInstanceId = context.StringValue("DescribeLogstash.Result.vpcInstanceId");
-			result.Config = context.StringValue("DescribeLogstash.Result.config");
+			result.InstanceId = _ctx.StringValue("DescribeLogstash.Result.instanceId");
+			result.Description = _ctx.StringValue("DescribeLogstash.Result.description");
+			result.NodeAmount = _ctx.IntegerValue("DescribeLogstash.Result.nodeAmount");
+			result.PaymentType = _ctx.StringValue("DescribeLogstash.Result.paymentType");
+			result.Status = _ctx.StringValue("DescribeLogstash.Result.status");
+			result.Version = _ctx.StringValue("DescribeLogstash.Result.version");
+			result.CreatedAt = _ctx.StringValue("DescribeLogstash.Result.createdAt");
+			result.UpdatedAt = _ctx.StringValue("DescribeLogstash.Result.updatedAt");
+			result.VpcInstanceId = _ctx.StringValue("DescribeLogstash.Result.vpcInstanceId");
+			result.Config = _ctx.StringValue("DescribeLogstash.Result.config");
 
 			DescribeLogstashResponse.DescribeLogstash_Result.DescribeLogstash_NodeSpec nodeSpec = new DescribeLogstashResponse.DescribeLogstash_Result.DescribeLogstash_NodeSpec();
-			nodeSpec.Spec = context.StringValue("DescribeLogstash.Result.NodeSpec.spec");
-			nodeSpec.Disk = context.IntegerValue("DescribeLogstash.Result.NodeSpec.disk");
-			nodeSpec.DiskType = context.StringValue("DescribeLogstash.Result.NodeSpec.diskType");
+			nodeSpec.Spec = _ctx.StringValue("DescribeLogstash.Result.NodeSpec.spec");
+			nodeSpec.Disk = _ctx.IntegerValue("DescribeLogstash.Result.NodeSpec.disk");
+			nodeSpec.DiskType = _ctx.StringValue("DescribeLogstash.Result.NodeSpec.diskType");
 			result.NodeSpec = nodeSpec;
 
 			DescribeLogstashResponse.DescribeLogstash_Result.DescribeLogstash_NetworkConfig networkConfig = new DescribeLogstashResponse.DescribeLogstash_Result.DescribeLogstash_NetworkConfig();
-			networkConfig.Type = context.StringValue("DescribeLogstash.Result.NetworkConfig.type");
-			networkConfig.VpcId = context.StringValue("DescribeLogstash.Result.NetworkConfig.vpcId");
-			networkConfig.VswitchId = context.StringValue("DescribeLogstash.Result.NetworkConfig.vswitchId");
-			networkConfig.VsArea = context.StringValue("DescribeLogstash.Result.NetworkConfig.vsArea");
+			networkConfig.Type = _ctx.StringValue("DescribeLogstash.Result.NetworkConfig.type");
+			networkConfig.VpcId = _ctx.StringValue("DescribeLogstash.Result.NetworkConfig.vpcId");
+			networkConfig.VswitchId = _ctx.StringValue("DescribeLogstash.Result.NetworkConfig.vswitchId");
+			networkConfig.VsArea = _ctx.StringValue("DescribeLogstash.Result.NetworkConfig.vsArea");
 			result.NetworkConfig = networkConfig;
 
 			List<DescribeLogstashResponse.DescribeLogstash_Result.DescribeLogstash_Endpoint> result_endpointList = new List<DescribeLogstashResponse.DescribeLogstash_Result.DescribeLogstash_Endpoint>();
-			for (int i = 0; i < context.Length("DescribeLogstash.Result.EndpointList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLogstash.Result.EndpointList.Length"); i++) {
 				DescribeLogstashResponse.DescribeLogstash_Result.DescribeLogstash_Endpoint endpoint = new DescribeLogstashResponse.DescribeLogstash_Result.DescribeLogstash_Endpoint();
-				endpoint.Host = context.StringValue("DescribeLogstash.Result.EndpointList["+ i +"].host");
-				endpoint.Port = context.StringValue("DescribeLogstash.Result.EndpointList["+ i +"].port");
+				endpoint.Host = _ctx.StringValue("DescribeLogstash.Result.EndpointList["+ i +"].host");
+				endpoint.Port = _ctx.StringValue("DescribeLogstash.Result.EndpointList["+ i +"].port");
 
 				result_endpointList.Add(endpoint);
 			}

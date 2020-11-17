@@ -26,25 +26,25 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ListSearchLogResponseUnmarshaller
     {
-        public static ListSearchLogResponse Unmarshall(UnmarshallerContext context)
+        public static ListSearchLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListSearchLogResponse listSearchLogResponse = new ListSearchLogResponse();
 
-			listSearchLogResponse.HttpResponse = context.HttpResponse;
-			listSearchLogResponse.RequestId = context.StringValue("ListSearchLog.RequestId");
+			listSearchLogResponse.HttpResponse = _ctx.HttpResponse;
+			listSearchLogResponse.RequestId = _ctx.StringValue("ListSearchLog.RequestId");
 
 			ListSearchLogResponse.ListSearchLog_Headers headers = new ListSearchLogResponse.ListSearchLog_Headers();
-			headers.XTotalCount = context.IntegerValue("ListSearchLog.Headers.X-Total-Count");
+			headers.XTotalCount = _ctx.IntegerValue("ListSearchLog.Headers.X-Total-Count");
 			listSearchLogResponse.Headers = headers;
 
 			List<ListSearchLogResponse.ListSearchLog_ResultItem> listSearchLogResponse_result = new List<ListSearchLogResponse.ListSearchLog_ResultItem>();
-			for (int i = 0; i < context.Length("ListSearchLog.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListSearchLog.Result.Length"); i++) {
 				ListSearchLogResponse.ListSearchLog_ResultItem resultItem = new ListSearchLogResponse.ListSearchLog_ResultItem();
-				resultItem.Timestamp = context.LongValue("ListSearchLog.Result["+ i +"].timestamp");
-				resultItem.Host = context.StringValue("ListSearchLog.Result["+ i +"].host");
-				resultItem.Level = context.StringValue("ListSearchLog.Result["+ i +"].level");
-				resultItem.Content = context.StringValue("ListSearchLog.Result["+ i +"].content");
-				resultItem.InstanceId = context.StringValue("ListSearchLog.Result["+ i +"].instanceId");
+				resultItem.Timestamp = _ctx.LongValue("ListSearchLog.Result["+ i +"].timestamp");
+				resultItem.Host = _ctx.StringValue("ListSearchLog.Result["+ i +"].host");
+				resultItem.Level = _ctx.StringValue("ListSearchLog.Result["+ i +"].level");
+				resultItem.Content = _ctx.StringValue("ListSearchLog.Result["+ i +"].content");
+				resultItem.InstanceId = _ctx.StringValue("ListSearchLog.Result["+ i +"].instanceId");
 
 				listSearchLogResponse_result.Add(resultItem);
 			}

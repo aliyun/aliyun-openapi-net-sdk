@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateLogstashResponseUnmarshaller
     {
-        public static UpdateLogstashResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateLogstashResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateLogstashResponse updateLogstashResponse = new UpdateLogstashResponse();
 
-			updateLogstashResponse.HttpResponse = context.HttpResponse;
-			updateLogstashResponse.RequestId = context.StringValue("UpdateLogstash.RequestId");
-			updateLogstashResponse.Result = context.BooleanValue("UpdateLogstash.Result");
+			updateLogstashResponse.HttpResponse = _ctx.HttpResponse;
+			updateLogstashResponse.RequestId = _ctx.StringValue("UpdateLogstash.RequestId");
+			updateLogstashResponse.Result = _ctx.BooleanValue("UpdateLogstash.Result");
         
 			return updateLogstashResponse;
         }

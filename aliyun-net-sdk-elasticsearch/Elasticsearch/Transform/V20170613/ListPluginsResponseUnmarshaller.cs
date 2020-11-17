@@ -26,25 +26,25 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ListPluginsResponseUnmarshaller
     {
-        public static ListPluginsResponse Unmarshall(UnmarshallerContext context)
+        public static ListPluginsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListPluginsResponse listPluginsResponse = new ListPluginsResponse();
 
-			listPluginsResponse.HttpResponse = context.HttpResponse;
-			listPluginsResponse.RequestId = context.StringValue("ListPlugins.RequestId");
+			listPluginsResponse.HttpResponse = _ctx.HttpResponse;
+			listPluginsResponse.RequestId = _ctx.StringValue("ListPlugins.RequestId");
 
 			ListPluginsResponse.ListPlugins_Headers headers = new ListPluginsResponse.ListPlugins_Headers();
-			headers.XTotalCount = context.IntegerValue("ListPlugins.Headers.X-Total-Count");
+			headers.XTotalCount = _ctx.IntegerValue("ListPlugins.Headers.X-Total-Count");
 			listPluginsResponse.Headers = headers;
 
 			List<ListPluginsResponse.ListPlugins_ResultItem> listPluginsResponse_result = new List<ListPluginsResponse.ListPlugins_ResultItem>();
-			for (int i = 0; i < context.Length("ListPlugins.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListPlugins.Result.Length"); i++) {
 				ListPluginsResponse.ListPlugins_ResultItem resultItem = new ListPluginsResponse.ListPlugins_ResultItem();
-				resultItem.Name = context.StringValue("ListPlugins.Result["+ i +"].name");
-				resultItem.State = context.StringValue("ListPlugins.Result["+ i +"].state");
-				resultItem.Source = context.StringValue("ListPlugins.Result["+ i +"].source");
-				resultItem.Description = context.StringValue("ListPlugins.Result["+ i +"].description");
-				resultItem.SpecificationUrl = context.StringValue("ListPlugins.Result["+ i +"].specificationUrl");
+				resultItem.Name = _ctx.StringValue("ListPlugins.Result["+ i +"].name");
+				resultItem.State = _ctx.StringValue("ListPlugins.Result["+ i +"].state");
+				resultItem.Source = _ctx.StringValue("ListPlugins.Result["+ i +"].source");
+				resultItem.Description = _ctx.StringValue("ListPlugins.Result["+ i +"].description");
+				resultItem.SpecificationUrl = _ctx.StringValue("ListPlugins.Result["+ i +"].specificationUrl");
 
 				listPluginsResponse_result.Add(resultItem);
 			}

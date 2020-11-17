@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class MigrateToOtherZoneResponseUnmarshaller
     {
-        public static MigrateToOtherZoneResponse Unmarshall(UnmarshallerContext context)
+        public static MigrateToOtherZoneResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MigrateToOtherZoneResponse migrateToOtherZoneResponse = new MigrateToOtherZoneResponse();
 
-			migrateToOtherZoneResponse.HttpResponse = context.HttpResponse;
-			migrateToOtherZoneResponse.RequestId = context.StringValue("MigrateToOtherZone.RequestId");
-			migrateToOtherZoneResponse.Result = context.BooleanValue("MigrateToOtherZone.Result");
+			migrateToOtherZoneResponse.HttpResponse = _ctx.HttpResponse;
+			migrateToOtherZoneResponse.RequestId = _ctx.StringValue("MigrateToOtherZone.RequestId");
+			migrateToOtherZoneResponse.Result = _ctx.BooleanValue("MigrateToOtherZone.Result");
         
 			return migrateToOtherZoneResponse;
         }

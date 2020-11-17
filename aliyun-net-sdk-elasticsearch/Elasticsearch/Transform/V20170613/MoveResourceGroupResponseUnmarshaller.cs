@@ -26,74 +26,74 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class MoveResourceGroupResponseUnmarshaller
     {
-        public static MoveResourceGroupResponse Unmarshall(UnmarshallerContext context)
+        public static MoveResourceGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MoveResourceGroupResponse moveResourceGroupResponse = new MoveResourceGroupResponse();
 
-			moveResourceGroupResponse.HttpResponse = context.HttpResponse;
-			moveResourceGroupResponse.RequestId = context.StringValue("MoveResourceGroup.RequestId");
+			moveResourceGroupResponse.HttpResponse = _ctx.HttpResponse;
+			moveResourceGroupResponse.RequestId = _ctx.StringValue("MoveResourceGroup.RequestId");
 
 			MoveResourceGroupResponse.MoveResourceGroup_Result result = new MoveResourceGroupResponse.MoveResourceGroup_Result();
-			result.InstanceId = context.StringValue("MoveResourceGroup.Result.instanceId");
-			result.Domain = context.StringValue("MoveResourceGroup.Result.domain");
-			result.Description = context.StringValue("MoveResourceGroup.Result.description");
-			result.NodeAmount = context.IntegerValue("MoveResourceGroup.Result.nodeAmount");
-			result.PaymentType = context.StringValue("MoveResourceGroup.Result.paymentType");
-			result.Status = context.StringValue("MoveResourceGroup.Result.status");
-			result.EsVersion = context.StringValue("MoveResourceGroup.Result.esVersion");
-			result.CreatedAt = context.StringValue("MoveResourceGroup.Result.createdAt");
-			result.UpdatedAt = context.StringValue("MoveResourceGroup.Result.updatedAt");
-			result.KibanaDomain = context.StringValue("MoveResourceGroup.Result.kibanaDomain");
-			result.KibanaPort = context.IntegerValue("MoveResourceGroup.Result.kibanaPort");
-			result.PublicDomain = context.StringValue("MoveResourceGroup.Result.publicDomain");
-			result.PublicPort = context.IntegerValue("MoveResourceGroup.Result.publicPort");
+			result.InstanceId = _ctx.StringValue("MoveResourceGroup.Result.instanceId");
+			result.Domain = _ctx.StringValue("MoveResourceGroup.Result.domain");
+			result.Description = _ctx.StringValue("MoveResourceGroup.Result.description");
+			result.NodeAmount = _ctx.IntegerValue("MoveResourceGroup.Result.nodeAmount");
+			result.PaymentType = _ctx.StringValue("MoveResourceGroup.Result.paymentType");
+			result.Status = _ctx.StringValue("MoveResourceGroup.Result.status");
+			result.EsVersion = _ctx.StringValue("MoveResourceGroup.Result.esVersion");
+			result.CreatedAt = _ctx.StringValue("MoveResourceGroup.Result.createdAt");
+			result.UpdatedAt = _ctx.StringValue("MoveResourceGroup.Result.updatedAt");
+			result.KibanaDomain = _ctx.StringValue("MoveResourceGroup.Result.kibanaDomain");
+			result.KibanaPort = _ctx.IntegerValue("MoveResourceGroup.Result.kibanaPort");
+			result.PublicDomain = _ctx.StringValue("MoveResourceGroup.Result.publicDomain");
+			result.PublicPort = _ctx.IntegerValue("MoveResourceGroup.Result.publicPort");
 
 			MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_NodeSpec nodeSpec = new MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_NodeSpec();
-			nodeSpec.Spec = context.StringValue("MoveResourceGroup.Result.NodeSpec.spec");
-			nodeSpec.Disk = context.IntegerValue("MoveResourceGroup.Result.NodeSpec.disk");
-			nodeSpec.DiskType = context.StringValue("MoveResourceGroup.Result.NodeSpec.diskType");
+			nodeSpec.Spec = _ctx.StringValue("MoveResourceGroup.Result.NodeSpec.spec");
+			nodeSpec.Disk = _ctx.IntegerValue("MoveResourceGroup.Result.NodeSpec.disk");
+			nodeSpec.DiskType = _ctx.StringValue("MoveResourceGroup.Result.NodeSpec.diskType");
 			result.NodeSpec = nodeSpec;
 
 			MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_NetworkConfig networkConfig = new MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_NetworkConfig();
-			networkConfig.Type = context.StringValue("MoveResourceGroup.Result.NetworkConfig.type");
-			networkConfig.VpcId = context.StringValue("MoveResourceGroup.Result.NetworkConfig.vpcId");
-			networkConfig.VswitchId = context.StringValue("MoveResourceGroup.Result.NetworkConfig.vswitchId");
-			networkConfig.VsArea = context.StringValue("MoveResourceGroup.Result.NetworkConfig.vsArea");
+			networkConfig.Type = _ctx.StringValue("MoveResourceGroup.Result.NetworkConfig.type");
+			networkConfig.VpcId = _ctx.StringValue("MoveResourceGroup.Result.NetworkConfig.vpcId");
+			networkConfig.VswitchId = _ctx.StringValue("MoveResourceGroup.Result.NetworkConfig.vswitchId");
+			networkConfig.VsArea = _ctx.StringValue("MoveResourceGroup.Result.NetworkConfig.vsArea");
 			result.NetworkConfig = networkConfig;
 
 			MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_KibanaConfiguration kibanaConfiguration = new MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_KibanaConfiguration();
-			kibanaConfiguration.Spec = context.StringValue("MoveResourceGroup.Result.KibanaConfiguration.spec");
-			kibanaConfiguration.Amount = context.IntegerValue("MoveResourceGroup.Result.KibanaConfiguration.amount");
-			kibanaConfiguration.DiskType = context.StringValue("MoveResourceGroup.Result.KibanaConfiguration.diskType");
-			kibanaConfiguration.Disk = context.IntegerValue("MoveResourceGroup.Result.KibanaConfiguration.disk");
+			kibanaConfiguration.Spec = _ctx.StringValue("MoveResourceGroup.Result.KibanaConfiguration.spec");
+			kibanaConfiguration.Amount = _ctx.IntegerValue("MoveResourceGroup.Result.KibanaConfiguration.amount");
+			kibanaConfiguration.DiskType = _ctx.StringValue("MoveResourceGroup.Result.KibanaConfiguration.diskType");
+			kibanaConfiguration.Disk = _ctx.IntegerValue("MoveResourceGroup.Result.KibanaConfiguration.disk");
 			result.KibanaConfiguration = kibanaConfiguration;
 
 			MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_MasterConfiguration masterConfiguration = new MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_MasterConfiguration();
-			masterConfiguration.Spec = context.StringValue("MoveResourceGroup.Result.MasterConfiguration.spec");
-			masterConfiguration.Amount = context.IntegerValue("MoveResourceGroup.Result.MasterConfiguration.amount");
-			masterConfiguration.DiskType = context.StringValue("MoveResourceGroup.Result.MasterConfiguration.diskType");
-			masterConfiguration.Disk = context.IntegerValue("MoveResourceGroup.Result.MasterConfiguration.disk");
+			masterConfiguration.Spec = _ctx.StringValue("MoveResourceGroup.Result.MasterConfiguration.spec");
+			masterConfiguration.Amount = _ctx.IntegerValue("MoveResourceGroup.Result.MasterConfiguration.amount");
+			masterConfiguration.DiskType = _ctx.StringValue("MoveResourceGroup.Result.MasterConfiguration.diskType");
+			masterConfiguration.Disk = _ctx.IntegerValue("MoveResourceGroup.Result.MasterConfiguration.disk");
 			result.MasterConfiguration = masterConfiguration;
 
 			List<MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_DictListItem> result_dictList = new List<MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_DictListItem>();
-			for (int i = 0; i < context.Length("MoveResourceGroup.Result.DictList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("MoveResourceGroup.Result.DictList.Length"); i++) {
 				MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_DictListItem dictListItem = new MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_DictListItem();
-				dictListItem.Name = context.StringValue("MoveResourceGroup.Result.DictList["+ i +"].name");
-				dictListItem.FileSize = context.LongValue("MoveResourceGroup.Result.DictList["+ i +"].fileSize");
-				dictListItem.Type = context.StringValue("MoveResourceGroup.Result.DictList["+ i +"].type");
-				dictListItem.SourceType = context.StringValue("MoveResourceGroup.Result.DictList["+ i +"].sourceType");
+				dictListItem.Name = _ctx.StringValue("MoveResourceGroup.Result.DictList["+ i +"].name");
+				dictListItem.FileSize = _ctx.LongValue("MoveResourceGroup.Result.DictList["+ i +"].fileSize");
+				dictListItem.Type = _ctx.StringValue("MoveResourceGroup.Result.DictList["+ i +"].type");
+				dictListItem.SourceType = _ctx.StringValue("MoveResourceGroup.Result.DictList["+ i +"].sourceType");
 
 				result_dictList.Add(dictListItem);
 			}
 			result.DictList = result_dictList;
 
 			List<MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_SynonymsDictsItem> result_synonymsDicts = new List<MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_SynonymsDictsItem>();
-			for (int i = 0; i < context.Length("MoveResourceGroup.Result.SynonymsDicts.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("MoveResourceGroup.Result.SynonymsDicts.Length"); i++) {
 				MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_SynonymsDictsItem synonymsDictsItem = new MoveResourceGroupResponse.MoveResourceGroup_Result.MoveResourceGroup_SynonymsDictsItem();
-				synonymsDictsItem.Name = context.StringValue("MoveResourceGroup.Result.SynonymsDicts["+ i +"].name");
-				synonymsDictsItem.FileSize = context.LongValue("MoveResourceGroup.Result.SynonymsDicts["+ i +"].fileSize");
-				synonymsDictsItem.Type = context.StringValue("MoveResourceGroup.Result.SynonymsDicts["+ i +"].type");
-				synonymsDictsItem.SourceType = context.StringValue("MoveResourceGroup.Result.SynonymsDicts["+ i +"].sourceType");
+				synonymsDictsItem.Name = _ctx.StringValue("MoveResourceGroup.Result.SynonymsDicts["+ i +"].name");
+				synonymsDictsItem.FileSize = _ctx.LongValue("MoveResourceGroup.Result.SynonymsDicts["+ i +"].fileSize");
+				synonymsDictsItem.Type = _ctx.StringValue("MoveResourceGroup.Result.SynonymsDicts["+ i +"].type");
+				synonymsDictsItem.SourceType = _ctx.StringValue("MoveResourceGroup.Result.SynonymsDicts["+ i +"].sourceType");
 
 				result_synonymsDicts.Add(synonymsDictsItem);
 			}

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ModifyDeployMachineResponseUnmarshaller
     {
-        public static ModifyDeployMachineResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDeployMachineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDeployMachineResponse modifyDeployMachineResponse = new ModifyDeployMachineResponse();
 
-			modifyDeployMachineResponse.HttpResponse = context.HttpResponse;
-			modifyDeployMachineResponse.RequestId = context.StringValue("ModifyDeployMachine.RequestId");
-			modifyDeployMachineResponse.Result = context.BooleanValue("ModifyDeployMachine.Result");
+			modifyDeployMachineResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDeployMachineResponse.RequestId = _ctx.StringValue("ModifyDeployMachine.RequestId");
+			modifyDeployMachineResponse.Result = _ctx.BooleanValue("ModifyDeployMachine.Result");
         
 			return modifyDeployMachineResponse;
         }

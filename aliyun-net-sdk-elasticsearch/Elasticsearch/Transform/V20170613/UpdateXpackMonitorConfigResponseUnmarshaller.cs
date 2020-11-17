@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateXpackMonitorConfigResponseUnmarshaller
     {
-        public static UpdateXpackMonitorConfigResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateXpackMonitorConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateXpackMonitorConfigResponse updateXpackMonitorConfigResponse = new UpdateXpackMonitorConfigResponse();
 
-			updateXpackMonitorConfigResponse.HttpResponse = context.HttpResponse;
-			updateXpackMonitorConfigResponse.RequestId = context.StringValue("UpdateXpackMonitorConfig.RequestId");
-			updateXpackMonitorConfigResponse.Result = context.BooleanValue("UpdateXpackMonitorConfig.Result");
+			updateXpackMonitorConfigResponse.HttpResponse = _ctx.HttpResponse;
+			updateXpackMonitorConfigResponse.RequestId = _ctx.StringValue("UpdateXpackMonitorConfig.RequestId");
+			updateXpackMonitorConfigResponse.Result = _ctx.BooleanValue("UpdateXpackMonitorConfig.Result");
         
 			return updateXpackMonitorConfigResponse;
         }

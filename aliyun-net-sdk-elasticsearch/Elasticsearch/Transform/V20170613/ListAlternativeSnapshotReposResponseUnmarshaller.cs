@@ -26,18 +26,18 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ListAlternativeSnapshotReposResponseUnmarshaller
     {
-        public static ListAlternativeSnapshotReposResponse Unmarshall(UnmarshallerContext context)
+        public static ListAlternativeSnapshotReposResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListAlternativeSnapshotReposResponse listAlternativeSnapshotReposResponse = new ListAlternativeSnapshotReposResponse();
 
-			listAlternativeSnapshotReposResponse.HttpResponse = context.HttpResponse;
-			listAlternativeSnapshotReposResponse.RequestId = context.StringValue("ListAlternativeSnapshotRepos.RequestId");
+			listAlternativeSnapshotReposResponse.HttpResponse = _ctx.HttpResponse;
+			listAlternativeSnapshotReposResponse.RequestId = _ctx.StringValue("ListAlternativeSnapshotRepos.RequestId");
 
 			List<ListAlternativeSnapshotReposResponse.ListAlternativeSnapshotRepos_Repo> listAlternativeSnapshotReposResponse_result = new List<ListAlternativeSnapshotReposResponse.ListAlternativeSnapshotRepos_Repo>();
-			for (int i = 0; i < context.Length("ListAlternativeSnapshotRepos.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListAlternativeSnapshotRepos.Result.Length"); i++) {
 				ListAlternativeSnapshotReposResponse.ListAlternativeSnapshotRepos_Repo repo = new ListAlternativeSnapshotReposResponse.ListAlternativeSnapshotRepos_Repo();
-				repo.InstanceId = context.StringValue("ListAlternativeSnapshotRepos.Result["+ i +"].instanceId");
-				repo.RepoPath = context.StringValue("ListAlternativeSnapshotRepos.Result["+ i +"].repoPath");
+				repo.InstanceId = _ctx.StringValue("ListAlternativeSnapshotRepos.Result["+ i +"].instanceId");
+				repo.RepoPath = _ctx.StringValue("ListAlternativeSnapshotRepos.Result["+ i +"].repoPath");
 
 				listAlternativeSnapshotReposResponse_result.Add(repo);
 			}

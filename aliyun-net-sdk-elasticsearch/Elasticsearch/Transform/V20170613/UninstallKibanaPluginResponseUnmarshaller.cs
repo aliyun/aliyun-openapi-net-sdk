@@ -26,16 +26,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UninstallKibanaPluginResponseUnmarshaller
     {
-        public static UninstallKibanaPluginResponse Unmarshall(UnmarshallerContext context)
+        public static UninstallKibanaPluginResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UninstallKibanaPluginResponse uninstallKibanaPluginResponse = new UninstallKibanaPluginResponse();
 
-			uninstallKibanaPluginResponse.HttpResponse = context.HttpResponse;
-			uninstallKibanaPluginResponse.RequestId = context.StringValue("UninstallKibanaPlugin.RequestId");
+			uninstallKibanaPluginResponse.HttpResponse = _ctx.HttpResponse;
+			uninstallKibanaPluginResponse.RequestId = _ctx.StringValue("UninstallKibanaPlugin.RequestId");
 
 			List<string> uninstallKibanaPluginResponse_result = new List<string>();
-			for (int i = 0; i < context.Length("UninstallKibanaPlugin.Result.Length"); i++) {
-				uninstallKibanaPluginResponse_result.Add(context.StringValue("UninstallKibanaPlugin.Result["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("UninstallKibanaPlugin.Result.Length"); i++) {
+				uninstallKibanaPluginResponse_result.Add(_ctx.StringValue("UninstallKibanaPlugin.Result["+ i +"]"));
 			}
 			uninstallKibanaPluginResponse.Result = uninstallKibanaPluginResponse_result;
         

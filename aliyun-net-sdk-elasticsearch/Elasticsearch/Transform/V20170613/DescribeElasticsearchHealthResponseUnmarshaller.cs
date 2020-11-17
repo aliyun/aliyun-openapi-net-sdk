@@ -26,15 +26,15 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class DescribeElasticsearchHealthResponseUnmarshaller
     {
-        public static DescribeElasticsearchHealthResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeElasticsearchHealthResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeElasticsearchHealthResponse describeElasticsearchHealthResponse = new DescribeElasticsearchHealthResponse();
 
-			describeElasticsearchHealthResponse.HttpResponse = context.HttpResponse;
-			describeElasticsearchHealthResponse.RequestId = context.StringValue("DescribeElasticsearchHealth.RequestId");
-			describeElasticsearchHealthResponse.Code = context.StringValue("DescribeElasticsearchHealth.Code");
-			describeElasticsearchHealthResponse.Message = context.StringValue("DescribeElasticsearchHealth.Message");
-			describeElasticsearchHealthResponse.Result = context.StringValue("DescribeElasticsearchHealth.Result");
+			describeElasticsearchHealthResponse.HttpResponse = _ctx.HttpResponse;
+			describeElasticsearchHealthResponse.RequestId = _ctx.StringValue("DescribeElasticsearchHealth.RequestId");
+			describeElasticsearchHealthResponse.Code = _ctx.StringValue("DescribeElasticsearchHealth.Code");
+			describeElasticsearchHealthResponse.Message = _ctx.StringValue("DescribeElasticsearchHealth.Message");
+			describeElasticsearchHealthResponse.Result = _ctx.StringValue("DescribeElasticsearchHealth.Result");
         
 			return describeElasticsearchHealthResponse;
         }

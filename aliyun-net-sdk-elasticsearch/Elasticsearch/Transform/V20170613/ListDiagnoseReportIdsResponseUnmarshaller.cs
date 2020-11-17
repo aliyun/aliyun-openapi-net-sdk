@@ -26,21 +26,21 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ListDiagnoseReportIdsResponseUnmarshaller
     {
-        public static ListDiagnoseReportIdsResponse Unmarshall(UnmarshallerContext context)
+        public static ListDiagnoseReportIdsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListDiagnoseReportIdsResponse listDiagnoseReportIdsResponse = new ListDiagnoseReportIdsResponse();
 
-			listDiagnoseReportIdsResponse.HttpResponse = context.HttpResponse;
-			listDiagnoseReportIdsResponse.RequestId = context.StringValue("ListDiagnoseReportIds.RequestId");
+			listDiagnoseReportIdsResponse.HttpResponse = _ctx.HttpResponse;
+			listDiagnoseReportIdsResponse.RequestId = _ctx.StringValue("ListDiagnoseReportIds.RequestId");
 
 			List<string> listDiagnoseReportIdsResponse_result = new List<string>();
-			for (int i = 0; i < context.Length("ListDiagnoseReportIds.Result.Length"); i++) {
-				listDiagnoseReportIdsResponse_result.Add(context.StringValue("ListDiagnoseReportIds.Result["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ListDiagnoseReportIds.Result.Length"); i++) {
+				listDiagnoseReportIdsResponse_result.Add(_ctx.StringValue("ListDiagnoseReportIds.Result["+ i +"]"));
 			}
 			listDiagnoseReportIdsResponse.Result = listDiagnoseReportIdsResponse_result;
 
 			ListDiagnoseReportIdsResponse.ListDiagnoseReportIds_Headers headers = new ListDiagnoseReportIdsResponse.ListDiagnoseReportIds_Headers();
-			headers.XTotalCount = context.IntegerValue("ListDiagnoseReportIds.Headers.X-Total-Count");
+			headers.XTotalCount = _ctx.IntegerValue("ListDiagnoseReportIds.Headers.X-Total-Count");
 			listDiagnoseReportIdsResponse.Headers = headers;
         
 			return listDiagnoseReportIdsResponse;

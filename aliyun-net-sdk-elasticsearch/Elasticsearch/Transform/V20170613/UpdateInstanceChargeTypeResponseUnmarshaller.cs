@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateInstanceChargeTypeResponseUnmarshaller
     {
-        public static UpdateInstanceChargeTypeResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateInstanceChargeTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateInstanceChargeTypeResponse updateInstanceChargeTypeResponse = new UpdateInstanceChargeTypeResponse();
 
-			updateInstanceChargeTypeResponse.HttpResponse = context.HttpResponse;
-			updateInstanceChargeTypeResponse.RequestId = context.StringValue("UpdateInstanceChargeType.RequestId");
-			updateInstanceChargeTypeResponse.Result = context.BooleanValue("UpdateInstanceChargeType.Result");
+			updateInstanceChargeTypeResponse.HttpResponse = _ctx.HttpResponse;
+			updateInstanceChargeTypeResponse.RequestId = _ctx.StringValue("UpdateInstanceChargeType.RequestId");
+			updateInstanceChargeTypeResponse.Result = _ctx.BooleanValue("UpdateInstanceChargeType.Result");
         
 			return updateInstanceChargeTypeResponse;
         }

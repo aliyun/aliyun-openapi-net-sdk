@@ -26,66 +26,66 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateCollectorNameResponseUnmarshaller
     {
-        public static UpdateCollectorNameResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateCollectorNameResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateCollectorNameResponse updateCollectorNameResponse = new UpdateCollectorNameResponse();
 
-			updateCollectorNameResponse.HttpResponse = context.HttpResponse;
-			updateCollectorNameResponse.RequestId = context.StringValue("UpdateCollectorName.RequestId");
+			updateCollectorNameResponse.HttpResponse = _ctx.HttpResponse;
+			updateCollectorNameResponse.RequestId = _ctx.StringValue("UpdateCollectorName.RequestId");
 
 			UpdateCollectorNameResponse.UpdateCollectorName_Result result = new UpdateCollectorNameResponse.UpdateCollectorName_Result();
-			result.GmtCreatedTime = context.StringValue("UpdateCollectorName.Result.gmtCreatedTime");
-			result.GmtUpdateTime = context.StringValue("UpdateCollectorName.Result.gmtUpdateTime");
-			result.Name = context.StringValue("UpdateCollectorName.Result.name");
-			result.ResId = context.StringValue("UpdateCollectorName.Result.resId");
-			result.ResVersion = context.StringValue("UpdateCollectorName.Result.resVersion");
-			result.VpcId = context.StringValue("UpdateCollectorName.Result.vpcId");
-			result.ResType = context.StringValue("UpdateCollectorName.Result.resType");
-			result.OwnerId = context.StringValue("UpdateCollectorName.Result.ownerId");
-			result.Status = context.StringValue("UpdateCollectorName.Result.status");
-			result.DryRun = context.BooleanValue("UpdateCollectorName.Result.dryRun");
+			result.GmtCreatedTime = _ctx.StringValue("UpdateCollectorName.Result.gmtCreatedTime");
+			result.GmtUpdateTime = _ctx.StringValue("UpdateCollectorName.Result.gmtUpdateTime");
+			result.Name = _ctx.StringValue("UpdateCollectorName.Result.name");
+			result.ResId = _ctx.StringValue("UpdateCollectorName.Result.resId");
+			result.ResVersion = _ctx.StringValue("UpdateCollectorName.Result.resVersion");
+			result.VpcId = _ctx.StringValue("UpdateCollectorName.Result.vpcId");
+			result.ResType = _ctx.StringValue("UpdateCollectorName.Result.resType");
+			result.OwnerId = _ctx.StringValue("UpdateCollectorName.Result.ownerId");
+			result.Status = _ctx.StringValue("UpdateCollectorName.Result.status");
+			result.DryRun = _ctx.BooleanValue("UpdateCollectorName.Result.dryRun");
 
 			List<string> result_collectorPaths = new List<string>();
-			for (int i = 0; i < context.Length("UpdateCollectorName.Result.CollectorPaths.Length"); i++) {
-				result_collectorPaths.Add(context.StringValue("UpdateCollectorName.Result.CollectorPaths["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("UpdateCollectorName.Result.CollectorPaths.Length"); i++) {
+				result_collectorPaths.Add(_ctx.StringValue("UpdateCollectorName.Result.CollectorPaths["+ i +"]"));
 			}
 			result.CollectorPaths = result_collectorPaths;
 
 			List<UpdateCollectorNameResponse.UpdateCollectorName_Result.UpdateCollectorName_ConfigsItem> result_configs = new List<UpdateCollectorNameResponse.UpdateCollectorName_Result.UpdateCollectorName_ConfigsItem>();
-			for (int i = 0; i < context.Length("UpdateCollectorName.Result.Configs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("UpdateCollectorName.Result.Configs.Length"); i++) {
 				UpdateCollectorNameResponse.UpdateCollectorName_Result.UpdateCollectorName_ConfigsItem configsItem = new UpdateCollectorNameResponse.UpdateCollectorName_Result.UpdateCollectorName_ConfigsItem();
-				configsItem.FileName = context.StringValue("UpdateCollectorName.Result.Configs["+ i +"].fileName");
-				configsItem.Content = context.StringValue("UpdateCollectorName.Result.Configs["+ i +"].content");
+				configsItem.FileName = _ctx.StringValue("UpdateCollectorName.Result.Configs["+ i +"].fileName");
+				configsItem.Content = _ctx.StringValue("UpdateCollectorName.Result.Configs["+ i +"].content");
 
 				result_configs.Add(configsItem);
 			}
 			result.Configs = result_configs;
 
 			List<UpdateCollectorNameResponse.UpdateCollectorName_Result.UpdateCollectorName_ExtendConfigsItem> result_extendConfigs = new List<UpdateCollectorNameResponse.UpdateCollectorName_Result.UpdateCollectorName_ExtendConfigsItem>();
-			for (int i = 0; i < context.Length("UpdateCollectorName.Result.ExtendConfigs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("UpdateCollectorName.Result.ExtendConfigs.Length"); i++) {
 				UpdateCollectorNameResponse.UpdateCollectorName_Result.UpdateCollectorName_ExtendConfigsItem extendConfigsItem = new UpdateCollectorNameResponse.UpdateCollectorName_Result.UpdateCollectorName_ExtendConfigsItem();
-				extendConfigsItem.ConfigType = context.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].configType");
-				extendConfigsItem.InstanceId = context.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].instanceId");
-				extendConfigsItem.InstanceType = context.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].instanceType");
-				extendConfigsItem.Protocol = context.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].protocol");
-				extendConfigsItem.UserName = context.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].userName");
-				extendConfigsItem.EnableMonitoring = context.BooleanValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].enableMonitoring");
-				extendConfigsItem.Type = context.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].type");
-				extendConfigsItem.GroupId = context.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].groupId");
-				extendConfigsItem.Host = context.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].host");
-				extendConfigsItem.KibanaHost = context.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].kibanaHost");
+				extendConfigsItem.ConfigType = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].configType");
+				extendConfigsItem.InstanceId = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].instanceId");
+				extendConfigsItem.InstanceType = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].instanceType");
+				extendConfigsItem.Protocol = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].protocol");
+				extendConfigsItem.UserName = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].userName");
+				extendConfigsItem.EnableMonitoring = _ctx.BooleanValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].enableMonitoring");
+				extendConfigsItem.Type = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].type");
+				extendConfigsItem.GroupId = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].groupId");
+				extendConfigsItem.Host = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].host");
+				extendConfigsItem.KibanaHost = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].kibanaHost");
 
 				List<string> extendConfigsItem_hosts = new List<string>();
-				for (int j = 0; j < context.Length("UpdateCollectorName.Result.ExtendConfigs["+ i +"].Hosts.Length"); j++) {
-					extendConfigsItem_hosts.Add(context.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].Hosts["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("UpdateCollectorName.Result.ExtendConfigs["+ i +"].Hosts.Length"); j++) {
+					extendConfigsItem_hosts.Add(_ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].Hosts["+ j +"]"));
 				}
 				extendConfigsItem.Hosts = extendConfigsItem_hosts;
 
 				List<UpdateCollectorNameResponse.UpdateCollectorName_Result.UpdateCollectorName_ExtendConfigsItem.UpdateCollectorName_MachinesItem> extendConfigsItem_machines = new List<UpdateCollectorNameResponse.UpdateCollectorName_Result.UpdateCollectorName_ExtendConfigsItem.UpdateCollectorName_MachinesItem>();
-				for (int j = 0; j < context.Length("UpdateCollectorName.Result.ExtendConfigs["+ i +"].Machines.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("UpdateCollectorName.Result.ExtendConfigs["+ i +"].Machines.Length"); j++) {
 					UpdateCollectorNameResponse.UpdateCollectorName_Result.UpdateCollectorName_ExtendConfigsItem.UpdateCollectorName_MachinesItem machinesItem = new UpdateCollectorNameResponse.UpdateCollectorName_Result.UpdateCollectorName_ExtendConfigsItem.UpdateCollectorName_MachinesItem();
-					machinesItem.InstanceId = context.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].Machines["+ j +"].instanceId");
-					machinesItem.AgentStatus = context.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].Machines["+ j +"].agentStatus");
+					machinesItem.InstanceId = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].Machines["+ j +"].instanceId");
+					machinesItem.AgentStatus = _ctx.StringValue("UpdateCollectorName.Result.ExtendConfigs["+ i +"].Machines["+ j +"].agentStatus");
 
 					extendConfigsItem_machines.Add(machinesItem);
 				}

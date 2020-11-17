@@ -26,16 +26,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class InstallLogstashSystemPluginResponseUnmarshaller
     {
-        public static InstallLogstashSystemPluginResponse Unmarshall(UnmarshallerContext context)
+        public static InstallLogstashSystemPluginResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			InstallLogstashSystemPluginResponse installLogstashSystemPluginResponse = new InstallLogstashSystemPluginResponse();
 
-			installLogstashSystemPluginResponse.HttpResponse = context.HttpResponse;
-			installLogstashSystemPluginResponse.RequestId = context.StringValue("InstallLogstashSystemPlugin.RequestId");
+			installLogstashSystemPluginResponse.HttpResponse = _ctx.HttpResponse;
+			installLogstashSystemPluginResponse.RequestId = _ctx.StringValue("InstallLogstashSystemPlugin.RequestId");
 
 			List<string> installLogstashSystemPluginResponse_result = new List<string>();
-			for (int i = 0; i < context.Length("InstallLogstashSystemPlugin.Result.Length"); i++) {
-				installLogstashSystemPluginResponse_result.Add(context.StringValue("InstallLogstashSystemPlugin.Result["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("InstallLogstashSystemPlugin.Result.Length"); i++) {
+				installLogstashSystemPluginResponse_result.Add(_ctx.StringValue("InstallLogstashSystemPlugin.Result["+ i +"]"));
 			}
 			installLogstashSystemPluginResponse.Result = installLogstashSystemPluginResponse_result;
         

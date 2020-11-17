@@ -26,21 +26,21 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ListLogstashPluginsResponseUnmarshaller
     {
-        public static ListLogstashPluginsResponse Unmarshall(UnmarshallerContext context)
+        public static ListLogstashPluginsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListLogstashPluginsResponse listLogstashPluginsResponse = new ListLogstashPluginsResponse();
 
-			listLogstashPluginsResponse.HttpResponse = context.HttpResponse;
-			listLogstashPluginsResponse.RequestId = context.StringValue("ListLogstashPlugins.RequestId");
+			listLogstashPluginsResponse.HttpResponse = _ctx.HttpResponse;
+			listLogstashPluginsResponse.RequestId = _ctx.StringValue("ListLogstashPlugins.RequestId");
 
 			List<ListLogstashPluginsResponse.ListLogstashPlugins_ResultItem> listLogstashPluginsResponse_result = new List<ListLogstashPluginsResponse.ListLogstashPlugins_ResultItem>();
-			for (int i = 0; i < context.Length("ListLogstashPlugins.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListLogstashPlugins.Result.Length"); i++) {
 				ListLogstashPluginsResponse.ListLogstashPlugins_ResultItem resultItem = new ListLogstashPluginsResponse.ListLogstashPlugins_ResultItem();
-				resultItem.Name = context.StringValue("ListLogstashPlugins.Result["+ i +"].name");
-				resultItem.State = context.StringValue("ListLogstashPlugins.Result["+ i +"].state");
-				resultItem.Source = context.StringValue("ListLogstashPlugins.Result["+ i +"].source");
-				resultItem.Description = context.StringValue("ListLogstashPlugins.Result["+ i +"].description");
-				resultItem.SpecificationUrl = context.StringValue("ListLogstashPlugins.Result["+ i +"].specificationUrl");
+				resultItem.Name = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].name");
+				resultItem.State = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].state");
+				resultItem.Source = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].source");
+				resultItem.Description = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].description");
+				resultItem.SpecificationUrl = _ctx.StringValue("ListLogstashPlugins.Result["+ i +"].specificationUrl");
 
 				listLogstashPluginsResponse_result.Add(resultItem);
 			}

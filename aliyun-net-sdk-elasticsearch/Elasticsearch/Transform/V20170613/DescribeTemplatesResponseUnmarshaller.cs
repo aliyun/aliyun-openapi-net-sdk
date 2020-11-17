@@ -26,18 +26,18 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class DescribeTemplatesResponseUnmarshaller
     {
-        public static DescribeTemplatesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeTemplatesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeTemplatesResponse describeTemplatesResponse = new DescribeTemplatesResponse();
 
-			describeTemplatesResponse.HttpResponse = context.HttpResponse;
-			describeTemplatesResponse.RequestId = context.StringValue("DescribeTemplates.RequestId");
+			describeTemplatesResponse.HttpResponse = _ctx.HttpResponse;
+			describeTemplatesResponse.RequestId = _ctx.StringValue("DescribeTemplates.RequestId");
 
 			List<DescribeTemplatesResponse.DescribeTemplates_ResultItem> describeTemplatesResponse_result = new List<DescribeTemplatesResponse.DescribeTemplates_ResultItem>();
-			for (int i = 0; i < context.Length("DescribeTemplates.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeTemplates.Result.Length"); i++) {
 				DescribeTemplatesResponse.DescribeTemplates_ResultItem resultItem = new DescribeTemplatesResponse.DescribeTemplates_ResultItem();
-				resultItem.Content = context.StringValue("DescribeTemplates.Result["+ i +"].content");
-				resultItem.TemplateName = context.StringValue("DescribeTemplates.Result["+ i +"].templateName");
+				resultItem.Content = _ctx.StringValue("DescribeTemplates.Result["+ i +"].content");
+				resultItem.TemplateName = _ctx.StringValue("DescribeTemplates.Result["+ i +"].templateName");
 
 				describeTemplatesResponse_result.Add(resultItem);
 			}

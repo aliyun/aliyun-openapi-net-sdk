@@ -26,26 +26,26 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class DescribePipelineResponseUnmarshaller
     {
-        public static DescribePipelineResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePipelineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePipelineResponse describePipelineResponse = new DescribePipelineResponse();
 
-			describePipelineResponse.HttpResponse = context.HttpResponse;
-			describePipelineResponse.RequestId = context.StringValue("DescribePipeline.RequestId");
+			describePipelineResponse.HttpResponse = _ctx.HttpResponse;
+			describePipelineResponse.RequestId = _ctx.StringValue("DescribePipeline.RequestId");
 
 			DescribePipelineResponse.DescribePipeline_Result result = new DescribePipelineResponse.DescribePipeline_Result();
-			result.PipelineId = context.StringValue("DescribePipeline.Result.pipelineId");
-			result.Config = context.StringValue("DescribePipeline.Result.config");
-			result.PipelineStatus = context.StringValue("DescribePipeline.Result.pipelineStatus");
-			result.GmtCreatedTime = context.StringValue("DescribePipeline.Result.gmtCreatedTime");
-			result.GmtUpdateTime = context.StringValue("DescribePipeline.Result.gmtUpdateTime");
-			result.Workers = context.IntegerValue("DescribePipeline.Result.workers");
-			result.BatchSize = context.IntegerValue("DescribePipeline.Result.batchSize");
-			result.BatchDelay = context.IntegerValue("DescribePipeline.Result.batchDelay");
-			result.Description = context.StringValue("DescribePipeline.Result.description");
-			result.QueueType = context.StringValue("DescribePipeline.Result.queueType");
-			result.QueueMaxBytes = context.IntegerValue("DescribePipeline.Result.queueMaxBytes");
-			result.QueueCheckPointWrites = context.IntegerValue("DescribePipeline.Result.queueCheckPointWrites");
+			result.PipelineId = _ctx.StringValue("DescribePipeline.Result.pipelineId");
+			result.Config = _ctx.StringValue("DescribePipeline.Result.config");
+			result.PipelineStatus = _ctx.StringValue("DescribePipeline.Result.pipelineStatus");
+			result.GmtCreatedTime = _ctx.StringValue("DescribePipeline.Result.gmtCreatedTime");
+			result.GmtUpdateTime = _ctx.StringValue("DescribePipeline.Result.gmtUpdateTime");
+			result.Workers = _ctx.IntegerValue("DescribePipeline.Result.workers");
+			result.BatchSize = _ctx.IntegerValue("DescribePipeline.Result.batchSize");
+			result.BatchDelay = _ctx.IntegerValue("DescribePipeline.Result.batchDelay");
+			result.Description = _ctx.StringValue("DescribePipeline.Result.description");
+			result.QueueType = _ctx.StringValue("DescribePipeline.Result.queueType");
+			result.QueueMaxBytes = _ctx.IntegerValue("DescribePipeline.Result.queueMaxBytes");
+			result.QueueCheckPointWrites = _ctx.IntegerValue("DescribePipeline.Result.queueCheckPointWrites");
 			describePipelineResponse.Result = result;
         
 			return describePipelineResponse;

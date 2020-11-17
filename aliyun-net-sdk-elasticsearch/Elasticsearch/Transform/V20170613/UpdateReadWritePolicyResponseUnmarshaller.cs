@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateReadWritePolicyResponseUnmarshaller
     {
-        public static UpdateReadWritePolicyResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateReadWritePolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateReadWritePolicyResponse updateReadWritePolicyResponse = new UpdateReadWritePolicyResponse();
 
-			updateReadWritePolicyResponse.HttpResponse = context.HttpResponse;
-			updateReadWritePolicyResponse.RequestId = context.StringValue("UpdateReadWritePolicy.RequestId");
-			updateReadWritePolicyResponse.Result = context.BooleanValue("UpdateReadWritePolicy.Result");
+			updateReadWritePolicyResponse.HttpResponse = _ctx.HttpResponse;
+			updateReadWritePolicyResponse.RequestId = _ctx.StringValue("UpdateReadWritePolicy.RequestId");
+			updateReadWritePolicyResponse.Result = _ctx.BooleanValue("UpdateReadWritePolicy.Result");
         
 			return updateReadWritePolicyResponse;
         }

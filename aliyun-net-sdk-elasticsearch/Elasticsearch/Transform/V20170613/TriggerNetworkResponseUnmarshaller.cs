@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class TriggerNetworkResponseUnmarshaller
     {
-        public static TriggerNetworkResponse Unmarshall(UnmarshallerContext context)
+        public static TriggerNetworkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TriggerNetworkResponse triggerNetworkResponse = new TriggerNetworkResponse();
 
-			triggerNetworkResponse.HttpResponse = context.HttpResponse;
-			triggerNetworkResponse.RequestId = context.StringValue("TriggerNetwork.RequestId");
-			triggerNetworkResponse.Result = context.BooleanValue("TriggerNetwork.Result");
+			triggerNetworkResponse.HttpResponse = _ctx.HttpResponse;
+			triggerNetworkResponse.RequestId = _ctx.StringValue("TriggerNetwork.RequestId");
+			triggerNetworkResponse.Result = _ctx.BooleanValue("TriggerNetwork.Result");
         
 			return triggerNetworkResponse;
         }

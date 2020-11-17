@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class CancelTaskResponseUnmarshaller
     {
-        public static CancelTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CancelTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelTaskResponse cancelTaskResponse = new CancelTaskResponse();
 
-			cancelTaskResponse.HttpResponse = context.HttpResponse;
-			cancelTaskResponse.RequestId = context.StringValue("CancelTask.RequestId");
-			cancelTaskResponse.Result = context.BooleanValue("CancelTask.Result");
+			cancelTaskResponse.HttpResponse = _ctx.HttpResponse;
+			cancelTaskResponse.RequestId = _ctx.StringValue("CancelTask.RequestId");
+			cancelTaskResponse.Result = _ctx.BooleanValue("CancelTask.Result");
         
 			return cancelTaskResponse;
         }

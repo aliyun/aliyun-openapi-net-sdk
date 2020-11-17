@@ -26,15 +26,15 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class CreateLogstashResponseUnmarshaller
     {
-        public static CreateLogstashResponse Unmarshall(UnmarshallerContext context)
+        public static CreateLogstashResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateLogstashResponse createLogstashResponse = new CreateLogstashResponse();
 
-			createLogstashResponse.HttpResponse = context.HttpResponse;
-			createLogstashResponse.RequestId = context.StringValue("CreateLogstash.RequestId");
+			createLogstashResponse.HttpResponse = _ctx.HttpResponse;
+			createLogstashResponse.RequestId = _ctx.StringValue("CreateLogstash.RequestId");
 
 			CreateLogstashResponse.CreateLogstash_Result result = new CreateLogstashResponse.CreateLogstash_Result();
-			result.InstanceId = context.StringValue("CreateLogstash.Result.instanceId");
+			result.InstanceId = _ctx.StringValue("CreateLogstash.Result.instanceId");
 			createLogstashResponse.Result = result;
         
 			return createLogstashResponse;

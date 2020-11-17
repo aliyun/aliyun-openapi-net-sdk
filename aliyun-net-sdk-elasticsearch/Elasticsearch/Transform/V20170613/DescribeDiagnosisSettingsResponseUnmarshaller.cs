@@ -26,16 +26,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class DescribeDiagnosisSettingsResponseUnmarshaller
     {
-        public static DescribeDiagnosisSettingsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDiagnosisSettingsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDiagnosisSettingsResponse describeDiagnosisSettingsResponse = new DescribeDiagnosisSettingsResponse();
 
-			describeDiagnosisSettingsResponse.HttpResponse = context.HttpResponse;
-			describeDiagnosisSettingsResponse.RequestId = context.StringValue("DescribeDiagnosisSettings.RequestId");
+			describeDiagnosisSettingsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDiagnosisSettingsResponse.RequestId = _ctx.StringValue("DescribeDiagnosisSettings.RequestId");
 
 			DescribeDiagnosisSettingsResponse.DescribeDiagnosisSettings_Result result = new DescribeDiagnosisSettingsResponse.DescribeDiagnosisSettings_Result();
-			result.Scene = context.StringValue("DescribeDiagnosisSettings.Result.scene");
-			result.UpdateTime = context.LongValue("DescribeDiagnosisSettings.Result.updateTime");
+			result.Scene = _ctx.StringValue("DescribeDiagnosisSettings.Result.scene");
+			result.UpdateTime = _ctx.LongValue("DescribeDiagnosisSettings.Result.updateTime");
 			describeDiagnosisSettingsResponse.Result = result;
         
 			return describeDiagnosisSettingsResponse;

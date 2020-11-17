@@ -26,16 +26,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class InstallSystemPluginResponseUnmarshaller
     {
-        public static InstallSystemPluginResponse Unmarshall(UnmarshallerContext context)
+        public static InstallSystemPluginResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			InstallSystemPluginResponse installSystemPluginResponse = new InstallSystemPluginResponse();
 
-			installSystemPluginResponse.HttpResponse = context.HttpResponse;
-			installSystemPluginResponse.RequestId = context.StringValue("InstallSystemPlugin.RequestId");
+			installSystemPluginResponse.HttpResponse = _ctx.HttpResponse;
+			installSystemPluginResponse.RequestId = _ctx.StringValue("InstallSystemPlugin.RequestId");
 
 			List<string> installSystemPluginResponse_result = new List<string>();
-			for (int i = 0; i < context.Length("InstallSystemPlugin.Result.Length"); i++) {
-				installSystemPluginResponse_result.Add(context.StringValue("InstallSystemPlugin.Result["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("InstallSystemPlugin.Result.Length"); i++) {
+				installSystemPluginResponse_result.Add(_ctx.StringValue("InstallSystemPlugin.Result["+ i +"]"));
 			}
 			installSystemPluginResponse.Result = installSystemPluginResponse_result;
         

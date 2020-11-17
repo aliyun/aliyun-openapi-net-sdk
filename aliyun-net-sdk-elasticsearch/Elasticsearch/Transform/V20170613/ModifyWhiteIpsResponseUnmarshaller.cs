@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ModifyWhiteIpsResponseUnmarshaller
     {
-        public static ModifyWhiteIpsResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyWhiteIpsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyWhiteIpsResponse modifyWhiteIpsResponse = new ModifyWhiteIpsResponse();
 
-			modifyWhiteIpsResponse.HttpResponse = context.HttpResponse;
-			modifyWhiteIpsResponse.RequestId = context.StringValue("ModifyWhiteIps.RequestId");
-			modifyWhiteIpsResponse.Result = context.BooleanValue("ModifyWhiteIps.Result");
+			modifyWhiteIpsResponse.HttpResponse = _ctx.HttpResponse;
+			modifyWhiteIpsResponse.RequestId = _ctx.StringValue("ModifyWhiteIps.RequestId");
+			modifyWhiteIpsResponse.Result = _ctx.BooleanValue("ModifyWhiteIps.Result");
         
 			return modifyWhiteIpsResponse;
         }

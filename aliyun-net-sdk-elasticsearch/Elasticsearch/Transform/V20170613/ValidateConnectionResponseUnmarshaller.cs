@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ValidateConnectionResponseUnmarshaller
     {
-        public static ValidateConnectionResponse Unmarshall(UnmarshallerContext context)
+        public static ValidateConnectionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ValidateConnectionResponse validateConnectionResponse = new ValidateConnectionResponse();
 
-			validateConnectionResponse.HttpResponse = context.HttpResponse;
-			validateConnectionResponse.RequestId = context.StringValue("ValidateConnection.RequestId");
-			validateConnectionResponse.Result = context.BooleanValue("ValidateConnection.Result");
+			validateConnectionResponse.HttpResponse = _ctx.HttpResponse;
+			validateConnectionResponse.RequestId = _ctx.StringValue("ValidateConnection.RequestId");
+			validateConnectionResponse.Result = _ctx.BooleanValue("ValidateConnection.Result");
         
 			return validateConnectionResponse;
         }

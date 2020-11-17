@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateKibanaSettingsResponseUnmarshaller
     {
-        public static UpdateKibanaSettingsResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateKibanaSettingsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateKibanaSettingsResponse updateKibanaSettingsResponse = new UpdateKibanaSettingsResponse();
 
-			updateKibanaSettingsResponse.HttpResponse = context.HttpResponse;
-			updateKibanaSettingsResponse.RequestId = context.StringValue("UpdateKibanaSettings.RequestId");
-			updateKibanaSettingsResponse.Result = context.BooleanValue("UpdateKibanaSettings.Result");
+			updateKibanaSettingsResponse.HttpResponse = _ctx.HttpResponse;
+			updateKibanaSettingsResponse.RequestId = _ctx.StringValue("UpdateKibanaSettings.RequestId");
+			updateKibanaSettingsResponse.Result = _ctx.BooleanValue("UpdateKibanaSettings.Result");
         
 			return updateKibanaSettingsResponse;
         }

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class DeleteCollectorResponseUnmarshaller
     {
-        public static DeleteCollectorResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteCollectorResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteCollectorResponse deleteCollectorResponse = new DeleteCollectorResponse();
 
-			deleteCollectorResponse.HttpResponse = context.HttpResponse;
-			deleteCollectorResponse.RequestId = context.StringValue("DeleteCollector.RequestId");
-			deleteCollectorResponse.Result = context.BooleanValue("DeleteCollector.Result");
+			deleteCollectorResponse.HttpResponse = _ctx.HttpResponse;
+			deleteCollectorResponse.RequestId = _ctx.StringValue("DeleteCollector.RequestId");
+			deleteCollectorResponse.Result = _ctx.BooleanValue("DeleteCollector.Result");
         
 			return deleteCollectorResponse;
         }

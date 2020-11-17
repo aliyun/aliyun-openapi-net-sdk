@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class StartCollectorResponseUnmarshaller
     {
-        public static StartCollectorResponse Unmarshall(UnmarshallerContext context)
+        public static StartCollectorResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartCollectorResponse startCollectorResponse = new StartCollectorResponse();
 
-			startCollectorResponse.HttpResponse = context.HttpResponse;
-			startCollectorResponse.RequestId = context.StringValue("StartCollector.RequestId");
-			startCollectorResponse.Result = context.BooleanValue("StartCollector.Result");
+			startCollectorResponse.HttpResponse = _ctx.HttpResponse;
+			startCollectorResponse.RequestId = _ctx.StringValue("StartCollector.RequestId");
+			startCollectorResponse.Result = _ctx.BooleanValue("StartCollector.Result");
         
 			return startCollectorResponse;
         }

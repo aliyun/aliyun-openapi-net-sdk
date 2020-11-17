@@ -26,18 +26,18 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdatePublicWhiteIpsResponseUnmarshaller
     {
-        public static UpdatePublicWhiteIpsResponse Unmarshall(UnmarshallerContext context)
+        public static UpdatePublicWhiteIpsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdatePublicWhiteIpsResponse updatePublicWhiteIpsResponse = new UpdatePublicWhiteIpsResponse();
 
-			updatePublicWhiteIpsResponse.HttpResponse = context.HttpResponse;
-			updatePublicWhiteIpsResponse.RequestId = context.StringValue("UpdatePublicWhiteIps.RequestId");
+			updatePublicWhiteIpsResponse.HttpResponse = _ctx.HttpResponse;
+			updatePublicWhiteIpsResponse.RequestId = _ctx.StringValue("UpdatePublicWhiteIps.RequestId");
 
 			UpdatePublicWhiteIpsResponse.UpdatePublicWhiteIps_Result result = new UpdatePublicWhiteIpsResponse.UpdatePublicWhiteIps_Result();
 
 			List<string> result_publicIpWhitelist = new List<string>();
-			for (int i = 0; i < context.Length("UpdatePublicWhiteIps.Result.PublicIpWhitelist.Length"); i++) {
-				result_publicIpWhitelist.Add(context.StringValue("UpdatePublicWhiteIps.Result.PublicIpWhitelist["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("UpdatePublicWhiteIps.Result.PublicIpWhitelist.Length"); i++) {
+				result_publicIpWhitelist.Add(_ctx.StringValue("UpdatePublicWhiteIps.Result.PublicIpWhitelist["+ i +"]"));
 			}
 			result.PublicIpWhitelist = result_publicIpWhitelist;
 			updatePublicWhiteIpsResponse.Result = result;

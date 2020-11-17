@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class OpenDiagnosisResponseUnmarshaller
     {
-        public static OpenDiagnosisResponse Unmarshall(UnmarshallerContext context)
+        public static OpenDiagnosisResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			OpenDiagnosisResponse openDiagnosisResponse = new OpenDiagnosisResponse();
 
-			openDiagnosisResponse.HttpResponse = context.HttpResponse;
-			openDiagnosisResponse.RequestId = context.StringValue("OpenDiagnosis.RequestId");
-			openDiagnosisResponse.Result = context.BooleanValue("OpenDiagnosis.Result");
+			openDiagnosisResponse.HttpResponse = _ctx.HttpResponse;
+			openDiagnosisResponse.RequestId = _ctx.StringValue("OpenDiagnosis.RequestId");
+			openDiagnosisResponse.Result = _ctx.BooleanValue("OpenDiagnosis.Result");
         
 			return openDiagnosisResponse;
         }

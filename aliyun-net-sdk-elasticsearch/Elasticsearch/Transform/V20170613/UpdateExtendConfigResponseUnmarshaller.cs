@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateExtendConfigResponseUnmarshaller
     {
-        public static UpdateExtendConfigResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateExtendConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateExtendConfigResponse updateExtendConfigResponse = new UpdateExtendConfigResponse();
 
-			updateExtendConfigResponse.HttpResponse = context.HttpResponse;
-			updateExtendConfigResponse.RequestId = context.StringValue("UpdateExtendConfig.RequestId");
-			updateExtendConfigResponse.Result = context.BooleanValue("UpdateExtendConfig.Result");
+			updateExtendConfigResponse.HttpResponse = _ctx.HttpResponse;
+			updateExtendConfigResponse.RequestId = _ctx.StringValue("UpdateExtendConfig.RequestId");
+			updateExtendConfigResponse.Result = _ctx.BooleanValue("UpdateExtendConfig.Result");
         
 			return updateExtendConfigResponse;
         }

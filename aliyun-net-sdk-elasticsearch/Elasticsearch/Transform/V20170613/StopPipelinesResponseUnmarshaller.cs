@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class StopPipelinesResponseUnmarshaller
     {
-        public static StopPipelinesResponse Unmarshall(UnmarshallerContext context)
+        public static StopPipelinesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopPipelinesResponse stopPipelinesResponse = new StopPipelinesResponse();
 
-			stopPipelinesResponse.HttpResponse = context.HttpResponse;
-			stopPipelinesResponse.RequestId = context.StringValue("StopPipelines.RequestId");
-			stopPipelinesResponse.Result = context.BooleanValue("StopPipelines.Result");
+			stopPipelinesResponse.HttpResponse = _ctx.HttpResponse;
+			stopPipelinesResponse.RequestId = _ctx.StringValue("StopPipelines.RequestId");
+			stopPipelinesResponse.Result = _ctx.BooleanValue("StopPipelines.Result");
         
 			return stopPipelinesResponse;
         }

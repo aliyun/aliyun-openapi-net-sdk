@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ValidateShrinkNodesResponseUnmarshaller
     {
-        public static ValidateShrinkNodesResponse Unmarshall(UnmarshallerContext context)
+        public static ValidateShrinkNodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ValidateShrinkNodesResponse validateShrinkNodesResponse = new ValidateShrinkNodesResponse();
 
-			validateShrinkNodesResponse.HttpResponse = context.HttpResponse;
-			validateShrinkNodesResponse.RequestId = context.StringValue("ValidateShrinkNodes.RequestId");
-			validateShrinkNodesResponse.Result = context.BooleanValue("ValidateShrinkNodes.Result");
+			validateShrinkNodesResponse.HttpResponse = _ctx.HttpResponse;
+			validateShrinkNodesResponse.RequestId = _ctx.StringValue("ValidateShrinkNodes.RequestId");
+			validateShrinkNodesResponse.Result = _ctx.BooleanValue("ValidateShrinkNodes.Result");
         
 			return validateShrinkNodesResponse;
         }

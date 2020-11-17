@@ -26,24 +26,24 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ListPipelineResponseUnmarshaller
     {
-        public static ListPipelineResponse Unmarshall(UnmarshallerContext context)
+        public static ListPipelineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListPipelineResponse listPipelineResponse = new ListPipelineResponse();
 
-			listPipelineResponse.HttpResponse = context.HttpResponse;
-			listPipelineResponse.RequestId = context.StringValue("ListPipeline.RequestId");
+			listPipelineResponse.HttpResponse = _ctx.HttpResponse;
+			listPipelineResponse.RequestId = _ctx.StringValue("ListPipeline.RequestId");
 
 			ListPipelineResponse.ListPipeline_Headers headers = new ListPipelineResponse.ListPipeline_Headers();
-			headers.XTotalCount = context.IntegerValue("ListPipeline.Headers.X-Total-Count");
+			headers.XTotalCount = _ctx.IntegerValue("ListPipeline.Headers.X-Total-Count");
 			listPipelineResponse.Headers = headers;
 
 			List<ListPipelineResponse.ListPipeline_ResultItem> listPipelineResponse_result = new List<ListPipelineResponse.ListPipeline_ResultItem>();
-			for (int i = 0; i < context.Length("ListPipeline.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListPipeline.Result.Length"); i++) {
 				ListPipelineResponse.ListPipeline_ResultItem resultItem = new ListPipelineResponse.ListPipeline_ResultItem();
-				resultItem.PipelineId = context.StringValue("ListPipeline.Result["+ i +"].pipelineId");
-				resultItem.PipelineStatus = context.StringValue("ListPipeline.Result["+ i +"].pipelineStatus");
-				resultItem.GmtCreatedTime = context.StringValue("ListPipeline.Result["+ i +"].gmtCreatedTime");
-				resultItem.GmtUpdateTime = context.StringValue("ListPipeline.Result["+ i +"].gmtUpdateTime");
+				resultItem.PipelineId = _ctx.StringValue("ListPipeline.Result["+ i +"].pipelineId");
+				resultItem.PipelineStatus = _ctx.StringValue("ListPipeline.Result["+ i +"].pipelineStatus");
+				resultItem.GmtCreatedTime = _ctx.StringValue("ListPipeline.Result["+ i +"].gmtCreatedTime");
+				resultItem.GmtUpdateTime = _ctx.StringValue("ListPipeline.Result["+ i +"].gmtUpdateTime");
 
 				listPipelineResponse_result.Add(resultItem);
 			}

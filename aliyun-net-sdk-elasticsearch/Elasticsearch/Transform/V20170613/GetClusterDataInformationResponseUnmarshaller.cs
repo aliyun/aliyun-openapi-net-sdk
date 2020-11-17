@@ -26,35 +26,35 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class GetClusterDataInformationResponseUnmarshaller
     {
-        public static GetClusterDataInformationResponse Unmarshall(UnmarshallerContext context)
+        public static GetClusterDataInformationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetClusterDataInformationResponse getClusterDataInformationResponse = new GetClusterDataInformationResponse();
 
-			getClusterDataInformationResponse.HttpResponse = context.HttpResponse;
-			getClusterDataInformationResponse.RequestId = context.StringValue("GetClusterDataInformation.RequestId");
+			getClusterDataInformationResponse.HttpResponse = _ctx.HttpResponse;
+			getClusterDataInformationResponse.RequestId = _ctx.StringValue("GetClusterDataInformation.RequestId");
 
 			GetClusterDataInformationResponse.GetClusterDataInformation_Result result = new GetClusterDataInformationResponse.GetClusterDataInformation_Result();
-			result.Connectable = context.BooleanValue("GetClusterDataInformation.Result.connectable");
+			result.Connectable = _ctx.BooleanValue("GetClusterDataInformation.Result.connectable");
 
 			GetClusterDataInformationResponse.GetClusterDataInformation_Result.GetClusterDataInformation_MetaInfo metaInfo = new GetClusterDataInformationResponse.GetClusterDataInformation_Result.GetClusterDataInformation_MetaInfo();
-			metaInfo.Settings = context.StringValue("GetClusterDataInformation.Result.MetaInfo.settings");
-			metaInfo.Mapping = context.StringValue("GetClusterDataInformation.Result.MetaInfo.mapping");
+			metaInfo.Settings = _ctx.StringValue("GetClusterDataInformation.Result.MetaInfo.settings");
+			metaInfo.Mapping = _ctx.StringValue("GetClusterDataInformation.Result.MetaInfo.mapping");
 
 			List<string> metaInfo_indices = new List<string>();
-			for (int i = 0; i < context.Length("GetClusterDataInformation.Result.MetaInfo.Indices.Length"); i++) {
-				metaInfo_indices.Add(context.StringValue("GetClusterDataInformation.Result.MetaInfo.Indices["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetClusterDataInformation.Result.MetaInfo.Indices.Length"); i++) {
+				metaInfo_indices.Add(_ctx.StringValue("GetClusterDataInformation.Result.MetaInfo.Indices["+ i +"]"));
 			}
 			metaInfo.Indices = metaInfo_indices;
 
 			List<string> metaInfo_fields = new List<string>();
-			for (int i = 0; i < context.Length("GetClusterDataInformation.Result.MetaInfo.Fields.Length"); i++) {
-				metaInfo_fields.Add(context.StringValue("GetClusterDataInformation.Result.MetaInfo.Fields["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetClusterDataInformation.Result.MetaInfo.Fields.Length"); i++) {
+				metaInfo_fields.Add(_ctx.StringValue("GetClusterDataInformation.Result.MetaInfo.Fields["+ i +"]"));
 			}
 			metaInfo.Fields = metaInfo_fields;
 
 			List<string> metaInfo_typeName = new List<string>();
-			for (int i = 0; i < context.Length("GetClusterDataInformation.Result.MetaInfo.TypeName.Length"); i++) {
-				metaInfo_typeName.Add(context.StringValue("GetClusterDataInformation.Result.MetaInfo.TypeName["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetClusterDataInformation.Result.MetaInfo.TypeName.Length"); i++) {
+				metaInfo_typeName.Add(_ctx.StringValue("GetClusterDataInformation.Result.MetaInfo.TypeName["+ i +"]"));
 			}
 			metaInfo.TypeName = metaInfo_typeName;
 			result.MetaInfo = metaInfo;

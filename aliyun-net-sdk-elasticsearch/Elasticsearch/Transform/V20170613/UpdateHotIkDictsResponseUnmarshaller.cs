@@ -26,20 +26,20 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateHotIkDictsResponseUnmarshaller
     {
-        public static UpdateHotIkDictsResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateHotIkDictsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateHotIkDictsResponse updateHotIkDictsResponse = new UpdateHotIkDictsResponse();
 
-			updateHotIkDictsResponse.HttpResponse = context.HttpResponse;
-			updateHotIkDictsResponse.RequestId = context.StringValue("UpdateHotIkDicts.RequestId");
+			updateHotIkDictsResponse.HttpResponse = _ctx.HttpResponse;
+			updateHotIkDictsResponse.RequestId = _ctx.StringValue("UpdateHotIkDicts.RequestId");
 
 			List<UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList> updateHotIkDictsResponse_result = new List<UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList>();
-			for (int i = 0; i < context.Length("UpdateHotIkDicts.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("UpdateHotIkDicts.Result.Length"); i++) {
 				UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList dictList = new UpdateHotIkDictsResponse.UpdateHotIkDicts_DictList();
-				dictList.Name = context.StringValue("UpdateHotIkDicts.Result["+ i +"].name");
-				dictList.FileSize = context.LongValue("UpdateHotIkDicts.Result["+ i +"].fileSize");
-				dictList.Type = context.StringValue("UpdateHotIkDicts.Result["+ i +"].type");
-				dictList.SourceType = context.StringValue("UpdateHotIkDicts.Result["+ i +"].sourceType");
+				dictList.Name = _ctx.StringValue("UpdateHotIkDicts.Result["+ i +"].name");
+				dictList.FileSize = _ctx.LongValue("UpdateHotIkDicts.Result["+ i +"].fileSize");
+				dictList.Type = _ctx.StringValue("UpdateHotIkDicts.Result["+ i +"].type");
+				dictList.SourceType = _ctx.StringValue("UpdateHotIkDicts.Result["+ i +"].sourceType");
 
 				updateHotIkDictsResponse_result.Add(dictList);
 			}
