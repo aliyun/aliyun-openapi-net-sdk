@@ -139,6 +139,8 @@ namespace Aliyun.Acs.Config.Model.V20190108
 
 				private string tags;
 
+				private string resourceEventType;
+
 				public long? AccountId
 				{
 					get
@@ -280,6 +282,18 @@ namespace Aliyun.Acs.Config.Model.V20190108
 					set	
 					{
 						tags = value;
+					}
+				}
+
+				public string ResourceEventType
+				{
+					get
+					{
+						return resourceEventType;
+					}
+					set	
+					{
+						resourceEventType = value;
 					}
 				}
 			}

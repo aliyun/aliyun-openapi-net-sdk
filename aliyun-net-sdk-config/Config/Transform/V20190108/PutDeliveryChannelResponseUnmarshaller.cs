@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 {
     public class PutDeliveryChannelResponseUnmarshaller
     {
-        public static PutDeliveryChannelResponse Unmarshall(UnmarshallerContext context)
+        public static PutDeliveryChannelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PutDeliveryChannelResponse putDeliveryChannelResponse = new PutDeliveryChannelResponse();
 
-			putDeliveryChannelResponse.HttpResponse = context.HttpResponse;
-			putDeliveryChannelResponse.RequestId = context.StringValue("PutDeliveryChannel.RequestId");
-			putDeliveryChannelResponse.DeliveryChannelId = context.StringValue("PutDeliveryChannel.DeliveryChannelId");
+			putDeliveryChannelResponse.HttpResponse = _ctx.HttpResponse;
+			putDeliveryChannelResponse.RequestId = _ctx.StringValue("PutDeliveryChannel.RequestId");
+			putDeliveryChannelResponse.DeliveryChannelId = _ctx.StringValue("PutDeliveryChannel.DeliveryChannelId");
         
 			return putDeliveryChannelResponse;
         }

@@ -26,30 +26,30 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 {
     public class ListDiscoveredResourcesResponseUnmarshaller
     {
-        public static ListDiscoveredResourcesResponse Unmarshall(UnmarshallerContext context)
+        public static ListDiscoveredResourcesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListDiscoveredResourcesResponse listDiscoveredResourcesResponse = new ListDiscoveredResourcesResponse();
 
-			listDiscoveredResourcesResponse.HttpResponse = context.HttpResponse;
-			listDiscoveredResourcesResponse.RequestId = context.StringValue("ListDiscoveredResources.RequestId");
+			listDiscoveredResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			listDiscoveredResourcesResponse.RequestId = _ctx.StringValue("ListDiscoveredResources.RequestId");
 
 			ListDiscoveredResourcesResponse.ListDiscoveredResources_DiscoveredResourceProfiles discoveredResourceProfiles = new ListDiscoveredResourcesResponse.ListDiscoveredResources_DiscoveredResourceProfiles();
-			discoveredResourceProfiles.PageNumber = context.IntegerValue("ListDiscoveredResources.DiscoveredResourceProfiles.PageNumber");
-			discoveredResourceProfiles.PageSize = context.IntegerValue("ListDiscoveredResources.DiscoveredResourceProfiles.PageSize");
-			discoveredResourceProfiles.TotalCount = context.IntegerValue("ListDiscoveredResources.DiscoveredResourceProfiles.TotalCount");
+			discoveredResourceProfiles.PageNumber = _ctx.IntegerValue("ListDiscoveredResources.DiscoveredResourceProfiles.PageNumber");
+			discoveredResourceProfiles.PageSize = _ctx.IntegerValue("ListDiscoveredResources.DiscoveredResourceProfiles.PageSize");
+			discoveredResourceProfiles.TotalCount = _ctx.IntegerValue("ListDiscoveredResources.DiscoveredResourceProfiles.TotalCount");
 
 			List<ListDiscoveredResourcesResponse.ListDiscoveredResources_DiscoveredResourceProfiles.ListDiscoveredResources_DiscoveredResourceProfile> discoveredResourceProfiles_discoveredResourceProfileList = new List<ListDiscoveredResourcesResponse.ListDiscoveredResources_DiscoveredResourceProfiles.ListDiscoveredResources_DiscoveredResourceProfile>();
-			for (int i = 0; i < context.Length("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList.Length"); i++) {
 				ListDiscoveredResourcesResponse.ListDiscoveredResources_DiscoveredResourceProfiles.ListDiscoveredResources_DiscoveredResourceProfile discoveredResourceProfile = new ListDiscoveredResourcesResponse.ListDiscoveredResources_DiscoveredResourceProfiles.ListDiscoveredResources_DiscoveredResourceProfile();
-				discoveredResourceProfile.AccountId = context.LongValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].AccountId");
-				discoveredResourceProfile.Region = context.StringValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Region");
-				discoveredResourceProfile.ResourceCreationTime = context.LongValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceCreationTime");
-				discoveredResourceProfile.ResourceDeleted = context.IntegerValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceDeleted");
-				discoveredResourceProfile.ResourceId = context.StringValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceId");
-				discoveredResourceProfile.ResourceName = context.StringValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceName");
-				discoveredResourceProfile.ResourceStatus = context.StringValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceStatus");
-				discoveredResourceProfile.ResourceType = context.StringValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceType");
-				discoveredResourceProfile.Tags = context.StringValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Tags");
+				discoveredResourceProfile.AccountId = _ctx.LongValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].AccountId");
+				discoveredResourceProfile.Region = _ctx.StringValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Region");
+				discoveredResourceProfile.ResourceCreationTime = _ctx.LongValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceCreationTime");
+				discoveredResourceProfile.ResourceDeleted = _ctx.IntegerValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceDeleted");
+				discoveredResourceProfile.ResourceId = _ctx.StringValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceId");
+				discoveredResourceProfile.ResourceName = _ctx.StringValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceName");
+				discoveredResourceProfile.ResourceStatus = _ctx.StringValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceStatus");
+				discoveredResourceProfile.ResourceType = _ctx.StringValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].ResourceType");
+				discoveredResourceProfile.Tags = _ctx.StringValue("ListDiscoveredResources.DiscoveredResourceProfiles.DiscoveredResourceProfileList["+ i +"].Tags");
 
 				discoveredResourceProfiles_discoveredResourceProfileList.Add(discoveredResourceProfile);
 			}

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 {
     public class PutEvaluationsResponseUnmarshaller
     {
-        public static PutEvaluationsResponse Unmarshall(UnmarshallerContext context)
+        public static PutEvaluationsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PutEvaluationsResponse putEvaluationsResponse = new PutEvaluationsResponse();
 
-			putEvaluationsResponse.HttpResponse = context.HttpResponse;
-			putEvaluationsResponse.RequestId = context.StringValue("PutEvaluations.RequestId");
-			putEvaluationsResponse.Result = context.BooleanValue("PutEvaluations.Result");
+			putEvaluationsResponse.HttpResponse = _ctx.HttpResponse;
+			putEvaluationsResponse.RequestId = _ctx.StringValue("PutEvaluations.RequestId");
+			putEvaluationsResponse.Result = _ctx.BooleanValue("PutEvaluations.Result");
         
 			return putEvaluationsResponse;
         }

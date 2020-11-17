@@ -74,6 +74,8 @@ namespace Aliyun.Acs.Config.Model.V20190108
 
 			private int? riskLevel;
 
+			private string maximumExecutionFrequency;
+
 			private DescribeConfigRule_CreateBy createBy;
 
 			private DescribeConfigRule_ConfigRuleEvaluationStatus configRuleEvaluationStatus;
@@ -189,6 +191,18 @@ namespace Aliyun.Acs.Config.Model.V20190108
 				set	
 				{
 					riskLevel = value;
+				}
+			}
+
+			public string MaximumExecutionFrequency
+			{
+				get
+				{
+					return maximumExecutionFrequency;
+				}
+				set	
+				{
+					maximumExecutionFrequency = value;
 				}
 			}
 
