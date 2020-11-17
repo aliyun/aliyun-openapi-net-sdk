@@ -16,25 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.polardb.Model.V20170801;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.polardb.Transform.V20170801
+namespace Aliyun.Acs.polardb.Model.V20170801
 {
-    public class DescribeDBClusterMonitorResponseUnmarshaller
-    {
-        public static DescribeDBClusterMonitorResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			DescribeDBClusterMonitorResponse describeDBClusterMonitorResponse = new DescribeDBClusterMonitorResponse();
+	public class ModifyDBClusterPrimaryZoneResponse : AcsResponse
+	{
 
-			describeDBClusterMonitorResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBClusterMonitorResponse.Period = _ctx.StringValue("DescribeDBClusterMonitor.Period");
-			describeDBClusterMonitorResponse.RequestId = _ctx.StringValue("DescribeDBClusterMonitor.RequestId");
-        
-			return describeDBClusterMonitorResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

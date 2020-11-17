@@ -26,14 +26,14 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class ModifyDBNodeClassResponseUnmarshaller
     {
-        public static ModifyDBNodeClassResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDBNodeClassResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDBNodeClassResponse modifyDBNodeClassResponse = new ModifyDBNodeClassResponse();
 
-			modifyDBNodeClassResponse.HttpResponse = context.HttpResponse;
-			modifyDBNodeClassResponse.RequestId = context.StringValue("ModifyDBNodeClass.RequestId");
-			modifyDBNodeClassResponse.DBClusterId = context.StringValue("ModifyDBNodeClass.DBClusterId");
-			modifyDBNodeClassResponse.OrderId = context.StringValue("ModifyDBNodeClass.OrderId");
+			modifyDBNodeClassResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDBNodeClassResponse.RequestId = _ctx.StringValue("ModifyDBNodeClass.RequestId");
+			modifyDBNodeClassResponse.DBClusterId = _ctx.StringValue("ModifyDBNodeClass.DBClusterId");
+			modifyDBNodeClassResponse.OrderId = _ctx.StringValue("ModifyDBNodeClass.OrderId");
         
 			return modifyDBNodeClassResponse;
         }

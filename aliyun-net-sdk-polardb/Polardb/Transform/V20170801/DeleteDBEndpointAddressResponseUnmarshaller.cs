@@ -26,12 +26,12 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class DeleteDBEndpointAddressResponseUnmarshaller
     {
-        public static DeleteDBEndpointAddressResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDBEndpointAddressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDBEndpointAddressResponse deleteDBEndpointAddressResponse = new DeleteDBEndpointAddressResponse();
 
-			deleteDBEndpointAddressResponse.HttpResponse = context.HttpResponse;
-			deleteDBEndpointAddressResponse.RequestId = context.StringValue("DeleteDBEndpointAddress.RequestId");
+			deleteDBEndpointAddressResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDBEndpointAddressResponse.RequestId = _ctx.StringValue("DeleteDBEndpointAddress.RequestId");
         
 			return deleteDBEndpointAddressResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class CreateDBEndpointAddressResponseUnmarshaller
     {
-        public static CreateDBEndpointAddressResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDBEndpointAddressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDBEndpointAddressResponse createDBEndpointAddressResponse = new CreateDBEndpointAddressResponse();
 
-			createDBEndpointAddressResponse.HttpResponse = context.HttpResponse;
-			createDBEndpointAddressResponse.RequestId = context.StringValue("CreateDBEndpointAddress.RequestId");
+			createDBEndpointAddressResponse.HttpResponse = _ctx.HttpResponse;
+			createDBEndpointAddressResponse.RequestId = _ctx.StringValue("CreateDBEndpointAddress.RequestId");
         
 			return createDBEndpointAddressResponse;
         }

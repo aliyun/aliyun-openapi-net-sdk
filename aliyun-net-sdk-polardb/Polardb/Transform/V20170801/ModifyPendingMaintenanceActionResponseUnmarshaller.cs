@@ -26,13 +26,13 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class ModifyPendingMaintenanceActionResponseUnmarshaller
     {
-        public static ModifyPendingMaintenanceActionResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyPendingMaintenanceActionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyPendingMaintenanceActionResponse modifyPendingMaintenanceActionResponse = new ModifyPendingMaintenanceActionResponse();
 
-			modifyPendingMaintenanceActionResponse.HttpResponse = context.HttpResponse;
-			modifyPendingMaintenanceActionResponse.RequestId = context.StringValue("ModifyPendingMaintenanceAction.RequestId");
-			modifyPendingMaintenanceActionResponse.Ids = context.StringValue("ModifyPendingMaintenanceAction.Ids");
+			modifyPendingMaintenanceActionResponse.HttpResponse = _ctx.HttpResponse;
+			modifyPendingMaintenanceActionResponse.RequestId = _ctx.StringValue("ModifyPendingMaintenanceAction.RequestId");
+			modifyPendingMaintenanceActionResponse.Ids = _ctx.StringValue("ModifyPendingMaintenanceAction.Ids");
         
 			return modifyPendingMaintenanceActionResponse;
         }

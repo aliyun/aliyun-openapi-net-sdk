@@ -24,17 +24,16 @@ using Aliyun.Acs.polardb.Model.V20170801;
 
 namespace Aliyun.Acs.polardb.Transform.V20170801
 {
-    public class DescribeDBClusterMonitorResponseUnmarshaller
+    public class ModifyDBClusterPrimaryZoneResponseUnmarshaller
     {
-        public static DescribeDBClusterMonitorResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ModifyDBClusterPrimaryZoneResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeDBClusterMonitorResponse describeDBClusterMonitorResponse = new DescribeDBClusterMonitorResponse();
+			ModifyDBClusterPrimaryZoneResponse modifyDBClusterPrimaryZoneResponse = new ModifyDBClusterPrimaryZoneResponse();
 
-			describeDBClusterMonitorResponse.HttpResponse = _ctx.HttpResponse;
-			describeDBClusterMonitorResponse.Period = _ctx.StringValue("DescribeDBClusterMonitor.Period");
-			describeDBClusterMonitorResponse.RequestId = _ctx.StringValue("DescribeDBClusterMonitor.RequestId");
+			modifyDBClusterPrimaryZoneResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDBClusterPrimaryZoneResponse.RequestId = _ctx.StringValue("ModifyDBClusterPrimaryZone.RequestId");
         
-			return describeDBClusterMonitorResponse;
+			return modifyDBClusterPrimaryZoneResponse;
         }
     }
 }

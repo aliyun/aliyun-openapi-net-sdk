@@ -26,12 +26,12 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class DeleteDBClusterResponseUnmarshaller
     {
-        public static DeleteDBClusterResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDBClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDBClusterResponse deleteDBClusterResponse = new DeleteDBClusterResponse();
 
-			deleteDBClusterResponse.HttpResponse = context.HttpResponse;
-			deleteDBClusterResponse.RequestId = context.StringValue("DeleteDBCluster.RequestId");
+			deleteDBClusterResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDBClusterResponse.RequestId = _ctx.StringValue("DeleteDBCluster.RequestId");
         
 			return deleteDBClusterResponse;
         }

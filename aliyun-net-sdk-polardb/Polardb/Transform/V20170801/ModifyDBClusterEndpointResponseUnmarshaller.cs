@@ -26,12 +26,12 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class ModifyDBClusterEndpointResponseUnmarshaller
     {
-        public static ModifyDBClusterEndpointResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDBClusterEndpointResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDBClusterEndpointResponse modifyDBClusterEndpointResponse = new ModifyDBClusterEndpointResponse();
 
-			modifyDBClusterEndpointResponse.HttpResponse = context.HttpResponse;
-			modifyDBClusterEndpointResponse.RequestId = context.StringValue("ModifyDBClusterEndpoint.RequestId");
+			modifyDBClusterEndpointResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDBClusterEndpointResponse.RequestId = _ctx.StringValue("ModifyDBClusterEndpoint.RequestId");
         
 			return modifyDBClusterEndpointResponse;
         }

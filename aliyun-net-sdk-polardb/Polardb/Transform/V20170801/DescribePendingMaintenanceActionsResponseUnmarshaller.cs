@@ -26,18 +26,18 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class DescribePendingMaintenanceActionsResponseUnmarshaller
     {
-        public static DescribePendingMaintenanceActionsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePendingMaintenanceActionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePendingMaintenanceActionsResponse describePendingMaintenanceActionsResponse = new DescribePendingMaintenanceActionsResponse();
 
-			describePendingMaintenanceActionsResponse.HttpResponse = context.HttpResponse;
-			describePendingMaintenanceActionsResponse.RequestId = context.StringValue("DescribePendingMaintenanceActions.RequestId");
+			describePendingMaintenanceActionsResponse.HttpResponse = _ctx.HttpResponse;
+			describePendingMaintenanceActionsResponse.RequestId = _ctx.StringValue("DescribePendingMaintenanceActions.RequestId");
 
 			List<DescribePendingMaintenanceActionsResponse.DescribePendingMaintenanceActions_Items> describePendingMaintenanceActionsResponse_typeList = new List<DescribePendingMaintenanceActionsResponse.DescribePendingMaintenanceActions_Items>();
-			for (int i = 0; i < context.Length("DescribePendingMaintenanceActions.TypeList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribePendingMaintenanceActions.TypeList.Length"); i++) {
 				DescribePendingMaintenanceActionsResponse.DescribePendingMaintenanceActions_Items items = new DescribePendingMaintenanceActionsResponse.DescribePendingMaintenanceActions_Items();
-				items.TaskType = context.StringValue("DescribePendingMaintenanceActions.TypeList["+ i +"].TaskType");
-				items.Count = context.IntegerValue("DescribePendingMaintenanceActions.TypeList["+ i +"].Count");
+				items.TaskType = _ctx.StringValue("DescribePendingMaintenanceActions.TypeList["+ i +"].TaskType");
+				items.Count = _ctx.IntegerValue("DescribePendingMaintenanceActions.TypeList["+ i +"].Count");
 
 				describePendingMaintenanceActionsResponse_typeList.Add(items);
 			}

@@ -26,29 +26,29 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class DescribeDBClusterAccessWhitelistResponseUnmarshaller
     {
-        public static DescribeDBClusterAccessWhitelistResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBClusterAccessWhitelistResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBClusterAccessWhitelistResponse describeDBClusterAccessWhitelistResponse = new DescribeDBClusterAccessWhitelistResponse();
 
-			describeDBClusterAccessWhitelistResponse.HttpResponse = context.HttpResponse;
-			describeDBClusterAccessWhitelistResponse.RequestId = context.StringValue("DescribeDBClusterAccessWhitelist.RequestId");
+			describeDBClusterAccessWhitelistResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBClusterAccessWhitelistResponse.RequestId = _ctx.StringValue("DescribeDBClusterAccessWhitelist.RequestId");
 
 			List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterIPArray> describeDBClusterAccessWhitelistResponse_items = new List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterIPArray>();
-			for (int i = 0; i < context.Length("DescribeDBClusterAccessWhitelist.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDBClusterAccessWhitelist.Items.Length"); i++) {
 				DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterIPArray dBClusterIPArray = new DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterIPArray();
-				dBClusterIPArray.DBClusterIPArrayName = context.StringValue("DescribeDBClusterAccessWhitelist.Items["+ i +"].DBClusterIPArrayName");
-				dBClusterIPArray.DBClusterIPArrayAttribute = context.StringValue("DescribeDBClusterAccessWhitelist.Items["+ i +"].DBClusterIPArrayAttribute");
-				dBClusterIPArray.SecurityIps = context.StringValue("DescribeDBClusterAccessWhitelist.Items["+ i +"].SecurityIps");
+				dBClusterIPArray.DBClusterIPArrayName = _ctx.StringValue("DescribeDBClusterAccessWhitelist.Items["+ i +"].DBClusterIPArrayName");
+				dBClusterIPArray.DBClusterIPArrayAttribute = _ctx.StringValue("DescribeDBClusterAccessWhitelist.Items["+ i +"].DBClusterIPArrayAttribute");
+				dBClusterIPArray.SecurityIps = _ctx.StringValue("DescribeDBClusterAccessWhitelist.Items["+ i +"].SecurityIps");
 
 				describeDBClusterAccessWhitelistResponse_items.Add(dBClusterIPArray);
 			}
 			describeDBClusterAccessWhitelistResponse.Items = describeDBClusterAccessWhitelistResponse_items;
 
 			List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup> describeDBClusterAccessWhitelistResponse_dBClusterSecurityGroups = new List<DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup>();
-			for (int i = 0; i < context.Length("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups.Length"); i++) {
 				DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup dBClusterSecurityGroup = new DescribeDBClusterAccessWhitelistResponse.DescribeDBClusterAccessWhitelist_DBClusterSecurityGroup();
-				dBClusterSecurityGroup.SecurityGroupId = context.StringValue("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups["+ i +"].SecurityGroupId");
-				dBClusterSecurityGroup.SecurityGroupName = context.StringValue("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups["+ i +"].SecurityGroupName");
+				dBClusterSecurityGroup.SecurityGroupId = _ctx.StringValue("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups["+ i +"].SecurityGroupId");
+				dBClusterSecurityGroup.SecurityGroupName = _ctx.StringValue("DescribeDBClusterAccessWhitelist.DBClusterSecurityGroups["+ i +"].SecurityGroupName");
 
 				describeDBClusterAccessWhitelistResponse_dBClusterSecurityGroups.Add(dBClusterSecurityGroup);
 			}

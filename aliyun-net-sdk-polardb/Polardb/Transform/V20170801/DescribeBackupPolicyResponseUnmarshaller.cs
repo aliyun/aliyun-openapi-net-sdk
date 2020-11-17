@@ -26,19 +26,19 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class DescribeBackupPolicyResponseUnmarshaller
     {
-        public static DescribeBackupPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBackupPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBackupPolicyResponse describeBackupPolicyResponse = new DescribeBackupPolicyResponse();
 
-			describeBackupPolicyResponse.HttpResponse = context.HttpResponse;
-			describeBackupPolicyResponse.RequestId = context.StringValue("DescribeBackupPolicy.RequestId");
-			describeBackupPolicyResponse.BackupRetentionPeriod = context.IntegerValue("DescribeBackupPolicy.BackupRetentionPeriod");
-			describeBackupPolicyResponse.PreferredNextBackupTime = context.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
-			describeBackupPolicyResponse.PreferredBackupTime = context.StringValue("DescribeBackupPolicy.PreferredBackupTime");
-			describeBackupPolicyResponse.PreferredBackupPeriod = context.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
-			describeBackupPolicyResponse.DataLevel1BackupRetentionPeriod = context.StringValue("DescribeBackupPolicy.DataLevel1BackupRetentionPeriod");
-			describeBackupPolicyResponse.DataLevel2BackupRetentionPeriod = context.StringValue("DescribeBackupPolicy.DataLevel2BackupRetentionPeriod");
-			describeBackupPolicyResponse.BackupRetentionPolicyOnClusterDeletion = context.StringValue("DescribeBackupPolicy.BackupRetentionPolicyOnClusterDeletion");
+			describeBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			describeBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeBackupPolicy.RequestId");
+			describeBackupPolicyResponse.BackupRetentionPeriod = _ctx.IntegerValue("DescribeBackupPolicy.BackupRetentionPeriod");
+			describeBackupPolicyResponse.PreferredNextBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
+			describeBackupPolicyResponse.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupTime");
+			describeBackupPolicyResponse.PreferredBackupPeriod = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
+			describeBackupPolicyResponse.DataLevel1BackupRetentionPeriod = _ctx.StringValue("DescribeBackupPolicy.DataLevel1BackupRetentionPeriod");
+			describeBackupPolicyResponse.DataLevel2BackupRetentionPeriod = _ctx.StringValue("DescribeBackupPolicy.DataLevel2BackupRetentionPeriod");
+			describeBackupPolicyResponse.BackupRetentionPolicyOnClusterDeletion = _ctx.StringValue("DescribeBackupPolicy.BackupRetentionPolicyOnClusterDeletion");
         
 			return describeBackupPolicyResponse;
         }

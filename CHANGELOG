@@ -1,3 +1,7 @@
+2020-11-17 Version: 1.7.8
+- Support ModifyDBClusterPrimaryZone.
+- Support DescribeGlobalDatabaseNetworks.
+
 2020-11-17 Version: 3.0.13
 - Supported International-26888 Sites Region Endpoints.
 

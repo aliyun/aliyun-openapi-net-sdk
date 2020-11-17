@@ -26,15 +26,15 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class DescribeDBClusterTDEResponseUnmarshaller
     {
-        public static DescribeDBClusterTDEResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBClusterTDEResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBClusterTDEResponse describeDBClusterTDEResponse = new DescribeDBClusterTDEResponse();
 
-			describeDBClusterTDEResponse.HttpResponse = context.HttpResponse;
-			describeDBClusterTDEResponse.RequestId = context.StringValue("DescribeDBClusterTDE.RequestId");
-			describeDBClusterTDEResponse.DBClusterId = context.StringValue("DescribeDBClusterTDE.DBClusterId");
-			describeDBClusterTDEResponse.TDEStatus = context.StringValue("DescribeDBClusterTDE.TDEStatus");
-			describeDBClusterTDEResponse.EncryptionKey = context.StringValue("DescribeDBClusterTDE.EncryptionKey");
+			describeDBClusterTDEResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBClusterTDEResponse.RequestId = _ctx.StringValue("DescribeDBClusterTDE.RequestId");
+			describeDBClusterTDEResponse.DBClusterId = _ctx.StringValue("DescribeDBClusterTDE.DBClusterId");
+			describeDBClusterTDEResponse.TDEStatus = _ctx.StringValue("DescribeDBClusterTDE.TDEStatus");
+			describeDBClusterTDEResponse.EncryptionKey = _ctx.StringValue("DescribeDBClusterTDE.EncryptionKey");
         
 			return describeDBClusterTDEResponse;
         }
