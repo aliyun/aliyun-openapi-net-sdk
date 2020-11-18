@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Dds.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -52,7 +52,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private int? pageSize;
 
-		private int? instanceStatus;
+		private string instanceStatus;
 
 		private string dedicatedHostName;
 
@@ -146,7 +146,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			}
 		}
 
-		public int? InstanceStatus
+		public string InstanceStatus
 		{
 			get
 			{
@@ -155,7 +155,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			set	
 			{
 				instanceStatus = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceStatus", value.ToString());
+				DictionaryUtil.Add(QueryParameters, "InstanceStatus", value);
 			}
 		}
 

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeBackupPolicyResponseUnmarshaller
     {
-        public static DescribeBackupPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBackupPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBackupPolicyResponse describeBackupPolicyResponse = new DescribeBackupPolicyResponse();
 
-			describeBackupPolicyResponse.HttpResponse = context.HttpResponse;
-			describeBackupPolicyResponse.RequestId = context.StringValue("DescribeBackupPolicy.RequestId");
-			describeBackupPolicyResponse.BackupRetentionPeriod = context.StringValue("DescribeBackupPolicy.BackupRetentionPeriod");
-			describeBackupPolicyResponse.PreferredBackupTime = context.StringValue("DescribeBackupPolicy.PreferredBackupTime");
-			describeBackupPolicyResponse.PreferredBackupPeriod = context.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
-			describeBackupPolicyResponse.PreferredNextBackupTime = context.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
+			describeBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			describeBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeBackupPolicy.RequestId");
+			describeBackupPolicyResponse.BackupRetentionPeriod = _ctx.StringValue("DescribeBackupPolicy.BackupRetentionPeriod");
+			describeBackupPolicyResponse.PreferredBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupTime");
+			describeBackupPolicyResponse.PreferredBackupPeriod = _ctx.StringValue("DescribeBackupPolicy.PreferredBackupPeriod");
+			describeBackupPolicyResponse.PreferredNextBackupTime = _ctx.StringValue("DescribeBackupPolicy.PreferredNextBackupTime");
         
 			return describeBackupPolicyResponse;
         }

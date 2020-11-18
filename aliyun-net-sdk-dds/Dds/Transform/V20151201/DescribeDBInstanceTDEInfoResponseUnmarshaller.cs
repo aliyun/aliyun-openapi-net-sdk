@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeDBInstanceTDEInfoResponseUnmarshaller
     {
-        public static DescribeDBInstanceTDEInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBInstanceTDEInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBInstanceTDEInfoResponse describeDBInstanceTDEInfoResponse = new DescribeDBInstanceTDEInfoResponse();
 
-			describeDBInstanceTDEInfoResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceTDEInfoResponse.RequestId = context.StringValue("DescribeDBInstanceTDEInfo.RequestId");
-			describeDBInstanceTDEInfoResponse.TDEStatus = context.StringValue("DescribeDBInstanceTDEInfo.TDEStatus");
+			describeDBInstanceTDEInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInstanceTDEInfoResponse.RequestId = _ctx.StringValue("DescribeDBInstanceTDEInfo.RequestId");
+			describeDBInstanceTDEInfoResponse.TDEStatus = _ctx.StringValue("DescribeDBInstanceTDEInfo.TDEStatus");
         
 			return describeDBInstanceTDEInfoResponse;
         }

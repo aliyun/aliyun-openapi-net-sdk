@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeAuditPolicyResponseUnmarshaller
     {
-        public static DescribeAuditPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAuditPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAuditPolicyResponse describeAuditPolicyResponse = new DescribeAuditPolicyResponse();
 
-			describeAuditPolicyResponse.HttpResponse = context.HttpResponse;
-			describeAuditPolicyResponse.RequestId = context.StringValue("DescribeAuditPolicy.RequestId");
-			describeAuditPolicyResponse.LogAuditStatus = context.StringValue("DescribeAuditPolicy.LogAuditStatus");
+			describeAuditPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			describeAuditPolicyResponse.RequestId = _ctx.StringValue("DescribeAuditPolicy.RequestId");
+			describeAuditPolicyResponse.LogAuditStatus = _ctx.StringValue("DescribeAuditPolicy.LogAuditStatus");
         
 			return describeAuditPolicyResponse;
         }

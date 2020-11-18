@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeSecurityGroupConfigurationResponseUnmarshaller
     {
-        public static DescribeSecurityGroupConfigurationResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSecurityGroupConfigurationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSecurityGroupConfigurationResponse describeSecurityGroupConfigurationResponse = new DescribeSecurityGroupConfigurationResponse();
 
-			describeSecurityGroupConfigurationResponse.HttpResponse = context.HttpResponse;
-			describeSecurityGroupConfigurationResponse.RequestId = context.StringValue("DescribeSecurityGroupConfiguration.RequestId");
+			describeSecurityGroupConfigurationResponse.HttpResponse = _ctx.HttpResponse;
+			describeSecurityGroupConfigurationResponse.RequestId = _ctx.StringValue("DescribeSecurityGroupConfiguration.RequestId");
 
 			List<DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_RdsEcsSecurityGroupRel> describeSecurityGroupConfigurationResponse_items = new List<DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_RdsEcsSecurityGroupRel>();
-			for (int i = 0; i < context.Length("DescribeSecurityGroupConfiguration.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSecurityGroupConfiguration.Items.Length"); i++) {
 				DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_RdsEcsSecurityGroupRel rdsEcsSecurityGroupRel = new DescribeSecurityGroupConfigurationResponse.DescribeSecurityGroupConfiguration_RdsEcsSecurityGroupRel();
-				rdsEcsSecurityGroupRel.RegionId = context.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].RegionId");
-				rdsEcsSecurityGroupRel.SecurityGroupId = context.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].SecurityGroupId");
-				rdsEcsSecurityGroupRel.NetType = context.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].NetType");
+				rdsEcsSecurityGroupRel.RegionId = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].RegionId");
+				rdsEcsSecurityGroupRel.SecurityGroupId = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].SecurityGroupId");
+				rdsEcsSecurityGroupRel.NetType = _ctx.StringValue("DescribeSecurityGroupConfiguration.Items["+ i +"].NetType");
 
 				describeSecurityGroupConfigurationResponse_items.Add(rdsEcsSecurityGroupRel);
 			}

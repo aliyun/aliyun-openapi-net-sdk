@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class AllocateNodePrivateNetworkAddressResponseUnmarshaller
     {
-        public static AllocateNodePrivateNetworkAddressResponse Unmarshall(UnmarshallerContext context)
+        public static AllocateNodePrivateNetworkAddressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AllocateNodePrivateNetworkAddressResponse allocateNodePrivateNetworkAddressResponse = new AllocateNodePrivateNetworkAddressResponse();
 
-			allocateNodePrivateNetworkAddressResponse.HttpResponse = context.HttpResponse;
-			allocateNodePrivateNetworkAddressResponse.RequestId = context.StringValue("AllocateNodePrivateNetworkAddress.RequestId");
+			allocateNodePrivateNetworkAddressResponse.HttpResponse = _ctx.HttpResponse;
+			allocateNodePrivateNetworkAddressResponse.RequestId = _ctx.StringValue("AllocateNodePrivateNetworkAddress.RequestId");
         
 			return allocateNodePrivateNetworkAddressResponse;
         }

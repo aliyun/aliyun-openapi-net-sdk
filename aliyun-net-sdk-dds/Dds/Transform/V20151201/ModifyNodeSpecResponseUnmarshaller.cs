@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class ModifyNodeSpecResponseUnmarshaller
     {
-        public static ModifyNodeSpecResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyNodeSpecResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyNodeSpecResponse modifyNodeSpecResponse = new ModifyNodeSpecResponse();
 
-			modifyNodeSpecResponse.HttpResponse = context.HttpResponse;
-			modifyNodeSpecResponse.RequestId = context.StringValue("ModifyNodeSpec.RequestId");
-			modifyNodeSpecResponse.OrderId = context.StringValue("ModifyNodeSpec.OrderId");
+			modifyNodeSpecResponse.HttpResponse = _ctx.HttpResponse;
+			modifyNodeSpecResponse.RequestId = _ctx.StringValue("ModifyNodeSpec.RequestId");
+			modifyNodeSpecResponse.OrderId = _ctx.StringValue("ModifyNodeSpec.OrderId");
         
 			return modifyNodeSpecResponse;
         }

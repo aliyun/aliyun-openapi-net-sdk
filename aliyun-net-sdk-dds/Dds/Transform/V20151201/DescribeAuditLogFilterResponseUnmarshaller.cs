@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeAuditLogFilterResponseUnmarshaller
     {
-        public static DescribeAuditLogFilterResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAuditLogFilterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAuditLogFilterResponse describeAuditLogFilterResponse = new DescribeAuditLogFilterResponse();
 
-			describeAuditLogFilterResponse.HttpResponse = context.HttpResponse;
-			describeAuditLogFilterResponse.RequestId = context.StringValue("DescribeAuditLogFilter.RequestId");
-			describeAuditLogFilterResponse.Filter = context.StringValue("DescribeAuditLogFilter.Filter");
-			describeAuditLogFilterResponse.RoleType = context.StringValue("DescribeAuditLogFilter.RoleType");
+			describeAuditLogFilterResponse.HttpResponse = _ctx.HttpResponse;
+			describeAuditLogFilterResponse.RequestId = _ctx.StringValue("DescribeAuditLogFilter.RequestId");
+			describeAuditLogFilterResponse.Filter = _ctx.StringValue("DescribeAuditLogFilter.Filter");
+			describeAuditLogFilterResponse.RoleType = _ctx.StringValue("DescribeAuditLogFilter.RoleType");
         
 			return describeAuditLogFilterResponse;
         }

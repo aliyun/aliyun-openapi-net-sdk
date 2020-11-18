@@ -112,7 +112,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private string engineVersion;
 
-			private int? characterType;
+			private string characterType;
 
 			private string maintainStartTime;
 
@@ -224,7 +224,7 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				}
 			}
 
-			public int? CharacterType
+			public string CharacterType
 			{
 				get
 				{

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class RestoreDBInstanceResponseUnmarshaller
     {
-        public static RestoreDBInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RestoreDBInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RestoreDBInstanceResponse restoreDBInstanceResponse = new RestoreDBInstanceResponse();
 
-			restoreDBInstanceResponse.HttpResponse = context.HttpResponse;
-			restoreDBInstanceResponse.RequestId = context.StringValue("RestoreDBInstance.RequestId");
+			restoreDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			restoreDBInstanceResponse.RequestId = _ctx.StringValue("RestoreDBInstance.RequestId");
         
 			return restoreDBInstanceResponse;
         }

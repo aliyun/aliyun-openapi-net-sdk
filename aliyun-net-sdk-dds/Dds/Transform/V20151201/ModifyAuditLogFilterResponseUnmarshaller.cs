@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class ModifyAuditLogFilterResponseUnmarshaller
     {
-        public static ModifyAuditLogFilterResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyAuditLogFilterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyAuditLogFilterResponse modifyAuditLogFilterResponse = new ModifyAuditLogFilterResponse();
 
-			modifyAuditLogFilterResponse.HttpResponse = context.HttpResponse;
-			modifyAuditLogFilterResponse.RequestId = context.StringValue("ModifyAuditLogFilter.RequestId");
+			modifyAuditLogFilterResponse.HttpResponse = _ctx.HttpResponse;
+			modifyAuditLogFilterResponse.RequestId = _ctx.StringValue("ModifyAuditLogFilter.RequestId");
         
 			return modifyAuditLogFilterResponse;
         }

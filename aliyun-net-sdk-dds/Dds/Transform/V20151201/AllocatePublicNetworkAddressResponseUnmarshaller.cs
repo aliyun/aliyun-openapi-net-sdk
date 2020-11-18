@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class AllocatePublicNetworkAddressResponseUnmarshaller
     {
-        public static AllocatePublicNetworkAddressResponse Unmarshall(UnmarshallerContext context)
+        public static AllocatePublicNetworkAddressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AllocatePublicNetworkAddressResponse allocatePublicNetworkAddressResponse = new AllocatePublicNetworkAddressResponse();
 
-			allocatePublicNetworkAddressResponse.HttpResponse = context.HttpResponse;
-			allocatePublicNetworkAddressResponse.RequestId = context.StringValue("AllocatePublicNetworkAddress.RequestId");
+			allocatePublicNetworkAddressResponse.HttpResponse = _ctx.HttpResponse;
+			allocatePublicNetworkAddressResponse.RequestId = _ctx.StringValue("AllocatePublicNetworkAddress.RequestId");
         
 			return allocatePublicNetworkAddressResponse;
         }

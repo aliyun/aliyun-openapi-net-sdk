@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeDBInstanceSSLResponseUnmarshaller
     {
-        public static DescribeDBInstanceSSLResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBInstanceSSLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBInstanceSSLResponse describeDBInstanceSSLResponse = new DescribeDBInstanceSSLResponse();
 
-			describeDBInstanceSSLResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceSSLResponse.RequestId = context.StringValue("DescribeDBInstanceSSL.RequestId");
-			describeDBInstanceSSLResponse.SSLExpiredTime = context.StringValue("DescribeDBInstanceSSL.SSLExpiredTime");
-			describeDBInstanceSSLResponse.CertCommonName = context.StringValue("DescribeDBInstanceSSL.CertCommonName");
-			describeDBInstanceSSLResponse.SSLStatus = context.StringValue("DescribeDBInstanceSSL.SSLStatus");
+			describeDBInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInstanceSSLResponse.RequestId = _ctx.StringValue("DescribeDBInstanceSSL.RequestId");
+			describeDBInstanceSSLResponse.SSLExpiredTime = _ctx.StringValue("DescribeDBInstanceSSL.SSLExpiredTime");
+			describeDBInstanceSSLResponse.CertCommonName = _ctx.StringValue("DescribeDBInstanceSSL.CertCommonName");
+			describeDBInstanceSSLResponse.SSLStatus = _ctx.StringValue("DescribeDBInstanceSSL.SSLStatus");
         
 			return describeDBInstanceSSLResponse;
         }

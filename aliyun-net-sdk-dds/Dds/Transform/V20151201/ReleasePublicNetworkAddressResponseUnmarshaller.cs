@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class ReleasePublicNetworkAddressResponseUnmarshaller
     {
-        public static ReleasePublicNetworkAddressResponse Unmarshall(UnmarshallerContext context)
+        public static ReleasePublicNetworkAddressResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReleasePublicNetworkAddressResponse releasePublicNetworkAddressResponse = new ReleasePublicNetworkAddressResponse();
 
-			releasePublicNetworkAddressResponse.HttpResponse = context.HttpResponse;
-			releasePublicNetworkAddressResponse.RequestId = context.StringValue("ReleasePublicNetworkAddress.RequestId");
+			releasePublicNetworkAddressResponse.HttpResponse = _ctx.HttpResponse;
+			releasePublicNetworkAddressResponse.RequestId = _ctx.StringValue("ReleasePublicNetworkAddress.RequestId");
         
 			return releasePublicNetworkAddressResponse;
         }

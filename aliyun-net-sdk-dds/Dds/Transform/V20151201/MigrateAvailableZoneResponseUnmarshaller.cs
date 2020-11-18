@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class MigrateAvailableZoneResponseUnmarshaller
     {
-        public static MigrateAvailableZoneResponse Unmarshall(UnmarshallerContext context)
+        public static MigrateAvailableZoneResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MigrateAvailableZoneResponse migrateAvailableZoneResponse = new MigrateAvailableZoneResponse();
 
-			migrateAvailableZoneResponse.HttpResponse = context.HttpResponse;
-			migrateAvailableZoneResponse.RequestId = context.StringValue("MigrateAvailableZone.RequestId");
+			migrateAvailableZoneResponse.HttpResponse = _ctx.HttpResponse;
+			migrateAvailableZoneResponse.RequestId = _ctx.StringValue("MigrateAvailableZone.RequestId");
         
 			return migrateAvailableZoneResponse;
         }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeUserEncryptionKeyListResponseUnmarshaller
     {
-        public static DescribeUserEncryptionKeyListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserEncryptionKeyListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserEncryptionKeyListResponse describeUserEncryptionKeyListResponse = new DescribeUserEncryptionKeyListResponse();
 
-			describeUserEncryptionKeyListResponse.HttpResponse = context.HttpResponse;
-			describeUserEncryptionKeyListResponse.RequestId = context.StringValue("DescribeUserEncryptionKeyList.RequestId");
+			describeUserEncryptionKeyListResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserEncryptionKeyListResponse.RequestId = _ctx.StringValue("DescribeUserEncryptionKeyList.RequestId");
 
 			List<string> describeUserEncryptionKeyListResponse_keyIds = new List<string>();
-			for (int i = 0; i < context.Length("DescribeUserEncryptionKeyList.KeyIds.Length"); i++) {
-				describeUserEncryptionKeyListResponse_keyIds.Add(context.StringValue("DescribeUserEncryptionKeyList.KeyIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeUserEncryptionKeyList.KeyIds.Length"); i++) {
+				describeUserEncryptionKeyListResponse_keyIds.Add(_ctx.StringValue("DescribeUserEncryptionKeyList.KeyIds["+ i +"]"));
 			}
 			describeUserEncryptionKeyListResponse.KeyIds = describeUserEncryptionKeyListResponse_keyIds;
         

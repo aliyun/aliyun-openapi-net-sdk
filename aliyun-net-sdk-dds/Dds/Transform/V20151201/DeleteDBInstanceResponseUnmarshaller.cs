@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DeleteDBInstanceResponseUnmarshaller
     {
-        public static DeleteDBInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDBInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDBInstanceResponse deleteDBInstanceResponse = new DeleteDBInstanceResponse();
 
-			deleteDBInstanceResponse.HttpResponse = context.HttpResponse;
-			deleteDBInstanceResponse.RequestId = context.StringValue("DeleteDBInstance.RequestId");
+			deleteDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDBInstanceResponse.RequestId = _ctx.StringValue("DeleteDBInstance.RequestId");
         
 			return deleteDBInstanceResponse;
         }
