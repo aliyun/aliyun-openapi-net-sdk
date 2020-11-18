@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class UpdateWebsiteInstanceKeyUrlResponseUnmarshaller
     {
-        public static UpdateWebsiteInstanceKeyUrlResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateWebsiteInstanceKeyUrlResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateWebsiteInstanceKeyUrlResponse updateWebsiteInstanceKeyUrlResponse = new UpdateWebsiteInstanceKeyUrlResponse();
 
-			updateWebsiteInstanceKeyUrlResponse.HttpResponse = context.HttpResponse;
-			updateWebsiteInstanceKeyUrlResponse.RequestId = context.StringValue("UpdateWebsiteInstanceKeyUrl.RequestId");
+			updateWebsiteInstanceKeyUrlResponse.HttpResponse = _ctx.HttpResponse;
+			updateWebsiteInstanceKeyUrlResponse.RequestId = _ctx.StringValue("UpdateWebsiteInstanceKeyUrl.RequestId");
         
 			return updateWebsiteInstanceKeyUrlResponse;
         }

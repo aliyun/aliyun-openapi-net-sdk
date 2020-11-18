@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DeleteNotificationContactsResponseUnmarshaller
     {
-        public static DeleteNotificationContactsResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteNotificationContactsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteNotificationContactsResponse deleteNotificationContactsResponse = new DeleteNotificationContactsResponse();
 
-			deleteNotificationContactsResponse.HttpResponse = context.HttpResponse;
-			deleteNotificationContactsResponse.RequestId = context.StringValue("DeleteNotificationContacts.RequestId");
+			deleteNotificationContactsResponse.HttpResponse = _ctx.HttpResponse;
+			deleteNotificationContactsResponse.RequestId = _ctx.StringValue("DeleteNotificationContacts.RequestId");
         
 			return deleteNotificationContactsResponse;
         }

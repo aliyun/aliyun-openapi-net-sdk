@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class CreateKeywordLibResponseUnmarshaller
     {
-        public static CreateKeywordLibResponse Unmarshall(UnmarshallerContext context)
+        public static CreateKeywordLibResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateKeywordLibResponse createKeywordLibResponse = new CreateKeywordLibResponse();
 
-			createKeywordLibResponse.HttpResponse = context.HttpResponse;
-			createKeywordLibResponse.RequestId = context.StringValue("CreateKeywordLib.RequestId");
-			createKeywordLibResponse.Id = context.StringValue("CreateKeywordLib.Id");
+			createKeywordLibResponse.HttpResponse = _ctx.HttpResponse;
+			createKeywordLibResponse.RequestId = _ctx.StringValue("CreateKeywordLib.RequestId");
+			createKeywordLibResponse.Id = _ctx.StringValue("CreateKeywordLib.Id");
         
 			return createKeywordLibResponse;
         }

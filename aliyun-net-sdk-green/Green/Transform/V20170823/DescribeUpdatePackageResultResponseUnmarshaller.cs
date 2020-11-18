@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeUpdatePackageResultResponseUnmarshaller
     {
-        public static DescribeUpdatePackageResultResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUpdatePackageResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUpdatePackageResultResponse describeUpdatePackageResultResponse = new DescribeUpdatePackageResultResponse();
 
-			describeUpdatePackageResultResponse.HttpResponse = context.HttpResponse;
-			describeUpdatePackageResultResponse.RequestId = context.StringValue("DescribeUpdatePackageResult.RequestId");
+			describeUpdatePackageResultResponse.HttpResponse = _ctx.HttpResponse;
+			describeUpdatePackageResultResponse.RequestId = _ctx.StringValue("DescribeUpdatePackageResult.RequestId");
 
 			DescribeUpdatePackageResultResponse.DescribeUpdatePackageResult_AppInfo appInfo = new DescribeUpdatePackageResultResponse.DescribeUpdatePackageResult_AppInfo();
-			appInfo.Id = context.LongValue("DescribeUpdatePackageResult.AppInfo.Id");
-			appInfo.Name = context.StringValue("DescribeUpdatePackageResult.AppInfo.Name");
-			appInfo.PackageName = context.StringValue("DescribeUpdatePackageResult.AppInfo.PackageName");
-			appInfo.Icon = context.StringValue("DescribeUpdatePackageResult.AppInfo.Icon");
-			appInfo.StartDate = context.StringValue("DescribeUpdatePackageResult.AppInfo.StartDate");
-			appInfo.EndDate = context.StringValue("DescribeUpdatePackageResult.AppInfo.EndDate");
-			appInfo.Type = context.IntegerValue("DescribeUpdatePackageResult.AppInfo.Type");
+			appInfo.Id = _ctx.LongValue("DescribeUpdatePackageResult.AppInfo.Id");
+			appInfo.Name = _ctx.StringValue("DescribeUpdatePackageResult.AppInfo.Name");
+			appInfo.PackageName = _ctx.StringValue("DescribeUpdatePackageResult.AppInfo.PackageName");
+			appInfo.Icon = _ctx.StringValue("DescribeUpdatePackageResult.AppInfo.Icon");
+			appInfo.StartDate = _ctx.StringValue("DescribeUpdatePackageResult.AppInfo.StartDate");
+			appInfo.EndDate = _ctx.StringValue("DescribeUpdatePackageResult.AppInfo.EndDate");
+			appInfo.Type = _ctx.IntegerValue("DescribeUpdatePackageResult.AppInfo.Type");
 
 			DescribeUpdatePackageResultResponse.DescribeUpdatePackageResult_AppInfo.DescribeUpdatePackageResult_PackageInfo packageInfo = new DescribeUpdatePackageResultResponse.DescribeUpdatePackageResult_AppInfo.DescribeUpdatePackageResult_PackageInfo();
-			packageInfo.Version = context.StringValue("DescribeUpdatePackageResult.AppInfo.PackageInfo.Version");
+			packageInfo.Version = _ctx.StringValue("DescribeUpdatePackageResult.AppInfo.PackageInfo.Version");
 			appInfo.PackageInfo = packageInfo;
 
 			DescribeUpdatePackageResultResponse.DescribeUpdatePackageResult_AppInfo.DescribeUpdatePackageResult_DebugPackageInfo debugPackageInfo = new DescribeUpdatePackageResultResponse.DescribeUpdatePackageResult_AppInfo.DescribeUpdatePackageResult_DebugPackageInfo();
-			debugPackageInfo.Version = context.StringValue("DescribeUpdatePackageResult.AppInfo.DebugPackageInfo.Version");
+			debugPackageInfo.Version = _ctx.StringValue("DescribeUpdatePackageResult.AppInfo.DebugPackageInfo.Version");
 			appInfo.DebugPackageInfo = debugPackageInfo;
 			describeUpdatePackageResultResponse.AppInfo = appInfo;
         

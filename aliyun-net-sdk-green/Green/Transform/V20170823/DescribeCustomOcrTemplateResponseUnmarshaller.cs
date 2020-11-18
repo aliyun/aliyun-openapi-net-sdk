@@ -26,43 +26,43 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeCustomOcrTemplateResponseUnmarshaller
     {
-        public static DescribeCustomOcrTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCustomOcrTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCustomOcrTemplateResponse describeCustomOcrTemplateResponse = new DescribeCustomOcrTemplateResponse();
 
-			describeCustomOcrTemplateResponse.HttpResponse = context.HttpResponse;
-			describeCustomOcrTemplateResponse.RequestId = context.StringValue("DescribeCustomOcrTemplate.RequestId");
-			describeCustomOcrTemplateResponse.TotalCount = context.IntegerValue("DescribeCustomOcrTemplate.TotalCount");
+			describeCustomOcrTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			describeCustomOcrTemplateResponse.RequestId = _ctx.StringValue("DescribeCustomOcrTemplate.RequestId");
+			describeCustomOcrTemplateResponse.TotalCount = _ctx.IntegerValue("DescribeCustomOcrTemplate.TotalCount");
 
 			List<DescribeCustomOcrTemplateResponse.DescribeCustomOcrTemplate_OcrTemplate> describeCustomOcrTemplateResponse_ocrTemplateList = new List<DescribeCustomOcrTemplateResponse.DescribeCustomOcrTemplate_OcrTemplate>();
-			for (int i = 0; i < context.Length("DescribeCustomOcrTemplate.OcrTemplateList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCustomOcrTemplate.OcrTemplateList.Length"); i++) {
 				DescribeCustomOcrTemplateResponse.DescribeCustomOcrTemplate_OcrTemplate ocrTemplate = new DescribeCustomOcrTemplateResponse.DescribeCustomOcrTemplate_OcrTemplate();
-				ocrTemplate.Id = context.LongValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].Id");
-				ocrTemplate.Name = context.StringValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].Name");
-				ocrTemplate.ImgUrl = context.StringValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ImgUrl");
-				ocrTemplate.Status = context.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].Status");
+				ocrTemplate.Id = _ctx.LongValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].Id");
+				ocrTemplate.Name = _ctx.StringValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].Name");
+				ocrTemplate.ImgUrl = _ctx.StringValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ImgUrl");
+				ocrTemplate.Status = _ctx.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].Status");
 
 				List<DescribeCustomOcrTemplateResponse.DescribeCustomOcrTemplate_OcrTemplate.DescribeCustomOcrTemplate_Item> ocrTemplate_referArea = new List<DescribeCustomOcrTemplateResponse.DescribeCustomOcrTemplate_OcrTemplate.DescribeCustomOcrTemplate_Item>();
-				for (int j = 0; j < context.Length("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ReferArea.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ReferArea.Length"); j++) {
 					DescribeCustomOcrTemplateResponse.DescribeCustomOcrTemplate_OcrTemplate.DescribeCustomOcrTemplate_Item item = new DescribeCustomOcrTemplateResponse.DescribeCustomOcrTemplate_OcrTemplate.DescribeCustomOcrTemplate_Item();
-					item.Name = context.StringValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ReferArea["+ j +"].Name");
-					item.X = context.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ReferArea["+ j +"].X");
-					item.Y = context.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ReferArea["+ j +"].Y");
-					item.Width = context.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ReferArea["+ j +"].Width");
-					item.Height = context.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ReferArea["+ j +"].Height");
+					item.Name = _ctx.StringValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ReferArea["+ j +"].Name");
+					item.X = _ctx.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ReferArea["+ j +"].X");
+					item.Y = _ctx.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ReferArea["+ j +"].Y");
+					item.Width = _ctx.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ReferArea["+ j +"].Width");
+					item.Height = _ctx.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].ReferArea["+ j +"].Height");
 
 					ocrTemplate_referArea.Add(item);
 				}
 				ocrTemplate.ReferArea = ocrTemplate_referArea;
 
 				List<DescribeCustomOcrTemplateResponse.DescribeCustomOcrTemplate_OcrTemplate.DescribeCustomOcrTemplate_Item> ocrTemplate_recognizeArea = new List<DescribeCustomOcrTemplateResponse.DescribeCustomOcrTemplate_OcrTemplate.DescribeCustomOcrTemplate_Item>();
-				for (int j = 0; j < context.Length("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].RecognizeArea.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].RecognizeArea.Length"); j++) {
 					DescribeCustomOcrTemplateResponse.DescribeCustomOcrTemplate_OcrTemplate.DescribeCustomOcrTemplate_Item item = new DescribeCustomOcrTemplateResponse.DescribeCustomOcrTemplate_OcrTemplate.DescribeCustomOcrTemplate_Item();
-					item.Name = context.StringValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Name");
-					item.X = context.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].X");
-					item.Y = context.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Y");
-					item.Width = context.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Width");
-					item.Height = context.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Height");
+					item.Name = _ctx.StringValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Name");
+					item.X = _ctx.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].X");
+					item.Y = _ctx.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Y");
+					item.Width = _ctx.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Width");
+					item.Height = _ctx.IntegerValue("DescribeCustomOcrTemplate.OcrTemplateList["+ i +"].RecognizeArea["+ j +"].Height");
 
 					ocrTemplate_recognizeArea.Add(item);
 				}

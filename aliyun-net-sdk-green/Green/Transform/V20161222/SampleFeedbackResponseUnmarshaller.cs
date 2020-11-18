@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20161222
 {
     public class SampleFeedbackResponseUnmarshaller
     {
-        public static SampleFeedbackResponse Unmarshall(UnmarshallerContext context)
+        public static SampleFeedbackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SampleFeedbackResponse sampleFeedbackResponse = new SampleFeedbackResponse();
 
-			sampleFeedbackResponse.HttpResponse = context.HttpResponse;
+			sampleFeedbackResponse.HttpResponse = _ctx.HttpResponse;
         
 			return sampleFeedbackResponse;
         }

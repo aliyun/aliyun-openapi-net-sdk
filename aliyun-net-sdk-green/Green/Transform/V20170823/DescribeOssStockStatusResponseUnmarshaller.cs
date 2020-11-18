@@ -26,42 +26,42 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeOssStockStatusResponseUnmarshaller
     {
-        public static DescribeOssStockStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOssStockStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeOssStockStatusResponse describeOssStockStatusResponse = new DescribeOssStockStatusResponse();
 
-			describeOssStockStatusResponse.HttpResponse = context.HttpResponse;
-			describeOssStockStatusResponse.RequestId = context.StringValue("DescribeOssStockStatus.RequestId");
-			describeOssStockStatusResponse.StockStatus = context.IntegerValue("DescribeOssStockStatus.StockStatus");
-			describeOssStockStatusResponse.FinishedTime = context.StringValue("DescribeOssStockStatus.FinishedTime");
-			describeOssStockStatusResponse.ImageTotalCount = context.IntegerValue("DescribeOssStockStatus.ImageTotalCount");
-			describeOssStockStatusResponse.ImagePornCount = context.IntegerValue("DescribeOssStockStatus.ImagePornCount");
-			describeOssStockStatusResponse.ImageTerrorismCount = context.IntegerValue("DescribeOssStockStatus.ImageTerrorismCount");
-			describeOssStockStatusResponse.VideoTotalCount = context.IntegerValue("DescribeOssStockStatus.VideoTotalCount");
-			describeOssStockStatusResponse.VideoPornCount = context.IntegerValue("DescribeOssStockStatus.VideoPornCount");
-			describeOssStockStatusResponse.VideoTerrorismCount = context.IntegerValue("DescribeOssStockStatus.VideoTerrorismCount");
+			describeOssStockStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeOssStockStatusResponse.RequestId = _ctx.StringValue("DescribeOssStockStatus.RequestId");
+			describeOssStockStatusResponse.StockStatus = _ctx.IntegerValue("DescribeOssStockStatus.StockStatus");
+			describeOssStockStatusResponse.FinishedTime = _ctx.StringValue("DescribeOssStockStatus.FinishedTime");
+			describeOssStockStatusResponse.ImageTotalCount = _ctx.IntegerValue("DescribeOssStockStatus.ImageTotalCount");
+			describeOssStockStatusResponse.ImagePornCount = _ctx.IntegerValue("DescribeOssStockStatus.ImagePornCount");
+			describeOssStockStatusResponse.ImageTerrorismCount = _ctx.IntegerValue("DescribeOssStockStatus.ImageTerrorismCount");
+			describeOssStockStatusResponse.VideoTotalCount = _ctx.IntegerValue("DescribeOssStockStatus.VideoTotalCount");
+			describeOssStockStatusResponse.VideoPornCount = _ctx.IntegerValue("DescribeOssStockStatus.VideoPornCount");
+			describeOssStockStatusResponse.VideoTerrorismCount = _ctx.IntegerValue("DescribeOssStockStatus.VideoTerrorismCount");
 
 			List<string> describeOssStockStatusResponse_sceneList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeOssStockStatus.SceneList.Length"); i++) {
-				describeOssStockStatusResponse_sceneList.Add(context.StringValue("DescribeOssStockStatus.SceneList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeOssStockStatus.SceneList.Length"); i++) {
+				describeOssStockStatusResponse_sceneList.Add(_ctx.StringValue("DescribeOssStockStatus.SceneList["+ i +"]"));
 			}
 			describeOssStockStatusResponse.SceneList = describeOssStockStatusResponse_sceneList;
 
 			List<string> describeOssStockStatusResponse_resouceTypeList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeOssStockStatus.ResouceTypeList.Length"); i++) {
-				describeOssStockStatusResponse_resouceTypeList.Add(context.StringValue("DescribeOssStockStatus.ResouceTypeList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeOssStockStatus.ResouceTypeList.Length"); i++) {
+				describeOssStockStatusResponse_resouceTypeList.Add(_ctx.StringValue("DescribeOssStockStatus.ResouceTypeList["+ i +"]"));
 			}
 			describeOssStockStatusResponse.ResouceTypeList = describeOssStockStatusResponse_resouceTypeList;
 
 			List<DescribeOssStockStatusResponse.DescribeOssStockStatus_Bucket> describeOssStockStatusResponse_bucketList = new List<DescribeOssStockStatusResponse.DescribeOssStockStatus_Bucket>();
-			for (int i = 0; i < context.Length("DescribeOssStockStatus.BucketList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeOssStockStatus.BucketList.Length"); i++) {
 				DescribeOssStockStatusResponse.DescribeOssStockStatus_Bucket bucket = new DescribeOssStockStatusResponse.DescribeOssStockStatus_Bucket();
-				bucket.Selected = context.BooleanValue("DescribeOssStockStatus.BucketList["+ i +"].Selected");
-				bucket.Bucket = context.StringValue("DescribeOssStockStatus.BucketList["+ i +"].Bucket");
+				bucket.Selected = _ctx.BooleanValue("DescribeOssStockStatus.BucketList["+ i +"].Selected");
+				bucket.Bucket = _ctx.StringValue("DescribeOssStockStatus.BucketList["+ i +"].Bucket");
 
 				List<string> bucket_prefixes = new List<string>();
-				for (int j = 0; j < context.Length("DescribeOssStockStatus.BucketList["+ i +"].Prefixes.Length"); j++) {
-					bucket_prefixes.Add(context.StringValue("DescribeOssStockStatus.BucketList["+ i +"].Prefixes["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeOssStockStatus.BucketList["+ i +"].Prefixes.Length"); j++) {
+					bucket_prefixes.Add(_ctx.StringValue("DescribeOssStockStatus.BucketList["+ i +"].Prefixes["+ j +"]"));
 				}
 				bucket.Prefixes = bucket_prefixes;
 

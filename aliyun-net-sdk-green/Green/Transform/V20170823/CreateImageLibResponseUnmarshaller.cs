@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class CreateImageLibResponseUnmarshaller
     {
-        public static CreateImageLibResponse Unmarshall(UnmarshallerContext context)
+        public static CreateImageLibResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateImageLibResponse createImageLibResponse = new CreateImageLibResponse();
 
-			createImageLibResponse.HttpResponse = context.HttpResponse;
-			createImageLibResponse.RequestId = context.StringValue("CreateImageLib.RequestId");
+			createImageLibResponse.HttpResponse = _ctx.HttpResponse;
+			createImageLibResponse.RequestId = _ctx.StringValue("CreateImageLib.RequestId");
         
 			return createImageLibResponse;
         }

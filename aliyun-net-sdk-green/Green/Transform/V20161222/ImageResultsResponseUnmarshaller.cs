@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20161222
 {
     public class ImageResultsResponseUnmarshaller
     {
-        public static ImageResultsResponse Unmarshall(UnmarshallerContext context)
+        public static ImageResultsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ImageResultsResponse imageResultsResponse = new ImageResultsResponse();
 
-			imageResultsResponse.HttpResponse = context.HttpResponse;
+			imageResultsResponse.HttpResponse = _ctx.HttpResponse;
         
 			return imageResultsResponse;
         }

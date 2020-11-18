@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class CreateCdiBagResponseUnmarshaller
     {
-        public static CreateCdiBagResponse Unmarshall(UnmarshallerContext context)
+        public static CreateCdiBagResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateCdiBagResponse createCdiBagResponse = new CreateCdiBagResponse();
 
-			createCdiBagResponse.HttpResponse = context.HttpResponse;
-			createCdiBagResponse.Code = context.StringValue("CreateCdiBag.Code");
-			createCdiBagResponse.Message = context.StringValue("CreateCdiBag.Message");
-			createCdiBagResponse.OrderId = context.StringValue("CreateCdiBag.OrderId");
-			createCdiBagResponse.RequestId = context.StringValue("CreateCdiBag.RequestId");
+			createCdiBagResponse.HttpResponse = _ctx.HttpResponse;
+			createCdiBagResponse.Code = _ctx.StringValue("CreateCdiBag.Code");
+			createCdiBagResponse.Message = _ctx.StringValue("CreateCdiBag.Message");
+			createCdiBagResponse.OrderId = _ctx.StringValue("CreateCdiBag.OrderId");
+			createCdiBagResponse.RequestId = _ctx.StringValue("CreateCdiBag.RequestId");
 
 			List<string> createCdiBagResponse_instanceIds = new List<string>();
-			for (int i = 0; i < context.Length("CreateCdiBag.InstanceIds.Length"); i++) {
-				createCdiBagResponse_instanceIds.Add(context.StringValue("CreateCdiBag.InstanceIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("CreateCdiBag.InstanceIds.Length"); i++) {
+				createCdiBagResponse_instanceIds.Add(_ctx.StringValue("CreateCdiBag.InstanceIds["+ i +"]"));
 			}
 			createCdiBagResponse.InstanceIds = createCdiBagResponse_instanceIds;
         

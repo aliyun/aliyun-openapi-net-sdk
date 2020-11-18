@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeAuditSettingResponseUnmarshaller
     {
-        public static DescribeAuditSettingResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAuditSettingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAuditSettingResponse describeAuditSettingResponse = new DescribeAuditSettingResponse();
 
-			describeAuditSettingResponse.HttpResponse = context.HttpResponse;
-			describeAuditSettingResponse.RequestId = context.StringValue("DescribeAuditSetting.RequestId");
-			describeAuditSettingResponse.Seed = context.StringValue("DescribeAuditSetting.Seed");
-			describeAuditSettingResponse.Callback = context.StringValue("DescribeAuditSetting.Callback");
+			describeAuditSettingResponse.HttpResponse = _ctx.HttpResponse;
+			describeAuditSettingResponse.RequestId = _ctx.StringValue("DescribeAuditSetting.RequestId");
+			describeAuditSettingResponse.Seed = _ctx.StringValue("DescribeAuditSetting.Seed");
+			describeAuditSettingResponse.Callback = _ctx.StringValue("DescribeAuditSetting.Callback");
 
 			DescribeAuditSettingResponse.DescribeAuditSetting_AuditRange auditRange = new DescribeAuditSettingResponse.DescribeAuditSetting_AuditRange();
-			auditRange.Block = context.BooleanValue("DescribeAuditSetting.AuditRange.block");
-			auditRange.Review = context.BooleanValue("DescribeAuditSetting.AuditRange.review");
-			auditRange.Pass = context.BooleanValue("DescribeAuditSetting.AuditRange.pass");
+			auditRange.Block = _ctx.BooleanValue("DescribeAuditSetting.AuditRange.block");
+			auditRange.Review = _ctx.BooleanValue("DescribeAuditSetting.AuditRange.review");
+			auditRange.Pass = _ctx.BooleanValue("DescribeAuditSetting.AuditRange.pass");
 			describeAuditSettingResponse.AuditRange = auditRange;
         
 			return describeAuditSettingResponse;

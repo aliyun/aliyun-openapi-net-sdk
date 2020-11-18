@@ -26,33 +26,33 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeAppInfoResponseUnmarshaller
     {
-        public static DescribeAppInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAppInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAppInfoResponse describeAppInfoResponse = new DescribeAppInfoResponse();
 
-			describeAppInfoResponse.HttpResponse = context.HttpResponse;
-			describeAppInfoResponse.RequestId = context.StringValue("DescribeAppInfo.RequestId");
-			describeAppInfoResponse.PageSize = context.IntegerValue("DescribeAppInfo.PageSize");
-			describeAppInfoResponse.CurrentPage = context.IntegerValue("DescribeAppInfo.CurrentPage");
-			describeAppInfoResponse.TotalCount = context.IntegerValue("DescribeAppInfo.TotalCount");
+			describeAppInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeAppInfoResponse.RequestId = _ctx.StringValue("DescribeAppInfo.RequestId");
+			describeAppInfoResponse.PageSize = _ctx.IntegerValue("DescribeAppInfo.PageSize");
+			describeAppInfoResponse.CurrentPage = _ctx.IntegerValue("DescribeAppInfo.CurrentPage");
+			describeAppInfoResponse.TotalCount = _ctx.IntegerValue("DescribeAppInfo.TotalCount");
 
 			List<DescribeAppInfoResponse.DescribeAppInfo_AppInfo> describeAppInfoResponse_appInfoList = new List<DescribeAppInfoResponse.DescribeAppInfo_AppInfo>();
-			for (int i = 0; i < context.Length("DescribeAppInfo.AppInfoList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeAppInfo.AppInfoList.Length"); i++) {
 				DescribeAppInfoResponse.DescribeAppInfo_AppInfo appInfo = new DescribeAppInfoResponse.DescribeAppInfo_AppInfo();
-				appInfo.Id = context.LongValue("DescribeAppInfo.AppInfoList["+ i +"].Id");
-				appInfo.Name = context.StringValue("DescribeAppInfo.AppInfoList["+ i +"].Name");
-				appInfo.PackageName = context.StringValue("DescribeAppInfo.AppInfoList["+ i +"].PackageName");
-				appInfo.Icon = context.StringValue("DescribeAppInfo.AppInfoList["+ i +"].Icon");
-				appInfo.StartDate = context.StringValue("DescribeAppInfo.AppInfoList["+ i +"].StartDate");
-				appInfo.EndDate = context.StringValue("DescribeAppInfo.AppInfoList["+ i +"].EndDate");
-				appInfo.Type = context.IntegerValue("DescribeAppInfo.AppInfoList["+ i +"].Type");
+				appInfo.Id = _ctx.LongValue("DescribeAppInfo.AppInfoList["+ i +"].Id");
+				appInfo.Name = _ctx.StringValue("DescribeAppInfo.AppInfoList["+ i +"].Name");
+				appInfo.PackageName = _ctx.StringValue("DescribeAppInfo.AppInfoList["+ i +"].PackageName");
+				appInfo.Icon = _ctx.StringValue("DescribeAppInfo.AppInfoList["+ i +"].Icon");
+				appInfo.StartDate = _ctx.StringValue("DescribeAppInfo.AppInfoList["+ i +"].StartDate");
+				appInfo.EndDate = _ctx.StringValue("DescribeAppInfo.AppInfoList["+ i +"].EndDate");
+				appInfo.Type = _ctx.IntegerValue("DescribeAppInfo.AppInfoList["+ i +"].Type");
 
 				DescribeAppInfoResponse.DescribeAppInfo_AppInfo.DescribeAppInfo_PackageInfo packageInfo = new DescribeAppInfoResponse.DescribeAppInfo_AppInfo.DescribeAppInfo_PackageInfo();
-				packageInfo.Version = context.StringValue("DescribeAppInfo.AppInfoList["+ i +"].PackageInfo.Version");
+				packageInfo.Version = _ctx.StringValue("DescribeAppInfo.AppInfoList["+ i +"].PackageInfo.Version");
 				appInfo.PackageInfo = packageInfo;
 
 				DescribeAppInfoResponse.DescribeAppInfo_AppInfo.DescribeAppInfo_DebugPackageInfo debugPackageInfo = new DescribeAppInfoResponse.DescribeAppInfo_AppInfo.DescribeAppInfo_DebugPackageInfo();
-				debugPackageInfo.Version = context.StringValue("DescribeAppInfo.AppInfoList["+ i +"].DebugPackageInfo.Version");
+				debugPackageInfo.Version = _ctx.StringValue("DescribeAppInfo.AppInfoList["+ i +"].DebugPackageInfo.Version");
 				appInfo.DebugPackageInfo = debugPackageInfo;
 
 				describeAppInfoResponse_appInfoList.Add(appInfo);

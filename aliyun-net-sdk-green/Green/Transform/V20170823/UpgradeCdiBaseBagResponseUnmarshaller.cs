@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class UpgradeCdiBaseBagResponseUnmarshaller
     {
-        public static UpgradeCdiBaseBagResponse Unmarshall(UnmarshallerContext context)
+        public static UpgradeCdiBaseBagResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpgradeCdiBaseBagResponse upgradeCdiBaseBagResponse = new UpgradeCdiBaseBagResponse();
 
-			upgradeCdiBaseBagResponse.HttpResponse = context.HttpResponse;
-			upgradeCdiBaseBagResponse.Code = context.StringValue("UpgradeCdiBaseBag.Code");
-			upgradeCdiBaseBagResponse.Message = context.StringValue("UpgradeCdiBaseBag.Message");
-			upgradeCdiBaseBagResponse.OrderId = context.StringValue("UpgradeCdiBaseBag.OrderId");
-			upgradeCdiBaseBagResponse.InstanceId = context.StringValue("UpgradeCdiBaseBag.InstanceId");
-			upgradeCdiBaseBagResponse.RequestId = context.StringValue("UpgradeCdiBaseBag.RequestId");
+			upgradeCdiBaseBagResponse.HttpResponse = _ctx.HttpResponse;
+			upgradeCdiBaseBagResponse.Code = _ctx.StringValue("UpgradeCdiBaseBag.Code");
+			upgradeCdiBaseBagResponse.Message = _ctx.StringValue("UpgradeCdiBaseBag.Message");
+			upgradeCdiBaseBagResponse.OrderId = _ctx.StringValue("UpgradeCdiBaseBag.OrderId");
+			upgradeCdiBaseBagResponse.InstanceId = _ctx.StringValue("UpgradeCdiBaseBag.InstanceId");
+			upgradeCdiBaseBagResponse.RequestId = _ctx.StringValue("UpgradeCdiBaseBag.RequestId");
         
 			return upgradeCdiBaseBagResponse;
         }

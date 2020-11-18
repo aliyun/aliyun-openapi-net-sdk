@@ -140,7 +140,11 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 			private int? resourceStatus;
 
+			private string content;
+
 			private List<DescribeOssResultItems_FrameResult> frameResults;
+
+			private List<DescribeOssResultItems_VoiceSegmentAntispamResult> voiceSegmentAntispamResults;
 
 			public string TaskId
 			{
@@ -310,6 +314,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
 				}
 			}
 
+			public string Content
+			{
+				get
+				{
+					return content;
+				}
+				set	
+				{
+					content = value;
+				}
+			}
+
 			public List<DescribeOssResultItems_FrameResult> FrameResults
 			{
 				get
@@ -319,6 +335,18 @@ namespace Aliyun.Acs.Green.Model.V20170823
 				set	
 				{
 					frameResults = value;
+				}
+			}
+
+			public List<DescribeOssResultItems_VoiceSegmentAntispamResult> VoiceSegmentAntispamResults
+			{
+				get
+				{
+					return voiceSegmentAntispamResults;
+				}
+				set	
+				{
+					voiceSegmentAntispamResults = value;
 				}
 			}
 
@@ -364,6 +392,66 @@ namespace Aliyun.Acs.Green.Model.V20170823
 					set	
 					{
 						url = value;
+					}
+				}
+			}
+
+			public class DescribeOssResultItems_VoiceSegmentAntispamResult
+			{
+
+				private string text;
+
+				private int? endTime;
+
+				private int? startTime;
+
+				private string label;
+
+				public string Text
+				{
+					get
+					{
+						return text;
+					}
+					set	
+					{
+						text = value;
+					}
+				}
+
+				public int? EndTime
+				{
+					get
+					{
+						return endTime;
+					}
+					set	
+					{
+						endTime = value;
+					}
+				}
+
+				public int? StartTime
+				{
+					get
+					{
+						return startTime;
+					}
+					set	
+					{
+						startTime = value;
+					}
+				}
+
+				public string Label
+				{
+					get
+					{
+						return label;
+					}
+					set	
+					{
+						label = value;
 					}
 				}
 			}

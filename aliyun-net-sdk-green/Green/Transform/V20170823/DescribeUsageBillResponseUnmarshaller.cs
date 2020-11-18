@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeUsageBillResponseUnmarshaller
     {
-        public static DescribeUsageBillResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUsageBillResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUsageBillResponse describeUsageBillResponse = new DescribeUsageBillResponse();
 
-			describeUsageBillResponse.HttpResponse = context.HttpResponse;
-			describeUsageBillResponse.RequestId = context.StringValue("DescribeUsageBill.RequestId");
-			describeUsageBillResponse.TotalCount = context.IntegerValue("DescribeUsageBill.TotalCount");
-			describeUsageBillResponse.PageSize = context.IntegerValue("DescribeUsageBill.PageSize");
-			describeUsageBillResponse.CurrentPage = context.IntegerValue("DescribeUsageBill.CurrentPage");
+			describeUsageBillResponse.HttpResponse = _ctx.HttpResponse;
+			describeUsageBillResponse.RequestId = _ctx.StringValue("DescribeUsageBill.RequestId");
+			describeUsageBillResponse.TotalCount = _ctx.IntegerValue("DescribeUsageBill.TotalCount");
+			describeUsageBillResponse.PageSize = _ctx.IntegerValue("DescribeUsageBill.PageSize");
+			describeUsageBillResponse.CurrentPage = _ctx.IntegerValue("DescribeUsageBill.CurrentPage");
 
 			List<DescribeUsageBillResponse.DescribeUsageBill_Bill> describeUsageBillResponse_billList = new List<DescribeUsageBillResponse.DescribeUsageBill_Bill>();
-			for (int i = 0; i < context.Length("DescribeUsageBill.BillList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeUsageBill.BillList.Length"); i++) {
 				DescribeUsageBillResponse.DescribeUsageBill_Bill bill = new DescribeUsageBillResponse.DescribeUsageBill_Bill();
-				bill.Region = context.StringValue("DescribeUsageBill.BillList["+ i +"].Region");
-				bill.Scene = context.StringValue("DescribeUsageBill.BillList["+ i +"].Scene");
-				bill.TotalCount = context.LongValue("DescribeUsageBill.BillList["+ i +"].TotalCount");
-				bill.ConfirmCount = context.LongValue("DescribeUsageBill.BillList["+ i +"].ConfirmCount");
-				bill.ReviewCount = context.LongValue("DescribeUsageBill.BillList["+ i +"].ReviewCount");
-				bill.FreeCount = context.LongValue("DescribeUsageBill.BillList["+ i +"].FreeCount");
-				bill.SubUid = context.StringValue("DescribeUsageBill.BillList["+ i +"].SubUid");
-				bill.BizType = context.StringValue("DescribeUsageBill.BillList["+ i +"].BizType");
-				bill.Day = context.StringValue("DescribeUsageBill.BillList["+ i +"].Day");
+				bill.Region = _ctx.StringValue("DescribeUsageBill.BillList["+ i +"].Region");
+				bill.Scene = _ctx.StringValue("DescribeUsageBill.BillList["+ i +"].Scene");
+				bill.TotalCount = _ctx.LongValue("DescribeUsageBill.BillList["+ i +"].TotalCount");
+				bill.ConfirmCount = _ctx.LongValue("DescribeUsageBill.BillList["+ i +"].ConfirmCount");
+				bill.ReviewCount = _ctx.LongValue("DescribeUsageBill.BillList["+ i +"].ReviewCount");
+				bill.FreeCount = _ctx.LongValue("DescribeUsageBill.BillList["+ i +"].FreeCount");
+				bill.SubUid = _ctx.StringValue("DescribeUsageBill.BillList["+ i +"].SubUid");
+				bill.BizType = _ctx.StringValue("DescribeUsageBill.BillList["+ i +"].BizType");
+				bill.Day = _ctx.StringValue("DescribeUsageBill.BillList["+ i +"].Day");
 
 				describeUsageBillResponse_billList.Add(bill);
 			}

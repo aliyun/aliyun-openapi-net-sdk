@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 {
     public class GetSimilarityImageResponseUnmarshaller
     {
-        public static GetSimilarityImageResponse Unmarshall(UnmarshallerContext context)
+        public static GetSimilarityImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetSimilarityImageResponse getSimilarityImageResponse = new GetSimilarityImageResponse();
 
-			getSimilarityImageResponse.HttpResponse = context.HttpResponse;
+			getSimilarityImageResponse.HttpResponse = _ctx.HttpResponse;
         
 			return getSimilarityImageResponse;
         }

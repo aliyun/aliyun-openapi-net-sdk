@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class CreateWebsiteIndexPageBaselineResponseUnmarshaller
     {
-        public static CreateWebsiteIndexPageBaselineResponse Unmarshall(UnmarshallerContext context)
+        public static CreateWebsiteIndexPageBaselineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateWebsiteIndexPageBaselineResponse createWebsiteIndexPageBaselineResponse = new CreateWebsiteIndexPageBaselineResponse();
 
-			createWebsiteIndexPageBaselineResponse.HttpResponse = context.HttpResponse;
-			createWebsiteIndexPageBaselineResponse.RequestId = context.StringValue("CreateWebsiteIndexPageBaseline.RequestId");
+			createWebsiteIndexPageBaselineResponse.HttpResponse = _ctx.HttpResponse;
+			createWebsiteIndexPageBaselineResponse.RequestId = _ctx.StringValue("CreateWebsiteIndexPageBaseline.RequestId");
         
 			return createWebsiteIndexPageBaselineResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DeleteKeywordLibResponseUnmarshaller
     {
-        public static DeleteKeywordLibResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteKeywordLibResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteKeywordLibResponse deleteKeywordLibResponse = new DeleteKeywordLibResponse();
 
-			deleteKeywordLibResponse.HttpResponse = context.HttpResponse;
-			deleteKeywordLibResponse.RequestId = context.StringValue("DeleteKeywordLib.RequestId");
+			deleteKeywordLibResponse.HttpResponse = _ctx.HttpResponse;
+			deleteKeywordLibResponse.RequestId = _ctx.StringValue("DeleteKeywordLib.RequestId");
         
 			return deleteKeywordLibResponse;
         }

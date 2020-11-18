@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class VerifyCustomOcrTemplateResponseUnmarshaller
     {
-        public static VerifyCustomOcrTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static VerifyCustomOcrTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VerifyCustomOcrTemplateResponse verifyCustomOcrTemplateResponse = new VerifyCustomOcrTemplateResponse();
 
-			verifyCustomOcrTemplateResponse.HttpResponse = context.HttpResponse;
-			verifyCustomOcrTemplateResponse.RequestId = context.StringValue("VerifyCustomOcrTemplate.RequestId");
-			verifyCustomOcrTemplateResponse.RecognizeInfo = context.StringValue("VerifyCustomOcrTemplate.RecognizeInfo");
-			verifyCustomOcrTemplateResponse.ImageUrl = context.StringValue("VerifyCustomOcrTemplate.ImageUrl");
+			verifyCustomOcrTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			verifyCustomOcrTemplateResponse.RequestId = _ctx.StringValue("VerifyCustomOcrTemplate.RequestId");
+			verifyCustomOcrTemplateResponse.RecognizeInfo = _ctx.StringValue("VerifyCustomOcrTemplate.RecognizeInfo");
+			verifyCustomOcrTemplateResponse.ImageUrl = _ctx.StringValue("VerifyCustomOcrTemplate.ImageUrl");
         
 			return verifyCustomOcrTemplateResponse;
         }

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeWebsiteIndexPageBaselineResponseUnmarshaller
     {
-        public static DescribeWebsiteIndexPageBaselineResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeWebsiteIndexPageBaselineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeWebsiteIndexPageBaselineResponse describeWebsiteIndexPageBaselineResponse = new DescribeWebsiteIndexPageBaselineResponse();
 
-			describeWebsiteIndexPageBaselineResponse.HttpResponse = context.HttpResponse;
-			describeWebsiteIndexPageBaselineResponse.RequestId = context.StringValue("DescribeWebsiteIndexPageBaseline.RequestId");
-			describeWebsiteIndexPageBaselineResponse.CreateTime = context.StringValue("DescribeWebsiteIndexPageBaseline.CreateTime");
-			describeWebsiteIndexPageBaselineResponse.Snapshot = context.StringValue("DescribeWebsiteIndexPageBaseline.Snapshot");
-			describeWebsiteIndexPageBaselineResponse.BaseLineStatus = context.StringValue("DescribeWebsiteIndexPageBaseline.BaseLineStatus");
+			describeWebsiteIndexPageBaselineResponse.HttpResponse = _ctx.HttpResponse;
+			describeWebsiteIndexPageBaselineResponse.RequestId = _ctx.StringValue("DescribeWebsiteIndexPageBaseline.RequestId");
+			describeWebsiteIndexPageBaselineResponse.CreateTime = _ctx.StringValue("DescribeWebsiteIndexPageBaseline.CreateTime");
+			describeWebsiteIndexPageBaselineResponse.Snapshot = _ctx.StringValue("DescribeWebsiteIndexPageBaseline.Snapshot");
+			describeWebsiteIndexPageBaselineResponse.BaseLineStatus = _ctx.StringValue("DescribeWebsiteIndexPageBaseline.BaseLineStatus");
         
 			return describeWebsiteIndexPageBaselineResponse;
         }

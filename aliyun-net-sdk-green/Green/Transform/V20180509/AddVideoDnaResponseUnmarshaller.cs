@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 {
     public class AddVideoDnaResponseUnmarshaller
     {
-        public static AddVideoDnaResponse Unmarshall(UnmarshallerContext context)
+        public static AddVideoDnaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddVideoDnaResponse addVideoDnaResponse = new AddVideoDnaResponse();
 
-			addVideoDnaResponse.HttpResponse = context.HttpResponse;
+			addVideoDnaResponse.HttpResponse = _ctx.HttpResponse;
         
 			return addVideoDnaResponse;
         }

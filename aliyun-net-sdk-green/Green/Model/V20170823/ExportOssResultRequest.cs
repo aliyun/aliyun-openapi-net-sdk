@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Green.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Green.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -43,6 +43,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 		private float? minScore;
 
 		private float? maxScore;
+
+		private long? stockTaskId;
 
 		private string startDate;
 
@@ -91,6 +93,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				maxScore = value;
 				DictionaryUtil.Add(QueryParameters, "MaxScore", value.ToString());
+			}
+		}
+
+		public long? StockTaskId
+		{
+			get
+			{
+				return stockTaskId;
+			}
+			set	
+			{
+				stockTaskId = value;
+				DictionaryUtil.Add(QueryParameters, "StockTaskId", value.ToString());
 			}
 		}
 

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeWebsiteVerifyInfoResponseUnmarshaller
     {
-        public static DescribeWebsiteVerifyInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeWebsiteVerifyInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeWebsiteVerifyInfoResponse describeWebsiteVerifyInfoResponse = new DescribeWebsiteVerifyInfoResponse();
 
-			describeWebsiteVerifyInfoResponse.HttpResponse = context.HttpResponse;
-			describeWebsiteVerifyInfoResponse.RequestId = context.StringValue("DescribeWebsiteVerifyInfo.RequestId");
-			describeWebsiteVerifyInfoResponse.Cname = context.StringValue("DescribeWebsiteVerifyInfo.Cname");
-			describeWebsiteVerifyInfoResponse.HostFile = context.StringValue("DescribeWebsiteVerifyInfo.HostFile");
-			describeWebsiteVerifyInfoResponse.IndexPage = context.StringValue("DescribeWebsiteVerifyInfo.IndexPage");
-			describeWebsiteVerifyInfoResponse.Domain = context.StringValue("DescribeWebsiteVerifyInfo.Domain");
-			describeWebsiteVerifyInfoResponse.VerifyMethod = context.StringValue("DescribeWebsiteVerifyInfo.VerifyMethod");
-			describeWebsiteVerifyInfoResponse.Protocol = context.StringValue("DescribeWebsiteVerifyInfo.Protocol");
+			describeWebsiteVerifyInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeWebsiteVerifyInfoResponse.RequestId = _ctx.StringValue("DescribeWebsiteVerifyInfo.RequestId");
+			describeWebsiteVerifyInfoResponse.Cname = _ctx.StringValue("DescribeWebsiteVerifyInfo.Cname");
+			describeWebsiteVerifyInfoResponse.HostFile = _ctx.StringValue("DescribeWebsiteVerifyInfo.HostFile");
+			describeWebsiteVerifyInfoResponse.IndexPage = _ctx.StringValue("DescribeWebsiteVerifyInfo.IndexPage");
+			describeWebsiteVerifyInfoResponse.Domain = _ctx.StringValue("DescribeWebsiteVerifyInfo.Domain");
+			describeWebsiteVerifyInfoResponse.VerifyMethod = _ctx.StringValue("DescribeWebsiteVerifyInfo.VerifyMethod");
+			describeWebsiteVerifyInfoResponse.Protocol = _ctx.StringValue("DescribeWebsiteVerifyInfo.Protocol");
         
 			return describeWebsiteVerifyInfoResponse;
         }

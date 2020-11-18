@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 {
     public class GetFacesResponseUnmarshaller
     {
-        public static GetFacesResponse Unmarshall(UnmarshallerContext context)
+        public static GetFacesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetFacesResponse getFacesResponse = new GetFacesResponse();
 
-			getFacesResponse.HttpResponse = context.HttpResponse;
-			getFacesResponse.RequestId = context.StringValue("GetFaces.RequestId");
+			getFacesResponse.HttpResponse = _ctx.HttpResponse;
+			getFacesResponse.RequestId = _ctx.StringValue("GetFaces.RequestId");
         
 			return getFacesResponse;
         }

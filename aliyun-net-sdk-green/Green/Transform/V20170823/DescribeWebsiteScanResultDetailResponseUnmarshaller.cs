@@ -26,31 +26,31 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeWebsiteScanResultDetailResponseUnmarshaller
     {
-        public static DescribeWebsiteScanResultDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeWebsiteScanResultDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeWebsiteScanResultDetailResponse describeWebsiteScanResultDetailResponse = new DescribeWebsiteScanResultDetailResponse();
 
-			describeWebsiteScanResultDetailResponse.HttpResponse = context.HttpResponse;
-			describeWebsiteScanResultDetailResponse.RequestId = context.StringValue("DescribeWebsiteScanResultDetail.RequestId");
-			describeWebsiteScanResultDetailResponse.Baseline = context.StringValue("DescribeWebsiteScanResultDetail.Baseline");
-			describeWebsiteScanResultDetailResponse.Content = context.StringValue("DescribeWebsiteScanResultDetail.Content");
-			describeWebsiteScanResultDetailResponse.TamperedSource = context.StringValue("DescribeWebsiteScanResultDetail.TamperedSource");
-			describeWebsiteScanResultDetailResponse.ResourceType = context.StringValue("DescribeWebsiteScanResultDetail.ResourceType");
+			describeWebsiteScanResultDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeWebsiteScanResultDetailResponse.RequestId = _ctx.StringValue("DescribeWebsiteScanResultDetail.RequestId");
+			describeWebsiteScanResultDetailResponse.Baseline = _ctx.StringValue("DescribeWebsiteScanResultDetail.Baseline");
+			describeWebsiteScanResultDetailResponse.Content = _ctx.StringValue("DescribeWebsiteScanResultDetail.Content");
+			describeWebsiteScanResultDetailResponse.TamperedSource = _ctx.StringValue("DescribeWebsiteScanResultDetail.TamperedSource");
+			describeWebsiteScanResultDetailResponse.ResourceType = _ctx.StringValue("DescribeWebsiteScanResultDetail.ResourceType");
 
 			List<string> describeWebsiteScanResultDetailResponse_hitKeywords = new List<string>();
-			for (int i = 0; i < context.Length("DescribeWebsiteScanResultDetail.HitKeywords.Length"); i++) {
-				describeWebsiteScanResultDetailResponse_hitKeywords.Add(context.StringValue("DescribeWebsiteScanResultDetail.HitKeywords["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeWebsiteScanResultDetail.HitKeywords.Length"); i++) {
+				describeWebsiteScanResultDetailResponse_hitKeywords.Add(_ctx.StringValue("DescribeWebsiteScanResultDetail.HitKeywords["+ i +"]"));
 			}
 			describeWebsiteScanResultDetailResponse.HitKeywords = describeWebsiteScanResultDetailResponse_hitKeywords;
 
 			List<DescribeWebsiteScanResultDetailResponse.DescribeWebsiteScanResultDetail_ImageScanResult> describeWebsiteScanResultDetailResponse_imageScanResults = new List<DescribeWebsiteScanResultDetailResponse.DescribeWebsiteScanResultDetail_ImageScanResult>();
-			for (int i = 0; i < context.Length("DescribeWebsiteScanResultDetail.ImageScanResults.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeWebsiteScanResultDetail.ImageScanResults.Length"); i++) {
 				DescribeWebsiteScanResultDetailResponse.DescribeWebsiteScanResultDetail_ImageScanResult imageScanResult = new DescribeWebsiteScanResultDetailResponse.DescribeWebsiteScanResultDetail_ImageScanResult();
-				imageScanResult.Url = context.StringValue("DescribeWebsiteScanResultDetail.ImageScanResults["+ i +"].Url");
+				imageScanResult.Url = _ctx.StringValue("DescribeWebsiteScanResultDetail.ImageScanResults["+ i +"].Url");
 
 				List<string> imageScanResult_labels = new List<string>();
-				for (int j = 0; j < context.Length("DescribeWebsiteScanResultDetail.ImageScanResults["+ i +"].Labels.Length"); j++) {
-					imageScanResult_labels.Add(context.StringValue("DescribeWebsiteScanResultDetail.ImageScanResults["+ i +"].Labels["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeWebsiteScanResultDetail.ImageScanResults["+ i +"].Labels.Length"); j++) {
+					imageScanResult_labels.Add(_ctx.StringValue("DescribeWebsiteScanResultDetail.ImageScanResults["+ i +"].Labels["+ j +"]"));
 				}
 				imageScanResult.Labels = imageScanResult_labels;
 

@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 {
     public class DeleteSimilarityLibraryResponseUnmarshaller
     {
-        public static DeleteSimilarityLibraryResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteSimilarityLibraryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteSimilarityLibraryResponse deleteSimilarityLibraryResponse = new DeleteSimilarityLibraryResponse();
 
-			deleteSimilarityLibraryResponse.HttpResponse = context.HttpResponse;
+			deleteSimilarityLibraryResponse.HttpResponse = _ctx.HttpResponse;
         
 			return deleteSimilarityLibraryResponse;
         }

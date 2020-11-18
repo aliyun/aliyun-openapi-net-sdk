@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class MarkWebsiteScanResultResponseUnmarshaller
     {
-        public static MarkWebsiteScanResultResponse Unmarshall(UnmarshallerContext context)
+        public static MarkWebsiteScanResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MarkWebsiteScanResultResponse markWebsiteScanResultResponse = new MarkWebsiteScanResultResponse();
 
-			markWebsiteScanResultResponse.HttpResponse = context.HttpResponse;
-			markWebsiteScanResultResponse.RequestId = context.StringValue("MarkWebsiteScanResult.RequestId");
+			markWebsiteScanResultResponse.HttpResponse = _ctx.HttpResponse;
+			markWebsiteScanResultResponse.RequestId = _ctx.StringValue("MarkWebsiteScanResult.RequestId");
         
 			return markWebsiteScanResultResponse;
         }

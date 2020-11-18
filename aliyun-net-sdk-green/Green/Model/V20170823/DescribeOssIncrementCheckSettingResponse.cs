@@ -39,6 +39,10 @@ namespace Aliyun.Acs.Green.Model.V20170823
 
 		private string autoFreezeType;
 
+		private string callbackId;
+
+		private string callbackName;
+
 		private List<DescribeOssIncrementCheckSetting_BucketConfig> bucketConfigList;
 
 		private List<string> imageSceneList;
@@ -130,6 +134,30 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			set	
 			{
 				autoFreezeType = value;
+			}
+		}
+
+		public string CallbackId
+		{
+			get
+			{
+				return callbackId;
+			}
+			set	
+			{
+				callbackId = value;
+			}
+		}
+
+		public string CallbackName
+		{
+			get
+			{
+				return callbackName;
+			}
+			set	
+			{
+				callbackName = value;
 			}
 		}
 

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class UpdateAuditCallbackResponseUnmarshaller
     {
-        public static UpdateAuditCallbackResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateAuditCallbackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateAuditCallbackResponse updateAuditCallbackResponse = new UpdateAuditCallbackResponse();
 
-			updateAuditCallbackResponse.HttpResponse = context.HttpResponse;
-			updateAuditCallbackResponse.RequestId = context.StringValue("UpdateAuditCallback.RequestId");
+			updateAuditCallbackResponse.HttpResponse = _ctx.HttpResponse;
+			updateAuditCallbackResponse.RequestId = _ctx.StringValue("UpdateAuditCallback.RequestId");
         
 			return updateAuditCallbackResponse;
         }

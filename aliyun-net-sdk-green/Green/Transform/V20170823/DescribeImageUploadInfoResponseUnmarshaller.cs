@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeImageUploadInfoResponseUnmarshaller
     {
-        public static DescribeImageUploadInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeImageUploadInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeImageUploadInfoResponse describeImageUploadInfoResponse = new DescribeImageUploadInfoResponse();
 
-			describeImageUploadInfoResponse.HttpResponse = context.HttpResponse;
-			describeImageUploadInfoResponse.RequestId = context.StringValue("DescribeImageUploadInfo.RequestId");
-			describeImageUploadInfoResponse.Accessid = context.StringValue("DescribeImageUploadInfo.Accessid");
-			describeImageUploadInfoResponse.Policy = context.StringValue("DescribeImageUploadInfo.Policy");
-			describeImageUploadInfoResponse.Signature = context.StringValue("DescribeImageUploadInfo.Signature");
-			describeImageUploadInfoResponse.Folder = context.StringValue("DescribeImageUploadInfo.Folder");
-			describeImageUploadInfoResponse.Host = context.StringValue("DescribeImageUploadInfo.Host");
-			describeImageUploadInfoResponse.Expire = context.IntegerValue("DescribeImageUploadInfo.Expire");
+			describeImageUploadInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeImageUploadInfoResponse.RequestId = _ctx.StringValue("DescribeImageUploadInfo.RequestId");
+			describeImageUploadInfoResponse.Accessid = _ctx.StringValue("DescribeImageUploadInfo.Accessid");
+			describeImageUploadInfoResponse.Policy = _ctx.StringValue("DescribeImageUploadInfo.Policy");
+			describeImageUploadInfoResponse.Signature = _ctx.StringValue("DescribeImageUploadInfo.Signature");
+			describeImageUploadInfoResponse.Folder = _ctx.StringValue("DescribeImageUploadInfo.Folder");
+			describeImageUploadInfoResponse.Host = _ctx.StringValue("DescribeImageUploadInfo.Host");
+			describeImageUploadInfoResponse.Expire = _ctx.IntegerValue("DescribeImageUploadInfo.Expire");
         
 			return describeImageUploadInfoResponse;
         }

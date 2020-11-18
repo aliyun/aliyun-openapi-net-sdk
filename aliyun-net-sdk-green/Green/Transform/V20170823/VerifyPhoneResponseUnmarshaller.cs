@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class VerifyPhoneResponseUnmarshaller
     {
-        public static VerifyPhoneResponse Unmarshall(UnmarshallerContext context)
+        public static VerifyPhoneResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VerifyPhoneResponse verifyPhoneResponse = new VerifyPhoneResponse();
 
-			verifyPhoneResponse.HttpResponse = context.HttpResponse;
-			verifyPhoneResponse.RequestId = context.StringValue("VerifyPhone.RequestId");
+			verifyPhoneResponse.HttpResponse = _ctx.HttpResponse;
+			verifyPhoneResponse.RequestId = _ctx.StringValue("VerifyPhone.RequestId");
         
 			return verifyPhoneResponse;
         }

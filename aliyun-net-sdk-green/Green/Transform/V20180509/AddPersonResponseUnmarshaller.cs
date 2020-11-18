@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 {
     public class AddPersonResponseUnmarshaller
     {
-        public static AddPersonResponse Unmarshall(UnmarshallerContext context)
+        public static AddPersonResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddPersonResponse addPersonResponse = new AddPersonResponse();
 
-			addPersonResponse.HttpResponse = context.HttpResponse;
+			addPersonResponse.HttpResponse = _ctx.HttpResponse;
         
 			return addPersonResponse;
         }

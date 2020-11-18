@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 {
     public class VoiceAsyncScanResultsResponseUnmarshaller
     {
-        public static VoiceAsyncScanResultsResponse Unmarshall(UnmarshallerContext context)
+        public static VoiceAsyncScanResultsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VoiceAsyncScanResultsResponse voiceAsyncScanResultsResponse = new VoiceAsyncScanResultsResponse();
 
-			voiceAsyncScanResultsResponse.HttpResponse = context.HttpResponse;
+			voiceAsyncScanResultsResponse.HttpResponse = _ctx.HttpResponse;
         
 			return voiceAsyncScanResultsResponse;
         }

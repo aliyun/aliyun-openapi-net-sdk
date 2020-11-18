@@ -26,36 +26,36 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeUserBizTypesResponseUnmarshaller
     {
-        public static DescribeUserBizTypesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserBizTypesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserBizTypesResponse describeUserBizTypesResponse = new DescribeUserBizTypesResponse();
 
-			describeUserBizTypesResponse.HttpResponse = context.HttpResponse;
-			describeUserBizTypesResponse.RequestId = context.StringValue("DescribeUserBizTypes.RequestId");
+			describeUserBizTypesResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserBizTypesResponse.RequestId = _ctx.StringValue("DescribeUserBizTypes.RequestId");
 
 			List<DescribeUserBizTypesResponse.DescribeUserBizTypes_Item> describeUserBizTypesResponse_bizTypeList = new List<DescribeUserBizTypesResponse.DescribeUserBizTypes_Item>();
-			for (int i = 0; i < context.Length("DescribeUserBizTypes.BizTypeList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeUserBizTypes.BizTypeList.Length"); i++) {
 				DescribeUserBizTypesResponse.DescribeUserBizTypes_Item item = new DescribeUserBizTypesResponse.DescribeUserBizTypes_Item();
-				item.BizType = context.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].BizType");
-				item.SourceBizType = context.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].SourceBizType");
-				item.Gray = context.BooleanValue("DescribeUserBizTypes.BizTypeList["+ i +"].Gray");
-				item.Source = context.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].Source");
-				item.CiteTemplate = context.BooleanValue("DescribeUserBizTypes.BizTypeList["+ i +"].CiteTemplate");
-				item.IndustryInfo = context.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].IndustryInfo");
+				item.BizType = _ctx.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].BizType");
+				item.SourceBizType = _ctx.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].SourceBizType");
+				item.Gray = _ctx.BooleanValue("DescribeUserBizTypes.BizTypeList["+ i +"].Gray");
+				item.Source = _ctx.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].Source");
+				item.CiteTemplate = _ctx.BooleanValue("DescribeUserBizTypes.BizTypeList["+ i +"].CiteTemplate");
+				item.IndustryInfo = _ctx.StringValue("DescribeUserBizTypes.BizTypeList["+ i +"].IndustryInfo");
 
 				describeUserBizTypesResponse_bizTypeList.Add(item);
 			}
 			describeUserBizTypesResponse.BizTypeList = describeUserBizTypesResponse_bizTypeList;
 
 			List<DescribeUserBizTypesResponse.DescribeUserBizTypes_Item> describeUserBizTypesResponse_bizTypeListImport = new List<DescribeUserBizTypesResponse.DescribeUserBizTypes_Item>();
-			for (int i = 0; i < context.Length("DescribeUserBizTypes.BizTypeListImport.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeUserBizTypes.BizTypeListImport.Length"); i++) {
 				DescribeUserBizTypesResponse.DescribeUserBizTypes_Item item = new DescribeUserBizTypesResponse.DescribeUserBizTypes_Item();
-				item.BizType = context.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].BizType");
-				item.SourceBizType = context.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].SourceBizType");
-				item.Gray = context.BooleanValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].Gray");
-				item.Source = context.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].Source");
-				item.CiteTemplate = context.BooleanValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].CiteTemplate");
-				item.IndustryInfo = context.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].IndustryInfo");
+				item.BizType = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].BizType");
+				item.SourceBizType = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].SourceBizType");
+				item.Gray = _ctx.BooleanValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].Gray");
+				item.Source = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].Source");
+				item.CiteTemplate = _ctx.BooleanValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].CiteTemplate");
+				item.IndustryInfo = _ctx.StringValue("DescribeUserBizTypes.BizTypeListImport["+ i +"].IndustryInfo");
 
 				describeUserBizTypesResponse_bizTypeListImport.Add(item);
 			}

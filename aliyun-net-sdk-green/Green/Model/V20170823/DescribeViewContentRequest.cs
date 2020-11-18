@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Green.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Green.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 		private string auditResult;
 
 		private int? pageSize;
+
+		private string keyword;
 
 		private string taskId;
 
@@ -147,6 +149,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string Keyword
+		{
+			get
+			{
+				return keyword;
+			}
+			set	
+			{
+				keyword = value;
+				DictionaryUtil.Add(QueryParameters, "Keyword", value);
 			}
 		}
 

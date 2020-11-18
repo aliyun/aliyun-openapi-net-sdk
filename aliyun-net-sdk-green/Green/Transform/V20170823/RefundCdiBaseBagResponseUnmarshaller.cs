@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class RefundCdiBaseBagResponseUnmarshaller
     {
-        public static RefundCdiBaseBagResponse Unmarshall(UnmarshallerContext context)
+        public static RefundCdiBaseBagResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RefundCdiBaseBagResponse refundCdiBaseBagResponse = new RefundCdiBaseBagResponse();
 
-			refundCdiBaseBagResponse.HttpResponse = context.HttpResponse;
-			refundCdiBaseBagResponse.RequestId = context.StringValue("RefundCdiBaseBag.RequestId");
+			refundCdiBaseBagResponse.HttpResponse = _ctx.HttpResponse;
+			refundCdiBaseBagResponse.RequestId = _ctx.StringValue("RefundCdiBaseBag.RequestId");
         
 			return refundCdiBaseBagResponse;
         }
