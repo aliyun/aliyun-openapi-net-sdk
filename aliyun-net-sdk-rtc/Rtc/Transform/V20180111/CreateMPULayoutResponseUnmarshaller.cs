@@ -26,13 +26,13 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class CreateMPULayoutResponseUnmarshaller
     {
-        public static CreateMPULayoutResponse Unmarshall(UnmarshallerContext context)
+        public static CreateMPULayoutResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateMPULayoutResponse createMPULayoutResponse = new CreateMPULayoutResponse();
 
-			createMPULayoutResponse.HttpResponse = context.HttpResponse;
-			createMPULayoutResponse.RequestId = context.StringValue("CreateMPULayout.RequestId");
-			createMPULayoutResponse.LayoutId = context.LongValue("CreateMPULayout.LayoutId");
+			createMPULayoutResponse.HttpResponse = _ctx.HttpResponse;
+			createMPULayoutResponse.RequestId = _ctx.StringValue("CreateMPULayout.RequestId");
+			createMPULayoutResponse.LayoutId = _ctx.LongValue("CreateMPULayout.LayoutId");
         
 			return createMPULayoutResponse;
         }

@@ -26,22 +26,22 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeUserInfoInChannelResponseUnmarshaller
     {
-        public static DescribeUserInfoInChannelResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserInfoInChannelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserInfoInChannelResponse describeUserInfoInChannelResponse = new DescribeUserInfoInChannelResponse();
 
-			describeUserInfoInChannelResponse.HttpResponse = context.HttpResponse;
-			describeUserInfoInChannelResponse.RequestId = context.StringValue("DescribeUserInfoInChannel.RequestId");
-			describeUserInfoInChannelResponse.Timestamp = context.IntegerValue("DescribeUserInfoInChannel.Timestamp");
-			describeUserInfoInChannelResponse.IsChannelExist = context.BooleanValue("DescribeUserInfoInChannel.IsChannelExist");
-			describeUserInfoInChannelResponse.IsInChannel = context.BooleanValue("DescribeUserInfoInChannel.IsInChannel");
+			describeUserInfoInChannelResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserInfoInChannelResponse.RequestId = _ctx.StringValue("DescribeUserInfoInChannel.RequestId");
+			describeUserInfoInChannelResponse.Timestamp = _ctx.IntegerValue("DescribeUserInfoInChannel.Timestamp");
+			describeUserInfoInChannelResponse.IsChannelExist = _ctx.BooleanValue("DescribeUserInfoInChannel.IsChannelExist");
+			describeUserInfoInChannelResponse.IsInChannel = _ctx.BooleanValue("DescribeUserInfoInChannel.IsInChannel");
 
 			List<DescribeUserInfoInChannelResponse.DescribeUserInfoInChannel_PropertyItem> describeUserInfoInChannelResponse_property = new List<DescribeUserInfoInChannelResponse.DescribeUserInfoInChannel_PropertyItem>();
-			for (int i = 0; i < context.Length("DescribeUserInfoInChannel.Property.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeUserInfoInChannel.Property.Length"); i++) {
 				DescribeUserInfoInChannelResponse.DescribeUserInfoInChannel_PropertyItem propertyItem = new DescribeUserInfoInChannelResponse.DescribeUserInfoInChannel_PropertyItem();
-				propertyItem.Session = context.StringValue("DescribeUserInfoInChannel.Property["+ i +"].Session");
-				propertyItem.Join = context.IntegerValue("DescribeUserInfoInChannel.Property["+ i +"].Join");
-				propertyItem.Role = context.IntegerValue("DescribeUserInfoInChannel.Property["+ i +"].Role");
+				propertyItem.Session = _ctx.StringValue("DescribeUserInfoInChannel.Property["+ i +"].Session");
+				propertyItem.Join = _ctx.IntegerValue("DescribeUserInfoInChannel.Property["+ i +"].Join");
+				propertyItem.Role = _ctx.IntegerValue("DescribeUserInfoInChannel.Property["+ i +"].Role");
 
 				describeUserInfoInChannelResponse_property.Add(propertyItem);
 			}

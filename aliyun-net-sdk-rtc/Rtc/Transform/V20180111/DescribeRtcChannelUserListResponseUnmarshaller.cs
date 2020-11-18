@@ -26,34 +26,34 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeRtcChannelUserListResponseUnmarshaller
     {
-        public static DescribeRtcChannelUserListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRtcChannelUserListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRtcChannelUserListResponse describeRtcChannelUserListResponse = new DescribeRtcChannelUserListResponse();
 
-			describeRtcChannelUserListResponse.HttpResponse = context.HttpResponse;
-			describeRtcChannelUserListResponse.RequestId = context.StringValue("DescribeRtcChannelUserList.RequestId");
-			describeRtcChannelUserListResponse.PageSize = context.LongValue("DescribeRtcChannelUserList.PageSize");
-			describeRtcChannelUserListResponse.PageNo = context.LongValue("DescribeRtcChannelUserList.PageNo");
-			describeRtcChannelUserListResponse.TotalCnt = context.LongValue("DescribeRtcChannelUserList.TotalCnt");
+			describeRtcChannelUserListResponse.HttpResponse = _ctx.HttpResponse;
+			describeRtcChannelUserListResponse.RequestId = _ctx.StringValue("DescribeRtcChannelUserList.RequestId");
+			describeRtcChannelUserListResponse.PageSize = _ctx.LongValue("DescribeRtcChannelUserList.PageSize");
+			describeRtcChannelUserListResponse.PageNo = _ctx.LongValue("DescribeRtcChannelUserList.PageNo");
+			describeRtcChannelUserListResponse.TotalCnt = _ctx.LongValue("DescribeRtcChannelUserList.TotalCnt");
 
 			List<DescribeRtcChannelUserListResponse.DescribeRtcChannelUserList_UserListItem> describeRtcChannelUserListResponse_userList = new List<DescribeRtcChannelUserListResponse.DescribeRtcChannelUserList_UserListItem>();
-			for (int i = 0; i < context.Length("DescribeRtcChannelUserList.UserList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRtcChannelUserList.UserList.Length"); i++) {
 				DescribeRtcChannelUserListResponse.DescribeRtcChannelUserList_UserListItem userListItem = new DescribeRtcChannelUserListResponse.DescribeRtcChannelUserList_UserListItem();
-				userListItem.ChannelId = context.StringValue("DescribeRtcChannelUserList.UserList["+ i +"].ChannelId");
-				userListItem.UserId = context.StringValue("DescribeRtcChannelUserList.UserList["+ i +"].UserId");
-				userListItem.StartTime = context.StringValue("DescribeRtcChannelUserList.UserList["+ i +"].StartTime");
-				userListItem.EndTime = context.StringValue("DescribeRtcChannelUserList.UserList["+ i +"].EndTime");
-				userListItem.ServiceArea = context.StringValue("DescribeRtcChannelUserList.UserList["+ i +"].ServiceArea");
-				userListItem.SubAudio = context.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].SubAudio");
-				userListItem.PubAudio = context.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].PubAudio");
-				userListItem.SubVideo360 = context.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].SubVideo360");
-				userListItem.PubVideo360 = context.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].PubVideo360");
-				userListItem.SubVideo720 = context.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].SubVideo720");
-				userListItem.PubVideo720 = context.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].PubVideo720");
-				userListItem.SubVideo1080 = context.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].SubVideo1080");
-				userListItem.PubVideo1080 = context.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].PubVideo1080");
-				userListItem.SubContent = context.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].SubContent");
-				userListItem.PubContent = context.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].PubContent");
+				userListItem.ChannelId = _ctx.StringValue("DescribeRtcChannelUserList.UserList["+ i +"].ChannelId");
+				userListItem.UserId = _ctx.StringValue("DescribeRtcChannelUserList.UserList["+ i +"].UserId");
+				userListItem.StartTime = _ctx.StringValue("DescribeRtcChannelUserList.UserList["+ i +"].StartTime");
+				userListItem.EndTime = _ctx.StringValue("DescribeRtcChannelUserList.UserList["+ i +"].EndTime");
+				userListItem.ServiceArea = _ctx.StringValue("DescribeRtcChannelUserList.UserList["+ i +"].ServiceArea");
+				userListItem.SubAudio = _ctx.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].SubAudio");
+				userListItem.PubAudio = _ctx.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].PubAudio");
+				userListItem.SubVideo360 = _ctx.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].SubVideo360");
+				userListItem.PubVideo360 = _ctx.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].PubVideo360");
+				userListItem.SubVideo720 = _ctx.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].SubVideo720");
+				userListItem.PubVideo720 = _ctx.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].PubVideo720");
+				userListItem.SubVideo1080 = _ctx.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].SubVideo1080");
+				userListItem.PubVideo1080 = _ctx.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].PubVideo1080");
+				userListItem.SubContent = _ctx.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].SubContent");
+				userListItem.PubContent = _ctx.IntegerValue("DescribeRtcChannelUserList.UserList["+ i +"].PubContent");
 
 				describeRtcChannelUserListResponse_userList.Add(userListItem);
 			}

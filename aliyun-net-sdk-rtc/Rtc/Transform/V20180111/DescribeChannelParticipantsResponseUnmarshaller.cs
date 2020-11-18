@@ -26,19 +26,19 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeChannelParticipantsResponseUnmarshaller
     {
-        public static DescribeChannelParticipantsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeChannelParticipantsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeChannelParticipantsResponse describeChannelParticipantsResponse = new DescribeChannelParticipantsResponse();
 
-			describeChannelParticipantsResponse.HttpResponse = context.HttpResponse;
-			describeChannelParticipantsResponse.RequestId = context.StringValue("DescribeChannelParticipants.RequestId");
-			describeChannelParticipantsResponse.Timestamp = context.IntegerValue("DescribeChannelParticipants.Timestamp");
-			describeChannelParticipantsResponse.TotalNum = context.IntegerValue("DescribeChannelParticipants.TotalNum");
-			describeChannelParticipantsResponse.TotalPage = context.IntegerValue("DescribeChannelParticipants.TotalPage");
+			describeChannelParticipantsResponse.HttpResponse = _ctx.HttpResponse;
+			describeChannelParticipantsResponse.RequestId = _ctx.StringValue("DescribeChannelParticipants.RequestId");
+			describeChannelParticipantsResponse.Timestamp = _ctx.IntegerValue("DescribeChannelParticipants.Timestamp");
+			describeChannelParticipantsResponse.TotalNum = _ctx.IntegerValue("DescribeChannelParticipants.TotalNum");
+			describeChannelParticipantsResponse.TotalPage = _ctx.IntegerValue("DescribeChannelParticipants.TotalPage");
 
 			List<string> describeChannelParticipantsResponse_userList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeChannelParticipants.UserList.Length"); i++) {
-				describeChannelParticipantsResponse_userList.Add(context.StringValue("DescribeChannelParticipants.UserList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeChannelParticipants.UserList.Length"); i++) {
+				describeChannelParticipantsResponse_userList.Add(_ctx.StringValue("DescribeChannelParticipants.UserList["+ i +"]"));
 			}
 			describeChannelParticipantsResponse.UserList = describeChannelParticipantsResponse_userList;
         

@@ -34,8 +34,8 @@ namespace Aliyun.Acs.rtc.Model.V20180111
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.rtc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.rtc.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -69,6 +69,14 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 					DictionaryUtil.Add(QueryParameters,"UserPanes." + (i + 1) + ".PaneId", userPaness[i].PaneId);
 					DictionaryUtil.Add(QueryParameters,"UserPanes." + (i + 1) + ".UserId", userPaness[i].UserId);
 					DictionaryUtil.Add(QueryParameters,"UserPanes." + (i + 1) + ".SourceType", userPaness[i].SourceType);
+					for (int j = 0; j < userPaness[i].Imagess.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"UserPanes." + (i + 1) + ".Images." +(j + 1), userPaness[i].Imagess[j]);
+					}
+					for (int j = 0; j < userPaness[i].Textss.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"UserPanes." + (i + 1) + ".Texts." +(j + 1), userPaness[i].Textss[j]);
+					}
 				}
 			}
 		}
@@ -164,6 +172,10 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 			private string sourceType;
 
+			private List<Images> imagess = new List<Images>(){ };
+
+			private List<Texts> textss = new List<Texts>(){ };
+
 			public int? PaneId
 			{
 				get
@@ -197,6 +209,234 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 				set	
 				{
 					sourceType = value;
+				}
+			}
+
+			public List<Images> Imagess
+			{
+				get
+				{
+					return imagess;
+				}
+				set	
+				{
+					imagess = value;
+				}
+			}
+
+			public List<Texts> Textss
+			{
+				get
+				{
+					return textss;
+				}
+				set	
+				{
+					textss = value;
+				}
+			}
+
+			public class Images
+			{
+
+				private string url;
+
+				private int? display;
+
+				private float? x;
+
+				private float? y;
+
+				private float? width;
+
+				private float? height;
+
+				private int? zOrder;
+
+				public string Url
+				{
+					get
+					{
+						return url;
+					}
+					set	
+					{
+						url = value;
+					}
+				}
+
+				public int? Display
+				{
+					get
+					{
+						return display;
+					}
+					set	
+					{
+						display = value;
+					}
+				}
+
+				public float? X
+				{
+					get
+					{
+						return x;
+					}
+					set	
+					{
+						x = value;
+					}
+				}
+
+				public float? Y
+				{
+					get
+					{
+						return y;
+					}
+					set	
+					{
+						y = value;
+					}
+				}
+
+				public float? Width
+				{
+					get
+					{
+						return width;
+					}
+					set	
+					{
+						width = value;
+					}
+				}
+
+				public float? Height
+				{
+					get
+					{
+						return height;
+					}
+					set	
+					{
+						height = value;
+					}
+				}
+
+				public int? ZOrder
+				{
+					get
+					{
+						return zOrder;
+					}
+					set	
+					{
+						zOrder = value;
+					}
+				}
+			}
+
+			public class Texts
+			{
+
+				private string text;
+
+				private float? x;
+
+				private float? y;
+
+				private int? fontType;
+
+				private int? fontSize;
+
+				private int? fontColor;
+
+				private int? zOrder;
+
+				public string Text
+				{
+					get
+					{
+						return text;
+					}
+					set	
+					{
+						text = value;
+					}
+				}
+
+				public float? X
+				{
+					get
+					{
+						return x;
+					}
+					set	
+					{
+						x = value;
+					}
+				}
+
+				public float? Y
+				{
+					get
+					{
+						return y;
+					}
+					set	
+					{
+						y = value;
+					}
+				}
+
+				public int? FontType
+				{
+					get
+					{
+						return fontType;
+					}
+					set	
+					{
+						fontType = value;
+					}
+				}
+
+				public int? FontSize
+				{
+					get
+					{
+						return fontSize;
+					}
+					set	
+					{
+						fontSize = value;
+					}
+				}
+
+				public int? FontColor
+				{
+					get
+					{
+						return fontColor;
+					}
+					set	
+					{
+						fontColor = value;
+					}
+				}
+
+				public int? ZOrder
+				{
+					get
+					{
+						return zOrder;
+					}
+					set	
+					{
+						zOrder = value;
+					}
 				}
 			}
 		}

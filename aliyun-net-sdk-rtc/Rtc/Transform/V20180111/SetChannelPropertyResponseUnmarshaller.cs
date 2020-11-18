@@ -26,12 +26,12 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class SetChannelPropertyResponseUnmarshaller
     {
-        public static SetChannelPropertyResponse Unmarshall(UnmarshallerContext context)
+        public static SetChannelPropertyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetChannelPropertyResponse setChannelPropertyResponse = new SetChannelPropertyResponse();
 
-			setChannelPropertyResponse.HttpResponse = context.HttpResponse;
-			setChannelPropertyResponse.RequestId = context.StringValue("SetChannelProperty.RequestId");
+			setChannelPropertyResponse.HttpResponse = _ctx.HttpResponse;
+			setChannelPropertyResponse.RequestId = _ctx.StringValue("SetChannelProperty.RequestId");
         
 			return setChannelPropertyResponse;
         }

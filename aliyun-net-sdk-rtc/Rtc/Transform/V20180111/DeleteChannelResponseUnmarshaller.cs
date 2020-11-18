@@ -26,12 +26,12 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DeleteChannelResponseUnmarshaller
     {
-        public static DeleteChannelResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteChannelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteChannelResponse deleteChannelResponse = new DeleteChannelResponse();
 
-			deleteChannelResponse.HttpResponse = context.HttpResponse;
-			deleteChannelResponse.RequestId = context.StringValue("DeleteChannel.RequestId");
+			deleteChannelResponse.HttpResponse = _ctx.HttpResponse;
+			deleteChannelResponse.RequestId = _ctx.StringValue("DeleteChannel.RequestId");
         
 			return deleteChannelResponse;
         }

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class ReceiveNotifyResponseUnmarshaller
     {
-        public static ReceiveNotifyResponse Unmarshall(UnmarshallerContext context)
+        public static ReceiveNotifyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReceiveNotifyResponse receiveNotifyResponse = new ReceiveNotifyResponse();
 
-			receiveNotifyResponse.HttpResponse = context.HttpResponse;
-			receiveNotifyResponse.RequestId = context.StringValue("ReceiveNotify.RequestId");
-			receiveNotifyResponse.TraceId = context.StringValue("ReceiveNotify.TraceId");
+			receiveNotifyResponse.HttpResponse = _ctx.HttpResponse;
+			receiveNotifyResponse.RequestId = _ctx.StringValue("ReceiveNotify.RequestId");
+			receiveNotifyResponse.TraceId = _ctx.StringValue("ReceiveNotify.TraceId");
         
 			return receiveNotifyResponse;
         }

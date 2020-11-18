@@ -26,18 +26,18 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeConferenceAuthInfoResponseUnmarshaller
     {
-        public static DescribeConferenceAuthInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeConferenceAuthInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeConferenceAuthInfoResponse describeConferenceAuthInfoResponse = new DescribeConferenceAuthInfoResponse();
 
-			describeConferenceAuthInfoResponse.HttpResponse = context.HttpResponse;
-			describeConferenceAuthInfoResponse.RequestId = context.StringValue("DescribeConferenceAuthInfo.RequestId");
-			describeConferenceAuthInfoResponse.ConferenceId = context.StringValue("DescribeConferenceAuthInfo.ConferenceId");
+			describeConferenceAuthInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeConferenceAuthInfoResponse.RequestId = _ctx.StringValue("DescribeConferenceAuthInfo.RequestId");
+			describeConferenceAuthInfoResponse.ConferenceId = _ctx.StringValue("DescribeConferenceAuthInfo.ConferenceId");
 
 			DescribeConferenceAuthInfoResponse.DescribeConferenceAuthInfo_AuthInfo authInfo = new DescribeConferenceAuthInfoResponse.DescribeConferenceAuthInfo_AuthInfo();
-			authInfo.Key = context.StringValue("DescribeConferenceAuthInfo.AuthInfo.Key");
-			authInfo.Nonce = context.StringValue("DescribeConferenceAuthInfo.AuthInfo.Nonce");
-			authInfo.Timestamp = context.IntegerValue("DescribeConferenceAuthInfo.AuthInfo.Timestamp");
+			authInfo.Key = _ctx.StringValue("DescribeConferenceAuthInfo.AuthInfo.Key");
+			authInfo.Nonce = _ctx.StringValue("DescribeConferenceAuthInfo.AuthInfo.Nonce");
+			authInfo.Timestamp = _ctx.IntegerValue("DescribeConferenceAuthInfo.AuthInfo.Timestamp");
 			describeConferenceAuthInfoResponse.AuthInfo = authInfo;
         
 			return describeConferenceAuthInfoResponse;

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class CreateChannelResponseUnmarshaller
     {
-        public static CreateChannelResponse Unmarshall(UnmarshallerContext context)
+        public static CreateChannelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateChannelResponse createChannelResponse = new CreateChannelResponse();
 
-			createChannelResponse.HttpResponse = context.HttpResponse;
-			createChannelResponse.RequestId = context.StringValue("CreateChannel.RequestId");
-			createChannelResponse.ChannelKey = context.StringValue("CreateChannel.ChannelKey");
-			createChannelResponse.Nonce = context.StringValue("CreateChannel.Nonce");
-			createChannelResponse.Timestamp = context.IntegerValue("CreateChannel.Timestamp");
+			createChannelResponse.HttpResponse = _ctx.HttpResponse;
+			createChannelResponse.RequestId = _ctx.StringValue("CreateChannel.RequestId");
+			createChannelResponse.ChannelKey = _ctx.StringValue("CreateChannel.ChannelKey");
+			createChannelResponse.Nonce = _ctx.StringValue("CreateChannel.Nonce");
+			createChannelResponse.Timestamp = _ctx.IntegerValue("CreateChannel.Timestamp");
         
 			return createChannelResponse;
         }

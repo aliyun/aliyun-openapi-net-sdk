@@ -26,14 +26,14 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class UpdateChannelResponseUnmarshaller
     {
-        public static UpdateChannelResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateChannelResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateChannelResponse updateChannelResponse = new UpdateChannelResponse();
 
-			updateChannelResponse.HttpResponse = context.HttpResponse;
-			updateChannelResponse.RequestId = context.StringValue("UpdateChannel.RequestId");
-			updateChannelResponse.Nonce = context.StringValue("UpdateChannel.Nonce");
-			updateChannelResponse.Timestamp = context.IntegerValue("UpdateChannel.Timestamp");
+			updateChannelResponse.HttpResponse = _ctx.HttpResponse;
+			updateChannelResponse.RequestId = _ctx.StringValue("UpdateChannel.RequestId");
+			updateChannelResponse.Nonce = _ctx.StringValue("UpdateChannel.Nonce");
+			updateChannelResponse.Timestamp = _ctx.IntegerValue("UpdateChannel.Timestamp");
         
 			return updateChannelResponse;
         }

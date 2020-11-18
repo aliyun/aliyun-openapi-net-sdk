@@ -26,12 +26,12 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class StartMPUTaskResponseUnmarshaller
     {
-        public static StartMPUTaskResponse Unmarshall(UnmarshallerContext context)
+        public static StartMPUTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartMPUTaskResponse startMPUTaskResponse = new StartMPUTaskResponse();
 
-			startMPUTaskResponse.HttpResponse = context.HttpResponse;
-			startMPUTaskResponse.RequestId = context.StringValue("StartMPUTask.RequestId");
+			startMPUTaskResponse.HttpResponse = _ctx.HttpResponse;
+			startMPUTaskResponse.RequestId = _ctx.StringValue("StartMPUTask.RequestId");
         
 			return startMPUTaskResponse;
         }

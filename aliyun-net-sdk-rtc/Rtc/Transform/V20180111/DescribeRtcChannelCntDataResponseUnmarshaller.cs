@@ -26,18 +26,18 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeRtcChannelCntDataResponseUnmarshaller
     {
-        public static DescribeRtcChannelCntDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRtcChannelCntDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRtcChannelCntDataResponse describeRtcChannelCntDataResponse = new DescribeRtcChannelCntDataResponse();
 
-			describeRtcChannelCntDataResponse.HttpResponse = context.HttpResponse;
-			describeRtcChannelCntDataResponse.RequestId = context.StringValue("DescribeRtcChannelCntData.RequestId");
+			describeRtcChannelCntDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeRtcChannelCntDataResponse.RequestId = _ctx.StringValue("DescribeRtcChannelCntData.RequestId");
 
 			List<DescribeRtcChannelCntDataResponse.DescribeRtcChannelCntData_ChannelCntModule> describeRtcChannelCntDataResponse_channelCntDataPerInterval = new List<DescribeRtcChannelCntDataResponse.DescribeRtcChannelCntData_ChannelCntModule>();
-			for (int i = 0; i < context.Length("DescribeRtcChannelCntData.ChannelCntDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRtcChannelCntData.ChannelCntDataPerInterval.Length"); i++) {
 				DescribeRtcChannelCntDataResponse.DescribeRtcChannelCntData_ChannelCntModule channelCntModule = new DescribeRtcChannelCntDataResponse.DescribeRtcChannelCntData_ChannelCntModule();
-				channelCntModule.TimeStamp = context.StringValue("DescribeRtcChannelCntData.ChannelCntDataPerInterval["+ i +"].TimeStamp");
-				channelCntModule.ActiveChannelCnt = context.LongValue("DescribeRtcChannelCntData.ChannelCntDataPerInterval["+ i +"].ActiveChannelCnt");
+				channelCntModule.TimeStamp = _ctx.StringValue("DescribeRtcChannelCntData.ChannelCntDataPerInterval["+ i +"].TimeStamp");
+				channelCntModule.ActiveChannelCnt = _ctx.LongValue("DescribeRtcChannelCntData.ChannelCntDataPerInterval["+ i +"].ActiveChannelCnt");
 
 				describeRtcChannelCntDataResponse_channelCntDataPerInterval.Add(channelCntModule);
 			}

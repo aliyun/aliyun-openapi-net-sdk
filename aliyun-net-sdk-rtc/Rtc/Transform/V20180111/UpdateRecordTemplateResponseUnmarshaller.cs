@@ -26,13 +26,13 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class UpdateRecordTemplateResponseUnmarshaller
     {
-        public static UpdateRecordTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateRecordTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateRecordTemplateResponse updateRecordTemplateResponse = new UpdateRecordTemplateResponse();
 
-			updateRecordTemplateResponse.HttpResponse = context.HttpResponse;
-			updateRecordTemplateResponse.RequestId = context.StringValue("UpdateRecordTemplate.RequestId");
-			updateRecordTemplateResponse.TemplateId = context.StringValue("UpdateRecordTemplate.TemplateId");
+			updateRecordTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			updateRecordTemplateResponse.RequestId = _ctx.StringValue("UpdateRecordTemplate.RequestId");
+			updateRecordTemplateResponse.TemplateId = _ctx.StringValue("UpdateRecordTemplate.TemplateId");
         
 			return updateRecordTemplateResponse;
         }

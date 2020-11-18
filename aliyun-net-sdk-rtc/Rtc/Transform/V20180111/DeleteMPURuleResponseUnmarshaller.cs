@@ -26,12 +26,12 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DeleteMPURuleResponseUnmarshaller
     {
-        public static DeleteMPURuleResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteMPURuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteMPURuleResponse deleteMPURuleResponse = new DeleteMPURuleResponse();
 
-			deleteMPURuleResponse.HttpResponse = context.HttpResponse;
-			deleteMPURuleResponse.RequestId = context.StringValue("DeleteMPURule.RequestId");
+			deleteMPURuleResponse.HttpResponse = _ctx.HttpResponse;
+			deleteMPURuleResponse.RequestId = _ctx.StringValue("DeleteMPURule.RequestId");
         
 			return deleteMPURuleResponse;
         }

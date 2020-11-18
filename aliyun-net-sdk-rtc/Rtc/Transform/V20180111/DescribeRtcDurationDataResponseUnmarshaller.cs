@@ -26,23 +26,23 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeRtcDurationDataResponseUnmarshaller
     {
-        public static DescribeRtcDurationDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRtcDurationDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRtcDurationDataResponse describeRtcDurationDataResponse = new DescribeRtcDurationDataResponse();
 
-			describeRtcDurationDataResponse.HttpResponse = context.HttpResponse;
-			describeRtcDurationDataResponse.RequestId = context.StringValue("DescribeRtcDurationData.RequestId");
+			describeRtcDurationDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeRtcDurationDataResponse.RequestId = _ctx.StringValue("DescribeRtcDurationData.RequestId");
 
 			List<DescribeRtcDurationDataResponse.DescribeRtcDurationData_DurationModule> describeRtcDurationDataResponse_durationDataPerInterval = new List<DescribeRtcDurationDataResponse.DescribeRtcDurationData_DurationModule>();
-			for (int i = 0; i < context.Length("DescribeRtcDurationData.DurationDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRtcDurationData.DurationDataPerInterval.Length"); i++) {
 				DescribeRtcDurationDataResponse.DescribeRtcDurationData_DurationModule durationModule = new DescribeRtcDurationDataResponse.DescribeRtcDurationData_DurationModule();
-				durationModule.TimeStamp = context.StringValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].TimeStamp");
-				durationModule.TotalDuration = context.LongValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].TotalDuration");
-				durationModule.AudioDuration = context.LongValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].AudioDuration");
-				durationModule.V360Duration = context.LongValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].V360Duration");
-				durationModule.V720Duration = context.LongValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].V720Duration");
-				durationModule.V1080Duration = context.LongValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].V1080Duration");
-				durationModule.ContentDuration = context.LongValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].ContentDuration");
+				durationModule.TimeStamp = _ctx.StringValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].TimeStamp");
+				durationModule.TotalDuration = _ctx.LongValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].TotalDuration");
+				durationModule.AudioDuration = _ctx.LongValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].AudioDuration");
+				durationModule.V360Duration = _ctx.LongValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].V360Duration");
+				durationModule.V720Duration = _ctx.LongValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].V720Duration");
+				durationModule.V1080Duration = _ctx.LongValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].V1080Duration");
+				durationModule.ContentDuration = _ctx.LongValue("DescribeRtcDurationData.DurationDataPerInterval["+ i +"].ContentDuration");
 
 				describeRtcDurationDataResponse_durationDataPerInterval.Add(durationModule);
 			}

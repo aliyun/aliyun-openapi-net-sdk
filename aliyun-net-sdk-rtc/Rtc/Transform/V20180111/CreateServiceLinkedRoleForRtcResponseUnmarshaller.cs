@@ -26,11 +26,11 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class CreateServiceLinkedRoleForRtcResponseUnmarshaller
     {
-        public static CreateServiceLinkedRoleForRtcResponse Unmarshall(UnmarshallerContext context)
+        public static CreateServiceLinkedRoleForRtcResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateServiceLinkedRoleForRtcResponse createServiceLinkedRoleForRtcResponse = new CreateServiceLinkedRoleForRtcResponse();
 
-			createServiceLinkedRoleForRtcResponse.HttpResponse = context.HttpResponse;
+			createServiceLinkedRoleForRtcResponse.HttpResponse = _ctx.HttpResponse;
         
 			return createServiceLinkedRoleForRtcResponse;
         }
