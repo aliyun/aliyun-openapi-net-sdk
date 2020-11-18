@@ -26,12 +26,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class RestartInstanceResponseUnmarshaller
     {
-        public static RestartInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RestartInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RestartInstanceResponse restartInstanceResponse = new RestartInstanceResponse();
 
-			restartInstanceResponse.HttpResponse = context.HttpResponse;
-			restartInstanceResponse.RequestId = context.StringValue("RestartInstance.RequestId");
+			restartInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			restartInstanceResponse.RequestId = _ctx.StringValue("RestartInstance.RequestId");
         
 			return restartInstanceResponse;
         }

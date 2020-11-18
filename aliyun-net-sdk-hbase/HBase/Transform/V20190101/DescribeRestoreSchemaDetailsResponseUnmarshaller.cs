@@ -26,28 +26,28 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DescribeRestoreSchemaDetailsResponseUnmarshaller
     {
-        public static DescribeRestoreSchemaDetailsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRestoreSchemaDetailsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRestoreSchemaDetailsResponse describeRestoreSchemaDetailsResponse = new DescribeRestoreSchemaDetailsResponse();
 
-			describeRestoreSchemaDetailsResponse.HttpResponse = context.HttpResponse;
-			describeRestoreSchemaDetailsResponse.RequestId = context.StringValue("DescribeRestoreSchemaDetails.RequestId");
+			describeRestoreSchemaDetailsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRestoreSchemaDetailsResponse.RequestId = _ctx.StringValue("DescribeRestoreSchemaDetails.RequestId");
 
 			DescribeRestoreSchemaDetailsResponse.DescribeRestoreSchemaDetails_RestoreSchema restoreSchema = new DescribeRestoreSchemaDetailsResponse.DescribeRestoreSchemaDetails_RestoreSchema();
-			restoreSchema.Succeed = context.IntegerValue("DescribeRestoreSchemaDetails.RestoreSchema.Succeed");
-			restoreSchema.Fail = context.IntegerValue("DescribeRestoreSchemaDetails.RestoreSchema.Fail");
-			restoreSchema.Total = context.LongValue("DescribeRestoreSchemaDetails.RestoreSchema.Total");
-			restoreSchema.PageNumber = context.IntegerValue("DescribeRestoreSchemaDetails.RestoreSchema.PageNumber");
-			restoreSchema.PageSize = context.IntegerValue("DescribeRestoreSchemaDetails.RestoreSchema.PageSize");
+			restoreSchema.Succeed = _ctx.IntegerValue("DescribeRestoreSchemaDetails.RestoreSchema.Succeed");
+			restoreSchema.Fail = _ctx.IntegerValue("DescribeRestoreSchemaDetails.RestoreSchema.Fail");
+			restoreSchema.Total = _ctx.LongValue("DescribeRestoreSchemaDetails.RestoreSchema.Total");
+			restoreSchema.PageNumber = _ctx.IntegerValue("DescribeRestoreSchemaDetails.RestoreSchema.PageNumber");
+			restoreSchema.PageSize = _ctx.IntegerValue("DescribeRestoreSchemaDetails.RestoreSchema.PageSize");
 
 			List<DescribeRestoreSchemaDetailsResponse.DescribeRestoreSchemaDetails_RestoreSchema.DescribeRestoreSchemaDetails_RestoreSchemaDetail> restoreSchema_restoreSchemaDetails = new List<DescribeRestoreSchemaDetailsResponse.DescribeRestoreSchemaDetails_RestoreSchema.DescribeRestoreSchemaDetails_RestoreSchemaDetail>();
-			for (int i = 0; i < context.Length("DescribeRestoreSchemaDetails.RestoreSchema.RestoreSchemaDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRestoreSchemaDetails.RestoreSchema.RestoreSchemaDetails.Length"); i++) {
 				DescribeRestoreSchemaDetailsResponse.DescribeRestoreSchemaDetails_RestoreSchema.DescribeRestoreSchemaDetails_RestoreSchemaDetail restoreSchemaDetail = new DescribeRestoreSchemaDetailsResponse.DescribeRestoreSchemaDetails_RestoreSchema.DescribeRestoreSchemaDetails_RestoreSchemaDetail();
-				restoreSchemaDetail.Table = context.StringValue("DescribeRestoreSchemaDetails.RestoreSchema.RestoreSchemaDetails["+ i +"].Table");
-				restoreSchemaDetail.StartTime = context.StringValue("DescribeRestoreSchemaDetails.RestoreSchema.RestoreSchemaDetails["+ i +"].StartTime");
-				restoreSchemaDetail.EndTime = context.StringValue("DescribeRestoreSchemaDetails.RestoreSchema.RestoreSchemaDetails["+ i +"].EndTime");
-				restoreSchemaDetail.State = context.StringValue("DescribeRestoreSchemaDetails.RestoreSchema.RestoreSchemaDetails["+ i +"].State");
-				restoreSchemaDetail.Message = context.StringValue("DescribeRestoreSchemaDetails.RestoreSchema.RestoreSchemaDetails["+ i +"].Message");
+				restoreSchemaDetail.Table = _ctx.StringValue("DescribeRestoreSchemaDetails.RestoreSchema.RestoreSchemaDetails["+ i +"].Table");
+				restoreSchemaDetail.StartTime = _ctx.StringValue("DescribeRestoreSchemaDetails.RestoreSchema.RestoreSchemaDetails["+ i +"].StartTime");
+				restoreSchemaDetail.EndTime = _ctx.StringValue("DescribeRestoreSchemaDetails.RestoreSchema.RestoreSchemaDetails["+ i +"].EndTime");
+				restoreSchemaDetail.State = _ctx.StringValue("DescribeRestoreSchemaDetails.RestoreSchema.RestoreSchemaDetails["+ i +"].State");
+				restoreSchemaDetail.Message = _ctx.StringValue("DescribeRestoreSchemaDetails.RestoreSchema.RestoreSchemaDetails["+ i +"].Message");
 
 				restoreSchema_restoreSchemaDetails.Add(restoreSchemaDetail);
 			}

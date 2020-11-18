@@ -16,24 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.HBase.Model.V20190101;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.HBase.Transform.V20190101
+namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class ModifyClusterDeletionProtectionResponseUnmarshaller
-    {
-        public static ModifyClusterDeletionProtectionResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			ModifyClusterDeletionProtectionResponse modifyClusterDeletionProtectionResponse = new ModifyClusterDeletionProtectionResponse();
+	public class UpgradeMinorVersionResponse : AcsResponse
+	{
 
-			modifyClusterDeletionProtectionResponse.HttpResponse = _ctx.HttpResponse;
-			modifyClusterDeletionProtectionResponse.RequestId = _ctx.StringValue("ModifyClusterDeletionProtection.RequestId");
-        
-			return modifyClusterDeletionProtectionResponse;
-        }
-    }
+		private string requestId;
+
+		private string upgradingComponents;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string UpgradingComponents
+		{
+			get
+			{
+				return upgradingComponents;
+			}
+			set	
+			{
+				upgradingComponents = value;
+			}
+		}
+	}
 }

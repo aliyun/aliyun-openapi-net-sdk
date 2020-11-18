@@ -26,16 +26,16 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DescribeSecurityGroupsResponseUnmarshaller
     {
-        public static DescribeSecurityGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSecurityGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSecurityGroupsResponse describeSecurityGroupsResponse = new DescribeSecurityGroupsResponse();
 
-			describeSecurityGroupsResponse.HttpResponse = context.HttpResponse;
-			describeSecurityGroupsResponse.RequestId = context.StringValue("DescribeSecurityGroups.RequestId");
+			describeSecurityGroupsResponse.HttpResponse = _ctx.HttpResponse;
+			describeSecurityGroupsResponse.RequestId = _ctx.StringValue("DescribeSecurityGroups.RequestId");
 
 			List<string> describeSecurityGroupsResponse_securityGroupIds = new List<string>();
-			for (int i = 0; i < context.Length("DescribeSecurityGroups.SecurityGroupIds.Length"); i++) {
-				describeSecurityGroupsResponse_securityGroupIds.Add(context.StringValue("DescribeSecurityGroups.SecurityGroupIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeSecurityGroups.SecurityGroupIds.Length"); i++) {
+				describeSecurityGroupsResponse_securityGroupIds.Add(_ctx.StringValue("DescribeSecurityGroups.SecurityGroupIds["+ i +"]"));
 			}
 			describeSecurityGroupsResponse.SecurityGroupIds = describeSecurityGroupsResponse_securityGroupIds;
         

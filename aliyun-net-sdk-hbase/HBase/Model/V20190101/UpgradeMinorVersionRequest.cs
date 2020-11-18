@@ -27,10 +27,10 @@ using Aliyun.Acs.HBase.Transform.V20190101;
 
 namespace Aliyun.Acs.HBase.Model.V20190101
 {
-    public class ConvertInstanceRequest : RpcAcsRequest<ConvertInstanceResponse>
+    public class UpgradeMinorVersionRequest : RpcAcsRequest<UpgradeMinorVersionResponse>
     {
-        public ConvertInstanceRequest()
-            : base("HBase", "2019-01-01", "ConvertInstance", "hbase", "openAPI")
+        public UpgradeMinorVersionRequest()
+            : base("HBase", "2019-01-01", "UpgradeMinorVersion", "hbase", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,11 +40,22 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
+		private string components;
+
 		private string clusterId;
 
-		private int? duration;
-
-		private string pricingCycle;
+		public string Components
+		{
+			get
+			{
+				return components;
+			}
+			set	
+			{
+				components = value;
+				DictionaryUtil.Add(QueryParameters, "Components", value);
+			}
+		}
 
 		public string ClusterId
 		{
@@ -59,35 +70,14 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			}
 		}
 
-		public int? Duration
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return duration;
-			}
-			set	
-			{
-				duration = value;
-				DictionaryUtil.Add(QueryParameters, "Duration", value.ToString());
-			}
+			return false;
 		}
 
-		public string PricingCycle
-		{
-			get
-			{
-				return pricingCycle;
-			}
-			set	
-			{
-				pricingCycle = value;
-				DictionaryUtil.Add(QueryParameters, "PricingCycle", value);
-			}
-		}
-
-        public override ConvertInstanceResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override UpgradeMinorVersionResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return ConvertInstanceResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return UpgradeMinorVersionResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

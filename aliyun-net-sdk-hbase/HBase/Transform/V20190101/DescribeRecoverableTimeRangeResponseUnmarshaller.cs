@@ -26,14 +26,14 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DescribeRecoverableTimeRangeResponseUnmarshaller
     {
-        public static DescribeRecoverableTimeRangeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRecoverableTimeRangeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRecoverableTimeRangeResponse describeRecoverableTimeRangeResponse = new DescribeRecoverableTimeRangeResponse();
 
-			describeRecoverableTimeRangeResponse.HttpResponse = context.HttpResponse;
-			describeRecoverableTimeRangeResponse.RequestId = context.StringValue("DescribeRecoverableTimeRange.RequestId");
-			describeRecoverableTimeRangeResponse.TimeBegin = context.StringValue("DescribeRecoverableTimeRange.TimeBegin");
-			describeRecoverableTimeRangeResponse.TimeEnd = context.StringValue("DescribeRecoverableTimeRange.TimeEnd");
+			describeRecoverableTimeRangeResponse.HttpResponse = _ctx.HttpResponse;
+			describeRecoverableTimeRangeResponse.RequestId = _ctx.StringValue("DescribeRecoverableTimeRange.RequestId");
+			describeRecoverableTimeRangeResponse.TimeBegin = _ctx.StringValue("DescribeRecoverableTimeRange.TimeBegin");
+			describeRecoverableTimeRangeResponse.TimeEnd = _ctx.StringValue("DescribeRecoverableTimeRange.TimeEnd");
         
 			return describeRecoverableTimeRangeResponse;
         }

@@ -26,21 +26,21 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DescribeRestoreIncrDetailResponseUnmarshaller
     {
-        public static DescribeRestoreIncrDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRestoreIncrDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRestoreIncrDetailResponse describeRestoreIncrDetailResponse = new DescribeRestoreIncrDetailResponse();
 
-			describeRestoreIncrDetailResponse.HttpResponse = context.HttpResponse;
-			describeRestoreIncrDetailResponse.RequestId = context.StringValue("DescribeRestoreIncrDetail.RequestId");
+			describeRestoreIncrDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeRestoreIncrDetailResponse.RequestId = _ctx.StringValue("DescribeRestoreIncrDetail.RequestId");
 
 			DescribeRestoreIncrDetailResponse.DescribeRestoreIncrDetail_RestoreIncrDetail restoreIncrDetail = new DescribeRestoreIncrDetailResponse.DescribeRestoreIncrDetail_RestoreIncrDetail();
-			restoreIncrDetail.State = context.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.State");
-			restoreIncrDetail.StartTime = context.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.StartTime");
-			restoreIncrDetail.EndTime = context.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.EndTime");
-			restoreIncrDetail.RestoreStartTs = context.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.RestoreStartTs");
-			restoreIncrDetail.RestoredTs = context.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.RestoredTs");
-			restoreIncrDetail.RestoreDelay = context.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.RestoreDelay");
-			restoreIncrDetail.Process = context.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.Process");
+			restoreIncrDetail.State = _ctx.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.State");
+			restoreIncrDetail.StartTime = _ctx.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.StartTime");
+			restoreIncrDetail.EndTime = _ctx.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.EndTime");
+			restoreIncrDetail.RestoreStartTs = _ctx.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.RestoreStartTs");
+			restoreIncrDetail.RestoredTs = _ctx.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.RestoredTs");
+			restoreIncrDetail.RestoreDelay = _ctx.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.RestoreDelay");
+			restoreIncrDetail.Process = _ctx.StringValue("DescribeRestoreIncrDetail.RestoreIncrDetail.Process");
 			describeRestoreIncrDetailResponse.RestoreIncrDetail = restoreIncrDetail;
         
 			return describeRestoreIncrDetailResponse;

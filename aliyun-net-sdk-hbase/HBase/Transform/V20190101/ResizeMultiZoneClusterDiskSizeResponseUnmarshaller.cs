@@ -26,13 +26,13 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class ResizeMultiZoneClusterDiskSizeResponseUnmarshaller
     {
-        public static ResizeMultiZoneClusterDiskSizeResponse Unmarshall(UnmarshallerContext context)
+        public static ResizeMultiZoneClusterDiskSizeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResizeMultiZoneClusterDiskSizeResponse resizeMultiZoneClusterDiskSizeResponse = new ResizeMultiZoneClusterDiskSizeResponse();
 
-			resizeMultiZoneClusterDiskSizeResponse.HttpResponse = context.HttpResponse;
-			resizeMultiZoneClusterDiskSizeResponse.RequestId = context.StringValue("ResizeMultiZoneClusterDiskSize.RequestId");
-			resizeMultiZoneClusterDiskSizeResponse.OrderId = context.StringValue("ResizeMultiZoneClusterDiskSize.OrderId");
+			resizeMultiZoneClusterDiskSizeResponse.HttpResponse = _ctx.HttpResponse;
+			resizeMultiZoneClusterDiskSizeResponse.RequestId = _ctx.StringValue("ResizeMultiZoneClusterDiskSize.RequestId");
+			resizeMultiZoneClusterDiskSizeResponse.OrderId = _ctx.StringValue("ResizeMultiZoneClusterDiskSize.OrderId");
         
 			return resizeMultiZoneClusterDiskSizeResponse;
         }

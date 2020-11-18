@@ -26,13 +26,13 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class ResizeColdStorageSizeResponseUnmarshaller
     {
-        public static ResizeColdStorageSizeResponse Unmarshall(UnmarshallerContext context)
+        public static ResizeColdStorageSizeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResizeColdStorageSizeResponse resizeColdStorageSizeResponse = new ResizeColdStorageSizeResponse();
 
-			resizeColdStorageSizeResponse.HttpResponse = context.HttpResponse;
-			resizeColdStorageSizeResponse.RequestId = context.StringValue("ResizeColdStorageSize.RequestId");
-			resizeColdStorageSizeResponse.OrderId = context.StringValue("ResizeColdStorageSize.OrderId");
+			resizeColdStorageSizeResponse.HttpResponse = _ctx.HttpResponse;
+			resizeColdStorageSizeResponse.RequestId = _ctx.StringValue("ResizeColdStorageSize.RequestId");
+			resizeColdStorageSizeResponse.OrderId = _ctx.StringValue("ResizeColdStorageSize.OrderId");
         
 			return resizeColdStorageSizeResponse;
         }

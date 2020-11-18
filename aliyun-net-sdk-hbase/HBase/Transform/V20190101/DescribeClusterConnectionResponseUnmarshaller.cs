@@ -26,50 +26,50 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DescribeClusterConnectionResponseUnmarshaller
     {
-        public static DescribeClusterConnectionResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeClusterConnectionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeClusterConnectionResponse describeClusterConnectionResponse = new DescribeClusterConnectionResponse();
 
-			describeClusterConnectionResponse.HttpResponse = context.HttpResponse;
-			describeClusterConnectionResponse.RequestId = context.StringValue("DescribeClusterConnection.RequestId");
-			describeClusterConnectionResponse.NetType = context.StringValue("DescribeClusterConnection.NetType");
-			describeClusterConnectionResponse.VpcId = context.StringValue("DescribeClusterConnection.VpcId");
-			describeClusterConnectionResponse.VSwitchId = context.StringValue("DescribeClusterConnection.VSwitchId");
-			describeClusterConnectionResponse.DbType = context.StringValue("DescribeClusterConnection.DbType");
-			describeClusterConnectionResponse.IsMultimod = context.StringValue("DescribeClusterConnection.IsMultimod");
+			describeClusterConnectionResponse.HttpResponse = _ctx.HttpResponse;
+			describeClusterConnectionResponse.RequestId = _ctx.StringValue("DescribeClusterConnection.RequestId");
+			describeClusterConnectionResponse.NetType = _ctx.StringValue("DescribeClusterConnection.NetType");
+			describeClusterConnectionResponse.VpcId = _ctx.StringValue("DescribeClusterConnection.VpcId");
+			describeClusterConnectionResponse.VSwitchId = _ctx.StringValue("DescribeClusterConnection.VSwitchId");
+			describeClusterConnectionResponse.DbType = _ctx.StringValue("DescribeClusterConnection.DbType");
+			describeClusterConnectionResponse.IsMultimod = _ctx.StringValue("DescribeClusterConnection.IsMultimod");
 
 			DescribeClusterConnectionResponse.DescribeClusterConnection_UiProxyConnAddrInfo uiProxyConnAddrInfo = new DescribeClusterConnectionResponse.DescribeClusterConnection_UiProxyConnAddrInfo();
-			uiProxyConnAddrInfo.ConnAddr = context.StringValue("DescribeClusterConnection.UiProxyConnAddrInfo.ConnAddr");
-			uiProxyConnAddrInfo.ConnAddrPort = context.StringValue("DescribeClusterConnection.UiProxyConnAddrInfo.ConnAddrPort");
-			uiProxyConnAddrInfo.NetType = context.StringValue("DescribeClusterConnection.UiProxyConnAddrInfo.NetType");
+			uiProxyConnAddrInfo.ConnAddr = _ctx.StringValue("DescribeClusterConnection.UiProxyConnAddrInfo.ConnAddr");
+			uiProxyConnAddrInfo.ConnAddrPort = _ctx.StringValue("DescribeClusterConnection.UiProxyConnAddrInfo.ConnAddrPort");
+			uiProxyConnAddrInfo.NetType = _ctx.StringValue("DescribeClusterConnection.UiProxyConnAddrInfo.NetType");
 			describeClusterConnectionResponse.UiProxyConnAddrInfo = uiProxyConnAddrInfo;
 
 			DescribeClusterConnectionResponse.DescribeClusterConnection_ThriftConn thriftConn = new DescribeClusterConnectionResponse.DescribeClusterConnection_ThriftConn();
-			thriftConn.ConnAddr = context.StringValue("DescribeClusterConnection.ThriftConn.ConnAddr");
-			thriftConn.ConnAddrPort = context.StringValue("DescribeClusterConnection.ThriftConn.ConnAddrPort");
-			thriftConn.NetType = context.StringValue("DescribeClusterConnection.ThriftConn.NetType");
+			thriftConn.ConnAddr = _ctx.StringValue("DescribeClusterConnection.ThriftConn.ConnAddr");
+			thriftConn.ConnAddrPort = _ctx.StringValue("DescribeClusterConnection.ThriftConn.ConnAddrPort");
+			thriftConn.NetType = _ctx.StringValue("DescribeClusterConnection.ThriftConn.NetType");
 			describeClusterConnectionResponse.ThriftConn = thriftConn;
 
 			List<DescribeClusterConnectionResponse.DescribeClusterConnection_ZkConnAddr> describeClusterConnectionResponse_zkConnAddrs = new List<DescribeClusterConnectionResponse.DescribeClusterConnection_ZkConnAddr>();
-			for (int i = 0; i < context.Length("DescribeClusterConnection.ZkConnAddrs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeClusterConnection.ZkConnAddrs.Length"); i++) {
 				DescribeClusterConnectionResponse.DescribeClusterConnection_ZkConnAddr zkConnAddr = new DescribeClusterConnectionResponse.DescribeClusterConnection_ZkConnAddr();
-				zkConnAddr.ConnAddr = context.StringValue("DescribeClusterConnection.ZkConnAddrs["+ i +"].ConnAddr");
-				zkConnAddr.ConnAddrPort = context.StringValue("DescribeClusterConnection.ZkConnAddrs["+ i +"].ConnAddrPort");
-				zkConnAddr.NetType = context.StringValue("DescribeClusterConnection.ZkConnAddrs["+ i +"].NetType");
+				zkConnAddr.ConnAddr = _ctx.StringValue("DescribeClusterConnection.ZkConnAddrs["+ i +"].ConnAddr");
+				zkConnAddr.ConnAddrPort = _ctx.StringValue("DescribeClusterConnection.ZkConnAddrs["+ i +"].ConnAddrPort");
+				zkConnAddr.NetType = _ctx.StringValue("DescribeClusterConnection.ZkConnAddrs["+ i +"].NetType");
 
 				describeClusterConnectionResponse_zkConnAddrs.Add(zkConnAddr);
 			}
 			describeClusterConnectionResponse.ZkConnAddrs = describeClusterConnectionResponse_zkConnAddrs;
 
 			List<DescribeClusterConnectionResponse.DescribeClusterConnection_SlbConnAddr> describeClusterConnectionResponse_slbConnAddrs = new List<DescribeClusterConnectionResponse.DescribeClusterConnection_SlbConnAddr>();
-			for (int i = 0; i < context.Length("DescribeClusterConnection.SlbConnAddrs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeClusterConnection.SlbConnAddrs.Length"); i++) {
 				DescribeClusterConnectionResponse.DescribeClusterConnection_SlbConnAddr slbConnAddr = new DescribeClusterConnectionResponse.DescribeClusterConnection_SlbConnAddr();
-				slbConnAddr.SlbType = context.StringValue("DescribeClusterConnection.SlbConnAddrs["+ i +"].SlbType");
+				slbConnAddr.SlbType = _ctx.StringValue("DescribeClusterConnection.SlbConnAddrs["+ i +"].SlbType");
 
 				DescribeClusterConnectionResponse.DescribeClusterConnection_SlbConnAddr.DescribeClusterConnection_ConnAddrInfo connAddrInfo = new DescribeClusterConnectionResponse.DescribeClusterConnection_SlbConnAddr.DescribeClusterConnection_ConnAddrInfo();
-				connAddrInfo.ConnAddr = context.StringValue("DescribeClusterConnection.SlbConnAddrs["+ i +"].ConnAddrInfo.ConnAddr");
-				connAddrInfo.ConnAddrPort = context.StringValue("DescribeClusterConnection.SlbConnAddrs["+ i +"].ConnAddrInfo.ConnAddrPort");
-				connAddrInfo.NetType = context.StringValue("DescribeClusterConnection.SlbConnAddrs["+ i +"].ConnAddrInfo.NetType");
+				connAddrInfo.ConnAddr = _ctx.StringValue("DescribeClusterConnection.SlbConnAddrs["+ i +"].ConnAddrInfo.ConnAddr");
+				connAddrInfo.ConnAddrPort = _ctx.StringValue("DescribeClusterConnection.SlbConnAddrs["+ i +"].ConnAddrInfo.ConnAddrPort");
+				connAddrInfo.NetType = _ctx.StringValue("DescribeClusterConnection.SlbConnAddrs["+ i +"].ConnAddrInfo.NetType");
 				slbConnAddr.ConnAddrInfo = connAddrInfo;
 
 				describeClusterConnectionResponse_slbConnAddrs.Add(slbConnAddr);
@@ -77,14 +77,14 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 			describeClusterConnectionResponse.SlbConnAddrs = describeClusterConnectionResponse_slbConnAddrs;
 
 			List<DescribeClusterConnectionResponse.DescribeClusterConnection_ServiceConnAddr> describeClusterConnectionResponse_serviceConnAddrs = new List<DescribeClusterConnectionResponse.DescribeClusterConnection_ServiceConnAddr>();
-			for (int i = 0; i < context.Length("DescribeClusterConnection.ServiceConnAddrs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeClusterConnection.ServiceConnAddrs.Length"); i++) {
 				DescribeClusterConnectionResponse.DescribeClusterConnection_ServiceConnAddr serviceConnAddr = new DescribeClusterConnectionResponse.DescribeClusterConnection_ServiceConnAddr();
-				serviceConnAddr.ConnType = context.StringValue("DescribeClusterConnection.ServiceConnAddrs["+ i +"].ConnType");
+				serviceConnAddr.ConnType = _ctx.StringValue("DescribeClusterConnection.ServiceConnAddrs["+ i +"].ConnType");
 
 				DescribeClusterConnectionResponse.DescribeClusterConnection_ServiceConnAddr.DescribeClusterConnection_ConnAddrInfo1 connAddrInfo1 = new DescribeClusterConnectionResponse.DescribeClusterConnection_ServiceConnAddr.DescribeClusterConnection_ConnAddrInfo1();
-				connAddrInfo1.ConnAddr = context.StringValue("DescribeClusterConnection.ServiceConnAddrs["+ i +"].ConnAddrInfo.ConnAddr");
-				connAddrInfo1.ConnAddrPort = context.StringValue("DescribeClusterConnection.ServiceConnAddrs["+ i +"].ConnAddrInfo.ConnAddrPort");
-				connAddrInfo1.NetType = context.StringValue("DescribeClusterConnection.ServiceConnAddrs["+ i +"].ConnAddrInfo.NetType");
+				connAddrInfo1.ConnAddr = _ctx.StringValue("DescribeClusterConnection.ServiceConnAddrs["+ i +"].ConnAddrInfo.ConnAddr");
+				connAddrInfo1.ConnAddrPort = _ctx.StringValue("DescribeClusterConnection.ServiceConnAddrs["+ i +"].ConnAddrInfo.ConnAddrPort");
+				connAddrInfo1.NetType = _ctx.StringValue("DescribeClusterConnection.ServiceConnAddrs["+ i +"].ConnAddrInfo.NetType");
 				serviceConnAddr.ConnAddrInfo1 = connAddrInfo1;
 
 				describeClusterConnectionResponse_serviceConnAddrs.Add(serviceConnAddr);

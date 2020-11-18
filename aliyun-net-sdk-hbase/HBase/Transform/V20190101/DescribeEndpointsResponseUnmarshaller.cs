@@ -26,24 +26,24 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DescribeEndpointsResponseUnmarshaller
     {
-        public static DescribeEndpointsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeEndpointsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeEndpointsResponse describeEndpointsResponse = new DescribeEndpointsResponse();
 
-			describeEndpointsResponse.HttpResponse = context.HttpResponse;
-			describeEndpointsResponse.RequestId = context.StringValue("DescribeEndpoints.RequestId");
-			describeEndpointsResponse.NetType = context.StringValue("DescribeEndpoints.NetType");
-			describeEndpointsResponse.VpcId = context.StringValue("DescribeEndpoints.VpcId");
-			describeEndpointsResponse.VSwitchId = context.StringValue("DescribeEndpoints.VSwitchId");
-			describeEndpointsResponse.Engine = context.StringValue("DescribeEndpoints.Engine");
+			describeEndpointsResponse.HttpResponse = _ctx.HttpResponse;
+			describeEndpointsResponse.RequestId = _ctx.StringValue("DescribeEndpoints.RequestId");
+			describeEndpointsResponse.NetType = _ctx.StringValue("DescribeEndpoints.NetType");
+			describeEndpointsResponse.VpcId = _ctx.StringValue("DescribeEndpoints.VpcId");
+			describeEndpointsResponse.VSwitchId = _ctx.StringValue("DescribeEndpoints.VSwitchId");
+			describeEndpointsResponse.Engine = _ctx.StringValue("DescribeEndpoints.Engine");
 
 			List<DescribeEndpointsResponse.DescribeEndpoints_ConnAddrInfo> describeEndpointsResponse_connAddrs = new List<DescribeEndpointsResponse.DescribeEndpoints_ConnAddrInfo>();
-			for (int i = 0; i < context.Length("DescribeEndpoints.ConnAddrs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeEndpoints.ConnAddrs.Length"); i++) {
 				DescribeEndpointsResponse.DescribeEndpoints_ConnAddrInfo connAddrInfo = new DescribeEndpointsResponse.DescribeEndpoints_ConnAddrInfo();
-				connAddrInfo.ConnType = context.StringValue("DescribeEndpoints.ConnAddrs["+ i +"].ConnType");
-				connAddrInfo.ConnAddr = context.StringValue("DescribeEndpoints.ConnAddrs["+ i +"].ConnAddr");
-				connAddrInfo.ConnAddrPort = context.StringValue("DescribeEndpoints.ConnAddrs["+ i +"].ConnAddrPort");
-				connAddrInfo.NetType = context.StringValue("DescribeEndpoints.ConnAddrs["+ i +"].NetType");
+				connAddrInfo.ConnType = _ctx.StringValue("DescribeEndpoints.ConnAddrs["+ i +"].ConnType");
+				connAddrInfo.ConnAddr = _ctx.StringValue("DescribeEndpoints.ConnAddrs["+ i +"].ConnAddr");
+				connAddrInfo.ConnAddrPort = _ctx.StringValue("DescribeEndpoints.ConnAddrs["+ i +"].ConnAddrPort");
+				connAddrInfo.NetType = _ctx.StringValue("DescribeEndpoints.ConnAddrs["+ i +"].NetType");
 
 				describeEndpointsResponse_connAddrs.Add(connAddrInfo);
 			}

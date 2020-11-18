@@ -26,33 +26,33 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DescribeRestoreFullDetailsResponseUnmarshaller
     {
-        public static DescribeRestoreFullDetailsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRestoreFullDetailsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRestoreFullDetailsResponse describeRestoreFullDetailsResponse = new DescribeRestoreFullDetailsResponse();
 
-			describeRestoreFullDetailsResponse.HttpResponse = context.HttpResponse;
-			describeRestoreFullDetailsResponse.RequestId = context.StringValue("DescribeRestoreFullDetails.RequestId");
+			describeRestoreFullDetailsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRestoreFullDetailsResponse.RequestId = _ctx.StringValue("DescribeRestoreFullDetails.RequestId");
 
 			DescribeRestoreFullDetailsResponse.DescribeRestoreFullDetails_RestoreFull restoreFull = new DescribeRestoreFullDetailsResponse.DescribeRestoreFullDetails_RestoreFull();
-			restoreFull.Succeed = context.IntegerValue("DescribeRestoreFullDetails.RestoreFull.Succeed");
-			restoreFull.Fail = context.IntegerValue("DescribeRestoreFullDetails.RestoreFull.Fail");
-			restoreFull.DataSize = context.StringValue("DescribeRestoreFullDetails.RestoreFull.DataSize");
-			restoreFull.Speed = context.StringValue("DescribeRestoreFullDetails.RestoreFull.Speed");
-			restoreFull.Total = context.LongValue("DescribeRestoreFullDetails.RestoreFull.Total");
-			restoreFull.PageNumber = context.IntegerValue("DescribeRestoreFullDetails.RestoreFull.PageNumber");
-			restoreFull.PageSize = context.IntegerValue("DescribeRestoreFullDetails.RestoreFull.PageSize");
+			restoreFull.Succeed = _ctx.IntegerValue("DescribeRestoreFullDetails.RestoreFull.Succeed");
+			restoreFull.Fail = _ctx.IntegerValue("DescribeRestoreFullDetails.RestoreFull.Fail");
+			restoreFull.DataSize = _ctx.StringValue("DescribeRestoreFullDetails.RestoreFull.DataSize");
+			restoreFull.Speed = _ctx.StringValue("DescribeRestoreFullDetails.RestoreFull.Speed");
+			restoreFull.Total = _ctx.LongValue("DescribeRestoreFullDetails.RestoreFull.Total");
+			restoreFull.PageNumber = _ctx.IntegerValue("DescribeRestoreFullDetails.RestoreFull.PageNumber");
+			restoreFull.PageSize = _ctx.IntegerValue("DescribeRestoreFullDetails.RestoreFull.PageSize");
 
 			List<DescribeRestoreFullDetailsResponse.DescribeRestoreFullDetails_RestoreFull.DescribeRestoreFullDetails_RestoreFullDetail> restoreFull_restoreFullDetails = new List<DescribeRestoreFullDetailsResponse.DescribeRestoreFullDetails_RestoreFull.DescribeRestoreFullDetails_RestoreFullDetail>();
-			for (int i = 0; i < context.Length("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails.Length"); i++) {
 				DescribeRestoreFullDetailsResponse.DescribeRestoreFullDetails_RestoreFull.DescribeRestoreFullDetails_RestoreFullDetail restoreFullDetail = new DescribeRestoreFullDetailsResponse.DescribeRestoreFullDetails_RestoreFull.DescribeRestoreFullDetails_RestoreFullDetail();
-				restoreFullDetail.Table = context.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].Table");
-				restoreFullDetail.State = context.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].State");
-				restoreFullDetail.StartTime = context.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].StartTime");
-				restoreFullDetail.EndTime = context.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].EndTime");
-				restoreFullDetail.Process = context.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].Process");
-				restoreFullDetail.DataSize = context.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].DataSize");
-				restoreFullDetail.Speed = context.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].Speed");
-				restoreFullDetail.Message = context.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].Message");
+				restoreFullDetail.Table = _ctx.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].Table");
+				restoreFullDetail.State = _ctx.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].State");
+				restoreFullDetail.StartTime = _ctx.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].StartTime");
+				restoreFullDetail.EndTime = _ctx.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].EndTime");
+				restoreFullDetail.Process = _ctx.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].Process");
+				restoreFullDetail.DataSize = _ctx.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].DataSize");
+				restoreFullDetail.Speed = _ctx.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].Speed");
+				restoreFullDetail.Message = _ctx.StringValue("DescribeRestoreFullDetails.RestoreFull.RestoreFullDetails["+ i +"].Message");
 
 				restoreFull_restoreFullDetails.Add(restoreFullDetail);
 			}

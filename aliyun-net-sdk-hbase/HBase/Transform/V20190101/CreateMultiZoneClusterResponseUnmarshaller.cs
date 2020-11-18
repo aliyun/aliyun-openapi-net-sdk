@@ -26,14 +26,14 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class CreateMultiZoneClusterResponseUnmarshaller
     {
-        public static CreateMultiZoneClusterResponse Unmarshall(UnmarshallerContext context)
+        public static CreateMultiZoneClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateMultiZoneClusterResponse createMultiZoneClusterResponse = new CreateMultiZoneClusterResponse();
 
-			createMultiZoneClusterResponse.HttpResponse = context.HttpResponse;
-			createMultiZoneClusterResponse.ClusterId = context.StringValue("CreateMultiZoneCluster.ClusterId");
-			createMultiZoneClusterResponse.OrderId = context.StringValue("CreateMultiZoneCluster.OrderId");
-			createMultiZoneClusterResponse.RequestId = context.StringValue("CreateMultiZoneCluster.RequestId");
+			createMultiZoneClusterResponse.HttpResponse = _ctx.HttpResponse;
+			createMultiZoneClusterResponse.ClusterId = _ctx.StringValue("CreateMultiZoneCluster.ClusterId");
+			createMultiZoneClusterResponse.OrderId = _ctx.StringValue("CreateMultiZoneCluster.OrderId");
+			createMultiZoneClusterResponse.RequestId = _ctx.StringValue("CreateMultiZoneCluster.RequestId");
         
 			return createMultiZoneClusterResponse;
         }

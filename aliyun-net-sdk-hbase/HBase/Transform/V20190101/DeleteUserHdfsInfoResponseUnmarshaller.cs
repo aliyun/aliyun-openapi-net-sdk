@@ -26,12 +26,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DeleteUserHdfsInfoResponseUnmarshaller
     {
-        public static DeleteUserHdfsInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteUserHdfsInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteUserHdfsInfoResponse deleteUserHdfsInfoResponse = new DeleteUserHdfsInfoResponse();
 
-			deleteUserHdfsInfoResponse.HttpResponse = context.HttpResponse;
-			deleteUserHdfsInfoResponse.RequestId = context.StringValue("DeleteUserHdfsInfo.RequestId");
+			deleteUserHdfsInfoResponse.HttpResponse = _ctx.HttpResponse;
+			deleteUserHdfsInfoResponse.RequestId = _ctx.StringValue("DeleteUserHdfsInfo.RequestId");
         
 			return deleteUserHdfsInfoResponse;
         }

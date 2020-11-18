@@ -26,13 +26,13 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class EvaluateMultiZoneResourceResponseUnmarshaller
     {
-        public static EvaluateMultiZoneResourceResponse Unmarshall(UnmarshallerContext context)
+        public static EvaluateMultiZoneResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EvaluateMultiZoneResourceResponse evaluateMultiZoneResourceResponse = new EvaluateMultiZoneResourceResponse();
 
-			evaluateMultiZoneResourceResponse.HttpResponse = context.HttpResponse;
-			evaluateMultiZoneResourceResponse.Success = context.BooleanValue("EvaluateMultiZoneResource.Success");
-			evaluateMultiZoneResourceResponse.RequestId = context.StringValue("EvaluateMultiZoneResource.RequestId");
+			evaluateMultiZoneResourceResponse.HttpResponse = _ctx.HttpResponse;
+			evaluateMultiZoneResourceResponse.Success = _ctx.BooleanValue("EvaluateMultiZoneResource.Success");
+			evaluateMultiZoneResourceResponse.RequestId = _ctx.StringValue("EvaluateMultiZoneResource.RequestId");
         
 			return evaluateMultiZoneResourceResponse;
         }

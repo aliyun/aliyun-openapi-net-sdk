@@ -26,13 +26,13 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class ResizeNodeCountResponseUnmarshaller
     {
-        public static ResizeNodeCountResponse Unmarshall(UnmarshallerContext context)
+        public static ResizeNodeCountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResizeNodeCountResponse resizeNodeCountResponse = new ResizeNodeCountResponse();
 
-			resizeNodeCountResponse.HttpResponse = context.HttpResponse;
-			resizeNodeCountResponse.RequestId = context.StringValue("ResizeNodeCount.RequestId");
-			resizeNodeCountResponse.OrderId = context.StringValue("ResizeNodeCount.OrderId");
+			resizeNodeCountResponse.HttpResponse = _ctx.HttpResponse;
+			resizeNodeCountResponse.RequestId = _ctx.StringValue("ResizeNodeCount.RequestId");
+			resizeNodeCountResponse.OrderId = _ctx.StringValue("ResizeNodeCount.OrderId");
         
 			return resizeNodeCountResponse;
         }

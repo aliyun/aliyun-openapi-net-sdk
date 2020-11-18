@@ -26,12 +26,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class ModifyInstanceNameResponseUnmarshaller
     {
-        public static ModifyInstanceNameResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyInstanceNameResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyInstanceNameResponse modifyInstanceNameResponse = new ModifyInstanceNameResponse();
 
-			modifyInstanceNameResponse.HttpResponse = context.HttpResponse;
-			modifyInstanceNameResponse.RequestId = context.StringValue("ModifyInstanceName.RequestId");
+			modifyInstanceNameResponse.HttpResponse = _ctx.HttpResponse;
+			modifyInstanceNameResponse.RequestId = _ctx.StringValue("ModifyInstanceName.RequestId");
         
 			return modifyInstanceNameResponse;
         }

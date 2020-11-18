@@ -26,12 +26,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class ModifyDiskWarningLineResponseUnmarshaller
     {
-        public static ModifyDiskWarningLineResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDiskWarningLineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDiskWarningLineResponse modifyDiskWarningLineResponse = new ModifyDiskWarningLineResponse();
 
-			modifyDiskWarningLineResponse.HttpResponse = context.HttpResponse;
-			modifyDiskWarningLineResponse.RequestId = context.StringValue("ModifyDiskWarningLine.RequestId");
+			modifyDiskWarningLineResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDiskWarningLineResponse.RequestId = _ctx.StringValue("ModifyDiskWarningLine.RequestId");
         
 			return modifyDiskWarningLineResponse;
         }

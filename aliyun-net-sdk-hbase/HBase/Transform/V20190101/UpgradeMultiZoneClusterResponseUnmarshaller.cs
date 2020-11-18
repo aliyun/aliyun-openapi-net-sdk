@@ -26,13 +26,13 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class UpgradeMultiZoneClusterResponseUnmarshaller
     {
-        public static UpgradeMultiZoneClusterResponse Unmarshall(UnmarshallerContext context)
+        public static UpgradeMultiZoneClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpgradeMultiZoneClusterResponse upgradeMultiZoneClusterResponse = new UpgradeMultiZoneClusterResponse();
 
-			upgradeMultiZoneClusterResponse.HttpResponse = context.HttpResponse;
-			upgradeMultiZoneClusterResponse.RequestId = context.StringValue("UpgradeMultiZoneCluster.RequestId");
-			upgradeMultiZoneClusterResponse.UpgradingComponents = context.StringValue("UpgradeMultiZoneCluster.UpgradingComponents");
+			upgradeMultiZoneClusterResponse.HttpResponse = _ctx.HttpResponse;
+			upgradeMultiZoneClusterResponse.RequestId = _ctx.StringValue("UpgradeMultiZoneCluster.RequestId");
+			upgradeMultiZoneClusterResponse.UpgradingComponents = _ctx.StringValue("UpgradeMultiZoneCluster.UpgradingComponents");
         
 			return upgradeMultiZoneClusterResponse;
         }

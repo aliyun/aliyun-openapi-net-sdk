@@ -24,19 +24,17 @@ using Aliyun.Acs.HBase.Model.V20190101;
 
 namespace Aliyun.Acs.HBase.Transform.V20190101
 {
-    public class DescribeBackupStatusResponseUnmarshaller
+    public class UpgradeMinorVersionResponseUnmarshaller
     {
-        public static DescribeBackupStatusResponse Unmarshall(UnmarshallerContext _ctx)
+        public static UpgradeMinorVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DescribeBackupStatusResponse describeBackupStatusResponse = new DescribeBackupStatusResponse();
+			UpgradeMinorVersionResponse upgradeMinorVersionResponse = new UpgradeMinorVersionResponse();
 
-			describeBackupStatusResponse.HttpResponse = _ctx.HttpResponse;
-			describeBackupStatusResponse.RequestId = _ctx.StringValue("DescribeBackupStatus.RequestId");
-			describeBackupStatusResponse.ClusterId = _ctx.StringValue("DescribeBackupStatus.ClusterId");
-			describeBackupStatusResponse.BackupStatus = _ctx.StringValue("DescribeBackupStatus.BackupStatus");
-			describeBackupStatusResponse.BdsClusterId = _ctx.StringValue("DescribeBackupStatus.BdsClusterId");
+			upgradeMinorVersionResponse.HttpResponse = _ctx.HttpResponse;
+			upgradeMinorVersionResponse.RequestId = _ctx.StringValue("UpgradeMinorVersion.RequestId");
+			upgradeMinorVersionResponse.UpgradingComponents = _ctx.StringValue("UpgradeMinorVersion.UpgradingComponents");
         
-			return describeBackupStatusResponse;
+			return upgradeMinorVersionResponse;
         }
     }
 }

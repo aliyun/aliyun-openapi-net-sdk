@@ -1,3 +1,6 @@
+2020-11-18 Version: 2.8.2
+- DescribeInstance support coldStorageSize.
+
 2020-11-18 Version: 3.4.0
 - Update DescribeDedicatedClusterInstanceList InstanceStatus type.
 

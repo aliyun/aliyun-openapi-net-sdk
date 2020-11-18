@@ -26,12 +26,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DeleteServerlessClusterResponseUnmarshaller
     {
-        public static DeleteServerlessClusterResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteServerlessClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteServerlessClusterResponse deleteServerlessClusterResponse = new DeleteServerlessClusterResponse();
 
-			deleteServerlessClusterResponse.HttpResponse = context.HttpResponse;
-			deleteServerlessClusterResponse.RequestId = context.StringValue("DeleteServerlessCluster.RequestId");
+			deleteServerlessClusterResponse.HttpResponse = _ctx.HttpResponse;
+			deleteServerlessClusterResponse.RequestId = _ctx.StringValue("DeleteServerlessCluster.RequestId");
         
 			return deleteServerlessClusterResponse;
         }
