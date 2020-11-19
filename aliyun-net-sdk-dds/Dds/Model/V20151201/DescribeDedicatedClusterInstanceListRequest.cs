@@ -68,6 +68,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 		private string instanceId;
 
+		private string zoneId;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -247,6 +249,19 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 
