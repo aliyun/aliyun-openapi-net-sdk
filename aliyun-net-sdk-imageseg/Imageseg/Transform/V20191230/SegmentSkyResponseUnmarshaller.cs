@@ -26,15 +26,15 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 {
     public class SegmentSkyResponseUnmarshaller
     {
-        public static SegmentSkyResponse Unmarshall(UnmarshallerContext context)
+        public static SegmentSkyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SegmentSkyResponse segmentSkyResponse = new SegmentSkyResponse();
 
-			segmentSkyResponse.HttpResponse = context.HttpResponse;
-			segmentSkyResponse.RequestId = context.StringValue("SegmentSky.RequestId");
+			segmentSkyResponse.HttpResponse = _ctx.HttpResponse;
+			segmentSkyResponse.RequestId = _ctx.StringValue("SegmentSky.RequestId");
 
 			SegmentSkyResponse.SegmentSky_Data data = new SegmentSkyResponse.SegmentSky_Data();
-			data.ImageURL = context.StringValue("SegmentSky.Data.ImageURL");
+			data.ImageURL = _ctx.StringValue("SegmentSky.Data.ImageURL");
 			segmentSkyResponse.Data = data;
         
 			return segmentSkyResponse;

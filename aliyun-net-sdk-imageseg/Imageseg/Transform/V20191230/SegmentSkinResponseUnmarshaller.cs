@@ -26,15 +26,15 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 {
     public class SegmentSkinResponseUnmarshaller
     {
-        public static SegmentSkinResponse Unmarshall(UnmarshallerContext context)
+        public static SegmentSkinResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SegmentSkinResponse segmentSkinResponse = new SegmentSkinResponse();
 
-			segmentSkinResponse.HttpResponse = context.HttpResponse;
-			segmentSkinResponse.RequestId = context.StringValue("SegmentSkin.RequestId");
+			segmentSkinResponse.HttpResponse = _ctx.HttpResponse;
+			segmentSkinResponse.RequestId = _ctx.StringValue("SegmentSkin.RequestId");
 
 			SegmentSkinResponse.SegmentSkin_Data data = new SegmentSkinResponse.SegmentSkin_Data();
-			data.URL = context.StringValue("SegmentSkin.Data.URL");
+			data.URL = _ctx.StringValue("SegmentSkin.Data.URL");
 			segmentSkinResponse.Data = data;
         
 			return segmentSkinResponse;

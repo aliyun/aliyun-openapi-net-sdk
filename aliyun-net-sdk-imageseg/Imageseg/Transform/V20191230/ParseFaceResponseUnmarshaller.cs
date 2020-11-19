@@ -26,21 +26,21 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 {
     public class ParseFaceResponseUnmarshaller
     {
-        public static ParseFaceResponse Unmarshall(UnmarshallerContext context)
+        public static ParseFaceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ParseFaceResponse parseFaceResponse = new ParseFaceResponse();
 
-			parseFaceResponse.HttpResponse = context.HttpResponse;
-			parseFaceResponse.RequestId = context.StringValue("ParseFace.RequestId");
+			parseFaceResponse.HttpResponse = _ctx.HttpResponse;
+			parseFaceResponse.RequestId = _ctx.StringValue("ParseFace.RequestId");
 
 			ParseFaceResponse.ParseFace_Data data = new ParseFaceResponse.ParseFace_Data();
-			data.OriginImageURL = context.StringValue("ParseFace.Data.OriginImageURL");
+			data.OriginImageURL = _ctx.StringValue("ParseFace.Data.OriginImageURL");
 
 			List<ParseFaceResponse.ParseFace_Data.ParseFace_Element> data_elements = new List<ParseFaceResponse.ParseFace_Data.ParseFace_Element>();
-			for (int i = 0; i < context.Length("ParseFace.Data.Elements.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ParseFace.Data.Elements.Length"); i++) {
 				ParseFaceResponse.ParseFace_Data.ParseFace_Element element = new ParseFaceResponse.ParseFace_Data.ParseFace_Element();
-				element.Name = context.StringValue("ParseFace.Data.Elements["+ i +"].Name");
-				element.ImageURL = context.StringValue("ParseFace.Data.Elements["+ i +"].ImageURL");
+				element.Name = _ctx.StringValue("ParseFace.Data.Elements["+ i +"].Name");
+				element.ImageURL = _ctx.StringValue("ParseFace.Data.Elements["+ i +"].ImageURL");
 
 				data_elements.Add(element);
 			}

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 {
     public class SegmentClothResponseUnmarshaller
     {
-        public static SegmentClothResponse Unmarshall(UnmarshallerContext context)
+        public static SegmentClothResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SegmentClothResponse segmentClothResponse = new SegmentClothResponse();
 
-			segmentClothResponse.HttpResponse = context.HttpResponse;
-			segmentClothResponse.RequestId = context.StringValue("SegmentCloth.RequestId");
+			segmentClothResponse.HttpResponse = _ctx.HttpResponse;
+			segmentClothResponse.RequestId = _ctx.StringValue("SegmentCloth.RequestId");
 
 			SegmentClothResponse.SegmentCloth_Data data = new SegmentClothResponse.SegmentCloth_Data();
 
 			List<SegmentClothResponse.SegmentCloth_Data.SegmentCloth_Element> data_elements = new List<SegmentClothResponse.SegmentCloth_Data.SegmentCloth_Element>();
-			for (int i = 0; i < context.Length("SegmentCloth.Data.Elements.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("SegmentCloth.Data.Elements.Length"); i++) {
 				SegmentClothResponse.SegmentCloth_Data.SegmentCloth_Element element = new SegmentClothResponse.SegmentCloth_Data.SegmentCloth_Element();
-				element.ImageURL = context.StringValue("SegmentCloth.Data.Elements["+ i +"].ImageURL");
+				element.ImageURL = _ctx.StringValue("SegmentCloth.Data.Elements["+ i +"].ImageURL");
 
 				data_elements.Add(element);
 			}

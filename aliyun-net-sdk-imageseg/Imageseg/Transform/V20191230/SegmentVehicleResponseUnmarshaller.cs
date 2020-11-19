@@ -26,20 +26,20 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 {
     public class SegmentVehicleResponseUnmarshaller
     {
-        public static SegmentVehicleResponse Unmarshall(UnmarshallerContext context)
+        public static SegmentVehicleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SegmentVehicleResponse segmentVehicleResponse = new SegmentVehicleResponse();
 
-			segmentVehicleResponse.HttpResponse = context.HttpResponse;
-			segmentVehicleResponse.RequestId = context.StringValue("SegmentVehicle.RequestId");
+			segmentVehicleResponse.HttpResponse = _ctx.HttpResponse;
+			segmentVehicleResponse.RequestId = _ctx.StringValue("SegmentVehicle.RequestId");
 
 			SegmentVehicleResponse.SegmentVehicle_Data data = new SegmentVehicleResponse.SegmentVehicle_Data();
 
 			List<SegmentVehicleResponse.SegmentVehicle_Data.SegmentVehicle_Element> data_elements = new List<SegmentVehicleResponse.SegmentVehicle_Data.SegmentVehicle_Element>();
-			for (int i = 0; i < context.Length("SegmentVehicle.Data.Elements.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("SegmentVehicle.Data.Elements.Length"); i++) {
 				SegmentVehicleResponse.SegmentVehicle_Data.SegmentVehicle_Element element = new SegmentVehicleResponse.SegmentVehicle_Data.SegmentVehicle_Element();
-				element.OriginImageURL = context.StringValue("SegmentVehicle.Data.Elements["+ i +"].OriginImageURL");
-				element.ImageURL = context.StringValue("SegmentVehicle.Data.Elements["+ i +"].ImageURL");
+				element.OriginImageURL = _ctx.StringValue("SegmentVehicle.Data.Elements["+ i +"].OriginImageURL");
+				element.ImageURL = _ctx.StringValue("SegmentVehicle.Data.Elements["+ i +"].ImageURL");
 
 				data_elements.Add(element);
 			}

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 {
     public class SegmentHDCommonImageResponseUnmarshaller
     {
-        public static SegmentHDCommonImageResponse Unmarshall(UnmarshallerContext context)
+        public static SegmentHDCommonImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SegmentHDCommonImageResponse segmentHDCommonImageResponse = new SegmentHDCommonImageResponse();
 
-			segmentHDCommonImageResponse.HttpResponse = context.HttpResponse;
-			segmentHDCommonImageResponse.RequestId = context.StringValue("SegmentHDCommonImage.RequestId");
+			segmentHDCommonImageResponse.HttpResponse = _ctx.HttpResponse;
+			segmentHDCommonImageResponse.RequestId = _ctx.StringValue("SegmentHDCommonImage.RequestId");
 
 			SegmentHDCommonImageResponse.SegmentHDCommonImage_Data data = new SegmentHDCommonImageResponse.SegmentHDCommonImage_Data();
-			data.ImageUrl = context.StringValue("SegmentHDCommonImage.Data.ImageUrl");
+			data.ImageUrl = _ctx.StringValue("SegmentHDCommonImage.Data.ImageUrl");
 			segmentHDCommonImageResponse.Data = data;
         
 			return segmentHDCommonImageResponse;

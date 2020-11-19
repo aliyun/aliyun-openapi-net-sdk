@@ -40,9 +40,24 @@ namespace Aliyun.Acs.imageseg.Model.V20191230
 			Method = MethodType.POST;
         }
 
+		private string returnForm;
+
 		private bool? async;
 
 		private string imageURL;
+
+		public string ReturnForm
+		{
+			get
+			{
+				return returnForm;
+			}
+			set	
+			{
+				returnForm = value;
+				DictionaryUtil.Add(QueryParameters, "ReturnForm", value);
+			}
+		}
 
 		public bool? Async
 		{

@@ -26,23 +26,23 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 {
     public class SegmentHairResponseUnmarshaller
     {
-        public static SegmentHairResponse Unmarshall(UnmarshallerContext context)
+        public static SegmentHairResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SegmentHairResponse segmentHairResponse = new SegmentHairResponse();
 
-			segmentHairResponse.HttpResponse = context.HttpResponse;
-			segmentHairResponse.RequestId = context.StringValue("SegmentHair.RequestId");
+			segmentHairResponse.HttpResponse = _ctx.HttpResponse;
+			segmentHairResponse.RequestId = _ctx.StringValue("SegmentHair.RequestId");
 
 			SegmentHairResponse.SegmentHair_Data data = new SegmentHairResponse.SegmentHair_Data();
 
 			List<SegmentHairResponse.SegmentHair_Data.SegmentHair_Element> data_elements = new List<SegmentHairResponse.SegmentHair_Data.SegmentHair_Element>();
-			for (int i = 0; i < context.Length("SegmentHair.Data.Elements.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("SegmentHair.Data.Elements.Length"); i++) {
 				SegmentHairResponse.SegmentHair_Data.SegmentHair_Element element = new SegmentHairResponse.SegmentHair_Data.SegmentHair_Element();
-				element.ImageURL = context.StringValue("SegmentHair.Data.Elements["+ i +"].ImageURL");
-				element.X = context.IntegerValue("SegmentHair.Data.Elements["+ i +"].X");
-				element.Y = context.IntegerValue("SegmentHair.Data.Elements["+ i +"].Y");
-				element.Width = context.IntegerValue("SegmentHair.Data.Elements["+ i +"].Width");
-				element.Height = context.IntegerValue("SegmentHair.Data.Elements["+ i +"].Height");
+				element.ImageURL = _ctx.StringValue("SegmentHair.Data.Elements["+ i +"].ImageURL");
+				element.X = _ctx.IntegerValue("SegmentHair.Data.Elements["+ i +"].X");
+				element.Y = _ctx.IntegerValue("SegmentHair.Data.Elements["+ i +"].Y");
+				element.Width = _ctx.IntegerValue("SegmentHair.Data.Elements["+ i +"].Width");
+				element.Height = _ctx.IntegerValue("SegmentHair.Data.Elements["+ i +"].Height");
 
 				data_elements.Add(element);
 			}

@@ -26,19 +26,19 @@ namespace Aliyun.Acs.imageseg.Transform.V20191230
 {
     public class SegmentFurnitureResponseUnmarshaller
     {
-        public static SegmentFurnitureResponse Unmarshall(UnmarshallerContext context)
+        public static SegmentFurnitureResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SegmentFurnitureResponse segmentFurnitureResponse = new SegmentFurnitureResponse();
 
-			segmentFurnitureResponse.HttpResponse = context.HttpResponse;
-			segmentFurnitureResponse.RequestId = context.StringValue("SegmentFurniture.RequestId");
+			segmentFurnitureResponse.HttpResponse = _ctx.HttpResponse;
+			segmentFurnitureResponse.RequestId = _ctx.StringValue("SegmentFurniture.RequestId");
 
 			SegmentFurnitureResponse.SegmentFurniture_Data data = new SegmentFurnitureResponse.SegmentFurniture_Data();
 
 			List<SegmentFurnitureResponse.SegmentFurniture_Data.SegmentFurniture_Element> data_elements = new List<SegmentFurnitureResponse.SegmentFurniture_Data.SegmentFurniture_Element>();
-			for (int i = 0; i < context.Length("SegmentFurniture.Data.Elements.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("SegmentFurniture.Data.Elements.Length"); i++) {
 				SegmentFurnitureResponse.SegmentFurniture_Data.SegmentFurniture_Element element = new SegmentFurnitureResponse.SegmentFurniture_Data.SegmentFurniture_Element();
-				element.ImageURL = context.StringValue("SegmentFurniture.Data.Elements["+ i +"].ImageURL");
+				element.ImageURL = _ctx.StringValue("SegmentFurniture.Data.Elements["+ i +"].ImageURL");
 
 				data_elements.Add(element);
 			}
