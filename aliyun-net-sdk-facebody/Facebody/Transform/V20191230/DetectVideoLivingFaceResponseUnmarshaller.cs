@@ -26,24 +26,24 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class DetectVideoLivingFaceResponseUnmarshaller
     {
-        public static DetectVideoLivingFaceResponse Unmarshall(UnmarshallerContext context)
+        public static DetectVideoLivingFaceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectVideoLivingFaceResponse detectVideoLivingFaceResponse = new DetectVideoLivingFaceResponse();
 
-			detectVideoLivingFaceResponse.HttpResponse = context.HttpResponse;
-			detectVideoLivingFaceResponse.RequestId = context.StringValue("DetectVideoLivingFace.RequestId");
+			detectVideoLivingFaceResponse.HttpResponse = _ctx.HttpResponse;
+			detectVideoLivingFaceResponse.RequestId = _ctx.StringValue("DetectVideoLivingFace.RequestId");
 
 			DetectVideoLivingFaceResponse.DetectVideoLivingFace_Data data = new DetectVideoLivingFaceResponse.DetectVideoLivingFace_Data();
 
 			List<DetectVideoLivingFaceResponse.DetectVideoLivingFace_Data.DetectVideoLivingFace_Element> data_elements = new List<DetectVideoLivingFaceResponse.DetectVideoLivingFace_Data.DetectVideoLivingFace_Element>();
-			for (int i = 0; i < context.Length("DetectVideoLivingFace.Data.Elements.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectVideoLivingFace.Data.Elements.Length"); i++) {
 				DetectVideoLivingFaceResponse.DetectVideoLivingFace_Data.DetectVideoLivingFace_Element element = new DetectVideoLivingFaceResponse.DetectVideoLivingFace_Data.DetectVideoLivingFace_Element();
-				element.LiveConfidence = context.FloatValue("DetectVideoLivingFace.Data.Elements["+ i +"].LiveConfidence");
-				element.FaceConfidence = context.FloatValue("DetectVideoLivingFace.Data.Elements["+ i +"].FaceConfidence");
+				element.LiveConfidence = _ctx.FloatValue("DetectVideoLivingFace.Data.Elements["+ i +"].LiveConfidence");
+				element.FaceConfidence = _ctx.FloatValue("DetectVideoLivingFace.Data.Elements["+ i +"].FaceConfidence");
 
 				List<string> element_rect = new List<string>();
-				for (int j = 0; j < context.Length("DetectVideoLivingFace.Data.Elements["+ i +"].Rect.Length"); j++) {
-					element_rect.Add(context.StringValue("DetectVideoLivingFace.Data.Elements["+ i +"].Rect["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DetectVideoLivingFace.Data.Elements["+ i +"].Rect.Length"); j++) {
+					element_rect.Add(_ctx.StringValue("DetectVideoLivingFace.Data.Elements["+ i +"].Rect["+ j +"]"));
 				}
 				element.Rect = element_rect;
 

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class BlurFaceResponseUnmarshaller
     {
-        public static BlurFaceResponse Unmarshall(UnmarshallerContext context)
+        public static BlurFaceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BlurFaceResponse blurFaceResponse = new BlurFaceResponse();
 
-			blurFaceResponse.HttpResponse = context.HttpResponse;
-			blurFaceResponse.RequestId = context.StringValue("BlurFace.RequestId");
+			blurFaceResponse.HttpResponse = _ctx.HttpResponse;
+			blurFaceResponse.RequestId = _ctx.StringValue("BlurFace.RequestId");
 
 			BlurFaceResponse.BlurFace_Data data = new BlurFaceResponse.BlurFace_Data();
-			data.ImageURL = context.StringValue("BlurFace.Data.ImageURL");
+			data.ImageURL = _ctx.StringValue("BlurFace.Data.ImageURL");
 			blurFaceResponse.Data = data;
         
 			return blurFaceResponse;

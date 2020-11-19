@@ -40,7 +40,22 @@ namespace Aliyun.Acs.facebody.Model.V20191230
 			Method = MethodType.POST;
         }
 
+		private string algoType;
+
 		private string imageURL;
+
+		public string AlgoType
+		{
+			get
+			{
+				return algoType;
+			}
+			set	
+			{
+				algoType = value;
+				DictionaryUtil.Add(QueryParameters, "AlgoType", value);
+			}
+		}
 
 		public string ImageURL
 		{
@@ -51,7 +66,7 @@ namespace Aliyun.Acs.facebody.Model.V20191230
 			set	
 			{
 				imageURL = value;
-				DictionaryUtil.Add(BodyParameters, "ImageURL", value);
+				DictionaryUtil.Add(QueryParameters, "ImageURL", value);
 			}
 		}
 

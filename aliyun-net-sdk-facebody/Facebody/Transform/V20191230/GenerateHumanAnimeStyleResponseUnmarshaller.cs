@@ -26,15 +26,15 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class GenerateHumanAnimeStyleResponseUnmarshaller
     {
-        public static GenerateHumanAnimeStyleResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateHumanAnimeStyleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateHumanAnimeStyleResponse generateHumanAnimeStyleResponse = new GenerateHumanAnimeStyleResponse();
 
-			generateHumanAnimeStyleResponse.HttpResponse = context.HttpResponse;
-			generateHumanAnimeStyleResponse.RequestId = context.StringValue("GenerateHumanAnimeStyle.RequestId");
+			generateHumanAnimeStyleResponse.HttpResponse = _ctx.HttpResponse;
+			generateHumanAnimeStyleResponse.RequestId = _ctx.StringValue("GenerateHumanAnimeStyle.RequestId");
 
 			GenerateHumanAnimeStyleResponse.GenerateHumanAnimeStyle_Data data = new GenerateHumanAnimeStyleResponse.GenerateHumanAnimeStyle_Data();
-			data.ImageURL = context.StringValue("GenerateHumanAnimeStyle.Data.ImageURL");
+			data.ImageURL = _ctx.StringValue("GenerateHumanAnimeStyle.Data.ImageURL");
 			generateHumanAnimeStyleResponse.Data = data;
         
 			return generateHumanAnimeStyleResponse;

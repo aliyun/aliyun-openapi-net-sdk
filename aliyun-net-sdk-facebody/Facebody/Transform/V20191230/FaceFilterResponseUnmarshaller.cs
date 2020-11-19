@@ -26,15 +26,15 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class FaceFilterResponseUnmarshaller
     {
-        public static FaceFilterResponse Unmarshall(UnmarshallerContext context)
+        public static FaceFilterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			FaceFilterResponse faceFilterResponse = new FaceFilterResponse();
 
-			faceFilterResponse.HttpResponse = context.HttpResponse;
-			faceFilterResponse.RequestId = context.StringValue("FaceFilter.RequestId");
+			faceFilterResponse.HttpResponse = _ctx.HttpResponse;
+			faceFilterResponse.RequestId = _ctx.StringValue("FaceFilter.RequestId");
 
 			FaceFilterResponse.FaceFilter_Data data = new FaceFilterResponse.FaceFilter_Data();
-			data.ImageURL = context.StringValue("FaceFilter.Data.ImageURL");
+			data.ImageURL = _ctx.StringValue("FaceFilter.Data.ImageURL");
 			faceFilterResponse.Data = data;
         
 			return faceFilterResponse;

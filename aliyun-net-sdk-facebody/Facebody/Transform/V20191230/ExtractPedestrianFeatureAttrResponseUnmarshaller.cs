@@ -26,32 +26,32 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class ExtractPedestrianFeatureAttrResponseUnmarshaller
     {
-        public static ExtractPedestrianFeatureAttrResponse Unmarshall(UnmarshallerContext context)
+        public static ExtractPedestrianFeatureAttrResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExtractPedestrianFeatureAttrResponse extractPedestrianFeatureAttrResponse = new ExtractPedestrianFeatureAttrResponse();
 
-			extractPedestrianFeatureAttrResponse.HttpResponse = context.HttpResponse;
-			extractPedestrianFeatureAttrResponse.RequestId = context.StringValue("ExtractPedestrianFeatureAttr.RequestId");
+			extractPedestrianFeatureAttrResponse.HttpResponse = _ctx.HttpResponse;
+			extractPedestrianFeatureAttrResponse.RequestId = _ctx.StringValue("ExtractPedestrianFeatureAttr.RequestId");
 
 			ExtractPedestrianFeatureAttrResponse.ExtractPedestrianFeatureAttr_Data data = new ExtractPedestrianFeatureAttrResponse.ExtractPedestrianFeatureAttr_Data();
-			data.ObjType = context.StringValue("ExtractPedestrianFeatureAttr.Data.ObjType");
-			data.ObjTypeScore = context.FloatValue("ExtractPedestrianFeatureAttr.Data.ObjTypeScore");
-			data.Feature = context.StringValue("ExtractPedestrianFeatureAttr.Data.Feature");
-			data.QualityScore = context.FloatValue("ExtractPedestrianFeatureAttr.Data.QualityScore");
-			data.UpperColor = context.StringValue("ExtractPedestrianFeatureAttr.Data.UpperColor");
-			data.UpperColorScore = context.FloatValue("ExtractPedestrianFeatureAttr.Data.UpperColorScore");
-			data.UpperType = context.StringValue("ExtractPedestrianFeatureAttr.Data.UpperType");
-			data.UpperTypeScore = context.FloatValue("ExtractPedestrianFeatureAttr.Data.UpperTypeScore");
-			data.LowerColor = context.StringValue("ExtractPedestrianFeatureAttr.Data.LowerColor");
-			data.LowerColorScore = context.FloatValue("ExtractPedestrianFeatureAttr.Data.LowerColorScore");
-			data.LowerType = context.StringValue("ExtractPedestrianFeatureAttr.Data.LowerType");
-			data.LowerTypeScore = context.FloatValue("ExtractPedestrianFeatureAttr.Data.LowerTypeScore");
-			data.Gender = context.StringValue("ExtractPedestrianFeatureAttr.Data.Gender");
-			data.GenderScore = context.FloatValue("ExtractPedestrianFeatureAttr.Data.GenderScore");
-			data.Hair = context.StringValue("ExtractPedestrianFeatureAttr.Data.Hair");
-			data.HairScore = context.FloatValue("ExtractPedestrianFeatureAttr.Data.HairScore");
-			data.Age = context.StringValue("ExtractPedestrianFeatureAttr.Data.Age");
-			data.AgeScore = context.FloatValue("ExtractPedestrianFeatureAttr.Data.AgeScore");
+			data.ObjType = _ctx.StringValue("ExtractPedestrianFeatureAttr.Data.ObjType");
+			data.ObjTypeScore = _ctx.FloatValue("ExtractPedestrianFeatureAttr.Data.ObjTypeScore");
+			data.Feature = _ctx.StringValue("ExtractPedestrianFeatureAttr.Data.Feature");
+			data.QualityScore = _ctx.FloatValue("ExtractPedestrianFeatureAttr.Data.QualityScore");
+			data.UpperColor = _ctx.StringValue("ExtractPedestrianFeatureAttr.Data.UpperColor");
+			data.UpperColorScore = _ctx.FloatValue("ExtractPedestrianFeatureAttr.Data.UpperColorScore");
+			data.UpperType = _ctx.StringValue("ExtractPedestrianFeatureAttr.Data.UpperType");
+			data.UpperTypeScore = _ctx.FloatValue("ExtractPedestrianFeatureAttr.Data.UpperTypeScore");
+			data.LowerColor = _ctx.StringValue("ExtractPedestrianFeatureAttr.Data.LowerColor");
+			data.LowerColorScore = _ctx.FloatValue("ExtractPedestrianFeatureAttr.Data.LowerColorScore");
+			data.LowerType = _ctx.StringValue("ExtractPedestrianFeatureAttr.Data.LowerType");
+			data.LowerTypeScore = _ctx.FloatValue("ExtractPedestrianFeatureAttr.Data.LowerTypeScore");
+			data.Gender = _ctx.StringValue("ExtractPedestrianFeatureAttr.Data.Gender");
+			data.GenderScore = _ctx.FloatValue("ExtractPedestrianFeatureAttr.Data.GenderScore");
+			data.Hair = _ctx.StringValue("ExtractPedestrianFeatureAttr.Data.Hair");
+			data.HairScore = _ctx.FloatValue("ExtractPedestrianFeatureAttr.Data.HairScore");
+			data.Age = _ctx.StringValue("ExtractPedestrianFeatureAttr.Data.Age");
+			data.AgeScore = _ctx.FloatValue("ExtractPedestrianFeatureAttr.Data.AgeScore");
 			extractPedestrianFeatureAttrResponse.Data = data;
         
 			return extractPedestrianFeatureAttrResponse;

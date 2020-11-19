@@ -26,15 +26,15 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class DetectBodyCountResponseUnmarshaller
     {
-        public static DetectBodyCountResponse Unmarshall(UnmarshallerContext context)
+        public static DetectBodyCountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectBodyCountResponse detectBodyCountResponse = new DetectBodyCountResponse();
 
-			detectBodyCountResponse.HttpResponse = context.HttpResponse;
-			detectBodyCountResponse.RequestId = context.StringValue("DetectBodyCount.RequestId");
+			detectBodyCountResponse.HttpResponse = _ctx.HttpResponse;
+			detectBodyCountResponse.RequestId = _ctx.StringValue("DetectBodyCount.RequestId");
 
 			DetectBodyCountResponse.DetectBodyCount_Data data = new DetectBodyCountResponse.DetectBodyCount_Data();
-			data.PersonNumber = context.IntegerValue("DetectBodyCount.Data.PersonNumber");
+			data.PersonNumber = _ctx.IntegerValue("DetectBodyCount.Data.PersonNumber");
 			detectBodyCountResponse.Data = data;
         
 			return detectBodyCountResponse;

@@ -26,25 +26,25 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class DetectCelebrityResponseUnmarshaller
     {
-        public static DetectCelebrityResponse Unmarshall(UnmarshallerContext context)
+        public static DetectCelebrityResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectCelebrityResponse detectCelebrityResponse = new DetectCelebrityResponse();
 
-			detectCelebrityResponse.HttpResponse = context.HttpResponse;
-			detectCelebrityResponse.RequestId = context.StringValue("DetectCelebrity.RequestId");
+			detectCelebrityResponse.HttpResponse = _ctx.HttpResponse;
+			detectCelebrityResponse.RequestId = _ctx.StringValue("DetectCelebrity.RequestId");
 
 			DetectCelebrityResponse.DetectCelebrity_Data data = new DetectCelebrityResponse.DetectCelebrity_Data();
-			data.Width = context.IntegerValue("DetectCelebrity.Data.Width");
-			data.Height = context.IntegerValue("DetectCelebrity.Data.Height");
+			data.Width = _ctx.IntegerValue("DetectCelebrity.Data.Width");
+			data.Height = _ctx.IntegerValue("DetectCelebrity.Data.Height");
 
 			List<DetectCelebrityResponse.DetectCelebrity_Data.DetectCelebrity_FaceRecognizeResult> data_faceRecognizeResults = new List<DetectCelebrityResponse.DetectCelebrity_Data.DetectCelebrity_FaceRecognizeResult>();
-			for (int i = 0; i < context.Length("DetectCelebrity.Data.FaceRecognizeResults.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectCelebrity.Data.FaceRecognizeResults.Length"); i++) {
 				DetectCelebrityResponse.DetectCelebrity_Data.DetectCelebrity_FaceRecognizeResult faceRecognizeResult = new DetectCelebrityResponse.DetectCelebrity_Data.DetectCelebrity_FaceRecognizeResult();
-				faceRecognizeResult.Name = context.StringValue("DetectCelebrity.Data.FaceRecognizeResults["+ i +"].Name");
+				faceRecognizeResult.Name = _ctx.StringValue("DetectCelebrity.Data.FaceRecognizeResults["+ i +"].Name");
 
 				List<string> faceRecognizeResult_faceBoxes = new List<string>();
-				for (int j = 0; j < context.Length("DetectCelebrity.Data.FaceRecognizeResults["+ i +"].FaceBoxes.Length"); j++) {
-					faceRecognizeResult_faceBoxes.Add(context.StringValue("DetectCelebrity.Data.FaceRecognizeResults["+ i +"].FaceBoxes["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DetectCelebrity.Data.FaceRecognizeResults["+ i +"].FaceBoxes.Length"); j++) {
+					faceRecognizeResult_faceBoxes.Add(_ctx.StringValue("DetectCelebrity.Data.FaceRecognizeResults["+ i +"].FaceBoxes["+ j +"]"));
 				}
 				faceRecognizeResult.FaceBoxes = faceRecognizeResult_faceBoxes;
 

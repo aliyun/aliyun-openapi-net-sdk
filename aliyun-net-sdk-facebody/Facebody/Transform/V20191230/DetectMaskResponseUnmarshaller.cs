@@ -26,16 +26,16 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class DetectMaskResponseUnmarshaller
     {
-        public static DetectMaskResponse Unmarshall(UnmarshallerContext context)
+        public static DetectMaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectMaskResponse detectMaskResponse = new DetectMaskResponse();
 
-			detectMaskResponse.HttpResponse = context.HttpResponse;
-			detectMaskResponse.RequestId = context.StringValue("DetectMask.RequestId");
+			detectMaskResponse.HttpResponse = _ctx.HttpResponse;
+			detectMaskResponse.RequestId = _ctx.StringValue("DetectMask.RequestId");
 
 			DetectMaskResponse.DetectMask_Data data = new DetectMaskResponse.DetectMask_Data();
-			data.Mask = context.IntegerValue("DetectMask.Data.Mask");
-			data.FaceProbability = context.FloatValue("DetectMask.Data.FaceProbability");
+			data.Mask = _ctx.IntegerValue("DetectMask.Data.Mask");
+			data.FaceProbability = _ctx.FloatValue("DetectMask.Data.FaceProbability");
 			detectMaskResponse.Data = data;
         
 			return detectMaskResponse;

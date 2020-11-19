@@ -26,26 +26,26 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class ListFaceEntitiesResponseUnmarshaller
     {
-        public static ListFaceEntitiesResponse Unmarshall(UnmarshallerContext context)
+        public static ListFaceEntitiesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFaceEntitiesResponse listFaceEntitiesResponse = new ListFaceEntitiesResponse();
 
-			listFaceEntitiesResponse.HttpResponse = context.HttpResponse;
-			listFaceEntitiesResponse.RequestId = context.StringValue("ListFaceEntities.RequestId");
+			listFaceEntitiesResponse.HttpResponse = _ctx.HttpResponse;
+			listFaceEntitiesResponse.RequestId = _ctx.StringValue("ListFaceEntities.RequestId");
 
 			ListFaceEntitiesResponse.ListFaceEntities_Data data = new ListFaceEntitiesResponse.ListFaceEntities_Data();
-			data.Token = context.StringValue("ListFaceEntities.Data.Token");
-			data.TotalCount = context.IntegerValue("ListFaceEntities.Data.TotalCount");
+			data.Token = _ctx.StringValue("ListFaceEntities.Data.Token");
+			data.TotalCount = _ctx.IntegerValue("ListFaceEntities.Data.TotalCount");
 
 			List<ListFaceEntitiesResponse.ListFaceEntities_Data.ListFaceEntities_Entity> data_entities = new List<ListFaceEntitiesResponse.ListFaceEntities_Data.ListFaceEntities_Entity>();
-			for (int i = 0; i < context.Length("ListFaceEntities.Data.Entities.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFaceEntities.Data.Entities.Length"); i++) {
 				ListFaceEntitiesResponse.ListFaceEntities_Data.ListFaceEntities_Entity entity = new ListFaceEntitiesResponse.ListFaceEntities_Data.ListFaceEntities_Entity();
-				entity.DbName = context.StringValue("ListFaceEntities.Data.Entities["+ i +"].DbName");
-				entity.EntityId = context.StringValue("ListFaceEntities.Data.Entities["+ i +"].EntityId");
-				entity.FaceCount = context.IntegerValue("ListFaceEntities.Data.Entities["+ i +"].FaceCount");
-				entity.Labels = context.StringValue("ListFaceEntities.Data.Entities["+ i +"].Labels");
-				entity.CreatedAt = context.LongValue("ListFaceEntities.Data.Entities["+ i +"].CreatedAt");
-				entity.UpdatedAt = context.LongValue("ListFaceEntities.Data.Entities["+ i +"].UpdatedAt");
+				entity.DbName = _ctx.StringValue("ListFaceEntities.Data.Entities["+ i +"].DbName");
+				entity.EntityId = _ctx.StringValue("ListFaceEntities.Data.Entities["+ i +"].EntityId");
+				entity.FaceCount = _ctx.IntegerValue("ListFaceEntities.Data.Entities["+ i +"].FaceCount");
+				entity.Labels = _ctx.StringValue("ListFaceEntities.Data.Entities["+ i +"].Labels");
+				entity.CreatedAt = _ctx.LongValue("ListFaceEntities.Data.Entities["+ i +"].CreatedAt");
+				entity.UpdatedAt = _ctx.LongValue("ListFaceEntities.Data.Entities["+ i +"].UpdatedAt");
 
 				data_entities.Add(entity);
 			}

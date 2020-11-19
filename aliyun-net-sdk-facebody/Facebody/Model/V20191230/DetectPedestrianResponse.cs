@@ -56,23 +56,11 @@ namespace Aliyun.Acs.facebody.Model.V20191230
 		public class DetectPedestrian_Data
 		{
 
-			private int? width;
-
 			private int? height;
 
-			private List<DetectPedestrian_Element> elements;
+			private int? width;
 
-			public int? Width
-			{
-				get
-				{
-					return width;
-				}
-				set	
-				{
-					width = value;
-				}
-			}
+			private List<DetectPedestrian_Element> elements;
 
 			public int? Height
 			{
@@ -83,6 +71,18 @@ namespace Aliyun.Acs.facebody.Model.V20191230
 				set	
 				{
 					height = value;
+				}
+			}
+
+			public int? Width
+			{
+				get
+				{
+					return width;
+				}
+				set	
+				{
+					width = value;
 				}
 			}
 

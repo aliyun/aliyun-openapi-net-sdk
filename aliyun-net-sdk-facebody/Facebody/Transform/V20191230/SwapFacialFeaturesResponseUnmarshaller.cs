@@ -26,15 +26,15 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class SwapFacialFeaturesResponseUnmarshaller
     {
-        public static SwapFacialFeaturesResponse Unmarshall(UnmarshallerContext context)
+        public static SwapFacialFeaturesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SwapFacialFeaturesResponse swapFacialFeaturesResponse = new SwapFacialFeaturesResponse();
 
-			swapFacialFeaturesResponse.HttpResponse = context.HttpResponse;
-			swapFacialFeaturesResponse.RequestId = context.StringValue("SwapFacialFeatures.RequestId");
+			swapFacialFeaturesResponse.HttpResponse = _ctx.HttpResponse;
+			swapFacialFeaturesResponse.RequestId = _ctx.StringValue("SwapFacialFeatures.RequestId");
 
 			SwapFacialFeaturesResponse.SwapFacialFeatures_Data data = new SwapFacialFeaturesResponse.SwapFacialFeatures_Data();
-			data.ImageURL = context.StringValue("SwapFacialFeatures.Data.ImageURL");
+			data.ImageURL = _ctx.StringValue("SwapFacialFeatures.Data.ImageURL");
 			swapFacialFeaturesResponse.Data = data;
         
 			return swapFacialFeaturesResponse;

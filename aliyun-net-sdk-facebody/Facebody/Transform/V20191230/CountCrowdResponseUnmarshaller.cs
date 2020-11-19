@@ -26,16 +26,16 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class CountCrowdResponseUnmarshaller
     {
-        public static CountCrowdResponse Unmarshall(UnmarshallerContext context)
+        public static CountCrowdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CountCrowdResponse countCrowdResponse = new CountCrowdResponse();
 
-			countCrowdResponse.HttpResponse = context.HttpResponse;
-			countCrowdResponse.RequestId = context.StringValue("CountCrowd.RequestId");
+			countCrowdResponse.HttpResponse = _ctx.HttpResponse;
+			countCrowdResponse.RequestId = _ctx.StringValue("CountCrowd.RequestId");
 
 			CountCrowdResponse.CountCrowd_Data data = new CountCrowdResponse.CountCrowd_Data();
-			data.PeopleNumber = context.IntegerValue("CountCrowd.Data.PeopleNumber");
-			data.HotMap = context.StringValue("CountCrowd.Data.HotMap");
+			data.PeopleNumber = _ctx.IntegerValue("CountCrowd.Data.PeopleNumber");
+			data.HotMap = _ctx.StringValue("CountCrowd.Data.HotMap");
 			countCrowdResponse.Data = data;
         
 			return countCrowdResponse;

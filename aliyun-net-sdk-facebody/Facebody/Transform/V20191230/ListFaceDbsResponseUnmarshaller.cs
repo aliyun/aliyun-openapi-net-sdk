@@ -26,19 +26,19 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class ListFaceDbsResponseUnmarshaller
     {
-        public static ListFaceDbsResponse Unmarshall(UnmarshallerContext context)
+        public static ListFaceDbsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListFaceDbsResponse listFaceDbsResponse = new ListFaceDbsResponse();
 
-			listFaceDbsResponse.HttpResponse = context.HttpResponse;
-			listFaceDbsResponse.RequestId = context.StringValue("ListFaceDbs.RequestId");
+			listFaceDbsResponse.HttpResponse = _ctx.HttpResponse;
+			listFaceDbsResponse.RequestId = _ctx.StringValue("ListFaceDbs.RequestId");
 
 			ListFaceDbsResponse.ListFaceDbs_Data data = new ListFaceDbsResponse.ListFaceDbs_Data();
 
 			List<ListFaceDbsResponse.ListFaceDbs_Data.ListFaceDbs_DbListItem> data_dbList = new List<ListFaceDbsResponse.ListFaceDbs_Data.ListFaceDbs_DbListItem>();
-			for (int i = 0; i < context.Length("ListFaceDbs.Data.DbList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListFaceDbs.Data.DbList.Length"); i++) {
 				ListFaceDbsResponse.ListFaceDbs_Data.ListFaceDbs_DbListItem dbListItem = new ListFaceDbsResponse.ListFaceDbs_Data.ListFaceDbs_DbListItem();
-				dbListItem.Name = context.StringValue("ListFaceDbs.Data.DbList["+ i +"].Name");
+				dbListItem.Name = _ctx.StringValue("ListFaceDbs.Data.DbList["+ i +"].Name");
 
 				data_dbList.Add(dbListItem);
 			}

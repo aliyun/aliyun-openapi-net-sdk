@@ -26,22 +26,22 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class GetFaceEntityResponseUnmarshaller
     {
-        public static GetFaceEntityResponse Unmarshall(UnmarshallerContext context)
+        public static GetFaceEntityResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetFaceEntityResponse getFaceEntityResponse = new GetFaceEntityResponse();
 
-			getFaceEntityResponse.HttpResponse = context.HttpResponse;
-			getFaceEntityResponse.RequestId = context.StringValue("GetFaceEntity.RequestId");
+			getFaceEntityResponse.HttpResponse = _ctx.HttpResponse;
+			getFaceEntityResponse.RequestId = _ctx.StringValue("GetFaceEntity.RequestId");
 
 			GetFaceEntityResponse.GetFaceEntity_Data data = new GetFaceEntityResponse.GetFaceEntity_Data();
-			data.DbName = context.StringValue("GetFaceEntity.Data.DbName");
-			data.EntityId = context.StringValue("GetFaceEntity.Data.EntityId");
-			data.Labels = context.StringValue("GetFaceEntity.Data.Labels");
+			data.DbName = _ctx.StringValue("GetFaceEntity.Data.DbName");
+			data.EntityId = _ctx.StringValue("GetFaceEntity.Data.EntityId");
+			data.Labels = _ctx.StringValue("GetFaceEntity.Data.Labels");
 
 			List<GetFaceEntityResponse.GetFaceEntity_Data.GetFaceEntity_Face> data_faces = new List<GetFaceEntityResponse.GetFaceEntity_Data.GetFaceEntity_Face>();
-			for (int i = 0; i < context.Length("GetFaceEntity.Data.Faces.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetFaceEntity.Data.Faces.Length"); i++) {
 				GetFaceEntityResponse.GetFaceEntity_Data.GetFaceEntity_Face face = new GetFaceEntityResponse.GetFaceEntity_Data.GetFaceEntity_Face();
-				face.FaceId = context.StringValue("GetFaceEntity.Data.Faces["+ i +"].FaceId");
+				face.FaceId = _ctx.StringValue("GetFaceEntity.Data.Faces["+ i +"].FaceId");
 
 				data_faces.Add(face);
 			}

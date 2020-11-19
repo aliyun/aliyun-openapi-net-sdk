@@ -26,12 +26,12 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class CreateFaceDbResponseUnmarshaller
     {
-        public static CreateFaceDbResponse Unmarshall(UnmarshallerContext context)
+        public static CreateFaceDbResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateFaceDbResponse createFaceDbResponse = new CreateFaceDbResponse();
 
-			createFaceDbResponse.HttpResponse = context.HttpResponse;
-			createFaceDbResponse.RequestId = context.StringValue("CreateFaceDb.RequestId");
+			createFaceDbResponse.HttpResponse = _ctx.HttpResponse;
+			createFaceDbResponse.RequestId = _ctx.StringValue("CreateFaceDb.RequestId");
         
 			return createFaceDbResponse;
         }

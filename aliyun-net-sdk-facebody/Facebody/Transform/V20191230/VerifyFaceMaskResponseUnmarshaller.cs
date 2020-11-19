@@ -26,33 +26,33 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class VerifyFaceMaskResponseUnmarshaller
     {
-        public static VerifyFaceMaskResponse Unmarshall(UnmarshallerContext context)
+        public static VerifyFaceMaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VerifyFaceMaskResponse verifyFaceMaskResponse = new VerifyFaceMaskResponse();
 
-			verifyFaceMaskResponse.HttpResponse = context.HttpResponse;
-			verifyFaceMaskResponse.RequestId = context.StringValue("VerifyFaceMask.RequestId");
+			verifyFaceMaskResponse.HttpResponse = _ctx.HttpResponse;
+			verifyFaceMaskResponse.RequestId = _ctx.StringValue("VerifyFaceMask.RequestId");
 
 			VerifyFaceMaskResponse.VerifyFaceMask_Data data = new VerifyFaceMaskResponse.VerifyFaceMask_Data();
-			data.Confidence = context.FloatValue("VerifyFaceMask.Data.Confidence");
-			data.Mask = context.IntegerValue("VerifyFaceMask.Data.Mask");
-			data.MaskRef = context.IntegerValue("VerifyFaceMask.Data.MaskRef");
+			data.Confidence = _ctx.FloatValue("VerifyFaceMask.Data.Confidence");
+			data.Mask = _ctx.IntegerValue("VerifyFaceMask.Data.Mask");
+			data.MaskRef = _ctx.IntegerValue("VerifyFaceMask.Data.MaskRef");
 
 			List<string> data_rectangle = new List<string>();
-			for (int i = 0; i < context.Length("VerifyFaceMask.Data.Rectangle.Length"); i++) {
-				data_rectangle.Add(context.StringValue("VerifyFaceMask.Data.Rectangle["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("VerifyFaceMask.Data.Rectangle.Length"); i++) {
+				data_rectangle.Add(_ctx.StringValue("VerifyFaceMask.Data.Rectangle["+ i +"]"));
 			}
 			data.Rectangle = data_rectangle;
 
 			List<string> data_rectangleRef = new List<string>();
-			for (int i = 0; i < context.Length("VerifyFaceMask.Data.RectangleRef.Length"); i++) {
-				data_rectangleRef.Add(context.StringValue("VerifyFaceMask.Data.RectangleRef["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("VerifyFaceMask.Data.RectangleRef.Length"); i++) {
+				data_rectangleRef.Add(_ctx.StringValue("VerifyFaceMask.Data.RectangleRef["+ i +"]"));
 			}
 			data.RectangleRef = data_rectangleRef;
 
 			List<string> data_thresholds = new List<string>();
-			for (int i = 0; i < context.Length("VerifyFaceMask.Data.Thresholds.Length"); i++) {
-				data_thresholds.Add(context.StringValue("VerifyFaceMask.Data.Thresholds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("VerifyFaceMask.Data.Thresholds.Length"); i++) {
+				data_thresholds.Add(_ctx.StringValue("VerifyFaceMask.Data.Thresholds["+ i +"]"));
 			}
 			data.Thresholds = data_thresholds;
 			verifyFaceMaskResponse.Data = data;

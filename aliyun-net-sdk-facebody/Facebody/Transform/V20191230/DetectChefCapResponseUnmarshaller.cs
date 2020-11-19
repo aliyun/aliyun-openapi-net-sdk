@@ -26,24 +26,24 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 {
     public class DetectChefCapResponseUnmarshaller
     {
-        public static DetectChefCapResponse Unmarshall(UnmarshallerContext context)
+        public static DetectChefCapResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetectChefCapResponse detectChefCapResponse = new DetectChefCapResponse();
 
-			detectChefCapResponse.HttpResponse = context.HttpResponse;
-			detectChefCapResponse.RequestId = context.StringValue("DetectChefCap.RequestId");
+			detectChefCapResponse.HttpResponse = _ctx.HttpResponse;
+			detectChefCapResponse.RequestId = _ctx.StringValue("DetectChefCap.RequestId");
 
 			DetectChefCapResponse.DetectChefCap_Data data = new DetectChefCapResponse.DetectChefCap_Data();
 
 			List<DetectChefCapResponse.DetectChefCap_Data.DetectChefCap_ElementsItem> data_elements = new List<DetectChefCapResponse.DetectChefCap_Data.DetectChefCap_ElementsItem>();
-			for (int i = 0; i < context.Length("DetectChefCap.Data.Elements.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetectChefCap.Data.Elements.Length"); i++) {
 				DetectChefCapResponse.DetectChefCap_Data.DetectChefCap_ElementsItem elementsItem = new DetectChefCapResponse.DetectChefCap_Data.DetectChefCap_ElementsItem();
-				elementsItem.Category = context.StringValue("DetectChefCap.Data.Elements["+ i +"].Category");
-				elementsItem.Confidence = context.FloatValue("DetectChefCap.Data.Elements["+ i +"].Confidence");
+				elementsItem.Category = _ctx.StringValue("DetectChefCap.Data.Elements["+ i +"].Category");
+				elementsItem.Confidence = _ctx.FloatValue("DetectChefCap.Data.Elements["+ i +"].Confidence");
 
 				List<string> elementsItem_box = new List<string>();
-				for (int j = 0; j < context.Length("DetectChefCap.Data.Elements["+ i +"].Box.Length"); j++) {
-					elementsItem_box.Add(context.StringValue("DetectChefCap.Data.Elements["+ i +"].Box["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DetectChefCap.Data.Elements["+ i +"].Box.Length"); j++) {
+					elementsItem_box.Add(_ctx.StringValue("DetectChefCap.Data.Elements["+ i +"].Box["+ j +"]"));
 				}
 				elementsItem.Box = elementsItem_box;
 
