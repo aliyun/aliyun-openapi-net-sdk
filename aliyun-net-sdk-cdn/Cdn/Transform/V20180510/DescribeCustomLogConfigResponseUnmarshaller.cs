@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeCustomLogConfigResponseUnmarshaller
     {
-        public static DescribeCustomLogConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCustomLogConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCustomLogConfigResponse describeCustomLogConfigResponse = new DescribeCustomLogConfigResponse();
 
-			describeCustomLogConfigResponse.HttpResponse = context.HttpResponse;
-			describeCustomLogConfigResponse.RequestId = context.StringValue("DescribeCustomLogConfig.RequestId");
-			describeCustomLogConfigResponse.Remark = context.StringValue("DescribeCustomLogConfig.Remark");
-			describeCustomLogConfigResponse.Sample = context.StringValue("DescribeCustomLogConfig.Sample");
-			describeCustomLogConfigResponse.Tag = context.StringValue("DescribeCustomLogConfig.Tag");
+			describeCustomLogConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeCustomLogConfigResponse.RequestId = _ctx.StringValue("DescribeCustomLogConfig.RequestId");
+			describeCustomLogConfigResponse.Remark = _ctx.StringValue("DescribeCustomLogConfig.Remark");
+			describeCustomLogConfigResponse.Sample = _ctx.StringValue("DescribeCustomLogConfig.Sample");
+			describeCustomLogConfigResponse.Tag = _ctx.StringValue("DescribeCustomLogConfig.Tag");
         
 			return describeCustomLogConfigResponse;
         }

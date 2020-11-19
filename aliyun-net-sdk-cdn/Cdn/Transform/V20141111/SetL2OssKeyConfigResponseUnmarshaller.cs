@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class SetL2OssKeyConfigResponseUnmarshaller
     {
-        public static SetL2OssKeyConfigResponse Unmarshall(UnmarshallerContext context)
+        public static SetL2OssKeyConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetL2OssKeyConfigResponse setL2OssKeyConfigResponse = new SetL2OssKeyConfigResponse();
 
-			setL2OssKeyConfigResponse.HttpResponse = context.HttpResponse;
-			setL2OssKeyConfigResponse.RequestId = context.StringValue("SetL2OssKeyConfig.RequestId");
+			setL2OssKeyConfigResponse.HttpResponse = _ctx.HttpResponse;
+			setL2OssKeyConfigResponse.RequestId = _ctx.StringValue("SetL2OssKeyConfig.RequestId");
         
 			return setL2OssKeyConfigResponse;
         }

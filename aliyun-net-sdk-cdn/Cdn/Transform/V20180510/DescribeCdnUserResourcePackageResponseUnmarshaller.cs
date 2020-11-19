@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeCdnUserResourcePackageResponseUnmarshaller
     {
-        public static DescribeCdnUserResourcePackageResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCdnUserResourcePackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCdnUserResourcePackageResponse describeCdnUserResourcePackageResponse = new DescribeCdnUserResourcePackageResponse();
 
-			describeCdnUserResourcePackageResponse.HttpResponse = context.HttpResponse;
-			describeCdnUserResourcePackageResponse.RequestId = context.StringValue("DescribeCdnUserResourcePackage.RequestId");
+			describeCdnUserResourcePackageResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnUserResourcePackageResponse.RequestId = _ctx.StringValue("DescribeCdnUserResourcePackage.RequestId");
 
 			List<DescribeCdnUserResourcePackageResponse.DescribeCdnUserResourcePackage_ResourcePackageInfo> describeCdnUserResourcePackageResponse_resourcePackageInfos = new List<DescribeCdnUserResourcePackageResponse.DescribeCdnUserResourcePackage_ResourcePackageInfo>();
-			for (int i = 0; i < context.Length("DescribeCdnUserResourcePackage.ResourcePackageInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCdnUserResourcePackage.ResourcePackageInfos.Length"); i++) {
 				DescribeCdnUserResourcePackageResponse.DescribeCdnUserResourcePackage_ResourcePackageInfo resourcePackageInfo = new DescribeCdnUserResourcePackageResponse.DescribeCdnUserResourcePackage_ResourcePackageInfo();
-				resourcePackageInfo.CurrCapacity = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].CurrCapacity");
-				resourcePackageInfo.InitCapacity = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].InitCapacity");
-				resourcePackageInfo.CommodityCode = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].CommodityCode");
-				resourcePackageInfo.DisplayName = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].DisplayName");
-				resourcePackageInfo.TemplateName = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].TemplateName");
-				resourcePackageInfo.InstanceId = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].InstanceId");
-				resourcePackageInfo.Status = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].Status");
-				resourcePackageInfo.StartTime = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].StartTime");
-				resourcePackageInfo.EndTime = context.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].EndTime");
+				resourcePackageInfo.CurrCapacity = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].CurrCapacity");
+				resourcePackageInfo.InitCapacity = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].InitCapacity");
+				resourcePackageInfo.CommodityCode = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].CommodityCode");
+				resourcePackageInfo.DisplayName = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].DisplayName");
+				resourcePackageInfo.TemplateName = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].TemplateName");
+				resourcePackageInfo.InstanceId = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].InstanceId");
+				resourcePackageInfo.Status = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].Status");
+				resourcePackageInfo.StartTime = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].StartTime");
+				resourcePackageInfo.EndTime = _ctx.StringValue("DescribeCdnUserResourcePackage.ResourcePackageInfos["+ i +"].EndTime");
 
 				describeCdnUserResourcePackageResponse_resourcePackageInfos.Add(resourcePackageInfo);
 			}

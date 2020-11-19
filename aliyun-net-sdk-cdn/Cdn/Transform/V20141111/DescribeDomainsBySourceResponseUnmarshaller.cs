@@ -26,33 +26,33 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeDomainsBySourceResponseUnmarshaller
     {
-        public static DescribeDomainsBySourceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainsBySourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainsBySourceResponse describeDomainsBySourceResponse = new DescribeDomainsBySourceResponse();
 
-			describeDomainsBySourceResponse.HttpResponse = context.HttpResponse;
-			describeDomainsBySourceResponse.RequestId = context.StringValue("DescribeDomainsBySource.RequestId");
-			describeDomainsBySourceResponse.Sources = context.StringValue("DescribeDomainsBySource.Sources");
+			describeDomainsBySourceResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainsBySourceResponse.RequestId = _ctx.StringValue("DescribeDomainsBySource.RequestId");
+			describeDomainsBySourceResponse.Sources = _ctx.StringValue("DescribeDomainsBySource.Sources");
 
 			List<DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData> describeDomainsBySourceResponse_domainsList = new List<DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData>();
-			for (int i = 0; i < context.Length("DescribeDomainsBySource.DomainsList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainsBySource.DomainsList.Length"); i++) {
 				DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData domainsData = new DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData();
-				domainsData.Source = context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].Source");
+				domainsData.Source = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].Source");
 
 				List<string> domainsData_domains = new List<string>();
-				for (int j = 0; j < context.Length("DescribeDomainsBySource.DomainsList["+ i +"].Domains.Length"); j++) {
-					domainsData_domains.Add(context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].Domains["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeDomainsBySource.DomainsList["+ i +"].Domains.Length"); j++) {
+					domainsData_domains.Add(_ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].Domains["+ j +"]"));
 				}
 				domainsData.Domains = domainsData_domains;
 
 				List<DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData.DescribeDomainsBySource_DomainInfo> domainsData_domainInfos = new List<DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData.DescribeDomainsBySource_DomainInfo>();
-				for (int j = 0; j < context.Length("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos.Length"); j++) {
 					DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData.DescribeDomainsBySource_DomainInfo domainInfo = new DescribeDomainsBySourceResponse.DescribeDomainsBySource_DomainsData.DescribeDomainsBySource_DomainInfo();
-					domainInfo.DomainName = context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].DomainName");
-					domainInfo.DomainCname = context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].DomainCname");
-					domainInfo.CreateTime = context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].CreateTime");
-					domainInfo.UpdateTime = context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].UpdateTime");
-					domainInfo.Status = context.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].Status");
+					domainInfo.DomainName = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].DomainName");
+					domainInfo.DomainCname = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].DomainCname");
+					domainInfo.CreateTime = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].CreateTime");
+					domainInfo.UpdateTime = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].UpdateTime");
+					domainInfo.Status = _ctx.StringValue("DescribeDomainsBySource.DomainsList["+ i +"].DomainInfos["+ j +"].Status");
 
 					domainsData_domainInfos.Add(domainInfo);
 				}

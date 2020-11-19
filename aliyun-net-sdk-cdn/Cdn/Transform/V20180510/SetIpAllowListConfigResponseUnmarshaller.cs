@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class SetIpAllowListConfigResponseUnmarshaller
     {
-        public static SetIpAllowListConfigResponse Unmarshall(UnmarshallerContext context)
+        public static SetIpAllowListConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetIpAllowListConfigResponse setIpAllowListConfigResponse = new SetIpAllowListConfigResponse();
 
-			setIpAllowListConfigResponse.HttpResponse = context.HttpResponse;
-			setIpAllowListConfigResponse.RequestId = context.StringValue("SetIpAllowListConfig.RequestId");
+			setIpAllowListConfigResponse.HttpResponse = _ctx.HttpResponse;
+			setIpAllowListConfigResponse.RequestId = _ctx.StringValue("SetIpAllowListConfig.RequestId");
         
 			return setIpAllowListConfigResponse;
         }

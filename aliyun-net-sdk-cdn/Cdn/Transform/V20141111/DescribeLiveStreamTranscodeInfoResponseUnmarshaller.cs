@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeLiveStreamTranscodeInfoResponseUnmarshaller
     {
-        public static DescribeLiveStreamTranscodeInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveStreamTranscodeInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveStreamTranscodeInfoResponse describeLiveStreamTranscodeInfoResponse = new DescribeLiveStreamTranscodeInfoResponse();
 
-			describeLiveStreamTranscodeInfoResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamTranscodeInfoResponse.RequestId = context.StringValue("DescribeLiveStreamTranscodeInfo.RequestId");
+			describeLiveStreamTranscodeInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamTranscodeInfoResponse.RequestId = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.RequestId");
 
 			List<DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo> describeLiveStreamTranscodeInfoResponse_domainTranscodeList = new List<DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamTranscodeInfo.DomainTranscodeList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveStreamTranscodeInfo.DomainTranscodeList.Length"); i++) {
 				DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo domainTranscodeInfo = new DescribeLiveStreamTranscodeInfoResponse.DescribeLiveStreamTranscodeInfo_DomainTranscodeInfo();
-				domainTranscodeInfo.TranscodeApp = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeApp");
-				domainTranscodeInfo.TranscodeId = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeId");
-				domainTranscodeInfo.TranscodeName = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeName");
-				domainTranscodeInfo.TranscodeRecord = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeRecord");
-				domainTranscodeInfo.TranscodeSnapshot = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeSnapshot");
-				domainTranscodeInfo.TranscodeTemplate = context.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeTemplate");
+				domainTranscodeInfo.TranscodeApp = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeApp");
+				domainTranscodeInfo.TranscodeId = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeId");
+				domainTranscodeInfo.TranscodeName = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeName");
+				domainTranscodeInfo.TranscodeRecord = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeRecord");
+				domainTranscodeInfo.TranscodeSnapshot = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeSnapshot");
+				domainTranscodeInfo.TranscodeTemplate = _ctx.StringValue("DescribeLiveStreamTranscodeInfo.DomainTranscodeList["+ i +"].TranscodeTemplate");
 
 				describeLiveStreamTranscodeInfoResponse_domainTranscodeList.Add(domainTranscodeInfo);
 			}

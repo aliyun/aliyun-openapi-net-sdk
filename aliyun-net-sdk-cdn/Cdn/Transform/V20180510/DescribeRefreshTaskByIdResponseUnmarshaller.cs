@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeRefreshTaskByIdResponseUnmarshaller
     {
-        public static DescribeRefreshTaskByIdResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRefreshTaskByIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRefreshTaskByIdResponse describeRefreshTaskByIdResponse = new DescribeRefreshTaskByIdResponse();
 
-			describeRefreshTaskByIdResponse.HttpResponse = context.HttpResponse;
-			describeRefreshTaskByIdResponse.RequestId = context.StringValue("DescribeRefreshTaskById.RequestId");
-			describeRefreshTaskByIdResponse.TotalCount = context.LongValue("DescribeRefreshTaskById.TotalCount");
+			describeRefreshTaskByIdResponse.HttpResponse = _ctx.HttpResponse;
+			describeRefreshTaskByIdResponse.RequestId = _ctx.StringValue("DescribeRefreshTaskById.RequestId");
+			describeRefreshTaskByIdResponse.TotalCount = _ctx.LongValue("DescribeRefreshTaskById.TotalCount");
 
 			List<DescribeRefreshTaskByIdResponse.DescribeRefreshTaskById_CDNTask> describeRefreshTaskByIdResponse_tasks = new List<DescribeRefreshTaskByIdResponse.DescribeRefreshTaskById_CDNTask>();
-			for (int i = 0; i < context.Length("DescribeRefreshTaskById.Tasks.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRefreshTaskById.Tasks.Length"); i++) {
 				DescribeRefreshTaskByIdResponse.DescribeRefreshTaskById_CDNTask cDNTask = new DescribeRefreshTaskByIdResponse.DescribeRefreshTaskById_CDNTask();
-				cDNTask.TaskId = context.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].TaskId");
-				cDNTask.ObjectPath = context.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].ObjectPath");
-				cDNTask.Process = context.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].Process");
-				cDNTask.Status = context.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].Status");
-				cDNTask.CreationTime = context.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].CreationTime");
-				cDNTask.Description = context.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].Description");
-				cDNTask.ObjectType = context.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].ObjectType");
+				cDNTask.TaskId = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].TaskId");
+				cDNTask.ObjectPath = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].ObjectPath");
+				cDNTask.Process = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].Process");
+				cDNTask.Status = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].Status");
+				cDNTask.CreationTime = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].CreationTime");
+				cDNTask.Description = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].Description");
+				cDNTask.ObjectType = _ctx.StringValue("DescribeRefreshTaskById.Tasks["+ i +"].ObjectType");
 
 				describeRefreshTaskByIdResponse_tasks.Add(cDNTask);
 			}

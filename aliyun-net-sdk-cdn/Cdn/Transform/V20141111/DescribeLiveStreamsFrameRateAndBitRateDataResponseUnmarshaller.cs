@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeLiveStreamsFrameRateAndBitRateDataResponseUnmarshaller
     {
-        public static DescribeLiveStreamsFrameRateAndBitRateDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveStreamsFrameRateAndBitRateDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveStreamsFrameRateAndBitRateDataResponse describeLiveStreamsFrameRateAndBitRateDataResponse = new DescribeLiveStreamsFrameRateAndBitRateDataResponse();
 
-			describeLiveStreamsFrameRateAndBitRateDataResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamsFrameRateAndBitRateDataResponse.RequestId = context.StringValue("DescribeLiveStreamsFrameRateAndBitRateData.RequestId");
+			describeLiveStreamsFrameRateAndBitRateDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamsFrameRateAndBitRateDataResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsFrameRateAndBitRateData.RequestId");
 
 			List<DescribeLiveStreamsFrameRateAndBitRateDataResponse.DescribeLiveStreamsFrameRateAndBitRateData_FrameRateAndBitRateInfo> describeLiveStreamsFrameRateAndBitRateDataResponse_frameRateAndBitRateInfos = new List<DescribeLiveStreamsFrameRateAndBitRateDataResponse.DescribeLiveStreamsFrameRateAndBitRateData_FrameRateAndBitRateInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos.Length"); i++) {
 				DescribeLiveStreamsFrameRateAndBitRateDataResponse.DescribeLiveStreamsFrameRateAndBitRateData_FrameRateAndBitRateInfo frameRateAndBitRateInfo = new DescribeLiveStreamsFrameRateAndBitRateDataResponse.DescribeLiveStreamsFrameRateAndBitRateData_FrameRateAndBitRateInfo();
-				frameRateAndBitRateInfo.StreamUrl = context.StringValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].StreamUrl");
-				frameRateAndBitRateInfo.VideoFrameRate = context.FloatValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate");
-				frameRateAndBitRateInfo.AudioFrameRate = context.FloatValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate");
-				frameRateAndBitRateInfo.BitRate = context.FloatValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].BitRate");
-				frameRateAndBitRateInfo.Time = context.StringValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].Time");
+				frameRateAndBitRateInfo.StreamUrl = _ctx.StringValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].StreamUrl");
+				frameRateAndBitRateInfo.VideoFrameRate = _ctx.FloatValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].VideoFrameRate");
+				frameRateAndBitRateInfo.AudioFrameRate = _ctx.FloatValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].AudioFrameRate");
+				frameRateAndBitRateInfo.BitRate = _ctx.FloatValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].BitRate");
+				frameRateAndBitRateInfo.Time = _ctx.StringValue("DescribeLiveStreamsFrameRateAndBitRateData.FrameRateAndBitRateInfos["+ i +"].Time");
 
 				describeLiveStreamsFrameRateAndBitRateDataResponse_frameRateAndBitRateInfos.Add(frameRateAndBitRateInfo);
 			}

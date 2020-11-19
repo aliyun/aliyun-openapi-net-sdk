@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainHttpCodeDataByLayerResponseUnmarshaller
     {
-        public static DescribeDomainHttpCodeDataByLayerResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainHttpCodeDataByLayerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainHttpCodeDataByLayerResponse describeDomainHttpCodeDataByLayerResponse = new DescribeDomainHttpCodeDataByLayerResponse();
 
-			describeDomainHttpCodeDataByLayerResponse.HttpResponse = context.HttpResponse;
-			describeDomainHttpCodeDataByLayerResponse.RequestId = context.StringValue("DescribeDomainHttpCodeDataByLayer.RequestId");
-			describeDomainHttpCodeDataByLayerResponse.DataInterval = context.StringValue("DescribeDomainHttpCodeDataByLayer.DataInterval");
+			describeDomainHttpCodeDataByLayerResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainHttpCodeDataByLayerResponse.RequestId = _ctx.StringValue("DescribeDomainHttpCodeDataByLayer.RequestId");
+			describeDomainHttpCodeDataByLayerResponse.DataInterval = _ctx.StringValue("DescribeDomainHttpCodeDataByLayer.DataInterval");
 
 			List<DescribeDomainHttpCodeDataByLayerResponse.DescribeDomainHttpCodeDataByLayer_DataModule> describeDomainHttpCodeDataByLayerResponse_httpCodeDataInterval = new List<DescribeDomainHttpCodeDataByLayerResponse.DescribeDomainHttpCodeDataByLayer_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval.Length"); i++) {
 				DescribeDomainHttpCodeDataByLayerResponse.DescribeDomainHttpCodeDataByLayer_DataModule dataModule = new DescribeDomainHttpCodeDataByLayerResponse.DescribeDomainHttpCodeDataByLayer_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval["+ i +"].Value");
-				dataModule.TotalValue = context.StringValue("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval["+ i +"].TotalValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval["+ i +"].TimeStamp");
+				dataModule._Value = _ctx.StringValue("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval["+ i +"].Value");
+				dataModule.TotalValue = _ctx.StringValue("DescribeDomainHttpCodeDataByLayer.HttpCodeDataInterval["+ i +"].TotalValue");
 
 				describeDomainHttpCodeDataByLayerResponse_httpCodeDataInterval.Add(dataModule);
 			}

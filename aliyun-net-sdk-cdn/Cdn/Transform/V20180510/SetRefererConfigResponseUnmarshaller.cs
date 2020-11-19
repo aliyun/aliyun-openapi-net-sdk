@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class SetRefererConfigResponseUnmarshaller
     {
-        public static SetRefererConfigResponse Unmarshall(UnmarshallerContext context)
+        public static SetRefererConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetRefererConfigResponse setRefererConfigResponse = new SetRefererConfigResponse();
 
-			setRefererConfigResponse.HttpResponse = context.HttpResponse;
-			setRefererConfigResponse.RequestId = context.StringValue("SetRefererConfig.RequestId");
+			setRefererConfigResponse.HttpResponse = _ctx.HttpResponse;
+			setRefererConfigResponse.RequestId = _ctx.StringValue("SetRefererConfig.RequestId");
         
 			return setRefererConfigResponse;
         }

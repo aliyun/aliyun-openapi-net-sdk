@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeFCTriggerResponseUnmarshaller
     {
-        public static DescribeFCTriggerResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeFCTriggerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeFCTriggerResponse describeFCTriggerResponse = new DescribeFCTriggerResponse();
 
-			describeFCTriggerResponse.HttpResponse = context.HttpResponse;
-			describeFCTriggerResponse.RequestId = context.StringValue("DescribeFCTrigger.RequestId");
+			describeFCTriggerResponse.HttpResponse = _ctx.HttpResponse;
+			describeFCTriggerResponse.RequestId = _ctx.StringValue("DescribeFCTrigger.RequestId");
 
 			DescribeFCTriggerResponse.DescribeFCTrigger_FCTrigger fCTrigger = new DescribeFCTriggerResponse.DescribeFCTrigger_FCTrigger();
-			fCTrigger.EventMetaName = context.StringValue("DescribeFCTrigger.FCTrigger.EventMetaName");
-			fCTrigger.EventMetaVersion = context.StringValue("DescribeFCTrigger.FCTrigger.EventMetaVersion");
-			fCTrigger.TriggerARN = context.StringValue("DescribeFCTrigger.FCTrigger.TriggerARN");
-			fCTrigger.RoleARN = context.StringValue("DescribeFCTrigger.FCTrigger.RoleARN");
-			fCTrigger.SourceArn = context.StringValue("DescribeFCTrigger.FCTrigger.SourceArn");
-			fCTrigger.Notes = context.StringValue("DescribeFCTrigger.FCTrigger.Notes");
+			fCTrigger.EventMetaName = _ctx.StringValue("DescribeFCTrigger.FCTrigger.EventMetaName");
+			fCTrigger.EventMetaVersion = _ctx.StringValue("DescribeFCTrigger.FCTrigger.EventMetaVersion");
+			fCTrigger.TriggerARN = _ctx.StringValue("DescribeFCTrigger.FCTrigger.TriggerARN");
+			fCTrigger.RoleARN = _ctx.StringValue("DescribeFCTrigger.FCTrigger.RoleARN");
+			fCTrigger.SourceArn = _ctx.StringValue("DescribeFCTrigger.FCTrigger.SourceArn");
+			fCTrigger.Notes = _ctx.StringValue("DescribeFCTrigger.FCTrigger.Notes");
 			describeFCTriggerResponse.FCTrigger = fCTrigger;
         
 			return describeFCTriggerResponse;

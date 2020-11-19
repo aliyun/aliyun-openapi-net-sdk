@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class SetWaitingRoomConfigResponseUnmarshaller
     {
-        public static SetWaitingRoomConfigResponse Unmarshall(UnmarshallerContext context)
+        public static SetWaitingRoomConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetWaitingRoomConfigResponse setWaitingRoomConfigResponse = new SetWaitingRoomConfigResponse();
 
-			setWaitingRoomConfigResponse.HttpResponse = context.HttpResponse;
-			setWaitingRoomConfigResponse.RequestId = context.StringValue("SetWaitingRoomConfig.RequestId");
+			setWaitingRoomConfigResponse.HttpResponse = _ctx.HttpResponse;
+			setWaitingRoomConfigResponse.RequestId = _ctx.StringValue("SetWaitingRoomConfig.RequestId");
         
 			return setWaitingRoomConfigResponse;
         }

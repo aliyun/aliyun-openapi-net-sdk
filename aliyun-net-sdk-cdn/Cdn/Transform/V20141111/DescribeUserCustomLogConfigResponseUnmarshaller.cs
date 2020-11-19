@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeUserCustomLogConfigResponseUnmarshaller
     {
-        public static DescribeUserCustomLogConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserCustomLogConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserCustomLogConfigResponse describeUserCustomLogConfigResponse = new DescribeUserCustomLogConfigResponse();
 
-			describeUserCustomLogConfigResponse.HttpResponse = context.HttpResponse;
-			describeUserCustomLogConfigResponse.RequestId = context.StringValue("DescribeUserCustomLogConfig.RequestId");
+			describeUserCustomLogConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserCustomLogConfigResponse.RequestId = _ctx.StringValue("DescribeUserCustomLogConfig.RequestId");
 
 			List<string> describeUserCustomLogConfigResponse_configIds = new List<string>();
-			for (int i = 0; i < context.Length("DescribeUserCustomLogConfig.ConfigIds.Length"); i++) {
-				describeUserCustomLogConfigResponse_configIds.Add(context.StringValue("DescribeUserCustomLogConfig.ConfigIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeUserCustomLogConfig.ConfigIds.Length"); i++) {
+				describeUserCustomLogConfigResponse_configIds.Add(_ctx.StringValue("DescribeUserCustomLogConfig.ConfigIds["+ i +"]"));
 			}
 			describeUserCustomLogConfigResponse.ConfigIds = describeUserCustomLogConfigResponse_configIds;
         

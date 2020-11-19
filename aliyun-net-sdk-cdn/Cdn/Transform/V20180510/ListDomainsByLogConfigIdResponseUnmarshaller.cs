@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class ListDomainsByLogConfigIdResponseUnmarshaller
     {
-        public static ListDomainsByLogConfigIdResponse Unmarshall(UnmarshallerContext context)
+        public static ListDomainsByLogConfigIdResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListDomainsByLogConfigIdResponse listDomainsByLogConfigIdResponse = new ListDomainsByLogConfigIdResponse();
 
-			listDomainsByLogConfigIdResponse.HttpResponse = context.HttpResponse;
-			listDomainsByLogConfigIdResponse.RequestId = context.StringValue("ListDomainsByLogConfigId.RequestId");
+			listDomainsByLogConfigIdResponse.HttpResponse = _ctx.HttpResponse;
+			listDomainsByLogConfigIdResponse.RequestId = _ctx.StringValue("ListDomainsByLogConfigId.RequestId");
 
 			List<string> listDomainsByLogConfigIdResponse_domains = new List<string>();
-			for (int i = 0; i < context.Length("ListDomainsByLogConfigId.Domains.Length"); i++) {
-				listDomainsByLogConfigIdResponse_domains.Add(context.StringValue("ListDomainsByLogConfigId.Domains["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ListDomainsByLogConfigId.Domains.Length"); i++) {
+				listDomainsByLogConfigIdResponse_domains.Add(_ctx.StringValue("ListDomainsByLogConfigId.Domains["+ i +"]"));
 			}
 			listDomainsByLogConfigIdResponse.Domains = listDomainsByLogConfigIdResponse_domains;
         

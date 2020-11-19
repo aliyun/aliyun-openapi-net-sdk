@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeVerifyContentResponseUnmarshaller
     {
-        public static DescribeVerifyContentResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeVerifyContentResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeVerifyContentResponse describeVerifyContentResponse = new DescribeVerifyContentResponse();
 
-			describeVerifyContentResponse.HttpResponse = context.HttpResponse;
-			describeVerifyContentResponse.RequestId = context.StringValue("DescribeVerifyContent.RequestId");
-			describeVerifyContentResponse.Content = context.StringValue("DescribeVerifyContent.Content");
+			describeVerifyContentResponse.HttpResponse = _ctx.HttpResponse;
+			describeVerifyContentResponse.RequestId = _ctx.StringValue("DescribeVerifyContent.RequestId");
+			describeVerifyContentResponse.Content = _ctx.StringValue("DescribeVerifyContent.Content");
         
 			return describeVerifyContentResponse;
         }

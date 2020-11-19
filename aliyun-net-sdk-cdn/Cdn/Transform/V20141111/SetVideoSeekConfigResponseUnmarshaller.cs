@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class SetVideoSeekConfigResponseUnmarshaller
     {
-        public static SetVideoSeekConfigResponse Unmarshall(UnmarshallerContext context)
+        public static SetVideoSeekConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetVideoSeekConfigResponse setVideoSeekConfigResponse = new SetVideoSeekConfigResponse();
 
-			setVideoSeekConfigResponse.HttpResponse = context.HttpResponse;
-			setVideoSeekConfigResponse.RequestId = context.StringValue("SetVideoSeekConfig.RequestId");
+			setVideoSeekConfigResponse.HttpResponse = _ctx.HttpResponse;
+			setVideoSeekConfigResponse.RequestId = _ctx.StringValue("SetVideoSeekConfig.RequestId");
         
 			return setVideoSeekConfigResponse;
         }

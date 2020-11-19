@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeDomainRealTimeBpsDataResponseUnmarshaller
     {
-        public static DescribeDomainRealTimeBpsDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainRealTimeBpsDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainRealTimeBpsDataResponse describeDomainRealTimeBpsDataResponse = new DescribeDomainRealTimeBpsDataResponse();
 
-			describeDomainRealTimeBpsDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainRealTimeBpsDataResponse.RequestId = context.StringValue("DescribeDomainRealTimeBpsData.RequestId");
+			describeDomainRealTimeBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainRealTimeBpsDataResponse.RequestId = _ctx.StringValue("DescribeDomainRealTimeBpsData.RequestId");
 
 			List<DescribeDomainRealTimeBpsDataResponse.DescribeDomainRealTimeBpsData_BpsModel> describeDomainRealTimeBpsDataResponse_data = new List<DescribeDomainRealTimeBpsDataResponse.DescribeDomainRealTimeBpsData_BpsModel>();
-			for (int i = 0; i < context.Length("DescribeDomainRealTimeBpsData.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainRealTimeBpsData.Data.Length"); i++) {
 				DescribeDomainRealTimeBpsDataResponse.DescribeDomainRealTimeBpsData_BpsModel bpsModel = new DescribeDomainRealTimeBpsDataResponse.DescribeDomainRealTimeBpsData_BpsModel();
-				bpsModel.Bps = context.FloatValue("DescribeDomainRealTimeBpsData.Data["+ i +"].Bps");
-				bpsModel.TimeStamp = context.StringValue("DescribeDomainRealTimeBpsData.Data["+ i +"].TimeStamp");
+				bpsModel.Bps = _ctx.FloatValue("DescribeDomainRealTimeBpsData.Data["+ i +"].Bps");
+				bpsModel.TimeStamp = _ctx.StringValue("DescribeDomainRealTimeBpsData.Data["+ i +"].TimeStamp");
 
 				describeDomainRealTimeBpsDataResponse_data.Add(bpsModel);
 			}

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeIpInfoResponseUnmarshaller
     {
-        public static DescribeIpInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeIpInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeIpInfoResponse describeIpInfoResponse = new DescribeIpInfoResponse();
 
-			describeIpInfoResponse.HttpResponse = context.HttpResponse;
-			describeIpInfoResponse.RequestId = context.StringValue("DescribeIpInfo.RequestId");
-			describeIpInfoResponse.CdnIp = context.StringValue("DescribeIpInfo.CdnIp");
-			describeIpInfoResponse.ISP = context.StringValue("DescribeIpInfo.ISP");
-			describeIpInfoResponse.IspEname = context.StringValue("DescribeIpInfo.IspEname");
-			describeIpInfoResponse.Region = context.StringValue("DescribeIpInfo.Region");
-			describeIpInfoResponse.RegionEname = context.StringValue("DescribeIpInfo.RegionEname");
+			describeIpInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeIpInfoResponse.RequestId = _ctx.StringValue("DescribeIpInfo.RequestId");
+			describeIpInfoResponse.CdnIp = _ctx.StringValue("DescribeIpInfo.CdnIp");
+			describeIpInfoResponse.ISP = _ctx.StringValue("DescribeIpInfo.ISP");
+			describeIpInfoResponse.IspEname = _ctx.StringValue("DescribeIpInfo.IspEname");
+			describeIpInfoResponse.Region = _ctx.StringValue("DescribeIpInfo.Region");
+			describeIpInfoResponse.RegionEname = _ctx.StringValue("DescribeIpInfo.RegionEname");
         
 			return describeIpInfoResponse;
         }

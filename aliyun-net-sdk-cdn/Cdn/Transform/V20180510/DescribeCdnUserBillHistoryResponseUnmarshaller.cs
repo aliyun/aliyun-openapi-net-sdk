@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeCdnUserBillHistoryResponseUnmarshaller
     {
-        public static DescribeCdnUserBillHistoryResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCdnUserBillHistoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCdnUserBillHistoryResponse describeCdnUserBillHistoryResponse = new DescribeCdnUserBillHistoryResponse();
 
-			describeCdnUserBillHistoryResponse.HttpResponse = context.HttpResponse;
-			describeCdnUserBillHistoryResponse.RequestId = context.StringValue("DescribeCdnUserBillHistory.RequestId");
+			describeCdnUserBillHistoryResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnUserBillHistoryResponse.RequestId = _ctx.StringValue("DescribeCdnUserBillHistory.RequestId");
 
 			List<DescribeCdnUserBillHistoryResponse.DescribeCdnUserBillHistory_BillHistoryDataItem> describeCdnUserBillHistoryResponse_billHistoryData = new List<DescribeCdnUserBillHistoryResponse.DescribeCdnUserBillHistory_BillHistoryDataItem>();
-			for (int i = 0; i < context.Length("DescribeCdnUserBillHistory.BillHistoryData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCdnUserBillHistory.BillHistoryData.Length"); i++) {
 				DescribeCdnUserBillHistoryResponse.DescribeCdnUserBillHistory_BillHistoryDataItem billHistoryDataItem = new DescribeCdnUserBillHistoryResponse.DescribeCdnUserBillHistory_BillHistoryDataItem();
-				billHistoryDataItem.Dimension = context.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].Dimension");
-				billHistoryDataItem.BillType = context.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillType");
-				billHistoryDataItem.BillTime = context.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillTime");
+				billHistoryDataItem.Dimension = _ctx.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].Dimension");
+				billHistoryDataItem.BillType = _ctx.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillType");
+				billHistoryDataItem.BillTime = _ctx.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillTime");
 
 				List<DescribeCdnUserBillHistoryResponse.DescribeCdnUserBillHistory_BillHistoryDataItem.DescribeCdnUserBillHistory_BillingDataItem> billHistoryDataItem_billingData = new List<DescribeCdnUserBillHistoryResponse.DescribeCdnUserBillHistory_BillHistoryDataItem.DescribeCdnUserBillHistory_BillingDataItem>();
-				for (int j = 0; j < context.Length("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData.Length"); j++) {
 					DescribeCdnUserBillHistoryResponse.DescribeCdnUserBillHistory_BillHistoryDataItem.DescribeCdnUserBillHistory_BillingDataItem billingDataItem = new DescribeCdnUserBillHistoryResponse.DescribeCdnUserBillHistory_BillHistoryDataItem.DescribeCdnUserBillHistory_BillingDataItem();
-					billingDataItem.ChargeType = context.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].ChargeType");
-					billingDataItem.CdnRegion = context.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].CdnRegion");
-					billingDataItem.Bandwidth = context.FloatValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].Bandwidth");
-					billingDataItem.Flow = context.FloatValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].Flow");
-					billingDataItem.Count = context.FloatValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].Count");
+					billingDataItem.ChargeType = _ctx.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].ChargeType");
+					billingDataItem.CdnRegion = _ctx.StringValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].CdnRegion");
+					billingDataItem.Bandwidth = _ctx.FloatValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].Bandwidth");
+					billingDataItem.Flow = _ctx.FloatValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].Flow");
+					billingDataItem.Count = _ctx.FloatValue("DescribeCdnUserBillHistory.BillHistoryData["+ i +"].BillingData["+ j +"].Count");
 
 					billHistoryDataItem_billingData.Add(billingDataItem);
 				}

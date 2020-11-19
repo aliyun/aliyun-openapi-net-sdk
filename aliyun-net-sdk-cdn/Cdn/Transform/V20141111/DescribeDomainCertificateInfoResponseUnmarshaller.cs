@@ -26,30 +26,30 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeDomainCertificateInfoResponseUnmarshaller
     {
-        public static DescribeDomainCertificateInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainCertificateInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainCertificateInfoResponse describeDomainCertificateInfoResponse = new DescribeDomainCertificateInfoResponse();
 
-			describeDomainCertificateInfoResponse.HttpResponse = context.HttpResponse;
-			describeDomainCertificateInfoResponse.RequestId = context.StringValue("DescribeDomainCertificateInfo.RequestId");
+			describeDomainCertificateInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainCertificateInfoResponse.RequestId = _ctx.StringValue("DescribeDomainCertificateInfo.RequestId");
 
 			List<DescribeDomainCertificateInfoResponse.DescribeDomainCertificateInfo_CertInfo> describeDomainCertificateInfoResponse_certInfos = new List<DescribeDomainCertificateInfoResponse.DescribeDomainCertificateInfo_CertInfo>();
-			for (int i = 0; i < context.Length("DescribeDomainCertificateInfo.CertInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainCertificateInfo.CertInfos.Length"); i++) {
 				DescribeDomainCertificateInfoResponse.DescribeDomainCertificateInfo_CertInfo certInfo = new DescribeDomainCertificateInfoResponse.DescribeDomainCertificateInfo_CertInfo();
-				certInfo.DomainName = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].DomainName");
-				certInfo.CertName = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertName");
-				certInfo.CertDomainName = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertDomainName");
-				certInfo.CertExpireTime = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertExpireTime");
-				certInfo.CertLife = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertLife");
-				certInfo.CertOrg = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertOrg");
-				certInfo.CertType = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertType");
-				certInfo.ServerCertificateStatus = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].ServerCertificateStatus");
-				certInfo.Status = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].Status");
-				certInfo.ServerCertificate = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].ServerCertificate");
-				certInfo.CertUpdateTime = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertUpdateTime");
-				certInfo.CertStartTime = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertStartTime");
-				certInfo.CertCommonName = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertCommonName");
-				certInfo.DomainCnameStatus = context.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].DomainCnameStatus");
+				certInfo.DomainName = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].DomainName");
+				certInfo.CertName = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertName");
+				certInfo.CertDomainName = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertDomainName");
+				certInfo.CertExpireTime = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertExpireTime");
+				certInfo.CertLife = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertLife");
+				certInfo.CertOrg = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertOrg");
+				certInfo.CertType = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertType");
+				certInfo.ServerCertificateStatus = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].ServerCertificateStatus");
+				certInfo.Status = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].Status");
+				certInfo.ServerCertificate = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].ServerCertificate");
+				certInfo.CertUpdateTime = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertUpdateTime");
+				certInfo.CertStartTime = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertStartTime");
+				certInfo.CertCommonName = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].CertCommonName");
+				certInfo.DomainCnameStatus = _ctx.StringValue("DescribeDomainCertificateInfo.CertInfos["+ i +"].DomainCnameStatus");
 
 				describeDomainCertificateInfoResponse_certInfos.Add(certInfo);
 			}

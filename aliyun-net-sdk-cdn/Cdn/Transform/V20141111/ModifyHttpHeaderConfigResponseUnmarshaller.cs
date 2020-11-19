@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class ModifyHttpHeaderConfigResponseUnmarshaller
     {
-        public static ModifyHttpHeaderConfigResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyHttpHeaderConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyHttpHeaderConfigResponse modifyHttpHeaderConfigResponse = new ModifyHttpHeaderConfigResponse();
 
-			modifyHttpHeaderConfigResponse.HttpResponse = context.HttpResponse;
-			modifyHttpHeaderConfigResponse.RequestId = context.StringValue("ModifyHttpHeaderConfig.RequestId");
+			modifyHttpHeaderConfigResponse.HttpResponse = _ctx.HttpResponse;
+			modifyHttpHeaderConfigResponse.RequestId = _ctx.StringValue("ModifyHttpHeaderConfig.RequestId");
         
 			return modifyHttpHeaderConfigResponse;
         }

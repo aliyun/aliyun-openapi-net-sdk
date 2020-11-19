@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class CreateRealTimeLogDeliveryResponseUnmarshaller
     {
-        public static CreateRealTimeLogDeliveryResponse Unmarshall(UnmarshallerContext context)
+        public static CreateRealTimeLogDeliveryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateRealTimeLogDeliveryResponse createRealTimeLogDeliveryResponse = new CreateRealTimeLogDeliveryResponse();
 
-			createRealTimeLogDeliveryResponse.HttpResponse = context.HttpResponse;
-			createRealTimeLogDeliveryResponse.RequestId = context.StringValue("CreateRealTimeLogDelivery.RequestId");
+			createRealTimeLogDeliveryResponse.HttpResponse = _ctx.HttpResponse;
+			createRealTimeLogDeliveryResponse.RequestId = _ctx.StringValue("CreateRealTimeLogDelivery.RequestId");
         
 			return createRealTimeLogDeliveryResponse;
         }

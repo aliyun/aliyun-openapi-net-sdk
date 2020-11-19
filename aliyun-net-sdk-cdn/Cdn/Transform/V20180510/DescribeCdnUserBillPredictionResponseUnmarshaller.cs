@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeCdnUserBillPredictionResponseUnmarshaller
     {
-        public static DescribeCdnUserBillPredictionResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCdnUserBillPredictionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCdnUserBillPredictionResponse describeCdnUserBillPredictionResponse = new DescribeCdnUserBillPredictionResponse();
 
-			describeCdnUserBillPredictionResponse.HttpResponse = context.HttpResponse;
-			describeCdnUserBillPredictionResponse.RequestId = context.StringValue("DescribeCdnUserBillPrediction.RequestId");
-			describeCdnUserBillPredictionResponse.StartTime = context.StringValue("DescribeCdnUserBillPrediction.StartTime");
-			describeCdnUserBillPredictionResponse.EndTime = context.StringValue("DescribeCdnUserBillPrediction.EndTime");
-			describeCdnUserBillPredictionResponse.BillType = context.StringValue("DescribeCdnUserBillPrediction.BillType");
+			describeCdnUserBillPredictionResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnUserBillPredictionResponse.RequestId = _ctx.StringValue("DescribeCdnUserBillPrediction.RequestId");
+			describeCdnUserBillPredictionResponse.StartTime = _ctx.StringValue("DescribeCdnUserBillPrediction.StartTime");
+			describeCdnUserBillPredictionResponse.EndTime = _ctx.StringValue("DescribeCdnUserBillPrediction.EndTime");
+			describeCdnUserBillPredictionResponse.BillType = _ctx.StringValue("DescribeCdnUserBillPrediction.BillType");
 
 			List<DescribeCdnUserBillPredictionResponse.DescribeCdnUserBillPrediction_BillPredictionDataItem> describeCdnUserBillPredictionResponse_billPredictionData = new List<DescribeCdnUserBillPredictionResponse.DescribeCdnUserBillPrediction_BillPredictionDataItem>();
-			for (int i = 0; i < context.Length("DescribeCdnUserBillPrediction.BillPredictionData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCdnUserBillPrediction.BillPredictionData.Length"); i++) {
 				DescribeCdnUserBillPredictionResponse.DescribeCdnUserBillPrediction_BillPredictionDataItem billPredictionDataItem = new DescribeCdnUserBillPredictionResponse.DescribeCdnUserBillPrediction_BillPredictionDataItem();
-				billPredictionDataItem._Value = context.FloatValue("DescribeCdnUserBillPrediction.BillPredictionData["+ i +"].Value");
-				billPredictionDataItem.Area = context.StringValue("DescribeCdnUserBillPrediction.BillPredictionData["+ i +"].Area");
-				billPredictionDataItem.TimeStp = context.StringValue("DescribeCdnUserBillPrediction.BillPredictionData["+ i +"].TimeStp");
+				billPredictionDataItem._Value = _ctx.FloatValue("DescribeCdnUserBillPrediction.BillPredictionData["+ i +"].Value");
+				billPredictionDataItem.Area = _ctx.StringValue("DescribeCdnUserBillPrediction.BillPredictionData["+ i +"].Area");
+				billPredictionDataItem.TimeStp = _ctx.StringValue("DescribeCdnUserBillPrediction.BillPredictionData["+ i +"].TimeStp");
 
 				describeCdnUserBillPredictionResponse_billPredictionData.Add(billPredictionDataItem);
 			}

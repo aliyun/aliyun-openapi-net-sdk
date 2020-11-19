@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeActiveVersionOfConfigGroupResponseUnmarshaller
     {
-        public static DescribeActiveVersionOfConfigGroupResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeActiveVersionOfConfigGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeActiveVersionOfConfigGroupResponse describeActiveVersionOfConfigGroupResponse = new DescribeActiveVersionOfConfigGroupResponse();
 
-			describeActiveVersionOfConfigGroupResponse.HttpResponse = context.HttpResponse;
-			describeActiveVersionOfConfigGroupResponse.RequestId = context.StringValue("DescribeActiveVersionOfConfigGroup.RequestId");
-			describeActiveVersionOfConfigGroupResponse.VersionId = context.StringValue("DescribeActiveVersionOfConfigGroup.VersionId");
-			describeActiveVersionOfConfigGroupResponse.ConfigGroupId = context.StringValue("DescribeActiveVersionOfConfigGroup.ConfigGroupId");
-			describeActiveVersionOfConfigGroupResponse.BaseVersionId = context.StringValue("DescribeActiveVersionOfConfigGroup.BaseVersionId");
-			describeActiveVersionOfConfigGroupResponse.Description = context.StringValue("DescribeActiveVersionOfConfigGroup.Description");
-			describeActiveVersionOfConfigGroupResponse.SeqId = context.LongValue("DescribeActiveVersionOfConfigGroup.SeqId");
-			describeActiveVersionOfConfigGroupResponse.Status = context.StringValue("DescribeActiveVersionOfConfigGroup.Status");
-			describeActiveVersionOfConfigGroupResponse._Operator = context.StringValue("DescribeActiveVersionOfConfigGroup.Operator");
-			describeActiveVersionOfConfigGroupResponse.CreateTime = context.StringValue("DescribeActiveVersionOfConfigGroup.CreateTime");
-			describeActiveVersionOfConfigGroupResponse.UpdateTime = context.StringValue("DescribeActiveVersionOfConfigGroup.UpdateTime");
+			describeActiveVersionOfConfigGroupResponse.HttpResponse = _ctx.HttpResponse;
+			describeActiveVersionOfConfigGroupResponse.RequestId = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.RequestId");
+			describeActiveVersionOfConfigGroupResponse.VersionId = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.VersionId");
+			describeActiveVersionOfConfigGroupResponse.ConfigGroupId = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.ConfigGroupId");
+			describeActiveVersionOfConfigGroupResponse.BaseVersionId = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.BaseVersionId");
+			describeActiveVersionOfConfigGroupResponse.Description = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.Description");
+			describeActiveVersionOfConfigGroupResponse.SeqId = _ctx.LongValue("DescribeActiveVersionOfConfigGroup.SeqId");
+			describeActiveVersionOfConfigGroupResponse.Status = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.Status");
+			describeActiveVersionOfConfigGroupResponse._Operator = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.Operator");
+			describeActiveVersionOfConfigGroupResponse.CreateTime = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.CreateTime");
+			describeActiveVersionOfConfigGroupResponse.UpdateTime = _ctx.StringValue("DescribeActiveVersionOfConfigGroup.UpdateTime");
         
 			return describeActiveVersionOfConfigGroupResponse;
         }

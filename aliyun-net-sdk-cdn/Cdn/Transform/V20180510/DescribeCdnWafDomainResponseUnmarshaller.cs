@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeCdnWafDomainResponseUnmarshaller
     {
-        public static DescribeCdnWafDomainResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCdnWafDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCdnWafDomainResponse describeCdnWafDomainResponse = new DescribeCdnWafDomainResponse();
 
-			describeCdnWafDomainResponse.HttpResponse = context.HttpResponse;
-			describeCdnWafDomainResponse.RequestId = context.StringValue("DescribeCdnWafDomain.RequestId");
-			describeCdnWafDomainResponse.TotalCount = context.IntegerValue("DescribeCdnWafDomain.TotalCount");
+			describeCdnWafDomainResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnWafDomainResponse.RequestId = _ctx.StringValue("DescribeCdnWafDomain.RequestId");
+			describeCdnWafDomainResponse.TotalCount = _ctx.IntegerValue("DescribeCdnWafDomain.TotalCount");
 
 			List<DescribeCdnWafDomainResponse.DescribeCdnWafDomain_OutPutDomain> describeCdnWafDomainResponse_outPutDomains = new List<DescribeCdnWafDomainResponse.DescribeCdnWafDomain_OutPutDomain>();
-			for (int i = 0; i < context.Length("DescribeCdnWafDomain.OutPutDomains.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCdnWafDomain.OutPutDomains.Length"); i++) {
 				DescribeCdnWafDomainResponse.DescribeCdnWafDomain_OutPutDomain outPutDomain = new DescribeCdnWafDomainResponse.DescribeCdnWafDomain_OutPutDomain();
-				outPutDomain.Status = context.StringValue("DescribeCdnWafDomain.OutPutDomains["+ i +"].Status");
-				outPutDomain.Domain = context.StringValue("DescribeCdnWafDomain.OutPutDomains["+ i +"].Domain");
-				outPutDomain.WafStatus = context.StringValue("DescribeCdnWafDomain.OutPutDomains["+ i +"].WafStatus");
-				outPutDomain.CcStatus = context.StringValue("DescribeCdnWafDomain.OutPutDomains["+ i +"].CcStatus");
-				outPutDomain.AclStatus = context.StringValue("DescribeCdnWafDomain.OutPutDomains["+ i +"].AclStatus");
+				outPutDomain.Status = _ctx.StringValue("DescribeCdnWafDomain.OutPutDomains["+ i +"].Status");
+				outPutDomain.Domain = _ctx.StringValue("DescribeCdnWafDomain.OutPutDomains["+ i +"].Domain");
+				outPutDomain.WafStatus = _ctx.StringValue("DescribeCdnWafDomain.OutPutDomains["+ i +"].WafStatus");
+				outPutDomain.CcStatus = _ctx.StringValue("DescribeCdnWafDomain.OutPutDomains["+ i +"].CcStatus");
+				outPutDomain.AclStatus = _ctx.StringValue("DescribeCdnWafDomain.OutPutDomains["+ i +"].AclStatus");
 
 				describeCdnWafDomainResponse_outPutDomains.Add(outPutDomain);
 			}

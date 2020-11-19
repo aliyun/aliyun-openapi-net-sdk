@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeCdnCertificateListResponseUnmarshaller
     {
-        public static DescribeCdnCertificateListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCdnCertificateListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCdnCertificateListResponse describeCdnCertificateListResponse = new DescribeCdnCertificateListResponse();
 
-			describeCdnCertificateListResponse.HttpResponse = context.HttpResponse;
-			describeCdnCertificateListResponse.RequestId = context.StringValue("DescribeCdnCertificateList.RequestId");
+			describeCdnCertificateListResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnCertificateListResponse.RequestId = _ctx.StringValue("DescribeCdnCertificateList.RequestId");
 
 			DescribeCdnCertificateListResponse.DescribeCdnCertificateList_CertificateListModel certificateListModel = new DescribeCdnCertificateListResponse.DescribeCdnCertificateList_CertificateListModel();
-			certificateListModel.Count = context.IntegerValue("DescribeCdnCertificateList.CertificateListModel.Count");
+			certificateListModel.Count = _ctx.IntegerValue("DescribeCdnCertificateList.CertificateListModel.Count");
 
 			List<DescribeCdnCertificateListResponse.DescribeCdnCertificateList_CertificateListModel.DescribeCdnCertificateList_Cert> certificateListModel_certList = new List<DescribeCdnCertificateListResponse.DescribeCdnCertificateList_CertificateListModel.DescribeCdnCertificateList_Cert>();
-			for (int i = 0; i < context.Length("DescribeCdnCertificateList.CertificateListModel.CertList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCdnCertificateList.CertificateListModel.CertList.Length"); i++) {
 				DescribeCdnCertificateListResponse.DescribeCdnCertificateList_CertificateListModel.DescribeCdnCertificateList_Cert cert = new DescribeCdnCertificateListResponse.DescribeCdnCertificateList_CertificateListModel.DescribeCdnCertificateList_Cert();
-				cert.CertName = context.StringValue("DescribeCdnCertificateList.CertificateListModel.CertList["+ i +"].CertName");
-				cert.CertId = context.LongValue("DescribeCdnCertificateList.CertificateListModel.CertList["+ i +"].CertId");
-				cert.Fingerprint = context.StringValue("DescribeCdnCertificateList.CertificateListModel.CertList["+ i +"].Fingerprint");
-				cert.Common = context.StringValue("DescribeCdnCertificateList.CertificateListModel.CertList["+ i +"].Common");
-				cert.Issuer = context.StringValue("DescribeCdnCertificateList.CertificateListModel.CertList["+ i +"].Issuer");
-				cert.LastTime = context.LongValue("DescribeCdnCertificateList.CertificateListModel.CertList["+ i +"].LastTime");
+				cert.CertName = _ctx.StringValue("DescribeCdnCertificateList.CertificateListModel.CertList["+ i +"].CertName");
+				cert.CertId = _ctx.LongValue("DescribeCdnCertificateList.CertificateListModel.CertList["+ i +"].CertId");
+				cert.Fingerprint = _ctx.StringValue("DescribeCdnCertificateList.CertificateListModel.CertList["+ i +"].Fingerprint");
+				cert.Common = _ctx.StringValue("DescribeCdnCertificateList.CertificateListModel.CertList["+ i +"].Common");
+				cert.Issuer = _ctx.StringValue("DescribeCdnCertificateList.CertificateListModel.CertList["+ i +"].Issuer");
+				cert.LastTime = _ctx.LongValue("DescribeCdnCertificateList.CertificateListModel.CertList["+ i +"].LastTime");
 
 				certificateListModel_certList.Add(cert);
 			}

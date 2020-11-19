@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeConfigOfVersionResponseUnmarshaller
     {
-        public static DescribeConfigOfVersionResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeConfigOfVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeConfigOfVersionResponse describeConfigOfVersionResponse = new DescribeConfigOfVersionResponse();
 
-			describeConfigOfVersionResponse.HttpResponse = context.HttpResponse;
-			describeConfigOfVersionResponse.RequestId = context.StringValue("DescribeConfigOfVersion.RequestId");
+			describeConfigOfVersionResponse.HttpResponse = _ctx.HttpResponse;
+			describeConfigOfVersionResponse.RequestId = _ctx.StringValue("DescribeConfigOfVersion.RequestId");
 
 			List<DescribeConfigOfVersionResponse.DescribeConfigOfVersion_VersionConfig> describeConfigOfVersionResponse_versionConfigs = new List<DescribeConfigOfVersionResponse.DescribeConfigOfVersion_VersionConfig>();
-			for (int i = 0; i < context.Length("DescribeConfigOfVersion.VersionConfigs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeConfigOfVersion.VersionConfigs.Length"); i++) {
 				DescribeConfigOfVersionResponse.DescribeConfigOfVersion_VersionConfig versionConfig = new DescribeConfigOfVersionResponse.DescribeConfigOfVersion_VersionConfig();
-				versionConfig.Status = context.StringValue("DescribeConfigOfVersion.VersionConfigs["+ i +"].Status");
-				versionConfig.ConfigId = context.StringValue("DescribeConfigOfVersion.VersionConfigs["+ i +"].ConfigId");
-				versionConfig.FunctionName = context.StringValue("DescribeConfigOfVersion.VersionConfigs["+ i +"].FunctionName");
+				versionConfig.Status = _ctx.StringValue("DescribeConfigOfVersion.VersionConfigs["+ i +"].Status");
+				versionConfig.ConfigId = _ctx.StringValue("DescribeConfigOfVersion.VersionConfigs["+ i +"].ConfigId");
+				versionConfig.FunctionName = _ctx.StringValue("DescribeConfigOfVersion.VersionConfigs["+ i +"].FunctionName");
 
 				List<DescribeConfigOfVersionResponse.DescribeConfigOfVersion_VersionConfig.DescribeConfigOfVersion_FunctionArg> versionConfig_functionArgs = new List<DescribeConfigOfVersionResponse.DescribeConfigOfVersion_VersionConfig.DescribeConfigOfVersion_FunctionArg>();
-				for (int j = 0; j < context.Length("DescribeConfigOfVersion.VersionConfigs["+ i +"].FunctionArgs.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeConfigOfVersion.VersionConfigs["+ i +"].FunctionArgs.Length"); j++) {
 					DescribeConfigOfVersionResponse.DescribeConfigOfVersion_VersionConfig.DescribeConfigOfVersion_FunctionArg functionArg = new DescribeConfigOfVersionResponse.DescribeConfigOfVersion_VersionConfig.DescribeConfigOfVersion_FunctionArg();
-					functionArg.ArgName = context.StringValue("DescribeConfigOfVersion.VersionConfigs["+ i +"].FunctionArgs["+ j +"].ArgName");
-					functionArg.ArgValue = context.StringValue("DescribeConfigOfVersion.VersionConfigs["+ i +"].FunctionArgs["+ j +"].ArgValue");
+					functionArg.ArgName = _ctx.StringValue("DescribeConfigOfVersion.VersionConfigs["+ i +"].FunctionArgs["+ j +"].ArgName");
+					functionArg.ArgValue = _ctx.StringValue("DescribeConfigOfVersion.VersionConfigs["+ i +"].FunctionArgs["+ j +"].ArgValue");
 
 					versionConfig_functionArgs.Add(functionArg);
 				}
