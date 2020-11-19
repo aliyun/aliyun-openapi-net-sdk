@@ -26,14 +26,14 @@ namespace Aliyun.Acs.tdsr.Transform.V20200101
 {
     public class CheckPermissionResponseUnmarshaller
     {
-        public static CheckPermissionResponse Unmarshall(UnmarshallerContext context)
+        public static CheckPermissionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckPermissionResponse checkPermissionResponse = new CheckPermissionResponse();
 
-			checkPermissionResponse.HttpResponse = context.HttpResponse;
-			checkPermissionResponse.RequestId = context.StringValue("CheckPermission.RequestId");
-			checkPermissionResponse.Success = context.BooleanValue("CheckPermission.Success");
-			checkPermissionResponse.ErrMessage = context.StringValue("CheckPermission.ErrMessage");
+			checkPermissionResponse.HttpResponse = _ctx.HttpResponse;
+			checkPermissionResponse.RequestId = _ctx.StringValue("CheckPermission.RequestId");
+			checkPermissionResponse.Success = _ctx.BooleanValue("CheckPermission.Success");
+			checkPermissionResponse.ErrMessage = _ctx.StringValue("CheckPermission.ErrMessage");
         
 			return checkPermissionResponse;
         }

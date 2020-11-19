@@ -26,16 +26,16 @@ namespace Aliyun.Acs.tdsr.Transform.V20200101
 {
     public class CreateSceneResponseUnmarshaller
     {
-        public static CreateSceneResponse Unmarshall(UnmarshallerContext context)
+        public static CreateSceneResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateSceneResponse createSceneResponse = new CreateSceneResponse();
 
-			createSceneResponse.HttpResponse = context.HttpResponse;
-			createSceneResponse.RequestId = context.StringValue("CreateScene.RequestId");
-			createSceneResponse.SceneId = context.LongValue("CreateScene.SceneId");
-			createSceneResponse.Success = context.BooleanValue("CreateScene.Success");
-			createSceneResponse.ErrMessage = context.StringValue("CreateScene.ErrMessage");
-			createSceneResponse.PreviewToken = context.StringValue("CreateScene.PreviewToken");
+			createSceneResponse.HttpResponse = _ctx.HttpResponse;
+			createSceneResponse.RequestId = _ctx.StringValue("CreateScene.RequestId");
+			createSceneResponse.SceneId = _ctx.LongValue("CreateScene.SceneId");
+			createSceneResponse.Success = _ctx.BooleanValue("CreateScene.Success");
+			createSceneResponse.ErrMessage = _ctx.StringValue("CreateScene.ErrMessage");
+			createSceneResponse.PreviewToken = _ctx.StringValue("CreateScene.PreviewToken");
         
 			return createSceneResponse;
         }

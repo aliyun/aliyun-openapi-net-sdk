@@ -26,16 +26,16 @@ namespace Aliyun.Acs.tdsr.Transform.V20200101
 {
     public class SaveFileResponseUnmarshaller
     {
-        public static SaveFileResponse Unmarshall(UnmarshallerContext context)
+        public static SaveFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveFileResponse saveFileResponse = new SaveFileResponse();
 
-			saveFileResponse.HttpResponse = context.HttpResponse;
-			saveFileResponse.RequestId = context.StringValue("SaveFile.RequestId");
-			saveFileResponse.Success = context.BooleanValue("SaveFile.Success");
-			saveFileResponse.ErrMessage = context.StringValue("SaveFile.ErrMessage");
-			saveFileResponse.Data = context.StringValue("SaveFile.Data");
-			saveFileResponse.ObjectString = context.StringValue("SaveFile.ObjectString");
+			saveFileResponse.HttpResponse = _ctx.HttpResponse;
+			saveFileResponse.RequestId = _ctx.StringValue("SaveFile.RequestId");
+			saveFileResponse.Success = _ctx.BooleanValue("SaveFile.Success");
+			saveFileResponse.ErrMessage = _ctx.StringValue("SaveFile.ErrMessage");
+			saveFileResponse.Data = _ctx.StringValue("SaveFile.Data");
+			saveFileResponse.ObjectString = _ctx.StringValue("SaveFile.ObjectString");
         
 			return saveFileResponse;
         }

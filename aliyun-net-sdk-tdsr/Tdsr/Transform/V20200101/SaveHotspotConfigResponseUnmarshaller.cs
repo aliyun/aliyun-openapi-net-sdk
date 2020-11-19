@@ -26,14 +26,14 @@ namespace Aliyun.Acs.tdsr.Transform.V20200101
 {
     public class SaveHotspotConfigResponseUnmarshaller
     {
-        public static SaveHotspotConfigResponse Unmarshall(UnmarshallerContext context)
+        public static SaveHotspotConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SaveHotspotConfigResponse saveHotspotConfigResponse = new SaveHotspotConfigResponse();
 
-			saveHotspotConfigResponse.HttpResponse = context.HttpResponse;
-			saveHotspotConfigResponse.RequestId = context.StringValue("SaveHotspotConfig.RequestId");
-			saveHotspotConfigResponse.Success = context.BooleanValue("SaveHotspotConfig.Success");
-			saveHotspotConfigResponse.ErrMessage = context.StringValue("SaveHotspotConfig.ErrMessage");
+			saveHotspotConfigResponse.HttpResponse = _ctx.HttpResponse;
+			saveHotspotConfigResponse.RequestId = _ctx.StringValue("SaveHotspotConfig.RequestId");
+			saveHotspotConfigResponse.Success = _ctx.BooleanValue("SaveHotspotConfig.Success");
+			saveHotspotConfigResponse.ErrMessage = _ctx.StringValue("SaveHotspotConfig.ErrMessage");
         
 			return saveHotspotConfigResponse;
         }

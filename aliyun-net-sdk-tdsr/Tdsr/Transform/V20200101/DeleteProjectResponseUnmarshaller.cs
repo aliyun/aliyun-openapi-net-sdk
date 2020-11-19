@@ -26,14 +26,14 @@ namespace Aliyun.Acs.tdsr.Transform.V20200101
 {
     public class DeleteProjectResponseUnmarshaller
     {
-        public static DeleteProjectResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteProjectResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteProjectResponse deleteProjectResponse = new DeleteProjectResponse();
 
-			deleteProjectResponse.HttpResponse = context.HttpResponse;
-			deleteProjectResponse.RequestId = context.StringValue("DeleteProject.RequestId");
-			deleteProjectResponse.Success = context.BooleanValue("DeleteProject.Success");
-			deleteProjectResponse.ErrMessage = context.StringValue("DeleteProject.ErrMessage");
+			deleteProjectResponse.HttpResponse = _ctx.HttpResponse;
+			deleteProjectResponse.RequestId = _ctx.StringValue("DeleteProject.RequestId");
+			deleteProjectResponse.Success = _ctx.BooleanValue("DeleteProject.Success");
+			deleteProjectResponse.ErrMessage = _ctx.StringValue("DeleteProject.ErrMessage");
         
 			return deleteProjectResponse;
         }
