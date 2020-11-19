@@ -29,6 +29,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private int? mode;
 
+		private int? learnStatus;
+
 		public string RequestId
 		{
 			get
@@ -50,6 +52,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			set	
 			{
 				mode = value;
+			}
+		}
+
+		public int? LearnStatus
+		{
+			get
+			{
+				return learnStatus;
+			}
+			set	
+			{
+				learnStatus = value;
 			}
 		}
 	}

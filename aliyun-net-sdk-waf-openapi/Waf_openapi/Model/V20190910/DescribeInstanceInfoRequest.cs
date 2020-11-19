@@ -34,8 +34,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.waf_openapi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.waf_openapi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -43,8 +43,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 		private string resourceGroupId;
 
 		private string instanceId;
-
-		private string instanceSource;
 
 		public string ResourceGroupId
 		{
@@ -69,19 +67,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
-			}
-		}
-
-		public string InstanceSource
-		{
-			get
-			{
-				return instanceSource;
-			}
-			set	
-			{
-				instanceSource = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceSource", value);
 			}
 		}
 

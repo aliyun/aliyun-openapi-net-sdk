@@ -26,12 +26,12 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class DeleteInstanceResponseUnmarshaller
     {
-        public static DeleteInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteInstanceResponse deleteInstanceResponse = new DeleteInstanceResponse();
 
-			deleteInstanceResponse.HttpResponse = context.HttpResponse;
-			deleteInstanceResponse.RequestId = context.StringValue("DeleteInstance.RequestId");
+			deleteInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			deleteInstanceResponse.RequestId = _ctx.StringValue("DeleteInstance.RequestId");
         
 			return deleteInstanceResponse;
         }

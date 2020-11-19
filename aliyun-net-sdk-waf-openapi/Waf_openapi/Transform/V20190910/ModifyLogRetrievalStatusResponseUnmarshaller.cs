@@ -26,12 +26,12 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class ModifyLogRetrievalStatusResponseUnmarshaller
     {
-        public static ModifyLogRetrievalStatusResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyLogRetrievalStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyLogRetrievalStatusResponse modifyLogRetrievalStatusResponse = new ModifyLogRetrievalStatusResponse();
 
-			modifyLogRetrievalStatusResponse.HttpResponse = context.HttpResponse;
-			modifyLogRetrievalStatusResponse.RequestId = context.StringValue("ModifyLogRetrievalStatus.RequestId");
+			modifyLogRetrievalStatusResponse.HttpResponse = _ctx.HttpResponse;
+			modifyLogRetrievalStatusResponse.RequestId = _ctx.StringValue("ModifyLogRetrievalStatus.RequestId");
         
 			return modifyLogRetrievalStatusResponse;
         }

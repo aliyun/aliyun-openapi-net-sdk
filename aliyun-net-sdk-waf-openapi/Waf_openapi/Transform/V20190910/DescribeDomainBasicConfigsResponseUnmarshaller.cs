@@ -26,26 +26,27 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class DescribeDomainBasicConfigsResponseUnmarshaller
     {
-        public static DescribeDomainBasicConfigsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainBasicConfigsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainBasicConfigsResponse describeDomainBasicConfigsResponse = new DescribeDomainBasicConfigsResponse();
 
-			describeDomainBasicConfigsResponse.HttpResponse = context.HttpResponse;
-			describeDomainBasicConfigsResponse.RequestId = context.StringValue("DescribeDomainBasicConfigs.RequestId");
-			describeDomainBasicConfigsResponse.TotalCount = context.IntegerValue("DescribeDomainBasicConfigs.TotalCount");
+			describeDomainBasicConfigsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainBasicConfigsResponse.RequestId = _ctx.StringValue("DescribeDomainBasicConfigs.RequestId");
+			describeDomainBasicConfigsResponse.TotalCount = _ctx.IntegerValue("DescribeDomainBasicConfigs.TotalCount");
 
 			List<DescribeDomainBasicConfigsResponse.DescribeDomainBasicConfigs_DomainConfig> describeDomainBasicConfigsResponse_domainConfigs = new List<DescribeDomainBasicConfigsResponse.DescribeDomainBasicConfigs_DomainConfig>();
-			for (int i = 0; i < context.Length("DescribeDomainBasicConfigs.DomainConfigs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainBasicConfigs.DomainConfigs.Length"); i++) {
 				DescribeDomainBasicConfigsResponse.DescribeDomainBasicConfigs_DomainConfig domainConfig = new DescribeDomainBasicConfigsResponse.DescribeDomainBasicConfigs_DomainConfig();
-				domainConfig.Owner = context.StringValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].Owner");
-				domainConfig.WafStatus = context.IntegerValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].WafStatus");
-				domainConfig.CcStatus = context.IntegerValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].CcStatus");
-				domainConfig.CcMode = context.IntegerValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].CcMode");
-				domainConfig.AclStatus = context.IntegerValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].AclStatus");
-				domainConfig.WafMode = context.IntegerValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].WafMode");
-				domainConfig.Version = context.LongValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].Version");
-				domainConfig.Domain = context.StringValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].Domain");
-				domainConfig.Status = context.IntegerValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].Status");
+				domainConfig.Owner = _ctx.StringValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].Owner");
+				domainConfig.WafStatus = _ctx.IntegerValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].WafStatus");
+				domainConfig.CcStatus = _ctx.IntegerValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].CcStatus");
+				domainConfig.CcMode = _ctx.IntegerValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].CcMode");
+				domainConfig.AclStatus = _ctx.IntegerValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].AclStatus");
+				domainConfig.WafMode = _ctx.IntegerValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].WafMode");
+				domainConfig.Version = _ctx.LongValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].Version");
+				domainConfig.Domain = _ctx.StringValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].Domain");
+				domainConfig.Status = _ctx.IntegerValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].Status");
+				domainConfig.AccessType = _ctx.StringValue("DescribeDomainBasicConfigs.DomainConfigs["+ i +"].AccessType");
 
 				describeDomainBasicConfigsResponse_domainConfigs.Add(domainConfig);
 			}

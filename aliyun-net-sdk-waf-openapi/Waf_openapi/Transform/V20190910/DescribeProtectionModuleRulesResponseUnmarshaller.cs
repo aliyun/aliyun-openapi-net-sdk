@@ -26,22 +26,22 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class DescribeProtectionModuleRulesResponseUnmarshaller
     {
-        public static DescribeProtectionModuleRulesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeProtectionModuleRulesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeProtectionModuleRulesResponse describeProtectionModuleRulesResponse = new DescribeProtectionModuleRulesResponse();
 
-			describeProtectionModuleRulesResponse.HttpResponse = context.HttpResponse;
-			describeProtectionModuleRulesResponse.RequestId = context.StringValue("DescribeProtectionModuleRules.RequestId");
-			describeProtectionModuleRulesResponse.TotalCount = context.IntegerValue("DescribeProtectionModuleRules.TotalCount");
+			describeProtectionModuleRulesResponse.HttpResponse = _ctx.HttpResponse;
+			describeProtectionModuleRulesResponse.RequestId = _ctx.StringValue("DescribeProtectionModuleRules.RequestId");
+			describeProtectionModuleRulesResponse.TotalCount = _ctx.IntegerValue("DescribeProtectionModuleRules.TotalCount");
 
 			List<DescribeProtectionModuleRulesResponse.DescribeProtectionModuleRules_Rule> describeProtectionModuleRulesResponse_rules = new List<DescribeProtectionModuleRulesResponse.DescribeProtectionModuleRules_Rule>();
-			for (int i = 0; i < context.Length("DescribeProtectionModuleRules.Rules.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeProtectionModuleRules.Rules.Length"); i++) {
 				DescribeProtectionModuleRulesResponse.DescribeProtectionModuleRules_Rule rule = new DescribeProtectionModuleRulesResponse.DescribeProtectionModuleRules_Rule();
-				rule.RuleId = context.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].RuleId");
-				rule.Version = context.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].Version");
-				rule.Content = context.StringValue("DescribeProtectionModuleRules.Rules["+ i +"].Content");
-				rule.Time = context.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].Time");
-				rule.Status = context.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].Status");
+				rule.RuleId = _ctx.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].RuleId");
+				rule.Version = _ctx.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].Version");
+				rule.Content = _ctx.StringValue("DescribeProtectionModuleRules.Rules["+ i +"].Content");
+				rule.Time = _ctx.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].Time");
+				rule.Status = _ctx.LongValue("DescribeProtectionModuleRules.Rules["+ i +"].Status");
 
 				describeProtectionModuleRulesResponse_rules.Add(rule);
 			}

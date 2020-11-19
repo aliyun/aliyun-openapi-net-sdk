@@ -27,10 +27,10 @@ using Aliyun.Acs.waf_openapi.Transform.V20190910;
 
 namespace Aliyun.Acs.waf_openapi.Model.V20190910
 {
-    public class SetDomainRuleGroupRequest : RpcAcsRequest<SetDomainRuleGroupResponse>
+    public class DeleteProtectionModuleRuleRequest : RpcAcsRequest<DeleteProtectionModuleRuleResponse>
     {
-        public SetDomainRuleGroupRequest()
-            : base("waf-openapi", "2019-09-10", "SetDomainRuleGroup", "waf", "openAPI")
+        public DeleteProtectionModuleRuleRequest()
+            : base("waf-openapi", "2019-09-10", "DeleteProtectionModuleRule", "waf", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,65 +40,24 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			Method = MethodType.POST;
         }
 
-		private long? wafVersion;
-
-		private long? ruleGroupId;
-
-		private string resourceGroupId;
-
-		private string domains;
+		private string defenseType;
 
 		private string instanceId;
 
-		public long? WafVersion
-		{
-			get
-			{
-				return wafVersion;
-			}
-			set	
-			{
-				wafVersion = value;
-				DictionaryUtil.Add(QueryParameters, "WafVersion", value.ToString());
-			}
-		}
+		private string domain;
 
-		public long? RuleGroupId
-		{
-			get
-			{
-				return ruleGroupId;
-			}
-			set	
-			{
-				ruleGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "RuleGroupId", value.ToString());
-			}
-		}
+		private long? ruleId;
 
-		public string ResourceGroupId
+		public string DefenseType
 		{
 			get
 			{
-				return resourceGroupId;
+				return defenseType;
 			}
 			set	
 			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
-			}
-		}
-
-		public string Domains
-		{
-			get
-			{
-				return domains;
-			}
-			set	
-			{
-				domains = value;
-				DictionaryUtil.Add(QueryParameters, "Domains", value);
+				defenseType = value;
+				DictionaryUtil.Add(QueryParameters, "DefenseType", value);
 			}
 		}
 
@@ -115,14 +74,40 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
+		public string Domain
+		{
+			get
+			{
+				return domain;
+			}
+			set	
+			{
+				domain = value;
+				DictionaryUtil.Add(QueryParameters, "Domain", value);
+			}
+		}
+
+		public long? RuleId
+		{
+			get
+			{
+				return ruleId;
+			}
+			set	
+			{
+				ruleId = value;
+				DictionaryUtil.Add(QueryParameters, "RuleId", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override SetDomainRuleGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteProtectionModuleRuleResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return SetDomainRuleGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteProtectionModuleRuleResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

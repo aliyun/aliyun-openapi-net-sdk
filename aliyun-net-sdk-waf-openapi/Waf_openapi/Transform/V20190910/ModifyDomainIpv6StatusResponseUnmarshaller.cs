@@ -26,12 +26,12 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class ModifyDomainIpv6StatusResponseUnmarshaller
     {
-        public static ModifyDomainIpv6StatusResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDomainIpv6StatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDomainIpv6StatusResponse modifyDomainIpv6StatusResponse = new ModifyDomainIpv6StatusResponse();
 
-			modifyDomainIpv6StatusResponse.HttpResponse = context.HttpResponse;
-			modifyDomainIpv6StatusResponse.RequestId = context.StringValue("ModifyDomainIpv6Status.RequestId");
+			modifyDomainIpv6StatusResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDomainIpv6StatusResponse.RequestId = _ctx.StringValue("ModifyDomainIpv6Status.RequestId");
         
 			return modifyDomainIpv6StatusResponse;
         }

@@ -16,24 +16,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.waf_openapi.Model.V20190910;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.waf_openapi.Transform.V20190910
+namespace Aliyun.Acs.waf_openapi.Model.V20190910
 {
-    public class ModifyProtectionModuleStatusResponseUnmarshaller
-    {
-        public static ModifyProtectionModuleStatusResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			ModifyProtectionModuleStatusResponse modifyProtectionModuleStatusResponse = new ModifyProtectionModuleStatusResponse();
+	public class DeleteProtectionModuleRuleResponse : AcsResponse
+	{
 
-			modifyProtectionModuleStatusResponse.HttpResponse = _ctx.HttpResponse;
-			modifyProtectionModuleStatusResponse.RequestId = _ctx.StringValue("ModifyProtectionModuleStatus.RequestId");
-        
-			return modifyProtectionModuleStatusResponse;
-        }
-    }
+		private string requestId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+	}
 }

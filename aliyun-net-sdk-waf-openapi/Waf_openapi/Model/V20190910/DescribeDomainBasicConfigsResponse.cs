@@ -88,6 +88,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 			private int? status;
 
+			private string accessType;
+
 			public string Owner
 			{
 				get
@@ -193,6 +195,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					status = value;
+				}
+			}
+
+			public string AccessType
+			{
+				get
+				{
+					return accessType;
+				}
+				set	
+				{
+					accessType = value;
 				}
 			}
 		}

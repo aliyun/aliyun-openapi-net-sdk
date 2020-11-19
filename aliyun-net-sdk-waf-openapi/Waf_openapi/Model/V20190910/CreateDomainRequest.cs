@@ -34,11 +34,13 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.waf_openapi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.waf_openapi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
+
+		private int? ipFollowStatus;
 
 		private string resourceGroupId;
 
@@ -48,11 +50,15 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 		private int? writeTime;
 
+		private string accessType;
+
 		private string logHeaders;
 
 		private int? connectionTime;
 
 		private int? clusterType;
+
+		private string cloudNativeInstances;
 
 		private int? httpsRedirect;
 
@@ -71,6 +77,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 		private int? loadBalancing;
 
 		private int? httpToUserIp;
+
+		public int? IpFollowStatus
+		{
+			get
+			{
+				return ipFollowStatus;
+			}
+			set	
+			{
+				ipFollowStatus = value;
+				DictionaryUtil.Add(QueryParameters, "IpFollowStatus", value.ToString());
+			}
+		}
 
 		public string ResourceGroupId
 		{
@@ -124,6 +143,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			}
 		}
 
+		public string AccessType
+		{
+			get
+			{
+				return accessType;
+			}
+			set	
+			{
+				accessType = value;
+				DictionaryUtil.Add(QueryParameters, "AccessType", value);
+			}
+		}
+
 		public string LogHeaders
 		{
 			get
@@ -160,6 +192,19 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				clusterType = value;
 				DictionaryUtil.Add(QueryParameters, "ClusterType", value.ToString());
+			}
+		}
+
+		public string CloudNativeInstances
+		{
+			get
+			{
+				return cloudNativeInstances;
+			}
+			set	
+			{
+				cloudNativeInstances = value;
+				DictionaryUtil.Add(QueryParameters, "CloudNativeInstances", value);
 			}
 		}
 

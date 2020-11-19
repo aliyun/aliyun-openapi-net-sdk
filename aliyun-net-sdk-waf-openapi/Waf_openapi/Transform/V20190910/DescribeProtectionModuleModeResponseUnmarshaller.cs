@@ -26,13 +26,14 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class DescribeProtectionModuleModeResponseUnmarshaller
     {
-        public static DescribeProtectionModuleModeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeProtectionModuleModeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeProtectionModuleModeResponse describeProtectionModuleModeResponse = new DescribeProtectionModuleModeResponse();
 
-			describeProtectionModuleModeResponse.HttpResponse = context.HttpResponse;
-			describeProtectionModuleModeResponse.RequestId = context.StringValue("DescribeProtectionModuleMode.RequestId");
-			describeProtectionModuleModeResponse.Mode = context.IntegerValue("DescribeProtectionModuleMode.Mode");
+			describeProtectionModuleModeResponse.HttpResponse = _ctx.HttpResponse;
+			describeProtectionModuleModeResponse.RequestId = _ctx.StringValue("DescribeProtectionModuleMode.RequestId");
+			describeProtectionModuleModeResponse.Mode = _ctx.IntegerValue("DescribeProtectionModuleMode.Mode");
+			describeProtectionModuleModeResponse.LearnStatus = _ctx.IntegerValue("DescribeProtectionModuleMode.LearnStatus");
         
 			return describeProtectionModuleModeResponse;
         }

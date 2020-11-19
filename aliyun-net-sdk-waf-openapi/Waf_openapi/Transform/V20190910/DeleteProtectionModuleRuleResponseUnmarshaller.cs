@@ -24,16 +24,16 @@ using Aliyun.Acs.waf_openapi.Model.V20190910;
 
 namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
-    public class ModifyProtectionModuleStatusResponseUnmarshaller
+    public class DeleteProtectionModuleRuleResponseUnmarshaller
     {
-        public static ModifyProtectionModuleStatusResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteProtectionModuleRuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			ModifyProtectionModuleStatusResponse modifyProtectionModuleStatusResponse = new ModifyProtectionModuleStatusResponse();
+			DeleteProtectionModuleRuleResponse deleteProtectionModuleRuleResponse = new DeleteProtectionModuleRuleResponse();
 
-			modifyProtectionModuleStatusResponse.HttpResponse = _ctx.HttpResponse;
-			modifyProtectionModuleStatusResponse.RequestId = _ctx.StringValue("ModifyProtectionModuleStatus.RequestId");
+			deleteProtectionModuleRuleResponse.HttpResponse = _ctx.HttpResponse;
+			deleteProtectionModuleRuleResponse.RequestId = _ctx.StringValue("DeleteProtectionModuleRule.RequestId");
         
-			return modifyProtectionModuleStatusResponse;
+			return deleteProtectionModuleRuleResponse;
         }
     }
 }

@@ -26,59 +26,82 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class DescribeDomainResponseUnmarshaller
     {
-        public static DescribeDomainResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainResponse describeDomainResponse = new DescribeDomainResponse();
 
-			describeDomainResponse.HttpResponse = context.HttpResponse;
-			describeDomainResponse.RequestId = context.StringValue("DescribeDomain.RequestId");
+			describeDomainResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainResponse.RequestId = _ctx.StringValue("DescribeDomain.RequestId");
 
 			DescribeDomainResponse.DescribeDomain_Domain domain = new DescribeDomainResponse.DescribeDomain_Domain();
-			domain.HttpToUserIp = context.IntegerValue("DescribeDomain.Domain.HttpToUserIp");
-			domain.HttpsRedirect = context.IntegerValue("DescribeDomain.Domain.HttpsRedirect");
-			domain.LoadBalancing = context.IntegerValue("DescribeDomain.Domain.LoadBalancing");
-			domain.Cname = context.StringValue("DescribeDomain.Domain.Cname");
-			domain.IsAccessProduct = context.IntegerValue("DescribeDomain.Domain.IsAccessProduct");
-			domain.Version = context.LongValue("DescribeDomain.Domain.Version");
-			domain.ClusterType = context.IntegerValue("DescribeDomain.Domain.ClusterType");
-			domain.ConnectionTime = context.IntegerValue("DescribeDomain.Domain.ConnectionTime");
-			domain.ReadTime = context.IntegerValue("DescribeDomain.Domain.ReadTime");
-			domain.WriteTime = context.IntegerValue("DescribeDomain.Domain.WriteTime");
-			domain.ResourceGroupId = context.StringValue("DescribeDomain.Domain.ResourceGroupId");
+			domain.IpFollowStatus = _ctx.IntegerValue("DescribeDomain.Domain.IpFollowStatus");
+			domain.HttpToUserIp = _ctx.IntegerValue("DescribeDomain.Domain.HttpToUserIp");
+			domain.HttpsRedirect = _ctx.IntegerValue("DescribeDomain.Domain.HttpsRedirect");
+			domain.LoadBalancing = _ctx.IntegerValue("DescribeDomain.Domain.LoadBalancing");
+			domain.Cname = _ctx.StringValue("DescribeDomain.Domain.Cname");
+			domain.IsAccessProduct = _ctx.IntegerValue("DescribeDomain.Domain.IsAccessProduct");
+			domain.Version = _ctx.LongValue("DescribeDomain.Domain.Version");
+			domain.ClusterType = _ctx.IntegerValue("DescribeDomain.Domain.ClusterType");
+			domain.ConnectionTime = _ctx.IntegerValue("DescribeDomain.Domain.ConnectionTime");
+			domain.ReadTime = _ctx.IntegerValue("DescribeDomain.Domain.ReadTime");
+			domain.WriteTime = _ctx.IntegerValue("DescribeDomain.Domain.WriteTime");
+			domain.ResourceGroupId = _ctx.StringValue("DescribeDomain.Domain.ResourceGroupId");
+			domain.AccessType = _ctx.StringValue("DescribeDomain.Domain.AccessType");
 
 			List<string> domain_sourceIps = new List<string>();
-			for (int i = 0; i < context.Length("DescribeDomain.Domain.SourceIps.Length"); i++) {
-				domain_sourceIps.Add(context.StringValue("DescribeDomain.Domain.SourceIps["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeDomain.Domain.SourceIps.Length"); i++) {
+				domain_sourceIps.Add(_ctx.StringValue("DescribeDomain.Domain.SourceIps["+ i +"]"));
 			}
 			domain.SourceIps = domain_sourceIps;
 
 			List<string> domain_http2Port = new List<string>();
-			for (int i = 0; i < context.Length("DescribeDomain.Domain.Http2Port.Length"); i++) {
-				domain_http2Port.Add(context.StringValue("DescribeDomain.Domain.Http2Port["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeDomain.Domain.Http2Port.Length"); i++) {
+				domain_http2Port.Add(_ctx.StringValue("DescribeDomain.Domain.Http2Port["+ i +"]"));
 			}
 			domain.Http2Port = domain_http2Port;
 
 			List<string> domain_httpPort = new List<string>();
-			for (int i = 0; i < context.Length("DescribeDomain.Domain.HttpPort.Length"); i++) {
-				domain_httpPort.Add(context.StringValue("DescribeDomain.Domain.HttpPort["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeDomain.Domain.HttpPort.Length"); i++) {
+				domain_httpPort.Add(_ctx.StringValue("DescribeDomain.Domain.HttpPort["+ i +"]"));
 			}
 			domain.HttpPort = domain_httpPort;
 
 			List<string> domain_httpsPort = new List<string>();
-			for (int i = 0; i < context.Length("DescribeDomain.Domain.HttpsPort.Length"); i++) {
-				domain_httpsPort.Add(context.StringValue("DescribeDomain.Domain.HttpsPort["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeDomain.Domain.HttpsPort.Length"); i++) {
+				domain_httpsPort.Add(_ctx.StringValue("DescribeDomain.Domain.HttpsPort["+ i +"]"));
 			}
 			domain.HttpsPort = domain_httpsPort;
 
 			List<DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_LogHeader> domain_logHeaders = new List<DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_LogHeader>();
-			for (int i = 0; i < context.Length("DescribeDomain.Domain.LogHeaders.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomain.Domain.LogHeaders.Length"); i++) {
 				DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_LogHeader logHeader = new DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_LogHeader();
-				logHeader.V = context.StringValue("DescribeDomain.Domain.LogHeaders["+ i +"].v");
-				logHeader.K = context.StringValue("DescribeDomain.Domain.LogHeaders["+ i +"].k");
+				logHeader.V = _ctx.StringValue("DescribeDomain.Domain.LogHeaders["+ i +"].v");
+				logHeader.K = _ctx.StringValue("DescribeDomain.Domain.LogHeaders["+ i +"].k");
 
 				domain_logHeaders.Add(logHeader);
 			}
 			domain.LogHeaders = domain_logHeaders;
+
+			List<DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem> domain_cloudNativeInstances = new List<DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem>();
+			for (int i = 0; i < _ctx.Length("DescribeDomain.Domain.CloudNativeInstances.Length"); i++) {
+				DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem cloudNativeInstancesItem = new DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem();
+				cloudNativeInstancesItem.CloudNativeProductName = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].CloudNativeProductName");
+				cloudNativeInstancesItem.InstanceId = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].InstanceId");
+				cloudNativeInstancesItem.IPAddressList = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].IPAddressList");
+
+				List<DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem.DescribeDomain_ProtocolPortConfigsItem> cloudNativeInstancesItem_protocolPortConfigs = new List<DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem.DescribeDomain_ProtocolPortConfigsItem>();
+				for (int j = 0; j < _ctx.Length("DescribeDomain.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs.Length"); j++) {
+					DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem.DescribeDomain_ProtocolPortConfigsItem protocolPortConfigsItem = new DescribeDomainResponse.DescribeDomain_Domain.DescribeDomain_CloudNativeInstancesItem.DescribeDomain_ProtocolPortConfigsItem();
+					protocolPortConfigsItem.Protocol = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs["+ j +"].Protocol");
+					protocolPortConfigsItem.Ports = _ctx.StringValue("DescribeDomain.Domain.CloudNativeInstances["+ i +"].ProtocolPortConfigs["+ j +"].Ports");
+
+					cloudNativeInstancesItem_protocolPortConfigs.Add(protocolPortConfigsItem);
+				}
+				cloudNativeInstancesItem.ProtocolPortConfigs = cloudNativeInstancesItem_protocolPortConfigs;
+
+				domain_cloudNativeInstances.Add(cloudNativeInstancesItem);
+			}
+			domain.CloudNativeInstances = domain_cloudNativeInstances;
 			describeDomainResponse.Domain = domain;
         
 			return describeDomainResponse;
