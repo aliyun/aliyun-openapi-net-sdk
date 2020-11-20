@@ -34,14 +34,8 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 			detectFaceResponse.RequestId = _ctx.StringValue("DetectFace.RequestId");
 
 			DetectFaceResponse.DetectFace_Data data = new DetectFaceResponse.DetectFace_Data();
-			data.FaceCount = _ctx.IntegerValue("DetectFace.Data.FaceCount");
 			data.LandmarkCount = _ctx.IntegerValue("DetectFace.Data.LandmarkCount");
-
-			List<string> data_faceRectangles = new List<string>();
-			for (int i = 0; i < _ctx.Length("DetectFace.Data.FaceRectangles.Length"); i++) {
-				data_faceRectangles.Add(_ctx.StringValue("DetectFace.Data.FaceRectangles["+ i +"]"));
-			}
-			data.FaceRectangles = data_faceRectangles;
+			data.FaceCount = _ctx.IntegerValue("DetectFace.Data.FaceCount");
 
 			List<string> data_faceProbabilityList = new List<string>();
 			for (int i = 0; i < _ctx.Length("DetectFace.Data.FaceProbabilityList.Length"); i++) {
@@ -49,11 +43,11 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 			}
 			data.FaceProbabilityList = data_faceProbabilityList;
 
-			List<string> data_poseList = new List<string>();
-			for (int i = 0; i < _ctx.Length("DetectFace.Data.PoseList.Length"); i++) {
-				data_poseList.Add(_ctx.StringValue("DetectFace.Data.PoseList["+ i +"]"));
+			List<string> data_faceRectangles = new List<string>();
+			for (int i = 0; i < _ctx.Length("DetectFace.Data.FaceRectangles.Length"); i++) {
+				data_faceRectangles.Add(_ctx.StringValue("DetectFace.Data.FaceRectangles["+ i +"]"));
 			}
-			data.PoseList = data_poseList;
+			data.FaceRectangles = data_faceRectangles;
 
 			List<string> data_landmarks = new List<string>();
 			for (int i = 0; i < _ctx.Length("DetectFace.Data.Landmarks.Length"); i++) {
@@ -61,11 +55,68 @@ namespace Aliyun.Acs.facebody.Transform.V20191230
 			}
 			data.Landmarks = data_landmarks;
 
+			List<string> data_poseList = new List<string>();
+			for (int i = 0; i < _ctx.Length("DetectFace.Data.PoseList.Length"); i++) {
+				data_poseList.Add(_ctx.StringValue("DetectFace.Data.PoseList["+ i +"]"));
+			}
+			data.PoseList = data_poseList;
+
 			List<string> data_pupils = new List<string>();
 			for (int i = 0; i < _ctx.Length("DetectFace.Data.Pupils.Length"); i++) {
 				data_pupils.Add(_ctx.StringValue("DetectFace.Data.Pupils["+ i +"]"));
 			}
 			data.Pupils = data_pupils;
+
+			DetectFaceResponse.DetectFace_Data.DetectFace_Qualities qualities = new DetectFaceResponse.DetectFace_Data.DetectFace_Qualities();
+
+			List<string> qualities_noiseList = new List<string>();
+			for (int i = 0; i < _ctx.Length("DetectFace.Data.Qualities.NoiseList.Length"); i++) {
+				qualities_noiseList.Add(_ctx.StringValue("DetectFace.Data.Qualities.NoiseList["+ i +"]"));
+			}
+			qualities.NoiseList = qualities_noiseList;
+
+			List<string> qualities_scoreList = new List<string>();
+			for (int i = 0; i < _ctx.Length("DetectFace.Data.Qualities.ScoreList.Length"); i++) {
+				qualities_scoreList.Add(_ctx.StringValue("DetectFace.Data.Qualities.ScoreList["+ i +"]"));
+			}
+			qualities.ScoreList = qualities_scoreList;
+
+			List<string> qualities_blurList = new List<string>();
+			for (int i = 0; i < _ctx.Length("DetectFace.Data.Qualities.BlurList.Length"); i++) {
+				qualities_blurList.Add(_ctx.StringValue("DetectFace.Data.Qualities.BlurList["+ i +"]"));
+			}
+			qualities.BlurList = qualities_blurList;
+
+			List<string> qualities_maskList = new List<string>();
+			for (int i = 0; i < _ctx.Length("DetectFace.Data.Qualities.MaskList.Length"); i++) {
+				qualities_maskList.Add(_ctx.StringValue("DetectFace.Data.Qualities.MaskList["+ i +"]"));
+			}
+			qualities.MaskList = qualities_maskList;
+
+			List<string> qualities_glassList = new List<string>();
+			for (int i = 0; i < _ctx.Length("DetectFace.Data.Qualities.GlassList.Length"); i++) {
+				qualities_glassList.Add(_ctx.StringValue("DetectFace.Data.Qualities.GlassList["+ i +"]"));
+			}
+			qualities.GlassList = qualities_glassList;
+
+			List<string> qualities_fnfList = new List<string>();
+			for (int i = 0; i < _ctx.Length("DetectFace.Data.Qualities.FnfList.Length"); i++) {
+				qualities_fnfList.Add(_ctx.StringValue("DetectFace.Data.Qualities.FnfList["+ i +"]"));
+			}
+			qualities.FnfList = qualities_fnfList;
+
+			List<string> qualities_poseList1 = new List<string>();
+			for (int i = 0; i < _ctx.Length("DetectFace.Data.Qualities.PoseList.Length"); i++) {
+				qualities_poseList1.Add(_ctx.StringValue("DetectFace.Data.Qualities.PoseList["+ i +"]"));
+			}
+			qualities.PoseList1 = qualities_poseList1;
+
+			List<string> qualities_illuList = new List<string>();
+			for (int i = 0; i < _ctx.Length("DetectFace.Data.Qualities.IlluList.Length"); i++) {
+				qualities_illuList.Add(_ctx.StringValue("DetectFace.Data.Qualities.IlluList["+ i +"]"));
+			}
+			qualities.IlluList = qualities_illuList;
+			data.Qualities = qualities;
 			detectFaceResponse.Data = data;
         
 			return detectFaceResponse;
