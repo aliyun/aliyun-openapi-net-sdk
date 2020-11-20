@@ -26,16 +26,16 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class ActiveDeviceResponseUnmarshaller
     {
-        public static ActiveDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static ActiveDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ActiveDeviceResponse activeDeviceResponse = new ActiveDeviceResponse();
 
-			activeDeviceResponse.HttpResponse = context.HttpResponse;
-			activeDeviceResponse.ErrorCode = context.IntegerValue("ActiveDevice.ErrorCode");
-			activeDeviceResponse.Message = context.StringValue("ActiveDevice.Message");
-			activeDeviceResponse.Success = context.BooleanValue("ActiveDevice.Success");
-			activeDeviceResponse.RequestId = context.StringValue("ActiveDevice.RequestId");
-			activeDeviceResponse.Token = context.StringValue("ActiveDevice.Token");
+			activeDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			activeDeviceResponse.ErrorCode = _ctx.IntegerValue("ActiveDevice.ErrorCode");
+			activeDeviceResponse.Message = _ctx.StringValue("ActiveDevice.Message");
+			activeDeviceResponse.Success = _ctx.BooleanValue("ActiveDevice.Success");
+			activeDeviceResponse.RequestId = _ctx.StringValue("ActiveDevice.RequestId");
+			activeDeviceResponse.Token = _ctx.StringValue("ActiveDevice.Token");
         
 			return activeDeviceResponse;
         }

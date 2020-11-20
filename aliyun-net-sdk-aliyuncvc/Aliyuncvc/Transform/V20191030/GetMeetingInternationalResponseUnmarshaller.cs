@@ -26,33 +26,33 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class GetMeetingInternationalResponseUnmarshaller
     {
-        public static GetMeetingInternationalResponse Unmarshall(UnmarshallerContext context)
+        public static GetMeetingInternationalResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMeetingInternationalResponse getMeetingInternationalResponse = new GetMeetingInternationalResponse();
 
-			getMeetingInternationalResponse.HttpResponse = context.HttpResponse;
-			getMeetingInternationalResponse.ErrorCode = context.IntegerValue("GetMeetingInternational.ErrorCode");
-			getMeetingInternationalResponse.Message = context.StringValue("GetMeetingInternational.Message");
-			getMeetingInternationalResponse.Success = context.BooleanValue("GetMeetingInternational.Success");
-			getMeetingInternationalResponse.RequestId = context.StringValue("GetMeetingInternational.RequestId");
+			getMeetingInternationalResponse.HttpResponse = _ctx.HttpResponse;
+			getMeetingInternationalResponse.ErrorCode = _ctx.IntegerValue("GetMeetingInternational.ErrorCode");
+			getMeetingInternationalResponse.Message = _ctx.StringValue("GetMeetingInternational.Message");
+			getMeetingInternationalResponse.Success = _ctx.BooleanValue("GetMeetingInternational.Success");
+			getMeetingInternationalResponse.RequestId = _ctx.StringValue("GetMeetingInternational.RequestId");
 
 			GetMeetingInternationalResponse.GetMeetingInternational_MeetingInfo meetingInfo = new GetMeetingInternationalResponse.GetMeetingInternational_MeetingInfo();
-			meetingInfo.MeetingName = context.StringValue("GetMeetingInternational.MeetingInfo.MeetingName");
-			meetingInfo.ValidTime = context.LongValue("GetMeetingInternational.MeetingInfo.ValidTime");
-			meetingInfo.MeetingCode = context.StringValue("GetMeetingInternational.MeetingInfo.MeetingCode");
-			meetingInfo.CreateTime = context.LongValue("GetMeetingInternational.MeetingInfo.CreateTime");
-			meetingInfo.UserId = context.StringValue("GetMeetingInternational.MeetingInfo.UserId");
-			meetingInfo.MeetingUUID = context.StringValue("GetMeetingInternational.MeetingInfo.MeetingUUID");
-			meetingInfo.Password = context.StringValue("GetMeetingInternational.MeetingInfo.Password");
+			meetingInfo.MeetingName = _ctx.StringValue("GetMeetingInternational.MeetingInfo.MeetingName");
+			meetingInfo.ValidTime = _ctx.LongValue("GetMeetingInternational.MeetingInfo.ValidTime");
+			meetingInfo.MeetingCode = _ctx.StringValue("GetMeetingInternational.MeetingInfo.MeetingCode");
+			meetingInfo.CreateTime = _ctx.LongValue("GetMeetingInternational.MeetingInfo.CreateTime");
+			meetingInfo.UserId = _ctx.StringValue("GetMeetingInternational.MeetingInfo.UserId");
+			meetingInfo.MeetingUUID = _ctx.StringValue("GetMeetingInternational.MeetingInfo.MeetingUUID");
+			meetingInfo.Password = _ctx.StringValue("GetMeetingInternational.MeetingInfo.Password");
 
 			List<GetMeetingInternationalResponse.GetMeetingInternational_MeetingInfo.GetMeetingInternational_MemberListItem> meetingInfo_memberList = new List<GetMeetingInternationalResponse.GetMeetingInternational_MeetingInfo.GetMeetingInternational_MemberListItem>();
-			for (int i = 0; i < context.Length("GetMeetingInternational.MeetingInfo.MemberList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetMeetingInternational.MeetingInfo.MemberList.Length"); i++) {
 				GetMeetingInternationalResponse.GetMeetingInternational_MeetingInfo.GetMeetingInternational_MemberListItem memberListItem = new GetMeetingInternationalResponse.GetMeetingInternational_MeetingInfo.GetMeetingInternational_MemberListItem();
-				memberListItem.UserAvatarUrl = context.StringValue("GetMeetingInternational.MeetingInfo.MemberList["+ i +"].UserAvatarUrl");
-				memberListItem.MemberUUID = context.StringValue("GetMeetingInternational.MeetingInfo.MemberList["+ i +"].MemberUUID");
-				memberListItem.UserName = context.StringValue("GetMeetingInternational.MeetingInfo.MemberList["+ i +"].UserName");
-				memberListItem.UserId = context.StringValue("GetMeetingInternational.MeetingInfo.MemberList["+ i +"].UserId");
-				memberListItem.Status = context.StringValue("GetMeetingInternational.MeetingInfo.MemberList["+ i +"].Status");
+				memberListItem.UserAvatarUrl = _ctx.StringValue("GetMeetingInternational.MeetingInfo.MemberList["+ i +"].UserAvatarUrl");
+				memberListItem.MemberUUID = _ctx.StringValue("GetMeetingInternational.MeetingInfo.MemberList["+ i +"].MemberUUID");
+				memberListItem.UserName = _ctx.StringValue("GetMeetingInternational.MeetingInfo.MemberList["+ i +"].UserName");
+				memberListItem.UserId = _ctx.StringValue("GetMeetingInternational.MeetingInfo.MemberList["+ i +"].UserId");
+				memberListItem.Status = _ctx.StringValue("GetMeetingInternational.MeetingInfo.MemberList["+ i +"].Status");
 
 				meetingInfo_memberList.Add(memberListItem);
 			}

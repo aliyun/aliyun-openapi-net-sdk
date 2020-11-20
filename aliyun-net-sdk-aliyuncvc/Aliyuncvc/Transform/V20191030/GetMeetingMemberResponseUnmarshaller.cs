@@ -26,16 +26,16 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class GetMeetingMemberResponseUnmarshaller
     {
-        public static GetMeetingMemberResponse Unmarshall(UnmarshallerContext context)
+        public static GetMeetingMemberResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMeetingMemberResponse getMeetingMemberResponse = new GetMeetingMemberResponse();
 
-			getMeetingMemberResponse.HttpResponse = context.HttpResponse;
-			getMeetingMemberResponse.RequestId = context.StringValue("GetMeetingMember.RequestId");
-			getMeetingMemberResponse.Message = context.StringValue("GetMeetingMember.Message");
-			getMeetingMemberResponse.Success = context.BooleanValue("GetMeetingMember.Success");
-			getMeetingMemberResponse.ErrorCode = context.IntegerValue("GetMeetingMember.ErrorCode");
-			getMeetingMemberResponse.Members = context.StringValue("GetMeetingMember.Members");
+			getMeetingMemberResponse.HttpResponse = _ctx.HttpResponse;
+			getMeetingMemberResponse.RequestId = _ctx.StringValue("GetMeetingMember.RequestId");
+			getMeetingMemberResponse.Message = _ctx.StringValue("GetMeetingMember.Message");
+			getMeetingMemberResponse.Success = _ctx.BooleanValue("GetMeetingMember.Success");
+			getMeetingMemberResponse.ErrorCode = _ctx.IntegerValue("GetMeetingMember.ErrorCode");
+			getMeetingMemberResponse.Members = _ctx.StringValue("GetMeetingMember.Members");
         
 			return getMeetingMemberResponse;
         }

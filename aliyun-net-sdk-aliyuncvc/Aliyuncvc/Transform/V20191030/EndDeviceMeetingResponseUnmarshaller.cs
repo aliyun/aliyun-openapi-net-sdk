@@ -26,15 +26,15 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class EndDeviceMeetingResponseUnmarshaller
     {
-        public static EndDeviceMeetingResponse Unmarshall(UnmarshallerContext context)
+        public static EndDeviceMeetingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EndDeviceMeetingResponse endDeviceMeetingResponse = new EndDeviceMeetingResponse();
 
-			endDeviceMeetingResponse.HttpResponse = context.HttpResponse;
-			endDeviceMeetingResponse.ErrorCode = context.IntegerValue("EndDeviceMeeting.ErrorCode");
-			endDeviceMeetingResponse.Message = context.StringValue("EndDeviceMeeting.Message");
-			endDeviceMeetingResponse.Success = context.BooleanValue("EndDeviceMeeting.Success");
-			endDeviceMeetingResponse.RequestId = context.StringValue("EndDeviceMeeting.RequestId");
+			endDeviceMeetingResponse.HttpResponse = _ctx.HttpResponse;
+			endDeviceMeetingResponse.ErrorCode = _ctx.IntegerValue("EndDeviceMeeting.ErrorCode");
+			endDeviceMeetingResponse.Message = _ctx.StringValue("EndDeviceMeeting.Message");
+			endDeviceMeetingResponse.Success = _ctx.BooleanValue("EndDeviceMeeting.Success");
+			endDeviceMeetingResponse.RequestId = _ctx.StringValue("EndDeviceMeeting.RequestId");
         
 			return endDeviceMeetingResponse;
         }

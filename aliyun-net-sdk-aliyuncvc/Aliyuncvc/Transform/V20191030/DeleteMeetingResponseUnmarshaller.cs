@@ -26,15 +26,15 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class DeleteMeetingResponseUnmarshaller
     {
-        public static DeleteMeetingResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteMeetingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteMeetingResponse deleteMeetingResponse = new DeleteMeetingResponse();
 
-			deleteMeetingResponse.HttpResponse = context.HttpResponse;
-			deleteMeetingResponse.ErrorCode = context.IntegerValue("DeleteMeeting.ErrorCode");
-			deleteMeetingResponse.Message = context.StringValue("DeleteMeeting.Message");
-			deleteMeetingResponse.Success = context.BooleanValue("DeleteMeeting.Success");
-			deleteMeetingResponse.RequestId = context.StringValue("DeleteMeeting.RequestId");
+			deleteMeetingResponse.HttpResponse = _ctx.HttpResponse;
+			deleteMeetingResponse.ErrorCode = _ctx.IntegerValue("DeleteMeeting.ErrorCode");
+			deleteMeetingResponse.Message = _ctx.StringValue("DeleteMeeting.Message");
+			deleteMeetingResponse.Success = _ctx.BooleanValue("DeleteMeeting.Success");
+			deleteMeetingResponse.RequestId = _ctx.StringValue("DeleteMeeting.RequestId");
         
 			return deleteMeetingResponse;
         }

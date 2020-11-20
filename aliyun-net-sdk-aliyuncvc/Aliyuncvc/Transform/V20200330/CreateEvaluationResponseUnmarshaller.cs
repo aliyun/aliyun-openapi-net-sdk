@@ -26,15 +26,15 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20200330
 {
     public class CreateEvaluationResponseUnmarshaller
     {
-        public static CreateEvaluationResponse Unmarshall(UnmarshallerContext context)
+        public static CreateEvaluationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateEvaluationResponse createEvaluationResponse = new CreateEvaluationResponse();
 
-			createEvaluationResponse.HttpResponse = context.HttpResponse;
-			createEvaluationResponse.RequestId = context.StringValue("CreateEvaluation.RequestId");
-			createEvaluationResponse.Success = context.BooleanValue("CreateEvaluation.Success");
-			createEvaluationResponse.ErrorCode = context.StringValue("CreateEvaluation.ErrorCode");
-			createEvaluationResponse.Message = context.StringValue("CreateEvaluation.Message");
+			createEvaluationResponse.HttpResponse = _ctx.HttpResponse;
+			createEvaluationResponse.RequestId = _ctx.StringValue("CreateEvaluation.RequestId");
+			createEvaluationResponse.Success = _ctx.BooleanValue("CreateEvaluation.Success");
+			createEvaluationResponse.ErrorCode = _ctx.StringValue("CreateEvaluation.ErrorCode");
+			createEvaluationResponse.Message = _ctx.StringValue("CreateEvaluation.Message");
         
 			return createEvaluationResponse;
         }

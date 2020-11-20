@@ -26,15 +26,15 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class StartLiveResponseUnmarshaller
     {
-        public static StartLiveResponse Unmarshall(UnmarshallerContext context)
+        public static StartLiveResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartLiveResponse startLiveResponse = new StartLiveResponse();
 
-			startLiveResponse.HttpResponse = context.HttpResponse;
-			startLiveResponse.ErrorCode = context.IntegerValue("StartLive.ErrorCode");
-			startLiveResponse.Message = context.StringValue("StartLive.Message");
-			startLiveResponse.Success = context.BooleanValue("StartLive.Success");
-			startLiveResponse.RequestId = context.StringValue("StartLive.RequestId");
+			startLiveResponse.HttpResponse = _ctx.HttpResponse;
+			startLiveResponse.ErrorCode = _ctx.IntegerValue("StartLive.ErrorCode");
+			startLiveResponse.Message = _ctx.StringValue("StartLive.Message");
+			startLiveResponse.Success = _ctx.BooleanValue("StartLive.Success");
+			startLiveResponse.RequestId = _ctx.StringValue("StartLive.RequestId");
         
 			return startLiveResponse;
         }

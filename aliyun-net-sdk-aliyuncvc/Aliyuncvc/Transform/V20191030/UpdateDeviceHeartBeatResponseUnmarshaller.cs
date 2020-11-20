@@ -26,18 +26,18 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class UpdateDeviceHeartBeatResponseUnmarshaller
     {
-        public static UpdateDeviceHeartBeatResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateDeviceHeartBeatResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateDeviceHeartBeatResponse updateDeviceHeartBeatResponse = new UpdateDeviceHeartBeatResponse();
 
-			updateDeviceHeartBeatResponse.HttpResponse = context.HttpResponse;
-			updateDeviceHeartBeatResponse.ErrorCode = context.IntegerValue("UpdateDeviceHeartBeat.ErrorCode");
-			updateDeviceHeartBeatResponse.Message = context.StringValue("UpdateDeviceHeartBeat.Message");
-			updateDeviceHeartBeatResponse.Success = context.BooleanValue("UpdateDeviceHeartBeat.Success");
-			updateDeviceHeartBeatResponse.RequestId = context.StringValue("UpdateDeviceHeartBeat.RequestId");
+			updateDeviceHeartBeatResponse.HttpResponse = _ctx.HttpResponse;
+			updateDeviceHeartBeatResponse.ErrorCode = _ctx.IntegerValue("UpdateDeviceHeartBeat.ErrorCode");
+			updateDeviceHeartBeatResponse.Message = _ctx.StringValue("UpdateDeviceHeartBeat.Message");
+			updateDeviceHeartBeatResponse.Success = _ctx.BooleanValue("UpdateDeviceHeartBeat.Success");
+			updateDeviceHeartBeatResponse.RequestId = _ctx.StringValue("UpdateDeviceHeartBeat.RequestId");
 
 			UpdateDeviceHeartBeatResponse.UpdateDeviceHeartBeat_DeviceInfo deviceInfo = new UpdateDeviceHeartBeatResponse.UpdateDeviceHeartBeat_DeviceInfo();
-			deviceInfo.ChannelType = context.StringValue("UpdateDeviceHeartBeat.DeviceInfo.ChannelType");
+			deviceInfo.ChannelType = _ctx.StringValue("UpdateDeviceHeartBeat.DeviceInfo.ChannelType");
 			updateDeviceHeartBeatResponse.DeviceInfo = deviceInfo;
         
 			return updateDeviceHeartBeatResponse;

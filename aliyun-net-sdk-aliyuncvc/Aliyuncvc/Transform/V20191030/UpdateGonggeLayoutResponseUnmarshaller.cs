@@ -26,15 +26,15 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class UpdateGonggeLayoutResponseUnmarshaller
     {
-        public static UpdateGonggeLayoutResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateGonggeLayoutResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateGonggeLayoutResponse updateGonggeLayoutResponse = new UpdateGonggeLayoutResponse();
 
-			updateGonggeLayoutResponse.HttpResponse = context.HttpResponse;
-			updateGonggeLayoutResponse.ErrorCode = context.IntegerValue("UpdateGonggeLayout.ErrorCode");
-			updateGonggeLayoutResponse.Message = context.StringValue("UpdateGonggeLayout.Message");
-			updateGonggeLayoutResponse.Success = context.BooleanValue("UpdateGonggeLayout.Success");
-			updateGonggeLayoutResponse.RequestId = context.StringValue("UpdateGonggeLayout.RequestId");
+			updateGonggeLayoutResponse.HttpResponse = _ctx.HttpResponse;
+			updateGonggeLayoutResponse.ErrorCode = _ctx.IntegerValue("UpdateGonggeLayout.ErrorCode");
+			updateGonggeLayoutResponse.Message = _ctx.StringValue("UpdateGonggeLayout.Message");
+			updateGonggeLayoutResponse.Success = _ctx.BooleanValue("UpdateGonggeLayout.Success");
+			updateGonggeLayoutResponse.RequestId = _ctx.StringValue("UpdateGonggeLayout.RequestId");
         
 			return updateGonggeLayoutResponse;
         }

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class UpdateLivePasswordResponseUnmarshaller
     {
-        public static UpdateLivePasswordResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateLivePasswordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateLivePasswordResponse updateLivePasswordResponse = new UpdateLivePasswordResponse();
 
-			updateLivePasswordResponse.HttpResponse = context.HttpResponse;
-			updateLivePasswordResponse.ErrorCode = context.IntegerValue("UpdateLivePassword.ErrorCode");
-			updateLivePasswordResponse.Message = context.StringValue("UpdateLivePassword.Message");
-			updateLivePasswordResponse.Success = context.BooleanValue("UpdateLivePassword.Success");
-			updateLivePasswordResponse.RequestId = context.StringValue("UpdateLivePassword.RequestId");
+			updateLivePasswordResponse.HttpResponse = _ctx.HttpResponse;
+			updateLivePasswordResponse.ErrorCode = _ctx.IntegerValue("UpdateLivePassword.ErrorCode");
+			updateLivePasswordResponse.Message = _ctx.StringValue("UpdateLivePassword.Message");
+			updateLivePasswordResponse.Success = _ctx.BooleanValue("UpdateLivePassword.Success");
+			updateLivePasswordResponse.RequestId = _ctx.StringValue("UpdateLivePassword.RequestId");
         
 			return updateLivePasswordResponse;
         }

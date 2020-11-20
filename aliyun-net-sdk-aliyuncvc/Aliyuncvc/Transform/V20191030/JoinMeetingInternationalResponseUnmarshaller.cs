@@ -26,29 +26,29 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20191030
 {
     public class JoinMeetingInternationalResponseUnmarshaller
     {
-        public static JoinMeetingInternationalResponse Unmarshall(UnmarshallerContext context)
+        public static JoinMeetingInternationalResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			JoinMeetingInternationalResponse joinMeetingInternationalResponse = new JoinMeetingInternationalResponse();
 
-			joinMeetingInternationalResponse.HttpResponse = context.HttpResponse;
-			joinMeetingInternationalResponse.ErrorCode = context.IntegerValue("JoinMeetingInternational.ErrorCode");
-			joinMeetingInternationalResponse.Success = context.BooleanValue("JoinMeetingInternational.Success");
-			joinMeetingInternationalResponse.RequestId = context.StringValue("JoinMeetingInternational.RequestId");
-			joinMeetingInternationalResponse.Message = context.StringValue("JoinMeetingInternational.Message");
+			joinMeetingInternationalResponse.HttpResponse = _ctx.HttpResponse;
+			joinMeetingInternationalResponse.ErrorCode = _ctx.IntegerValue("JoinMeetingInternational.ErrorCode");
+			joinMeetingInternationalResponse.Success = _ctx.BooleanValue("JoinMeetingInternational.Success");
+			joinMeetingInternationalResponse.RequestId = _ctx.StringValue("JoinMeetingInternational.RequestId");
+			joinMeetingInternationalResponse.Message = _ctx.StringValue("JoinMeetingInternational.Message");
 
 			JoinMeetingInternationalResponse.JoinMeetingInternational_MeetingInfo meetingInfo = new JoinMeetingInternationalResponse.JoinMeetingInternational_MeetingInfo();
-			meetingInfo.MeetingDomain = context.StringValue("JoinMeetingInternational.MeetingInfo.MeetingDomain");
-			meetingInfo.MeetingToken = context.StringValue("JoinMeetingInternational.MeetingInfo.MeetingToken");
-			meetingInfo.MeetingCode = context.StringValue("JoinMeetingInternational.MeetingInfo.MeetingCode");
-			meetingInfo.MemberUUID = context.StringValue("JoinMeetingInternational.MeetingInfo.MemberUUID");
-			meetingInfo.ClientAppId = context.StringValue("JoinMeetingInternational.MeetingInfo.ClientAppId");
-			meetingInfo.MeetingUUID = context.StringValue("JoinMeetingInternational.MeetingInfo.MeetingUUID");
-			meetingInfo.MeetingAppId = context.StringValue("JoinMeetingInternational.MeetingInfo.MeetingAppId");
+			meetingInfo.MeetingDomain = _ctx.StringValue("JoinMeetingInternational.MeetingInfo.MeetingDomain");
+			meetingInfo.MeetingToken = _ctx.StringValue("JoinMeetingInternational.MeetingInfo.MeetingToken");
+			meetingInfo.MeetingCode = _ctx.StringValue("JoinMeetingInternational.MeetingInfo.MeetingCode");
+			meetingInfo.MemberUUID = _ctx.StringValue("JoinMeetingInternational.MeetingInfo.MemberUUID");
+			meetingInfo.ClientAppId = _ctx.StringValue("JoinMeetingInternational.MeetingInfo.ClientAppId");
+			meetingInfo.MeetingUUID = _ctx.StringValue("JoinMeetingInternational.MeetingInfo.MeetingUUID");
+			meetingInfo.MeetingAppId = _ctx.StringValue("JoinMeetingInternational.MeetingInfo.MeetingAppId");
 
 			JoinMeetingInternationalResponse.JoinMeetingInternational_MeetingInfo.JoinMeetingInternational_SlsInfo slsInfo = new JoinMeetingInternationalResponse.JoinMeetingInternational_MeetingInfo.JoinMeetingInternational_SlsInfo();
-			slsInfo.LogServiceEndpoint = context.StringValue("JoinMeetingInternational.MeetingInfo.SlsInfo.LogServiceEndpoint");
-			slsInfo.Logstore = context.StringValue("JoinMeetingInternational.MeetingInfo.SlsInfo.Logstore");
-			slsInfo.Project = context.StringValue("JoinMeetingInternational.MeetingInfo.SlsInfo.Project");
+			slsInfo.LogServiceEndpoint = _ctx.StringValue("JoinMeetingInternational.MeetingInfo.SlsInfo.LogServiceEndpoint");
+			slsInfo.Logstore = _ctx.StringValue("JoinMeetingInternational.MeetingInfo.SlsInfo.Logstore");
+			slsInfo.Project = _ctx.StringValue("JoinMeetingInternational.MeetingInfo.SlsInfo.Project");
 			meetingInfo.SlsInfo = slsInfo;
 			joinMeetingInternationalResponse.MeetingInfo = meetingInfo;
         

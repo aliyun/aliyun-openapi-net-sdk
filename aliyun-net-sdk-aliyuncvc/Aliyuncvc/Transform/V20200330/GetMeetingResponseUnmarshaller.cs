@@ -26,32 +26,32 @@ namespace Aliyun.Acs.aliyuncvc.Transform.V20200330
 {
     public class GetMeetingResponseUnmarshaller
     {
-        public static GetMeetingResponse Unmarshall(UnmarshallerContext context)
+        public static GetMeetingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMeetingResponse getMeetingResponse = new GetMeetingResponse();
 
-			getMeetingResponse.HttpResponse = context.HttpResponse;
-			getMeetingResponse.ErrorCode = context.IntegerValue("GetMeeting.ErrorCode");
-			getMeetingResponse.Message = context.StringValue("GetMeeting.Message");
-			getMeetingResponse.Success = context.BooleanValue("GetMeeting.Success");
-			getMeetingResponse.RequestId = context.StringValue("GetMeeting.RequestId");
+			getMeetingResponse.HttpResponse = _ctx.HttpResponse;
+			getMeetingResponse.ErrorCode = _ctx.IntegerValue("GetMeeting.ErrorCode");
+			getMeetingResponse.Message = _ctx.StringValue("GetMeeting.Message");
+			getMeetingResponse.Success = _ctx.BooleanValue("GetMeeting.Success");
+			getMeetingResponse.RequestId = _ctx.StringValue("GetMeeting.RequestId");
 
 			GetMeetingResponse.GetMeeting_MeetingInfo meetingInfo = new GetMeetingResponse.GetMeeting_MeetingInfo();
-			meetingInfo.MeetingName = context.StringValue("GetMeeting.MeetingInfo.MeetingName");
-			meetingInfo.ValidTime = context.LongValue("GetMeeting.MeetingInfo.ValidTime");
-			meetingInfo.MeetingCode = context.StringValue("GetMeeting.MeetingInfo.MeetingCode");
-			meetingInfo.CreateTime = context.LongValue("GetMeeting.MeetingInfo.CreateTime");
-			meetingInfo.UserId = context.StringValue("GetMeeting.MeetingInfo.UserId");
-			meetingInfo.MeetingUUID = context.StringValue("GetMeeting.MeetingInfo.MeetingUUID");
+			meetingInfo.MeetingName = _ctx.StringValue("GetMeeting.MeetingInfo.MeetingName");
+			meetingInfo.ValidTime = _ctx.LongValue("GetMeeting.MeetingInfo.ValidTime");
+			meetingInfo.MeetingCode = _ctx.StringValue("GetMeeting.MeetingInfo.MeetingCode");
+			meetingInfo.CreateTime = _ctx.LongValue("GetMeeting.MeetingInfo.CreateTime");
+			meetingInfo.UserId = _ctx.StringValue("GetMeeting.MeetingInfo.UserId");
+			meetingInfo.MeetingUUID = _ctx.StringValue("GetMeeting.MeetingInfo.MeetingUUID");
 
 			List<GetMeetingResponse.GetMeeting_MeetingInfo.GetMeeting_MemberListItem> meetingInfo_memberList = new List<GetMeetingResponse.GetMeeting_MeetingInfo.GetMeeting_MemberListItem>();
-			for (int i = 0; i < context.Length("GetMeeting.MeetingInfo.MemberList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetMeeting.MeetingInfo.MemberList.Length"); i++) {
 				GetMeetingResponse.GetMeeting_MeetingInfo.GetMeeting_MemberListItem memberListItem = new GetMeetingResponse.GetMeeting_MeetingInfo.GetMeeting_MemberListItem();
-				memberListItem.UserAvatarUrl = context.StringValue("GetMeeting.MeetingInfo.MemberList["+ i +"].UserAvatarUrl");
-				memberListItem.MemberUUID = context.StringValue("GetMeeting.MeetingInfo.MemberList["+ i +"].MemberUUID");
-				memberListItem.UserName = context.StringValue("GetMeeting.MeetingInfo.MemberList["+ i +"].UserName");
-				memberListItem.UserId = context.StringValue("GetMeeting.MeetingInfo.MemberList["+ i +"].UserId");
-				memberListItem.Status = context.StringValue("GetMeeting.MeetingInfo.MemberList["+ i +"].Status");
+				memberListItem.UserAvatarUrl = _ctx.StringValue("GetMeeting.MeetingInfo.MemberList["+ i +"].UserAvatarUrl");
+				memberListItem.MemberUUID = _ctx.StringValue("GetMeeting.MeetingInfo.MemberList["+ i +"].MemberUUID");
+				memberListItem.UserName = _ctx.StringValue("GetMeeting.MeetingInfo.MemberList["+ i +"].UserName");
+				memberListItem.UserId = _ctx.StringValue("GetMeeting.MeetingInfo.MemberList["+ i +"].UserId");
+				memberListItem.Status = _ctx.StringValue("GetMeeting.MeetingInfo.MemberList["+ i +"].Status");
 
 				meetingInfo_memberList.Add(memberListItem);
 			}
