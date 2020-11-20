@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeWebsiteInstanceResponseUnmarshaller
     {
-        public static DescribeWebsiteInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeWebsiteInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeWebsiteInstanceResponse describeWebsiteInstanceResponse = new DescribeWebsiteInstanceResponse();
 
-			describeWebsiteInstanceResponse.HttpResponse = context.HttpResponse;
-			describeWebsiteInstanceResponse.RequestId = context.StringValue("DescribeWebsiteInstance.RequestId");
-			describeWebsiteInstanceResponse.PageSize = context.IntegerValue("DescribeWebsiteInstance.PageSize");
-			describeWebsiteInstanceResponse.CurrentPage = context.IntegerValue("DescribeWebsiteInstance.CurrentPage");
-			describeWebsiteInstanceResponse.TotalCount = context.IntegerValue("DescribeWebsiteInstance.TotalCount");
+			describeWebsiteInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			describeWebsiteInstanceResponse.RequestId = _ctx.StringValue("DescribeWebsiteInstance.RequestId");
+			describeWebsiteInstanceResponse.PageSize = _ctx.IntegerValue("DescribeWebsiteInstance.PageSize");
+			describeWebsiteInstanceResponse.CurrentPage = _ctx.IntegerValue("DescribeWebsiteInstance.CurrentPage");
+			describeWebsiteInstanceResponse.TotalCount = _ctx.IntegerValue("DescribeWebsiteInstance.TotalCount");
 
 			List<DescribeWebsiteInstanceResponse.DescribeWebsiteInstance_WebsiteInstance> describeWebsiteInstanceResponse_websiteInstanceList = new List<DescribeWebsiteInstanceResponse.DescribeWebsiteInstance_WebsiteInstance>();
-			for (int i = 0; i < context.Length("DescribeWebsiteInstance.WebsiteInstanceList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeWebsiteInstance.WebsiteInstanceList.Length"); i++) {
 				DescribeWebsiteInstanceResponse.DescribeWebsiteInstance_WebsiteInstance websiteInstance = new DescribeWebsiteInstanceResponse.DescribeWebsiteInstance_WebsiteInstance();
-				websiteInstance.Protocol = context.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].Protocol");
-				websiteInstance.InstanceId = context.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].InstanceId");
-				websiteInstance.WebsiteScanInterval = context.IntegerValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].WebsiteScanInterval");
-				websiteInstance.Domain = context.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].Domain");
-				websiteInstance.BuyTime = context.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].BuyTime");
-				websiteInstance.IndexPageScanInterval = context.IntegerValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].IndexPageScanInterval");
-				websiteInstance.IndexPage = context.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].IndexPage");
-				websiteInstance.ExpiredTime = context.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].ExpiredTime");
-				websiteInstance.Status = context.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].Status");
+				websiteInstance.Protocol = _ctx.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].Protocol");
+				websiteInstance.InstanceId = _ctx.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].InstanceId");
+				websiteInstance.WebsiteScanInterval = _ctx.IntegerValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].WebsiteScanInterval");
+				websiteInstance.Domain = _ctx.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].Domain");
+				websiteInstance.BuyTime = _ctx.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].BuyTime");
+				websiteInstance.IndexPageScanInterval = _ctx.IntegerValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].IndexPageScanInterval");
+				websiteInstance.IndexPage = _ctx.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].IndexPage");
+				websiteInstance.ExpiredTime = _ctx.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].ExpiredTime");
+				websiteInstance.Status = _ctx.StringValue("DescribeWebsiteInstance.WebsiteInstanceList["+ i +"].Status");
 
 				describeWebsiteInstanceResponse_websiteInstanceList.Add(websiteInstance);
 			}

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.tdsr.Transform.V20200101
 {
     public class GetSceneListResponseUnmarshaller
     {
-        public static GetSceneListResponse Unmarshall(UnmarshallerContext context)
+        public static GetSceneListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetSceneListResponse getSceneListResponse = new GetSceneListResponse();
 
-			getSceneListResponse.HttpResponse = context.HttpResponse;
-			getSceneListResponse.RequestId = context.StringValue("GetSceneList.RequestId");
-			getSceneListResponse.Success = context.BooleanValue("GetSceneList.Success");
-			getSceneListResponse.ErrMessage = context.StringValue("GetSceneList.ErrMessage");
-			getSceneListResponse.Data = context.StringValue("GetSceneList.Data");
+			getSceneListResponse.HttpResponse = _ctx.HttpResponse;
+			getSceneListResponse.RequestId = _ctx.StringValue("GetSceneList.RequestId");
+			getSceneListResponse.Success = _ctx.BooleanValue("GetSceneList.Success");
+			getSceneListResponse.ErrMessage = _ctx.StringValue("GetSceneList.ErrMessage");
+			getSceneListResponse.Data = _ctx.StringValue("GetSceneList.Data");
         
 			return getSceneListResponse;
         }

@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 {
     public class DeleteFacesResponseUnmarshaller
     {
-        public static DeleteFacesResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteFacesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteFacesResponse deleteFacesResponse = new DeleteFacesResponse();
 
-			deleteFacesResponse.HttpResponse = context.HttpResponse;
+			deleteFacesResponse.HttpResponse = _ctx.HttpResponse;
         
 			return deleteFacesResponse;
         }

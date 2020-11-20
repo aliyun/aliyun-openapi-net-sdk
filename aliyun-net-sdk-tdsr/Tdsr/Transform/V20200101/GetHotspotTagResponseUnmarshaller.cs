@@ -26,16 +26,16 @@ namespace Aliyun.Acs.tdsr.Transform.V20200101
 {
     public class GetHotspotTagResponseUnmarshaller
     {
-        public static GetHotspotTagResponse Unmarshall(UnmarshallerContext context)
+        public static GetHotspotTagResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetHotspotTagResponse getHotspotTagResponse = new GetHotspotTagResponse();
 
-			getHotspotTagResponse.HttpResponse = context.HttpResponse;
-			getHotspotTagResponse.RequestId = context.StringValue("GetHotspotTag.RequestId");
-			getHotspotTagResponse.Success = context.BooleanValue("GetHotspotTag.Success");
-			getHotspotTagResponse.ErrMessage = context.StringValue("GetHotspotTag.ErrMessage");
-			getHotspotTagResponse.Data = context.StringValue("GetHotspotTag.Data");
-			getHotspotTagResponse.ObjectString = context.StringValue("GetHotspotTag.ObjectString");
+			getHotspotTagResponse.HttpResponse = _ctx.HttpResponse;
+			getHotspotTagResponse.RequestId = _ctx.StringValue("GetHotspotTag.RequestId");
+			getHotspotTagResponse.Success = _ctx.BooleanValue("GetHotspotTag.Success");
+			getHotspotTagResponse.ErrMessage = _ctx.StringValue("GetHotspotTag.ErrMessage");
+			getHotspotTagResponse.Data = _ctx.StringValue("GetHotspotTag.Data");
+			getHotspotTagResponse.ObjectString = _ctx.StringValue("GetHotspotTag.ObjectString");
         
 			return getHotspotTagResponse;
         }

@@ -16,13 +16,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Actiontrail.Transform;
 using Aliyun.Acs.Actiontrail.Transform.V20171204;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20171204
 {
@@ -31,26 +32,17 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
         public DescribeTrailsRequest()
             : base("Actiontrail", "2017-12-04", "DescribeTrails", "actiontrail", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Actiontrail.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Actiontrail.Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string nameList;
 
 		private bool? includeShadowTrails;
 
-		private string accessKeyId;
-
-		public string NameList
-		{
-			get
-			{
-				return nameList;
-			}
-			set	
-			{
-				nameList = value;
-				DictionaryUtil.Add(QueryParameters, "NameList", value);
-			}
-		}
+		private string nameList;
 
 		public bool? IncludeShadowTrails
 		{
@@ -65,16 +57,16 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public string AccessKeyId
+		public string NameList
 		{
 			get
 			{
-				return accessKeyId;
+				return nameList;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				nameList = value;
+				DictionaryUtil.Add(QueryParameters, "NameList", value);
 			}
 		}
 
@@ -83,7 +75,7 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			return false;
 		}
 
-        public override DescribeTrailsResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+        public override DescribeTrailsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeTrailsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

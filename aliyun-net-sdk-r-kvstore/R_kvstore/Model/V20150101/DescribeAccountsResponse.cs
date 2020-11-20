@@ -66,8 +66,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string accountDescription;
 
-			private string privExceeded;
-
 			private List<DescribeAccounts_DatabasePrivilege> databasePrivileges;
 
 			public string InstanceId
@@ -127,18 +125,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					accountDescription = value;
-				}
-			}
-
-			public string PrivExceeded
-			{
-				get
-				{
-					return privExceeded;
-				}
-				set	
-				{
-					privExceeded = value;
 				}
 			}
 

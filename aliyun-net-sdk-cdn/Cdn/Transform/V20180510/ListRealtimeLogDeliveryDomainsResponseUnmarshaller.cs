@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class ListRealtimeLogDeliveryDomainsResponseUnmarshaller
     {
-        public static ListRealtimeLogDeliveryDomainsResponse Unmarshall(UnmarshallerContext context)
+        public static ListRealtimeLogDeliveryDomainsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListRealtimeLogDeliveryDomainsResponse listRealtimeLogDeliveryDomainsResponse = new ListRealtimeLogDeliveryDomainsResponse();
 
-			listRealtimeLogDeliveryDomainsResponse.HttpResponse = context.HttpResponse;
-			listRealtimeLogDeliveryDomainsResponse.RequestId = context.StringValue("ListRealtimeLogDeliveryDomains.RequestId");
+			listRealtimeLogDeliveryDomainsResponse.HttpResponse = _ctx.HttpResponse;
+			listRealtimeLogDeliveryDomainsResponse.RequestId = _ctx.StringValue("ListRealtimeLogDeliveryDomains.RequestId");
 
 			List<ListRealtimeLogDeliveryDomainsResponse.ListRealtimeLogDeliveryDomains_Domains> listRealtimeLogDeliveryDomainsResponse_content = new List<ListRealtimeLogDeliveryDomainsResponse.ListRealtimeLogDeliveryDomains_Domains>();
-			for (int i = 0; i < context.Length("ListRealtimeLogDeliveryDomains.Content.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListRealtimeLogDeliveryDomains.Content.Length"); i++) {
 				ListRealtimeLogDeliveryDomainsResponse.ListRealtimeLogDeliveryDomains_Domains domains = new ListRealtimeLogDeliveryDomainsResponse.ListRealtimeLogDeliveryDomains_Domains();
-				domains.DomainName = context.StringValue("ListRealtimeLogDeliveryDomains.Content["+ i +"].DomainName");
-				domains.Status = context.StringValue("ListRealtimeLogDeliveryDomains.Content["+ i +"].Status");
+				domains.DomainName = _ctx.StringValue("ListRealtimeLogDeliveryDomains.Content["+ i +"].DomainName");
+				domains.Status = _ctx.StringValue("ListRealtimeLogDeliveryDomains.Content["+ i +"].Status");
 
 				listRealtimeLogDeliveryDomainsResponse_content.Add(domains);
 			}

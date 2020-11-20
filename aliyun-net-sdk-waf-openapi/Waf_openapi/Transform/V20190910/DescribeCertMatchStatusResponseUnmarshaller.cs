@@ -26,13 +26,13 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class DescribeCertMatchStatusResponseUnmarshaller
     {
-        public static DescribeCertMatchStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCertMatchStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCertMatchStatusResponse describeCertMatchStatusResponse = new DescribeCertMatchStatusResponse();
 
-			describeCertMatchStatusResponse.HttpResponse = context.HttpResponse;
-			describeCertMatchStatusResponse.RequestId = context.StringValue("DescribeCertMatchStatus.RequestId");
-			describeCertMatchStatusResponse.MatchStatus = context.BooleanValue("DescribeCertMatchStatus.MatchStatus");
+			describeCertMatchStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeCertMatchStatusResponse.RequestId = _ctx.StringValue("DescribeCertMatchStatus.RequestId");
+			describeCertMatchStatusResponse.MatchStatus = _ctx.BooleanValue("DescribeCertMatchStatus.MatchStatus");
         
 			return describeCertMatchStatusResponse;
         }

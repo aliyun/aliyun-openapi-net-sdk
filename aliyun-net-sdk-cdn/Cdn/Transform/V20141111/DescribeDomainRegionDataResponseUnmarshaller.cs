@@ -26,34 +26,34 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeDomainRegionDataResponseUnmarshaller
     {
-        public static DescribeDomainRegionDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainRegionDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainRegionDataResponse describeDomainRegionDataResponse = new DescribeDomainRegionDataResponse();
 
-			describeDomainRegionDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainRegionDataResponse.RequestId = context.StringValue("DescribeDomainRegionData.RequestId");
-			describeDomainRegionDataResponse.DomainName = context.StringValue("DescribeDomainRegionData.DomainName");
-			describeDomainRegionDataResponse.DataInterval = context.StringValue("DescribeDomainRegionData.DataInterval");
-			describeDomainRegionDataResponse.StartTime = context.StringValue("DescribeDomainRegionData.StartTime");
-			describeDomainRegionDataResponse.EndTime = context.StringValue("DescribeDomainRegionData.EndTime");
+			describeDomainRegionDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainRegionDataResponse.RequestId = _ctx.StringValue("DescribeDomainRegionData.RequestId");
+			describeDomainRegionDataResponse.DomainName = _ctx.StringValue("DescribeDomainRegionData.DomainName");
+			describeDomainRegionDataResponse.DataInterval = _ctx.StringValue("DescribeDomainRegionData.DataInterval");
+			describeDomainRegionDataResponse.StartTime = _ctx.StringValue("DescribeDomainRegionData.StartTime");
+			describeDomainRegionDataResponse.EndTime = _ctx.StringValue("DescribeDomainRegionData.EndTime");
 
 			List<DescribeDomainRegionDataResponse.DescribeDomainRegionData_RegionProportionData> describeDomainRegionDataResponse_value = new List<DescribeDomainRegionDataResponse.DescribeDomainRegionData_RegionProportionData>();
-			for (int i = 0; i < context.Length("DescribeDomainRegionData.Value.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainRegionData.Value.Length"); i++) {
 				DescribeDomainRegionDataResponse.DescribeDomainRegionData_RegionProportionData regionProportionData = new DescribeDomainRegionDataResponse.DescribeDomainRegionData_RegionProportionData();
-				regionProportionData.Region = context.StringValue("DescribeDomainRegionData.Value["+ i +"].Region");
-				regionProportionData.Proportion = context.StringValue("DescribeDomainRegionData.Value["+ i +"].Proportion");
-				regionProportionData.RegionEname = context.StringValue("DescribeDomainRegionData.Value["+ i +"].RegionEname");
-				regionProportionData.AvgObjectSize = context.StringValue("DescribeDomainRegionData.Value["+ i +"].AvgObjectSize");
-				regionProportionData.AvgResponseTime = context.StringValue("DescribeDomainRegionData.Value["+ i +"].AvgResponseTime");
-				regionProportionData.Bps = context.StringValue("DescribeDomainRegionData.Value["+ i +"].Bps");
-				regionProportionData.Qps = context.StringValue("DescribeDomainRegionData.Value["+ i +"].Qps");
-				regionProportionData.AvgResponseRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].AvgResponseRate");
-				regionProportionData.ByteHitRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].ByteHitRate");
-				regionProportionData.ReqHitRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].ReqHitRate");
-				regionProportionData.ReqErrRate = context.StringValue("DescribeDomainRegionData.Value["+ i +"].ReqErrRate");
-				regionProportionData.TotalBytes = context.StringValue("DescribeDomainRegionData.Value["+ i +"].TotalBytes");
-				regionProportionData.BytesProportion = context.StringValue("DescribeDomainRegionData.Value["+ i +"].BytesProportion");
-				regionProportionData.TotalQuery = context.StringValue("DescribeDomainRegionData.Value["+ i +"].TotalQuery");
+				regionProportionData.Region = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].Region");
+				regionProportionData.Proportion = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].Proportion");
+				regionProportionData.RegionEname = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].RegionEname");
+				regionProportionData.AvgObjectSize = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].AvgObjectSize");
+				regionProportionData.AvgResponseTime = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].AvgResponseTime");
+				regionProportionData.Bps = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].Bps");
+				regionProportionData.Qps = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].Qps");
+				regionProportionData.AvgResponseRate = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].AvgResponseRate");
+				regionProportionData.ByteHitRate = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].ByteHitRate");
+				regionProportionData.ReqHitRate = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].ReqHitRate");
+				regionProportionData.ReqErrRate = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].ReqErrRate");
+				regionProportionData.TotalBytes = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].TotalBytes");
+				regionProportionData.BytesProportion = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].BytesProportion");
+				regionProportionData.TotalQuery = _ctx.StringValue("DescribeDomainRegionData.Value["+ i +"].TotalQuery");
 
 				describeDomainRegionDataResponse_value.Add(regionProportionData);
 			}

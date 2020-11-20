@@ -26,24 +26,25 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeRegionsResponseUnmarshaller
     {
-        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
-			describeRegionsResponse.HttpResponse = context.HttpResponse;
-			describeRegionsResponse.RequestId = context.StringValue("DescribeRegions.RequestId");
+			describeRegionsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
 
 			List<DescribeRegionsResponse.DescribeRegions_DdsRegion> describeRegionsResponse_regions = new List<DescribeRegionsResponse.DescribeRegions_DdsRegion>();
-			for (int i = 0; i < context.Length("DescribeRegions.Regions.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRegions.Regions.Length"); i++) {
 				DescribeRegionsResponse.DescribeRegions_DdsRegion ddsRegion = new DescribeRegionsResponse.DescribeRegions_DdsRegion();
-				ddsRegion.RegionId = context.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
-				ddsRegion.ZoneIds = context.StringValue("DescribeRegions.Regions["+ i +"].ZoneIds");
+				ddsRegion.RegionId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].RegionId");
+				ddsRegion.ZoneIds = _ctx.StringValue("DescribeRegions.Regions["+ i +"].ZoneIds");
 
 				List<DescribeRegionsResponse.DescribeRegions_DdsRegion.DescribeRegions_Zone> ddsRegion_zones = new List<DescribeRegionsResponse.DescribeRegions_DdsRegion.DescribeRegions_Zone>();
-				for (int j = 0; j < context.Length("DescribeRegions.Regions["+ i +"].Zones.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeRegions.Regions["+ i +"].Zones.Length"); j++) {
 					DescribeRegionsResponse.DescribeRegions_DdsRegion.DescribeRegions_Zone zone = new DescribeRegionsResponse.DescribeRegions_DdsRegion.DescribeRegions_Zone();
-					zone.ZoneId = context.StringValue("DescribeRegions.Regions["+ i +"].Zones["+ j +"].ZoneId");
-					zone.VpcEnabled = context.BooleanValue("DescribeRegions.Regions["+ i +"].Zones["+ j +"].VpcEnabled");
+					zone.ZoneId = _ctx.StringValue("DescribeRegions.Regions["+ i +"].Zones["+ j +"].ZoneId");
+					zone.VpcEnabled = _ctx.BooleanValue("DescribeRegions.Regions["+ i +"].Zones["+ j +"].VpcEnabled");
+					zone.ZoneName = _ctx.StringValue("DescribeRegions.Regions["+ i +"].Zones["+ j +"].ZoneName");
 
 					ddsRegion_zones.Add(zone);
 				}

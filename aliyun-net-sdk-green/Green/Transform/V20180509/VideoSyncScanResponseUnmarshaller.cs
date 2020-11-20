@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 {
     public class VideoSyncScanResponseUnmarshaller
     {
-        public static VideoSyncScanResponse Unmarshall(UnmarshallerContext context)
+        public static VideoSyncScanResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VideoSyncScanResponse videoSyncScanResponse = new VideoSyncScanResponse();
 
-			videoSyncScanResponse.HttpResponse = context.HttpResponse;
+			videoSyncScanResponse.HttpResponse = _ctx.HttpResponse;
         
 			return videoSyncScanResponse;
         }

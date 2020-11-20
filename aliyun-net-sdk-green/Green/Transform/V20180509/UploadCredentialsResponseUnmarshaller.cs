@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 {
     public class UploadCredentialsResponseUnmarshaller
     {
-        public static UploadCredentialsResponse Unmarshall(UnmarshallerContext context)
+        public static UploadCredentialsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UploadCredentialsResponse uploadCredentialsResponse = new UploadCredentialsResponse();
 
-			uploadCredentialsResponse.HttpResponse = context.HttpResponse;
+			uploadCredentialsResponse.HttpResponse = _ctx.HttpResponse;
         
 			return uploadCredentialsResponse;
         }

@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,41 +33,27 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public DescribeScalingInstancesRequest()
             : base("Ess", "2014-08-28", "DescribeScalingInstances", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string instanceId10;
 
 		private long? resourceOwnerId;
 
-		private string instanceId12;
-
-		private string instanceId11;
-
-		private string scalingGroupId;
-
-		private string lifecycleState;
-
 		private string creationType;
-
-		private int? pageNumber;
-
-		private int? pageSize;
-
-		private string instanceId20;
 
 		private string instanceId1;
 
 		private string instanceId3;
-
-		private string resourceOwnerAccount;
 
 		private string instanceId2;
 
 		private string instanceId5;
 
 		private string instanceId4;
-
-		private string ownerAccount;
 
 		private string instanceId7;
 
@@ -82,6 +69,26 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string healthStatus;
 
+		private string instanceId10;
+
+		private string instanceId12;
+
+		private string instanceId11;
+
+		private string scalingGroupId;
+
+		private string lifecycleState;
+
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		private string instanceId20;
+
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
 		private string instanceId18;
 
 		private string instanceId17;
@@ -96,19 +103,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string instanceId15;
 
-		public string InstanceId10
-		{
-			get
-			{
-				return instanceId10;
-			}
-			set	
-			{
-				instanceId10 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.10", value);
-			}
-		}
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -122,58 +116,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string InstanceId12
-		{
-			get
-			{
-				return instanceId12;
-			}
-			set	
-			{
-				instanceId12 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.12", value);
-			}
-		}
-
-		public string InstanceId11
-		{
-			get
-			{
-				return instanceId11;
-			}
-			set	
-			{
-				instanceId11 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.11", value);
-			}
-		}
-
-		public string ScalingGroupId
-		{
-			get
-			{
-				return scalingGroupId;
-			}
-			set	
-			{
-				scalingGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
-			}
-		}
-
-		public string LifecycleState
-		{
-			get
-			{
-				return lifecycleState;
-			}
-			set	
-			{
-				lifecycleState = value;
-				DictionaryUtil.Add(QueryParameters, "LifecycleState", value);
-			}
-		}
-
 		public string CreationType
 		{
 			get
@@ -184,45 +126,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				creationType = value;
 				DictionaryUtil.Add(QueryParameters, "CreationType", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string InstanceId20
-		{
-			get
-			{
-				return instanceId20;
-			}
-			set	
-			{
-				instanceId20 = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId.20", value);
 			}
 		}
 
@@ -249,19 +152,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				instanceId3 = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId.3", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -301,19 +191,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				instanceId4 = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId.4", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 
@@ -405,6 +282,136 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				healthStatus = value;
 				DictionaryUtil.Add(QueryParameters, "HealthStatus", value);
+			}
+		}
+
+		public string InstanceId10
+		{
+			get
+			{
+				return instanceId10;
+			}
+			set	
+			{
+				instanceId10 = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId.10", value);
+			}
+		}
+
+		public string InstanceId12
+		{
+			get
+			{
+				return instanceId12;
+			}
+			set	
+			{
+				instanceId12 = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId.12", value);
+			}
+		}
+
+		public string InstanceId11
+		{
+			get
+			{
+				return instanceId11;
+			}
+			set	
+			{
+				instanceId11 = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId.11", value);
+			}
+		}
+
+		public string ScalingGroupId
+		{
+			get
+			{
+				return scalingGroupId;
+			}
+			set	
+			{
+				scalingGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
+			}
+		}
+
+		public string LifecycleState
+		{
+			get
+			{
+				return lifecycleState;
+			}
+			set	
+			{
+				lifecycleState = value;
+				DictionaryUtil.Add(QueryParameters, "LifecycleState", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string InstanceId20
+		{
+			get
+			{
+				return instanceId20;
+			}
+			set	
+			{
+				instanceId20 = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId.20", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
 		}
 

@@ -42,13 +42,13 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string extraParams;
 
-		private string userType;
-
 		private string userId;
 
 		private int? pageNumber;
 
 		private int? pageSize;
+
+		private string userType;
 
 		private string userName;
 
@@ -62,19 +62,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				extraParams = value;
 				DictionaryUtil.Add(BodyParameters, "ExtraParams", value);
-			}
-		}
-
-		public string UserType
-		{
-			get
-			{
-				return userType;
-			}
-			set	
-			{
-				userType = value;
-				DictionaryUtil.Add(BodyParameters, "UserType", value);
 			}
 		}
 
@@ -114,6 +101,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				pageSize = value;
 				DictionaryUtil.Add(BodyParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string UserType
+		{
+			get
+			{
+				return userType;
+			}
+			set	
+			{
+				userType = value;
+				DictionaryUtil.Add(BodyParameters, "UserType", value);
 			}
 		}
 

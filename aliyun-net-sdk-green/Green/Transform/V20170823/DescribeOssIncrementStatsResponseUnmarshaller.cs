@@ -26,24 +26,24 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeOssIncrementStatsResponseUnmarshaller
     {
-        public static DescribeOssIncrementStatsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOssIncrementStatsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeOssIncrementStatsResponse describeOssIncrementStatsResponse = new DescribeOssIncrementStatsResponse();
 
-			describeOssIncrementStatsResponse.HttpResponse = context.HttpResponse;
-			describeOssIncrementStatsResponse.RequestId = context.StringValue("DescribeOssIncrementStats.RequestId");
-			describeOssIncrementStatsResponse.TotalCount = context.IntegerValue("DescribeOssIncrementStats.TotalCount");
+			describeOssIncrementStatsResponse.HttpResponse = _ctx.HttpResponse;
+			describeOssIncrementStatsResponse.RequestId = _ctx.StringValue("DescribeOssIncrementStats.RequestId");
+			describeOssIncrementStatsResponse.TotalCount = _ctx.IntegerValue("DescribeOssIncrementStats.TotalCount");
 
 			List<DescribeOssIncrementStatsResponse.DescribeOssIncrementStats_Stat> describeOssIncrementStatsResponse_statList = new List<DescribeOssIncrementStatsResponse.DescribeOssIncrementStats_Stat>();
-			for (int i = 0; i < context.Length("DescribeOssIncrementStats.StatList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeOssIncrementStats.StatList.Length"); i++) {
 				DescribeOssIncrementStatsResponse.DescribeOssIncrementStats_Stat stat = new DescribeOssIncrementStatsResponse.DescribeOssIncrementStats_Stat();
-				stat.ResourceType = context.StringValue("DescribeOssIncrementStats.StatList["+ i +"].ResourceType");
-				stat.Scene = context.StringValue("DescribeOssIncrementStats.StatList["+ i +"].Scene");
-				stat.Date = context.StringValue("DescribeOssIncrementStats.StatList["+ i +"].Date");
-				stat.TotalCount = context.IntegerValue("DescribeOssIncrementStats.StatList["+ i +"].TotalCount");
-				stat.PassCount = context.IntegerValue("DescribeOssIncrementStats.StatList["+ i +"].PassCount");
-				stat.ReviewCount = context.IntegerValue("DescribeOssIncrementStats.StatList["+ i +"].ReviewCount");
-				stat.BlockCount = context.IntegerValue("DescribeOssIncrementStats.StatList["+ i +"].BlockCount");
+				stat.ResourceType = _ctx.StringValue("DescribeOssIncrementStats.StatList["+ i +"].ResourceType");
+				stat.Scene = _ctx.StringValue("DescribeOssIncrementStats.StatList["+ i +"].Scene");
+				stat.Date = _ctx.StringValue("DescribeOssIncrementStats.StatList["+ i +"].Date");
+				stat.TotalCount = _ctx.IntegerValue("DescribeOssIncrementStats.StatList["+ i +"].TotalCount");
+				stat.PassCount = _ctx.IntegerValue("DescribeOssIncrementStats.StatList["+ i +"].PassCount");
+				stat.ReviewCount = _ctx.IntegerValue("DescribeOssIncrementStats.StatList["+ i +"].ReviewCount");
+				stat.BlockCount = _ctx.IntegerValue("DescribeOssIncrementStats.StatList["+ i +"].BlockCount");
 
 				describeOssIncrementStatsResponse_statList.Add(stat);
 			}

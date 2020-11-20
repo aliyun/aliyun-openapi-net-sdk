@@ -109,6 +109,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 
 		private int? duration;
 
+		private int? coldStorageSize;
+
 		private List<DescribeInstance_Tag> tags;
 
 		public string RequestId
@@ -612,6 +614,18 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			set	
 			{
 				duration = value;
+			}
+		}
+
+		public int? ColdStorageSize
+		{
+			get
+			{
+				return coldStorageSize;
+			}
+			set	
+			{
+				coldStorageSize = value;
 			}
 		}
 

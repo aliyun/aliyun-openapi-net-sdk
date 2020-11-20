@@ -46,6 +46,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 		private string type;
 
+		private string constraints;
+
 		private string name;
 
 		private string _value;
@@ -86,6 +88,19 @@ namespace Aliyun.Acs.oos.Model.V20190601
 			{
 				type = value;
 				DictionaryUtil.Add(QueryParameters, "Type", value);
+			}
+		}
+
+		public string Constraints
+		{
+			get
+			{
+				return constraints;
+			}
+			set	
+			{
+				constraints = value;
+				DictionaryUtil.Add(QueryParameters, "Constraints", value);
 			}
 		}
 

@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.xtrace;
 using Aliyun.Acs.xtrace.Transform;
 using Aliyun.Acs.xtrace.Transform.V20190808;
 
@@ -30,13 +31,14 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
     public class ListServicesRequest : RpcAcsRequest<ListServicesResponse>
     {
         public ListServicesRequest()
-            : base("xtrace", "2019-08-08", "ListServices", "xtrace", "openAPI")
+            : base("xtrace", "2019-08-08", "ListServices")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string appType;

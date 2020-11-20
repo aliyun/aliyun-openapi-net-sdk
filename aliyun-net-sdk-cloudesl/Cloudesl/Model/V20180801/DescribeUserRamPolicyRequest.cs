@@ -16,41 +16,35 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20180801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
     public class DescribeUserRamPolicyRequest : RpcAcsRequest<DescribeUserRamPolicyResponse>
     {
         public DescribeUserRamPolicyRequest()
-            : base("cloudesl", "2018-08-01", "DescribeUserRamPolicy")
+            : base("cloudesl", "2018-08-01", "DescribeUserRamPolicy", "cloudesl", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string companyId;
 
 		private string userType;
 
 		private string storeId;
 
-		public string CompanyId
-		{
-			get
-			{
-				return companyId;
-			}
-			set	
-			{
-				companyId = value;
-				DictionaryUtil.Add(QueryParameters, "CompanyId", value);
-			}
-		}
+		private string companyId;
 
 		public string UserType
 		{
@@ -78,7 +72,20 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-        public override DescribeUserRamPolicyResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string CompanyId
+		{
+			get
+			{
+				return companyId;
+			}
+			set	
+			{
+				companyId = value;
+				DictionaryUtil.Add(QueryParameters, "CompanyId", value);
+			}
+		}
+
+        public override DescribeUserRamPolicyResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return DescribeUserRamPolicyResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

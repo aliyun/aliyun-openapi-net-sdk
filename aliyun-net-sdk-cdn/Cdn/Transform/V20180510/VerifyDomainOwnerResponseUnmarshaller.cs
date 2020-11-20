@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class VerifyDomainOwnerResponseUnmarshaller
     {
-        public static VerifyDomainOwnerResponse Unmarshall(UnmarshallerContext context)
+        public static VerifyDomainOwnerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VerifyDomainOwnerResponse verifyDomainOwnerResponse = new VerifyDomainOwnerResponse();
 
-			verifyDomainOwnerResponse.HttpResponse = context.HttpResponse;
-			verifyDomainOwnerResponse.RequestId = context.StringValue("VerifyDomainOwner.RequestId");
-			verifyDomainOwnerResponse.Content = context.StringValue("VerifyDomainOwner.Content");
+			verifyDomainOwnerResponse.HttpResponse = _ctx.HttpResponse;
+			verifyDomainOwnerResponse.RequestId = _ctx.StringValue("VerifyDomainOwner.RequestId");
+			verifyDomainOwnerResponse.Content = _ctx.StringValue("VerifyDomainOwner.Content");
         
 			return verifyDomainOwnerResponse;
         }

@@ -26,21 +26,21 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ListLogstashLogResponseUnmarshaller
     {
-        public static ListLogstashLogResponse Unmarshall(UnmarshallerContext context)
+        public static ListLogstashLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListLogstashLogResponse listLogstashLogResponse = new ListLogstashLogResponse();
 
-			listLogstashLogResponse.HttpResponse = context.HttpResponse;
-			listLogstashLogResponse.RequestId = context.StringValue("ListLogstashLog.RequestId");
+			listLogstashLogResponse.HttpResponse = _ctx.HttpResponse;
+			listLogstashLogResponse.RequestId = _ctx.StringValue("ListLogstashLog.RequestId");
 
 			List<ListLogstashLogResponse.ListLogstashLog_ResultItem> listLogstashLogResponse_result = new List<ListLogstashLogResponse.ListLogstashLog_ResultItem>();
-			for (int i = 0; i < context.Length("ListLogstashLog.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListLogstashLog.Result.Length"); i++) {
 				ListLogstashLogResponse.ListLogstashLog_ResultItem resultItem = new ListLogstashLogResponse.ListLogstashLog_ResultItem();
-				resultItem.Timestamp = context.LongValue("ListLogstashLog.Result["+ i +"].timestamp");
-				resultItem.Host = context.StringValue("ListLogstashLog.Result["+ i +"].host");
-				resultItem.Level = context.StringValue("ListLogstashLog.Result["+ i +"].level");
-				resultItem.Content = context.StringValue("ListLogstashLog.Result["+ i +"].content");
-				resultItem.InstanceId = context.StringValue("ListLogstashLog.Result["+ i +"].instanceId");
+				resultItem.Timestamp = _ctx.LongValue("ListLogstashLog.Result["+ i +"].timestamp");
+				resultItem.Host = _ctx.StringValue("ListLogstashLog.Result["+ i +"].host");
+				resultItem.Level = _ctx.StringValue("ListLogstashLog.Result["+ i +"].level");
+				resultItem.Content = _ctx.StringValue("ListLogstashLog.Result["+ i +"].content");
+				resultItem.InstanceId = _ctx.StringValue("ListLogstashLog.Result["+ i +"].instanceId");
 
 				listLogstashLogResponse_result.Add(resultItem);
 			}

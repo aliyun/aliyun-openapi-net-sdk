@@ -26,19 +26,19 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class RemoveTerminalsResponseUnmarshaller
     {
-        public static RemoveTerminalsResponse Unmarshall(UnmarshallerContext context)
+        public static RemoveTerminalsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RemoveTerminalsResponse removeTerminalsResponse = new RemoveTerminalsResponse();
 
-			removeTerminalsResponse.HttpResponse = context.HttpResponse;
-			removeTerminalsResponse.RequestId = context.StringValue("RemoveTerminals.RequestId");
+			removeTerminalsResponse.HttpResponse = _ctx.HttpResponse;
+			removeTerminalsResponse.RequestId = _ctx.StringValue("RemoveTerminals.RequestId");
 
 			List<RemoveTerminalsResponse.RemoveTerminals_Terminal> removeTerminalsResponse_terminals = new List<RemoveTerminalsResponse.RemoveTerminals_Terminal>();
-			for (int i = 0; i < context.Length("RemoveTerminals.Terminals.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RemoveTerminals.Terminals.Length"); i++) {
 				RemoveTerminalsResponse.RemoveTerminals_Terminal terminal = new RemoveTerminalsResponse.RemoveTerminals_Terminal();
-				terminal.Id = context.StringValue("RemoveTerminals.Terminals["+ i +"].Id");
-				terminal.Code = context.IntegerValue("RemoveTerminals.Terminals["+ i +"].Code");
-				terminal.Message = context.StringValue("RemoveTerminals.Terminals["+ i +"].Message");
+				terminal.Id = _ctx.StringValue("RemoveTerminals.Terminals["+ i +"].Id");
+				terminal.Code = _ctx.IntegerValue("RemoveTerminals.Terminals["+ i +"].Code");
+				terminal.Message = _ctx.StringValue("RemoveTerminals.Terminals["+ i +"].Message");
 
 				removeTerminalsResponse_terminals.Add(terminal);
 			}

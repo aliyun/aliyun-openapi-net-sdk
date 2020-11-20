@@ -118,8 +118,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string architectureType;
 
-			private string nodeType1;
-
 			private string packageType;
 
 			private string replicaId;
@@ -135,6 +133,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			private bool? instanceReleaseProtection;
 
 			private string resourceGroupId;
+
+			private int? shardCount;
 
 			private List<DescribeInstanceAttribute_Tag> tags;
 
@@ -510,18 +510,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public string NodeType1
-			{
-				get
-				{
-					return nodeType1;
-				}
-				set	
-				{
-					nodeType1 = value;
-				}
-			}
-
 			public string PackageType
 			{
 				get
@@ -615,6 +603,18 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public int? ShardCount
+			{
+				get
+				{
+					return shardCount;
+				}
+				set	
+				{
+					shardCount = value;
 				}
 			}
 

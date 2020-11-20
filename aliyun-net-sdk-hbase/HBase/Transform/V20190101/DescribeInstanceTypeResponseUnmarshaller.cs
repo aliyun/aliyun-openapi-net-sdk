@@ -26,19 +26,19 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DescribeInstanceTypeResponseUnmarshaller
     {
-        public static DescribeInstanceTypeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInstanceTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeInstanceTypeResponse describeInstanceTypeResponse = new DescribeInstanceTypeResponse();
 
-			describeInstanceTypeResponse.HttpResponse = context.HttpResponse;
-			describeInstanceTypeResponse.RequestId = context.StringValue("DescribeInstanceType.RequestId");
+			describeInstanceTypeResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceTypeResponse.RequestId = _ctx.StringValue("DescribeInstanceType.RequestId");
 
 			List<DescribeInstanceTypeResponse.DescribeInstanceType_InstanceTypeSpec> describeInstanceTypeResponse_instanceTypeSpecList = new List<DescribeInstanceTypeResponse.DescribeInstanceType_InstanceTypeSpec>();
-			for (int i = 0; i < context.Length("DescribeInstanceType.InstanceTypeSpecList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeInstanceType.InstanceTypeSpecList.Length"); i++) {
 				DescribeInstanceTypeResponse.DescribeInstanceType_InstanceTypeSpec instanceTypeSpec = new DescribeInstanceTypeResponse.DescribeInstanceType_InstanceTypeSpec();
-				instanceTypeSpec.InstanceType = context.StringValue("DescribeInstanceType.InstanceTypeSpecList["+ i +"].InstanceType");
-				instanceTypeSpec.CpuSize = context.LongValue("DescribeInstanceType.InstanceTypeSpecList["+ i +"].CpuSize");
-				instanceTypeSpec.MemSize = context.LongValue("DescribeInstanceType.InstanceTypeSpecList["+ i +"].MemSize");
+				instanceTypeSpec.InstanceType = _ctx.StringValue("DescribeInstanceType.InstanceTypeSpecList["+ i +"].InstanceType");
+				instanceTypeSpec.CpuSize = _ctx.LongValue("DescribeInstanceType.InstanceTypeSpecList["+ i +"].CpuSize");
+				instanceTypeSpec.MemSize = _ctx.LongValue("DescribeInstanceType.InstanceTypeSpecList["+ i +"].MemSize");
 
 				describeInstanceTypeResponse_instanceTypeSpecList.Add(instanceTypeSpec);
 			}

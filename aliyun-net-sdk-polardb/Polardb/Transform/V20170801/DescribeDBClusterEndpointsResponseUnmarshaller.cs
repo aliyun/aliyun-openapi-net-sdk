@@ -26,36 +26,36 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class DescribeDBClusterEndpointsResponseUnmarshaller
     {
-        public static DescribeDBClusterEndpointsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBClusterEndpointsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBClusterEndpointsResponse describeDBClusterEndpointsResponse = new DescribeDBClusterEndpointsResponse();
 
-			describeDBClusterEndpointsResponse.HttpResponse = context.HttpResponse;
-			describeDBClusterEndpointsResponse.RequestId = context.StringValue("DescribeDBClusterEndpoints.RequestId");
+			describeDBClusterEndpointsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBClusterEndpointsResponse.RequestId = _ctx.StringValue("DescribeDBClusterEndpoints.RequestId");
 
 			List<DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint> describeDBClusterEndpointsResponse_items = new List<DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint>();
-			for (int i = 0; i < context.Length("DescribeDBClusterEndpoints.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDBClusterEndpoints.Items.Length"); i++) {
 				DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint dBEndpoint = new DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint();
-				dBEndpoint.DBEndpointId = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].DBEndpointId");
-				dBEndpoint.EndpointType = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].EndpointType");
-				dBEndpoint.Nodes = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].Nodes");
-				dBEndpoint.ReadWriteMode = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].ReadWriteMode");
-				dBEndpoint.AutoAddNewNodes = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AutoAddNewNodes");
-				dBEndpoint.EndpointConfig = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].EndpointConfig");
-				dBEndpoint.NodeWithRoles = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].NodeWithRoles");
-				dBEndpoint.DBEndpointDescription = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].DBEndpointDescription");
+				dBEndpoint.DBEndpointId = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].DBEndpointId");
+				dBEndpoint.EndpointType = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].EndpointType");
+				dBEndpoint.Nodes = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].Nodes");
+				dBEndpoint.ReadWriteMode = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].ReadWriteMode");
+				dBEndpoint.AutoAddNewNodes = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AutoAddNewNodes");
+				dBEndpoint.EndpointConfig = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].EndpointConfig");
+				dBEndpoint.NodeWithRoles = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].NodeWithRoles");
+				dBEndpoint.DBEndpointDescription = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].DBEndpointDescription");
 
 				List<DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint.DescribeDBClusterEndpoints_Address> dBEndpoint_addressItems = new List<DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint.DescribeDBClusterEndpoints_Address>();
-				for (int j = 0; j < context.Length("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems.Length"); j++) {
 					DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint.DescribeDBClusterEndpoints_Address address = new DescribeDBClusterEndpointsResponse.DescribeDBClusterEndpoints_DBEndpoint.DescribeDBClusterEndpoints_Address();
-					address.ConnectionString = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].ConnectionString");
-					address.IPAddress = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].IPAddress");
-					address.NetType = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].NetType");
-					address.Port = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].Port");
-					address.VPCId = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VPCId");
-					address.VSwitchId = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VSwitchId");
-					address.VpcInstanceId = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VpcInstanceId");
-					address.PrivateZoneConnectionString = context.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].PrivateZoneConnectionString");
+					address.ConnectionString = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].ConnectionString");
+					address.IPAddress = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].IPAddress");
+					address.NetType = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].NetType");
+					address.Port = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].Port");
+					address.VPCId = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VPCId");
+					address.VSwitchId = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VSwitchId");
+					address.VpcInstanceId = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].VpcInstanceId");
+					address.PrivateZoneConnectionString = _ctx.StringValue("DescribeDBClusterEndpoints.Items["+ i +"].AddressItems["+ j +"].PrivateZoneConnectionString");
 
 					dBEndpoint_addressItems.Add(address);
 				}

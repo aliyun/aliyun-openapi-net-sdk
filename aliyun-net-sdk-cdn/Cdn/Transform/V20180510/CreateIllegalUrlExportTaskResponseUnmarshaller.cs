@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class CreateIllegalUrlExportTaskResponseUnmarshaller
     {
-        public static CreateIllegalUrlExportTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateIllegalUrlExportTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateIllegalUrlExportTaskResponse createIllegalUrlExportTaskResponse = new CreateIllegalUrlExportTaskResponse();
 
-			createIllegalUrlExportTaskResponse.HttpResponse = context.HttpResponse;
-			createIllegalUrlExportTaskResponse.RequestId = context.StringValue("CreateIllegalUrlExportTask.RequestId");
-			createIllegalUrlExportTaskResponse.TaskId = context.StringValue("CreateIllegalUrlExportTask.TaskId");
+			createIllegalUrlExportTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createIllegalUrlExportTaskResponse.RequestId = _ctx.StringValue("CreateIllegalUrlExportTask.RequestId");
+			createIllegalUrlExportTaskResponse.TaskId = _ctx.StringValue("CreateIllegalUrlExportTask.TaskId");
         
 			return createIllegalUrlExportTaskResponse;
         }

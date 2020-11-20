@@ -26,13 +26,13 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class GetMPUTaskStatusResponseUnmarshaller
     {
-        public static GetMPUTaskStatusResponse Unmarshall(UnmarshallerContext context)
+        public static GetMPUTaskStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetMPUTaskStatusResponse getMPUTaskStatusResponse = new GetMPUTaskStatusResponse();
 
-			getMPUTaskStatusResponse.HttpResponse = context.HttpResponse;
-			getMPUTaskStatusResponse.RequestId = context.StringValue("GetMPUTaskStatus.RequestId");
-			getMPUTaskStatusResponse.Status = context.IntegerValue("GetMPUTaskStatus.Status");
+			getMPUTaskStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getMPUTaskStatusResponse.RequestId = _ctx.StringValue("GetMPUTaskStatus.RequestId");
+			getMPUTaskStatusResponse.Status = _ctx.IntegerValue("GetMPUTaskStatus.Status");
         
 			return getMPUTaskStatusResponse;
         }

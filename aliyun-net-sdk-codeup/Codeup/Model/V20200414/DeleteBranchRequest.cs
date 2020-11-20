@@ -33,7 +33,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
         public DeleteBranchRequest()
             : base("codeup", "2020-04-14", "DeleteBranch")
         {
-			UriPattern = "/api/v3/projects/[ProjectId]/repository/branches/[BranchName]";
+			UriPattern = "/api/v3/projects/[ProjectId]/repository/branches/delete";
 			Method = MethodType.DELETE;
         }
 
@@ -108,7 +108,7 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			set	
 			{
 				branchName = value;
-				DictionaryUtil.Add(PathParameters, "BranchName", value);
+				DictionaryUtil.Add(QueryParameters, "BranchName", value);
 			}
 		}
 

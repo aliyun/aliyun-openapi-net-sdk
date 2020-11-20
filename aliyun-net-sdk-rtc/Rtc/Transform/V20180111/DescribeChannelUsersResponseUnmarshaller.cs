@@ -26,34 +26,34 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeChannelUsersResponseUnmarshaller
     {
-        public static DescribeChannelUsersResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeChannelUsersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeChannelUsersResponse describeChannelUsersResponse = new DescribeChannelUsersResponse();
 
-			describeChannelUsersResponse.HttpResponse = context.HttpResponse;
-			describeChannelUsersResponse.RequestId = context.StringValue("DescribeChannelUsers.RequestId");
-			describeChannelUsersResponse.Timestamp = context.IntegerValue("DescribeChannelUsers.Timestamp");
-			describeChannelUsersResponse.IsChannelExist = context.BooleanValue("DescribeChannelUsers.IsChannelExist");
-			describeChannelUsersResponse.ChannelProfile = context.IntegerValue("DescribeChannelUsers.ChannelProfile");
-			describeChannelUsersResponse.CommTotalNum = context.IntegerValue("DescribeChannelUsers.CommTotalNum");
-			describeChannelUsersResponse.InteractiveUserNum = context.IntegerValue("DescribeChannelUsers.InteractiveUserNum");
-			describeChannelUsersResponse.LiveUserNum = context.IntegerValue("DescribeChannelUsers.LiveUserNum");
+			describeChannelUsersResponse.HttpResponse = _ctx.HttpResponse;
+			describeChannelUsersResponse.RequestId = _ctx.StringValue("DescribeChannelUsers.RequestId");
+			describeChannelUsersResponse.Timestamp = _ctx.IntegerValue("DescribeChannelUsers.Timestamp");
+			describeChannelUsersResponse.IsChannelExist = _ctx.BooleanValue("DescribeChannelUsers.IsChannelExist");
+			describeChannelUsersResponse.ChannelProfile = _ctx.IntegerValue("DescribeChannelUsers.ChannelProfile");
+			describeChannelUsersResponse.CommTotalNum = _ctx.IntegerValue("DescribeChannelUsers.CommTotalNum");
+			describeChannelUsersResponse.InteractiveUserNum = _ctx.IntegerValue("DescribeChannelUsers.InteractiveUserNum");
+			describeChannelUsersResponse.LiveUserNum = _ctx.IntegerValue("DescribeChannelUsers.LiveUserNum");
 
 			List<string> describeChannelUsersResponse_userList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeChannelUsers.UserList.Length"); i++) {
-				describeChannelUsersResponse_userList.Add(context.StringValue("DescribeChannelUsers.UserList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeChannelUsers.UserList.Length"); i++) {
+				describeChannelUsersResponse_userList.Add(_ctx.StringValue("DescribeChannelUsers.UserList["+ i +"]"));
 			}
 			describeChannelUsersResponse.UserList = describeChannelUsersResponse_userList;
 
 			List<string> describeChannelUsersResponse_interactiveUserList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeChannelUsers.InteractiveUserList.Length"); i++) {
-				describeChannelUsersResponse_interactiveUserList.Add(context.StringValue("DescribeChannelUsers.InteractiveUserList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeChannelUsers.InteractiveUserList.Length"); i++) {
+				describeChannelUsersResponse_interactiveUserList.Add(_ctx.StringValue("DescribeChannelUsers.InteractiveUserList["+ i +"]"));
 			}
 			describeChannelUsersResponse.InteractiveUserList = describeChannelUsersResponse_interactiveUserList;
 
 			List<string> describeChannelUsersResponse_liveUserList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeChannelUsers.LiveUserList.Length"); i++) {
-				describeChannelUsersResponse_liveUserList.Add(context.StringValue("DescribeChannelUsers.LiveUserList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeChannelUsers.LiveUserList.Length"); i++) {
+				describeChannelUsersResponse_liveUserList.Add(_ctx.StringValue("DescribeChannelUsers.LiveUserList["+ i +"]"));
 			}
 			describeChannelUsersResponse.LiveUserList = describeChannelUsersResponse_liveUserList;
         

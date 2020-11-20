@@ -32,17 +32,64 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public AttachLoadBalancersRequest()
             : base("Ess", "2014-08-28", "AttachLoadBalancers", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private List<string> loadBalancers;
-
-		private string resourceOwnerAccount;
+		private string clientToken;
 
 		private string scalingGroupId;
 
 		private bool? forceAttach;
 
+		private List<string> loadBalancers = new List<string>(){ };
+
+		private string resourceOwnerAccount;
+
 		private long? ownerId;
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
+
+		public string ScalingGroupId
+		{
+			get
+			{
+				return scalingGroupId;
+			}
+			set	
+			{
+				scalingGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
+			}
+		}
+
+		public bool? ForceAttach
+		{
+			get
+			{
+				return forceAttach;
+			}
+			set	
+			{
+				forceAttach = value;
+				DictionaryUtil.Add(QueryParameters, "ForceAttach", value.ToString());
+			}
+		}
 
 		public List<string> LoadBalancers
 		{
@@ -71,32 +118,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ScalingGroupId
-		{
-			get
-			{
-				return scalingGroupId;
-			}
-			set	
-			{
-				scalingGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
-			}
-		}
-
-		public bool? ForceAttach
-		{
-			get
-			{
-				return forceAttach;
-			}
-			set	
-			{
-				forceAttach = value;
-				DictionaryUtil.Add(QueryParameters, "ForceAttach", value.ToString());
 			}
 		}
 

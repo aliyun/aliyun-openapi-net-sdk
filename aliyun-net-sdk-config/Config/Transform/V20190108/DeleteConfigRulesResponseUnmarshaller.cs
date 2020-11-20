@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 {
     public class DeleteConfigRulesResponseUnmarshaller
     {
-        public static DeleteConfigRulesResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteConfigRulesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteConfigRulesResponse deleteConfigRulesResponse = new DeleteConfigRulesResponse();
 
-			deleteConfigRulesResponse.HttpResponse = context.HttpResponse;
-			deleteConfigRulesResponse.RequestId = context.StringValue("DeleteConfigRules.RequestId");
+			deleteConfigRulesResponse.HttpResponse = _ctx.HttpResponse;
+			deleteConfigRulesResponse.RequestId = _ctx.StringValue("DeleteConfigRules.RequestId");
 
 			DeleteConfigRulesResponse.DeleteConfigRules_OperateRuleResult operateRuleResult = new DeleteConfigRulesResponse.DeleteConfigRules_OperateRuleResult();
 
 			List<DeleteConfigRulesResponse.DeleteConfigRules_OperateRuleResult.DeleteConfigRules_OperateRuleItem> operateRuleResult_operateRuleItemList = new List<DeleteConfigRulesResponse.DeleteConfigRules_OperateRuleResult.DeleteConfigRules_OperateRuleItem>();
-			for (int i = 0; i < context.Length("DeleteConfigRules.OperateRuleResult.OperateRuleItemList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DeleteConfigRules.OperateRuleResult.OperateRuleItemList.Length"); i++) {
 				DeleteConfigRulesResponse.DeleteConfigRules_OperateRuleResult.DeleteConfigRules_OperateRuleItem operateRuleItem = new DeleteConfigRulesResponse.DeleteConfigRules_OperateRuleResult.DeleteConfigRules_OperateRuleItem();
-				operateRuleItem.ConfigRuleId = context.StringValue("DeleteConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].ConfigRuleId");
-				operateRuleItem.ErrorCode = context.StringValue("DeleteConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].ErrorCode");
-				operateRuleItem.Success = context.BooleanValue("DeleteConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].Success");
+				operateRuleItem.ConfigRuleId = _ctx.StringValue("DeleteConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].ConfigRuleId");
+				operateRuleItem.ErrorCode = _ctx.StringValue("DeleteConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].ErrorCode");
+				operateRuleItem.Success = _ctx.BooleanValue("DeleteConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].Success");
 
 				operateRuleResult_operateRuleItemList.Add(operateRuleItem);
 			}

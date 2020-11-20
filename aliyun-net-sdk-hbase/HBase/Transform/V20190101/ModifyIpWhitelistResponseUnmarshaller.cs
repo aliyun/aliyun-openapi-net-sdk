@@ -26,12 +26,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class ModifyIpWhitelistResponseUnmarshaller
     {
-        public static ModifyIpWhitelistResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyIpWhitelistResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyIpWhitelistResponse modifyIpWhitelistResponse = new ModifyIpWhitelistResponse();
 
-			modifyIpWhitelistResponse.HttpResponse = context.HttpResponse;
-			modifyIpWhitelistResponse.RequestId = context.StringValue("ModifyIpWhitelist.RequestId");
+			modifyIpWhitelistResponse.HttpResponse = _ctx.HttpResponse;
+			modifyIpWhitelistResponse.RequestId = _ctx.StringValue("ModifyIpWhitelist.RequestId");
         
 			return modifyIpWhitelistResponse;
         }

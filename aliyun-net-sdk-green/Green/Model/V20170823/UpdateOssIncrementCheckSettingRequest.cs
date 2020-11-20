@@ -34,8 +34,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Green.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Green.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -47,6 +47,8 @@ namespace Aliyun.Acs.Green.Model.V20170823
 		private int? videoFrameInterval;
 
 		private string sourceIp;
+
+		private string callbackId;
 
 		private string imageScanLimit;
 
@@ -113,6 +115,19 @@ namespace Aliyun.Acs.Green.Model.V20170823
 			{
 				sourceIp = value;
 				DictionaryUtil.Add(QueryParameters, "SourceIp", value);
+			}
+		}
+
+		public string CallbackId
+		{
+			get
+			{
+				return callbackId;
+			}
+			set	
+			{
+				callbackId = value;
+				DictionaryUtil.Add(QueryParameters, "CallbackId", value);
 			}
 		}
 

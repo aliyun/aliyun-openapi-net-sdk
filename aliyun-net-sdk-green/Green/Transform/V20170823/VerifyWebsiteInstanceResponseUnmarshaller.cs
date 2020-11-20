@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class VerifyWebsiteInstanceResponseUnmarshaller
     {
-        public static VerifyWebsiteInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static VerifyWebsiteInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VerifyWebsiteInstanceResponse verifyWebsiteInstanceResponse = new VerifyWebsiteInstanceResponse();
 
-			verifyWebsiteInstanceResponse.HttpResponse = context.HttpResponse;
-			verifyWebsiteInstanceResponse.RequestId = context.StringValue("VerifyWebsiteInstance.RequestId");
+			verifyWebsiteInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			verifyWebsiteInstanceResponse.RequestId = _ctx.StringValue("VerifyWebsiteInstance.RequestId");
         
 			return verifyWebsiteInstanceResponse;
         }

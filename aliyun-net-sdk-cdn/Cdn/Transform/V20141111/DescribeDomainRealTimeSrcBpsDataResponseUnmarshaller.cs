@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeDomainRealTimeSrcBpsDataResponseUnmarshaller
     {
-        public static DescribeDomainRealTimeSrcBpsDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainRealTimeSrcBpsDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainRealTimeSrcBpsDataResponse describeDomainRealTimeSrcBpsDataResponse = new DescribeDomainRealTimeSrcBpsDataResponse();
 
-			describeDomainRealTimeSrcBpsDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainRealTimeSrcBpsDataResponse.RequestId = context.StringValue("DescribeDomainRealTimeSrcBpsData.RequestId");
-			describeDomainRealTimeSrcBpsDataResponse.DomainName = context.StringValue("DescribeDomainRealTimeSrcBpsData.DomainName");
-			describeDomainRealTimeSrcBpsDataResponse.StartTime = context.StringValue("DescribeDomainRealTimeSrcBpsData.StartTime");
-			describeDomainRealTimeSrcBpsDataResponse.EndTime = context.StringValue("DescribeDomainRealTimeSrcBpsData.EndTime");
-			describeDomainRealTimeSrcBpsDataResponse.DataInterval = context.StringValue("DescribeDomainRealTimeSrcBpsData.DataInterval");
+			describeDomainRealTimeSrcBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainRealTimeSrcBpsDataResponse.RequestId = _ctx.StringValue("DescribeDomainRealTimeSrcBpsData.RequestId");
+			describeDomainRealTimeSrcBpsDataResponse.DomainName = _ctx.StringValue("DescribeDomainRealTimeSrcBpsData.DomainName");
+			describeDomainRealTimeSrcBpsDataResponse.StartTime = _ctx.StringValue("DescribeDomainRealTimeSrcBpsData.StartTime");
+			describeDomainRealTimeSrcBpsDataResponse.EndTime = _ctx.StringValue("DescribeDomainRealTimeSrcBpsData.EndTime");
+			describeDomainRealTimeSrcBpsDataResponse.DataInterval = _ctx.StringValue("DescribeDomainRealTimeSrcBpsData.DataInterval");
 
 			List<DescribeDomainRealTimeSrcBpsDataResponse.DescribeDomainRealTimeSrcBpsData_DataModule> describeDomainRealTimeSrcBpsDataResponse_realTimeSrcBpsDataPerInterval = new List<DescribeDomainRealTimeSrcBpsDataResponse.DescribeDomainRealTimeSrcBpsData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval.Length"); i++) {
 				DescribeDomainRealTimeSrcBpsDataResponse.DescribeDomainRealTimeSrcBpsData_DataModule dataModule = new DescribeDomainRealTimeSrcBpsDataResponse.DescribeDomainRealTimeSrcBpsData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval["+ i +"].TimeStamp");
+				dataModule._Value = _ctx.StringValue("DescribeDomainRealTimeSrcBpsData.RealTimeSrcBpsDataPerInterval["+ i +"].Value");
 
 				describeDomainRealTimeSrcBpsDataResponse_realTimeSrcBpsDataPerInterval.Add(dataModule);
 			}

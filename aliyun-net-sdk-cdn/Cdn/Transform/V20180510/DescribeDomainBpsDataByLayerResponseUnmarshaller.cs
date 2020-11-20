@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainBpsDataByLayerResponseUnmarshaller
     {
-        public static DescribeDomainBpsDataByLayerResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainBpsDataByLayerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainBpsDataByLayerResponse describeDomainBpsDataByLayerResponse = new DescribeDomainBpsDataByLayerResponse();
 
-			describeDomainBpsDataByLayerResponse.HttpResponse = context.HttpResponse;
-			describeDomainBpsDataByLayerResponse.RequestId = context.StringValue("DescribeDomainBpsDataByLayer.RequestId");
-			describeDomainBpsDataByLayerResponse.DataInterval = context.StringValue("DescribeDomainBpsDataByLayer.DataInterval");
+			describeDomainBpsDataByLayerResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainBpsDataByLayerResponse.RequestId = _ctx.StringValue("DescribeDomainBpsDataByLayer.RequestId");
+			describeDomainBpsDataByLayerResponse.DataInterval = _ctx.StringValue("DescribeDomainBpsDataByLayer.DataInterval");
 
 			List<DescribeDomainBpsDataByLayerResponse.DescribeDomainBpsDataByLayer_DataModule> describeDomainBpsDataByLayerResponse_bpsDataInterval = new List<DescribeDomainBpsDataByLayerResponse.DescribeDomainBpsDataByLayer_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDomainBpsDataByLayer.BpsDataInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainBpsDataByLayer.BpsDataInterval.Length"); i++) {
 				DescribeDomainBpsDataByLayerResponse.DescribeDomainBpsDataByLayer_DataModule dataModule = new DescribeDomainBpsDataByLayerResponse.DescribeDomainBpsDataByLayer_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDomainBpsDataByLayer.BpsDataInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainBpsDataByLayer.BpsDataInterval["+ i +"].Value");
-				dataModule.TrafficValue = context.StringValue("DescribeDomainBpsDataByLayer.BpsDataInterval["+ i +"].TrafficValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainBpsDataByLayer.BpsDataInterval["+ i +"].TimeStamp");
+				dataModule._Value = _ctx.StringValue("DescribeDomainBpsDataByLayer.BpsDataInterval["+ i +"].Value");
+				dataModule.TrafficValue = _ctx.StringValue("DescribeDomainBpsDataByLayer.BpsDataInterval["+ i +"].TrafficValue");
 
 				describeDomainBpsDataByLayerResponse_bpsDataInterval.Add(dataModule);
 			}

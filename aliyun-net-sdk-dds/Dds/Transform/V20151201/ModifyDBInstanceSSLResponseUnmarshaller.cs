@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class ModifyDBInstanceSSLResponseUnmarshaller
     {
-        public static ModifyDBInstanceSSLResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDBInstanceSSLResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDBInstanceSSLResponse modifyDBInstanceSSLResponse = new ModifyDBInstanceSSLResponse();
 
-			modifyDBInstanceSSLResponse.HttpResponse = context.HttpResponse;
-			modifyDBInstanceSSLResponse.RequestId = context.StringValue("ModifyDBInstanceSSL.RequestId");
+			modifyDBInstanceSSLResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDBInstanceSSLResponse.RequestId = _ctx.StringValue("ModifyDBInstanceSSL.RequestId");
         
 			return modifyDBInstanceSSLResponse;
         }

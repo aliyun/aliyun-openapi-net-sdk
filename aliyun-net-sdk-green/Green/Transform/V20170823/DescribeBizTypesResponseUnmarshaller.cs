@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeBizTypesResponseUnmarshaller
     {
-        public static DescribeBizTypesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBizTypesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBizTypesResponse describeBizTypesResponse = new DescribeBizTypesResponse();
 
-			describeBizTypesResponse.HttpResponse = context.HttpResponse;
-			describeBizTypesResponse.RequestId = context.StringValue("DescribeBizTypes.RequestId");
-			describeBizTypesResponse.TotalCount = context.IntegerValue("DescribeBizTypes.TotalCount");
+			describeBizTypesResponse.HttpResponse = _ctx.HttpResponse;
+			describeBizTypesResponse.RequestId = _ctx.StringValue("DescribeBizTypes.RequestId");
+			describeBizTypesResponse.TotalCount = _ctx.IntegerValue("DescribeBizTypes.TotalCount");
 
 			List<string> describeBizTypesResponse_bizTypeList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeBizTypes.BizTypeList.Length"); i++) {
-				describeBizTypesResponse_bizTypeList.Add(context.StringValue("DescribeBizTypes.BizTypeList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeBizTypes.BizTypeList.Length"); i++) {
+				describeBizTypesResponse_bizTypeList.Add(_ctx.StringValue("DescribeBizTypes.BizTypeList["+ i +"]"));
 			}
 			describeBizTypesResponse.BizTypeList = describeBizTypesResponse_bizTypeList;
         

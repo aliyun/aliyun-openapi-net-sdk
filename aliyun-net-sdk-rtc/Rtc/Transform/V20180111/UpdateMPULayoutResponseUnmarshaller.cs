@@ -26,12 +26,12 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class UpdateMPULayoutResponseUnmarshaller
     {
-        public static UpdateMPULayoutResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateMPULayoutResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateMPULayoutResponse updateMPULayoutResponse = new UpdateMPULayoutResponse();
 
-			updateMPULayoutResponse.HttpResponse = context.HttpResponse;
-			updateMPULayoutResponse.RequestId = context.StringValue("UpdateMPULayout.RequestId");
+			updateMPULayoutResponse.HttpResponse = _ctx.HttpResponse;
+			updateMPULayoutResponse.RequestId = _ctx.StringValue("UpdateMPULayout.RequestId");
         
 			return updateMPULayoutResponse;
         }

@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeAuditRangeResponseUnmarshaller
     {
-        public static DescribeAuditRangeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAuditRangeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAuditRangeResponse describeAuditRangeResponse = new DescribeAuditRangeResponse();
 
-			describeAuditRangeResponse.HttpResponse = context.HttpResponse;
-			describeAuditRangeResponse.RequestId = context.StringValue("DescribeAuditRange.RequestId");
+			describeAuditRangeResponse.HttpResponse = _ctx.HttpResponse;
+			describeAuditRangeResponse.RequestId = _ctx.StringValue("DescribeAuditRange.RequestId");
 
 			DescribeAuditRangeResponse.DescribeAuditRange_AuditRange auditRange = new DescribeAuditRangeResponse.DescribeAuditRange_AuditRange();
-			auditRange.Block = context.BooleanValue("DescribeAuditRange.AuditRange.block");
-			auditRange.Review = context.BooleanValue("DescribeAuditRange.AuditRange.review");
-			auditRange.Pass = context.BooleanValue("DescribeAuditRange.AuditRange.pass");
+			auditRange.Block = _ctx.BooleanValue("DescribeAuditRange.AuditRange.block");
+			auditRange.Review = _ctx.BooleanValue("DescribeAuditRange.AuditRange.review");
+			auditRange.Pass = _ctx.BooleanValue("DescribeAuditRange.AuditRange.pass");
 			describeAuditRangeResponse.AuditRange = auditRange;
         
 			return describeAuditRangeResponse;

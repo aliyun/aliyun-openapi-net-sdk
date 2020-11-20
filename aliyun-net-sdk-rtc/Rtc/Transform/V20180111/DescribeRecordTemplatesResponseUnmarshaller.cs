@@ -26,38 +26,38 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeRecordTemplatesResponseUnmarshaller
     {
-        public static DescribeRecordTemplatesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRecordTemplatesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRecordTemplatesResponse describeRecordTemplatesResponse = new DescribeRecordTemplatesResponse();
 
-			describeRecordTemplatesResponse.HttpResponse = context.HttpResponse;
-			describeRecordTemplatesResponse.RequestId = context.StringValue("DescribeRecordTemplates.RequestId");
-			describeRecordTemplatesResponse.TotalNum = context.LongValue("DescribeRecordTemplates.TotalNum");
-			describeRecordTemplatesResponse.TotalPage = context.LongValue("DescribeRecordTemplates.TotalPage");
+			describeRecordTemplatesResponse.HttpResponse = _ctx.HttpResponse;
+			describeRecordTemplatesResponse.RequestId = _ctx.StringValue("DescribeRecordTemplates.RequestId");
+			describeRecordTemplatesResponse.TotalNum = _ctx.LongValue("DescribeRecordTemplates.TotalNum");
+			describeRecordTemplatesResponse.TotalPage = _ctx.LongValue("DescribeRecordTemplates.TotalPage");
 
 			List<DescribeRecordTemplatesResponse.DescribeRecordTemplates_Template> describeRecordTemplatesResponse_templates = new List<DescribeRecordTemplatesResponse.DescribeRecordTemplates_Template>();
-			for (int i = 0; i < context.Length("DescribeRecordTemplates.Templates.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRecordTemplates.Templates.Length"); i++) {
 				DescribeRecordTemplatesResponse.DescribeRecordTemplates_Template template = new DescribeRecordTemplatesResponse.DescribeRecordTemplates_Template();
-				template.CreateTime = context.StringValue("DescribeRecordTemplates.Templates["+ i +"].CreateTime");
-				template.TemplateId = context.StringValue("DescribeRecordTemplates.Templates["+ i +"].TemplateId");
-				template.Name = context.StringValue("DescribeRecordTemplates.Templates["+ i +"].Name");
-				template.MediaEncode = context.IntegerValue("DescribeRecordTemplates.Templates["+ i +"].MediaEncode");
-				template.BackgroundColor = context.IntegerValue("DescribeRecordTemplates.Templates["+ i +"].BackgroundColor");
-				template.FileSplitInterval = context.IntegerValue("DescribeRecordTemplates.Templates["+ i +"].FileSplitInterval");
-				template.TaskProfile = context.StringValue("DescribeRecordTemplates.Templates["+ i +"].TaskProfile");
-				template.OssBucket = context.StringValue("DescribeRecordTemplates.Templates["+ i +"].OssBucket");
-				template.OssFilePrefix = context.StringValue("DescribeRecordTemplates.Templates["+ i +"].OssFilePrefix");
-				template.MnsQueue = context.StringValue("DescribeRecordTemplates.Templates["+ i +"].MnsQueue");
+				template.CreateTime = _ctx.StringValue("DescribeRecordTemplates.Templates["+ i +"].CreateTime");
+				template.TemplateId = _ctx.StringValue("DescribeRecordTemplates.Templates["+ i +"].TemplateId");
+				template.Name = _ctx.StringValue("DescribeRecordTemplates.Templates["+ i +"].Name");
+				template.MediaEncode = _ctx.IntegerValue("DescribeRecordTemplates.Templates["+ i +"].MediaEncode");
+				template.BackgroundColor = _ctx.IntegerValue("DescribeRecordTemplates.Templates["+ i +"].BackgroundColor");
+				template.FileSplitInterval = _ctx.IntegerValue("DescribeRecordTemplates.Templates["+ i +"].FileSplitInterval");
+				template.TaskProfile = _ctx.StringValue("DescribeRecordTemplates.Templates["+ i +"].TaskProfile");
+				template.OssBucket = _ctx.StringValue("DescribeRecordTemplates.Templates["+ i +"].OssBucket");
+				template.OssFilePrefix = _ctx.StringValue("DescribeRecordTemplates.Templates["+ i +"].OssFilePrefix");
+				template.MnsQueue = _ctx.StringValue("DescribeRecordTemplates.Templates["+ i +"].MnsQueue");
 
 				List<string> template_layoutIds = new List<string>();
-				for (int j = 0; j < context.Length("DescribeRecordTemplates.Templates["+ i +"].LayoutIds.Length"); j++) {
-					template_layoutIds.Add(context.StringValue("DescribeRecordTemplates.Templates["+ i +"].LayoutIds["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeRecordTemplates.Templates["+ i +"].LayoutIds.Length"); j++) {
+					template_layoutIds.Add(_ctx.StringValue("DescribeRecordTemplates.Templates["+ i +"].LayoutIds["+ j +"]"));
 				}
 				template.LayoutIds = template_layoutIds;
 
 				List<string> template_formats = new List<string>();
-				for (int j = 0; j < context.Length("DescribeRecordTemplates.Templates["+ i +"].Formats.Length"); j++) {
-					template_formats.Add(context.StringValue("DescribeRecordTemplates.Templates["+ i +"].Formats["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeRecordTemplates.Templates["+ i +"].Formats.Length"); j++) {
+					template_formats.Add(_ctx.StringValue("DescribeRecordTemplates.Templates["+ i +"].Formats["+ j +"]"));
 				}
 				template.Formats = template_formats;
 

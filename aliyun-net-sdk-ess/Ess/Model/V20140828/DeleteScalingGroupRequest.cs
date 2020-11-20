@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,30 +33,23 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public DeleteScalingGroupRequest()
             : base("Ess", "2014-08-28", "DeleteScalingGroup", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string resourceOwnerAccount;
 
 		private string scalingGroupId;
 
 		private bool? forceDelete;
 
+		private string resourceOwnerAccount;
+
 		private string ownerAccount;
 
 		private long? ownerId;
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
 
 		public string ScalingGroupId
 		{
@@ -80,6 +74,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				forceDelete = value;
 				DictionaryUtil.Add(QueryParameters, "ForceDelete", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 

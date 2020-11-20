@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeCdnUserConfigsResponseUnmarshaller
     {
-        public static DescribeCdnUserConfigsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCdnUserConfigsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCdnUserConfigsResponse describeCdnUserConfigsResponse = new DescribeCdnUserConfigsResponse();
 
-			describeCdnUserConfigsResponse.HttpResponse = context.HttpResponse;
-			describeCdnUserConfigsResponse.RequestId = context.StringValue("DescribeCdnUserConfigs.RequestId");
+			describeCdnUserConfigsResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnUserConfigsResponse.RequestId = _ctx.StringValue("DescribeCdnUserConfigs.RequestId");
 
 			List<DescribeCdnUserConfigsResponse.DescribeCdnUserConfigs_Config> describeCdnUserConfigsResponse_configs = new List<DescribeCdnUserConfigsResponse.DescribeCdnUserConfigs_Config>();
-			for (int i = 0; i < context.Length("DescribeCdnUserConfigs.Configs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCdnUserConfigs.Configs.Length"); i++) {
 				DescribeCdnUserConfigsResponse.DescribeCdnUserConfigs_Config config = new DescribeCdnUserConfigsResponse.DescribeCdnUserConfigs_Config();
-				config.ArgValue = context.StringValue("DescribeCdnUserConfigs.Configs["+ i +"].ArgValue");
-				config.ArgName = context.StringValue("DescribeCdnUserConfigs.Configs["+ i +"].ArgName");
-				config.FunctionName = context.StringValue("DescribeCdnUserConfigs.Configs["+ i +"].FunctionName");
+				config.ArgValue = _ctx.StringValue("DescribeCdnUserConfigs.Configs["+ i +"].ArgValue");
+				config.ArgName = _ctx.StringValue("DescribeCdnUserConfigs.Configs["+ i +"].ArgName");
+				config.FunctionName = _ctx.StringValue("DescribeCdnUserConfigs.Configs["+ i +"].FunctionName");
 
 				describeCdnUserConfigsResponse_configs.Add(config);
 			}

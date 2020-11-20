@@ -26,18 +26,18 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class CreateConferenceResponseUnmarshaller
     {
-        public static CreateConferenceResponse Unmarshall(UnmarshallerContext context)
+        public static CreateConferenceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateConferenceResponse createConferenceResponse = new CreateConferenceResponse();
 
-			createConferenceResponse.HttpResponse = context.HttpResponse;
-			createConferenceResponse.RequestId = context.StringValue("CreateConference.RequestId");
-			createConferenceResponse.ConferenceId = context.StringValue("CreateConference.ConferenceId");
+			createConferenceResponse.HttpResponse = _ctx.HttpResponse;
+			createConferenceResponse.RequestId = _ctx.StringValue("CreateConference.RequestId");
+			createConferenceResponse.ConferenceId = _ctx.StringValue("CreateConference.ConferenceId");
 
 			CreateConferenceResponse.CreateConference_AuthInfo authInfo = new CreateConferenceResponse.CreateConference_AuthInfo();
-			authInfo.Key = context.StringValue("CreateConference.AuthInfo.Key");
-			authInfo.Nonce = context.StringValue("CreateConference.AuthInfo.Nonce");
-			authInfo.Timestamp = context.IntegerValue("CreateConference.AuthInfo.Timestamp");
+			authInfo.Key = _ctx.StringValue("CreateConference.AuthInfo.Key");
+			authInfo.Nonce = _ctx.StringValue("CreateConference.AuthInfo.Nonce");
+			authInfo.Timestamp = _ctx.IntegerValue("CreateConference.AuthInfo.Timestamp");
 			createConferenceResponse.AuthInfo = authInfo;
         
 			return createConferenceResponse;

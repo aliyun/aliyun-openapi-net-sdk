@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeStagingIpResponseUnmarshaller
     {
-        public static DescribeStagingIpResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeStagingIpResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeStagingIpResponse describeStagingIpResponse = new DescribeStagingIpResponse();
 
-			describeStagingIpResponse.HttpResponse = context.HttpResponse;
-			describeStagingIpResponse.RequestId = context.StringValue("DescribeStagingIp.RequestId");
+			describeStagingIpResponse.HttpResponse = _ctx.HttpResponse;
+			describeStagingIpResponse.RequestId = _ctx.StringValue("DescribeStagingIp.RequestId");
 
 			List<string> describeStagingIpResponse_iPV4s = new List<string>();
-			for (int i = 0; i < context.Length("DescribeStagingIp.IPV4s.Length"); i++) {
-				describeStagingIpResponse_iPV4s.Add(context.StringValue("DescribeStagingIp.IPV4s["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeStagingIp.IPV4s.Length"); i++) {
+				describeStagingIpResponse_iPV4s.Add(_ctx.StringValue("DescribeStagingIp.IPV4s["+ i +"]"));
 			}
 			describeStagingIpResponse.IPV4s = describeStagingIpResponse_iPV4s;
         

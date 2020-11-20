@@ -26,16 +26,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateSnapshotSettingResponseUnmarshaller
     {
-        public static UpdateSnapshotSettingResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateSnapshotSettingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateSnapshotSettingResponse updateSnapshotSettingResponse = new UpdateSnapshotSettingResponse();
 
-			updateSnapshotSettingResponse.HttpResponse = context.HttpResponse;
-			updateSnapshotSettingResponse.RequestId = context.StringValue("UpdateSnapshotSetting.RequestId");
+			updateSnapshotSettingResponse.HttpResponse = _ctx.HttpResponse;
+			updateSnapshotSettingResponse.RequestId = _ctx.StringValue("UpdateSnapshotSetting.RequestId");
 
 			UpdateSnapshotSettingResponse.UpdateSnapshotSetting_Result result = new UpdateSnapshotSettingResponse.UpdateSnapshotSetting_Result();
-			result.QuartzRegex = context.StringValue("UpdateSnapshotSetting.Result.quartzRegex");
-			result.Enable = context.BooleanValue("UpdateSnapshotSetting.Result.enable");
+			result.QuartzRegex = _ctx.StringValue("UpdateSnapshotSetting.Result.quartzRegex");
+			result.Enable = _ctx.BooleanValue("UpdateSnapshotSetting.Result.enable");
 			updateSnapshotSettingResponse.Result = result;
         
 			return updateSnapshotSettingResponse;

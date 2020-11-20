@@ -26,43 +26,43 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeCdnDomainDetailResponseUnmarshaller
     {
-        public static DescribeCdnDomainDetailResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCdnDomainDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCdnDomainDetailResponse describeCdnDomainDetailResponse = new DescribeCdnDomainDetailResponse();
 
-			describeCdnDomainDetailResponse.HttpResponse = context.HttpResponse;
-			describeCdnDomainDetailResponse.RequestId = context.StringValue("DescribeCdnDomainDetail.RequestId");
+			describeCdnDomainDetailResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnDomainDetailResponse.RequestId = _ctx.StringValue("DescribeCdnDomainDetail.RequestId");
 
 			DescribeCdnDomainDetailResponse.DescribeCdnDomainDetail_GetDomainDetailModel getDomainDetailModel = new DescribeCdnDomainDetailResponse.DescribeCdnDomainDetail_GetDomainDetailModel();
-			getDomainDetailModel.GmtCreated = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.GmtCreated");
-			getDomainDetailModel.GmtModified = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.GmtModified");
-			getDomainDetailModel.SourceType = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceType");
-			getDomainDetailModel.DomainStatus = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.DomainStatus");
-			getDomainDetailModel.SourcePort = context.IntegerValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourcePort");
-			getDomainDetailModel.CdnType = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.CdnType");
-			getDomainDetailModel.Cname = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Cname");
-			getDomainDetailModel.HttpsCname = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.HttpsCname");
-			getDomainDetailModel.DomainName = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.DomainName");
-			getDomainDetailModel.Description = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Description");
-			getDomainDetailModel.ServerCertificateStatus = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.ServerCertificateStatus");
-			getDomainDetailModel.Region = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Region");
-			getDomainDetailModel.Scope = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Scope");
-			getDomainDetailModel.ResourceGroupId = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.ResourceGroupId");
+			getDomainDetailModel.GmtCreated = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.GmtCreated");
+			getDomainDetailModel.GmtModified = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.GmtModified");
+			getDomainDetailModel.SourceType = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceType");
+			getDomainDetailModel.DomainStatus = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.DomainStatus");
+			getDomainDetailModel.SourcePort = _ctx.IntegerValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourcePort");
+			getDomainDetailModel.CdnType = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.CdnType");
+			getDomainDetailModel.Cname = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Cname");
+			getDomainDetailModel.HttpsCname = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.HttpsCname");
+			getDomainDetailModel.DomainName = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.DomainName");
+			getDomainDetailModel.Description = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Description");
+			getDomainDetailModel.ServerCertificateStatus = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.ServerCertificateStatus");
+			getDomainDetailModel.Region = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Region");
+			getDomainDetailModel.Scope = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Scope");
+			getDomainDetailModel.ResourceGroupId = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.ResourceGroupId");
 
 			List<string> getDomainDetailModel_sources = new List<string>();
-			for (int i = 0; i < context.Length("DescribeCdnDomainDetail.GetDomainDetailModel.Sources.Length"); i++) {
-				getDomainDetailModel_sources.Add(context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Sources["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeCdnDomainDetail.GetDomainDetailModel.Sources.Length"); i++) {
+				getDomainDetailModel_sources.Add(_ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.Sources["+ i +"]"));
 			}
 			getDomainDetailModel.Sources = getDomainDetailModel_sources;
 
 			List<DescribeCdnDomainDetailResponse.DescribeCdnDomainDetail_GetDomainDetailModel.DescribeCdnDomainDetail_SourceModel> getDomainDetailModel_sourceModels = new List<DescribeCdnDomainDetailResponse.DescribeCdnDomainDetail_GetDomainDetailModel.DescribeCdnDomainDetail_SourceModel>();
-			for (int i = 0; i < context.Length("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels.Length"); i++) {
 				DescribeCdnDomainDetailResponse.DescribeCdnDomainDetail_GetDomainDetailModel.DescribeCdnDomainDetail_SourceModel sourceModel = new DescribeCdnDomainDetailResponse.DescribeCdnDomainDetail_GetDomainDetailModel.DescribeCdnDomainDetail_SourceModel();
-				sourceModel.Content = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Content");
-				sourceModel.Type = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Type");
-				sourceModel.Port = context.IntegerValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Port");
-				sourceModel.Enabled = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Enabled");
-				sourceModel.Priority = context.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Priority");
+				sourceModel.Content = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Content");
+				sourceModel.Type = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Type");
+				sourceModel.Port = _ctx.IntegerValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Port");
+				sourceModel.Enabled = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Enabled");
+				sourceModel.Priority = _ctx.StringValue("DescribeCdnDomainDetail.GetDomainDetailModel.SourceModels["+ i +"].Priority");
 
 				getDomainDetailModel_sourceModels.Add(sourceModel);
 			}

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class TransferNodeResponseUnmarshaller
     {
-        public static TransferNodeResponse Unmarshall(UnmarshallerContext context)
+        public static TransferNodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TransferNodeResponse transferNodeResponse = new TransferNodeResponse();
 
-			transferNodeResponse.HttpResponse = context.HttpResponse;
-			transferNodeResponse.RequestId = context.StringValue("TransferNode.RequestId");
-			transferNodeResponse.Result = context.BooleanValue("TransferNode.Result");
+			transferNodeResponse.HttpResponse = _ctx.HttpResponse;
+			transferNodeResponse.RequestId = _ctx.StringValue("TransferNode.RequestId");
+			transferNodeResponse.Result = _ctx.BooleanValue("TransferNode.Result");
         
 			return transferNodeResponse;
         }

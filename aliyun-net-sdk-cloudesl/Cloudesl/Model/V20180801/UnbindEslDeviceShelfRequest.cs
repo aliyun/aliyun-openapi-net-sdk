@@ -16,39 +16,33 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System.Collections.Generic;
+
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.cloudesl.Transform;
 using Aliyun.Acs.cloudesl.Transform.V20180801;
-using System.Collections.Generic;
 
 namespace Aliyun.Acs.cloudesl.Model.V20180801
 {
     public class UnbindEslDeviceShelfRequest : RpcAcsRequest<UnbindEslDeviceShelfResponse>
     {
         public UnbindEslDeviceShelfRequest()
-            : base("cloudesl", "2018-08-01", "UnbindEslDeviceShelf")
+            : base("cloudesl", "2018-08-01", "UnbindEslDeviceShelf", "cloudesl", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string eslBarCode;
 
 		private string storeId;
 
-		public string EslBarCode
-		{
-			get
-			{
-				return eslBarCode;
-			}
-			set	
-			{
-				eslBarCode = value;
-				DictionaryUtil.Add(QueryParameters, "EslBarCode", value);
-			}
-		}
+		private string eslBarCode;
 
 		public string StoreId
 		{
@@ -63,7 +57,20 @@ namespace Aliyun.Acs.cloudesl.Model.V20180801
 			}
 		}
 
-        public override UnbindEslDeviceShelfResponse GetResponse(Core.Transform.UnmarshallerContext unmarshallerContext)
+		public string EslBarCode
+		{
+			get
+			{
+				return eslBarCode;
+			}
+			set	
+			{
+				eslBarCode = value;
+				DictionaryUtil.Add(QueryParameters, "EslBarCode", value);
+			}
+		}
+
+        public override UnbindEslDeviceShelfResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
             return UnbindEslDeviceShelfResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }

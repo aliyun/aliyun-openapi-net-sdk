@@ -104,6 +104,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string type;
 
+			private string keyId;
+
 			public string Name
 			{
 				get
@@ -221,6 +223,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					type = value;
+				}
+			}
+
+			public string KeyId
+			{
+				get
+				{
+					return keyId;
+				}
+				set	
+				{
+					keyId = value;
 				}
 			}
 		}

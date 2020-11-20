@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeUserVipsByDomainResponseUnmarshaller
     {
-        public static DescribeUserVipsByDomainResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserVipsByDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserVipsByDomainResponse describeUserVipsByDomainResponse = new DescribeUserVipsByDomainResponse();
 
-			describeUserVipsByDomainResponse.HttpResponse = context.HttpResponse;
-			describeUserVipsByDomainResponse.RequestId = context.StringValue("DescribeUserVipsByDomain.RequestId");
-			describeUserVipsByDomainResponse.DomainName = context.StringValue("DescribeUserVipsByDomain.DomainName");
+			describeUserVipsByDomainResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserVipsByDomainResponse.RequestId = _ctx.StringValue("DescribeUserVipsByDomain.RequestId");
+			describeUserVipsByDomainResponse.DomainName = _ctx.StringValue("DescribeUserVipsByDomain.DomainName");
 
 			List<string> describeUserVipsByDomainResponse_vips = new List<string>();
-			for (int i = 0; i < context.Length("DescribeUserVipsByDomain.Vips.Length"); i++) {
-				describeUserVipsByDomainResponse_vips.Add(context.StringValue("DescribeUserVipsByDomain.Vips["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeUserVipsByDomain.Vips.Length"); i++) {
+				describeUserVipsByDomainResponse_vips.Add(_ctx.StringValue("DescribeUserVipsByDomain.Vips["+ i +"]"));
 			}
 			describeUserVipsByDomainResponse.Vips = describeUserVipsByDomainResponse_vips;
         

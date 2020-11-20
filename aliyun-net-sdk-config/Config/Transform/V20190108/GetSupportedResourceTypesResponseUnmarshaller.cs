@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 {
     public class GetSupportedResourceTypesResponseUnmarshaller
     {
-        public static GetSupportedResourceTypesResponse Unmarshall(UnmarshallerContext context)
+        public static GetSupportedResourceTypesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetSupportedResourceTypesResponse getSupportedResourceTypesResponse = new GetSupportedResourceTypesResponse();
 
-			getSupportedResourceTypesResponse.HttpResponse = context.HttpResponse;
-			getSupportedResourceTypesResponse.RequestId = context.StringValue("GetSupportedResourceTypes.RequestId");
+			getSupportedResourceTypesResponse.HttpResponse = _ctx.HttpResponse;
+			getSupportedResourceTypesResponse.RequestId = _ctx.StringValue("GetSupportedResourceTypes.RequestId");
 
 			List<string> getSupportedResourceTypesResponse_resourceTypes = new List<string>();
-			for (int i = 0; i < context.Length("GetSupportedResourceTypes.ResourceTypes.Length"); i++) {
-				getSupportedResourceTypesResponse_resourceTypes.Add(context.StringValue("GetSupportedResourceTypes.ResourceTypes["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetSupportedResourceTypes.ResourceTypes.Length"); i++) {
+				getSupportedResourceTypesResponse_resourceTypes.Add(_ctx.StringValue("GetSupportedResourceTypes.ResourceTypes["+ i +"]"));
 			}
 			getSupportedResourceTypesResponse.ResourceTypes = getSupportedResourceTypesResponse_resourceTypes;
         

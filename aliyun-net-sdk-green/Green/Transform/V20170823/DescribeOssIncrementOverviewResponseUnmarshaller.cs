@@ -26,17 +26,20 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeOssIncrementOverviewResponseUnmarshaller
     {
-        public static DescribeOssIncrementOverviewResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOssIncrementOverviewResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeOssIncrementOverviewResponse describeOssIncrementOverviewResponse = new DescribeOssIncrementOverviewResponse();
 
-			describeOssIncrementOverviewResponse.HttpResponse = context.HttpResponse;
-			describeOssIncrementOverviewResponse.RequestId = context.StringValue("DescribeOssIncrementOverview.RequestId");
-			describeOssIncrementOverviewResponse.ImageCount = context.IntegerValue("DescribeOssIncrementOverview.ImageCount");
-			describeOssIncrementOverviewResponse.VideoCount = context.IntegerValue("DescribeOssIncrementOverview.VideoCount");
-			describeOssIncrementOverviewResponse.VideoFrameCount = context.IntegerValue("DescribeOssIncrementOverview.VideoFrameCount");
-			describeOssIncrementOverviewResponse.PornUnhandleCount = context.IntegerValue("DescribeOssIncrementOverview.PornUnhandleCount");
-			describeOssIncrementOverviewResponse.TerrorismUnhandleCount = context.IntegerValue("DescribeOssIncrementOverview.TerrorismUnhandleCount");
+			describeOssIncrementOverviewResponse.HttpResponse = _ctx.HttpResponse;
+			describeOssIncrementOverviewResponse.RequestId = _ctx.StringValue("DescribeOssIncrementOverview.RequestId");
+			describeOssIncrementOverviewResponse.ImageCount = _ctx.IntegerValue("DescribeOssIncrementOverview.ImageCount");
+			describeOssIncrementOverviewResponse.VideoCount = _ctx.IntegerValue("DescribeOssIncrementOverview.VideoCount");
+			describeOssIncrementOverviewResponse.VideoFrameCount = _ctx.IntegerValue("DescribeOssIncrementOverview.VideoFrameCount");
+			describeOssIncrementOverviewResponse.PornUnhandleCount = _ctx.IntegerValue("DescribeOssIncrementOverview.PornUnhandleCount");
+			describeOssIncrementOverviewResponse.TerrorismUnhandleCount = _ctx.IntegerValue("DescribeOssIncrementOverview.TerrorismUnhandleCount");
+			describeOssIncrementOverviewResponse.AdUnhandleCount = _ctx.IntegerValue("DescribeOssIncrementOverview.AdUnhandleCount");
+			describeOssIncrementOverviewResponse.LiveUnhandleCount = _ctx.IntegerValue("DescribeOssIncrementOverview.LiveUnhandleCount");
+			describeOssIncrementOverviewResponse.VoiceAntispamUnhandleCount = _ctx.IntegerValue("DescribeOssIncrementOverview.VoiceAntispamUnhandleCount");
         
 			return describeOssIncrementOverviewResponse;
         }

@@ -26,30 +26,30 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeOpenApiUsageResponseUnmarshaller
     {
-        public static DescribeOpenApiUsageResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOpenApiUsageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeOpenApiUsageResponse describeOpenApiUsageResponse = new DescribeOpenApiUsageResponse();
 
-			describeOpenApiUsageResponse.HttpResponse = context.HttpResponse;
-			describeOpenApiUsageResponse.RequestId = context.StringValue("DescribeOpenApiUsage.RequestId");
-			describeOpenApiUsageResponse.TotalCount = context.IntegerValue("DescribeOpenApiUsage.TotalCount");
+			describeOpenApiUsageResponse.HttpResponse = _ctx.HttpResponse;
+			describeOpenApiUsageResponse.RequestId = _ctx.StringValue("DescribeOpenApiUsage.RequestId");
+			describeOpenApiUsageResponse.TotalCount = _ctx.IntegerValue("DescribeOpenApiUsage.TotalCount");
 
 			List<DescribeOpenApiUsageResponse.DescribeOpenApiUsage_OpenApiUsage> describeOpenApiUsageResponse_openApiUsageList = new List<DescribeOpenApiUsageResponse.DescribeOpenApiUsage_OpenApiUsage>();
-			for (int i = 0; i < context.Length("DescribeOpenApiUsage.OpenApiUsageList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeOpenApiUsage.OpenApiUsageList.Length"); i++) {
 				DescribeOpenApiUsageResponse.DescribeOpenApiUsage_OpenApiUsage openApiUsage = new DescribeOpenApiUsageResponse.DescribeOpenApiUsage_OpenApiUsage();
-				openApiUsage.Date = context.StringValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].Date");
-				openApiUsage.ResourceType = context.StringValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].ResourceType");
-				openApiUsage.Scene = context.StringValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].Scene");
-				openApiUsage.TotalCount = context.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].TotalCount");
-				openApiUsage.PassCount = context.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].PassCount");
-				openApiUsage.ReviewCount = context.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].ReviewCount");
-				openApiUsage.BlockCount = context.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].BlockCount");
-				openApiUsage.InnerTotalCount = context.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].InnerTotalCount");
-				openApiUsage.OuterTotalCount = context.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].OuterTotalCount");
-				openApiUsage.TotalDuration = context.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].TotalDuration");
-				openApiUsage.PassDuration = context.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].PassDuration");
-				openApiUsage.ReviewDuration = context.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].ReviewDuration");
-				openApiUsage.BlockDuration = context.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].BlockDuration");
+				openApiUsage.Date = _ctx.StringValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].Date");
+				openApiUsage.ResourceType = _ctx.StringValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].ResourceType");
+				openApiUsage.Scene = _ctx.StringValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].Scene");
+				openApiUsage.TotalCount = _ctx.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].TotalCount");
+				openApiUsage.PassCount = _ctx.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].PassCount");
+				openApiUsage.ReviewCount = _ctx.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].ReviewCount");
+				openApiUsage.BlockCount = _ctx.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].BlockCount");
+				openApiUsage.InnerTotalCount = _ctx.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].InnerTotalCount");
+				openApiUsage.OuterTotalCount = _ctx.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].OuterTotalCount");
+				openApiUsage.TotalDuration = _ctx.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].TotalDuration");
+				openApiUsage.PassDuration = _ctx.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].PassDuration");
+				openApiUsage.ReviewDuration = _ctx.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].ReviewDuration");
+				openApiUsage.BlockDuration = _ctx.IntegerValue("DescribeOpenApiUsage.OpenApiUsageList["+ i +"].BlockDuration");
 
 				describeOpenApiUsageResponse_openApiUsageList.Add(openApiUsage);
 			}

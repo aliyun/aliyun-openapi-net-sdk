@@ -26,15 +26,15 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdatePublicNetworkResponseUnmarshaller
     {
-        public static UpdatePublicNetworkResponse Unmarshall(UnmarshallerContext context)
+        public static UpdatePublicNetworkResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdatePublicNetworkResponse updatePublicNetworkResponse = new UpdatePublicNetworkResponse();
 
-			updatePublicNetworkResponse.HttpResponse = context.HttpResponse;
-			updatePublicNetworkResponse.RequestId = context.StringValue("UpdatePublicNetwork.RequestId");
+			updatePublicNetworkResponse.HttpResponse = _ctx.HttpResponse;
+			updatePublicNetworkResponse.RequestId = _ctx.StringValue("UpdatePublicNetwork.RequestId");
 
 			UpdatePublicNetworkResponse.UpdatePublicNetwork_Result result = new UpdatePublicNetworkResponse.UpdatePublicNetwork_Result();
-			result.EnablePublic = context.BooleanValue("UpdatePublicNetwork.Result.enablePublic");
+			result.EnablePublic = _ctx.BooleanValue("UpdatePublicNetwork.Result.enablePublic");
 			updatePublicNetworkResponse.Result = result;
         
 			return updatePublicNetworkResponse;

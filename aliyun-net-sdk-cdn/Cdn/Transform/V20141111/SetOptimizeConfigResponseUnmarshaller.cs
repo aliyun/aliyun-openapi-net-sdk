@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class SetOptimizeConfigResponseUnmarshaller
     {
-        public static SetOptimizeConfigResponse Unmarshall(UnmarshallerContext context)
+        public static SetOptimizeConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetOptimizeConfigResponse setOptimizeConfigResponse = new SetOptimizeConfigResponse();
 
-			setOptimizeConfigResponse.HttpResponse = context.HttpResponse;
-			setOptimizeConfigResponse.RequestId = context.StringValue("SetOptimizeConfig.RequestId");
+			setOptimizeConfigResponse.HttpResponse = _ctx.HttpResponse;
+			setOptimizeConfigResponse.RequestId = _ctx.StringValue("SetOptimizeConfig.RequestId");
         
 			return setOptimizeConfigResponse;
         }

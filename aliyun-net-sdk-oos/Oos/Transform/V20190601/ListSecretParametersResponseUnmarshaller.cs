@@ -48,6 +48,7 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 				parameter.ShareType = context.StringValue("ListSecretParameters.Parameters["+ i +"].ShareType");
 				parameter.ParameterVersion = context.StringValue("ListSecretParameters.Parameters["+ i +"].ParameterVersion");
 				parameter.Type = context.StringValue("ListSecretParameters.Parameters["+ i +"].Type");
+				parameter.KeyId = context.StringValue("ListSecretParameters.Parameters["+ i +"].KeyId");
 
 				listSecretParametersResponse_parameters.Add(parameter);
 			}

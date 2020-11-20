@@ -32,21 +32,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public CreateLifecycleHookRequest()
             : base("Ess", "2014-08-28", "CreateLifecycleHook", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string defaultResult;
 
-		private string resourceOwnerAccount;
-
 		private int? heartbeatTimeout;
 
 		private string scalingGroupId;
-
-		private string ownerAccount;
-
-		private string notificationMetadata;
-
-		private long? ownerId;
 
 		private string lifecycleTransition;
 
@@ -54,7 +52,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string notificationArn;
 
-		private List<LifecycleHook> lifecycleHooks;
+		private string resourceOwnerAccount;
+
+		private string ownerAccount;
+
+		private string notificationMetadata;
+
+		private long? ownerId;
 
 		public string DefaultResult
 		{
@@ -66,19 +70,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				defaultResult = value;
 				DictionaryUtil.Add(QueryParameters, "DefaultResult", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -105,45 +96,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scalingGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string NotificationMetadata
-		{
-			get
-			{
-				return notificationMetadata;
-			}
-			set	
-			{
-				notificationMetadata = value;
-				DictionaryUtil.Add(QueryParameters, "NotificationMetadata", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -186,113 +138,55 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public List<LifecycleHook> LifecycleHooks
+		public string ResourceOwnerAccount
 		{
 			get
 			{
-				return lifecycleHooks;
+				return resourceOwnerAccount;
 			}
-
-			set
+			set	
 			{
-				lifecycleHooks = value;
-				for (int i = 0; i < lifecycleHooks.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".DefaultResult", lifecycleHooks[i].DefaultResult);
-					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".LifecycleHookName", lifecycleHooks[i].LifecycleHookName);
-					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".HeartbeatTimeout", lifecycleHooks[i].HeartbeatTimeout);
-					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".NotificationArn", lifecycleHooks[i].NotificationArn);
-					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".NotificationMetadata", lifecycleHooks[i].NotificationMetadata);
-					DictionaryUtil.Add(QueryParameters,"LifecycleHook." + (i + 1) + ".LifecycleTransition", lifecycleHooks[i].LifecycleTransition);
-				}
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
-		public class LifecycleHook
+		public string OwnerAccount
 		{
-
-			private string defaultResult;
-
-			private string lifecycleHookName;
-
-			private int? heartbeatTimeout;
-
-			private string notificationArn;
-
-			private string notificationMetadata;
-
-			private string lifecycleTransition;
-
-			public string DefaultResult
+			get
 			{
-				get
-				{
-					return defaultResult;
-				}
-				set	
-				{
-					defaultResult = value;
-				}
+				return ownerAccount;
 			}
-
-			public string LifecycleHookName
+			set	
 			{
-				get
-				{
-					return lifecycleHookName;
-				}
-				set	
-				{
-					lifecycleHookName = value;
-				}
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
 			}
+		}
 
-			public int? HeartbeatTimeout
+		public string NotificationMetadata
+		{
+			get
 			{
-				get
-				{
-					return heartbeatTimeout;
-				}
-				set	
-				{
-					heartbeatTimeout = value;
-				}
+				return notificationMetadata;
 			}
-
-			public string NotificationArn
+			set	
 			{
-				get
-				{
-					return notificationArn;
-				}
-				set	
-				{
-					notificationArn = value;
-				}
+				notificationMetadata = value;
+				DictionaryUtil.Add(QueryParameters, "NotificationMetadata", value);
 			}
+		}
 
-			public string NotificationMetadata
+		public long? OwnerId
+		{
+			get
 			{
-				get
-				{
-					return notificationMetadata;
-				}
-				set	
-				{
-					notificationMetadata = value;
-				}
+				return ownerId;
 			}
-
-			public string LifecycleTransition
+			set	
 			{
-				get
-				{
-					return lifecycleTransition;
-				}
-				set	
-				{
-					lifecycleTransition = value;
-				}
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeWebsiteStatResponseUnmarshaller
     {
-        public static DescribeWebsiteStatResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeWebsiteStatResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeWebsiteStatResponse describeWebsiteStatResponse = new DescribeWebsiteStatResponse();
 
-			describeWebsiteStatResponse.HttpResponse = context.HttpResponse;
-			describeWebsiteStatResponse.RequestId = context.StringValue("DescribeWebsiteStat.RequestId");
-			describeWebsiteStatResponse.TotalCount = context.IntegerValue("DescribeWebsiteStat.TotalCount");
+			describeWebsiteStatResponse.HttpResponse = _ctx.HttpResponse;
+			describeWebsiteStatResponse.RequestId = _ctx.StringValue("DescribeWebsiteStat.RequestId");
+			describeWebsiteStatResponse.TotalCount = _ctx.IntegerValue("DescribeWebsiteStat.TotalCount");
 
 			List<DescribeWebsiteStatResponse.DescribeWebsiteStat_WebsiteStat> describeWebsiteStatResponse_websiteStatList = new List<DescribeWebsiteStatResponse.DescribeWebsiteStat_WebsiteStat>();
-			for (int i = 0; i < context.Length("DescribeWebsiteStat.WebsiteStatList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeWebsiteStat.WebsiteStatList.Length"); i++) {
 				DescribeWebsiteStatResponse.DescribeWebsiteStat_WebsiteStat websiteStat = new DescribeWebsiteStatResponse.DescribeWebsiteStat_WebsiteStat();
-				websiteStat.SubServiceModule = context.StringValue("DescribeWebsiteStat.WebsiteStatList["+ i +"].SubServiceModule");
-				websiteStat.InstanceCount = context.IntegerValue("DescribeWebsiteStat.WebsiteStatList["+ i +"].InstanceCount");
-				websiteStat.ScanCount = context.IntegerValue("DescribeWebsiteStat.WebsiteStatList["+ i +"].ScanCount");
-				websiteStat.RiskCount = context.IntegerValue("DescribeWebsiteStat.WebsiteStatList["+ i +"].RiskCount");
+				websiteStat.SubServiceModule = _ctx.StringValue("DescribeWebsiteStat.WebsiteStatList["+ i +"].SubServiceModule");
+				websiteStat.InstanceCount = _ctx.IntegerValue("DescribeWebsiteStat.WebsiteStatList["+ i +"].InstanceCount");
+				websiteStat.ScanCount = _ctx.IntegerValue("DescribeWebsiteStat.WebsiteStatList["+ i +"].ScanCount");
+				websiteStat.RiskCount = _ctx.IntegerValue("DescribeWebsiteStat.WebsiteStatList["+ i +"].RiskCount");
 
 				describeWebsiteStatResponse_websiteStatList.Add(websiteStat);
 			}

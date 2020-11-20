@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeRefreshQuotaResponseUnmarshaller
     {
-        public static DescribeRefreshQuotaResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRefreshQuotaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRefreshQuotaResponse describeRefreshQuotaResponse = new DescribeRefreshQuotaResponse();
 
-			describeRefreshQuotaResponse.HttpResponse = context.HttpResponse;
-			describeRefreshQuotaResponse.RequestId = context.StringValue("DescribeRefreshQuota.RequestId");
-			describeRefreshQuotaResponse.UrlQuota = context.StringValue("DescribeRefreshQuota.UrlQuota");
-			describeRefreshQuotaResponse.DirQuota = context.StringValue("DescribeRefreshQuota.DirQuota");
-			describeRefreshQuotaResponse.UrlRemain = context.StringValue("DescribeRefreshQuota.UrlRemain");
-			describeRefreshQuotaResponse.DirRemain = context.StringValue("DescribeRefreshQuota.DirRemain");
-			describeRefreshQuotaResponse.PreloadQuota = context.StringValue("DescribeRefreshQuota.PreloadQuota");
-			describeRefreshQuotaResponse.BlockQuota = context.StringValue("DescribeRefreshQuota.BlockQuota");
-			describeRefreshQuotaResponse.PreloadRemain = context.StringValue("DescribeRefreshQuota.PreloadRemain");
-			describeRefreshQuotaResponse.BlockRemain = context.StringValue("DescribeRefreshQuota.BlockRemain");
+			describeRefreshQuotaResponse.HttpResponse = _ctx.HttpResponse;
+			describeRefreshQuotaResponse.RequestId = _ctx.StringValue("DescribeRefreshQuota.RequestId");
+			describeRefreshQuotaResponse.UrlQuota = _ctx.StringValue("DescribeRefreshQuota.UrlQuota");
+			describeRefreshQuotaResponse.DirQuota = _ctx.StringValue("DescribeRefreshQuota.DirQuota");
+			describeRefreshQuotaResponse.UrlRemain = _ctx.StringValue("DescribeRefreshQuota.UrlRemain");
+			describeRefreshQuotaResponse.DirRemain = _ctx.StringValue("DescribeRefreshQuota.DirRemain");
+			describeRefreshQuotaResponse.PreloadQuota = _ctx.StringValue("DescribeRefreshQuota.PreloadQuota");
+			describeRefreshQuotaResponse.BlockQuota = _ctx.StringValue("DescribeRefreshQuota.BlockQuota");
+			describeRefreshQuotaResponse.PreloadRemain = _ctx.StringValue("DescribeRefreshQuota.PreloadRemain");
+			describeRefreshQuotaResponse.BlockRemain = _ctx.StringValue("DescribeRefreshQuota.BlockRemain");
         
 			return describeRefreshQuotaResponse;
         }

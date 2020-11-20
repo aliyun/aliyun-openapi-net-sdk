@@ -37,6 +37,7 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private List<DomainRecordInfo> domainRecordInfos = new List<DomainRecordInfo>(){ };

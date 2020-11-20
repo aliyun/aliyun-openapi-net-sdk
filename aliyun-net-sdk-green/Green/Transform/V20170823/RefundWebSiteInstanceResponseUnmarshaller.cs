@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class RefundWebSiteInstanceResponseUnmarshaller
     {
-        public static RefundWebSiteInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RefundWebSiteInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RefundWebSiteInstanceResponse refundWebSiteInstanceResponse = new RefundWebSiteInstanceResponse();
 
-			refundWebSiteInstanceResponse.HttpResponse = context.HttpResponse;
-			refundWebSiteInstanceResponse.RequestId = context.StringValue("RefundWebSiteInstance.RequestId");
+			refundWebSiteInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			refundWebSiteInstanceResponse.RequestId = _ctx.StringValue("RefundWebSiteInstance.RequestId");
         
 			return refundWebSiteInstanceResponse;
         }

@@ -63,9 +63,35 @@ namespace Aliyun.Acs.smc.Transform.V20190601
 					dataDisk.Size = context.IntegerValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Size");
 					dataDisk.Path = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Path");
 
+					List<DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_DataDisk.DescribeSourceServers_Part> dataDisk_parts = new List<DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_DataDisk.DescribeSourceServers_Part>();
+					for (int k = 0; k < context.Length("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts.Length"); k++) {
+						DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_DataDisk.DescribeSourceServers_Part part = new DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_DataDisk.DescribeSourceServers_Part();
+						part.Path = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Path");
+						part.Device = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Device");
+						part.SizeBytes = context.LongValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].SizeBytes");
+						part.Need = context.BooleanValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].Need");
+						part.CanBlock = context.BooleanValue("DescribeSourceServers.SourceServers["+ i +"].DataDisks["+ j +"].Parts["+ k +"].CanBlock");
+
+						dataDisk_parts.Add(part);
+					}
+					dataDisk.Parts = dataDisk_parts;
+
 					sourceServer_dataDisks.Add(dataDisk);
 				}
 				sourceServer.DataDisks = sourceServer_dataDisks;
+
+				List<DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_SystemDiskPart> sourceServer_systemDiskParts = new List<DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_SystemDiskPart>();
+				for (int j = 0; j < context.Length("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts.Length"); j++) {
+					DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_SystemDiskPart systemDiskPart = new DescribeSourceServersResponse.DescribeSourceServers_SourceServer.DescribeSourceServers_SystemDiskPart();
+					systemDiskPart.Path = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].Path");
+					systemDiskPart.Device = context.StringValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].Device");
+					systemDiskPart.SizeBytes = context.LongValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].SizeBytes");
+					systemDiskPart.Need = context.BooleanValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].Need");
+					systemDiskPart.CanBlock = context.BooleanValue("DescribeSourceServers.SourceServers["+ i +"].SystemDiskParts["+ j +"].CanBlock");
+
+					sourceServer_systemDiskParts.Add(systemDiskPart);
+				}
+				sourceServer.SystemDiskParts = sourceServer_systemDiskParts;
 
 				describeSourceServersResponse_sourceServers.Add(sourceServer);
 			}

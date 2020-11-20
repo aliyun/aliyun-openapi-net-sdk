@@ -26,12 +26,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class ModifyClusterDeletionProtectionResponseUnmarshaller
     {
-        public static ModifyClusterDeletionProtectionResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyClusterDeletionProtectionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyClusterDeletionProtectionResponse modifyClusterDeletionProtectionResponse = new ModifyClusterDeletionProtectionResponse();
 
-			modifyClusterDeletionProtectionResponse.HttpResponse = context.HttpResponse;
-			modifyClusterDeletionProtectionResponse.RequestId = context.StringValue("ModifyClusterDeletionProtection.RequestId");
+			modifyClusterDeletionProtectionResponse.HttpResponse = _ctx.HttpResponse;
+			modifyClusterDeletionProtectionResponse.RequestId = _ctx.StringValue("ModifyClusterDeletionProtection.RequestId");
         
 			return modifyClusterDeletionProtectionResponse;
         }

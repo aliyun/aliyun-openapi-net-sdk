@@ -27,7 +27,6 @@ namespace Aliyun.Acs.Config
         {
             { "cn-shanghai", "config.cn-shanghai.aliyuncs.com" },
             { "ap-southeast-1", "config.ap-southeast-1.aliyuncs.com" },
-            { "cn-hangzhou", "config.cn-hangzhou.aliyuncs.com" },
         };
 
         public static string endpointRegionalType = "central";

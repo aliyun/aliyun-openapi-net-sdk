@@ -26,14 +26,14 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class DescribeLogBackupPolicyResponseUnmarshaller
     {
-        public static DescribeLogBackupPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLogBackupPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLogBackupPolicyResponse describeLogBackupPolicyResponse = new DescribeLogBackupPolicyResponse();
 
-			describeLogBackupPolicyResponse.HttpResponse = context.HttpResponse;
-			describeLogBackupPolicyResponse.RequestId = context.StringValue("DescribeLogBackupPolicy.RequestId");
-			describeLogBackupPolicyResponse.EnableBackupLog = context.IntegerValue("DescribeLogBackupPolicy.EnableBackupLog");
-			describeLogBackupPolicyResponse.LogBackupRetentionPeriod = context.IntegerValue("DescribeLogBackupPolicy.LogBackupRetentionPeriod");
+			describeLogBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			describeLogBackupPolicyResponse.RequestId = _ctx.StringValue("DescribeLogBackupPolicy.RequestId");
+			describeLogBackupPolicyResponse.EnableBackupLog = _ctx.IntegerValue("DescribeLogBackupPolicy.EnableBackupLog");
+			describeLogBackupPolicyResponse.LogBackupRetentionPeriod = _ctx.IntegerValue("DescribeLogBackupPolicy.LogBackupRetentionPeriod");
         
 			return describeLogBackupPolicyResponse;
         }

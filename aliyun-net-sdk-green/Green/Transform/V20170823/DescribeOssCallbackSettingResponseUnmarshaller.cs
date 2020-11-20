@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeOssCallbackSettingResponseUnmarshaller
     {
-        public static DescribeOssCallbackSettingResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOssCallbackSettingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeOssCallbackSettingResponse describeOssCallbackSettingResponse = new DescribeOssCallbackSettingResponse();
 
-			describeOssCallbackSettingResponse.HttpResponse = context.HttpResponse;
-			describeOssCallbackSettingResponse.RequestId = context.StringValue("DescribeOssCallbackSetting.RequestId");
-			describeOssCallbackSettingResponse.CallbackUrl = context.StringValue("DescribeOssCallbackSetting.CallbackUrl");
-			describeOssCallbackSettingResponse.ScanCallback = context.BooleanValue("DescribeOssCallbackSetting.ScanCallback");
-			describeOssCallbackSettingResponse.AuditCallback = context.BooleanValue("DescribeOssCallbackSetting.AuditCallback");
-			describeOssCallbackSettingResponse.CallbackSeed = context.StringValue("DescribeOssCallbackSetting.CallbackSeed");
+			describeOssCallbackSettingResponse.HttpResponse = _ctx.HttpResponse;
+			describeOssCallbackSettingResponse.RequestId = _ctx.StringValue("DescribeOssCallbackSetting.RequestId");
+			describeOssCallbackSettingResponse.CallbackUrl = _ctx.StringValue("DescribeOssCallbackSetting.CallbackUrl");
+			describeOssCallbackSettingResponse.ScanCallback = _ctx.BooleanValue("DescribeOssCallbackSetting.ScanCallback");
+			describeOssCallbackSettingResponse.AuditCallback = _ctx.BooleanValue("DescribeOssCallbackSetting.AuditCallback");
+			describeOssCallbackSettingResponse.CallbackSeed = _ctx.StringValue("DescribeOssCallbackSetting.CallbackSeed");
 
 			List<string> describeOssCallbackSettingResponse_scanCallbackSuggestions = new List<string>();
-			for (int i = 0; i < context.Length("DescribeOssCallbackSetting.ScanCallbackSuggestions.Length"); i++) {
-				describeOssCallbackSettingResponse_scanCallbackSuggestions.Add(context.StringValue("DescribeOssCallbackSetting.ScanCallbackSuggestions["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeOssCallbackSetting.ScanCallbackSuggestions.Length"); i++) {
+				describeOssCallbackSettingResponse_scanCallbackSuggestions.Add(_ctx.StringValue("DescribeOssCallbackSetting.ScanCallbackSuggestions["+ i +"]"));
 			}
 			describeOssCallbackSettingResponse.ScanCallbackSuggestions = describeOssCallbackSettingResponse_scanCallbackSuggestions;
 
 			List<string> describeOssCallbackSettingResponse_serviceModules = new List<string>();
-			for (int i = 0; i < context.Length("DescribeOssCallbackSetting.ServiceModules.Length"); i++) {
-				describeOssCallbackSettingResponse_serviceModules.Add(context.StringValue("DescribeOssCallbackSetting.ServiceModules["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeOssCallbackSetting.ServiceModules.Length"); i++) {
+				describeOssCallbackSettingResponse_serviceModules.Add(_ctx.StringValue("DescribeOssCallbackSetting.ServiceModules["+ i +"]"));
 			}
 			describeOssCallbackSettingResponse.ServiceModules = describeOssCallbackSettingResponse_serviceModules;
         

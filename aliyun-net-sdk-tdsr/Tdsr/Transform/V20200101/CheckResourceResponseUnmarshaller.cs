@@ -26,26 +26,26 @@ namespace Aliyun.Acs.tdsr.Transform.V20200101
 {
     public class CheckResourceResponseUnmarshaller
     {
-        public static CheckResourceResponse Unmarshall(UnmarshallerContext context)
+        public static CheckResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckResourceResponse checkResourceResponse = new CheckResourceResponse();
 
-			checkResourceResponse.HttpResponse = context.HttpResponse;
-			checkResourceResponse.Interrupt = context.BooleanValue("CheckResource.Interrupt");
-			checkResourceResponse.Invoker = context.StringValue("CheckResource.Invoker");
-			checkResourceResponse.Pk = context.StringValue("CheckResource.Pk");
-			checkResourceResponse.Bid = context.StringValue("CheckResource.Bid");
-			checkResourceResponse.Hid = context.LongValue("CheckResource.Hid");
-			checkResourceResponse.Country = context.StringValue("CheckResource.Country");
-			checkResourceResponse.TaskIdentifier = context.StringValue("CheckResource.TaskIdentifier");
-			checkResourceResponse.TaskExtraData = context.StringValue("CheckResource.TaskExtraData");
-			checkResourceResponse.GmtWakeup = context.StringValue("CheckResource.GmtWakeup");
-			checkResourceResponse.Success = context.BooleanValue("CheckResource.Success");
-			checkResourceResponse.Message = context.StringValue("CheckResource.Message");
-			checkResourceResponse.Level = context.LongValue("CheckResource.Level");
-			checkResourceResponse.Url = context.StringValue("CheckResource.Url");
-			checkResourceResponse.Prompt = context.StringValue("CheckResource.Prompt");
-			checkResourceResponse.RequestId = context.StringValue("CheckResource.RequestId");
+			checkResourceResponse.HttpResponse = _ctx.HttpResponse;
+			checkResourceResponse.Interrupt = _ctx.BooleanValue("CheckResource.Interrupt");
+			checkResourceResponse.Invoker = _ctx.StringValue("CheckResource.Invoker");
+			checkResourceResponse.Pk = _ctx.StringValue("CheckResource.Pk");
+			checkResourceResponse.Bid = _ctx.StringValue("CheckResource.Bid");
+			checkResourceResponse.Hid = _ctx.LongValue("CheckResource.Hid");
+			checkResourceResponse.Country = _ctx.StringValue("CheckResource.Country");
+			checkResourceResponse.TaskIdentifier = _ctx.StringValue("CheckResource.TaskIdentifier");
+			checkResourceResponse.TaskExtraData = _ctx.StringValue("CheckResource.TaskExtraData");
+			checkResourceResponse.GmtWakeup = _ctx.StringValue("CheckResource.GmtWakeup");
+			checkResourceResponse.Success = _ctx.BooleanValue("CheckResource.Success");
+			checkResourceResponse.Message = _ctx.StringValue("CheckResource.Message");
+			checkResourceResponse.Level = _ctx.LongValue("CheckResource.Level");
+			checkResourceResponse.Url = _ctx.StringValue("CheckResource.Url");
+			checkResourceResponse.Prompt = _ctx.StringValue("CheckResource.Prompt");
+			checkResourceResponse.RequestId = _ctx.StringValue("CheckResource.RequestId");
         
 			return checkResourceResponse;
         }

@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeAuditFilesResponseUnmarshaller
     {
-        public static DescribeAuditFilesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAuditFilesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAuditFilesResponse describeAuditFilesResponse = new DescribeAuditFilesResponse();
 
-			describeAuditFilesResponse.HttpResponse = context.HttpResponse;
-			describeAuditFilesResponse.RequestId = context.StringValue("DescribeAuditFiles.RequestId");
-			describeAuditFilesResponse.TotalRecordCount = context.IntegerValue("DescribeAuditFiles.TotalRecordCount");
-			describeAuditFilesResponse.PageNumber = context.IntegerValue("DescribeAuditFiles.PageNumber");
-			describeAuditFilesResponse.PageRecordCount = context.IntegerValue("DescribeAuditFiles.PageRecordCount");
-			describeAuditFilesResponse.DBInstanceId = context.StringValue("DescribeAuditFiles.DBInstanceId");
+			describeAuditFilesResponse.HttpResponse = _ctx.HttpResponse;
+			describeAuditFilesResponse.RequestId = _ctx.StringValue("DescribeAuditFiles.RequestId");
+			describeAuditFilesResponse.TotalRecordCount = _ctx.IntegerValue("DescribeAuditFiles.TotalRecordCount");
+			describeAuditFilesResponse.PageNumber = _ctx.IntegerValue("DescribeAuditFiles.PageNumber");
+			describeAuditFilesResponse.PageRecordCount = _ctx.IntegerValue("DescribeAuditFiles.PageRecordCount");
+			describeAuditFilesResponse.DBInstanceId = _ctx.StringValue("DescribeAuditFiles.DBInstanceId");
 
 			List<DescribeAuditFilesResponse.DescribeAuditFiles_LogFile> describeAuditFilesResponse_items = new List<DescribeAuditFilesResponse.DescribeAuditFiles_LogFile>();
-			for (int i = 0; i < context.Length("DescribeAuditFiles.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeAuditFiles.Items.Length"); i++) {
 				DescribeAuditFilesResponse.DescribeAuditFiles_LogFile logFile = new DescribeAuditFilesResponse.DescribeAuditFiles_LogFile();
-				logFile.FileID = context.IntegerValue("DescribeAuditFiles.Items["+ i +"].FileID");
-				logFile.LogStatus = context.StringValue("DescribeAuditFiles.Items["+ i +"].LogStatus");
-				logFile.LogStartTime = context.StringValue("DescribeAuditFiles.Items["+ i +"].LogStartTime");
-				logFile.LogEndTime = context.StringValue("DescribeAuditFiles.Items["+ i +"].LogEndTime");
-				logFile.LogDownloadURL = context.StringValue("DescribeAuditFiles.Items["+ i +"].LogDownloadURL");
-				logFile.LogSize = context.LongValue("DescribeAuditFiles.Items["+ i +"].LogSize");
+				logFile.FileID = _ctx.IntegerValue("DescribeAuditFiles.Items["+ i +"].FileID");
+				logFile.LogStatus = _ctx.StringValue("DescribeAuditFiles.Items["+ i +"].LogStatus");
+				logFile.LogStartTime = _ctx.StringValue("DescribeAuditFiles.Items["+ i +"].LogStartTime");
+				logFile.LogEndTime = _ctx.StringValue("DescribeAuditFiles.Items["+ i +"].LogEndTime");
+				logFile.LogDownloadURL = _ctx.StringValue("DescribeAuditFiles.Items["+ i +"].LogDownloadURL");
+				logFile.LogSize = _ctx.LongValue("DescribeAuditFiles.Items["+ i +"].LogSize");
 
 				describeAuditFilesResponse_items.Add(logFile);
 			}

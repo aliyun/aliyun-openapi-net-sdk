@@ -34,8 +34,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.R_kvstore.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.R_kvstore.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -57,6 +57,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? ownerId;
 
 		private string instanceId;
+
+		private string acceptLanguage;
 
 		private string zoneId;
 
@@ -176,6 +178,19 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string AcceptLanguage
+		{
+			get
+			{
+				return acceptLanguage;
+			}
+			set	
+			{
+				acceptLanguage = value;
+				DictionaryUtil.Add(QueryParameters, "AcceptLanguage", value);
 			}
 		}
 

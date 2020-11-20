@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ActivateZonesResponseUnmarshaller
     {
-        public static ActivateZonesResponse Unmarshall(UnmarshallerContext context)
+        public static ActivateZonesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ActivateZonesResponse activateZonesResponse = new ActivateZonesResponse();
 
-			activateZonesResponse.HttpResponse = context.HttpResponse;
-			activateZonesResponse.RequestId = context.StringValue("ActivateZones.RequestId");
-			activateZonesResponse.Result = context.BooleanValue("ActivateZones.Result");
+			activateZonesResponse.HttpResponse = _ctx.HttpResponse;
+			activateZonesResponse.RequestId = _ctx.StringValue("ActivateZones.RequestId");
+			activateZonesResponse.Result = _ctx.BooleanValue("ActivateZones.Result");
         
 			return activateZonesResponse;
         }

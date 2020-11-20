@@ -156,6 +156,20 @@ namespace Aliyun.Acs.smc.Model.V20190601
 
 			private string instanceType;
 
+			private string launchTemplateId;
+
+			private string launchTemplateVersion;
+
+			private string instanceRamRole;
+
+			private string containerNamespace;
+
+			private string containerRepository;
+
+			private string containerTag;
+
+			private List<DescribeReplicationJobs_SystemDiskPart> systemDiskParts;
+
 			private List<DescribeReplicationJobs_DataDisk> dataDisks;
 
 			private List<DescribeReplicationJobs_ReplicationJobRun> replicationJobRuns;
@@ -508,6 +522,90 @@ namespace Aliyun.Acs.smc.Model.V20190601
 				}
 			}
 
+			public string LaunchTemplateId
+			{
+				get
+				{
+					return launchTemplateId;
+				}
+				set	
+				{
+					launchTemplateId = value;
+				}
+			}
+
+			public string LaunchTemplateVersion
+			{
+				get
+				{
+					return launchTemplateVersion;
+				}
+				set	
+				{
+					launchTemplateVersion = value;
+				}
+			}
+
+			public string InstanceRamRole
+			{
+				get
+				{
+					return instanceRamRole;
+				}
+				set	
+				{
+					instanceRamRole = value;
+				}
+			}
+
+			public string ContainerNamespace
+			{
+				get
+				{
+					return containerNamespace;
+				}
+				set	
+				{
+					containerNamespace = value;
+				}
+			}
+
+			public string ContainerRepository
+			{
+				get
+				{
+					return containerRepository;
+				}
+				set	
+				{
+					containerRepository = value;
+				}
+			}
+
+			public string ContainerTag
+			{
+				get
+				{
+					return containerTag;
+				}
+				set	
+				{
+					containerTag = value;
+				}
+			}
+
+			public List<DescribeReplicationJobs_SystemDiskPart> SystemDiskParts
+			{
+				get
+				{
+					return systemDiskParts;
+				}
+				set	
+				{
+					systemDiskParts = value;
+				}
+			}
+
 			public List<DescribeReplicationJobs_DataDisk> DataDisks
 			{
 				get
@@ -532,12 +630,60 @@ namespace Aliyun.Acs.smc.Model.V20190601
 				}
 			}
 
+			public class DescribeReplicationJobs_SystemDiskPart
+			{
+
+				private string device;
+
+				private long? sizeBytes;
+
+				private bool? block;
+
+				public string Device
+				{
+					get
+					{
+						return device;
+					}
+					set	
+					{
+						device = value;
+					}
+				}
+
+				public long? SizeBytes
+				{
+					get
+					{
+						return sizeBytes;
+					}
+					set	
+					{
+						sizeBytes = value;
+					}
+				}
+
+				public bool? Block
+				{
+					get
+					{
+						return block;
+					}
+					set	
+					{
+						block = value;
+					}
+				}
+			}
+
 			public class DescribeReplicationJobs_DataDisk
 			{
 
 				private int? size;
 
 				private int? index;
+
+				private List<DescribeReplicationJobs_Part> parts;
 
 				public int? Size
 				{
@@ -560,6 +706,64 @@ namespace Aliyun.Acs.smc.Model.V20190601
 					set	
 					{
 						index = value;
+					}
+				}
+
+				public List<DescribeReplicationJobs_Part> Parts
+				{
+					get
+					{
+						return parts;
+					}
+					set	
+					{
+						parts = value;
+					}
+				}
+
+				public class DescribeReplicationJobs_Part
+				{
+
+					private string device;
+
+					private long? sizeBytes;
+
+					private bool? block;
+
+					public string Device
+					{
+						get
+						{
+							return device;
+						}
+						set	
+						{
+							device = value;
+						}
+					}
+
+					public long? SizeBytes
+					{
+						get
+						{
+							return sizeBytes;
+						}
+						set	
+						{
+							sizeBytes = value;
+						}
+					}
+
+					public bool? Block
+					{
+						get
+						{
+							return block;
+						}
+						set	
+						{
+							block = value;
+						}
 					}
 				}
 			}

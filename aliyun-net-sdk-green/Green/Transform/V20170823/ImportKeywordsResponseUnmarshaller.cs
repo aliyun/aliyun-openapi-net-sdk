@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class ImportKeywordsResponseUnmarshaller
     {
-        public static ImportKeywordsResponse Unmarshall(UnmarshallerContext context)
+        public static ImportKeywordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ImportKeywordsResponse importKeywordsResponse = new ImportKeywordsResponse();
 
-			importKeywordsResponse.HttpResponse = context.HttpResponse;
-			importKeywordsResponse.RequestId = context.StringValue("ImportKeywords.RequestId");
-			importKeywordsResponse.SuccessCount = context.IntegerValue("ImportKeywords.SuccessCount");
+			importKeywordsResponse.HttpResponse = _ctx.HttpResponse;
+			importKeywordsResponse.RequestId = _ctx.StringValue("ImportKeywords.RequestId");
+			importKeywordsResponse.SuccessCount = _ctx.IntegerValue("ImportKeywords.SuccessCount");
 
 			List<string> importKeywordsResponse_invalidKeywordList = new List<string>();
-			for (int i = 0; i < context.Length("ImportKeywords.InvalidKeywordList.Length"); i++) {
-				importKeywordsResponse_invalidKeywordList.Add(context.StringValue("ImportKeywords.InvalidKeywordList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ImportKeywords.InvalidKeywordList.Length"); i++) {
+				importKeywordsResponse_invalidKeywordList.Add(_ctx.StringValue("ImportKeywords.InvalidKeywordList["+ i +"]"));
 			}
 			importKeywordsResponse.InvalidKeywordList = importKeywordsResponse_invalidKeywordList;
 
 			List<string> importKeywordsResponse_validKeywordList = new List<string>();
-			for (int i = 0; i < context.Length("ImportKeywords.ValidKeywordList.Length"); i++) {
-				importKeywordsResponse_validKeywordList.Add(context.StringValue("ImportKeywords.ValidKeywordList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("ImportKeywords.ValidKeywordList.Length"); i++) {
+				importKeywordsResponse_validKeywordList.Add(_ctx.StringValue("ImportKeywords.ValidKeywordList["+ i +"]"));
 			}
 			importKeywordsResponse.ValidKeywordList = importKeywordsResponse_validKeywordList;
         

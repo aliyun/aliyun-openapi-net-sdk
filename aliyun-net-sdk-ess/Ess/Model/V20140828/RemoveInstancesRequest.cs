@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,21 +33,29 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public RemoveInstancesRequest()
             : base("Ess", "2014-08-28", "RemoveInstances", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private List<string> instanceIds;
+		private string scalingGroupId;
+
+		private bool? decreaseDesiredCapacity;
 
 		private string removePolicy;
 
 		private string resourceOwnerAccount;
 
-		private string scalingGroupId;
-
 		private string ownerAccount;
 
 		private long? ownerId;
+
+		private List<string> instanceIds = new List<string>(){ };
 
 		public long? ResourceOwnerId
 		{
@@ -61,20 +70,29 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public List<string> InstanceIds
+		public string ScalingGroupId
 		{
 			get
 			{
-				return instanceIds;
+				return scalingGroupId;
 			}
-
-			set
+			set	
 			{
-				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
+				scalingGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
+			}
+		}
+
+		public bool? DecreaseDesiredCapacity
+		{
+			get
+			{
+				return decreaseDesiredCapacity;
+			}
+			set	
+			{
+				decreaseDesiredCapacity = value;
+				DictionaryUtil.Add(QueryParameters, "DecreaseDesiredCapacity", value.ToString());
 			}
 		}
 
@@ -104,19 +122,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string ScalingGroupId
-		{
-			get
-			{
-				return scalingGroupId;
-			}
-			set	
-			{
-				scalingGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
-			}
-		}
-
 		public string OwnerAccount
 		{
 			get
@@ -140,6 +145,23 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public List<string> InstanceIds
+		{
+			get
+			{
+				return instanceIds;
+			}
+
+			set
+			{
+				instanceIds = value;
+				for (int i = 0; i < instanceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
+				}
 			}
 		}
 

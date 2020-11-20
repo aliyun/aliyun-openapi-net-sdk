@@ -26,16 +26,16 @@ namespace Aliyun.Acs.tdsr.Transform.V20200101
 {
     public class ListMainScenesResponseUnmarshaller
     {
-        public static ListMainScenesResponse Unmarshall(UnmarshallerContext context)
+        public static ListMainScenesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListMainScenesResponse listMainScenesResponse = new ListMainScenesResponse();
 
-			listMainScenesResponse.HttpResponse = context.HttpResponse;
-			listMainScenesResponse.RequestId = context.StringValue("ListMainScenes.RequestId");
-			listMainScenesResponse.Success = context.BooleanValue("ListMainScenes.Success");
-			listMainScenesResponse.ErrMessage = context.StringValue("ListMainScenes.ErrMessage");
-			listMainScenesResponse.Data = context.StringValue("ListMainScenes.Data");
-			listMainScenesResponse.ObjectString = context.StringValue("ListMainScenes.ObjectString");
+			listMainScenesResponse.HttpResponse = _ctx.HttpResponse;
+			listMainScenesResponse.RequestId = _ctx.StringValue("ListMainScenes.RequestId");
+			listMainScenesResponse.Success = _ctx.BooleanValue("ListMainScenes.Success");
+			listMainScenesResponse.ErrMessage = _ctx.StringValue("ListMainScenes.ErrMessage");
+			listMainScenesResponse.Data = _ctx.StringValue("ListMainScenes.Data");
+			listMainScenesResponse.ObjectString = _ctx.StringValue("ListMainScenes.ObjectString");
         
 			return listMainScenesResponse;
         }

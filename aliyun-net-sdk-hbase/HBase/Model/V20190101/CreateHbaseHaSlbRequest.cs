@@ -34,11 +34,13 @@ namespace Aliyun.Acs.HBase.Model.V20190101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.HBase.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.HBase.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
+
+		private string clientToken;
 
 		private string haTypes;
 
@@ -47,6 +49,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 		private string bdsId;
 
 		private string haId;
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
+			}
+		}
 
 		public string HaTypes
 		{

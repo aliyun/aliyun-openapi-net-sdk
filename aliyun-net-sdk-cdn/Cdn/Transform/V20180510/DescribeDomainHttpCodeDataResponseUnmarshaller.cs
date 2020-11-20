@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainHttpCodeDataResponseUnmarshaller
     {
-        public static DescribeDomainHttpCodeDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainHttpCodeDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainHttpCodeDataResponse describeDomainHttpCodeDataResponse = new DescribeDomainHttpCodeDataResponse();
 
-			describeDomainHttpCodeDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainHttpCodeDataResponse.RequestId = context.StringValue("DescribeDomainHttpCodeData.RequestId");
-			describeDomainHttpCodeDataResponse.DomainName = context.StringValue("DescribeDomainHttpCodeData.DomainName");
-			describeDomainHttpCodeDataResponse.StartTime = context.StringValue("DescribeDomainHttpCodeData.StartTime");
-			describeDomainHttpCodeDataResponse.EndTime = context.StringValue("DescribeDomainHttpCodeData.EndTime");
-			describeDomainHttpCodeDataResponse.DataInterval = context.StringValue("DescribeDomainHttpCodeData.DataInterval");
+			describeDomainHttpCodeDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainHttpCodeDataResponse.RequestId = _ctx.StringValue("DescribeDomainHttpCodeData.RequestId");
+			describeDomainHttpCodeDataResponse.DomainName = _ctx.StringValue("DescribeDomainHttpCodeData.DomainName");
+			describeDomainHttpCodeDataResponse.StartTime = _ctx.StringValue("DescribeDomainHttpCodeData.StartTime");
+			describeDomainHttpCodeDataResponse.EndTime = _ctx.StringValue("DescribeDomainHttpCodeData.EndTime");
+			describeDomainHttpCodeDataResponse.DataInterval = _ctx.StringValue("DescribeDomainHttpCodeData.DataInterval");
 
 			List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData> describeDomainHttpCodeDataResponse_httpCodeData = new List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData>();
-			for (int i = 0; i < context.Length("DescribeDomainHttpCodeData.HttpCodeData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainHttpCodeData.HttpCodeData.Length"); i++) {
 				DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData usageData = new DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData();
-				usageData.TimeStamp = context.StringValue("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].TimeStamp");
+				usageData.TimeStamp = _ctx.StringValue("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].TimeStamp");
 
 				List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData.DescribeDomainHttpCodeData_CodeProportionData> usageData_value = new List<DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData.DescribeDomainHttpCodeData_CodeProportionData>();
-				for (int j = 0; j < context.Length("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].Value.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].Value.Length"); j++) {
 					DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData.DescribeDomainHttpCodeData_CodeProportionData codeProportionData = new DescribeDomainHttpCodeDataResponse.DescribeDomainHttpCodeData_UsageData.DescribeDomainHttpCodeData_CodeProportionData();
-					codeProportionData.Code = context.StringValue("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Code");
-					codeProportionData.Proportion = context.StringValue("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Proportion");
-					codeProportionData.Count = context.StringValue("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Count");
+					codeProportionData.Code = _ctx.StringValue("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Code");
+					codeProportionData.Proportion = _ctx.StringValue("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Proportion");
+					codeProportionData.Count = _ctx.StringValue("DescribeDomainHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Count");
 
 					usageData_value.Add(codeProportionData);
 				}

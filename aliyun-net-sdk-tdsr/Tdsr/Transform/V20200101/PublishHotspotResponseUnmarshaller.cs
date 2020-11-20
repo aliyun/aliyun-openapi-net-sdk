@@ -26,15 +26,15 @@ namespace Aliyun.Acs.tdsr.Transform.V20200101
 {
     public class PublishHotspotResponseUnmarshaller
     {
-        public static PublishHotspotResponse Unmarshall(UnmarshallerContext context)
+        public static PublishHotspotResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PublishHotspotResponse publishHotspotResponse = new PublishHotspotResponse();
 
-			publishHotspotResponse.HttpResponse = context.HttpResponse;
-			publishHotspotResponse.RequestId = context.StringValue("PublishHotspot.RequestId");
-			publishHotspotResponse.Success = context.BooleanValue("PublishHotspot.Success");
-			publishHotspotResponse.ErrMessage = context.StringValue("PublishHotspot.ErrMessage");
-			publishHotspotResponse.Data = context.StringValue("PublishHotspot.Data");
+			publishHotspotResponse.HttpResponse = _ctx.HttpResponse;
+			publishHotspotResponse.RequestId = _ctx.StringValue("PublishHotspot.RequestId");
+			publishHotspotResponse.Success = _ctx.BooleanValue("PublishHotspot.Success");
+			publishHotspotResponse.ErrMessage = _ctx.StringValue("PublishHotspot.ErrMessage");
+			publishHotspotResponse.Data = _ctx.StringValue("PublishHotspot.Data");
         
 			return publishHotspotResponse;
         }

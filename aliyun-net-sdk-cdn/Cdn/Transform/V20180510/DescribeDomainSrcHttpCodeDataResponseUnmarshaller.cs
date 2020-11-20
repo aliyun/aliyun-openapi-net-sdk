@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainSrcHttpCodeDataResponseUnmarshaller
     {
-        public static DescribeDomainSrcHttpCodeDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainSrcHttpCodeDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainSrcHttpCodeDataResponse describeDomainSrcHttpCodeDataResponse = new DescribeDomainSrcHttpCodeDataResponse();
 
-			describeDomainSrcHttpCodeDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainSrcHttpCodeDataResponse.RequestId = context.StringValue("DescribeDomainSrcHttpCodeData.RequestId");
-			describeDomainSrcHttpCodeDataResponse.DomainName = context.StringValue("DescribeDomainSrcHttpCodeData.DomainName");
-			describeDomainSrcHttpCodeDataResponse.StartTime = context.StringValue("DescribeDomainSrcHttpCodeData.StartTime");
-			describeDomainSrcHttpCodeDataResponse.EndTime = context.StringValue("DescribeDomainSrcHttpCodeData.EndTime");
-			describeDomainSrcHttpCodeDataResponse.DataInterval = context.StringValue("DescribeDomainSrcHttpCodeData.DataInterval");
+			describeDomainSrcHttpCodeDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainSrcHttpCodeDataResponse.RequestId = _ctx.StringValue("DescribeDomainSrcHttpCodeData.RequestId");
+			describeDomainSrcHttpCodeDataResponse.DomainName = _ctx.StringValue("DescribeDomainSrcHttpCodeData.DomainName");
+			describeDomainSrcHttpCodeDataResponse.StartTime = _ctx.StringValue("DescribeDomainSrcHttpCodeData.StartTime");
+			describeDomainSrcHttpCodeDataResponse.EndTime = _ctx.StringValue("DescribeDomainSrcHttpCodeData.EndTime");
+			describeDomainSrcHttpCodeDataResponse.DataInterval = _ctx.StringValue("DescribeDomainSrcHttpCodeData.DataInterval");
 
 			List<DescribeDomainSrcHttpCodeDataResponse.DescribeDomainSrcHttpCodeData_UsageData> describeDomainSrcHttpCodeDataResponse_httpCodeData = new List<DescribeDomainSrcHttpCodeDataResponse.DescribeDomainSrcHttpCodeData_UsageData>();
-			for (int i = 0; i < context.Length("DescribeDomainSrcHttpCodeData.HttpCodeData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainSrcHttpCodeData.HttpCodeData.Length"); i++) {
 				DescribeDomainSrcHttpCodeDataResponse.DescribeDomainSrcHttpCodeData_UsageData usageData = new DescribeDomainSrcHttpCodeDataResponse.DescribeDomainSrcHttpCodeData_UsageData();
-				usageData.TimeStamp = context.StringValue("DescribeDomainSrcHttpCodeData.HttpCodeData["+ i +"].TimeStamp");
+				usageData.TimeStamp = _ctx.StringValue("DescribeDomainSrcHttpCodeData.HttpCodeData["+ i +"].TimeStamp");
 
 				List<DescribeDomainSrcHttpCodeDataResponse.DescribeDomainSrcHttpCodeData_UsageData.DescribeDomainSrcHttpCodeData_CodeProportionData> usageData_value = new List<DescribeDomainSrcHttpCodeDataResponse.DescribeDomainSrcHttpCodeData_UsageData.DescribeDomainSrcHttpCodeData_CodeProportionData>();
-				for (int j = 0; j < context.Length("DescribeDomainSrcHttpCodeData.HttpCodeData["+ i +"].Value.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDomainSrcHttpCodeData.HttpCodeData["+ i +"].Value.Length"); j++) {
 					DescribeDomainSrcHttpCodeDataResponse.DescribeDomainSrcHttpCodeData_UsageData.DescribeDomainSrcHttpCodeData_CodeProportionData codeProportionData = new DescribeDomainSrcHttpCodeDataResponse.DescribeDomainSrcHttpCodeData_UsageData.DescribeDomainSrcHttpCodeData_CodeProportionData();
-					codeProportionData.Code = context.StringValue("DescribeDomainSrcHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Code");
-					codeProportionData.Proportion = context.StringValue("DescribeDomainSrcHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Proportion");
-					codeProportionData.Count = context.StringValue("DescribeDomainSrcHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Count");
+					codeProportionData.Code = _ctx.StringValue("DescribeDomainSrcHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Code");
+					codeProportionData.Proportion = _ctx.StringValue("DescribeDomainSrcHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Proportion");
+					codeProportionData.Count = _ctx.StringValue("DescribeDomainSrcHttpCodeData.HttpCodeData["+ i +"].Value["+ j +"].Count");
 
 					usageData_value.Add(codeProportionData);
 				}

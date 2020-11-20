@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 {
     public class StartConfigRuleEvaluationResponseUnmarshaller
     {
-        public static StartConfigRuleEvaluationResponse Unmarshall(UnmarshallerContext context)
+        public static StartConfigRuleEvaluationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StartConfigRuleEvaluationResponse startConfigRuleEvaluationResponse = new StartConfigRuleEvaluationResponse();
 
-			startConfigRuleEvaluationResponse.HttpResponse = context.HttpResponse;
-			startConfigRuleEvaluationResponse.RequestId = context.StringValue("StartConfigRuleEvaluation.RequestId");
-			startConfigRuleEvaluationResponse.Result = context.BooleanValue("StartConfigRuleEvaluation.Result");
+			startConfigRuleEvaluationResponse.HttpResponse = _ctx.HttpResponse;
+			startConfigRuleEvaluationResponse.RequestId = _ctx.StringValue("StartConfigRuleEvaluation.RequestId");
+			startConfigRuleEvaluationResponse.Result = _ctx.BooleanValue("StartConfigRuleEvaluation.Result");
         
 			return startConfigRuleEvaluationResponse;
         }

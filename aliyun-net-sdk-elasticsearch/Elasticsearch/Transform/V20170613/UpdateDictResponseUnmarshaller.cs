@@ -26,26 +26,20 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateDictResponseUnmarshaller
     {
-        public static UpdateDictResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateDictResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateDictResponse updateDictResponse = new UpdateDictResponse();
 
-			updateDictResponse.HttpResponse = context.HttpResponse;
-			updateDictResponse.RequestId = context.StringValue("UpdateDict.RequestId");
+			updateDictResponse.HttpResponse = _ctx.HttpResponse;
+			updateDictResponse.RequestId = _ctx.StringValue("UpdateDict.RequestId");
 
 			List<UpdateDictResponse.UpdateDict_DictList> updateDictResponse_result = new List<UpdateDictResponse.UpdateDict_DictList>();
-			for (int i = 0; i < context.Length("UpdateDict.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("UpdateDict.Result.Length"); i++) {
 				UpdateDictResponse.UpdateDict_DictList dictList = new UpdateDictResponse.UpdateDict_DictList();
-				dictList.Name = context.StringValue("UpdateDict.Result["+ i +"].name");
-				dictList.FileSize = context.LongValue("UpdateDict.Result["+ i +"].fileSize");
-				dictList.Type = context.StringValue("UpdateDict.Result["+ i +"].type");
-				dictList.SourceType = context.StringValue("UpdateDict.Result["+ i +"].sourceType");
-
-				UpdateDictResponse.UpdateDict_DictList.UpdateDict_OssObject ossObject = new UpdateDictResponse.UpdateDict_DictList.UpdateDict_OssObject();
-				ossObject.BucketName = context.StringValue("UpdateDict.Result["+ i +"].OssObject.bucketName");
-				ossObject.Key = context.StringValue("UpdateDict.Result["+ i +"].OssObject.key");
-				ossObject.Etag = context.StringValue("UpdateDict.Result["+ i +"].OssObject.etag");
-				dictList.OssObject = ossObject;
+				dictList.Name = _ctx.StringValue("UpdateDict.Result["+ i +"].name");
+				dictList.FileSize = _ctx.LongValue("UpdateDict.Result["+ i +"].fileSize");
+				dictList.Type = _ctx.StringValue("UpdateDict.Result["+ i +"].type");
+				dictList.SourceType = _ctx.StringValue("UpdateDict.Result["+ i +"].sourceType");
 
 				updateDictResponse_result.Add(dictList);
 			}

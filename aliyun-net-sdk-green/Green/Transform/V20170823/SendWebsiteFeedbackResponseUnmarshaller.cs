@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class SendWebsiteFeedbackResponseUnmarshaller
     {
-        public static SendWebsiteFeedbackResponse Unmarshall(UnmarshallerContext context)
+        public static SendWebsiteFeedbackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SendWebsiteFeedbackResponse sendWebsiteFeedbackResponse = new SendWebsiteFeedbackResponse();
 
-			sendWebsiteFeedbackResponse.HttpResponse = context.HttpResponse;
-			sendWebsiteFeedbackResponse.RequestId = context.StringValue("SendWebsiteFeedback.RequestId");
+			sendWebsiteFeedbackResponse.HttpResponse = _ctx.HttpResponse;
+			sendWebsiteFeedbackResponse.RequestId = _ctx.StringValue("SendWebsiteFeedback.RequestId");
         
 			return sendWebsiteFeedbackResponse;
         }

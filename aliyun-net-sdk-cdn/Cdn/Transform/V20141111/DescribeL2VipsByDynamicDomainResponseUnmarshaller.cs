@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeL2VipsByDynamicDomainResponseUnmarshaller
     {
-        public static DescribeL2VipsByDynamicDomainResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeL2VipsByDynamicDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeL2VipsByDynamicDomainResponse describeL2VipsByDynamicDomainResponse = new DescribeL2VipsByDynamicDomainResponse();
 
-			describeL2VipsByDynamicDomainResponse.HttpResponse = context.HttpResponse;
-			describeL2VipsByDynamicDomainResponse.RequestId = context.StringValue("DescribeL2VipsByDynamicDomain.RequestId");
-			describeL2VipsByDynamicDomainResponse.DomainName = context.StringValue("DescribeL2VipsByDynamicDomain.DomainName");
+			describeL2VipsByDynamicDomainResponse.HttpResponse = _ctx.HttpResponse;
+			describeL2VipsByDynamicDomainResponse.RequestId = _ctx.StringValue("DescribeL2VipsByDynamicDomain.RequestId");
+			describeL2VipsByDynamicDomainResponse.DomainName = _ctx.StringValue("DescribeL2VipsByDynamicDomain.DomainName");
 
 			List<string> describeL2VipsByDynamicDomainResponse_vips = new List<string>();
-			for (int i = 0; i < context.Length("DescribeL2VipsByDynamicDomain.Vips.Length"); i++) {
-				describeL2VipsByDynamicDomainResponse_vips.Add(context.StringValue("DescribeL2VipsByDynamicDomain.Vips["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeL2VipsByDynamicDomain.Vips.Length"); i++) {
+				describeL2VipsByDynamicDomainResponse_vips.Add(_ctx.StringValue("DescribeL2VipsByDynamicDomain.Vips["+ i +"]"));
 			}
 			describeL2VipsByDynamicDomainResponse.Vips = describeL2VipsByDynamicDomainResponse_vips;
         

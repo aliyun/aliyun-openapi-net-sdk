@@ -26,12 +26,12 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class FailoverDBClusterResponseUnmarshaller
     {
-        public static FailoverDBClusterResponse Unmarshall(UnmarshallerContext context)
+        public static FailoverDBClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			FailoverDBClusterResponse failoverDBClusterResponse = new FailoverDBClusterResponse();
 
-			failoverDBClusterResponse.HttpResponse = context.HttpResponse;
-			failoverDBClusterResponse.RequestId = context.StringValue("FailoverDBCluster.RequestId");
+			failoverDBClusterResponse.HttpResponse = _ctx.HttpResponse;
+			failoverDBClusterResponse.RequestId = _ctx.StringValue("FailoverDBCluster.RequestId");
         
 			return failoverDBClusterResponse;
         }

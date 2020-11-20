@@ -26,12 +26,12 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class StopChannelUserPublishResponseUnmarshaller
     {
-        public static StopChannelUserPublishResponse Unmarshall(UnmarshallerContext context)
+        public static StopChannelUserPublishResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopChannelUserPublishResponse stopChannelUserPublishResponse = new StopChannelUserPublishResponse();
 
-			stopChannelUserPublishResponse.HttpResponse = context.HttpResponse;
-			stopChannelUserPublishResponse.RequestId = context.StringValue("StopChannelUserPublish.RequestId");
+			stopChannelUserPublishResponse.HttpResponse = _ctx.HttpResponse;
+			stopChannelUserPublishResponse.RequestId = _ctx.StringValue("StopChannelUserPublish.RequestId");
         
 			return stopChannelUserPublishResponse;
         }

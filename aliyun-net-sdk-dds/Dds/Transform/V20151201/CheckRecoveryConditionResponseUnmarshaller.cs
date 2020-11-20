@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class CheckRecoveryConditionResponseUnmarshaller
     {
-        public static CheckRecoveryConditionResponse Unmarshall(UnmarshallerContext context)
+        public static CheckRecoveryConditionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckRecoveryConditionResponse checkRecoveryConditionResponse = new CheckRecoveryConditionResponse();
 
-			checkRecoveryConditionResponse.HttpResponse = context.HttpResponse;
-			checkRecoveryConditionResponse.RequestId = context.StringValue("CheckRecoveryCondition.RequestId");
-			checkRecoveryConditionResponse.DBInstanceName = context.StringValue("CheckRecoveryCondition.DBInstanceName");
-			checkRecoveryConditionResponse.IsValid = context.BooleanValue("CheckRecoveryCondition.IsValid");
+			checkRecoveryConditionResponse.HttpResponse = _ctx.HttpResponse;
+			checkRecoveryConditionResponse.RequestId = _ctx.StringValue("CheckRecoveryCondition.RequestId");
+			checkRecoveryConditionResponse.DBInstanceName = _ctx.StringValue("CheckRecoveryCondition.DBInstanceName");
+			checkRecoveryConditionResponse.IsValid = _ctx.BooleanValue("CheckRecoveryCondition.IsValid");
         
 			return checkRecoveryConditionResponse;
         }

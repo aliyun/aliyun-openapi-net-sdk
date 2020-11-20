@@ -26,13 +26,13 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DescribeDBInstanceUsageResponseUnmarshaller
     {
-        public static DescribeDBInstanceUsageResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBInstanceUsageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBInstanceUsageResponse describeDBInstanceUsageResponse = new DescribeDBInstanceUsageResponse();
 
-			describeDBInstanceUsageResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceUsageResponse.RequestId = context.StringValue("DescribeDBInstanceUsage.RequestId");
-			describeDBInstanceUsageResponse.Result = context.StringValue("DescribeDBInstanceUsage.Result");
+			describeDBInstanceUsageResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInstanceUsageResponse.RequestId = _ctx.StringValue("DescribeDBInstanceUsage.RequestId");
+			describeDBInstanceUsageResponse.Result = _ctx.StringValue("DescribeDBInstanceUsage.Result");
         
 			return describeDBInstanceUsageResponse;
         }

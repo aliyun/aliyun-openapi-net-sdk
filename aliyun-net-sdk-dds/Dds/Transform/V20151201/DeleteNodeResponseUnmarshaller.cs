@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DeleteNodeResponseUnmarshaller
     {
-        public static DeleteNodeResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteNodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteNodeResponse deleteNodeResponse = new DeleteNodeResponse();
 
-			deleteNodeResponse.HttpResponse = context.HttpResponse;
-			deleteNodeResponse.RequestId = context.StringValue("DeleteNode.RequestId");
-			deleteNodeResponse.TaskId = context.IntegerValue("DeleteNode.TaskId");
-			deleteNodeResponse.OrderId = context.StringValue("DeleteNode.OrderId");
+			deleteNodeResponse.HttpResponse = _ctx.HttpResponse;
+			deleteNodeResponse.RequestId = _ctx.StringValue("DeleteNode.RequestId");
+			deleteNodeResponse.TaskId = _ctx.IntegerValue("DeleteNode.TaskId");
+			deleteNodeResponse.OrderId = _ctx.StringValue("DeleteNode.OrderId");
         
 			return deleteNodeResponse;
         }

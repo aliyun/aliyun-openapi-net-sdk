@@ -26,14 +26,14 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class DeleteDBNodesResponseUnmarshaller
     {
-        public static DeleteDBNodesResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDBNodesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDBNodesResponse deleteDBNodesResponse = new DeleteDBNodesResponse();
 
-			deleteDBNodesResponse.HttpResponse = context.HttpResponse;
-			deleteDBNodesResponse.RequestId = context.StringValue("DeleteDBNodes.RequestId");
-			deleteDBNodesResponse.DBClusterId = context.StringValue("DeleteDBNodes.DBClusterId");
-			deleteDBNodesResponse.OrderId = context.StringValue("DeleteDBNodes.OrderId");
+			deleteDBNodesResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDBNodesResponse.RequestId = _ctx.StringValue("DeleteDBNodes.RequestId");
+			deleteDBNodesResponse.DBClusterId = _ctx.StringValue("DeleteDBNodes.DBClusterId");
+			deleteDBNodesResponse.OrderId = _ctx.StringValue("DeleteDBNodes.OrderId");
         
 			return deleteDBNodesResponse;
         }

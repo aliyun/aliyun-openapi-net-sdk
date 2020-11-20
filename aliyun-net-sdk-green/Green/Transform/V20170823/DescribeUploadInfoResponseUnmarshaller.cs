@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeUploadInfoResponseUnmarshaller
     {
-        public static DescribeUploadInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUploadInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUploadInfoResponse describeUploadInfoResponse = new DescribeUploadInfoResponse();
 
-			describeUploadInfoResponse.HttpResponse = context.HttpResponse;
-			describeUploadInfoResponse.RequestId = context.StringValue("DescribeUploadInfo.RequestId");
-			describeUploadInfoResponse.Accessid = context.StringValue("DescribeUploadInfo.Accessid");
-			describeUploadInfoResponse.Policy = context.StringValue("DescribeUploadInfo.Policy");
-			describeUploadInfoResponse.Signature = context.StringValue("DescribeUploadInfo.Signature");
-			describeUploadInfoResponse.Folder = context.StringValue("DescribeUploadInfo.Folder");
-			describeUploadInfoResponse.Host = context.StringValue("DescribeUploadInfo.Host");
-			describeUploadInfoResponse.Expire = context.IntegerValue("DescribeUploadInfo.Expire");
+			describeUploadInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeUploadInfoResponse.RequestId = _ctx.StringValue("DescribeUploadInfo.RequestId");
+			describeUploadInfoResponse.Accessid = _ctx.StringValue("DescribeUploadInfo.Accessid");
+			describeUploadInfoResponse.Policy = _ctx.StringValue("DescribeUploadInfo.Policy");
+			describeUploadInfoResponse.Signature = _ctx.StringValue("DescribeUploadInfo.Signature");
+			describeUploadInfoResponse.Folder = _ctx.StringValue("DescribeUploadInfo.Folder");
+			describeUploadInfoResponse.Host = _ctx.StringValue("DescribeUploadInfo.Host");
+			describeUploadInfoResponse.Expire = _ctx.IntegerValue("DescribeUploadInfo.Expire");
         
 			return describeUploadInfoResponse;
         }

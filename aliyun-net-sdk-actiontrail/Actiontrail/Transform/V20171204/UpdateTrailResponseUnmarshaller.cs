@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.Actiontrail.Model.V20171204;
 using System;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Actiontrail.Model.V20171204;
 
 namespace Aliyun.Acs.Actiontrail.Transform.V20171204
 {
@@ -31,8 +32,6 @@ namespace Aliyun.Acs.Actiontrail.Transform.V20171204
 
 			updateTrailResponse.HttpResponse = context.HttpResponse;
 			updateTrailResponse.RequestId = context.StringValue("UpdateTrail.RequestId");
-			updateTrailResponse.Param = context.StringValue("UpdateTrail.Param");
-			updateTrailResponse.Result = context.StringValue("UpdateTrail.Result");
 			updateTrailResponse.Name = context.StringValue("UpdateTrail.Name");
 			updateTrailResponse.HomeRegion = context.StringValue("UpdateTrail.HomeRegion");
 			updateTrailResponse.OssBucketName = context.StringValue("UpdateTrail.OssBucketName");
@@ -41,6 +40,8 @@ namespace Aliyun.Acs.Actiontrail.Transform.V20171204
 			updateTrailResponse.SlsProjectArn = context.StringValue("UpdateTrail.SlsProjectArn");
 			updateTrailResponse.SlsWriteRoleArn = context.StringValue("UpdateTrail.SlsWriteRoleArn");
 			updateTrailResponse.EventRW = context.StringValue("UpdateTrail.EventRW");
+			updateTrailResponse.TrailRegion = context.StringValue("UpdateTrail.TrailRegion");
+			updateTrailResponse.MnsTopicArn = context.StringValue("UpdateTrail.MnsTopicArn");
         
 			return updateTrailResponse;
         }

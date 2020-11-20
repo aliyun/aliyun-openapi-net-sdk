@@ -30,12 +30,12 @@ namespace Aliyun.Acs.Config.Model.V20190108
     public class ListConfigRulesRequest : RpcAcsRequest<ListConfigRulesResponse>
     {
         public ListConfigRulesRequest()
-            : base("Config", "2019-01-08", "ListConfigRules", "config", "openAPI")
+            : base("Config", "2019-01-08", "ListConfigRules", "Config", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Config.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Config.Endpoint.endpointRegionalType, null);
             }
         }
 
@@ -45,13 +45,13 @@ namespace Aliyun.Acs.Config.Model.V20190108
 
 		private string configRuleState;
 
-		private int? riskLevel;
-
 		private int? pageNumber;
 
 		private int? pageSize;
 
 		private string complianceType;
+
+		private int? riskLevel;
 
 		private long? memberId;
 
@@ -94,19 +94,6 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			}
 		}
 
-		public int? RiskLevel
-		{
-			get
-			{
-				return riskLevel;
-			}
-			set	
-			{
-				riskLevel = value;
-				DictionaryUtil.Add(QueryParameters, "RiskLevel", value.ToString());
-			}
-		}
-
 		public int? PageNumber
 		{
 			get
@@ -143,6 +130,19 @@ namespace Aliyun.Acs.Config.Model.V20190108
 			{
 				complianceType = value;
 				DictionaryUtil.Add(QueryParameters, "ComplianceType", value);
+			}
+		}
+
+		public int? RiskLevel
+		{
+			get
+			{
+				return riskLevel;
+			}
+			set	
+			{
+				riskLevel = value;
+				DictionaryUtil.Add(QueryParameters, "RiskLevel", value.ToString());
 			}
 		}
 

@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 {
     public class StopConfigRulesResponseUnmarshaller
     {
-        public static StopConfigRulesResponse Unmarshall(UnmarshallerContext context)
+        public static StopConfigRulesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopConfigRulesResponse stopConfigRulesResponse = new StopConfigRulesResponse();
 
-			stopConfigRulesResponse.HttpResponse = context.HttpResponse;
-			stopConfigRulesResponse.RequestId = context.StringValue("StopConfigRules.RequestId");
+			stopConfigRulesResponse.HttpResponse = _ctx.HttpResponse;
+			stopConfigRulesResponse.RequestId = _ctx.StringValue("StopConfigRules.RequestId");
 
 			StopConfigRulesResponse.StopConfigRules_OperateRuleResult operateRuleResult = new StopConfigRulesResponse.StopConfigRules_OperateRuleResult();
 
 			List<StopConfigRulesResponse.StopConfigRules_OperateRuleResult.StopConfigRules_OperateRuleItem> operateRuleResult_operateRuleItemList = new List<StopConfigRulesResponse.StopConfigRules_OperateRuleResult.StopConfigRules_OperateRuleItem>();
-			for (int i = 0; i < context.Length("StopConfigRules.OperateRuleResult.OperateRuleItemList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("StopConfigRules.OperateRuleResult.OperateRuleItemList.Length"); i++) {
 				StopConfigRulesResponse.StopConfigRules_OperateRuleResult.StopConfigRules_OperateRuleItem operateRuleItem = new StopConfigRulesResponse.StopConfigRules_OperateRuleResult.StopConfigRules_OperateRuleItem();
-				operateRuleItem.ConfigRuleId = context.StringValue("StopConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].ConfigRuleId");
-				operateRuleItem.ErrorCode = context.StringValue("StopConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].ErrorCode");
-				operateRuleItem.Success = context.BooleanValue("StopConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].Success");
+				operateRuleItem.ConfigRuleId = _ctx.StringValue("StopConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].ConfigRuleId");
+				operateRuleItem.ErrorCode = _ctx.StringValue("StopConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].ErrorCode");
+				operateRuleItem.Success = _ctx.BooleanValue("StopConfigRules.OperateRuleResult.OperateRuleItemList["+ i +"].Success");
 
 				operateRuleResult_operateRuleItemList.Add(operateRuleItem);
 			}

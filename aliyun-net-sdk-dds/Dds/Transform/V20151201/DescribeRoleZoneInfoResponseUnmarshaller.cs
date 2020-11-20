@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeRoleZoneInfoResponseUnmarshaller
     {
-        public static DescribeRoleZoneInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRoleZoneInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRoleZoneInfoResponse describeRoleZoneInfoResponse = new DescribeRoleZoneInfoResponse();
 
-			describeRoleZoneInfoResponse.HttpResponse = context.HttpResponse;
-			describeRoleZoneInfoResponse.RequestId = context.StringValue("DescribeRoleZoneInfo.RequestId");
+			describeRoleZoneInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeRoleZoneInfoResponse.RequestId = _ctx.StringValue("DescribeRoleZoneInfo.RequestId");
 
 			List<DescribeRoleZoneInfoResponse.DescribeRoleZoneInfo_ZoneInfo> describeRoleZoneInfoResponse_zoneInfos = new List<DescribeRoleZoneInfoResponse.DescribeRoleZoneInfo_ZoneInfo>();
-			for (int i = 0; i < context.Length("DescribeRoleZoneInfo.ZoneInfos.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRoleZoneInfo.ZoneInfos.Length"); i++) {
 				DescribeRoleZoneInfoResponse.DescribeRoleZoneInfo_ZoneInfo zoneInfo = new DescribeRoleZoneInfoResponse.DescribeRoleZoneInfo_ZoneInfo();
-				zoneInfo.NodeType = context.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].NodeType");
-				zoneInfo.RoleType = context.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].RoleType");
-				zoneInfo.ZoneId = context.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].ZoneId");
-				zoneInfo.RoleId = context.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].RoleId");
-				zoneInfo.InsName = context.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].InsName");
+				zoneInfo.NodeType = _ctx.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].NodeType");
+				zoneInfo.RoleType = _ctx.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].RoleType");
+				zoneInfo.ZoneId = _ctx.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].ZoneId");
+				zoneInfo.RoleId = _ctx.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].RoleId");
+				zoneInfo.InsName = _ctx.StringValue("DescribeRoleZoneInfo.ZoneInfos["+ i +"].InsName");
 
 				describeRoleZoneInfoResponse_zoneInfos.Add(zoneInfo);
 			}

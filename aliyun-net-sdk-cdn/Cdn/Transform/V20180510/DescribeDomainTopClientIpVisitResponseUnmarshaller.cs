@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainTopClientIpVisitResponseUnmarshaller
     {
-        public static DescribeDomainTopClientIpVisitResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainTopClientIpVisitResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainTopClientIpVisitResponse describeDomainTopClientIpVisitResponse = new DescribeDomainTopClientIpVisitResponse();
 
-			describeDomainTopClientIpVisitResponse.HttpResponse = context.HttpResponse;
-			describeDomainTopClientIpVisitResponse.RequestId = context.StringValue("DescribeDomainTopClientIpVisit.RequestId");
+			describeDomainTopClientIpVisitResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainTopClientIpVisitResponse.RequestId = _ctx.StringValue("DescribeDomainTopClientIpVisit.RequestId");
 
 			List<DescribeDomainTopClientIpVisitResponse.DescribeDomainTopClientIpVisit_ClientIp> describeDomainTopClientIpVisitResponse_clientIpList = new List<DescribeDomainTopClientIpVisitResponse.DescribeDomainTopClientIpVisit_ClientIp>();
-			for (int i = 0; i < context.Length("DescribeDomainTopClientIpVisit.ClientIpList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainTopClientIpVisit.ClientIpList.Length"); i++) {
 				DescribeDomainTopClientIpVisitResponse.DescribeDomainTopClientIpVisit_ClientIp clientIp = new DescribeDomainTopClientIpVisitResponse.DescribeDomainTopClientIpVisit_ClientIp();
-				clientIp.Rank = context.IntegerValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].Rank");
-				clientIp.ClientIp = context.StringValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].ClientIp");
-				clientIp.Traffic = context.LongValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].Traffic");
-				clientIp.Acc = context.LongValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].Acc");
+				clientIp.Rank = _ctx.IntegerValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].Rank");
+				clientIp.ClientIp = _ctx.StringValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].ClientIp");
+				clientIp.Traffic = _ctx.LongValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].Traffic");
+				clientIp.Acc = _ctx.LongValue("DescribeDomainTopClientIpVisit.ClientIpList["+ i +"].Acc");
 
 				describeDomainTopClientIpVisitResponse_clientIpList.Add(clientIp);
 			}

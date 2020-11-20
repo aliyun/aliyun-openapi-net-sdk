@@ -26,22 +26,22 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DescribeIpWhitelistResponseUnmarshaller
     {
-        public static DescribeIpWhitelistResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeIpWhitelistResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeIpWhitelistResponse describeIpWhitelistResponse = new DescribeIpWhitelistResponse();
 
-			describeIpWhitelistResponse.HttpResponse = context.HttpResponse;
-			describeIpWhitelistResponse.RequestId = context.StringValue("DescribeIpWhitelist.RequestId");
+			describeIpWhitelistResponse.HttpResponse = _ctx.HttpResponse;
+			describeIpWhitelistResponse.RequestId = _ctx.StringValue("DescribeIpWhitelist.RequestId");
 
 			List<DescribeIpWhitelistResponse.DescribeIpWhitelist_Group> describeIpWhitelistResponse_groups = new List<DescribeIpWhitelistResponse.DescribeIpWhitelist_Group>();
-			for (int i = 0; i < context.Length("DescribeIpWhitelist.Groups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeIpWhitelist.Groups.Length"); i++) {
 				DescribeIpWhitelistResponse.DescribeIpWhitelist_Group group = new DescribeIpWhitelistResponse.DescribeIpWhitelist_Group();
-				group.GroupName = context.StringValue("DescribeIpWhitelist.Groups["+ i +"].GroupName");
-				group.IpVersion = context.IntegerValue("DescribeIpWhitelist.Groups["+ i +"].IpVersion");
+				group.GroupName = _ctx.StringValue("DescribeIpWhitelist.Groups["+ i +"].GroupName");
+				group.IpVersion = _ctx.IntegerValue("DescribeIpWhitelist.Groups["+ i +"].IpVersion");
 
 				List<string> group_ipList = new List<string>();
-				for (int j = 0; j < context.Length("DescribeIpWhitelist.Groups["+ i +"].IpList.Length"); j++) {
-					group_ipList.Add(context.StringValue("DescribeIpWhitelist.Groups["+ i +"].IpList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeIpWhitelist.Groups["+ i +"].IpList.Length"); j++) {
+					group_ipList.Add(_ctx.StringValue("DescribeIpWhitelist.Groups["+ i +"].IpList["+ j +"]"));
 				}
 				group.IpList = group_ipList;
 

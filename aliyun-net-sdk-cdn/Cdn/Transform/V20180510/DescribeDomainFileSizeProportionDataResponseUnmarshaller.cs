@@ -26,27 +26,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainFileSizeProportionDataResponseUnmarshaller
     {
-        public static DescribeDomainFileSizeProportionDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainFileSizeProportionDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainFileSizeProportionDataResponse describeDomainFileSizeProportionDataResponse = new DescribeDomainFileSizeProportionDataResponse();
 
-			describeDomainFileSizeProportionDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainFileSizeProportionDataResponse.RequestId = context.StringValue("DescribeDomainFileSizeProportionData.RequestId");
-			describeDomainFileSizeProportionDataResponse.DomainName = context.StringValue("DescribeDomainFileSizeProportionData.DomainName");
-			describeDomainFileSizeProportionDataResponse.DataInterval = context.StringValue("DescribeDomainFileSizeProportionData.DataInterval");
-			describeDomainFileSizeProportionDataResponse.StartTime = context.StringValue("DescribeDomainFileSizeProportionData.StartTime");
-			describeDomainFileSizeProportionDataResponse.EndTime = context.StringValue("DescribeDomainFileSizeProportionData.EndTime");
+			describeDomainFileSizeProportionDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainFileSizeProportionDataResponse.RequestId = _ctx.StringValue("DescribeDomainFileSizeProportionData.RequestId");
+			describeDomainFileSizeProportionDataResponse.DomainName = _ctx.StringValue("DescribeDomainFileSizeProportionData.DomainName");
+			describeDomainFileSizeProportionDataResponse.DataInterval = _ctx.StringValue("DescribeDomainFileSizeProportionData.DataInterval");
+			describeDomainFileSizeProportionDataResponse.StartTime = _ctx.StringValue("DescribeDomainFileSizeProportionData.StartTime");
+			describeDomainFileSizeProportionDataResponse.EndTime = _ctx.StringValue("DescribeDomainFileSizeProportionData.EndTime");
 
 			List<DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData> describeDomainFileSizeProportionDataResponse_fileSizeProportionDataInterval = new List<DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData>();
-			for (int i = 0; i < context.Length("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval.Length"); i++) {
 				DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData usageData = new DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData();
-				usageData.TimeStamp = context.StringValue("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval["+ i +"].TimeStamp");
+				usageData.TimeStamp = _ctx.StringValue("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval["+ i +"].TimeStamp");
 
 				List<DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData.DescribeDomainFileSizeProportionData_FileSizeProportionData> usageData_value = new List<DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData.DescribeDomainFileSizeProportionData_FileSizeProportionData>();
-				for (int j = 0; j < context.Length("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval["+ i +"].Value.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval["+ i +"].Value.Length"); j++) {
 					DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData.DescribeDomainFileSizeProportionData_FileSizeProportionData fileSizeProportionData = new DescribeDomainFileSizeProportionDataResponse.DescribeDomainFileSizeProportionData_UsageData.DescribeDomainFileSizeProportionData_FileSizeProportionData();
-					fileSizeProportionData.FileSize = context.StringValue("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval["+ i +"].Value["+ j +"].FileSize");
-					fileSizeProportionData.Proportion = context.StringValue("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval["+ i +"].Value["+ j +"].Proportion");
+					fileSizeProportionData.FileSize = _ctx.StringValue("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval["+ i +"].Value["+ j +"].FileSize");
+					fileSizeProportionData.Proportion = _ctx.StringValue("DescribeDomainFileSizeProportionData.FileSizeProportionDataInterval["+ i +"].Value["+ j +"].Proportion");
 
 					usageData_value.Add(fileSizeProportionData);
 				}

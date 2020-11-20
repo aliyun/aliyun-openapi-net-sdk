@@ -26,12 +26,12 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class RestartDBNodeResponseUnmarshaller
     {
-        public static RestartDBNodeResponse Unmarshall(UnmarshallerContext context)
+        public static RestartDBNodeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RestartDBNodeResponse restartDBNodeResponse = new RestartDBNodeResponse();
 
-			restartDBNodeResponse.HttpResponse = context.HttpResponse;
-			restartDBNodeResponse.RequestId = context.StringValue("RestartDBNode.RequestId");
+			restartDBNodeResponse.HttpResponse = _ctx.HttpResponse;
+			restartDBNodeResponse.RequestId = _ctx.StringValue("RestartDBNode.RequestId");
         
 			return restartDBNodeResponse;
         }

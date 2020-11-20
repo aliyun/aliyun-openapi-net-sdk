@@ -26,13 +26,13 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class CreateCertificateResponseUnmarshaller
     {
-        public static CreateCertificateResponse Unmarshall(UnmarshallerContext context)
+        public static CreateCertificateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateCertificateResponse createCertificateResponse = new CreateCertificateResponse();
 
-			createCertificateResponse.HttpResponse = context.HttpResponse;
-			createCertificateResponse.RequestId = context.StringValue("CreateCertificate.RequestId");
-			createCertificateResponse.CertificateId = context.LongValue("CreateCertificate.CertificateId");
+			createCertificateResponse.HttpResponse = _ctx.HttpResponse;
+			createCertificateResponse.RequestId = _ctx.StringValue("CreateCertificate.RequestId");
+			createCertificateResponse.CertificateId = _ctx.LongValue("CreateCertificate.CertificateId");
         
 			return createCertificateResponse;
         }

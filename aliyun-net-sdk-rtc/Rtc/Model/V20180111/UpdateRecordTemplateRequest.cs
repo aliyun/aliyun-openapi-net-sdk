@@ -34,8 +34,8 @@ namespace Aliyun.Acs.rtc.Model.V20180111
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.rtc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.rtc.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -56,11 +56,17 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private int? fileSplitInterval;
 
+		private string httpCallbackUrl;
+
+		private List<Watermarks> watermarkss = new List<Watermarks>(){ };
+
 		private long? ownerId;
 
 		private string templateId;
 
 		private string appId;
+
+		private List<Backgrounds> backgroundss = new List<Backgrounds>(){ };
 
 		private string name;
 
@@ -178,6 +184,43 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
+		public string HttpCallbackUrl
+		{
+			get
+			{
+				return httpCallbackUrl;
+			}
+			set	
+			{
+				httpCallbackUrl = value;
+				DictionaryUtil.Add(QueryParameters, "HttpCallbackUrl", value);
+			}
+		}
+
+		public List<Watermarks> Watermarkss
+		{
+			get
+			{
+				return watermarkss;
+			}
+
+			set
+			{
+				watermarkss = value;
+				for (int i = 0; i < watermarkss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Watermarks." + (i + 1) + ".Url", watermarkss[i].Url);
+					DictionaryUtil.Add(QueryParameters,"Watermarks." + (i + 1) + ".Alpha", watermarkss[i].Alpha);
+					DictionaryUtil.Add(QueryParameters,"Watermarks." + (i + 1) + ".Display", watermarkss[i].Display);
+					DictionaryUtil.Add(QueryParameters,"Watermarks." + (i + 1) + ".X", watermarkss[i].X);
+					DictionaryUtil.Add(QueryParameters,"Watermarks." + (i + 1) + ".Y", watermarkss[i].Y);
+					DictionaryUtil.Add(QueryParameters,"Watermarks." + (i + 1) + ".Width", watermarkss[i].Width);
+					DictionaryUtil.Add(QueryParameters,"Watermarks." + (i + 1) + ".Height", watermarkss[i].Height);
+					DictionaryUtil.Add(QueryParameters,"Watermarks." + (i + 1) + ".ZOrder", watermarkss[i].ZOrder);
+				}
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -217,6 +260,29 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
+		public List<Backgrounds> Backgroundss
+		{
+			get
+			{
+				return backgroundss;
+			}
+
+			set
+			{
+				backgroundss = value;
+				for (int i = 0; i < backgroundss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Backgrounds." + (i + 1) + ".Url", backgroundss[i].Url);
+					DictionaryUtil.Add(QueryParameters,"Backgrounds." + (i + 1) + ".Display", backgroundss[i].Display);
+					DictionaryUtil.Add(QueryParameters,"Backgrounds." + (i + 1) + ".X", backgroundss[i].X);
+					DictionaryUtil.Add(QueryParameters,"Backgrounds." + (i + 1) + ".Y", backgroundss[i].Y);
+					DictionaryUtil.Add(QueryParameters,"Backgrounds." + (i + 1) + ".Width", backgroundss[i].Width);
+					DictionaryUtil.Add(QueryParameters,"Backgrounds." + (i + 1) + ".Height", backgroundss[i].Height);
+					DictionaryUtil.Add(QueryParameters,"Backgrounds." + (i + 1) + ".ZOrder", backgroundss[i].ZOrder);
+				}
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -240,6 +306,224 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				mediaEncode = value;
 				DictionaryUtil.Add(QueryParameters, "MediaEncode", value.ToString());
+			}
+		}
+
+		public class Watermarks
+		{
+
+			private string url;
+
+			private float? alpha;
+
+			private int? display;
+
+			private float? x;
+
+			private float? y;
+
+			private float? width;
+
+			private float? height;
+
+			private int? zOrder;
+
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
+				}
+			}
+
+			public float? Alpha
+			{
+				get
+				{
+					return alpha;
+				}
+				set	
+				{
+					alpha = value;
+				}
+			}
+
+			public int? Display
+			{
+				get
+				{
+					return display;
+				}
+				set	
+				{
+					display = value;
+				}
+			}
+
+			public float? X
+			{
+				get
+				{
+					return x;
+				}
+				set	
+				{
+					x = value;
+				}
+			}
+
+			public float? Y
+			{
+				get
+				{
+					return y;
+				}
+				set	
+				{
+					y = value;
+				}
+			}
+
+			public float? Width
+			{
+				get
+				{
+					return width;
+				}
+				set	
+				{
+					width = value;
+				}
+			}
+
+			public float? Height
+			{
+				get
+				{
+					return height;
+				}
+				set	
+				{
+					height = value;
+				}
+			}
+
+			public int? ZOrder
+			{
+				get
+				{
+					return zOrder;
+				}
+				set	
+				{
+					zOrder = value;
+				}
+			}
+		}
+
+		public class Backgrounds
+		{
+
+			private string url;
+
+			private int? display;
+
+			private float? x;
+
+			private float? y;
+
+			private float? width;
+
+			private float? height;
+
+			private int? zOrder;
+
+			public string Url
+			{
+				get
+				{
+					return url;
+				}
+				set	
+				{
+					url = value;
+				}
+			}
+
+			public int? Display
+			{
+				get
+				{
+					return display;
+				}
+				set	
+				{
+					display = value;
+				}
+			}
+
+			public float? X
+			{
+				get
+				{
+					return x;
+				}
+				set	
+				{
+					x = value;
+				}
+			}
+
+			public float? Y
+			{
+				get
+				{
+					return y;
+				}
+				set	
+				{
+					y = value;
+				}
+			}
+
+			public float? Width
+			{
+				get
+				{
+					return width;
+				}
+				set	
+				{
+					width = value;
+				}
+			}
+
+			public float? Height
+			{
+				get
+				{
+					return height;
+				}
+				set	
+				{
+					height = value;
+				}
+			}
+
+			public int? ZOrder
+			{
+				get
+				{
+					return zOrder;
+				}
+				set	
+				{
+					zOrder = value;
+				}
 			}
 		}
 

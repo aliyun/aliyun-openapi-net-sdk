@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainRealtimeLogDeliveryResponseUnmarshaller
     {
-        public static DescribeDomainRealtimeLogDeliveryResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainRealtimeLogDeliveryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainRealtimeLogDeliveryResponse describeDomainRealtimeLogDeliveryResponse = new DescribeDomainRealtimeLogDeliveryResponse();
 
-			describeDomainRealtimeLogDeliveryResponse.HttpResponse = context.HttpResponse;
-			describeDomainRealtimeLogDeliveryResponse.RequestId = context.StringValue("DescribeDomainRealtimeLogDelivery.RequestId");
-			describeDomainRealtimeLogDeliveryResponse.Project = context.StringValue("DescribeDomainRealtimeLogDelivery.Project");
-			describeDomainRealtimeLogDeliveryResponse.Region = context.StringValue("DescribeDomainRealtimeLogDelivery.Region");
-			describeDomainRealtimeLogDeliveryResponse.Logstore = context.StringValue("DescribeDomainRealtimeLogDelivery.Logstore");
-			describeDomainRealtimeLogDeliveryResponse.Status = context.StringValue("DescribeDomainRealtimeLogDelivery.Status");
+			describeDomainRealtimeLogDeliveryResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainRealtimeLogDeliveryResponse.RequestId = _ctx.StringValue("DescribeDomainRealtimeLogDelivery.RequestId");
+			describeDomainRealtimeLogDeliveryResponse.Project = _ctx.StringValue("DescribeDomainRealtimeLogDelivery.Project");
+			describeDomainRealtimeLogDeliveryResponse.Region = _ctx.StringValue("DescribeDomainRealtimeLogDelivery.Region");
+			describeDomainRealtimeLogDeliveryResponse.Logstore = _ctx.StringValue("DescribeDomainRealtimeLogDelivery.Logstore");
+			describeDomainRealtimeLogDeliveryResponse.Status = _ctx.StringValue("DescribeDomainRealtimeLogDelivery.Status");
         
 			return describeDomainRealtimeLogDeliveryResponse;
         }

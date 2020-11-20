@@ -26,27 +26,27 @@ namespace Aliyun.Acs.polardb.Transform.V20170801
 {
     public class DescribeBackupLogsResponseUnmarshaller
     {
-        public static DescribeBackupLogsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBackupLogsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBackupLogsResponse describeBackupLogsResponse = new DescribeBackupLogsResponse();
 
-			describeBackupLogsResponse.HttpResponse = context.HttpResponse;
-			describeBackupLogsResponse.RequestId = context.StringValue("DescribeBackupLogs.RequestId");
-			describeBackupLogsResponse.TotalRecordCount = context.StringValue("DescribeBackupLogs.TotalRecordCount");
-			describeBackupLogsResponse.PageNumber = context.StringValue("DescribeBackupLogs.PageNumber");
-			describeBackupLogsResponse.PageRecordCount = context.StringValue("DescribeBackupLogs.PageRecordCount");
+			describeBackupLogsResponse.HttpResponse = _ctx.HttpResponse;
+			describeBackupLogsResponse.RequestId = _ctx.StringValue("DescribeBackupLogs.RequestId");
+			describeBackupLogsResponse.TotalRecordCount = _ctx.StringValue("DescribeBackupLogs.TotalRecordCount");
+			describeBackupLogsResponse.PageNumber = _ctx.StringValue("DescribeBackupLogs.PageNumber");
+			describeBackupLogsResponse.PageRecordCount = _ctx.StringValue("DescribeBackupLogs.PageRecordCount");
 
 			List<DescribeBackupLogsResponse.DescribeBackupLogs_BackupLog> describeBackupLogsResponse_items = new List<DescribeBackupLogsResponse.DescribeBackupLogs_BackupLog>();
-			for (int i = 0; i < context.Length("DescribeBackupLogs.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeBackupLogs.Items.Length"); i++) {
 				DescribeBackupLogsResponse.DescribeBackupLogs_BackupLog backupLog = new DescribeBackupLogsResponse.DescribeBackupLogs_BackupLog();
-				backupLog.BackupLogId = context.StringValue("DescribeBackupLogs.Items["+ i +"].BackupLogId");
-				backupLog.BackupLogName = context.StringValue("DescribeBackupLogs.Items["+ i +"].BackupLogName");
-				backupLog.BackupLogStartTime = context.StringValue("DescribeBackupLogs.Items["+ i +"].BackupLogStartTime");
-				backupLog.BackupLogEndTime = context.StringValue("DescribeBackupLogs.Items["+ i +"].BackupLogEndTime");
-				backupLog.BackupLogSize = context.StringValue("DescribeBackupLogs.Items["+ i +"].BackupLogSize");
-				backupLog.DownloadLink = context.StringValue("DescribeBackupLogs.Items["+ i +"].DownloadLink");
-				backupLog.IntranetDownloadLink = context.StringValue("DescribeBackupLogs.Items["+ i +"].IntranetDownloadLink");
-				backupLog.LinkExpiredTime = context.StringValue("DescribeBackupLogs.Items["+ i +"].LinkExpiredTime");
+				backupLog.BackupLogId = _ctx.StringValue("DescribeBackupLogs.Items["+ i +"].BackupLogId");
+				backupLog.BackupLogName = _ctx.StringValue("DescribeBackupLogs.Items["+ i +"].BackupLogName");
+				backupLog.BackupLogStartTime = _ctx.StringValue("DescribeBackupLogs.Items["+ i +"].BackupLogStartTime");
+				backupLog.BackupLogEndTime = _ctx.StringValue("DescribeBackupLogs.Items["+ i +"].BackupLogEndTime");
+				backupLog.BackupLogSize = _ctx.StringValue("DescribeBackupLogs.Items["+ i +"].BackupLogSize");
+				backupLog.DownloadLink = _ctx.StringValue("DescribeBackupLogs.Items["+ i +"].DownloadLink");
+				backupLog.IntranetDownloadLink = _ctx.StringValue("DescribeBackupLogs.Items["+ i +"].IntranetDownloadLink");
+				backupLog.LinkExpiredTime = _ctx.StringValue("DescribeBackupLogs.Items["+ i +"].LinkExpiredTime");
 
 				describeBackupLogsResponse_items.Add(backupLog);
 			}

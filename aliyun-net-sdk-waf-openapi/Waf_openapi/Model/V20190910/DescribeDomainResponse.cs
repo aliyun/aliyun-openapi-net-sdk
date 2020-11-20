@@ -56,6 +56,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 		public class DescribeDomain_Domain
 		{
 
+			private int? ipFollowStatus;
+
 			private int? httpToUserIp;
 
 			private int? httpsRedirect;
@@ -78,7 +80,11 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 			private string resourceGroupId;
 
+			private string accessType;
+
 			private List<DescribeDomain_LogHeader> logHeaders;
+
+			private List<DescribeDomain_CloudNativeInstancesItem> cloudNativeInstances;
 
 			private List<string> sourceIps;
 
@@ -87,6 +93,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			private List<string> httpPort;
 
 			private List<string> httpsPort;
+
+			public int? IpFollowStatus
+			{
+				get
+				{
+					return ipFollowStatus;
+				}
+				set	
+				{
+					ipFollowStatus = value;
+				}
+			}
 
 			public int? HttpToUserIp
 			{
@@ -220,6 +238,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				}
 			}
 
+			public string AccessType
+			{
+				get
+				{
+					return accessType;
+				}
+				set	
+				{
+					accessType = value;
+				}
+			}
+
 			public List<DescribeDomain_LogHeader> LogHeaders
 			{
 				get
@@ -229,6 +259,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					logHeaders = value;
+				}
+			}
+
+			public List<DescribeDomain_CloudNativeInstancesItem> CloudNativeInstances
+			{
+				get
+				{
+					return cloudNativeInstances;
+				}
+				set	
+				{
+					cloudNativeInstances = value;
 				}
 			}
 
@@ -308,6 +350,98 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 					set	
 					{
 						k = value;
+					}
+				}
+			}
+
+			public class DescribeDomain_CloudNativeInstancesItem
+			{
+
+				private string cloudNativeProductName;
+
+				private string instanceId;
+
+				private string iPAddressList;
+
+				private List<DescribeDomain_ProtocolPortConfigsItem> protocolPortConfigs;
+
+				public string CloudNativeProductName
+				{
+					get
+					{
+						return cloudNativeProductName;
+					}
+					set	
+					{
+						cloudNativeProductName = value;
+					}
+				}
+
+				public string InstanceId
+				{
+					get
+					{
+						return instanceId;
+					}
+					set	
+					{
+						instanceId = value;
+					}
+				}
+
+				public string IPAddressList
+				{
+					get
+					{
+						return iPAddressList;
+					}
+					set	
+					{
+						iPAddressList = value;
+					}
+				}
+
+				public List<DescribeDomain_ProtocolPortConfigsItem> ProtocolPortConfigs
+				{
+					get
+					{
+						return protocolPortConfigs;
+					}
+					set	
+					{
+						protocolPortConfigs = value;
+					}
+				}
+
+				public class DescribeDomain_ProtocolPortConfigsItem
+				{
+
+					private string protocol;
+
+					private string ports;
+
+					public string Protocol
+					{
+						get
+						{
+							return protocol;
+						}
+						set	
+						{
+							protocol = value;
+						}
+					}
+
+					public string Ports
+					{
+						get
+						{
+							return ports;
+						}
+						set	
+						{
+							ports = value;
+						}
 					}
 				}
 			}

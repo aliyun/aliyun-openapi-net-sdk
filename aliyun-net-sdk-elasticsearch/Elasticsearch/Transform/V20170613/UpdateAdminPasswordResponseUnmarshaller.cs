@@ -26,12 +26,12 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateAdminPasswordResponseUnmarshaller
     {
-        public static UpdateAdminPasswordResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateAdminPasswordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateAdminPasswordResponse updateAdminPasswordResponse = new UpdateAdminPasswordResponse();
 
-			updateAdminPasswordResponse.HttpResponse = context.HttpResponse;
-			updateAdminPasswordResponse.RequestId = context.StringValue("UpdateAdminPassword.RequestId");
+			updateAdminPasswordResponse.HttpResponse = _ctx.HttpResponse;
+			updateAdminPasswordResponse.RequestId = _ctx.StringValue("UpdateAdminPassword.RequestId");
         
 			return updateAdminPasswordResponse;
         }

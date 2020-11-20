@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,9 +33,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public DeactivateScalingConfigurationRequest()
             : base("Ess", "2014-08-28", "DeactivateScalingConfiguration", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string scalingConfigurationId;
 
 		private string resourceOwnerAccount;
 
@@ -42,18 +47,7 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private long? ownerId;
 
-		public string ScalingConfigurationId
-		{
-			get
-			{
-				return scalingConfigurationId;
-			}
-			set	
-			{
-				scalingConfigurationId = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingConfigurationId", value);
-			}
-		}
+		private string scalingConfigurationId;
 
 		public string ResourceOwnerAccount
 		{
@@ -91,6 +85,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ScalingConfigurationId
+		{
+			get
+			{
+				return scalingConfigurationId;
+			}
+			set	
+			{
+				scalingConfigurationId = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingConfigurationId", value);
 			}
 		}
 

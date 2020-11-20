@@ -26,16 +26,16 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeMPULayoutListResponseUnmarshaller
     {
-        public static DescribeMPULayoutListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeMPULayoutListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeMPULayoutListResponse describeMPULayoutListResponse = new DescribeMPULayoutListResponse();
 
-			describeMPULayoutListResponse.HttpResponse = context.HttpResponse;
-			describeMPULayoutListResponse.RequestId = context.StringValue("DescribeMPULayoutList.RequestId");
+			describeMPULayoutListResponse.HttpResponse = _ctx.HttpResponse;
+			describeMPULayoutListResponse.RequestId = _ctx.StringValue("DescribeMPULayoutList.RequestId");
 
 			List<string> describeMPULayoutListResponse_layoutIds = new List<string>();
-			for (int i = 0; i < context.Length("DescribeMPULayoutList.LayoutIds.Length"); i++) {
-				describeMPULayoutListResponse_layoutIds.Add(context.StringValue("DescribeMPULayoutList.LayoutIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeMPULayoutList.LayoutIds.Length"); i++) {
+				describeMPULayoutListResponse_layoutIds.Add(_ctx.StringValue("DescribeMPULayoutList.LayoutIds["+ i +"]"));
 			}
 			describeMPULayoutListResponse.LayoutIds = describeMPULayoutListResponse_layoutIds;
         

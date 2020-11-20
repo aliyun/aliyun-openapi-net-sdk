@@ -74,6 +74,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 
 			private string subscriptionType;
 
+			private string version;
+
 			public int? InDebt
 			{
 				get
@@ -179,6 +181,18 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 				set	
 				{
 					subscriptionType = value;
+				}
+			}
+
+			public string Version
+			{
+				get
+				{
+					return version;
+				}
+				set	
+				{
+					version = value;
 				}
 			}
 		}

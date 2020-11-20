@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeRunningLogRecordsResponseUnmarshaller
     {
-        public static DescribeRunningLogRecordsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRunningLogRecordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRunningLogRecordsResponse describeRunningLogRecordsResponse = new DescribeRunningLogRecordsResponse();
 
-			describeRunningLogRecordsResponse.HttpResponse = context.HttpResponse;
-			describeRunningLogRecordsResponse.RequestId = context.StringValue("DescribeRunningLogRecords.RequestId");
-			describeRunningLogRecordsResponse.Engine = context.StringValue("DescribeRunningLogRecords.Engine");
-			describeRunningLogRecordsResponse.TotalRecordCount = context.IntegerValue("DescribeRunningLogRecords.TotalRecordCount");
-			describeRunningLogRecordsResponse.PageNumber = context.IntegerValue("DescribeRunningLogRecords.PageNumber");
-			describeRunningLogRecordsResponse.PageRecordCount = context.IntegerValue("DescribeRunningLogRecords.PageRecordCount");
+			describeRunningLogRecordsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRunningLogRecordsResponse.RequestId = _ctx.StringValue("DescribeRunningLogRecords.RequestId");
+			describeRunningLogRecordsResponse.Engine = _ctx.StringValue("DescribeRunningLogRecords.Engine");
+			describeRunningLogRecordsResponse.TotalRecordCount = _ctx.IntegerValue("DescribeRunningLogRecords.TotalRecordCount");
+			describeRunningLogRecordsResponse.PageNumber = _ctx.IntegerValue("DescribeRunningLogRecords.PageNumber");
+			describeRunningLogRecordsResponse.PageRecordCount = _ctx.IntegerValue("DescribeRunningLogRecords.PageRecordCount");
 
 			List<DescribeRunningLogRecordsResponse.DescribeRunningLogRecords_LogRecords> describeRunningLogRecordsResponse_items = new List<DescribeRunningLogRecordsResponse.DescribeRunningLogRecords_LogRecords>();
-			for (int i = 0; i < context.Length("DescribeRunningLogRecords.Items.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRunningLogRecords.Items.Length"); i++) {
 				DescribeRunningLogRecordsResponse.DescribeRunningLogRecords_LogRecords logRecords = new DescribeRunningLogRecordsResponse.DescribeRunningLogRecords_LogRecords();
-				logRecords.Id = context.IntegerValue("DescribeRunningLogRecords.Items["+ i +"].Id");
-				logRecords.CreateTime = context.StringValue("DescribeRunningLogRecords.Items["+ i +"].CreateTime");
-				logRecords.Category = context.StringValue("DescribeRunningLogRecords.Items["+ i +"].Category");
-				logRecords.ConnInfo = context.StringValue("DescribeRunningLogRecords.Items["+ i +"].ConnInfo");
-				logRecords.Content = context.StringValue("DescribeRunningLogRecords.Items["+ i +"].Content");
+				logRecords.Id = _ctx.IntegerValue("DescribeRunningLogRecords.Items["+ i +"].Id");
+				logRecords.CreateTime = _ctx.StringValue("DescribeRunningLogRecords.Items["+ i +"].CreateTime");
+				logRecords.Category = _ctx.StringValue("DescribeRunningLogRecords.Items["+ i +"].Category");
+				logRecords.ConnInfo = _ctx.StringValue("DescribeRunningLogRecords.Items["+ i +"].ConnInfo");
+				logRecords.Content = _ctx.StringValue("DescribeRunningLogRecords.Items["+ i +"].Content");
 
 				describeRunningLogRecordsResponse_items.Add(logRecords);
 			}

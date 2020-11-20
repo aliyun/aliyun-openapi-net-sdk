@@ -26,16 +26,16 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class DescribeDomainNamesResponseUnmarshaller
     {
-        public static DescribeDomainNamesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainNamesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainNamesResponse describeDomainNamesResponse = new DescribeDomainNamesResponse();
 
-			describeDomainNamesResponse.HttpResponse = context.HttpResponse;
-			describeDomainNamesResponse.RequestId = context.StringValue("DescribeDomainNames.RequestId");
+			describeDomainNamesResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainNamesResponse.RequestId = _ctx.StringValue("DescribeDomainNames.RequestId");
 
 			List<string> describeDomainNamesResponse_domainNames = new List<string>();
-			for (int i = 0; i < context.Length("DescribeDomainNames.DomainNames.Length"); i++) {
-				describeDomainNamesResponse_domainNames.Add(context.StringValue("DescribeDomainNames.DomainNames["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeDomainNames.DomainNames.Length"); i++) {
+				describeDomainNamesResponse_domainNames.Add(_ctx.StringValue("DescribeDomainNames.DomainNames["+ i +"]"));
 			}
 			describeDomainNamesResponse.DomainNames = describeDomainNamesResponse_domainNames;
         

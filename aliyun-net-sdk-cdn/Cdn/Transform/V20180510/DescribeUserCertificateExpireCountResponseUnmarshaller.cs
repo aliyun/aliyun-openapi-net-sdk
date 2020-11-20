@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeUserCertificateExpireCountResponseUnmarshaller
     {
-        public static DescribeUserCertificateExpireCountResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserCertificateExpireCountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserCertificateExpireCountResponse describeUserCertificateExpireCountResponse = new DescribeUserCertificateExpireCountResponse();
 
-			describeUserCertificateExpireCountResponse.HttpResponse = context.HttpResponse;
-			describeUserCertificateExpireCountResponse.RequestId = context.StringValue("DescribeUserCertificateExpireCount.RequestId");
-			describeUserCertificateExpireCountResponse.ExpireWithin30DaysCount = context.IntegerValue("DescribeUserCertificateExpireCount.ExpireWithin30DaysCount");
-			describeUserCertificateExpireCountResponse.ExpiredCount = context.IntegerValue("DescribeUserCertificateExpireCount.ExpiredCount");
+			describeUserCertificateExpireCountResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserCertificateExpireCountResponse.RequestId = _ctx.StringValue("DescribeUserCertificateExpireCount.RequestId");
+			describeUserCertificateExpireCountResponse.ExpireWithin30DaysCount = _ctx.IntegerValue("DescribeUserCertificateExpireCount.ExpireWithin30DaysCount");
+			describeUserCertificateExpireCountResponse.ExpiredCount = _ctx.IntegerValue("DescribeUserCertificateExpireCount.ExpiredCount");
         
 			return describeUserCertificateExpireCountResponse;
         }

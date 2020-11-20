@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeLiveStreamsOnlineListResponseUnmarshaller
     {
-        public static DescribeLiveStreamsOnlineListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveStreamsOnlineListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveStreamsOnlineListResponse describeLiveStreamsOnlineListResponse = new DescribeLiveStreamsOnlineListResponse();
 
-			describeLiveStreamsOnlineListResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamsOnlineListResponse.RequestId = context.StringValue("DescribeLiveStreamsOnlineList.RequestId");
-			describeLiveStreamsOnlineListResponse.PageNum = context.IntegerValue("DescribeLiveStreamsOnlineList.PageNum");
-			describeLiveStreamsOnlineListResponse.PageSize = context.IntegerValue("DescribeLiveStreamsOnlineList.PageSize");
-			describeLiveStreamsOnlineListResponse.TotalNum = context.IntegerValue("DescribeLiveStreamsOnlineList.TotalNum");
-			describeLiveStreamsOnlineListResponse.TotalPage = context.IntegerValue("DescribeLiveStreamsOnlineList.TotalPage");
+			describeLiveStreamsOnlineListResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamsOnlineListResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsOnlineList.RequestId");
+			describeLiveStreamsOnlineListResponse.PageNum = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.PageNum");
+			describeLiveStreamsOnlineListResponse.PageSize = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.PageSize");
+			describeLiveStreamsOnlineListResponse.TotalNum = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.TotalNum");
+			describeLiveStreamsOnlineListResponse.TotalPage = _ctx.IntegerValue("DescribeLiveStreamsOnlineList.TotalPage");
 
 			List<DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo> describeLiveStreamsOnlineListResponse_onlineInfo = new List<DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamsOnlineList.OnlineInfo.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeLiveStreamsOnlineList.OnlineInfo.Length"); i++) {
 				DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo liveStreamOnlineInfo = new DescribeLiveStreamsOnlineListResponse.DescribeLiveStreamsOnlineList_LiveStreamOnlineInfo();
-				liveStreamOnlineInfo.DomainName = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].DomainName");
-				liveStreamOnlineInfo.AppName = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].AppName");
-				liveStreamOnlineInfo.StreamName = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].StreamName");
-				liveStreamOnlineInfo.PublishTime = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishTime");
-				liveStreamOnlineInfo.PublishUrl = context.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishUrl");
+				liveStreamOnlineInfo.DomainName = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].DomainName");
+				liveStreamOnlineInfo.AppName = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].AppName");
+				liveStreamOnlineInfo.StreamName = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].StreamName");
+				liveStreamOnlineInfo.PublishTime = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishTime");
+				liveStreamOnlineInfo.PublishUrl = _ctx.StringValue("DescribeLiveStreamsOnlineList.OnlineInfo["+ i +"].PublishUrl");
 
 				describeLiveStreamsOnlineListResponse_onlineInfo.Add(liveStreamOnlineInfo);
 			}

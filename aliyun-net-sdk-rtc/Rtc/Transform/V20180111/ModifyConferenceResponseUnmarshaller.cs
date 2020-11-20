@@ -26,13 +26,13 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class ModifyConferenceResponseUnmarshaller
     {
-        public static ModifyConferenceResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyConferenceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyConferenceResponse modifyConferenceResponse = new ModifyConferenceResponse();
 
-			modifyConferenceResponse.HttpResponse = context.HttpResponse;
-			modifyConferenceResponse.RequestId = context.StringValue("ModifyConference.RequestId");
-			modifyConferenceResponse.ConferenceId = context.StringValue("ModifyConference.ConferenceId");
+			modifyConferenceResponse.HttpResponse = _ctx.HttpResponse;
+			modifyConferenceResponse.RequestId = _ctx.StringValue("ModifyConference.RequestId");
+			modifyConferenceResponse.ConferenceId = _ctx.StringValue("ModifyConference.ConferenceId");
         
 			return modifyConferenceResponse;
         }

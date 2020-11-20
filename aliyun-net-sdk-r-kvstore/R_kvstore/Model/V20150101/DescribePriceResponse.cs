@@ -144,17 +144,17 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribePrice_SubOrder
 		{
 
-			private float? originalAmount;
+			private string originalAmount;
 
-			private float? tradeAmount;
+			private string tradeAmount;
 
-			private float? discountAmount;
+			private string discountAmount;
 
 			private string instanceId;
 
 			private List<string> ruleIds;
 
-			public float? OriginalAmount
+			public string OriginalAmount
 			{
 				get
 				{
@@ -166,7 +166,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public float? TradeAmount
+			public string TradeAmount
 			{
 				get
 				{
@@ -178,7 +178,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public float? DiscountAmount
+			public string DiscountAmount
 			{
 				get
 				{
@@ -218,11 +218,11 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		public class DescribePrice_Order
 		{
 
-			private float? originalAmount;
+			private string originalAmount;
 
-			private float? tradeAmount;
+			private string tradeAmount;
 
-			private float? discountAmount;
+			private string discountAmount;
 
 			private string currency;
 
@@ -230,7 +230,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private List<string> ruleIds1;
 
-			public float? OriginalAmount
+			public string OriginalAmount
 			{
 				get
 				{
@@ -242,7 +242,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public float? TradeAmount
+			public string TradeAmount
 			{
 				get
 				{
@@ -254,7 +254,7 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				}
 			}
 
-			public float? DiscountAmount
+			public string DiscountAmount
 			{
 				get
 				{

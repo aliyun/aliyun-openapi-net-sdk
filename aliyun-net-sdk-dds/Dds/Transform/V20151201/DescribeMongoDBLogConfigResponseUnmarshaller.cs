@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeMongoDBLogConfigResponseUnmarshaller
     {
-        public static DescribeMongoDBLogConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeMongoDBLogConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeMongoDBLogConfigResponse describeMongoDBLogConfigResponse = new DescribeMongoDBLogConfigResponse();
 
-			describeMongoDBLogConfigResponse.HttpResponse = context.HttpResponse;
-			describeMongoDBLogConfigResponse.RequestId = context.StringValue("DescribeMongoDBLogConfig.RequestId");
-			describeMongoDBLogConfigResponse.UserProjectName = context.StringValue("DescribeMongoDBLogConfig.UserProjectName");
-			describeMongoDBLogConfigResponse.IsUserProjectLogstoreExist = context.IntegerValue("DescribeMongoDBLogConfig.IsUserProjectLogstoreExist");
-			describeMongoDBLogConfigResponse.IsEtlMetaExist = context.IntegerValue("DescribeMongoDBLogConfig.IsEtlMetaExist");
+			describeMongoDBLogConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describeMongoDBLogConfigResponse.RequestId = _ctx.StringValue("DescribeMongoDBLogConfig.RequestId");
+			describeMongoDBLogConfigResponse.UserProjectName = _ctx.StringValue("DescribeMongoDBLogConfig.UserProjectName");
+			describeMongoDBLogConfigResponse.IsUserProjectLogstoreExist = _ctx.IntegerValue("DescribeMongoDBLogConfig.IsUserProjectLogstoreExist");
+			describeMongoDBLogConfigResponse.IsEtlMetaExist = _ctx.IntegerValue("DescribeMongoDBLogConfig.IsEtlMetaExist");
         
 			return describeMongoDBLogConfigResponse;
         }

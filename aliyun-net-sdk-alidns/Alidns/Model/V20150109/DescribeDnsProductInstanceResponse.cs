@@ -89,6 +89,8 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 
 		private string dnsSecurity;
 
+		private string paymentType;
+
 		private List<string> dnsServers;
 
 		public string RequestId
@@ -472,6 +474,18 @@ namespace Aliyun.Acs.Alidns.Model.V20150109
 			set	
 			{
 				dnsSecurity = value;
+			}
+		}
+
+		public string PaymentType
+		{
+			get
+			{
+				return paymentType;
+			}
+			set	
+			{
+				paymentType = value;
 			}
 		}
 

@@ -67,7 +67,6 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.SecurityIPList = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].SecurityIPList");
 				dBInstanceAttribute.InstanceType = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].InstanceType");
 				dBInstanceAttribute.ArchitectureType = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ArchitectureType");
-				dBInstanceAttribute.NodeType1 = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].NodeType");
 				dBInstanceAttribute.PackageType = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].PackageType");
 				dBInstanceAttribute.ReplicaId = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ReplicaId");
 				dBInstanceAttribute.VpcAuthMode = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].VpcAuthMode");
@@ -76,6 +75,7 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 				dBInstanceAttribute.VpcCloudInstanceId = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].VpcCloudInstanceId");
 				dBInstanceAttribute.InstanceReleaseProtection = context.BooleanValue("DescribeInstanceAttribute.Instances["+ i +"].InstanceReleaseProtection");
 				dBInstanceAttribute.ResourceGroupId = context.StringValue("DescribeInstanceAttribute.Instances["+ i +"].ResourceGroupId");
+				dBInstanceAttribute.ShardCount = context.IntegerValue("DescribeInstanceAttribute.Instances["+ i +"].ShardCount");
 
 				List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag> dBInstanceAttribute_tags = new List<DescribeInstanceAttributeResponse.DescribeInstanceAttribute_DBInstanceAttribute.DescribeInstanceAttribute_Tag>();
 				for (int j = 0; j < context.Length("DescribeInstanceAttribute.Instances["+ i +"].Tags.Length"); j++) {

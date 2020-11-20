@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class UpdateKeywordLibResponseUnmarshaller
     {
-        public static UpdateKeywordLibResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateKeywordLibResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateKeywordLibResponse updateKeywordLibResponse = new UpdateKeywordLibResponse();
 
-			updateKeywordLibResponse.HttpResponse = context.HttpResponse;
-			updateKeywordLibResponse.RequestId = context.StringValue("UpdateKeywordLib.RequestId");
+			updateKeywordLibResponse.HttpResponse = _ctx.HttpResponse;
+			updateKeywordLibResponse.RequestId = _ctx.StringValue("UpdateKeywordLib.RequestId");
         
 			return updateKeywordLibResponse;
         }

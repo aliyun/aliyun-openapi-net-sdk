@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class UpdateOssCallbackSettingResponseUnmarshaller
     {
-        public static UpdateOssCallbackSettingResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateOssCallbackSettingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateOssCallbackSettingResponse updateOssCallbackSettingResponse = new UpdateOssCallbackSettingResponse();
 
-			updateOssCallbackSettingResponse.HttpResponse = context.HttpResponse;
-			updateOssCallbackSettingResponse.RequestId = context.StringValue("UpdateOssCallbackSetting.RequestId");
+			updateOssCallbackSettingResponse.HttpResponse = _ctx.HttpResponse;
+			updateOssCallbackSettingResponse.RequestId = _ctx.StringValue("UpdateOssCallbackSetting.RequestId");
         
 			return updateOssCallbackSettingResponse;
         }

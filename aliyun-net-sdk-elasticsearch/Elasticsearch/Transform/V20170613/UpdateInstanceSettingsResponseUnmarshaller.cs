@@ -26,12 +26,12 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateInstanceSettingsResponseUnmarshaller
     {
-        public static UpdateInstanceSettingsResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateInstanceSettingsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateInstanceSettingsResponse updateInstanceSettingsResponse = new UpdateInstanceSettingsResponse();
 
-			updateInstanceSettingsResponse.HttpResponse = context.HttpResponse;
-			updateInstanceSettingsResponse.RequestId = context.StringValue("UpdateInstanceSettings.RequestId");
+			updateInstanceSettingsResponse.HttpResponse = _ctx.HttpResponse;
+			updateInstanceSettingsResponse.RequestId = _ctx.StringValue("UpdateInstanceSettings.RequestId");
         
 			return updateInstanceSettingsResponse;
         }

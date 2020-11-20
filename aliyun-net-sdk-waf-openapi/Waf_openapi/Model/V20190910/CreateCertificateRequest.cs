@@ -34,8 +34,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.waf_openapi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.waf_openapi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -49,8 +49,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 		private string domain;
 
 		private string certificateName;
-
-		private long? httpsCertId;
 
 		public string Certificate
 		{
@@ -114,19 +112,6 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				certificateName = value;
 				DictionaryUtil.Add(QueryParameters, "CertificateName", value);
-			}
-		}
-
-		public long? HttpsCertId
-		{
-			get
-			{
-				return httpsCertId;
-			}
-			set	
-			{
-				httpsCertId = value;
-				DictionaryUtil.Add(QueryParameters, "HttpsCertId", value.ToString());
 			}
 		}
 

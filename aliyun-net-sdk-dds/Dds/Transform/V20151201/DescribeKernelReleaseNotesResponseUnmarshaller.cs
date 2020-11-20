@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeKernelReleaseNotesResponseUnmarshaller
     {
-        public static DescribeKernelReleaseNotesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeKernelReleaseNotesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeKernelReleaseNotesResponse describeKernelReleaseNotesResponse = new DescribeKernelReleaseNotesResponse();
 
-			describeKernelReleaseNotesResponse.HttpResponse = context.HttpResponse;
-			describeKernelReleaseNotesResponse.RequestId = context.StringValue("DescribeKernelReleaseNotes.RequestId");
+			describeKernelReleaseNotesResponse.HttpResponse = _ctx.HttpResponse;
+			describeKernelReleaseNotesResponse.RequestId = _ctx.StringValue("DescribeKernelReleaseNotes.RequestId");
 
 			List<DescribeKernelReleaseNotesResponse.DescribeKernelReleaseNotes_ReleaseNote> describeKernelReleaseNotesResponse_releaseNotes = new List<DescribeKernelReleaseNotesResponse.DescribeKernelReleaseNotes_ReleaseNote>();
-			for (int i = 0; i < context.Length("DescribeKernelReleaseNotes.ReleaseNotes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeKernelReleaseNotes.ReleaseNotes.Length"); i++) {
 				DescribeKernelReleaseNotesResponse.DescribeKernelReleaseNotes_ReleaseNote releaseNote = new DescribeKernelReleaseNotesResponse.DescribeKernelReleaseNotes_ReleaseNote();
-				releaseNote.KernelVersion = context.StringValue("DescribeKernelReleaseNotes.ReleaseNotes["+ i +"].KernelVersion");
-				releaseNote.ReleaseNote = context.StringValue("DescribeKernelReleaseNotes.ReleaseNotes["+ i +"].ReleaseNote");
+				releaseNote.KernelVersion = _ctx.StringValue("DescribeKernelReleaseNotes.ReleaseNotes["+ i +"].KernelVersion");
+				releaseNote.ReleaseNote = _ctx.StringValue("DescribeKernelReleaseNotes.ReleaseNotes["+ i +"].ReleaseNote");
 
 				describeKernelReleaseNotesResponse_releaseNotes.Add(releaseNote);
 			}

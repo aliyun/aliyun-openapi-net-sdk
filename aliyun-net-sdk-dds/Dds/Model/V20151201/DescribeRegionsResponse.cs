@@ -105,6 +105,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 				private bool? vpcEnabled;
 
+				private string zoneName;
+
 				public string ZoneId
 				{
 					get
@@ -126,6 +128,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 					set	
 					{
 						vpcEnabled = value;
+					}
+				}
+
+				public string ZoneName
+				{
+					get
+					{
+						return zoneName;
+					}
+					set	
+					{
+						zoneName = value;
 					}
 				}
 			}

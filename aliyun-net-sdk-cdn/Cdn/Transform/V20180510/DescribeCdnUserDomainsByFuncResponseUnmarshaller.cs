@@ -26,38 +26,38 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeCdnUserDomainsByFuncResponseUnmarshaller
     {
-        public static DescribeCdnUserDomainsByFuncResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCdnUserDomainsByFuncResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCdnUserDomainsByFuncResponse describeCdnUserDomainsByFuncResponse = new DescribeCdnUserDomainsByFuncResponse();
 
-			describeCdnUserDomainsByFuncResponse.HttpResponse = context.HttpResponse;
-			describeCdnUserDomainsByFuncResponse.RequestId = context.StringValue("DescribeCdnUserDomainsByFunc.RequestId");
-			describeCdnUserDomainsByFuncResponse.PageNumber = context.LongValue("DescribeCdnUserDomainsByFunc.PageNumber");
-			describeCdnUserDomainsByFuncResponse.PageSize = context.LongValue("DescribeCdnUserDomainsByFunc.PageSize");
-			describeCdnUserDomainsByFuncResponse.TotalCount = context.LongValue("DescribeCdnUserDomainsByFunc.TotalCount");
+			describeCdnUserDomainsByFuncResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnUserDomainsByFuncResponse.RequestId = _ctx.StringValue("DescribeCdnUserDomainsByFunc.RequestId");
+			describeCdnUserDomainsByFuncResponse.PageNumber = _ctx.LongValue("DescribeCdnUserDomainsByFunc.PageNumber");
+			describeCdnUserDomainsByFuncResponse.PageSize = _ctx.LongValue("DescribeCdnUserDomainsByFunc.PageSize");
+			describeCdnUserDomainsByFuncResponse.TotalCount = _ctx.LongValue("DescribeCdnUserDomainsByFunc.TotalCount");
 
 			List<DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData> describeCdnUserDomainsByFuncResponse_domains = new List<DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData>();
-			for (int i = 0; i < context.Length("DescribeCdnUserDomainsByFunc.Domains.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCdnUserDomainsByFunc.Domains.Length"); i++) {
 				DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData pageData = new DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData();
-				pageData.DomainName = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].DomainName");
-				pageData.Cname = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Cname");
-				pageData.CdnType = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].CdnType");
-				pageData.DomainStatus = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].DomainStatus");
-				pageData.GmtCreated = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].GmtCreated");
-				pageData.GmtModified = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].GmtModified");
-				pageData.Description = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Description");
-				pageData.SslProtocol = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].SslProtocol");
-				pageData.ResourceGroupId = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].ResourceGroupId");
-				pageData.Sandbox = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sandbox");
+				pageData.DomainName = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].DomainName");
+				pageData.Cname = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Cname");
+				pageData.CdnType = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].CdnType");
+				pageData.DomainStatus = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].DomainStatus");
+				pageData.GmtCreated = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].GmtCreated");
+				pageData.GmtModified = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].GmtModified");
+				pageData.Description = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Description");
+				pageData.SslProtocol = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].SslProtocol");
+				pageData.ResourceGroupId = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].ResourceGroupId");
+				pageData.Sandbox = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sandbox");
 
 				List<DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData.DescribeCdnUserDomainsByFunc_Source> pageData_sources = new List<DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData.DescribeCdnUserDomainsByFunc_Source>();
-				for (int j = 0; j < context.Length("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources.Length"); j++) {
 					DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData.DescribeCdnUserDomainsByFunc_Source source = new DescribeCdnUserDomainsByFuncResponse.DescribeCdnUserDomainsByFunc_PageData.DescribeCdnUserDomainsByFunc_Source();
-					source.Type = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Type");
-					source.Content = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Content");
-					source.Port = context.IntegerValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Port");
-					source.Priority = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Priority");
-					source.Weight = context.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Weight");
+					source.Type = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Type");
+					source.Content = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Content");
+					source.Port = _ctx.IntegerValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Port");
+					source.Priority = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Priority");
+					source.Weight = _ctx.StringValue("DescribeCdnUserDomainsByFunc.Domains["+ i +"].Sources["+ j +"].Weight");
 
 					pageData_sources.Add(source);
 				}

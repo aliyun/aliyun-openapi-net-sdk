@@ -26,18 +26,18 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeRtcUserCntDataResponseUnmarshaller
     {
-        public static DescribeRtcUserCntDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRtcUserCntDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRtcUserCntDataResponse describeRtcUserCntDataResponse = new DescribeRtcUserCntDataResponse();
 
-			describeRtcUserCntDataResponse.HttpResponse = context.HttpResponse;
-			describeRtcUserCntDataResponse.RequestId = context.StringValue("DescribeRtcUserCntData.RequestId");
+			describeRtcUserCntDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeRtcUserCntDataResponse.RequestId = _ctx.StringValue("DescribeRtcUserCntData.RequestId");
 
 			List<DescribeRtcUserCntDataResponse.DescribeRtcUserCntData_UserCntModule> describeRtcUserCntDataResponse_userCntDataPerInterval = new List<DescribeRtcUserCntDataResponse.DescribeRtcUserCntData_UserCntModule>();
-			for (int i = 0; i < context.Length("DescribeRtcUserCntData.UserCntDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRtcUserCntData.UserCntDataPerInterval.Length"); i++) {
 				DescribeRtcUserCntDataResponse.DescribeRtcUserCntData_UserCntModule userCntModule = new DescribeRtcUserCntDataResponse.DescribeRtcUserCntData_UserCntModule();
-				userCntModule.TimeStamp = context.StringValue("DescribeRtcUserCntData.UserCntDataPerInterval["+ i +"].TimeStamp");
-				userCntModule.ActiveUserCnt = context.LongValue("DescribeRtcUserCntData.UserCntDataPerInterval["+ i +"].ActiveUserCnt");
+				userCntModule.TimeStamp = _ctx.StringValue("DescribeRtcUserCntData.UserCntDataPerInterval["+ i +"].TimeStamp");
+				userCntModule.ActiveUserCnt = _ctx.LongValue("DescribeRtcUserCntData.UserCntDataPerInterval["+ i +"].ActiveUserCnt");
 
 				describeRtcUserCntDataResponse_userCntDataPerInterval.Add(userCntModule);
 			}

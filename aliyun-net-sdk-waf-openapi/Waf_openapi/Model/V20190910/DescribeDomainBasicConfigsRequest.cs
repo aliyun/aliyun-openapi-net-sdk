@@ -34,8 +34,8 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.waf_openapi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.waf_openapi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -45,6 +45,10 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 		private string resourceGroupId;
 
 		private int? pageSize;
+
+		private string accessType;
+
+		private int? cloudNativeProductId;
 
 		private string instanceId;
 
@@ -86,6 +90,32 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
 			{
 				pageSize = value;
 				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string AccessType
+		{
+			get
+			{
+				return accessType;
+			}
+			set	
+			{
+				accessType = value;
+				DictionaryUtil.Add(QueryParameters, "AccessType", value);
+			}
+		}
+
+		public int? CloudNativeProductId
+		{
+			get
+			{
+				return cloudNativeProductId;
+			}
+			set	
+			{
+				cloudNativeProductId = value;
+				DictionaryUtil.Add(QueryParameters, "CloudNativeProductId", value.ToString());
 			}
 		}
 

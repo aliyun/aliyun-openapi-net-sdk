@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.xtrace;
 using Aliyun.Acs.xtrace.Transform;
 using Aliyun.Acs.xtrace.Transform.V20190808;
 
@@ -30,13 +31,14 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
     public class QueryMetricRequest : RpcAcsRequest<QueryMetricResponse>
     {
         public QueryMetricRequest()
-            : base("xtrace", "2019-08-08", "QueryMetric", "xtrace", "openAPI")
+            : base("xtrace", "2019-08-08", "QueryMetric")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private long? endTime;
@@ -46,6 +48,8 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 		private long? startTime;
 
 		private List<Filters> filterss = new List<Filters>(){ };
+
+		private string proxyUserId;
 
 		private List<string> measuress = new List<string>(){ };
 
@@ -113,6 +117,19 @@ namespace Aliyun.Acs.xtrace.Model.V20190808
 					DictionaryUtil.Add(QueryParameters,"Filters." + (i + 1) + ".Value", filterss[i].Value);
 					DictionaryUtil.Add(QueryParameters,"Filters." + (i + 1) + ".Key", filterss[i].Key);
 				}
+			}
+		}
+
+		public string ProxyUserId
+		{
+			get
+			{
+				return proxyUserId;
+			}
+			set	
+			{
+				proxyUserId = value;
+				DictionaryUtil.Add(QueryParameters, "ProxyUserId", value);
 			}
 		}
 

@@ -26,37 +26,37 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeDomainBpsDataResponseUnmarshaller
     {
-        public static DescribeDomainBpsDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainBpsDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainBpsDataResponse describeDomainBpsDataResponse = new DescribeDomainBpsDataResponse();
 
-			describeDomainBpsDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainBpsDataResponse.RequestId = context.StringValue("DescribeDomainBpsData.RequestId");
-			describeDomainBpsDataResponse.DomainName = context.StringValue("DescribeDomainBpsData.DomainName");
-			describeDomainBpsDataResponse.StartTime = context.StringValue("DescribeDomainBpsData.StartTime");
-			describeDomainBpsDataResponse.EndTime = context.StringValue("DescribeDomainBpsData.EndTime");
-			describeDomainBpsDataResponse.LocationNameEn = context.StringValue("DescribeDomainBpsData.LocationNameEn");
-			describeDomainBpsDataResponse.IspNameEn = context.StringValue("DescribeDomainBpsData.IspNameEn");
-			describeDomainBpsDataResponse.LocationName = context.StringValue("DescribeDomainBpsData.LocationName");
-			describeDomainBpsDataResponse.IspName = context.StringValue("DescribeDomainBpsData.IspName");
-			describeDomainBpsDataResponse.DataInterval = context.StringValue("DescribeDomainBpsData.DataInterval");
+			describeDomainBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainBpsDataResponse.RequestId = _ctx.StringValue("DescribeDomainBpsData.RequestId");
+			describeDomainBpsDataResponse.DomainName = _ctx.StringValue("DescribeDomainBpsData.DomainName");
+			describeDomainBpsDataResponse.StartTime = _ctx.StringValue("DescribeDomainBpsData.StartTime");
+			describeDomainBpsDataResponse.EndTime = _ctx.StringValue("DescribeDomainBpsData.EndTime");
+			describeDomainBpsDataResponse.LocationNameEn = _ctx.StringValue("DescribeDomainBpsData.LocationNameEn");
+			describeDomainBpsDataResponse.IspNameEn = _ctx.StringValue("DescribeDomainBpsData.IspNameEn");
+			describeDomainBpsDataResponse.LocationName = _ctx.StringValue("DescribeDomainBpsData.LocationName");
+			describeDomainBpsDataResponse.IspName = _ctx.StringValue("DescribeDomainBpsData.IspName");
+			describeDomainBpsDataResponse.DataInterval = _ctx.StringValue("DescribeDomainBpsData.DataInterval");
 
 			List<DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule> describeDomainBpsDataResponse_bpsDataPerInterval = new List<DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDomainBpsData.BpsDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainBpsData.BpsDataPerInterval.Length"); i++) {
 				DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule dataModule = new DescribeDomainBpsDataResponse.DescribeDomainBpsData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].Value");
-				dataModule.DomesticValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DomesticValue");
-				dataModule.OverseasValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].OverseasValue");
-				dataModule.L2Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].L2Value");
-				dataModule.DomesticL2Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DomesticL2Value");
-				dataModule.OverseasL2Value = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].OverseasL2Value");
-				dataModule.DynamicValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DynamicValue");
-				dataModule.DynamicDomesticValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DynamicDomesticValue");
-				dataModule.DynamicOverseasValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DynamicOverseasValue");
-				dataModule.StaticValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].StaticValue");
-				dataModule.StaticDomesticValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].StaticDomesticValue");
-				dataModule.StaticOverseasValue = context.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].StaticOverseasValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
+				dataModule._Value = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].Value");
+				dataModule.DomesticValue = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DomesticValue");
+				dataModule.OverseasValue = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].OverseasValue");
+				dataModule.L2Value = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].L2Value");
+				dataModule.DomesticL2Value = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DomesticL2Value");
+				dataModule.OverseasL2Value = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].OverseasL2Value");
+				dataModule.DynamicValue = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DynamicValue");
+				dataModule.DynamicDomesticValue = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DynamicDomesticValue");
+				dataModule.DynamicOverseasValue = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].DynamicOverseasValue");
+				dataModule.StaticValue = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].StaticValue");
+				dataModule.StaticDomesticValue = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].StaticDomesticValue");
+				dataModule.StaticOverseasValue = _ctx.StringValue("DescribeDomainBpsData.BpsDataPerInterval["+ i +"].StaticOverseasValue");
 
 				describeDomainBpsDataResponse_bpsDataPerInterval.Add(dataModule);
 			}

@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 {
     public class GetGroupsResponseUnmarshaller
     {
-        public static GetGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static GetGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetGroupsResponse getGroupsResponse = new GetGroupsResponse();
 
-			getGroupsResponse.HttpResponse = context.HttpResponse;
+			getGroupsResponse.HttpResponse = _ctx.HttpResponse;
         
 			return getGroupsResponse;
         }

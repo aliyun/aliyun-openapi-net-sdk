@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,43 +33,34 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public ExitStandbyRequest()
             : base("Ess", "2014-08-28", "ExitStandby", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private List<string> instanceIds;
-
-		private string resourceOwnerAccount;
+		private string clientToken;
 
 		private string scalingGroupId;
 
+		private string resourceOwnerAccount;
+
 		private long? ownerId;
 
-		public List<string> InstanceIds
+		private List<string> instanceIds = new List<string>(){ };
+
+		public string ClientToken
 		{
 			get
 			{
-				return instanceIds;
-			}
-
-			set
-			{
-				instanceIds = value;
-				for (int i = 0; i < instanceIds.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
-				}
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
+				return clientToken;
 			}
 			set	
 			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
@@ -85,6 +77,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -95,6 +100,23 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public List<string> InstanceIds
+		{
+			get
+			{
+				return instanceIds;
+			}
+
+			set
+			{
+				instanceIds = value;
+				for (int i = 0; i < instanceIds.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"InstanceId." + (i + 1) , instanceIds[i]);
+				}
 			}
 		}
 

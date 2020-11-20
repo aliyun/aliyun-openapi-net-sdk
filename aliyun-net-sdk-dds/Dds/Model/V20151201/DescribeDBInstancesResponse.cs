@@ -116,6 +116,8 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 
 			private int? dBInstanceStorage;
 
+			private string kindCode;
+
 			private string dBInstanceStatus;
 
 			private string lockMode;
@@ -249,6 +251,18 @@ namespace Aliyun.Acs.Dds.Model.V20151201
 				set	
 				{
 					dBInstanceStorage = value;
+				}
+			}
+
+			public string KindCode
+			{
+				get
+				{
+					return kindCode;
+				}
+				set	
+				{
+					kindCode = value;
 				}
 			}
 

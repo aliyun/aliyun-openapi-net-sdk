@@ -59,6 +59,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingConfiguration.SystemDiskSize = context.IntegerValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SystemDiskSize");
 				scalingConfiguration.SystemDiskName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SystemDiskName");
 				scalingConfiguration.SystemDiskDescription = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SystemDiskDescription");
+				scalingConfiguration.SystemDiskAutoSnapshotPolicyId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SystemDiskAutoSnapshotPolicyId");
 				scalingConfiguration.LifecycleState = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].LifecycleState");
 				scalingConfiguration.CreationTime = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].CreationTime");
 				scalingConfiguration.LoadBalancerWeight = context.IntegerValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].LoadBalancerWeight");
@@ -72,6 +73,15 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingConfiguration.ResourceGroupId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ResourceGroupId");
 				scalingConfiguration.HpcClusterId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].HpcClusterId");
 				scalingConfiguration.InstanceDescription = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceDescription");
+				scalingConfiguration.CreditSpecification = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].CreditSpecification");
+				scalingConfiguration.ImageFamily = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ImageFamily");
+				scalingConfiguration.ZoneId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].ZoneId");
+				scalingConfiguration.DedicatedHostId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DedicatedHostId");
+				scalingConfiguration.Affinity = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].Affinity");
+				scalingConfiguration.Tenancy = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].Tenancy");
+				scalingConfiguration.PrivatePoolOptionsMatchCriteria = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].PrivatePoolOptions.MatchCriteria");
+				scalingConfiguration.PrivatePoolOptionsId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].PrivatePoolOptions.Id");
+				scalingConfiguration.Ipv6AddressCount = context.IntegerValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].Ipv6AddressCount");
 
 				List<string> scalingConfiguration_instanceTypes = new List<string>();
 				for (int j = 0; j < context.Length("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].InstanceTypes.Length"); j++) {
@@ -85,6 +95,10 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				}
 				scalingConfiguration.SecurityGroupIds = scalingConfiguration_securityGroupIds;
 
+				DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_SchedulerOptions schedulerOptions = new DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_SchedulerOptions();
+				schedulerOptions.ManagedPrivateSpaceId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].SchedulerOptions.ManagedPrivateSpaceId");
+				scalingConfiguration.SchedulerOptions = schedulerOptions;
+
 				List<DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_DataDisk> scalingConfiguration_dataDisks = new List<DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_DataDisk>();
 				for (int j = 0; j < context.Length("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks.Length"); j++) {
 					DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_DataDisk dataDisk = new DescribeScalingConfigurationsResponse.DescribeScalingConfigurations_ScalingConfiguration.DescribeScalingConfigurations_DataDisk();
@@ -97,6 +111,7 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 					dataDisk.KMSKeyId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].KMSKeyId");
 					dataDisk.DiskName = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].DiskName");
 					dataDisk.Description = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].Description");
+					dataDisk.AutoSnapshotPolicyId = context.StringValue("DescribeScalingConfigurations.ScalingConfigurations["+ i +"].DataDisks["+ j +"].AutoSnapshotPolicyId");
 
 					scalingConfiguration_dataDisks.Add(dataDisk);
 				}

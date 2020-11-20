@@ -48,9 +48,9 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 
 		private string parentId;
 
-		private string phone;
-
 		private string userStoreCode;
+
+		private string phone;
 
 		public string ExtraParams
 		{
@@ -104,19 +104,6 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			}
 		}
 
-		public string Phone
-		{
-			get
-			{
-				return phone;
-			}
-			set	
-			{
-				phone = value;
-				DictionaryUtil.Add(BodyParameters, "Phone", value);
-			}
-		}
-
 		public string UserStoreCode
 		{
 			get
@@ -127,6 +114,19 @@ namespace Aliyun.Acs.cloudesl.Model.V20200201
 			{
 				userStoreCode = value;
 				DictionaryUtil.Add(BodyParameters, "UserStoreCode", value);
+			}
+		}
+
+		public string Phone
+		{
+			get
+			{
+				return phone;
+			}
+			set	
+			{
+				phone = value;
+				DictionaryUtil.Add(BodyParameters, "Phone", value);
 			}
 		}
 

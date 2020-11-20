@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,33 +33,21 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public ModifyScalingGroupRequest()
             : base("Ess", "2014-08-28", "ModifyScalingGroup", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
 
-		private string healthCheckType;
-
-		private string launchTemplateId;
-
-		private string resourceOwnerAccount;
-
-		private string scalingGroupName;
-
 		private string scalingGroupId;
 
-		private List<string> vSwitchIds;
-
-		private string ownerAccount;
-
-		private int? spotInstancePools;
+		private List<string> vSwitchIdss = new List<string>(){ };
 
 		private string activeScalingConfigurationId;
-
-		private int? minSize;
-
-		private long? ownerId;
-
-		private string launchTemplateVersion;
 
 		private int? onDemandBaseCapacity;
 
@@ -66,13 +55,37 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private bool? spotInstanceRemedy;
 
-		private int? maxSize;
-
 		private int? defaultCooldown;
 
 		private string removalPolicy1;
 
 		private string removalPolicy2;
+
+		private string healthCheckType;
+
+		private string launchTemplateId;
+
+		private int? desiredCapacity;
+
+		private string resourceOwnerAccount;
+
+		private string scalingGroupName;
+
+		private string ownerAccount;
+
+		private bool? compensateWithOnDemand;
+
+		private int? spotInstancePools;
+
+		private int? minSize;
+
+		private bool? groupDeletionProtection;
+
+		private long? ownerId;
+
+		private string launchTemplateVersion;
+
+		private int? maxSize;
 
 		public long? ResourceOwnerId
 		{
@@ -84,58 +97,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
-			}
-		}
-
-		public string HealthCheckType
-		{
-			get
-			{
-				return healthCheckType;
-			}
-			set	
-			{
-				healthCheckType = value;
-				DictionaryUtil.Add(QueryParameters, "HealthCheckType", value);
-			}
-		}
-
-		public string LaunchTemplateId
-		{
-			get
-			{
-				return launchTemplateId;
-			}
-			set	
-			{
-				launchTemplateId = value;
-				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public string ScalingGroupName
-		{
-			get
-			{
-				return scalingGroupName;
-			}
-			set	
-			{
-				scalingGroupName = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingGroupName", value);
 			}
 		}
 
@@ -152,46 +113,20 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public List<string> VSwitchIds
+		public List<string> VSwitchIdss
 		{
 			get
 			{
-				return vSwitchIds;
+				return vSwitchIdss;
 			}
 
 			set
 			{
-				vSwitchIds = value;
-				for (int i = 0; i < vSwitchIds.Count; i++)
+				vSwitchIdss = value;
+				for (int i = 0; i < vSwitchIdss.Count; i++)
 				{
-					DictionaryUtil.Add(QueryParameters,"VSwitchIds." + (i + 1) , vSwitchIds[i]);
+					DictionaryUtil.Add(QueryParameters,"VSwitchIds." + (i + 1) , vSwitchIdss[i]);
 				}
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public int? SpotInstancePools
-		{
-			get
-			{
-				return spotInstancePools;
-			}
-			set	
-			{
-				spotInstancePools = value;
-				DictionaryUtil.Add(QueryParameters, "SpotInstancePools", value.ToString());
 			}
 		}
 
@@ -205,45 +140,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				activeScalingConfigurationId = value;
 				DictionaryUtil.Add(QueryParameters, "ActiveScalingConfigurationId", value);
-			}
-		}
-
-		public int? MinSize
-		{
-			get
-			{
-				return minSize;
-			}
-			set	
-			{
-				minSize = value;
-				DictionaryUtil.Add(QueryParameters, "MinSize", value.ToString());
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string LaunchTemplateVersion
-		{
-			get
-			{
-				return launchTemplateVersion;
-			}
-			set	
-			{
-				launchTemplateVersion = value;
-				DictionaryUtil.Add(QueryParameters, "LaunchTemplateVersion", value);
 			}
 		}
 
@@ -286,19 +182,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public int? MaxSize
-		{
-			get
-			{
-				return maxSize;
-			}
-			set	
-			{
-				maxSize = value;
-				DictionaryUtil.Add(QueryParameters, "MaxSize", value.ToString());
-			}
-		}
-
 		public int? DefaultCooldown
 		{
 			get
@@ -335,6 +218,175 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				removalPolicy2 = value;
 				DictionaryUtil.Add(QueryParameters, "RemovalPolicy.2", value);
+			}
+		}
+
+		public string HealthCheckType
+		{
+			get
+			{
+				return healthCheckType;
+			}
+			set	
+			{
+				healthCheckType = value;
+				DictionaryUtil.Add(QueryParameters, "HealthCheckType", value);
+			}
+		}
+
+		public string LaunchTemplateId
+		{
+			get
+			{
+				return launchTemplateId;
+			}
+			set	
+			{
+				launchTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
+			}
+		}
+
+		public int? DesiredCapacity
+		{
+			get
+			{
+				return desiredCapacity;
+			}
+			set	
+			{
+				desiredCapacity = value;
+				DictionaryUtil.Add(QueryParameters, "DesiredCapacity", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string ScalingGroupName
+		{
+			get
+			{
+				return scalingGroupName;
+			}
+			set	
+			{
+				scalingGroupName = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingGroupName", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public bool? CompensateWithOnDemand
+		{
+			get
+			{
+				return compensateWithOnDemand;
+			}
+			set	
+			{
+				compensateWithOnDemand = value;
+				DictionaryUtil.Add(QueryParameters, "CompensateWithOnDemand", value.ToString());
+			}
+		}
+
+		public int? SpotInstancePools
+		{
+			get
+			{
+				return spotInstancePools;
+			}
+			set	
+			{
+				spotInstancePools = value;
+				DictionaryUtil.Add(QueryParameters, "SpotInstancePools", value.ToString());
+			}
+		}
+
+		public int? MinSize
+		{
+			get
+			{
+				return minSize;
+			}
+			set	
+			{
+				minSize = value;
+				DictionaryUtil.Add(QueryParameters, "MinSize", value.ToString());
+			}
+		}
+
+		public bool? GroupDeletionProtection
+		{
+			get
+			{
+				return groupDeletionProtection;
+			}
+			set	
+			{
+				groupDeletionProtection = value;
+				DictionaryUtil.Add(QueryParameters, "GroupDeletionProtection", value.ToString());
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string LaunchTemplateVersion
+		{
+			get
+			{
+				return launchTemplateVersion;
+			}
+			set	
+			{
+				launchTemplateVersion = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateVersion", value);
+			}
+		}
+
+		public int? MaxSize
+		{
+			get
+			{
+				return maxSize;
+			}
+			set	
+			{
+				maxSize = value;
+				DictionaryUtil.Add(QueryParameters, "MaxSize", value.ToString());
 			}
 		}
 

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdatePrivateNetworkWhiteIpsResponseUnmarshaller
     {
-        public static UpdatePrivateNetworkWhiteIpsResponse Unmarshall(UnmarshallerContext context)
+        public static UpdatePrivateNetworkWhiteIpsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdatePrivateNetworkWhiteIpsResponse updatePrivateNetworkWhiteIpsResponse = new UpdatePrivateNetworkWhiteIpsResponse();
 
-			updatePrivateNetworkWhiteIpsResponse.HttpResponse = context.HttpResponse;
-			updatePrivateNetworkWhiteIpsResponse.RequestId = context.StringValue("UpdatePrivateNetworkWhiteIps.RequestId");
+			updatePrivateNetworkWhiteIpsResponse.HttpResponse = _ctx.HttpResponse;
+			updatePrivateNetworkWhiteIpsResponse.RequestId = _ctx.StringValue("UpdatePrivateNetworkWhiteIps.RequestId");
 
 			UpdatePrivateNetworkWhiteIpsResponse.UpdatePrivateNetworkWhiteIps_Result result = new UpdatePrivateNetworkWhiteIpsResponse.UpdatePrivateNetworkWhiteIps_Result();
 
 			List<string> result_privateNetworkIpWhiteList = new List<string>();
-			for (int i = 0; i < context.Length("UpdatePrivateNetworkWhiteIps.Result.PrivateNetworkIpWhiteList.Length"); i++) {
-				result_privateNetworkIpWhiteList.Add(context.StringValue("UpdatePrivateNetworkWhiteIps.Result.PrivateNetworkIpWhiteList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("UpdatePrivateNetworkWhiteIps.Result.PrivateNetworkIpWhiteList.Length"); i++) {
+				result_privateNetworkIpWhiteList.Add(_ctx.StringValue("UpdatePrivateNetworkWhiteIps.Result.PrivateNetworkIpWhiteList["+ i +"]"));
 			}
 			result.PrivateNetworkIpWhiteList = result_privateNetworkIpWhiteList;
 			updatePrivateNetworkWhiteIpsResponse.Result = result;

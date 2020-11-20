@@ -26,15 +26,15 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DescribeBackupStatusResponseUnmarshaller
     {
-        public static DescribeBackupStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeBackupStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeBackupStatusResponse describeBackupStatusResponse = new DescribeBackupStatusResponse();
 
-			describeBackupStatusResponse.HttpResponse = context.HttpResponse;
-			describeBackupStatusResponse.RequestId = context.StringValue("DescribeBackupStatus.RequestId");
-			describeBackupStatusResponse.ClusterId = context.StringValue("DescribeBackupStatus.ClusterId");
-			describeBackupStatusResponse.BackupStatus = context.StringValue("DescribeBackupStatus.BackupStatus");
-			describeBackupStatusResponse.BdsClusterId = context.StringValue("DescribeBackupStatus.BdsClusterId");
+			describeBackupStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeBackupStatusResponse.RequestId = _ctx.StringValue("DescribeBackupStatus.RequestId");
+			describeBackupStatusResponse.ClusterId = _ctx.StringValue("DescribeBackupStatus.ClusterId");
+			describeBackupStatusResponse.BackupStatus = _ctx.StringValue("DescribeBackupStatus.BackupStatus");
+			describeBackupStatusResponse.BdsClusterId = _ctx.StringValue("DescribeBackupStatus.BdsClusterId");
         
 			return describeBackupStatusResponse;
         }

@@ -78,6 +78,8 @@ namespace Aliyun.Acs.oos.Model.V20190601
 
 			private string _value;
 
+			private string constraints;
+
 			public string Id
 			{
 				get
@@ -207,6 +209,18 @@ namespace Aliyun.Acs.oos.Model.V20190601
 				set	
 				{
 					_value = value;
+				}
+			}
+
+			public string Constraints
+			{
+				get
+				{
+					return constraints;
+				}
+				set	
+				{
+					constraints = value;
 				}
 			}
 		}

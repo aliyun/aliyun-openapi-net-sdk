@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainNamesOfVersionResponseUnmarshaller
     {
-        public static DescribeDomainNamesOfVersionResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainNamesOfVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainNamesOfVersionResponse describeDomainNamesOfVersionResponse = new DescribeDomainNamesOfVersionResponse();
 
-			describeDomainNamesOfVersionResponse.HttpResponse = context.HttpResponse;
-			describeDomainNamesOfVersionResponse.RequestId = context.StringValue("DescribeDomainNamesOfVersion.RequestId");
-			describeDomainNamesOfVersionResponse.TotalCount = context.IntegerValue("DescribeDomainNamesOfVersion.TotalCount");
+			describeDomainNamesOfVersionResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainNamesOfVersionResponse.RequestId = _ctx.StringValue("DescribeDomainNamesOfVersion.RequestId");
+			describeDomainNamesOfVersionResponse.TotalCount = _ctx.IntegerValue("DescribeDomainNamesOfVersion.TotalCount");
 
 			List<DescribeDomainNamesOfVersionResponse.DescribeDomainNamesOfVersion_Content> describeDomainNamesOfVersionResponse_contents = new List<DescribeDomainNamesOfVersionResponse.DescribeDomainNamesOfVersion_Content>();
-			for (int i = 0; i < context.Length("DescribeDomainNamesOfVersion.Contents.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainNamesOfVersion.Contents.Length"); i++) {
 				DescribeDomainNamesOfVersionResponse.DescribeDomainNamesOfVersion_Content content = new DescribeDomainNamesOfVersionResponse.DescribeDomainNamesOfVersion_Content();
-				content.DomainId = context.StringValue("DescribeDomainNamesOfVersion.Contents["+ i +"].DomainId");
-				content.DomainName = context.StringValue("DescribeDomainNamesOfVersion.Contents["+ i +"].DomainName");
+				content.DomainId = _ctx.StringValue("DescribeDomainNamesOfVersion.Contents["+ i +"].DomainId");
+				content.DomainName = _ctx.StringValue("DescribeDomainNamesOfVersion.Contents["+ i +"].DomainName");
 
 				describeDomainNamesOfVersionResponse_contents.Add(content);
 			}

@@ -26,21 +26,21 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class DescribeRegionsResponseUnmarshaller
     {
-        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRegionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRegionsResponse describeRegionsResponse = new DescribeRegionsResponse();
 
-			describeRegionsResponse.HttpResponse = context.HttpResponse;
-			describeRegionsResponse.RequestId = context.StringValue("DescribeRegions.RequestId");
+			describeRegionsResponse.HttpResponse = _ctx.HttpResponse;
+			describeRegionsResponse.RequestId = _ctx.StringValue("DescribeRegions.RequestId");
 
 			List<DescribeRegionsResponse.DescribeRegions_RegionInfo> describeRegionsResponse_result = new List<DescribeRegionsResponse.DescribeRegions_RegionInfo>();
-			for (int i = 0; i < context.Length("DescribeRegions.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRegions.Result.Length"); i++) {
 				DescribeRegionsResponse.DescribeRegions_RegionInfo regionInfo = new DescribeRegionsResponse.DescribeRegions_RegionInfo();
-				regionInfo.RegionId = context.StringValue("DescribeRegions.Result["+ i +"].regionId");
-				regionInfo.RegionEndpoint = context.StringValue("DescribeRegions.Result["+ i +"].regionEndpoint");
-				regionInfo.LocalName = context.StringValue("DescribeRegions.Result["+ i +"].localName");
-				regionInfo.ConsoleEndpoint = context.StringValue("DescribeRegions.Result["+ i +"].consoleEndpoint");
-				regionInfo.Status = context.StringValue("DescribeRegions.Result["+ i +"].status");
+				regionInfo.RegionId = _ctx.StringValue("DescribeRegions.Result["+ i +"].regionId");
+				regionInfo.RegionEndpoint = _ctx.StringValue("DescribeRegions.Result["+ i +"].regionEndpoint");
+				regionInfo.LocalName = _ctx.StringValue("DescribeRegions.Result["+ i +"].localName");
+				regionInfo.ConsoleEndpoint = _ctx.StringValue("DescribeRegions.Result["+ i +"].consoleEndpoint");
+				regionInfo.Status = _ctx.StringValue("DescribeRegions.Result["+ i +"].status");
 
 				describeRegionsResponse_result.Add(regionInfo);
 			}

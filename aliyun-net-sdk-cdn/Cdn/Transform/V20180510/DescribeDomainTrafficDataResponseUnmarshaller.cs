@@ -26,27 +26,27 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainTrafficDataResponseUnmarshaller
     {
-        public static DescribeDomainTrafficDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainTrafficDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainTrafficDataResponse describeDomainTrafficDataResponse = new DescribeDomainTrafficDataResponse();
 
-			describeDomainTrafficDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainTrafficDataResponse.RequestId = context.StringValue("DescribeDomainTrafficData.RequestId");
-			describeDomainTrafficDataResponse.DomainName = context.StringValue("DescribeDomainTrafficData.DomainName");
-			describeDomainTrafficDataResponse.StartTime = context.StringValue("DescribeDomainTrafficData.StartTime");
-			describeDomainTrafficDataResponse.EndTime = context.StringValue("DescribeDomainTrafficData.EndTime");
-			describeDomainTrafficDataResponse.DataInterval = context.StringValue("DescribeDomainTrafficData.DataInterval");
+			describeDomainTrafficDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainTrafficDataResponse.RequestId = _ctx.StringValue("DescribeDomainTrafficData.RequestId");
+			describeDomainTrafficDataResponse.DomainName = _ctx.StringValue("DescribeDomainTrafficData.DomainName");
+			describeDomainTrafficDataResponse.StartTime = _ctx.StringValue("DescribeDomainTrafficData.StartTime");
+			describeDomainTrafficDataResponse.EndTime = _ctx.StringValue("DescribeDomainTrafficData.EndTime");
+			describeDomainTrafficDataResponse.DataInterval = _ctx.StringValue("DescribeDomainTrafficData.DataInterval");
 
 			List<DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule> describeDomainTrafficDataResponse_trafficDataPerInterval = new List<DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDomainTrafficData.TrafficDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainTrafficData.TrafficDataPerInterval.Length"); i++) {
 				DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule dataModule = new DescribeDomainTrafficDataResponse.DescribeDomainTrafficData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].Value");
-				dataModule.DomesticValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].DomesticValue");
-				dataModule.OverseasValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].OverseasValue");
-				dataModule.HttpsValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsValue");
-				dataModule.HttpsDomesticValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsDomesticValue");
-				dataModule.HttpsOverseasValue = context.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsOverseasValue");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].TimeStamp");
+				dataModule._Value = _ctx.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].Value");
+				dataModule.DomesticValue = _ctx.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].DomesticValue");
+				dataModule.OverseasValue = _ctx.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].OverseasValue");
+				dataModule.HttpsValue = _ctx.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsValue");
+				dataModule.HttpsDomesticValue = _ctx.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsDomesticValue");
+				dataModule.HttpsOverseasValue = _ctx.StringValue("DescribeDomainTrafficData.TrafficDataPerInterval["+ i +"].HttpsOverseasValue");
 
 				describeDomainTrafficDataResponse_trafficDataPerInterval.Add(dataModule);
 			}

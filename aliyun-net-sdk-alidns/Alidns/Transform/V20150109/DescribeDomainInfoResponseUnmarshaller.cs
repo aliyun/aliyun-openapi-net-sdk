@@ -49,6 +49,7 @@ namespace Aliyun.Acs.Alidns.Transform.V20150109
 			describeDomainInfoResponse.InBlackHole = context.BooleanValue("DescribeDomainInfo.InBlackHole");
 			describeDomainInfoResponse.InClean = context.BooleanValue("DescribeDomainInfo.InClean");
 			describeDomainInfoResponse.SlaveDns = context.BooleanValue("DescribeDomainInfo.SlaveDns");
+			describeDomainInfoResponse.ResourceGroupId = context.StringValue("DescribeDomainInfo.ResourceGroupId");
 
 			List<string> describeDomainInfoResponse_dnsServers = new List<string>();
 			for (int i = 0; i < context.Length("DescribeDomainInfo.DnsServers.Length"); i++) {

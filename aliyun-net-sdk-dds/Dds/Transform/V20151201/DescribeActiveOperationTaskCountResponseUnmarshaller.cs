@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeActiveOperationTaskCountResponseUnmarshaller
     {
-        public static DescribeActiveOperationTaskCountResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeActiveOperationTaskCountResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeActiveOperationTaskCountResponse describeActiveOperationTaskCountResponse = new DescribeActiveOperationTaskCountResponse();
 
-			describeActiveOperationTaskCountResponse.HttpResponse = context.HttpResponse;
-			describeActiveOperationTaskCountResponse.RequestId = context.StringValue("DescribeActiveOperationTaskCount.RequestId");
-			describeActiveOperationTaskCountResponse.TaskCount = context.IntegerValue("DescribeActiveOperationTaskCount.TaskCount");
-			describeActiveOperationTaskCountResponse.NeedPop = context.IntegerValue("DescribeActiveOperationTaskCount.NeedPop");
+			describeActiveOperationTaskCountResponse.HttpResponse = _ctx.HttpResponse;
+			describeActiveOperationTaskCountResponse.RequestId = _ctx.StringValue("DescribeActiveOperationTaskCount.RequestId");
+			describeActiveOperationTaskCountResponse.TaskCount = _ctx.IntegerValue("DescribeActiveOperationTaskCount.TaskCount");
+			describeActiveOperationTaskCountResponse.NeedPop = _ctx.IntegerValue("DescribeActiveOperationTaskCount.NeedPop");
         
 			return describeActiveOperationTaskCountResponse;
         }

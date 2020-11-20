@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeAuditCallbackResponseUnmarshaller
     {
-        public static DescribeAuditCallbackResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAuditCallbackResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAuditCallbackResponse describeAuditCallbackResponse = new DescribeAuditCallbackResponse();
 
-			describeAuditCallbackResponse.HttpResponse = context.HttpResponse;
-			describeAuditCallbackResponse.RequestId = context.StringValue("DescribeAuditCallback.RequestId");
-			describeAuditCallbackResponse.Seed = context.StringValue("DescribeAuditCallback.Seed");
-			describeAuditCallbackResponse.Callback = context.StringValue("DescribeAuditCallback.Callback");
+			describeAuditCallbackResponse.HttpResponse = _ctx.HttpResponse;
+			describeAuditCallbackResponse.RequestId = _ctx.StringValue("DescribeAuditCallback.RequestId");
+			describeAuditCallbackResponse.Seed = _ctx.StringValue("DescribeAuditCallback.Seed");
+			describeAuditCallbackResponse.Callback = _ctx.StringValue("DescribeAuditCallback.Callback");
         
 			return describeAuditCallbackResponse;
         }

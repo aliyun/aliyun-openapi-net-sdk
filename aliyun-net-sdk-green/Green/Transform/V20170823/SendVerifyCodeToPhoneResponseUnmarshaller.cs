@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class SendVerifyCodeToPhoneResponseUnmarshaller
     {
-        public static SendVerifyCodeToPhoneResponse Unmarshall(UnmarshallerContext context)
+        public static SendVerifyCodeToPhoneResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SendVerifyCodeToPhoneResponse sendVerifyCodeToPhoneResponse = new SendVerifyCodeToPhoneResponse();
 
-			sendVerifyCodeToPhoneResponse.HttpResponse = context.HttpResponse;
-			sendVerifyCodeToPhoneResponse.RequestId = context.StringValue("SendVerifyCodeToPhone.RequestId");
+			sendVerifyCodeToPhoneResponse.HttpResponse = _ctx.HttpResponse;
+			sendVerifyCodeToPhoneResponse.RequestId = _ctx.StringValue("SendVerifyCodeToPhone.RequestId");
         
 			return sendVerifyCodeToPhoneResponse;
         }

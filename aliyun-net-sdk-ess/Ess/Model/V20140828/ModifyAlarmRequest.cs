@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,9 +33,29 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public ModifyAlarmRequest()
             : base("Ess", "2014-08-28", "ModifyAlarm", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string metricType;
+
+		private string description;
+
+		private List<string> alarmActions = new List<string>(){ };
+
+		private float? threshold;
+
+		private string effective;
+
+		private int? evaluationCount;
+
+		private string metricName;
+
+		private List<Dimension> dimensions = new List<Dimension>(){ };
 
 		private int? period;
 
@@ -42,25 +63,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? groupId;
 
-		private string description;
-
-		private List<string> alarmActions;
-
-		private float? threshold;
-
 		private long? ownerId;
 
 		private string alarmTaskId;
 
 		private string name;
 
-		private int? evaluationCount;
-
-		private string metricName;
-
 		private string comparisonOperator;
-
-		private List<Dimension> dimensions;
 
 		private string statistics;
 
@@ -74,45 +83,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				metricType = value;
 				DictionaryUtil.Add(QueryParameters, "MetricType", value);
-			}
-		}
-
-		public int? Period
-		{
-			get
-			{
-				return period;
-			}
-			set	
-			{
-				period = value;
-				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
-			}
-		}
-
-		public int? GroupId
-		{
-			get
-			{
-				return groupId;
-			}
-			set	
-			{
-				groupId = value;
-				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
 			}
 		}
 
@@ -159,6 +129,102 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string Effective
+		{
+			get
+			{
+				return effective;
+			}
+			set	
+			{
+				effective = value;
+				DictionaryUtil.Add(QueryParameters, "Effective", value);
+			}
+		}
+
+		public int? EvaluationCount
+		{
+			get
+			{
+				return evaluationCount;
+			}
+			set	
+			{
+				evaluationCount = value;
+				DictionaryUtil.Add(QueryParameters, "EvaluationCount", value.ToString());
+			}
+		}
+
+		public string MetricName
+		{
+			get
+			{
+				return metricName;
+			}
+			set	
+			{
+				metricName = value;
+				DictionaryUtil.Add(QueryParameters, "MetricName", value);
+			}
+		}
+
+		public List<Dimension> Dimensions
+		{
+			get
+			{
+				return dimensions;
+			}
+
+			set
+			{
+				dimensions = value;
+				for (int i = 0; i < dimensions.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"Dimension." + (i + 1) + ".DimensionValue", dimensions[i].DimensionValue);
+					DictionaryUtil.Add(QueryParameters,"Dimension." + (i + 1) + ".DimensionKey", dimensions[i].DimensionKey);
+				}
+			}
+		}
+
+		public int? Period
+		{
+			get
+			{
+				return period;
+			}
+			set	
+			{
+				period = value;
+				DictionaryUtil.Add(QueryParameters, "Period", value.ToString());
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public int? GroupId
+		{
+			get
+			{
+				return groupId;
+			}
+			set	
+			{
+				groupId = value;
+				DictionaryUtil.Add(QueryParameters, "GroupId", value.ToString());
+			}
+		}
+
 		public long? OwnerId
 		{
 			get
@@ -198,32 +264,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public int? EvaluationCount
-		{
-			get
-			{
-				return evaluationCount;
-			}
-			set	
-			{
-				evaluationCount = value;
-				DictionaryUtil.Add(QueryParameters, "EvaluationCount", value.ToString());
-			}
-		}
-
-		public string MetricName
-		{
-			get
-			{
-				return metricName;
-			}
-			set	
-			{
-				metricName = value;
-				DictionaryUtil.Add(QueryParameters, "MetricName", value);
-			}
-		}
-
 		public string ComparisonOperator
 		{
 			get
@@ -234,24 +274,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				comparisonOperator = value;
 				DictionaryUtil.Add(QueryParameters, "ComparisonOperator", value);
-			}
-		}
-
-		public List<Dimension> Dimensions
-		{
-			get
-			{
-				return dimensions;
-			}
-
-			set
-			{
-				dimensions = value;
-				for (int i = 0; i < dimensions.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"Dimension." + (i + 1) + ".DimensionValue", dimensions[i].DimensionValue);
-					DictionaryUtil.Add(QueryParameters,"Dimension." + (i + 1) + ".DimensionKey", dimensions[i].DimensionKey);
-				}
 			}
 		}
 

@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 {
     public class VoiceIdentityStartCheckResponseUnmarshaller
     {
-        public static VoiceIdentityStartCheckResponse Unmarshall(UnmarshallerContext context)
+        public static VoiceIdentityStartCheckResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VoiceIdentityStartCheckResponse voiceIdentityStartCheckResponse = new VoiceIdentityStartCheckResponse();
 
-			voiceIdentityStartCheckResponse.HttpResponse = context.HttpResponse;
+			voiceIdentityStartCheckResponse.HttpResponse = _ctx.HttpResponse;
         
 			return voiceIdentityStartCheckResponse;
         }

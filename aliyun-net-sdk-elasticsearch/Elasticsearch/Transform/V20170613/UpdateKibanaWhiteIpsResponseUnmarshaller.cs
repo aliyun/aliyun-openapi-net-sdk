@@ -26,18 +26,18 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateKibanaWhiteIpsResponseUnmarshaller
     {
-        public static UpdateKibanaWhiteIpsResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateKibanaWhiteIpsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateKibanaWhiteIpsResponse updateKibanaWhiteIpsResponse = new UpdateKibanaWhiteIpsResponse();
 
-			updateKibanaWhiteIpsResponse.HttpResponse = context.HttpResponse;
-			updateKibanaWhiteIpsResponse.RequestId = context.StringValue("UpdateKibanaWhiteIps.RequestId");
+			updateKibanaWhiteIpsResponse.HttpResponse = _ctx.HttpResponse;
+			updateKibanaWhiteIpsResponse.RequestId = _ctx.StringValue("UpdateKibanaWhiteIps.RequestId");
 
 			UpdateKibanaWhiteIpsResponse.UpdateKibanaWhiteIps_Result result = new UpdateKibanaWhiteIpsResponse.UpdateKibanaWhiteIps_Result();
 
 			List<string> result_kibanaIPWhitelist = new List<string>();
-			for (int i = 0; i < context.Length("UpdateKibanaWhiteIps.Result.KibanaIPWhitelist.Length"); i++) {
-				result_kibanaIPWhitelist.Add(context.StringValue("UpdateKibanaWhiteIps.Result.KibanaIPWhitelist["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("UpdateKibanaWhiteIps.Result.KibanaIPWhitelist.Length"); i++) {
+				result_kibanaIPWhitelist.Add(_ctx.StringValue("UpdateKibanaWhiteIps.Result.KibanaIPWhitelist["+ i +"]"));
 			}
 			result.KibanaIPWhitelist = result_kibanaIPWhitelist;
 			updateKibanaWhiteIpsResponse.Result = result;

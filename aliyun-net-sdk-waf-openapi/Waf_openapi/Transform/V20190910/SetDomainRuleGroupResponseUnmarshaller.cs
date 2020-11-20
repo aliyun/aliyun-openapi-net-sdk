@@ -26,12 +26,12 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class SetDomainRuleGroupResponseUnmarshaller
     {
-        public static SetDomainRuleGroupResponse Unmarshall(UnmarshallerContext context)
+        public static SetDomainRuleGroupResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			SetDomainRuleGroupResponse setDomainRuleGroupResponse = new SetDomainRuleGroupResponse();
 
-			setDomainRuleGroupResponse.HttpResponse = context.HttpResponse;
-			setDomainRuleGroupResponse.RequestId = context.StringValue("SetDomainRuleGroup.RequestId");
+			setDomainRuleGroupResponse.HttpResponse = _ctx.HttpResponse;
+			setDomainRuleGroupResponse.RequestId = _ctx.StringValue("SetDomainRuleGroup.RequestId");
         
 			return setDomainRuleGroupResponse;
         }

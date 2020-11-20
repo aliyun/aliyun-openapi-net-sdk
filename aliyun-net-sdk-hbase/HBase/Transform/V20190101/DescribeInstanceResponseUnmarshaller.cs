@@ -26,59 +26,60 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DescribeInstanceResponseUnmarshaller
     {
-        public static DescribeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeInstanceResponse describeInstanceResponse = new DescribeInstanceResponse();
 
-			describeInstanceResponse.HttpResponse = context.HttpResponse;
-			describeInstanceResponse.RequestId = context.StringValue("DescribeInstance.RequestId");
-			describeInstanceResponse.InstanceId = context.StringValue("DescribeInstance.InstanceId");
-			describeInstanceResponse.InstanceName = context.StringValue("DescribeInstance.InstanceName");
-			describeInstanceResponse.Status = context.StringValue("DescribeInstance.Status");
-			describeInstanceResponse.PayType = context.StringValue("DescribeInstance.PayType");
-			describeInstanceResponse.CreatedTime = context.StringValue("DescribeInstance.CreatedTime");
-			describeInstanceResponse.ExpireTime = context.StringValue("DescribeInstance.ExpireTime");
-			describeInstanceResponse.MajorVersion = context.StringValue("DescribeInstance.MajorVersion");
-			describeInstanceResponse.MinorVersion = context.StringValue("DescribeInstance.MinorVersion");
-			describeInstanceResponse.Engine = context.StringValue("DescribeInstance.Engine");
-			describeInstanceResponse.IsHa = context.BooleanValue("DescribeInstance.IsHa");
-			describeInstanceResponse.NetworkType = context.StringValue("DescribeInstance.NetworkType");
-			describeInstanceResponse.VpcId = context.StringValue("DescribeInstance.VpcId");
-			describeInstanceResponse.VswitchId = context.StringValue("DescribeInstance.VswitchId");
-			describeInstanceResponse.MasterInstanceType = context.StringValue("DescribeInstance.MasterInstanceType");
-			describeInstanceResponse.MasterNodeCount = context.IntegerValue("DescribeInstance.MasterNodeCount");
-			describeInstanceResponse.MasterDiskType = context.StringValue("DescribeInstance.MasterDiskType");
-			describeInstanceResponse.MasterDiskSize = context.IntegerValue("DescribeInstance.MasterDiskSize");
-			describeInstanceResponse.CoreInstanceType = context.StringValue("DescribeInstance.CoreInstanceType");
-			describeInstanceResponse.CoreNodeCount = context.IntegerValue("DescribeInstance.CoreNodeCount");
-			describeInstanceResponse.CoreDiskType = context.StringValue("DescribeInstance.CoreDiskType");
-			describeInstanceResponse.CoreDiskSize = context.IntegerValue("DescribeInstance.CoreDiskSize");
-			describeInstanceResponse.RegionId = context.StringValue("DescribeInstance.RegionId");
-			describeInstanceResponse.ZoneId = context.StringValue("DescribeInstance.ZoneId");
-			describeInstanceResponse.ColdStorageStatus = context.StringValue("DescribeInstance.ColdStorageStatus");
-			describeInstanceResponse.BackupStatus = context.StringValue("DescribeInstance.BackupStatus");
-			describeInstanceResponse.CoreDiskCount = context.StringValue("DescribeInstance.CoreDiskCount");
-			describeInstanceResponse.MaintainStartTime = context.StringValue("DescribeInstance.MaintainStartTime");
-			describeInstanceResponse.MaintainEndTime = context.StringValue("DescribeInstance.MaintainEndTime");
-			describeInstanceResponse.CreatedTimeUTC = context.StringValue("DescribeInstance.CreatedTimeUTC");
-			describeInstanceResponse.ExpireTimeUTC = context.StringValue("DescribeInstance.ExpireTimeUTC");
-			describeInstanceResponse.IsLatestVersion = context.BooleanValue("DescribeInstance.IsLatestVersion");
-			describeInstanceResponse.IsMultiModel = context.BooleanValue("DescribeInstance.IsMultiModel");
-			describeInstanceResponse.ClusterType = context.StringValue("DescribeInstance.ClusterType");
-			describeInstanceResponse.ClusterId = context.StringValue("DescribeInstance.ClusterId");
-			describeInstanceResponse.ClusterName = context.StringValue("DescribeInstance.ClusterName");
-			describeInstanceResponse.IsDeletionProtection = context.BooleanValue("DescribeInstance.IsDeletionProtection");
-			describeInstanceResponse.ParentId = context.StringValue("DescribeInstance.ParentId");
-			describeInstanceResponse.ModuleId = context.IntegerValue("DescribeInstance.ModuleId");
-			describeInstanceResponse.ModuleStackVersion = context.StringValue("DescribeInstance.ModuleStackVersion");
-			describeInstanceResponse.AutoRenewal = context.BooleanValue("DescribeInstance.AutoRenewal");
-			describeInstanceResponse.Duration = context.IntegerValue("DescribeInstance.Duration");
+			describeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceResponse.RequestId = _ctx.StringValue("DescribeInstance.RequestId");
+			describeInstanceResponse.InstanceId = _ctx.StringValue("DescribeInstance.InstanceId");
+			describeInstanceResponse.InstanceName = _ctx.StringValue("DescribeInstance.InstanceName");
+			describeInstanceResponse.Status = _ctx.StringValue("DescribeInstance.Status");
+			describeInstanceResponse.PayType = _ctx.StringValue("DescribeInstance.PayType");
+			describeInstanceResponse.CreatedTime = _ctx.StringValue("DescribeInstance.CreatedTime");
+			describeInstanceResponse.ExpireTime = _ctx.StringValue("DescribeInstance.ExpireTime");
+			describeInstanceResponse.MajorVersion = _ctx.StringValue("DescribeInstance.MajorVersion");
+			describeInstanceResponse.MinorVersion = _ctx.StringValue("DescribeInstance.MinorVersion");
+			describeInstanceResponse.Engine = _ctx.StringValue("DescribeInstance.Engine");
+			describeInstanceResponse.IsHa = _ctx.BooleanValue("DescribeInstance.IsHa");
+			describeInstanceResponse.NetworkType = _ctx.StringValue("DescribeInstance.NetworkType");
+			describeInstanceResponse.VpcId = _ctx.StringValue("DescribeInstance.VpcId");
+			describeInstanceResponse.VswitchId = _ctx.StringValue("DescribeInstance.VswitchId");
+			describeInstanceResponse.MasterInstanceType = _ctx.StringValue("DescribeInstance.MasterInstanceType");
+			describeInstanceResponse.MasterNodeCount = _ctx.IntegerValue("DescribeInstance.MasterNodeCount");
+			describeInstanceResponse.MasterDiskType = _ctx.StringValue("DescribeInstance.MasterDiskType");
+			describeInstanceResponse.MasterDiskSize = _ctx.IntegerValue("DescribeInstance.MasterDiskSize");
+			describeInstanceResponse.CoreInstanceType = _ctx.StringValue("DescribeInstance.CoreInstanceType");
+			describeInstanceResponse.CoreNodeCount = _ctx.IntegerValue("DescribeInstance.CoreNodeCount");
+			describeInstanceResponse.CoreDiskType = _ctx.StringValue("DescribeInstance.CoreDiskType");
+			describeInstanceResponse.CoreDiskSize = _ctx.IntegerValue("DescribeInstance.CoreDiskSize");
+			describeInstanceResponse.RegionId = _ctx.StringValue("DescribeInstance.RegionId");
+			describeInstanceResponse.ZoneId = _ctx.StringValue("DescribeInstance.ZoneId");
+			describeInstanceResponse.ColdStorageStatus = _ctx.StringValue("DescribeInstance.ColdStorageStatus");
+			describeInstanceResponse.BackupStatus = _ctx.StringValue("DescribeInstance.BackupStatus");
+			describeInstanceResponse.CoreDiskCount = _ctx.StringValue("DescribeInstance.CoreDiskCount");
+			describeInstanceResponse.MaintainStartTime = _ctx.StringValue("DescribeInstance.MaintainStartTime");
+			describeInstanceResponse.MaintainEndTime = _ctx.StringValue("DescribeInstance.MaintainEndTime");
+			describeInstanceResponse.CreatedTimeUTC = _ctx.StringValue("DescribeInstance.CreatedTimeUTC");
+			describeInstanceResponse.ExpireTimeUTC = _ctx.StringValue("DescribeInstance.ExpireTimeUTC");
+			describeInstanceResponse.IsLatestVersion = _ctx.BooleanValue("DescribeInstance.IsLatestVersion");
+			describeInstanceResponse.IsMultiModel = _ctx.BooleanValue("DescribeInstance.IsMultiModel");
+			describeInstanceResponse.ClusterType = _ctx.StringValue("DescribeInstance.ClusterType");
+			describeInstanceResponse.ClusterId = _ctx.StringValue("DescribeInstance.ClusterId");
+			describeInstanceResponse.ClusterName = _ctx.StringValue("DescribeInstance.ClusterName");
+			describeInstanceResponse.IsDeletionProtection = _ctx.BooleanValue("DescribeInstance.IsDeletionProtection");
+			describeInstanceResponse.ParentId = _ctx.StringValue("DescribeInstance.ParentId");
+			describeInstanceResponse.ModuleId = _ctx.IntegerValue("DescribeInstance.ModuleId");
+			describeInstanceResponse.ModuleStackVersion = _ctx.StringValue("DescribeInstance.ModuleStackVersion");
+			describeInstanceResponse.AutoRenewal = _ctx.BooleanValue("DescribeInstance.AutoRenewal");
+			describeInstanceResponse.Duration = _ctx.IntegerValue("DescribeInstance.Duration");
+			describeInstanceResponse.ColdStorageSize = _ctx.IntegerValue("DescribeInstance.ColdStorageSize");
 
 			List<DescribeInstanceResponse.DescribeInstance_Tag> describeInstanceResponse_tags = new List<DescribeInstanceResponse.DescribeInstance_Tag>();
-			for (int i = 0; i < context.Length("DescribeInstance.Tags.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeInstance.Tags.Length"); i++) {
 				DescribeInstanceResponse.DescribeInstance_Tag tag = new DescribeInstanceResponse.DescribeInstance_Tag();
-				tag.Key = context.StringValue("DescribeInstance.Tags["+ i +"].Key");
-				tag._Value = context.StringValue("DescribeInstance.Tags["+ i +"].Value");
+				tag.Key = _ctx.StringValue("DescribeInstance.Tags["+ i +"].Key");
+				tag._Value = _ctx.StringValue("DescribeInstance.Tags["+ i +"].Value");
 
 				describeInstanceResponse_tags.Add(tag);
 			}

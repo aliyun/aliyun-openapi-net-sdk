@@ -26,29 +26,29 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeDomainSlowRatioResponseUnmarshaller
     {
-        public static DescribeDomainSlowRatioResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainSlowRatioResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainSlowRatioResponse describeDomainSlowRatioResponse = new DescribeDomainSlowRatioResponse();
 
-			describeDomainSlowRatioResponse.HttpResponse = context.HttpResponse;
-			describeDomainSlowRatioResponse.EndTime = context.StringValue("DescribeDomainSlowRatio.EndTime");
-			describeDomainSlowRatioResponse.DataInterval = context.IntegerValue("DescribeDomainSlowRatio.DataInterval");
-			describeDomainSlowRatioResponse.PageNumber = context.IntegerValue("DescribeDomainSlowRatio.PageNumber");
-			describeDomainSlowRatioResponse.PageSize = context.IntegerValue("DescribeDomainSlowRatio.PageSize");
-			describeDomainSlowRatioResponse.TotalCount = context.IntegerValue("DescribeDomainSlowRatio.TotalCount");
-			describeDomainSlowRatioResponse.StartTime = context.StringValue("DescribeDomainSlowRatio.StartTime");
+			describeDomainSlowRatioResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainSlowRatioResponse.EndTime = _ctx.StringValue("DescribeDomainSlowRatio.EndTime");
+			describeDomainSlowRatioResponse.DataInterval = _ctx.IntegerValue("DescribeDomainSlowRatio.DataInterval");
+			describeDomainSlowRatioResponse.PageNumber = _ctx.IntegerValue("DescribeDomainSlowRatio.PageNumber");
+			describeDomainSlowRatioResponse.PageSize = _ctx.IntegerValue("DescribeDomainSlowRatio.PageSize");
+			describeDomainSlowRatioResponse.TotalCount = _ctx.IntegerValue("DescribeDomainSlowRatio.TotalCount");
+			describeDomainSlowRatioResponse.StartTime = _ctx.StringValue("DescribeDomainSlowRatio.StartTime");
 
 			List<DescribeDomainSlowRatioResponse.DescribeDomainSlowRatio_SlowRatioData> describeDomainSlowRatioResponse_slowRatioDataPerInterval = new List<DescribeDomainSlowRatioResponse.DescribeDomainSlowRatio_SlowRatioData>();
-			for (int i = 0; i < context.Length("DescribeDomainSlowRatio.SlowRatioDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainSlowRatio.SlowRatioDataPerInterval.Length"); i++) {
 				DescribeDomainSlowRatioResponse.DescribeDomainSlowRatio_SlowRatioData slowRatioData = new DescribeDomainSlowRatioResponse.DescribeDomainSlowRatio_SlowRatioData();
-				slowRatioData.TotalUsers = context.IntegerValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].TotalUsers");
-				slowRatioData.SlowUsers = context.IntegerValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].SlowUsers");
-				slowRatioData.SlowRatio = context.FloatValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].SlowRatio");
-				slowRatioData.RegionNameZh = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].RegionNameZh");
-				slowRatioData.RegionNameEn = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].RegionNameEn");
-				slowRatioData.IspNameZh = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].IspNameZh");
-				slowRatioData.IspNameEn = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].IspNameEn");
-				slowRatioData.Time = context.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].Time");
+				slowRatioData.TotalUsers = _ctx.IntegerValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].TotalUsers");
+				slowRatioData.SlowUsers = _ctx.IntegerValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].SlowUsers");
+				slowRatioData.SlowRatio = _ctx.FloatValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].SlowRatio");
+				slowRatioData.RegionNameZh = _ctx.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].RegionNameZh");
+				slowRatioData.RegionNameEn = _ctx.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].RegionNameEn");
+				slowRatioData.IspNameZh = _ctx.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].IspNameZh");
+				slowRatioData.IspNameEn = _ctx.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].IspNameEn");
+				slowRatioData.Time = _ctx.StringValue("DescribeDomainSlowRatio.SlowRatioDataPerInterval["+ i +"].Time");
 
 				describeDomainSlowRatioResponse_slowRatioDataPerInterval.Add(slowRatioData);
 			}

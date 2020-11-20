@@ -33,6 +33,8 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 
 		private string errorMessage;
 
+		private long? total;
+
 		private List<ListGroupRepositories_ResultItem> result;
 
 		public string RequestId
@@ -80,6 +82,18 @@ namespace Aliyun.Acs.codeup.Model.V20200414
 			set	
 			{
 				errorMessage = value;
+			}
+		}
+
+		public long? Total
+		{
+			get
+			{
+				return total;
+			}
+			set	
+			{
+				total = value;
 			}
 		}
 

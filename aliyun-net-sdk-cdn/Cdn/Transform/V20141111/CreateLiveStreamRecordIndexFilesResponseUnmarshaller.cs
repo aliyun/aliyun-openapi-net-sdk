@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class CreateLiveStreamRecordIndexFilesResponseUnmarshaller
     {
-        public static CreateLiveStreamRecordIndexFilesResponse Unmarshall(UnmarshallerContext context)
+        public static CreateLiveStreamRecordIndexFilesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateLiveStreamRecordIndexFilesResponse createLiveStreamRecordIndexFilesResponse = new CreateLiveStreamRecordIndexFilesResponse();
 
-			createLiveStreamRecordIndexFilesResponse.HttpResponse = context.HttpResponse;
-			createLiveStreamRecordIndexFilesResponse.RequestId = context.StringValue("CreateLiveStreamRecordIndexFiles.RequestId");
+			createLiveStreamRecordIndexFilesResponse.HttpResponse = _ctx.HttpResponse;
+			createLiveStreamRecordIndexFilesResponse.RequestId = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RequestId");
 
 			CreateLiveStreamRecordIndexFilesResponse.CreateLiveStreamRecordIndexFiles_RecordInfo recordInfo = new CreateLiveStreamRecordIndexFilesResponse.CreateLiveStreamRecordIndexFiles_RecordInfo();
-			recordInfo.RecordId = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordId");
-			recordInfo.RecordUrl = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordUrl");
-			recordInfo.Duration = context.FloatValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Duration");
-			recordInfo.Height = context.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Height");
-			recordInfo.Width = context.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Width");
-			recordInfo.CreateTime = context.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.CreateTime");
+			recordInfo.RecordId = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordId");
+			recordInfo.RecordUrl = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.RecordUrl");
+			recordInfo.Duration = _ctx.FloatValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Duration");
+			recordInfo.Height = _ctx.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Height");
+			recordInfo.Width = _ctx.IntegerValue("CreateLiveStreamRecordIndexFiles.RecordInfo.Width");
+			recordInfo.CreateTime = _ctx.StringValue("CreateLiveStreamRecordIndexFiles.RecordInfo.CreateTime");
 			createLiveStreamRecordIndexFilesResponse.RecordInfo = recordInfo;
         
 			return createLiveStreamRecordIndexFilesResponse;

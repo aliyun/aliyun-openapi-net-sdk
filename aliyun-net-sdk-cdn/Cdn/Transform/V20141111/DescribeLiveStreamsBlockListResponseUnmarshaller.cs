@@ -26,17 +26,17 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeLiveStreamsBlockListResponseUnmarshaller
     {
-        public static DescribeLiveStreamsBlockListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeLiveStreamsBlockListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeLiveStreamsBlockListResponse describeLiveStreamsBlockListResponse = new DescribeLiveStreamsBlockListResponse();
 
-			describeLiveStreamsBlockListResponse.HttpResponse = context.HttpResponse;
-			describeLiveStreamsBlockListResponse.RequestId = context.StringValue("DescribeLiveStreamsBlockList.RequestId");
-			describeLiveStreamsBlockListResponse.DomainName = context.StringValue("DescribeLiveStreamsBlockList.DomainName");
+			describeLiveStreamsBlockListResponse.HttpResponse = _ctx.HttpResponse;
+			describeLiveStreamsBlockListResponse.RequestId = _ctx.StringValue("DescribeLiveStreamsBlockList.RequestId");
+			describeLiveStreamsBlockListResponse.DomainName = _ctx.StringValue("DescribeLiveStreamsBlockList.DomainName");
 
 			List<string> describeLiveStreamsBlockListResponse_streamUrls = new List<string>();
-			for (int i = 0; i < context.Length("DescribeLiveStreamsBlockList.StreamUrls.Length"); i++) {
-				describeLiveStreamsBlockListResponse_streamUrls.Add(context.StringValue("DescribeLiveStreamsBlockList.StreamUrls["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeLiveStreamsBlockList.StreamUrls.Length"); i++) {
+				describeLiveStreamsBlockListResponse_streamUrls.Add(_ctx.StringValue("DescribeLiveStreamsBlockList.StreamUrls["+ i +"]"));
 			}
 			describeLiveStreamsBlockListResponse.StreamUrls = describeLiveStreamsBlockListResponse_streamUrls;
         

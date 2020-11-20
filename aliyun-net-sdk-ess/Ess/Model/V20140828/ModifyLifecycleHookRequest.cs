@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,29 +33,35 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public ModifyLifecycleHookRequest()
             : base("Ess", "2014-08-28", "ModifyLifecycleHook", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string defaultResult;
 
-		private string resourceOwnerAccount;
-
 		private int? heartbeatTimeout;
 
-		private string lifecycleHookId;
-
 		private string scalingGroupId;
-
-		private string ownerAccount;
-
-		private string notificationMetadata;
-
-		private long? ownerId;
 
 		private string lifecycleTransition;
 
 		private string lifecycleHookName;
 
 		private string notificationArn;
+
+		private string resourceOwnerAccount;
+
+		private string lifecycleHookId;
+
+		private string ownerAccount;
+
+		private string notificationMetadata;
+
+		private long? ownerId;
 
 		public string DefaultResult
 		{
@@ -66,19 +73,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				defaultResult = value;
 				DictionaryUtil.Add(QueryParameters, "DefaultResult", value);
-			}
-		}
-
-		public string ResourceOwnerAccount
-		{
-			get
-			{
-				return resourceOwnerAccount;
-			}
-			set	
-			{
-				resourceOwnerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
 			}
 		}
 
@@ -95,19 +89,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string LifecycleHookId
-		{
-			get
-			{
-				return lifecycleHookId;
-			}
-			set	
-			{
-				lifecycleHookId = value;
-				DictionaryUtil.Add(QueryParameters, "LifecycleHookId", value);
-			}
-		}
-
 		public string ScalingGroupId
 		{
 			get
@@ -118,45 +99,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scalingGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
-			}
-		}
-
-		public string OwnerAccount
-		{
-			get
-			{
-				return ownerAccount;
-			}
-			set	
-			{
-				ownerAccount = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string NotificationMetadata
-		{
-			get
-			{
-				return notificationMetadata;
-			}
-			set	
-			{
-				notificationMetadata = value;
-				DictionaryUtil.Add(QueryParameters, "NotificationMetadata", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 
@@ -196,6 +138,71 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				notificationArn = value;
 				DictionaryUtil.Add(QueryParameters, "NotificationArn", value);
+			}
+		}
+
+		public string ResourceOwnerAccount
+		{
+			get
+			{
+				return resourceOwnerAccount;
+			}
+			set	
+			{
+				resourceOwnerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public string LifecycleHookId
+		{
+			get
+			{
+				return lifecycleHookId;
+			}
+			set	
+			{
+				lifecycleHookId = value;
+				DictionaryUtil.Add(QueryParameters, "LifecycleHookId", value);
+			}
+		}
+
+		public string OwnerAccount
+		{
+			get
+			{
+				return ownerAccount;
+			}
+			set	
+			{
+				ownerAccount = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
+			}
+		}
+
+		public string NotificationMetadata
+		{
+			get
+			{
+				return notificationMetadata;
+			}
+			set	
+			{
+				notificationMetadata = value;
+				DictionaryUtil.Add(QueryParameters, "NotificationMetadata", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
 			}
 		}
 

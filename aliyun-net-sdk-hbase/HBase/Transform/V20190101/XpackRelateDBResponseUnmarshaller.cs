@@ -26,12 +26,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class XpackRelateDBResponseUnmarshaller
     {
-        public static XpackRelateDBResponse Unmarshall(UnmarshallerContext context)
+        public static XpackRelateDBResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			XpackRelateDBResponse xpackRelateDBResponse = new XpackRelateDBResponse();
 
-			xpackRelateDBResponse.HttpResponse = context.HttpResponse;
-			xpackRelateDBResponse.RequestId = context.StringValue("XpackRelateDB.RequestId");
+			xpackRelateDBResponse.HttpResponse = _ctx.HttpResponse;
+			xpackRelateDBResponse.RequestId = _ctx.StringValue("XpackRelateDB.RequestId");
         
 			return xpackRelateDBResponse;
         }

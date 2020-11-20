@@ -26,15 +26,15 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class InterruptElasticsearchTaskResponseUnmarshaller
     {
-        public static InterruptElasticsearchTaskResponse Unmarshall(UnmarshallerContext context)
+        public static InterruptElasticsearchTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			InterruptElasticsearchTaskResponse interruptElasticsearchTaskResponse = new InterruptElasticsearchTaskResponse();
 
-			interruptElasticsearchTaskResponse.HttpResponse = context.HttpResponse;
-			interruptElasticsearchTaskResponse.RequestId = context.StringValue("InterruptElasticsearchTask.RequestId");
-			interruptElasticsearchTaskResponse.Code = context.StringValue("InterruptElasticsearchTask.Code");
-			interruptElasticsearchTaskResponse.Message = context.StringValue("InterruptElasticsearchTask.Message");
-			interruptElasticsearchTaskResponse.Result = context.BooleanValue("InterruptElasticsearchTask.Result");
+			interruptElasticsearchTaskResponse.HttpResponse = _ctx.HttpResponse;
+			interruptElasticsearchTaskResponse.RequestId = _ctx.StringValue("InterruptElasticsearchTask.RequestId");
+			interruptElasticsearchTaskResponse.Code = _ctx.StringValue("InterruptElasticsearchTask.Code");
+			interruptElasticsearchTaskResponse.Message = _ctx.StringValue("InterruptElasticsearchTask.Message");
+			interruptElasticsearchTaskResponse.Result = _ctx.BooleanValue("InterruptElasticsearchTask.Result");
         
 			return interruptElasticsearchTaskResponse;
         }

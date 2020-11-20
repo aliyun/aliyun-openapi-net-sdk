@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeDomainUvDataResponseUnmarshaller
     {
-        public static DescribeDomainUvDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainUvDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainUvDataResponse describeDomainUvDataResponse = new DescribeDomainUvDataResponse();
 
-			describeDomainUvDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainUvDataResponse.RequestId = context.StringValue("DescribeDomainUvData.RequestId");
-			describeDomainUvDataResponse.DomainName = context.StringValue("DescribeDomainUvData.DomainName");
-			describeDomainUvDataResponse.DataInterval = context.StringValue("DescribeDomainUvData.DataInterval");
-			describeDomainUvDataResponse.StartTime = context.StringValue("DescribeDomainUvData.StartTime");
-			describeDomainUvDataResponse.EndTime = context.StringValue("DescribeDomainUvData.EndTime");
+			describeDomainUvDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainUvDataResponse.RequestId = _ctx.StringValue("DescribeDomainUvData.RequestId");
+			describeDomainUvDataResponse.DomainName = _ctx.StringValue("DescribeDomainUvData.DomainName");
+			describeDomainUvDataResponse.DataInterval = _ctx.StringValue("DescribeDomainUvData.DataInterval");
+			describeDomainUvDataResponse.StartTime = _ctx.StringValue("DescribeDomainUvData.StartTime");
+			describeDomainUvDataResponse.EndTime = _ctx.StringValue("DescribeDomainUvData.EndTime");
 
 			List<DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData> describeDomainUvDataResponse_uvDataInterval = new List<DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData>();
-			for (int i = 0; i < context.Length("DescribeDomainUvData.UvDataInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainUvData.UvDataInterval.Length"); i++) {
 				DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData usageData = new DescribeDomainUvDataResponse.DescribeDomainUvData_UsageData();
-				usageData.TimeStamp = context.StringValue("DescribeDomainUvData.UvDataInterval["+ i +"].TimeStamp");
-				usageData._Value = context.StringValue("DescribeDomainUvData.UvDataInterval["+ i +"].Value");
+				usageData.TimeStamp = _ctx.StringValue("DescribeDomainUvData.UvDataInterval["+ i +"].TimeStamp");
+				usageData._Value = _ctx.StringValue("DescribeDomainUvData.UvDataInterval["+ i +"].Value");
 
 				describeDomainUvDataResponse_uvDataInterval.Add(usageData);
 			}

@@ -138,6 +138,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string systemDiskDescription;
 
+			private string systemDiskAutoSnapshotPolicyId;
+
 			private string lifecycleState;
 
 			private string creationTime;
@@ -164,6 +166,24 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private string instanceDescription;
 
+			private string creditSpecification;
+
+			private string imageFamily;
+
+			private string zoneId;
+
+			private string dedicatedHostId;
+
+			private string affinity;
+
+			private string tenancy;
+
+			private string privatePoolOptionsMatchCriteria;
+
+			private string privatePoolOptionsId;
+
+			private int? ipv6AddressCount;
+
 			private List<DescribeScalingConfigurations_DataDisk> dataDisks;
 
 			private List<DescribeScalingConfigurations_Tag> tags;
@@ -173,6 +193,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			private List<string> instanceTypes;
 
 			private List<string> securityGroupIds;
+
+			private DescribeScalingConfigurations_SchedulerOptions schedulerOptions;
 
 			public string ScalingConfigurationId
 			{
@@ -414,6 +436,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public string SystemDiskAutoSnapshotPolicyId
+			{
+				get
+				{
+					return systemDiskAutoSnapshotPolicyId;
+				}
+				set	
+				{
+					systemDiskAutoSnapshotPolicyId = value;
+				}
+			}
+
 			public string LifecycleState
 			{
 				get
@@ -570,6 +604,114 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public string CreditSpecification
+			{
+				get
+				{
+					return creditSpecification;
+				}
+				set	
+				{
+					creditSpecification = value;
+				}
+			}
+
+			public string ImageFamily
+			{
+				get
+				{
+					return imageFamily;
+				}
+				set	
+				{
+					imageFamily = value;
+				}
+			}
+
+			public string ZoneId
+			{
+				get
+				{
+					return zoneId;
+				}
+				set	
+				{
+					zoneId = value;
+				}
+			}
+
+			public string DedicatedHostId
+			{
+				get
+				{
+					return dedicatedHostId;
+				}
+				set	
+				{
+					dedicatedHostId = value;
+				}
+			}
+
+			public string Affinity
+			{
+				get
+				{
+					return affinity;
+				}
+				set	
+				{
+					affinity = value;
+				}
+			}
+
+			public string Tenancy
+			{
+				get
+				{
+					return tenancy;
+				}
+				set	
+				{
+					tenancy = value;
+				}
+			}
+
+			public string PrivatePoolOptionsMatchCriteria
+			{
+				get
+				{
+					return privatePoolOptionsMatchCriteria;
+				}
+				set	
+				{
+					privatePoolOptionsMatchCriteria = value;
+				}
+			}
+
+			public string PrivatePoolOptionsId
+			{
+				get
+				{
+					return privatePoolOptionsId;
+				}
+				set	
+				{
+					privatePoolOptionsId = value;
+				}
+			}
+
+			public int? Ipv6AddressCount
+			{
+				get
+				{
+					return ipv6AddressCount;
+				}
+				set	
+				{
+					ipv6AddressCount = value;
+				}
+			}
+
 			public List<DescribeScalingConfigurations_DataDisk> DataDisks
 			{
 				get
@@ -630,6 +772,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				}
 			}
 
+			public DescribeScalingConfigurations_SchedulerOptions SchedulerOptions
+			{
+				get
+				{
+					return schedulerOptions;
+				}
+				set	
+				{
+					schedulerOptions = value;
+				}
+			}
+
 			public class DescribeScalingConfigurations_DataDisk
 			{
 
@@ -650,6 +804,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				private string diskName;
 
 				private string description;
+
+				private string autoSnapshotPolicyId;
 
 				public int? Size
 				{
@@ -758,6 +914,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 						description = value;
 					}
 				}
+
+				public string AutoSnapshotPolicyId
+				{
+					get
+					{
+						return autoSnapshotPolicyId;
+					}
+					set	
+					{
+						autoSnapshotPolicyId = value;
+					}
+				}
 			}
 
 			public class DescribeScalingConfigurations_Tag
@@ -820,6 +988,24 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 					set	
 					{
 						priceLimit = value;
+					}
+				}
+			}
+
+			public class DescribeScalingConfigurations_SchedulerOptions
+			{
+
+				private string managedPrivateSpaceId;
+
+				public string ManagedPrivateSpaceId
+				{
+					get
+					{
+						return managedPrivateSpaceId;
+					}
+					set	
+					{
+						managedPrivateSpaceId = value;
 					}
 				}
 			}

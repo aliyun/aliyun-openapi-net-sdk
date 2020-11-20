@@ -26,18 +26,18 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateBlackIpsResponseUnmarshaller
     {
-        public static UpdateBlackIpsResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateBlackIpsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateBlackIpsResponse updateBlackIpsResponse = new UpdateBlackIpsResponse();
 
-			updateBlackIpsResponse.HttpResponse = context.HttpResponse;
-			updateBlackIpsResponse.RequestId = context.StringValue("UpdateBlackIps.RequestId");
+			updateBlackIpsResponse.HttpResponse = _ctx.HttpResponse;
+			updateBlackIpsResponse.RequestId = _ctx.StringValue("UpdateBlackIps.RequestId");
 
 			UpdateBlackIpsResponse.UpdateBlackIps_Result result = new UpdateBlackIpsResponse.UpdateBlackIps_Result();
 
 			List<string> result_esIPBlacklist = new List<string>();
-			for (int i = 0; i < context.Length("UpdateBlackIps.Result.EsIPBlacklist.Length"); i++) {
-				result_esIPBlacklist.Add(context.StringValue("UpdateBlackIps.Result.EsIPBlacklist["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("UpdateBlackIps.Result.EsIPBlacklist.Length"); i++) {
+				result_esIPBlacklist.Add(_ctx.StringValue("UpdateBlackIps.Result.EsIPBlacklist["+ i +"]"));
 			}
 			result.EsIPBlacklist = result_esIPBlacklist;
 			updateBlackIpsResponse.Result = result;

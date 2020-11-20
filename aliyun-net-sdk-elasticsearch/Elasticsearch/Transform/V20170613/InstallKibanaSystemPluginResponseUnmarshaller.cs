@@ -26,16 +26,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class InstallKibanaSystemPluginResponseUnmarshaller
     {
-        public static InstallKibanaSystemPluginResponse Unmarshall(UnmarshallerContext context)
+        public static InstallKibanaSystemPluginResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			InstallKibanaSystemPluginResponse installKibanaSystemPluginResponse = new InstallKibanaSystemPluginResponse();
 
-			installKibanaSystemPluginResponse.HttpResponse = context.HttpResponse;
-			installKibanaSystemPluginResponse.RequestId = context.StringValue("InstallKibanaSystemPlugin.RequestId");
+			installKibanaSystemPluginResponse.HttpResponse = _ctx.HttpResponse;
+			installKibanaSystemPluginResponse.RequestId = _ctx.StringValue("InstallKibanaSystemPlugin.RequestId");
 
 			List<string> installKibanaSystemPluginResponse_result = new List<string>();
-			for (int i = 0; i < context.Length("InstallKibanaSystemPlugin.Result.Length"); i++) {
-				installKibanaSystemPluginResponse_result.Add(context.StringValue("InstallKibanaSystemPlugin.Result["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("InstallKibanaSystemPlugin.Result.Length"); i++) {
+				installKibanaSystemPluginResponse_result.Add(_ctx.StringValue("InstallKibanaSystemPlugin.Result["+ i +"]"));
 			}
 			installKibanaSystemPluginResponse.Result = installKibanaSystemPluginResponse_result;
         

@@ -26,23 +26,23 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class QueryXpackRelateDBResponseUnmarshaller
     {
-        public static QueryXpackRelateDBResponse Unmarshall(UnmarshallerContext context)
+        public static QueryXpackRelateDBResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			QueryXpackRelateDBResponse queryXpackRelateDBResponse = new QueryXpackRelateDBResponse();
 
-			queryXpackRelateDBResponse.HttpResponse = context.HttpResponse;
-			queryXpackRelateDBResponse.RequestId = context.StringValue("QueryXpackRelateDB.RequestId");
+			queryXpackRelateDBResponse.HttpResponse = _ctx.HttpResponse;
+			queryXpackRelateDBResponse.RequestId = _ctx.StringValue("QueryXpackRelateDB.RequestId");
 
 			List<QueryXpackRelateDBResponse.QueryXpackRelateDB_Cluster> queryXpackRelateDBResponse_clusterList = new List<QueryXpackRelateDBResponse.QueryXpackRelateDB_Cluster>();
-			for (int i = 0; i < context.Length("QueryXpackRelateDB.ClusterList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("QueryXpackRelateDB.ClusterList.Length"); i++) {
 				QueryXpackRelateDBResponse.QueryXpackRelateDB_Cluster cluster = new QueryXpackRelateDBResponse.QueryXpackRelateDB_Cluster();
-				cluster.ClusterId = context.StringValue("QueryXpackRelateDB.ClusterList["+ i +"].ClusterId");
-				cluster.ClusterName = context.StringValue("QueryXpackRelateDB.ClusterList["+ i +"].ClusterName");
-				cluster.DBVersion = context.StringValue("QueryXpackRelateDB.ClusterList["+ i +"].DBVersion");
-				cluster.Status = context.StringValue("QueryXpackRelateDB.ClusterList["+ i +"].Status");
-				cluster.DBType = context.StringValue("QueryXpackRelateDB.ClusterList["+ i +"].DBType");
-				cluster.IsRelated = context.BooleanValue("QueryXpackRelateDB.ClusterList["+ i +"].IsRelated");
-				cluster.LockMode = context.StringValue("QueryXpackRelateDB.ClusterList["+ i +"].LockMode");
+				cluster.ClusterId = _ctx.StringValue("QueryXpackRelateDB.ClusterList["+ i +"].ClusterId");
+				cluster.ClusterName = _ctx.StringValue("QueryXpackRelateDB.ClusterList["+ i +"].ClusterName");
+				cluster.DBVersion = _ctx.StringValue("QueryXpackRelateDB.ClusterList["+ i +"].DBVersion");
+				cluster.Status = _ctx.StringValue("QueryXpackRelateDB.ClusterList["+ i +"].Status");
+				cluster.DBType = _ctx.StringValue("QueryXpackRelateDB.ClusterList["+ i +"].DBType");
+				cluster.IsRelated = _ctx.BooleanValue("QueryXpackRelateDB.ClusterList["+ i +"].IsRelated");
+				cluster.LockMode = _ctx.StringValue("QueryXpackRelateDB.ClusterList["+ i +"].LockMode");
 
 				queryXpackRelateDBResponse_clusterList.Add(cluster);
 			}

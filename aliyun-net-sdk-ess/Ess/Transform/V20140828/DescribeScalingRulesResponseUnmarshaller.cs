@@ -54,6 +54,8 @@ namespace Aliyun.Acs.Ess.Transform.V20140828
 				scalingRule.MetricName = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].MetricName");
 				scalingRule.TargetValue = context.FloatValue("DescribeScalingRules.ScalingRules["+ i +"].TargetValue");
 				scalingRule.DisableScaleIn = context.BooleanValue("DescribeScalingRules.ScalingRules["+ i +"].DisableScaleIn");
+				scalingRule.ScaleInEvaluationCount = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].ScaleInEvaluationCount");
+				scalingRule.ScaleOutEvaluationCount = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].ScaleOutEvaluationCount");
 				scalingRule.PredictiveScalingMode = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].PredictiveScalingMode");
 				scalingRule.PredictiveValueBehavior = context.StringValue("DescribeScalingRules.ScalingRules["+ i +"].PredictiveValueBehavior");
 				scalingRule.PredictiveValueBuffer = context.IntegerValue("DescribeScalingRules.ScalingRules["+ i +"].PredictiveValueBuffer");

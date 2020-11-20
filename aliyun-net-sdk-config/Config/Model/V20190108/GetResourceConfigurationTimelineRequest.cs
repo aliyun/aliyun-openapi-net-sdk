@@ -30,12 +30,12 @@ namespace Aliyun.Acs.Config.Model.V20190108
     public class GetResourceConfigurationTimelineRequest : RpcAcsRequest<GetResourceConfigurationTimelineResponse>
     {
         public GetResourceConfigurationTimelineRequest()
-            : base("Config", "2019-01-08", "GetResourceConfigurationTimeline", "config", "openAPI")
+            : base("Config", "2019-01-08", "GetResourceConfigurationTimeline", "Config", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Config.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Config.Endpoint.endpointRegionalType, null);
             }
         }
 

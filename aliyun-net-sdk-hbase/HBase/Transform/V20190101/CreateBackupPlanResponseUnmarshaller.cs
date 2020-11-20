@@ -26,12 +26,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class CreateBackupPlanResponseUnmarshaller
     {
-        public static CreateBackupPlanResponse Unmarshall(UnmarshallerContext context)
+        public static CreateBackupPlanResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateBackupPlanResponse createBackupPlanResponse = new CreateBackupPlanResponse();
 
-			createBackupPlanResponse.HttpResponse = context.HttpResponse;
-			createBackupPlanResponse.RequestId = context.StringValue("CreateBackupPlan.RequestId");
+			createBackupPlanResponse.HttpResponse = _ctx.HttpResponse;
+			createBackupPlanResponse.RequestId = _ctx.StringValue("CreateBackupPlan.RequestId");
         
 			return createBackupPlanResponse;
         }

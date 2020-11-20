@@ -26,31 +26,31 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class DescribeDomainAdvanceConfigsResponseUnmarshaller
     {
-        public static DescribeDomainAdvanceConfigsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainAdvanceConfigsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainAdvanceConfigsResponse describeDomainAdvanceConfigsResponse = new DescribeDomainAdvanceConfigsResponse();
 
-			describeDomainAdvanceConfigsResponse.HttpResponse = context.HttpResponse;
-			describeDomainAdvanceConfigsResponse.RequestId = context.StringValue("DescribeDomainAdvanceConfigs.RequestId");
+			describeDomainAdvanceConfigsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainAdvanceConfigsResponse.RequestId = _ctx.StringValue("DescribeDomainAdvanceConfigs.RequestId");
 
 			List<DescribeDomainAdvanceConfigsResponse.DescribeDomainAdvanceConfigs_DomainConfig> describeDomainAdvanceConfigsResponse_domainConfigs = new List<DescribeDomainAdvanceConfigsResponse.DescribeDomainAdvanceConfigs_DomainConfig>();
-			for (int i = 0; i < context.Length("DescribeDomainAdvanceConfigs.DomainConfigs.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainAdvanceConfigs.DomainConfigs.Length"); i++) {
 				DescribeDomainAdvanceConfigsResponse.DescribeDomainAdvanceConfigs_DomainConfig domainConfig = new DescribeDomainAdvanceConfigsResponse.DescribeDomainAdvanceConfigs_DomainConfig();
-				domainConfig.Domain = context.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Domain");
+				domainConfig.Domain = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Domain");
 
 				DescribeDomainAdvanceConfigsResponse.DescribeDomainAdvanceConfigs_DomainConfig.DescribeDomainAdvanceConfigs_Profile profile = new DescribeDomainAdvanceConfigsResponse.DescribeDomainAdvanceConfigs_DomainConfig.DescribeDomainAdvanceConfigs_Profile();
-				profile.Cname = context.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Cname");
-				profile.ResolvedType = context.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ResolvedType");
-				profile.VipServiceStatus = context.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.VipServiceStatus");
-				profile.CertStatus = context.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.CertStatus");
-				profile.ExclusiveVipStatus = context.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ExclusiveVipStatus");
-				profile.Ipv6Status = context.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Ipv6Status");
-				profile.HttpPort = context.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.HttpPort");
-				profile.HttpsPort = context.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.HttpsPort");
-				profile.Http2Port = context.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Http2Port");
-				profile.Rs = context.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Rs");
-				profile.ClusterType = context.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ClusterType");
-				profile.GSLBStatus = context.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.GSLBStatus");
+				profile.Cname = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Cname");
+				profile.ResolvedType = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ResolvedType");
+				profile.VipServiceStatus = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.VipServiceStatus");
+				profile.CertStatus = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.CertStatus");
+				profile.ExclusiveVipStatus = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ExclusiveVipStatus");
+				profile.Ipv6Status = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Ipv6Status");
+				profile.HttpPort = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.HttpPort");
+				profile.HttpsPort = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.HttpsPort");
+				profile.Http2Port = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Http2Port");
+				profile.Rs = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.Rs");
+				profile.ClusterType = _ctx.IntegerValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.ClusterType");
+				profile.GSLBStatus = _ctx.StringValue("DescribeDomainAdvanceConfigs.DomainConfigs["+ i +"].Profile.GSLBStatus");
 				domainConfig.Profile = profile;
 
 				describeDomainAdvanceConfigsResponse_domainConfigs.Add(domainConfig);

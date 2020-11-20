@@ -26,15 +26,15 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ResumeLogstashTaskResponseUnmarshaller
     {
-        public static ResumeLogstashTaskResponse Unmarshall(UnmarshallerContext context)
+        public static ResumeLogstashTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ResumeLogstashTaskResponse resumeLogstashTaskResponse = new ResumeLogstashTaskResponse();
 
-			resumeLogstashTaskResponse.HttpResponse = context.HttpResponse;
-			resumeLogstashTaskResponse.RequestId = context.StringValue("ResumeLogstashTask.RequestId");
-			resumeLogstashTaskResponse.Code = context.StringValue("ResumeLogstashTask.Code");
-			resumeLogstashTaskResponse.Message = context.StringValue("ResumeLogstashTask.Message");
-			resumeLogstashTaskResponse.Result = context.BooleanValue("ResumeLogstashTask.Result");
+			resumeLogstashTaskResponse.HttpResponse = _ctx.HttpResponse;
+			resumeLogstashTaskResponse.RequestId = _ctx.StringValue("ResumeLogstashTask.RequestId");
+			resumeLogstashTaskResponse.Code = _ctx.StringValue("ResumeLogstashTask.Code");
+			resumeLogstashTaskResponse.Message = _ctx.StringValue("ResumeLogstashTask.Message");
+			resumeLogstashTaskResponse.Result = _ctx.BooleanValue("ResumeLogstashTask.Result");
         
 			return resumeLogstashTaskResponse;
         }

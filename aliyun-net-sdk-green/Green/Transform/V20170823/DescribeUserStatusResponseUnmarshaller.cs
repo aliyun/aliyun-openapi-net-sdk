@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeUserStatusResponseUnmarshaller
     {
-        public static DescribeUserStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserStatusResponse describeUserStatusResponse = new DescribeUserStatusResponse();
 
-			describeUserStatusResponse.HttpResponse = context.HttpResponse;
-			describeUserStatusResponse.RequestId = context.StringValue("DescribeUserStatus.RequestId");
-			describeUserStatusResponse.Buyed = context.BooleanValue("DescribeUserStatus.Buyed");
-			describeUserStatusResponse.InDept = context.BooleanValue("DescribeUserStatus.InDept");
-			describeUserStatusResponse.OpenApiUsed = context.BooleanValue("DescribeUserStatus.OpenApiUsed");
-			describeUserStatusResponse.OpenApiBeginTime = context.StringValue("DescribeUserStatus.OpenApiBeginTime");
-			describeUserStatusResponse.OssCheckStatus = context.StringValue("DescribeUserStatus.OssCheckStatus");
-			describeUserStatusResponse.OssVideoSizeLimit = context.IntegerValue("DescribeUserStatus.OssVideoSizeLimit");
-			describeUserStatusResponse.Uid = context.StringValue("DescribeUserStatus.Uid");
+			describeUserStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserStatusResponse.RequestId = _ctx.StringValue("DescribeUserStatus.RequestId");
+			describeUserStatusResponse.Buyed = _ctx.BooleanValue("DescribeUserStatus.Buyed");
+			describeUserStatusResponse.InDept = _ctx.BooleanValue("DescribeUserStatus.InDept");
+			describeUserStatusResponse.OpenApiUsed = _ctx.BooleanValue("DescribeUserStatus.OpenApiUsed");
+			describeUserStatusResponse.OpenApiBeginTime = _ctx.StringValue("DescribeUserStatus.OpenApiBeginTime");
+			describeUserStatusResponse.OssCheckStatus = _ctx.StringValue("DescribeUserStatus.OssCheckStatus");
+			describeUserStatusResponse.OssVideoSizeLimit = _ctx.IntegerValue("DescribeUserStatus.OssVideoSizeLimit");
+			describeUserStatusResponse.Uid = _ctx.StringValue("DescribeUserStatus.Uid");
         
 			return describeUserStatusResponse;
         }

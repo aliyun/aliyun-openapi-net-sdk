@@ -47,8 +47,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 		private int? pageNumber;
 
-		private string resourceGroupId;
-
 		private string securityToken;
 
 		private int? pageSize;
@@ -101,19 +99,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				pageNumber = value;
 				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
-		public string ResourceGroupId
-		{
-			get
-			{
-				return resourceGroupId;
-			}
-			set	
-			{
-				resourceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
 			}
 		}
 

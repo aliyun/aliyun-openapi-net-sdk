@@ -166,6 +166,10 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 
 			private string resourceGroupId;
 
+			private int? shardCount;
+
+			private int? proxyCount;
+
 			private List<DescribeInstances_Tag> tags;
 
 			public string ReplacateId
@@ -573,6 +577,30 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 				set	
 				{
 					resourceGroupId = value;
+				}
+			}
+
+			public int? ShardCount
+			{
+				get
+				{
+					return shardCount;
+				}
+				set	
+				{
+					shardCount = value;
+				}
+			}
+
+			public int? ProxyCount
+			{
+				get
+				{
+					return proxyCount;
+				}
+				set	
+				{
+					proxyCount = value;
 				}
 			}
 

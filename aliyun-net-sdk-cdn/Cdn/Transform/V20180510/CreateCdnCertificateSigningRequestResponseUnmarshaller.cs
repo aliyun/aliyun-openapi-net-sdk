@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class CreateCdnCertificateSigningRequestResponseUnmarshaller
     {
-        public static CreateCdnCertificateSigningRequestResponse Unmarshall(UnmarshallerContext context)
+        public static CreateCdnCertificateSigningRequestResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateCdnCertificateSigningRequestResponse createCdnCertificateSigningRequestResponse = new CreateCdnCertificateSigningRequestResponse();
 
-			createCdnCertificateSigningRequestResponse.HttpResponse = context.HttpResponse;
-			createCdnCertificateSigningRequestResponse.RequestId = context.StringValue("CreateCdnCertificateSigningRequest.RequestId");
-			createCdnCertificateSigningRequestResponse.CommonName = context.StringValue("CreateCdnCertificateSigningRequest.CommonName");
-			createCdnCertificateSigningRequestResponse.Csr = context.StringValue("CreateCdnCertificateSigningRequest.Csr");
-			createCdnCertificateSigningRequestResponse.PubMd5 = context.StringValue("CreateCdnCertificateSigningRequest.PubMd5");
+			createCdnCertificateSigningRequestResponse.HttpResponse = _ctx.HttpResponse;
+			createCdnCertificateSigningRequestResponse.RequestId = _ctx.StringValue("CreateCdnCertificateSigningRequest.RequestId");
+			createCdnCertificateSigningRequestResponse.CommonName = _ctx.StringValue("CreateCdnCertificateSigningRequest.CommonName");
+			createCdnCertificateSigningRequestResponse.Csr = _ctx.StringValue("CreateCdnCertificateSigningRequest.Csr");
+			createCdnCertificateSigningRequestResponse.PubMd5 = _ctx.StringValue("CreateCdnCertificateSigningRequest.PubMd5");
         
 			return createCdnCertificateSigningRequestResponse;
         }

@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeNotificationSettingResponseUnmarshaller
     {
-        public static DescribeNotificationSettingResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeNotificationSettingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeNotificationSettingResponse describeNotificationSettingResponse = new DescribeNotificationSettingResponse();
 
-			describeNotificationSettingResponse.HttpResponse = context.HttpResponse;
-			describeNotificationSettingResponse.RequestId = context.StringValue("DescribeNotificationSetting.RequestId");
-			describeNotificationSettingResponse.Email = context.StringValue("DescribeNotificationSetting.Email");
-			describeNotificationSettingResponse.Phone = context.StringValue("DescribeNotificationSetting.Phone");
-			describeNotificationSettingResponse.ScheduleMessageTime = context.IntegerValue("DescribeNotificationSetting.ScheduleMessageTime");
-			describeNotificationSettingResponse.ScheduleMessageTimeZone = context.IntegerValue("DescribeNotificationSetting.ScheduleMessageTimeZone");
+			describeNotificationSettingResponse.HttpResponse = _ctx.HttpResponse;
+			describeNotificationSettingResponse.RequestId = _ctx.StringValue("DescribeNotificationSetting.RequestId");
+			describeNotificationSettingResponse.Email = _ctx.StringValue("DescribeNotificationSetting.Email");
+			describeNotificationSettingResponse.Phone = _ctx.StringValue("DescribeNotificationSetting.Phone");
+			describeNotificationSettingResponse.ScheduleMessageTime = _ctx.IntegerValue("DescribeNotificationSetting.ScheduleMessageTime");
+			describeNotificationSettingResponse.ScheduleMessageTimeZone = _ctx.IntegerValue("DescribeNotificationSetting.ScheduleMessageTimeZone");
 
 			List<string> describeNotificationSettingResponse_realtimeMessageList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeNotificationSetting.RealtimeMessageList.Length"); i++) {
-				describeNotificationSettingResponse_realtimeMessageList.Add(context.StringValue("DescribeNotificationSetting.RealtimeMessageList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeNotificationSetting.RealtimeMessageList.Length"); i++) {
+				describeNotificationSettingResponse_realtimeMessageList.Add(_ctx.StringValue("DescribeNotificationSetting.RealtimeMessageList["+ i +"]"));
 			}
 			describeNotificationSettingResponse.RealtimeMessageList = describeNotificationSettingResponse_realtimeMessageList;
 
 			List<string> describeNotificationSettingResponse_reminderModeList = new List<string>();
-			for (int i = 0; i < context.Length("DescribeNotificationSetting.ReminderModeList.Length"); i++) {
-				describeNotificationSettingResponse_reminderModeList.Add(context.StringValue("DescribeNotificationSetting.ReminderModeList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeNotificationSetting.ReminderModeList.Length"); i++) {
+				describeNotificationSettingResponse_reminderModeList.Add(_ctx.StringValue("DescribeNotificationSetting.ReminderModeList["+ i +"]"));
 			}
 			describeNotificationSettingResponse.ReminderModeList = describeNotificationSettingResponse_reminderModeList;
         

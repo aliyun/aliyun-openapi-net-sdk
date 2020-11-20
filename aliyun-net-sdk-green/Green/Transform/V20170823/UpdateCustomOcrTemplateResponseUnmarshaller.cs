@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class UpdateCustomOcrTemplateResponseUnmarshaller
     {
-        public static UpdateCustomOcrTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateCustomOcrTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateCustomOcrTemplateResponse updateCustomOcrTemplateResponse = new UpdateCustomOcrTemplateResponse();
 
-			updateCustomOcrTemplateResponse.HttpResponse = context.HttpResponse;
-			updateCustomOcrTemplateResponse.RequestId = context.StringValue("UpdateCustomOcrTemplate.RequestId");
+			updateCustomOcrTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			updateCustomOcrTemplateResponse.RequestId = _ctx.StringValue("UpdateCustomOcrTemplate.RequestId");
         
 			return updateCustomOcrTemplateResponse;
         }

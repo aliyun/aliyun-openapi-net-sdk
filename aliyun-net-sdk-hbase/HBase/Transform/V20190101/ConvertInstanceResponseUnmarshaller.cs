@@ -26,13 +26,13 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class ConvertInstanceResponseUnmarshaller
     {
-        public static ConvertInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static ConvertInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ConvertInstanceResponse convertInstanceResponse = new ConvertInstanceResponse();
 
-			convertInstanceResponse.HttpResponse = context.HttpResponse;
-			convertInstanceResponse.RequestId = context.StringValue("ConvertInstance.RequestId");
-			convertInstanceResponse.OrderId = context.LongValue("ConvertInstance.OrderId");
+			convertInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			convertInstanceResponse.RequestId = _ctx.StringValue("ConvertInstance.RequestId");
+			convertInstanceResponse.OrderId = _ctx.LongValue("ConvertInstance.OrderId");
         
 			return convertInstanceResponse;
         }

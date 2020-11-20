@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeSdkUrlResponseUnmarshaller
     {
-        public static DescribeSdkUrlResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSdkUrlResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSdkUrlResponse describeSdkUrlResponse = new DescribeSdkUrlResponse();
 
-			describeSdkUrlResponse.HttpResponse = context.HttpResponse;
-			describeSdkUrlResponse.RequestId = context.StringValue("DescribeSdkUrl.RequestId");
-			describeSdkUrlResponse.SdkUrl = context.StringValue("DescribeSdkUrl.SdkUrl");
+			describeSdkUrlResponse.HttpResponse = _ctx.HttpResponse;
+			describeSdkUrlResponse.RequestId = _ctx.StringValue("DescribeSdkUrl.RequestId");
+			describeSdkUrlResponse.SdkUrl = _ctx.StringValue("DescribeSdkUrl.SdkUrl");
         
 			return describeSdkUrlResponse;
         }

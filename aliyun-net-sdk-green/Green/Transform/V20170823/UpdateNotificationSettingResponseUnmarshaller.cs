@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class UpdateNotificationSettingResponseUnmarshaller
     {
-        public static UpdateNotificationSettingResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateNotificationSettingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateNotificationSettingResponse updateNotificationSettingResponse = new UpdateNotificationSettingResponse();
 
-			updateNotificationSettingResponse.HttpResponse = context.HttpResponse;
-			updateNotificationSettingResponse.RequestId = context.StringValue("UpdateNotificationSetting.RequestId");
+			updateNotificationSettingResponse.HttpResponse = _ctx.HttpResponse;
+			updateNotificationSettingResponse.RequestId = _ctx.StringValue("UpdateNotificationSetting.RequestId");
         
 			return updateNotificationSettingResponse;
         }

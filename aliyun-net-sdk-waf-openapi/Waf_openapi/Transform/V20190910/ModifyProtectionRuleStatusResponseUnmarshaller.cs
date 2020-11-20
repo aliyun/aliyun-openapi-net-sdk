@@ -26,12 +26,12 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class ModifyProtectionRuleStatusResponseUnmarshaller
     {
-        public static ModifyProtectionRuleStatusResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyProtectionRuleStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyProtectionRuleStatusResponse modifyProtectionRuleStatusResponse = new ModifyProtectionRuleStatusResponse();
 
-			modifyProtectionRuleStatusResponse.HttpResponse = context.HttpResponse;
-			modifyProtectionRuleStatusResponse.RequestId = context.StringValue("ModifyProtectionRuleStatus.RequestId");
+			modifyProtectionRuleStatusResponse.HttpResponse = _ctx.HttpResponse;
+			modifyProtectionRuleStatusResponse.RequestId = _ctx.StringValue("ModifyProtectionRuleStatus.RequestId");
         
 			return modifyProtectionRuleStatusResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class MarkOssResultResponseUnmarshaller
     {
-        public static MarkOssResultResponse Unmarshall(UnmarshallerContext context)
+        public static MarkOssResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			MarkOssResultResponse markOssResultResponse = new MarkOssResultResponse();
 
-			markOssResultResponse.HttpResponse = context.HttpResponse;
-			markOssResultResponse.RequestId = context.StringValue("MarkOssResult.RequestId");
+			markOssResultResponse.HttpResponse = _ctx.HttpResponse;
+			markOssResultResponse.RequestId = _ctx.StringValue("MarkOssResult.RequestId");
         
 			return markOssResultResponse;
         }

@@ -34,8 +34,8 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.elasticsearch.Endpoint.endpointRegionalType, null);
             }
 			UriPattern = "/openapi/logstashes/[InstanceId]/plugins";
 			Method = MethodType.GET;
@@ -47,7 +47,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 		private string name;
 
-		private string page;
+		private int? page;
 
 		private string source;
 
@@ -90,7 +90,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			}
 		}
 
-		public string Page
+		public int? Page
 		{
 			get
 			{
@@ -99,7 +99,7 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 			set	
 			{
 				page = value;
-				DictionaryUtil.Add(QueryParameters, "page", value);
+				DictionaryUtil.Add(QueryParameters, "page", value.ToString());
 			}
 		}
 

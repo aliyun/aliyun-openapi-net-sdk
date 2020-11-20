@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeCdnTypesResponseUnmarshaller
     {
-        public static DescribeCdnTypesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCdnTypesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCdnTypesResponse describeCdnTypesResponse = new DescribeCdnTypesResponse();
 
-			describeCdnTypesResponse.HttpResponse = context.HttpResponse;
-			describeCdnTypesResponse.RequestId = context.StringValue("DescribeCdnTypes.RequestId");
+			describeCdnTypesResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnTypesResponse.RequestId = _ctx.StringValue("DescribeCdnTypes.RequestId");
 
 			List<DescribeCdnTypesResponse.DescribeCdnTypes_CdnType> describeCdnTypesResponse_cdnTypes = new List<DescribeCdnTypesResponse.DescribeCdnTypes_CdnType>();
-			for (int i = 0; i < context.Length("DescribeCdnTypes.CdnTypes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCdnTypes.CdnTypes.Length"); i++) {
 				DescribeCdnTypesResponse.DescribeCdnTypes_CdnType cdnType = new DescribeCdnTypesResponse.DescribeCdnTypes_CdnType();
-				cdnType.Type = context.StringValue("DescribeCdnTypes.CdnTypes["+ i +"].Type");
-				cdnType.Desc = context.StringValue("DescribeCdnTypes.CdnTypes["+ i +"].Desc");
+				cdnType.Type = _ctx.StringValue("DescribeCdnTypes.CdnTypes["+ i +"].Type");
+				cdnType.Desc = _ctx.StringValue("DescribeCdnTypes.CdnTypes["+ i +"].Desc");
 
 				describeCdnTypesResponse_cdnTypes.Add(cdnType);
 			}

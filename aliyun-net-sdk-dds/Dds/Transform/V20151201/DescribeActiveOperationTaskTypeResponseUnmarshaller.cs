@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeActiveOperationTaskTypeResponseUnmarshaller
     {
-        public static DescribeActiveOperationTaskTypeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeActiveOperationTaskTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeActiveOperationTaskTypeResponse describeActiveOperationTaskTypeResponse = new DescribeActiveOperationTaskTypeResponse();
 
-			describeActiveOperationTaskTypeResponse.HttpResponse = context.HttpResponse;
-			describeActiveOperationTaskTypeResponse.RequestId = context.StringValue("DescribeActiveOperationTaskType.RequestId");
+			describeActiveOperationTaskTypeResponse.HttpResponse = _ctx.HttpResponse;
+			describeActiveOperationTaskTypeResponse.RequestId = _ctx.StringValue("DescribeActiveOperationTaskType.RequestId");
 
 			List<DescribeActiveOperationTaskTypeResponse.DescribeActiveOperationTaskType_Items> describeActiveOperationTaskTypeResponse_typeList = new List<DescribeActiveOperationTaskTypeResponse.DescribeActiveOperationTaskType_Items>();
-			for (int i = 0; i < context.Length("DescribeActiveOperationTaskType.TypeList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeActiveOperationTaskType.TypeList.Length"); i++) {
 				DescribeActiveOperationTaskTypeResponse.DescribeActiveOperationTaskType_Items items = new DescribeActiveOperationTaskTypeResponse.DescribeActiveOperationTaskType_Items();
-				items.TaskType = context.StringValue("DescribeActiveOperationTaskType.TypeList["+ i +"].TaskType");
-				items.Count = context.IntegerValue("DescribeActiveOperationTaskType.TypeList["+ i +"].Count");
+				items.TaskType = _ctx.StringValue("DescribeActiveOperationTaskType.TypeList["+ i +"].TaskType");
+				items.Count = _ctx.IntegerValue("DescribeActiveOperationTaskType.TypeList["+ i +"].Count");
 
 				describeActiveOperationTaskTypeResponse_typeList.Add(items);
 			}

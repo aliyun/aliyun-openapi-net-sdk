@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeRangeDataByLocateAndIspServiceResponseUnmarshaller
     {
-        public static DescribeRangeDataByLocateAndIspServiceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRangeDataByLocateAndIspServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRangeDataByLocateAndIspServiceResponse describeRangeDataByLocateAndIspServiceResponse = new DescribeRangeDataByLocateAndIspServiceResponse();
 
-			describeRangeDataByLocateAndIspServiceResponse.HttpResponse = context.HttpResponse;
-			describeRangeDataByLocateAndIspServiceResponse.RequestId = context.StringValue("DescribeRangeDataByLocateAndIspService.RequestId");
-			describeRangeDataByLocateAndIspServiceResponse.JsonResult = context.StringValue("DescribeRangeDataByLocateAndIspService.JsonResult");
+			describeRangeDataByLocateAndIspServiceResponse.HttpResponse = _ctx.HttpResponse;
+			describeRangeDataByLocateAndIspServiceResponse.RequestId = _ctx.StringValue("DescribeRangeDataByLocateAndIspService.RequestId");
+			describeRangeDataByLocateAndIspServiceResponse.JsonResult = _ctx.StringValue("DescribeRangeDataByLocateAndIspService.JsonResult");
         
 			return describeRangeDataByLocateAndIspServiceResponse;
         }

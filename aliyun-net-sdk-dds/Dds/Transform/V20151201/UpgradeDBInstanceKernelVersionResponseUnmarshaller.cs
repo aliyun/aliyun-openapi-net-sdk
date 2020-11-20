@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class UpgradeDBInstanceKernelVersionResponseUnmarshaller
     {
-        public static UpgradeDBInstanceKernelVersionResponse Unmarshall(UnmarshallerContext context)
+        public static UpgradeDBInstanceKernelVersionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpgradeDBInstanceKernelVersionResponse upgradeDBInstanceKernelVersionResponse = new UpgradeDBInstanceKernelVersionResponse();
 
-			upgradeDBInstanceKernelVersionResponse.HttpResponse = context.HttpResponse;
-			upgradeDBInstanceKernelVersionResponse.RequestId = context.StringValue("UpgradeDBInstanceKernelVersion.RequestId");
+			upgradeDBInstanceKernelVersionResponse.HttpResponse = _ctx.HttpResponse;
+			upgradeDBInstanceKernelVersionResponse.RequestId = _ctx.StringValue("UpgradeDBInstanceKernelVersion.RequestId");
         
 			return upgradeDBInstanceKernelVersionResponse;
         }

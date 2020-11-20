@@ -35,9 +35,9 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			describePriceResponse.OrderParams = context.StringValue("DescribePrice.OrderParams");
 
 			DescribePriceResponse.DescribePrice_Order order = new DescribePriceResponse.DescribePrice_Order();
-			order.OriginalAmount = context.FloatValue("DescribePrice.Order.OriginalAmount");
-			order.TradeAmount = context.FloatValue("DescribePrice.Order.TradeAmount");
-			order.DiscountAmount = context.FloatValue("DescribePrice.Order.DiscountAmount");
+			order.OriginalAmount = context.StringValue("DescribePrice.Order.OriginalAmount");
+			order.TradeAmount = context.StringValue("DescribePrice.Order.TradeAmount");
+			order.DiscountAmount = context.StringValue("DescribePrice.Order.DiscountAmount");
 			order.Currency = context.StringValue("DescribePrice.Order.Currency");
 
 			List<string> order_ruleIds1 = new List<string>();
@@ -73,9 +73,9 @@ namespace Aliyun.Acs.R_kvstore.Transform.V20150101
 			List<DescribePriceResponse.DescribePrice_SubOrder> describePriceResponse_subOrders = new List<DescribePriceResponse.DescribePrice_SubOrder>();
 			for (int i = 0; i < context.Length("DescribePrice.SubOrders.Length"); i++) {
 				DescribePriceResponse.DescribePrice_SubOrder subOrder = new DescribePriceResponse.DescribePrice_SubOrder();
-				subOrder.OriginalAmount = context.FloatValue("DescribePrice.SubOrders["+ i +"].OriginalAmount");
-				subOrder.TradeAmount = context.FloatValue("DescribePrice.SubOrders["+ i +"].TradeAmount");
-				subOrder.DiscountAmount = context.FloatValue("DescribePrice.SubOrders["+ i +"].DiscountAmount");
+				subOrder.OriginalAmount = context.StringValue("DescribePrice.SubOrders["+ i +"].OriginalAmount");
+				subOrder.TradeAmount = context.StringValue("DescribePrice.SubOrders["+ i +"].TradeAmount");
+				subOrder.DiscountAmount = context.StringValue("DescribePrice.SubOrders["+ i +"].DiscountAmount");
 				subOrder.InstanceId = context.StringValue("DescribePrice.SubOrders["+ i +"].InstanceId");
 
 				List<string> subOrder_ruleIds = new List<string>();

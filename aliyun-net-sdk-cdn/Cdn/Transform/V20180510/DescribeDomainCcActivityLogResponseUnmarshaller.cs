@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainCcActivityLogResponseUnmarshaller
     {
-        public static DescribeDomainCcActivityLogResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainCcActivityLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainCcActivityLogResponse describeDomainCcActivityLogResponse = new DescribeDomainCcActivityLogResponse();
 
-			describeDomainCcActivityLogResponse.HttpResponse = context.HttpResponse;
-			describeDomainCcActivityLogResponse.RequestId = context.StringValue("DescribeDomainCcActivityLog.RequestId");
-			describeDomainCcActivityLogResponse.PageIndex = context.LongValue("DescribeDomainCcActivityLog.PageIndex");
-			describeDomainCcActivityLogResponse.PageSize = context.LongValue("DescribeDomainCcActivityLog.PageSize");
-			describeDomainCcActivityLogResponse.Total = context.LongValue("DescribeDomainCcActivityLog.Total");
+			describeDomainCcActivityLogResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainCcActivityLogResponse.RequestId = _ctx.StringValue("DescribeDomainCcActivityLog.RequestId");
+			describeDomainCcActivityLogResponse.PageIndex = _ctx.LongValue("DescribeDomainCcActivityLog.PageIndex");
+			describeDomainCcActivityLogResponse.PageSize = _ctx.LongValue("DescribeDomainCcActivityLog.PageSize");
+			describeDomainCcActivityLogResponse.Total = _ctx.LongValue("DescribeDomainCcActivityLog.Total");
 
 			List<DescribeDomainCcActivityLogResponse.DescribeDomainCcActivityLog_LogInfo> describeDomainCcActivityLogResponse_activityLog = new List<DescribeDomainCcActivityLogResponse.DescribeDomainCcActivityLog_LogInfo>();
-			for (int i = 0; i < context.Length("DescribeDomainCcActivityLog.ActivityLog.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainCcActivityLog.ActivityLog.Length"); i++) {
 				DescribeDomainCcActivityLogResponse.DescribeDomainCcActivityLog_LogInfo logInfo = new DescribeDomainCcActivityLogResponse.DescribeDomainCcActivityLog_LogInfo();
-				logInfo.TimeStamp = context.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].TimeStamp");
-				logInfo._Value = context.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].Value");
-				logInfo.TriggerObject = context.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].TriggerObject");
-				logInfo.DomainName = context.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].DomainName");
-				logInfo.Ttl = context.LongValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].Ttl");
-				logInfo.Action = context.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].Action");
-				logInfo.RuleName = context.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].RuleName");
+				logInfo.TimeStamp = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].TimeStamp");
+				logInfo._Value = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].Value");
+				logInfo.TriggerObject = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].TriggerObject");
+				logInfo.DomainName = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].DomainName");
+				logInfo.Ttl = _ctx.LongValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].Ttl");
+				logInfo.Action = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].Action");
+				logInfo.RuleName = _ctx.StringValue("DescribeDomainCcActivityLog.ActivityLog["+ i +"].RuleName");
 
 				describeDomainCcActivityLogResponse_activityLog.Add(logInfo);
 			}

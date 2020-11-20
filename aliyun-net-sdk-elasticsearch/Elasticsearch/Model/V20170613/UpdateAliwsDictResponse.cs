@@ -64,8 +64,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 
 			private string sourceType;
 
-			private UpdateAliwsDict_OssObject ossObject;
-
 			public string Name
 			{
 				get
@@ -111,64 +109,6 @@ namespace Aliyun.Acs.elasticsearch.Model.V20170613
 				set	
 				{
 					sourceType = value;
-				}
-			}
-
-			public UpdateAliwsDict_OssObject OssObject
-			{
-				get
-				{
-					return ossObject;
-				}
-				set	
-				{
-					ossObject = value;
-				}
-			}
-
-			public class UpdateAliwsDict_OssObject
-			{
-
-				private string bucketName;
-
-				private string key;
-
-				private string etag;
-
-				public string BucketName
-				{
-					get
-					{
-						return bucketName;
-					}
-					set	
-					{
-						bucketName = value;
-					}
-				}
-
-				public string Key
-				{
-					get
-					{
-						return key;
-					}
-					set	
-					{
-						key = value;
-					}
-				}
-
-				public string Etag
-				{
-					get
-					{
-						return etag;
-					}
-					set	
-					{
-						etag = value;
-					}
 				}
 			}
 		}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class AddFCTriggerResponseUnmarshaller
     {
-        public static AddFCTriggerResponse Unmarshall(UnmarshallerContext context)
+        public static AddFCTriggerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddFCTriggerResponse addFCTriggerResponse = new AddFCTriggerResponse();
 
-			addFCTriggerResponse.HttpResponse = context.HttpResponse;
-			addFCTriggerResponse.RequestId = context.StringValue("AddFCTrigger.RequestId");
+			addFCTriggerResponse.HttpResponse = _ctx.HttpResponse;
+			addFCTriggerResponse.RequestId = _ctx.StringValue("AddFCTrigger.RequestId");
         
 			return addFCTriggerResponse;
         }

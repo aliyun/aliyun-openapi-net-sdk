@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeCdnRegionAndIspResponseUnmarshaller
     {
-        public static DescribeCdnRegionAndIspResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCdnRegionAndIspResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCdnRegionAndIspResponse describeCdnRegionAndIspResponse = new DescribeCdnRegionAndIspResponse();
 
-			describeCdnRegionAndIspResponse.HttpResponse = context.HttpResponse;
-			describeCdnRegionAndIspResponse.RequestId = context.StringValue("DescribeCdnRegionAndIsp.RequestId");
+			describeCdnRegionAndIspResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnRegionAndIspResponse.RequestId = _ctx.StringValue("DescribeCdnRegionAndIsp.RequestId");
 
 			List<DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Region> describeCdnRegionAndIspResponse_regions = new List<DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Region>();
-			for (int i = 0; i < context.Length("DescribeCdnRegionAndIsp.Regions.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCdnRegionAndIsp.Regions.Length"); i++) {
 				DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Region region = new DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Region();
-				region.NameZh = context.StringValue("DescribeCdnRegionAndIsp.Regions["+ i +"].NameZh");
-				region.NameEn = context.StringValue("DescribeCdnRegionAndIsp.Regions["+ i +"].NameEn");
+				region.NameZh = _ctx.StringValue("DescribeCdnRegionAndIsp.Regions["+ i +"].NameZh");
+				region.NameEn = _ctx.StringValue("DescribeCdnRegionAndIsp.Regions["+ i +"].NameEn");
 
 				describeCdnRegionAndIspResponse_regions.Add(region);
 			}
 			describeCdnRegionAndIspResponse.Regions = describeCdnRegionAndIspResponse_regions;
 
 			List<DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Isp> describeCdnRegionAndIspResponse_isps = new List<DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Isp>();
-			for (int i = 0; i < context.Length("DescribeCdnRegionAndIsp.Isps.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCdnRegionAndIsp.Isps.Length"); i++) {
 				DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Isp isp = new DescribeCdnRegionAndIspResponse.DescribeCdnRegionAndIsp_Isp();
-				isp.NameZh = context.StringValue("DescribeCdnRegionAndIsp.Isps["+ i +"].NameZh");
-				isp.NameEn = context.StringValue("DescribeCdnRegionAndIsp.Isps["+ i +"].NameEn");
+				isp.NameZh = _ctx.StringValue("DescribeCdnRegionAndIsp.Isps["+ i +"].NameZh");
+				isp.NameEn = _ctx.StringValue("DescribeCdnRegionAndIsp.Isps["+ i +"].NameEn");
 
 				describeCdnRegionAndIspResponse_isps.Add(isp);
 			}

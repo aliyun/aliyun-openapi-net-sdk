@@ -124,6 +124,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 			private bool? enable;
 
+			private string effective;
+
 			private List<DescribeAlarms_Dimension> dimensions;
 
 			private List<string> alarmActions;
@@ -281,6 +283,18 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 				set	
 				{
 					enable = value;
+				}
+			}
+
+			public string Effective
+			{
+				get
+				{
+					return effective;
+				}
+				set	
+				{
+					effective = value;
 				}
 			}
 

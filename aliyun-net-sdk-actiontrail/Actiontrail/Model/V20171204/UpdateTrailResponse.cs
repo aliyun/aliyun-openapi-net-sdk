@@ -16,8 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using Aliyun.Acs.Core;
 using System.Collections.Generic;
+
+using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.Actiontrail.Model.V20171204
 {
@@ -25,10 +26,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 	{
 
 		private string requestId;
-
-		private string param;
-
-		private string result;
 
 		private string name;
 
@@ -46,6 +43,10 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 
 		private string eventRW;
 
+		private string trailRegion;
+
+		private string mnsTopicArn;
+
 		public string RequestId
 		{
 			get
@@ -55,30 +56,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			set	
 			{
 				requestId = value;
-			}
-		}
-
-		public string Param
-		{
-			get
-			{
-				return param;
-			}
-			set	
-			{
-				param = value;
-			}
-		}
-
-		public string Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
 			}
 		}
 
@@ -175,6 +152,30 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			set	
 			{
 				eventRW = value;
+			}
+		}
+
+		public string TrailRegion
+		{
+			get
+			{
+				return trailRegion;
+			}
+			set	
+			{
+				trailRegion = value;
+			}
+		}
+
+		public string MnsTopicArn
+		{
+			get
+			{
+				return mnsTopicArn;
+			}
+			set	
+			{
+				mnsTopicArn = value;
 			}
 		}
 	}

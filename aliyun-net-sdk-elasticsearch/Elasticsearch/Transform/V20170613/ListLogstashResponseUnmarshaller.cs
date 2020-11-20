@@ -26,36 +26,36 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class ListLogstashResponseUnmarshaller
     {
-        public static ListLogstashResponse Unmarshall(UnmarshallerContext context)
+        public static ListLogstashResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListLogstashResponse listLogstashResponse = new ListLogstashResponse();
 
-			listLogstashResponse.HttpResponse = context.HttpResponse;
-			listLogstashResponse.RequestId = context.StringValue("ListLogstash.RequestId");
+			listLogstashResponse.HttpResponse = _ctx.HttpResponse;
+			listLogstashResponse.RequestId = _ctx.StringValue("ListLogstash.RequestId");
 
 			List<ListLogstashResponse.ListLogstash_Instance> listLogstashResponse_result = new List<ListLogstashResponse.ListLogstash_Instance>();
-			for (int i = 0; i < context.Length("ListLogstash.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ListLogstash.Result.Length"); i++) {
 				ListLogstashResponse.ListLogstash_Instance instance = new ListLogstashResponse.ListLogstash_Instance();
-				instance.InstanceId = context.StringValue("ListLogstash.Result["+ i +"].instanceId");
-				instance.Description = context.StringValue("ListLogstash.Result["+ i +"].description");
-				instance.NodeAmount = context.IntegerValue("ListLogstash.Result["+ i +"].nodeAmount");
-				instance.PaymentType = context.StringValue("ListLogstash.Result["+ i +"].paymentType");
-				instance.Status = context.StringValue("ListLogstash.Result["+ i +"].status");
-				instance.Version = context.StringValue("ListLogstash.Result["+ i +"].version");
-				instance.CreatedAt = context.StringValue("ListLogstash.Result["+ i +"].createdAt");
-				instance.UpdatedAt = context.StringValue("ListLogstash.Result["+ i +"].updatedAt");
+				instance.InstanceId = _ctx.StringValue("ListLogstash.Result["+ i +"].instanceId");
+				instance.Description = _ctx.StringValue("ListLogstash.Result["+ i +"].description");
+				instance.NodeAmount = _ctx.IntegerValue("ListLogstash.Result["+ i +"].nodeAmount");
+				instance.PaymentType = _ctx.StringValue("ListLogstash.Result["+ i +"].paymentType");
+				instance.Status = _ctx.StringValue("ListLogstash.Result["+ i +"].status");
+				instance.Version = _ctx.StringValue("ListLogstash.Result["+ i +"].version");
+				instance.CreatedAt = _ctx.StringValue("ListLogstash.Result["+ i +"].createdAt");
+				instance.UpdatedAt = _ctx.StringValue("ListLogstash.Result["+ i +"].updatedAt");
 
 				ListLogstashResponse.ListLogstash_Instance.ListLogstash_NodeSpec nodeSpec = new ListLogstashResponse.ListLogstash_Instance.ListLogstash_NodeSpec();
-				nodeSpec.Spec = context.StringValue("ListLogstash.Result["+ i +"].NodeSpec.spec");
-				nodeSpec.Disk = context.IntegerValue("ListLogstash.Result["+ i +"].NodeSpec.disk");
-				nodeSpec.DiskType = context.StringValue("ListLogstash.Result["+ i +"].NodeSpec.diskType");
+				nodeSpec.Spec = _ctx.StringValue("ListLogstash.Result["+ i +"].NodeSpec.spec");
+				nodeSpec.Disk = _ctx.IntegerValue("ListLogstash.Result["+ i +"].NodeSpec.disk");
+				nodeSpec.DiskType = _ctx.StringValue("ListLogstash.Result["+ i +"].NodeSpec.diskType");
 				instance.NodeSpec = nodeSpec;
 
 				ListLogstashResponse.ListLogstash_Instance.ListLogstash_NetworkConfig networkConfig = new ListLogstashResponse.ListLogstash_Instance.ListLogstash_NetworkConfig();
-				networkConfig.Type = context.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.type");
-				networkConfig.VpcId = context.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.vpcId");
-				networkConfig.VswitchId = context.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.vswitchId");
-				networkConfig.VsArea = context.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.vsArea");
+				networkConfig.Type = _ctx.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.type");
+				networkConfig.VpcId = _ctx.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.vpcId");
+				networkConfig.VswitchId = _ctx.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.vswitchId");
+				networkConfig.VsArea = _ctx.StringValue("ListLogstash.Result["+ i +"].NetworkConfig.vsArea");
 				instance.NetworkConfig = networkConfig;
 
 				listLogstashResponse_result.Add(instance);

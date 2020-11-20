@@ -34,32 +34,17 @@ namespace Aliyun.Acs.waf_openapi.Model.V20190910
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.waf_openapi.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.waf_openapi.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
-
-		private string wafVersion;
 
 		private string enabled;
 
 		private string instanceId;
 
 		private string domain;
-
-		public string WafVersion
-		{
-			get
-			{
-				return wafVersion;
-			}
-			set	
-			{
-				wafVersion = value;
-				DictionaryUtil.Add(QueryParameters, "WafVersion", value);
-			}
-		}
 
 		public string Enabled
 		{

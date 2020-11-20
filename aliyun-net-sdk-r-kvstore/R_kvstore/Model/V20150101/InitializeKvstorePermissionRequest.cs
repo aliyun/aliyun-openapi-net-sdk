@@ -34,8 +34,8 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.R_kvstore.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.R_kvstore.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }
@@ -43,8 +43,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 		private long? resourceOwnerId;
 
 		private string securityToken;
-
-		private string serviceName;
 
 		private string resourceOwnerAccount;
 
@@ -75,19 +73,6 @@ namespace Aliyun.Acs.R_kvstore.Model.V20150101
 			{
 				securityToken = value;
 				DictionaryUtil.Add(QueryParameters, "SecurityToken", value);
-			}
-		}
-
-		public string ServiceName
-		{
-			get
-			{
-				return serviceName;
-			}
-			set	
-			{
-				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
 			}
 		}
 

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.tdsr.Transform.V20200101
 {
     public class GetWindowConfigResponseUnmarshaller
     {
-        public static GetWindowConfigResponse Unmarshall(UnmarshallerContext context)
+        public static GetWindowConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetWindowConfigResponse getWindowConfigResponse = new GetWindowConfigResponse();
 
-			getWindowConfigResponse.HttpResponse = context.HttpResponse;
-			getWindowConfigResponse.RequestId = context.StringValue("GetWindowConfig.RequestId");
-			getWindowConfigResponse.Success = context.BooleanValue("GetWindowConfig.Success");
-			getWindowConfigResponse.ErrMessage = context.StringValue("GetWindowConfig.ErrMessage");
-			getWindowConfigResponse.Data = context.StringValue("GetWindowConfig.Data");
-			getWindowConfigResponse.ObjectString = context.StringValue("GetWindowConfig.ObjectString");
+			getWindowConfigResponse.HttpResponse = _ctx.HttpResponse;
+			getWindowConfigResponse.RequestId = _ctx.StringValue("GetWindowConfig.RequestId");
+			getWindowConfigResponse.Success = _ctx.BooleanValue("GetWindowConfig.Success");
+			getWindowConfigResponse.ErrMessage = _ctx.StringValue("GetWindowConfig.ErrMessage");
+			getWindowConfigResponse.Data = _ctx.StringValue("GetWindowConfig.Data");
+			getWindowConfigResponse.ObjectString = _ctx.StringValue("GetWindowConfig.ObjectString");
         
 			return getWindowConfigResponse;
         }

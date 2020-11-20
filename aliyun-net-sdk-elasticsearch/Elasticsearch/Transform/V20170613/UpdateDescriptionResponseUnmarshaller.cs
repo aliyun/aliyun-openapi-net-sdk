@@ -26,15 +26,15 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateDescriptionResponseUnmarshaller
     {
-        public static UpdateDescriptionResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateDescriptionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateDescriptionResponse updateDescriptionResponse = new UpdateDescriptionResponse();
 
-			updateDescriptionResponse.HttpResponse = context.HttpResponse;
-			updateDescriptionResponse.RequestId = context.StringValue("UpdateDescription.RequestId");
+			updateDescriptionResponse.HttpResponse = _ctx.HttpResponse;
+			updateDescriptionResponse.RequestId = _ctx.StringValue("UpdateDescription.RequestId");
 
 			UpdateDescriptionResponse.UpdateDescription_Result result = new UpdateDescriptionResponse.UpdateDescription_Result();
-			result.Description = context.StringValue("UpdateDescription.Result.description");
+			result.Description = _ctx.StringValue("UpdateDescription.Result.description");
 			updateDescriptionResponse.Result = result;
         
 			return updateDescriptionResponse;

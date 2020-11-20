@@ -26,12 +26,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class DeleteMultiZoneClusterResponseUnmarshaller
     {
-        public static DeleteMultiZoneClusterResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteMultiZoneClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteMultiZoneClusterResponse deleteMultiZoneClusterResponse = new DeleteMultiZoneClusterResponse();
 
-			deleteMultiZoneClusterResponse.HttpResponse = context.HttpResponse;
-			deleteMultiZoneClusterResponse.RequestId = context.StringValue("DeleteMultiZoneCluster.RequestId");
+			deleteMultiZoneClusterResponse.HttpResponse = _ctx.HttpResponse;
+			deleteMultiZoneClusterResponse.RequestId = _ctx.StringValue("DeleteMultiZoneCluster.RequestId");
         
 			return deleteMultiZoneClusterResponse;
         }

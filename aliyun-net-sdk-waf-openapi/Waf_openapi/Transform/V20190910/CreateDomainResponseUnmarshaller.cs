@@ -26,13 +26,13 @@ namespace Aliyun.Acs.waf_openapi.Transform.V20190910
 {
     public class CreateDomainResponseUnmarshaller
     {
-        public static CreateDomainResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDomainResponse createDomainResponse = new CreateDomainResponse();
 
-			createDomainResponse.HttpResponse = context.HttpResponse;
-			createDomainResponse.RequestId = context.StringValue("CreateDomain.RequestId");
-			createDomainResponse.Cname = context.StringValue("CreateDomain.Cname");
+			createDomainResponse.HttpResponse = _ctx.HttpResponse;
+			createDomainResponse.RequestId = _ctx.StringValue("CreateDomain.RequestId");
+			createDomainResponse.Cname = _ctx.StringValue("CreateDomain.Cname");
         
 			return createDomainResponse;
         }

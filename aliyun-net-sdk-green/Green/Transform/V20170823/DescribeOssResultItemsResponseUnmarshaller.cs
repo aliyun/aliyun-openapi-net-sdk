@@ -26,45 +26,58 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeOssResultItemsResponseUnmarshaller
     {
-        public static DescribeOssResultItemsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeOssResultItemsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeOssResultItemsResponse describeOssResultItemsResponse = new DescribeOssResultItemsResponse();
 
-			describeOssResultItemsResponse.HttpResponse = context.HttpResponse;
-			describeOssResultItemsResponse.RequestId = context.StringValue("DescribeOssResultItems.RequestId");
-			describeOssResultItemsResponse.PageSize = context.IntegerValue("DescribeOssResultItems.PageSize");
-			describeOssResultItemsResponse.CurrentPage = context.IntegerValue("DescribeOssResultItems.CurrentPage");
-			describeOssResultItemsResponse.TotalCount = context.IntegerValue("DescribeOssResultItems.TotalCount");
-			describeOssResultItemsResponse.QueryId = context.StringValue("DescribeOssResultItems.QueryId");
+			describeOssResultItemsResponse.HttpResponse = _ctx.HttpResponse;
+			describeOssResultItemsResponse.RequestId = _ctx.StringValue("DescribeOssResultItems.RequestId");
+			describeOssResultItemsResponse.PageSize = _ctx.IntegerValue("DescribeOssResultItems.PageSize");
+			describeOssResultItemsResponse.CurrentPage = _ctx.IntegerValue("DescribeOssResultItems.CurrentPage");
+			describeOssResultItemsResponse.TotalCount = _ctx.IntegerValue("DescribeOssResultItems.TotalCount");
+			describeOssResultItemsResponse.QueryId = _ctx.StringValue("DescribeOssResultItems.QueryId");
 
 			List<DescribeOssResultItemsResponse.DescribeOssResultItems_ScanResult> describeOssResultItemsResponse_scanResultList = new List<DescribeOssResultItemsResponse.DescribeOssResultItems_ScanResult>();
-			for (int i = 0; i < context.Length("DescribeOssResultItems.ScanResultList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeOssResultItems.ScanResultList.Length"); i++) {
 				DescribeOssResultItemsResponse.DescribeOssResultItems_ScanResult scanResult = new DescribeOssResultItemsResponse.DescribeOssResultItems_ScanResult();
-				scanResult.TaskId = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].TaskId");
-				scanResult.DataId = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].DataId");
-				scanResult.NewUrl = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].NewUrl");
-				scanResult.Thumbnail = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].Thumbnail");
-				scanResult.RequestTime = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].RequestTime");
-				scanResult.ScanFinishedTime = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].ScanFinishedTime");
-				scanResult.CreateTime = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].CreateTime");
-				scanResult.Suggestion = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].Suggestion");
-				scanResult.Id = context.LongValue("DescribeOssResultItems.ScanResultList["+ i +"].Id");
-				scanResult.Bucket = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].Bucket");
-				scanResult._Object = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].Object");
-				scanResult.Score = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].Score");
-				scanResult.HandleStatus = context.IntegerValue("DescribeOssResultItems.ScanResultList["+ i +"].HandleStatus");
-				scanResult.ResourceStatus = context.IntegerValue("DescribeOssResultItems.ScanResultList["+ i +"].ResourceStatus");
+				scanResult.TaskId = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].TaskId");
+				scanResult.DataId = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].DataId");
+				scanResult.NewUrl = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].NewUrl");
+				scanResult.Thumbnail = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].Thumbnail");
+				scanResult.RequestTime = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].RequestTime");
+				scanResult.ScanFinishedTime = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].ScanFinishedTime");
+				scanResult.CreateTime = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].CreateTime");
+				scanResult.Suggestion = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].Suggestion");
+				scanResult.Id = _ctx.LongValue("DescribeOssResultItems.ScanResultList["+ i +"].Id");
+				scanResult.Bucket = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].Bucket");
+				scanResult._Object = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].Object");
+				scanResult.Score = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].Score");
+				scanResult.HandleStatus = _ctx.IntegerValue("DescribeOssResultItems.ScanResultList["+ i +"].HandleStatus");
+				scanResult.ResourceStatus = _ctx.IntegerValue("DescribeOssResultItems.ScanResultList["+ i +"].ResourceStatus");
+				scanResult.Content = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].Content");
 
 				List<DescribeOssResultItemsResponse.DescribeOssResultItems_ScanResult.DescribeOssResultItems_FrameResult> scanResult_frameResults = new List<DescribeOssResultItemsResponse.DescribeOssResultItems_ScanResult.DescribeOssResultItems_FrameResult>();
-				for (int j = 0; j < context.Length("DescribeOssResultItems.ScanResultList["+ i +"].FrameResults.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeOssResultItems.ScanResultList["+ i +"].FrameResults.Length"); j++) {
 					DescribeOssResultItemsResponse.DescribeOssResultItems_ScanResult.DescribeOssResultItems_FrameResult frameResult = new DescribeOssResultItemsResponse.DescribeOssResultItems_ScanResult.DescribeOssResultItems_FrameResult();
-					frameResult.Thumbnail = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].FrameResults["+ j +"].Thumbnail");
-					frameResult.Offset = context.IntegerValue("DescribeOssResultItems.ScanResultList["+ i +"].FrameResults["+ j +"].Offset");
-					frameResult.Url = context.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].FrameResults["+ j +"].Url");
+					frameResult.Thumbnail = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].FrameResults["+ j +"].Thumbnail");
+					frameResult.Offset = _ctx.IntegerValue("DescribeOssResultItems.ScanResultList["+ i +"].FrameResults["+ j +"].Offset");
+					frameResult.Url = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].FrameResults["+ j +"].Url");
 
 					scanResult_frameResults.Add(frameResult);
 				}
 				scanResult.FrameResults = scanResult_frameResults;
+
+				List<DescribeOssResultItemsResponse.DescribeOssResultItems_ScanResult.DescribeOssResultItems_VoiceSegmentAntispamResult> scanResult_voiceSegmentAntispamResults = new List<DescribeOssResultItemsResponse.DescribeOssResultItems_ScanResult.DescribeOssResultItems_VoiceSegmentAntispamResult>();
+				for (int j = 0; j < _ctx.Length("DescribeOssResultItems.ScanResultList["+ i +"].VoiceSegmentAntispamResults.Length"); j++) {
+					DescribeOssResultItemsResponse.DescribeOssResultItems_ScanResult.DescribeOssResultItems_VoiceSegmentAntispamResult voiceSegmentAntispamResult = new DescribeOssResultItemsResponse.DescribeOssResultItems_ScanResult.DescribeOssResultItems_VoiceSegmentAntispamResult();
+					voiceSegmentAntispamResult.Text = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].VoiceSegmentAntispamResults["+ j +"].Text");
+					voiceSegmentAntispamResult.EndTime = _ctx.IntegerValue("DescribeOssResultItems.ScanResultList["+ i +"].VoiceSegmentAntispamResults["+ j +"].EndTime");
+					voiceSegmentAntispamResult.StartTime = _ctx.IntegerValue("DescribeOssResultItems.ScanResultList["+ i +"].VoiceSegmentAntispamResults["+ j +"].StartTime");
+					voiceSegmentAntispamResult.Label = _ctx.StringValue("DescribeOssResultItems.ScanResultList["+ i +"].VoiceSegmentAntispamResults["+ j +"].Label");
+
+					scanResult_voiceSegmentAntispamResults.Add(voiceSegmentAntispamResult);
+				}
+				scanResult.VoiceSegmentAntispamResults = scanResult_voiceSegmentAntispamResults;
 
 				describeOssResultItemsResponse_scanResultList.Add(scanResult);
 			}

@@ -26,12 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UntagResourcesResponseUnmarshaller
     {
-        public static UntagResourcesResponse Unmarshall(UnmarshallerContext context)
+        public static UntagResourcesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UntagResourcesResponse untagResourcesResponse = new UntagResourcesResponse();
 
-			untagResourcesResponse.HttpResponse = context.HttpResponse;
-			untagResourcesResponse.RequestId = context.StringValue("UntagResources.RequestId");
+			untagResourcesResponse.HttpResponse = _ctx.HttpResponse;
+			untagResourcesResponse.RequestId = _ctx.StringValue("UntagResources.RequestId");
+			untagResourcesResponse.Result = _ctx.BooleanValue("UntagResources.Result");
         
 			return untagResourcesResponse;
         }

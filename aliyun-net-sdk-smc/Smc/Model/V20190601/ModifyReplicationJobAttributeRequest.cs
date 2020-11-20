@@ -34,9 +34,10 @@ namespace Aliyun.Acs.smc.Model.V20190601
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.smc.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.smc.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
 		private string targetType;
@@ -53,15 +54,31 @@ namespace Aliyun.Acs.smc.Model.V20190601
 
 		private string instanceType;
 
+		private string containerRepository;
+
+		private string containerTag;
+
+		private string containerNamespace;
+
+		private string launchTemplateId;
+
 		private string resourceOwnerAccount;
+
+		private List<SystemDiskPart> systemDiskParts = new List<SystemDiskPart>(){ };
+
+		private string validTime;
 
 		private long? ownerId;
 
 		private List<DataDisk> dataDisks = new List<DataDisk>(){ };
 
+		private string launchTemplateVersion;
+
 		private string scheduledStartTime;
 
 		private string instanceId;
+
+		private string instanceRamRole;
 
 		private string name;
 
@@ -158,6 +175,58 @@ namespace Aliyun.Acs.smc.Model.V20190601
 			}
 		}
 
+		public string ContainerRepository
+		{
+			get
+			{
+				return containerRepository;
+			}
+			set	
+			{
+				containerRepository = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerRepository", value);
+			}
+		}
+
+		public string ContainerTag
+		{
+			get
+			{
+				return containerTag;
+			}
+			set	
+			{
+				containerTag = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerTag", value);
+			}
+		}
+
+		public string ContainerNamespace
+		{
+			get
+			{
+				return containerNamespace;
+			}
+			set	
+			{
+				containerNamespace = value;
+				DictionaryUtil.Add(QueryParameters, "ContainerNamespace", value);
+			}
+		}
+
+		public string LaunchTemplateId
+		{
+			get
+			{
+				return launchTemplateId;
+			}
+			set	
+			{
+				launchTemplateId = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateId", value);
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -168,6 +237,38 @@ namespace Aliyun.Acs.smc.Model.V20190601
 			{
 				resourceOwnerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerAccount", value);
+			}
+		}
+
+		public List<SystemDiskPart> SystemDiskParts
+		{
+			get
+			{
+				return systemDiskParts;
+			}
+
+			set
+			{
+				systemDiskParts = value;
+				for (int i = 0; i < systemDiskParts.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"SystemDiskPart." + (i + 1) + ".SizeBytes", systemDiskParts[i].SizeBytes);
+					DictionaryUtil.Add(QueryParameters,"SystemDiskPart." + (i + 1) + ".Block", systemDiskParts[i].Block);
+					DictionaryUtil.Add(QueryParameters,"SystemDiskPart." + (i + 1) + ".Device", systemDiskParts[i].Device);
+				}
+			}
+		}
+
+		public string ValidTime
+		{
+			get
+			{
+				return validTime;
+			}
+			set	
+			{
+				validTime = value;
+				DictionaryUtil.Add(QueryParameters, "ValidTime", value);
 			}
 		}
 
@@ -197,8 +298,25 @@ namespace Aliyun.Acs.smc.Model.V20190601
 				for (int i = 0; i < dataDisks.Count; i++)
 				{
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Size", dataDisks[i].Size);
+					for (int j = 0; j < dataDisks[i].Parts.Count; j++)
+					{
+						DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Part." +(j + 1), dataDisks[i].Parts[j]);
+					}
 					DictionaryUtil.Add(QueryParameters,"DataDisk." + (i + 1) + ".Index", dataDisks[i].Index);
 				}
+			}
+		}
+
+		public string LaunchTemplateVersion
+		{
+			get
+			{
+				return launchTemplateVersion;
+			}
+			set	
+			{
+				launchTemplateVersion = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTemplateVersion", value);
 			}
 		}
 
@@ -228,6 +346,19 @@ namespace Aliyun.Acs.smc.Model.V20190601
 			}
 		}
 
+		public string InstanceRamRole
+		{
+			get
+			{
+				return instanceRamRole;
+			}
+			set	
+			{
+				instanceRamRole = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceRamRole", value);
+			}
+		}
+
 		public string Name
 		{
 			get
@@ -254,10 +385,58 @@ namespace Aliyun.Acs.smc.Model.V20190601
 			}
 		}
 
+		public class SystemDiskPart
+		{
+
+			private long? sizeBytes;
+
+			private bool? block;
+
+			private string device;
+
+			public long? SizeBytes
+			{
+				get
+				{
+					return sizeBytes;
+				}
+				set	
+				{
+					sizeBytes = value;
+				}
+			}
+
+			public bool? Block
+			{
+				get
+				{
+					return block;
+				}
+				set	
+				{
+					block = value;
+				}
+			}
+
+			public string Device
+			{
+				get
+				{
+					return device;
+				}
+				set	
+				{
+					device = value;
+				}
+			}
+		}
+
 		public class DataDisk
 		{
 
 			private int? size;
+
+			private List<Part> parts = new List<Part>(){ };
 
 			private int? index;
 
@@ -273,6 +452,18 @@ namespace Aliyun.Acs.smc.Model.V20190601
 				}
 			}
 
+			public List<Part> Parts
+			{
+				get
+				{
+					return parts;
+				}
+				set	
+				{
+					parts = value;
+				}
+			}
+
 			public int? Index
 			{
 				get
@@ -282,6 +473,52 @@ namespace Aliyun.Acs.smc.Model.V20190601
 				set	
 				{
 					index = value;
+				}
+			}
+
+			public class Part
+			{
+
+				private long? sizeBytes;
+
+				private bool? block;
+
+				private string device;
+
+				public long? SizeBytes
+				{
+					get
+					{
+						return sizeBytes;
+					}
+					set	
+					{
+						sizeBytes = value;
+					}
+				}
+
+				public bool? Block
+				{
+					get
+					{
+						return block;
+					}
+					set	
+					{
+						block = value;
+					}
+				}
+
+				public string Device
+				{
+					get
+					{
+						return device;
+					}
+					set	
+					{
+						device = value;
+					}
 				}
 			}
 		}

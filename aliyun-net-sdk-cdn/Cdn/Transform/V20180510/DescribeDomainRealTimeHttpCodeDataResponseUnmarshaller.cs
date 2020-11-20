@@ -26,28 +26,28 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainRealTimeHttpCodeDataResponseUnmarshaller
     {
-        public static DescribeDomainRealTimeHttpCodeDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainRealTimeHttpCodeDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainRealTimeHttpCodeDataResponse describeDomainRealTimeHttpCodeDataResponse = new DescribeDomainRealTimeHttpCodeDataResponse();
 
-			describeDomainRealTimeHttpCodeDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainRealTimeHttpCodeDataResponse.RequestId = context.StringValue("DescribeDomainRealTimeHttpCodeData.RequestId");
-			describeDomainRealTimeHttpCodeDataResponse.DomainName = context.StringValue("DescribeDomainRealTimeHttpCodeData.DomainName");
-			describeDomainRealTimeHttpCodeDataResponse.StartTime = context.StringValue("DescribeDomainRealTimeHttpCodeData.StartTime");
-			describeDomainRealTimeHttpCodeDataResponse.EndTime = context.StringValue("DescribeDomainRealTimeHttpCodeData.EndTime");
-			describeDomainRealTimeHttpCodeDataResponse.DataInterval = context.StringValue("DescribeDomainRealTimeHttpCodeData.DataInterval");
+			describeDomainRealTimeHttpCodeDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainRealTimeHttpCodeDataResponse.RequestId = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.RequestId");
+			describeDomainRealTimeHttpCodeDataResponse.DomainName = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.DomainName");
+			describeDomainRealTimeHttpCodeDataResponse.StartTime = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.StartTime");
+			describeDomainRealTimeHttpCodeDataResponse.EndTime = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.EndTime");
+			describeDomainRealTimeHttpCodeDataResponse.DataInterval = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.DataInterval");
 
 			List<DescribeDomainRealTimeHttpCodeDataResponse.DescribeDomainRealTimeHttpCodeData_UsageData> describeDomainRealTimeHttpCodeDataResponse_realTimeHttpCodeData = new List<DescribeDomainRealTimeHttpCodeDataResponse.DescribeDomainRealTimeHttpCodeData_UsageData>();
-			for (int i = 0; i < context.Length("DescribeDomainRealTimeHttpCodeData.RealTimeHttpCodeData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainRealTimeHttpCodeData.RealTimeHttpCodeData.Length"); i++) {
 				DescribeDomainRealTimeHttpCodeDataResponse.DescribeDomainRealTimeHttpCodeData_UsageData usageData = new DescribeDomainRealTimeHttpCodeDataResponse.DescribeDomainRealTimeHttpCodeData_UsageData();
-				usageData.TimeStamp = context.StringValue("DescribeDomainRealTimeHttpCodeData.RealTimeHttpCodeData["+ i +"].TimeStamp");
+				usageData.TimeStamp = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.RealTimeHttpCodeData["+ i +"].TimeStamp");
 
 				List<DescribeDomainRealTimeHttpCodeDataResponse.DescribeDomainRealTimeHttpCodeData_UsageData.DescribeDomainRealTimeHttpCodeData_RealTimeCodeProportionData> usageData_value = new List<DescribeDomainRealTimeHttpCodeDataResponse.DescribeDomainRealTimeHttpCodeData_UsageData.DescribeDomainRealTimeHttpCodeData_RealTimeCodeProportionData>();
-				for (int j = 0; j < context.Length("DescribeDomainRealTimeHttpCodeData.RealTimeHttpCodeData["+ i +"].Value.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDomainRealTimeHttpCodeData.RealTimeHttpCodeData["+ i +"].Value.Length"); j++) {
 					DescribeDomainRealTimeHttpCodeDataResponse.DescribeDomainRealTimeHttpCodeData_UsageData.DescribeDomainRealTimeHttpCodeData_RealTimeCodeProportionData realTimeCodeProportionData = new DescribeDomainRealTimeHttpCodeDataResponse.DescribeDomainRealTimeHttpCodeData_UsageData.DescribeDomainRealTimeHttpCodeData_RealTimeCodeProportionData();
-					realTimeCodeProportionData.Code = context.StringValue("DescribeDomainRealTimeHttpCodeData.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Code");
-					realTimeCodeProportionData.Proportion = context.StringValue("DescribeDomainRealTimeHttpCodeData.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Proportion");
-					realTimeCodeProportionData.Count = context.StringValue("DescribeDomainRealTimeHttpCodeData.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Count");
+					realTimeCodeProportionData.Code = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Code");
+					realTimeCodeProportionData.Proportion = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Proportion");
+					realTimeCodeProportionData.Count = _ctx.StringValue("DescribeDomainRealTimeHttpCodeData.RealTimeHttpCodeData["+ i +"].Value["+ j +"].Count");
 
 					usageData_value.Add(realTimeCodeProportionData);
 				}

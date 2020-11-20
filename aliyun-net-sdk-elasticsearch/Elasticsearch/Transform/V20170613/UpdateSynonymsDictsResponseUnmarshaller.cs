@@ -26,26 +26,20 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateSynonymsDictsResponseUnmarshaller
     {
-        public static UpdateSynonymsDictsResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateSynonymsDictsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateSynonymsDictsResponse updateSynonymsDictsResponse = new UpdateSynonymsDictsResponse();
 
-			updateSynonymsDictsResponse.HttpResponse = context.HttpResponse;
-			updateSynonymsDictsResponse.RequestId = context.StringValue("UpdateSynonymsDicts.RequestId");
+			updateSynonymsDictsResponse.HttpResponse = _ctx.HttpResponse;
+			updateSynonymsDictsResponse.RequestId = _ctx.StringValue("UpdateSynonymsDicts.RequestId");
 
 			List<UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList> updateSynonymsDictsResponse_result = new List<UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList>();
-			for (int i = 0; i < context.Length("UpdateSynonymsDicts.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("UpdateSynonymsDicts.Result.Length"); i++) {
 				UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList dictList = new UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList();
-				dictList.Name = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].name");
-				dictList.FileSize = context.LongValue("UpdateSynonymsDicts.Result["+ i +"].fileSize");
-				dictList.Type = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].type");
-				dictList.SourceType = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].sourceType");
-
-				UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList.UpdateSynonymsDicts_OssObject ossObject = new UpdateSynonymsDictsResponse.UpdateSynonymsDicts_DictList.UpdateSynonymsDicts_OssObject();
-				ossObject.BucketName = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].OssObject.bucketName");
-				ossObject.Key = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].OssObject.key");
-				ossObject.Etag = context.StringValue("UpdateSynonymsDicts.Result["+ i +"].OssObject.etag");
-				dictList.OssObject = ossObject;
+				dictList.Name = _ctx.StringValue("UpdateSynonymsDicts.Result["+ i +"].name");
+				dictList.FileSize = _ctx.LongValue("UpdateSynonymsDicts.Result["+ i +"].fileSize");
+				dictList.Type = _ctx.StringValue("UpdateSynonymsDicts.Result["+ i +"].type");
+				dictList.SourceType = _ctx.StringValue("UpdateSynonymsDicts.Result["+ i +"].sourceType");
 
 				updateSynonymsDictsResponse_result.Add(dictList);
 			}

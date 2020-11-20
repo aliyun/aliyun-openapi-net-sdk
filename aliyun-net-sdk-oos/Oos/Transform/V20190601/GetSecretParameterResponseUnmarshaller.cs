@@ -45,6 +45,8 @@ namespace Aliyun.Acs.oos.Transform.V20190601
 			parameter.ParameterVersion = context.IntegerValue("GetSecretParameter.Parameter.ParameterVersion");
 			parameter.Type = context.StringValue("GetSecretParameter.Parameter.Type");
 			parameter._Value = context.StringValue("GetSecretParameter.Parameter.Value");
+			parameter.Constraints = context.StringValue("GetSecretParameter.Parameter.Constraints");
+			parameter.KeyId = context.StringValue("GetSecretParameter.Parameter.KeyId");
 			getSecretParameterResponse.Parameter = parameter;
         
 			return getSecretParameterResponse;

@@ -26,29 +26,29 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeMPURuleResponseUnmarshaller
     {
-        public static DescribeMPURuleResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeMPURuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeMPURuleResponse describeMPURuleResponse = new DescribeMPURuleResponse();
 
-			describeMPURuleResponse.HttpResponse = context.HttpResponse;
-			describeMPURuleResponse.RequestId = context.StringValue("DescribeMPURule.RequestId");
+			describeMPURuleResponse.HttpResponse = _ctx.HttpResponse;
+			describeMPURuleResponse.RequestId = _ctx.StringValue("DescribeMPURule.RequestId");
 
 			List<DescribeMPURuleResponse.DescribeMPURule_Rule> describeMPURuleResponse_rules = new List<DescribeMPURuleResponse.DescribeMPURule_Rule>();
-			for (int i = 0; i < context.Length("DescribeMPURule.Rules.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeMPURule.Rules.Length"); i++) {
 				DescribeMPURuleResponse.DescribeMPURule_Rule rule = new DescribeMPURuleResponse.DescribeMPURule_Rule();
-				rule.RuleId = context.LongValue("DescribeMPURule.Rules["+ i +"].RuleId");
-				rule.ChannelPrefix = context.StringValue("DescribeMPURule.Rules["+ i +"].ChannelPrefix");
-				rule.MediaEncode = context.IntegerValue("DescribeMPURule.Rules["+ i +"].MediaEncode");
-				rule.BackgroudColor = context.IntegerValue("DescribeMPURule.Rules["+ i +"].BackgroudColor");
-				rule.CropMode = context.IntegerValue("DescribeMPURule.Rules["+ i +"].CropMode");
-				rule.TaskProfile = context.StringValue("DescribeMPURule.Rules["+ i +"].TaskProfile");
-				rule.PlayDomain = context.StringValue("DescribeMPURule.Rules["+ i +"].PlayDomain");
-				rule.CallBack = context.StringValue("DescribeMPURule.Rules["+ i +"].CallBack");
-				rule.IsEnable = context.IntegerValue("DescribeMPURule.Rules["+ i +"].IsEnable");
+				rule.RuleId = _ctx.LongValue("DescribeMPURule.Rules["+ i +"].RuleId");
+				rule.ChannelPrefix = _ctx.StringValue("DescribeMPURule.Rules["+ i +"].ChannelPrefix");
+				rule.MediaEncode = _ctx.IntegerValue("DescribeMPURule.Rules["+ i +"].MediaEncode");
+				rule.BackgroudColor = _ctx.IntegerValue("DescribeMPURule.Rules["+ i +"].BackgroudColor");
+				rule.CropMode = _ctx.IntegerValue("DescribeMPURule.Rules["+ i +"].CropMode");
+				rule.TaskProfile = _ctx.StringValue("DescribeMPURule.Rules["+ i +"].TaskProfile");
+				rule.PlayDomain = _ctx.StringValue("DescribeMPURule.Rules["+ i +"].PlayDomain");
+				rule.CallBack = _ctx.StringValue("DescribeMPURule.Rules["+ i +"].CallBack");
+				rule.IsEnable = _ctx.IntegerValue("DescribeMPURule.Rules["+ i +"].IsEnable");
 
 				List<string> rule_layoutIds = new List<string>();
-				for (int j = 0; j < context.Length("DescribeMPURule.Rules["+ i +"].LayoutIds.Length"); j++) {
-					rule_layoutIds.Add(context.StringValue("DescribeMPURule.Rules["+ i +"].LayoutIds["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeMPURule.Rules["+ i +"].LayoutIds.Length"); j++) {
+					rule_layoutIds.Add(_ctx.StringValue("DescribeMPURule.Rules["+ i +"].LayoutIds["+ j +"]"));
 				}
 				rule.LayoutIds = rule_layoutIds;
 

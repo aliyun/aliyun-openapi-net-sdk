@@ -1,3 +1,242 @@
+2020-11-19 Version: 3.4.1
+- Update DescribeDedicatedClusterInstanceList return data.
+
+2020-11-19 Version: 3.5.7
+- Update data API.
+
+2020-11-19 Version: 3.5.6
+- Update data API.
+
+2020-11-19 Version: 3.0.18
+- Supported International-26888 Sites Region Endpoints.
+
+2020-11-19 Version: 3.0.13
+- Supported International-26888 Sites Region Endpoints.
+
+2020-11-19 Version: 0.0.2
+- Update GenerateHumanAnimeStyle.
+
+2020-11-19 Version: 0.0.2
+- Update SegmentBody.
+
+2020-11-19 Version: 0.9.2
+- Supported backend interface for ICBU.
+
+2020-11-19 Version: 1.1.0
+- Generated 2019-09-10 for `waf-openapi`.
+
+2020-11-18 Version: 3.0.13
+- Supported International-26888 Sites Region Endpoints.
+
+2020-11-18 Version: 2.8.2
+- DescribeInstance support coldStorageSize.
+
+2020-11-18 Version: 3.4.0
+- Update DescribeDedicatedClusterInstanceList InstanceStatus type.
+
+2020-11-18 Version: 1.2.4
+- Generated 2018-01-11 for `rtc`.
+
+2020-11-18 Version: 3.6.2
+- Supported webpage scan.
+
+2020-11-17 Version: 1.0.3
+- Support event type in timeline of resource properties.
+- Support resourceOwnerId in evaluation result.
+- Support resource directory in config rule scene.
+- Fix terraform related bugs.
+
+2020-11-17 Version: 1.7.8
+- Support ModifyDBClusterPrimaryZone.
+- Support DescribeGlobalDatabaseNetworks.
+
+2020-11-17 Version: 3.0.13
+- Supported International-26888 Sites Region Endpoints.
+
+2020-11-17 Version: 3.0.13
+- Supported International-26888 Sites Region Endpoints.
+
+2020-11-16 Version: 1.0.2
+- Update Imageaudit.
+
+2020-11-16 Version: 3.0.26
+- Add a new interface for asynchronous image translation.
+
+2020-11-16 Version: 0.0.1
+- Update videoenhan.
+
+2020-11-16 Version: 0.0.1
+- Update videoseg.
+
+2020-11-16 Version: 0.0.1
+- Update videorecog.
+
+2020-11-16 Version: 0.0.1
+- Update objectdet.
+
+2020-11-16 Version: 0.0.1
+- Update imgsearch.
+
+2020-11-16 Version: 0.0.1
+- Update imagerecog.
+
+2020-11-16 Version: 0.0.1
+- Update goodstech.
+
+2020-11-13 Version: 2.9.0
+- Add DeccribeEngineVersion DescribeTasks DescribeInstanceConfig and more APIs.
+
+2020-11-13 Version: 0.0.1
+- Update DetectLungNodule.
+
+2020-11-13 Version: 0.0.4
+- Fix GetBranchInfo and DeleteBranch API 404 error.
+- Add ListRepositoryBranches and GetGroupDetail API.
+
+2020-11-13 Version: 0.0.1
+- Release ErasePerson.
+
+2020-11-13 Version: 0.0.1
+- Release DetectCardScreenshot RecognizePoiName.
+
+2020-11-13 Version: 0.0.1
+- Release GenerateHumanAnimeStyle CountCrowd.
+
+2020-11-13 Version: 0.0.1
+- Release SegmentHDSky SegmentHDCommonImage.
+
+2020-11-12 Version: 1.19.2
+- Support drm.
+
+2020-11-12 Version: 1.0.2
+- Generated 2019-06-01 for `smc`.
+
+2020-11-12 Version: 1.7.7
+- Support DescribeDBClusterTDE.
+- Support ModifyDBClusterTDE.
+
+2020-11-12 Version: 1.0.1
+- Update DescribeTrails Response.
+
+2020-11-12 Version: 1.0.0
+- Update DescribeTrails Response.
+
+2020-11-05 Version: 2.8.1
+- Support modifyInstnaceType.
+
+2020-11-04 Version: 1.0.6
+- Generated 2019-01-01 for `Cassandra`.
+
+2020-11-04 Version: 2.8.1
+- Support modifyInstnaceType.
+
+2020-11-04 Version: 1.0.5
+- Generated 2019-01-01 for `Cassandra`.
+
+2020-11-04 Version: 2.8.0
+- Support modifyInstnaceType.
+
+2020-11-03 Version: 2.8.1
+- Minor update for r-kvstore.
+
+2020-11-03 Version: 3.5.5
+- Update data API.
+
+2020-11-02 Version: 3.3.1
+- Support create serverless by day price type.
+
+2020-11-01 Version: 3.0.13
+- Supported All Console APIs.
+
+2020-10-28 Version: 1.3.1
+- Support GetParameters, GetParametersByPath, GetSecretParameters, GetSecretParametersByPath.
+
+2020-10-27 Version: 1.7.6
+- Support DescribePendingMaintenanceAction.
+- Support ModifyPendingMaintenanceAction.
+- Support DescribePendingMaintenanceActions.
+
+2020-10-27 Version: 0.2.0
+- Support Sampling for jaeger.
+
+2020-10-27 Version: 1.0.1
+- Fix bug.
+
+2020-10-27 Version: 2.0.4
+- Add role authority management.
+
+2020-10-26 Version: 4.21.0
+- Generated 2014-05-26 for `Ecs`.
+
+2020-10-26 Version: 3.9.4
+- Generated 2016-11-01 for `live`.
+
+2020-10-26 Version: 2.0.19
+- Supported PaymentType for DescribeDnsProductInstance.
+
+2020-10-26 Version: 2.3.1
+- Update ScalingConfig parameters.
+
+2020-10-23 Version: 2.0.4
+- Change Configuration.
+
+2020-10-23 Version: 1.19.1
+- Support feedback.
+
+2020-10-22 Version: 1.0.7
+- Add Pipeline Member api.
+
+2020-10-22 Version: 3.5.4
+- Update data API.
+
+2020-10-22 Version: 2.0.7
+- Update data API.
+
+2020-10-21 Version: 2.8.0
+- DescribeAvailableResource support AcceptLanguage.
+
+2020-10-21 Version: 2.0.3
+- Change Documentation configuration.
+
+2020-10-21 Version: 1.0.0
+- Cloud Storage Gateway openapi sdk is released.
+
+2020-10-21 Version: 1.3.0
+- Release latest features.
+
+2020-10-21 Version: 2.0.2
+- Change Documentation configuration.
+
+2020-10-21 Version: 2.0.2
+- Change Documentation configuration.
+
+2020-10-21 Version: 2.0.6
+- Update cert API.
+
+2020-10-21 Version: 2.1.6
+- Add PHP sdk.
+
+2020-10-21 Version: 2.1.5
+- Update Scdn API.
+
+2020-10-20 Version: 2.8.0
+- Support modifyInstnaceType.
+
+2020-10-20 Version: 2.0.20
+- Add LivenessFaceVerify API.
+
+2020-10-20 Version: 2.0.1
+- Update Configuration.
+
+2020-10-20 Version: 3.9.3
+- Generated 2016-11-01 for `live`.
+
+2020-10-19 Version: 3.0.25
+- Add a new interface for asynchronous image translation.
+
+2020-10-16 Version: 7.15.0
+- Update OTA API, including ListOTAModuleByProduct, DeleteOTAModule.
+
 2020-10-16 Version: 3.13.6
 - Supported AndroidNotificationNotifyId for Push and MassPush.
 - Supported iOSNotificationCollapseId for Push and MassPush.

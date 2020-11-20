@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeCdnMonitorDataResponseUnmarshaller
     {
-        public static DescribeCdnMonitorDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCdnMonitorDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCdnMonitorDataResponse describeCdnMonitorDataResponse = new DescribeCdnMonitorDataResponse();
 
-			describeCdnMonitorDataResponse.HttpResponse = context.HttpResponse;
-			describeCdnMonitorDataResponse.RequestId = context.StringValue("DescribeCdnMonitorData.RequestId");
-			describeCdnMonitorDataResponse.DomainName = context.StringValue("DescribeCdnMonitorData.DomainName");
-			describeCdnMonitorDataResponse.StartTime = context.StringValue("DescribeCdnMonitorData.StartTime");
-			describeCdnMonitorDataResponse.EndTime = context.StringValue("DescribeCdnMonitorData.EndTime");
-			describeCdnMonitorDataResponse.MonitorInterval = context.StringValue("DescribeCdnMonitorData.MonitorInterval");
+			describeCdnMonitorDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeCdnMonitorDataResponse.RequestId = _ctx.StringValue("DescribeCdnMonitorData.RequestId");
+			describeCdnMonitorDataResponse.DomainName = _ctx.StringValue("DescribeCdnMonitorData.DomainName");
+			describeCdnMonitorDataResponse.StartTime = _ctx.StringValue("DescribeCdnMonitorData.StartTime");
+			describeCdnMonitorDataResponse.EndTime = _ctx.StringValue("DescribeCdnMonitorData.EndTime");
+			describeCdnMonitorDataResponse.MonitorInterval = _ctx.StringValue("DescribeCdnMonitorData.MonitorInterval");
 
 			List<DescribeCdnMonitorDataResponse.DescribeCdnMonitorData_CDNMonitorData> describeCdnMonitorDataResponse_monitorDatas = new List<DescribeCdnMonitorDataResponse.DescribeCdnMonitorData_CDNMonitorData>();
-			for (int i = 0; i < context.Length("DescribeCdnMonitorData.MonitorDatas.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCdnMonitorData.MonitorDatas.Length"); i++) {
 				DescribeCdnMonitorDataResponse.DescribeCdnMonitorData_CDNMonitorData cDNMonitorData = new DescribeCdnMonitorDataResponse.DescribeCdnMonitorData_CDNMonitorData();
-				cDNMonitorData.TimeStamp = context.StringValue("DescribeCdnMonitorData.MonitorDatas["+ i +"].TimeStamp");
-				cDNMonitorData.BytesPerSecond = context.StringValue("DescribeCdnMonitorData.MonitorDatas["+ i +"].BytesPerSecond");
-				cDNMonitorData.QueryPerSecond = context.StringValue("DescribeCdnMonitorData.MonitorDatas["+ i +"].QueryPerSecond");
-				cDNMonitorData.RequestHitRate = context.StringValue("DescribeCdnMonitorData.MonitorDatas["+ i +"].RequestHitRate");
-				cDNMonitorData.BytesHitRate = context.StringValue("DescribeCdnMonitorData.MonitorDatas["+ i +"].BytesHitRate");
-				cDNMonitorData.AverageObjectSize = context.StringValue("DescribeCdnMonitorData.MonitorDatas["+ i +"].AverageObjectSize");
+				cDNMonitorData.TimeStamp = _ctx.StringValue("DescribeCdnMonitorData.MonitorDatas["+ i +"].TimeStamp");
+				cDNMonitorData.BytesPerSecond = _ctx.StringValue("DescribeCdnMonitorData.MonitorDatas["+ i +"].BytesPerSecond");
+				cDNMonitorData.QueryPerSecond = _ctx.StringValue("DescribeCdnMonitorData.MonitorDatas["+ i +"].QueryPerSecond");
+				cDNMonitorData.RequestHitRate = _ctx.StringValue("DescribeCdnMonitorData.MonitorDatas["+ i +"].RequestHitRate");
+				cDNMonitorData.BytesHitRate = _ctx.StringValue("DescribeCdnMonitorData.MonitorDatas["+ i +"].BytesHitRate");
+				cDNMonitorData.AverageObjectSize = _ctx.StringValue("DescribeCdnMonitorData.MonitorDatas["+ i +"].AverageObjectSize");
 
 				describeCdnMonitorDataResponse_monitorDatas.Add(cDNMonitorData);
 			}

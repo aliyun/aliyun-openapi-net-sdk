@@ -26,14 +26,14 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class EnableHBaseueModuleResponseUnmarshaller
     {
-        public static EnableHBaseueModuleResponse Unmarshall(UnmarshallerContext context)
+        public static EnableHBaseueModuleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EnableHBaseueModuleResponse enableHBaseueModuleResponse = new EnableHBaseueModuleResponse();
 
-			enableHBaseueModuleResponse.HttpResponse = context.HttpResponse;
-			enableHBaseueModuleResponse.RequestId = context.StringValue("EnableHBaseueModule.RequestId");
-			enableHBaseueModuleResponse.ClusterId = context.StringValue("EnableHBaseueModule.ClusterId");
-			enableHBaseueModuleResponse.OrderId = context.StringValue("EnableHBaseueModule.OrderId");
+			enableHBaseueModuleResponse.HttpResponse = _ctx.HttpResponse;
+			enableHBaseueModuleResponse.RequestId = _ctx.StringValue("EnableHBaseueModule.RequestId");
+			enableHBaseueModuleResponse.ClusterId = _ctx.StringValue("EnableHBaseueModule.ClusterId");
+			enableHBaseueModuleResponse.OrderId = _ctx.StringValue("EnableHBaseueModule.OrderId");
         
 			return enableHBaseueModuleResponse;
         }

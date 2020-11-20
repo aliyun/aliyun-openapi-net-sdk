@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class DeleteConnectedClusterResponseUnmarshaller
     {
-        public static DeleteConnectedClusterResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteConnectedClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteConnectedClusterResponse deleteConnectedClusterResponse = new DeleteConnectedClusterResponse();
 
-			deleteConnectedClusterResponse.HttpResponse = context.HttpResponse;
-			deleteConnectedClusterResponse.RequestId = context.StringValue("DeleteConnectedCluster.RequestId");
-			deleteConnectedClusterResponse.Result = context.BooleanValue("DeleteConnectedCluster.Result");
+			deleteConnectedClusterResponse.HttpResponse = _ctx.HttpResponse;
+			deleteConnectedClusterResponse.RequestId = _ctx.StringValue("DeleteConnectedCluster.RequestId");
+			deleteConnectedClusterResponse.Result = _ctx.BooleanValue("DeleteConnectedCluster.Result");
         
 			return deleteConnectedClusterResponse;
         }

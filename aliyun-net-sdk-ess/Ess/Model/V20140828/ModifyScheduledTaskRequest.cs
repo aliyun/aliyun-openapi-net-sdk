@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,9 +33,13 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public ModifyScheduledTaskRequest()
             : base("Ess", "2014-08-28", "ModifyScheduledTask", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
-
-		private string launchTime;
 
 		private long? resourceOwnerId;
 
@@ -42,19 +47,25 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private int? maxValue;
 
+		private string scalingGroupId;
+
+		private string description;
+
+		private string recurrenceEndTime;
+
+		private string launchTime;
+
+		private int? desiredCapacity;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
-
-		private string description;
 
 		private long? ownerId;
 
 		private string recurrenceValue;
 
 		private int? launchExpirationTime;
-
-		private string recurrenceEndTime;
 
 		private int? minValue;
 
@@ -65,19 +76,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string scheduledTaskId;
 
 		private string recurrenceType;
-
-		public string LaunchTime
-		{
-			get
-			{
-				return launchTime;
-			}
-			set	
-			{
-				launchTime = value;
-				DictionaryUtil.Add(QueryParameters, "LaunchTime", value);
-			}
-		}
 
 		public long? ResourceOwnerId
 		{
@@ -118,6 +116,71 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
+		public string ScalingGroupId
+		{
+			get
+			{
+				return scalingGroupId;
+			}
+			set	
+			{
+				scalingGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
+			}
+		}
+
+		public string Description
+		{
+			get
+			{
+				return description;
+			}
+			set	
+			{
+				description = value;
+				DictionaryUtil.Add(QueryParameters, "Description", value);
+			}
+		}
+
+		public string RecurrenceEndTime
+		{
+			get
+			{
+				return recurrenceEndTime;
+			}
+			set	
+			{
+				recurrenceEndTime = value;
+				DictionaryUtil.Add(QueryParameters, "RecurrenceEndTime", value);
+			}
+		}
+
+		public string LaunchTime
+		{
+			get
+			{
+				return launchTime;
+			}
+			set	
+			{
+				launchTime = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchTime", value);
+			}
+		}
+
+		public int? DesiredCapacity
+		{
+			get
+			{
+				return desiredCapacity;
+			}
+			set	
+			{
+				desiredCapacity = value;
+				DictionaryUtil.Add(QueryParameters, "DesiredCapacity", value.ToString());
+			}
+		}
+
 		public string ResourceOwnerAccount
 		{
 			get
@@ -141,19 +204,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				ownerAccount = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerAccount", value);
-			}
-		}
-
-		public string Description
-		{
-			get
-			{
-				return description;
-			}
-			set	
-			{
-				description = value;
-				DictionaryUtil.Add(QueryParameters, "Description", value);
 			}
 		}
 
@@ -193,19 +243,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				launchExpirationTime = value;
 				DictionaryUtil.Add(QueryParameters, "LaunchExpirationTime", value.ToString());
-			}
-		}
-
-		public string RecurrenceEndTime
-		{
-			get
-			{
-				return recurrenceEndTime;
-			}
-			set	
-			{
-				recurrenceEndTime = value;
-				DictionaryUtil.Add(QueryParameters, "RecurrenceEndTime", value);
 			}
 		}
 

@@ -26,26 +26,20 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UpdateAliwsDictResponseUnmarshaller
     {
-        public static UpdateAliwsDictResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateAliwsDictResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateAliwsDictResponse updateAliwsDictResponse = new UpdateAliwsDictResponse();
 
-			updateAliwsDictResponse.HttpResponse = context.HttpResponse;
-			updateAliwsDictResponse.RequestId = context.StringValue("UpdateAliwsDict.RequestId");
+			updateAliwsDictResponse.HttpResponse = _ctx.HttpResponse;
+			updateAliwsDictResponse.RequestId = _ctx.StringValue("UpdateAliwsDict.RequestId");
 
 			List<UpdateAliwsDictResponse.UpdateAliwsDict_DictList> updateAliwsDictResponse_result = new List<UpdateAliwsDictResponse.UpdateAliwsDict_DictList>();
-			for (int i = 0; i < context.Length("UpdateAliwsDict.Result.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("UpdateAliwsDict.Result.Length"); i++) {
 				UpdateAliwsDictResponse.UpdateAliwsDict_DictList dictList = new UpdateAliwsDictResponse.UpdateAliwsDict_DictList();
-				dictList.Name = context.StringValue("UpdateAliwsDict.Result["+ i +"].name");
-				dictList.FileSize = context.LongValue("UpdateAliwsDict.Result["+ i +"].fileSize");
-				dictList.Type = context.StringValue("UpdateAliwsDict.Result["+ i +"].type");
-				dictList.SourceType = context.StringValue("UpdateAliwsDict.Result["+ i +"].sourceType");
-
-				UpdateAliwsDictResponse.UpdateAliwsDict_DictList.UpdateAliwsDict_OssObject ossObject = new UpdateAliwsDictResponse.UpdateAliwsDict_DictList.UpdateAliwsDict_OssObject();
-				ossObject.BucketName = context.StringValue("UpdateAliwsDict.Result["+ i +"].OssObject.bucketName");
-				ossObject.Key = context.StringValue("UpdateAliwsDict.Result["+ i +"].OssObject.key");
-				ossObject.Etag = context.StringValue("UpdateAliwsDict.Result["+ i +"].OssObject.etag");
-				dictList.OssObject = ossObject;
+				dictList.Name = _ctx.StringValue("UpdateAliwsDict.Result["+ i +"].name");
+				dictList.FileSize = _ctx.LongValue("UpdateAliwsDict.Result["+ i +"].fileSize");
+				dictList.Type = _ctx.StringValue("UpdateAliwsDict.Result["+ i +"].type");
+				dictList.SourceType = _ctx.StringValue("UpdateAliwsDict.Result["+ i +"].sourceType");
 
 				updateAliwsDictResponse_result.Add(dictList);
 			}

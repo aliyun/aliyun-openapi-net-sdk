@@ -26,33 +26,33 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class DescribeWebsiteScanResultResponseUnmarshaller
     {
-        public static DescribeWebsiteScanResultResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeWebsiteScanResultResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeWebsiteScanResultResponse describeWebsiteScanResultResponse = new DescribeWebsiteScanResultResponse();
 
-			describeWebsiteScanResultResponse.HttpResponse = context.HttpResponse;
-			describeWebsiteScanResultResponse.RequestId = context.StringValue("DescribeWebsiteScanResult.RequestId");
-			describeWebsiteScanResultResponse.PageSize = context.IntegerValue("DescribeWebsiteScanResult.PageSize");
-			describeWebsiteScanResultResponse.CurrentPage = context.IntegerValue("DescribeWebsiteScanResult.CurrentPage");
-			describeWebsiteScanResultResponse.TotalCount = context.IntegerValue("DescribeWebsiteScanResult.TotalCount");
+			describeWebsiteScanResultResponse.HttpResponse = _ctx.HttpResponse;
+			describeWebsiteScanResultResponse.RequestId = _ctx.StringValue("DescribeWebsiteScanResult.RequestId");
+			describeWebsiteScanResultResponse.PageSize = _ctx.IntegerValue("DescribeWebsiteScanResult.PageSize");
+			describeWebsiteScanResultResponse.CurrentPage = _ctx.IntegerValue("DescribeWebsiteScanResult.CurrentPage");
+			describeWebsiteScanResultResponse.TotalCount = _ctx.IntegerValue("DescribeWebsiteScanResult.TotalCount");
 
 			List<DescribeWebsiteScanResultResponse.DescribeWebsiteScanResult_WebsiteScanResult> describeWebsiteScanResultResponse_websiteScanResultList = new List<DescribeWebsiteScanResultResponse.DescribeWebsiteScanResult_WebsiteScanResult>();
-			for (int i = 0; i < context.Length("DescribeWebsiteScanResult.WebsiteScanResultList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeWebsiteScanResult.WebsiteScanResultList.Length"); i++) {
 				DescribeWebsiteScanResultResponse.DescribeWebsiteScanResult_WebsiteScanResult websiteScanResult = new DescribeWebsiteScanResultResponse.DescribeWebsiteScanResult_WebsiteScanResult();
-				websiteScanResult.InstanceId = context.StringValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].InstanceId");
-				websiteScanResult.ScanTime = context.StringValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].ScanTime");
-				websiteScanResult.Domain = context.StringValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].Domain");
-				websiteScanResult.SourceRiskCount = context.IntegerValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].SourceRiskCount");
-				websiteScanResult.ImageRiskCount = context.IntegerValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].ImageRiskCount");
-				websiteScanResult.HandleStatus = context.IntegerValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].HandleStatus");
-				websiteScanResult.Id = context.IntegerValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].Id");
-				websiteScanResult.TextRiskCount = context.IntegerValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].TextRiskCount");
-				websiteScanResult.TaskId = context.StringValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].TaskId");
-				websiteScanResult.Url = context.StringValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].Url");
+				websiteScanResult.InstanceId = _ctx.StringValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].InstanceId");
+				websiteScanResult.ScanTime = _ctx.StringValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].ScanTime");
+				websiteScanResult.Domain = _ctx.StringValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].Domain");
+				websiteScanResult.SourceRiskCount = _ctx.IntegerValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].SourceRiskCount");
+				websiteScanResult.ImageRiskCount = _ctx.IntegerValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].ImageRiskCount");
+				websiteScanResult.HandleStatus = _ctx.IntegerValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].HandleStatus");
+				websiteScanResult.Id = _ctx.IntegerValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].Id");
+				websiteScanResult.TextRiskCount = _ctx.IntegerValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].TextRiskCount");
+				websiteScanResult.TaskId = _ctx.StringValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].TaskId");
+				websiteScanResult.Url = _ctx.StringValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].Url");
 
 				List<string> websiteScanResult_labels = new List<string>();
-				for (int j = 0; j < context.Length("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].Labels.Length"); j++) {
-					websiteScanResult_labels.Add(context.StringValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].Labels["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].Labels.Length"); j++) {
+					websiteScanResult_labels.Add(_ctx.StringValue("DescribeWebsiteScanResult.WebsiteScanResultList["+ i +"].Labels["+ j +"]"));
 				}
 				websiteScanResult.Labels = websiteScanResult_labels;
 

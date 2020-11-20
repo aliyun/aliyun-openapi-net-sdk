@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,11 +33,39 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public DescribeScalingRulesRequest()
             : base("Ess", "2014-08-28", "DescribeScalingRules", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
-		private string scalingRuleName1;
-
 		private long? resourceOwnerId;
+
+		private string scalingRuleId10;
+
+		private long? ownerId;
+
+		private string scalingRuleAri1;
+
+		private string scalingRuleAri2;
+
+		private string scalingRuleAri3;
+
+		private string scalingRuleAri4;
+
+		private string scalingRuleAri5;
+
+		private string scalingRuleAri6;
+
+		private string scalingRuleAri7;
+
+		private string scalingRuleAri8;
+
+		private bool? showAlarmRules;
+
+		private string scalingRuleName1;
 
 		private string scalingRuleName2;
 
@@ -64,41 +93,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scalingRuleType;
 
-		private string scalingRuleId10;
-
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
 
-		private long? ownerId;
-
-		private string scalingRuleAri1;
-
-		private string scalingRuleAri2;
-
 		private string scalingRuleName10;
-
-		private string scalingRuleAri3;
-
-		private string scalingRuleAri4;
 
 		private string scalingRuleId8;
 
-		private string scalingRuleAri5;
-
 		private string scalingRuleId9;
-
-		private string scalingRuleAri6;
-
-		private string scalingRuleAri7;
 
 		private string scalingRuleAri10;
 
-		private string scalingRuleAri8;
-
 		private string scalingRuleId4;
-
-		private bool? showAlarmRules;
 
 		private string scalingRuleId5;
 
@@ -112,19 +119,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 
 		private string scalingRuleId3;
 
-		public string ScalingRuleName1
-		{
-			get
-			{
-				return scalingRuleName1;
-			}
-			set	
-			{
-				scalingRuleName1 = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleName.1", value);
-			}
-		}
-
 		public long? ResourceOwnerId
 		{
 			get
@@ -135,6 +129,162 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				resourceOwnerId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceOwnerId", value.ToString());
+			}
+		}
+
+		public string ScalingRuleId10
+		{
+			get
+			{
+				return scalingRuleId10;
+			}
+			set	
+			{
+				scalingRuleId10 = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleId.10", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string ScalingRuleAri1
+		{
+			get
+			{
+				return scalingRuleAri1;
+			}
+			set	
+			{
+				scalingRuleAri1 = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.1", value);
+			}
+		}
+
+		public string ScalingRuleAri2
+		{
+			get
+			{
+				return scalingRuleAri2;
+			}
+			set	
+			{
+				scalingRuleAri2 = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.2", value);
+			}
+		}
+
+		public string ScalingRuleAri3
+		{
+			get
+			{
+				return scalingRuleAri3;
+			}
+			set	
+			{
+				scalingRuleAri3 = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.3", value);
+			}
+		}
+
+		public string ScalingRuleAri4
+		{
+			get
+			{
+				return scalingRuleAri4;
+			}
+			set	
+			{
+				scalingRuleAri4 = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.4", value);
+			}
+		}
+
+		public string ScalingRuleAri5
+		{
+			get
+			{
+				return scalingRuleAri5;
+			}
+			set	
+			{
+				scalingRuleAri5 = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.5", value);
+			}
+		}
+
+		public string ScalingRuleAri6
+		{
+			get
+			{
+				return scalingRuleAri6;
+			}
+			set	
+			{
+				scalingRuleAri6 = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.6", value);
+			}
+		}
+
+		public string ScalingRuleAri7
+		{
+			get
+			{
+				return scalingRuleAri7;
+			}
+			set	
+			{
+				scalingRuleAri7 = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.7", value);
+			}
+		}
+
+		public string ScalingRuleAri8
+		{
+			get
+			{
+				return scalingRuleAri8;
+			}
+			set	
+			{
+				scalingRuleAri8 = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.8", value);
+			}
+		}
+
+		public bool? ShowAlarmRules
+		{
+			get
+			{
+				return showAlarmRules;
+			}
+			set	
+			{
+				showAlarmRules = value;
+				DictionaryUtil.Add(QueryParameters, "ShowAlarmRules", value.ToString());
+			}
+		}
+
+		public string ScalingRuleName1
+		{
+			get
+			{
+				return scalingRuleName1;
+			}
+			set	
+			{
+				scalingRuleName1 = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingRuleName.1", value);
 			}
 		}
 
@@ -307,19 +457,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string ScalingRuleId10
-		{
-			get
-			{
-				return scalingRuleId10;
-			}
-			set	
-			{
-				scalingRuleId10 = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleId.10", value);
-			}
-		}
-
 		public string ResourceOwnerAccount
 		{
 			get
@@ -346,45 +483,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string ScalingRuleAri1
-		{
-			get
-			{
-				return scalingRuleAri1;
-			}
-			set	
-			{
-				scalingRuleAri1 = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.1", value);
-			}
-		}
-
-		public string ScalingRuleAri2
-		{
-			get
-			{
-				return scalingRuleAri2;
-			}
-			set	
-			{
-				scalingRuleAri2 = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.2", value);
-			}
-		}
-
 		public string ScalingRuleName10
 		{
 			get
@@ -395,32 +493,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scalingRuleName10 = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingRuleName.10", value);
-			}
-		}
-
-		public string ScalingRuleAri3
-		{
-			get
-			{
-				return scalingRuleAri3;
-			}
-			set	
-			{
-				scalingRuleAri3 = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.3", value);
-			}
-		}
-
-		public string ScalingRuleAri4
-		{
-			get
-			{
-				return scalingRuleAri4;
-			}
-			set	
-			{
-				scalingRuleAri4 = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.4", value);
 			}
 		}
 
@@ -437,19 +509,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string ScalingRuleAri5
-		{
-			get
-			{
-				return scalingRuleAri5;
-			}
-			set	
-			{
-				scalingRuleAri5 = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.5", value);
-			}
-		}
-
 		public string ScalingRuleId9
 		{
 			get
@@ -460,32 +519,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scalingRuleId9 = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingRuleId.9", value);
-			}
-		}
-
-		public string ScalingRuleAri6
-		{
-			get
-			{
-				return scalingRuleAri6;
-			}
-			set	
-			{
-				scalingRuleAri6 = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.6", value);
-			}
-		}
-
-		public string ScalingRuleAri7
-		{
-			get
-			{
-				return scalingRuleAri7;
-			}
-			set	
-			{
-				scalingRuleAri7 = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.7", value);
 			}
 		}
 
@@ -502,19 +535,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			}
 		}
 
-		public string ScalingRuleAri8
-		{
-			get
-			{
-				return scalingRuleAri8;
-			}
-			set	
-			{
-				scalingRuleAri8 = value;
-				DictionaryUtil.Add(QueryParameters, "ScalingRuleAri.8", value);
-			}
-		}
-
 		public string ScalingRuleId4
 		{
 			get
@@ -525,19 +545,6 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scalingRuleId4 = value;
 				DictionaryUtil.Add(QueryParameters, "ScalingRuleId.4", value);
-			}
-		}
-
-		public bool? ShowAlarmRules
-		{
-			get
-			{
-				return showAlarmRules;
-			}
-			set	
-			{
-				showAlarmRules = value;
-				DictionaryUtil.Add(QueryParameters, "ShowAlarmRules", value.ToString());
 			}
 		}
 

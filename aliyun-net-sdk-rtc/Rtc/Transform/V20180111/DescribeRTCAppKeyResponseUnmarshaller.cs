@@ -26,13 +26,13 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeRTCAppKeyResponseUnmarshaller
     {
-        public static DescribeRTCAppKeyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRTCAppKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRTCAppKeyResponse describeRTCAppKeyResponse = new DescribeRTCAppKeyResponse();
 
-			describeRTCAppKeyResponse.HttpResponse = context.HttpResponse;
-			describeRTCAppKeyResponse.RequestId = context.StringValue("DescribeRTCAppKey.RequestId");
-			describeRTCAppKeyResponse.AppKey = context.StringValue("DescribeRTCAppKey.AppKey");
+			describeRTCAppKeyResponse.HttpResponse = _ctx.HttpResponse;
+			describeRTCAppKeyResponse.RequestId = _ctx.StringValue("DescribeRTCAppKey.RequestId");
+			describeRTCAppKeyResponse.AppKey = _ctx.StringValue("DescribeRTCAppKey.AppKey");
         
 			return describeRTCAppKeyResponse;
         }

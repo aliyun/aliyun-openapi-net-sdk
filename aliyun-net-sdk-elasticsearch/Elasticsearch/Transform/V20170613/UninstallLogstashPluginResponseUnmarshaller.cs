@@ -26,16 +26,16 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class UninstallLogstashPluginResponseUnmarshaller
     {
-        public static UninstallLogstashPluginResponse Unmarshall(UnmarshallerContext context)
+        public static UninstallLogstashPluginResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UninstallLogstashPluginResponse uninstallLogstashPluginResponse = new UninstallLogstashPluginResponse();
 
-			uninstallLogstashPluginResponse.HttpResponse = context.HttpResponse;
-			uninstallLogstashPluginResponse.RequestId = context.StringValue("UninstallLogstashPlugin.RequestId");
+			uninstallLogstashPluginResponse.HttpResponse = _ctx.HttpResponse;
+			uninstallLogstashPluginResponse.RequestId = _ctx.StringValue("UninstallLogstashPlugin.RequestId");
 
 			List<string> uninstallLogstashPluginResponse_result = new List<string>();
-			for (int i = 0; i < context.Length("UninstallLogstashPlugin.Result.Length"); i++) {
-				uninstallLogstashPluginResponse_result.Add(context.StringValue("UninstallLogstashPlugin.Result["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("UninstallLogstashPlugin.Result.Length"); i++) {
+				uninstallLogstashPluginResponse_result.Add(_ctx.StringValue("UninstallLogstashPlugin.Result["+ i +"]"));
 			}
 			uninstallLogstashPluginResponse.Result = uninstallLogstashPluginResponse_result;
         

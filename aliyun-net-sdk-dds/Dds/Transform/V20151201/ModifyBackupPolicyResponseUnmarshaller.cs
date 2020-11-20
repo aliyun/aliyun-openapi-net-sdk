@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class ModifyBackupPolicyResponseUnmarshaller
     {
-        public static ModifyBackupPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyBackupPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyBackupPolicyResponse modifyBackupPolicyResponse = new ModifyBackupPolicyResponse();
 
-			modifyBackupPolicyResponse.HttpResponse = context.HttpResponse;
-			modifyBackupPolicyResponse.RequestId = context.StringValue("ModifyBackupPolicy.RequestId");
+			modifyBackupPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			modifyBackupPolicyResponse.RequestId = _ctx.StringValue("ModifyBackupPolicy.RequestId");
         
 			return modifyBackupPolicyResponse;
         }

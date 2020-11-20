@@ -26,13 +26,13 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class AddConnectableClusterResponseUnmarshaller
     {
-        public static AddConnectableClusterResponse Unmarshall(UnmarshallerContext context)
+        public static AddConnectableClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddConnectableClusterResponse addConnectableClusterResponse = new AddConnectableClusterResponse();
 
-			addConnectableClusterResponse.HttpResponse = context.HttpResponse;
-			addConnectableClusterResponse.RequestId = context.StringValue("AddConnectableCluster.RequestId");
-			addConnectableClusterResponse.Result = context.BooleanValue("AddConnectableCluster.Result");
+			addConnectableClusterResponse.HttpResponse = _ctx.HttpResponse;
+			addConnectableClusterResponse.RequestId = _ctx.StringValue("AddConnectableCluster.RequestId");
+			addConnectableClusterResponse.Result = _ctx.BooleanValue("AddConnectableCluster.Result");
         
 			return addConnectableClusterResponse;
         }

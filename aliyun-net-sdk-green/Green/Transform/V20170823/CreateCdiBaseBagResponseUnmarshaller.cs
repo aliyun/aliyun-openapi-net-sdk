@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class CreateCdiBaseBagResponseUnmarshaller
     {
-        public static CreateCdiBaseBagResponse Unmarshall(UnmarshallerContext context)
+        public static CreateCdiBaseBagResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateCdiBaseBagResponse createCdiBaseBagResponse = new CreateCdiBaseBagResponse();
 
-			createCdiBaseBagResponse.HttpResponse = context.HttpResponse;
-			createCdiBaseBagResponse.Code = context.StringValue("CreateCdiBaseBag.Code");
-			createCdiBaseBagResponse.Message = context.StringValue("CreateCdiBaseBag.Message");
-			createCdiBaseBagResponse.OrderId = context.StringValue("CreateCdiBaseBag.OrderId");
-			createCdiBaseBagResponse.InstanceId = context.StringValue("CreateCdiBaseBag.InstanceId");
-			createCdiBaseBagResponse.RequestId = context.StringValue("CreateCdiBaseBag.RequestId");
+			createCdiBaseBagResponse.HttpResponse = _ctx.HttpResponse;
+			createCdiBaseBagResponse.Code = _ctx.StringValue("CreateCdiBaseBag.Code");
+			createCdiBaseBagResponse.Message = _ctx.StringValue("CreateCdiBaseBag.Message");
+			createCdiBaseBagResponse.OrderId = _ctx.StringValue("CreateCdiBaseBag.OrderId");
+			createCdiBaseBagResponse.InstanceId = _ctx.StringValue("CreateCdiBaseBag.InstanceId");
+			createCdiBaseBagResponse.RequestId = _ctx.StringValue("CreateCdiBaseBag.RequestId");
         
 			return createCdiBaseBagResponse;
         }

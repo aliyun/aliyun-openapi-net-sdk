@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class EvaluateResourceResponseUnmarshaller
     {
-        public static EvaluateResourceResponse Unmarshall(UnmarshallerContext context)
+        public static EvaluateResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EvaluateResourceResponse evaluateResourceResponse = new EvaluateResourceResponse();
 
-			evaluateResourceResponse.HttpResponse = context.HttpResponse;
-			evaluateResourceResponse.RequestId = context.StringValue("EvaluateResource.RequestId");
-			evaluateResourceResponse.Engine = context.StringValue("EvaluateResource.Engine");
-			evaluateResourceResponse.EngineVersion = context.StringValue("EvaluateResource.EngineVersion");
-			evaluateResourceResponse.DBInstanceAvailable = context.StringValue("EvaluateResource.DBInstanceAvailable");
+			evaluateResourceResponse.HttpResponse = _ctx.HttpResponse;
+			evaluateResourceResponse.RequestId = _ctx.StringValue("EvaluateResource.RequestId");
+			evaluateResourceResponse.Engine = _ctx.StringValue("EvaluateResource.Engine");
+			evaluateResourceResponse.EngineVersion = _ctx.StringValue("EvaluateResource.EngineVersion");
+			evaluateResourceResponse.DBInstanceAvailable = _ctx.StringValue("EvaluateResource.DBInstanceAvailable");
         
 			return evaluateResourceResponse;
         }

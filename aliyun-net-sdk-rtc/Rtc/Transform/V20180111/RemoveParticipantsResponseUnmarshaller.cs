@@ -26,20 +26,20 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class RemoveParticipantsResponseUnmarshaller
     {
-        public static RemoveParticipantsResponse Unmarshall(UnmarshallerContext context)
+        public static RemoveParticipantsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RemoveParticipantsResponse removeParticipantsResponse = new RemoveParticipantsResponse();
 
-			removeParticipantsResponse.HttpResponse = context.HttpResponse;
-			removeParticipantsResponse.RequestId = context.StringValue("RemoveParticipants.RequestId");
-			removeParticipantsResponse.ConferenceId = context.StringValue("RemoveParticipants.ConferenceId");
+			removeParticipantsResponse.HttpResponse = _ctx.HttpResponse;
+			removeParticipantsResponse.RequestId = _ctx.StringValue("RemoveParticipants.RequestId");
+			removeParticipantsResponse.ConferenceId = _ctx.StringValue("RemoveParticipants.ConferenceId");
 
 			List<RemoveParticipantsResponse.RemoveParticipants_Participant> removeParticipantsResponse_participants = new List<RemoveParticipantsResponse.RemoveParticipants_Participant>();
-			for (int i = 0; i < context.Length("RemoveParticipants.Participants.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("RemoveParticipants.Participants.Length"); i++) {
 				RemoveParticipantsResponse.RemoveParticipants_Participant participant = new RemoveParticipantsResponse.RemoveParticipants_Participant();
-				participant.Id = context.StringValue("RemoveParticipants.Participants["+ i +"].Id");
-				participant.Code = context.StringValue("RemoveParticipants.Participants["+ i +"].Code");
-				participant.Message = context.StringValue("RemoveParticipants.Participants["+ i +"].Message");
+				participant.Id = _ctx.StringValue("RemoveParticipants.Participants["+ i +"].Id");
+				participant.Code = _ctx.StringValue("RemoveParticipants.Participants["+ i +"].Code");
+				participant.Message = _ctx.StringValue("RemoveParticipants.Participants["+ i +"].Message");
 
 				removeParticipantsResponse_participants.Add(participant);
 			}

@@ -56,6 +56,17 @@ namespace Aliyun.Acs.imm.Transform.V20170906
 			address.District = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Address.District");
 			address.Township = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Address.Township");
 			mediaFormat.Address = address;
+
+			GetMediaMetaResponse.GetMediaMeta_MediaMeta.GetMediaMeta_MediaFormat.GetMediaMeta_Tag tag = new GetMediaMetaResponse.GetMediaMeta_MediaMeta.GetMediaMeta_MediaFormat.GetMediaMeta_Tag();
+			tag.Language = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Tag.Language");
+			tag.CreationTime = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Tag.CreationTime");
+			tag.Album = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Tag.Album");
+			tag.AlbumArtist = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Tag.AlbumArtist");
+			tag.Artist = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Tag.Artist");
+			tag.Composer = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Tag.Composer");
+			tag.Title = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Tag.Title");
+			tag.Performer = context.StringValue("GetMediaMeta.MediaMeta.MediaFormat.Tag.Performer");
+			mediaFormat.Tag = tag;
 			mediaMeta.MediaFormat = mediaFormat;
 
 			GetMediaMetaResponse.GetMediaMeta_MediaMeta.GetMediaMeta_MediaStreams mediaStreams = new GetMediaMetaResponse.GetMediaMeta_MediaMeta.GetMediaMeta_MediaStreams();

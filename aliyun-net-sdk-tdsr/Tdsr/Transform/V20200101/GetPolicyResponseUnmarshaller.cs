@@ -26,16 +26,16 @@ namespace Aliyun.Acs.tdsr.Transform.V20200101
 {
     public class GetPolicyResponseUnmarshaller
     {
-        public static GetPolicyResponse Unmarshall(UnmarshallerContext context)
+        public static GetPolicyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetPolicyResponse getPolicyResponse = new GetPolicyResponse();
 
-			getPolicyResponse.HttpResponse = context.HttpResponse;
-			getPolicyResponse.RequestId = context.StringValue("GetPolicy.RequestId");
-			getPolicyResponse.Success = context.BooleanValue("GetPolicy.Success");
-			getPolicyResponse.ErrMessage = context.StringValue("GetPolicy.ErrMessage");
-			getPolicyResponse.Data = context.StringValue("GetPolicy.Data");
-			getPolicyResponse.ObjectString = context.StringValue("GetPolicy.ObjectString");
+			getPolicyResponse.HttpResponse = _ctx.HttpResponse;
+			getPolicyResponse.RequestId = _ctx.StringValue("GetPolicy.RequestId");
+			getPolicyResponse.Success = _ctx.BooleanValue("GetPolicy.Success");
+			getPolicyResponse.ErrMessage = _ctx.StringValue("GetPolicy.ErrMessage");
+			getPolicyResponse.Data = _ctx.StringValue("GetPolicy.Data");
+			getPolicyResponse.ObjectString = _ctx.StringValue("GetPolicy.ObjectString");
         
 			return getPolicyResponse;
         }

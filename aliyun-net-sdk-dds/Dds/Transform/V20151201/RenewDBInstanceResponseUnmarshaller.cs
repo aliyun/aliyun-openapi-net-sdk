@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class RenewDBInstanceResponseUnmarshaller
     {
-        public static RenewDBInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RenewDBInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RenewDBInstanceResponse renewDBInstanceResponse = new RenewDBInstanceResponse();
 
-			renewDBInstanceResponse.HttpResponse = context.HttpResponse;
-			renewDBInstanceResponse.RequestId = context.StringValue("RenewDBInstance.RequestId");
-			renewDBInstanceResponse.OrderId = context.StringValue("RenewDBInstance.OrderId");
+			renewDBInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			renewDBInstanceResponse.RequestId = _ctx.StringValue("RenewDBInstance.RequestId");
+			renewDBInstanceResponse.OrderId = _ctx.StringValue("RenewDBInstance.OrderId");
         
 			return renewDBInstanceResponse;
         }

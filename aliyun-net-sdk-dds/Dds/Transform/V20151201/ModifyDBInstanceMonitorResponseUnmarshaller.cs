@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class ModifyDBInstanceMonitorResponseUnmarshaller
     {
-        public static ModifyDBInstanceMonitorResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDBInstanceMonitorResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDBInstanceMonitorResponse modifyDBInstanceMonitorResponse = new ModifyDBInstanceMonitorResponse();
 
-			modifyDBInstanceMonitorResponse.HttpResponse = context.HttpResponse;
-			modifyDBInstanceMonitorResponse.RequestId = context.StringValue("ModifyDBInstanceMonitor.RequestId");
+			modifyDBInstanceMonitorResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDBInstanceMonitorResponse.RequestId = _ctx.StringValue("ModifyDBInstanceMonitor.RequestId");
         
 			return modifyDBInstanceMonitorResponse;
         }

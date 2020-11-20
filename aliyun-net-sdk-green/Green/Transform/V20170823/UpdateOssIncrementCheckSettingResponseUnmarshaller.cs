@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class UpdateOssIncrementCheckSettingResponseUnmarshaller
     {
-        public static UpdateOssIncrementCheckSettingResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateOssIncrementCheckSettingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateOssIncrementCheckSettingResponse updateOssIncrementCheckSettingResponse = new UpdateOssIncrementCheckSettingResponse();
 
-			updateOssIncrementCheckSettingResponse.HttpResponse = context.HttpResponse;
-			updateOssIncrementCheckSettingResponse.RequestId = context.StringValue("UpdateOssIncrementCheckSetting.RequestId");
+			updateOssIncrementCheckSettingResponse.HttpResponse = _ctx.HttpResponse;
+			updateOssIncrementCheckSettingResponse.RequestId = _ctx.StringValue("UpdateOssIncrementCheckSetting.RequestId");
         
 			return updateOssIncrementCheckSettingResponse;
         }

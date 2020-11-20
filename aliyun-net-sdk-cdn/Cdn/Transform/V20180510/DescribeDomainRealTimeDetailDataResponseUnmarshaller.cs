@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainRealTimeDetailDataResponseUnmarshaller
     {
-        public static DescribeDomainRealTimeDetailDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainRealTimeDetailDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainRealTimeDetailDataResponse describeDomainRealTimeDetailDataResponse = new DescribeDomainRealTimeDetailDataResponse();
 
-			describeDomainRealTimeDetailDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainRealTimeDetailDataResponse.RequestId = context.StringValue("DescribeDomainRealTimeDetailData.RequestId");
-			describeDomainRealTimeDetailDataResponse.Data = context.StringValue("DescribeDomainRealTimeDetailData.Data");
+			describeDomainRealTimeDetailDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainRealTimeDetailDataResponse.RequestId = _ctx.StringValue("DescribeDomainRealTimeDetailData.RequestId");
+			describeDomainRealTimeDetailDataResponse.Data = _ctx.StringValue("DescribeDomainRealTimeDetailData.Data");
         
 			return describeDomainRealTimeDetailDataResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class CreateRecommendationTaskResponseUnmarshaller
     {
-        public static CreateRecommendationTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateRecommendationTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateRecommendationTaskResponse createRecommendationTaskResponse = new CreateRecommendationTaskResponse();
 
-			createRecommendationTaskResponse.HttpResponse = context.HttpResponse;
-			createRecommendationTaskResponse.RequestId = context.StringValue("CreateRecommendationTask.RequestId");
+			createRecommendationTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createRecommendationTaskResponse.RequestId = _ctx.StringValue("CreateRecommendationTask.RequestId");
         
 			return createRecommendationTaskResponse;
         }

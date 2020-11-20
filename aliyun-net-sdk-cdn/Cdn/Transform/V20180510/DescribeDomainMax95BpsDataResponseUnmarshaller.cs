@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class DescribeDomainMax95BpsDataResponseUnmarshaller
     {
-        public static DescribeDomainMax95BpsDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainMax95BpsDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainMax95BpsDataResponse describeDomainMax95BpsDataResponse = new DescribeDomainMax95BpsDataResponse();
 
-			describeDomainMax95BpsDataResponse.HttpResponse = context.HttpResponse;
-			describeDomainMax95BpsDataResponse.RequestId = context.StringValue("DescribeDomainMax95BpsData.RequestId");
-			describeDomainMax95BpsDataResponse.DomainName = context.StringValue("DescribeDomainMax95BpsData.DomainName");
-			describeDomainMax95BpsDataResponse.StartTime = context.StringValue("DescribeDomainMax95BpsData.StartTime");
-			describeDomainMax95BpsDataResponse.EndTime = context.StringValue("DescribeDomainMax95BpsData.EndTime");
-			describeDomainMax95BpsDataResponse.Max95Bps = context.StringValue("DescribeDomainMax95BpsData.Max95Bps");
-			describeDomainMax95BpsDataResponse.DomesticMax95Bps = context.StringValue("DescribeDomainMax95BpsData.DomesticMax95Bps");
-			describeDomainMax95BpsDataResponse.OverseasMax95Bps = context.StringValue("DescribeDomainMax95BpsData.OverseasMax95Bps");
+			describeDomainMax95BpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainMax95BpsDataResponse.RequestId = _ctx.StringValue("DescribeDomainMax95BpsData.RequestId");
+			describeDomainMax95BpsDataResponse.DomainName = _ctx.StringValue("DescribeDomainMax95BpsData.DomainName");
+			describeDomainMax95BpsDataResponse.StartTime = _ctx.StringValue("DescribeDomainMax95BpsData.StartTime");
+			describeDomainMax95BpsDataResponse.EndTime = _ctx.StringValue("DescribeDomainMax95BpsData.EndTime");
+			describeDomainMax95BpsDataResponse.Max95Bps = _ctx.StringValue("DescribeDomainMax95BpsData.Max95Bps");
+			describeDomainMax95BpsDataResponse.DomesticMax95Bps = _ctx.StringValue("DescribeDomainMax95BpsData.DomesticMax95Bps");
+			describeDomainMax95BpsDataResponse.OverseasMax95Bps = _ctx.StringValue("DescribeDomainMax95BpsData.OverseasMax95Bps");
         
 			return describeDomainMax95BpsDataResponse;
         }

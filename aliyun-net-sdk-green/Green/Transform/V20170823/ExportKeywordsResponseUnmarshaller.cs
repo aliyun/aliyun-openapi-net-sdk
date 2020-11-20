@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Green.Transform.V20170823
 {
     public class ExportKeywordsResponseUnmarshaller
     {
-        public static ExportKeywordsResponse Unmarshall(UnmarshallerContext context)
+        public static ExportKeywordsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExportKeywordsResponse exportKeywordsResponse = new ExportKeywordsResponse();
 
-			exportKeywordsResponse.HttpResponse = context.HttpResponse;
-			exportKeywordsResponse.RequestId = context.StringValue("ExportKeywords.RequestId");
-			exportKeywordsResponse.DownloadUrl = context.StringValue("ExportKeywords.DownloadUrl");
+			exportKeywordsResponse.HttpResponse = _ctx.HttpResponse;
+			exportKeywordsResponse.RequestId = _ctx.StringValue("ExportKeywords.RequestId");
+			exportKeywordsResponse.DownloadUrl = _ctx.StringValue("ExportKeywords.DownloadUrl");
         
 			return exportKeywordsResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class PurgeInstanceResponseUnmarshaller
     {
-        public static PurgeInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static PurgeInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PurgeInstanceResponse purgeInstanceResponse = new PurgeInstanceResponse();
 
-			purgeInstanceResponse.HttpResponse = context.HttpResponse;
-			purgeInstanceResponse.RequestId = context.StringValue("PurgeInstance.RequestId");
+			purgeInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			purgeInstanceResponse.RequestId = _ctx.StringValue("PurgeInstance.RequestId");
         
 			return purgeInstanceResponse;
         }

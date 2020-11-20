@@ -26,21 +26,22 @@ namespace Aliyun.Acs.elasticsearch.Transform.V20170613
 {
     public class DescribePipelineManagementConfigResponseUnmarshaller
     {
-        public static DescribePipelineManagementConfigResponse Unmarshall(UnmarshallerContext context)
+        public static DescribePipelineManagementConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribePipelineManagementConfigResponse describePipelineManagementConfigResponse = new DescribePipelineManagementConfigResponse();
 
-			describePipelineManagementConfigResponse.HttpResponse = context.HttpResponse;
-			describePipelineManagementConfigResponse.RequestId = context.StringValue("DescribePipelineManagementConfig.RequestId");
+			describePipelineManagementConfigResponse.HttpResponse = _ctx.HttpResponse;
+			describePipelineManagementConfigResponse.RequestId = _ctx.StringValue("DescribePipelineManagementConfig.RequestId");
 
 			DescribePipelineManagementConfigResponse.DescribePipelineManagementConfig_Result result = new DescribePipelineManagementConfigResponse.DescribePipelineManagementConfig_Result();
-			result.PipelineManagementType = context.StringValue("DescribePipelineManagementConfig.Result.pipelineManagementType");
-			result.Endpoints = context.StringValue("DescribePipelineManagementConfig.Result.endpoints");
-			result.UserName = context.StringValue("DescribePipelineManagementConfig.Result.userName");
+			result.PipelineManagementType = _ctx.StringValue("DescribePipelineManagementConfig.Result.pipelineManagementType");
+			result.Endpoints = _ctx.StringValue("DescribePipelineManagementConfig.Result.endpoints");
+			result.UserName = _ctx.StringValue("DescribePipelineManagementConfig.Result.userName");
+			result.EsInstanceId = _ctx.StringValue("DescribePipelineManagementConfig.Result.esInstanceId");
 
 			List<string> result_pipelineIds = new List<string>();
-			for (int i = 0; i < context.Length("DescribePipelineManagementConfig.Result.PipelineIds.Length"); i++) {
-				result_pipelineIds.Add(context.StringValue("DescribePipelineManagementConfig.Result.PipelineIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribePipelineManagementConfig.Result.PipelineIds.Length"); i++) {
+				result_pipelineIds.Add(_ctx.StringValue("DescribePipelineManagementConfig.Result.PipelineIds["+ i +"]"));
 			}
 			result.PipelineIds = result_pipelineIds;
 			describePipelineManagementConfigResponse.Result = result;

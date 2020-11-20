@@ -42,7 +42,13 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private long? resourceOwnerId;
 
+		private string platform;
+
 		private string nextToken;
+
+		private string instanceType;
+
+		private string instanceChargeType;
 
 		private string resourceOwnerAccount;
 
@@ -53,6 +59,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string privatePoolOptionsIds;
 
 		private int? maxResults;
+
+		private string zoneId;
 
 		public long? ResourceOwnerId
 		{
@@ -67,6 +75,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public string Platform
+		{
+			get
+			{
+				return platform;
+			}
+			set	
+			{
+				platform = value;
+				DictionaryUtil.Add(QueryParameters, "Platform", value);
+			}
+		}
+
 		public string NextToken
 		{
 			get
@@ -77,6 +98,32 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				nextToken = value;
 				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public string InstanceType
+		{
+			get
+			{
+				return instanceType;
+			}
+			set	
+			{
+				instanceType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceType", value);
+			}
+		}
+
+		public string InstanceChargeType
+		{
+			get
+			{
+				return instanceChargeType;
+			}
+			set	
+			{
+				instanceChargeType = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceChargeType", value);
 			}
 		}
 
@@ -142,6 +189,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				maxResults = value;
 				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public string ZoneId
+		{
+			get
+			{
+				return zoneId;
+			}
+			set	
+			{
+				zoneId = value;
+				DictionaryUtil.Add(QueryParameters, "ZoneId", value);
 			}
 		}
 

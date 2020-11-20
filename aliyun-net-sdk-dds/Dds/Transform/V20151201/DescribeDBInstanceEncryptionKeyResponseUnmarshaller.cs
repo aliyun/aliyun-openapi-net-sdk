@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Dds.Transform.V20151201
 {
     public class DescribeDBInstanceEncryptionKeyResponseUnmarshaller
     {
-        public static DescribeDBInstanceEncryptionKeyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDBInstanceEncryptionKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDBInstanceEncryptionKeyResponse describeDBInstanceEncryptionKeyResponse = new DescribeDBInstanceEncryptionKeyResponse();
 
-			describeDBInstanceEncryptionKeyResponse.HttpResponse = context.HttpResponse;
-			describeDBInstanceEncryptionKeyResponse.RequestId = context.StringValue("DescribeDBInstanceEncryptionKey.RequestId");
-			describeDBInstanceEncryptionKeyResponse.EncryptionKey = context.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKey");
-			describeDBInstanceEncryptionKeyResponse.Description = context.StringValue("DescribeDBInstanceEncryptionKey.Description");
-			describeDBInstanceEncryptionKeyResponse.KeyUsage = context.StringValue("DescribeDBInstanceEncryptionKey.KeyUsage");
-			describeDBInstanceEncryptionKeyResponse.DeleteDate = context.StringValue("DescribeDBInstanceEncryptionKey.DeleteDate");
-			describeDBInstanceEncryptionKeyResponse.Creator = context.StringValue("DescribeDBInstanceEncryptionKey.Creator");
-			describeDBInstanceEncryptionKeyResponse.EncryptionKeyStatus = context.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyStatus");
-			describeDBInstanceEncryptionKeyResponse.Origin = context.StringValue("DescribeDBInstanceEncryptionKey.Origin");
-			describeDBInstanceEncryptionKeyResponse.MaterialExpireTime = context.StringValue("DescribeDBInstanceEncryptionKey.MaterialExpireTime");
+			describeDBInstanceEncryptionKeyResponse.HttpResponse = _ctx.HttpResponse;
+			describeDBInstanceEncryptionKeyResponse.RequestId = _ctx.StringValue("DescribeDBInstanceEncryptionKey.RequestId");
+			describeDBInstanceEncryptionKeyResponse.EncryptionKey = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKey");
+			describeDBInstanceEncryptionKeyResponse.Description = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Description");
+			describeDBInstanceEncryptionKeyResponse.KeyUsage = _ctx.StringValue("DescribeDBInstanceEncryptionKey.KeyUsage");
+			describeDBInstanceEncryptionKeyResponse.DeleteDate = _ctx.StringValue("DescribeDBInstanceEncryptionKey.DeleteDate");
+			describeDBInstanceEncryptionKeyResponse.Creator = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Creator");
+			describeDBInstanceEncryptionKeyResponse.EncryptionKeyStatus = _ctx.StringValue("DescribeDBInstanceEncryptionKey.EncryptionKeyStatus");
+			describeDBInstanceEncryptionKeyResponse.Origin = _ctx.StringValue("DescribeDBInstanceEncryptionKey.Origin");
+			describeDBInstanceEncryptionKeyResponse.MaterialExpireTime = _ctx.StringValue("DescribeDBInstanceEncryptionKey.MaterialExpireTime");
         
 			return describeDBInstanceEncryptionKeyResponse;
         }

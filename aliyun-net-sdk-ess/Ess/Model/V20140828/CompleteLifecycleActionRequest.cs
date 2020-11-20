@@ -32,9 +32,17 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public CompleteLifecycleActionRequest()
             : base("Ess", "2014-08-28", "CompleteLifecycleAction", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private string lifecycleActionToken;
+
+		private string clientToken;
 
 		private string resourceOwnerAccount;
 
@@ -56,6 +64,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				lifecycleActionToken = value;
 				DictionaryUtil.Add(QueryParameters, "LifecycleActionToken", value);
+			}
+		}
+
+		public string ClientToken
+		{
+			get
+			{
+				return clientToken;
+			}
+			set	
+			{
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 

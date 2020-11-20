@@ -26,26 +26,26 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class DescribeDomainAverageResponseTimeResponseUnmarshaller
     {
-        public static DescribeDomainAverageResponseTimeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainAverageResponseTimeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainAverageResponseTimeResponse describeDomainAverageResponseTimeResponse = new DescribeDomainAverageResponseTimeResponse();
 
-			describeDomainAverageResponseTimeResponse.HttpResponse = context.HttpResponse;
-			describeDomainAverageResponseTimeResponse.RequestId = context.StringValue("DescribeDomainAverageResponseTime.RequestId");
-			describeDomainAverageResponseTimeResponse.DomainName = context.StringValue("DescribeDomainAverageResponseTime.DomainName");
-			describeDomainAverageResponseTimeResponse.StartTime = context.StringValue("DescribeDomainAverageResponseTime.StartTime");
-			describeDomainAverageResponseTimeResponse.EndTime = context.StringValue("DescribeDomainAverageResponseTime.EndTime");
-			describeDomainAverageResponseTimeResponse.LocationNameEn = context.StringValue("DescribeDomainAverageResponseTime.LocationNameEn");
-			describeDomainAverageResponseTimeResponse.IspNameEn = context.StringValue("DescribeDomainAverageResponseTime.IspNameEn");
-			describeDomainAverageResponseTimeResponse.LocationName = context.StringValue("DescribeDomainAverageResponseTime.LocationName");
-			describeDomainAverageResponseTimeResponse.IspName = context.StringValue("DescribeDomainAverageResponseTime.IspName");
-			describeDomainAverageResponseTimeResponse.DataInterval = context.StringValue("DescribeDomainAverageResponseTime.DataInterval");
+			describeDomainAverageResponseTimeResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainAverageResponseTimeResponse.RequestId = _ctx.StringValue("DescribeDomainAverageResponseTime.RequestId");
+			describeDomainAverageResponseTimeResponse.DomainName = _ctx.StringValue("DescribeDomainAverageResponseTime.DomainName");
+			describeDomainAverageResponseTimeResponse.StartTime = _ctx.StringValue("DescribeDomainAverageResponseTime.StartTime");
+			describeDomainAverageResponseTimeResponse.EndTime = _ctx.StringValue("DescribeDomainAverageResponseTime.EndTime");
+			describeDomainAverageResponseTimeResponse.LocationNameEn = _ctx.StringValue("DescribeDomainAverageResponseTime.LocationNameEn");
+			describeDomainAverageResponseTimeResponse.IspNameEn = _ctx.StringValue("DescribeDomainAverageResponseTime.IspNameEn");
+			describeDomainAverageResponseTimeResponse.LocationName = _ctx.StringValue("DescribeDomainAverageResponseTime.LocationName");
+			describeDomainAverageResponseTimeResponse.IspName = _ctx.StringValue("DescribeDomainAverageResponseTime.IspName");
+			describeDomainAverageResponseTimeResponse.DataInterval = _ctx.StringValue("DescribeDomainAverageResponseTime.DataInterval");
 
 			List<DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule> describeDomainAverageResponseTimeResponse_avgRTPerInterval = new List<DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDomainAverageResponseTime.AvgRTPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomainAverageResponseTime.AvgRTPerInterval.Length"); i++) {
 				DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule dataModule = new DescribeDomainAverageResponseTimeResponse.DescribeDomainAverageResponseTime_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"].TimeStamp");
-				dataModule._Value = context.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"].Value");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"].TimeStamp");
+				dataModule._Value = _ctx.StringValue("DescribeDomainAverageResponseTime.AvgRTPerInterval["+ i +"].Value");
 
 				describeDomainAverageResponseTimeResponse_avgRTPerInterval.Add(dataModule);
 			}

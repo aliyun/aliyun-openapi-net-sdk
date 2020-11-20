@@ -26,11 +26,11 @@ namespace Aliyun.Acs.Green.Transform.V20180509
 {
     public class DeleteGroupsResponseUnmarshaller
     {
-        public static DeleteGroupsResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGroupsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGroupsResponse deleteGroupsResponse = new DeleteGroupsResponse();
 
-			deleteGroupsResponse.HttpResponse = context.HttpResponse;
+			deleteGroupsResponse.HttpResponse = _ctx.HttpResponse;
         
 			return deleteGroupsResponse;
         }

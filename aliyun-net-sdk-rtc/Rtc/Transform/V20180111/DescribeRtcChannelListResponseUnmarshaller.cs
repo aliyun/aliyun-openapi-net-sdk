@@ -26,27 +26,27 @@ namespace Aliyun.Acs.rtc.Transform.V20180111
 {
     public class DescribeRtcChannelListResponseUnmarshaller
     {
-        public static DescribeRtcChannelListResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeRtcChannelListResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeRtcChannelListResponse describeRtcChannelListResponse = new DescribeRtcChannelListResponse();
 
-			describeRtcChannelListResponse.HttpResponse = context.HttpResponse;
-			describeRtcChannelListResponse.RequestId = context.StringValue("DescribeRtcChannelList.RequestId");
-			describeRtcChannelListResponse.PageSize = context.LongValue("DescribeRtcChannelList.PageSize");
-			describeRtcChannelListResponse.PageNo = context.LongValue("DescribeRtcChannelList.PageNo");
-			describeRtcChannelListResponse.TotalCnt = context.LongValue("DescribeRtcChannelList.TotalCnt");
+			describeRtcChannelListResponse.HttpResponse = _ctx.HttpResponse;
+			describeRtcChannelListResponse.RequestId = _ctx.StringValue("DescribeRtcChannelList.RequestId");
+			describeRtcChannelListResponse.PageSize = _ctx.LongValue("DescribeRtcChannelList.PageSize");
+			describeRtcChannelListResponse.PageNo = _ctx.LongValue("DescribeRtcChannelList.PageNo");
+			describeRtcChannelListResponse.TotalCnt = _ctx.LongValue("DescribeRtcChannelList.TotalCnt");
 
 			List<DescribeRtcChannelListResponse.DescribeRtcChannelList_ChannelListItem> describeRtcChannelListResponse_channelList = new List<DescribeRtcChannelListResponse.DescribeRtcChannelList_ChannelListItem>();
-			for (int i = 0; i < context.Length("DescribeRtcChannelList.ChannelList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeRtcChannelList.ChannelList.Length"); i++) {
 				DescribeRtcChannelListResponse.DescribeRtcChannelList_ChannelListItem channelListItem = new DescribeRtcChannelListResponse.DescribeRtcChannelList_ChannelListItem();
-				channelListItem.ChannelId = context.StringValue("DescribeRtcChannelList.ChannelList["+ i +"].ChannelId");
-				channelListItem.StartTime = context.StringValue("DescribeRtcChannelList.ChannelList["+ i +"].StartTime");
-				channelListItem.EndTime = context.StringValue("DescribeRtcChannelList.ChannelList["+ i +"].EndTime");
-				channelListItem.TotalUserCnt = context.LongValue("DescribeRtcChannelList.ChannelList["+ i +"].TotalUserCnt");
+				channelListItem.ChannelId = _ctx.StringValue("DescribeRtcChannelList.ChannelList["+ i +"].ChannelId");
+				channelListItem.StartTime = _ctx.StringValue("DescribeRtcChannelList.ChannelList["+ i +"].StartTime");
+				channelListItem.EndTime = _ctx.StringValue("DescribeRtcChannelList.ChannelList["+ i +"].EndTime");
+				channelListItem.TotalUserCnt = _ctx.LongValue("DescribeRtcChannelList.ChannelList["+ i +"].TotalUserCnt");
 
 				List<string> channelListItem_callArea = new List<string>();
-				for (int j = 0; j < context.Length("DescribeRtcChannelList.ChannelList["+ i +"].CallArea.Length"); j++) {
-					channelListItem_callArea.Add(context.StringValue("DescribeRtcChannelList.ChannelList["+ i +"].CallArea["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeRtcChannelList.ChannelList["+ i +"].CallArea.Length"); j++) {
+					channelListItem_callArea.Add(_ctx.StringValue("DescribeRtcChannelList.ChannelList["+ i +"].CallArea["+ j +"]"));
 				}
 				channelListItem.CallArea = channelListItem_callArea;
 

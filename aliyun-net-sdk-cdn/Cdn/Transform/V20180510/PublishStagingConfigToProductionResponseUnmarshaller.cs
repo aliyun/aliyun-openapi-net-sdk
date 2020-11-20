@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 {
     public class PublishStagingConfigToProductionResponseUnmarshaller
     {
-        public static PublishStagingConfigToProductionResponse Unmarshall(UnmarshallerContext context)
+        public static PublishStagingConfigToProductionResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PublishStagingConfigToProductionResponse publishStagingConfigToProductionResponse = new PublishStagingConfigToProductionResponse();
 
-			publishStagingConfigToProductionResponse.HttpResponse = context.HttpResponse;
-			publishStagingConfigToProductionResponse.RequestId = context.StringValue("PublishStagingConfigToProduction.RequestId");
+			publishStagingConfigToProductionResponse.HttpResponse = _ctx.HttpResponse;
+			publishStagingConfigToProductionResponse.RequestId = _ctx.StringValue("PublishStagingConfigToProduction.RequestId");
         
 			return publishStagingConfigToProductionResponse;
         }

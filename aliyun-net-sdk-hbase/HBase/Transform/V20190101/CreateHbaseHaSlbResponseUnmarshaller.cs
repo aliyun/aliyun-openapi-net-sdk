@@ -26,12 +26,12 @@ namespace Aliyun.Acs.HBase.Transform.V20190101
 {
     public class CreateHbaseHaSlbResponseUnmarshaller
     {
-        public static CreateHbaseHaSlbResponse Unmarshall(UnmarshallerContext context)
+        public static CreateHbaseHaSlbResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateHbaseHaSlbResponse createHbaseHaSlbResponse = new CreateHbaseHaSlbResponse();
 
-			createHbaseHaSlbResponse.HttpResponse = context.HttpResponse;
-			createHbaseHaSlbResponse.RequestId = context.StringValue("CreateHbaseHaSlb.RequestId");
+			createHbaseHaSlbResponse.HttpResponse = _ctx.HttpResponse;
+			createHbaseHaSlbResponse.RequestId = _ctx.StringValue("CreateHbaseHaSlb.RequestId");
         
 			return createHbaseHaSlbResponse;
         }

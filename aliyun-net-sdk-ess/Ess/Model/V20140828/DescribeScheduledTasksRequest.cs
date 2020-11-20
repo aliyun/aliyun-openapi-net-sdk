@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -32,6 +33,12 @@ namespace Aliyun.Acs.Ess.Model.V20140828
         public DescribeScheduledTasksRequest()
             : base("Ess", "2014-08-28", "DescribeScheduledTasks", "ess", "openAPI")
         {
+            if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
+            {
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+            }
+			Method = MethodType.POST;
         }
 
 		private long? resourceOwnerId;
@@ -63,6 +70,8 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 		private string scheduledTaskName18;
 
 		private string scheduledTaskId20;
+
+		private string scalingGroupId;
 
 		private string scheduledTaskName13;
 
@@ -358,6 +367,19 @@ namespace Aliyun.Acs.Ess.Model.V20140828
 			{
 				scheduledTaskId20 = value;
 				DictionaryUtil.Add(QueryParameters, "ScheduledTaskId.20", value);
+			}
+		}
+
+		public string ScalingGroupId
+		{
+			get
+			{
+				return scalingGroupId;
+			}
+			set	
+			{
+				scalingGroupId = value;
+				DictionaryUtil.Add(QueryParameters, "ScalingGroupId", value);
 			}
 		}
 

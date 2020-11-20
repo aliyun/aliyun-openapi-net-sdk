@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Config.Transform.V20190108
 {
     public class DescribeDiscoveredResourceResponseUnmarshaller
     {
-        public static DescribeDiscoveredResourceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDiscoveredResourceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDiscoveredResourceResponse describeDiscoveredResourceResponse = new DescribeDiscoveredResourceResponse();
 
-			describeDiscoveredResourceResponse.HttpResponse = context.HttpResponse;
-			describeDiscoveredResourceResponse.RequestId = context.StringValue("DescribeDiscoveredResource.RequestId");
+			describeDiscoveredResourceResponse.HttpResponse = _ctx.HttpResponse;
+			describeDiscoveredResourceResponse.RequestId = _ctx.StringValue("DescribeDiscoveredResource.RequestId");
 
 			DescribeDiscoveredResourceResponse.DescribeDiscoveredResource_DiscoveredResourceDetail discoveredResourceDetail = new DescribeDiscoveredResourceResponse.DescribeDiscoveredResource_DiscoveredResourceDetail();
-			discoveredResourceDetail.AccountId = context.LongValue("DescribeDiscoveredResource.DiscoveredResourceDetail.AccountId");
-			discoveredResourceDetail.ResourceId = context.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.ResourceId");
-			discoveredResourceDetail.ResourceType = context.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.ResourceType");
-			discoveredResourceDetail.ResourceName = context.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.ResourceName");
-			discoveredResourceDetail.Region = context.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.Region");
-			discoveredResourceDetail.AvailabilityZone = context.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.AvailabilityZone");
-			discoveredResourceDetail.ResourceCreationTime = context.LongValue("DescribeDiscoveredResource.DiscoveredResourceDetail.ResourceCreationTime");
-			discoveredResourceDetail.ResourceStatus = context.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.ResourceStatus");
-			discoveredResourceDetail.ResourceDeleted = context.IntegerValue("DescribeDiscoveredResource.DiscoveredResourceDetail.ResourceDeleted");
-			discoveredResourceDetail.Tags = context.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.Tags");
-			discoveredResourceDetail.Configuration = context.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.Configuration");
+			discoveredResourceDetail.AccountId = _ctx.LongValue("DescribeDiscoveredResource.DiscoveredResourceDetail.AccountId");
+			discoveredResourceDetail.ResourceId = _ctx.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.ResourceId");
+			discoveredResourceDetail.ResourceType = _ctx.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.ResourceType");
+			discoveredResourceDetail.ResourceName = _ctx.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.ResourceName");
+			discoveredResourceDetail.Region = _ctx.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.Region");
+			discoveredResourceDetail.AvailabilityZone = _ctx.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.AvailabilityZone");
+			discoveredResourceDetail.ResourceCreationTime = _ctx.LongValue("DescribeDiscoveredResource.DiscoveredResourceDetail.ResourceCreationTime");
+			discoveredResourceDetail.ResourceStatus = _ctx.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.ResourceStatus");
+			discoveredResourceDetail.ResourceDeleted = _ctx.IntegerValue("DescribeDiscoveredResource.DiscoveredResourceDetail.ResourceDeleted");
+			discoveredResourceDetail.Tags = _ctx.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.Tags");
+			discoveredResourceDetail.Configuration = _ctx.StringValue("DescribeDiscoveredResource.DiscoveredResourceDetail.Configuration");
 			describeDiscoveredResourceResponse.DiscoveredResourceDetail = discoveredResourceDetail;
         
 			return describeDiscoveredResourceResponse;

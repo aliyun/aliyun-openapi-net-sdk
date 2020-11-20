@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Cdn.Transform.V20141111
 {
     public class ModifyFileCacheExpiredConfigResponseUnmarshaller
     {
-        public static ModifyFileCacheExpiredConfigResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyFileCacheExpiredConfigResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyFileCacheExpiredConfigResponse modifyFileCacheExpiredConfigResponse = new ModifyFileCacheExpiredConfigResponse();
 
-			modifyFileCacheExpiredConfigResponse.HttpResponse = context.HttpResponse;
-			modifyFileCacheExpiredConfigResponse.RequestId = context.StringValue("ModifyFileCacheExpiredConfig.RequestId");
+			modifyFileCacheExpiredConfigResponse.HttpResponse = _ctx.HttpResponse;
+			modifyFileCacheExpiredConfigResponse.RequestId = _ctx.StringValue("ModifyFileCacheExpiredConfig.RequestId");
         
 			return modifyFileCacheExpiredConfigResponse;
         }
