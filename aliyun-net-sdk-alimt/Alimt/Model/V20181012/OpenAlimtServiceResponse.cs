@@ -16,26 +16,41 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.alimt.Model.V20181012;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.alimt.Transform.V20181012
+namespace Aliyun.Acs.alimt.Model.V20181012
 {
-    public class CreateDocTranslateTaskResponseUnmarshaller
-    {
-        public static CreateDocTranslateTaskResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			CreateDocTranslateTaskResponse createDocTranslateTaskResponse = new CreateDocTranslateTaskResponse();
+	public class OpenAlimtServiceResponse : AcsResponse
+	{
 
-			createDocTranslateTaskResponse.HttpResponse = _ctx.HttpResponse;
-			createDocTranslateTaskResponse.RequestId = _ctx.StringValue("CreateDocTranslateTask.RequestId");
-			createDocTranslateTaskResponse.TaskId = _ctx.StringValue("CreateDocTranslateTask.TaskId");
-			createDocTranslateTaskResponse.Status = _ctx.StringValue("CreateDocTranslateTask.Status");
-        
-			return createDocTranslateTaskResponse;
-        }
-    }
+		private string requestId;
+
+		private string orderId;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public string OrderId
+		{
+			get
+			{
+				return orderId;
+			}
+			set	
+			{
+				orderId = value;
+			}
+		}
+	}
 }

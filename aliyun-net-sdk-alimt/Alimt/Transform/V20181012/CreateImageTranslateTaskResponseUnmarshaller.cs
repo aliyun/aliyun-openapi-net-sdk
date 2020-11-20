@@ -26,17 +26,17 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 {
     public class CreateImageTranslateTaskResponseUnmarshaller
     {
-        public static CreateImageTranslateTaskResponse Unmarshall(UnmarshallerContext context)
+        public static CreateImageTranslateTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateImageTranslateTaskResponse createImageTranslateTaskResponse = new CreateImageTranslateTaskResponse();
 
-			createImageTranslateTaskResponse.HttpResponse = context.HttpResponse;
-			createImageTranslateTaskResponse.RequestId = context.StringValue("CreateImageTranslateTask.RequestId");
-			createImageTranslateTaskResponse.Code = context.IntegerValue("CreateImageTranslateTask.Code");
-			createImageTranslateTaskResponse.Message = context.StringValue("CreateImageTranslateTask.Message");
+			createImageTranslateTaskResponse.HttpResponse = _ctx.HttpResponse;
+			createImageTranslateTaskResponse.RequestId = _ctx.StringValue("CreateImageTranslateTask.RequestId");
+			createImageTranslateTaskResponse.Code = _ctx.IntegerValue("CreateImageTranslateTask.Code");
+			createImageTranslateTaskResponse.Message = _ctx.StringValue("CreateImageTranslateTask.Message");
 
 			CreateImageTranslateTaskResponse.CreateImageTranslateTask_Data data = new CreateImageTranslateTaskResponse.CreateImageTranslateTask_Data();
-			data.TaskId = context.StringValue("CreateImageTranslateTask.Data.TaskId");
+			data.TaskId = _ctx.StringValue("CreateImageTranslateTask.Data.TaskId");
 			createImageTranslateTaskResponse.Data = data;
         
 			return createImageTranslateTaskResponse;

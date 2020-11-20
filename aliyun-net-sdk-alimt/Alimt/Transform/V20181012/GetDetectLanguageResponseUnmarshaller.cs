@@ -26,13 +26,13 @@ namespace Aliyun.Acs.alimt.Transform.V20181012
 {
     public class GetDetectLanguageResponseUnmarshaller
     {
-        public static GetDetectLanguageResponse Unmarshall(UnmarshallerContext context)
+        public static GetDetectLanguageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetDetectLanguageResponse getDetectLanguageResponse = new GetDetectLanguageResponse();
 
-			getDetectLanguageResponse.HttpResponse = context.HttpResponse;
-			getDetectLanguageResponse.RequestId = context.StringValue("GetDetectLanguage.RequestId");
-			getDetectLanguageResponse.DetectedLanguage = context.StringValue("GetDetectLanguage.DetectedLanguage");
+			getDetectLanguageResponse.HttpResponse = _ctx.HttpResponse;
+			getDetectLanguageResponse.RequestId = _ctx.StringValue("GetDetectLanguage.RequestId");
+			getDetectLanguageResponse.DetectedLanguage = _ctx.StringValue("GetDetectLanguage.DetectedLanguage");
         
 			return getDetectLanguageResponse;
         }

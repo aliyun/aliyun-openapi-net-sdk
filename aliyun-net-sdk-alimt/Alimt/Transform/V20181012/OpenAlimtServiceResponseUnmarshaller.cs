@@ -24,23 +24,17 @@ using Aliyun.Acs.alimt.Model.V20181012;
 
 namespace Aliyun.Acs.alimt.Transform.V20181012
 {
-    public class TranslateResponseUnmarshaller
+    public class OpenAlimtServiceResponseUnmarshaller
     {
-        public static TranslateResponse Unmarshall(UnmarshallerContext _ctx)
+        public static OpenAlimtServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			TranslateResponse translateResponse = new TranslateResponse();
+			OpenAlimtServiceResponse openAlimtServiceResponse = new OpenAlimtServiceResponse();
 
-			translateResponse.HttpResponse = _ctx.HttpResponse;
-			translateResponse.RequestId = _ctx.StringValue("Translate.RequestId");
-			translateResponse.Code = _ctx.IntegerValue("Translate.Code");
-			translateResponse.Message = _ctx.StringValue("Translate.Message");
-
-			TranslateResponse.Translate_Data data = new TranslateResponse.Translate_Data();
-			data.Translated = _ctx.StringValue("Translate.Data.Translated");
-			data.WordCount = _ctx.StringValue("Translate.Data.WordCount");
-			translateResponse.Data = data;
+			openAlimtServiceResponse.HttpResponse = _ctx.HttpResponse;
+			openAlimtServiceResponse.RequestId = _ctx.StringValue("OpenAlimtService.RequestId");
+			openAlimtServiceResponse.OrderId = _ctx.StringValue("OpenAlimtService.OrderId");
         
-			return translateResponse;
+			return openAlimtServiceResponse;
         }
     }
 }
