@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.fnf;
 using Aliyun.Acs.fnf.Transform;
 using Aliyun.Acs.fnf.Transform.V20190315;
 
@@ -31,12 +30,12 @@ namespace Aliyun.Acs.fnf.Model.V20190315
     public class UpdateScheduleRequest : RpcAcsRequest<UpdateScheduleResponse>
     {
         public UpdateScheduleRequest()
-            : base("fnf", "2019-03-15", "UpdateSchedule")
+            : base("fnf", "2019-03-15", "UpdateSchedule", "fnf", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.fnf.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.fnf.Endpoint.endpointRegionalType, null);
             }
 			Method = MethodType.POST;
         }

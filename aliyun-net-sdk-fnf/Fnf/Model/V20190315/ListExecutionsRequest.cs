@@ -22,7 +22,6 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
-using Aliyun.Acs.fnf;
 using Aliyun.Acs.fnf.Transform;
 using Aliyun.Acs.fnf.Transform.V20190315;
 
@@ -31,14 +30,18 @@ namespace Aliyun.Acs.fnf.Model.V20190315
     public class ListExecutionsRequest : RpcAcsRequest<ListExecutionsResponse>
     {
         public ListExecutionsRequest()
-            : base("fnf", "2019-03-15", "ListExecutions")
+            : base("fnf", "2019-03-15", "ListExecutions", "fnf", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.fnf.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.fnf.Endpoint.endpointRegionalType, null);
             }
         }
+
+		private string startedTimeBegin;
+
+		private string executionNamePrefix;
 
 		private string nextToken;
 
@@ -48,7 +51,35 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 
 		private string flowName;
 
+		private string startedTimeEnd;
+
 		private string status;
+
+		public string StartedTimeBegin
+		{
+			get
+			{
+				return startedTimeBegin;
+			}
+			set	
+			{
+				startedTimeBegin = value;
+				DictionaryUtil.Add(QueryParameters, "StartedTimeBegin", value);
+			}
+		}
+
+		public string ExecutionNamePrefix
+		{
+			get
+			{
+				return executionNamePrefix;
+			}
+			set	
+			{
+				executionNamePrefix = value;
+				DictionaryUtil.Add(QueryParameters, "ExecutionNamePrefix", value);
+			}
+		}
 
 		public string NextToken
 		{
@@ -99,6 +130,19 @@ namespace Aliyun.Acs.fnf.Model.V20190315
 			{
 				flowName = value;
 				DictionaryUtil.Add(QueryParameters, "FlowName", value);
+			}
+		}
+
+		public string StartedTimeEnd
+		{
+			get
+			{
+				return startedTimeEnd;
+			}
+			set	
+			{
+				startedTimeEnd = value;
+				DictionaryUtil.Add(QueryParameters, "StartedTimeEnd", value);
 			}
 		}
 

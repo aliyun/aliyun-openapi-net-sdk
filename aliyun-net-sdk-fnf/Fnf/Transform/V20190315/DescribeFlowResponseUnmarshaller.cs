@@ -26,21 +26,21 @@ namespace Aliyun.Acs.fnf.Transform.V20190315
 {
     public class DescribeFlowResponseUnmarshaller
     {
-        public static DescribeFlowResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeFlowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeFlowResponse describeFlowResponse = new DescribeFlowResponse();
 
-			describeFlowResponse.HttpResponse = context.HttpResponse;
-			describeFlowResponse.RequestId = context.StringValue("DescribeFlow.RequestId");
-			describeFlowResponse.Name = context.StringValue("DescribeFlow.Name");
-			describeFlowResponse.Description = context.StringValue("DescribeFlow.Description");
-			describeFlowResponse.Definition = context.StringValue("DescribeFlow.Definition");
-			describeFlowResponse.Id = context.StringValue("DescribeFlow.Id");
-			describeFlowResponse.Type = context.StringValue("DescribeFlow.Type");
-			describeFlowResponse.RoleArn = context.StringValue("DescribeFlow.RoleArn");
-			describeFlowResponse.CreatedTime = context.StringValue("DescribeFlow.CreatedTime");
-			describeFlowResponse.LastModifiedTime = context.StringValue("DescribeFlow.LastModifiedTime");
-			describeFlowResponse.ExternalStorageLocation = context.StringValue("DescribeFlow.ExternalStorageLocation");
+			describeFlowResponse.HttpResponse = _ctx.HttpResponse;
+			describeFlowResponse.RequestId = _ctx.StringValue("DescribeFlow.RequestId");
+			describeFlowResponse.Name = _ctx.StringValue("DescribeFlow.Name");
+			describeFlowResponse.Description = _ctx.StringValue("DescribeFlow.Description");
+			describeFlowResponse.Definition = _ctx.StringValue("DescribeFlow.Definition");
+			describeFlowResponse.Id = _ctx.StringValue("DescribeFlow.Id");
+			describeFlowResponse.Type = _ctx.StringValue("DescribeFlow.Type");
+			describeFlowResponse.RoleArn = _ctx.StringValue("DescribeFlow.RoleArn");
+			describeFlowResponse.CreatedTime = _ctx.StringValue("DescribeFlow.CreatedTime");
+			describeFlowResponse.LastModifiedTime = _ctx.StringValue("DescribeFlow.LastModifiedTime");
+			describeFlowResponse.ExternalStorageLocation = _ctx.StringValue("DescribeFlow.ExternalStorageLocation");
         
 			return describeFlowResponse;
         }
