@@ -1,3 +1,6 @@
+2020-11-22 Version: 2.8.3
+- DescribeClusterConnection.
+
 2020-11-20 Version: 1.8.0
 - Support ListExecutions with filter functionality.
 
