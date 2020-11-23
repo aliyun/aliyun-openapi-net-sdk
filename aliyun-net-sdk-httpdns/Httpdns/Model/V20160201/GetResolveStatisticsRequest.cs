@@ -22,6 +22,7 @@ using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
+using Aliyun.Acs.Httpdns;
 using Aliyun.Acs.Httpdns.Transform;
 using Aliyun.Acs.Httpdns.Transform.V20160201;
 
@@ -30,11 +31,10 @@ namespace Aliyun.Acs.Httpdns.Model.V20160201
     public class GetResolveStatisticsRequest : RpcAcsRequest<GetResolveStatisticsResponse>
     {
         public GetResolveStatisticsRequest()
-            : base("Httpdns", "2016-02-01", "GetResolveStatistics", "httpdns", "openAPI")
+            : base("Httpdns", "2016-02-01", "GetResolveStatistics")
         {
+			Method = MethodType.POST;
         }
-
-		private string granularity;
 
 		private string protocolName;
 
@@ -42,20 +42,7 @@ namespace Aliyun.Acs.Httpdns.Model.V20160201
 
 		private int? timeSpan;
 
-		private string accessKeyId;
-
-		public string Granularity
-		{
-			get
-			{
-				return granularity;
-			}
-			set	
-			{
-				granularity = value;
-				DictionaryUtil.Add(QueryParameters, "Granularity", value);
-			}
-		}
+		private string granularity;
 
 		public string ProtocolName
 		{
@@ -96,16 +83,16 @@ namespace Aliyun.Acs.Httpdns.Model.V20160201
 			}
 		}
 
-		public string AccessKeyId
+		public string Granularity
 		{
 			get
 			{
-				return accessKeyId;
+				return granularity;
 			}
 			set	
 			{
-				accessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "AccessKeyId", value);
+				granularity = value;
+				DictionaryUtil.Add(QueryParameters, "Granularity", value);
 			}
 		}
 

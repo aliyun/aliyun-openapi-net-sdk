@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Httpdns.Transform.V20160201
 {
     public class DescribeDomainsResponseUnmarshaller
     {
-        public static DescribeDomainsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDomainsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDomainsResponse describeDomainsResponse = new DescribeDomainsResponse();
 
-			describeDomainsResponse.HttpResponse = context.HttpResponse;
-			describeDomainsResponse.RequestId = context.StringValue("DescribeDomains.RequestId");
-			describeDomainsResponse.TotalCount = context.LongValue("DescribeDomains.TotalCount");
-			describeDomainsResponse.PageNumber = context.LongValue("DescribeDomains.PageNumber");
-			describeDomainsResponse.PageSize = context.LongValue("DescribeDomains.PageSize");
+			describeDomainsResponse.HttpResponse = _ctx.HttpResponse;
+			describeDomainsResponse.RequestId = _ctx.StringValue("DescribeDomains.RequestId");
+			describeDomainsResponse.TotalCount = _ctx.LongValue("DescribeDomains.TotalCount");
+			describeDomainsResponse.PageNumber = _ctx.LongValue("DescribeDomains.PageNumber");
+			describeDomainsResponse.PageSize = _ctx.LongValue("DescribeDomains.PageSize");
 
 			List<DescribeDomainsResponse.DescribeDomains_Domain> describeDomainsResponse_domains = new List<DescribeDomainsResponse.DescribeDomains_Domain>();
-			for (int i = 0; i < context.Length("DescribeDomains.Domains.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDomains.Domains.Length"); i++) {
 				DescribeDomainsResponse.DescribeDomains_Domain domain = new DescribeDomainsResponse.DescribeDomains_Domain();
-				domain.DomainName = context.StringValue("DescribeDomains.Domains["+ i +"].DomainName");
+				domain.DomainName = _ctx.StringValue("DescribeDomains.Domains["+ i +"].DomainName");
 
 				describeDomainsResponse_domains.Add(domain);
 			}
