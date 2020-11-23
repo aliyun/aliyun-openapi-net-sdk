@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class VerifyDeviceResponseUnmarshaller
     {
-        public static VerifyDeviceResponse Unmarshall(UnmarshallerContext context)
+        public static VerifyDeviceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			VerifyDeviceResponse verifyDeviceResponse = new VerifyDeviceResponse();
 
-			verifyDeviceResponse.HttpResponse = context.HttpResponse;
-			verifyDeviceResponse.RequestId = context.StringValue("VerifyDevice.RequestId");
-			verifyDeviceResponse.Code = context.StringValue("VerifyDevice.Code");
-			verifyDeviceResponse.Message = context.StringValue("VerifyDevice.Message");
+			verifyDeviceResponse.HttpResponse = _ctx.HttpResponse;
+			verifyDeviceResponse.RequestId = _ctx.StringValue("VerifyDevice.RequestId");
+			verifyDeviceResponse.Code = _ctx.StringValue("VerifyDevice.Code");
+			verifyDeviceResponse.Message = _ctx.StringValue("VerifyDevice.Message");
 
 			VerifyDeviceResponse.VerifyDevice_ResultObject resultObject = new VerifyDeviceResponse.VerifyDevice_ResultObject();
-			resultObject.ValidationRetCode = context.StringValue("VerifyDevice.ResultObject.ValidationRetCode");
-			resultObject.ProductRetCode = context.StringValue("VerifyDevice.ResultObject.ProductRetCode");
-			resultObject.RetCodeSub = context.StringValue("VerifyDevice.ResultObject.RetCodeSub");
-			resultObject.RetMessageSub = context.StringValue("VerifyDevice.ResultObject.RetMessageSub");
-			resultObject.HasNext = context.StringValue("VerifyDevice.ResultObject.HasNext");
-			resultObject.ExtParams = context.StringValue("VerifyDevice.ResultObject.ExtParams");
+			resultObject.ValidationRetCode = _ctx.StringValue("VerifyDevice.ResultObject.ValidationRetCode");
+			resultObject.ProductRetCode = _ctx.StringValue("VerifyDevice.ResultObject.ProductRetCode");
+			resultObject.RetCodeSub = _ctx.StringValue("VerifyDevice.ResultObject.RetCodeSub");
+			resultObject.RetMessageSub = _ctx.StringValue("VerifyDevice.ResultObject.RetMessageSub");
+			resultObject.HasNext = _ctx.StringValue("VerifyDevice.ResultObject.HasNext");
+			resultObject.ExtParams = _ctx.StringValue("VerifyDevice.ResultObject.ExtParams");
 			verifyDeviceResponse.ResultObject = resultObject;
         
 			return verifyDeviceResponse;

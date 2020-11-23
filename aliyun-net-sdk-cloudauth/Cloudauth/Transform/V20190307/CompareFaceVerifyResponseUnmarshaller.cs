@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class CompareFaceVerifyResponseUnmarshaller
     {
-        public static CompareFaceVerifyResponse Unmarshall(UnmarshallerContext context)
+        public static CompareFaceVerifyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CompareFaceVerifyResponse compareFaceVerifyResponse = new CompareFaceVerifyResponse();
 
-			compareFaceVerifyResponse.HttpResponse = context.HttpResponse;
-			compareFaceVerifyResponse.RequestId = context.StringValue("CompareFaceVerify.RequestId");
-			compareFaceVerifyResponse.Message = context.StringValue("CompareFaceVerify.Message");
-			compareFaceVerifyResponse.Code = context.StringValue("CompareFaceVerify.Code");
+			compareFaceVerifyResponse.HttpResponse = _ctx.HttpResponse;
+			compareFaceVerifyResponse.RequestId = _ctx.StringValue("CompareFaceVerify.RequestId");
+			compareFaceVerifyResponse.Message = _ctx.StringValue("CompareFaceVerify.Message");
+			compareFaceVerifyResponse.Code = _ctx.StringValue("CompareFaceVerify.Code");
 
 			CompareFaceVerifyResponse.CompareFaceVerify_ResultObject resultObject = new CompareFaceVerifyResponse.CompareFaceVerify_ResultObject();
-			resultObject.Passed = context.StringValue("CompareFaceVerify.ResultObject.Passed");
-			resultObject.VerifyScore = context.FloatValue("CompareFaceVerify.ResultObject.VerifyScore");
+			resultObject.Passed = _ctx.StringValue("CompareFaceVerify.ResultObject.Passed");
+			resultObject.VerifyScore = _ctx.FloatValue("CompareFaceVerify.ResultObject.VerifyScore");
 			compareFaceVerifyResponse.ResultObject = resultObject;
         
 			return compareFaceVerifyResponse;

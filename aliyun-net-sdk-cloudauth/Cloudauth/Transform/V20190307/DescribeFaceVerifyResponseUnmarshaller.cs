@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class DescribeFaceVerifyResponseUnmarshaller
     {
-        public static DescribeFaceVerifyResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeFaceVerifyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeFaceVerifyResponse describeFaceVerifyResponse = new DescribeFaceVerifyResponse();
 
-			describeFaceVerifyResponse.HttpResponse = context.HttpResponse;
-			describeFaceVerifyResponse.RequestId = context.StringValue("DescribeFaceVerify.RequestId");
-			describeFaceVerifyResponse.Message = context.StringValue("DescribeFaceVerify.Message");
-			describeFaceVerifyResponse.Code = context.StringValue("DescribeFaceVerify.Code");
+			describeFaceVerifyResponse.HttpResponse = _ctx.HttpResponse;
+			describeFaceVerifyResponse.RequestId = _ctx.StringValue("DescribeFaceVerify.RequestId");
+			describeFaceVerifyResponse.Message = _ctx.StringValue("DescribeFaceVerify.Message");
+			describeFaceVerifyResponse.Code = _ctx.StringValue("DescribeFaceVerify.Code");
 
 			DescribeFaceVerifyResponse.DescribeFaceVerify_ResultObject resultObject = new DescribeFaceVerifyResponse.DescribeFaceVerify_ResultObject();
-			resultObject.Passed = context.StringValue("DescribeFaceVerify.ResultObject.Passed");
-			resultObject.IdentityInfo = context.StringValue("DescribeFaceVerify.ResultObject.IdentityInfo");
-			resultObject.MaterialInfo = context.StringValue("DescribeFaceVerify.ResultObject.MaterialInfo");
-			resultObject.DeviceToken = context.StringValue("DescribeFaceVerify.ResultObject.DeviceToken");
-			resultObject.SubCode = context.StringValue("DescribeFaceVerify.ResultObject.SubCode");
+			resultObject.Passed = _ctx.StringValue("DescribeFaceVerify.ResultObject.Passed");
+			resultObject.IdentityInfo = _ctx.StringValue("DescribeFaceVerify.ResultObject.IdentityInfo");
+			resultObject.MaterialInfo = _ctx.StringValue("DescribeFaceVerify.ResultObject.MaterialInfo");
+			resultObject.DeviceToken = _ctx.StringValue("DescribeFaceVerify.ResultObject.DeviceToken");
+			resultObject.SubCode = _ctx.StringValue("DescribeFaceVerify.ResultObject.SubCode");
 			describeFaceVerifyResponse.ResultObject = resultObject;
         
 			return describeFaceVerifyResponse;

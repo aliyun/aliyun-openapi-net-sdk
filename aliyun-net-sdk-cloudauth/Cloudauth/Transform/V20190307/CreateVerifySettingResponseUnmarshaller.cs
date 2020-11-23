@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20190307
 {
     public class CreateVerifySettingResponseUnmarshaller
     {
-        public static CreateVerifySettingResponse Unmarshall(UnmarshallerContext context)
+        public static CreateVerifySettingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateVerifySettingResponse createVerifySettingResponse = new CreateVerifySettingResponse();
 
-			createVerifySettingResponse.HttpResponse = context.HttpResponse;
-			createVerifySettingResponse.RequestId = context.StringValue("CreateVerifySetting.RequestId");
-			createVerifySettingResponse.BizType = context.StringValue("CreateVerifySetting.BizType");
-			createVerifySettingResponse.BizName = context.StringValue("CreateVerifySetting.BizName");
-			createVerifySettingResponse.Solution = context.StringValue("CreateVerifySetting.Solution");
+			createVerifySettingResponse.HttpResponse = _ctx.HttpResponse;
+			createVerifySettingResponse.RequestId = _ctx.StringValue("CreateVerifySetting.RequestId");
+			createVerifySettingResponse.BizType = _ctx.StringValue("CreateVerifySetting.BizType");
+			createVerifySettingResponse.BizName = _ctx.StringValue("CreateVerifySetting.BizName");
+			createVerifySettingResponse.Solution = _ctx.StringValue("CreateVerifySetting.Solution");
 
 			List<string> createVerifySettingResponse_stepList = new List<string>();
-			for (int i = 0; i < context.Length("CreateVerifySetting.StepList.Length"); i++) {
-				createVerifySettingResponse_stepList.Add(context.StringValue("CreateVerifySetting.StepList["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("CreateVerifySetting.StepList.Length"); i++) {
+				createVerifySettingResponse_stepList.Add(_ctx.StringValue("CreateVerifySetting.StepList["+ i +"]"));
 			}
 			createVerifySettingResponse.StepList = createVerifySettingResponse_stepList;
         

@@ -26,32 +26,32 @@ namespace Aliyun.Acs.Cloudauth.Transform.V20180916
 {
     public class GetVerifyTokenResponseUnmarshaller
     {
-        public static GetVerifyTokenResponse Unmarshall(UnmarshallerContext context)
+        public static GetVerifyTokenResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetVerifyTokenResponse getVerifyTokenResponse = new GetVerifyTokenResponse();
 
-			getVerifyTokenResponse.HttpResponse = context.HttpResponse;
-			getVerifyTokenResponse.RequestId = context.StringValue("GetVerifyToken.RequestId");
-			getVerifyTokenResponse.Success = context.BooleanValue("GetVerifyToken.Success");
-			getVerifyTokenResponse.Code = context.StringValue("GetVerifyToken.Code");
-			getVerifyTokenResponse.Message = context.StringValue("GetVerifyToken.Message");
+			getVerifyTokenResponse.HttpResponse = _ctx.HttpResponse;
+			getVerifyTokenResponse.RequestId = _ctx.StringValue("GetVerifyToken.RequestId");
+			getVerifyTokenResponse.Success = _ctx.BooleanValue("GetVerifyToken.Success");
+			getVerifyTokenResponse.Code = _ctx.StringValue("GetVerifyToken.Code");
+			getVerifyTokenResponse.Message = _ctx.StringValue("GetVerifyToken.Message");
 
 			GetVerifyTokenResponse.GetVerifyToken_Data data = new GetVerifyTokenResponse.GetVerifyToken_Data();
-			data.CloudauthPageUrl = context.StringValue("GetVerifyToken.Data.CloudauthPageUrl");
+			data.CloudauthPageUrl = _ctx.StringValue("GetVerifyToken.Data.CloudauthPageUrl");
 
 			GetVerifyTokenResponse.GetVerifyToken_Data.GetVerifyToken_VerifyToken verifyToken = new GetVerifyTokenResponse.GetVerifyToken_Data.GetVerifyToken_VerifyToken();
-			verifyToken.Token = context.StringValue("GetVerifyToken.Data.VerifyToken.Token");
-			verifyToken.DurationSeconds = context.IntegerValue("GetVerifyToken.Data.VerifyToken.DurationSeconds");
+			verifyToken.Token = _ctx.StringValue("GetVerifyToken.Data.VerifyToken.Token");
+			verifyToken.DurationSeconds = _ctx.IntegerValue("GetVerifyToken.Data.VerifyToken.DurationSeconds");
 			data.VerifyToken = verifyToken;
 
 			GetVerifyTokenResponse.GetVerifyToken_Data.GetVerifyToken_StsToken stsToken = new GetVerifyTokenResponse.GetVerifyToken_Data.GetVerifyToken_StsToken();
-			stsToken.AccessKeyId = context.StringValue("GetVerifyToken.Data.StsToken.AccessKeyId");
-			stsToken.AccessKeySecret = context.StringValue("GetVerifyToken.Data.StsToken.AccessKeySecret");
-			stsToken.Expiration = context.StringValue("GetVerifyToken.Data.StsToken.Expiration");
-			stsToken.EndPoint = context.StringValue("GetVerifyToken.Data.StsToken.EndPoint");
-			stsToken.BucketName = context.StringValue("GetVerifyToken.Data.StsToken.BucketName");
-			stsToken.Path = context.StringValue("GetVerifyToken.Data.StsToken.Path");
-			stsToken.Token = context.StringValue("GetVerifyToken.Data.StsToken.Token");
+			stsToken.AccessKeyId = _ctx.StringValue("GetVerifyToken.Data.StsToken.AccessKeyId");
+			stsToken.AccessKeySecret = _ctx.StringValue("GetVerifyToken.Data.StsToken.AccessKeySecret");
+			stsToken.Expiration = _ctx.StringValue("GetVerifyToken.Data.StsToken.Expiration");
+			stsToken.EndPoint = _ctx.StringValue("GetVerifyToken.Data.StsToken.EndPoint");
+			stsToken.BucketName = _ctx.StringValue("GetVerifyToken.Data.StsToken.BucketName");
+			stsToken.Path = _ctx.StringValue("GetVerifyToken.Data.StsToken.Path");
+			stsToken.Token = _ctx.StringValue("GetVerifyToken.Data.StsToken.Token");
 			data.StsToken = stsToken;
 			getVerifyTokenResponse.Data = data;
         
