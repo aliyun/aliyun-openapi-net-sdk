@@ -40,11 +40,26 @@ namespace Aliyun.Acs.facebody.Model.V20191230
 			Method = MethodType.POST;
         }
 
+		private string dbNames;
+
 		private string dbName;
 
 		private string imageUrl;
 
 		private int? limit;
+
+		public string DbNames
+		{
+			get
+			{
+				return dbNames;
+			}
+			set	
+			{
+				dbNames = value;
+				DictionaryUtil.Add(QueryParameters, "DbNames", value);
+			}
+		}
 
 		public string DbName
 		{

@@ -106,11 +106,13 @@ namespace Aliyun.Acs.facebody.Model.V20191230
 
 					private string faceId;
 
+					private string entityId;
+
 					private float? score;
 
-					private string extraData;
+					private string dbName;
 
-					private string entityId;
+					private string extraData;
 
 					public string FaceId
 					{
@@ -121,6 +123,18 @@ namespace Aliyun.Acs.facebody.Model.V20191230
 						set	
 						{
 							faceId = value;
+						}
+					}
+
+					public string EntityId
+					{
+						get
+						{
+							return entityId;
+						}
+						set	
+						{
+							entityId = value;
 						}
 					}
 
@@ -136,6 +150,18 @@ namespace Aliyun.Acs.facebody.Model.V20191230
 						}
 					}
 
+					public string DbName
+					{
+						get
+						{
+							return dbName;
+						}
+						set	
+						{
+							dbName = value;
+						}
+					}
+
 					public string ExtraData
 					{
 						get
@@ -147,18 +173,6 @@ namespace Aliyun.Acs.facebody.Model.V20191230
 							extraData = value;
 						}
 					}
-
-					public string EntityId
-					{
-						get
-						{
-							return entityId;
-						}
-						set	
-						{
-							entityId = value;
-						}
-					}
 				}
 
 				public class SearchFace_Location
@@ -168,9 +182,9 @@ namespace Aliyun.Acs.facebody.Model.V20191230
 
 					private int? y;
 
-					private int? width;
-
 					private int? height;
+
+					private int? width;
 
 					public int? X
 					{
@@ -196,18 +210,6 @@ namespace Aliyun.Acs.facebody.Model.V20191230
 						}
 					}
 
-					public int? Width
-					{
-						get
-						{
-							return width;
-						}
-						set	
-						{
-							width = value;
-						}
-					}
-
 					public int? Height
 					{
 						get
@@ -217,6 +219,18 @@ namespace Aliyun.Acs.facebody.Model.V20191230
 						set	
 						{
 							height = value;
+						}
+					}
+
+					public int? Width
+					{
+						get
+						{
+							return width;
+						}
+						set	
+						{
+							width = value;
 						}
 					}
 				}
