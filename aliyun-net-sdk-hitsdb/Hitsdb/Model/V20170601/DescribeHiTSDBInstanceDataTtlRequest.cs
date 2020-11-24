@@ -30,7 +30,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
     public class DescribeHiTSDBInstanceDataTtlRequest : RpcAcsRequest<DescribeHiTSDBInstanceDataTtlResponse>
     {
         public DescribeHiTSDBInstanceDataTtlRequest()
-            : base("hitsdb", "2017-06-01", "DescribeHiTSDBInstanceDataTtl", "tsdb", "openAPI")
+            : base("hitsdb", "2017-06-01", "DescribeHiTSDBInstanceDataTtl", "hitsdb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

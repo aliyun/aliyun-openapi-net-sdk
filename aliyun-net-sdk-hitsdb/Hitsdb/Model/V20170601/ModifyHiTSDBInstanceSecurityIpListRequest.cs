@@ -30,7 +30,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
     public class ModifyHiTSDBInstanceSecurityIpListRequest : RpcAcsRequest<ModifyHiTSDBInstanceSecurityIpListResponse>
     {
         public ModifyHiTSDBInstanceSecurityIpListRequest()
-            : base("hitsdb", "2017-06-01", "ModifyHiTSDBInstanceSecurityIpList", "tsdb", "openAPI")
+            : base("hitsdb", "2017-06-01", "ModifyHiTSDBInstanceSecurityIpList", "hitsdb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
     public class DeleteHiTSDBInstanceDataRequest : RpcAcsRequest<DeleteHiTSDBInstanceDataResponse>
     {
         public DeleteHiTSDBInstanceDataRequest()
-            : base("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceData", "tsdb", "openAPI")
+            : base("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceData", "hitsdb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

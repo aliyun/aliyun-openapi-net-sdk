@@ -30,7 +30,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
     public class SwitchHiTSDBInstancePublicNetRequest : RpcAcsRequest<SwitchHiTSDBInstancePublicNetResponse>
     {
         public SwitchHiTSDBInstancePublicNetRequest()
-            : base("hitsdb", "2017-06-01", "SwitchHiTSDBInstancePublicNet", "tsdb", "openAPI")
+            : base("hitsdb", "2017-06-01", "SwitchHiTSDBInstancePublicNet", "hitsdb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

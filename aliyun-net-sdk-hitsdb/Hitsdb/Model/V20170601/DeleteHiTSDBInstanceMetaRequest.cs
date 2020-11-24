@@ -30,7 +30,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
     public class DeleteHiTSDBInstanceMetaRequest : RpcAcsRequest<DeleteHiTSDBInstanceMetaResponse>
     {
         public DeleteHiTSDBInstanceMetaRequest()
-            : base("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceMeta", "tsdb", "openAPI")
+            : base("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceMeta", "hitsdb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

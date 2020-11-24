@@ -30,7 +30,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
     public class ExploreHiTSDBInstanceDataTagKeyListRequest : RpcAcsRequest<ExploreHiTSDBInstanceDataTagKeyListResponse>
     {
         public ExploreHiTSDBInstanceDataTagKeyListRequest()
-            : base("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceDataTagKeyList", "tsdb", "openAPI")
+            : base("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceDataTagKeyList", "hitsdb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

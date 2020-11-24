@@ -30,7 +30,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
     public class RenewTSDBInstanceRequest : RpcAcsRequest<RenewTSDBInstanceResponse>
     {
         public RenewTSDBInstanceRequest()
-            : base("hitsdb", "2017-06-01", "RenewTSDBInstance", "tsdb", "openAPI")
+            : base("hitsdb", "2017-06-01", "RenewTSDBInstance", "hitsdb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {

@@ -30,7 +30,7 @@ namespace Aliyun.Acs.hitsdb.Model.V20170601
     public class DescribeZonesRequest : RpcAcsRequest<DescribeZonesResponse>
     {
         public DescribeZonesRequest()
-            : base("hitsdb", "2017-06-01", "DescribeZones", "tsdb", "openAPI")
+            : base("hitsdb", "2017-06-01", "DescribeZones", "hitsdb", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
