@@ -33,15 +33,15 @@ namespace Aliyun.Acs.Cdn.Transform.V20180510
 			describeDomainPvDataResponse.HttpResponse = _ctx.HttpResponse;
 			describeDomainPvDataResponse.RequestId = _ctx.StringValue("DescribeDomainPvData.RequestId");
 			describeDomainPvDataResponse.DomainName = _ctx.StringValue("DescribeDomainPvData.DomainName");
-			describeDomainPvDataResponse.DataInterval = _ctx.StringValue("DescribeDomainPvData.DataInterval");
 			describeDomainPvDataResponse.StartTime = _ctx.StringValue("DescribeDomainPvData.StartTime");
 			describeDomainPvDataResponse.EndTime = _ctx.StringValue("DescribeDomainPvData.EndTime");
+			describeDomainPvDataResponse.DataInterval = _ctx.StringValue("DescribeDomainPvData.DataInterval");
 
 			List<DescribeDomainPvDataResponse.DescribeDomainPvData_UsageData> describeDomainPvDataResponse_pvDataInterval = new List<DescribeDomainPvDataResponse.DescribeDomainPvData_UsageData>();
 			for (int i = 0; i < _ctx.Length("DescribeDomainPvData.PvDataInterval.Length"); i++) {
 				DescribeDomainPvDataResponse.DescribeDomainPvData_UsageData usageData = new DescribeDomainPvDataResponse.DescribeDomainPvData_UsageData();
-				usageData.TimeStamp = _ctx.StringValue("DescribeDomainPvData.PvDataInterval["+ i +"].TimeStamp");
 				usageData._Value = _ctx.StringValue("DescribeDomainPvData.PvDataInterval["+ i +"].Value");
+				usageData.TimeStamp = _ctx.StringValue("DescribeDomainPvData.PvDataInterval["+ i +"].TimeStamp");
 
 				describeDomainPvDataResponse_pvDataInterval.Add(usageData);
 			}
