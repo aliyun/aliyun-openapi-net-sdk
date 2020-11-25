@@ -26,20 +26,20 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnCcTopIpResponseUnmarshaller
     {
-        public static DescribeScdnCcTopIpResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnCcTopIpResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnCcTopIpResponse describeScdnCcTopIpResponse = new DescribeScdnCcTopIpResponse();
 
-			describeScdnCcTopIpResponse.HttpResponse = context.HttpResponse;
-			describeScdnCcTopIpResponse.RequestId = context.StringValue("DescribeScdnCcTopIp.RequestId");
-			describeScdnCcTopIpResponse.Total = context.StringValue("DescribeScdnCcTopIp.Total");
-			describeScdnCcTopIpResponse.DomainName = context.StringValue("DescribeScdnCcTopIp.DomainName");
+			describeScdnCcTopIpResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnCcTopIpResponse.RequestId = _ctx.StringValue("DescribeScdnCcTopIp.RequestId");
+			describeScdnCcTopIpResponse.Total = _ctx.StringValue("DescribeScdnCcTopIp.Total");
+			describeScdnCcTopIpResponse.DomainName = _ctx.StringValue("DescribeScdnCcTopIp.DomainName");
 
 			List<DescribeScdnCcTopIpResponse.DescribeScdnCcTopIp_AttackIpDatas> describeScdnCcTopIpResponse_attackIpDataList = new List<DescribeScdnCcTopIpResponse.DescribeScdnCcTopIp_AttackIpDatas>();
-			for (int i = 0; i < context.Length("DescribeScdnCcTopIp.AttackIpDataList.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeScdnCcTopIp.AttackIpDataList.Length"); i++) {
 				DescribeScdnCcTopIpResponse.DescribeScdnCcTopIp_AttackIpDatas attackIpDatas = new DescribeScdnCcTopIpResponse.DescribeScdnCcTopIp_AttackIpDatas();
-				attackIpDatas.Ip = context.StringValue("DescribeScdnCcTopIp.AttackIpDataList["+ i +"].Ip");
-				attackIpDatas.AttackCount = context.StringValue("DescribeScdnCcTopIp.AttackIpDataList["+ i +"].AttackCount");
+				attackIpDatas.Ip = _ctx.StringValue("DescribeScdnCcTopIp.AttackIpDataList["+ i +"].Ip");
+				attackIpDatas.AttackCount = _ctx.StringValue("DescribeScdnCcTopIp.AttackIpDataList["+ i +"].AttackCount");
 
 				describeScdnCcTopIpResponse_attackIpDataList.Add(attackIpDatas);
 			}

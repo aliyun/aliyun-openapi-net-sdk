@@ -26,20 +26,20 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnRefreshQuotaResponseUnmarshaller
     {
-        public static DescribeScdnRefreshQuotaResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnRefreshQuotaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnRefreshQuotaResponse describeScdnRefreshQuotaResponse = new DescribeScdnRefreshQuotaResponse();
 
-			describeScdnRefreshQuotaResponse.HttpResponse = context.HttpResponse;
-			describeScdnRefreshQuotaResponse.RequestId = context.StringValue("DescribeScdnRefreshQuota.RequestId");
-			describeScdnRefreshQuotaResponse.UrlQuota = context.StringValue("DescribeScdnRefreshQuota.UrlQuota");
-			describeScdnRefreshQuotaResponse.DirQuota = context.StringValue("DescribeScdnRefreshQuota.DirQuota");
-			describeScdnRefreshQuotaResponse.UrlRemain = context.StringValue("DescribeScdnRefreshQuota.UrlRemain");
-			describeScdnRefreshQuotaResponse.DirRemain = context.StringValue("DescribeScdnRefreshQuota.DirRemain");
-			describeScdnRefreshQuotaResponse.PreloadQuota = context.StringValue("DescribeScdnRefreshQuota.PreloadQuota");
-			describeScdnRefreshQuotaResponse.BlockQuota = context.StringValue("DescribeScdnRefreshQuota.BlockQuota");
-			describeScdnRefreshQuotaResponse.PreloadRemain = context.StringValue("DescribeScdnRefreshQuota.PreloadRemain");
-			describeScdnRefreshQuotaResponse.BlockRemain = context.StringValue("DescribeScdnRefreshQuota.blockRemain");
+			describeScdnRefreshQuotaResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnRefreshQuotaResponse.RequestId = _ctx.StringValue("DescribeScdnRefreshQuota.RequestId");
+			describeScdnRefreshQuotaResponse.UrlQuota = _ctx.StringValue("DescribeScdnRefreshQuota.UrlQuota");
+			describeScdnRefreshQuotaResponse.DirQuota = _ctx.StringValue("DescribeScdnRefreshQuota.DirQuota");
+			describeScdnRefreshQuotaResponse.UrlRemain = _ctx.StringValue("DescribeScdnRefreshQuota.UrlRemain");
+			describeScdnRefreshQuotaResponse.DirRemain = _ctx.StringValue("DescribeScdnRefreshQuota.DirRemain");
+			describeScdnRefreshQuotaResponse.PreloadQuota = _ctx.StringValue("DescribeScdnRefreshQuota.PreloadQuota");
+			describeScdnRefreshQuotaResponse.BlockQuota = _ctx.StringValue("DescribeScdnRefreshQuota.BlockQuota");
+			describeScdnRefreshQuotaResponse.PreloadRemain = _ctx.StringValue("DescribeScdnRefreshQuota.PreloadRemain");
+			describeScdnRefreshQuotaResponse.BlockRemain = _ctx.StringValue("DescribeScdnRefreshQuota.blockRemain");
         
 			return describeScdnRefreshQuotaResponse;
         }

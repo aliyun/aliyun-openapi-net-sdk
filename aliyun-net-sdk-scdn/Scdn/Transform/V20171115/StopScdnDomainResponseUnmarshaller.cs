@@ -26,12 +26,12 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class StopScdnDomainResponseUnmarshaller
     {
-        public static StopScdnDomainResponse Unmarshall(UnmarshallerContext context)
+        public static StopScdnDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopScdnDomainResponse stopScdnDomainResponse = new StopScdnDomainResponse();
 
-			stopScdnDomainResponse.HttpResponse = context.HttpResponse;
-			stopScdnDomainResponse.RequestId = context.StringValue("StopScdnDomain.RequestId");
+			stopScdnDomainResponse.HttpResponse = _ctx.HttpResponse;
+			stopScdnDomainResponse.RequestId = _ctx.StringValue("StopScdnDomain.RequestId");
         
 			return stopScdnDomainResponse;
         }

@@ -26,18 +26,18 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnDomainRealTimeQpsDataResponseUnmarshaller
     {
-        public static DescribeScdnDomainRealTimeQpsDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnDomainRealTimeQpsDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnDomainRealTimeQpsDataResponse describeScdnDomainRealTimeQpsDataResponse = new DescribeScdnDomainRealTimeQpsDataResponse();
 
-			describeScdnDomainRealTimeQpsDataResponse.HttpResponse = context.HttpResponse;
-			describeScdnDomainRealTimeQpsDataResponse.RequestId = context.StringValue("DescribeScdnDomainRealTimeQpsData.RequestId");
+			describeScdnDomainRealTimeQpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainRealTimeQpsDataResponse.RequestId = _ctx.StringValue("DescribeScdnDomainRealTimeQpsData.RequestId");
 
 			List<DescribeScdnDomainRealTimeQpsDataResponse.DescribeScdnDomainRealTimeQpsData_QpsModel> describeScdnDomainRealTimeQpsDataResponse_data = new List<DescribeScdnDomainRealTimeQpsDataResponse.DescribeScdnDomainRealTimeQpsData_QpsModel>();
-			for (int i = 0; i < context.Length("DescribeScdnDomainRealTimeQpsData.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeScdnDomainRealTimeQpsData.Data.Length"); i++) {
 				DescribeScdnDomainRealTimeQpsDataResponse.DescribeScdnDomainRealTimeQpsData_QpsModel qpsModel = new DescribeScdnDomainRealTimeQpsDataResponse.DescribeScdnDomainRealTimeQpsData_QpsModel();
-				qpsModel.Qps = context.FloatValue("DescribeScdnDomainRealTimeQpsData.Data["+ i +"].Qps");
-				qpsModel.TimeStamp = context.StringValue("DescribeScdnDomainRealTimeQpsData.Data["+ i +"].TimeStamp");
+				qpsModel.Qps = _ctx.FloatValue("DescribeScdnDomainRealTimeQpsData.Data["+ i +"].Qps");
+				qpsModel.TimeStamp = _ctx.StringValue("DescribeScdnDomainRealTimeQpsData.Data["+ i +"].TimeStamp");
 
 				describeScdnDomainRealTimeQpsDataResponse_data.Add(qpsModel);
 			}

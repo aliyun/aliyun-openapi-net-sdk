@@ -35,8 +35,8 @@ namespace Aliyun.Acs.scdn.Model.V20171115
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.scdn.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.scdn.Endpoint.endpointRegionalType, null);
             }
         }
 

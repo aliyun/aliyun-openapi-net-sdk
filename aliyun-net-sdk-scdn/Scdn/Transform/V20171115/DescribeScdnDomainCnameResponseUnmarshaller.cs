@@ -26,19 +26,19 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnDomainCnameResponseUnmarshaller
     {
-        public static DescribeScdnDomainCnameResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnDomainCnameResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnDomainCnameResponse describeScdnDomainCnameResponse = new DescribeScdnDomainCnameResponse();
 
-			describeScdnDomainCnameResponse.HttpResponse = context.HttpResponse;
-			describeScdnDomainCnameResponse.RequestId = context.StringValue("DescribeScdnDomainCname.RequestId");
+			describeScdnDomainCnameResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainCnameResponse.RequestId = _ctx.StringValue("DescribeScdnDomainCname.RequestId");
 
 			List<DescribeScdnDomainCnameResponse.DescribeScdnDomainCname_Data> describeScdnDomainCnameResponse_cnameDatas = new List<DescribeScdnDomainCnameResponse.DescribeScdnDomainCname_Data>();
-			for (int i = 0; i < context.Length("DescribeScdnDomainCname.CnameDatas.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeScdnDomainCname.CnameDatas.Length"); i++) {
 				DescribeScdnDomainCnameResponse.DescribeScdnDomainCname_Data data = new DescribeScdnDomainCnameResponse.DescribeScdnDomainCname_Data();
-				data.Domain = context.StringValue("DescribeScdnDomainCname.CnameDatas["+ i +"].Domain");
-				data.Cname = context.StringValue("DescribeScdnDomainCname.CnameDatas["+ i +"].Cname");
-				data.Status = context.IntegerValue("DescribeScdnDomainCname.CnameDatas["+ i +"].Status");
+				data.Domain = _ctx.StringValue("DescribeScdnDomainCname.CnameDatas["+ i +"].Domain");
+				data.Cname = _ctx.StringValue("DescribeScdnDomainCname.CnameDatas["+ i +"].Cname");
+				data.Status = _ctx.IntegerValue("DescribeScdnDomainCname.CnameDatas["+ i +"].Status");
 
 				describeScdnDomainCnameResponse_cnameDatas.Add(data);
 			}

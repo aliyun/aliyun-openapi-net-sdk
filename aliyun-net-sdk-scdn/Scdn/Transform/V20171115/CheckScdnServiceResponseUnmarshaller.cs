@@ -26,16 +26,16 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class CheckScdnServiceResponseUnmarshaller
     {
-        public static CheckScdnServiceResponse Unmarshall(UnmarshallerContext context)
+        public static CheckScdnServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CheckScdnServiceResponse checkScdnServiceResponse = new CheckScdnServiceResponse();
 
-			checkScdnServiceResponse.HttpResponse = context.HttpResponse;
-			checkScdnServiceResponse.RequestId = context.StringValue("CheckScdnService.RequestId");
-			checkScdnServiceResponse.Enabled = context.BooleanValue("CheckScdnService.Enabled");
-			checkScdnServiceResponse.OnService = context.BooleanValue("CheckScdnService.OnService");
-			checkScdnServiceResponse.InDebt = context.BooleanValue("CheckScdnService.InDebt");
-			checkScdnServiceResponse.InDebtOverdue = context.BooleanValue("CheckScdnService.InDebtOverdue");
+			checkScdnServiceResponse.HttpResponse = _ctx.HttpResponse;
+			checkScdnServiceResponse.RequestId = _ctx.StringValue("CheckScdnService.RequestId");
+			checkScdnServiceResponse.Enabled = _ctx.BooleanValue("CheckScdnService.Enabled");
+			checkScdnServiceResponse.OnService = _ctx.BooleanValue("CheckScdnService.OnService");
+			checkScdnServiceResponse.InDebt = _ctx.BooleanValue("CheckScdnService.InDebt");
+			checkScdnServiceResponse.InDebtOverdue = _ctx.BooleanValue("CheckScdnService.InDebtOverdue");
         
 			return checkScdnServiceResponse;
         }

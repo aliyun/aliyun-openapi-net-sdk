@@ -26,18 +26,18 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnDomainRealTimeByteHitRateDataResponseUnmarshaller
     {
-        public static DescribeScdnDomainRealTimeByteHitRateDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnDomainRealTimeByteHitRateDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnDomainRealTimeByteHitRateDataResponse describeScdnDomainRealTimeByteHitRateDataResponse = new DescribeScdnDomainRealTimeByteHitRateDataResponse();
 
-			describeScdnDomainRealTimeByteHitRateDataResponse.HttpResponse = context.HttpResponse;
-			describeScdnDomainRealTimeByteHitRateDataResponse.RequestId = context.StringValue("DescribeScdnDomainRealTimeByteHitRateData.RequestId");
+			describeScdnDomainRealTimeByteHitRateDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDomainRealTimeByteHitRateDataResponse.RequestId = _ctx.StringValue("DescribeScdnDomainRealTimeByteHitRateData.RequestId");
 
 			List<DescribeScdnDomainRealTimeByteHitRateDataResponse.DescribeScdnDomainRealTimeByteHitRateData_ByteHitRateDataModel> describeScdnDomainRealTimeByteHitRateDataResponse_data = new List<DescribeScdnDomainRealTimeByteHitRateDataResponse.DescribeScdnDomainRealTimeByteHitRateData_ByteHitRateDataModel>();
-			for (int i = 0; i < context.Length("DescribeScdnDomainRealTimeByteHitRateData.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeScdnDomainRealTimeByteHitRateData.Data.Length"); i++) {
 				DescribeScdnDomainRealTimeByteHitRateDataResponse.DescribeScdnDomainRealTimeByteHitRateData_ByteHitRateDataModel byteHitRateDataModel = new DescribeScdnDomainRealTimeByteHitRateDataResponse.DescribeScdnDomainRealTimeByteHitRateData_ByteHitRateDataModel();
-				byteHitRateDataModel.ByteHitRate = context.FloatValue("DescribeScdnDomainRealTimeByteHitRateData.Data["+ i +"].ByteHitRate");
-				byteHitRateDataModel.TimeStamp = context.StringValue("DescribeScdnDomainRealTimeByteHitRateData.Data["+ i +"].TimeStamp");
+				byteHitRateDataModel.ByteHitRate = _ctx.FloatValue("DescribeScdnDomainRealTimeByteHitRateData.Data["+ i +"].ByteHitRate");
+				byteHitRateDataModel.TimeStamp = _ctx.StringValue("DescribeScdnDomainRealTimeByteHitRateData.Data["+ i +"].TimeStamp");
 
 				describeScdnDomainRealTimeByteHitRateDataResponse_data.Add(byteHitRateDataModel);
 			}

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnDdosInfoResponseUnmarshaller
     {
-        public static DescribeScdnDdosInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnDdosInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnDdosInfoResponse describeScdnDdosInfoResponse = new DescribeScdnDdosInfoResponse();
 
-			describeScdnDdosInfoResponse.HttpResponse = context.HttpResponse;
-			describeScdnDdosInfoResponse.RequestId = context.StringValue("DescribeScdnDdosInfo.RequestId");
-			describeScdnDdosInfoResponse.SecBandwidth = context.IntegerValue("DescribeScdnDdosInfo.SecBandwidth");
-			describeScdnDdosInfoResponse.ElasticBandwidth = context.IntegerValue("DescribeScdnDdosInfo.ElasticBandwidth");
+			describeScdnDdosInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDdosInfoResponse.RequestId = _ctx.StringValue("DescribeScdnDdosInfo.RequestId");
+			describeScdnDdosInfoResponse.SecBandwidth = _ctx.IntegerValue("DescribeScdnDdosInfo.SecBandwidth");
+			describeScdnDdosInfoResponse.ElasticBandwidth = _ctx.IntegerValue("DescribeScdnDdosInfo.ElasticBandwidth");
         
 			return describeScdnDdosInfoResponse;
         }

@@ -26,27 +26,27 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnTopDomainsByFlowResponseUnmarshaller
     {
-        public static DescribeScdnTopDomainsByFlowResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnTopDomainsByFlowResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnTopDomainsByFlowResponse describeScdnTopDomainsByFlowResponse = new DescribeScdnTopDomainsByFlowResponse();
 
-			describeScdnTopDomainsByFlowResponse.HttpResponse = context.HttpResponse;
-			describeScdnTopDomainsByFlowResponse.RequestId = context.StringValue("DescribeScdnTopDomainsByFlow.RequestId");
-			describeScdnTopDomainsByFlowResponse.StartTime = context.StringValue("DescribeScdnTopDomainsByFlow.StartTime");
-			describeScdnTopDomainsByFlowResponse.EndTime = context.StringValue("DescribeScdnTopDomainsByFlow.EndTime");
-			describeScdnTopDomainsByFlowResponse.DomainCount = context.LongValue("DescribeScdnTopDomainsByFlow.DomainCount");
-			describeScdnTopDomainsByFlowResponse.DomainOnlineCount = context.LongValue("DescribeScdnTopDomainsByFlow.DomainOnlineCount");
+			describeScdnTopDomainsByFlowResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnTopDomainsByFlowResponse.RequestId = _ctx.StringValue("DescribeScdnTopDomainsByFlow.RequestId");
+			describeScdnTopDomainsByFlowResponse.StartTime = _ctx.StringValue("DescribeScdnTopDomainsByFlow.StartTime");
+			describeScdnTopDomainsByFlowResponse.EndTime = _ctx.StringValue("DescribeScdnTopDomainsByFlow.EndTime");
+			describeScdnTopDomainsByFlowResponse.DomainCount = _ctx.LongValue("DescribeScdnTopDomainsByFlow.DomainCount");
+			describeScdnTopDomainsByFlowResponse.DomainOnlineCount = _ctx.LongValue("DescribeScdnTopDomainsByFlow.DomainOnlineCount");
 
 			List<DescribeScdnTopDomainsByFlowResponse.DescribeScdnTopDomainsByFlow_TopDomain> describeScdnTopDomainsByFlowResponse_topDomains = new List<DescribeScdnTopDomainsByFlowResponse.DescribeScdnTopDomainsByFlow_TopDomain>();
-			for (int i = 0; i < context.Length("DescribeScdnTopDomainsByFlow.TopDomains.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeScdnTopDomainsByFlow.TopDomains.Length"); i++) {
 				DescribeScdnTopDomainsByFlowResponse.DescribeScdnTopDomainsByFlow_TopDomain topDomain = new DescribeScdnTopDomainsByFlowResponse.DescribeScdnTopDomainsByFlow_TopDomain();
-				topDomain.DomainName = context.StringValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].DomainName");
-				topDomain.Rank = context.LongValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].Rank");
-				topDomain.TotalTraffic = context.StringValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].TotalTraffic");
-				topDomain.TrafficPercent = context.StringValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].TrafficPercent");
-				topDomain.MaxBps = context.LongValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].MaxBps");
-				topDomain.MaxBpsTime = context.StringValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].MaxBpsTime");
-				topDomain.TotalAccess = context.LongValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].TotalAccess");
+				topDomain.DomainName = _ctx.StringValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].DomainName");
+				topDomain.Rank = _ctx.LongValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].Rank");
+				topDomain.TotalTraffic = _ctx.StringValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].TotalTraffic");
+				topDomain.TrafficPercent = _ctx.StringValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].TrafficPercent");
+				topDomain.MaxBps = _ctx.LongValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].MaxBps");
+				topDomain.MaxBpsTime = _ctx.StringValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].MaxBpsTime");
+				topDomain.TotalAccess = _ctx.LongValue("DescribeScdnTopDomainsByFlow.TopDomains["+ i +"].TotalAccess");
 
 				describeScdnTopDomainsByFlowResponse_topDomains.Add(topDomain);
 			}

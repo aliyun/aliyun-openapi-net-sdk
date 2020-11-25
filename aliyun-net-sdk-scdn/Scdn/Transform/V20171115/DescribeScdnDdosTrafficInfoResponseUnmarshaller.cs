@@ -26,42 +26,42 @@ namespace Aliyun.Acs.scdn.Transform.V20171115
 {
     public class DescribeScdnDdosTrafficInfoResponseUnmarshaller
     {
-        public static DescribeScdnDdosTrafficInfoResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeScdnDdosTrafficInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeScdnDdosTrafficInfoResponse describeScdnDdosTrafficInfoResponse = new DescribeScdnDdosTrafficInfoResponse();
 
-			describeScdnDdosTrafficInfoResponse.HttpResponse = context.HttpResponse;
-			describeScdnDdosTrafficInfoResponse.RequestId = context.StringValue("DescribeScdnDdosTrafficInfo.RequestId");
+			describeScdnDdosTrafficInfoResponse.HttpResponse = _ctx.HttpResponse;
+			describeScdnDdosTrafficInfoResponse.RequestId = _ctx.StringValue("DescribeScdnDdosTrafficInfo.RequestId");
 
 			List<string> describeScdnDdosTrafficInfoResponse_bpsDrops = new List<string>();
-			for (int i = 0; i < context.Length("DescribeScdnDdosTrafficInfo.BpsDrops.Length"); i++) {
-				describeScdnDdosTrafficInfoResponse_bpsDrops.Add(context.StringValue("DescribeScdnDdosTrafficInfo.BpsDrops["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeScdnDdosTrafficInfo.BpsDrops.Length"); i++) {
+				describeScdnDdosTrafficInfoResponse_bpsDrops.Add(_ctx.StringValue("DescribeScdnDdosTrafficInfo.BpsDrops["+ i +"]"));
 			}
 			describeScdnDdosTrafficInfoResponse.BpsDrops = describeScdnDdosTrafficInfoResponse_bpsDrops;
 
 			List<string> describeScdnDdosTrafficInfoResponse_bpsTotals = new List<string>();
-			for (int i = 0; i < context.Length("DescribeScdnDdosTrafficInfo.BpsTotals.Length"); i++) {
-				describeScdnDdosTrafficInfoResponse_bpsTotals.Add(context.StringValue("DescribeScdnDdosTrafficInfo.BpsTotals["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeScdnDdosTrafficInfo.BpsTotals.Length"); i++) {
+				describeScdnDdosTrafficInfoResponse_bpsTotals.Add(_ctx.StringValue("DescribeScdnDdosTrafficInfo.BpsTotals["+ i +"]"));
 			}
 			describeScdnDdosTrafficInfoResponse.BpsTotals = describeScdnDdosTrafficInfoResponse_bpsTotals;
 
 			List<string> describeScdnDdosTrafficInfoResponse_ppsTotals = new List<string>();
-			for (int i = 0; i < context.Length("DescribeScdnDdosTrafficInfo.PpsTotals.Length"); i++) {
-				describeScdnDdosTrafficInfoResponse_ppsTotals.Add(context.StringValue("DescribeScdnDdosTrafficInfo.PpsTotals["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeScdnDdosTrafficInfo.PpsTotals.Length"); i++) {
+				describeScdnDdosTrafficInfoResponse_ppsTotals.Add(_ctx.StringValue("DescribeScdnDdosTrafficInfo.PpsTotals["+ i +"]"));
 			}
 			describeScdnDdosTrafficInfoResponse.PpsTotals = describeScdnDdosTrafficInfoResponse_ppsTotals;
 
 			List<string> describeScdnDdosTrafficInfoResponse_ppsDrops = new List<string>();
-			for (int i = 0; i < context.Length("DescribeScdnDdosTrafficInfo.PpsDrops.Length"); i++) {
-				describeScdnDdosTrafficInfoResponse_ppsDrops.Add(context.StringValue("DescribeScdnDdosTrafficInfo.PpsDrops["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("DescribeScdnDdosTrafficInfo.PpsDrops.Length"); i++) {
+				describeScdnDdosTrafficInfoResponse_ppsDrops.Add(_ctx.StringValue("DescribeScdnDdosTrafficInfo.PpsDrops["+ i +"]"));
 			}
 			describeScdnDdosTrafficInfoResponse.PpsDrops = describeScdnDdosTrafficInfoResponse_ppsDrops;
 
 			List<DescribeScdnDdosTrafficInfoResponse.DescribeScdnDdosTrafficInfo_TimeScope> describeScdnDdosTrafficInfoResponse_timeScopes = new List<DescribeScdnDdosTrafficInfoResponse.DescribeScdnDdosTrafficInfo_TimeScope>();
-			for (int i = 0; i < context.Length("DescribeScdnDdosTrafficInfo.TimeScopes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeScdnDdosTrafficInfo.TimeScopes.Length"); i++) {
 				DescribeScdnDdosTrafficInfoResponse.DescribeScdnDdosTrafficInfo_TimeScope timeScope = new DescribeScdnDdosTrafficInfoResponse.DescribeScdnDdosTrafficInfo_TimeScope();
-				timeScope.Interval = context.StringValue("DescribeScdnDdosTrafficInfo.TimeScopes["+ i +"].Interval");
-				timeScope.Start = context.StringValue("DescribeScdnDdosTrafficInfo.TimeScopes["+ i +"].Start");
+				timeScope.Interval = _ctx.StringValue("DescribeScdnDdosTrafficInfo.TimeScopes["+ i +"].Interval");
+				timeScope.Start = _ctx.StringValue("DescribeScdnDdosTrafficInfo.TimeScopes["+ i +"].Start");
 
 				describeScdnDdosTrafficInfoResponse_timeScopes.Add(timeScope);
 			}
