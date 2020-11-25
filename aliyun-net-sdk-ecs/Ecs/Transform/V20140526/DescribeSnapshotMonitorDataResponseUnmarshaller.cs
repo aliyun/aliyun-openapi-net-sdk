@@ -26,18 +26,18 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeSnapshotMonitorDataResponseUnmarshaller
     {
-        public static DescribeSnapshotMonitorDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSnapshotMonitorDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSnapshotMonitorDataResponse describeSnapshotMonitorDataResponse = new DescribeSnapshotMonitorDataResponse();
 
-			describeSnapshotMonitorDataResponse.HttpResponse = context.HttpResponse;
-			describeSnapshotMonitorDataResponse.RequestId = context.StringValue("DescribeSnapshotMonitorData.RequestId");
+			describeSnapshotMonitorDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeSnapshotMonitorDataResponse.RequestId = _ctx.StringValue("DescribeSnapshotMonitorData.RequestId");
 
 			List<DescribeSnapshotMonitorDataResponse.DescribeSnapshotMonitorData_DataPoint> describeSnapshotMonitorDataResponse_monitorData = new List<DescribeSnapshotMonitorDataResponse.DescribeSnapshotMonitorData_DataPoint>();
-			for (int i = 0; i < context.Length("DescribeSnapshotMonitorData.MonitorData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSnapshotMonitorData.MonitorData.Length"); i++) {
 				DescribeSnapshotMonitorDataResponse.DescribeSnapshotMonitorData_DataPoint dataPoint = new DescribeSnapshotMonitorDataResponse.DescribeSnapshotMonitorData_DataPoint();
-				dataPoint.TimeStamp = context.StringValue("DescribeSnapshotMonitorData.MonitorData["+ i +"].TimeStamp");
-				dataPoint.Size = context.LongValue("DescribeSnapshotMonitorData.MonitorData["+ i +"].Size");
+				dataPoint.TimeStamp = _ctx.StringValue("DescribeSnapshotMonitorData.MonitorData["+ i +"].TimeStamp");
+				dataPoint.Size = _ctx.LongValue("DescribeSnapshotMonitorData.MonitorData["+ i +"].Size");
 
 				describeSnapshotMonitorDataResponse_monitorData.Add(dataPoint);
 			}

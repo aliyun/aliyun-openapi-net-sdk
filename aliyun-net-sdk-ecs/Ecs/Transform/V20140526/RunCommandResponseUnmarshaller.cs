@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class RunCommandResponseUnmarshaller
     {
-        public static RunCommandResponse Unmarshall(UnmarshallerContext context)
+        public static RunCommandResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RunCommandResponse runCommandResponse = new RunCommandResponse();
 
-			runCommandResponse.HttpResponse = context.HttpResponse;
-			runCommandResponse.RequestId = context.StringValue("RunCommand.RequestId");
-			runCommandResponse.CommandId = context.StringValue("RunCommand.CommandId");
-			runCommandResponse.InvokeId = context.StringValue("RunCommand.InvokeId");
+			runCommandResponse.HttpResponse = _ctx.HttpResponse;
+			runCommandResponse.RequestId = _ctx.StringValue("RunCommand.RequestId");
+			runCommandResponse.CommandId = _ctx.StringValue("RunCommand.CommandId");
+			runCommandResponse.InvokeId = _ctx.StringValue("RunCommand.InvokeId");
         
 			return runCommandResponse;
         }

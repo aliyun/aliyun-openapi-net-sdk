@@ -26,22 +26,22 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeImageSupportInstanceTypesResponseUnmarshaller
     {
-        public static DescribeImageSupportInstanceTypesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeImageSupportInstanceTypesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeImageSupportInstanceTypesResponse describeImageSupportInstanceTypesResponse = new DescribeImageSupportInstanceTypesResponse();
 
-			describeImageSupportInstanceTypesResponse.HttpResponse = context.HttpResponse;
-			describeImageSupportInstanceTypesResponse.RequestId = context.StringValue("DescribeImageSupportInstanceTypes.RequestId");
-			describeImageSupportInstanceTypesResponse.RegionId = context.StringValue("DescribeImageSupportInstanceTypes.RegionId");
-			describeImageSupportInstanceTypesResponse.ImageId = context.StringValue("DescribeImageSupportInstanceTypes.ImageId");
+			describeImageSupportInstanceTypesResponse.HttpResponse = _ctx.HttpResponse;
+			describeImageSupportInstanceTypesResponse.RequestId = _ctx.StringValue("DescribeImageSupportInstanceTypes.RequestId");
+			describeImageSupportInstanceTypesResponse.RegionId = _ctx.StringValue("DescribeImageSupportInstanceTypes.RegionId");
+			describeImageSupportInstanceTypesResponse.ImageId = _ctx.StringValue("DescribeImageSupportInstanceTypes.ImageId");
 
 			List<DescribeImageSupportInstanceTypesResponse.DescribeImageSupportInstanceTypes_InstanceType> describeImageSupportInstanceTypesResponse_instanceTypes = new List<DescribeImageSupportInstanceTypesResponse.DescribeImageSupportInstanceTypes_InstanceType>();
-			for (int i = 0; i < context.Length("DescribeImageSupportInstanceTypes.InstanceTypes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeImageSupportInstanceTypes.InstanceTypes.Length"); i++) {
 				DescribeImageSupportInstanceTypesResponse.DescribeImageSupportInstanceTypes_InstanceType instanceType = new DescribeImageSupportInstanceTypesResponse.DescribeImageSupportInstanceTypes_InstanceType();
-				instanceType.InstanceTypeId = context.StringValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].InstanceTypeId");
-				instanceType.CpuCoreCount = context.IntegerValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].CpuCoreCount");
-				instanceType.MemorySize = context.FloatValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].MemorySize");
-				instanceType.InstanceTypeFamily = context.StringValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].InstanceTypeFamily");
+				instanceType.InstanceTypeId = _ctx.StringValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].InstanceTypeId");
+				instanceType.CpuCoreCount = _ctx.IntegerValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].CpuCoreCount");
+				instanceType.MemorySize = _ctx.FloatValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].MemorySize");
+				instanceType.InstanceTypeFamily = _ctx.StringValue("DescribeImageSupportInstanceTypes.InstanceTypes["+ i +"].InstanceTypeFamily");
 
 				describeImageSupportInstanceTypesResponse_instanceTypes.Add(instanceType);
 			}

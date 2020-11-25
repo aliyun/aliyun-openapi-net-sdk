@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeSnapshotsUsageResponseUnmarshaller
     {
-        public static DescribeSnapshotsUsageResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSnapshotsUsageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSnapshotsUsageResponse describeSnapshotsUsageResponse = new DescribeSnapshotsUsageResponse();
 
-			describeSnapshotsUsageResponse.HttpResponse = context.HttpResponse;
-			describeSnapshotsUsageResponse.RequestId = context.StringValue("DescribeSnapshotsUsage.RequestId");
-			describeSnapshotsUsageResponse.SnapshotCount = context.IntegerValue("DescribeSnapshotsUsage.SnapshotCount");
-			describeSnapshotsUsageResponse.SnapshotSize = context.LongValue("DescribeSnapshotsUsage.SnapshotSize");
+			describeSnapshotsUsageResponse.HttpResponse = _ctx.HttpResponse;
+			describeSnapshotsUsageResponse.RequestId = _ctx.StringValue("DescribeSnapshotsUsage.RequestId");
+			describeSnapshotsUsageResponse.SnapshotCount = _ctx.IntegerValue("DescribeSnapshotsUsage.SnapshotCount");
+			describeSnapshotsUsageResponse.SnapshotSize = _ctx.LongValue("DescribeSnapshotsUsage.SnapshotSize");
         
 			return describeSnapshotsUsageResponse;
         }

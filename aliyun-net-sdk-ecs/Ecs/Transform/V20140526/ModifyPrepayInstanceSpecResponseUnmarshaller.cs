@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ModifyPrepayInstanceSpecResponseUnmarshaller
     {
-        public static ModifyPrepayInstanceSpecResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyPrepayInstanceSpecResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyPrepayInstanceSpecResponse modifyPrepayInstanceSpecResponse = new ModifyPrepayInstanceSpecResponse();
 
-			modifyPrepayInstanceSpecResponse.HttpResponse = context.HttpResponse;
-			modifyPrepayInstanceSpecResponse.RequestId = context.StringValue("ModifyPrepayInstanceSpec.RequestId");
-			modifyPrepayInstanceSpecResponse.OrderId = context.StringValue("ModifyPrepayInstanceSpec.OrderId");
+			modifyPrepayInstanceSpecResponse.HttpResponse = _ctx.HttpResponse;
+			modifyPrepayInstanceSpecResponse.RequestId = _ctx.StringValue("ModifyPrepayInstanceSpec.RequestId");
+			modifyPrepayInstanceSpecResponse.OrderId = _ctx.StringValue("ModifyPrepayInstanceSpec.OrderId");
         
 			return modifyPrepayInstanceSpecResponse;
         }

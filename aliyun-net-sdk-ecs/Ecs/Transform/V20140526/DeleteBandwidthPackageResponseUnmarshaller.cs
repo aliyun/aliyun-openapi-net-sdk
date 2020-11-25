@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DeleteBandwidthPackageResponseUnmarshaller
     {
-        public static DeleteBandwidthPackageResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteBandwidthPackageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteBandwidthPackageResponse deleteBandwidthPackageResponse = new DeleteBandwidthPackageResponse();
 
-			deleteBandwidthPackageResponse.HttpResponse = context.HttpResponse;
-			deleteBandwidthPackageResponse.RequestId = context.StringValue("DeleteBandwidthPackage.RequestId");
+			deleteBandwidthPackageResponse.HttpResponse = _ctx.HttpResponse;
+			deleteBandwidthPackageResponse.RequestId = _ctx.StringValue("DeleteBandwidthPackage.RequestId");
         
 			return deleteBandwidthPackageResponse;
         }

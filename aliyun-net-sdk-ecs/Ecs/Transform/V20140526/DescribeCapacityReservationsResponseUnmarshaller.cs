@@ -26,38 +26,38 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeCapacityReservationsResponseUnmarshaller
     {
-        public static DescribeCapacityReservationsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCapacityReservationsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCapacityReservationsResponse describeCapacityReservationsResponse = new DescribeCapacityReservationsResponse();
 
-			describeCapacityReservationsResponse.HttpResponse = context.HttpResponse;
-			describeCapacityReservationsResponse.RequestId = context.StringValue("DescribeCapacityReservations.RequestId");
-			describeCapacityReservationsResponse.NextToken = context.StringValue("DescribeCapacityReservations.NextToken");
-			describeCapacityReservationsResponse.MaxResults = context.IntegerValue("DescribeCapacityReservations.MaxResults");
-			describeCapacityReservationsResponse.TotalCount = context.IntegerValue("DescribeCapacityReservations.TotalCount");
+			describeCapacityReservationsResponse.HttpResponse = _ctx.HttpResponse;
+			describeCapacityReservationsResponse.RequestId = _ctx.StringValue("DescribeCapacityReservations.RequestId");
+			describeCapacityReservationsResponse.NextToken = _ctx.StringValue("DescribeCapacityReservations.NextToken");
+			describeCapacityReservationsResponse.MaxResults = _ctx.IntegerValue("DescribeCapacityReservations.MaxResults");
+			describeCapacityReservationsResponse.TotalCount = _ctx.IntegerValue("DescribeCapacityReservations.TotalCount");
 
 			List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem> describeCapacityReservationsResponse_capacityReservationSet = new List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem>();
-			for (int i = 0; i < context.Length("DescribeCapacityReservations.CapacityReservationSet.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCapacityReservations.CapacityReservationSet.Length"); i++) {
 				DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem capacityReservationItem = new DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem();
-				capacityReservationItem.PrivatePoolOptionsId = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].PrivatePoolOptionsId");
-				capacityReservationItem.PrivatePoolOptionsName = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].PrivatePoolOptionsName");
-				capacityReservationItem.Description = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Description");
-				capacityReservationItem.RegionId = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].RegionId");
-				capacityReservationItem.PrivatePoolOptionsMatchCriteria = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].PrivatePoolOptionsMatchCriteria");
-				capacityReservationItem.Status = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Status");
-				capacityReservationItem.StartTime = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].StartTime");
-				capacityReservationItem.EndTime = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].EndTime");
-				capacityReservationItem.EndTimeType = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].EndTimeType");
-				capacityReservationItem.InstanceChargeType = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].InstanceChargeType");
-				capacityReservationItem.Platform = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Platform");
+				capacityReservationItem.PrivatePoolOptionsId = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].PrivatePoolOptionsId");
+				capacityReservationItem.PrivatePoolOptionsName = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].PrivatePoolOptionsName");
+				capacityReservationItem.Description = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Description");
+				capacityReservationItem.RegionId = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].RegionId");
+				capacityReservationItem.PrivatePoolOptionsMatchCriteria = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].PrivatePoolOptionsMatchCriteria");
+				capacityReservationItem.Status = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Status");
+				capacityReservationItem.StartTime = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].StartTime");
+				capacityReservationItem.EndTime = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].EndTime");
+				capacityReservationItem.EndTimeType = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].EndTimeType");
+				capacityReservationItem.InstanceChargeType = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].InstanceChargeType");
+				capacityReservationItem.Platform = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Platform");
 
 				List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_AllocatedResource> capacityReservationItem_allocatedResources = new List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_AllocatedResource>();
-				for (int j = 0; j < context.Length("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources.Length"); j++) {
 					DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_AllocatedResource allocatedResource = new DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_AllocatedResource();
-					allocatedResource.ZoneId = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].zoneId");
-					allocatedResource.InstanceType = context.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].InstanceType");
-					allocatedResource.TotalAmount = context.IntegerValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].TotalAmount");
-					allocatedResource.UsedAmount = context.IntegerValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].UsedAmount");
+					allocatedResource.ZoneId = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].zoneId");
+					allocatedResource.InstanceType = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].InstanceType");
+					allocatedResource.TotalAmount = _ctx.IntegerValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].TotalAmount");
+					allocatedResource.UsedAmount = _ctx.IntegerValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources["+ j +"].UsedAmount");
 
 					capacityReservationItem_allocatedResources.Add(allocatedResource);
 				}

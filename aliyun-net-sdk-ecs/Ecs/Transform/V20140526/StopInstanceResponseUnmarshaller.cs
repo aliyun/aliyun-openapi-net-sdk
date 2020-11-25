@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class StopInstanceResponseUnmarshaller
     {
-        public static StopInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static StopInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopInstanceResponse stopInstanceResponse = new StopInstanceResponse();
 
-			stopInstanceResponse.HttpResponse = context.HttpResponse;
-			stopInstanceResponse.RequestId = context.StringValue("StopInstance.RequestId");
+			stopInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			stopInstanceResponse.RequestId = _ctx.StringValue("StopInstance.RequestId");
         
 			return stopInstanceResponse;
         }

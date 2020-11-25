@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeInstanceStatusResponseUnmarshaller
     {
-        public static DescribeInstanceStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInstanceStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeInstanceStatusResponse describeInstanceStatusResponse = new DescribeInstanceStatusResponse();
 
-			describeInstanceStatusResponse.HttpResponse = context.HttpResponse;
-			describeInstanceStatusResponse.RequestId = context.StringValue("DescribeInstanceStatus.RequestId");
-			describeInstanceStatusResponse.TotalCount = context.IntegerValue("DescribeInstanceStatus.TotalCount");
-			describeInstanceStatusResponse.PageNumber = context.IntegerValue("DescribeInstanceStatus.PageNumber");
-			describeInstanceStatusResponse.PageSize = context.IntegerValue("DescribeInstanceStatus.PageSize");
+			describeInstanceStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceStatusResponse.RequestId = _ctx.StringValue("DescribeInstanceStatus.RequestId");
+			describeInstanceStatusResponse.TotalCount = _ctx.IntegerValue("DescribeInstanceStatus.TotalCount");
+			describeInstanceStatusResponse.PageNumber = _ctx.IntegerValue("DescribeInstanceStatus.PageNumber");
+			describeInstanceStatusResponse.PageSize = _ctx.IntegerValue("DescribeInstanceStatus.PageSize");
 
 			List<DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus> describeInstanceStatusResponse_instanceStatuses = new List<DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus>();
-			for (int i = 0; i < context.Length("DescribeInstanceStatus.InstanceStatuses.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeInstanceStatus.InstanceStatuses.Length"); i++) {
 				DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus instanceStatus = new DescribeInstanceStatusResponse.DescribeInstanceStatus_InstanceStatus();
-				instanceStatus.InstanceId = context.StringValue("DescribeInstanceStatus.InstanceStatuses["+ i +"].InstanceId");
-				instanceStatus.Status = context.StringValue("DescribeInstanceStatus.InstanceStatuses["+ i +"].Status");
+				instanceStatus.InstanceId = _ctx.StringValue("DescribeInstanceStatus.InstanceStatuses["+ i +"].InstanceId");
+				instanceStatus.Status = _ctx.StringValue("DescribeInstanceStatus.InstanceStatuses["+ i +"].Status");
 
 				describeInstanceStatusResponse_instanceStatuses.Add(instanceStatus);
 			}

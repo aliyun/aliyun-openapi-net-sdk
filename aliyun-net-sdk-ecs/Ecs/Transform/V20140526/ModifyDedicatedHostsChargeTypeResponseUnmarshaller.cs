@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ModifyDedicatedHostsChargeTypeResponseUnmarshaller
     {
-        public static ModifyDedicatedHostsChargeTypeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyDedicatedHostsChargeTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyDedicatedHostsChargeTypeResponse modifyDedicatedHostsChargeTypeResponse = new ModifyDedicatedHostsChargeTypeResponse();
 
-			modifyDedicatedHostsChargeTypeResponse.HttpResponse = context.HttpResponse;
-			modifyDedicatedHostsChargeTypeResponse.RequestId = context.StringValue("ModifyDedicatedHostsChargeType.RequestId");
-			modifyDedicatedHostsChargeTypeResponse.OrderId = context.StringValue("ModifyDedicatedHostsChargeType.OrderId");
+			modifyDedicatedHostsChargeTypeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyDedicatedHostsChargeTypeResponse.RequestId = _ctx.StringValue("ModifyDedicatedHostsChargeType.RequestId");
+			modifyDedicatedHostsChargeTypeResponse.OrderId = _ctx.StringValue("ModifyDedicatedHostsChargeType.OrderId");
 
 			List<ModifyDedicatedHostsChargeTypeResponse.ModifyDedicatedHostsChargeType_FeeOfInstance> modifyDedicatedHostsChargeTypeResponse_feeOfInstances = new List<ModifyDedicatedHostsChargeTypeResponse.ModifyDedicatedHostsChargeType_FeeOfInstance>();
-			for (int i = 0; i < context.Length("ModifyDedicatedHostsChargeType.FeeOfInstances.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("ModifyDedicatedHostsChargeType.FeeOfInstances.Length"); i++) {
 				ModifyDedicatedHostsChargeTypeResponse.ModifyDedicatedHostsChargeType_FeeOfInstance feeOfInstance = new ModifyDedicatedHostsChargeTypeResponse.ModifyDedicatedHostsChargeType_FeeOfInstance();
-				feeOfInstance.InstanceId = context.StringValue("ModifyDedicatedHostsChargeType.FeeOfInstances["+ i +"].InstanceId");
-				feeOfInstance.Fee = context.StringValue("ModifyDedicatedHostsChargeType.FeeOfInstances["+ i +"].Fee");
-				feeOfInstance.Currency = context.StringValue("ModifyDedicatedHostsChargeType.FeeOfInstances["+ i +"].Currency");
+				feeOfInstance.InstanceId = _ctx.StringValue("ModifyDedicatedHostsChargeType.FeeOfInstances["+ i +"].InstanceId");
+				feeOfInstance.Fee = _ctx.StringValue("ModifyDedicatedHostsChargeType.FeeOfInstances["+ i +"].Fee");
+				feeOfInstance.Currency = _ctx.StringValue("ModifyDedicatedHostsChargeType.FeeOfInstances["+ i +"].Currency");
 
 				modifyDedicatedHostsChargeTypeResponse_feeOfInstances.Add(feeOfInstance);
 			}

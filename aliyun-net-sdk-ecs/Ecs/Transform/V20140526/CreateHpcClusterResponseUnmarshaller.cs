@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class CreateHpcClusterResponseUnmarshaller
     {
-        public static CreateHpcClusterResponse Unmarshall(UnmarshallerContext context)
+        public static CreateHpcClusterResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateHpcClusterResponse createHpcClusterResponse = new CreateHpcClusterResponse();
 
-			createHpcClusterResponse.HttpResponse = context.HttpResponse;
-			createHpcClusterResponse.RequestId = context.StringValue("CreateHpcCluster.RequestId");
-			createHpcClusterResponse.HpcClusterId = context.StringValue("CreateHpcCluster.HpcClusterId");
+			createHpcClusterResponse.HttpResponse = _ctx.HttpResponse;
+			createHpcClusterResponse.RequestId = _ctx.StringValue("CreateHpcCluster.RequestId");
+			createHpcClusterResponse.HpcClusterId = _ctx.StringValue("CreateHpcCluster.HpcClusterId");
         
 			return createHpcClusterResponse;
         }

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ModifyForwardEntryResponseUnmarshaller
     {
-        public static ModifyForwardEntryResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyForwardEntryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyForwardEntryResponse modifyForwardEntryResponse = new ModifyForwardEntryResponse();
 
-			modifyForwardEntryResponse.HttpResponse = context.HttpResponse;
-			modifyForwardEntryResponse.RequestId = context.StringValue("ModifyForwardEntry.RequestId");
+			modifyForwardEntryResponse.HttpResponse = _ctx.HttpResponse;
+			modifyForwardEntryResponse.RequestId = _ctx.StringValue("ModifyForwardEntry.RequestId");
         
 			return modifyForwardEntryResponse;
         }

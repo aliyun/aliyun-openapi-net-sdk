@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeNetworkInterfacePermissionsResponseUnmarshaller
     {
-        public static DescribeNetworkInterfacePermissionsResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeNetworkInterfacePermissionsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeNetworkInterfacePermissionsResponse describeNetworkInterfacePermissionsResponse = new DescribeNetworkInterfacePermissionsResponse();
 
-			describeNetworkInterfacePermissionsResponse.HttpResponse = context.HttpResponse;
-			describeNetworkInterfacePermissionsResponse.RequestId = context.StringValue("DescribeNetworkInterfacePermissions.RequestId");
-			describeNetworkInterfacePermissionsResponse.TotalCount = context.IntegerValue("DescribeNetworkInterfacePermissions.TotalCount");
-			describeNetworkInterfacePermissionsResponse.PageNumber = context.IntegerValue("DescribeNetworkInterfacePermissions.PageNumber");
-			describeNetworkInterfacePermissionsResponse.PageSize = context.IntegerValue("DescribeNetworkInterfacePermissions.PageSize");
+			describeNetworkInterfacePermissionsResponse.HttpResponse = _ctx.HttpResponse;
+			describeNetworkInterfacePermissionsResponse.RequestId = _ctx.StringValue("DescribeNetworkInterfacePermissions.RequestId");
+			describeNetworkInterfacePermissionsResponse.TotalCount = _ctx.IntegerValue("DescribeNetworkInterfacePermissions.TotalCount");
+			describeNetworkInterfacePermissionsResponse.PageNumber = _ctx.IntegerValue("DescribeNetworkInterfacePermissions.PageNumber");
+			describeNetworkInterfacePermissionsResponse.PageSize = _ctx.IntegerValue("DescribeNetworkInterfacePermissions.PageSize");
 
 			List<DescribeNetworkInterfacePermissionsResponse.DescribeNetworkInterfacePermissions_NetworkInterfacePermission> describeNetworkInterfacePermissionsResponse_networkInterfacePermissions = new List<DescribeNetworkInterfacePermissionsResponse.DescribeNetworkInterfacePermissions_NetworkInterfacePermission>();
-			for (int i = 0; i < context.Length("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions.Length"); i++) {
 				DescribeNetworkInterfacePermissionsResponse.DescribeNetworkInterfacePermissions_NetworkInterfacePermission networkInterfacePermission = new DescribeNetworkInterfacePermissionsResponse.DescribeNetworkInterfacePermissions_NetworkInterfacePermission();
-				networkInterfacePermission.AccountId = context.LongValue("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions["+ i +"].AccountId");
-				networkInterfacePermission.ServiceName = context.StringValue("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions["+ i +"].ServiceName");
-				networkInterfacePermission.NetworkInterfaceId = context.StringValue("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions["+ i +"].NetworkInterfaceId");
-				networkInterfacePermission.NetworkInterfacePermissionId = context.StringValue("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions["+ i +"].NetworkInterfacePermissionId");
-				networkInterfacePermission.Permission = context.StringValue("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions["+ i +"].Permission");
-				networkInterfacePermission.PermissionState = context.StringValue("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions["+ i +"].PermissionState");
+				networkInterfacePermission.AccountId = _ctx.LongValue("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions["+ i +"].AccountId");
+				networkInterfacePermission.ServiceName = _ctx.StringValue("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions["+ i +"].ServiceName");
+				networkInterfacePermission.NetworkInterfaceId = _ctx.StringValue("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions["+ i +"].NetworkInterfaceId");
+				networkInterfacePermission.NetworkInterfacePermissionId = _ctx.StringValue("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions["+ i +"].NetworkInterfacePermissionId");
+				networkInterfacePermission.Permission = _ctx.StringValue("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions["+ i +"].Permission");
+				networkInterfacePermission.PermissionState = _ctx.StringValue("DescribeNetworkInterfacePermissions.NetworkInterfacePermissions["+ i +"].PermissionState");
 
 				describeNetworkInterfacePermissionsResponse_networkInterfacePermissions.Add(networkInterfacePermission);
 			}

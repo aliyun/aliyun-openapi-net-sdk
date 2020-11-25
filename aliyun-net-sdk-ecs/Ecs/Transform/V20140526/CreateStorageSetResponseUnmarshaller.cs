@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class CreateStorageSetResponseUnmarshaller
     {
-        public static CreateStorageSetResponse Unmarshall(UnmarshallerContext context)
+        public static CreateStorageSetResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateStorageSetResponse createStorageSetResponse = new CreateStorageSetResponse();
 
-			createStorageSetResponse.HttpResponse = context.HttpResponse;
-			createStorageSetResponse.RequestId = context.StringValue("CreateStorageSet.RequestId");
-			createStorageSetResponse.StorageSetId = context.StringValue("CreateStorageSet.StorageSetId");
+			createStorageSetResponse.HttpResponse = _ctx.HttpResponse;
+			createStorageSetResponse.RequestId = _ctx.StringValue("CreateStorageSet.RequestId");
+			createStorageSetResponse.StorageSetId = _ctx.StringValue("CreateStorageSet.StorageSetId");
         
 			return createStorageSetResponse;
         }

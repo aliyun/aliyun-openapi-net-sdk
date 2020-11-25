@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ReInitDiskResponseUnmarshaller
     {
-        public static ReInitDiskResponse Unmarshall(UnmarshallerContext context)
+        public static ReInitDiskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReInitDiskResponse reInitDiskResponse = new ReInitDiskResponse();
 
-			reInitDiskResponse.HttpResponse = context.HttpResponse;
-			reInitDiskResponse.RequestId = context.StringValue("ReInitDisk.RequestId");
+			reInitDiskResponse.HttpResponse = _ctx.HttpResponse;
+			reInitDiskResponse.RequestId = _ctx.StringValue("ReInitDisk.RequestId");
         
 			return reInitDiskResponse;
         }

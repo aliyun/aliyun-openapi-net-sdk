@@ -190,6 +190,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private bool? deletionProtection;
 
+			private string iSP;
+
 			private List<DescribeInstances_NetworkInterface> networkInterfaces;
 
 			private List<DescribeInstances_LockReason> operationLocks;
@@ -770,6 +772,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				}
 			}
 
+			public string ISP
+			{
+				get
+				{
+					return iSP;
+				}
+				set	
+				{
+					iSP = value;
+				}
+			}
+
 			public List<DescribeInstances_NetworkInterface> NetworkInterfaces
 			{
 				get
@@ -947,6 +961,12 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 				private string primaryIpAddress;
 
+				private string type;
+
+				private List<DescribeInstances_PrivateIpSet> privateIpSets;
+
+				private List<DescribeInstances_Ipv6Set> ipv6Sets;
+
 				public string NetworkInterfaceId
 				{
 					get
@@ -980,6 +1000,92 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 					set	
 					{
 						primaryIpAddress = value;
+					}
+				}
+
+				public string Type
+				{
+					get
+					{
+						return type;
+					}
+					set	
+					{
+						type = value;
+					}
+				}
+
+				public List<DescribeInstances_PrivateIpSet> PrivateIpSets
+				{
+					get
+					{
+						return privateIpSets;
+					}
+					set	
+					{
+						privateIpSets = value;
+					}
+				}
+
+				public List<DescribeInstances_Ipv6Set> Ipv6Sets
+				{
+					get
+					{
+						return ipv6Sets;
+					}
+					set	
+					{
+						ipv6Sets = value;
+					}
+				}
+
+				public class DescribeInstances_PrivateIpSet
+				{
+
+					private string privateIpAddress;
+
+					private bool? primary;
+
+					public string PrivateIpAddress
+					{
+						get
+						{
+							return privateIpAddress;
+						}
+						set	
+						{
+							privateIpAddress = value;
+						}
+					}
+
+					public bool? Primary
+					{
+						get
+						{
+							return primary;
+						}
+						set	
+						{
+							primary = value;
+						}
+					}
+				}
+
+				public class DescribeInstances_Ipv6Set
+				{
+
+					private string ipv6Address;
+
+					public string Ipv6Address
+					{
+						get
+						{
+							return ipv6Address;
+						}
+						set	
+						{
+							ipv6Address = value;
+						}
 					}
 				}
 			}

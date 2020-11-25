@@ -26,39 +26,39 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeDedicatedHostTypesResponseUnmarshaller
     {
-        public static DescribeDedicatedHostTypesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDedicatedHostTypesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDedicatedHostTypesResponse describeDedicatedHostTypesResponse = new DescribeDedicatedHostTypesResponse();
 
-			describeDedicatedHostTypesResponse.HttpResponse = context.HttpResponse;
-			describeDedicatedHostTypesResponse.RequestId = context.StringValue("DescribeDedicatedHostTypes.RequestId");
+			describeDedicatedHostTypesResponse.HttpResponse = _ctx.HttpResponse;
+			describeDedicatedHostTypesResponse.RequestId = _ctx.StringValue("DescribeDedicatedHostTypes.RequestId");
 
 			List<DescribeDedicatedHostTypesResponse.DescribeDedicatedHostTypes_DedicatedHostType> describeDedicatedHostTypesResponse_dedicatedHostTypes = new List<DescribeDedicatedHostTypesResponse.DescribeDedicatedHostTypes_DedicatedHostType>();
-			for (int i = 0; i < context.Length("DescribeDedicatedHostTypes.DedicatedHostTypes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDedicatedHostTypes.DedicatedHostTypes.Length"); i++) {
 				DescribeDedicatedHostTypesResponse.DescribeDedicatedHostTypes_DedicatedHostType dedicatedHostType = new DescribeDedicatedHostTypesResponse.DescribeDedicatedHostTypes_DedicatedHostType();
-				dedicatedHostType.DedicatedHostType = context.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].DedicatedHostType");
-				dedicatedHostType.Sockets = context.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].Sockets");
-				dedicatedHostType.TotalVcpus = context.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].TotalVcpus");
-				dedicatedHostType.TotalVgpus = context.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].TotalVgpus");
-				dedicatedHostType.Cores = context.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].Cores");
-				dedicatedHostType.PhysicalGpus = context.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].PhysicalGpus");
-				dedicatedHostType.MemorySize = context.FloatValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].MemorySize");
-				dedicatedHostType.LocalStorageCapacity = context.LongValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].LocalStorageCapacity");
-				dedicatedHostType.LocalStorageAmount = context.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].LocalStorageAmount");
-				dedicatedHostType.LocalStorageCategory = context.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].LocalStorageCategory");
-				dedicatedHostType.GPUSpec = context.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].GPUSpec");
-				dedicatedHostType.SupportCpuOverCommitRatio = context.BooleanValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].SupportCpuOverCommitRatio");
-				dedicatedHostType.CpuOverCommitRatioRange = context.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].CpuOverCommitRatioRange");
+				dedicatedHostType.DedicatedHostType = _ctx.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].DedicatedHostType");
+				dedicatedHostType.Sockets = _ctx.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].Sockets");
+				dedicatedHostType.TotalVcpus = _ctx.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].TotalVcpus");
+				dedicatedHostType.TotalVgpus = _ctx.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].TotalVgpus");
+				dedicatedHostType.Cores = _ctx.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].Cores");
+				dedicatedHostType.PhysicalGpus = _ctx.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].PhysicalGpus");
+				dedicatedHostType.MemorySize = _ctx.FloatValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].MemorySize");
+				dedicatedHostType.LocalStorageCapacity = _ctx.LongValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].LocalStorageCapacity");
+				dedicatedHostType.LocalStorageAmount = _ctx.IntegerValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].LocalStorageAmount");
+				dedicatedHostType.LocalStorageCategory = _ctx.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].LocalStorageCategory");
+				dedicatedHostType.GPUSpec = _ctx.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].GPUSpec");
+				dedicatedHostType.SupportCpuOverCommitRatio = _ctx.BooleanValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].SupportCpuOverCommitRatio");
+				dedicatedHostType.CpuOverCommitRatioRange = _ctx.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].CpuOverCommitRatioRange");
 
 				List<string> dedicatedHostType_supportedInstanceTypeFamilies = new List<string>();
-				for (int j = 0; j < context.Length("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].SupportedInstanceTypeFamilies.Length"); j++) {
-					dedicatedHostType_supportedInstanceTypeFamilies.Add(context.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].SupportedInstanceTypeFamilies["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].SupportedInstanceTypeFamilies.Length"); j++) {
+					dedicatedHostType_supportedInstanceTypeFamilies.Add(_ctx.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].SupportedInstanceTypeFamilies["+ j +"]"));
 				}
 				dedicatedHostType.SupportedInstanceTypeFamilies = dedicatedHostType_supportedInstanceTypeFamilies;
 
 				List<string> dedicatedHostType_supportedInstanceTypesList = new List<string>();
-				for (int j = 0; j < context.Length("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].SupportedInstanceTypesList.Length"); j++) {
-					dedicatedHostType_supportedInstanceTypesList.Add(context.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].SupportedInstanceTypesList["+ j +"]"));
+				for (int j = 0; j < _ctx.Length("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].SupportedInstanceTypesList.Length"); j++) {
+					dedicatedHostType_supportedInstanceTypesList.Add(_ctx.StringValue("DescribeDedicatedHostTypes.DedicatedHostTypes["+ i +"].SupportedInstanceTypesList["+ j +"]"));
 				}
 				dedicatedHostType.SupportedInstanceTypesList = dedicatedHostType_supportedInstanceTypesList;
 

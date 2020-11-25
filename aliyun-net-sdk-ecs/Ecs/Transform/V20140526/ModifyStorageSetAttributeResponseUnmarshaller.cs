@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ModifyStorageSetAttributeResponseUnmarshaller
     {
-        public static ModifyStorageSetAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyStorageSetAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyStorageSetAttributeResponse modifyStorageSetAttributeResponse = new ModifyStorageSetAttributeResponse();
 
-			modifyStorageSetAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyStorageSetAttributeResponse.RequestId = context.StringValue("ModifyStorageSetAttribute.RequestId");
+			modifyStorageSetAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyStorageSetAttributeResponse.RequestId = _ctx.StringValue("ModifyStorageSetAttribute.RequestId");
         
 			return modifyStorageSetAttributeResponse;
         }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class AllocateDedicatedHostsResponseUnmarshaller
     {
-        public static AllocateDedicatedHostsResponse Unmarshall(UnmarshallerContext context)
+        public static AllocateDedicatedHostsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AllocateDedicatedHostsResponse allocateDedicatedHostsResponse = new AllocateDedicatedHostsResponse();
 
-			allocateDedicatedHostsResponse.HttpResponse = context.HttpResponse;
-			allocateDedicatedHostsResponse.RequestId = context.StringValue("AllocateDedicatedHosts.RequestId");
+			allocateDedicatedHostsResponse.HttpResponse = _ctx.HttpResponse;
+			allocateDedicatedHostsResponse.RequestId = _ctx.StringValue("AllocateDedicatedHosts.RequestId");
 
 			List<string> allocateDedicatedHostsResponse_dedicatedHostIdSets = new List<string>();
-			for (int i = 0; i < context.Length("AllocateDedicatedHosts.DedicatedHostIdSets.Length"); i++) {
-				allocateDedicatedHostsResponse_dedicatedHostIdSets.Add(context.StringValue("AllocateDedicatedHosts.DedicatedHostIdSets["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("AllocateDedicatedHosts.DedicatedHostIdSets.Length"); i++) {
+				allocateDedicatedHostsResponse_dedicatedHostIdSets.Add(_ctx.StringValue("AllocateDedicatedHosts.DedicatedHostIdSets["+ i +"]"));
 			}
 			allocateDedicatedHostsResponse.DedicatedHostIdSets = allocateDedicatedHostsResponse_dedicatedHostIdSets;
         

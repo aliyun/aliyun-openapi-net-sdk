@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DetachKeyPairResponseUnmarshaller
     {
-        public static DetachKeyPairResponse Unmarshall(UnmarshallerContext context)
+        public static DetachKeyPairResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DetachKeyPairResponse detachKeyPairResponse = new DetachKeyPairResponse();
 
-			detachKeyPairResponse.HttpResponse = context.HttpResponse;
-			detachKeyPairResponse.RequestId = context.StringValue("DetachKeyPair.RequestId");
-			detachKeyPairResponse.TotalCount = context.StringValue("DetachKeyPair.TotalCount");
-			detachKeyPairResponse.FailCount = context.StringValue("DetachKeyPair.FailCount");
-			detachKeyPairResponse.KeyPairName = context.StringValue("DetachKeyPair.KeyPairName");
+			detachKeyPairResponse.HttpResponse = _ctx.HttpResponse;
+			detachKeyPairResponse.RequestId = _ctx.StringValue("DetachKeyPair.RequestId");
+			detachKeyPairResponse.TotalCount = _ctx.StringValue("DetachKeyPair.TotalCount");
+			detachKeyPairResponse.FailCount = _ctx.StringValue("DetachKeyPair.FailCount");
+			detachKeyPairResponse.KeyPairName = _ctx.StringValue("DetachKeyPair.KeyPairName");
 
 			List<DetachKeyPairResponse.DetachKeyPair_Result> detachKeyPairResponse_results = new List<DetachKeyPairResponse.DetachKeyPair_Result>();
-			for (int i = 0; i < context.Length("DetachKeyPair.Results.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DetachKeyPair.Results.Length"); i++) {
 				DetachKeyPairResponse.DetachKeyPair_Result result = new DetachKeyPairResponse.DetachKeyPair_Result();
-				result.InstanceId = context.StringValue("DetachKeyPair.Results["+ i +"].InstanceId");
-				result.Success = context.StringValue("DetachKeyPair.Results["+ i +"].Success");
-				result.Code = context.StringValue("DetachKeyPair.Results["+ i +"].Code");
-				result.Message = context.StringValue("DetachKeyPair.Results["+ i +"].Message");
+				result.InstanceId = _ctx.StringValue("DetachKeyPair.Results["+ i +"].InstanceId");
+				result.Success = _ctx.StringValue("DetachKeyPair.Results["+ i +"].Success");
+				result.Code = _ctx.StringValue("DetachKeyPair.Results["+ i +"].Code");
+				result.Message = _ctx.StringValue("DetachKeyPair.Results["+ i +"].Message");
 
 				detachKeyPairResponse_results.Add(result);
 			}

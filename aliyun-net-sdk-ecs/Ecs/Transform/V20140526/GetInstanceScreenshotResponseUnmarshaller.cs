@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class GetInstanceScreenshotResponseUnmarshaller
     {
-        public static GetInstanceScreenshotResponse Unmarshall(UnmarshallerContext context)
+        public static GetInstanceScreenshotResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetInstanceScreenshotResponse getInstanceScreenshotResponse = new GetInstanceScreenshotResponse();
 
-			getInstanceScreenshotResponse.HttpResponse = context.HttpResponse;
-			getInstanceScreenshotResponse.RequestId = context.StringValue("GetInstanceScreenshot.RequestId");
-			getInstanceScreenshotResponse.InstanceId = context.StringValue("GetInstanceScreenshot.InstanceId");
-			getInstanceScreenshotResponse.Screenshot = context.StringValue("GetInstanceScreenshot.Screenshot");
+			getInstanceScreenshotResponse.HttpResponse = _ctx.HttpResponse;
+			getInstanceScreenshotResponse.RequestId = _ctx.StringValue("GetInstanceScreenshot.RequestId");
+			getInstanceScreenshotResponse.InstanceId = _ctx.StringValue("GetInstanceScreenshot.InstanceId");
+			getInstanceScreenshotResponse.Screenshot = _ctx.StringValue("GetInstanceScreenshot.Screenshot");
         
 			return getInstanceScreenshotResponse;
         }

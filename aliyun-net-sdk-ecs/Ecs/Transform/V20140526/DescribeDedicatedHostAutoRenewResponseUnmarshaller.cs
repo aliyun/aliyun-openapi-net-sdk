@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeDedicatedHostAutoRenewResponseUnmarshaller
     {
-        public static DescribeDedicatedHostAutoRenewResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDedicatedHostAutoRenewResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDedicatedHostAutoRenewResponse describeDedicatedHostAutoRenewResponse = new DescribeDedicatedHostAutoRenewResponse();
 
-			describeDedicatedHostAutoRenewResponse.HttpResponse = context.HttpResponse;
-			describeDedicatedHostAutoRenewResponse.RequestId = context.StringValue("DescribeDedicatedHostAutoRenew.RequestId");
+			describeDedicatedHostAutoRenewResponse.HttpResponse = _ctx.HttpResponse;
+			describeDedicatedHostAutoRenewResponse.RequestId = _ctx.StringValue("DescribeDedicatedHostAutoRenew.RequestId");
 
 			List<DescribeDedicatedHostAutoRenewResponse.DescribeDedicatedHostAutoRenew_DedicatedHostRenewAttribute> describeDedicatedHostAutoRenewResponse_dedicatedHostRenewAttributes = new List<DescribeDedicatedHostAutoRenewResponse.DescribeDedicatedHostAutoRenew_DedicatedHostRenewAttribute>();
-			for (int i = 0; i < context.Length("DescribeDedicatedHostAutoRenew.DedicatedHostRenewAttributes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDedicatedHostAutoRenew.DedicatedHostRenewAttributes.Length"); i++) {
 				DescribeDedicatedHostAutoRenewResponse.DescribeDedicatedHostAutoRenew_DedicatedHostRenewAttribute dedicatedHostRenewAttribute = new DescribeDedicatedHostAutoRenewResponse.DescribeDedicatedHostAutoRenew_DedicatedHostRenewAttribute();
-				dedicatedHostRenewAttribute.DedicatedHostId = context.StringValue("DescribeDedicatedHostAutoRenew.DedicatedHostRenewAttributes["+ i +"].DedicatedHostId");
-				dedicatedHostRenewAttribute.AutoRenewEnabled = context.BooleanValue("DescribeDedicatedHostAutoRenew.DedicatedHostRenewAttributes["+ i +"].AutoRenewEnabled");
-				dedicatedHostRenewAttribute.Duration = context.IntegerValue("DescribeDedicatedHostAutoRenew.DedicatedHostRenewAttributes["+ i +"].Duration");
-				dedicatedHostRenewAttribute.PeriodUnit = context.StringValue("DescribeDedicatedHostAutoRenew.DedicatedHostRenewAttributes["+ i +"].PeriodUnit");
-				dedicatedHostRenewAttribute.RenewalStatus = context.StringValue("DescribeDedicatedHostAutoRenew.DedicatedHostRenewAttributes["+ i +"].RenewalStatus");
+				dedicatedHostRenewAttribute.DedicatedHostId = _ctx.StringValue("DescribeDedicatedHostAutoRenew.DedicatedHostRenewAttributes["+ i +"].DedicatedHostId");
+				dedicatedHostRenewAttribute.AutoRenewEnabled = _ctx.BooleanValue("DescribeDedicatedHostAutoRenew.DedicatedHostRenewAttributes["+ i +"].AutoRenewEnabled");
+				dedicatedHostRenewAttribute.Duration = _ctx.IntegerValue("DescribeDedicatedHostAutoRenew.DedicatedHostRenewAttributes["+ i +"].Duration");
+				dedicatedHostRenewAttribute.PeriodUnit = _ctx.StringValue("DescribeDedicatedHostAutoRenew.DedicatedHostRenewAttributes["+ i +"].PeriodUnit");
+				dedicatedHostRenewAttribute.RenewalStatus = _ctx.StringValue("DescribeDedicatedHostAutoRenew.DedicatedHostRenewAttributes["+ i +"].RenewalStatus");
 
 				describeDedicatedHostAutoRenewResponse_dedicatedHostRenewAttributes.Add(dedicatedHostRenewAttribute);
 			}

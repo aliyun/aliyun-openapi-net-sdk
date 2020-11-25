@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeUserDataResponseUnmarshaller
     {
-        public static DescribeUserDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserDataResponse describeUserDataResponse = new DescribeUserDataResponse();
 
-			describeUserDataResponse.HttpResponse = context.HttpResponse;
-			describeUserDataResponse.RequestId = context.StringValue("DescribeUserData.RequestId");
-			describeUserDataResponse.RegionId = context.StringValue("DescribeUserData.RegionId");
-			describeUserDataResponse.InstanceId = context.StringValue("DescribeUserData.InstanceId");
-			describeUserDataResponse.UserData = context.StringValue("DescribeUserData.UserData");
+			describeUserDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserDataResponse.RequestId = _ctx.StringValue("DescribeUserData.RequestId");
+			describeUserDataResponse.RegionId = _ctx.StringValue("DescribeUserData.RegionId");
+			describeUserDataResponse.InstanceId = _ctx.StringValue("DescribeUserData.InstanceId");
+			describeUserDataResponse.UserData = _ctx.StringValue("DescribeUserData.UserData");
         
 			return describeUserDataResponse;
         }

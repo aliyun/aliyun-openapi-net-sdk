@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class RebootInstanceResponseUnmarshaller
     {
-        public static RebootInstanceResponse Unmarshall(UnmarshallerContext context)
+        public static RebootInstanceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			RebootInstanceResponse rebootInstanceResponse = new RebootInstanceResponse();
 
-			rebootInstanceResponse.HttpResponse = context.HttpResponse;
-			rebootInstanceResponse.RequestId = context.StringValue("RebootInstance.RequestId");
+			rebootInstanceResponse.HttpResponse = _ctx.HttpResponse;
+			rebootInstanceResponse.RequestId = _ctx.StringValue("RebootInstance.RequestId");
         
 			return rebootInstanceResponse;
         }

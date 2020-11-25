@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeInstanceVncUrlResponseUnmarshaller
     {
-        public static DescribeInstanceVncUrlResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInstanceVncUrlResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeInstanceVncUrlResponse describeInstanceVncUrlResponse = new DescribeInstanceVncUrlResponse();
 
-			describeInstanceVncUrlResponse.HttpResponse = context.HttpResponse;
-			describeInstanceVncUrlResponse.RequestId = context.StringValue("DescribeInstanceVncUrl.RequestId");
-			describeInstanceVncUrlResponse.VncUrl = context.StringValue("DescribeInstanceVncUrl.VncUrl");
+			describeInstanceVncUrlResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceVncUrlResponse.RequestId = _ctx.StringValue("DescribeInstanceVncUrl.RequestId");
+			describeInstanceVncUrlResponse.VncUrl = _ctx.StringValue("DescribeInstanceVncUrl.VncUrl");
         
 			return describeInstanceVncUrlResponse;
         }

@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class AttachKeyPairResponseUnmarshaller
     {
-        public static AttachKeyPairResponse Unmarshall(UnmarshallerContext context)
+        public static AttachKeyPairResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AttachKeyPairResponse attachKeyPairResponse = new AttachKeyPairResponse();
 
-			attachKeyPairResponse.HttpResponse = context.HttpResponse;
-			attachKeyPairResponse.RequestId = context.StringValue("AttachKeyPair.RequestId");
-			attachKeyPairResponse.TotalCount = context.StringValue("AttachKeyPair.TotalCount");
-			attachKeyPairResponse.FailCount = context.StringValue("AttachKeyPair.FailCount");
-			attachKeyPairResponse.KeyPairName = context.StringValue("AttachKeyPair.KeyPairName");
+			attachKeyPairResponse.HttpResponse = _ctx.HttpResponse;
+			attachKeyPairResponse.RequestId = _ctx.StringValue("AttachKeyPair.RequestId");
+			attachKeyPairResponse.TotalCount = _ctx.StringValue("AttachKeyPair.TotalCount");
+			attachKeyPairResponse.FailCount = _ctx.StringValue("AttachKeyPair.FailCount");
+			attachKeyPairResponse.KeyPairName = _ctx.StringValue("AttachKeyPair.KeyPairName");
 
 			List<AttachKeyPairResponse.AttachKeyPair_Result> attachKeyPairResponse_results = new List<AttachKeyPairResponse.AttachKeyPair_Result>();
-			for (int i = 0; i < context.Length("AttachKeyPair.Results.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("AttachKeyPair.Results.Length"); i++) {
 				AttachKeyPairResponse.AttachKeyPair_Result result = new AttachKeyPairResponse.AttachKeyPair_Result();
-				result.InstanceId = context.StringValue("AttachKeyPair.Results["+ i +"].InstanceId");
-				result.Success = context.StringValue("AttachKeyPair.Results["+ i +"].Success");
-				result.Code = context.StringValue("AttachKeyPair.Results["+ i +"].Code");
-				result.Message = context.StringValue("AttachKeyPair.Results["+ i +"].Message");
+				result.InstanceId = _ctx.StringValue("AttachKeyPair.Results["+ i +"].InstanceId");
+				result.Success = _ctx.StringValue("AttachKeyPair.Results["+ i +"].Success");
+				result.Code = _ctx.StringValue("AttachKeyPair.Results["+ i +"].Code");
+				result.Message = _ctx.StringValue("AttachKeyPair.Results["+ i +"].Message");
 
 				attachKeyPairResponse_results.Add(result);
 			}

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class CreateDemandResponseUnmarshaller
     {
-        public static CreateDemandResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDemandResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDemandResponse createDemandResponse = new CreateDemandResponse();
 
-			createDemandResponse.HttpResponse = context.HttpResponse;
-			createDemandResponse.RequestId = context.StringValue("CreateDemand.RequestId");
-			createDemandResponse.DemandId = context.StringValue("CreateDemand.DemandId");
+			createDemandResponse.HttpResponse = _ctx.HttpResponse;
+			createDemandResponse.RequestId = _ctx.StringValue("CreateDemand.RequestId");
+			createDemandResponse.DemandId = _ctx.StringValue("CreateDemand.DemandId");
         
 			return createDemandResponse;
         }

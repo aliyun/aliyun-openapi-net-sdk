@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class EipFillProductResponseUnmarshaller
     {
-        public static EipFillProductResponse Unmarshall(UnmarshallerContext context)
+        public static EipFillProductResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			EipFillProductResponse eipFillProductResponse = new EipFillProductResponse();
 
-			eipFillProductResponse.HttpResponse = context.HttpResponse;
-			eipFillProductResponse.RequestId = context.StringValue("EipFillProduct.requestId");
-			eipFillProductResponse.Data = context.StringValue("EipFillProduct.data");
-			eipFillProductResponse.Code = context.StringValue("EipFillProduct.code");
-			eipFillProductResponse.Success = context.BooleanValue("EipFillProduct.success");
-			eipFillProductResponse.Message = context.StringValue("EipFillProduct.message");
+			eipFillProductResponse.HttpResponse = _ctx.HttpResponse;
+			eipFillProductResponse.RequestId = _ctx.StringValue("EipFillProduct.requestId");
+			eipFillProductResponse.Data = _ctx.StringValue("EipFillProduct.data");
+			eipFillProductResponse.Code = _ctx.StringValue("EipFillProduct.code");
+			eipFillProductResponse.Success = _ctx.BooleanValue("EipFillProduct.success");
+			eipFillProductResponse.Message = _ctx.StringValue("EipFillProduct.message");
         
 			return eipFillProductResponse;
         }

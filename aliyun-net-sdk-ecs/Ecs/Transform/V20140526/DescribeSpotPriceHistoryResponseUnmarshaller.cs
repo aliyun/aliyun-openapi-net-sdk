@@ -26,25 +26,25 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeSpotPriceHistoryResponseUnmarshaller
     {
-        public static DescribeSpotPriceHistoryResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeSpotPriceHistoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeSpotPriceHistoryResponse describeSpotPriceHistoryResponse = new DescribeSpotPriceHistoryResponse();
 
-			describeSpotPriceHistoryResponse.HttpResponse = context.HttpResponse;
-			describeSpotPriceHistoryResponse.RequestId = context.StringValue("DescribeSpotPriceHistory.RequestId");
-			describeSpotPriceHistoryResponse.NextOffset = context.IntegerValue("DescribeSpotPriceHistory.NextOffset");
-			describeSpotPriceHistoryResponse.Currency = context.StringValue("DescribeSpotPriceHistory.Currency");
+			describeSpotPriceHistoryResponse.HttpResponse = _ctx.HttpResponse;
+			describeSpotPriceHistoryResponse.RequestId = _ctx.StringValue("DescribeSpotPriceHistory.RequestId");
+			describeSpotPriceHistoryResponse.NextOffset = _ctx.IntegerValue("DescribeSpotPriceHistory.NextOffset");
+			describeSpotPriceHistoryResponse.Currency = _ctx.StringValue("DescribeSpotPriceHistory.Currency");
 
 			List<DescribeSpotPriceHistoryResponse.DescribeSpotPriceHistory_SpotPriceType> describeSpotPriceHistoryResponse_spotPrices = new List<DescribeSpotPriceHistoryResponse.DescribeSpotPriceHistory_SpotPriceType>();
-			for (int i = 0; i < context.Length("DescribeSpotPriceHistory.SpotPrices.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeSpotPriceHistory.SpotPrices.Length"); i++) {
 				DescribeSpotPriceHistoryResponse.DescribeSpotPriceHistory_SpotPriceType spotPriceType = new DescribeSpotPriceHistoryResponse.DescribeSpotPriceHistory_SpotPriceType();
-				spotPriceType.ZoneId = context.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].ZoneId");
-				spotPriceType.InstanceType = context.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].InstanceType");
-				spotPriceType.IoOptimized = context.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].IoOptimized");
-				spotPriceType.Timestamp = context.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].Timestamp");
-				spotPriceType.NetworkType = context.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].NetworkType");
-				spotPriceType.SpotPrice = context.FloatValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].SpotPrice");
-				spotPriceType.OriginPrice = context.FloatValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].OriginPrice");
+				spotPriceType.ZoneId = _ctx.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].ZoneId");
+				spotPriceType.InstanceType = _ctx.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].InstanceType");
+				spotPriceType.IoOptimized = _ctx.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].IoOptimized");
+				spotPriceType.Timestamp = _ctx.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].Timestamp");
+				spotPriceType.NetworkType = _ctx.StringValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].NetworkType");
+				spotPriceType.SpotPrice = _ctx.FloatValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].SpotPrice");
+				spotPriceType.OriginPrice = _ctx.FloatValue("DescribeSpotPriceHistory.SpotPrices["+ i +"].OriginPrice");
 
 				describeSpotPriceHistoryResponse_spotPrices.Add(spotPriceType);
 			}

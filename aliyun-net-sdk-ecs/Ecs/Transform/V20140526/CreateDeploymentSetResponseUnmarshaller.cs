@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class CreateDeploymentSetResponseUnmarshaller
     {
-        public static CreateDeploymentSetResponse Unmarshall(UnmarshallerContext context)
+        public static CreateDeploymentSetResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateDeploymentSetResponse createDeploymentSetResponse = new CreateDeploymentSetResponse();
 
-			createDeploymentSetResponse.HttpResponse = context.HttpResponse;
-			createDeploymentSetResponse.RequestId = context.StringValue("CreateDeploymentSet.RequestId");
-			createDeploymentSetResponse.DeploymentSetId = context.StringValue("CreateDeploymentSet.DeploymentSetId");
+			createDeploymentSetResponse.HttpResponse = _ctx.HttpResponse;
+			createDeploymentSetResponse.RequestId = _ctx.StringValue("CreateDeploymentSet.RequestId");
+			createDeploymentSetResponse.DeploymentSetId = _ctx.StringValue("CreateDeploymentSet.DeploymentSetId");
         
 			return createDeploymentSetResponse;
         }

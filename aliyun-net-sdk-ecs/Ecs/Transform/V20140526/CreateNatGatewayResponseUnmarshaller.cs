@@ -26,23 +26,23 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class CreateNatGatewayResponseUnmarshaller
     {
-        public static CreateNatGatewayResponse Unmarshall(UnmarshallerContext context)
+        public static CreateNatGatewayResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateNatGatewayResponse createNatGatewayResponse = new CreateNatGatewayResponse();
 
-			createNatGatewayResponse.HttpResponse = context.HttpResponse;
-			createNatGatewayResponse.RequestId = context.StringValue("CreateNatGateway.RequestId");
-			createNatGatewayResponse.NatGatewayId = context.StringValue("CreateNatGateway.NatGatewayId");
+			createNatGatewayResponse.HttpResponse = _ctx.HttpResponse;
+			createNatGatewayResponse.RequestId = _ctx.StringValue("CreateNatGateway.RequestId");
+			createNatGatewayResponse.NatGatewayId = _ctx.StringValue("CreateNatGateway.NatGatewayId");
 
 			List<string> createNatGatewayResponse_forwardTableIds = new List<string>();
-			for (int i = 0; i < context.Length("CreateNatGateway.ForwardTableIds.Length"); i++) {
-				createNatGatewayResponse_forwardTableIds.Add(context.StringValue("CreateNatGateway.ForwardTableIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("CreateNatGateway.ForwardTableIds.Length"); i++) {
+				createNatGatewayResponse_forwardTableIds.Add(_ctx.StringValue("CreateNatGateway.ForwardTableIds["+ i +"]"));
 			}
 			createNatGatewayResponse.ForwardTableIds = createNatGatewayResponse_forwardTableIds;
 
 			List<string> createNatGatewayResponse_bandwidthPackageIds = new List<string>();
-			for (int i = 0; i < context.Length("CreateNatGateway.BandwidthPackageIds.Length"); i++) {
-				createNatGatewayResponse_bandwidthPackageIds.Add(context.StringValue("CreateNatGateway.BandwidthPackageIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("CreateNatGateway.BandwidthPackageIds.Length"); i++) {
+				createNatGatewayResponse_bandwidthPackageIds.Add(_ctx.StringValue("CreateNatGateway.BandwidthPackageIds["+ i +"]"));
 			}
 			createNatGatewayResponse.BandwidthPackageIds = createNatGatewayResponse_bandwidthPackageIds;
         

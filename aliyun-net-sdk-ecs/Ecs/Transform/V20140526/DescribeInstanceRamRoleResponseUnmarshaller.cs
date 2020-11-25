@@ -26,20 +26,20 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeInstanceRamRoleResponseUnmarshaller
     {
-        public static DescribeInstanceRamRoleResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInstanceRamRoleResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeInstanceRamRoleResponse describeInstanceRamRoleResponse = new DescribeInstanceRamRoleResponse();
 
-			describeInstanceRamRoleResponse.HttpResponse = context.HttpResponse;
-			describeInstanceRamRoleResponse.RequestId = context.StringValue("DescribeInstanceRamRole.RequestId");
-			describeInstanceRamRoleResponse.RegionId = context.StringValue("DescribeInstanceRamRole.RegionId");
-			describeInstanceRamRoleResponse.TotalCount = context.IntegerValue("DescribeInstanceRamRole.TotalCount");
+			describeInstanceRamRoleResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceRamRoleResponse.RequestId = _ctx.StringValue("DescribeInstanceRamRole.RequestId");
+			describeInstanceRamRoleResponse.RegionId = _ctx.StringValue("DescribeInstanceRamRole.RegionId");
+			describeInstanceRamRoleResponse.TotalCount = _ctx.IntegerValue("DescribeInstanceRamRole.TotalCount");
 
 			List<DescribeInstanceRamRoleResponse.DescribeInstanceRamRole_InstanceRamRoleSet> describeInstanceRamRoleResponse_instanceRamRoleSets = new List<DescribeInstanceRamRoleResponse.DescribeInstanceRamRole_InstanceRamRoleSet>();
-			for (int i = 0; i < context.Length("DescribeInstanceRamRole.InstanceRamRoleSets.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeInstanceRamRole.InstanceRamRoleSets.Length"); i++) {
 				DescribeInstanceRamRoleResponse.DescribeInstanceRamRole_InstanceRamRoleSet instanceRamRoleSet = new DescribeInstanceRamRoleResponse.DescribeInstanceRamRole_InstanceRamRoleSet();
-				instanceRamRoleSet.InstanceId = context.StringValue("DescribeInstanceRamRole.InstanceRamRoleSets["+ i +"].InstanceId");
-				instanceRamRoleSet.RamRoleName = context.StringValue("DescribeInstanceRamRole.InstanceRamRoleSets["+ i +"].RamRoleName");
+				instanceRamRoleSet.InstanceId = _ctx.StringValue("DescribeInstanceRamRole.InstanceRamRoleSets["+ i +"].InstanceId");
+				instanceRamRoleSet.RamRoleName = _ctx.StringValue("DescribeInstanceRamRole.InstanceRamRoleSets["+ i +"].RamRoleName");
 
 				describeInstanceRamRoleResponse_instanceRamRoleSets.Add(instanceRamRoleSet);
 			}

@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ModifyReservedInstanceAttributeResponseUnmarshaller
     {
-        public static ModifyReservedInstanceAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyReservedInstanceAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyReservedInstanceAttributeResponse modifyReservedInstanceAttributeResponse = new ModifyReservedInstanceAttributeResponse();
 
-			modifyReservedInstanceAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyReservedInstanceAttributeResponse.RequestId = context.StringValue("ModifyReservedInstanceAttribute.RequestId");
-			modifyReservedInstanceAttributeResponse.Code = context.StringValue("ModifyReservedInstanceAttribute.Code");
-			modifyReservedInstanceAttributeResponse.Message = context.StringValue("ModifyReservedInstanceAttribute.Message");
-			modifyReservedInstanceAttributeResponse.HttpStatusCode = context.IntegerValue("ModifyReservedInstanceAttribute.HttpStatusCode");
+			modifyReservedInstanceAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyReservedInstanceAttributeResponse.RequestId = _ctx.StringValue("ModifyReservedInstanceAttribute.RequestId");
+			modifyReservedInstanceAttributeResponse.Code = _ctx.StringValue("ModifyReservedInstanceAttribute.Code");
+			modifyReservedInstanceAttributeResponse.Message = _ctx.StringValue("ModifyReservedInstanceAttribute.Message");
+			modifyReservedInstanceAttributeResponse.HttpStatusCode = _ctx.IntegerValue("ModifyReservedInstanceAttribute.HttpStatusCode");
         
 			return modifyReservedInstanceAttributeResponse;
         }

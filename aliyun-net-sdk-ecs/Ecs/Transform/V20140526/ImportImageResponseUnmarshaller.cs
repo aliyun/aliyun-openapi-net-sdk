@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ImportImageResponseUnmarshaller
     {
-        public static ImportImageResponse Unmarshall(UnmarshallerContext context)
+        public static ImportImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ImportImageResponse importImageResponse = new ImportImageResponse();
 
-			importImageResponse.HttpResponse = context.HttpResponse;
-			importImageResponse.RequestId = context.StringValue("ImportImage.RequestId");
-			importImageResponse.TaskId = context.StringValue("ImportImage.TaskId");
-			importImageResponse.RegionId = context.StringValue("ImportImage.RegionId");
-			importImageResponse.ImageId = context.StringValue("ImportImage.ImageId");
+			importImageResponse.HttpResponse = _ctx.HttpResponse;
+			importImageResponse.RequestId = _ctx.StringValue("ImportImage.RequestId");
+			importImageResponse.TaskId = _ctx.StringValue("ImportImage.TaskId");
+			importImageResponse.RegionId = _ctx.StringValue("ImportImage.RegionId");
+			importImageResponse.ImageId = _ctx.StringValue("ImportImage.ImageId");
         
 			return importImageResponse;
         }

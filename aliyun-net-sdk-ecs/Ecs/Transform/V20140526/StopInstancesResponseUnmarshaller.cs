@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class StopInstancesResponseUnmarshaller
     {
-        public static StopInstancesResponse Unmarshall(UnmarshallerContext context)
+        public static StopInstancesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			StopInstancesResponse stopInstancesResponse = new StopInstancesResponse();
 
-			stopInstancesResponse.HttpResponse = context.HttpResponse;
-			stopInstancesResponse.RequestId = context.StringValue("StopInstances.RequestId");
+			stopInstancesResponse.HttpResponse = _ctx.HttpResponse;
+			stopInstancesResponse.RequestId = _ctx.StringValue("StopInstances.RequestId");
 
 			List<StopInstancesResponse.StopInstances_InstanceResponse> stopInstancesResponse_instanceResponses = new List<StopInstancesResponse.StopInstances_InstanceResponse>();
-			for (int i = 0; i < context.Length("StopInstances.InstanceResponses.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("StopInstances.InstanceResponses.Length"); i++) {
 				StopInstancesResponse.StopInstances_InstanceResponse instanceResponse = new StopInstancesResponse.StopInstances_InstanceResponse();
-				instanceResponse.InstanceId = context.StringValue("StopInstances.InstanceResponses["+ i +"].InstanceId");
-				instanceResponse.PreviousStatus = context.StringValue("StopInstances.InstanceResponses["+ i +"].PreviousStatus");
-				instanceResponse.CurrentStatus = context.StringValue("StopInstances.InstanceResponses["+ i +"].CurrentStatus");
-				instanceResponse.Code = context.StringValue("StopInstances.InstanceResponses["+ i +"].Code");
-				instanceResponse.Message = context.StringValue("StopInstances.InstanceResponses["+ i +"].Message");
+				instanceResponse.InstanceId = _ctx.StringValue("StopInstances.InstanceResponses["+ i +"].InstanceId");
+				instanceResponse.PreviousStatus = _ctx.StringValue("StopInstances.InstanceResponses["+ i +"].PreviousStatus");
+				instanceResponse.CurrentStatus = _ctx.StringValue("StopInstances.InstanceResponses["+ i +"].CurrentStatus");
+				instanceResponse.Code = _ctx.StringValue("StopInstances.InstanceResponses["+ i +"].Code");
+				instanceResponse.Message = _ctx.StringValue("StopInstances.InstanceResponses["+ i +"].Message");
 
 				stopInstancesResponse_instanceResponses.Add(instanceResponse);
 			}

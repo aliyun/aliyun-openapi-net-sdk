@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ModifyPhysicalConnectionAttributeResponseUnmarshaller
     {
-        public static ModifyPhysicalConnectionAttributeResponse Unmarshall(UnmarshallerContext context)
+        public static ModifyPhysicalConnectionAttributeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ModifyPhysicalConnectionAttributeResponse modifyPhysicalConnectionAttributeResponse = new ModifyPhysicalConnectionAttributeResponse();
 
-			modifyPhysicalConnectionAttributeResponse.HttpResponse = context.HttpResponse;
-			modifyPhysicalConnectionAttributeResponse.RequestId = context.StringValue("ModifyPhysicalConnectionAttribute.RequestId");
+			modifyPhysicalConnectionAttributeResponse.HttpResponse = _ctx.HttpResponse;
+			modifyPhysicalConnectionAttributeResponse.RequestId = _ctx.StringValue("ModifyPhysicalConnectionAttribute.RequestId");
         
 			return modifyPhysicalConnectionAttributeResponse;
         }

@@ -26,41 +26,41 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeInstanceTypesResponseUnmarshaller
     {
-        public static DescribeInstanceTypesResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeInstanceTypesResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeInstanceTypesResponse describeInstanceTypesResponse = new DescribeInstanceTypesResponse();
 
-			describeInstanceTypesResponse.HttpResponse = context.HttpResponse;
-			describeInstanceTypesResponse.RequestId = context.StringValue("DescribeInstanceTypes.RequestId");
+			describeInstanceTypesResponse.HttpResponse = _ctx.HttpResponse;
+			describeInstanceTypesResponse.RequestId = _ctx.StringValue("DescribeInstanceTypes.RequestId");
 
 			List<DescribeInstanceTypesResponse.DescribeInstanceTypes_InstanceType> describeInstanceTypesResponse_instanceTypes = new List<DescribeInstanceTypesResponse.DescribeInstanceTypes_InstanceType>();
-			for (int i = 0; i < context.Length("DescribeInstanceTypes.InstanceTypes.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeInstanceTypes.InstanceTypes.Length"); i++) {
 				DescribeInstanceTypesResponse.DescribeInstanceTypes_InstanceType instanceType = new DescribeInstanceTypesResponse.DescribeInstanceTypes_InstanceType();
-				instanceType.InstanceTypeId = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceTypeId");
-				instanceType.CpuCoreCount = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].CpuCoreCount");
-				instanceType.MemorySize = context.FloatValue("DescribeInstanceTypes.InstanceTypes["+ i +"].MemorySize");
-				instanceType.InstanceTypeFamily = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceTypeFamily");
-				instanceType.LocalStorageCapacity = context.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].LocalStorageCapacity");
-				instanceType.LocalStorageAmount = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].LocalStorageAmount");
-				instanceType.LocalStorageCategory = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].LocalStorageCategory");
-				instanceType.GPUAmount = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].GPUAmount");
-				instanceType.GPUSpec = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].GPUSpec");
-				instanceType.InitialCredit = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InitialCredit");
-				instanceType.BaselineCredit = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].BaselineCredit");
-				instanceType.EniQuantity = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniQuantity");
-				instanceType.EniPrivateIpAddressQuantity = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniPrivateIpAddressQuantity");
-				instanceType.EniIpv6AddressQuantity = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniIpv6AddressQuantity");
-				instanceType.InstanceBandwidthRx = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceBandwidthRx");
-				instanceType.InstanceBandwidthTx = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceBandwidthTx");
-				instanceType.InstancePpsRx = context.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstancePpsRx");
-				instanceType.InstancePpsTx = context.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstancePpsTx");
-				instanceType.InstanceFamilyLevel = context.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceFamilyLevel");
-				instanceType.TotalEniQueueQuantity = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].TotalEniQueueQuantity");
-				instanceType.EniTrunkSupported = context.BooleanValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniTrunkSupported");
-				instanceType.EniTotalQuantity = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniTotalQuantity");
-				instanceType.MaximumQueueNumberPerEni = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].MaximumQueueNumberPerEni");
-				instanceType.PrimaryEniQueueNumber = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].PrimaryEniQueueNumber");
-				instanceType.SecondaryEniQueueNumber = context.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].SecondaryEniQueueNumber");
+				instanceType.InstanceTypeId = _ctx.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceTypeId");
+				instanceType.CpuCoreCount = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].CpuCoreCount");
+				instanceType.MemorySize = _ctx.FloatValue("DescribeInstanceTypes.InstanceTypes["+ i +"].MemorySize");
+				instanceType.InstanceTypeFamily = _ctx.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceTypeFamily");
+				instanceType.LocalStorageCapacity = _ctx.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].LocalStorageCapacity");
+				instanceType.LocalStorageAmount = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].LocalStorageAmount");
+				instanceType.LocalStorageCategory = _ctx.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].LocalStorageCategory");
+				instanceType.GPUAmount = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].GPUAmount");
+				instanceType.GPUSpec = _ctx.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].GPUSpec");
+				instanceType.InitialCredit = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InitialCredit");
+				instanceType.BaselineCredit = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].BaselineCredit");
+				instanceType.EniQuantity = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniQuantity");
+				instanceType.EniPrivateIpAddressQuantity = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniPrivateIpAddressQuantity");
+				instanceType.EniIpv6AddressQuantity = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniIpv6AddressQuantity");
+				instanceType.InstanceBandwidthRx = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceBandwidthRx");
+				instanceType.InstanceBandwidthTx = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceBandwidthTx");
+				instanceType.InstancePpsRx = _ctx.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstancePpsRx");
+				instanceType.InstancePpsTx = _ctx.LongValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstancePpsTx");
+				instanceType.InstanceFamilyLevel = _ctx.StringValue("DescribeInstanceTypes.InstanceTypes["+ i +"].InstanceFamilyLevel");
+				instanceType.TotalEniQueueQuantity = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].TotalEniQueueQuantity");
+				instanceType.EniTrunkSupported = _ctx.BooleanValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniTrunkSupported");
+				instanceType.EniTotalQuantity = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].EniTotalQuantity");
+				instanceType.MaximumQueueNumberPerEni = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].MaximumQueueNumberPerEni");
+				instanceType.PrimaryEniQueueNumber = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].PrimaryEniQueueNumber");
+				instanceType.SecondaryEniQueueNumber = _ctx.IntegerValue("DescribeInstanceTypes.InstanceTypes["+ i +"].SecondaryEniQueueNumber");
 
 				describeInstanceTypesResponse_instanceTypes.Add(instanceType);
 			}

@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class AddBandwidthPackageIpsResponseUnmarshaller
     {
-        public static AddBandwidthPackageIpsResponse Unmarshall(UnmarshallerContext context)
+        public static AddBandwidthPackageIpsResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AddBandwidthPackageIpsResponse addBandwidthPackageIpsResponse = new AddBandwidthPackageIpsResponse();
 
-			addBandwidthPackageIpsResponse.HttpResponse = context.HttpResponse;
-			addBandwidthPackageIpsResponse.RequestId = context.StringValue("AddBandwidthPackageIps.RequestId");
+			addBandwidthPackageIpsResponse.HttpResponse = _ctx.HttpResponse;
+			addBandwidthPackageIpsResponse.RequestId = _ctx.StringValue("AddBandwidthPackageIps.RequestId");
         
 			return addBandwidthPackageIpsResponse;
         }

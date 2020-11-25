@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class CreateImageResponseUnmarshaller
     {
-        public static CreateImageResponse Unmarshall(UnmarshallerContext context)
+        public static CreateImageResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateImageResponse createImageResponse = new CreateImageResponse();
 
-			createImageResponse.HttpResponse = context.HttpResponse;
-			createImageResponse.RequestId = context.StringValue("CreateImage.RequestId");
-			createImageResponse.ImageId = context.StringValue("CreateImage.ImageId");
+			createImageResponse.HttpResponse = _ctx.HttpResponse;
+			createImageResponse.RequestId = _ctx.StringValue("CreateImage.RequestId");
+			createImageResponse.ImageId = _ctx.StringValue("CreateImage.ImageId");
         
 			return createImageResponse;
         }

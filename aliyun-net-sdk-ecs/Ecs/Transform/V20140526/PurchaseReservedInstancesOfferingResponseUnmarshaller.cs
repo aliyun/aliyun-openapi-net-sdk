@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class PurchaseReservedInstancesOfferingResponseUnmarshaller
     {
-        public static PurchaseReservedInstancesOfferingResponse Unmarshall(UnmarshallerContext context)
+        public static PurchaseReservedInstancesOfferingResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			PurchaseReservedInstancesOfferingResponse purchaseReservedInstancesOfferingResponse = new PurchaseReservedInstancesOfferingResponse();
 
-			purchaseReservedInstancesOfferingResponse.HttpResponse = context.HttpResponse;
-			purchaseReservedInstancesOfferingResponse.RequestId = context.StringValue("PurchaseReservedInstancesOffering.RequestId");
+			purchaseReservedInstancesOfferingResponse.HttpResponse = _ctx.HttpResponse;
+			purchaseReservedInstancesOfferingResponse.RequestId = _ctx.StringValue("PurchaseReservedInstancesOffering.RequestId");
 
 			List<string> purchaseReservedInstancesOfferingResponse_reservedInstanceIdSets = new List<string>();
-			for (int i = 0; i < context.Length("PurchaseReservedInstancesOffering.ReservedInstanceIdSets.Length"); i++) {
-				purchaseReservedInstancesOfferingResponse_reservedInstanceIdSets.Add(context.StringValue("PurchaseReservedInstancesOffering.ReservedInstanceIdSets["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("PurchaseReservedInstancesOffering.ReservedInstanceIdSets.Length"); i++) {
+				purchaseReservedInstancesOfferingResponse_reservedInstanceIdSets.Add(_ctx.StringValue("PurchaseReservedInstancesOffering.ReservedInstanceIdSets["+ i +"]"));
 			}
 			purchaseReservedInstancesOfferingResponse.ReservedInstanceIdSets = purchaseReservedInstancesOfferingResponse_reservedInstanceIdSets;
         

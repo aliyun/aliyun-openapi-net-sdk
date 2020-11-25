@@ -26,19 +26,19 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class DescribeCloudAssistantStatusResponseUnmarshaller
     {
-        public static DescribeCloudAssistantStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeCloudAssistantStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeCloudAssistantStatusResponse describeCloudAssistantStatusResponse = new DescribeCloudAssistantStatusResponse();
 
-			describeCloudAssistantStatusResponse.HttpResponse = context.HttpResponse;
-			describeCloudAssistantStatusResponse.RequestId = context.StringValue("DescribeCloudAssistantStatus.RequestId");
+			describeCloudAssistantStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeCloudAssistantStatusResponse.RequestId = _ctx.StringValue("DescribeCloudAssistantStatus.RequestId");
 
 			List<DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus> describeCloudAssistantStatusResponse_instanceCloudAssistantStatusSet = new List<DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus>();
-			for (int i = 0; i < context.Length("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet.Length"); i++) {
 				DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus instanceCloudAssistantStatus = new DescribeCloudAssistantStatusResponse.DescribeCloudAssistantStatus_InstanceCloudAssistantStatus();
-				instanceCloudAssistantStatus.InstanceId = context.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].InstanceId");
-				instanceCloudAssistantStatus.CloudAssistantStatus = context.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantStatus");
-				instanceCloudAssistantStatus.CloudAssistantVersion = context.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantVersion");
+				instanceCloudAssistantStatus.InstanceId = _ctx.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].InstanceId");
+				instanceCloudAssistantStatus.CloudAssistantStatus = _ctx.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantStatus");
+				instanceCloudAssistantStatus.CloudAssistantVersion = _ctx.StringValue("DescribeCloudAssistantStatus.InstanceCloudAssistantStatusSet["+ i +"].CloudAssistantVersion");
 
 				describeCloudAssistantStatusResponse_instanceCloudAssistantStatusSet.Add(instanceCloudAssistantStatus);
 			}

@@ -26,14 +26,14 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class ImportSnapshotResponseUnmarshaller
     {
-        public static ImportSnapshotResponse Unmarshall(UnmarshallerContext context)
+        public static ImportSnapshotResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ImportSnapshotResponse importSnapshotResponse = new ImportSnapshotResponse();
 
-			importSnapshotResponse.HttpResponse = context.HttpResponse;
-			importSnapshotResponse.RequestId = context.StringValue("ImportSnapshot.RequestId");
-			importSnapshotResponse.TaskId = context.StringValue("ImportSnapshot.TaskId");
-			importSnapshotResponse.SnapshotId = context.StringValue("ImportSnapshot.SnapshotId");
+			importSnapshotResponse.HttpResponse = _ctx.HttpResponse;
+			importSnapshotResponse.RequestId = _ctx.StringValue("ImportSnapshot.RequestId");
+			importSnapshotResponse.TaskId = _ctx.StringValue("ImportSnapshot.TaskId");
+			importSnapshotResponse.SnapshotId = _ctx.StringValue("ImportSnapshot.SnapshotId");
         
 			return importSnapshotResponse;
         }

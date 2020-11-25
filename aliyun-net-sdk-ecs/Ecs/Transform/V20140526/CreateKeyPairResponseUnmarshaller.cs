@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 {
     public class CreateKeyPairResponseUnmarshaller
     {
-        public static CreateKeyPairResponse Unmarshall(UnmarshallerContext context)
+        public static CreateKeyPairResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateKeyPairResponse createKeyPairResponse = new CreateKeyPairResponse();
 
-			createKeyPairResponse.HttpResponse = context.HttpResponse;
-			createKeyPairResponse.RequestId = context.StringValue("CreateKeyPair.RequestId");
-			createKeyPairResponse.KeyPairId = context.StringValue("CreateKeyPair.KeyPairId");
-			createKeyPairResponse.KeyPairName = context.StringValue("CreateKeyPair.KeyPairName");
-			createKeyPairResponse.KeyPairFingerPrint = context.StringValue("CreateKeyPair.KeyPairFingerPrint");
-			createKeyPairResponse.PrivateKeyBody = context.StringValue("CreateKeyPair.PrivateKeyBody");
+			createKeyPairResponse.HttpResponse = _ctx.HttpResponse;
+			createKeyPairResponse.RequestId = _ctx.StringValue("CreateKeyPair.RequestId");
+			createKeyPairResponse.KeyPairId = _ctx.StringValue("CreateKeyPair.KeyPairId");
+			createKeyPairResponse.KeyPairName = _ctx.StringValue("CreateKeyPair.KeyPairName");
+			createKeyPairResponse.KeyPairFingerPrint = _ctx.StringValue("CreateKeyPair.KeyPairFingerPrint");
+			createKeyPairResponse.PrivateKeyBody = _ctx.StringValue("CreateKeyPair.PrivateKeyBody");
         
 			return createKeyPairResponse;
         }
