@@ -68,6 +68,8 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 
 		private string mobile;
 
+		private string faceContrastFile;
+
 		private long? sceneId;
 
 		private string ossBucketName;
@@ -251,6 +253,19 @@ namespace Aliyun.Acs.Cloudauth.Model.V20190307
 			{
 				mobile = value;
 				DictionaryUtil.Add(BodyParameters, "Mobile", value);
+			}
+		}
+
+		public string FaceContrastFile
+		{
+			get
+			{
+				return faceContrastFile;
+			}
+			set	
+			{
+				faceContrastFile = value;
+				DictionaryUtil.Add(BodyParameters, "FaceContrastFile", value);
 			}
 		}
 
