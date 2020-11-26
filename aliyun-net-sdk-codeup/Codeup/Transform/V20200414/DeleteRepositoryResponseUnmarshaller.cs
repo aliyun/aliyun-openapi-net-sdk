@@ -26,18 +26,18 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class DeleteRepositoryResponseUnmarshaller
     {
-        public static DeleteRepositoryResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteRepositoryResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteRepositoryResponse deleteRepositoryResponse = new DeleteRepositoryResponse();
 
-			deleteRepositoryResponse.HttpResponse = context.HttpResponse;
-			deleteRepositoryResponse.RequestId = context.StringValue("DeleteRepository.RequestId");
-			deleteRepositoryResponse.ErrorCode = context.StringValue("DeleteRepository.ErrorCode");
-			deleteRepositoryResponse.Success = context.BooleanValue("DeleteRepository.Success");
-			deleteRepositoryResponse.ErrorMessage = context.StringValue("DeleteRepository.ErrorMessage");
+			deleteRepositoryResponse.HttpResponse = _ctx.HttpResponse;
+			deleteRepositoryResponse.RequestId = _ctx.StringValue("DeleteRepository.RequestId");
+			deleteRepositoryResponse.ErrorCode = _ctx.StringValue("DeleteRepository.ErrorCode");
+			deleteRepositoryResponse.Success = _ctx.BooleanValue("DeleteRepository.Success");
+			deleteRepositoryResponse.ErrorMessage = _ctx.StringValue("DeleteRepository.ErrorMessage");
 
 			DeleteRepositoryResponse.DeleteRepository_Result result = new DeleteRepositoryResponse.DeleteRepository_Result();
-			result.Result = context.BooleanValue("DeleteRepository.Result.Result");
+			result.Result = _ctx.BooleanValue("DeleteRepository.Result.Result");
 			deleteRepositoryResponse.Result = result;
         
 			return deleteRepositoryResponse;

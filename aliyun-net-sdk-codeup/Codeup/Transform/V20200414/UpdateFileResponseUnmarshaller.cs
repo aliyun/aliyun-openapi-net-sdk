@@ -26,19 +26,19 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class UpdateFileResponseUnmarshaller
     {
-        public static UpdateFileResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateFileResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateFileResponse updateFileResponse = new UpdateFileResponse();
 
-			updateFileResponse.HttpResponse = context.HttpResponse;
-			updateFileResponse.RequestId = context.StringValue("UpdateFile.RequestId");
-			updateFileResponse.ErrorCode = context.StringValue("UpdateFile.ErrorCode");
-			updateFileResponse.Success = context.BooleanValue("UpdateFile.Success");
-			updateFileResponse.ErrorMessage = context.StringValue("UpdateFile.ErrorMessage");
+			updateFileResponse.HttpResponse = _ctx.HttpResponse;
+			updateFileResponse.RequestId = _ctx.StringValue("UpdateFile.RequestId");
+			updateFileResponse.ErrorCode = _ctx.StringValue("UpdateFile.ErrorCode");
+			updateFileResponse.Success = _ctx.BooleanValue("UpdateFile.Success");
+			updateFileResponse.ErrorMessage = _ctx.StringValue("UpdateFile.ErrorMessage");
 
 			UpdateFileResponse.UpdateFile_Result result = new UpdateFileResponse.UpdateFile_Result();
-			result.BranchName = context.StringValue("UpdateFile.Result.BranchName");
-			result.FilePath = context.StringValue("UpdateFile.Result.FilePath");
+			result.BranchName = _ctx.StringValue("UpdateFile.Result.BranchName");
+			result.FilePath = _ctx.StringValue("UpdateFile.Result.FilePath");
 			updateFileResponse.Result = result;
         
 			return updateFileResponse;

@@ -26,23 +26,23 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class UpdateGroupMemberResponseUnmarshaller
     {
-        public static UpdateGroupMemberResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateGroupMemberResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateGroupMemberResponse updateGroupMemberResponse = new UpdateGroupMemberResponse();
 
-			updateGroupMemberResponse.HttpResponse = context.HttpResponse;
-			updateGroupMemberResponse.RequestId = context.StringValue("UpdateGroupMember.RequestId");
-			updateGroupMemberResponse.ErrorCode = context.StringValue("UpdateGroupMember.ErrorCode");
-			updateGroupMemberResponse.Success = context.BooleanValue("UpdateGroupMember.Success");
-			updateGroupMemberResponse.ErrorMessage = context.StringValue("UpdateGroupMember.ErrorMessage");
+			updateGroupMemberResponse.HttpResponse = _ctx.HttpResponse;
+			updateGroupMemberResponse.RequestId = _ctx.StringValue("UpdateGroupMember.RequestId");
+			updateGroupMemberResponse.ErrorCode = _ctx.StringValue("UpdateGroupMember.ErrorCode");
+			updateGroupMemberResponse.Success = _ctx.BooleanValue("UpdateGroupMember.Success");
+			updateGroupMemberResponse.ErrorMessage = _ctx.StringValue("UpdateGroupMember.ErrorMessage");
 
 			UpdateGroupMemberResponse.UpdateGroupMember_Result result = new UpdateGroupMemberResponse.UpdateGroupMember_Result();
-			result.AccessLevel = context.IntegerValue("UpdateGroupMember.Result.AccessLevel");
-			result.ExternUserId = context.StringValue("UpdateGroupMember.Result.ExternUserId");
-			result.Id = context.LongValue("UpdateGroupMember.Result.Id");
-			result.State = context.StringValue("UpdateGroupMember.Result.State");
-			result.AvatarUrl = context.StringValue("UpdateGroupMember.Result.AvatarUrl");
-			result.Email = context.StringValue("UpdateGroupMember.Result.Email");
+			result.AccessLevel = _ctx.IntegerValue("UpdateGroupMember.Result.AccessLevel");
+			result.ExternUserId = _ctx.StringValue("UpdateGroupMember.Result.ExternUserId");
+			result.Id = _ctx.LongValue("UpdateGroupMember.Result.Id");
+			result.State = _ctx.StringValue("UpdateGroupMember.Result.State");
+			result.AvatarUrl = _ctx.StringValue("UpdateGroupMember.Result.AvatarUrl");
+			result.Email = _ctx.StringValue("UpdateGroupMember.Result.Email");
 			updateGroupMemberResponse.Result = result;
         
 			return updateGroupMemberResponse;

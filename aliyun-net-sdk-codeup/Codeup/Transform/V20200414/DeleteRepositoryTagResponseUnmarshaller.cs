@@ -24,24 +24,23 @@ using Aliyun.Acs.codeup.Model.V20200414;
 
 namespace Aliyun.Acs.codeup.Transform.V20200414
 {
-    public class GetFileBlobsResponseUnmarshaller
+    public class DeleteRepositoryTagResponseUnmarshaller
     {
-        public static GetFileBlobsResponse Unmarshall(UnmarshallerContext _ctx)
+        public static DeleteRepositoryTagResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			GetFileBlobsResponse getFileBlobsResponse = new GetFileBlobsResponse();
+			DeleteRepositoryTagResponse deleteRepositoryTagResponse = new DeleteRepositoryTagResponse();
 
-			getFileBlobsResponse.HttpResponse = _ctx.HttpResponse;
-			getFileBlobsResponse.RequestId = _ctx.StringValue("GetFileBlobs.RequestId");
-			getFileBlobsResponse.ErrorCode = _ctx.StringValue("GetFileBlobs.ErrorCode");
-			getFileBlobsResponse.Success = _ctx.BooleanValue("GetFileBlobs.Success");
-			getFileBlobsResponse.ErrorMessage = _ctx.StringValue("GetFileBlobs.ErrorMessage");
+			deleteRepositoryTagResponse.HttpResponse = _ctx.HttpResponse;
+			deleteRepositoryTagResponse.RequestId = _ctx.StringValue("DeleteRepositoryTag.RequestId");
+			deleteRepositoryTagResponse.ErrorCode = _ctx.StringValue("DeleteRepositoryTag.ErrorCode");
+			deleteRepositoryTagResponse.Success = _ctx.BooleanValue("DeleteRepositoryTag.Success");
+			deleteRepositoryTagResponse.ErrorMessage = _ctx.StringValue("DeleteRepositoryTag.ErrorMessage");
 
-			GetFileBlobsResponse.GetFileBlobs_Result result = new GetFileBlobsResponse.GetFileBlobs_Result();
-			result.Content = _ctx.StringValue("GetFileBlobs.Result.Content");
-			result.TotalLines = _ctx.IntegerValue("GetFileBlobs.Result.TotalLines");
-			getFileBlobsResponse.Result = result;
+			DeleteRepositoryTagResponse.DeleteRepositoryTag_Result result = new DeleteRepositoryTagResponse.DeleteRepositoryTag_Result();
+			result.TagName = _ctx.StringValue("DeleteRepositoryTag.Result.TagName");
+			deleteRepositoryTagResponse.Result = result;
         
-			return getFileBlobsResponse;
+			return deleteRepositoryTagResponse;
         }
     }
 }

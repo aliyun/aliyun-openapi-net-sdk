@@ -26,29 +26,29 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class GetGroupDetailResponseUnmarshaller
     {
-        public static GetGroupDetailResponse Unmarshall(UnmarshallerContext context)
+        public static GetGroupDetailResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetGroupDetailResponse getGroupDetailResponse = new GetGroupDetailResponse();
 
-			getGroupDetailResponse.HttpResponse = context.HttpResponse;
-			getGroupDetailResponse.RequestId = context.StringValue("GetGroupDetail.RequestId");
-			getGroupDetailResponse.ErrorCode = context.StringValue("GetGroupDetail.ErrorCode");
-			getGroupDetailResponse.Success = context.BooleanValue("GetGroupDetail.Success");
-			getGroupDetailResponse.ErrorMessage = context.StringValue("GetGroupDetail.ErrorMessage");
+			getGroupDetailResponse.HttpResponse = _ctx.HttpResponse;
+			getGroupDetailResponse.RequestId = _ctx.StringValue("GetGroupDetail.RequestId");
+			getGroupDetailResponse.ErrorCode = _ctx.StringValue("GetGroupDetail.ErrorCode");
+			getGroupDetailResponse.Success = _ctx.BooleanValue("GetGroupDetail.Success");
+			getGroupDetailResponse.ErrorMessage = _ctx.StringValue("GetGroupDetail.ErrorMessage");
 
 			GetGroupDetailResponse.GetGroupDetail_Result result = new GetGroupDetailResponse.GetGroupDetail_Result();
-			result.Id = context.LongValue("GetGroupDetail.Result.Id");
-			result.Name = context.StringValue("GetGroupDetail.Result.Name");
-			result.Path = context.StringValue("GetGroupDetail.Result.Path");
-			result.Description = context.StringValue("GetGroupDetail.Result.Description");
-			result.AvatarUrl = context.StringValue("GetGroupDetail.Result.AvatarUrl");
-			result.WebUrl = context.StringValue("GetGroupDetail.Result.WebUrl");
-			result.PathWithNamespace = context.StringValue("GetGroupDetail.Result.PathWithNamespace");
-			result.NameWithNamespace = context.StringValue("GetGroupDetail.Result.NameWithNamespace");
-			result.Type = context.StringValue("GetGroupDetail.Result.Type");
-			result.VisibilityLevel = context.StringValue("GetGroupDetail.Result.VisibilityLevel");
-			result.ParentId = context.LongValue("GetGroupDetail.Result.ParentId");
-			result.OwnerId = context.LongValue("GetGroupDetail.Result.OwnerId");
+			result.Id = _ctx.LongValue("GetGroupDetail.Result.Id");
+			result.Name = _ctx.StringValue("GetGroupDetail.Result.Name");
+			result.Path = _ctx.StringValue("GetGroupDetail.Result.Path");
+			result.Description = _ctx.StringValue("GetGroupDetail.Result.Description");
+			result.AvatarUrl = _ctx.StringValue("GetGroupDetail.Result.AvatarUrl");
+			result.WebUrl = _ctx.StringValue("GetGroupDetail.Result.WebUrl");
+			result.PathWithNamespace = _ctx.StringValue("GetGroupDetail.Result.PathWithNamespace");
+			result.NameWithNamespace = _ctx.StringValue("GetGroupDetail.Result.NameWithNamespace");
+			result.Type = _ctx.StringValue("GetGroupDetail.Result.Type");
+			result.VisibilityLevel = _ctx.StringValue("GetGroupDetail.Result.VisibilityLevel");
+			result.ParentId = _ctx.LongValue("GetGroupDetail.Result.ParentId");
+			result.OwnerId = _ctx.LongValue("GetGroupDetail.Result.OwnerId");
 			getGroupDetailResponse.Result = result;
         
 			return getGroupDetailResponse;

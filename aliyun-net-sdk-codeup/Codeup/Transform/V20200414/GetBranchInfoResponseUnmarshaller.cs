@@ -26,36 +26,36 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class GetBranchInfoResponseUnmarshaller
     {
-        public static GetBranchInfoResponse Unmarshall(UnmarshallerContext context)
+        public static GetBranchInfoResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetBranchInfoResponse getBranchInfoResponse = new GetBranchInfoResponse();
 
-			getBranchInfoResponse.HttpResponse = context.HttpResponse;
-			getBranchInfoResponse.RequestId = context.StringValue("GetBranchInfo.RequestId");
-			getBranchInfoResponse.ErrorCode = context.StringValue("GetBranchInfo.ErrorCode");
-			getBranchInfoResponse.Success = context.BooleanValue("GetBranchInfo.Success");
-			getBranchInfoResponse.ErrorMessage = context.StringValue("GetBranchInfo.ErrorMessage");
+			getBranchInfoResponse.HttpResponse = _ctx.HttpResponse;
+			getBranchInfoResponse.RequestId = _ctx.StringValue("GetBranchInfo.RequestId");
+			getBranchInfoResponse.ErrorCode = _ctx.StringValue("GetBranchInfo.ErrorCode");
+			getBranchInfoResponse.Success = _ctx.BooleanValue("GetBranchInfo.Success");
+			getBranchInfoResponse.ErrorMessage = _ctx.StringValue("GetBranchInfo.ErrorMessage");
 
 			GetBranchInfoResponse.GetBranchInfo_Result result = new GetBranchInfoResponse.GetBranchInfo_Result();
-			result.BranchName = context.StringValue("GetBranchInfo.Result.BranchName");
-			result.ProtectedBranch = context.BooleanValue("GetBranchInfo.Result.ProtectedBranch");
+			result.BranchName = _ctx.StringValue("GetBranchInfo.Result.BranchName");
+			result.ProtectedBranch = _ctx.BooleanValue("GetBranchInfo.Result.ProtectedBranch");
 
 			GetBranchInfoResponse.GetBranchInfo_Result.GetBranchInfo_CommitInfo commitInfo = new GetBranchInfoResponse.GetBranchInfo_Result.GetBranchInfo_CommitInfo();
-			commitInfo.Id = context.StringValue("GetBranchInfo.Result.CommitInfo.Id");
-			commitInfo.ShortId = context.StringValue("GetBranchInfo.Result.CommitInfo.ShortId");
-			commitInfo.Title = context.StringValue("GetBranchInfo.Result.CommitInfo.Title");
-			commitInfo.AuthorName = context.StringValue("GetBranchInfo.Result.CommitInfo.AuthorName");
-			commitInfo.AuthorEmail = context.StringValue("GetBranchInfo.Result.CommitInfo.AuthorEmail");
-			commitInfo.CreatedAt = context.StringValue("GetBranchInfo.Result.CommitInfo.CreatedAt");
-			commitInfo.Message = context.StringValue("GetBranchInfo.Result.CommitInfo.Message");
-			commitInfo.AuthorDate = context.StringValue("GetBranchInfo.Result.CommitInfo.AuthorDate");
-			commitInfo.CommittedDate = context.StringValue("GetBranchInfo.Result.CommitInfo.CommittedDate");
-			commitInfo.CommitterEmail = context.StringValue("GetBranchInfo.Result.CommitInfo.CommitterEmail");
-			commitInfo.CommitterName = context.StringValue("GetBranchInfo.Result.CommitInfo.CommitterName");
+			commitInfo.Id = _ctx.StringValue("GetBranchInfo.Result.CommitInfo.Id");
+			commitInfo.ShortId = _ctx.StringValue("GetBranchInfo.Result.CommitInfo.ShortId");
+			commitInfo.Title = _ctx.StringValue("GetBranchInfo.Result.CommitInfo.Title");
+			commitInfo.AuthorName = _ctx.StringValue("GetBranchInfo.Result.CommitInfo.AuthorName");
+			commitInfo.AuthorEmail = _ctx.StringValue("GetBranchInfo.Result.CommitInfo.AuthorEmail");
+			commitInfo.CreatedAt = _ctx.StringValue("GetBranchInfo.Result.CommitInfo.CreatedAt");
+			commitInfo.Message = _ctx.StringValue("GetBranchInfo.Result.CommitInfo.Message");
+			commitInfo.AuthorDate = _ctx.StringValue("GetBranchInfo.Result.CommitInfo.AuthorDate");
+			commitInfo.CommittedDate = _ctx.StringValue("GetBranchInfo.Result.CommitInfo.CommittedDate");
+			commitInfo.CommitterEmail = _ctx.StringValue("GetBranchInfo.Result.CommitInfo.CommitterEmail");
+			commitInfo.CommitterName = _ctx.StringValue("GetBranchInfo.Result.CommitInfo.CommitterName");
 
 			List<string> commitInfo_parentIds = new List<string>();
-			for (int i = 0; i < context.Length("GetBranchInfo.Result.CommitInfo.ParentIds.Length"); i++) {
-				commitInfo_parentIds.Add(context.StringValue("GetBranchInfo.Result.CommitInfo.ParentIds["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetBranchInfo.Result.CommitInfo.ParentIds.Length"); i++) {
+				commitInfo_parentIds.Add(_ctx.StringValue("GetBranchInfo.Result.CommitInfo.ParentIds["+ i +"]"));
 			}
 			commitInfo.ParentIds = commitInfo_parentIds;
 			result.CommitInfo = commitInfo;

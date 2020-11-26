@@ -26,23 +26,23 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class UpdateRepositoryMemberResponseUnmarshaller
     {
-        public static UpdateRepositoryMemberResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateRepositoryMemberResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateRepositoryMemberResponse updateRepositoryMemberResponse = new UpdateRepositoryMemberResponse();
 
-			updateRepositoryMemberResponse.HttpResponse = context.HttpResponse;
-			updateRepositoryMemberResponse.RequestId = context.StringValue("UpdateRepositoryMember.RequestId");
-			updateRepositoryMemberResponse.ErrorCode = context.StringValue("UpdateRepositoryMember.ErrorCode");
-			updateRepositoryMemberResponse.Success = context.BooleanValue("UpdateRepositoryMember.Success");
-			updateRepositoryMemberResponse.ErrorMessage = context.StringValue("UpdateRepositoryMember.ErrorMessage");
+			updateRepositoryMemberResponse.HttpResponse = _ctx.HttpResponse;
+			updateRepositoryMemberResponse.RequestId = _ctx.StringValue("UpdateRepositoryMember.RequestId");
+			updateRepositoryMemberResponse.ErrorCode = _ctx.StringValue("UpdateRepositoryMember.ErrorCode");
+			updateRepositoryMemberResponse.Success = _ctx.BooleanValue("UpdateRepositoryMember.Success");
+			updateRepositoryMemberResponse.ErrorMessage = _ctx.StringValue("UpdateRepositoryMember.ErrorMessage");
 
 			UpdateRepositoryMemberResponse.UpdateRepositoryMember_Result result = new UpdateRepositoryMemberResponse.UpdateRepositoryMember_Result();
-			result.AccessLevel = context.IntegerValue("UpdateRepositoryMember.Result.AccessLevel");
-			result.ExternUserId = context.StringValue("UpdateRepositoryMember.Result.ExternUserId");
-			result.Id = context.LongValue("UpdateRepositoryMember.Result.Id");
-			result.State = context.StringValue("UpdateRepositoryMember.Result.State");
-			result.AvatarUrl = context.StringValue("UpdateRepositoryMember.Result.AvatarUrl");
-			result.Email = context.StringValue("UpdateRepositoryMember.Result.Email");
+			result.AccessLevel = _ctx.IntegerValue("UpdateRepositoryMember.Result.AccessLevel");
+			result.ExternUserId = _ctx.StringValue("UpdateRepositoryMember.Result.ExternUserId");
+			result.Id = _ctx.LongValue("UpdateRepositoryMember.Result.Id");
+			result.State = _ctx.StringValue("UpdateRepositoryMember.Result.State");
+			result.AvatarUrl = _ctx.StringValue("UpdateRepositoryMember.Result.AvatarUrl");
+			result.Email = _ctx.StringValue("UpdateRepositoryMember.Result.Email");
 			updateRepositoryMemberResponse.Result = result;
         
 			return updateRepositoryMemberResponse;

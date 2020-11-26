@@ -26,24 +26,24 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class GetCodeupOrganizationResponseUnmarshaller
     {
-        public static GetCodeupOrganizationResponse Unmarshall(UnmarshallerContext context)
+        public static GetCodeupOrganizationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetCodeupOrganizationResponse getCodeupOrganizationResponse = new GetCodeupOrganizationResponse();
 
-			getCodeupOrganizationResponse.HttpResponse = context.HttpResponse;
-			getCodeupOrganizationResponse.RequestId = context.StringValue("GetCodeupOrganization.RequestId");
-			getCodeupOrganizationResponse.ErrorCode = context.StringValue("GetCodeupOrganization.ErrorCode");
-			getCodeupOrganizationResponse.Success = context.BooleanValue("GetCodeupOrganization.Success");
-			getCodeupOrganizationResponse.ErrorMessage = context.StringValue("GetCodeupOrganization.ErrorMessage");
+			getCodeupOrganizationResponse.HttpResponse = _ctx.HttpResponse;
+			getCodeupOrganizationResponse.RequestId = _ctx.StringValue("GetCodeupOrganization.RequestId");
+			getCodeupOrganizationResponse.ErrorCode = _ctx.StringValue("GetCodeupOrganization.ErrorCode");
+			getCodeupOrganizationResponse.Success = _ctx.BooleanValue("GetCodeupOrganization.Success");
+			getCodeupOrganizationResponse.ErrorMessage = _ctx.StringValue("GetCodeupOrganization.ErrorMessage");
 
 			GetCodeupOrganizationResponse.GetCodeupOrganization_Result result = new GetCodeupOrganizationResponse.GetCodeupOrganization_Result();
-			result.Id = context.LongValue("GetCodeupOrganization.Result.Id");
-			result.OrganizationId = context.StringValue("GetCodeupOrganization.Result.OrganizationId");
-			result.Path = context.StringValue("GetCodeupOrganization.Result.Path");
-			result.CreatedAt = context.StringValue("GetCodeupOrganization.Result.CreatedAt");
-			result.UpdatedAt = context.StringValue("GetCodeupOrganization.Result.UpdatedAt");
-			result.NamespaceId = context.LongValue("GetCodeupOrganization.Result.NamespaceId");
-			result.UserRole = context.StringValue("GetCodeupOrganization.Result.UserRole");
+			result.Id = _ctx.LongValue("GetCodeupOrganization.Result.Id");
+			result.OrganizationId = _ctx.StringValue("GetCodeupOrganization.Result.OrganizationId");
+			result.Path = _ctx.StringValue("GetCodeupOrganization.Result.Path");
+			result.CreatedAt = _ctx.StringValue("GetCodeupOrganization.Result.CreatedAt");
+			result.UpdatedAt = _ctx.StringValue("GetCodeupOrganization.Result.UpdatedAt");
+			result.NamespaceId = _ctx.LongValue("GetCodeupOrganization.Result.NamespaceId");
+			result.UserRole = _ctx.StringValue("GetCodeupOrganization.Result.UserRole");
 			getCodeupOrganizationResponse.Result = result;
         
 			return getCodeupOrganizationResponse;

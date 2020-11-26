@@ -26,23 +26,23 @@ namespace Aliyun.Acs.codeup.Transform.V20200414
 {
     public class DeleteGroupMemberResponseUnmarshaller
     {
-        public static DeleteGroupMemberResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteGroupMemberResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteGroupMemberResponse deleteGroupMemberResponse = new DeleteGroupMemberResponse();
 
-			deleteGroupMemberResponse.HttpResponse = context.HttpResponse;
-			deleteGroupMemberResponse.RequestId = context.StringValue("DeleteGroupMember.RequestId");
-			deleteGroupMemberResponse.ErrorCode = context.StringValue("DeleteGroupMember.ErrorCode");
-			deleteGroupMemberResponse.Success = context.BooleanValue("DeleteGroupMember.Success");
-			deleteGroupMemberResponse.ErrorMessage = context.StringValue("DeleteGroupMember.ErrorMessage");
+			deleteGroupMemberResponse.HttpResponse = _ctx.HttpResponse;
+			deleteGroupMemberResponse.RequestId = _ctx.StringValue("DeleteGroupMember.RequestId");
+			deleteGroupMemberResponse.ErrorCode = _ctx.StringValue("DeleteGroupMember.ErrorCode");
+			deleteGroupMemberResponse.Success = _ctx.BooleanValue("DeleteGroupMember.Success");
+			deleteGroupMemberResponse.ErrorMessage = _ctx.StringValue("DeleteGroupMember.ErrorMessage");
 
 			DeleteGroupMemberResponse.DeleteGroupMember_Result result = new DeleteGroupMemberResponse.DeleteGroupMember_Result();
-			result.AccessLevel = context.IntegerValue("DeleteGroupMember.Result.AccessLevel");
-			result.Id = context.LongValue("DeleteGroupMember.Result.Id");
-			result.ExternUserId = context.StringValue("DeleteGroupMember.Result.ExternUserId");
-			result.State = context.StringValue("DeleteGroupMember.Result.State");
-			result.AvatarUrl = context.StringValue("DeleteGroupMember.Result.AvatarUrl");
-			result.Email = context.StringValue("DeleteGroupMember.Result.Email");
+			result.AccessLevel = _ctx.IntegerValue("DeleteGroupMember.Result.AccessLevel");
+			result.Id = _ctx.LongValue("DeleteGroupMember.Result.Id");
+			result.ExternUserId = _ctx.StringValue("DeleteGroupMember.Result.ExternUserId");
+			result.State = _ctx.StringValue("DeleteGroupMember.Result.State");
+			result.AvatarUrl = _ctx.StringValue("DeleteGroupMember.Result.AvatarUrl");
+			result.Email = _ctx.StringValue("DeleteGroupMember.Result.Email");
 			deleteGroupMemberResponse.Result = result;
         
 			return deleteGroupMemberResponse;
