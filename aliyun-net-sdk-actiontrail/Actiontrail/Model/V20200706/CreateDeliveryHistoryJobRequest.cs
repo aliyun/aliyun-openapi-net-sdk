@@ -23,40 +23,61 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Actiontrail.Transform;
-using Aliyun.Acs.Actiontrail.Transform.V20171204;
+using Aliyun.Acs.Actiontrail.Transform.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-    public class StartLoggingRequest : RpcAcsRequest<StartLoggingResponse>
+    public class CreateDeliveryHistoryJobRequest : RpcAcsRequest<CreateDeliveryHistoryJobResponse>
     {
-        public StartLoggingRequest()
-            : base("Actiontrail", "2017-12-04", "StartLogging", "actiontrail", "openAPI")
+        public CreateDeliveryHistoryJobRequest()
+            : base("Actiontrail", "2020-07-06", "CreateDeliveryHistoryJob", "actiontrail", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
                 this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Actiontrail.Endpoint.endpointMap, null);
                 this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Actiontrail.Endpoint.endpointRegionalType, null);
             }
+			Method = MethodType.POST;
         }
 
-		private string name;
+		private string clientToken;
 
-		public string Name
+		private string trailName;
+
+		public string ClientToken
 		{
 			get
 			{
-				return name;
+				return clientToken;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				clientToken = value;
+				DictionaryUtil.Add(QueryParameters, "ClientToken", value);
 			}
 		}
 
-        public override StartLoggingResponse GetResponse(UnmarshallerContext unmarshallerContext)
+		public string TrailName
+		{
+			get
+			{
+				return trailName;
+			}
+			set	
+			{
+				trailName = value;
+				DictionaryUtil.Add(QueryParameters, "TrailName", value);
+			}
+		}
+
+		public override bool CheckShowJsonItemName()
+		{
+			return false;
+		}
+
+        public override CreateDeliveryHistoryJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return StartLoggingResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return CreateDeliveryHistoryJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

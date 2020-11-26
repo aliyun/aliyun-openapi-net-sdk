@@ -16,55 +16,25 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core;
+using Aliyun.Acs.Core.Transform;
+using Aliyun.Acs.Actiontrail.Model.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Transform.V20200706
 {
-	public class StartLoggingResponse : AcsResponse
-	{
+    public class CreateDeliveryHistoryJobResponseUnmarshaller
+    {
+        public static CreateDeliveryHistoryJobResponse Unmarshall(UnmarshallerContext _ctx)
+        {
+			CreateDeliveryHistoryJobResponse createDeliveryHistoryJobResponse = new CreateDeliveryHistoryJobResponse();
 
-		private string requestId;
-
-		private string param;
-
-		private string result;
-
-		public string RequestId
-		{
-			get
-			{
-				return requestId;
-			}
-			set	
-			{
-				requestId = value;
-			}
-		}
-
-		public string Param
-		{
-			get
-			{
-				return param;
-			}
-			set	
-			{
-				param = value;
-			}
-		}
-
-		public string Result
-		{
-			get
-			{
-				return result;
-			}
-			set	
-			{
-				result = value;
-			}
-		}
-	}
+			createDeliveryHistoryJobResponse.HttpResponse = _ctx.HttpResponse;
+			createDeliveryHistoryJobResponse.RequestId = _ctx.StringValue("CreateDeliveryHistoryJob.RequestId");
+			createDeliveryHistoryJobResponse.JobId = _ctx.IntegerValue("CreateDeliveryHistoryJob.JobId");
+        
+			return createDeliveryHistoryJobResponse;
+        }
+    }
 }

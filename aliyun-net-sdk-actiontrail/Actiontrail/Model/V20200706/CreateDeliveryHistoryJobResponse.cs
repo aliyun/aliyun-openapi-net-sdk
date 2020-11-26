@@ -20,22 +20,14 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-	public class GetTrailStatusResponse : AcsResponse
+	public class CreateDeliveryHistoryJobResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private bool? isLogging;
-
-		private string latestDeliveryError;
-
-		private string latestDeliveryTime;
-
-		private string startLoggingTime;
-
-		private string stopLoggingTime;
+		private int? jobId;
 
 		public string RequestId
 		{
@@ -49,63 +41,15 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public bool? IsLogging
+		public int? JobId
 		{
 			get
 			{
-				return isLogging;
+				return jobId;
 			}
 			set	
 			{
-				isLogging = value;
-			}
-		}
-
-		public string LatestDeliveryError
-		{
-			get
-			{
-				return latestDeliveryError;
-			}
-			set	
-			{
-				latestDeliveryError = value;
-			}
-		}
-
-		public string LatestDeliveryTime
-		{
-			get
-			{
-				return latestDeliveryTime;
-			}
-			set	
-			{
-				latestDeliveryTime = value;
-			}
-		}
-
-		public string StartLoggingTime
-		{
-			get
-			{
-				return startLoggingTime;
-			}
-			set	
-			{
-				startLoggingTime = value;
-			}
-		}
-
-		public string StopLoggingTime
-		{
-			get
-			{
-				return stopLoggingTime;
-			}
-			set	
-			{
-				stopLoggingTime = value;
+				jobId = value;
 			}
 		}
 	}

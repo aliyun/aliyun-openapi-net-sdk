@@ -20,12 +20,20 @@ using System.Collections.Generic;
 
 using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-	public class DeleteTrailResponse : AcsResponse
+	public class LookupEventsResponse : AcsResponse
 	{
 
 		private string requestId;
+
+		private string nextToken;
+
+		private string startTime;
+
+		private string endTime;
+
+		private List<Dictionary<string, string>> events;
 
 		public string RequestId
 		{
@@ -36,6 +44,54 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			set	
 			{
 				requestId = value;
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+			}
+		}
+
+		public string StartTime
+		{
+			get
+			{
+				return startTime;
+			}
+			set	
+			{
+				startTime = value;
+			}
+		}
+
+		public string EndTime
+		{
+			get
+			{
+				return endTime;
+			}
+			set	
+			{
+				endTime = value;
+			}
+		}
+
+		public List<Dictionary<string, string>> Events
+		{
+			get
+			{
+				return events;
+			}
+			set	
+			{
+				events = value;
 			}
 		}
 	}

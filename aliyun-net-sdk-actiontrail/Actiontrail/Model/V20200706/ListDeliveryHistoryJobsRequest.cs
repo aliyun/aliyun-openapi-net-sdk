@@ -23,14 +23,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Actiontrail.Transform;
-using Aliyun.Acs.Actiontrail.Transform.V20171204;
+using Aliyun.Acs.Actiontrail.Transform.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-    public class DescribeRegionsRequest : RpcAcsRequest<DescribeRegionsResponse>
+    public class ListDeliveryHistoryJobsRequest : RpcAcsRequest<ListDeliveryHistoryJobsResponse>
     {
-        public DescribeRegionsRequest()
-            : base("Actiontrail", "2017-12-04", "DescribeRegions", "actiontrail", "openAPI")
+        public ListDeliveryHistoryJobsRequest()
+            : base("Actiontrail", "2020-07-06", "ListDeliveryHistoryJobs", "actiontrail", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,14 +40,44 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			Method = MethodType.POST;
         }
 
+		private int? pageNumber;
+
+		private int? pageSize;
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
 		public override bool CheckShowJsonItemName()
 		{
 			return false;
 		}
 
-        public override DescribeRegionsResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ListDeliveryHistoryJobsResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeRegionsResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ListDeliveryHistoryJobsResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

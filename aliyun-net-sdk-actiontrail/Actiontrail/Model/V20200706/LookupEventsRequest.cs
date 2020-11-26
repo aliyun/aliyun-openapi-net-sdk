@@ -23,14 +23,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Actiontrail.Transform;
-using Aliyun.Acs.Actiontrail.Transform.V20171204;
+using Aliyun.Acs.Actiontrail.Transform.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
     public class LookupEventsRequest : RpcAcsRequest<LookupEventsResponse>
     {
         public LookupEventsRequest()
-            : base("Actiontrail", "2017-12-04", "LookupEvents", "actiontrail", "openAPI")
+            : base("Actiontrail", "2020-07-06", "LookupEvents", "actiontrail", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,44 +40,28 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			Method = MethodType.POST;
         }
 
-		private string request;
+		private string endTime;
 
 		private string startTime;
 
-		private string eventName;
-
 		private string nextToken;
 
-		private string serviceName;
-
-		private string _event;
-
-		private string eventAccessKeyId;
-
-		private string endTime;
-
-		private string eventRW;
-
-		private string resourceType;
+		private List<LookupAttribute> lookupAttributes = new List<LookupAttribute>(){ };
 
 		private string maxResults;
 
-		private string eventType;
+		private string direction;
 
-		private string resourceName;
-
-		private string user;
-
-		public string Request
+		public string EndTime
 		{
 			get
 			{
-				return request;
+				return endTime;
 			}
 			set	
 			{
-				request = value;
-				DictionaryUtil.Add(QueryParameters, "Request", value);
+				endTime = value;
+				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -94,19 +78,6 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public string EventName
-		{
-			get
-			{
-				return eventName;
-			}
-			set	
-			{
-				eventName = value;
-				DictionaryUtil.Add(QueryParameters, "EventName", value);
-			}
-		}
-
 		public string NextToken
 		{
 			get
@@ -120,81 +91,21 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public string ServiceName
+		public List<LookupAttribute> LookupAttributes
 		{
 			get
 			{
-				return serviceName;
+				return lookupAttributes;
 			}
-			set	
-			{
-				serviceName = value;
-				DictionaryUtil.Add(QueryParameters, "ServiceName", value);
-			}
-		}
 
-		public string _Event
-		{
-			get
+			set
 			{
-				return _event;
-			}
-			set	
-			{
-				_event = value;
-				DictionaryUtil.Add(QueryParameters, "Event", value);
-			}
-		}
-
-		public string EventAccessKeyId
-		{
-			get
-			{
-				return eventAccessKeyId;
-			}
-			set	
-			{
-				eventAccessKeyId = value;
-				DictionaryUtil.Add(QueryParameters, "EventAccessKeyId", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
-			}
-		}
-
-		public string EventRW
-		{
-			get
-			{
-				return eventRW;
-			}
-			set	
-			{
-				eventRW = value;
-				DictionaryUtil.Add(QueryParameters, "EventRW", value);
-			}
-		}
-
-		public string ResourceType
-		{
-			get
-			{
-				return resourceType;
-			}
-			set	
-			{
-				resourceType = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceType", value);
+				lookupAttributes = value;
+				for (int i = 0; i < lookupAttributes.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"LookupAttribute." + (i + 1) + ".Value", lookupAttributes[i].Value);
+					DictionaryUtil.Add(QueryParameters,"LookupAttribute." + (i + 1) + ".Key", lookupAttributes[i].Key);
+				}
 			}
 		}
 
@@ -211,42 +122,48 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			}
 		}
 
-		public string EventType
+		public string Direction
 		{
 			get
 			{
-				return eventType;
+				return direction;
 			}
 			set	
 			{
-				eventType = value;
-				DictionaryUtil.Add(QueryParameters, "EventType", value);
+				direction = value;
+				DictionaryUtil.Add(QueryParameters, "Direction", value);
 			}
 		}
 
-		public string ResourceName
+		public class LookupAttribute
 		{
-			get
-			{
-				return resourceName;
-			}
-			set	
-			{
-				resourceName = value;
-				DictionaryUtil.Add(QueryParameters, "ResourceName", value);
-			}
-		}
 
-		public string User
-		{
-			get
+			private string value_;
+
+			private string key;
+
+			public string Value
 			{
-				return user;
+				get
+				{
+					return value_;
+				}
+				set	
+				{
+					value_ = value;
+				}
 			}
-			set	
+
+			public string Key
 			{
-				user = value;
-				DictionaryUtil.Add(QueryParameters, "User", value);
+				get
+				{
+					return key;
+				}
+				set	
+				{
+					key = value;
+				}
 			}
 		}
 

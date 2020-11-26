@@ -23,14 +23,14 @@ using Aliyun.Acs.Core.Http;
 using Aliyun.Acs.Core.Transform;
 using Aliyun.Acs.Core.Utils;
 using Aliyun.Acs.Actiontrail.Transform;
-using Aliyun.Acs.Actiontrail.Transform.V20171204;
+using Aliyun.Acs.Actiontrail.Transform.V20200706;
 
-namespace Aliyun.Acs.Actiontrail.Model.V20171204
+namespace Aliyun.Acs.Actiontrail.Model.V20200706
 {
-    public class GetTrailStatusRequest : RpcAcsRequest<GetTrailStatusResponse>
+    public class DeleteDeliveryHistoryJobRequest : RpcAcsRequest<DeleteDeliveryHistoryJobResponse>
     {
-        public GetTrailStatusRequest()
-            : base("Actiontrail", "2017-12-04", "GetTrailStatus", "actiontrail", "openAPI")
+        public DeleteDeliveryHistoryJobRequest()
+            : base("Actiontrail", "2020-07-06", "DeleteDeliveryHistoryJob", "actiontrail", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -40,39 +40,29 @@ namespace Aliyun.Acs.Actiontrail.Model.V20171204
 			Method = MethodType.POST;
         }
 
-		private string name;
+		private int? jobId;
 
-		private bool? isOrganizationTrail;
-
-		public string Name
+		public int? JobId
 		{
 			get
 			{
-				return name;
+				return jobId;
 			}
 			set	
 			{
-				name = value;
-				DictionaryUtil.Add(QueryParameters, "Name", value);
+				jobId = value;
+				DictionaryUtil.Add(QueryParameters, "JobId", value.ToString());
 			}
 		}
 
-		public bool? IsOrganizationTrail
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return isOrganizationTrail;
-			}
-			set	
-			{
-				isOrganizationTrail = value;
-				DictionaryUtil.Add(QueryParameters, "IsOrganizationTrail", value.ToString());
-			}
+			return false;
 		}
 
-        public override GetTrailStatusResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DeleteDeliveryHistoryJobResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return GetTrailStatusResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DeleteDeliveryHistoryJobResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }
