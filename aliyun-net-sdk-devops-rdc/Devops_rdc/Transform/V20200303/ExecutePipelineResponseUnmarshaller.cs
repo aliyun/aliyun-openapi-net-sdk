@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class ExecutePipelineResponseUnmarshaller
     {
-        public static ExecutePipelineResponse Unmarshall(UnmarshallerContext context)
+        public static ExecutePipelineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ExecutePipelineResponse executePipelineResponse = new ExecutePipelineResponse();
 
-			executePipelineResponse.HttpResponse = context.HttpResponse;
-			executePipelineResponse.ErrorCode = context.StringValue("ExecutePipeline.ErrorCode");
-			executePipelineResponse.ErrorMessage = context.StringValue("ExecutePipeline.ErrorMessage");
-			executePipelineResponse.RequestId = context.StringValue("ExecutePipeline.RequestId");
-			executePipelineResponse.Success = context.BooleanValue("ExecutePipeline.Success");
-			executePipelineResponse._Object = context.LongValue("ExecutePipeline.Object");
+			executePipelineResponse.HttpResponse = _ctx.HttpResponse;
+			executePipelineResponse.ErrorCode = _ctx.StringValue("ExecutePipeline.ErrorCode");
+			executePipelineResponse.ErrorMessage = _ctx.StringValue("ExecutePipeline.ErrorMessage");
+			executePipelineResponse.RequestId = _ctx.StringValue("ExecutePipeline.RequestId");
+			executePipelineResponse.Success = _ctx.BooleanValue("ExecutePipeline.Success");
+			executePipelineResponse._Object = _ctx.LongValue("ExecutePipeline.Object");
         
 			return executePipelineResponse;
         }

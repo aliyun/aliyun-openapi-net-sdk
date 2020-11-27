@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class DeleteDevopsProjectTaskResponseUnmarshaller
     {
-        public static DeleteDevopsProjectTaskResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDevopsProjectTaskResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDevopsProjectTaskResponse deleteDevopsProjectTaskResponse = new DeleteDevopsProjectTaskResponse();
 
-			deleteDevopsProjectTaskResponse.HttpResponse = context.HttpResponse;
-			deleteDevopsProjectTaskResponse.Successful = context.BooleanValue("DeleteDevopsProjectTask.Successful");
-			deleteDevopsProjectTaskResponse.ErrorCode = context.StringValue("DeleteDevopsProjectTask.ErrorCode");
-			deleteDevopsProjectTaskResponse.ErrorMsg = context.StringValue("DeleteDevopsProjectTask.ErrorMsg");
-			deleteDevopsProjectTaskResponse.RequestId = context.StringValue("DeleteDevopsProjectTask.RequestId");
-			deleteDevopsProjectTaskResponse._Object = context.BooleanValue("DeleteDevopsProjectTask.Object");
+			deleteDevopsProjectTaskResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDevopsProjectTaskResponse.Successful = _ctx.BooleanValue("DeleteDevopsProjectTask.Successful");
+			deleteDevopsProjectTaskResponse.ErrorCode = _ctx.StringValue("DeleteDevopsProjectTask.ErrorCode");
+			deleteDevopsProjectTaskResponse.ErrorMsg = _ctx.StringValue("DeleteDevopsProjectTask.ErrorMsg");
+			deleteDevopsProjectTaskResponse.RequestId = _ctx.StringValue("DeleteDevopsProjectTask.RequestId");
+			deleteDevopsProjectTaskResponse._Object = _ctx.BooleanValue("DeleteDevopsProjectTask.Object");
         
 			return deleteDevopsProjectTaskResponse;
         }

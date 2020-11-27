@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class CreatePipelineResponseUnmarshaller
     {
-        public static CreatePipelineResponse Unmarshall(UnmarshallerContext context)
+        public static CreatePipelineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreatePipelineResponse createPipelineResponse = new CreatePipelineResponse();
 
-			createPipelineResponse.HttpResponse = context.HttpResponse;
-			createPipelineResponse.RequestId = context.StringValue("CreatePipeline.RequestId");
-			createPipelineResponse.ErrorCode = context.StringValue("CreatePipeline.ErrorCode");
-			createPipelineResponse.ErrorMessage = context.StringValue("CreatePipeline.ErrorMessage");
-			createPipelineResponse.Success = context.BooleanValue("CreatePipeline.Success");
-			createPipelineResponse._Object = context.LongValue("CreatePipeline.Object");
+			createPipelineResponse.HttpResponse = _ctx.HttpResponse;
+			createPipelineResponse.RequestId = _ctx.StringValue("CreatePipeline.RequestId");
+			createPipelineResponse.ErrorCode = _ctx.StringValue("CreatePipeline.ErrorCode");
+			createPipelineResponse.ErrorMessage = _ctx.StringValue("CreatePipeline.ErrorMessage");
+			createPipelineResponse.Success = _ctx.BooleanValue("CreatePipeline.Success");
+			createPipelineResponse._Object = _ctx.LongValue("CreatePipeline.Object");
         
 			return createPipelineResponse;
         }

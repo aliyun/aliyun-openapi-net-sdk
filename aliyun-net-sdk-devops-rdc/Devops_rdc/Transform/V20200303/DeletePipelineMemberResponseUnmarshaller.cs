@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class DeletePipelineMemberResponseUnmarshaller
     {
-        public static DeletePipelineMemberResponse Unmarshall(UnmarshallerContext context)
+        public static DeletePipelineMemberResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeletePipelineMemberResponse deletePipelineMemberResponse = new DeletePipelineMemberResponse();
 
-			deletePipelineMemberResponse.HttpResponse = context.HttpResponse;
-			deletePipelineMemberResponse.Success = context.BooleanValue("DeletePipelineMember.Success");
-			deletePipelineMemberResponse.ErrorCode = context.StringValue("DeletePipelineMember.ErrorCode");
-			deletePipelineMemberResponse.ErrorMessage = context.StringValue("DeletePipelineMember.ErrorMessage");
-			deletePipelineMemberResponse.RequestId = context.StringValue("DeletePipelineMember.RequestId");
-			deletePipelineMemberResponse._Object = context.BooleanValue("DeletePipelineMember.Object");
+			deletePipelineMemberResponse.HttpResponse = _ctx.HttpResponse;
+			deletePipelineMemberResponse.Success = _ctx.BooleanValue("DeletePipelineMember.Success");
+			deletePipelineMemberResponse.ErrorCode = _ctx.StringValue("DeletePipelineMember.ErrorCode");
+			deletePipelineMemberResponse.ErrorMessage = _ctx.StringValue("DeletePipelineMember.ErrorMessage");
+			deletePipelineMemberResponse.RequestId = _ctx.StringValue("DeletePipelineMember.RequestId");
+			deletePipelineMemberResponse._Object = _ctx.BooleanValue("DeletePipelineMember.Object");
         
 			return deletePipelineMemberResponse;
         }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class ListUserOrganizationResponseUnmarshaller
     {
-        public static ListUserOrganizationResponse Unmarshall(UnmarshallerContext context)
+        public static ListUserOrganizationResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ListUserOrganizationResponse listUserOrganizationResponse = new ListUserOrganizationResponse();
 
-			listUserOrganizationResponse.HttpResponse = context.HttpResponse;
-			listUserOrganizationResponse.RequestId = context.StringValue("ListUserOrganization.RequestId");
-			listUserOrganizationResponse.ErrorCode = context.StringValue("ListUserOrganization.ErrorCode");
-			listUserOrganizationResponse.ErrorMessage = context.StringValue("ListUserOrganization.ErrorMessage");
-			listUserOrganizationResponse.Success = context.BooleanValue("ListUserOrganization.Success");
-			listUserOrganizationResponse._Object = context.StringValue("ListUserOrganization.Object");
+			listUserOrganizationResponse.HttpResponse = _ctx.HttpResponse;
+			listUserOrganizationResponse.RequestId = _ctx.StringValue("ListUserOrganization.RequestId");
+			listUserOrganizationResponse.ErrorCode = _ctx.StringValue("ListUserOrganization.ErrorCode");
+			listUserOrganizationResponse.ErrorMessage = _ctx.StringValue("ListUserOrganization.ErrorMessage");
+			listUserOrganizationResponse.Success = _ctx.BooleanValue("ListUserOrganization.Success");
+			listUserOrganizationResponse._Object = _ctx.StringValue("ListUserOrganization.Object");
         
 			return listUserOrganizationResponse;
         }

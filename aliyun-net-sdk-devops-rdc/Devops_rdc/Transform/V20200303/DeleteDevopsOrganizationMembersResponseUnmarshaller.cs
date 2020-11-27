@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class DeleteDevopsOrganizationMembersResponseUnmarshaller
     {
-        public static DeleteDevopsOrganizationMembersResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDevopsOrganizationMembersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDevopsOrganizationMembersResponse deleteDevopsOrganizationMembersResponse = new DeleteDevopsOrganizationMembersResponse();
 
-			deleteDevopsOrganizationMembersResponse.HttpResponse = context.HttpResponse;
-			deleteDevopsOrganizationMembersResponse.RequestId = context.StringValue("DeleteDevopsOrganizationMembers.RequestId");
-			deleteDevopsOrganizationMembersResponse.ErrorCode = context.StringValue("DeleteDevopsOrganizationMembers.ErrorCode");
-			deleteDevopsOrganizationMembersResponse.ErrorMessage = context.StringValue("DeleteDevopsOrganizationMembers.ErrorMessage");
-			deleteDevopsOrganizationMembersResponse.Success = context.BooleanValue("DeleteDevopsOrganizationMembers.Success");
-			deleteDevopsOrganizationMembersResponse._Object = context.BooleanValue("DeleteDevopsOrganizationMembers.Object");
+			deleteDevopsOrganizationMembersResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDevopsOrganizationMembersResponse.RequestId = _ctx.StringValue("DeleteDevopsOrganizationMembers.RequestId");
+			deleteDevopsOrganizationMembersResponse.ErrorCode = _ctx.StringValue("DeleteDevopsOrganizationMembers.ErrorCode");
+			deleteDevopsOrganizationMembersResponse.ErrorMessage = _ctx.StringValue("DeleteDevopsOrganizationMembers.ErrorMessage");
+			deleteDevopsOrganizationMembersResponse.Success = _ctx.BooleanValue("DeleteDevopsOrganizationMembers.Success");
+			deleteDevopsOrganizationMembersResponse._Object = _ctx.BooleanValue("DeleteDevopsOrganizationMembers.Object");
         
 			return deleteDevopsOrganizationMembersResponse;
         }

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class CancelPipelineResponseUnmarshaller
     {
-        public static CancelPipelineResponse Unmarshall(UnmarshallerContext context)
+        public static CancelPipelineResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CancelPipelineResponse cancelPipelineResponse = new CancelPipelineResponse();
 
-			cancelPipelineResponse.HttpResponse = context.HttpResponse;
-			cancelPipelineResponse.Success = context.BooleanValue("CancelPipeline.Success");
-			cancelPipelineResponse.ErrorCode = context.StringValue("CancelPipeline.ErrorCode");
-			cancelPipelineResponse.ErrorMessage = context.StringValue("CancelPipeline.ErrorMessage");
-			cancelPipelineResponse._Object = context.BooleanValue("CancelPipeline.Object");
-			cancelPipelineResponse.RequestId = context.StringValue("CancelPipeline.RequestId");
+			cancelPipelineResponse.HttpResponse = _ctx.HttpResponse;
+			cancelPipelineResponse.Success = _ctx.BooleanValue("CancelPipeline.Success");
+			cancelPipelineResponse.ErrorCode = _ctx.StringValue("CancelPipeline.ErrorCode");
+			cancelPipelineResponse.ErrorMessage = _ctx.StringValue("CancelPipeline.ErrorMessage");
+			cancelPipelineResponse._Object = _ctx.BooleanValue("CancelPipeline.Object");
+			cancelPipelineResponse.RequestId = _ctx.StringValue("CancelPipeline.RequestId");
         
 			return cancelPipelineResponse;
         }

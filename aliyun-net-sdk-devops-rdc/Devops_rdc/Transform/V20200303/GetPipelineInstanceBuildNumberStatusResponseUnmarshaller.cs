@@ -26,37 +26,37 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class GetPipelineInstanceBuildNumberStatusResponseUnmarshaller
     {
-        public static GetPipelineInstanceBuildNumberStatusResponse Unmarshall(UnmarshallerContext context)
+        public static GetPipelineInstanceBuildNumberStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetPipelineInstanceBuildNumberStatusResponse getPipelineInstanceBuildNumberStatusResponse = new GetPipelineInstanceBuildNumberStatusResponse();
 
-			getPipelineInstanceBuildNumberStatusResponse.HttpResponse = context.HttpResponse;
-			getPipelineInstanceBuildNumberStatusResponse.Success = context.BooleanValue("GetPipelineInstanceBuildNumberStatus.Success");
-			getPipelineInstanceBuildNumberStatusResponse.ErrorCode = context.StringValue("GetPipelineInstanceBuildNumberStatus.ErrorCode");
-			getPipelineInstanceBuildNumberStatusResponse.ErrorMessage = context.StringValue("GetPipelineInstanceBuildNumberStatus.ErrorMessage");
-			getPipelineInstanceBuildNumberStatusResponse.RequestId = context.StringValue("GetPipelineInstanceBuildNumberStatus.RequestId");
+			getPipelineInstanceBuildNumberStatusResponse.HttpResponse = _ctx.HttpResponse;
+			getPipelineInstanceBuildNumberStatusResponse.Success = _ctx.BooleanValue("GetPipelineInstanceBuildNumberStatus.Success");
+			getPipelineInstanceBuildNumberStatusResponse.ErrorCode = _ctx.StringValue("GetPipelineInstanceBuildNumberStatus.ErrorCode");
+			getPipelineInstanceBuildNumberStatusResponse.ErrorMessage = _ctx.StringValue("GetPipelineInstanceBuildNumberStatus.ErrorMessage");
+			getPipelineInstanceBuildNumberStatusResponse.RequestId = _ctx.StringValue("GetPipelineInstanceBuildNumberStatus.RequestId");
 
 			GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object _object = new GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object();
-			_object.Status = context.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Status");
+			_object.Status = _ctx.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Status");
 
 			List<GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object.GetPipelineInstanceBuildNumberStatus_Group> _object_groups = new List<GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object.GetPipelineInstanceBuildNumberStatus_Group>();
-			for (int i = 0; i < context.Length("GetPipelineInstanceBuildNumberStatus.Object.Groups.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("GetPipelineInstanceBuildNumberStatus.Object.Groups.Length"); i++) {
 				GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object.GetPipelineInstanceBuildNumberStatus_Group group = new GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object.GetPipelineInstanceBuildNumberStatus_Group();
-				group.Name = context.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Name");
-				group.Status = context.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Status");
+				group.Name = _ctx.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Name");
+				group.Status = _ctx.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Status");
 
 				List<GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object.GetPipelineInstanceBuildNumberStatus_Group.GetPipelineInstanceBuildNumberStatus_Stage> group_stages = new List<GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object.GetPipelineInstanceBuildNumberStatus_Group.GetPipelineInstanceBuildNumberStatus_Stage>();
-				for (int j = 0; j < context.Length("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages.Length"); j++) {
 					GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object.GetPipelineInstanceBuildNumberStatus_Group.GetPipelineInstanceBuildNumberStatus_Stage stage = new GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object.GetPipelineInstanceBuildNumberStatus_Group.GetPipelineInstanceBuildNumberStatus_Stage();
-					stage.Status = context.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages["+ j +"].Status");
-					stage.Sign = context.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages["+ j +"].Sign");
+					stage.Status = _ctx.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages["+ j +"].Status");
+					stage.Sign = _ctx.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages["+ j +"].Sign");
 
 					List<GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object.GetPipelineInstanceBuildNumberStatus_Group.GetPipelineInstanceBuildNumberStatus_Stage.GetPipelineInstanceBuildNumberStatus_Component> stage_components = new List<GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object.GetPipelineInstanceBuildNumberStatus_Group.GetPipelineInstanceBuildNumberStatus_Stage.GetPipelineInstanceBuildNumberStatus_Component>();
-					for (int k = 0; k < context.Length("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages["+ j +"].Components.Length"); k++) {
+					for (int k = 0; k < _ctx.Length("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages["+ j +"].Components.Length"); k++) {
 						GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object.GetPipelineInstanceBuildNumberStatus_Group.GetPipelineInstanceBuildNumberStatus_Stage.GetPipelineInstanceBuildNumberStatus_Component component = new GetPipelineInstanceBuildNumberStatusResponse.GetPipelineInstanceBuildNumberStatus__Object.GetPipelineInstanceBuildNumberStatus_Group.GetPipelineInstanceBuildNumberStatus_Stage.GetPipelineInstanceBuildNumberStatus_Component();
-						component.Name = context.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Name");
-						component.Status = context.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Status");
-						component.JobId = context.LongValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].JobId");
+						component.Name = _ctx.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Name");
+						component.Status = _ctx.StringValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].Status");
+						component.JobId = _ctx.LongValue("GetPipelineInstanceBuildNumberStatus.Object.Groups["+ i +"].Stages["+ j +"].Components["+ k +"].JobId");
 
 						stage_components.Add(component);
 					}

@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class TransferPipelineOwnerResponseUnmarshaller
     {
-        public static TransferPipelineOwnerResponse Unmarshall(UnmarshallerContext context)
+        public static TransferPipelineOwnerResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			TransferPipelineOwnerResponse transferPipelineOwnerResponse = new TransferPipelineOwnerResponse();
 
-			transferPipelineOwnerResponse.HttpResponse = context.HttpResponse;
-			transferPipelineOwnerResponse.Success = context.BooleanValue("TransferPipelineOwner.Success");
-			transferPipelineOwnerResponse.ErrorCode = context.StringValue("TransferPipelineOwner.ErrorCode");
-			transferPipelineOwnerResponse.ErrorMessage = context.StringValue("TransferPipelineOwner.ErrorMessage");
-			transferPipelineOwnerResponse.RequestId = context.StringValue("TransferPipelineOwner.RequestId");
-			transferPipelineOwnerResponse._Object = context.StringValue("TransferPipelineOwner.Object");
+			transferPipelineOwnerResponse.HttpResponse = _ctx.HttpResponse;
+			transferPipelineOwnerResponse.Success = _ctx.BooleanValue("TransferPipelineOwner.Success");
+			transferPipelineOwnerResponse.ErrorCode = _ctx.StringValue("TransferPipelineOwner.ErrorCode");
+			transferPipelineOwnerResponse.ErrorMessage = _ctx.StringValue("TransferPipelineOwner.ErrorMessage");
+			transferPipelineOwnerResponse.RequestId = _ctx.StringValue("TransferPipelineOwner.RequestId");
+			transferPipelineOwnerResponse._Object = _ctx.StringValue("TransferPipelineOwner.Object");
         
 			return transferPipelineOwnerResponse;
         }

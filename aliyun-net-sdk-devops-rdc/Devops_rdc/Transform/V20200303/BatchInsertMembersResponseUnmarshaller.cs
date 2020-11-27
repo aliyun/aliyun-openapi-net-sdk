@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class BatchInsertMembersResponseUnmarshaller
     {
-        public static BatchInsertMembersResponse Unmarshall(UnmarshallerContext context)
+        public static BatchInsertMembersResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			BatchInsertMembersResponse batchInsertMembersResponse = new BatchInsertMembersResponse();
 
-			batchInsertMembersResponse.HttpResponse = context.HttpResponse;
-			batchInsertMembersResponse.RequestId = context.StringValue("BatchInsertMembers.RequestId");
-			batchInsertMembersResponse.ErrorCode = context.StringValue("BatchInsertMembers.ErrorCode");
-			batchInsertMembersResponse.ErrorMessage = context.StringValue("BatchInsertMembers.ErrorMessage");
-			batchInsertMembersResponse.Success = context.BooleanValue("BatchInsertMembers.Success");
-			batchInsertMembersResponse._Object = context.BooleanValue("BatchInsertMembers.Object");
+			batchInsertMembersResponse.HttpResponse = _ctx.HttpResponse;
+			batchInsertMembersResponse.RequestId = _ctx.StringValue("BatchInsertMembers.RequestId");
+			batchInsertMembersResponse.ErrorCode = _ctx.StringValue("BatchInsertMembers.ErrorCode");
+			batchInsertMembersResponse.ErrorMessage = _ctx.StringValue("BatchInsertMembers.ErrorMessage");
+			batchInsertMembersResponse.Success = _ctx.BooleanValue("BatchInsertMembers.Success");
+			batchInsertMembersResponse._Object = _ctx.BooleanValue("BatchInsertMembers.Object");
         
 			return batchInsertMembersResponse;
         }

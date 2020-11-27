@@ -26,16 +26,16 @@ namespace Aliyun.Acs.devops_rdc.Transform.V20200303
 {
     public class UpdatePipelineMemberResponseUnmarshaller
     {
-        public static UpdatePipelineMemberResponse Unmarshall(UnmarshallerContext context)
+        public static UpdatePipelineMemberResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdatePipelineMemberResponse updatePipelineMemberResponse = new UpdatePipelineMemberResponse();
 
-			updatePipelineMemberResponse.HttpResponse = context.HttpResponse;
-			updatePipelineMemberResponse.Success = context.BooleanValue("UpdatePipelineMember.Success");
-			updatePipelineMemberResponse.ErrorCode = context.StringValue("UpdatePipelineMember.ErrorCode");
-			updatePipelineMemberResponse.ErrorMessage = context.StringValue("UpdatePipelineMember.ErrorMessage");
-			updatePipelineMemberResponse.RequestId = context.StringValue("UpdatePipelineMember.RequestId");
-			updatePipelineMemberResponse._Object = context.BooleanValue("UpdatePipelineMember.Object");
+			updatePipelineMemberResponse.HttpResponse = _ctx.HttpResponse;
+			updatePipelineMemberResponse.Success = _ctx.BooleanValue("UpdatePipelineMember.Success");
+			updatePipelineMemberResponse.ErrorCode = _ctx.StringValue("UpdatePipelineMember.ErrorCode");
+			updatePipelineMemberResponse.ErrorMessage = _ctx.StringValue("UpdatePipelineMember.ErrorMessage");
+			updatePipelineMemberResponse.RequestId = _ctx.StringValue("UpdatePipelineMember.RequestId");
+			updatePipelineMemberResponse._Object = _ctx.BooleanValue("UpdatePipelineMember.Object");
         
 			return updatePipelineMemberResponse;
         }
