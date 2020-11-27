@@ -44,27 +44,35 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private List<UserPanes> userPaness = new List<UserPanes>(){ };
 
-		private int? rtpExtInfo;
-
 		private int? backgroundColor;
-
-		private int? cropMode;
 
 		private int? reportVad;
 
-		private string taskProfile;
-
-		private List<long?> layoutIdss = new List<long?>(){ };
+		private string sourceType;
 
 		private string taskId;
 
-		private string streamURL;
+		private List<ClockWidgets> clockWidgetss = new List<ClockWidgets>(){ };
 
 		private long? vadInterval;
 
 		private List<Watermarks> watermarkss = new List<Watermarks>(){ };
 
 		private long? ownerId;
+
+		private int? mediaEncode;
+
+		private int? rtpExtInfo;
+
+		private int? cropMode;
+
+		private string taskProfile;
+
+		private List<long?> layoutIdss = new List<long?>(){ };
+
+		private string streamURL;
+
+		private int? streamType;
 
 		private List<string> subSpecUserss = new List<string>(){ };
 
@@ -74,7 +82,7 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 
 		private long? timeStampRef;
 
-		private int? mediaEncode;
+		private int? mixMode;
 
 		private string channelId;
 
@@ -118,19 +126,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public int? RtpExtInfo
-		{
-			get
-			{
-				return rtpExtInfo;
-			}
-			set	
-			{
-				rtpExtInfo = value;
-				DictionaryUtil.Add(QueryParameters, "RtpExtInfo", value.ToString());
-			}
-		}
-
 		public int? BackgroundColor
 		{
 			get
@@ -141,19 +136,6 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				backgroundColor = value;
 				DictionaryUtil.Add(QueryParameters, "BackgroundColor", value.ToString());
-			}
-		}
-
-		public int? CropMode
-		{
-			get
-			{
-				return cropMode;
-			}
-			set	
-			{
-				cropMode = value;
-				DictionaryUtil.Add(QueryParameters, "CropMode", value.ToString());
 			}
 		}
 
@@ -170,33 +152,16 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public string TaskProfile
+		public string SourceType
 		{
 			get
 			{
-				return taskProfile;
+				return sourceType;
 			}
 			set	
 			{
-				taskProfile = value;
-				DictionaryUtil.Add(QueryParameters, "TaskProfile", value);
-			}
-		}
-
-		public List<long?> LayoutIdss
-		{
-			get
-			{
-				return layoutIdss;
-			}
-
-			set
-			{
-				layoutIdss = value;
-				for (int i = 0; i < layoutIdss.Count; i++)
-				{
-					DictionaryUtil.Add(QueryParameters,"LayoutIds." + (i + 1) , layoutIdss[i]);
-				}
+				sourceType = value;
+				DictionaryUtil.Add(QueryParameters, "SourceType", value);
 			}
 		}
 
@@ -213,16 +178,25 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public string StreamURL
+		public List<ClockWidgets> ClockWidgetss
 		{
 			get
 			{
-				return streamURL;
+				return clockWidgetss;
 			}
-			set	
+
+			set
 			{
-				streamURL = value;
-				DictionaryUtil.Add(QueryParameters, "StreamURL", value);
+				clockWidgetss = value;
+				for (int i = 0; i < clockWidgetss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"ClockWidgets." + (i + 1) + ".X", clockWidgetss[i].X);
+					DictionaryUtil.Add(QueryParameters,"ClockWidgets." + (i + 1) + ".Y", clockWidgetss[i].Y);
+					DictionaryUtil.Add(QueryParameters,"ClockWidgets." + (i + 1) + ".FontType", clockWidgetss[i].FontType);
+					DictionaryUtil.Add(QueryParameters,"ClockWidgets." + (i + 1) + ".FontSize", clockWidgetss[i].FontSize);
+					DictionaryUtil.Add(QueryParameters,"ClockWidgets." + (i + 1) + ".FontColor", clockWidgetss[i].FontColor);
+					DictionaryUtil.Add(QueryParameters,"ClockWidgets." + (i + 1) + ".ZOrder", clockWidgetss[i].ZOrder);
+				}
 			}
 		}
 
@@ -273,6 +247,101 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			{
 				ownerId = value;
 				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public int? MediaEncode
+		{
+			get
+			{
+				return mediaEncode;
+			}
+			set	
+			{
+				mediaEncode = value;
+				DictionaryUtil.Add(QueryParameters, "MediaEncode", value.ToString());
+			}
+		}
+
+		public int? RtpExtInfo
+		{
+			get
+			{
+				return rtpExtInfo;
+			}
+			set	
+			{
+				rtpExtInfo = value;
+				DictionaryUtil.Add(QueryParameters, "RtpExtInfo", value.ToString());
+			}
+		}
+
+		public int? CropMode
+		{
+			get
+			{
+				return cropMode;
+			}
+			set	
+			{
+				cropMode = value;
+				DictionaryUtil.Add(QueryParameters, "CropMode", value.ToString());
+			}
+		}
+
+		public string TaskProfile
+		{
+			get
+			{
+				return taskProfile;
+			}
+			set	
+			{
+				taskProfile = value;
+				DictionaryUtil.Add(QueryParameters, "TaskProfile", value);
+			}
+		}
+
+		public List<long?> LayoutIdss
+		{
+			get
+			{
+				return layoutIdss;
+			}
+
+			set
+			{
+				layoutIdss = value;
+				for (int i = 0; i < layoutIdss.Count; i++)
+				{
+					DictionaryUtil.Add(QueryParameters,"LayoutIds." + (i + 1) , layoutIdss[i]);
+				}
+			}
+		}
+
+		public string StreamURL
+		{
+			get
+			{
+				return streamURL;
+			}
+			set	
+			{
+				streamURL = value;
+				DictionaryUtil.Add(QueryParameters, "StreamURL", value);
+			}
+		}
+
+		public int? StreamType
+		{
+			get
+			{
+				return streamType;
+			}
+			set	
+			{
+				streamType = value;
+				DictionaryUtil.Add(QueryParameters, "StreamType", value.ToString());
 			}
 		}
 
@@ -342,16 +411,16 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 			}
 		}
 
-		public int? MediaEncode
+		public int? MixMode
 		{
 			get
 			{
-				return mediaEncode;
+				return mixMode;
 			}
 			set	
 			{
-				mediaEncode = value;
-				DictionaryUtil.Add(QueryParameters, "MediaEncode", value.ToString());
+				mixMode = value;
+				DictionaryUtil.Add(QueryParameters, "MixMode", value.ToString());
 			}
 		}
 
@@ -642,6 +711,94 @@ namespace Aliyun.Acs.rtc.Model.V20180111
 					{
 						zOrder = value;
 					}
+				}
+			}
+		}
+
+		public class ClockWidgets
+		{
+
+			private float? x;
+
+			private float? y;
+
+			private int? fontType;
+
+			private int? fontSize;
+
+			private int? fontColor;
+
+			private int? zOrder;
+
+			public float? X
+			{
+				get
+				{
+					return x;
+				}
+				set	
+				{
+					x = value;
+				}
+			}
+
+			public float? Y
+			{
+				get
+				{
+					return y;
+				}
+				set	
+				{
+					y = value;
+				}
+			}
+
+			public int? FontType
+			{
+				get
+				{
+					return fontType;
+				}
+				set	
+				{
+					fontType = value;
+				}
+			}
+
+			public int? FontSize
+			{
+				get
+				{
+					return fontSize;
+				}
+				set	
+				{
+					fontSize = value;
+				}
+			}
+
+			public int? FontColor
+			{
+				get
+				{
+					return fontColor;
+				}
+				set	
+				{
+					fontColor = value;
+				}
+			}
+
+			public int? ZOrder
+			{
+				get
+				{
+					return zOrder;
+				}
+				set	
+				{
+					zOrder = value;
 				}
 			}
 		}
