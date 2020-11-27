@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class DeleteAliasResponseUnmarshaller
     {
-        public static DeleteAliasResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteAliasResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteAliasResponse deleteAliasResponse = new DeleteAliasResponse();
 
-			deleteAliasResponse.HttpResponse = context.HttpResponse;
-			deleteAliasResponse.RequestId = context.StringValue("DeleteAlias.RequestId");
+			deleteAliasResponse.HttpResponse = _ctx.HttpResponse;
+			deleteAliasResponse.RequestId = _ctx.StringValue("DeleteAlias.RequestId");
         
 			return deleteAliasResponse;
         }

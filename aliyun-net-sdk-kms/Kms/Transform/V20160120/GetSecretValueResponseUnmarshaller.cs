@@ -26,21 +26,21 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class GetSecretValueResponseUnmarshaller
     {
-        public static GetSecretValueResponse Unmarshall(UnmarshallerContext context)
+        public static GetSecretValueResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetSecretValueResponse getSecretValueResponse = new GetSecretValueResponse();
 
-			getSecretValueResponse.HttpResponse = context.HttpResponse;
-			getSecretValueResponse.RequestId = context.StringValue("GetSecretValue.RequestId");
-			getSecretValueResponse.SecretName = context.StringValue("GetSecretValue.SecretName");
-			getSecretValueResponse.VersionId = context.StringValue("GetSecretValue.VersionId");
-			getSecretValueResponse.CreateTime = context.StringValue("GetSecretValue.CreateTime");
-			getSecretValueResponse.SecretData = context.StringValue("GetSecretValue.SecretData");
-			getSecretValueResponse.SecretDataType = context.StringValue("GetSecretValue.SecretDataType");
+			getSecretValueResponse.HttpResponse = _ctx.HttpResponse;
+			getSecretValueResponse.RequestId = _ctx.StringValue("GetSecretValue.RequestId");
+			getSecretValueResponse.SecretName = _ctx.StringValue("GetSecretValue.SecretName");
+			getSecretValueResponse.VersionId = _ctx.StringValue("GetSecretValue.VersionId");
+			getSecretValueResponse.CreateTime = _ctx.StringValue("GetSecretValue.CreateTime");
+			getSecretValueResponse.SecretData = _ctx.StringValue("GetSecretValue.SecretData");
+			getSecretValueResponse.SecretDataType = _ctx.StringValue("GetSecretValue.SecretDataType");
 
 			List<string> getSecretValueResponse_versionStages = new List<string>();
-			for (int i = 0; i < context.Length("GetSecretValue.VersionStages.Length"); i++) {
-				getSecretValueResponse_versionStages.Add(context.StringValue("GetSecretValue.VersionStages["+ i +"]"));
+			for (int i = 0; i < _ctx.Length("GetSecretValue.VersionStages.Length"); i++) {
+				getSecretValueResponse_versionStages.Add(_ctx.StringValue("GetSecretValue.VersionStages["+ i +"]"));
 			}
 			getSecretValueResponse.VersionStages = getSecretValueResponse_versionStages;
         

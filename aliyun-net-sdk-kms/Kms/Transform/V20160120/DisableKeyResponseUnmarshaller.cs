@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class DisableKeyResponseUnmarshaller
     {
-        public static DisableKeyResponse Unmarshall(UnmarshallerContext context)
+        public static DisableKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DisableKeyResponse disableKeyResponse = new DisableKeyResponse();
 
-			disableKeyResponse.HttpResponse = context.HttpResponse;
-			disableKeyResponse.RequestId = context.StringValue("DisableKey.RequestId");
+			disableKeyResponse.HttpResponse = _ctx.HttpResponse;
+			disableKeyResponse.RequestId = _ctx.StringValue("DisableKey.RequestId");
         
 			return disableKeyResponse;
         }

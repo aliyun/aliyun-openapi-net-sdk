@@ -17,6 +17,7 @@
  * under the License.
  */
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 using Aliyun.Acs.Core;
 using Aliyun.Acs.Core.Http;
@@ -30,22 +31,37 @@ namespace Aliyun.Acs.Kms.Model.V20160120
     public class TagResourceRequest : RpcAcsRequest<TagResourceResponse>
     {
         public TagResourceRequest()
-            : base("Kms", "2016-01-20", "TagResource", "kms", "openAPI")
+            : base("Kms", "2016-01-20", "TagResource", "kms-service", "openAPI")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
-                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Endpoint.endpointMap, null);
-                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Endpoint.endpointRegionalType, null);
+                this.GetType().GetProperty("ProductEndpointMap").SetValue(this, Aliyun.Acs.Kms.Endpoint.endpointMap, null);
+                this.GetType().GetProperty("ProductEndpointType").SetValue(this, Aliyun.Acs.Kms.Endpoint.endpointRegionalType, null);
             }
 			Protocol = ProtocolType.HTTPS;
 			Method = MethodType.POST;
         }
+
+		private string certificateId;
 
 		private string keyId;
 
 		private string secretName;
 
 		private string tags;
+
+		public string CertificateId
+		{
+			get
+			{
+				return certificateId;
+			}
+			set	
+			{
+				certificateId = value;
+				DictionaryUtil.Add(QueryParameters, "CertificateId", value);
+			}
+		}
 
 		public string KeyId
 		{

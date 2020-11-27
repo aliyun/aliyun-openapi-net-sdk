@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class DescribeAccountKmsStatusResponseUnmarshaller
     {
-        public static DescribeAccountKmsStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeAccountKmsStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeAccountKmsStatusResponse describeAccountKmsStatusResponse = new DescribeAccountKmsStatusResponse();
 
-			describeAccountKmsStatusResponse.HttpResponse = context.HttpResponse;
-			describeAccountKmsStatusResponse.RequestId = context.StringValue("DescribeAccountKmsStatus.RequestId");
-			describeAccountKmsStatusResponse.AccountStatus = context.StringValue("DescribeAccountKmsStatus.AccountStatus");
+			describeAccountKmsStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeAccountKmsStatusResponse.RequestId = _ctx.StringValue("DescribeAccountKmsStatus.RequestId");
+			describeAccountKmsStatusResponse.AccountStatus = _ctx.StringValue("DescribeAccountKmsStatus.AccountStatus");
         
 			return describeAccountKmsStatusResponse;
         }

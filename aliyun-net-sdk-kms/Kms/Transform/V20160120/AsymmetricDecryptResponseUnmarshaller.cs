@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class AsymmetricDecryptResponseUnmarshaller
     {
-        public static AsymmetricDecryptResponse Unmarshall(UnmarshallerContext context)
+        public static AsymmetricDecryptResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			AsymmetricDecryptResponse asymmetricDecryptResponse = new AsymmetricDecryptResponse();
 
-			asymmetricDecryptResponse.HttpResponse = context.HttpResponse;
-			asymmetricDecryptResponse.Plaintext = context.StringValue("AsymmetricDecrypt.Plaintext");
-			asymmetricDecryptResponse.KeyId = context.StringValue("AsymmetricDecrypt.KeyId");
-			asymmetricDecryptResponse.RequestId = context.StringValue("AsymmetricDecrypt.RequestId");
-			asymmetricDecryptResponse.KeyVersionId = context.StringValue("AsymmetricDecrypt.KeyVersionId");
+			asymmetricDecryptResponse.HttpResponse = _ctx.HttpResponse;
+			asymmetricDecryptResponse.Plaintext = _ctx.StringValue("AsymmetricDecrypt.Plaintext");
+			asymmetricDecryptResponse.KeyId = _ctx.StringValue("AsymmetricDecrypt.KeyId");
+			asymmetricDecryptResponse.RequestId = _ctx.StringValue("AsymmetricDecrypt.RequestId");
+			asymmetricDecryptResponse.KeyVersionId = _ctx.StringValue("AsymmetricDecrypt.KeyVersionId");
         
 			return asymmetricDecryptResponse;
         }

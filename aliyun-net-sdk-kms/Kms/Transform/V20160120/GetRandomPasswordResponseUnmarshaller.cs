@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class GetRandomPasswordResponseUnmarshaller
     {
-        public static GetRandomPasswordResponse Unmarshall(UnmarshallerContext context)
+        public static GetRandomPasswordResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetRandomPasswordResponse getRandomPasswordResponse = new GetRandomPasswordResponse();
 
-			getRandomPasswordResponse.HttpResponse = context.HttpResponse;
-			getRandomPasswordResponse.RequestId = context.StringValue("GetRandomPassword.RequestId");
-			getRandomPasswordResponse.RandomPassword = context.StringValue("GetRandomPassword.RandomPassword");
+			getRandomPasswordResponse.HttpResponse = _ctx.HttpResponse;
+			getRandomPasswordResponse.RequestId = _ctx.StringValue("GetRandomPassword.RequestId");
+			getRandomPasswordResponse.RandomPassword = _ctx.StringValue("GetRandomPassword.RandomPassword");
         
 			return getRandomPasswordResponse;
         }

@@ -26,13 +26,13 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class UpdateSecretResponseUnmarshaller
     {
-        public static UpdateSecretResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateSecretResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateSecretResponse updateSecretResponse = new UpdateSecretResponse();
 
-			updateSecretResponse.HttpResponse = context.HttpResponse;
-			updateSecretResponse.RequestId = context.StringValue("UpdateSecret.RequestId");
-			updateSecretResponse.SecretName = context.StringValue("UpdateSecret.SecretName");
+			updateSecretResponse.HttpResponse = _ctx.HttpResponse;
+			updateSecretResponse.RequestId = _ctx.StringValue("UpdateSecret.RequestId");
+			updateSecretResponse.SecretName = _ctx.StringValue("UpdateSecret.SecretName");
         
 			return updateSecretResponse;
         }

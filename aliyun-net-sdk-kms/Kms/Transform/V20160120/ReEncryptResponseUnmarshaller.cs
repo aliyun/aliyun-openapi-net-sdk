@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class ReEncryptResponseUnmarshaller
     {
-        public static ReEncryptResponse Unmarshall(UnmarshallerContext context)
+        public static ReEncryptResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ReEncryptResponse reEncryptResponse = new ReEncryptResponse();
 
-			reEncryptResponse.HttpResponse = context.HttpResponse;
-			reEncryptResponse.RequestId = context.StringValue("ReEncrypt.RequestId");
-			reEncryptResponse.KeyId = context.StringValue("ReEncrypt.KeyId");
-			reEncryptResponse.KeyVersionId = context.StringValue("ReEncrypt.KeyVersionId");
-			reEncryptResponse.CiphertextBlob = context.StringValue("ReEncrypt.CiphertextBlob");
+			reEncryptResponse.HttpResponse = _ctx.HttpResponse;
+			reEncryptResponse.RequestId = _ctx.StringValue("ReEncrypt.RequestId");
+			reEncryptResponse.KeyId = _ctx.StringValue("ReEncrypt.KeyId");
+			reEncryptResponse.KeyVersionId = _ctx.StringValue("ReEncrypt.KeyVersionId");
+			reEncryptResponse.CiphertextBlob = _ctx.StringValue("ReEncrypt.CiphertextBlob");
         
 			return reEncryptResponse;
         }

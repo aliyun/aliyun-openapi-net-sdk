@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class CreateSecretResponseUnmarshaller
     {
-        public static CreateSecretResponse Unmarshall(UnmarshallerContext context)
+        public static CreateSecretResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateSecretResponse createSecretResponse = new CreateSecretResponse();
 
-			createSecretResponse.HttpResponse = context.HttpResponse;
-			createSecretResponse.RequestId = context.StringValue("CreateSecret.RequestId");
-			createSecretResponse.Arn = context.StringValue("CreateSecret.Arn");
-			createSecretResponse.VersionId = context.StringValue("CreateSecret.VersionId");
-			createSecretResponse.SecretName = context.StringValue("CreateSecret.SecretName");
+			createSecretResponse.HttpResponse = _ctx.HttpResponse;
+			createSecretResponse.RequestId = _ctx.StringValue("CreateSecret.RequestId");
+			createSecretResponse.Arn = _ctx.StringValue("CreateSecret.Arn");
+			createSecretResponse.VersionId = _ctx.StringValue("CreateSecret.VersionId");
+			createSecretResponse.SecretName = _ctx.StringValue("CreateSecret.SecretName");
         
 			return createSecretResponse;
         }

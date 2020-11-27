@@ -26,12 +26,12 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class ImportKeyMaterialResponseUnmarshaller
     {
-        public static ImportKeyMaterialResponse Unmarshall(UnmarshallerContext context)
+        public static ImportKeyMaterialResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			ImportKeyMaterialResponse importKeyMaterialResponse = new ImportKeyMaterialResponse();
 
-			importKeyMaterialResponse.HttpResponse = context.HttpResponse;
-			importKeyMaterialResponse.RequestId = context.StringValue("ImportKeyMaterial.RequestId");
+			importKeyMaterialResponse.HttpResponse = _ctx.HttpResponse;
+			importKeyMaterialResponse.RequestId = _ctx.StringValue("ImportKeyMaterial.RequestId");
         
 			return importKeyMaterialResponse;
         }

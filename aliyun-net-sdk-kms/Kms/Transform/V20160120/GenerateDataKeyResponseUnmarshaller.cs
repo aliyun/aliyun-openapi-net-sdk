@@ -26,16 +26,16 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class GenerateDataKeyResponseUnmarshaller
     {
-        public static GenerateDataKeyResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateDataKeyResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateDataKeyResponse generateDataKeyResponse = new GenerateDataKeyResponse();
 
-			generateDataKeyResponse.HttpResponse = context.HttpResponse;
-			generateDataKeyResponse.CiphertextBlob = context.StringValue("GenerateDataKey.CiphertextBlob");
-			generateDataKeyResponse.KeyId = context.StringValue("GenerateDataKey.KeyId");
-			generateDataKeyResponse.Plaintext = context.StringValue("GenerateDataKey.Plaintext");
-			generateDataKeyResponse.RequestId = context.StringValue("GenerateDataKey.RequestId");
-			generateDataKeyResponse.KeyVersionId = context.StringValue("GenerateDataKey.KeyVersionId");
+			generateDataKeyResponse.HttpResponse = _ctx.HttpResponse;
+			generateDataKeyResponse.CiphertextBlob = _ctx.StringValue("GenerateDataKey.CiphertextBlob");
+			generateDataKeyResponse.KeyId = _ctx.StringValue("GenerateDataKey.KeyId");
+			generateDataKeyResponse.Plaintext = _ctx.StringValue("GenerateDataKey.Plaintext");
+			generateDataKeyResponse.RequestId = _ctx.StringValue("GenerateDataKey.RequestId");
+			generateDataKeyResponse.KeyVersionId = _ctx.StringValue("GenerateDataKey.KeyVersionId");
         
 			return generateDataKeyResponse;
         }

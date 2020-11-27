@@ -26,15 +26,15 @@ namespace Aliyun.Acs.Kms.Transform.V20160120
 {
     public class GenerateDataKeyWithoutPlaintextResponseUnmarshaller
     {
-        public static GenerateDataKeyWithoutPlaintextResponse Unmarshall(UnmarshallerContext context)
+        public static GenerateDataKeyWithoutPlaintextResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GenerateDataKeyWithoutPlaintextResponse generateDataKeyWithoutPlaintextResponse = new GenerateDataKeyWithoutPlaintextResponse();
 
-			generateDataKeyWithoutPlaintextResponse.HttpResponse = context.HttpResponse;
-			generateDataKeyWithoutPlaintextResponse.CiphertextBlob = context.StringValue("GenerateDataKeyWithoutPlaintext.CiphertextBlob");
-			generateDataKeyWithoutPlaintextResponse.KeyId = context.StringValue("GenerateDataKeyWithoutPlaintext.KeyId");
-			generateDataKeyWithoutPlaintextResponse.RequestId = context.StringValue("GenerateDataKeyWithoutPlaintext.RequestId");
-			generateDataKeyWithoutPlaintextResponse.KeyVersionId = context.StringValue("GenerateDataKeyWithoutPlaintext.KeyVersionId");
+			generateDataKeyWithoutPlaintextResponse.HttpResponse = _ctx.HttpResponse;
+			generateDataKeyWithoutPlaintextResponse.CiphertextBlob = _ctx.StringValue("GenerateDataKeyWithoutPlaintext.CiphertextBlob");
+			generateDataKeyWithoutPlaintextResponse.KeyId = _ctx.StringValue("GenerateDataKeyWithoutPlaintext.KeyId");
+			generateDataKeyWithoutPlaintextResponse.RequestId = _ctx.StringValue("GenerateDataKeyWithoutPlaintext.RequestId");
+			generateDataKeyWithoutPlaintextResponse.KeyVersionId = _ctx.StringValue("GenerateDataKeyWithoutPlaintext.KeyVersionId");
         
 			return generateDataKeyWithoutPlaintextResponse;
         }
