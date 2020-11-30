@@ -50,21 +50,33 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string snapshotLinkId;
 
-		private string snapshotName;
-
-		private int? pageNumber;
-
 		private string resourceGroupId;
 
 		private string filter1Key;
 
-		private int? pageSize;
-
-		private string diskId;
-
 		private List<Tag> tags = new List<Tag>(){ };
 
 		private bool? dryRun;
+
+		private string filter1Value;
+
+		private long? ownerId;
+
+		private string instanceId;
+
+		private int? maxResults;
+
+		private string status;
+
+		private string snapshotName;
+
+		private int? pageNumber;
+
+		private string nextToken;
+
+		private int? pageSize;
+
+		private string diskId;
 
 		private string resourceOwnerAccount;
 
@@ -72,13 +84,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string sourceDiskType;
 
-		private string filter1Value;
-
 		private string filter2Key;
-
-		private long? ownerId;
-
-		private string instanceId;
 
 		private bool? encrypted;
 
@@ -87,8 +93,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private string kMSKeyId;
 
 		private string category;
-
-		private string status;
 
 		public long? ResourceOwnerId
 		{
@@ -155,32 +159,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string SnapshotName
-		{
-			get
-			{
-				return snapshotName;
-			}
-			set	
-			{
-				snapshotName = value;
-				DictionaryUtil.Add(QueryParameters, "SnapshotName", value);
-			}
-		}
-
-		public int? PageNumber
-		{
-			get
-			{
-				return pageNumber;
-			}
-			set	
-			{
-				pageNumber = value;
-				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
-			}
-		}
-
 		public string ResourceGroupId
 		{
 			get
@@ -204,32 +182,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				filter1Key = value;
 				DictionaryUtil.Add(QueryParameters, "Filter.1.Key", value);
-			}
-		}
-
-		public int? PageSize
-		{
-			get
-			{
-				return pageSize;
-			}
-			set	
-			{
-				pageSize = value;
-				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
-			}
-		}
-
-		public string DiskId
-		{
-			get
-			{
-				return diskId;
-			}
-			set	
-			{
-				diskId = value;
-				DictionaryUtil.Add(QueryParameters, "DiskId", value);
 			}
 		}
 
@@ -261,6 +213,136 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				dryRun = value;
 				DictionaryUtil.Add(QueryParameters, "DryRun", value.ToString());
+			}
+		}
+
+		public string Filter1Value
+		{
+			get
+			{
+				return filter1Value;
+			}
+			set	
+			{
+				filter1Value = value;
+				DictionaryUtil.Add(QueryParameters, "Filter.1.Value", value);
+			}
+		}
+
+		public long? OwnerId
+		{
+			get
+			{
+				return ownerId;
+			}
+			set	
+			{
+				ownerId = value;
+				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
+			}
+		}
+
+		public string InstanceId
+		{
+			get
+			{
+				return instanceId;
+			}
+			set	
+			{
+				instanceId = value;
+				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public int? MaxResults
+		{
+			get
+			{
+				return maxResults;
+			}
+			set	
+			{
+				maxResults = value;
+				DictionaryUtil.Add(QueryParameters, "MaxResults", value.ToString());
+			}
+		}
+
+		public string Status
+		{
+			get
+			{
+				return status;
+			}
+			set	
+			{
+				status = value;
+				DictionaryUtil.Add(QueryParameters, "Status", value);
+			}
+		}
+
+		public string SnapshotName
+		{
+			get
+			{
+				return snapshotName;
+			}
+			set	
+			{
+				snapshotName = value;
+				DictionaryUtil.Add(QueryParameters, "SnapshotName", value);
+			}
+		}
+
+		public int? PageNumber
+		{
+			get
+			{
+				return pageNumber;
+			}
+			set	
+			{
+				pageNumber = value;
+				DictionaryUtil.Add(QueryParameters, "PageNumber", value.ToString());
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
+				DictionaryUtil.Add(QueryParameters, "NextToken", value);
+			}
+		}
+
+		public int? PageSize
+		{
+			get
+			{
+				return pageSize;
+			}
+			set	
+			{
+				pageSize = value;
+				DictionaryUtil.Add(QueryParameters, "PageSize", value.ToString());
+			}
+		}
+
+		public string DiskId
+		{
+			get
+			{
+				return diskId;
+			}
+			set	
+			{
+				diskId = value;
+				DictionaryUtil.Add(QueryParameters, "DiskId", value);
 			}
 		}
 
@@ -303,19 +385,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
-		public string Filter1Value
-		{
-			get
-			{
-				return filter1Value;
-			}
-			set	
-			{
-				filter1Value = value;
-				DictionaryUtil.Add(QueryParameters, "Filter.1.Value", value);
-			}
-		}
-
 		public string Filter2Key
 		{
 			get
@@ -326,32 +395,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				filter2Key = value;
 				DictionaryUtil.Add(QueryParameters, "Filter.2.Key", value);
-			}
-		}
-
-		public long? OwnerId
-		{
-			get
-			{
-				return ownerId;
-			}
-			set	
-			{
-				ownerId = value;
-				DictionaryUtil.Add(QueryParameters, "OwnerId", value.ToString());
-			}
-		}
-
-		public string InstanceId
-		{
-			get
-			{
-				return instanceId;
-			}
-			set	
-			{
-				instanceId = value;
-				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
 			}
 		}
 
@@ -404,19 +447,6 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				category = value;
 				DictionaryUtil.Add(QueryParameters, "Category", value);
-			}
-		}
-
-		public string Status
-		{
-			get
-			{
-				return status;
-			}
-			set	
-			{
-				status = value;
-				DictionaryUtil.Add(QueryParameters, "Status", value);
 			}
 		}
 

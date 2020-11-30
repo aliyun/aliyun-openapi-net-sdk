@@ -35,6 +35,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 			describeSnapshotsResponse.TotalCount = _ctx.IntegerValue("DescribeSnapshots.TotalCount");
 			describeSnapshotsResponse.PageNumber = _ctx.IntegerValue("DescribeSnapshots.PageNumber");
 			describeSnapshotsResponse.PageSize = _ctx.IntegerValue("DescribeSnapshots.PageSize");
+			describeSnapshotsResponse.NextToken = _ctx.StringValue("DescribeSnapshots.NextToken");
 
 			List<DescribeSnapshotsResponse.DescribeSnapshots_Snapshot> describeSnapshotsResponse_snapshots = new List<DescribeSnapshotsResponse.DescribeSnapshots_Snapshot>();
 			for (int i = 0; i < _ctx.Length("DescribeSnapshots.Snapshots.Length"); i++) {
@@ -60,6 +61,8 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				snapshot.KMSKeyId = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].KMSKeyId");
 				snapshot.Category = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].Category");
 				snapshot.SnapshotType = _ctx.StringValue("DescribeSnapshots.Snapshots["+ i +"].SnapshotType");
+				snapshot.InstantAccess = _ctx.BooleanValue("DescribeSnapshots.Snapshots["+ i +"].InstantAccess");
+				snapshot.InstantAccessRetentionDays = _ctx.IntegerValue("DescribeSnapshots.Snapshots["+ i +"].InstantAccessRetentionDays");
 
 				List<DescribeSnapshotsResponse.DescribeSnapshots_Snapshot.DescribeSnapshots_Tag> snapshot_tags = new List<DescribeSnapshotsResponse.DescribeSnapshots_Snapshot.DescribeSnapshots_Tag>();
 				for (int j = 0; j < _ctx.Length("DescribeSnapshots.Snapshots["+ i +"].Tags.Length"); j++) {

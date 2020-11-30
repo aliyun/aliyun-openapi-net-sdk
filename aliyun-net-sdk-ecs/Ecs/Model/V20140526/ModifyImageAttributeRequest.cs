@@ -51,6 +51,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string imageName;
 
+		private string licenseType;
+
 		private string resourceOwnerAccount;
 
 		private string ownerAccount;
@@ -123,6 +125,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				imageName = value;
 				DictionaryUtil.Add(QueryParameters, "ImageName", value);
+			}
+		}
+
+		public string LicenseType
+		{
+			get
+			{
+				return licenseType;
+			}
+			set	
+			{
+				licenseType = value;
+				DictionaryUtil.Add(QueryParameters, "LicenseType", value);
 			}
 		}
 

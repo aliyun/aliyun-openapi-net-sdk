@@ -48,6 +48,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string autoProvisioningGroupType;
 
+		private string launchConfigurationSystemDiskPerformanceLevel;
+
 		private string resourceGroupId;
 
 		private string launchConfigurationImageId;
@@ -87,6 +89,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 		private bool? terminateInstancesWithExpiration;
 
 		private string launchConfigurationUserData;
+
+		private string launchConfigurationCreditSpecification;
 
 		private string launchConfigurationInstanceName;
 
@@ -150,6 +154,7 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				{
 					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Size", launchConfigurationDataDisks[i].Size);
 					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".Category", launchConfigurationDataDisks[i].Category);
+					DictionaryUtil.Add(QueryParameters,"LaunchConfiguration.DataDisk." + (i + 1) + ".PerformanceLevel", launchConfigurationDataDisks[i].PerformanceLevel);
 				}
 			}
 		}
@@ -190,6 +195,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				autoProvisioningGroupType = value;
 				DictionaryUtil.Add(QueryParameters, "AutoProvisioningGroupType", value);
+			}
+		}
+
+		public string LaunchConfigurationSystemDiskPerformanceLevel
+		{
+			get
+			{
+				return launchConfigurationSystemDiskPerformanceLevel;
+			}
+			set	
+			{
+				launchConfigurationSystemDiskPerformanceLevel = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchConfiguration.SystemDiskPerformanceLevel", value);
 			}
 		}
 
@@ -458,6 +476,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				launchConfigurationUserData = value;
 				DictionaryUtil.Add(QueryParameters, "LaunchConfiguration.UserData", value);
+			}
+		}
+
+		public string LaunchConfigurationCreditSpecification
+		{
+			get
+			{
+				return launchConfigurationCreditSpecification;
+			}
+			set	
+			{
+				launchConfigurationCreditSpecification = value;
+				DictionaryUtil.Add(QueryParameters, "LaunchConfiguration.CreditSpecification", value);
 			}
 		}
 
@@ -793,6 +824,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string category;
 
+			private string performanceLevel;
+
 			public int? Size
 			{
 				get
@@ -814,6 +847,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					category = value;
+				}
+			}
+
+			public string PerformanceLevel
+			{
+				get
+				{
+					return performanceLevel;
+				}
+				set	
+				{
+					performanceLevel = value;
 				}
 			}
 		}

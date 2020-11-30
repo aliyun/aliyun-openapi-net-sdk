@@ -48,6 +48,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				snapshotLink.SourceDiskSize = _ctx.IntegerValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SourceDiskSize");
 				snapshotLink.SourceDiskType = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].SourceDiskType");
 				snapshotLink.Category = _ctx.StringValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].Category");
+				snapshotLink.InstantAccess = _ctx.BooleanValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].InstantAccess");
 				snapshotLink.TotalSize = _ctx.LongValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].TotalSize");
 				snapshotLink.TotalCount = _ctx.IntegerValue("DescribeSnapshotLinks.SnapshotLinks["+ i +"].TotalCount");
 

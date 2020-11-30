@@ -120,6 +120,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 			private string platform;
 
+			private string timeSlot;
+
 			private List<DescribeCapacityReservations_AllocatedResource> allocatedResources;
 
 			public string PrivatePoolOptionsId
@@ -251,6 +253,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					platform = value;
+				}
+			}
+
+			public string TimeSlot
+			{
+				get
+				{
+					return timeSlot;
+				}
+				set	
+				{
+					timeSlot = value;
 				}
 			}
 

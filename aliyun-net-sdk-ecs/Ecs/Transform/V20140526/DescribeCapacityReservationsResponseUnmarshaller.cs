@@ -50,6 +50,7 @@ namespace Aliyun.Acs.Ecs.Transform.V20140526
 				capacityReservationItem.EndTimeType = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].EndTimeType");
 				capacityReservationItem.InstanceChargeType = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].InstanceChargeType");
 				capacityReservationItem.Platform = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].Platform");
+				capacityReservationItem.TimeSlot = _ctx.StringValue("DescribeCapacityReservations.CapacityReservationSet["+ i +"].TimeSlot");
 
 				List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_AllocatedResource> capacityReservationItem_allocatedResources = new List<DescribeCapacityReservationsResponse.DescribeCapacityReservations_CapacityReservationItem.DescribeCapacityReservations_AllocatedResource>();
 				for (int j = 0; j < _ctx.Length("DescribeCapacityReservations.CapacityReservationSet["+ i +"].AllocatedResources.Length"); j++) {

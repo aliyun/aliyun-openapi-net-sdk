@@ -53,6 +53,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string instanceId;
 
+		private string networkInterfaceId;
+
 		public long? ResourceOwnerId
 		{
 			get
@@ -128,6 +130,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				instanceId = value;
 				DictionaryUtil.Add(QueryParameters, "InstanceId", value);
+			}
+		}
+
+		public string NetworkInterfaceId
+		{
+			get
+			{
+				return networkInterfaceId;
+			}
+			set	
+			{
+				networkInterfaceId = value;
+				DictionaryUtil.Add(QueryParameters, "NetworkInterfaceId", value);
 			}
 		}
 

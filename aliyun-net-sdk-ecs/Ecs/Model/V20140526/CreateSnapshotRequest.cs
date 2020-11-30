@@ -44,11 +44,15 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private string clientToken;
 
+		private bool? instantAccess;
+
 		private string description;
 
 		private string snapshotName;
 
 		private string resourceGroupId;
+
+		private int? instantAccessRetentionDays;
 
 		private string diskId;
 
@@ -90,6 +94,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			}
 		}
 
+		public bool? InstantAccess
+		{
+			get
+			{
+				return instantAccess;
+			}
+			set	
+			{
+				instantAccess = value;
+				DictionaryUtil.Add(QueryParameters, "InstantAccess", value.ToString());
+			}
+		}
+
 		public string Description
 		{
 			get
@@ -126,6 +143,19 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			{
 				resourceGroupId = value;
 				DictionaryUtil.Add(QueryParameters, "ResourceGroupId", value);
+			}
+		}
+
+		public int? InstantAccessRetentionDays
+		{
+			get
+			{
+				return instantAccessRetentionDays;
+			}
+			set	
+			{
+				instantAccessRetentionDays = value;
+				DictionaryUtil.Add(QueryParameters, "InstantAccessRetentionDays", value.ToString());
 			}
 		}
 

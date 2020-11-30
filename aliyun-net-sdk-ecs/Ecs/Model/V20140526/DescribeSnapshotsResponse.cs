@@ -33,6 +33,8 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 
 		private int? pageSize;
 
+		private string nextToken;
+
 		private List<DescribeSnapshots_Snapshot> snapshots;
 
 		public string RequestId
@@ -80,6 +82,18 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			set	
 			{
 				pageSize = value;
+			}
+		}
+
+		public string NextToken
+		{
+			get
+			{
+				return nextToken;
+			}
+			set	
+			{
+				nextToken = value;
 			}
 		}
 
@@ -139,6 +153,10 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 			private string category;
 
 			private string snapshotType;
+
+			private bool? instantAccess;
+
+			private int? instantAccessRetentionDays;
 
 			private List<DescribeSnapshots_Tag> tags;
 
@@ -391,6 +409,30 @@ namespace Aliyun.Acs.Ecs.Model.V20140526
 				set	
 				{
 					snapshotType = value;
+				}
+			}
+
+			public bool? InstantAccess
+			{
+				get
+				{
+					return instantAccess;
+				}
+				set	
+				{
+					instantAccess = value;
+				}
+			}
+
+			public int? InstantAccessRetentionDays
+			{
+				get
+				{
+					return instantAccessRetentionDays;
+				}
+				set	
+				{
+					instantAccessRetentionDays = value;
 				}
 			}
 
