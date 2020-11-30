@@ -28,10 +28,10 @@ using Aliyun.Acs.multimediaai.Transform.V20190810;
 
 namespace Aliyun.Acs.multimediaai.Model.V20190810
 {
-    public class DeleteFaceGroupRequest : RpcAcsRequest<DeleteFaceGroupResponse>
+    public class ProcessImageTagAlgorithmRequest : RpcAcsRequest<ProcessImageTagAlgorithmResponse>
     {
-        public DeleteFaceGroupRequest()
-            : base("multimediaai", "2019-08-10", "DeleteFaceGroup")
+        public ProcessImageTagAlgorithmRequest()
+            : base("multimediaai", "2019-08-10", "ProcessImageTagAlgorithm")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,18 +41,18 @@ namespace Aliyun.Acs.multimediaai.Model.V20190810
 			Method = MethodType.POST;
         }
 
-		private long? faceGroupId;
+		private string data;
 
-		public long? FaceGroupId
+		public string Data
 		{
 			get
 			{
-				return faceGroupId;
+				return data;
 			}
 			set	
 			{
-				faceGroupId = value;
-				DictionaryUtil.Add(QueryParameters, "FaceGroupId", value.ToString());
+				data = value;
+				DictionaryUtil.Add(BodyParameters, "Data", value);
 			}
 		}
 
@@ -61,9 +61,9 @@ namespace Aliyun.Acs.multimediaai.Model.V20190810
 			return false;
 		}
 
-        public override DeleteFaceGroupResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override ProcessImageTagAlgorithmResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DeleteFaceGroupResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return ProcessImageTagAlgorithmResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

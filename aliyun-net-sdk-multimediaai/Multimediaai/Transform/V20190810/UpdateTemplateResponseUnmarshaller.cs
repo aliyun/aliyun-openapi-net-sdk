@@ -26,12 +26,12 @@ namespace Aliyun.Acs.multimediaai.Transform.V20190810
 {
     public class UpdateTemplateResponseUnmarshaller
     {
-        public static UpdateTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static UpdateTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			UpdateTemplateResponse updateTemplateResponse = new UpdateTemplateResponse();
 
-			updateTemplateResponse.HttpResponse = context.HttpResponse;
-			updateTemplateResponse.RequestId = context.StringValue("UpdateTemplate.RequestId");
+			updateTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			updateTemplateResponse.RequestId = _ctx.StringValue("UpdateTemplate.RequestId");
         
 			return updateTemplateResponse;
         }

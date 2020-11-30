@@ -16,24 +16,69 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-using System;
 using System.Collections.Generic;
 
-using Aliyun.Acs.Core.Transform;
-using Aliyun.Acs.multimediaai.Model.V20190810;
+using Aliyun.Acs.Core;
 
-namespace Aliyun.Acs.multimediaai.Transform.V20190810
+namespace Aliyun.Acs.multimediaai.Model.V20190810
 {
-    public class DeleteFaceGroupResponseUnmarshaller
-    {
-        public static DeleteFaceGroupResponse Unmarshall(UnmarshallerContext _ctx)
-        {
-			DeleteFaceGroupResponse deleteFaceGroupResponse = new DeleteFaceGroupResponse();
+	public class ProcessNlpAlgorithmResponse : AcsResponse
+	{
 
-			deleteFaceGroupResponse.HttpResponse = _ctx.HttpResponse;
-			deleteFaceGroupResponse.RequestId = _ctx.StringValue("DeleteFaceGroup.RequestId");
-        
-			return deleteFaceGroupResponse;
-        }
-    }
+		private string requestId;
+
+		private int? code;
+
+		private string message;
+
+		private string data;
+
+		public string RequestId
+		{
+			get
+			{
+				return requestId;
+			}
+			set	
+			{
+				requestId = value;
+			}
+		}
+
+		public int? Code
+		{
+			get
+			{
+				return code;
+			}
+			set	
+			{
+				code = value;
+			}
+		}
+
+		public string Message
+		{
+			get
+			{
+				return message;
+			}
+			set	
+			{
+				message = value;
+			}
+		}
+
+		public string Data
+		{
+			get
+			{
+				return data;
+			}
+			set	
+			{
+				data = value;
+			}
+		}
+	}
 }

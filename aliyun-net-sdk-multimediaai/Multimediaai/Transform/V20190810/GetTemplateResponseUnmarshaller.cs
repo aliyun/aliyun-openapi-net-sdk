@@ -26,19 +26,19 @@ namespace Aliyun.Acs.multimediaai.Transform.V20190810
 {
     public class GetTemplateResponseUnmarshaller
     {
-        public static GetTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static GetTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			GetTemplateResponse getTemplateResponse = new GetTemplateResponse();
 
-			getTemplateResponse.HttpResponse = context.HttpResponse;
-			getTemplateResponse.RequestId = context.StringValue("GetTemplate.RequestId");
-			getTemplateResponse.TemplateId = context.StringValue("GetTemplate.TemplateId");
-			getTemplateResponse.TemplateName = context.StringValue("GetTemplate.TemplateName");
-			getTemplateResponse.Content = context.StringValue("GetTemplate.Content");
-			getTemplateResponse.Category = context.IntegerValue("GetTemplate.Category");
-			getTemplateResponse.IsDefault = context.BooleanValue("GetTemplate.IsDefault");
-			getTemplateResponse.CreateTime = context.StringValue("GetTemplate.CreateTime");
-			getTemplateResponse.UpdateTime = context.StringValue("GetTemplate.UpdateTime");
+			getTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			getTemplateResponse.RequestId = _ctx.StringValue("GetTemplate.RequestId");
+			getTemplateResponse.TemplateId = _ctx.StringValue("GetTemplate.TemplateId");
+			getTemplateResponse.TemplateName = _ctx.StringValue("GetTemplate.TemplateName");
+			getTemplateResponse.Content = _ctx.StringValue("GetTemplate.Content");
+			getTemplateResponse.Category = _ctx.IntegerValue("GetTemplate.Category");
+			getTemplateResponse.IsDefault = _ctx.BooleanValue("GetTemplate.IsDefault");
+			getTemplateResponse.CreateTime = _ctx.StringValue("GetTemplate.CreateTime");
+			getTemplateResponse.UpdateTime = _ctx.StringValue("GetTemplate.UpdateTime");
         
 			return getTemplateResponse;
         }

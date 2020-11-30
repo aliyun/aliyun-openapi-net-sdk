@@ -26,13 +26,13 @@ namespace Aliyun.Acs.multimediaai.Transform.V20190810
 {
     public class CreateFacePersonResponseUnmarshaller
     {
-        public static CreateFacePersonResponse Unmarshall(UnmarshallerContext context)
+        public static CreateFacePersonResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateFacePersonResponse createFacePersonResponse = new CreateFacePersonResponse();
 
-			createFacePersonResponse.HttpResponse = context.HttpResponse;
-			createFacePersonResponse.RequestId = context.StringValue("CreateFacePerson.RequestId");
-			createFacePersonResponse.FacePersonId = context.LongValue("CreateFacePerson.FacePersonId");
+			createFacePersonResponse.HttpResponse = _ctx.HttpResponse;
+			createFacePersonResponse.RequestId = _ctx.StringValue("CreateFacePerson.RequestId");
+			createFacePersonResponse.FacePersonId = _ctx.LongValue("CreateFacePerson.FacePersonId");
         
 			return createFacePersonResponse;
         }

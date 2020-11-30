@@ -26,13 +26,13 @@ namespace Aliyun.Acs.multimediaai.Transform.V20190810
 {
     public class CreateTemplateResponseUnmarshaller
     {
-        public static CreateTemplateResponse Unmarshall(UnmarshallerContext context)
+        public static CreateTemplateResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			CreateTemplateResponse createTemplateResponse = new CreateTemplateResponse();
 
-			createTemplateResponse.HttpResponse = context.HttpResponse;
-			createTemplateResponse.RequestId = context.StringValue("CreateTemplate.RequestId");
-			createTemplateResponse.TemplateId = context.StringValue("CreateTemplate.TemplateId");
+			createTemplateResponse.HttpResponse = _ctx.HttpResponse;
+			createTemplateResponse.RequestId = _ctx.StringValue("CreateTemplate.RequestId");
+			createTemplateResponse.TemplateId = _ctx.StringValue("CreateTemplate.TemplateId");
         
 			return createTemplateResponse;
         }

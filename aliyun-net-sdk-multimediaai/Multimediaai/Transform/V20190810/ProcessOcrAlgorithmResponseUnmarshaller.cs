@@ -24,16 +24,19 @@ using Aliyun.Acs.multimediaai.Model.V20190810;
 
 namespace Aliyun.Acs.multimediaai.Transform.V20190810
 {
-    public class DeleteFaceGroupResponseUnmarshaller
+    public class ProcessOcrAlgorithmResponseUnmarshaller
     {
-        public static DeleteFaceGroupResponse Unmarshall(UnmarshallerContext _ctx)
+        public static ProcessOcrAlgorithmResponse Unmarshall(UnmarshallerContext _ctx)
         {
-			DeleteFaceGroupResponse deleteFaceGroupResponse = new DeleteFaceGroupResponse();
+			ProcessOcrAlgorithmResponse processOcrAlgorithmResponse = new ProcessOcrAlgorithmResponse();
 
-			deleteFaceGroupResponse.HttpResponse = _ctx.HttpResponse;
-			deleteFaceGroupResponse.RequestId = _ctx.StringValue("DeleteFaceGroup.RequestId");
+			processOcrAlgorithmResponse.HttpResponse = _ctx.HttpResponse;
+			processOcrAlgorithmResponse.RequestId = _ctx.StringValue("ProcessOcrAlgorithm.RequestId");
+			processOcrAlgorithmResponse.Code = _ctx.IntegerValue("ProcessOcrAlgorithm.Code");
+			processOcrAlgorithmResponse.Message = _ctx.StringValue("ProcessOcrAlgorithm.Message");
+			processOcrAlgorithmResponse.Data = _ctx.StringValue("ProcessOcrAlgorithm.Data");
         
-			return deleteFaceGroupResponse;
+			return processOcrAlgorithmResponse;
         }
     }
 }
