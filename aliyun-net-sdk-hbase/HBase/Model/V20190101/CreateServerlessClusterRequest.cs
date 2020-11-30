@@ -40,6 +40,8 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 			Method = MethodType.POST;
         }
 
+		private string clientType;
+
 		private string clusterName;
 
 		private string clientToken;
@@ -67,6 +69,19 @@ namespace Aliyun.Acs.HBase.Model.V20190101
 		private string payType;
 
 		private string serverlessSpec;
+
+		public string ClientType
+		{
+			get
+			{
+				return clientType;
+			}
+			set	
+			{
+				clientType = value;
+				DictionaryUtil.Add(QueryParameters, "ClientType", value);
+			}
+		}
 
 		public string ClusterName
 		{
