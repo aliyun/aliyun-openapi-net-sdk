@@ -26,22 +26,22 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnDomainWebsocketBpsDataResponseUnmarshaller
     {
-        public static DescribeDcdnDomainWebsocketBpsDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnDomainWebsocketBpsDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnDomainWebsocketBpsDataResponse describeDcdnDomainWebsocketBpsDataResponse = new DescribeDcdnDomainWebsocketBpsDataResponse();
 
-			describeDcdnDomainWebsocketBpsDataResponse.HttpResponse = context.HttpResponse;
-			describeDcdnDomainWebsocketBpsDataResponse.RequestId = context.StringValue("DescribeDcdnDomainWebsocketBpsData.RequestId");
-			describeDcdnDomainWebsocketBpsDataResponse.DomainName = context.StringValue("DescribeDcdnDomainWebsocketBpsData.DomainName");
-			describeDcdnDomainWebsocketBpsDataResponse.StartTime = context.StringValue("DescribeDcdnDomainWebsocketBpsData.StartTime");
-			describeDcdnDomainWebsocketBpsDataResponse.EndTime = context.StringValue("DescribeDcdnDomainWebsocketBpsData.EndTime");
-			describeDcdnDomainWebsocketBpsDataResponse.DataInterval = context.StringValue("DescribeDcdnDomainWebsocketBpsData.DataInterval");
+			describeDcdnDomainWebsocketBpsDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnDomainWebsocketBpsDataResponse.RequestId = _ctx.StringValue("DescribeDcdnDomainWebsocketBpsData.RequestId");
+			describeDcdnDomainWebsocketBpsDataResponse.DomainName = _ctx.StringValue("DescribeDcdnDomainWebsocketBpsData.DomainName");
+			describeDcdnDomainWebsocketBpsDataResponse.StartTime = _ctx.StringValue("DescribeDcdnDomainWebsocketBpsData.StartTime");
+			describeDcdnDomainWebsocketBpsDataResponse.EndTime = _ctx.StringValue("DescribeDcdnDomainWebsocketBpsData.EndTime");
+			describeDcdnDomainWebsocketBpsDataResponse.DataInterval = _ctx.StringValue("DescribeDcdnDomainWebsocketBpsData.DataInterval");
 
 			List<DescribeDcdnDomainWebsocketBpsDataResponse.DescribeDcdnDomainWebsocketBpsData_DataModule> describeDcdnDomainWebsocketBpsDataResponse_bpsDataPerInterval = new List<DescribeDcdnDomainWebsocketBpsDataResponse.DescribeDcdnDomainWebsocketBpsData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainWebsocketBpsData.BpsDataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainWebsocketBpsData.BpsDataPerInterval.Length"); i++) {
 				DescribeDcdnDomainWebsocketBpsDataResponse.DescribeDcdnDomainWebsocketBpsData_DataModule dataModule = new DescribeDcdnDomainWebsocketBpsDataResponse.DescribeDcdnDomainWebsocketBpsData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDcdnDomainWebsocketBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
-				dataModule.WebsocketBps = context.FloatValue("DescribeDcdnDomainWebsocketBpsData.BpsDataPerInterval["+ i +"].WebsocketBps");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDcdnDomainWebsocketBpsData.BpsDataPerInterval["+ i +"].TimeStamp");
+				dataModule.WebsocketBps = _ctx.FloatValue("DescribeDcdnDomainWebsocketBpsData.BpsDataPerInterval["+ i +"].WebsocketBps");
 
 				describeDcdnDomainWebsocketBpsDataResponse_bpsDataPerInterval.Add(dataModule);
 			}

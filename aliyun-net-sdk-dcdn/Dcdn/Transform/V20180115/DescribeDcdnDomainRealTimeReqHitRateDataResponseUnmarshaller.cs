@@ -26,18 +26,18 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnDomainRealTimeReqHitRateDataResponseUnmarshaller
     {
-        public static DescribeDcdnDomainRealTimeReqHitRateDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnDomainRealTimeReqHitRateDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnDomainRealTimeReqHitRateDataResponse describeDcdnDomainRealTimeReqHitRateDataResponse = new DescribeDcdnDomainRealTimeReqHitRateDataResponse();
 
-			describeDcdnDomainRealTimeReqHitRateDataResponse.HttpResponse = context.HttpResponse;
-			describeDcdnDomainRealTimeReqHitRateDataResponse.RequestId = context.StringValue("DescribeDcdnDomainRealTimeReqHitRateData.RequestId");
+			describeDcdnDomainRealTimeReqHitRateDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnDomainRealTimeReqHitRateDataResponse.RequestId = _ctx.StringValue("DescribeDcdnDomainRealTimeReqHitRateData.RequestId");
 
 			List<DescribeDcdnDomainRealTimeReqHitRateDataResponse.DescribeDcdnDomainRealTimeReqHitRateData_ReqHitRateDataModel> describeDcdnDomainRealTimeReqHitRateDataResponse_data = new List<DescribeDcdnDomainRealTimeReqHitRateDataResponse.DescribeDcdnDomainRealTimeReqHitRateData_ReqHitRateDataModel>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainRealTimeReqHitRateData.Data.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainRealTimeReqHitRateData.Data.Length"); i++) {
 				DescribeDcdnDomainRealTimeReqHitRateDataResponse.DescribeDcdnDomainRealTimeReqHitRateData_ReqHitRateDataModel reqHitRateDataModel = new DescribeDcdnDomainRealTimeReqHitRateDataResponse.DescribeDcdnDomainRealTimeReqHitRateData_ReqHitRateDataModel();
-				reqHitRateDataModel.ReqHitRate = context.FloatValue("DescribeDcdnDomainRealTimeReqHitRateData.Data["+ i +"].ReqHitRate");
-				reqHitRateDataModel.TimeStamp = context.StringValue("DescribeDcdnDomainRealTimeReqHitRateData.Data["+ i +"].TimeStamp");
+				reqHitRateDataModel.ReqHitRate = _ctx.FloatValue("DescribeDcdnDomainRealTimeReqHitRateData.Data["+ i +"].ReqHitRate");
+				reqHitRateDataModel.TimeStamp = _ctx.StringValue("DescribeDcdnDomainRealTimeReqHitRateData.Data["+ i +"].TimeStamp");
 
 				describeDcdnDomainRealTimeReqHitRateDataResponse_data.Add(reqHitRateDataModel);
 			}

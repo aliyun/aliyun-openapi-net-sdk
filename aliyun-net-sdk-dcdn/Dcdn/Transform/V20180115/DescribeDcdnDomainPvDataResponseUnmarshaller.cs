@@ -26,22 +26,22 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnDomainPvDataResponseUnmarshaller
     {
-        public static DescribeDcdnDomainPvDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnDomainPvDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnDomainPvDataResponse describeDcdnDomainPvDataResponse = new DescribeDcdnDomainPvDataResponse();
 
-			describeDcdnDomainPvDataResponse.HttpResponse = context.HttpResponse;
-			describeDcdnDomainPvDataResponse.RequestId = context.StringValue("DescribeDcdnDomainPvData.RequestId");
-			describeDcdnDomainPvDataResponse.DomainName = context.StringValue("DescribeDcdnDomainPvData.DomainName");
-			describeDcdnDomainPvDataResponse.DataInterval = context.StringValue("DescribeDcdnDomainPvData.DataInterval");
-			describeDcdnDomainPvDataResponse.StartTime = context.StringValue("DescribeDcdnDomainPvData.StartTime");
-			describeDcdnDomainPvDataResponse.EndTime = context.StringValue("DescribeDcdnDomainPvData.EndTime");
+			describeDcdnDomainPvDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnDomainPvDataResponse.RequestId = _ctx.StringValue("DescribeDcdnDomainPvData.RequestId");
+			describeDcdnDomainPvDataResponse.DomainName = _ctx.StringValue("DescribeDcdnDomainPvData.DomainName");
+			describeDcdnDomainPvDataResponse.StartTime = _ctx.StringValue("DescribeDcdnDomainPvData.StartTime");
+			describeDcdnDomainPvDataResponse.EndTime = _ctx.StringValue("DescribeDcdnDomainPvData.EndTime");
+			describeDcdnDomainPvDataResponse.DataInterval = _ctx.StringValue("DescribeDcdnDomainPvData.DataInterval");
 
 			List<DescribeDcdnDomainPvDataResponse.DescribeDcdnDomainPvData_UsageData> describeDcdnDomainPvDataResponse_pvDataInterval = new List<DescribeDcdnDomainPvDataResponse.DescribeDcdnDomainPvData_UsageData>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainPvData.PvDataInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainPvData.PvDataInterval.Length"); i++) {
 				DescribeDcdnDomainPvDataResponse.DescribeDcdnDomainPvData_UsageData usageData = new DescribeDcdnDomainPvDataResponse.DescribeDcdnDomainPvData_UsageData();
-				usageData.TimeStamp = context.StringValue("DescribeDcdnDomainPvData.PvDataInterval["+ i +"].TimeStamp");
-				usageData._Value = context.StringValue("DescribeDcdnDomainPvData.PvDataInterval["+ i +"].Value");
+				usageData._Value = _ctx.StringValue("DescribeDcdnDomainPvData.PvDataInterval["+ i +"].Value");
+				usageData.TimeStamp = _ctx.StringValue("DescribeDcdnDomainPvData.PvDataInterval["+ i +"].TimeStamp");
 
 				describeDcdnDomainPvDataResponse_pvDataInterval.Add(usageData);
 			}

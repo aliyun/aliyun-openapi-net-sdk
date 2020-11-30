@@ -26,21 +26,21 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnUserQuotaResponseUnmarshaller
     {
-        public static DescribeDcdnUserQuotaResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnUserQuotaResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnUserQuotaResponse describeDcdnUserQuotaResponse = new DescribeDcdnUserQuotaResponse();
 
-			describeDcdnUserQuotaResponse.HttpResponse = context.HttpResponse;
-			describeDcdnUserQuotaResponse.RequestId = context.StringValue("DescribeDcdnUserQuota.RequestId");
-			describeDcdnUserQuotaResponse.DomainQuota = context.IntegerValue("DescribeDcdnUserQuota.DomainQuota");
-			describeDcdnUserQuotaResponse.RefreshUrlQuota = context.IntegerValue("DescribeDcdnUserQuota.RefreshUrlQuota");
-			describeDcdnUserQuotaResponse.RefreshDirQuota = context.IntegerValue("DescribeDcdnUserQuota.RefreshDirQuota");
-			describeDcdnUserQuotaResponse.RefreshUrlRemain = context.IntegerValue("DescribeDcdnUserQuota.RefreshUrlRemain");
-			describeDcdnUserQuotaResponse.RefreshDirRemain = context.IntegerValue("DescribeDcdnUserQuota.RefreshDirRemain");
-			describeDcdnUserQuotaResponse.PreloadQuota = context.IntegerValue("DescribeDcdnUserQuota.PreloadQuota");
-			describeDcdnUserQuotaResponse.PreloadRemain = context.IntegerValue("DescribeDcdnUserQuota.PreloadRemain");
-			describeDcdnUserQuotaResponse.BlockQuota = context.IntegerValue("DescribeDcdnUserQuota.BlockQuota");
-			describeDcdnUserQuotaResponse.BlockRemain = context.IntegerValue("DescribeDcdnUserQuota.BlockRemain");
+			describeDcdnUserQuotaResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnUserQuotaResponse.RequestId = _ctx.StringValue("DescribeDcdnUserQuota.RequestId");
+			describeDcdnUserQuotaResponse.DomainQuota = _ctx.IntegerValue("DescribeDcdnUserQuota.DomainQuota");
+			describeDcdnUserQuotaResponse.RefreshUrlQuota = _ctx.IntegerValue("DescribeDcdnUserQuota.RefreshUrlQuota");
+			describeDcdnUserQuotaResponse.RefreshDirQuota = _ctx.IntegerValue("DescribeDcdnUserQuota.RefreshDirQuota");
+			describeDcdnUserQuotaResponse.RefreshUrlRemain = _ctx.IntegerValue("DescribeDcdnUserQuota.RefreshUrlRemain");
+			describeDcdnUserQuotaResponse.RefreshDirRemain = _ctx.IntegerValue("DescribeDcdnUserQuota.RefreshDirRemain");
+			describeDcdnUserQuotaResponse.PreloadQuota = _ctx.IntegerValue("DescribeDcdnUserQuota.PreloadQuota");
+			describeDcdnUserQuotaResponse.PreloadRemain = _ctx.IntegerValue("DescribeDcdnUserQuota.PreloadRemain");
+			describeDcdnUserQuotaResponse.BlockQuota = _ctx.IntegerValue("DescribeDcdnUserQuota.BlockQuota");
+			describeDcdnUserQuotaResponse.BlockRemain = _ctx.IntegerValue("DescribeDcdnUserQuota.BlockRemain");
         
 			return describeDcdnUserQuotaResponse;
         }

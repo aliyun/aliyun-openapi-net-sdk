@@ -26,12 +26,12 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DeleteDcdnIpaDomainResponseUnmarshaller
     {
-        public static DeleteDcdnIpaDomainResponse Unmarshall(UnmarshallerContext context)
+        public static DeleteDcdnIpaDomainResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DeleteDcdnIpaDomainResponse deleteDcdnIpaDomainResponse = new DeleteDcdnIpaDomainResponse();
 
-			deleteDcdnIpaDomainResponse.HttpResponse = context.HttpResponse;
-			deleteDcdnIpaDomainResponse.RequestId = context.StringValue("DeleteDcdnIpaDomain.RequestId");
+			deleteDcdnIpaDomainResponse.HttpResponse = _ctx.HttpResponse;
+			deleteDcdnIpaDomainResponse.RequestId = _ctx.StringValue("DeleteDcdnIpaDomain.RequestId");
         
 			return deleteDcdnIpaDomainResponse;
         }

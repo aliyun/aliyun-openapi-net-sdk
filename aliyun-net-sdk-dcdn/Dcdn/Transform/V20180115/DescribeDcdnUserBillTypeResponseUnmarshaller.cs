@@ -26,22 +26,22 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnUserBillTypeResponseUnmarshaller
     {
-        public static DescribeDcdnUserBillTypeResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnUserBillTypeResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnUserBillTypeResponse describeDcdnUserBillTypeResponse = new DescribeDcdnUserBillTypeResponse();
 
-			describeDcdnUserBillTypeResponse.HttpResponse = context.HttpResponse;
-			describeDcdnUserBillTypeResponse.RequestId = context.StringValue("DescribeDcdnUserBillType.RequestId");
+			describeDcdnUserBillTypeResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnUserBillTypeResponse.RequestId = _ctx.StringValue("DescribeDcdnUserBillType.RequestId");
 
 			List<DescribeDcdnUserBillTypeResponse.DescribeDcdnUserBillType_BillTypeDataItem> describeDcdnUserBillTypeResponse_billTypeData = new List<DescribeDcdnUserBillTypeResponse.DescribeDcdnUserBillType_BillTypeDataItem>();
-			for (int i = 0; i < context.Length("DescribeDcdnUserBillType.BillTypeData.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnUserBillType.BillTypeData.Length"); i++) {
 				DescribeDcdnUserBillTypeResponse.DescribeDcdnUserBillType_BillTypeDataItem billTypeDataItem = new DescribeDcdnUserBillTypeResponse.DescribeDcdnUserBillType_BillTypeDataItem();
-				billTypeDataItem.StartTime = context.StringValue("DescribeDcdnUserBillType.BillTypeData["+ i +"].StartTime");
-				billTypeDataItem.EndTime = context.StringValue("DescribeDcdnUserBillType.BillTypeData["+ i +"].EndTime");
-				billTypeDataItem.Product = context.StringValue("DescribeDcdnUserBillType.BillTypeData["+ i +"].Product");
-				billTypeDataItem.Dimension = context.StringValue("DescribeDcdnUserBillType.BillTypeData["+ i +"].Dimension");
-				billTypeDataItem.BillType = context.StringValue("DescribeDcdnUserBillType.BillTypeData["+ i +"].BillType");
-				billTypeDataItem.BillingCycle = context.StringValue("DescribeDcdnUserBillType.BillTypeData["+ i +"].BillingCycle");
+				billTypeDataItem.StartTime = _ctx.StringValue("DescribeDcdnUserBillType.BillTypeData["+ i +"].StartTime");
+				billTypeDataItem.EndTime = _ctx.StringValue("DescribeDcdnUserBillType.BillTypeData["+ i +"].EndTime");
+				billTypeDataItem.Product = _ctx.StringValue("DescribeDcdnUserBillType.BillTypeData["+ i +"].Product");
+				billTypeDataItem.Dimension = _ctx.StringValue("DescribeDcdnUserBillType.BillTypeData["+ i +"].Dimension");
+				billTypeDataItem.BillType = _ctx.StringValue("DescribeDcdnUserBillType.BillTypeData["+ i +"].BillType");
+				billTypeDataItem.BillingCycle = _ctx.StringValue("DescribeDcdnUserBillType.BillTypeData["+ i +"].BillingCycle");
 
 				describeDcdnUserBillTypeResponse_billTypeData.Add(billTypeDataItem);
 			}

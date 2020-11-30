@@ -26,25 +26,25 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnServiceResponseUnmarshaller
     {
-        public static DescribeDcdnServiceResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnServiceResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnServiceResponse describeDcdnServiceResponse = new DescribeDcdnServiceResponse();
 
-			describeDcdnServiceResponse.HttpResponse = context.HttpResponse;
-			describeDcdnServiceResponse.RequestId = context.StringValue("DescribeDcdnService.RequestId");
-			describeDcdnServiceResponse.InstanceId = context.StringValue("DescribeDcdnService.InstanceId");
-			describeDcdnServiceResponse.InternetChargeType = context.StringValue("DescribeDcdnService.InternetChargeType");
-			describeDcdnServiceResponse.OpeningTime = context.StringValue("DescribeDcdnService.OpeningTime");
-			describeDcdnServiceResponse.ChangingChargeType = context.StringValue("DescribeDcdnService.ChangingChargeType");
-			describeDcdnServiceResponse.ChangingAffectTime = context.StringValue("DescribeDcdnService.ChangingAffectTime");
-			describeDcdnServiceResponse.WebsocketChangingType = context.StringValue("DescribeDcdnService.WebsocketChangingType");
-			describeDcdnServiceResponse.WebsocketType = context.StringValue("DescribeDcdnService.WebsocketType");
-			describeDcdnServiceResponse.WebsocketChangingTime = context.StringValue("DescribeDcdnService.WebsocketChangingTime");
+			describeDcdnServiceResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnServiceResponse.RequestId = _ctx.StringValue("DescribeDcdnService.RequestId");
+			describeDcdnServiceResponse.InstanceId = _ctx.StringValue("DescribeDcdnService.InstanceId");
+			describeDcdnServiceResponse.InternetChargeType = _ctx.StringValue("DescribeDcdnService.InternetChargeType");
+			describeDcdnServiceResponse.OpeningTime = _ctx.StringValue("DescribeDcdnService.OpeningTime");
+			describeDcdnServiceResponse.ChangingChargeType = _ctx.StringValue("DescribeDcdnService.ChangingChargeType");
+			describeDcdnServiceResponse.ChangingAffectTime = _ctx.StringValue("DescribeDcdnService.ChangingAffectTime");
+			describeDcdnServiceResponse.WebsocketChangingType = _ctx.StringValue("DescribeDcdnService.WebsocketChangingType");
+			describeDcdnServiceResponse.WebsocketType = _ctx.StringValue("DescribeDcdnService.WebsocketType");
+			describeDcdnServiceResponse.WebsocketChangingTime = _ctx.StringValue("DescribeDcdnService.WebsocketChangingTime");
 
 			List<DescribeDcdnServiceResponse.DescribeDcdnService_LockReason> describeDcdnServiceResponse_operationLocks = new List<DescribeDcdnServiceResponse.DescribeDcdnService_LockReason>();
-			for (int i = 0; i < context.Length("DescribeDcdnService.OperationLocks.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnService.OperationLocks.Length"); i++) {
 				DescribeDcdnServiceResponse.DescribeDcdnService_LockReason lockReason = new DescribeDcdnServiceResponse.DescribeDcdnService_LockReason();
-				lockReason.LockReason = context.StringValue("DescribeDcdnService.OperationLocks["+ i +"].LockReason");
+				lockReason.LockReason = _ctx.StringValue("DescribeDcdnService.OperationLocks["+ i +"].LockReason");
 
 				describeDcdnServiceResponse_operationLocks.Add(lockReason);
 			}

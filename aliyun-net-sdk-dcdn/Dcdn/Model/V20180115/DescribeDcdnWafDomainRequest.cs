@@ -28,10 +28,10 @@ using Aliyun.Acs.dcdn.Transform.V20180115;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-    public class DescribeDcdnDomainWebsocketBpsDataRequest : RpcAcsRequest<DescribeDcdnDomainWebsocketBpsDataResponse>
+    public class DescribeDcdnWafDomainRequest : RpcAcsRequest<DescribeDcdnWafDomainResponse>
     {
-        public DescribeDcdnDomainWebsocketBpsDataRequest()
-            : base("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketBpsData")
+        public DescribeDcdnWafDomainRequest()
+            : base("dcdn", "2018-01-15", "DescribeDcdnWafDomain")
         {
             if (this.GetType().GetProperty("ProductEndpointMap") != null && this.GetType().GetProperty("ProductEndpointType") != null)
             {
@@ -41,58 +41,9 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			Method = MethodType.POST;
         }
 
-		private string locationNameEn;
-
-		private string startTime;
-
-		private string ispNameEn;
-
 		private string domainName;
 
-		private string endTime;
-
 		private long? ownerId;
-
-		private string interval;
-
-		public string LocationNameEn
-		{
-			get
-			{
-				return locationNameEn;
-			}
-			set	
-			{
-				locationNameEn = value;
-				DictionaryUtil.Add(QueryParameters, "LocationNameEn", value);
-			}
-		}
-
-		public string StartTime
-		{
-			get
-			{
-				return startTime;
-			}
-			set	
-			{
-				startTime = value;
-				DictionaryUtil.Add(QueryParameters, "StartTime", value);
-			}
-		}
-
-		public string IspNameEn
-		{
-			get
-			{
-				return ispNameEn;
-			}
-			set	
-			{
-				ispNameEn = value;
-				DictionaryUtil.Add(QueryParameters, "IspNameEn", value);
-			}
-		}
 
 		public string DomainName
 		{
@@ -104,19 +55,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			{
 				domainName = value;
 				DictionaryUtil.Add(QueryParameters, "DomainName", value);
-			}
-		}
-
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-				DictionaryUtil.Add(QueryParameters, "EndTime", value);
 			}
 		}
 
@@ -133,22 +71,14 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string Interval
+		public override bool CheckShowJsonItemName()
 		{
-			get
-			{
-				return interval;
-			}
-			set	
-			{
-				interval = value;
-				DictionaryUtil.Add(QueryParameters, "Interval", value);
-			}
+			return false;
 		}
 
-        public override DescribeDcdnDomainWebsocketBpsDataResponse GetResponse(UnmarshallerContext unmarshallerContext)
+        public override DescribeDcdnWafDomainResponse GetResponse(UnmarshallerContext unmarshallerContext)
         {
-            return DescribeDcdnDomainWebsocketBpsDataResponseUnmarshaller.Unmarshall(unmarshallerContext);
+            return DescribeDcdnWafDomainResponseUnmarshaller.Unmarshall(unmarshallerContext);
         }
     }
 }

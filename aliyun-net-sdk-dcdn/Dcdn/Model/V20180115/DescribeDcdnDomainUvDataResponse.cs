@@ -29,11 +29,11 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 
 		private string domainName;
 
-		private string dataInterval;
-
 		private string startTime;
 
 		private string endTime;
+
+		private string dataInterval;
 
 		private List<DescribeDcdnDomainUvData_UsageData> uvDataInterval;
 
@@ -61,18 +61,6 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
-
 		public string StartTime
 		{
 			get
@@ -97,6 +85,18 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
+		public string DataInterval
+		{
+			get
+			{
+				return dataInterval;
+			}
+			set	
+			{
+				dataInterval = value;
+			}
+		}
+
 		public List<DescribeDcdnDomainUvData_UsageData> UvDataInterval
 		{
 			get
@@ -112,21 +112,9 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 		public class DescribeDcdnDomainUvData_UsageData
 		{
 
-			private string timeStamp;
-
 			private string _value;
 
-			public string TimeStamp
-			{
-				get
-				{
-					return timeStamp;
-				}
-				set	
-				{
-					timeStamp = value;
-				}
-			}
+			private string timeStamp;
 
 			public string _Value
 			{
@@ -137,6 +125,18 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 				set	
 				{
 					_value = value;
+				}
+			}
+
+			public string TimeStamp
+			{
+				get
+				{
+					return timeStamp;
+				}
+				set	
+				{
+					timeStamp = value;
 				}
 			}
 		}

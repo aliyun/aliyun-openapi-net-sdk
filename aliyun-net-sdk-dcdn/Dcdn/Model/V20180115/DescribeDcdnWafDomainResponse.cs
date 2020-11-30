@@ -22,20 +22,14 @@ using Aliyun.Acs.Core;
 
 namespace Aliyun.Acs.dcdn.Model.V20180115
 {
-	public class DescribeDcdnDomainPvDataResponse : AcsResponse
+	public class DescribeDcdnWafDomainResponse : AcsResponse
 	{
 
 		private string requestId;
 
-		private string domainName;
+		private int? totalCount;
 
-		private string startTime;
-
-		private string endTime;
-
-		private string dataInterval;
-
-		private List<DescribeDcdnDomainPvData_UsageData> pvDataInterval;
+		private List<DescribeDcdnWafDomain_OutPutDomain> outPutDomains;
 
 		public string RequestId
 		{
@@ -49,94 +43,100 @@ namespace Aliyun.Acs.dcdn.Model.V20180115
 			}
 		}
 
-		public string DomainName
+		public int? TotalCount
 		{
 			get
 			{
-				return domainName;
+				return totalCount;
 			}
 			set	
 			{
-				domainName = value;
+				totalCount = value;
 			}
 		}
 
-		public string StartTime
+		public List<DescribeDcdnWafDomain_OutPutDomain> OutPutDomains
 		{
 			get
 			{
-				return startTime;
+				return outPutDomains;
 			}
 			set	
 			{
-				startTime = value;
+				outPutDomains = value;
 			}
 		}
 
-		public string EndTime
-		{
-			get
-			{
-				return endTime;
-			}
-			set	
-			{
-				endTime = value;
-			}
-		}
-
-		public string DataInterval
-		{
-			get
-			{
-				return dataInterval;
-			}
-			set	
-			{
-				dataInterval = value;
-			}
-		}
-
-		public List<DescribeDcdnDomainPvData_UsageData> PvDataInterval
-		{
-			get
-			{
-				return pvDataInterval;
-			}
-			set	
-			{
-				pvDataInterval = value;
-			}
-		}
-
-		public class DescribeDcdnDomainPvData_UsageData
+		public class DescribeDcdnWafDomain_OutPutDomain
 		{
 
-			private string _value;
+			private int? status;
 
-			private string timeStamp;
+			private string domain;
 
-			public string _Value
+			private int? wafStatus;
+
+			private int? ccStatus;
+
+			private int? aclStatus;
+
+			public int? Status
 			{
 				get
 				{
-					return _value;
+					return status;
 				}
 				set	
 				{
-					_value = value;
+					status = value;
 				}
 			}
 
-			public string TimeStamp
+			public string Domain
 			{
 				get
 				{
-					return timeStamp;
+					return domain;
 				}
 				set	
 				{
-					timeStamp = value;
+					domain = value;
+				}
+			}
+
+			public int? WafStatus
+			{
+				get
+				{
+					return wafStatus;
+				}
+				set	
+				{
+					wafStatus = value;
+				}
+			}
+
+			public int? CcStatus
+			{
+				get
+				{
+					return ccStatus;
+				}
+				set	
+				{
+					ccStatus = value;
+				}
+			}
+
+			public int? AclStatus
+			{
+				get
+				{
+					return aclStatus;
+				}
+				set	
+				{
+					aclStatus = value;
 				}
 			}
 		}

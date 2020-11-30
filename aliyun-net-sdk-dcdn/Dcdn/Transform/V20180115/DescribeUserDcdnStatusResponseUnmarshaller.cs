@@ -26,16 +26,16 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeUserDcdnStatusResponseUnmarshaller
     {
-        public static DescribeUserDcdnStatusResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeUserDcdnStatusResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeUserDcdnStatusResponse describeUserDcdnStatusResponse = new DescribeUserDcdnStatusResponse();
 
-			describeUserDcdnStatusResponse.HttpResponse = context.HttpResponse;
-			describeUserDcdnStatusResponse.RequestId = context.StringValue("DescribeUserDcdnStatus.RequestId");
-			describeUserDcdnStatusResponse.Enabled = context.BooleanValue("DescribeUserDcdnStatus.Enabled");
-			describeUserDcdnStatusResponse.OnService = context.BooleanValue("DescribeUserDcdnStatus.OnService");
-			describeUserDcdnStatusResponse.InDebt = context.BooleanValue("DescribeUserDcdnStatus.InDebt");
-			describeUserDcdnStatusResponse.InDebtOverdue = context.BooleanValue("DescribeUserDcdnStatus.InDebtOverdue");
+			describeUserDcdnStatusResponse.HttpResponse = _ctx.HttpResponse;
+			describeUserDcdnStatusResponse.RequestId = _ctx.StringValue("DescribeUserDcdnStatus.RequestId");
+			describeUserDcdnStatusResponse.Enabled = _ctx.BooleanValue("DescribeUserDcdnStatus.Enabled");
+			describeUserDcdnStatusResponse.OnService = _ctx.BooleanValue("DescribeUserDcdnStatus.OnService");
+			describeUserDcdnStatusResponse.InDebt = _ctx.BooleanValue("DescribeUserDcdnStatus.InDebt");
+			describeUserDcdnStatusResponse.InDebtOverdue = _ctx.BooleanValue("DescribeUserDcdnStatus.InDebtOverdue");
         
 			return describeUserDcdnStatusResponse;
         }

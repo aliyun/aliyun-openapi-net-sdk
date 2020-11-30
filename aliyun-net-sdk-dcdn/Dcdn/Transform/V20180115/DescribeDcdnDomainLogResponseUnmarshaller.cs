@@ -26,33 +26,33 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnDomainLogResponseUnmarshaller
     {
-        public static DescribeDcdnDomainLogResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnDomainLogResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnDomainLogResponse describeDcdnDomainLogResponse = new DescribeDcdnDomainLogResponse();
 
-			describeDcdnDomainLogResponse.HttpResponse = context.HttpResponse;
-			describeDcdnDomainLogResponse.RequestId = context.StringValue("DescribeDcdnDomainLog.RequestId");
-			describeDcdnDomainLogResponse.DomainName = context.StringValue("DescribeDcdnDomainLog.DomainName");
+			describeDcdnDomainLogResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnDomainLogResponse.RequestId = _ctx.StringValue("DescribeDcdnDomainLog.RequestId");
+			describeDcdnDomainLogResponse.DomainName = _ctx.StringValue("DescribeDcdnDomainLog.DomainName");
 
 			List<DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail> describeDcdnDomainLogResponse_domainLogDetails = new List<DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainLog.DomainLogDetails.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainLog.DomainLogDetails.Length"); i++) {
 				DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail domainLogDetail = new DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail();
-				domainLogDetail.LogCount = context.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogCount");
+				domainLogDetail.LogCount = _ctx.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogCount");
 
 				DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_PageInfos pageInfos = new DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_PageInfos();
-				pageInfos.PageIndex = context.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos.PageIndex");
-				pageInfos.PageSize = context.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos.PageSize");
-				pageInfos.Total = context.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos.Total");
+				pageInfos.PageIndex = _ctx.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos.PageIndex");
+				pageInfos.PageSize = _ctx.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos.PageSize");
+				pageInfos.Total = _ctx.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].PageInfos.Total");
 				domainLogDetail.PageInfos = pageInfos;
 
 				List<DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_LogInfoDetail> domainLogDetail_logInfos = new List<DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_LogInfoDetail>();
-				for (int j = 0; j < context.Length("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos.Length"); j++) {
 					DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_LogInfoDetail logInfoDetail = new DescribeDcdnDomainLogResponse.DescribeDcdnDomainLog_DomainLogDetail.DescribeDcdnDomainLog_LogInfoDetail();
-					logInfoDetail.LogName = context.StringValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName");
-					logInfoDetail.LogPath = context.StringValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath");
-					logInfoDetail.LogSize = context.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize");
-					logInfoDetail.StartTime = context.StringValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime");
-					logInfoDetail.EndTime = context.StringValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime");
+					logInfoDetail.LogName = _ctx.StringValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogName");
+					logInfoDetail.LogPath = _ctx.StringValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogPath");
+					logInfoDetail.LogSize = _ctx.LongValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].LogSize");
+					logInfoDetail.StartTime = _ctx.StringValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].StartTime");
+					logInfoDetail.EndTime = _ctx.StringValue("DescribeDcdnDomainLog.DomainLogDetails["+ i +"].LogInfos["+ j +"].EndTime");
 
 					domainLogDetail_logInfos.Add(logInfoDetail);
 				}

@@ -26,28 +26,28 @@ namespace Aliyun.Acs.dcdn.Transform.V20180115
 {
     public class DescribeDcdnDomainWebsocketHttpCodeDataResponseUnmarshaller
     {
-        public static DescribeDcdnDomainWebsocketHttpCodeDataResponse Unmarshall(UnmarshallerContext context)
+        public static DescribeDcdnDomainWebsocketHttpCodeDataResponse Unmarshall(UnmarshallerContext _ctx)
         {
 			DescribeDcdnDomainWebsocketHttpCodeDataResponse describeDcdnDomainWebsocketHttpCodeDataResponse = new DescribeDcdnDomainWebsocketHttpCodeDataResponse();
 
-			describeDcdnDomainWebsocketHttpCodeDataResponse.HttpResponse = context.HttpResponse;
-			describeDcdnDomainWebsocketHttpCodeDataResponse.RequestId = context.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.RequestId");
-			describeDcdnDomainWebsocketHttpCodeDataResponse.DomainName = context.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.DomainName");
-			describeDcdnDomainWebsocketHttpCodeDataResponse.StartTime = context.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.StartTime");
-			describeDcdnDomainWebsocketHttpCodeDataResponse.EndTime = context.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.EndTime");
-			describeDcdnDomainWebsocketHttpCodeDataResponse.DataInterval = context.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.DataInterval");
+			describeDcdnDomainWebsocketHttpCodeDataResponse.HttpResponse = _ctx.HttpResponse;
+			describeDcdnDomainWebsocketHttpCodeDataResponse.RequestId = _ctx.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.RequestId");
+			describeDcdnDomainWebsocketHttpCodeDataResponse.DomainName = _ctx.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.DomainName");
+			describeDcdnDomainWebsocketHttpCodeDataResponse.StartTime = _ctx.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.StartTime");
+			describeDcdnDomainWebsocketHttpCodeDataResponse.EndTime = _ctx.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.EndTime");
+			describeDcdnDomainWebsocketHttpCodeDataResponse.DataInterval = _ctx.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.DataInterval");
 
 			List<DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule> describeDcdnDomainWebsocketHttpCodeDataResponse_dataPerInterval = new List<DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule>();
-			for (int i = 0; i < context.Length("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval.Length"); i++) {
+			for (int i = 0; i < _ctx.Length("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval.Length"); i++) {
 				DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule dataModule = new DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule();
-				dataModule.TimeStamp = context.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].TimeStamp");
+				dataModule.TimeStamp = _ctx.StringValue("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].TimeStamp");
 
 				List<DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule.DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule> dataModule_websocketHttpCodeDataPerInterval = new List<DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule.DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule>();
-				for (int j = 0; j < context.Length("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval.Length"); j++) {
+				for (int j = 0; j < _ctx.Length("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval.Length"); j++) {
 					DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule.DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule httpCodeDataModule = new DescribeDcdnDomainWebsocketHttpCodeDataResponse.DescribeDcdnDomainWebsocketHttpCodeData_DataModule.DescribeDcdnDomainWebsocketHttpCodeData_HttpCodeDataModule();
-					httpCodeDataModule.Code = context.IntegerValue("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Code");
-					httpCodeDataModule.Proportion = context.FloatValue("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Proportion");
-					httpCodeDataModule.Count = context.FloatValue("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Count");
+					httpCodeDataModule.Code = _ctx.IntegerValue("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Code");
+					httpCodeDataModule.Proportion = _ctx.FloatValue("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Proportion");
+					httpCodeDataModule.Count = _ctx.FloatValue("DescribeDcdnDomainWebsocketHttpCodeData.DataPerInterval["+ i +"].WebsocketHttpCodeDataPerInterval["+ j +"].Count");
 
 					dataModule_websocketHttpCodeDataPerInterval.Add(httpCodeDataModule);
 				}
